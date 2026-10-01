@@ -1,0 +1,62 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "base",
+            "hidden": true,
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "architecture": {
+                "value": "x86",
+                "strategy": "external"
+            },
+            "cacheVariables": {
+                "CMAKE_CXX_COMPILER": "cl.exe",
+                "CMAKE_CXX_FLAGS": "/EHsc",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+                "VCPKG_TARGET_TRIPLET": "x86-windows-static-md",
+                "CMAKE_MSVC_RUNTIME_LIBRARY": "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL",
+                "VCPKG_MANIFEST_FEATURES": "tests",
+                "DAOADDR_SANITIZE": "OFF",
+                "DAOADDR_ANALYZE": "OFF"
+            }
+        },
+        {
+            "name": "debug",
+            "inherits": ["base"],
+            "displayName": "Debug (the reader, the data files, tests)",
+            "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug" }
+        },
+        {
+            "name": "release",
+            "inherits": ["base"],
+            "displayName": "Release (the reader, the data files, tests)",
+            "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+        },
+        {
+            "name": "debug-asan",
+            "inherits": ["debug"],
+            "displayName": "Debug + AddressSanitizer, for the tests",
+            "cacheVariables": { "DAOADDR_SANITIZE": "ON" }
+        },
+        {
+            "name": "debug-analyze",
+            "inherits": ["debug"],
+            "displayName": "Debug under MSVC's static analyser (/analyze)",
+            "cacheVariables": { "DAOADDR_ANALYZE": "ON" }
+        }
+    ],
+    "buildPresets": [
+        { "name": "debug", "configurePreset": "debug" },
+        { "name": "release", "configurePreset": "release" },
+        { "name": "debug-asan", "configurePreset": "debug-asan" },
+        { "name": "debug-analyze", "configurePreset": "debug-analyze" }
+    ],
+    "testPresets": [
+        { "name": "debug", "configurePreset": "debug", "output": { "outputOnFailure": true } },
+        { "name": "release", "configurePreset": "release", "output": { "outputOnFailure": true } },
+        { "name": "debug-asan", "configurePreset": "debug-asan", "output": { "outputOnFailure": true } },
+        { "name": "debug-analyze", "configurePreset": "debug-analyze", "output": { "outputOnFailure": true } }
+    ]
+}
