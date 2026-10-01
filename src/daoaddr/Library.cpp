@@ -73,6 +73,7 @@ std::optional<Library> Library::Parse(std::span<const std::byte> file)
     {
         std::memcpy(library.words_.data(), file.data() + kHeaderBytes, count * sizeof(std::uint32_t));
     }
+    library.count_ = library.words_.size() - static_cast<std::size_t>(std::ranges::count(library.words_, kNone));
     return library;
 }
 

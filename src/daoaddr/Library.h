@@ -96,6 +96,11 @@ class Library
     {
         return words_.size();
     }
+    // How many IDs this build has an address for.
+    std::size_t Count() const
+    {
+        return count_;
+    }
 
     // Where an ID is in this build; nothing if the build lacks it, or the
     // file is older than the ID.
@@ -107,6 +112,7 @@ class Library
   private:
     BuildInfo build_;
     std::vector<std::uint32_t> words_; // by ID: flags in the high 8 bits, the RVA in the low 24, or kNone
+    std::size_t count_ = 0;
 };
 
 // A library read the other way: from a place in the image to the ID there.

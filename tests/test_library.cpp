@@ -48,6 +48,7 @@ TEST_CASE("a file reads back as the build and the places it was written from")
     REQUIRE(library.has_value());
     CHECK(library->Build() == kBuild);
     CHECK(library->Size() == 4);
+    CHECK(library->Count() == 2);
 
     CHECK(library->Find(Id{1}) == Entry{.rva = 0x1000});
     CHECK(library->Rva(Id{1}) == 0x1000U);
@@ -117,6 +118,7 @@ TEST_CASE("a file with no IDs is a library with none")
     const auto library = Library::Parse(File(kBuild, {}));
     REQUIRE(library.has_value());
     CHECK(library->Size() == 0);
+    CHECK(library->Count() == 0);
     CHECK_FALSE(library->Find(Id{1}).has_value());
     CHECK_FALSE(Index{*library}.At(0x1000).has_value());
 }
@@ -189,6 +191,12 @@ TEST_CASE("the files packed from the table hold what the table says")
     CHECK(ea->Build() ==
           BuildInfo{.linkStamp = 0x52164c37, .sizeOfImage = 0x96b000, .entryPointRva = 0x1000, .imageBase = 0x400000});
     CHECK(gog->Size() == ea->Size());
+    // Each build has most of the IDs and not all: some things only one has.
+    // Not the counts themselves, which grow as the table is filled.
+    CHECK(gog->Count() > 100000);
+    CHECK(gog->Count() < gog->Size());
+    CHECK(ea->Count() > 100000);
+    CHECK(ea->Count() < ea->Size());
 
     CHECK(gog->Address(kEntryPoint) == 0x008E3024U);
     CHECK(ea->Address(kEntryPoint) == 0x008B9584U);
