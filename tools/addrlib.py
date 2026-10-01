@@ -5,7 +5,7 @@ Age: Origins, and where each is in every build of DAOrigins.exe.
     python tools/addrlib.py lookup 0x005D6740    what is at an address, in any build
     python tools/addrlib.py lookup 23456         an ID's row
     python tools/addrlib.py lookup SetPaused     rows by name
-    python tools/addrlib.py lookup 0x5D6740 --build gog
+    python tools/addrlib.py lookup 0x5D6740 --build gog-1.05
     python tools/addrlib.py pack DIR             write each build's runtime file into DIR
     python tools/addrlib.py check                the table is sound (no game needed)
     python tools/addrlib.py stats

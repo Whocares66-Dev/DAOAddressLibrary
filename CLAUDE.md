@@ -18,8 +18,10 @@ The runtime file's format (`src/daoaddr/Library.cpp`'s head, `tools/addrlib.py`'
 
 | key | | exe | image the tools read |
 |---|---|---|---|
-| `gog` | GOG Ultimate Edition 1.05.13263.0, link stamp 0x4eb19d53 | `C:\Program Files (x86)\GOG Galaxy\Games\Dragon Age Origins\bin_ship\DAOrigins.exe` | `game\gog\DAOrigins.exe`, the file itself |
-| `ea` | EA app Ultimate Edition 1.05.13263.0, link stamp 0x52164c37, wrapped | `C:\Program Files\EA Games\Dragon Age\bin_ship\daorigins.exe` | `game\ea\DAOrigins.dump.exe`, decrypted (`tools\ea_dump.py`); `game\ea\DAOrigins.exe` is the file as installed |
+| `gog-1.05` | GOG Ultimate Edition 1.05.13263.0, link stamp 0x4eb19d53 | `C:\Program Files (x86)\GOG Galaxy\Games\Dragon Age Origins\bin_ship\DAOrigins.exe` | `game\gog\DAOrigins.exe`, the file itself |
+| `ea-1.05` | EA app Ultimate Edition 1.05.13263.0, link stamp 0x52164c37, wrapped | `C:\Program Files\EA Games\Dragon Age\bin_ship\daorigins.exe` | `game\ea\DAOrigins.dump.exe`, decrypted (`tools\ea_dump.py`); `game\ea\DAOrigins.exe` is the file as installed |
+
+A key is a label for a build, `<store>-<version>`, with something more only if a store sells two builds of one version. It is not what tells a build: its link stamp is, with its image size and entry point, and the runtime file is named by the link stamp. So a store's next version is a new row and a new column, and a build two stores both sell is one row.
 
 `game\` is ignored by git: the executables are BioWare's and EA's. Steam's build is not read; there is no copy yet.
 

@@ -38,7 +38,7 @@ To find an ID:
 
 ```powershell
 python tools\addrlib.py lookup 0x005D6740            # an address, in any build
-python tools\addrlib.py lookup 0x004C978F --build ea # inside a function: ID 10645 + 0x3f
+python tools\addrlib.py lookup 0x004C978F --build ea-1.05 # inside a function: ID 10645 + 0x3f
 python tools\addrlib.py lookup 10547                 # an ID
 python tools\addrlib.py lookup CClientExoApp::vftable # a name the exe itself gives
 ```
@@ -61,12 +61,14 @@ The same toolchain as DAOLib: Visual Studio 2022, vcpkg, x86. In another project
 
 ## Adding a build
 
-Put its executable under `game\<key>\`, add its row to `data\builds.csv`, and:
+Put its executable under `game\`, add its row to `data\builds.csv` (a key for it, its header fields, where its executable is), and:
 
 ```powershell
 python tools\addrlib.py add <key>
 python tools\addrlib.py check
 ```
+
+A key is a label for a build, `<store>-<version>`, with something more only if a store sells two builds of one version. It is not what tells a build: its link stamp is, with its image size and entry point, and the runtime file is named by the link stamp. So a store's next version is a new row and a new column, and a build two stores both sell is one row.
 
 Every ID is looked for in the new build, and what only it has gets new IDs. [dev/BUILDS.md](dev/BUILDS.md) says how, and what was found for the EA build.
 

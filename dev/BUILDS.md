@@ -4,13 +4,15 @@ Dragon Age: Origins Ultimate Edition is sold by GOG, EA and Steam, and all say 1
 
 | Key | Build | In the table |
 |---|---|---|
-| `gog` | GOG Ultimate Edition | 103,293 IDs: everything it holds. The first build read, so its things have the low numbers. |
-| `ea` | EA app Ultimate Edition | 103,567 IDs: 102,463 of GOG's, and 1,104 of its own. |
+| `gog-1.05` | GOG Ultimate Edition, linked 2011-11-02 | 103,293 IDs: everything it holds. The first build read, so its things have the low numbers. |
+| `ea-1.05` | EA app Ultimate Edition, linked 2013-08-22 | 103,567 IDs: 102,463 of GOG's, and 1,104 of its own. |
 | | Steam | Not read: no copy yet. |
+
+A key is a label for a build, `<store>-<version>`, with something more only if a store sells two builds of one version. It is not what tells a build: its link stamp is, with its image size and entry point, and the runtime file is named by the link stamp. So a store's next version is a new row and a new column, and a build two stores both sell is one row.
 
 ## The two files
 
-`gog`: `C:\Program Files (x86)\GOG Galaxy\Games\Dragon Age Origins\bin_ship\DAOrigins.exe`. `ea`: `C:\Program Files\EA Games\Dragon Age\bin_ship\daorigins.exe`. EA's is not GOG's file: the same engine at the same version, rebuilt in 2013 with a few source changes, linked in another order, and shipped encrypted.
+`gog-1.05`: `C:\Program Files (x86)\GOG Galaxy\Games\Dragon Age Origins\bin_ship\DAOrigins.exe`. `ea-1.05`: `C:\Program Files\EA Games\Dragon Age\bin_ship\daorigins.exe`. EA's is not GOG's file: the same engine at the same version, rebuilt in 2013 with a few source changes, linked in another order, and shipped encrypted.
 
 | | GOG | EA |
 |---|---|---|
@@ -103,8 +105,8 @@ Checked against something the comparison did not use: EA's own command table reg
 
 ## Adding a build
 
-1. Copy its executable to `game\<key>\`. If it is wrapped as EA's is, get an image of it decrypted; the tools read that.
-2. Add a row to `data\builds.csv`: its key, the header fields of the file as installed, its hash, and the path of the image to read.
+1. Copy its executable to a folder of its own under `game\`. If it is wrapped as EA's is, get an image of it decrypted; the tools read that.
+2. Add a row to `data\builds.csv`: a key for it (`<store>-<version>`), the header fields of the file as installed, its hash, and the path of the image to read.
 3. `python tools\addrlib.py add <key>`, then `check`, then the tests.
 4. `python tools\exemap.py <reference> <image> --changes` for what differs in it, and write that up here: a plugin author needs to know which classes moved.
 
