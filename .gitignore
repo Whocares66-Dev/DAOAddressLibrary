@@ -1,0 +1,33 @@
+# The game's executables, copied in by hand, never committed: BioWare's and
+# EA's, not ours to redistribute. tools\addrlib.py add and tools\exemap.py
+# read from here; the table, lookup, pack and check need none of it.
+/game/
+
+# Build output
+build/
+out/
+dist/
+vcpkg_installed/
+*.dll
+*.pdb
+*.lib
+*.obj
+*.exp
+
+# The runtime files tools\addrlib.py pack writes: made from data\ by the
+# build, and attached to a release, not kept in git.
+*.bin
+
+# Machine-specific assistant settings; shared skills remain trackable
+/.claude/settings.local.json
+/.claude/settings.json
+
+# IDE
+.vs/
+.idea/
+.vscode/settings.json
+CMakeUserPresets.json
+
+# Python
+__pycache__/
+.ruff_cache/
