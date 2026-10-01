@@ -25,3 +25,11 @@ add_test(
     COMMAND
         "${Python3_EXECUTABLE}" "${PROJECT_SOURCE_DIR}/tools/addrlib.py" check
 )
+# An ID's promise: nothing the last commit's table says has changed. Run
+# before a change to the table is committed; it passes where there is no
+# history to ask (a copy that is not a git checkout).
+add_test(
+    NAME table_ids_kept
+    COMMAND
+        "${Python3_EXECUTABLE}" "${PROJECT_SOURCE_DIR}/tools/addrlib.py" kept
+)

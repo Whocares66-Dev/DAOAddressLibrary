@@ -12,7 +12,7 @@ The game is sold by GOG, EA and Steam. They all say version 1.05.13263.0, and th
 
 ## What is here
 
-- **The table**, [data/addresses.csv](data/addresses.csv): a row per ID, a column per build. 104,397 IDs as of 2026-10-01. [data/builds.csv](data/builds.csv) says what each build is and how to tell its file; [data/notes.csv](data/notes.csv) says what a cell alone cannot (a function whose code differs between builds, an address two IDs share).
+- **The table**, [data/addresses.csv](data/addresses.csv): a row per ID, with its name where it has one, and a column per build. 104,397 IDs as of 2026-10-01, 7,395 of them named. [data/builds.csv](data/builds.csv) says what each build is and how to tell its file; [data/notes.csv](data/notes.csv) says what a cell alone cannot (a function whose code differs between builds, an address two IDs share).
 - **The files a program reads at run time**, one per build, packed from the table: `daoaddresses-<link stamp>.bin`, about 420 KB each. The build writes them to `build\<preset>\daolib\addresses\`.
 - **The reader**, `src/daoaddr`: a small C++20 library, standard library only, that loads a build's file and answers "where is this ID" and "what ID is at this address".
 - **The tools** that make the table from the executables (`tools/`), which need the game. Nothing else does.
@@ -40,8 +40,20 @@ To find an ID:
 python tools\addrlib.py lookup 0x005D6740            # an address, in any build
 python tools\addrlib.py lookup 0x004C978F --build ea-1.05 # inside a function: ID 10645 + 0x3f
 python tools\addrlib.py lookup 10547                 # an ID
-python tools\addrlib.py lookup CClientExoApp::vftable # a name the exe itself gives
+python tools\addrlib.py lookup CClientExoApp::SetPaused # a name, or part of one
 ```
+
+## Names
+
+The table's `name` column is the one place a function's or a global's name is written down. A build's own names are there from its reading: exports, imports, and each RTTI class's vftables and type descriptor. The rest are given by whoever worked out what a thing is:
+
+```powershell
+python tools\addrlib.py name 10547 CClientExoApp::SetPaused                       # by ID
+python tools\addrlib.py name 0x005D6740 CClientExoApp::SetPaused --build gog-1.05 # by its address in a build
+python tools\addrlib.py names found.tsv --build gog-1.05                          # many: address or ID, tab, name
+```
+
+A name can be given to any ID, and changed: it is the ID that is the promise. Nothing read at run time holds names, so naming something rebuilds nothing. A project that uses the IDs holds the numbers and looks the names up here, so that a thing has one name wherever it is spoken of.
 
 ## Rules
 

@@ -6,8 +6,12 @@ Age: Origins, and where each is in every build of DAOrigins.exe.
     python tools/addrlib.py lookup 23456         an ID's row
     python tools/addrlib.py lookup SetPaused     rows by name
     python tools/addrlib.py lookup 0x5D6740 --build gog-1.05
+    python tools/addrlib.py name 10547 CClientExoApp::SetPaused      name an ID
+    python tools/addrlib.py name 0x005D6740 CClientExoApp::SetPaused --build gog-1.05
+    python tools/addrlib.py names FILE [--build KEY]   many: `ID or 0xADDRESS<TAB>name` lines
     python tools/addrlib.py pack DIR             write each build's runtime file into DIR
     python tools/addrlib.py check                the table is sound (no game needed)
+    python tools/addrlib.py kept [REV]           no ID or address of REV's table (HEAD's) has changed
     python tools/addrlib.py stats
 
 An ID is a number, given once and never given again. It names a thing, not a
@@ -31,15 +35,24 @@ same code as in the build its ID came from (`changed`), an address two IDs
 share because the linker made one function of two (`shared`), and a function
 that was one of several identical candidates (`ambiguous`).
 
+The `name` column is the one place a thing's name is written down. A build's
+own names are there from its reading (its exports and imports, its RTTI
+classes' vftables and type descriptors); the rest are given by whoever
+worked out what a function or a global is, with `name`. A name can be given
+to any ID and changed; it is the ID that does not change. Nothing a program
+reads at run time holds names, so naming one rebuilds nothing.
+
 Reading a build needs its executable, under game/ (ignored by git); the
-table, lookup, pack and check do not.
+table, lookup, name, pack, check and kept do not.
 """
 
 import bisect
 import collections
 import csv
+import io
 import os
 import struct
+import subprocess
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -90,16 +103,7 @@ class Database:
             db.builds = list(csv.DictReader(f))
         if os.path.exists(ADDRESSES):
             with open(ADDRESSES, encoding="utf-8", newline="") as f:
-                reader = csv.reader(f)
-                header = next(reader)
-                db.columns = header[3:]
-                for line in reader:
-                    addresses = {
-                        key: int(cell, 16)
-                        for key, cell in zip(db.columns, line[3:], strict=True)
-                        if cell
-                    }
-                    db.rows[int(line[0])] = Row(line[1], line[2], addresses)
+                db.read_table(f)
         if os.path.exists(NOTES):
             with open(NOTES, encoding="utf-8", newline="") as f:
                 db.notes = [
@@ -107,6 +111,19 @@ class Database:
                     for r in csv.DictReader(f)
                 ]
         return db
+
+    def read_table(self, lines):
+        """The table's rows, from data/addresses.csv's text."""
+        reader = csv.reader(lines)
+        header = next(reader)
+        self.columns = header[3:]
+        for line in reader:
+            addresses = {
+                key: int(cell, 16)
+                for key, cell in zip(self.columns, line[3:], strict=True)
+                if cell
+            }
+            self.rows[int(line[0])] = Row(line[1], line[2], addresses)
 
     def save(self):
         with open(ADDRESSES, "w", encoding="utf-8", newline="") as f:
@@ -353,6 +370,91 @@ def lookup(db, what, only=None):
     return 0 if shown else 1
 
 
+# -- naming --
+
+
+def resolve(db, what, only=None):
+    """The one ID an ID or an address means, or a ValueError saying why
+    there is not one. An address is a build's: with no build said, it must
+    be an ID's address in one build alone, or the same ID's in each."""
+    if what.lower().startswith("0x"):
+        address = int(what, 16)
+        keys = [only] if only else db.columns
+        found = {n for key in keys for n in db.by_address(key).get(address, ())}
+        if len(found) != 1:
+            where = only or "any build"
+            raise ValueError(
+                f"{address:#010x} is the address of {len(found)} IDs in {where}"
+                + (": say which by its ID" if found else "")
+            )
+        return found.pop()
+    if not what.isdigit() or int(what) not in db.rows:
+        raise ValueError(f"no ID {what}")
+    return int(what)
+
+
+def set_name(db, number, name):
+    """Names an ID; what it was named before. A name is one line with
+    nothing around it, and a retired ID is nothing to name."""
+    if name != name.strip() or not name or "\n" in name or "\t" in name:
+        raise ValueError(f"ID {number}: {name!r} is not a name")
+    row = db.rows[number]
+    if row.kind == "retired":
+        raise ValueError(f"ID {number} is retired")
+    before, row.name = row.name, name
+    return before
+
+
+def name_many(db, pairs, only=None):
+    """Names each (ID or address, name); the count named anew, the count
+    renamed, and a line for each that could not be."""
+    new = renamed = 0
+    faults = []
+    for what, name in pairs:
+        try:
+            before = set_name(db, resolve(db, what, only), name)
+        except ValueError as fault:
+            faults.append(str(fault))
+            continue
+        if not before:
+            new += 1
+        elif before != name:
+            renamed += 1
+    return new, renamed, faults
+
+
+def name(db, pairs, only=None):
+    """The `name` and `names` commands: names them and saves the table."""
+    new, renamed, faults = name_many(db, pairs, only)
+    for fault in faults[:40]:
+        print(fault, file=sys.stderr)
+    if len(pairs) == 1 and not faults:
+        print(describe(db, resolve(db, pairs[0][0], only)))
+    else:
+        print(f"{new} named, {renamed} renamed, {len(faults)} not")
+    # Not a fault: overloads share a name. But worth a look.
+    uses = collections.Counter(row.name for row in db.rows.values() if row.name)
+    for given in sorted({given for _, given in pairs if uses[given] > 1})[:20]:
+        ids = [n for n, row in db.rows.items() if row.name == given]
+        print(f"{given} is the name of IDs {', '.join(map(str, ids))}")
+    if new or renamed:
+        db.save()
+    return 1 if faults else 0
+
+
+def pairs_in(path):
+    """(ID or address, name) for each line of a file of them, tab between;
+    blank lines and lines starting with # are not any."""
+    with open(path, encoding="utf-8") as f:
+        lines = [
+            line.rstrip("\n") for line in f if line.strip() and not line.startswith("#")
+        ]
+    for line in lines:
+        if "\t" not in line:
+            raise ValueError(f"{path}: a line with no tab: {line!r}")
+    return [tuple(line.split("\t", 1)) for line in lines]
+
+
 def pack_build(db, build):
     """One build's runtime file, as bytes."""
     key = build["key"]
@@ -451,6 +553,71 @@ def check(db):
     return 1 if faults else 0
 
 
+def changes(before, after):
+    """What an ID's promise forbids, between a table as it was and as it is:
+    each line is a fault. An ID that is gone, one that became another kind
+    of thing (other than retired), and an address that moved or was taken
+    out. Builds are matched by link stamp, so a build's key may change;
+    names may too, and new IDs, builds and addresses are what a table is
+    for."""
+    faults = []
+    stamp = {b["key"]: int(b["link_stamp"], 16) for b in before.builds}
+    key_now = {int(b["link_stamp"], 16): b["key"] for b in after.builds}
+    for number, was in before.rows.items():
+        now = after.rows.get(number)
+        if now is None:
+            faults.append(f"ID {number} is gone")
+            continue
+        if now.kind not in (was.kind, "retired"):
+            faults.append(f"ID {number} was a {was.kind} and is a {now.kind}")
+        for key, address in was.addresses.items():
+            there = now.addresses.get(key_now.get(stamp.get(key)))
+            if there != address and now.kind != "retired":
+                faults.append(
+                    f"ID {number} in {key} was at {address:#010x} and is "
+                    + (f"at {there:#010x}" if there is not None else "nowhere")
+                )
+    return faults
+
+
+def at_revision(revision):
+    """The table and the builds as git has them at a revision; None if git
+    has none (no git, no repository, or the files are newer than it)."""
+    db = Database()
+    for path, read in (
+        ("data/builds.csv", lambda f: setattr(db, "builds", list(csv.DictReader(f)))),
+        ("data/addresses.csv", db.read_table),
+    ):
+        try:
+            text = subprocess.run(
+                ["git", "show", f"{revision}:{path}"],
+                cwd=REPO,
+                capture_output=True,
+                check=True,
+            ).stdout.decode("utf-8")
+        except (OSError, subprocess.CalledProcessError):
+            return None
+        read(io.StringIO(text, newline=""))
+    return db
+
+
+def kept(db, revision):
+    """Whether every ID and address of a committed table is still as it was:
+    what is run before a change to the table is committed. A cell put right
+    on purpose fails it once, which is the point: say so in the commit."""
+    before = at_revision(revision)
+    if before is None:
+        print(f"no table at {revision} to compare with")
+        return 0
+    faults = changes(before, db)
+    for fault in faults[:40]:
+        print(fault, file=sys.stderr)
+    print(
+        f"{len(before.rows)} IDs at {revision}, {len(db.rows)} now: {len(faults)} changed"
+    )
+    return 1 if faults else 0
+
+
 def stats(db):
     kinds = collections.Counter(row.kind for row in db.rows.values())
     print(
@@ -480,13 +647,26 @@ def main(argv):
     command, rest = argv[0], argv[1:]
     if command == "add" and rest:
         return add(db, rest[0])
+    only = rest[rest.index("--build") + 1] if "--build" in rest[:-1] else None
+    if only:
+        at = rest.index("--build")
+        rest = rest[:at] + rest[at + 2 :]
     if command == "lookup" and rest:
-        only = rest[rest.index("--build") + 1] if "--build" in rest else None
         return lookup(db, rest[0], only)
+    if command == "name" and len(rest) == 2:
+        return name(db, [tuple(rest)], only)
+    if command == "names" and len(rest) == 1:
+        try:
+            return name(db, pairs_in(rest[0]), only)
+        except (OSError, ValueError) as fault:
+            print(fault, file=sys.stderr)
+            return 1
     if command == "pack" and rest:
         return pack(db, rest[0])
     if command == "check":
         return check(db)
+    if command == "kept":
+        return kept(db, rest[0] if rest else "HEAD")
     if command == "stats":
         return stats(db)
     print(__doc__)

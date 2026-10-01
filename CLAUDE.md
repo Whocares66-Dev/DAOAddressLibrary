@@ -8,9 +8,11 @@ Markdown here is not hard-wrapped: one line per paragraph or list item.
 
 ## What must not change
 
-**An ID is forever.** `data/addresses.csv` is the source of truth, and its `id` column is a promise to every plugin built against it. Never renumber, never reuse, never delete a row. A thing that turns out to be nothing, or the same as another ID, has its kind set to `retired` and its cells emptied. `python tools\addrlib.py check` (a ctest) fails on a gap.
+**An ID is forever.** `data/addresses.csv` is the source of truth, and its `id` column is a promise to every plugin built against it. Never renumber, never reuse, never delete a row. A thing that turns out to be nothing, or the same as another ID, has its kind set to `retired` and its cells emptied. `python tools\addrlib.py check` (a ctest) fails on a gap, and `python tools\addrlib.py kept` (a ctest too) fails if any ID or address the last commit's table has is gone or changed in the working copy's; it takes another revision to compare with. A cell put right on purpose fails it once: say so in the commit.
 
 So the table is not regenerated from scratch. `tools\addrlib.py add <key>` fills a build's column and appends: run on a build already there, it re-fills that build's cells and adds IDs for what an improved reading newly finds. An improvement to `tools\exemap.py` therefore shows up as cells filled, never as IDs moved. If a change to the comparison would empty or move cells that plugins use, that is a regression: `tests\test_library.cpp` pins a few, and DAOLib's own tests pin every ID it names.
+
+**A name is in one place.** The table's `name` column: a build's own names from its reading (exports, imports, RTTI), and the rest given with `python tools\addrlib.py name`. Projects that use the IDs (DAOLib) hold numbers and read the names here; do not keep a second list of them anywhere. Unlike an ID a name may be changed, and two IDs may share one (overloads).
 
 The runtime file's format (`src/daoaddr/Library.cpp`'s head, `tools/addrlib.py`'s `pack_build`) is versioned by its `format` word. Readers refuse a format they do not know, so a change to it is a new number and an old reader failing safe, not a silent misread.
 
