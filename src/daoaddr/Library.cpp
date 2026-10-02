@@ -149,4 +149,10 @@ std::string FileName(std::uint32_t linkStamp)
     return std::format("daoaddresses-{:08x}.bin", linkStamp);
 }
 
+std::string FileName(const BuildInfo &build)
+{
+    return std::format("daoaddresses-{:08x}-{:08x}-{:08x}-{:08x}.bin", build.linkStamp, build.sizeOfImage,
+                       build.entryPointRva, build.imageBase);
+}
+
 } // namespace daoaddr

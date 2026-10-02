@@ -69,8 +69,36 @@ class Pack(unittest.TestCase):
         with self.assertRaises(ValueError):
             addrlib.pack_build(db, BUILD_A)
 
-    def test_a_builds_file_is_named_by_its_link_stamp(self):
-        self.assertEqual(addrlib.file_name(BUILD_A), "daoaddresses-4eb19d53.bin")
+    def test_same_timestamp_different_headers_have_distinct_files(self):
+        self.assertEqual(
+            addrlib.file_name(BUILD_A),
+            "daoaddresses-4eb19d53-00100000-00001000-00400000.bin",
+        )
+        for field in ("size_of_image", "entry_point_rva", "image_base"):
+            other = BUILD_A | {field: hex(int(BUILD_A[field], 16) + 0x1000)}
+            self.assertNotEqual(addrlib.file_name(BUILD_A), addrlib.file_name(other))
+
+    def test_pack_keeps_legacy_alias_without_overwriting_it_with_same_stamp(self):
+        db = database()
+        db.builds[0] = BUILD_A | {"legacy": "1"}
+        db.builds[1] = BUILD_B | {
+            "link_stamp": BUILD_A["link_stamp"],
+            "entry_point_rva": "0x2000",
+        }
+        with tempfile.TemporaryDirectory() as folder:
+            self.assertEqual(addrlib.pack(db, folder), 0)
+            for build in db.builds:
+                with open(os.path.join(folder, addrlib.file_name(build)), "rb") as f:
+                    self.assertEqual(f.read(), addrlib.pack_build(db, build))
+            with open(os.path.join(folder, "daoaddresses-4eb19d53.bin"), "rb") as f:
+                self.assertEqual(f.read(), addrlib.pack_build(db, db.builds[0]))
+
+    def test_pack_refuses_collisions_before_writing_anything(self):
+        db = database()
+        db.builds[1] = BUILD_A | {"key": "b"}
+        with tempfile.TemporaryDirectory() as folder:
+            self.assertEqual(addrlib.pack(db, folder), 1)
+            self.assertEqual(os.listdir(folder), [])
 
 
 class Asking(unittest.TestCase):
@@ -100,6 +128,16 @@ class Check(unittest.TestCase):
 
     def test_a_sound_table_passes(self):
         self.assertEqual(self.faults(database()), 0)
+
+    def test_duplicate_fingerprints_and_legacy_aliases_are_faults(self):
+        db = database()
+        db.builds[1] = BUILD_A | {"key": "b"}
+        self.assertEqual(self.faults(db), 1)
+        db.builds[0] = BUILD_A | {"legacy": "1"}
+        db.builds[1] |= {"entry_point_rva": "0x2000", "legacy": "1"}
+        self.assertEqual(self.faults(db), 1)
+        db.builds[1]["legacy"] = ""
+        self.assertEqual(self.faults(db), 0)
 
     def test_an_id_taken_out_is_a_fault(self):
         db = database()
@@ -262,7 +300,7 @@ class Kept(unittest.TestCase):
         after.rows[2].addresses.clear()
         self.assertEqual(addrlib.changes(database(), after), [])
 
-    def test_a_build_is_its_link_stamp_not_its_key(self):
+    def test_a_build_is_its_full_fingerprint_not_its_key(self):
         after = database()
         after.builds = [BUILD_A | {"key": "a-1.05"}, BUILD_B]
         after.columns = ["a-1.05", "b"]
@@ -272,6 +310,17 @@ class Kept(unittest.TestCase):
         self.assertEqual(addrlib.changes(database(), after), [])
         # The same rename with an address moved under it is still a change.
         after.rows[1].addresses["a-1.05"] = 0x401004
+        self.assertEqual(len(addrlib.changes(database(), after)), 1)
+
+    def test_shared_stamp_does_not_hide_a_changed_original_address(self):
+        after = database()
+        after.builds.append(BUILD_A | {"key": "steam", "entry_point_rva": "0x9000"})
+        after.columns.append("steam")
+        for row in after.rows.values():
+            if "a" in row.addresses:
+                row.addresses["steam"] = row.addresses["a"]
+        self.assertEqual(addrlib.changes(database(), after), [])
+        after.rows[1].addresses["a"] += 4
         self.assertEqual(len(addrlib.changes(database(), after)), 1)
 
 

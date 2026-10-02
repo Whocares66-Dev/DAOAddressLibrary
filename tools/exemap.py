@@ -789,6 +789,41 @@ def match_leftovers(m, functions_a, functions_b):
         m.finish()
 
 
+def same_layout(a, b):
+    """The same linked image, with only PE load-configuration flags changed.
+
+    Steam's unpacked 2011 engine and GOG's have identical loaded sections
+    and relocations except ProcessHeapFlags and the SafeSEH table/count.
+    Checking every byte avoids losing identical initializers to the general
+    matcher's ambiguity rules. No arbitrary data or code difference is allowed.
+    """
+    if (
+        a.base != b.base
+        or a.sections != b.sections
+        or a.img.entry_point_rva != b.img.entry_point_rva
+        or a.img.dirs != b.img.dirs
+    ):
+        return False
+    config, size = a.img.dirs[10]
+    ignored = set()
+    if config and size >= 0x40:
+        # The PE32 load configuration can hold 72 bytes even when the data
+        # directory advertises 64. Only mask these three documented fields.
+        if a.u32(a.base + config) == b.u32(b.base + config) == 0x48:
+            ignored = {config + off + j for off in (0x30, 0x40, 0x44) for j in range(4)}
+    for _, start, end, _ in a.sections:
+        low, high = start - a.base, end - a.base
+        if a.is_reloc[low:high] != b.is_reloc[low:high]:
+            return False
+        left, right = bytearray(a.mem[low:high]), bytearray(b.mem[low:high])
+        for rva in ignored:
+            if low <= rva < high:
+                left[rva - low] = right[rva - low] = 0
+        if left != right:
+            return False
+    return True
+
+
 def build(a, b, inventories=None):
     """The map from one build to another (each a Side, or a path), made
     twice: the first pass finds the tables whose order the builds do not
@@ -797,6 +832,32 @@ def build(a, b, inventories=None):
     then paired by what it is (match_leftovers)."""
     a = a if isinstance(a, Side) else Side(a)
     b = b if isinstance(b, Side) else Side(b)
+    if same_layout(a, b):
+        functions_a, functions_b = inventories or (inventory(a)[0], inventory(b)[0])
+        m = Map(a, b)
+        for address in sorted(set(functions_a) & set(functions_b)):
+            m.pair(address, address, "function")
+        for address in sorted(a.data_targets & b.data_targets):
+            m.pair(address, address, "data")
+        m.seeds = len(m.strong)
+        # Only byte-equal runs are range evidence. The changed PE fields
+        # stay out, as does uninitialized data with no bytes in the file.
+        for _, start, _, held in a.sections:
+            low, high = start - a.base, held - a.base
+            run = low
+            for i in range(low, high):
+                if a.mem[i] != b.mem[i]:
+                    if i > run:
+                        at = a.base + run
+                        m.data_runs[(at, at)] = (at, i - run, at)
+                    run = i + 1
+            if high > run:
+                at = a.base + run
+                m.data_runs[(at, at)] = (at, high - run, at)
+        m.queue.clear()
+        m.finish()
+        m.leftovers_paired = 0
+        return m
     first = Map(a, b)
     first.seed()
     first.run()

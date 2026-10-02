@@ -505,19 +505,33 @@ def pack_build(db, build):
 
 
 def file_name(build):
-    """A build's runtime file is named by its link stamp, which is what a
-    reader has of the game it is in."""
-    return f"daoaddresses-{int(build['link_stamp'], 16):08x}.bin"
+    """Steam and GOG share a link stamp: all four PE fields identify a file."""
+    fields = ("link_stamp", "size_of_image", "entry_point_rva", "image_base")
+    return (
+        "daoaddresses-" + "-".join(f"{int(build[k], 16):08x}" for k in fields) + ".bin"
+    )
+
+
+def output_names(build):
+    names = [file_name(build)]
+    # Explicit legacy aliases preserve existing GOG/EA consumers. Never
+    # assign a timestamp alias to a new build just because it was read first.
+    if build.get("legacy") == "1":
+        names.append(f"daoaddresses-{int(build['link_stamp'], 16):08x}.bin")
+    return names
 
 
 def pack(db, folder):
+    if check(db):
+        return 1
     os.makedirs(folder, exist_ok=True)
     for build in db.builds:
         if build["key"] in db.columns:
             data = pack_build(db, build)
-            with open(os.path.join(folder, file_name(build)), "wb") as f:
-                f.write(data)
-            print(f"{file_name(build)}: {len(data)} bytes, the {build['key']} build")
+            for name in output_names(build):
+                with open(os.path.join(folder, name), "wb") as f:
+                    f.write(data)
+                print(f"{name}: {len(data)} bytes, the {build['key']} build")
     return 0
 
 
@@ -527,6 +541,16 @@ def check(db):
     keys = [b["key"] for b in db.builds]
     if len(set(keys)) != len(keys):
         faults.append("data/builds.csv names a build twice")
+    outputs = {}
+    for build in db.builds:
+        if build.get("legacy", "") not in ("", "1"):
+            faults.append(f"{build['key']}: legacy must be empty or 1")
+        for name in output_names(build):
+            if name in outputs:
+                faults.append(
+                    f"{name}: {outputs[name]} and {build['key']} would overwrite each other"
+                )
+            outputs[name] = build["key"]
     faults += [
         f"the table has a column {column!r} that data/builds.csv does not name"
         for column in db.columns
@@ -573,12 +597,12 @@ def changes(before, after):
     """What an ID's promise forbids, between a table as it was and as it is:
     each line is a fault. An ID that is gone, one that became another kind
     of thing (other than retired), and an address that moved or was taken
-    out. Builds are matched by link stamp, so a build's key may change;
+    out. Builds are matched by all four PE fields, so a build's key may change;
     names may too, and new IDs, builds and addresses are what a table is
     for."""
     faults = []
-    stamp = {b["key"]: int(b["link_stamp"], 16) for b in before.builds}
-    key_now = {int(b["link_stamp"], 16): b["key"] for b in after.builds}
+    fingerprint = {b["key"]: file_name(b) for b in before.builds}
+    key_now = {file_name(b): b["key"] for b in after.builds}
     for number, was in before.rows.items():
         now = after.rows.get(number)
         if now is None:
@@ -587,7 +611,7 @@ def changes(before, after):
         if now.kind not in (was.kind, "retired"):
             faults.append(f"ID {number} was a {was.kind} and is a {now.kind}")
         for key, address in was.addresses.items():
-            there = now.addresses.get(key_now.get(stamp.get(key)))
+            there = now.addresses.get(key_now.get(fingerprint.get(key)))
             if there != address and now.kind != "retired":
                 faults.append(
                     f"ID {number} in {key} was at {address:#010x} and is "

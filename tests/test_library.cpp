@@ -171,6 +171,19 @@ TEST_CASE("a build's file is named by its link stamp")
     CHECK(daoaddr::FileName(0x00000abc) == "daoaddresses-00000abc.bin");
 }
 
+TEST_CASE("the full fingerprint distinguishes builds sharing a link stamp")
+{
+    CHECK(daoaddr::FileName(kBuild) == "daoaddresses-4eb19d53-009ec0a2-004e3024-00400000.bin");
+    auto other = kBuild;
+    other.sizeOfImage = 0xa49000;
+    other.entryPointRva = 0x9ed2ee;
+    CHECK(daoaddr::FileName(other) == "daoaddresses-4eb19d53-00a49000-009ed2ee-00400000.bin");
+    CHECK(daoaddr::FileName(kBuild) != daoaddr::FileName(other));
+    other = kBuild;
+    other.imageBase += 0x1000;
+    CHECK(daoaddr::FileName(kBuild) != daoaddr::FileName(other));
+}
+
 TEST_CASE("the files packed from the table hold what the table says")
 {
     // IDs are forever, so these are too. Read 2026-10-01 from the two
@@ -182,8 +195,37 @@ TEST_CASE("the files packed from the table hold what the table says")
     const std::filesystem::path folder = DAOADDR_DATA_DIR;
     const auto gog = Library::Load(folder / daoaddr::FileName(0x4eb19d53));
     const auto ea = Library::Load(folder / daoaddr::FileName(0x52164c37));
+    constexpr BuildInfo kSteam{
+        .linkStamp = 0x4eb19d53, .sizeOfImage = 0xa49000, .entryPointRva = 0x9ed2ee, .imageBase = 0x400000};
+    const auto steam = Library::Load(folder / daoaddr::FileName(kSteam));
     REQUIRE(gog.has_value());
     REQUIRE(ea.has_value());
+    REQUIRE(steam.has_value());
+    CHECK(steam->Build() == kSteam);
+    CHECK(steam->Size() == gog->Size());
+    CHECK(steam->Address(kEntryPoint) == 0x008E3024U);
+    CHECK(steam->Address(kSetPaused) == 0x005D6740U);
+    CHECK(steam->Find(kClientExoApp) == Entry{.rva = 0x8327EC, .isData = true});
+    // Steam's engine sections are identical to GOG's apart from PE load
+    // configuration. Every GOG ID must retain its address in Steam.
+    std::size_t mismatches = 0;
+    for (std::uint32_t id = 1; id < gog->Size(); ++id)
+    {
+        if (const auto rva = gog->Rva(Id{id}); rva && steam->Rva(Id{id}) != rva)
+        {
+            ++mismatches;
+        }
+    }
+    CHECK(mismatches == 0);
+    // The old aliases still load GOG/EA; full names load the same columns.
+    const auto fullGog = Library::Load(folder / daoaddr::FileName(gog->Build()));
+    const auto fullEa = Library::Load(folder / daoaddr::FileName(ea->Build()));
+    REQUIRE(fullGog.has_value());
+    REQUIRE(fullEa.has_value());
+    CHECK(fullGog->Build() == gog->Build());
+    CHECK(fullEa->Build() == ea->Build());
+    CHECK(fullGog->Count() == gog->Count());
+    CHECK(fullEa->Count() == ea->Count());
 
     CHECK(gog->Build() == kBuild);
     // The EA app's file is wrapped: the entry point in its headers is the

@@ -267,10 +267,9 @@ def undecorate(name):
 
 def check(img):
     """Which build of data/builds.csv a file is. A build's row is of the exe
-    as installed, so a file that matches one in every header field and in
-    its hash is that build, untouched; one that matches in its link stamp
-    alone is an image made from it (the EA build as tools/ea_dump.py writes
-    it, its entry point put back)."""
+    as installed; analysis images have their own recorded hashes because
+    unpacking changes headers. A modified file can match all four header
+    fields, but a shared timestamp alone never identifies a build."""
     sha = hashlib.sha256(img.data).hexdigest()
     have = {
         "sha256": sha,
@@ -289,9 +288,13 @@ def check(img):
             print(f"the {build['key']} build, as installed: {build['name']}")
             return 0
     for build in builds:
-        if int(build["link_stamp"], 16) == img.time_date_stamp:
+        if build.get("image_sha256") == sha:
+            print(f"the {build['key']} analysis image: {build['name']}")
+            return 0
+    for build in builds:
+        if all(int(build[k], 16) == have[k] for k in have if k != "sha256"):
             print(
-                f"the {build['key']} build ({build['name']}), but not the file as installed"
+                f"the {build['key']} headers ({build['name']}), but an unverified file hash"
             )
             return 0
     print("NOT a build data/builds.csv knows: the address library has no column for it")

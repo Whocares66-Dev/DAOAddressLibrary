@@ -8,8 +8,8 @@
 // itself in, so a build of the game it has never seen needs a new file and
 // nothing rebuilt:
 //
-//   const auto stamp = /* IMAGE_FILE_HEADER::TimeDateStamp of the running exe */;
-//   const auto library = daoaddr::Library::Load(folder / daoaddr::FileName(stamp));
+//   const BuildInfo build = /* the running exe's four PE header fields */;
+//   const auto library = daoaddr::Library::Load(folder / daoaddr::FileName(build));
 //   if (!library) { /* no file for this build: touch nothing */ }
 //   const auto rva = library->Rva(daoaddr::Id{10547});   // CClientExoApp::SetPaused
 //
@@ -138,9 +138,12 @@ class Index
     std::vector<std::pair<std::uint32_t, std::uint32_t>> places_; // (rva, id), sorted
 };
 
-// The name of the file for a build: "daoaddresses-4eb19d53.bin" for the one
-// linked at 0x4eb19d53. The link stamp is what a program has of the game it
-// is in before it has anything else; the header inside says the rest.
+// All four PE fields: Steam and GOG have the same link stamp. Check that
+// the loaded Library::Build() equals the requested build before using it.
+std::string FileName(const BuildInfo &build);
+
+// Legacy timestamp aliases, retained for existing GOG/EA consumers only.
+// New consumers must use the BuildInfo overload; a timestamp is not unique.
 std::string FileName(std::uint32_t linkStamp);
 
 } // namespace daoaddr

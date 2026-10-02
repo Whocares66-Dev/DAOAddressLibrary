@@ -26,10 +26,11 @@ The runtime file's format (`src/daoaddr/Library.cpp`'s head, `tools/addrlib.py`'
 |---|---|---|---|
 | `gog-1.05` | GOG Ultimate Edition 1.05.13263.0, link stamp 0x4eb19d53 | `C:\Program Files (x86)\GOG Galaxy\Games\Dragon Age Origins\bin_ship\DAOrigins.exe` | `game\gog\DAOrigins.exe`, the file itself |
 | `ea-1.05` | EA app Ultimate Edition 1.05.13263.0, link stamp 0x52164c37, wrapped | `C:\Program Files\EA Games\Dragon Age\bin_ship\daorigins.exe` | `game\ea\DAOrigins.dump.exe`, decrypted (`tools\ea_dump.py`); `game\ea\DAOrigins.exe` is the file as installed |
+| `steam-1.05` | Steam Ultimate Edition 1.05.13263.0, link stamp 0x4eb19d53, wrapped | `E:\SteamLibrary\steamapps\common\Dragon Age Ultimate Edition\bin_ship\DAOrigins.exe` | `game\steam\DAOrigins.unpacked.exe`, Steamless 3.1.0.5; stock copy is `game\steam\DAOrigins.exe` |
 
-A key is a label for a build, `<store>-<version>`, with something more only if a store sells two builds of one version. It is not what tells a build: its link stamp is, with its image size and entry point, and the runtime file is named by the link stamp. So a store's next version is a new row and a new column, and a build two stores both sell is one row.
+A key is a label for a build, `<store>-<version>`, with something more only if a store sells two builds of one version. The runtime identity is the full PE fingerprint: link stamp, image size, entry RVA and preferred image base. Steam and GOG share a link stamp, so a timestamp alone cannot identify the build. Runtime files use all four fields; the original timestamp-only GOG and EA files remain explicit legacy aliases. A store's next version is a new row and column, and an identical executable sold by two stores needs only one row.
 
-`game\` is ignored by git: the executables are BioWare's and EA's. Steam's build is not read; there is no copy yet.
+`game\` is ignored by git: the executables are BioWare's and EA's. Steam is read from `game\steam\DAOrigins.unpacked.exe`, produced by Steamless 3.1.0.5 from the installed copy at `E:\SteamLibrary\steamapps\common\Dragon Age Ultimate Edition\bin_ship\DAOrigins.exe`. See `dev/STEAM.md`; the installation itself is unchanged.
 
 **`tools\ea_dump.py` starts the game through the EA app.** Say so before running it, check that no `DAOrigins.exe` is running (the game runs one at a time, and other sessions play-test in it), and do not run it for no reason: the dump in `game\ea\` is good until EA ships another file.
 
@@ -59,7 +60,7 @@ game/           the executables (ignored)
 
 The tooling is DAOLib's, which is the Skyrim repos': VS 2022 `cl.exe` targeting x86, vcpkg at `C:\vcpkg`, LLVM 22 for clang-format and clang-tidy, ruff, gersemi, PSScriptAnalyzer. Each fails the run on a finding. Run all four before a commit that touches code; a commit that only fills the table needs `python tools\addrlib.py check` and the tests.
 
-The build packs the table into `build\<preset>\daolib\addresses\daoaddresses-<link stamp>.bin`, one per build. They are not in git: they are the table in another form, attached to a release.
+The build packs the table into `build\<preset>\daolib\addresses\daoaddresses-<stamp>-<size>-<entry>-<base>.bin`, one per build. They are not in git: they are the table in another form, attached to a release.
 
 ## Working on the comparison
 
