@@ -87,6 +87,20 @@ class Row:
         self.addresses = addresses  # {build key: address}
 
 
+def write_if_changed(path, text):
+    """Writes a file of the table's unless it already says this. A checkout
+    with its line ends turned to CR LF says the same thing, and writing over
+    it would show git a file changed in which nothing was: naming one ID is
+    then one changed file, the table, and not the notes too."""
+    if os.path.exists(path):
+        with open(path, encoding="utf-8", newline="") as f:
+            if f.read().replace("\r\n", "\n") == text:
+                return False
+    with open(path, "w", encoding="utf-8", newline="") as f:
+        f.write(text)
+    return True
+
+
 class Database:
     """The table, the builds and the notes, as the three files hold them."""
 
@@ -126,19 +140,21 @@ class Database:
             self.rows[int(line[0])] = Row(line[1], line[2], addresses)
 
     def save(self):
-        with open(ADDRESSES, "w", encoding="utf-8", newline="") as f:
-            writer = csv.writer(f, lineterminator="\n")
-            writer.writerow(["id", "kind", "name", *self.columns])
-            for number, row in self.rows.items():
-                cells = [
-                    f"{row.addresses[key]:#010x}" if key in row.addresses else ""
-                    for key in self.columns
-                ]
-                writer.writerow([number, row.kind, row.name, *cells])
-        with open(NOTES, "w", encoding="utf-8", newline="") as f:
-            writer = csv.writer(f, lineterminator="\n")
-            writer.writerow(["id", "build", "flag", "detail"])
-            writer.writerows(sorted(self.notes))
+        table = io.StringIO(newline="")
+        writer = csv.writer(table, lineterminator="\n")
+        writer.writerow(["id", "kind", "name", *self.columns])
+        for number, row in self.rows.items():
+            cells = [
+                f"{row.addresses[key]:#010x}" if key in row.addresses else ""
+                for key in self.columns
+            ]
+            writer.writerow([number, row.kind, row.name, *cells])
+        notes = io.StringIO(newline="")
+        writer = csv.writer(notes, lineterminator="\n")
+        writer.writerow(["id", "build", "flag", "detail"])
+        writer.writerows(sorted(self.notes))
+        write_if_changed(ADDRESSES, table.getvalue())
+        write_if_changed(NOTES, notes.getvalue())
 
     def build(self, key):
         for build in self.builds:

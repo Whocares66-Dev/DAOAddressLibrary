@@ -4,6 +4,7 @@ the real table, which `addrlib.py check` answers for."""
 import os
 import struct
 import sys
+import tempfile
 import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -129,6 +130,36 @@ class Check(unittest.TestCase):
         db = database()
         db.columns.append("c")
         self.assertEqual(self.faults(db), 1)
+
+
+class Saving(unittest.TestCase):
+    def setUp(self):
+        self.folder = tempfile.TemporaryDirectory()
+        self.path = os.path.join(self.folder.name, "table.csv")
+
+    def tearDown(self):
+        self.folder.cleanup()
+
+    def bytes(self):
+        with open(self.path, "rb") as f:
+            return f.read()
+
+    def test_a_file_is_written_with_lf_ends(self):
+        self.assertTrue(addrlib.write_if_changed(self.path, "id,kind\n1,data\n"))
+        self.assertEqual(self.bytes(), b"id,kind\n1,data\n")
+
+    def test_a_file_that_says_the_same_is_left_alone(self):
+        # As git checks it out where line ends are turned to CR LF.
+        with open(self.path, "wb") as f:
+            f.write(b"id,kind\r\n1,data\r\n")
+        self.assertFalse(addrlib.write_if_changed(self.path, "id,kind\n1,data\n"))
+        self.assertEqual(self.bytes(), b"id,kind\r\n1,data\r\n")
+
+    def test_a_file_that_says_something_else_is_written(self):
+        with open(self.path, "wb") as f:
+            f.write(b"id,kind\r\n1,data\r\n")
+        self.assertTrue(addrlib.write_if_changed(self.path, "id,kind\n1,function\n"))
+        self.assertEqual(self.bytes(), b"id,kind\n1,function\n")
 
 
 class Naming(unittest.TestCase):
