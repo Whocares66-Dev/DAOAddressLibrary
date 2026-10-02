@@ -12,7 +12,7 @@ The game is sold by GOG, EA and Steam. They all say version 1.05.13263.0, and th
 
 ## What is here
 
-- **The table**, [data/addresses.csv](data/addresses.csv): a row per ID, with its name where it has one, and a column per build. 104,397 IDs as of 2026-10-01, 7,395 of them named. [data/builds.csv](data/builds.csv) says what each build is and how to tell its file; [data/notes.csv](data/notes.csv) says what a cell alone cannot (a function whose code differs between builds, an address two IDs share).
+- **The table**, [data/addresses.csv](data/addresses.csv): a row per ID, with its name where it has one, and a column per build. 104,397 IDs as of 2026-10-01, some 7,400 of them named so far (`python tools\addrlib.py stats` counts both). [data/builds.csv](data/builds.csv) says what each build is and how to tell its file; [data/notes.csv](data/notes.csv) says what a cell alone cannot (a function whose code differs between builds, an address two IDs share).
 - **The files a program reads at run time**, one per build, packed from the table: `daoaddresses-<link stamp>.bin`, about 420 KB each. The build writes them to `build\<preset>\daolib\addresses\`.
 - **The reader**, `src/daoaddr`: a small C++20 library, standard library only, that loads a build's file and answers "where is this ID" and "what ID is at this address".
 - **The tools** that make the table from the executables (`tools/`), which need the game. Nothing else does.

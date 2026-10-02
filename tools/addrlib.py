@@ -636,9 +636,11 @@ def kept(db, revision):
 
 def stats(db):
     kinds = collections.Counter(row.kind for row in db.rows.values())
+    named = sum(1 for row in db.rows.values() if row.name)
     print(
         f"{len(db.rows)} IDs: "
         + ", ".join(f"{n} {kind}" for kind, n in kinds.most_common())
+        + f"; {named} named"
     )
     for key in db.columns:
         have = [row for row in db.rows.values() if key in row.addresses]
