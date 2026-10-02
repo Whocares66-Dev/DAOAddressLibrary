@@ -33,7 +33,7 @@ if (!library || library->Build() != build)
 const auto setPaused = library->Rva(daoaddr::Id{10547}); // add the exe's base
 ```
 
-A new executable with a new fingerprint needs a new data file. Existing consumers using `FileName(linkStamp)` must migrate to `FileName(BuildInfo)` to distinguish Steam from GOG. The old overload and GOG/EA files remain available. [DAOLib](https://github.com/Whocares66-Dev/DAOLib) consumes this library; its Steam loader integration and play testing are separate from this address map ([Steam findings](dev/STEAM.md)).
+A new executable with a new fingerprint needs a new data file. `FileName(BuildInfo)` is the only name a file has, since Steam's and GOG's link stamps are the same: the overload that took a link stamp alone, and the `daoaddresses-<stamp>.bin` files it named, were dropped on 2026-10-02. [DAOLib](https://github.com/Whocares66-Dev/DAOLib) consumes this library; its Steam loader integration and play testing are separate from this address map ([Steam findings](dev/STEAM.md)).
 
 To find an ID:
 
@@ -81,7 +81,7 @@ python tools\addrlib.py add <key>
 python tools\addrlib.py check
 ```
 
-A key is a label for a build, `<store>-<version>`, with something more only if a store sells two builds of one version. The runtime identity is the full PE fingerprint: link stamp, image size, entry RVA and preferred image base. Steam and GOG share a link stamp, so a timestamp alone cannot identify the build. Runtime files use all four fields; the original timestamp-only GOG and EA files remain explicit legacy aliases. A store's next version is a new row and column, and an identical executable sold by two stores needs only one row.
+A key is a label for a build, `<store>-<version>`, with something more only if a store sells two builds of one version. The runtime identity is the full PE fingerprint: link stamp, image size, entry RVA and preferred image base. Steam and GOG share a link stamp, so a timestamp alone cannot identify the build. Runtime files are named by all four fields and by nothing else: the timestamp-only names GOG's and EA's first files had were dropped on 2026-10-02. A store's next version is a new row and column, and an identical executable sold by two stores needs only one row.
 
 Every ID is looked for in the new build, and what only it has gets new IDs. [dev/BUILDS.md](dev/BUILDS.md) explains the comparison and EA changes; [dev/STEAM.md](dev/STEAM.md) records Steamless extraction, Steam coverage and the loader handoff.
 

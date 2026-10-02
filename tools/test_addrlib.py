@@ -78,27 +78,35 @@ class Pack(unittest.TestCase):
             other = BUILD_A | {field: hex(int(BUILD_A[field], 16) + 0x1000)}
             self.assertNotEqual(addrlib.file_name(BUILD_A), addrlib.file_name(other))
 
-    def test_pack_keeps_legacy_alias_without_overwriting_it_with_same_stamp(self):
+    def test_pack_writes_a_file_per_build_and_leaves_no_other(self):
         db = database()
-        db.builds[0] = BUILD_A | {"legacy": "1"}
         db.builds[1] = BUILD_B | {
             "link_stamp": BUILD_A["link_stamp"],
             "entry_point_rva": "0x2000",
         }
         with tempfile.TemporaryDirectory() as folder:
+            # As a folder packed before 2026-10-02 has: a file named by link
+            # stamp alone, which nothing writes now. And a file not ours.
+            for name in ("daoaddresses-4eb19d53.bin", "functions.tsv"):
+                with open(os.path.join(folder, name), "wb") as f:
+                    f.write(b"old")
             self.assertEqual(addrlib.pack(db, folder), 0)
+            names = [addrlib.file_name(build) for build in db.builds]
+            self.assertEqual(
+                sorted(os.listdir(folder)), sorted([*names, "functions.tsv"])
+            )
             for build in db.builds:
                 with open(os.path.join(folder, addrlib.file_name(build)), "rb") as f:
                     self.assertEqual(f.read(), addrlib.pack_build(db, build))
-            with open(os.path.join(folder, "daoaddresses-4eb19d53.bin"), "rb") as f:
-                self.assertEqual(f.read(), addrlib.pack_build(db, db.builds[0]))
 
     def test_pack_refuses_collisions_before_writing_anything(self):
         db = database()
         db.builds[1] = BUILD_A | {"key": "b"}
         with tempfile.TemporaryDirectory() as folder:
+            with open(os.path.join(folder, "daoaddresses-4eb19d53.bin"), "wb") as f:
+                f.write(b"old")
             self.assertEqual(addrlib.pack(db, folder), 1)
-            self.assertEqual(os.listdir(folder), [])
+            self.assertEqual(os.listdir(folder), ["daoaddresses-4eb19d53.bin"])
 
 
 class Asking(unittest.TestCase):
@@ -129,14 +137,12 @@ class Check(unittest.TestCase):
     def test_a_sound_table_passes(self):
         self.assertEqual(self.faults(database()), 0)
 
-    def test_duplicate_fingerprints_and_legacy_aliases_are_faults(self):
+    def test_two_builds_of_one_fingerprint_are_a_fault(self):
         db = database()
         db.builds[1] = BUILD_A | {"key": "b"}
         self.assertEqual(self.faults(db), 1)
-        db.builds[0] = BUILD_A | {"legacy": "1"}
-        db.builds[1] |= {"entry_point_rva": "0x2000", "legacy": "1"}
-        self.assertEqual(self.faults(db), 1)
-        db.builds[1]["legacy"] = ""
+        # One link stamp is not one fingerprint: Steam's and GOG's.
+        db.builds[1] |= {"entry_point_rva": "0x2000"}
         self.assertEqual(self.faults(db), 0)
 
     def test_an_id_taken_out_is_a_fault(self):

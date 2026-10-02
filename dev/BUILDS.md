@@ -8,7 +8,7 @@ Dragon Age: Origins Ultimate Edition is sold by GOG, EA and Steam, and all say 1
 | `ea-1.05` | EA app Ultimate Edition, linked 2013-08-22 | 103,567 IDs: 102,463 of GOG's, and 1,104 of its own. |
 | `steam-1.05` | Steam Ultimate Edition, linked 2011-11-02, SteamStub 2.1 | 103,528 IDs: all 103,293 GOG IDs at identical addresses, plus 235 EA-origin IDs. See [STEAM.md](STEAM.md). |
 
-A key is a label for a build, `<store>-<version>`, with something more only if a store sells two builds of one version. The runtime identity is the full PE fingerprint: link stamp, image size, entry RVA and preferred image base. Steam and GOG share a link stamp, so a timestamp alone cannot identify the build. Runtime files use all four fields; the original timestamp-only GOG and EA files remain explicit legacy aliases. A store's next version is a new row and column, and an identical executable sold by two stores needs only one row.
+A key is a label for a build, `<store>-<version>`, with something more only if a store sells two builds of one version. The runtime identity is the full PE fingerprint: link stamp, image size, entry RVA and preferred image base. Steam and GOG share a link stamp, so a timestamp alone cannot identify the build. Runtime files are named by all four fields and by nothing else: the timestamp-only names GOG's and EA's first files had were dropped on 2026-10-02. A store's next version is a new row and column, and an identical executable sold by two stores needs only one row.
 
 ## The two files
 
@@ -110,7 +110,7 @@ Checked against something the comparison did not use: EA's own command table reg
 ## Adding a build
 
 1. Copy its executable to a folder of its own under `game\`. If it is wrapped as EA's is, get an image of it decrypted; the tools read that.
-2. Add a row to `data\builds.csv`: a key for it (`<store>-<version>`), the four header fields of the file as installed, its hash, the path of the image to read, and that image's `image_sha256`. Leave `legacy` empty for new builds: only the original GOG/EA rows reserve their timestamp aliases. `check` and `pack` reject duplicate fingerprints or alias filenames before writing.
+2. Add a row to `data\builds.csv`: a key for it (`<store>-<version>`), the four header fields of the file as installed, its hash, the path of the image to read, and that image's `image_sha256`. `check` and `pack` reject two builds of one fingerprint before anything is written.
 3. `python tools\addrlib.py add <key>`, then `check`, then the tests.
 4. `python tools\exemap.py <reference> <image> --changes` for what differs in it, and write that up here: a plugin author needs to know which classes moved.
 

@@ -165,12 +165,6 @@ TEST_CASE("where IDs share an address the lowest answers for it")
     CHECK(hit->offset == 8);
 }
 
-TEST_CASE("a build's file is named by its link stamp")
-{
-    CHECK(daoaddr::FileName(0x4eb19d53) == "daoaddresses-4eb19d53.bin");
-    CHECK(daoaddr::FileName(0x00000abc) == "daoaddresses-00000abc.bin");
-}
-
 TEST_CASE("the full fingerprint distinguishes builds sharing a link stamp")
 {
     CHECK(daoaddr::FileName(kBuild) == "daoaddresses-4eb19d53-009ec0a2-004e3024-00400000.bin");
@@ -193,8 +187,16 @@ TEST_CASE("the files packed from the table hold what the table says")
     constexpr Id kClientExoApp{100835};
 
     const std::filesystem::path folder = DAOADDR_DATA_DIR;
-    const auto gog = Library::Load(folder / daoaddr::FileName(0x4eb19d53));
-    const auto ea = Library::Load(folder / daoaddr::FileName(0x52164c37));
+    // The EA app's file is wrapped: the entry point in its headers is the
+    // wrapper's, not the game's.
+    constexpr BuildInfo kEa{
+        .linkStamp = 0x52164c37, .sizeOfImage = 0x96b000, .entryPointRva = 0x1000, .imageBase = 0x400000};
+    const auto gog = Library::Load(folder / daoaddr::FileName(kBuild));
+    const auto ea = Library::Load(folder / daoaddr::FileName(kEa));
+    // Named by link stamp alone until 2026-10-02, and GOG's is Steam's too:
+    // pack writes neither now, and takes out one an earlier pack left.
+    CHECK_FALSE(std::filesystem::exists(folder / "daoaddresses-4eb19d53.bin"));
+    CHECK_FALSE(std::filesystem::exists(folder / "daoaddresses-52164c37.bin"));
     constexpr BuildInfo kSteam{
         .linkStamp = 0x4eb19d53, .sizeOfImage = 0xa49000, .entryPointRva = 0x9ed2ee, .imageBase = 0x400000};
     const auto steam = Library::Load(folder / daoaddr::FileName(kSteam));
@@ -217,21 +219,9 @@ TEST_CASE("the files packed from the table hold what the table says")
         }
     }
     CHECK(mismatches == 0);
-    // The old aliases still load GOG/EA; full names load the same columns.
-    const auto fullGog = Library::Load(folder / daoaddr::FileName(gog->Build()));
-    const auto fullEa = Library::Load(folder / daoaddr::FileName(ea->Build()));
-    REQUIRE(fullGog.has_value());
-    REQUIRE(fullEa.has_value());
-    CHECK(fullGog->Build() == gog->Build());
-    CHECK(fullEa->Build() == ea->Build());
-    CHECK(fullGog->Count() == gog->Count());
-    CHECK(fullEa->Count() == ea->Count());
 
     CHECK(gog->Build() == kBuild);
-    // The EA app's file is wrapped: the entry point in its headers is the
-    // wrapper's, not the game's.
-    CHECK(ea->Build() ==
-          BuildInfo{.linkStamp = 0x52164c37, .sizeOfImage = 0x96b000, .entryPointRva = 0x1000, .imageBase = 0x400000});
+    CHECK(ea->Build() == kEa);
     CHECK(gog->Size() == ea->Size());
     // Each build has most of the IDs and not all: some things only one has.
     // Not the counts themselves, which grow as the table is filled.

@@ -140,10 +140,9 @@ class Index
 
 // All four PE fields: Steam and GOG have the same link stamp. Check that
 // the loaded Library::Build() equals the requested build before using it.
+// There was an overload taking the link stamp alone, for the names GOG's
+// and EA's first files had (daoaddresses-4eb19d53.bin); it and those files
+// went on 2026-10-02, so that nothing can ask for a file no longer written.
 std::string FileName(const BuildInfo &build);
-
-// Legacy timestamp aliases, retained for existing GOG/EA consumers only.
-// New consumers must use the BuildInfo overload; a timestamp is not unique.
-std::string FileName(std::uint32_t linkStamp);
 
 } // namespace daoaddr

@@ -144,11 +144,6 @@ std::optional<Index::Hit> Index::At(std::uint32_t rva) const
     return Hit{.id = Id{first->second}, .offset = rva - at};
 }
 
-std::string FileName(std::uint32_t linkStamp)
-{
-    return std::format("daoaddresses-{:08x}.bin", linkStamp);
-}
-
 std::string FileName(const BuildInfo &build)
 {
     return std::format("daoaddresses-{:08x}-{:08x}-{:08x}-{:08x}.bin", build.linkStamp, build.sizeOfImage,

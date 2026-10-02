@@ -49,6 +49,7 @@ table, lookup, name, pack, check and kept do not.
 import bisect
 import collections
 import csv
+import glob
 import io
 import os
 import struct
@@ -512,26 +513,27 @@ def file_name(build):
     )
 
 
-def output_names(build):
-    names = [file_name(build)]
-    # Explicit legacy aliases preserve existing GOG/EA consumers. Never
-    # assign a timestamp alias to a new build just because it was read first.
-    if build.get("legacy") == "1":
-        names.append(f"daoaddresses-{int(build['link_stamp'], 16):08x}.bin")
-    return names
-
-
 def pack(db, folder):
     if check(db):
         return 1
     os.makedirs(folder, exist_ok=True)
+    written = set()
     for build in db.builds:
         if build["key"] in db.columns:
             data = pack_build(db, build)
-            for name in output_names(build):
-                with open(os.path.join(folder, name), "wb") as f:
-                    f.write(data)
-                print(f"{name}: {len(data)} bytes, the {build['key']} build")
+            name = file_name(build)
+            with open(os.path.join(folder, name), "wb") as f:
+                f.write(data)
+            written.add(name)
+            print(f"{name}: {len(data)} bytes, the {build['key']} build")
+    # The folder is the table in another form, and a loader's deploy copies
+    # every .bin in it. A file under a name no longer written would stay as
+    # it was and go on being copied: GOG's and EA's first files were named
+    # by link stamp alone (daoaddresses-4eb19d53.bin) until 2026-10-02.
+    for name in sorted(glob.glob("daoaddresses-*.bin", root_dir=folder)):
+        if name not in written:
+            os.remove(os.path.join(folder, name))
+            print(f"{name}: removed, no build's file is named so")
     return 0
 
 
@@ -543,14 +545,12 @@ def check(db):
         faults.append("data/builds.csv names a build twice")
     outputs = {}
     for build in db.builds:
-        if build.get("legacy", "") not in ("", "1"):
-            faults.append(f"{build['key']}: legacy must be empty or 1")
-        for name in output_names(build):
-            if name in outputs:
-                faults.append(
-                    f"{name}: {outputs[name]} and {build['key']} would overwrite each other"
-                )
-            outputs[name] = build["key"]
+        name = file_name(build)
+        if name in outputs:
+            faults.append(
+                f"{name}: {outputs[name]} and {build['key']} would overwrite each other"
+            )
+        outputs[name] = build["key"]
     faults += [
         f"the table has a column {column!r} that data/builds.csv does not name"
         for column in db.columns
