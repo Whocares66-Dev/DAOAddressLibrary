@@ -112,6 +112,27 @@ class Image:
             i = self.data.find(needle, i + 1, raw + end - start)
         return out
 
+    @cached_property
+    def relocated(self):
+        """The addresses of the words the relocation table says hold a 32-bit
+        address (its HIGHLOW entries); None for a file without the table."""
+        rva, size = self.dirs[5]
+        if not size or self.offset(rva) is None:
+            return None
+        out = set()
+        o = self.offset(rva)
+        end = o + size
+        while o < end:
+            page, block = struct.unpack_from("<II", self.data, o)
+            if block == 0:
+                break
+            for i in range((block - 8) // 2):
+                entry = struct.unpack_from("<H", self.data, o + 8 + 2 * i)[0]
+                if entry >> 12 == 3:
+                    out.add(self.image_base + page + (entry & 0xFFF))
+            o += block
+        return out
+
     # -- RTTI (32-bit MSVC: every pointer absolute) --
     @cached_property
     def type_descriptors(self):
@@ -142,6 +163,7 @@ class Image:
             if sig == 0 and td in tds and start <= chd < end:
                 locators[off - raw + start] = (td, offset)
         text = self.section(".text")
+        relocated = self.relocated
         out = []
         for off in range(raw, raw + end - start - 8, 4):
             col, first = struct.unpack_from("<II", d, off)
@@ -155,6 +177,13 @@ class Image:
                 if f is None or not text[0] <= f < text[1]:
                     break
                 if slots and p in self._locator_slots(locators):
+                    break
+                # A slot is an address the loader relocates. What follows a
+                # vftable may only look like one: a UTF-16 string's two
+                # characters, 0x00XX00YY, land in .text. 279 of GOG's 2,990
+                # vftables ran on into such words, 1,592 of them, before
+                # 2026-10-02 (CSSubActionHandler's three slots read as four).
+                if relocated is not None and p not in relocated:
                     break
                 slots.append(f)
                 p += 4
