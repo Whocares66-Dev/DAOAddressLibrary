@@ -14,6 +14,8 @@ So the table is not regenerated from scratch. `tools\addrlib.py add <key>` fills
 
 **A name is in one place.** The table's `name` column: a build's own names from its reading (exports, imports, RTTI), and the rest given with `python tools\addrlib.py name`. Projects that use the IDs (DAOLib) hold numbers and read the names here; do not keep a second list of them anywhere. Unlike an ID a name may be changed, and two IDs may share one (overloads). A name goes straight to `master`, ahead of the code that uses it if need be: it changes no ID and no address, nothing read at run time holds it, and `kept` answers for the rest. A commit that only names things says which (`A name: Class::Method (ID n)`).
 
+**One session keeps this repository.** The user's rule, 2026-10-01: "Communicate changes to addr lib agent & let it decide to makes changes & commit. This cleanly separates responsibilities." A session working in DAOLib or a plugin does not commit or push here, in this checkout or in a submodule copy of it. It sends what it needs: for a name, the ID, function or data, the name, the GOG address and what the thing is (DAOLib's `tools\address_ids.py` prints the line); for a fault in the table, the tools or the docs, what went wrong. The session that keeps the repository decides, commits to `master`, and says which commit, which the asker then holds its submodule at.
+
 The runtime file's format (`src/daoaddr/Library.cpp`'s head, `tools/addrlib.py`'s `pack_build`) is versioned by its `format` word. Readers refuse a format they do not know, so a change to it is a new number and an old reader failing safe, not a silent misread.
 
 ## The builds -- verified 2026-10-01
