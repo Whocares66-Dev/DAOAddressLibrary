@@ -4,3 +4,9 @@ InheritParentConfig: true
 Checks: >
   -bugprone-chained-comparison,
   -bugprone-unchecked-optional-access
+
+# A CHECK expands to branches of Catch2's, which are not the test's own: by
+# them a test of six checks is past the threshold. Counted without, a test is
+# held to the same 25 as anything else.
+CheckOptions:
+  readability-function-cognitive-complexity.IgnoreMacros: true

@@ -70,4 +70,4 @@ Check a change against what is known: `python tools\exemap.py game\gog\DAOrigins
 
 ## Style
 
-DAOLib's: clang-format's stock Microsoft style, lint for correctness only. Comments say why and what was read, with dates, not what the code does. A file's head says what the file is for and how it fits.
+DAOLib's: clang-format's stock Microsoft style. Lint is for correctness and, since 2026-10-05 (the user: "style & readability also matter. We want to write good clean code, avoid complexity"), for readability: clang-tidy's `readability-*` and `modernize-*` less the checks that are taste alone, which `.clang-tidy` lists with why, and a function past a cognitive complexity of 25 is split. Comments say why and what was read, with dates, not what the code does. A file's head says what the file is for and how it fits.

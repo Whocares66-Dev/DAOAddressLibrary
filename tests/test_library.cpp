@@ -4,6 +4,7 @@
 
 #include <cstring>
 #include <filesystem>
+#include <optional>
 #include <vector>
 
 using daoaddr::BuildInfo;
@@ -20,7 +21,7 @@ constexpr std::uint32_t kNone = 0xFFFFFFFF;
 // A file as tools/addrlib.py pack writes one: the header, then a word per ID.
 std::vector<std::byte> File(const BuildInfo &build, const std::vector<std::uint32_t> &words, std::uint32_t format = 1)
 {
-    std::vector<std::byte> file(0x24 + words.size() * 4);
+    std::vector<std::byte> file(0x24 + (words.size() * 4));
     std::memcpy(file.data(), "DAOADDR", 8);
     const auto put = [&](std::size_t at, std::uint32_t value) { std::memcpy(&file[at], &value, 4); };
     put(0x08, format);
@@ -31,13 +32,31 @@ std::vector<std::byte> File(const BuildInfo &build, const std::vector<std::uint3
     put(0x1C, static_cast<std::uint32_t>(words.size()));
     for (std::size_t i = 0; i < words.size(); ++i)
     {
-        put(0x24 + i * 4, words[i]);
+        put(0x24 + (i * 4), words[i]);
     }
     return file;
 }
 
 constexpr BuildInfo kBuild{
     .linkStamp = 0x4eb19d53, .sizeOfImage = 0x9ec0a2, .entryPointRva = 0x4e3024, .imageBase = 0x400000};
+// The EA app's file is wrapped: the entry point in its headers is the
+// wrapper's, not the game's.
+constexpr BuildInfo kEa{
+    .linkStamp = 0x52164c37, .sizeOfImage = 0x96b000, .entryPointRva = 0x1000, .imageBase = 0x400000};
+constexpr BuildInfo kSteam{
+    .linkStamp = 0x4eb19d53, .sizeOfImage = 0xa49000, .entryPointRva = 0x9ed2ee, .imageBase = 0x400000};
+
+// IDs are forever, so these are too. Read 2026-10-01 from the two
+// builds (dev/BUILDS.md), and each seen in play in both.
+constexpr Id kEntryPoint{25795};
+constexpr Id kSetPaused{10547};
+constexpr Id kClientExoApp{100835};
+
+// A build's file as the build packed it from the table.
+std::optional<Library> Packed(const BuildInfo &build)
+{
+    return Library::Load(std::filesystem::path(DAOADDR_DATA_DIR) / daoaddr::FileName(build));
+}
 
 } // namespace
 
@@ -180,45 +199,15 @@ TEST_CASE("the full fingerprint distinguishes builds sharing a link stamp")
 
 TEST_CASE("the files packed from the table hold what the table says")
 {
-    // IDs are forever, so these are too. Read 2026-10-01 from the two
-    // builds (dev/BUILDS.md), and each seen in play in both.
-    constexpr Id kEntryPoint{25795};
-    constexpr Id kSetPaused{10547};
-    constexpr Id kClientExoApp{100835};
-
-    const std::filesystem::path folder = DAOADDR_DATA_DIR;
-    // The EA app's file is wrapped: the entry point in its headers is the
-    // wrapper's, not the game's.
-    constexpr BuildInfo kEa{
-        .linkStamp = 0x52164c37, .sizeOfImage = 0x96b000, .entryPointRva = 0x1000, .imageBase = 0x400000};
-    const auto gog = Library::Load(folder / daoaddr::FileName(kBuild));
-    const auto ea = Library::Load(folder / daoaddr::FileName(kEa));
-    // Named by link stamp alone until 2026-10-02, and GOG's is Steam's too:
-    // pack writes neither now, and takes out one an earlier pack left.
-    CHECK_FALSE(std::filesystem::exists(folder / "daoaddresses-4eb19d53.bin"));
-    CHECK_FALSE(std::filesystem::exists(folder / "daoaddresses-52164c37.bin"));
-    constexpr BuildInfo kSteam{
-        .linkStamp = 0x4eb19d53, .sizeOfImage = 0xa49000, .entryPointRva = 0x9ed2ee, .imageBase = 0x400000};
-    const auto steam = Library::Load(folder / daoaddr::FileName(kSteam));
+    const auto gog = Packed(kBuild);
+    const auto ea = Packed(kEa);
     REQUIRE(gog.has_value());
     REQUIRE(ea.has_value());
-    REQUIRE(steam.has_value());
-    CHECK(steam->Build() == kSteam);
-    CHECK(steam->Size() == gog->Size());
-    CHECK(steam->Address(kEntryPoint) == 0x008E3024U);
-    CHECK(steam->Address(kSetPaused) == 0x005D6740U);
-    CHECK(steam->Find(kClientExoApp) == Entry{.rva = 0x8327EC, .isData = true});
-    // Steam's engine sections are identical to GOG's apart from PE load
-    // configuration. Every GOG ID must retain its address in Steam.
-    std::size_t mismatches = 0;
-    for (std::uint32_t id = 1; id < gog->Size(); ++id)
-    {
-        if (const auto rva = gog->Rva(Id{id}); rva && steam->Rva(Id{id}) != rva)
-        {
-            ++mismatches;
-        }
-    }
-    CHECK(mismatches == 0);
+    // Named by link stamp alone until 2026-10-02, and GOG's is Steam's too:
+    // pack writes neither now, and takes out one an earlier pack left.
+    const std::filesystem::path folder = DAOADDR_DATA_DIR;
+    CHECK_FALSE(std::filesystem::exists(folder / "daoaddresses-4eb19d53.bin"));
+    CHECK_FALSE(std::filesystem::exists(folder / "daoaddresses-52164c37.bin"));
 
     CHECK(gog->Build() == kBuild);
     CHECK(ea->Build() == kEa);
@@ -236,7 +225,38 @@ TEST_CASE("the files packed from the table hold what the table says")
     CHECK(ea->Address(kSetPaused) == 0x004C1770U);
     CHECK(gog->Find(kClientExoApp) == Entry{.rva = 0x8327EC, .isData = true});
     CHECK(ea->Find(kClientExoApp) == Entry{.rva = 0x81ADAC, .isData = true});
+}
 
+TEST_CASE("Steam's file has every ID GOG's has, at GOG's address")
+{
+    const auto gog = Packed(kBuild);
+    const auto steam = Packed(kSteam);
+    REQUIRE(gog.has_value());
+    REQUIRE(steam.has_value());
+    CHECK(steam->Build() == kSteam);
+    CHECK(steam->Size() == gog->Size());
+    CHECK(steam->Address(kEntryPoint) == 0x008E3024U);
+    CHECK(steam->Address(kSetPaused) == 0x005D6740U);
+    CHECK(steam->Find(kClientExoApp) == Entry{.rva = 0x8327EC, .isData = true});
+    // Steam's engine sections are identical to GOG's apart from PE load
+    // configuration. Every GOG ID must retain its address in Steam.
+    std::size_t mismatches = 0;
+    for (std::uint32_t id = 1; id < gog->Size(); ++id)
+    {
+        if (const auto rva = gog->Rva(Id{id}); rva && steam->Rva(Id{id}) != rva)
+        {
+            ++mismatches;
+        }
+    }
+    CHECK(mismatches == 0);
+}
+
+TEST_CASE("an address in the game's code is the same ID and distance in two builds")
+{
+    const auto gog = Packed(kBuild);
+    const auto ea = Packed(kEa);
+    REQUIRE(gog.has_value());
+    REQUIRE(ea.has_value());
     // The return address the game's first SetPaused comes from: the same
     // function and the same distance into it in both builds.
     const auto inGog = Index{*gog}.At(0x005DD34F - 0x400000);
