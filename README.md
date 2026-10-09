@@ -63,6 +63,8 @@ How IDs are carried from one build to another is in [dev/BUILDS.md](dev/BUILDS.m
 ```powershell
 .\tools\build.ps1 -Preset debug -Test           # the reader, the files, the tests
 .\tools\build.ps1 -Preset debug -Format -Lint   # formatters and linters
+.\tools\build.ps1 -Preset debug-asan -Test      # the tests under AddressSanitizer
+.\tools\build.ps1 -Preset debug-analyze         # under MSVC's /analyze
 ```
 
 Visual Studio 2022, vcpkg, x86. Only the tools that read the game's executables need the game; those files are BioWare's and EA's and are not in this repository.

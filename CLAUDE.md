@@ -20,45 +20,23 @@ The same holds the other way, for every repository: "each agent is responsible f
 
 The runtime file's format (`src/daoaddr/Library.cpp`'s head, `tools/addrlib.py`'s `pack_build`) is versioned by its `format` word. Readers refuse a format they do not know, so a change to it is a new number and an old reader failing safe, not a silent misread.
 
-## The builds -- verified 2026-10-01
+## The builds
 
-| key | | exe | image the tools read |
-|---|---|---|---|
-| `gog-1.05` | GOG Ultimate Edition 1.05.13263.0, link stamp 0x4eb19d53 | `C:\Program Files (x86)\GOG Galaxy\Games\Dragon Age Origins\bin_ship\DAOrigins.exe` | `game\gog\DAOrigins.exe`, the file itself |
-| `ea-1.05` | EA app Ultimate Edition 1.05.13263.0, link stamp 0x52164c37, wrapped | `C:\Program Files\EA Games\Dragon Age\bin_ship\daorigins.exe` | `game\ea\DAOrigins.dump.exe`, decrypted (`tools\ea_dump.py`); `game\ea\DAOrigins.exe` is the file as installed |
-| `steam-1.05` | Steam Ultimate Edition 1.05.13263.0, link stamp 0x4eb19d53, wrapped | `E:\SteamLibrary\steamapps\common\Dragon Age Ultimate Edition\bin_ship\DAOrigins.exe` | `game\steam\DAOrigins.unpacked.exe`, Steamless 3.1.0.5; stock copy is `game\steam\DAOrigins.exe` |
+`data\builds.csv` has each build's key, its fingerprint and the image the tools read. What each build is, where it is installed, how the EA and Steam files are unwrapped and what a key and a file's name are made of is in `dev/BUILDS.md`, with Steam's in `dev/STEAM.md`. Do not restate any of it here.
 
-A key is a label for a build, `<store>-<version>`, with something more only if a store sells two builds of one version. The runtime identity is the full PE fingerprint: link stamp, image size, entry RVA and preferred image base. Steam and GOG share a link stamp, so a timestamp alone cannot identify the build. Runtime files are named by all four fields and by nothing else: the timestamp-only names GOG's and EA's first files had were dropped on 2026-10-02. A store's next version is a new row and column, and an identical executable sold by two stores needs only one row.
+`game\` is ignored by git: the executables are BioWare's and EA's, and never go in a commit.
 
-`game\` is ignored by git: the executables are BioWare's and EA's. Steam is read from `game\steam\DAOrigins.unpacked.exe`, produced by Steamless 3.1.0.5 from the installed copy at `E:\SteamLibrary\steamapps\common\Dragon Age Ultimate Edition\bin_ship\DAOrigins.exe`. See `dev/STEAM.md`; the installation itself is unchanged.
-
-**`tools\ea_dump.py` starts the game through the EA app.** Say so before running it, check that no `DAOrigins.exe` is running (the game runs one at a time, and other sessions play-test in it), and do not run it for no reason: the dump in `game\ea\` is good until EA ships another file.
+**`tools\ea_dump.py` starts the game through the EA app** (`dev/BUILDS.md`, "Reading it"). Say so before running it, check that no `DAOrigins.exe` is running (the game runs one at a time, and other sessions play-test in it), and do not run it for no reason: the dump in `game\ea\` is good until EA ships another file.
 
 ## Layout
 
-```
-data/           addresses.csv (the table), builds.csv (the builds and their fingerprints), notes.csv (changed, shared, ambiguous)
-src/daoaddr/    the reader: Library (a build's file), Index (an address back to an ID). C++20, standard library only, no <Windows.h>
-tests/          Catch2 over the reader, and the packed files against the table; ctest also runs tools/test_*.py and addrlib.py check
-tools/          addrlib.py (the table: add, lookup, pack, check, stats), exemap.py (one build compared with another, and a
-                build's inventory), daoexe.py (a PE read without Ghidra: RTTI, vftables, imports, disassembly), msvc_names.py,
-                ea_dump.py (the EA build decrypted, from the running game), build.ps1, check-powershell.ps1, console.ps1
-dev/            BUILDS.md
-game/           the executables (ignored)
-```
+`README.md`, "What is here", says what each top-level folder is; each tool's head says what it does, and `python tools\addrlib.py --help` lists the table's commands.
 
 `daoexe.py` and `msvc_names.py` came from DAOLib, which has copies its other tools use. This is the lower layer, so a fix belongs here first.
 
 ## Building
 
-```powershell
-.\tools\build.ps1 -Preset debug -Test           # the reader, the files, the tests
-.\tools\build.ps1 -Preset debug -Format -Lint   # rewrite with the formatters, then clang-tidy, ruff, PSScriptAnalyzer
-.\tools\build.ps1 -Preset debug-asan -Test      # the tests under AddressSanitizer
-.\tools\build.ps1 -Preset debug-analyze         # under MSVC's /analyze
-```
-
-The tooling is DAOLib's, which is the Skyrim repos': VS 2022 `cl.exe` targeting x86, vcpkg at `C:\vcpkg`, LLVM 22 for clang-format and clang-tidy, ruff, gersemi, PSScriptAnalyzer. Each fails the run on a finding. Run all four before a commit that touches code; a commit that only fills the table needs `python tools\addrlib.py check` and the tests.
+The commands are in `README.md`, "Building"; `cmake/Quality.cmake`'s head says which formatters and linters run and how each is installed. vcpkg is at `C:\vcpkg`. Each command fails the run on a finding. Run all four before a commit that touches code; a commit that only fills the table needs `python tools\addrlib.py check` and the tests.
 
 The build packs the table into `build\<preset>\daolib\addresses\daoaddresses-<stamp>-<size>-<entry>-<base>.bin`, one per build. They are not in git: they are the table in another form, attached to a release.
 
@@ -66,8 +44,12 @@ The build packs the table into `build\<preset>\daolib\addresses\daoaddresses-<st
 
 `tools\exemap.py` is the part with judgement in it. What it may do: pair two addresses because two instructions that are otherwise the same hold them, or because two tables of the same class hold them at the same slot, or because two functions are the same code referring to the same things and nothing else on either side is. What it may not do: pair by position in a table the linker orders, by nearness alone, or by a guess. A wrong pair is worse than a missing one: a missing cell fails loudly in a plugin, a wrong one hooks the wrong function.
 
-Check a change against what is known: `python tools\exemap.py game\gog\DAOrigins.exe game\ea\DAOrigins.dump.exe` should still say `0 pairs rejected`, and the script commands, which each build registers by name, must map to each other (DAOLib's `tools\script_commands.py` reads the registrations; 692 of 692 on 2026-10-01).
+Check a change against what is known: `python tools\exemap.py game\gog\DAOrigins.exe game\ea\DAOrigins.dump.exe` should still say `0 pairs rejected`, and the script commands, which each build registers by name, must all map to each other (DAOLib's `tools\script_commands.py` reads the registrations). `dev/BUILDS.md`, "Carrying an ID to another build", says how the comparison works and what it found.
 
 ## Style
 
-DAOLib's: clang-format's stock Microsoft style. Lint is for correctness and, since 2026-10-05 (the user: "style & readability also matter. We want to write good clean code, avoid complexity"), for readability: clang-tidy's `readability-*` and `modernize-*` less the checks that are taste alone, which `.clang-tidy` lists with why, and a function past a cognitive complexity of 25 is split. Comments say why and what was read, with dates, not what the code does. A file's head says what the file is for and how it fits.
+clang-format's stock Microsoft style. `.clang-tidy` says which lint checks run and why, and holds the user's words that set them; a function past its complexity threshold is split along its real parts, not to reach the number. Comments say why and what was read, with dates, not what the code does. A file's head says what the file is for and how it fits.
+
+## One source of truth
+
+The user, 2026-10-09: "Keep one source of truth", and of this file, "have Claude MD point to things instead of copying". A fact is written in one place and linked from the others: the README says what the library is and how to use it, `dev/` holds what was read from the game, a tool's or a file's head says what it does, and this file holds the rules for working here. Before adding a fact to this file or the README, look for where it already is.
