@@ -40,6 +40,10 @@ The commands are in `README.md`, "Building"; `cmake/Quality.cmake`'s head says w
 
 The build packs the table into `build\<preset>\daolib\addresses\daoaddresses-<stamp>-<size>-<entry>-<base>.bin`, one per build. They are not in git: they are the table in another form, attached to a release.
 
+## Releasing
+
+`dev/RELEASING.md`: what a release is, what its version number says, the steps (`tools\package.ps1`, `tools\release.ps1`), and how it fits with DAOLib's release. Preparing one is not publishing it: that waits for the user's word.
+
 ## Working on the comparison
 
 `tools\exemap.py` is the part with judgement in it. What it may do: pair two addresses because two instructions that are otherwise the same hold them, or because two tables of the same class hold them at the same slot, or because two functions are the same code referring to the same things and nothing else on either side is. What it may not do: pair by position in a table the linker orders, by nearness alone, or by a guess. A wrong pair is worse than a missing one: a missing cell fails loudly in a plugin, a wrong one hooks the wrong function.

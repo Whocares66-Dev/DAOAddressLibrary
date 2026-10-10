@@ -12,10 +12,16 @@ GOG, EA and Steam all sell version 1.05.13263.0, and they are not the same execu
 
 What the builds are and how they differ is in [dev/BUILDS.md](dev/BUILDS.md).
 
+## Installing
+
+Download `DAOAddressLibrary-<version>.zip` from [Releases](https://github.com/Whocares66-Dev/DAOAddressLibrary/releases) and extract it into the game's folder, the one that holds `bin_ship`.
+
+[DAOLib](https://github.com/Whocares66-Dev/DAOLib)'s zip already has the address files it was built with, so this is for a mod that asks for a newer Address Library.
+
 ## What is here
 
 - **The table**, [data/addresses.csv](data/addresses.csv): a row per ID, with its name where it has one, and a column per build. Over 100,000 IDs; `python tools\addrlib.py stats` counts them.
-- **The run-time files**, one per build, packed from the table when the project is built.
+- **The run-time files**, one per build, packed from the table when the project is built. A release's zip is these ([CHANGELOG.md](CHANGELOG.md), [dev/RELEASING.md](dev/RELEASING.md)).
 - **The reader**, [src/daoaddr](src/daoaddr/Library.h): a small C++20 library, standard library only, that loads a build's file and answers "where is this ID" and "what ID is at this address".
 - **The tools**, [tools/](tools): `addrlib.py` works on the table; the rest read the game's executables to fill it.
 
