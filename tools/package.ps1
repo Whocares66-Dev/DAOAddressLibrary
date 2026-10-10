@@ -6,18 +6,24 @@
     Writes dist\DAOAddressLibrary-<version>.zip, laid out as the game's install folder,
     so a player extracts it there (beside bin_ship) as DAOLib's own zip is extracted:
     bin_ship\daolib\addresses\daoaddresses-*.bin, one per build of the game, with
-    README.txt and LICENSE.txt beside them. The two texts are in that folder and not at
-    the zip's root, where DAOLib's zip has a README.txt of its own for this one to
-    overwrite.
+    README.md, LICENSE.txt and VERSION.txt beside them. They are in that folder and not
+    at the zip's root, which is the game's folder and where DAOLib's zip has a
+    README.txt of its own.
+
+    README.md is the repository's, the same file, as SkyrimFollowerTactics' zip has its
+    own (the user asked for it 2026-10-10, after 0.1.0, whose zip had a README.txt
+    written here instead): what it says of installing is written once, there. Its links
+    to other files of the repository lead nowhere from a game folder.
 
     The files are packed here from the table (tools\addrlib.py pack), not taken from a
     build tree: packing needs Python alone, and it writes no date, so the same table
     gives the same bytes and these are the files any build of this commit makes, a
     loader's included (seen 2026-10-10: DAOLib's build\release files, hash for hash).
 
-    README.txt says how many IDs each file has an address for. A loader's log says the
-    same of the file it read, which is how to tell which release is in a game folder:
-    a README.txt left by one zip says nothing of files another zip has since written.
+    VERSION.txt is what the README cannot say: the release, and how many IDs each of its
+    files has an address for. A loader's log says the same of the file it read, which is
+    how to tell which release is in a game folder: a text left by one zip says nothing
+    of files another zip has since written.
 
     The version is the project's (CMakeLists.txt). Nothing is copied into the game.
 
@@ -64,28 +70,19 @@ $lines = foreach ($file in Get-ChildItem -Path $addresses -Filter 'daoaddresses-
 }
 if (@($lines).Count -eq 0) { throw 'tools\addrlib.py pack wrote no file' }
 
-$readme = @"
+$versionText = @"
 DAOAddressLibrary $version
-Where each function and global of Dragon Age: Origins is in each build of DAOrigins.exe.
-https://github.com/Whocares66-Dev/DAOAddressLibrary (GPLv3)
+https://github.com/Whocares66-Dev/DAOAddressLibrary/releases
 
 $($lines -join "`n")
 
-Installing
-  Extract this archive into the game's install folder, the one that holds bin_ship.
-  The files go into bin_ship\daolib\addresses, where DAOLib and its mods read them.
-  They do nothing alone: DAOLib is https://github.com/Whocares66-Dev/DAOLib
-
-Which release is installed
-  DAOLib's zip has address files too, and whichever zip was extracted last wrote the
-  ones in the folder. Documents\BioWare\Dragon Age\daolib\loader.log says at each start
-  how many IDs the file it read has for the game's build, and the numbers above are
-  this release's.
-
-Removing
-  Delete bin_ship\daolib\addresses. DAOLib then loads no mod.
+DAOLib's zip has address files too, and whichever zip was extracted last wrote the
+ones in this folder. Documents\BioWare\Dragon Age\daolib\loader.log says at each start
+how many IDs the file it read has for the game's build, and the numbers above are
+this release's.
 "@
-Set-Content -Path (Join-Path $addresses 'README.txt') -Value $readme -Encoding utf8
+Set-Content -Path (Join-Path $addresses 'VERSION.txt') -Value $versionText -Encoding utf8
+Copy-Item -Force (Join-Path $repo 'README.md') $addresses
 Copy-Item -Force (Join-Path $repo 'LICENSE') (Join-Path $addresses 'LICENSE.txt')
 
 $dist = Join-Path $repo 'dist'
