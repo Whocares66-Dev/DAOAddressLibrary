@@ -1,6 +1,6 @@
 # DAOAddressLibrary
 
-A number for every function and global of Dragon Age: Origins, and where each one is in every build of `DAOrigins.exe`. What Address Library is for Skyrim.
+A number for every function and global of Dragon Age: Origins, and where each one is in every build of `DAOrigins.exe`. What [Address Library](https://www.nexusmods.com/skyrimspecialedition/mods/32444) is for Skyrim.
 
 GOG, EA and Steam all sell version 1.05.13263.0, and they are not the same executable: a function at one address in GOG's build is somewhere else in EA's. A plugin that holds an ID gets the right address in each:
 
