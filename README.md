@@ -73,8 +73,10 @@ Visual Studio 2022, vcpkg, x86. Only the tools that read the game's executables 
 
 See [Adding a build](dev/BUILDS.md#adding-a-build). [dev/STEAM.md](dev/STEAM.md) records how the Steam build was read.
 
-## Thanks
-
-To [meh321](https://www.nexusmods.com/profile/meh321) for [Address Library for SKSE Plugins](https://www.nexusmods.com/skyrimspecialedition/mods/32444), which did this for Skyrim first: the idea of a number per function that holds across builds of a game is its.
+## License
 
 GPLv3 ([LICENSE](LICENSE)).
+
+## Thanks
+
+- [meh321](https://www.nexusmods.com/profile/meh321), for [Address Library for SKSE Plugins](https://www.nexusmods.com/skyrimspecialedition/mods/32444), which did this for Skyrim first: the idea of a number per function that holds across builds of a game is its.
