@@ -138,7 +138,9 @@ if ($DryRun) {
     $steps += @("tag $tag, push master and the tag",
         "gh release create $tag on $github, CHANGELOG.md's $version section its notes, the zip attached")
     $steps | ForEach-Object { Show-Info "- $_" }
-    return
+    # Not return: ls-remote's 2, its "no such tag", would be left as the
+    # script's exit code, and a dry run that found nothing wrong read as failed.
+    exit 0
 }
 
 # --- bump, then prove it builds --------------------------------------------
