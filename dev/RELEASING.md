@@ -1,6 +1,6 @@
 # Releasing
 
-A release is a tag, `v<version>`, and on GitHub the zip a player installs: the run-time files, one per build of the game, laid out as the game's folder (`bin_ship\daolib\addresses\`). The reader and the table are the tagged source, and nothing else is attached. The process is SkyrimFollowerTactics' (`C:\project\SkyrimFollowerTactics\dev\RELEASING.md`) without its documentation site. Written 2026-10-10, for 0.1.0.
+A release is a tag, `v<version>`, and on GitHub the zip a player installs: the run-time files, one per build of the game, laid out as the game's folder (`bin_ship\daolib\addresses\`). The reader and the table are the tagged source, and nothing else is attached. The process is SkyrimFollowerTactics' (`C:\project\SkyrimFollowerTactics\dev\RELEASING.md`) without its documentation site: the user's rule that a release tag publishes versioned docs is for the repositories that have a site, and asked on 2026-10-10 whether this one should, the user chose none. The README and `dev/` at a tag are its docs as of that release. Written 2026-10-10, for 0.1.0.
 
 ## The version
 
