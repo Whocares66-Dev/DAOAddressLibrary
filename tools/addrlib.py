@@ -9,7 +9,8 @@ Age: Origins, and where each is in every build of DAOrigins.exe.
     python tools/addrlib.py name 10547 CClientExoApp::SetPaused      name an ID
     python tools/addrlib.py name 0x005D6740 CClientExoApp::SetPaused --build gog-1.05
     python tools/addrlib.py names FILE [--build KEY]   many: `ID or 0xADDRESS<TAB>name` lines
-    python tools/addrlib.py pack DIR             write each build's runtime file into DIR
+    python tools/addrlib.py pack DIR             write each build's runtime file into DIR, and the code index
+    python tools/addrlib.py code                 read each build's code hash into data/builds.csv (needs game/)
     python tools/addrlib.py check                the table is sound (no game needed)
     python tools/addrlib.py kept [REV]           no ID or address of REV's table (HEAD's) has changed
     python tools/addrlib.py stats
@@ -50,6 +51,7 @@ import bisect
 import collections
 import csv
 import glob
+import hashlib
 import io
 import os
 import struct
@@ -62,7 +64,15 @@ ADDRESSES = os.path.join(REPO, "data", "addresses.csv")
 BUILDS = os.path.join(REPO, "data", "builds.csv")
 NOTES = os.path.join(REPO, "data", "notes.csv")
 
+LF = chr(10)
 KINDS = ("function", "data", "retired")
+
+# The code index (src/daoaddr/CodeIndex.h reads it): which build's file an
+# executable's code belongs to, whatever its headers say. A line per
+# distinct code, and the text a reader finds in the first line.
+CODE_INDEX = "daoaddresses-code.index"
+CODE_INDEX_HEAD = "DAOCODE 1"
+CODE_COLUMNS = ("code_rva", "code_length", "code_sha256")
 
 # The runtime file (src/daoaddr/Library.h reads it): a header, then one
 # 32-bit word per ID from 0 to the highest, the word at an ID's index: its
@@ -472,6 +482,99 @@ def pairs_in(path):
     return [tuple(line.split("\t", 1)) for line in lines]
 
 
+def text_of(path):
+    """(rva, bytes) of an executable's .text, the section's virtual size of
+    them: what a build's code is, apart from its headers, its relocations,
+    its checksum and the padding past the code, which repacking the game
+    changes and which no ID depends on (DAOLib #110)."""
+    with open(path, "rb") as f:
+        data = f.read()
+    pe = struct.unpack_from("<I", data, 0x3C)[0]
+    count, optional_size = (
+        struct.unpack_from("<2H", data, pe + 6)[0],
+        struct.unpack_from("<H", data, pe + 20)[0],
+    )
+    table = pe + 24 + optional_size
+    for i in range(count):
+        at = table + i * 40
+        name = data[at : at + 8].rstrip(b"\0")
+        virtual_size, rva, raw_size, raw_at = struct.unpack_from("<4I", data, at + 8)
+        if name == b".text":
+            if raw_size < virtual_size:
+                raise ValueError(
+                    f"{path}: .text is {virtual_size:#x} bytes, {raw_size:#x} on disk"
+                )
+            return rva, data[raw_at : raw_at + virtual_size]
+    raise ValueError(f"{path}: no .text section")
+
+
+def code_of(build):
+    """The three columns a build's code is in, from its image."""
+    rva, code = text_of(image_path(build))
+    return {
+        "code_rva": f"{rva:#010x}",
+        "code_length": f"{len(code):#010x}",
+        "code_sha256": hashlib.sha256(code).hexdigest(),
+    }
+
+
+def read_code(db):
+    """Writes every build's code into data/builds.csv, from the images under
+    game/. A build whose image is not there keeps what it has."""
+    changed = 0
+    for build in db.builds:
+        if not os.path.exists(image_path(build)):
+            print(f"{build['key']}: no image at {build['image']}, left as it is")
+            continue
+        code = code_of(build)
+        if any(build.get(k) != v for k, v in code.items()):
+            changed += 1
+        build.update(code)
+        print(
+            f"{build['key']}: {code['code_length']} bytes at {code['code_rva']}, {code['code_sha256']}"
+        )
+    fields = list(db.builds[0])
+    for build in db.builds:
+        fields += [k for k in build if k not in fields]
+    text = io.StringIO(newline="")
+    writer = csv.DictWriter(text, fields, lineterminator=LF, restval="")
+    writer.writeheader()
+    writer.writerows(db.builds)
+    write_if_changed(BUILDS, text.getvalue())
+    print(f"{changed} builds' code changed")
+    return 0
+
+
+def code_index(db):
+    """The text of the code index: one line per distinct code of the builds
+    that have a file, the first build that has it naming the file to read.
+    Steam's unpacked image has GOG's code, so GOG's file answers for both,
+    and for any repack of either."""
+    lines = [CODE_INDEX_HEAD]
+    seen = set()
+    for build in db.builds:
+        if build["key"] not in db.columns or not build.get("code_sha256"):
+            continue
+        code = (
+            int(build["code_rva"], 16),
+            int(build["code_length"], 16),
+            build["code_sha256"],
+        )
+        if code in seen:
+            continue
+        seen.add(code)
+        fingerprint = (
+            int(build[k], 16)
+            for k in ("link_stamp", "size_of_image", "entry_point_rva", "image_base")
+        )
+        lines.append(
+            f"{code[0]:08x} {code[1]:08x} {code[2]} "
+            + " ".join(f"{field:08x}" for field in fingerprint)
+            + f" {build['key']}"
+        )
+    return LF.join(lines) + LF
+
+
 def pack_build(db, build):
     """One build's runtime file, as bytes."""
     key = build["key"]
@@ -526,6 +629,9 @@ def pack(db, folder):
                 f.write(data)
             written.add(name)
             print(f"{name}: {len(data)} bytes, the {build['key']} build")
+    with open(os.path.join(folder, CODE_INDEX), "w", encoding="utf-8", newline="") as f:
+        f.write(code_index(db))
+    print(f"{CODE_INDEX}: which build's file an exe's code is, whatever its headers")
     # The folder is the table in another form, and a loader's deploy copies
     # every .bin in it. A file under a name no longer written would stay as
     # it was and go on being copied: GOG's and EA's first files were named
@@ -535,6 +641,29 @@ def pack(db, folder):
             os.remove(os.path.join(folder, name))
             print(f"{name}: removed, no build's file is named so")
     return 0
+
+
+def code_faults(build):
+    """What is wrong with a build's code columns. A build with an image
+    (every real one) must have them, and they must be what its image holds,
+    when the image is there to read."""
+    key = build["key"]
+    if "image" in build and not build.get("code_sha256"):
+        return [f"{key}: no code hash; `addrlib.py code` reads it"]
+    if not build.get("code_sha256"):
+        return []
+    try:
+        values = [int(build["code_rva"], 16), int(build["code_length"], 16)]
+        assert len(build["code_sha256"]) == 64
+        int(build["code_sha256"], 16)
+    except (KeyError, ValueError, AssertionError):
+        return [f"{key}: the code columns are not a range and a SHA-256"]
+    if values[1] == 0:
+        return [f"{key}: a code of no length"]
+    if "image" in build and os.path.exists(image_path(build)):
+        if code_of(build) != {k: build[k] for k in CODE_COLUMNS}:
+            return [f"{key}: the code columns are not what its image holds"]
+    return []
 
 
 def check(db):
@@ -551,6 +680,8 @@ def check(db):
                 f"{name}: {outputs[name]} and {build['key']} would overwrite each other"
             )
         outputs[name] = build["key"]
+    for build in db.builds:
+        faults += code_faults(build)
     faults += [
         f"the table has a column {column!r} that data/builds.csv does not name"
         for column in db.columns
@@ -705,6 +836,8 @@ def main(argv):
             return 1
     if command == "pack" and rest:
         return pack(db, rest[0])
+    if command == "code":
+        return read_code(db)
     if command == "check":
         return check(db)
     if command == "kept":

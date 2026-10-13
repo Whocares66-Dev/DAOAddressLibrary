@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- **A build found by its code:** an executable whose headers are no known build's but whose code is (Steamless' output, the Nexus "decrypted Steam" exe, a repack with its relocations stripped) reads the file of the build whose code it is. `data/builds.csv` has each build's `.text` range and SHA-256, `pack` writes `daoaddresses-code.index`, and `daoaddr::CodeIndex` reads it, and `daoaddr::Retarget` makes the file of the exe's own headers from the matched build's, for programs built before the index (DAOLib #110, #1).
+
 ## 0.1.0
 
 The first release:

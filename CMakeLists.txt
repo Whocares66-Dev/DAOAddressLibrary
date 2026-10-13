@@ -88,7 +88,7 @@ endif()
 # daoaddr -- the reader. No dependency beyond the standard library, and no
 # <Windows.h>: bytes in, answers out, which is what tests/ covers.
 # ---------------------------------------------------------------------------
-add_library(daoaddr STATIC src/daoaddr/Library.cpp)
+add_library(daoaddr STATIC src/daoaddr/Library.cpp src/daoaddr/CodeIndex.cpp)
 daoaddr_apply_warnings(daoaddr)
 target_compile_features(daoaddr PUBLIC cxx_std_20)
 target_include_directories(daoaddr PUBLIC "${PROJECT_SOURCE_DIR}/src")

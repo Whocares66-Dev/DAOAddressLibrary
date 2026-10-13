@@ -76,6 +76,27 @@ TEST_CASE("a file reads back as the build and the places it was written from")
     CHECK(library->Address(Id{3}) == 0xbf0000U);
 }
 
+TEST_CASE("a file retargeted to another build is that build's with the same IDs")
+{
+    const auto file = File(kBuild, {kNone, 0x1000, 0x2000 | 0x01000000, kNone, 0x3000});
+    const BuildInfo other{
+        .linkStamp = 0x4eb19d53, .sizeOfImage = 0x96a000, .entryPointRva = 0x4e3024, .imageBase = 0x400000};
+    const auto moved = daoaddr::Retarget(file, other);
+    REQUIRE(moved.has_value());
+    CHECK(moved->size() == file.size());
+    const auto library = Library::Parse(*moved);
+    REQUIRE(library.has_value());
+    CHECK(library->Build() == other);
+    const auto original = Library::Parse(file);
+    for (std::uint32_t id = 0; id < 5; ++id)
+    {
+        CHECK(library->Find(Id{id}) == original->Find(Id{id}));
+    }
+    // The original's bytes are as they were, and what is not a file is not retargeted.
+    CHECK(Library::Parse(file)->Build() == kBuild);
+    CHECK_FALSE(daoaddr::Retarget(std::vector<std::byte>(8), other).has_value());
+}
+
 TEST_CASE("an ID the build lacks, or the file has never heard of, is nowhere")
 {
     const auto library = Library::Parse(File(kBuild, {kNone, 0x001000, kNone}));

@@ -93,7 +93,8 @@ class Pack(unittest.TestCase):
             self.assertEqual(addrlib.pack(db, folder), 0)
             names = [addrlib.file_name(build) for build in db.builds]
             self.assertEqual(
-                sorted(os.listdir(folder)), sorted([*names, "functions.tsv"])
+                sorted(os.listdir(folder)),
+                sorted([*names, addrlib.CODE_INDEX, "functions.tsv"]),
             )
             for build in db.builds:
                 with open(os.path.join(folder, addrlib.file_name(build)), "rb") as f:
@@ -107,6 +108,117 @@ class Pack(unittest.TestCase):
                 f.write(b"old")
             self.assertEqual(addrlib.pack(db, folder), 1)
             self.assertEqual(os.listdir(folder), ["daoaddresses-4eb19d53.bin"])
+
+
+CODE_A = {
+    "code_rva": "0x00001000",
+    "code_length": "0x00000010",
+    "code_sha256": "ab" * 32,
+}
+
+
+def pe_with_text(text, virtual_size=None, padding=0):
+    """A PE image of the least that text_of reads: one .text section."""
+    virtual_size = len(text) if virtual_size is None else virtual_size
+    pe_at = 0x80
+    image = bytearray(0x400 + len(text) + padding)
+    struct.pack_into("<I", image, 0x3C, pe_at)
+    struct.pack_into(
+        "<2H", image, pe_at + 6, 1, 0
+    )  # sections, then the time stamp's high word
+    struct.pack_into("<H", image, pe_at + 20, 0xE0)
+    section = pe_at + 24 + 0xE0
+    image[section : section + 8] = b".text" + bytes(3)
+    struct.pack_into(
+        "<4I", image, section + 8, virtual_size, 0x1000, len(text) + padding, 0x400
+    )
+    image[0x400 : 0x400 + len(text)] = text
+    return bytes(image)
+
+
+class Code(unittest.TestCase):
+    def read(self, image):
+        with tempfile.TemporaryDirectory() as folder:
+            path = os.path.join(folder, "exe")
+            with open(path, "wb") as f:
+                f.write(image)
+            return addrlib.text_of(path)
+
+    def test_the_code_is_the_text_sections_virtual_size_of_bytes(self):
+        text = bytes(range(16))
+        self.assertEqual(
+            self.read(pe_with_text(text, 12, padding=4)), (0x1000, text[:12])
+        )
+
+    def test_an_image_with_less_on_disk_than_it_says_is_refused(self):
+        with self.assertRaises(ValueError):
+            self.read(pe_with_text(bytes(8), virtual_size=16))
+
+    def test_the_index_has_a_line_per_distinct_code_and_its_first_build(self):
+        a, b, c = (BUILD_A | CODE_A | {"key": k} for k in "abc")
+        c["code_sha256"] = "cd" * 32
+        c["link_stamp"] = "0x52164c37"
+        db = database()
+        db.builds = [a, b, c]
+        db.columns = ["a", "b", "c"]
+        lines = addrlib.code_index(db).split(chr(10))
+        self.assertEqual(lines[0], "DAOCODE 1")
+        self.assertEqual(len(lines), 4)  # the head, two codes, a last empty
+        self.assertEqual(
+            lines[1],
+            "00001000 00000010 " + "ab" * 32 + " 4eb19d53 00100000 00001000 00400000 a",
+        )
+        self.assertTrue(lines[2].endswith(" 52164c37 00100000 00001000 00400000 c"))
+
+    def test_a_build_with_no_file_or_no_code_is_not_in_the_index(self):
+        a = BUILD_A | CODE_A
+        db = database()
+        db.builds = [a, BUILD_B]  # b has no code columns
+        db.columns = ["b"]  # and a has no file
+        self.assertEqual(addrlib.code_index(db), "DAOCODE 1" + chr(10))
+
+    def test_pack_writes_the_index_beside_the_files(self):
+        db = database()
+        db.builds = [BUILD_A | CODE_A, BUILD_B]
+        with tempfile.TemporaryDirectory() as folder:
+            self.assertEqual(addrlib.pack(db, folder), 0)
+            with open(os.path.join(folder, addrlib.CODE_INDEX), encoding="utf-8") as f:
+                self.assertEqual(f.read(), addrlib.code_index(db))
+
+    def test_code_columns_that_are_not_a_range_and_a_hash_are_a_fault(self):
+        self.assertEqual(addrlib.code_faults(BUILD_A | CODE_A), [])
+        self.assertEqual(addrlib.code_faults(BUILD_A), [])
+        self.assertEqual(
+            len(addrlib.code_faults(BUILD_A | CODE_A | {"code_sha256": "ab"})), 1
+        )
+        self.assertEqual(
+            len(addrlib.code_faults(BUILD_A | CODE_A | {"code_length": "0x0"})), 1
+        )
+        self.assertEqual(
+            len(addrlib.code_faults(BUILD_A | CODE_A | {"code_rva": "x"})), 1
+        )
+
+    def test_a_build_with_an_image_must_have_its_code(self):
+        self.assertEqual(
+            len(addrlib.code_faults(BUILD_A | {"image": "game/nothing.exe"})), 1
+        )
+
+    def test_code_columns_must_be_what_the_image_holds(self):
+        text = bytes(range(16))
+        with tempfile.TemporaryDirectory() as folder:
+            path = os.path.join(folder, "exe")
+            with open(path, "wb") as f:
+                f.write(pe_with_text(text))
+            old = addrlib.REPO
+            addrlib.REPO = folder
+            try:
+                build = BUILD_A | {"image": "exe"}
+                build |= addrlib.code_of(build)
+                self.assertEqual(addrlib.code_faults(build), [])
+                build["code_sha256"] = "00" * 32
+                self.assertEqual(len(addrlib.code_faults(build)), 1)
+            finally:
+                addrlib.REPO = old
 
 
 class Asking(unittest.TestCase):

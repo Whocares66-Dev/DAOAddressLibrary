@@ -1,6 +1,6 @@
 find_package(Catch2 3 CONFIG REQUIRED)
 
-add_executable(daoaddr_tests test_library.cpp)
+add_executable(daoaddr_tests test_library.cpp test_codeindex.cpp)
 daoaddr_apply_warnings(daoaddr_tests)
 target_link_libraries(daoaddr_tests PRIVATE daoaddr Catch2::Catch2WithMain)
 # The files the build packed from the table: the tests read them back.

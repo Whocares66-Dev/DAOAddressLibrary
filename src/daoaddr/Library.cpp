@@ -144,6 +144,21 @@ std::optional<Index::Hit> Index::At(std::uint32_t rva) const
     return Hit{.id = Id{first->second}, .offset = rva - at};
 }
 
+std::optional<std::vector<std::byte>> Retarget(std::span<const std::byte> file, const BuildInfo &build)
+{
+    if (!Library::Parse(file))
+    {
+        return std::nullopt;
+    }
+    std::vector<std::byte> out(file.begin(), file.end());
+    const auto put = [&](std::size_t at, std::uint32_t value) { std::memcpy(&out[at], &value, sizeof value); };
+    put(0x0C, build.linkStamp);
+    put(0x10, build.sizeOfImage);
+    put(0x14, build.entryPointRva);
+    put(0x18, build.imageBase);
+    return out;
+}
+
 std::string FileName(const BuildInfo &build)
 {
     return std::format("daoaddresses-{:08x}-{:08x}-{:08x}-{:08x}.bin", build.linkStamp, build.sizeOfImage,

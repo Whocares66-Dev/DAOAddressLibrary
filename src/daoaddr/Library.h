@@ -138,6 +138,13 @@ class Index
     std::vector<std::pair<std::uint32_t, std::uint32_t>> places_; // (rva, id), sorted
 };
 
+// A file's bytes made a file for another build: the same IDs at the same places, the build it
+// says it is for changed. For an exe whose headers are no known build's and whose code is one's
+// (CodeIndex.h): a program that looks for the file named by the exe's headers, as every program
+// built before the code index does, finds this one.
+// @return nothing if the bytes are not a file
+std::optional<std::vector<std::byte>> Retarget(std::span<const std::byte> file, const BuildInfo &build);
+
 // All four PE fields: Steam and GOG have the same link stamp. Check that
 // the loaded Library::Build() equals the requested build before using it.
 // There was an overload taking the link stamp alone, for the names GOG's

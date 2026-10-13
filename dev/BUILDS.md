@@ -107,6 +107,16 @@ Checked against something the comparison did not use: EA's own command table reg
 
 `exemap.same_layout` compares section virtual addresses and sizes, entry point, data directories, relocation locations and every loaded section byte. It permits differences only in the PE32 load configuration's ProcessHeapFlags and SafeSEH table/count fields when both structures have the known 72-byte layout. GOG and unpacked Steam pass; GOG and EA do not. For this case inventories pair at the same addresses, and byte-equal file-backed runs supply interior-address mappings. Changed PE fields are excluded from those runs. This also preserves IDs for identical initializers that the general matcher cannot distinguish.
 
+## A build found by its code
+
+A build is found first by its four header fields, and its file is named by them. A repack of the game leaves the code and changes the headers: Steamless' output has `SizeOfImage` `0x9ed000`, the Nexus "decrypted Steam" exe `0x96a000` (no `.reloc`; with the 4GB flag too), and neither has a file by that name (DAOLib #110, DAOAddressLibrary #1). What the IDs depend on is the code: the same code at the same base holds the same data addresses.
+
+So `data/builds.csv` has `code_rva`, `code_length` and `code_sha256` for each build: its `.text`, the section's virtual size of bytes from its image, and their SHA-256. `python toolsddrlib.py code` reads them from the images under `game\` and `check` finds them wrong. `pack` writes `daoaddresses-code.index` beside the build files, a line per distinct code, the first build that has it naming the file to read. GOG's code and Steam's unpacked image are one line, and so are the Nexus exe and Steamless' output, whose `.text` has GOG's `0x6d86aa` bytes first and 7 more of padding after (the Nexus exe's virtual size is `0x6d86b1`, which is why the range is a length the index holds and not the exe's own). `daoaddr::CodeIndex` reads it: a program reads each range from the exe's file on disk, where nothing has patched it, and `Match` says the build.
+
+A program built before the code index looks for the file named by the exe's headers, and cannot be told. `daoaddr::Retarget` makes that file from the matched build's: the same bytes with the four header fields of the exe, which DAOLib's loader writes beside the others when it finds an exe by its code (DAOLib #110). Nothing of this is shipped: no row, and no file, for a repack.
+
+A wrapped exe, stock Steam's or EA's, has its `.text` encrypted on disk and hashes to nothing here; the headers find those, as before. An exe whose code has been edited matches no build, and is an unknown one.
+
 ## Adding a build
 
 1. Copy its executable to a folder of its own under `game\`. If it is wrapped as EA's is, get an image of it decrypted; the tools read that.
