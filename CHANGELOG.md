@@ -1,8 +1,11 @@
 # Changelog
 
-## Unreleased
+## 0.2.0
 
 - **A build found by its code:** an executable whose headers are no known build's but whose code is (Steamless' output, the Nexus "decrypted Steam" exe, a repack with its relocations stripped) reads the file of the build whose code it is. `data/builds.csv` has each build's `.text` range and SHA-256, `pack` writes `daoaddresses-code.index`, and `daoaddr::CodeIndex` reads it, and `daoaddr::Retarget` makes the file of the exe's own headers from the matched build's, for programs built before the index (DAOLib #110, #1).
+- **The same addresses:** every ID has the address it had in 0.1.0 (103,293, 103,567 and 103,528 for GOG, EA and Steam), and the file format is unchanged, so a loader or mod built on 0.1.0 reads these files as it did.
+- **More names:** 7,532 IDs are named, 65 more than in 0.1.0: the renderer's lights and frame-buffer effects, the allocator, the resource manager, area loading and input among them. `addrlib.py lookup` finds them.
+- **The zip:** `bin_ship\daolib\addresses` now holds `daoaddresses-code.index` beside the three build files, the repository's `README.md` in place of a README.txt, and `VERSION.txt`, which says the release and how many IDs each file has.
 
 ## 0.1.0
 
