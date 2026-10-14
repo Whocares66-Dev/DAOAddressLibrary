@@ -21,7 +21,7 @@ Download `DAOAddressLibrary-<version>.zip` from [Releases](https://github.com/Wh
 ## What is here
 
 - **The table**, [data/addresses.csv](data/addresses.csv): a row per ID, with its name where it has one, and a column per build. Over 100,000 IDs; `python tools\addrlib.py stats` counts them.
-- **The run-time files**, one per build, packed from the table when the project is built. A release's zip is these ([CHANGELOG.md](CHANGELOG.md), [dev/RELEASING.md](dev/RELEASING.md)).
+- **The run-time files**, one per build, packed from the table when the project is built. Beside them, `daoaddresses-code.index` says which build's file an executable's code is, for a repack whose headers are no build's (Steamless' output, the Nexus "decrypted Steam" exe). A release's zip is these ([CHANGELOG.md](CHANGELOG.md), [dev/RELEASING.md](dev/RELEASING.md)).
 - **The reader**, [src/daoaddr](src/daoaddr/Library.h): a small C++20 library, standard library only, that loads a build's file and answers "where is this ID" and "what ID is at this address".
 - **The tools**, [tools/](tools): `addrlib.py` works on the table; the rest read the game's executables to fill it.
 
@@ -41,7 +41,7 @@ if (!library)
 const auto setPaused = library->Rva(daoaddr::Id{10547}); // add the exe's base
 ```
 
-[Library.h](src/daoaddr/Library.h) documents the rest. In a CMake project, `add_subdirectory` gives the `DAOAddressLibrary::daoaddr` target and `daoaddr_data`, which writes the files. [DAOLib](https://github.com/Whocares66-Dev/DAOLib) uses it this way.
+[Library.h](src/daoaddr/Library.h) documents the rest. A program that finds no file for the executable's headers can read the code index with [CodeIndex.h](src/daoaddr/CodeIndex.h); [dev/BUILDS.md](dev/BUILDS.md) says how a build is found by its code. In a CMake project, `add_subdirectory` gives the `DAOAddressLibrary::daoaddr` target and `daoaddr_data`, which writes the files. [DAOLib](https://github.com/Whocares66-Dev/DAOLib) uses it this way.
 
 ## Looking things up and naming them
 
