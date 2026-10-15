@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.0
+
+- **The same files as 0.2.0:** every address, the code index and the file format are unchanged, byte for byte, so nothing needs installing again. This release gives DAOLib 0.3.0 a tag to build against.
+- **More names:** 7,551 IDs are named, 19 more than in 0.2.0: the scene camera's position and orientation, quaternion yaw, pitch and roll, the input system and key bindings, and the GUI's movies (`GFxMovieRoot::Advance`, `SetBackgroundAlpha` and `GUI::MovieRecord::Step`). `addrlib.py lookup` finds them.
+
 ## 0.2.0
 
 - **A build found by its code:** an executable whose headers are no known build's but whose code is (Steamless' output, the Nexus "decrypted Steam" exe, a repack with its relocations stripped) reads the file of the build whose code it is. `data/builds.csv` has each build's `.text` range and SHA-256, `pack` writes `daoaddresses-code.index`, and `daoaddr::CodeIndex` reads it, and `daoaddr::Retarget` makes the file of the exe's own headers from the matched build's, for programs built before the index (DAOLib #110, #1).

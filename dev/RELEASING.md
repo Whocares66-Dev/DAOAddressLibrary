@@ -6,11 +6,11 @@ A release is a tag, `v<version>`, and on GitHub the zip a player installs: the r
 
 `project(DAOAddressLibrary VERSION x.y.z)` in `CMakeLists.txt` is the one place it is written. A number says what a loader and the mods a player already has can do with the new files:
 
-- **patch**: the same files knowing more. IDs added, cells filled or put right.
-- **minor**: a file for another build of the game, or something added to the reader.
+- **patch**: a fix. A cell or a name put right, a fault in the reader or the tools mended.
+- **minor**: something added. IDs, filled cells or names, a file for another build of the game, or something added to the reader. The user, 2026-10-15, of a release that was names alone: "patch is usually a bug fix. these are features".
 - **major**: a new `format` word, which every reader built before it refuses (`src/daoaddr/Library.cpp`'s head), or a change to the reader that breaks its callers. Its notes say which DAOLib reads the files.
 
-A name needs no release: no file holds one, and a project that wants it holds its submodule at the commit.
+A name needs no release: no file holds one, and a project that wants it holds its submodule at the commit. When one is cut for names, because DAOLib's release needs a tag, it is a minor version like any other addition.
 
 ## Cutting one
 
