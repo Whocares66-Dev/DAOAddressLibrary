@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.0
+
+- **The same files as 0.3.0:** every address, the code index and the file format are unchanged, byte for byte, so nothing needs installing again. This release gives DAOLib a tag to build its flicker fix against.
+- **More names:** 7,568 IDs are named, 17 more than in 0.3.0: the atmosphere and sky, SpeedTree's light, a light's colour, and how a model's point light flickers (`Animation::RandomWaveController<float>::Update` and what makes and drives it). `addrlib.py lookup` finds them.
+
 ## 0.3.0
 
 - **The same files as 0.2.0:** every address, the code index and the file format are unchanged, byte for byte, so nothing needs installing again. This release gives DAOLib 0.3.0 a tag to build against.
