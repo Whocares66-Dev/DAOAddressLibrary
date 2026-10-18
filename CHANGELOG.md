@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.5.0
+
+- **The same files as 0.4.0:** every address, the code index and the file format are unchanged, byte for byte, so nothing needs installing again. This release gives DAOLib 0.5.0 a tag to build against.
+- **More names:** 7,635 IDs are named, 67 more than in 0.4.0: the material system, an area's colour grade, tints, the pathfinding grid's coarse levels, animation keys and controllers, pausing an object's animation, movement speed and turning, and how a character's equipment and appearance become models. `addrlib.py lookup` finds them.
+
 ## 0.4.0
 
 - **The same files as 0.3.0:** every address, the code index and the file format are unchanged, byte for byte, so nothing needs installing again. This release gives DAOLib a tag to build its flicker fix against.
