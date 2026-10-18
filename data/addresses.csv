@@ -2233,7 +2233,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2232,function,,0x00451930,0x0088d110,0x00451930
 2233,function,,0x00451950,0x00496170,0x00451950
 2234,function,,0x00451960,0x007aa1b0,0x00451960
-2235,function,ScriptBackend::ForScript_GetDistanceBetween,0x00451990,0x00497740,0x00451990
+2235,function,Vector::Magnitude,0x00451990,0x00497740,0x00451990
 2236,function,,0x004519d0,0x00531080,0x004519d0
 2237,function,,0x00451a30,0x004992c0,0x00451a30
 2238,function,,0x00451af0,0x00a33760,0x00451af0
@@ -3797,7 +3797,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 3796,function,,0x0049cfe0,0x0087dbd0,0x0049cfe0
 3797,function,,0x0049d050,0x004dfab0,0x0049d050
 3798,function,,0x0049d0e0,0x0087dc40,0x0049d0e0
-3799,function,ScriptBackend::ForScript_GETABILITIESDUETOAOES,0x0049d170,0x0074be20,0x0049d170
+3799,function,std::vector<unsigned int>::push_back,0x0049d170,0x0074be20,0x0049d170
 3800,function,,0x0049d1e0,0x0087dcd0,0x0049d1e0
 3801,function,,0x0049d290,0x0087dd80,0x0049d290
 3802,function,,0x0049d330,0x0087de20,0x0049d330
@@ -4503,9 +4503,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4502,function,,0x004c0e80,0x00802cb0,0x004c0e80
 4503,function,,0x004c0ec0,0x00802cf0,0x004c0ec0
 4504,function,,0x004c0f10,0x00802d40,0x004c0f10
-4505,function,ScriptBackend::ForScript_FindSubString,0x004c0f70,0x00802da0,0x004c0f70
+4505,function,std::wstring::find,0x004c0f70,0x00802da0,0x004c0f70
 4506,function,,0x004c0fb0,0x00802de0,0x004c0fb0
-4507,function,ScriptBackend::ForScript_SetEventScript,0x004c1000,0x00802e30,0x004c1000
+4507,function,std::wstring::find,0x004c1000,0x00802e30,0x004c1000
 4508,function,,0x004c1030,0x00802e60,0x004c1030
 4509,function,,0x004c1070,0x00802ea0,0x004c1070
 4510,function,,0x004c1090,0x00802ec0,0x004c1090
@@ -4557,10 +4557,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4556,function,,0x004c3030,0x00804560,0x004c3030
 4557,function,,0x004c30f0,0x00804620,0x004c30f0
 4558,function,,0x004c31a0,0x008046d0,0x004c31a0
-4559,function,ScriptBackend::ForScript_SubString,0x004c3250,0x00804780,0x004c3250
+4559,function,std::wstring::substr,0x004c3250,0x00804780,0x004c3250
 4560,function,,0x004c3310,0x00804840,0x004c3310
 4561,function,,0x004c3360,0x00804890,0x004c3360
-4562,function,ScriptBackend::ForScript_GetCurrentScriptResource,0x004c3420,0x00804950,0x004c3420
+4562,function,std::operator+,0x004c3420,0x00804950,0x004c3420
 4563,function,,0x004c3510,0x00804a40,0x004c3510
 4564,function,,0x004c3580,0x00804ab0,0x004c3580
 4565,function,,0x004c35f0,0x00804b20,0x004c35f0
@@ -4976,7 +4976,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4975,function,,0x004d4c20,0x008188c0,0x004d4c20
 4976,function,Vector::AngleBetween,0x004d4c90,0x00818930,0x004d4c90
 4977,function,,0x004d4cc0,0x00818960,0x004d4cc0
-4978,function,ScriptBackend::ForScript_GetAngleBetweenObjects,0x004d4d10,0x008189b0,0x004d4d10
+4978,function,Vector::SignedAngleBetween,0x004d4d10,0x008189b0,0x004d4d10
 4979,function,,0x004d4d40,0x008189e0,0x004d4d40
 4980,function,,0x004d4dd0,0x00816d00,0x004d4dd0
 4981,function,,0x004d4df0,0x00816d20,0x004d4df0
@@ -5595,7 +5595,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5594,function,,0x004ead30,0x006a17a0,0x004ead30
 5595,function,,0x004eadb0,0x00539d40,0x004eadb0
 5596,function,,0x004eadf0,0x0060ab20,0x004eadf0
-5597,function,ScriptBackend::ForScript_Location,0x004eae30,0x00539de0,0x004eae30
+5597,function,Vector::FromAngle,0x004eae30,0x00539de0,0x004eae30
 5598,function,,0x004eae80,0x008366e0,0x004eae80
 5599,function,,0x004eaf10,0x00836770,0x004eaf10
 5600,function,,0x004eb010,0x00836870,0x004eb010
@@ -5701,7 +5701,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5700,function,Quaternion::Yaw,0x004ee310,0x0081b930,0x004ee310
 5701,function,Quaternion::Pitch,0x004ee370,0x0081b990,0x004ee370
 5702,function,,0x004ee420,0x0081ba40,0x004ee420
-5703,function,ScriptBackend::ForScript_VectorToAngle,0x004ee570,0x0081bb90,0x004ee570
+5703,function,Vector::ToAngle,0x004ee570,0x0081bb90,0x004ee570
 5704,function,Vector::Elevation,0x004ee5a0,0x0081bbc0,0x004ee5a0
 5705,function,,0x004ee610,0x0081bc30,0x004ee610
 5706,function,,0x004ee730,0x0081bd50,0x004ee730
@@ -11088,7 +11088,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 11087,function,,0x00601740,0x004efc30,0x00601740
 11088,function,,0x006017d0,0x004efcc0,0x006017d0
 11089,function,,0x0060184c,0x004efd3c,0x0060184c
-11090,function,CCModule::ForScript_GETCREATURESINAOE,0x00601860,0x004efd50,0x00601860
+11090,function,CCModule::GetObjectsInAreaByTag,0x00601860,0x004efd50,0x00601860
 11091,function,,0x00601a70,0x005a2300,0x00601a70
 11092,function,,0x00601ab0,0x004effd0,0x00601ab0
 11093,function,,0x00601b10,0x004f0030,0x00601b10
@@ -12223,7 +12223,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 12222,function,,0x0062ecc0,0x0060ad00,0x0062ecc0
 12223,function,,0x0062ed50,0x0060ad90,0x0062ed50
 12224,function,,0x0062ed60,0x00586290,0x0062ed60
-12225,function,CCModule::ForScript_SetFollowerState,0x0062ee20,0x0053e130,0x0062ee20
+12225,function,CCModule::GetPartyPicker,0x0062ee20,0x0053e130,0x0062ee20
 12226,function,,0x0062ee50,0x0052ad90,0x0062ee50
 12227,function,,0x0062eeb0,0x0053e160,0x0062eeb0
 12228,function,,0x0062eec0,0x0047c0f0,0x0062eec0
@@ -12244,7 +12244,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 12243,function,,0x0062f250,0x0060b0d0,0x0062f250
 12244,function,,0x0062f260,0x0060b0e0,0x0062f260
 12245,function,,0x0062f320,0x0060b1a0,0x0062f320
-12246,function,ScriptBackend::ForScript_GetHero,0x0062f390,0x0060b210,0x0062f390
+12246,function,CCParty::GetHero,0x0062f390,0x0060b210,0x0062f390
 12247,function,,0x0062f3a0,0x0060b2e0,0x0062f3a0
 12248,function,,0x0062f410,0x0060b350,0x0062f410
 12249,function,,0x0062f480,0x0060b3c0,0x0062f480
@@ -12269,7 +12269,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 12268,function,,0x0062f9f0,0x0060b700,0x0062f9f0
 12269,function,,0x0062fa70,0x0060b780,0x0062fa70
 12270,function,,0x0062fb40,0x0060b850,0x0062fb40
-12271,function,ScriptBackend::ForScript_SetAtmosphere,0x0062fd10,0x0060ba20,0x0062fd10
+12271,function,ScriptBackend::GetControlledArea,0x0062fd10,0x0060ba20,0x0062fd10
 12272,function,,0x0062fd60,0x0060ba70,0x0062fd60
 12273,function,,0x0062ffc0,0x0060bcd0,0x0062ffc0
 12274,function,,0x00630040,0x0060bd50,0x00630040
@@ -12316,10 +12316,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 12315,function,,0x00631650,0x0060d1c0,0x00631650
 12316,function,,0x00631690,0x0060d200,0x00631690
 12317,function,ScriptBackend::ForScript_IsControlled,0x006316d0,0x0060d240,0x006316d0
-12318,function,ScriptBackend::ForScript_GetCanDiePermanently,0x006316f0,0x0060d260,0x006316f0
+12318,function,CCParty::IsInPartyPool,0x006316f0,0x0060d260,0x006316f0
 12319,function,,0x00631710,0x0060d280,0x00631710
 12320,function,,0x006317a0,0x0060d310,0x006317a0
-12321,function,ScriptBackend::ForScript_IsFollower,0x00631830,0x0060d3a0,0x00631830
+12321,function,CCParty::IsInParty,0x00631830,0x0060d3a0,0x00631830
 12322,function,,0x00631850,0x0060d3c0,0x00631850
 12323,function,,0x00631870,0x0060d3e0,0x00631870
 12324,function,,0x00631890,0x0059fec0,0x00631890
@@ -12570,7 +12570,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 12569,function,,0x0063ff10,0x00535630,0x0063ff10
 12570,function,,0x0063ff40,0x00535660,0x0063ff40
 12571,function,,0x0063ffa0,0x00535780,0x0063ffa0
-12572,function,ScriptBackend::ForScript_GetGameMode,0x00640060,0x00535840,0x00640060
+12572,function,GameModeController::GetGameMode,0x00640060,0x00535840,0x00640060
 12573,function,,0x00640070,0x00535850,0x00640070
 12574,function,GameModeController::HandleMessage_GameMessage,0x00640080,0x00535860,0x00640080
 12575,function,GameModeCharGen::HandleMessage_ExitToStartMenuMessage,0x006400c0,0x00609250,0x006400c0
@@ -12638,7 +12638,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 12637,function,,0x00642dc0,0x0052ad60,0x00642dc0
 12638,function,,0x00642df0,0x0052aeb0,0x00642df0
 12639,function,,0x00642e10,0x0052af30,0x00642e10
-12640,function,ScriptBackend::ForScript_GetCreatureStamina,0x00642e20,0x0052af40,0x00642e20
+12640,function,CreatureProperties::GetProperty,0x00642e20,0x0052af40,0x00642e20
 12641,function,,0x00642e50,0x0052af70,0x00642e50
 12642,function,,0x00642ef0,0x0052b010,0x00642ef0
 12643,function,,0x00642f60,0x0052b080,0x00642f60
@@ -12852,7 +12852,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 12851,function,ScriptCommand::PRINTTOLOGANDFLUSH,0x0064e250,0x0053a3b0,0x0064e250
 12852,function,ScriptCommand::PRINTTOSCREEN,0x0064e290,0x0053a3f0,0x0064e290
 12853,function,ScriptCommand::PRINTTOLOGWINDOW,0x0064e370,0x0053a4d0,0x0064e370
-12854,function,ScriptCommand::SENDTORUNDB,0x0064e450,0x0053a980,0x0064e450
+12854,function,ScriptCommand::IgnoreString,0x0064e450,0x0053a980,0x0064e450
 12855,function,ScriptCommand::SENDGAMEEVENTTORUNDB,0x0064e4e0,0x0053a5b0,0x0064e4e0
 12856,function,ScriptCommand::SCREENSHOT,0x0064e7b0,0x0053a880,0x0064e7b0
 12857,function,ScriptCommand::PROBE,0x0064e8b0,0x0053aa10,0x0064e8b0
@@ -12880,7 +12880,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 12879,function,ScriptCommand::INTTOFLOAT,0x0064f3a0,0x0053b500,0x0064f3a0
 12880,function,ScriptCommand::FLOATTOINT,0x0064f3f0,0x0053b550,0x0064f3f0
 12881,function,ScriptCommand::INTTOSTRING,0x0064f440,0x0053b5a0,0x0064f440
-12882,function,ScriptCommand::STRINGTOINT,0x0064f510,0x0053b670,0x0064f510
+12882,function,ScriptCommand::StringToInt,0x0064f510,0x0053b670,0x0064f510
 12883,function,,0x0064f5d0,0x0053b730,0x0064f5d0
 12884,function,,0x0064f650,0x0050b000,0x0064f650
 12885,function,,0x0064f690,0x0050b0b0,0x0064f690
@@ -12922,11 +12922,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 12921,function,ScriptCommand::SETLOCATIONAREA,0x00651000,0x0053cd00,0x00651000
 12922,function,ScriptCommand::ISCOMMANDPLAYERISSUED,0x00651090,0x0053cd90,0x00651090
 12923,function,ScriptCommand::CLEARAMBIENTDIALOGS,0x006510f0,0x0053cdf0,0x006510f0
-12924,function,ScriptBackend::ForScript_CommandEquipItem,0x00651150,0x0053ce50,0x00651150
+12924,function,ScriptCommand::PopEquipSlotAndWeaponSet,0x00651150,0x0053ce50,0x00651150
 12925,function,ScriptCommand::STOPSOUND,0x00651190,0x0053ce90,0x00651190
 12926,function,ScriptCommand::PLAYCUTSCENE,0x00651240,0x0053cf40,0x00651240
-12927,function,ScriptCommand::GETEFFECTINTEGER,0x00651270,0x0053cf70,0x00651270
-12928,function,ScriptCommand::SETEFFECTINTEGER,0x00651430,0x0053d130,0x00651430
+12927,function,ScriptCommand::GetEffectValue,0x00651270,0x0053cf70,0x00651270
+12928,function,ScriptCommand::SetEffectValue,0x00651430,0x0053d130,0x00651430
 12929,function,ScriptCommand::GETPARTY,0x00651610,0x0053d310,0x00651610
 12930,function,ScriptCommand::GETTACTICPRESETID,0x00651650,0x0053d350,0x00651650
 12931,function,ScriptCommand::SETTACTICPRESETID,0x006516b0,0x0053d3b0,0x006516b0
@@ -12945,8 +12945,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 12944,function,ScriptCommand::GETPLATFORM,0x00651ab0,0x0053d7b0,0x00651ab0
 12945,function,ScriptCommand::DEBUGSENDRAWINPUTEVENT,0x00651ad0,0x0053d7d0,0x00651ad0
 12946,function,ScriptCommand::DEBUGSETCURSORPOSITION,0x00651b90,0x0053d890,0x00651b90
-12947,function,ScriptCommand::UNLOCKACHIEVEMENTBYID,0x00651be0,0x0053d8e0,0x00651be0
-12948,function,ScriptCommand::GETHASACHIEVEMENTBYID,0x00651cf0,0x0053d9f0,0x00651cf0
+12947,function,ScriptCommand::UnlockAchievement,0x00651be0,0x0053d8e0,0x00651be0
+12948,function,ScriptCommand::GetHasAchievement,0x00651cf0,0x0053d9f0,0x00651cf0
 12949,function,ScriptCommand::INCREMENTACHIEVEMENTCOUNT,0x00651e20,0x0053db20,0x00651e20
 12950,function,ScriptCommand::UPDATESTAT,0x00651ec0,0x0053dbc0,0x00651ec0
 12951,function,ScriptCommand::GETSTAT,0x00652050,0x0053dd50,0x00652050
@@ -13000,9 +13000,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 12999,function,ScriptCommand::GETCURRENTSCRIPTRESOURCE,0x00654d70,0x00540cd0,0x00654d70
 13000,function,ScriptCommand::ADDITEMSUBITEM,0x00654e40,0x00540da0,0x00654e40
 13001,function,ScriptCommand::REMOVEITEMSUBITEM,0x00654f30,0x00540e90,0x00654f30
-13002,function,ScriptCommand::GETAREA,0x00655000,0x00540f60,0x00655000
+13002,function,ScriptCommand::GetAreaOrAttackTarget,0x00655000,0x00540f60,0x00655000
 13003,function,ScriptCommand::GETFACING,0x00655090,0x00540ff0,0x00655090
-13004,function,ScriptBackend::ForScript_SetFacingPosition,0x00655170,0x005410d0,0x00655170
+13004,function,ScriptBackend::SetFacing,0x00655170,0x005410d0,0x00655170
 13005,function,ScriptCommand::SETFACING,0x006551d0,0x00541130,0x006551d0
 13006,function,ScriptCommand::GETORIENTATION,0x00655290,0x005411f0,0x00655290
 13007,function,ScriptCommand::SETORIENTATION,0x00655340,0x005412a0,0x00655340
@@ -13077,7 +13077,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13076,function,ScriptCommand::ISIMMORTAL,0x00659be0,0x00545940,0x00659be0
 13077,function,ScriptCommand::SETIMMORTAL,0x00659c50,0x005459b0,0x00659c50
 13078,function,ScriptCommand::ISCONJURING,0x00659cc0,0x00545a20,0x00659cc0
-13079,function,ScriptCommand::SETATTACKDURATION,0x00659d30,0x00545a90,0x00659d30
+13079,function,ScriptCommand::SetAttackOrAimLoopDuration,0x00659d30,0x00545a90,0x00659d30
 13080,function,ScriptCommand::GETAILEVEL,0x00659de0,0x00545b40,0x00659de0
 13081,function,ScriptCommand::SETAILEVEL,0x00659e40,0x00545ba0,0x00659e40
 13082,function,ScriptCommand::UPDATETHREATTABLE,0x00659ee0,0x00545c40,0x00659ee0
@@ -13099,11 +13099,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13098,function,ScriptCommand::TRIGGERPERCEPTION,0x0065a7b0,0x00546510,0x0065a7b0
 13099,function,ScriptCommand::CLEARPERCEPTIONLIST,0x0065a870,0x005465d0,0x0065a870
 13100,function,ScriptCommand::OPENSTORE,0x0065a8b0,0x00546610,0x0065a8b0
-13101,function,ScriptCommand::STOREGETMONEY,0x0065a980,0x005466e0,0x0065a980
+13101,function,ScriptCommand::GetStoreMoney,0x0065a980,0x005466e0,0x0065a980
 13102,function,ScriptCommand::STOREGETMAXBUYPRICE,0x0065a9f0,0x00546750,0x0065a9f0
 13103,function,ScriptCommand::STORESETMAXBUYPRICE,0x0065aa60,0x005467c0,0x0065aa60
 13104,function,ScriptCommand::STORESETMARKUP,0x0065aad0,0x005468a0,0x0065aad0
-13105,function,ScriptCommand::STOREGETMARKDOWN,0x0065ab50,0x00546830,0x0065ab50
+13105,function,ScriptCommand::GetStoreMarkUpOrMarkDown,0x0065ab50,0x00546830,0x0065ab50
 13106,function,ScriptCommand::STORESETMARKDOWN,0x0065abc0,0x00546920,0x0065abc0
 13107,function,ScriptCommand::OPENITEMUPGRADEGUI,0x0065ac40,0x005469a0,0x0065ac40
 13108,function,ScriptCommand::LOCATION,0x0065ace0,0x00546a40,0x0065ace0
@@ -13137,8 +13137,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13136,function,ScriptCommand::REMOVECOMMANDBYINDEX,0x0065c040,0x00547da0,0x0065c040
 13137,function,ScriptCommand::SETCOMMANDRESULT,0x0065c0b0,0x00547e10,0x0065c0b0
 13138,function,ScriptCommand::INTERACTWITHOBJECT,0x0065c110,0x00547e70,0x0065c110
-13139,function,ScriptCommand::GETEFFECTTYPE,0x0065c270,0x00547fd0,0x0065c270
-13140,function,ScriptCommand::SETEFFECTFLAGS,0x0065c360,0x005480c0,0x0065c360
+13139,function,ScriptCommand::GetEffectProperty,0x0065c270,0x00547fd0,0x0065c270
+13140,function,ScriptCommand::SetEffectProperty,0x0065c360,0x005480c0,0x0065c360
 13141,function,ScriptCommand::EFFECT,0x0065c460,0x005481c0,0x0065c460
 13142,function,ScriptCommand::SETINDIVIDUALIMPACTAOEEVENT,0x0065c580,0x005482e0,0x0065c580
 13143,function,CGameEffect::Prepare,0x0065c760,0x005484c0,0x0065c760
@@ -13148,9 +13148,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13147,function,ScriptCommand::GETITEMPOSSESSEDBY,0x0065cba0,0x00548900,0x0065cba0
 13148,function,ScriptCommand::SWITCHWEAPONSET,0x0065ccc0,0x00548a20,0x0065ccc0
 13149,function,ScriptCommand::GETACTIVEWEAPONSET,0x0065cd20,0x00548a80,0x0065cd20
-13150,function,ScriptCommand::EQUIPITEM,0x0065cda0,0x00548b00,0x0065cda0
+13150,function,ScriptCommand::EquipOrUnequipItem,0x0065cda0,0x00548b00,0x0065cda0
 13151,function,ScriptCommand::PLAYSOUND,0x0065ceb0,0x00548c10,0x0065ceb0
-13152,function,ScriptCommand::PLAYMUSIC,0x0065cfd0,0x00548d30,0x0065cfd0
+13152,function,ScriptCommand::PlayOrStopMusic,0x0065cfd0,0x00548d30,0x0065cfd0
 13153,function,ScriptCommand::MUSIC_SETINTENSITY,0x0065d070,0x00548dd0,0x0065d070
 13154,function,ScriptCommand::ACTIVATE_SOUND_BY_TAG,0x0065d0c0,0x00548e20,0x0065d0c0
 13155,function,ScriptCommand::SET_MUSIC_VOLUME_STATE_BY_TAG,0x0065d1b0,0x00548f10,0x0065d1b0
@@ -13215,16 +13215,16 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13214,function,ScriptCommand::LINKAREAMINIMAPS,0x0065f7c0,0x0054b520,0x0065f7c0
 13215,function,ScriptCommand::SETSHAREDCHARAREANAME,0x0065f8f0,0x0054b650,0x0065f8f0
 13216,function,ScriptCommand::OPENINVENTORY,0x0065fa40,0x0054b7a0,0x0065fa40
-13217,function,ScriptCommand::SETPARTYPLOTFLAG,0x0065fb90,0x0054b8f0,0x0065fb90
+13217,function,ScriptCommand::SetPartyPlotFlag,0x0065fb90,0x0054b8f0,0x0065fb90
 13218,function,ScriptCommand::GETPLOTRESREF,0x0065fd30,0x0054ba90,0x0065fd30
 13219,function,ScriptCommand::GETPLOTGUID,0x0065fe60,0x0054bbc0,0x0065fe60
 13220,function,ScriptCommand::GETPLOTFLAGNAME,0x0065ffb0,0x0054bd10,0x0065ffb0
 13221,function,ScriptCommand::GETPLOTREWARDID,0x00660100,0x0054be60,0x00660100
-13222,function,ScriptCommand::GETPARTYPLOTFLAG,0x00660200,0x0054bf60,0x00660200
+13222,function,ScriptCommand::GetPartyPlotFlag,0x00660200,0x0054bf60,0x00660200
 13223,function,ScriptCommand::GETPLOTNAME,0x00660390,0x0054c0f0,0x00660390
 13224,function,ScriptCommand::GETCURRENTEFFECT,0x006604d0,0x0054c230,0x006604d0
 13225,function,ScriptCommand::SETISCURRENTEFFECTVALID,0x00660580,0x0054c2e0,0x00660580
-13226,function,ScriptCommand::SETEFFECTENGINEINTEGER,0x00660650,0x0054c3b0,0x00660650
+13226,function,ScriptCommand::SetEffectEngineValue,0x00660650,0x0054c3b0,0x00660650
 13227,function,ScriptCommand::GETARRAYSIZE,0x006608f0,0x0054c650,0x006608f0
 13228,function,ScriptCommand::ISHERO,0x00660a20,0x0054c780,0x00660a20
 13229,function,ScriptCommand::GETHERO,0x00660aa0,0x0054c800,0x00660aa0
@@ -13252,7 +13252,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13251,function,ScriptCommand::GETPCSPEAKER,0x00661870,0x0054d5d0,0x00661870
 13252,function,ScriptCommand::SETACTIVE,0x006618b0,0x0054d610,0x006618b0
 13253,function,ScriptCommand::SETFORCEVISIBLE,0x00661c00,0x0054d960,0x00661c00
-13254,function,ScriptCommand::FIREPROJECTILE,0x00661c70,0x0054d9d0,0x00661c70
+13254,function,ScriptCommand::FireProjectile,0x00661c70,0x0054d9d0,0x00661c70
 13255,function,ScriptCommand::SETPROJECTILEIMPACTEVENT,0x00661e50,0x0054dbb0,0x00661e50
 13256,function,ScriptCommand::DISPLAYPORTRAITMESSAGE,0x00661f40,0x0054dca0,0x00661f40
 13257,function,ScriptCommand::DISPLAYFLOATYMESSAGE,0x00662180,0x0054dee0,0x00662180
@@ -13262,7 +13262,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13261,function,ScriptCommand::EFFECTAREAOFEFFECT,0x00662610,0x0054e370,0x00662610
 13262,function,ScriptCommand::EFFECTDAMAGE,0x00662870,0x0054e5d0,0x00662870
 13263,function,ScriptCommand::EFFECTIMPACT,0x00662a00,0x0054e760,0x00662a00
-13264,function,ScriptCommand::EFFECTMODIFYPROPERTY,0x00662bb0,0x0054e910,0x00662bb0
+13264,function,ScriptCommand::EffectModifyProperty,0x00662bb0,0x0054e910,0x00662bb0
 13265,function,ScriptCommand::SHOWFLOATYICON,0x00662db0,0x0054eb10,0x00662db0
 13266,function,ScriptCommand::SETCANLEVELUP,0x00662ea0,0x0054ec00,0x00662ea0
 13267,function,ScriptCommand::GETMAXLEVEL,0x00662f00,0x0054ec60,0x00662f00
@@ -13362,7 +13362,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13361,function,,0x00666f10,0x00552de0,0x00666f10
 13362,function,ScriptCommand::PRINTTOLOG,0x00668820,0x005546f0,0x00668820
 13363,function,ScriptCommand::LOGTRACE,0x006688a0,0x00554770,0x006688a0
-13364,function,ScriptCommand::GETACTIVE,0x00668a20,0x005548f0,0x00668a20
+13364,function,ScriptCommand::GetObjectProperty,0x00668a20,0x005548f0,0x00668a20
 13365,function,ScriptCommand::CHECKLINEOFSIGHTOBJECT,0x00668db0,0x00554c80,0x00668db0
 13366,function,ScriptCommand::TOSTRING,0x00668f30,0x00554e00,0x00668f30
 13367,function,ScriptCommand::FLOATTOSTRING,0x00669100,0x00554fd0,0x00669100
@@ -13373,7 +13373,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13372,function,ScriptCommand::GETMODULE,0x00669850,0x00555720,0x00669850
 13373,function,ScriptCommand::SETCREATUREPROPERTY,0x00669890,0x00555760,0x00669890
 13374,function,ScriptCommand::UPDATECREATUREPROPERTY,0x006699c0,0x00555890,0x006699c0
-13375,function,ScriptCommand::GETHASABILITY,0x00669ab0,0x00555980,0x00669ab0
+13375,function,ScriptCommand::HasAddOrRemoveAbility,0x00669ab0,0x00555980,0x00669ab0
 13376,function,ScriptCommand::GETITEMINEQUIPSLOT,0x00669c70,0x00555b40,0x00669c70
 13377,function,,0x00669de0,0x00555cb0,0x00669de0
 13378,function,,0x00669e60,0x00555d30,0x00669e60
@@ -13384,10 +13384,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13383,function,ScriptCommand::CLEARABILITYLIST,0x0066a0d0,0x00555fa0,0x0066a0d0
 13384,function,ScriptCommand::SETCOOLDOWN,0x0066a150,0x00556020,0x0066a150
 13385,function,ScriptCommand::GETREMAININGCOOLDOWN,0x0066a280,0x00556150,0x0066a280
-13386,function,ScriptCommand::GETWEAPONATTACKRATING,0x0066a3b0,0x00556280,0x0066a3b0
+13386,function,ScriptCommand::GetWeaponCombatStat,0x0066a3b0,0x00556280,0x0066a3b0
 13387,function,ScriptCommand::SHOWSTARTMENU,0x0066a5a0,0x00556470,0x0066a5a0
 13388,function,ScriptCommand::TOGGLEGAMEPAUSE,0x0066a7a0,0x00556670,0x0066a7a0
-13389,function,ScriptCommand::GETMAXITEMSTACKSIZE,0x0066a810,0x005566e0,0x0066a810
+13389,function,ScriptCommand::GetItemStackSizes,0x0066a810,0x005566e0,0x0066a810
 13390,function,ScriptCommand::SETITEMSTACKSIZE,0x0066a8a0,0x00556770,0x0066a8a0
 13391,function,ScriptCommand::GETGOLD,0x0066a980,0x00556850,0x0066a980
 13392,function,ScriptCommand::SETGOLD,0x0066aa00,0x005568d0,0x0066aa00
@@ -13402,7 +13402,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13401,function,ScriptCommand::GETTACTICCOMMAND,0x0066afc0,0x00556e90,0x0066afc0
 13402,function,ScriptCommand::GETTACTICCOMMANDPARAM,0x0066b050,0x00556f20,0x0066b050
 13403,function,ScriptCommand::STARTCHARGEN,0x0066b0e0,0x00556fb0,0x0066b0e0
-13404,function,ScriptCommand::APPLYEFFECTMODIFYPROPERTY,0x0066b3c0,0x00557290,0x0066b3c0
+13404,function,ScriptCommand::ApplyOrRemoveEffectModifyProperty,0x0066b3c0,0x00557290,0x0066b3c0
 13405,function,ScriptCommand::SETQUICKSLOT,0x0066b690,0x00557560,0x0066b690
 13406,function,ScriptCommand::GETQUICKSLOT,0x0066b800,0x005576d0,0x0066b800
 13407,function,ScriptCommand::GETCANLEVELUP,0x0066b8a0,0x00557770,0x0066b8a0
@@ -13414,7 +13414,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13413,function,ScriptCommand::GETITEMVALUE,0x0066bd00,0x00557bd0,0x0066bd00
 13414,function,ScriptCommand::ISITEMIRREMOVABLE,0x0066bd70,0x00557c40,0x0066bd70
 13415,function,ScriptCommand::ISITEMINDESTRUCTIBLE,0x0066bde0,0x00557cb0,0x0066bde0
-13416,function,ScriptCommand::SETITEMDROPPABLE,0x0066be50,0x00557d20,0x0066be50
+13416,function,ScriptCommand::SetObjectProperty,0x0066be50,0x00557d20,0x0066be50
 13417,function,ScriptCommand::CANUSECONDITIONEDABILITY,0x0066c1f0,0x005580c0,0x0066c1f0
 13418,function,ScriptCommand::GETMAXINVENTORYSIZE,0x0066c2a0,0x00558170,0x0066c2a0
 13419,function,ScriptCommand::SETMAXINVENTORYSIZE,0x0066c340,0x00558210,0x0066c340
@@ -13428,11 +13428,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13427,function,,0x0066ca80,0x00569460,0x0066ca80
 13428,function,ScriptCommand::GETMELEERINGPOSITION,0x0066cac0,0x00558920,0x0066cac0
 13429,function,ScriptCommand::GETTHREATTABLESIZE,0x0066cba0,0x00558a00,0x0066cba0
-13430,function,ScriptCommand::GETCREATURESTAMINA,0x0066cc30,0x00558a90,0x0066cc30
-13431,function,ScriptCommand::SETCREATURESTAMINA,0x0066cd00,0x00558b60,0x0066cd00
-13432,function,ScriptCommand::GETCREATUREMAXSTAMINA,0x0066cdc0,0x00558c20,0x0066cdc0
-13433,function,ScriptCommand::SETCREATUREMAXSTAMINA,0x0066ce90,0x00558cf0,0x0066ce90
-13434,function,ScriptBackend::ForScript_GetCreatureAttribute,0x0066cf60,0x00558dc0,0x0066cf60
+13430,function,ScriptCommand::GetCreatureManaOrStamina,0x0066cc30,0x00558a90,0x0066cc30
+13431,function,ScriptCommand::SetCreatureManaOrStamina,0x0066cd00,0x00558b60,0x0066cd00
+13432,function,ScriptCommand::GetCreatureMaxManaOrStamina,0x0066cdc0,0x00558c20,0x0066cdc0
+13433,function,ScriptCommand::SetCreatureMaxManaOrStamina,0x0066ce90,0x00558cf0,0x0066ce90
+13434,function,ScriptBackend::GetCreatureProperty,0x0066cf60,0x00558dc0,0x0066cf60
 13435,function,ScriptCommand::GETCREATUREATTRIBUTE,0x0066d0a0,0x00558f00,0x0066d0a0
 13436,function,ScriptCommand::GETCREATUREPROPERTY,0x0066d0e0,0x00558f40,0x0066d0e0
 13437,function,ScriptCommand::GETCREATUREPROPERTYTYPE,0x0066d120,0x00558f80,0x0066d120
@@ -13452,7 +13452,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13451,function,CommandPool::Release,0x0066de30,0x00559cf0,0x0066de30
 13452,function,,0x0066df50,0x00559e10,0x0066df50
 13453,function,CVirtualMachineCommands::DestroyGameDefinedStructure,0x0066dfb0,0x00559e70,0x0066dfb0
-13454,function,ScriptCommand::ISPERCEIVING,0x0066e040,0x00559f00,0x0066e040
+13454,function,ScriptCommand::IsPerceivingOrInAOE,0x0066e040,0x00559f00,0x0066e040
 13455,function,ScriptCommand::ADDCOMMAND,0x0066e0e0,0x00559fa0,0x0066e0e0
 13456,function,ScriptCommand::COMMANDSTARTCONVERSATION,0x0066e1f0,0x0055a0b0,0x0066e1f0
 13457,function,,0x0066e3a0,0x005cbdd0,0x0066e3a0
@@ -13476,9 +13476,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13475,function,ScriptCommand::COMMANDMOVEAWAYFROMOBJECT,0x0066f430,0x0055b2c0,0x0066f430
 13476,function,ScriptCommand::COMMANDFLY,0x0066f5c0,0x0055b450,0x0066f5c0
 13477,function,ScriptCommand::COMMANDUSEOBJECT,0x0066f770,0x0055b600,0x0066f770
-13478,function,ScriptCommand::COMMANDEQUIPITEM,0x0066f8b0,0x0055b740,0x0066f8b0
+13478,function,ScriptCommand::CommandEquipOrUnequipItem,0x0066f8b0,0x0055b740,0x0066f8b0
 13479,function,ScriptCommand::COMMANDSWITCHWEAPONSET,0x0066fa20,0x0055b8b0,0x0066fa20
-13480,function,ScriptCommand::COMMANDSHEATHEWEAPONS,0x0066fb30,0x0055b9c0,0x0066fb30
+13480,function,ScriptCommand::CommandSheatheOrUnsheatheWeapons,0x0066fb30,0x0055b9c0,0x0066fb30
 13481,function,ScriptCommand::COMMANDPLAYANIMATION,0x0066fc20,0x0055bab0,0x0066fc20
 13482,function,ScriptCommand::COMMANDWAIT,0x0066fdb0,0x0055bc40,0x0066fdb0
 13483,function,ScriptCommand::COMMANDJUMPTOOBJECT,0x0066fef0,0x0055bd80,0x0066fef0
@@ -13497,15 +13497,15 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13496,function,ScriptBackend::ForScript_ClearThreatTable,0x00670ba0,0x0055caf0,0x00670ba0
 13497,function,ScriptCommand::GETITEMSUBITEMS,0x00670be0,0x0055cb30,0x00670be0
 13498,function,ScriptCommand::GETPERCEIVEDCREATURELIST,0x00670d40,0x0055cc90,0x00670d40
-13499,function,ScriptCommand::FILTEROBJECTSINSHAPE,0x00670eb0,0x0055ce00,0x00670eb0
+13499,function,ScriptCommand::FilterOrGetObjectsInShape,0x00670eb0,0x0055ce00,0x00670eb0
 13500,function,ScriptCommand::GETCREATURESINMELEERING,0x006712f0,0x0055d240,0x006712f0
-13501,function,ScriptCommand::GETNEARESTOBJECTBYHOSTILITY,0x00671510,0x0055d460,0x00671510
+13501,function,ScriptCommand::GetNearestObjects,0x00671510,0x0055d460,0x00671510
 13502,function,ScriptCommand::GETCLUSTERCENTER,0x00671980,0x0055d8d0,0x00671980
 13503,function,ScriptCommand::APPLYEFFECTONPARTY,0x00672200,0x0055e150,0x00672200
 13504,function,ScriptCommand::GETITEMSININVENTORY,0x00672410,0x0055e360,0x00672410
 13505,function,ScriptCommand::GETPARTYPOOLLIST,0x00672ac0,0x0055ea10,0x00672ac0
 13506,function,ScriptCommand::GETPARTYLIST,0x00672ba0,0x0055eaf0,0x00672ba0
-13507,function,ScriptCommand::GETCREATURESINAOE,0x00672cc0,0x0055ec10,0x00672cc0
+13507,function,ScriptCommand::GetObjectsInAreaOrAOE,0x00672cc0,0x0055ec10,0x00672cc0
 13508,function,,0x00672e70,0x0055edc0,0x00672e70
 13509,function,ScriptCommand::SPLITSTRING,0x00672ea0,0x0055ef00,0x00672ea0
 13510,function,ScriptCommand::CLEARTHREATTABLE,0x00673030,0x0055f090,0x00673030
@@ -13516,9 +13516,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13515,function,ScriptCommand::REMOVEEFFECTSBYPARAMETERS,0x00673940,0x0055f9a0,0x00673940
 13516,function,ScriptCommand::REMOVEALLEFFECTS,0x00673ab0,0x0055fb10,0x00673ab0
 13517,function,ScriptCommand::GETITEMVFXS,0x00673be0,0x0055fc40,0x00673be0
-13518,function,ScriptCommand::GETHASEFFECT,0x00673d70,0x0055fdd0,0x00673d70
+13518,function,ScriptCommand::GetEffectsOrHasEffects,0x00673d70,0x0055fdd0,0x00673d70
 13519,function,ScriptCommand::GETEFFECTSBYCREATOR,0x00673fb0,0x00560010,0x00673fb0
-13520,function,ScriptBackend::ForScript_RemoveEffect,0x006741e0,0x00560240,0x006741e0
+13520,function,ScriptBackend::MakeEffectFilter,0x006741e0,0x00560240,0x006741e0
 13521,function,ScriptCommand::GETITEMPROPERTIES,0x00674260,0x005602c0,0x00674260
 13522,function,ScriptCommand::GETCONDITIONEDABILITIES,0x006743a0,0x00560400,0x006743a0
 13523,function,,0x006744e0,0x00560540,0x006744e0
@@ -13766,7 +13766,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13765,function,,0x00683c80,0x0056fa60,0x00683c80
 13766,function,,0x00684760,0x00570540,0x00684760
 13767,function,ScriptBackend::GetNearestObjects,0x006849c0,0x005707a0,0x006849c0
-13768,function,CGameObject::ForScript_GetNearestObjectByHostility,0x00684dd0,0x00570bb0,0x00684dd0
+13768,function,CCArea::GetNearestObjectsToLocation,0x00684dd0,0x00570bb0,0x00684dd0
 13769,function,,0x00685100,0x00570ee0,0x00685100
 13770,function,,0x006851d0,0x00570fb0,0x006851d0
 13771,function,,0x00685430,0x00571210,0x00685430
@@ -14040,7 +14040,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14039,function,,0x00694c40,0x00585ae0,0x00694c40
 14040,function,,0x00694cb0,0x00585b80,0x00694cb0
 14041,function,,0x00694cd0,0x00585ba0,0x00694cd0
-14042,function,ScriptBackend::ForScript_SetOrientation,0x00694ce0,0x00585bb0,0x00694ce0
+14042,function,CCObject::SetOrientation,0x00694ce0,0x00585bb0,0x00694ce0
 14043,function,,0x00694d10,0x00585be0,0x00694d10
 14044,function,,0x00694db0,0x00585c80,0x00694db0
 14045,function,,0x00694df0,0x00585cc0,0x00694df0
@@ -14397,7 +14397,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14396,function,,0x0069fcc0,0x00590ea0,0x0069fcc0
 14397,function,,0x0069fd40,0x00513920,0x0069fd40
 14398,function,,0x0069fdb0,0x00513990,0x0069fdb0
-14399,function,CCCreature::ForScript_IsAbilityAvailable,0x0069fe20,0x00590f20,0x0069fe20
+14399,function,CCCreature::GetStats,0x0069fe20,0x00590f20,0x0069fe20
 14400,function,,0x0069fe50,0x00590f50,0x0069fe50
 14401,function,,0x0069ffb0,0x005910b0,0x0069ffb0
 14402,function,,0x0069fff0,0x005910f0,0x0069fff0
@@ -14468,7 +14468,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14467,function,,0x006a2b40,0x00593c60,0x006a2b40
 14468,function,,0x006a2b80,0x00593ca0,0x006a2b80
 14469,function,,0x006a2bb0,0x00593cd0,0x006a2bb0
-14470,function,CCCreature::ForScript_SetPartyPlotFlag,0x006a2cc0,0x00593de0,0x006a2cc0
+14470,function,CCCreature::GetParty,0x006a2cc0,0x00593de0,0x006a2cc0
 14471,function,,0x006a2ce0,0x00593e00,0x006a2ce0
 14472,function,,0x006a2d10,0x00593e30,0x006a2d10
 14473,function,,0x006a2d30,0x00593e50,0x006a2d30
@@ -14599,7 +14599,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14598,function,,0x006a7ae0,0x00598ca0,0x006a7ae0
 14599,function,,0x006a7d30,0x00598ef0,0x006a7d30
 14600,function,,0x006a7d50,0x00598f10,0x006a7d50
-14601,function,ScriptBackend::ForScript_GetCreatureRacialType,0x006a7d90,0x00598f50,0x006a7d90
+14601,function,CCCreature::GetRacialType,0x006a7d90,0x00598f50,0x006a7d90
 14602,function,,0x006a7dd0,0x00598f90,0x006a7dd0
 14603,function,CCCreature::PathBlocker,0x006a7e10,0x00598fd0,0x006a7e10
 14604,function,,0x006a7f30,0x005990f0,0x006a7f30
@@ -14701,7 +14701,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14700,function,,0x006ac2a0,0x0059d4d0,0x006ac2a0
 14701,function,CCCreature::RefreshMeleeRing,0x006ac510,0x0059d740,0x006ac510
 14702,function,CCCreature::ForScript_AddItemProperty,0x006ac9a0,0x0059dbd0,0x006ac9a0
-14703,function,CCCreature::ForScript_SetCanLevelUp,0x006aca10,0x0059dc40,0x006aca10
+14703,function,CCCreature::UpdateCanLevelUp,0x006aca10,0x0059dc40,0x006aca10
 14704,function,,0x006acbc0,0x0059ddf0,0x006acbc0
 14705,function,,0x006aceb0,0x0059e0e0,0x006aceb0
 14706,function,,0x006acf60,0x0059e190,0x006acf60
@@ -14870,7 +14870,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14869,function,,0x006b6e60,0x005a88f0,0x006b6e60
 14870,function,,0x006b6f60,0x005a89f0,0x006b6f60
 14871,function,,0x006b7330,0x005a8dc0,0x006b7330
-14872,function,CCCreature::ForScript_SetCreatureGoreLevel,0x006b73c0,0x005a8e50,0x006b73c0
+14872,function,CCCreature::ApplyGoreLevel,0x006b73c0,0x005a8e50,0x006b73c0
 14873,function,,0x006b7400,0x005a8e90,0x006b7400
 14874,function,,0x006b7530,0x005a8fc0,0x006b7530
 14875,function,CCCreature::HandleMessage_PlaySoundSetEntryMessage,0x006b7590,0x005a9020,0x006b7590
@@ -14967,7 +14967,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14966,function,,0x006c1310,0x005b2d50,0x006c1310
 14967,function,,0x006c13b0,0x005b2df0,0x006c13b0
 14968,function,,0x006c13e0,0x005b2e20,0x006c13e0
-14969,function,CCCreature::ForScript_SetItemHeraldry,0x006c1400,0x005b2e40,0x006c1400
+14969,function,CCCreature::SetAppearance,0x006c1400,0x005b2e40,0x006c1400
 14970,function,,0x006c16e0,0x005b3120,0x006c16e0
 14971,function,,0x006c19f0,0x005b3430,0x006c19f0
 14972,function,,0x006c1bf0,0x005b3630,0x006c1bf0
@@ -16491,7 +16491,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16490,function,,0x0071a0c0,0x00618060,0x0071a0c0
 16491,function,,0x0071a1a0,0x00618140,0x0071a1a0
 16492,function,,0x0071a1d0,0x00618170,0x0071a1d0
-16493,function,ScriptBackend::ForScript_GetAutoLevelUp,0x0071a1f0,0x00618190,0x0071a1f0
+16493,function,CCCreatureStats::GetAutoLevelUp,0x0071a1f0,0x00618190,0x0071a1f0
 16494,function,,0x0071a210,0x006181b0,0x0071a210
 16495,function,,0x0071a230,0x006181d0,0x0071a230
 16496,function,,0x0071a280,0x00618220,0x0071a280
@@ -17567,9 +17567,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 17566,function,,0x0073d780,0x00649320,0x0073d780
 17567,function,,0x0073de20,0x006499c0,0x0073de20
 17568,function,,0x0073de50,0x006499f0,0x0073de50
-17569,function,CGameObject::ForScript_IsLocationSafe,0x0073de70,0x00649a10,0x0073de70
+17569,function,CCArea::IsLocationSafe,0x0073de70,0x00649a10,0x0073de70
 17570,function,,0x0073df70,0x00649b10,0x0073df70
-17571,function,CGameObject::ForScript_GetSafeLocation,0x0073e370,0x00649f10,0x0073e370
+17571,function,CCArea::GetSafeLocation,0x0073e370,0x00649f10,0x0073e370
 17572,function,CCArea::NearestFree,0x0073e7f0,0x0064a390,0x0073e7f0
 17573,function,CCObject::RequestPath,0x0073ea80,0x0064a620,0x0073ea80
 17574,function,,0x0073efe0,0x0064ab80,0x0073efe0
@@ -23499,7 +23499,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 23498,function,,0x00865ee0,0x0046bd30,0x00865ee0
 23499,function,,0x00865f20,0x0046bda0,0x00865f20
 23500,function,,0x00866250,0x0046c0d0,0x00866250
-23501,function,ScriptBackend::ForScript_IsInTrigger,0x008663a0,0x0073fd60,0x008663a0
+23501,function,std::vector<unsigned int>::Contains,0x008663a0,0x0073fd60,0x008663a0
 23502,function,,0x00866410,0x0046c250,0x00866410
 23503,function,,0x008667d0,0x0046c610,0x008667d0
 23504,function,,0x00866b80,0x0046c9d0,0x00866b80
@@ -25795,7 +25795,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 25794,function,,0x008e300f,0x008b956f,0x008e300f
 25795,function,entry,0x008e3024,0x008b9584,0x008e3024
 25796,function,,0x008e3030,0x008b9590,0x008e3030
-25797,function,ScriptBackend::ForScript_log,0x008e33e0,0x008b9940,0x008e33e0
+25797,function,_CIlog,0x008e33e0,0x008b9940,0x008e33e0
 25798,function,,0x008e3438,0x008b9998,0x008e3438
 25799,function,,0x008e34f0,0x008b9a50,0x008e34f0
 25800,function,,0x008e3526,0x008b9a86,0x008e3526
@@ -25891,7 +25891,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 25890,function,ScriptBackend::ForScript_cos,0x008e6020,0x008be430,0x008e6020
 25891,function,,0x008e6078,0x008be488,0x008e6078
 25892,function,,0x008e6110,0x008bd9e0,0x008e6110
-25893,function,ScriptBackend::ForScript_sqrt,0x008e6240,0x008bcb50,0x008e6240
+25893,function,_CIsqrt,0x008e6240,0x008bcb50,0x008e6240
 25894,function,,0x008e625d,0x008bcb6d,0x008e625d
 25895,function,ScriptBackend::ForScript_tan,0x008e6340,0x008be560,0x008e6340
 25896,function,,0x008e6398,0x008be5b8,0x008e6398
@@ -32563,7 +32563,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 32562,function,,0x00a2f7f0,0x00823f50,0x00a2f7f0
 32563,function,,0x00a2f840,0x00823fa0,0x00a2f840
 32564,function,,0x00a2fb90,0x008242f0,0x00a2fb90
-32565,function,ScriptBackend::ForScript_ASSIGNFUNCTION,0x00a2fd10,0x00824470,0x00a2fd10
+32565,function,CVirtualMachine::StackPopCommand,0x00a2fd10,0x00824470,0x00a2fd10
 32566,function,,0x00a2fe90,0x008245f0,0x00a2fe90
 32567,function,,0x00a2fef0,0x00824650,0x00a2fef0
 32568,function,,0x00a2ff60,0x008246c0,0x00a2ff60
@@ -32571,7 +32571,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 32570,function,,0x00a30190,0x008248f0,0x00a30190
 32571,function,,0x00a301b0,0x00824910,0x00a301b0
 32572,function,,0x00a31d00,0x00826460,0x00a31d00
-32573,function,ScriptBackend::ForScript_Deprecated_ExecuteScript,0x00a31e70,0x008265d0,0x00a31e70
+32573,function,CVirtualMachine::RunScript,0x00a31e70,0x008265d0,0x00a31e70
 32574,function,,0x00a320b0,0x00826810,0x00a320b0
 32575,function,,0x00a32240,0x008269a0,0x00a32240
 32576,function,,0x00a322a0,0x00826a00,0x00a322a0
@@ -33390,7 +33390,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33389,function,,0x00a59e10,0x00700460,0x00a59e10
 33390,function,,0x00a59e30,0x00700480,0x00a59e30
 33391,function,,0x00a59e50,0x007004b0,0x00a59e50
-33392,function,ScriptBackend::ForScript_GetEventLocation,0x00a59f10,0x00700570,0x00a59f10
+33392,function,CDataArrays::GetVector,0x00a59f10,0x00700570,0x00a59f10
 33393,function,,0x00a59f60,0x007005c0,0x00a59f60
 33394,function,,0x00a59f80,0x00700730,0x00a59f80
 33395,function,,0x00a59fb0,0x00700760,0x00a59fb0
@@ -33636,7 +33636,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33635,function,,0x00a650c0,0x0070acb0,0x00a650c0
 33636,function,CGameEffect::CGameEffect_copy,0x00a65130,0x0070ad20,0x00a65130
 33637,function,,0x00a651f0,0x0070ade0,0x00a651f0
-33638,function,ScriptBackend::ForScript_SetEffectFlags,0x00a65250,0x0070ae40,0x00a65250
+33638,function,CGameEffect::SetCreator,0x00a65250,0x0070ae40,0x00a65250
 33639,function,,0x00a65260,0x0070ae60,0x00a65260
 33640,function,CGameEffect::CGameEffect,0x00a652a0,0x0070aea0,0x00a652a0
 33641,function,,0x00a65360,0x0070af60,0x00a65360
