@@ -1,0 +1,380 @@
+pattern,subsystem,evidence
+entry,ThirdParty:CRT,the entry point: libcmt startup (call __security_init_cookie; jmp __tmainCRTStartup)
+_CI*,ThirdParty:CRT,"the C runtime's x87/SSE2 math entries (_CIsqrt, _CIlog, ...)"
+operator_new,Core,the engine's global allocator (calls ECMemory)
+operator_delete,Core,the engine's global allocator (calls ECMemory)
+type_info,ThirdParty:CRT,MSVC RTTI type
+std::bad_typeid,ThirdParty:CRT,thrown by the RTTI runtime
+std::__non_rtti_object,ThirdParty:CRT,thrown by the RTTI runtime
+ATL::*,ThirdParty:ATL,ATL exception class (MSVC lib)
+std::*,ThirdParty:STL,MSVC STL
+std,ThirdParty:STL,MSVC STL (std::operator+)
+?A0x2df6e4b4::*,ThirdParty:Scaleform,anon ns; derives GASMovieClipLoader (IME LangBar)
+GFx*,ThirdParty:Scaleform,Scaleform GFx
+GAS*,ThirdParty:Scaleform,Scaleform ActionScript VM
+GRefCountBase*,ThirdParty:Scaleform,Scaleform kernel refcount
+GAcquireInterface,ThirdParty:Scaleform,Scaleform kernel (G*)
+GAllocator,ThirdParty:Scaleform,Scaleform kernel (G*)
+GBufferedFile,ThirdParty:Scaleform,Scaleform kernel (G*)
+GDebugAllocator,ThirdParty:Scaleform,Scaleform kernel (G*)
+GDefaultAcquireInterface,ThirdParty:Scaleform,Scaleform kernel (G*)
+GDelegatedFile,ThirdParty:Scaleform,Scaleform kernel (G*)
+GEvent,ThirdParty:Scaleform,Scaleform kernel (G*)
+GFILEFile,ThirdParty:Scaleform,Scaleform kernel (G*)
+GFile,ThirdParty:Scaleform,Scaleform kernel (G*)
+GFileConstants,ThirdParty:Scaleform,Scaleform kernel (G*)
+GImage,ThirdParty:Scaleform,Scaleform kernel (G*)
+GImageBase,ThirdParty:Scaleform,Scaleform kernel (G*)
+GImageInfo*,ThirdParty:Scaleform,Scaleform kernel (G*)
+GJPEGInput,ThirdParty:Scaleform,Scaleform kernel (G*)
+GJPEGOutput,ThirdParty:Scaleform,Scaleform kernel (G*)
+GJPEGSystem,ThirdParty:Scaleform,Scaleform kernel (G*)
+GMutex,ThirdParty:Scaleform,Scaleform kernel (G*)
+GMutex_AreadyLockedAcquireInterface,ThirdParty:Scaleform,Scaleform kernel (G*)
+GNewOverrideBase,ThirdParty:Scaleform,Scaleform kernel (G*)
+GRenderer*,ThirdParty:Scaleform,Scaleform kernel (G*)
+GSemaphore,ThirdParty:Scaleform,Scaleform kernel (G*)
+GSemaphoreWaitableIncrement,ThirdParty:Scaleform,Scaleform kernel (G*)
+GStandardAllocator,ThirdParty:Scaleform,Scaleform kernel (G*)
+GStandardBlockAllocator,ThirdParty:Scaleform,Scaleform kernel (G*)
+GSysFile,ThirdParty:Scaleform,Scaleform kernel (G*)
+GTexture*,ThirdParty:Scaleform,Scaleform kernel (G*)
+GThread,ThirdParty:Scaleform,Scaleform kernel (G*)
+GColor,ThirdParty:Scaleform,Scaleform kernel exports (?SetHSV@GColor@@)
+GMatrix2D,ThirdParty:Scaleform,Scaleform kernel exports (?Append@GMatrix2D@@)
+GWaitCondition,ThirdParty:Scaleform,Scaleform kernel exports beside GMutex
+GWaitable*,ThirdParty:Scaleform,Scaleform kernel exports beside GEvent
+GUnopenedFile,ThirdParty:Scaleform,Scaleform kernel (G*)
+GWaitable,ThirdParty:Scaleform,Scaleform kernel (G*)
+GZLibFile,ThirdParty:Scaleform,Scaleform kernel (G*)
+GJPEGInputImpl_jpeglib,ThirdParty:Scaleform,Scaleform's libjpeg wrapper
+GJPEGOutputImpl_jpeglib,ThirdParty:Scaleform,Scaleform's libjpeg wrapper
+GJPEGSystem_jpeglib,ThirdParty:Scaleform,Scaleform's libjpeg wrapper
+CSSHandler*,ThirdParty:Scaleform,base of TextStyleParserHandler (GFx CSS)
+TextStyleParserHandler*,ThirdParty:Scaleform,derives GFxTextStyleParserHandlerBase
+CSSStringBuilder,ThirdParty:Scaleform,derives GASObjectInterface::MemberVisitor
+CSSTextFormatLoader,ThirdParty:Scaleform,derives GASObjectInterface::MemberVisitor
+NXU::*,ThirdParty:PhysX,"PhysX NxuStream, static (incl. its TinyXML)"
+NXU_userNotify,ThirdParty:PhysX,PhysX NxuStream callback
+Nx*,ThirdParty:PhysX,PhysX SDK header classes
+OC3Ent::*,ThirdParty:FaceFX,OC3 Entertainment FaceFX SDK
+TiXml*,ThirdParty:TinyXML,TinyXML
+CSpeedTreeRT,ThirdParty:SpeedTree,SpeedTreeRT.dll class
+CSpeedTreeAllocator,ThirdParty:SpeedTree,SpeedTreeRT SDK interface
+Umbra::*,ThirdParty:Umbra,umbra.dll interfaces
+Fesl::*,ThirdParty:Fesl,"EA Fesl/DirtySDK (FESL, DIRTYSOCK strings)"
+CEzLcd,ThirdParty:LogitechLCD,Logitech G15 LCD SDK EZ wrapper
+CEzLcdPage,ThirdParty:LogitechLCD,Logitech G15 LCD SDK EZ wrapper
+CLCDBase,ThirdParty:LogitechLCD,Logitech G15 LCD SDK EZ wrapper
+CLCDBitmap,ThirdParty:LogitechLCD,Logitech G15 LCD SDK EZ wrapper
+CLCDCollection,ThirdParty:LogitechLCD,Logitech G15 LCD SDK EZ wrapper
+CLCDGfx,ThirdParty:LogitechLCD,Logitech G15 LCD SDK EZ wrapper
+CLCDManager,ThirdParty:LogitechLCD,Logitech G15 LCD SDK EZ wrapper
+CLCDOutput,ThirdParty:LogitechLCD,Logitech G15 LCD SDK EZ wrapper
+CLCDStreamingText,ThirdParty:LogitechLCD,Logitech G15 LCD SDK EZ wrapper
+CLCDText,ThirdParty:LogitechLCD,Logitech G15 LCD SDK EZ wrapper
+Messages::*,Messaging,Messages namespace
+MessageRegistry,Messaging,message type registry
+Messages,Messaging,Messages::Send etc.
+FocusCameraOnObject,Messaging,derives Messages::GameMessage
+SmartData::*,Data,SmartData reflection
+ExplicitObjectIDMemberLookup*,Data,SmartData member lookup by object ID
+ObjectIDMemberLookup*,Data,SmartData member lookup by object ID
+ObjectIDArrayMemberLookup*,Data,SmartData member lookup by object ID
+ObjectIDArrayIteratorImpl,Data,derives SmartData::MemberIteratorImpl
+Math::*,Core,math
+Multithreading::*,Core,threads and tasks
+Multithreading,Core,Multithreading::Sleep
+Eclipse::DAThreadManager,Core,thread manager
+ECMemory,Core,allocator
+ECPrivate::*,Core,memory/string pools
+Destroyer::*,Core,deferred-delete helper
+General::SafePointerList*,Core,container
+General::Token,Core,handle base (of Graphics::Texture2D)
+Angle,Core,math/time helpers
+Bounds,Core,math/time helpers
+Clock,Core,math/time helpers
+Quaternion,Core,math/time helpers
+Vector,Core,math/time helpers
+EC::ITimer,Core,timer interface
+EC::WorldTimer,Core,game clock timer
+ObjectTimer,Core,timer update
+ECResMan,Resources,ECResMan namespace functions
+ECResMan::*,Resources,"resource manager, sources, files"
+ECFileAccess::*,Resources,"resource manager, sources, files"
+EC::PureResourceHelper,Resources,"resource manager, sources, files"
+RIMTreeManager,Resources,"resource manager, sources, files"
+ModuleResourceManager,Resources,"resource manager, sources, files"
+LoadModuleResourcesTask,Resources,"resource manager, sources, files"
+Resource,Resources,"resource manager, sources, files"
+ResourceArray,Resources,"resource manager, sources, files"
+Resources,Resources,"resource manager, sources, files"
+CExoGFF,Resources,GFF/2DA/GDA/TLK formats
+CResGFF,Resources,GFF/2DA/GDA/TLK formats
+CResARE,Resources,GFF/2DA/GDA/TLK formats
+CResIFO,Resources,GFF/2DA/GDA/TLK formats
+CResLST,Resources,GFF/2DA/GDA/TLK formats
+C2DASource,Resources,GFF/2DA/GDA/TLK formats
+G2DA,Resources,GFF/2DA/GDA/TLK formats
+M2DA,Resources,GFF/2DA/GDA/TLK formats
+TwoDimArrayCache*,Resources,GFF/2DA/GDA/TLK formats
+GdaStore,Resources,GFF/2DA/GDA/TLK formats
+GdaTables,Resources,GFF/2DA/GDA/TLK formats
+CTlkTable,Resources,GFF/2DA/GDA/TLK formats
+XMLParser2::*,Resources,engine XML parser
+XMLParser3000::*,Resources,engine XML parser
+XML_Document_Node,Resources,engine XML parser
+CBWC*,Resources,BioWare cipher Xor/Blowfish; beside 2DA code
+CVirtualMachine*,Scripting,"VM, script commands and backends"
+CClientVirtualMachineCommands,Scripting,"VM, script commands and backends"
+ScriptCommand,Scripting,"VM, script commands and backends"
+ScriptBackend,Scripting,"VM, script commands and backends"
+ScriptArray,Scripting,"VM, script commands and backends"
+CScriptEvent,Scripting,"VM, script commands and backends"
+CScriptLocation,Scripting,"VM, script commands and backends"
+CNetLayer,Network,"engine net layer (80 slots), not EA online"
+INetLayer,Network,base of CNetLayer
+ReceiveUDPTask,Network,UDP task beside CNetLayer
+AddressTranslationTask,Network,net task beside CNetLayer
+OnlineFeatures,Online,implements Fesl listeners
+PRC*,Online,premium content (DLC)
+ContentManager,Online,DLC content manager
+StartDADMServiceTask,Online,DA download manager
+HeroInfo,Online,community hero import list
+ClassRank,Online,community class rankings
+Graphics::IMoviePlayer,Video,movie player interface (Bink)
+Renderer::MoviePlayerInternal,Video,derives Graphics::IMoviePlayer
+EclipsePrivate::*,Audio,CContent*_FMOD
+CCSoundObject*,Audio,sound game object
+CCTriggerAudio*,Audio,audio volume trigger
+GUI::GUIDebugOptions,Tools,debug options screen
+DebugOptions,Tools,debug options
+DebugWorldSpaceTextFloaty,Tools,debug floaty
+Renderer::EclipseToolsetUmbraServices,Tools,toolset Umbra services
+EclipseGFx*,GUI,Scaleform glue
+Renderer::ScaleformRenderer,GUI,Scaleform glue
+Renderer::GTextureD3D9Impl,GUI,Scaleform glue
+ScaleformAtlasReader,GUI,Scaleform glue
+Eclipse::UpdateAndRenderLoadingGUITask,GUI,engine GUI
+IGUISystem,GUI,engine GUI
+GUIISOEntry,GUI,engine GUI
+GuiCommands,GUI,engine GUI
+GuiExternal,GUI,engine GUI
+GuiMovie,GUI,engine GUI
+GuiMovieSet,GUI,engine GUI
+FilteredGroupedItemView*,GUI,engine GUI
+Floaty,GUI,engine GUI
+ActionBarFloaty,GUI,engine GUI
+IconFloaty,GUI,engine GUI
+MessageFloaty,GUI,engine GUI
+OffscreenIndicatorFloaty,GUI,engine GUI
+StatsFloaty,GUI,engine GUI
+Alert,GUI,engine GUI
+AbilityGUIInfo,GUI,engine GUI
+EffectGUIInfo,GUI,engine GUI
+PortraitProperties,GUI,engine GUI
+PortraitRenderer,GUI,engine GUI
+MinimapRefreshOperation,GUI,engine GUI
+MinimapRenderOperation,GUI,engine GUI
+IGameRenderOperation,GUI,engine GUI
+SharedCharacterStage,GUI,engine GUI
+Notifications,GUI,engine GUI
+ItemFilter*,GUI,engine GUI
+PartyPickerEntry,GUI,engine GUI
+GUI::*,GUI,GUI namespace
+CClientExoApp,App,application/platform/console/options
+CClientOptions,App,application/platform/console/options
+Console::*,App,application/platform/console/options
+.?AV?$TemplateConsoleFunc@*,App,application/platform/console/options
+Eclipse::IPlatform,App,application/platform/console/options
+Eclipse::PlatformWin32,App,application/platform/console/options
+Eclipse::InitializeTask,App,application/platform/console/options
+Eclipse::ShutdownTask,App,application/platform/console/options
+Eclipse::UpdateTask,App,application/platform/console/options
+EclipseGame,App,application/platform/console/options
+UpdateSplashScreenTask,App,application/platform/console/options
+CKeyboardLCD,App,application/platform/console/options
+ECInput::*,Input,input
+Eclipse::GroupedInputMappings*,Input,input
+Input,Input,input
+InputMapper,Input,input
+InputModeGroup,Input,input
+InputModes,Input,input
+CameraController*,Camera,camera controllers
+CCameraFixedPolicy,Camera,camera controllers
+SceneCamera,Camera,camera controllers
+SceneCameraManager,Camera,camera controllers
+Renderer::EclipseUmbra*,World,Umbra visibility glue
+Renderer::IUmbraRenderer,World,Umbra visibility glue
+Renderer::IPartitionUmbraCommander,World,Umbra visibility glue
+D3DDriver::D3DUmbraRenderer,World,Umbra visibility glue
+GraphicsStructures,Rendering,model loading functions
+GraphicsStructures::PHY*,Physics,PHY physics data builders
+GraphicsStructures::PhysicsNodeFunctor,Physics,physics node functor
+Graphics::IAnimatable*,Animation,animatable interface
+D3DDriver::*,Rendering,renderer/graphics
+Graphics::*,Rendering,renderer/graphics
+GraphicsStructures::*,Rendering,renderer/graphics
+Renderer::*,Rendering,renderer/graphics
+Eclipse::IGraphics*,Rendering,renderer/graphics
+TexManager::*,Rendering,renderer/graphics
+IExternalDeviceCaps,Rendering,renderer/graphics
+ECSpeedTreeAllocator,Rendering,renderer/graphics
+SpeedTree,Rendering,renderer/graphics
+AtmosphereConstants,Rendering,renderer/graphics
+AtmosphereSky,Rendering,renderer/graphics
+TintFile,Rendering,renderer/graphics
+VfxManager,Rendering,VFX
+VfxObject,Rendering,VFX
+VisualEffectCache*,Rendering,VFX
+LoadVFXTask,Rendering,VFX
+FinalizeVFXTask,Rendering,VFX
+CCVisualEffect,Rendering,VFX
+LodManager,Rendering,model LOD/memory
+ILodRecycler,Rendering,model LOD/memory
+FreeLODMemoryTask,Rendering,model LOD/memory
+ModelDeleteTask,Rendering,model LOD/memory
+Animation::*,Animation,animation and facial
+Animation,Animation,animation and facial
+FacialAnimation::*,Animation,animation and facial
+AnimBase*,Animation,animation and facial
+CCreatureAnimController,Animation,animation and facial
+MovementAnimController,Animation,animation and facial
+InclineController,Animation,animation and facial
+LeanController,Animation,animation and facial
+PartLookAtController,Animation,animation and facial
+Physics::*,Physics,engine side of PhysX / collision
+CInstancePhysicsNode,Physics,engine side of PhysX / collision
+CPhysicsTriggerReport,Physics,engine side of PhysX / collision
+CWalkHitInfo,Physics,engine side of PhysX / collision
+GameMode*,GameModes,game modes
+SaveGame,Save,save/load
+SaveLoadProxy,Save,save/load
+SaveFileInfo,Save,save/load
+EC::Cutscene::*,Conversation,dialogue/cutscenes
+Conversation,Conversation,dialogue/cutscenes
+ConversationData,Conversation,dialogue/cutscenes
+ConversationLine,Conversation,dialogue/cutscenes
+ConversationRecord,Conversation,dialogue/cutscenes
+Response,Conversation,dialogue/cutscenes
+AIMaster,AI,"AI events, pathing, movement, tactics"
+CAIEvent,AI,"AI events, pathing, movement, tactics"
+Pathfinding::*,AI,"AI events, pathing, movement, tactics"
+PathSearch,AI,"AI events, pathing, movement, tactics"
+MovementController,AI,"AI events, pathing, movement, tactics"
+Mover,AI,"AI events, pathing, movement, tactics"
+MovementParameters,AI,"AI events, pathing, movement, tactics"
+PartyTactics,AI,"AI events, pathing, movement, tactics"
+PartyTacticEntry,AI,"AI events, pathing, movement, tactics"
+IKDNode,AI,"AI events, pathing, movement, tactics"
+KDCreatureNode,AI,"AI events, pathing, movement, tactics"
+KDCreatureBranch,AI,"AI events, pathing, movement, tactics"
+EC::CExteriorChunk,World,"areas, modules, triggers, streaming"
+EC::ChunkManager,World,"areas, modules, triggers, streaming"
+EC::IndoorStreamPolicy,World,"areas, modules, triggers, streaming"
+EC::WDObject,World,"areas, modules, triggers, streaming"
+EC::GameObjectProxy,World,"areas, modules, triggers, streaming"
+ILayoutPolicy,World,"areas, modules, triggers, streaming"
+CFixedPolicy,World,"areas, modules, triggers, streaming"
+IAreaLayout,World,"areas, modules, triggers, streaming"
+IRoomLayout,World,"areas, modules, triggers, streaming"
+AreaLayout,World,"areas, modules, triggers, streaming"
+CRoom,World,"areas, modules, triggers, streaming"
+RoomLoadingTask,World,"areas, modules, triggers, streaming"
+CCArea,World,"areas, modules, triggers, streaming"
+CCModule,World,"areas, modules, triggers, streaming"
+CCTrigger,World,"areas, modules, triggers, streaming"
+CCTriggerAreaTransition,World,"areas, modules, triggers, streaming"
+CCTriggerTrap,World,"areas, modules, triggers, streaming"
+CCWayPoint,World,"areas, modules, triggers, streaming"
+CSAreaList,World,"areas, modules, triggers, streaming"
+ModuleInfo,World,"areas, modules, triggers, streaming"
+World,World,"areas, modules, triggers, streaming"
+WorldDatabase,World,"areas, modules, triggers, streaming"
+AreaObjectsIterator,World,"areas, modules, triggers, streaming"
+WorldMap,World,world map
+MapLocation,World,world map
+MapLocationConnection,World,world map
+MapNoteList,World,world map
+MapObject,World,world map
+MapTrail,World,world map
+MapTrailPoint,World,world map
+MapTravelPoint,World,world map
+CGameObject,Game,"game objects, creatures, effects, rules"
+CGameObjectArray,Game,"game objects, creatures, effects, rules"
+CCObject,Game,"game objects, creatures, effects, rules"
+CCCreature,Game,"game objects, creatures, effects, rules"
+CCCreatureStats,Game,"game objects, creatures, effects, rules"
+CCItem,Game,"game objects, creatures, effects, rules"
+CCPlaceable,Game,"game objects, creatures, effects, rules"
+CCPlayer,Game,"game objects, creatures, effects, rules"
+CCParty,Game,"game objects, creatures, effects, rules"
+CCAreaOfEffectObject,Game,"game objects, creatures, effects, rules"
+CItem,Game,"game objects, creatures, effects, rules"
+CAppearance,Game,"game objects, creatures, effects, rules"
+AppearanceCache*,Game,"game objects, creatures, effects, rules"
+CreatureVisual,Game,"game objects, creatures, effects, rules"
+CCreatureAttribute,Game,"game objects, creatures, effects, rules"
+CreatureProperty*,Game,"game objects, creatures, effects, rules"
+CreatureProperties,Game,"game objects, creatures, effects, rules"
+DerivedFunctionality,Game,"game objects, creatures, effects, rules"
+CDataArrays,Game,"game objects, creatures, effects, rules"
+CGameEffect,Game,"game objects, creatures, effects, rules"
+EffectsHolder,Game,"game objects, creatures, effects, rules"
+SEffectsHolder,Game,"game objects, creatures, effects, rules"
+Ability,Game,"game objects, creatures, effects, rules"
+AbilityInstance,Game,"game objects, creatures, effects, rules"
+CooldownManager,Game,"game objects, creatures, effects, rules"
+CRules,Game,"game objects, creatures, effects, rules"
+Combat,Game,"combat, commands, actions"
+MeleeRing,Game,"combat, commands, actions"
+MeleeRings,Game,"combat, commands, actions"
+CProjectile,Game,"combat, commands, actions"
+CProjectileManager,Game,"combat, commands, actions"
+ProjectileCache*,Game,"combat, commands, actions"
+ProjectileInitTask,Game,"combat, commands, actions"
+ProjectileLoadTask,Game,"combat, commands, actions"
+CCommandController,Game,"combat, commands, actions"
+CSCommandHandler,Game,"combat, commands, actions"
+CSubActionController,Game,"combat, commands, actions"
+CSSubActionHandler,Game,"combat, commands, actions"
+SubActions,Game,"combat, commands, actions"
+Command,Game,"combat, commands, actions"
+CommandPool,Game,"combat, commands, actions"
+Commands,Game,"combat, commands, actions"
+Orders,Game,"combat, commands, actions"
+TargetIterator,Game,"combat, commands, actions"
+Inventory,Game,"items, inventory, stores"
+Backpack,Game,"items, inventory, stores"
+Equipment,Game,"items, inventory, stores"
+EquipmentSet,Game,"items, inventory, stores"
+ItemLocation,Game,"items, inventory, stores"
+ListItemLocation,Game,"items, inventory, stores"
+SlotItemLocation,Game,"items, inventory, stores"
+ItemPossessor,Game,"items, inventory, stores"
+ItemRepository,Game,"items, inventory, stores"
+ItemIteratorImpl,Game,"items, inventory, stores"
+ArrayItemIteratorImpl,Game,"items, inventory, stores"
+ListItemIteratorImpl,Game,"items, inventory, stores"
+MapItemIteratorImpl,Game,"items, inventory, stores"
+SlotItemIteratorImpl,Game,"items, inventory, stores"
+EquipmentItemIteratorImpl,Game,"items, inventory, stores"
+DirtyFlaggable,Game,"items, inventory, stores"
+Money,Game,"items, inventory, stores"
+Store,Game,"items, inventory, stores"
+PlotItems,Game,"items, inventory, stores"
+PlotGroup,Game,"plot, journal, party"
+PlotTip,Game,"plot, journal, party"
+Journal,Game,"plot, journal, party"
+JournalEntry,Game,"plot, journal, party"
+CodexEntry,Game,"plot, journal, party"
+CodexGroup,Game,"plot, journal, party"
+ChanterBoard,Game,"plot, journal, party"
+ChanterEntry,Game,"plot, journal, party"
+ArmyControl,Game,"plot, journal, party"
+ArmyInfo,Game,"plot, journal, party"
+Party,Game,"plot, journal, party"
+PartyMemberApproval,Game,"plot, journal, party"
+Tutorial,Game,"plot, journal, party"
+TutorialControl,Game,"plot, journal, party"
+*Message,Messaging,the top-level *Message classes each derive Messages::Message

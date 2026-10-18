@@ -21,6 +21,7 @@ Download `DAOAddressLibrary-<version>.zip` from [Releases](https://github.com/Wh
 ## What is here
 
 - **The table**, [data/addresses.csv](data/addresses.csv): a row per ID, with its name where it has one, and a column per build. Over 100,000 IDs; `python tools\addrlib.py stats` counts them.
+- **The subsystems**, [data/subsystems.csv](data/subsystems.csv): for every function of the GOG build, the part of the game it belongs to (`Game`, `Rendering`, `Scripting`, ...) or the library it is (`ThirdParty:Scaleform`, `ThirdParty:CRT`, ...), and how that was found: what a new engine has to write and what it takes from a library. `tools\subsystems.py` makes it from the table, the build and two files of rules kept by hand, and its head says how; `python tools\subsystems.py --stats` counts each subsystem's functions and how many are named.
 - **The run-time files**, one per build, packed from the table when the project is built. Beside them, `daoaddresses-code.index` says which build's file an executable's code is, for a repack whose headers are no build's (Steamless' output, the Nexus "decrypted Steam" exe). A release's zip is these ([CHANGELOG.md](CHANGELOG.md), [dev/RELEASING.md](dev/RELEASING.md)).
 - **The reader**, [src/daoaddr](src/daoaddr/Library.h): a small C++20 library, standard library only, that loads a build's file and answers "where is this ID" and "what ID is at this address".
 - **The tools**, [tools/](tools): `addrlib.py` works on the table; the rest read the game's executables to fill it.
