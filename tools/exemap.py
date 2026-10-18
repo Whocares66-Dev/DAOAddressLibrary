@@ -906,7 +906,7 @@ def main(argv):
     if not argv or argv[0] in ("-h", "--help") or len(argv) < 2:
         print(__doc__)
         return 0
-    daoexe.idle_priority()
+    daoexe.low_priority()
     if argv[1] == "--inventory":
         functions, data = inventory(argv[0])
         print(f"{len(functions)} functions and {len(data)} globals referred to")

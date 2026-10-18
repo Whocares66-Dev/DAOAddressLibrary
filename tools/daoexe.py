@@ -294,17 +294,19 @@ def undecorate(name):
     return msvc_names.undecorate(name)
 
 
-def idle_priority():
-    """Run this process, and what it starts, at Windows' Idle priority. The
-    user, 2026-10-18, when sessions' builds overwhelmed the cores: "Make
-    sure compilation threads run at low priority." Each tool that reads a
-    whole build calls it first; ea_dump.py does not, as the game it starts
-    would inherit it."""
+def low_priority():
+    """Run this process, and what it starts, at Windows' BelowNormal
+    priority. The user, 2026-10-18, when sessions' builds overwhelmed the
+    cores: "Make sure compilation threads run at low priority", and then,
+    as Idle starved them while the game kept the cores busy, "Yeah, let's
+    make it below normal". Each tool that reads a whole build calls it
+    first; ea_dump.py does not, as the game it starts would inherit it."""
     if sys.platform == "win32":
         import ctypes
 
-        # -1, pointer-sized, is the current process; 0x40 is IDLE_PRIORITY_CLASS.
-        ctypes.windll.kernel32.SetPriorityClass(ctypes.c_void_p(-1), 0x40)
+        # -1, pointer-sized, is the current process; 0x4000 is
+        # BELOW_NORMAL_PRIORITY_CLASS.
+        ctypes.windll.kernel32.SetPriorityClass(ctypes.c_void_p(-1), 0x4000)
 
 
 def check(img):
@@ -347,7 +349,7 @@ def main(argv):
     if not argv or argv[0] in ("-h", "--help"):
         print(__doc__)
         return 0
-    idle_priority()
+    low_priority()
     exe = EXE
     if argv[0] == "--exe":
         if len(argv) < 3:

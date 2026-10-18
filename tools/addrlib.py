@@ -818,7 +818,7 @@ def main(argv):
         return 0
     import daoexe
 
-    daoexe.idle_priority()
+    daoexe.low_priority()
     db = Database.load()
     command, rest = argv[0], argv[1:]
     if command == "add" and rest:

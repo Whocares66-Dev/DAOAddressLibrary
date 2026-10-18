@@ -673,7 +673,7 @@ def main(argv):
     if argv and argv[0] in ("-h", "--help"):
         print(__doc__)
         return 0
-    daoexe.idle_priority()
+    daoexe.low_priority()
     db = addrlib.Database.load()
     if "--stats" in argv:
         return stats(db)
