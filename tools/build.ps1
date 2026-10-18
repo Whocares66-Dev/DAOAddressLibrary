@@ -141,8 +141,8 @@ if ($Fresh -and (Test-Path $buildDir)) {
 $cores = [Environment]::ProcessorCount
 $parallel = if ($Jobs -gt 0) { $Jobs } else { [Math]::Max(1, $cores - 2) }
 $env:CMAKE_BUILD_PARALLEL_LEVEL = $parallel
-(Get-Process -Id $PID).PriorityClass = [System.Diagnostics.ProcessPriorityClass]::BelowNormal
-Show-Line "  jobs   $parallel of $cores cores, below normal priority"
+(Get-Process -Id $PID).PriorityClass = [System.Diagnostics.ProcessPriorityClass]::Idle
+Show-Line "  jobs   $parallel of $cores cores, idle priority"
 
 Push-Location $repo
 try {

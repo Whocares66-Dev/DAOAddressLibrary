@@ -816,6 +816,9 @@ def main(argv):
     if not argv or argv[0] in ("-h", "--help"):
         print(__doc__)
         return 0
+    import daoexe
+
+    daoexe.idle_priority()
     db = Database.load()
     command, rest = argv[0], argv[1:]
     if command == "add" and rest:

@@ -82,6 +82,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import addrlib  # noqa: E402
+import daoexe  # noqa: E402
 import msvc_names  # noqa: E402
 
 REPO = addrlib.REPO
@@ -672,6 +673,7 @@ def main(argv):
     if argv and argv[0] in ("-h", "--help"):
         print(__doc__)
         return 0
+    daoexe.idle_priority()
     db = addrlib.Database.load()
     if "--stats" in argv:
         return stats(db)
