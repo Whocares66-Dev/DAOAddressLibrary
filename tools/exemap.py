@@ -244,6 +244,7 @@ class Map:
             list
         )  # a table in a -> [(a, b)] functions it gave
         self.differing_data = []
+        self.cases = set()  # code in a a jump table goes to: a switch's cases
         self.vftables = {va for va, _, _, _ in a.img.vtables}
         self.vftables_b = {va for va, _, _, _ in b.img.vtables}
         self.seeds = 0
@@ -514,6 +515,8 @@ class Map:
         # source gives them. Any other table of functions may not be.
         sure = table or start_a in self.vftables
         for value_a, value_b, kind in found:
+            if table:
+                self.cases.add(value_a)
             self.pair(value_a, value_b, kind, sure)
             if not sure and kind == "function":
                 self.children[start_a].append((value_a, value_b))
@@ -872,11 +875,14 @@ def build(a, b, inventories=None):
 def functions_of(m):
     """The addresses in a map's first build where a function starts: what is
     called or pointed at, and what is only jumped to but starts as a
-    function does in both builds (a tail call's target)."""
+    function does in both builds (a tail call's target). A switch's case is
+    not one, though it may start so: ID 10101 was a case of 10100's that the
+    compiler put on a 16-byte boundary straight after a ret (read 2026-10-20)."""
     out = set(m.exact_code)
     for a, kind in m.kind.items():
         if (
             kind == "code"
+            and a not in m.cases
             and a in m.exact
             and m.a.starts_function(a)
             and m.b.starts_function(m.exact[a])
