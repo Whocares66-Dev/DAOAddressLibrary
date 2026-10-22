@@ -12174,7 +12174,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 12173,function,,0x0062c190,0x00583220,0x0062c190
 12174,function,,0x0062c2e0,0x00583370,0x0062c2e0
 12175,function,,0x0062c3d0,0x00583460,0x0062c3d0
-12176,function,,0x0062c730,0x005837c0,0x0062c730
+12176,function,GuiAbilityRecords::Find,0x0062c730,0x005837c0,0x0062c730
 12177,function,,0x0062cd20,0x00583db0,0x0062cd20
 12178,function,,0x0062cd70,0x00583e00,0x0062cd70
 12179,function,,0x0062cdd0,0x00583e60,0x0062cdd0
@@ -13447,7 +13447,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13446,function,ScriptCommand::GETSINGLENEARESTOBJECTBYTAG,0x0066db20,0x00559980,0x0066db20
 13447,function,ScriptCommand::SETWORLDMAPLOCATIONSTATUS,0x0066dc90,0x00559af0,0x0066dc90
 13448,function,,0x0066dd20,0x00559b80,0x0066dd20
-13449,function,,0x0066dd60,0x00559bc0,0x0066dd60
+13449,function,CCCreatureStats::HasActiveModalAbility,0x0066dd60,0x00559bc0,0x0066dd60
 13450,function,ScriptCommand::ISMODALABILITYACTIVE,0x0066dd80,0x00559be0,0x0066dd80
 13451,function,CommandPool::Release,0x0066de30,0x00559cf0,0x0066de30
 13452,function,,0x0066df50,0x00559e10,0x0066df50
@@ -14467,7 +14467,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14466,function,CCCreature::HasRangedWeapon,0x006a2ad0,0x00593bf0,0x006a2ad0
 14467,function,,0x006a2b40,0x00593c60,0x006a2b40
 14468,function,,0x006a2b80,0x00593ca0,0x006a2b80
-14469,function,,0x006a2bb0,0x00593cd0,0x006a2bb0
+14469,function,CCCreature::CanPerceive,0x006a2bb0,0x00593cd0,0x006a2bb0
 14470,function,CCCreature::GetParty,0x006a2cc0,0x00593de0,0x006a2cc0
 14471,function,,0x006a2ce0,0x00593e00,0x006a2ce0
 14472,function,,0x006a2d10,0x00593e30,0x006a2d10
@@ -14508,9 +14508,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14507,function,,0x006a42e0,0x00595470,0x006a42e0
 14508,function,,0x006a4360,0x005954f0,0x006a4360
 14509,function,CWalkHitInfo::CWalkHitInfo,0x006a43f0,0x00595580,0x006a43f0
-14510,function,,0x006a4440,0x005955f0,0x006a4440
+14510,function,CCItem::IsDroppableByte,0x006a4440,0x005955f0,0x006a4440
 14511,function,,0x006a4450,0x00595600,0x006a4450
-14512,function,,0x006a44d0,0x00595680,0x006a44d0
+14512,function,CCCreature::IsStealthedHostileTo,0x006a44d0,0x00595680,0x006a44d0
 14513,function,,0x006a4500,0x005956b0,0x006a4500
 14514,function,,0x006a4520,0x00595750,0x006a4520
 14515,function,,0x006a4550,0x004fa710,0x006a4550
@@ -14558,7 +14558,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14557,function,,0x006a4dc0,0x00595f80,0x006a4dc0
 14558,function,,0x006a4e00,0x00595fc0,0x006a4e00
 14559,function,,0x006a4e40,0x00596000,0x006a4e40
-14560,function,,0x006a4ea0,0x00596060,0x006a4ea0
+14560,function,CCCreature::GetStrikePoint,0x006a4ea0,0x00596060,0x006a4ea0
 14561,function,,0x006a4f00,0x005960c0,0x006a4f00
 14562,function,,0x006a51c0,0x00596380,0x006a51c0
 14563,function,,0x006a5200,0x005963c0,0x006a5200
@@ -14788,7 +14788,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14787,function,,0x006afa40,0x005a1330,0x006afa40
 14788,function,,0x006afb90,0x005a1480,0x006afb90
 14789,function,,0x006afcd0,0x005a15c0,0x006afcd0
-14790,function,,0x006afcf0,0x005a15e0,0x006afcf0
+14790,function,CCCreature::SendPerceptionAppear,0x006afcf0,0x005a15e0,0x006afcf0
 14791,function,,0x006afe40,0x0056cd80,0x006afe40
 14792,function,,0x006afee0,0x0056ce20,0x006afee0
 14793,function,,0x006aff00,0x005a1730,0x006aff00
@@ -14841,7 +14841,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14840,function,,0x006b2470,0x005a3f00,0x006b2470
 14841,function,,0x006b2f70,0x005a4a00,0x006b2f70
 14842,function,,0x006b3070,0x005a4b00,0x006b3070
-14843,function,,0x006b3240,0x005a4cd0,0x006b3240
+14843,function,CCCreature::AddPerceived,0x006b3240,0x005a4cd0,0x006b3240
 14844,function,,0x006b32a0,0x005a4d30,0x006b32a0
 14845,function,ScriptBackend::ForScript_GetPerceivedCreatureList,0x006b3330,0x005a4dc0,0x006b3330
 14846,function,,0x006b3410,0x005a4ea0,0x006b3410
@@ -16468,7 +16468,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16467,function,,0x00719880,0x0060a9e0,0x00719880
 16468,function,,0x00719910,0x0060aa70,0x00719910
 16469,function,,0x00719940,0x0060aaa0,0x00719940
-16470,function,,0x00719990,0x00617930,0x00719990
+16470,function,ScriptBackend::GetAbilityType,0x00719990,0x00617930,0x00719990
 16471,function,,0x007199d0,0x00617970,0x007199d0
 16472,function,,0x007199f0,0x00617990,0x007199f0
 16473,function,,0x00719a00,0x006179a0,0x00719a00
@@ -16492,7 +16492,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16491,function,,0x0071a1a0,0x00618140,0x0071a1a0
 16492,function,,0x0071a1d0,0x00618170,0x0071a1d0
 16493,function,CCCreatureStats::GetAutoLevelUp,0x0071a1f0,0x00618190,0x0071a1f0
-16494,function,,0x0071a210,0x006181b0,0x0071a210
+16494,function,CCCreatureAppearance::GetRestrictionGroup,0x0071a210,0x006181b0,0x0071a210
 16495,function,,0x0071a230,0x006181d0,0x0071a230
 16496,function,,0x0071a280,0x00618220,0x0071a280
 16497,function,,0x0071a2f0,0x00618290,0x0071a2f0
@@ -16535,7 +16535,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16534,function,CCCreatureStats::Cooldowns,0x0071ca00,0x0061a9d0,0x0071ca00
 16535,function,,0x0071ca70,0x0061aa40,0x0071ca70
 16536,function,,0x0071ca90,0x0083b070,0x0071ca90
-16537,function,,0x0071ccd0,0x0061aab0,0x0071ccd0
+16537,function,CCCreatureStats::EnsurePartyData,0x0071ccd0,0x0061aab0,0x0071ccd0
 16538,function,ScriptBackend::ForScript_GetRemainingCooldown,0x0071ce60,0x0061ac40,0x0071ce60
 16539,function,CCCreatureStats::CanUseAbility,0x0071ce90,0x0061ac70,0x0071ce90
 16540,function,,0x0071d1b0,0x0061b0a0,0x0071d1b0
@@ -20572,7 +20572,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20571,function,,0x007cace0,0x006b1ff0,0x007cace0
 20572,function,,0x007cad00,0x006b2010,0x007cad00
 20573,function,,0x007cad20,0x006b2030,0x007cad20
-20574,function,,0x007cad50,0x006b2060,0x007cad50
+20574,function,MeleeRing::ArcLength,0x007cad50,0x006b2060,0x007cad50
 20575,function,,0x007cad90,0x006b20c0,0x007cad90
 20576,function,,0x007cadd0,0x006b2100,0x007cadd0
 20577,function,,0x007cae30,0x006b21d0,0x007cae30
@@ -20609,7 +20609,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20608,function,,0x007cc000,0x006b33d0,0x007cc000
 20609,function,,0x007cc060,0x006b3430,0x007cc060
 20610,function,,0x007cc0b0,0x006b3480,0x007cc0b0
-20611,function,,0x007cc1a0,0x006b3570,0x007cc1a0
+20611,function,MeleeRings::NearestUsableRing,0x007cc1a0,0x006b3570,0x007cc1a0
 20612,function,,0x007cc2b0,0x006b3680,0x007cc2b0
 20613,function,,0x007cc4f0,0x006b38c0,0x007cc4f0
 20614,function,,0x007cc5b0,0x006b3980,0x007cc5b0
