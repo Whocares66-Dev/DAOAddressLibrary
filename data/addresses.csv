@@ -12345,7 +12345,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 12344,function,,0x00631d90,0x0060d830,0x00631d90
 12345,function,ScriptBackend::ForScript_RemoveNonPartyFollower,0x00631e00,0x0060d8a0,0x00631e00
 12346,function,,0x00631eb0,0x0060d950,0x00631eb0
-12347,function,,0x00631f30,0x0060d9d0,0x00631f30
+12347,function,CCParty::UpdateSurvival,0x00631f30,0x0060d9d0,0x00631f30
 12348,function,,0x00632250,0x0060dcf0,0x00632250
 12349,function,,0x00632290,0x0060dd30,0x00632290
 12350,function,,0x006322e0,0x0060dd80,0x006322e0
@@ -12486,7 +12486,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 12485,function,,0x0063a2b0,0x00615c80,0x0063a2b0
 12486,function,,0x0063a330,0x00615d00,0x0063a330
 12487,function,,0x0063a3b0,0x00615d80,0x0063a3b0
-12488,function,,0x0063a3c0,0x00615d90,0x0063a3c0
+12488,function,CCParty::CCParty,0x0063a3c0,0x00615d90,0x0063a3c0
 12489,function,,0x0063b830,0x00617200,0x0063b830
 12490,function,,0x0063b8b0,0x00617280,0x0063b8b0
 12491,function,ScriptBackend::SetFollowerState,0x0063b9a0,0x00617370,0x0063b9a0
@@ -14469,7 +14469,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14468,function,,0x006a2b80,0x00593ca0,0x006a2b80
 14469,function,CCCreature::CanPerceive,0x006a2bb0,0x00593cd0,0x006a2bb0
 14470,function,CCCreature::GetParty,0x006a2cc0,0x00593de0,0x006a2cc0
-14471,function,,0x006a2ce0,0x00593e00,0x006a2ce0
+14471,function,CCCreature::IsActivePartyMember,0x006a2ce0,0x00593e00,0x006a2ce0
 14472,function,,0x006a2d10,0x00593e30,0x006a2d10
 14473,function,,0x006a2d30,0x00593e50,0x006a2d30
 14474,function,,0x006a2e60,0x00593f80,0x006a2e60
@@ -14617,7 +14617,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14616,function,,0x006a8ac0,0x00599c80,0x006a8ac0
 14617,function,,0x006a8c10,0x00599dd0,0x006a8c10
 14618,function,,0x006a8d10,0x00599ed0,0x006a8d10
-14619,function,,0x006a8d60,0x00599f20,0x006a8d60
+14619,function,CCCreature::IsStillPerceived,0x006a8d60,0x00599f20,0x006a8d60
 14620,function,CCCreature::MeleeRingSpot,0x006a8ee0,0x0059a0a0,0x006a8ee0
 14621,function,CCCreature::ForScript_SwitchWeaponSet,0x006a8fa0,0x0059a160,0x006a8fa0
 14622,function,,0x006a9000,0x0059a1c0,0x006a9000
@@ -14888,8 +14888,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14887,function,,0x006b8250,0x005a9ce0,0x006b8250
 14888,function,,0x006b8450,0x005a9ee0,0x006b8450
 14889,function,,0x006b8470,0x005a9f00,0x006b8470
-14890,function,,0x006b8540,0x005a9fd0,0x006b8540
-14891,function,,0x006b89b0,0x005aa440,0x006b89b0
+14890,function,CCCreature::FindPerceptionNewcomers,0x006b8540,0x005a9fd0,0x006b8540
+14891,function,CCCreature::UpdatePerception,0x006b89b0,0x005aa440,0x006b89b0
 14892,function,CCCreature::ForScript_ClearPerceptionList,0x006b8d20,0x005aa7b0,0x006b8d20
 14893,function,,0x006b8d40,0x005aa7d0,0x006b8d40
 14894,function,,0x006b8e70,0x005aa900,0x006b8e70
@@ -14933,7 +14933,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14932,function,,0x006bc340,0x005ade00,0x006bc340
 14933,function,,0x006bc360,0x005ade20,0x006bc360
 14934,function,,0x006bc420,0x005adee0,0x006bc420
-14935,function,,0x006bc4b0,0x005adf70,0x006bc4b0
+14935,function,CCCreature::OnHealthChanged,0x006bc4b0,0x005adf70,0x006bc4b0
 14936,function,,0x006bc670,0x005ae130,0x006bc670
 14937,function,CCCreature::Equip,0x006bc7f0,0x005ae2b0,0x006bc7f0
 14938,function,,0x006bcc30,0x005ae6f0,0x006bcc30
@@ -14944,7 +14944,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14943,function,,0x006bd420,0x005aeee0,0x006bd420
 14944,function,,0x006bd4a0,0x005aef60,0x006bd4a0
 14945,function,,0x006bd4b0,0x005aef70,0x006bd4b0
-14946,function,,0x006bd4d0,0x005aef90,0x006bd4d0
+14946,function,CCCreature::RefreshIsInParty,0x006bd4d0,0x005aef90,0x006bd4d0
 14947,function,,0x006bd700,0x005af1c0,0x006bd700
 14948,function,,0x006bdc70,0x005af730,0x006bdc70
 14949,function,CCCreature::HandleMessage_EquipItemMessage,0x006be330,0x005afdf0,0x006be330
@@ -22692,7 +22692,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 22691,function,Physics::PhysicsControllerCapsule::SetActorGroup,0x008380c0,0x004ae3b0,0x008380c0
 22692,function,Physics::PhysicsControllerCapsule::SetGroupsMask,0x00838120,0x004ade90,0x00838120
 22693,function,Physics::PhysicsControllerBox::PhysicsControllerBox,0x008381a0,0x004adf10,0x008381a0
-22694,function,,0x00838210,0x006414a0,0x00838210
+22694,function,Stub::GetByte_0xC,0x00838210,0x006414a0,0x00838210
 22695,function,Physics::PhysicsControllerCapsule::IsCollidingSides,0x00838220,0x004adb10,0x00838220
 22696,function,Physics::PhysicsControllerCapsule::IsCollidingUp,0x00838230,0x004adf80,0x00838230
 22697,function,Physics::PhysicsControllerCapsule::Move,0x00838240,0x004adb20,0x00838240
