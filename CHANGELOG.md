@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.6.0
+
+- **106 IDs retired:** they were the cases of `switch` statements, which the comparison had taken for functions of their own (10101 among them). Each keeps its number, never given to anything else, with its kind `retired` and no address, so each build's file has 106 fewer addresses: 103,187, 103,461 and 103,422 for GOG, EA and Steam. No address of any other ID moved, and the file format is unchanged.
+- **More names:** 8,804 IDs are named, 1,169 more than in 0.5.0: the engine's physics and the PhysX and NXU it uses, its FMOD layer, every command the UI's Scaleform movies can call, facial animation and FaceFX, script handlers put right, and, read for DAOParagonEngine, perception, melee rings, the party, pathfinding, effects, abilities, projectiles, loot, stores and items. `addrlib.py lookup` finds them.
+- **Every function's subsystem:** `data/subsystems.csv` says which part of the engine, or which library, each GOG function belongs to, and `tools/subsystems.py` writes and checks it.
+- **Kinder tools:** builds and the tools that read a whole executable run at below-normal priority, so the game and other work keep the machine.
+
 ## 0.5.0
 
 - **The same files as 0.4.0:** every address, the code index and the file format are unchanged, byte for byte, so nothing needs installing again. This release gives DAOLib 0.5.0 a tag to build against.
