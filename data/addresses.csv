@@ -5703,8 +5703,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5702,function,,0x004ee420,0x0081ba40,0x004ee420
 5703,function,Vector::ToAngle,0x004ee570,0x0081bb90,0x004ee570
 5704,function,Vector::Elevation,0x004ee5a0,0x0081bbc0,0x004ee5a0
-5705,function,,0x004ee610,0x0081bc30,0x004ee610
-5706,function,,0x004ee730,0x0081bd50,0x004ee730
+5705,function,Geometry::ProjectOnLine,0x004ee610,0x0081bc30,0x004ee610
+5706,function,Geometry::SegmentSphereIntersections,0x004ee730,0x0081bd50,0x004ee730
 5707,function,,0x004ee9b0,0x0081bfd0,0x004ee9b0
 5708,function,,0x004eed50,0x0081c370,0x004eed50
 5709,function,,0x004eeed0,0x00848b30,0x004eeed0
@@ -7659,7 +7659,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7658,function,,0x0053dec0,0x00770e80,0x0053dec0
 7659,function,,0x0053def0,0x004a9870,0x0053def0
 7660,function,,0x0053df30,0x004a98b0,0x0053df30
-7661,function,,0x0053df70,0x004a98f0,0x0053df70
+7661,function,RandomBelow,0x0053df70,0x004a98f0,0x0053df70
 7662,function,,0x0053dfa0,0x00648ff0,0x0053dfa0
 7663,function,,0x0053e0c0,0x00779fc0,0x0053e0c0
 7664,function,,0x0053e140,0x0077a040,0x0053e140
@@ -11207,7 +11207,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 11206,function,,0x00606db0,0x004f53f0,0x00606db0
 11207,function,,0x00606ec0,0x004f5500,0x00606ec0
 11208,function,,0x00606ef0,0x004f5530,0x00606ef0
-11209,function,,0x00606f10,0x004f5550,0x00606f10
+11209,function,ControlledCreatureId,0x00606f10,0x004f5550,0x00606f10
 11210,function,,0x00606f30,0x004bf3a0,0x00606f30
 11211,function,,0x00606fa0,0x004f55a0,0x00606fa0
 11212,function,,0x00607020,0x004f5620,0x00607020
@@ -14351,7 +14351,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14350,function,,0x0069ef30,0x005900c0,0x0069ef30
 14351,function,,0x0069f030,0x005901c0,0x0069f030
 14352,function,,0x0069f110,0x005902a0,0x0069f110
-14353,function,,0x0069f140,0x005902d0,0x0069f140
+14353,function,CCCreature::InPartyByte,0x0069f140,0x005902d0,0x0069f140
 14354,function,,0x0069f150,0x005902e0,0x0069f150
 14355,function,,0x0069f170,0x00590300,0x0069f170
 14356,function,,0x0069f180,0x00590310,0x0069f180
@@ -14462,7 +14462,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14461,function,,0x006a2900,0x00593a20,0x006a2900
 14462,function,,0x006a2960,0x00593a80,0x006a2960
 14463,function,,0x006a29a0,0x00593ac0,0x006a29a0
-14464,function,,0x006a2a20,0x00593b40,0x006a2a20
+14464,function,CCCreature::DropWalk,0x006a2a20,0x00593b40,0x006a2a20
 14465,function,,0x006a2a40,0x00593b60,0x006a2a40
 14466,function,CCCreature::HasRangedWeapon,0x006a2ad0,0x00593bf0,0x006a2ad0
 14467,function,,0x006a2b40,0x00593c60,0x006a2b40
@@ -14597,7 +14597,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14596,function,CCCreature::HandleMessage_SetQuickslotMessage,0x006a74b0,0x00598670,0x006a74b0
 14597,function,,0x006a7520,0x005986e0,0x006a7520
 14598,function,,0x006a7ae0,0x00598ca0,0x006a7ae0
-14599,function,,0x006a7d30,0x00598ef0,0x006a7d30
+14599,function,CCCreature::IsControlled,0x006a7d30,0x00598ef0,0x006a7d30
 14600,function,,0x006a7d50,0x00598f10,0x006a7d50
 14601,function,CCCreature::GetRacialType,0x006a7d90,0x00598f50,0x006a7d90
 14602,function,,0x006a7dd0,0x00598f90,0x006a7dd0
@@ -14616,7 +14616,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14615,function,,0x006a8aa0,0x00599c60,0x006a8aa0
 14616,function,,0x006a8ac0,0x00599c80,0x006a8ac0
 14617,function,,0x006a8c10,0x00599dd0,0x006a8c10
-14618,function,,0x006a8d10,0x00599ed0,0x006a8d10
+14618,function,CCCreature::CanBePushedAside,0x006a8d10,0x00599ed0,0x006a8d10
 14619,function,CCCreature::IsStillPerceived,0x006a8d60,0x00599f20,0x006a8d60
 14620,function,CCCreature::MeleeRingSpot,0x006a8ee0,0x0059a0a0,0x006a8ee0
 14621,function,CCCreature::ForScript_SwitchWeaponSet,0x006a8fa0,0x0059a160,0x006a8fa0
@@ -14696,7 +14696,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14695,function,,0x006abb30,0x0059cd60,0x006abb30
 14696,function,,0x006abbf0,0x0059ce20,0x006abbf0
 14697,function,,0x006abdc0,0x0059cff0,0x006abdc0
-14698,function,,0x006ac0a0,0x0059d2d0,0x006ac0a0
+14698,function,CCCreature::PushAside,0x006ac0a0,0x0059d2d0,0x006ac0a0
 14699,function,CCCreature::IsPerceivingHostiles,0x006ac230,0x0059d460,0x006ac230
 14700,function,,0x006ac2a0,0x0059d4d0,0x006ac2a0
 14701,function,CCCreature::RefreshMeleeRing,0x006ac510,0x0059d740,0x006ac510
@@ -14923,7 +14923,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14922,function,,0x006ba870,0x005ac330,0x006ba870
 14923,function,,0x006ba890,0x005ac350,0x006ba890
 14924,function,,0x006bafe0,0x005acaa0,0x006bafe0
-14925,function,,0x006bb890,0x005ad350,0x006bb890
+14925,function,CCCreature::UpdateMovement,0x006bb890,0x005ad350,0x006bb890
 14926,function,,0x006bbb70,0x005ad630,0x006bbb70
 14927,function,CCCreature::RefreshPoolMemberState,0x006bbcb0,0x005ad770,0x006bbcb0
 14928,function,,0x006bbf10,0x005ad9d0,0x006bbf10
@@ -17573,8 +17573,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 17572,function,CCArea::NearestFree,0x0073e7f0,0x0064a390,0x0073e7f0
 17573,function,CCObject::RequestPath,0x0073ea80,0x0064a620,0x0073ea80
 17574,function,,0x0073efe0,0x0064ab80,0x0073efe0
-17575,function,,0x0073f0e0,0x0064ac80,0x0073f0e0
-17576,function,,0x0073f230,0x0064add0,0x0073f230
+17575,function,CCArea::ObjectsNearCreature,0x0073f0e0,0x0064ac80,0x0073f0e0
+17576,function,CCArea::CreaturesInTheWay,0x0073f230,0x0064add0,0x0073f230
 17577,function,Inventory::SameKey,0x0073f5c0,0x0064b160,0x0073f5c0
 17578,function,,0x0073f5e0,0x0064b180,0x0073f5e0
 17579,function,,0x0073f600,0x0064b1a0,0x0073f600
@@ -19826,8 +19826,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 19825,function,,0x007a3400,0x00674900,0x007a3400
 19826,function,,0x007a3440,0x00674970,0x007a3440
 19827,function,,0x007a3700,0x00674c30,0x007a3700
-19828,function,,0x007a3810,0x00674d40,0x007a3810
-19829,function,,0x007a3a20,0x00674f50,0x007a3a20
+19828,function,CSSubActionHandler::HandleCreaturesInTheWay,0x007a3810,0x00674d40,0x007a3810
+19829,function,CSSubActionHandler::ReactToCreatureInTheWay,0x007a3a20,0x00674f50,0x007a3a20
 19830,function,,0x007a3b90,0x006750c0,0x007a3b90
 19831,function,,0x007a3c80,0x006751b0,0x007a3c80
 19832,function,,0x007a4100,0x00675630,0x007a4100
@@ -19879,7 +19879,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 19878,function,,0x007a83f0,0x00679590,0x007a83f0
 19879,function,CSSubActionHandler::Swing,0x007a87c0,0x00679960,0x007a87c0
 19880,function,,0x007a8c20,0x00679dc0,0x007a8c20
-19881,function,,0x007a8ff0,0x0067a190,0x007a8ff0
+19881,function,CSSubActionHandler::CreaturesInTheWayInCombat,0x007a8ff0,0x0067a190,0x007a8ff0
 19882,function,CSSubActionHandler::MoveUpdate,0x007a9130,0x0067a2d0,0x007a9130
 19883,function,,0x007a98c0,0x0067aa60,0x007a98c0
 19884,function,,0x007a9950,0x0067aaf0,0x007a9950
@@ -33572,7 +33572,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33571,function,MovementController::SetGoal,0x00a629c0,0x00709000,0x00a629c0
 33572,function,,0x00a629f0,0x00709030,0x00a629f0
 33573,function,MovementController::IsFree,0x00a62a90,0x007090d0,0x00a62a90
-33574,function,,0x00a62ae0,0x00709120,0x00a62ae0
+33574,function,MovementController::RandomWaitMs,0x00a62ae0,0x00709120,0x00a62ae0
 33575,function,MovementController::MovementController,0x00a62b20,0x00709160,0x00a62b20
 33576,function,,0x00a62b90,0x007091d0,0x00a62b90
 33577,function,,0x00a62bc0,0x00709200,0x00a62bc0
