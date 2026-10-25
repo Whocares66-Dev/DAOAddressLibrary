@@ -334,7 +334,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 333,function,,0x0040bb00,0x0040bdf0,0x0040bb00
 334,function,,0x0040be70,0x0040c160,0x0040be70
 335,function,,0x0040c4e0,0x0040c7d0,0x0040c4e0
-336,function,,0x0040d610,0x00493a20,0x0040d610
+336,function,std::vector<unsigned int>::vector,0x0040d610,0x00493a20,0x0040d610
 337,function,,0x0040d670,0x0040d900,0x0040d670
 338,function,,0x0040d6e0,0x0040d970,0x0040d6e0
 339,function,,0x0040d750,0x0040d9e0,0x0040d750
@@ -19940,7 +19940,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 19939,function,,0x007acde0,0x0068aaf0,0x007acde0
 19940,function,PartyTacticEntry::RefreshItem,0x007acdf0,0x0068ab20,0x007acdf0
 19941,function,PartyTactics::RefreshAllItems,0x007ad070,0x0068ada0,0x007ad070
-19942,function,,0x007ad0d0,0x0068ae00,0x007ad0d0
+19942,function,PartyTactics::Of,0x007ad0d0,0x0068ae00,0x007ad0d0
 19943,function,PartyTactics::HandleMessage_DirtyPresetMessage,0x007ad100,0x0068ae30,0x007ad100
 19944,function,PartyTactics::HandleMessage_SetBehaviourMessage,0x007ad120,0x0068ae50,0x007ad120
 19945,function,PartyTactics::HandleMessage_RefreshTacticsDataMessage,0x007ad170,0x0068aea0,0x007ad170
@@ -19954,7 +19954,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 19953,function,,0x007ada40,0x0068b770,0x007ada40
 19954,function,ScriptBackend::ForScript_GetTacticPresetID,0x007adab0,0x0068b7e0,0x007adab0
 19955,function,ScriptBackend::ForScript_SetTacticPresetID,0x007adb40,0x0068b870,0x007adb40
-19956,function,,0x007adcf0,0x0068ba20,0x007adcf0
+19956,function,PartyTactics::EntryOf,0x007adcf0,0x0068ba20,0x007adcf0
 19957,function,,0x007add20,0x0068ba50,0x007add20
 19958,function,,0x007adf40,0x0068bc70,0x007adf40
 19959,function,,0x007ae160,0x0068be90,0x007ae160
@@ -19971,9 +19971,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 19970,function,,0x007aead0,0x0068c810,0x007aead0
 19971,function,,0x007aeb00,0x0068c840,0x007aeb00
 19972,function,,0x007aeb20,0x008208c0,0x007aeb20
-19973,function,,0x007aeb50,0x0068c910,0x007aeb50
-19974,function,,0x007aed50,0x0068cb10,0x007aed50
-19975,function,,0x007aef50,0x0068cd10,0x007aef50
+19973,function,PartyTactics::ListConditions,0x007aeb50,0x0068c910,0x007aeb50
+19974,function,PartyTactics::ListAbilities,0x007aed50,0x0068cb10,0x007aed50
+19975,function,PartyTactics::ListModalAbilities,0x007aef50,0x0068cd10,0x007aef50
 19976,function,,0x007af0a0,0x0068ce60,0x007af0a0
 19977,function,,0x007af0e0,0x0068cea0,0x007af0e0
 19978,function,,0x007af160,0x00742370,0x007af160
@@ -19981,8 +19981,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 19980,function,,0x007af2e0,0x0068d0a0,0x007af2e0
 19981,function,,0x007af420,0x0068d1e0,0x007af420
 19982,function,ScriptBackend::ForScript_AddTacticPresetID,0x007af4e0,0x0068d2a0,0x007af4e0
-19983,function,,0x007af570,0x0068d330,0x007af570
-19984,function,,0x007af6c0,0x0068d480,0x007af6c0
+19983,function,PartyTactics::ListBaseConditions,0x007af570,0x0068d330,0x007af570
+19984,function,PartyTactics::ListItems,0x007af6c0,0x0068d480,0x007af6c0
 19985,function,,0x007af850,0x0068d610,0x007af850
 19986,function,,0x007af9f0,0x0068d7b0,0x007af9f0
 19987,function,,0x007afa30,0x0068d7f0,0x007afa30
@@ -19991,8 +19991,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 19990,function,,0x007afb3b,0x0082099b,0x007afb3b
 19991,function,,0x007afb70,0x0068d890,0x007afb70
 19992,function,,0x007afbf0,0x0068d910,0x007afbf0
-19993,function,,0x007afe80,0x0068dba0,0x007afe80
-19994,function,ScriptBackend::ForScript_SetTacticEntry,0x007b0040,0x0068dd60,0x007b0040
+19993,function,PartyTactics::ListCommands,0x007afe80,0x0068dba0,0x007afe80
+19994,function,PartyTactics::IsCommandValid,0x007b0040,0x0068dd60,0x007b0040
 19995,function,PartyTactics::HandleMessage_ValidateActionMessage,0x007b0170,0x0068de90,0x007b0170
 19996,function,,0x007b0390,0x0068e120,0x007b0390
 19997,function,,0x007b0450,0x0068e1e0,0x007b0450
@@ -20008,7 +20008,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20007,function,,0x007b09e0,0x0068e730,0x007b09e0
 20008,function,,0x007b09f0,0x0068e740,0x007b09f0
 20009,function,,0x007b0a00,0x0068e750,0x007b0a00
-20010,function,,0x007b0a80,0x0068e7d0,0x007b0a80
+20010,function,PartyTactics::ListTargets,0x007b0a80,0x0068e7d0,0x007b0a80
 20011,function,,0x007b0c80,0x0068e9d0,0x007b0c80
 20012,function,,0x007b0cc0,0x0068ea40,0x007b0cc0
 20013,function,,0x007b0ce0,0x008209d0,0x007b0ce0
