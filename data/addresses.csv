@@ -2238,7 +2238,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2237,function,Vector4::Normalized,0x00451a30,0x004992c0,0x00451a30
 2238,function,,0x00451af0,0x00a33760,0x00451af0
 2239,function,,0x00451b30,0x00495810,0x00451b30
-2240,function,,0x00451b60,0x004b0910,0x00451b60
+2240,function,Matrix44::Multiply,0x00451b60,0x004b0910,0x00451b60
 2241,function,,0x00451bf0,0x004ad730,0x00451bf0
 2242,function,,0x00451c10,0x004ad6d0,0x00451c10
 2243,function,,0x00451c60,0x004ad720,0x00451c60
@@ -4751,7 +4751,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4750,function,,0x004cb930,0x0080ccc0,0x004cb930
 4751,function,,0x004cbaa0,0x0080ce30,0x004cbaa0
 4752,function,,0x004cbc10,0x0080cfa0,0x004cbc10
-4753,function,,0x004cbc40,0x0080cfd0,0x004cbc40
+4753,function,Quaternion::FromAxisAngle,0x004cbc40,0x0080cfd0,0x004cbc40
 4754,function,,0x004cbcb0,0x0080d040,0x004cbcb0
 4755,function,,0x004cbce0,0x0080d070,0x004cbce0
 4756,function,,0x004cbd30,0x0080d0c0,0x004cbd30
@@ -4939,7 +4939,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4938,function,,0x004d3b30,0x0081a290,0x004d3b30
 4939,function,,0x004d3b80,0x0081a2e0,0x004d3b80
 4940,function,,0x004d3bd0,0x0081a330,0x004d3bd0
-4941,function,,0x004d3d00,0x0081a460,0x004d3d00
+4941,function,Matrix44::FromQuaternionTranslation,0x004d3d00,0x0081a460,0x004d3d00
 4942,function,,0x004d3e30,0x0081a590,0x004d3e30
 4943,function,,0x004d3f80,0x0081a6e0,0x004d3f80
 4944,function,,0x004d4060,0x004791e0,0x004d4060
@@ -9522,7 +9522,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 9521,function,,0x005aed20,0x007ae890,0x005aed20
 9522,function,GraphicsStructures::PHYToBlueprintBuilder::BeginCollisionObject,0x005aed30,0x007ae8a0,0x005aed30
 9523,function,GraphicsStructures::PHYToBlueprintBuilder::BeginShape,0x005aedb0,0x007ae920,0x005aedb0
-9524,function,,0x005aedc0,0x007ae930,0x005aedc0
+9524,function,GraphicsStructures::PHYToBlueprintBuilder::SetShapePose,0x005aedc0,0x007ae930,0x005aedc0
 9525,function,,0x005aedd0,0x007ae940,0x005aedd0
 9526,function,,0x005aee20,0x007ae990,0x005aee20
 9527,function,GraphicsStructures::PHYToBlueprintBuilder::EndShape,0x005aee40,0x007ae9b0,0x005aee40
@@ -22154,8 +22154,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 22153,function,,0x0081b2d0,0x004b08a0,0x0081b2d0
 22154,function,,0x0081b2e0,0x004b08c0,0x0081b2e0
 22155,function,Physics::ShapePrototype::ShapePrototype,0x0081b330,0x004b0b20,0x0081b330
-22156,function,,0x0081b3d0,0x004b0de0,0x0081b3d0
-22157,function,,0x0081b420,0x004b0e30,0x0081b420
+22156,function,Physics::ShapePrototype::SetPose,0x0081b3d0,0x004b0de0,0x0081b3d0
+22157,function,Physics::ShapePrototype::GetLocalPose,0x0081b420,0x004b0e30,0x0081b420
 22158,function,Physics::MeshShapePrototype::MeshShapePrototype,0x0081b560,0x004b0f70,0x0081b560
 22159,function,Physics::ConvexShapePrototype::ConvexShapePrototype,0x0081b600,0x004b1010,0x0081b600
 22160,function,Physics::MeshShapePrototype::~MeshShapePrototype,0x0081b690,0x004b10a0,0x0081b690
@@ -22236,7 +22236,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 22235,function,,0x0081ea30,0x004ab4a0,0x0081ea30
 22236,function,,0x0081eaa0,0x004ab510,0x0081eaa0
 22237,function,,0x0081ebb0,0x004ab620,0x0081ebb0
-22238,function,,0x0081ed00,0x004ab770,0x0081ed00
+22238,function,Physics::PhysicsActor::LastShapeDesc,0x0081ed00,0x004ab770,0x0081ed00
 22239,function,,0x0081ed60,0x004ab7d0,0x0081ed60
 22240,function,,0x0081ed80,0x007dca80,0x0081ed80
 22241,function,,0x0081ee40,0x004ab7f0,0x0081ee40
@@ -22247,10 +22247,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 22246,function,Physics::PhysicsActor::IsStatic,0x0081f0e0,0x004ab980,0x0081f0e0
 22247,function,,0x0081f0f0,0x004ab9a0,0x0081f0f0
 22248,function,Physics::PhysicsActor::~PhysicsActor,0x0081f100,0x004ab9b0,0x0081f100
-22249,function,,0x0081f320,0x004abbd0,0x0081f320
-22250,function,,0x0081f540,0x004abdf0,0x0081f540
+22249,function,Physics::PhysicsActor::MakeBoxShapeDesc,0x0081f320,0x004abbd0,0x0081f320
+22250,function,Physics::PhysicsActor::MakeCapsuleShapeDesc,0x0081f540,0x004abdf0,0x0081f540
 22251,function,,0x0081f720,0x004abfd0,0x0081f720
-22252,function,,0x0081f730,0x004abfe0,0x0081f730
+22252,function,Physics::PhysicsActor::MakeSphereShapeDesc,0x0081f730,0x004abfe0,0x0081f730
 22253,function,,0x0081f910,0x004ac1c0,0x0081f910
 22254,function,,0x0081fb50,0x004ac400,0x0081fb50
 22255,function,,0x0081fd90,0x004ac640,0x0081fd90
@@ -22259,7 +22259,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 22258,function,Physics::PhysicsActor::GetJointsWithActor,0x00820010,0x004ac8c0,0x00820010
 22259,function,Physics::PhysicsActor::CreateTriggerShapes,0x00820120,0x004ac9d0,0x00820120
 22260,function,Physics::PhysicsActor::~PhysicsActor,0x008202e0,0x004acb90,0x008202e0
-22261,function,,0x00820300,0x004acbb0,0x00820300
+22261,function,Physics::PhysicsActor::CreateShapeDesc,0x00820300,0x004acbb0,0x00820300
 22262,function,Physics::PhysicsActor::Create,0x00820470,0x004acd20,0x00820470
 22263,function,,0x00820e20,0x00497480,0x00820e20
 22264,function,,0x00820ea0,0x004975e0,0x00820ea0
@@ -22668,7 +22668,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 22667,function,,0x00837a60,0x004ad7b0,0x00837a60
 22668,function,,0x00837a80,0x004ad7d0,0x00837a80
 22669,function,,0x00837aa0,0x004ad7f0,0x00837aa0
-22670,function,,0x00837ae0,0x004ad830,0x00837ae0
+22670,function,Physics::ToNxMat34,0x00837ae0,0x004ad830,0x00837ae0
 22671,function,,0x00837b70,0x004ad8c0,0x00837b70
 22672,function,,0x00837bf0,0x0041d080,0x00837bf0
 22673,function,Physics::PhysicsControllerHitReport::onShapeHit,0x00837c00,0x004ad940,0x00837c00
