@@ -12698,7 +12698,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 12697,function,,0x00648ae0,0x00531030,0x00648ae0
 12698,function,,0x00648b10,0x00531060,0x00648b10
 12699,function,World::CurrentScene,0x00648b30,0x00531170,0x00648b30
-12700,function,,0x00648b70,0x005311b0,0x00648b70
+12700,function,World::ClassifyHit,0x00648b70,0x005311b0,0x00648b70
 12701,function,,0x00648bd0,0x00531210,0x00648bd0
 12702,function,,0x00648c00,0x00531240,0x00648c00
 12703,function,,0x00648c30,0x00811da0,0x00648c30
@@ -14197,7 +14197,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14196,function,CCObject::ForScript_SetGroupId,0x00699ff0,0x0058b300,0x00699ff0
 14197,function,,0x0069a000,0x0058b310,0x0069a000
 14198,function,,0x0069a010,0x0058b320,0x0069a010
-14199,function,,0x0069a020,0x0058b330,0x0069a020
+14199,function,CCObject::GetObjectInteractive,0x0069a020,0x0058b330,0x0069a020
 14200,function,,0x0069a030,0x0058b340,0x0069a030
 14201,function,,0x0069a040,0x0058b360,0x0069a040
 14202,function,,0x0069a050,0x0058b370,0x0069a050
@@ -14440,7 +14440,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14439,function,AttachWeaponPart,0x006a1350,0x00592450,0x006a1350
 14440,function,,0x006a13c0,0x005924c0,0x006a13c0
 14441,function,,0x006a1470,0x00592570,0x006a1470
-14442,function,,0x006a1730,0x00592850,0x006a1730
+14442,function,CCCreature::CreateCoarseSelectionActor,0x006a1730,0x00592850,0x006a1730
 14443,function,,0x006a19e0,0x00592b00,0x006a19e0
 14444,function,,0x006a1a30,0x00592b50,0x006a1a30
 14445,function,,0x006a1b80,0x00592ca0,0x006a1b80
@@ -16167,7 +16167,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16166,function,,0x0070b090,0x0050c210,0x0070b090
 16167,function,,0x0070b0d0,0x0050c250,0x0070b0d0
 16168,function,,0x0070b130,0x005fc430,0x0070b130
-16169,function,,0x0070b1a0,0x005fc660,0x0070b1a0
+16169,function,World::CompareHitsByCameraDistance,0x0070b1a0,0x005fc660,0x0070b1a0
 16170,function,,0x0070b270,0x005fc730,0x0070b270
 16171,function,,0x0070b280,0x005fc740,0x0070b280
 16172,function,,0x0070b480,0x005fc940,0x0070b480
@@ -16267,7 +16267,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16266,function,,0x0070e720,0x005ff8d0,0x0070e720
 16267,function,,0x0070e7b0,0x005ff960,0x0070e7b0
 16268,function,,0x0070e820,0x005ff9d0,0x0070e820
-16269,function,,0x0070eaa0,0x005ffc50,0x0070eaa0
+16269,function,GameModeExplore::PickUnderCursor,0x0070eaa0,0x005ffc50,0x0070eaa0
 16270,function,GameModeExplore::HandleMessage_SelectNextCreatureTargetMessage,0x0070ee10,0x005fffc0,0x0070ee10
 16271,function,GameModeExplore::HandleMessage_SelectPreviousCreatureTargetMessage,0x0070ee90,0x00600040,0x0070ee90
 16272,function,GameModeExplore::HandleMessage_TeleportPlayerMessage,0x0070ef10,0x006000c0,0x0070ef10
@@ -17840,12 +17840,12 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 17839,function,,0x0074bb70,0x00657af0,0x0074bb70
 17840,function,,0x0074bb90,0x00657b10,0x0074bb90
 17841,function,,0x0074bbc0,0x00657b40,0x0074bbc0
-17842,function,,0x0074bcc0,0x00657c40,0x0074bcc0
+17842,function,CCPlaceable::DoorBlocks,0x0074bcc0,0x00657c40,0x0074bcc0
 17843,function,,0x0074bcf0,0x00657c70,0x0074bcf0
 17844,function,,0x0074bd00,0x00657c80,0x0074bd00
 17845,function,,0x0074bd70,0x00657cf0,0x0074bd70
-17846,function,,0x0074bdc0,0x00657d40,0x0074bdc0
-17847,function,,0x0074bde0,0x00657d60,0x0074bde0
+17846,function,CCPlaceable::SetShownInRoom,0x0074bdc0,0x00657d40,0x0074bdc0
+17847,function,CCPlaceable::SetRoomSeenState,0x0074bde0,0x00657d60,0x0074bde0
 17848,function,,0x0074be00,0x00657da0,0x0074be00
 17849,function,CCPlaceable::HandleMessage_DisplayFloatyMessage,0x0074be30,0x00657dd0,0x0074be30
 17850,function,,0x0074be60,0x00509640,0x0074be60
@@ -17885,7 +17885,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 17884,function,CCPlaceable::AimPoint,0x0074d580,0x006594f0,0x0074d580
 17885,function,,0x0074d600,0x00659570,0x0074d600
 17886,function,,0x0074d840,0x006597b0,0x0074d840
-17887,function,,0x0074d8c0,0x00659830,0x0074d8c0
+17887,function,CCPlaceable::UpdateRoomVisibility,0x0074d8c0,0x00659830,0x0074d8c0
 17888,function,,0x0074da40,0x006599b0,0x0074da40
 17889,function,,0x0074daa0,0x00659a10,0x0074daa0
 17890,function,CCPlaceable::ApplyWalkPatch,0x0074dba0,0x00659b10,0x0074dba0
@@ -17896,7 +17896,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 17895,function,,0x0074e640,0x0065a5b0,0x0074e640
 17896,function,,0x0074e6a0,0x005948a0,0x0074e6a0
 17897,function,,0x0074e710,0x0065a610,0x0074e710
-17898,function,,0x0074e850,0x0065a750,0x0074e850
+17898,function,CCPlaceable::UpdateDoorCollision,0x0074e850,0x0065a750,0x0074e850
 17899,function,CCPlaceable::HandleMessage_InventoryClosedMessage,0x0074e8d0,0x0065a7d0,0x0074e8d0
 17900,function,,0x0074e8e0,0x0065a7e0,0x0074e8e0
 17901,function,,0x0074e940,0x0065a840,0x0074e940
@@ -17926,14 +17926,14 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 17925,function,,0x00750ce0,0x0065cbe0,0x00750ce0
 17926,function,,0x00750eb0,0x0065cdb0,0x00750eb0
 17927,function,CCObject::GetItemContainer,0x00750ec0,0x005ac240,0x00750ec0
-17928,function,,0x00750ed0,0x0065cdc0,0x00750ed0
+17928,function,CCPlaceable::IsPickable,0x00750ed0,0x0065cdc0,0x00750ed0
 17929,function,,0x00750ef0,0x0065cde0,0x00750ef0
 17930,function,,0x00750f00,0x0065cdf0,0x00750f00
 17931,function,,0x00750f50,0x0065ce40,0x00750f50
 17932,function,,0x00750f60,0x0065ce50,0x00750f60
 17933,function,,0x00750f70,0x0065ce60,0x00750f70
 17934,function,,0x00750f80,0x0065ce70,0x00750f80
-17935,function,,0x00750f90,0x0065ce80,0x00750f90
+17935,function,CCPlaceable::IsUsableNow,0x00750f90,0x0065ce80,0x00750f90
 17936,function,,0x00750fb0,0x0065cea0,0x00750fb0
 17937,function,,0x00750fd0,0x0065cec0,0x00750fd0
 17938,function,,0x00751040,0x0065cf30,0x00751040
@@ -22174,7 +22174,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 22173,function,Physics::RigidBodyPrototype::~RigidBodyPrototype,0x0081c080,0x004b1a90,0x0081c080
 22174,function,,0x0081c120,0x004b1b30,0x0081c120
 22175,function,,0x0081c130,0x004b1b40,0x0081c130
-22176,function,,0x0081c210,0x004b1c20,0x0081c210
+22176,function,Physics::MakeCapsuleBody,0x0081c210,0x004b1c20,0x0081c210
 22177,function,,0x0081c300,0x004b1d10,0x0081c300
 22178,function,Physics::RigidBodyPrototype::~RigidBodyPrototype,0x0081c450,0x004b1e60,0x0081c450
 22179,function,,0x0081c470,0x004a9230,0x0081c470
