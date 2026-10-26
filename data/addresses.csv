@@ -7590,9 +7590,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7589,function,,0x0053cbc0,0x00751ec0,0x0053cbc0
 7590,function,,0x0053cbd0,0x00454410,0x0053cbd0
 7591,function,,0x0053cbe0,0x00751ee0,0x0053cbe0
-7592,function,,0x0053cbf0,0x00751ef0,0x0053cbf0
+7592,function,GraphicsStructures::ObjectNode::GetPhysicsActor,0x0053cbf0,0x00751ef0,0x0053cbf0
 7593,function,,0x0053cc00,0x00751f00,0x0053cc00
-7594,function,,0x0053cc20,0x0076bc60,0x0053cc20
+7594,function,GraphicsStructures::ObjectNode::ClearPhysicsActor,0x0053cc20,0x0076bc60,0x0053cc20
 7595,function,,0x0053cc30,0x0076bc70,0x0053cc30
 7596,function,SmartData::Attribute::Get,0x0053cc40,0x0041f2e0,0x0053cc40
 7597,function,,0x0053cc50,0x0076bc80,0x0053cc50
@@ -7738,7 +7738,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7737,function,,0x005426a0,0x00743ec0,0x005426a0
 7738,function,,0x005426c0,0x00743ee0,0x005426c0
 7739,function,,0x005426e0,0x00743f00,0x005426e0
-7740,function,,0x00542700,0x00743f20,0x00542700
+7740,function,GraphicsStructures::Object::EnsureTransformsUpdated,0x00542700,0x00743f20,0x00542700
 7741,function,,0x00542720,0x00743f40,0x00542720
 7742,function,,0x00542770,0x00743f90,0x00542770
 7743,function,,0x005427b0,0x00743fd0,0x005427b0
@@ -7917,7 +7917,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7916,function,,0x00548d50,0x0074a350,0x00548d50
 7917,function,,0x00548dd0,0x0074a3d0,0x00548dd0
 7918,function,,0x00548e50,0x0074a450,0x00548e50
-7919,function,,0x00548ed0,0x0074a4d0,0x00548ed0
+7919,function,GraphicsStructures::Object::UpdateTransforms,0x00548ed0,0x0074a4d0,0x00548ed0
 7920,function,,0x00549140,0x0074a740,0x00549140
 7921,function,,0x005494f0,0x0074aaf0,0x005494f0
 7922,function,,0x00549580,0x0074ab80,0x00549580
@@ -8313,8 +8313,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 8312,function,,0x0055dae0,0x00777120,0x0055dae0
 8313,function,,0x0055db10,0x00777150,0x0055db10
 8314,function,,0x0055db50,0x00777190,0x0055db50
-8315,function,,0x0055db70,0x007771b0,0x0055db70
-8316,function,,0x0055dba0,0x007771e0,0x0055dba0
+8315,function,GraphicsStructures::ObjectNode::MarkPhysicsMoved,0x0055db70,0x007771b0,0x0055db70
+8316,function,GraphicsStructures::ObjectNode::SetPhysicsActor,0x0055dba0,0x007771e0,0x0055dba0
 8317,function,,0x0055dbe0,0x00777220,0x0055dbe0
 8318,function,,0x0055dcb0,0x007772f0,0x0055dcb0
 8319,function,,0x0055dcf0,0x00777330,0x0055dcf0
@@ -8346,7 +8346,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 8345,function,,0x0055e8e0,0x00777f20,0x0055e8e0
 8346,function,,0x0055e900,0x00777f40,0x0055e900
 8347,function,,0x0055e950,0x00777f90,0x0055e950
-8348,function,,0x0055e9d0,0x00778010,0x0055e9d0
+8348,function,GraphicsStructures::ObjectNode::UpdateWorldTransform,0x0055e9d0,0x00778010,0x0055e9d0
 8349,function,,0x0055ec80,0x007782c0,0x0055ec80
 8350,function,,0x0055ed20,0x00778360,0x0055ed20
 8351,function,,0x0055ef20,0x00778560,0x0055ef20
@@ -9564,7 +9564,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 9563,function,GraphicsStructures::PHYToBlueprintBuilder::SetObjectVolume,0x005af520,0x007af090,0x005af520
 9564,function,,0x005af540,0x007af0b0,0x005af540
 9565,function,,0x005af550,0x007af0c0,0x005af550
-9566,function,,0x005af560,0x007af0d0,0x005af560
+9566,function,GraphicsStructures::PHYToBlueprintBuilder::SetCollisionObjectType,0x005af560,0x007af0d0,0x005af560
 9567,function,,0x005af570,0x007af0e0,0x005af570
 9568,function,,0x005af580,0x007af0f0,0x005af580
 9569,function,GraphicsStructures::PHYToBlueprintBuilder::SetShapeType,0x005af600,0x007af170,0x005af600
@@ -22274,7 +22274,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 22273,function,,0x00821020,0x004977e0,0x00821020
 22274,function,,0x00821030,0x004977f0,0x00821030
 22275,function,,0x00821040,0x00497800,0x00821040
-22276,function,,0x00821050,0x00497810,0x00821050
+22276,function,Physics::PhysicsScene::GetPromoteStaticToKinematic,0x00821050,0x00497810,0x00821050
 22277,function,,0x00821060,0x00497820,0x00821060
 22278,function,,0x00821070,0x00497830,0x00821070
 22279,function,Physics::PhysicsScene::CreateActor,0x00821080,0x00497840,0x00821080
@@ -22496,8 +22496,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 22495,function,Physics::PhysicsScene::PhysicsEntityReport<unsigned int>::onEvent,0x0082c1d0,0x004a4880,0x0082c1d0
 22496,function,,0x0082c2f0,0x004a49a0,0x0082c2f0
 22497,function,Physics::PhysicsScene::CreatePhysicsObject,0x0082c400,0x004a4ab0,0x0082c400
-22498,function,,0x0082c480,0x004a4b30,0x0082c480
-22499,function,,0x0082c580,0x004a4c30,0x0082c580
+22498,function,Physics::PhysicsScene::MoveActorGlobalPose,0x0082c480,0x004a4b30,0x0082c480
+22499,function,Physics::PhysicsScene::SetActorGlobalPose,0x0082c580,0x004a4c30,0x0082c580
 22500,function,,0x0082c680,0x004a4d30,0x0082c680
 22501,function,,0x0082c770,0x004a4e20,0x0082c770
 22502,function,,0x0082c860,0x004a4f10,0x0082c860
@@ -23918,7 +23918,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 23917,function,,0x00874fe0,0x0047bd90,0x00874fe0
 23918,function,,0x008750a0,0x0047be50,0x008750a0
 23919,function,,0x00875140,0x0047bef0,0x00875140
-23920,function,,0x00875210,0x0047bfd0,0x00875210
+23920,function,Stub::GetDword_0x40,0x00875210,0x0047bfd0,0x00875210
 23921,function,,0x00875220,0x00a3e1d0,0x00875220
 23922,function,,0x00875230,0x0047bfe0,0x00875230
 23923,function,D3DDriver::D3DTextureVolume::~D3DTextureVolume,0x00875240,0x0047bff0,0x00875240
