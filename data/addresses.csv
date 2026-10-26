@@ -14280,7 +14280,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14279,function,CScriptEvent::SetEffect,0x0069d120,0x0058e330,0x0069d120
 14280,function,,0x0069d200,0x0058e430,0x0069d200
 14281,function,,0x0069d2b0,0x0058e4e0,0x0069d2b0
-14282,function,,0x0069d2e0,0x0058e510,0x0069d2e0
+14282,function,CCPlayer::GetControlledCreature,0x0069d2e0,0x0058e510,0x0069d2e0
 14283,function,,0x0069d320,0x0058e550,0x0069d320
 14284,function,ScriptBackend::ForScript_GetPlayTime,0x0069d340,0x0058e570,0x0069d340
 14285,function,,0x0069d380,0x0058e620,0x0069d380
@@ -14866,7 +14866,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14865,function,CCCreature::ForScript_SetClassRank,0x006b6120,0x005a7bb0,0x006b6120
 14866,function,,0x006b6290,0x005a7d20,0x006b6290
 14867,function,CCCreature::UpdateController,0x006b6880,0x005a8310,0x006b6880
-14868,function,,0x006b6bc0,0x005a8650,0x006b6bc0
+14868,function,CCCreature::SetLocation,0x006b6bc0,0x005a8650,0x006b6bc0
 14869,function,CCCreature::RemoveFromArea,0x006b6e60,0x005a88f0,0x006b6e60
 14870,function,,0x006b6f60,0x005a89f0,0x006b6f60
 14871,function,,0x006b7330,0x005a8dc0,0x006b7330
@@ -15086,11 +15086,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15085,function,,0x006c6fd0,0x005b8a90,0x006c6fd0
 15086,function,GameModeLoading::ReadArrivalPoint,0x006c7080,0x005b8b40,0x006c7080
 15087,function,,0x006c7380,0x005b8e40,0x006c7380
-15088,function,,0x006c73c0,0x005b8e80,0x006c73c0
+15088,function,GameModeLoading::PlaceParty,0x006c73c0,0x005b8e80,0x006c73c0
 15089,function,,0x006c76f0,0x005b91b0,0x006c76f0
-15090,function,,0x006c8420,0x005b9ee0,0x006c8420
-15091,function,,0x006c8720,0x005ba1e0,0x006c8720
-15092,function,,0x006c8800,0x005ba2c0,0x006c8800
+15090,function,GameModeLoading::UpdateLightLoading,0x006c8420,0x005b9ee0,0x006c8420
+15091,function,GameModeLoading::RemovePartyFromArea,0x006c8720,0x005ba1e0,0x006c8720
+15092,function,GameModeLoading::UpdateAreaListSwap,0x006c8800,0x005ba2c0,0x006c8800
 15093,function,GameModeLoading::AreaLoadSteps,0x006c8ef0,0x005ba9b0,0x006c8ef0
 15094,function,GameModeLoading::Update,0x006c9680,0x005bb140,0x006c9680
 15095,function,,0x006c9760,0x005bb220,0x006c9760
@@ -19829,8 +19829,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 19828,function,CSSubActionHandler::HandleCreaturesInTheWay,0x007a3810,0x00674d40,0x007a3810
 19829,function,CSSubActionHandler::ReactToCreatureInTheWay,0x007a3a20,0x00674f50,0x007a3a20
 19830,function,,0x007a3b90,0x006750c0,0x007a3b90
-19831,function,,0x007a3c80,0x006751b0,0x007a3c80
-19832,function,,0x007a4100,0x00675630,0x007a4100
+19831,function,CSSubActionHandler::JumpToObject,0x007a3c80,0x006751b0,0x007a3c80
+19832,function,CSSubActionHandler::JumpToLocation,0x007a4100,0x00675630,0x007a4100
 19833,function,CSSubActionHandler::PlayAnimation,0x007a4390,0x006758c0,0x007a4390
 19834,function,,0x007a48b0,0x00675de0,0x007a48b0
 19835,function,,0x007a49e0,0x00675f10,0x007a49e0
