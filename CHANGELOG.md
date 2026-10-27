@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.7.0
+
+- **The same files as 0.6.0:** every address, the code index and the file format are unchanged, byte for byte, so nothing needs installing again. This release gives DAOLib 0.7.0 a tag to build against.
+- **More names:** 9,257 IDs are named, 453 more than in 0.6.0, read for DAOLib and DAOParagonEngine: movement and pathfinding (a creature's `MovementController` and the `MovementPath` it walks), the melee ring, perception through rooms and doors, the commands' and sub-actions' handlers, the loading mode's area moves, stores, crafting, item requirements, tactics, the level-up screen, the Chanter's board, and a model's physics shapes. `addrlib.py lookup` finds them.
+- **Names put right:** 16 renamed, among them the movement functions that belong to `MovementPath`, `Commands::AttackStart` (was `AttackStep`) and the recipe test, now `ECBase::ECDynArray::Contains`. An ID's number never changes, so a plugin built on an older name still calls the same function.
+
 ## 0.6.0
 
 - **106 IDs retired:** they were the cases of `switch` statements, which the comparison had taken for functions of their own (10101 among them). Each keeps its number, never given to anything else, with its kind `retired` and no address, so each build's file has 106 fewer addresses: 103,187, 103,461 and 103,422 for GOG, EA and Steam. No address of any other ID moved, and the file format is unchanged.
