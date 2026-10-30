@@ -6687,7 +6687,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6686,function,,0x00515290,0x007bcc70,0x00515290
 6687,function,,0x00515320,0x007bcd00,0x00515320
 6688,function,,0x00515560,0x007bcf40,0x00515560
-6689,function,,0x00515680,0x007bd060,0x00515680
+6689,function,GUI::ScaleformManager::SendMouseMoves,0x00515680,0x007bd060,0x00515680
 6690,function,,0x005159a0,0x007bd380,0x005159a0
 6691,function,,0x00515a70,0x007bd450,0x00515a70
 6692,function,,0x00515ce0,0x007bd6c0,0x00515ce0
@@ -6697,7 +6697,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6696,function,,0x00515fb0,0x00754a70,0x00515fb0
 6697,function,GUI::ScaleformManager::Initialize,0x00515fe0,0x007bd990,0x00515fe0
 6698,function,,0x005166c0,0x007be070,0x005166c0
-6699,function,,0x00516760,0x007be110,0x00516760
+6699,function,GUI::ScaleformManager::Update,0x00516760,0x007be110,0x00516760
 6700,function,,0x00516920,0x007decb0,0x00516920
 6701,function,,0x00516970,0x0074f560,0x00516970
 6702,function,,0x00516980,0x007dee20,0x00516980
@@ -6740,7 +6740,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6739,function,,0x005187f0,0x007c0cc0,0x005187f0
 6740,function,GuiMovie::SetFSCommandReturnValue,0x00518830,0x007c0d00,0x00518830
 6741,function,GuiMovie::Invoke,0x00518850,0x007c0d20,0x00518850
-6742,function,,0x00518860,0x007c0d30,0x00518860
+6742,function,GuiMovie::SendMouseMove,0x00518860,0x007c0d30,0x00518860
 6743,function,,0x00518970,0x007c0e40,0x00518970
 6744,function,,0x00518a50,0x007c0f20,0x00518a50
 6745,function,,0x00518bd0,0x007c10a0,0x00518bd0
@@ -15159,7 +15159,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15158,function,,0x006cbdf0,0x005bd830,0x006cbdf0
 15159,function,,0x006cbe70,0x005bd8b0,0x006cbe70
 15160,function,,0x006cbed9,0x005bd919,0x006cbed9
-15161,function,,0x006cbf10,0x005bd950,0x006cbf10
+15161,function,SaveLoadProxy::ChooseHero,0x006cbf10,0x005bd950,0x006cbf10
 15162,function,,0x006cc040,0x005bda80,0x006cc040
 15163,function,,0x006cc090,0x005bdad0,0x006cc090
 15164,function,,0x006cc130,0x005bdb70,0x006cc130
@@ -15214,14 +15214,14 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15213,function,,0x006ce8e0,0x005c0180,0x006ce8e0
 15214,function,,0x006ce960,0x005c0200,0x006ce960
 15215,function,,0x006ce9d0,0x005c0270,0x006ce9d0
-15216,function,,0x006cea00,0x005c02a0,0x006cea00
-15217,function,,0x006ceff0,0x005c0890,0x006ceff0
+15216,function,SaveLoadProxy::AddHero,0x006cea00,0x005c02a0,0x006cea00
+15217,function,SaveLoadProxy::GatherCharacterFolders,0x006ceff0,0x005c0890,0x006ceff0
 15218,function,,0x006cf390,0x005c0cb0,0x006cf390
 15219,function,,0x006cf410,0x005a2a90,0x006cf410
 15220,function,,0x006cf4a0,0x005c0d30,0x006cf4a0
 15221,function,,0x006cf4e0,0x005c0d70,0x006cf4e0
 15222,function,,0x006cf550,0x005c0de0,0x006cf550
-15223,function,,0x006cfb60,0x005c13f0,0x006cfb60
+15223,function,SaveLoadProxy::RefreshHeroes,0x006cfb60,0x005c13f0,0x006cfb60
 15224,function,,0x006d02c0,0x005c1b50,0x006d02c0
 15225,function,,0x006d03f0,0x005c1c80,0x006d03f0
 15226,function,,0x006d0400,0x005c1c90,0x006d0400
@@ -15231,7 +15231,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15230,function,,0x006d04b0,0x005c1d40,0x006d04b0
 15231,function,,0x006d0530,0x005c1dc0,0x006d0530
 15232,function,,0x006d06b0,0x005c1f40,0x006d06b0
-15233,function,,0x006d0720,0x005c1fb0,0x006d0720
+15233,function,SaveLoadProxy::ResetForPregame,0x006d0720,0x005c1fb0,0x006d0720
 15234,function,SaveLoadProxy::HandleMessage_RefreshHeroesMessage,0x006d0890,0x005c2120,0x006d0890
 15235,function,SaveLoadProxy::HandleMessage_RefreshHeroesForImportMessage,0x006d08a0,0x005c2130,0x006d08a0
 15236,function,SaveLoadProxy::HandleMessage_DeleteHeroMessage,0x006d0900,0x005c2190,0x006d0900
@@ -15246,7 +15246,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15245,function,SaveLoadProxy::HandleMessage_DeleteSaveGameMessage,0x006d16b0,0x005c2f40,0x006d16b0
 15246,function,SaveLoadProxy::HandleMessage_SelectHeroMessage,0x006d1790,0x005c3020,0x006d1790
 15247,function,,0x006d1850,0x005c30e0,0x006d1850
-15248,function,,0x006d1a50,0x005c32e0,0x006d1a50
+15248,function,SaveLoadProxy::SetMode,0x006d1a50,0x005c32e0,0x006d1a50
 15249,function,,0x006d1ac0,0x005c3350,0x006d1ac0
 15250,function,,0x006d1b40,0x005c33d0,0x006d1b40
 15251,function,,0x006d1bc0,0x005c3450,0x006d1bc0
