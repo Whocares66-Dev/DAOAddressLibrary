@@ -447,9 +447,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 446,function,,0x004151a0,0x00505ad0,0x004151a0
 447,function,,0x00415260,0x00415900,0x00415260
 448,function,,0x00415290,0x004580a0,0x00415290
-449,function,,0x00415490,0x00415930,0x00415490
+449,function,Eclipse::PlatformWin32::SetCursorByName,0x00415490,0x00415930,0x00415490
 450,function,,0x00415590,0x00458630,0x00415590
-451,function,,0x00415740,0x00415ac0,0x00415740
+451,function,Eclipse::PlatformWin32::LoadCursorFile,0x00415740,0x00415ac0,0x00415740
 452,function,Eclipse::PlatformWin32::LoadCursors,0x004158c0,0x00415c40,0x004158c0
 453,function,Eclipse::PlatformWin32::CreateMainWindow,0x00416760,0x00416ae0,0x00416760
 454,function,,0x004168f0,0x00416c70,0x004168f0
@@ -6942,9 +6942,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6941,function,GUI::GUISystem::SetGuiVisible,0x00523900,0x007bf9e0,0x00523900
 6942,function,GUI::GUISystem::HandleMessage_Message,0x00523920,0x007bfa00,0x00523920
 6943,function,GUI::GUISystem::HandleMessage_SetCursorMessage,0x00523940,0x007bfa20,0x00523940
-6944,function,,0x00523960,0x007bfa40,0x00523960
+6944,function,GUI::GUISystem::SetCursor,0x00523960,0x007bfa40,0x00523960
 6945,function,,0x005239b0,0x007bfa90,0x005239b0
-6946,function,,0x005239c0,0x007bfaa0,0x005239c0
+6946,function,GUI::GUISystem::MouseOverInterface,0x005239c0,0x007bfaa0,0x005239c0
 6947,function,,0x005239d0,0x007bfab0,0x005239d0
 6948,function,,0x005239f0,0x007bfad0,0x005239f0
 6949,function,,0x00523a40,0x007bfb20,0x00523a40
@@ -7857,7 +7857,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7856,function,,0x00546890,0x004bcbd0,0x00546890
 7857,function,,0x005468c0,0x005f3fc0,0x005468c0
 7858,function,,0x00546900,0x00760ba0,0x00546900
-7859,function,,0x00546920,0x00747f70,0x00546920
+7859,function,GraphicsStructures::Object::SetTintColor,0x00546920,0x00747f70,0x00546920
 7860,function,,0x00546970,0x00747fc0,0x00546970
 7861,function,,0x005469c0,0x00748010,0x005469c0
 7862,function,,0x00546a70,0x007480c0,0x00546a70
@@ -8252,7 +8252,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 8251,function,,0x0055a6d0,0x00775660,0x0055a6d0
 8252,function,,0x0055a7c0,0x00775750,0x0055a7c0
 8253,function,,0x0055a900,0x00775890,0x0055a900
-8254,function,,0x0055a970,0x00775900,0x0055a970
+8254,function,GraphicsStructures::ObjectNodeMesh::SetTintColor,0x0055a970,0x00775900,0x0055a970
 8255,function,,0x0055aa50,0x007759e0,0x0055aa50
 8256,function,,0x0055aa90,0x00775a20,0x0055aa90
 8257,function,,0x0055aad0,0x00775a60,0x0055aad0
@@ -14085,7 +14085,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14084,function,CCObject::SetPosition,0x00695540,0x00586500,0x00695540
 14085,function,,0x006955c0,0x00586580,0x006955c0
 14086,function,,0x00695620,0x005865e0,0x00695620
-14087,function,,0x00695640,0x00586600,0x00695640
+14087,function,CCObject::CanGlow,0x00695640,0x00586600,0x00695640
 14088,function,,0x00695670,0x00586630,0x00695670
 14089,function,,0x00695690,0x00586650,0x00695690
 14090,function,,0x006956b0,0x00586670,0x006956b0
@@ -14209,7 +14209,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14208,function,,0x0069a0d0,0x0058b3e0,0x0069a0d0
 14209,function,,0x0069a0e0,0x0058b3f0,0x0069a0e0
 14210,function,,0x0069a100,0x0058b410,0x0069a100
-14211,function,,0x0069a110,0x0058b420,0x0069a110
+14211,function,CCObject::SetMouseOver,0x0069a110,0x0058b420,0x0069a110
 14212,function,CCObject::RunEventScript_thunk70,0x0069a130,0x0058b440,0x0069a130
 14213,function,,0x0069a140,0x0058b450,0x0069a140
 14214,function,,0x0069a600,0x0058b910,0x0069a600
@@ -14400,7 +14400,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14399,function,CCCreature::GetStats,0x0069fe20,0x00590f20,0x0069fe20
 14400,function,,0x0069fe50,0x00590f50,0x0069fe50
 14401,function,,0x0069ffb0,0x005910b0,0x0069ffb0
-14402,function,,0x0069fff0,0x005910f0,0x0069fff0
+14402,function,CCCreature::SetMouseOver,0x0069fff0,0x005910f0,0x0069fff0
 14403,function,,0x006a0040,0x00591140,0x006a0040
 14404,function,,0x006a00b0,0x005911b0,0x006a00b0
 14405,function,,0x006a00d0,0x005911d0,0x006a00d0
@@ -14443,7 +14443,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14442,function,CCCreature::CreateCoarseSelectionActor,0x006a1730,0x00592850,0x006a1730
 14443,function,,0x006a19e0,0x00592b00,0x006a19e0
 14444,function,,0x006a1a30,0x00592b50,0x006a1a30
-14445,function,,0x006a1b80,0x00592ca0,0x006a1b80
+14445,function,CCCreature::SetGlow,0x006a1b80,0x00592ca0,0x006a1b80
 14446,function,,0x006a1bf0,0x00592d10,0x006a1bf0
 14447,function,CCCreature::HeadTransform,0x006a1ef0,0x00593010,0x006a1ef0
 14448,function,CCCreature::HandleMessage_AcquireAllItemsMessage,0x006a1fd0,0x005930f0,0x006a1fd0
@@ -14609,7 +14609,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14608,function,,0x006a86f0,0x005998b0,0x006a86f0
 14609,function,,0x006a8770,0x00599930,0x006a8770
 14610,function,,0x006a87e0,0x005999a0,0x006a87e0
-14611,function,,0x006a8860,0x00599a20,0x006a8860
+14611,function,CCCreature::CanPerformPlaceableAction,0x006a8860,0x00599a20,0x006a8860
 14612,function,ScriptBackend::ForScript_ScaleEquippedItems,0x006a88f0,0x00599ab0,0x006a88f0
 14613,function,,0x006a8a40,0x00599c00,0x006a8a40
 14614,function,,0x006a8a70,0x00599c30,0x006a8a70
@@ -14707,7 +14707,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14706,function,,0x006acf60,0x0059e190,0x006acf60
 14707,function,,0x006ad130,0x0059e360,0x006ad130
 14708,function,,0x006ad1a0,0x0059e3d0,0x006ad1a0
-14709,function,,0x006ad200,0x0059e430,0x006ad200
+14709,function,CCCreature::CanGlow,0x006ad200,0x0059e430,0x006ad200
 14710,function,,0x006ad2a0,0x0059e4d0,0x006ad2a0
 14711,function,,0x006ad320,0x0059e550,0x006ad320
 14712,function,,0x006ad340,0x0059e570,0x006ad340
@@ -16196,10 +16196,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16195,function,GameModeExplore::HandleMessage_SetQuickslotMessage,0x0070be30,0x005fd210,0x0070be30
 16196,function,,0x0070be60,0x005fd240,0x0070be60
 16197,function,GameModeExplore::MoveTo,0x0070be80,0x005fd260,0x0070be80
-16198,function,,0x0070bf00,0x005fd2e0,0x0070bf00
+16198,function,GameModeExplore::ClearCursorLookTarget,0x0070bf00,0x005fd2e0,0x0070bf00
 16199,function,,0x0070bfa0,0x005fd380,0x0070bfa0
 16200,function,,0x0070c020,0x005fd400,0x0070c020
-16201,function,,0x0070c040,0x005fd420,0x0070c040
+16201,function,GameModeExplore::SetHoverObject,0x0070c040,0x005fd420,0x0070c040
 16202,function,GameModeExplore::HandleMessage_SelectPartyMemberUnderCursorMessage,0x0070c0b0,0x005fd490,0x0070c0b0
 16203,function,GameModeExplore::HandleMessage_CenterOnMainPartyMemberMessage,0x0070c0e0,0x005fd4c0,0x0070c0e0
 16204,function,GameModeExplore::HandleMessage_CenterOnObjectUnderCursorMessage,0x0070c100,0x005fd4e0,0x0070c100
@@ -16219,15 +16219,15 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16218,function,,0x0070c770,0x005fd920,0x0070c770
 16219,function,,0x0070c7d0,0x005fd980,0x0070c7d0
 16220,function,GameModeExplore::CanMoveTo,0x0070c840,0x005fd9f0,0x0070c840
-16221,function,,0x0070c900,0x005fdab0,0x0070c900
+16221,function,GameModeExplore::SetDragSelectHighlight,0x0070c900,0x005fdab0,0x0070c900
 16222,function,,0x0070c970,0x005fdb20,0x0070c970
 16223,function,GameModeExplore::HandleMessage_MoveCharacterToLocationMessage,0x0070c9a0,0x005fdb50,0x0070c9a0
 16224,function,GameModeExplore::GetPrimaryActionKind,0x0070cad0,0x005fdc80,0x0070cad0
 16225,retired,,,,
 16226,function,,0x0070cc50,0x005fde00,0x0070cc50
-16227,function,,0x0070cda0,0x005fdf50,0x0070cda0
+16227,function,GameModeExplore::GetObjectCursorName,0x0070cda0,0x005fdf50,0x0070cda0
 16228,function,GameModeExplore::SelectTarget,0x0070d030,0x005fe1e0,0x0070d030
-16229,function,,0x0070d170,0x005fe320,0x0070d170
+16229,function,GameModeExplore::UpdateHoverObject,0x0070d170,0x005fe320,0x0070d170
 16230,function,GameModeExplore::RefreshObjectGlow,0x0070d2b0,0x005fe460,0x0070d2b0
 16231,function,,0x0070d340,0x005fe4f0,0x0070d340
 16232,function,,0x0070d410,0x005fe5c0,0x0070d410
@@ -16284,7 +16284,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16283,function,GameModeExplore::HandleMessage_SelectPreviousHostileTargetMessage,0x0070f480,0x00600630,0x0070f480
 16284,function,GameModeExplore::HandleMessage_SelectNextUsableObjectMessage,0x0070f500,0x006006b0,0x0070f500
 16285,function,GameModeExplore::HandleMessage_SelectPreviousUsableObjectMessage,0x0070f580,0x00600730,0x0070f580
-16286,function,,0x0070f600,0x006007b0,0x0070f600
+16286,function,GameModeExplore::UpdateCursorShape,0x0070f600,0x006007b0,0x0070f600
 16287,function,GameModeExplore::UpdateInputContext,0x00710120,0x006012d0,0x00710120
 16288,function,,0x00710920,0x00601ad0,0x00710920
 16289,function,,0x007109b0,0x00601b60,0x007109b0
@@ -16308,7 +16308,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16307,function,,0x007120c0,0x00603270,0x007120c0
 16308,function,,0x00712150,0x00603300,0x00712150
 16309,function,,0x007121e0,0x00603390,0x007121e0
-16310,function,,0x00712450,0x00603600,0x00712450
+16310,function,GameModeExplore::UpdateDragSelect,0x00712450,0x00603600,0x00712450
 16311,function,,0x00712630,0x006037e0,0x00712630
 16312,function,,0x00712700,0x006038b0,0x00712700
 16313,function,GameModeExplore::PerformActionOnTarget,0x00712830,0x006039e0,0x00712830
@@ -17842,7 +17842,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 17841,function,,0x0074bbc0,0x00657b40,0x0074bbc0
 17842,function,CCPlaceable::DoorBlocks,0x0074bcc0,0x00657c40,0x0074bcc0
 17843,function,,0x0074bcf0,0x00657c70,0x0074bcf0
-17844,function,,0x0074bd00,0x00657c80,0x0074bd00
+17844,function,CCPlaceable::SetGlow,0x0074bd00,0x00657c80,0x0074bd00
 17845,function,,0x0074bd70,0x00657cf0,0x0074bd70
 17846,function,CCPlaceable::SetShownInRoom,0x0074bdc0,0x00657d40,0x0074bdc0
 17847,function,CCPlaceable::SetRoomSeenState,0x0074bde0,0x00657d60,0x0074bde0
@@ -17856,10 +17856,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 17855,function,,0x0074c110,0x00658070,0x0074c110
 17856,function,,0x0074c2b0,0x00658210,0x0074c2b0
 17857,function,CCPlaceable::OnPlaceableSound,0x0074c360,0x006582c0,0x0074c360
-17858,function,CCPlaceable::StateColumn,0x0074c720,0x00658680,0x0074c720
+17858,function,CCPlaceable::GetAction,0x0074c720,0x00658680,0x0074c720
 17859,function,,0x0074c760,0x006586c0,0x0074c760
 17860,function,,0x0074ca20,0x00658980,0x0074ca20
-17861,function,,0x0074ca70,0x006589d0,0x0074ca70
+17861,function,CCPlaceable::IsRoomInView,0x0074ca70,0x006589d0,0x0074ca70
 17862,function,CCPlaceable::UpdateInteractionMarker,0x0074ca80,0x006589e0,0x0074ca80
 17863,function,,0x0074cb30,0x00658a90,0x0074cb30
 17864,function,,0x0074cb80,0x00658ae0,0x0074cb80
@@ -24390,7 +24390,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24389,function,Eclipse::GroupedInputMappings::Get,0x00895dc0,0x00a435e0,0x00895dc0
 24390,function,,0x00895e40,0x00a43660,0x00895e40
 24391,function,,0x00895eb0,0x00a43980,0x00895eb0
-24392,function,,0x00895f10,0x00a439e0,0x00895f10
+24392,function,Input::RegisterInputNames,0x00895f10,0x00a439e0,0x00895f10
 24393,function,,0x008973e0,0x004684e0,0x008973e0
 24394,function,,0x008973f0,0x004684f0,0x008973f0
 24395,function,,0x00897400,0x00468500,0x00897400
@@ -33465,7 +33465,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33464,function,,0x00a5d660,0x00703e00,0x00a5d660
 33465,function,,0x00a5d710,0x00703eb0,0x00a5d710
 33466,function,,0x00a5d720,0x00703ec0,0x00a5d720
-33467,function,,0x00a5d730,0x00703ed0,0x00a5d730
+33467,function,AnimBase::SetTintColor,0x00a5d730,0x00703ed0,0x00a5d730
 33468,function,,0x00a5d780,0x00703f20,0x00a5d780
 33469,function,,0x00a5d7a0,0x00703f40,0x00a5d7a0
 33470,function,,0x00a5d7e0,0x00703f80,0x00a5d7e0
@@ -33687,7 +33687,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33686,function,,0x00a66f10,0x0070fc60,0x00a66f10
 33687,function,,0x00a66f60,0x0070fcb0,0x00a66f60
 33688,function,,0x00a66fb0,0x0070fd00,0x00a66fb0
-33689,function,,0x00a67010,0x0070fd60,0x00a67010
+33689,function,AnimBaseWield::SetTintColor,0x00a67010,0x0070fd60,0x00a67010
 33690,function,,0x00a67080,0x0070fdd0,0x00a67080
 33691,function,,0x00a670d0,0x0070fe20,0x00a670d0
 33692,function,,0x00a67130,0x0070fe80,0x00a67130
@@ -101390,7 +101390,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 101389,data,,0x00c3521c,,0x00c3521c
 101390,data,,0x00c35254,0x00c1c5f4,0x00c35254
 101391,data,,0x00c35258,0x00c1c5f8,0x00c35258
-101392,data,,0x00c3525c,0x00c1e790,0x00c3525c
+101392,data,g_objectGlowEnabled,0x00c3525c,0x00c1e790,0x00c3525c
 101393,data,,0x00c35260,0x00c1e794,0x00c35260
 101394,data,,0x00c35298,0x00c1e7cc,0x00c35298
 101395,data,,0x00c352d0,0x00c1e804,0x00c352d0
@@ -101587,7 +101587,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 101586,data,,0x00c35f24,0x00c1f374,0x00c35f24
 101587,data,GameModeExplore::g_abilityTargeting,0x00c35f60,0x00c1f3b0,0x00c35f60
 101588,data,,0x00c35f70,0x00c1f3c0,0x00c35f70
-101589,data,,0x00c35f74,0x00c1f3c4,0x00c35f74
+101589,data,g_abilityTargetShape,0x00c35f74,0x00c1f3c4,0x00c35f74
 101590,data,,0x00c35f78,0x00c1f3c8,0x00c35f78
 101591,data,,0x00c35f7c,0x00c1f3cc,0x00c35f7c
 101592,data,,0x00c35f80,0x00c1f3d0,0x00c35f80
@@ -101615,7 +101615,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 101614,data,,0x00c36020,0x00c1f470,0x00c36020
 101615,data,,0x00c36028,0x00c1f478,0x00c36028
 101616,data,,0x00c36038,0x00c1f488,0x00c36038
-101617,data,,0x00c36048,0x00c1f498,0x00c36048
+101617,data,g_hoverObject,0x00c36048,0x00c1f498,0x00c36048
 101618,data,,0x00c36058,0x00c1f4a8,0x00c36058
 101619,data,,0x00c36068,0x00c1f4b8,0x00c36068
 101620,data,,0x00c36078,0x00c1f4c8,0x00c36078
