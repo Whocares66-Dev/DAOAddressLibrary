@@ -14982,7 +14982,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14981,function,,0x006c2390,0x005b3dd0,0x006c2390
 14982,function,,0x006c23e0,0x005b3e20,0x006c23e0
 14983,function,,0x006c23f0,0x005b3e30,0x006c23f0
-14984,function,SceneCameraManager::UpdateShake,0x006c2440,0x005b3e80,0x006c2440
+14984,function,SceneCameraShake::Update,0x006c2440,0x005b3e80,0x006c2440
 14985,function,,0x006c2520,0x005b3f60,0x006c2520
 14986,function,,0x006c2550,0x005b3f90,0x006c2550
 14987,function,SceneCameraManager::UpdatePositionBlend,0x006c2580,0x005b3fc0,0x006c2580
@@ -15449,7 +15449,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15448,function,ScriptBackend::ForScript_PlayMovie,0x006dc680,0x005ce150,0x006dc680
 15449,function,,0x006dc730,0x005ce200,0x006dc730
 15450,function,Input::AllowModes,0x006dc880,0x005ce350,0x006dc880
-15451,function,Input::DisallowModes,0x006dc8c0,0x005ce390,0x006dc8c0
+15451,function,Input::AllowInputModes,0x006dc8c0,0x005ce390,0x006dc8c0
 15452,function,Input::RegisterInputMessages,0x006dc900,0x005ce3d0,0x006dc900
 15453,function,,0x006e2fd0,0x005d4aa0,0x006e2fd0
 15454,function,Input::RegisterActions,0x006e30d0,0x005d4ba0,0x006e30d0
@@ -24141,7 +24141,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24140,function,,0x0087df60,0x00454540,0x0087df60
 24141,function,,0x0087dfa0,0x00454580,0x0087dfa0
 24142,function,,0x0087e050,0x00454630,0x0087e050
-24143,function,ECInput::RawInputWin32::QueryKeyState,0x0087e080,0x00454690,0x0087e080
+24143,function,ECInput::RawInputWin32::IsKeyDownWithModifiers,0x0087e080,0x00454690,0x0087e080
 24144,function,,0x0087e0e0,0x004546f0,0x0087e0e0
 24145,function,,0x0087e300,0x00454950,0x0087e300
 24146,function,,0x0087e320,0x00454970,0x0087e320
@@ -24158,11 +24158,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24157,function,,0x0087e891,0x004747a1,0x0087e891
 24158,function,,0x0087e8b0,0x00454ea0,0x0087e8b0
 24159,function,,0x0087e960,0x00454f50,0x0087e960
-24160,function,ECInput::RawInputWin32::ReserveEvents,0x0087e9f0,0x00455240,0x0087e9f0
+24160,function,std::vector<unsigned short>::reserve,0x0087e9f0,0x00455240,0x0087e9f0
 24161,function,,0x0087ea20,0x004747c0,0x0087ea20
 24162,function,,0x0087ea50,0x00455270,0x0087ea50
 24163,function,,0x0087ead0,0x004ef930,0x0087ead0
-24164,function,ECInput::RawInputWin32::EventVector::EventVector,0x0087eb60,0x004555d0,0x0087eb60
+24164,function,std::vector<unsigned short>::vector,0x0087eb60,0x004555d0,0x0087eb60
 24165,function,,0x0087ebd0,0x00472ce0,0x0087ebd0
 24166,function,,0x0087ec60,0x004556c0,0x0087ec60
 24167,function,,0x0087ec80,0x004556e0,0x0087ec80
@@ -24236,7 +24236,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24235,function,,0x008823c0,0x004590a0,0x008823c0
 24236,function,,0x00882680,0x00459360,0x00882680
 24237,function,,0x0088e560,0x00465240,0x0088e560
-24238,function,InputModeGroup::SetAllowed,0x0088e690,0x00465370,0x0088e690
+24238,function,InputModeGroup::SetAllowAllText,0x0088e690,0x00465370,0x0088e690
 24239,function,,0x0088e6a0,0x00465380,0x0088e6a0
 24240,function,,0x0088e6c0,0x004653a0,0x0088e6c0
 24241,function,,0x0088e6e0,0x004653c0,0x0088e6e0
@@ -24347,7 +24347,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24346,function,Input::AddBinding,0x008937d0,0x00a40fd0,0x008937d0
 24347,function,Input::AddBindingPair,0x008937f0,0x00a40ff0,0x008937f0
 24348,function,,0x00893810,0x00a41010,0x00893810
-24349,function,GroupedInputMappings::IsSatisfied,0x00893840,0x00a41060,0x00893840
+24349,function,Eclipse::GroupedInputMappings::GroupedInputs::IsKeyValid,0x00893840,0x00a41060,0x00893840
 24350,function,Eclipse::GroupedInputMappings::GroupedInputs::SetKey,0x00893a40,0x00a41260,0x00893a40
 24351,function,Eclipse::GroupedInputMappings::TakeKey,0x00893ba0,0x00a413c0,0x00893ba0
 24352,function,,0x00893d70,0x00a41590,0x00893d70
@@ -24359,7 +24359,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24358,function,Eclipse::GroupedInputMappings::GroupedInputs::`scalar deleting destructor',0x008940b0,0x00a418d0,0x008940b0
 24359,function,,0x008940d0,0x00a418f0,0x008940d0
 24360,function,Eclipse::GroupedInputMappings::GroupedInputs::GroupedInputs,0x00894140,0x00a41960,0x00894140
-24361,function,,0x00894490,0x00a41cb0,0x00894490
+24361,function,Eclipse::GroupedInputMappings::GroupedInputs::AddMapperEntries,0x00894490,0x00a41cb0,0x00894490
 24362,function,,0x008944e0,0x00a41d00,0x008944e0
 24363,function,Eclipse::GroupedInputMappings::AddAction,0x00894530,0x00a41d50,0x00894530
 24364,function,,0x00894630,0x00a41e50,0x00894630
@@ -24374,7 +24374,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24373,function,,0x00894b90,0x00a423a0,0x00894b90
 24374,function,,0x00894ba0,0x00a423b0,0x00894ba0
 24375,function,Eclipse::GroupedInputMappings::AddMapping,0x00894bb0,0x00a423d0,0x00894bb0
-24376,function,Eclipse::GroupedInputMappings::AddMappingByKey,0x00894c40,0x00a42460,0x00894c40
+24376,function,Eclipse::GroupedInputMappings::AddInputMapping,0x00894c40,0x00a42460,0x00894c40
 24377,function,Eclipse::GroupedInputMappings::SetKey,0x00894cc0,0x00a424e0,0x00894cc0
 24378,function,Eclipse::GroupedInputMappings::HandleRawInput,0x00894ed0,0x00a426f0,0x00894ed0
 24379,function,,0x00895090,0x00a428b0,0x00895090
