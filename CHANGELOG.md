@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.8.0
+
+- **The same files as 0.7.0:** every address, the code index and the file format are unchanged, byte for byte, so nothing needs installing again. This release gives DAOLib 0.8.0 a tag to build against.
+- **More names:** 9,344 IDs are named, 87 more than in 0.7.0, read for DAOLib, DAOParagonEngine and DAOElgaraShaders: the engine's draw distances (terrain detail, SpeedTree LOD, effects' fade), a creature's root motion and ground placement, an area's creature k-d tree, areas of effect, the journal's plot-flag gate, the save list's heroes, Scaleform's scale9 grid and the GUI's per-frame mouse move, particle emitters and their random seeds, and a material's parameters. `addrlib.py lookup` finds them.
+
 ## 0.7.0
 
 - **The same files as 0.6.0:** every address, the code index and the file format are unchanged, byte for byte, so nothing needs installing again. This release gives DAOLib 0.7.0 a tag to build against.

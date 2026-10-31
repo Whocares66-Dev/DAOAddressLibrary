@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.21)
 
-project(DAOAddressLibrary VERSION 0.7.0 LANGUAGES CXX)
+project(DAOAddressLibrary VERSION 0.8.0 LANGUAGES CXX)
 
 # Two things are built here. daoaddr is the reader a program compiles in:
 # it loads one build's file and answers "where is this ID". The files are
