@@ -5465,3 +5465,48 @@ address,what,value,why
 0x00747EF0,signature,"unsigned char __thiscall CAppearance__Differs(const void *this, const void *other)","Ret 4; returns 1 at the first differing field, 0 if equal."
 0x00748240,signature,void __thiscall CAppearance__ClearSlots(void *this),Writes base item 0xFFFF and variation 0xFF over 7 slots; no stack arg.
 0x00748DA0,signature,"void __thiscall CAppearance__SetSlotFromItem(void *this, unsigned int inv_slot, const void *item)",Caller 0x006C1D1D pushes the item then the slot; reads item +0x464/+0x466/+0x468/+0x46C/+0x4B4/+0x4B8/+0x4FC.
+0x006F3640,signature,"void* __thiscall ConversationRecord::scalar_deleting_destructor_adjustor_1c(void* this, unsigned int flags)","SUB ECX,0x1C then JMP to the ret-4 deleting destructor 0x006F4B40, so it takes the flag"
+0x006F3650,signature,void __thiscall ConversationRecord::~ConversationRecord(void* this),plain ret; reads ECX at 0x006F3673
+0x006FFAA0,signature,"bool __thiscall CAmbientDialogManager::RequestLine(void* this, int key, int speakerId, int listenerId, void* line)",ret 0x10; this from ECX at 0x006FFAA2; sole caller 0x007F2097
+0x006FF190,signature,"bool __thiscall CAmbientDialogManager_AdmitLine(void* this, void* entry, int speakerId, int listenerId, void* line)","not in the batch; ret 0x10 (0x006FF563); ECX = manager at 0x006FFACE; AL 0 at 0x006FF227, 1 at 0x006FF53E"
+0x006FEFA0,signature,void* __cdecl CAmbientDialogManager::GetInstance(void),"not in the batch; returns global 0x00C35CF8, creating the 0x44-byte object once"
+0x0069A600,signature,"void __thiscall CCCreature_DispatchAnimationEvents(void* this, bool soundOnly)","not in the batch; ret 4 (0x0069A6D2); ECX = creature, the flag pushed to CCCreature::OnAnimationEvent at 0x0069A6A9"
+0x007CCD70,signature,"void* __thiscall EC::Cutscene::Actor::AnimRecord::AnimRecord(void* this, void* name, void* clipName, float start, float stop, void* action)","ret 0x14; stores at +0x38, +0x3C, +0x40"
+0x007CD2D0,signature,void __thiscall EC::Cutscene::Actor::ActionSound::Stop(void* this),plain ret; slot 3
+0x007CD310,signature,bool __thiscall EC::Cutscene::Actor::ActionHeadtracking::WantsSubsteps(void* this),"plain ret, 0/1 in EAX; slot 7"
+0x007CD340,signature,void __thiscall EC::Cutscene::Actor::ActionHeadtracking::Reset(void* this),plain ret; slot 2
+0x007CD350,signature,void __thiscall EC::Cutscene::Actor::ActionPlayAnimation::Reset(void* this),plain ret; slot 2; also called directly from 0x0069471B (folded code likely)
+0x007CD3C0,signature,void __thiscall EC::Cutscene::Actor::ActionJumpToPlace::OnBind(void* this),"plain ret; slot 8; calls this->vt[1](0.0f, 0.0f)"
+0x007CD3F0,signature,void __thiscall EC::Cutscene::Actor::ActionSetFog::Reset(void* this),plain ret; slot 2
+0x007CE3A0,signature,void* __thiscall EC::Cutscene::Actor::GetFacialAnimationPlayer(void* this),plain ret and a tail jump; returns the FacialAnimationPlayer or null
+0x007CE560,signature,void __thiscall EC::Cutscene::Actor::DispatchMappedCreatureAnimationSounds(void* this),plain ret (0x007CE593)
+0x007CE660,signature,void __thiscall EC::Cutscene::Actor::ActionSpeakLine::Stop(void* this),plain ret; slot 3
+0x007CE6B0,signature,"void __thiscall EC::Cutscene::Actor::ActionSpeakLine::SetPaused(void* this, bool paused)",ret 4; slot 4
+0x007CE6F0,signature,"void __thiscall EC::Cutscene::Actor::ActionSetFog::Update(void* this, float dt, float tLocal)",ret 8; slot 1; both arguments unused
+0x007CE920,signature,void __thiscall EC::Cutscene::Actor::ActionPlayMovie::Reset(void* this),plain ret; slot 2
+0x007CE960,signature,void __thiscall EC::Cutscene::Actor::ActionAnimateFace::Stop(void* this),plain ret; slot 3
+0x007CE990,signature,"void __thiscall EC::Cutscene::Actor::ActionAnimateFace::SetPaused(void* this, bool paused)",ret 4; slot 4; argument ignored
+0x007CEE30,signature,"void** __thiscall ECDynArray_Action_ptr_At(void* this, unsigned int index)",ret 4; returns the element address or 0x00C38E84
+0x007CEE60,signature,"void __thiscall DoubleArray_Resize(void* this, unsigned int count)","ret 4; {double* +0, count +4}"
+0x007CF800,signature,"void __thiscall EC::Cutscene::Actor::SetClothPhysics(void* this, bool enable)",ret 4; the argument forwarded on the stack by a tail jump
+0x007CFC90,signature,"void __thiscall EC::Cutscene::Actor::ActionTogglePhysics::Update(void* this, float dt, float tLocal)",ret 8; slot 1
+0x007CFCA0,signature,"void __thiscall EC::Cutscene::Actor::ActionSetGore::Update(void* this, float dt, float tLocal)",ret 8; slot 1
+0x007CFD00,signature,void __thiscall EC::Cutscene::Actor::ActionSetGore::Reset(void* this),plain ret; slot 2
+0x007CFD60,signature,"void __thiscall EC::Cutscene::Actor::ActionOrientationFollowsCurve::Update(void* this, float dt, float tLocal)",ret 8; slot 1
+0x007CFDB0,signature,"void __thiscall EC::Cutscene::Actor::ActionDrawWeapon::AttachSlot(void* this, unsigned int slot, unsigned int columnHash)",ret 8; this is the action (ECX = action at the callers)
+0x007D0B80,signature,"void __thiscall EC::Cutscene::Actor::SetLightRadius(void* this, float radius)",ret 4
+0x007D0C00,signature,"void __thiscall EC::Cutscene::Actor::SetLightColor(void* this, const float* rgba)",ret 4
+0x007D0C80,signature,"void __thiscall EC::Cutscene::Actor::SetLightIntensity(void* this, float intensity)",ret 4
+0x007D0ED0,signature,"void __thiscall EC::Cutscene::Actor::ActionShake::Update(void* this, float dt, float tLocal)","ret 8; slot 1; EBP frame, tLocal at [EBP+0xC]"
+0x007D1150,signature,void __thiscall EC::Cutscene::Actor::ActionLinkToActor::Unlink(void* this),plain ret
+0x007D1210,signature,"void __thiscall EC::Cutscene::Actor::ActionDrawWeapon::Update(void* this, float dt, float tLocal)",ret 8; slot 1
+0x007D1260,signature,void __thiscall EC::Cutscene::Actor::ActionDrawWeapon::Reset(void* this),plain ret; slot 2
+0x007D1280,signature,"void __thiscall EC::Cutscene::Actor::ActionAutoAdjustHeight::Update(void* this, float dt, float tLocal)",ret 8; slot 1
+0x007D2760,signature,"float __thiscall EC::Cutscene::Curve::SlopeAt(void* this, float t)","ret 4; result in ST0; this is a curve ([action+0x1C][i]), not the action"
+0x007D3520,signature,"void __thiscall EC::Cutscene::Actor::ActionLightRadius::Update(void* this, float dt, float tLocal)",ret 8; slot 1
+0x007CCF90,signature,"float __cdecl Bezier_DerivativeAt(const float* pointsTimeValue4, float t)",not in the batch; plain ret with two stack args; dB/ds after 0x007CCDF0
+0x00A3C530,signature,"void __cdecl ShakeNoise_Build(float start, float stop, unsigned int seed, float frequency, int noiseType, bool correlated, float roughness, float rampIn, float rampOut, float** table, unsigned int* count)",not in the batch; plain ret; called by the ActionShake ctor 0x007DA990
+0x00A3C1E0,signature,"void __cdecl ShakeNoise_Octaves(unsigned int seed, float frequency, bool correlated, float persistence, int octaves, float duration, float* table, int count)","not in the batch; plain ret (0x00A3C52B), caller ADD ESP,0x20"
+0x00A3C030,signature,"void __cdecl ShakeNoise_White(float* out, int count)",not in the batch; rand()/16383.5 - 1 per sample
+0x00A3C0C0,signature,"float __cdecl CosineInterpolate(float a, float b, float x)","not in the batch; f = (1 - cos)/2, a(1-f) + b f"
+0x006F3650,convention,__thiscall,reads ECX at 0x006F3673; plain ret
