@@ -7690,3 +7690,83 @@ address,what,value,why
 0x00726567,nofunction,,"a start one byte into the call at 0x00726566 (call 0x00413660, operator new) inside GUI::GUICrafting::RegisterHandler_CountIngredientsMessage (16779, 0x00726560), which it cut short; paragon-agent's gui-22, checked by the keeper"
 0x006AF2A0,signature,"void __stdcall f(void *first, void *last)","14772: ret 8; ecx is loaded with each 0xBC-byte element before the destructor 0x004C0DB0, never read first; lib-agent, b07 corrected"
 0x006AF2D0,signature,"void * __stdcall f(void *first, unsigned int count, const void *value)","14773: ret 0xC; push ecx reserves a local, and the later push ecx forwards the incoming ecx untouched to 0x006AD720 as a filler argument; lib-agent, b07 corrected"
+0x006B0A40,signature,void __thiscall f(void *this),"0x006B0A40: 0x006B0A40-0x006B0A7F, 0x006AE380"
+0x006B0A80,signature,void __thiscall f(void *this),0x006B0A80: 0x006B0A80 jmp 0x006AF8F0
+0x006B0A90,signature,"void * __thiscall f(void *this, void *other)",0x006B0A90: 0x006B0A90-0x006B0BDF
+0x006B0BE0,signature,"void __thiscall f(void *this, unsigned int count, int v0, int v1, int v2, int v3)",0x006B0BE0: 0x006B0BE0-0x006B0CCF
+0x006B0CD0,signature,"void __thiscall f(void *this, void *outIter, void *container, void *pos, void *value)",0x006B0CD0: 0x006B0CD0-0x006B0D5F (ret 0x10)
+0x006B0D60,convention,__thiscall,"0x006B0D60: variadic or by-value struct argument, no full prototype; ret from the listing"
+0x006B0FB0,signature,"void * __thiscall f(void *this, void *a, void *b)",0x006B0FB0: 0x006B0FB0-0x006B102F
+0x006B1030,signature,"void * __thiscall f(void *this, void *other)",0x006B1030: 0x006B1030-0x006B108F
+0x006B1090,signature,"void * __thiscall f(void *this, void *other)",0x006B1090: 0x006B1090-0x006B10AF
+0x006B10B0,signature,"void * __thiscall f(void *this, void *other)",0x006B10B0: 0x006B10B0-0x006B1137
+0x006B3FC0,signature,"bool __thiscall f(void *this, unsigned int count)",0x006B3FC0: 0x006B3FC0-0x006B4069
+0x006B5B30,signature,"void __thiscall f(void *this, int kind, void *name, char flag)",0x006B5B30: 0x006B5B30-0x006B5CFF (ret 0xC)
+0x006B78D0,signature,"void __thiscall f(void *this, void *item, int kind)",0x006B78D0: 0x006B78D0-0x006B7A2F (ret 8)
+0x006B7A30,signature,"void __cdecl f(void *a, void *b)",0x006B7A30: 0x006B7A30-0x006B7CEF
+0x006B7CF0,signature,"void __cdecl f(void *a, void *b)",0x006B7CF0: 0x006B7CF0-0x006B7E6F
+0x006B7E70,signature,"void __cdecl f(void *a, void *b)",0x006B7E70: 0x006B7E70-0x006B7F4F
+0x006B7F50,signature,unsigned int __cdecl f(void *a),0x006B7F50: 0x006B7F50-0x006B7FDF
+0x006B7FE0,signature,"void __cdecl f(void *a, void *b)",0x006B7FE0: 0x006B7FE0-0x006B801F
+0x006B8020,signature,unsigned int __cdecl f(void *a),0x006B8020: 0x006B8020-0x006B80A9
+0x006B80B0,signature,"void __cdecl f(void *a, void *b)",0x006B80B0: 0x006B80B0-0x006B81BF
+0x006B81C0,signature,unsigned int __cdecl f(void *a),0x006B81C0: 0x006B81C0-0x006B8234
+0x006B9C40,signature,void __cdecl f(void *dest),0x006B9C40: 0x006B9C40-0x006B9C9F
+0x006BCE50,signature,int __thiscall f(void *this),0x006BCE50: 0x006BCE50-0x006BCF4F
+0x006BF8A0,signature,int __thiscall f(void *this),0x006BF8A0: 0x006BF8A0-0x006BF9EF
+0x006BF9F0,signature,"void __cdecl f(int value, void *dest)",0x006BF9F0: 0x006BF9F0-0x006BFADE
+0x006BFCD0,signature,"void __cdecl f(void *appearance, void *sink)",0x006BFCD0: 0x006BFCD0-0x006C04C0
+0x006C1E00,signature,"int __thiscall f(void *this, int a, int b, int c, int d)",0x006C1E00: 0x006C1E00-0x006C1E1F
+0x006C21C0,signature,float __thiscall f(void *this),0x006C21C0: 0x006C21C0-0x006C221F
+0x006C3260,signature,bool __thiscall f(void *this),0x006C3260: 0x006C3260
+0x006C3270,signature,"float * __thiscall f(void *this, float *out)",0x006C3270: 0x006C3270-0x006C32BF (ret 4)
+0x006C32C0,signature,"void __thiscall f(void *this, float *hitPosition, float dt)",0x006C32C0: 0x006C32C0-0x006C3585 (ret 8)
+0x006C37F0,signature,"void __thiscall f(void *this, void **record)",0x006C37F0: 0x006C37F0-0x006C390F (ret 4)
+0x006C3910,signature,void __thiscall f(void *this),0x006C3910: 0x006C3910-0x006C395F
+0x006C3960,signature,"void __thiscall f(void *this, int kind, int key)",0x006C3960: 0x006C3960-0x006C3A2F (ret 8)
+0x006C3A30,signature,void __thiscall f(void *this),0x006C3A30: 0x006C3A30-0x006C3ADF
+0x006C3AE0,signature,"bool __thiscall f(void *this, unsigned int count)",0x006C3AE0: 0x006C3AE0-0x006C3B8F (ret 4)
+0x006C3B90,signature,void * __thiscall f(void *this),0x006C3B90: 0x006C3B90-0x006C3C7F
+0x006C3C80,signature,"void __thiscall f(void *this, float target, int objectId)",0x006C3C80: 0x006C3C80-0x006C3D5F (ret 8)
+0x006C3D60,signature,void __thiscall f(void *this),0x006C3D60: 0x006C3D60-0x006C3DCF
+0x006C3DD0,signature,"void * __thiscall f(void *this, unsigned int count)",0x006C3DD0: 0x006C3DD0-0x006C3E5F (ret 4)
+0x006C3E60,signature,void * __thiscall f(void *this),0x006C3E60: 0x006C3E60-0x006C3E7F
+0x006C3E80,signature,void * __thiscall f(void *this),0x006C3E80: 0x006C3E80-0x006C4090
+0x006C4410,signature,void __thiscall f(void *this),0x006C4410: 0x006C4410-0x006C4427
+0x006C4430,signature,"unsigned int __thiscall f(void *this, int kind, int key)",0x006C4430: 0x006C4430-0x006C45EF (ret 8)
+0x006C97B0,signature,void __thiscall f(void *this),0x006C97B0: 0x006C97B0-0x006C97CF
+0x006C97D0,convention,__cdecl,"0x006C97D0: variadic or by-value struct argument, no full prototype; ret from the listing"
+0x006C97F0,signature,void __thiscall f(void *this),0x006C97F0: 0x006C97F0-0x006C9A4F
+0x006C9A50,signature,"void __thiscall f(void *this, void *party, float dt, unsigned char force)",0x006C9A50: 0x006C9A50-0x006C9D00 (ret 0xC)
+0x006C9E40,signature,void __thiscall f(void *this),0x006C9E40: 0x006C9E40-0x006C9E5F
+0x006CA450,signature,"int __cdecl f(void *cfg, void *model, void *outPos, void *outRot, void *outUp, void *aimInfo)",0x006CA450: 0x006CA450-0x006CA68F
+0x006CA690,signature,"void * __thiscall f(void *this, void *creature)",0x006CA690: 0x006CA690-0x006CA7FF (ret 4)
+0x006CA800,signature,"void * __thiscall f(void *this, void *model)",0x006CA800: 0x006CA800-0x006CA94F (ret 4)
+0x006CA950,signature,"void __thiscall f(void *this, int objectId, int slot)",0x006CA950: 0x006CA950-0x006CA98F (ret 8)
+0x006CAB40,signature,void __thiscall f(void *this),0x006CAB40: 0x006CAB40-0x006CAB8B
+0x006CAB90,signature,void __thiscall f(void *this),0x006CAB90: 0x006CAB90-0x006CABEA
+0x006CABF0,signature,"void __thiscall f(void *this, void *object, float *outPos, float *outRot, float *outUp, void *aimInfo)",0x006CABF0: 0x006CABF0-0x006CACC7 (ret 0x14)
+0x006CACD0,signature,"void __thiscall f(void *this, void *aimInfo)",0x006CACD0: 0x006CACD0-0x006CAD7F (ret 4)
+0x006CAD80,signature,"void __thiscall f(void *this, float dt)",0x006CAD80: 0x006CAD80-0x006CB32F (ret 4)
+0x006CB380,signature,void * __thiscall f(void *this),0x006CB380: 0x006CB380-0x006CB3CF
+0x006CB3D0,signature,void __thiscall f(void *this),0x006CB3D0: 0x006CB3D0-0x006CB41F
+0x006CB4F0,signature,"void * __thiscall f(void *this, void *src)",0x006CB4F0: 0x006CB4F0-0x006CB56F (ret 4)
+0x006CB570,signature,void * __cdecl f(unsigned int count),0x006CB570: 0x006CB570-0x006CB5CF
+0x006CB5D0,signature,"void * __cdecl f(void *first, void *last, void *dest)",0x006CB5D0: 0x006CB5D0-0x006CB62F
+0x006CB630,signature,"void * __cdecl f(void *first, void *last, void *destEnd)",0x006CB630: 0x006CB630-0x006CB69F
+0x006CBE70,signature,"void * __cdecl f(void *first, void *last, void *dest)",0x006CBE70: 0x006CBE70-0x006CBED8
+0x006CC040,signature,"void __stdcall f(unsigned int s0, unsigned int s1, unsigned int s2, unsigned int s3, void *dest)",0x006CC040: 0x006CC040-0x006CC0AF (ret 0x14)
+0x006CC130,signature,"void __stdcall f(unsigned int s0, unsigned int s1, unsigned int s2, unsigned int s3, void *dest)",0x006CC130: 0x006CC130-0x006CC1BE
+0x006CC1D0,signature,"void __stdcall f(unsigned int s0, unsigned int s1, unsigned int s2, unsigned int s3, void *dest)",0x006CC1D0: 0x006CC1D0-0x006CC262
+0x006CC270,signature,"void __stdcall f(unsigned int s0, unsigned int s1, unsigned int s2, unsigned int s3, void *dest)",0x006CC270: 0x006CC270-0x006CC2FF
+0x006CC300,signature,"void __stdcall f(unsigned int s0, unsigned int s1, unsigned int s2, unsigned int s3, void *destLocString, unsigned int *outClassId)",0x006CC300: 0x006CC300-0x006CC3FF (ret 0x18)
+0x006CD5B0,signature,"void __thiscall f(void *this, void *outIter, int *key)",0x006CD5B0: 0x006CD5B0-0x006CD61F (ret 8)
+0x006CD620,signature,"void * __cdecl f(void *first, void *last, void *destEnd)",0x006CD620: 0x006CD620-0x006CD64F
+0x006CD650,signature,"void __cdecl f(void *dest, unsigned int count, void *value)",0x006CD650: 0x006CD650-0x006CD6BA
+0x006CD6F0,signature,"void __cdecl f(void *first, void *last)",0x006CD6F0: 0x006CD6F0-0x006CD75F
+0x006CD760,signature,"bool __thiscall f(void *this, int key)",0x006CD760: 0x006CD760-0x006CD7AF (ret 4)
+0x006CE5D0,convention,__thiscall,"0x006CE5D0: variadic or by-value struct argument, no full prototype; ret from the listing"
+0x006CE6F0,signature,"void __thiscall f(void *this, void *outIter, void *container, void *pos, void *value)",0x006CE6F0: 0x006CE6F0-0x006CE79F (ret 0x10)
+0x006CE7A0,signature,"void __thiscall f(void *this, int *key)","0x006CE7A0: 0x006CE7A0-0x006CE7B7 (ret 4), 0x006CE260"
+0x006CE860,signature,"void __thiscall f(void *this, void *value, unsigned int index)",0x006CE860: 0x006CE860-0x006CE8BF (ret 8)
+0x006BF9F0,clear,std::ios_base::ios_base_Constructor_or_Destructor,"0x006BF9F0 is ECString::AssignInt (basic_stringstream ctor, 0x0049DBE0, ECString::Assign); the label was Ghidra's guess"
