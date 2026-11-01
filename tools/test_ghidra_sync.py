@@ -13,7 +13,7 @@ import sys
 import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from ghidra_sync import ghidra_parts, work  # noqa: E402
+from ghidra_sync import ghidra_c, ghidra_parts, work  # noqa: E402
 
 
 class Parts(unittest.TestCase):
@@ -60,10 +60,41 @@ class Fixes(unittest.TestCase):
             for line, row in enumerate(csv.DictReader(f), start=2):
                 self.assertNotIn(None, row, f"line {line} has more than four cells")
                 self.assertTrue(row["why"], f"line {line} says no why")
+                for cell in row.values():
+                    self.assertFalse(
+                        any(ord(c) < 32 for c in cell or ""),
+                        f"line {line}: a control character",
+                    )
                 if row["what"] == "signature":
                     self.assertTrue(
                         row["value"].endswith(")"), f"line {line}: {row['value']}"
                     )
+
+
+class CTypes(unittest.TestCase):
+    def test_plain_c_is_left_alone(self):
+        p = "bool __thiscall f(void *this, int *slot, void *name)"
+        self.assertEqual(ghidra_c(p), p)
+
+    def test_cpp_types_become_void_pointers(self):
+        self.assertEqual(
+            ghidra_c(
+                "void __thiscall f(void *this, std::wstring const& name, GUI::Thing* t)"
+            ),
+            "void __thiscall f(void *this, void *name, void *t)",
+        )
+
+    def test_a_cpp_return_and_name(self):
+        self.assertEqual(
+            ghidra_c("std::vector<int>* __thiscall Foo::Bar(void *this, int n)"),
+            "void * __thiscall f(void *this, int n)",
+        )
+
+    def test_template_commas_do_not_split(self):
+        self.assertEqual(
+            ghidra_c("void __cdecl f(std::map<int,int>* m, int x)"),
+            "void __cdecl f(void *m, int x)",
+        )
 
 
 class Clears(unittest.TestCase):

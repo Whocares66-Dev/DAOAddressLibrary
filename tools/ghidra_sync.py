@@ -53,6 +53,7 @@ server's -Stop.
 """
 
 import csv
+import re
 import json
 import sys
 import time
@@ -75,6 +76,8 @@ from ghidra.app.util.cparser.C import CParserUtils
 from ghidra.app.cmd.function import ApplyFunctionSignatureCmd
 
 W = json.loads(PAYLOAD)
+TYPE_WORDS = {"void", "int", "bool", "char", "short", "long", "float", "double",
+              "unsigned", "signed", "uint", "ushort", "uchar"}
 program = currentProgram
 if program.getExecutableSHA256().lower() != W["sha256"]:
     raise Exception("not the " + W["build"] + " build: " + program.getExecutableSHA256())
@@ -173,6 +176,12 @@ for address, what, value in W["fixes"]:
                 head, rest = text.replace("__thiscall", "").split("(", 1)
                 params = rest.rsplit(")", 1)[0].split(",")[1:]
                 text = head + "(" + (",".join(params) if params else "void") + ")"
+            # A prototype written without a name (void * __thiscall(...))
+            # gets one, which the parser needs and the table replaces.
+            head, rest = text.split("(", 1)
+            last = head.split()[-1] if head.split() else ""
+            if head.rstrip().endswith("*") or last in TYPE_WORDS:
+                text = head.rstrip() + " f(" + rest
             sig = CParserUtils.parseSignature(None, program, text, False)
             if sig is None:
                 raise Exception("Ghidra cannot parse " + text)
@@ -280,7 +289,11 @@ def work(limit=None):
     path = ROOT / "data" / "ghidra_fixes.csv"
     with open(path, newline="", encoding="utf-8") as f:
         fixes = [
-            (int(row["address"], 16), row["what"], row["value"])
+            (
+                int(row["address"], 16),
+                row["what"],
+                ghidra_c(row["value"]) if row["what"] == "signature" else row["value"],
+            )
             for row in csv.DictReader(f)
         ]
     # A clear of a label the table itself gives the address (an export's
@@ -293,6 +306,59 @@ def work(limit=None):
         if what != "clear" or value not in ours.get(a, ())
     ]
     return rows[:limit] if limit else rows, fixes
+
+
+def ghidra_c(prototype):
+    """A prototype in the C Ghidra's parser reads: a C++ type (a namespace, a
+    template, a reference, a name with a backtick) becomes void * (a pointer
+    or reference to one) or the word it stands for, as readers write an
+    unknown class by hand. Its stack layout is kept: a reference is a
+    pointer, and a class passed by value is left to the reader, who gives
+    it as words."""
+    head, sep, rest = prototype.partition("(")
+    if not sep:
+        return prototype
+    inner, close, tail = rest.rpartition(")")
+
+    def simplify(decl):
+        decl = decl.strip()
+        if not re.search(r"::|<|>|`|&", decl):
+            return decl
+        name = re.search(r"([A-Za-z_]\w*)\s*$", decl)
+        pointer = "*" in decl or "&" in decl
+        word = name.group(1) if name and pointer else ""
+        return (
+            ("void *" + word)
+            if pointer
+            else "void * " + (name.group(1) if name else "")
+        )
+
+    def simplify_head(text):
+        # The return type and the name (which the table replaces).
+        if not re.search(r"::|<|>|`|&", text):
+            return text
+        conv = re.search(r"__(thiscall|stdcall|cdecl|fastcall)", text)
+        pointer = "*" in text.split(conv.group(0))[0] if conv else "*" in text
+        returns = "void *" if pointer else "void"
+        return returns + (" " + conv.group(0) if conv else "") + " f"
+
+    params = [simplify(p) for p in split_params(inner)] if inner.strip() else []
+    return f"{simplify_head(head)}({', '.join(params) if params else 'void'}){tail}"
+
+
+def split_params(inner):
+    """A parameter list's parameters, not splitting inside template brackets."""
+    out, depth, cur = [], 0, ""
+    for ch in inner:
+        depth += ch == "<"
+        depth -= ch == ">"
+        if ch == "," and depth == 0:
+            out.append(cur)
+            cur = ""
+        else:
+            cur += ch
+    out.append(cur)
+    return out
 
 
 def ghidra_parts(name):
