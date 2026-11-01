@@ -11781,3 +11781,49 @@ address,what,value,why
 0x0045F310,signature,void __thiscall Renderer::FrameBufferEffect::EnableDependencies(void* this),plain ret
 0x0045F1C0,clear,Renderer::FBEclipseResource::vfunction2,"shared IsValid: slot 1 of the Eclipse (0xAE772C), Vector4f (0xAE79BC) and Float32 (0xAE79FC) vftables; returns byte +0x28"
 0x0045ED90,clear,FrameBufferEffect::Parameter::SetFloat,"its fields are FBFloat32Resource's (+0x2C value, +0x54 ramp active); rename Renderer::FBFloat32Resource::SetValue"
+0x0045F380,signature,void __thiscall Renderer::FBIAssignFloat32ToResource::Execute(void* this),"vftable slot 1, plain ret"
+0x0045F3A0,clear,Renderer::FBIAssignFloat32FromResource::FBIAssignFloat32FromResource_Constructor_or_Destructor,it is the constructor only
+0x0045F3A0,signature,"void* __thiscall Renderer::FBIAssignFloat32FromResource::FBIAssignFloat32FromResource(void* this, void* resource, void* filter, const wchar_t* param)",ret 0xC at 0x0045F47F; arg order from the caller's pushes at 0x0046071B..0x0046071D
+0x0045F490,signature,void __thiscall Renderer::FBIAssignFloat32FromResource::Execute(void* this),"vftable slot 1, plain ret"
+0x0045F4B0,signature,"void __thiscall Renderer::FBFloat32Resource::OnEvent(void* this, int event)",ret 4
+0x0045F5B0,signature,void __thiscall Renderer::FBIDumpRenderTarget::Execute(void* this),"vftable slot 1, plain ret"
+0x0045F610,convention,__thiscall,"reads ecx at entry, ret 4"
+0x0045F610,signature,"void __thiscall Renderer::FrameBufferEffect::RemoveDependent(void* this, void* effect)",ret 4
+0x0045F680,signature,void __thiscall Renderer::FrameBufferEffect::DetachFromRequirements(void* this),"ecx is this, plain ret"
+0x0045F6E0,signature,void __thiscall Renderer::FrameBufferStage::Refresh(void* this),"ecx is this, plain ret"
+0x0045F730,signature,"void __thiscall std::_Tree<std::wstring>::_Erase(void* this, void* node)",ret 4; ecx (the tree) is kept in ebx and passed down the recursion
+0x0045F770,signature,"void __thiscall Renderer::FrameBufferEffect::BroadcastEvent(void* this, int event)",ret 4
+0x0045F820,signature,void __thiscall Renderer::FrameBufferEffect::Refresh(void* this),"ecx is this, plain ret"
+0x0045F870,convention,__thiscall,"ecx moved to esi at 0x0045F879 and used as this for the three calls, ret 4"
+0x0045F870,signature,"void __thiscall Renderer::FrameBufferEffect::UpdateDependencies(void* this, unsigned int flags)",ret 4
+0x0045F8A0,signature,"void __thiscall Renderer::FrameBufferEffect::BlendFrom(void* this, void* other, float duration)",ret 8; float pushed by the caller at 0x00456F4A
+0x0045FA10,signature,"void __thiscall Renderer::FrameBufferEffect::SetEnabled(void* this, bool enabled)",ret 4
+0x0045FA60,signature,"void* __thiscall Renderer::FrameBufferEffect::FindStage(void* this, const void* name)",ret 4; name is a std::wstring*
+0x0045FAE0,signature,void __thiscall Renderer::FrameBufferEffect::ReleaseRequirements(void* this),"ecx is this, plain ret"
+0x0045FBD0,signature,void __thiscall Renderer::FrameBufferFilter::Execute(void* this),"ecx is this, plain ret"
+0x0045FC40,signature,void __thiscall Renderer::FBRenderTargetResource::~FBRenderTargetResource(void* this),plain ret
+0x0045FD50,signature,void __thiscall Renderer::FrameBufferEffect::DeleteResources(void* this),this is the effect's map at +0x34; plain ret
+0x004600B0,signature,"void __thiscall Renderer::FrameBufferEffect::Run(void* this, int event)","vftable 0xAE7B24 slot 1, ret 4"
+0x00460330,signature,void __thiscall std::_Tree<std::wstring>::~_Tree(void* this),plain ret
+0x00460370,convention,__thiscall,"adds 0x24 to ecx at 0x0046037C, ret 4"
+0x00460370,signature,"void __thiscall Renderer::FrameBufferEffect::AddStage(void* this, void* stage)",ret 4
+0x00460390,signature,void __thiscall Renderer::FrameBufferStage::~FrameBufferStage(void* this),plain ret
+0x00460400,signature,"void __thiscall Renderer::FrameBufferStage::AddFilter(void* this, void* filter)",ret 4
+0x00460430,signature,"void* __thiscall Renderer::FrameBufferFilter::FrameBufferFilter(void* this, const void* name, const void* material)",ret 8; both std::wstring*
+0x004604E0,clear,Renderer::FrameBufferFilter::FrameBufferFilter_Constructor_or_Destructor,it is the destructor (deletes the instructions and the owned material)
+0x004604E0,signature,void __thiscall Renderer::FrameBufferFilter::~FrameBufferFilter(void* this),"ecx is this, plain ret"
+0x00460590,signature,"bool __cdecl Renderer::FBParseAssignment(const wchar_t* lhs, void* filter, void* effect)","plain ret 0x00460A21, caller cleans 0xC (0x00461636)"
+0x00460A40,signature,"bool __cdecl Renderer::FBParseCopy(void* filter, void* effect)","plain ret 0x00460CD0, caller cleans 8 (0x004615AF); the line is continued with wcstok(NULL)"
+0x00460CE0,signature,"bool __cdecl Renderer::FBParseBind(void* filter, void* effect)","plain ret 0x00461079, caller cleans 8 (0x004615D5)"
+0x00461190,signature,"bool __cdecl Renderer::FBParseDump(void* filter, void* effect)","plain ret 0x00461362, caller cleans 8 (0x00461621)"
+0x00461400,signature,"void* __thiscall Renderer::FrameBufferEffect::FrameBufferEffect(void* this, const void* name)",ret 4
+0x004614B0,signature,void __thiscall Renderer::FrameBufferEffect::~FrameBufferEffect(void* this),plain ret
+0x00461550,signature,"void* __thiscall Renderer::FrameBufferFilter::scalar_deleting_destructor(void* this, unsigned int flags)",ret 4
+0x00461570,signature,"bool __cdecl Renderer::FBParseFilterLine(void* effect, void* filter, wchar_t* line)","plain ret, caller 0x00469C47"
+0x00461640,signature,"void __thiscall Renderer::FBRenderTargetResource::ParseAttribute(void* this, const wchar_t* name, const wchar_t* value)",ret 8
+0x00461840,signature,"void* __thiscall Renderer::FrameBufferEffect::scalar_deleting_destructor(void* this, unsigned int flags)",ret 4
+0x00461860,signature,"void* __thiscall Renderer::FBTextureResource::FBTextureResource(void* this, const void* name)",ret 4
+0x004618F0,clear,Renderer::FrameBufferResource::FrameBufferResource,"it is ~FBTextureResource: sets 0xAE7BB0, destroys +0x34 and +0x2C, ends with the base vftable 0xAE7314"
+0x004618F0,signature,void __thiscall Renderer::FBTextureResource::~FBTextureResource(void* this),plain ret
+0x00461970,signature,"void* __thiscall Renderer::FBTextureResource::scalar_deleting_destructor(void* this, unsigned int flags)",ret 4
+0x00461990,signature,"void* __cdecl Renderer::CreateFrameBufferResource(const wchar_t* name, int kind)",plain ret 0x00461B0F
