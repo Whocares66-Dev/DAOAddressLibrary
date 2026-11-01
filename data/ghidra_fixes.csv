@@ -8163,3 +8163,24 @@ address,what,value,why
 0x007B8ED0,clear,TiXmlDocument::~TiXmlDocument,a __thiscall on GUI::GUIPaperdoll called by GUIInventory::Close at 0x007316D4; not TinyXML's destructor
 0x0072F5D0,convention,__thiscall,"Ghidra shows __fastcall with an unnamed parameter; ECX moved to ESI at 0x0072F5FD before any write, plain ret at 0x0072F993; the one caller passes ECX = the scene at 0x0072FAF4"
 0x004F77C0,clear,_AfxAygshellState,"not MFC: a lazily constructed singleton getter (guard 0x00C30914, object 0x00C308C0) for the material manager that 0x004F79E0 looks names up in; called by GUIMap::CreateMaskResources at 0x0072F643"
+0x007327C0,clear,SmartData::TokenStringNotifier::TokenStringNotifier,"It is GUIInventory's copy constructor (caller Clone 0x007329B4, GUIScene copy 0x0061C9D0 at 0x007327F0); the label comes from an inlined notifier copy"
+0x007327C0,signature,"GUIInventory * __thiscall GUIInventory(void * this, void * other)",ret 4 at 0x00732964; reads ecx first
+0x007329E0,clear,SelectedGUICharacterChangedMessage::SelectedGUICharacterChangedMessage,"It is GUIInventory's default constructor (GUIScene(L""Inventory"",L""inventory"",3,8,0) at 0x00732A4B; caller 0x0061503D)"
+0x007329E0,signature,GUIInventory * __thiscall GUIInventory(void * this),plain ret at 0x0073314C
+0x00732280,signature,"void __thiscall RegisterText(void * this, void * name)",ret 4 at 0x00732330; ecx is the registry from 0x00489BC0 (caller 0x00732FCF)
+0x00732340,signature,"void __thiscall RegisterText(void * this, void * name)",ret 4 at 0x007323F0; ecx the registry (caller 0x00733006)
+0x00732400,signature,"void __thiscall RegisterText(void * this, void * name)",ret 4 at 0x007324B0; ecx the registry (caller 0x0073303D)
+0x007324C0,signature,"void __thiscall RegisterText(void * this, void * name)",ret 4 at 0x00732570; ecx the registry (caller 0x00733074)
+0x00732580,signature,"void __thiscall RegisterText(void * this, void * name)",ret 4 at 0x00732630; ecx the registry (caller 0x007330AB)
+0x00732640,signature,"void __thiscall RegisterText(void * this, void * name)",ret 4 at 0x007326F0; ecx the registry (caller 0x007330E2)
+0x00732700,signature,"void __thiscall RegisterText(void * this, void * name)",ret 4 at 0x007327B0; ecx the registry (caller 0x00733119)
+0x00733840,signature,void __thiscall OnShow(void * this),no stack arguments; tail-jumps to GUIScene::OnShow 0x00A55820
+0x00733930,signature,void __thiscall ~GUIScene(void * this),"bare jmp 0x00A559E0; duplicate label of the real destructor, a thunk"
+0x00732230,clear,GUI::GUIInventory::vfunction3,"Slot 2 of vftable 0x00B1A5C8 is RegisterClass (guard 0x00C36970, tail-jump to RegisterMessageHandlers 0x007321D0 at 0x0073226D)"
+0x00732230,signature,void __thiscall RegisterClass(void * this),plain ret at 0x00732273
+0x00733840,clear,GUI::GUIConversation::vfunction6,"Slot 5 (vftable 0x00B1A950+0x14) is OnShow, overriding GUIScene::OnShow 0x00A55820 (tail-jump at 0x00733862)"
+0x00732970,signature,void * __thiscall Clone(void * this),plain ret at 0x007329C9; operator new(0x25C) at 0x00732994
+0x00733300,signature,"void * __thiscall `scalar deleting destructor'(void * this, uint flags)",ret 4; flags bit 0 = delete
+0x00733600,signature,"void * __thiscall `scalar deleting destructor'(void * this, uint flags)",ret 4
+0x00733820,signature,"void * __thiscall `scalar deleting destructor'(void * this, uint flags)",ret 4
+0x00A55AC0,signature,"GUIScene * __thiscall GUIScene(void * this, void * name, void * filename, int layer, uint b, uint flags)","ret 0x14 at 0x00A55C76; +0x58 name, +0x74 Filename, +0x9C layer, +0xA0 b, +0xA4 flags (0x00A55B40-0x00A55B59; GUI.md's names)"
