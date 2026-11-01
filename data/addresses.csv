@@ -16896,8 +16896,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16895,function,GUI::GUIStore::`scalar deleting destructor'`adjustor{8}',0x00729640,0x00635520,0x00729640
 16896,function,GUI::GUIStore::GetClassInfo,0x00729650,0x00635550,0x00729650
 16897,function,"SmartData::Attribute<FilteredGroupedItemView*,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",0x00729680,0x00635580,0x00729680
-16898,function,,0x007296b0,0x006355b0,0x007296b0
-16899,function,,0x00729820,0x00635720,0x00729820
+16898,function,GUI::GUIStore::OnShow,0x007296b0,0x006355b0,0x007296b0
+16899,function,GUI::GUIStore::Close,0x00729820,0x00635720,0x00729820
 16900,function,GUI::GUIStore::HandleMessage_PartyBackpackChangedMessage,0x00729980,0x00635880,0x00729980
 16901,function,GUI::GUIStore::HandleMessage_StoreChangedMessage,0x007299c0,0x006358c0,0x007299c0
 16902,function,GUI::GUIStore::HandleMessage_SetItemListFilterMessage,0x00729a00,0x00635900,0x00729a00
@@ -16909,13 +16909,13 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16908,function,GUI::GUIStore::RegisterHandler_StoreChangedMessage,0x00729bc0,0x00635ac0,0x00729bc0
 16909,function,GUI::GUIStore::RegisterHandler_SetItemListFilterMessage,0x00729c40,0x00635b40,0x00729c40
 16910,function,GUI::GUIStore::RegisterHandler_SetBackpackSortMessage,0x00729cc0,0x00635bc0,0x00729cc0
-16911,function,,0x00729d40,0x00635c40,0x00729d40
-16912,function,,0x00729d60,0x00635c60,0x00729d60
-16913,function,,0x0072a040,0x00635f40,0x0072a040
-16914,function,,0x0072a070,0x00635f70,0x0072a070
+16911,function,GUI::GUIStore::`scalar deleting destructor',0x00729d40,0x00635c40,0x00729d40
+16912,function,GUI::GUIStore::GUIStore,0x00729d60,0x00635c60,0x00729d60
+16913,function,GUI::GUIStore::RegisterMessageHandlers,0x0072a040,0x00635f40,0x0072a040
+16914,function,GUI::GUIStore::RegisterClass,0x0072a070,0x00635f70,0x0072a070
 16915,function,SmartData::TokenStringObserver::TokenStringObserver,0x0072a0c0,0x00635fe0,0x0072a0c0
-16916,function,,0x0072a160,0x00636080,0x0072a160
-16917,function,,0x0072a250,0x006361f0,0x0072a250
+16916,function,GUI::GUIStore::GUIStore_copy,0x0072a160,0x00636080,0x0072a160
+16917,function,GUI::GUIStore::Clone,0x0072a250,0x006361f0,0x0072a250
 16918,function,TestMessage::Create,0x0072a2c0,0x00636260,0x0072a2c0
 16919,function,TestMessage::GetType,0x0072a340,0x006362e0,0x0072a340
 16920,function,TestMessage::Clone,0x0072a370,0x00636310,0x0072a370
@@ -16946,29 +16946,29 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16945,function,GUI::GUIDebugOptions::Clone,0x0072ae90,0x00636e10,0x0072ae90
 16946,function,Messages::RegisterText<TestMessage>,0x0072af00,0x00636e80,0x0072af00
 16947,function,GUI::GUIDebugOptions::GUIDebugOptions,0x0072afc0,0x00636f40,0x0072afc0
-16948,function,,0x0072b1c0,0x00637140,0x0072b1c0
-16949,function,,0x0072b280,0x00637200,0x0072b280
-16950,function,,0x0072b2a0,0x0063efa0,0x0072b2a0
-16951,function,,0x0072b2b0,0x00637220,0x0072b2b0
-16952,function,,0x0072b2c0,0x00637230,0x0072b2c0
-16953,function,,0x0072b2d0,0x00637240,0x0072b2d0
-16954,function,,0x0072b2e0,0x00637250,0x0072b2e0
-16955,function,,0x0072b310,0x00637280,0x0072b310
-16956,function,,0x0072b330,0x006372a0,0x0072b330
-16957,function,,0x0072b370,0x006372e0,0x0072b370
-16958,function,,0x0072b3f0,0x00637360,0x0072b3f0
-16959,function,,0x0072b4b0,0x00637420,0x0072b4b0
-16960,function,,0x0072b4d0,0x00637460,0x0072b4d0
-16961,function,,0x0072b4e0,0x00637440,0x0072b4e0
-16962,function,,0x0072b4f0,0x00637450,0x0072b4f0
-16963,function,,0x0072b500,0x00637470,0x0072b500
-16964,function,,0x0072b530,0x006374a0,0x0072b530
-16965,function,,0x0072b550,0x006374c0,0x0072b550
-16966,function,,0x0072b570,0x006374e0,0x0072b570
-16967,function,,0x0072b5b0,0x00637520,0x0072b5b0
-16968,function,,0x0072b600,0x00637570,0x0072b600
+16948,function,GUI::GUIArmyControl::GUIArmyControl,0x0072b1c0,0x00637140,0x0072b1c0
+16949,function,GUI::GUIArmyControl::~GUIArmyControl,0x0072b280,0x00637200,0x0072b280
+16950,function,GUI::GUIArmyControl::OnShow,0x0072b2a0,0x0063efa0,0x0072b2a0
+16951,function,GUI::GUIArmyControl::`scalar deleting destructor'`adjustor{28}',0x0072b2b0,0x00637220,0x0072b2b0
+16952,function,GUI::GUIArmyControl::`scalar deleting destructor'`adjustor{32}',0x0072b2c0,0x00637230,0x0072b2c0
+16953,function,GUI::GUIArmyControl::`scalar deleting destructor'`adjustor{8}',0x0072b2d0,0x00637240,0x0072b2d0
+16954,function,GUI::GUIArmyControl::GetClassInfo,0x0072b2e0,0x00637250,0x0072b2e0
+16955,function,GUI::GUIArmyControl::`scalar deleting destructor',0x0072b310,0x00637280,0x0072b310
+16956,function,GUI::GUIArmyControl::RegisterClass,0x0072b330,0x006372a0,0x0072b330
+16957,function,GUI::GUIArmyControl::Clone,0x0072b370,0x006372e0,0x0072b370
+16958,function,GUI::GUIPartyPicker::GUIPartyPicker,0x0072b3f0,0x00637360,0x0072b3f0
+16959,function,GUI::GUIPartyPicker::~GUIPartyPicker,0x0072b4b0,0x00637420,0x0072b4b0
+16960,function,GUI::GUIPartyPicker::`scalar deleting destructor'`adjustor{8}',0x0072b4d0,0x00637460,0x0072b4d0
+16961,function,GUI::GUIPartyPicker::`scalar deleting destructor'`adjustor{28}',0x0072b4e0,0x00637440,0x0072b4e0
+16962,function,GUI::GUIPartyPicker::`scalar deleting destructor'`adjustor{32}',0x0072b4f0,0x00637450,0x0072b4f0
+16963,function,GUI::GUIPartyPicker::GetClassInfo,0x0072b500,0x00637470,0x0072b500
+16964,function,GUI::GUIPartyPicker::`scalar deleting destructor',0x0072b530,0x006374a0,0x0072b530
+16965,function,GUI::GUIPartyPicker::Close,0x0072b550,0x006374c0,0x0072b550
+16966,function,GUI::GUIPartyPicker::RegisterClass,0x0072b570,0x006374e0,0x0072b570
+16967,function,GUI::GUIPartyPicker::OnShow,0x0072b5b0,0x00637520,0x0072b5b0
+16968,function,GUI::GUIPartyPicker::Clone,0x0072b600,0x00637570,0x0072b600
 16969,function,ScriptBackend::ForScript_SetTournamentScoreboardEntry,0x0072b690,0x00637600,0x0072b690
-16970,function,,0x0072b750,0x006376c0,0x0072b750
+16970,function,GUI::TournamentScoreboardEntry::TournamentScoreboardEntry,0x0072b750,0x006376c0,0x0072b750
 16971,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::TournamentScoreboardEntry*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::~Attribute",0x0072b930,0x00637950,0x0072b930
 16972,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::TournamentScoreboardEntry*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",0x0072b9a0,0x006379c0,0x0072b9a0
 16973,function,SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<GUI::TournamentScoreboardEntry*>>::GetMemberName,0x0072b9b0,0x006379d0,0x0072b9b0
@@ -16980,17 +16980,17 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16979,function,std::vector<?>::operator=,0x0072bb00,0x0055c940,0x0072bb00
 16980,function,ECBase::ECDynArray<?>::operator=,0x0072bc30,0x0056da00,0x0072bc30
 16981,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::TournamentScoreboardEntry*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",0x0072bc50,0x00637b00,0x0072bc50
-16982,function,,0x0072bcd0,0x00637b80,0x0072bcd0
-16983,function,,0x0072bf50,0x00637e00,0x0072bf50
-16984,function,,0x0072bf60,0x00637e10,0x0072bf60
-16985,function,,0x0072bf70,0x00637e20,0x0072bf70
-16986,function,,0x0072bf80,0x00637e30,0x0072bf80
-16987,function,,0x0072bfb0,0x00637e60,0x0072bfb0
+16982,function,GUI::GUITournamentScoreboard::GUITournamentScoreboard,0x0072bcd0,0x00637b80,0x0072bcd0
+16983,function,GUI::GUITournamentScoreboard::`scalar deleting destructor'`adjustor{32}',0x0072bf50,0x00637e00,0x0072bf50
+16984,function,GUI::GUITournamentScoreboard::`scalar deleting destructor'`adjustor{8}',0x0072bf60,0x00637e10,0x0072bf60
+16985,function,GUI::GUITournamentScoreboard::`scalar deleting destructor'`adjustor{28}',0x0072bf70,0x00637e20,0x0072bf70
+16986,function,GUI::GUITournamentScoreboard::GetClassInfo,0x0072bf80,0x00637e30,0x0072bf80
+16987,function,GUI::GUITournamentScoreboard::RegisterClass,0x0072bfb0,0x00637e60,0x0072bfb0
 16988,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::TournamentScoreboardEntry*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",0x0072bff0,0x00637ea0,0x0072bff0
-16989,function,,0x0072c070,0x00637f20,0x0072c070
-16990,function,,0x0072c0f0,0x00637fa0,0x0072c0f0
-16991,function,,0x0072c180,0x00638030,0x0072c180
-16992,function,,0x0072c1f0,0x006380a0,0x0072c1f0
+16989,function,GUI::GUITournamentScoreboard::GUITournamentScoreboard_copy,0x0072c070,0x00637f20,0x0072c070
+16990,function,GUI::GUITournamentScoreboard::~GUITournamentScoreboard,0x0072c0f0,0x00637fa0,0x0072c0f0
+16991,function,GUI::GUITournamentScoreboard::Clone,0x0072c180,0x00638030,0x0072c180
+16992,function,GUI::GUITournamentScoreboard::`scalar deleting destructor',0x0072c1f0,0x006380a0,0x0072c1f0
 16993,function,ScriptBackend::ForScript_SetChampionshipScoreboardEntry,0x0072c210,0x006380c0,0x0072c210
 16994,function,,0x0072c2d0,0x00638180,0x0072c2d0
 16995,function,,0x0072c4b0,0x006378a0,0x0072c4b0

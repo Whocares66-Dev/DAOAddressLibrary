@@ -7918,3 +7918,46 @@ address,what,value,why
 0x00708C70,signature,void __thiscall f(void *this),0x00708C70 plain ret; caller 0x00709286
 0x00709280,signature,"void __thiscall f(void *this, void *popupData)",0x00709280 ret 4; caller 0x00606C16
 0x007048D0,clear,ScriptVarTable::AddSaveSchema,0x007048D0 is ScriptVariableTable::DefineSaveStruct (SVI1..SVR1 structs); the class has no RTTI and its other methods are ScriptVariableTable
+0x007296B0,signature,void __thiscall GUI::GUIStore::OnShow(GUIStore *this),vtable 0x00B18F40 slot 5 (0x00B18F54); Ghidra has vfunction6
+0x00729820,signature,void __thiscall GUI::GUIStore::Close(GUIStore *this),slot 6 (0x00B18F58); Ghidra has vfunction7
+0x00729D60,clear,StoreChangedMessage::StoreChangedMessage,"it is GUI::GUIStore::GUIStore: GUIScene ctor at 0x00729DC8, GUIStore vftables written at 0x00729DF7-0x00729E0A"
+0x00729D60,signature,GUIStore * __thiscall GUI::GUIStore::GUIStore(GUIStore *this),"ecx read at 0x00729D87, plain ret at 0x0072A036"
+0x0072A040,signature,void __thiscall GUI::GUIStore::RegisterMessageHandlers(GUIStore *this),slot 3 (0x00B18F4C); Ghidra has vfunction4
+0x0072A070,signature,void __thiscall GUI::GUIStore::RegisterClass(GUIStore *this),slot 2 (0x00B18F48); Ghidra has vfunction3
+0x0072A160,clear,SmartData::TokenStringNotifier::TokenStringNotifier,"it is the GUIStore copy constructor: GUIScene copy 0x0061C9D0 at 0x0072A190, GUIStore vftables at 0x0072A1AA-0x0072A1BE"
+0x0072A160,signature,"GUIStore * __thiscall GUI::GUIStore::GUIStore_copy(GUIStore *this, GUIStore *other)",argument read at 0x0072A18B; ret 4 at 0x0072A247
+0x0072A250,signature,GUIScene * __thiscall GUI::GUIStore::Clone(GUIStore *this),slot 1; returns the new scene (Ghidra's TokenStringNotifier * return follows the wrong label above)
+0x0072B2A0,clear,GUI::GUIScene::OnShow,"a linker-folded jmp to the real GUIScene::OnShow 0x00A55820, which bears the same name; slot 5 of six scene vftables; name it GUI::GUIArmyControl::OnShow (its ID 16950's class), noted shared (reconciled: xrefs 0x00B18B4C, 0x00B19224, 0x00B198DC, 0x00B1A7CC, 0x00B1AA0C, 0x00B1AB3C)"
+0x0072B2A0,signature,void __thiscall GUI::GUIArmyControl::OnShow(GUIScene *this),jmp 0x00A55820; the callee's plain ret
+0x0072B2B0,signature,"void * __thiscall GUI::GUIArmyControl::`scalar deleting destructor'`adjustor{28}'(void *this, uint flags)","sub ecx,0x1C then jmp to the ret 4 function 0x0072B310; Ghidra has vfunction2"
+0x0072B2C0,signature,"void * __thiscall GUI::GUIArmyControl::`scalar deleting destructor'`adjustor{32}'(void *this, uint flags)","sub ecx,0x20; Ghidra has vfunction1"
+0x0072B2D0,signature,"void * __thiscall GUI::GUIArmyControl::`scalar deleting destructor'`adjustor{8}'(void *this, uint flags)","sub ecx,8; Ghidra has vfunction3"
+0x0072B2E0,signature,void * __thiscall GUI::GUIArmyControl::GetClassInfo(GUIArmyControl *this),slot 0; returns the node 0x00C0A318
+0x0072B310,signature,"void * __thiscall GUI::GUIArmyControl::`scalar deleting destructor'(GUIArmyControl *this, uint flags)",ret 4 at 0x0072B32B
+0x0072B330,signature,void __thiscall GUI::GUIArmyControl::RegisterClass(GUIArmyControl *this),slot 2
+0x0072B370,signature,GUIScene * __thiscall GUI::GUIArmyControl::Clone(GUIArmyControl *this),slot 1
+0x0072B4D0,signature,"void * __thiscall GUI::GUIPartyPicker::`scalar deleting destructor'`adjustor{8}'(void *this, uint flags)","sub ecx,8 then jmp 0x0072B530"
+0x0072B4E0,signature,"void * __thiscall GUI::GUIPartyPicker::`scalar deleting destructor'`adjustor{28}'(void *this, uint flags)","sub ecx,0x1C"
+0x0072B4F0,signature,"void * __thiscall GUI::GUIPartyPicker::`scalar deleting destructor'`adjustor{32}'(void *this, uint flags)","sub ecx,0x20"
+0x0072B500,signature,void * __thiscall GUI::GUIPartyPicker::GetClassInfo(GUIPartyPicker *this),slot 0; returns the node 0x00C0A344
+0x0072B530,signature,"void * __thiscall GUI::GUIPartyPicker::`scalar deleting destructor'(GUIPartyPicker *this, uint flags)",ret 4 at 0x0072B54B
+0x0072B550,signature,void __thiscall GUI::GUIPartyPicker::Close(GUIPartyPicker *this),slot 6; Ghidra has vfunction7
+0x0072B570,signature,void __thiscall GUI::GUIPartyPicker::RegisterClass(GUIPartyPicker *this),slot 2
+0x0072B5B0,signature,void __thiscall GUI::GUIPartyPicker::OnShow(GUIPartyPicker *this),slot 5; Ghidra has vfunction6
+0x0072B600,signature,GUIScene * __thiscall GUI::GUIPartyPicker::Clone(GUIPartyPicker *this),slot 1
+0x0072BF50,signature,"void * __thiscall GUI::GUITournamentScoreboard::`scalar deleting destructor'`adjustor{32}'(void *this, uint flags)","sub ecx,0x20 then jmp 0x0072C1F0"
+0x0072BF60,signature,"void * __thiscall GUI::GUITournamentScoreboard::`scalar deleting destructor'`adjustor{8}'(void *this, uint flags)","sub ecx,8"
+0x0072BF70,signature,"void * __thiscall GUI::GUITournamentScoreboard::`scalar deleting destructor'`adjustor{28}'(void *this, uint flags)","sub ecx,0x1C"
+0x0072BF80,signature,void * __thiscall GUI::GUITournamentScoreboard::GetClassInfo(GUITournamentScoreboard *this),slot 0; returns the node 0x00C0A5A0
+0x0072BFB0,signature,void __thiscall GUI::GUITournamentScoreboard::RegisterClass(GUITournamentScoreboard *this),slot 2
+0x0072C070,signature,"GUITournamentScoreboard * __thiscall GUI::GUITournamentScoreboard::GUITournamentScoreboard_copy(GUITournamentScoreboard *this, GUITournamentScoreboard *other)",argument read at 0x0072C099; ret 4 at 0x0072C0EB; Ghidra names it as a second plain constructor
+0x0072C180,signature,GUIScene * __thiscall GUI::GUITournamentScoreboard::Clone(GUITournamentScoreboard *this),slot 1; Ghidra has lower-case clone
+0x0072C1F0,signature,"void * __thiscall GUI::GUITournamentScoreboard::`scalar deleting destructor'(GUITournamentScoreboard *this, uint flags)",ret 4 at 0x0072C20B
+0x005C6650,signature,"void __thiscall SmartData::TokenManager::SetRootObject(TokenManager *this, uint hash, void *object)","ret 8 at 0x005C66BF; Set (slot +0x54) on an existing root, else a new Attribute<SmartObject*> through SetRoot 0x005C5F70; unnamed (ID 10151); named to pair with SetRoot (reconciled)"
+0x005C6710,signature,"void __thiscall SmartData::TokenManager::RemoveRootObject(TokenManager *this, uint hash)","ret 4 at 0x005C6747; RemoveRoot 0x005C5F80 at 0x005C6735 then the root holder's slot 1 with 1 at 0x005C6743 (the holder is deleted, not the object); unnamed (ID 10152) (reconciled)"
+0x0072B1C0,signature,GUIArmyControl * __thiscall GUI::GUIArmyControl::GUIArmyControl(GUIArmyControl *this),"constructor, plain ret; called at 0x00615477 (B)"
+0x0072B3F0,signature,GUIPartyPicker * __thiscall GUI::GUIPartyPicker::GUIPartyPicker(GUIPartyPicker *this),"constructor, plain ret; called at 0x0061543E (B)"
+0x0072B750,signature,TournamentScoreboardEntry * __thiscall GUI::TournamentScoreboardEntry::TournamentScoreboardEntry(TournamentScoreboardEntry *this),"constructor, plain ret; called at 0x0072BDF0 (B)"
+0x0072BCD0,signature,GUITournamentScoreboard * __thiscall GUI::GUITournamentScoreboard::GUITournamentScoreboard(GUITournamentScoreboard *this),"constructor, plain ret; called at 0x00615405 (B)"
+0x007FAEB0,clear,ItemFilterCrafting::ItemFilterCrafting,"it constructs FilteredGroupedItemView: SmartObject base and the FilteredGroupedItemView vftables at +0/+8/+0x1C/+0x20, the item source at +0x58, then eight ItemFilter* made with ids 0-4, 6, 7 and last 5 (a filter with a local vftable, likely the Crafting filter the label came from) (B; confirmed in the decompile)"
+0x007FAEB0,signature,"FilteredGroupedItemView * __thiscall FilteredGroupedItemView::FilteredGroupedItemView(FilteredGroupedItemView *this, void *itemSource)","ret 4 at 0x007FB106; the source stored at +0x58; newed (0x88) by GUIStore::OnShow at 0x007296EA and within 0x007297AF-0x007297F6 (A, B)"
