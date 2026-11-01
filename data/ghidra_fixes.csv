@@ -5562,3 +5562,40 @@ address,what,value,why
 0x00698C30,signature,"void __thiscall StdList_push_back(void *this, void *value)",ret 4 at 0x00698C5F; links a node from 0x00538A00 before the sentinel [this+4]
 0x004E9640,signature,"void __thiscall VectorPtr_Remove(void *this, void *value)",erase-remove: std::remove 0x0086B2A0 then erase 0x006AD590; 30+ callers
 0x007DA1E0,signature,"void __thiscall Actor_Step(void *this, float dt, float t, bool flag)",ret 0xC at 0x007DA4E7; the third argument tested at 0x007DA3DB (0: actions whose slot 6 is true are not updated)
+0x007DC700,signature,"EC::Cutscene::Actor::ActionJumpToPlace * __thiscall ActionJumpToPlace_scalar_deleting_destructor(void *this, unsigned int flags)",ret 4 at 0x007DC71B; reads ecx at 0x007DC701
+0x007DC940,signature,"void * __thiscall ActionMakeActiveCamera_ctor(void *this, void *gffStruct, void *actor)",ret 8; args passed to Action::Action 0x007DA530 at 0x007DC975
+0x007DC9D0,signature,"void * __thiscall ActionTogglePhysics_ctor(void *this, void *gffStruct, void *actor)",ret 8; same shape as Action::Action
+0x007DCA60,signature,"void * __thiscall ActionSetGore_ctor(void *this, void *gffStruct, void *actor)",ret 8
+0x007DCAF0,signature,"void * __thiscall ActionSetFog_ctor(void *this, void *gffStruct, void *actor)","ret 8; Ghidra's member offsets are +0x18 short of the real ones (0x007DCB92 writes +0x28, 0x007DCC3E +0x48)"
+0x007DCC60,signature,"void * __thiscall ActionSkipMarker_ctor(void *this, void *gffStruct, void *actor)",ret 8 at 0x007DCD2D; actor read at [esp+0x2c] (0x007DCC8B)
+0x007DCD30,signature,"void * __thiscall ActionSnapToWalkmesh_ctor(void *this, void *gffStruct, void *actor)",ret 8
+0x007DCD50,signature,"void __thiscall ActionSnapToWalkmesh_Update(void *this, float dt, float tLocal)",vftable slot 1; ret 8 at 0x007DCE04; Ghidra shows no parameters
+0x007DCE10,signature,"void * __thiscall ActionOrientationFollowsCurve_ctor(void *this, void *gffStruct, void *actor)",ret 8
+0x007DCE50,signature,"void * __thiscall ActionDrawWeapon_ctor(void *this, void *gffStruct, void *actor)",ret 8
+0x007DD050,convention,__thiscall,"plain ret; ecx is this (mov esi,ecx then lea ecx,[esi+0x28] at 0x007DD078); Ghidra has __fastcall"
+0x007DD0B0,signature,"void * __thiscall ActionJumpToCamera_scalar_deleting_destructor(void *this, unsigned int flags)",also ActionPlayMovie's slot 0 (vftable 0x00B23608)
+0x007DD0D0,signature,"void * __thiscall ActionAutoAdjustHeight_ctor(void *this, void *gffStruct, void *actor)",ret 8 at 0x007DD19E
+0x007DD1B0,signature,"void * __thiscall ActionAnimateFace_ctor(void *this, void *gffStruct, void *actor)",ret 8 at 0x007DD37D
+0x007DD380,signature,"void * __thiscall ActionAnimateFace_scalar_deleting_destructor(void *this, unsigned int flags)",ret 4
+0x007EEF90,signature,const wchar_t * __thiscall ConversationFile_EndPlotGuid(void *this),"this = Conversation+0x20 (0x007F0FCE mov ecx,esi); plain ret"
+0x007EF010,signature,const wchar_t * __thiscall ConversationFile_EndScript(void *this),this = Conversation+0x20; plain ret
+0x007EF190,signature,int __thiscall ConversationFile_EndPlotFlag(void *this),this = Conversation+0x20; plain ret
+0x007EF210,signature,bool __thiscall ConversationFile_EndPlotTest(void *this),this = Conversation+0x20; plain ret
+0x007EF290,signature,int __thiscall ConversationFile_EndScriptParameter(void *this),this = Conversation+0x20; plain ret
+0x007EF5B0,signature,"unsigned int __thiscall ConversationFile_LineChildCount(void *this, unsigned int line)","ret 4; this = Conversation+0x20 (0x007F194C lea edi,[esi+0x20])"
+0x007EF610,signature,"const unsigned int * __thiscall ConversationFile_LineChildren(void *this, unsigned int line)",ret 4
+0x007EF6B0,signature,"const wchar_t * __thiscall ConversationFile_LineCondPlotGuid(void *this, unsigned int line)",ret 4
+0x007EF740,signature,"int __thiscall ConversationFile_LineCondPlotFlag(void *this, unsigned int line)",ret 4
+0x007EF7D0,signature,"bool __thiscall ConversationFile_LineCondPlotTest(void *this, unsigned int line)",ret 4
+0x007F0F50,signature,void __thiscall Conversation_destructor(void *this),"plain ret; callers call operator delete right after (0x0068CC0D, 0x006912D0, 0x006FF148); Ghidra has __fastcall(int)"
+0x007F0F50,clear,Conversation::End,"it is the destructor (frees +0x70, +0x60, +0x44, +0x1C, +0x00 at 0x007F10AE-0x007F10DF); the end action is only its first step"
+0x007EEDC0,signature,"bool __thiscall Conversation_RunAction(void *this, const wchar_t *script, int scriptParameter, const wchar_t *plotGuid, int plotFlag, bool plotValue)",ret 0x14 at 0x007EEED7; arg order from the pushes at 0x007F0FC7-0x007F0FE5
+0x007F11F0,signature,"int __thiscall Conversation_FirstAvailableReply(void *this, unsigned int count, const unsigned int *lines)",ret 8 at 0x007F12D1
+0x007F1370,signature,"void __thiscall Conversation_RemoveParticipant(void *this, unsigned int creatureId)",ret 4 at 0x007F13ED
+0x007F14D0,signature,int __thiscall Conversation_FirstAvailableStart(void *this),plain ret 0x007F1636; Ghidra drops this
+0x007F1910,signature,"bool __thiscall Conversation_Advance(void *this, int reply)","ret 4; returns al (0 at 0x007F1978, PlayLine's result at 0x007F19C7)"
+0x007F2360,clear,FUN_007f2360,"not a function: the shared 'return false' epilogue (pop edi, esi, ebp; add esp,0x50; ret) of Conversation::Start 0x007F2210, reached only by its conditional jumps 0x007F2222..0x007F2348"
+0x00A5FDA0,signature,void __thiscall AnimBase_ReapplyCurrentAnimation(void *this),"plain ret; mov esi,ecx at 0x00A5FDC5; Ghidra has __fastcall(int)"
+0x007F2210,signature,bool __thiscall Conversation_Start(void *this),plain ret; returns !IsLineAmbient(+0x3C) (0x007F231E-0x007F2328); its tail 0x007F2360 belongs to it
+0x007EED70,signature,"bool __thiscall Conversation_LeaveDialogMode(void *this, bool endConversation)","ret 4 at 0x007EED94/0x007EEDBA; always returns 1 (0x007EED91, 0x007EEDB7); 1 -> GameModeDialog::EndConversation 0x0068F640, 0 -> 0x0068F470 if +0x34; name inferred"
+0x007F0870,signature,"bool __thiscall Conversation_ReleaseParticipants(void *this, bool onlyMarked)",ret 4 at 0x007F0929; AND of 0x007F0790's results; non-zero arg releases only records with byte +5 set (0x007F08A5-0x007F08DD); name inferred
