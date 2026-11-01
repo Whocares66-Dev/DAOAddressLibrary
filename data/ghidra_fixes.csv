@@ -7961,3 +7961,71 @@ address,what,value,why
 0x0072BCD0,signature,GUITournamentScoreboard * __thiscall GUI::GUITournamentScoreboard::GUITournamentScoreboard(GUITournamentScoreboard *this),"constructor, plain ret; called at 0x00615405 (B)"
 0x007FAEB0,clear,ItemFilterCrafting::ItemFilterCrafting,"it constructs FilteredGroupedItemView: SmartObject base and the FilteredGroupedItemView vftables at +0/+8/+0x1C/+0x20, the item source at +0x58, then eight ItemFilter* made with ids 0-4, 6, 7 and last 5 (a filter with a local vftable, likely the Crafting filter the label came from) (B; confirmed in the decompile)"
 0x007FAEB0,signature,"FilteredGroupedItemView * __thiscall FilteredGroupedItemView::FilteredGroupedItemView(FilteredGroupedItemView *this, void *itemSource)","ret 4 at 0x007FB106; the source stored at +0x58; newed (0x88) by GUIStore::OnShow at 0x007296EA and within 0x007297AF-0x007297F6 (A, B)"
+0x0072C2D0,signature,void * __thiscall GUI::ChampionshipScoreboardEntry::ChampionshipScoreboardEntry(void * this),"no stack argument, plain ret at 0x0072C4AE, returns this (mov eax,edi 0x0072C499)"
+0x0072C4B0,signature,"void * __thiscall GUI::ChampionshipScoreboardEntry::`scalar deleting destructor'`adjustor{28}'(void * this, unsigned int flags)","sub ecx,0x1C; jmp 0x0072C560, which ends ret 4"
+0x0072C4B0,clear,GUI::TournamentScoreboardEntry::vfunction2,"a destructor thunk shared (linker-folded) by the championship and tournament entries, not a slot-2 function (linker-folded: in both the ChampionshipScoreboardEntry and TournamentScoreboardEntry vftables; reconciled, xrefs to 0x0072C4B0 and 0x0072C560)"
+0x0072C4C0,signature,"void * __thiscall GUI::ChampionshipScoreboardEntry::`scalar deleting destructor'`adjustor{32}'(void * this, unsigned int flags)","sub ecx,0x20; jmp 0x0072C560"
+0x0072C4C0,clear,GUI::TournamentScoreboardEntry::vfunction1,"a destructor thunk shared by both entries (linker-folded: in both the ChampionshipScoreboardEntry and TournamentScoreboardEntry vftables; reconciled, xrefs to 0x0072C4B0 and 0x0072C560)"
+0x0072C4D0,signature,"void * __thiscall GUI::ChampionshipScoreboardEntry::`scalar deleting destructor'`adjustor{8}'(void * this, unsigned int flags)","sub ecx,8; jmp 0x0072C560"
+0x0072C4D0,clear,GUI::TournamentScoreboardEntry::vfunction3,"a destructor thunk shared by both entries (linker-folded: in both the ChampionshipScoreboardEntry and TournamentScoreboardEntry vftables; reconciled, xrefs to 0x0072C4B0 and 0x0072C560)"
+0x0072C4E0,signature,void __thiscall GUI::ChampionshipScoreboardEntry::~ChampionshipScoreboardEntry(void * this),"reads ecx first (mov esi,ecx 0x0072C502), plain ret 0x0072C557"
+0x0072C560,signature,"void * __thiscall GUI::ChampionshipScoreboardEntry::`scalar deleting destructor'(void * this, unsigned int flags)",ret 4 at 0x0072C57B
+0x0072C560,clear,GUI::TournamentScoreboardEntry::vfunction5,"slot 4 (the scalar deleting destructor) of both entry vftables 0x00B19588 and 0x00B193A0 (linker-folded: in both the ChampionshipScoreboardEntry and TournamentScoreboardEntry vftables; reconciled, xrefs to 0x0072C4B0 and 0x0072C560)"
+0x0072C890,signature,void * __thiscall GUI::GUIChampionshipScoreboard::GUIChampionshipScoreboard(void * this),"plain ret 0x0072CB07, returns this"
+0x0072CB10,signature,"void * __thiscall GUI::GUIChampionshipScoreboard::`scalar deleting destructor'`adjustor{28}'(void * this, unsigned int flags)","sub ecx,0x1C; jmp 0x0072CDB0"
+0x0072CB10,clear,GUI::GUIChampionshipScoreboard::vfunction2,a destructor thunk
+0x0072CB20,signature,"void * __thiscall GUI::GUIChampionshipScoreboard::`scalar deleting destructor'`adjustor{32}'(void * this, unsigned int flags)","sub ecx,0x20; jmp 0x0072CDB0"
+0x0072CB20,clear,GUI::GUIChampionshipScoreboard::vfunction1,a destructor thunk; the same label is also on 0x0072CB40
+0x0072CB30,signature,"void * __thiscall GUI::GUIChampionshipScoreboard::`scalar deleting destructor'`adjustor{8}'(void * this, unsigned int flags)","sub ecx,8; jmp 0x0072CDB0"
+0x0072CB30,clear,GUI::GUIChampionshipScoreboard::vfunction3,a destructor thunk; the same label is also on 0x0072CB70
+0x0072CB40,signature,void * __thiscall GUI::GUIChampionshipScoreboard::GetClassInfo(void * this),vftable slot 0; never reads ecx; returns 0x00C0A814
+0x0072CB40,clear,GUI::GUIChampionshipScoreboard::vfunction1,"slot 0, GetClassInfo"
+0x0072CB70,signature,void __thiscall GUI::GUIChampionshipScoreboard::RegisterClass(void * this),vftable slot 2; plain ret
+0x0072CB70,clear,GUI::GUIChampionshipScoreboard::vfunction3,"slot 2, RegisterClass"
+0x0072CC30,signature,"void * __thiscall GUI::GUIChampionshipScoreboard::GUIChampionshipScoreboard(void * this, void * other)",copy constructor; ret 4 at 0x0072CCAB
+0x0072CCB0,signature,void __thiscall GUI::GUIChampionshipScoreboard::~GUIChampionshipScoreboard(void * this),plain ret 0x0072CD3E
+0x0072CD40,signature,void * __thiscall GUI::GUIChampionshipScoreboard::Clone(void * this),vftable slot 1; plain ret
+0x0072CD40,clear,GUI::GUIChampionshipScoreboard::clone,"rename to Clone (slot 1, the agreed name)"
+0x0072CDB0,signature,"void * __thiscall GUI::GUIChampionshipScoreboard::`scalar deleting destructor'(void * this, unsigned int flags)",ret 4 at 0x0072CDCB
+0x0072CDB0,clear,GUI::GUIChampionshipScoreboard::vfunction5,"slot 4, the scalar deleting destructor"
+0x0072CDD0,signature,void * __thiscall GUI::GeneralScoreboardEntry::GeneralScoreboardEntry(void * this),"plain ret 0x0072D102, returns this"
+0x0072D110,signature,"void * __thiscall GUI::GeneralScoreboardEntry::`scalar deleting destructor'`adjustor{28}'(void * this, unsigned int flags)","sub ecx,0x1C; jmp 0x0072D1F0"
+0x0072D110,clear,GUI::GeneralScoreboardEntry::vfunction2,a destructor thunk
+0x0072D120,signature,"void * __thiscall GUI::GeneralScoreboardEntry::`scalar deleting destructor'`adjustor{32}'(void * this, unsigned int flags)","sub ecx,0x20; jmp 0x0072D1F0"
+0x0072D120,clear,GUI::GeneralScoreboardEntry::vfunction1,a destructor thunk
+0x0072D130,signature,"void * __thiscall GUI::GeneralScoreboardEntry::`scalar deleting destructor'`adjustor{8}'(void * this, unsigned int flags)","sub ecx,8; jmp 0x0072D1F0"
+0x0072D130,clear,GUI::GeneralScoreboardEntry::vfunction3,a destructor thunk
+0x0072D140,signature,void __thiscall GUI::GeneralScoreboardEntry::~GeneralScoreboardEntry(void * this),"reads ecx first (mov esi,ecx 0x0072D162), plain ret 0x0072D1E7"
+0x0072D1F0,signature,"void * __thiscall GUI::GeneralScoreboardEntry::`scalar deleting destructor'(void * this, unsigned int flags)",ret 4 at 0x0072D20B
+0x0072D1F0,clear,GUI::GeneralScoreboardEntry::vfunction5,"slot 4, the scalar deleting destructor"
+0x0072D440,signature,void * __thiscall GUI::GUIGeneralScoreboard::GUIGeneralScoreboard(void * this),"plain ret 0x0072D604, returns this"
+0x0072D610,signature,"void * __thiscall GUI::GUIGeneralScoreboard::`scalar deleting destructor'`adjustor{28}'(void * this, unsigned int flags)","sub ecx,0x1C; jmp 0x0072D9E0"
+0x0072D610,clear,GUI::GUIGeneralScoreboard::vfunction2,a destructor thunk
+0x0072D620,signature,"void * __thiscall GUI::GUIGeneralScoreboard::`scalar deleting destructor'`adjustor{32}'(void * this, unsigned int flags)","sub ecx,0x20; jmp 0x0072D9E0"
+0x0072D620,clear,GUI::GUIGeneralScoreboard::vfunction1,a destructor thunk; the same label is also on 0x0072D640
+0x0072D630,signature,"void * __thiscall GUI::GUIGeneralScoreboard::`scalar deleting destructor'`adjustor{8}'(void * this, unsigned int flags)","sub ecx,8; jmp 0x0072D9E0"
+0x0072D630,clear,GUI::GUIGeneralScoreboard::vfunction3,a destructor thunk; the same label is also on 0x0072D670
+0x0072D640,signature,void * __thiscall GUI::GUIGeneralScoreboard::GetClassInfo(void * this),vftable slot 0; returns 0x00C0AA68
+0x0072D640,clear,GUI::GUIGeneralScoreboard::vfunction1,"slot 0, GetClassInfo"
+0x0072D670,signature,void __thiscall GUI::GUIGeneralScoreboard::RegisterClass(void * this),vftable slot 2; plain ret
+0x0072D670,clear,GUI::GUIGeneralScoreboard::vfunction3,"slot 2, RegisterClass"
+0x0072D730,signature,"void * __thiscall GUI::GUIGeneralScoreboard::GUIGeneralScoreboard(void * this, void * other)",copy constructor; ret 4 at 0x0072D7AB
+0x0072D7B0,signature,void __thiscall GUI::GUIGeneralScoreboard::~GUIGeneralScoreboard(void * this),plain ret 0x0072D83E
+0x0072D840,signature,void __thiscall GUI::GUIGeneralScoreboard::Close(void * this),vftable slot 6 (entry 0x00B198E0); plain ret 0x0072D85D
+0x0072D840,clear,GUI::GUIGeneralScoreboard::vfunction7,"slot 6, Close (it calls GUIScene::Close 0x00A55910)"
+0x0072D970,signature,void * __thiscall GUI::GUIGeneralScoreboard::Clone(void * this),vftable slot 1; plain ret
+0x0072D970,clear,GUI::GUIGeneralScoreboard::clone,"rename to Clone (slot 1, the agreed name)"
+0x0072D9E0,signature,"void * __thiscall GUI::GUIGeneralScoreboard::`scalar deleting destructor'(void * this, unsigned int flags)",ret 4 at 0x0072D9FB
+0x0072D9E0,clear,GUI::GUIGeneralScoreboard::vfunction5,"slot 4, the scalar deleting destructor"
+0x0072DA00,signature,void * __thiscall GUI::GUITactics::GUITactics(void * this),"plain ret 0x0072DABD, returns this"
+0x0072DAC0,signature,void __thiscall GUI::GUITactics::~GUITactics(void * this),"writes through ecx, jmp 0x00A559E0"
+0x0072DAE0,signature,void __thiscall GUI::GUITactics::OnShow(void * this),vftable slot 5 (entry 0x00B19984); plain ret 0x0072DAF0
+0x0072DAE0,clear,GUI::GUITactics::vfunction6,"slot 5, OnShow (calls GUIScene::OnShow 0x00A55820)"
+0x0072DB00,signature,void __thiscall GUI::GUITactics::Close(void * this),jmp 0x00A55910; slot 6 of eight scene vftables
+0x0072DB00,clear,GUI::GUIScene::Close,"misleading: GUIScene::Close is 0x00A55910; this is a folded slot-6 override of GUIContentManager, GUITactics, GUIMap, GUISkills, GUISpellsTalents, GUIMain, GUILevelUp (0x00B1AA10), GUICharGenBase (0x00B1AB40)"
+0x0072DB10,signature,"void * __thiscall GUI::GUITactics::`scalar deleting destructor'`adjustor{28}'(void * this, unsigned int flags)","sub ecx,0x1C; jmp 0x0072DB70"
+0x0072DB10,clear,GUI::GUITactics::vfunction2,a destructor thunk
+0x0072DB20,signature,"void * __thiscall GUI::GUITactics::`scalar deleting destructor'`adjustor{32}'(void * this, unsigned int flags)","sub ecx,0x20; jmp 0x0072DB70"
+0x0072DB20,clear,GUI::GUITactics::vfunction1,a destructor thunk
+0x0072DB30,signature,"void * __thiscall GUI::GUITactics::`scalar deleting destructor'`adjustor{8}'(void * this, unsigned int flags)","sub ecx,8; jmp 0x0072DB70"
+0x0072DB30,clear,GUI::GUITactics::vfunction3,a destructor thunk
