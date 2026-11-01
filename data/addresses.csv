@@ -15828,11 +15828,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15827,function,,0x006fb3a0,0x005ed090,0x006fb3a0
 15828,function,CSAreaList::CollectPRCScripts,0x006fba00,0x005ed6f0,0x006fba00
 15829,function,std::vector<CSAreaList::Entry>::vector,0x006fbd80,0x005eda70,0x006fbd80
-15830,function,,0x006fbe10,0x005edb00,0x006fbe10
-15831,function,,0x006fbe50,0x005edb40,0x006fbe50
-15832,function,,0x006fbee0,0x005edbd0,0x006fbee0
+15830,function,std::vector<CSAreaList::Entry>::resize,0x006fbe10,0x005edb00,0x006fbe10
+15831,function,CSAreaList::CSAreaList,0x006fbe50,0x005edb40,0x006fbe50
+15832,function,CSAreaList::~CSAreaList,0x006fbee0,0x005edbd0,0x006fbee0
 15833,function,CSAreaList::ReadAreas,0x006fbff0,0x005edce0,0x006fbff0
-15834,function,,0x006fc3a0,0x005ee090,0x006fc3a0
+15834,function,CSAreaList::`scalar deleting destructor',0x006fc3a0,0x005ee090,0x006fc3a0
 15835,function,,0x006fc3c0,0x005ee0b0,0x006fc3c0
 15836,function,ECBase::ECDynArray<ArmyInfo*>::operator[],0x006fc420,0x005ee110,0x006fc420
 15837,function,ScriptBackend::ForScript_SetPlotActionsEnabled,0x006fc450,0x005ee140,0x006fc450
@@ -15914,7 +15914,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15913,function,WorldMapSwapMapsMessage::GetType,0x006ffde0,0x0050a460,0x006ffde0
 15914,function,WorldMapSwapMapsMessage::InitType,0x006ffe20,0x0050a4a0,0x006ffe20
 15915,function,WorldMapPreTransitionMessage::Create,0x006ffe80,0x0050d240,0x006ffe80
-15916,function,,0x006ffee0,0x005f1780,0x006ffee0
+15916,function,WorldMap::StaticClassInfo,0x006ffee0,0x005f1780,0x006ffee0
 15917,function,ScriptBackend::ForScript_OpenPrimaryWorldMap,0x006fff40,0x005f17e0,0x006fff40
 15918,function,ScriptBackend::ForScript_ClosePrimaryWorldMap,0x006ffff0,0x005f1890,0x006ffff0
 15919,function,ScriptBackend::ForScript_OpenFadeMap,0x007000a0,0x005f1940,0x007000a0
@@ -15936,8 +15936,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15935,function,"SmartData::Attribute<CCCreature*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::vfunction20",0x007005d0,0x00595720,0x007005d0
 15936,function,"SmartData::Attribute<MapObject*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",0x007005f0,0x005f1b70,0x007005f0
 15937,function,WorldMap::HandleMessage_WorldMapClosedMessage,0x00700610,0x005f1b90,0x00700610
-15938,function,,0x007006f0,0x005f1c70,0x007006f0
-15939,function,,0x00700830,0x005f1db0,0x00700830
+15938,function,WorldMap::RaiseBeginTravelEvent,0x007006f0,0x005f1c70,0x007006f0
+15939,function,WorldMap::RaisePreTransitionEvent,0x00700830,0x005f1db0,0x00700830
 15940,function,,0x007008d0,0x005f1e50,0x007008d0
 15941,function,WorldMap::StartTravelling,0x00700990,0x005f1f10,0x00700990
 15942,function,ScriptBackend::ForScript_WorldMapCompleteRandomEncounter,0x00700a60,0x005f1fe0,0x00700a60
@@ -15947,8 +15947,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15946,function,WorldMap::BeginTravelFromAreaTransition,0x00700ca0,0x005f2240,0x00700ca0
 15947,function,ScriptBackend::ForScript_SetWorldMapPrimary,0x00700d80,0x005f2320,0x00700d80
 15948,function,ScriptBackend::ForScript_SetWorldMapSecondary,0x00700db0,0x005f2350,0x00700db0
-15949,function,,0x00700e00,0x005f23a0,0x00700e00
-15950,function,,0x00700e60,0x005f2400,0x00700e60
+15949,function,WorldMap::SwapMaps,0x00700e00,0x005f23a0,0x00700e00
+15950,function,WorldMap::ResolveMapConnections,0x00700e60,0x005f2400,0x00700e60
 15951,function,WorldMap::FindMapByName,0x00700eb0,0x005f2450,0x00700eb0
 15952,function,WorldMap::FindLoadedMapByName,0x00700f50,0x005f24f0,0x00700f50
 15953,function,WorldMap::WriteToSave,0x00700fe0,0x005f2580,0x00700fe0
@@ -15957,25 +15957,25 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15956,function,WorldMap::HandleMessage_WorldMapSwapMapsMessage,0x00701240,0x005f27e0,0x00701240
 15957,function,WorldMap::ReadFromSave,0x00701250,0x005f27f0,0x00701250
 15958,function,WorldMap::RegisterHandler_WorldMapSwapMapsMessage,0x007014a0,0x005f2a40,0x007014a0
-15959,function,,0x00701520,0x005f2ac0,0x00701520
+15959,function,WorldMap::RegisterMessageHandlers,0x00701520,0x005f2ac0,0x00701520
 15960,function,WorldMap::MergeLoadedMaps,0x00701550,0x005f2af0,0x00701550
-15961,function,,0x00701620,0x005f2bc0,0x00701620
+15961,function,WorldMap::RegisterClass,0x00701620,0x005f2bc0,0x00701620
 15962,function,,0x00701640,0x00863ea0,0x00701640
-15963,function,,0x00701690,0x005f2be0,0x00701690
-15964,function,,0x00701790,0x005f2ce0,0x00701790
-15965,function,,0x007017a0,0x005f2cf0,0x007017a0
-15966,function,,0x007017b0,0x005f2d00,0x007017b0
+15963,function,WorldMap::~WorldMap,0x00701690,0x005f2be0,0x00701690
+15964,function,WorldMap::`scalar deleting destructor',0x00701790,0x005f2ce0,0x00701790
+15965,function,WorldMap::`scalar deleting destructor',0x007017a0,0x005f2cf0,0x007017a0
+15966,function,WorldMap::`scalar deleting destructor',0x007017b0,0x005f2d00,0x007017b0
 15967,function,,0x007017c0,0x005f2d10,0x007017c0
 15968,function,"SmartData::Attribute<MapObject*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",0x007017d0,0x005f2d20,0x007017d0
-15969,function,,0x00701800,0x005f2d50,0x00701800
-15970,function,,0x00701920,0x005f2e70,0x00701920
+15969,function,WorldMap::WorldMap_copy,0x00701800,0x005f2d50,0x00701800
+15970,function,WorldMap::Clone,0x00701920,0x005f2e70,0x00701920
 15971,function,WorldMap::LoadMapResources,0x00701990,0x005f2ee0,0x00701990
-15972,function,,0x00701c10,0x005f3160,0x00701c10
-15973,function,,0x00701d10,0x005f3260,0x00701d10
-15974,function,,0x00701d30,0x00518a10,0x00701d30
-15975,function,,0x00701df0,0x00518ad0,0x00701df0
-15976,function,,0x00701eb0,0x00518b90,0x00701eb0
-15977,function,,0x00701f70,0x005f3280,0x00701f70
+15972,function,Gff4::DefineWorldMapStruct,0x00701c10,0x005f3160,0x00701c10
+15973,function,WorldMap::`scalar deleting destructor',0x00701d10,0x005f3260,0x00701d10
+15974,function,Messages::RegisterText<WorldMapClosedMessage>,0x00701d30,0x00518a10,0x00701d30
+15975,function,Messages::RegisterText<WorldMapPreTransitionMessage>,0x00701df0,0x00518ad0,0x00701df0
+15976,function,Messages::RegisterText<WorldMapSwapMapsMessage>,0x00701eb0,0x00518b90,0x00701eb0
+15977,function,WorldMap::WorldMap,0x00701f70,0x005f3280,0x00701f70
 15978,function,CGameEffect::operator=,0x007023d0,0x005f36e0,0x007023d0
 15979,function,ScriptVariableTable::SaveStructHasList,0x00702490,0x005f37a0,0x00702490
 15980,function,ScriptVariableTable::GetSaveLabelForType,0x007024a0,0x005f37b0,0x007024a0
@@ -16066,7 +16066,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16065,function,,0x00706830,0x0072c520,0x00706830
 16066,function,"std::map<std::wstring,int>::operator[]",0x00706a30,0x005f7fb0,0x00706a30
 16067,function,std::vector<KeyedEntryList::Entry>::_Tidy,0x00706b10,0x0056e540,0x00706b10
-16068,function,,0x00706c00,0x005f8090,0x00706c00
+16068,function,SpellRimSlots::ReleaseAll,0x00706c00,0x005f8090,0x00706c00
 16069,function,RimRefCount::Acquire,0x00706d50,0x005f81e0,0x00706d50
 16070,function,RimRefCount::Release,0x00706d90,0x005f8220,0x00706d90
 16071,function,KeyedEntryList::Replace,0x00706de0,0x005f8270,0x00706de0
@@ -17564,9 +17564,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 17563,function,CCArea::CreatureContactTest,0x0073d570,0x00649110,0x0073d570
 17564,function,MovementPath::HasPathSearch,0x0073d6e0,0x00649280,0x0073d6e0
 17565,function,CCArea::VisitCreatures_NoOp,0x0073d710,0x006492b0,0x0073d710
-17566,function,,0x0073d780,0x00649320,0x0073d780
-17567,function,,0x0073de20,0x006499c0,0x0073de20
-17568,function,,0x0073de50,0x006499f0,0x0073de50
+17566,function,CCArea::IsSegmentClearOfCreatures,0x0073d780,0x00649320,0x0073d780
+17567,function,CCArea::GetGridHeightAt,0x0073de20,0x006499c0,0x0073de20
+17568,function,CCArea::GetGridCellSize,0x0073de50,0x006499f0,0x0073de50
 17569,function,CCArea::IsLocationSafe,0x0073de70,0x00649a10,0x0073de70
 17570,function,CCArea::FanSearch,0x0073df70,0x00649b10,0x0073df70
 17571,function,CCArea::GetSafeLocation,0x0073e370,0x00649f10,0x0073e370
@@ -19512,18 +19512,18 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 19511,function,,0x00799350,0x0066aa50,0x00799350
 19512,function,,0x00799380,0x0066aa80,0x00799380
 19513,function,CCTrigger::ReadFields,0x007993c0,0x0066aac0,0x007993c0
-19514,function,,0x00799850,0x0066af50,0x00799850
-19515,function,,0x007998c0,0x0066afc0,0x007998c0
-19516,function,,0x00799970,0x0066b070,0x00799970
+19514,function,CCTrigger::RaiseEnterOrExitEvent,0x00799850,0x0066af50,0x00799850
+19515,function,CCTriggerTrap::ReadFields,0x007998c0,0x0066afc0,0x007998c0
+19516,function,CCTriggerAreaTransition::ReadFields,0x00799970,0x0066b070,0x00799970
 19517,function,,0x007999b0,0x0066b0b0,0x007999b0
 19518,function,,0x00799a80,0x0066b180,0x00799a80
 19519,function,,0x00799ad0,0x0066b1d0,0x00799ad0
 19520,function,,0x00799b90,0x0066b290,0x00799b90
 19521,function,,0x00799c30,0x0066b330,0x00799c30
 19522,function,,0x00799c80,0x0066b380,0x00799c80
-19523,function,,0x00799e10,0x0066b510,0x00799e10
-19524,function,,0x00799ee0,0x0066b5e0,0x00799ee0
-19525,function,,0x00799f70,0x0066b670,0x00799f70
+19523,function,CCTrigger::WriteToSave,0x00799e10,0x0066b510,0x00799e10
+19524,function,CCTriggerTrap::WriteToSave,0x00799ee0,0x0066b5e0,0x00799ee0
+19525,function,CCTriggerAreaTransition::WriteToSave,0x00799f70,0x0066b670,0x00799f70
 19526,function,,0x00799fa0,0x0066b6a0,0x00799fa0
 19527,function,,0x0079a000,0x0066b700,0x0079a000
 19528,function,,0x0079a190,0x00451ff0,0x0079a190
@@ -19535,18 +19535,18 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 19534,function,,0x0079a600,0x0066bcc0,0x0079a600
 19535,function,,0x0079a620,0x0066bce0,0x0079a620
 19536,function,,0x0079a770,0x0066be30,0x0079a770
-19537,function,,0x0079a7e0,0x0066bea0,0x0079a7e0
-19538,function,,0x0079a9b0,0x0066c070,0x0079a9b0
+19537,function,CCTrigger::LoadFromStruct,0x0079a7e0,0x0066bea0,0x0079a7e0
+19538,function,CCTriggerTrap::LoadFromStruct,0x0079a9b0,0x0066c070,0x0079a9b0
 19539,function,,0x0079a9d0,0x0066c090,0x0079a9d0
 19540,function,,0x0079aaa0,0x0066c160,0x0079aaa0
 19541,function,CCTriggerAudioVolume::LoadFromSave,0x0079ab40,0x0066c200,0x0079ab40
 19542,function,,0x0079ab70,0x0066c230,0x0079ab70
 19543,function,CCTrigger::RemoveFromArea,0x0079acf0,0x0066c3b0,0x0079acf0
 19544,function,CCTriggerAudioVolume::RemoveFromArea,0x0079ad70,0x0066c430,0x0079ad70
-19545,function,,0x0079add0,0x0066c490,0x0079add0
-19546,function,,0x0079af20,0x0066c5e0,0x0079af20
+19545,function,CCTrigger::~CCTrigger,0x0079add0,0x0066c490,0x0079add0
+19546,function,CCTrigger::GetDataClass,0x0079af20,0x0066c5e0,0x0079af20
 19547,function,Stub::ReturnThis,0x0079af30,0x006cfa40,0x0079af30
-19548,function,,0x0079af40,0x0066c940,0x0079af40
+19548,function,CCTrigger::`scalar deleting destructor',0x0079af40,0x0066c940,0x0079af40
 19549,function,CCTriggerAudioReverb::~CCTriggerAudioReverb,0x0079af50,0x0066c610,0x0079af50
 19550,function,CCTriggerAudioReverb::GetDataClass,0x0079b010,0x0066c6d0,0x0079b010
 19551,function,CCTriggerAudioReverb::`scalar deleting destructor'`adjustor{112}',0x0079b020,0x0066c6e0,0x0079b020
@@ -19554,7 +19554,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 19553,function,CCTriggerAudioReverb::`scalar deleting destructor'`adjustor{24}',0x0079b040,0x0066c700,0x0079b040
 19554,function,CCTriggerAudioReverb::`scalar deleting destructor'`adjustor{56}',0x0079b050,0x0066c710,0x0079b050
 19555,function,CCTriggerAudioReverb::`scalar deleting destructor'`adjustor{32}',0x0079b060,0x0066c720,0x0079b060
-19556,function,,0x0079b070,0x0066c970,0x0079b070
+19556,function,CCTrigger::`scalar deleting destructor',0x0079b070,0x0066c970,0x0079b070
 19557,function,CCTriggerAudioReverb::`scalar deleting destructor',0x0079b090,0x0066c730,0x0079b090
 19558,function,,0x0079b0b0,0x0066c750,0x0079b0b0
 19559,function,,0x0079b230,0x0066c8d0,0x0079b230

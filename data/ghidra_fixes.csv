@@ -9431,3 +9431,42 @@ address,what,value,why
 0x006FAB80,signature,"void* __cdecl f(void* first, void* last, void* destEnd)","plain ret at 0x006FABAA, three args read at 0x006FAB81-0x006FAB96"
 0x006FB300,signature,"void __thiscall f(void* this, void* entry)","ret 4 at 0x006FB374, ecx saved to esi at 0x006FB304"
 0x006FBD80,signature,"void* __thiscall f(void* this, unsigned int count)","ret 4 at 0x006FBE02, ecx saved to ebx at 0x006FBDA7, returns this"
+0x006FBE10,signature,"void __thiscall f(void* this, unsigned int newSize)",std::vector<CSAreaList::Entry>::resize: 0x006FBE10-0x006FBE4B
+0x006FBE50,signature,"void* __thiscall f(void* this, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17)",CSAreaList::CSAreaList: 0x006FBE50-0x006FBED1
+0x006FBEE0,signature,void __thiscall f(void* this),CSAreaList::~CSAreaList: 0x006FBEE0-0x006FBFEF
+0x006FC3A0,signature,"void* __thiscall f(void* this, unsigned int flags)",CSAreaList::`scalar deleting destructor': 0x006FC3A0-0x006FC3BB
+0x006FFEE0,signature,void* __cdecl f(void),WorldMap::GetClassIdPtr: 0x006FFEE0-0x006FFF32
+0x007006F0,signature,"void __thiscall f(void* this, void* fromLocation, void* toLocation)",WorldMap::RaiseBeginTravelEvent: 0x007006F0-0x0070082A
+0x00700830,signature,void __cdecl f(void),WorldMap::RaisePreTransitionEvent: 0x00700830-0x007008C3
+0x00700E00,signature,void __thiscall f(void* this),WorldMap::SwapMaps: 0x00700E00-0x00700E58
+0x00700E60,signature,void __thiscall f(void* this),WorldMap::ResolveMapConnections: 0x00700E60-0x00700EAE
+0x00701520,signature,void __thiscall f(void* this),WorldMap::RegisterMessageHandlers: 0x00701520-0x0070153F
+0x00701620,signature,void __thiscall f(void* this),WorldMap::RegisterClass: 0x00701620-0x0070163D
+0x00701690,signature,void __thiscall f(void* this),WorldMap::~WorldMap: 0x00701690-0x00701789
+0x00701790,signature,"void* __thiscall f(void* this, unsigned int flags)",WorldMap::`scalar deleting destructor': 0x00701790-0x00701798
+0x007017A0,signature,"void* __thiscall f(void* this, unsigned int flags)",WorldMap::`scalar deleting destructor': 0x007017A0-0x007017A8
+0x007017B0,signature,"void* __thiscall f(void* this, unsigned int flags)",WorldMap::`scalar deleting destructor': 0x007017B0-0x007017B8
+0x00701800,signature,"void* __thiscall f(void* this, void* source)",WorldMap::WorldMap(const WorldMap&): 0x00701800-0x00701920
+0x00701920,signature,void* __thiscall f(void* this),WorldMap::Clone: 0x00701920-0x0070198F
+0x00701C10,signature,unsigned int __cdecl f(void* schemaBuilder),Gff4::DefineWorldMapStruct: 0x00701C10-0x00701D0F
+0x00701D10,signature,"void* __thiscall f(void* this, unsigned int flags)",WorldMap::`scalar deleting destructor': 0x00701D10-0x00701D2B
+0x00701D30,signature,"void __thiscall f(void* this, void* messageName)",Messages::RegisterText<WorldMapClosedMessage>: 0x00701D30-0x00701DE0
+0x00701DF0,signature,"void __thiscall f(void* this, void* messageName)",Messages::RegisterText<WorldMapPreTransitionMessage>: 0x00701DF0-0x00701EA0
+0x00701EB0,signature,"void __thiscall f(void* this, void* messageName)",Messages::RegisterText<WorldMapSwapMapsMessage>: 0x00701EB0-0x00701F60
+0x00701F70,signature,void* __thiscall f(void* this),WorldMap::WorldMap: 0x00701F70-0x007023D0
+0x00706C00,signature,void __cdecl f(void),SpellRimSlots::ReleaseAll: 0x00706C00-0x00706D47
+0x0073D780,signature,"bool __thiscall f(void* this, float x0, float y0, float x1, float y1, void* mover, int limitToStartRadii, int testPushAside, void* outBlockerId, int testWalkTarget)",CCArea::IsSegmentClearOfCreatures: 0x0073D780-0x0073DE1F
+0x0073DE20,signature,"float __thiscall f(void* this, void* position)",CCArea::GetGridHeightAt: 0x0073DE20-0x0073DE4F
+0x0073DE50,signature,float __thiscall f(void* this),CCArea::GetGridCellSize: 0x0073DE50-0x0073DE6D
+0x00799850,signature,"void __thiscall f(void* this, bool entering, int a2, unsigned int creatureId, int a4, int a5)",CCTrigger::RaiseEnterOrExitEvent: 0x00799850-0x007998AD
+0x007998C0,signature,"bool __thiscall f(void* this, void* a1, void* a2, void* a3)",CCTriggerTrap::ReadFields: 0x007998C0-0x00799965
+0x00799970,signature,"bool __thiscall f(void* this, void* a1, void* a2, void* a3)",CCTriggerAreaTransition::ReadFields: 0x00799970-0x007999AC
+0x00799E10,signature,"void __thiscall f(void* this, void* saveStruct)",CCTrigger::WriteToSave: 0x00799E10-0x00799EDA
+0x00799EE0,signature,"void __thiscall f(void* this, void* saveStruct)",CCTriggerTrap::WriteToSave: 0x00799EE0-0x00799F67
+0x00799F70,signature,"void __thiscall f(void* this, void* saveStruct)",CCTriggerAreaTransition::WriteToSave: 0x00799F70-0x00799F9C
+0x0079A7E0,signature,"bool __thiscall f(void* this, void* saveStruct)",CCTrigger::LoadFromStruct: 0x0079A7E0-0x0079A981
+0x0079A9B0,signature,"bool __thiscall f(void* this, void* saveStruct)",CCTriggerTrap::LoadFromStruct: 0x0079A9B0-0x0079A9C9
+0x0079ADD0,signature,void __thiscall f(void* this),CCTrigger::~CCTrigger: 0x0079ADD0-0x0079AF1F
+0x0079AF20,signature,unsigned int __thiscall f(void* this),CCTrigger::GetDataClass: 0x0079AF20-0x0079AF25
+0x0079AF40,signature,"void* __thiscall f(void* this, unsigned int flags)",CCTrigger::`scalar deleting destructor': 0x0079AF40-0x0079AF48
+0x0079B070,signature,"void* __thiscall f(void* this, unsigned int flags)",CCTrigger::`scalar deleting destructor': 0x0079B070-0x0079B08B
