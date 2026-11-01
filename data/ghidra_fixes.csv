@@ -8262,3 +8262,39 @@ address,what,value,why
 0x005CD2D0,signature,bool __thiscall f(void* this),"slot 29; plain ret, al"
 0x005CD920,signature,"void __thiscall f(void* this, void* outVector)",ret 4 at 0x005CD968
 0x005CE1E0,signature,void __thiscall f(void* this),plain ret at 0x005CE2E1
+0x00733C90,signature,"GUIScene * __thiscall GUI::GUIScene::`scalar deleting destructor'(GUIScene * this, uint flags)","No function is defined at this address; it is slot 4 of the GUIScene (0xB043B8) and GUICharGenBase (0xB1AB28) vtables: call ~GUIScene, delete if bit 0, ret 4 (0x00733C90-0x00733CAB). Create it."
+0x0061CAD0,clear,GUI::GUIScene::`scalar deleting destructor',"It is `sub ecx,8; jmp 0x00733C90` (bytes 83 E9 08 E9 B8 71 11 00), the adjustor{8} thunk; rename to GUI::GUIScene::`scalar deleting destructor'`adjustor{8}' (address library id 11841)."
+0x007BFE10,clear,EquipmentChangedMessage::EquipmentChangedMessage,"It is the GUIPaperdoll constructor (0x320-byte object made by GUICharGen::OnShow 0x00735512-0x00735535, vtable 0xB21E58, fields +0x2D0..+0x2D8, calls the editor reset 0x00808040; DAOLib CHARGEN.md)."
+0x007BFE10,signature,"void * __thiscall GUI::GUIPaperdoll::GUIPaperdoll(void * this, int arg1, int arg2)","ret 8; the two arguments are stored at +0x2D4 and +0x2D8 (0x007C00E1-0x007C0101); OnShow passes -1, -1."
+0x007359F0,clear,"SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::CustomStorage,SmartData::ObserverNotification>::vfunction14","Not a virtual: only direct calls reach it, and slot 14 of the vtable 0xB1B12C is 0x0072A510; it is the custom-storage Get."
+0x007359F0,signature,"float __thiscall SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::CustomStorage,SmartData::ObserverNotification>::Get(void * this)",Tail-calls [[this+0xC]][0] with ecx = the storage; the float comes back in ST0.
+0x007356F0,convention,__thiscall,"Reads ecx (+0xC0, +0x110) before writing it; ret 4."
+0x007356F0,signature,"void __thiscall GUI::GUICharGen::RebuildPaperCreature(GUICharGen * this, int arg)",The argument is passed through as SetCreature's fourth (0x0073571F-0x00735735).
+0x00734170,convention,__thiscall,ecx = the registry from 0x00489BC0 (0x00734327); ret 4.
+0x00734170,signature,"void __thiscall Messages::RegisterText<CharGenSelectLevelupClassMessage>(void * this, void * name)","name is a std::wstring by pointer (+4 data, +0x14 length, +0x18 capacity read at 0x0073419B-0x007341A9)."
+0x007396C0,convention,__thiscall,ecx = the vector (zeroes +4/+8/+0xC); ret 4.
+0x007396C0,signature,"void * __thiscall std::vector<GUI::GUIPaperdoll::SliderEntry>::vector(void * this, uint count)",Returns this; count 0 from the only caller 0x0073A090.
+0x00737460,signature,"void * __thiscall GUI::AppearanceSlider<float>::AppearanceSlider(void * this, uint group, void * name, float value, bool integral, float min, float max)","ret 0x18; arguments at esp+0x44..0x58 go to +0x58 Group, +0x68 Name, (+0x9C Value, ignored by 0x00735950), +0xE0 Integral, +0xB0 Min, +0xC0 Max; the caller pushes them at 0x00739C07-0x00739C23."
+0x007381D0,signature,"void * __thiscall GUI::AppearanceSliderGroup::AppearanceSliderGroup(void * this, void * name)","ret 4; the TlkString goes to +0x58 Name, +0x8C Enabled = true."
+0x00733CB0,signature,"void * __thiscall GUI::GUILevelUp::GUILevelUp(void * this, const GUILevelUp * src)",The copy constructor; it reads src+0xC0 (0x00733CD9) and passes src to the GUIScene copy constructor 0x0061C9D0; ret 4.
+0x00738860,signature,void __thiscall GUI::GUICharGen::OnPaperdollChanged(void * this),this is the IPaperdollLister subobject (GUICharGen+0xC4); the slider array is at this+0x70.
+0x00733AE0,signature,"void * __thiscall GUI::GUILevelUp::`scalar deleting destructor'(void * this, uint flags)","ret 4, vtable slot 4 (both readers)."
+0x00733AA0,signature,void * __thiscall GUI::GUILevelUp::GetClassInfo(void * this),Returns the class node 0x00C0B344; ignores this; plain ret.
+0x00733C60,signature,void * __thiscall GUI::GUICharGenBase::GetClassInfo(void * this),Returns the class node 0x00C0B33C; plain ret.
+0x00733BF0,signature,void __thiscall GUI::GUICharGenBase::RegisterClass(void * this),Plain ret; tail-calls 0x007FD2E0.
+0x00733FF0,signature,void * __thiscall GUI::GUICharGenBase::Clone(void * this),Allocates 0xC4; plain ret.
+0x00734080,signature,void * __thiscall GUI::GUILevelUp::Clone(void * this),"Allocates 0xC4, then 0x00733CB0; plain ret."
+0x00734110,signature,void __thiscall GUI::GUILevelUp::RegisterClass(void * this),Plain ret.
+0x007340F0,signature,void __thiscall GUI::GUILevelUp::RegisterMessageHandlers(void * this),Plain ret.
+0x00734230,signature,void * __thiscall GUI::GUILevelUp::GUILevelUp(void * this),Plain ret; called once from 0x00614D0B.
+0x00734370,signature,"void * __thiscall GUI::IPaperdollLister::`scalar deleting destructor'(void * this, uint flags)",ret 4.
+0x007354D0,signature,void __thiscall GUI::GUICharGen::OnShow(void * this),Plain ret; GUICharGen vtable 0xB1B558 slot 5.
+0x007355D0,signature,void __thiscall GUI::GUICharGen::Close(void * this),Plain ret; slot 6.
+0x00739850,signature,"void * __thiscall GUI::GUICharGen::`scalar deleting destructor'`adjustor{32}'(void * this, uint flags)","sub ecx,0x20; jmp 0x0073A680."
+0x007BD030,signature,void __thiscall GUI::GUIPaperdoll::RegisterTokens(void * this),"Registers Paperdoll, PaperCreature, CameraMode, SeededCharacters, HasTattoo and SetCameraPresetMessage (0x007BD0FC-0x007BD21F); name proposed by reader B."
+0x007BBFF0,signature,"void __thiscall GUI::GUIPaperdoll::SetMode(void * this, int mode)",ret 4; stores +0x140 and calls 0x007BB890.
+0x007BB890,signature,void __fastcall GUI::GUIPaperdoll::BuildScene(void * this),Plain ret; mode 1 takes the module stage and the char_chargen camera (reader B; not re-checked).
+0x007B8D10,signature,void __fastcall GUI::GUIPaperdoll::ReleaseScene(void * this),"Removes the lights and paper creature, destroys the scene unless mode 1, in mode 1 hands the stage back (0x00707020); 0x007BB080 is a thunk to it. Checked in the reconcile."
+0x007B21B0,signature,void __thiscall GUI::GUIPaperdoll::RemoveToken(void * this),Plain ret; this unused. Removes the token Paperdoll (0x00B218C4) through the token manager's slot 6 and 0x005C6710. Checked in the reconcile.
+0x007BC110,signature,"void __thiscall GUI::GUIPaperdoll::SetCreature(void * this, void * creature, bool a, bool b, int arg)","ret 0x10 (reader B); OnShow passes (hero,1,1,0), RebuildPaperCreature (hero,1,1,arg)."
+0x007394A0,signature,"void __thiscall f(void *this, unsigned int count, unsigned int v0, unsigned int v1, unsigned int v2, unsigned int v3, unsigned int v4, unsigned int v5, unsigned int v6, unsigned int v7, unsigned int v8, unsigned int v9, unsigned int v10, unsigned int v11, unsigned int v12, unsigned int v13, unsigned int v14, unsigned int v15, unsigned int v16, unsigned int v17, unsigned int v18, unsigned int v19)","std::vector<GUI::GUIPaperdoll::SliderEntry>::resize: the 0x50-byte element passed by value, as 20 words (ret 0x54)"
