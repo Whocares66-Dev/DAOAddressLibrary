@@ -20283,12 +20283,12 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20282,function,,0x007bddb2,0x0069c0b2,0x007bddb2
 20283,function,,0x007bde5b,0x0069c15b,0x007bde5b
 20284,function,GUI::GUIPaperdoll::GUIPaperdoll(const GUIPaperdoll&),0x007bdee0,0x0069c1e0,0x007bdee0
-20285,function,,0x007be300,0x0069c600,0x007be300
+20285,function,std::vector<GUI::HeadPreset::ModelWeight>::resize,0x007be300,0x0069c600,0x007be300
 20286,function,GUI::GUIPaperdoll::Clone,0x007be420,0x0069c720,0x007be420
 20287,function,GUI::GUIPaperdoll::WriteCharFile,0x007be490,0x0069c830,0x007be490
-20288,function,,0x007bfd10,0x0069e0b0,0x007bfd10
-20289,function,,0x007bfd80,0x0069e120,0x007bfd80
-20290,function,,0x007bfe10,0x0069e1b0,0x007bfe10
+20288,function,std::vector<GUI::HeadPreset::ModelWeight>::vector,0x007bfd10,0x0069e0b0,0x007bfd10
+20289,function,GUI::HeadPreset::HeadPreset,0x007bfd80,0x0069e120,0x007bfd80
+20290,function,GUI::GUIPaperdoll::GUIPaperdoll,0x007bfe10,0x0069e1b0,0x007bfe10
 20291,function,GUI::GUIPaperdoll::UpdateCharGenScreenshot,0x007c0190,0x0069e530,0x007c0190
 20292,function,ScriptBackend::ForScript_PreloadCharGen,0x007c0480,0x0069e820,0x007c0480
 20293,function,GUI::ComposeMorphTask::ComposeMorphTask,0x007c0ac0,0x0069ee60,0x007c0ac0
@@ -20302,14 +20302,14 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20301,function,,0x007c15c0,0x006a1870,0x007c15c0
 20302,function,,0x007c1600,0x006a18b0,0x007c1600
 20303,function,SyncAlign::SetRate,0x007c1690,0x006a1940,0x007c1690
-20304,function,,0x007c17c0,0x006a1a70,0x007c17c0
-20305,function,,0x007c1880,0x006a1b30,0x007c1880
+20304,function,SyncAlign::UpdateRecord,0x007c17c0,0x006a1a70,0x007c17c0
+20305,function,SyncAlign::StepToGoal,0x007c1880,0x006a1b30,0x007c1880
 20306,function,,0x007c1a30,0x006a1ce0,0x007c1a30
-20307,function,,0x007c1a60,0x006a1d10,0x007c1a60
+20307,function,SyncAlign::RefreshWithPartner,0x007c1a60,0x006a1d10,0x007c1a60
 20308,function,,0x007c1aa0,0x006a1d50,0x007c1aa0
-20309,function,,0x007c1b20,0x006a1dd0,0x007c1b20
+20309,function,SyncAlign::AttachRecord,0x007c1b20,0x006a1dd0,0x007c1b20
 20310,function,,0x007c1b70,0x006a1e20,0x007c1b70
-20311,function,,0x007c1ea0,0x006a2150,0x007c1ea0
+20311,function,SyncAlign::StopPartnerRate,0x007c1ea0,0x006a2150,0x007c1ea0
 20312,function,,0x007c1ee0,0x006a2190,0x007c1ee0
 20313,function,,0x007c1f10,0x006a4340,0x007c1f10
 20314,function,ScriptBackend::ForScript_StopSoundObject,0x007c1ff0,0x006a4420,0x007c1ff0
@@ -20336,22 +20336,22 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20335,function,,0x007c2be0,0x006a5010,0x007c2be0
 20336,function,CCSoundObject::`scalar deleting destructor',0x007c2ec0,0x006a52f0,0x007c2ec0
 20337,function,,0x007c2ee0,0x006a5310,0x007c2ee0
-20338,function,,0x007c3110,0x006a5540,0x007c3110
-20339,function,,0x007c3170,0x006a55a0,0x007c3170
-20340,function,,0x007c33d0,0x006a5800,0x007c33d0
-20341,function,,0x007c3410,0x006a5840,0x007c3410
+20338,function,CCSoundObject::AddToArea,0x007c3110,0x006a5540,0x007c3110
+20339,function,CCSoundObject::SaveTemplate,0x007c3170,0x006a55a0,0x007c3170
+20340,function,CCCombatData::SetWeaponsDrawn,0x007c33d0,0x006a5800,0x007c33d0
+20341,function,WeaponSetRecord::WeaponSetRecord,0x007c3410,0x006a5840,0x007c3410
 20342,function,,0x007c3490,0x006a58c0,0x007c3490
 20343,function,CCCombatData::WeaponsDrawn,0x007c34c0,0x006a58f0,0x007c34c0
 20344,function,,0x007c3500,0x006a5930,0x007c3500
 20345,function,,0x007c3600,0x006a5a30,0x007c3600
 20346,function,CCCombatData::RangedSightOffset,0x007c3680,0x006a5ab0,0x007c3680
-20347,function,,0x007c36e0,0x006a5b10,0x007c36e0
+20347,function,CCCombatData::FindImpactEffect,0x007c36e0,0x006a5b10,0x007c36e0
 20348,function,ScriptBackend::ForScript_GetAttackImpactDamageEffect,0x007c3770,0x006a5ba0,0x007c3770
-20349,function,,0x007c37a0,0x006a5bd0,0x007c37a0
-20350,function,,0x007c3840,0x006a5c70,0x007c3840
+20349,function,CCCombatData::CCCombatData,0x007c37a0,0x006a5bd0,0x007c37a0
+20350,function,CCCombatData::StoreImpactEffect,0x007c3840,0x006a5c70,0x007c3840
 20351,function,,0x007c38d0,0x006a5d00,0x007c38d0
-20352,function,,0x007c3950,0x006a5d80,0x007c3950
-20353,function,,0x007c39c0,0x006a5df0,0x007c39c0
+20352,function,CCWayPoint::SetMapNoteText,0x007c3950,0x006a5d80,0x007c3950
+20353,function,CCWayPoint::SetMapNoteLocString,0x007c39c0,0x006a5df0,0x007c39c0
 20354,function,CCWayPoint::CCWayPoint,0x007c3a30,0x006a5e60,0x007c3a30
 20355,function,CCWayPoint::`scalar deleting destructor',0x007c3be0,0x006a6020,0x007c3be0
 20356,function,CCWayPoint::`scalar deleting destructor',0x007c3bf0,0x006a6030,0x007c3bf0
@@ -20381,25 +20381,25 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20380,function,CCWayPoint::RequestAILevelUpdate,0x007c4910,0x006a6dd0,0x007c4910
 20381,function,CCWayPoint::ForScript_SetMapPinState,0x007c4930,0x006a6df0,0x007c4930
 20382,function,CCWayPoint::`scalar deleting destructor',0x007c4950,0x006a6e10,0x007c4950
-20383,function,,0x007c4970,0x006ab630,0x007c4970
-20384,function,,0x007c4990,0x006ab650,0x007c4990
+20383,function,Lod::IsModelLevelAtMost2OrNull,0x007c4970,0x006ab630,0x007c4970
+20384,function,Lod::IsModelLevelAtMost2,0x007c4990,0x006ab650,0x007c4990
 20385,function,,0x007c49b0,0x006ab670,0x007c49b0
-20386,function,,0x007c4a10,0x006ab6d0,0x007c4a10
-20387,function,,0x007c4a60,0x006ab720,0x007c4a60
-20388,function,,0x007c4a80,0x006ab740,0x007c4a80
+20386,function,GameModes::DistanceToFocus2D,0x007c4a10,0x006ab6d0,0x007c4a10
+20387,function,EffectsHolder::ShouldStartEffectVisual,0x007c4a60,0x006ab720,0x007c4a60
+20388,function,Audio::ShouldPlayMovementSound,0x007c4a80,0x006ab740,0x007c4a80
 20389,function,,0x007c4ae0,0x006ab7a0,0x007c4ae0
 20390,function,MovementPath::IsGoalFarFromCameraFocus,0x007c4b80,0x006ab840,0x007c4b80
-20391,function,,0x007c4bd0,0x006ab890,0x007c4bd0
+20391,function,CClientOptions::GetCorpseLimit,0x007c4bd0,0x006ab890,0x007c4bd0
 20392,function,,0x007c4c30,0x006ab8f0,0x007c4c30
 20393,function,,0x007c4c50,0x006ab910,0x007c4c50
 20394,function,AreaObjectsIterator::AreaObjectsIterator,0x007c4c60,0x006ab920,0x007c4c60
 20395,function,AreaObjectsIterator::~AreaObjectsIterator,0x007c4c80,0x006ab940,0x007c4c80
 20396,function,AreaObjectsIterator::IsCandidate,0x007c4c90,0x006ab950,0x007c4c90
-20397,function,,0x007c4ca0,0x006ab960,0x007c4ca0
+20397,function,"std::_Push_heap<void **,int,void *,bool (__cdecl*)(void *,void *)>",0x007c4ca0,0x006ab960,0x007c4ca0
 20398,function,,0x007c4d00,0x006ab9c0,0x007c4d00
-20399,function,,0x007c4d20,0x006ab9e0,0x007c4d20
-20400,function,,0x007c4e20,0x006abae0,0x007c4e20
-20401,function,,0x007c4eb0,0x006abb70,0x007c4eb0
+20399,function,World::IsObjectOnScreen,0x007c4d20,0x006ab9e0,0x007c4d20
+20400,function,World::DistanceToCamera,0x007c4e20,0x006abae0,0x007c4e20
+20401,function,World::ObjectScreenX,0x007c4eb0,0x006abb70,0x007c4eb0
 20402,function,AreaObjectsIterator::`scalar deleting destructor',0x007c4f30,0x006abbf0,0x007c4f30
 20403,function,AreaObjectsIterator::LessByScreenX,0x007c4f50,0x006abc70,0x007c4f50
 20404,function,"std::_Median<?*,bool(*)(?,?)>",0x007c4f80,0x006abca0,0x007c4f80
@@ -20408,27 +20408,27 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20407,function,,0x007c52c0,0x006abf40,0x007c52c0
 20408,function,AreaObjectsIterator::CollectCandidates,0x007c5430,0x006ac0b0,0x007c5430
 20409,function,MapTrailPoint::`scalar deleting destructor',0x007c54f0,0x006ac1d0,0x007c54f0
-20410,function,,0x007c5510,0x006ac1f0,0x007c5510
+20410,function,std::vector<MapTrail>::At,0x007c5510,0x006ac1f0,0x007c5510
 20411,function,"SmartData::Attribute<MapLocation*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",0x007c5550,0x006ac230,0x007c5550
 20412,function,"SmartData::Attribute<MapLocation*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",0x007c5580,0x006ac260,0x007c5580
 20413,function,"SmartData::Attribute<MapLocation*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::~Attribute",0x007c5590,0x006ac270,0x007c5590
 20414,function,"SmartData::Attribute<CCCreature*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::GetMemberName",0x007c55f0,0x00595700,0x007c55f0
 20415,function,"SmartData::Attribute<MapLocation*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",0x007c5610,0x006ac310,0x007c5610
-20416,function,,0x007c5630,0x006ac330,0x007c5630
-20417,function,,0x007c5699,0x006ac399,0x007c5699
+20416,function,"std::_Uninit_copy<MapTrail*,MapTrail*>",0x007c5630,0x006ac330,0x007c5630
+20417,function,"std::_Uninit_copy<MapTrail*,MapTrail*>::catch$0",0x007c5699,0x006ac399,0x007c5699
 20418,function,MapTravelPoint::~MapTravelPoint,0x007c56e0,0x006ac3e0,0x007c56e0
 20419,function,MapTravelPoint::`scalar deleting destructor',0x007c5760,0x006ac460,0x007c5760
 20420,function,MapTravelPoint::`scalar deleting destructor',0x007c5770,0x006ac470,0x007c5770
 20421,function,MapTravelPoint::`scalar deleting destructor',0x007c5780,0x006ac480,0x007c5780
 20422,function,MapTravelPoint::WriteToSave,0x007c5790,0x006ac490,0x007c5790
-20423,function,,0x007c57e0,0x006ac4e0,0x007c57e0
-20424,function,,0x007c58f0,0x006ac5f0,0x007c58f0
+20423,function,MapPathSearch::PopLowestCost,0x007c57e0,0x006ac4e0,0x007c57e0
+20424,function,ECBase::ECDynArray<unsigned int>::TryGet,0x007c58f0,0x006ac5f0,0x007c58f0
 20425,function,"SmartData::Attribute<CCCreature*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::vfunction5",0x007c5930,0x005f1b00,0x007c5930
 20426,function,"SmartData::Attribute<CCCreature*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::vfunction6",0x007c5960,0x005f1b30,0x007c5960
-20427,function,,0x007c5980,0x006ac630,0x007c5980
-20428,function,,0x007c59d0,0x006ac680,0x007c59d0
-20429,function,,0x007c5a3a,0x006ac6ea,0x007c5a3a
-20430,function,,0x007c5a70,0x006ac720,0x007c5a70
+20427,function,"std::_Copy_opt<MapTrailPoint*,MapTrailPoint*>",0x007c5980,0x006ac630,0x007c5980
+20428,function,"std::_Uninit_fill_n<MapTrail*,unsigned int,MapTrail>",0x007c59d0,0x006ac680,0x007c59d0
+20429,function,"std::_Uninit_fill_n<MapTrail*,unsigned int,MapTrail>::catch$0",0x007c5a3a,0x006ac6ea,0x007c5a3a
+20430,function,MapTravelPoint::GetConnectionCount,0x007c5a70,0x006ac720,0x007c5a70
 20431,function,MapTravelPoint::MapTravelPoint,0x007c5a90,0x006ac740,0x007c5a90
 20432,function,MapTravelPoint::`scalar deleting destructor',0x007c5bf0,0x006ac8a0,0x007c5bf0
 20433,function,MapTravelPoint::MapTravelPoint,0x007c5c10,0x006ac8c0,0x007c5c10
@@ -20444,13 +20444,13 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20443,function,"std::copy<MapTrailPoint*,MapTrailPoint*>",0x007c6670,0x006ad320,0x007c6670
 20444,function,"std::_Uninit_copy<MapTrailPoint*,MapTrailPoint*,std::allocator<MapTrailPoint>>",0x007c66a0,0x006ad350,0x007c66a0
 20445,function,MapTravelPoint::LoadFromSave,0x007c66e0,0x006ad390,0x007c66e0
-20446,function,,0x007c6750,0x006ad400,0x007c6750
-20447,function,,0x007c6790,0x006ad440,0x007c6790
-20448,function,,0x007c67c0,0x006ad470,0x007c67c0
-20449,function,,0x007c6800,0x006ad4b0,0x007c6800
-20450,function,,0x007c6880,0x006ad530,0x007c6880
-20451,function,,0x007c68b0,0x006ad560,0x007c68b0
-20452,function,,0x007c68e0,0x006ad590,0x007c68e0
+20446,function,MapPathSearch::~MapPathSearch,0x007c6750,0x006ad400,0x007c6750
+20447,function,std::_Destroy_range<MapTrailPoint*>,0x007c6790,0x006ad440,0x007c6790
+20448,function,"std::uninitialized_fill_n<MapTrail*,unsigned int,MapTrail>",0x007c67c0,0x006ad470,0x007c67c0
+20449,function,std::vector<MapTrailPoint>::erase,0x007c6800,0x006ad4b0,0x007c6800
+20450,function,std::_Destroy_range<MapTrail*>,0x007c6880,0x006ad530,0x007c6880
+20451,function,"std::uninitialized_copy<MapTrail*,MapTrail*>",0x007c68b0,0x006ad560,0x007c68b0
+20452,function,MapObject::SetPlayerLocationByPinId,0x007c68e0,0x006ad590,0x007c68e0
 20453,function,"SmartData::Attribute<ECBase::ECDynArray<MapTravelPoint*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::~Attribute",0x007c6940,0x006ad5f0,0x007c6940
 20454,function,"SmartData::Attribute<ECBase::ECDynArray<MapTravelPoint*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",0x007c69b0,0x006ad660,0x007c69b0
 20455,function,SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<MapTravelPoint*>>::GetMemberName,0x007c69c0,0x006ad690,0x007c69c0
@@ -20476,9 +20476,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20475,function,MapPathSearch::MapPathSearch,0x007c70b0,0x006add80,0x007c70b0
 20476,function,"SmartData::Attribute<ECBase::ECDynArray<MapLocation*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",0x007c7230,0x006adf00,0x007c7230
 20477,function,"SmartData::Attribute<ECBase::ECDynArray<MapTravelPoint*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",0x007c72b0,0x006adf80,0x007c72b0
-20478,function,,0x007c7330,0x006ae000,0x007c7330
-20479,function,,0x007c7380,0x006ae050,0x007c7380
-20480,function,,0x007c73d0,0x006ae0a0,0x007c73d0
+20478,function,"std::fill<MapTrail*,MapTrail>",0x007c7330,0x006ae000,0x007c7330
+20479,function,"std::_Copy_opt<MapTrail*,MapTrail*>",0x007c7380,0x006ae050,0x007c7380
+20480,function,"std::_Copy_backward_opt<MapTrail*,MapTrail*>",0x007c73d0,0x006ae0a0,0x007c73d0
 20481,function,Gff4::DefineMapTravelPointStruct,0x007c7420,0x006ae0f0,0x007c7420
 20482,function,MapObject::~MapObject,0x007c74d0,0x006ae1a0,0x007c74d0
 20483,function,MapObject::`scalar deleting destructor',0x007c7680,0x006ae380,0x007c7680
@@ -20491,29 +20491,29 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20490,function,MapObject::LoadFromSave,0x007c7dd0,0x006aeaa0,0x007c7dd0
 20491,function,"std::copy_backward<MapTrail*,MapTrail*>",0x007c8190,0x006aee60,0x007c8190
 20492,function,MapObject::`scalar deleting destructor',0x007c81f0,0x006aeec0,0x007c81f0
-20493,function,,0x007c8210,0x006aeee0,0x007c8210
-20494,function,,0x007c8270,0x006aef40,0x007c8270
-20495,function,,0x007c82e0,0x006aefb0,0x007c82e0
+20493,function,"std::copy<MapTrail*,MapTrail*>",0x007c8210,0x006aeee0,0x007c8210
+20494,function,std::vector<MapTrail>::erase,0x007c8270,0x006aef40,0x007c8270
+20495,function,"std::copy_backward<MapTrail*,MapTrail*>",0x007c82e0,0x006aefb0,0x007c82e0
 20496,function,,0x007c8310,0x006aefe0,0x007c8310
 20497,function,,0x007c84dc,0x006af1ac,0x007c84dc
 20498,function,,0x007c8587,0x006af257,0x007c8587
-20499,function,,0x007c8610,0x006af2e0,0x007c8610
-20500,function,,0x007c8730,0x006af400,0x007c8730
+20499,function,std::vector<MapTrail>::resize,0x007c8610,0x006af2e0,0x007c8610
+20500,function,std::vector<MapTrail>::insert,0x007c8730,0x006af400,0x007c8730
 20501,function,std::vector<MapTrail>::push_back,0x007c87e0,0x006af4b0,0x007c87e0
 20502,function,std::vector<MapTrail>::vector,0x007c8880,0x006af550,0x007c8880
 20503,function,std::vector<MapTrail>::clear,0x007c88f0,0x006af5c0,0x007c88f0
 20504,function,MapObject::MapObject,0x007c89f0,0x006af6c0,0x007c89f0
 20505,function,MapObject::LoadFromResource,0x007c8e40,0x006afb10,0x007c8e40
 20506,function,MapObject::CopyPinsFrom,0x007c9440,0x006b0110,0x007c9440
-20507,function,,0x007c9580,0x006b0250,0x007c9580
-20508,function,,0x007c9620,0x006b02f0,0x007c9620
-20509,function,,0x007c9640,0x006b0310,0x007c9640
-20510,function,,0x007c9680,0x006b0350,0x007c9680
-20511,function,,0x007c9690,0x006b0360,0x007c9690
-20512,function,,0x007c96c0,0x006b0390,0x007c96c0
+20507,function,MapExploredGrid::Init,0x007c9580,0x006b0250,0x007c9580
+20508,function,MapExploredGrid::SetBits,0x007c9620,0x006b02f0,0x007c9620
+20509,function,MapExploredGrid::OrBits,0x007c9640,0x006b0310,0x007c9640
+20510,function,MapExploredGrid::GetBits,0x007c9680,0x006b0350,0x007c9680
+20511,function,MapExploredGrid::IsCellInGrid,0x007c9690,0x006b0360,0x007c9690
+20512,function,MapExploredGrid::CellToBit,0x007c96c0,0x006b0390,0x007c96c0
 20513,function,ExploredAreaMap::CellToClip,0x007c9700,0x006b03d0,0x007c9700
-20514,function,,0x007c9740,0x006b0410,0x007c9740
-20515,function,,0x007c9800,0x006b04d0,0x007c9800
+20514,function,MapExploredGrid::WorldToCell,0x007c9740,0x006b0410,0x007c9740
+20515,function,MapExploredGrid::CellToWorld,0x007c9800,0x006b04d0,0x007c9800
 20516,function,MinimapRenderOperation::Execute,0x007c9840,0x006b0520,0x007c9840
 20517,function,IGameRenderOperation::`scalar deleting destructor',0x007c9870,0x006b09e0,0x007c9870
 20518,function,ExploredAreaMap::ExploredAreaMap,0x007c9890,0x006b0550,0x007c9890
@@ -20527,11 +20527,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20526,function,ExploredAreaMap::MarkPosition,0x007c9d20,0x006b0a00,0x007c9d20
 20527,function,ExploredAreaMap::RequestMaskRepaint,0x007c9d70,0x006b0a50,0x007c9d70
 20528,function,MinimapRefreshOperation::Restore,0x007c9dd0,0x006b0ab0,0x007c9dd0
-20529,function,,0x007c9de0,0x006b0ac0,0x007c9de0
-20530,function,,0x007c9e00,0x006b0ae0,0x007c9e00
+20529,function,MapExploredGrid::MakeCurrent,0x007c9de0,0x006b0ac0,0x007c9de0
+20530,function,MapExploredGrid::SetAllExplored,0x007c9e00,0x006b0ae0,0x007c9e00
 20531,function,ExploredAreaMap::UpdateMapNoteVisibility,0x007c9e30,0x006b0b10,0x007c9e30
-20532,function,,0x007c9f50,0x006b1260,0x007c9f50
-20533,function,,0x007c9fe0,0x006b12f0,0x007c9fe0
+20532,function,Money::UpdateDenominations,0x007c9f50,0x006b1260,0x007c9f50
+20533,function,Money::Add,0x007c9fe0,0x006b12f0,0x007c9fe0
 20534,function,Money::Subtract,0x007ca020,0x006b1330,0x007ca020
 20535,function,,0x007ca060,0x006b1370,0x007ca060
 20536,function,,0x007ca090,0x006b13a0,0x007ca090
@@ -20623,22 +20623,22 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20622,function,MeleeRings::At,0x007ccc30,0x006b4000,0x007ccc30
 20623,function,,0x007ccd20,0x006b40f0,0x007ccd20
 20624,function,EC::Cutscene::Actor::ClipRecord::ClipRecord,0x007ccd70,0x006b4140,0x007ccd70
-20625,function,,0x007ccdf0,0x006b41c0,0x007ccdf0
-20626,function,,0x007ccef0,0x006b42c0,0x007ccef0
-20627,function,,0x007ccf90,0x006b4360,0x007ccf90
-20628,function,,0x007cd010,0x006b43e0,0x007cd010
-20629,function,,0x007cd030,0x006b4400,0x007cd030
-20630,function,,0x007cd040,0x006b4410,0x007cd040
-20631,function,,0x007cd050,0x006b4420,0x007cd050
-20632,function,,0x007cd0a0,0x006b4470,0x007cd0a0
+20625,function,Bezier::SolveParameter,0x007ccdf0,0x006b41c0,0x007ccdf0
+20626,function,Bezier::ValueAt,0x007ccef0,0x006b42c0,0x007ccef0
+20627,function,Bezier::DerivativeAt,0x007ccf90,0x006b4360,0x007ccf90
+20628,function,CutscenePlayer::SetBlockingLoad,0x007cd010,0x006b43e0,0x007cd010
+20629,function,CutscenePlayer::SetStageAtCurrentLocation,0x007cd030,0x006b4400,0x007cd030
+20630,function,CutscenePlayer::SetStageSpeaker,0x007cd040,0x006b4410,0x007cd040
+20631,function,CutscenePlayer::SetView,0x007cd050,0x006b4420,0x007cd050
+20632,function,CutscenePlayer::ResolveTag,0x007cd0a0,0x006b4470,0x007cd0a0
 20633,function,,0x007cd0d0,0x006b44a0,0x007cd0d0
-20634,function,,0x007cd0f0,0x006b44c0,0x007cd0f0
-20635,function,,0x007cd120,0x006b44f0,0x007cd120
-20636,function,,0x007cd140,0x006b4510,0x007cd140
-20637,function,,0x007cd160,0x006b4530,0x007cd160
-20638,function,,0x007cd1c0,0x006b4590,0x007cd1c0
-20639,function,,0x007cd250,0x006b4620,0x007cd250
-20640,function,,0x007cd270,0x006b4640,0x007cd270
+20634,function,CutscenePlayer::Skip,0x007cd0f0,0x006b44c0,0x007cd0f0
+20635,function,CutscenePlayer::FindConversationParticipant,0x007cd120,0x006b44f0,0x007cd120
+20636,function,EC::Cutscene::Actor::SetMappedObject,0x007cd140,0x006b4510,0x007cd140
+20637,function,EC::Cutscene::Actor::ForceModelLevel,0x007cd160,0x006b4530,0x007cd160
+20638,function,EC::Cutscene::Actor::ClearUnmaskedSlots,0x007cd1c0,0x006b4590,0x007cd1c0
+20639,function,EC::Cutscene::Actor::FindConversationParticipant,0x007cd250,0x006b4620,0x007cd250
+20640,function,EC::Cutscene::Actor::GetModelComponents,0x007cd270,0x006b4640,0x007cd270
 20641,function,,0x007cd290,0x006b4660,0x007cd290
 20642,function,EC::Cutscene::Actor::ActionSound::Stop,0x007cd2d0,0x006b46a0,0x007cd2d0
 20643,function,,0x007cd2f0,0x006b46c0,0x007cd2f0
@@ -20683,8 +20683,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20682,function,EC::Cutscene::Actor::RemoveAnimation,0x007ce290,0x006b56b0,0x007ce290
 20683,function,EC::Cutscene::Actor::PlayOrUpdateAnimation,0x007ce330,0x006b5750,0x007ce330
 20684,function,EC::Cutscene::Actor::GetFacialAnimationPlayer,0x007ce3a0,0x006b57c0,0x007ce3a0
-20685,function,,0x007ce410,0x006b5830,0x007ce410
-20686,function,,0x007ce490,0x006b58b0,0x007ce490
+20685,function,EC::Cutscene::Actor::ResetModel,0x007ce410,0x006b5830,0x007ce410
+20686,function,EC::Cutscene::Actor::UpdatePoseTransition,0x007ce490,0x006b58b0,0x007ce490
 20687,function,EC::Cutscene::Actor::DispatchMappedCreatureAnimationSounds,0x007ce560,0x006b5980,0x007ce560
 20688,function,,0x007ce5a0,0x006b59c0,0x007ce5a0
 20689,function,,0x007ce5e0,0x006b5a00,0x007ce5e0
