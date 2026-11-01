@@ -12029,3 +12029,30 @@ address,what,value,why
 0x00489D70,convention,__cdecl,"ebp frame, plain ret, ecx unused at 0x00489D70"
 0x00489F80,convention,__cdecl,"ebp frame, plain ret, ecx unused at 0x00489F80"
 0x0048C610,signature,"void __thiscall f(void* this, void* list, int result, int unused)","frame: return address at esp+0x88 after 0x0048C637; reads +0x8C and +0x90, ret 0xC at 0x0048C836, so a third stack argument is unread (keeper)"
+0x00500A30,signature,"void* __thiscall f(void* this, void* other)",args and ret at 0x00500A30
+0x00500FD0,signature,"void __thiscall f(void* this, void* name, float value)","ret 8; arg1 is passed to 0x506D40, arg2 loaded with fld at 0x500FF8"
+0x00501050,signature,"void __thiscall f(void* this, void* name, void* matrix)",ret 8; matrix read by movaps at 0x5010B6
+0x00501160,signature,"void* __thiscall f(void* this, void* other)",args and ret at 0x00501160
+0x005015D0,signature,"void __thiscall f(void* this, void* name, void* vector)","ret 8; ecx the MaterialObject, vector copied by 0x933D70"
+0x00502770,signature,"void __thiscall f(void* this, void* name, void* array)",ret 8; array assigned by 0x4F3CE0
+0x005027B0,signature,"void* __thiscall f(void* this, void* other)",args and ret at 0x005027B0
+0x00502800,signature,"void __thiscall f(void* this, void* name, void* texture)",ret 8; reference assigned by 0x4F4710
+0x00502840,signature,"void __thiscall f(void* this, void* name, void* resourceName)",ret 8; resource name passed to 0x8472C0
+0x005028C0,signature,"bool __thiscall f(void* this, void* params)",args and ret at 0x005028C0
+0x00502BB0,signature,bool __thiscall f(void* this),args and ret at 0x00502BB0
+0x00502CD0,convention,__thiscall,"ecx moved to ebp at 0x502D02, plain ret"
+0x005043B0,signature,"void __stdcall f(void* parameters, unsigned int* offset, bool vertex)",ret 0xC; ecx overwritten before any read (0x5043E2)
+0x00504F10,signature,"void __thiscall f(void* this, void* parameters, bool vertex)",ret 8; ecx stored at 0x504F20
+0x00505C10,signature,unsigned int __cdecl f(unsigned int bytes),"plain ret, argument at [esp+4], no ecx read"
+0x00505C90,signature,void __cdecl f(),"plain ret, mov ecx constant at 0x505C90"
+0x00506680,signature,"void __cdecl f(void* destination, void* source)","plain ret, two stack args at 0x5066A3"
+0x005066E0,signature,"bool __thiscall f(void* this, void* key)","ret 4, ecx read at 0x5066E3, returns 1 or 0"
+0x00506730,signature,"void* __thiscall f(void* this, void* result, unsigned int key)",ret 8: result buffer and key; ecx saved to edi at 0x50673E
+0x005067A0,signature,"unsigned int __thiscall f(void* this, void* name)","ret 4, ecx to esi at 0x5067C5"
+0x00506870,signature,"void* __thiscall f(void* this, unsigned int id)","ret 4, ecx to esi at 0x506895"
+0x00506970,signature,void __thiscall f(void* this),args and ret at 0x00506970
+0x00506A60,convention,__thiscall,stack and ret shape at 0x00506A60
+0x00506AE0,signature,"void* __thiscall f(void* this, void* key)","ret 4, ecx to esi at 0x506B07, key dereferenced at 0x506B46"
+0x00506BD0,convention,__thiscall,stack and ret shape at 0x00506BD0
+0x00506C60,signature,void* __thiscall f(void* this),"plain ret, returns esi (this)"
+0x00506CD0,signature,void* __cdecl f(),"no ecx read, plain ret, address of 0xC311B8 returned"

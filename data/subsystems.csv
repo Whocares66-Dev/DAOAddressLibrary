@@ -5811,7 +5811,7 @@ id,subsystem,class,how
 5816,Rendering,"Graphics::MaterialObjectInstance::ParameterValueProvider<ECBase::ECDynArray<Math::VectorUA4f>,Graphics::MaterialObjectInstance::ParameterAccessByReference<ECBase::ECDynArray<Math::VectorUA4f>>>",builds
 5817,Rendering,,between
 5818,Rendering,,between
-5819,Rendering,,between
+5819,Rendering,,callees
 5820,Rendering,Graphics,name
 5821,Rendering,,between
 5822,Rendering,,between
@@ -5840,7 +5840,7 @@ id,subsystem,class,how
 5845,unknown,,
 5846,unknown,,
 5847,Rendering,,callers
-5848,unknown,,
+5848,Rendering,,callees
 5849,unknown,,
 5850,unknown,,
 5851,unknown,,
@@ -6084,11 +6084,11 @@ id,subsystem,class,how
 6093,Rendering,,between
 6094,Rendering,,between
 6095,Rendering,,between
-6096,Rendering,,between
-6097,Rendering,,between
-6098,Rendering,,between
-6099,Rendering,,between
-6100,Rendering,,between
+6096,Rendering,,callers
+6097,Rendering,,callers
+6098,Rendering,,callers
+6099,Rendering,,callers
+6100,Rendering,,callers
 6101,Rendering,Graphics::MaterialObject,vtable
 6102,unknown,,
 6103,unknown,,
@@ -6113,32 +6113,32 @@ id,subsystem,class,how
 6122,ThirdParty:STL,,between
 6123,ThirdParty:STL,,between
 6124,ThirdParty:STL,,string
-6125,unknown,,
-6126,unknown,,
-6127,unknown,,
-6128,unknown,,
+6125,Core,ECBase::ECDynArray<?>,name
+6126,ThirdParty:STL,std::vector<Math::Matrix4x4f>,name
+6127,ThirdParty:STL,"std::map<unsigned int,?>",name
+6128,ThirdParty:STL,"std::map<unsigned int,Math::VectorUA4f>",name
 6129,Rendering,,callers
-6130,unknown,,
+6130,Core,ECBase::ECDynArray<?>,name
 6131,Core,Multithreading::SynchSafePointerList<Graphics::MaterialObject>,name
 6132,Rendering,,callers
-6133,unknown,,
+6133,Rendering,Graphics::MaterialObject,name
 6134,Rendering,,callers
-6135,unknown,,
+6135,Rendering,Graphics::MaterialObject,name
 6136,Rendering,,callers
-6137,unknown,,
-6138,unknown,,
+6137,ThirdParty:STL,"std::map<unsigned int,Math::VectorUA4f>",name
+6138,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>>",name
 6139,ThirdParty:STL,,string
 6140,Core,Multithreading::SynchSafePointerList<Graphics::MaterialObject>,name
 6141,Core,Multithreading::SynchSafePointerList<Graphics::MaterialObject>,name
 6142,Rendering,,callers
-6143,unknown,,
+6143,Rendering,Graphics::MaterialObject,name
 6144,ThirdParty:STL,,string
 6145,ThirdParty:STL,,between
 6146,ThirdParty:STL,,owner
 6147,ThirdParty:STL,,between
 6148,ThirdParty:STL,,owner
 6149,ThirdParty:STL,,string
-6150,ThirdParty:STL,,between
+6150,Rendering,,callers
 6151,ThirdParty:STL,,between
 6152,ThirdParty:STL,,between
 6153,ThirdParty:STL,,between
@@ -6151,16 +6151,16 @@ id,subsystem,class,how
 6160,Rendering,Graphics::MaterialObject,builds
 6161,Rendering,Graphics::MaterialObject,vtable
 6162,Rendering,Graphics::MaterialObject,builds
-6163,Rendering,,between
-6164,Rendering,,between
+6163,Rendering,,callers
+6164,Rendering,,callers
 6165,Rendering,Graphics::MaterialObject,vtable
-6166,unknown,,
-6167,unknown,,
-6168,unknown,,
-6169,unknown,,
-6170,unknown,,
-6171,unknown,,
-6172,unknown,,
+6166,Rendering,Graphics::MaterialObject,name
+6167,ThirdParty:STL,"std::map<unsigned int,?>",name
+6168,Rendering,Graphics::MaterialObject,name
+6169,Rendering,Graphics::MaterialObject,name
+6170,Rendering,Graphics::MaterialObject,name
+6171,Rendering,Graphics::MaterialObject,name
+6172,Rendering,Graphics::MaterialObject,name
 6173,Rendering,Graphics::Material,vtable
 6174,Rendering,,callers
 6175,Rendering,,callers
@@ -6201,17 +6201,17 @@ id,subsystem,class,how
 6210,Rendering,,between
 6211,Rendering,Graphics::MaterialPass,vtable
 6212,Rendering,Graphics::MaterialPass,vtable
-6213,unknown,,
+6213,Rendering,Graphics::MaterialPass,name
 6214,Rendering,,callers
-6215,unknown,,
-6216,unknown,,
-6217,unknown,,
-6218,unknown,,
-6219,unknown,,
-6220,unknown,,
-6221,unknown,,
+6215,ThirdParty:STL,std,name
+6216,ThirdParty:STL,std,name
+6217,ThirdParty:STL,std,name
+6218,Rendering,Graphics::MaterialPass,name
+6219,ThirdParty:STL,std,name
+6220,ThirdParty:STL,std,name
+6221,ThirdParty:STL,std,name
 6222,Rendering,,callers
-6223,unknown,,
+6223,ThirdParty:STL,std,name
 6224,Rendering,Graphics::MaterialEffectPass,vtable
 6225,Rendering,,between
 6226,Rendering,Graphics::MaterialPass,builds
@@ -6222,10 +6222,10 @@ id,subsystem,class,how
 6231,Rendering,Graphics::MaterialEffectPass,builds
 6232,Rendering,,between
 6233,Rendering,Graphics::MaterialPass,vtable
-6234,unknown,,
+6234,Rendering,Graphics::MaterialPass,name
 6235,Rendering,,callers
-6236,unknown,,
-6237,unknown,,
+6236,Rendering,Graphics::MaterialPass,name
+6237,Rendering,Graphics::MaterialPass,name
 6238,Rendering,Graphics::MaterialEffectPass,vtable
 6239,Rendering,Graphics::MaterialEffectPass,name
 6240,Rendering,,between
@@ -6242,21 +6242,21 @@ id,subsystem,class,how
 6251,Rendering,Graphics::MaterialEffectPass,builds
 6252,Rendering,Graphics::MaterialPass,vtable
 6253,Rendering,Graphics::MaterialPass,vtable
-6254,unknown,,
-6255,unknown,,
-6256,unknown,,
-6257,unknown,,
-6258,unknown,,
-6259,unknown,,
-6260,unknown,,
-6261,unknown,,
-6262,unknown,,
-6263,unknown,,
-6264,unknown,,
-6265,unknown,,
-6266,unknown,,
-6267,unknown,,
-6268,unknown,,
+6254,ThirdParty:STL,std,name
+6255,unknown,"stdext::hash_map<std::wstring,?>",
+6256,Rendering,"stdext::hash_map<unsigned int,std::wstring>",callers
+6257,Rendering,Graphics::MaterialParameterNames,name
+6258,Rendering,Graphics::MaterialParameterNames,name
+6259,Rendering,"stdext::hash_map<unsigned int,std::wstring>",between
+6260,Rendering,Graphics::MaterialParameterNames,name
+6261,Rendering,stdext::_Hash<?>,between
+6262,Rendering,"stdext::hash_map<unsigned int,std::wstring>",between
+6263,Rendering,"stdext::hash_map<unsigned int,std::wstring>",between
+6264,Rendering,Graphics::MaterialParameterNames,name
+6265,Rendering,Graphics::MaterialParameterNames,name
+6266,Rendering,,between
+6267,Rendering,,between
+6268,Rendering,,between
 6269,Rendering,Graphics::MaterialTechnique,vtable
 6270,Rendering,,callers
 6271,Rendering,Graphics::MaterialTechnique,vtable
@@ -6448,7 +6448,7 @@ id,subsystem,class,how
 6457,Rendering,Graphics::MaterialArtVector4f,vtable
 6458,Rendering,Graphics::MaterialArtTexture,vtable
 6459,Rendering,Graphics::MaterialArtTexture,vtable
-6460,Rendering,,between
+6460,Rendering,,callers
 6461,Rendering,,between
 6462,Rendering,Graphics::MaterialArtTexture,vtable
 6463,Rendering,Graphics::MaterialArtTexture,vtable
@@ -37530,8 +37530,8 @@ id,subsystem,class,how
 37637,ThirdParty:STL,,owner
 37638,Rendering,,owner
 37639,Rendering,,owner
-37640,Compiler:EHFunclets,,range
-37641,Compiler:EHFunclets,,range
+37640,Core,ECBase::ECDynArray<?>,owner
+37641,Core,ECBase::ECDynArray<?>,owner
 37642,Rendering,,owner
 37643,Rendering,,owner
 37644,Rendering,,owner
@@ -37584,16 +37584,16 @@ id,subsystem,class,how
 37691,Rendering,,owner
 37692,Rendering,,owner
 37693,Rendering,,owner
-37694,Compiler:EHFunclets,,range
-37695,Compiler:EHFunclets,,range
-37696,Compiler:EHFunclets,,range
-37697,Compiler:EHFunclets,,range
-37698,Compiler:EHFunclets,,range
-37699,Compiler:EHFunclets,,range
-37700,Compiler:EHFunclets,,range
-37701,Compiler:EHFunclets,,range
-37702,Compiler:EHFunclets,,range
-37703,Compiler:EHFunclets,,range
+37694,Rendering,Graphics::MaterialObject,owner
+37695,Rendering,Graphics::MaterialObject,owner
+37696,Rendering,Graphics::MaterialObject,owner
+37697,Rendering,Graphics::MaterialObject,owner
+37698,Rendering,Graphics::MaterialObject,owner
+37699,Rendering,Graphics::MaterialObject,owner
+37700,Rendering,Graphics::MaterialObject,owner
+37701,Rendering,Graphics::MaterialObject,owner
+37702,Rendering,Graphics::MaterialObject,owner
+37703,Rendering,Graphics::MaterialObject,owner
 37704,Rendering,Graphics::Material,owner
 37705,Rendering,Graphics::Material,owner
 37706,Rendering,Graphics::Material,owner
@@ -37645,20 +37645,20 @@ id,subsystem,class,how
 37752,Rendering,,owner
 37753,Rendering,Graphics::MaterialEffectPass,owner
 37754,Rendering,Graphics::MaterialEffectPass,owner
-37755,Compiler:EHFunclets,,range
-37756,Compiler:EHFunclets,,range
-37757,Compiler:EHFunclets,,range
-37758,Compiler:EHFunclets,,range
-37759,Compiler:EHFunclets,,range
-37760,Compiler:EHFunclets,,range
-37761,Compiler:EHFunclets,,range
-37762,Compiler:EHFunclets,,range
-37763,Compiler:EHFunclets,,range
-37764,Compiler:EHFunclets,,range
-37765,Compiler:EHFunclets,,range
-37766,Compiler:EHFunclets,,range
-37767,Compiler:EHFunclets,,range
-37768,Compiler:EHFunclets,,range
+37755,Rendering,Graphics::MaterialParameterNames,owner
+37756,Rendering,Graphics::MaterialParameterNames,owner
+37757,Rendering,Graphics::MaterialParameterNames,owner
+37758,Rendering,Graphics::MaterialParameterNames,owner
+37759,Rendering,Graphics::MaterialParameterNames,owner
+37760,Rendering,stdext::_Hash<?>,owner
+37761,Rendering,stdext::_Hash<?>,owner
+37762,Rendering,"stdext::hash_map<unsigned int,std::wstring>",owner
+37763,Rendering,"stdext::hash_map<unsigned int,std::wstring>",owner
+37764,Rendering,"stdext::hash_map<unsigned int,std::wstring>",owner
+37765,Rendering,Graphics::MaterialParameterNames,owner
+37766,Rendering,Graphics::MaterialParameterNames,owner
+37767,Rendering,Graphics::MaterialParameterNames,owner
+37768,Rendering,Graphics::MaterialParameterNames,owner
 37769,Rendering,Graphics::MaterialTechnique,owner
 37770,Rendering,Graphics::MaterialTechnique,owner
 37771,Rendering,Graphics::MaterialTechnique,owner
@@ -38484,8 +38484,8 @@ id,subsystem,class,how
 38591,GUI,GUI::ScaleformAtlas,owner
 38592,GUI,GUI::ScaleformAtlas,owner
 38593,GUI,GUI::ScaleformAtlas,owner
-38594,Compiler:EHFunclets,,range
-38595,Compiler:EHFunclets,,range
+38594,Rendering,Graphics::MaterialParameterNames,owner
+38595,Rendering,Graphics::MaterialParameterNames,owner
 38596,GUI,GUI::ScaleformAtlas,owner
 38597,GUI,GUI::ScaleformAtlas,owner
 38598,GUI,GUI::GUISystem,owner
@@ -41318,11 +41318,11 @@ id,subsystem,class,how
 41425,World,EC::ChunkManager,owner
 41426,World,EC::ChunkManager,owner
 41427,Resources,,owner
-41428,Compiler:EHFunclets,,range
-41429,Compiler:EHFunclets,,range
-41430,Compiler:EHFunclets,,range
-41431,Compiler:EHFunclets,,range
-41432,Compiler:EHFunclets,,range
+41428,Rendering,"stdext::hash_map<unsigned int,std::wstring>",owner
+41429,Rendering,"stdext::hash_map<unsigned int,std::wstring>",owner
+41430,Rendering,"stdext::hash_map<unsigned int,std::wstring>",owner
+41431,Rendering,"stdext::hash_map<unsigned int,std::wstring>",owner
+41432,Rendering,"stdext::hash_map<unsigned int,std::wstring>",owner
 41433,Compiler:EHFunclets,,range
 41434,Compiler:EHFunclets,,range
 41435,Compiler:EHFunclets,,range
@@ -55073,8 +55073,8 @@ id,subsystem,class,how
 55180,Animation,FacialAnimation,owner
 55181,Compiler:EHFunclets,,range
 55182,Compiler:EHFunclets,,range
-55183,Compiler:EHFunclets,,range
-55184,Compiler:EHFunclets,,range
+55183,Rendering,,owner
+55184,Rendering,,owner
 55185,Animation,FacialAnimation::FacialAnimationManager,owner
 55186,Animation,FacialAnimation::FacialAnimationManager,owner
 55187,Animation,FacialAnimation::FacialAnimationManager,owner
@@ -58839,8 +58839,8 @@ id,subsystem,class,how
 58946,Compiler:AtexitDtors,,range
 58947,Compiler:AtexitDtors,,range
 58948,Compiler:AtexitDtors,,range
-58949,Compiler:AtexitDtors,,range
-58950,Compiler:AtexitDtors,,range
+58949,Rendering,,pointer
+58950,Rendering,,pointer
 58951,Compiler:AtexitDtors,,range
 58952,Compiler:AtexitDtors,,range
 58953,ThirdParty:Scaleform,GAllocator,builds

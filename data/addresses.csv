@@ -6123,25 +6123,25 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6122,function,,0x00500760,0x007e89b0,0x00500760
 6123,function,,0x005007f0,0x005b5520,0x005007f0
 6124,function,,0x00500870,0x007e8a40,0x00500870
-6125,function,,0x00500a30,0x007e8c00,0x00500a30
-6126,function,,0x00500a50,0x007e8c20,0x00500a50
-6127,function,,0x00500ae0,0x007e92f0,0x00500ae0
-6128,function,,0x00500b20,0x007e8cb0,0x00500b20
+6125,function,ECBase::ECDynArray<?>::operator=,0x00500a30,0x007e8c00,0x00500a30
+6126,function,std::vector<Math::Matrix4x4f>::push_back,0x00500a50,0x007e8c20,0x00500a50
+6127,function,"std::map<unsigned int,?>::~map",0x00500ae0,0x007e92f0,0x00500ae0
+6128,function,"std::map<unsigned int,Math::VectorUA4f>::operator[]",0x00500b20,0x007e8cb0,0x00500b20
 6129,function,,0x00500bb0,0x007e8d40,0x00500bb0
-6130,function,,0x00500c20,0x007e8db0,0x00500c20
+6130,function,ECBase::ECDynArray<?>::Clear,0x00500c20,0x007e8db0,0x00500c20
 6131,function,Multithreading::SynchSafePointerList<Graphics::MaterialObject>::~SynchSafePointerList,0x00500d30,0x007e8ec0,0x00500d30
 6132,function,,0x00500df0,0x007e8f80,0x00500df0
-6133,function,,0x00500fd0,0x007e9160,0x00500fd0
+6133,function,Graphics::MaterialObject::SetFloatParameter,0x00500fd0,0x007e9160,0x00500fd0
 6134,function,,0x00501010,0x007e91a0,0x00501010
-6135,function,,0x00501050,0x007e91e0,0x00501050
+6135,function,Graphics::MaterialObject::SetMatrixParameter,0x00501050,0x007e91e0,0x00501050
 6136,function,,0x005010f0,0x007e9280,0x005010f0
-6137,function,,0x00501160,0x007e9330,0x00501160
-6138,function,,0x005011b0,0x007e9380,0x005011b0
+6137,function,"std::map<unsigned int,Math::VectorUA4f>::operator=",0x00501160,0x007e9330,0x00501160
+6138,function,"std::_Tree<std::_Tmap_traits<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>>::_Erase",0x005011b0,0x007e9380,0x005011b0
 6139,function,,0x005011f0,0x007e93c0,0x005011f0
 6140,function,Multithreading::SynchSafePointerList<Graphics::MaterialObject>::SynchSafePointerList,0x005014c0,0x007e9690,0x005014c0
 6141,function,Multithreading::SynchSafePointerList<Graphics::MaterialObject>::`scalar deleting destructor',0x00501510,0x007e96e0,0x00501510
 6142,function,,0x00501540,0x007e9710,0x00501540
-6143,function,,0x005015d0,0x007e97a0,0x005015d0
+6143,function,Graphics::MaterialObject::SetVector4Parameter,0x005015d0,0x007e97a0,0x005015d0
 6144,function,,0x00501610,0x007e97e0,0x00501610
 6145,function,,0x005016e0,0x007e98b0,0x005016e0
 6146,function,,0x00501771,0x007e9941,0x00501771
@@ -6164,13 +6164,13 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6163,function,,0x00502610,0x007ea7e0,0x00502610
 6164,function,,0x005026f0,0x007ea8c0,0x005026f0
 6165,function,,0x00502740,0x007ea910,0x00502740
-6166,function,,0x00502770,0x007ea940,0x00502770
-6167,function,,0x005027b0,0x007ea980,0x005027b0
-6168,function,,0x00502800,0x007ea9d0,0x00502800
-6169,function,,0x00502840,0x007eaa10,0x00502840
-6170,function,,0x005028c0,0x007eaa90,0x005028c0
-6171,function,,0x00502bb0,0x007ead80,0x00502bb0
-6172,function,,0x00502cd0,0x007eaea0,0x00502cd0
+6166,function,Graphics::MaterialObject::SetVector4ArrayParameter,0x00502770,0x007ea940,0x00502770
+6167,function,"std::map<unsigned int,?>::operator=",0x005027b0,0x007ea980,0x005027b0
+6168,function,Graphics::MaterialObject::SetTextureParameter,0x00502800,0x007ea9d0,0x00502800
+6169,function,Graphics::MaterialObject::SetTextureParameterByName,0x00502840,0x007eaa10,0x00502840
+6170,function,Graphics::MaterialObject::ApplyParamDefaults,0x005028c0,0x007eaa90,0x005028c0
+6171,function,Graphics::MaterialObject::ApplyMaterialDefaults,0x00502bb0,0x007ead80,0x00502bb0
+6172,function,Graphics::MaterialObject::Load,0x00502cd0,0x007eaea0,0x00502cd0
 6173,function,,0x00503110,0x007f09b0,0x00503110
 6174,function,,0x00503120,0x007f09c0,0x00503120
 6175,function,,0x00503130,0x007f09d0,0x00503130
@@ -6211,17 +6211,17 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6210,function,,0x00503d80,0x007e3f40,0x00503d80
 6211,function,,0x005040f0,0x007e42b0,0x005040f0
 6212,function,,0x00504230,0x007e43f0,0x00504230
-6213,function,,0x005043b0,0x007e4570,0x005043b0
+6213,function,Graphics::MaterialPass::AssignParameterRegisters,0x005043b0,0x007e4570,0x005043b0
 6214,function,,0x00504470,0x007e4630,0x00504470
-6215,function,,0x00504500,0x004c2290,0x00504500
-6216,function,,0x00504570,0x007e46c0,0x00504570
-6217,function,,0x00504620,0x007e4770,0x00504620
-6218,function,,0x00504660,0x007e47b0,0x00504660
-6219,function,,0x00504700,0x007e4850,0x00504700
-6220,function,,0x00504740,0x007e4890,0x00504740
-6221,function,,0x00504900,0x007e4a50,0x00504900
+6215,function,"std::remove_copy<?*,stdext::checked_array_iterator<?*>,?>",0x00504500,0x004c2290,0x00504500
+6216,function,"std::_Median<?*,?>",0x00504570,0x007e46c0,0x00504570
+6217,function,"std::_Make_heap<?*,?>",0x00504620,0x007e4770,0x00504620
+6218,function,Graphics::MaterialPass::FindParameterRecord,0x00504660,0x007e47b0,0x00504660
+6219,function,"std::_Copy_opt<?*,?*>",0x00504700,0x007e4850,0x00504700
+6220,function,"std::_Unguarded_partition<?*,?>",0x00504740,0x007e4890,0x00504740
+6221,function,"std::_Insertion_sort<?*,?>",0x00504900,0x007e4a50,0x00504900
 6222,function,,0x005049b0,0x007e4b00,0x005049b0
-6223,function,,0x00504a90,0x007e4d00,0x00504a90
+6223,function,"std::_Sort_heap<?*,?>",0x00504a90,0x007e4d00,0x00504a90
 6224,function,,0x00504ae0,0x007e4df0,0x00504ae0
 6225,function,,0x00504b50,0x007e4e60,0x00504b50
 6226,function,,0x00504c40,0x007e5040,0x00504c40
@@ -6232,10 +6232,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6231,function,,0x00504e30,0x007e5230,0x00504e30
 6232,function,,0x00504eb0,0x007e52c0,0x00504eb0
 6233,function,,0x00504ef0,0x007e53c0,0x00504ef0
-6234,function,,0x00504f10,0x007e53e0,0x00504f10
+6234,function,Graphics::MaterialPass::BuildConstantRanges,0x00504f10,0x007e53e0,0x00504f10
 6235,function,,0x00505150,0x007e5620,0x00505150
-6236,function,,0x00505c10,0x007e60e0,0x00505c10
-6237,function,,0x00505c90,0x007e6160,0x00505c90
+6236,function,Graphics::MaterialPass::AllocParameterBytes,0x00505c10,0x007e60e0,0x00505c10
+6237,function,Graphics::MaterialPass::ResetParameterPool,0x00505c90,0x007e6160,0x00505c90
 6238,function,,0x00505d20,0x007e61f0,0x00505d20
 6239,function,Graphics::MaterialEffectPass::LoadFrameBufferEffect,0x00505d40,0x007e6210,0x00505d40
 6240,function,,0x00505e50,0x007e6320,0x00505e50
@@ -6252,18 +6252,18 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6251,function,,0x005064b0,0x007e6aa0,0x005064b0
 6252,function,,0x00506520,0x007e6b10,0x00506520
 6253,function,,0x00506550,0x007e6b40,0x00506550
-6254,function,,0x00506680,0x00482b10,0x00506680
-6255,function,,0x005066e0,0x0061aa60,0x005066e0
-6256,function,,0x00506730,0x007f12d0,0x00506730
-6257,function,,0x005067a0,0x007f1340,0x005067a0
-6258,function,,0x00506870,0x007f1410,0x00506870
-6259,function,,0x00506970,0x00468b90,0x00506970
-6260,function,,0x00506a00,0x007f1510,0x00506a00
-6261,function,,0x00506a60,0x00468c20,0x00506a60
-6262,function,,0x00506ae0,0x007f1570,0x00506ae0
-6263,function,,0x00506bd0,0x00468ca0,0x00506bd0
-6264,function,,0x00506c60,0x007f1660,0x00506c60
-6265,function,,0x00506cd0,0x007f16d0,0x00506cd0
+6254,function,"std::_Construct<std::pair<std::wstring const,unsigned int>,std::pair<std::wstring const,unsigned int>>",0x00506680,0x00482b10,0x00506680
+6255,function,"stdext::hash_map<std::wstring,?>::count",0x005066e0,0x0061aa60,0x005066e0
+6256,function,"stdext::hash_map<unsigned int,std::wstring>::find",0x00506730,0x007f12d0,0x00506730
+6257,function,Graphics::MaterialParameterNames::FindId,0x005067a0,0x007f1340,0x005067a0
+6258,function,Graphics::MaterialParameterNames::GetName,0x00506870,0x007f1410,0x00506870
+6259,function,"stdext::hash_map<unsigned int,std::wstring>::~hash_map",0x00506970,0x00468b90,0x00506970
+6260,function,Graphics::MaterialParameterNames::~MaterialParameterNames,0x00506a00,0x007f1510,0x00506a00
+6261,function,stdext::_Hash<?>::_Hash,0x00506a60,0x00468c20,0x00506a60
+6262,function,"stdext::hash_map<unsigned int,std::wstring>::operator[]",0x00506ae0,0x007f1570,0x00506ae0
+6263,function,"stdext::hash_map<unsigned int,std::wstring>::hash_map",0x00506bd0,0x00468ca0,0x00506bd0
+6264,function,Graphics::MaterialParameterNames::MaterialParameterNames,0x00506c60,0x007f1660,0x00506c60
+6265,function,Graphics::MaterialParameterNames::Get,0x00506cd0,0x007f16d0,0x00506cd0
 6266,function,,0x00506d40,0x007f1740,0x00506d40
 6267,function,,0x00506e30,0x007fd5a0,0x00506e30
 6268,function,,0x00506e40,0x007fd5b0,0x00506e40
