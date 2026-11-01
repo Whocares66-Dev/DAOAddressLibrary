@@ -32,7 +32,9 @@ What a run does, on the GOG build's addresses:
 - every line of data/ghidra_fixes.csv (`address,what,value,why`):
   `convention` sets the calling convention (`__thiscall`, `__stdcall`,
   `__cdecl`, `__fastcall`); `signature` sets the prototype from C
-  (`int f(void *this, int key)`, the name in it ignored: the table names);
+  (`bool __thiscall f(void *this, int *key)`, in types Ghidra knows, the
+  first parameter of a __thiscall being this and the name ignored: the
+  table names);
   `clear` removes a misleading label at the address (`value` the label,
   or empty for every non-primary one).
 
@@ -69,6 +71,7 @@ import json
 from ghidra.program.model.symbol import SourceType
 from ghidra.program.model.symbol import SymbolUtilities
 from ghidra.app.util.cparser.C import CParserUtils
+from ghidra.app.cmd.function import ApplyFunctionSignatureCmd
 
 W = json.loads(PAYLOAD)
 program = currentProgram
@@ -159,10 +162,26 @@ for address, what, value in W["fixes"]:
             fm.getFunctionAt(a).setCallingConvention(value)
         elif what == "signature":
             f = fm.getFunctionAt(a)
-            sig = CParserUtils.parseSignature(None, program, value, True)
-            from ghidra.app.cmd.function import ApplyFunctionSignatureCmd
+            symbol = f.getSymbol()
+            kept = (symbol.getName(), symbol.getParentNamespace(), symbol.getSource())
+            # Ghidra's C parser has no __thiscall: the prototype goes in
+            # without it and without its first (this) parameter, and the
+            # convention then makes this ECX's auto-parameter.
+            text, thiscall = value, "__thiscall" in value
+            if thiscall:
+                head, rest = text.replace("__thiscall", "").split("(", 1)
+                params = rest.rsplit(")", 1)[0].split(",")[1:]
+                text = head + "(" + (",".join(params) if params else "void") + ")"
+            sig = CParserUtils.parseSignature(None, program, text, False)
+            if sig is None:
+                raise Exception("Ghidra cannot parse " + text)
             ApplyFunctionSignatureCmd(a, sig, SOURCE, True, False).applyTo(program)
-            # The table names the function, not the signature.
+            if thiscall:
+                f.setCallingConvention("__thiscall")
+            # Applying a signature renames the function after it; the table
+            # names the function, not the signature.
+            if (symbol.getName(), symbol.getParentNamespace()) != kept[:2]:
+                symbol.setNameAndNamespace(kept[0], kept[1], kept[2])
         elif what == "clear":
             for s in list(st.getSymbols(a)):
                 if (value and s.getName() == value) or (not value and not s.isPrimary()):
