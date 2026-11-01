@@ -11176,3 +11176,106 @@ address,what,value,why
 0x0045C320,convention,__cdecl,"STL helper: plain ret, stack arguments"
 0x0045C480,convention,__cdecl,"STL helper: plain ret, stack arguments"
 0x0045C2C0,convention,__cdecl,"STL helper: plain ret, stack arguments"
+0x006A8770,signature,"float __thiscall f(void *this, int hand)","ret 4, hand at 0x006A8788"
+0x006A87E0,signature,"float __thiscall f(void *this, void *target, int hand)","ret 8, hand compared at 0x006A87F8, target unused"
+0x006A8AA0,signature,bool __thiscall f(void *this),"plain ret, ecx read, al"
+0x006A8C10,signature,"void __thiscall f(void *this, void *partyInventory)","ret 4, arg compared with +0xBF0's Inventory at 0x006A8C58"
+0x006A9030,signature,void __thiscall f(void *this),"plain ret, creates the PartyTactics"
+0x006A9140,signature,int __thiscall f(void *this),"plain ret, eax = animation row"
+0x006A91C0,signature,int __thiscall f(void *this),plain ret; ecx = Path
+0x006A9430,signature,"void __thiscall f(void *this, bool setStopping)","ret 4, byte at 0x006A9445"
+0x006A9480,signature,"void * __thiscall f(void *this, float dt)","ret 4, returns this+0xD10"
+0x006A95D0,signature,int __thiscall f(void *this),plain ret; ecx = MovementController
+0x006A9600,signature,int __thiscall f(void *this),plain ret; ecx = item
+0x006A9640,signature,void * __thiscall f(void *this),"constructor, returns this"
+0x006AA440,signature,"bool __thiscall f(void *this, void *controlled, int arg)",ret 8; args at 0x006AA458 and 0x006AA48D (the second goes to vtable +0xA0 with 1)
+0x006AA890,signature,"void __thiscall f(void *this, bool visible)","ret 4, bl at 0x006AA891"
+0x006AAAA0,signature,"bool __thiscall f(void *this, void *event, void *key)",ret 8
+0x006AABB0,signature,"bool __thiscall f(void *this, void *event)",ret 4
+0x006AAC00,signature,"bool __thiscall f(void *this, void *event)","ret 4, al = 1 at 0x006AAC0C"
+0x006AAC20,signature,"bool __thiscall f(void *this, void *event)","ret 4, al = 1 at 0x006AAC46"
+0x006AAE20,signature,"bool __thiscall f(void *this, void *event, void *handRecord)",ret 8
+0x006AB170,signature,"void __cdecl f(void *model, int part, void *tintBlock)",plain ret with the caller's add esp at 0x006BDB0B
+0x006AB440,signature,void * __thiscall f(void *this),"slot 93, returns the record"
+0x006AB4B0,signature,int __thiscall f(void *this),"slot 72, ends in _ftol2"
+0x006AB5B0,signature,"void __thiscall f(void *this, int value)","slot 75, ret 4"
+0x006AB620,convention,__thiscall,ecx read first at 0x006AB624
+0x006AD8F0,signature,"void __thiscall f(void *this, float dt)","ret 4 at 0x006AD947, ecx read at 0x006AD8F9"
+0x006AE2B0,signature,"bool __thiscall f(void *this, unsigned int id)",ret 4
+0x006AE360,signature,"bool __thiscall f(void *this, unsigned int creatureId)",ret 4
+0x006AE450,signature,"int __thiscall f(void *this, void *entry)",ret 4
+0x006AEC10,signature,"void __thiscall f(void *this, unsigned int creatureId)",ret 4
+0x006AF630,signature,"bool __thiscall f(void *this, void *item, int slot, unsigned char *reason)","ret 0xc; al = (reason == 1) at 0x006AF763, reason byte 0/1/2 stored through the pointer"
+0x006AFB90,signature,"void __thiscall f(void *this, float delta)",ret 4
+0x006B1BC0,signature,"void __cdecl f(void *model, float goreLevel)",plain ret; callers 0x006B73E8 and 0x007F45CD pass the model then a float and add esp
+0x006B2320,signature,"void * __thiscall f(void *this, void *other)","ret 4, returns this"
+0x006B23B0,signature,"void * __thiscall f(void *this, void *other)","ret 4 at 0x006B246D, returns this"
+0x006ABB30,clear,FUN_006abb30,"cold block of EnterCombat 0x006ABA40 (jumps back to 0x006ABB14), not a function"
+0x006AFCD0,clear,FUN_006afcd0,"exit block of OnManaStaminaChanged 0x006AFB90 (jp target at 0x006AFC2A), not a function"
+0x006B2470,signature,"void __thiscall f(void *this, void *gffStruct)","ret 4, ecx = creature, struct builder at [esp+4]"
+0x006B2F70,signature,"int __thiscall f(void *this, void *oldPos, void *newPos)",ret 8; 0x6B3017 reads al of the diff
+0x006B3410,signature,"void * __thiscall f(void *this, void *out, void *tag, int n)",ret 0xC; returns the out list in edi
+0x006B3620,convention,__thiscall,"vtable slot, ecx = creature+0x70"
+0x006B3690,convention,__thiscall,"vtable slot, ecx = creature+0x70"
+0x006B4070,signature,void __thiscall f(void *this),"plain ret, ecx = creature"
+0x006B5D00,signature,void __thiscall f(void *this),"plain ret, ecx = creature"
+0x006B5D90,signature,"void __thiscall f(void *this, bool active)","ret 4, bl = arg"
+0x006B5EF0,signature,"void __thiscall f(void *this, void *oldPos, bool flag)","ret 8, vtable slot 31; flag byte [ebp+0xC] read at 0x6B5F61: 0x6B611C"
+0x006B6290,signature,"bool __thiscall f(void *this, void *animEvent)","ret 4, returns al; event id at [event+0]"
+0x006B6F60,signature,void __thiscall f(void *this),"vtable slot, plain ret"
+0x006B7330,signature,"void __thiscall f(void *this, void *outVector)","ret 4, ecx read first"
+0x006B7400,signature,"void __cdecl f(void *creature, void *appearance, void *tintBlock)","plain ret, args at [esp+0x34..0x3C] after the frame, caller add esp,0xC at 0x6BDBF9"
+0x006B7530,signature,void __thiscall f(void *this),"plain ret, ecx -> esi"
+0x006B8250,signature,"void __thiscall f(void *this, unsigned int oldGroup, unsigned int newGroup)",ret 8: 0x6B8444
+0x006B8450,signature,"void __thiscall f(void *this, unsigned int group)","ret 4, vtable slot 92: 0x6B8456"
+0x006B8470,signature,"void __thiscall f(void *this, unsigned int group)",ret 4: 0x6B8539
+0x006B8D40,signature,void __thiscall f(void *this),plain ret
+0x006B8E70,signature,"void __thiscall f(void *this, int kind)",ret 4
+0x006B9050,signature,bool __thiscall f(void *this),"plain ret, al"
+0x006B90E0,signature,bool __thiscall f(void *this),"plain ret, al"
+0x006B9170,signature,"void __thiscall f(void *this, void *effect)",ret 4; vtable slot of the +0x70 interface
+0x006B9330,signature,"void __thiscall f(void *this, void *effect)",ret 4
+0x006B9470,signature,void __thiscall f(void *this),plain ret
+0x006B9620,signature,"void __thiscall f(void *this, void *bag)",ret 4
+0x006B98E0,signature,"void __thiscall f(void *this, bool atEnd)",ret 4
+0x006B9B30,signature,"void * __thiscall f(void *this, void *unused)","ret 4, argument never read"
+0x006B9BC0,signature,"bool __thiscall f(void *this, int a, int b)","ret 8, returns bl: 0x6B9C0F"
+0x006B9CB0,signature,"void * __thiscall f(void *this, unsigned int capacity)","ret 4, [esp+0x1c] used as count"
+0x006B9ED0,signature,"void * __thiscall f(void *this, int objectId, int a, int b)","ret 0xC; ITEMS/GUI: ctor(-1,0,1)"
+0x006BA800,signature,void * __thiscall f(void *this),"plain ret, this = creature+0x440, returns the pointer in the attribute at this+0x7B0 (value +0xC)"
+0x006BA810,signature,bool __thiscall f(void *this),plain ret
+0x006BA840,signature,bool __thiscall f(void *this),plain ret
+0x006BA890,signature,"void * __thiscall f(void *this, void *unused)",ret 4
+0x006BAFE0,signature,void __thiscall f(void *this),plain ret
+0x006BBF10,signature,void __cdecl f(void *item),"plain ret, item at [esp+0x38] after the frame"
+0x006BBFC0,signature,"void __thiscall f(void *this, int ghost)",ret 4
+0x006BC290,signature,void __cdecl f(void *item),plain ret
+0x006BC340,signature,void __cdecl f(void *item),"plain ret, item at [esp+8]"
+0x006BC360,signature,void __cdecl f(void *item),plain ret
+0x006BC420,signature,void __thiscall f(void *this),plain ret
+0x006BC670,signature,"void __thiscall f(void *this, int dtMs)",ret 4
+0x006BCC30,signature,"void __thiscall f(void *this, void *gff, void *gffStruct, bool replaceInventory)",ret 0xC
+0x006BD3B0,signature,void * __thiscall f(void *this),"plain ret, this = creature+0x18"
+0x006BD4A0,signature,void * __thiscall f(void *this),plain ret
+0x006BD4B0,signature,"void * __thiscall f(void *this, unsigned int flags)",ret 4
+0x006BD700,signature,"void __cdecl f(void *appearance, void *creature)","plain ret, args at [esp+0x94C], [esp+0x950]"
+0x006BE980,signature,"void __thiscall f(void *this, void *gffStruct)",ret 4
+0x006BF710,signature,bool __thiscall f(void *this),"plain ret, al"
+0x006BFC80,signature,"bool __thiscall f(void *this, void *animEvent)",ret 4
+0x006C04C0,signature,"void __thiscall f(void *this, int mode)",ret 4
+0x006C1310,signature,void __thiscall f(void *this),plain ret
+0x006C13B0,signature,"void __cdecl f(unsigned int creatureId, int mode)","plain ret, args at [esp+4], [esp+8]"
+0x006C13E0,signature,void __thiscall f(void *this),vtable slot
+0x006C16E0,signature,"void __thiscall f(void *this, void *item, int slot)",ret 8
+0x006C19F0,signature,"void __thiscall f(void *this, void *item, int slot)",ret 8
+0x006C2010,signature,"void __thiscall f(void *this, void *gffStruct)",ret 4; the argument is the creature's GFF struct passed on to LoadAppearance at 0x6C20CB
+0x006C9D00,signature,void __thiscall f(void *this),plain ret
+0x006CBA90,signature,"void __thiscall f(void *this, bool value)",ret 4: 0x6CBAAE
+0x006EAEE0,signature,void * __cdecl f(void),"plain ret, returns 0xC04460: 0x6EAF2D"
+0x006EB5C0,signature,void __thiscall f(void *this),plain ret
+0x006EB9B0,signature,"int __stdcall f(void *key, void *list)",ret 8; 0x6EB9B0 loads ecx from [esp+8] (the list) and the key from [esp+4]
+0x006EBA40,signature,"int __stdcall f(void *key, void *list)","ret 8, list at [esp+8] read at 0x6EBA44"
+0x006EBB30,signature,int __thiscall f(void *this),plain ret
+0x006EBB50,signature,int __thiscall f(void *this),plain ret
+0x006EBD60,signature,void * __thiscall f(void *this),plain ret
+0x006EC400,signature,"void * __thiscall f(void *this, unsigned int flags)",ret 4
