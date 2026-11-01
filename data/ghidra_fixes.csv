@@ -7100,3 +7100,50 @@ address,what,value,why
 0x0067DCB0,signature,"void __thiscall f(void *this, float *point, void *outName)",read in the exe at 0x0067DCB0 (CCArea::GetReverbPresetAtPoint)
 0x0067E350,signature,"void __thiscall f(void *this, void *source)",read in the exe at 0x0067E350 (CCArea::SelectFrameBufferEffects)
 0x0067CAD0,signature,void __thiscall f(void *this),read in the exe at 0x0067CAD0 (CCArea::ResumeAfterCutscene)
+0x00623FE0,signature,void __thiscall GUI_GUIScreenshotInfo_dtor(void* this),Plain ret; reads ecx at 0x00624002.
+0x00624120,clear,GUI::GUIScreenshotInfo::vfunction5,"It is slot 4, the scalar deleting destructor (data 0x00B04F50), not a slot-5 function."
+0x00624120,signature,"void* __thiscall GUI_GUIScreenshotInfo_scalar_deleting_dtor(void* this, unsigned int flags)",ret 4; tests [esp+8] bit 0.
+0x00624140,signature,void* __thiscall GUI_GUIAchievementInfo_ctor(void* this),"Plain ret; default constructor, no arguments."
+0x006243A0,convention,__thiscall,"Adjustor thunk: sub ecx,0x1C; jmp 0x006244F0."
+0x006243B0,convention,__thiscall,"Adjustor thunk: sub ecx,0x20; jmp 0x006244F0."
+0x006243C0,convention,__thiscall,"Adjustor thunk: sub ecx,8; jmp 0x006244F0."
+0x006243D0,signature,void __thiscall GUI_GUIAchievementInfo_dtor(void* this),Plain ret; reads ecx at 0x006243F2.
+0x006244F0,signature,"void* __thiscall GUI_GUIAchievementInfo_scalar_deleting_dtor(void* this, unsigned int flags)",ret 4; tests [esp+8] bit 0.
+0x00624510,signature,"void* __thiscall GUI_GUIAchievementInfo_ctor_from_record(void* this, void* record)",ret 4; passes [esp+0x60] (the record) to Init 0x00622A00; returns this.
+0x00624CD0,signature,void __thiscall ScreenshotFileList_ctor(void* this),Plain ret; reads ecx at 0x00624CD8; element ctor for eh_vector_constructor_iterator.
+0x00624E00,signature,void __thiscall GUI_GUICommunityFeatures_dtor(void* this),Plain ret; reads ecx at 0x00624E25.
+0x00624F70,clear,GUI::GUICommunityFeatures::vfunction2,"Adjustor thunk (this-0x1C) to the scalar deleting destructor 0x00625810, slot 1 of vftable_at_1c."
+0x00624F80,clear,GUI::GUICommunityFeatures::vfunction1,"Adjustor thunk (this-0x20) to the scalar deleting destructor 0x00625810, slot 0 of vftable_at_20."
+0x00624F90,clear,GUI::GUICommunityFeatures::vfunction3,"Adjustor thunk (this-8) to the scalar deleting destructor 0x00625810, slot 2 of vftable_at_8."
+0x00624FA0,clear,GUI::GUICommunityFeatures::vfunction1,"It is vftable slot 0 (data 0x00B05180), GetClassInfo."
+0x00624FA0,signature,void* __thiscall GUI_GUICommunityFeatures_GetClassInfo(void* this),"Vftable slot 0; plain ret, never reads ecx; returns 0x00BFE338."
+0x00625100,signature,"void* __thiscall GUI_GUICommunityFeatures_copy_ctor(void* this, void* other)",ret 4; reads [esp+0x20] as the source; returns this.
+0x00625390,signature,void __thiscall GUI_GUICommunityFeatures_OnShow(void* this),Vftable slot 5; plain ret at 0x006256D7.
+0x006256E0,signature,void __thiscall GUI_GUICommunityFeatures_ClearScreenshots(void* this),Plain ret; reads ecx at 0x006256E1.
+0x006257A0,clear,GUI::GUICommunityFeatures::clone,Use the address library's Clone (vftable slot 1).
+0x006257A0,signature,void* __thiscall GUI_GUICommunityFeatures_Clone(void* this),Plain ret; reads ecx at 0x006257C2.
+0x00625810,clear,GUI::GUICommunityFeatures::vfunction5,"It is slot 4, the scalar deleting destructor (data 0x00B05190)."
+0x00625810,signature,"void* __thiscall GUI_GUICommunityFeatures_scalar_deleting_dtor(void* this, unsigned int flags)",ret 4; tests [esp+8] bit 0.
+0x00625830,signature,void __thiscall GUI_GUICommunityFeatures_RetrieveScreenshotList(void* this),"vftable_at_1c slot 20; this is the +0x1C sub-object (lea ebx,[edi-0x1C] at 0x00625872); plain ret."
+0x00625BD0,signature,"void __thiscall Messages_RegisterText_RetrieveAchievementListMessage(void* registry, void* name)",ret 4; reads ecx at 0x00625BF5.
+0x00625C90,signature,"void __thiscall Messages_RegisterText_RetrieveAchievementInfoMessage(void* registry, void* name)",ret 4; same body as 0x00625BD0.
+0x00625D50,signature,"void __thiscall Messages_RegisterText_ClearAchievementStatusMessage(void* registry, void* name)",ret 4; same body as 0x00625BD0.
+0x00625E10,signature,"void __thiscall Messages_RegisterText_RetrieveScreenshotListMessage(void* registry, void* name)",ret 4; same body as 0x00625BD0.
+0x00625ED0,signature,"void __thiscall Messages_RegisterText_SelectScreenshotMessage(void* registry, void* name)",ret 4; same body as 0x00625BD0.
+0x00625F90,signature,"void __thiscall Messages_RegisterText_UploadSelectedScreenshotsMessage(void* registry, void* name)",ret 4; same body as 0x00625BD0.
+0x00626050,signature,"void __thiscall Messages_RegisterText_DeleteSelectedScreenshotsMessage(void* registry, void* name)",ret 4; same body as 0x00625BD0.
+0x00626110,signature,"void __thiscall Messages_RegisterText_UnselectAllScreenshotsMessage(void* registry, void* name)",ret 4; same body as 0x00625BD0.
+0x006261D0,signature,"void __thiscall Messages_RegisterText_ScreenshotInfoChangedMessage(void* registry, void* name)",ret 4; same body as 0x00625BD0.
+0x00626290,signature,"void __thiscall Messages_RegisterText_GUICanDeleteSSMessage(void* registry, void* name)",ret 4; same body as 0x00625BD0.
+0x00626350,signature,"void __thiscall Messages_RegisterText_FilterScreenshotListMessage(void* registry, void* name)",ret 4; same body as 0x00625BD0.
+0x00626410,signature,"void __thiscall Messages_RegisterText_LoadScreenshotInfoMessage(void* registry, void* name)",ret 4; same body as 0x00625BD0.
+0x00626850,signature,void __thiscall GUI_GUICommunityFeatures_SaveChangedScreenshotInfo(void* this),Plain ret; reads ecx at 0x00626852.
+0x00627370,signature,void __thiscall GUI_GUICommunityFeatures_Close(void* this),Vftable slot 6; plain ret; reads ecx at 0x00627371.
+0x006273A0,signature,void* __thiscall GUI_GUICommunityFeatures_ctor(void* this),Plain ret at 0x00627C6D; returns this.
+0x00627C70,signature,void __thiscall GUI_GUICommunityFeatures_RegisterMessageHandlers(void* this),Vftable slot 3; never reads ecx; plain ret through the tail jump to 0x006272F0.
+0x00627D00,signature,void __thiscall GUI_GUICommunityFeatures_RegisterClass(void* this),Vftable slot 2; reads ecx at 0x00627D0C; plain ret or tail jump to 0x00627C70.
+0x00627D50,signature,"void __thiscall Alert_SetQuest(void* this, void* questResRef, void* questName, bool questCompleted)","ret 0xC; reads ecx at 0x00627D55; three setters +0xA0,+0xC8,+0xF0.; +0xF0 is an Attribute<bool> (0x00478190 at 0x00627ED6 in Alert::Alert)."
+0x00627DA0,signature,"void* __thiscall ECBase_ECDynArray_Alert_At(void* this, unsigned int index)",ret 4; reads ecx at 0x00627DA3; returns 0x00C340B4 when out of range.
+0x007B51E0,clear,Renderer::Renderer::vfunction10,"COMDAT-folded getter (mov eax,[ecx+8]; ret), used here as a file map's size by 0x0062593E; the Renderer label misleads."
+0x004137C0,clear,?TryAcquireCommit@GSemaphore@@UAE_NXZ,"COMDAT-folded 'return true' (mov al,1; ret); used here as the gallery's All filter predicate (push at 0x006253DE); the GSemaphore label misleads."
+0x0062C2E0,signature,"void __thiscall f(void *this, unsigned int newSize, unsigned int value0, unsigned int value1, unsigned int value2, unsigned int value3)","std::vector<T16>::resize: the 16-byte value passed by value, as four words (ret 0x14); lib-agent's b01, read by lib-agent"
