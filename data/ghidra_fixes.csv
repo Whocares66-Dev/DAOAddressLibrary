@@ -6181,3 +6181,32 @@ address,what,value,why
 0x00610AE0,signature,"void * __thiscall `scalar deleting destructor'(void * this, uint flags)","adjustor thunk: sub ecx,N; jmp 0x00611720 (ret 4 in the target)"
 0x00610AF0,signature,"void * __thiscall `scalar deleting destructor'(void * this, uint flags)","adjustor thunk: sub ecx,N; jmp 0x00611720 (ret 4 in the target)"
 0x00610B00,signature,"void * __thiscall `scalar deleting destructor'(void * this, uint flags)","adjustor thunk: sub ecx,N; jmp 0x00611720 (ret 4 in the target)"
+0x00612CE0,signature,"void __thiscall Messages::RegisterText<GUI::ShowItemSplitDialogMessage>(void * this, void * name)","ret 4 at 0x00612D90; ecx is the registry (0x00612D05, 0x00612D4B); decompiler shows one int param and no this"
+0x00612DA0,signature,"void __thiscall Messages::RegisterText<GUI::RotatePaperdollLeftMessage>(void * this, void * name)","same body, ret 4 at 0x00612E50"
+0x00612E60,signature,"void __thiscall Messages::RegisterText<GUI::RotatePaperdollRightMessage>(void * this, void * name)","same body, ret 4 at 0x00612F10"
+0x00612F20,signature,"void __thiscall Messages::RegisterText<GUI::RotatePaperdollCameraMessage>(void * this, void * name)","same body, ret 4 at 0x00612FD0"
+0x00612FE0,signature,"void __thiscall Messages::RegisterText<GUI::UpdatePortraitMessage>(void * this, void * name)","same body, ret 4 at 0x00613090"
+0x006130A0,signature,"void __thiscall Messages::RegisterText<GUI::RepairItemMessage>(void * this, void * name)","same body, ret 4 at 0x00613150"
+0x00613160,signature,"void __thiscall Messages::RegisterText<GUI::AttachRuneToItemMessage>(void * this, void * name)","same body, ret 4 at 0x00613210"
+0x00613220,signature,"void __thiscall Messages::RegisterText<GUI::DetachRuneFromItemMessage>(void * this, void * name)","same body, ret 4 at 0x006132D0"
+0x006132E0,signature,"void __thiscall Messages::RegisterText<GUI::SetSoundSetMessage>(void * this, void * name)","same body, ret 4 at 0x00613390"
+0x006133A0,signature,"void __thiscall Messages::RegisterText<GUI::TestSoundSetMessage>(void * this, void * name)","same body, ret 4 at 0x00613450"
+0x00613460,signature,"void __thiscall Messages::RegisterText<GUI::PlaySoundSetEntryMessage>(void * this, void * name)","same body, ret 4 at 0x00613510"
+0x00613520,signature,"void __thiscall Messages::RegisterText<GUI::StartDraggingMessage>(void * this, void * name)","same body, ret 4 at 0x006135D0"
+0x006135E0,signature,"void __thiscall Messages::RegisterText<GUI::StopDraggingMessage>(void * this, void * name)","same body, ret 4 at 0x00613690"
+0x006136A0,signature,"void __thiscall Messages::RegisterText<GUI::DialogBoxClosedMessage>(void * this, void * name)","same body, ret 4 at 0x00613750"
+0x00613760,signature,"void __thiscall Messages::RegisterText<GUI::ForceInventoryRefreshMessage>(void * this, void * name)","same body, ret 4 at 0x00613810"
+0x00613A30,signature,void * __cdecl Messages::GetBindingTextRegistry(void),"plain ret 0x00613AA1, no argument read; returns 0x00C337FC; the pushed name before each call belongs to the next call"
+0x00613B40,signature,void * __thiscall GUI::DragonAgeGUISystem::DragonAgeGUISystem(void * this),"plain ret at 0x0061677F, returns this (mov eax,esi 0x00616764)"
+0x00616780,signature,void __thiscall GUI::DragonAgeGUISystem::RegisterMessageHandlers(void * this),vftable slot 3 (0x00B03510); ecx never read; tail jmp 0x0060DCF0
+0x00616990,signature,void __thiscall GUI::DragonAgeGUISystem::RegisterClass(void * this),vftable slot 2 (0x00B0350C); plain ret / tail jmp
+0x00619430,signature,void __thiscall GUI::GUILogin::ResetTOSText(void * this),ecx read at 0x00619461; plain ret 0x006194D7
+0x0061AC20,signature,void __thiscall GUI::GUILogin::Close(void * this),vftable slot 6 (0x00B04328); ecx read 0x0061AC51; plain ret 0x0061AD3F
+0x0061B2B0,signature,void __thiscall GUI::GUILogin::OnShow(void * this),vftable slot 5 (0x00B04324); ecx read 0x0061B2E2; plain ret 0x0061B4D0
+0x0061BD50,signature,"void * __thiscall GUIISOEntry::GUIISOEntry(void * this, void * isoCode, void * name)",ret 8 at 0x0061BEEA; args read at 0x0061BEB8 ([esp+0x64]) and 0x0061BEC7 ([esp+0x68]); decompiler shows none
+0x0061C9D0,signature,"void * __thiscall GUI::GUIScene::GUIScene(void * this, void * other)",copy constructor; ret 4 at 0x0061CACA; source read at 0x0061C9F9
+0x0061CBE0,signature,"void * __thiscall GUI::GUILogin::GUILogin(void * this, void * other)",copy constructor; ret 4 at 0x0061CE38
+0x00733C90,clear,GUI::GUIScene::vfunction5,"it is GUIScene's scalar deleting destructor (calls ~GUIScene 0x00A559E0, frees on bit 0, ret 4); reached through the thunk 0x0061CAD0"
+0x00610070,clear,GameModeController::vfunction6,folded code: also the constructor of the binding-text registry object (called by 0x00613A30 at 0x00613A7B); the class-specific label misleads in that use
+0x004CA9A0,signature,"unsigned int __cdecl Crc32Utf16(void * data, int length)","plain ret, caller cleans (add esp,8 at 0x00612D23); standard reflected CRC-32 (table 0xAF07E0, init 0xFFFFFFFF, final NOT) over 2*length bytes (reader B, 0x004CA9A0-0x004CA9FB); the name key of every message and attribute registry"
+0x0061BEF0,signature,"void * __thiscall GUIISOEntry::`scalar deleting destructor'(void * this, unsigned int flags)","ret 4 at 0x0061BF0B; frees on bit 0, returns this"
