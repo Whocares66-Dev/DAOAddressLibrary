@@ -6210,3 +6210,48 @@ address,what,value,why
 0x00610070,clear,GameModeController::vfunction6,folded code: also the constructor of the binding-text registry object (called by 0x00613A30 at 0x00613A7B); the class-specific label misleads in that use
 0x004CA9A0,signature,"unsigned int __cdecl Crc32Utf16(void * data, int length)","plain ret, caller cleans (add esp,8 at 0x00612D23); standard reflected CRC-32 (table 0xAF07E0, init 0xFFFFFFFF, final NOT) over 2*length bytes (reader B, 0x004CA9A0-0x004CA9FB); the name key of every message and attribute registry"
 0x0061BEF0,signature,"void * __thiscall GUIISOEntry::`scalar deleting destructor'(void * this, unsigned int flags)","ret 4 at 0x0061BF0B; frees on bit 0, returns this"
+0x0061CEB0,signature,"bool __thiscall GUI::GUILogin::OnLoginStatus(void* this, int status)","ret 4, ecx read; mov al,1 at exit"
+0x0061D970,signature,"void __thiscall GUI::RegisterMessageFactory<DoLoginMessage>(void* this, void* name)","ret 4; ecx = registry from 0x00489BC0; Ghidra shows one int param, no this"
+0x0061DA30,signature,"void __thiscall GUI::RegisterMessageFactory<DoLogoutMessage>(void* this, void* name)","ret 4; ecx = registry from 0x00489BC0; Ghidra shows one int param, no this"
+0x0061DAF0,signature,"void __thiscall GUI::RegisterMessageFactory<DoCancelLoginMessage>(void* this, void* name)","ret 4; ecx = registry from 0x00489BC0; Ghidra shows one int param, no this"
+0x0061DBB0,signature,"void __thiscall GUI::RegisterMessageFactory<ErrorResultMessage>(void* this, void* name)","ret 4; ecx = registry from 0x00489BC0; Ghidra shows one int param, no this"
+0x0061DC70,signature,"void __thiscall GUI::RegisterMessageFactory<BeginAccountCreationFlowMessage>(void* this, void* name)","ret 4; ecx = registry from 0x00489BC0; Ghidra shows one int param, no this"
+0x0061DD30,signature,"void __thiscall GUI::RegisterMessageFactory<UpdateCountrySelectionMessage>(void* this, void* name)","ret 4; ecx = registry from 0x00489BC0; Ghidra shows one int param, no this"
+0x0061DDF0,signature,"void __thiscall GUI::RegisterMessageFactory<UpdateLanguageSelectionMessage>(void* this, void* name)","ret 4; ecx = registry from 0x00489BC0; Ghidra shows one int param, no this"
+0x0061DEB0,signature,"void __thiscall GUI::RegisterMessageFactory<DoCreateAccountMessage>(void* this, void* name)","ret 4; ecx = registry from 0x00489BC0; Ghidra shows one int param, no this"
+0x0061DF70,signature,"void __thiscall GUI::RegisterMessageFactory<CancelAccountCreationMessage>(void* this, void* name)","ret 4; ecx = registry from 0x00489BC0; Ghidra shows one int param, no this"
+0x0061E030,signature,"void __thiscall GUI::RegisterMessageFactory<ViewTOSMessage>(void* this, void* name)","ret 4; ecx = registry from 0x00489BC0; Ghidra shows one int param, no this"
+0x0061E0F0,signature,"void __thiscall GUI::RegisterMessageFactory<CancelTOSMessage>(void* this, void* name)","ret 4; ecx = registry from 0x00489BC0; Ghidra shows one int param, no this"
+0x0061E1B0,signature,"void __thiscall GUI::RegisterMessageFactory<AcceptTOSMessage>(void* this, void* name)","ret 4; ecx = registry from 0x00489BC0; Ghidra shows one int param, no this"
+0x0061E270,signature,"void __thiscall GUI::RegisterMessageFactory<HandleOptionChangesMessage>(void* this, void* name)","ret 4; ecx = registry from 0x00489BC0; Ghidra shows one int param, no this"
+0x0061E330,signature,"void __thiscall GUI::RegisterMessageFactory<SetForwardingIdMessage>(void* this, void* name)","ret 4; ecx = registry from 0x00489BC0; Ghidra shows one int param, no this"
+0x00619670,clear,CProcessLocal<CControlSiteFactoryMgr>::CreateObject,"MFC label from folded code; it is ErrorResultMessage's factory creator (new 0x24, ctor 0x006191A0)"
+0x00619A80,clear,CThreadLocal<_AFXCTL_AMBIENT_CACHE>::CreateObject,"MFC label from folded code; it is SetForwardingIdMessage's factory creator (new 0x20, ctor 0x00619270)"
+0x0061E590,signature,"void __thiscall GUI::GUILogin::ShowErrorResult(void* this, int result, int a, int b)",ret 0xC
+0x0061E850,signature,void __thiscall GUI::GUILogin::RegisterMessageHandlers(void* this),vftable slot 3; tail jmp
+0x0061E900,signature,void __thiscall GUI::GUILogin::RegisterClass(void* this),vftable slot 2
+0x00620910,signature,int __stdcall GUI::GUICommunityFeatures::UploadCategoryOf(int type),"ret 4, ecx not read"
+0x00620940,signature,wchar_t* __stdcall GUI::GUICommunityFeatures::ScreenshotFolderOf(int type),"ret 4, ecx not read"
+0x00620980,signature,bool __cdecl GUI::GUICommunityFeatures::IsAchievementShot(void* info),"plain ret, caller cleans; filter predicate"
+0x006209A0,signature,bool __cdecl GUI::GUICommunityFeatures::IsPlayerShot(void* info),plain ret
+0x006209B0,signature,bool __cdecl GUI::GUICommunityFeatures::IsStoryShot(void* info),plain ret
+0x00621EF0,signature,"void** __thiscall ECBase::ECDynArray<AchievementRecord*>::At(void* this, uint index)",ret 4
+0x00621FC0,signature,"void** __thiscall ECBase::ECDynArray<GUIScreenshotInfo*>::At(void* this, uint index)",ret 4
+0x00622350,convention,__thiscall,"Ghidra has __fastcall with one param; ret 0x30, 12 stack args"
+0x00622350,signature,"void __thiscall GUI::GUIScreenshotInfo::Init(void* this, void* filename, void* title, void* description, void* date, void* hero, void* heroClassId, void* status, void* type, bool online, bool selected, bool display, bool infoChanged)",ret 0x30; argument order from setter order 0x006228B0-0x006229BC
+0x00622A00,convention,__thiscall,Ghidra has __fastcall; ret 4 with one stack arg
+0x00622A00,signature,"void __thiscall GUI::GUICommunityFeatures::GUIAchievementInfo::Init(void* this, void* record)",ret 4
+0x006231C0,convention,__thiscall,Ghidra has __fastcall; destructor of tagFilterData
+0x00623880,signature,"void __thiscall GUI::GUICommunityFeatures::ApplyFilter(void* this, int filter)",ret 4
+0x00623190,clear,GUI::GUICommunityFeatures::tagFilterData::vfunction2,adjustor thunk of the deleting destructor (this-0x1C)
+0x006231A0,clear,GUI::GUICommunityFeatures::tagFilterData::vfunction1,adjustor thunk of the deleting destructor (this-0x20)
+0x006231B0,clear,GUI::GUICommunityFeatures::tagFilterData::vfunction3,adjustor thunk of the deleting destructor (this-8)
+0x00623FB0,clear,GUI::GUIScreenshotInfo::vfunction2,adjustor thunk of the deleting destructor (this-0x1C)
+0x00623FC0,clear,GUI::GUIScreenshotInfo::vfunction1,adjustor thunk of the deleting destructor (this-0x20)
+0x00623FD0,clear,GUI::GUIScreenshotInfo::vfunction3,adjustor thunk of the deleting destructor (this-8)
+0x0061E570,signature,"void* __thiscall GUI::GUILogin::`scalar deleting destructor'(void* this, unsigned int flags)","ret 4 at 0x0061E58B, flag tested at 0x0061E578"
+0x0061E850,clear,vfunction4,"it is GUILogin's slot 3, RegisterMessageHandlers; prototype keeps this first (vftable slot) though ecx is not read"
+0x0061E900,clear,vfunction3,"it is GUILogin's slot 2, RegisterClass"
+0x006231C0,signature,void __thiscall GUI::GUICommunityFeatures::tagFilterData::~tagFilterData(void* this),plain ret
+0x00623220,signature,"void* __thiscall GUI::GUICommunityFeatures::tagFilterData::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4 at 0x0062323B
+0x00623BC0,signature,void* __thiscall GUI::GUIScreenshotInfo::GUIScreenshotInfo(void* this),"plain ret, returns this"

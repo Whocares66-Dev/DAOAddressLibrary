@@ -11845,33 +11845,33 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 11844,function,"SmartData::Attribute<ECBase::ECDynArray<GUIISOEntry*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",0x0061cb60,0x0062eaa0,0x0061cb60
 11845,function,GUI::GUILogin::GUILogin,0x0061cbe0,0x0062eb20,0x0061cbe0
 11846,function,GUI::GUILogin::Clone,0x0061ce40,0x0062ed80,0x0061ce40
-11847,function,,0x0061ceb0,0x0062edf0,0x0061ceb0
+11847,function,GUI::GUILogin::OnLoginStatus,0x0061ceb0,0x0062edf0,0x0061ceb0
 11848,function,GUI::GUILogin::HandleMessage_CancelAccountCreationMessage,0x0061d540,0x0062f480,0x0061d540
 11849,function,GUI::GUILogin::HandleMessage_ViewTOSMessage,0x0061d650,0x0062f590,0x0061d650
 11850,function,GUI::GUILogin::HandleMessage_CancelTOSMessage,0x0061d6b0,0x0062f5f0,0x0061d6b0
 11851,function,,0x0061d750,0x0062f690,0x0061d750
-11852,function,,0x0061d970,0x0062f8b0,0x0061d970
-11853,function,,0x0061da30,0x0062f970,0x0061da30
-11854,function,,0x0061daf0,0x0062fa30,0x0061daf0
-11855,function,,0x0061dbb0,0x0062faf0,0x0061dbb0
-11856,function,,0x0061dc70,0x0062fbb0,0x0061dc70
-11857,function,,0x0061dd30,0x0062fc70,0x0061dd30
-11858,function,,0x0061ddf0,0x0062fd30,0x0061ddf0
-11859,function,,0x0061deb0,0x0062fdf0,0x0061deb0
-11860,function,,0x0061df70,0x0062feb0,0x0061df70
-11861,function,,0x0061e030,0x0062ff70,0x0061e030
-11862,function,,0x0061e0f0,0x00630030,0x0061e0f0
-11863,function,,0x0061e1b0,0x006300f0,0x0061e1b0
-11864,function,,0x0061e270,0x006301b0,0x0061e270
-11865,function,,0x0061e330,0x00630270,0x0061e330
+11852,function,Messages::RegisterText<DoLoginMessage>,0x0061d970,0x0062f8b0,0x0061d970
+11853,function,Messages::RegisterText<DoLogoutMessage>,0x0061da30,0x0062f970,0x0061da30
+11854,function,Messages::RegisterText<DoCancelLoginMessage>,0x0061daf0,0x0062fa30,0x0061daf0
+11855,function,Messages::RegisterText<ErrorResultMessage>,0x0061dbb0,0x0062faf0,0x0061dbb0
+11856,function,Messages::RegisterText<BeginAccountCreationFlowMessage>,0x0061dc70,0x0062fbb0,0x0061dc70
+11857,function,Messages::RegisterText<UpdateCountrySelectionMessage>,0x0061dd30,0x0062fc70,0x0061dd30
+11858,function,Messages::RegisterText<UpdateLanguageSelectionMessage>,0x0061ddf0,0x0062fd30,0x0061ddf0
+11859,function,Messages::RegisterText<DoCreateAccountMessage>,0x0061deb0,0x0062fdf0,0x0061deb0
+11860,function,Messages::RegisterText<CancelAccountCreationMessage>,0x0061df70,0x0062feb0,0x0061df70
+11861,function,Messages::RegisterText<ViewTOSMessage>,0x0061e030,0x0062ff70,0x0061e030
+11862,function,Messages::RegisterText<CancelTOSMessage>,0x0061e0f0,0x00630030,0x0061e0f0
+11863,function,Messages::RegisterText<AcceptTOSMessage>,0x0061e1b0,0x006300f0,0x0061e1b0
+11864,function,Messages::RegisterText<HandleOptionChangesMessage>,0x0061e270,0x006301b0,0x0061e270
+11865,function,Messages::RegisterText<SetForwardingIdMessage>,0x0061e330,0x00630270,0x0061e330
 11866,function,GUI::GUILogin::RegisterHandler_CancelAccountCreationMessage,0x0061e3f0,0x00630330,0x0061e3f0
 11867,function,GUI::GUILogin::RegisterHandler_ViewTOSMessage,0x0061e470,0x006303b0,0x0061e470
 11868,function,GUI::GUILogin::RegisterHandler_CancelTOSMessage,0x0061e4f0,0x00630430,0x0061e4f0
-11869,function,,0x0061e570,0x006304b0,0x0061e570
-11870,function,,0x0061e590,0x006304d0,0x0061e590
-11871,function,,0x0061e850,0x00630790,0x0061e850
-11872,function,,0x0061e900,0x00630840,0x0061e900
-11873,function,,0x0061e950,0x00630890,0x0061e950
+11869,function,GUI::GUILogin::`scalar deleting destructor',0x0061e570,0x006304b0,0x0061e570
+11870,function,GUI::GUILogin::ShowErrorResult,0x0061e590,0x006304d0,0x0061e590
+11871,function,GUI::GUILogin::RegisterMessageHandlers,0x0061e850,0x00630790,0x0061e850
+11872,function,GUI::GUILogin::RegisterClass,0x0061e900,0x00630840,0x0061e900
+11873,function,GUI::GUILogin::GUILogin,0x0061e950,0x00630890,0x0061e950
 11874,function,,0x0061fba0,0x00688c80,0x0061fba0
 11875,function,,0x0061fcc0,0x00688da0,0x0061fcc0
 11876,function,,0x0061fdb0,0x00688e90,0x0061fdb0
@@ -11880,11 +11880,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 11879,function,,0x006208a0,0x00689980,0x006208a0
 11880,function,,0x006208d0,0x006899b0,0x006208d0
 11881,function,GUI::GUICommunityFeatures::HandleMessage_RetrieveScreenshotListMessage,0x00620900,0x0061e9a0,0x00620900
-11882,function,,0x00620910,0x0061e9b0,0x00620910
-11883,function,,0x00620940,0x0061e9e0,0x00620940
-11884,function,,0x00620980,0x0061ea20,0x00620980
-11885,function,,0x006209a0,0x0061ea40,0x006209a0
-11886,function,,0x006209b0,0x0061ea50,0x006209b0
+11882,function,GUI::GUICommunityFeatures::UploadCategoryOf,0x00620910,0x0061e9b0,0x00620910
+11883,function,GUI::GUICommunityFeatures::ScreenshotFolderOf,0x00620940,0x0061e9e0,0x00620940
+11884,function,GUI::GUICommunityFeatures::IsAchievementShot,0x00620980,0x0061ea20,0x00620980
+11885,function,GUI::GUICommunityFeatures::IsPlayerShot,0x006209a0,0x0061ea40,0x006209a0
+11886,function,GUI::GUICommunityFeatures::IsStoryShot,0x006209b0,0x0061ea50,0x006209b0
 11887,function,RetrieveAchievementListMessage::Create,0x006209d0,0x0061eb80,0x006209d0
 11888,function,RetrieveAchievementInfoMessage::Create,0x00620a30,0x0061ebe0,0x00620a30
 11889,function,ClearAchievementStatusMessage::Create,0x00620ab0,0x0061ec60,0x00620ab0
@@ -11948,38 +11948,38 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 11947,function,LoadScreenshotInfoMessage::GetName,0x00621d30,0x0061fee0,0x00621d30
 11948,function,GUI::GUICommunityFeatures::HandleMessage_DeleteSelectedScreenshotsMessage,0x00621da0,0x0061ff50,0x00621da0
 11949,function,,0x00621ed0,0x00620080,0x00621ed0
-11950,function,,0x00621ef0,0x006200a0,0x00621ef0
+11950,function,ECBase::ECDynArray<AchievementRecord*>::At,0x00621ef0,0x006200a0,0x00621ef0
 11951,function,"SmartData::Attribute<GUI::GUICommunityFeatures::GUIAchievementInfo*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",0x00621f20,0x006200d0,0x00621f20
 11952,function,"SmartData::Attribute<GUI::GUICommunityFeatures::GUIAchievementInfo*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",0x00621f50,0x00620100,0x00621f50
 11953,function,"SmartData::Attribute<GUI::GUICommunityFeatures::GUIAchievementInfo*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::~Attribute",0x00621f60,0x00620110,0x00621f60
-11954,function,,0x00621fc0,0x00620190,0x00621fc0
+11954,function,ECBase::ECDynArray<GUIScreenshotInfo*>::At,0x00621fc0,0x00620190,0x00621fc0
 11955,function,"SmartData::Attribute<GUI::GUICommunityFeatures::GUIAchievementInfo*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",0x00621ff0,0x006201c0,0x00621ff0
 11956,function,GUI::GUICommunityFeatures::HandleMessage_ClearAchievementStatusMessage,0x00622010,0x006201e0,0x00622010
 11957,function,,0x006220a0,0x00620270,0x006220a0
 11958,function,GUI::GUICommunityFeatures::RegisterHandler_ClearAchievementStatusMessage,0x006221d0,0x006203a0,0x006221d0
 11959,function,GUI::GUICommunityFeatures::RegisterHandler_RetrieveScreenshotListMessage,0x00622250,0x00620420,0x00622250
 11960,function,GUI::GUICommunityFeatures::RegisterHandler_DeleteSelectedScreenshotsMessage,0x006222d0,0x006204a0,0x006222d0
-11961,function,,0x00622350,0x00620520,0x00622350
-11962,function,,0x00622a00,0x00620bd0,0x00622a00
-11963,function,,0x00623060,0x00621230,0x00623060
-11964,function,,0x00623190,0x00621360,0x00623190
-11965,function,,0x006231a0,0x00621370,0x006231a0
-11966,function,,0x006231b0,0x00621380,0x006231b0
-11967,function,,0x006231c0,0x00621390,0x006231c0
-11968,function,,0x00623220,0x006213f0,0x00623220
+11961,function,GUI::GUIScreenshotInfo::Init,0x00622350,0x00620520,0x00622350
+11962,function,GUI::GUICommunityFeatures::GUIAchievementInfo::Init,0x00622a00,0x00620bd0,0x00622a00
+11963,function,GUI::GUICommunityFeatures::tagFilterData::tagFilterData,0x00623060,0x00621230,0x00623060
+11964,function,GUI::GUICommunityFeatures::tagFilterData::`scalar deleting destructor'`adjustor{28}',0x00623190,0x00621360,0x00623190
+11965,function,GUI::GUICommunityFeatures::tagFilterData::`scalar deleting destructor'`adjustor{32}',0x006231a0,0x00621370,0x006231a0
+11966,function,GUI::GUICommunityFeatures::tagFilterData::`scalar deleting destructor'`adjustor{8}',0x006231b0,0x00621380,0x006231b0
+11967,function,GUI::GUICommunityFeatures::tagFilterData::~tagFilterData,0x006231c0,0x00621390,0x006231c0
+11968,function,GUI::GUICommunityFeatures::tagFilterData::`scalar deleting destructor',0x00623220,0x006213f0,0x00623220
 11969,function,GUI::GUICommunityFeatures::HandleMessage_SelectScreenshotMessage,0x00623240,0x00621410,0x00623240
 11970,function,GUI::GUICommunityFeatures::HandleMessage_UnselectAllScreenshotsMessage,0x00623310,0x006214e0,0x00623310
 11971,function,GUI::GUICommunityFeatures::HandleMessage_UploadSelectedScreenshotsMessage,0x006233b0,0x00621580,0x006233b0
 11972,function,GUI::GUICommunityFeatures::HandleMessage_GUICanDeleteSSMessage,0x00623780,0x00621950,0x00623780
-11973,function,,0x00623880,0x00621a50,0x00623880
+11973,function,GUI::GUICommunityFeatures::ApplyFilter,0x00623880,0x00621a50,0x00623880
 11974,function,GUI::GUICommunityFeatures::RegisterHandler_SelectScreenshotMessage,0x006239c0,0x00621b90,0x006239c0
 11975,function,GUI::GUICommunityFeatures::RegisterHandler_UploadSelectedScreenshotsMessage,0x00623a40,0x00621c10,0x00623a40
 11976,function,GUI::GUICommunityFeatures::RegisterHandler_UnselectAllScreenshotsMessage,0x00623ac0,0x00621c90,0x00623ac0
 11977,function,GUI::GUICommunityFeatures::RegisterHandler_GUICanDeleteSSMessage,0x00623b40,0x00621d10,0x00623b40
-11978,function,,0x00623bc0,0x00621d90,0x00623bc0
-11979,function,,0x00623fb0,0x00622180,0x00623fb0
-11980,function,,0x00623fc0,0x00622190,0x00623fc0
-11981,function,,0x00623fd0,0x006221a0,0x00623fd0
+11978,function,GUI::GUIScreenshotInfo::GUIScreenshotInfo,0x00623bc0,0x00621d90,0x00623bc0
+11979,function,GUI::GUIScreenshotInfo::`scalar deleting destructor'`adjustor{28}',0x00623fb0,0x00622180,0x00623fb0
+11980,function,GUI::GUIScreenshotInfo::`scalar deleting destructor'`adjustor{32}',0x00623fc0,0x00622190,0x00623fc0
+11981,function,GUI::GUIScreenshotInfo::`scalar deleting destructor'`adjustor{8}',0x00623fd0,0x006221a0,0x00623fd0
 11982,function,,0x00623fe0,0x006221b0,0x00623fe0
 11983,function,,0x00624120,0x006222f0,0x00624120
 11984,function,,0x00624140,0x00622310,0x00624140
