@@ -7471,3 +7471,19 @@ address,what,value,why
 0x0071FBC0,signature,void __thiscall GUI::GUICredits::OnShow(void * this),"vftable slot 5 (0x00B177AC), plain ret 0x0071FD52"
 0x0071F620,signature,void __thiscall GUI::GUICredits::Close(void * this),"vftable slot 6 (0x00B177B0), plain ret 0x0071F6B9"
 0x00720790,signature,void __thiscall GUI::GUIScreenshots::OnShow(void * this),"vftable slot 5 (0x00B17BDC), plain ret"
+0x0075F7E0,signature,"void __thiscall Plots_SetPlotFlag(void * this, void * guid, int flag, bool value, bool callScript, uint owner)","ret 0x14 at 0x0076023E; args read at [esp+0x138..0x148]; recursive call 0x007601BB pushes (guid, flag+1, 1, 0, -1)"
+0x00628FE0,signature,"void __thiscall PartyAlerts_AddUberQuestAlert(void * this, void * questResRef, void * questName, int priority)",ret 0xC at 0x006290D0
+0x006290E0,signature,"void __thiscall PartyAlerts_AddUberCodexAlert(void * this, void * resref, void * name)",ret 8 at 0x006291BA
+0x00628500,signature,"int __thiscall PartyAlerts_FindByType(void * this, int type)",ret 4 at 0x0062855A
+0x006EBB70,signature,"bool __thiscall Journal_IsInPlotList(void * this, void * resref)",ret 4 at 0x006EBBE2
+0x006EBBF0,signature,"bool __thiscall Journal_IsInCompletedPlots(void * this, void * resref)",ret 4 at 0x006EBC62
+0x006EBAC0,signature,"bool __thiscall Journal_IsInPlotGroups(void * this, void * resref)",ret 4 at 0x006EBB25
+0x006F5380,signature,"void __thiscall Journal_CompletePlot(void * this, void * resref, bool fireEvent)",ret 8 at 0x006F5747
+0x0075C890,signature,"void * __thiscall Plots_GetPlotParentPlot(void * this, void * out, void * plot)",ret 8 at 0x0075C91C; returns out (0x0075C909)
+0x0075C830,signature,"void * __thiscall Plots_GetFlagOfferID(void * this, void * plot, int flag)",ret 8 at 0x0075C882; ecx passed through to FindFlagStruct
+0x005D5E70,signature,int __thiscall CClientExoApp_GetGameMode(void * this),reads ecx+0x114 at 0x005D5E70; plain ret / tail jump
+0x00629B20,clear,PartyAlerts::AddAlertType12,type 12 is ALERT_CONNECTION_LOST (notifications Alert.as); proposed PartyAlerts::AddConnectionLostAlert
+0x006EBB70,clear,Journal::IsInFirstPlotList,the list at +0x58 is PlotList (0x00B14AA0); proposed Journal::IsInPlotList
+0x006EBBF0,clear,Journal::IsInSecondPlotList,the list at +0x74 is CompletedPlots (0x00B14A80); proposed Journal::IsInCompletedPlots
+0x006291C0,signature,"void __thiscall PartyAlerts::AddUberAbilityAlert(void* this, int abilityId, uint a2, uint a3)",ret 0xC at 0x00629353; ecx saved at 0x006291F7; Ghidra shows it as a plain __cdecl with the container in EDI; argument roles inferred
+0x006F42D0,signature,"void __thiscall Journal_AddCodexEntry(void * this, void * resref, int flag, void * text, bool updated, bool notify, bool uber)","ret 0x18 at 0x006F462E; ecx = journal at 0x0075FE17; arg 5 [esp+0x80] at 0x006F43FC, arg 6 [esp+0x84] at 0x006F44D4"
