@@ -10383,3 +10383,41 @@ address,what,value,why
 0x006CD590,signature,"void* __thiscall f(void* this, unsigned int flags)","ret 4, test byte [esp+8],1 over operator delete"
 0x00ACE470,signature,void __cdecl f(void),"plain ret, no arguments"
 0x00AD5390,signature,void __cdecl f(void),"plain ret, no arguments"
+0x00413BD0,signature,"int __stdcall f(void* hwnd, unsigned int msg, unsigned int wParam, int lParam)","ret 0x10, no this; 0x00413BD0"
+0x00413CB0,signature,void __thiscall f(void* this),vftable slot 18; 0x00413CB0
+0x00413D70,signature,"void __thiscall f(void* this, int a, int b, bool windowed)","vftable slot 20, ret 0xc; 0x00413D70"
+0x00413DA0,signature,int __thiscall f(void* this),vftable slot 8; eax is SetForegroundWindow's result
+0x00413DB0,signature,int __thiscall f(void* this),vftable slot 9; eax is UpdateWindow's result
+0x00413DD0,signature,"void* __thiscall f(void* this, int* out)","vftable slot 19, ret 4; eax is the out pointer"
+0x00413E10,signature,bool __thiscall f(void* this),vftable slot 21; 0x00413E10
+0x00413E20,signature,void __thiscall f(void* this),vftable slot 22; 0x00413E20
+0x00413EF0,signature,void __thiscall f(void* this),vftable slot 5; 0x00413EF0
+0x004142C0,signature,"void* __thiscall f(void* this, void* out)","vftable slot 23, ret 4; 0x004142C0"
+0x004144F0,signature,"void* __stdcall f(void* left, void* parent, void* right, void* value, char color)","ret 0x14, five args, ecx unread; ThirdParty:STL (MSVC 8); 0x004144F0"
+0x004145A0,signature,void* __thiscall f(void* this),ecx read at 0x004145A2; 0x004145A0
+0x00414600,signature,"bool __thiscall f(void* this, void* other)","ret 4, ecx passed to compare; ThirdParty:STL (MSVC 8); 0x00414600"
+0x00414750,signature,"void __thiscall f(void* this, int x, int y)","vftable slot 17, ret 8; 0x00414750"
+0x004147B0,signature,"bool __thiscall f(void* this, int* exitCode)","vftable slot 10, ret 4; 0x004147B0"
+0x00414860,signature,"void __thiscall f(void* this, unsigned int vk, int lParam, bool isPress)",ret 0xc; the callers 0x00414C45 and 0x00414E65 set ecx to the platform (reconciled: read 0x00414860)
+0x00414930,signature,"bool __stdcall f(void* a, void* b)","ret 8, ecx unread; ThirdParty:STL (MSVC 8); 0x00414930"
+0x004168F0,signature,"void* __thiscall f(void* this, void* hInstance, void* arg2, int nCmdShow)","ret 0xc, caller 0x00416AD0; second argument stored at +0x4C (WinMain-style previous instance)"
+0x004169A0,signature,bool __thiscall f(void* this),vftable slot 1; 0x004169A0
+0x004169B0,signature,void __thiscall f(void* this),caller 0x00416AA0; 0x004169B0
+0x00416AA0,signature,"void* __thiscall f(void* this, unsigned int flags)","vftable slot 0, ret 4; 0x00416AA0"
+0x004564F0,signature,"void __thiscall f(void* this, void* name, void* attribute)","ret 8, ecx used for the virtual calls; 0x004564F0"
+0x004790D0,signature,"void __thiscall f(void* this, void* uid, int error)",ret 8; the caller 0x00414BF6 sets ecx from 0x00402900 (the online features object); ecx unread
+0x004BF300,signature,"void __thiscall f(void* this, void* path)",ret 4; the caller 0x005EC750 sets ecx from 0x004BFFD0 (the log object); ecx unread; eax not set by the body
+0x004D1F80,signature,void __thiscall f(void* this),ecx read at 0x004D1F81; 0x004D1F80
+0x004D2610,signature,void* __cdecl f(void),"plain ret, no args; caller 0x00413E10; 0x004D2610"
+0x0053AB10,signature,"void __thiscall f(void* this, float brightness, float contrast, float gamma)",ret 0xc; the driver is D3DGraphicsDriverManager slot 7's result; 0x0053AB10
+0x005C6430,signature,"void __thiscall f(void* this, float dt)",ret 4; the caller 0x005D7824 sets ecx (the observer singleton from 0x00455BF0); ecx unread
+0x005D4A50,signature,void* __cdecl f(void),"plain ret, no args; 0x005D4A50"
+0x005D5020,signature,"void* __thiscall f(void* this, float* out)","ret 4, ecx passed on to 0x005D5000; 0x005D5020"
+0x005D5290,signature,bool __thiscall f(void* this),ecx read at 0x005D52C4; returns true (eax=edi+2 with edi=-1 at 0x005D542C); caller 0x005D6AA5
+0x005D54B0,signature,"void __thiscall f(void* this, float dt)",ret 4; 0x005D54B0
+0x005D5870,signature,"void* __thiscall f(void* this, unsigned int id)","ret 4, 91 callers; 0x005D5870"
+0x005D59B0,signature,"void* __thiscall f(void* this, unsigned int id)",ret 4; 0x005D59B0
+0x005D5A00,signature,"void* __thiscall f(void* this, unsigned int id)",ret 4; 0x005D5A00
+0x005D5A50,signature,"void* __thiscall f(void* this, unsigned int id)",ret 4; 0x005D5A50
+0x005D5AA0,signature,"void* __thiscall f(void* this, unsigned int id)",ret 4; 0x005D5AA0
+0x005D6060,signature,"void __thiscall f(void* this, void* path)",ret 4; the caller 0x0041308E has ecx set; the body uses g_clientExoApp 0x00C327EC and leaves ecx unread
