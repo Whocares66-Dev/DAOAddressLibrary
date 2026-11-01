@@ -11684,3 +11684,58 @@ address,what,value,why
 0x00458A20,signature,void __thiscall Stub::Destroy_Map_WString_0xC_Handle_0x28(void * this),reads ecx at 0x00458A44; plain ret
 0x00458AB0,signature,"void * __thiscall Stub::CopyConstruct_WString_Handle_0x1C(void * this, void * other)",ecx at 0x00458AD3; ret 4
 0x00458B10,signature,"void __cdecl Renderer::FrameBufferEffects::Startup(void * device, void * initialEffects)",args [esp+0x60] (0x00458B43) and [esp+0x64] (0x00458CCD) after a 0x5C frame; plain ret
+0x00458D60,signature,"void* __thiscall std_map_wstring_SmartHandle_operator_index(void* this, void* name)",ret 4 (0x00458E44); returns node+0x28
+0x00458E50,signature,"void __cdecl Renderer_RegisterSharedTarget(void* name, void* handle)","plain ret (0x00458E72), two stack args"
+0x00458E80,signature,void* __cdecl Renderer_GetSharedTarget(void* name),plain ret (0x00458E8F); returns 0x00458D60's pointer
+0x00458E90,signature,void __cdecl Renderer_SetMultisampleRequest(int level),plain ret; stores 0x00C1EB48
+0x004591C0,signature,void __cdecl Renderer_SetLowEndHardwareMode(bool low_end),plain ret; byte arg at [esp+4]
+0x00459230,signature,void __cdecl Renderer_SelectDepthPath(void),plain ret 0x004593BA; no args
+0x00459610,signature,"void __thiscall Renderer_AddFrameBufferEffect(void* this, void* effect)",ret 4 (0x0045961F); decompiler drops this
+0x00459610,convention,__thiscall,"reads ecx (add ecx,0x60 at 0x00459617) before writing; ret 4"
+0x00459D90,signature,"void __thiscall Renderer_RemoveFrameBufferEffect(void* this, void* effect)",ret 4 (0x00459DA5)
+0x004597B0,signature,"void __thiscall Renderer_SetClearColor(void* this, float* rgba)",ret 4 (0x004597CB); 16 bytes to this+0x50
+0x0045ADB0,signature,"void* __cdecl Renderer_CreateRenderer(void* driver, void* window, void* name, int width, int height, int a6, int a7, bool depth, bool stencil, bool offscreen, int a11)",plain ret; 11 stack args read at [esp+0x1c..0x44] (0x0045ADED-0x0045AE11); decompiler shows the ctor's args in the wrong order
+0x0045AF20,signature,void* __cdecl Renderer_CreateOverlayRenderer(void* main_renderer),plain ret; reads [arg+8] (0x0045AF61)
+0x0045BEE0,signature,void __thiscall Renderer_DrawVisibleOnDirectDriver(void* this),ecx saved in esi and passed to the tail jump 0x0045BEF9
+0x0045BEE0,convention,__thiscall,"ecx carried to Renderer::DrawVisible (0x0045BDB0, fastcall on ecx)"
+0x0045D070,convention,__thiscall,"writes [ecx]; it is a destructor, shown as __fastcall"
+0x0045D110,signature,"float* __thiscall FrameBufferFilter_GetFloatParameter(void* this, void* name)",ret 4 (0x0045D120); the jmp path passes the arg on to 0x004F2FD0 (thiscall ret 4)
+0x0045D110,convention,__thiscall,ret 4 and one stack arg; Ghidra has __fastcall with no stack arg
+0x0045D130,signature,"float* __thiscall FrameBufferFilter_GetVector4Parameter(void* this, void* name)",ret 4 (0x0045D140); Ghidra has __fastcall
+0x0045D130,convention,__thiscall,"ret 4, one stack arg"
+0x0045D150,signature,"void* __thiscall FrameBufferFilter_GetTextureParameter(void* this, void* name)",ret 4 (0x0045D160); Ghidra has __fastcall
+0x0045D150,convention,__thiscall,"ret 4, one stack arg"
+0x0045D170,signature,"float* __thiscall FrameBufferFilter_SetFloatParameter(void* this, void* name, float initial)",ret 8 (0x0045D19F); second arg a float (its address passed to 0x004F3FE0 at 0x0045D189)
+0x0045D1B0,signature,"float* __thiscall FrameBufferFilter_SetVector4Parameter(void* this, void* name, float* initial)",ret 8 (0x0045D1DF)
+0x0045D1F0,signature,"void* __thiscall FrameBufferFilter_SetTextureParameter(void* this, void* name, void* texture_handle)",ret 8 (0x0045D21D)
+0x0045D230,signature,"void* __thiscall FrameBufferFilter_FindSemantic(void* this, wchar_t* name)",ret 4 (0x0045D2AF)
+0x0045D2F0,signature,"bool __cdecl Renderer_BindTargetToFilter(void* filter, void* target, wchar_t* param)",plain ret 0x0045D395; returns AL (0x0045D377 / 0x0045D3B3); Ghidra has void
+0x0045D3C0,signature,"void* __thiscall FBIAssignFloat32ToResource_ctor(void* this, void* resource, float value)",ret 8; value is a float (fld [esp+8] 0x0045D3E4)
+0x0045D400,signature,"void* __thiscall FBIAssignFloat32_ctor(void* this, void* filter, wchar_t* param, float value)",ret 0xC; returns this (0x0045D4AA)
+0x0045D400,clear,FBIAssignFloat32_Constructor_or_Destructor,"it is only the constructor (sets vftable 0xAE776C, type 0)"
+0x0045D4E0,signature,"void* __thiscall FBIAssignEclipseParameter_ctor(void* this, void* resource, void* filter, wchar_t* param)","ret 0xC; arg1 is the resource (checked +0x28 at 0x0045D548), arg2 the filter"
+0x0045D4E0,clear,FBIAssignEclipseParameter_Constructor_or_Destructor,only the constructor
+0x0045D5F0,signature,"void* __thiscall FBIAssignVector4fFromResource_ctor(void* this, void* resource, void* filter, wchar_t* param)","ret 0xC; arg1 resource (+0x2C used), arg2 filter"
+0x0045D5F0,clear,FBIAssignVector4fFromResource_Constructor_or_Destructor,only the constructor
+0x0045D6F0,signature,"void* __thiscall FBICopyTargetToTarget_ctor(void* this, void* src, void* dst, int filter)",ret 0xC
+0x0045D780,signature,"void* __thiscall FBICopyBackbufferToTarget_ctor(void* this, void* target)",ret 4
+0x0045D7E0,signature,void __thiscall FBIBindTarget_dtor(void* this),plain ret; reads ecx at 0x0045D802
+0x0045D850,signature,"void* __thiscall FBIRunSemantic_ctor(void* this, void* filter, void* semantic, void* target)",ret 0xC
+0x0045D4D0,clear,vfunction2,"FBIAssignFloat32::Execute, vftable slot 1 (0xAE7770); Ghidra's vfunctionN is 1-based"
+0x0045D5D0,clear,vfunction2,"FBIAssignEclipseParameter::Execute, slot 1"
+0x0045D6D0,clear,vfunction2,"FBIAssignVector4fFromResource::Execute, slot 1"
+0x0045D740,clear,vfunction2,"FBICopyTargetToTarget::Execute, slot 1"
+0x0045D7B0,clear,vfunction2,"FBICopyBackbufferToTarget::Execute, slot 1"
+0x0045D0B0,clear,vfunction4,"FrameBufferResource's scalar deleting destructor, vftable slot 3"
+0x004597B0,clear,vfunction11,"folded body: Renderer::SetClearColor (callers 0x00527317, 0x007F4189), also ObjectNodeVFXMesh's colour setter (vftable 0x00AF9034)"
+0x004590B0,signature,void __cdecl Renderer_AutoDetectVideoSettings(void),"no arguments, plain ret"
+0x004593C0,signature,void __cdecl Renderer_ReleaseDriverManagerObject(void),"tail jump, no arguments"
+0x0045B010,signature,void __cdecl Renderer_ShutdownUmbra(void),no arguments
+0x0045D4D0,signature,void __thiscall FBIAssignFloat32_Execute(void* this),plain ret
+0x0045D5D0,signature,void __thiscall FBIAssignEclipseParameter_Execute(void* this),plain ret
+0x0045D6D0,signature,void __thiscall FBIAssignVector4fFromResource_Execute(void* this),plain ret
+0x0045D740,signature,void __thiscall FBICopyTargetToTarget_Execute(void* this),plain ret
+0x0045D7B0,signature,void __thiscall FBICopyBackbufferToTarget_Execute(void* this),plain ret
+0x0045D0B0,signature,"void* __thiscall FrameBufferResource_scalar_deleting_dtor(void* this, unsigned int flags)",ret 4; slot 3 of the resource vtables
+0x0045D0E0,signature,"void* __thiscall FBBackbufferResource_ctor(void* this, void* name, int sizeClass)",ret 8
+0x0045D080,signature,"void* __thiscall FBEclipseResource_ctor(void* this, void* name)",ret 4
