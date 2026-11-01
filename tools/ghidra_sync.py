@@ -133,11 +133,17 @@ for kind, address, parts in W["rows"]:
                 f.getSymbol().setNameAndNamespace(parts[-1], space, SOURCE)
         else:
             primary = st.getPrimarySymbol(a)
-            if primary is not None and primary.getName() == parts[-1]:
+            if primary is not None and primary.getName(True) == "::".join(parts):
                 done["same"] += 1
                 continue
             done["labels"] += 1
-            if not dry:
+            if dry:
+                continue
+            # The right leaf in another namespace (a name the table has moved
+            # into a class) is moved; else a new label, made primary.
+            if primary is not None and primary.getName() == parts[-1]:
+                primary.setNameAndNamespace(parts[-1], namespace(parts[:-1]), SOURCE)
+            else:
                 label = st.createLabel(a, parts[-1], namespace(parts[:-1]), SOURCE)
                 label.setPrimary()
     except Exception as e:
