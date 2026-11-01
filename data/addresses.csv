@@ -12207,7 +12207,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 12206,function,,0x0062e680,0x00585710,0x0062e680
 12207,function,,0x0062e7d0,0x00585860,0x0062e7d0
 12208,function,AbilityChains::Find,0x0062e9c0,0x00585a50,0x0062e9c0
-12209,function,,0x0062ea50,0x0060aaf0,0x0062ea50
+12209,function,Vector::IsZeroXYZ,0x0062ea50,0x0060aaf0,0x0062ea50
 12210,function,,0x0062ea80,0x0060ab60,0x0062ea80
 12211,function,,0x0062eab0,0x00506ee0,0x0062eab0
 12212,function,,0x0062eaf0,0x00506f20,0x0062eaf0
@@ -33649,9 +33649,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33648,function,,0x00a659c0,0x0070b5c0,0x00a659c0
 33649,function,RootMotion::RootMotion,0x00a65b70,0x0070b770,0x00a65b70
 33650,function,RootMotion::Start,0x00a65bd0,0x0070b7d0,0x00a65bd0
-33651,function,,0x00a65c80,0x0070b880,0x00a65c80
+33651,function,RootMotion::Init,0x00a65c80,0x0070b880,0x00a65c80
 33652,function,RootMotion::Reset,0x00a65cf0,0x0070b8f0,0x00a65cf0
-33653,function,,0x00a65d10,0x0070b910,0x00a65d10
+33653,function,RootMotion::SetYawScale,0x00a65d10,0x0070b910,0x00a65d10
 33654,function,,0x00a65e40,0x0070ba40,0x00a65e40
 33655,function,RootMotion::AddRotation,0x00a65e60,0x0070ba60,0x00a65e60
 33656,function,RootMotion::Update,0x00a65ed0,0x0070bad0,0x00a65ed0
@@ -33759,9 +33759,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33758,function,,0x00a69aa0,0x00719d20,0x00a69aa0
 33759,function,,0x00a69ad0,0x00719d50,0x00a69ad0
 33760,function,,0x00a69b50,0x00719dd0,0x00a69b50
-33761,function,,0x00a69ba0,0x00719e20,0x00a69ba0
+33761,function,MovementAnimController::GetTransitionClipId,0x00a69ba0,0x00719e20,0x00a69ba0
 33762,function,,0x00a69bd0,0x00719e50,0x00a69bd0
-33763,function,,0x00a69c70,0x00719ef0,0x00a69c70
+33763,function,MovementAnimController::IsRunSpeed,0x00a69c70,0x00719ef0,0x00a69c70
 33764,function,,0x00a69c90,0x00719f10,0x00a69c90
 33765,function,,0x00a69cc0,0x00719f40,0x00a69cc0
 33766,function,,0x00a69cf0,0x00719f70,0x00a69cf0
@@ -33770,7 +33770,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33769,function,,0x00a69ec0,0x0071a140,0x00a69ec0
 33770,function,MovementAnimController::`scalar deleting destructor',0x00a6a090,0x0071a310,0x00a6a090
 33771,function,MovementAnimController::ComputeMoveFlags,0x00a6a0b0,0x0071a330,0x00a6a0b0
-33772,function,,0x00a6a2b0,0x0071a530,0x00a6a2b0
+33772,function,MovementAnimController::ClearTransition,0x00a6a2b0,0x0071a530,0x00a6a2b0
 33773,function,MovementAnimController::PlayTransition,0x00a6a300,0x0071a580,0x00a6a300
 33774,function,,0x00a6a7e0,0x0071aa60,0x00a6a7e0
 33775,function,,0x00a6a830,0x0071aab0,0x00a6a830
@@ -33778,8 +33778,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33777,function,,0x00a6aa70,0x0071acf0,0x00a6aa70
 33778,function,,0x00a6abf0,0x0071ae70,0x00a6abf0
 33779,function,MovementAnimController::StopTriggerGuard,0x00a6acf0,0x0071af70,0x00a6acf0
-33780,function,,0x00a6ad50,0x0071afd0,0x00a6ad50
-33781,function,,0x00a6ae30,0x0071b0b0,0x00a6ae30
+33780,function,MovementAnimController::EnterStop,0x00a6ad50,0x0071afd0,0x00a6ad50
+33781,function,MovementAnimController::EnterStart,0x00a6ae30,0x0071b0b0,0x00a6ae30
 33782,function,MovementAnimController::EnterTurnInPlace,0x00a6aff0,0x0071b270,0x00a6aff0
 33783,function,,0x00a6b180,0x0071b400,0x00a6b180
 33784,function,,0x00a6b250,0x0071b4d0,0x00a6b250
@@ -33793,7 +33793,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33792,function,,0x00a6b9b0,0x0071bc30,0x00a6b9b0
 33793,function,,0x00a6bbe0,0x0071be60,0x00a6bbe0
 33794,function,,0x00a6bc10,0x0046bd70,0x00a6bc10
-33795,function,,0x00a6bc40,0x0071be90,0x00a6bc40
+33795,function,MovementAnimController::SetMode,0x00a6bc40,0x0071be90,0x00a6bc40
 33796,function,MovementAnimController::UpdateNoMotion,0x00a6bcc0,0x0071bf10,0x00a6bcc0
 33797,function,MovementAnimController::UpdateMotion,0x00a6bd80,0x0071bfd0,0x00a6bd80
 33798,function,,0x00a6be10,0x0071c060,0x00a6be10
