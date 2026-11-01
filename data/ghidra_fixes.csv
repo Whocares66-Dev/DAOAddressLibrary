@@ -9670,3 +9670,42 @@ address,what,value,why
 0x0079D2D0,signature,"void __cdecl f(void *templ, void *registry)",0x0079D2D0-0x0079D2F8
 0x0079D300,signature,"void __cdecl f(void *templ, void *registry)",0x0079D300-0x0079D352
 0x00799C80,signature,"bool __thiscall f(void *this, void *templateStruct, bool flag, int unused)","CCTrigger::LoadTemplate: arg1 at [esp+0x80] (0x00799CB1), arg2 at [esp+0x84] (0x00799DB7), arg3 never read; ret 0xC (lib-agent, b13 follow-up)"
+0x00822C00,signature,"void* __thiscall f(void* this, void* out, unsigned int* key)","ret 8; out written at 0x822D00 and returned (mov eax,[esp+0x20])"
+0x00822D40,signature,"void* __thiscall f(void* this, void* out)","ret 4, returns out"
+0x00822D80,signature,"void __cdecl f(void* firstContainer, void* firstNode, void* lastContainer, void* lastNode, unsigned int* count)",plain ret
+0x00822DC0,signature,"void* __cdecl f(void* first, void* last, void* dest)","plain ret, add esp 0x1c after the call"
+0x00822DF0,signature,"void* __cdecl f(void* first, void* last, void* dest)",plain ret
+0x00822FE0,signature,void __thiscall f(void* this),no stack args
+0x00823010,signature,"void* __thiscall f(void* this, int n)","ret 4, returns this (0x8230D5)"
+0x008230E0,signature,"void __thiscall f(void* this, void** begin, void** end)",ret 8
+0x00823190,signature,"void* __thiscall f(void* this, void* out, void* key)","ret 8, returns out"
+0x008231F0,signature,"void* __stdcall f(void* dest, unsigned int count, void* value)",ret 0xc; ecx not read
+0x00823230,signature,"void* __stdcall f(void* dest, unsigned int count, void* value)",ret 0xc; ecx not read
+0x00823270,signature,"void* __stdcall f(void* first, void* last, void* dest)",ret 0xc
+0x008232A0,signature,"void __thiscall f(void* this, unsigned int* key)",ret 4
+0x00823330,signature,void __thiscall f(void* this),no stack args
+0x00823A00,signature,void* __thiscall f(void* this),plain ret
+0x00823A60,signature,void* __thiscall f(void* this),plain ret
+0x00823EA0,signature,void __thiscall f(void* this),no stack args
+0x00823EB0,signature,bool __thiscall f(void* this),"plain ret, result 0 or 1"
+0x008245E0,signature,void __thiscall f(void* this),plain ret
+0x00824650,signature,void __thiscall f(void* this),plain ret
+0x00824A30,signature,"void* __thiscall f(void* this, void* out)",ret 4
+0x00825CA0,signature,"void __thiscall f(void* this, void* actor)",ret 4
+0x00825CE0,signature,void __thiscall f(void* this),no stack args
+0x00825CF0,signature,"void* __thiscall f(void* this, void* out, void* whereContainer, void* wherePtr, void* value)",ret 0x10; out written at 0x825D90
+0x00825E90,signature,"void __thiscall f(void* this, unsigned int n)","ret 4 on the no-op path, jmp on the other"
+0x00825F40,signature,"void __thiscall f(void* this, void* value)",ret 4
+0x008266A0,signature,"void __thiscall f(void* this, void* value)",ret 4
+0x00826850,signature,"unsigned int __thiscall f(void* this, void* key)","ret 4, count returned"
+0x008268C0,signature,"void* __thiscall f(void* this, void* other)","ret 4, returns this"
+0x00826920,signature,"void* __thiscall f(void* this, void* other)",ret 4
+0x00826940,convention,__cdecl,"plain ret, three 12-byte iterators pushed"
+0x008269F0,convention,__cdecl,plain ret
+0x00826AA0,signature,"void __thiscall f(void* this, void* value)",ret 4
+0x00826B30,signature,"void __thiscall f(void* this, unsigned int n)",ret 4
+0x00826BC0,signature,"void __thiscall f(void* this, unsigned int n)",ret 4
+0x00826C40,signature,"void* __thiscall f(void* this, unsigned int n)","ret 4, returns this"
+0x00826CB0,signature,"void __thiscall f(void* this, void* actor)",ret 4
+0x00826E60,signature,"void __thiscall f(void* this, void* out)",ret 4
+0x008277D0,signature,"void __thiscall f(void* this, bool release)",ret 4; flag tested at 0x8277F8
