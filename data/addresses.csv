@@ -10406,45 +10406,45 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10405,function,,0x005d1ff0,0x00715b20,0x005d1ff0
 10406,function,CRoom::SetFadeEnabled,0x005d2100,0x00715c30,0x005d2100
 10407,function,EC::ModelPlacementArray::Data,0x005d2120,0x00715c60,0x005d2120
-10408,function,,0x005d2130,0x00715c70,0x005d2130
-10409,function,,0x005d2150,0x00715c90,0x005d2150
-10410,function,,0x005d2210,0x00715d50,0x005d2210
+10408,function,RoomLoadingTask::RoomLoadingTask,0x005d2130,0x00715c70,0x005d2130
+10409,function,CRoom::StartDarknessFade,0x005d2150,0x00715c90,0x005d2150
+10410,function,CRoom::SetSeen,0x005d2210,0x00715d50,0x005d2210
 10411,function,,0x005d2230,0x00711600,0x005d2230
-10412,function,,0x005d22e0,0x00715d70,0x005d22e0
-10413,function,,0x005d2360,0x00715df0,0x005d2360
+10412,function,CRoom::CanSeeRoom,0x005d22e0,0x00715d70,0x005d22e0
+10413,function,CRoom::Show,0x005d2360,0x00715df0,0x005d2360
 10414,function,,0x005d2480,0x00749a60,0x005d2480
 10415,function,,0x005d2520,0x0074b8e0,0x005d2520
 10416,function,,0x005d26e0,0x00493620,0x005d26e0
 10417,function,,0x005d27a0,0x00610d50,0x005d27a0
 10418,function,,0x005d2800,0x00715f10,0x005d2800
 10419,function,,0x005d2880,0x00715f90,0x005d2880
-10420,function,,0x005d2970,0x00716080,0x005d2970
+10420,function,CRoom::TakeInObjects,0x005d2970,0x00716080,0x005d2970
 10421,function,,0x005d2b20,0x00716230,0x005d2b20
-10422,function,,0x005d2b80,0x00716290,0x005d2b80
-10423,function,,0x005d2d30,0x00716440,0x005d2d30
-10424,function,,0x005d2d60,0x00716470,0x005d2d60
-10425,function,,0x005d2df0,0x00716500,0x005d2df0
-10426,function,,0x005d2e60,0x00716570,0x005d2e60
-10427,function,,0x005d2f00,0x00716610,0x005d2f00
-10428,function,,0x005d30e0,0x007167f0,0x005d30e0
+10422,function,CRoom::QueueObjectTasks,0x005d2b80,0x00716290,0x005d2b80
+10423,function,RoomLoadingTask::Execute,0x005d2d30,0x00716440,0x005d2d30
+10424,function,CRoom::DiscardPendingObjects,0x005d2d60,0x00716470,0x005d2d60
+10425,function,CRoom::UpdateDarkness,0x005d2df0,0x00716500,0x005d2df0
+10426,function,CRoom::Update,0x005d2e60,0x00716570,0x005d2e60
+10427,function,CRoom::Load,0x005d2f00,0x00716610,0x005d2f00
+10428,function,CRoom::Unload,0x005d30e0,0x007167f0,0x005d30e0
 10429,function,CRoom::SetState,0x005d31d0,0x007168e0,0x005d31d0
-10430,function,,0x005d32f0,0x00716a00,0x005d32f0
-10431,function,,0x005d33b0,0x00716ac0,0x005d33b0
-10432,function,,0x005d33c0,0x00716ad0,0x005d33c0
-10433,function,,0x005d33d0,0x00716ae0,0x005d33d0
-10434,function,,0x005d33e0,0x00716af0,0x005d33e0
-10435,function,,0x005d33f0,0x00716b00,0x005d33f0
-10436,function,,0x005d3400,0x00716b10,0x005d3400
-10437,function,,0x005d3410,0x00716b20,0x005d3410
-10438,function,,0x005d3430,0x00716b40,0x005d3430
-10439,function,,0x005d3560,0x00716c70,0x005d3560
-10440,function,,0x005d35c0,0x00716cd0,0x005d35c0
-10441,function,,0x005d3750,0x00716e60,0x005d3750
-10442,function,,0x005d3eb0,0x00710580,0x005d3eb0
+10430,function,CRoom::~CRoom,0x005d32f0,0x00716a00,0x005d32f0
+10431,function,IRoomLayout::GetState,0x005d33b0,0x00716ac0,0x005d33b0
+10432,function,IRoomLayout::IsLoadPending,0x005d33c0,0x00716ad0,0x005d33c0
+10433,function,CRoom::GetIndex,0x005d33d0,0x00716ae0,0x005d33d0
+10434,function,CRoom::GetDarknessLevel,0x005d33e0,0x00716af0,0x005d33e0
+10435,function,CRoom::GetModelPlacements,0x005d33f0,0x00716b00,0x005d33f0
+10436,function,CRoom::GetModelPlacementCount,0x005d3400,0x00716b10,0x005d3400
+10437,function,CRoom::`scalar deleting destructor',0x005d3410,0x00716b20,0x005d3410
+10438,function,CRoom::CountModelUses,0x005d3430,0x00716b40,0x005d3430
+10439,function,EC::ModelPlacementArray::SetSize,0x005d3560,0x00716c70,0x005d3560
+10440,function,CRoom::CRoom,0x005d35c0,0x00716cd0,0x005d35c0
+10441,function,CRoom::LoadRml,0x005d3750,0x00716e60,0x005d3750
+10442,function,EC::ChunkViewer::DecideRoomState,0x005d3eb0,0x00710580,0x005d3eb0
 10443,function,,0x005d3f00,0x007105d0,0x005d3f00
-10444,function,,0x005d3f20,0x0071cd20,0x005d3f20
-10445,function,,0x005d3f70,0x007106f0,0x005d3f70
-10446,function,,0x005d3f80,0x0071cd70,0x005d3f80
+10444,function,EC::IndoorStreamPolicy::IndoorStreamPolicy,0x005d3f20,0x0071cd20,0x005d3f20
+10445,function,ILayoutPolicy::~ILayoutPolicy,0x005d3f70,0x007106f0,0x005d3f70
+10446,function,EC::IndoorStreamPolicy::`scalar deleting destructor',0x005d3f80,0x0071cd70,0x005d3f80
 10447,function,EC::IndoorStreamPolicy::Decide,0x005d3fa0,0x0071cd90,0x005d3fa0
 10448,function,,0x005d40d0,0x00456fb0,0x005d40d0
 10449,function,SaveGameMessage::SaveGameMessage,0x005d4110,0x004be680,0x005d4110
@@ -10552,11 +10552,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10551,function,CClientExoApp::RemakeTreeBounds,0x005d6c20,0x004c1c50,0x005d6c20
 10552,function,,0x005d6c40,0x004c1c70,0x005d6c40
 10553,function,CClientExoApp::RefreshAreaCreatureLightSubsets,0x005d6d10,0x004c1d40,0x005d6d10
-10554,function,,0x005d6d90,0x004c1e60,0x005d6d90
-10555,function,,0x005d6f60,0x004c2030,0x005d6f60
-10556,function,,0x005d6f70,0x004c2040,0x005d6f70
-10557,function,,0x005d6f80,0x004c2050,0x005d6f80
-10558,function,,0x005d6f90,0x004c2060,0x005d6f90
+10554,function,ModuleInfo::ModuleInfo,0x005d6d90,0x004c1e60,0x005d6d90
+10555,function,ModuleInfo::`scalar deleting destructor',0x005d6f60,0x004c2030,0x005d6f60
+10556,function,ModuleInfo::`scalar deleting destructor',0x005d6f70,0x004c2040,0x005d6f70
+10557,function,ModuleInfo::`scalar deleting destructor',0x005d6f80,0x004c2050,0x005d6f80
+10558,function,ModuleInfo::~ModuleInfo,0x005d6f90,0x004c2060,0x005d6f90
 10559,function,"SmartData::Attribute<unsigned int,ExplicitObjectIDMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::FindMember",0x005d7010,0x004c2150,0x005d7010
 10560,function,"SmartData::Attribute<unsigned int,ExplicitObjectIDMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::HasMember",0x005d7040,0x004c2180,0x005d7040
 10561,function,"SmartData::Attribute<unsigned int,ExplicitObjectIDMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::GetMemberName",0x005d7060,0x004c21a0,0x005d7060
@@ -10567,7 +10567,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10566,function,CClientExoApp::FrameUpdate,0x005d7560,0x004c2780,0x005d7560
 10567,function,,0x005d7840,0x004c2a60,0x005d7840
 10568,function,CClientExoApp::BeginSave,0x005d7fc0,0x004c31e0,0x005d7fc0
-10569,function,,0x005d8070,0x004c3290,0x005d8070
+10569,function,ModuleInfo::`scalar deleting destructor',0x005d8070,0x004c3290,0x005d8070
 10570,function,,0x005d8090,0x004ed410,0x005d8090
 10571,function,,0x005d8100,0x004ec4f0,0x005d8100
 10572,function,,0x005d817e,0x004ec56e,0x005d817e
@@ -11005,10 +11005,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 11004,function,,0x005fe060,0x004eb6b0,0x005fe060
 11005,function,,0x005fe0c0,0x004eb710,0x005fe0c0
 11006,function,CCModule::DropAreaList,0x005fe140,0x004eb790,0x005fe140
-11007,function,,0x005fe170,0x004eb7c0,0x005fe170
+11007,function,CCModule::CreateAreaList,0x005fe170,0x004eb7c0,0x005fe170
 11008,function,CCModule::UpdateAreaList,0x005fe200,0x004eb850,0x005fe200
-11009,function,,0x005fe230,0x004eb8c0,0x005fe230
-11010,function,,0x005fe240,0x004eb8d0,0x005fe240
+11009,function,CCModule::LoadAreas,0x005fe230,0x004eb8c0,0x005fe230
+11010,function,CCModule::GetDebugString,0x005fe240,0x004eb8d0,0x005fe240
 11011,function,CResIFO::CResIFO,0x005fe2e0,0x004eba50,0x005fe2e0
 11012,function,,0x005fe380,0x00477130,0x005fe380
 11013,function,,0x005fe3a0,0x00710c90,0x005fe3a0
@@ -11017,9 +11017,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 11016,function,,0x005fe400,0x006e50f0,0x005fe400
 11017,function,,0x005fe460,0x004ebcb0,0x005fe460
 11018,function,CCModule::CurrentArea,0x005fe470,0x004ebcc0,0x005fe470
-11019,function,,0x005fe4b0,0x004ebd00,0x005fe4b0
-11020,function,,0x005fe540,0x0084fcf0,0x005fe540
-11021,function,,0x005fe590,0x004ebd90,0x005fe590
+11019,function,std::_Tree<?>::const_iterator::operator--,0x005fe4b0,0x004ebd00,0x005fe4b0
+11020,function,std::_Tree<?>::_Lrotate,0x005fe540,0x0084fcf0,0x005fe540
+11021,function,ECBase::ECDynArray<CSAreaList::Entry>::At,0x005fe590,0x004ebd90,0x005fe590
 11022,function,,0x005fe5e0,0x004ebde0,0x005fe5e0
 11023,function,,0x005fe630,0x004ebe30,0x005fe630
 11024,function,,0x005fe6a0,0x004ebfc0,0x005fe6a0

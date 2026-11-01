@@ -8721,3 +8721,44 @@ address,what,value,why
 0x005D1FA0,signature,"void __thiscall f(void* this, unsigned int index, void* value)",0x005D1FA0-0x005D1FB1 (ret imm and ecx use read)
 0x005D2100,signature,"void __thiscall f(void* this, bool lit)",0x005D2100-0x005D2116 (ret imm and ecx use read)
 0x005D2120,signature,void* __thiscall f(void* this),0x005D2120-0x005D212B (ret imm and ecx use read)
+0x005D2130,signature,"void* __thiscall f(void* this, void* room)","ret 4 at 0x005D214A, ecx moved to esi before the call; room stored at [esi+0x18] 0x005D213E"
+0x005D2150,signature,"void __thiscall f(void* this, int seen, bool immediate)","ret 8 at 0x005D220A, ecx read into esi first; arg1 mode 0x005D2153, byte arg2 0x005D2182; called by SetSeen 0x005D2210"
+0x005D2210,signature,"void __thiscall f(void* this, int seen, bool immediate)",vftable slot 22; tail-jumps to 0x005D2150 (ret 8) with both stack arguments untouched
+0x005D22E0,signature,"bool __thiscall f(void* this, int roomNumber)",ret 4 at 0x005D22F5; vftable slot 21; arg1 compared at 0x005D22EB; reconciled: read the ret and the callers
+0x005D2360,signature,"void __thiscall f(void* this, bool shown)","ret 4 at 0x005D246E; byte arg at [esp+0x14] 0x005D23E6, stored 0x005D2467; vftable slot 31"
+0x005D2970,signature,"void __thiscall f(void* this, void* layout)",ret 4 at 0x005D2ADB and 0x005D2B1B; layout used as ecx+0x4E0 at 0x005D2A81 and passed to 0x005C92B0
+0x005D2B80,signature,void __thiscall f(void* this),0x005D2B80-0x005D2D1F; reconciled: read the ret and the callers
+0x005D2D30,signature,"int __thiscall f(void* this, int arg1)",ret 4 at 0x005D2D55 (argument unread); vftable 0x00AFFFC0 slot 2; INFERRED the argument is the task system's thread or context; reconciled: read the ret and the callers
+0x005D2D60,signature,"void __thiscall f(void* this, void* layout)",ret 4 at 0x005D2DEA; argument pushed by callers (0x005D31A6) and never read
+0x005D2DF0,signature,"void __thiscall f(void* this, float seconds)",ret 4 at 0x005D2E4F/0x005D2E55; float arg [esp+8] 0x005D2DFC; vftable slot 23
+0x005D2E60,signature,"void __thiscall f(void* this, float seconds, void* layout)",ret 8 at 0x005D2EF2; layout read [esp+0x20] 0x005D2ECE; seconds unread; vftable slot 24; reconciled: read the ret and the callers
+0x005D2F00,signature,"void __thiscall f(void* this, int index, void* layout, bool background)","ret 0xC at 0x005D30DD; arg1 indexes +0x298 at 0x005D2FB1, layout [esp+0x28] 0x005D2F34, byte arg3 [esp+0x2C] 0x005D2F7C; vftable slot 6; reconciled: read the ret and the callers"
+0x005D30E0,signature,"void __thiscall f(void* this, void* layout, int arg2)",ret 8 at 0x005D31C4; layout [esp+0x10] 0x005D31A2; second argument unread; vftable slot 8; reconciled: read the ret and the callers
+0x005D32F0,signature,void __thiscall f(void* this),"plain ret at 0x005D33AB, ecx saved in esi"
+0x005D33B0,signature,int __thiscall f(void* this),plain ret at 0x005D33B6; slot 20
+0x005D33C0,signature,bool __thiscall f(void* this),plain ret at 0x005D33CB; slot 29
+0x005D33D0,signature,int __thiscall f(void* this),plain ret at 0x005D33D6; slot 9
+0x005D33E0,signature,float __thiscall f(void* this),plain ret at 0x005D33E6; float returned in st0; slot 27
+0x005D33F0,signature,void* __thiscall f(void* this),plain ret at 0x005D33F6; slot 10
+0x005D3400,signature,unsigned int __thiscall f(void* this),plain ret at 0x005D3406; slot 11; reconciled: read the ret and the callers
+0x005D3410,signature,"void* __thiscall f(void* this, unsigned int flags)",ret 4 at 0x005D342B; flag tested at [esp+8] 0x005D3418; slot 0
+0x005D3430,signature,"void __thiscall f(void* this, void* counts)",ret 4 at 0x005D3550; map arg [esp+0x50] to ebp 0x005D3467; slot 30; reconciled: read the ret and the callers
+0x005D3560,signature,"void __thiscall f(void* this, unsigned int count)",ret 4 at 0x005D359E/0x005D35B1; count at [esp+0xC] 0x005D3562; reconciled: read the ret and the callers
+0x005D35C0,signature,"void* __thiscall f(void* this, int index, int roomNumber)","ret 8 at 0x005D374A; arg1 to +0x320 0x005D3641, arg2 to +0x14 0x005D3699; reconciled: read the ret and the callers"
+0x005D3750,signature,"bool __thiscall f(void* this, void* arg1, void* arg2)",ret 8 at 0x005D381C/0x005D3EAC; vftable slot 3; args at [ebp+8] and [ebp+0xC] 0x005D3782; INFERRED pointer types; reconciled: read the ret and the callers
+0x005D3EB0,signature,"void __thiscall f(void* this, void* layout, void* room, void* outState)","ret 0xC at 0x005D3EE9; args [esp+8], [esp+0xC], [esp+0x10]; caller pushes 3 at 0x005CA45F-0x005CA461; reconciled: read the ret and the callers"
+0x005D3F20,signature,"void* __thiscall f(void* this, float nearDistance, float farDistance)",ret 8 at 0x005D3F64; floats at [esp+4] and [esp+8] 0x005D3F20/0x005D3F38; caller pushes two floats 0x005CBBC7-0x005CBBD4
+0x005D3F70,signature,void __thiscall f(void* this),plain ret at 0x005D3F76
+0x005D3F80,signature,"void* __thiscall f(void* this, unsigned int flags)",ret 4 at 0x005D3F9B; flag at [esp+8] 0x005D3F88; slot 0
+0x005D6D90,signature,"void* __thiscall f(void* this, void* name, void* displayName, void* description)","ret 0xC at 0x005D6F57; args [esp+0x44], [esp+0x48], [esp+0x4C] each handed to 0x00403280"
+0x005D6F60,signature,"void* __thiscall f(void* this, unsigned int flags)",adjustor thunk to 0x005D8070 (ret 4); reconciled: read the ret and the callers
+0x005D6F70,signature,"void* __thiscall f(void* this, unsigned int flags)",adjustor thunk to 0x005D8070 (ret 4); reconciled: read the ret and the callers
+0x005D6F80,signature,"void* __thiscall f(void* this, unsigned int flags)",adjustor thunk to 0x005D8070 (ret 4); reconciled: read the ret and the callers
+0x005D6F90,signature,void __thiscall f(void* this),plain ret at 0x005D7007
+0x005D8070,signature,"void* __thiscall f(void* this, unsigned int flags)",ret 4 at 0x005D808B; flag at [esp+8] 0x005D8078
+0x005FE170,signature,"void __thiscall f(void* this, void* name)",ret 4 at 0x005FE1F0; name pointer [esp+0x24] copied to the stack 0x005FE1BC; reconciled: read the ret and the callers
+0x005FE230,signature,int __thiscall f(void* this),"tail jump to CSAreaList::LoadAreas 0x006FABB0 (0 more, 1 done, 0x12 already loaded per Addresses.h); no arguments pushed; reconciled: read the ret and the callers"
+0x005FE240,signature,"void __thiscall f(void* this, void* out)",ret 4 at 0x005FE2DA; out string [esp+0x54] to edi 0x005FE267; vftable slot 24; reconciled: read the ret and the callers
+0x005FE4B0,signature,void __thiscall f(void* this),0x005FE4B0-0x005FE53F; reconciled: read the ret and the callers
+0x005FE540,signature,"void __thiscall f(void* this, void* node)",ret 4 at 0x005FE56F/0x005FE580/0x005FE58B; node at [esp+4] 0x005FE540; tree head via [ecx+4] 0x005FE55E
+0x005FE590,signature,"void* __thiscall f(void* this, unsigned int index)",ret 4 at 0x005FE5C4/0x005FE5CE; index at [esp+0xC] 0x005FE59E
