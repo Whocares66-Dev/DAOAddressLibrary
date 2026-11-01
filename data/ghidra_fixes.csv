@@ -10343,3 +10343,43 @@ address,what,value,why
 0x004B10A0,signature,int __thiscall f(void* this),ID 4096 at 0x004B10A0: ret and ecx use read in the listing
 0x004B2890,signature,void* __cdecl f(void),ID 4128 at 0x004B2890: ret and ecx use read in the listing
 0x004B28F0,signature,void __thiscall f(void* this),ID 4129 at 0x004B28F0: ret and ecx use read in the listing
+0x004B4700,signature,"void __thiscall f(void* this, void* messageName)","0x004B4700 ecx saved to edi and used for 0x00488AC0, ret 4 with one stack argument"
+0x004B47C0,signature,"void __thiscall f(void* this, void* messageName)","0x004B47C0 ecx saved to edi and used for 0x00488AC0, ret 4 with one stack argument"
+0x004B4880,signature,"void __thiscall f(void* this, void* messageName)","0x004B4880 ecx saved to edi and used for 0x00488AC0, ret 4 with one stack argument"
+0x004B4940,signature,"void __thiscall f(void* this, void* messageName)","0x004B4940 ecx saved to edi and used for 0x00488AC0, ret 4 with one stack argument"
+0x004B4A00,signature,"void __thiscall f(void* this, void* messageName)","0x004B4A00 ecx saved to edi and used for 0x00488AC0, ret 4 with one stack argument"
+0x004B4AC0,signature,"void __thiscall f(void* this, void* messageName)","0x004B4AC0 ecx saved to edi and used for 0x00488AC0, ret 4 with one stack argument"
+0x004B4B80,signature,"void __thiscall f(void* this, void* messageName)","0x004B4B80 ecx saved to edi and used for 0x00488AC0, ret 4 with one stack argument"
+0x004B4C40,signature,"void __thiscall f(void* this, void* messageName)","0x004B4C40 ecx saved to edi and used for 0x00488AC0, ret 4 with one stack argument"
+0x004B4D00,signature,"void __thiscall f(void* this, void* messageName)","0x004B4D00 ecx saved to edi and used for 0x00488AC0, ret 4 with one stack argument"
+0x004B3300,signature,"void* __thiscall f(void* this, unsigned int flags)",adjustor thunk to a ret 4 destructor
+0x004B3310,signature,"void* __thiscall f(void* this, unsigned int flags)",adjustor thunk to a ret 4 destructor
+0x004B3320,signature,"void* __thiscall f(void* this, unsigned int flags)",adjustor thunk to a ret 4 destructor
+0x004B3BF0,signature,void* __thiscall f(void* this),"vftable slot 1, ecx is the source, plain ret"
+0x004B3C70,signature,"void* __thiscall f(void* this, unsigned int flags)","ret 4, test byte [esp+8],1 over operator delete"
+0x004B4DC0,signature,void __thiscall f(void* this),"vftable slot 3, ecx not used, plain ret"
+0x004B4E30,signature,void __thiscall f(void* this),"vftable slot 2, ecx saved to esi, plain ret"
+0x004B4E50,signature,void* __thiscall f(void* this),"ecx is this (mov esi,ecx), returns esi, plain ret"
+0x00527900,signature,void __cdecl f(bool multiProcessor),"plain ret, caller add esp,4, ecx unused"
+0x005D5640,signature,void __thiscall f(void* this),"ecx saved to edi and read at +0x158 and +0xFC, plain ret"
+0x005DD600,signature,void __cdecl f(void),"no ecx or stack argument read, plain ret"
+0x005F9070,signature,void __thiscall f(void* this),"ecx saved to esi, plain ret"
+0x00619340,convention,__thiscall,ret 0x1c at 0x0061939E (one by-value std::wstring); ecx read at 0x00619360 before any write
+0x006194E0,signature,void __thiscall f(void* this),"ecx saved to esi, plain ret"
+0x0061B760,signature,"void __thiscall f(void* this, void* text)","ret 4, ecx saved to esi, one stack argument"
+0x0061C520,signature,"void __thiscall f(void* this, void* code, void* name, bool select)","ret 0xc, ecx saved to ebp, three stack arguments"
+0x0061D750,signature,void __thiscall f(void* this),"ecx saved to esi, plain ret"
+0x006A9D20,signature,void* __thiscall f(void* this),"ecx to edi, returns edi, plain ret"
+0x006A9E70,signature,"void* __thiscall f(void* this, unsigned int flags)",adjustor thunk to a ret 4 destructor
+0x006A9E80,signature,"void* __thiscall f(void* this, unsigned int flags)",adjustor thunk to a ret 4 destructor
+0x006A9E90,signature,"void* __thiscall f(void* this, unsigned int flags)",adjustor thunk to a ret 4 destructor
+0x006A9EA0,signature,void __thiscall f(void* this),"ecx saved to esi, plain ret"
+0x006AD320,signature,"void* __thiscall f(void* this, unsigned int flags)","ret 4, test byte [esp+8],1 over operator delete"
+0x006CBC20,signature,void __thiscall f(void* this),"ecx saved to esi, plain ret"
+0x006CBD40,signature,"void* __thiscall f(void* this, unsigned int flags)",adjustor thunk to a ret 4 destructor
+0x006CBD50,signature,"void* __thiscall f(void* this, unsigned int flags)",adjustor thunk to a ret 4 destructor
+0x006CBD60,signature,"void* __thiscall f(void* this, unsigned int flags)",adjustor thunk to a ret 4 destructor
+0x006CCF30,convention,__thiscall,"ret 0x24, ecx saved to esi before any write; arguments are a by-value std::wstring and two ints"
+0x006CD590,signature,"void* __thiscall f(void* this, unsigned int flags)","ret 4, test byte [esp+8],1 over operator delete"
+0x00ACE470,signature,void __cdecl f(void),"plain ret, no arguments"
+0x00AD5390,signature,void __cdecl f(void),"plain ret, no arguments"
