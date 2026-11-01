@@ -2687,3 +2687,44 @@ address,what,value,why
 0x0073FAB0,signature,"void* __thiscall f(void* this, unsigned int index)","ret 4, slot 7"
 0x0073FAD0,signature,void __thiscall f(void* this),plain ret
 0x0073FB30,signature,"void* __thiscall f(void* this, unsigned int index)","ret 4, slot 7"
+0x0073FB50,signature,void __thiscall(void* this),"0x0073FB50 vftables 0x00B1B914/0x00B1B900, call 0x004C4E40, final 0x00ADDCFC"
+0x0073FBF0,signature,"void* __thiscall(void* this, unsigned int flags)",0x0073FBF0 calls 0x0073FB50
+0x0073FBB0,signature,"void* __thiscall(void* this, unsigned int flags)",0x0073FBB0 calls 0x0073FA50
+0x0073FBD0,signature,"void* __thiscall(void* this, unsigned int flags)",0x0073FBD0 calls 0x0073FAD0
+0x0073FC10,signature,void* __thiscall(void* this),"0x0073FC10 operator_new 0xC, iterator vftable 0x00B1B860, container [ecx+0xC]"
+0x0073FC40,signature,void* __thiscall(void* this),"0x0073FC40 operator_new 0xC, iterator vftable 0x00B1B8E8"
+0x0074D3B0,signature,"void* __thiscall(void* this, void* value)",0x0074D3B0 reads [arg] into +0xC; vftables 0x00B1BCCC/0x00B1BCB8
+0x0074D3E0,signature,"void* __thiscall(void* this, unsigned int flags)","0x0074D3E0 sub ecx,4; jmp 0x0074D560"
+0x0074D3F0,signature,"void* __stdcall(void* container, unsigned int index)","0x0074D3F0 static wstring 0x00C36E94, guard 0x00C36EB0, 0x004C2B10; caller 0x0074D510 (policy name INFERRED from the attribute's template)"
+0x0074D4B0,signature,void __thiscall(void* this),"0x0074D4B0 vftables 0x00B1BCCC/0x00B1BCB8, call 0x004C4E40"
+0x0074D510,signature,"void* __thiscall(void* this, unsigned int index)",0x0074D510 Get 0x0053CC40 then helper 0x0074D3F0 on this+0xC
+0x0074D530,signature,void* __thiscall(void* this),0x0074D530 iterator vftable 0x00B1BD28
+0x0074D560,signature,"void* __thiscall(void* this, unsigned int flags)",0x0074D560 calls 0x0074D4B0
+0x007510E0,signature,"void* __thiscall(void* this, void* unused)","0x007510E0 ret 4, argument not read"
+0x00751110,signature,"void* __thiscall(void* this, void* other)",0x00751110 reads [arg+0xC] into +0xC
+0x00759FE0,signature,void* __thiscall(void* this),0x00759FE0 vftable slot 17
+0x0075A000,signature,"void* __thiscall(void* this, unsigned int flags)","0x0075A000 sub ecx,4; jmp 0x0075A0C0"
+0x0075A010,signature,"void* __thiscall(void* this, void* value)",0x0075A010 vftables 0x00B1C8EC/0x00B1C8D4
+0x0075A040,signature,void __thiscall(void* this),"0x0075A040 vftables 0x00B1C8EC/0x00B1C8D4, call 0x004C4E40"
+0x0075A0A0,signature,"void* __thiscall(void* this, unsigned int index)",0x0075A0A0 ret 4
+0x0075A0C0,signature,"void* __thiscall(void* this, unsigned int flags)",0x0075A0C0 calls 0x0075A040
+0x0076A100,signature,void __thiscall(void* this),"0x0076A100 vftables 0x00B1D224/0x00B1D20C, array destructor 0x006AF230 on +0xC"
+0x0076A170,signature,"void* __thiscall(void* this, unsigned int flags)","0x0076A170 sub ecx,4; jmp 0x0076A2C0"
+0x0076A180,signature,"void* __stdcall(void* container, unsigned int index)","0x0076A180 static wstring 0x00C37490, guard 0x00C374AC; caller 0x0076A200"
+0x0076A200,signature,"void* __thiscall(void* this, unsigned int index)",0x0076A200 GetValuePtr 0x00403C70 then 0x0076A180
+0x0076A220,signature,void* __thiscall(void* this),0x0076A220 vftable slot 17
+0x0076A250,signature,int __thiscall(void* this),"ID 18379: 0x0076A250-0x0076A262; array begin at +0x10, end at +0x14; element count in eax (reconciled: read)"
+0x0076A270,signature,void* __thiscall(void* this),0x0076A270 iterator vftable slot 4
+0x0076A2A0,signature,"bool __thiscall(void* this, void* other)","0x0076A2A0 ret 4, ecx forwarded to 0x005E0890"
+0x0076A2C0,signature,"void* __thiscall(void* this, unsigned int flags)",0x0076A2C0 calls 0x0076A100
+0x0076B6F0,signature,"void* __thiscall(void* this, void* other)",0x0076B6F0 copy-constructs the array (0x0076A870) from [arg+0xC]
+0x0076B770,signature,"void* __thiscall(void* this, void* value)",0x0076B770 copy-constructs the array (0x0076A870) from *arg
+0x0076B7F0,signature,"void* __thiscall(void* this, void* value)",0x0076B7F0 ret 4
+0x0076C620,signature,"void __thiscall(void* this, void* text)",0x0076C620 ret 4
+0x007AE950,signature,void __thiscall(void* this),"0x007AE950 vftables 0x00B215F4/0x00B215E0, 0x004C4E40, array destructor 0x0046C760"
+0x007AE9C0,signature,"void* __thiscall(void* this, unsigned int flags)","0x007AE9C0 sub ecx,4; jmp 0x007AEB00"
+0x007AE9D0,signature,"void* __stdcall(void* container, unsigned int index)","0x007AE9D0 static wstring 0x00C38ABC, guard 0x00C38AD8; caller 0x007AEA50"
+0x007AEA50,signature,"void* __thiscall(void* this, unsigned int index)",0x007AEA50 GetValuePtr 0x00403C70 then 0x007AE9D0
+0x007AEA70,signature,void* __thiscall(void* this),0x007AEA70 iterator vftable slot 4
+0x007AEAB0,signature,"void* __thiscall(void* this, unsigned int flags)",0x007AEAB0 ret 4
+0x007AEAD0,signature,void* __thiscall(void* this),"0x007AEAD0 operator_new 0xC, iterator vftable 0x00B21650"
