@@ -37,7 +37,9 @@ What a run does, on the GOG build's addresses:
   table names);
   `clear` removes a misleading label at the address (`value` the label,
   as Ghidra holds it, with or without its namespaces,
-  or empty for every non-primary one).
+  or empty for every non-primary one); `nofunction` removes a function
+  Ghidra defined where the table has none (a start inside another
+  function's instruction), so the body goes back to its function.
 
 It talks to the server over MCP's plain HTTP (initialize, then
 `eval_python` with the work as JSON, a few thousand rows a call, then
@@ -197,6 +199,13 @@ for address, what, value in W["fixes"]:
                 named = value in (s.getName(), s.getName(True))
                 if (value and named) or (not value and not s.isPrimary()):
                     s.delete()
+        elif what == "nofunction":
+            # A function Ghidra made that is not one, such as a start inside
+            # another function's instruction: its body goes back to the
+            # function around it.
+            f = fm.getFunctionAt(a)
+            if f is not None:
+                fm.removeFunction(a)
         else:
             raise Exception("unknown fix " + what)
     except Exception as e:
@@ -300,10 +309,12 @@ def work(limit=None):
     # decorated name such as ?OnExit@GThread@@UAEXXZ, which readers asked to
     # clear more than once) would be undone by the next run's names: such a
     # line is dropped, not fought over.
+    starts = {address for kind, address, _ in rows if kind == "function"}
     fixes = [
         (a, what, value)
         for a, what, value in fixes
-        if what != "clear" or value not in ours.get(a, ())
+        if (what != "clear" or value not in ours.get(a, ()))
+        and (what != "nofunction" or a not in starts)
     ]
     return rows[:limit] if limit else rows, fixes
 

@@ -7687,3 +7687,6 @@ address,what,value,why
 0x006AF310,signature,"void __cdecl f(void *result, void *firstContainer, void *first, void *lastContainer, void *last, const void *value)","0x006AF310: 0x006AF310-0x006AF38E: six stack arguments (result, first container, first, last container, last, value)"
 0x006AF390,signature,void __thiscall f(void *this),0x006AF390: 0x006AF390-0x006AF3DE
 0x006AF3E0,signature,"void * __cdecl f(void *first, void *last, void *dest)",0x006AF3E0: 0x006AF3E0-0x006AF428
+0x00726567,nofunction,,"a start one byte into the call at 0x00726566 (call 0x00413660, operator new) inside GUI::GUICrafting::RegisterHandler_CountIngredientsMessage (16779, 0x00726560), which it cut short; paragon-agent's gui-22, checked by the keeper"
+0x006AF2A0,signature,"void __stdcall f(void *first, void *last)","14772: ret 8; ecx is loaded with each 0xBC-byte element before the destructor 0x004C0DB0, never read first; lib-agent, b07 corrected"
+0x006AF2D0,signature,"void * __stdcall f(void *first, unsigned int count, const void *value)","14773: ret 0xC; push ecx reserves a local, and the later push ecx forwards the incoming ecx untouched to 0x006AD720 as a filler argument; lib-agent, b07 corrected"

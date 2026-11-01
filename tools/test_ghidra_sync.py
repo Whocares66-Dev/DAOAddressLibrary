@@ -118,7 +118,7 @@ class Work(unittest.TestCase):
             self.assertGreaterEqual(address, 0x00400000)
         for address, what, _value in fixes:
             self.assertGreaterEqual(address, 0x00400000)
-            self.assertIn(what, ("convention", "signature", "clear"))
+            self.assertIn(what, ("convention", "signature", "clear", "nofunction"))
 
 
 if __name__ == "__main__":
