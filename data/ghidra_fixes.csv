@@ -9037,3 +9037,40 @@ address,what,value,why
 0x00413A70,signature,bool __thiscall f(void* this),"slot 3, plain ret"
 0x00413AA0,signature,bool __thiscall f(void* this),"slot 6, plain ret"
 0x00413B00,signature,void __thiscall f(void* this),"slot 7, tail-jump to 0x00413870"
+0x0081E970,signature,"float* __thiscall f(void* this, float* out)","ret 4 at 0x0081EA1F, vftable slot 27, returns the out pointer (mov eax,esi at 0x0081EA1A)"
+0x0081EA30,signature,"void __thiscall f(void* this, unsigned int value)","ret 4 at 0x0081EA93, vftable slot 31"
+0x0081EAA0,signature,"void __thiscall f(void* this, unsigned int index)","ret 4 at 0x0081EBAA, this in ecx read at 0x0081EAA4"
+0x0081EBB0,signature,"void** __thiscall f(void* this, void** out, void* name)","ret 8 at 0x0081ECF2; out written at 0x0081EC9C and 0x0081ECBF and returned (mov eax,esi/edi)"
+0x0081ED60,signature,"void __thiscall f(void* this, void* actor)",ret 4 at 0x0081ED7D
+0x0081ED80,signature,"void __thiscall f(void* this, unsigned int count, unsigned int value)","ret 8 at 0x0081EDD8, this in ecx moved to esi at 0x0081ED86; the value's address is passed on at 0x0081EDC0"
+0x0081EE40,signature,"void* __thiscall f(void* this, unsigned int count)","ret 4 at 0x0081EE9A, returns this (mov eax,esi at 0x0081EE88)"
+0x0081EEA0,signature,"void __thiscall f(void* this, unsigned int count)",ret 4 at 0x0081EEAD; ecx untouched
+0x0081EEB0,signature,"void __thiscall f(void* this, bool deleteElements)","ret 4 at 0x0081EFB9, flag read at 0x0081EF25"
+0x0081F0F0,signature,unsigned int __thiscall f(void* this),"mov eax,[ecx+0x48]; ret at 0x0081F0F3"
+0x0081FD90,signature,"void __thiscall f(void* this, void* nxActor)",ret 4 at 0x0081FDDE
+0x0081FDF0,signature,void __thiscall f(void* this),this in ecx kept in ebx (0x0081FDF4); ends jmp Mutex::Unlock 0x004CB300 at 0x0081FEEE; no stack args
+0x0081FF00,signature,void __thiscall f(void* this),ends jmp Mutex::Unlock 0x004CB300 at 0x0081FFFE; no stack args
+0x00820FC0,signature,"unsigned int __thiscall f(void* this, void* shape)","ret 4 at 0x00820FD4; the only stack argument is the shape, ecx unused"
+0x00820FE0,signature,"unsigned int __thiscall f(void* this, unsigned int h0, unsigned int h1, unsigned int h2, unsigned int h3, unsigned int h4, unsigned int h5, unsigned int h6, unsigned int h7, unsigned int h8, unsigned int h9, unsigned int h10, unsigned int h11)","ret 0x30 at 0x00820FF4 (twelve dwords); first field at [esp+4], the shape at [esp+8]"
+0x00821000,signature,bool __thiscall f(void* this),"vftable slot 27; xor eax,eax; cmp byte [ecx+0x189],al; sete al"
+0x00821010,signature,"void __thiscall f(void* this, bool value)","ret 4 at 0x0082101A, vftable slot 28"
+0x00821020,signature,"void __thiscall f(void* this, bool value)","ret 4 at 0x0082102A, vftable slot 29"
+0x00821030,signature,void __thiscall f(void* this),"vftable slot 24; mov byte [ecx+0xAD],1; ret at 0x00821037"
+0x00821040,signature,void __thiscall f(void* this),"vftable slot 25; mov byte [ecx+0xAD],0; ret at 0x00821047"
+0x00821060,signature,"void __thiscall f(void* this, bool value)","ret 4 at 0x0082106A, vftable slot 31"
+0x00821410,signature,void __thiscall f(void* this),"mov [ecx],0xB26E4C; ret at 0x00821416"
+0x00821520,signature,"bool __stdcall f(void* a, void* b)",ret 8 at 0x00821548 with ecx unused
+0x008220D0,signature,"float __stdcall f(void* start, void* end, void* point, float distance)","ret 0x10 at 0x008221E6, result left in st(0); ecx never read"
+0x008227B0,signature,"void* __thiscall f(void* this, unsigned int flags)","ret 4 at 0x008227CC, returns this (mov eax,esi at 0x008227C9)"
+0x008227D0,signature,"void* __thiscall f(void* this, unsigned int index)","ret 4, this in ecx read at the first instruction (0x008227D0)"
+0x00822800,signature,"void* __thiscall f(void* this, unsigned int index)","ret 4, this in ecx read at the first instruction (0x00822800)"
+0x00822830,signature,"void* __thiscall f(void* this, unsigned int index)","ret 4, this in ecx read at the first instruction (0x00822830)"
+0x00822860,signature,"void* __thiscall f(void* this, unsigned int index)","ret 4, this in ecx read at the first instruction (0x00822860)"
+0x00822890,signature,"void* __cdecl f(void* first, void* last, void* dest)","plain ret at 0x008228E7, three stack arguments"
+0x008228F0,signature,"void __cdecl f(void* first, void* last, void* value)","plain ret at 0x00822958, loop over 0x30-byte elements"
+0x00822960,signature,"void* __cdecl f(void* first, void* last, void* dest)","plain ret, three stack arguments read at 0x00822960-0x0082296A"
+0x008229E0,signature,"void* __cdecl f(void* first, void* last, void* dest)","plain ret at 0x00822A3B, three stack arguments"
+0x00822A40,signature,void* __cdecl f(),push 0x10; operator_new; plain ret at 0x00822A59; no arguments
+0x00822A60,signature,"void __cdecl f(void* dest, unsigned int count, void* value)","plain ret, arguments read at 0x00822A61-0x00822A6D"
+0x00822AD0,signature,"void* __cdecl f(void* first, void* last, void* dest)","plain ret at 0x00822B06, 0x10-byte stride"
+0x00822BD0,signature,"void* __thiscall f(void* this, void* other)","ret 4 at 0x00822BFC, returns this (mov eax,esi at 0x00822BF9)"
