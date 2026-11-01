@@ -7423,7 +7423,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7422,function,,0x00537fb0,0x0073f8d0,0x00537fb0
 7423,function,,0x00538060,0x0073f980,0x00538060
 7424,function,,0x005380b0,0x0073f9d0,0x005380b0
-7425,function,CRoom::ElementArray::GetAt,0x005380d0,0x00715c50,0x005380d0
+7425,function,EC::ModelPlacementArray::GetAt,0x005380d0,0x00715c50,0x005380d0
 7426,function,,0x005380e0,0x00497e30,0x005380e0
 7427,function,,0x00538140,0x00497e90,0x00538140
 7428,function,,0x005381b0,0x004980d0,0x005381b0
@@ -8551,7 +8551,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 8550,function,std::_Insertion_sort<GraphicsStructures::ExportValue*>,0x00567060,0x0075eaf0,0x00567060
 8551,function,std::_Make_heap<GraphicsStructures::ExportValue*>,0x00567100,0x0075eb90,0x00567100
 8552,function,std::_Pop_heap<GraphicsStructures::ExportValue*>,0x00567170,0x0075ec00,0x00567170
-8553,function,Core::ListQueue::PopFront,0x005671e0,0x0074b000,0x005671e0
+8553,function,Core::ListQueue<?>::PopFront,0x005671e0,0x0074b000,0x005671e0
 8554,function,std::_Destroy_range<GraphicsStructures::ModelExport*>,0x00567230,0x0075ec70,0x00567230
 8555,function,"std::_Uninit_fill_n<GraphicsStructures::ModelExport*,unsigned int,GraphicsStructures::ModelExport>",0x00567260,0x0075eca0,0x00567260
 8556,function,std::_Sort_heap<?*>,0x005672a0,0x0075ece0,0x005672a0
@@ -10319,7 +10319,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10318,function,,0x005ccfbc,0x0071233c,0x005ccfbc
 10319,function,EC::ChunkTile::ChooseDetail,0x005ccfe0,0x00712540,0x005ccfe0
 10320,function,EC::ChunkTile::Update,0x005cd180,0x007126e0,0x005cd180
-10321,function,IRoomLayout::vfunction30,0x005cd2d0,0x00712830,0x005cd2d0
+10321,function,EC::CExteriorChunk::IsLoadPending,0x005cd2d0,0x00712830,0x005cd2d0
 10322,function,,0x005cd320,0x00712880,0x005cd320
 10323,function,,0x005cd480,0x00710730,0x005cd480
 10324,function,,0x005cd4f0,0x00713070,0x005cd4f0
@@ -12506,7 +12506,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 12505,function,ECBase::ECDynArray<DebugWorldSpaceTextFloaty*>::operator[],0x0063c230,0x00526ef0,0x0063c230
 12506,function,GUI::GUIFloatyLayer::DisplayStatusMessage,0x0063c260,0x00526f20,0x0063c260
 12507,function,"std::_Distance2<std::_Tree_const_iterator<std::_Tmap_traits<unsigned int,Floaty *>>,unsigned int>",0x0063c2e0,0x007dff40,0x0063c2e0
-12508,function,GUI::GUIFloatyLayer::HasAmbientDialogFloaty,0x0063c320,0x00526fa0,0x0063c320
+12508,function,GUI::GUIFloatyLayer::HasDescriptionFloaty,0x0063c320,0x00526fa0,0x0063c320
 12509,function,GUI::GUIFloatyLayer::CountFloatiesOfKind,0x0063c3f0,0x00527070,0x0063c3f0
 12510,function,std::vector<unsigned int>::IndexOf,0x0063c4b0,0x004cbec0,0x0063c4b0
 12511,function,GUI::FloatyPool<StatsFloaty>::Release,0x0063c540,0x00527130,0x0063c540
@@ -13764,7 +13764,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13763,function,,0x00683380,0x0056f160,0x00683380
 13764,function,,0x00683820,0x0056f600,0x00683820
 13765,function,CCArea::WriteToSave,0x00683c80,0x0056fa60,0x00683c80
-13766,function,CCArea::~CCArea,0x00684760,0x00570540,0x00684760
+13766,function,CCArea::DestroyContents,0x00684760,0x00570540,0x00684760
 13767,function,ScriptBackend::GetNearestObjects,0x006849c0,0x005707a0,0x006849c0
 13768,function,CCArea::GetNearestObjectsToLocation,0x00684dd0,0x00570bb0,0x00684dd0
 13769,function,,0x00685100,0x00570ee0,0x00685100
@@ -14151,7 +14151,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14150,function,CCObject::FindNearestByTag,0x006973b0,0x00588430,0x006973b0
 14151,function,CCObject::BeginConversation,0x006976b0,0x00588730,0x006976b0
 14152,function,CCObject::QueueEffectAnimation,0x006977c0,0x00588840,0x006977c0
-14153,function,SEffectsHolder::CreateEffectVisual,0x00697830,0x005888b0,0x00697830
+14153,function,CCObject::SEffectsHolder_CreateVisual,0x00697830,0x005888b0,0x00697830
 14154,function,CCObject::RemoveVisualEffects,0x006978c0,0x00588940,0x006978c0
 14155,function,CCObject::ResumeEffects,0x006978f0,0x00588970,0x006978f0
 14156,function,CCObject::UpdateControlledRoom,0x00697930,0x005889b0,0x00697930
@@ -15516,7 +15516,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15515,function,,0x006ec310,0x005dde20,0x006ec310
 15516,function,,0x006ec320,0x005dde50,0x006ec320
 15517,function,,0x006ec400,0x005ddf30,0x006ec400
-15518,function,,0x006ec420,0x005ddf50,0x006ec420
+15518,function,PlotGroup::PlotGroup,0x006ec420,0x005ddf50,0x006ec420
 15519,function,,0x006ec6e0,0x005de210,0x006ec6e0
 15520,function,,0x006ec6f0,0x005de220,0x006ec6f0
 15521,function,,0x006ec700,0x005de230,0x006ec700
@@ -15802,7 +15802,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15801,function,"std::_Copy_opt<CSAreaList::Entry*,CSAreaList::Entry*>",0x006fa300,0x005ebfd0,0x006fa300
 15802,function,"std::_Copy_backward_opt<CSAreaList::Entry*,CSAreaList::Entry*>",0x006fa350,0x005ec020,0x006fa350
 15803,function,"std::fill<CSAreaList::Entry*,CSAreaList::Entry>",0x006fa3a0,0x005ec090,0x006fa3a0
-15804,function,"std::copy_backward<CSAreaList::Entry*,CSAreaList::Entry*>",0x006fa3f0,0x005ec0e0,0x006fa3f0
+15804,function,"std::_Copy_backward_opt<CSAreaList::Entry*,CSAreaList::Entry*,std::random_access_iterator_tag>",0x006fa3f0,0x005ec0e0,0x006fa3f0
 15805,function,"std::_Uninit_copy<CSAreaList::Entry*,CSAreaList::Entry*>",0x006fa450,0x005ec140,0x006fa450
 15806,function,CSAreaList::RunPRCScripts,0x006fa480,0x005ec170,0x006fa480
 15807,function,,0x006fa530,0x005ec220,0x006fa530
@@ -17504,7 +17504,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 17503,function,Messages::RegisterText<CharGenStartAppearanceSceneMessage>,0x0073ab20,0x006465f0,0x0073ab20
 17504,function,Messages::RegisterText<CharGenSelectAppearanceAndSoundSetMessage>,0x0073abe0,0x006466b0,0x0073abe0
 17505,function,Messages::RegisterText<CharGenSelectNameMessage>,0x0073aca0,0x00646770,0x0073aca0
-17506,function,RegisterMessageFactory<CharGenUpdateBeardMessage>,0x0073ad60,0x0051b650,0x0073ad60
+17506,function,Messages::RegisterText<CharGenUpdateBeardMessage>,0x0073ad60,0x0051b650,0x0073ad60
 17507,function,Messages::RegisterText<CharGenUploadInfoMessage>,0x0073ae20,0x00646830,0x0073ae20
 17508,function,Messages::RegisterText<CharGenSaveInfoMessage>,0x0073aee0,0x006468f0,0x0073aee0
 17509,function,SmartData::ConvertBoolFromString,0x0073afa0,0x006469b0,0x0073afa0
@@ -19914,7 +19914,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 19913,function,RefreshTacticsDataMessage::InitType,0x007ac2e0,0x0068a010,0x007ac2e0
 19914,function,ValidateActionMessage::GetType,0x007ac340,0x0068a070,0x007ac340
 19915,function,ValidateActionMessage::InitType,0x007ac380,0x0068a0b0,0x007ac380
-19916,function,PartyTactics::GetClassIdPtr,0x007ac3e0,0x0068a110,0x007ac3e0
+19916,function,PartyTactics::StaticClassInfo,0x007ac3e0,0x0068a110,0x007ac3e0
 19917,function,ECBase::ECDynArray<ECBase::ECDynArray<PartyTacticEntry*>>::At,0x007ac440,0x0068a170,0x007ac440
 19918,function,DirtyPresetMessage::Create,0x007ac480,0x0068a1b0,0x007ac480
 19919,function,LoadPresetMessage::Create,0x007ac4e0,0x0068a210,0x007ac4e0
@@ -19994,8 +19994,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 19993,function,PartyTactics::ListCommands,0x007afe80,0x0068dba0,0x007afe80
 19994,function,PartyTactics::IsCommandValid,0x007b0040,0x0068dd60,0x007b0040
 19995,function,PartyTactics::HandleMessage_ValidateActionMessage,0x007b0170,0x0068de90,0x007b0170
-19996,function,Messages::RegisterMessageFactory<DirtyPresetMessage>,0x007b0390,0x0068e120,0x007b0390
-19997,function,Messages::RegisterMessageFactory<LoadPresetMessage>,0x007b0450,0x0068e1e0,0x007b0450
+19996,function,Messages::RegisterText<DirtyPresetMessage>,0x007b0390,0x0068e120,0x007b0390
+19997,function,Messages::RegisterText<LoadPresetMessage>,0x007b0450,0x0068e1e0,0x007b0450
 19998,function,Messages::RegisterText<SavePresetMessage>,0x007b0510,0x0068e2a0,0x007b0510
 19999,function,Messages::RegisterText<SetBehaviourMessage>,0x007b05d0,0x0068e360,0x007b05d0
 20000,function,Messages::RegisterText<RefreshTacticsDataMessage>,0x007b0690,0x0068e420,0x007b0690
@@ -21670,31 +21670,31 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21669,function,GUI::GUIPaperdoll::GetTattooCount,0x007ff970,0x006ec540,0x007ff970
 21670,function,GUI::CharGenMorphConfig::HandleEndElement,0x007ff990,0x006ec560,0x007ff990
 21671,function,std::_Vector_iterator<unsigned int>::operator-,0x007ff9c0,0x006ec590,0x007ff9c0
-21672,function,std::vector<GUI::MorphMatVecParam>::_Ucopy,0x007ffa00,0x006ec5d0,0x007ffa00
-21673,function,std::vector<GUI::MorphTextureParam>::_Ucopy,0x007ffa30,0x00693560,0x007ffa30
+21672,function,std::vector<GUI::HeadPreset::MaterialVector>::_Ucopy,0x007ffa00,0x006ec5d0,0x007ffa00
+21673,function,std::vector<GUI::HeadPreset::Texture>::_Ucopy,0x007ffa30,0x00693560,0x007ffa30
 21674,function,GUI::CharGenMorphConfig::EndElementCallback,0x007ffa60,0x006ec600,0x007ffa60
 21675,function,std::vector<unsigned int>::end,0x007ffa80,0x006ec620,0x007ffa80
-21676,function,std::vector<GUI::MorphMatParam>::clear,0x007ffab0,0x006ec650,0x007ffab0
-21677,function,std::vector<GUI::MorphMatVecParam>::clear,0x007ffaf0,0x006ec690,0x007ffaf0
-21678,function,std::vector<GUI::MorphTextureParam>::clear,0x007ffb30,0x006ec6d0,0x007ffb30
+21676,function,std::vector<GUI::HeadPreset::MaterialValue>::clear,0x007ffab0,0x006ec650,0x007ffab0
+21677,function,std::vector<GUI::HeadPreset::MaterialVector>::clear,0x007ffaf0,0x006ec690,0x007ffaf0
+21678,function,std::vector<GUI::HeadPreset::Texture>::clear,0x007ffb30,0x006ec6d0,0x007ffb30
 21679,function,GUI::GUIPaperdoll::GetListIndex,0x007ffb70,0x006ec710,0x007ffb70
 21680,function,GUI::CharGenMorphConfig::~CharGenMorphConfig,0x007ffc10,0x006ec7b0,0x007ffc10
 21681,function,GUI::CharGenMorphConfig::LookupKeyword,0x007ffd70,0x006ec910,0x007ffd70
-21682,function,std::vector<GUI::MorphMatParam>::operator=,0x007fff10,0x006ecab0,0x007fff10
-21683,function,std::vector<GUI::MorphMatVecParam>::operator=,0x00800060,0x006ecc00,0x00800060
-21684,function,std::vector<GUI::MorphTextureParam>::operator=,0x008001d0,0x006ecd70,0x008001d0
-21685,function,std::vector<GUI::MorphMatParam>::insert,0x00800340,0x006ecee0,0x00800340
-21686,function,std::vector<GUI::MorphMatVecParam>::insert,0x008003d0,0x006ecf70,0x008003d0
-21687,function,std::vector<GUI::MorphTextureParam>::insert,0x00800480,0x006ed020,0x00800480
+21682,function,std::vector<GUI::HeadPreset::MaterialValue>::operator=,0x007fff10,0x006ecab0,0x007fff10
+21683,function,std::vector<GUI::HeadPreset::MaterialVector>::operator=,0x00800060,0x006ecc00,0x00800060
+21684,function,std::vector<GUI::HeadPreset::Texture>::operator=,0x008001d0,0x006ecd70,0x008001d0
+21685,function,std::vector<GUI::HeadPreset::MaterialValue>::insert,0x00800340,0x006ecee0,0x00800340
+21686,function,std::vector<GUI::HeadPreset::MaterialVector>::insert,0x008003d0,0x006ecf70,0x008003d0
+21687,function,std::vector<GUI::HeadPreset::Texture>::insert,0x00800480,0x006ed020,0x00800480
 21688,function,std::vector<GUI::GUIPaperdoll::TattooEntry>::insert,0x00800530,0x006ed0d0,0x00800530
 21689,function,std::vector<GUI::GUIPaperdoll::SliderEntry>::insert,0x008005c0,0x006ed160,0x008005c0
 21690,function,GUI::ComposeMorphTask::ReloadPartModel,0x00800670,0x006ed210,0x00800670
 21691,function,GUI::MorphMatParamList::operator=,0x008007c0,0x006ed360,0x008007c0
 21692,function,GUI::MorphMatVecParamList::operator=,0x008007e0,0x006ed380,0x008007e0
 21693,function,GUI::MorphTextureParamList::operator=,0x00800800,0x006ed3a0,0x00800800
-21694,function,std::vector<GUI::MorphMatParam>::push_back,0x00800820,0x006ed3c0,0x00800820
-21695,function,std::vector<GUI::MorphMatVecParam>::push_back,0x008008b0,0x006ed450,0x008008b0
-21696,function,std::vector<GUI::MorphTextureParam>::push_back,0x00800950,0x006ed4f0,0x00800950
+21694,function,std::vector<GUI::HeadPreset::MaterialValue>::push_back,0x00800820,0x006ed3c0,0x00800820
+21695,function,std::vector<GUI::HeadPreset::MaterialVector>::push_back,0x008008b0,0x006ed450,0x008008b0
+21696,function,std::vector<GUI::HeadPreset::Texture>::push_back,0x00800950,0x006ed4f0,0x00800950
 21697,function,std::vector<GUI::GUIPaperdoll::TattooEntry>::push_back,0x008009f0,0x006ed590,0x008009f0
 21698,function,std::vector<GUI::GUIPaperdoll::SliderEntry>::push_back,0x00800a80,0x006ed620,0x00800a80
 21699,function,GUI::CharGenMorphConfig::HandleElement,0x00800b20,0x006ed6c0,0x00800b20
@@ -21761,10 +21761,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21760,function,GUI::GUIPaperdoll::SetBlushColor,0x00805ae0,0x006f2680,0x00805ae0
 21761,function,GUI::GUIPaperdoll::SetLipColor,0x00805d00,0x006f28a0,0x00805d00
 21762,function,GUI::GUIPaperdoll::ReadSlidersFromRecipe,0x00805f20,0x006f2ac0,0x00805f20
-21763,function,std::vector<GUI::MorphTarget>::erase,0x00807ae0,0x006f4680,0x00807ae0
-21764,function,std::vector<GUI::MorphTarget>::operator=,0x00807ba0,0x006f4740,0x00807ba0
-21765,function,std::vector<GUI::MorphTarget>::insert,0x00807bc0,0x006f4760,0x00807bc0
-21766,function,std::vector<GUI::MorphTarget>::push_back,0x00807c70,0x006f4810,0x00807c70
+21763,function,std::vector<GUI::HeadPreset::ModelWeight>::erase,0x00807ae0,0x006f4680,0x00807ae0
+21764,function,std::vector<GUI::HeadPreset::ModelWeight>::operator=,0x00807ba0,0x006f4740,0x00807ba0
+21765,function,std::vector<GUI::HeadPreset::ModelWeight>::insert,0x00807bc0,0x006f4760,0x00807bc0
+21766,function,std::vector<GUI::HeadPreset::ModelWeight>::push_back,0x00807c70,0x006f4810,0x00807c70
 21767,function,GUI::GUIPaperdoll::SetMorphTargetWeight,0x00807d10,0x006f48b0,0x00807d10
 21768,function,GUI::GUIPaperdoll::SetSliderTargetWeight,0x00807f10,0x006f4ab0,0x00807f10
 21769,function,GUI::GUIPaperdoll::ResetMorphEditor,0x00808040,0x006f4be0,0x00808040
@@ -33070,7 +33070,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33069,function,,0x00a487d0,0x007d2080,0x00a487d0
 33070,function,,0x00a48850,0x007d2100,0x00a48850
 33071,function,Pathfinding::MapAbstractionBuilder::~MapAbstractionBuilder,0x00a48870,0x007d2120,0x00a48870
-33072,function,Pathfinding::Grid::Load,0x00a48900,0x007d21b0,0x00a48900
+33072,function,Pathfinding::AreaGridEntry::Load,0x00a48900,0x007d21b0,0x00a48900
 33073,function,Pathfinding::AreaGridEntry::AreaGridEntry,0x00a48d90,0x007d2640,0x00a48d90
 33074,function,Pathfinding::AreaGridMap::AddAreaGrid,0x00a48e30,0x007d26e0,0x00a48e30
 33075,function,Pathfinding::Grid::Grid,0x00a48f00,0x007ce040,0x00a48f00
@@ -33272,7 +33272,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33271,function,,0x00a540f0,0x007dd240,0x00a540f0
 33272,function,,0x00a541c0,0x007dd310,0x00a541c0
 33273,function,,0x00a54320,0x007dd470,0x00a54320
-33274,function,,0x00a54590,0x007dd6e0,0x00a54590
+33274,function,Pathfinding::FineSearch::NodeWordRef,0x00a54590,0x007dd6e0,0x00a54590
 33275,function,,0x00a547f0,0x007dd940,0x00a547f0
 33276,function,,0x00a54950,0x007ddaa0,0x00a54950
 33277,function,,0x00a54a60,0x007ddbb0,0x00a54a60
@@ -33783,7 +33783,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33782,function,MovementAnimController::EnterTurnInPlace,0x00a6aff0,0x0071b270,0x00a6aff0
 33783,function,,0x00a6b180,0x0071b400,0x00a6b180
 33784,function,,0x00a6b250,0x0071b4d0,0x00a6b250
-33785,function,CreatureVisual::LoadAppearance,0x00a6b2b0,0x0071b530,0x00a6b2b0
+33785,function,MovementAnimController::LoadAppearance,0x00a6b2b0,0x0071b530,0x00a6b2b0
 33786,function,,0x00a6b5d0,0x0071b850,0x00a6b5d0
 33787,function,,0x00a6b6c0,0x0071b940,0x00a6b6c0
 33788,function,MovementAnimController::OnEnterStartMode,0x00a6b710,0x0071b990,0x00a6b710
