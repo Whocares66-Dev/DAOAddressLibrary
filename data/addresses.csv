@@ -6874,8 +6874,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6873,function,"std::map<unsigned int,?>::operator[]",0x0051fd90,0x00455550,0x0051fd90
 6874,function,"std::map<std::wstring,?>::operator[]",0x0051fe10,0x00898730,0x0051fe10
 6875,function,"std::operator<<(std::wostream&,char const*)",0x0051fef0,0x00506770,0x0051fef0
-6876,function,,0x00520108,0x00506988,0x00520108
-6877,function,,0x0052013d,0x005069bd,0x0052013d
+6876,function,Catch_All@00520108,0x00520108,0x00506988,0x00520108
+6877,function,"std::operator<<(std::wostream&,char const*)::resume",0x0052013d,0x005069bd,0x0052013d
 6878,function,GuiCommands::RegisterFSCommand,0x005201c0,0x007c88e0,0x005201c0
 6879,function,GuiCommands::RegisterExternalInterface,0x00520280,0x007c89a0,0x00520280
 6880,function,GuiFSCommand::ListMemberNames,0x00520340,0x007c8a60,0x00520340
@@ -7039,14 +7039,14 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7038,function,ScaleformAtlasReader::~ScaleformAtlasReader,0x00526620,0x007cd380,0x00526620
 7039,function,ScaleformAtlasReader::`scalar deleting destructor'`adjustor{16}',0x00526640,0x007cd3b0,0x00526640
 7040,function,ScaleformAtlasReader::`scalar deleting destructor',0x00526650,0x007cd3c0,0x00526650
-7041,function,,0x00526670,0x007cd3e0,0x00526670
-7042,function,,0x005266f0,0x007cd460,0x005266f0
-7043,function,,0x0052676c,0x007cd4dc,0x0052676c
+7041,function,"std::_Construct<std::pair<std::wstring const,GUI::AtlasEntry>,std::pair<std::wstring const,GUI::AtlasEntry>>",0x00526670,0x007cd3e0,0x00526670
+7042,function,"std::list<std::pair<std::wstring const,GUI::AtlasEntry>>::_Buynode",0x005266f0,0x007cd460,0x005266f0
+7043,function,Catch_All@0052676c,0x0052676c,0x007cd4dc,0x0052676c
 7044,function,,0x00526790,0x007cd500,0x00526790
 7045,function,,0x00526830,0x007cd5a0,0x00526830
 7046,function,ScaleformAtlasMap::Insert,0x00526de0,0x007cdb50,0x00526de0
 7047,function,ScaleformAtlasReader::StartElement,0x00526e80,0x007cdbf0,0x00526e80
-7048,function,,0x00527080,0x007cddf0,0x00527080
+7048,function,Messages::GFxValueDataStream::SetValues,0x00527080,0x007cddf0,0x00527080
 7049,function,Messages::GFxValueDataStream::ReadWString,0x005270a0,0x007cde10,0x005270a0
 7050,function,Messages::GFxValueDataStream::GFxValueDataStream,0x005270d0,0x007cde70,0x005270d0
 7051,function,Messages::GFxValueDataStream::ReadBool,0x005270f0,0x007cde90,0x005270f0
@@ -7117,8 +7117,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7116,function,,0x00528450,0x0072f2e0,0x00528450
 7117,function,,0x005284e0,0x0072f370,0x005284e0
 7118,function,Eclipse::IGraphicsInternal::DisplayMovies,0x00528640,0x0072f4d0,0x00528640
-7119,function,,0x005287b0,0x0072f640,0x005287b0
-7120,function,,0x00528890,0x0072f720,0x00528890
+7119,function,Eclipse::IGraphicsInternal::DrawGuiMovies,0x005287b0,0x0072f640,0x005287b0
+7120,function,"std::find<?,?>",0x00528890,0x0072f720,0x00528890
 7121,function,Eclipse::UpdateAndRenderLoadingGUITask::Execute,0x00528940,0x0072f7d0,0x00528940
 7122,function,,0x00528a30,0x0072f8c0,0x00528a30
 7123,function,,0x00528b00,0x0072f990,0x00528b00
@@ -7126,8 +7126,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7125,function,,0x00528f30,0x0072fdc0,0x00528f30
 7126,function,,0x00528fa0,0x0072fe30,0x00528fa0
 7127,function,,0x00528fb0,0x0072fe40,0x00528fb0
-7128,function,,0x00528fc0,0x0072fe50,0x00528fc0
-7129,function,,0x00529040,0x0072fed0,0x00529040
+7128,function,std::_Destroy_range<?*>,0x00528fc0,0x0072fe50,0x00528fc0
+7129,function,std::_Tree<?>::_Erase,0x00529040,0x0072fed0,0x00529040
 7130,function,,0x005290e0,0x0072ff70,0x005290e0
 7131,function,,0x005293b0,0x00730240,0x005293b0
 7132,function,,0x005293d0,0x00730260,0x005293d0
@@ -7179,50 +7179,50 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7178,function,,0x0052b260,0x007320e0,0x0052b260
 7179,function,,0x0052b2cb,0x0073214b,0x0052b2cb
 7180,function,,0x0052b300,0x00732180,0x0052b300
-7181,function,,0x0052b370,0x007321f0,0x0052b370
-7182,function,,0x0052b3d0,0x00732250,0x0052b3d0
-7183,function,,0x0052b400,0x00732280,0x0052b400
+7181,function,std::vector<?>::erase,0x0052b370,0x007321f0,0x0052b370
+7182,function,"std::_Copy_backward<?*,?*>",0x0052b3d0,0x00732250,0x0052b3d0
+7183,function,"std::_Uninit_fill_n<?*,unsigned int,?,std::allocator<?>>",0x0052b400,0x00732280,0x0052b400
 7184,function,,0x0052b440,0x007322c0,0x0052b440
-7185,function,,0x0052b460,0x007322e0,0x0052b460
+7185,function,"std::_Uninit_copy<?*,?*,std::allocator<?>>",0x0052b460,0x007322e0,0x0052b460
 7186,function,,0x0052b490,0x00732310,0x0052b490
 7187,function,,0x0052b5c0,0x00732440,0x0052b5c0
 7188,function,,0x0052b784,0x00732604,0x0052b784
 7189,function,,0x0052b82f,0x007326af,0x0052b82f
-7190,function,,0x0052b8c0,0x00732740,0x0052b8c0
-7191,function,,0x0052b9e0,0x00732860,0x0052b9e0
+7190,function,std::vector<?>::resize,0x0052b8c0,0x00732740,0x0052b8c0
+7191,function,std::vector<?>::insert,0x0052b9e0,0x00732860,0x0052b9e0
 7192,function,,0x0052ba90,0x00732910,0x0052ba90
 7193,function,,0x0052bb30,0x007329b0,0x0052bb30
 7194,function,,0x0052bba0,0x00732a20,0x0052bba0
 7195,function,,0x0052bd90,0x00732c10,0x0052bd90
-7196,function,,0x0052be10,0x00732c90,0x0052be10
+7196,function,Eclipse::DestroyGraphics,0x0052be10,0x00732c90,0x0052be10
 7197,function,,0x0052be40,0x00732cc0,0x0052be40
-7198,function,,0x0052be60,0x00732ce0,0x0052be60
-7199,function,,0x0052bec0,0x00732d40,0x0052bec0
-7200,function,,0x0052bf80,0x00732e00,0x0052bf80
+7198,function,SpeedTree::PackVec3ToHalf4,0x0052be60,0x00732ce0,0x0052be60
+7199,function,String::StripPathAndExtension,0x0052bec0,0x00732d40,0x0052bec0
+7200,function,SpeedTree::SetAllocator,0x0052bf80,0x00732e00,0x0052bf80
 7201,function,,0x0052bf90,0x00732e10,0x0052bf90
-7202,function,,0x0052bfa0,0x00732e20,0x0052bfa0
-7203,function,,0x0052c040,0x00732ec0,0x0052c040
-7204,function,,0x0052c070,0x00732ef0,0x0052c070
-7205,function,,0x0052c0a0,0x00732f20,0x0052c0a0
-7206,function,,0x0052c400,0x00733280,0x0052c400
-7207,function,,0x0052c460,0x007332e0,0x0052c460
-7208,function,,0x0052c4c0,0x00733340,0x0052c4c0
-7209,function,,0x0052c5b0,0x00733430,0x0052c5b0
-7210,function,,0x0052c8e0,0x00733760,0x0052c8e0
-7211,function,,0x0052cc50,0x00733ad0,0x0052cc50
-7212,function,,0x0052cc60,0x00733ae0,0x0052cc60
-7213,function,,0x0052cd60,0x00733be0,0x0052cd60
-7214,function,,0x0052ce50,0x00733cd0,0x0052ce50
-7215,function,,0x0052ce80,0x00733d00,0x0052ce80
-7216,function,,0x0052cf20,0x00733da0,0x0052cf20
-7217,function,,0x0052cf30,0x00733db0,0x0052cf30
-7218,function,,0x0052cf40,0x00733dc0,0x0052cf40
+7202,function,SpeedTree::EnsureSptExtension,0x0052bfa0,0x00732e20,0x0052bfa0
+7203,function,SpeedTree::ScaleExtent,0x0052c040,0x00732ec0,0x0052c040
+7204,function,GraphicsStructures::SpeedTreeModel::SetEnabled,0x0052c070,0x00732ef0,0x0052c070
+7205,function,GraphicsStructures::SpeedTreeModel::BuildLeafVertexElements,0x0052c0a0,0x00732f20,0x0052c0a0
+7206,function,GraphicsStructures::SpeedTreeModel::GetVertexStride,0x0052c400,0x00733280,0x0052c400
+7207,function,GraphicsStructures::SpeedTreeModel::GetVertexCount,0x0052c460,0x007332e0,0x0052c460
+7208,function,GraphicsStructures::SpeedTreeModel::ReleaseGeometry,0x0052c4c0,0x00733340,0x0052c4c0
+7209,function,GraphicsStructures::SpeedTreeModel::FillLeafCardVertices,0x0052c5b0,0x00733430,0x0052c5b0
+7210,function,GraphicsStructures::SpeedTreeModel::FillLeafMeshVertices,0x0052c8e0,0x00733760,0x0052c8e0
+7211,function,GraphicsStructures::SpeedTreeModel::IsEnabled,0x0052cc50,0x00733ad0,0x0052cc50
+7212,function,GraphicsStructures::SpeedTreeModel::UpdateAlphaMultiplier,0x0052cc60,0x00733ae0,0x0052cc60
+7213,function,GraphicsStructures::SpeedTreeInstance::SetLod,0x0052cd60,0x00733be0,0x0052cd60
+7214,function,GraphicsStructures::SpeedTreeInstance::WriteBillboardLod,0x0052ce50,0x00733cd0,0x0052ce50
+7215,function,GraphicsStructures::SpeedTreeInstance::GetKindLod,0x0052ce80,0x00733d00,0x0052ce80
+7216,function,GraphicsStructures::SpeedTreeInstance::IsActive,0x0052cf20,0x00733da0,0x0052cf20
+7217,function,GraphicsStructures::SpeedTreeInstance::IsVisible,0x0052cf30,0x00733db0,0x0052cf30
+7218,function,GraphicsStructures::SpeedTreeInstance::SetVisible,0x0052cf40,0x00733dc0,0x0052cf40
 7219,function,,0x0052cf60,0x00733de0,0x0052cf60
 7220,function,,0x0052cfd0,0x00733e50,0x0052cfd0
-7221,function,,0x0052cff0,0x00733e70,0x0052cff0
-7222,function,,0x0052d060,0x00733ee0,0x0052d060
-7223,function,,0x0052d0e0,0x00733f60,0x0052d0e0
-7224,function,,0x0052d100,0x00733f80,0x0052d100
+7221,function,Math::FastSqrt,0x0052cff0,0x00733e70,0x0052cff0
+7222,function,GraphicsStructures::SpeedTreeWorld::GetWindByFraction,0x0052d060,0x00733ee0,0x0052d060
+7223,function,GraphicsStructures::SpeedTreeWorld::WindProxy::UpdateWind,0x0052d0e0,0x00733f60,0x0052d0e0
+7224,function,GraphicsStructures::SpeedTreeModel::LodMeshArray::GetAt,0x0052d100,0x00733f80,0x0052d100
 7225,function,Physics::ISimulatable::ISimulatable,0x0052d120,0x00733fa0,0x0052d120
 7226,function,Physics::ISimulatable::~ISimulatable,0x0052d130,0x00733fb0,0x0052d130
 7227,function,Physics::ISimulatableNode::ISimulatableNode,0x0052d150,0x00733fd0,0x0052d150
@@ -96244,7 +96244,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 96243,data,,0x00bf7414,0x00c070d4,0x00bf7414
 96244,data,,0x00bf7418,0x00c070d8,0x00bf7418
 96245,data,,0x00bf741c,0x00c070dc,0x00bf741c
-96246,data,,0x00bf7460,0x00c07120,0x00bf7460
+96246,data,g_speedTreeAllocator,0x00bf7460,0x00c07120,0x00bf7460
 96247,data,CSpeedTreeAllocator::typeinfo,0x00bf7464,0x00c07124,0x00bf7464
 96248,data,Graphics::IWindWorld::typeinfo,0x00bf7488,0x00c07148,0x00bf7488
 96249,data,Graphics::IWindProxy::typeinfo,0x00bf74ac,0x00c0716c,0x00bf74ac
