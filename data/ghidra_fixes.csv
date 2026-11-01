@@ -7265,3 +7265,46 @@ address,what,value,why
 0x00707B80,signature,void __thiscall GUI::GUIAchievementUnlocked::~GUIAchievementUnlocked(void* this),plain ret at 0x00707C1A (reader B)
 0x00707F10,signature,void __thiscall GUI::GUIJournal::~GUIJournal(void* this),plain ret at 0x00708045 (reader B)
 0x0069DF10,signature,"int __thiscall ApplySavedHero(void* this, void* saveGame, bool appearanceOnly)","ret 8 at 0x0069E115; returns [esp+0x14] (1, or 0 at 0x0069DF59/0x0069E0FA); the byte gates CCParty::LoadFromSave (0x0069E029) and event 0x35 (0x0069E06E); name proposed, the ID 14298 is unnamed"
+0x00708060,signature,"void* __thiscall [thunk]:GUI::GUIJournal::`scalar deleting destructor'`adjustor{28}'(void* this, unsigned int flags)","sub ecx,0x1C; jmp 0x007083D0 (ret 4); Ghidra labels it vfunction2"
+0x00708070,signature,"void* __thiscall [thunk]:GUI::GUIJournal::`scalar deleting destructor'`adjustor{32}'(void* this, unsigned int flags)","sub ecx,0x20; jmp 0x007083D0; Ghidra labels it vfunction1"
+0x00708080,signature,void* __thiscall GUI::GUIJournal::GetClassInfo(void* this),"vftable slot 0 (this unread); mov eax,0xC066A0; Ghidra labels it vfunction1"
+0x007080B0,signature,void __thiscall GUI::GUIJournal::RegisterClass(void* this),"ecx kept in esi, tail jmp 0x00402B30; Ghidra labels it vfunction3"
+0x007080F0,signature,"void* __thiscall GUI::GUIJournal::GUIJournal(void* this, void* other)","ret 4, ecx read; copy constructor (Ghidra shows no parameter)"
+0x00708280,signature,void __thiscall GUI::GUIJournal::OnShow(void* this),"ecx kept in esi, tail jmp GUIScene::OnShow 0x00A55820; Ghidra labels it vfunction6"
+0x00708280,clear,GUI::GUIJournal::vfunction6,misleading label: slot 5 OnShow
+0x00708360,signature,void* __thiscall GUI::GUIJournal::Clone(void* this),"plain ret, ecx read; new 0x280"
+0x007083D0,signature,"void* __thiscall GUI::GUIJournal::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4; Ghidra labels it vfunction5
+0x007083F0,signature,void* __thiscall GUI::GUIJournal::GUIJournal(void* this),"plain ret; decompiler shifts the member names by one (NotificationQuest is +0xC0, not +0xE8)"
+0x00709400,signature,void __thiscall GUI::GUIPopupLayer::~GUIPopupLayer(void* this),"plain ret, ecx read"
+0x007095E0,signature,"void* __thiscall [thunk]:GUI::GUIPopupLayer::`scalar deleting destructor'`adjustor{28}'(void* this, unsigned int flags)","sub ecx,0x1C; jmp 0x00709AF0"
+0x007095F0,signature,"void* __thiscall [thunk]:GUI::GUIPopupLayer::`scalar deleting destructor'`adjustor{32}'(void* this, unsigned int flags)","sub ecx,0x20; jmp 0x00709AF0"
+0x00709600,signature,"void* __thiscall [thunk]:GUI::GUIPopupLayer::`scalar deleting destructor'`adjustor{8}'(void* this, unsigned int flags)","sub ecx,8; jmp 0x00709AF0"
+0x00709610,signature,void* __thiscall GUI::GUIPopupLayer::GetClassInfo(void* this),"vftable slot 0 (this unread); mov eax,0xC066D8"
+0x00709670,signature,"void* __thiscall GUI::GUIPopupLayer::GUIPopupLayer(void* this, void* other)","ret 4, ecx read; copy constructor"
+0x00709A80,signature,void* __thiscall GUI::GUIPopupLayer::Clone(void* this),"plain ret, ecx read; new 0x380"
+0x00709AF0,signature,"void* __thiscall GUI::GUIPopupLayer::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x00709B10,signature,void __thiscall GUI::GUIPopupLayer::RegisterMessageHandlers(void* this),vftable slot 3; ecx replaced by MessageRegistry::Get's result before the jmp
+0x00709B20,signature,void __thiscall GUI::GUIPopupLayer::RegisterClass(void* this),ecx kept in esi; jmp 0x00709B10
+0x00709B70,signature,"void __thiscall Messages::RegisterText<ScriptDialogResultMessage>(void* this, void* name)",ret 4; ecx = registry from 0x00489BC0 (caller 0x0070A981)
+0x00709C30,signature,void* __thiscall GUI::GUIPopupLayer::GUIPopupLayer(void* this),"plain ret, ecx read"
+0x007141A0,signature,"void* __thiscall CCItem::GetDescription(void* this, void* out)","ret 4; ecx+0x51C read, returns out in eax"
+0x007169D0,signature,void __thiscall GUI::GUIBookback::OnShow(void* this),"plain ret, ecx read; Ghidra labels it vfunction6"
+0x007169D0,clear,GUI::GUIBookback::vfunction6,misleading label: slot 5 OnShow
+0x00716A00,signature,"void __thiscall GUI::GUIBookback::SetShowBlack(void* this, bool show)",tail jmp to the attribute's slot +0x54 with the caller's arg; callers push 1 arg and do not clean
+0x00716A20,signature,"void __thiscall GUI::GUIBookback::SetShowContents(void* this, bool show)","tail jmp to the attribute's slot +0x54; callers 0x00716A40 (1), 0x0060B1D1 (0)"
+0x00717090,signature,void __thiscall GUI::GUIBookback::Close(void* this),"plain ret, ecx read; Ghidra labels it vfunction7"
+0x00717090,clear,GUI::GUIBookback::vfunction7,misleading label: slot 6 Close
+0x00717150,signature,void __thiscall GUI::GUIBookback::~GUIBookback(void* this),"plain ret, ecx read"
+0x007171E0,signature,"void* __thiscall [thunk]:GUI::GUIBookback::`scalar deleting destructor'`adjustor{28}'(void* this, unsigned int flags)","sub ecx,0x1C; jmp 0x00717510; Ghidra labels it vfunction2"
+0x007171F0,signature,"void* __thiscall [thunk]:GUI::GUIBookback::`scalar deleting destructor'`adjustor{32}'(void* this, unsigned int flags)","sub ecx,0x20; jmp 0x00717510; Ghidra labels it vfunction1"
+0x00717200,signature,"void* __thiscall [thunk]:GUI::GUIBookback::`scalar deleting destructor'`adjustor{8}'(void* this, unsigned int flags)","sub ecx,8; jmp 0x00717510; Ghidra labels it vfunction3"
+0x00717210,signature,void* __thiscall GUI::GUIBookback::GetClassInfo(void* this),"vftable slot 0 (this unread); mov eax,0xC082EC; Ghidra labels it vfunction1"
+0x00717240,signature,"void* __thiscall GUI::GUIBookback::GUIBookback(void* this, void* other)","ret 4, ecx read; copy constructor (Ghidra names it as the default ctor)"
+0x007174A0,signature,void* __thiscall GUI::GUIBookback::Clone(void* this),plain ret; new 0xE0
+0x00717510,signature,"void* __thiscall GUI::GUIBookback::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4; Ghidra labels it vfunction5
+0x00717530,signature,void __thiscall GUI::GUIBookback::RegisterMessageHandlers(void* this),vftable slot 3; Ghidra labels it vfunction4
+0x00717560,signature,void __thiscall GUI::GUIBookback::RegisterClass(void* this),ecx kept in esi; jmp 0x00717530; Ghidra labels it vfunction3
+0x007175B0,signature,"void __thiscall Messages::RegisterText<ShowBookContentsMessage>(void* this, void* name)",ret 4; ecx = registry from 0x00489BC0 (caller 0x00717AC8)
+0x00717670,signature,"void __thiscall Messages::RegisterText<ShowBookFrontMessage>(void* this, void* name)",ret 4; ecx = registry from 0x00489BC0 (caller 0x00717AFC)
+0x00717730,signature,"void __thiscall Messages::RegisterText<HideBookFrontMessage>(void* this, void* name)",ret 4; ecx = registry from 0x00489BC0 (caller 0x00717B30)
+0x00708080,clear,GUI::GUIJournal::vfunction1,"misleading label: slot 0 GetClassInfo, returns the class node 0x00C066A0 (reader B; A had it only in the signature row)"
