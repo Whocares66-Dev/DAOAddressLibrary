@@ -5510,3 +5510,55 @@ address,what,value,why
 0x00A3C030,signature,"void __cdecl ShakeNoise_White(float* out, int count)",not in the batch; rand()/16383.5 - 1 per sample
 0x00A3C0C0,signature,"float __cdecl CosineInterpolate(float a, float b, float x)","not in the batch; f = (1 - cos)/2, a(1-f) + b f"
 0x006F3650,convention,__thiscall,reads ECX at 0x006F3673; plain ret
+0x007D3550,signature,"void __thiscall ActionLightIntensity_Update(void *this, float dt, float tLocal)",ret 8 at 0x007D356F; reads arg2 at [ESP+8] on entry
+0x007D3580,signature,"void __thiscall ActionLightColor_Update(void *this, float dt, float tLocal)",ret 8 at 0x007D35EA
+0x007D35F0,clear,ActionLinkToActor::vfunction3,"A thunk (JMP 0x007D1150); vtable slot 2 is Reset, and the same label is on 0x007D1150"
+0x007D3910,signature,"int __thiscall ClipRecordList_IndexOf(void *this, const void *record)",ret 4 at 0x007D39A4 and 0x007D396E; returns -1 or index
+0x007D3CF0,signature,"void __thiscall ActionLinkToActor_Update(void *this, float dt, float tLocal)",ret 8 at 0x007D403C
+0x007D44C0,signature,"void __thiscall ActionChangeVisibility_Update(void *this, float dt, float tLocal)",ret 8 at 0x007D44CD
+0x007D44D0,signature,void __thiscall ActionChangeVisibility_Reset(void *this),"plain ret (0x007D44F3, 0x007D44FF); reads ecx first"
+0x007D4500,signature,"void __thiscall ActionFrameBufferEffect_Update(void *this, float dt, float tLocal)",ret 8 at 0x007D47F3
+0x007D4800,signature,void __thiscall ActionFrameBufferEffect_Reset(void *this),plain ret at 0x007D4820
+0x007D5EC0,signature,"void __thiscall ClipRecordList_PushBack(void *this, const void *record)",ret 4 at 0x007D5F34 and 0x007D5F5D
+0x007D7210,signature,"void __thiscall ActionLinkToActor_CollectDependencies(void *this, void *actorList)","ret 4 at 0x007D7238; the argument is a std::list<Actor*> (0x00698C30 is a list push_back), not a set"
+0x007D9040,signature,void __thiscall Action_dtor(void *this),plain ret at 0x007D9097
+0x007D90A0,signature,"void __thiscall Action_LoadCurves(void *this, void *gffStruct)",ret 4 at 0x007D919A
+0x007D9270,signature,void __thiscall ActionShake_dtor(void *this),plain ret at 0x007D92DA
+0x007D95C0,signature,void __thiscall ActionPlayAnimation_dtor(void *this),plain ret at 0x007D965D
+0x007D9660,signature,void __thiscall ActionLinkToActor_dtor(void *this),plain ret at 0x007D96C7
+0x007D96D0,signature,void __thiscall ActionFrameBufferEffect_dtor(void *this),plain ret at 0x007D975C
+0x007D98D0,signature,void __thiscall ActionAnimateFace_dtor(void *this),plain ret at 0x007D99AB
+0x007DA800,signature,"void * __thiscall ActionSound_scalar_deleting_dtor(void *this, unsigned int flags)","ret 4 at 0x007DA81B, tests flags&1 at 0x007DA808"
+0x007DA950,signature,"void * __thiscall ActionMoveSpline_ctor(void *this, void *gffStruct, void *actor)",ret 8 at 0x007DA96D
+0x007DA970,signature,"void * __thiscall ActionRotate_ctor(void *this, void *gffStruct, void *actor)",ret 8 at 0x007DA98D
+0x007DA990,signature,"void * __thiscall ActionShake_ctor(void *this, void *gffStruct, void *actor)",ret 8 at 0x007DAC73
+0x007DAC80,signature,"void * __thiscall ActionShake_scalar_deleting_dtor(void *this, unsigned int flags)",ret 4 at 0x007DAC9B
+0x007DACA0,signature,"void * __thiscall ActionCameraFOV_ctor(void *this, void *gffStruct, void *actor)",ret 8 at 0x007DACBD
+0x007DACC0,signature,"void * __thiscall ActionLightRadius_ctor(void *this, void *gffStruct, void *actor)",ret 8 at 0x007DACDD
+0x007DACE0,signature,"void * __thiscall ActionLightIntensity_ctor(void *this, void *gffStruct, void *actor)",ret 8 at 0x007DACFD
+0x007DAD00,signature,"void * __thiscall ActionLightColor_ctor(void *this, void *gffStruct, void *actor)",ret 8 at 0x007DAD1D
+0x007DB3E0,signature,"void * __thiscall ActionPlayAnimation_scalar_deleting_dtor(void *this, unsigned int flags)",ret 4 at 0x007DB3FB
+0x007DB900,signature,"void * __thiscall ActionLinkToActor_ctor(void *this, void *gffStruct, void *actor)",ret 8 at 0x007DBA22
+0x007DBA30,signature,"void * __thiscall ActionLinkToActor_scalar_deleting_dtor(void *this, unsigned int flags)",ret 4 at 0x007DBA4B
+0x007DBA50,signature,"void * __thiscall ActionChangeVisibility_ctor(void *this, void *gffStruct, void *actor)",ret 8 at 0x007DBADA
+0x007DBAE0,signature,void __thiscall ActionChangeVisibility_dtor(void *this),plain ret at 0x007DBB3A
+0x007DBB40,signature,"void * __thiscall ActionChangeVisibility_scalar_deleting_dtor(void *this, unsigned int flags)",ret 4 at 0x007DBB5B
+0x007DC0B0,signature,"void * __thiscall ActionFrameBufferEffect_scalar_deleting_dtor(void *this, unsigned int flags)",ret 4 at 0x007DC0CB
+0x007DC430,signature,"void * __thiscall ActionSpeakLine_scalar_deleting_dtor(void *this, unsigned int flags)",ret 4 at 0x007DC44B
+0x007DC580,signature,"void * __thiscall ActionJumpToPlace_ctor(void *this, void *gffStruct, void *actor)",ret 8 at 0x007DC68D
+0x007DC690,signature,void __thiscall ActionJumpToPlace_dtor(void *this),plain ret at 0x007DC6F4
+0x007D30B0,signature,"float __thiscall Action_EvalCurve(void *this, int curveIndex, float tLocal)",ret 8 at 0x007D30F3; result in ST0
+0x007D4220,signature,"void __thiscall Actor_SetVisible(void *this, bool visible)",ret 4 at 0x007D4322 and others; argument byte at [ESP+0x1c]
+0x007D0470,signature,"void * __thiscall CutscenePlayer_FindActorById(void *this, int id)",ret 4 at 0x007D04E9
+0x007D0640,signature,void * __thiscall Actor_GetSceneObject(void *this),"plain ret, ecx read first"
+0x007D3640,signature,"void * __thiscall VectorIterator_begin(void *this, void *out)","ret 4 at 0x007D3666 (a checked-iterator begin: out = {container, begin})"
+0x007D4500,clear,ActionFrameBufferEffect::vfunction2,"it is slot 1, Update (vtable 0xB23290 + 4); the same off-by-one vfunctionN labels are on the other slots"
+0x007DBAE0,clear,Library Function - Multiple Matches (CButton::~CButton ...),"false FID match: it is ActionChangeVisibility::~ActionChangeVisibility (vtable 0x00B23444, calls Reset 0x007D44D0 at 0x007DBB16)"
+0x007DBB40,clear,FID_conflict:`scalar_deleting_destructor',ActionChangeVisibility's scalar deleting destructor (slot 0 of 0x00B23444)
+0x007DA800,clear,vfunction1,"scalar deleting destructors, as are 0x007DAC80, 0x007DB3E0, 0x007DBA30, 0x007DC0B0, 0x007DC430"
+0x007DCE30,clear,EC::Cutscene::Actor::Action::vfunction1,"it is Action's scalar deleting destructor (calls ~Action 0x007D9040, delete on bit 0, ret 4 at 0x007DCE4B); slot 0 of MoveSpline, Rotate, CameraFOV, LightRadius/Intensity/Color"
+0x007DCE30,signature,"void * __thiscall Action_scalar_deleting_dtor(void *this, unsigned int flags)",ret 4 at 0x007DCE4B
+0x00A3C530,convention,__cdecl,"11 arguments, the caller's add esp,0x2C at 0x007DABF6"
+0x00698C30,signature,"void __thiscall StdList_push_back(void *this, void *value)",ret 4 at 0x00698C5F; links a node from 0x00538A00 before the sentinel [this+4]
+0x004E9640,signature,"void __thiscall VectorPtr_Remove(void *this, void *value)",erase-remove: std::remove 0x0086B2A0 then erase 0x006AD590; 30+ callers
+0x007DA1E0,signature,"void __thiscall Actor_Step(void *this, float dt, float t, bool flag)",ret 0xC at 0x007DA4E7; the third argument tested at 0x007DA3DB (0: actions whose slot 6 is true are not updated)
