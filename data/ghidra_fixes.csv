@@ -7841,3 +7841,80 @@ address,what,value,why
 0x006F6EA0,signature,"void * __thiscall f(void *this, void *node, void *parent)","0x006F6EA0-0x006F6F3A; callers 0x006F6F10, 0x006F6F1E, 0x006F6F76; ret 8"
 0x006F6F60,signature,"void __thiscall f(void *this, void *other)",0x006F6F60-0x006F6FC4; caller 0x006F6FE0 (15783); ret 4
 0x006F6FE0,signature,"void * __thiscall f(void *this, void *other)",0x006F6FE0-0x006F7059; sole caller 0x006F82DE in the journal load 0x006F7290; ret 4
+0x006F7290,signature,"void __thiscall f(void *this, void *save)","0x006F7290 mov ebp,ecx; ret 4"
+0x006F9F60,signature,void __thiscall f(void *this),"0x006F9F60 mov edi,ecx; plain ret; caller 0x005E6676"
+0x006FA300,signature,"void * __cdecl f(void *first, void *last, void *dest)","0x006FA300 three stack arguments, plain ret"
+0x006FA350,convention,__cdecl,"0x006FA350-0x006FA39F plain ret, stack arguments, ecx written first"
+0x006FA3A0,signature,"void __cdecl f(void *first, void *last, void *value)","0x006FA3A0 [esp+0x50],[esp+0x50],[esp+0x60] after pushes = three stack arguments; plain ret"
+0x006FA3F0,signature,"void * __cdecl f(void *first, void *last, void *destEnd)","0x006FA3F0 three stack arguments, plain ret"
+0x006FA450,convention,__cdecl,"0x006FA450 stack arguments, plain ret; 0x006FAE9E add esp 0x1C"
+0x006FADF0,signature,"void * __thiscall f(void *this, void *dest, unsigned int count, void *value)",0x006FADF0 ecx pushed on at 0x006FAE0E; ret 0xC
+0x006FAE30,signature,"void * __thiscall f(void *this, void *out, int firstContainer, int firstPtr, int lastContainer, int lastPtr)","0x006FAE30 ret 0x14 = out + two {container,pointer} iterators"
+0x006FAE80,signature,"void __thiscall f(void *this, void *first, void *last, void *dest)",0x006FAE80 ecx pushed on at 0x006FAE96; ret 0xC
+0x006FB160,convention,__thiscall,"0x006FB160 reads this+4,+8; ret 0x4C = n + the 0x48-byte value by value"
+0x006FB250,signature,"void * __thiscall f(void *this, void *out, int whereContainer, int wherePtr, void *value)",0x006FB250 ret 0x10
+0x006FC420,signature,"void * __thiscall f(void *this, unsigned int index)","0x006FC420 ret 4; reads this+4,+8"
+0x006FC680,signature,"void __thiscall f(void *this, void *saveStruct)",0x006FC680 ret 4
+0x006FC7B0,signature,"void __thiscall f(void *this, float dt)","0x006FC7B0 mov esi,ecx; ret 4"
+0x006FCA50,signature,"void * __thiscall f(void *this, unsigned int id)",0x006FCA50 ret 4
+0x006FCAD0,signature,"void * __thiscall f(void *this, unsigned int id)",0x006FCAD0 jmp 0x006FCA50 (ret 4 there)
+0x006FCAE0,signature,"void __thiscall f(void *this, void *saveStruct)",0x006FCAE0 ret 4
+0x006FDA30,signature,void __thiscall f(void *this),"0x006FDA30 mov ebp,ecx; plain ret"
+0x006FDCF0,signature,"void __thiscall f(void *this, void *saveStruct)","0x006FDCF0 mov edi,ecx; ret 4"
+0x006FDE00,signature,void * __cdecl f(void *a),0x006FDE00 plain ret; caller 0x006FE12A push edi / add esp 4
+0x006FE200,signature,"void * __thiscall f(void *this, unsigned int owner, void *conversation, double time)",0x006FE200 ret 0x10; sole caller 0x006FFA52
+0x006FE290,signature,void __thiscall f(void *this),"0x006FE290 plain ret; uses this+0x30,+0x34"
+0x006FE2F0,signature,bool __thiscall f(void *this),"0x006FE2F0 mov esi,ecx; plain ret"
+0x006FE340,convention,__thiscall,"0x006FE340 mov esi,ecx; plain ret"
+0x006FE370,convention,__thiscall,"0x006FE370 mov esi,ecx; ret 8"
+0x006FE900,signature,"void __thiscall f(void *this, void *saveStruct)","0x006FE900 mov esi,ecx; ret 4"
+0x006FEAB0,signature,"void * __thiscall f(void *this, void *other)","0x006FEAB0 mov edi,ecx; ret 4"
+0x006FECA0,convention,__cdecl,0x006FECA0 plain ret; caller 0x0060305D add esp 8
+0x006FED90,signature,"void __thiscall f(void *this, void *saveStruct)","0x006FED90 mov ebp,ecx; ret 4"
+0x006FEF20,signature,void * __thiscall f(void *this),0x006FEF20 constructor on this; plain ret
+0x006FF020,signature,"void __thiscall f(void *this, unsigned int id, int flag)","0x006FF020 ret 8; callers push 1, ebx"
+0x006FF190,convention,__thiscall,"0x006FF190 mov edi,ecx; ret 0x10"
+0x006FF8E0,convention,__thiscall,"0x006FF8E0 mov esi,ecx; ret 0xC"
+0x00700EB0,signature,"void * __thiscall f(void *this, void *name)",0x00700EB0 ret 4
+0x00700FE0,signature,"void __thiscall f(void *this, void *saveStruct)",0x00700FE0 ret 4
+0x00701120,signature,void __thiscall f(void *this),"0x00701120 mov esi,ecx; plain ret"
+0x00701250,signature,"void __thiscall f(void *this, void *saveStruct)","0x00701250 mov esi,ecx; ret 4"
+0x00703410,signature,void * __thiscall f(void *this),"0x00703410 plain ret; reads this+4,+8"
+0x00703480,signature,void __thiscall f(void *this),0x00703480 destructor; plain ret
+0x00703810,signature,"void * __thiscall f(void *this, void *out, int whereContainer, int wherePtr, void *value)",0x00703810 ret 0x10
+0x007038C0,signature,"void __thiscall f(void *this, void *value)",0x007038C0 ret 4
+0x00703960,signature,"void * __thiscall f(void *this, void *alloc)",0x00703960 ret 4
+0x007039F0,signature,void * __thiscall f(void *this),0x007039F0 push 0; call 0x00703960 with ecx unchanged; plain ret
+0x00703BF0,signature,"void * __thiscall f(void *this, void *name, int type, int create)",0x00703BF0 ret 0xC
+0x00703C20,signature,"void * __thiscall f(void *this, unsigned int value)","0x00703C20 mov esi,ecx; ret 4"
+0x00703D80,signature,void * __thiscall f(void *this),0x00703D80 plain ret; this passed to the vector constructor iterator
+0x00704240,convention,__thiscall,"0x00704240 mov edi,ecx; ret 0x10"
+0x007048D0,convention,__cdecl,"0x007048D0 plain ret, ecx written first; callers 0x00602FE2, 0x00686513 push the arguments"
+0x00704BA0,signature,"void __thiscall f(void *this, void *saveStruct)","0x00704BA0 mov edi,ecx; ret 4"
+0x00704F60,convention,__thiscall,0x00704F60 stores ecx to the frame; ret 0xC
+0x007053D0,convention,__thiscall,"0x007053D0 mov esi,ecx; ret 0xC"
+0x00705A70,signature,"void __thiscall f(void *this, void *saveStruct)","0x00705A70 mov edi,ecx; ret 4"
+0x00705E90,convention,__thiscall,"0x00705E90 mov esi,ecx; ret 0xC"
+0x00706270,signature,void * __thiscall f(void *this),"0x00706270 mov esi,ecx; plain ret"
+0x00706290,signature,"void __thiscall f(void *this, void *resGff, unsigned int structRef)","0x00706290 mov ebx,ecx; ret 8"
+0x00706360,signature,void __cdecl f(void),"0x00706360 no arguments, ecx written; plain ret"
+0x00706390,signature,void __cdecl f(void *name),0x00706390 one stack argument [esp+0x3C]; plain ret
+0x00706470,signature,"void * __cdecl f(void *first, void *last, void *value)","0x00706470 [esp+4],[esp+8],[esp+0xC]; plain ret"
+0x007064F0,signature,void __cdecl f(void *name),0x007064F0 one stack argument; plain ret
+0x00706540,convention,__cdecl,"0x00706540 stack arguments, plain ret"
+0x007065D0,signature,"void __thiscall f(void *this, void *outFirst, void *outLast)",0x007065D0 ret 8; this = 0x00C35DF0 at 0x007067CD
+0x00706680,convention,__cdecl,"0x00706680 stack arguments, plain ret"
+0x00706750,signature,"void __thiscall f(void *this, void *value)",0x00706750 ret 4
+0x007067C0,signature,"void * __cdecl f(unsigned int key, unsigned int *extra)","0x007067C0 plain ret; caller 0x006A11B3 push edi, push edx, add esp 8"
+0x00706A30,signature,"int * __thiscall f(void *this, void *key)",0x00706A30 ret 4; callers set ecx=0x00C35DC4
+0x00706B10,signature,"void __thiscall f(void *this, int freeStorage)",0x00706B10 ret 4
+0x00706D50,signature,void __cdecl f(void *name),0x00706D50 one stack argument [esp+8] after push esi; plain ret
+0x00706D90,signature,void __cdecl f(void *name),0x00706D90 one stack argument; plain ret
+0x00706DE0,signature,"void __cdecl f(unsigned int key, void *object, unsigned int extra)",0x00706DE0 caller 0x006A11CE add esp 0xC; plain ret
+0x00706EF0,signature,void __cdecl f(unsigned int id),0x00706EF0 [esp+4]; plain ret
+0x00707000,signature,void __cdecl f(void *event),"0x00707000 [esp+4], event type at +0x20; plain ret"
+0x00707020,signature,void __thiscall f(void *this),0x00707020 uses ecx=this+0x45C; plain ret
+0x00707040,signature,void __thiscall f(void *this),"0x00707040 mov esi,ecx; plain ret"
+0x00708C70,signature,void __thiscall f(void *this),0x00708C70 plain ret; caller 0x00709286
+0x00709280,signature,"void __thiscall f(void *this, void *popupData)",0x00709280 ret 4; caller 0x00606C16
+0x007048D0,clear,ScriptVarTable::AddSaveSchema,0x007048D0 is ScriptVariableTable::DefineSaveStruct (SVI1..SVR1 structs); the class has no RTTI and its other methods are ScriptVariableTable
