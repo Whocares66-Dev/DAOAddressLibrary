@@ -320,7 +320,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 319,function,,0x0040a7b0,0x0040aaa0,0x0040a7b0
 320,function,,0x0040a8e0,0x0040abd0,0x0040a8e0
 321,function,,0x0040aa10,0x0040ad00,0x0040aa10
-322,function,,0x0040ab40,0x0040ae30,0x0040ab40
+322,function,std::vector<std::wstring>::push_back,0x0040ab40,0x0040ae30,0x0040ab40
 323,function,,0x0040abf0,0x0040aee0,0x0040abf0
 324,function,,0x0040ad74,0x0040b064,0x0040ad74
 325,function,,0x0040ade0,0x0040b0d0,0x0040ade0
@@ -6288,7 +6288,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6287,function,,0x005076c0,0x007fde30,0x005076c0
 6288,function,,0x005076e0,0x00a58370,0x005076e0
 6289,function,,0x00507700,0x007f1830,0x00507700
-6290,function,,0x00507730,0x00457e30,0x00507730
+6290,function,std::vector<std::wstring>::back,0x00507730,0x00457e30,0x00507730
 6291,function,,0x005077a0,0x007f1860,0x005077a0
 6292,function,,0x005077f0,0x007f18b0,0x005077f0
 6293,function,,0x00507c30,0x007f1cf0,0x00507c30
@@ -6606,7 +6606,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6605,function,,0x005117e0,0x007b9a30,0x005117e0
 6606,function,,0x00511810,0x007b9a60,0x00511810
 6607,function,,0x005118c0,0x007b9b10,0x005118c0
-6608,function,,0x00511940,0x007b9b90,0x00511940
+6608,function,GUI::ScaleformManager::StopMovie,0x00511940,0x007b9b90,0x00511940
 6609,function,,0x00511990,0x007b9be0,0x00511990
 6610,function,GUI::ScaleformManager::PlayOutro,0x005119f0,0x007b9c40,0x005119f0
 6611,function,GUI::ScaleformManager::HandleMessage_StopMovieMessage,0x00511a50,0x007b9ca0,0x00511a50
@@ -6682,8 +6682,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6681,function,,0x00515030,0x0049fef0,0x00515030
 6682,function,,0x005150c0,0x004bd960,0x005150c0
 6683,function,,0x00515150,0x007bcb30,0x00515150
-6684,function,,0x005151c0,0x007bcba0,0x005151c0
-6685,function,,0x005151f0,0x007bcbd0,0x005151f0
+6684,function,GUI::ScaleformManager::RemoveMovie,0x005151c0,0x007bcba0,0x005151c0
+6685,function,GUI::ScaleformManager::StopAllMovies,0x005151f0,0x007bcbd0,0x005151f0
 6686,function,,0x00515290,0x007bcc70,0x00515290
 6687,function,,0x00515320,0x007bcd00,0x00515320
 6688,function,,0x00515560,0x007bcf40,0x00515560
@@ -6745,7 +6745,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6744,function,,0x00518a50,0x007c0f20,0x00518a50
 6745,function,,0x00518bd0,0x007c10a0,0x00518bd0
 6746,function,,0x00518c60,0x007c1130,0x00518c60
-6747,function,,0x00518cb0,0x007c1180,0x00518cb0
+6747,function,GuiMovie::SetActive,0x00518cb0,0x007c1180,0x00518cb0
 6748,function,GuiMovie::FinishSceneFromGame,0x00518cd0,0x007c11a0,0x00518cd0
 6749,function,GuiMovie::StartSceneFromGame,0x00518d20,0x007c11f0,0x00518d20
 6750,function,,0x00518d40,0x007c1230,0x00518d40
@@ -6863,12 +6863,12 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6862,function,GuiExternal::ReplaceDesignerTags,0x0051f2f0,0x007c8140,0x0051f2f0
 6863,function,GuiFSCommand::ReplaceDesignerTags,0x0051f410,0x007c8260,0x0051f410
 6864,function,GuiCommands::Find,0x0051f4f0,0x00806f80,0x0051f4f0
-6865,function,,0x0051f550,0x00505c80,0x0051f550
+6865,function,std::vector<std::wstring>::IndexOf,0x0051f550,0x00505c80,0x0051f550
 6866,function,GuiCommands::DispatchFSCommand,0x0051f5f0,0x007c8340,0x0051f5f0
 6867,function,GuiCommands::DispatchExternalInterface,0x0051f640,0x007c8390,0x0051f640
 6868,function,,0x0051f6a0,0x007c83f0,0x0051f6a0
 6869,function,GuiFSCommand::SetValueUnicode,0x0051f6e0,0x007c8430,0x0051f6e0
-6870,function,,0x0051f910,0x007c8660,0x0051f910
+6870,function,std::vector<std::wstring>::Erase,0x0051f910,0x007c8660,0x0051f910
 6871,function,GuiFSCommand::PopContext,0x0051fa40,0x007c8790,0x0051fa40
 6872,function,,0x0051fb90,0x005f7db0,0x0051fb90
 6873,function,,0x0051fd90,0x00455550,0x0051fd90
@@ -58252,7 +58252,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 58251,function,,0x00acf440,0x00ace660,0x00acf440
 58252,function,,0x00acf470,0x00ace690,0x00acf470
 58253,function,,0x00acf490,0x00ace6b0,0x00acf490
-58254,function,,0x00acf4b0,0x00ace6d0,0x00acf4b0
+58254,function,`dynamic initializer for 'g_guiContextStack'',0x00acf4b0,0x00ace6d0,0x00acf4b0
 58255,function,,0x00acf4d0,0x00ace6f0,0x00acf4d0
 58256,function,,0x00acf4f0,,0x00acf4f0
 58257,function,,0x00acf500,,0x00acf500
@@ -58963,7 +58963,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 58962,function,,0x00ad5c10,0x00ad32b0,0x00ad5c10
 58963,function,,0x00ad5c20,0x00ad32c0,0x00ad5c20
 58964,function,,0x00ad5c30,0x00ad32d0,0x00ad5c30
-58965,function,,0x00ad5c40,0x00ad32e0,0x00ad5c40
+58965,function,`dynamic atexit destructor for 'g_guiContextStack'',0x00ad5c40,0x00ad32e0,0x00ad5c40
 58966,function,,0x00ad5c50,0x00ad32f0,0x00ad5c50
 58967,function,,0x00ad5c60,0x00ad3300,0x00ad5c60
 58968,function,,0x00ad5c70,0x00ad3310,0x00ad5c70
@@ -100458,7 +100458,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 100457,data,,0x00c3154c,0x00c23bb4,0x00c3154c
 100458,data,,0x00c31584,0x00c23bec,0x00c31584
 100459,data,,0x00c315a0,0x00c23c08,0x00c315a0
-100460,data,,0x00c315bc,0x00c23c24,0x00c315bc
+100460,data,g_guiContextStack,0x00c315bc,0x00c23c24,0x00c315bc
 100461,data,,0x00c315c0,0x00c23c28,0x00c315c0
 100462,data,,0x00c315c4,0x00c23c2c,0x00c315c4
 100463,data,,0x00c315cc,0x00c23c34,0x00c315cc
