@@ -11638,3 +11638,49 @@ address,what,value,why
 0x00A55A70,signature,"void __thiscall f(void *this, void *attribute)",ret 4; this is the scene's Messages::Observer subobject (scene+8)
 0x00A217D0,signature,"void * __thiscall f(void *this, unsigned int flags)","ret 4; calls 0x00A216C0, frees with 0x00419240 when flags&1 (both readings)"
 0x00A28420,signature,"void * __thiscall f(void *this, unsigned int flags)",ret 4; destructor 0x00A283B0 then free when flags&1 (both readings)
+0x0041CD70,signature,"void __thiscall Stub::SetDword_0x8(void * this, uint value)",writes [ecx+8]; ret 4 (B)
+0x00423DA0,signature,void * __thiscall Stub::GetAddress_0x78(void * this),"LEA EAX,[ECX+0x78]; plain ret (B)"
+0x00424060,signature,uint __thiscall Stub::GetDword_0x4C(void * this),"MOV EAX,[ECX+0x4C]; plain ret (B)"
+0x00424090,signature,"void __thiscall Stub::SetDword_0x54(void * this, uint value)",writes [ecx+0x54]; ret 4 (B)
+0x00439320,signature,void * __thiscall Stub::GetAddress_0x68(void * this),"LEA EAX,[ECX+0x68]; plain ret (B)"
+0x00451790,convention,__thiscall,"reads ecx at 0x00451799 ([ecx+0x680]), ret 8 at 0x004517B2"
+0x00451790,signature,"void __thiscall Renderer::ShadowMaps::Partition::SetUmbraCameraParameters(void * this, void * settings, void * desc)",two stack args (ret 8); desc+4 is the map size (0x00451796); caller 0x0045554D pushes desc then 0x00BF20B0
+0x00451820,clear,Renderer::SSShadowsEnabled::vfunction2,"not a vtable slot of SSShadowsEnabled: that slot is 0x0046F660, which calls this"
+0x00451820,convention,__cdecl,"never reads ecx; plain ret at 0x00451829; called directly from DrawVisible 0x0045BE73, ResolveVisibilityAndDraw 0x0046709A, EndFrame 0x00528BE2"
+0x00451820,signature,bool __cdecl Renderer::ShadowMaps::IsEnabled(void),returns bit 1 of 0x00C1E7E4 (0x00451825)
+0x004518E0,signature,void __cdecl Renderer::ShadowMaps::BlurPartition(int index),arg [esp+4] (0x004518E9); caller 0x0046F5C4 pushes and pops (pop ecx 0x0046F5C9)
+0x00451910,signature,void __cdecl Renderer::ShadowMaps::BindBackbuffer(void),no args; ret at 0x00451921
+0x00452D40,signature,void __cdecl Renderer::ShadowMaps::StopPartition(void),no args; ret at 0x00452E0E
+0x00453440,signature,void __cdecl Renderer::ShadowMaps::StartPartition(uint index),arg [esp+4] at 0x00453452; caller 0x0046F534 pops
+0x00453900,signature,"void __cdecl Renderer::ShadowMaps::Update(void * scene, void * camera)",args [ebp+8] (ecx of 0x00537F00 at 0x00453974) and [ebp+0xC] (0x0045392A); plain ret
+0x00453B40,clear,Math::AABB::AABB,"it is the shadow partition's constructor (size 0x6D0, pushed at 0x004554B7); Math::AABB is only one of its members (vftable stores at 0x00453CB7)"
+0x00453B40,signature,void * __thiscall Renderer::ShadowMaps::Partition::Partition(void * this),no stack args (plain ret 0x00453E1D); returns esi
+0x00453E50,signature,void __cdecl Renderer::ShadowMaps::CollectCasters(void * out),arg [ebp+8] is a std::vector (its +4/+8/+0xC at 0x00453E96-0x00453EB9)
+0x00453F20,signature,void __cdecl Renderer::ShadowMaps::UpdatePartitionCells(void * cell),arg [esp+8] after push esi (0x00453F21); plain ret
+0x00454470,signature,"void * __thiscall Renderer::FrameBufferStage::FrameBufferStage(void * this, void * name, int event)",ret 8; event stored at +0x20 (B)
+0x004544F0,signature,"void * __thiscall Renderer::FrameBufferStage::`scalar deleting destructor'(void * this, uint flags)",ret 4 (B)
+0x00454510,signature,void __cdecl Renderer::ShadowMaps::CreateBlurFilters(void),no args; plain ret at 0x00454BCE
+0x00454F20,convention,__thiscall,reads esi=ecx at 0x00454F21; ret 4 at 0x00454F54
+0x00454F20,signature,"void * __thiscall std::wiostream::ClearAndWrite(void * this, wchar_t * text)",one stack arg pushed to 0x00453F70 at 0x00454F44
+0x00454F60,signature,void __cdecl Renderer::ShadowMaps::CreateTargets(void),no args; plain ret at 0x00455298
+0x00455580,signature,void __cdecl Renderer::ShadowMaps::Create(void),no args; plain ret 0x0045569D
+0x004556E0,signature,void __cdecl Renderer::ShadowMaps::SetDetailLevel(int level),arg [esp+0x28] after sub 0x24 and push esi (0x004556F6); plain ret
+0x004557D0,signature,"void * __thiscall Renderer::FrameBufferResource::FrameBufferResource(void * this, void * name, int kind)",ret 8 (A and B)
+0x00455850,clear,Messages::Observer::vfunction2,a shared no-op with 33 direct callers in unrelated classes
+0x00455850,signature,"void __thiscall Stub::NoOp_4(void * this, void * unused)","ret 4, nothing else; reconciled against B's __stdcall: it is slot 2 of the resource vftables (0x00AE7314), so this comes first though ecx is never read (brief's rule)"
+0x00455860,signature,"void * __thiscall Renderer::IFBGenericSurfaceResource::IFBGenericSurfaceResource(void * this, void * name, int kind)",ret 8 (A and B)
+0x004558D0,signature,void __thiscall Renderer::FrameBufferResource::~FrameBufferResource(void * this),ecx is this; tail-jumps to the wstring destructor on this+0xC (B)
+0x004558E0,signature,"void __thiscall Renderer::IFBGenericSurfaceResource::SetFormat(void * this, int format)","the arg is a value stored at +0x3C (0x004558E4), not a vftable pointer; callers pass 3 or 0x00BF20C8"
+0x00455F50,signature,void __cdecl Renderer::FrameBufferEffects::ForgetBoundTarget(void * target),arg [esp+0x28] at 0x00455F8C; caller 0x00876A9A adds esp 4
+0x00456040,signature,"void __cdecl Renderer::FrameBufferEffects::DrawFilterQuad(void * filter, void * semantic)",args [esp+8] (0x00456041) and [esp+0x10] after push ebx (0x0045604E); plain ret
+0x00456E70,signature,void __cdecl Renderer::FrameBufferEffects::TriggerEvent(int event),arg [esp+8] after push esi; caller 0x0046F444 pops
+0x00456F70,signature,void __cdecl Renderer::FrameBufferEffects::RemoveAutoClearTarget(void * target),arg address taken at 0x00456F70; plain ret
+0x00458620,signature,"void * __thiscall Renderer::FBRenderTargetResource::FBRenderTargetResource(void * this, void * name)",ret 4 (A and B)
+0x00458700,signature,"void * __thiscall Renderer::FBRenderTargetResource::`scalar deleting destructor'(void * this, uint flags)",ret 4 (B)
+0x00458720,signature,void __cdecl Renderer::FrameBufferEffects::Shutdown(void),no args; plain ret 0x0045884C
+0x00458850,signature,void __cdecl Renderer::FrameBufferEffects::CreatePreallocatedResource(void),no args; plain ret
+0x00458990,signature,void __cdecl Renderer::FrameBufferEffects::SetAreaColorCurve(void * name),"arg [esp+0x1C] (0x004589B3), a wstring at area+0x6B8 (0x0067B1D3); caller adds esp 4"
+0x00458A10,signature,void __cdecl Renderer::FrameBufferEffects::ClearAreaColorCurve(void),no args
+0x00458A20,signature,void __thiscall Stub::Destroy_Map_WString_0xC_Handle_0x28(void * this),reads ecx at 0x00458A44; plain ret
+0x00458AB0,signature,"void * __thiscall Stub::CopyConstruct_WString_Handle_0x1C(void * this, void * other)",ecx at 0x00458AD3; ret 4
+0x00458B10,signature,"void __cdecl Renderer::FrameBufferEffects::Startup(void * device, void * initialEffects)",args [esp+0x60] (0x00458B43) and [esp+0x64] (0x00458CCD) after a 0x5C frame; plain ret

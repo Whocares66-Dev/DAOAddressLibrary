@@ -777,7 +777,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 776,function,,0x0041ccf0,0x0041d000,0x0041ccf0
 777,function,,0x0041cd10,0x0041d020,0x0041cd10
 778,function,,0x0041cd40,0x0041d050,0x0041cd40
-779,function,,0x0041cd70,0x0041d090,0x0041cd70
+779,function,Stub::SetDword_0x8,0x0041cd70,0x0041d090,0x0041cd70
 780,function,,0x0041cd80,0x0041d0a0,0x0041cd80
 781,function,,0x0041cdb0,0x0041d0d0,0x0041cdb0
 782,function,,0x0041cdd0,0x009dea60,0x0041cdd0
@@ -1047,7 +1047,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 1046,function,,0x00423d40,0x00423f30,0x00423d40
 1047,function,,0x00423d60,0x00424040,0x00423d60
 1048,function,,0x00423d80,0x00423f60,0x00423d80
-1049,function,,0x00423da0,0x00423f80,0x00423da0
+1049,function,Stub::GetAddress_0x78,0x00423da0,0x00423f80,0x00423da0
 1050,function,,0x00423db0,0x00423f90,0x00423db0
 1051,function,,0x00423dd0,0x00423fb0,0x00423dd0
 1052,function,,0x00423df0,0x007f7cd0,0x00423df0
@@ -1077,10 +1077,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 1076,function,,0x00424030,0x00424210,0x00424030
 1077,function,,0x00424040,0x004ab990,0x00424040
 1078,function,,0x00424050,0x00424230,0x00424050
-1079,function,,0x00424060,0x0047ba40,0x00424060
+1079,function,Stub::GetDword_0x4C,0x00424060,0x0047ba40,0x00424060
 1080,function,,0x00424070,0x00424240,0x00424070
 1081,function,,0x00424080,0x00424250,0x00424080
-1082,function,,0x00424090,0x006539d0,0x00424090
+1082,function,Stub::SetDword_0x54,0x00424090,0x006539d0,0x00424090
 1083,function,,0x004240a0,0x00424270,0x004240a0
 1084,function,,0x004240c0,0x00424290,0x004240c0
 1085,function,,0x004240e0,0x004242b0,0x004240e0
@@ -1758,7 +1758,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 1757,function,,0x00439160,0x004395d0,0x00439160
 1758,function,,0x00439280,0x004396f0,0x00439280
 1759,function,,0x004392b0,0x00439720,0x004392b0
-1760,function,,0x00439320,0x00439790,0x00439320
+1760,function,Stub::GetAddress_0x68,0x00439320,0x00439790,0x00439320
 1761,function,,0x00439330,0x004397a0,0x00439330
 1762,function,,0x00439350,0x004397c0,0x00439350
 1763,function,,0x00439420,0x00439890,0x00439420
@@ -2216,20 +2216,20 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2215,function,,0x00451774,0x00451a44,0x00451774
 2216,function,,0x0045177a,0x00451a4a,0x0045177a
 2217,function,Stub::ClearDword_0x0,0x00451780,0x009e91c0,0x00451780
-2218,function,,0x00451790,0x0088cf70,0x00451790
+2218,function,Renderer::ShadowMaps::Partition::SetUmbraCameraParameters,0x00451790,0x0088cf70,0x00451790
 2219,function,Renderer::ShadowMaps::RestoreTarget,0x004517c0,0x0088cfa0,0x004517c0
 2220,function,Renderer::ShadowMaps::Partition::HasCasters,0x004517d0,0x0088cfb0,0x004517d0
 2221,function,Renderer::ShadowMaps::Partition::SetCell,0x004517e0,0x0088cfc0,0x004517e0
 2222,function,Renderer::ShadowMaps::Partition::Invalidate,0x004517f0,0x0088cfd0,0x004517f0
 2223,function,Renderer::ShadowMaps::SetEnabled,0x00451800,0x0088cfe0,0x00451800
-2224,function,,0x00451820,0x0088d000,0x00451820
+2224,function,Renderer::ShadowMaps::IsEnabled,0x00451820,0x0088d000,0x00451820
 2225,function,Renderer::ShadowMaps::GetNearPartition,0x00451830,0x0088d010,0x00451830
 2226,function,Renderer::ShadowMaps::GetFarPartition,0x00451850,0x0088d030,0x00451850
 2227,function,Renderer::ShadowMaps::GetCurrentPartition,0x00451870,0x0088d050,0x00451870
 2228,function,Renderer::ShadowMaps::GetPartitionMask,0x004518a0,0x0088d080,0x004518a0
 2229,function,Renderer::ShadowMaps::GetFrameStamp,0x004518c0,0x0088d0a0,0x004518c0
-2230,function,,0x004518e0,0x0088d0c0,0x004518e0
-2231,function,,0x00451910,0x0088d0f0,0x00451910
+2230,function,Renderer::ShadowMaps::BlurPartition,0x004518e0,0x0088d0c0,0x004518e0
+2231,function,Renderer::ShadowMaps::BindBackbuffer,0x00451910,0x0088d0f0,0x00451910
 2232,function,Renderer::ShadowMaps::ReleaseCommander,0x00451930,0x0088d110,0x00451930
 2233,function,Vector::Vector,0x00451950,0x00496170,0x00451950
 2234,function,Vector::UnitX,0x00451960,0x007aa1b0,0x00451960
@@ -2257,25 +2257,25 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2256,function,Renderer::ShadowMaps::SetCamera,0x00452960,0x0088dcf0,0x00452960
 2257,function,Renderer::ShadowMaps::SetLightDirection,0x00452a90,0x0088de20,0x00452a90
 2258,function,Renderer::ShadowMaps::ResetMatrices,0x00452cb0,0x0088e040,0x00452cb0
-2259,function,,0x00452d40,0x0088e0d0,0x00452d40
+2259,function,Renderer::ShadowMaps::StopPartition,0x00452d40,0x0088e0d0,0x00452d40
 2260,function,Renderer::IPartitionUmbraCommander::EnsureInstance,0x00452e10,0x0088e1a0,0x00452e10
 2261,function,Renderer::ShadowMaps::ResolveCasterVisibility,0x00452e90,0x0088e220,0x00452e90
 2262,function,Vector4::NormalizedW,0x00452ef0,0x00590e50,0x00452ef0
 2263,function,Math::AABB::operator=,0x00452f40,0x007a7d30,0x00452f40
 2264,function,Renderer::ShadowMaps::Partition::SetUpLightCamera,0x00452f90,0x0088e280,0x00452f90
 2265,function,Renderer::ShadowMaps::Partition::FitProjection,0x00453240,0x0088e530,0x00453240
-2266,function,,0x00453440,0x0088e730,0x00453440
+2266,function,Renderer::ShadowMaps::StartPartition,0x00453440,0x0088e730,0x00453440
 2267,function,Renderer::ShadowMaps::Partition::ComputeLightSpaceBounds,0x004534a0,0x0088e790,0x004534a0
 2268,function,Renderer::ShadowMaps::Partition::BuildLightSpaceHull,0x00453680,0x0088e970,0x00453680
 2269,function,Renderer::ShadowMaps::Partition::BeginFrame,0x00453710,0x0088ea00,0x00453710
 2270,function,Renderer::ShadowMaps::UpdateSplits,0x00453740,0x0088ea30,0x00453740
 2271,function,,0x00453870,0x0088eb60,0x00453870
-2272,function,,0x00453900,0x0088ebf0,0x00453900
+2272,function,Renderer::ShadowMaps::Update,0x00453900,0x0088ebf0,0x00453900
 2273,function,Renderer::ShadowMaps::Shutdown,0x00453ab0,0x0088eda0,0x00453ab0
-2274,function,,0x00453b40,0x0088ee30,0x00453b40
+2274,function,Renderer::ShadowMaps::Partition::Partition,0x00453b40,0x0088ee30,0x00453b40
 2275,function,Renderer::ShadowMaps::Partition::SetCellAndCamera,0x00453e20,0x0088f110,0x00453e20
-2276,function,,0x00453e50,0x0088f140,0x00453e50
-2277,function,,0x00453f20,0x0088f210,0x00453f20
+2276,function,Renderer::ShadowMaps::CollectCasters,0x00453e50,0x0088f140,0x00453e50
+2277,function,Renderer::ShadowMaps::UpdatePartitionCells,0x00453f20,0x0088f210,0x00453f20
 2278,function,"std::operator<<<wchar_t,std::char_traits<wchar_t>>(std::basic_ostream<wchar_t,std::char_traits<wchar_t>> &,const wchar_t *)",0x00453f70,0x00489d90,0x00453f70
 2279,function,Catch_All@0045414b,0x0045414b,0x00489f6b,0x0045414b
 2280,function,"std::operator<<<wchar_t,std::char_traits<wchar_t>>(std::basic_ostream<wchar_t,std::char_traits<wchar_t>> &,const wchar_t *)::resume",0x0045417c,0x00489f9c,0x0045417c
@@ -2285,22 +2285,22 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2284,function,"std::basic_istream<wchar_t,std::char_traits<wchar_t>>::operator>>(float &)",0x00454300,0x00495ea0,0x00454300
 2285,function,Catch_All@00454428,0x00454428,0x00495fc8,0x00454428
 2286,function,"std::basic_istream<wchar_t,std::char_traits<wchar_t>>::operator>>(float &)::resume",0x00454459,0x00495ff9,0x00454459
-2287,function,,0x00454470,0x0088f260,0x00454470
-2288,function,,0x004544f0,0x0088f2e0,0x004544f0
-2289,function,,0x00454510,0x0088f300,0x00454510
+2287,function,Renderer::FrameBufferStage::FrameBufferStage,0x00454470,0x0088f260,0x00454470
+2288,function,Renderer::FrameBufferStage::`scalar deleting destructor',0x004544f0,0x0088f2e0,0x004544f0
+2289,function,Renderer::ShadowMaps::CreateBlurFilters,0x00454510,0x0088f300,0x00454510
 2290,function,Renderer::IPartitionUmbraCommander::MarkObjectInPartition,0x00454bd0,0x0088f9c0,0x00454bd0
 2291,function,Renderer::IPartitionUmbraCommander::MarkNodeInPartition,0x00454d70,0x0088fb60,0x00454d70
-2292,function,,0x00454f20,0x00489fb0,0x00454f20
-2293,function,,0x00454f60,0x0088fd10,0x00454f60
+2292,function,std::wiostream::ClearAndWrite,0x00454f20,0x00489fb0,0x00454f20
+2293,function,Renderer::ShadowMaps::CreateTargets,0x00454f60,0x0088fd10,0x00454f60
 2294,function,Renderer::IPartitionUmbraCommander::command,0x004552a0,0x00890050,0x004552a0
 2295,function,Renderer::ShadowMaps::SetPartitions,0x00455420,0x008901d0,0x00455420
-2296,function,,0x00455580,0x00890330,0x00455580
-2297,function,,0x004556e0,0x00890490,0x004556e0
-2298,function,,0x004557d0,0x00890580,0x004557d0
-2299,function,,0x00455850,0x00566110,0x00455850
-2300,function,,0x00455860,0x00890600,0x00455860
-2301,function,,0x004558d0,0x00890670,0x004558d0
-2302,function,,0x004558e0,0x00890680,0x004558e0
+2296,function,Renderer::ShadowMaps::Create,0x00455580,0x00890330,0x00455580
+2297,function,Renderer::ShadowMaps::SetDetailLevel,0x004556e0,0x00890490,0x004556e0
+2298,function,Renderer::FrameBufferResource::FrameBufferResource,0x004557d0,0x00890580,0x004557d0
+2299,function,Stub::NoOp_4,0x00455850,0x00566110,0x00455850
+2300,function,Renderer::IFBGenericSurfaceResource::IFBGenericSurfaceResource,0x00455860,0x00890600,0x00455860
+2301,function,Renderer::FrameBufferResource::~FrameBufferResource,0x004558d0,0x00890670,0x004558d0
+2302,function,Renderer::IFBGenericSurfaceResource::SetFormat,0x004558e0,0x00890680,0x004558e0
 2303,function,Renderer::LoadFrameBufferEffects,0x004558f0,0x00890690,0x004558f0
 2304,function,Renderer::FrameBufferEffect::Create,0x00455910,0x008906b0,0x00455910
 2305,function,Renderer::ParseFBEffectEvent,0x00455980,0x00890720,0x00455980
@@ -2316,9 +2316,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2315,function,Renderer::CacheFrameParameters,0x00455d50,0x008909b0,0x00455d50
 2316,function,Renderer::SetRenderTarget,0x00455da0,0x00890a00,0x00455da0
 2317,function,Renderer::ReleaseRenderTargets,0x00455ec0,0x00890b20,0x00455ec0
-2318,function,,0x00455f50,0x00890bb0,0x00455f50
+2318,function,Renderer::FrameBufferEffects::ForgetBoundTarget,0x00455f50,0x00890bb0,0x00455f50
 2319,function,Renderer::BindMainRenderTarget,0x00456000,0x00890c60,0x00456000
-2320,function,,0x00456040,0x00890ca0,0x00456040
+2320,function,Renderer::FrameBufferEffects::DrawFilterQuad,0x00456040,0x00890ca0,0x00456040
 2321,function,Renderer::GetColorCurveTextureRef,0x004560d0,0x00890d30,0x004560d0
 2322,function,std::vector<std::wstring>::GetOrEmpty,0x004560f0,0x0059b270,0x004560f0
 2323,function,Gff4::ReadStringPtrAt,0x00456140,0x004b59b0,0x00456140
@@ -2350,9 +2350,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2349,function,Renderer::FrameBufferEffects::Find,0x00456ca0,0x00891570,0x00456ca0
 2350,function,Renderer::FrameBufferEffects::ClearTargets,0x00456d20,0x008915f0,0x00456d20
 2351,function,Renderer::FindFrameBufferEffect,0x00456e60,0x00891730,0x00456e60
-2352,function,,0x00456e70,0x00891740,0x00456e70
+2352,function,Renderer::FrameBufferEffects::TriggerEvent,0x00456e70,0x00891740,0x00456e70
 2353,function,Renderer::FrameBufferEffects::BlendValuesFrom,0x00456ee0,0x008917b0,0x00456ee0
-2354,function,,0x00456f70,0x00891840,0x00456f70
+2354,function,Renderer::FrameBufferEffects::RemoveAutoClearTarget,0x00456f70,0x00891840,0x00456f70
 2355,function,"std::map<std::wstring,?>::find",0x00456f80,0x004b3330,0x00456f80
 2356,function,"std::pair<std::wstring const,General::SafePointer>::~pair",0x00457000,0x007edd40,0x00457000
 2357,function,"std::_Sort<Renderer::FrameBufferEffect * *,int>",0x00457060,0x00891850,0x00457060
@@ -2381,15 +2381,15 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2380,function,General::SafePointer::Assign,0x00458420,0x007e64c0,0x00458420
 2381,function,String::ToFloat,0x00458470,0x004d2c90,0x00458470
 2382,function,String::FromFloat,0x00458520,0x004d2d40,0x00458520
-2383,function,,0x00458620,0x00892960,0x00458620
-2384,function,,0x00458700,0x00892a40,0x00458700
-2385,function,,0x00458720,0x00892a60,0x00458720
-2386,function,,0x00458850,0x00892b90,0x00458850
-2387,function,,0x00458990,0x00892cd0,0x00458990
-2388,function,,0x00458a10,0x00892d50,0x00458a10
-2389,function,,0x00458a20,0x0048a6b0,0x00458a20
-2390,function,,0x00458ab0,0x007ee250,0x00458ab0
-2391,function,,0x00458b10,0x00892d60,0x00458b10
+2383,function,Renderer::FBRenderTargetResource::FBRenderTargetResource,0x00458620,0x00892960,0x00458620
+2384,function,Renderer::FBRenderTargetResource::`scalar deleting destructor',0x00458700,0x00892a40,0x00458700
+2385,function,Renderer::FrameBufferEffects::Shutdown,0x00458720,0x00892a60,0x00458720
+2386,function,Renderer::FrameBufferEffects::CreatePreallocatedResource,0x00458850,0x00892b90,0x00458850
+2387,function,Renderer::FrameBufferEffects::SetAreaColorCurve,0x00458990,0x00892cd0,0x00458990
+2388,function,Renderer::FrameBufferEffects::ClearAreaColorCurve,0x00458a10,0x00892d50,0x00458a10
+2389,function,Stub::Destroy_Map_WString_0xC_Handle_0x28,0x00458a20,0x0048a6b0,0x00458a20
+2390,function,Stub::CopyConstruct_WString_Handle_0x1C,0x00458ab0,0x007ee250,0x00458ab0
+2391,function,Renderer::FrameBufferEffects::Startup,0x00458b10,0x00892d60,0x00458b10
 2392,function,,0x00458d60,0x004b56e0,0x00458d60
 2393,function,,0x00458e50,0x00892fb0,0x00458e50
 2394,function,,0x00458e80,0x00892fe0,0x00458e80
