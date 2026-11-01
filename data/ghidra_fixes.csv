@@ -6755,3 +6755,44 @@ address,what,value,why
 0x00818E20,signature,"void* __thiscall CreateClothMesh(void* this, void* streamHolder)",0x00818E20
 0x008192C0,signature,"void* __thiscall realloc(void* this, void* memory, unsigned int size)",0x008192C0
 0x008197B0,signature,"void* __thiscall GetNxActor(void* this, unsigned int index)",0x008197B0 slot 28 of vtable 0x00B26C2C
+0x0062F680,signature,"void* __thiscall ECBase::ECDynArray<?>::At(void* this, unsigned int index)",0x0062F680-0x0062F6AC; callers 0x00673630 0x007AF6C0
+0x0064A580,signature,"void* __thiscall AIEventList::PushFront(void* this, void* event)",0x0064A580 -> 0x00A38430; caller AIMaster::AddEventLater 0x0064A740
+0x0064A590,signature,"void* __thiscall AIEventList::PushBack(void* this, void* event)","0x0064A590 -> 0x00A38470; callers AIMaster::AddEventNow 0x0064A630, 0x0064AAD0"
+0x0064A5A0,signature,"void* __thiscall AIEventList::InsertAfter(void* this, void* node, void* event)",0x0064A5A0 -> 0x00A384B0; caller AIMaster::AddEventLater 0x0064A740
+0x0064A5B0,signature,"void* __thiscall AIEventList::InsertBefore(void* this, void* node, void* event)",0x0064A5B0 -> 0x00A38500; caller AIMaster::AddEventNow 0x0064A630
+0x0064A5C0,signature,unsigned int __thiscall AIEventList::GetCount(void* this),"0x0064A5C0: mov eax,[ecx]; mov eax,[eax+8]; 0x00A38470 increments +8"
+0x0064A5D0,signature,"void* __thiscall AIEventList::GetNodeValue(void* this, void* node)",0x0064A5D0 -> 0x00A37E40; callers AddEventNow/AddEventLater
+0x0064A5E0,signature,void* __thiscall AIEventList::GetFrontValue(void* this),0x0064A5E0-0x0064A5EC (bytes 8b098b0185c07501c38b4008c3); caller AIMaster::EventPending 0x0064A850
+0x0064A5F0,signature,"void* __thiscall AIEventList::StepBack(void* this, void** iterator)",0x0064A5F0 -> 0x00A37E80; caller AIMaster::AddEventLater 0x0064A740
+0x0064A600,signature,void* __thiscall AIEventList::GetBackNode(void* this),0x0064A600-0x0064A605; caller AIMaster::AddEventLater 0x0064A740
+0x0064A610,signature,bool __thiscall AIEventList::IsEmpty(void* this),"0x0064A610-0x0064A61B; callers AIMaster::EventPending, ClearEvents, 0x0064A8A0"
+0x0064A620,signature,void* __thiscall AIEventList::PopFront(void* this),"0x0064A620 -> 0x00A380E0; callers AIMaster::ClearEvents 0x0064AC80, 0x0064A8A0"
+0x0064A8A0,signature,void* __thiscall AIMaster::PopEvent(void* this),0x0064A8A0-0x0064A8B7; caller AIMaster::UpdateState 0x0064AE30
+0x0064AAD0,signature,"bool __thiscall AIMaster::Load(void* this, void* save)",0x0064AAD0-0x0064AC02; 16630 SavegameEventQueue in dev/gff4_fields.csv; caller 0x006C76F0 (client load)
+0x0067A5C0,signature,"void* __thiscall IKDNode::`scalar deleting destructor'(void* this, unsigned int flags)",0x0067A5C0-0x0067A5DC; vftable 0x00B0D9B4 slots 0x0067A5C0 and 0x004CCAE0 (returns 2)
+0x0067B810,signature,void* __thiscall KDCreatureNode::KDCreatureNode(void* this),0x0067B810-0x0067B826; caller 0x00685A60
+0x0067B830,signature,"void* __thiscall KDCreatureNode::`scalar deleting destructor'(void* this, unsigned int flags)",0x0067B830-0x0067B854; vftable 0x00B0DA4C
+0x0067E3B0,signature,void* __thiscall KDCreatureBranch::KDCreatureBranch(void* this),0x0067E3B0-0x0067E3E0; caller CCArea::AllocCreatureTreeNode 0x00685A60
+0x0067E3F0,signature,"void* __thiscall KDCreatureBranch::`scalar deleting destructor'(void* this, unsigned int flags)",0x0067E3F0-0x0067E414; vftable 0x00B0DAF4
+0x0067E420,signature,"void __thiscall KDCreatureBranch::GetNodeMasks(void* this, void* out, void* node)","0x0067E420-0x0067E4BF; slot 1 of IKDNode 0x004CCAE0=2, KDCreatureNode 0x004137B0=0, KDCreatureBranch 0x0079B310=1; caller KDCreatureBranch::Set 0x0067F960"
+0x0079BDC0,signature,void __thiscall CAIEvent::~CAIEvent(void* this),0x0079BDC0-0x0079BDC6; called by 0x0079BDD0
+0x0079BDD0,signature,"void* __thiscall CAIEvent::`scalar deleting destructor'(void* this, unsigned int flags)",0x0079BDD0-0x0079BDEB; vftable 0x00B2105C
+0x007AC000,signature,unsigned int __cdecl PartyTactics::TargetTypeToAbilityTargetBit(unsigned int targetType),"0x007AC000-0x007AC010; callers ListAbilities 0x007AED50, ListItems 0x007AF6C0"
+0x007AC3E0,signature,void* __cdecl PartyTactics::GetClassIdPtr(void),"0x007AC3E0-0x007AC432; callers the six message-handler registrars, slots 0 and 2 of PartyTactics"
+0x007AC440,signature,"void* __thiscall ECBase::ECDynArray<ECBase::ECDynArray<PartyTacticEntry*>>::At(void* this, unsigned int index)",0x007AC440-0x007AC46E; caller LoadPresetMessage handler 0x007AE4B0
+0x007ACCA0,signature,void __thiscall PartyTacticEntry::~PartyTacticEntry(void* this),0x007ACCA0-0x007ACDBB; called by 0x007AD860
+0x007ACDC0,signature,"void* __thiscall PartyTacticEntry::`scalar deleting destructor'(void* this, unsigned int flags)",0x007ACDC0 -> 0x007AD860
+0x007ACDD0,signature,"void* __thiscall PartyTacticEntry::`scalar deleting destructor'(void* this, unsigned int flags)",0x007ACDD0 -> 0x007AD860
+0x007ACDE0,signature,"void* __thiscall PartyTacticEntry::`scalar deleting destructor'(void* this, unsigned int flags)",0x007ACDE0 -> 0x007AD860
+0x007AD310,signature,void* __thiscall PartyTacticEntry::PartyTacticEntry(void* this),0x007AD310-0x007AD853; dev/PARTY.md 'PartyTacticEntry'
+0x007AD860,signature,"void* __thiscall PartyTacticEntry::`scalar deleting destructor'(void* this, unsigned int flags)",0x007AD860-0x007AD87B
+0x007ADA40,signature,"void* __thiscall PartyTactics::GetEntryAt(void* this, unsigned int index)",0x007ADA40-0x007ADAA8; caller PartyTactics::EntryOf 0x007ADCF0
+0x007ADD20,signature,"void __thiscall PartyTacticEntry::ReadFromSave(void* this, void* saveStruct)","0x007ADD20-0x007ADF38; field ids 0x41B2, 0x41B3, 0x41B9..; caller 0x007AF420"
+0x007AE160,signature,"void __cdecl PartyTactics::CopyEntryValues(void* destEntries, void* srcEntries)","0x007AE160-0x007AE4A7; callers 0x007AE5F6 (dest TacticsList, src preset), 0x007AE7E2 (dest preset, src TacticsList); caller add esp,8 so cdecl"
+0x007AF850,signature,"void __cdecl PartyTactics::DefineSaveStructs(void* builder, void* structDefs)","0x007AF850-0x007AF9E8; tags 0x314C5450 'PTL1' and 0x31545450 'PTT1'; caller 0x006B7CF0 (push edi; push esi; add esp,8)"
+0x007AF9F0,signature,"void* __cdecl std::_Copy_opt<ECBase::ECDynArray<?>*,ECBase::ECDynArray<?>*>(void* first, void* last, void* dest)",0x007AF9F0-0x007AFA28; callers 0x0053B250 0x007B0D70
+0x007AFA30,signature,"void* __cdecl std::_Uninit_copy<ECBase::ECDynArray<?>*,ECBase::ECDynArray<?>*,std::allocator<ECBase::ECDynArray<?>>>(void* first, void* last, void* dest)",0x007AFA30-0x007AFA98; callers 0x004D8C70 0x007B0EE0
+0x007AFAD0,signature,"void __cdecl std::_Uninit_fill_n<ECBase::ECDynArray<?>*,unsigned int,ECBase::ECDynArray<?>,std::allocator<ECBase::ECDynArray<?>>>(void* dest, unsigned int count, void* value)",0x007AFAD0-0x007AFB3A; callers 0x004D9070 0x007B0CE0
+0x007AFB70,signature,"void __thiscall PartyTactics::SetNumTactics(void* this, unsigned int count)",0x007AFB70-0x007AFBEB; dev/PARTY.md SetNumTactics; callers 0x0066D600 0x007B08D0 0x007B1120
+0x007B0390,signature,"void __thiscall Messages::RegisterMessageFactory<DirtyPresetMessage>(void* registry, void* nameWString)",0x007B0390-0x007B044F; creator 0x007AC480; name literals pushed in 0x007B1120 (0x00B21368 ..)
+0x007B0450,signature,"void __thiscall Messages::RegisterMessageFactory<LoadPresetMessage>(void* registry, void* nameWString)",0x007B0450-0x007B050F; creator 0x007AC4E0; name literals pushed in 0x007B1120 (0x00B21368 ..)
