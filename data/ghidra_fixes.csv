@@ -7607,3 +7607,83 @@ address,what,value,why
 0x00729640,signature,"void* __thiscall GUI::GUIStore::`scalar deleting destructor'`adjustor{8}'(void* this, unsigned int flags)",adjustor thunk to a deleting destructor that ends ret 4; Ghidra labels it vfunctionN
 0x00729650,signature,void* __thiscall GUI::GUIStore::GetClassInfo(void* this),"vftable slot 0, plain ret, returns the class node; Ghidra labels it vfunction1"
 0x00729D40,signature,"void* __thiscall GUI::GUIStore::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4; target of the thunks 0x00729620-0x00729640 (outside the batch; from reading B)
+0x0069D200,signature,"void * __thiscall f(void *this, unsigned int arg)","0x0069D200: 0x0069D200: operator new 0x4B0, CCParty ctor, [esi+0x58]"
+0x0069D2B0,signature,void __thiscall f(void *this),0x0069D2B0: 0x0069D2B0-0x0069D2D4
+0x0069D320,signature,unsigned int __thiscall f(void *this),"0x0069D320: 0x0069D320 calls CCPlayer::GetControlledCreature (0x0069D2E0), loads [eax+0x254]"
+0x0069D790,signature,"unsigned int __stdcall f(void *templateName, void *creature, void *gffStruct, void *flag)","0x0069D790: 0x0069D790-0x0069D90B: new 0xD8 at 0x0069D7D8, ctor 0x00A388F0(this,arg0,0x7EB), 0x006ABDC0 at 0x0069D834 with ecx=arg1, format 0x00B01EDC, mov eax,0x"
+0x0069D910,signature,"void * __thiscall f(void *this, unsigned int arg, void *record, void *arg3)","0x0069D910: 0x0069D910: L""default_player"", operator new 0xD20, creature ctor 0x006B9ED0, 0x0069E480(1) at 0x0069DA05, 0x0069D790 at 0x0069DA1E"
+0x0069DA70,signature,"void __thiscall f(void *this, void *creature)","0x0069DA70: 0x0069DA70-0x0069DBAA: CScriptEvent type 8 and 4, 0x0064ACE0 twice"
+0x0069DBB0,signature,"bool __thiscall f(void *this, void *arg)","0x0069DBB0: 0x0069DBB0-0x0069DD8F: 0x00642FD0/0x00643420 (PLYR, SAVES.md), fields 0x3FA7/0x3FA8/0x3FAA at 0x0069DC43-0x0069DCE4, 0x0069D910 at 0x0069DD16, 0x0069D"
+0x0069DDA0,signature,void __thiscall f(void *this),"0x0069DDA0: 0x0069DDA0-0x0069DF0B: party via 0x005D57C0, list copy of [party+0x244], 0x005D58C0 GetObject, loop over [edi+0xB9C..], vt[0](1), delete [esi+0x58] at"
+0x0069E170,signature,unsigned int __cdecl f(void *builder),"0x0069E170: 0x0069E170-0x0069E255: 0x52594C50 at 0x0069E1B1, fields 0x3F50/0x3FA7/0x3FA8/0x3FAA, 0x004DF2F0 at 0x0069E232"
+0x0069E300,signature,"void __thiscall f(void *this, unsigned char available)",0x0069E300: 0x0069E300-0x0069E30D
+0x0069E310,signature,unsigned char __thiscall f(void *this),0x0069E310: 0x0069E310-0x0069E31B
+0x0069E480,signature,"void __thiscall f(void *this, unsigned char isPlayerCharacter)","0x0069E480: 0x0069E480: mov [ecx+0x7D4],al"
+0x0069E4C0,signature,void __thiscall f(void *this),0x0069E4C0: 0x0069E4C0-0x0069E4E5
+0x0069E550,signature,"void __thiscall f(void *this, int index)",0x0069E550: 0x0069E550-0x0069E585
+0x0069E680,signature,void __thiscall f(void *this),"0x0069E680: 0x0069E680: add ecx,0x14"
+0x0069EC40,signature,void __cdecl f(void *item),"0x0069EC40: 0x0069EC40: mov ecx,[esp+4]"
+0x0069EC50,signature,void __cdecl f(void *item),"0x0069EC50: 0x0069EC50: mov ecx,[esp+4]"
+0x0069EC70,signature,"void * __thiscall f(void *this, const void *source)","0x0069EC70: 0x0069EC70-0x0069ED48: wstring copy 0x004C2510, then 0x00933D70 at +0x1C,+0x2C,+0x3C,+0x4C,+0x5C,+0x6C,+0x7C,+0x8C,+0x9C,+0xAC (ten calls)"
+0x0069ED50,signature,unsigned char __thiscall f(void *this),"0x0069ED50: 0x0069ED50: mov al,1 on a null renderer, else pushes 1,1,0 and tail-calls 0x007F46E0"
+0x0069EDC0,signature,void __thiscall f(void *this),0x0069EDC0: 0x0069EDC0-0x0069EE0D
+0x0069F110,signature,"bool __thiscall f(void *this, void *item)",0x0069F110: 0x0069F110-0x0069F12F
+0x0069F5C0,signature,void * __thiscall f(void *this),0x0069F5C0: 0x0069F5C0-0x0069F5D4
+0x0069F5E0,signature,"void __thiscall f(void *this, const float *position)",0x0069F5E0: 0x0069F5E0-0x0069F610
+0x0069F620,signature,"void __thiscall f(void *this, int slot, int mode, float value, float blend)","0x0069F620: 0x0069F620-0x0069F647: add ecx,0x208"
+0x0069F670,signature,void * __thiscall f(void *this),0x0069F670: 0x0069F670-0x0069F697
+0x0069F6A0,signature,"void * __thiscall f(void *this, const void *source)",0x0069F6A0: 0x0069F6A0-0x0069F73C
+0x0069F780,signature,void __thiscall f(void *this),0x0069F780: 0x0069F780-0x0069F7D7
+0x0069F7E0,signature,"void * __thiscall f(void *this, const void *source)",0x0069F7E0: 0x0069F7E0-0x0069F808
+0x0069F870,signature,"void * __thiscall f(void *this, const void *name)",0x0069F870: 0x0069F870-0x0069F8C7
+0x0069F8D0,signature,"void __thiscall f(void *this, float value)",0x0069F8D0: 0x0069F8D0-0x0069F92D
+0x0069F990,signature,"void * __thiscall f(void *this, const void *name, const void *handle)",0x0069F990: 0x0069F990-0x0069F9E9
+0x0069F9F0,signature,void __thiscall f(void *this),"0x0069F9F0: 0x0069F9F0-0x0069F9FB: mov eax,[ecx+4]"
+0x0069FAB0,signature,"void * __thiscall f(void *this, const void *source)",0x0069FAB0: 0x0069FAB0-0x0069FB0A
+0x0069FB10,signature,unsigned int __thiscall f(void *this),"0x0069FB10: 0x0069FB10-0x0069FB30: sub [ecx+8]-[ecx+4], multiply by 0xAE4C415D (divide by 0xBC)"
+0x0069FB80,signature,"void * __cdecl f(unsigned int count, void *unused)","0x0069FB80: 0x0069FB80-0x0069FBDB: div by 0xBC check, bad_alloc throw"
+0x0069FBE0,signature,"void * __cdecl f(void *first, void *last, void *dest)",0x0069FBE0: 0x0069FBE0-0x0069FC17
+0x0069FC20,signature,"bool __cdecl f(const void *a, const void *b)",0x0069FC20: 0x0069FC20-0x0069FC41
+0x0069FC50,signature,"void * __cdecl f(void *first, void *last, void *destEnd)",0x0069FC50: 0x0069FC50-0x0069FC87
+0x0069FCC0,signature,"void __thiscall f(void *this, const void *name)","0x0069FCC0: 0x0069FCC0-0x0069FD38: new 0x20, CreaturePool ctor 0x0069F870 at 0x0069FD0A, store [esi]"
+0x006A2580,signature,bool __thiscall f(void *this),"0x006A2580: 0x006A2580-0x006A2590: cmp dword ptr [eax],1 with eax=[ecx+0xC60]"
+0x006A4360,signature,"void __thiscall f(void *this, void *effect)",0x006A4360: 0x006A4360-0x006A43E1: vt+0x54 on the four attributes
+0x006A4D50,signature,"unsigned short __cdecl f(void *file, int offset)","0x006A4D50: 0x006A4D50: mov ecx,[eax+8]"
+0x006A4D60,signature,"void * __cdecl f(void *first, void *last, void *dest)","0x006A4D60: 0x006A4D60-0x006A4DB9: call 0x0069FBE0, multiply by 0xAE4C415D and 0xBC"
+0x006A4DC0,signature,"void * __cdecl f(void *first, void *last, const void *value)",0x006A4DC0: 0x006A4DC0-0x006A4DF2
+0x006A4E00,signature,"void * __cdecl f(void *first, void *last, void *dest)",0x006A4E00: 0x006A4E00-0x006A4E35
+0x006A4E40,signature,"void * __cdecl f(void *first, void *last, void *destEnd)",0x006A4E40: 0x006A4E40-0x006A4E9D: loop 0x0069FC50
+0x006A5490,signature,void __thiscall f(void *this),0x006A5490: 0x006A5490-0x006A5505
+0x006A5510,signature,"void __thiscall f(void *this, const float *position)",0x006A5510: 0x006A5510-0x006A56AA
+0x006A56B0,signature,"void __thiscall f(void *this, int isEquip, int eventId)",0x006A56B0: 0x006A56B0-0x006A59C0
+0x006A59D0,signature,"int __thiscall f(void *this, int initial)",0x006A59D0: 0x006A59D0-0x006A5AC9
+0x006A5AD0,signature,"bool __thiscall f(void *this, unsigned int *key)","0x006A5AD0: 0x006A5AD0-0x006A5AF6: [key]=1, [key+4]=[ecx+0x934], [key+8]=0x006A0590(), [key+0xC]=[ecx+0x930], mov al,1"
+0x006A5B00,signature,"bool __thiscall f(void *this, const void *eventString, unsigned int *key)","0x006A5B00: 0x006A5B00-0x006A5B6D: [key]=4, [key+4]=0x9A, [key+8]=ebx, [key+0xC]=0x0069E7B0(...)"
+0x006A5CD0,signature,"void __thiscall f(void *this, int weaponSet)",0x006A5CD0: 0x006A5CD0-0x006A5DDB
+0x006A5DE0,signature,"void __thiscall f(void *this, float *position)",0x006A5DE0: 0x006A5DE0-0x006A5F35
+0x006A7520,signature,void __thiscall f(void *this),0x006A7520: 0x006A7520-0x006A7AE0
+0x006A8A40,signature,"void __thiscall f(void *this, int abilityId, unsigned int sourceId, unsigned char flag)",0x006A8A40: 0x006A8A40-0x006A8A6A: neg al
+0x006A8A70,signature,"void __thiscall f(void *this, int abilityId, void *sourceObject)","0x006A8A70: 0x006A8A70-0x006A8A9A: arg1+4 Get 0x00053CC40, pushes eax, 4, arg0"
+0x006AA330,signature,"void __cdecl f(void *first, void *last, const void *value)",0x006AA330: 0x006AA330-0x006AA358
+0x006AA360,signature,"void __cdecl f(void *dest, unsigned int count, const void *value)",0x006AA360: 0x006AA360-0x006AA38C
+0x006AA390,signature,"void * __cdecl f(void *first, void *last, void *dest)",0x006AA390: 0x006AA390-0x006AA42D
+0x006AA3FF,signature,void __cdecl f(void),0x006AA3FF: 0x006AA3FF-0x006AA42A: loop of wstring dtors 0xBC apart
+0x006AA4D0,signature,"void __thiscall f(void *this, float elapsed)",0x006AA4D0: 0x006AA4D0-0x006AA7D5: emitter +0x30 position and +0x1D dirty byte inline at 0x006AA62C and 0x006AA6B5
+0x006ABDC0,signature,"int __thiscall f(void *this, void *templateReader, void *arg2, void *saveStruct, int flag)","0x006ABDC0: 0x006ABDC0-0x006AC092: L""TemplateResRef"", L""DialogResRef"", ForScript_HasConversation"
+0x006AD2A0,signature,"void * __cdecl f(int id, const void *list)","0x006AD2A0: 0x006AD2A0-0x006AD31F: size 0x0067D390, id by 0x0053CC40 on [elem]+0x58"
+0x006AD530,signature,"unsigned short __thiscall f(void *this, int fieldId, short *defaultValue)",0x006AD530: 0x006AD530-0x006AD587
+0x006AD590,signature,"void __thiscall f(void *this, void *result, void *firstContainer, void *first, void *lastContainer, void *last)","0x006AD590: 0x006AD590-0x006AD5E7: memmove 0x008E0E8B, sets [edi+8]"
+0x006AD6F0,signature,"void * __cdecl f(void *first, void *last, void *destEnd)",0x006AD6F0: 0x006AD6F0-0x006AD71A
+0x006AD720,signature,"void __cdecl f(void *dest, unsigned int count, const void *value)",0x006AD720: 0x006AD720-0x006AD78D
+0x006AD78E,signature,void __cdecl f(void),0x006AD78E: 0x006AD78E-0x006AD7CF
+0x006AD7D0,signature,"void __cdecl f(void *result, void *first, void *last, void *destContainer, void *dest, const void *value)",0x006AD7D0: 0x006AD7D0-0x006AD863
+0x006AD870,signature,"void * __cdecl f(void *first, void *last, void *dest)",0x006AD870: 0x006AD870-0x006AD8AF
+0x006AD8B0,signature,"void * __cdecl f(void *first, void *last, void *destEnd)",0x006AD8B0: 0x006AD8B0-0x006AD8EF
+0x006AD9A0,signature,"bool __thiscall f(void *this, float *targetOut)","0x006AD9A0: 0x006AD9A0-0x006ADA44: [cmd+2]==0x14, CDataArrays::GetVector(0) 0x00A59F10, GetFlag(6) 0x00A5A280"
+0x006ADCF0,signature,"void __thiscall f(void *this, float heading, float a, float b, unsigned int flag)",0x006ADCF0: 0x006ADCF0-0x006ADE3C: heading is the first float
+0x006ADE40,signature,"void __thiscall f(void *this, float angle)","0x006ADE40: 0x006ADE40-0x006ADF6A: fsincos of -angle*const, stored sin first at +0x10 and cos at +0x14, then (x=[0x10], y=[0x14], 0)"
+0x006ADF70,signature,"void __thiscall f(void *this, void *point, int run, float distance, int playerIssued, int delay)",0x006ADF70: 0x006ADF70-0x006AE094
+0x006AEC30,signature,"void __thiscall f(void *this, unsigned int *value)",0x006AEC30: 0x006AEC30-0x006AED3F
+0x006AF310,signature,"void __cdecl f(void *result, void *firstContainer, void *first, void *lastContainer, void *last, const void *value)","0x006AF310: 0x006AF310-0x006AF38E: six stack arguments (result, first container, first, last container, last, value)"
+0x006AF390,signature,void __thiscall f(void *this),0x006AF390: 0x006AF390-0x006AF3DE
+0x006AF3E0,signature,"void * __cdecl f(void *first, void *last, void *dest)",0x006AF3E0: 0x006AF3E0-0x006AF428
