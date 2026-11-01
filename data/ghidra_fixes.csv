@@ -2646,3 +2646,44 @@ address,what,value,why
 0x007380D0,signature,"void* __cdecl f(void* object, void* function, int adjust)","0x007380D0, caller 0x00739B10"
 0x00738C10,signature,void __thiscall f(void* this),0x00738C10
 0x00738C80,signature,"void* __thiscall f(void* this, unsigned int flags)",0x00738C80
+0x00738C90,signature,"void __thiscall f(void* this, int a, int b)","ret 8, vftable slot"
+0x00738CA0,signature,"void* __stdcall f(void* array, unsigned int index)",ret 8 with ecx unread: static helper 0x00738CA0
+0x00738D20,signature,"void* __thiscall f(void* this, unsigned int index)","ret 4, slot 7"
+0x00738D40,signature,void* __thiscall f(void* this),vftable slot 17
+0x00738D70,signature,void* __thiscall f(void* this),"iterator slot 4, plain ret"
+0x00738DB0,signature,"bool __cdecl f(void* first, void* last, void* container, void* dest, int tag1, int tag2)","plain ret, caller adds 0x18 at 0x00738E86"
+0x00738E10,signature,"bool __cdecl f(void* a, void* b)","plain ret, two stack arguments (esp+0x10 and +0x14 after three pushes)"
+0x00738EA0,signature,void __thiscall f(void* this),"plain ret, ecx = this"
+0x00738F10,signature,"void* __thiscall f(void* this, unsigned int flags)","0x00738F10 sub ecx,4; jmp 0x00739050; slot 0 of the vftable at 0x00B1B440"
+0x00738F20,signature,"void* __stdcall f(void* array, unsigned int index)",ret 8 with ecx unread: static helper 0x00738F20
+0x00738FA0,signature,"void* __thiscall f(void* this, unsigned int index)","ret 4, slot 7"
+0x00738FC0,signature,void* __thiscall f(void* this),vftable slot 17
+0x00738FF0,signature,void* __thiscall f(void* this),"iterator slot 4, plain ret"
+0x00739030,signature,"void* __thiscall f(void* this, unsigned int flags)","ret 4, slot 1"
+0x00739050,signature,"void* __thiscall f(void* this, unsigned int flags)","ret 4, slot 1"
+0x007395C0,signature,"void* __thiscall f(void* this, void* other)","ret 4, ecx = this"
+0x00739640,signature,"void* __thiscall f(void* this, void* other)","ret 4, ecx = this"
+0x007398D0,signature,"void* __thiscall f(void* this, void* other)","ret 4, ecx = this"
+0x00739950,signature,"void* __thiscall f(void* this, void* other)","ret 4, ecx = this"
+0x0073B200,signature,"void __thiscall f(void* this, void* text)","ret 4, vftable slot 10/11/12"
+0x0073B240,signature,"void* __thiscall f(void* this, void* out)","ret 4, vftable slot 10/11/12"
+0x0073B270,signature,"void* __thiscall f(void* this, void* out)","ret 4, vftable slot 10/11/12"
+0x0073B300,signature,"void __thiscall f(void* this, void* text)","ret 4, vftable slot 10/11/12"
+0x0073B340,signature,"void* __thiscall f(void* this, void* out)","ret 4, vftable slot 10/11/12"
+0x0073B370,signature,"void* __thiscall f(void* this, void* out)","ret 4, vftable slot 10/11/12"
+0x0073F7F0,signature,"void* __thiscall f(void* this, void* valuePtr)","ret 4, ecx = this"
+0x0073F820,signature,"void __thiscall f(void* this, void* text)","ret 4, slot 10"
+0x0073F840,signature,"bool __thiscall f(void* this, unsigned int index)","ret 4, slot 2"
+0x0073F860,signature,"void* __thiscall f(void* this, unsigned int flags)","0x0073F860 sub ecx,4; jmp 0x0073FBB0"
+0x0073F870,signature,"void* __stdcall f(void* array, unsigned int index)",ret 8 with ecx unread: static helper 0x0073F870
+0x0073F8F0,signature,bool __thiscall f(void* this),"iterator slot 2, plain ret"
+0x0073F920,signature,"void* __thiscall f(void* this, void* valuePtr)","ret 4, ecx = this"
+0x0073F950,signature,"void* __thiscall f(void* this, unsigned int flags)","0x0073F950 sub ecx,4; jmp 0x0073FBD0"
+0x0073F960,signature,"void* __stdcall f(void* array, unsigned int index)",ret 8 with ecx unread: static helper 0x0073F960
+0x0073F9E0,signature,"void* __thiscall f(void* this, void* valuePtr)","ret 4, ecx = this"
+0x0073FA10,signature,"void* __thiscall f(void* this, unsigned int flags)","0x0073FA10 sub ecx,4; jmp 0x0073FBF0"
+0x0073FA20,signature,"void* __thiscall f(void* this, unsigned int index)","ret 4, slot 0"
+0x0073FA50,signature,void __thiscall f(void* this),plain ret
+0x0073FAB0,signature,"void* __thiscall f(void* this, unsigned int index)","ret 4, slot 7"
+0x0073FAD0,signature,void __thiscall f(void* this),plain ret
+0x0073FB30,signature,"void* __thiscall f(void* this, unsigned int index)","ret 4, slot 7"
