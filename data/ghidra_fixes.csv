@@ -728,3 +728,36 @@ address,what,value,why
 0x0080AB80,signature,"void __thiscall f(void *this, void *name)",ret 4 at 0x0080ac42
 0x0080AC50,signature,"void __thiscall f(void *this, float preset, bool refresh, bool queue)","ret 0xc; 0x0080ad80 pushes float,1,1"
 0x0080AD80,signature,"void __thiscall f(void *this, float value)","GUI::GUIPaperdoll::SetHeadPreset: ret 4; push ecx only makes room for the float, and ecx reaches 0x0080AC50 untouched; lib-agent, two readings, 2026-10-31"
+0x007CD400,signature,"void __thiscall f(void *this, void *quat)",0x007cd400: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CD4C0,signature,void * __cdecl f(void *node),0x007cd4c0: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CD4E0,signature,"void __thiscall f(void *this, void *node)",0x007cd4e0: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CD540,signature,void * __cdecl f(void *node),0x007cd540: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CD560,signature,void * __cdecl f(void *node),0x007cd560: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CD580,signature,void __thiscall f(void *this),0x007cd580: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CD610,signature,void __thiscall f(void *this),0x007cd610: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CD680,signature,void * __cdecl f(void *node),0x007cd680: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CD6A0,signature,void __thiscall f(void *this),0x007cd6a0: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CD730,signature,unsigned int __thiscall f(void *this),0x007cd730: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CD750,signature,"void * __thiscall f(void *this, unsigned int count)",0x007cd750: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CD7F0,signature,"void * __thiscall f(void *this, void *src)",0x007cd7f0: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CD860,signature,"double __cdecl f(char *base, int offset)",0x007cd860: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CD870,signature,void * __cdecl f(unsigned int count),0x007cd870: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CD8D0,signature,void * __cdecl f(unsigned int count),0x007cd8d0: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CD930,signature,"void * __cdecl f(void *first, void *last, void *value)",0x007cd930: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CD9A0,signature,"void * __cdecl f(void *first, void *last, void *dest)",0x007cd9a0: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CD9F0,signature,"void * __cdecl f(void *first, void *last, void *dest)",0x007cd9f0: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CDA70,signature,"void * __cdecl f(void *first, void *last, void *destEnd)",0x007cda70: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CDAC0,signature,"void * __cdecl f(void *first, void *last, void *destEnd)",0x007cdac0: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CDB40,signature,"void __cdecl f(float *first, int hole, int top, float value)",0x007cdb40: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CDBA0,signature,"void __cdecl f(float *first, float *middle, float *last)",0x007cdba0: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CDC40,signature,"void __thiscall f(void *this, void *position, void *orientation)",0x007cdc40: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CDC90,signature,"void __thiscall f(void *this, void *outPosition, void *outOrientation, float *outFov)",0x007cdc90: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CDD10,signature,void * __thiscall f(void *this),0x007cdd10: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CDD30,signature,"void * __thiscall f(void *this, void *outPosition)",0x007cdd30: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CDDE0,signature,"void __thiscall f(void *this, void *quaternion, bool storeAlso)",0x007cdde0: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CDEA0,signature,"void * __thiscall f(void *this, void *outQuaternion)",0x007cdea0: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CDF30,signature,"void __thiscall f(void *this, void *treeName, void *clipName, float time)",0x007cdf30: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CE0D0,signature,"void __thiscall f(void *this, void *treeName, void *clipName, float weight)",0x007ce0d0: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CE1B0,signature,"void __thiscall f(void *this, void *treeName, void *clipName, float clipTime)",0x007ce1b0: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CE290,signature,"void __thiscall f(void *this, void *treeName, void *clipName)",0x007ce290: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
+0x007CE330,signature,"void __thiscall f(void *this, bool *playing, void *treeName, void *clipName, float clipTime, float weight)",0x007ce330: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
