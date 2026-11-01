@@ -2862,3 +2862,41 @@ address,what,value,why
 0x004DB470,signature,"void __cdecl f(void *first, void *mid, void *last, void *pred)",read in the disassembly at 0x004DB470: 0x4DB470
 0x004DB520,signature,"void __cdecl f(void *first, int hole, int top, unsigned int v0, unsigned int v1, unsigned int v2, void *pred)",read in the disassembly at 0x004DB520: 0x4DB520
 0x004DB5B0,signature,bool __thiscall f(void *this),read in the disassembly at 0x004DB5B0: 0x4DB5B0
+0x00A29F70,signature,bool __thiscall f(void *this),"returns al, ecx read; plain ret at 0xA29F82"
+0x00A29F90,signature,"int __thiscall f(void *this, char *name)","ret 4, ecx moved to ebx at 0xA29F98"
+0x00A29FE0,signature,"int __thiscall f(void *this, void *other)","ret 4, ecx read at 0xA29FE0"
+0x00A2A090,signature,"void __thiscall f(void *this, void *out, void *src)","ret 8; src read at 0xA2A091, out copied to at 0xA2A0BB"
+0x00A2A0D0,signature,"void __thiscall f(void *this, void *out, char *name)","ret 8; name read at 0xA2A0D3, out at 0xA2A11F"
+0x00A2A140,signature,"void __thiscall f(void *this, void *out, unsigned short *name)","ret 8; wide name at 0xA2A143, out at 0xA2A1A2"
+0x00A2A1C0,signature,"void * __thiscall f(void *this, char *name)","ret 4, returns this (0xA2A1D7)"
+0x00A2A1E0,signature,"void * __thiscall f(void *this, unsigned short *name)","ret 4, returns this (0xA2A1F7)"
+0x00A2A200,signature,"int __thiscall f(void *this, void *other)","ret 4, forwards ecx to 0xA29FE0"
+0x00A2A220,signature,"void __thiscall f(void *this, void *out, void *wstring)","ret 8; wstring at 0xA2A221, out at 0xA2A294"
+0x00A2A2B0,signature,"void * __thiscall f(void *this, void *wstring)","ret 4, returns this (0xA2A2C7)"
+0x00A2A2D0,signature,"int __thiscall f(void *this, void *wstring)","ret 4, this in edi at 0xA2A2E9"
+0x00A2A3D0,signature,"int __thiscall f(void *this, void *wstring)","ret 4, forwards ecx to 0xA2A2D0"
+0x00A2A3F0,signature,"void * __thiscall f(void *this, unsigned int file, unsigned int index, unsigned int offset)","stores the three args to [this+0/4/8], ret 0xC (0xA2A3F0)"
+0x00A2A410,signature,"void * __thiscall f(void *this, void *out)","ret 4, this passed on as the writer at 0xA2A419"
+0x00A2A430,signature,"void __cdecl f(unsigned int type, void *data, int count)","plain ret at 0xA2A459 etc.; caller 0xA2B3EF adds esp,0xC"
+0x00A2A5B0,signature,void __thiscall f(void *this),"plain ret 0xA2A5D3, ecx to esi at 0xA2A5B2"
+0x00A2A5E0,signature,"void * __thiscall f(void *this, void *out, unsigned int value)","ret 8, ecx stored at 0xA2A5E4"
+0x00A2A5F0,signature,"void * __thiscall f(void *this, void *out, void *field)",ret 8; ecx read at 0xA2A5FB
+0x00A2A630,signature,"bool __thiscall f(void *this, void *a, void *b)",ret 8; ecx (the file) goes to 0x4DA5C0 for both type words; returns align(a) > align(b) (cmp/sbb/neg at 0xA2A65C)
+0x00A2A670,signature,"void __cdecl f(void *first, void *last, void *pred)","plain ret 0xA2A70F, three stack args"
+0x00A2A710,signature,"void __cdecl f(void *first, void *mid, void *last, void *pred)","plain ret 0xA2A7B3, four stack args"
+0x00A2A7C0,signature,"void __cdecl f(void *first, int hole, int top, unsigned int v0, unsigned int v1, unsigned int v2, void *pred)",plain ret; the 12-byte value by value; caller 0xA2A9A9 cleans 0x1C
+0x00A2A850,signature,"void __cdecl f(void *first, void *mid, void *last, void *pred)","plain ret 0xA2A8E9, four args"
+0x00A2A900,signature,"void __cdecl f(void *first, int hole, int bottom, unsigned int v0, unsigned int v1, unsigned int v2, void *pred)",plain ret 0xA2A9B5; caller 0xA2AE76 cleans 0x1C
+0x00A2A9C0,signature,void * __thiscall f(void *this),"plain ret, ecx to ebx at 0xA2A9C3"
+0x00A2AA10,signature,"void * __thiscall f(void *this, void *field)","ret 4, ecx forwarded to 0xA2A9C0"
+0x00A2AA30,signature,"void __thiscall f(void *this, void *field, unsigned int value)","ret 8, ecx to esi at 0xA2AA37"
+0x00A2AA80,signature,"void __thiscall f(void *this, void *field, unsigned int a, unsigned int b)","ret 0xC, ecx to esi at 0xA2AA87"
+0x00A2AAC0,signature,"void __thiscall f(void *this, void *field, void *target)","ret 8, ecx to ebx at 0xA2AACA"
+0x00A2AB60,signature,"void __cdecl f(void *out_pair, void *first, void *last, void *pred)",plain ret 0xA2AE1C; retptr is arg1 (stored at 0xA2AE11)
+0x00A2AE20,signature,"void __cdecl f(void *first, void *last, void *pred)","plain ret 0xA2AE86, three args"
+0x00A2AE90,signature,"void * __thiscall f(void *this, void *out)","ret 4, ecx read at 0xA2AE90"
+0x00A2AEB0,signature,"void * __thiscall f(void *this, void *out, unsigned int offset)","ret 8, ecx to esi at 0xA2AEB1"
+0x00A2AEE0,signature,"void * __thiscall f(void *this, void *out, unsigned int offset)","ret 8, ecx to esi at 0xA2AEE6"
+0x00A2AF10,signature,"void * __thiscall f(void *this, void *out, unsigned int index)","ret 8, ecx to esi at 0xA2AF14"
+0x00A2AF80,signature,"void __cdecl f(void *first, void *last, void *pred)","plain ret 0xA2B010, three args"
+0x00A2B020,signature,"void __cdecl f(void *header, unsigned int totalSize, unsigned int typeWord, unsigned int offset, void *visited)",five args: the caller 0xA2B900 cleans 0x14 (0xA2B99A); header base +0x18 is the data offset (0xA2B053)
