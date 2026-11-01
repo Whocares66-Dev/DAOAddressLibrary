@@ -8418,3 +8418,40 @@ address,what,value,why
 0x007C1390,signature,void __thiscall GUI::GUIPaperdoll::CommandApplyMorph::Execute(void* this),"plain ret; the decompiler mangles this as this[3].vftablePtr[..]: +0xC is the paperdoll, +8 the sequence number"
 0x007BFE10,clear,EquipmentChangedMessage::EquipmentChangedMessage,"outside this batch, seen at 0x007C030B: misleading, it is GUIPaperdoll's constructor (called after new 0x320 with (-1,-1); dev/CHARGEN.md)"
 0x007B2AD0,clear,vfunction1,"misleading: slot 0 of CommandCreateMorph's vftable 0x00B21848, the scalar deleting destructor (calls 0x007B2A30, operator delete on bit 0); from reading B"
+0x007C9700,signature,"void __thiscall ExploredAreaMap::CellToClip(void *this, const int *cell, float *clip)","reads ECX +0x18/+0x1C, ret 8"
+0x007C9840,signature,void __thiscall MinimapRenderOperation::Execute(void *this),vftable 0x00B22F6C slot 1; label vfunction2 is generic
+0x007C9870,clear,IGameRenderOperation::vfunction1,"it is the scalar deleting destructor (vptr 0x00AF8C34, operator delete, ret 4)"
+0x007C9890,clear,MinimapRefreshOperation::MinimapRefreshOperation,"it constructs the area's explored map (CCArea+0x4F8), which owns both operations; neither operation is this (reading B)"
+0x007C9890,signature,void * __thiscall ExploredAreaMap::ExploredAreaMap(void *this),"ECX kept in ESI, returns it, plain ret"
+0x007C99C0,signature,"void __thiscall ExploredAreaMap::MarkCell(void *this, const int *cell)",ret 4
+0x007C9A00,signature,"bool __thiscall ExploredAreaMap::IsCellExplored(void *this, const int *cell)","ret 4, setnz al"
+0x007C9A50,signature,"bool __thiscall ExploredAreaMap::NoExploredCellNear(void *this, const float *position)",ret 4; position read by movaps (16 bytes)
+0x007C9BF0,signature,"void __thiscall ExploredAreaMap::UpdateMapNoteVisible(void *this, unsigned int objectId)",ret 4
+0x007C9C40,signature,void * __cdecl GetFullMapScene(void),"no ECX read, plain ret, returns GUISystem::Scene(0xF)"
+0x007C9C60,signature,void __thiscall MinimapRefreshOperation::Execute(void *this),vftable 0x00B22F7C slot 1
+0x007C9D20,signature,"void __thiscall ExploredAreaMap::MarkPosition(void *this, const float *position)",ret 4
+0x007C9D70,convention,__thiscall,"Ghidra has __fastcall(float*); ECX is this, no EDX use, plain ret"
+0x007C9DD0,signature,void __thiscall MinimapRefreshOperation::Restore(void *this),"vftable 0x00B22F7C slot 2, called after a device reset by 0x0052A150 at 0x0052A1E7; label vfunction3 is generic"
+0x007C9E30,signature,void __thiscall ExploredAreaMap::UpdateMapNoteVisibility(void *this),Ghidra has void(void); ECX kept in EBX and passed to 0x007C9BF0
+0x007F3950,signature,void __thiscall PortraitRenderer::Release(void *this),"Ghidra has __fastcall(int); ECX is this, plain ret"
+0x007F3AB0,signature,"void __thiscall PortraitRenderer::SavePortraitImage(void *this, const wchar_t *name)",ret 4; the argument is assigned as text (0x004C2AD0) or null
+0x007F4440,signature,"void __thiscall PortraitRenderer::RefreshClone(void *this, void *appearance)",ret 4; null means the source's +0x7B0
+0x007F8330,clear,ItemFilter::vfunction1,"it is ItemFilter's scalar deleting destructor (slot 0, vptr 0x00B248E8)"
+0x007F8350,signature,void * __cdecl std::_Tree::_Min(void *node),"no ECX read, plain ret"
+0x007F8370,signature,int __thiscall std::vector<FilteredGroupedItemView::Entry>::size(void *this),"reads ECX +4/+8, plain ret"
+0x007F8390,signature,"void __thiscall std::_Tree::_Rrotate(void *this, void *node)","ret 4; a right rotation (0x007F8394, 0x007F83BA)"
+0x007F83F0,signature,"void __thiscall std::allocator<FilteredGroupedItemView::Entry>::destroy(void *this, void *p)",callers set ECX to the allocator and push p; the jumped-to destructor's ret 4 pops it
+0x007F8510,clear,FilteredGroupedItemView::Entry::vfunction2,adjustor thunk (this-0x1C) to the scalar deleting destructor 0x007F8620
+0x007F8520,clear,FilteredGroupedItemView::Entry::vfunction1,adjustor thunk (this-0x20) to the scalar deleting destructor 0x007F8620
+0x007F8530,clear,FilteredGroupedItemView::Entry::vfunction3,adjustor thunk (this-8) to the scalar deleting destructor 0x007F8620
+0x007F85C0,signature,"void * __thiscall FilteredGroupedItemView::GetEntry(void *this, unsigned int index)",ret 4
+0x007F8620,clear,FilteredGroupedItemView::Entry::vfunction5,it is the Entry's scalar deleting destructor (slot 4)
+0x007F8800,signature,"void * __thiscall FilteredGroupedItemView::Entry::Entry(void *this, unsigned int item, int groupSize)",ret 8; Ghidra shows one parameter
+0x007F89C0,signature,int __thiscall FilteredGroupedItemView::GetEntryCount(void *this),"reads ECX +0x64/+0x68, plain ret"
+0x007FAEB0,clear,ItemFilterCrafting::ItemFilterCrafting,"it is FilteredGroupedItemView's constructor (vptr 0x00B24A90, eight filters inserted)"
+0x007FB110,clear,FilteredGroupedItemView::vfunction2,adjustor thunk (this-0x1C) to the scalar deleting destructor 0x007FBB90
+0x007FB120,clear,FilteredGroupedItemView::vfunction1,adjustor thunk (this-0x20) to the scalar deleting destructor 0x007FBB90
+0x007FB130,clear,FilteredGroupedItemView::vfunction3,adjustor thunk (this-8) to the scalar deleting destructor 0x007FBB90
+0x007FB140,signature,void * __cdecl FilteredGroupedItemView::StaticClassInfo(void),"no ECX read; Ghidra labels it vfunction1, it is called directly by 0x007FB1A0 and 0x007FB1B0"
+0x007FBB90,clear,FilteredGroupedItemView::vfunction5,"it is the view's scalar deleting destructor (over 0x007FB4B0, operator delete on flag)"
+0x00703DB0,convention,__thiscall,called with ECX = the clone's variable table (renderer+0x300) at 0x007F4568 and four pushed arguments; the ForScript_ label may mislead (not read further)
