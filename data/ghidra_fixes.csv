@@ -762,3 +762,162 @@ address,what,value,why
 0x007CE290,signature,"void __thiscall f(void *this, void *treeName, void *clipName)",0x007ce290: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
 0x007CE330,signature,"void __thiscall f(void *this, bool *playing, void *treeName, void *clipName, float clipTime, float weight)",0x007ce330: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes
 0x007CD460,signature,"void __thiscall f(void *this, void *node)","ret 4; ecx read at 0x007CD47E (mov ecx,[ecx+4]); 0x007cd460: both readings' prototypes agree or settled; argument bytes checked against the ret N and the callers' pushes"
+0x008528A0,signature,"void __cdecl f(void *parser, void *userData)","XML_SetUserData; plain ret, args at esp+4, esp+8"
+0x008528C0,signature,int __cdecl f(void *parser),XML_GetSpecifiedAttributeCount; reads esp+4
+0x008528D0,signature,"void __cdecl f(void *parser, void *start, void *end)",XML_SetElementHandler; esp+4..0xc
+0x008528F0,signature,"void __cdecl f(void *parser, void *handler)","XML_SetCharacterDataHandler; esp+4, esp+8"
+0x00852900,signature,"void * __cdecl f(void *parser, int len)",XML_GetBuffer; args at 0x0c and 0x14 after pushes
+0x00852A10,signature,int __cdecl f(void *parser),"XML_GetCurrentLineNumber; esp+8 after push esi, plain ret"
+0x00852A60,signature,void * __cdecl f(int code),XML_ErrorString; esp+4 indexes table 0xC13940
+0x00852A80,signature,bool __cdecl f(void *parser),"storeRawNames; parser at esp+0x14 after four pushes, returns al, plain ret"
+0x00852B20,signature,"int __cdecl f(void *parser, const char *start, const char *end, const char **endPtr)","externalEntityContentProcessor; four stack args, forwards to doContent with add esp 0x18"
+0x00852DD0,signature,"int __cdecl f(void *parser, const char *s, const char *end, const char **nextPtr)","prologProcessor; four stack args, callers 0x853EAA and 0x854A9B add 0x10"
+0x00852E20,signature,int __cdecl f(void *parser),XML_GetErrorCode / errorProcessor; reads esp+4
+0x00853780,signature,"void __cdecl f(void *parser, int srcNode, void *dest, void *contpos, void *strpos)","build_node; five stack args, recursion at 0x853858 then add esp 0x14"
+0x00853900,signature,"int __cdecl f(void *parser, int len, int isFinal)","XML_ParseBuffer; args at esp+4, 8, 0x10 after pushes"
+0x00853E80,signature,"int __cdecl f(void *parser, const char *s, const char *end, const char **nextPtr)",prologInitProcessor; stack args esp+8..0x14 after push esi
+0x00854830,signature,void __cdecl f(void *parser),"XML_ParserFree; esp+8 after push esi, plain ret"
+0x00854950,signature,"int __cdecl f(void *parser, const char *s, int len, int isFinal)",XML_Parse; len at esp+0x10 and isFinal at esp+0x14 after push esi
+0x008549F0,signature,"int __cdecl f(void *parser, const char *start, const char *end, const char **endPtr)","cdataSectionProcessor; four stack args, plain ret"
+0x00854A60,signature,"int __cdecl f(void *parser, const char *start, const char *end, const char **endPtr)","ignoreSectionProcessor; four stack args, plain ret"
+0x00854CE0,signature,"int __cdecl f(void *parser, const void *enc, int isCdata, const char *ptr, const char *end, void *pool)","caller 0x855F83 pushes six, add esp 0x18"
+0x00855CF0,signature,"bool __cdecl f(void *parser, void *encodingName)","XML_ParserReset; parser at esp+8, encodingName at esp+0x14 after three pushes, plain ret"
+0x00855DB0,signature,"int __cdecl f(void *parser, const char *start, const char *end, const char **endPtr)","epilogProcessor; four stack args, plain ret"
+0x00855FE0,signature,"void * __cdecl f(void *encoding, void *memsuite, void *nameSep)","XML_ParserCreate_MM; three stack args, parserCreate gets memsuite in eax"
+0x00856940,signature,"int __cdecl f(void *parser, int startTagLevel, void *enc, const char *s, const char *end, const char **nextPtr)","doContent; six pushes at 0x857621..0x85762D, add esp 0x18"
+0x00857610,signature,"int __cdecl f(void *parser, const char *start, const char *end, const char **endPtr)","contentProcessor; four stack args, plain ret"
+0x00857650,signature,"int __cdecl f(void *parser, void *enc, const char *s, const char *end, int tok, const char *next, const char **nextPtr)","doProlog; seven args pushed at 0x852DD0, add esp 0x2c covers 0x10 and 0x1c"
+0x00858DC0,signature,"int __cdecl f(void *parser, void *entity)","processInternalParamEntity; args at esp+0x20 and 0x28 after pushes, plain ret"
+0x00858E50,signature,"int __cdecl f(void *enc, const char *p)","plain ret, ptr at [esp+8]: isName/isNmstrt/isInvalid slot"
+0x00858E90,signature,"int __cdecl f(void *enc, const char *p)","plain ret, ptr at [esp+8]: isName/isNmstrt/isInvalid slot"
+0x00858EE0,signature,"int __cdecl f(void *enc, const char *p)","plain ret, ptr at [esp+8]: isName/isNmstrt/isInvalid slot"
+0x00858F20,signature,"int __cdecl f(void *enc, const char *p)","plain ret, ptr at [esp+8]: isName/isNmstrt/isInvalid slot"
+0x00858F70,signature,"int __cdecl f(void *enc, const char *p)","plain ret, ptr at [esp+8]: isName/isNmstrt/isInvalid slot"
+0x00858F90,signature,"int __cdecl f(void *enc, const char *p)","plain ret, ptr at [esp+8]: isName/isNmstrt/isInvalid slot"
+0x00859010,signature,"int __cdecl f(void *enc, const char *p)","plain ret, ptr at [esp+8]: isName/isNmstrt/isInvalid slot"
+0x008596D0,signature,"int __cdecl f(void *enc, const char *ptr, const char *end, const char **nextTokPtr)","plain ret, args on the stack (cdecl); slot 2 (cdataSectionTok) of table 0x00B2C570"
+0x0085A820,signature,"int __cdecl f(void *enc, const char *ptr, const char *end, const char **nextTokPtr)","plain ret, args on the stack (cdecl); slot 1 (contentTok) of table 0x00B2C570"
+0x0085B070,signature,"int __cdecl f(void *enc, const char *ptr, const char *end, const char **nextTokPtr)","plain ret, args on the stack (cdecl); slot 0 (prologTok) of table 0x00B2C570"
+0x0085B730,signature,"int __cdecl f(void *enc, const char *ptr, const char *end, const char **nextTokPtr)","plain ret, args on the stack (cdecl); slot 4 of table 0x00B2C570"
+0x0085B860,signature,"int __cdecl f(void *enc, const char *ptr, const char *end, const char **nextTokPtr)","plain ret, args on the stack (cdecl); slot 5 of table 0x00B2C570"
+0x0085B990,signature,"int __cdecl f(void *enc, const char *ptr, const char *end, const char **nextTokPtr)","plain ret, args on the stack (cdecl); slot 3 of table 0x00B2C570"
+0x0085BB20,signature,"int __cdecl f(void *enc, const char *ptr, const char *end, const char **badPtr)","plain ret, args on the stack (cdecl); slot 14 (isPublicId) of table 0x00B2C570"
+0x0085BBD0,signature,"int __cdecl f(void *enc, const char *ptr, int attsMax, void *atts)","plain ret, args on the stack (cdecl); slot 10 (getAtts) of table 0x00B2C570"
+0x0085BE50,signature,"int __cdecl f(void *enc, const char *ptr, const char *end)","plain ret, args on the stack (cdecl); slot 12 (predefinedEntityName) of table 0x00B2C570"
+0x0085BEF0,signature,"int __cdecl f(void *enc, const char *ptr1, const char *ptr2)","plain ret, args on the stack (cdecl); slot 6 (sameName) of table 0x00B2C570"
+0x0085C000,signature,"int __cdecl f(void *enc, const char *ptr1, const char *end1, const char *ptr2)","plain ret, args on the stack (cdecl); slot 7 of table 0x00B2C570"
+0x0085C040,signature,"int __cdecl f(void *enc, const char *ptr)","plain ret, args on the stack (cdecl); slot 8 of table 0x00B2C570"
+0x0085C0D0,signature,"void * __cdecl f(void *enc, const char *ptr)","plain ret, args on the stack (cdecl); slot 9 of table 0x00B2C570"
+0x0085C100,signature,"void __cdecl f(void *enc, const char *ptr, const char *end, void *pos)","plain ret, args on the stack (cdecl); slot 13 of table 0x00B2C570"
+0x0085C190,signature,"void __cdecl f(void *enc, const char **fromP, const char *fromLim, char **toP, const char *toLim)","plain ret, args on the stack (cdecl); slot 15 (utf8Convert) of the utf8 and internal_utf8 tables"
+0x0085C200,signature,"void __cdecl f(void *enc, const char **fromP, const char *fromLim, unsigned short **toP, const unsigned short *toLim)","plain ret, args on the stack (cdecl); slot 16 (utf16Convert) of the utf8 and internal_utf8 tables"
+0x0085C340,signature,"void __cdecl f(void *enc, const char **fromP, const char *fromLim, char **toP, const char *toLim)","plain ret, args on the stack (cdecl); slot 15 of latin1_encoding tables 0x00B2CB30, 0x00B2CCA0"
+0x0085C3A0,signature,"void __cdecl f(void *enc, const char **fromP, const char *fromLim, unsigned short **toP, const unsigned short *toLim)","plain ret, args on the stack (cdecl); slot 16 of latin1 and ascii tables"
+0x0085C3E0,signature,"void __cdecl f(void *enc, const char **fromP, const char *fromLim, char **toP, const char *toLim)","plain ret, args on the stack (cdecl); slot 15 of ascii_encoding tables 0x00B2CE10, 0x00B2CF80"
+0x0085C4A0,signature,"void __cdecl f(void *enc, const char **fromP, const char *fromLim, char **toP, const char *toLim)","plain ret, args on the stack (cdecl); slot 15 of the encoding at 0x00B2D0F0 (held 0x00B2D12C); high byte read from ptr[1]"
+0x0085C6E0,signature,"void __cdecl f(void *enc, const char **fromP, const char *fromLim, unsigned short **toP, const unsigned short *toLim)","plain ret, args on the stack (cdecl); slot 16 of 0x00B2D0F0 (held 0x00B2D130); builds the word from ptr[1]<<8|ptr[0]"
+0x0085C740,signature,"void __cdecl f(void *enc, const char **fromP, const char *fromLim, char **toP, const char *toLim)",0x0085C740 reads five stack args and ends in a plain ret
+0x0085C980,signature,"void __cdecl f(void *enc, const char **fromP, const char *fromLim, unsigned short **toP, const unsigned short *toLim)",0x0085C980 reads five stack args
+0x0085D020,signature,"int __cdecl f(void *enc, const char *ptr, const char *end, const char **nextTokPtr)",plain ret and stack args read at 0x0085D020
+0x0085DFC0,signature,"int __cdecl f(void *enc, const char *ptr, const char *end, const char **nextTokPtr)",plain ret and stack args read at 0x0085DFC0
+0x0085E6A0,signature,"int __cdecl f(void *enc, const char *ptr, const char *end, const char **nextTokPtr)",plain ret and stack args read at 0x0085E6A0
+0x0085ED30,signature,"int __cdecl f(void *enc, const char *ptr, const char *end, const char **nextTokPtr)",plain ret and stack args read at 0x0085ED30
+0x0085EE90,signature,"int __cdecl f(void *enc, const char *ptr, const char *end, const char **nextTokPtr)",plain ret and stack args read at 0x0085EE90
+0x0085EFF0,signature,"int __cdecl f(void *enc, const char *ptr, const char *end, const char **nextTokPtr)",plain ret and stack args read at 0x0085EFF0
+0x0085F140,signature,"int __cdecl f(void *enc, const char *ptr, const char *end, const char **badPtr)",plain ret and stack args read at 0x0085F140
+0x0085F220,signature,"int __cdecl f(void *enc, const char *ptr, int attsMax, void *atts)",plain ret and stack args read at 0x0085F220
+0x0085F4C0,signature,"int __cdecl f(void *enc, const char *ptr, const char *end)",plain ret and stack args read at 0x0085F4C0
+0x0085F5E0,signature,"int __cdecl f(void *enc, const char *ptr1, const char *ptr2)",plain ret and stack args read at 0x0085F5E0
+0x0085F710,signature,"int __cdecl f(void *enc, const char *ptr1, const char *end1, const char *ptr2)",plain ret and stack args read at 0x0085F710
+0x0085F750,signature,"int __cdecl f(void *enc, const char *ptr)",plain ret and stack args read at 0x0085F750
+0x0085F7D0,signature,"void * __cdecl f(void *enc, const char *ptr)",plain ret and stack args read at 0x0085F7D0
+0x0085F810,signature,"void __cdecl f(void *enc, const char *ptr, const char *end, void *pos)",plain ret and stack args read at 0x0085F810
+0x0085FF00,signature,"int __cdecl f(void *enc, const char *ptr, const char *end, const char **nextTokPtr)",plain ret and stack args read at 0x0085FF00
+0x00860ED0,signature,"int __cdecl f(void *enc, const char *ptr, const char *end, const char **nextTokPtr)",plain ret and stack args read at 0x00860ED0
+0x008615B0,signature,"int __cdecl f(void *enc, const char *ptr, const char *end, const char **nextTokPtr)",plain ret and stack args read at 0x008615B0
+0x00861C50,signature,"int __cdecl f(void *enc, const char *ptr, const char *end, const char **nextTokPtr)",plain ret and stack args read at 0x00861C50
+0x00861DA0,signature,"int __cdecl f(void *enc, const char *ptr, const char *end, const char **nextTokPtr)",plain ret and stack args read at 0x00861DA0
+0x00861F00,signature,"int __cdecl f(void *enc, const char *ptr, const char *end, const char **nextTokPtr)",plain ret and stack args read at 0x00861F00
+0x00862050,signature,"int __cdecl f(void *enc, const char *ptr, const char *end, const char **badPtr)",plain ret and stack args read at 0x00862050
+0x00862130,signature,"int __cdecl f(void *enc, const char *ptr, int attsMax, void *atts)",plain ret and stack args read at 0x00862130
+0x008623D0,signature,"int __cdecl f(void *enc, const char *ptr, const char *end)",plain ret and stack args read at 0x008623D0
+0x008624F0,signature,"int __cdecl f(void *enc, const char *ptr1, const char *ptr2)",plain ret and stack args read at 0x008624F0
+0x00862620,signature,"int __cdecl f(void *enc, const char *ptr1, const char *end1, const char *ptr2)",plain ret and stack args read at 0x00862620
+0x00862660,signature,"int __cdecl f(void *enc, const char *ptr)",plain ret and stack args read at 0x00862660
+0x008626F0,signature,"void * __cdecl f(void *enc, const char *ptr)",plain ret and stack args read at 0x008626F0
+0x00862740,signature,"void __cdecl f(void *enc, const char *ptr, const char *end, void *pos)",plain ret and stack args read at 0x00862740
+0x00862830,signature,"void __cdecl f(void *enc, void *ptr, void *end, void *pos)","0x00862830 stores enc then tail-jumps updatePosition, plain ret"
+0x00862D50,signature,"int __cdecl f(int c, void *buf)","0x00862D50 args at esp+4/+8, plain ret"
+0x00862E10,signature,"int __cdecl f(int c, void *buf)","0x00862E10 args at esp+4/+8, plain ret"
+0x00862E70,signature,int __cdecl f(void),"0x00862E70 mov eax,0x778; ret"
+0x00862E80,signature,"int __cdecl f(void *enc, void *p)","0x00862E80 calls convert(userData,p) with add esp,8; plain ret"
+0x00862EE0,signature,"int __cdecl f(void *enc, void *p)","0x00862EE0 calls convert(userData,p) with add esp,8; plain ret"
+0x00862F40,signature,"int __cdecl f(void *enc, void *p)","0x00862F40 calls convert(userData,p) with add esp,8; plain ret"
+0x00863030,signature,"void __cdecl f(void *enc, void *fromP, void *fromLim, void *toP, void *toLim)","0x00863030 reads five stack args, plain ret"
+0x008630A0,signature,"void * __cdecl f(void *mem, void *table, void *convert, void *userData)","0x008630A0 four stack args; caller 0x008638B0 add esp,0x10"
+0x00863510,signature,void * __cdecl f(void),"0x00863510 mov eax,addr; ret"
+0x00863520,signature,"int __cdecl f(void *enc, void *ptr, void *end, void *nextTokPtr)","0x00863520 four stack args passed on to initScan, plain ret"
+0x00863550,signature,"int __cdecl f(void *enc, void *ptr, void *end, void *nextTokPtr)","0x00863550 four stack args passed on to initScan, plain ret"
+0x00863580,signature,"int __cdecl f(void *p, void *encPtr, void *name)","0x00863580 three stack args, plain ret"
+0x008635C0,signature,"void * __cdecl f(void *enc, void *ptr, void *end)","0x008635C0 called by doParseXmlDecl through a pointer, plain ret"
+0x008636A0,signature,"int __cdecl f(int isGeneralTextEntity, void *enc, void *ptr, void *end, void *badPtr, void *versionPtr, void *versionEndPtr, void *encodingName, void *namedEncodingPtr, void *standalonePtr)","0x008636A0 pushes ten stack words to doParseXmlDecl (add esp,0x28), plain ret"
+0x008636E0,signature,void * __cdecl f(void),"0x008636E0 mov eax,addr; ret"
+0x008636F0,signature,"int __cdecl f(void *enc, void *ptr, void *end, void *nextTokPtr)","0x008636F0 four stack args passed on to initScan, plain ret"
+0x00863720,signature,"int __cdecl f(void *enc, void *ptr, void *end, void *nextTokPtr)","0x00863720 four stack args passed on to initScan, plain ret"
+0x00863750,signature,"int __cdecl f(void *p, void *encPtr, void *name)","0x00863750 three stack args, plain ret"
+0x00863790,signature,"void * __cdecl f(void *enc, void *ptr, void *end)","0x00863790 called by doParseXmlDecl through a pointer, plain ret"
+0x00863870,signature,"int __cdecl f(int isGeneralTextEntity, void *enc, void *ptr, void *end, void *badPtr, void *versionPtr, void *versionEndPtr, void *encodingName, void *namedEncodingPtr, void *standalonePtr)","0x00863870 pushes ten stack words to doParseXmlDecl (add esp,0x28), plain ret"
+0x008638B0,signature,"void * __cdecl f(void *mem, void *table, void *convert, void *userData)","0x008638B0 four stack args, add esp,0x10 after the call, plain ret"
+0x008638E0,signature,"int __cdecl f(void *enc, void *ptr)","0x008638E0 reads ptr at esp+8, plain ret; ENCODING slot 11"
+0x008639C0,signature,"int __cdecl f(void *enc, void *ptr)","0x008639C0 reads ptr at esp+8, plain ret; ENCODING slot 11"
+0x00863AB0,signature,"int __cdecl f(void *enc, void *ptr)","0x00863AB0 reads ptr at esp+8, plain ret; ENCODING slot 11"
+0x00863BB0,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00863BB0 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00863C20,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00863C20 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00863C50,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00863C50 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00863C90,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00863C90 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00863CD0,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00863CD0 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00863D00,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00863D00 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00863D30,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00863D30 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00863D70,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00863D70 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00863DB0,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00863DB0 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00863DF0,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00863DF0 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00863E30,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00863E30 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00863E90,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00863E90 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00863F70,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00863F70 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00863FC0,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00863FC0 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x008640C0,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x008640C0 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00864140,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00864140 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x008641C0,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x008641C0 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00864200,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00864200 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00864240,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00864240 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00864290,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00864290 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x008642E0,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x008642E0 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00864320,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00864320 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x008643E0,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x008643E0 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00864420,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00864420 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x008644D0,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x008644D0 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00864560,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00864560 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x008645D0,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x008645D0 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00864610,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00864610 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x008646B0,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x008646B0 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x008646F0,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x008646F0 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00864730,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00864730 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00864770,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00864770 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x008647A0,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x008647A0 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x008648B0,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x008648B0 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00864960,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00864960 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00864A20,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00864A20 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00864AE0,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00864AE0 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00864B30,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00864B30 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00864BC0,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00864BC0 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00864C00,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00864C00 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00864C40,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00864C40 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00864DB0,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00864DB0 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00864E50,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00864E50 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00864EA0,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00864EA0 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00864EE0,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00864EE0 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00864F20,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00864F20 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00865010,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00865010 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00865050,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00865050 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x00865100,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00865100 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
+0x008651F0,signature,void __cdecl f(void *state),"0x008651F0 state at esp+4, plain ret"

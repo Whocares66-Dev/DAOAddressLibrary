@@ -26,3 +26,4 @@ Linker:ImportThunk,0x00a6e990,0x00a6e9a0,jmp [IAT] stub: WS2_32 __WSAFDIsSet
 Compiler:EHFunclets,0x00a6e9a0,0x00ace0c0,".text$x: unwind funclets (mov/lea ecx,[ebp-x]; jmp dtor) and __ehhandler stubs (mov edx,[esp+8] ... call __security_check_cookie; mov eax,FuncInfo; jmp __CxxFrameHandler3); each belongs to the function whose prologue pushes its handler"
 Compiler:DynamicInit,0x00ace0c0,0x00ad51b0,"dynamic initializers of globals (construct, then atexit 0x8e1746 a destructor in the next run); each belongs to its global's TU"
 Compiler:AtexitDtors,0x00ad51b0,0x00ad96b0,"atexit destructors of globals (mov ecx,global; jmp dtor) registered by the previous run"
+ThirdParty:expat,0x00852850,0x00865210,"expat 1.95.7 (XML_UNICODE, XML_DTD, namespaces): its XML_ErrorString table at 0x00C13940 ends at 27 'unbound prefix'; named from expat's source by lib-agent-3 (two readings), 2026-10-31; bounded by its first (moveToFreeBindingList) and last functions"
