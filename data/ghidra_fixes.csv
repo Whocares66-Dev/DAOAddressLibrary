@@ -1314,3 +1314,42 @@ address,what,value,why
 0x006D15D0,signature,void __thiscall ChooseHeroAndRefreshSaves(void* this),"the readers' convention, upheld against the check; esi=ecx then tail jmp 0x006D1160"
 0x006D2180,signature,void __thiscall RegisterMessageHandlers(void* this),"the readers' convention, upheld against the check; vftable slot 3, plain ret"
 0x006CDE50,convention,__thiscall,"ret 0x18: six stack arguments, one more than the readers' prototype gives, so only the convention (its caller 0x006CF1B6 sets ecx)"
+0x0058C600,signature,"unsigned short __cdecl f(unsigned char* base, int offset)",__cdecl: 0x0058C600 four instructions
+0x0058C610,signature,"void* __cdecl f(void* first, void* last, void* dest)",0x0058C610: ret
+0x0058C660,signature,"void* __cdecl f(void* out, unsigned char* base, int offset)","__cdecl: 0x0058C660 calls 0x0058C320 (rep movsd 0x10 dwords, offset -1 test)"
+0x0058C680,signature,"void __cdecl f(void* out, unsigned char* base, int offset)","__cdecl: 0x0058C680 reads [ecx+edx+0..0xC], writes [eax+0..0xC]"
+0x0058C6B0,signature,"void* __cdecl f(void* first, void* last, void* dest)",0x0058C6B0: ret
+0x0058C700,signature,"void* __cdecl f(void* first, void* last, void* dest)",0x0058C700: ret
+0x0058C760,signature,"void __cdecl f(void* first, void* last, void* value)",0x0058C760: ret
+0x0058C7B0,signature,"void* __cdecl f(void* first, void* last, void* dest)",0x0058C7B0: ret
+0x0058C820,signature,"void* __cdecl f(void* first, void* last, void* dest)",0x0058C820: ret
+0x0058C850,signature,"bool  __thiscall f(void* this, void* meshNode)",__thiscall: 0x0058C850
+0x0058C940,signature,"bool  __thiscall f(void* this, void* probeNode)",__thiscall: 0x0058C940
+0x0058C970,signature,"void* __thiscall f(void* this, void* out, unsigned int index)",__thiscall: 0x0058C970
+0x0058C9A0,signature,"void __cdecl f(void* first, void* last, void* value)",0x0058C9A0: ret
+0x0058C9D0,signature,"void* __thiscall f(void* this, void* out, void* field, void* defaultValue)",__thiscall: 0x0058C9D0 via 0x00880550 and 0x0058C660
+0x0058CA50,signature,"void __cdecl f(void* dest, unsigned int count, void* value)",0x0058CA50: ret
+0x0058CA80,signature,"void* __cdecl f(void* out, unsigned char* base, int offset)",__cdecl: 0x0058CA80 calls 0x0058C680
+0x0058CAA0,convention,__cdecl,0x0058CAA0 calls the copy constructor 0x0058C230 with a try level
+0x0058CB09,convention,__cdecl,"0x0058CB09 calls std::wstring::~wstring in a loop, then _CxxThrowException 0x008E1202(0,0)"
+0x0058CB40,signature,"bool __stdcall f(void* reader, void* node)",__stdcall: 0x0058CB40 push 0x179F
+0x0058CBD0,signature,"bool  __thiscall f(void* this, void* node)",__thiscall: 0x0058CBD0 [edx+0x30..0x60] tests then [edx+0x6C..0xA0]
+0x0058CDF0,signature,"void* __cdecl f(void* first, void* last, void* dest)",0x0058CDF0: ret
+0x0058CE20,signature,"void* __thiscall f(void* this, void* out, void* field, void* defaultValue)",__thiscall: 0x0058CE20 via 0x00880550 and 0x0058CA80
+0x0058CE90,signature,"void* __cdecl f(void* first, void* last, void* dest)",0x0058CE90: ret
+0x0058CEC0,convention,__cdecl,0x0058CEC0 loop with 0x0058C230
+0x0058CF2B,convention,__cdecl,0x0058CF2B std::wstring::~wstring loop then 0x008E1202
+0x0058CF60,signature,"bool __stdcall f(void* reader, void* node)",__stdcall: 0x0058CF60 push 0x17A0
+0x0058CFB0,signature,"bool __stdcall f(void* reader, void* node)",__stdcall: 0x0058CFB0 push 0x1886
+0x0058D020,signature,"void* __stdcall f(void* dest, unsigned int count, void* value)",0x0058D020: ret 0xc
+0x0058D060,signature,"void* __thiscall f(void* this, void* out, unsigned int fieldId, void* defaultValue)","__thiscall: 0x0058D060 calls 0x004D54D0, 0x004D5230 then 0x0058CE20"
+0x0058D0A0,signature,"bool __stdcall f(void* reader, void* element)","__stdcall: 0x0058D0A0 pushes 0x1798, 0x1799, 0x179A, 0x179B"
+0x0058D180,signature,"void* __thiscall f(void* this, void* out, void* cont1, void* first, void* cont2, void* last)",0x0058D180: ret 0x14
+0x0058D1E0,signature,void* __thiscall f(void* this),0x0058D1E0: ret
+0x0058D250,signature,"void* __stdcall f(void* first, void* last, void* dest)",0x0058D250: ret 0xc
+0x0058D280,signature,"void* __stdcall f(void* dest, unsigned int count, void* value)",0x0058D280: ret 0xc
+0x0058D2C0,signature,"void __stdcall f(void* first, void* last)","__stdcall: 0x0058D2C0 loop of 0x004C0DB0 on esi+8, step 0x38"
+0x0058D2F0,signature,"bool __stdcall f(void* reader, void* nodePtr, void* nodePtrExtra)",0x0058D2F0 ret 0xc: reader plus an 8-byte smart pointer passed by value (its address is taken for 0x004621C0)
+0x0058D420,signature,void __thiscall f(void* this),0x0058D420: ret
+0x0058D470,signature,"void* __thiscall f(void* this, void* out, void* cont1, void* first, void* cont2, void* last)",0x0058D470: ret 0x14
+0x0058D4F0,signature,"void* __stdcall f(void* first, void* last, void* dest)",0x0058D4F0: ret 0xc
