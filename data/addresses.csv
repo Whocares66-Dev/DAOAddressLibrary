@@ -2461,11 +2461,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2460,function,Vector4::DistanceSquared,0x0045b080,0x00566000,0x0045b080
 2461,function,,0x0045b0d0,0x008a1830,0x0045b0d0
 2462,function,,0x0045b0f0,0x008a1850,0x0045b0f0
-2463,function,,0x0045b1e0,0x008a1940,0x0045b1e0
+2463,function,Renderer::ResolveUmbraDepthPassIds,0x0045b1e0,0x008a1940,0x0045b1e0
 2464,function,,0x0045b2e0,0x008a1a40,0x0045b2e0
 2465,function,,0x0045b350,0x008a1ab0,0x0045b350
 2466,function,,0x0045b3b0,0x008a1b10,0x0045b3b0
-2467,function,,0x0045b4d0,0x008a1c30,0x0045b4d0
+2467,function,Renderer::InitUmbra,0x0045b4d0,0x008a1c30,0x0045b4d0
 2468,function,,0x0045b610,0x008a1d70,0x0045b610
 2469,function,,0x0045b720,0x008a1e80,0x0045b720
 2470,function,,0x0045b790,0x008a1ef0,0x0045b790
@@ -2795,8 +2795,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2794,function,,0x004694e0,0x008b3e80,0x004694e0
 2795,function,,0x004694f0,0x0073f090,0x004694f0
 2796,function,,0x00469500,0x008b3e90,0x00469500
-2797,function,,0x00469510,0x008b3ea0,0x00469510
-2798,function,,0x00469520,0x008b3eb0,0x00469520
+2797,function,Renderer::EclipseToolsetUmbraServices::allocateMemory,0x00469510,0x008b3ea0,0x00469510
+2798,function,Renderer::EclipseToolsetUmbraServices::deallocateMemory,0x00469520,0x008b3eb0,0x00469520
 2799,function,,0x00469530,0x008a5bd0,0x00469530
 2800,function,,0x004696b0,0x008a5d50,0x004696b0
 2801,function,,0x004696d0,0x008a5d70,0x004696d0
@@ -10134,7 +10134,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10133,function,,0x005c61d0,0x00468f90,0x005c61d0
 10134,function,,0x005c6230,0x00468ff0,0x005c6230
 10135,function,,0x005c6250,0x00469010,0x005c6250
-10136,function,,0x005c6280,0x00872af0,0x005c6280
+10136,function,SmartData::IAttribute::GetTypeTag,0x005c6280,0x00872af0,0x005c6280
 10137,function,,0x005c6290,0x00469040,0x005c6290
 10138,function,,0x005c62a0,0x00469050,0x005c62a0
 10139,function,,0x005c6300,0x00469100,0x005c6300
@@ -10822,14 +10822,14 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10821,function,,0x005e59cc,0x004d269c,0x005e59cc
 10822,function,,0x005e59e0,0x004d26b0,0x005e59e0
 10823,function,,0x005e5a20,0x004d26f0,0x005e5a20
-10824,function,,0x005e5aa0,0x004d2770,0x005e5aa0
-10825,function,,0x005e5b30,0x004d2800,0x005e5b30
+10824,function,DebugOptions::SliderRangeMap::~SliderRangeMap,0x005e5aa0,0x004d2770,0x005e5aa0
+10825,function,DebugOptions::SliderRangeMap::SliderRangeMap_copy,0x005e5b30,0x004d2800,0x005e5b30
 10826,function,,0x005e5ba0,0x004d2870,0x005e5ba0
-10827,function,,0x005e5c20,0x004d28f0,0x005e5c20
-10828,function,,0x005e5ef0,0x004d2bc0,0x005e5ef0
-10829,function,,0x005e5f10,0x004d2c00,0x005e5f10
-10830,function,,0x005e5f20,0x004d2be0,0x005e5f20
-10831,function,,0x005e5f30,0x004d2bf0,0x005e5f30
+10827,function,DebugOptions::DebugOptions_copy,0x005e5c20,0x004d28f0,0x005e5c20
+10828,function,DebugOptions::`scalar deleting destructor',0x005e5ef0,0x004d2bc0,0x005e5ef0
+10829,function,DebugOptions::`scalar deleting destructor',0x005e5f10,0x004d2c00,0x005e5f10
+10830,function,DebugOptions::`scalar deleting destructor',0x005e5f20,0x004d2be0,0x005e5f20
+10831,function,DebugOptions::`scalar deleting destructor',0x005e5f30,0x004d2bf0,0x005e5f30
 10832,function,,0x005e5f40,0x004d2c10,0x005e5f40
 10833,function,,0x005e5f60,0x004d2c30,0x005e5f60
 10834,function,,0x005e5fa0,0x004d2e40,0x005e5fa0
@@ -15790,12 +15790,12 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15789,function,,0x006f8510,0x005ea1e0,0x006f8510
 15790,function,,0x006f8530,0x005ea200,0x006f8530
 15791,function,,0x006f85a0,0x005ea270,0x006f85a0
-15792,function,,0x006f87a0,0x005ea470,0x006f87a0
+15792,function,DebugOptions::GetSliderRange,0x006f87a0,0x005ea470,0x006f87a0
 15793,function,,0x006f87b0,0x005ea480,0x006f87b0
-15794,function,,0x006f8960,0x005ea630,0x006f8960
-15795,function,,0x006f89f0,0x005ea6c0,0x006f89f0
-15796,function,,0x006f8a80,0x005ea750,0x006f8a80
-15797,function,,0x006f9ce0,0x005eb9b0,0x006f9ce0
+15794,function,DebugOptions::SliderRangeMap::Insert,0x006f8960,0x005ea630,0x006f8960
+15795,function,DebugOptions::SliderRangeMap::SliderRangeMap,0x006f89f0,0x005ea6c0,0x006f89f0
+15796,function,DebugOptions::DebugOptions,0x006f8a80,0x005ea750,0x006f8a80
+15797,function,DebugOptions::~DebugOptions,0x006f9ce0,0x005eb9b0,0x006f9ce0
 15798,function,,0x006f9f60,0x005ebc30,0x006f9f60
 15799,function,ObjectTimer::Update,0x006fa1d0,0x005ebea0,0x006fa1d0
 15800,function,,0x006fa260,0x005ebf30,0x006fa260
@@ -16921,31 +16921,31 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16920,function,,0x0072a370,0x00636310,0x0072a370
 16921,function,,0x0072a3e0,0x00636380,0x0072a3e0
 16922,function,,0x0072a400,0x006363a0,0x0072a400
-16923,function,,0x0072a470,0x00636410,0x0072a470
+16923,function,GUI::GUIDebugOptions::Close,0x0072a470,0x00636410,0x0072a470
 16924,function,,0x0072a4e0,0x00636480,0x0072a4e0
 16925,function,,0x0072a510,0x005a00c0,0x0072a510
 16926,function,,0x0072a520,0x006364b0,0x0072a520
 16927,function,,0x0072a530,0x006364c0,0x0072a530
 16928,function,,0x0072a590,0x00638400,0x0072a590
 16929,function,,0x0072a5a0,0x00636520,0x0072a5a0
-16930,function,,0x0072a5c0,0x00636540,0x0072a5c0
+16930,function,GUI::GUIDebugOptions::OnShow,0x0072a5c0,0x00636540,0x0072a5c0
 16931,function,,0x0072a970,0x006368f0,0x0072a970
-16932,function,,0x0072a9f0,0x00636970,0x0072a9f0
-16933,function,,0x0072aa00,0x00636980,0x0072aa00
-16934,function,,0x0072ab20,0x00636ab0,0x0072ab20
-16935,function,,0x0072ab30,0x00636ac0,0x0072ab30
-16936,function,,0x0072ab40,0x00636aa0,0x0072ab40
-16937,function,,0x0072ab50,0x00636ad0,0x0072ab50
+16932,function,GUI::GUIDebugOptions::RegisterMessageHandlers,0x0072a9f0,0x00636970,0x0072a9f0
+16933,function,GUI::GUIDebugOptions::~GUIDebugOptions,0x0072aa00,0x00636980,0x0072aa00
+16934,function,GUI::GUIDebugOptions::`scalar deleting destructor',0x0072ab20,0x00636ab0,0x0072ab20
+16935,function,GUI::GUIDebugOptions::`scalar deleting destructor',0x0072ab30,0x00636ac0,0x0072ab30
+16936,function,GUI::GUIDebugOptions::`scalar deleting destructor',0x0072ab40,0x00636aa0,0x0072ab40
+16937,function,GUI::GUIDebugOptions::GetClassIdPtr,0x0072ab50,0x00636ad0,0x0072ab50
 16938,function,,0x0072ab80,0x00636b00,0x0072ab80
 16939,function,,0x0072abb0,0x00636b30,0x0072abb0
-16940,function,,0x0072abe0,0x00636b60,0x0072abe0
-16941,function,,0x0072ac30,0x00636bb0,0x0072ac30
+16940,function,GUI::GUIDebugOptions::RegisterClass,0x0072abe0,0x00636b60,0x0072abe0
+16941,function,GUI::GUIDebugOptions::`scalar deleting destructor',0x0072ac30,0x00636bb0,0x0072ac30
 16942,function,,0x0072ac50,0x00636bd0,0x0072ac50
 16943,function,,0x0072acd0,0x00636c50,0x0072acd0
-16944,function,,0x0072ad50,0x00636cd0,0x0072ad50
-16945,function,,0x0072ae90,0x00636e10,0x0072ae90
-16946,function,,0x0072af00,0x00636e80,0x0072af00
-16947,function,,0x0072afc0,0x00636f40,0x0072afc0
+16944,function,GUI::GUIDebugOptions::GUIDebugOptions_copy,0x0072ad50,0x00636cd0,0x0072ad50
+16945,function,GUI::GUIDebugOptions::Clone,0x0072ae90,0x00636e10,0x0072ae90
+16946,function,Messages::RegisterText<TestMessage>,0x0072af00,0x00636e80,0x0072af00
+16947,function,GUI::GUIDebugOptions::GUIDebugOptions,0x0072afc0,0x00636f40,0x0072afc0
 16948,function,,0x0072b1c0,0x00637140,0x0072b1c0
 16949,function,,0x0072b280,0x00637200,0x0072b280
 16950,function,,0x0072b2a0,0x0063efa0,0x0072b2a0
@@ -18250,12 +18250,12 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 18249,function,,0x00764640,0x0065eb40,0x00764640
 18250,function,,0x00764650,0x0065eb50,0x00764650
 18251,function,,0x00764660,0x0065eb60,0x00764660
-18252,function,,0x00764670,0x0065eb70,0x00764670
-18253,function,,0x007646e0,0x0065ebe0,0x007646e0
-18254,function,,0x007646f0,0x0065ebf0,0x007646f0
+18252,function,DebugWorldSpaceTextFloaty::DebugWorldSpaceTextFloaty,0x00764670,0x0065eb70,0x00764670
+18253,function,DebugWorldSpaceTextFloaty::IsKind,0x007646e0,0x0065ebe0,0x007646e0
+18254,function,DebugWorldSpaceTextFloaty::~DebugWorldSpaceTextFloaty,0x007646f0,0x0065ebf0,0x007646f0
 18255,function,,0x00764740,0x0065ec40,0x00764740
 18256,function,,0x00764760,0x0065ec60,0x00764760
-18257,function,,0x00764790,0x0065ec90,0x00764790
+18257,function,DebugWorldSpaceTextFloaty::`scalar deleting destructor',0x00764790,0x0065ec90,0x00764790
 18258,function,,0x007647b0,0x0065ecb0,0x007647b0
 18259,function,,0x007647d0,0x0065ecd0,0x007647d0
 18260,function,,0x007647e0,0x0065ece0,0x007647e0
@@ -18267,8 +18267,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 18266,function,,0x00764ae0,0x0065efe0,0x00764ae0
 18267,function,,0x00764b20,0x0065f020,0x00764b20
 18268,function,,0x00764c30,0x0065f130,0x00764c30
-18269,function,,0x00764c60,0x0065f160,0x00764c60
-18270,function,,0x00764c90,0x0065f190,0x00764c90
+18269,function,DebugWorldSpaceTextFloaty::Init,0x00764c60,0x0065f160,0x00764c60
+18270,function,DebugWorldSpaceTextFloaty::Update,0x00764c90,0x0065f190,0x00764c90
 18271,function,,0x00764e40,0x0065f340,0x00764e40
 18272,function,,0x00765120,0x0065f620,0x00765120
 18273,function,,0x007651f0,0x0065f6f0,0x007651f0

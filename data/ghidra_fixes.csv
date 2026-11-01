@@ -1035,3 +1035,39 @@ address,what,value,why
 0x004BBDDB,convention,__cdecl,"plain ret, SEH filter funclet"
 0x004BBDDF,convention,__stdcall,"ret 8, SEH handler body inside SetThreadName 0x004BBD70"
 0x004BBD40,signature,unsigned int __stdcall f(void),"Multithreading::GetCurrentThreadId: jmp [0x00ADA16C], kernel32's GetCurrentThreadId; lib-agent-3, two readings, 2026-10-31"
+0x0045B1E0,signature,void __cdecl f(bool flag),"plain ret 0x45B2DE, caller push 0 / add esp,4 at 0x45B5C9"
+0x0045B4D0,signature,void __cdecl f(bool toolset),plain ret 0x45B60E; byte arg at [esp+0x24]
+0x00469510,signature,"void* __thiscall f(void* this, unsigned int size)",ret 4 at 0x46951D; vftable slot
+0x00469520,signature,"void __thiscall f(void* this, void* block)",ret 4 at 0x46952B; vftable slot
+0x005C6280,signature,void* __thiscall f(void* this),"plain ret at 0x5C6285, returns 0xAFFD3C; vftable slot"
+0x005E5AA0,signature,void __thiscall f(void* this),"plain ret 0x5E5B21, ecx = esi"
+0x005E5B30,signature,"void* __thiscall f(void* this, void* other)","ret 4 at 0x5E5B96, ecx = esi, [esp+0x20] read"
+0x005E5C20,signature,"void* __thiscall f(void* this, void* other)","ret 4 at 0x5E5EEA, ecx = esi, [esp+0x20] read"
+0x005E5EF0,signature,"void* __thiscall f(void* this, unsigned int flags)",ret 4 at 0x5E5F0B; vftable slot
+0x005E5F10,signature,"void* __thiscall f(void* this, unsigned int flags)",thunk to 0x5E5EF0 (ret 4); vftable slot
+0x005E5F20,signature,"void* __thiscall f(void* this, unsigned int flags)",thunk to 0x5E5EF0 (ret 4); vftable slot
+0x005E5F30,signature,"void* __thiscall f(void* this, unsigned int flags)",thunk to 0x5E5EF0 (ret 4); vftable slot
+0x006F87A0,signature,"float* __thiscall f(void* this, void* name)","add ecx,0x270 then jmp 0x4F7140 (ret 4)"
+0x006F8960,signature,"bool __thiscall f(void* this, void* name, float* range)",ret 8 at 0x6F89E6; ecx saved in esi; al = bl
+0x006F89F0,signature,"void* __thiscall f(void* this, float defaultMin, float defaultMax)",ret 8 at 0x6F8A6E; ecx = esi; caller 0x6F8D84 pushes two floats
+0x006F8A80,signature,void* __thiscall f(void* this),"plain ret 0x6F9CD1, ecx = esi"
+0x006F9CE0,signature,void __thiscall f(void* this),"plain ret 0x6F9F5C, ecx = esi"
+0x0072A470,signature,void __thiscall f(void* this),plain ret 0x72A4DF; vftable slot 6
+0x0072A5C0,signature,void __thiscall f(void* this),plain ret 0x72A965; vftable slot 5
+0x0072AA00,signature,void __thiscall f(void* this),"plain ret 0x72AB15, ecx = esi"
+0x0072AB50,signature,int* __thiscall f(void* this),plain ret 0x72AB72; vftable slot 0
+0x0072ABE0,signature,void __thiscall f(void* this),plain ret 0x72AC23; vftable slot 2
+0x0072AC30,signature,"void* __thiscall f(void* this, unsigned int flags)",ret 4 at 0x72AC4B; vftable slot 4
+0x0072AD50,signature,"void* __thiscall f(void* this, void* other)",ret 4 at 0x72AE89; [esp+0x20] read
+0x0072AE90,signature,void* __thiscall f(void* this),plain ret 0x72AEE9; vftable slot 1
+0x0072AF00,signature,"void __thiscall f(void* this, void* name)",ret 4 at 0x72AFB0; ecx = edi
+0x0072AFC0,signature,void* __thiscall f(void* this),"plain ret 0x72B1B1, ecx = esi"
+0x00764670,signature,void* __thiscall f(void* this),"plain ret 0x7646D0, ecx = esi"
+0x007646E0,signature,"bool __thiscall f(void* this, int kind)",ret 4 at 0x7646EA; vftable slot 2
+0x007646F0,signature,void __thiscall f(void* this),"plain ret 0x76473F, ecx = esi"
+0x00764790,signature,"void* __thiscall f(void* this, unsigned int flags)",ret 4 at 0x7647AB; vftable slot 0
+0x00764C60,signature,"void __thiscall f(void* this, bool show, int target, int extra)","ret 0xC at 0x764C81; arg 1 tested as bool, args 2 and 3 stored at +0x10/+0x14 by 0x764580; reconciled: read 0x764C60"
+0x00764C90,signature,"void __thiscall f(void* this, float dt)","ret 4 at 0x764E34; vftable slot 4; the argument is never read in the body (base twin 0x764B20 takes a float, kept as float dt); reconciled: read 0x764C90"
+0x0072AB20,signature,"void* __thiscall f(void* this, unsigned int flags)",upheld by hand against the check; thunk to 0x72AC30 (ret 4); vftable slot
+0x0072AB30,signature,"void* __thiscall f(void* this, unsigned int flags)",upheld by hand against the check; thunk to 0x72AC30 (ret 4); vftable slot
+0x0072AB40,signature,"void* __thiscall f(void* this, unsigned int flags)",upheld by hand against the check; thunk to 0x72AC30 (ret 4); vftable slot
