@@ -7433,3 +7433,41 @@ address,what,value,why
 0x006A9C60,signature,void __thiscall EffectGUIInfo_dtor(void* this),plain ret 0x006A9CFC (B).
 0x006A9F10,signature,void* __thiscall PortraitProperties_ctor(void* this),plain ret 0x006AA01A (B).
 0x00765210,clear,OffscreenIndicatorFloaty::vfunction5,"slot 4, Update(float dt); outside the batch, seen at its call of 0x006960C0 (B)."
+0x007177F0,signature,"void __thiscall Messages::RegisterText<HideBookBackMessage>(void * this, void * name)","this = the text registry (0x00489BC0's), name = const std::wstring*; ret 4; eax at the ret is the destructor 0x00474FD0's leftover (0x0071788A)"
+0x0071F620,clear,GUI::GUICredits::vfunction7,"it is vftable slot 6 (0-based), GUIScene's Close override"
+0x0071F760,clear,GUI::GUICredits::vfunction3,adjustor{8} thunk of the scalar deleting destructor
+0x0071F770,clear,GUI::GUICredits::vfunction2,adjustor{28} thunk of the scalar deleting destructor
+0x0071F780,clear,GUI::GUICredits::vfunction1,adjustor{32} thunk of the scalar deleting destructor
+0x0071F790,clear,GUI::GUICredits::vfunction1,slot 0 GetClassInfo
+0x0071F7C0,clear,GUI::GUICredits::vfunction3,slot 2 RegisterClass
+0x0071F800,signature,"void * __thiscall GUI::GUICredits::GUICredits(void * this, void * other)",copy constructor; ret 4
+0x0071F8B0,convention,__stdcall,"ret 4, ECX written (xor ecx,ecx at 0x0071F8C8) before any read"
+0x0071F8B0,signature,unsigned int __stdcall GUI::GUICredits::CountNewlines(void * text),text = const std::wstring*
+0x0071F960,clear,GUI::GUICredits::vfunction5,slot 4 scalar deleting destructor
+0x0071FBC0,clear,GUI::GUICredits::vfunction6,slot 5 OnShow override
+0x00720120,clear,GUI::GUIItemExamine::vfunction2,adjustor{28} thunk
+0x00720130,clear,GUI::GUIItemExamine::vfunction1,adjustor{32} thunk
+0x00720140,clear,GUI::GUIItemExamine::vfunction3,adjustor{8} thunk
+0x00720150,clear,GUI::GUIItemExamine::vfunction1,slot 0 GetClassInfo
+0x00720180,signature,"void * __thiscall GUI::GUIItemExamine::GUIItemExamine(void * this, void * other)",copy constructor; ret 4
+0x00720320,clear,GUI::GUIItemExamine::vfunction5,slot 4 scalar deleting destructor
+0x00720340,clear,GUI::GUIItemExamine::vfunction4,slot 3 RegisterMessageHandlers
+0x00720350,clear,GUI::GUIItemExamine::vfunction3,slot 2 RegisterClass
+0x007203A0,signature,"void __thiscall Messages::RegisterText<ShowItemExamineMessage>(void * this, void * name)","this = the text registry, name = const std::wstring*; ret 4; eax at the ret is the destructor 0x00474FD0's leftover (0x0071788A)"
+0x00720790,clear,GUI::GUIScreenshots::vfunction6,slot 5 OnShow override
+0x00720CD0,clear,ECFileAccess::PNGFileAccess::~PNGFileAccess,"it is GUIScreenshots::SaveChangedDescriptions (this = the scene; reads +0xC0/+0xDC/+0x130, constructs a PNGFileAccess locally)"
+0x00720CD0,signature,void __thiscall GUI::GUIScreenshots::SaveChangedDescriptions(void * this),"plain ret, no stack arguments"
+0x007215E0,clear,GUI::GUIScreenshots::vfunction4,slot 3 RegisterMessageHandlers
+0x007216D0,clear,GUI::GUIScreenshots::vfunction2,adjustor{28} thunk
+0x007216E0,clear,GUI::GUIScreenshots::vfunction1,adjustor{32} thunk
+0x007216F0,clear,GUI::GUIScreenshots::vfunction3,adjustor{8} thunk
+0x00721700,clear,GUI::GUIScreenshots::vfunction1,slot 0 GetClassInfo
+0x00721730,clear,GUI::GUIScreenshots::vfunction3,slot 2 RegisterClass
+0x00721780,signature,"void * __thiscall std::vector<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::insert(void * this, void * out, void * whereContainer, void * wherePtr, void * value)",ret 0x10; returns out
+0x00721810,clear,GUI::GUIScreenshots::vfunction5,slot 4 scalar deleting destructor
+0x00721830,signature,"void __thiscall std::vector<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::push_back(void * this, void * value)",ret 4
+0x00721A20,signature,"void * __thiscall GUI::GUIScreenshots::GUIScreenshots(void * this, void * other)",copy constructor; ret 4
+0x00721B10,signature,void __thiscall GUI::GUIScreenshots::ClearLists(void * this),no stack arguments
+0x0071FBC0,signature,void __thiscall GUI::GUICredits::OnShow(void * this),"vftable slot 5 (0x00B177AC), plain ret 0x0071FD52"
+0x0071F620,signature,void __thiscall GUI::GUICredits::Close(void * this),"vftable slot 6 (0x00B177B0), plain ret 0x0071F6B9"
+0x00720790,signature,void __thiscall GUI::GUIScreenshots::OnShow(void * this),"vftable slot 5 (0x00B17BDC), plain ret"

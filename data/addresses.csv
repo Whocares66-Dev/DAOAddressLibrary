@@ -16395,8 +16395,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16394,function,Messages::RegisterText<ShowBookContentsMessage>,0x007175b0,0x00608760,0x007175b0
 16395,function,Messages::RegisterText<ShowBookFrontMessage>,0x00717670,0x00608820,0x00717670
 16396,function,Messages::RegisterText<HideBookFrontMessage>,0x00717730,0x006088e0,0x00717730
-16397,function,,0x007177f0,0x006089a0,0x007177f0
-16398,function,,0x007178b0,0x00608a60,0x007178b0
+16397,function,Messages::RegisterText<HideBookBackMessage>,0x007177f0,0x006089a0,0x007177f0
+16398,function,GUI::GUIBookback::GUIBookback,0x007178b0,0x00608a60,0x007178b0
 16399,function,,0x00717ba0,0x00608d50,0x00717ba0
 16400,function,ExitToStartMenuMessage::GetType,0x00717bc0,0x0050b920,0x00717bc0
 16401,function,FindAbilityChainsMessage::GetType,0x00717c00,0x00608d70,0x00717c00
@@ -16570,19 +16570,19 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16569,function,,0x0071f1f0,0x0061d450,0x0071f1f0
 16570,function,,0x0071f230,0x0061d490,0x0071f230
 16571,function,,0x0071f520,0x0061d780,0x0071f520
-16572,function,,0x0071f620,0x0061d880,0x0071f620
-16573,function,,0x0071f6c0,0x0061d920,0x0071f6c0
-16574,function,,0x0071f760,0x0061d9e0,0x0071f760
-16575,function,,0x0071f770,0x0061d9c0,0x0071f770
-16576,function,,0x0071f780,0x0061d9d0,0x0071f780
-16577,function,,0x0071f790,0x0061d9f0,0x0071f790
-16578,function,,0x0071f7c0,0x0061da20,0x0071f7c0
-16579,function,,0x0071f800,0x0061da60,0x0071f800
-16580,function,,0x0071f8b0,0x0061db10,0x0071f8b0
-16581,function,,0x0071f8f0,0x0061db50,0x0071f8f0
-16582,function,,0x0071f960,0x0061dbc0,0x0071f960
-16583,function,,0x0071f980,0x0061dbe0,0x0071f980
-16584,function,,0x0071fbc0,0x0061de20,0x0071fbc0
+16572,function,GUI::GUICredits::Close,0x0071f620,0x0061d880,0x0071f620
+16573,function,GUI::GUICredits::~GUICredits,0x0071f6c0,0x0061d920,0x0071f6c0
+16574,function,[thunk]:GUI::GUICredits::`scalar deleting destructor'`adjustor{8}',0x0071f760,0x0061d9e0,0x0071f760
+16575,function,[thunk]:GUI::GUICredits::`scalar deleting destructor'`adjustor{28}',0x0071f770,0x0061d9c0,0x0071f770
+16576,function,[thunk]:GUI::GUICredits::`scalar deleting destructor'`adjustor{32}',0x0071f780,0x0061d9d0,0x0071f780
+16577,function,GUI::GUICredits::GetClassInfo,0x0071f790,0x0061d9f0,0x0071f790
+16578,function,GUI::GUICredits::RegisterClass,0x0071f7c0,0x0061da20,0x0071f7c0
+16579,function,GUI::GUICredits::GUICredits(const GUICredits&),0x0071f800,0x0061da60,0x0071f800
+16580,function,GUI::GUICredits::CountNewlines,0x0071f8b0,0x0061db10,0x0071f8b0
+16581,function,GUI::GUICredits::Clone,0x0071f8f0,0x0061db50,0x0071f8f0
+16582,function,GUI::GUICredits::`scalar deleting destructor',0x0071f960,0x0061dbc0,0x0071f960
+16583,function,GUI::GUICredits::GUICredits,0x0071f980,0x0061dbe0,0x0071f980
+16584,function,GUI::GUICredits::OnShow,0x0071fbc0,0x0061de20,0x0071fbc0
 16585,function,ShowItemExamineMessage::ShowItemExamineMessage,0x0071fd60,0x0061dfb0,0x0071fd60
 16586,function,ShowItemExamineMessage::ShowItemExamineMessage_copy,0x0071fdc0,0x0061e010,0x0071fdc0
 16587,function,ShowItemExamineMessage::Create,0x0071fe30,0x0061e080,0x0071fe30
@@ -16592,22 +16592,22 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16591,function,ShowItemExamineMessage::Read,0x0071ff60,0x0061e1b0,0x0071ff60
 16592,function,ShowItemExamineMessage::GetName,0x0071ffa0,0x0061e1f0,0x0071ffa0
 16593,function,GUI::GUIItemExamine::HandleMessage_ShowItemExamineMessage,0x00720010,0x0061e260,0x00720010
-16594,function,,0x00720080,0x0061e2d0,0x00720080
-16595,function,,0x00720120,0x0061e390,0x00720120
-16596,function,,0x00720130,0x0061e370,0x00720130
-16597,function,,0x00720140,0x0061e380,0x00720140
-16598,function,,0x00720150,0x0061e3a0,0x00720150
-16599,function,,0x00720180,0x0061e3d0,0x00720180
+16594,function,GUI::GUIItemExamine::~GUIItemExamine,0x00720080,0x0061e2d0,0x00720080
+16595,function,[thunk]:GUI::GUIItemExamine::`scalar deleting destructor'`adjustor{28}',0x00720120,0x0061e390,0x00720120
+16596,function,[thunk]:GUI::GUIItemExamine::`scalar deleting destructor'`adjustor{32}',0x00720130,0x0061e370,0x00720130
+16597,function,[thunk]:GUI::GUIItemExamine::`scalar deleting destructor'`adjustor{8}',0x00720140,0x0061e380,0x00720140
+16598,function,GUI::GUIItemExamine::GetClassInfo,0x00720150,0x0061e3a0,0x00720150
+16599,function,GUI::GUIItemExamine::GUIItemExamine(const GUIItemExamine&),0x00720180,0x0061e3d0,0x00720180
 16600,function,GUI::GUIItemExamine::RegisterHandler_ShowItemExamineMessage,0x00720230,0x0061e480,0x00720230
-16601,function,,0x007202b0,0x0061e500,0x007202b0
-16602,function,,0x00720320,0x0061e570,0x00720320
-16603,function,,0x00720340,0x0061e590,0x00720340
-16604,function,,0x00720350,0x0061e5a0,0x00720350
-16605,function,,0x007203a0,0x0061e5f0,0x007203a0
+16601,function,GUI::GUIItemExamine::Clone,0x007202b0,0x0061e500,0x007202b0
+16602,function,GUI::GUIItemExamine::`scalar deleting destructor',0x00720320,0x0061e570,0x00720320
+16603,function,GUI::GUIItemExamine::RegisterMessageHandlers,0x00720340,0x0061e590,0x00720340
+16604,function,GUI::GUIItemExamine::RegisterClass,0x00720350,0x0061e5a0,0x00720350
+16605,function,Messages::RegisterText<ShowItemExamineMessage>,0x007203a0,0x0061e5f0,0x007203a0
 16606,function,GUI::GUIItemExamine::GUIItemExamine,0x00720460,0x0061e6b0,0x00720460
 16607,function,ECFileAccess::PNGFileAccess::~PNGFileAccess,0x00720750,0x0047d360,0x00720750
 16608,function,ECFileAccess::PNGFileAccess::`scalar deleting destructor',0x00720760,0x0047d370,0x00720760
-16609,function,,0x00720790,0x00625f20,0x00720790
+16609,function,GUI::GUIScreenshots::OnShow,0x00720790,0x00625f20,0x00720790
 16610,function,DeleteScreenshotsMessage::Create,0x00720820,0x00625fb0,0x00720820
 16611,function,UploadScreenshotsMessage::Create,0x00720880,0x00626010,0x00720880
 16612,function,SelectNoneAllScreenshotsMessage::Create,0x007208e0,0x00626070,0x007208e0
@@ -16623,27 +16623,27 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16622,function,SelectNoneAllScreenshotsMessage::Clone,0x00720bd0,0x00626360,0x00720bd0
 16623,function,SelectNoneAllScreenshotsMessage::InitType,0x00720c40,0x006263d0,0x00720c40
 16624,function,SelectNoneAllScreenshotsMessage::GetName,0x00720c60,0x006263f0,0x00720c60
-16625,function,,0x00720cd0,0x00626460,0x00720cd0
+16625,function,GUI::GUIScreenshots::SaveChangedDescriptions,0x00720cd0,0x00626460,0x00720cd0
 16626,function,GUI::GUIScreenshots::HandleMessage_DeleteScreenshotsMessage,0x00720f50,0x006266e0,0x00720f50
 16627,function,GUI::GUIScreenshots::HandleMessage_UploadScreenshotsMessage,0x007210e0,0x00626870,0x007210e0
 16628,function,GUI::GUIScreenshots::HandleMessage_SelectNoneAllScreenshotsMessage,0x007213b0,0x00626b40,0x007213b0
 16629,function,GUI::GUIScreenshots::RegisterHandler_SelectNoneAllScreenshotsMessage,0x00721460,0x00626bf0,0x00721460
 16630,function,GUI::GUIScreenshots::RegisterHandler_DeleteScreenshotsMessage,0x007214e0,0x00626c70,0x007214e0
 16631,function,GUI::GUIScreenshots::RegisterHandler_UploadScreenshotsMessage,0x00721560,0x00626cf0,0x00721560
-16632,function,,0x007215e0,0x00626d70,0x007215e0
-16633,function,,0x00721610,0x00626da0,0x00721610
-16634,function,,0x007216d0,0x00626e70,0x007216d0
-16635,function,,0x007216e0,0x00626e80,0x007216e0
-16636,function,,0x007216f0,0x00626e60,0x007216f0
-16637,function,,0x00721700,0x00626e90,0x00721700
-16638,function,,0x00721730,0x00626ec0,0x00721730
-16639,function,,0x00721780,0x00626f10,0x00721780
-16640,function,,0x00721810,0x00626fa0,0x00721810
-16641,function,,0x00721830,0x00626fc0,0x00721830
+16632,function,GUI::GUIScreenshots::RegisterMessageHandlers,0x007215e0,0x00626d70,0x007215e0
+16633,function,GUI::GUIScreenshots::~GUIScreenshots,0x00721610,0x00626da0,0x00721610
+16634,function,[thunk]:GUI::GUIScreenshots::`scalar deleting destructor'`adjustor{28}',0x007216d0,0x00626e70,0x007216d0
+16635,function,[thunk]:GUI::GUIScreenshots::`scalar deleting destructor'`adjustor{32}',0x007216e0,0x00626e80,0x007216e0
+16636,function,[thunk]:GUI::GUIScreenshots::`scalar deleting destructor'`adjustor{8}',0x007216f0,0x00626e60,0x007216f0
+16637,function,GUI::GUIScreenshots::GetClassInfo,0x00721700,0x00626e90,0x00721700
+16638,function,GUI::GUIScreenshots::RegisterClass,0x00721730,0x00626ec0,0x00721730
+16639,function,"std::vector<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::insert",0x00721780,0x00626f10,0x00721780
+16640,function,GUI::GUIScreenshots::`scalar deleting destructor',0x00721810,0x00626fa0,0x00721810
+16641,function,"std::vector<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::push_back",0x00721830,0x00626fc0,0x00721830
 16642,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",0x007218c0,0x00627050,0x007218c0
 16643,function,,0x00721940,0x006270d0,0x00721940
-16644,function,,0x00721a20,0x006271b0,0x00721a20
-16645,function,,0x00721b10,0x006272a0,0x00721b10
+16644,function,GUI::GUIScreenshots::GUIScreenshots(const GUIScreenshots&),0x00721a20,0x006271b0,0x00721a20
+16645,function,GUI::GUIScreenshots::ClearLists,0x00721b10,0x006272a0,0x00721b10
 16646,function,,0x00721bc0,0x00627350,0x00721bc0
 16647,function,,0x00721c30,0x006273c0,0x00721c30
 16648,function,,0x007220f0,0x00627880,0x007220f0
