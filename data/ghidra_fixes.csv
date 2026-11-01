@@ -9820,3 +9820,44 @@ address,what,value,why
 0x00A49590,signature,"bool __thiscall f(void* this, void* boxMin, void* boxMax, float margin, float heightTolerance)",ret 0x10 at 0x00A4970A; ecx moved to edi at 0x00A495B4; four stack arguments read at ebp+8..+0x14
 0x00AD89D0,signature,void __cdecl f(void),plain ret via jmp to ~PhysicsManager; atexit callback
 0x0083A420,signature,"void* __thiscall f(void* this, unsigned int flags)","adjustor thunk (sub ecx,4; jmp 0x0083A560) of the deleting destructor: ret 4, returns this"
+0x0079B0B0,signature,void* __thiscall f(void* this),"0x0079B0B0; derived ctors 0x0079B230, 0x0079B2C0, 0x0079B340, 0x0079B440; caller 0x0067A690 CCTrigger::Create"
+0x0079B230,signature,void* __thiscall f(void* this),"0x0079B230, 0x0079B0B0, vftable 0x00B20524"
+0x0079B290,signature,void* __thiscall f(void* this),"0x0079B290 (vftable 0x00B20524 slot 114), 0x0079B010"
+0x0079B2A0,signature,"void* __thiscall f(void* this, unsigned int flags)","0x0079B2A0 -> 0x0079B070 (vftables 0x00B1FEC8, 0x00B204F8, 0x00B20810)"
+0x0079B2B0,signature,"void* __thiscall f(void* this, unsigned int flags)","0x0079B2B0 -> 0x0079B070 (vftables 0x00B1FE58, 0x00B20488, 0x00B207A0)"
+0x0079B2C0,signature,void* __thiscall f(void* this),"0x0079B2C0, 0x0079B0B0, vftable 0x00B2083C"
+0x0079B300,signature,void* __thiscall f(void* this),0x0079B300 (vftable 0x00B2083C slot 114)
+0x0079B320,signature,"void* __thiscall f(void* this, unsigned int flags)","0x0079B320 -> 0x0079B070 (vftables 0x00B1FE6C, 0x00B2049C, 0x00B207B4)"
+0x0079B330,signature,"void* __thiscall f(void* this, unsigned int flags)","0x0079B330 -> 0x0079B070 (vftables 0x00B1FED8, 0x00B20508, 0x00B20820)"
+0x0079E460,signature,void __thiscall f(void* this),"0x0079E460; caller 0x0068AB43 in 0x0068A7E0; 0x0079D880, 0x0079E110, 0x0079E790, 0x00548C40"
+0x007C3A30,signature,"void* __thiscall f(void* this, unsigned int objectId)","0x007C3A30; callers 0x0067DF40 (area load), 0x0076CF40; strings MapNote 0x00B22690, Icon 0x00B03790; 0x00699670"
+0x007C3BE0,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007C3BE0 -> 0x007C4950
+0x007C3BF0,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007C3BF0 -> 0x007C4950
+0x007C3C00,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007C3C00 -> 0x007C4950
+0x007C3C10,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007C3C10 -> 0x007C4950
+0x007C3C20,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007C3C20 -> 0x007C4950
+0x007C3C30,signature,"void __thiscall f(void* this, void* saveStruct)","0x007C3C30 (vftable 0x00B227CC slot 21); 0x00697EE0 CCObject::WriteToSave; field ids 0x4146, 0x4147, 0x4149, 0x414A, 0x4148; dev/SAVE_WRITER.md"
+0x007C3F90,signature,void* __thiscall f(void* this),"0x007C3F90; caller 0x007C4300; strings MapNoteList 0x00B22A14, MapNotes 0x00B22A2C; 0x007C3F10, 0x005C5CA0"
+0x007C40F0,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007C40F0 -> 0x007C41C0 (vftable 0x00B22A5C)
+0x007C4100,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007C4100 -> 0x007C41C0 (vftable 0x00B22A44)
+0x007C4110,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007C4110 -> 0x007C41C0 (vftable 0x00B22AB8)
+0x007C4120,signature,void __thiscall f(void* this),"0x007C4120; 0x00634F20, 0x007C3D60, 0x005C5B30"
+0x007C41C0,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007C41C0 (vftable 0x00B22AC8 slot 0)
+0x007C41E0,signature,void* __cdecl f(void* writer),"0x007C41E0; caller 0x00686490 (CCArea::BuildSaveTemplate); 0x0069B660, 0x0069B6C0, 0x0069B6E0, 0x004860F0, 0x004DF2F0; dev/PARAGON_SAVES.md WPT1"
+0x007C4300,signature,void* __cdecl f(),"0x007C4300; callers 0x007C4370, 0x007C4420, 0x007C9E30; dev/GUI.md, the notes on the map"
+0x007C4370,signature,void __thiscall f(void* this),"0x007C4370; callers 0x007C4520 (load), 0x007C4910 (SetArea), 0x007C4930; 0x0063C4B0, 0x006F1340, 0x004E9640"
+0x007C4420,signature,void __thiscall f(void* this),"0x007C4420; 0x00695180, 0x00697060, 0x005D4FC0, 0x00600270, 0x007C4300, 0x0069A140"
+0x007C4520,signature,"bool __thiscall f(void* this, void* gff3, unsigned int structId, void* saveStruct)","0x007C4520; callers 0x0067DF5C and 0x0067E067 (area waypoint load); strings 0x00B22B00 HasMapNote, 0x00B22AF0 MapNoteEnabled, 0x00B22AE4 MapNoteType, 0x00B22ADC MapNote, 0x00B01EDC"
+0x007C4910,signature,"void __thiscall f(void* this, unsigned int arg)","0x007C4910 (vftable 0x00B227CC slot 41); 0x00695170, 0x007C4370; dev/GUI.md"
+0x007C4950,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007C4950 (vftable 0x00B227CC slot 0)
+0x007C4C60,signature,"void* __thiscall f(void* this, unsigned int referenceId, void* filter)","0x007C4C60; callers 0x0070EE10, 0x0070EE90, 0x0070F400, 0x0070F480, 0x0070F500, 0x0070F580"
+0x007C4C80,signature,void __thiscall f(void* this),0x007C4C80; 0x007C4C50
+0x007C4C90,signature,"bool __thiscall f(void* this, void* object)",0x007C4C90 (vftable 0x00B22B2C slot 1); slot called at 0x007C54BD
+0x007C4F30,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007C4F30 (vftable 0x00B22B2C slot 0)
+0x007C4F50,signature,"bool __cdecl f(void* a, void* b)",0x007C4F50; passed to the sort by 0x007C52C0 (push 0x7C4F50); 0x007C4EB0
+0x007C4F80,signature,"void __cdecl f(void* first, void* mid, void* last, void* pred)",0x007C4F80; caller 0x007C5030
+0x007C5030,signature,"void* __cdecl f(void* out, void* first, void* last, void* pred)",0x007C5030; caller 0x007C51D0; calls _Median 0x007C4F80
+0x007C51D0,signature,"void __cdecl f(void* first, void* last, int ideal, void* pred)","0x007C51D0; callers 0x00539D30, 0x005BBFF0, 0x007C52C0; calls 0x007C5030, 0x005B7910, 0x005B79C0"
+0x007C5430,signature,"void __thiscall f(void* this, void* outObjects)","0x007C5430 (vftable 0x00B22B2C slot 2); 0x005D5CC0, 0x005D5BE0, 0x00695180; slot called by 0x007C52C0"
+0x007C54F0,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007C54F0 (vftable 0x00B22B3C slot 0); 0x0080D420
+0x007C56E0,signature,void __thiscall f(void* this),"0x007C56E0; caller 0x007C5BF0; 0x005DDC70, 0x005C5B30"
