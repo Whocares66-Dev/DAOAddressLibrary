@@ -11739,3 +11739,45 @@ address,what,value,why
 0x0045D0B0,signature,"void* __thiscall FrameBufferResource_scalar_deleting_dtor(void* this, unsigned int flags)",ret 4; slot 3 of the resource vtables
 0x0045D0E0,signature,"void* __thiscall FBBackbufferResource_ctor(void* this, void* name, int sizeClass)",ret 8
 0x0045D080,signature,"void* __thiscall FBEclipseResource_ctor(void* this, void* name)",ret 4
+0x0045D890,signature,void __thiscall Renderer::FBIRunSemantic::Execute(void* this),"slot 1, plain ret"
+0x0045D8C0,signature,"void* __thiscall Renderer::FBIDumpRenderTarget::FBIDumpRenderTarget(void* this, void* target, void* path)",ret 8
+0x0045D950,clear,Renderer::FrameBufferInstruction::FrameBufferInstruction,it is ~FBIDumpRenderTarget: destroys the +0x10 wstring and ends with the base vftable
+0x0045D950,signature,void __thiscall Renderer::FBIDumpRenderTarget::~FBIDumpRenderTarget(void* this),"plain ret, ecx is this"
+0x0045D9B0,signature,"void* __thiscall Renderer::FBIDumpRenderTarget::scalar_deleting_destructor(void* this, unsigned int flags)",ret 4
+0x0045D9D0,signature,void __thiscall Renderer::IFBGenericSurfaceResource::ReadBackBufferSize(void* this),plain ret
+0x0045DA20,signature,"int __thiscall Renderer::IFBGenericSurfaceResource::ParseSize(void* this, wchar_t* text, float* scale)",ret 8
+0x0045DBF0,signature,"void __thiscall Renderer::IFBGenericSurfaceResource::SetAttribute(void* this, wchar_t* name, wchar_t* value)",ret 8
+0x0045DD80,signature,void __thiscall Renderer::FBRenderTargetResource::InitFields(void* this),plain ret
+0x0045DD90,signature,"void __thiscall Renderer::FBRenderTargetResource::SetFormat(void* this, int format)",ret 4
+0x0045DDA0,signature,"void __thiscall Renderer::FBRenderTargetResource::SetDepthFormat(void* this, int format)",ret 4
+0x0045DDB0,signature,void __thiscall Renderer::FBRenderTargetResource::ReleaseTexture(void* this),plain ret
+0x0045DDE0,signature,"void __thiscall Renderer::FBFloat32Resource::SetAttribute(void* this, wchar_t* name, wchar_t* value)",ret 8; its body continues at 0x0045DE90
+0x0045DE90,clear,FUN_0045de90,not a function: the tail of 0x0045DDE0 (jnz at 0x0045DDF8; uses the caller's ESI/EDI and pops them); delete the function and add 0x0045DE90..0x0045DF6C to 0x0045DDE0's body
+0x0045DF70,signature,"void __thiscall Renderer::FBEclipseResource::SetAttribute(void* this, wchar_t* name, wchar_t* value)",ret 8
+0x0045E080,signature,"void __thiscall Renderer::FBBackbufferResource::SetAttribute(void* this, wchar_t* name, wchar_t* value)",ret 8
+0x0045E0C0,signature,"void __thiscall FloatRamp::Begin(void* this, float* from, float* to, float duration)",ret 0xC; the decompiler drops the stack float
+0x0045E110,signature,"void* __thiscall Renderer::FBVector4fResource::FBVector4fResource(void* this, void* name)",ret 4
+0x0045E190,signature,"void* __thiscall Renderer::FBIBindTarget::FBIBindTarget(void* this, void* target, int slot, int viewportMode)",ret 0xC
+0x0045E3F0,signature,"void* __thiscall Renderer::FBIBindTarget::scalar_deleting_destructor(void* this, unsigned int flags)",ret 4
+0x0045E410,signature,void __thiscall Renderer::FBIBindTarget::Execute(void* this),plain ret
+0x0045E650,signature,void __thiscall Renderer::FBIBindTarget::Refresh(void* this),plain ret
+0x0045E820,signature,"void* __thiscall Renderer::FBIBindBackBuffer::FBIBindBackBuffer(void* this, int viewportMode)",ret 4
+0x0045E9B0,signature,"void* __thiscall Renderer::FrameBufferInstruction::scalar_deleting_destructor(void* this, unsigned int flags)",ret 4
+0x0045E9D0,signature,void __thiscall Renderer::FBIBindBackBuffer::Execute(void* this),plain ret
+0x0045EB20,signature,void __thiscall Renderer::FBIBindBackBuffer::Refresh(void* this),plain ret
+0x0045EC30,signature,"bool __thiscall Renderer::FBRenderTargetResource::ApplyProperties(void* this, wchar_t* name)",ret 4
+0x0045ED20,signature,"void __thiscall Renderer::FBRenderTargetResource::SetTextureParam8(void* this, float value)",ret 4
+0x0045ED40,signature,"void __thiscall Renderer::FBRenderTargetResource::SetTextureParamC(void* this, float value)",ret 4
+0x0045ED60,signature,"void __thiscall Renderer::FBRenderTargetResource::SetAutoClear(void* this, float* color)",ret 4
+0x0045ED90,signature,"void __thiscall Renderer::FBFloat32Resource::SetValue(void* this, float value)",ret 4
+0x0045EDB0,signature,float __thiscall Renderer::FBFloat32Resource::GetValue(void* this),returns in ST0
+0x0045EDC0,signature,"void __thiscall Renderer::FBFloat32Resource::BlendFrom(void* this, void* other, float duration)",ret 8
+0x0045EE20,signature,"void __thiscall Renderer::FBVector4fResource::SetAttribute(void* this, wchar_t* name, wchar_t* value)",ret 8
+0x0045EEE0,signature,"void __thiscall Renderer::FBEclipseResource::OnEvent(void* this, int event)",ret 4
+0x0045F080,signature,"void __thiscall FloatRamp::Advance(void* this, float dt)",ret 4
+0x0045F180,signature,"void* __thiscall Renderer::FBFloat32Resource::FBFloat32Resource(void* this, void* name)",ret 4
+0x0045F1C0,signature,bool __thiscall Renderer::FrameBufferResource::IsValid(void* this),plain ret
+0x0045F1D0,signature,"int __cdecl Renderer::FrameBufferEffect::LoadEffectFile(void* name, void* effects)",caller cleans 8 (0x00455900)
+0x0045F310,signature,void __thiscall Renderer::FrameBufferEffect::EnableDependencies(void* this),plain ret
+0x0045F1C0,clear,Renderer::FBEclipseResource::vfunction2,"shared IsValid: slot 1 of the Eclipse (0xAE772C), Vector4f (0xAE79BC) and Float32 (0xAE79FC) vftables; returns byte +0x28"
+0x0045ED90,clear,FrameBufferEffect::Parameter::SetFloat,"its fields are FBFloat32Resource's (+0x2C value, +0x54 ramp active); rename Renderer::FBFloat32Resource::SetValue"
