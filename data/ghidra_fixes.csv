@@ -2523,3 +2523,44 @@ address,what,value,why
 0x006F6C20,signature,"void* __thiscall f(void* this, void* other)","0x006F6C20 ret 4, ecx this stored in esi"
 0x006F6CA0,signature,"void* __thiscall f(void* this, void* other)","0x006F6CA0 ret 4, ecx this stored in esi"
 0x006F6D20,signature,"void* __thiscall f(void* this, void* other)","0x006F6D20 ret 4, ecx this stored in esi"
+0x006F6DA0,signature,"void* __thiscall f(void* this, void* other)",0x006F6DA0 ret 4; arg+0xC copy
+0x006F6E20,signature,"void* __thiscall f(void* this, void* other)",0x006F6E20 ret 4; arg+0xC copy
+0x006FD8E0,signature,"void* __thiscall f(void* this, void* other)",0x006FD8E0 ret 4; arg+0xC copy
+0x006FD500,signature,"void* __thiscall f(void* this, void* other)",0x006FD500 ret 4; arg is the array itself
+0x00726A40,signature,"void* __thiscall f(void* this, void* other)",0x00726A40 ret 4; arg is the array itself
+0x006FD350,signature,void __thiscall f(void* this),0x006FD350; called by the scalar deleting destructor
+0x00726680,signature,void __thiscall f(void* this),0x00726680; called by the scalar deleting destructor
+0x00726840,signature,void __thiscall f(void* this),0x00726840; called by the scalar deleting destructor
+0x00700530,signature,void __thiscall f(void* this),0x00700530; callers 0x007005F0
+0x006FD4E0,signature,"void* __thiscall f(void* this, unsigned int flags)",0x006FD4E0
+0x00726A00,signature,"void* __thiscall f(void* this, unsigned int flags)",0x00726A00
+0x00726A20,signature,"void* __thiscall f(void* this, unsigned int flags)",0x00726A20
+0x007005F0,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007005F0
+0x006FD3C0,signature,"void* __thiscall f(void* this, unsigned int flags)","0x006FD3C0 sub ecx,4; jmp 0x006FD4E0"
+0x007266F0,signature,"void* __thiscall f(void* this, unsigned int flags)","0x007266F0 sub ecx,4; jmp 0x00726A00"
+0x007268C0,signature,"void* __thiscall f(void* this, unsigned int flags)","0x007268C0 sub ecx,4; jmp 0x00726A20"
+0x00700520,signature,"void* __thiscall f(void* this, unsigned int flags)","0x00700520 sub ecx,4; jmp 0x007005F0"
+0x006FD3D0,signature,"void* __stdcall f(void* array, unsigned int index)","0x006FD3D0 ret 8, ecx overwritten, static guard byte then IntToString on arg2"
+0x00726700,signature,"void* __stdcall f(void* array, unsigned int index)","0x00726700 ret 8, ecx overwritten, static guard byte then IntToString on arg2"
+0x007268F0,signature,"void* __stdcall f(void* array, unsigned int index)","0x007268F0 ret 8, ecx overwritten, static guard byte then IntToString on arg2"
+0x006FD490,signature,"void* __thiscall f(void* this, unsigned int key)",0x006FD490 ret 4
+0x00726780,signature,"void* __thiscall f(void* this, unsigned int key)",0x00726780 ret 4
+0x00726970,signature,"void* __thiscall f(void* this, unsigned int key)",0x00726970 ret 4
+0x006FD4B0,signature,void* __thiscall f(void* this),"0x006FD4B0 operator_new(0xC), vftable stored"
+0x007267A0,signature,void* __thiscall f(void* this),"0x007267A0 operator_new(0xC), vftable stored"
+0x00726990,signature,void* __thiscall f(void* this),"0x00726990 operator_new(0xC), vftable stored"
+0x006FD450,signature,void* __thiscall f(void* this),"0x006FD450 array at +4, index at +8, begin/end at array+4/+8"
+0x00726800,signature,void* __thiscall f(void* this),"0x00726800 array at +4, index at +8, begin/end at array+4/+8"
+0x007269C0,signature,void* __thiscall f(void* this),"0x007269C0 array at +4, index at +8, begin/end at array+4/+8"
+0x007267D0,signature,bool __thiscall f(void* this),0x007267D0 index [ecx+8] vs (end-begin)>>2
+0x007268B0,signature,void __thiscall f(void* this),"0x007268B0 add [ecx+8],1"
+0x006FDEE0,signature,"void __thiscall f(void* this, void* text)","0x006FDEE0 GetValuePtr, 0x610000 copy, 0x726B80, call [vtable+0x54]"
+0x007218C0,signature,"void* __thiscall f(void* this, void* other)",0x007218C0 arg+0xC
+0x007004F0,signature,"void* __thiscall f(void* this, void* other)","0x007004F0 ret 4, edx=[arg]"
+0x007017D0,signature,"void* __thiscall f(void* this, void* other)","0x007017D0 ret 4, edx=[arg+0xC]"
+0x00709640,signature,"void* __thiscall f(void* this, void* other)",0x00709640 ret 4
+0x00700590,signature,"int __thiscall f(void* this, void* name)","0x00700590 Get 0x53CC40, lea ecx,[eax+0x34], jmp [vtable+0x18]; array form 0x007268E0 calls 0x004C0950"
+0x007005B0,signature,int __thiscall f(void* this),0x007005B0 jmp [vtable+0x40]
+0x007005D0,signature,int __thiscall f(void* this),0x007005D0 jmp [vtable+0x4c]
+0x007268E0,signature,"int __thiscall f(void* this, void* name)","0x007268E0 ret 4, call 0x004C0950 (wstring to int)"
+0x007268D0,signature,"void* __thiscall f(void* this, void* a)","0x007268D0 mov eax,[esp+4]; ret 4"
