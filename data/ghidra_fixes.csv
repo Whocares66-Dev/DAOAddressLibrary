@@ -9074,3 +9074,45 @@ address,what,value,why
 0x00822A60,signature,"void __cdecl f(void* dest, unsigned int count, void* value)","plain ret, arguments read at 0x00822A61-0x00822A6D"
 0x00822AD0,signature,"void* __cdecl f(void* first, void* last, void* dest)","plain ret at 0x00822B06, 0x10-byte stride"
 0x00822BD0,signature,"void* __thiscall f(void* this, void* other)","ret 4 at 0x00822BFC, returns this (mov eax,esi at 0x00822BF9)"
+0x00401FA0,signature,bool __thiscall f(void* this),"0x00401FA0 reads no ecx, is called with ecx=this at 0x00404587, plain ret"
+0x00401FC0,signature,bool __thiscall f(void* this),0x00401FC0 ecx read as this
+0x00401FE0,signature,bool __thiscall f(void* this),"0x00401FE0 called with ecx=this by 0x004044F0 (mov ecx, edi before the call), plain ret; reconciled: read the call site"
+0x00402000,signature,bool __thiscall f(void* this),"0x00402000 called with ecx=this by 0x004044F0 (mov ecx, edi before the call), plain ret; reconciled: read the call site"
+0x00402010,signature,bool __thiscall f(void* this),0x00402010 ecx read as this
+0x00402070,signature,bool __thiscall f(void* this),0x00402070 ecx read as this
+0x00402080,signature,bool __thiscall f(void* this),"0x00402080 called with ecx=this by 0x004044F0 (mov ecx, edi before the call), plain ret; reconciled: read the call site"
+0x00402090,signature,bool __thiscall f(void* this),0x00402090 ecx read as this
+0x00402CB0,signature,bool __thiscall f(void* this),"0x00402CB0 called with ecx=this by 0x004044F0 (mov ecx, edi before the call), plain ret; reconciled: read the call site"
+0x00403E70,signature,bool __thiscall f(void* this),"0x00403E70 called with ecx=this by 0x004044F0 (mov ecx, edi before the call), plain ret; reconciled: read the call site"
+0x004044F0,signature,bool __thiscall f(void* this),0x004044F0 ecx read as this
+0x00474500,signature,void* __cdecl f(void),"0x00474500 plain ret, stack arguments as read in the listing"
+0x004748B0,signature,void __thiscall f(void* this),0x004748B0 ecx read as this
+0x004749A0,signature,void __thiscall f(void* this),0x004749A0 ecx read as this
+0x004749B0,signature,"void __thiscall f(void* this, int a)","0x004749B0 ret 4, vftable slot"
+0x004749F0,signature,"void __thiscall f(void* this, void* a, void* b)","0x004749F0 ret 8, vftable slot"
+0x00474C20,signature,bool __stdcall f(int scene),"0x00474C20 ret 4, ecx not read, one stack argument"
+0x00475570,signature,"void* __cdecl f(void* first, void* last, void* dest)","0x00475570 plain ret, stack arguments as read in the listing"
+0x004755C0,signature,"void* __cdecl f(void* first, void* last, void* dest)","0x004755C0 plain ret, stack arguments as read in the listing"
+0x00475600,signature,"void* __cdecl f(void* first, void* last, void* dest)","0x00475600 plain ret, stack arguments as read in the listing"
+0x00475650,signature,"void* __cdecl f(void* first, void* last, void* dest)","0x00475650 plain ret, stack arguments as read in the listing"
+0x004756A0,signature,"void* __cdecl f(void* first, void* last, void* dest)","0x004756A0 plain ret, stack arguments as read in the listing"
+0x004756E0,signature,"void* __cdecl f(void* first, void* last, void* dest)","0x004756E0 plain ret, stack arguments as read in the listing"
+0x00475730,signature,"void* __cdecl f(void* first, void* last, void* dest)","0x00475730 plain ret, stack arguments as read in the listing"
+0x00475780,signature,"void* __cdecl f(void* first, void* last, void* dest)","0x00475780 plain ret, stack arguments as read in the listing"
+0x004757D0,signature,"void* __cdecl f(void* first, void* last, void* dest)","0x004757D0 plain ret, stack arguments as read in the listing"
+0x00475A60,signature,"void __thiscall f(void* this, void* text)","0x00475A60 ret 4, ecx kept in esi, argument at esp+0x9c"
+0x00477E60,signature,"void __thiscall f(void* this, int code, int a, int b)","0x00477E60 ret 0xC, ecx adjusted by -4, three arguments"
+0x00477F40,signature,void __thiscall f(void* this),0x00477F40 ecx read as this
+0x00478780,signature,"void __cdecl f(void* first, void* last, void* value)","0x00478780 plain ret, three stack arguments (first at esp+0x14)"
+0x004787D0,signature,"void* __cdecl f(void* first, void* last, void* dest)","0x004787D0 plain ret, three stack arguments, returns the destination end"
+0x00478810,signature,"void* __cdecl f(void* first, void* last, void* dest)","0x00478810 plain ret, stack arguments as read in the listing; reconciled: reads three arguments only (the callers push tag arguments the callee ignores)"
+0x00478870,signature,"void* __cdecl f(void* first, void* last, void* dest)","0x00478870 plain ret, stack arguments as read in the listing; reconciled: reads three arguments only (the callers push tag arguments the callee ignores)"
+0x004788D0,signature,"void* __cdecl f(void* first, void* last, void* dest)","0x004788D0 plain ret, stack arguments as read in the listing; reconciled: reads three arguments only (the callers push tag arguments the callee ignores)"
+0x00478930,signature,"void __cdecl f(void* first, void* mid, void* last)","0x00478930 plain ret, three stack arguments"
+0x004789B0,signature,"void __cdecl f(void* first, int hole, int bottom, void* val, int pred)","0x004789B0 plain ret, five stack arguments pushed on to 0x004758C0"
+0x00478A40,signature,"void __thiscall f(void* this, unsigned int field, void* text)","0x00478A40 ret 8, ecx kept in ebx"
+0x00478AE0,signature,"void __thiscall f(void* this, void* response, int a)","0x00478AE0 ret 8, ecx kept in ebx"
+0x00478BB0,signature,void __thiscall f(void* this),0x00478BB0 ecx read as this
+0x00478C70,signature,void __thiscall f(void* this),0x00478C70 ecx read as this
+0x00478D00,signature,"void __thiscall f(void* this, int code)","0x00478D00 ret 4, vftable slot"
+0x00478DF0,signature,"void __thiscall f(void* this, int code)","0x00478DF0 ret 4, vftable slot"
