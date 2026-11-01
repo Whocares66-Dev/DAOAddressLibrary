@@ -11602,3 +11602,39 @@ address,what,value,why
 0x00473570,signature,void __thiscall f(void *this),plain ret; esi/ebx = ecx
 0x004735C0,signature,void __thiscall f(void *this),plain ret; esi/ebx = ecx
 0x004736D0,signature,void __thiscall f(void *this),plain ret; esi/ebx = ecx
+0x00A216C0,clear,GRenderer::GRenderer,"Destructor body of Renderer::ScaleformRenderer (sets ScaleformRenderer vtable, releases textures/stream/shaders, ends with GRenderer vtable and GRefCountBaseImpl dtor); only caller is the scalar deleting destructor 0x00A217D3; not an export label"
+0x00A216C0,signature,void __thiscall f(void *this),"plain ret, ecx read at 0x00A216E6"
+0x00A20D40,signature,"void __thiscall f(void *this, int gfillType, void *tex0, void *tex1, void *tex2)","ret 0x10, ecx read at 0x00A20D44"
+0x00A20D70,signature,"void __thiscall f(void *this, int baseVertexIndex, int minVertexIndex, int numVertices, int startIndex, int triangleCount)",ret 0x14
+0x00A20E80,signature,"void __thiscall f(void *this, int baseVertexIndex, int lineCount)",ret 8
+0x00A20F10,signature,"void __thiscall f(void *this, unsigned int backgroundColor, void *viewport, float x0, float x1, float y0, float y1)",ret 0x18; viewport pointer read at [esp+0x64] (0x00A21004); background slot unread
+0x00A215E0,signature,"void __thiscall f(void *this, int blendMode)",ret 4
+0x00A21630,signature,void __thiscall f(void *this),plain ret
+0x00A217F0,signature,void * __thiscall f(void *this),"ecx read at 0x00A217F3, returns this"
+0x00A21800,signature,void __thiscall f(void *this),"plain ret, ecx read at 0x00A21802"
+0x00A21860,signature,bool __thiscall f(void *this),ecx read at 0x00A21897; AL = 0/1 at 0x00A21CE7/0x00A21CFC
+0x00A26520,signature,void __thiscall f(void *this),ecx read at 0x00A26520
+0x00A265B0,signature,"void __thiscall f(void *this, void *vertices, int count, int format)",ret 0xC
+0x00A26600,signature,"void __thiscall f(void *this, void *indices, int count)",ret 8
+0x00A26620,signature,"void __thiscall f(void *this, int lineCount)",ret 4
+0x00A267C0,signature,"bool __thiscall f(void *this, int firstVertex, int count)",ret 8
+0x00A269E0,signature,void __thiscall f(void *this),plain ret
+0x00A26A70,signature,"bool __thiscall f(void *this, void *drawParams)",ret 4
+0x00A26BE0,signature,void __thiscall f(void *this),"plain ret, ecx read at 0x00A26BED"
+0x00A26EC0,signature,"void __thiscall f(void *this, void *bitmapDescs, int start, int count)",ret 0xC
+0x00A270E0,signature,bool __thiscall f(void *this),returns 1
+0x00A27950,signature,int __thiscall f(void *this),ecx read at 0x00A27950; -1 without texture
+0x00A27970,signature,"void __cdecl f(void *dst, int dstWidth, int dstHeight, int dstPitch, void *src, int srcWidth, int srcHeight, int srcPitch, int bytesPerPixel)","plain ret, caller add esp 0x24 at 0x00A27F02"
+0x00A27A20,signature,"void __thiscall f(void *this, int level, int count, void *rects, void *image)",ret 0x10
+0x00A27B60,signature,"void * __thiscall f(void *this, void *renderer)",ret 4
+0x00A27C00,signature,void __thiscall f(void *this),plain ret
+0x00A27C40,signature,void __thiscall f(void *this),plain ret
+0x00A27CB0,signature,"bool __thiscall f(void *this, void *textureHandle, int width, int height)",ret 0xC
+0x00A27D10,signature,"bool __thiscall f(void *this, void *image, int targetWidth, int targetHeight)",ret 0xC
+0x00A28190,signature,"bool __thiscall f(void *this, int width, int height, int format, int mipmaps, int targetWidth, int targetHeight)",ret 0x18
+0x00A28240,signature,"bool __thiscall f(void *this, char *filename, int targetWidth, int targetHeight)",ret 0xC
+0x00A37E10,signature,"void __cdecl f(int typeId, void *name)","plain ret, caller add esp 8 at 0x0078D2E1"
+0x00A39E20,signature,"bool __thiscall f(void *this, void *keyword, void *out)",ret 8
+0x00A55A70,signature,"void __thiscall f(void *this, void *attribute)",ret 4; this is the scene's Messages::Observer subobject (scene+8)
+0x00A217D0,signature,"void * __thiscall f(void *this, unsigned int flags)","ret 4; calls 0x00A216C0, frees with 0x00419240 when flags&1 (both readings)"
+0x00A28420,signature,"void * __thiscall f(void *this, unsigned int flags)",ret 4; destructor 0x00A283B0 then free when flags&1 (both readings)
