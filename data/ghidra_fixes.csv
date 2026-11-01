@@ -5034,3 +5034,234 @@ address,what,value,why
 0x00409EA0,signature,"unsigned char __stdcall f(void *path, void *unused, void *wanted, void *fallbacks, void *out)","ret 0x14 at 0x0040A1C6, ecx never read"
 0x0040A1D0,signature,unsigned int __cdecl f(void **ppFacet),"static _Getcat, plain ret, 0x0040A1D0-0x0040A23C"
 0x0040A240,signature,unsigned int __cdecl f(void **ppFacet),"static _Getcat, plain ret, 0x0040A240-0x0040A2AC"
+0x0069B780,signature,void __cdecl f(void *builder),"plain ret, one stack arg at 0x0069B781 (builder into ecx for 0x004860F0)"
+0x0069B7A0,convention,__cdecl,"plain ret; stack args read at 0x0069B7A3 and 0x0069B7B7, ecx not read"
+0x0069B7F0,signature,void __cdecl f(void *builder),"plain ret, one stack arg at 0x0069B7F1"
+0x0069B810,signature,void __cdecl f(void *builder),"plain ret, one stack arg at 0x0069B811"
+0x0069B830,signature,void __thiscall f(void *this),"plain ret, esi = ecx at 0x0069B855"
+0x0069B900,signature,void __thiscall f(void *this),"plain ret, ebp = ecx at 0x0069B927"
+0x0069D380,signature,void __thiscall f(void *this),"CCPlayer destructor, plain ret, esi = ecx at 0x0069D3A2"
+0x0069D420,convention,__thiscall,"vftable adjustor thunk, sub ecx,8 then jmp 0x0069D770"
+0x0069D430,convention,__thiscall,"vftable adjustor thunk, sub ecx,0x1C then jmp 0x0069D770"
+0x0069D440,convention,__thiscall,"vftable adjustor thunk, sub ecx,0x20 then jmp 0x0069D770"
+0x0069D540,signature,"void __thiscall f(void *this, void *creature)","ret 4 at 0x0069D5F3, ecx saved at 0x0069D543"
+0x0069D600,signature,"void * __thiscall f(void *this, void *arg)","ret 4 at 0x0069D765, esi = ecx at 0x0069D627 (the argument is not identified)"
+0x0069D770,signature,"void * __thiscall f(void *this, unsigned int flags)","ret 4, test [esp+8],1 at 0x0069D778, vftable slot"
+0x0069E280,signature,"void * __thiscall f(void *this, void *out)","ret 4 at 0x0069E2F7, returns the out string; edi = ecx at 0x0069E2A9"
+0x0069E490,convention,__thiscall,"plain ret, esi = ecx at 0x0069E491"
+0x0069E4F0,convention,__thiscall,"plain ret, esi = ecx at 0x0069E4F1"
+0x0069E520,convention,__thiscall,"plain ret, esi = ecx at 0x0069E521"
+0x0069E5B0,signature,"bool __thiscall f(void *this, void *event)","ret 4 at 0x0069E67D, ecx read at 0x0069E5DF, al = 1 at 0x0069E660"
+0x0069E720,signature,bool __stdcall f(void *event),"ret 4 at 0x0069E7AB, ecx not read before written (0x0069E757)"
+0x0069E7B0,signature,"unsigned int __thiscall f(void *this, void *event, unsigned char *hand)","ret 8 at 0x0069E7D4, ecx read at 0x0069E7B7; the second argument is a byte pointer naming the hand (b: 0x0069E7CD)"
+0x0069E7F0,signature,"bool __thiscall f(void *this, void *event, void *key)","ret 8 at 0x0069E8DD, edi = ecx at 0x0069E815"
+0x0069E8E0,signature,"bool __thiscall f(void *this, void *event, void *key)","ret 8 at 0x0069E904, ecx passed on to 0x0069E7B0"
+0x0069E910,signature,"bool __thiscall f(void *this, void *event, void *key)","ret 8 at 0x0069E934, ecx passed on"
+0x0069E940,signature,"bool __thiscall f(void *this, void *event, void *key)","ret 8 at 0x0069E964, ecx passed on"
+0x0069E970,signature,"bool __thiscall f(void *this, void *event, void *key, int right)","ret 0xC at 0x0069E997, ecx passed on; the address of the third argument (a byte flag) goes to 0x0069E7B0 as its flag pointer"
+0x0069E9A0,signature,"bool __thiscall f(void *this, void *event, void *key, int right)","ret 0xC at 0x0069E9C7, ecx passed on"
+0x0069E9D0,signature,void * __thiscall f(void *this),"plain ret, esi = ecx at 0x0069E9F2, returns [esi+0x768]"
+0x0069EA50,signature,"void __thiscall f(void *this, bool enabled)","ret 4 at 0x0069EA84, esi = ecx"
+0x0069EAA0,signature,"void __thiscall f(void *this, int id, int slot)","ret 8 at 0x0069EAB6, ecx passed to 0x0069E9D0"
+0x0069EAC0,signature,"void __thiscall f(void *this, float yaw, float pitch)","ret 8 at 0x0069EADE, floats pushed to 0x006C9FE0"
+0x0069EAF0,signature,"void __thiscall f(void *this, float dt)","ret 4 at 0x0069EB1C, esi = ecx"
+0x0069EB20,convention,__thiscall,"adjustor thunk, add ecx,0x10 then jmp 0x004C0DB0 at 0x0069EB20"
+0x0069EB30,convention,__thiscall,"vftable slot of the +0x70 interface, ecx read at 0x0069EB30"
+0x0069EB40,signature,"void __thiscall f(void *this, float value)","ret 4 at 0x0069EB5A, ecx read, vftable slot"
+0x0069EBF0,signature,"void * __thiscall f(void *this, void *other)","ret 4 at 0x0069EC3D, esi = ecx, returns this"
+0x0069EE10,signature,float __thiscall f(void *this),"plain ret, esi = ecx at 0x0069EE12, float in st0"
+0x0069EE60,signature,"void __thiscall f(void *this, bool applyAtOnce)","ret 4 at 0x0069EE71, ecx written through at 0x0069EE64"
+0x0069EE80,signature,"bool __thiscall f(void *this, int targetId, void *name, int a, int b)","ret 0x10 at 0x0069EF20, edi = ecx at 0x0069EEA3; the last two arguments only reach QueueNewCommand"
+0x0069EF30,signature,"int __thiscall f(void *this, void *pos, int run, float f, int a, int b, int c, int d, int e, int g, int h, int i)",ret 0x2c (11 dwords)
+0x0069F030,signature,bool __cdecl f(int aprRow),"plain ret at 0x0069F109, one stack arg at 0x0069F07F (esp+0x58), ecx overwritten before use"
+0x0069F150,signature,bool __thiscall f(void *this),"plain ret, ecx read at 0x0069F150 (signed dword compare), returns the opposite of the flag it stores"
+0x0069F170,convention,__thiscall,"vftable slot 83 forwarder, jmp 0x00695260 at 0x0069F170"
+0x0069F180,signature,"bool __thiscall f(void *this, int level)","ret 4, vftable slot 81 (CCCreature), esi = ecx at 0x0069F182"
+0x0069F1D0,convention,__thiscall,"vftable slot 82 forwarder, jmp 0x00695200 at 0x0069F1D0"
+0x0069F1E0,signature,"void __thiscall f(void *this, bool value)","ret 4 at 0x0069F1FC, vftable slot 97"
+0x0069F4A0,signature,"void __thiscall f(void *this, bool isStatue)","ret 4 at 0x0069F505, esi = ecx at 0x0069F4A7"
+0x0069F530,signature,"int __stdcall f(int a, int b)","ret 8, ecx not read"
+0x0069F650,signature,bool __thiscall f(void *this),"plain ret, reads [ecx+4] at 0x0069F652"
+0x0069F750,convention,__thiscall,"plain ret, eax = ecx at 0x0069F752"
+0x0069F810,signature,bool __thiscall f(void *this),"plain ret, reads [ecx+0xC] at 0x0069F810"
+0x0069F840,signature,bool __thiscall f(void *this),"plain ret, reads [ecx+0xC] at 0x0069F840"
+0x0069F930,signature,void * __cdecl f(void),"plain ret, no arguments read, returns 0x00C022BC"
+0x0069FA00,signature,"int __thiscall f(void *this, void *predicate)","ret 4 at 0x0069FA9F, ecx pushed to the iterator at 0x0069FA23, predicate called by edi at 0x0069FA5E"
+0x0069FE50,signature,"void __thiscall f(void *this, int strId, unsigned char force)",ret 8
+0x0069FFB0,signature,"void __thiscall f(void *this, bool value)","vftable slot 107, esi = ecx at 0x0069FFB7, ret 4"
+0x006A0040,signature,void __thiscall f(void *this),"plain ret at 0x006A00A2, esi = ecx"
+0x006A00B0,signature,"void __thiscall f(void *this, int commandType)","ret 4 at 0x006A00C8, vftable slot 59"
+0x006A00D0,signature,"void __thiscall f(void *this, bool active)","ret 4 at 0x006A011F, edi = ecx+0xBE0 at 0x006A00D3"
+0x006A0160,signature,void * __thiscall f(void *this),"plain ret, ecx + 0xB54 at 0x006A0162"
+0x006A0170,signature,void * __thiscall f(void *this),"plain ret, ecx + 0xB54 at 0x006A0172"
+0x006A0190,convention,__thiscall,"vftable slot 32 of CCCreature, esi = ecx at 0x006A0191"
+0x006A01E0,signature,int __cdecl f(void),"plain ret, no argument and ecx unused (the app comes from g_clientExoApp)"
+0x006A0220,signature,"void __thiscall f(void *this, int weaponMaterial, int eventId)","ret 8 at 0x006A046E, vftable slot 54; the arguments' meaning is INFERRED (ebp = [esp+0xA4] is the first)"
+0x006A0480,signature,void * __stdcall f(void *record),"ret 4 at 0x006A0488, ecx unused (jmp to GetObjectById with g_clientExoApp)"
+0x006A04A0,signature,"bool __thiscall f(void *this, void *event, void *key)","ret 8, edi = ecx at 0x006A04AB, al = 1 at 0x006A057E"
+0x006A0590,signature,unsigned int __thiscall f(void *this),"plain ret, reads [ecx+0xB6C] at 0x006A0590"
+0x006A05A0,signature,unsigned int __thiscall f(void *this),"plain ret, reads [ecx+0xB6C] at 0x006A05A0"
+0x006A05B0,signature,"void __thiscall f(void *this, void *event)","tail jump to 0x00A631F0 which does ret 4; add ecx,0xA30 at 0x006A05B0"
+0x006A05C0,signature,"bool __thiscall f(void *this, void *event)","ret 4 at 0x006A06A4, ecx read at 0x006A05F2, al = 1 at 0x006A0684"
+0x006A06B0,signature,void __thiscall f(void *this),"vftable slot 115, edi = ecx at 0x006A06B2, tail jump to a plain-ret function"
+0x006A0710,signature,void __thiscall f(void *this),"plain ret via the tail jump to 0x00A66ED0, ecx + 0x70 at 0x006A0716"
+0x006A0730,signature,"void __thiscall f(void *this, int slot)","ret 4 via the tail jump to 0x00A66950, ecx + 0x70 at 0x006A0736"
+0x006A0750,signature,"void __thiscall f(void *this, void *ammoBaseItem, void *launcher, int weaponSet)","ret 0xC at 0x006A0908; DAOLib COMBAT.md names (ammo base item, launcher, set); ecx saved at 0x006A0791"
+0x006A0910,signature,"void __thiscall f(void *this, bool keepFootstepAndSize)","ret 4 at the end, esi = ecx at 0x006A0953, byte arg tested at 0x006A094B"
+0x006A0CE0,signature,"void __thiscall f(void *this, int a, int b)","ret 8 at 0x006A0D2F, esi = ecx at 0x006A0CE1"
+0x006A0D40,signature,void __thiscall f(void *this),"plain ret at 0x006A0D92, esi = ecx"
+0x006A0DA0,signature,"bool __stdcall f(void *data, int ability, int objectId, int index)","ret 0x10 at 0x006A0DC9, ecx unused"
+0x006A0E70,signature,bool __thiscall f(void *this),"plain ret, vftable slot 78, esi = ecx"
+0x006A0EA0,signature,"void __thiscall f(void *this, bool shown)","ret 4 at 0x006A0EC8, vftable slot 77"
+0x006A0ED0,signature,"void __thiscall f(void *this, void *callback)","ret 4 at 0x006A0F0C, ebx = ecx + 0xBE0 at 0x006A0ED8; the callback is __cdecl(item)"
+0x0040A2B0,signature,int __cdecl f(void *ppf),plain ret at 0x0040A31C; caller 0x0040AAD1 pops 4 bytes
+0x0040A320,convention,__thiscall,"ecx = vector, ret 0x20 (count + 28-byte wstring by value)"
+0x0040A450,signature,"void * __thiscall f(void *this, void *out, void *container, void *where, void *value)","ret 0x10, hidden iterator return in arg 1, {container, pointer} pair, const wstring& last (0x0040A450-0x0040A501)"
+0x0040A510,signature,"bool __thiscall f(void *this, bool noskip)","ret 4, ecx = istream, bool at [ebp+8] tested with cmp byte at 0x0040A55F, al result"
+0x0040A6C0,signature,"void * __thiscall f(void *this, void *stream)",ret 4 at 0x0040A74A; returns this
+0x0040A750,signature,void __thiscall f(void *this),"plain ret, ecx = ostream read at 0x0040A779"
+0x0040A7B0,signature,void * __cdecl f(void *locale),"plain ret, locale& at [esp+0x38], facet pointer in eax"
+0x0040A8E0,signature,void * __cdecl f(void *locale),"plain ret, locale& at [esp+0x38], facet pointer in eax"
+0x0040AA10,signature,void * __cdecl f(void *locale),"plain ret, locale& at [esp+0x38], facet pointer in eax"
+0x0040B3A0,convention,__cdecl,"plain ret, callers add esp 0x30 (0x00411810-0x0041181C); ecx is not read"
+0x0040BB00,convention,__cdecl,"plain ret, callers add esp 0x24 (0x00411449-0x0041144D); ecx is not read"
+0x0040BE70,convention,__cdecl,"plain ret, ecx not read; stack-only helper"
+0x0040C4E0,convention,__cdecl,"plain ret, ecx not read; stack-only helper"
+0x0040DCB0,signature,"void * __thiscall f(void *this, void *platform)","ret 4, ecx = EclipseGame, platform stored at +0xC8 (0x0040DD91)"
+0x0040DF70,signature,void * __cdecl f(void *platform),"plain ret, arg at [esp+0x18] passed to the ctor, result stored in 0x00C1D0A0"
+0x0040F000,signature,void __thiscall f(void *this),"plain ret, ecx moved to ebp at 0x0040F03B and used for [ebp+0xE8]"
+0x00410D30,signature,"int __thiscall f(void *this, void *commandLine)","ret 4, ecx = EclipseGame (edi), returns [this+0xC4] at 0x00410EE4"
+0x00410F90,signature,"void * __thiscall f(void *this, int value)","ret 4, ecx = ostream (esi), value pushed to do_put at 0x0041101B, returns this"
+0x004110F0,signature,"void * __thiscall f(void *this, int *value)","ret 4, ecx = istream, out pointer stored at 0x00411211, returns this"
+0x00411280,convention,__thiscall,"ecx = object, ret 0x28 (a 40-byte entry by value)"
+0x00411340,signature,void __thiscall f(void *this),"plain ret, ecx = object, called through 176 mov ecx / jmp stubs"
+0x00412D80,signature,"void * __thiscall f(void *this, int mode, int mostDerived)","ret 8, ecx = stringstream, flag tested at 0x00412DAD"
+0x00412E20,signature,"unsigned char __thiscall f(void *this, unsigned int *key, void *text)","ret 8, key read through [arg1] (0x00412E4B), text to a wstring ctor, bool in al"
+0x00413370,signature,"void __thiscall f(void *this, unsigned int key, void *value)","ret 8, ecx = attribute, map = this+0xC, notify through slot 9"
+0x004133A0,signature,"unsigned char __thiscall f(void *this, void *name, unsigned int key)","ret 8, ecx unread; stack arg1 is the text (second argument of 0x00412E20), arg2 the key whose address is passed (0x004133A0-0x004133B7)"
+0x004134C0,signature,"void __cdecl f(void *src, void *out)","plain ret, two stack args pushed by 0x00413590 (0x004135CA-0x004135D1) and popped by add esp 8 at 0x004135E0"
+0x00413550,signature,"void * __thiscall f(void *this, void *value)",ret 4 at 0x00413584; returns this
+0x00413590,signature,"void __thiscall f(void *this, void *text)","ret 4, ecx = attribute, vtable +0x54 (Set) called at 0x004135EA"
+0x00413630,signature,"void __thiscall f(void *this, unsigned int key)","ret 4, ecx = attribute, erase then vtable +0x24"
+0x004136D0,signature,"void * __cdecl f(int poolId, unsigned int size)","plain ret, swaps its two stack args into ECMemory::Allocate(size, pool) (0x004136D4-0x004136DA)"
+0x004136F0,signature,void __thiscall f(void *this),"plain ret, ecx read at 0x004136F0"
+0x00413700,signature,"void * __cdecl f(unsigned int size, int poolId, void *file, int line)",plain ret; callers push four args and add esp 0x10 (0x00403256)
+0x00413770,signature,int __cdecl f(void),"plain ret, constant 0x7FFFFFFF"
+0x004137B0,signature,void * __thiscall f(void *this),"vtable slot, xor eax,eax"
+0x004137D0,signature,"unsigned char __thiscall f(void *this, int a, int b, int c)","vtable slot with ret 0xC, ecx unread"
+0x004151A0,signature,"void * __thiscall f(void *this, void *key)","ret 4, ecx = tree (head at [ecx+4]), returns the node in eax"
+0x00416AC0,signature,char * __thiscall f(void *this),"plain ret, ecx = std::string"
+0x00416AD0,signature,"int __stdcall f(void *hInstance, void *hPrevInstance, char *lpCmdLine, int nShowCmd)","ret 0x10; hInstance used for LoadIconW at 0x00416C1F, nShowCmd forwarded to the platform ctor"
+0x00451780,signature,void * __thiscall f(void *this),"mov eax,ecx; mov [eax],0; ret"
+0x004517C0,signature,void __cdecl f(void),push 0; call 0x00456000; no register input
+0x004517D0,signature,bool __thiscall f(void *this),"cmp [ecx+0x67C],0; seta al"
+0x004517E0,signature,"void __thiscall f(void *this, void *cell)","jmp to Umbra::Camera::setCell (QAEXPAVCell, ret 4) with ecx replaced; caller pushes cell"
+0x004517F0,signature,void __thiscall f(void *this),"mov byte [ecx+0x678],0; ret"
+0x00451800,signature,void __cdecl f(unsigned char enabled),byte argument at [esp+4] tested at 0x00451800; plain ret
+0x00451830,signature,void * __cdecl f(void),"plain ret, no inputs"
+0x00451850,signature,void * __cdecl f(void),"plain ret, no inputs"
+0x00451870,signature,void * __cdecl f(void),"plain ret, no inputs"
+0x004518A0,signature,unsigned int __cdecl f(int index),"plain ret, index at [esp+4]"
+0x004518C0,signature,void __cdecl f(int *out),"plain ret, out at [esp+4]"
+0x00451930,signature,void __cdecl f(void),"plain ret, no inputs"
+0x00451950,signature,void * __thiscall f(void *this),"zeroes [ecx..+8], mov eax,ecx"
+0x00451960,signature,float * __cdecl f(void),"plain ret, returns 0x00C1E870"
+0x00451D00,signature,void __thiscall f(void *this),"plain ret, ecx = partition (esi)"
+0x00451DB0,signature,"void __thiscall f(void *this, void *camera, float *value)",ret 8 at 0x004522D6; camera read at 0x00451DC7
+0x004522E0,signature,"void * __thiscall f(void *this, void *source)",ret 4 at 0x004523A4; ecx moved to eax at 0x004522E6
+0x004523B0,signature,void __thiscall f(void *this),"plain ret, ecx = partition (esi)"
+0x004524D0,signature,"void __cdecl f(float *out, float left, float right, float bottom, float top, float zNear, float zFar)",plain ret at 0x00452562; arguments at [ebp+8]..[ebp+0x20]
+0x00452570,signature,"void __thiscall f(void *this, float *center, float radius)","ret 8, ecx = partition, center [esp+4], radius [esp+8]"
+0x00452910,signature,void __cdecl f(void),"plain ret, no inputs"
+0x00452960,signature,void __cdecl f(void *camera),"plain ret, camera [ebp+8] stored at 0xC1E7FC"
+0x00452A90,signature,void __cdecl f(float *direction),"plain ret, direction [ebp+8]"
+0x00452CB0,signature,void __cdecl f(void),"plain ret, no inputs"
+0x00452E90,signature,void __cdecl f(void *partition),"plain ret, partition [esp+4]; caller add esp 4 at 0x0045322E"
+0x00452EF0,signature,"void * __thiscall f(void *this, float *source)",ret 4 at 0x00452F31; returns esi = this
+0x00452F40,signature,"void * __thiscall f(void *this, void *source)",ret 4 at 0x00452F87
+0x00452F90,signature,"unsigned char __thiscall f(void *this, void *arg)","ret 4, ecx = partition (ebx), mov al,1 at 0x00453233"
+0x00453240,signature,"void __thiscall f(void *this, float *params)","ret 4, ecx = partition (esi), 0xBF20B0 pushed by the caller at 0x0045347F"
+0x004534A0,signature,void __thiscall f(void *this),"plain ret, ecx = partition (edi)"
+0x00453680,signature,void __thiscall f(void *this),"plain ret, ecx = partition (esi)"
+0x00453710,signature,"void __thiscall f(void *this, void *camera)","ret 4, ecx = partition (esi), camera [esp+4]"
+0x00453740,signature,void __cdecl f(void),no arguments read; plain ret
+0x0068CD50,signature,"void __thiscall f(void *this, float dt)","ret 4, ecx kept for the tail call at 0x0068CD58"
+0x0068CD80,signature,"void * __stdcall f(void *out, int icon)","ret 8 at 0x0068CECD, ecx never read, out is returned (0x0068CEAD)"
+0x0068CED0,signature,"void __thiscall f(void *this, void *text, int hasVO)",ret 8 via the forwarded 0x68CBD0 (0x68CED0)
+0x0068CEE0,signature,"void * __cdecl f(unsigned int ownerId, unsigned int targetId, void *name, unsigned char force)","plain ret, four stack args read at 0x68CF38-0x68CF60; caller 0x697748 cleans 0x10"
+0x0068CFA0,signature,void * __cdecl f(void),"no this, no stack args, plain ret at 0x0068CFC6"
+0x0068CFD0,signature,void * __thiscall f(void *this),"ecx = conversation, +0x20 taken at 0x68CFD8; plain ret"
+0x0068D020,signature,"bool __thiscall f(void *this, unsigned int index)","ret 4 at 0x0068D045 and 0x0068D04A, al = 1 or 0"
+0x0068D4B0,signature,void __thiscall f(void *this),"ecx to edi at 0x0068D4BF, plain ret at 0x0068D80D"
+0x0068D840,signature,"void * __thiscall f(void *this, void *out, unsigned int index)","ret 8 at 0x0068D89B, out returned in eax (0x0068D895)"
+0x0068D8A0,signature,"bool __thiscall f(void *this, unsigned int lineIndex)","ret 4 at 0x0068D8EC, the bool made at 0x0068D8E2"
+0x0068DDD0,signature,"void __thiscall f(void *this, float dt)",ret 4 at 0x0068E248; dt read as [ebp+8] at 0x0068DE36
+0x0068EF10,signature,void __thiscall f(void *this),plain ret at 0x0068F088
+0x0068F090,signature,"void * __thiscall f(void *this, unsigned int flags)","sub ecx,N then jmp 0x0068FA50 (ret 4)"
+0x0068F0A0,signature,"void * __thiscall f(void *this, unsigned int flags)","sub ecx,N then jmp 0x0068FA50 (ret 4)"
+0x0068F0B0,signature,"void * __thiscall f(void *this, unsigned int flags)","sub ecx,N then jmp 0x0068FA50 (ret 4)"
+0x0068F0C0,signature,void * __thiscall f(void *this),returns the constant 0x00C01A38 in eax
+0x0068F280,signature,void __thiscall f(void *this),"two registrations, plain ret"
+0x0068F2A0,signature,void __thiscall f(void *this),plain ret at 0x0068F2FB
+0x0068F6B0,signature,void __thiscall f(void *this),"plain ret at 0x0068F799, ecx to ebp at 0x0068F6BF"
+0x0068F7A0,signature,void __thiscall f(void *this),"plain ret at 0x0068F817, ecx+0x1B8 at 0x0068F7AB"
+0x0068FA50,signature,"void * __thiscall f(void *this, unsigned int flags)","ret 4 at 0x0068FA6B, flag test at 0x0068FA58"
+0x0068FA70,signature,void __thiscall f(void *this),plain ret at 0x0068FD9F
+0x0068FDA0,signature,"bool __thiscall f(void *this, void *data)","ret 4 at 0x0068FDC1, 0x0068FE36, 0x0068FE3D"
+0x0068FE40,signature,void __thiscall f(void *this),plain ret at 0x0068FF06
+0x00690700,signature,void __thiscall f(void *this),plain ret at 0x0069072B
+0x00690730,signature,"void * __thiscall f(void *this, void *src)","ret 4 at 0x0069079C, this returned"
+0x00690E70,signature,"void * __thiscall f(void *this, int arg1, void *camera)","ret 8 at 0x006910CD, args passed to 0x00694210 (ret 8)"
+0x006910D0,signature,"void __thiscall f(void *this, int arg)",ret 4 at 0x006913D2
+0x006918F0,signature,"void * __thiscall f(void *this, void *src)",ret 4 at 0x00691C7A
+0x00691C80,signature,void * __thiscall f(void *this),"plain ret, new object in eax"
+0x00691CF0,signature,"void * __thiscall f(void *this, void *out)","ret 4 at 0x00691D10, out returned"
+0x00691D20,signature,"bool __thiscall f(void *this, void *data)",ret 4 at 0x00691D41 and 0x00691D54
+0x00691E70,signature,void __thiscall f(void *this),plain ret at 0x00691ED3
+0x00691EE0,signature,"bool __thiscall f(void *this, unsigned int objectId)",ret 4 at 0x00691EFD and 0x00691F02
+0x00691F10,signature,void __thiscall f(void *this),plain ret at 0x00691F34
+0x00691F40,signature,void __thiscall f(void *this),plain ret at 0x00691FE2
+0x006920B0,signature,"void __thiscall f(void *this, void *text)",ret 4 at 0x00692146
+0x00692150,signature,void * __cdecl f(void *name),"plain ret at 0x006921D4 and 0x006921FC, the argument read at 0x0069218F"
+0x00692200,signature,bool __thiscall f(void *this),"plain ret, bool made by neg/sbb/add at 0x00692219"
+0x00692230,signature,"void * __thiscall f(void *this, unsigned int flags)","ret 4 at 0x0069224C, flag test at 0x00692230"
+0x00692250,signature,void __thiscall f(void *this),plain ret at 0x006922C5
+0x006922D0,signature,unsigned char __thiscall f(void *this),"mov al,[ecx+0xCC]; ret"
+0x006922E0,signature,"void * __thiscall f(void *this, unsigned int flags)","sub ecx,N then jmp 0x00692820 (ret 4)"
+0x006922F0,signature,"void * __thiscall f(void *this, unsigned int flags)","sub ecx,N then jmp 0x00692820 (ret 4)"
+0x00692300,signature,"void * __thiscall f(void *this, unsigned int flags)","sub ecx,N then jmp 0x00692820 (ret 4)"
+0x00692310,signature,void * __thiscall f(void *this),returns the constant 0x00C01C38
+0x00692340,signature,"void * __thiscall f(void *this, void *src)",ret 4 at 0x0069244B
+0x00692450,signature,"void __thiscall f(void *this, int arg)",ret 4 at 0x00692714
+0x006927B0,signature,void * __thiscall f(void *this),"plain ret, new object in eax"
+0x00692820,signature,"void * __thiscall f(void *this, unsigned int flags)",ret 4 at 0x0069283B
+0x00692840,signature,"void * __thiscall f(void *this, int arg1, void *camera)",ret 8 at 0x0069297D
+0x00692980,signature,void __thiscall f(void *this),plain ret at 0x00692C5D
+0x00692C60,signature,"void __thiscall f(void *this, float dt)","ret 4 at 0x00692D6F, dt read at 0x00692C76"
+0x00692D90,signature,void __thiscall f(void *this),"tail call, no stack args"
+0x00692DA0,signature,void __thiscall f(void *this),plain ret at 0x00692DEA
+0x00694210,signature,"void * __thiscall f(void *this, int arg1, void *camera)","ret 8 at 0x0069426F, arg 2 stored in +0x58 (0x00694262)"
+0x00694280,signature,void __thiscall f(void *this),tail jmp 0x005C5B30
+0x006942A0,signature,"bool __thiscall f(void *this, void *data)","ret 4 at 0x006942B0, al = 1"
+0x006942C0,signature,"void __thiscall f(void *this, float dt)",ret 4 at 0x006942D4/0x006942D5
+0x006942E0,signature,void __thiscall f(void *this),plain ret at 0x0069433D
+0x00694340,signature,void __cdecl f(void),"stores into globals only, plain ret"
+0x006945A0,signature,"void __thiscall f(void *this, int arg)",ret 4 at 0x00694630
+0x006946E0,signature,"void __thiscall f(void *this, bool paused)","ret 4 at 0x00694720, byte arg tested at 0x006946E0"
+0x00694800,signature,"void __thiscall f(void *this, float dt)",ret 4 at 0x00694873
+0x00694880,signature,"void __thiscall f(void *this, float dt)","ret 4 at 0x00694989, dt added at 0x00694911"
+0x006949A0,signature,void __cdecl f(void),"uses the app global only, tail jmp 0x0060BA80"
+0x006949C0,signature,void __cdecl f(void),"uses the app global only, plain ret"
+0x00694AE0,signature,void __thiscall f(void *this),plain ret at 0x00694C1D
+0x00694C20,signature,void __thiscall f(void *this),tail jmp 0x00694A60
+0x0069D450,signature,void __thiscall f(void *this),"plain ret at 0x0069D539, ecx to edi at 0x0069D454"
+0x006BCF50,signature,void __thiscall f(void *this),plain ret at 0x006BD0D3
+0x006C37A0,signature,"unsigned char __thiscall f(void *this, unsigned int *id)","ret 4, ecx read at 0x6C37A8, pointer to the id passed on"
+0x006C4070,signature,void __thiscall f(void *this),plain ret at 0x006C4128
+0x006C4AF0,signature,"void __thiscall f(void *this, void *player)",ret 4 at 0x006C4B12
+0x006C50B0,signature,void __thiscall f(void *this),plain ret at 0x006C50F2
+0x006C5110,signature,void __thiscall f(void *this),plain ret at 0x006C5166
+0x006C5170,signature,void __thiscall f(void *this),plain ret at 0x006C51D5
+0x006C51E0,signature,bool __thiscall f(void *this),"sete cl at 0x006C51EB, plain ret"
+0x006C5200,signature,void __cdecl f(void),"no this, calls singletons only, plain ret at 0x006C5272"
+0x006C5280,signature,"void __thiscall f(void *this, float *out)","ret 4, ecx read at 0x6C5284"
