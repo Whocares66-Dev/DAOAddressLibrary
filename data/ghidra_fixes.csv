@@ -8378,3 +8378,43 @@ address,what,value,why
 0x007B1680,signature,void __thiscall GUI::GUIPaperdoll::CommandCreateCreature::Finish(void * this),plain ret; slot 2
 0x007B16F0,signature,void __thiscall GUI::GUIPaperdoll::CommandCreateMorph::Finish(void * this),plain ret; slot 2
 0x007B1720,signature,void __thiscall GUI::GUIPaperdoll::RefreshTokens(void * this),"add ecx,0x8C; jmp 0x005C7CE0"
+0x007B2230,signature,void __thiscall GUI::GUIPaperdoll::RemovePaperCreature(void* this),"plain ret; reads ecx (mov edi,ecx at 0x007B2232)"
+0x007B22A0,signature,"void __thiscall GUI::GUIPaperdoll::SetOrientation(void* this, float* quaternion)",ret 4; reads ecx+0x120 at 0x007B22A7
+0x007B2730,signature,"void __thiscall PortraitSettings::CopyFrom(void* this, void* source)","ret 4; this = destination record (mov esi,ecx), source at [esp+0x14]"
+0x007B27F0,signature,"void* __thiscall ECBase::ECDynArray<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::At(void* this, unsigned int index)",ret 4; reads [ecx+4]
+0x007B2830,signature,"void* __thiscall ECBase::ECDynArray<GUI::GUIPaperdoll::CharData*>::At(void* this, unsigned int index)",ret 4; reads [ecx+4]
+0x007B2A30,signature,void __thiscall GUI::GUIPaperdoll::CommandCreateMorph::~CommandCreateMorph(void* this),"plain ret; mov esi,ecx"
+0x007B2AD0,signature,"void* __thiscall GUI::GUIPaperdoll::CommandCreateMorph::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x007B4210,signature,"void __thiscall GUI::GUIPaperdoll::LoadHeadFromCharFile(void* this, void* fileName)",ret 4 at 0x007B4466; reads ecx
+0x007B6FD0,signature,void __thiscall GUI::GUIPaperdoll::CharData::~CharData(void* this),plain ret
+0x007B7A60,signature,void* __thiscall GUI::GUIPaperdoll::CharData::CharData(void* this),plain ret at 0x007B7F85
+0x007B7F90,signature,"void* __thiscall [thunk]:GUI::GUIPaperdoll::CharData::`scalar deleting destructor'`adjustor{28}'(void* this, unsigned int flags)","sub ecx,0x1C; jmp 0x007B7FC0 (ret 4 there)"
+0x007B7FA0,signature,"void* __thiscall [thunk]:GUI::GUIPaperdoll::CharData::`scalar deleting destructor'`adjustor{32}'(void* this, unsigned int flags)","sub ecx,0x20; jmp 0x007B7FC0"
+0x007B7FB0,signature,"void* __thiscall [thunk]:GUI::GUIPaperdoll::CharData::`scalar deleting destructor'`adjustor{8}'(void* this, unsigned int flags)","sub ecx,8; jmp 0x007B7FC0"
+0x007B7FC0,signature,"void* __thiscall GUI::GUIPaperdoll::CharData::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x007B7FE0,signature,"void* __thiscall GUI::GUIPaperdoll::CharData::CharData(void* this, void* other)",ret 4 at 0x007B846D
+0x007B8470,signature,"void __thiscall GUI::GUIPaperdoll::Refresh(void* this, void* hero, bool loadPreset, bool noPoseSync)","ret 0xC at 0x007B85FA; args [esp+0x2C], [esp+0x30], [esp+0x34] after the prologue"
+0x007B8870,signature,void __thiscall GUI::GUIPaperdoll::RefreshSourceCreature(void* this),plain ret; reads [ecx+0x58]
+0x007BA7F0,signature,"void __cdecl GUI::GUIPaperdoll::ReadCharFile(void* fileName, void* charData)","plain ret at 0x007BADFF; caller cleans with add esp,8 (0x007BB4D3); the decompiler's Resources::Find(local, param_1, 3) is 0x004D5BA0(&out, name, [0xAF046C])"
+0x007BB080,clear,thunk_FUN_007b8d10,auto label; the target 0x007B8D10 is GUI::GUIPaperdoll::Shutdown (see the names file); name the thunk with it
+0x007BC600,signature,"void __thiscall GUI::GUIPaperdoll::BindToMovie(void* this, void* movie)",ret 4 at 0x007BC6BC; movie in edi from [esp+0x38]
+0x007BCAA0,signature,void __thiscall GUI::GUIPaperdoll::~GUIPaperdoll(void* this),plain ret at 0x007BCCD7
+0x007BCCE0,signature,"void* __thiscall [thunk]:GUI::GUIPaperdoll::`scalar deleting destructor'`adjustor{8}'(void* this, unsigned int flags)","sub ecx,8; jmp 0x007BD620"
+0x007BCCF0,signature,"void* __thiscall [thunk]:GUI::GUIPaperdoll::`scalar deleting destructor'`adjustor{28}'(void* this, unsigned int flags)","sub ecx,0x1C; jmp 0x007BD620"
+0x007BCD00,signature,"void* __thiscall [thunk]:GUI::GUIPaperdoll::`scalar deleting destructor'`adjustor{32}'(void* this, unsigned int flags)","sub ecx,0x20; jmp 0x007BD620"
+0x007BCD10,signature,void* __thiscall GUI::GUIPaperdoll::GetClassInfo(void* this),vftable slot 0; plain ret; never reads ecx
+0x007BD620,signature,"void* __thiscall GUI::GUIPaperdoll::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x007BD640,signature,void __thiscall GUI::GUIPaperdoll::RegisterMessageHandlers(void* this),vftable slot 3; never reads ecx; tail jmp 0x007BBE80
+0x007BD8F0,signature,void __thiscall GUI::GUIPaperdoll::RegisterClass(void* this),vftable slot 2; never reads ecx
+0x007BDEE0,clear,SmartData::TokenStringNotifier::TokenStringNotifier,"misleading: it is GUIPaperdoll's copy constructor (sets the four GUIPaperdoll vftables, copies +0x58..+0x318; only caller GUIPaperdoll::Clone 0x007BE464)"
+0x007BDEE0,signature,"void* __thiscall GUI::GUIPaperdoll::GUIPaperdoll(void* this, void* other)",ret 4 at 0x007BE2F7
+0x007BE420,signature,void* __thiscall GUI::GUIPaperdoll::Clone(void* this),plain ret; new 0x320 + copy ctor
+0x007BE490,signature,"void __thiscall GUI::GUIPaperdoll::WriteCharFile(void* this, void* path)",ret 4 at 0x007BFD00
+0x007C0190,signature,void __thiscall GUI::GUIPaperdoll::UpdateCharGenScreenshot(void* this),plain ret at 0x007C0470
+0x007C0AC0,signature,"void* __thiscall GUI::ComposeMorphTask::ComposeMorphTask(void* this, void* headPartsSlot, void* partNamesSlot)","ret 8; arg1 stored at +0x84 and arg2 at +0x88 (0x007C0B14-0x007C0B31), the decompiler swaps them"
+0x007C0BD0,signature,"void* __thiscall GUI::ComposeMorphTask::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x007C0BF0,signature,void __thiscall GUI::GUIPaperdoll::CommandCreateCreature::Execute(void* this),plain ret; the decompiler's field names are off by 4 (its data struct starts at +4)
+0x007C11D0,signature,void __thiscall GUI::GUIPaperdoll::CommandCreateMorph::Execute(void* this),plain ret; decompiler offsets off by 4; 0x00809980 is called with ecx = the paperdoll ([esi+0x18]) and task+0x1C pushed
+0x007C1390,signature,void __thiscall GUI::GUIPaperdoll::CommandApplyMorph::Execute(void* this),"plain ret; the decompiler mangles this as this[3].vftablePtr[..]: +0xC is the paperdoll, +8 the sequence number"
+0x007BFE10,clear,EquipmentChangedMessage::EquipmentChangedMessage,"outside this batch, seen at 0x007C030B: misleading, it is GUIPaperdoll's constructor (called after new 0x320 with (-1,-1); dev/CHARGEN.md)"
+0x007B2AD0,clear,vfunction1,"misleading: slot 0 of CommandCreateMorph's vftable 0x00B21848, the scalar deleting destructor (calls 0x007B2A30, operator delete on bit 0); from reading B"
