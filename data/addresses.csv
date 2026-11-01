@@ -22988,57 +22988,57 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 22987,function,,0x00849290,0x0048f2a0,0x00849290
 22988,function,,0x00849380,0x0048f390,0x00849380
 22989,function,,0x008493c0,0x0048f3d0,0x008493c0
-22990,function,,0x008495b0,0x0048f5c0,0x008495b0
-22991,function,,0x00849650,0x0048f660,0x00849650
-22992,function,,0x00849690,0x0048f6a0,0x00849690
-22993,function,,0x00849780,0x0048f790,0x00849780
-22994,function,,0x00849820,0x0048f830,0x00849820
-22995,function,,0x00849960,0x0048f970,0x00849960
-22996,function,,0x00849980,0x0048f990,0x00849980
-22997,function,,0x00849b90,0x0048fba0,0x00849b90
-22998,function,,0x00849c50,0x0048c4c0,0x00849c50
-22999,function,,0x00849c80,0x0048c4f0,0x00849c80
-23000,function,,0x00849da0,0x0048c610,0x00849da0
-23001,function,,0x00849df0,0x0048c660,0x00849df0
-23002,function,,0x00849ea0,0x00762670,0x00849ea0
+22990,function,"std::map<TexManager::TextureShape,std::vector<TexManager::PoolEntry>>::map",0x008495b0,0x0048f5c0,0x008495b0
+22991,function,"std::map<TexManager::TextureShape,std::vector<TexManager::PoolEntry>>::~map",0x00849650,0x0048f660,0x00849650
+22992,function,"std::map<TexManager::TextureShape,std::vector<TexManager::PoolEntry>>::operator[]",0x00849690,0x0048f6a0,0x00849690
+22993,function,TexManager::TexturePool::~TexturePool,0x00849780,0x0048f790,0x00849780
+22994,function,TexManager::TexturePool::PreallocateTextures,0x00849820,0x0048f830,0x00849820
+22995,function,TexManager::TexturePool::Initialize,0x00849960,0x0048f970,0x00849960
+22996,function,TexManager::TexturePool::AcquireTexture,0x00849980,0x0048f990,0x00849980
+22997,function,TexManager::TexturePool::TexturePool,0x00849b90,0x0048fba0,0x00849b90
+22998,function,std::vector<void *>::operator[],0x00849c50,0x0048c4c0,0x00849c50
+22999,function,TexManager::TextureLoadTaskPool::Free,0x00849c80,0x0048c4f0,0x00849c80
+23000,function,TexManager::TextureLoadTaskPool::FreeAll,0x00849da0,0x0048c610,0x00849da0
+23001,function,TexManager::TextureLoadTaskPool::~TextureLoadTaskPool,0x00849df0,0x0048c660,0x00849df0
+23002,function,"stdext::_Hash<stdext::_Hmap_traits<std::wstring,void *>>::_Hash",0x00849ea0,0x00762670,0x00849ea0
 23003,function,,0x00849f20,0x0048c840,0x00849f20
-23004,function,,0x0084a4d0,0x0048cdf0,0x0084a4d0
-23005,function,,0x0084a580,0x0048cea0,0x0084a580
-23006,function,,0x0084a670,0x0061cad0,0x0084a670
-23007,function,,0x0084a740,0x0048d060,0x0084a740
-23008,function,,0x0084a7d0,0x00763c60,0x0084a7d0
+23004,function,TexManager::TextureLoadTaskPool::AddBlock,0x0084a4d0,0x0048cdf0,0x0084a4d0
+23005,function,TexManager::TextureLoadTaskPool::Alloc,0x0084a580,0x0048cea0,0x0084a580
+23006,function,"stdext::hash_map<std::wstring,void *>::operator[]",0x0084a670,0x0061cad0,0x0084a670
+23007,function,TexManager::TextureLoadTaskPool::TextureLoadTaskPool,0x0084a740,0x0048d060,0x0084a740
+23008,function,"stdext::hash_map<std::wstring,void *>::hash_map",0x0084a7d0,0x00763c60,0x0084a7d0
 23009,function,,0x0084a840,0x0048d0f0,0x0084a840
 23010,function,,0x0084a8c0,0x0048d170,0x0084a8c0
 23011,function,,0x0084a930,0x0048d1e0,0x0084a930
 23012,function,,0x0084aa40,0x0048d2f0,0x0084aa40
-23013,function,,0x0084aa60,0x0048d310,0x0084aa60
-23014,function,,0x0084aac0,0x0048d370,0x0084aac0
-23015,function,,0x0084abb0,0x0048d460,0x0084abb0
-23016,function,,0x0084ac60,0x0048d510,0x0084ac60
-23017,function,,0x0084acc0,0x0048d570,0x0084acc0
-23018,function,,0x0084ae70,0x0048fc60,0x0084ae70
-23019,function,,0x0084ae90,0x0048fc80,0x0084ae90
-23020,function,,0x0084aeb0,0x0048fca0,0x0084aeb0
-23021,function,,0x0084aed0,0x0048fcc0,0x0084aed0
+23013,function,TexManager::PendingLoads::PendingLoads,0x0084aa60,0x0048d310,0x0084aa60
+23014,function,TexManager::PendingLoads::~PendingLoads,0x0084aac0,0x0048d370,0x0084aac0
+23015,function,TexManager::PendingLoads::WaitAndClear,0x0084abb0,0x0048d460,0x0084abb0
+23016,function,TexManager::TextureLoadTaskPool::AllocateTask,0x0084ac60,0x0048d510,0x0084ac60
+23017,function,TexManager::PendingLoads::QueueLoad,0x0084acc0,0x0048d570,0x0084acc0
+23018,function,TexManager::DDS::IsDXT1,0x0084ae70,0x0048fc60,0x0084ae70
+23019,function,TexManager::DDS::IsDXT3,0x0084ae90,0x0048fc80,0x0084ae90
+23020,function,TexManager::DDS::IsDXT5,0x0084aeb0,0x0048fca0,0x0084aeb0
+23021,function,TexManager::DDS::IsATI2,0x0084aed0,0x0048fcc0,0x0084aed0
 23022,function,,0x0084aef0,0x0048fce0,0x0084aef0
-23023,function,,0x0084af10,0x0048fd00,0x0084af10
-23024,function,,0x0084af60,0x0048fd50,0x0084af60
-23025,function,,0x0084afa0,0x0048fd90,0x0084afa0
-23026,function,,0x0084afe0,0x0048fdd0,0x0084afe0
-23027,function,,0x0084b020,0x0048fe10,0x0084b020
-23028,function,,0x0084b040,0x0048fe30,0x0084b040
-23029,function,,0x0084b070,0x0048fe60,0x0084b070
-23030,function,,0x0084b0c0,0x0048feb0,0x0084b0c0
+23023,function,TexManager::DDS::IsA8R8G8B8,0x0084af10,0x0048fd00,0x0084af10
+23024,function,TexManager::DDS::IsR8G8B8,0x0084af60,0x0048fd50,0x0084af60
+23025,function,TexManager::DDS::IsX8R8G8B8,0x0084afa0,0x0048fd90,0x0084afa0
+23026,function,TexManager::DDS::IsA4R4G4B4,0x0084afe0,0x0048fdd0,0x0084afe0
+23027,function,TexManager::DDS::IsFloatFourCC,0x0084b020,0x0048fe10,0x0084b020
+23028,function,TexManager::DDS::IsL8,0x0084b040,0x0048fe30,0x0084b040
+23029,function,TexManager::DDS::IsCubeMap,0x0084b070,0x0048fe60,0x0084b070
+23030,function,TexManager::DDS::IsVolume,0x0084b0c0,0x0048feb0,0x0084b0c0
 23031,function,,0x0084b0e0,0x0048fed0,0x0084b0e0
-23032,function,,0x0084b1b0,0x0048ffa0,0x0084b1b0
-23033,function,,0x0084b1d0,0x0048ffc0,0x0084b1d0
-23034,function,,0x0084b280,0x00490070,0x0084b280
-23035,function,,0x0084b450,0x00490240,0x0084b450
-23036,function,,0x0084b630,0x00490420,0x0084b630
+23032,function,TexManager::LargestPowerOfTwoBelow,0x0084b1b0,0x0048ffa0,0x0084b1b0
+23033,function,TexManager::CreateVolumeTextureFallback,0x0084b1d0,0x0048ffc0,0x0084b1d0
+23034,function,TexManager::CreateTexture2DFromDDS,0x0084b280,0x00490070,0x0084b280
+23035,function,TexManager::CreateCubeTextureFromDDS,0x0084b450,0x00490240,0x0084b450
+23036,function,TexManager::CreateVolumeTextureFromDDS,0x0084b630,0x00490420,0x0084b630
 23037,function,,0x0084b7c0,0x004905b0,0x0084b7c0
-23038,function,,0x0084b800,0x004905f0,0x0084b800
-23039,function,,0x0084bb30,0x00490920,0x0084bb30
-23040,function,,0x0084bd50,0x00490b40,0x0084bd50
+23038,function,TexManager::CreateCompressedTexture2DFromDDS,0x0084b800,0x004905f0,0x0084b800
+23039,function,TexManager::CreateCompressedVolumeTextureFromDDS,0x0084bb30,0x00490920,0x0084bb30
+23040,function,TexManager::CreateCompressedCubeTextureFromDDS,0x0084bd50,0x00490b40,0x0084bd50
 23041,function,,0x0084bf60,0x00490d50,0x0084bf60
 23042,function,TexManager::MakeTexture,0x0084bfa0,0x00490d90,0x0084bfa0
 23043,function,,0x0084c010,0x00490e00,0x0084c010
@@ -23048,20 +23048,20 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 23047,function,,0x0084c460,0x00491250,0x0084c460
 23048,function,,0x0084c490,0x00491280,0x0084c490
 23049,function,,0x0084c4c0,0x004912b0,0x0084c4c0
-23050,function,,0x0084c590,0x00491380,0x0084c590
+23050,function,TexManager::CreateTextureFromTGA,0x0084c590,0x00491380,0x0084c590
 23051,function,FacialAnimation::FacialAnimationManager::Allocate,0x0084c600,0x00482870,0x0084c600
 23052,function,FacialAnimation::FacialAnimationManager::AllocateDebug,0x0084c620,0x00482890,0x0084c620
 23053,function,FacialAnimation::FacialAnimationManager::Free,0x0084c630,0x004828a0,0x0084c630
-23054,function,,0x0084c650,0x004828c0,0x0084c650
-23055,function,,0x0084c660,0x004828d0,0x0084c660
-23056,function,,0x0084c6a0,0x00482910,0x0084c6a0
+23054,function,OC3Ent::Face::FxFree,0x0084c650,0x004828c0,0x0084c650
+23055,function,OC3Ent::Face::FxWString::WidenChars,0x0084c660,0x004828d0,0x0084c660
+23056,function,OC3Ent::Face::FxWString::FxWString,0x0084c6a0,0x00482910,0x0084c6a0
 23057,function,OC3Ent::Face::FxString::~FxString,0x0084c6f0,0x009e4670,0x0084c6f0
 23058,function,FacialAnimation::FacialAnimationManager::Initialize,0x0084c720,0x00482960,0x0084c720
 23059,function,FacialAnimation::CreateFxActor,0x0084c7f0,0x00482a30,0x0084c7f0
 23060,function,FacialAnimation::CreateFxAnimSet,0x0084c860,0x00482aa0,0x0084c860
-23061,function,,0x0084c8d0,0x00482b70,0x0084c8d0
-23062,function,,0x0084c930,0x00482bd0,0x0084c930
-23063,function,,0x0084c9f0,0x0060b4a0,0x0084c9f0
+23061,function,OC3Ent::Face::FxString::FxString,0x0084c8d0,0x00482b70,0x0084c8d0
+23062,function,OC3Ent::Face::FxString::FxString,0x0084c930,0x00482bd0,0x0084c930
+23063,function,"std::_Distance2<std::list<?>::const_iterator,unsigned int>",0x0084c9f0,0x0060b4a0,0x0084c9f0
 23064,function,OC3Ent::Face::FxString::Substring,0x0084ca40,0x00482c90,0x0084ca40
 23065,function,OC3Ent::Face::FxString::ToWide,0x0084ca90,0x00482ce0,0x0084ca90
 23066,function,FacialAnimation::FacialAnimationManager::UpdatePlayers,0x0084caf0,0x00482d40,0x0084caf0
@@ -23115,11 +23115,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 23114,function,,0x0084ee80,0x004854a0,0x0084ee80
 23115,function,,0x0084eeb0,0x004854d0,0x0084eeb0
 23116,function,FacialAnimation::FacialAnimationPlayer::PlayAnimation,0x0084eef0,0x00485510,0x0084eef0
-23117,function,,0x0084f070,0x004856d0,0x0084f070
-23118,function,,0x0084f0a0,0x00485700,0x0084f0a0
-23119,function,,0x0084f0d0,0x004857b0,0x0084f0d0
-23120,function,,0x0084f110,0x004857f0,0x0084f110
-23121,function,,0x0084f140,0x00485820,0x0084f140
+23117,function,"std::copy_backward<FacialAnimation::FacialAnimationPlayer::PoseEntry *,FacialAnimation::FacialAnimationPlayer::PoseEntry *>",0x0084f070,0x004856d0,0x0084f070
+23118,function,"std::_Uninit_fill_n<FacialAnimation::FacialAnimationPlayer::PoseEntry *,unsigned int,FacialAnimation::FacialAnimationPlayer::PoseEntry,std::allocator<FacialAnimation::FacialAnimationPlayer::PoseEntry>>",0x0084f0a0,0x00485700,0x0084f0a0
+23119,function,"std::uninitialized_fill_n<FacialAnimation::FacialAnimationPlayer::PoseEntry *,unsigned int,FacialAnimation::FacialAnimationPlayer::PoseEntry>",0x0084f0d0,0x004857b0,0x0084f0d0
+23120,function,"std::uninitialized_copy<FacialAnimation::FacialAnimationPlayer::PoseEntry *,FacialAnimation::FacialAnimationPlayer::PoseEntry *>",0x0084f110,0x004857f0,0x0084f110
+23121,function,std::vector<FacialAnimation::FacialAnimationPlayer::PoseEntry>::erase,0x0084f140,0x00485820,0x0084f140
 23122,function,,0x0084f1a0,0x00485ae0,0x0084f1a0
 23123,function,,0x0084f370,0x00485cb0,0x0084f370
 23124,function,,0x0084f37c,0x00485cbc,0x0084f37c
@@ -23147,17 +23147,17 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 23146,function,XMLParser2::XMLParser::~XMLParser,0x00851710,0x00a57c80,0x00851710
 23147,function,XMLParser2::CreateXMLParser,0x00851740,0x00a57cb0,0x00851740
 23148,function,XMLParser2::XMLParser::`scalar deleting destructor',0x008517b0,0x00a57d20,0x008517b0
-23149,function,,0x008517d0,0x00a57d40,0x008517d0
-23150,function,,0x00851830,0x00a57da0,0x00851830
-23151,function,,0x00851850,0x00a57dc0,0x00851850
-23152,function,,0x008519d0,0x00a57f40,0x008519d0
-23153,function,,0x008519f0,0x00a57f60,0x008519f0
-23154,function,,0x00851a10,0x00a57f80,0x00851a10
-23155,function,,0x00851a40,0x00a57fb0,0x00851a40
-23156,function,,0x00851ab0,0x00a58020,0x00851ab0
-23157,function,,0x00851cc0,0x00a58230,0x00851cc0
-23158,function,,0x00851ce0,0x00a58250,0x00851ce0
-23159,function,,0x00851e00,0x00a586d0,0x00851e00
+23149,function,std::vector<XMLParser2::IBuilder *>::back,0x008517d0,0x00a57d40,0x008517d0
+23150,function,XMLParser2::ExpatParser::CharacterData,0x00851830,0x00a57da0,0x00851830
+23151,function,XMLParser2::ExpatParser::EndElement,0x00851850,0x00a57dc0,0x00851850
+23152,function,XMLParser2::ExpatParser::CharacterDataHandler,0x008519d0,0x00a57f40,0x008519d0
+23153,function,XMLParser2::ExpatParser::EndElementHandler,0x008519f0,0x00a57f60,0x008519f0
+23154,function,XMLParser2::ExpatParser::ExpatParser,0x00851a10,0x00a57f80,0x00851a10
+23155,function,XMLParser2::ExpatParser::~ExpatParser,0x00851a40,0x00a57fb0,0x00851a40
+23156,function,XMLParser2::ExpatParser::StartElement,0x00851ab0,0x00a58020,0x00851ab0
+23157,function,XMLParser2::ExpatParser::StartElementHandler,0x00851cc0,0x00a58230,0x00851cc0
+23158,function,XMLParser2::ExpatParser::Parse,0x00851ce0,0x00a58250,0x00851ce0
+23159,function,String::EqualsNoCase,0x00851e00,0x00a586d0,0x00851e00
 23160,function,XMLParser2::SimpleXMLBuilderHelper::~SimpleXMLBuilderHelper,0x00852030,0x00a58a20,0x00852030
 23161,function,XMLParser2::SimpleXMLBuilder::Parse,0x00852060,0x00a58a50,0x00852060
 23162,function,XMLParser2::SimpleXMLBuilderHelper::SimpleXMLBuilderHelper,0x00852080,0x00a58a70,0x00852080
@@ -23511,7 +23511,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 23510,function,,0x00866cd0,0x0046cb10,0x00866cd0
 23511,function,,0x00866e00,0x0046cc40,0x00866e00
 23512,function,,0x00867670,0x0046d4b0,0x00867670
-23513,function,,0x008676d0,0x00401bd0,0x008676d0
+23513,function,std::vector<void *>::vector,0x008676d0,0x00401bd0,0x008676d0
 23514,function,,0x00867740,0x0046d5f0,0x00867740
 23515,function,,0x00867830,0x0046d6e0,0x00867830
 23516,function,,0x008678a0,0x0046d750,0x008678a0
@@ -23643,21 +23643,21 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 23642,function,,0x0086b9a0,0x007f0dc0,0x0086b9a0
 23643,function,,0x0086ba80,0x004719f0,0x0086ba80
 23644,function,,0x0086bc90,0x00471c00,0x0086bc90
-23645,function,,0x0086bcc0,0x00471c30,0x0086bcc0
-23646,function,,0x0086bce0,0x00752cb0,0x0086bce0
-23647,function,,0x0086bd40,0x00471c60,0x0086bd40
-23648,function,,0x0086bdf0,0x00471d10,0x0086bdf0
-23649,function,,0x0086bee0,0x00746450,0x0086bee0
-23650,function,,0x0086bf10,0x00471e00,0x0086bf10
-23651,function,,0x0086c040,0x00471f30,0x0086c040
-23652,function,,0x0086c130,0x00472020,0x0086c130
-23653,function,,0x0086c1e0,0x004720d0,0x0086c1e0
-23654,function,,0x0086c240,0x007d2de0,0x0086c240
-23655,function,,0x0086c280,0x00472130,0x0086c280
-23656,function,,0x0086c2b0,0x00472160,0x0086c2b0
-23657,function,,0x0086c700,0x004725b0,0x0086c700
-23658,function,,0x0086c7c0,0x004726a0,0x0086c7c0
-23659,function,,0x0086c840,0x00472720,0x0086c840
+23645,function,D3DDriver::D3DDisplaySettings::SetFlags,0x0086bcc0,0x00471c30,0x0086bcc0
+23646,function,std::allocator<unsigned long long>::allocate,0x0086bce0,0x00752cb0,0x0086bce0
+23647,function,"std::_Push_heap<_D3DDISPLAYMODE *,int,_D3DDISPLAYMODE>",0x0086bd40,0x00471c60,0x0086bd40
+23648,function,"std::_Rotate<_D3DDISPLAYMODE *,int,_D3DDISPLAYMODE>",0x0086bdf0,0x00471d10,0x0086bdf0
+23649,function,std::vector<void *>::empty,0x0086bee0,0x00746450,0x0086bee0
+23650,function,std::_Med3<_D3DDISPLAYMODE *>,0x0086bf10,0x00471e00,0x0086bf10
+23651,function,"std::_Adjust_heap<_D3DDISPLAYMODE *,int,_D3DDISPLAYMODE>",0x0086c040,0x00471f30,0x0086c040
+23652,function,std::_Median<_D3DDISPLAYMODE *>,0x0086c130,0x00472020,0x0086c130
+23653,function,"std::_Make_heap<_D3DDISPLAYMODE *,int,_D3DDISPLAYMODE>",0x0086c1e0,0x004720d0,0x0086c1e0
+23654,function,"std::_Copy_backward_opt<unsigned int *,unsigned int *>",0x0086c240,0x007d2de0,0x0086c240
+23655,function,"std::copy_backward<unsigned int *,unsigned int *>",0x0086c280,0x00472130,0x0086c280
+23656,function,std::_Unguarded_partition<_D3DDISPLAYMODE *>,0x0086c2b0,0x00472160,0x0086c2b0
+23657,function,std::_Insertion_sort<_D3DDISPLAYMODE *>,0x0086c700,0x004725b0,0x0086c700
+23658,function,std::_Sort_heap<_D3DDISPLAYMODE *>,0x0086c7c0,0x004726a0,0x0086c7c0
+23659,function,"std::_Sort<_D3DDISPLAYMODE *,int>",0x0086c840,0x00472720,0x0086c840
 23660,function,,0x0086c930,0x007dc740,0x0086c930
 23661,function,,0x0086caa4,0x007dc8b4,0x0086caa4
 23662,function,,0x0086cab0,0x007dc8c0,0x0086cab0
