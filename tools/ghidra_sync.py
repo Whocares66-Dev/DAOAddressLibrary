@@ -263,7 +263,7 @@ class Server:
 
 def work(limit=None):
     """The table's rows and the fixes, as the script wants them."""
-    rows = []
+    rows, ours = [], {}
     with open(ROOT / "data" / "addresses.csv", newline="", encoding="utf-8") as f:
         for row in csv.DictReader(f):
             cell = row[BUILD]
@@ -271,13 +271,27 @@ def work(limit=None):
                 continue
             if row["kind"] == "data" and not row["name"]:
                 continue
-            rows.append((row["kind"], int(cell, 16), ghidra_parts(row["name"])))
+            parts = ghidra_parts(row["name"])
+            rows.append((row["kind"], int(cell, 16), parts))
+            if parts:
+                ours.setdefault(int(cell, 16), set()).update(
+                    {row["name"], "::".join(parts), parts[-1]}
+                )
     path = ROOT / "data" / "ghidra_fixes.csv"
     with open(path, newline="", encoding="utf-8") as f:
         fixes = [
             (int(row["address"], 16), row["what"], row["value"])
             for row in csv.DictReader(f)
         ]
+    # A clear of a label the table itself gives the address (an export's
+    # decorated name such as ?OnExit@GThread@@UAEXXZ, which readers asked to
+    # clear more than once) would be undone by the next run's names: such a
+    # line is dropped, not fought over.
+    fixes = [
+        (a, what, value)
+        for a, what, value in fixes
+        if what != "clear" or value not in ours.get(a, ())
+    ]
     return rows[:limit] if limit else rows, fixes
 
 

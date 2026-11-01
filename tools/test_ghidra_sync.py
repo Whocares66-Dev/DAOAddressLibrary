@@ -66,6 +66,18 @@ class Fixes(unittest.TestCase):
                     )
 
 
+class Clears(unittest.TestCase):
+    def test_a_clear_of_the_tables_own_name_is_dropped(self):
+        rows, fixes = work()
+        named = {}
+        for _kind, address, parts in rows:
+            if parts:
+                named.setdefault(address, set()).update({"::".join(parts), parts[-1]})
+        for address, what, value in fixes:
+            if what == "clear":
+                self.assertNotIn(value, named.get(address, set()), hex(address))
+
+
 class Work(unittest.TestCase):
     def test_reads_the_table_and_the_fixes(self):
         rows, fixes = work(limit=10)
