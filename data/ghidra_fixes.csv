@@ -9588,3 +9588,84 @@ address,what,value,why
 0x00A63D50,signature,"void __thiscall f(void* this, void* frame)","ret 4 at 0x00A63E02, ecx to esi at 0x00A63D6C"
 0x00A4DDA0,signature,"int __thiscall f(void* this, void* goalPoint, void* pathSearch)","ret 8 at 0x00A4E114, ecx read as this+0xD8; the caller pushes the PathSearch first and the goal point last (0x00A4E2C3), answers 3, 5 or 8"
 0x00A555B0,signature,"bool __thiscall f(void* this, void* environment, unsigned int start, unsigned int goal, void* outPath, int a5, float timeLimit, int a7)","ret 0x1C at 0x00A55806 (seven stack arguments), ecx to esi at 0x00A555B8"
+0x00767C80,signature,"void * __cdecl f(void *first, void *last, void *dest)",0x00767C80-0x00767CAA; 0x00765CC0 loop
+0x00767CB0,signature,"void __cdecl f(void *dest, unsigned int count, const void *val)",0x00767CB0-0x00767CDF
+0x00767CE0,signature,"void __cdecl f(void *dest, unsigned int count, const void *val)",0x00767CE0-0x00767D0C; 0x00689AD0 (vftables 0x00AED6AC/0x00AED694 are Attribute<unsigned int>)
+0x00767D10,signature,"void __cdecl f(void **first, void **last)",0x00767D10-0x00767EBD; call 0x00538240 shifts the run
+0x00767EE0,signature,"void * __cdecl f(void *ret, void *first, void *last, void *pred)",0x00767EE0-0x0076854F; call from _Sort 0x00769FA5
+0x00768550,signature,"void __cdecl f(void *first, void *last, void *pred)",0x00768550-0x0076876F; call from _Sort 0x0076A04C
+0x00768770,signature,"void __cdecl f(void *first, void *last, void *pred, void *dist, void *ty)",0x00768770-0x00768837; call from _Sort 0x0076A086
+0x00768840,signature,"void * __cdecl f(void *first, void *last, void *dest)",0x00768840-0x0076887D
+0x00768880,signature,"void __cdecl f(void **a, void **b, void **c, void *pred)",0x00768880-0x00768946
+0x00768950,signature,"void __cdecl f(void **first, int hole, int top, void *val, void *pred)",0x00768950-0x00768A2F
+0x00768A50,signature,"void __cdecl f(void *first, void *last, void *pred, void *ty)",0x00768A50-0x00768AD7; call from _Sort_heap 0x00769721
+0x00768B80,signature,"int __thiscall f(void *this, const void *value)","0x00768B80-0x00768C0B; callers 0x00740900, 0x00757B38, 0x0076C528 and others"
+0x00768CA0,signature,"void __cdecl f(void **first, void **mid, void **last, void *pred)",0x00768CA0-0x00768D41
+0x00768D50,signature,"void __cdecl f(void **first, int hole, int bottom, void *val, void *pred)",0x00768D50-0x00768E53
+0x00768E60,signature,"void __stdcall f(void *first, void *last)",0x00768E60-0x00768E80; caller 0x0076A370 sets ecx
+0x00768E90,signature,void __thiscall f(void *this),0x00768E90-0x00768ED5
+0x00768EE0,signature,"void * __thiscall f(void *this, void *dest, unsigned int count, const void *val)","0x00768EE0-0x00768F14; callers 0x00769A9F, 0x00769B9E set ecx"
+0x00768F20,signature,void __thiscall f(void *this),0x00768F20-0x00768F69
+0x00768F70,signature,"void * __thiscall f(void *this, void *dest, unsigned int count, const void *val)",0x00768F70-0x00768FAA
+0x00768FB0,signature,"void * __cdecl f(void *first, void *last, void *dest)",0x00768FB0-0x00768FF8; 0x0062AC60 assigns +0xC and +8 per element
+0x00769000,signature,"void * __thiscall f(void *this, void *first, void *last, void *dest)",0x00769000-0x00769026; caller 0x0076A3FF sets ecx
+0x00769030,signature,"void * __thiscall f(void *this, void *first, void *last, void *dest)",0x00769030-0x00769056; caller 0x0076A707 sets ecx
+0x00769060,signature,"void * __cdecl f(void *ret, void **first, void **last, void *pred)",0x00769060-0x007696AF
+0x007696B0,signature,"void __cdecl f(void **first, void **last, void *pred, void *dist, void *ty)",0x007696B0-0x007696EE
+0x007696F0,signature,"void __cdecl f(void *first, void *last, void *pred)",0x007696F0-0x00769747; call from _Sort 0x0076A095
+0x007697B0,signature,"void * __thiscall f(void *this, void *out, void *firstContainer, void *firstPtr, void *lastContainer, void *lastPtr)","0x007697B0-0x0076982B; ret 0x14 = out, first (container, pointer), last (container, pointer)"
+0x00769ED0,signature,"void * __thiscall f(void *this, void *out, void *whereContainer, void *wherePtr, const void *val)","0x00769ED0-0x00769F58; ret 0x10 = out, where (container, pointer), val"
+0x00769F60,signature,"void __cdecl f(void *first, void *last, int ideal, void *pred)",0x00769F60-0x0076A0A4; PARTY.md: the party picker sorts its entries by entry+0xC
+0x0076A0B0,signature,"void __cdecl f(void **first, void **last, void *pred)",0x0076A0B0-0x0076A0F9
+0x0076A2E0,signature,"void * __thiscall f(void *this, const void *other)",0x0076A2E0-0x0076A45B
+0x0076A460,signature,"void __thiscall f(void *this, unsigned int newSize, int v0, int v1, int v2, int v3, int v4, int v5, int v6, int v7, int v8, int v9, int v10, int v11, int v12)",0x0076A460-0x0076A573
+0x0076A580,signature,"void * __thiscall f(void *this, void *out, void *whereContainer, void *wherePtr, const void *val)",0x0076A580-0x0076A626; ret 0x10
+0x0076A630,signature,"void * __thiscall f(void *this, const void *other)",0x0076A630-0x0076A77F
+0x0076A780,signature,"void __thiscall f(void *this, unsigned int newSize, int v0, int v1, int v2, int v3)",0x0076A780-0x0076A86C
+0x0076A870,signature,"void * __thiscall f(void *this, const void *other)",0x0076A870-0x0076A8CC
+0x0076A8D0,signature,"void * __thiscall f(void *this, const void *other)",0x0076A8D0-0x0076A8E1
+0x0076A8F0,signature,"void __thiscall f(void *this, const void *val)","0x0076A8F0-0x0076A96F; callers 0x0076C537, 0x007BAB69"
+0x0076AE60,signature,"void * __thiscall f(void *this, void *out)","0x0076AE60-0x0076AE80; callers 0x0076CCE8, 0x0076CD2E, 0x007BB946, 0x007BB985; module+0x388 is the SharedCharacterStage (PARTY.md:482)"
+0x0076B590,signature,"void * __thiscall f(void *this, unsigned int count)","0x0076B590-0x0076B604; callers 0x0076B859, 0x0076BC27, 0x007B7B30"
+0x0076B830,signature,"void __cdecl f(void *unused, void *array)","0x0076B830-0x0076B890; sole caller 0x0076C667 pushes (X, local array)"
+0x007964F0,signature,void __cdecl f(void),"0x007964F0-0x007966C2; hashes 0x1F872A59 Stat, 0x12A02374 Type, 0x106CCDD5 EngineLink, 0x7A3DF160, 0xE24B074D; sole caller 0x00796B23 (inside 0x00796A"
+0x00796940,signature,"void __thiscall f(void *this, bool freeStorage)",0x00796940-0x00796A4A
+0x00796B50,signature,void __cdecl f(void *registry),"0x00796B50-0x00796CC1; fourcc 0x4C504D53 'SMPL', 0x52545441 'ATTR', 0x544C5044 'DPLT'"
+0x00796CD0,signature,"void __stdcall f(void *listHandle, void *properties)","0x00796CD0-0x00796FEB; ret 8: (list, array)"
+0x00796FF0,signature,void __thiscall f(void *this),0x00796FF0-0x00796FFA
+0x00797000,signature,"void __thiscall f(void *this, void *saveStruct, bool isHero)",0x00797000-0x007970C0; PROPERTIES.md:43 (GFF4 list 16350 = 0x3FDE)
+0x007987C0,signature,"void * __thiscall f(void *this, void *dest, unsigned int count, const void *val)","0x007987C0-0x007987F4; callers 0x00798945, 0x00798A20 set ecx; vftable 0x00B1FC74 is EquipmentSet"
+0x00798800,signature,"void * __thiscall f(void *this, void *first, void *last, void *dest)","0x00798800-0x00798826; callers 0x00798A03, 0x00798A7B set ecx"
+0x00798AD0,signature,"void __thiscall f(void *this, unsigned int newSize, int v0, int v1, int v2, int v3, int v4, int v5, int v6, int v7)",0x00798AD0-0x00798BB9
+0x00798DB0,signature,void __thiscall f(void *this),"0x00798DB0-0x00798DD5; vftable slot 87 of 0x00B1FEF4, 0x00B2083C, 0x00B20B54, 0x00B2020C, 0x00B20E6C, 0x00B20524"
+0x00799010,signature,"void __thiscall f(void *this, float *minX, float *minY, float *maxX, float *maxY)",0x00799010-0x0079912A; caller 0x0067DDAD (area-size product test)
+0x00799130,signature,"bool __thiscall f(void *this, const float *point)",0x00799130-0x00799347; vftable slot 96 (0x00B20074 in 0x00B1FEF4)
+0x00799350,signature,"void __thiscall f(void *this, int enterState)",0x00799350-0x00799376; caller 0x0067C380; AUDIO.md:230
+0x00799C30,signature,"void __thiscall f(void *this, unsigned int index, const float *vec3)","0x00799C30-0x00799C7A; SAVE_WRITER.md:426, :525 (AreaTriggerGeometry)"
+0x0079A770,signature,"void * __thiscall f(void *this, float *out, unsigned int index)","0x0079A770-0x0079A7D7; callers 0x0079A93A, 0x00A5BFAF"
+0x0079B840,signature,"void __cdecl f(void *templ, void *registry)",0x0079B840-0x0079B8A9
+0x0079B8B0,signature,"void __cdecl f(void *templ, void *registry)",0x0079B8B0-0x0079B92C
+0x0079B930,signature,"void __cdecl f(void *templ, void *registry)",0x0079B930-0x0079B958
+0x0079B960,signature,"void __cdecl f(void *templ, void *registry)",0x0079B960-0x0079B988; AUDIO.md:842
+0x0079B990,signature,"void __cdecl f(void *templ, void *registry)",0x0079B990-0x0079B9F7; AUDIO.md:230
+0x0079BA00,signature,"void __cdecl f(void *templ, void *registry)",0x0079BA00-0x0079BA36
+0x0079BA40,signature,void __cdecl f(void *registry),0x0079BA40-0x0079BACC; 0x52475254 'TRGR'
+0x0079BAD0,signature,void __cdecl f(void *registry),0x0079BAD0-0x0079BB5C; 0x50545254 'TRTP'
+0x0079BB60,signature,void __cdecl f(void *registry),0x0079BB60-0x0079BBEC; 0x54415254 'TRAT'
+0x0079BBF0,signature,void __cdecl f(void *registry),0x0079BBF0-0x0079BC7C; 0x52415254 'TRAR'
+0x0079BC80,signature,void __cdecl f(void *registry),0x0079BC80-0x0079BD0C; 0x4D415254 'TRAM'
+0x0079BD10,signature,void __cdecl f(void *registry),0x0079BD10-0x0079BD9C; 0x56415254 'TRAV'
+0x0079BDF0,signature,unsigned int __thiscall f(void *this),"0x0079BDF0-0x0079BE17; tables 0x0079BE18, 0x0079BE24"
+0x0079BE40,signature,"void __thiscall f(void *this, void *saveStruct)",0x0079BE40-0x0079BEC4; writer 0x00478420
+0x0079BED0,signature,"void __thiscall f(void *this, void *saveStruct)",0x0079BED0-0x0079BF0A
+0x0079BF10,signature,"void __thiscall f(void *this, void *saveStruct)","0x0079BF10-0x0079BF5F; jump tables 0x0079BF34, 0x0079BF40"
+0x0079BF60,signature,"bool __thiscall f(void *this, void *saveStruct)",0x0079BF60-0x0079BFEF
+0x0079C000,signature,"bool __thiscall f(void *this, void *saveStruct)",0x0079C000-0x0079C0B2
+0x0079C0C0,signature,"bool __thiscall f(void *this, void *saveStruct)","0x0079C0C0-0x0079C118; tables 0x0079C11C, 0x0079C128"
+0x0079C140,signature,"void __cdecl f(void *templ, void *registry)",0x0079C140-0x0079C1AF
+0x0079C1B0,signature,"void __cdecl f(void *templ, void *registry)",0x0079C1B0-0x0079C1E6
+0x0079C1F0,signature,void __cdecl f(void *registry),"0x0079C1F0-0x0079C2CD; 0x53414245 'EBAS', 0x52435345 'ESCR'"
+0x0079D280,signature,void __cdecl f(void *templ),0x0079D280-0x0079D297
+0x0079D2A0,signature,"void __cdecl f(void *templ, void *registry)",0x0079D2A0-0x0079D2C8; registered by 0x00796B50
+0x0079D2D0,signature,"void __cdecl f(void *templ, void *registry)",0x0079D2D0-0x0079D2F8
+0x0079D300,signature,"void __cdecl f(void *templ, void *registry)",0x0079D300-0x0079D352
