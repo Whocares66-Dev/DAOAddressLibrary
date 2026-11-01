@@ -1872,3 +1872,44 @@ address,what,value,why
 0x0048D190,signature,"void* __thiscall f(void* this, void* src)",ID 3543: convention from the ret and ecx use at 0x0048D190
 0x004984E0,signature,void __thiscall f(void* this),ID 3716: convention from the ret and ecx use at 0x004984E0
 0x00498540,signature,"void* __thiscall f(void* this, unsigned int flags)",ID 3717: convention from the ret and ecx use at 0x00498540
+0x00498550,signature,void __thiscall ~Attribute(void* this),"0x00498550-0x004985AA; vftables 0x00AEC43C/0x00AEC428, subject dtor 0x004C4E40; plain ret"
+0x004985B0,signature,"void* __thiscall ScalarDeletingDestructor(void* this, unsigned int flags)","0x004985B0 sub ecx,4; jmp 0x00498630"
+0x004985C0,signature,"void* __thiscall Set(void* this, short value)",0x004985C0-0x004985DE; slot 21 of 0x00AEC43C and 0x00B13B44
+0x004985F0,signature,double __thiscall GetNumber(void* this),fild of the movsx'd Get at 0x004985F9; plain ret
+0x00498610,signature,"void* __thiscall ScalarDeletingDestructor(void* this, unsigned int flags)",0x00498610-0x0049862B; vftable 0x00AEC3CC
+0x00498630,signature,"void* __thiscall ScalarDeletingDestructor(void* this, unsigned int flags)","0x00498630 calls 0x00498550, operator delete 0x004136C0, ret 4"
+0x00498650,signature,"void* __thiscall Attribute(void* this, void* value)","0x00498650-0x0049867C; vftables 0x00AEC3CC/0x00AEC3B4, value from [arg]; ret 4"
+0x00498680,signature,"void* __thiscall Attribute(void* this, void* value)","0x00498680-0x004986AE; vftables 0x00AEC43C/0x00AEC428, value word from [arg]; ret 4"
+0x004A1CA0,signature,"void* __thiscall GetText(void* this, void* out)",0x004A1CA0-0x004A1D1A; slot 12 of 0x00AEC3CC and 0x00AFFCE4 (INFERRED name)
+0x004A1D20,signature,"void* __thiscall SetFromText(void* this, void* text)",0x004A1D20-0x004A1D52; call [vtbl+0x54]
+0x004A1D60,signature,"void* __thiscall GetTextInto(void* this, void* out)",0x004A1D60-0x004A1D84; slot 11 of 0x00AEC43C
+0x004A1D90,signature,"void* __thiscall GetText(void* this, void* out)",0x004A1D90-0x004A1E15; slot 12 of 0x00AEC43C
+0x004A9730,signature,"void* __thiscall Attribute(void* this, void* value)",0x004A9730-0x004A975C; vftables 0x00AED6AC/0x00AED694; ret 4
+0x004A9760,signature,"void* __thiscall ScalarDeletingDestructor(void* this, unsigned int flags)","0x004A9760 sub ecx,4; jmp 0x004A98C0"
+0x004A9770,signature,void __thiscall ~Attribute(void* this),"0x004A9770-0x004A97CA; vftables 0x00AED6AC/0x00AED694, subject dtor 0x004C4E40; plain ret"
+0x004A97D0,signature,"void* __thiscall Set(void* this, int value)","0x004A97D0-0x004A97EB; slot 21 of 12 vftables incl. 0x00ADE4E4, 0x00AED6AC"
+0x004A97F0,signature,double __thiscall GetNumber(void* this),fild at 0x004A97FB then fadd [0x00AEAB08]; plain ret
+0x004A98A0,signature,"bool __cdecl operator==(void* a, void* b)","args from [esp+4],[esp+8]; plain ret, caller add esp,8 at 0x004B1599"
+0x004A98C0,signature,"void* __thiscall ScalarDeletingDestructor(void* this, unsigned int flags)","0x004A98C0 calls 0x004A9770, operator delete 0x004136C0, ret 4"
+0x004AA9F0,signature,"void* __thiscall FindMember(void* this, unsigned int token)","mov eax,0xBF99E0; ret 4 at 0x004AA9F5 (ecx unused, slot so thiscall)"
+0x004AB810,signature,void __thiscall ~Attribute(void* this),"0x004AB810-0x004AB874; vftables 0x00AEDADC/0x00AEDAC4, array dtor 0x0046C760 at +0xC; plain ret"
+0x004AB880,signature,"void* __thiscall ScalarDeletingDestructor(void* this, unsigned int flags)","0x004AB880 sub ecx,4; jmp 0x004ABD50"
+0x004AB890,signature,"void __thiscall NotifyIgnoringArgs(void* this, int a, int b)","0x004AB890-0x004AB897: call [vtbl+0x24], ret 8; 12 vftables incl. 0x00AEC43C"
+0x004AB8A0,signature,void __thiscall ~Attribute(void* this),"0x004AB8A0-0x004AB904; vftables, array dtor 0x0046C760 at +0xC, subject dtor 0x004C4E40; plain ret"
+0x004AB910,signature,"void* __thiscall ScalarDeletingDestructor(void* this, unsigned int flags)","0x004AB910 sub ecx,4; jmp 0x004ABD70"
+0x004AB920,signature,"void* __stdcall GetMemberName(void* array, unsigned int index)","ret 8, ecx overwritten before any read at 0x004AB933"
+0x004AB9A0,signature,"void* __thiscall GetMemberName(void* this, unsigned int key)",0x004AB9A0-0x004AB9B7; vftable slot 7
+0x004AB9C0,signature,void* __thiscall CreateMemberIterator(void* this),0x004AB9C0; vftable slot 17; operator new 0x00413660
+0x004AB9F0,signature,void* __thiscall GetValue(void* this),"0x004AB9F0; iterator slot 4; array begin [array+4], end [array+8]; offset 0x1C"
+0x004ABA30,signature,void __thiscall ~Attribute(void* this),"0x004ABA30-0x004ABA94; vftables, array dtor 0x0046C760 at +0xC, subject dtor 0x004C4E40; plain ret"
+0x004ABAA0,signature,"void* __thiscall ScalarDeletingDestructor(void* this, unsigned int flags)","0x004ABAA0 sub ecx,4; jmp 0x004ABD90"
+0x004ABAB0,signature,"void* __stdcall GetMemberName(void* array, unsigned int index)","ret 8, ecx overwritten before any read at 0x004ABAC3"
+0x004ABB30,signature,"void* __thiscall GetMemberName(void* this, unsigned int key)",0x004ABB30-0x004ABB47; vftable slot 7
+0x004ABB50,signature,void* __thiscall CreateMemberIterator(void* this),0x004ABB50; vftable slot 17; operator new 0x00413660
+0x004ABB80,signature,void* __thiscall GetValue(void* this),"0x004ABB80; iterator slot 4; array begin [array+4], end [array+8]; offset 0x1C"
+0x004ABBC0,signature,void __thiscall ~Attribute(void* this),"0x004ABBC0-0x004ABC24; vftables, array dtor 0x0046C760 at +0xC, subject dtor 0x004C4E40; plain ret"
+0x004ABC30,signature,"void* __thiscall ScalarDeletingDestructor(void* this, unsigned int flags)","0x004ABC30 sub ecx,4; jmp 0x004ABDB0"
+0x004ABC40,signature,"void* __stdcall GetMemberName(void* array, unsigned int index)","ret 8, ecx overwritten before any read at 0x004ABC53"
+0x004ABCC0,signature,"void* __thiscall GetMemberName(void* this, unsigned int key)",0x004ABCC0-0x004ABCD7; vftable slot 7
+0x004ABCE0,signature,void* __thiscall CreateMemberIterator(void* this),0x004ABCE0; vftable slot 17; operator new 0x00413660
+0x004ABD10,signature,void* __thiscall GetValue(void* this),"0x004ABD10; iterator slot 4; array begin [array+4], end [array+8]; offset 0x1C"
