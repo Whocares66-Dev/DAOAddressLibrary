@@ -8918,3 +8918,44 @@ address,what,value,why
 0x00A46630,signature,"bool __thiscall f(void* this, unsigned int areaId, unsigned int arg2, unsigned int arg3, unsigned int arg4, unsigned int arg5, unsigned int arg6, unsigned int arg7)","0x00A46630 ret 0x1C; reconciled: ret 0x1C, seven stack args, the last six forwarded unread by name"
 0x00A46670,signature,"bool __thiscall f(void* this, unsigned int areaId)",0x00A46670 jmp 0x00A48730
 0x00A46680,signature,void __thiscall f(void* this),0x00A46680
+0x00A46710,signature,"bool __thiscall f(void* this, void* location, void* goal, int flagA, int flagB)",0x00A46710
+0x00A46760,signature,"bool __thiscall f(void* this, int areaId, void* from, void* to, int flagA, int flagB)",0x00A46760
+0x00A467A0,signature,"int __thiscall f(void* this, void* start, void* goal, unsigned int params, void** pathPtr, float timeLimit)",0x00A467A0; reconciled: read the callers and the ret
+0x00A46870,signature,"bool __thiscall f(void* this, void* location, void* soundOut, void* lightSubsetOut)",0x00A46870; reconciled: read the callers and the ret
+0x00A468F0,signature,"int __thiscall f(void* this, int areaId, float radius)",0x00A468F0
+0x00A46980,signature,"float __thiscall f(void* this, int areaId)",0x00A46980
+0x00A469C0,signature,"void __thiscall f(void* this, bool lift, void* position, float radius, bool ghost, bool soft, void* record)",0x00A469C0; reconciled: read the callers and the ret
+0x00A46E60,signature,"void __thiscall f(void* this, int a1, int areaId, void* position, void* orientation, void* patch, int mode)","0x00A46E60 ret 0x18; callers push six values, the first unused here (INFERRED)"
+0x00A473A0,signature,"float __thiscall f(void* this, int areaId, void* position)",0x00A473A0
+0x00A473F0,signature,"int __thiscall f(void* this, void* start, void* goal, unsigned int params, void** pathPtr, float timeLimit)",0x00A473F0; reconciled: read the callers and the ret
+0x00A474A0,signature,void __thiscall f(void* this),0x00A474A0
+0x00A474C0,signature,void* __cdecl f(unsigned int count),0x00A474C0
+0x00A47520,signature,"void* __thiscall f(void* this, unsigned int index)",0x00A47520
+0x00A47560,signature,"void* __cdecl f(void* first, void* last, void* dest)",0x00A47560
+0x00A475C0,signature,"void* __cdecl f(void* first, void* last, void* destEnd)",0x00A475C0
+0x00A482D0,signature,void* __thiscall f(void* this),0x00A482D0
+0x00A484C0,signature,void __thiscall f(void* this),0x00A484C0
+0x00A48870,signature,void __thiscall f(void* this),0x00A48870
+0x00A48D90,signature,"void* __thiscall f(void* this, unsigned int s0, unsigned int s1, unsigned int s2, unsigned int s3, bool loadAbstraction, void* extra)",0x00A48D90 ret 0x18; four of the dwords are copied to the Load call (INFERRED types); reconciled: read the callers and the ret
+0x00A48E30,signature,"bool __thiscall f(void* this, int areaId, unsigned int s0, unsigned int s1, unsigned int s2, unsigned int s3, bool loadAbstraction, void* extra)",0x00A48E30; the 16 bytes at [esp+0x4c..0x54] are copied for the entry (INFERRED arg count); reconciled: read the callers and the ret
+0x00A48F00,signature,void* __thiscall f(void* this),0x00A48F00
+0x00A48F70,signature,"void __thiscall f(void* this, void* normal)",0x00A48F70
+0x00A48FB0,signature,"bool __stdcall f(unsigned int count, int rows, int columns, int* outShift)",0x00A48FB0
+0x00A49010,signature,"int __thiscall f(void* this, int row, int column)",0x00A49010
+0x00A490B0,signature,"void __thiscall f(void* this, int row, int column)",0x00A490B0
+0x00A49110,signature,"void __thiscall f(void* this, int row, int column)",0x00A49110
+0x00A49470,signature,"void __thiscall f(void* this, void* cells, void* heights, void* soundData, void* lightSubsets8, void* lightSubsets16, unsigned int lightCount)",0x00A49470
+0x00A497C0,signature,"void __thiscall f(void* this, void* mapAbstraction)",0x00A497C0
+0x00A49CC0,signature,"int __thiscall f(void* this, int block)",0x00A49CC0
+0x00A49D10,signature,"int __thiscall f(void* this, int block)",0x00A49D10
+0x00A49D70,signature,unsigned int __thiscall f(void* this),0x00A49D70
+0x00A49E00,signature,"void* __cdecl f(void* dest, unsigned int count, void* value, void* alloc, void* tagA, void* tagB)",0x00A49E00; reconciled: read the callers and the ret
+0x00A49F00,signature,"int __thiscall f(void* this, int block, int k)",0x00A49F00
+0x00A4A080,signature,"void __thiscall f(void* this, int superBlock, int superEntrance, int* outBlock, int* outEntrance)",0x00A4A080
+0x00A4A220,signature,"void* __stdcall f(void* dest, unsigned int count, void* value)",0x00A4A220; reconciled: read the callers and the ret
+0x00A4A260,signature,void __thiscall f(void* this),0x00A4A260
+0x00A4A3B0,signature,void __thiscall f(void* this),0x00A4A3B0
+0x00A4A500,signature,void __thiscall f(void* this),0x00A4A500
+0x00A4A540,signature,"void* __thiscall f(void* this, void* grid, int sectorSize, void* sectors, void* memory)",0x00A4A540 reads its args at [esp+0x28..0x34] after pushes (INFERRED arg count); reconciled: read the callers and the ret
+0x00A4A840,signature,"void __thiscall f(void* this, int block, int entrance, int column, int row)",0x00A4A840
+0x00A4A8E0,signature,"void __thiscall f(void* this, int superBlock, int superEntrance, int column, int row)",0x00A4A8E0; reconciled: read the callers and the ret
