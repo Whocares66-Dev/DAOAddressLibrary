@@ -11875,3 +11875,50 @@ address,what,value,why
 0x004698E0,signature,void __thiscall Renderer::FBEffectBuilderXML2::~FBEffectBuilderXML2(Renderer::FBEffectBuilderXML2 * this),"ecx only, tail jump 0x005744E0 (reader B)"
 0x00469940,signature,"Renderer::FBEffectBuilderXML2 * __thiscall Renderer::FBEffectBuilderXML2::`scalar deleting destructor'(Renderer::FBEffectBuilderXML2 * this, unsigned int flags)","ret 4, vtable 0x00AE7E6C slot 0"
 0x0046C510,signature,void __thiscall Graphics::ISceneSubManager::~ISceneSubManager(Graphics::ISceneSubManager * this),"ecx only, plain ret (reader B)"
+0x0046E2F0,signature,"void __thiscall Renderer::ADAttributeAffinity::Merge(void* this, void* other)",ret 4; reads ECX; slot 3 of 0x00AE8170
+0x0046E320,signature,"bool __thiscall Renderer::ADMaterialNameAffinity::Matches(void* this, void* node)",ret 4; this+4 pushed for EqualsNoCase; Ghidra drops the pushed name
+0x0046E350,signature,"bool __thiscall Renderer::ADSemanticNameAffinity::Matches(void* this, void* node)",ret 4; slot 1
+0x0046E380,signature,"bool __thiscall Renderer::ADIncludesSemanticAffinity::Matches(void* this, void* node)",ret 4; slot 1
+0x0046E3D0,signature,"void __thiscall Renderer::ADNodeShadowCasterAffinity::Merge(void* this, void* other)",ret 4; slot 3 of 0x00AE81A0
+0x0046E480,clear,Renderer::IAffinityDirective::IAffinityDirective,"it is ADMaterialNameAffinity's destructor (~wstring on +4, then the base vftable), called by the scalar deleting destructor 0x0046E4E0"
+0x0046E480,signature,void __thiscall Renderer::ADMaterialNameAffinity::~ADMaterialNameAffinity(void* this),"plain ret, reads ECX"
+0x0046E4E0,signature,"void* __thiscall Renderer::ADMaterialNameAffinity::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4; slot 0 of 0x00AE8110
+0x0046E410,signature,"void* __thiscall Renderer::ADMaterialNameAffinity::ADMaterialNameAffinity(void* this, const wchar_t* name)",ret 4
+0x0046E500,signature,"void* __thiscall Renderer::ADSemanticNameAffinity::ADSemanticNameAffinity(void* this, const wchar_t* name)","ret 4; returns this (MOV EAX,ESI at 0x0046E574)"
+0x0046E5A0,signature,"void* __thiscall Renderer::ADIncludesSemanticAffinity::ADIncludesSemanticAffinity(void* this, const wchar_t* name)",ret 4; returns this (0x0046E61F)
+0x0046E650,signature,"bool __thiscall Renderer::ADNoShadowCastAffinity::Matches(void* this, void* node)",ret 4; Ghidra shows no argument and an in_stack read
+0x0046E670,signature,"bool __thiscall Renderer::ADMultiPassAffinity::Matches(void* this, void* node)",ret 4
+0x0046E690,signature,"void* __thiscall Renderer::ADNodeShadowCasterAffinity::ADNodeShadowCasterAffinity(void* this, int partition)",ret 4
+0x0046E6F0,signature,"bool __thiscall Renderer::ADNodeShadowCasterAffinity::Matches(void* this, void* node)",ret 4
+0x0046E700,signature,"void* __thiscall Renderer::IAffinityDirective::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4; slot 0 of ten directive vftables
+0x0046E720,signature,"void* __thiscall Renderer::ADNodeInvisibleShadowCasterAffinity::ADNodeInvisibleShadowCasterAffinity(void* this, int partition)",ret 4
+0x0046E750,signature,"bool __thiscall Renderer::ADNodeInvisibleShadowCasterAffinity::Matches(void* this, void* node)",ret 4; Ghidra returns undefined4 built from param bytes
+0x0046E770,signature,"void* __cdecl Renderer::CreateAffinityDirective(int type, const void* arg)","plain ret, callers ADD ESP,8 (0x00473BDC)"
+0x0046E9F0,signature,"bool __thiscall Renderer::ADAttributeAffinity::Matches(void* this, void* node)",ret 4
+0x0046EA00,signature,"bool __thiscall Renderer::SubmissionGroup::RemoveObject(void* this, void* obj)",ret 4; Ghidra shows it as taking one stack arg with no this
+0x0046EA40,convention,__thiscall,"Ghidra says __fastcall; ECX is the group, plain ret"
+0x0046EA40,signature,void __thiscall Renderer::SubmissionGroup::ClearObjects(void* this),plain ret
+0x0046EAA0,signature,"void __thiscall Renderer::SubmissionGroup::Render(void* this, void* ctx)",ret 4
+0x0046EB10,signature,"void* __thiscall Renderer::SubmissionGroup::FindClass(void* this, const wchar_t* name)",ret 4
+0x0046EBA0,convention,__thiscall,"Ghidra says __fastcall; ECX is the group, plain ret"
+0x0046EBA0,signature,bool __thiscall Renderer::SubmissionGroup::HasIncludes(void* this),plain ret
+0x0046EC10,signature,"void __thiscall Renderer::SubmissionGroup::DeleteClasses(void* this, bool freeStorage)",ret 4
+0x0046ED30,signature,void __thiscall Renderer::SubmissionGroup::DeleteAll(void* this),plain ret; Ghidra shows void(void) and loses ECX
+0x0046ED50,signature,"void __thiscall Renderer::SubmissionGroup::MergeExclusion(void* this, void* directive)",ret 4
+0x0046EE50,signature,void* __thiscall Renderer::SubmissionGroup::AddClass(void* this),plain ret; Ghidra shows int(void) and loses ECX
+0x0046EED0,signature,void __thiscall Renderer::SubmissionGroup::~SubmissionGroup(void* this),plain ret; Ghidra loses ECX
+0x0046EF40,signature,"bool __thiscall Renderer::SubmissionGroup::Classify(void* this, void* node)","ret 4; Ghidra shows a cdecl-like (undefined4*) and loses ECX (MOV EDI,ECX at 0x0046EF47)"
+0x0046F040,signature,"void __thiscall Renderer::SubmissionGroup::AddExclusion(void* this, void* directive)","ret 4; Ghidra loses ECX (MOV EDI,ECX at 0x0046F048)"
+0x0046F080,signature,"void __thiscall Renderer::SubmissionClass::SetKeepCopy(void* this, bool keep)",ret 4
+0x0046F0A0,convention,__thiscall,Ghidra says __fastcall; ECX is the class
+0x0046F0A0,signature,bool __thiscall Renderer::SubmissionClass::KeepsCopy(void* this),plain ret
+0x0046F0B0,signature,"void __thiscall Renderer::SubmissionClass::SetForceDraw(void* this, bool force)",ret 4
+0x0046F0D0,convention,__thiscall,Ghidra says __fastcall; ECX is the class
+0x0046F0D0,signature,bool __thiscall Renderer::SubmissionClass::HasIncludes(void* this),plain ret
+0x0046F0E0,signature,"void* __thiscall Renderer::ISubmissionOperation::ISubmissionOperation(void* this, void* arg)","ret 4; returns this (MOV EAX,ECX)"
+0x00423E70,clear,IRoomLayout::GetName,"folded getter LEA EAX,[ECX+0x50]; also SubmissionClass's name (0x0046EB59); the label misleads at every other caller (outside this batch: only for addr-lib-agent's judgement)"
+0x00455850,clear,Messages::Observer::vfunction2,"the shared one-argument no-op (RET 4), slot 3 of six affinity vftables (outside this batch: only for addr-lib-agent's judgement)"
+0x0046E640,convention,__thiscall,"vftable slot 4, plain ret, constant 5"
+0x0046E740,convention,__thiscall,"vftable slot 4, plain ret, constant 8"
+0x0046E400,convention,__thiscall,"writes [ecx], plain ret"
+0x0046F100,convention,__thiscall,"writes [ecx], plain ret"
