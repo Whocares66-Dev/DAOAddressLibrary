@@ -9162,3 +9162,63 @@ address,what,value,why
 0x007FB4B0,signature,void __thiscall FilteredGroupedItemView::~FilteredGroupedItemView(void * this),"plain ret, reads ecx (B)"
 0x007FBB90,signature,"void * __thiscall FilteredGroupedItemView::`scalar deleting destructor'(void * this, unsigned int flags)",vftable 0x00B24A90 slot 4; ret 4 (B)
 0x007FEED0,convention,__cdecl,"no this: ecx overwritten at 0x007FEED0, no stack arguments, plain ret (B; Ghidra has no convention)"
+0x00844FB0,convention,__thiscall,"ecx unused but the caller passes the TextureManager (0x005170A4); ret 8, or a tail jmp with the 2 stack args intact"
+0x00844FB0,signature,"void __thiscall TexManager::TextureManager::SetNextTextureSize(void* this, int width, int height)",two stack args forwarded to D3DGraphicsDriver slot +0xBC (0x0086B4E0)
+0x00846990,convention,__thiscall,ecx read at 0x008469B7; ret 0xC
+0x00846990,signature,"void* __thiscall TexManager::TextureManager::LoadTextureFile(void* this, void* out, void* path, int flags)",out returned in eax (0x00846B61); path to FileAccess and 0x008450A0; flags passed to the decoders
+0x00A1FA50,convention,__thiscall,ecx read at 0x00A1FA54; ret 4
+0x00A1FA50,signature,"void __thiscall Renderer::ScaleformRenderer::SetPixelShader(void* this, int index)",index compared with +0x104
+0x00A1FA90,convention,__thiscall,ecx read at 0x00A1FA94; ret 4
+0x00A1FA90,signature,"void __thiscall Renderer::ScaleformRenderer::SetVertexShader(void* this, int index)",index compared with +0x1A8
+0x00A1FAD0,convention,__cdecl,"plain ret, no ecx use"
+0x00A1FAD0,signature,"void __cdecl Renderer::MipDownsample2xA8(int* width, int* height, unsigned char* pixels)","args read at 0x00A1FADB, 0x00A1FAD4, 0x00A1FB24"
+0x00A1FC20,convention,__thiscall,ecx saved at 0x00A1FC29; ret 4
+0x00A1FC20,signature,"void __thiscall Renderer::ScaleformRenderer::ApplyBlendMode(void* this, int mode)",mode clamped to < 15
+0x00A1FD20,convention,__thiscall,ecx at 0x00A1FD2A; ret 8
+0x00A1FD20,signature,"void __thiscall Renderer::ScaleformRenderer::ApplySampleMode(void* this, int stage, int mode)",stage indexes +0x2F0
+0x00A1FFC0,convention,__thiscall,"Ghidra has __fastcall; a FillStyle method reached by jmp with ecx = renderer+0x30C/+0x384, no args"
+0x00A1FFC0,signature,void __thiscall Renderer::ScaleformRenderer::FillStyle::Disable(void* this),"writes [ecx], [ecx+0x30]"
+0x00A1FFD0,convention,__thiscall,ecx at 0x00A1FFD7; ret 4
+0x00A1FFD0,signature,"void __thiscall Renderer::ScaleformRenderer::FillStyle::SetCxform(void* this, void* cxform)",8 floats copied to +0xC
+0x00A20020,convention,__thiscall,ecx at 0x00A2002F; ret 8
+0x00A20020,signature,"void __thiscall Renderer::ScaleformRenderer::ApplyFillTexture(void* this, void* fill, int stage)","fill read at 0x00A20024, stage at 0x00A20079"
+0x00A20200,convention,__thiscall,ecx at 0x00A2020E; ret 4
+0x00A20200,signature,"void __thiscall Renderer::ScaleformRenderer::ApplyCxform(void* this, void* cxform)",8 floats read from the arg
+0x00A203C0,convention,__thiscall,ecx at 0x00A203C3; ret 4
+0x00A203C0,signature,"void __thiscall Renderer::ScaleformRenderer::ApplyColor(void* this, unsigned int color)",0xAARRGGBB split at 0x00A203CB..0x00A20401
+0x00A20550,convention,__thiscall,ecx read at 0x00A20550; plain ret
+0x00A20550,signature,void __thiscall Renderer::ScaleformRenderer::RefreshTextureHandles(void* this),walks the +0x400 list
+0x00A20600,convention,__thiscall,ecx at 0x00A20601; returns this
+0x00A20600,signature,void* __thiscall Renderer::ScaleformRenderer::FillStyle::FillStyle(void* this),"constructor, returns this at 0x00A2062B"
+0x00A20630,convention,__thiscall,ecx written through at 0x00A20634; ret 4
+0x00A20630,signature,"void __thiscall Renderer::ScaleformRenderer::FillStyle::SetColor(void* this, unsigned int color)","mode 1, colour +8"
+0x00A20680,convention,__thiscall,ecx at 0x00A20688; ret 4
+0x00A20680,signature,"void __thiscall Renderer::ScaleformRenderer::ApplyMatrix(void* this, void* matrix)",arg to GMatrix2D::Prepend
+0x00A20B30,convention,__thiscall,ecx (the FillStyle) at 0x00A20B3D; ret 4
+0x00A20B30,signature,"void __thiscall Renderer::ScaleformRenderer::FillStyle::Apply(void* this, void* renderer)",renderer arg read at 0x00A20B32
+0x00A20C20,convention,__thiscall,ecx at 0x00A20C24; ret 8
+0x00A20C20,signature,"void __thiscall Renderer::ScaleformRenderer::FillStyle::SetBitmap(void* this, void* fill, void* cxform)",two stack args
+0x00A20C80,convention,__thiscall,ecx at 0x00A20C8C; ret 0x14
+0x00A20C80,signature,"void __thiscall Renderer::ScaleformRenderer::FillStyle::SetGouraud(void* this, int type, void* tex0, void* tex1, void* tex2, void* cxform)",five stack args
+0x00A1FBA0,signature,"bool __thiscall Renderer::ScaleformRenderer::GetRenderCaps(void* this, void* caps)","vftable slot 1, ret 4"
+0x00A202B0,signature,void* __thiscall Renderer::ScaleformRenderer::CreateTexture(void* this),"vftable slot 2, returns the new GTextureD3D9Impl"
+0x00A204D0,signature,"void __thiscall Renderer::ScaleformRenderer::ReleaseCachedData(void* this, void* data, int type)","vftable slot 16, ret 8"
+0x00A205B0,signature,"void __thiscall Renderer::ScaleformRenderer::GetRenderStats(void* this, void* stats, bool reset)","vftable slot 29, ret 8"
+0x00A207D0,signature,"void __thiscall Renderer::ScaleformRenderer::SetVertexData(void* this, void* vertices, int count, int format, void* cache)","vftable slot 14, ret 0x10"
+0x00A208E0,signature,"void __thiscall Renderer::ScaleformRenderer::SetIndexData(void* this, void* indices, int count, int format, void* cache)","vftable slot 15, ret 0x10"
+0x00A209A0,signature,"void __thiscall Renderer::ScaleformRenderer::DrawBitmaps(void* this, void* list, int listSize, int start, int count, void* texture, void* matrix, void* cache)","vftable slot 25, ret 0x1C"
+0x00A1FD70,signature,"void __thiscall Renderer::ScaleformRenderer::BeginSubmitMask(void* this, int mode)","vftable slot 26, ret 4"
+0x0080E120,signature,"bool __thiscall ItemFilterBuybackSellback::Accept(void* this, void* item)",vftable 0x00B2493C slot 1; item at esp+4; ret 4
+0x008450A0,signature,"int __thiscall TexManager::TextureManager::GetImageFileType(void* this, void* wpath)","ret 4; returns 0 dds, 1 tga, 2 png, 3 jpg, 4 other (read, not in this batch); name inferred (A's md); 0 .dds, 1 .tga, 2 .png, 3 .jpg, else 4; outside the batch"
+0x00A1FA00,signature,void __thiscall f(void* this),"plain ret, uses ecx"
+0x00A1FBD0,signature,void __thiscall f(void* this),plain ret
+0x00A1FC00,signature,"void __thiscall f(void* this, const float* cxform8)",ret 4
+0x00A1FF10,signature,void __thiscall f(void* this),plain ret
+0x00A1FF80,signature,void __thiscall f(void* this),plain ret
+0x00A20340,signature,"void __thiscall f(void* this, const float* matrix6)",ret 4
+0x00A20380,signature,"void __thiscall f(void* this, const float* matrix6)",ret 4
+0x00A204B0,signature,void __thiscall f(void* this),plain ret via jmp
+0x00A204C0,signature,void __thiscall f(void* this),plain ret via jmp
+0x00A20770,signature,"void __thiscall f(void* this, unsigned int argb)",ret 4
+0x00A207A0,signature,"void __thiscall f(void* this, unsigned int argb)",ret 4
+0x00A20D20,signature,"void __thiscall f(void* this, const void* fill)",ret 4
