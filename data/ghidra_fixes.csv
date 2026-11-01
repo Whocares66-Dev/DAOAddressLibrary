@@ -1753,3 +1753,45 @@ address,what,value,why
 0x005FC140,signature,void __thiscall f(void* this),"plain ret, ecx this; 0x005FC140"
 0x005FE010,signature,"int __thiscall f(void* this, float dt)","vftable slot 2, ret 4, returns 3 at 0x5FE04E; argument as TaskGroup::Execute (reconciled)"
 0x005B5410,signature,"void __thiscall std_vector_wstring_pair_Destroy(void* this, void* first, void* last)","the readers' convention, upheld against the check; ret 8, ecx pushed on as the allocator; 0x005B5410"
+0x005FE2E0,signature,"void* __thiscall CResIFO_CResIFO(void* this, void* arg)","ID 11011: 0x005FE2E0 calls 0x00A37AB0 with 0x7DE, wstring at 0x00B01CD4"
+0x0067A4C0,signature,"void* __thiscall CResARE_CResARE(void* this, void* arg)","ID 13569: 0x0067A4C0 calls 0x00A37AB0 with 0x7DC, wstring 0x00B0D984"
+0x006FA260,signature,"void* __thiscall CResLST_CResLST(void* this, void* arg)","ID 15800: 0x006FA260 calls 0x00A37AB0 with 0x814, wstring 0x00B14EC4"
+0x0067B900,signature,"void* __thiscall CResGFF_scalar_deleting_destructor(void* this, unsigned int flags)",ID 13609: 0x0067B900 calls 0x00A36130 then operator_delete if [esp+8]&1
+0x00689900,signature,"void* __thiscall CResGFF_CResGFF_copy(void* this, void* source)","ID 13814: 0x00689900 copies dwords +4..+0x64, 0x10 dwords at +0x68 (rep movsd), handle at +0xAC via 0x004D58E0, dword +0xB0"
+0x00645650,signature,"bool __thiscall Read(void* this, void* path)","ID 12673: 0x00645650: FileAccess open 0x004C9170, size 0x004C8A30, Read 0x004C8A70"
+0x00720750,signature,void __thiscall PNGFileAccess_dtor(void* this),"ID 16607: 0x00720750 mov [ecx],0x00B17A00"
+0x00720760,signature,"void* __thiscall PNGFileAccess_scalar_deleting_destructor(void* this, unsigned int flags)","ID 16608: 0x00720760 sets 0x00B17A00, calls 0x004C8DC0, operator_delete if [esp+8]&1"
+0x00749590,signature,void __thiscall DeleteEntries(void* this),"ID 17797: 0x00749590: loop over nodes from [[this+4]], call [[entry]] with 1 at 0x007495AC, operator_delete on each node 0x007495E3, size [this+8]=0"
+0x00749D10,signature,void __thiscall TwoDimArrayCache_dtor(void* this),"ID 17812: 0x00749D10 sets 0x00B1BB80, calls 0x00749590 on this+8, operator_delete [this+0x2C], 0x00573ED0 on this+0x1C, 0x005744E0 on this+8"
+0x00749DA0,signature,"void* __thiscall TwoDimArrayCache_scalar_deleting_destructor(void* this, unsigned int flags)","ID 17813: 0x00749DA0 calls 0x00749D10, operator_delete if [esp+8]&1"
+0x00749DC0,signature,"void* __thiscall std_vector_insert(void* this, void* result, void* whereCont, void* wherePtr, void* val)",ID 17814: 0x00749DC0: element size from the divide-by-0xBC constant 0xAE4C415D
+0x00749F20,signature,"void* __thiscall stdext_Hash_ctor(void* this, void* compare, void* allocator)","ID 17816: 0x00749F20: head node 0x00822A40 at this+4, size 0, 0x006AFE40(this+0x10, 9, &end), [this+0x20]=[this+0x24]=1"
+0x00749FA0,signature,"void __cdecl AddAppearanceCommonFields(void* tmpl, void* writer)","ID 17817: 0x00749FA0: 0x004860F0(ids 0x3FC4 type 8, 0x3FC5 type 0, 0x3FC6 type 0x80000000)"
+0x00749FF0,signature,unsigned int __cdecl MakeAppearanceCreatureTemplate(void* writer),"ID 17818: 0x00749FF0: local template tag 0x31435041 'APC1', 0x00749FA0, registers with 0x004DF2F0, destroys with 0x0046C760"
+0x0074A080,signature,"void __cdecl AddAppearancePoolFields(void* tmpl, void* writer)","ID 17819: 0x0074A080: 0x00749FA0 then 0x004860F0 ids 0x3FC1=2, 0x3FC7=2, 0x3FC2=0"
+0x0074A0E0,signature,unsigned int __cdecl MakeAppearancePoolTemplate(void* writer),"ID 17820: 0x0074A0E0: tag 0x314C5041 'APL1', 0x0074A080, 0x004DF2F0"
+0x0074A170,signature,"void __cdecl AddAppearanceHeroFields(void* tmpl, void* writer)",ID 17821: 0x0074A170: 0x0074A080 then 0x004860F0 id 0x3FC8 type 0xE
+0x0074A1A0,signature,unsigned int __cdecl MakeAppearanceHeroTemplate(void* writer),"ID 17822: 0x0074A1A0: tag 0x31505041 'APP1', 0x0074A170, 0x004DF2F0"
+0x0074A230,signature,void __thiscall TwoDimArrayCache_Entry_ctor(void* this),"ID 17823: 0x0074A230 mov [ecx],0x00B1BB98"
+0x0074A240,signature,"void* __thiscall TwoDimArrayCache_Entry_scalar_deleting_destructor(void* this, unsigned int flags)","ID 17824: 0x0074A240 sets 0x00B1BB98, operator_delete if [esp+4]&1"
+0x0074A390,signature,void __thiscall AppearanceEntry_dtor(void* this),"ID 17827: 0x0074A390: ~wstring 0x004C0DB0 on this+0x7C/0x60/0x44/0x28/0xC, sets 0x00B1BB98"
+0x007E8BA0,signature,void __thiscall ProjectileEntry_dtor(void* this),"ID 21127: 0x007E8BA0: ~wstring on this+0xC, sets 0x00B1BB98"
+0x007EAE90,signature,void __thiscall VisualEffectEntry_dtor(void* this),ID 21174: 0x007EAE90
+0x00844EB0,signature,"void* __thiscall PureResourceHelper_scalar_deleting_destructor(void* this, unsigned int flags)","ID 22908: 0x00844EB0 sets 0x00B2B290, operator_delete if [esp+4]&1"
+0x00846E50,signature,"void __thiscall TextureManager_ReloadTextures(void* this, bool all)","ID 22940: 0x00846E50: map at this+4 (nodes: name at +0xC, handle at +0x28), Resources::Find 0x004D5BA0 with type [0x00AF046C] and '.dds' 0x00AEC570, 0x00846B90 per entry, 0x00847C80 on [this+0xA0]"
+0x008514F0,signature,void* __thiscall ExpatParser_ctor(void* this),"ID 23137: 0x008514F0 push 0,0x00C138E0,0"
+0x00851510,signature,void __thiscall ExpatParser_dtor(void* this),ID 23138: 0x00851510 push [ecx]
+0x00851520,signature,"bool __thiscall ExpatParser_Parse(void* this, void* buffer, int length)","ID 23139: 0x00851520: XML_Parse(parser, buf, len, 1) result 0 -> message strings 0x00B2B5D4 and 0x00B2B5B4"
+0x00851610,signature,void* __thiscall XMLParser_GetExpatParser(void* this),"ID 23140: 0x00851610 mov eax,[ecx+4]"
+0x00851620,signature,bool __thiscall XMLParser_Parse(void* this),"ID 23141: 0x00851620 ecx=[this+4], pushes [this+0xC], [this+8], call 0x00851520"
+0x00851640,signature,void __cdecl XMLParser2_DestroyXMLParser(void* parser),ID 23142: 0x00851640 call [[ecx]](1)
+0x00851660,signature,void __thiscall IXMLParser_ctor(void* this),"ID 23143: 0x00851660 mov [ecx],0x00B2B610"
+0x00851670,signature,"void* __thiscall IXMLParser_scalar_deleting_destructor(void* this, unsigned int flags)","ID 23144: 0x00851670 sets 0x00B2B610, operator_delete if [esp+4]&1"
+0x00851690,signature,"void* __thiscall XMLParser_ctor(void* this, void* buffer, unsigned int length)","ID 23145: 0x00851690: vftable 0x00B2B620, new(4) then 0x008514F0, ret 8"
+0x00851710,signature,void __thiscall XMLParser_dtor(void* this),ID 23146: 0x00851710
+0x00851740,signature,"void* __cdecl XMLParser2_CreateXMLParser(void* buffer, unsigned int length)","ID 23147: 0x00851740 new(0x10), 0x00851690"
+0x008517B0,signature,"void* __thiscall XMLParser_scalar_deleting_destructor(void* this, unsigned int flags)","ID 23148: 0x008517B0 calls 0x00851710, operator_delete if [esp+8]&1"
+0x00852030,signature,void __thiscall SimpleXMLBuilderHelper_dtor(void* this),"ID 23160: 0x00852030 vftable 0x00B2B6B8, operator_delete [this+4], jmp 0x004D5890 on this+8"
+0x00852060,signature,bool __thiscall SimpleXMLBuilder_Parse(void* this),ID 23161: 0x00852060 [this+0xC] -> call [vtable+4] (XMLParser::Parse)
+0x00852080,signature,"void* __thiscall SimpleXMLBuilderHelper_ctor(void* this, void* name, bool fromResources)","ID 23162: 0x00852080: flag [esp+0x70]==1 -> Resources::Find 0x004D5BA0 with type [0x00AF046C], Data/Size 0x004D56D0/0x004D57B0"
+0x008521B0,signature,"void* __thiscall SimpleXMLBuilderHelper_scalar_deleting_destructor(void* this, unsigned int flags)","ID 23163: 0x008521B0 calls 0x00852030, operator_delete if [esp+8]&1"
