@@ -11991,3 +11991,41 @@ address,what,value,why
 0x00AD9380,signature,void __cdecl f(void),Network-04 read of 0x00AD9380
 0x00AD9390,signature,void __cdecl f(void),Network-04 read of 0x00AD9390
 0x00A43B50,signature,void __thiscall f(void* this),upheld by hand: Network-04 read of 0x00A43B50-0x00A43B9B
+0x00486350,signature,void __thiscall f(void* this),ret N and ecx use read at 0x00486350
+0x00486640,signature,"void __thiscall f(void* this, void* first, void* second, void* value)",ret N and ecx use read at 0x00486640
+0x004866D0,signature,"void __thiscall f(void* this, int code)",ret N and ecx use read at 0x004866D0
+0x00486830,signature,void __thiscall f(void* this),ret N and ecx use read at 0x00486830
+0x00486930,signature,"void __thiscall f(void* this, void* text)",ret N and ecx use read at 0x00486930
+0x004869D0,signature,"void __thiscall f(void* this, int a, int b, int c)",ret N and ecx use read at 0x004869D0
+0x00486A90,signature,void* __thiscall f(void* this),ret N and ecx use read at 0x00486A90
+0x00488CF0,signature,void __thiscall f(void* this),ret N and ecx use read at 0x00488CF0
+0x00489290,signature,"void __thiscall f(void* this, void* name)",ret N and ecx use read at 0x00489290
+0x004896D0,signature,void __thiscall f(void* this),ret N and ecx use read at 0x004896D0
+0x0048AA40,signature,"bool __thiscall f(void* this, void* arg)",ret N and ecx use read at 0x0048AA40
+0x0048BB70,signature,void __thiscall f(void* this),ret N and ecx use read at 0x0048BB70
+0x0048C040,signature,"void __thiscall f(void* this, void* name)",ret N and ecx use read at 0x0048C040
+0x0048C5A0,signature,void __thiscall f(void* this),ret N and ecx use read at 0x0048C5A0
+0x0048C870,signature,void __thiscall f(void* this),ret N and ecx use read at 0x0048C870
+0x0048CE60,signature,void __thiscall f(void* this),ret N and ecx use read at 0x0048CE60
+0x0048D4B0,signature,void __thiscall f(void* this),ret N and ecx use read at 0x0048D4B0
+0x0048DE90,signature,"void* __thiscall f(void* this, void* other)",ret N and ecx use read at 0x0048DE90
+0x0048DEF0,signature,"void* __thiscall f(void* this, void* other)",ret N and ecx use read at 0x0048DEF0
+0x0048E7D0,signature,"void* __thiscall f(void* this, void* other)",ret N and ecx use read at 0x0048E7D0
+0x0048E840,signature,"void* __thiscall f(void* this, void* other)",ret N and ecx use read at 0x0048E840
+0x0048EC20,signature,"void* __thiscall f(void* this, void* other)",ret N and ecx use read at 0x0048EC20
+0x00487730,convention,__cdecl,"plain ret, arguments on the stack at 0x00487730"
+0x00489F60,convention,__thiscall,ecx read first at 0x00489F60
+0x0048BD00,convention,__thiscall,ret 0x84 with ecx read first (this plus the details by value) at 0x0048BD00
+0x0048C900,convention,__thiscall,"ret 0x14, ecx read first at 0x0048C900"
+0x0048CD30,convention,__thiscall,"ret 0x98, ecx read first at 0x0048CD30"
+0x0048D0B0,convention,__cdecl,"plain ret, count on the stack at 0x0048D0B0"
+0x004877D0,signature,"void* __thiscall f(void* this, void* out, int key)","ret 8; out is the first stack argument, the key the second, read at 0x004877D0"
+0x00487730,signature,"void __cdecl f(void* response, void* owner)","plain ret; response read first, owner (this for QueueGameRecord) second, read at 0x00487730"
+0x00489E20,signature,"bool __thiscall f(void* this, void* file)","ret 4, ecx used; the argument is the file declared on, read at 0x00489E20"
+0x0048C840,convention,__stdcall,"ret 8, ecx unused at 0x0048C840"
+0x0048C8C0,convention,__stdcall,"ret 0xC, three stack arguments, ecx only saved at 0x0048C8C0"
+0x00489F60,signature,void __thiscall f(void* this),"ecx read first, plain ret at 0x00489F60"
+0x0048D0B0,signature,void* __cdecl f(unsigned int n),"plain ret, count on the stack at 0x0048D0B0"
+0x00489D70,convention,__cdecl,"ebp frame, plain ret, ecx unused at 0x00489D70"
+0x00489F80,convention,__cdecl,"ebp frame, plain ret, ecx unused at 0x00489F80"
+0x0048C610,signature,"void __thiscall f(void* this, void* list, int result, int unused)","frame: return address at esp+0x88 after 0x0048C637; reads +0x8C and +0x90, ret 0xC at 0x0048C836, so a third stack argument is unread (keeper)"
