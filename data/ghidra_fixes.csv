@@ -1353,3 +1353,37 @@ address,what,value,why
 0x0058D420,signature,void __thiscall f(void* this),0x0058D420: ret
 0x0058D470,signature,"void* __thiscall f(void* this, void* out, void* cont1, void* first, void* cont2, void* last)",0x0058D470: ret 0x14
 0x0058D4F0,signature,"void* __stdcall f(void* first, void* last, void* dest)",0x0058D4F0: ret 0xc
+0x005B3AF0,signature,int __cdecl f(void* semanticName),"__cdecl: 0x005B3AF0 chain of 0x004C0AA0 on 'POSITION', 'BLENDWEIGHT', 'BLENDINDICES', 'NORMAL', 'PSIZE', 'TEXCOORD', 'TANGENT', 'BINORMAL', 'TESSFACTOR', 'POSITIONT', 'COLOR', 'FOG', 'DEPTH', 'SAMPLE'"
+0x005B3C40,signature,int __cdecl f(void* typeName),__cdecl: 0x005B3C40 chain over those 17 strings
+0x005B3DD0,signature,int __cdecl f(void* primitiveType),__cdecl: 0x005B3DD0 EqualsNoCase 'TRIANGLES' then neg/sbb/sub
+0x005B3DF0,signature,int __cdecl f(void* indexType),"__cdecl: 0x005B3DF0 EqualsNoCase 'Index32', 'Index16'"
+0x005B3E30,signature,"void* __stdcall f(void* stream, unsigned char* out)","__stdcall: 0x005B3E30 -> 0x004D29F0 (reads the int, stores dl)"
+0x005B3E50,signature,"void* __thiscall f(void* this, void* out, void* cont1, void* first, void* cont2, void* last)",0x005B3E50: ret 0x14
+0x005B3EB0,signature,"void __thiscall f(void* this, unsigned int n, unsigned short value)",__thiscall: 0x005B3EB0 size = (end-begin)>>1
+0x005B3F60,signature,"void* __thiscall f(void* this, unsigned int n)","__thiscall: 0x005B3F60 zeroes +4,+8,+0xC then calls 0x005B3EB0"
+0x005B3FC0,signature,void* __thiscall f(void* this),"__thiscall: 0x005B3FC0 stores -1 at +4,+8,+0xC, byte flags +0x18,+0x19, calls 0x005B3F60, 0x00519A40, 0x00534AA0, std::wstring::wstring at +0x50"
+0x005B4060,signature,"void __stdcall f(void* stream, float* out)","__stdcall: 0x005B4060 loop of 0x004D29D0 (at end) and 0x00454300 (float) up to 3, fldz store [out+0xC]"
+0x005B4120,signature,"void __stdcall f(void* stream, void* out)",__stdcall: 0x005B4120 calls 0x00454190 then 0x00454300 three times
+0x005B4160,signature,"void __stdcall f(void* stream, void* intVector)",__stdcall: 0x005B4160 loop 0x004D29D0 / 0x00454190 / push_back 0x006F1160 (4-byte elements)
+0x005B4200,signature,"void __stdcall f(void* stream, void* floatVector)",__stdcall: 0x005B4200 loop 0x004D29D0 / 0x00454300 / push_back 0x00556410
+0x005B42A0,signature,"void __stdcall f(void* stream, void* ushortVector)",__stdcall: 0x005B42A0 loop 0x004D29D0 / 0x004EAA00 / push_back 0x005566E0 (2-byte elements)
+0x005B4340,signature,"void __stdcall f(void* stream, float* out)","__stdcall: 0x005B4340 push out, ecx=stream, call 0x00454300"
+0x005B4360,signature,"void __thiscall f(void* this, void* text, float* out)","__thiscall: 0x005B4360 builds the stream (0x004D2A20, 0x004C2510, 0x0050F440), calls 0x005B4060"
+0x005B4400,signature,"void __thiscall f(void* this, void* text, float* out)",__thiscall: 0x005B4400 calls 0x005B40A0
+0x005B44A0,signature,"void __thiscall f(void* this, void* text, float* out)",__thiscall: 0x005B44A0 calls 0x005B40E0
+0x005B4540,signature,"void __thiscall f(void* this, void* text, void* intVector)",__thiscall: 0x005B4540 calls 0x005B4160
+0x005B45E0,signature,"void __thiscall f(void* this, void* text, float* out)",__thiscall: 0x005B45E0 calls 0x005B4340
+0x005B4680,signature,"void __thiscall f(void* this, void* text, void* floatVector)",__thiscall: 0x005B4680 calls 0x005B4200
+0x005B4720,signature,"void __thiscall f(void* this, void* text, void* out)",__thiscall: 0x005B4720 calls 0x005B4120
+0x005B47C0,signature,"void __stdcall f(void* stream, float* out, int count)",__stdcall: 0x005B47C0 loop count times of 0x00454300 with out += 4
+0x005B47F0,signature,"void __thiscall f(void* this, void* text, float* out, int count)",__thiscall: 0x005B47F0 calls 0x005B47C0
+0x005B48A0,signature,"void* __thiscall f(void* this, void* xmlNode)","__thiscall: 0x005B48A0 string compares 'Semantic', 'Indices', 'IndexType', 'IndexCount', 'PrimitiveType', 'Type', 'ElementCount', 'Looping', 'Instance', 'Frequency' and calls 0x005B3AF0, 0x005B3C40, 0x005B3DD0, 0x005B3DF0, 0x005B4160, 0x005B42A0, 0x005B4200"
+0x005B4D80,signature,"bool __thiscall f(void* this, void* a, void* b, unsigned char* flag)",__thiscall: 0x005B4D80 in the vftables 0x00AFB328 and 0x00AFEB14 at slot 3
+0x005B4D90,signature,"void* __thiscall f(void* this, void* first, void* second)",__thiscall: 0x005B4D90 calls 0x004C2510 on this and this+0x1C
+0x005B4DF0,signature,unsigned int __thiscall f(void* this),"__thiscall: 0x005B4DF0 (end-begin)/56 by 0x92492493, sar 5"
+0x005B4E20,signature,"void* __thiscall f(void* this, void* other)",__thiscall: 0x005B4E20 calls 0x004C2510 on this and this+0x1C from arg and arg+0x1C
+0x005B4E80,signature,"void* __cdecl f(void* first, void* last, void* dest)",0x005B4E80: ret
+0x005B4EC0,signature,"void* __cdecl f(void* first, void* last, void* dest)",0x005B4EC0: ret
+0x005B4F00,signature,"void* __cdecl f(void* first, void* last, void* dest)",0x005B4F00: ret
+0x005B40A0,signature,"void __stdcall f(void* stream, float* out)","the readers' convention, upheld against the check; __stdcall: 0x005B40A0 same loop to 4"
+0x005B40E0,signature,"void __stdcall f(void* stream, float* out)","the readers' convention, upheld against the check; __stdcall: 0x005B40E0 same loop to 0x10"
