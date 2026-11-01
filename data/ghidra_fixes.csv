@@ -12394,3 +12394,43 @@ address,what,value,why
 0x00471F20,signature,"void __cdecl std::_Sort<Renderer::SQObject**,int,Renderer::SOMaterialSort::Less>(void** first, void** last, int ideal, int pred)","plain ret; the empty predicate is passed as a dword; caller 0x00472266 add esp,0x10."
 0x00472010,signature,"void __thiscall Renderer::SQObjectVector::SortNearestFirst(void* this, void* pred)","ECX = the vector (begin +4, end +8); ret 4."
 0x004F77C0,clear,_AfxAygshellState,"A function-local static getter returning the Graphics::MaterialObjectManager singleton 0x00C308C0, not MFC's _AfxAygshellState."
+0x0052D530,signature,"bool __thiscall f(void* point, void* a, void* b)","ecx read as the point, ret 8 at 0x0052D5D3"
+0x0052D780,signature,"void __cdecl f(void* matrixA, void* matrixB, void* matrixC)",0x0052D780-0x0052D80D
+0x0052D870,signature,bool __thiscall f(void* this),0x0052D870-0x0052DD5F
+0x0052DD60,signature,"bool __thiscall f(void* this, int kind)",0x0052DD60-0x0052DE0F (jump table 0x0052DDE4)
+0x0052DE10,signature,"void __thiscall f(void* this, void* instance, void* drawArg)",0x0052DE10-0x0052DF9F
+0x0052DFA0,signature,"void __thiscall f(void* this, void* instance)",0x0052DFA0-0x0052E0CF
+0x0052F400,signature,"void __thiscall f(void* this, void* mapBank)",0x0052F400-0x0052F6CF
+0x0052F6D0,signature,"void __thiscall f(void* this, void* mapBank)",0x0052F6D0-0x0052F9BF
+0x0052F9C0,signature,bool __thiscall f(void* this),0x0052F9C0-0x0053095F
+0x00530A20,signature,"void __thiscall f(void* this, void* instance, void* out)",0x00530A20-0x00530B6F
+0x00530B70,signature,"void __thiscall f(void* this, void* library)","ret 4 at 0x00530C17, ecx saved at 0x00530B87"
+0x00530C20,signature,"void __thiscall f(void* this, void* instance, void* drawArg)",0x00530C20-0x00530DAF
+0x005317A0,signature,void __thiscall f(void* this),0x005317A0-0x00531803
+0x00531810,signature,"void __thiscall f(void* this, void* position)",0x00531810-0x00531836
+0x00531840,signature,"void __thiscall f(void* this, void* quaternion)",0x00531840-0x0053186F
+0x00531870,signature,"void __thiscall f(void* this, float scale)",0x00531870-0x005318DF
+0x005318E0,signature,"void __thiscall f(void* this, void* out, unsigned short id)",0x005318E0-0x005318FF (tail jmp to 0x00530A20)
+0x00531900,signature,"void __cdecl f(void* first, void* last, void* value)",0x00531900-0x0053191F
+0x00531920,signature,"void __cdecl f(void* first, void* last, void* mid, float px, float py, float pz)",0x00531920-0x00531A2F
+0x00531A30,signature,"void __cdecl f(void* first, int hole, int bottom, void* value, float px, float py, float pz)",0x00531A30-0x00531ABF
+0x00531AC0,signature,void __stdcall f(void* treeVector),0x00531AC0-0x00531B1F
+0x00531B20,signature,"void* __thiscall f(void* this, unsigned int index)",0x00531B20-0x00531B7F
+0x00531B80,signature,"bool __thiscall f(void* this, void* name, void* speedWind, float width, float height)",0x00531B80-0x00531CF1
+0x005334F0,signature,"void* __thiscall f(void* this, void* result)",0x005334F0-0x0053350F
+0x00533510,signature,"void __cdecl f(void* first, void* last, int ideal, float px, float py, float pz)",0x00533510-0x005335FF
+0x005339E0,signature,"void __thiscall f(void* this, int kind)",0x005339E0-0x00533D9F
+0x00533DA0,signature,"bool __thiscall f(void* this, int* lightingMethods, int* windMethods)",0x00533DA0-0x00533F6F
+0x00533F70,signature,"void __stdcall f(void* dest, void* geometry, void* layout)",0x00533F70-0x00534229
+0x00534230,signature,"void __thiscall f(void* this, bool flag)",0x00534230-0x00534A6B
+0x00534A70,signature,"void* __thiscall f(void* this, void* object)","ret 4 at 0x00534A96, ecx kept in esi"
+0x00534AA0,signature,"void* __thiscall f(void* this, unsigned int count)",0x00534AA0-0x00534B0F
+0x00534B10,signature,"void __thiscall f(void* this, unsigned int count)",0x00534B10-0x00534B2F
+0x00534B30,signature,"void __thiscall f(void* this, bool freeStorage)","ret 4 at 0x00534C53, ecx kept in esi"
+0x005359F0,signature,"void __thiscall f(void* this, int kind, void* dest)",0x005359F0-0x00535A7F
+0x00535A80,signature,"void __thiscall f(void* this, void* a, void* b)",0x00535A80-0x00535BAF
+0x00535BB0,signature,"void* __thiscall f(void* this, int unused, bool collisionForest)",0x00535BB0-0x00535E5F
+0x00535E60,signature,void __thiscall f(void* this),"plain ret at 0x00535EC8, ecx kept in ebp"
+0x00535ED0,signature,"void* __thiscall f(void* this, void* model)","ret 4, ecx kept in ebp at 0x00535EF7"
+0x00536010,signature,void __stdcall f(void* batch),0x00536010-0x005361F1
+0x00530960,signature,"void __thiscall f(void* this, int arg1, int arg2)","ret 8 at 0x00530A18 (frame 0x18), an argument read in the loop at 0x005309D9; types unread (keeper)"
