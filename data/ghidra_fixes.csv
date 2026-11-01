@@ -1668,3 +1668,46 @@ address,what,value,why
 0x004ECE00,signature,void __thiscall f(void* this),ret and arguments read in the code; reconciled from both readings
 0x004ECE30,signature,"bool __thiscall f(void* this, int rowId, unsigned int columnHash, int* outRow, int* outColumn)",ret and arguments read in the code; reconciled from both readings
 0x004ECE80,signature,"bool __thiscall f(void* this, int rowId, unsigned int columnHash, int* out)",ret and arguments read in the code; reconciled from both readings
+0x004ECED0,signature,"void* __thiscall f(void* this, void* name)",ret 4 at 0x004ECF50
+0x004ECF60,signature,bool __thiscall f(void* this),"vftable slot 1, plain ret"
+0x004ECF70,signature,unsigned int __thiscall f(void* this),"vftable slot 4, plain ret"
+0x004ECF80,signature,void __thiscall f(void* this),plain ret at 0x004ECFEB
+0x004ECFF0,signature,bool __thiscall f(void* this),"vftable slot 3, plain ret"
+0x004ED000,signature,"bool __thiscall f(void* this, int rowId, unsigned int columnHash, void* out)","vftable slot, ret 0xC"
+0x004ED050,signature,"bool __thiscall f(void* this, int rowId, unsigned int columnHash, float* out)","vftable slot, ret 0xC"
+0x004ED0A0,signature,"bool __thiscall f(void* this, int rowId, unsigned int columnHash, int* out)","vftable slot, ret 0xC"
+0x004ED0F0,signature,"bool __thiscall f(void* this, int rowId, unsigned int columnHash, unsigned char* out)","vftable slot, ret 0xC"
+0x004ED140,signature,"void* __thiscall f(void* this, unsigned int flags)","vftable slot 0, ret 4"
+0x004ED160,signature,"int __thiscall f(void* this, unsigned int columnHash)","vftable slot 6, ret 4"
+0x004ED250,signature,"int __thiscall f(void* this, int rowId)","vftable slot 7, ret 4 at 0x004ED32C"
+0x004ED340,signature,bool __thiscall f(void* this),"vftable slot 2, plain ret at 0x004ED4D7"
+0x004ED4E0,signature,"bool __thiscall f(void* this, int rowIndex, int columnIndex, void* out)","vftable slot 12, ret 0xC at 0x004ED611"
+0x004ED620,signature,"bool __thiscall f(void* this, int rowIndex, int columnIndex, float* out)","vftable slot 13, ret 0xC at 0x004ED6EC"
+0x004ED6F0,signature,"bool __thiscall f(void* this, int rowIndex, int columnIndex, int* out)","vftable slot 14, ret 0xC at 0x004ED7BC"
+0x004ED7C0,signature,"bool __thiscall f(void* this, int rowIndex, int columnIndex, unsigned char* out)","vftable slot 15, ret 0xC at 0x004ED891"
+0x004ED8A0,signature,"bool __thiscall f(void* this, int rowIndex, void* out)",ret 8 at 0x004ED961; ecx read at 0x004ED8A0
+0x004ED970,signature,"bool __thiscall f(void* this, int rowIndex, int columnIndex, int* out)","vftable slot 21, ret 0xC"
+0x004EEED0,signature,"bool __thiscall f(void* this, void* data, unsigned int length, int unused)","vftable slot 0, ret 0xC"
+0x004EEEF0,signature,"bool __thiscall f(void* this, void* data, unsigned int length)","vftable slot 1, ret 8"
+0x004EEF40,signature,"bool __thiscall f(void* this, unsigned int* out)","vftable slot 2, ret 4"
+0x004EEF60,signature,"bool __thiscall f(void* this, void* dest)","vftable slot 3, ret 4"
+0x004EEF80,signature,"bool __thiscall f(void* this, const unsigned char* source, unsigned int length, unsigned char* destination, unsigned int* written, unsigned char* error)",ret 0x14: five args + this; error byte untouched here
+0x004EEFE0,signature,"bool __thiscall f(void* this, unsigned char* buffer, unsigned int length, unsigned int* written, unsigned char* error)",ret 0x10: four args
+0x004EF040,signature,"bool __thiscall f(void* this, unsigned int size, unsigned int* out)","vftable slots 8 and 9, ret 8"
+0x004EF060,signature,void* __thiscall f(void* this),plain ret at 0x004EF089
+0x004EF090,signature,"void* __thiscall f(void* this, unsigned int a, unsigned int b)",ret 8 at 0x004EF09F
+0x004EF0B0,signature,"void* __thiscall f(void* this, unsigned int a, unsigned int b)",ret 8 at 0x004EF101
+0x004EF110,signature,void* __thiscall f(void* this),plain ret at 0x004EF138
+0x004F1DF0,signature,"bool __thiscall f(void* this, void* data, unsigned int length)","vftable slot 1, ret 8"
+0x004F1E20,signature,"bool __thiscall f(void* this, unsigned int* out)","vftable slot 2, ret 4"
+0x004F1E40,signature,"bool __thiscall f(void* this, void* dest)","vftable slot 3, ret 4"
+0x004F1E60,signature,"void __stdcall f(unsigned char* src, void* block)","ret 8 at 0x004F1EAB, ecx never read"
+0x004F1EB0,signature,"bool __thiscall f(void* this, unsigned int size, unsigned int* out)","vftable slot 8, ret 8"
+0x004F1EE0,signature,"bool __thiscall f(void* this, unsigned int size, unsigned int* out)","vftable slot 9, ret 8"
+0x004F1F00,signature,"unsigned int __thiscall f(void* this, unsigned int word)","ecx indexes the tables at 0x004F1F1E, ret 4 at 0x004F1F54"
+0x004F1F60,signature,"void __thiscall f(void* this, void* block)",ecx read; ret 4 at 0x004F202C
+0x004F2030,signature,"void __thiscall f(void* this, void* block)",ecx read; ret 4 at 0x004F20FC
+0x004F2100,signature,"void __stdcall f(void* block, unsigned char* end)","ret 8 at 0x004F2148, ecx never read"
+0x004F2150,signature,"bool __thiscall f(void* this, void* src, unsigned int length, void* dest, unsigned int* outLength, unsigned char* status)","vftable slot 5, ret 0x14 at 0x004F21D3"
+0x004E4DD0,signature,"void* __thiscall CTlkTable_ScalarDeletingDestructor2(void* this, unsigned int flags)","an adjustor thunk (sub ecx,8; jmp 0x004E5210) into CTlkTable's deleting destructor: (this, flags); sub ecx,8; jmp 0x004E5210 at 0x004E4DD0"
+0x004EF140,signature,bool __thiscall CBWCBlowFish_InitTables(void* this),Blowfish's InitTables: longer than the check reads to its ret; the readers' __thiscall stands; returns 1 at 0x004F1DE4; caller 0x004F23DD ignores it
