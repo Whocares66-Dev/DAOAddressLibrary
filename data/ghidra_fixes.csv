@@ -8344,3 +8344,37 @@ address,what,value,why
 0x00739870,clear,GUI::GUICharGen::vfunction1,"an adjustor thunk (ecx-0xC4) to the scalar deleting destructor, not a vfunction1"
 0x007FD2E0,clear,GUI::GUICharGenBase::vfunction4,"GUICharGenBase::RegisterMessageHandlers (slot 3): once-guarded by byte 0x00C39220, files Reset, CharGenEnd, AssignAttribute, AssignAbility, AutoLevelUp; outside gui-31, called at the head of 0x0073B140"
 0x00737460,convention,__thiscall ret 0x18,"AppearanceSlider<float>(group, label, value, integral, min, max): RET 0x18 at 0x007377E3"
+0x0075AD20,clear,AbilityGUIInfo::vfunction1,adjustor{32} thunk of the scalar deleting destructor (vtable 0x00B1CB70 slot 0)
+0x0075AD30,clear,AbilityGUIInfo::vfunction3,adjustor{8} thunk of the scalar deleting destructor (vtable 0x00B1CBE0 slot 2)
+0x0075BBF0,clear,AbilityGUIInfo::vfunction5,it is the scalar deleting destructor (vtable 0x00B1CBF0 slot 4)
+0x0075BBF0,signature,"void * __thiscall AbilityGUIInfo::`scalar deleting destructor'(void * this, unsigned int flags)",ret 4
+0x00764500,signature,"bool __thiscall Vector::operator!=(void * this, void * other)",ret 4; ecx read first
+0x00764580,signature,"void __thiscall Floaty::Init(void * this, bool announce, void * obj, unsigned int id)",ret 0xC; create is used only by the subclasses
+0x007645D0,signature,"bool __thiscall StatsFloaty::IsKind(void * this, int kind)","ret 4; vftable slot, ecx unread"
+0x00764600,signature,"bool __thiscall MessageFloaty::HasStyle(void * this, int style)",ret 4
+0x00764760,signature,"void __thiscall OffscreenIndicatorFloaty::Refresh(void * this, void * creature)",ret 4
+0x00764820,signature,"void __thiscall Floaty::Update(void * this, float dt)",ret 4
+0x00764A40,signature,"void __thiscall StatsFloaty::Init(void * this, bool announce, void * obj, unsigned int id)",ret 0xC
+0x00764A80,signature,"void __thiscall MessageFloaty::Init(void * this, bool announce, void * obj, unsigned int id)",ret 0xC
+0x00764AB0,signature,"void __thiscall IconFloaty::Init(void * this, bool announce, void * obj, unsigned int id)",ret 0xC
+0x00764AE0,signature,"void __thiscall ActionBarFloaty::Init(void * this, bool announce, void * obj, unsigned int id)",ret 0xC
+0x00764B20,signature,"void __thiscall ActionBarFloaty::Update(void * this, float dt)",ret 4
+0x00764C30,signature,"void __thiscall OffscreenIndicatorFloaty::Init(void * this, bool announce, void * obj, unsigned int id)",ret 0xC
+0x00764E40,signature,"void __thiscall StatsFloaty::Update(void * this, float dt)",ret 4
+0x00765120,signature,"void __thiscall MessageFloaty::Display(void * this, void * text, int style, unsigned int colour, float duration)",ret 0x10; text is const std::wstring*
+0x007651F0,signature,"void __thiscall IconFloaty::SetIcon(void * this, void * name)",ret 4 via the tail-jumped push_back; name is const std::wstring*
+0x00765210,signature,"void __thiscall OffscreenIndicatorFloaty::Update(void * this, float dt)",no function defined in the database: create one at 0x00765210 (ends ret 4 at 0x0076534E); vftable 0x00B1D010 slot 4
+0x007B1660,clear,GUI::GUIPaperdoll::Command::vfunction1,it is the scalar deleting destructor (slot 0)
+0x007B1660,signature,"void * __thiscall GUI::GUIPaperdoll::Command::`scalar deleting destructor'(void * this, unsigned int flags)",ret 4
+0x007B1680,clear,GUI::GUIPaperdoll::CommandCreateCreature::vfunction3,it is vftable slot 2 (Finish)
+0x007B16F0,clear,GUI::GUIPaperdoll::CommandCreateMorph::vfunction3,it is vftable slot 2 (Finish)
+0x007B2070,signature,"void * __thiscall GUI::GUIPaperdoll::CommandCreateCreature::CommandCreateCreature(void * this, int request, void * source, void * paperdoll, bool flagA, bool flagB)",ret 0x14
+0x007B2190,clear,GUI::GUIPaperdoll::CommandCreateCreature::vfunction1,it is the scalar deleting destructor (slot 0)
+0x007B2190,signature,"void * __thiscall GUI::GUIPaperdoll::CommandCreateCreature::`scalar deleting destructor'(void * this, unsigned int flags)",ret 4
+0x007C0BF0,clear,GUI::GUIPaperdoll::CommandCreateCreature::vfunction2,it is vftable slot 1 (Execute)
+0x007647B0,signature,"void __thiscall Floaty::Announce(void * this, int symbolId)",ret 4; pushes +0x14 to BatchCreateIDs 0x00C372D4 and the symbol to BatchCreateSymbolIDs 0x00C372E4 (B)
+0x007645F0,signature,"bool __thiscall MessageFloaty::IsKind(void * this, int kind)","ret 4 (same for 0x00764620, 0x00764640, 0x00764660)"
+0x00764740,signature,"void * __thiscall Floaty::`scalar deleting destructor'(void * this, unsigned int flags)",ret 4
+0x007B1680,signature,void __thiscall GUI::GUIPaperdoll::CommandCreateCreature::Finish(void * this),plain ret; slot 2
+0x007B16F0,signature,void __thiscall GUI::GUIPaperdoll::CommandCreateMorph::Finish(void * this),plain ret; slot 2
+0x007B1720,signature,void __thiscall GUI::GUIPaperdoll::RefreshTokens(void * this),"add ecx,0x8C; jmp 0x005C7CE0"
