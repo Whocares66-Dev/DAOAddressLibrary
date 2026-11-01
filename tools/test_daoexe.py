@@ -80,6 +80,42 @@ class Vftables(unittest.TestCase):
         self.assertEqual(len(img.vtables[0][3]), 3)
 
 
+MOV_EAX_EAX = bytes([0x89, 0xC0])
+RET = bytes([0xC3])
+
+
+class Disasm(unittest.TestCase):
+    """A function longer than one read runs on to its ret."""
+
+    def image(self, code):
+        data = bytearray(pe_with_one_vftable())
+        data[0x1000 : 0x1000 + len(code)] = code
+        with tempfile.TemporaryDirectory() as folder:
+            path = os.path.join(folder, "a.exe")
+            with open(path, "wb") as f:
+                f.write(bytes(data))
+            return daoexe.Image(path)
+
+    def test_a_long_function_is_read_to_its_ret(self):
+        # 0x900 bytes of `mov eax, eax` (89 C0), then ret: nine chunks of 0x100.
+        img = self.image(MOV_EAX_EAX * 0x480 + RET)
+        out = img.disasm(BASE + 0x1000, chunk=0x100)
+        self.assertEqual(len(out), 0x481)
+        self.assertEqual(out[-1].mnemonic, "ret")
+        self.assertEqual(out[-1].address, BASE + 0x1900)
+
+    def test_a_count_spans_chunks(self):
+        img = self.image(MOV_EAX_EAX * 0x480 + RET)
+        self.assertEqual(
+            len(img.disasm(BASE + 0x1000, count=0x300, chunk=0x100)), 0x300
+        )
+
+    def test_it_stops_at_the_end_of_the_section(self):
+        img = self.image(MOV_EAX_EAX * 0x800)  # the whole .text, no ret
+        out = img.disasm(BASE + 0x1000, chunk=0x100)
+        self.assertEqual(out[-1].address, BASE + 0x1FFE)
+
+
 class Identification(unittest.TestCase):
     def setUp(self):
         self.img = SimpleNamespace(

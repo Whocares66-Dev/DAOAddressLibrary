@@ -264,18 +264,43 @@ class Image:
         return out
 
     # -- code --
-    def disasm(self, va, count=None, limit=0x2000):
-        """Instructions from va, linearly: count of them, or to the first ret."""
+    def disasm(self, va, count=None, chunk=0x4000):
+        """Instructions from va, linearly: count of them, or to the first ret.
+
+        Read a chunk at a time from where the last whole instruction ended,
+        up to the end of the section holding va or a byte capstone cannot
+        decode. It once read one fixed 0x2000-byte window and stopped there
+        without a word: Messages::RegisterFactories (0x0078D1A0, 34 KB) came
+        out a fifth of its length, and a long function's ret was never
+        found (2026-10-31)."""
         import capstone
 
         md = capstone.Cs(capstone.CS_ARCH_X86, capstone.CS_MODE_32)
-        out = []
-        for ins in md.disasm(self.bytes_at(va, limit), va):
-            out.append(ins)
-            if count is not None and len(out) >= count:
+        end = next(
+            (
+                va_ + size + self.image_base
+                for _, va_, size, _ in self.sections
+                if va_ + self.image_base <= va < va_ + size + self.image_base
+            ),
+            va + chunk,
+        )
+        out, at = [], va
+        while at < end:
+            got = list(md.disasm(self.bytes_at(at, min(chunk, end - at)), at))
+            if not got:
                 break
-            if count is None and ins.mnemonic == "ret":
+            for ins in got:
+                out.append(ins)
+                if count is not None and len(out) >= count:
+                    return out
+                if count is None and ins.mnemonic == "ret":
+                    return out
+            last = got[-1].address + got[-1].size
+            # Fewer bytes decoded than read, short of the next chunk's worth:
+            # a byte that is not an instruction, which ends the run.
+            if last < at + min(chunk, end - at) - 15:
                 break
+            at = last
         return out
 
     def function_start(self, va, reach=0x4000):
