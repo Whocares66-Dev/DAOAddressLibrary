@@ -1419,3 +1419,45 @@ address,what,value,why
 0x00567430,signature,"void __cdecl f(void* first, void* last)",0x00567430: ret
 0x00567490,signature,"void __cdecl f(void* first, void* last, int depth)",0x00567490: ret
 0x005675D0,convention,__thiscall,0x005675D0 jmp 0x00567340
+0x00401C50,signature,void* __thiscall f(void* this),ID 35: 0x00401C50 calls ECString ctor 0x004C0D90 then zeroes +0x20..+0x2C
+0x00402CE0,signature,"void __thiscall f(void* this, bool skipRescan)","ID 103: 0x00402CE0..0x00402DBC: strings OPTIONS, AddIns.xml at 0x00ADE328/0x00ADE310"
+0x00402E30,signature,"void __thiscall f(void* this, int level)","ID 106: 0x00402E30: strings 0x00ADE338..0x00ADE40C, ReleaseSource 0x004C80F0, AddSource 0x004C7EA0 with 0x186A3 and 0xC351"
+0x004727E0,signature,"void* __thiscall f(void* this, unsigned int flags)","ID 3066: 0x004727E0: vptr 0x00AE8490, operator delete 0x004136C0"
+0x0048A030,signature,void __thiscall f(void* this),"ID 3508: 0x0048A030: strings OPTIONS, Profile.dap (0x00AEAC44), default (0x00AEA8E4)"
+0x00495990,signature,void __thiscall f(void* this),"ID 3684: 0x00495990: vptr 0x00AEC138, list clear 0x00484BF0, string dtor 0x004C0DB0, base dtor 0x004C8DC0"
+0x00495A30,signature,"void* __thiscall f(void* this, unsigned int flags)",ID 3685: 0x00495A30 calls 0x00495990 then operator delete 0x004136C0
+0x00497670,signature,"bool __stdcall f(void* a, void* b, int priority, bool withSubfolders)","ID 3697: 0x00497670: strings OFFERS: 0x00AEC358, BUILD_OFFERS: 0x00AEC33C, backslash 0x00ADE368"
+0x00497A30,signature,bool __stdcall f(void* name),"ID 3698: 0x00497A30: OFFERS: 0x00AEC358, Manager 0x004C7990, ReleaseSource 0x004C80F0"
+0x004A3D40,signature,void __thiscall f(void* this),"ID 3874: 0x004A3D40: strings 0x00AECB70, 0x00AECBC8, 0x00AECC64, 0x00AECC70, 0x00AECC84, 0x00AEC5C4"
+0x004BE8E0,signature,void* __thiscall f(void* this),"ID 4434: 0x004BE8E0: new 0x28, ctor 0x004C4DE0 (CriticalSection 0x004CB280 at +8)"
+0x004BEA90,signature,void __thiscall f(void* this),"ID 4436: 0x004BEA90: +0x24 zeroed, 0x004CB300 unlock, 0x004CB310 destroy, operator delete"
+0x004BEBC0,signature,int __thiscall f(void* this),"ID 4438: 0x004BEBC0: switch table 0x004BECB4 = {0x4BEC36, 0x4BEC1D, 0x4BEC1D, 0x4BEC0D, 0x4BEC36, 0x4BEC26}"
+0x004BECD0,signature,"void __thiscall f(void* this, int a, int b, int c)","ID 4439: 0x004BECD0..0x004BEDD4: state +0x34, offset +0x28, call [vtbl+4] at 0x004BED21"
+0x004BF220,signature,"void __thiscall f(void* this, unsigned short channel)","ID 4449: 0x004BF220 calls 0x004BF1C0 (byte at +0x848+channel, 0x30 means all) between lock 0x004CB2B0 and unlock 0x004CB300 on +0x880"
+0x004C0EC0,signature,"bool __thiscall f(void* this, void* suffix, unsigned int n)","ID 4503: 0x004C0EC0 calls compare 0x004C0BF0 with (len-n, n, other, other.len-n, n)"
+0x004C5400,signature,"void* __thiscall f(void* this, void* source, int a, int b)","ID 4623: 0x004C5400: Task ctor 0x004C4DA0 with 5, vptr 0x00AF040C"
+0x004C5430,signature,"void* __thiscall f(void* this, void* source)","ID 4624: 0x004C5430: Task ctor 0x004C4DA0 with 7, vptr 0x00AF0424"
+0x004C5450,signature,void __stdcall f(void* resource),ID 4625: 0x004C5450 reads only [esp+8]; ret 4; ecx never read
+0x004C5490,signature,"void __cdecl f(void* dest, void* src)","ID 4626: 0x004C5490: ECString copy 0x004C2510, five dword copies +0x1C..+0x2C"
+0x004C5510,signature,void* __cdecl f(void),"ID 4627: 0x004C5510: operator new 0x28, [0] and [4] set to the node"
+0x004C5530,signature,void* __cdecl f(void),ID 4628: 0x004C5530: operator new 0x38
+0x004C5550,signature,"void* __stdcall f(void* next, void* prev, void* value)","ID 4629: 0x004C5550: new 0x24, [0] next, [4] prev, value built at +8 by 0x00475860"
+0x004C55F0,signature,"bool __cdecl f(void* name, bool strictSingleDot)","ID 4631: 0x004C55F0: length test 0x20, character ranges 0x61..0x7A 0x41..0x5A 0x30..0x39 and 0x5F 0x2D 0x28 0x29 0x20, dot 0x2E, extension test len-dot <= 4"
+0x004C57A0,signature,"void __thiscall f(void* this, int event, void* source)","ID 4633: 0x004C57A0: loop over [+0x130,+0x134) calling [fn](event, source) stdcall"
+0x004C5810,signature,"void* __stdcall f(void* next, void* prev, void* value)","ID 4634: 0x004C5810: new 0x28, value at +8 via 0x0067BB20"
+0x004C58B0,signature,"void* __stdcall f(void* next, void* prev, void* value)","ID 4636: 0x004C58B0: new 0x38, value at +8 via 0x004C5490"
+0x004C5950,signature,"bool __thiscall f(void* this, void* inOutName)","ID 4638: 0x004C5950: Lock 0x004C5390, iterate +4 list, slot 8 (+0x20) 0 or 1, slot 2 (+8) test at 0x004C59FF..0x004C5A06, join 0x004C3360"
+0x004C5AB0,signature,void __thiscall f(void* this),"ID 4639: 0x004C5AB0: Lock 0x004C5390, slot 8 == 2, call 0x004CE760, Unlock 0x004C53B0 by tail jump"
+0x004C5B30,signature,"bool __thiscall f(void* this, void* str)",ID 4640: 0x004C5B30 calls find 0x004C53C0 (compares with 0x004C0DE0) and tests against the end
+0x004C6880,signature,"bool __thiscall f(void* this, int kind, void* maker)",ID 4657: 0x004C6880: map find 0x0051F4F0 and insert 0x004DB640 on +0x7C
+0x004C7880,signature,void* __thiscall f(void* this),"ID 4666: 0x004C7880: list ctor 0x004C5C60, map ctors 0x005CB3F0 / 0x0051F0D0 / 0x004C77F0, CriticalSection 0x004CB280"
+0x004C7A10,signature,"bool __thiscall f(void* this, void* source)","ID 4668: 0x004C7A10: Lock 0x004C5390, 0x004E65D0 and 0x004E6600 (count), slot 7 at 0x004C7A7E, list erase 0x00745230, index remove 0x004C6330, new 0x1C and Del"
+0x004C7B00,signature,"bool __thiscall f(void* this, void* source, void* name, int priority, int flag)","ID 4669: 0x004C7B00 stores source, priority, 0, flag in the registry record and returns bl; ret 0x10; caller 0x004CFA10 passes the source, name, [source+0x60] and a flag"
+0x004C7C50,signature,"void __thiscall f(void* this, void* source)","ID 4670: 0x004C7C50: loop over +0x54..+0x58 / 0x1C, find 0x004C5BF0, new 0x10 list 0x004C5C60 for a new name, order test 0x004E6660"
+0x004C8190,signature,"void __thiscall f(void* this, void* source, int a, int b)","ID 4673: 0x004C8190: Lock 0x004E6580, open 0x004D0800, 0x004CC0A0, 0x004CC710, 0x004CC5A0, 0x004CC7A0, AddSource 0x004C7EA0 (slot 8 kind, priority +0x60), regi"
+0x004C8330,signature,"bool __thiscall f(void* this, void* name)","ID 4674: 0x004C8330: registry find 0x004C5BF0 on +0x90 under lock +0xE8, join 0x004C3360, ReleaseSource 0x004C80F0, recursion 0x004C8330 after 0x004CC230"
+0x004C8520,signature,"int __thiscall f(void* this, void* arg)","ID 4675: 0x004C8520: Manager 0x004C7990, 0x004C8190, slot 0 call with 1"
+0x004C8550,signature,"void __thiscall f(void* this, void* name, bool async, int a, int b, int offsetOverride, int c, int d)","ID 4676: 0x004C8550: registry find 0x004C5BF0, MakeSource 0x004C5BA0 kind 2, GetCurrentThreadId vs 0x00BF4694, RIMLoadTask 0x004C5400 (new 0x24), queue 0x004BE"
+0x004C89D0,signature,unsigned int __thiscall f(void* this),"ID 4677: 0x004C89D0: SetFilePointer through 0x00ADA0DC with (handle, 0, 0, 1)"
+0x004C8A30,signature,unsigned int __thiscall f(void* this),ID 4679: 0x004C8A30: GetFileSize through 0x00ADA0E0
+0x004C8A50,signature,int __thiscall f(void* this),ID 4680: 0x004C8A50: SetEndOfFile through 0x00ADA0E4
