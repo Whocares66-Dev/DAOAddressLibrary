@@ -2728,3 +2728,44 @@ address,what,value,why
 0x007AEA70,signature,void* __thiscall(void* this),0x007AEA70 iterator vftable slot 4
 0x007AEAB0,signature,"void* __thiscall(void* this, unsigned int flags)",0x007AEAB0 ret 4
 0x007AEAD0,signature,void* __thiscall(void* this),"0x007AEAD0 operator_new 0xC, iterator vftable 0x00B21650"
+0x007AEB00,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007AEB00 vftable slot 1; ret 4
+0x007AF0E0,signature,"void* __thiscall f(void* this, void* array)",0x007AF0E0 ret 4; arg is the array itself
+0x007B0A00,signature,"void* __thiscall f(void* this, void* other)",0x007B0A00 ret 4; arg+0xC copy
+0x007B27C0,signature,"void* __thiscall f(void* this, void* other)",0x007B27C0 ret 4
+0x007B5170,signature,void __thiscall f(void* this),0x007B5170; called by the scalar deleting destructor
+0x007B51E0,signature,unsigned int __thiscall f(void* this),0x007B51E0 plain ret
+0x007B51F0,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007B51F0 adjustor thunk to 0x007B5310
+0x007B5200,signature,"void* __stdcall f(void* array, int index)","0x007B5200 ret 8, ecx overwritten, static guard byte then IntToString on arg2; reconciled: index goes to IntToString, signed, as 0x005DFE40"
+0x007B5280,signature,"void* __thiscall f(void* this, unsigned int key)",0x007B5280 vftable slot 7; ret 4
+0x007B52A0,signature,void* __thiscall f(void* this),0x007B52A0 vftable slot 17; plain ret
+0x007B52D0,signature,void* __thiscall f(void* this),0x007B52D0 vftable slot 4; plain ret
+0x007B5310,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007B5310 vftable slot 1; ret 4
+0x007B6690,signature,void __thiscall f(void* this),0x007B6690; called by the scalar deleting destructor
+0x007B6700,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007B6700 adjustor thunk to 0x007B6990
+0x007B6710,signature,"void* __stdcall f(void* array, int index)","0x007B6710 ret 8, ecx overwritten, static guard byte then IntToString on arg2; reconciled: index goes to IntToString, signed, as 0x005DFE40"
+0x007B6790,signature,"void* __cdecl f(void* result, void* first1, void* last1, void* first2, void* check1, void* check2)","0x007B6790-0x007B67C7; reconciled: read it, uses four arguments, caller pushes six and pops 0x18; tags as 0x005DFEE0"
+0x007B67D0,signature,"void* __thiscall f(void* this, unsigned int key)",0x007B67D0 vftable slot 7; ret 4
+0x007B67F0,signature,void* __thiscall f(void* this),0x007B67F0 vftable slot 17; plain ret
+0x007B6820,signature,void* __thiscall f(void* this),0x007B6820 vftable slot 4; plain ret
+0x007B6850,signature,"bool __cdecl f(void* first1, void* last1, void* container, void* first2, void* check1, void* check2)","0x007B6850-0x007B68BA; reconciled: read it, six arguments pushed to 0x007B6790 (add esp,0x18), last two unused tags; as 0x005E0080"
+0x007B68C0,signature,"bool __cdecl f(void* a, void* b)","0x007B68C0 plain ret; caller 0x007B6950 add esp,8"
+0x007B6950,signature,"bool __thiscall f(void* this, void* other)",0x007B6950 ret 4
+0x007B6970,signature,"bool __thiscall f(void* this, void* other)",0x007B6970 ret 4
+0x007B6990,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007B6990 vftable slot 1; ret 4
+0x007B7720,signature,"void* __thiscall f(void* this, void* other)",0x007B7720 ret 4; arg+0xC copy
+0x007B77A0,signature,"void* __thiscall f(void* this, void* array)",0x007B77A0 ret 4; arg is the array itself
+0x007B7820,signature,"void* __thiscall f(void* this, void* value)",0x007B7820 vftable slot 21; ret 4
+0x007B7860,signature,"void* __thiscall f(void* this, void* array)",0x007B7860 ret 4; arg is the array itself
+0x007BAE00,signature,"void* __thiscall f(void* this, void* text)",0x007BAE00 vftable slot 10; ret 4
+0x007BCFB0,signature,"void* __thiscall f(void* this, void* other)",0x007BCFB0 ret 4; arg+0xC copy
+0x007C3D60,signature,void __thiscall f(void* this),0x007C3D60; called by the scalar deleting destructor
+0x007C3DD0,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007C3DD0 adjustor thunk to 0x007C3EF0
+0x007C3DE0,signature,"void* __stdcall f(void* array, int index)","0x007C3DE0 ret 8, ecx overwritten, static guard byte then IntToString on arg2; reconciled: index goes to IntToString, signed, as 0x005DFE40"
+0x007C3E60,signature,"void* __thiscall f(void* this, unsigned int key)",0x007C3E60 vftable slot 7; ret 4
+0x007C3E80,signature,void* __thiscall f(void* this),0x007C3E80 vftable slot 17; plain ret
+0x007C3EB0,signature,void* __thiscall f(void* this),0x007C3EB0 vftable slot 4; plain ret
+0x007C3EF0,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007C3EF0 vftable slot 1; ret 4
+0x007C3F10,signature,"void* __thiscall f(void* this, void* array)",0x007C3F10 ret 4; arg is the array itself
+0x007C5550,signature,"void* __thiscall f(void* this, void* value)",0x007C5550 ret 4
+0x007C5580,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007C5580 adjustor thunk to 0x007C5610
+0x007C5590,signature,void __thiscall f(void* this),0x007C5590; called by the scalar deleting destructor
