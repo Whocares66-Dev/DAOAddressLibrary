@@ -8803,3 +8803,40 @@ address,what,value,why
 0x0067C230,signature,"unsigned char __thiscall f(void* this, void* tag, bool active)","ret 8, ecx read at 0x0067C233"
 0x0067C2E0,signature,"unsigned char __thiscall f(void* this, void* tag, int state)","ret 8, ecx read at 0x0067C2E3"
 0x0067C3B0,signature,"void __thiscall f(void* this, bool active)","ret 4, ecx read at 0x0067C3B8"
+0x00477EB0,signature,"void __thiscall f(void* this, void* result, int unused)","0x00477EB0 (0x41FCE0 tests +0x20 != 0, 0x9601A0 reads it), 0x00475BF0 strings 0x00AEA628/0x00AEA5A8/0x00AEA558, 0x004C0DB0 dtor"
+0x004C0990,signature,int __thiscall f(void* this),"no stack args, ecx read first 0x004C0992"
+0x004C3970,signature,"void* __thiscall f(void* this, void* out)",ret 4 and out returned 0x004C3A42
+0x005D4840,signature,int __thiscall f(void* this),vftable slot returns 500 0x005D4840
+0x005D4850,signature,int __thiscall f(void* this),vftable slot returns 30000 0x005D4850
+0x005D4860,signature,"void* __thiscall f(void* this, unsigned int flags)","ret 4, scalar deleting destructor 0x005D487C"
+0x005D5060,signature,"void* __thiscall f(void* this, unsigned int flags)","ret 4, scalar deleting destructor 0x005D507B"
+0x005DB7F0,convention,__thiscall,this in ecx saved to esi 0x005DB81A
+0x00634260,signature,"void __stdcall f(void* ids, void* objects)",ret 8 0x006342D6; ecx written before read 0x00634269
+0x0064B4D0,signature,int __cdecl f(void* gffSchema),"0x0064B4D0 (mov [esp+8],0x534D4941"
+0x0064B570,signature,void* __thiscall f(void* this),returns this 0x0064B570
+0x0064B580,signature,"void* __thiscall f(void* this, unsigned int index)","0x0064B580 (+4 first, +8 last, i*4"
+0x0064B5B0,signature,"int __thiscall f(void* this, unsigned int group)","ret 4, ecx read 0x0064B5B4"
+0x0064B690,signature,"void __thiscall f(void* this, void* saveStruct)","ret 4 0x0064B745, ecx to ebp 0x0064B69C"
+0x0064B750,signature,"void __thiscall f(void* this, unsigned int groupA, unsigned int groupB)","0x0064B750 (controlled creature 0x005D5CC0, area 0x005D5960, creature 0x005D58C0, group at creature+0x3C0), caller ScriptBackend::ForScript_SetGroupHostility 0x0064C060 at 0x0064C0E3"
+0x0064B810,signature,"bool __thiscall f(void* this, unsigned int group)",ret 4 0x0064B824
+0x0064B830,signature,"void* __thiscall f(void* this, unsigned int group)","0x0064B830 (halving loop 0x0064B880-0x0064B8C4, fallback 0x00C348B8, key compare 0x0064B8F2)"
+0x0064B9E0,signature,"bool __thiscall f(void* this, unsigned int group, void* creature)","0x0064B9E0 (group at creature+0x3C0, 0x0064B830, 0x0064B810, +0x3B8/+0x3BC at 0x0064BA2B-0x0064BA34), caller 0x006B8470"
+0x0064BA50,signature,"void __thiscall f(void* this, void* saveStruct)","0x0064BA50 (0x004DA040 makes list 0x4042, element struct 0x004DB2E0), caller 0x005FEC00"
+0x0064BB10,signature,"bool __thiscall f(void* this, unsigned int group)",ret 4 0x0064BB37
+0x0064BB80,convention,__thiscall,"ecx to edi, plain ret 0x0064BBFB"
+0x0064BC00,signature,"void __thiscall f(void* this, unsigned int group)","ret 4, caller 0x0064BD80 pushes the id"
+0x0064BD20,signature,"void __thiscall f(void* this, void* saveStruct)",ret 4 0x0064BD92
+0x0064BDA0,signature,void __cdecl f(void* schema),0x0064BDA0 (0x004860F0 twice with 4 and 0x80000004)
+0x0064BDE0,signature,void* __thiscall f(void* this),"0x0064BDE0 (alloc 0x10, alloc 8, key set to 0 at 0x0064BE4E, append 0x006F1340)"
+0x0064BE80,signature,void __thiscall f(void* this),"0x0064BE80 (loop 0x0064BEA5-0x0064BEE7, resize 0x0064BEEE)"
+0x0064BF00,signature,"void* __thiscall f(void* this, unsigned int group)","0x0064BF00 (key store 0x0064BF58, existing-row path 0x0064C01B, insert 0x0064C041), caller ScriptBackend::ForScript_SetGroupHostility 0x0064C060"
+0x0064DDD0,signature,"void* __thiscall f(void* this, void* out, int type)","0x0064DDD0 slot 17 of vftable 0x00B0030C (strings 0x00B07C58, 0x00B07C4C, 0x00B07C44, 0x00AE8528, 0x00B07C34, 0x00B07C2C), constructor 0x004C4140 from a narrow string"
+0x0064F970,convention,__thiscall,"ecx to esi, plain ret 0x0064F9C7"
+0x006517B0,signature,"bool __stdcall f(void* effect, int value)","ret 8, no ecx 0x006517C0"
+0x006517D0,signature,"bool __stdcall f(void* effect, int value)",ret 8 0x006517E0
+0x00651830,signature,"bool __stdcall f(void* effect, int value)","0x00651830 (0x00A653A0 pushes 0xB2B84870 and calls 0x00A65260), referenced from 0x00673B7A"
+0x00651850,signature,"bool __stdcall f(void* effect, int unused)",ret 8 0x0065186A
+0x00651A90,signature,"void __thiscall f(void* this, void* name)",ret 4 0x00651AAB
+0x00652860,convention,__thiscall,"ecx to esi, plain ret 0x00652887"
+0x00652890,signature,"void __thiscall f(void* this, void* scriptName, int error)","0x00652890 slot 4 of vftable 0x00B0030C (GetObjectById 0x005D5BE0, +0xB8)"
+0x00652940,signature,"int __thiscall f(void* this, int type, void* structure, void* gff, void* gffStruct)","0x00652940 slot 9 of vftable 0x00B0030C (string 0x00B07E30, ret 0x10, switch 0x00652967-0x00652A53)"
