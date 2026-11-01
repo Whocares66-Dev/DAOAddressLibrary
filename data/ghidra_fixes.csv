@@ -8762,3 +8762,44 @@ address,what,value,why
 0x005FE4B0,signature,void __thiscall f(void* this),0x005FE4B0-0x005FE53F; reconciled: read the ret and the callers
 0x005FE540,signature,"void __thiscall f(void* this, void* node)",ret 4 at 0x005FE56F/0x005FE580/0x005FE58B; node at [esp+4] 0x005FE540; tree head via [ecx+4] 0x005FE55E
 0x005FE590,signature,"void* __thiscall f(void* this, unsigned int index)",ret 4 at 0x005FE5C4/0x005FE5CE; index at [esp+0xC] 0x005FE59E
+0x005FE5E0,signature,"void* __thiscall f(void* this, unsigned int index)","ret 4, ecx read; 0x005FE5E3"
+0x005FE630,signature,"void __thiscall f(void* this, unsigned int label, void* value)","ret 8, ecx read at 0x005FE634; args at 0x005FE648 and 0x005FE686"
+0x005FE6A0,signature,"void __cdecl f(void* out, void* file, unsigned int offset)","plain ret, three stack reads 0x005FE6A0-0x005FE6AB"
+0x005FE6C0,signature,"void* __cdecl f(void* first, void* last, void* dest)","plain ret, 0x005FE6C0-0x005FE70F"
+0x005FE710,signature,"void* __cdecl f(void* first, void* last, void* destEnd)","plain ret, 0x005FE710-0x005FE76A"
+0x005FE770,signature,"void* __cdecl f(void* first, void* last, void* destEnd)","plain ret, 0x005FE770-0x005FE7B8"
+0x005FE7C0,signature,"void* __cdecl f(void* first, void* last, void* dest)","plain ret, 0x005FE7C0-0x005FE7F4"
+0x005FF580,signature,"int __thiscall f(void* this, void* tag, unsigned int objectType, unsigned int skip)","reconciled: read 0x005FF580-0x005FF73D, ret 0xC"
+0x005FF740,signature,void __thiscall f(void* this),"plain ret, ecx read at 0x005FF741"
+0x005FF7A0,signature,"void* __thiscall f(void* this, void* out, unsigned int label, void* defaultValue)","reconciled: read 0x005FF7A0, ret 0xC; the third argument is the default copied at 0x005FF7F2"
+0x005FF820,signature,"void* __cdecl f(void* first, void* last, void* destEnd)",plain ret; 0x005FF84A
+0x00601AB0,signature,"void* __thiscall f(void* this, unsigned int count)","ret 4, ecx read; 0x00601B09"
+0x00601BA0,signature,"void* __thiscall f(void* this, unsigned int count)","ret 4, ecx read; 0x00601C15"
+0x00603E70,signature,void __thiscall f(void* this),destructor; Ghidra decompile
+0x006042C0,signature,"bool __thiscall f(void* this, void* a1, void* a2, void* a3)","reconciled: read 0x006042C0, mov eax, 1; ret 0xC"
+0x006042D0,signature,"void* __thiscall f(void* this, unsigned int flags)",adjustor thunk to 0x00604380 ret 4
+0x006042E0,signature,"void __thiscall f(void* this, void* value)","ret 4, ecx read; 0x00604354"
+0x00604380,signature,"void* __thiscall f(void* this, unsigned int flags)","vftable slot 0, ret 4; 0x0060439B"
+0x006043A0,signature,"void* __thiscall f(void* this, unsigned int count)",ret 4; 0x0060440A
+0x00604410,signature,"void* __thiscall f(void* this, void* a1, void* a2, void* a3, void* a4, void* a5, void* a6, void* a7)","reconciled: read 0x00604410, ret 0x1C and this returned in eax at 0x00604891"
+0x00616E50,signature,"void* __thiscall f(void* this, void* out)","ret 4, ecx read at 0x00616E85; 0x00616F14"
+0x0064AC10,signature,void* __thiscall f(void* this),"plain ret, ecx read at 0x0064AC12"
+0x0067A050,signature,int __thiscall f(void* this),"plain ret, ecx read; 0x0067A075"
+0x0067A1D0,signature,"void __stdcall f(void* effect, void* name, float value)","ret 0xC, ecx not read before write (0x0067A207)"
+0x0067A270,signature,"void __cdecl f(void* nodes, unsigned int count, int axis)","plain ret, 0x0067A270-0x0067A2C3"
+0x0067A2F0,signature,"void __thiscall f(void* this, void* creature, int unused)","ret 8, ecx read; 0x0067A33E"
+0x0067A400,signature,"unsigned char __thiscall f(void* this, void* other)","ret 4, ecx read; 0x0067A435"
+0x0067AC00,signature,"int __thiscall f(void* this, void* tree, void* structRef)","reconciled: read 0x0067AC00, eax is 1 at 0x0067AE2C and ret 8"
+0x0067B1B0,signature,"void __thiscall f(void* this, bool active)","ret 4, ecx read at 0x0067B1B7"
+0x0067B200,signature,void __thiscall f(void* this),"ecx read at 0x0067B200, tail jump"
+0x0067B210,signature,"void __thiscall f(void* this, void* position)","reconciled: read 0x0067B210, the argument goes to 0x005CA590 (a position, dev/PARTY.md)"
+0x0067B3D0,signature,"int __thiscall f(void* this, void* point)",ret 4; ecx passed through to RoomAt 0x0067B3A0
+0x0067B3F0,signature,"void* __thiscall f(void* this, int index)","ret 4, ecx read at 0x0067B3F1"
+0x0067C010,signature,"void* __thiscall f(void* this, unsigned int eventId)","ret 4, ecx read at 0x0067C017"
+0x0067C070,signature,"int __thiscall f(void* this, void* request, int a, int b, int c, int d)","reconciled: read 0x0067C070, ret 0x14, the first argument is the request"
+0x0067C0D0,signature,void __thiscall f(void* this),"plain ret, ecx read at 0x0067C0D2"
+0x0067C130,signature,void __thiscall f(void* this),"ecx read at 0x0067C13F, tail jump to Resources::Release"
+0x0067C160,signature,"void __thiscall f(void* this, bool active)","ret 4, ecx read at 0x0067C164"
+0x0067C230,signature,"unsigned char __thiscall f(void* this, void* tag, bool active)","ret 8, ecx read at 0x0067C233"
+0x0067C2E0,signature,"unsigned char __thiscall f(void* this, void* tag, int state)","ret 8, ecx read at 0x0067C2E3"
+0x0067C3B0,signature,"void __thiscall f(void* this, bool active)","ret 4, ecx read at 0x0067C3B8"
