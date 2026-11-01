@@ -5265,3 +5265,58 @@ address,what,value,why
 0x006C51E0,signature,bool __thiscall f(void *this),"sete cl at 0x006C51EB, plain ret"
 0x006C5200,signature,void __cdecl f(void),"no this, calls singletons only, plain ret at 0x006C5272"
 0x006C5280,signature,"void __thiscall f(void *this, float *out)","ret 4, ecx read at 0x6C5284"
+0x0052D6C0,signature,"void* __stdcall FMODMemoryAllocCallback(unsigned int size, int type)","ret 8 at 0x0052D6CD, ECX unread; FMOD_Memory_Initialize's alloc argument (pushed at 0x005C5507)"
+0x0052D6C0,clear,ECSpeedTreeAllocator::vfunction2,folded COMDAT: the same bytes are FMOD's allocator and slot 2 of the vftables at 0x00AF6FA4 and 0x00B26C04; the SpeedTree label hides the FMOD use
+0x005BDCE0,signature,void __thiscall EclipsePrivate::CContentRenderer::~CContentRenderer(void* this),plain ret; writes vftable 0x00AFF084
+0x005BDD00,signature,"void __thiscall EclipsePrivate::CContentRenderer::SetListenerPosition(void* this, const float* position)",ret 4; 16-byte aligned vec4 (MOVAPS to +0x10 at 0x005BDD0C)
+0x005BDD20,signature,"void __thiscall EclipsePrivate::CContentRenderer::SetListenerOrientation(void* this, const float* forward, const float* up)","ret 8; forward to +0x20, up to +0x30 (0x005BDD2F, 0x005BDD36)"
+0x005BDDB0,signature,void* __thiscall EclipsePrivate::CContent::CContent(void* this),"plain ret, returns this"
+0x005BDE20,signature,"bool __thiscall EclipsePrivate::CContent::LoadEvent(void* this, const void* name, int flag, bool wantsCallback)",ret 0xC; same arity as CContent_FMOD::LoadEvent 0x005C3390; only the name is read here
+0x005BDE40,signature,"void __thiscall EclipsePrivate::CContent::GetOcclusion(void* this, float* direct, float* reverb)",ret 8
+0x005BDE60,signature,"void __thiscall EclipsePrivate::CContent::SetOcclusion(void* this, float direct, float reverb)","ret 8, floats on the stack"
+0x005BDE80,signature,"void __thiscall EclipsePrivate::CContent::GetPanLevel(void* this, float* panLevel)",ret 4
+0x005BDE90,signature,"void __thiscall EclipsePrivate::CContent::SetPanLevel(void* this, float panLevel)",ret 4
+0x005BDEA0,signature,"void __thiscall EclipsePrivate::CContent::SetVelocity(void* this, const float* velocity)",ret 4; aligned vec4
+0x005BDEC0,signature,"void __thiscall EclipsePrivate::CContent::SetPosition(void* this, const float* position)",ret 4; aligned vec4
+0x005BDEF0,signature,"void* __thiscall EclipsePrivate::CContentRenderer::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x005BDF10,signature,"void* __thiscall EclipsePrivate::CContent::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x005BE1E0,signature,"void* __stdcall FMODMemoryReallocCallback(void* ptr, unsigned int size, int type)",ret 0xC
+0x005BE200,signature,"void __stdcall FMODMemoryFreeCallback(void* ptr, int type)",ret 8
+0x005BE210,signature,void* __thiscall FMODFileHandle::FMODFileHandle(void* this),"reads ECX as this (0x005BE232), plain ret, returns this; Ghidra had no this"
+0x005BE270,signature,void __thiscall FMODFileHandle::~FMODFileHandle(void* this),"reads ECX as this (0x005BE292), plain ret; Ghidra shows void(void)"
+0x005BE530,signature,bool __thiscall EclipsePrivate::CContentRenderer_FMOD::GetInitFlag(void* this),plain ret; returns byte +0x9C
+0x005BE540,signature,"bool __thiscall EclipsePrivate::CContentRenderer_FMOD::GetSpeakerModeName(void* this, void* outName)",ret 4; reads +0x40 (Ghidra's struct member says 0x3C: the struct sits 4 bytes off)
+0x005BE630,signature,void* __thiscall EclipsePrivate::CContentRenderer_FMOD::GetOutputHandle(void* this),"plain ret, ECX unused; returns the handle's value (0x005BE64A), not a local's address as the decompile shows"
+0x005BE650,signature,"bool __thiscall EclipsePrivate::CContentRenderer_FMOD::StopEvent(void* this, void* event)",ret 4; vftable word 0x00AFF268
+0x005BE740,signature,"bool __thiscall EclipsePrivate::CContentRenderer_FMOD::GetCPUUsage(void* this, float* dsp, float* stream, float* update, float* total)",ret 0x10; four pointers forwarded to System::getCPUUsage
+0x005BE780,signature,"int __thiscall EclipsePrivate::CContentRenderer_FMOD::GetMemoryStats(void* this, int* currentAlloced, int* maxAlloced)",tail JMP to FMOD_Memory_GetStats@8 with the two stack arguments; ECX dropped
+0x005BEED0,signature,void* __thiscall EclipsePrivate::CContent_FMOD::CContent_FMOD(void* this),returns this
+0x005BEF80,signature,float __thiscall EclipsePrivate::CContent_FMOD::GetVolume(void* this),FLD [ECX+0xD4]; ret
+0x005BEF90,signature,float __thiscall EclipsePrivate::CContent_FMOD::GetPitchOffset(void* this),FLD [ECX+0xD8]; ret
+0x005BEFE0,signature,"void __thiscall EclipsePrivate::CContent_FMOD::SetReverbPresetName(void* this, const void* name)","JMP into wstring::operator= on +0x70, which does ret 4"
+0x005BEFF0,signature,void* __thiscall EclipsePrivate::CContent_FMOD::GetEvent(void* this),plain ret; returns +0xA8
+0x005BF0F0,signature,"void __thiscall EclipsePrivate::CContent_FMOD::GetCategoryName(void* this, void* outName)",ret 4
+0x005BF110,signature,void __thiscall EclipsePrivate::CContent_FMOD::RemoveCallbackAndStop(void* this),"this in ECX (0x005BF113), plain ret; Ghidra shows __fastcall(int*)"
+0x005BF130,signature,"bool __thiscall EclipsePrivate::CContent_FMOD::Play(void* this, bool startPaused)",ret 4 at 0x005BF2B4; Ghidra gives three parameters
+0x005BF380,signature,"bool __cdecl GetChannelGroupSoundLengthMs(void* channelGroup, unsigned int* outLengthMs)","plain ret, caller cleans (ADD ESP,8 after the recursive call at 0x005BF43A)"
+0x005BF570,signature,"void __thiscall EclipsePrivate::CContent_FMOD::SetVolume(void* this, float volume)",ret 4
+0x005BF580,signature,"void __thiscall EclipsePrivate::CContent_FMOD::SetPitchOffset(void* this, float offset)",ret 4
+0x005BF590,signature,"bool __thiscall EclipsePrivate::CContent_FMOD::HasEvent(void* this, bool anyState)",ret 4
+0x005BF5D0,signature,bool __thiscall EclipsePrivate::CContent_FMOD::IsReady(void* this),plain ret; Ghidra's decompile drops the true path (0x005BF5F4)
+0x005BF600,signature,bool __thiscall EclipsePrivate::CContent_FMOD::FreeEvent(void* this),plain ret
+0x005BF820,signature,"bool __thiscall EclipsePrivate::CContent_FMOD::SetParameterByIndex(void* this, int index, const void* param)","ret 8; record: value +4, seek speed +0x10, velocity +0x14"
+0x005BF890,signature,"bool __thiscall EclipsePrivate::CContent_FMOD::GetGroupName(void* this, void* outName)",ret 4
+0x005BFE60,signature,"bool __stdcall IsMusicEventPlaying(void* event, bool needChannels)","ret 8, ECX unused"
+0x005BFEA0,signature,"void __stdcall StopMusicEvent(void* event, bool immediate)",ret 8
+0x005BFF70,signature,"void __stdcall SetMusicEventVolume(void* event, float volume)",ret 8
+0x005C0060,signature,"void __stdcall SetMusicEventPitch(void* event, float pitch)",ret 8 (0x005C0054)
+0x005C01B0,signature,"bool __thiscall EclipsePrivate::CMusicThemeContent_FMOD::IsPlaying(void* this, bool needChannels)",ret 4; state at +0x128 (Ghidra's struct member says 0x124)
+0x005C0200,signature,bool __thiscall EclipsePrivate::CMusicThemeContent_FMOD::HasTrackEnded(void* this),plain ret
+0x005C0260,signature,void* __thiscall EclipsePrivate::CContentRenderer_FMOD::CreateContent(void* this),plain ret; returns the new CContent_FMOD or 0
+0x005C0260,clear,CThreadLocal/CFrameWnd::CreateObject library match,the decompiler's library-function comment is wrong: it is CContentRenderer_FMOD::CreateContent
+0x005C0310,signature,"bool __thiscall EclipsePrivate::CContentRenderer_FMOD::GetWaveBankDebugText(void* this, void* outText, bool streamsOnly)",ret 8; this unused
+0x005C0590,signature,"bool __thiscall EclipsePrivate::CContent_FMOD::IsPlaying(void* this, bool needChannels)",ret 4
+0x005C05E0,signature,bool __thiscall EclipsePrivate::CContent_FMOD::IsValid(void* this),plain ret
+0x005C05F0,signature,"bool __thiscall EclipsePrivate::CContent_FMOD::GetPlaybackPositionMs(void* this, unsigned long long* outMs)",ret 4; writes the low word and 0
+0x005C0660,signature,"bool __thiscall EclipsePrivate::CContent_FMOD::SetPlaybackPositionMs(void* this, unsigned long long ms)",ret 8; low word passed on (read at 0x005C068C)
+0x005C06B0,signature,"bool __thiscall EclipsePrivate::CContent_FMOD::GetPositionMs(void* this, unsigned int* outMs)",ret 4
