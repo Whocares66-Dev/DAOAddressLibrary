@@ -7566,3 +7566,44 @@ address,what,value,why
 0x00728170,signature,void __thiscall GUI::GUILightLoading::~GUILightLoading(void * this),tail jmp ~GUIScene 0x00A559E0
 0x00728190,signature,void __thiscall GUI::GUIFadeToBlackLoading::~GUIFadeToBlackLoading(void * this),tail jmp ~GUIScene 0x00A559E0
 0x00413660,convention,__returning (not noreturn),"operator new: the function body of 0x00726560 stops at its call 0x00726566 although code follows (bytes 0x0072656B on: add esp,4; test eax,eax; mov ecx,0x007262D0) [I that the noreturn flag is the cause]; re-disassemble 0x00726560 after"
+0x007281C0,signature,void __thiscall GUI::GUIFadeToBlackLoading::OnShow(void* this),"vftable slot 5, plain ret; Ghidra labels it vfunction6"
+0x007281D0,signature,void __thiscall GUI::GUICustomLoading::Close(void* this),"vftable slot 6, plain ret; Ghidra labels it vfunction7"
+0x00728250,signature,"void* __thiscall GUI::GUILightLoading::`scalar deleting destructor'`adjustor{28}'(void* this, unsigned int flags)",adjustor thunk to a deleting destructor that ends ret 4; Ghidra labels it vfunctionN
+0x00728260,signature,"void* __thiscall GUI::GUIFadeToBlackLoading::`scalar deleting destructor'`adjustor{28}'(void* this, unsigned int flags)",adjustor thunk to a deleting destructor that ends ret 4; Ghidra labels it vfunctionN
+0x00728270,signature,"void* __thiscall GUI::GUILightLoading::`scalar deleting destructor'`adjustor{32}'(void* this, unsigned int flags)",adjustor thunk to a deleting destructor that ends ret 4; Ghidra labels it vfunctionN
+0x00728280,signature,"void* __thiscall GUI::GUIFadeToBlackLoading::`scalar deleting destructor'`adjustor{32}'(void* this, unsigned int flags)",adjustor thunk to a deleting destructor that ends ret 4; Ghidra labels it vfunctionN
+0x00728290,signature,"void* __thiscall GUI::GUILightLoading::`scalar deleting destructor'`adjustor{8}'(void* this, unsigned int flags)",adjustor thunk to a deleting destructor that ends ret 4; Ghidra labels it vfunctionN
+0x007282A0,signature,"void* __thiscall GUI::GUIFadeToBlackLoading::`scalar deleting destructor'`adjustor{8}'(void* this, unsigned int flags)",adjustor thunk to a deleting destructor that ends ret 4; Ghidra labels it vfunctionN
+0x007283C0,signature,void* __thiscall GUI::GUILightLoading::GetClassInfo(void* this),"vftable slot 0, plain ret, returns the class node; Ghidra labels it vfunction1"
+0x007283F0,signature,"void* __thiscall GUI::GUILightLoading::`scalar deleting destructor'(void* this, unsigned int flags)","ret 4, reads ecx; Ghidra labels it vfunction5"
+0x00728410,signature,void* __thiscall GUI::GUIFadeToBlackLoading::GetClassInfo(void* this),"vftable slot 0, plain ret, returns the class node; Ghidra labels it vfunction1"
+0x00728440,signature,"void* __thiscall GUI::GUIFadeToBlackLoading::`scalar deleting destructor'(void* this, unsigned int flags)","ret 4, reads ecx; Ghidra labels it vfunction5"
+0x00728530,signature,void __thiscall GUI::GUILightLoading::RegisterClass(void* this),"vftable slot 2, this kept in esi for the tail call; Ghidra labels it vfunction3"
+0x00728570,signature,void __thiscall GUI::GUILoading::~GUILoading(void* this),"plain ret, reads ecx"
+0x007285F0,signature,"void* __thiscall GUI::GUILoading::`scalar deleting destructor'`adjustor{28}'(void* this, unsigned int flags)",adjustor thunk to a deleting destructor that ends ret 4; Ghidra labels it vfunctionN
+0x00728600,signature,"void* __thiscall GUI::GUILoading::`scalar deleting destructor'`adjustor{32}'(void* this, unsigned int flags)",adjustor thunk to a deleting destructor that ends ret 4; Ghidra labels it vfunctionN
+0x00728610,signature,"void* __thiscall GUI::GUILoading::`scalar deleting destructor'`adjustor{8}'(void* this, unsigned int flags)",adjustor thunk to a deleting destructor that ends ret 4; Ghidra labels it vfunctionN
+0x00728620,signature,void* __thiscall GUI::GUILoading::GetClassInfo(void* this),"vftable slot 0, plain ret, returns the class node; Ghidra labels it vfunction1"
+0x00728650,signature,void __thiscall GUI::GUILoading::RegisterClass(void* this),"vftable slot 2, this kept in esi for the tail call; Ghidra labels it vfunction3"
+0x00728690,signature,"void* __thiscall GUI::GUILoading::GUILoading(void* this, void* other)","ret 4; one argument, the scene copied; Ghidra has it as a second GUILoading::GUILoading"
+0x00728710,signature,void __thiscall GUI::GUICustomLoading::~GUICustomLoading(void* this),"plain ret, reads ecx"
+0x00728790,signature,"void* __thiscall GUI::GUICustomLoading::`scalar deleting destructor'`adjustor{28}'(void* this, unsigned int flags)",adjustor thunk to a deleting destructor that ends ret 4; Ghidra labels it vfunctionN
+0x007287A0,signature,"void* __thiscall GUI::GUICustomLoading::`scalar deleting destructor'`adjustor{32}'(void* this, unsigned int flags)",adjustor thunk to a deleting destructor that ends ret 4; Ghidra labels it vfunctionN
+0x007287B0,signature,"void* __thiscall GUI::GUICustomLoading::`scalar deleting destructor'`adjustor{8}'(void* this, unsigned int flags)",adjustor thunk to a deleting destructor that ends ret 4; Ghidra labels it vfunctionN
+0x00728850,signature,void* __thiscall GUI::GUILoading::Clone(void* this),"vftable slot 1, plain ret, returns the copy; Ghidra labels it vfunction2 or clone"
+0x007288C0,signature,"void* __thiscall GUI::GUILoading::`scalar deleting destructor'(void* this, unsigned int flags)","ret 4, reads ecx; Ghidra labels it vfunction5"
+0x007288E0,signature,void* __thiscall GUI::GUILightLoading::Clone(void* this),"vftable slot 1, plain ret, returns the copy; Ghidra labels it vfunction2 or clone"
+0x00728960,signature,void* __thiscall GUI::GUIFadeToBlackLoading::Clone(void* this),"vftable slot 1, plain ret, returns the copy; Ghidra labels it vfunction2 or clone"
+0x007289F0,signature,void* __thiscall GUI::GUILoading::GUILoading(void* this),"default constructor, plain ret, returns this"
+0x00728BC0,signature,void* __thiscall GUI::GUICustomLoading::GUICustomLoading(void* this),"default constructor, plain ret, returns this"
+0x00728D90,signature,"void* __thiscall GUI::GUICustomLoading::`scalar deleting destructor'(void* this, unsigned int flags)","ret 4, reads ecx; Ghidra labels it vfunction5"
+0x00728DB0,signature,void __thiscall GUI::GUIFadeToBlackLoading::RegisterMessageHandlers(void* this),vftable slot 3; tail-jumps with the registry in ecx; Ghidra labels it vfunction4
+0x00728DC0,signature,void __thiscall GUI::GUIFadeToBlackLoading::RegisterClass(void* this),"vftable slot 2, this kept in esi for the tail call; Ghidra labels it vfunction3"
+0x00728E10,signature,"void __thiscall Messages::RegisterText<FadeCompleteMessage>(void* this, void* name)","ret 4, ecx the text registry; Ghidra has FUN_00728e10"
+0x00728ED0,signature,void* __thiscall GUI::GUIFadeToBlackLoading::GUIFadeToBlackLoading(void* this),"default constructor, plain ret, returns this"
+0x00729570,signature,void __thiscall GUI::GUIStore::~GUIStore(void* this),"plain ret, reads ecx"
+0x00729620,signature,"void* __thiscall GUI::GUIStore::`scalar deleting destructor'`adjustor{28}'(void* this, unsigned int flags)",adjustor thunk to a deleting destructor that ends ret 4; Ghidra labels it vfunctionN
+0x00729630,signature,"void* __thiscall GUI::GUIStore::`scalar deleting destructor'`adjustor{32}'(void* this, unsigned int flags)",adjustor thunk to a deleting destructor that ends ret 4; Ghidra labels it vfunctionN
+0x00729640,signature,"void* __thiscall GUI::GUIStore::`scalar deleting destructor'`adjustor{8}'(void* this, unsigned int flags)",adjustor thunk to a deleting destructor that ends ret 4; Ghidra labels it vfunctionN
+0x00729650,signature,void* __thiscall GUI::GUIStore::GetClassInfo(void* this),"vftable slot 0, plain ret, returns the class node; Ghidra labels it vfunction1"
+0x00729D40,signature,"void* __thiscall GUI::GUIStore::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4; target of the thunks 0x00729620-0x00729640 (outside the batch; from reading B)
