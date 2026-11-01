@@ -5010,7 +5010,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5009,function,,0x004d5440,0x0081b3e0,0x004d5440
 5010,function,,0x004d5470,0x0081b430,0x004d5470
 5011,function,,0x004d54d0,0x0081b490,0x004d54d0
-5012,function,,0x004d5500,0x0081b4c0,0x004d5500
+5012,function,GFF4::Struct::HasField,0x004d5500,0x0081b4c0,0x004d5500
 5013,function,Resources::State,0x004d5530,0x00816e70,0x004d5530
 5014,function,,0x004d5540,0x00816e80,0x004d5540
 5015,function,,0x004d5570,0x00816eb0,0x004d5570
@@ -10566,7 +10566,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10565,function,,0x005d7180,0x004c23a0,0x005d7180
 10566,function,CClientExoApp::FrameUpdate,0x005d7560,0x004c2780,0x005d7560
 10567,function,,0x005d7840,0x004c2a60,0x005d7840
-10568,function,,0x005d7fc0,0x004c31e0,0x005d7fc0
+10568,function,CClientExoApp::BeginSave,0x005d7fc0,0x004c31e0,0x005d7fc0
 10569,function,,0x005d8070,0x004c3290,0x005d8070
 10570,function,,0x005d8090,0x004ed410,0x005d8090
 10571,function,,0x005d8100,0x004ec4f0,0x005d8100
@@ -12675,9 +12675,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 12674,function,,0x00645a50,0x00813a80,0x00645a50
 12675,function,,0x00645a60,0x0052dfb0,0x00645a60
 12676,function,SaveGame::FindSave,0x00645e00,0x0052e350,0x00645e00
-12677,function,,0x00645fc0,0x0052e510,0x00645fc0
-12678,function,,0x006460e0,0x0052e630,0x006460e0
-12679,function,,0x006461b0,0x0052e700,0x006461b0
+12677,function,SaveGame::CreateCharacterFolder,0x00645fc0,0x0052e510,0x00645fc0
+12678,function,SaveGame::CreateSlotFolder,0x006460e0,0x0052e630,0x006460e0
+12679,function,SaveGame::LoadFromSlot,0x006461b0,0x0052e700,0x006461b0
 12680,function,SaveGame::Write,0x00646280,0x0052e7d0,0x00646280
 12681,function,,0x00646740,0x0052ec90,0x00646740
 12682,function,,0x00647250,0x0052f7a0,0x00647250
@@ -15135,22 +15135,22 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15134,function,,0x006cb570,0x00640300,0x006cb570
 15135,function,,0x006cb5d0,0x005bcf90,0x006cb5d0
 15136,function,,0x006cb630,0x005bcff0,0x006cb630
-15137,function,,0x006cb690,0x005bd050,0x006cb690
+15137,function,SaveLoadProxy::StaticClassInfo,0x006cb690,0x005bd050,0x006cb690
 15138,function,,0x006cb6f0,0x005bd0b0,0x006cb6f0
-15139,function,,0x006cb740,0x005bd100,0x006cb740
+15139,function,SaveLoadProxy::CanSaveOrLoad,0x006cb740,0x005bd100,0x006cb740
 15140,function,SaveLoadProxy::ScreenshotPath,0x006cb7a0,0x005bd160,0x006cb7a0
-15141,function,,0x006cb8d0,0x005bd290,0x006cb8d0
-15142,function,,0x006cb910,0x005bd2d0,0x006cb910
-15143,function,,0x006cb950,0x005bd310,0x006cb950
-15144,function,,0x006cb980,0x005bd340,0x006cb980
-15145,function,,0x006cb9e0,0x005bd3a0,0x006cb9e0
-15146,function,,0x006cba30,0x005bd3f0,0x006cba30
+15141,function,CClientOptions::SetLastPlayedGame,0x006cb8d0,0x005bd290,0x006cb8d0
+15142,function,SaveLoadProxy::CanOpenForRead,0x006cb910,0x005bd2d0,0x006cb910
+15143,function,ECBase::ECDynArray::At,0x006cb950,0x005bd310,0x006cb950
+15144,function,"std::copy<?,?>",0x006cb980,0x005bd340,0x006cb980
+15145,function,"std::fill<?,?>",0x006cb9e0,0x005bd3a0,0x006cb9e0
+15146,function,"std::copy_backward<?,?>",0x006cba30,0x005bd3f0,0x006cba30
 15147,function,,0x006cba90,0x005bd450,0x006cba90
 15148,function,SaveLoadProxy::HandleMessage_LoadExternalSaveMessage,0x006cbac0,0x005bd480,0x006cbac0
-15149,function,,0x006cbb00,0x005bd4c0,0x006cbb00
-15150,function,,0x006cbbf0,0x005bd5b0,0x006cbbf0
-15151,function,,0x006cbc00,0x005bd5c0,0x006cbc00
-15152,function,,0x006cbc10,0x005bd5d0,0x006cbc10
+15149,function,SaveFileInfo::~SaveFileInfo,0x006cbb00,0x005bd4c0,0x006cbb00
+15150,function,SaveFileInfo::`scalar deleting destructor',0x006cbbf0,0x005bd5b0,0x006cbbf0
+15151,function,SaveFileInfo::`scalar deleting destructor',0x006cbc00,0x005bd5c0,0x006cbc00
+15152,function,SaveFileInfo::`scalar deleting destructor',0x006cbc10,0x005bd5d0,0x006cbc10
 15153,function,,0x006cbc20,0x005bd5e0,0x006cbc20
 15154,function,,0x006cbd40,0x005bd700,0x006cbd40
 15155,function,,0x006cbd50,0x005bd710,0x006cbd50
@@ -15161,17 +15161,17 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15160,function,,0x006cbed9,0x005bd919,0x006cbed9
 15161,function,SaveLoadProxy::ChooseHero,0x006cbf10,0x005bd950,0x006cbf10
 15162,function,,0x006cc040,0x005bda80,0x006cc040
-15163,function,,0x006cc090,0x005bdad0,0x006cc090
+15163,function,HeroInfo::ReadMetaName,0x006cc090,0x005bdad0,0x006cc090
 15164,function,,0x006cc130,0x005bdb70,0x006cc130
 15165,function,,0x006cc1d0,0x005bdc10,0x006cc1d0
 15166,function,,0x006cc270,0x005bdcb0,0x006cc270
 15167,function,,0x006cc300,0x005bdd40,0x006cc300
-15168,function,,0x006cc440,0x005bde80,0x006cc440
-15169,function,,0x006cc570,0x005bdfb0,0x006cc570
-15170,function,,0x006cc6a0,0x005be0e0,0x006cc6a0
-15171,function,,0x006cc8c0,0x005be300,0x006cc8c0
-15172,function,,0x006cca00,0x005be440,0x006cca00
-15173,function,,0x006ccf10,0x005be950,0x006ccf10
+15168,function,HeroInfo::ReadMetaRace,0x006cc440,0x005bde80,0x006cc440
+15169,function,HeroInfo::ReadMetaGender,0x006cc570,0x005bdfb0,0x006cc570
+15170,function,HeroInfo::ReadMetaBackground,0x006cc6a0,0x005be0e0,0x006cc6a0
+15171,function,SaveLoadProxy::FindResumePath,0x006cc8c0,0x005be300,0x006cc8c0
+15172,function,SaveFileInfo::SaveFileInfo,0x006cca00,0x005be440,0x006cca00
+15173,function,SaveFileInfo::`scalar deleting destructor',0x006ccf10,0x005be950,0x006ccf10
 15174,function,,0x006ccf30,0x005be970,0x006ccf30
 15175,function,,0x006cd590,0x005befd0,0x006cd590
 15176,function,,0x006cd5b0,0x005bf030,0x006cd5b0
@@ -15200,7 +15200,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15199,function,,0x006cdbb0,0x005a1030,0x006cdbb0
 15200,function,,0x006cddb0,0x005bf5f0,0x006cddb0
 15201,function,,0x006cde20,0x005bf660,0x006cde20
-15202,function,,0x006cde50,0x005bf690,0x006cde50
+15202,function,SaveLoadProxy::FindNewestSaveOfKind,0x006cde50,0x005bf690,0x006cde50
 15203,function,,0x006ce220,0x005bfa60,0x006ce220
 15204,function,,0x006ce260,0x005bfaa0,0x006ce260
 15205,function,,0x006ce2d0,0x005bfb10,0x006ce2d0
@@ -15209,11 +15209,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15208,function,,0x006ce5d0,0x005bfec0,0x006ce5d0
 15209,function,,0x006ce6f0,0x005bffe0,0x006ce6f0
 15210,function,,0x006ce7a0,0x005c00c0,0x006ce7a0
-15211,function,,0x006ce7c0,0x005c00e0,0x006ce7c0
+15211,function,std::vector<?>::push_back,0x006ce7c0,0x005c00e0,0x006ce7c0
 15212,function,,0x006ce860,0x005c0c30,0x006ce860
 15213,function,,0x006ce8e0,0x005c0180,0x006ce8e0
-15214,function,,0x006ce960,0x005c0200,0x006ce960
-15215,function,,0x006ce9d0,0x005c0270,0x006ce9d0
+15214,function,std::vector<?>::vector,0x006ce960,0x005c0200,0x006ce960
+15215,function,SaveLoadProxy::ClearHeroList,0x006ce9d0,0x005c0270,0x006ce9d0
 15216,function,SaveLoadProxy::AddHero,0x006cea00,0x005c02a0,0x006cea00
 15217,function,SaveLoadProxy::GatherCharacterFolders,0x006ceff0,0x005c0890,0x006ceff0
 15218,function,,0x006cf390,0x005c0cb0,0x006cf390
@@ -15222,15 +15222,15 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15221,function,,0x006cf4e0,0x005c0d70,0x006cf4e0
 15222,function,,0x006cf550,0x005c0de0,0x006cf550
 15223,function,SaveLoadProxy::RefreshHeroes,0x006cfb60,0x005c13f0,0x006cfb60
-15224,function,,0x006d02c0,0x005c1b50,0x006d02c0
-15225,function,,0x006d03f0,0x005c1c80,0x006d03f0
-15226,function,,0x006d0400,0x005c1c90,0x006d0400
-15227,function,,0x006d0410,0x005c1ca0,0x006d0410
-15228,function,,0x006d0420,0x005c1cb0,0x006d0420
+15224,function,SaveLoadProxy::~SaveLoadProxy,0x006d02c0,0x005c1b50,0x006d02c0
+15225,function,SaveLoadProxy::`scalar deleting destructor',0x006d03f0,0x005c1c80,0x006d03f0
+15226,function,SaveLoadProxy::`scalar deleting destructor',0x006d0400,0x005c1c90,0x006d0400
+15227,function,SaveLoadProxy::`scalar deleting destructor',0x006d0410,0x005c1ca0,0x006d0410
+15228,function,SaveLoadProxy::GetClassInfo,0x006d0420,0x005c1cb0,0x006d0420
 15229,function,,0x006d0430,0x005c1cc0,0x006d0430
 15230,function,,0x006d04b0,0x005c1d40,0x006d04b0
-15231,function,,0x006d0530,0x005c1dc0,0x006d0530
-15232,function,,0x006d06b0,0x005c1f40,0x006d06b0
+15231,function,SaveLoadProxy::SaveLoadProxy_Copy,0x006d0530,0x005c1dc0,0x006d0530
+15232,function,SaveLoadProxy::Clone,0x006d06b0,0x005c1f40,0x006d06b0
 15233,function,SaveLoadProxy::ResetForPregame,0x006d0720,0x005c1fb0,0x006d0720
 15234,function,SaveLoadProxy::HandleMessage_RefreshHeroesMessage,0x006d0890,0x005c2120,0x006d0890
 15235,function,SaveLoadProxy::HandleMessage_RefreshHeroesForImportMessage,0x006d08a0,0x005c2130,0x006d08a0
@@ -15240,8 +15240,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15239,function,,0x006d1430,0x005c2cc0,0x006d1430
 15240,function,,0x006d14b0,0x005c2d40,0x006d14b0
 15241,function,,0x006d1530,0x005c2dc0,0x006d1530
-15242,function,,0x006d15b0,0x005c2e40,0x006d15b0
-15243,function,,0x006d15d0,0x005c2e60,0x006d15d0
+15242,function,SaveLoadProxy::`scalar deleting destructor',0x006d15b0,0x005c2e40,0x006d15b0
+15243,function,SaveLoadProxy::ChooseHeroAndRefreshSaves,0x006d15d0,0x005c2e60,0x006d15d0
 15244,function,SaveLoadProxy::HandleMessage_ResumeGameMessage,0x006d15e0,0x005c2e70,0x006d15e0
 15245,function,SaveLoadProxy::HandleMessage_DeleteSaveGameMessage,0x006d16b0,0x005c2f40,0x006d16b0
 15246,function,SaveLoadProxy::HandleMessage_SelectHeroMessage,0x006d1790,0x005c3020,0x006d1790
@@ -15256,9 +15256,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15255,function,,0x006d2000,0x005c3890,0x006d2000
 15256,function,,0x006d2080,0x005c3910,0x006d2080
 15257,function,,0x006d2100,0x005c3990,0x006d2100
-15258,function,,0x006d2180,0x005c3a10,0x006d2180
-15259,function,,0x006d2210,0x005c3aa0,0x006d2210
-15260,function,,0x006d2230,0x005c3ac0,0x006d2230
+15258,function,SaveLoadProxy::RegisterMessageHandlers,0x006d2180,0x005c3a10,0x006d2180
+15259,function,SaveLoadProxy::RegisterClass,0x006d2210,0x005c3aa0,0x006d2210
+15260,function,SaveLoadProxy::SaveLoadProxy,0x006d2230,0x005c3ac0,0x006d2230
 15261,function,,0x006d2790,0x005c4020,0x006d2790
 15262,function,,0x006d27d0,0x005c4060,0x006d27d0
 15263,function,,0x006d27e0,0x008f7680,0x006d27e0
