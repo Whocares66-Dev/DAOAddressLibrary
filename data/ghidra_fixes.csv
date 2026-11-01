@@ -6131,3 +6131,53 @@ address,what,value,why
 0x00610A60,clear,vfunction63,"the label is a vftable index (slot+1) and says nothing; this is GUI::DragonAgeGUISystem::ShowChanters, vtable slot 62"
 0x00610A70,clear,vfunction64,"the label is a vftable index (slot+1) and says nothing; this is GUI::DragonAgeGUISystem::CloseChanters, vtable slot 63"
 0x00610A80,clear,vfunction65,"the label is a vftable index (slot+1) and says nothing; this is GUI::DragonAgeGUISystem::ShowDeathScreen, vtable slot 64"
+0x00610A90,signature,bool __thiscall CloseDeathScreen(void * this),"plain ret after calling ShowScene/CloseScene, which leaves its bool in al (CloseScene 0x00606680-0x00606687)"
+0x00610AA0,signature,bool __thiscall ShowTactics(void * this),"plain ret after calling ShowScene/CloseScene, which leaves its bool in al (CloseScene 0x00606680-0x00606687)"
+0x00610AB0,signature,bool __thiscall CloseTactics(void * this),"plain ret after calling ShowScene/CloseScene, which leaves its bool in al (CloseScene 0x00606680-0x00606687)"
+0x00610AC0,signature,bool __thiscall ShowPartyPicker(void * this),"plain ret after calling ShowScene/CloseScene, which leaves its bool in al (CloseScene 0x00606680-0x00606687)"
+0x00610AD0,signature,bool __thiscall ClosePartyPicker(void * this),"plain ret after calling ShowScene/CloseScene, which leaves its bool in al (CloseScene 0x00606680-0x00606687)"
+0x00610B10,signature,void * __thiscall GetClassIdPtr(void * this),vftable slot 0; returns the class node 0x00BFB5AC
+0x00610B10,clear,vfunction1,Ghidra labels it vfunction1; it is slot 0 (GetClassIdPtr)
+0x00610B50,signature,bool __thiscall GetShowBookBack(void * this),"add ecx,0x268; jmp to mov al,[ecx+0xc]; ret"
+0x00610B60,signature,void __thiscall ~DragonAgeGUISystem(void * this),plain ret at 0x00610CDE
+0x006116B0,signature,void * __thiscall Clone(void * this),plain ret; returns the new object or 0
+0x006116B0,clear,clone,Ghidra's lower-case 'clone': name it Clone
+0x00611720,signature,"void * __thiscall `scalar deleting destructor'(void * this, uint flags)",ret 4 at 0x0061173B
+0x00611720,clear,vfunction5,Ghidra labels it vfunction5; it is the scalar deleting destructor (slot 4)
+0x00611740,signature,"void __thiscall ShowOnlyFullScreen(void * this, uint sceneId)",ret 4 at 0x00611775; ecx read at 0x00611741
+0x00611740,convention,__thiscall,decompiler shows a plain cdecl with one arg; ecx is this
+0x0060C380,clear,CreateObject,"folded MFC label; it is GUI::InvokeCallbackMessage's factory creator (new 0x58, ctor 0x00608050)"
+0x00607520,clear,CProcessLocal<CControlSiteFactoryMgr>::CreateObject,folded MFC label; GoToQuestMessage's creator
+0x00607590,clear,CThreadLocal<_AFXCTL_AMBIENT_CACHE>::CreateObject,folded MFC label; GoToCodexMessage's creator
+0x00607600,clear,CThreadLocal<_AFXCTL_AMBIENT_CACHE>::CreateObject,folded MFC label; GoToJournalPRCTabMessage's creator
+0x00607770,clear,CProcessLocal<CControlSiteFactoryMgr>::CreateObject,folded MFC label; GoToGuiWithFollowerMessage's creator
+0x00610070,clear,GameModeController::vfunction6,"it is the binding-text registry's hash-map constructor (called by 0x00613A30 for the static 0x00C337FC), not a GameModeController slot"
+0x00611960,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x00611A20,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x00611AE0,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x00611BA0,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x00611C60,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x00611D20,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x00611DE0,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x00611EA0,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x00611F60,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x00612020,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x006120E0,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x006121A0,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x00612260,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x00612320,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x006123E0,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x006124A0,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x00612560,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x00612620,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x006126E0,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x006127A0,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x00612860,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x00612920,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x006129E0,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x00612AA0,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x00612B60,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x00612C20,signature,"void __thiscall Register(void * this, void * name)","ret 4; this = the registry from its getter, name = const std::wstring*"
+0x00610AE0,signature,"void * __thiscall `scalar deleting destructor'(void * this, uint flags)","adjustor thunk: sub ecx,N; jmp 0x00611720 (ret 4 in the target)"
+0x00610AF0,signature,"void * __thiscall `scalar deleting destructor'(void * this, uint flags)","adjustor thunk: sub ecx,N; jmp 0x00611720 (ret 4 in the target)"
+0x00610B00,signature,"void * __thiscall `scalar deleting destructor'(void * this, uint flags)","adjustor thunk: sub ecx,N; jmp 0x00611720 (ret 4 in the target)"
