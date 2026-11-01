@@ -2075,3 +2075,43 @@ address,what,value,why
 0x005E3940,signature,"void* __thiscall f(void* this, void* value)",0x005E3940-0x005E397F
 0x005E3E60,signature,"void* __thiscall f(void* this, void* array)",0x005E3E60-0x005E3EDF
 0x005E3EE0,signature,"void* __cdecl f(void* first, void* last, void* dest)",0x005E3EE0-0x005E3F7D
+0x005E3F80,signature,"void* __cdecl _Uninit_fill_n(void* first, unsigned int count, void* value)","0x005E3F80; caller 0x005E6060 pushes six values and add esp,0x18, only the first three read; return value INFERRED as the end"
+0x005E4020,signature,"void* __thiscall Set(void* this, void* value)","0x005E4020-0x005E404E; slot 21, ret 4"
+0x005E4060,signature,"void __thiscall SetFromText(void* this, void* text)",0x005E4060-0x005E40DE; ret 4
+0x005E4C10,signature,"void __thiscall SetFromText(void* this, void* text)",0x005E4C10-0x005E4C8E; ret 4
+0x005E5350,signature,"void* __thiscall Attribute(void* this, void* other)",0x005E5350-0x005E5377; ret 4
+0x005E5A20,signature,"void* __thiscall Attribute(void* this, void* other)",0x005E5A20-0x005E5A93; ret 4
+0x005E5BA0,signature,"void* __thiscall Attribute(void* this, void* other)",0x005E5BA0-0x005E5C13; ret 4
+0x005E60A0,signature,"void* __thiscall SetFromText(void* this, void* text)",0x005E60A0-0x005E60D2; ret 4; tail value is Set's (this)
+0x005E60E0,signature,"void* __thiscall GetTextInto(void* this, void* out)","0x005E60E0-0x005E6101; ret 4, returns the argument"
+0x005E6110,signature,"void* __thiscall GetText(void* this, void* out)","0x005E6110-0x005E6192; ret 4, returns the argument"
+0x0060C020,signature,"void* __thiscall Attribute(void* this, void* value)",0x0060C020-0x0060C04C; ret 4
+0x0060C050,signature,"void* __thiscall ScalarDeletingDestructor(void* this, unsigned int flags)","0x0060C050 sub ecx,4; jmp 0x0060C0E0"
+0x0060C060,signature,void __thiscall ~Attribute(void* this),0x0060C060-0x0060C0BA; plain ret
+0x0060C0C0,signature,"int __thiscall vfunction7(void* this, unsigned int a)","0x0060C0C0-0x0060C0D5; jmp [[ecx]+0x18], ret 4"
+0x0060C0E0,signature,"void* __thiscall ScalarDeletingDestructor(void* this, unsigned int flags)",0x0060C0E0-0x0060C0FB; ret 4
+0x0060C110,signature,"void* __thiscall Attribute(void* this, void* value)",0x0060C110-0x0060C13C; ret 4
+0x0060C140,signature,"void* __thiscall ScalarDeletingDestructor(void* this, unsigned int flags)","0x0060C140 sub ecx,4; jmp 0x0060C3F0"
+0x0060C150,signature,"void* __thiscall FindMember(void* this, unsigned int token)",0x0060C150-0x0060C174; ret 4
+0x0060C180,signature,void __thiscall ~Attribute(void* this),0x0060C180-0x0060C1DA; plain ret
+0x0060C1E0,signature,"bool __thiscall vfunction3(void* this, unsigned int a)",ret 4
+0x0060C210,signature,"void __thiscall NotifyIgnoringArgs(void* this, unsigned int a, unsigned int b)",ret 8
+0x0060C250,signature,"void __thiscall vfunction5(void* this, unsigned int a)",ret 4
+0x0060C290,signature,"void __thiscall vfunction6(void* this, unsigned int a, unsigned int b)",ret 8
+0x0060C2C0,signature,"int __thiscall vfunction7(void* this, unsigned int a)",ret 4
+0x0060C2F0,signature,"void* __thiscall GetMemberName(void* this, unsigned int key)",ret 4
+0x0060C320,signature,unsigned int __thiscall GetMemberCount(void* this),plain ret; id read from this+0xC
+0x0060C340,signature,void* __thiscall CreateMemberIterator(void* this),plain ret; id read from this+0xC
+0x0060C360,signature,int __thiscall vfunction20(void* this),plain ret; id read from this+0xC
+0x0060C380,signature,void* __cdecl Create(void),"0x0060C380-0x0060C3EF; ecx and stack arguments unread, plain ret"
+0x0060C3F0,signature,"void* __thiscall ScalarDeletingDestructor(void* this, unsigned int flags)",0x0060C3F0-0x0060C40B; ret 4
+0x0060FC50,signature,void __thiscall ~Attribute(void* this),0x0060FC50-0x0060FCB4; plain ret
+0x0060FCC0,signature,"void* __thiscall ScalarDeletingDestructor(void* this, unsigned int flags)","0x0060FCC0 sub ecx,4; jmp 0x0060FDE0"
+0x0060FCD0,signature,"void* __stdcall GetMemberName(void* array, unsigned int index)","0x0060FCD0-0x0060FD4D; ret 8, ecx loaded with the static string"
+0x0060FD50,signature,"void* __thiscall GetMemberName(void* this, unsigned int key)",0x0060FD50-0x0060FD67; ret 4
+0x0060FD70,signature,void* __thiscall CreateMemberIterator(void* this),0x0060FD70-0x0060FD95; plain ret
+0x0060FDA0,signature,void* __thiscall GetValue(void* this),0x0060FDA0-0x0060FDD2; plain ret
+0x0060FDE0,signature,"void* __thiscall ScalarDeletingDestructor(void* this, unsigned int flags)",0x0060FDE0-0x0060FDFB; ret 4
+0x00610100,signature,"void* __thiscall Attribute(void* this, void* value)",0x00610100-0x00610170; ret 4
+0x00613AB0,signature,"void* __thiscall GetText(void* this, void* out)","0x00613AB0-0x00613B32; ret 4, returns the argument"
+0x0061C110,signature,void __thiscall ~Attribute(void* this),0x0061C110-0x0061C174; plain ret
