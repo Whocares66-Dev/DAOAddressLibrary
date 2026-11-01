@@ -6404,3 +6404,14 @@ address,what,value,why
 0x005F4610,signature,void __thiscall f(void *this),.\AddInsManager.cpp lines 0xCE and 0xF5
 0x005F5B10,signature,"void __thiscall f(void *this, void *out1, void *out2, void *out3, void *out4)",0x005F5B10: stride 0x38
 0x005F5F40,signature,"void __thiscall f(void *this, void *name, unsigned char recurse, unsigned char no_apply)",0x005F5F40: name compare 0x004C0DE0
+0x0049A640,signature,"void __thiscall f(void *this, void *offer, void *out_text)","0x0049A640: ret 8, ecx kept in ebp, offer then output wstring"
+0x0049A730,signature,"void __thiscall f(void *this, int offer_id, unsigned char seen)","0x0049A730: ret 8, vector at this+0x74, jmp 0x005F10B0"
+0x0049A7C0,signature,"void __thiscall f(void *this, unsigned int index)","0x0049A7C0: ret 4, vector at this+4"
+0x00498DC0,signature,"void __thiscall f(void *this, int quality)","0x00498DC0: ret 4, gated on this+0x99"
+0x00499A30,signature,"void __thiscall f(void *this, int unused, unsigned char mount)","0x00499A30: ret 8, first argument unused"
+0x004A0010,signature,"bool __thiscall f(void *this, void *element)","0x004A0010: ret 4, caller 0x004A1346"
+0x004A1080,signature,"void __thiscall f(void *this, void *element)","0x004A1080: ret 4, a null element returns"
+0x00498D90,convention,__thiscall,0x00498D90: reads [ecx+0x4C] before any write
+0x00498830,convention,__thiscall,"0x00498830: esi=ecx, sets [esi+0x173]"
+0x004A18D0,clear,~TiXmlDocument,"0x004A18D0 is the purchase response handler, not a destructor"
+0x004A06C0,clear,ios_base_Constructor_or_Destructor,0x004A06C0 parses a short from a wstring
