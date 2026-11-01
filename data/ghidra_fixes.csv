@@ -9116,3 +9116,49 @@ address,what,value,why
 0x00478C70,signature,void __thiscall f(void* this),0x00478C70 ecx read as this
 0x00478D00,signature,"void __thiscall f(void* this, int code)","0x00478D00 ret 4, vftable slot"
 0x00478DF0,signature,"void __thiscall f(void* this, int code)","0x00478DF0 ret 4, vftable slot"
+0x007FB1D0,signature,"void * __thiscall std::_Tree::_Copy_node(void * this, void * rootnode, void * wherenode)",ret 8 at 0x007FB26A; ecx read at 0x007FB1FB; returns the new subtree root in eax
+0x007FB1D0,convention,__thiscall,ret 8; ecx = the tree
+0x007FB290,signature,"void __thiscall std::_Tree::_Copy(void * this, void * right)",ret 4 at 0x007FB2F4; ecx read at 0x007FB29A
+0x007FB310,signature,"void * __thiscall std::_Tree::_Tree(void * this, void * right)",ret 4 at 0x007FB389; returns this
+0x007FB3A0,signature,"void * __thiscall std::vector<FilteredGroupedItemView::Entry>::vector(void * this, void * right)",ret 4 at 0x007FB3F3; returns this
+0x007FB570,signature,"void __thiscall FilteredGroupedItemView::Refresh(void * this, void * location)",ret 4 at 0x007FBB1D; a null location means this+0x58
+0x007FB570,convention,__thiscall,ret 4; ecx read at 0x007FB59D
+0x007FBB20,signature,void * __thiscall FilteredGroupedItemView::Clone(void * this),vftable 0x00B24A90 slot 1; plain ret; ecx read at 0x007FBB42
+0x007FBBD0,signature,"void __thiscall FilteredGroupedItemView::SetFilterByKey(void * this, int key)",ret 4 at 0x007FBBEB; ecx read at 0x007FBBD1
+0x007FBBF0,signature,"void __thiscall FilteredGroupedItemView::SetCreatureId(void * this, unsigned int creatureId)",tail jump to 0x007FB570 with the argument slot replaced by this+0x58; one stack argument
+0x007FD2E0,signature,void __thiscall GUI::GUICharGenBase::RegisterMessageHandlers(void * this),vftable 0x00B1AB28 slot 3; never reads ecx; plain ret
+0x007FD330,signature,"void __thiscall Messages::RegisterText<CharGenStartMessage>(void * this, void * name)",ret 4 at 0x007FD3E0; ecx = registry from 0x00489BC0
+0x007FD3F0,signature,"void __thiscall Messages::RegisterText<ResetMessage>(void * this, void * name)",ret 4 at 0x007FD4A0
+0x007FD4B0,signature,"void __thiscall Messages::RegisterText<CharGenEndMessage>(void * this, void * name)",ret 4
+0x007FD570,signature,"void __thiscall Messages::RegisterText<CharGenAssignAttributeMessage>(void * this, void * name)",ret 4
+0x007FD630,signature,"void __thiscall Messages::RegisterText<CharGenAssignAbilityMessage>(void * this, void * name)",ret 4
+0x007FD6F0,signature,"void __thiscall Messages::RegisterText<AutoLevelUpMessage>(void * this, void * name)",ret 4
+0x007FD7B0,signature,"void __thiscall Messages::RegisterText<LoadSeededCharactersMessage>(void * this, void * name)",ret 4
+0x007FD870,signature,"void __thiscall Messages::RegisterText<UpdatePaperDollFromSeededCharacterMessage>(void * this, void * name)",ret 4
+0x007FD930,signature,"void * __thiscall GUI::GUICharGenBase::GUICharGenBase(void * this, void * name, int b)",ret 8 at 0x007FDB34; decompile already right
+0x007FECF0,convention,__thiscall,"Ghidra has __fastcall; ecx read at 0x007FECF4, no stack arguments, plain ret"
+0x007FECF0,signature,void __thiscall GUI::GUIPaperdoll::SavePortraitSettingsToPlayerChar(void * this),plain ret
+0x007FEED0,signature,void __cdecl GUI::GUIPaperdoll::ClearPlayerCharMorph(void),never reads ecx (ecx overwritten at 0x007FEED0); plain ret
+0x007FF310,signature,"void __thiscall GUI::GUIPaperdoll::SetPortraitLookUpDown(void * this, float value)",ret 4; fld [esp+8] at 0x007FF328
+0x007FF350,signature,"void __thiscall GUI::GUIPaperdoll::SetPortraitTurnLeftRight(void * this, float value)",ret 4
+0x007FF390,signature,"void __thiscall GUI::GUIPaperdoll::SetPortraitCameraDistance(void * this, float value)",ret 4
+0x007FF3D0,signature,"void __thiscall GUI::GUIPaperdoll::SetPortraitMoveLeftRight(void * this, float value)",ret 4
+0x007FF410,signature,"void __thiscall GUI::GUIPaperdoll::SetPortraitMoveUpDown(void * this, float value)",ret 4
+0x007FF450,signature,"void __thiscall GUI::GUIPaperdoll::SetPortraitBackground(void * this, float value)",ret 4; fld [esp+4] at 0x007FF465
+0x007FF4E0,signature,"void __thiscall GUI::GUIPaperdoll::SetPortraitExpression(void * this, float value)",ret 4
+0x00802E60,signature,"int __thiscall GUI::ComposeMorphTask::Execute(void * this, void * arg)",vftable 0x00B21F38 slot 2; ret 4 at 0x00802FF3; returns 3; Ghidra calls it vfunction3
+0x00803000,convention,__thiscall,"Ghidra has __fastcall; ecx is this, no stack arguments, plain ret at 0x008032F8"
+0x00803000,signature,void __thiscall GUI::GUIPaperdoll::CommitHeadMorph(void * this),plain ret
+0x0080ADA0,signature,"void __thiscall GUI::GUIPaperdoll::BuildSliderEntries(void * this, void * sliders)",ret 4; decompile has the paperdoll as this and the vector as the argument
+0x0080E010,signature,"bool __thiscall ItemFilterWeapons::Accept(void * this, void * item)",vftable slot 1; ret 4
+0x0080E030,signature,"bool __thiscall ItemFilterArmour::Accept(void * this, void * item)",vftable slot 1; ret 4
+0x0080E070,signature,"bool __thiscall ItemFilterAccessories::Accept(void * this, void * item)",vftable slot 1; ret 4
+0x0080E090,signature,"bool __thiscall ItemFilter::IsCraftingItem(void * this, void * item)",ret 4; called with ecx = the filter at 0x0080E0DB
+0x0080E0C0,signature,"bool __thiscall ItemFilterOther::Accept(void * this, void * item)",vftable slot 1; ret 4
+0x0080E100,signature,"bool __thiscall ItemFilterPlot::Accept(void * this, void * item)",vftable slot 1; ret 4
+0x0080E110,signature,"bool __thiscall ItemFilterCrafting::Accept(void * this, void * item)",vftable 0x00B24948 slot 1; jmp 0x0080E090
+0x007FAEB0,clear,ItemFilterCrafting::ItemFilterCrafting,"Outside this batch: the function is FilteredGroupedItemView's main constructor (stores vptr 0x00B24A90 at 0x007FAEEF and fills the tab-filter map with eight filters); proposed name FilteredGroupedItemView::FilteredGroupedItemView(void * this, void * location)"
+0x007FB400,signature,"void * __thiscall FilteredGroupedItemView::FilteredGroupedItemView(void * this, void * right)",copy constructor; ret 4; ecx read (B; confirmed by A's reading 0x007FB42F-0x007FB491)
+0x007FB4B0,signature,void __thiscall FilteredGroupedItemView::~FilteredGroupedItemView(void * this),"plain ret, reads ecx (B)"
+0x007FBB90,signature,"void * __thiscall FilteredGroupedItemView::`scalar deleting destructor'(void * this, unsigned int flags)",vftable 0x00B24A90 slot 4; ret 4 (B)
+0x007FEED0,convention,__cdecl,"no this: ecx overwritten at 0x007FEED0, no stack arguments, plain ret (B; Ghidra has no convention)"
