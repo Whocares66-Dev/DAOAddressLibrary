@@ -9861,3 +9861,44 @@ address,what,value,why
 0x007C5430,signature,"void __thiscall f(void* this, void* outObjects)","0x007C5430 (vftable 0x00B22B2C slot 2); 0x005D5CC0, 0x005D5BE0, 0x00695180; slot called by 0x007C52C0"
 0x007C54F0,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007C54F0 (vftable 0x00B22B3C slot 0); 0x0080D420
 0x007C56E0,signature,void __thiscall f(void* this),"0x007C56E0; caller 0x007C5BF0; 0x005DDC70, 0x005C5B30"
+0x007C5760,signature,"void* __thiscall f(void* this, unsigned int flags)","0x007C5760 sub ecx,0x1C; jmp 0x007C5BF0; vftable 0x00B22BCC"
+0x007C5770,signature,"void* __thiscall f(void* this, unsigned int flags)","0x007C5770 sub ecx,0x20; jmp 0x007C5BF0; vftable 0x00B22BB8"
+0x007C5780,signature,"void* __thiscall f(void* this, unsigned int flags)","0x007C5780 sub ecx,8; jmp 0x007C5BF0; vftable 0x00B22C28"
+0x007C5790,signature,"void __thiscall f(void* this, void* writer)",0x007C5790-0x007C57D9; caller MapObject slot 21 0x007C61B0 (0x007C62D6); dev/gff4_fields.csv 16794/16795
+0x007C5A90,signature,void* __thiscall f(void* this),0x007C5A90-0x007C5BEF; caller MapObject::LoadFromSave; attribute ctor 0x005DDB90
+0x007C5BF0,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007C5BF0-0x007C5C0B; vftable 0x00B22C38; ret 4
+0x007C5C10,signature,"void* __thiscall f(void* this, float x, float y)",0x007C5C10-0x007C5D54 (ret 8; args at esp+0x44/0x48 passed by address to 0x005DDB90); caller route builder 0x007C7720
+0x007C5F40,signature,"bool __thiscall f(void* this, void* tag, void* outIndex)","0x007C5F40-0x007C5FE1 (ret 8); pin tag +0x130 as in MapLocation::RegisterObject 0x007F6A80; callers 0x007C5FF0, 0x007C7720"
+0x007C5FF0,signature,void __thiscall f(void* this),"0x007C5FF0-0x007C610F; caller 0x00700E60; callees 0x007C5F40, 0x007C5EE0 MapObject::PinAt, 0x007F82C0"
+0x007C6110,signature,"void* __thiscall f(void* this, void* tag)",0x007C6110-0x007C61AF; caller MapObject::LoadFromSave 0x007C7DD0
+0x007C61B0,signature,"void __thiscall f(void* this, void* writer)","0x007C61B0-0x007C63B9; vftable 0x00B22E04 slot 21; dev/gff4_fields.csv 16784-16786, 16796, 16797"
+0x007C63C0,signature,void __thiscall f(void* this),"0x007C63C0-0x007C647F; caller 0x00701120; callees 0x00A580E0, 0x00602650, 0x007F6A80"
+0x007C6480,signature,"void __thiscall f(void* this, unsigned int index)","0x007C6480-0x007C666F; caller 0x007C70B0; callees 0x007C5A70 (connection count), 0x007F6C60"
+0x007C6670,signature,"void* __cdecl f(void* first, void* last, void* dest)",0x007C6670-0x007C669A; callee 0x007C5980; caller vector operator= 0x007C6D70
+0x007C66A0,signature,"void* __cdecl f(void* first, void* last, void* dest)","0x007C66A0-0x007C66DF; callers 0x007C6B80, 0x0080D790"
+0x007C7420,signature,unsigned int __cdecl f(void* builder),0x007C7420-0x007C74CF; caller MapObject::SaveTemplate 0x007C7CB0; struct code at 0x007C7460
+0x007C74D0,signature,void __thiscall f(void* this),0x007C74D0-0x007C767F; caller scalar deleting destructor 0x007C81F0
+0x007C7680,signature,"void* __thiscall f(void* this, unsigned int flags)","0x007C7680 sub ecx,0x20; jmp 0x007C81F0; vftable 0x00B22DD8"
+0x007C7690,signature,"void* __thiscall f(void* this, unsigned int flags)","0x007C7690 sub ecx,0x34; jmp 0x007C81F0; vftable 0x00B22D7C"
+0x007C76A0,signature,"void* __thiscall f(void* this, unsigned int flags)","0x007C76A0 sub ecx,0x18; jmp 0x007C81F0; vftable 0x00B22DE8"
+0x007C76B0,signature,"void* __thiscall f(void* this, unsigned int flags)","0x007C76B0 sub ecx,0x38; jmp 0x007C81F0; vftable 0x00B22D68"
+0x007C76C0,signature,"bool __thiscall f(void* this, unsigned int index, void* outTrail)",0x007C76C0-0x007C7720; callee 0x007C7070; caller 0x007C7720
+0x007C7720,signature,"void __thiscall f(void* this, unsigned int destIndex, bool buildPath, void* startPin)","0x007C7720-0x007C7CA3 (ret 0xC); calls 0x007C5F40, 0x007C70B0, 0x007C5EE0, 0x007C5C10, 0x007C76C0"
+0x007C8190,signature,"void* __cdecl f(void* first, void* last, void* destEnd)",0x007C8190-0x007C81EF; caller 0x007C82E0
+0x007C81F0,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007C81F0-0x007C820B; vftable 0x00B22E04; ret 4
+0x007C87E0,signature,"void __thiscall f(void* this, void* value)","0x007C87E0-0x007C887F; callers MapObject::LoadFromResource, MapObject::CopyPinsFrom"
+0x007C8880,signature,"void* __thiscall f(void* this, unsigned int count)",0x007C8880-0x007C88EF (ret 4); caller 0x007C89F0
+0x007C88F0,signature,"void __thiscall f(void* this, bool release)",0x007C88F0-0x007C89EF; caller MapObject::CopyPinsFrom
+0x007C89F0,signature,"void* __thiscall f(void* this, void* arg)",0x007C89F0-0x007C8E39 (ret 4); caller 0x00701990
+0x007C9940,signature,void __thiscall f(void* this),0x007C9940-0x007C99B5; renderer 0x00C31650; caller 0x0068A7E0
+0x007F6860,signature,void* __thiscall f(void* this),0x007F6860-0x007F686A
+0x007F6870,signature,"void* __thiscall f(void* this, unsigned int otherPin, unsigned int route, unsigned int cost)",0x007F6870-0x007F688D (ret 0xC); caller 0x007F82C0
+0x007F6890,signature,"void* __thiscall f(void* this, void* other)",0x007F6890-0x007F68BF (ret 4)
+0x007F68C0,signature,void __thiscall f(void* this),"0x007F68C0-0x007F68C6; callers include 0x007F6930, 0x00AB9910"
+0x007F68D0,signature,void* __cdecl f(unsigned int count),0x007F68D0-0x007F692F; 25 callers
+0x007F6930,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007F6930-0x007F694B; vftable 0x00B2476C
+0x007F6950,signature,"void* __thiscall f(void* this, unsigned int index)",0x007F6950-0x007F697E (ret 4); caller 0x007F6C60
+0x007F6990,signature,"void* __cdecl f(void* first, void* last, void* dest)",0x007F6990-0x007F69DF; caller 0x007F7320
+0x007F69E0,signature,"void* __cdecl f(void* first, void* last, void* dest)","0x007F69E0-0x007F6A1F; callers 0x007F73A0, 0x007F75D0"
+0x007F6A20,signature,"void* __cdecl f(void* first, void* last, void* destEnd)",0x007F6A20-0x007F6A7F; caller 0x007F6CB0
+0x007F6A80,signature,"void __thiscall f(void* this, int ownerMapId)",0x007F6A80-0x007F6AE0 (ret 4); caller 0x007C63C0
