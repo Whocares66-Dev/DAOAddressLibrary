@@ -1113,3 +1113,43 @@ address,what,value,why
 0x004BBF10,convention,__cdecl,"plain ret; the readers' cdecl, written in full"
 0x004BBFD0,convention,__cdecl,"plain ret; the readers' cdecl, written in full"
 0x004BC230,convention,__cdecl,"plain ret; the readers' cdecl, written in full"
+0x004CB3E0,signature,float __cdecl f(float x),ret at 0x4CB474; arg [esp+4]
+0x004CB4D0,signature,"void* __thiscall f(void* this, void* v)",ret 4; ecx moved to eax at 0x4CB4EF
+0x004CB510,signature,"void* __cdecl f(void* out, void* a, void* b)",plain ret; out [ebp+8] returned in eax at 0x4CB5C9
+0x004CB800,signature,"void* __cdecl f(void* out, void* q, void* v)",plain ret; args [esp+0x34..0x3C]
+0x004CB930,signature,"float __cdecl f(float a, float b)","plain ret; args [ebp+8],[ebp+0xC]"
+0x004CBC10,signature,"void* __cdecl f(void* out, void* a, void* b, float t)","plain ret; out [esp+8], ecx, edx, t [esp+0x18] at 0x4CBC17-0x4CBC2D"
+0x004D2A60,signature,"void __thiscall f(void* this, void* matrix)",ret 4; slot 5
+0x004D2AD0,signature,"void __thiscall f(void* this, void* matrix)",ret 4; slot 6
+0x004D2B40,signature,void __thiscall f(void* this),plain ret; ecx read at 0x4D2B40
+0x004D2B90,signature,"void* __thiscall f(void* this, void* points, unsigned int count)",ret 8; returns ecx at 0x4D2D24
+0x004D2FE0,signature,"void __thiscall f(void* this, void* out)",ret 4; ecx read at 0x4D2FE9
+0x004D3000,signature,"void __thiscall f(void* this, void* points, unsigned int stride, unsigned int count)",ret 0xC; ecx to esi at 0x4D3014
+0x004D31C0,signature,"bool __thiscall f(void* this, void* from, void* to, void* hit, void* params, void* p5)","ret 0x14 and a vftable slot, so thiscall; five stack args, p5 unused in the part read"
+0x004D3E30,signature,"void* __cdecl f(void* out, void* q, void* translation, void* scale)","plain ret; args [esp+0x2C..0x38], eax = out"
+0x004D4060,signature,void* __thiscall f(void* this),plain ret; ecx to esi at 0x4D4062; returns esi
+0x004D40B0,signature,"void* __thiscall f(void* this, void* ostream)",ret 4; ecx to edi at 0x4D40D3
+0x004D4140,signature,void __thiscall f(void* this),ecx used at 0x4D4169
+0x004D41A0,signature,void __thiscall f(void* this),plain ret; ecx to esi at 0x4D41C2
+0x004D4210,signature,"void __thiscall f(void* this, float s)",ret 4; ecx to eax at 0x4D421C
+0x004D4250,signature,void* __thiscall f(void* this),plain ret; ecx to eax at 0x4D4252
+0x004D4270,signature,"void* __thiscall f(void* this, void* point, void* normal)",ret 8; ecx to esi at 0x4D427F
+0x004D42D0,signature,"float __thiscall f(void* this, void* p)",ret 4; ecx read at 0x4D42D4
+0x004D4300,signature,"bool __thiscall f(void* this, void* a, void* b, void* out, bool clamp)",ret 0x10; ecx read at 0x4D4348
+0x004D4450,signature,"void __thiscall f(void* this, void* point, void* normal)",ret 8; ecx to esi at 0x4D445D
+0x004D44A0,signature,"void __thiscall f(void* this, void* normal, float d, bool normalise)",ret 0xC; ecx to esi at 0x4D44B7
+0x004D4580,signature,"void* __thiscall f(void* this, void* src)",ret 4; ecx to eax at 0x4D4580
+0x004D45A0,signature,"void* __thiscall f(void* this, void* v)",ret 4; ecx to esi at 0x4D45A8
+0x004D45F0,signature,"void __cdecl f(void* p, int count)",plain ret; two stack args
+0x004D4620,signature,"void __cdecl f(void* p, int count)",plain ret; same shape as 0x4D45F0
+0x004D46C0,signature,"void* __cdecl f(void* out, void* a, void* b)",plain ret; args [ebp+8..0x10]
+0x004D4750,signature,"void* __cdecl f(void* out, void* a, void* b)",plain ret; args [ebp+8..0x10]
+0x004D47E0,signature,"void* __cdecl f(void* out, void* v, float s)",plain ret; args [esp+4..0xC]
+0x004D4820,signature,"void* __cdecl f(void* out, void* v, float s)",plain ret; args [ebp+8..0x10]
+0x004D4880,signature,"bool __cdecl f(void* a, void* b)","plain ret; args [ebp+8],[ebp+0xC]"
+0x004D4950,signature,"float __cdecl f(void* a, void* b)",plain ret
+0x004D4A10,signature,"void* __cdecl f(void* out, void* v)",plain ret; esi = out [esp+8]
+0x004D4B80,signature,"float __cdecl f(void* a, void* b)","plain ret; args [esp+4],[esp+8]"
+0x004D4BF0,signature,"float __cdecl f(void* a, void* b)","plain ret; args [esp+8],[esp+0xC]"
+0x004CB480,signature,void __thiscall f(void* this),"the readers' convention, upheld against the check; ecx passed on to 0x4E9A90 at 0x4CB482"
+0x004D45E0,signature,void __thiscall f(void* this),"the readers' convention, upheld against the check; ecx pushed at 0x4D45E2"
