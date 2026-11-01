@@ -1795,3 +1795,39 @@ address,what,value,why
 0x00852060,signature,bool __thiscall SimpleXMLBuilder_Parse(void* this),ID 23161: 0x00852060 [this+0xC] -> call [vtable+4] (XMLParser::Parse)
 0x00852080,signature,"void* __thiscall SimpleXMLBuilderHelper_ctor(void* this, void* name, bool fromResources)","ID 23162: 0x00852080: flag [esp+0x70]==1 -> Resources::Find 0x004D5BA0 with type [0x00AF046C], Data/Size 0x004D56D0/0x004D57B0"
 0x008521B0,signature,"void* __thiscall SimpleXMLBuilderHelper_scalar_deleting_destructor(void* this, unsigned int flags)","ID 23163: 0x008521B0 calls 0x00852030, operator_delete if [esp+8]&1"
+0x008521D0,signature,void __thiscall SimpleXMLBuilder_dtor(void* this),convention from ret N and ecx use at 0x008521D0
+0x00852270,signature,"void* __thiscall SimpleXMLBuilder_scalar_deleting_dtor_thunk(void* this, unsigned int flags)",convention from ret N and ecx use at 0x00852270
+0x00852280,signature,"void __thiscall SimpleXMLBuilder_EndElement(void* this, void* name)",convention from ret N and ecx use at 0x00852280
+0x008522C0,signature,"void* __thiscall SimpleXMLBuilder_scalar_deleting_dtor(void* this, unsigned int flags)",convention from ret N and ecx use at 0x008522C0
+0x008522E0,signature,"void* __thiscall SimpleXMLBuilder_ctor(void* this, void* arg1, void* arg2, void* arg3)",convention from ret N and ecx use at 0x008522E0
+0x00852370,signature,"void __thiscall SimpleXMLBuilder_StartElement(void* this, void* name, void* attributes)",convention from ret N and ecx use at 0x00852370
+0x008523F0,signature,"void __cdecl StartElementHandler(void* userData, void* name, void* attributes)",convention from ret N and ecx use at 0x008523F0
+0x00852410,signature,"void __thiscall XMLBuilderBase_EndElement(void* this, void* name)",convention from ret N and ecx use at 0x00852410
+0x00852480,signature,"void* __thiscall XMLBuilderBase_ctor(void* this, void* parser)",convention from ret N and ecx use at 0x00852480
+0x00852530,signature,"void __thiscall XMLBuilderBase_Characters(void* this, void* text, int length)",convention from ret N and ecx use at 0x00852530
+0x008525E0,signature,"void __thiscall XMLBuilderBase_StartElement(void* this, void* name, void* attributes)",convention from ret N and ecx use at 0x008525E0
+0x00852730,signature,void* __thiscall XMLNodeBuilder_ctor(void* this),convention from ret N and ecx use at 0x00852730
+0x00852750,signature,"void __thiscall XMLNodeBuilder_AppendText(void* this, void* text, int count)",convention from ret N and ecx use at 0x00852750
+0x008527E0,signature,"bool __thiscall XMLNodeBuilder_EndChildElement(void* this, void* name, void* child, unsigned char* handled)",convention from ret N and ecx use at 0x008527E0; reconciled: read the ret and returns
+0x008527F0,signature,void __thiscall TextBuffer_Release(void* this),convention from ret N and ecx use at 0x008527F0
+0x00852820,signature,void __thiscall XMLNodeBuilder_dtor(void* this),convention from ret N and ecx use at 0x00852820
+0x00852830,signature,"void* __thiscall XMLNodeBuilder_scalar_deleting_dtor(void* this, unsigned int flags)",convention from ret N and ecx use at 0x00852830
+0x00A36130,signature,void __thiscall CResGFF_dtor(void* this),convention from ret N and ecx use at 0x00A36130
+0x00A37AB0,signature,"void* __thiscall CResGFF_ctor(void* this, unsigned short resType, void* fileType, void* name)",convention from ret N and ecx use at 0x00A37AB0; reconciled: read the ret and returns
+0x00A38860,signature,void __thiscall CExoGFF_dtor(void* this),convention from ret N and ecx use at 0x00A38860
+0x00A388D0,signature,"void* __thiscall CExoGFF_scalar_deleting_dtor(void* this, unsigned int flags)",convention from ret N and ecx use at 0x00A388D0
+0x00A388F0,signature,"void* __thiscall CExoGFF_ctor(void* this, void* name, unsigned short resType)",convention from ret N and ecx use at 0x00A388F0; reconciled: read the ret and returns
+0x00A39560,signature,void __thiscall PNGFileAccess_BuildCrcTable(void* this),convention from ret N and ecx use at 0x00A39560
+0x00A39720,signature,void __thiscall PNGFileAccess_ReadMetadata(void* this),convention from ret N and ecx use at 0x00A39720
+0x00A39A00,signature,"void* __thiscall PNGFileAccess_ctor(void* this, void* a1, void* a2, void* a3, void* a4)",convention from ret N and ecx use at 0x00A39A00
+0x00A58590,signature,"void* __thiscall RIMTree_GetRimPath(void* this, void* outPath, void* name)",convention from ret N and ecx use at 0x00A58590; reconciled: read the ret and returns
+0x00A588F0,signature,bool __thiscall RIMTree_Load(void* this),convention from ret N and ecx use at 0x00A588F0; reconciled: read the ret and returns
+0x00A58B00,signature,bool __thiscall RIMTree_UpdateUnload(void* this),convention from ret N and ecx use at 0x00A58B00
+0x00A58E30,signature,"void* __thiscall RIMTree_FindNode(void* this, void* name)",convention from ret N and ecx use at 0x00A58E30
+0x00A58FC0,signature,"void __thiscall RIMTree_AppendChildren(void* this, void* outVector)",convention from ret N and ecx use at 0x00A58FC0
+0x00A590C0,signature,"bool __thiscall RIMTreeManager_Update(void* this, float seconds)",convention from ret N and ecx use at 0x00A590C0
+0x00A59490,signature,"void* __thiscall RIMTree_ctor(void* this, void* arg1)",convention from ret N and ecx use at 0x00A59490
+0x00A59520,signature,void __thiscall RIMTree_dtor(void* this),convention from ret N and ecx use at 0x00A59520
+0x00A595B0,signature,"void __thiscall RIMTree_CollectDescendants(void* this, void* outVector)",convention from ret N and ecx use at 0x00A595B0
+0x00A665C0,signature,"bool __cdecl Items_GetVariationNames(unsigned short baseItem, unsigned char variation, void* modelName, void* iconName)",convention from ret N and ecx use at 0x00A665C0; reconciled: read the ret and returns
+0x00AD64B0,signature,void __cdecl AtexitDestroyModuleResourcesMutex(void),convention from ret N and ecx use at 0x00AD64B0
