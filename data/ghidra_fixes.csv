@@ -7565,7 +7565,6 @@ address,what,value,why
 0x007280B0,signature,void * __thiscall GUI::GUILightLoading::GUILightLoading(void * this),plain ret 0x00728163
 0x00728170,signature,void __thiscall GUI::GUILightLoading::~GUILightLoading(void * this),tail jmp ~GUIScene 0x00A559E0
 0x00728190,signature,void __thiscall GUI::GUIFadeToBlackLoading::~GUIFadeToBlackLoading(void * this),tail jmp ~GUIScene 0x00A559E0
-0x00413660,convention,__returning (not noreturn),"operator new: the function body of 0x00726560 stops at its call 0x00726566 although code follows (bytes 0x0072656B on: add esp,4; test eax,eax; mov ecx,0x007262D0) [I that the noreturn flag is the cause]; re-disassemble 0x00726560 after"
 0x007281C0,signature,void __thiscall GUI::GUIFadeToBlackLoading::OnShow(void* this),"vftable slot 5, plain ret; Ghidra labels it vfunction6"
 0x007281D0,signature,void __thiscall GUI::GUICustomLoading::Close(void* this),"vftable slot 6, plain ret; Ghidra labels it vfunction7"
 0x00728250,signature,"void* __thiscall GUI::GUILightLoading::`scalar deleting destructor'`adjustor{28}'(void* this, unsigned int flags)",adjustor thunk to a deleting destructor that ends ret 4; Ghidra labels it vfunctionN
@@ -8343,7 +8342,7 @@ address,what,value,why
 0x00739890,clear,GUI::GUICharGen::vfunction1,it is slot 0 (GetClassInfo); the auto label's slot number is wrong (0x00739870 carries vfunction1 too)
 0x00739870,clear,GUI::GUICharGen::vfunction1,"an adjustor thunk (ecx-0xC4) to the scalar deleting destructor, not a vfunction1"
 0x007FD2E0,clear,GUI::GUICharGenBase::vfunction4,"GUICharGenBase::RegisterMessageHandlers (slot 3): once-guarded by byte 0x00C39220, files Reset, CharGenEnd, AssignAttribute, AssignAbility, AutoLevelUp; outside gui-31, called at the head of 0x0073B140"
-0x00737460,convention,__thiscall ret 0x18,"AppearanceSlider<float>(group, label, value, integral, min, max): RET 0x18 at 0x007377E3"
+0x00737460,convention,__thiscall,"AppearanceSlider<float>(group, label, value, integral, min, max): RET 0x18 at 0x007377E3"
 0x0075AD20,clear,AbilityGUIInfo::vfunction1,adjustor{32} thunk of the scalar deleting destructor (vtable 0x00B1CB70 slot 0)
 0x0075AD30,clear,AbilityGUIInfo::vfunction3,adjustor{8} thunk of the scalar deleting destructor (vtable 0x00B1CBE0 slot 2)
 0x0075BBF0,clear,AbilityGUIInfo::vfunction5,it is the scalar deleting destructor (vtable 0x00B1CBF0 slot 4)
