@@ -2588,7 +2588,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2587,function,,0x004600b0,0x008986c0,0x004600b0
 2588,function,,0x00460120,0x00466730,0x00460120
 2589,function,"std::map<std::wstring,unsigned int>::insert",0x004601f0,0x00415a30,0x004601f0
-2590,function,,0x00460280,0x00898810,0x00460280
+2590,function,Renderer::FrameBufferEffect::AddResource,0x00460280,0x00898810,0x00460280
 2591,function,Renderer::FrameBufferEffect::FindResource,0x004602d0,0x00898860,0x004602d0
 2592,function,,0x00460330,0x00466d00,0x00460330
 2593,function,,0x00460370,0x008988c0,0x00460370
@@ -2596,13 +2596,13 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2595,function,,0x00460400,0x00898950,0x00460400
 2596,function,,0x00460430,0x00898980,0x00460430
 2597,function,,0x004604e0,0x00898a30,0x004604e0
-2598,function,,0x00460570,0x00898ac0,0x00460570
+2598,function,Renderer::FrameBufferEffect::AddInstruction,0x00460570,0x00898ac0,0x00460570
 2599,function,,0x00460590,0x00898ae0,0x00460590
 2600,function,,0x00460a40,0x00898f90,0x00460a40
 2601,function,,0x00460ce0,0x00899230,0x00460ce0
-2602,function,,0x004610a0,0x008995f0,0x004610a0
+2602,function,Renderer::FrameBufferEffect::ParseRunInstruction,0x004610a0,0x008995f0,0x004610a0
 2603,function,,0x00461190,0x008996e0,0x00461190
-2604,function,,0x00461370,0x008998c0,0x00461370
+2604,function,"std::map<std::wstring,void *>::~map",0x00461370,0x008998c0,0x00461370
 2605,function,,0x00461400,0x00899950,0x00461400
 2606,function,,0x004614b0,0x00899a00,0x004614b0
 2607,function,,0x00461550,0x00899aa0,0x00461550
@@ -2642,52 +2642,52 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2641,function,,0x00462670,0x0089c900,0x00462670
 2642,function,,0x00462790,0x0089ca20,0x00462790
 2643,function,,0x00462800,0x0089ca90,0x00462800
-2644,function,,0x00462840,0x0089cad0,0x00462840
-2645,function,,0x004628a0,0x0089cb30,0x004628a0
-2646,function,,0x00462920,0x0089cbb0,0x00462920
-2647,function,,0x00462940,0x0089cbd0,0x00462940
-2648,function,,0x00462970,0x0089cc00,0x00462970
-2649,function,,0x004629c0,0x0089cc50,0x004629c0
-2650,function,,0x004629e0,0x0089cc70,0x004629e0
-2651,function,,0x00462a10,0x0089cca0,0x00462a10
-2652,function,,0x00462a50,0x0089cce0,0x00462a50
-2653,function,,0x00462ad0,0x0089cd60,0x00462ad0
-2654,function,,0x00462ba0,0x0089ce30,0x00462ba0
-2655,function,,0x00462cc0,0x0089cf50,0x00462cc0
+2644,function,std::vector<General::SafePointer<Renderer::ObjectNodeLightReference> *>::back,0x00462840,0x0089cad0,0x00462840
+2645,function,General::SafePointerList<Renderer::ObjectNodeLightReference>::RemoveReference,0x004628a0,0x0089cb30,0x004628a0
+2646,function,General::SafePointer<Renderer::ObjectNodeLightReference>::Reset,0x00462920,0x0089cbb0,0x00462920
+2647,function,std::_Destroy_range<General::SafePointer<Renderer::ObjectNodeLightReference> *>,0x00462940,0x0089cbd0,0x00462940
+2648,function,std::vector<General::SafePointer<Renderer::ObjectNodeLightReference>>::_Tidy,0x00462970,0x0089cc00,0x00462970
+2649,function,General::SafePointerList<Renderer::ObjectNodeLightReference>::AddReference,0x004629c0,0x0089cc50,0x004629c0
+2650,function,General::SafePointer<Renderer::ObjectNodeLightReference>::SafePointer_copy,0x004629e0,0x0089cc70,0x004629e0
+2651,function,General::SafePointer<Renderer::ObjectNodeLightReference>::operator=,0x00462a10,0x0089cca0,0x00462a10
+2652,function,"std::iter_swap<General::SafePointer<Renderer::ObjectNodeLightReference> *,General::SafePointer<Renderer::ObjectNodeLightReference> *>",0x00462a50,0x0089cce0,0x00462a50
+2653,function,"std::_Push_heap<General::SafePointer<Renderer::ObjectNodeLightReference> *,int,General::SafePointer<Renderer::ObjectNodeLightReference>>",0x00462ad0,0x0089cd60,0x00462ad0
+2654,function,"std::_Rotate<General::SafePointer<Renderer::ObjectNodeLightReference> *,int,General::SafePointer<Renderer::ObjectNodeLightReference>>",0x00462ba0,0x0089ce30,0x00462ba0
+2655,function,General::SafePointer<Renderer::ObjectNodeLightReference>::SafePointer,0x00462cc0,0x0089cf50,0x00462cc0
 2656,function,,0x00462ce0,0x0089cf70,0x00462ce0
-2657,function,,0x00462d10,0x0089d320,0x00462d10
-2658,function,,0x00462d20,0x0089cfa0,0x00462d20
-2659,function,,0x00462d50,0x0089cfd0,0x00462d50
-2660,function,,0x00462df0,0x0089d070,0x00462df0
-2661,function,,0x00462ee0,0x0089d160,0x00462ee0
-2662,function,,0x00462f49,0x0089d1c9,0x00462f49
-2663,function,,0x00462f80,0x0089d200,0x00462f80
+2657,function,std::vector<General::SafePointer<Renderer::ObjectNodeLightReference>>::~vector,0x00462d10,0x0089d320,0x00462d10
+2658,function,"std::fill<General::SafePointer<Renderer::ObjectNodeLightReference> *,General::SafePointer<Renderer::ObjectNodeLightReference>>",0x00462d20,0x0089cfa0,0x00462d20
+2659,function,std::_Med3<General::SafePointer<Renderer::ObjectNodeLightReference> *>,0x00462d50,0x0089cfd0,0x00462d50
+2660,function,"std::_Adjust_heap<General::SafePointer<Renderer::ObjectNodeLightReference> *,int,General::SafePointer<Renderer::ObjectNodeLightReference>>",0x00462df0,0x0089d070,0x00462df0
+2661,function,"std::_Uninit_copy<General::SafePointer<Renderer::ObjectNodeLightReference> *,General::SafePointer<Renderer::ObjectNodeLightReference> *>",0x00462ee0,0x0089d160,0x00462ee0
+2662,function,Catch_All@00462f49,0x00462f49,0x0089d1c9,0x00462f49
+2663,function,"std::_Pop_heap<General::SafePointer<Renderer::ObjectNodeLightReference> *,General::SafePointer<Renderer::ObjectNodeLightReference>>",0x00462f80,0x0089d200,0x00462f80
 2664,function,General::SafePointerList<Renderer::ObjectNodeLightReference>::~SafePointerList,0x00463010,0x0089d290,0x00463010
-2665,function,,0x004630a0,0x0089d330,0x004630a0
-2666,function,,0x004630e0,0x0089d370,0x004630e0
-2667,function,,0x0046314b,0x0089d3db,0x0046314b
-2668,function,,0x00463180,0x0089d410,0x00463180
-2669,function,,0x00463230,0x0089d4c0,0x00463230
+2665,function,"std::_Copy_opt<General::SafePointer<Renderer::ObjectNodeLightReference> *,General::SafePointer<Renderer::ObjectNodeLightReference> *>",0x004630a0,0x0089d330,0x004630a0
+2666,function,"std::_Uninit_fill_n<General::SafePointer<Renderer::ObjectNodeLightReference> *,unsigned int,General::SafePointer<Renderer::ObjectNodeLightReference>>",0x004630e0,0x0089d370,0x004630e0
+2667,function,Catch_All@0046314b,0x0046314b,0x0089d3db,0x0046314b
+2668,function,std::_Median<General::SafePointer<Renderer::ObjectNodeLightReference> *>,0x00463180,0x0089d410,0x00463180
+2669,function,"std::_Make_heap<General::SafePointer<Renderer::ObjectNodeLightReference> *,int,General::SafePointer<Renderer::ObjectNodeLightReference>>",0x00463230,0x0089d4c0,0x00463230
 2670,function,,0x00463280,0x0089d510,0x00463280
 2671,function,,0x004632b0,0x0089d540,0x004632b0
 2672,function,,0x004632d0,0x0089d560,0x004632d0
 2673,function,,0x004632f0,0x0089d580,0x004632f0
 2674,function,General::SafePointerList<Renderer::ObjectNodeLightReference>::`scalar deleting destructor',0x004633a0,0x0089d630,0x004633a0
-2675,function,,0x004633c0,0x0089d650,0x004633c0
-2676,function,,0x00463430,0x0089d6c0,0x00463430
-2677,function,,0x00463470,0x0089d700,0x00463470
-2678,function,,0x004636b0,0x0089d940,0x004636b0
+2675,function,std::vector<General::SafePointer<Renderer::ObjectNodeLightReference>>::erase,0x004633c0,0x0089d650,0x004633c0
+2676,function,"std::_Copy_backward_opt<General::SafePointer<Renderer::ObjectNodeLightReference> *,General::SafePointer<Renderer::ObjectNodeLightReference> *>",0x00463430,0x0089d6c0,0x00463430
+2677,function,std::_Unguarded_partition<General::SafePointer<Renderer::ObjectNodeLightReference> *>,0x00463470,0x0089d700,0x00463470
+2678,function,std::_Insertion_sort<General::SafePointer<Renderer::ObjectNodeLightReference> *>,0x004636b0,0x0089d940,0x004636b0
 2679,function,,0x00463790,0x0089da20,0x00463790
 2680,function,,0x004637b0,0x0089da40,0x004637b0
-2681,function,,0x004637d0,0x0089da60,0x004637d0
-2682,function,,0x00463810,0x0089daa0,0x00463810
-2683,function,,0x00463870,0x0089db00,0x00463870
+2681,function,"std::uninitialized_fill_n<General::SafePointer<Renderer::ObjectNodeLightReference> *,unsigned int,General::SafePointer<Renderer::ObjectNodeLightReference>>",0x004637d0,0x0089da60,0x004637d0
+2682,function,std::_Sort_heap<General::SafePointer<Renderer::ObjectNodeLightReference> *>,0x00463810,0x0089daa0,0x00463810
+2683,function,"std::uninitialized_copy<General::SafePointer<Renderer::ObjectNodeLightReference> *,General::SafePointer<Renderer::ObjectNodeLightReference> *>",0x00463870,0x0089db00,0x00463870
 2684,function,,0x004638a0,0x0089db30,0x004638a0
 2685,function,,0x00463a23,0x0089dcb3,0x00463a23
 2686,function,,0x00463aae,0x0089dd3e,0x00463aae
 2687,function,,0x00463b40,0x0089ddd0,0x00463b40
-2688,function,,0x00463c30,0x0089dec0,0x00463c30
-2689,function,,0x00463d20,0x0089dfb0,0x00463d20
+2688,function,std::vector<General::SafePointer<Renderer::ObjectNodeLightReference>>::resize,0x00463c30,0x0089dec0,0x00463c30
+2689,function,std::vector<General::SafePointer<Renderer::ObjectNodeLightReference>>::insert,0x00463d20,0x0089dfb0,0x00463d20
 2690,function,,0x00463db0,0x0089e040,0x00463db0
 2691,function,Renderer::LightList::ChooseFor,0x00463e40,0x0089e0d0,0x00463e40
 2692,function,,0x00464200,0x0089e490,0x00464200
@@ -2734,34 +2734,34 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2733,function,,0x00465ce0,0x008afe30,0x00465ce0
 2734,function,,0x00465d00,0x008afe50,0x00465d00
 2735,function,,0x00465da0,0x008afef0,0x00465da0
-2736,function,,0x00465f20,0x0089a400,0x00465f20
-2737,function,,0x00465f30,0x0089a410,0x00465f30
-2738,function,,0x00465f40,0x0089a420,0x00465f40
-2739,function,,0x00465f50,0x0089a430,0x00465f50
-2740,function,,0x004660d0,0x0089a5c0,0x004660d0
-2741,function,,0x00466120,0x0089a610,0x00466120
-2742,function,,0x004662a0,0x0089f830,0x004662a0
-2743,function,,0x004662b0,0x0089f840,0x004662b0
-2744,function,,0x004662d0,0x0089f860,0x004662d0
-2745,function,,0x00466820,0x0089fdb0,0x00466820
-2746,function,,0x00466840,0x0089fdd0,0x00466840
-2747,function,,0x00466880,0x0089fe10,0x00466880
-2748,function,,0x00466930,0x0089fec0,0x00466930
+2736,function,Renderer::RenderContext::GetViewMatrix,0x00465f20,0x0089a400,0x00465f20
+2737,function,Renderer::RenderContext::SetCurrentShaderParam,0x00465f30,0x0089a410,0x00465f30
+2738,function,Renderer::RenderContext::GetCurrentShaderParam,0x00465f40,0x0089a420,0x00465f40
+2739,function,Renderer::RenderContext::GetCameraPosition,0x00465f50,0x0089a430,0x00465f50
+2740,function,Renderer::RenderContext::SetViewMatrix,0x004660d0,0x0089a5c0,0x004660d0
+2741,function,Renderer::RenderContext::RenderContext,0x00466120,0x0089a610,0x00466120
+2742,function,Renderer::EclipseUmbraScene::BuildSceneDatabase::NullCommander::~NullCommander,0x004662a0,0x0089f830,0x004662a0
+2743,function,Renderer::EclipseUmbraScene::BuildSceneDatabase::NullCommander::`scalar deleting destructor',0x004662b0,0x0089f840,0x004662b0
+2744,function,Matrix44::Inverse,0x004662d0,0x0089f860,0x004662d0
+2745,function,Renderer::EclipseUmbraScene::InvokeObjectVfunction41,0x00466820,0x0089fdb0,0x00466820
+2746,function,Renderer::EclipseUmbraScene::ReleaseUmbraBinding,0x00466840,0x0089fdd0,0x00466840
+2747,function,Renderer::EclipseUmbraScene::BuildSceneDatabase,0x00466880,0x0089fe10,0x00466880
+2748,function,Renderer::EclipseUmbraScene::ApplyCutoffToMesh,0x00466930,0x0089fec0,0x00466930
 2749,function,,0x00466a20,0x0089ffb0,0x00466a20
-2750,function,,0x00466eb0,0x008a0440,0x00466eb0
+2750,function,Renderer::EclipseUmbraScene::CreateObbModel,0x00466eb0,0x008a0440,0x00466eb0
 2751,function,PtrVector_AtOrDefault,0x00466f10,0x00505820,0x00466f10
-2752,function,,0x00466f40,0x008a04a0,0x00466f40
+2752,function,Renderer::EclipseUmbraScene::ApplyCutoffToNode,0x00466f40,0x008a04a0,0x00466f40
 2753,function,,0x00467000,0x008a0560,0x00467000
 2754,function,Renderer::ResolveVisibilityAndDraw,0x00467050,0x008a05b0,0x00467050
-2755,function,,0x004670c0,0x008a0620,0x004670c0
+2755,function,Renderer::EclipseUmbraScene::SetCutoff,0x004670c0,0x008a0620,0x004670c0
 2756,function,Renderer::EclipseUmbraScene::SetMeshObjectsUmbraProperty0,0x004671f0,0x008a0750,0x004671f0
 2757,function,Renderer::EclipseUmbraScene::~EclipseUmbraScene,0x004672d0,0x008a0830,0x004672d0
 2758,function,Renderer::EclipseUmbraScene::UpdateEmitters,0x00467380,0x008a08e0,0x00467380
 2759,function,Renderer::EclipseUmbraScene::`scalar deleting destructor',0x004675b0,0x008a0b10,0x004675b0
-2760,function,,0x004675d0,0x008a0b30,0x004675d0
+2760,function,Renderer::EclipseUmbraScene::RemoveNode,0x004675d0,0x008a0b30,0x004675d0
 2761,function,,0x00467670,0x008a0bd0,0x00467670
 2762,function,,0x00467750,0x008a0cb0,0x00467750
-2763,function,,0x004678f0,0x008a0e50,0x004678f0
+2763,function,Renderer::EclipseUmbraScene::AddNode,0x004678f0,0x008a0e50,0x004678f0
 2764,function,,0x00467ff0,0x008a1550,0x00467ff0
 2765,function,Renderer::MoviePlayerInternal::SetDirectSound,0x00468250,0x008b2be0,0x00468250
 2766,function,Renderer::MoviePlayerInternal::ApplyVolume,0x00468270,0x008b2c10,0x00468270
@@ -2790,11 +2790,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2789,function,,0x00469310,0x008b3cb0,0x00469310
 2790,function,Renderer::MoviePlayerInternal::`scalar deleting destructor',0x00469370,0x008b3d10,0x00469370
 2791,function,Renderer::MoviePlayerInternal::Play,0x00469390,0x008b3d30,0x00469390
-2792,function,,0x00469470,0x008b3e10,0x00469470
+2792,function,Renderer::EclipseUmbraServices::error,0x00469470,0x008b3e10,0x00469470
 2793,function,Renderer::EclipseUmbraServices::allocateMemory,0x004694c0,0x008b3e60,0x004694c0
 2794,function,Renderer::EclipseUmbraServices::deallocateMemory,0x004694e0,0x008b3e80,0x004694e0
-2795,function,,0x004694f0,0x0073f090,0x004694f0
-2796,function,,0x00469500,0x008b3e90,0x00469500
+2795,function,Stub::JumpMember4VirtualSlot1,0x004694f0,0x0073f090,0x004694f0
+2796,function,Stub::JumpMember4VirtualSlot2,0x00469500,0x008b3e90,0x00469500
 2797,function,Renderer::EclipseToolsetUmbraServices::allocateMemory,0x00469510,0x008b3ea0,0x00469510
 2798,function,Renderer::EclipseToolsetUmbraServices::deallocateMemory,0x00469520,0x008b3eb0,0x00469520
 2799,function,,0x00469530,0x008a5bd0,0x00469530
@@ -2823,31 +2823,31 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2822,function,,0x0046a470,0x008a4560,0x0046a470
 2823,function,,0x0046a4e0,0x008a45d0,0x0046a4e0
 2824,function,Renderer::LightState::EaseSun,0x0046a520,0x008a4610,0x0046a520
-2825,function,,0x0046a5c0,0x008a46b0,0x0046a5c0
-2826,function,,0x0046a5e0,0x008a46d0,0x0046a5e0
-2827,function,,0x0046a600,0x008a46f0,0x0046a600
-2828,function,,0x0046a6a0,0x008a4790,0x0046a6a0
-2829,function,,0x0046a720,0x008a4810,0x0046a720
-2830,function,,0x0046a7d0,0x008a48c0,0x0046a7d0
-2831,function,,0x0046a860,0x008a4950,0x0046a860
-2832,function,,0x0046aaa0,0x008a4b90,0x0046aaa0
-2833,function,,0x0046aba0,0x008a4c90,0x0046aba0
-2834,function,,0x0046abe0,0x008a4cd0,0x0046abe0
-2835,function,,0x0046ac30,0x008a4d20,0x0046ac30
-2836,function,,0x0046ac50,0x008a4d40,0x0046ac50
-2837,function,,0x0046ad40,0x008a4e30,0x0046ad40
-2838,function,,0x0046ad90,0x008a4e80,0x0046ad90
+2825,function,General::SafePointerList<Renderer::ObjectNodeLightReference>::ReleaseStrongReference,0x0046a5c0,0x008a46b0,0x0046a5c0
+2826,function,General::SafePointer<Renderer::ObjectNodeLightReference>::MakeWeak,0x0046a5e0,0x008a46d0,0x0046a5e0
+2827,function,std::_Med3<Renderer::LightSlot **>,0x0046a600,0x008a46f0,0x0046a600
+2828,function,"std::_Push_heap<Renderer::LightSlot **,int,Renderer::LightSlot *>",0x0046a6a0,0x008a4790,0x0046a6a0
+2829,function,std::_Median<Renderer::LightSlot **>,0x0046a720,0x008a4810,0x0046a720
+2830,function,"std::_Adjust_heap<Renderer::LightSlot **,int,Renderer::LightSlot *>",0x0046a7d0,0x008a48c0,0x0046a7d0
+2831,function,std::_Unguarded_partition<Renderer::LightSlot **>,0x0046a860,0x008a4950,0x0046a860
+2832,function,std::_Insertion_sort<Renderer::LightSlot **>,0x0046aaa0,0x008a4b90,0x0046aaa0
+2833,function,"std::_Make_heap<Renderer::LightSlot **,int,Renderer::LightSlot *>",0x0046aba0,0x008a4c90,0x0046aba0
+2834,function,std::_Sort_heap<Renderer::LightSlot **>,0x0046abe0,0x008a4cd0,0x0046abe0
+2835,function,Renderer::LightSlot::~LightSlot,0x0046ac30,0x008a4d20,0x0046ac30
+2836,function,"std::_Sort<Renderer::LightSlot **,int>",0x0046ac50,0x008a4d40,0x0046ac50
+2837,function,Renderer::LightList::RemoveSlot,0x0046ad40,0x008a4e30,0x0046ad40
+2838,function,Renderer::LightList::AdvanceFades,0x0046ad90,0x008a4e80,0x0046ad90
 2839,function,,0x0046ae60,0x008a4f50,0x0046ae60
-2840,function,,0x0046aeb0,0x008a4fa0,0x0046aeb0
-2841,function,,0x0046afd0,0x008a50c0,0x0046afd0
-2842,function,,0x0046afe0,0x008a50d0,0x0046afe0
-2843,function,,0x0046aff0,0x008a50e0,0x0046aff0
-2844,function,,0x0046b040,0x008a5130,0x0046b040
-2845,function,,0x0046b0e0,0x008a51d0,0x0046b0e0
+2840,function,Renderer::LightList::Clear,0x0046aeb0,0x008a4fa0,0x0046aeb0
+2841,function,Renderer::LightList::LightList,0x0046afd0,0x008a50c0,0x0046afd0
+2842,function,Renderer::LightList::ClearKeepStorage,0x0046afe0,0x008a50d0,0x0046afe0
+2843,function,Renderer::LightList::~LightList,0x0046aff0,0x008a50e0,0x0046aff0
+2844,function,Renderer::LightState::~LightState,0x0046b040,0x008a5130,0x0046b040
+2845,function,Renderer::LightSlot::LightSlot,0x0046b0e0,0x008a51d0,0x0046b0e0
 2846,function,,0x0046b150,0x008a5240,0x0046b150
-2847,function,,0x0046b1e0,0x008a52d0,0x0046b1e0
+2847,function,Renderer::LightState::SetDefaultProbeCube,0x0046b1e0,0x008a52d0,0x0046b1e0
 2848,function,Renderer::LightState::Fill,0x0046b260,0x008a5350,0x0046b260
-2849,function,,0x0046b920,0x008a5a10,0x0046b920
+2849,function,Renderer::LightState::LightState,0x0046b920,0x008a5a10,0x0046b920
 2850,function,,0x0046bae0,0x008aa750,0x0046bae0
 2851,function,,0x0046baf0,0x008aa760,0x0046baf0
 2852,function,,0x0046bb30,0x008aa7a0,0x0046bb30
@@ -15517,37 +15517,37 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15516,function,JournalEntry::~JournalEntry,0x006ec320,0x005dde50,0x006ec320
 15517,function,JournalEntry::`scalar deleting destructor',0x006ec400,0x005ddf30,0x006ec400
 15518,function,PlotGroup::PlotGroup,0x006ec420,0x005ddf50,0x006ec420
-15519,function,,0x006ec6e0,0x005de210,0x006ec6e0
-15520,function,,0x006ec6f0,0x005de220,0x006ec6f0
-15521,function,,0x006ec700,0x005de230,0x006ec700
-15522,function,,0x006ec710,0x005de240,0x006ec710
-15523,function,,0x006ec7b0,0x005de2e0,0x006ec7b0
-15524,function,,0x006ec7d0,0x005de300,0x006ec7d0
-15525,function,,0x006ec880,0x005de3b0,0x006ec880
-15526,function,,0x006ec900,0x005de430,0x006ec900
-15527,function,,0x006ec9b0,0x005de4e0,0x006ec9b0
-15528,function,,0x006ecb70,0x005de6c0,0x006ecb70
-15529,function,,0x006ecb80,0x005de6a0,0x006ecb80
-15530,function,,0x006ecb90,0x005de6b0,0x006ecb90
-15531,function,,0x006ecba0,0x005de6d0,0x006ecba0
-15532,function,,0x006ecc20,0x005de750,0x006ecc20
-15533,function,,0x006ecc40,0x005de770,0x006ecc40
-15534,function,,0x006ecef0,0x005dea20,0x006ecef0
-15535,function,,0x006ecf00,0x005dea30,0x006ecf00
-15536,function,,0x006ecf10,0x005dea40,0x006ecf10
-15537,function,,0x006ecf20,0x005dea50,0x006ecf20
-15538,function,,0x006ecfc0,0x005deaf0,0x006ecfc0
+15519,function,PlotGroup::`scalar deleting destructor'`adjustor{8}',0x006ec6e0,0x005de210,0x006ec6e0
+15520,function,PlotGroup::`scalar deleting destructor'`adjustor{28}',0x006ec6f0,0x005de220,0x006ec6f0
+15521,function,PlotGroup::`scalar deleting destructor'`adjustor{32}',0x006ec700,0x005de230,0x006ec700
+15522,function,PlotGroup::~PlotGroup,0x006ec710,0x005de240,0x006ec710
+15523,function,PlotGroup::`scalar deleting destructor',0x006ec7b0,0x005de2e0,0x006ec7b0
+15524,function,CodexGroup::FindEntry,0x006ec7d0,0x005de300,0x006ec7d0
+15525,function,CodexGroup::RefreshUpdated,0x006ec880,0x005de3b0,0x006ec880
+15526,function,CodexGroup::ClearUpdated,0x006ec900,0x005de430,0x006ec900
+15527,function,PlotTip::PlotTip,0x006ec9b0,0x005de4e0,0x006ec9b0
+15528,function,PlotTip::`scalar deleting destructor'`adjustor{28}',0x006ecb70,0x005de6c0,0x006ecb70
+15529,function,PlotTip::`scalar deleting destructor'`adjustor{32}',0x006ecb80,0x005de6a0,0x006ecb80
+15530,function,PlotTip::`scalar deleting destructor'`adjustor{8}',0x006ecb90,0x005de6b0,0x006ecb90
+15531,function,PlotTip::~PlotTip,0x006ecba0,0x005de6d0,0x006ecba0
+15532,function,PlotTip::`scalar deleting destructor',0x006ecc20,0x005de750,0x006ecc20
+15533,function,ChanterEntry::ChanterEntry,0x006ecc40,0x005de770,0x006ecc40
+15534,function,ChanterEntry::`scalar deleting destructor'`adjustor{28}',0x006ecef0,0x005dea20,0x006ecef0
+15535,function,ChanterEntry::`scalar deleting destructor'`adjustor{32}',0x006ecf00,0x005dea30,0x006ecf00
+15536,function,ChanterEntry::`scalar deleting destructor'`adjustor{8}',0x006ecf10,0x005dea40,0x006ecf10
+15537,function,ChanterEntry::~ChanterEntry,0x006ecf20,0x005dea50,0x006ecf20
+15538,function,ChanterEntry::`scalar deleting destructor',0x006ecfc0,0x005deaf0,0x006ecfc0
 15539,function,ConversationLine::ConversationLine,0x006ecfe0,0x005deb10,0x006ecfe0
 15540,function,ConversationLine::`scalar deleting destructor',0x006ed1a0,0x005decd0,0x006ed1a0
 15541,function,ConversationLine::ConversationLine,0x006ed1c0,0x005decf0,0x006ed1c0
 15542,function,Journal::RegisterHandler_AcceptChantersQuestMessage,0x006ed380,0x005deeb0,0x006ed380
 15543,function,"std::_Uninit_fill_n<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,unsigned int,SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",0x006ed400,0x005def30,0x006ed400
 15544,function,"std::_Uninit_fill_n<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,unsigned int,SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::catch$0",0x006ed46b,0x005def9b,0x006ed46b
-15545,function,,0x006ed4b0,0x005defe0,0x006ed4b0
+15545,function,"SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::operator=",0x006ed4b0,0x005defe0,0x006ed4b0
 15546,function,"std::_Copy_opt<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*>",0x006ed520,0x005df050,0x006ed520
 15547,function,"std::_Copy_backward_opt<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*>",0x006ed5a0,0x005df0d0,0x006ed5a0
 15548,function,Journal::HandleMessage_MarkAllCodexAsReadMessage,0x006ed620,0x005df150,0x006ed620
-15549,function,,0x006ed6c0,0x005df1f0,0x006ed6c0
+15549,function,Journal::RefreshCodexUpdated,0x006ed6c0,0x005df1f0,0x006ed6c0
 15550,function,Journal::WriteToSave,0x006ed770,0x005df2a0,0x006ed770
 15551,function,Journal::GetCodexGroup,0x006ee300,0x005dfe30,0x006ee300
 15552,function,"std::map<ECBase::ECString,ECBase::ECDynArray<ECBase::ECString>>::lower_bound",0x006ee3e0,0x005dff10,0x006ee3e0
@@ -15697,27 +15697,27 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15696,function,Journal::RebuildPlotGivers,0x006f1fe0,0x005e3ac0,0x006f1fe0
 15697,function,Journal::RebuildPlotDestinations,0x006f20e0,0x005e3bc0,0x006f20e0
 15698,function,Journal::ClearChanterBoard,0x006f2580,0x005e4060,0x006f2580
-15699,function,,0x006f25e0,0x005e40c0,0x006f25e0
-15700,function,,0x006f26b0,0x005e4190,0x006f26b0
-15701,function,,0x006f2810,0x005e42f0,0x006f2810
-15702,function,,0x006f2b50,0x005e4630,0x006f2b50
-15703,function,,0x006f2b60,0x005e4640,0x006f2b60
-15704,function,,0x006f2b70,0x005e4650,0x006f2b70
-15705,function,,0x006f2b80,0x005e4660,0x006f2b80
-15706,function,,0x006f2c30,0x005e4710,0x006f2c30
-15707,function,,0x006f2c50,0x005e4730,0x006f2c50
-15708,function,,0x006f2d20,0x005e4800,0x006f2d20
-15709,function,,0x006f2f80,0x005e4a80,0x006f2f80
-15710,function,,0x006f2f90,0x005e4a60,0x006f2f90
-15711,function,,0x006f2fa0,0x005e4a70,0x006f2fa0
-15712,function,,0x006f2fb0,0x005e4a90,0x006f2fb0
-15713,function,,0x006f3070,0x005e4b50,0x006f3070
-15714,function,,0x006f32a0,0x005e4d90,0x006f32a0
-15715,function,,0x006f32b0,0x005e4da0,0x006f32b0
-15716,function,,0x006f32c0,0x005e4d80,0x006f32c0
-15717,function,,0x006f32d0,0x005e4db0,0x006f32d0
-15718,function,,0x006f3350,0x005e4e30,0x006f3350
-15719,function,,0x006f3370,0x005e4e50,0x006f3370
+15699,function,Journal::AddConversationLine,0x006f25e0,0x005e40c0,0x006f25e0
+15700,function,Journal::AddPlayerConversationLine,0x006f26b0,0x005e4190,0x006f26b0
+15701,function,CodexEntry::CodexEntry,0x006f2810,0x005e42f0,0x006f2810
+15702,function,CodexEntry::`scalar deleting destructor'`adjustor{28}',0x006f2b50,0x005e4630,0x006f2b50
+15703,function,CodexEntry::`scalar deleting destructor'`adjustor{32}',0x006f2b60,0x005e4640,0x006f2b60
+15704,function,CodexEntry::`scalar deleting destructor'`adjustor{8}',0x006f2b70,0x005e4650,0x006f2b70
+15705,function,CodexEntry::~CodexEntry,0x006f2b80,0x005e4660,0x006f2b80
+15706,function,CodexEntry::`scalar deleting destructor',0x006f2c30,0x005e4710,0x006f2c30
+15707,function,CodexEntry::SetDescription,0x006f2c50,0x005e4730,0x006f2c50
+15708,function,CodexGroup::CodexGroup,0x006f2d20,0x005e4800,0x006f2d20
+15709,function,CodexGroup::`scalar deleting destructor'`adjustor{28}',0x006f2f80,0x005e4a80,0x006f2f80
+15710,function,CodexGroup::`scalar deleting destructor'`adjustor{32}',0x006f2f90,0x005e4a60,0x006f2f90
+15711,function,CodexGroup::`scalar deleting destructor'`adjustor{8}',0x006f2fa0,0x005e4a70,0x006f2fa0
+15712,function,CodexGroup::~CodexGroup,0x006f2fb0,0x005e4a90,0x006f2fb0
+15713,function,ChanterBoard::ChanterBoard,0x006f3070,0x005e4b50,0x006f3070
+15714,function,ChanterBoard::`scalar deleting destructor'`adjustor{8}',0x006f32a0,0x005e4d90,0x006f32a0
+15715,function,ChanterBoard::`scalar deleting destructor'`adjustor{28}',0x006f32b0,0x005e4da0,0x006f32b0
+15716,function,ChanterBoard::`scalar deleting destructor'`adjustor{32}',0x006f32c0,0x005e4d80,0x006f32c0
+15717,function,ChanterBoard::~ChanterBoard,0x006f32d0,0x005e4db0,0x006f32d0
+15718,function,ChanterBoard::`scalar deleting destructor',0x006f3350,0x005e4e30,0x006f3350
+15719,function,ChanterBoard::AddEntry,0x006f3370,0x005e4e50,0x006f3370
 15720,function,ConversationRecord::ConversationRecord,0x006f3530,0x005e5010,0x006f3530
 15721,function,ConversationRecord::`scalar deleting destructor'`adjustor{32}',0x006f3620,0x005e5120,0x006f3620
 15722,function,ConversationRecord::`scalar deleting destructor'`adjustor{8}',0x006f3630,0x005e5100,0x006f3630
@@ -15733,16 +15733,16 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15732,function,Journal::SetActivePlot,0x006f4080,0x005e5d50,0x006f4080
 15733,function,Journal::AddCodexEntry,0x006f4150,0x005e5e20,0x006f4150
 15734,function,Journal::UpdateCodexEntry,0x006f42d0,0x005e5fa0,0x006f42d0
-15735,function,,0x006f4640,0x005e6310,0x006f4640
-15736,function,,0x006f4680,0x005e6350,0x006f4680
+15735,function,Journal::AddPlotGiver,0x006f4640,0x005e6310,0x006f4640
+15736,function,Journal::RemovePlotGiver,0x006f4680,0x005e6350,0x006f4680
 15737,function,Journal::BuildChanterBoard,0x006f46a0,0x005e6370,0x006f46a0
-15738,function,,0x006f4a40,0x005e6710,0x006f4a40
-15739,function,,0x006f4b20,0x005e67f0,0x006f4b20
+15738,function,Journal::BeginConversationRecord,0x006f4a40,0x005e6710,0x006f4a40
+15739,function,CodexGroup::`scalar deleting destructor',0x006f4b20,0x005e67f0,0x006f4b20
 15740,function,ConversationRecord::`scalar deleting destructor',0x006f4b40,0x005e6810,0x006f4b40
 15741,function,,0x006f4b60,0x005e6830,0x006f4b60
 15742,function,"std::map<ECBase::ECString,ECBase::ECDynArray<ECBase::ECString>>::_Buynode",0x006f4c30,0x005e6900,0x006f4c30
 15743,function,"std::map<ECBase::ECString,ECBase::ECDynArray<ECBase::ECString>>::_Buynode::catch$0",0x006f4cb9,0x005e6989,0x006f4cb9
-15744,function,,0x006f4cd0,0x005e69a0,0x006f4cd0
+15744,function,Messages::RegisterText<SetActiveQuestMessage>,0x006f4cd0,0x005e69a0,0x006f4cd0
 15745,function,Convert::StringToUint16,0x006f4d90,0x005e6a60,0x006f4d90
 15746,function,Convert::Uint16ToString,0x006f4e40,0x005e6b10,0x006f4e40
 15747,function,Journal::RegisterHandler_ClearChanterBoardMessage,0x006f4f30,0x005e6c00,0x006f4f30
@@ -15759,17 +15759,17 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15758,function,Journal::RegisterHandler_SetActiveQuestMessage,0x006f5d20,0x005e79b0,0x006f5d20
 15759,function,Journal::CompletePlotGroup,0x006f5da0,0x005e7a30,0x006f5da0
 15760,function,,0x006f5ea0,0x005e7b30,0x006f5ea0
-15761,function,,0x006f6050,0x005e7ce0,0x006f6050
-15762,function,,0x006f6090,0x005e7d20,0x006f6090
-15763,function,,0x006f6110,0x005e7de0,0x006f6110
-15764,function,,0x006f6130,0x005e7e00,0x006f6130
-15765,function,,0x006f6210,0x005e7ee0,0x006f6210
-15766,function,,0x006f62c0,0x005e7f90,0x006f62c0
-15767,function,,0x006f6350,0x005e8020,0x006f6350
-15768,function,,0x006f6b00,0x005e87d0,0x006f6b00
-15769,function,,0x006f6b10,0x005e87e0,0x006f6b10
-15770,function,,0x006f6b20,0x005e87f0,0x006f6b20
-15771,function,,0x006f6b30,0x005e8800,0x006f6b30
+15761,function,Journal::RegisterMessageHandlers,0x006f6050,0x005e7ce0,0x006f6050
+15762,function,PlotDestinationMap::Insert,0x006f6090,0x005e7d20,0x006f6090
+15763,function,Journal::RegisterClass,0x006f6110,0x005e7de0,0x006f6110
+15764,function,Journal::AddPlotDestination,0x006f6130,0x005e7e00,0x006f6130
+15765,function,PlotDestinationMap::PlotDestinationMap,0x006f6210,0x005e7ee0,0x006f6210
+15766,function,PlotDestinationMap::~PlotDestinationMap,0x006f62c0,0x005e7f90,0x006f62c0
+15767,function,Journal::Journal,0x006f6350,0x005e8020,0x006f6350
+15768,function,Journal::`scalar deleting destructor'`adjustor{28}',0x006f6b00,0x005e87d0,0x006f6b00
+15769,function,Journal::`scalar deleting destructor'`adjustor{32}',0x006f6b10,0x005e87e0,0x006f6b10
+15770,function,Journal::`scalar deleting destructor'`adjustor{8}',0x006f6b20,0x005e87f0,0x006f6b20
+15771,function,Journal::GetClassInfo,0x006f6b30,0x005e8800,0x006f6b30
 15772,function,"SmartData::Attribute<JournalEntry*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",0x006f6b40,0x005e8810,0x006f6b40
 15773,function,"SmartData::Attribute<ChanterBoard*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",0x006f6b70,0x005e8840,0x006f6b70
 15774,function,"SmartData::Attribute<ECBase::ECDynArray<JournalEntry*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",0x006f6ba0,0x005e8870,0x006f6ba0
@@ -15783,12 +15783,12 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15782,function,"std::map<ECBase::ECString,ECBase::ECDynArray<ECBase::ECString>>::_Copy_tree",0x006f6f60,0x005e8c30,0x006f6f60
 15783,function,"std::map<ECBase::ECString,ECBase::ECDynArray<ECBase::ECString>>::map",0x006f6fe0,0x005e8cb0,0x006f6fe0
 15784,function,"std::map<ECBase::ECString,ECBase::ECDynArray<ECBase::ECString>>::map::catch$0",0x006f705c,0x005e8d2c,0x006f705c
-15785,function,,0x006f7070,0x005e8d40,0x006f7070
+15785,function,Journal::~Journal,0x006f7070,0x005e8d40,0x006f7070
 15786,function,Journal::ReadFromSave,0x006f7290,0x005e8f60,0x006f7290
-15787,function,,0x006f82b0,0x005e9f80,0x006f82b0
-15788,function,,0x006f8320,0x005e9ff0,0x006f8320
-15789,function,,0x006f8510,0x005ea1e0,0x006f8510
-15790,function,,0x006f8530,0x005ea200,0x006f8530
+15787,function,PlotDestinationMap::PlotDestinationMap_copy,0x006f82b0,0x005e9f80,0x006f82b0
+15788,function,Journal::Journal_copy,0x006f8320,0x005e9ff0,0x006f8320
+15789,function,Journal::`scalar deleting destructor',0x006f8510,0x005ea1e0,0x006f8510
+15790,function,Journal::Clone,0x006f8530,0x005ea200,0x006f8530
 15791,function,,0x006f85a0,0x005ea270,0x006f85a0
 15792,function,DebugOptions::GetSliderRange,0x006f87a0,0x005ea470,0x006f87a0
 15793,function,,0x006f87b0,0x005ea480,0x006f87b0
@@ -15813,7 +15813,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15812,function,CSAreaList::GetAreaById,0x006fa790,0x005ec480,0x006fa790
 15813,function,CSAreaList::GetAreaByIndex,0x006fa8b0,0x005ec5a0,0x006fa8b0
 15814,function,CSAreaList::FindArea,0x006fa910,0x005ec600,0x006fa910
-15815,function,,0x006faaf0,0x005ec7e0,0x006faaf0
+15815,function,CSAreaList::FindAreaIndexById,0x006faaf0,0x005ec7e0,0x006faaf0
 15816,function,"std::copy_backward<CSAreaList::Entry*,CSAreaList::Entry*>",0x006fab80,0x005ec870,0x006fab80
 15817,function,CSAreaList::LoadAreas,0x006fabb0,0x005ec8a0,0x006fabb0
 15818,function,std::vector<CSAreaList::Entry>::_Ufill,0x006fadf0,0x005ecae0,0x006fadf0
@@ -15833,23 +15833,23 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15832,function,CSAreaList::~CSAreaList,0x006fbee0,0x005edbd0,0x006fbee0
 15833,function,CSAreaList::ReadAreas,0x006fbff0,0x005edce0,0x006fbff0
 15834,function,CSAreaList::`scalar deleting destructor',0x006fc3a0,0x005ee090,0x006fc3a0
-15835,function,,0x006fc3c0,0x005ee0b0,0x006fc3c0
+15835,function,ArmyControl::StaticClassInfo,0x006fc3c0,0x005ee0b0,0x006fc3c0
 15836,function,ECBase::ECDynArray<ArmyInfo*>::operator[],0x006fc420,0x005ee110,0x006fc420
 15837,function,ScriptBackend::ForScript_SetPlotActionsEnabled,0x006fc450,0x005ee140,0x006fc450
 15838,function,ArmyControl::HandleMessage_UsePlotActionMessage,0x006fc480,0x005ee170,0x006fc480
-15839,function,,0x006fc580,0x005ee270,0x006fc580
-15840,function,,0x006fc650,0x005ee340,0x006fc650
-15841,function,,0x006fc660,0x005ee350,0x006fc660
-15842,function,,0x006fc670,0x005ee360,0x006fc670
+15839,function,ArmyInfo::~ArmyInfo,0x006fc580,0x005ee270,0x006fc580
+15840,function,ArmyInfo::`scalar deleting destructor'`adjustor{28}',0x006fc650,0x005ee340,0x006fc650
+15841,function,ArmyInfo::`scalar deleting destructor'`adjustor{32}',0x006fc660,0x005ee350,0x006fc660
+15842,function,ArmyInfo::`scalar deleting destructor'`adjustor{8}',0x006fc670,0x005ee360,0x006fc670
 15843,function,ArmyInfo::WriteToSave,0x006fc680,0x005ee370,0x006fc680
 15844,function,ArmyControl::RegisterHandler_UsePlotActionMessage,0x006fc730,0x005ee420,0x006fc730
 15845,function,ArmyControl::UpdateCooldowns,0x006fc7b0,0x005ee4a0,0x006fc7b0
 15846,function,ArmyControl::FindArmyInfoById,0x006fca50,0x005ee740,0x006fca50
 15847,function,ArmyControl::FindArmyInfoById,0x006fcad0,0x005ee7c0,0x006fcad0
 15848,function,ArmyControl::WriteToSave,0x006fcae0,0x005ee7d0,0x006fcae0
-15849,function,,0x006fcbd0,0x005ee8c0,0x006fcbd0
-15850,function,,0x006fcf10,0x005eec00,0x006fcf10
-15851,function,,0x006fcf30,0x005eec20,0x006fcf30
+15849,function,ArmyInfo::ArmyInfo,0x006fcbd0,0x005ee8c0,0x006fcbd0
+15850,function,ArmyInfo::`scalar deleting destructor',0x006fcf10,0x005eec00,0x006fcf10
+15851,function,ArmyControl::RegisterMessageHandlers,0x006fcf30,0x005eec20,0x006fcf30
 15852,function,ScriptBackend::ForScript_SETPLOTACTIONCOOLDOWN,0x006fcf40,0x005eec30,0x006fcf40
 15853,function,ScriptBackend::ForScript_GetPlotActionState,0x006fd020,0x005eed10,0x006fd020
 15854,function,ScriptBackend::ForScript_SetPlotActionCount,0x006fd050,0x005eed40,0x006fd050
@@ -15864,12 +15864,12 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15863,function,"SmartData::Attribute<ECBase::ECDynArray<ArmyInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::CreateMemberIterator",0x006fd4b0,0x005ef1a0,0x006fd4b0
 15864,function,"SmartData::Attribute<ECBase::ECDynArray<ArmyInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",0x006fd4e0,0x005ef1d0,0x006fd4e0
 15865,function,"SmartData::Attribute<ECBase::ECDynArray<ArmyInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",0x006fd500,0x005ef250,0x006fd500
-15866,function,,0x006fd580,0x005ef2d0,0x006fd580
-15867,function,,0x006fd880,0x005ef5d0,0x006fd880
-15868,function,,0x006fd890,0x005ef5e0,0x006fd890
-15869,function,,0x006fd8a0,0x005ef5f0,0x006fd8a0
-15870,function,,0x006fd8b0,0x005ef600,0x006fd8b0
-15871,function,,0x006fd8c0,0x005ef610,0x006fd8c0
+15866,function,ArmyControl::ArmyControl,0x006fd580,0x005ef2d0,0x006fd580
+15867,function,ArmyControl::`scalar deleting destructor'`adjustor{28}',0x006fd880,0x005ef5d0,0x006fd880
+15868,function,ArmyControl::`scalar deleting destructor'`adjustor{32}',0x006fd890,0x005ef5e0,0x006fd890
+15869,function,ArmyControl::`scalar deleting destructor'`adjustor{8}',0x006fd8a0,0x005ef5f0,0x006fd8a0
+15870,function,ArmyControl::GetClassInfo,0x006fd8b0,0x005ef600,0x006fd8b0
+15871,function,ArmyControl::RegisterClass,0x006fd8c0,0x005ef610,0x006fd8c0
 15872,function,"SmartData::Attribute<ECBase::ECDynArray<ArmyInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",0x006fd8e0,0x005ef630,0x006fd8e0
 15873,function,,0x006fd960,0x005ef6b0,0x006fd960
 15874,function,ArmyControl::LoadArmyInfosFromGda,0x006fda30,0x005ef780,0x006fda30
