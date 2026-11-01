@@ -54,12 +54,17 @@ first, and its `how` column says which:
            the above, and agrees, leaving out Core, Data, Messaging,
            Scripting, the libraries, the linker's import stubs and tiny
            functions, which everything calls or the linker shares
+  between  none of the above answers, and the nearest functions before
+           and after it that the evidence placed (not the call graph),
+           0x800 bytes apart or less, are one subsystem: the linker lays
+           out an object file's functions together (paragon-agent asked
+           for the 9,780 still unknown, 2026-10-31)
   owner    it is part of another function's exception handling: the
            __ehhandler stub that function's prologue pushes, or a funclet
            or catch block its FuncInfo lists. It goes where its function
            went, by whichever of the above, and has its class
 
-`callers` and `callees` say less than the rest: a helper of one
+`callers`, `callees` and `between` say less than the rest: a helper of one
 subsystem's is most often that subsystem's, but not always. They take one
 step from what the evidence placed and no more: chains of them were wrong
 in 13 of 29 an audit read (2026-10-18), and the rest in none of 40. In the
@@ -142,7 +147,14 @@ DLL_SUBSYSTEMS = {
     "ws2_32.dll": "Network",
 }
 
-HOWS = (*STRONG, "callers", "callees", "owner")
+HOWS = (*STRONG, "callers", "callees", "between", "owner")
+# The widest run of code, from the placed function before to the one after,
+# across which `between` fills a gap. The linker keeps an object file's
+# functions together, so a gap whose ends one subsystem's evidence placed
+# is most often that subsystem's too. Held to the functions the evidence
+# placed, the two ends 0x800 apart or less agreed with the function between
+# them in 8,401 of 8,600 (2026-10-31), 89 to 100 in a hundred by subsystem.
+BETWEEN = 0x800
 EH_MAGIC = (0x19930520, 0x19930521, 0x19930522)
 # Ranges of these are code the compiler made for others: a function's
 # exception handling, a global's initializer or destructor. A piece placed
@@ -285,6 +297,31 @@ def spread(placed, calls, callers, sizes, classes):
         found = votes(va, calls.get(va, ()), tiny_ok=False)
         if len(found) >= 2 and (s := agreed(found)):
             placed[va] = (s, "callees")
+    return placed
+
+
+def between(placed, functions, owned, compiler_ranges):
+    """Places a function the rest left alone when the nearest functions the
+    evidence placed before and after it, BETWEEN or less apart, agree. Only
+    what the evidence placed is an end, never what the call graph or this
+    did, and a compiler's range is not filled: its code is the compiler's,
+    laid out after everything else."""
+    ends = sorted(
+        (va, placed[va][0])
+        for va in functions
+        if va in placed
+        and placed[va][1] in STRONG
+        and not placed[va][0].startswith(COMPILER)
+    )
+    starts = [va for va, _ in ends]
+    for va in sorted(functions):
+        if va in placed or va in owned or in_ranges(compiler_ranges, va):
+            continue
+        i = bisect.bisect_left(starts, va)
+        if 0 < i < len(ends):
+            (before, s), (after, t) = ends[i - 1], ends[i]
+            if s == t and after - before <= BETWEEN:
+                placed[va] = (s, "between")
     return placed
 
 
@@ -552,6 +589,7 @@ def place(functions, reading, rules, ranges):
         if found and (s := agreed(found)):
             placed[va] = (s, "pointer")
     spread(placed, calls, callers, sizes, classes)
+    between(placed, functions, owned, compiler_ranges)
     for va, owner in owned.items():
         if owner in placed:
             placed[va] = (placed[owner][0], "owner")

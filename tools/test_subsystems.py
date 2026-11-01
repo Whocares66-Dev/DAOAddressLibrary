@@ -1,5 +1,6 @@
 """Tests of tools/subsystems.py's placing, without the game: the rules, the
-ranges, the vftable owners and the spreading along the call graph."""
+ranges, the vftable owners, the spreading along the call graph and the
+filling of a gap between two of one subsystem's functions."""
 
 import os
 import sys
@@ -217,6 +218,35 @@ class PlaceTest(unittest.TestCase):
         functions = {1: "CCCreature::A", 2: "Renderer::Mesh::B", 3: ""}
         calls = {1: {3}, 2: {3}, 3: set()}
         self.assertEqual(self.place(functions, calls)[3][:2], ("unknown", ""))
+
+    def test_between_fills_a_gap_its_ends_agree_on(self):
+        # 0x1100 lies between two Game methods 0x200 apart; 0x3100 between a
+        # Game and a Rendering one; 0x6000 between two Game ones too far
+        # apart.
+        functions = {
+            0x1000: "CCCreature::A",
+            0x1100: "",
+            0x1200: "CCObject::B",
+            0x3000: "CCCreature::C",
+            0x3100: "",
+            0x3200: "Renderer::Mesh::D",
+            0x5000: "CCCreature::E",
+            0x6000: "",
+            0x7000: "CCObject::F",
+        }
+        out = self.place(functions, {va: set() for va in functions})
+        self.assertEqual(out[0x1100][:2], ("Game", "between"))
+        self.assertEqual(out[0x3100][:2], ("unknown", ""))
+        self.assertEqual(out[0x6000][:2], ("unknown", ""))
+
+    def test_between_does_not_fill_the_compilers_range(self):
+        functions = {0x1000: "CCCreature::A", 0x1100: "", 0x1200: "CCObject::B"}
+        out = self.place(
+            functions,
+            {va: set() for va in functions},
+            ranges=[(0x1100, 0x1200, "Compiler:AtexitDtors")],
+        )
+        self.assertEqual(out[0x1100][:2], ("Compiler:AtexitDtors", "range"))
 
 
 if __name__ == "__main__":
