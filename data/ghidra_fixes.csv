@@ -4894,3 +4894,143 @@ address,what,value,why
 0x0068CC30,signature,"bool __thiscall f(void *this, unsigned int creatureId)",ret 4 on all paths; ecx moved to eax at 0x0068CC30
 0x0068CC60,signature,void __cdecl f(void),"plain ret, ecx not read"
 0x0068CCF0,signature,"bool __thiscall f(void *this, float *xy)","ret 4; [ecx+0x2D0] read first, pointer at [esp+4]"
+0x00695280,signature,"void __cdecl f(void *builder, int unused)","jmp to 0x007048D0 (plain ret, builder in [esp+0xBC])"
+0x00695290,signature,"void __cdecl f(void *builder, int unused)",jmp to 0x0079F1E0 -> 0x00A64CE0 (plain ret)
+0x00695360,signature,"void __thiscall f(void *this, int handle, int immediate)","holder slot 17, ret 8; VfxManager::Get()->Remove(handle, immediate), this unused"
+0x00695390,signature,"unsigned char __thiscall f(void *this, int animId)",ret 4; al result; ecx read first (IsLoopingAnimation)
+0x006953C0,signature,unsigned char __thiscall f(void *this),"interface slot 26 at +0x70: ecx-0x70 is the CCObject; plain ret, al result"
+0x006953D0,signature,float __thiscall f(void *this),fld [ecx+0x3cc]; ret (float in st0)
+0x00695470,signature,"void __thiscall f(void *this, unsigned int offset, float *q)",ret 8; ecx read at once ([ecx+8])
+0x006954A0,signature,"float * __cdecl f(float *out, void *structPtr, unsigned int offset)","plain ret, reads [esp+4..0xc], returns out in eax; no ecx use"
+0x006955C0,signature,void __thiscall f(void *this),"plain ret, ecx saved in esi"
+0x00695620,signature,"void __thiscall f(void *this, int a, void *tagWstring, int c)","ret 0xC; the tag wstring is [esp+8] (0x00695620), the first and third arguments are unread"
+0x00695670,signature,unsigned char __thiscall f(void *this),plain ret; al result
+0x006956B0,signature,int __thiscall f(void *this),plain ret; eax = [holder+0x13c]
+0x006956D0,signature,"void __thiscall f(void *this, int animId)",ret 4
+0x006958A0,signature,"unsigned char __thiscall f(void *this, void *eventRecord)",ret 4; vtable slot 56
+0x006958F0,signature,"void __thiscall f(void *this, unsigned int anim, float speed, float blend, float zero, void *name1, void *name2, unsigned char rootMotion)","ret 0x1C = seven stack arguments (0x006958F0-0x00695932): anim, then three floats (speed, blend, a float), two pointers, the root-motion flag last"
+0x00695970,signature,void __thiscall f(void *this),plain ret
+0x00695980,signature,"void __thiscall f(void *this, float dt)",ret 4; vtable slot 70
+0x00695A60,signature,float __thiscall f(void *this),fld1/fldz result; plain ret
+0x00695A90,signature,void __thiscall f(void *this),plain ret; no stack argument (the [esp+4] reads are its own locals)
+0x00695C00,signature,"void __thiscall f(void *this, unsigned char visible)",ret 4
+0x00695C20,signature,"void __thiscall f(void *this, unsigned char visible)",ret 4
+0x00695C80,signature,"void * __thiscall f(void *this, unsigned int objectId)",ret 4 of the callee 0x5D5BE0; vtable slot 49; ecx replaced by the app singleton
+0x00695C90,signature,"void __thiscall f(void *this, unsigned char set)",ret 4
+0x00695DE0,signature,int __thiscall f(void *this),interface slot 25; plain ret
+0x00695E00,signature,"unsigned char __thiscall f(void *this, int level)",ret 4; vtable slot 81
+0x00695E70,signature,"void * __thiscall f(void *this, void *effect)",ret 4; interface slot 15; eax = the visual's handle
+0x00695FE0,signature,"void __thiscall f(void *this, void *effect)",ret 4; interface slot 18; ecx = the effect read via 0xA5A250
+0x006964D0,signature,"void __thiscall f(void *this, unsigned char playPause)",ret 4
+0x00696590,signature,"void __thiscall f(void *this, void *tagWstring)",ret 4
+0x00696B50,signature,"void __thiscall f(void *this, int animId, unsigned char force, float blend)",ret 0xC
+0x00696BD0,signature,"unsigned char __thiscall f(void *this, void *eventRecord)",ret 4; vtable slot 53
+0x00696C50,signature,"unsigned char __thiscall f(void *this, void *eventRecord)",ret 4; vtable slot 51
+0x00696D20,signature,"unsigned char __thiscall f(void *this, void *eventRecord)",ret 4; vtable slot 57
+0x00696DE0,signature,"unsigned char __thiscall f(void *this, void *eventRecord)",ret 4; vtable slot 58
+0x00697310,signature,"void __thiscall f(void *this, void *scriptEvent, void *script)","ret 8; arguments (event, script): the event is [esp+4] stored to +0x2A8, the script [esp+0x18] after four pushes goes to 0xA31E70 (0x00697314-0x00697338); the readers differed on the order"
+0x00697350,signature,"void * __thiscall f(void *this, int eventType)",ret 4
+0x006973B0,signature,"int __thiscall f(void *this, void *tagWstring, unsigned char includeInactive, float maxDistance, unsigned char *found)",ret 0x10
+0x006976B0,signature,"unsigned char __thiscall f(void *this, void *dialogNameWstring, int initiator)",ret 8
+0x006978C0,signature,void __thiscall f(void *this),plain ret; vtable slot 35
+0x00697B50,signature,"unsigned char __thiscall f(void *this, void *gff4Struct, int b)",ret 8; vtable slot 22 (second argument unread)
+0x00697C90,signature,"void __thiscall f(void *this, float dt)",ret 4; vtable slot 68
+0x006983D0,signature,"void __thiscall f(void *this, unsigned int objectId)",ret 4
+0x00698420,signature,"void __thiscall f(void *this, void *listQueue)",ret 4
+0x006984F0,signature,void * __thiscall f(void *this),plain ret; eax = [this+0x15c]
+0x006985A0,signature,"unsigned char __thiscall f(void *this, void *eventRecord)",ret 4; vtable slot 55
+0x00698850,signature,"void __thiscall f(void *this, unsigned char enter, int a, int b, void *otherObject, unsigned char runNow)",ret 0x14; the middle three arguments' types not checked
+0x00698C70,signature,"void __thiscall f(void *this, unsigned int objectId)",ret 4
+0x00698CD0,signature,"void __thiscall f(void *this, unsigned char active)",ret 4; vtable slot 80
+0x00698ED0,signature,"void __thiscall f(void *this, void *gff4Struct)",ret 4 at 0x00699555 and 0x0069966A; the struct is [ebp+8]; vtable slot 34
+0x00699670,signature,"void * __thiscall f(void *this, int a1, int a2)","ret 8 at 0x00699EA9; the constructor, ecx = the new object"
+0x00699FA0,signature,unsigned char __thiscall f(void *this),interface slot 27; plain ret; eax 0 or 1
+0x00699FC0,signature,"void __thiscall f(void *this, int level)",ret 4
+0x0069A010,signature,void __thiscall f(void *this),plain ret
+0x0069A030,signature,"float __thiscall f(void *this, int a)",ret 4; fldz
+0x0069A040,convention,__thiscall,"sub ecx,0x70; jmp 0x69B3B0 (adjustor thunk, the argument stays on the stack)"
+0x0069A050,convention,__thiscall,"sub ecx,0x34; jmp 0x69B3B0"
+0x0069A060,convention,__thiscall,"sub ecx,0x18; jmp 0x69B3B0"
+0x0069A070,convention,__thiscall,"sub ecx,0x38; jmp 0x69B3B0"
+0x0069A080,convention,__thiscall,"sub ecx,0x20; jmp 0x69B3B0"
+0x0069A090,signature,"void __thiscall f(void *this, float *out, int unused)",ret 8; reads only [esp+4]
+0x0069A0C0,signature,void * __thiscall f(void *this),plain ret
+0x0069A0D0,signature,void * __thiscall f(void *this),"interface slots 1 and 2: mov eax,[ecx+0xE8]; plain ret"
+0x0069A0E0,signature,"unsigned char __thiscall f(void *this, int a, float *out, int c, int d, int e)",ret 0x14; out is [ebp+0xc]
+0x0069A100,convention,__thiscall,"jmp to 0x6958D0, which reads ecx first"
+0x0069B3B0,signature,"void * __thiscall f(void *this, unsigned int flags)",ret 4; vtable slot 0; returns this
+0x0069B3D0,signature,"void __thiscall f(void *this, int animId, float speed, float blend, unsigned char flag)","ret 0x10 by the slot's calls; vtable slot 44; argument order as dev/ANIMATION.md gives (anim, speed, blend, flag)"
+0x0069B640,signature,"void __thiscall f(void *this, unsigned char on)",ret 4
+0x0069B660,signature,"void __cdecl f(void *builder, int arg2)","plain ret; builder is [esp+4], arg2 is passed on to 0xA582E0 (0x0069B660-0x0069B66B); callers push two and add esp"
+0x0069B6A0,signature,"void __cdecl f(void *builder, int unused)",plain ret; same caller pattern as 0x0069B660
+0x0069B6C0,signature,"void __cdecl f(void *builder, int unused)",plain ret; same caller pattern as 0x0069B660
+0x0069B6E0,signature,"void __cdecl f(void *builder, int unused)",plain ret; same caller pattern as 0x0069B660
+0x0069B700,signature,"void __cdecl f(void *builder, int unused)",plain ret; same caller pattern as 0x0069B660
+0x0069B720,signature,"void __cdecl f(void *builder, int unused)",plain ret; same caller pattern as 0x0069B660
+0x0069B740,signature,"void __cdecl f(void *builder, int unused)",plain ret; same caller pattern as 0x0069B660
+0x0069B760,signature,"void __cdecl f(void *builder, int unused)",plain ret; same caller pattern as 0x0069B660
+0x004010C0,signature,void __cdecl f(void),"creates the thread manager, no arguments, plain ret at 0x00401116"
+0x00401150,signature,"void * __cdecl f(void *first, void *last, void *dest)","three args; the extra pushes feed the inner call, plain ret, 0x00401150-0x0040117A"
+0x00401180,signature,"void __cdecl f(void *dest, unsigned int count, void *value)",plain ret; args at [esp+4..0xC]
+0x004011C0,signature,"void __thiscall f(void *this, bool built, unsigned int newsize)","ret 8 at 0x00401207, ecx moved to esi at 0x004011CB"
+0x00401740,signature,void * __thiscall f(void *this),"ecx read at 0x00401745, plain ret"
+0x004017A0,signature,"void * __thiscall f(void *this, char *s)",ret 4 at 0x004017C4; tail work is the thiscall 0x00401670 on the same ecx
+0x00401B90,signature,"unsigned short * __cdecl f(unsigned short *dest, unsigned short value, unsigned int count)","plain ret at 0x00401BBC, args on the stack"
+0x00401BD0,signature,"void __thiscall f(void *this, int exitCode)","ret 4, ecx to esi at 0x00401BF4"
+0x00401C70,signature,int __thiscall f(void *this),"vftable slot 1 of Multithreading::Task: mov eax,[ecx]; fld [0x00ADDCB0]; call [eax+8]; ret; the result is slot 2 own int in eax, not st0 (0x00401C70-0x00401C81; UpdateAndRenderLoadingGUITask::Execute answers 2 or 3 in eax)"
+0x00401C90,convention,__thiscall,"element destructor, ecx = object, 0x00401C90"
+0x00401E90,signature,"void * __thiscall f(void *this, void *other)","ret 4 at 0x00401EC6, ecx to esi"
+0x004027C0,signature,"void * __thiscall f(void *this, void *out)","ret 4 at 0x004027D6, returns the argument"
+0x004027E0,signature,"void __thiscall f(void *this, int width, int height, bool fullscreen)","tail-jumps to a slot that returns with ret 0xC, 0x004027E0"
+0x004027F0,signature,bool __cdecl f(void),"no arguments, returns al=1, 0x004027F0-0x00402895"
+0x004028A0,signature,bool __thiscall f(void *this),"callers set ecx=this (EclipseGame::Update 0x00412F3B) though it is unread, returns al"
+0x004028C0,signature,"void __thiscall f(void *this, void *scene)","ret 4 through tail jumps, ecx read at 0x004028CD"
+0x004028F0,signature,void * __thiscall f(void *this),callers set ecx = the game (0x005DACAD); returns an address
+0x00402900,signature,void * __thiscall f(void *this),callers set ecx = the game (0x005DACA8 side); returns an address
+0x00402910,signature,unsigned short * __thiscall f(void *this),ecx read at 0x00402910
+0x00402920,signature,"void __thiscall f(void *this, void *node)","ret 4 at 0x0040294F, ecx read at 0x0040293E"
+0x00402980,signature,void __thiscall f(void *this),"tree iterator increment, plain ret, 0x00402980-0x004029E2"
+0x004029F0,signature,"void * __thiscall f(void *this, unsigned int flags)","ret 4 at 0x00402A0B, vftable slot 0"
+0x00402A20,signature,"void __stdcall f(void *ptr, unsigned int size, int count, void *ctor)",ret 0x10 at 0x00402A4F; ecx is written before it is read
+0x00402B30,signature,void * __thiscall f(void *this),"vftable slot 2 of 69 classes, returns 0x00BF0440, 0x00402B30-0x00402B81"
+0x00402C30,signature,void * __cdecl f(void),"plain ret, returns 0x00C1D1C0"
+0x004031F0,signature,void __thiscall f(void *this),ecx to esi at 0x004031F1
+0x00403240,signature,void * __stdcall f(unsigned int count),"ret 4 at 0x00403259, ecx unread"
+0x00403260,signature,"void * __thiscall f(void *this, void *result)","vftable slot, ret 4, constructs a wstring at the argument"
+0x00403540,signature,void __thiscall f(void *this),"plain ret, ecx to esi"
+0x00403570,signature,void * __thiscall f(void *this),"plain ret, ecx to edi"
+0x004036C0,signature,"void __thiscall f(void *this, void *first, void *next, void *last)","ret 0xC at 0x004036DF, ecx read first"
+0x004036F0,signature,"void __thiscall f(void *this, void *first, void *next, void *last)","ret 0xC at 0x0040370F, ecx read first"
+0x00403720,signature,void __thiscall f(void *this),"plain ret, ecx read"
+0x00403790,signature,void __thiscall f(void *this),"ecx to ebp, tail jump at 0x004037FD"
+0x00403990,signature,void __thiscall f(void *this),"plain ret, ecx to esi"
+0x00403AD0,signature,"int __thiscall f(void *this, void *other)","ret 4 at 0x00403B02, ecx to esi"
+0x00403BC0,signature,"void __thiscall f(void *this, unsigned short *text, unsigned int length, int mode)","ret 0xC at 0x00403C6D, ecx to esi at 0x00403BCC"
+0x00403C70,signature,void * __thiscall f(void *this),"lea eax,[ecx+0xC]"
+0x00403C80,signature,"void __cdecl f(void *dest, void *src)","caller 0x0040610E pushes two args and add esp,8, 0x00403C80-0x00403CDC"
+0x00403CE0,signature,"void * __cdecl f(void *first, void *last, void *destEnd)","plain ret, caller 0x00406177 add esp,0x1c, 0x00403CE0-0x00403D36"
+0x00403DD0,signature,"unsigned short __thiscall f(void *this, unsigned int index)","ret 4 at 0x00403DF6, ecx read first"
+0x00403E00,signature,"unsigned short * __thiscall f(void *this, unsigned int offset)","ret 4 at 0x00403E21, ecx read first"
+0x00403E30,signature,"void __thiscall f(void *this, bool restart)","ret 4, movzx byte arg, 0x00403E30-0x00403E69"
+0x00404B10,signature,"void __thiscall f(void *this, void *key, void *value, bool applyDirs)","ret 0xC at 0x00404F83, ecx to esi at 0x00404B59; the third argument gates cwd and writedir (0x00404B70, 0x00404BB2); the ini passes 0 (0x00405D5F)"
+0x00405090,signature,unsigned short __thiscall f(void *this),"plain ret, ecx to esi at 0x00405091"
+0x004059A0,signature,"void * __cdecl f(void *first, void *last, void *dest)","[ebp+8],[ebp+0xC],[ebp+0x10], plain ret, 0x004059A0"
+0x00405A40,signature,void __thiscall f(void *this),"plain ret at 0x00405E0A, ecx saved at 0x00405A7F"
+0x00405EB0,signature,"void __thiscall f(void *this, unsigned int newsize, unsigned int oldlength)","ret 8 at 0x00405FCE, ecx to edi at 0x00405EDB"
+0x00406000,signature,"unsigned int __thiscall f(void *this, void *name)","vftable slot 6, ret 4"
+0x00406030,signature,"void * __thiscall f(void *this, void *iterator)","ret 4, 0x00406030-0x004060A5"
+0x004060B0,signature,"void * __stdcall f(void *next, void *prev, void *value)","ret 0xC with ecx never read, 0x004060B0-0x00406129"
+0x00406180,signature,"void * __cdecl f(void *dest, unsigned int count, void *value)","[ebp+8],[ebp+0xC],[ebp+0x10], plain ret, 0x00406180"
+0x004062D0,signature,void __thiscall f(void *this),"plain ret, ecx to esi"
+0x00406880,signature,void __thiscall f(void *this),"plain ret, ecx to edi"
+0x004068C0,signature,"void __thiscall f(void *this, void *scene)","ret 4 at 0x0040696B, ecx to esi at 0x004068C6"
+0x00407230,signature,"bool __thiscall f(void *this, unsigned int id)","vftable slot 2, ret 4"
+0x004072F0,signature,"void * __cdecl f(void *map, unsigned int id)",plain ret at 0x0040734C; the caller adds esp 8 at 0x00408250
+0x00407350,signature,"void * __stdcall f(void *unused, unsigned int id)",ret 8 at 0x004073A4
+0x004073C0,signature,"void * __thiscall f(void *this, void *out)","ret 4, returns out, 0x004073C0-0x004073DB"
+0x00407C50,signature,void __thiscall f(void *this),"plain ret, ecx to esi at 0x00407C55"
+0x00407E00,signature,void __cdecl f(void),"plain ret, no arguments"
+0x00407E30,signature,"void __thiscall f(void *this, void *commandLine, bool applyDirs)","ret 8 at 0x00408038, ecx stored at 0x00407E6C; the flag is passed on as 0x00404B10 third argument (0x00407FD3-0x00407FDA); start-up passes 1 then 0 (0x00410D5D, 0x00410E02)"
+0x00409EA0,signature,"unsigned char __stdcall f(void *path, void *unused, void *wanted, void *fallbacks, void *out)","ret 0x14 at 0x0040A1C6, ecx never read"
+0x0040A1D0,signature,unsigned int __cdecl f(void **ppFacet),"static _Getcat, plain ret, 0x0040A1D0-0x0040A23C"
+0x0040A240,signature,unsigned int __cdecl f(void **ppFacet),"static _Getcat, plain ret, 0x0040A240-0x0040A2AC"
