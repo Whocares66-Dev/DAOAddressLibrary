@@ -2613,35 +2613,35 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2612,function,Renderer::FBTextureResource::~FBTextureResource,0x004618f0,0x00899e40,0x004618f0
 2613,function,Renderer::FBTextureResource::`scalar deleting destructor',0x00461970,0x00899ec0,0x00461970
 2614,function,Renderer::CreateFrameBufferResource,0x00461990,0x00899ee0,0x00461990
-2615,function,,0x00461b30,0x0089a080,0x00461b30
-2616,function,,0x00461c00,0x0089a150,0x00461c00
-2617,function,,0x00461e10,0x0089a360,0x00461e10
-2618,function,,0x00461eb0,0x0089c3b0,0x00461eb0
+2615,function,Renderer::FBRenderTargetResource::AdoptShared,0x00461b30,0x0089a080,0x00461b30
+2616,function,Renderer::FBRenderTargetResource::Create,0x00461c00,0x0089a150,0x00461c00
+2617,function,Renderer::FBTextureResource::Create,0x00461e10,0x0089a360,0x00461e10
+2618,function,Renderer::LightList::LightBefore,0x00461eb0,0x0089c3b0,0x00461eb0
 2619,function,Renderer::LightList::SetLimits,0x00461f10,0x0089c410,0x00461f10
-2620,function,,0x00461f20,0x0089c420,0x00461f20
+2620,function,Renderer::AdvanceLightGroupFades,0x00461f20,0x0089c420,0x00461f20
 2621,function,Renderer::LightManagerDefault::MarkChanged,0x00461f40,0x0089c440,0x00461f40
-2622,function,,0x00461f60,0x0089c460,0x00461f60
-2623,function,,0x00461f80,0x0089c480,0x00461f80
-2624,function,,0x00461fa0,0x0046df40,0x00461fa0
-2625,function,,0x00461fd0,0x0058f500,0x00461fd0
-2626,function,,0x00462010,0x005053a0,0x00462010
-2627,function,,0x00462060,0x005053f0,0x00462060
-2628,function,,0x00462180,0x00401c80,0x00462180
-2629,function,,0x004621a0,0x00816e00,0x004621a0
-2630,function,,0x004621c0,0x008218c0,0x004621c0
-2631,function,,0x004621d0,0x0089c4a0,0x004621d0
+2622,function,Renderer::LightManagerDefault::MarkLayoutChanged,0x00461f60,0x0089c460,0x00461f60
+2623,function,Renderer::LightManagerDefault::NextFrame,0x00461f80,0x0089c480,0x00461f80
+2624,function,Vector4::operator=,0x00461fa0,0x0046df40,0x00461fa0
+2625,function,Vector4::UnitW,0x00461fd0,0x0058f500,0x00461fd0
+2626,function,Vector4::ScaledXYZ,0x00462010,0x005053a0,0x00462010
+2627,function,Vector4::NormalizedXYZ,0x00462060,0x005053f0,0x00462060
+2628,function,Vector4::Vector4,0x00462180,0x00401c80,0x00462180
+2629,function,Vector4::Vector4,0x004621a0,0x00816e00,0x004621a0
+2630,function,General::SafePointer::Get,0x004621c0,0x008218c0,0x004621c0
+2631,function,Renderer::LightList::ScoreGreater,0x004621d0,0x0089c4a0,0x004621d0
 2632,function,Renderer::LightManagerDefault::ApplyQuality,0x00462210,0x0089c4e0,0x00462210
-2633,function,,0x00462290,0x0089c560,0x00462290
-2634,function,,0x004622c0,0x0089c590,0x004622c0
-2635,function,,0x004622f0,0x0089c5c0,0x004622f0
-2636,function,,0x00462320,0x007354b0,0x00462320
-2637,function,,0x00462360,0x0089c5f0,0x00462360
-2638,function,,0x00462470,0x0089c700,0x00462470
-2639,function,,0x00462520,0x0089c7b0,0x00462520
-2640,function,,0x004625d0,0x0089c860,0x004625d0
-2641,function,,0x00462670,0x0089c900,0x00462670
-2642,function,,0x00462790,0x0089ca20,0x00462790
-2643,function,,0x00462800,0x0089ca90,0x00462800
+2633,function,Renderer::LightManagerDefault::GetShadowDirection,0x00462290,0x0089c560,0x00462290
+2634,function,Renderer::LightManagerDefault::LightSubsetOf,0x004622c0,0x0089c590,0x004622c0
+2635,function,std::vector<General::SafePointer<Renderer::ObjectNodeLightReference>>::AtOrEmpty,0x004622f0,0x0089c5c0,0x004622f0
+2636,function,Renderer::LightGroup::SlotAt,0x00462320,0x007354b0,0x00462320
+2637,function,Renderer::LightManagerDefault::PrepareFrame,0x00462360,0x0089c5f0,0x00462360
+2638,function,Renderer::LightManagerDefault::SetSunOf,0x00462470,0x0089c700,0x00462470
+2639,function,Renderer::LightManagerDefault::BoundsOf,0x00462520,0x0089c7b0,0x00462520
+2640,function,Renderer::LightManagerDefault::GetSun,0x004625d0,0x0089c860,0x004625d0
+2641,function,Renderer::LightManagerDefault::GetSun_kind2Block,0x00462670,0x0089c900,0x00462670
+2642,function,Renderer::LightList::RefreshBrightness,0x00462790,0x0089ca20,0x00462790
+2643,function,Renderer::LightManagerDefault::BeginUpdate,0x00462800,0x0089ca90,0x00462800
 2644,function,std::vector<General::SafePointer<Renderer::ObjectNodeLightReference> *>::back,0x00462840,0x0089cad0,0x00462840
 2645,function,General::SafePointerList<Renderer::ObjectNodeLightReference>::RemoveReference,0x004628a0,0x0089cb30,0x004628a0
 2646,function,General::SafePointer<Renderer::ObjectNodeLightReference>::Reset,0x00462920,0x0089cbb0,0x00462920
@@ -2654,7 +2654,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2653,function,"std::_Push_heap<General::SafePointer<Renderer::ObjectNodeLightReference> *,int,General::SafePointer<Renderer::ObjectNodeLightReference>>",0x00462ad0,0x0089cd60,0x00462ad0
 2654,function,"std::_Rotate<General::SafePointer<Renderer::ObjectNodeLightReference> *,int,General::SafePointer<Renderer::ObjectNodeLightReference>>",0x00462ba0,0x0089ce30,0x00462ba0
 2655,function,General::SafePointer<Renderer::ObjectNodeLightReference>::SafePointer,0x00462cc0,0x0089cf50,0x00462cc0
-2656,function,,0x00462ce0,0x0089cf70,0x00462ce0
+2656,function,General::SafePointer<Renderer::ObjectNodeLightReference>::operator=,0x00462ce0,0x0089cf70,0x00462ce0
 2657,function,std::vector<General::SafePointer<Renderer::ObjectNodeLightReference>>::~vector,0x00462d10,0x0089d320,0x00462d10
 2658,function,"std::fill<General::SafePointer<Renderer::ObjectNodeLightReference> *,General::SafePointer<Renderer::ObjectNodeLightReference>>",0x00462d20,0x0089cfa0,0x00462d20
 2659,function,std::_Med3<General::SafePointer<Renderer::ObjectNodeLightReference> *>,0x00462d50,0x0089cfd0,0x00462d50
@@ -2668,37 +2668,37 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2667,function,Catch_All@0046314b,0x0046314b,0x0089d3db,0x0046314b
 2668,function,std::_Median<General::SafePointer<Renderer::ObjectNodeLightReference> *>,0x00463180,0x0089d410,0x00463180
 2669,function,"std::_Make_heap<General::SafePointer<Renderer::ObjectNodeLightReference> *,int,General::SafePointer<Renderer::ObjectNodeLightReference>>",0x00463230,0x0089d4c0,0x00463230
-2670,function,,0x00463280,0x0089d510,0x00463280
-2671,function,,0x004632b0,0x0089d540,0x004632b0
-2672,function,,0x004632d0,0x0089d560,0x004632d0
-2673,function,,0x004632f0,0x0089d580,0x004632f0
+2670,function,Renderer::ObjectNodeLightReference::ObjectNodeLightReference,0x00463280,0x0089d510,0x00463280
+2671,function,Renderer::ObjectNodeLightReference::~ObjectNodeLightReference,0x004632b0,0x0089d540,0x004632b0
+2672,function,Renderer::LightList::~LightList,0x004632d0,0x0089d560,0x004632d0
+2673,function,Renderer::LightManagerDefault::~LightManagerDefault,0x004632f0,0x0089d580,0x004632f0
 2674,function,General::SafePointerList<Renderer::ObjectNodeLightReference>::`scalar deleting destructor',0x004633a0,0x0089d630,0x004633a0
 2675,function,std::vector<General::SafePointer<Renderer::ObjectNodeLightReference>>::erase,0x004633c0,0x0089d650,0x004633c0
 2676,function,"std::_Copy_backward_opt<General::SafePointer<Renderer::ObjectNodeLightReference> *,General::SafePointer<Renderer::ObjectNodeLightReference> *>",0x00463430,0x0089d6c0,0x00463430
 2677,function,std::_Unguarded_partition<General::SafePointer<Renderer::ObjectNodeLightReference> *>,0x00463470,0x0089d700,0x00463470
 2678,function,std::_Insertion_sort<General::SafePointer<Renderer::ObjectNodeLightReference> *>,0x004636b0,0x0089d940,0x004636b0
-2679,function,,0x00463790,0x0089da20,0x00463790
-2680,function,,0x004637b0,0x0089da40,0x004637b0
+2679,function,Renderer::ObjectNodeLightReference::`scalar deleting destructor',0x00463790,0x0089da20,0x00463790
+2680,function,Renderer::LightManagerDefault::`scalar deleting destructor',0x004637b0,0x0089da40,0x004637b0
 2681,function,"std::uninitialized_fill_n<General::SafePointer<Renderer::ObjectNodeLightReference> *,unsigned int,General::SafePointer<Renderer::ObjectNodeLightReference>>",0x004637d0,0x0089da60,0x004637d0
 2682,function,std::_Sort_heap<General::SafePointer<Renderer::ObjectNodeLightReference> *>,0x00463810,0x0089daa0,0x00463810
 2683,function,"std::uninitialized_copy<General::SafePointer<Renderer::ObjectNodeLightReference> *,General::SafePointer<Renderer::ObjectNodeLightReference> *>",0x00463870,0x0089db00,0x00463870
 2684,function,,0x004638a0,0x0089db30,0x004638a0
 2685,function,,0x00463a23,0x0089dcb3,0x00463a23
 2686,function,,0x00463aae,0x0089dd3e,0x00463aae
-2687,function,,0x00463b40,0x0089ddd0,0x00463b40
+2687,function,"std::_Sort<General::SafePointer<Renderer::ObjectNodeLightReference>*,int,Renderer::LightList::LightBefore>",0x00463b40,0x0089ddd0,0x00463b40
 2688,function,std::vector<General::SafePointer<Renderer::ObjectNodeLightReference>>::resize,0x00463c30,0x0089dec0,0x00463c30
 2689,function,std::vector<General::SafePointer<Renderer::ObjectNodeLightReference>>::insert,0x00463d20,0x0089dfb0,0x00463d20
-2690,function,,0x00463db0,0x0089e040,0x00463db0
+2690,function,std::vector<General::SafePointer<Renderer::ObjectNodeLightReference>>::push_back,0x00463db0,0x0089e040,0x00463db0
 2691,function,Renderer::LightList::ChooseFor,0x00463e40,0x0089e0d0,0x00463e40
-2692,function,,0x00464200,0x0089e490,0x00464200
+2692,function,Renderer::LightManagerDefault::ChooseForPoint,0x00464200,0x0089e490,0x00464200
 2693,function,Renderer::LightManagerDefault::ChooseForLevel,0x00464310,0x0089e5a0,0x00464310
 2694,function,Renderer::LightManagerDefault::ChooseForMoving,0x00464560,0x0089e7f0,0x00464560
-2695,function,,0x004648f0,0x0089eb80,0x004648f0
-2696,function,,0x00464960,0x0089ebf0,0x00464960
-2697,function,,0x00464a30,0x0089ecc0,0x00464a30
+2695,function,std::vector<General::SafePointer<Renderer::ObjectNodeLightReference>>::vector,0x004648f0,0x0089eb80,0x004648f0
+2696,function,std::vector<General::SafePointer<Renderer::ObjectNodeLightReference>>::SwapRemoveAt,0x00464960,0x0089ebf0,0x00464960
+2697,function,Renderer::LightList::LightList,0x00464a30,0x0089ecc0,0x00464a30
 2698,function,Renderer::LightList::Insert,0x00464a50,0x0089ece0,0x00464a50
 2699,function,Renderer::LightList::Erase,0x00464b50,0x0089ede0,0x00464b50
-2700,function,,0x00464be0,0x0089ee70,0x00464be0
+2700,function,Renderer::LightManagerDefault::LightManagerDefault,0x00464be0,0x0089ee70,0x00464be0
 2701,function,Renderer::LightManagerDefault::AddLights,0x00464e30,0x0089f0c0,0x00464e30
 2702,function,Renderer::LightManagerDefault::RemoveLights,0x00465190,0x0089f420,0x00465190
 2703,function,Renderer::LightManagerDefault::ChooseLightsOf,0x004654e0,0x0089f770,0x004654e0

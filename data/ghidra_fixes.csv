@@ -11922,3 +11922,31 @@ address,what,value,why
 0x0046E740,convention,__thiscall,"vftable slot 4, plain ret, constant 8"
 0x0046E400,convention,__thiscall,"writes [ecx], plain ret"
 0x0046F100,convention,__thiscall,"writes [ecx], plain ret"
+0x00461B30,signature,"void __thiscall Renderer::FBRenderTargetResource::AdoptShared(void * this, void * sharedHandle)",ret 4 at 0x00461BF5; ecx read at 0x00461B3A; no return value set
+0x00461C00,signature,bool __thiscall Renderer::FBRenderTargetResource::Create(void * this),vtable 0x00AE74A4 slot 1; returns the byte +0x28 (0x00461DEA); plain ret
+0x00461E10,signature,bool __thiscall Renderer::FBTextureResource::Create(void * this),"vtable 0x00AE7BB0 slot 1; AL = 1 or 0 (0x00461E84, 0x00461E98); plain ret"
+0x00461EB0,signature,"bool __cdecl Renderer::LightList::LightBefore(void * a, void * b)","plain ret, args at [esp+4]/[esp+8]; Ghidra returns ushort from leaked FPU status"
+0x00461F20,convention,__stdcall,ret 8 with ecx loaded from [esp+4] at 0x00461F24; Ghidra shows a two-argument function without a convention
+0x00461F20,signature,"int __stdcall Renderer::AdvanceLightGroupFades(void * group, bool atOnce)","tail of 0x0046AD90(group, atOnce), which returns the count dropped"
+0x00461FD0,signature,float * __cdecl Vector4::UnitW(void),returns 0x00C1EEF0
+0x00462060,signature,"float * __cdecl Vector4::NormalizedXYZ(float * out, float * v)",plain ret; returns out (0x00462125)
+0x004621D0,signature,"bool __cdecl Renderer::LightList::ScoreGreater(void * a, void * b)","plain ret; args at [esp+0xC]/[esp+0x10] after sub esp,8; Ghidra shows no parameters"
+0x00462290,signature,"bool __thiscall Renderer::LightManagerDefault::GetShadowDirection(void * this, float * out)",ret 4; AL = 1
+0x004622C0,signature,"void * __thiscall Renderer::LightManagerDefault::LightSubsetOf(void * this, void * renderable)",ret 4; returns layout +0x4A0 entry or null
+0x00462470,signature,"void __thiscall Renderer::LightManagerDefault::SetSunOf(void * this, void * state, void * subset, float * direction, float * colour, bool atOnce)",ret 0x14 at 0x00462519; this read (+0x120) at 0x00462480
+0x00462520,convention,__stdcall,"ret 0x14 at 0x004625C7 and ecx never read; Ghidra shows a plain function, so the caller's stack is wrong after it"
+0x00462520,signature,"void __stdcall Renderer::LightManagerDefault::BoundsOf(void * owner, void * renderable, void * state, float * outCentre, float * outRadius)",five stack arguments [ebp+8..+0x18]
+0x004625D0,signature,"bool __thiscall Renderer::LightManagerDefault::GetSun(void * this, float * outDirection, float * outLevelColour, float * outFigureColour, unsigned char * outOccludable)",ret 0x10 at 0x0046266D
+0x00462800,signature,"void __thiscall Renderer::LightManagerDefault::BeginUpdate(void * this, void * unused1, void * unused2)",ret 8 at 0x00462837; Ghidra shows no parameters
+0x00464200,convention,__thiscall,ecx (the manager) read at 0x00464213 and used for the lists; ret 0x10; Ghidra shows no this
+0x00464200,signature,"void __thiscall Renderer::LightManagerDefault::ChooseForPoint(void * this, float * place, float radius, void * state, unsigned char mask)","args: place [esp+0xC] at 0x00464209, radius [esp+0x18] FLD, state [esp+0x1C], mask [esp+0x14] at 0x00464201 (after pushes)"
+0x00464960,signature,"void __thiscall std::vector<General::SafePointer<Renderer::ObjectNodeLightReference>>::SwapRemoveAt(void * this, unsigned int index)",ret 4
+0x00464BE0,signature,"void * __thiscall Renderer::LightManagerDefault::LightManagerDefault(void * this, void * scene)",ret 4; returns this
+0x00462010,signature,"float * __cdecl Vector4::ScaledXYZ(float * out, float * v, float s)","plain ret; returns out; MULPS by (s, s, s, 1) at 0x00462050"
+0x004622F0,signature,"void * __thiscall std::vector<General::SafePointer<Renderer::ObjectNodeLightReference>>::AtOrEmpty(void * this, unsigned int index)",ret 4; static empty element 0x00C1EF30
+0x00462320,signature,"void * __thiscall Renderer::LightGroup::SlotAt(void * this, unsigned int index)",ret 4; static null 0x00C1EF24
+0x00462CE0,signature,"void * __thiscall General::SafePointer<Renderer::ObjectNodeLightReference>::operator=(void * this, void * light)","ret 4; release 0x004628A0, register 0x004629C0"
+0x00463B40,signature,"void __cdecl std::_Sort<General::SafePointer<Renderer::ObjectNodeLightReference>*,int,Renderer::LightList::LightBefore>(void * first, void * last, int ideal, void * pred)","plain ret, caller cleans (0x00463C2D)"
+0x00463DB0,signature,"void __thiscall std::vector<General::SafePointer<Renderer::ObjectNodeLightReference>>::push_back(void * this, void * value)",ret 4
+0x004648F0,signature,"void * __thiscall std::vector<General::SafePointer<Renderer::ObjectNodeLightReference>>::vector(void * this, unsigned int n)",ret 4; returns this
+0x00462670,nofunction,,"not a function: a block of 0x004625D0 reached by jnz at 0x004625E7, ending in that function's ret 0x10 (paragon-agent render-05)"
