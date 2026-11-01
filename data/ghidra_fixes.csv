@@ -946,7 +946,7 @@ address,what,value,why
 0x004B90C0,signature,unsigned int __cdecl f(void* ptr),plain ret arg at esp+8 after one push 0x004B90C0
 0x004B9100,signature,"void* __thiscall f(void* this, int id)",ret 4 ecx read 0x004B9108
 0x004B93D0,signature,void __thiscall f(void* this),plain ret via jmp 0x004B93DC
-0x004B93F0,signature,"bool __thiscall f(void* this, int id, char* name, void* a, unsigned int size, unsigned int c, unsigned int d)",ret 0x18 six args 0x004B94EB
+0x004B93F0,signature,"bool __thiscall f(void* this, int id, void* name, void* a, unsigned int size, unsigned int c, unsigned int d)",ret 0x18 six args 0x004B94EB
 0x004B94F0,signature,void __thiscall f(void* this),slot 2 0x004B94F0
 0x004B9550,signature,unsigned int __thiscall f(void* this),slot 11 plain ret 0x004B95EB
 0x004B95F0,signature,float __thiscall f(void* this),slot 12 result in st0 0x004B96AA
@@ -993,3 +993,45 @@ address,what,value,why
 0x004D6BD0,signature,"void __cdecl f(void* frameBuffers, void* bink)",caller add esp 8 at 0x004686F9; second arg unread
 0x004D74F0,signature,void __cdecl f(void),no stack args read; callers add esp 4 after a stray push (0x004688FA-0x0046891D)
 0x004D7540,signature,"void __cdecl f(void* device, unsigned int width, unsigned int height)","caller add esp 0xC at 0x00468DDB; arg2 width to 0xC2C044, arg3 height to 0xC2C040"
+0x004B9A70,signature,"void* __thiscall f(void* this, void* block)",0x004B9A70-0x004B9A90
+0x004B9AA0,signature,"void* __thiscall f(void* this, void* block)",0x004B9AA0-0x004B9B20 reads [block-8] footer size
+0x004B9B20,signature,"void __thiscall f(void* this, void* block)","0x004B9B20: list index = bit length of [block] capped at 0x13, head at [this+idx*4+4], used byte [block+7]=0, doubly linked by +8/+0xC"
+0x004B9B60,signature,"void __thiscall f(void* this, void* block)","0x004B9B60: fixes [prev+8]/[next+0xC], head [this+idx*4+4]"
+0x004B9BD0,signature,"void __thiscall f(void* this, unsigned int* totals)","0x004B9BD0: locks [this+0x100] (0x004C4D00/0x004C4D50/0x004C4D30), loop NextBlock"
+0x004B9C80,signature,"bool __stdcall f(void* block, void* out, int maxChars)","0x004B9C80: scans words 0x21-0x7E from block+0x10 over the block's requested size (0x004B9880), memcpy 0x008E24A0"
+0x004B9D90,signature,"void __thiscall f(void* this, void* ptr)","0x004B9D90: block=ptr-0x10, used byte [blk+7]"
+0x004B9E80,signature,"unsigned int __thiscall f(void* this, void* ptr)",0x004B9E80: ptr-0x10 -> 0x004B9880 (footer +4)
+0x004B9F30,signature,unsigned int __thiscall f(void* this),0x004B9F30: walks NextBlock
+0x004B9FD0,signature,void __thiscall f(void* this),0x004B9FD0: loop NextBlock 0x004B9A70 with an empty body
+0x004BA070,signature,"void __thiscall f(void* this, void* block, int delta)","0x004BA070: footer 0x004B97F0, [blk]+=arg, 0x004B9A50 sets the footer"
+0x004BA0A0,signature,"void __thiscall f(void* this, void* block, unsigned int size, unsigned char alignShift, unsigned int requested, unsigned char used, int unused1, int unused2)","0x004BA0A0: stores [eax],[+4]=0,[+5]=0xFF,[+6],[+7],[+8]=[+0xC]=0 then 0x004B9A50"
+0x004BA0F0,signature,"void __thiscall f(void* this, void* block, void* label)",0x004BA0F0: formats via 0x004B8C60 with strings 0x00AEF478/0x00AEF500/0x00AEF59C
+0x004BA1D0,signature,bool __thiscall f(void* this),"0x004BA1D0: memset 0x008E19E0 [this+4],0x50"
+0x004BA270,signature,"void __thiscall f(void* this, unsigned int command, unsigned int arg1, unsigned int arg2, unsigned int arg3)","0x004BA270: strings 0x00AEF5CC BLOCK, 0x00AEF5D8 allocated blocks, 0x00AEF610 free blocks, 0x00AEF698 enable allocation tracking with MEMMAN_TRACK_ALLOCS, 0x00AEF718 Memory Used, 0x00AEF758 Fragmentation, 0x00AEF788 Largest Free Block"
+0x004BA790,signature,"void* __thiscall f(void* this, void* block, unsigned int shift)",0x004BA790: esi=((1<<shift)-1 + blk + 0x10)&~mask - 0x10
+0x004BA830,signature,"void* __thiscall f(void* this, void* block, unsigned int newSize)","0x004BA830: rem=blk+N, InitBlock 0x004BA0A0(rem,[blk]-N,0,0,0,0,-1), [blk]=N, footer 0x004B9A50"
+0x004BA880,signature,"void* __thiscall f(void* this, unsigned int size, unsigned int tagB, unsigned int tagA, int alignShift)",0x004BA880: size+3&~3
+0x004BA9D0,signature,"void* __thiscall f(void* this, void* ptr, unsigned int newSize)","0x004BA9D0: ptr-0x10 header, merge 0x004B9A00, split 0x004BA830, align 0x004BA790, aligned size 0x004B9820, lock 0x004C4D00"
+0x004BACA0,signature,void __thiscall f(void* this),0x004BACA0: [ecx]=0x00AEF7F4 then jmp 0x004B93D0
+0x004BACB0,signature,void* __thiscall f(void* this),0x004BACB0: Pool ctor 0x004B9850
+0x004BAD30,signature,"void* `scalar deleting __thiscall f(void* this, unsigned int flags)","0x004BAD30: call 0x004BACA0, test [esp+8],1, operator delete 0x004136C0"
+0x004BAD50,signature,bool __thiscall f(void* this),0x004BAD50: Pool::Initialize 0x004BA1D0
+0x004BAE70,signature,"void* __thiscall f(void* this, unsigned int size, unsigned int tagB, unsigned int tagA, int alignShift)",0x004BAE70: size<=[+0x120] -> head [this+[+0x128]*4+4]
+0x004BAF80,signature,"void* __thiscall f(void* this, void* ptr, unsigned int newSize)",0x004BAF80: [blk]>=newSize
+0x004BB070,signature,"void __thiscall f(void* this, void* ptr)",0x004BB070: lock 0x004C4D00
+0x004BB100,signature,"void __thiscall f(void* this, unsigned int command, unsigned int arg1, unsigned int arg2, unsigned int arg3)","0x004BB100: strings 0x00AEF848 Average string length, 0x00AEF8C0 Total strings allocated, 0x00AEF920 String Pool sorted by contents, 0x00AEF978, 0x00AEFA08, 0x00AEFA98"
+0x004BB5E0,signature,void* __thiscall f(void* this),"0x004BB5E0: 0x004B9850, [+0x124]=[+0x120]=0, [esi]=0x00AEFAC4"
+0x004BB600,signature,"bool __thiscall f(void* this, unsigned int size)","0x004BB600: [ecx+0xEC]=arg, al=1"
+0x004BB610,signature,"void* `scalar deleting __thiscall f(void* this, unsigned int flags)","0x004BB610: call 0x004B93D0 (Pool dtor), test [esp+8],1, operator delete 0x004136C0"
+0x004BB630,signature,"int __thiscall f(void* this, unsigned int size, unsigned int tagB, unsigned int tagA, void* name)","0x004BB630: rounds to multiples of [+0xEC], Allocate 0x004BA880, scans [+0x124] array of 0x120-byte pools for [+0xD8]==0, names via 0x004C0330 with 0x00AEFB18/0x00AEFB3C (SubPool %ls (%d)), sets up with 0x004B93F0"
+0x004BB7E0,signature,"void __thiscall f(void* this, unsigned int id)",0x004BB7E0: id>>16 < [+0x120]
+0x004BB8C0,signature,bool __thiscall f(void* this),0x004BB8C0: Pool::Initialize 0x004BA1D0
+0x004BB9A0,signature,"void* __thiscall f(void* this, unsigned int size, unsigned int tagB, unsigned int tagA, int alignShift)","0x004BB9A0: 0x004B8AF0 >>16 < [+0x120], [+0xD8] set, calls subpool [vtable+0x10] with the four arguments"
+0x004BBA90,signature,"void* __thiscall f(void* this, void* ptr, unsigned int newSize)",0x004BBA90: lock
+0x004BBB90,signature,"void __thiscall f(void* this, void* ptr)",0x004BBB90: [vtable+0x3C] contains test then [vtable+0x18] on [this+0x124]+i*0x120
+0x004BBC10,signature,"void __thiscall f(void* this, unsigned int command, unsigned int arg1, unsigned int arg2, unsigned int arg3)","0x004BBC10: strings 0x00AEFC20 BlockPool, 0x00AEFBC0 SubPools, 0x00AEFB58, 0x00AEFC48"
+0x004BBD50,signature,bool __thiscall f(void* this),"0x004BBD50: add ecx,0x60"
+0x004BBD60,signature,bool __thiscall f(void* this),"0x004BBD60: push -1, add ecx,0x60, call 0x004E6120 (WaitForSingleObject [0x00ADA1D8])"
+0x004BBDDB,convention,__cdecl,"plain ret, SEH filter funclet"
+0x004BBDDF,convention,__stdcall,"ret 8, SEH handler body inside SetThreadName 0x004BBD70"
+0x004BBD40,signature,unsigned int __stdcall f(void),"Multithreading::GetCurrentThreadId: jmp [0x00ADA16C], kernel32's GetCurrentThreadId; lib-agent-3, two readings, 2026-10-31"
