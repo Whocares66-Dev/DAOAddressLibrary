@@ -6264,9 +6264,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6263,function,"stdext::hash_map<unsigned int,std::wstring>::hash_map",0x00506bd0,0x00468ca0,0x00506bd0
 6264,function,Graphics::MaterialParameterNames::MaterialParameterNames,0x00506c60,0x007f1660,0x00506c60
 6265,function,Graphics::MaterialParameterNames::Get,0x00506cd0,0x007f16d0,0x00506cd0
-6266,function,,0x00506d40,0x007f1740,0x00506d40
-6267,function,,0x00506e30,0x007fd5a0,0x00506e30
-6268,function,,0x00506e40,0x007fd5b0,0x00506e40
+6266,function,Graphics::MaterialParameterNames::GetOrAddId,0x00506d40,0x007f1740,0x00506d40
+6267,function,Stub::GetByte_0x20,0x00506e30,0x007fd5a0,0x00506e30
+6268,function,Graphics::MaterialTechnique::ValidatePasses,0x00506e40,0x007fd5b0,0x00506e40
 6269,function,,0x00506eb0,0x007fd620,0x00506eb0
 6270,function,,0x00506f00,0x007fd670,0x00506f00
 6271,function,,0x00506f80,0x007fd6f0,0x00506f80
@@ -6277,9 +6277,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6276,function,,0x00507240,0x007fd9b0,0x00507240
 6277,function,,0x00507260,0x007fd9e0,0x00507260
 6278,function,?IsSignaled@GEvent@@UBE_NXZ,0x00507270,0x00780360,0x00507270
-6279,function,,0x00507280,0x007fd9f0,0x00507280
+6279,function,Graphics::MaterialLogicBlock::TestsPass,0x00507280,0x007fd9f0,0x00507280
 6280,function,,0x00507330,0x007fdaa0,0x00507330
-6281,function,,0x005073c0,0x007fdb30,0x005073c0
+6281,function,Graphics::MaterialLogicBlock::SelectTechnique,0x005073c0,0x007fdb30,0x005073c0
 6282,function,,0x00507450,0x007fdbc0,0x00507450
 6283,function,,0x00507500,0x007fdc70,0x00507500
 6284,function,,0x00507570,0x007fdce0,0x00507570
@@ -6289,7 +6289,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6288,function,,0x005076e0,0x00a58370,0x005076e0
 6289,function,,0x00507700,0x007f1830,0x00507700
 6290,function,std::vector<std::wstring>::back,0x00507730,0x00457e30,0x00507730
-6291,function,,0x005077a0,0x007f1860,0x005077a0
+6291,function,std::vector<std::wstring>::pop_back,0x005077a0,0x007f1860,0x005077a0
 6292,function,,0x005077f0,0x007f18b0,0x005077f0
 6293,function,,0x00507c30,0x007f1cf0,0x00507c30
 6294,function,,0x00507cc0,0x007f1d80,0x00507cc0
@@ -6555,31 +6555,31 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6554,function,,0x00510930,0x007b8d30,0x00510930
 6555,function,GUI::ScaleformManager::DispatchFSCommand,0x00510980,0x007b8d80,0x00510980
 6556,function,GUI::ScaleformManager::DispatchExternalInterface,0x005109b0,0x007b8db0,0x005109b0
-6557,function,,0x005109e0,0x007b8de0,0x005109e0
-6558,function,,0x00510a00,0x007b8e00,0x00510a00
-6559,function,,0x00510a10,0x007b8e10,0x00510a10
-6560,function,,0x00510a70,0x007b8e70,0x00510a70
-6561,function,,0x00510ae0,0x007b8ee0,0x00510ae0
-6562,function,,0x00510b50,0x007b8f50,0x00510b50
-6563,function,,0x00510bc0,0x007b8fc0,0x00510bc0
-6564,function,,0x00510c30,0x007b9030,0x00510c30
-6565,function,,0x00510ca0,0x00526ba0,0x00510ca0
-6566,function,,0x00510d20,0x005bcf70,0x00510d20
-6567,function,,0x00510d40,0x00497dc0,0x00510d40
-6568,function,,0x00510db0,0x00505630,0x00510db0
+6557,function,GPtr<GFxMovieView>::~GPtr,0x005109e0,0x007b8de0,0x005109e0
+6558,function,GPtr<GFxMovieDef>::~GPtr,0x00510a00,0x007b8e00,0x00510a00
+6559,function,"std::pair<std::wstring const,GPtr<GFxMovieDef>>::~pair",0x00510a10,0x007b8e10,0x00510a10
+6560,function,"std::pair<std::wstring const,GPtr<GFxMovieView>>::~pair",0x00510a70,0x007b8e70,0x00510a70
+6561,function,"std::pair<std::wstring const,GPtr<GFxMovieDef>>::pair",0x00510ae0,0x007b8ee0,0x00510ae0
+6562,function,"std::pair<std::wstring const,GPtr<GFxMovieView>>::pair",0x00510b50,0x007b8f50,0x00510b50
+6563,function,"std::pair<std::wstring const,GPtr<GFxMovieDef>>::pair_copy",0x00510bc0,0x007b8fc0,0x00510bc0
+6564,function,"std::pair<std::wstring const,GPtr<GFxMovieView>>::pair_copy",0x00510c30,0x007b9030,0x00510c30
+6565,function,GUI::GUIManager::Get,0x00510ca0,0x00526ba0,0x00510ca0
+6566,function,std::_Tree<?>::_Max,0x00510d20,0x005bcf70,0x00510d20
+6567,function,std::_Tree_const_iterator<?>::_Inc,0x00510d40,0x00497dc0,0x00510d40
+6568,function,std::_Allocate<wchar_t>,0x00510db0,0x00505630,0x00510db0
 6569,function,,0x00510e10,0x007b9100,0x00510e10
 6570,function,,0x00510e70,0x007b9160,0x00510e70
 6571,function,,0x00510e80,0x007b9170,0x00510e80
 6572,function,GFxStateBag::GetRenderConfig,0x00510ee0,0x007b91d0,0x00510ee0
-6573,function,,0x00510f00,0x00496ca0,0x00510f00
-6574,function,,0x00510f10,0x00496c60,0x00510f10
+6573,function,GUI::ScaleformMemoryAllocator::Free,0x00510f00,0x00496ca0,0x00510f00
+6574,function,GUI::ScaleformMemoryAllocator::Alloc,0x00510f10,0x00496c60,0x00510f10
 6575,function,GUI::ScaleformMemoryAllocator::AllocAligned,0x00510f20,0x007b91f0,0x00510f20
 6576,function,GUI::ScaleformDebugMemoryAllocator::Free,0x00510f40,0x007b9260,0x00510f40
 6577,function,GUI::ScaleformDebugMemoryAllocator::Alloc,0x00510f50,0x007b9230,0x00510f50
 6578,function,GUI::ScaleformDebugMemoryAllocator::Realloc,0x00510f60,0x007b9240,0x00510f60
 6579,function,GUI::ScaleformDebugMemoryAllocator::AllocAligned,0x00510f80,0x007b9270,0x00510f80
 6580,function,GuiMovie::GetMovieView,0x00510fa0,0x004f8900,0x00510fa0
-6581,function,,0x00510fd0,0x007b9290,0x00510fd0
+6581,function,GFxLog::`scalar deleting destructor'`adjustor{20}',0x00510fd0,0x007b9290,0x00510fd0
 6582,function,,0x00510fe0,0x007b92a0,0x00510fe0
 6583,function,,0x00511010,0x007b92d0,0x00511010
 6584,function,EclipseGFxFSCommandHandler::Callback,0x00511030,0x007b92f0,0x00511030
@@ -6615,7 +6615,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6614,function,GUI::ScaleformManager::UpdateAllLayouts,0x00511d20,0x007b9f70,0x00511d20
 6615,function,"std::map<ECString,GFxMovieDef*>::_Erase",0x00511e00,0x007ba050,0x00511e00
 6616,function,"std::map<ECString,GPtr<GFxMovieView>>::_Erase",0x00511e90,0x007ba0e0,0x00511e90
-6617,function,,0x00511f30,0x004657d0,0x00511f30
+6617,function,"std::_Tree<std::map<std::wstring,?>>::_Ubound",0x00511f30,0x004657d0,0x00511f30
 6618,function,GuiMovieSet::DeleteAll,0x00512000,0x007ba180,0x00512000
 6619,function,,0x005120a0,0x004fd810,0x005120a0
 6620,function,,0x00512100,0x007ba220,0x00512100
@@ -6640,7 +6640,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6639,function,GUI::ScaleformManager::HandleMessage_GUICursorMiddleButtonUpMessage,0x005129d0,0x007ba9e0,0x005129d0
 6640,function,GUI::ScaleformManager::HandleMessage_GUICursorMiddleButtonDblClickMessage,0x005129e0,0x007ba9f0,0x005129e0
 6641,function,GUI::ScaleformManager::StopDragging,0x005129f0,0x007baa00,0x005129f0
-6642,function,,0x00512a10,0x00818fd0,0x00512a10
+6642,function,"std::map<std::wstring,?>::find",0x00512a10,0x00818fd0,0x00512a10
 6643,function,,0x00512a90,0x0049bba0,0x00512a90
 6644,function,,0x00512d50,0x0049c170,0x00512d50
 6645,function,GUI::ScaleformManager::RegisterHandler_GUICursorLeftButtonDownMessage,0x00512e20,0x007baa20,0x00512e20
@@ -6704,12 +6704,12 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6703,function,,0x005169e9,0x007dee89,0x005169e9
 6704,function,GUI::ScaleformManager::LoadImage,0x00516a20,0x007be2d0,0x00516a20
 6705,function,EclipseGFxImageLoader::LoadImage,0x00517390,0x007bec40,0x00517390
-6706,function,,0x005173a0,0x007defe0,0x005173a0
+6706,function,"std::uninitialized_copy<TextureHandle*,TextureHandle*>",0x005173a0,0x007defe0,0x005173a0
 6707,function,,0x005173d0,0x007ed200,0x005173d0
 6708,function,,0x00517553,0x007ed383,0x00517553
 6709,function,,0x005175de,0x007ed40e,0x005175de
-6710,function,,0x00517670,0x007ed4a0,0x00517670
-6711,function,,0x00517700,0x00758770,0x00517700
+6710,function,std::vector<TextureHandle>::insert,0x00517670,0x007ed4a0,0x00517670
+6711,function,std::vector<TextureHandle>::push_back,0x00517700,0x00758770,0x00517700
 6712,function,GUI::ScaleformManager::ScaleformManager,0x00517790,0x007bed40,0x00517790
 6713,function,GUI::ScaleformManager::GetClassInfo,0x00517bf0,0x007bf250,0x00517bf0
 6714,function,GUI::ScaleformManager::RegisterClass,0x00517c20,0x007bf280,0x00517c20
@@ -6752,15 +6752,15 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6751,function,std::fill<GFxValue>,0x00518d90,0x007c1280,0x00518d90
 6752,function,std::_Uninit_fill_n<GFxValue>,0x00518dc0,0x007c12b0,0x00518dc0
 6753,function,GuiMovie::Rewind,0x00518e00,0x007c12f0,0x00518e00
-6754,function,,0x00518e40,0x007c1330,0x00518e40
-6755,function,,0x005190b0,0x00482db0,0x005190b0
-6756,function,,0x0051912c,0x00482e2c,0x0051912c
-6757,function,,0x00519150,0x007c15a0,0x00519150
-6758,function,,0x005191a0,0x007c1630,0x005191a0
+6754,function,"stdext::hash_map<std::wstring,?>::equal_range",0x00518e40,0x007c1330,0x00518e40
+6755,function,std::list<?>::_Buynode,0x005190b0,0x00482db0,0x005190b0
+6756,function,Catch_All@0051912C,0x0051912c,0x00482e2c,0x0051912c
+6757,function,"std::copy_backward<GFxValue*,GFxValue*>",0x00519150,0x007c15a0,0x00519150
+6758,function,"std::uninitialized_fill_n<GFxValue*,unsigned int,GFxValue>",0x005191a0,0x007c1630,0x005191a0
 6759,function,,0x005191e0,0x007c1670,0x005191e0
-6760,function,,0x00519230,0x007c16c0,0x00519230
-6761,function,,0x005192c0,0x007c1770,0x005192c0
-6762,function,,0x00519310,0x007c17c0,0x00519310
+6760,function,GuiMovie::DeleteTokenObserversByID,0x00519230,0x007c16c0,0x00519230
+6761,function,std::vector<GFxValue>::erase,0x005192c0,0x007c1770,0x005192c0
+6762,function,"std::uninitialized_copy<GFxValue*,GFxValue*>",0x00519310,0x007c17c0,0x00519310
 6763,function,,0x00519340,0x007c17f0,0x00519340
 6764,function,,0x00519390,0x007c18c0,0x00519390
 6765,function,,0x0051950d,0x007c1a3d,0x0051950d
@@ -6773,7 +6773,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6772,function,,0x005198d0,0x007f0dc0,0x005198d0
 6773,function,std::vector<GFxValue>::vector,0x005199b0,0x007c1ea0,0x005199b0
 6774,function,std::vector<GFxValue>::resize,0x00519a20,0x007c1f10,0x00519a20
-6775,function,,0x00519a40,0x00493a20,0x00519a40
+6775,function,std::vector<?>::vector,0x00519a40,0x00493a20,0x00519a40
 6776,function,GuiMovie::QueueTokenValue,0x00519aa0,0x007c1f30,0x00519aa0
 6777,function,GuiMovie::DeliverTokens,0x00519b00,0x007c1f90,0x00519b00
 6778,function,stdext::_Hash<...>::clear,0x00519dc0,0x007c2250,0x00519dc0
@@ -6790,7 +6790,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6789,function,GuiMovie::RemoveTokenObserverByID,0x0051abc0,0x007c3050,0x0051abc0
 6790,function,GuiMovie::ProcessRemoveTokenObserverBatch,0x0051ac10,0x007c30a0,0x0051ac10
 6791,function,GUI::MovieRecord::Step,0x0051ada0,0x007c3230,0x0051ada0
-6792,function,,0x0051af70,0x009df150,0x0051af70
+6792,function,memcmp,0x0051af70,0x009df150,0x0051af70
 6793,function,PlayMovieMessage::PlayMovieMessage,0x0051b000,0x007c4000,0x0051b000
 6794,function,PlayMovieMessage::PlayMovieMessage_copy,0x0051b060,0x007c4060,0x0051b060
 6795,function,Stub::MessageWithWStringAt4_Destroy,0x0051b0d0,0x004f4190,0x0051b0d0
@@ -6851,7 +6851,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6850,function,GuiFSCommand::PlaySound,0x0051d300,0x007c6190,0x0051d300
 6851,function,GuiFSCommand::GetValue,0x0051d3b0,0x007c6240,0x0051d3b0
 6852,function,GuiFSCommand::FormatFloat,0x0051d4b0,0x007c6340,0x0051d4b0
-6853,function,,0x0051d620,0x007c64b0,0x0051d620
+6853,function,ExpandDesignerTag,0x0051d620,0x007c64b0,0x0051d620
 6854,function,GuiFSCommand::Get2DAHash,0x0051ea00,0x007c7890,0x0051ea00
 6855,function,GuiFSCommand::GetTlkString,0x0051eae0,0x007c7970,0x0051eae0
 6856,function,GuiExternal::GetValue,0x0051ec60,0x007c7af0,0x0051ec60
@@ -6871,9 +6871,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6870,function,std::vector<std::wstring>::Erase,0x0051f910,0x007c8660,0x0051f910
 6871,function,GuiFSCommand::PopContext,0x0051fa40,0x007c8790,0x0051fa40
 6872,function,,0x0051fb90,0x005f7db0,0x0051fb90
-6873,function,,0x0051fd90,0x00455550,0x0051fd90
-6874,function,,0x0051fe10,0x00898730,0x0051fe10
-6875,function,,0x0051fef0,0x00506770,0x0051fef0
+6873,function,"std::map<unsigned int,?>::operator[]",0x0051fd90,0x00455550,0x0051fd90
+6874,function,"std::map<std::wstring,?>::operator[]",0x0051fe10,0x00898730,0x0051fe10
+6875,function,"std::operator<<(std::wostream&,char const*)",0x0051fef0,0x00506770,0x0051fef0
 6876,function,,0x00520108,0x00506988,0x00520108
 6877,function,,0x0052013d,0x005069bd,0x0052013d
 6878,function,GuiCommands::RegisterFSCommand,0x005201c0,0x007c88e0,0x005201c0

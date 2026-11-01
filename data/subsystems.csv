@@ -6250,13 +6250,13 @@ id,subsystem,class,how
 6259,Rendering,"stdext::hash_map<unsigned int,std::wstring>",between
 6260,Rendering,Graphics::MaterialParameterNames,name
 6261,Rendering,stdext::_Hash<?>,between
-6262,Rendering,"stdext::hash_map<unsigned int,std::wstring>",between
+6262,Rendering,"stdext::hash_map<unsigned int,std::wstring>",callers
 6263,Rendering,"stdext::hash_map<unsigned int,std::wstring>",between
 6264,Rendering,Graphics::MaterialParameterNames,name
 6265,Rendering,Graphics::MaterialParameterNames,name
-6266,Rendering,,between
-6267,Rendering,,between
-6268,Rendering,,between
+6266,Rendering,Graphics::MaterialParameterNames,name
+6267,Rendering,Stub,between
+6268,Rendering,Graphics::MaterialTechnique,name
 6269,Rendering,Graphics::MaterialTechnique,vtable
 6270,Rendering,,callers
 6271,Rendering,Graphics::MaterialTechnique,vtable
@@ -6267,9 +6267,9 @@ id,subsystem,class,how
 6276,Rendering,Graphics::MaterialTechnique,vtable
 6277,Rendering,,callers
 6278,ThirdParty:Scaleform,GEvent,name
-6279,unknown,,
+6279,Rendering,Graphics::MaterialLogicBlock,name
 6280,Rendering,,callers
-6281,unknown,,
+6281,Rendering,Graphics::MaterialLogicBlock,name
 6282,Rendering,Graphics::MaterialLogicBlock,vtable
 6283,Rendering,,between
 6284,Rendering,Graphics::MaterialLogicBlock,builds
@@ -6279,7 +6279,7 @@ id,subsystem,class,how
 6288,Rendering,,between
 6289,Rendering,Graphics::MaterialObjectBuilderXML2,vtable
 6290,ThirdParty:STL,std::vector<std::wstring>,name
-6291,unknown,,
+6291,ThirdParty:STL,std::vector<std::wstring>,name
 6292,Rendering,Graphics::MaterialObjectBuilderXML2,vtable
 6293,Rendering,Graphics::MaterialObjectBuilderXML2,builds
 6294,Rendering,Graphics::MaterialObjectBuilderXML2,vtable
@@ -6545,31 +6545,31 @@ id,subsystem,class,how
 6554,GUI,,callers
 6555,GUI,GUI::ScaleformManager,name
 6556,GUI,GUI::ScaleformManager,name
-6557,unknown,,
-6558,unknown,,
-6559,unknown,,
-6560,unknown,,
-6561,unknown,,
-6562,unknown,,
-6563,unknown,,
-6564,unknown,,
-6565,unknown,,
-6566,unknown,,
-6567,unknown,,
-6568,unknown,,
+6557,unknown,GPtr<GFxMovieView>,
+6558,unknown,GPtr<GFxMovieDef>,
+6559,ThirdParty:STL,"std::pair<std::wstring const,GPtr<GFxMovieDef>>",name
+6560,ThirdParty:STL,"std::pair<std::wstring const,GPtr<GFxMovieView>>",name
+6561,ThirdParty:STL,"std::pair<std::wstring const,GPtr<GFxMovieDef>>",name
+6562,ThirdParty:STL,"std::pair<std::wstring const,GPtr<GFxMovieView>>",name
+6563,ThirdParty:STL,"std::pair<std::wstring const,GPtr<GFxMovieDef>>",name
+6564,ThirdParty:STL,"std::pair<std::wstring const,GPtr<GFxMovieView>>",name
+6565,GUI,GUI::GUIManager,name
+6566,ThirdParty:STL,std::_Tree<?>,name
+6567,ThirdParty:STL,std::_Tree_const_iterator<?>,name
+6568,ThirdParty:STL,std,name
 6569,ThirdParty:Scaleform,GFxState,builds
 6570,ThirdParty:Scaleform,GFxState,builds
 6571,ThirdParty:Scaleform,GFxJpegSupport,builds
 6572,ThirdParty:Scaleform,GFxStateBag,name
-6573,unknown,,
-6574,unknown,,
+6573,GUI,GUI::ScaleformMemoryAllocator,name
+6574,GUI,GUI::ScaleformMemoryAllocator,name
 6575,GUI,GUI::ScaleformMemoryAllocator,name
 6576,GUI,GUI::ScaleformDebugMemoryAllocator,name
 6577,GUI,GUI::ScaleformDebugMemoryAllocator,name
 6578,GUI,GUI::ScaleformDebugMemoryAllocator,name
 6579,GUI,GUI::ScaleformDebugMemoryAllocator,name
 6580,GUI,GuiMovie,name
-6581,unknown,GFxLog,
+6581,ThirdParty:Scaleform,GFxLog,name
 6582,ThirdParty:Scaleform,GFxLog,builds
 6583,ThirdParty:Scaleform,GFxLogBase<GFxLog>,vtable
 6584,GUI,EclipseGFxFSCommandHandler,name
@@ -6605,7 +6605,7 @@ id,subsystem,class,how
 6614,GUI,GUI::ScaleformManager,name
 6615,ThirdParty:STL,"std::map<ECString,GFxMovieDef*>",name
 6616,ThirdParty:STL,"std::map<ECString,GPtr<GFxMovieView>>",name
-6617,unknown,,
+6617,ThirdParty:STL,"std::_Tree<std::map<std::wstring,?>>",name
 6618,GUI,GuiMovieSet,name
 6619,GUI,,callers
 6620,GUI,,callers
@@ -6630,7 +6630,7 @@ id,subsystem,class,how
 6639,GUI,GUI::ScaleformManager,name
 6640,GUI,GUI::ScaleformManager,name
 6641,GUI,GUI::ScaleformManager,name
-6642,unknown,,
+6642,ThirdParty:STL,"std::map<std::wstring,?>",name
 6643,ThirdParty:STL,,string
 6644,ThirdParty:STL,,string
 6645,GUI,GUI::ScaleformManager,name
@@ -6694,12 +6694,12 @@ id,subsystem,class,how
 6703,ThirdParty:STL,std,owner
 6704,GUI,GUI::ScaleformManager,name
 6705,GUI,EclipseGFxImageLoader,name
-6706,unknown,,
+6706,ThirdParty:STL,std,name
 6707,ThirdParty:STL,,string
 6708,ThirdParty:STL,,owner
 6709,ThirdParty:STL,,owner
-6710,unknown,,
-6711,unknown,,
+6710,ThirdParty:STL,std::vector<TextureHandle>,name
+6711,ThirdParty:STL,std::vector<TextureHandle>,name
 6712,GUI,GUI::ScaleformManager,name
 6713,GUI,GUI::ScaleformManager,name
 6714,GUI,GUI::ScaleformManager,name
@@ -6742,15 +6742,15 @@ id,subsystem,class,how
 6751,ThirdParty:STL,std,name
 6752,ThirdParty:STL,std,name
 6753,GUI,GuiMovie,name
-6754,unknown,,
-6755,unknown,,
-6756,unknown,,
-6757,unknown,,
-6758,unknown,,
+6754,unknown,"stdext::hash_map<std::wstring,?>",
+6755,ThirdParty:STL,std::list<?>,name
+6756,ThirdParty:STL,std::list<?>,owner
+6757,ThirdParty:STL,std,name
+6758,ThirdParty:STL,std,name
 6759,GUI,,callers
-6760,unknown,,
-6761,unknown,,
-6762,unknown,,
+6760,GUI,GuiMovie,name
+6761,ThirdParty:STL,std::vector<GFxValue>,name
+6762,ThirdParty:STL,std,name
 6763,GUI,,callers
 6764,ThirdParty:STL,,string
 6765,ThirdParty:STL,,owner
@@ -6763,7 +6763,7 @@ id,subsystem,class,how
 6772,ThirdParty:STL,,between
 6773,ThirdParty:STL,std::vector<GFxValue>,name
 6774,ThirdParty:STL,std::vector<GFxValue>,name
-6775,unknown,,
+6775,ThirdParty:STL,std::vector<?>,name
 6776,GUI,GuiMovie,name
 6777,GUI,GuiMovie,name
 6778,GUI,stdext::_Hash<...>,between
@@ -6861,11 +6861,11 @@ id,subsystem,class,how
 6870,ThirdParty:STL,std::vector<std::wstring>,name
 6871,GUI,GuiFSCommand,name
 6872,ThirdParty:STL,,string
-6873,unknown,,
-6874,unknown,,
-6875,unknown,,
-6876,unknown,,
-6877,unknown,,
+6873,ThirdParty:STL,"std::map<unsigned int,?>",name
+6874,ThirdParty:STL,"std::map<std::wstring,?>",name
+6875,ThirdParty:STL,std,name
+6876,ThirdParty:STL,std,owner
+6877,ThirdParty:STL,,pointer
 6878,GUI,GuiCommands,name
 6879,GUI,GuiCommands,name
 6880,GUI,GuiFSCommand,name
@@ -38148,7 +38148,7 @@ id,subsystem,class,how
 38255,GUI,GuiMovie,owner
 38256,GUI,GuiMovie,owner
 38257,GUI,GuiMovie,owner
-38258,Compiler:EHFunclets,,range
+38258,ThirdParty:STL,std::list<?>,owner
 38259,ThirdParty:STL,,owner
 38260,ThirdParty:STL,,owner
 38261,ThirdParty:STL,,owner
@@ -38356,10 +38356,10 @@ id,subsystem,class,how
 38463,GUI,GuiFSCommand,owner
 38464,GUI,GuiFSCommand,owner
 38465,GUI,GuiFSCommand,owner
-38466,Compiler:EHFunclets,,range
-38467,Compiler:EHFunclets,,range
-38468,Compiler:EHFunclets,,range
-38469,Compiler:EHFunclets,,range
+38466,ThirdParty:STL,std,owner
+38467,ThirdParty:STL,std,owner
+38468,ThirdParty:STL,std,owner
+38469,ThirdParty:STL,std,owner
 38470,GUI,GuiFSCommand,owner
 38471,GUI,GuiFSCommand,owner
 38472,GUI,GuiFSCommand,owner
@@ -55073,8 +55073,8 @@ id,subsystem,class,how
 55180,Animation,FacialAnimation,owner
 55181,Compiler:EHFunclets,,range
 55182,Compiler:EHFunclets,,range
-55183,Rendering,,owner
-55184,Rendering,,owner
+55183,Rendering,Graphics::MaterialParameterNames,owner
+55184,Rendering,Graphics::MaterialParameterNames,owner
 55185,Animation,FacialAnimation::FacialAnimationManager,owner
 55186,Animation,FacialAnimation::FacialAnimationManager,owner
 55187,Animation,FacialAnimation::FacialAnimationManager,owner
