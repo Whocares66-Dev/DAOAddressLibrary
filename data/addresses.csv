@@ -19996,31 +19996,31 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 19995,function,PartyTactics::HandleMessage_ValidateActionMessage,0x007b0170,0x0068de90,0x007b0170
 19996,function,Messages::RegisterMessageFactory<DirtyPresetMessage>,0x007b0390,0x0068e120,0x007b0390
 19997,function,Messages::RegisterMessageFactory<LoadPresetMessage>,0x007b0450,0x0068e1e0,0x007b0450
-19998,function,,0x007b0510,0x0068e2a0,0x007b0510
-19999,function,,0x007b05d0,0x0068e360,0x007b05d0
-20000,function,,0x007b0690,0x0068e420,0x007b0690
-20001,function,,0x007b0750,0x0068e4e0,0x007b0750
+19998,function,Messages::RegisterText<SavePresetMessage>,0x007b0510,0x0068e2a0,0x007b0510
+19999,function,Messages::RegisterText<SetBehaviourMessage>,0x007b05d0,0x0068e360,0x007b05d0
+20000,function,Messages::RegisterText<RefreshTacticsDataMessage>,0x007b0690,0x0068e420,0x007b0690
+20001,function,Messages::RegisterText<ValidateActionMessage>,0x007b0750,0x0068e4e0,0x007b0750
 20002,function,PartyTactics::RegisterHandler_ValidateActionMessage,0x007b0810,0x0068e5a0,0x007b0810
 20003,function,,0x007b0890,0x008208f0,0x007b0890
-20004,function,,0x007b08d0,0x0068e620,0x007b08d0
+20004,function,PartyTactics::~PartyTactics,0x007b08d0,0x0068e620,0x007b08d0
 20005,function,,0x007b09c0,0x0068e710,0x007b09c0
-20006,function,,0x007b09d0,0x0068e720,0x007b09d0
-20007,function,,0x007b09e0,0x0068e730,0x007b09e0
-20008,function,,0x007b09f0,0x0068e740,0x007b09f0
+20006,function,PartyTactics::`scalar deleting destructor',0x007b09d0,0x0068e720,0x007b09d0
+20007,function,PartyTactics::`scalar deleting destructor',0x007b09e0,0x0068e730,0x007b09e0
+20008,function,PartyTactics::`scalar deleting destructor',0x007b09f0,0x0068e740,0x007b09f0
 20009,function,"SmartData::Attribute<ECBase::ECDynArray<PartyTacticEntry*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",0x007b0a00,0x0068e750,0x007b0a00
 20010,function,PartyTactics::ListTargets,0x007b0a80,0x0068e7d0,0x007b0a80
-20011,function,,0x007b0c80,0x0068e9d0,0x007b0c80
-20012,function,,0x007b0cc0,0x0068ea40,0x007b0cc0
-20013,function,,0x007b0ce0,0x008209d0,0x007b0ce0
-20014,function,,0x007b0d20,0x0068ea60,0x007b0d20
-20015,function,,0x007b0d70,0x0068eab0,0x007b0d70
-20016,function,,0x007b0ec0,0x0068ec00,0x007b0ec0
-20017,function,,0x007b0ee0,0x0068ea10,0x007b0ee0
-20018,function,,0x007b0f10,0x0068ec20,0x007b0f10
-20019,function,,0x007b0f70,0x0068ec80,0x007b0f70
-20020,function,,0x007b1080,0x0068ed90,0x007b1080
-20021,function,,0x007b10f0,0x0068ee00,0x007b10f0
-20022,function,,0x007b1120,0x0068ee30,0x007b1120
+20011,function,std::vector<std::vector<?>>::clear,0x007b0c80,0x0068e9d0,0x007b0c80
+20012,function,PartyTactics::`scalar deleting destructor',0x007b0cc0,0x0068ea40,0x007b0cc0
+20013,function,"std::_Uninit_fill_n<ECBase::ECDynArray<?>*,unsigned int,ECBase::ECDynArray<?>>",0x007b0ce0,0x008209d0,0x007b0ce0
+20014,function,PartyTactics::RegisterMessageHandlers,0x007b0d20,0x0068ea60,0x007b0d20
+20015,function,std::vector<std::vector<?>>::operator=,0x007b0d70,0x0068eab0,0x007b0d70
+20016,function,PartyTactics::RegisterClass,0x007b0ec0,0x0068ec00,0x007b0ec0
+20017,function,"std::_Uninit_copy<ECBase::ECDynArray<?>*,ECBase::ECDynArray<?>*>",0x007b0ee0,0x0068ea10,0x007b0ee0
+20018,function,std::vector<std::vector<?>>::vector_copy,0x007b0f10,0x0068ec20,0x007b0f10
+20019,function,PartyTactics::PartyTactics_copy,0x007b0f70,0x0068ec80,0x007b0f70
+20020,function,PartyTactics::Clone,0x007b1080,0x0068ed90,0x007b1080
+20021,function,std::vector<std::vector<?>>::resize,0x007b10f0,0x0068ee00,0x007b10f0
+20022,function,PartyTactics::PartyTactics,0x007b1120,0x0068ee30,0x007b1120
 20023,function,GUI::GUIPaperdoll::Command::~Command,0x007b1650,0x0068f360,0x007b1650
 20024,function,GUI::GUIPaperdoll::Command::`scalar deleting destructor',0x007b1660,0x006eaee0,0x007b1660
 20025,function,GUI::GUIPaperdoll::CommandCreateCreature::Finish,0x007b1680,0x0068f370,0x007b1680
@@ -20388,7 +20388,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20387,function,,0x007c4a60,0x006ab720,0x007c4a60
 20388,function,,0x007c4a80,0x006ab740,0x007c4a80
 20389,function,,0x007c4ae0,0x006ab7a0,0x007c4ae0
-20390,function,,0x007c4b80,0x006ab840,0x007c4b80
+20390,function,MovementPath::IsGoalFarFromCameraFocus,0x007c4b80,0x006ab840,0x007c4b80
 20391,function,,0x007c4bd0,0x006ab890,0x007c4bd0
 20392,function,,0x007c4c30,0x006ab8f0,0x007c4c30
 20393,function,,0x007c4c50,0x006ab910,0x007c4c50
@@ -32841,7 +32841,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 32840,function,,0x00a3bf20,0x0083c840,0x00a3bf20
 32841,function,,0x00a3bf90,0x0083c8b0,0x00a3bf90
 32842,function,,0x00a3c030,0x0083ca10,0x00a3c030
-32843,function,,0x00a3c070,0x00709910,0x00a3c070
+32843,function,std::_Pow_int<float>,0x00a3c070,0x00709910,0x00a3c070
 32844,function,,0x00a3c0c0,0x0083ca50,0x00a3c0c0
 32845,function,,0x00a3c110,0x0083caa0,0x00a3c110
 32846,function,,0x00a3c1e0,0x0083cb70,0x00a3c1e0
@@ -32983,28 +32983,28 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 32982,function,,0x00a45440,0x00848a60,0x00a45440
 32983,function,,0x00a454d0,0x007ced50,0x00a454d0
 32984,function,,0x00a45540,0x007cedc0,0x00a45540
-32985,function,,0x00a45570,0x007cedf0,0x00a45570
-32986,function,,0x00a455a0,0x007ce5b0,0x00a455a0
-32987,function,,0x00a455c0,0x007cee20,0x00a455c0
-32988,function,,0x00a45620,0x007cee80,0x00a45620
-32989,function,,0x00a45630,0x007cf550,0x00a45630
-32990,function,,0x00a45650,0x007cee90,0x00a45650
+32985,function,Pathfinding::MapSearchEnvironment::IsDoorCell,0x00a45570,0x007cedf0,0x00a45570
+32986,function,Pathfinding::Grid::CanStepOnto,0x00a455a0,0x007ce5b0,0x00a455a0
+32987,function,Pathfinding::Grid::CanStep,0x00a455c0,0x007cee20,0x00a455c0
+32988,function,Pathfinding::SearchEnvironment::SearchEnvironment,0x00a45620,0x007cee80,0x00a45620
+32989,function,Pathfinding::SearchEnvironment::`scalar deleting destructor',0x00a45630,0x007cf550,0x00a45630
+32990,function,Pathfinding::MapSuperAbstractionSearchEnvironment::MapSuperAbstractionSearchEnvironment,0x00a45650,0x007cee90,0x00a45650
 32991,function,Pathfinding::MapSuperAbstractionSearchEnvironment::Cost,0x00a45670,0x007ceeb0,0x00a45670
 32992,function,Pathfinding::MapAbstractionSearchEnvironment::Cost,0x00a457e0,0x007cf020,0x00a457e0
-32993,function,,0x00a45a70,0x007cf2b0,0x00a45a70
-32994,function,,0x00a45aa0,0x007cf2e0,0x00a45aa0
-32995,function,,0x00a45cd0,0x007cf510,0x00a45cd0
-32996,function,,0x00a45d10,0x007cf570,0x00a45d10
-32997,function,,0x00a45e40,0x007cf6a0,0x00a45e40
-32998,function,,0x00a45ea0,0x007cf700,0x00a45ea0
-32999,function,,0x00a45ed0,0x007cf730,0x00a45ed0
+32993,function,Pathfinding::MapSearchEnvironment::MapSearchEnvironment,0x00a45a70,0x007cf2b0,0x00a45a70
+32994,function,Pathfinding::MapSearchEnvironment::Cost,0x00a45aa0,0x007cf2e0,0x00a45aa0
+32995,function,Pathfinding::MapAbstraction::HasSecondLevel,0x00a45cd0,0x007cf510,0x00a45cd0
+32996,function,Pathfinding::MapSuperAbstractionSearchEnvironment::GetSuccessors,0x00a45d10,0x007cf570,0x00a45d10
+32997,function,Pathfinding::MapAbstractionSearchEnvironment::MapAbstractionSearchEnvironment,0x00a45e40,0x007cf6a0,0x00a45e40
+32998,function,Pathfinding::MapAbstractionSearchEnvironment::~MapAbstractionSearchEnvironment,0x00a45ea0,0x007cf700,0x00a45ea0
+32999,function,Pathfinding::MapAbstractionSearchEnvironment::`scalar deleting destructor',0x00a45ed0,0x007cf730,0x00a45ed0
 33000,function,Pathfinding::MapAbstractionSearchEnvironment::GetSuccessors,0x00a45f20,0x007cf780,0x00a45f20
 33001,function,Pathfinding::MapSearchEnvironment::GetSuccessors,0x00a461a0,0x007cfa00,0x00a461a0
-33002,function,,0x00a464d0,0x007cfd30,0x00a464d0
-33003,function,,0x00a46590,0x007cfdf0,0x00a46590
-33004,function,,0x00a46630,0x007cfe90,0x00a46630
-33005,function,,0x00a46670,0x007cfed0,0x00a46670
-33006,function,,0x00a46680,0x007cfee0,0x00a46680
+33002,function,Pathfinding::MapAbstractionSearchEnvironment::SetRouteMask,0x00a464d0,0x007cfd30,0x00a464d0
+33003,function,Pathfinding::World::World,0x00a46590,0x007cfdf0,0x00a46590
+33004,function,Pathfinding::World::AddAreaGrid,0x00a46630,0x007cfe90,0x00a46630
+33005,function,Pathfinding::World::RemoveAreaGrid,0x00a46670,0x007cfed0,0x00a46670
+33006,function,Pathfinding::World::~World,0x00a46680,0x007cfee0,0x00a46680
 33007,function,,0x00a46710,0x007cff70,0x00a46710
 33008,function,,0x00a46760,0x007cffc0,0x00a46760
 33009,function,,0x00a467a0,0x007d0000,0x00a467a0
