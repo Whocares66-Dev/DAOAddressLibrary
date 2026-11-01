@@ -7227,3 +7227,41 @@ address,what,value,why
 0x00689C10,signature,"void __thiscall f(void *this, void *other)",ret 4
 0x00689C90,signature,void __thiscall f(void *this),ecx only
 0x00689CD0,signature,void __thiscall f(void *this),ecx only
+0x006AA040,clear,PortraitProperties::vfunction2,"an adjustor thunk to the scalar deleting destructor (sub ecx,0x1C; jmp 0x006AD340), not a slot-2 function"
+0x006AD340,clear,PortraitProperties::vfunction5,the scalar deleting destructor (ret 4; dtor then operator delete)
+0x006AA050,signature,void __thiscall PortraitProperties::~PortraitProperties(void* this),ecx read at 0x006AA072; Ghidra shows __fastcall(SmartObject*)
+0x006ACBC0,signature,bool __thiscall CCCreature::CanLevelUp(void* this),ecx read at 0x006ACBF2; al returned at 0x006ACE86/0x006ACE8A; Ghidra shows void __fastcall(int)
+0x006ACF60,signature,"bool __thiscall CCCreature::MeetsItemPropertyCondition(void* this, void* item, uint propertyIndex)","ret 8; setz bl / mov al,bl at 0x006AD0F1-0x006AD101; Ghidra shows void return"
+0x006AD360,convention,__stdcall,"ret 0xC, ecx not read; Ghidra shows a plain cdecl-like prototype"
+0x006AD360,signature,"void* __stdcall std::list<std::pair<std::wstring,Resources>>::_Buynode(void* next, void* prev, void* value)",ret 0xC; returns the node in eax at 0x006AD3C6
+0x006AD400,signature,"void* __thiscall ECBase::ECList<?>::GetPrev(void* this, void* cursor)",ret 4; returns node+8 or this+0xC
+0x006D1850,signature,"bool __thiscall SaveLoadProxy::ImportHeroFromSave(void* this, uint heroIndex, uint saveIndex, bool appearanceOnly, bool refreshSaves)",ret 0x10; args at [esp+0x14..0x20] after four pushes; Ghidra drops saveIndex's role (reuses param_2) and names the 4th param_4
+0x006EBC70,convention,__thiscall,"ecx read at 0x006EBC74 (this = Journal), ret 4; Ghidra shows no this"
+0x006EBC70,signature,"void* __thiscall Journal::GetPlotGroup(void* this, void* quest)","ret 4; returns an ECString pointer (entry+0x148 via 0x00403C70, or 0x00C2BE00)"
+0x006EE300,convention,__thiscall,"ecx read at 0x006EE303 (this = Journal), ret 4; Ghidra shows no this"
+0x006EE300,signature,"int __thiscall Journal::GetCodexGroup(void* this, void* entry)",ret 4; int from Attribute::Get(cat+0xB8) or 0
+0x006EBA40,convention,__thiscall,"ret 8 with this = Journal (ecx set by callers 0x006EBC8D, 0x006EBCC9); args (key, list); Ghidra shows two params and no this"
+0x006EC7D0,convention,__thiscall,"ecx read at 0x006EC7D3 (this = codex category), ret 4; returns the entry or 0"
+0x00700150,signature,int __thiscall WorldMap::GetGuiStatus(void* this),"add ecx,0x98; jmp Attribute::Get"
+0x007070F0,signature,void __thiscall SharedCharacterStage::~SharedCharacterStage(void* this),ecx read at 0x00707114; plain ret
+0x00707240,signature,void __thiscall SharedCharacterStage::GatherWaypoints(void* this),ecx read at 0x00707265; plain ret
+0x007072E0,signature,"void* __thiscall SharedCharacterStage::SharedCharacterStage(void* this, void* name)",ret 4; returns this at 0x00707423
+0x00707440,signature,"void* __thiscall SharedCharacterStage::`scalar deleting destructor'(void* this, uint flags)",ret 4
+0x00707460,signature,void __thiscall GUI::GUIAchievementUnlocked::Close(void* this),vftable slot 6; plain ret
+0x00707480,signature,bool __thiscall GUI::GUIAchievementUnlocked::IsIconLoaded(void* this),"add ecx,0x148; State()==2 in al"
+0x007075E0,signature,"void* __thiscall GUI::GUIAchievementUnlocked::GUIAchievementUnlocked(void* this, void* title, void* text, void* icon, float displayTime)","ret 0x10; caller pushes ""Title"",""Text"",""Icon"",5.0 at 0x00615FE7-0x0061605D; Ghidra's decompile shows a garbled body"
+0x007079F0,clear,GUI::GUIAchievementUnlocked::vfunction3,adjustor thunk (this-8) to the scalar deleting destructor
+0x00707A00,clear,GUI::GUIAchievementUnlocked::vfunction2,adjustor thunk (this-0x1C) to the scalar deleting destructor
+0x00707A10,clear,GUI::GUIAchievementUnlocked::vfunction1,adjustor thunk (this-0x20) to the scalar deleting destructor
+0x00707A20,clear,GUI::GUIAchievementUnlocked::vfunction1,"receiver slot 0, GetClassInfo (returns 0x00C06678)"
+0x00707A50,clear,GUI::GUIAchievementUnlocked::vfunction3,"receiver slot 2, RegisterClass"
+0x00707A90,signature,"void* __thiscall GUI::GUIAchievementUnlocked::GUIAchievementUnlocked(void* this, void* other)","copy constructor, ret 4"
+0x00707C20,signature,void* __thiscall GUI::GUIAchievementUnlocked::Clone(void* this),plain ret; new 0x150 + copy ctor
+0x00707C90,signature,"void* __thiscall GUI::GUIAchievementUnlocked::`scalar deleting destructor'(void* this, uint flags)",ret 4
+0x00707CB0,signature,void __thiscall GUI::GUIJournal::Close(void* this),vftable 0x00B15B38 slot 6; plain ret
+0x00707EA0,signature,"void __thiscall GUI::GUIJournal::GoToJournalPRCTab(void* this, void* contentId)",ret 4 by the tail-jumped setter
+0x00708280,clear,GUI::GUIJournal::vfunction6,"slot 5 of vftable 0x00B15B38 (data 0x00B15B4C), the scene's OnShow override: fills the *Group values with Journal::GetPlotGroup/GetCodexGroup then tail-calls GUIScene::OnShow 0x00A55820; proposed GUI::GUIJournal::OnShow (outside this batch, ID 16113)"
+0x006AD340,signature,"void* __thiscall PortraitProperties::`scalar deleting destructor'(void* this, uint flags)",ret 4 at 0x006AD35B; returns this (reader B)
+0x00707B80,signature,void __thiscall GUI::GUIAchievementUnlocked::~GUIAchievementUnlocked(void* this),plain ret at 0x00707C1A (reader B)
+0x00707F10,signature,void __thiscall GUI::GUIJournal::~GUIJournal(void* this),plain ret at 0x00708045 (reader B)
+0x0069DF10,signature,"int __thiscall ApplySavedHero(void* this, void* saveGame, bool appearanceOnly)","ret 8 at 0x0069E115; returns [esp+0x14] (1, or 0 at 0x0069DF59/0x0069E0FA); the byte gates CCParty::LoadFromSave (0x0069E029) and event 0x35 (0x0069E06E); name proposed, the ID 14298 is unnamed"
