@@ -18,6 +18,8 @@ So the table is not regenerated from scratch. `tools\addrlib.py add <key>` fills
 
 The same holds the other way, for every repository: "each agent is responsible for one repo. don't directly manipulate other repos, otherwise there'll be a big mess", and "can read other repos but don't write to them, except for new /dev notes that they can read". So the keeper of this one reads DAOLib and the plugins freely and changes nothing in them: DAOLib is lib-agent's, branches, tools and docs. What may be written in another's repository is a new file under its `dev\`, a note for its owner, who decides whether it stays; and another session may leave one under `dev\` here.
 
+**This session is the one writer of DAOLib's Ghidra database** (`ghidra-dao`), the user's choice of 2026-10-31: the table and `data/ghidra_fixes.csv` are its source, `tools\ghidra_sync.py` writes them in after a naming commit, and every other session reads it only, sending what Ghidra gets wrong here with its names.
+
 The runtime file's format (`src/daoaddr/Library.cpp`'s head, `tools/addrlib.py`'s `pack_build`) is versioned by its `format` word. Readers refuse a format they do not know, so a change to it is a new number and an old reader failing safe, not a silent misread.
 
 ## The builds
