@@ -7770,3 +7770,74 @@ address,what,value,why
 0x006CE7A0,signature,"void __thiscall f(void *this, int *key)","0x006CE7A0: 0x006CE7A0-0x006CE7B7 (ret 4), 0x006CE260"
 0x006CE860,signature,"void __thiscall f(void *this, void *value, unsigned int index)",0x006CE860: 0x006CE860-0x006CE8BF (ret 8)
 0x006BF9F0,clear,std::ios_base::ios_base_Constructor_or_Destructor,"0x006BF9F0 is ECString::AssignInt (basic_stringstream ctor, 0x0049DBE0, ECString::Assign); the label was Ghidra's guess"
+0x006CF410,signature,"void * __thiscall f(void *this, unsigned int arg)","0x006CF410-0x006CF48E: _Buyheadnode 0x00511590, [esi+4] head, [head+0x11]=1, new(4) at +0xC; callers 0x00639CA0, 0x0063A"
+0x006CF4A0,signature,void __thiscall f(void *this),"0x006CF4A0-0x006CF4DF; callers ~CCParty 0x0063BD0E, ~CCCreature 0x006BB50A, 0x006D1109"
+0x006CF4E0,signature,void __thiscall f(void *this),"0x006CF4E0-0x006CF54F: four slot-0x54 calls with -1, 0x0068F840 on +0x134, tail jump to slot 0x24; callers ~SaveLoadProx"
+0x006CF550,signature,"void __thiscall f(void *this, int number, int kind, void *fileName, unsigned int timeLow, unsigned int timeHigh, unsigned int meta0, unsigned int meta1, unsigned int meta2, int meta3, void *screenshotPath)","0x006CF550-0x006CFB40: operator_new(0x180), SaveFileInfo ctor, switch on kind, FormatDateAndTime into +0x10C, insertion "
+0x006D0A50,signature,"void __thiscall f(void *this, int kind, int *outSlot)","0x006D0A50-0x006D114C: switch 0x1F5/5/2/2, SaveGame::SlotPrefix, CharacterSavesFolder, 0x20464647/0x302E3456 test, call "
+0x006D1160,signature,void __thiscall f(void *this),"0x006D1160-0x006D1427: calls 0x006CF4E0, 0x006D0A50 x4, SaveFileInfo(-1,...) at 0x006D1200-0x006D1290, CCParty::GetHero,"
+0x006DBFE0,signature,"void * __thiscall f(void *this, unsigned int index)",0x006DBFE0-0x006DC022: (+0x88C - +0x888)/0x28 bound; sole caller 0x006DC7D9 in 0x006DC730 on g_ClientOptions
+0x006DC660,signature,"void __thiscall f(void *this, void *name)","0x006DC660-0x006DC679: length [name+0x14] != 0 then push_back at this+0x88; callers 0x006DC6BA (ForScript_PlayMovie), 0x"
+0x006DC730,signature,unsigned char __thiscall f(void *this),"0x006DC730-0x006DC860: ForScript_PlayMovie(L""""), +0x98; sole caller 0x005DD5DD in 0x005DD5A0"
+0x006EACA0,signature,void * __cdecl f(void *node),"0x006EACA0-0x006EACBB; callers 0x00407071, 0x006F37EE; plain ret"
+0x006EACC0,signature,void * __cdecl f(void *node),"0x006EACC0-0x006EACDA; callers 0x0040704D, 0x006F37CA; plain ret"
+0x006EACE0,signature,"void __thiscall f(void *this, unsigned int offset, unsigned short *value)","0x006EACE0-0x006EACF2: mov eax,[ecx+8]; mov dx,[value]; mov [offset+eax],dx; ret 8; callers 0x006EB2B1 (u16 setter 0x006"
+0x006EAF40,signature,"void __thiscall f(void *this, void *tlkString)","0x006EAF40-0x006EAF87: stores +0x1A4, +0x1A8, wstring at +0x1AC, bytes +0x1C8..+0x1CA; sole caller 0x0075FC40 in SetPlot"
+0x006EAF90,signature,"void __thiscall f(void *this, void *node)","0x006EAF90-0x006EAFBF; callers 0x00407112, 0x0040715B, 0x006F3891, 0x006F38E0; ret 4"
+0x006EB430,signature,void __stdcall f(void *element),"0x006EB430-0x006EB441: mov ecx,[esp+4]; edx=[[ecx]+4]; [esp+4]=0; jmp edx; callers 0x006EB809, 0x006ED46B funclets"
+0x006EB4C0,signature,"void * __thiscall f(void *this, void *outString)","0x006EB4C0-0x006EB4FC: Attribute::Get(+0xD8), string copy 0x004C2510, else empty 0x00ADFF52; sole caller 0x006F2163; ret"
+0x006EB520,signature,"unsigned int __thiscall f(void *this, unsigned int index)","0x006EB520-0x006EB558: ECDynArray at this+0x150, Attribute::Get 0x0053CC40 on element+4; callers 0x007C9EC3; ret 4; dev/"
+0x006EB570,signature,"unsigned int __thiscall f(void *this, unsigned int index)","0x006EB570-0x006EB5A8: ECDynArray at this+0x16C, Attribute::Get 0x0053CC40 on element+0x58; callers 0x007C9F10 (then 0x0"
+0x006EB6C0,signature,void * __cdecl f(void),"0x006EB6C0-0x006EB6F6: operator_new(0x3C); callers 0x004112AF, 0x006F6241, 0x006F7010 (copy ctor 15783)"
+0x006EB700,signature,"unsigned short __thiscall f(void *this, unsigned int offset, unsigned int unused)","0x006EB700-0x006EB71C: lea edx,[eax+2]; cmp edx,[ecx+0xC]; call 0x006A4D50; xor ax,ax; ret 8; sole caller 0x006AD56D (th"
+0x006EB720,signature,"void __cdecl f(void *outIterator, void *first, void *last, void *destContainer, void *destPtr, void *value)","0x006EB720-0x006EB797: steps 0x1C, wstring ==, wstring::operator=; sole caller 0x006EE4D0; plain ret, six stack argument"
+0x006EB7A0,signature,"void * __cdecl f(void *first, void *last, void *dest)","0x006EB7A0-0x006EB841: loop step 0x34 with the Attribute copy constructor; callers 0x006EFFEE, 0x006F088F, 0x006F08C0; p"
+0x006ED400,signature,"void __cdecl f(void *dest, unsigned int count, void *value)",0x006ED400-0x006ED4A1; sole caller 0x006EF322 (15594); plain ret
+0x006ED520,signature,"void * __cdecl f(void *first, void *last, void *dest)",0x006ED520-0x006ED590; caller 15596 at 0x006EF3EE; plain ret
+0x006ED5A0,signature,"void * __cdecl f(void *first, void *last, void *destEnd)",0x006ED5A0-0x006ED610; caller 15558 at 0x006EE82E; plain ret
+0x006ED770,signature,"void __thiscall f(void *this, void *jrnlStructRef)","0x006ED770-0x006EE2FB: GetStructListField/Element with 0x4079/0x407A/0x408A/0x4081/0x4084/0x408D, field ids 0x407B..0x40"
+0x006EE3E0,signature,"void * __thiscall f(void *this, void *key)","0x006EE3E0-0x006EE495: head [this+4], root [head+4], compares wchars then length; sole caller 0x006EF67D (find 15600); r"
+0x006EE4A0,signature,"void __stdcall f(void *first, void *last)","0x006EE4A0-0x006EE4C4; callers 0x006F08FD, 0x006F0ADC, 0x006F0B87; ret 8"
+0x006EE4D0,signature,"void * __cdecl f(void *outIterator, void *firstContainer, void *first, void *lastContainer, void *last, void *value)","0x006EE4D0-0x006EE515: stack arguments out, firstContainer, first, lastContainer, last, value; sole caller 0x006EEB4E in"
+0x006EE5D0,signature,"void __cdecl f(void *first, void *last, void *value)","0x006EE5D0-0x006EE63B; callers 0x006F09CD, 0x006F0A2B; plain ret"
+0x006EE640,signature,"void __cdecl f(void *first, void *last, unsigned int pred)",0x006EE640-0x006EE7E6: wstring compares at [element]+0x58; sole caller 0x006F1CA3 in 0x006F1C00
+0x006EE800,signature,"void * __cdecl f(void *first, void *last, void *destEnd)",0x006EE800-0x006EE858; sole caller 15638 at 0x006F0000; plain ret
+0x006EE860,signature,"void __cdecl f(void *first, void *mid, void *last, unsigned int pred)",0x006EE860-0x006EE940: wstring::compare on [element]+0x58; caller 0x006EF420 (15597)
+0x006EE950,signature,"void __cdecl f(void *first, int hole, int top, void *value, unsigned int pred)",0x006EE950-0x006EEA40; sole caller 0x006EF4D0 (15598)
+0x006EF2B0,signature,void __thiscall f(void *this),"0x006EF2B0-0x006EF2F9: loop step 0x34, operator_delete(+4); thunks 0x006F0740 and 0x006F0750 jump here"
+0x006EF300,signature,"void * __stdcall f(void *dest, unsigned int count, void *value)","0x006EF300-0x006EF334; callers 0x006F08A5, 0x006F09B0; ret 0xC"
+0x006EF3C0,signature,"void * __cdecl f(void *first, void *last, void *dest)","0x006EF3C0-0x006EF414; callers 0x006EFF8B, 0x006F0ACD, 0x006F0B58; plain ret"
+0x006EF420,signature,"void __cdecl f(void *first, void *mid, void *last, unsigned int pred)",0x006EF420-0x006EF4AB: size > 0x28 test; sole caller 0x006F0099 in 15640
+0x006EF4D0,signature,"void __cdecl f(void *first, int hole, int bottom, void *value, unsigned int pred)","0x006EF4D0-0x006EF5DD: child 2i+2 vs 2i+1 on names at +0x58; callers 0x006F066E (15641), 0x006F12A1"
+0x006EF5E0,signature,"unsigned char __thiscall f(void *this, void *plotResRef)",0x006EF5E0-0x006EF669: 0x006EBA40 and Remove on each list; sole caller 0x00664074 in ScriptCommand::REMOVEQUEST; ret 4
+0x006EF670,signature,"void * __thiscall f(void *this, void *outIterator, void *key)",0x006EF670-0x006EF6E7; sole caller 0x006F06AA in 15642; ret 8
+0x006EFF60,signature,"void * __thiscall f(void *this, void *outIterator, void *firstContainer, void *first, void *lastContainer, void *last)","0x006EFF60-0x006EFFCA: checked-iterator asserts 0x008E11F2, 0x006EF3C0; callers 0x006F112A (resize), 0x006F0030 (clear)"
+0x006EFFD0,signature,"void * __stdcall f(void *first, void *last, void *dest)","0x006EFFD0-0x006EFFF6; callers 0x006F0980, 0x006F0A0C, 0x006F0B6B, 0x006F0BB9; ret 0xC"
+0x006F0000,signature,"void * __cdecl f(void *first, void *last, void *destEnd)",0x006F0000-0x006F002A; caller 0x006F0A1A; plain ret
+0x006F0030,signature,void __thiscall f(void *this),0x006F0030-0x006F0068; caller 0x006F0A94 in 15649
+0x006F0070,signature,"void __cdecl f(void *outPair, void *first, void *last, unsigned int pred)",0x006F0070-0x006F063C: wstring compares on [element]+0x58; sole caller 0x006F1C34 in 0x006F1C00
+0x006F0640,signature,"void __cdecl f(void *first, void *last, unsigned int pred)",0x006F0640-0x006F067E; caller 0x006F1CCF in 0x006F1C00
+0x006F0680,signature,"void * __thiscall f(void *this, void *outResult, void *key)","0x006F0680-0x006F06DD: find 0x006EF670, out[2]=1 when node != end; callers 0x006F6175, 0x006F58FB; ret 8"
+0x006F06E0,signature,void __thiscall f(void *this),"0x006F06E0-0x006F0737: SEH frame; callers 0x006F60EE, jump at 0x00AA8273"
+0x006F0740,signature,void __thiscall f(void *this),"0x006F0740: jmp 0x006EF2B0; callers CodexEntry 0x006F28F3, 0x006F0C1E, 0x006F1BDC"
+0x006F0750,signature,void __thiscall f(void *this),0x006F0750: jmp 0x006F0740; caller 0x00AA7B1A
+0x006F0A60,signature,"void * __thiscall f(void *this, void *other)","0x006F0A60-0x006F0BC0: size by /0x34, 0x006EF3C0, 0x006EE4A0, 0x006EFFD0, 0x006F0030; callers 0x006F122C, 0x006F1258; re"
+0x006F1B90,signature,"void __cdecl f(void *unused, void *array)","0x006F1B90-0x006F1BF0: sole caller 0x006F3A17 in 0x006F39D0, add esp,8 at 0x006F3A21; plain ret"
+0x006F1C00,signature,"void __cdecl f(void *first, void *last, int depthLimit, unsigned int pred)","0x006F1C00-0x006F1CB2: >0x20 test; sole caller 0x006F5857 in 0x006F5750; predicate name CodexEntryNameLess is our own, I"
+0x006F1DF0,signature,"void * __thiscall f(void *this, void *groupName, void *groupData)","0x006F1DF0-0x006F1EAA: operator_new(0xE4), PlotGroup ctor 0x006EC420, IndexOf/push_back, slot 0x24; callers 0x006F73B0, "
+0x006F1EE0,signature,"void __thiscall f(void *this, void *outNames)","0x006F1EE0-0x006F1FCE: nested loops, wstring push_back; sole caller 0x0075D006 in 0x0075CE00; ret 4"
+0x006F1FE0,signature,void __thiscall f(void *this),"0x006F1FE0-0x006F20D6: 0x00634F20, 0x0069D320, GetObjectById 0x005D5BE0; callers 0x005E173D, 0x006C7061, 0x00698D4B; dev"
+0x006F20E0,signature,void __thiscall f(void *this),"0x006F20E0-0x006F2578: DeleteAllVirtual 0x0068F840, GetActivePlotName, ForScript_GetObjectByTag loop, operator_new(0xA0)"
+0x006F3A60,signature,"void * __thiscall f(void *this, unsigned short value)","0x006F3A60-0x006F3B72: sentry, use_facet<num_put>, facet slot 6; sole caller 0x006F4E90 in 15746; ret 4"
+0x006F3BD0,signature,unsigned int __cdecl f(void),"0x006F3BD0-0x006F4079: fourcc 0x54534551, 0x54534450, 0x4E494C43, 0x564E4F43, 0x554F5247, 0x4C4E524A; sole caller 0x0060"
+0x006F4080,signature,"void __thiscall f(void *this, void *plotResRef)",0x006F4080-0x006F414A: loop on +0x58 with 0x004C0DE0; dev/SAVES.md 'SetActivePlot (0x006F4080)'; ret 4
+0x006F4150,signature,"void __thiscall f(void *this, int groupId, void *entryName, void *text)","0x006F4150-0x006F41E8: groups at this+0xBC, Attribute::Get(group+0xB8), operator_new(0x100), CodexEntry ctor 0x006F2810;"
+0x006F4C30,signature,"void * __stdcall f(void *left, void *parent, void *right, void *value, unsigned char colour)","0x006F4C30-0x006F4CB6: operator_new(0x3C), pair copy at +0xC; callers 0x006F5A6F, 0x006F6EF0 (15780); ret 0x14"
+0x006F4D90,signature,"void __cdecl f(void *text, unsigned short *outValue)","0x006F4D90-0x006F4E31: stringstream ctor, 0x004C4BC0, operator>>(unsigned short&); sole caller 0x006F5C3A in 0x006F5C20;"
+0x006F4E40,signature,"void __cdecl f(unsigned short *value, void *outString)","0x006F4E40-0x006F4F2F: stringstream ctor, 0x006F3A60, str(), ECString::Assign; callers 0x006F5C78, 0x006F5CFA; plain ret"
+0x006F5750,signature,void __thiscall f(void *this),"0x006F5750-0x006F58D9: groups at this+0xBC, vtable +0x10 delete for empties, _Sort 0x006F1C00; sole caller 0x0075E2AF in"
+0x006F5BE0,signature,void __thiscall f(void *this),"0x006F5BE0-0x006F5C13; callers 0x006F705F, 0x00AA82DB"
+0x006F5DA0,signature,"void __thiscall f(void *this, void *groupName, unsigned char postEvent)","0x006F5DA0-0x006F5E8F: vector copy of +0x58, compare +0x148 with 0x004C0DE0, call 0x006F5380; sole caller 0x00663F96 in "
+0x006F6EA0,signature,"void * __thiscall f(void *this, void *node, void *parent)","0x006F6EA0-0x006F6F3A; callers 0x006F6F10, 0x006F6F1E, 0x006F6F76; ret 8"
+0x006F6F60,signature,"void __thiscall f(void *this, void *other)",0x006F6F60-0x006F6FC4; caller 0x006F6FE0 (15783); ret 4
+0x006F6FE0,signature,"void * __thiscall f(void *this, void *other)",0x006F6FE0-0x006F7059; sole caller 0x006F82DE in the journal load 0x006F7290; ret 4
