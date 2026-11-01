@@ -5731,3 +5731,44 @@ address,what,value,why
 0x00518340,clear,vfunction5,Generic slot label; it is the scalar deleting destructor (slot 4).
 0x005186A0,clear,vfunction3,"Generic slot label; it is slot 2, GetParentClassIdPtr."
 0x00680000,signature,"void* __thiscall StdextHashMapWithDefault_FindOrDefault(void* this, void* key)","ret 4; returns &node->value (node+0x24) or this+0x44, the wrapper's default slot (0x00680060), never inserts; read to settle gui-03."
+0x005217D0,clear,_AfxAygshellState,"An MFC label on the input game-state name table's singleton getter (static at 0x00C31448, guard 0x00C314A0); name it Input::InputNameTable::Get."
+0x005217D0,signature,void* __cdecl Input_InputNameTable_Get(void),"No arguments, plain ret, returns 0x00C31448."
+0x005206A0,signature,"int __thiscall Input_InputNameTable_GetId(void* this, void* name)",ret 4; reads ecx (this+0x2C map) at 0x005206A4.
+0x0051F6A0,signature,"void* __thiscall std_string_substr(void* this, void* result, unsigned int off, unsigned int count)",ret 0xC; this passed on to 0x004C1670 at 0x0051F6C3.
+0x00520700,signature,void __thiscall GuiCommands_dtor(void* this),Plain ret; this in esi.
+0x00521760,signature,void* __thiscall Input_InputNameTable_ctor(void* this),Plain ret; returns this.
+0x005229F0,signature,"void* __thiscall GUI_GUIManager_copy_ctor(void* this, void* other)",ret 4; other is never read.
+0x00522A70,signature,void* __cdecl GUI_GUIManager_StaticClassInfo(void),No arguments; returns 0x00BF6F4C.
+0x00522B90,signature,bool __cdecl GUI_GUIManager_DestroyInstance(void),"Plain ret, ecx not read; acts on the global 0x00C315EC."
+0x00522BB0,convention,__stdcall,"ret 4 and ecx is overwritten (mov ecx,[0xC31650]) before any read, though callers pass the GUIManager in ecx."
+0x00522BB0,signature,void* __stdcall GUI_GUIManager_GetScreenRect(int* rect),"Writes rect[0..3] = 0, 0, width (slot +0x40), height (slot +0x3C); widths read at 0x00511252; returns rect."
+0x00522BF0,convention,__stdcall,"ret 4, ecx not read."
+0x00522BF0,signature,void __stdcall GUI_GUIManager_PlaySound(void* eventName),"ForScript_PlaySound(eventName, 0, 0, 0)."
+0x00522C30,convention,__stdcall,"ret 8, ecx first written at 0x00522C7D (mov ecx,[eax+4]) before any read."
+0x00522C30,signature,"void __stdcall GUI_GUIManager_PlayGUISound(int row, void* column)",row < 0 plays nothing; column is an ECString trimmed and lowercased before hashing.
+0x00522DC0,convention,__stdcall,"ret 8, ecx first written at 0x00522E0D before any read."
+0x00522DC0,signature,"void __stdcall GUI_GUIManager_StopGUISound(int row, void* column)","Same resolution as PlayGUISound, ends in ForScript_StopSound."
+0x00523170,convention,__stdcall,"ret 0xC, ecx not read before mov ecx,esi at 0x005231A5."
+0x00523170,signature,"void* __stdcall GUI_ReplaceExtension(void* out, void* path, void* ext)",out = path minus its last 4 characters + ext; returns out.
+0x005234E0,signature,"bool __thiscall GUI_ScaleformAtlas_LoadAtlasFile(void* this, void* xmlName)",ret 4; returns the reader's run result in al.
+0x00523580,signature,"void* __thiscall GUI_ScaleformAtlas_Find(void* this, void* out, void* name)","ret 8; out+0 wstring texture name, out+0x1C..+0x28 four floats; returns out."
+0x00523690,signature,"void* __thiscall stdext_hash_map_ctor(void* this, int traits, int alloc)",ret 8; the two by-value arguments are not read.
+0x00523710,signature,"void* __thiscall GUI_DefaultHashMap_ctor(void* this, int index, float x, float y, float w, float h)","ret 0x14; the default entry by value, stored at +0x44..+0x54."
+0x00523880,signature,void* __cdecl FloatyLayer_Get(void),No arguments; returns the singleton at 0x00C343C0.
+0x005239D0,convention,__thiscall,"Vtable slot 23 (this first by the vtable rule); ret 8, ecx not read."
+0x005239D0,signature,"void __thiscall GUI_GUISystem_DisplayStatusMessage(void* this, void* text, int colour)",Forwards both to 0x0063C260 on FloatyLayer::Get().
+0x005239F0,signature,void __thiscall GUI_GUISystem_Shutdown(void* this),Vtable slot 7; plain ret via the tail jump to 0x00522B90.
+0x00523A40,convention,__thiscall,"Vtable slot 74; ret 4, ecx not read."
+0x00523A40,signature,"void __thiscall GUI_GUISystem_PlaySound(void* this, void* eventName)",GUIManager::PlaySound(eventName).
+0x00523A60,convention,__thiscall,"Vtable slot 73; ret 8, ecx not read."
+0x00523A60,signature,"void __thiscall GUI_GUISystem_PlayGUISound(void* this, int row, void* column)","GUIManager::PlayGUISound(row, column)."
+0x005239B0,signature,"void __thiscall GUI_GUISystem_SetDefaultCursorName(void* this, void* name)",Vtable slot 69; jmp to std::wstring::operator= on this+0x104 (ret 4 there); SetCursor 0x00523960 reads the field.
+0x0051F0D0,convention,__cdecl,"No arguments, plain ret, returns the node."
+0x00522B70,signature,bool __thiscall GUI_GUIManager_Initialize(void* this),"Plain ret, returns 1 in al."
+0x00522B50,signature,"void* __thiscall GUI_GUIManager_scalar_deleting_dtor(void* this, unsigned int flags)",ret 4.
+0x00523120,signature,"void* __thiscall GUI_ScaleformResourceFile_scalar_deleting_dtor(void* this, unsigned int flags)",ret 4.
+0x00523570,signature,void* __thiscall GUI_ScaleformAtlas_GetTextureNames(void* this),"Plain ret, returns this+0x58."
+0x005237A0,signature,void* __thiscall GUI_ScaleformAtlas_ctor(void* this),"Plain ret, returns this."
+0x00523830,signature,void __thiscall GUI_ScaleformAtlas_Clear(void* this),Plain ret.
+0x00523630,signature,void __thiscall GUI_ScaleformAtlas_dtor(void* this),Plain ret.
+0x00522C10,signature,void __thiscall GUI_GUIManager_RegisterClassInfo(void* this),"Reads ecx, plain ret."
