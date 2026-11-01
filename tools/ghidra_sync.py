@@ -36,6 +36,7 @@ What a run does, on the GOG build's addresses:
   first parameter of a __thiscall being this and the name ignored: the
   table names);
   `clear` removes a misleading label at the address (`value` the label,
+  as Ghidra holds it, with or without its namespaces,
   or empty for every non-primary one).
 
 It talks to the server over MCP's plain HTTP (initialize, then
@@ -184,7 +185,8 @@ for address, what, value in W["fixes"]:
                 symbol.setNameAndNamespace(kept[0], kept[1], kept[2])
         elif what == "clear":
             for s in list(st.getSymbols(a)):
-                if (value and s.getName() == value) or (not value and not s.isPrimary()):
+                named = value in (s.getName(), s.getName(True))
+                if (value and named) or (not value and not s.isPrimary()):
                     s.delete()
         else:
             raise Exception("unknown fix " + what)

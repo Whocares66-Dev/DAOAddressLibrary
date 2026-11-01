@@ -70,3 +70,219 @@ address,what,value,why
 0x00511940,signature,void __stdcall f(void *name),"GUI::ScaleformManager::StopMovie: ret 4 and ecx overwritten (lea ecx,[esp+4]) before any read, so __stdcall, not the reading's __cdecl; paragon-agent's #352 context-pop reading; ret and ecx checked in the exe 2026-10-31"
 0x005151C0,signature,"void __thiscall f(void *this, void *name, bool alsoUnload)","GUI::ScaleformManager::RemoveMovie: ret 8 and ecx kept as this, so __thiscall, not the reading's __cdecl; paragon-agent's #352 context-pop reading; ret and ecx checked in the exe 2026-10-31"
 0x00518CB0,signature,"void __thiscall f(void *this, bool active)","GuiMovie::SetActive: ret 4, writes [ecx+0x28]; paragon-agent's #352 context-pop reading; ret and ecx checked in the exe 2026-10-31"
+0x0084C600,convention,__cdecl,"plain ret, caller cleans; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x0084C600,signature,void * __cdecl f(unsigned int size),returns operator_new's EAX; decompiler shows void; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084C620,convention,__cdecl,plain ret; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084C620,signature,void * __cdecl f(unsigned int size),only the first argument is read; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084C630,convention,__cdecl,plain ret; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084C630,signature,"void __cdecl f(void * p, unsigned int size)",reads [esp+4] and [esp+8]; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084C720,signature,bool __thiscall f(void * this),returns AL = 1; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084C7F0,signature,void * __cdecl f(void),returns the new FxActor; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084C860,signature,void * __cdecl f(void),returns the new FxAnimSet; the CNoTrackObject type is a false library match; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084CC50,signature,"bool __thiscall f(void * this, void * blueprint)",ret 4; compares node value +0x24 with the argument; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084D060,signature,"bool __thiscall f(void * this, void * player)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084D1A0,signature,"bool __thiscall f(void * this, void * name)",ret 4; name is a std::wstring*; returns AL; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084D3A0,signature,"void * __thiscall f(void * this, void * blueprint)",ret 4; returns the player; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084D6D0,signature,"int __thiscall f(void * this, void * name)",ret 4; -1 when missing; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084D870,signature,"void * __thiscall f(void * this, void * name, bool create)",ret 8; returns the blueprint in EAX (the decompiler shows void); paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084DDB0,signature,bool __thiscall f(void * this),returns AL = 1; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084E070,signature,"bool __thiscall f(void * this, void * name, void * resource)",ret 8; returns AL; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084E270,convention,__thiscall,ECX is read as this (into EBP) before it is written; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084E270,signature,"bool __thiscall f(void * this, void * name)",ret 4; the decompiler took this as int param_1; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084E3F0,signature,"float __thiscall f(void * this, void * name)",ret 4; result on ST0; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084E6C0,signature,"bool __thiscall f(void * this, void * name)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084E750,signature,"bool __thiscall f(void * this, void * animatable, bool bind)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084E7A0,convention,__cdecl,plain ret; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084E7A0,signature,void * __cdecl f(void * actor),returns the instance or null; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084E890,signature,bool __thiscall f(void * this),instance+0x34 != 2; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084E8B0,signature,float __thiscall f(void * this),result on ST0; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084EA30,signature,"bool __thiscall f(void * this, void * name, void * node, int level)",ret 0xC; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084EB70,signature,bool __thiscall f(void * this),returns AL = 1; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00850BB0,signature,"bool __thiscall f(void * this, void * group, void * anim, double time, int level)",ret 0x14 = 4+4+8+4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x008512E0,convention,__cdecl,plain ret; the argument is read at [esp+0x60] after the prologue; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x008512E0,signature,void * __cdecl f(void * blueprint),returns the player or null; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00466F10,convention,__thiscall,"ret 4, ecx read first; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00466F10,signature,"void** __thiscall f(void* this, unsigned int index)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00544410,convention,__thiscall,"FLD [EBP] with EBP = ecx at 0x0054441A: this = controller record, rest value at +0; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00544410,signature,"void __thiscall f(void* this, float* out, void* nodes, unsigned int count, void* tracks, unsigned int trackBase)",ret 0x14; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00549580,signature,"void __thiscall f(void* this, void* clipEntry)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x006EEB10,signature,"void __thiscall f(void* this, void* value)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x007F4CE0,signature,"void* __thiscall f(void* this, void* owner, int animId)","ret 8; +0 owner, +4 anim id; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x0080E280,signature,"void __thiscall f(void* this, double now)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0080E2F0,convention,__thiscall,"plain ret, list in ecx (Ghidra has __fastcall); paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x0080E3A0,signature,"void __thiscall f(void* this, unsigned char which)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0080E3F0,signature,"double __thiscall f(void* this, void* clipName, int eventId)",ret 8; ST0 double; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0080E6E0,signature,"void __thiscall f(void* this, int* a, int* b)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0080E8C0,signature,"void* __thiscall f(void* this, unsigned char which)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0080ECF0,signature,"void __thiscall f(void* this, void* treeName, void* nodeNames, void* clipNames)",ret 0xC; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0080EFF0,signature,"void __thiscall f(void* this, void* event, unsigned char targets)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0080F160,signature,void __thiscall f(void* this),plain ret; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0080F380,signature,"void __thiscall f(void* this, int owner, void* out, unsigned char which)",ret 0xC; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0080F4A0,signature,"void* __thiscall f(void* this, void* out, void* name)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0080F650,signature,"void* __thiscall f(void* this, void* out, void* name)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0080F780,signature,"void* __thiscall f(void* this, void* out, void* name)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0080F8B0,signature,"void* __thiscall f(void* this, void* out, void* name)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0080F980,signature,"void* __thiscall f(void* this, void* out, void* name)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0080FC50,signature,"void* __thiscall f(void* this, void* out, void* xml, unsigned int size)",ret 0xC; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0080FDF0,signature,"float __thiscall f(void* this, void* name)",ret 4; ST0; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00810310,signature,"void __thiscall f(void* this, double scale)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00810320,signature,"double __thiscall f(void* this, bool game)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00810340,signature,"double __thiscall f(void* this, bool game)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00810A60,signature,"void* __thiscall f(void* this, void* key)",ret 4; returns &node+0x28; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00810B50,convention,__thiscall,"ret 8, reads ecx first; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00810B50,signature,"void __thiscall f(void* this, void* clipHandle, void* name)","arg1 at 0x00810BD4, arg2 lower-cased at 0x00810BC0; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00810C40,signature,"void __thiscall f(void* this, void* handle, void* name)",as 0x00810B50 with map +0x34; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00810D60,signature,"void __thiscall f(void* this, void* unused1, void* unused2)","ret 8, arguments never read; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00810DB0,signature,"void __thiscall f(void* this, void* object)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00810E00,signature,"void __thiscall f(void* this, void* object)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00811370,convention,__cdecl,"plain ret; arguments EBP+8, +0xC; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00811370,signature,"void __cdecl f(unsigned int packed, float* out)","EBP+8 value, EBP+0xC out; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00811500,convention,__cdecl,plain ret; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00811500,signature,"void __cdecl f(unsigned short* packed, float* out)",word loads from [EBP+8]; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00811660,convention,__cdecl,plain ret; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00811660,signature,"void __cdecl f(unsigned int low, unsigned int high, float* out)","EBP+8 low, +0xC high, +0x10 out; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00811BE0,signature,"void __thiscall f(void* this, double dt, unsigned int flags)",ret 0xC; dt FMUL at 0x00811BF4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00811C70,signature,"void __thiscall f(void* this, void* model, unsigned int flags)",ret 8; model to 0x00546E20; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00811D10,signature,"void __thiscall f(void* this, void* sink, void* nodeName, unsigned int flags, double dt)",ret 0x14; pushes at 0x00814301..0x0081431A; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00812030,signature,"void __thiscall f(void* this, unsigned int* bytes, unsigned int* other)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00812830,signature,"bool __thiscall f(void* this, void* outVector)","ret 4, al = 1; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x008128E0,signature,"bool __thiscall f(void* this, void* outVector)","ret 4, al = 1; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00813140,convention,__thiscall,ret 4 with one stack argument; Ghidra has __fastcall; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00813140,signature,"void __thiscall f(void* this, void* gff)",EDI = [EBP+8] used as the GFF reader; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00813300,signature,"void* __thiscall f(void* this, void* gff, void* resource, int mostDerived)",ret 0xC; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x008133E0,signature,"void* __thiscall f(void* this, void* gff, void* buffer, int mostDerived)",ret 0xC; buffer to +0xC; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x008134B0,signature,"void __thiscall f(void* this, unsigned int count)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00813510,signature,void* __thiscall f(void* this),"plain ret, returns the new ModelAnimationTree; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00813670,signature,"void __thiscall f(void* this, float* seconds)",ret 4; pointer argument; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x008136C0,signature,"void __thiscall f(void* this, float* seconds)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x008137E0,signature,"bool __thiscall f(void* this, void* name, float target, float blend)","ret 0xC; 0x00815190(target, blend); paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x008138D0,signature,"bool __thiscall f(void* this, void* name, float seconds)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00813950,signature,"float __thiscall f(void* this, int index)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x008139B0,signature,"bool __thiscall f(void* this, int index)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00813A00,signature,"bool __thiscall f(void* this, void* name)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00813A80,signature,"bool __thiscall f(void* this, void* name, float speed)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00813B00,signature,"bool __thiscall f(void* this, void* name, float seconds, bool fireEvents)",ret 0xC; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00813C10,signature,"float __thiscall f(void* this, void* name)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00813CA0,signature,"bool __thiscall f(void* this, void* name, bool* looping)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00813D50,signature,"bool __thiscall f(void* this, void* clipHandle, void* nodes, void* out)",ret 0xC; this unused; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00814080,signature,"void* __thiscall f(void* this, void* name)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00814160,signature,"void __thiscall f(void* this, unsigned int* bytes, unsigned int* other)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x008141B0,signature,"void __thiscall f(void* this, void** begin, void** end)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00814260,signature,"void __thiscall f(void* this, double dt, bool fireEvents)","ret 0xC; dt at EBP+8, flag EBP+0x10; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00814340,convention,__thiscall,plain ret; this read at 0x814345; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00814340,signature,void __thiscall f(void* this),no arguments: dt is read from AnimationManager; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00814710,signature,"void __thiscall f(void* this, void* outLines)",ret 4; vector<wstring>*; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00814FD0,signature,"void* __thiscall f(void* this, void* out)","ret 4, returns out; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00814FF0,signature,"void* __thiscall f(void* this, unsigned int n)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00815070,convention,__thiscall,"plain ret, ecx is this; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x008154A0,signature,"void* __thiscall f(void* this, void* object)",ret 4; +0x18 = object; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x008154D0,signature,"int __thiscall f(void* this, void* arg)","ret 4, returns 3; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00815800,signature,"void* __thiscall f(void* this, void* out, void* arg)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00815EE0,signature,"int __thiscall f(void* this, double t)",ret 8; returns -1 or an index; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x008164C0,signature,"void __thiscall f(void* this, void* bones, void* outTracks)",ret 8; this is ModelAnimation*; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00816770,signature,"void* __thiscall f(void* this, void* res1, void* res2, int mostDerived)",ret 0xC; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00816870,convention,__thiscall,"plain ret, ecx is this; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00816BA0,signature,"void* __thiscall f(void* this, unsigned int i)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00816DA0,convention,__thiscall,plain ret; AnimationTreeBuilder slot 7; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00817120,signature,"void __thiscall f(void* this, unsigned short** attrs)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00817960,signature,"void __thiscall f(void* this, void* node)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00817A00,signature,"void* __thiscall f(void* this, unsigned int n)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00817A70,signature,"void __thiscall f(void* this, unsigned int n)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00817B40,signature,"void __thiscall f(void* this, unsigned short* name, unsigned short** attrs)",slot 1; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00817CA0,signature,"void __thiscall f(void* this, unsigned short* name)",slot 2; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x008183A0,signature,"bool __thiscall f(void* this, void** outData, unsigned int* outSize, unsigned int platform)",ret 0xC; returns 1; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084C6F0,convention,__thiscall,"plain ret, ecx is this; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x0084CA40,signature,"void* __thiscall f(void* this, void* out, unsigned int pos, unsigned int count)",ret 0xC; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084CA90,signature,"void* __thiscall f(void* this, void* out)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084D120,signature,"void __thiscall f(void* this, void* name)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084E780,signature,"bool __thiscall f(void* this, void* store)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084E790,signature,bool __thiscall f(void* this),plain ret; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084E900,convention,__cdecl,"plain ret; the caller cleans the argument (add esp,8 after FxAlloc + this call); paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x0084E900,signature,void __cdecl f(void* node),"one stack argument, read at 0x84E922; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x0084E960,signature,"void* __thiscall f(void* this, unsigned int i)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084EE40,signature,"void __thiscall f(void* this, int* size, int unused)",ret 8; adds to *[esp+4]; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x008507C0,signature,"void* __thiscall f(void* this, unsigned int count)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00850850,signature,"void __thiscall f(void* this, unsigned int count)",ret 4; ecx passed through to 0x0084F470; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00850890,signature,"void __thiscall f(void* this, bool release)",ret 4; byte test [esp+0x30] at 0x008508B8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A5C900,signature,void __thiscall f(void* this),plain ret; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A5CB30,convention,__stdcall,"ret 8, ecx not read; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00A5CB30,signature,"void __stdcall f(void* model, int arg)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A5D210,signature,"bool __thiscall f(void* this, void* meshName, void* texture)","ret 8, returns 1; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00A5D2E0,signature,"bool __thiscall f(void* this, int id)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A5D7A0,signature,"void __thiscall f(void* this, void* vec4)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A5DD20,signature,bool __thiscall f(void* this),plain ret; AL = AND of RemoveTree results; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A5DEC0,signature,"bool __thiscall f(void* this, void* overrides)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A5F010,signature,"bool __thiscall f(void* this, void* clips, float a, float b)",ret 0xC; floats reordered at 0x00A5F048; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A5F100,signature,"bool __thiscall f(void* this, void* clip, float t, void* tree, int flag)",ret 0x10; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A5F250,signature,"void __thiscall f(void* this, void* tree, float blend)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A60010,convention,__stdcall,ret 0xC; ecx never read (the map is [esp+4]); paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A60010,signature,"bool __stdcall f(void* cache, void* clip, unsigned int hash)",the decompiler's three undefined4 params; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A60150,convention,__stdcall,ret 0xC; ecx never read; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A60150,signature,"bool __stdcall f(void* cache, void* clip, unsigned int hash)",same shape as 0x00A60010; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A603C0,signature,"void __thiscall f(void* this, void* clip)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A606B0,signature,"bool __thiscall f(void* this, void* clip, void* tree)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A60740,signature,"bool __thiscall f(void* this, void* clips)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A60D50,signature,"bool __thiscall f(void* this, unsigned char index, void* texture)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A60FC0,signature,"void __thiscall f(void* this, void* tree)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A61500,convention,__stdcall,ret 8; the model is [esp+4]; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A61500,signature,"bool __stdcall f(void* model, int value)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A61900,signature,"void __thiscall f(void* this, float a, int b)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A61940,signature,"bool __thiscall f(void* this, unsigned long long treeRef)",ret 8: an 8-byte resource reference by value; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A62030,signature,"bool __thiscall f(void* this, void* tree, unsigned int flags)","ret 8; the decompiler gives void, AL is returned (0x00A622D2); paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00A65B70,signature,void __thiscall f(void* this),plain ret; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A61B10,signature,"bool __thiscall f(void* this, void* tree, unsigned int flags)","outside the batch (slot 35); flags 1 .anb, 2 .evt cache, 4|8 .gad cache, 0x10 record+0xC; creature passes 0xF at 0x006B5CA1; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00A66880,signature,AnimBaseWield * __thiscall f(AnimBaseWield * this),"plain ret, ecx read first; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00A66990,signature,void __thiscall f(AnimBaseWield * this),plain ret 0x00A669B5; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A66A00,signature,"void __thiscall f(AnimBaseWield * this, int lod)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A66A40,signature,"void __thiscall f(AnimBaseWield * this, int lod, bool keep, bool async)",ret 0xC; argument roles inferred; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A66A90,signature,"void __thiscall f(AnimBaseWield * this, void * scene)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A66AF0,signature,void __thiscall f(AnimBaseWield * this),plain ret; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A66F10,signature,"void __thiscall f(AnimBaseWield * this, unsigned int bits)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A66F60,signature,"void __thiscall f(AnimBaseWield * this, unsigned int bits)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A66FB0,signature,"void __thiscall f(AnimBaseWield * this, float alpha, bool flag)","ret 8; alpha from [ESP+0x14], flag EBP; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00A67080,signature,"void __thiscall f(AnimBaseWield * this, float a)",ret 4; passes &a; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A670D0,signature,"void __thiscall f(AnimBaseWield * this, void * colour)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A67130,signature,unsigned int __thiscall f(AnimBaseWield * this),"plain ret, EAX = OR; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00A67180,signature,"bool __thiscall f(AnimBaseWield * this, int v)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A67220,signature,void __thiscall f(AnimBaseWield * this),slot 7; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A67230,signature,void __thiscall f(AnimBaseWield * this),plain ret; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A672D0,signature,"void * __thiscall f(void * this, unsigned int flags)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A67510,convention,__thiscall,ecx moved to EDI before use; ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A67510,signature,"bool __thiscall f(AnimBaseWield * this, void * tint, byte slot)",ret 8; caller 0x006A127E pushes slot then tint; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A67830,signature,AnimBaseVFX * __thiscall f(AnimBaseVFX * this),plain ret; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A67900,signature,"void * __thiscall f(void * this, unsigned int flags)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A68220,convention,__thiscall,"ecx stored to ESI, ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00A68220,signature,"void * __thiscall f(void * this, void * owner)",ret 4; owner stored at +0; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A68320,convention,__thiscall,"ecx read as this (Ghidra shows __fastcall), plain ret; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00A68320,signature,void __thiscall f(void * this),plain ret 0x00A683FB; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A68640,convention,__thiscall,"ecx moved to ESI, ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00A68640,signature,"void __thiscall f(void * this, int lod, int reason)","ret 8; 0x00A68430(lod,reason,name,p4,p5,p6); paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00A68A40,convention,__thiscall,"ecx moved to EDI, plain ret; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00A68A40,signature,void __thiscall f(void * this),plain ret 0x00A68B2C; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A698C0,signature,AnimBaseParts * __thiscall f(AnimBaseParts * this),plain ret; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A69940,signature,"void * __thiscall f(void * this, unsigned int flags)",FID_conflict label; Parts' slot 0; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A69960,signature,AnimBaseHead * __thiscall f(AnimBaseHead * this),plain ret; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A699E0,signature,"void * __thiscall f(void * this, unsigned int flags)",FID_conflict label; Head's slot 0; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A6A090,signature,"void * __thiscall f(void * this, unsigned int flags)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A6DD60,signature,void __thiscall f(void * this),plain ret; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A6DE80,signature,void __thiscall f(void * this),plain ret; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A6DEE0,signature,"float __thiscall f(void * this, unsigned int dtMs, void * heading)",ret 8; not in batch; returns the lean in ST0; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A6DDC0,signature,"float __thiscall f(void * this, unsigned int dtMs)",ret 4; not in batch; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00AD8950,convention,__cdecl,"atexit thunk, no args; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00AD8960,convention,__cdecl,"atexit thunk, no args; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00AD8BE0,convention,__cdecl,"atexit thunk, no args; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00AD94C0,convention,__cdecl,"atexit thunk, no args; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00AD94D0,convention,__cdecl,"atexit thunk, no args; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x006A1240,signature,"bool __cdecl f(void * animBase, void * a2, void * tint, int slot, void * a5, void * a6)","plain ret; not in batch; LoadWeapon(a2,slot,a5,a5,a6) then ApplyWeaponTint(tint,slot); paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x005442B0,signature,"float __thiscall f(void *this, float* out, void* entries, unsigned int count, void* tracks, unsigned int trackBase)","ret 0x14 and ecx kept (mov edi, ecx), so __thiscall with this; the reader gave __stdcall without it; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00802220,convention,__thiscall,push 0; call 0x0040D670 with ecx untouched: this goes on to the constructor; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00802220,signature,void __thiscall f(void* this),forwards this in ecx to 0x0040D670; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x0084DD20,convention,__thiscall,"plain ret, ecx read (mov ebp, ecx), edx written before any read: not the reader's __fastcall; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00A66930,signature,void __thiscall f(void* this),"AnimBaseWield's slot 2: tail-calls AnimBase's (0x00A5D980, plain ret); paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x0084C860,clear,?CreateObject@?$CThreadLocal@V_AFXCTL_AMBIENT_CACHE@@@@SAPAVCNoTrackObject@@XZ,a wrong library match beside FacialAnimation::CreateFxAnimSet; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x008107F0,clear,?_AfxAygshellState@@YAAAU_AFX_AYGSHELL_STATE@@XZ,a wrong library match beside Animation::AnimationManager's singleton accessor; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00403C70,clear,CLCDBase::vfunction6,"a shared lea eax,[ecx+0xC] getter; in GetAnimDuration it returns an FxAnimSet's group; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x0041F060,clear,CLCDBase::vfunction13,"a shared mov eax,[ecx+0x14] getter; blueprint slot 3 = the bone count; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x004D7DC0,clear,Multithreading::Task::Task,"called from a destructor (0x0046C5B9) on a TaskGroup member: a destructor, not a constructor (inferred); paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x007E04E0,clear,PartLookAtController::PartLookAtController_Constructor_or_Destructor,"sets body-overlay weight request slot 1 (0x007E06CD); the label is unverified (inferred, not read whole); paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
+0x00A69A00,clear,MovementAnimController::MovementAnimController_Constructor_or_Destructor,"it is the destructor (restores the vtable, deletes +0x14/+0x18, destroys the two wstrings); name MovementAnimController::~MovementAnimController; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
