@@ -12332,3 +12332,29 @@ address,what,value,why
 0x00537D70,clear,GraphicsStructures::ObjectNodeTerrain::vfunction29,"Called on the scene by 0x0046700A and the cutoff walk to get the scene's Object list (+0x90, SCENE.md); the terrain-node label misleads at these call sites (folded body)"
 0x00467750,clear,local struct offset_0xc/offset_0x2c/offset_0x30 field names,"the EclipseUmbraScene_data offsets in the decompiler listing are shifted by 4 from the real offsets (+0x10 owner, +0x14 commander, +0x2C sphere model, +0x40 3dgui mask, +0x48 cutoff, +0x4C cutoff switch, +0x4D disabled)"
 0x00469530,clear,SubmissionQueueNULL_data offsets offset_0x0/0x4/0x8/0x10,"real offsets are +0x08 idA, +0x0C idB, +0x10 idC, +0x18 mask; Ghidra's are off by 8"
+0x0046CD10,signature,"void __thiscall Renderer::SubmissionQueueProgram::Clear(void * this, bool releaseStorage)",ret 4; arg tested by 0x0046C970
+0x0046CD50,convention,__thiscall,ecx is this (0x0046CD54); Ghidra has __fastcall
+0x0046CE50,signature,void __thiscall Renderer::SubmissionQueueProgram::Reset(void * this),ecx passed through to 0x0046CD10; Ghidra has no this
+0x0046CE60,signature,void __thiscall Renderer::SubmissionQueueProgram::MakeDefault(void * this),"mov esi,ecx 0x0046CE63; Ghidra has no this"
+0x0046CE90,signature,"bool __thiscall Renderer::SubmissionQueueProgram::LoadXml(void * this, void * name)","mov ebp,ecx 0x0046CECB; arg [esp+0x50]; ret 4; mov al,bl 0x0046CF9E; Ghidra has __fastcall void"
+0x0046CFD0,convention,__thiscall,ecx is this (0x0046CFD1); Ghidra has __fastcall
+0x0046D0C0,signature,"void __thiscall Renderer::SubmissionQueueProgram::Submit(void * this, void * items)",slot 4 of 0x00AE804C; ret 4
+0x0046D140,signature,"bool __thiscall Renderer::SubmissionQueueProgram::Load(void * this, void * name, bool clearFirst)","mov esi,ecx 0x0046D146; ret 8; Ghidra has cdecl"
+0x0046D1A0,signature,void * __cdecl Renderer::SubmissionQueue::Create(int type),plain ret; arg [esp+0x14] after the SEH frame
+0x0046D390,signature,"void * __cdecl std::_Copy_impl<Physics::Contact *>(void * first, void * last, void * dest)",plain ret; three arguments; Ghidra passes six to 0x0046D270
+0x0046D4D0,signature,"void * __cdecl std::_Copy_backward_impl<Physics::Contact *>(void * first, void * last, void * destEnd)",plain ret; three arguments
+0x0046D580,signature,"void * __thiscall std::vector<Physics::Contact>::_Ucopy(void * this, void * first, void * last, void * dest)",ret 0xC; Ghidra's this is a uint
+0x0046D600,signature,"void * __thiscall std::vector<Physics::Contact>::_Ufill(void * this, void * dest, unsigned int n, void * value)",ret 0xC; returns dest + n*32
+0x0046D5B0,signature,"void * __thiscall std::vector<Physics::Contact>::erase(void * this, void * out, void * firstContainer, void * first, void * lastContainer, void * last)",ret 0x14; checked iterators
+0x0046D640,convention,__thiscall,ecx is this (0x0046D642); Ghidra has __fastcall
+0x0046DBD0,signature,"void __thiscall std::vector<Physics::Contact>::ClearOrRelease(void * this, bool release)",ret 4; byte [esp+0x30] 0x0046DBF8
+0x0046DCB0,signature,"void __thiscall std::vector<unsigned int>::EraseUnordered(void * this, void * value)",ret 4; [value] compared 0x0046DCDE
+0x0046D450,signature,void __thiscall Renderer::EmitterManager::WaitUpdate(void * this),slot 4 of 0x00AE80A0; plain ret
+0x0046DE10,signature,"void __thiscall Renderer::EmitterManager::OnObjectAdded(void * this, void * object)",slot 5; ret 4
+0x0046DF50,signature,"void __thiscall Renderer::EmitterManager::OnObjectRemoved(void * this, void * object)",slot 7; ret 4; Ghidra reads the argument as in_stack_00000004
+0x0046E040,signature,"void __thiscall Renderer::EmitterManager::BeginUpdate(void * this, void * scene, void * unused)",slot 3; ret 8; only [esp+0x14] (arg 1) read at 0x0046E063
+0x0046E290,signature,"bool __thiscall Renderer::ADClassAffinity::Matches(void * this, void * node)",slot 1 of 0x00AE80F8; ret 4
+0x0046E2C0,signature,"void __thiscall Renderer::ADClassAffinity::Merge(void * this, void * other)",slot 3 of 0x00AE80F8; ret 4
+0x0046D170,signature,"void * __thiscall Renderer::SubmissionQueue::SubmissionQueue(void * this, int type)",ret 4; +4 = type at 0x0046D17C (from reading B)
+0x0046DD80,signature,"void * __thiscall Renderer::EmitterManager::EmitterManager(void * this, void * owner)",ret 4 at 0x0046DDFE; owner passed to ISceneSubManager ctor 0x0046C4F0 (from reading B)
+0x0046DAB0,signature,"void __thiscall f(void * this, unsigned int n, unsigned int v0, unsigned int v1, unsigned int v2, unsigned int v3, unsigned int v4, unsigned int v5, unsigned int v6, unsigned int v7)","std::vector<Physics::Contact>::resize: the 32-byte element passed by value, as 8 words (ret 0x24)"
