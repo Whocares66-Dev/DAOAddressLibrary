@@ -11827,3 +11827,51 @@ address,what,value,why
 0x004618F0,signature,void __thiscall Renderer::FBTextureResource::~FBTextureResource(void* this),plain ret
 0x00461970,signature,"void* __thiscall Renderer::FBTextureResource::scalar_deleting_destructor(void* this, unsigned int flags)",ret 4
 0x00461990,signature,"void* __cdecl Renderer::CreateFrameBufferResource(const wchar_t* name, int kind)",plain ret 0x00461B0F
+0x00469740,signature,"Renderer::SubmissionQueueNULL * __thiscall Renderer::SubmissionQueueNULL::`scalar deleting destructor'(Renderer::SubmissionQueueNULL * this, unsigned int flags)","ret 4, vtable slot 0"
+0x00469760,signature,"void __thiscall Renderer::SubmissionQueueNULL::Remove(Renderer::SubmissionQueueNULL * this, void * objects)",ret 4; reads ecx
+0x00469850,signature,"void __thiscall Renderer::SubmissionQueueNULL::Submit(Renderer::SubmissionQueueNULL * this, void * obj)",ret 4; Ghidra lost the argument (push_back of &stack)
+0x00469860,signature,void __thiscall Renderer::SubmissionQueueNULL::Clear(Renderer::SubmissionQueueNULL * this),plain ret
+0x00469870,signature,"int * __thiscall ECStack<int>::Top(void * this, void * out)",ret 4; reads ecx
+0x004698F0,convention,__thiscall,"plain ret, reads ecx at 0x004698F4; Ghidra has __fastcall"
+0x004698F0,signature,int __thiscall Renderer::FBEffectBuilderXML2::PopState(Renderer::FBEffectBuilderXML2 * this),returns the popped state or 10
+0x00469960,signature,"void __thiscall Renderer::FBEffectBuilderXML2::PushState(Renderer::FBEffectBuilderXML2 * this, int state)",ret 4
+0x00469980,signature,"void __thiscall Renderer::FBEffectBuilderXML2::StartResourceElement(Renderer::FBEffectBuilderXML2 * this, wchar_t * element, wchar_t * * attrs)",ret 8
+0x00469BA0,signature,"void __thiscall Renderer::FBEffectBuilderXML2::OnCharacterData(Renderer::FBEffectBuilderXML2 * this, wchar_t * text, int length)",ret 8
+0x00469CA0,signature,"void __cdecl Renderer::FBEffectBuilderXML2::CharacterDataHandler(void * userData, wchar_t * text, int length)","plain ret, expat callback"
+0x00469CC0,signature,"void __thiscall Renderer::FBEffectBuilderXML2::OnEndElement(Renderer::FBEffectBuilderXML2 * this, wchar_t * element)",ret 4
+0x00469E60,signature,"void __thiscall Renderer::FBEffectBuilderXML2::ReadElementAttributes(Renderer::FBEffectBuilderXML2 * this, wchar_t * * attrs)",ret 4
+0x0046A1B0,signature,"void __cdecl Renderer::FBEffectBuilderXML2::EndElementHandler(void * userData, wchar_t * name)","plain ret, expat callback"
+0x0046A1C0,signature,"void __thiscall Renderer::FBEffectBuilderXML2::OnStartElement(Renderer::FBEffectBuilderXML2 * this, wchar_t * element, wchar_t * * attrs)",ret 8
+0x0046A340,signature,"void __cdecl Renderer::FBEffectBuilderXML2::StartElementHandler(void * userData, wchar_t * name, wchar_t * * attrs)","plain ret, expat callback"
+0x0046A360,signature,"Renderer::FBEffectBuilderXML2 * __thiscall Renderer::FBEffectBuilderXML2::FBEffectBuilderXML2(Renderer::FBEffectBuilderXML2 * this, XMLParser2 * parser, void * out)","ret 8; parser is the XMLParser2 object (its slot 2 gives the expat handle, 0x0046A3A6), out the vector<FrameBufferEffect*>*"
+0x0046A430,signature,"void __thiscall Renderer::LightSlot::SetFadeState(void * this, int state)",ret 4
+0x0046A470,convention,__thiscall,"plain ret, reads ecx at 0x0046A471; Ghidra has __fastcall"
+0x0046A470,signature,float __thiscall Renderer::LightSlot::Weight(void * this),result in ST0
+0x0046A4E0,signature,"void __thiscall Renderer::LightState::Reset(void * this, int value)",ret 4
+0x0046AE60,convention,__thiscall,"plain ret, reads ecx at 0x0046AE63; Ghidra has __fastcall"
+0x0046AE60,signature,void __thiscall Renderer::LightSlotVector::Sort(void * this),this is the slot vector
+0x0046B150,convention,__thiscall,"ret 0xC, reads ecx at 0x0046B172; Ghidra shows no this"
+0x0046B150,signature,"void __thiscall Renderer::LightSlotVector::AddLight(void * this, void * choice, bool chosen, bool fade)",ret 0xC
+0x0046C4F0,signature,"Graphics::ISceneSubManager * __thiscall Graphics::ISceneSubManager::ISceneSubManager(Graphics::ISceneSubManager * this, int type, void * scene)","ret 8; +4 = type, +8 = scene (0x0046C500/0x0046C503); type 0 pushed by AnimSceneManagerDefault at 0x0046C54D"
+0x0046C600,signature,"Graphics::ISceneSubManager * __thiscall Graphics::ISceneSubManager::`scalar deleting destructor'(Graphics::ISceneSubManager * this, unsigned int flags)",ret 4
+0x0046C620,signature,"Graphics::ISceneSubManager * __cdecl Graphics::ISceneSubManager::Create(int kind, void * scene)",plain ret; Ghidra types the result LightManagerDefault *
+0x0046C720,convention,__thiscall,"plain ret, reads ecx; Ghidra has __fastcall"
+0x0046C720,signature,void __thiscall Renderer::SubmissionQueueProgram::BumpVersion(Renderer::SubmissionQueueProgram * this),plain ret
+0x0046C740,signature,"void __thiscall Renderer::SubmissionQueueProgram::SetActiveList(Renderer::SubmissionQueueProgram * this, int which)",ret 4
+0x0046C760,convention,__thiscall,"plain ret, reads ecx at 0x0046C761; Ghidra has __fastcall"
+0x0046C760,signature,void __thiscall std::vector<void*>::_Tidy(void * this),plain ret
+0x0046C790,signature,"void __thiscall Renderer::SQObject::GetClasses(void * this, unsigned int * count, void * * * data)",ret 8
+0x0046C7F0,signature,void __thiscall Renderer::SubmissionQueueProgram::Clear(Renderer::SubmissionQueueProgram * this),plain ret; Ghidra's SubmissionQueueProgram_data shows +0xC/+0x10/+0x34 as field_0x4/field_0x8/offset_0x2c (8 bytes low)
+0x0046C870,signature,"void __thiscall Renderer::SubmissionQueueProgram::RemoveObject(Renderer::SubmissionQueueProgram * this, void * obj)",ret 4; the decrement of +0x34 at 0x0046C8E6 is dead (0x0046EA00 always returns 0)
+0x0046C900,signature,"void __thiscall Renderer::SubmissionQueueProgram::Remove(Renderer::SubmissionQueueProgram * this, void * objects)",ret 4
+0x0046C970,signature,"void __thiscall Renderer::SubmissionQueueProgram::DeleteGroups(void * this, bool freeStorage)",ret 4; this is the group vector (queue+8)
+0x0046CA90,convention,__thiscall,"plain ret, reads ecx at 0x0046CAB2; Ghidra has __fastcall"
+0x0046CA90,signature,void * __thiscall Renderer::SubmissionGroup::SubmissionGroup(void * this),plain ret
+0x0046CB00,signature,"void __thiscall Renderer::SubmissionQueueProgram::Classify(Renderer::SubmissionQueueProgram * this, void * obj)",ret 4
+0x0046CBB0,signature,"void __thiscall Renderer::SubmissionQueueProgram::Submit(Renderer::SubmissionQueueProgram * this, void * obj)",ret 4
+0x0046CC80,convention,__thiscall,"plain ret, reads ecx at 0x0046CCA3; Ghidra has __fastcall"
+0x0046CC80,signature,void * __thiscall Renderer::SubmissionQueueProgram::AddGroup(Renderer::SubmissionQueueProgram * this),returns the group
+0x004697D0,signature,Renderer::SubmissionQueueNULL * __thiscall Renderer::SubmissionQueueNULL::SubmissionQueueNULL(Renderer::SubmissionQueueNULL * this),plain ret 0x0046984D (reader B)
+0x004698E0,signature,void __thiscall Renderer::FBEffectBuilderXML2::~FBEffectBuilderXML2(Renderer::FBEffectBuilderXML2 * this),"ecx only, tail jump 0x005744E0 (reader B)"
+0x00469940,signature,"Renderer::FBEffectBuilderXML2 * __thiscall Renderer::FBEffectBuilderXML2::`scalar deleting destructor'(Renderer::FBEffectBuilderXML2 * this, unsigned int flags)","ret 4, vtable 0x00AE7E6C slot 0"
+0x0046C510,signature,void __thiscall Graphics::ISceneSubManager::~ISceneSubManager(Graphics::ISceneSubManager * this),"ecx only, plain ret (reader B)"
