@@ -1503,3 +1503,45 @@ address,what,value,why
 0x004CE370,signature,"void* __stdcall f(void* path, int priority, int unused, int unused2, unsigned char flag)","ret 0x14 with no this use; args at [esp+0x18..0x28]; ctor gets args 0, 1, 4 at 0x004CE3AE-0x004CE3BC"
 0x004CC710,signature,"void __thiscall SetManagerState(void* this, int status)","the readers' convention, upheld against the check; ret 4, ecx = this at 0x004CC743 path; arg passed on to 0x004C6180 at 0x004CC748"
 0x004CCAF0,signature,"void* __thiscall scalar_deleting_destructor_at_d0(void* taskThis, unsigned int flags)","the readers' convention, upheld against the check; vftable slot, jumps to 0x004CCEE0 which is ret 4"
+0x004CE3F0,signature,"void* __thiscall f(void* this, void* key)",read 0x004CE3F0-0x004CE46F
+0x004CE480,signature,"void* __thiscall f(void* this, void* out, void* firstCont, void* firstNode, void* lastCont, void* lastNode)","ret 0x14, out left in eax at 0x004CE4E0"
+0x004CE540,signature,"unsigned int __thiscall f(void* this, void* key)",read 0x004CE540-0x004CE5AF
+0x004CE5B0,signature,bool __thiscall f(void* this),read 0x004CE5B0-0x004CE759
+0x004CE760,signature,void __thiscall f(void* this),read 0x004CE760-0x004CE8D9
+0x004CE8E0,signature,bool __thiscall f(void* this),read 0x004CE8E0-0x004CE967
+0x004CE970,signature,"int __thiscall f(void* this, float dt)","task vftable slot 2, ret 4 at 0x004CEB7E; argument as TaskGroup::Execute"
+0x004CEB90,signature,"void __thiscall f(void* this, void* name)",read 0x004CEB90-0x004CEBF5
+0x004CEC00,signature,"bool __thiscall f(void* this, void* resource, unsigned int a, unsigned int b, bool immediate)","read 0x004CEC00-0x004CECF4 (ret 0x10, four arguments)"
+0x004CED00,signature,"bool __thiscall f(void* this, void* out, void* type, unsigned char loaded, void* without)",read 0x004CED00-0x004CEDEF (ret 0x10)
+0x004CEDF0,signature,void __thiscall f(void* this),read 0x004CEDF0-0x004CEE90
+0x004CEEA0,signature,void* __stdcall f(void* it),read 0x004CEEA0-0x004CEEDF
+0x004CEEE0,signature,"void __stdcall f(void* first, void* last)",read 0x004CEEE0-0x004CEF00
+0x004CEF10,signature,"void* __thiscall f(void* this, void* key)",read 0x004CEF10-0x004CEF7F
+0x004CEF80,signature,"void __thiscall f(void* this, void* key)",read 0x004CEF80-0x004CEFFE
+0x004CF010,signature,"void* __thiscall f(void* this, void* name)",read 0x004CF010-0x004CF0B5 (ret 4)
+0x004CF0C0,signature,"bool __thiscall f(void* this, void* name)",read 0x004CF0C0-0x004CF0F8 (ret 4)
+0x004CF110,signature,void __thiscall f(void* this),read 0x004CF110-0x004CF1A6
+0x004CF1B0,signature,bool __thiscall f(void* this),read 0x004CF1B0-0x004CF1BB
+0x004CF500,signature,"void* __thiscall f(void* this, unsigned int flags)",read 0x004CF500-0x004CF51B (ret 4)
+0x004CF520,signature,"void __thiscall f(void* this, void* out, void* cont, void* where, void* val)",read 0x004CF520-0x004CF5D1 (ret 0x10)
+0x004CF690,signature,"bool __thiscall f(void* this, void* skip)",read 0x004CF690-0x004CFB79 (ret 4)
+0x004CFB80,signature,void __thiscall f(void* this),read 0x004CFB80-0x004CFC33
+0x004CFC40,signature,"void* __thiscall f(void* this, void* name, unsigned char subfolders, int priority, void* skip, unsigned char watch, int baseArg)",read 0x004CFC40-0x004CFD81 (ret 0x18)
+0x004CFD90,signature,"void __thiscall f(void* this, unsigned int unused)",read 0x004CFD90-0x004CFDC8 (ret 4)
+0x004CFDD0,signature,"bool __thiscall f(void* this, bool a, bool b)",read 0x004CFDD0-0x004D001E (ret 8)
+0x004D0030,signature,"bool __thiscall f(void* this, void* key, void* val)",read 0x004D0030-0x004D005A (ret 8)
+0x004D0060,signature,"unsigned int __thiscall f(void* this, void* type)",read 0x004D0060-0x004D00B2 (ret 4)
+0x004D00C0,signature,"void* __stdcall f(void* name, int priority, void* skip, unsigned char watch, int baseArg)",read 0x004D00C0-0x004D012C (ret 0x14)
+0x004D0150,signature,"void* __stdcall f(void* name, int priority, void* skip, unsigned char watch, int baseArg)",read 0x004D0150-0x004D01BF (ret 0x14)
+0x004D01E0,signature,"bool __thiscall f(void* this, void* name, unsigned int size)",read 0x004D01E0-0x004D03C7 (ret 8)
+0x004D03D0,signature,"bool __thiscall f(void* this, unsigned int* outCount, unsigned int* outUnused, unsigned short* outFlags)","ret 0xC, false for another magic"
+0x004D0790,signature,"bool __thiscall f(void* this, void* bytes, unsigned int size)",read 0x004D0790-0x004D07FB (ret 8)
+0x004D0800,signature,bool __thiscall f(void* this),eax 0 or 1 at 0x004D08FB/0x004D0902
+0x004D0930,signature,"bool __thiscall f(void* this, void* resource, unsigned int a, unsigned int b, bool immediate)",read 0x004D0930-0x004D09C0 (ret 0x10)
+0x004D09D0,signature,"bool __thiscall f(void* this, void* password)",read 0x004D09D0-0x004D0A84 (ret 4)
+0x004D0A90,signature,"void* __thiscall f(void* this, unsigned int index)",read 0x004D0A90-0x004D0AC7 (ret 4)
+0x004D0AD0,signature,"void __thiscall f(void* this, void* it)",read 0x004D0AD0-0x004D0B21 (ret 4)
+0x004D0B30,signature,"void* __thiscall f(void* this, void* out, void* it)",read 0x004D0B30-0x004D0BAF (ret 8)
+0x004D0BB0,signature,void __thiscall f(void* this),read 0x004D0BB0-0x004D0C4E
+0x004D0C50,signature,"void __thiscall f(void* this, unsigned int n)",read 0x004D0C50-0x004D0C70 (ret 4)
+0x004CF5E0,signature,"void __thiscall f(void* this, void* val)",ret N / ecx use read in 0x004CF5E0-0x004CF68F (ret 4)
