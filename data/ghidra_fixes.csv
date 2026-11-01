@@ -7518,3 +7518,51 @@ address,what,value,why
 0x00724710,convention,__thiscall,"adjustor thunk sub ecx,0x1C; jmp 0x007249B0 (ret 4)"
 0x004C0010,clear,g_clockTimer / Material::vfunction6 in the decompilation,"the body loads global 0x00C2BDF8 and tail-jumps 0x0096BDF0 (0x004C0010-0x004C001A); it is ECFileAccess::Aliases::Get (address library 4467), not a clock timer or a Material call"
 0x004CA8D0,signature,"const void* __thiscall ECFileAccess::Aliases::Resolve(void* this, const void* name)","ret 4 at 0x004CA8FC; walks the alias list (+0x38 next), returns node+0x1C (the path) or the empty string 0x00C2BE00"
+0x007250E0,signature,"void * __thiscall GUI::GUIFloatyLayer::`scalar deleting destructor'`adjustor{28}'(void * this, unsigned int flags)","sub ecx,0x1C; jmp 0x007250A0, which ends ret 4"
+0x007250E0,clear,GUI::GUIFloatyLayer::vfunction2,"a destructor thunk, not a slot-2 function"
+0x007250F0,signature,"void * __thiscall GUI::GUIFloatyLayer::`scalar deleting destructor'`adjustor{32}'(void * this, unsigned int flags)","sub ecx,0x20; jmp 0x007250A0"
+0x007250F0,clear,GUI::GUIFloatyLayer::vfunction1,a destructor thunk; the same label is also on 0x00725110
+0x00725100,signature,"void * __thiscall GUI::GUIFloatyLayer::`scalar deleting destructor'`adjustor{8}'(void * this, unsigned int flags)","sub ecx,8; jmp 0x007250A0"
+0x00725100,clear,GUI::GUIFloatyLayer::vfunction3,a destructor thunk; the same label is also on 0x00725140
+0x00725110,signature,void * __thiscall GUI::GUIFloatyLayer::GetClassInfo(void * this),vftable slot 0; returns 0x00C095F8; plain ret
+0x00725110,clear,GUI::GUIFloatyLayer::vfunction1,slot 0 GetClassInfo
+0x00725140,signature,void __thiscall GUI::GUIFloatyLayer::RegisterClass(void * this),vftable slot 2; plain ret or tail jmp 0x00402B30 with ecx=this
+0x00725140,clear,GUI::GUIFloatyLayer::vfunction3,slot 2 RegisterClass
+0x00725180,signature,void * __thiscall GUI::GUIFloatyLayer::Clone(void * this),vftable slot 1; plain ret
+0x00725180,clear,GUI::GUIFloatyLayer::vfunction2,slot 1 Clone
+0x00725200,signature,void __thiscall GUI::GUIFloatyLayer::OnShow(void * this),vftable slot 5; never reads ecx; plain ret 0x007252A4
+0x00725200,clear,GUI::GUIFloatyLayer::vfunction6,slot 5 OnShow
+0x007252B0,signature,void __thiscall GUI::GUITooltips::~GUITooltips(void * this),plain ret 0x007253D5
+0x007253E0,signature,"void * __thiscall GUI::GUITooltips::`scalar deleting destructor'`adjustor{28}'(void * this, unsigned int flags)","sub ecx,0x1C; jmp 0x00725B10"
+0x007253F0,signature,"void * __thiscall GUI::GUITooltips::`scalar deleting destructor'`adjustor{32}'(void * this, unsigned int flags)","sub ecx,0x20; jmp 0x00725B10"
+0x00725400,signature,"void * __thiscall GUI::GUITooltips::`scalar deleting destructor'`adjustor{8}'(void * this, unsigned int flags)","sub ecx,8; jmp 0x00725B10"
+0x00725410,signature,void * __thiscall GUI::GUITooltips::GUITooltips(void * this),no stack arguments; plain ret 0x00725B0D
+0x00725B10,signature,"void * __thiscall GUI::GUITooltips::`scalar deleting destructor'(void * this, unsigned int flags)",ret 4 0x00725B2B
+0x007261D0,signature,"void * __thiscall GUI::Ingredient::`scalar deleting destructor'`adjustor{8}'(void * this, unsigned int flags)","sub ecx,8; jmp 0x007262B0"
+0x007261E0,signature,"void * __thiscall GUI::Ingredient::`scalar deleting destructor'`adjustor{28}'(void * this, unsigned int flags)","sub ecx,0x1C; jmp 0x007262B0"
+0x007261F0,signature,"void * __thiscall GUI::Ingredient::`scalar deleting destructor'`adjustor{32}'(void * this, unsigned int flags)","sub ecx,0x20; jmp 0x007262B0"
+0x00726200,signature,void __thiscall GUI::Ingredient::~Ingredient(void * this),plain ret 0x007262A4
+0x007262B0,signature,"void * __thiscall GUI::Ingredient::`scalar deleting destructor'(void * this, unsigned int flags)",ret 4 0x007262CB
+0x00726660,signature,void __thiscall GUI::GUICrafting::RegisterMessageHandlers(void * this),vftable slot 3; ecx overwritten by MessageRegistry::Get's result; tail jmp 0x007265E0
+0x00727260,signature,"void * __thiscall GUI::Recipe::`scalar deleting destructor'`adjustor{28}'(void * this, unsigned int flags)","sub ecx,0x1C; jmp 0x00727450"
+0x00727270,signature,"void * __thiscall GUI::Recipe::`scalar deleting destructor'`adjustor{32}'(void * this, unsigned int flags)","sub ecx,0x20; jmp 0x00727450"
+0x00727280,signature,"void * __thiscall GUI::Recipe::`scalar deleting destructor'`adjustor{8}'(void * this, unsigned int flags)","sub ecx,8; jmp 0x00727450"
+0x00727290,signature,void __thiscall GUI::Recipe::~Recipe(void * this),plain ret 0x007273B5
+0x00727450,signature,"void * __thiscall GUI::Recipe::`scalar deleting destructor'(void * this, unsigned int flags)",ret 4 0x0072746B
+0x00727470,signature,void __thiscall GUI::GUICrafting::~GUICrafting(void * this),plain ret 0x0072750E
+0x00727510,signature,"void * __thiscall GUI::GUICrafting::`scalar deleting destructor'`adjustor{28}'(void * this, unsigned int flags)","sub ecx,0x1C; jmp 0x00727C80"
+0x00727520,signature,"void * __thiscall GUI::GUICrafting::`scalar deleting destructor'`adjustor{32}'(void * this, unsigned int flags)","sub ecx,0x20; jmp 0x00727C80"
+0x00727530,signature,"void * __thiscall GUI::GUICrafting::`scalar deleting destructor'`adjustor{8}'(void * this, unsigned int flags)","sub ecx,8; jmp 0x00727C80"
+0x00727540,signature,void * __thiscall GUI::GUICrafting::GetClassInfo(void * this),vftable slot 0; returns 0x00C09678; plain ret
+0x00727570,signature,void __thiscall GUI::GUICrafting::RegisterClass(void * this),vftable slot 2; plain ret or tail jmp 0x00726660
+0x00727640,signature,"void * __thiscall GUI::GUICrafting::GUICrafting(void * this, void * src)",copy constructor; ret 4 0x007276D2
+0x00727BF0,signature,void __thiscall GUI::GUICrafting::Close(void * this),vftable slot 6 over GUIScene::Close 0x00A55910; plain ret
+0x00727C10,signature,void * __thiscall GUI::GUICrafting::Clone(void * this),vftable slot 1; plain ret
+0x00727C80,signature,"void * __thiscall GUI::GUICrafting::`scalar deleting destructor'(void * this, unsigned int flags)",ret 4 0x00727C9B
+0x00727CA0,signature,"void __thiscall Messages::RegisterText<CountIngredientsMessage>(void * this, void * name)",ecx is the text registry from 0x00489BC0; name a std::wstring*; ret 4 0x00727D50
+0x00727D60,signature,"void __thiscall Messages::RegisterText<CraftItemMessage>(void * this, void * name)",ecx is the text registry from 0x00489BC0; ret 4 0x00727E10
+0x00727E20,signature,void * __thiscall GUI::GUICrafting::GUICrafting(void * this),no stack arguments
+0x007280B0,signature,void * __thiscall GUI::GUILightLoading::GUILightLoading(void * this),plain ret 0x00728163
+0x00728170,signature,void __thiscall GUI::GUILightLoading::~GUILightLoading(void * this),tail jmp ~GUIScene 0x00A559E0
+0x00728190,signature,void __thiscall GUI::GUIFadeToBlackLoading::~GUIFadeToBlackLoading(void * this),tail jmp ~GUIScene 0x00A559E0
+0x00413660,convention,__returning (not noreturn),"operator new: the function body of 0x00726560 stops at its call 0x00726566 although code follows (bytes 0x0072656B on: add esp,4; test eax,eax; mov ecx,0x007262D0) [I that the noreturn flag is the cause]; re-disassemble 0x00726560 after"
