@@ -6949,56 +6949,56 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6948,function,GUI::GUISystem::Shutdown,0x005239f0,0x007bfad0,0x005239f0
 6949,function,GUI::GUISystem::PlaySound,0x00523a40,0x007bfb20,0x00523a40
 6950,function,GUI::GUISystem::PlayGUISound,0x00523a60,0x007bfb40,0x00523a60
-6951,function,,0x00523a80,0x007bfb60,0x00523a80
-6952,function,,0x00523b30,0x007c6140,0x00523b30
-6953,function,,0x00523b80,0x007bfc10,0x00523b80
+6951,function,GUI::GUISystem::HasViewportChanged,0x00523a80,0x007bfb60,0x00523a80
+6952,function,std::_Tree::_Lrotate,0x00523b30,0x007c6140,0x00523b30
+6953,function,GUI::GUISystem::Update,0x00523b80,0x007bfc10,0x00523b80
 6954,function,GUI::GUISystem::OpenScreen,0x00523bf0,0x007bfc80,0x00523bf0
-6955,function,,0x00523c70,0x007bfd00,0x00523c70
+6955,function,GUI::GUISystem::PlayOutroByName,0x00523c70,0x007bfd00,0x00523c70
 6956,function,GUI::GUISystem::HideScreen,0x00523cb0,0x007bfd40,0x00523cb0
 6957,function,GUI::GUISystem::RegisterHandler_Message,0x00523cf0,0x007bfd80,0x00523cf0
 6958,function,GUI::GUISystem::RegisterHandler_SetCursorMessage,0x00523d50,0x007bfde0,0x00523d50
-6959,function,,0x00523dd0,0x007bfe60,0x00523dd0
-6960,function,,0x00523eb0,0x007bff40,0x00523eb0
+6959,function,GUI::GUISystem::Initialize,0x00523dd0,0x007bfe60,0x00523dd0
+6960,function,GUI::GUISystem::RegisterMessageHandlers,0x00523eb0,0x007bff40,0x00523eb0
 6961,function,GUI::GUISystem::SceneIdByName,0x00523ed0,0x007bff60,0x00523ed0
 6962,function,GUI::GUISystem::Scene,0x00523fd0,0x007c0060,0x00523fd0
 6963,function,GUI::GUISystem::CloseScreen,0x00523ff0,0x007c0080,0x00523ff0
-6964,function,,0x00524070,0x007c0190,0x00524070
+6964,function,GUI::GUISystem::UncacheScene,0x00524070,0x007c0190,0x00524070
 6965,function,GUI::GUISystem::AddScene,0x005240d0,0x007c01f0,0x005240d0
-6966,function,,0x00524140,0x007c0260,0x00524140
-6967,function,,0x005241a0,0x007c02c0,0x005241a0
-6968,function,,0x00524240,0x007c0360,0x00524240
-6969,function,,0x00524650,0x004ff460,0x00524650
-6970,function,,0x00524660,0x007c0770,0x00524660
-6971,function,,0x00524670,0x007c0780,0x00524670
-6972,function,,0x00524680,0x007c0790,0x00524680
-6973,function,,0x00524690,0x007c07a0,0x00524690
-6974,function,,0x005246c0,0x004ff4f0,0x005246c0
-6975,function,,0x00524710,0x007c07d0,0x00524710
-6976,function,,0x00524880,0x007c0940,0x00524880
-6977,function,,0x005249f0,0x007c0ab0,0x005249f0
-6978,function,,0x00524a60,0x007c0b20,0x00524a60
-6979,function,,0x00524a80,0x007cba10,0x00524a80
-6980,function,,0x00524b10,0x007cbaa0,0x00524b10
-6981,function,,0x00524b80,0x007cbb10,0x00524b80
-6982,function,,0x00524ba0,0x007cbb30,0x00524ba0
-6983,function,,0x00524bc0,0x007cbb50,0x00524bc0
+6966,function,GUI::GUISystem::CacheScene,0x00524140,0x007c0260,0x00524140
+6967,function,GUI::GUISystem::UncacheAllScenes,0x005241a0,0x007c02c0,0x005241a0
+6968,function,GUI::GUISystem::GUISystem,0x00524240,0x007c0360,0x00524240
+6969,function,GUI::GUISystem::GetSelectionBox,0x00524650,0x004ff460,0x00524650
+6970,function,GUI::GUISystem::`scalar deleting destructor'`adjustor{28}',0x00524660,0x007c0770,0x00524660
+6971,function,GUI::GUISystem::`scalar deleting destructor'`adjustor{32}',0x00524670,0x007c0780,0x00524670
+6972,function,GUI::GUISystem::`scalar deleting destructor'`adjustor{8}',0x00524680,0x007c0790,0x00524680
+6973,function,GUI::GUISystem::GetClassInfo,0x00524690,0x007c07a0,0x00524690
+6974,function,GUI::GUISystem::EnsureMessageHandlers,0x005246c0,0x004ff4f0,0x005246c0
+6975,function,GUI::GUISystem::GUISystem(const GUISystem&),0x00524710,0x007c07d0,0x00524710
+6976,function,GUI::GUISystem::~GUISystem,0x00524880,0x007c0940,0x00524880
+6977,function,GUI::GUISystem::Clone,0x005249f0,0x007c0ab0,0x005249f0
+6978,function,GUI::GUISystem::`scalar deleting destructor',0x00524a60,0x007c0b20,0x00524a60
+6979,function,GUI::ScaleformTokenObserver::ScaleformTokenObserver,0x00524a80,0x007cba10,0x00524a80
+6980,function,GUI::ScaleformTokenObserver::~ScaleformTokenObserver,0x00524b10,0x007cbaa0,0x00524b10
+6981,function,GUI::ScaleformTokenObserver::Rebind,0x00524b80,0x007cbb10,0x00524b80
+6982,function,GUI::ScaleformTokenObserver::OnTokenChanged,0x00524ba0,0x007cbb30,0x00524ba0
+6983,function,GUI::ScaleformTokenObserver::`scalar deleting destructor',0x00524bc0,0x007cbb50,0x00524bc0
 6984,function,Messages::FromCallbackText,0x00524be0,0x007cbb70,0x00524be0
 6985,function,,0x00524d40,0x007cbcd0,0x00524d40
-6986,function,,0x00524e30,0x007cbdc0,0x00524e30
-6987,function,,0x00524fb0,0x005fc4a0,0x00524fb0
-6988,function,,0x00525020,0x005fc5f0,0x00525020
-6989,function,,0x00525090,0x007cbf40,0x00525090
-6990,function,,0x00525100,0x007cbfb0,0x00525100
-6991,function,,0x00525170,0x007cc020,0x00525170
-6992,function,,0x005251d0,0x007cc080,0x005251d0
-6993,function,,0x00525240,0x004f4af0,0x00525240
-6994,function,,0x005252a0,0x007cc0f0,0x005252a0
-6995,function,,0x00525300,0x007cc150,0x00525300
-6996,function,,0x00525370,0x007cc1c0,0x00525370
-6997,function,,0x005253d0,0x007cc220,0x005253d0
-6998,function,,0x00525440,0x007cc2f0,0x00525440
-6999,function,,0x005254a0,0x007cc350,0x005254a0
-7000,function,,0x00525510,0x007cc3c0,0x00525510
+6986,function,GuiExternal::BuildSendMessage,0x00524e30,0x007cbdc0,0x00524e30
+6987,function,GUI::PrintToConsoleMessage::PrintToConsoleMessage,0x00524fb0,0x005fc4a0,0x00524fb0
+6988,function,GUI::PrintToConsoleMessage::PrintToConsoleMessage(const PrintToConsoleMessage&),0x00525020,0x005fc5f0,0x00525020
+6989,function,GUI::PrintToLogMessage::PrintToLogMessage,0x00525090,0x007cbf40,0x00525090
+6990,function,GUI::PrintToLogMessage::PrintToLogMessage(const PrintToLogMessage&),0x00525100,0x007cbfb0,0x00525100
+6991,function,GUI::RunConsoleCommandMessage::RunConsoleCommandMessage,0x00525170,0x007cc020,0x00525170
+6992,function,GUI::RunConsoleCommandMessage::RunConsoleCommandMessage(const RunConsoleCommandMessage&),0x005251d0,0x007cc080,0x005251d0
+6993,function,GUI::RunConsoleCommandMessage::~RunConsoleCommandMessage,0x00525240,0x004f4af0,0x00525240
+6994,function,GUI::RunClientScriptMessage::RunClientScriptMessage,0x005252a0,0x007cc0f0,0x005252a0
+6995,function,GUI::RunClientScriptMessage::RunClientScriptMessage(const RunClientScriptMessage&),0x00525300,0x007cc150,0x00525300
+6996,function,GUI::RunScriptMessage::RunScriptMessage,0x00525370,0x007cc1c0,0x00525370
+6997,function,GUI::RunScriptMessage::RunScriptMessage(const RunScriptMessage&),0x005253d0,0x007cc220,0x005253d0
+6998,function,GUI::SetCursorMessage::SetCursorMessage,0x00525440,0x007cc2f0,0x00525440
+6999,function,GUI::SetCursorMessage::SetCursorMessage(const SetCursorMessage&),0x005254a0,0x007cc350,0x005254a0
+7000,function,GUI::PrintToConsoleMessage::Create,0x00525510,0x007cc3c0,0x00525510
 7001,function,,0x00525590,0x007cc440,0x00525590
 7002,function,,0x00525600,0x007cc4b0,0x00525600
 7003,function,,0x00525670,0x007cc520,0x00525670

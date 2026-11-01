@@ -5772,3 +5772,38 @@ address,what,value,why
 0x00523830,signature,void __thiscall GUI_ScaleformAtlas_Clear(void* this),Plain ret.
 0x00523630,signature,void __thiscall GUI_ScaleformAtlas_dtor(void* this),Plain ret.
 0x00522C10,signature,void __thiscall GUI_GUIManager_RegisterClassInfo(void* this),"Reads ecx, plain ret."
+0x00523A80,signature,bool __thiscall GUI::GUISystem::HasViewportChanged(void* this),reads ecx at 0x00523A8A (Ghidra has __fastcall int param); result in AL
+0x00523B30,signature,"void __thiscall std::_Tree::_Lrotate(void* this, void* node)",ret 4; STL red-black tree rotation
+0x00523B80,signature,"void __thiscall GUI::GUISystem::Update(void* this, float a, float b, int c)",ret 0xC; the two floats are reloaded by x87 and passed in order to 0x00516760 at 0x00523BAB..0x00523BC4
+0x00523C70,signature,"void __thiscall GUI::GUISystem::PlayOutroByName(void* this, void* name)",ret 4
+0x00523DD0,signature,"bool __thiscall GUI::GUISystem::Initialize(void* this, void* arg)",ret 4; DragonAgeGUISystem slot 5 returns AL after it
+0x00523EB0,signature,void __thiscall GUI::GUISystem::RegisterMessageHandlers(void* this),vtable slot 3 (0x00AF6750)
+0x00524070,signature,"void __thiscall GUI::GUISystem::UncacheScene(void* this, uint id)",ret 4
+0x00524140,signature,"void __thiscall GUI::GUISystem::CacheScene(void* this, uint id)",ret 4
+0x005241A0,signature,void __thiscall GUI::GUISystem::UncacheAllScenes(void* this),"Ghidra has __fastcall; mov edi,ecx at 0x005241A5, plain ret"
+0x00524690,signature,void* __thiscall GUI::GUISystem::GetClassIdPtr(void* this),vtable slot 0; returns 0x00BF6F98
+0x005246C0,signature,void __thiscall GUI::GUISystem::EnsureMessageHandlers(void* this),vtable slot 2
+0x00524710,signature,"void* __thiscall GUI::GUISystem::GUISystem(void* this, void* other)",ret 4 (Ghidra shows no argument); other is unread
+0x00524B80,signature,"void __thiscall GUI::ScaleformTokenObserver::Rebind(void* this, void* label)","ret 4; mov esi,ecx at 0x00524B81 (Ghidra shows no this)"
+0x00524BA0,signature,"void __thiscall GUI::ScaleformTokenObserver::OnTokenChanged(void* this, void* value)",ret 4
+0x00524E30,signature,"void* __cdecl GuiExternal::BuildSendMessage(void* out, void* args, uint count)","plain ret, returns out in EAX at 0x00524F8E"
+0x00524D40,signature,"void* __cdecl CreateGuiMessageFromArgs(void* name, void* args, uint count)",returns the message in EAX at 0x00524E0A (Ghidra has void)
+0x00524FB0,signature,"void* __thiscall GUI::PrintToConsoleMessage::PrintToConsoleMessage(void* this, void* text, int kind, float seconds)",ret 0xC; +0x24 written with fstp at 0x00525000
+0x00525090,signature,"void* __thiscall GUI::PrintToLogMessage::PrintToLogMessage(void* this, void* text, short level)",ret 8; word store at 0x005250DD
+0x00525240,signature,void __thiscall GUI::RunConsoleCommandMessage::~RunConsoleCommandMessage(void* this),Ghidra has __fastcall; folded destructor
+0x00525510,signature,void* __cdecl GUI::PrintToConsoleMessage::Create(void),factory creator
+0x00517790,clear,GFxFileOpener::GFxFileOpener,"the body is ScaleformManager::ScaleformManager (MessageReceiver base, ScaleformManager vtable, g_scaleformManager = this)"
+0x00525690,clear,CThreadLocal<_AFXCTL_AMBIENT_CACHE>::CreateObject,the RunConsoleCommandMessage factory creator (new 0x20 + 0x00525170)
+0x00525700,clear,CThreadLocal<_AFXCTL_AMBIENT_CACHE>::CreateObject,the RunClientScriptMessage factory creator (new 0x20 + 0x005252A0)
+0x00525770,clear,CThreadLocal<_AFXCTL_AMBIENT_CACHE>::CreateObject,the RunScriptMessage factory creator (new 0x20 + 0x00525370)
+0x005257E0,clear,CThreadLocal<_AFXCTL_AMBIENT_CACHE>::CreateObject,the SetCursorMessage factory creator (new 0x20 + 0x00525440)
+0x00402B30,clear,SmartData::SmartObject::vfunction3,called by GUISystem::EnsureMessageHandlers as the base class's handler registration
+0x00524240,signature,void* __thiscall GUI::GUISystem::GUISystem(void* this),plain ret at 0x00524642
+0x00524880,signature,void __thiscall GUI::GUISystem::~GUISystem(void* this),plain ret at 0x005249EB
+0x00524650,signature,void* __thiscall GUI::GUISystem::GetSelectionBox(void* this),returns [ecx+0xDC]
+0x005249F0,signature,void* __thiscall GUI::GUISystem::Clone(void* this),vtable slot 1; new 0x134
+0x00524A60,signature,"void* __thiscall GUI::GUISystem::`scalar deleting destructor'(void* this, uint flags)",ret 4
+0x00524BC0,signature,"void* __thiscall GUI::ScaleformTokenObserver::`scalar deleting destructor'(void* this, uint flags)",ret 4
+0x00525020,signature,"void* __thiscall GUI::PrintToConsoleMessage::PrintToConsoleMessage(void* this, void* other)",ret 4
+0x005BDCF0,clear,GThread::OnExit,"a single ret used as an empty virtual stub (GUISystem slots, slot 3 of the GUI message vtables, called at 0x00523DF6)"
+0x00875220,clear,Graphics::TemplateShaderParamRef<Math::Vector4f>::vfunction8,"folded `mov eax,[ecx+0x50]; ret`, g_graphics' width getter (slot +0x40)"
