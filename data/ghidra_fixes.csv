@@ -1153,3 +1153,44 @@ address,what,value,why
 0x004D4BF0,signature,"float __cdecl f(void* a, void* b)","plain ret; args [esp+8],[esp+0xC]"
 0x004CB480,signature,void __thiscall f(void* this),"the readers' convention, upheld against the check; ecx passed on to 0x4E9A90 at 0x4CB482"
 0x004D45E0,signature,void __thiscall f(void* this),"the readers' convention, upheld against the check; ecx pushed at 0x4D45E2"
+0x004D4C20,signature,"float __cdecl f(void* a, void* b)",Read at 0x004D4C20: Vector::AngleBetweenRadians
+0x004D4CC0,signature,"float __cdecl f(void* a, void* b)",Read at 0x004D4CC0: Vector::SignedAngleBetweenRadians
+0x004D4DD0,signature,"void* __thiscall f(void* this, float x, float y, float z, float w)",Read at 0x004D4DD0: Vector4::Vector4
+0x004D4DF0,signature,"void __thiscall f(void* this, float x, float y, float z, float w)",Read at 0x004D4DF0: Vector4::Set
+0x004D4E10,signature,void* __thiscall f(void* this),Read at 0x004D4E10: Vector4::DivideByW
+0x004D4E50,signature,void* __cdecl f(void),Read at 0x004D4E50: Vector4::Zero
+0x004D4E90,signature,"void* __thiscall f(void* this, void* xyz, float w)",Read at 0x004D4E90: Vector4::SetFromVector3W
+0x004D4EF0,signature,"bool __cdecl f(void* a, void* b)",Read at 0x004D4EF0: Vector::NotEquals
+0x004D4F10,signature,void* __cdecl f(void),Read at 0x004D4F10: Vector::Zero
+0x004D4F40,signature,void* __thiscall f(void* this),Read at 0x004D4F40: Math::Sphere::Sphere
+0x004D7CA0,signature,void __thiscall f(void* this),Read at 0x004D7CA0: Multithreading::TaskGroup::Run
+0x004D7CD0,signature,void __thiscall f(void* this),Read at 0x004D7CD0: Multithreading::TaskGroup::Wait
+0x004D7D40,signature,"int __thiscall f(void* this, float dt)",Read at 0x004D7D40: Multithreading::TaskGroup::Execute
+0x004D7D60,signature,void __thiscall f(void* this),Read at 0x004D7D60: Multithreading::TaskGroup::Begin
+0x004D7DC0,signature,void __thiscall f(void* this),Read at 0x004D7DC0: Multithreading::TaskGroup::~TaskGroup
+0x004D7E30,signature,void* __thiscall f(void* this),Read at 0x004D7E30: Multithreading::TaskGroup::GetName
+0x004D7E40,signature,"void* __thiscall f(void* this, unsigned int flags)",Read at 0x004D7E40: Multithreading::TaskGroup::`scalar deleting destructor'
+0x004D7E60,signature,"void* __thiscall f(void* this, void* manager)",Read at 0x004D7E60: Multithreading::TaskGroup::RemoveFromQueue
+0x004D7EA0,signature,void* __thiscall f(void* this),Read at 0x004D7EA0: Multithreading::TaskGroup::TaskGroup
+0x004E6180,signature,unsigned int __stdcall f(void* thread),Read at 0x004E6180: Multithreading::Thread::ThreadProc
+0x004E6190,signature,"void* __thiscall f(void* this, unsigned int mask, void* name, bool a, bool b, bool suspended)",Read at 0x004E6190: Multithreading::Thread::Thread
+0x004E6240,signature,bool __thiscall f(void* this),Read at 0x004E6240: Multithreading::Thread::Resume
+0x004E6260,signature,bool __thiscall f(void* this),Read at 0x004E6260: Multithreading::Thread::Finish
+0x004E62E0,signature,bool __thiscall f(void* this),Read at 0x004E62E0: Multithreading::Thread::WaitForExit
+0x004E6300,signature,void __thiscall f(void* this),Read at 0x004E6300: Multithreading::Thread::~Thread
+0x004E6380,signature,"void* __thiscall f(void* this, unsigned int flags)",Read at 0x004E6380: Multithreading::Thread::`scalar deleting destructor'
+0x004E63A0,signature,int __thiscall f(void* this),Read at 0x004E63A0: Multithreading::Thread::Run
+0x004EAE80,signature,"unsigned char __cdecl f(void* point, void* boxMax, void* boxMin)",Read at 0x004EAE80: Geometry::ComputeOutcode
+0x004EDDE0,signature,"bool __cdecl f(float a, float b, float tol)",Read at 0x004EDDE0: Math::IsWithinTolerance
+0x004EDE20,signature,void* __cdecl f(void),Read at 0x004EDE20: Vector::UnitYZ
+0x004EDE50,signature,"void* __cdecl f(void* out, void* in)",Read at 0x004EDE50: Vector::NormalizedOrXAxis
+0x004EE420,signature,"float __cdecl f(float x, float y, float z, float w)",Read at 0x004EE420: Quaternion::Roll
+0x004EE9B0,signature,"bool __cdecl f(void* verts, int count, void* a, void* b, void* outPoint, void* outNormal)",Read at 0x004EE9B0: Geometry::SegmentIntersectsPolygon
+0x004FA1E0,signature,void __thiscall f(void* this),Read at 0x004FA1E0: Multithreading::SynchSafePointerListBase::~SynchSafePointerListBase
+0x004FA240,signature,bool __thiscall f(void* this),Read at 0x004FA240: Multithreading::SynchSafePointerListBase::IsUnreferenced
+0x004FA250,signature,"void* __thiscall f(void* this, unsigned int flags)",Read at 0x004FA250: Multithreading::SynchSafePointerListBase::`scalar deleting destructor'
+0x004FA3D0,signature,void* __thiscall f(void* this),Read at 0x004FA3D0: Multithreading::SynchSafePointerListBase::SynchSafePointerListBase
+0x004FA490,signature,"void __thiscall f(void* this, void* material)",Read at 0x004FA490: Graphics::MaterialState::CreateDeviceStates
+0x004FA600,signature,"void* __thiscall f(void* this, int constructBase)",Read at 0x004FA600: Multithreading::SynchSafePointerList<Graphics::MaterialState>::SynchSafePointerList<Graphics::MaterialState>
+0x004FA6F0,signature,"void* __cdecl f(void* first, void* last, void* dest)","Read at 0x004FA6F0: std::_Copy_opt<Graphics::MaterialStateEntry*,Graphics::MaterialStateEntry*>"
+0x004FA650,signature,"void* __thiscall f(void* this, void* src)","Read at 0x004FA650: Graphics::MaterialStateEntry::MaterialStateEntry (ret 4, returns this)"
