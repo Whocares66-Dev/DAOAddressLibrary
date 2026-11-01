@@ -5807,3 +5807,30 @@ address,what,value,why
 0x00525020,signature,"void* __thiscall GUI::PrintToConsoleMessage::PrintToConsoleMessage(void* this, void* other)",ret 4
 0x005BDCF0,clear,GThread::OnExit,"a single ret used as an empty virtual stub (GUISystem slots, slot 3 of the GUI message vtables, called at 0x00523DF6)"
 0x00875220,clear,Graphics::TemplateShaderParamRef<Math::Vector4f>::vfunction8,"folded `mov eax,[ecx+0x50]; ret`, g_graphics' width getter (slot +0x40)"
+0x00525670,clear,CThreadLocal<_AFXCTL_AMBIENT_CACHE>::CreateObject,"MFC name matched on shape; the body allocates a RunConsoleCommandMessage (ctor 0x00525170, vtable 0x00AF68EC)."
+0x005256E0,clear,CThreadLocal<_AFXCTL_AMBIENT_CACHE>::CreateObject,MFC name matched on shape; the body allocates a RunClientScriptMessage (ctor 0x005252A0).
+0x00525750,clear,CThreadLocal<_AFXCTL_AMBIENT_CACHE>::CreateObject,MFC name matched on shape; the body allocates a RunScriptMessage (ctor 0x00525370).
+0x005257C0,clear,CThreadLocal<_AFXCTL_AMBIENT_CACHE>::CreateObject,MFC name matched on shape; the body allocates a SetCursorMessage (ctor 0x00525440).
+0x00525BF0,clear,PushGUIScreenMessage::vfunction5,COMDAT-folded deleting destructor shared by five GUI messages and PushGUIScreenMessage; the label names one owner.
+0x00525590,signature,void* __cdecl GUI_PrintToLogMessage_CreateDefault(void),"No arguments, plain ret, returns the new message or null."
+0x00525600,signature,void* __cdecl GUI_PrintToLogWindowMessage_CreateDefault(void),"No arguments, plain ret."
+0x00525670,signature,void* __cdecl GUI_RunConsoleCommandMessage_CreateDefault(void),"No arguments, plain ret."
+0x005256E0,signature,void* __cdecl GUI_RunClientScriptMessage_CreateDefault(void),"No arguments, plain ret."
+0x00525750,signature,void* __cdecl GUI_RunScriptMessage_CreateDefault(void),"No arguments, plain ret."
+0x005257C0,signature,void* __cdecl GUI_SetCursorMessage_CreateDefault(void),"No arguments, plain ret."
+0x00525940,signature,"void __thiscall Serialize(void* this, void* ar)","ret 4; reads ecx as this, one stack argument (the archive)."
+0x00525A90,signature,"void __thiscall Serialize(void* this, void* ar)",ret 4.
+0x00525BD0,signature,"void __thiscall Serialize(void* this, void* ar)",Tail-jumps to ar's slot +0x38 with this+4 replacing the stacked argument; the target cleans 4.
+0x00525BF0,signature,"void* __thiscall ScalarDeletingDestructor(void* this, unsigned int flags)",ret 4.
+0x00525EF0,signature,"void __thiscall RegisterMessageFactory(void* registry, void* name)","ret 4; ecx is the registry (0x00489BC0's static), name is a const std::wstring*."
+0x00525FB0,signature,"void __thiscall RegisterMessageFactory(void* registry, void* name)",ret 4.
+0x00526070,signature,"void __thiscall RegisterMessageFactory(void* registry, void* name)",ret 4.
+0x00526130,signature,"void __thiscall RegisterMessageFactory(void* registry, void* name)",ret 4.
+0x005261F0,signature,"void __thiscall RegisterMessageFactory(void* registry, void* name)",ret 4.
+0x005262B0,signature,"void __thiscall RegisterMessageFactory(void* registry, void* name)",ret 4.
+0x00526370,signature,"void __thiscall RegisterMessageFactory(void* registry, void* name)",ret 4.
+0x00526430,signature,void __cdecl GUI_RegisterMessageFactories(void),"ecx unused, plain ret."
+0x005265E0,signature,"void* __thiscall ScaleformAtlasReader(void* this, void* xmlName, void* atlasTable, void* textureNames)",ret 0xC; stores atlasTable at +0x44 and textureNames at +0x48.
+0x00526650,signature,"void* __thiscall ScalarDeletingDestructor(void* this, unsigned int flags)",ret 4.
+0x00489BC0,signature,void* __cdecl MessageFactoryRegistry_Get(void),"Returns the static registry 0x00C2A8DC, built once; plain ret."
+0x00526640,signature,"void* __thiscall ScalarDeletingDestructorAdjustor16(void* this, unsigned int flags)","sub ecx,0x10 then jmp 0x00526650 (ret 4 there); entered through the +0x10 subobject's vtable 0x00AF6A88 slot 0."
