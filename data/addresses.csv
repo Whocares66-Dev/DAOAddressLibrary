@@ -24163,11 +24163,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24162,function,,0x0087ea50,0x00455270,0x0087ea50
 24163,function,,0x0087ead0,0x004ef930,0x0087ead0
 24164,function,std::vector<unsigned short>::vector,0x0087eb60,0x004555d0,0x0087eb60
-24165,function,,0x0087ebd0,0x00472ce0,0x0087ebd0
+24165,function,std::vector<?>::push_back,0x0087ebd0,0x00472ce0,0x0087ebd0
 24166,function,ECInput::RawInputWin32::AddTypedCharacter,0x0087ec60,0x004556c0,0x0087ec60
-24167,function,,0x0087ec80,0x004556e0,0x0087ec80
-24168,function,,0x0087eca0,0x00455700,0x0087eca0
-24169,function,,0x0087ed60,0x004557c0,0x0087ed60
+24167,function,ECInput::RawInputWin32::QueueEvent,0x0087ec80,0x004556e0,0x0087ec80
+24168,function,std::vector<unsigned short>::_Tidy,0x0087eca0,0x00455700,0x0087eca0
+24169,function,std::vector<ECInput::Event>::_Tidy,0x0087ed60,0x004557c0,0x0087ed60
 24170,function,ECInput::RawInputWin32::ClearTypedInput,0x0087ee60,0x004558c0,0x0087ee60
 24171,function,,0x0087ee80,0x004558e0,0x0087ee80
 24172,function,ECInput::RawInputWin32::ReleaseHeldMouseButtons,0x0087ef30,0x00455990,0x0087ef30
@@ -24188,31 +24188,31 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24187,function,InputWord::MakeAxis,0x008805b0,0x004571e0,0x008805b0
 24188,function,InputWord::MakeNumbered,0x008805d0,0x00457030,0x008805d0
 24189,function,InputWord::StripModifiers,0x008805f0,0x00457050,0x008805f0
-24190,function,,0x00880610,0x00457070,0x00880610
-24191,function,,0x00880620,0x00457080,0x00880620
-24192,function,,0x00880630,0x00457090,0x00880630
-24193,function,,0x00880670,0x004570d0,0x00880670
-24194,function,,0x00880740,0x004571a0,0x00880740
-24195,function,,0x00880760,0x004571c0,0x00880760
-24196,function,,0x00880780,0x00457200,0x00880780
-24197,function,,0x00880790,0x00457210,0x00880790
+24190,function,InputWord::GetCode,0x00880610,0x00457070,0x00880610
+24191,function,InputWord::GetModifiers,0x00880620,0x00457080,0x00880620
+24192,function,InputCode::IsMouseButton,0x00880630,0x00457090,0x00880630
+24193,function,InputCode::IsGamepadButton,0x00880670,0x004570d0,0x00880670
+24194,function,InputWord::SetKeyboard,0x00880740,0x004571a0,0x00880740
+24195,function,InputWord::SetMouse,0x00880760,0x004571c0,0x00880760
+24196,function,InputWord::GetState,0x00880780,0x00457200,0x00880780
+24197,function,InputMapper::KeyWord::KeyWord,0x00880790,0x00457210,0x00880790
 24198,function,,0x008807b0,0x00457230,0x008807b0
-24199,function,,0x008807e0,0x00457260,0x008807e0
-24200,function,,0x00880be0,0x00457660,0x00880be0
-24201,function,,0x00880c00,0x00457680,0x00880c00
-24202,function,,0x00880c20,0x004576a0,0x00880c20
-24203,function,,0x00880c40,0x004576d0,0x00880c40
-24204,function,,0x00880cc0,0x00457750,0x00880cc0
-24205,function,,0x00880cd0,0x005dc7f0,0x00880cd0
-24206,function,,0x00880d60,0x00457760,0x00880d60
-24207,function,,0x00880dc0,0x00457830,0x00880dc0
-24208,function,,0x00880e3d,0x004578ad,0x00880e3d
-24209,function,,0x00880e60,0x00457980,0x00880e60
-24210,function,,0x00880ef1,0x00457a11,0x00880ef1
-24211,function,,0x00880f10,0x00457a30,0x00880f10
+24199,function,InputMapper::MergeEvent,0x008807e0,0x00457260,0x008807e0
+24200,function,InputMapper::KeyWord::operator<,0x00880be0,0x00457660,0x00880be0
+24201,function,InputMapper::KeyWord::operator==,0x00880c00,0x00457680,0x00880c00
+24202,function,InputMapper::KeyWord::operator!=,0x00880c20,0x004576a0,0x00880c20
+24203,function,InputWord::Validated,0x00880c40,0x004576d0,0x00880c40
+24204,function,"std::pair<const int,std::wstring>::~pair",0x00880cc0,0x00457750,0x00880cc0
+24205,function,"std::map<int,InputMapper::KeyRecord>::iterator::operator--",0x00880cd0,0x005dc7f0,0x00880cd0
+24206,function,"std::map<int,InputMapper::KeyRecord>::_Node::_Node",0x00880d60,0x00457760,0x00880d60
+24207,function,"std::map<int,InputMapper::KeyRecord>::_Buynode",0x00880dc0,0x00457830,0x00880dc0
+24208,function,"std::map<int,InputMapper::KeyRecord>::_Buynode::Catch_All@00880E3D",0x00880e3d,0x004578ad,0x00880e3d
+24209,function,"std::map<int,std::wstring>::_Buynode",0x00880e60,0x00457980,0x00880e60
+24210,function,"std::map<int,std::wstring>::_Buynode::Catch_All@00880EF1",0x00880ef1,0x00457a11,0x00880ef1
+24211,function,"std::map<int,InputMapper::KeyRecord>::find",0x00880f10,0x00457a30,0x00880f10
 24212,function,,0x00880f80,0x00457aa0,0x00880f80
 24213,function,,0x00880ff0,0x00457b10,0x00880ff0
-24214,function,,0x00881050,0x00457b70,0x00881050
+24214,function,"std::map<int,std::wstring>::_Erase",0x00881050,0x00457b70,0x00881050
 24215,function,InputWord::ToDisplayText,0x00881090,0x00457bb0,0x00881090
 24216,function,,0x00881310,0x00457ea0,0x00881310
 24217,function,,0x00881510,0x0085aeb0,0x00881510
@@ -24224,7 +24224,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24223,function,,0x00881c70,0x004589b0,0x00881c70
 24224,function,,0x00881d20,0x00458a60,0x00881d20
 24225,function,,0x00881ee0,0x00458c20,0x00881ee0
-24226,function,,0x00881fd0,0x00458d10,0x00881fd0
+24226,function,"std::map<int,std::wstring>::~map",0x00881fd0,0x00458d10,0x00881fd0
 24227,function,InputNames::Register,0x00882010,0x00458d50,0x00882010
 24228,function,InputNames::NameOf,0x00882070,0x00458db0,0x00882070
 24229,function,InputNames::WordOf,0x008820f0,0x00458e30,0x008820f0
@@ -24258,7 +24258,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24257,function,,0x0088edbd,0x00465a5d,0x0088edbd
 24258,function,InputModes::AllowsInput,0x0088ede0,0x00465a80,0x0088ede0
 24259,function,,0x0088ef50,0x00465bf0,0x0088ef50
-24260,function,,0x0088f150,0x00465df0,0x0088f150
+24260,function,"std::map<std::wstring,void*>::_Copy",0x0088f150,0x00465df0,0x0088f150
 24261,function,InputModeGroup::AllowsText,0x0088f1d0,0x00466400,0x0088f1d0
 24262,function,InputModeGroup::BarsText,0x0088f220,0x00466450,0x0088f220
 24263,function,,0x0088f280,0x004664b0,0x0088f280
@@ -24273,25 +24273,25 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24272,function,InputModeGroup::Allow,0x0088f810,0x00466be0,0x0088f810
 24273,function,,0x0088f860,0x00466c30,0x0088f860
 24274,function,InputModes::Pop,0x0088f8b0,0x00466c80,0x0088f8b0
-24275,function,,0x0088f930,0x00466d40,0x0088f930
-24276,function,,0x0088f9a0,0x00466df0,0x0088f9a0
-24277,function,,0x0088fa20,0x00466e70,0x0088fa20
-24278,function,,0x0088fb30,0x00466f80,0x0088fb30
-24279,function,,0x0088fbf0,0x00467040,0x0088fbf0
-24280,function,,0x0088fcb0,0x00467100,0x0088fcb0
-24281,function,,0x0088fd70,0x004671c0,0x0088fd70
-24282,function,,0x0088fdd0,0x00467220,0x0088fdd0
-24283,function,,0x0088fe30,0x00467280,0x0088fe30
-24284,function,,0x0088fe90,0x004672e0,0x0088fe90
-24285,function,,0x0088ff22,0x00467372,0x0088ff22
+24275,function,InputModeGroup::TextSet::TextSet_copy,0x0088f930,0x00466d40,0x0088f930
+24276,function,InputModeGroup::TextSet::TextSet,0x0088f9a0,0x00466df0,0x0088f9a0
+24277,function,InputModeGroup::operator=,0x0088fa20,0x00466e70,0x0088fa20
+24278,function,InputModeGroup::InputModeGroup_copy,0x0088fb30,0x00466f80,0x0088fb30
+24279,function,InputModeGroup::InputModeGroup,0x0088fbf0,0x00467040,0x0088fbf0
+24280,function,InputModeGroup::~InputModeGroup,0x0088fcb0,0x00467100,0x0088fcb0
+24281,function,"std::pair<const std::wstring,InputModeGroup>::~pair",0x0088fd70,0x004671c0,0x0088fd70
+24282,function,"std::pair<const std::wstring,InputModeGroup>::pair",0x0088fdd0,0x00467220,0x0088fdd0
+24283,function,"std::pair<const std::wstring,InputModeGroup>::pair_copy",0x0088fe30,0x00467280,0x0088fe30
+24284,function,"std::map<std::wstring,InputModeGroup>::_Buynode",0x0088fe90,0x004672e0,0x0088fe90
+24285,function,"std::map<std::wstring,InputModeGroup>::_Buynode::Catch_All@0088FF22",0x0088ff22,0x00467372,0x0088ff22
 24286,function,,0x0088ff40,0x00467390,0x0088ff40
 24287,function,,0x00890150,0x004675a0,0x00890150
 24288,function,,0x00890300,0x00467750,0x00890300
 24289,function,,0x00890510,0x00467960,0x00890510
-24290,function,,0x00890890,0x00467ce0,0x00890890
-24291,function,,0x00890930,0x00467d80,0x00890930
+24290,function,"std::map<std::wstring,InputModeGroup>::_Erase",0x00890890,0x00467ce0,0x00890890
+24291,function,"std::map<std::wstring,InputModeGroup>::insert",0x00890930,0x00467d80,0x00890930
 24292,function,InputModes::GroupAt,0x008909d0,0x00467e20,0x008909d0
-24293,function,,0x00890ae0,0x00467f30,0x00890ae0
+24293,function,InputModes::DefineGroup,0x00890ae0,0x00467f30,0x00890ae0
 24294,function,,0x00890b90,0x00467fe0,0x00890b90
 24295,function,InputModes::Group,0x00890c60,0x004680b0,0x00890c60
 24296,function,InputModes::Activate,0x00890ca0,0x004680f0,0x00890ca0
@@ -24309,30 +24309,30 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24308,function,InputBinding::SecondKey,0x008910f0,0x00a3edb0,0x008910f0
 24309,function,,0x00891100,0x00a3edc0,0x00891100
 24310,function,Input::Bind,0x00891170,0x00a3ee30,0x00891170
-24311,function,,0x008911e0,0x00a3eea0,0x008911e0
-24312,function,,0x00891200,0x00a3eec0,0x00891200
-24313,function,,0x00891330,0x00a3eff0,0x00891330
+24311,function,"std::list<std::pair<const int,Input::BindingList>>::_Buynode",0x008911e0,0x00a3eea0,0x008911e0
+24312,function,"stdext::hash_map<int,Input::BindingList>::find",0x00891200,0x00a3eec0,0x00891200
+24313,function,"std::pair<const int,Input::BindingList>::~pair",0x00891330,0x00a3eff0,0x00891330
 24314,function,,0x00891340,0x00a3f000,0x00891340
 24315,function,,0x008913e0,0x0049cff0,0x008913e0
 24316,function,,0x00891599,0x0049d1a9,0x00891599
 24317,function,,0x008915a5,0x0049d1b5,0x008915a5
 24318,function,,0x00891690,0x00761a20,0x00891690
 24319,function,,0x00891730,0x00761ac0,0x00891730
-24320,function,,0x00891750,0x0049e860,0x00891750
-24321,function,,0x00891800,0x00a3f0a0,0x00891800
-24322,function,,0x00891840,0x0049f380,0x00891840
+24320,function,std::vector<Input::Binding>::insert,0x00891750,0x0049e860,0x00891750
+24321,function,"std::list<std::pair<const int,Input::BindingList>>::clear",0x00891800,0x00a3f0a0,0x00891800
+24322,function,std::vector<Input::Binding>::push_back,0x00891840,0x0049f380,0x00891840
 24323,function,,0x008918e0,0x00a3f0e0,0x008918e0
-24324,function,,0x00891960,0x00a3f160,0x00891960
-24325,function,,0x00891980,0x00a3f180,0x00891980
-24326,function,,0x008919e0,0x00a3f1e0,0x008919e0
-24327,function,,0x00891a60,0x00a3f260,0x00891a60
-24328,function,,0x00891aa0,0x00a3f2a0,0x00891aa0
-24329,function,,0x00891b1c,0x00a3f31c,0x00891b1c
+24324,function,"std::list<std::pair<const int,Input::BindingList>>::~list",0x00891960,0x00a3f160,0x00891960
+24325,function,"std::_Construct<std::pair<const int,Input::BindingList>,std::pair<const int,Input::BindingList>>",0x00891980,0x00a3f180,0x00891980
+24326,function,"stdext::hash_map<int,Input::BindingList>::hash_map",0x008919e0,0x00a3f1e0,0x008919e0
+24327,function,"stdext::hash_map<int,Input::BindingList>::~hash_map",0x00891a60,0x00a3f260,0x00891a60
+24328,function,"std::list<std::pair<const int,Input::BindingList>>::_Buynode",0x00891aa0,0x00a3f2a0,0x00891aa0
+24329,function,"std::list<std::pair<const int,Input::BindingList>>::_Buynode::Catch_All@00891B1C",0x00891b1c,0x00a3f31c,0x00891b1c
 24330,function,,0x00891b40,0x00a3f340,0x00891b40
 24331,function,Input::Input,0x00891bc0,0x00a3f3c0,0x00891bc0
 24332,function,Input::Get,0x00891c30,0x00a3f430,0x00891c30
 24333,function,,0x00891cb0,0x00a3f4b0,0x00891cb0
-24334,function,,0x00892130,0x00a3f930,0x00892130
+24334,function,"stdext::hash_map<int,Input::BindingList>::operator[]",0x00892130,0x00a3f930,0x00892130
 24335,function,,0x00892210,0x00a3fa10,0x00892210
 24336,function,,0x008922a0,0x00a3faa0,0x008922a0
 24337,function,Input::IsDown,0x00892340,0x00a3fb40,0x00892340
@@ -32195,7 +32195,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 32194,function,,0x00a21850,0x00895390,0x00a21850
 32195,function,Renderer::ScaleformRenderer::LoadShaders,0x00a21860,0x008953a0,0x00a21860
 32196,function,Renderer::ScaleformRenderer::ScaleformRenderer,0x00a21d20,0x00895860,0x00a21d20
-32197,function,,0x00a21f00,0x00895a40,0x00a21f00
+32197,function,Renderer::ScaleformRenderer::LoadShaders,0x00a21f00,0x00895a40,0x00a21f00
 32198,function,,0x00a21f10,0x008a5f10,0x00a21f10
 32199,function,,0x00a21f20,0x008a5f20,0x00a21f20
 32200,function,,0x00a21f30,0x008a5f30,0x00a21f30
@@ -32334,16 +32334,16 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 32333,function,,0x00a25ff0,0x008a9ff0,0x00a25ff0
 32334,function,,0x00a262d0,0x008aa2d0,0x00a262d0
 32335,function,Renderer::GDynamicVertexStream::GDynamicVertexStream,0x00a26520,0x008b0070,0x00a26520
-32336,function,,0x00a26590,0x008b00e0,0x00a26590
+32336,function,GDynamicVertexStream::ResetSizes,0x00a26590,0x008b00e0,0x00a26590
 32337,function,Renderer::GDynamicVertexStream::SetVertexData,0x00a265b0,0x008b0100,0x00a265b0
 32338,function,Renderer::GDynamicVertexStream::SetIndexData,0x00a26600,0x008b0150,0x00a26600
 32339,function,Renderer::GDynamicVertexStream::DrawLineStrip,0x00a26620,0x008b0170,0x00a26620
-32340,function,,0x00a26670,0x008b01c0,0x00a26670
-32341,function,,0x00a26700,0x008b0250,0x00a26700
-32342,function,,0x00a26720,0x008b0270,0x00a26720
-32343,function,,0x00a267a0,0x008b02f0,0x00a267a0
+32340,function,GDynamicVertexStream::LockVertices,0x00a26670,0x008b01c0,0x00a26670
+32341,function,GDynamicVertexStream::UnlockVertices,0x00a26700,0x008b0250,0x00a26700
+32342,function,GDynamicVertexStream::LockIndices,0x00a26720,0x008b0270,0x00a26720
+32343,function,GDynamicVertexStream::UnlockIndices,0x00a267a0,0x008b02f0,0x00a267a0
 32344,function,Renderer::GDynamicVertexStream::UploadVertexRange,0x00a267c0,0x008b0310,0x00a267c0
-32345,function,,0x00a26810,0x008b0360,0x00a26810
+32345,function,GDynamicVertexStream::CopyIndexedTriangles,0x00a26810,0x008b0360,0x00a26810
 32346,function,Renderer::GDynamicVertexStream::~GDynamicVertexStream,0x00a269e0,0x008b0530,0x00a269e0
 32347,function,Renderer::GDynamicVertexStream::PrepareIndexedPrimitive,0x00a26a70,0x008b05c0,0x00a26a70
 32348,function,Renderer::GDynamicVertexStream::DrawIndexedPrimitive,0x00a26be0,0x008b0730,0x00a26be0
@@ -32370,7 +32370,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 32369,function,Renderer::GTextureD3D9Impl::InitTextureFromFile,0x00a28240,0x008b1e30,0x00a28240
 32370,function,Renderer::GTextureD3D9Impl::~GTextureD3D9Impl,0x00a283b0,0x008b1fa0,0x00a283b0
 32371,function,Renderer::GTextureD3D9Impl::`scalar deleting destructor',0x00a28420,0x008b2010,0x00a28420
-32372,function,,0x00a28440,0x0083db40,0x00a28440
+32372,function,Math::FloatsToHalfFloats,0x00a28440,0x0083db40,0x00a28440
 32373,function,,0x00a284e0,0x0083dbe0,0x00a284e0
 32374,function,IRoomLayout::vfunction3,0x00a28550,0x00837a50,0x00a28550
 32375,function,IRoomLayout::GetSceneObjectVector,0x00a285c0,0x00837ac0,0x00a285c0
@@ -32392,17 +32392,17 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 32391,function,IRoomLayout::SetSeen,0x00a29220,0x00838520,0x00a29220
 32392,function,IRoomLayout::GetSceneObjectsBegin,0x00a29230,0x00838530,0x00a29230
 32393,function,IRoomLayout::`scalar deleting destructor',0x00a29290,0x00838590,0x00a29290
-32394,function,,0x00a292b0,0x008385b0,0x00a292b0
-32395,function,,0x00a29360,0x00838660,0x00a29360
+32394,function,std::vector<RoomModelRecord::LightmapAtlas>::insert,0x00a292b0,0x008385b0,0x00a292b0
+32395,function,std::vector<RoomModelRecord::LightmapAtlas>::push_back,0x00a29360,0x00838660,0x00a29360
 32396,function,IRoomLayout::IRoomLayout,0x00a29400,0x00838700,0x00a29400
-32397,function,,0x00a29690,0x00838990,0x00a29690
-32398,function,,0x00a299b0,0x00838cb0,0x00a299b0
-32399,function,,0x00a29a80,0x00838d80,0x00a29a80
-32400,function,,0x00a29e50,0x00821060,0x00a29e50
-32401,function,,0x00a29e70,0x00821080,0x00a29e70
-32402,function,,0x00a29ee0,0x008210f0,0x00a29ee0
-32403,function,,0x00a29f30,0x00821140,0x00a29f30
-32404,function,,0x00a29f40,0x00821150,0x00a29f40
+32397,function,RoomModelRecord::ReadLightmapAtlases,0x00a29690,0x00838990,0x00a29690
+32398,function,"stdext::hash_map<std::wstring,Vector4>::operator[]",0x00a299b0,0x00838cb0,0x00a299b0
+32399,function,RoomModelRecord::Read,0x00a29a80,0x00838d80,0x00a29a80
+32400,function,ResRef::ResRef,0x00a29e50,0x00821060,0x00a29e50
+32401,function,ResRef::Set,0x00a29e70,0x00821080,0x00a29e70
+32402,function,ResRef::ToString,0x00a29ee0,0x008210f0,0x00a29ee0
+32403,function,ResRef::GetBuffer,0x00a29f30,0x00821140,0x00a29f30
+32404,function,ResRef::ToCString,0x00a29f40,0x00821150,0x00a29f40
 32405,function,ScriptBackend::ForScript_HasConversation,0x00a29f60,0x00821170,0x00a29f60
 32406,function,CResRef::GetLength,0x00a29f70,0x00821180,0x00a29f70
 32407,function,CResRef::IsNotEqualNoCase,0x00a29f90,0x008211a0,0x00a29f90
@@ -32446,15 +32446,15 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 32445,function,,0x00a2b430,0x007d7d40,0x00a2b430
 32446,function,,0x00a2b4a0,0x0081e9b0,0x00a2b4a0
 32447,function,,0x00a2b540,0x0081ea50,0x00a2b540
-32448,function,,0x00a2b560,0x0081eac0,0x00a2b560
-32449,function,,0x00a2b6a0,0x0081ec00,0x00a2b6a0
-32450,function,,0x00a2b720,0x0082e9c0,0x00a2b720
-32451,function,,0x00a2b800,0x0081ecd0,0x00a2b800
-32452,function,,0x00a2b900,0x0081edd0,0x00a2b900
-32453,function,,0x00a2ba50,0x0081ef20,0x00a2ba50
-32454,function,,0x00a2bb00,0x0081efd0,0x00a2bb00
-32455,function,,0x00a2bd90,0x0081f260,0x00a2bd90
-32456,function,,0x00a2be00,0x0081f2d0,0x00a2be00
+32448,function,"std::_Sort<Gff4::Field*,int,Gff4::File::FieldAlignmentGreater>",0x00a2b560,0x0081eac0,0x00a2b560
+32449,function,"stdext::hash_map<unsigned int,unsigned int>::hash_map",0x00a2b6a0,0x0081ec00,0x00a2b6a0
+32450,function,Gff4::MakeSortedStruct,0x00a2b720,0x0082e9c0,0x00a2b720
+32451,function,Gff4::File::AppendData,0x00a2b800,0x0081ecd0,0x00a2b800
+32452,function,Gff4::SwapImageEndian,0x00a2b900,0x0081edd0,0x00a2b900
+32453,function,std::vector<unsigned char>::_Tidy,0x00a2ba50,0x0081ef20,0x00a2ba50
+32454,function,Gff4::File::MakeAlignedStruct,0x00a2bb00,0x0081efd0,0x00a2bb00
+32455,function,Gff4::File::AllocStruct,0x00a2bd90,0x0081f260,0x00a2bd90
+32456,function,Gff4::File::AllocStructArray,0x00a2be00,0x0081f2d0,0x00a2be00
 32457,function,,0x00a2be90,0x0081f360,0x00a2be90
 32458,function,,0x00a2bef0,0x0081f3c0,0x00a2bef0
 32459,function,,0x00a2bf50,0x0081f420,0x00a2bf50
