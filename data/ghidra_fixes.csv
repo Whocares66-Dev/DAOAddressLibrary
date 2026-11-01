@@ -5400,3 +5400,68 @@ address,what,value,why
 0x005C23E0,signature,"bool __thiscall ReverbChannelGroup_SetPreset(void* this, void* nameWString, float fadeGate, float unused)",ret 0xC; gate tested != 0 at 0x005C2709..27 (fade over +0x19C); 3rd arg never read
 0x005C35F0,signature,"bool __thiscall SetReverb(void* this, void* nameWString, float unused, float time)",ret 0xC; 2nd arg passed through to 0x005C30A0's unused 3rd
 0x005B7790,signature,"bool __thiscall SetReverbPreset(void* this, void* nameWString, float unused, float time)","ret 0xC; passes both floats to renderer +0x38 (0x005B77A0..C3); name proposed, the function is unnamed"
+0x005389B0,signature,void __cdecl AtmosphereConstants__SetFogOverride(const void *fog_or_null),"Plain ret, argument at [ESP+4] (0x005389B0, 0x005389EA); callers 0x007CE728 (ADD ESP,4) and 0x007CD3F7 clean up. The record: colour (16 bytes, 16-aligned, MOVAPS), +0x10 intensity, +0x14 cap, +0x18 zenith."
+0x005B65A0,signature,unsigned char __thiscall SoundEventInstance__FreeEvent(void *this),Reads [ECX+0x70]; tail-jumps content slot +0x1C (0x005BF600); plain ret.
+0x005B6600,signature,"unsigned char __thiscall SoundEventInstance__SetPlaybackPositionMs(void *this, unsigned int ms_low, unsigned int ms_high)","Ret 8 at 0x005B6608 and 0x005B661F; both dwords pushed to slot +0x28 (0x005C0660 reads only the low one, 0x005C068C)."
+0x005B6740,signature,"unsigned char __thiscall SoundEventInstance__SetParameterByIndex(void *this, int index, const void *info)","Tail jump to slot +0x78 (0x005BF820, ret 8); info +4 value, +0x10 seek speed, +0x14 velocity (0x005BF84E-0x005BF86C)."
+0x005B6810,signature,"void __thiscall SoundEventInstance__SetOrientationFromQuat(void *this, const float *quat_xyzw)","Ret 4 at 0x005B685B; rotates (0,1,0) by the quaternion (0x004CB6D0) and calls content slot +0x68."
+0x0068D260,signature,"unsigned char __thiscall ConversationData__HandleMessage_SelectResponseMessage(void *this, const void *msg)",Thunk: ECX=[ECX+0xE4]; JMP 0x0068D050 (stack args untouched).
+0x0068D2A0,signature,"void * __thiscall Response__ctor(void *this, const void *text_ecstring, int icon)","Ret 8 at 0x0068D3EA; +0x58 Text, +0x80 Icon (the address of arg2 is taken for the int attribute)."
+0x0068D3F0,clear,Response::vfunction2,"Adjustor{28} thunk to the scalar deleting destructor 0x0068D490 (sub ecx,0x1C), not a distinct virtual."
+0x0068D3F0,signature,"void * __thiscall Response__sdd_adjustor_1c(void *this, unsigned int flags)",Thunk; the stack arg passes through.
+0x0068D400,clear,Response::vfunction1,"Adjustor{32} thunk to the scalar deleting destructor (sub ecx,0x20)."
+0x0068D400,signature,"void * __thiscall Response__sdd_adjustor_20(void *this, unsigned int flags)",As above.
+0x0068D410,clear,Response::vfunction3,"Adjustor{8} thunk to the scalar deleting destructor (sub ecx,8)."
+0x0068D410,signature,"void * __thiscall Response__sdd_adjustor_08(void *this, unsigned int flags)",As above.
+0x0068D420,convention,__thiscall,"Plain ret, uses ECX (0x0068D442)."
+0x0068D490,clear,Response::vfunction5,The scalar deleting destructor.
+0x0068D490,signature,"void * __thiscall Response__scalar_deleting_destructor(void *this, unsigned int flags)",Ret 4 at 0x0068D4AB.
+0x0068FF10,signature,"void * __thiscall ConversationData__ctor(void *this, void *owner)",Ret 4 at 0x00690267; owner (GameModeDialog*) stored at +0xE4 (0x00690019).
+0x0069005F,clear,MapTrail::vfunction2,The tail of ConversationData::ConversationData (0x0068FF10): the listing stops at PUSH EAX 0x0069005E and 0x0069005F continues the same body to RET 4 at 0x00690267. Merge into 0x0068FF10 and drop the label.
+0x00690270,clear,ConversationData::vfunction2,Adjustor{28} thunk to the scalar deleting destructor 0x006903D0.
+0x00690270,signature,"void * __thiscall ConversationData__sdd_adjustor_1c(void *this, unsigned int flags)",Thunk.
+0x00690280,clear,ConversationData::vfunction1,Adjustor{32} thunk to the scalar deleting destructor.
+0x00690280,signature,"void * __thiscall ConversationData__sdd_adjustor_20(void *this, unsigned int flags)",Thunk.
+0x00690290,clear,ConversationData::vfunction3,Adjustor{8} thunk to the scalar deleting destructor.
+0x00690290,signature,"void * __thiscall ConversationData__sdd_adjustor_08(void *this, unsigned int flags)",Thunk.
+0x006902A0,clear,ConversationData::vfunction1,"A static accessor of the message-receiver descriptor (called directly, ECX unused), not a virtual."
+0x006902A0,signature,void * __cdecl ConversationData__StaticMessageReceiverType(void),Returns 0x00C01B78; plain ret.
+0x00690300,clear,ConversationData::vfunction1,Vtable 0x00B0E5A8 slot 0: GetMessageReceiverType (jmp 0x006902A0).
+0x00690390,clear,ConversationData::vfunction4,Slot 3: RegisterMessageHandlers.
+0x006903A0,clear,ConversationData::vfunction3,Slot 2: EnsureMessageHandlersRegistered.
+0x006903D0,clear,ConversationData::vfunction5,Slot 4: the scalar deleting destructor.
+0x006903D0,signature,"void * __thiscall ConversationData__scalar_deleting_destructor(void *this, unsigned int flags)",Ret 4 at 0x006903EB.
+0x006903F0,clear,ConversationData::ConversationData,This one is the copy constructor (arg: const ConversationData*); the label hides that.
+0x006903F0,signature,"void * __thiscall ConversationData__copy_ctor(void *this, const void *src)",Ret 4 at 0x0069065E; src read at +0x58/+0xA8/+0xC4/+0xD4/+0xE4.
+0x00690670,signature,"void __thiscall ConversationData__AddResponse(void *this, const void *text_ecstring, int icon)",Ret 8 at 0x006906F9; ECX = this (0x00690692); the decompiler shows it without this.
+0x006907A0,clear,ConversationData::clone,Keep the meaning; name it Clone (vtable slot 1).
+0x006907A0,signature,void * __thiscall ConversationData__Clone(void *this),Plain ret; new 0xE8 (0x006907C4) and the copy constructor (0x006907E4).
+0x00690810,signature,"void __thiscall GameModeDialog__AddResponse(void *this, int reply_index)","Ret 4 at 0x00690B5E; ECX = this (0x0069084B MOV EDI,ECX); the decompiler gives (int this, int) with the reply index as param_2."
+0x006952A0,signature,void __thiscall CCObject__SaveLodState(void *this),"Plain ret at 0x006952BF; +0x424 = 0x00695240(), +0x428 = (+0x70 iface) slot +0x64."
+0x006952C0,signature,void __thiscall CCObject__RestoreLodState(void *this),Plain ret at 0x006952F7; ECX kept as this for 0x00695220.
+0x0069F3A0,signature,void __thiscall CCCreature__SnapshotAppearance(void *this),Plain ret at 0x0069F434; ECX = this (0x0069F3C2).
+0x006C1BF0,signature,unsigned char __thiscall CCCreature__RebuildAppearanceFromEquipment(void *this),Plain ret at 0x006C1DF8; result in AL; 0 without a snapshot at +0x7B8.
+0x006EB690,clear,ConversationLine::vfunction2,Adjustor{28} thunk to the scalar deleting destructor 0x006ED1A0.
+0x006EB690,signature,"void * __thiscall ConversationLine__sdd_adjustor_1c(void *this, unsigned int flags)",Thunk.
+0x006EB6A0,clear,ConversationLine::vfunction1,Adjustor{32} thunk to the scalar deleting destructor.
+0x006EB6A0,signature,"void * __thiscall ConversationLine__sdd_adjustor_20(void *this, unsigned int flags)",Thunk.
+0x006EB6B0,clear,ConversationLine::vfunction3,Adjustor{8} thunk to the scalar deleting destructor.
+0x006EB6B0,signature,"void * __thiscall ConversationLine__sdd_adjustor_08(void *this, unsigned int flags)",Thunk.
+0x006ECFE0,signature,"void * __thiscall ConversationLine__ctor(void *this, unsigned int speaker_name_strref, unsigned int line_strref)",Ret 8 at 0x006ED193; the decompiler's single undefined1 param is wrong.
+0x006ED1A0,clear,ConversationLine::vfunction5,The scalar deleting destructor.
+0x006ED1A0,signature,"void * __thiscall ConversationLine__scalar_deleting_destructor(void *this, unsigned int flags)",Ret 4 at 0x006ED1BB.
+0x006ED1C0,signature,"void * __thiscall ConversationLine__ctor_player(void *this, unsigned int line_strref)","Ret 4 at 0x006ED378; Speaker 0, Player true."
+0x006F25E0,signature,"void __thiscall Journal__AddConversationLine(void *this, unsigned int speaker_name_strref, unsigned int line_strref)",Ret 8 at 0x006F26AC; ECX = the journal (0x006F2602 ECX+0x188); callers 0x0068E3D4 and 0x006F80DE.
+0x006F26B0,signature,"void __thiscall Journal__AddConversationReply(void *this, unsigned int line_strref)",Ret 4 at 0x006F27FE; the decompiler drops this and types the arg undefined1; callers 0x0068DB86 and 0x006F80BC.
+0x006F3530,signature,void * __thiscall ConversationRecord__ctor(void *this),Plain ret at 0x006F361F; no stack args.
+0x006F3620,clear,ConversationRecord::vfunction1,Adjustor{32} thunk to the scalar deleting destructor 0x006F4B40.
+0x006F3620,signature,"void * __thiscall ConversationRecord__sdd_adjustor_20(void *this, unsigned int flags)",Thunk.
+0x006F3630,clear,ConversationRecord::vfunction3,Adjustor{8} thunk to the scalar deleting destructor 0x006F4B40.
+0x006F3630,signature,"void * __thiscall ConversationRecord__sdd_adjustor_08(void *this, unsigned int flags)",Thunk.
+0x006F4A40,signature,void __thiscall Journal__BeginConversationRecord(void *this),"Ghidra types it __fastcall(ConversationRecord*): ECX is the journal (from CClientExoApp::GetJournal 0x005D5810 at 0x00691568), +0x188 its history and +0x1E8 the cap; plain ret at 0x006F4B1F."
+0x006F4B40,signature,"void * __thiscall ConversationRecord__scalar_deleting_destructor(void *this, unsigned int flags)",Reached through thunks 0x006F3620/0x006F3630 and vtable 0x00B14980 slot 4.
+0x00403C70,clear,CLCDBase member function inherited by CLCDCollection ...,"Misleading label: the bytes are a generic ""return this+0xC"" (a SmartData attribute's value reference), used by 0x006906DD and many others; the CLCD names do not apply."
+0x0074A610,signature,"void __thiscall CAppearance__Assign(void *this, const void *src)","Ret 4; copies src into this (callers 0x0069F41F, 0x006C1D66); Ghidra types it as a CLCDBase method."
+0x00747EF0,signature,"unsigned char __thiscall CAppearance__Differs(const void *this, const void *other)","Ret 4; returns 1 at the first differing field, 0 if equal."
+0x00748240,signature,void __thiscall CAppearance__ClearSlots(void *this),Writes base item 0xFFFF and variation 0xFF over 7 slots; no stack arg.
+0x00748DA0,signature,"void __thiscall CAppearance__SetSlotFromItem(void *this, unsigned int inv_slot, const void *item)",Caller 0x006C1D1D pushes the item then the slot; reads item +0x464/+0x466/+0x468/+0x46C/+0x4B4/+0x4B8/+0x4FC.
