@@ -11034,3 +11034,145 @@ address,what,value,why
 0x00458420,signature,"void * __thiscall f(void *this, void *target)","ret 4, this in esi from ecx at 0x458421"
 0x00458470,signature,"void __cdecl f(void *text, float *out)","plain ret, args at [esp+0x9C], [esp+0xA0]"
 0x00458520,signature,"void __cdecl f(float *value, void *textOut)","plain ret, args at [esp+0xB8], [esp+0xBC]"
+0x0070C7D0,signature,int __thiscall f(void *this),ecx read at 0x0070C7D0; plain ret
+0x0070C970,signature,"int __thiscall f(void *this, int id)",ecx saved at 0x0070C975; ret 4
+0x0070CC50,signature,int __cdecl f(void *object),"object at [esp+4], ecx unread, plain ret 0x0070CD80"
+0x0070D340,signature,void __thiscall f(void *this),called with ecx=this at 0x007130EC; plain ret
+0x0070D410,signature,void __thiscall f(void *this),member called from Leave; plain ret
+0x0070D490,signature,void __thiscall f(void *this),ecx read at 0x0070D499; plain ret
+0x0070D6E0,signature,void __thiscall f(void *this),ecx -> edi at 0x0070D6E3; plain ret
+0x0070D760,signature,void __thiscall f(void *this),called with ecx=esi from Enter 0x0070E966; plain ret
+0x0070D8D0,signature,"void __thiscall f(void *this, int targetId, void *point)",ecx -> edi at 0x0070D8F4; ret 8
+0x0070E7B0,signature,void * __thiscall f(void *this),vftable slot 1 Clone; plain ret
+0x0070E820,signature,void __thiscall f(void *this),vftable slot 6 Enter; plain ret
+0x0070EF20,signature,unsigned char __cdecl f(void *object),"object at [esp+0x10] after sub/push, plain ret 0x0070EF9C"
+0x0070EFA0,signature,unsigned char __cdecl f(void *object),"same shape as 0x0070EF20, plain ret 0x0070F022"
+0x0070F2F0,signature,int __stdcall f(void *creature),creature read from [esp+0x14] and ecx written before any read (0x0070F2F4-0x0070F301); ret 4
+0x00710B60,signature,"int __thiscall f(void *this, int id)",ecx saved at 0x00710B65; ret 4
+0x007121E0,signature,void __stdcall f(void *list),ret 4; ecx not read before written (list is [ebp+8])
+0x00712700,signature,void __thiscall f(void *this),ecx -> ebx at 0x00712726; plain ret
+0x007133D0,signature,"void * __thiscall f(void *registry, void *name)",ecx -> edi at 0x007133F5; ret 4
+0x007136D0,convention,__thiscall,vftable slot 3 (0x00B16374)
+0x007138D0,convention,__thiscall,vftable slot 2 (0x00B16374)
+0x00713920,signature,"void * __thiscall f(void *this, int a, int b)",constructor; ecx -> edi at 0x00713947; ret 8
+0x00717FA0,signature,"void __thiscall f(void *this, float dt)",vftable slot 8; ret 4
+0x007185F0,signature,void __thiscall f(void *this),dtor; ecx -> esi at 0x00718615
+0x007186D0,convention,__thiscall,"adjustor thunk, sub ecx,0x1C; jmp"
+0x007186E0,convention,__thiscall,"adjustor thunk, sub ecx,0x20; jmp"
+0x007186F0,convention,__thiscall,"adjustor thunk, sub ecx,8; jmp"
+0x00718700,signature,void * __thiscall f(void *this),vftable slot 0
+0x00718730,signature,unsigned char __thiscall f(void *this),"vftable slot 11; add ecx,0x84; jmp"
+0x00718740,signature,unsigned char __thiscall f(void *this),vftable slot 12
+0x00718760,signature,"void * __thiscall f(void *this, void *other)",copy ctor; ret 4
+0x007187D0,signature,void __thiscall f(void *this),vftable slot 6; plain ret
+0x00718DC0,signature,void * __thiscall f(void *this),vftable slot 1
+0x00718E30,signature,"void * __thiscall f(void *this, unsigned int flags)",sdd; ret 4
+0x00718E50,convention,__thiscall,vftable slot 3
+0x00718EB0,convention,__thiscall,vftable slot 2
+0x00718F00,signature,"void * __thiscall f(void *registry, void *name)",ecx -> edi at 0x00718F25; ret 4
+0x00718FC0,signature,"void * __thiscall f(void *registry, void *name)",ecx -> edi at 0x00718FE5; ret 4
+0x00719080,signature,"void * __thiscall f(void *this, int a, int b)",constructor; ret 8
+0x00719200,signature,"void * __thiscall f(void *this, int a, int b)",constructor; ret 8
+0x00719250,signature,unsigned char __thiscall f(void *this),vftable slot 11
+0x00719260,signature,unsigned char __thiscall f(void *this),vftable slot 12
+0x00719270,signature,void __thiscall f(void *this),"dtor, tail jump to 0x00694280"
+0x007192E0,convention,__thiscall,adjustor thunk
+0x007192F0,convention,__thiscall,adjustor thunk
+0x00719300,convention,__thiscall,adjustor thunk
+0x00719310,signature,void * __thiscall f(void *this),vftable slot 0
+0x00719340,signature,"void * __thiscall f(void *this, void *other)",copy ctor; ret 4
+0x007193A0,signature,"void * __thiscall f(void *this, unsigned int flags)",sdd; ret 4
+0x007193C0,signature,"void __thiscall f(void *this, float dt)",vftable slot 8; ret 4
+0x00719490,signature,void __cdecl f(void),no ecx or stack read; plain ret at 0x007194C0
+0x007194D0,signature,void * __thiscall f(void *this),vftable slot 1
+0x00719540,signature,void __thiscall f(void *this),vftable slot 6
+0x00719690,signature,"void __thiscall f(void *this, int arg)",vftable slot 7; ret 4
+0x00719910,convention,__thiscall,vftable slot 3
+0x00719940,convention,__thiscall,vftable slot 2
+0x00719A90,signature,"void __thiscall f(void *stats, int a, int b)","ret 8, ecx pushed as AbilityChains::Find first argument; the caller ignores eax (0x007180C7)"
+0x00719F90,signature,"void * __thiscall f(void *stats, void *out)",ecx +0x7C at 0x00719F92; ret 4
+0x007343C0,signature,"void __thiscall f(void *this, float dt)",ecx read at 0x007343C0; ret 4
+0x0073BF60,signature,"void __thiscall f(void *this, float dt)",ecx read at 0x0073BF60; ret 4
+0x00763C90,signature,void __thiscall f(void *this),ecx read at 0x00763C90; plain ret
+0x00764020,signature,"unsigned char __thiscall f(void *this, void *position, int unused)",ret 8; arg 2 never read in 0x00764020-0x00764142
+0x00765880,signature,"void __thiscall f(void *this, float dt)",ecx -> esi at 0x00765881; ret 4
+0x00765950,convention,__thiscall,jmp to 0x00765830 which reads ecx
+0x007661B0,signature,"void __thiscall f(void *this, void *entry)",ecx -> ebx at 0x007661B1; ret 4
+0x00766AB0,signature,void __thiscall f(void *this),ecx -> esi at 0x00766AB6; plain ret
+0x00766C10,signature,void __thiscall f(void *this),called by SubmitPartyChanges 0x00767060 with ecx; plain ret
+0x007672C0,signature,void __thiscall f(void *this),plain ret 0x007675A8
+0x007675B0,signature,void * __thiscall f(void *this),ecx -> edi at 0x007675C4; returns the entry; plain ret
+0x00767830,signature,void __thiscall f(void *this),ecx -> edi at 0x00767862; plain ret
+0x00769750,convention,__thiscall,vftable slot 3
+0x0076A980,signature,void __thiscall f(void *this),dtor; ecx -> esi at 0x0076A9A5
+0x0076AAB0,signature,unsigned char __thiscall f(void *this),vftable slot 11
+0x0076AAC0,convention,__thiscall,adjustor thunk
+0x0076AAD0,convention,__thiscall,adjustor thunk
+0x0076AAE0,convention,__thiscall,adjustor thunk
+0x0076AAF0,signature,void * __thiscall f(void *this),vftable slot 0
+0x0076AB20,convention,__thiscall,vftable slot 2
+0x0076AB70,signature,"void * __thiscall f(void *this, void *other)",vector copy ctor; ecx -> esi at 0x0076AB92; ret 4
+0x00459060,signature,void __cdecl f(int level),"plain ret, caller add esp,8 (0x459120)"
+0x004593D0,signature,void __cdecl f(void *obj),"plain ret, arg at [esp+4]"
+0x004593F0,signature,"void __thiscall f(void *this, unsigned int *flags)","ecx stored to, ret 4"
+0x00459570,signature,"bool __thiscall f(void *this, void *hwnd, int *width, int *height, int flag)","vftable slot 5, ret 0x10, returns al=1"
+0x00459460,signature,"void __thiscall f(void *this, int a, int b, int c, int d, int e)","vftable slot 6, ret 0x14"
+0x004594D0,convention,__thiscall,vftable slot 4
+0x00459400,convention,__thiscall,vftable slot 8
+0x00459440,convention,__thiscall,vftable slot 7
+0x00459630,convention,__thiscall,ecx read first
+0x00459660,signature,void * __cdecl f(void *node),"plain ret, add esp,4 at callers"
+0x004597D0,signature,"void __thiscall f(void *this, void *camera, void *viewState)","vftable slot 0, ret 8"
+0x00459860,signature,"void __thiscall f(void *this, int arg)","vftable slot 15, ret 4"
+0x004598A0,convention,__thiscall,ecx read first
+0x004598F0,signature,"void __thiscall f(void *this, void *camera)","ret 4, ecx saved to esi"
+0x00459B00,signature,"void __thiscall f(void *this, void *camera)",ret 4
+0x00459B90,convention,__thiscall,vftable slot 3
+0x00459CF0,signature,"void * __stdcall f(void *dest, unsigned int count, void *val)","ret 0xC, ecx never read"
+0x00459D30,signature,"void __stdcall f(void *first, void *last)","ret 8, ecx never read"
+0x00459D60,signature,"void * __stdcall f(void *first, void *last, void *dest)","ret 0xC, ecx never read"
+0x00459DB0,signature,"void __thiscall f(void *this, void *out, void *firstCont, void *first, void *lastCont, void *last)","ret 0x14, ecx to ebp"
+0x00459E20,convention,__thiscall,ecx to ebx
+0x0045A2D0,signature,"void __thiscall f(void *this, unsigned int n)",ret 4
+0x0045A320,signature,"void __thiscall f(void *this, void *val)",ret 4
+0x0045A3B0,signature,"void * __thiscall f(void *this, unsigned int n)","ret 4, returns this"
+0x0045A410,signature,"void __thiscall f(void *this, bool releaseMemory)",ret 4
+0x0045A4F0,signature,"void __thiscall f(void *this, void *param)","add ecx,0x2C; jmp push_back"
+0x0045A500,convention,__thiscall,"plain ret, ecx to ebx"
+0x0045A7E0,convention,__thiscall,"ret 0x24, ecx to esi"
+0x0045A9C0,signature,bool __thiscall f(void *this),"mov al,[ecx+0x40]"
+0x0045A9D0,signature,bool __thiscall f(void *this),vftable slot 14
+0x0045A9F0,convention,__thiscall,ret 0xC
+0x0045AB20,signature,"void * __thiscall f(void *this, void *device)",ret 4
+0x0045AC70,convention,__thiscall,ecx to esi
+0x0045AD90,signature,"void * __thiscall f(void *this, void *out)","vftable slot 12, ret 4"
+0x0045AE70,signature,"void * __cdecl f(void *device, void *smartPtr)","plain ret; caller add esp,8"
+0x0045AFC0,signature,"void * __thiscall f(void *this, unsigned int flags)",ret 4
+0x0045B000,signature,void * __cdecl f(void),returns 0xC1EC00
+0x0045B0F0,signature,"bool __thiscall f(void *this, void *a, void *b)","ret 8, ecx read"
+0x0045B3B0,signature,"bool __thiscall f(void *this, void *a, void *b)","ret 8, ecx read"
+0x0045C190,signature,void __cdecl f(unsigned char enable),"plain ret, byte at [ebp+8]"
+0x0045F500,signature,"void * __thiscall f(void *this, unsigned int index)","ret 4, ecx read"
+0x0045F550,convention,__thiscall,ecx to edi
+0x0045FCD0,signature,"void __thiscall f(void *this, int event)","ret 4, ecx to edi"
+0x0045FD40,convention,__thiscall,ecx read
+0x004601F0,signature,"unsigned char __thiscall f(void *this, void *key, unsigned int *value)",ret 8; returns pair.second in al
+0x004596B0,convention,__cdecl,"STL helper: plain ret, stack arguments"
+0x00459730,convention,__cdecl,"STL helper: plain ret, stack arguments"
+0x00459960,convention,__cdecl,"STL helper: plain ret, stack arguments"
+0x004599D0,convention,__cdecl,"STL helper: plain ret, stack arguments"
+0x00459A20,convention,__cdecl,"STL helper: plain ret, stack arguments"
+0x00459BC0,convention,__cdecl,"STL helper: plain ret, stack arguments"
+0x00459C10,convention,__cdecl,"STL helper: plain ret, stack arguments"
+0x0045B2E0,convention,__cdecl,"STL helper: plain ret, stack arguments"
+0x0045B350,convention,__cdecl,"STL helper: plain ret, stack arguments"
+0x0045B610,convention,__cdecl,"STL helper: plain ret, stack arguments"
+0x0045B790,convention,__cdecl,"STL helper: plain ret, stack arguments"
+0x0045B880,convention,__cdecl,"STL helper: plain ret, stack arguments"
+0x0045B930,convention,__cdecl,"STL helper: plain ret, stack arguments"
+0x0045BB00,convention,__cdecl,"STL helper: plain ret, stack arguments"
+0x0045BCC0,convention,__cdecl,"STL helper: plain ret, stack arguments"
+0x0045C130,convention,__cdecl,"STL helper: plain ret, stack arguments"
+0x0045C320,convention,__cdecl,"STL helper: plain ret, stack arguments"
+0x0045C480,convention,__cdecl,"STL helper: plain ret, stack arguments"
+0x0045C2C0,convention,__cdecl,"STL helper: plain ret, stack arguments"
