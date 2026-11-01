@@ -8485,3 +8485,79 @@ address,what,value,why
 0x00AD6680,signature,void __cdecl atexit_GUI_StopDraggingMessage_GetName_s_name(void),atexit callback: sets ecx itself and tail-jumps to std::wstring::~wstring; no arguments
 0x00AD6760,signature,void __cdecl atexit_GUI_ForceInventoryRefreshMessage_GetName_s_name(void),atexit callback: sets ecx itself and tail-jumps to std::wstring::~wstring; no arguments
 0x004C2480,signature,"wchar_t ** __thiscall std::wstring::wstring(void * this, wchar_t * s)","ecx this (0x004C24A3), one stack arg (0x004C24BD), ret 4 (0x004C2502), returns this (0x004C24EF)"
+0x0070A9B0,signature,"bool __thiscall f(void *this, const int *point, int marginX, int marginY)","0x0070A9B0-0x0070A9F5: tests x in [x+mx, x+w-mx) and y in [y+my, y+h-my); ret 0xC"
+0x0070B130,signature,void * __cdecl f(void),"0x0070B130-0x0070B18B: plain ret, no stack arguments"
+0x0070C520,signature,void * __thiscall f(void *this),"0x0070C520: ecx read into esi, constructor, plain ret"
+0x00717BA0,signature,void __thiscall f(void *this),"0x00717BA0-0x00717BB3: ecx read, plain ret, no stack arguments"
+0x00717F40,signature,void __thiscall f(void *this),"0x00717F40-0x00717F9F: ecx to esi, plain ret"
+0x007183C0,signature,"void __thiscall f(void *this, int screenId)","0x007183C0: ecx to esi, ret 4"
+0x007199F0,signature,"void * __thiscall f(void *this, int abilityType)","0x007199D0-0x007199ED: ret 4, ecx used as this"
+0x00719A00,signature,"void __thiscall f(void *this, int property, float oldValue, int flag)","0x00719A00-0x00719A3A: ecx read, ret 0xC"
+0x00719A40,signature,"void __thiscall f(void *this, int ability, int value)",0x00719A40-0x00719A6A: ret 8
+0x00719A70,signature,"void * __thiscall f(void *this, int ability, int flag)",0x00719A70-0x00719A81: ret 8
+0x00719AB0,signature,void __thiscall f(void *this),"0x00719AB0-0x00719ABF: ecx read, plain ret, no stack arguments"
+0x00719AE0,signature,"void __thiscall f(void *this, int bar)",0x00719AE0: ret 4
+0x00719B30,signature,"void __thiscall f(void *this, int arg, void *creature)","0x00719B30: ecx read, ret 8"
+0x00719B50,signature,"void __thiscall f(void *this, int arg, void *creature)","0x00719B50: ecx read, ret 8"
+0x00719B70,signature,void __thiscall f(void *this),"0x00719B70: ecx to ebp, plain ret"
+0x00719EA0,signature,int __thiscall f(void *this),0x00719EA0: tail jmp into a thiscall getter
+0x00719EB0,signature,"void __thiscall f(void *this, int race)",0x00719EB0: ret 4
+0x00719FC0,signature,"void __thiscall f(void *this, int classId)","0x00719FC0: ecx to esi, ret 4"
+0x0071B370,signature,"void __thiscall f(void *this, int property, float value, int flag)",0x0071B370: ret 0xC
+0x0071B3C0,signature,"void __thiscall f(void *this, void *item, float scale)",0x0071B3C0: ret 8
+0x0071B600,signature,"void __thiscall f(void *this, unsigned int ability, int condition, bool apply)",0x0071B600: ret 0xC
+0x0071B970,signature,void __thiscall f(void *this),"0x0071B970: push ecx, plain ret"
+0x0071BEC0,signature,"bool __thiscall f(void *this, unsigned int ability, int abilityType)",0x0071BEC0: ret 8
+0x0071E1D0,signature,void __thiscall f(void *this),"0x0071E1D0: ecx to ebp, plain ret"
+0x00721940,signature,"void __thiscall f(void *this, bool freeStorage)","0x00721940: ecx to esi, ret 4"
+0x00726B80,signature,"void __cdecl f(int unused, void *array)",0x00726B80: plain ret with two stack arguments (second read at [esp+0x28])
+0x007294F0,signature,"void * __stdcall f(int unused, int value)","0x007294F0: ecx set to a constant, ret 8; the second argument is the value pushed to 0x004C2B10"
+0x0072C7E0,signature,"void __thiscall f(void *this, unsigned int n)","0x0072C7E0: ecx read, ret 4"
+0x00734560,signature,"void * __thiscall f(void *this, const void *src)","0x00734560: ecx to esi, ret 4"
+0x007345D0,signature,"void * __thiscall f(void *this, const void *src)",0x007345D0: ret 4
+0x00734640,signature,"void * __cdecl f(void *first, void *last, void *destEnd, int tag1, int tag2, int tag3)","0x00734640: plain ret, six stack arguments"
+0x00736090,signature,"void * __cdecl f(void *first, void *last, void *dest)",0x00736090: plain ret
+0x007360E0,signature,"void * __cdecl f(void *first, void *last, void *dest)","0x007360E0: plain ret, three arguments, three tag bytes pushed to 0x00734640"
+0x00738100,signature,"void __cdecl f(void *first, void *last, const void *value)",0x00738100: plain ret
+0x00738130,signature,"void * __cdecl f(void *first, void *last, void *dest, int tag1, int tag2, int tag3)",0x00738130: plain ret
+0x00738AD0,signature,"void * __cdecl f(void *first, void *last, void *dest)","0x00738AD0: plain ret, add esp,0x1C after the call"
+0x00738B00,signature,"void __cdecl f(void *first, unsigned int n, const void *value, int tag1, int tag2, int tag3)",0x00738B00: plain ret
+0x00738BA0,signature,"void __stdcall f(void *first, void *last)","0x00738BA0: ret 8, ecx loaded but not read as this"
+0x00738BD0,signature,"void * __stdcall f(void *first, unsigned int count, const void *value)",0x00738BD0: ret 0xC
+0x00739070,signature,void __thiscall f(void *this),"0x00739070: ecx to ebx, plain ret"
+0x007390C0,signature,"void * __thiscall f(void *this, void *outIterator, void *dbgA, void *first, void *dbgB, void *last)","0x007390C0: ecx to ebp, ret 0x14"
+0x00739140,signature,"void * __stdcall f(void *first, void *last, void *dest)",0x00739140: ret 0xC
+0x00739170,signature,"bool __thiscall f(void *this, const void *other)","0x00739170: push ecx, ret 4"
+0x00739190,signature,void __thiscall f(void *this),0x00739190: bare jmp to a thiscall function
+0x0073AFA0,signature,"void __cdecl f(void *string, unsigned char *out)","0x0073AFA0: plain ret, two stack arguments"
+0x0073B050,signature,"void __cdecl f(const unsigned char *value, void *outString)",0x0073B050: plain ret
+0x0073C5E0,signature,void * __thiscall f(void *this),"0x0073C5E0: mov eax,[ecx+0x2C8]; ret"
+0x0073D520,signature,"float __thiscall f(void *this, const float *position)","0x0073D520: ecx passed through to 0x00685430, ret 4"
+0x0073D570,signature,"bool __stdcall f(void *mover, const float *position, unsigned int id, float x, float y, float radius, int distanceMode, int discMode, unsigned int *outId)","0x0073D570: ret 0x24, ecx never read, nine stack arguments"
+0x0073EFE0,signature,"bool __thiscall f(void *this, void *outIds, void *arg)","0x0073EFE0: ecx to esi, ret 8"
+0x0073FDD0,signature,"unsigned int * __stdcall f(void *dbgA, const unsigned int *first, void *dbgB, const unsigned int *last, unsigned int *dest)",0x0073FDD0: ret 0x14
+0x00740AF0,signature,"void * __thiscall f(void *this, unsigned int index)","0x00740AF0: ecx to edi, ret 4"
+0x00740B30,signature,"void __cdecl f(void *a, void *b, void *c, unsigned int pred)","0x00740B30: plain ret, four stack arguments"
+0x00740C20,signature,"void __cdecl f(void *first, int hole, int top, int id, float a, float b)",0x00740C20: plain ret
+0x00741020,signature,"void * __cdecl f(void *result, void *first, void *last, void *pred)","0x00741020: plain ret, four stack arguments, eax = the first"
+0x00741610,signature,"void __cdecl f(void *first, void *last)",0x00741610: plain ret
+0x007416C0,signature,"void __cdecl f(void *first, void *last, void *tag)",0x007416C0: plain ret
+0x00741730,signature,void * __thiscall f(void *this),"0x00741730: ecx to edi, plain ret"
+0x007417A0,signature,"void __cdecl f(void *first, void *last, void *tag)",0x007417A0: plain ret
+0x00741840,signature,"void __thiscall f(void *this, unsigned int index)","0x00741840: ecx to esi, ret 4"
+0x00741EC0,signature,void __thiscall f(void *this),"0x00741EC0: ecx to esi, plain ret"
+0x00744A80,signature,"void * __thiscall f(void *this, void *outWString)","0x00744A80: ecx to esi, ret 4"
+0x00744D50,signature,"void __thiscall f(void *this, const unsigned int *value)","0x00744D50: ecx to ebp, ret 4"
+0x00744DF0,signature,"bool __thiscall f(void *this, void *dataNode, int key, void *gffStruct)","0x00744DF0: ecx to edi, ret 0xC"
+0x00744FC0,signature,"bool __thiscall f(void *this, void *gffStruct)","0x00744FC0: ecx to esi, ret 4"
+0x00745110,signature,"void __thiscall f(void *this, void *gffStruct)","0x00745110: ecx to esi, ret 4"
+0x00745230,signature,"void __thiscall f(void *this, const unsigned int *value)","0x00745230: ecx read, ret 4"
+0x00746520,signature,int __cdecl f(void *builder),"0x00746520: plain ret, builder argument"
+0x00746620,signature,int __cdecl f(void *builder),0x00746620: plain ret
+0x00746770,signature,int __cdecl f(void *builder),0x00746770: plain ret
+0x00747B40,signature,"void __thiscall f(void *this, unsigned short type)",0x00747B40: ret 4
+0x00747B50,signature,"void __thiscall f(void *this, unsigned char gender)",0x00747B50: ret 4
+0x00747B80,signature,"void __thiscall f(void *this, unsigned char value)",0x00747B80: ret 4
+0x00747B90,signature,"void __thiscall f(void *this, unsigned int value)",0x00747B90: ret 4
+0x00747BA0,signature,"void __thiscall f(void *this, const void *name)","0x00747BA0: ecx to edi, ret 4"
+0x00747C40,signature,"void __thiscall f(void *this, float gore)","0x00747C40: fst [ecx+0x180], ret 4"
