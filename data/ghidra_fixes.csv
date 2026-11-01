@@ -5641,3 +5641,49 @@ address,what,value,why
 0x004B3330,signature,void * __thiscall DialogBoxClosedMessage_Clone(void * this),plain ret
 0x004B33A0,signature,void * __thiscall DialogBoxClosedMessage_GetName(void * this),"plain ret, returns a static wstring*"
 0x00511590,signature,void * __thiscall Tree_Set_Buyheadnode(void * this),plain ret; operator_new(0x14)
+0x00511610,signature,"void* __cdecl StdCopy16(void* first, void* last, void* dest)",Plain ret; three stack arguments forwarded to 0x00503C00.
+0x00511640,signature,"void* __cdecl GuiMovieSet_FindIfSameView(void* out, void* firstCont, void* firstNode, void* lastCont, void* lastNode, void* predView)","Plain ret, caller adds esp 0x18 (0x0051187E)."
+0x00511700,signature,"void __cdecl StdUninitCopyWchar(unsigned short* first, unsigned short* last, unsigned short* dest)",Plain ret.
+0x005117C0,convention,__thiscall,"Passes ecx through to FindMovie 0x00511730 (a thiscall), ret 4; Ghidra drops this."
+0x005117C0,signature,"bool __thiscall ScaleformManager_HasMovie(void* this, void* name)","ret 4, one argument."
+0x005117E0,signature,void __thiscall GPtr_dtor(void** this),"Reads ecx as the GPtr's address (0x005117E1), plain ret; a member destructor, so thiscall (the same registers as fastcall with one argument)."
+0x00511810,signature,"void* __cdecl GuiMovieSet_FindByView(void* out, void* firstCont, void* firstNode, void* lastCont, void* lastNode, void* predView)","Plain ret, six arguments."
+0x005118C0,signature,"void __thiscall ScaleformManager_SetRunning(void* this, bool on)",ret 4; writes [ecx+0x15].
+0x00511990,convention,__thiscall,ret 4; ecx passed through to FindMovie 0x00511730 at 0x00511999; Ghidra shows no this.
+0x00511990,signature,"void __thiscall ScaleformManager_HideMovie(void* this, void* name)","One argument, ret 4."
+0x00511A70,convention,__thiscall,ecx = manager global set by caller 0x00512328 and read at 0x00511ABB; ret 4.
+0x00511A70,signature,"void* __thiscall ScaleformManager_CreateAtlasImage(void* this, void* createInfo)",Returns GImageInfo* or 0 in eax.
+0x00511CA0,signature,"void __thiscall ScaleformManager_DeliverAllTokens(void* this, bool paused)","ret 4 at 0x00511D17; the flag is GUISystem update's third argument (0x00523BE5 push edi), the paused gate of GuiMovie::DeliverTokens."
+0x00511D20,signature,void __thiscall ScaleformManager_UpdateAllLayouts(void* this),"Plain ret, reads ecx at 0x00511D46."
+0x00511E00,signature,"void __thiscall MovieDefMap_Erase(void* this, void* node)","ret 4, recursive."
+0x00511E90,signature,"void __thiscall MovieViewMap_Erase(void* this, void* node)","ret 4, recursive."
+0x00512000,signature,void __thiscall GuiMovieSet_DeleteAll(void* this),"Plain ret, ecx = set."
+0x00512340,signature,"void __thiscall ScaleformManager_DispatchMouseDown(void* this, int button, bool dblclick)",ret 8.
+0x00512480,signature,"void __thiscall ScaleformManager_DispatchMouseUp(void* this, int button)",ret 4.
+0x005129F0,signature,"void __thiscall ScaleformManager_StopDragging(void* this, void* movie)",ret 4.
+0x005143E0,signature,"bool __thiscall MovieDefMap_Insert(void* this, void* key, void* value)",ret 8.
+0x00514460,signature,"bool __thiscall MovieViewMap_Insert(void* this, void* key, void* value)",ret 8.
+0x005144E0,signature,"unsigned int __thiscall MovieDefMap_EraseKey(void* this, void* key)",ret 4.
+0x00514550,signature,"unsigned int __thiscall MovieViewMap_EraseKey(void* this, void* key)",ret 4.
+0x005145C0,convention,__thiscall,ecx passed through to 0x00513CF0; ret 4.
+0x005145C0,signature,"void __thiscall GuiMovieSet_Insert(void* this, void* record)",ret 4.
+0x00514AF0,convention,__thiscall,ecx passed through to GetMovieDef 0x005146E0; ret 4.
+0x00514AF0,signature,"void __thiscall ScaleformManager_PreloadMovieDef(void* this, void* name)",ret 4.
+0x00514C90,signature,void __thiscall ScaleformManager_SendKeysAndText(void* this),Plain ret.
+0x00515290,signature,"void __thiscall ScaleformManager_CollectUnshownMovies(void* this, void* outVector)",ret 4.
+0x00515320,signature,void __thiscall ScaleformManager_RemoveUnshownMovies(void* this),Plain ret.
+0x00515560,signature,"void __thiscall ScaleformManager_MoviesUnderPoint(void* this, void* point, void* outVector)","ret 8 at 0x0051567D; point is the first argument ([esp+0x40] into esi at 0x005155B5), the vector the second ([esp+0x48] at 0x00515648)."
+0x005159A0,signature,"void __thiscall ScaleformManager_StartDragging(void* this, void* movie)",ret 4.
+0x005166C0,signature,void __cdecl ScaleformManager_RegisterMessageHandlers(void),"Never reads ecx; a vftable slot, so this-first prototype is acceptable if kept as a member."
+0x00516920,signature,void __thiscall TextureHandleVector_Tidy(void* this),Plain ret.
+0x00516980,signature,"void* __cdecl TextureHandleVector_UninitCopy(void* first, void* last, void* dest)","ebp frame, plain ret."
+0x00517790,clear,GFxFileOpener::GFxFileOpener,"Misleading label: this is GUI::ScaleformManager's constructor (vtable 0x00AF566C at 0x005177D3, global 0x00C31264 at 0x00517A54)."
+0x00517790,signature,void* __thiscall ScaleformManager_ctor(void* this),"Plain ret, returns this."
+0x00517C50,clear,GFxFileOpener::GFxFileOpener,"Misleading label: this is GUI::ScaleformManager's copy constructor, only called by Clone 0x005182D0."
+0x00517C50,signature,"void* __thiscall ScaleformManager_copy(void* this, void* other)",ret 4 at 0x00517ECC; Clone 0x00518311 passes the cloned object; other unused.
+0x00517ED0,signature,void __thiscall ScaleformManager_dtor(void* this),Plain ret.
+0x00518060,signature,void __thiscall ScaleformManager_PreloadSharedAtlases(void* this),Plain ret; ebp frame aligned to 8.
+0x005182C0,signature,void __thiscall ScaleformManager_ClearTextureList1F4(void* this),Plain ret.
+0x005182D0,signature,void* __thiscall ScaleformManager_Clone(void* this),Plain ret; returns new 0x204-byte object.
+0x00517BF0,signature,void* __thiscall ScaleformManager_GetClassIdPtr(void* this),vftable 0x00AF566C slot 0; never reads ecx; returns 0x00BF64EC.
+0x00517C20,signature,void __thiscall ScaleformManager_RegisterClass(void* this),vftable slot 2; tail-jumps to 0x005166C0 when [0x00BF64EC] == -1 (0x00517C3D).
