@@ -7,6 +7,7 @@ tools/names.py writes for its ImportNames.java, and how the work is read.
 ctest runs this too (tests/CMakeLists.txt).
 """
 
+import csv
 import os
 import sys
 import unittest
@@ -44,6 +45,25 @@ class Parts(unittest.TestCase):
             ghidra_parts("CameraControllerBase::`scalar deleting destructor'"),
             ["CameraControllerBase", "`scalar_deleting_destructor'"],
         )
+
+
+class Fixes(unittest.TestCase):
+    def test_every_line_is_four_cells(self):
+        # A prototype holds commas: unquoted, it spills into the next cells
+        # and the sync applies only its start.
+        path = os.path.join(
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+            "data",
+            "ghidra_fixes.csv",
+        )
+        with open(path, newline="", encoding="utf-8") as f:
+            for line, row in enumerate(csv.DictReader(f), start=2):
+                self.assertNotIn(None, row, f"line {line} has more than four cells")
+                self.assertTrue(row["why"], f"line {line} says no why")
+                if row["what"] == "signature":
+                    self.assertTrue(
+                        row["value"].endswith(")"), f"line {line}: {row['value']}"
+                    )
 
 
 class Work(unittest.TestCase):

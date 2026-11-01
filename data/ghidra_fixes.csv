@@ -29,16 +29,16 @@ address,what,value,why
 0x008937D0,convention,__stdcall,"Input::AddBinding: ret 8, ecx loaded from the stack before any read; paragon-agent's #352 input-table readers, checked in the exe 2026-10-31"
 0x008937F0,convention,__stdcall,"Input::AddBindingPair: ret 0xC, ecx loaded from the stack before any read; paragon-agent's #352 input-table readers, checked in the exe 2026-10-31"
 0x00891010,convention,__cdecl,"InputModes::Get: plain ret, no arguments (the pushes before its calls belong to the next call); paragon-agent's #352 input-table readers, checked in the exe 2026-10-31"
-0x00890CA0,signature,void __thiscall f(void *this, int *slot, void *name),"InputModes::Activate: ret 8; name a std::wstring*; paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31"
-0x00890D40,signature,void __thiscall f(void *this, void *name),"InputModes::Push: ret 4; paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31"
-0x00890DB0,signature,void __thiscall f(void *this, int *slot, void *name),"InputModes::Deactivate: ret 8, the slot read through its pointer; paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31"
-0x0088F8B0,signature,void __thiscall f(void *this, void *name),"InputModes::Pop: ret 4; paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31"
-0x008909D0,signature,void * __thiscall f(void *this, void *name),"InputModes::GroupAt: ret 4, returns the group (node+0x28); paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31"
-0x0088ECA0,signature,void * __thiscall f(void *this, void *out, void *name),"InputModes::FindName: ret 8, writes and returns the iterator; paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31"
-0x00891010,signature,void * __cdecl f(void),"InputModes::Get: no arguments; the pushes before its calls are the next call's; paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31"
-0x0088EDE0,signature,bool __thiscall f(void *this, int *input),"InputModes::AllowsInput: ret 4; paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31"
-0x0088F430,signature,bool __thiscall f(void *this, void *text),"InputModes::AllowsText: ret 4, text a std::wstring*; paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31"
-0x005110F0,signature,void __thiscall f(void *this, void *field),"GUI::ScaleformManager::SetKeyboardFilter: ret 4, ecx = the manager at its one call; paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31"
+0x00890CA0,signature,"void __thiscall f(void *this, int *slot, void *name)",InputModes::Activate: ret 8; name a std::wstring*; paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31
+0x00890D40,signature,"void __thiscall f(void *this, void *name)",InputModes::Push: ret 4; paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31
+0x00890DB0,signature,"void __thiscall f(void *this, int *slot, void *name)","InputModes::Deactivate: ret 8, the slot read through its pointer; paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31"
+0x0088F8B0,signature,"void __thiscall f(void *this, void *name)",InputModes::Pop: ret 4; paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31
+0x008909D0,signature,"void * __thiscall f(void *this, void *name)","InputModes::GroupAt: ret 4, returns the group (node+0x28); paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31"
+0x0088ECA0,signature,"void * __thiscall f(void *this, void *out, void *name)","InputModes::FindName: ret 8, writes and returns the iterator; paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31"
+0x00891010,signature,void * __cdecl f(void),InputModes::Get: no arguments; the pushes before its calls are the next call's; paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31
+0x0088EDE0,signature,"bool __thiscall f(void *this, int *input)",InputModes::AllowsInput: ret 4; paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31
+0x0088F430,signature,"bool __thiscall f(void *this, void *text)","InputModes::AllowsText: ret 4, text a std::wstring*; paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31"
+0x005110F0,signature,"void __thiscall f(void *this, void *field)","GUI::ScaleformManager::SetKeyboardFilter: ret 4, ecx = the manager at its one call; paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31"
 0x0069F200,signature,void __thiscall f(void *this),"CCCreature::RefreshInputEffectGroups: plain ret, ecx the creature; paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31"
-0x00A64740,signature,unsigned int __thiscall f(void *this),"plain ret; called with ecx = creature+0x70 in 0x0069F200; paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31"
-0x0087C950,signature,void __thiscall f(void *this, void *entries, void *out),"InputMapper::CollectMessages: ret 8; paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31"
+0x00A64740,signature,unsigned int __thiscall f(void *this),plain ret; called with ecx = creature+0x70 in 0x0069F200; paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31
+0x0087C950,signature,"void __thiscall f(void *this, void *entries, void *out)",InputMapper::CollectMessages: ret 8; paragon-agent's #352 activation reading; ret checked in the exe 2026-10-31
