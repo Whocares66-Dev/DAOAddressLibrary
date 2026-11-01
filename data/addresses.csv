@@ -12466,7 +12466,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 12465,function,CCParty::RegisterHandler_SelectPreviousCharacterMessage,0x00639730,0x00615110,0x00639730
 12466,function,CCParty::RegisterHandler_ToggleFullPartySelectMessage,0x006397b0,0x00615190,0x006397b0
 12467,function,CCParty::RegisterHandler_ApplyPartyPickerChangesMessage,0x00639830,0x00615210,0x00639830
-12468,function,CCParty::CCParty_NewId,0x006398b0,0x00615290,0x006398b0
+12468,function,CCParty::CCParty_Clone,0x006398b0,0x00615290,0x006398b0
 12469,function,CCParty::GetClassInfo,0x00639d30,0x00615710,0x00639d30
 12470,function,Stub::GetThisPlus_0x70_OrNull,0x00639d40,0x0058b250,0x00639d40
 12471,function,CCParty::`scalar deleting destructor',0x00639d50,0x00615750,0x00639d50
@@ -12482,7 +12482,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 12481,function,CCParty::HandleMessage_SelectPartyMemberIndexMessage,0x00639fb0,0x00615980,0x00639fb0
 12482,function,CCParty::AddToPool,0x0063a020,0x006159f0,0x0063a020
 12483,function,"stdext::hash_map<unsigned int,?>::erase(key)",0x0063a1d0,0x00615ba0,0x0063a1d0
-12484,function,CCParty::CloneParty,0x0063a240,0x00615c10,0x0063a240
+12484,function,CCParty::CloneObject,0x0063a240,0x00615c10,0x0063a240
 12485,function,CCParty::RegisterHandler_SelectCharacterMessage,0x0063a2b0,0x00615c80,0x0063a2b0
 12486,function,CCParty::RegisterHandler_SelectPartyMemberIndexMessage,0x0063a330,0x00615d00,0x0063a330
 12487,function,CCParty::Clone,0x0063a3b0,0x00615d80,0x0063a3b0
@@ -14921,7 +14921,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14920,function,CCCreature::IsPickable,0x006ba810,0x005ac2d0,0x006ba810
 14921,function,CCCreature::ShouldShowInteractiveEffect,0x006ba840,0x005ac300,0x006ba840
 14922,function,CCCreature::EndManualPlacement,0x006ba870,0x005ac330,0x006ba870
-14923,function,CCCreature::CCCreature_NoMembers,0x006ba890,0x005ac350,0x006ba890
+14923,function,CCCreature::CCCreature_Clone,0x006ba890,0x005ac350,0x006ba890
 14924,function,CCCreature::~CCCreature,0x006bafe0,0x005acaa0,0x006bafe0
 14925,function,CCCreature::UpdateMovement,0x006bb890,0x005ad350,0x006bb890
 14926,function,CCCreature::MoveTo,0x006bbb70,0x005ad630,0x006bbb70
@@ -14940,7 +14940,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14939,function,CCCreature::GetSummonEffectObject,0x006bce50,0x005ae910,0x006bce50
 14940,function,CCCreature::UpdateAbilityEffectStatus,0x006bcf50,0x005aea10,0x006bcf50
 14941,function,CCCreature::ForScript_SetSoundSet,0x006bd0e0,0x005aeba0,0x006bd0e0
-14942,function,CCCreature::CreateInstance,0x006bd3b0,0x005aee70,0x006bd3b0
+14942,function,CCCreature::CloneObject,0x006bd3b0,0x005aee70,0x006bd3b0
 14943,function,CCCreature::RegisterHandler_UnequipItemMessage,0x006bd420,0x005aeee0,0x006bd420
 14944,function,CCCreature::Clone,0x006bd4a0,0x005aef60,0x006bd4a0
 14945,function,CCCreature::`scalar deleting destructor',0x006bd4b0,0x005aef70,0x006bd4b0
@@ -17955,11 +17955,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 17954,function,CCPlaceable::CollectNodePoints,0x00751ea0,0x0065dd90,0x00751ea0
 17955,function,CCPlaceable::OnModelReady,0x00751fb0,0x0065dea0,0x00751fb0
 17956,function,CCPlaceable::OnModelReadyCallback,0x007520e0,0x0065dfd0,0x007520e0
-17957,function,,0x00752110,0x0065e000,0x00752110
+17957,function,CCPlaceable::CCPlaceable_Clone,0x00752110,0x0065e000,0x00752110
 17958,function,,0x00752600,0x0065e4f0,0x00752600
 17959,function,,0x007526f0,0x0065e5e0,0x007526f0
-17960,function,,0x00752850,0x0065e740,0x00752850
-17961,function,,0x007528c0,0x0065e7b0,0x007528c0
+17960,function,CCPlaceable::CloneObject,0x00752850,0x0065e740,0x00752850
+17961,function,CCPlaceable::Clone,0x007528c0,0x0065e7b0,0x007528c0
 17962,function,,0x007528d0,0x0065e7c0,0x007528d0
 17963,function,,0x00752b10,0x00661350,0x00752b10
 17964,function,,0x00752b40,0x00661380,0x00752b40
@@ -18030,7 +18030,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 18029,function,,0x00756800,0x00665010,0x00756800
 18030,function,ScriptBackend::ForScript_GetItemProperties,0x00756950,0x00665160,0x00756950
 18031,function,,0x00756a40,0x00665250,0x00756a40
-18032,function,,0x00756da0,0x006655b0,0x00756da0
+18032,function,CCItem::CCItem_Clone,0x00756da0,0x006655b0,0x00756da0
 18033,function,,0x007570f0,0x00665900,0x007570f0
 18034,function,CCItem::ReadFields,0x007572d0,0x00665ae0,0x007572d0
 18035,function,CCItem::RemovePropertyVfx,0x007579f0,0x00666200,0x007579f0
@@ -18039,8 +18039,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 18038,function,,0x00757eb0,0x006666c0,0x00757eb0
 18039,function,CCItem::BuildOnHitEvents,0x00757fc0,0x006667d0,0x00757fc0
 18040,function,CCItem::QueueOnHitEvents,0x00758180,0x00666990,0x00758180
-18041,function,,0x007582c0,0x00666ad0,0x007582c0
-18042,function,,0x00758330,0x00666b40,0x00758330
+18041,function,CCItem::CloneObject,0x007582c0,0x00666ad0,0x007582c0
+18042,function,CCItem::Clone,0x00758330,0x00666b40,0x00758330
 18043,function,,0x00758340,0x00666b50,0x00758340
 18044,function,CCItem::CopyFrom,0x007589d0,0x006671e0,0x007589d0
 18045,function,CCItem::ApplyPropertyVfx,0x00758fd0,0x006677e0,0x00758fd0
@@ -21209,20 +21209,20 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21208,function,,0x007ebdd0,0x006d32a0,0x007ebdd0
 21209,function,,0x007ec0b0,0x006d3580,0x007ec0b0
 21210,function,,0x007ec2c0,0x006d3790,0x007ec2c0
-21211,function,,0x007ec4f0,0x006d39c0,0x007ec4f0
+21211,function,Store::Store_Clone,0x007ec4f0,0x006d39c0,0x007ec4f0
 21212,function,,0x007ec600,0x006d3ad0,0x007ec600
 21213,function,Store::HandleMessage_SellItemMessage,0x007ec740,0x006d3c10,0x007ec740
 21214,function,Store::HandleMessage_CloseStoreMessage,0x007ec8b0,0x006d3d80,0x007ec8b0
 21215,function,,0x007ecf00,0x006d43d0,0x007ecf00
 21216,function,Store::RegisterHandler_SellItemMessage,0x007ed210,0x006d46e0,0x007ed210
 21217,function,Store::RegisterHandler_CloseStoreMessage,0x007ed270,0x006d4740,0x007ed270
-21218,function,,0x007ed2d0,0x006d47a0,0x007ed2d0
+21218,function,Store::CloneObject,0x007ed2d0,0x006d47a0,0x007ed2d0
 21219,function,Store::HandleMessage_BuyItemMessage,0x007ed340,0x006d4810,0x007ed340
 21220,function,,0x007ed530,0x006d4a00,0x007ed530
 21221,function,,0x007ed5f0,0x006d4ac0,0x007ed5f0
 21222,function,,0x007ed6b0,0x006d4b80,0x007ed6b0
 21223,function,Store::RegisterHandler_BuyItemMessage,0x007ed770,0x006d4c40,0x007ed770
-21224,function,,0x007ed7d0,0x006d4ca0,0x007ed7d0
+21224,function,Store::Clone,0x007ed7d0,0x006d4ca0,0x007ed7d0
 21225,function,,0x007ed7e0,0x006d4cb0,0x007ed7e0
 21226,function,,0x007ed810,0x006d4ce0,0x007ed810
 21227,function,,0x007ed830,0x006d4d00,0x007ed830
