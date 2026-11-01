@@ -9390,3 +9390,44 @@ address,what,value,why
 0x007BDB60,signature,"void * __stdcall f(void *first, void *last, void *dest)","0x007bdb60: std::uninitialized_copy<GUI::HeadPreset::ModelWeight*,GUI::HeadPreset::ModelWeight*>, convention and arguments read at the entry and the ret"
 0x007BDB90,signature,"void * __thiscall f(void *this, void *other)","0x007bdb90: std::vector<GUI::HeadPreset::ModelWeight>::vector_copy, convention and arguments read at the entry and the ret"
 0x007B8ED0,clear,~TiXmlDocument,"0x007B8ED0 writes HeroStats.xml (GUI::WriteHeroStatsXml); a TiXmlDocument is only built inside it, it is not a destructor"
+0x0067CFA0,signature,"bool __thiscall f(void* this, void* from, void* to, void* controller, bool excludeCreatures)","ret 0x10 with ecx = area read at 0x0067CFCA; four stack args, the fourth a byte (0x0067CFE8)"
+0x0067DA40,signature,"void __thiscall f(void* this, void* areStruct, void* saveStructPtr)","ret 8, ecx = area (0x0067DA78), called at 0x0068869A with two pushed args"
+0x0067DE40,signature,"void __thiscall f(void* this, void* areStruct, void* saveStructPtr)","ret 8, ecx = area (0x0067DE78), called at 0x00688533"
+0x0067E0D0,signature,"void __thiscall f(void* this, void* areStruct, void* saveStructPtr)","ret 8, ecx = area (0x0067E108), called at 0x006886AC"
+0x0067FC10,signature,"void __thiscall f(void* this, unsigned int objectId)","ret 4, ecx = area (0x0067FC11)"
+0x006800F0,signature,"bool __thiscall f(void* this, int eventType)","ret 4, ecx + 0x3A8 at 0x006800FD"
+0x00680C00,signature,"void __cdecl f(void* first, void* last, int ideal, int pred)",plain ret at 0x00680D9F; recursive call pushes four args (0x00680C6A-0x00680C6E)
+0x00680CF0,signature,"void __cdecl f(void* first, void* last, int ideal, int pred)","plain ret, same shape as 0x00680C00"
+0x00682420,signature,"void __thiscall f(void* this, unsigned int objectId)","ret 4, ecx + 0x680 at 0x00682421"
+0x00682610,signature,"void __thiscall f(void* this, void* value, unsigned int index)","ret 8, ecx read at 0x00682615; value pointer pushed at 0x00682654, index in ebx from [esp+0x1c]"
+0x00682690,signature,"void __thiscall f(void* this, bool release)","ret 4, ecx read at 0x006826B6, flag byte tested at 0x006826B8"
+0x00683380,signature,"void __thiscall f(void* this, void* areStruct, void* saveStructPtr)","ret 8 at 0x0068380F, ecx = area, called at 0x0068867F"
+0x00683820,signature,"void __thiscall f(void* this, void* areStruct, void* saveStructPtr)","ret 8 at 0x00683C6E, called at 0x00688691"
+0x00685100,signature,"void __thiscall f(void* this, unsigned int roomA, unsigned int roomB, void* outDoors)","ret 0xc at 0x006851C5, ecx + 0x634 at 0x0068512B"
+0x00685430,signature,"float __thiscall f(void* this, void* pos, void* found, void* outPoint)","ret 0xc at 0x00685789, ecx saved to edi at 0x00685462, result left on the x87 stack at 0x00685770"
+0x00686A70,signature,"bool __thiscall f(void* this, void* room, void* originRoom, unsigned int targetRoomId)","ret 0xc at 0x00686BFC, ecx saved to ebp at 0x00686A97, result in al"
+0x00686FE0,signature,void __thiscall f(void* this),"plain ret, ecx read at 0x00686FED; called with ecx = area+0x218 at 0x0068AB37"
+0x00687AC0,signature,"void __thiscall f(void* this, void* areStruct, void* saveStructPtr)","ret 8 at 0x00687EBC, called at 0x00688688"
+0x00687F20,signature,void __thiscall f(void* this),"plain ret, ecx saved to ebp at 0x00687F26; called with ecx = area+0x1D0 at 0x0068AB2A"
+0x006899E0,signature,"void* __thiscall f(void* this, unsigned int flags)","vftable slot 0 target 0x0068BF70 ret 4, ecx adjusted by the thunk"
+0x006899F0,signature,"void* __thiscall f(void* this, unsigned int flags)",adjustor thunk to 0x0068BF70
+0x00689A00,signature,"void* __thiscall f(void* this, unsigned int flags)",adjustor thunk to 0x0068BF70
+0x00689A10,signature,"void* __thiscall f(void* this, unsigned int flags)",adjustor thunk to 0x0068BF70
+0x00689A20,signature,"void* __thiscall f(void* this, unsigned int flags)",adjustor thunk to 0x0068BF70
+0x00689A30,signature,"void* __thiscall f(void* this, unsigned int flags)",adjustor thunk to 0x0068BF70
+0x0068A480,signature,"void* __thiscall f(void* this, void* source)","ret 4 at 0x0068A4D3, ecx saved to esi at 0x0068A4A2, returns this"
+0x0068A4E0,signature,"void* __thiscall f(void* this, void* source)","ret 4 at 0x0068A533, returns this"
+0x0068A5B0,signature,"void* __thiscall f(void* this, void* source)","ret 4 at 0x0068A604, returns this"
+0x0068A7E0,signature,void __thiscall f(void* this),plain ret at 0x0068AF2C; called from 0x0068BF73 with ecx = area
+0x0068BF70,signature,"void* __thiscall f(void* this, unsigned int flags)","ret 4 at 0x0068BF8B, flag tested at 0x0068BF78, ecx = esi"
+0x0068C120,signature,"void* __thiscall f(void* this, void* source)","ret 4 at 0x0068C186, returns this"
+0x0068C1E0,signature,"void* __thiscall f(void* this, void* source)","ret 4 at 0x0068CA3B, one pushed source at 0x0068CA40 caller"
+0x00695170,signature,"void __thiscall f(void* this, int ignored)",ret 4 and nothing pushed: the argument is ignored; vtable slot 41
+0x006FA530,signature,"void* __cdecl f(void* first, void* last, void* dest)","plain ret at 0x006FA585, args read from the stack at 0x006FA533-0x006FA542"
+0x006FA590,signature,"void __cdecl f(void* dest, unsigned int count, void* value)","plain ret at 0x006FA5BF, args read from the stack at 0x006FA590-0x006FA59D"
+0x006FA660,signature,void __thiscall f(void* this),"plain ret at 0x006FA6F1, ecx saved to esi at 0x006FA665"
+0x006FA790,signature,"void* __thiscall f(void* this, unsigned int areaId)","ret 4 at 0x006FA8A1, ecx saved to esi at 0x006FA7A7"
+0x006FA8B0,signature,"void* __thiscall f(void* this, int index)","ret 4 at 0x006FA8FC, ecx + 0xB4 at 0x006FA8C6"
+0x006FAB80,signature,"void* __cdecl f(void* first, void* last, void* destEnd)","plain ret at 0x006FABAA, three args read at 0x006FAB81-0x006FAB96"
+0x006FB300,signature,"void __thiscall f(void* this, void* entry)","ret 4 at 0x006FB374, ecx saved to esi at 0x006FB304"
+0x006FBD80,signature,"void* __thiscall f(void* this, unsigned int count)","ret 4 at 0x006FBE02, ecx saved to ebx at 0x006FBDA7, returns this"

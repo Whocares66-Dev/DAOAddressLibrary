@@ -13646,7 +13646,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13645,function,CCArea::GetNextObjectId,0x0067cc80,0x00568db0,0x0067cc80
 13646,function,CCArea::FindObjectIndexByX,0x0067cd00,0x00568e30,0x0067cd00
 13647,function,CCArea::FindNearestNamedEntry,0x0067cdd0,0x00568f00,0x0067cdd0
-13648,function,,0x0067cfa0,0x005690d0,0x0067cfa0
+13648,function,CCArea::IsSegmentClearExceptMover,0x0067cfa0,0x005690d0,0x0067cfa0
 13649,function,CCArea::RemoveFromCreatureTree,0x0067d0f0,0x00569220,0x0067d0f0
 13650,function,CCArea::StopVfxByKey,0x0067d110,0x00569240,0x0067d110
 13651,function,std::_Tree<Elem>::_Buynode,0x0067d280,0x005693b0,0x0067d280
@@ -13662,10 +13662,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13661,function,CCArea::RunAreaEventScript,0x0067d6d0,0x00569850,0x0067d6d0
 13662,function,CCArea::LoadPathfindExport,0x0067d6f0,0x00569870,0x0067d6f0
 13663,function,CCArea::LoadLevelPhysics,0x0067d850,0x005699d0,0x0067d850
-13664,function,,0x0067da40,0x00569bc0,0x0067da40
+13664,function,CCArea::ReadSoundList,0x0067da40,0x00569bc0,0x0067da40
 13665,function,CCArea::GetReverbPresetAtPoint,0x0067dcb0,0x00569e30,0x0067dcb0
-13666,function,,0x0067de40,0x00569fc0,0x0067de40
-13667,function,,0x0067e0d0,0x0056a250,0x0067e0d0
+13666,function,CCArea::ReadWaypointList,0x0067de40,0x00569fc0,0x0067de40
+13667,function,CCArea::ReadAreaEffectList,0x0067e0d0,0x0056a250,0x0067e0d0
 13668,function,CCArea::SelectFrameBufferEffects,0x0067e350,0x0056a4d0,0x0067e350
 13669,function,KDCreatureBranch::KDCreatureBranch,0x0067e3b0,0x0056a530,0x0067e3b0
 13670,function,KDCreatureBranch::`scalar deleting destructor',0x0067e3f0,0x0056a570,0x0067e3f0
@@ -13701,7 +13701,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13700,function,CCArea::RemoveFromStaticObjectList,0x0067fb70,0x0056bcc0,0x0067fb70
 13701,function,CCArea::DestroyAllMobileObjects,0x0067fb90,0x0056bce0,0x0067fb90
 13702,function,CCArea::RemoveFromMobileObjectList,0x0067fbf0,0x0056bd40,0x0067fbf0
-13703,function,,0x0067fc10,0x0056bd60,0x0067fc10
+13703,function,CCArea::RemoveFromObjectLists,0x0067fc10,0x0056bd60,0x0067fc10
 13704,function,"std::map<unsigned_long_long,std::vector<unsigned_int>>::find_pair",0x0067fc80,0x0056bdd0,0x0067fc80
 13705,function,std::vector<CCArea::StageEntry>::_Destroy,0x0067fce0,0x0056be70,0x0067fce0
 13706,function,std::vector<unk_12byte>::clear,0x0067fd00,0x004b77c0,0x0067fd00
@@ -13714,7 +13714,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13713,function,StringMap::FindOrDefault,0x00680000,0x0056c120,0x00680000
 13714,function,std::vector<CCArea::StageEntry>::~vector,0x00680070,0x0056c2d0,0x00680070
 13715,function,"std::vector<std::pair<std::wstring,std::wstring>>::clear",0x006800b0,0x0056c190,0x006800b0
-13716,function,,0x006800f0,0x0056c1d0,0x006800f0
+13716,function,CCArea::IsEventTypeEnabled,0x006800f0,0x0056c1d0,0x006800f0
 13717,function,,0x00680150,0x0056c230,0x00680150
 13718,function,,0x006801f0,0x00575b60,0x006801f0
 13719,function,,0x00680220,0x00582550,0x00680220
@@ -13725,8 +13725,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13724,function,,0x00680900,0x0056c5d0,0x00680900
 13725,function,,0x00680acb,0x0056c79b,0x00680acb
 13726,function,,0x00680b75,0x0056c845,0x00680b75
-13727,function,,0x00680c00,0x0056c8d0,0x00680c00
-13728,function,,0x00680cf0,0x0056c9c0,0x00680cf0
+13727,function,"std::_Sort<CCArea::CreatureTreeEntry*,int,CompareByX>",0x00680c00,0x0056c8d0,0x00680c00
+13728,function,"std::_Sort<CCArea::CreatureTreeEntry*,int,CompareByY>",0x00680cf0,0x0056c9c0,0x00680cf0
 13729,function,,0x00680de0,0x0056cab0,0x00680de0
 13730,function,,0x00680e60,0x0056cb30,0x00680e60
 13731,function,,0x00680eb0,0x0056cb80,0x00680eb0
@@ -13749,27 +13749,27 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13748,function,CCArea::ReadSavedAreaMap,0x00681f50,0x0056dbc0,0x00681f50
 13749,function,CCArea::UpdateTriggersAtListener,0x00682020,0x0056dc90,0x00682020
 13750,function,CCArea::AddToStaticObjectList,0x006823f0,0x0056e060,0x006823f0
-13751,function,,0x00682420,0x0056e090,0x00682420
+13751,function,CCArea::AddToMobileObjectList,0x00682420,0x0056e090,0x00682420
 13752,function,CCArea::AddToObjectLists,0x00682450,0x0056e0c0,0x00682450
 13753,function,"std::map<std::wstring,float>::operator[]",0x00682500,0x0056e170,0x00682500
 13754,function,CCModule::GetLinkAreaMiniMaps,0x006825e0,0x0056e2d0,0x006825e0
-13755,function,,0x00682610,0x0056e300,0x00682610
-13756,function,,0x00682690,0x0056e380,0x00682690
+13755,function,std::vector<float>::insert,0x00682610,0x0056e300,0x00682610
+13756,function,std::vector<?>::_Tidy,0x00682690,0x0056e380,0x00682690
 13757,function,std::vector<CCArea::StageEntry>::vector,0x00682770,0x0056e460,0x00682770
 13758,function,std::vector<unk_12byte>::vector,0x006827e0,0x0056e4d0,0x006827e0
 13759,function,,0x00682850,0x0056e630,0x00682850
 13760,function,std::vector<unk_4byte>::vector,0x00682920,0x0056e700,0x00682920
 13761,function,CCArea::RegisterEventListener,0x00682930,0x0056e710,0x00682930
 13762,function,CCArea::ReadAreaFields,0x00682a70,0x0056e850,0x00682a70
-13763,function,,0x00683380,0x0056f160,0x00683380
-13764,function,,0x00683820,0x0056f600,0x00683820
+13763,function,CCArea::ReadPlaceableList,0x00683380,0x0056f160,0x00683380
+13764,function,CCArea::ReadCreatureList,0x00683820,0x0056f600,0x00683820
 13765,function,CCArea::WriteToSave,0x00683c80,0x0056fa60,0x00683c80
 13766,function,CCArea::DestroyContents,0x00684760,0x00570540,0x00684760
 13767,function,ScriptBackend::GetNearestObjects,0x006849c0,0x005707a0,0x006849c0
 13768,function,CCArea::GetNearestObjectsToLocation,0x00684dd0,0x00570bb0,0x00684dd0
-13769,function,,0x00685100,0x00570ee0,0x00685100
+13769,function,CCArea::GetDoorsBetweenRooms,0x00685100,0x00570ee0,0x00685100
 13770,function,CCArea::RaycastAllSegmentWalk,0x006851d0,0x00570fb0,0x006851d0
-13771,function,,0x00685430,0x00571210,0x00685430
+13771,function,CCArea::GroundHeight,0x00685430,0x00571210,0x00685430
 13772,function,CCArea::WalkSegment,0x00685790,0x00571570,0x00685790
 13773,function,CCArea::WalkLine,0x00685920,0x00571700,0x00685920
 13774,function,CCArea::AllocCreatureTreeNode,0x00685a60,0x00571840,0x00685a60
@@ -13784,10 +13784,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13783,function,CCArea::GetTeamMapForType,0x006863c0,0x005721a0,0x006863c0
 13784,function,CCArea::BuildSaveTemplate,0x00686490,0x00572270,0x00686490
 13785,function,CCArea::RebuildReverbPresetList,0x006866a0,0x00572480,0x006866a0
-13786,function,,0x00686a70,0x00572850,0x00686a70
+13786,function,CCArea::WalkRoomsForSight,0x00686a70,0x00572850,0x00686a70
 13787,function,CCArea::RebuildCreatureTree,0x00686c10,0x005729f0,0x00686c10
 13788,function,CCArea::SpatialQuerySphere,0x00686f70,0x00572d50,0x00686f70
-13789,function,,0x00686fe0,0x00572e30,0x00686fe0
+13789,function,"std::map<?,std::map<?,?>*>::clear",0x00686fe0,0x00572e30,0x00686fe0
 13790,function,,0x006870a0,0x00572ef0,0x006870a0
 13791,function,MessageFactoryRegistry::RegisterMessageFactory<OnMinimapScaleChangedMessage>,0x006872a0,0x005730f0,0x006872a0
 13792,function,CCArea::AddPooledObject,0x00687360,0x005731b0,0x00687360
@@ -13796,9 +13796,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13795,function,CCArea::CreateObject,0x00687830,0x00573680,0x00687830
 13796,function,CCArea::AddObjectToTeam,0x00687980,0x005737d0,0x00687980
 13797,function,CCArea::RemoveObjectFromTeam,0x00687a50,0x005738a0,0x00687a50
-13798,function,,0x00687ac0,0x00573910,0x00687ac0
+13798,function,CCArea::ReadTriggerList,0x00687ac0,0x00573910,0x00687ac0
 13799,function,CCArea::RoomsConnectedForSight,0x00687ec0,0x00573d10,0x00687ec0
-13800,function,,0x00687f20,0x00573d70,0x00687f20
+13800,function,NamedHashMap::ClearAndDeleteValues,0x00687f20,0x00573d70,0x00687f20
 13801,function,,0x00687fc0,0x00573e10,0x00687fc0
 13802,function,"std::map<unsigned_long_long,std::vector<unsigned_int>>::_Tidy",0x006880a0,0x00571ee0,0x006880a0
 13803,function,CCArea::SetCurrent,0x006880e0,0x00573ef0,0x006880e0
@@ -13813,12 +13813,12 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13812,function,Stub::GetDword_0x334,0x006898e0,0x005756f0,0x006898e0
 13813,function,CCArea::AsEffectsHolder,0x006898f0,0x00575700,0x006898f0
 13814,function,CResGFF::CResGFF,0x00689900,0x00575710,0x00689900
-13815,function,,0x006899e0,0x005757f0,0x006899e0
-13816,function,,0x006899f0,0x00575800,0x006899f0
-13817,function,,0x00689a00,0x00575810,0x00689a00
-13818,function,,0x00689a10,0x00575820,0x00689a10
-13819,function,,0x00689a20,0x00575830,0x00689a20
-13820,function,,0x00689a30,0x00575840,0x00689a30
+13815,function,CCArea::`scalar deleting destructor',0x006899e0,0x005757f0,0x006899e0
+13816,function,CCArea::`scalar deleting destructor',0x006899f0,0x00575800,0x006899f0
+13817,function,CCArea::`scalar deleting destructor',0x00689a00,0x00575810,0x00689a00
+13818,function,CCArea::`scalar deleting destructor',0x00689a10,0x00575820,0x00689a10
+13819,function,CCArea::`scalar deleting destructor',0x00689a20,0x00575830,0x00689a20
+13820,function,CCArea::`scalar deleting destructor',0x00689a30,0x00575840,0x00689a30
 13821,function,"std::_Copy_opt<unk_20byte*,unk_20byte*>",0x00689a40,0x004bbf80,0x00689a40
 13822,function,SmartData::Attribute::Get,0x00689a80,0x00575850,0x00689a80
 13823,function,Stub::GetDword_0x590,0x00689a90,0x00575860,0x00689a90
@@ -13844,25 +13844,25 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13843,function,"stdext::hash_map<unk_key,unk_value>::_Copy::catch$0",0x0068a349,0x00576209,0x0068a349
 13844,function,std::vector<unk_20byte>::vector,0x0068a3c0,0x00576280,0x0068a3c0
 13845,function,std::vector<unk_8byte>::vector,0x0068a420,0x00834e20,0x0068a420
-13846,function,,0x0068a480,0x005762e0,0x0068a480
-13847,function,,0x0068a4e0,0x00576340,0x0068a4e0
+13846,function,std::vector<CCArea::StageEntry>::vector_copy,0x0068a480,0x005762e0,0x0068a480
+13847,function,std::vector<?>::vector_copy,0x0068a4e0,0x00576340,0x0068a4e0
 13848,function,"stdext::hash_map<unk_key,unk_value>::hash_map",0x0068a540,0x005763a0,0x0068a540
-13849,function,,0x0068a5b0,0x00576410,0x0068a5b0
+13849,function,NamedHashMap::NamedHashMap_copy,0x0068a5b0,0x00576410,0x0068a5b0
 13850,function,"std::map<unsigned_long_long,std::vector<unsigned_int>>::_Copy",0x0068a610,0x00576470,0x0068a610
 13851,function,"std::map<unsigned_long_long,std::vector<unsigned_int>>::_Copy::catch$0",0x0068a6ad,0x0057650d,0x0068a6ad
 13852,function,"std::map<unsigned_long_long,std::vector<unsigned_int>>::_Copy_tree",0x0068a6d0,0x00576530,0x0068a6d0
 13853,function,"std::map<unsigned_long_long,std::vector<unsigned_int>>::map",0x0068a750,0x005765b0,0x0068a750
 13854,function,"std::map<unsigned_long_long,std::vector<unsigned_int>>::map::catch$0",0x0068a7cc,0x0057662c,0x0068a7cc
-13855,function,,0x0068a7e0,0x00576640,0x0068a7e0
+13855,function,CCArea::~CCArea,0x0068a7e0,0x00576640,0x0068a7e0
 13856,function,CCArea::Update,0x0068af30,0x00576d90,0x0068af30
 13857,function,CCArea::RemoveObject,0x0068b050,0x00576eb0,0x0068b050
 13858,function,CCArea::Load,0x0068b1b0,0x00577010,0x0068b1b0
 13859,function,"std::map<unsigned_long_long,std::vector<unsigned_int>>::operator[]",0x0068be90,0x00577cf0,0x0068be90
-13860,function,,0x0068bf70,0x00577dd0,0x0068bf70
+13860,function,CCArea::`scalar deleting destructor',0x0068bf70,0x00577dd0,0x0068bf70
 13861,function,CCArea::AddObject,0x0068bf90,0x00577df0,0x0068bf90
-13862,function,,0x0068c120,0x00577f80,0x0068c120
+13862,function,RoomDoorMap::RoomDoorMap_copy,0x0068c120,0x00577f80,0x0068c120
 13863,function,CCArea::RegisterDoorBetweenRooms,0x0068c190,0x00577ff0,0x0068c190
-13864,function,,0x0068c1e0,0x00578040,0x0068c1e0
+13864,function,CCArea::CCArea_copy,0x0068c1e0,0x00578040,0x0068c1e0
 13865,function,CCArea::CloneArea,0x0068ca40,0x005788a0,0x0068ca40
 13866,function,CCArea::Clone,0x0068cac0,0x00578920,0x0068cac0
 13867,function,Stub::GetString_0x0,0x0068cae0,0x00578940,0x0068cae0
@@ -14056,7 +14056,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14055,function,CCObject::ApplyFade,0x00695080,0x00585f50,0x00695080
 14056,function,CCObject::GetAppliedFade,0x00695140,0x00586010,0x00695140
 14057,function,CCObject::IsInChunkedArea,0x00695150,0x00586020,0x00695150
-14058,function,,0x00695170,0x00586040,0x00695170
+14058,function,CCObject::RequestAILevelUpdate,0x00695170,0x00586040,0x00695170
 14059,function,CCObject::Area,0x00695180,0x00586050,0x00695180
 14060,function,CCObject::SetModelRoom,0x006951a0,0x00586070,0x006951a0
 14061,function,CCObject::GetEffectsEmit,0x006951c0,0x00586090,0x006951c0
@@ -15805,16 +15805,16 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15804,function,"std::_Copy_backward_opt<CSAreaList::Entry*,CSAreaList::Entry*,std::random_access_iterator_tag>",0x006fa3f0,0x005ec0e0,0x006fa3f0
 15805,function,"std::_Uninit_copy<CSAreaList::Entry*,CSAreaList::Entry*>",0x006fa450,0x005ec140,0x006fa450
 15806,function,CSAreaList::RunPRCScripts,0x006fa480,0x005ec170,0x006fa480
-15807,function,,0x006fa530,0x005ec220,0x006fa530
-15808,function,,0x006fa590,0x005ec280,0x006fa590
+15807,function,"std::copy<CSAreaList::Entry*,CSAreaList::Entry*>",0x006fa530,0x005ec220,0x006fa530
+15808,function,"std::_Uninit_fill_n<CSAreaList::Entry*,unsigned_int,CSAreaList::Entry,std::allocator<CSAreaList::Entry>>",0x006fa590,0x005ec280,0x006fa590
 15809,function,,0x006fa5c0,0x005ec2b0,0x006fa5c0
-15810,function,,0x006fa660,0x005ec350,0x006fa660
+15810,function,CSAreaList::CallVfunction86OnAreas,0x006fa660,0x005ec350,0x006fa660
 15811,function,CSAreaList::UpdateStep,0x006fa700,0x005ec3f0,0x006fa700
-15812,function,,0x006fa790,0x005ec480,0x006fa790
-15813,function,,0x006fa8b0,0x005ec5a0,0x006fa8b0
+15812,function,CSAreaList::GetAreaById,0x006fa790,0x005ec480,0x006fa790
+15813,function,CSAreaList::GetAreaByIndex,0x006fa8b0,0x005ec5a0,0x006fa8b0
 15814,function,CSAreaList::FindArea,0x006fa910,0x005ec600,0x006fa910
 15815,function,,0x006faaf0,0x005ec7e0,0x006faaf0
-15816,function,,0x006fab80,0x005ec870,0x006fab80
+15816,function,"std::copy_backward<CSAreaList::Entry*,CSAreaList::Entry*>",0x006fab80,0x005ec870,0x006fab80
 15817,function,CSAreaList::LoadAreas,0x006fabb0,0x005ec8a0,0x006fabb0
 15818,function,std::vector<CSAreaList::Entry>::_Ufill,0x006fadf0,0x005ecae0,0x006fadf0
 15819,function,std::vector<CSAreaList::Entry>::erase,0x006fae30,0x005ecb20,0x006fae30
@@ -15824,10 +15824,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15823,function,,0x006fb067,0x005ecd57,0x006fb067
 15824,function,std::vector<CSAreaList::Entry>::resize,0x006fb160,0x005ece50,0x006fb160
 15825,function,std::vector<CSAreaList::Entry>::insert,0x006fb250,0x005ecf40,0x006fb250
-15826,function,,0x006fb300,0x005ecff0,0x006fb300
+15826,function,std::vector<CSAreaList::Entry>::push_back,0x006fb300,0x005ecff0,0x006fb300
 15827,function,,0x006fb3a0,0x005ed090,0x006fb3a0
 15828,function,CSAreaList::CollectPRCScripts,0x006fba00,0x005ed6f0,0x006fba00
-15829,function,,0x006fbd80,0x005eda70,0x006fbd80
+15829,function,std::vector<CSAreaList::Entry>::vector,0x006fbd80,0x005eda70,0x006fbd80
 15830,function,,0x006fbe10,0x005edb00,0x006fbe10
 15831,function,,0x006fbe50,0x005edb40,0x006fbe50
 15832,function,,0x006fbee0,0x005edbd0,0x006fbee0
