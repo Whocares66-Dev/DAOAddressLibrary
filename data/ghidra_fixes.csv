@@ -1387,3 +1387,35 @@ address,what,value,why
 0x005B4F00,signature,"void* __cdecl f(void* first, void* last, void* dest)",0x005B4F00: ret
 0x005B40A0,signature,"void __stdcall f(void* stream, float* out)","the readers' convention, upheld against the check; __stdcall: 0x005B40A0 same loop to 4"
 0x005B40E0,signature,"void __stdcall f(void* stream, float* out)","the readers' convention, upheld against the check; __stdcall: 0x005B40E0 same loop to 0x10"
+0x00566060,signature,unsigned int __thiscall f(void* this),__thiscall: 0x00566060 (end-begin)>>3 with the +4 null test
+0x00566080,signature,"void* __cdecl f(void* first, void* last, void* dest)",0x00566080: ret
+0x005660E0,signature,"void __cdecl f(void* first, void* mid, void* last)",0x005660E0: ret
+0x005661A0,signature,"void __cdecl f(void* a, void* b, void* c)",0x005661A0: ret
+0x00566250,signature,"void __cdecl f(void* first, int hole, int bottom, unsigned int v0, unsigned int key, unsigned int v2)",0x00566250: ret
+0x00566300,convention,__cdecl,"0x00566300 loop esi!=ebx, call 0x00565830, step 0x28"
+0x00566359,convention,__cdecl,"0x00566359 std::wstring::~wstring loop (0x28) then 0x008E1202(0,0)"
+0x00566390,signature,"void __cdecl f(void* first, int hole, int top, void* value48)",0x00566390: ret
+0x00566410,signature,"void __thiscall f(void* this, void* object, void* node)",__thiscall: 0x00566410 minps/maxps at 0x00566538 and 0x00566591
+0x005665B0,signature,"void __thiscall f(void* this, void* object)","__thiscall: 0x005665B0 jump table 0x005667B8 (types 0..9), 0x00542A50 lookup, stores of kind 0..3 at [edi+0x28]"
+0x005667E0,signature,"void* __cdecl f(void* first, void* last, void* dest)",0x005667E0: ret
+0x00566810,convention,__cdecl,"0x00566810 count loop, step 0x28"
+0x00566869,convention,__cdecl,0x00566869 std::wstring::~wstring loop then 0x008E1202
+0x005668A0,signature,"void* __cdecl f(void* out, void* first, void* last, void* pred)",0x005668A0: ret
+0x00566B10,signature,"void __cdecl f(void* first, void* last)",0x00566B10: ret
+0x00566B90,signature,"void __cdecl f(void* first, void* mid, void* last)",0x00566B90: ret
+0x00566C50,signature,"void __cdecl f(void* first, void* last)",0x00566C50: ret
+0x00566CC0,convention,__cdecl,"0x00566CC0 child = 2*i+2, compare 0x00565D60, rep movsd 0xC"
+0x00566D80,convention,__cdecl,0x00566D80 calls 0x00566B90 then loops 0x00565D60 and swaps with rep movsd
+0x00567060,signature,"void __cdecl f(void* first, void* last)",0x00567060: ret
+0x00567100,signature,"void __cdecl f(void* first, void* last)",0x00567100: ret
+0x00567170,convention,__cdecl,"0x00567170 copies the last, writes the top into it, calls 0x00566CC0"
+0x005671E0,signature,unsigned int __thiscall f(void* this),"__thiscall: 0x005671E0 size at +8 test, front node [head], erase 0x00A41F80"
+0x00567230,signature,"void __stdcall f(void* first, void* last)","__stdcall: 0x00567230 loop of 0x004C0DB0, step 0x28"
+0x00567260,signature,"void* __stdcall f(void* dest, unsigned int count, void* value)",0x00567260: ret 0xc
+0x005672A0,signature,"void __cdecl f(void* first, void* last)",0x005672A0: ret
+0x00567340,signature,void __thiscall f(void* this),0x00567340: ret
+0x00567390,signature,"void* __thiscall f(void* this, void* out, void* cont1, void* first, void* cont2, void* last)",0x00567390: ret 0x14
+0x00567400,signature,"void* __stdcall f(void* first, void* last, void* dest)",0x00567400: ret 0xc
+0x00567430,signature,"void __cdecl f(void* first, void* last)",0x00567430: ret
+0x00567490,signature,"void __cdecl f(void* first, void* last, int depth)",0x00567490: ret
+0x005675D0,convention,__thiscall,0x005675D0 jmp 0x00567340
