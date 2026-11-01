@@ -10571,3 +10571,92 @@ address,what,value,why
 0x007CE410,signature,void __thiscall f(void *this),"0x007ce410: EC::Cutscene::Actor::ResetModel, convention and arguments read at the entry and the ret"
 0x007CE490,signature,void __thiscall f(void *this),"0x007ce490: EC::Cutscene::Actor::UpdatePoseTransition, convention and arguments read at the entry and the ret"
 0x007BFE10,clear,EquipmentChangedMessage::EquipmentChangedMessage,0x007BFE10 sets the GUIPaperdoll vftables (0x00B21E58 and three more) and is GUI::GUIPaperdoll::GUIPaperdoll (ID 20290); a message class is not built here
+0x007CE5A0,signature,void * __thiscall f(void *this),ID 20688 EC::Cutscene::Actor::GetAppearanceRecord: 0x007CE5A0; GetMappedCreature 0x007CDD10; caller ActionDrawW
+0x007CE5E0,signature,float __thiscall f(void *this),ID 20689 EC::Cutscene::Actor::GetHeight: 0x007CE5E0 calls 0x007CE5A0 with ecx unchanged; callers 0x00
+0x007CE600,signature,void __thiscall f(void *this),ID 20690 EC::Cutscene::Actor::ResetModelAnimation: 0x007CE600-0x007CE65D; sole caller 0x007D8AFA (end of Actor:
+0x007CEAE0,signature,void * __thiscall f(void *this),"ID 20700 std::_Vector_const_iterator<Elem>::operator*: 0x007CEAE0-0x007CEB04; callers 0x0050CDBD, 0x0050CE4D, 0x007"
+0x007CEB10,signature,void __thiscall f(void *this),ID 20701 std::_Tree<Elem52>::const_iterator::operator++: 0x007CEB10-0x007CEB72; erase loop 0x007D52E0 calls it at 0x0
+0x007CEB80,signature,"void __thiscall f(void *this, void *node)",ID 20702 std::_Tree<Elem88>::_Lrotate: 0x007CEB80-0x007CEBCB: wnode=[node+8]; [node+8]=[wnode]; fix
+0x007CEBD0,signature,"void __thiscall f(void *this, void *node)","ID 20703 std::_Tree<Elem52>::_Lrotate: 0x007CEBD0-0x007CEC1B; callers 0x007D4A62, 0x007D4AAB, 0x007"
+0x007CEC20,signature,"void * __thiscall f(void *this, void *left, void *parent, void *right, void *val, unsigned char color)",ID 20704 std::_Tree<Elem52>::_Node::_Node: 0x007CEC20-0x007CEC82; sole caller _Buynode_5 0x007CFFB2
+0x007CEC90,signature,"double __thiscall f(void *this, void *field, double *default_)",ID 20705 GFF4Struct::ReadDouble: 0x007CEC90-0x007CECDC compared line by line with ReadFloat 0
+0x007CECE0,signature,void __thiscall f(void *this),ID 20706 WStringArray::Clear: 0x007CECE0-0x007CED1F; _eh_vector_destructor_iterator_ with 
+0x007CED20,signature,"void __thiscall f(void *this, unsigned int count)","ID 20707 WStringArray::Resize: 0x007CED20-0x007CEE2F; callers 0x007DB26F, 0x007EA001"
+0x007CEFB0,signature,void __thiscall f(void *this),"ID 20711 WStringArray::Clear: 0x007CEFB0: jmp 0x7CECE0; callers 0x007D9617, 0x007EAED1, 0x"
+0x007CEFC0,signature,"void * __cdecl f(void *first, void *last, void *dest)","ID 20712 std::_Copy<EC.Cutscene.Actor.ClipRecord*>: 0x007CEFC0: calls _Copy_opt 0x007CD9A0, returns dest + n*0x4"
+0x007CF020,signature,"void __cdecl f(void *first, void *last, void *value)","ID 20713 std::_Fill<EC.Cutscene.Actor.ClipRecord*,EC.Cutscene.Actor.ClipRecord>: 0x007CF020-0x007CF06F: the value is arg 3 (edi) and is the s"
+0x007CF070,signature,"void __cdecl f(void *first, void *last, void *value)","ID 20714 std::_Fill<ExtendedGad*,ExtendedGad>: 0x007CF070-0x007CF0CC; callers 0x007D5E57, 0x007D5EA4"
+0x007CF0D0,signature,"void * __cdecl f(void *first, void *last, void *dest)",ID 20715 std::_Copy_backward<Elem24*>: 0x007CF0D0; caller 0x007D12E2
+0x007CF130,signature,"void * __cdecl f(void *first, void *last, void *dest)",ID 20716 std::_Copy_backward<EC.Cutscene.Actor.ClipRecord*>: 0x007CF130; caller 0x007D1312
+0x007CF190,signature,"void * __cdecl f(void *first, void *last, void *dest)",ID 20717 std::_Copy_backward<ExtendedGad*>: 0x007CF190; caller 0x007D1342
+0x007CF1F0,signature,"void __cdecl f(float *first, float *mid, float *last)","ID 20718 std::_Med3<float*,std::less<float>>: 0x007CF1F0-0x007CF25C; callers in _Median 0x007D0207-0x007D0"
+0x007CF260,signature,"void __cdecl f(float *first, int hole, int bottom, float val)","ID 20719 std::_Adjust_heap<float*,int,float,std::less<float>>: 0x007CF260-0x007CF2C9; callers 0x007D02A1 (_Make_heap), 0x00"
+0x007CF2D0,signature,int __thiscall f(void *this),"ID 20720 EC::Cutscene::Curve::GetVertexCount: 0x007CF2D0-0x007CF2DC; callers in Curve::ValueAt 0x007D250B,"
+0x007CF390,signature,"void __thiscall f(void *this, void *object)",ID 20722 CutscenePlayer::BindObject: 0x007CF390-0x007CF3C9; sole caller 0x007E3A00 in the actor b
+0x007CF410,signature,void * __thiscall f(void *this),ID 20724 EC::Cutscene::Actor::GetEntity: 0x007CF410-0x007CF44A; GetMappedCreature 0x007CDD10; 11 call
+0x007CF450,signature,"void __thiscall f(void *this, float *position, unsigned char storeBase)",ID 20725 EC::Cutscene::Actor::SetModelPlace: 0x007CF450-0x007CF63F; callers 0x007D06A8 (SetStagePlace 0x0
+0x007CF640,signature,"float * __thiscall f(void *this, float *out)",ID 20726 EC::Cutscene::Actor::GetStageLocalPosition: 0x007CF640-0x007CF6AF; GetPosition 0x007CDD30; callers MoveS
+0x007CF6B0,signature,"void __thiscall f(void *this, float *orientation, unsigned char storeBase)","ID 20727 EC::Cutscene::Actor::SetStageLocalOrientation: 0x007CF6B0-0x007CF6EF; callers MoveSpline, Rotate, Orientati"
+0x007CF6F0,signature,"float * __thiscall f(void *this, float *out)","ID 20728 EC::Cutscene::Actor::GetStageLocalOrientation: 0x007CF6F0-0x007CF72F; GetOrientation 0x007CDEA0, Quaternion"
+0x007CF730,signature,void * __thiscall f(void *this),"ID 20729 EC::Cutscene::Actor::GetLookAt: 0x007CF730-0x007CF7FF; callers Actor::HasHeadtrackingAction,"
+0x007D12C0,signature,"void * __cdecl f(void *first, void *last, void *dest)","ID 20776 std::copy_backward<Elem24*,Elem24*>: 0x007D12C0; callers 0x008481C0, 0x007D5B92"
+0x007D12F0,signature,"void * __cdecl f(void *first, void *last, void *dest)","ID 20777 std::copy_backward<EC.Cutscene.Actor.ClipRecord*,EC.Cutscene.Actor.ClipRecord*>: 0x007D12F0; caller 0x007D4F0C"
+0x007D1320,signature,"void * __cdecl f(void *first, void *last, void *dest)","ID 20778 std::copy_backward<ExtendedGad*,ExtendedGad*>: 0x007D1320; caller 0x007D5E94"
+0x007D1350,signature,"void __cdecl f(void *first, void *last)","ID 20779 std::_Destroy_range<EC.Cutscene.Actor.ClipRecord*>: 0x007D1350-0x007D13BF; callers 0x007D78BF (vector _Tidy), 0x"
+0x007D13C0,signature,"void __cdecl f(void *dest, int n, void *value)","ID 20780 std::_Uninit_fill_n<ExtendedGad*>: 0x007D13C0-0x007D141F; callers 0x007D40E2, 0x007D6FB1 (vecto"
+0x007D1420,signature,"void __cdecl f(void *dest, int n, void *value)","ID 20781 std::_Uninit_fill_n<EC.Cutscene.Actor.ClipRecord*>: 0x007D1420-0x007D148A; callers 0x007D4172, 0x007D5F21"
+0x007D148B,signature,void __cdecl f(void),ID 20782 std::_Uninit_fill_n<EC.Cutscene.Actor.ClipRecord*>::catch$0: 0x007D148B-0x007D14BF
+0x007D14C0,signature,"void __cdecl f(void *out_pair, float *first, float *last, void *pred)","ID 20783 std::_Unguarded_partition<float*,std::less<float>>: 0x007D14C0-0x007D181F; calls _Median 0x007D01C0; caller 0x00"
+0x007D1820,signature,"void __cdecl f(float *first, float *last)","ID 20784 std::_Insertion_sort<float*,std::less<float>>: 0x007D1820-0x007D189F; caller 0x007D5153"
+0x007D18A0,signature,unsigned int __thiscall f(void *this),"ID 20785 Stage::GetPlaceCount: 0x007D18A0-0x007D18F0: 0x004D5360 (file root, takes ecx), fi"
+0x007D1900,signature,"void * __thiscall f(void *this, void *out, unsigned int index)",ID 20786 Stage::GetPlaceAt: 0x007D1900-0x007D199F; field 0x2AF8; caller 0x007D21F8 (GetB
+0x007D19A0,signature,"void __thiscall f(void *this, void *out, const wchar_t *tag)",ID 20787 Stage::FindPlaceByTag: 0x007D19A0-0x007D1AEF: compares the Tag (field 1) char by ch
+0x007D1AF0,signature,unsigned int __thiscall f(void *this),ID 20788 Stage::GetCameraCount: 0x007D1AF0-0x007D1B4F: field 0x2AF9 = 11001 StageCameraList
+0x007D1B50,signature,"void * __thiscall f(void *this, void *out, unsigned int index)",ID 20789 Stage::GetCameraAt: 0x007D1B50-0x007D1BEF; field 0x2AF9; caller 0x007D22CB
+0x007D1BF0,signature,"void __thiscall f(void *this, void *out, const wchar_t *tag)","ID 20790 Stage::FindCameraByTag: 0x007D1BF0-0x007D1D3F, same as FindPlaceByTag over field 0x2"
+0x007D1D40,signature,"char __thiscall f(void *this, void *tag, float *position, float *orientation)","ID 20791 Stage::GetPlacePose: 0x007D1D40-0x007D1E1F; callers 0x007D362D (LinkToActor), 0x0"
+0x007D1EA0,signature,"void __thiscall f(void *this, void *tag, float *position, float *orientation, float *fov, unsigned int a5, unsigned int a6, void *lookList, unsigned int *lookType)","ID 20793 Stage::GetCameraPose: 0x007D1EA0-0x007D2169; sole caller 0x007DEB98 (JumpToCamera,"
+0x007D2170,signature,"char __thiscall f(void *this, float *stagePosition, void *stageOrientation, float *outMin, float *outMax)",ID 20794 Stage::GetBounds: 0x007D2170-0x007D234F; caller 0x007D2CE0 (player +0xA0 stage
+0x007D2350,signature,"void * __thiscall f(void *this, void *gff4Struct)",ID 20795 EC::Cutscene::Curve::Curve: 0x007D2350-0x007D243F; fields 0x14E6-0x14E8 in dev/gff4_fiel
+0x007D2440,signature,"float __thiscall f(void *this, float time)","ID 20796 EC::Cutscene::Curve::ValueAt: 0x007D2440-0x007D275F; GetVertexTime 0x007D02C0, GetVertexVa"
+0x007D2CF0,signature,"float * __thiscall f(void *this, float *out, float time)","ID 20800 CutscenePlayer::SampleLodPosition: 0x007D2CF0-0x007D2E6F; callers 0x007D3A39, 0x007D3A77; field"
+0x007D2E70,signature,"char __cdecl f(void *resourceName, void *outAreaTag, float *outLodPosition)",ID 20801 EC::Cutscene::ReadAreaTagAndLodPosition: 0x007D2E70-0x007D30AF; sole caller 0x006C7C0B in 0x006C76F0 
+0x007D4830,signature,"void __thiscall f(void *this, void *out_iterator, void *key)",ID 20839 std::_Tree<Elem88>::find: 0x007D4830-0x007D48AF; caller 0x007D524A
+0x007D6E00,signature,"void __thiscall f(void *this, void *node)","ID 20879 std::_Tree<Elem20>::_Erase: 0x007D6E00-0x007D6E3F; callers 0x007D9BBA, itself"
+0x007D6E40,signature,"void * __thiscall f(void *this, unsigned int n)",ID 20880 std::vector<EC.Cutscene.Actor.ClipRecord>::vector: 0x007D6E40-0x007D6EAF; caller 0x007DFF16
+0x007D6EB0,signature,"void __thiscall f(void *this, void *value)",ID 20881 std::vector<Elem24>::push_back: 0x007D6EB0-0x007D6F4F; caller 0x007DBFA8 (ActionFrameBufferE
+0x007D6F50,signature,"void __thiscall f(void *this, void *value)","ID 20882 std::vector<ExtendedGad>::push_back: 0x007D6F50-0x007D6FEF; callers 0x007D81D0 (AddBlendGad), 0x0"
+0x007D6FF0,signature,"void * __thiscall f(void *this, void *other)",ID 20883 std::list<Elem>::list: 0x007D6FF0-0x007D7066; caller 0x007D7B89 (Elem16 copy)
+0x007D7067,signature,void __cdecl f(void),ID 20884 std::list<Elem>::list::catch$0: 0x007D7067-0x007D707F
+0x007D7080,signature,"void * __thiscall f(void *this, void *src)","ID 20885 Elem76::Elem76: 0x007D7080-0x007D70FF; callers 0x007D7C96 (_Uninit_copy), 0x"
+0x007D7100,signature,"void * __thiscall f(void *this, void *src)","ID 20886 Elem76::operator=: 0x007D7100-0x007D717F; callers 0x007D7BD6, 0x007D7C29 (copy "
+0x007D7180,signature,"void __thiscall f(void *this, void *list)","ID 20887 EC::Cutscene::Actor::CollectDependencies: 0x007D7180-0x007D720F; dev/CUTSCENES.md names it, slot 5 at "
+0x007D7240,signature,void __thiscall f(void *this),ID 20889 std::_Tree<Elem52>::~_Tree: 0x007D7240-0x007D727F; erase uses operator++ 0x007CEB10 (isn
+0x007D7550,signature,"void * __thiscall f(void *this, void *key)","ID 20891 std::map<std::wstring,Elem24>::operator[]: 0x007D7550-0x007D763F; caller 0x007DBE63 (field 0x1596 then "
+0x007D7640,signature,"void * __thiscall f(void *this, void *src)",ID 20892 Elem60::Elem60: 0x007D7640-0x007D76AF; called from 0x007D7740 and 0x007D9B52
+0x007D76B0,signature,void __thiscall f(void *this),ID 20893 std::list<Elem>::clear: 0x007D76B0-0x007D773F; callers 0x007DD3A3 (ActionAnimateFace
+0x007D7740,signature,"void * __thiscall f(void *this, void *src)","ID 20894 std::pair<std::wstring,Elem60>::pair: 0x007D7740-0x007D779F; caller 0x007DD424"
+0x007D77A0,signature,"void * __thiscall f(void *this, unsigned int n)",ID 20895 std::vector<Elem24>::vector: 0x007D77A0-0x007D781F; caller 0x007DBBE1 (ActionFrameBufferE
+0x007D7820,signature,"int __thiscall f(void *this, char built)",ID 20896 std::vector<EC.Cutscene.Actor.ClipRecord>::_Tidy: 0x007D7820-0x007D793F; /0x44 by 0x78787879; caller 0x007D89E
+0x007D7940,signature,"void * __thiscall f(void *this, unsigned int n)","ID 20897 std::vector<ExtendedGad>::vector: 0x007D7940-0x007D79BF; callers 0x007DFF27, 0x007DFF38"
+0x007D79C0,signature,"void __thiscall f(void *this, char built)","ID 20898 std::vector<ExtendedGad>::_Tidy: 0x007D79C0-0x007D7ABF; callers 0x007D8A3E, 0x007D8A4B, 0x007"
+0x007D7AC0,signature,"void __thiscall f(void *this, unsigned int index)",ID 20899 ECBase::ECDynArray<Resources>::SwapRemoveAt: 0x007D7AC0-0x007D7B7F; sole caller 0x007D7DD8 (AreResourcesL
+0x007D7B80,signature,"void * __thiscall f(void *this, void *src)",ID 20900 Elem16::Elem16: 0x007D7B80-0x007D7B9F; callers incl. 0x007DE81C (tree node c
+0x007D7BA0,signature,"int __cdecl f(int first, int last, int dest)","ID 20901 std::_Copy_opt<Elem76*,Elem76*>: 0x007D7BA0-0x007D7BEF; caller 0x007DE92F"
+0x007D7BF0,signature,"int __cdecl f(int first, int last, int dest)","ID 20902 std::_Copy_backward_opt<Elem76*,Elem76*>: 0x007D7BF0-0x007D7C3F; caller 0x007DD4B2"
+0x007D7C40,signature,"int __cdecl f(int first, int last, int dest)","ID 20903 std::_Uninit_copy<Elem76*>: 0x007D7C40-0x007D7CA8; callers 0x007DF10E, 0x007DFA9B, 0x007"
+0x007D7CA9,signature,void __cdecl f(void),ID 20904 std::_Uninit_copy<Elem76*>::catch$0: 0x007D7CA9-0x007D7CDF
+0x007D7CE0,signature,void * __thiscall f(void *this),"ID 20905 Elem60::Elem60_default: 0x007D7CE0-0x007D7D4F; callers 0x007E0903, 0x007E0E36, 0x00A"
+0x007D7D50,signature,char __thiscall f(void *this),"ID 20906 CutscenePlayer::AreResourcesLoaded: 0x007D7D50-0x007D7DFF; Resources::State, WaitLoaded; sole ca"
+0x007D7E00,signature,void __thiscall f(void *this),ID 20907 CutscenePlayer::MoveHenchmanActorsToEnd: 0x007D7E00-0x007D809F; compares the wide char at tag +0x12; 
+0x007D80A0,signature,void __thiscall f(void *this),ID 20908 CutscenePlayer::MoveCrustActorsToEnd: 0x007D80A0-0x007D813F; sole caller 0x007E3DDF; the field is 
+0x007D8180,signature,"void __thiscall f(void *this, float weight, float *position, float *orientation)","ID 20910 EC::Cutscene::Actor::AddBlendGad: 0x007D8180-0x007D81DB; adds 0x538 to ecx, push_back 0x007D6F"
+0x007D81E0,signature,"void __thiscall f(void *this, float time, float *position, float *orientation, unsigned char flag)",ID 20911 EC::Cutscene::Actor::AddExtendedGad: 0x007D81E0-0x007D823B; adds 0x548; caller 0x007D95A7 (dev/CU
+0x007D8240,signature,void __thiscall f(void *this),ID 20912 EC::Cutscene::Actor::ApplyBlendGads: 0x007D8240-0x007D849F; entries 0x24 bytes; Quaternion::Slerp
+0x007D84A0,signature,void __thiscall f(void *this),ID 20913 EC::Cutscene::Actor::ApplyExtendedGads: 0x007D84A0-0x007D860F; caller 0x007D8642; the loop reads the
+0x007D8610,signature,"void __thiscall f(void *this, int fromCategory, int toCategory, float time)","ID 20914 EC::Cutscene::Actor::UpdateBetweenCategories: 0x007D8610-0x007D891F; args (prevCategory, nextCategory, t);"
+0x007D8920,signature,void __thiscall f(void *this),"ID 20915 EC::Cutscene::Actor::Reset: 0x007D8920-0x007D8AFF; callers 0x007E1124, 0x007E1135 (Teard"
+0x007D8B00,signature,"void __thiscall f(void *this, float prev, float time, void *outTimes)",ID 20916 EC::Cutscene::Actor::CollectStepTimes: 0x007D8B00-0x007D8EAF; sole caller 0x007DA157 (Actor::Advanc
+0x007D8EB0,signature,"char __thiscall f(void *this, float *position, float range)",ID 20917 EC::Cutscene::Actor::TraceGroundHeight: 0x007D8EB0-0x007D903F; thiscall (reads [ecx+0x150]->+0x1C); 
+0x007D0B20,clear,EC::Cutscene::Actor::ResetActions,"0x007D0B20 calls slot 3 (+0xC) of each action: StopActions in dev/CUTSCENES.md, not Reset (slot 2, 0x007D8920)"
+0x007D8920,clear,EC::Cutscene::Actor::ResetActions,0x007D8920 is Actor::Reset (slot 2 call at 0x007D8A91); the label is shared with 0x007D0B20
