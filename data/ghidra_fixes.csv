@@ -921,3 +921,44 @@ address,what,value,why
 0x00865050,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00865050 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
 0x00865100,signature,"int __cdecl f(void *state, int tok, void *ptr, void *end, void *enc)","0x00865100 tok at esp+8, plain ret; called as state->handler(state,tok,ptr,end,enc)"
 0x008651F0,signature,void __cdecl f(void *state),"0x008651F0 state at esp+4, plain ret"
+0x00401000,signature,void* __thiscall f(void* this),ctor returns this 0x00401012
+0x00401020,signature,bool __thiscall f(void* this),slot 3 returns byte +0x68 0x00401020
+0x00401030,signature,void __thiscall f(void* this),tail jump to base dtor 0x00401036
+0x00401130,signature,"void* __thiscall f(void* this, unsigned int flags)",ret 4 at 0x0040114B
+0x004017D0,signature,"void __thiscall f(void* this, bool singleThreaded)",slot 2 arg from [esp+0x1c] ret 4 at 0x004019B8
+0x00413670,signature,unsigned int __cdecl f(void),plain ret no args 0x004B8AF0
+0x00413680,signature,void __cdecl f(unsigned int id),plain ret 0x004B8B20
+0x00413690,signature,void __cdecl f(unsigned int id),plain ret 0x004B8B60
+0x004136A0,signature,"void* __cdecl f(void* ptr, unsigned int size)",plain ret 0x004136B5
+0x004519D0,signature,"float __cdecl f(void* a, void* b)",plain ret result in st0 0x00451A21
+0x00451AF0,signature,"void __cdecl f(void* out, void* a, void* b)",plain ret three stack args 0x00451AF0
+0x00451B30,signature,"void* __thiscall f(void* this, void* src)",ret 4 ecx is dest 0x00451B5C
+0x00451BF0,signature,"void* __thiscall f(void* this, unsigned int flags)",ret 4 at 0x00451C0C
+0x00451C10,signature,void* __thiscall f(void* this),"mov eax,ecx ret 0x00451C12"
+0x00451C60,signature,void __thiscall f(void* this),0x00451C60
+0x00451C70,signature,void __thiscall f(void* this),0x00451C70
+0x00451C80,signature,"void* __thiscall f(void* this, unsigned int flags)",ret 4 at 0x00451C9C
+0x00451CA0,signature,void __thiscall f(void* this),0x00451CA0
+0x00451CB0,signature,"void* __thiscall f(void* this, unsigned int flags)",ret 4 at 0x00451CCC
+0x0045F4E0,signature,int __thiscall f(void* this),slot 4 0x0045F4E0
+0x00463010,signature,void __thiscall f(void* this),plain ret 0x00463092
+0x004633A0,signature,"void* __thiscall f(void* this, unsigned int flags)",ret 4 at 0x004633BB
+0x004B90C0,signature,unsigned int __cdecl f(void* ptr),plain ret arg at esp+8 after one push 0x004B90C0
+0x004B9100,signature,"void* __thiscall f(void* this, int id)",ret 4 ecx read 0x004B9108
+0x004B93D0,signature,void __thiscall f(void* this),plain ret via jmp 0x004B93DC
+0x004B93F0,signature,"bool __thiscall f(void* this, int id, char* name, void* a, unsigned int size, unsigned int c, unsigned int d)",ret 0x18 six args 0x004B94EB
+0x004B94F0,signature,void __thiscall f(void* this),slot 2 0x004B94F0
+0x004B9550,signature,unsigned int __thiscall f(void* this),slot 11 plain ret 0x004B95EB
+0x004B95F0,signature,float __thiscall f(void* this),slot 12 result in st0 0x004B96AA
+0x004B96B0,signature,unsigned int __thiscall f(void* this),slot 14 plain ret 0x004B973B
+0x004B9740,signature,"bool __thiscall f(void* this, void* ptr)",slot 15 ret 4 0x004B9763
+0x004B97F0,signature,void* __stdcall f(void* block),ret 4 ecx unread 0x004B97FE
+0x004B9810,signature,"int __thiscall f(void* this, int a, int b, int c, int d)",slot 19 ret 0x10 at 0x004B9813
+0x004B9820,signature,"unsigned int __stdcall f(unsigned int size, unsigned int shift)",ret 8 ecx unread 0x004B9847
+0x004B9850,signature,void* __thiscall f(void* this),returns esi plain ret 0x004B9872
+0x004B9880,signature,unsigned int __stdcall f(void* block),ret 4 0x004B9891
+0x004B98A0,signature,"unsigned int __thiscall f(void* this, void* ptr)",ret 4 with ecx read 0x004B98CC
+0x004B9940,signature,"void* __thiscall f(void* this, int size, unsigned int align)",ret 8 ecx read 0x004B9946
+0x004B99A0,signature,"void* __thiscall f(void* this, int size)",slot 7 ret 4 0x004B99F7
+0x004B9A00,signature,"bool __stdcall f(void* a, void* b)",ret 8 ecx unread 0x004B9A39
+0x004B9A50,signature,"void __stdcall f(void* block, unsigned int size, unsigned int tag)",ret 0xC ecx unread 0x004B9A67
