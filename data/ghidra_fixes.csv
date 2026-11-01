@@ -8298,3 +8298,49 @@ address,what,value,why
 0x007B21B0,signature,void __thiscall GUI::GUIPaperdoll::RemoveToken(void * this),Plain ret; this unused. Removes the token Paperdoll (0x00B218C4) through the token manager's slot 6 and 0x005C6710. Checked in the reconcile.
 0x007BC110,signature,"void __thiscall GUI::GUIPaperdoll::SetCreature(void * this, void * creature, bool a, bool b, int arg)","ret 0x10 (reader B); OnShow passes (hero,1,1,0), RebuildPaperCreature (hero,1,1,arg)."
 0x007394A0,signature,"void __thiscall f(void *this, unsigned int count, unsigned int v0, unsigned int v1, unsigned int v2, unsigned int v3, unsigned int v4, unsigned int v5, unsigned int v6, unsigned int v7, unsigned int v8, unsigned int v9, unsigned int v10, unsigned int v11, unsigned int v12, unsigned int v13, unsigned int v14, unsigned int v15, unsigned int v16, unsigned int v17, unsigned int v18, unsigned int v19)","std::vector<GUI::GUIPaperdoll::SliderEntry>::resize: the 0x50-byte element passed by value, as 20 words (ret 0x54)"
+0x00739860,convention,__thiscall,adjustor thunk to a target that ends ret 4 (flags word); the thunk takes the same stack argument
+0x00739870,convention,__thiscall,adjustor thunk to 0x0073A680 (ret 4)
+0x00739880,convention,__thiscall,adjustor thunk to 0x0073A680 (ret 4)
+0x00739890,signature,void* __thiscall f(void* this),"vftable slot 0; returns the static class-info node 0x00C0B79C, does not read ecx"
+0x007399D0,signature,"void* __thiscall f(void* this, void* src)","__thiscall, ret 4 (0x00739B01)"
+0x00739B10,signature,"void __thiscall f(void* this, int sliderId, int group, void* sliderDefs)","__thiscall ret 0xC (0x00739D13); Ghidra types the 3rd arg as undefined4 and the 4th as AppearanceSlider<float>*, but the 4th is a std::vector of 80-byte slider definitions"
+0x00739C15,clear,call through [elem+0x38],"Ghidra shows (*puVar10[0xE])(byte, float, float) as a call with three arguments: it is a zero-argument member-function-pointer call (this = paperdoll + [elem+0x3C]) returning float in st0; the byte and two floats are the pushed AppearanceSlider<float> constructor arguments (0x00737460) that the call leaves on the stack"
+0x0067A390,clear,std::vector<AreaEntry>::size,"the label is misleading: 0x00739B45 uses it on the vector of 80-byte slider definitions (it is a shared (end-begin)/size routine, folded code)"
+0x0073A610,signature,void* __thiscall f(void* this),"vftable slot 1, allocates 0x154 and runs the copy constructor"
+0x0073A680,signature,"void* GUI::GUICharGen::`scalar deleting __thiscall f(void* this, unsigned int flags)",__thiscall ret 4
+0x0073A6A0,signature,"void __thiscall f(void* this, ECString* name)",__thiscall ret 4 (0x0073A750); this is the text registry returned by 0x00489BC0
+0x0073A760,signature,"void __thiscall f(void* this, ECString* name)",__thiscall ret 4
+0x0073A820,signature,"void __thiscall f(void* this, ECString* name)",__thiscall ret 4
+0x0073A8E0,signature,"void __thiscall f(void* this, ECString* name)",__thiscall ret 4
+0x0073A9A0,signature,"void __thiscall f(void* this, ECString* name)",__thiscall ret 4
+0x0073AA60,signature,"void __thiscall f(void* this, ECString* name)",__thiscall ret 4
+0x0073AB20,signature,"void __thiscall f(void* this, ECString* name)",__thiscall ret 4
+0x0073ABE0,signature,"void __thiscall f(void* this, ECString* name)",__thiscall ret 4
+0x0073ACA0,signature,"void __thiscall f(void* this, ECString* name)",__thiscall ret 4
+0x0073AD60,signature,"void __thiscall f(void* this, ECString* name)",__thiscall ret 4
+0x0073AE20,signature,"void __thiscall f(void* this, ECString* name)",__thiscall ret 4
+0x0073AEE0,signature,"void __thiscall f(void* this, ECString* name)",__thiscall ret 4
+0x0073B140,signature,void __thiscall f(void* this),"vftable slot 3, plain ret (tail jump)"
+0x0073B400,signature,void __thiscall f(void* this),"vftable slot 2, plain ret"
+0x0073B460,signature,void* __thiscall f(void* this),"__thiscall plain ret, returns this"
+0x0073BF30,signature,void __thiscall f(void* this),"vftable slot 6, tail jump to GUIScene::Close"
+0x0073BFF0,signature,void __thiscall f(void* this),plain ret
+0x0073C0E0,convention,__thiscall,adjustor thunk to 0x0073C420 (ret 4)
+0x0073C0F0,convention,__thiscall,adjustor thunk to 0x0073C420 (ret 4)
+0x0073C100,convention,__thiscall,adjustor thunk to 0x0073C420 (ret 4)
+0x0073C110,signature,void* __thiscall f(void* this),"vftable slot 0, returns 0x00C0C698"
+0x0073C140,signature,void __thiscall f(void* this),vftable slot 2
+0x0073C180,signature,"void* __thiscall f(void* this, void* src)",__thiscall ret 4 (0x0073C1CB)
+0x0073C3B0,signature,void* __thiscall f(void* this),vftable slot 1
+0x0073C420,signature,"void* GUI::GUICharacterRecord::`scalar deleting __thiscall f(void* this, unsigned int flags)",__thiscall ret 4
+0x0073C440,signature,void* __thiscall f(void* this),plain ret
+0x0074BA60,signature,void __thiscall f(void* this),Ghidra has __fastcall(int); a one-argument ecx function is __thiscall; plain ret
+0x0074C2B0,signature,void __thiscall f(void* this),"Ghidra has __fastcall(int); __thiscall, plain ret"
+0x007532D0,signature,unsigned int __thiscall f(void* this),Ghidra has __fastcall(int); tail jump to SmartData::Attribute::Get on this+0x4D8 (RuneSlotMask)
+0x00753D90,signature,int __thiscall f(void* this),"Ghidra has uint __fastcall(int) with a bogus unaff_ESI and an this-0x2E0 test; it is __thiscall, returns 0..5"
+0x0075AC60,signature,void __thiscall f(void* this),plain ret
+0x0075AD10,convention,__thiscall,adjustor thunk to 0x0075BBF0 (ret 4)
+0x00739890,clear,GUI::GUICharGen::vfunction1,it is slot 0 (GetClassInfo); the auto label's slot number is wrong (0x00739870 carries vfunction1 too)
+0x00739870,clear,GUI::GUICharGen::vfunction1,"an adjustor thunk (ecx-0xC4) to the scalar deleting destructor, not a vfunction1"
+0x007FD2E0,clear,GUI::GUICharGenBase::vfunction4,"GUICharGenBase::RegisterMessageHandlers (slot 3): once-guarded by byte 0x00C39220, files Reset, CharGenEnd, AssignAttribute, AssignAbility, AutoLevelUp; outside gui-31, called at the head of 0x0073B140"
+0x00737460,convention,__thiscall ret 0x18,"AppearanceSlider<float>(group, label, value, integral, min, max): RET 0x18 at 0x007377E3"
