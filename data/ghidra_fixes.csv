@@ -6938,3 +6938,85 @@ address,what,value,why
 0x00638560,signature,void __thiscall f(void *this),"reads [ecx+0x208], plain ret 0x00638575"
 0x0063BFA0,signature,float __stdcall f(float distance),"ecx never read, ret 4 at 0x0063C012, float in st0"
 0x0063C020,signature,float __stdcall f(float distance),"ecx never read, ret 4 at 0x0063C092, float in st0"
+0x0063FAF0,signature,"int __thiscall f(void *this, void *object, void *text, int style, unsigned int colour, float duration)",GUI::GUIFloatyLayer::AddMessageFloaty: ecx read as this
+0x0063FB80,signature,"void __thiscall f(void *this, void *object)",GUI::GUIFloatyLayer::SignalDamage: ecx read as this
+0x0063FCF0,signature,"void __thiscall f(void *this, void *object, void *icon)",GUI::GUIFloatyLayer::ShowFloatyIcon: ecx read as this
+0x0063FFA0,signature,void __thiscall f(void *this),GameModeController::DestroyModes: ecx read as this
+0x00640B10,signature,"int __thiscall f(void *this, int dest, int count, void *value)",std::vector<T16>::_Ufill: ecx read as this
+0x00640EB0,signature,"void *__thiscall f(void *this, void *other)",std::vector<T16>::operator=: ecx read as this
+0x00641870,signature,"int __thiscall f(void *this, int startMode)",GameModeController::Initialize: ecx read as this
+0x00642BA0,signature,void * __thiscall f(void *this),SaveGame::SaveGame: ecx read as this
+0x00642BD0,signature,bool __thiscall f(void *this),SaveGame::IsFileValid: ecx read as this
+0x00642BE0,signature,void * __cdecl f(void *outString),SaveGame::PlayersFolder: see proto
+0x00642C70,signature,"void * __cdecl f(void *outString, int kind)",SaveGame::SlotPrefix: see proto
+0x00642D10,signature,"void __thiscall f(void *this, void *outHandle)",GFF4Struct::ResolveStruct: ecx read as this
+0x00642D90,signature,void __thiscall f(void *this),GFF4Struct::AllocateReferenced: ecx read as this
+0x00642DC0,signature,bool __thiscall f(void *this),GFF4Struct::IsReferenceNull: ecx read as this
+0x00642DF0,signature,"void __thiscall f(void *this, int offset, unsigned int *value)",GFF4File::WriteUint64: ecx read as this
+0x00642E10,signature,"int * __thiscall f(void *this, int *out)",GFF4Struct::GetTypeWord: ecx read as this
+0x00642E50,signature,void __thiscall f(void *this),SaveGame::~SaveGame: ecx read as this
+0x00642EF0,signature,"void __thiscall f(void *this, void *outHandle)",SaveGame::GetCampaignStruct: ecx read as this
+0x00642F60,signature,"void __thiscall f(void *this, void *outHandle)",SaveGame::GetPartyListStruct: ecx read as this
+0x00642FD0,signature,"void __thiscall f(void *this, void *outHandle)",SaveGame::GetPlayerCharStruct: ecx read as this
+0x00643040,signature,"void __thiscall f(void *this, void *outHandle)",SaveGame::GetGameStateStruct: ecx read as this
+0x006430B0,signature,"void __thiscall f(void *this, void *outHandle)",SaveGame::GetVersionStruct: ecx read as this
+0x00643120,signature,"void __thiscall f(void *this, void *outHandle)",SaveGame::GetMetaRootStruct: ecx read as this
+0x00643180,signature,"void * __thiscall f(void *this, void *outHandle)",SaveGame::GetRootStruct: ecx read as this
+0x006431B0,signature,"void __thiscall f(void *this, void *outHandle)",SaveGame::GetStorySoFarStruct: ecx read as this
+0x00643220,signature,"void __thiscall f(void *this, void *outHandle)",GFF4Struct::ResolveReference: ecx read as this
+0x006432A0,signature,"void __thiscall f(void *this, int fieldId, void *text)",GFF4Struct::SetWideString: ecx read as this
+0x00643310,signature,"void __thiscall f(void *this, void *outHandle, int fieldId)",GFF4Struct::GetReferenceField: ecx read as this
+0x00643390,signature,"void __thiscall f(void *this, int fieldId, unsigned long long *value)",GFF4Struct::SetUint64: ecx read as this
+0x00643400,signature,"unsigned long long __cdecl f(void *file, int offset)",GFF4File::ReadUint64: see proto
+0x00643420,signature,"void __thiscall f(void *this, void *outHandle)",SaveGame::GetPlayerCharCharStruct: ecx read as this
+0x006434F0,signature,void __thiscall f(void *this),SaveGame::StampVersion: ecx read as this
+0x00643980,signature,"unsigned long long __thiscall f(void *this, unsigned int offset, int unused)",GFF4File::ReadUint64Checked: ecx read as this
+0x006439A0,signature,"void __thiscall f(void *this, void *outHandle, void *areaName, char create)",SaveGame::GetAreaStruct: ecx read as this
+0x00643D00,signature,"void * __cdecl f(void *outString, void *characterFolder)",SaveGame::CharacterSavesFolder: see proto
+0x00643ED0,signature,"unsigned long long __thiscall f(void *this, int fieldId, unsigned long long *defaultValue)",GFF4Struct::GetUint64: ecx read as this
+0x006453E0,signature,void * __stdcall f(void *outString),SaveGame::GetCampaignResource: see proto
+0x006454D0,signature,"bool __stdcall f(const void *data, unsigned int size)",GFF4File::HasPcV40Header: see proto
+0x00645510,signature,"bool __stdcall f(const void *data, unsigned int size)",SaveGame::IsSupportedVersion: see proto
+0x00645630,signature,void * __thiscall f(void *this),std::list<std::wstring>::front: ecx read as this
+0x00645A50,signature,void __thiscall f(void *this),std::list<std::wstring>::clear: ecx read as this
+0x00645A60,signature,void __stdcall f(void *outString),SaveGame::MakeNewHeroFolderName: see proto
+0x00647250,signature,"void __thiscall f(void *this, unsigned int count)",std::vector<AddInInfo>::resize: ecx read as this
+0x00647280,signature,"void __thiscall f(void *this, void *addIns)",SaveGame::LoadAddInNames: ecx read as this
+0x00647710,signature,unsigned char __stdcall f(void *file),SaveGame::BuildMetaTemplate: see proto
+0x006478B0,signature,unsigned int __stdcall f(void *file),SaveGame::BuildGameStateTemplate: see proto
+0x00647990,signature,unsigned int __stdcall f(void *file),SaveGame::BuildVersionTemplate: see proto
+0x00647A60,signature,unsigned int __stdcall f(void *file),SaveGame::BuildStoryEventTemplate: see proto
+0x00647B40,signature,unsigned int __stdcall f(void *file),SaveGame::BuildStoryLevelUpTemplate: see proto
+0x00647ED0,signature,unsigned int __stdcall f(void *file),SaveGame::BuildAddInTemplate: see proto
+0x00648050,signature,void __thiscall f(void *this),SaveGame::CreateMetaFile: ecx read as this
+0x00648460,signature,unsigned int __stdcall f(void *file),SaveGame::BuildStorySoFarTemplate: see proto
+0x00648530,signature,unsigned char __stdcall f(void *file),SaveGame::BuildRootTemplate: see proto
+0x006486E0,signature,bool __thiscall f(void *this),SaveGame::PrepareTemplates: ecx read as this
+0x006488A0,signature,char __thiscall f(void *this),SaveGame::ParseData: ecx read as this
+0x006489A0,signature,void __thiscall f(void *this),SaveGame::CreateFile: ecx read as this
+0x00648AE0,signature,void __cdecl f(void),SaveGame::CreateFile::`unwind funclet': see proto
+0x00648B10,signature,void __thiscall f(void *this),World::HitResult::HitResult: ecx read as this
+0x00648BD0,signature,"void __stdcall f(void *outHits, void *from, void *to, unsigned int mask, unsigned int flag)",World::CollectRayHits: see proto
+0x00648C00,signature,"void __stdcall f(void *outHits, void *centre, float radius, unsigned int mask)",World::OverlapSphere: see proto
+0x00648C30,signature,bool __thiscall f(void *this),std::vector<Math::CollisionOutputParameter>::empty: ecx read as this
+0x00648DA0,signature,"bool __stdcall f(void *from, void *to, float arg3, unsigned int mask)",World::IsRayClear: see proto
+0x00648F90,signature,"void __thiscall f(void *this, unsigned int count)",std::vector<Math::CollisionOutputParameter>::resize: ecx read as this
+0x006490B0,signature,"bool __thiscall f(void *this, float *outPos, float *p0, float *p1, float radius, unsigned int mask, int mode)",World::SweepCapsuleNearest: ecx read as this
+0x006493E0,signature,"bool __thiscall f(void *this, float *outPos, float *centre, float radius, unsigned int mask)",World::OverlapSphereNearest: ecx read as this
+0x006496C0,signature,"void __thiscall f(void *this, char freeStorage)",std::vector<Math::CollisionOutputParameter>::_Tidy: ecx read as this
+0x00649990,signature,"void __stdcall f(int kind, void *payload)",ClientAIMaster::DiscardDelayedPayload: see proto
+0x006499B0,signature,void * __cdecl f(void),std::list<void *>::_Buynode: see proto
+0x006499D0,signature,"bool __thiscall f(void *this, int day, int time)",ClientAIMaster::IsFrontEventDue: ecx read as this
+0x00649A20,signature,void * __thiscall f(void *this),ClientAIMaster::PopFrontEvent: ecx read as this
+0x00649A40,signature,void __thiscall f(void *this),ClientAIMaster::~ClientAIMaster: ecx read as this
+0x00649B30,signature,void * __thiscall f(void *this),ClientAIMaster::ClientAIMaster: ecx read as this
+0x00649C30,signature,"int __thiscall f(void *this, void *object)",ClientAIMaster::UnregisterObject: ecx read as this
+0x00649C80,signature,void __thiscall f(void *this),ClientAIMaster::FlushDeferredRemovals: ecx read as this
+0x00649CF0,signature,"void * __thiscall f(void *this, void *outIter, void *value, void *position)",std::list<void *>::insert_after: ecx read as this
+0x00649DB0,signature,"void * __thiscall f(void *this, void *outIter, void *value, void *position)",std::list<void *>::insert: ecx read as this
+0x00649E40,signature,"int __thiscall f(void *this, int day, int time, int caller, int target, int kind, void *state)",ClientAIMaster::AddEventNow: ecx read as this
+0x00649FA0,signature,"int __thiscall f(void *this, int day, int time, int caller, int target, int kind, void *state)",ClientAIMaster::AddEventLater: ecx read as this
+0x0064A100,signature,void __thiscall f(void *this),ClientAIMaster::UpdateObjectsPaused: ecx read as this
+0x0064A230,signature,"int __thiscall f(void *this, int days, int ms, int caller, int target, int kind, void *state)",ClientAIMaster::AddEventDeltaTime: ecx read as this
+0x0064A2D0,signature,void __thiscall f(void *this),ClientAIMaster::Update: ecx read as this
+0x00648DA0,clear,Math::CollisionOutputParameter::CollisionOutputParameter_Constructor_or_Destructor,World::IsRayClear: the CollisionOutputParameter is only a local object on its stack
