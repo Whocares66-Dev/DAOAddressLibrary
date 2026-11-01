@@ -6796,3 +6796,43 @@ address,what,value,why
 0x007AFB70,signature,"void __thiscall PartyTactics::SetNumTactics(void* this, unsigned int count)",0x007AFB70-0x007AFBEB; dev/PARTY.md SetNumTactics; callers 0x0066D600 0x007B08D0 0x007B1120
 0x007B0390,signature,"void __thiscall Messages::RegisterMessageFactory<DirtyPresetMessage>(void* registry, void* nameWString)",0x007B0390-0x007B044F; creator 0x007AC480; name literals pushed in 0x007B1120 (0x00B21368 ..)
 0x007B0450,signature,"void __thiscall Messages::RegisterMessageFactory<LoadPresetMessage>(void* registry, void* nameWString)",0x007B0450-0x007B050F; creator 0x007AC4E0; name literals pushed in 0x007B1120 (0x00B21368 ..)
+0x00423E70,signature,void* __thiscall GetName(void* this),"slot 12, returns this+0x50"
+0x00451CD0,signature,"void* __thiscall `scalar deleting destructor'(void* this, unsigned int flags)","slot 0, ret 4 at 0x00451CF1"
+0x00452E10,signature,void __cdecl EnsureInstance(void),ret with no args; ecx not read as this
+0x00454BD0,signature,"void __thiscall MarkObjectInPartition(void* this, void* object)",ret 4 at 0x00454D69; ecx saved to ebx
+0x00454D70,signature,"void __thiscall MarkNodeInPartition(void* this, void* node, void* bounds)","ret 8 at 0x00454EAB, two stack args [ebp+8],[ebp+0xC]"
+0x004552A0,signature,"void __thiscall command(void* this, unsigned int command)","slot 1, ret 4 at 0x00455344"
+0x00456740,signature,"void* __thiscall ReadStringById(void* this, unsigned int id, void* defaultString)","ret 8 at 0x0045676F, ecx moved to esi"
+0x00456D20,signature,void __cdecl ClearTargets(void),0x00456D20
+0x004582B0,signature,"void __cdecl LoadFile(void* resource, void* manager)","plain ret at 0x00458367 and the args at [esp+0x44],[esp+0x48]"
+0x0045AFE0,signature,unsigned int __cdecl GetMinOfLimits(void),"plain ret, reads two globals"
+0x0045C6C0,signature,"void* __thiscall EclipseUmbraCommander(void* this, void* owner)","ret 4 at 0x0045C775, owner stored at +8"
+0x0045C780,signature,"void* __thiscall `scalar deleting destructor'(void* this, unsigned int flags)","slot 0, ret 4 at 0x0045C7B5"
+0x0045C7C0,signature,void __thiscall FlushQueries(void* this),"plain ret at 0x0045C8D8, ecx = this"
+0x0045C8E0,signature,"void __thiscall command(void* this, unsigned int command)","slot 1, ret 4"
+0x004671F0,signature,"void __thiscall SetMeshObjectsUmbraProperty0(void* this, bool value)","slot 1, ret 4 at 0x004672BE"
+0x004672D0,signature,void __thiscall ~EclipseUmbraScene(void* this),plain ret at 0x00467373
+0x00467380,signature,void __thiscall UpdateEmitters(void* this),plain ret at 0x004675A3
+0x004675B0,signature,"void* __thiscall `scalar deleting destructor'(void* this, unsigned int flags)","slot 0, ret 4 at 0x004675CB"
+0x004694C0,signature,"void* __thiscall allocateMemory(void* this, unsigned int size)","slot 2, ret 4"
+0x004694E0,signature,"void __thiscall deallocateMemory(void* this, void* block)","slot 3, ret 4"
+0x004EB9F0,signature,"void* __thiscall WDObject(void* this, int id)","ret 4, ecx moved to eax"
+0x004EBA10,signature,void __thiscall ~WDObject(void* this),plain ret
+0x004EBA20,signature,void __thiscall DecrementRefCount(void* this),slot 3
+0x004EBA30,signature,"void __thiscall GetTypeName(void* this, void* outString)","slot 11, ret 4"
+0x004EBA50,signature,"void* __thiscall GameObjectProxy(void* this, int id)",ret 4
+0x004EBA70,signature,void __thiscall ~GameObjectProxy(void* this),0x004EBA70
+0x004EBA80,signature,"void __thiscall GetTypeName(void* this, void* outString)","slot 11, ret 4"
+0x004EBAB0,signature,"bool __thiscall HasId(void* this, int id)","slot 9, ret 4"
+0x004EBAD0,signature,"bool __thiscall IsIdLessThan(void* this, void* other)","slot 10, ret 4"
+0x004EBB00,signature,"void* __thiscall `scalar deleting destructor'(void* this, unsigned int flags)","slot 5, ret 4"
+0x004EBB20,signature,"void* __thiscall `scalar deleting destructor'(void* this, unsigned int flags)","slot 5, ret 4"
+0x0052ED90,signature,"void __thiscall UpdateWinds(void* this, float dt)",ret 4 at 0x0052F3EF; dt at [ebp+8]
+0x00532A10,signature,void __thiscall UpdateModels(void* this),plain ret; ecx + 0x1F4
+0x005380D0,signature,"void* __thiscall GetAt(void* this, int index)",ret 4
+0x005C81D0,signature,void __thiscall UnloadRooms(void* this),plain ret at 0x005C820D
+0x005C8580,signature,void* __cdecl _Max(void* node),"plain ret, arg at [esp+4], ecx unused: cdecl"
+0x005C85A0,signature,"void __thiscall _Rrotate(void* this, void* node)","ret 4, ecx read at 0x005C85BE"
+0x005C8600,signature,void __thiscall DeleteAll(void* this),plain ret
+0x005C8650,signature,void __thiscall Free(void* this),plain ret
+0x005C8670,signature,void __thiscall Unload(void* this),plain ret at 0x005C87E1

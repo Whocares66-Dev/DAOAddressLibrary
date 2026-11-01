@@ -1056,7 +1056,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 1055,function,,0x00423e30,0x00424010,0x00423e30
 1056,function,,0x00423e40,0x00967180,0x00423e40
 1057,function,,0x00423e50,0x00424060,0x00423e50
-1058,function,,0x00423e70,0x00714420,0x00423e70
+1058,function,IRoomLayout::GetName,0x00423e70,0x00714420,0x00423e70
 1059,function,,0x00423e80,0x00424080,0x00423e80
 1060,function,,0x00423ea0,0x004240a0,0x00423ea0
 1061,function,,0x00423eb0,0x004240b0,0x00423eb0
@@ -2246,7 +2246,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2245,function,Math::Sphere::`scalar deleting destructor',0x00451c80,0x00539dc0,0x00451c80
 2246,function,Math::Plane::Plane,0x00451ca0,0x00585b50,0x00451ca0
 2247,function,Math::Plane::`scalar deleting destructor',0x00451cb0,0x00585b60,0x00451cb0
-2248,function,,0x00451cd0,0x0088d130,0x00451cd0
+2248,function,Renderer::IPartitionUmbraCommander::`scalar deleting destructor',0x00451cd0,0x0088d130,0x00451cd0
 2249,function,Renderer::ShadowMaps::Partition::Reset,0x00451d00,0x0088d160,0x00451d00
 2250,function,Renderer::ShadowMaps::Partition::BuildFrustum,0x00451db0,0x0088d210,0x00451db0
 2251,function,Math::CollisionObject::operator=,0x004522e0,0x007a7c40,0x004522e0
@@ -2258,7 +2258,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2257,function,Renderer::ShadowMaps::SetLightDirection,0x00452a90,0x0088de20,0x00452a90
 2258,function,Renderer::ShadowMaps::ResetMatrices,0x00452cb0,0x0088e040,0x00452cb0
 2259,function,,0x00452d40,0x0088e0d0,0x00452d40
-2260,function,,0x00452e10,0x0088e1a0,0x00452e10
+2260,function,Renderer::IPartitionUmbraCommander::EnsureInstance,0x00452e10,0x0088e1a0,0x00452e10
 2261,function,Renderer::ShadowMaps::ResolveCasterVisibility,0x00452e90,0x0088e220,0x00452e90
 2262,function,Vector4::NormalizedW,0x00452ef0,0x00590e50,0x00452ef0
 2263,function,Math::AABB::operator=,0x00452f40,0x007a7d30,0x00452f40
@@ -2288,11 +2288,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2287,function,,0x00454470,0x0088f260,0x00454470
 2288,function,,0x004544f0,0x0088f2e0,0x004544f0
 2289,function,,0x00454510,0x0088f300,0x00454510
-2290,function,,0x00454bd0,0x0088f9c0,0x00454bd0
-2291,function,,0x00454d70,0x0088fb60,0x00454d70
+2290,function,Renderer::IPartitionUmbraCommander::MarkObjectInPartition,0x00454bd0,0x0088f9c0,0x00454bd0
+2291,function,Renderer::IPartitionUmbraCommander::MarkNodeInPartition,0x00454d70,0x0088fb60,0x00454d70
 2292,function,,0x00454f20,0x00489fb0,0x00454f20
 2293,function,,0x00454f60,0x0088fd10,0x00454f60
-2294,function,,0x004552a0,0x00890050,0x004552a0
+2294,function,Renderer::IPartitionUmbraCommander::command,0x004552a0,0x00890050,0x004552a0
 2295,function,Renderer::ShadowMaps::SetPartitions,0x00455420,0x008901d0,0x00455420
 2296,function,,0x00455580,0x00890330,0x00455580
 2297,function,,0x004556e0,0x00890490,0x004556e0
@@ -2336,7 +2336,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2335,function,,0x004564f0,0x004c1dc0,0x004564f0
 2336,function,,0x00456540,0x004c1e10,0x00456540
 2337,function,,0x00456590,0x00891010,0x00456590
-2338,function,,0x00456740,0x004b5bd0,0x00456740
+2338,function,GFF4::Struct::ReadStringById,0x00456740,0x004b5bd0,0x00456740
 2339,function,,0x00456780,0x008911c0,0x00456780
 2340,function,,0x00456900,0x00891340,0x00456900
 2341,function,,0x00456990,0x004b2b80,0x00456990
@@ -2348,7 +2348,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2347,function,,0x00456bc0,0x00891490,0x00456bc0
 2348,function,,0x00456c10,0x008914e0,0x00456c10
 2349,function,Renderer::FrameBufferEffects::Find,0x00456ca0,0x00891570,0x00456ca0
-2350,function,,0x00456d20,0x008915f0,0x00456d20
+2350,function,Renderer::FrameBufferEffects::ClearTargets,0x00456d20,0x008915f0,0x00456d20
 2351,function,,0x00456e60,0x00891730,0x00456e60
 2352,function,,0x00456e70,0x00891740,0x00456e70
 2353,function,,0x00456ee0,0x008917b0,0x00456ee0
@@ -2377,7 +2377,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2376,function,,0x00457df0,0x00892330,0x00457df0
 2377,function,,0x00458190,0x008926d0,0x00458190
 2378,function,,0x00458260,0x008927a0,0x00458260
-2379,function,,0x004582b0,0x008927f0,0x004582b0
+2379,function,Renderer::FrameBufferEffects::LoadFile,0x004582b0,0x008927f0,0x004582b0
 2380,function,,0x00458420,0x007e64c0,0x00458420
 2381,function,,0x00458470,0x004d2c90,0x00458470
 2382,function,,0x00458520,0x004d2d40,0x00458520
@@ -2455,7 +2455,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2454,function,,0x0045ae70,0x0089c240,0x0045ae70
 2455,function,,0x0045af20,0x0089c2f0,0x0045af20
 2456,function,,0x0045afc0,0x0089c390,0x0045afc0
-2457,function,,0x0045afe0,0x0046b1a0,0x0045afe0
+2457,function,Renderer::GetMinOfLimits,0x0045afe0,0x0046b1a0,0x0045afe0
 2458,function,,0x0045b000,0x008a17b0,0x0045b000
 2459,function,,0x0045b010,0x008a17c0,0x0045b010
 2460,function,Vector4::DistanceSquared,0x0045b080,0x00566000,0x0045b080
@@ -2489,10 +2489,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2488,function,,0x0045c570,0x008a2cd0,0x0045c570
 2489,function,,0x0045c5e0,0x008a2d40,0x0045c5e0
 2490,function,,0x0045c650,0x008a2db0,0x0045c650
-2491,function,,0x0045c6c0,0x008a2e20,0x0045c6c0
-2492,function,,0x0045c780,0x008a2ee0,0x0045c780
-2493,function,,0x0045c7c0,0x008a2f20,0x0045c7c0
-2494,function,,0x0045c8e0,0x008a3040,0x0045c8e0
+2491,function,Renderer::EclipseUmbraCommander::EclipseUmbraCommander,0x0045c6c0,0x008a2e20,0x0045c6c0
+2492,function,Renderer::EclipseUmbraCommander::`scalar deleting destructor',0x0045c780,0x008a2ee0,0x0045c780
+2493,function,Renderer::EclipseUmbraCommander::FlushQueries,0x0045c7c0,0x008a2f20,0x0045c7c0
+2494,function,Renderer::EclipseUmbraCommander::command,0x0045c8e0,0x008a3040,0x0045c8e0
 2495,retired,,,,
 2496,retired,,,,
 2497,function,,0x0045d070,0x00895a50,0x0045d070
@@ -2754,10 +2754,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2753,function,,0x00467000,0x008a0560,0x00467000
 2754,function,Renderer::ResolveVisibilityAndDraw,0x00467050,0x008a05b0,0x00467050
 2755,function,,0x004670c0,0x008a0620,0x004670c0
-2756,function,,0x004671f0,0x008a0750,0x004671f0
-2757,function,,0x004672d0,0x008a0830,0x004672d0
-2758,function,,0x00467380,0x008a08e0,0x00467380
-2759,function,,0x004675b0,0x008a0b10,0x004675b0
+2756,function,Renderer::EclipseUmbraScene::SetMeshObjectsUmbraProperty0,0x004671f0,0x008a0750,0x004671f0
+2757,function,Renderer::EclipseUmbraScene::~EclipseUmbraScene,0x004672d0,0x008a0830,0x004672d0
+2758,function,Renderer::EclipseUmbraScene::UpdateEmitters,0x00467380,0x008a08e0,0x00467380
+2759,function,Renderer::EclipseUmbraScene::`scalar deleting destructor',0x004675b0,0x008a0b10,0x004675b0
 2760,function,,0x004675d0,0x008a0b30,0x004675d0
 2761,function,,0x00467670,0x008a0bd0,0x00467670
 2762,function,,0x00467750,0x008a0cb0,0x00467750
@@ -2791,8 +2791,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2790,function,Renderer::MoviePlayerInternal::`scalar deleting destructor',0x00469370,0x008b3d10,0x00469370
 2791,function,Renderer::MoviePlayerInternal::Play,0x00469390,0x008b3d30,0x00469390
 2792,function,,0x00469470,0x008b3e10,0x00469470
-2793,function,,0x004694c0,0x008b3e60,0x004694c0
-2794,function,,0x004694e0,0x008b3e80,0x004694e0
+2793,function,Renderer::EclipseUmbraServices::allocateMemory,0x004694c0,0x008b3e60,0x004694c0
+2794,function,Renderer::EclipseUmbraServices::deallocateMemory,0x004694e0,0x008b3e80,0x004694e0
 2795,function,,0x004694f0,0x0073f090,0x004694f0
 2796,function,,0x00469500,0x008b3e90,0x00469500
 2797,function,Renderer::EclipseToolsetUmbraServices::allocateMemory,0x00469510,0x008b3ea0,0x00469510
@@ -5605,17 +5605,17 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5604,function,Geometry::WithinRadius2D,0x004eb340,0x00836ba0,0x004eb340
 5605,function,Geometry::InCone2D,0x004eb3b0,0x00836c10,0x004eb3b0
 5606,function,,0x004eb570,0x00836dd0,0x004eb570
-5607,function,,0x004eb9f0,0x0083d370,0x004eb9f0
-5608,function,,0x004eba10,0x0083d390,0x004eba10
-5609,function,,0x004eba20,0x0083d3a0,0x004eba20
-5610,function,,0x004eba30,0x0083d3b0,0x004eba30
-5611,function,,0x004eba50,0x0083d3d0,0x004eba50
-5612,function,,0x004eba70,0x0083d3f0,0x004eba70
-5613,function,,0x004eba80,0x0083d400,0x004eba80
-5614,function,,0x004ebab0,0x0083d430,0x004ebab0
-5615,function,,0x004ebad0,0x0083d450,0x004ebad0
-5616,function,,0x004ebb00,0x0083d480,0x004ebb00
-5617,function,,0x004ebb20,0x0083d4a0,0x004ebb20
+5607,function,EC::WDObject::WDObject,0x004eb9f0,0x0083d370,0x004eb9f0
+5608,function,EC::WDObject::~WDObject,0x004eba10,0x0083d390,0x004eba10
+5609,function,EC::WDObject::DecrementRefCount,0x004eba20,0x0083d3a0,0x004eba20
+5610,function,EC::WDObject::GetTypeName,0x004eba30,0x0083d3b0,0x004eba30
+5611,function,EC::GameObjectProxy::GameObjectProxy,0x004eba50,0x0083d3d0,0x004eba50
+5612,function,EC::GameObjectProxy::~GameObjectProxy,0x004eba70,0x0083d3f0,0x004eba70
+5613,function,EC::GameObjectProxy::GetTypeName,0x004eba80,0x0083d400,0x004eba80
+5614,function,EC::WDObject::HasId,0x004ebab0,0x0083d430,0x004ebab0
+5615,function,EC::WDObject::IsIdLessThan,0x004ebad0,0x0083d450,0x004ebad0
+5616,function,EC::WDObject::`scalar deleting destructor',0x004ebb00,0x0083d480,0x004ebb00
+5617,function,EC::GameObjectProxy::`scalar deleting destructor',0x004ebb20,0x0083d4a0,0x004ebb20
 5618,function,,0x004ebb40,0x00a68800,0x004ebb40
 5619,function,,0x004ebb50,0x00a68810,0x004ebb50
 5620,function,M2DA::ClearCounts,0x004ebb60,0x00839c90,0x004ebb60
@@ -7271,7 +7271,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7270,function,SpeedTree::SetCameraAndLodFactor,0x0052e8f0,0x00735880,0x0052e8f0
 7271,function,,0x0052ea80,0x00735a10,0x0052ea80
 7272,function,,0x0052ed30,0x00735cc0,0x0052ed30
-7273,function,,0x0052ed90,0x00735d20,0x0052ed90
+7273,function,SpeedTree::UpdateWinds,0x0052ed90,0x00735d20,0x0052ed90
 7274,function,,0x0052f400,0x00736390,0x0052f400
 7275,function,,0x0052f6d0,0x00736660,0x0052f6d0
 7276,function,,0x0052f9c0,0x00736950,0x0052f9c0
@@ -7310,7 +7310,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7309,function,SpeedTree::RemakeBounds,0x005328e0,0x00739ed0,0x005328e0
 7310,function,,0x005329c0,0x00739fb0,0x005329c0
 7311,function,,0x005329d0,0x00717860,0x005329d0
-7312,function,,0x00532a10,0x0073a000,0x00532a10
+7312,function,SpeedTree::UpdateModels,0x00532a10,0x0073a000,0x00532a10
 7313,function,,0x00532a50,0x0073a040,0x00532a50
 7314,function,,0x00532c70,0x0073a260,0x00532c70
 7315,function,,0x00532dd0,0x004fde20,0x00532dd0
@@ -7423,7 +7423,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7422,function,,0x00537fb0,0x0073f8d0,0x00537fb0
 7423,function,,0x00538060,0x0073f980,0x00538060
 7424,function,,0x005380b0,0x0073f9d0,0x005380b0
-7425,function,,0x005380d0,0x00715c50,0x005380d0
+7425,function,CRoom::ElementArray::GetAt,0x005380d0,0x00715c50,0x005380d0
 7426,function,,0x005380e0,0x00497e30,0x005380e0
 7427,function,,0x00538140,0x00497e90,0x00538140
 7428,function,,0x005381b0,0x004980d0,0x005381b0
@@ -10204,7 +10204,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10203,function,,0x005c8070,0x0046aef0,0x005c8070
 10204,function,,0x005c80f0,0x0046af70,0x005c80f0
 10205,function,,0x005c81c0,0x006face0,0x005c81c0
-10206,function,,0x005c81d0,0x006facf0,0x005c81d0
+10206,function,IAreaLayout::UnloadRooms,0x005c81d0,0x006facf0,0x005c81d0
 10207,function,EC::ChunkManager::NewExteriorChunk,0x005c8210,0x006fad30,0x005c8210
 10208,function,,0x005c82c0,0x006fade0,0x005c82c0
 10209,function,,0x005c8410,0x006faf30,0x005c8410
@@ -10213,12 +10213,12 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10212,function,CCameraFixedPolicy::DistanceXY,0x005c8480,0x006fafa0,0x005c8480
 10213,function,,0x005c84d0,0x006faff0,0x005c84d0
 10214,function,EC::ChunkManager::RemakeTreeBounds,0x005c8520,0x006fb040,0x005c8520
-10215,function,,0x005c8580,0x006fb0a0,0x005c8580
-10216,function,,0x005c85a0,0x006fb0c0,0x005c85a0
-10217,function,,0x005c8600,0x006fb120,0x005c8600
+10215,function,std::_Tree<?>::_Max,0x005c8580,0x006fb0a0,0x005c8580
+10216,function,std::_Tree<?>::_Rrotate,0x005c85a0,0x006fb0c0,0x005c85a0
+10217,function,Core::PointerArray::DeleteAll,0x005c8600,0x006fb120,0x005c8600
 10218,function,,0x005c8640,0x006fb160,0x005c8640
-10219,function,,0x005c8650,0x006fb170,0x005c8650
-10220,function,,0x005c8670,0x006fb2b0,0x005c8670
+10219,function,Core::PointerArray::Free,0x005c8650,0x006fb170,0x005c8650
+10220,function,EC::ChunkManager::Unload,0x005c8670,0x006fb2b0,0x005c8670
 10221,function,EC::ChunkManager::BuildRoomMasks,0x005c87f0,0x006fb430,0x005c87f0
 10222,function,,0x005c8830,0x006fb470,0x005c8830
 10223,function,,0x005c88e0,0x006fb520,0x005c88e0
@@ -99893,7 +99893,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 99892,data,,0x00c1e800,0x00c31330,0x00c1e800
 99893,data,,0x00c1e804,0x00c31334,0x00c1e804
 99894,data,,0x00c1e808,0x00c31338,0x00c1e808
-99895,data,,0x00c1e80c,0x00c3133c,0x00c1e80c
+99895,data,g_pIPartitionUmbraCommander,0x00c1e80c,0x00c3133c,0x00c1e80c
 99896,data,,0x00c1e810,0x00c31340,0x00c1e810
 99897,data,,0x00c1e820,0x00c31350,0x00c1e820
 99898,data,,0x00c1e824,0x00c31354,0x00c1e824
@@ -99977,7 +99977,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 99976,data,,0x00c1ebf6,0x00c31826,0x00c1ebf6
 99977,data,,0x00c1ebf7,0x00c31827,0x00c1ebf7
 99978,data,,0x00c1ebf8,0x00c31828,0x00c1ebf8
-99979,data,,0x00c1ebfc,0x00c3182c,0x00c1ebfc
+99979,data,g_pUmbraRenderer,0x00c1ebfc,0x00c3182c,0x00c1ebfc
 99980,data,,0x00c1ec00,0x00c31830,0x00c1ec00
 99981,data,,0x00c1ed50,0x00c31980,0x00c1ed50
 99982,data,,0x00c1ed6c,0x00c3199c,0x00c1ed6c
