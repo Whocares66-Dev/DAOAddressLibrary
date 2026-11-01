@@ -2848,30 +2848,30 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2847,function,Renderer::LightState::SetDefaultProbeCube,0x0046b1e0,0x008a52d0,0x0046b1e0
 2848,function,Renderer::LightState::Fill,0x0046b260,0x008a5350,0x0046b260
 2849,function,Renderer::LightState::LightState,0x0046b920,0x008a5a10,0x0046b920
-2850,function,,0x0046bae0,0x008aa750,0x0046bae0
-2851,function,,0x0046baf0,0x008aa760,0x0046baf0
-2852,function,,0x0046bb30,0x008aa7a0,0x0046bb30
+2850,function,Renderer::LightState::~LightState,0x0046bae0,0x008aa750,0x0046bae0
+2851,function,Renderer::LightState::ProvideLightParams,0x0046baf0,0x008aa760,0x0046baf0
+2852,function,Renderer::LightState::ProvideLightProbeCube,0x0046bb30,0x008aa7a0,0x0046bb30
 2853,function,,0x0046bb70,0x008aa7e0,0x0046bb70
-2854,function,,0x0046bb80,0x008aa7f0,0x0046bb80
-2855,function,,0x0046bbc0,0x00484e60,0x0046bbc0
-2856,function,,0x0046bc1a,0x00484eba,0x0046bc1a
-2857,function,,0x0046bc40,0x008aa830,0x0046bc40
-2858,function,,0x0046bd80,0x00484fc0,0x0046bd80
-2859,function,,0x0046bdc0,0x00485000,0x0046bdc0
-2860,function,,0x0046bdf0,0x00485080,0x0046bdf0
-2861,function,,0x0046be4c,0x004850dc,0x0046be4c
-2862,function,,0x0046be70,0x008aa970,0x0046be70
-2863,function,,0x0046bf90,0x00485460,0x0046bf90
-2864,function,,0x0046bfd0,0x00485690,0x0046bfd0
-2865,function,,0x0046c010,0x00485730,0x0046c010
-2866,function,,0x0046c060,0x00485780,0x0046c060
+2854,function,Renderer::LightState::SetSun,0x0046bb80,0x008aa7f0,0x0046bb80
+2855,function,"std::_Uninit_copy<Vector4 *,Vector4 *>",0x0046bbc0,0x00484e60,0x0046bbc0
+2856,function,Catch_All@0046bc1a,0x0046bc1a,0x00484eba,0x0046bc1a
+2857,function,Renderer::LightState::ProvideLightProbeIrradiance,0x0046bc40,0x008aa830,0x0046bc40
+2858,function,"std::_Copy_opt<Vector4 *,Vector4 *>",0x0046bd80,0x00484fc0,0x0046bd80
+2859,function,"std::_Fill<Vector4 *,Vector4>",0x0046bdc0,0x00485000,0x0046bdc0
+2860,function,"std::_Uninit_fill_n<Vector4 *,unsigned int,Vector4>",0x0046bdf0,0x00485080,0x0046bdf0
+2861,function,Catch_All@0046be4c,0x0046be4c,0x004850dc,0x0046be4c
+2862,function,Renderer::LightState::SetShaderControlBooleans,0x0046be70,0x008aa970,0x0046be70
+2863,function,"std::_Copy_backward_opt<Vector4 *,Vector4 *>",0x0046bf90,0x00485460,0x0046bf90
+2864,function,"std::uninitialized_fill_n<Vector4 *,unsigned int,Vector4>",0x0046bfd0,0x00485690,0x0046bfd0
+2865,function,std::vector<Vector4>::erase,0x0046c010,0x00485730,0x0046c010
+2866,function,"std::uninitialized_copy<Vector4 *,Vector4 *>",0x0046c060,0x00485780,0x0046c060
 2867,function,,0x0046c090,0x00485880,0x0046c090
 2868,function,,0x0046c205,0x004859f5,0x0046c205
 2869,function,,0x0046c211,0x00485a01,0x0046c211
-2870,function,,0x0046c2f0,0x00485db0,0x0046c2f0
-2871,function,,0x0046c3b0,0x005066d0,0x0046c3b0
-2872,function,,0x0046c420,0x0073c490,0x0046c420
-2873,function,,0x0046c440,0x008aaa90,0x0046c440
+2870,function,"std::vector<Vector4>::resize(unsigned int,Vector4)",0x0046c2f0,0x00485db0,0x0046c2f0
+2871,function,std::vector<Vector4>::vector,0x0046c3b0,0x005066d0,0x0046c3b0
+2872,function,std::vector<Vector4>::resize(unsigned int),0x0046c420,0x0073c490,0x0046c420
+2873,function,Renderer::LightState::LightState_Complete,0x0046c440,0x008aaa90,0x0046c440
 2874,function,,0x0046c4f0,0x008aa520,0x0046c4f0
 2875,function,,0x0046c510,0x008aa540,0x0046c510
 2876,function,Animation::AnimSceneManagerDefault::AnimSceneManagerDefault,0x0046c520,0x008aa550,0x0046c520
@@ -3007,86 +3007,86 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 3006,function,,0x0046f700,0x008abc00,0x0046f700
 3007,function,,0x0046f760,0x008abc60,0x0046f760
 3008,function,,0x0046f810,0x008abd30,0x0046f810
-3009,function,,0x0046f830,0x008abd50,0x0046f830
-3010,function,,0x0046f8d0,0x008abdf0,0x0046f8d0
-3011,function,,0x0046f970,0x008abe90,0x0046f970
-3012,function,,0x0046f9e0,0x008abf00,0x0046f9e0
-3013,function,,0x0046fa70,0x008abf90,0x0046fa70
-3014,function,,0x0046fb00,0x008ac020,0x0046fb00
-3015,function,,0x0046fb60,0x008ac080,0x0046fb60
-3016,function,,0x0046fc40,0x008ac160,0x0046fc40
-3017,function,,0x0046fd20,0x008ac240,0x0046fd20
-3018,function,,0x0046fdd0,0x008ac2f0,0x0046fdd0
-3019,function,,0x0046fe80,0x008ac3a0,0x0046fe80
-3020,function,,0x0046ff30,0x008ac450,0x0046ff30
-3021,function,,0x0046ffe0,0x008ac500,0x0046ffe0
-3022,function,,0x00470080,0x008ac5a0,0x00470080
-3023,function,,0x00470120,0x008ac640,0x00470120
-3024,function,,0x004701a0,0x008ac6c0,0x004701a0
-3025,function,,0x00470420,0x008ac940,0x00470420
-3026,function,,0x004706a0,0x008acbc0,0x004706a0
-3027,function,,0x00470860,0x008acd80,0x00470860
-3028,function,,0x004708a0,0x008acdc0,0x004708a0
-3029,function,,0x004708e0,0x008ace00,0x004708e0
-3030,function,,0x00470920,0x008ace40,0x00470920
-3031,function,,0x004709b0,0x008aced0,0x004709b0
-3032,function,,0x00470c00,0x008ad120,0x00470c00
-3033,function,,0x00470eb0,0x008ad3d0,0x00470eb0
-3034,function,,0x00471270,0x008ad790,0x00471270
-3035,function,,0x00471440,0x008ad960,0x00471440
-3036,function,,0x00471670,0x008adb90,0x00471670
+3009,function,"std::_Med3<Graphics::IRenderableNode **,Renderer::CameraDistanceLess>",0x0046f830,0x008abd50,0x0046f830
+3010,function,"std::_Med3<Graphics::IRenderableNode **,Renderer::CameraDistanceGreater>",0x0046f8d0,0x008abdf0,0x0046f8d0
+3011,function,"std::_Med3<Graphics::IRenderableNode **,Renderer::MaterialSortLess>",0x0046f970,0x008abe90,0x0046f970
+3012,function,"std::_Push_heap<Graphics::IRenderableNode **,int,Graphics::IRenderableNode *,Renderer::CameraDistanceLess>",0x0046f9e0,0x008abf00,0x0046f9e0
+3013,function,"std::_Push_heap<Graphics::IRenderableNode **,int,Graphics::IRenderableNode *,Renderer::CameraDistanceGreater>",0x0046fa70,0x008abf90,0x0046fa70
+3014,function,"std::_Push_heap<Graphics::IRenderableNode **,int,Graphics::IRenderableNode *,Renderer::MaterialSortLess>",0x0046fb00,0x008ac020,0x0046fb00
+3015,function,"std::_Insertion_sort<Graphics::IRenderableNode **,Renderer::CameraDistanceLess>",0x0046fb60,0x008ac080,0x0046fb60
+3016,function,"std::_Insertion_sort<Graphics::IRenderableNode **,Renderer::CameraDistanceGreater>",0x0046fc40,0x008ac160,0x0046fc40
+3017,function,"std::_Insertion_sort<Graphics::IRenderableNode **,Renderer::MaterialSortLess>",0x0046fd20,0x008ac240,0x0046fd20
+3018,function,"std::_Median<Graphics::IRenderableNode **,Renderer::CameraDistanceLess>",0x0046fdd0,0x008ac2f0,0x0046fdd0
+3019,function,"std::_Median<Graphics::IRenderableNode **,Renderer::CameraDistanceGreater>",0x0046fe80,0x008ac3a0,0x0046fe80
+3020,function,"std::_Median<Graphics::IRenderableNode **,Renderer::MaterialSortLess>",0x0046ff30,0x008ac450,0x0046ff30
+3021,function,"std::_Adjust_heap<Graphics::IRenderableNode **,int,Graphics::IRenderableNode *,Renderer::CameraDistanceLess>",0x0046ffe0,0x008ac500,0x0046ffe0
+3022,function,"std::_Adjust_heap<Graphics::IRenderableNode **,int,Graphics::IRenderableNode *,Renderer::CameraDistanceGreater>",0x00470080,0x008ac5a0,0x00470080
+3023,function,"std::_Adjust_heap<Graphics::IRenderableNode **,int,Graphics::IRenderableNode *,Renderer::MaterialSortLess>",0x00470120,0x008ac640,0x00470120
+3024,function,"std::_Unguarded_partition<Graphics::IRenderableNode **,Renderer::CameraDistanceLess>",0x004701a0,0x008ac6c0,0x004701a0
+3025,function,"std::_Unguarded_partition<Graphics::IRenderableNode **,Renderer::CameraDistanceGreater>",0x00470420,0x008ac940,0x00470420
+3026,function,"std::_Unguarded_partition<Graphics::IRenderableNode **,Renderer::MaterialSortLess>",0x004706a0,0x008acbc0,0x004706a0
+3027,function,"std::_Make_heap<Graphics::IRenderableNode **,Renderer::CameraDistanceLess>",0x00470860,0x008acd80,0x00470860
+3028,function,"std::_Make_heap<Graphics::IRenderableNode **,Renderer::CameraDistanceGreater>",0x004708a0,0x008acdc0,0x004708a0
+3029,function,"std::_Make_heap<Graphics::IRenderableNode **,Renderer::MaterialSortLess>",0x004708e0,0x008ace00,0x004708e0
+3030,function,Renderer::SubmissionStage::AcceptsNode,0x00470920,0x008ace40,0x00470920
+3031,function,Renderer::SubmissionStage::SubmitDefault,0x004709b0,0x008aced0,0x004709b0
+3032,function,Renderer::SubmissionStage::SubmitMultipass,0x00470c00,0x008ad120,0x00470c00
+3033,function,Renderer::SubmissionStage::SubmitBatched,0x00470eb0,0x008ad3d0,0x00470eb0
+3034,function,Renderer::SubmissionStage::SubmitDisabled,0x00471270,0x008ad790,0x00471270
+3035,function,Renderer::SubmissionStage::SubmitPass,0x00471440,0x008ad960,0x00471440
+3036,function,Renderer::SubmissionStage::RemoveNode,0x00471670,0x008adb90,0x00471670
 3037,function,,0x004716a0,0x008adbc0,0x004716a0
 3038,function,,0x00471830,0x008add50,0x00471830
 3039,function,,0x00471850,0x008add70,0x00471850
 3040,function,,0x004718c0,0x008adde0,0x004718c0
 3041,function,,0x004718e0,0x008ade00,0x004718e0
 3042,retired,,,,
-3043,function,,0x00471bc0,0x008ae0e0,0x00471bc0
-3044,function,,0x00471c10,0x008ae130,0x00471c10
-3045,function,,0x00471c60,0x008ae180,0x00471c60
-3046,function,,0x00471cb0,0x008ae1d0,0x00471cb0
-3047,function,,0x00471d40,0x008ae260,0x00471d40
-3048,function,,0x00471e30,0x008ae350,0x00471e30
+3043,function,"std::_Sort_heap<Graphics::IRenderableNode **,Renderer::CameraDistanceLess>",0x00471bc0,0x008ae0e0,0x00471bc0
+3044,function,"std::_Sort_heap<Graphics::IRenderableNode **,Renderer::CameraDistanceGreater>",0x00471c10,0x008ae130,0x00471c10
+3045,function,"std::_Sort_heap<Graphics::IRenderableNode **,Renderer::MaterialSortLess>",0x00471c60,0x008ae180,0x00471c60
+3046,function,Renderer::SubmissionStage::Submit,0x00471cb0,0x008ae1d0,0x00471cb0
+3047,function,"std::_Sort<Graphics::IRenderableNode **,int,Renderer::CameraDistanceLess>",0x00471d40,0x008ae260,0x00471d40
+3048,function,"std::_Sort<Graphics::IRenderableNode **,int,Renderer::CameraDistanceGreater>",0x00471e30,0x008ae350,0x00471e30
 3049,function,,0x00471f20,0x008ae440,0x00471f20
 3050,function,,0x00472010,0x008ae530,0x00472010
 3051,function,,0x00472060,0x008ae580,0x00472060
-3052,function,,0x004720b0,0x008ae5d0,0x004720b0
-3053,function,,0x004720c0,0x008ae5e0,0x004720c0
+3052,function,Renderer::SubmissionStage::ClearQueue,0x004720b0,0x008ae5d0,0x004720b0
+3053,function,Renderer::SubmissionStage::MergeAffinityDirective,0x004720c0,0x008ae5e0,0x004720c0
 3054,function,,0x004721c0,0x008ae6e0,0x004721c0
 3055,function,,0x00472230,0x008ae750,0x00472230
-3056,function,,0x00472280,0x008ae7a0,0x00472280
-3057,function,,0x00472320,0x008ae840,0x00472320
-3058,function,,0x00472370,0x008ae890,0x00472370
-3059,function,,0x004723d0,0x008ae8f0,0x004723d0
-3060,function,,0x00472410,0x008ae930,0x00472410
+3056,function,Renderer::SubmissionStage::SubmissionStage,0x00472280,0x008ae7a0,0x00472280
+3057,function,Renderer::SubmissionStage::DestroyContents,0x00472320,0x008ae840,0x00472320
+3058,function,Renderer::SubmissionStage::AddOperation,0x00472370,0x008ae890,0x00472370
+3059,function,Renderer::SubmissionStage::AddAffinityDirective,0x004723d0,0x008ae8f0,0x004723d0
+3060,function,Renderer::SubmissionStage::~SubmissionStage,0x00472410,0x008ae930,0x00472410
 3061,function,,0x00472490,0x007fbdd0,0x00472490
 3062,function,,0x004724b0,0x008b46e0,0x004724b0
-3063,function,,0x00472580,0x008b47b0,0x00472580
-3064,function,,0x004725f0,0x008b4820,0x004725f0
-3065,function,,0x00472670,0x008b48a0,0x00472670
+3063,function,Renderer::StripHashComment,0x00472580,0x008b47b0,0x00472580
+3064,function,Renderer::SQProgramBuilderXML2::ParseRenderMode,0x004725f0,0x008b4820,0x004725f0
+3065,function,Renderer::SQProgramBuilderXML2::ParseNodeFlagName,0x00472670,0x008b48a0,0x00472670
 3066,function,XMLParser2::IBuilder::`scalar deleting destructor',0x004727e0,0x00a584b0,0x004727e0
-3067,function,,0x00472800,0x008b4a10,0x00472800
-3068,function,,0x00472850,0x008b4a60,0x00472850
-3069,function,,0x00472870,0x008b4a80,0x00472870
-3070,function,,0x004728d0,0x008b4b50,0x004728d0
+3067,function,Renderer::SQProgramBuilderXML2::SelectStage,0x00472800,0x008b4a10,0x00472800
+3068,function,Renderer::SQProgramBuilderXML2::ParseForceDraw,0x00472850,0x008b4a60,0x00472850
+3069,function,Renderer::SQProgramBuilderXML2::ParseKeepDepth,0x00472870,0x008b4a80,0x00472870
+3070,function,Renderer::SQProgramBuilderXML2::GetCurrentState,0x004728d0,0x008b4b50,0x004728d0
 3071,function,,0x00472900,0x008b4b80,0x00472900
-3072,function,,0x004729a0,0x008b2030,0x004729a0
+3072,function,std::list<int>::pop_back_value,0x004729a0,0x008b2030,0x004729a0
 3073,function,,0x00472a00,0x008b4c20,0x00472a00
 3074,function,,0x00472a60,0x008b4c80,0x00472a60
 3075,function,,0x00472a80,0x008b4ca0,0x00472a80
 3076,function,,0x00472ad0,0x008b4cf0,0x00472ad0
 3077,function,,0x00472af0,0x008b4d10,0x00472af0
 3078,function,,0x00472bc0,0x008b4de0,0x00472bc0
-3079,function,,0x00472e00,0x008b5020,0x00472e00
+3079,function,Renderer::SQProgramBuilderXML2::MakeAffinityDirective,0x00472e00,0x008b5020,0x00472e00
 3080,retired,,,,
-3081,function,,0x00472f60,0x008b5180,0x00472f60
-3082,function,,0x00473110,0x008b5330,0x00473110
-3083,function,,0x00473210,0x008b5430,0x00473210
-3084,function,,0x00473360,0x008b5580,0x00473360
-3085,function,,0x00473420,0x008b5640,0x00473420
-3086,function,,0x00473570,0x008b5790,0x00473570
-3087,function,,0x004735c0,0x008b57e0,0x004735c0
-3088,function,,0x004736d0,0x008b58f0,0x004736d0
+3081,function,Renderer::SQProgramBuilderXML2::ParseForce,0x00472f60,0x008b5180,0x00472f60
+3082,function,Renderer::SQProgramBuilderXML2::ParseEffect,0x00473110,0x008b5330,0x00473110
+3083,function,Renderer::SQProgramBuilderXML2::ParseRequires,0x00473210,0x008b5430,0x00473210
+3084,function,Renderer::SQProgramBuilderXML2::ParseTrigger,0x00473360,0x008b5580,0x00473360
+3085,function,Renderer::SQProgramBuilderXML2::ParseSort,0x00473420,0x008b5640,0x00473420
+3086,function,Renderer::SQProgramBuilderXML2::ParseSelect,0x00473570,0x008b5790,0x00473570
+3087,function,Renderer::SQProgramBuilderXML2::ParseRender,0x004735c0,0x008b57e0,0x004735c0
+3088,function,Renderer::SQProgramBuilderXML2::ParseSpeedTree,0x004736d0,0x008b58f0,0x004736d0
 3089,function,,0x00473730,0x008b5950,0x00473730
 3090,function,,0x004738d0,0x008b5af0,0x004738d0
 3091,function,,0x004739f0,0x008b5c10,0x004739f0
@@ -18397,81 +18397,81 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 18396,function,GameModePartyPicker::GetClassInfo,0x0076aaf0,0x00682270,0x0076aaf0
 18397,function,GameModePartyPicker::RegisterClass,0x0076ab20,0x006822a0,0x0076ab20
 18398,function,std::vector<PartyPickerEntry>::vector_copy,0x0076ab70,0x006822f0,0x0076ab70
-18399,function,,0x0076abd0,0x00682350,0x0076abd0
-18400,function,,0x0076ac30,0x006823b0,0x0076ac30
-18401,function,,0x0076acb0,0x00682430,0x0076acb0
-18402,function,,0x0076ad50,0x006824d0,0x0076ad50
-18403,function,,0x0076ae40,0x006825c0,0x0076ae40
+18399,function,"std::sort<PartyPickerEntry *,PartyPickerEntryLess>",0x0076abd0,0x00682350,0x0076abd0
+18400,function,std::vector<PartyPickerEntry>::resize_default,0x0076ac30,0x006823b0,0x0076ac30
+18401,function,std::vector<PartyPickerEntry>::push_back,0x0076acb0,0x00682430,0x0076acb0
+18402,function,"std::_Sort<CCWayPoint **,int,Pred>",0x0076ad50,0x006824d0,0x0076ad50
+18403,function,GameModePartyPicker::`scalar deleting destructor',0x0076ae40,0x006825c0,0x0076ae40
 18404,function,SharedCharacterStage::GetObjectList,0x0076ae60,0x006825e0,0x0076ae60
-18405,function,,0x0076ae90,0x00682610,0x0076ae90
-18406,function,,0x0076b3f0,0x00682b70,0x0076b3f0
-18407,function,,0x0076b450,0x00682bd0,0x0076b450
+18405,function,GameModePartyPicker::SortAndPlaceEntries,0x0076ae90,0x00682610,0x0076ae90
+18406,function,std::vector<PartyPickerEntry>::vector_n,0x0076b3f0,0x00682b70,0x0076b3f0
+18407,function,ECBase::ECDynArray<PartyPickerEntry>::Clear,0x0076b450,0x00682bd0,0x0076b450
 18408,function,ECBase::ECDynArray::FindOrAppend,0x0076b540,0x00531870,0x0076b540
 18409,function,"ECBase::ECDynArray<SmartData::Attribute<unsigned int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ECDynArray",0x0076b590,0x00682cc0,0x0076b590
-18410,function,,0x0076b610,0x00682d40,0x0076b610
+18410,function,ECBase::ECDynArray<SmartData::Attribute<unsigned int>>::Clear,0x0076b610,0x00682d40,0x0076b610
 18411,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<unsigned int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",0x0076b6f0,0x00682e20,0x0076b6f0
 18412,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<unsigned int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",0x0076b770,0x00682ea0,0x0076b770
 18413,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<unsigned int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Set",0x0076b7f0,0x00682f20,0x0076b7f0
 18414,function,"ECBase::ECDynArray<SmartData::Attribute<unsigned int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ClearAndFree",0x0076b830,0x00682f60,0x0076b830
-18415,function,,0x0076b8a0,0x00682fd0,0x0076b8a0
-18416,function,,0x0076bab0,0x006831e0,0x0076bab0
-18417,function,,0x0076bec0,0x006835f0,0x0076bec0
-18418,function,,0x0076c170,0x006838a0,0x0076c170
+18415,function,GameModePartyPicker::GameModePartyPicker_copy,0x0076b8a0,0x00682fd0,0x0076b8a0
+18416,function,GameModePartyPicker::GameModePartyPicker,0x0076bab0,0x006831e0,0x0076bab0
+18417,function,GameModePartyPicker::Leave,0x0076bec0,0x006835f0,0x0076bec0
+18418,function,GameModePartyPicker::BuildEntries,0x0076c170,0x006838a0,0x0076c170
 18419,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<unsigned int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::SetFromText",0x0076c620,0x00683d50,0x0076c620
-18420,function,,0x0076c6b0,0x00683de0,0x0076c6b0
-18421,function,,0x0076c720,0x00683e50,0x0076c720
-18422,function,,0x0076cc90,0x006843c0,0x0076cc90
-18423,function,,0x0076cf40,0x00684670,0x0076cf40
-18424,function,,0x0076d190,0x006848c0,0x0076d190
-18425,function,,0x0076d1d0,0x00684900,0x0076d1d0
-18426,function,,0x0076d1f0,0x00684920,0x0076d1f0
-18427,function,,0x0076d270,0x006849a0,0x0076d270
-18428,function,,0x0076d300,0x00684a30,0x0076d300
-18429,function,,0x0076d310,0x00684a40,0x0076d310
-18430,function,,0x0076d320,0x00684a50,0x0076d320
-18431,function,,0x0076d330,0x00684a60,0x0076d330
-18432,function,,0x0076d350,0x00684a80,0x0076d350
-18433,function,,0x0076d3c0,0x00684af0,0x0076d3c0
-18434,function,,0x0076d400,0x00684b30,0x0076d400
-18435,function,,0x0076d420,0x00684b70,0x0076d420
-18436,function,,0x0076d430,0x00684b50,0x0076d430
-18437,function,,0x0076d440,0x00684b60,0x0076d440
-18438,function,,0x0076d450,0x00684b80,0x0076d450
-18439,function,,0x0076d480,0x00684bb0,0x0076d480
-18440,function,,0x0076d4a0,0x00684bd0,0x0076d4a0
-18441,function,,0x0076d560,0x00684c90,0x0076d560
-18442,function,,0x0076d620,0x00684d50,0x0076d620
-18443,function,,0x0076d950,0x00685080,0x0076d950
-18444,function,,0x0076dd20,0x00685450,0x0076dd20
-18445,function,,0x0076dda0,0x006854d0,0x0076dda0
-18446,function,,0x0076ddf0,0x00685520,0x0076ddf0
-18447,function,,0x0076dfe0,0x00685710,0x0076dfe0
-18448,function,,0x0076e000,0x00685740,0x0076e000
-18449,function,,0x0076e020,0x00685770,0x0076e020
-18450,function,,0x0076e030,0x00685780,0x0076e030
-18451,function,,0x0076e040,0x00685760,0x0076e040
-18452,function,,0x0076e050,0x00685790,0x0076e050
-18453,function,,0x0076e080,0x006857c0,0x0076e080
-18454,function,,0x0076e0a0,0x006857e0,0x0076e0a0
-18455,function,,0x0076e0f0,0x00685830,0x0076e0f0
-18456,function,,0x0076e2d0,0x00685a10,0x0076e2d0
-18457,function,,0x0076e380,0x00685ac0,0x0076e380
+18420,function,GameModePartyPicker::Clone,0x0076c6b0,0x00683de0,0x0076c6b0
+18421,function,GameModePartyPicker::Update,0x0076c720,0x00683e50,0x0076c720
+18422,function,GameModePartyPicker::GatherStageMarks,0x0076cc90,0x006843c0,0x0076cc90
+18423,function,GameModePartyPicker::Enter,0x0076cf40,0x00684670,0x0076cf40
+18424,function,GameModeFixed::GameModeFixed,0x0076d190,0x006848c0,0x0076d190
+18425,function,GameModeFixed::~GameModeFixed,0x0076d1d0,0x00684900,0x0076d1d0
+18426,function,GameModeFixed::Enter,0x0076d1f0,0x00684920,0x0076d1f0
+18427,function,GameModeFixed::Leave,0x0076d270,0x006849a0,0x0076d270
+18428,function,GameModeFixed::`scalar deleting destructor',0x0076d300,0x00684a30,0x0076d300
+18429,function,GameModeFixed::`scalar deleting destructor',0x0076d310,0x00684a40,0x0076d310
+18430,function,GameModeFixed::`scalar deleting destructor',0x0076d320,0x00684a50,0x0076d320
+18431,function,GameModeFixed::`scalar deleting destructor',0x0076d330,0x00684a60,0x0076d330
+18432,function,GameModeFixed::GetCameraPose,0x0076d350,0x00684a80,0x0076d350
+18433,function,GameModeFlyCam::GameModeFlyCam,0x0076d3c0,0x00684af0,0x0076d3c0
+18434,function,GameModeFlyCam::~GameModeFlyCam,0x0076d400,0x00684b30,0x0076d400
+18435,function,GameModeFlyCam::`scalar deleting destructor',0x0076d420,0x00684b70,0x0076d420
+18436,function,GameModeFlyCam::`scalar deleting destructor',0x0076d430,0x00684b50,0x0076d430
+18437,function,GameModeFlyCam::`scalar deleting destructor',0x0076d440,0x00684b60,0x0076d440
+18438,function,GameModeFlyCam::GetClassInfo,0x0076d450,0x00684b80,0x0076d450
+18439,function,GameModeFlyCam::`scalar deleting destructor',0x0076d480,0x00684bb0,0x0076d480
+18440,function,GameModeFlyCam::Enter,0x0076d4a0,0x00684bd0,0x0076d4a0
+18441,function,GameModeFlyCam::Leave,0x0076d560,0x00684c90,0x0076d560
+18442,function,GameModeFlyCam::UpdateMouseLook,0x0076d620,0x00684d50,0x0076d620
+18443,function,GameModeFlyCam::UpdateAnalogInput,0x0076d950,0x00685080,0x0076d950
+18444,function,GameModeFlyCam::Clone,0x0076dd20,0x00685450,0x0076dd20
+18445,function,GameModeFlyCam::RegisterClass,0x0076dda0,0x006854d0,0x0076dda0
+18446,function,GameModeFlyCam::Update,0x0076ddf0,0x00685520,0x0076ddf0
+18447,function,GameModeDead::~GameModeDead,0x0076dfe0,0x00685710,0x0076dfe0
+18448,function,GameModeDead::Update,0x0076e000,0x00685740,0x0076e000
+18449,function,GameModeDead::`scalar deleting destructor',0x0076e020,0x00685770,0x0076e020
+18450,function,GameModeDead::`scalar deleting destructor',0x0076e030,0x00685780,0x0076e030
+18451,function,GameModeDead::`scalar deleting destructor',0x0076e040,0x00685760,0x0076e040
+18452,function,GameModeDead::GetClassInfo,0x0076e050,0x00685790,0x0076e050
+18453,function,GameModeDead::`scalar deleting destructor',0x0076e080,0x006857c0,0x0076e080
+18454,function,GameModeDead::GameModeDead,0x0076e0a0,0x006857e0,0x0076e0a0
+18455,function,GameModeDead::Enter,0x0076e0f0,0x00685830,0x0076e0f0
+18456,function,GameModeDead::Leave,0x0076e2d0,0x00685a10,0x0076e2d0
+18457,function,GameModeDead::Clone,0x0076e380,0x00685ac0,0x0076e380
 18458,function,GameModeDead::HandleMessage_DeathResurrectPartyMessage,0x0076e400,0x00685b40,0x0076e400
 18459,function,GameModeDead::RegisterHandler_DeathResurrectPartyMessage,0x0076e4c0,0x00685c00,0x0076e4c0
-18460,function,,0x0076e550,0x00685c90,0x0076e550
-18461,function,,0x0076e560,0x00685ca0,0x0076e560
-18462,function,,0x0076e5b0,0x00685cf0,0x0076e5b0
-18463,function,,0x0076e630,0x00685d70,0x0076e630
-18464,function,,0x0076e6c0,0x00685e00,0x0076e6c0
-18465,function,,0x0076e6d0,0x00685e10,0x0076e6d0
-18466,function,,0x0076e7c0,0x00685f00,0x0076e7c0
-18467,function,,0x0076e7d0,0x00685f10,0x0076e7d0
-18468,function,,0x0076e7e0,0x00685f20,0x0076e7e0
-18469,function,,0x0076e7f0,0x00685f30,0x0076e7f0
-18470,function,,0x0076e830,0x00685f70,0x0076e830
-18471,function,,0x0076e880,0x00685fc0,0x0076e880
-18472,function,,0x0076e8a0,0x00685fe0,0x0076e8a0
-18473,function,,0x0076e920,0x00686060,0x0076e920
+18460,function,GameModeDead::RegisterMessageHandlers,0x0076e550,0x00685c90,0x0076e550
+18461,function,GameModeDead::RegisterClass,0x0076e560,0x00685ca0,0x0076e560
+18462,function,GameModeCombat::Enter,0x0076e5b0,0x00685cf0,0x0076e5b0
+18463,function,GameModeCombat::Leave,0x0076e630,0x00685d70,0x0076e630
+18464,function,GameModeCombat::Update,0x0076e6c0,0x00685e00,0x0076e6c0
+18465,function,GameModeCombat::~GameModeCombat,0x0076e6d0,0x00685e10,0x0076e6d0
+18466,function,GameModeCombat::`scalar deleting destructor',0x0076e7c0,0x00685f00,0x0076e7c0
+18467,function,GameModeCombat::`scalar deleting destructor',0x0076e7d0,0x00685f10,0x0076e7d0
+18468,function,GameModeCombat::`scalar deleting destructor',0x0076e7e0,0x00685f20,0x0076e7e0
+18469,function,GameModeCombat::GetClassInfo,0x0076e7f0,0x00685f30,0x0076e7f0
+18470,function,GameModeCombat::RegisterClass,0x0076e830,0x00685f70,0x0076e830
+18471,function,GameModeCombat::`scalar deleting destructor',0x0076e880,0x00685fc0,0x0076e880
+18472,function,GameModeCombat::Clone,0x0076e8a0,0x00685fe0,0x0076e8a0
+18473,function,GameModeCombat::GameModeCombat,0x0076e920,0x00686060,0x0076e920
 18474,function,,0x0076ea10,0x00686150,0x0076ea10
 18475,function,,0x0076ea20,0x00686160,0x0076ea20
 18476,function,,0x0076ea90,0x006861d0,0x0076ea90
@@ -20241,7 +20241,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20240,function,GUI::GUIPaperdoll::SetCreature,0x007bc110,0x0069a490,0x007bc110
 20241,function,GUI::GUIPaperdoll::BindToMovie,0x007bc600,0x0069a980,0x007bc600
 20242,function,GUI::GUIPaperdoll::HandleMessage_UpdatePortraitMessage,0x007bc6c0,0x0069aa40,0x007bc6c0
-20243,function,,0x007bc7b0,0x0069ab30,0x007bc7b0
+20243,function,GUI::GUIPaperdoll::Shutdown,0x007bc7b0,0x0069ab30,0x007bc7b0
 20244,function,std::_Tree<RefHandleMapTraits>::_Buynode,0x007bc830,0x0069abb0,0x007bc830
 20245,function,std::_Tree<RefHandleMapTraits>::_Buynode::catch$0,0x007bc8c1,0x0069ac41,0x007bc8c1
 20246,function,GUI::GUIPaperdoll::RegisterHandler_UpdatePortraitMessage,0x007bc8e0,0x0069ac60,0x007bc8e0
@@ -20405,7 +20405,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20404,function,"std::_Median<?*,bool(*)(?,?)>",0x007c4f80,0x006abca0,0x007c4f80
 20405,function,"std::_Unguarded_partition<?*,bool(*)(?,?)>",0x007c5030,0x006abd50,0x007c5030
 20406,function,"std::_Sort<?*,int,bool(*)(?,?)>",0x007c51d0,0x00720560,0x007c51d0
-20407,function,,0x007c52c0,0x006abf40,0x007c52c0
+20407,function,TargetIterator::StepSortedTarget,0x007c52c0,0x006abf40,0x007c52c0
 20408,function,AreaObjectsIterator::CollectCandidates,0x007c5430,0x006ac0b0,0x007c5430
 20409,function,MapTrailPoint::`scalar deleting destructor',0x007c54f0,0x006ac1d0,0x007c54f0
 20410,function,std::vector<MapTrail>::At,0x007c5510,0x006ac1f0,0x007c5510
@@ -20631,7 +20631,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20630,function,CutscenePlayer::SetStageSpeaker,0x007cd040,0x006b4410,0x007cd040
 20631,function,CutscenePlayer::SetView,0x007cd050,0x006b4420,0x007cd050
 20632,function,CutscenePlayer::ResolveTag,0x007cd0a0,0x006b4470,0x007cd0a0
-20633,function,,0x007cd0d0,0x006b44a0,0x007cd0d0
+20633,function,CutscenePlayer::Start,0x007cd0d0,0x006b44a0,0x007cd0d0
 20634,function,CutscenePlayer::Skip,0x007cd0f0,0x006b44c0,0x007cd0f0
 20635,function,CutscenePlayer::FindConversationParticipant,0x007cd120,0x006b44f0,0x007cd120
 20636,function,EC::Cutscene::Actor::SetMappedObject,0x007cd140,0x006b4510,0x007cd140
@@ -20639,7 +20639,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20638,function,EC::Cutscene::Actor::ClearUnmaskedSlots,0x007cd1c0,0x006b4590,0x007cd1c0
 20639,function,EC::Cutscene::Actor::FindConversationParticipant,0x007cd250,0x006b4620,0x007cd250
 20640,function,EC::Cutscene::Actor::GetModelComponents,0x007cd270,0x006b4640,0x007cd270
-20641,function,,0x007cd290,0x006b4660,0x007cd290
+20641,function,CutscenePlayer::IsFinished,0x007cd290,0x006b4660,0x007cd290
 20642,function,EC::Cutscene::Actor::ActionSound::Stop,0x007cd2d0,0x006b46a0,0x007cd2d0
 20643,function,,0x007cd2f0,0x006b46c0,0x007cd2f0
 20644,function,EC::Cutscene::Actor::ActionHeadtracking::WantsSubsteps,0x007cd310,0x006b46e0,0x007cd310
@@ -20719,7 +20719,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20718,function,"std::_Med3<float*,std::less<float>>",0x007cf1f0,0x006b6560,0x007cf1f0
 20719,function,"std::_Adjust_heap<float*,int,float,std::less<float>>",0x007cf260,0x006b65d0,0x007cf260
 20720,function,EC::Cutscene::Curve::GetVertexCount,0x007cf2d0,0x006b6690,0x007cf2d0
-20721,function,,0x007cf2e0,0x006b66a0,0x007cf2e0
+20721,function,CutscenePlayer::SeekToNextSkipMarker,0x007cf2e0,0x006b66a0,0x007cf2e0
 20722,function,CutscenePlayer::BindObject,0x007cf390,0x006b6750,0x007cf390
 20723,function,,0x007cf3d0,0x006b6790,0x007cf3d0
 20724,function,EC::Cutscene::Actor::GetEntity,0x007cf410,0x006b67d0,0x007cf410
@@ -20796,8 +20796,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20795,function,EC::Cutscene::Curve::Curve,0x007d2350,0x006b9690,0x007d2350
 20796,function,EC::Cutscene::Curve::ValueAt,0x007d2440,0x006b9780,0x007d2440
 20797,function,EC::Cutscene::Curve::SlopeAt,0x007d2760,0x006b9aa0,0x007d2760
-20798,function,,0x007d2aa0,0x006b9de0,0x007d2aa0
-20799,function,,0x007d2ca0,0x006b9fe0,0x007d2ca0
+20798,function,CutscenePlayer::SetStageByTag,0x007d2aa0,0x006b9de0,0x007d2aa0
+20799,function,CutscenePlayer::GetStageBounds,0x007d2ca0,0x006b9fe0,0x007d2ca0
 20800,function,CutscenePlayer::SampleLodPosition,0x007d2cf0,0x006ba030,0x007d2cf0
 20801,function,EC::Cutscene::ReadAreaTagAndLodPosition,0x007d2e70,0x006ba1b0,0x007d2e70
 20802,function,EC::Cutscene::Actor::Action::EvalCurve,0x007d30b0,0x006ba3f0,0x007d30b0
@@ -21049,7 +21049,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21048,function,CutscenePlayer::BindObjectIdToActorByTag,0x007e3390,0x006ca7e0,0x007e3390
 21049,function,EC::Cutscene::Actor::ApplyFollowerAniHack,0x007e33c0,0x006ca810,0x007e33c0
 21050,function,EC::Cutscene::Actor::Bind,0x007e36b0,0x006cab00,0x007e36b0
-21051,function,,0x007e3d30,0x006cb180,0x007e3d30
+21051,function,CutscenePlayer::Update,0x007e3d30,0x006cb180,0x007e3d30
 21052,function,,0x007e45e0,0x006cba30,0x007e45e0
 21053,function,,0x007e4680,0x006cbad0,0x007e4680
 21054,function,CCAreaOfEffectObject::SetCreatorId,0x007e4720,0x006cbb70,0x007e4720
@@ -21226,8 +21226,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21225,function,,0x007ed7e0,0x006d4cb0,0x007ed7e0
 21226,function,,0x007ed810,0x006d4ce0,0x007ed810
 21227,function,,0x007ed830,0x006d4d00,0x007ed830
-21228,function,,0x007edb60,0x006d5020,0x007edb60
-21229,function,,0x007edb90,0x006d5050,0x007edb90
+21228,function,CameraControllerBase::AddWheelZoomIn,0x007edb60,0x006d5020,0x007edb60
+21229,function,CameraControllerBase::AddWheelZoomOut,0x007edb90,0x006d5050,0x007edb90
 21230,function,CameraControllerBase::ClearWheelAccumulator,0x007edbc0,0x006d5080,0x007edbc0
 21231,function,CameraControllerBase::ApplyZoomDelta,0x007edbd0,0x006d5090,0x007edbd0
 21232,function,,0x007edc10,0x006d50d0,0x007edc10
@@ -21288,16 +21288,16 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21287,function,Conversation::GetLineActiveCount,0x007efe90,0x006d9580,0x007efe90
 21288,function,Conversation::GetLineActiveKeyTag,0x007efef0,0x006d95e0,0x007efef0
 21289,function,Conversation::GetLineActiveValueTag,0x007eff80,0x006d9670,0x007eff80
-21290,function,,0x007f0010,0x006d9700,0x007f0010
+21290,function,Conversation::GetLineCount,0x007f0010,0x006d9700,0x007f0010
 21291,function,ConversationLine::GetAnimation,0x007f0050,0x006d9740,0x007f0050
 21292,function,ConversationLine::GetRevertAnim,0x007f00a0,0x006d9790,0x007f00a0
 21293,function,,0x007f00f0,0x006d97e0,0x007f00f0
-21294,function,,0x007f0120,0x006d9810,0x007f0120
-21295,function,,0x007f0170,0x006d9860,0x007f0170
-21296,function,,0x007f01c0,0x006d98b0,0x007f01c0
+21294,function,Conversation::GetLineIcon,0x007f0120,0x006d9810,0x007f0120
+21295,function,Conversation::GetLineStageName,0x007f0170,0x006d9860,0x007f0170
+21296,function,Conversation::GetLineSlideShowTexture,0x007f01c0,0x006d98b0,0x007f01c0
 21297,function,Conversation::LineSpeaker,0x007f0210,0x006d9900,0x007f0210
 21298,function,Conversation::LineListener,0x007f02f0,0x006d99e0,0x007f02f0
-21299,function,,0x007f03d0,0x006d9ac0,0x007f03d0
+21299,function,Conversation::GetLineSpeakerTag,0x007f03d0,0x006d9ac0,0x007f03d0
 21300,function,,0x007f0420,0x006d9b10,0x007f0420
 21301,function,,0x007f0560,0x006d9c50,0x007f0560
 21302,function,,0x007f05b0,0x006d9ca0,0x007f05b0
