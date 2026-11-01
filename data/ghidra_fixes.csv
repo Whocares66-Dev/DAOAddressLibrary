@@ -1236,3 +1236,41 @@ address,what,value,why
 0x005545D0,signature,"void* __thiscall f(void* this, unsigned int flags)",General::Token::`scalar deleting destructor'; read at 0x005545D0
 0x00559FF0,signature,"void* __thiscall f(void* this, void* center, void* radius)",Math::Sphere::Sphere; read at 0x00559FF0
 0x0056B160,signature,"unsigned int __thiscall f(void* this, unsigned int count, void* data)",Resources::Gff4Writer::AppendArray; read at 0x0056B160
+0x0056B1C0,signature,"int __thiscall f(void* this, unsigned int count, void* src)","ret 8, ecx kept in edi 0x0056B1CA"
+0x0056B220,signature,"int __thiscall f(void* this, void* name)","ret 4 after one stack arg, ecx used 0x0056B259"
+0x0056B340,signature,void __thiscall f(void* this),"plain ret, ecx read"
+0x0056C660,signature,"void* __thiscall f(void* this, unsigned int flags)","vftable slot, ret 4"
+0x00572A50,signature,void __thiscall f(void* this),ecx stored into
+0x00572B40,signature,void __thiscall f(void* this),plain ret
+0x005D1D40,signature,"void __thiscall f(void* this, unsigned int count)","ret 4, ecx passed on"
+0x005FBB80,signature,void __thiscall f(void* this),plain ret
+0x0062A100,signature,void __thiscall f(void* this),vftable slot
+0x0062CF10,signature,"void __thiscall f(void* this, void* instance)","ret 4, ecx to esi"
+0x0069F740,signature,void __thiscall f(void* this),ecx stored into
+0x0079D3C0,signature,void __thiscall f(void* this),plain ret
+0x007C0B60,signature,void __thiscall f(void* this),plain ret
+0x00812F20,signature,"void* __thiscall f(void* this, int constructBase)",ret 4
+0x00812F70,signature,void __thiscall f(void* this),plain ret
+0x00813110,signature,"void* __thiscall f(void* this, unsigned int flags)","vftable slot, ret 4"
+0x00816660,signature,"void* __thiscall f(void* this, int constructBase)",ret 4
+0x008166B0,signature,void __thiscall f(void* this),plain ret
+0x00816930,signature,"void* __thiscall f(void* this, unsigned int flags)","vftable slot, ret 4"
+0x0086FEA0,signature,void __thiscall f(void* this),ecx stored into
+0x00879510,signature,void __thiscall f(void* this),plain ret
+0x00A359E0,signature,"void __thiscall f(void* this, bool frozen)",ret 4
+0x00A35A10,signature,void __thiscall f(void* this),plain ret
+0x00A35A70,signature,unsigned long long __thiscall f(void* this),edx:eax from +0x28/+0x2c
+0x00A35A80,signature,"void __thiscall f(void* this, int day, int ms, bool update)",ret 0xc
+0x00A35C40,signature,"int __stdcall f(unsigned int year, unsigned int month, unsigned int day)","ret 0xc, ecx never read"
+0x00A35C90,signature,"int __thiscall f(void* this, unsigned int hour, unsigned int minute, unsigned int second, int ms)","ret 0x10, ecx read at 0x00A35C97"
+0x00A35D80,signature,"int __thiscall f(void* this, float seconds)","ret 4, ecx+0x50 read"
+0x00A35DE0,signature,void __thiscall f(void* this),plain ret
+0x00A35E20,signature,void __thiscall f(void* this),plain ret
+0x00A35E50,signature,"void __thiscall f(void* this, unsigned char minutes)",ret 4
+0x00A35E80,signature,"void __thiscall f(void* this, int year, int month, int day, int hour, int minute, int second, int ms, int flag)",ret 0x20 = 8 args
+0x00A35ED0,signature,"int __thiscall f(void* this, int day1, int ms1, int day2, int ms2, int* outDay, int* outMs)",ret 0x18 = 6 args
+0x00A35FD0,signature,"void __thiscall f(void* this, void* writer)","vftable slot, ret 4"
+0x00A36010,signature,"bool __thiscall f(void* this, void* reader)","vftable slot, ret 4, returns 1"
+0x00A67BC0,signature,"void* __thiscall f(void* this, unsigned int flags)","vftable slot, ret 4"
+0x00AD6340,signature,void __cdecl f(void),"plain ret, no ecx 0x00AD634A"
+0x00A35CF0,signature,"int __thiscall f(void* this, float seconds)","the readers' convention, upheld against the check; ret 4, ecx+0x50 read"
