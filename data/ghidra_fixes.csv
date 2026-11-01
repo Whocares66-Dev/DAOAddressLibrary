@@ -6493,3 +6493,148 @@ address,what,value,why
 0x007D09C0,signature,bool __thiscall f(void *this),"0x007D09C0: EC::Cutscene::Actor::HasHeadtrackingAction, arguments and convention read at the entry and the ret"
 0x007D0A50,signature,"bool __thiscall f(void *this, float time)","0x007D0A50: EC::Cutscene::Actor::HasRealignContAt, arguments and convention read at the entry and the ret"
 0x007D0B20,signature,void __thiscall f(void *this),"0x007D0B20: EC::Cutscene::Actor::ResetActions, arguments and convention read at the entry and the ret"
+0x007F8410,signature,"bool __thiscall f(void *this, void *a, void *b)","0x007F8410 ret 8; callers (_Med3 0x007F9070, _Push_heap 0x007F8BEC) lea ecx the comparator, two Entry pointers pushed"
+0x007F89E0,signature,"void * __thiscall f(void *this, void *src)","0x007F89E0 ret 4, esi=ecx first, returns this"
+0x007F8A80,signature,"void * __cdecl f(void *first, void *last, void *dest, int tag1, int tag2, int tag3)",0x007F8A80 plain ret; its caller 0x007F8F1E pushes six words (0x007F8F18..1D); returns the end of dest
+0x007F8AC0,signature,"void * __cdecl f(void *first, void *last, void *destEnd, int tag1, int tag2, int tag3)",0x007F8AC0 plain ret; its caller 0x007F902E pushes six words (0x007F9028..2D)
+0x007F8B00,signature,"void __cdecl f(void *a, void *b)",0x007F8B00 plain ret; _Med3 pushes two pointers and cleans 8 (0x007F907B..9E)
+0x007F8B90,convention,__cdecl,"0x007F8B90 plain ret, ecx unread; the value argument is a 0x88-byte Entry by value (copy-constructed from [esp+0x30]), so no full prototype"
+0x007F8C50,signature,"void __cdecl f(void *first, void *mid, void *last, int tag1, int tag2)",0x007F8C50 plain ret; callers push five words
+0x007F8DD0,signature,"bool __thiscall f(void *this, void *a, void *b)","0x007F8DD0 ret 8; callers (_Med3 0x007F91E0) load ecx with the comparator object, so a member though it never reads ecx"
+0x007F8E70,signature,"void __thiscall f(void *this, void *first, void *last)","0x007F8E70 ret 8; caller 0x007FA1EF loads ecx with the vector and pushes first, last"
+0x007F8EA0,convention,__thiscall,0x007F8EA0 reads [ecx+4] first
+0x007F8EF0,signature,"void * __cdecl f(void *first, void *last, void *dest, int tag1, int tag2, int tag3)","0x007F8EF0 plain ret; its caller std::copy 0x007F9462 cleans six words (add esp,0x1C with one local)"
+0x007F8F50,convention,__cdecl,"0x007F8F50 plain ret, ecx unread"
+0x007F9000,signature,"void * __cdecl f(void *first, void *last, void *destEnd, int tag1, int tag2, int tag3)",0x007F9000 plain ret; calls 0x007F8AC0 with six pushes
+0x007F9060,convention,__cdecl,"0x007f9060 plain ret, ecx unread (the comparator is a stack slot, not described)"
+0x007F90C0,convention,__cdecl,"0x007F90C0 plain ret, ecx unread; value argument is an Entry by value"
+0x007F91D0,convention,__cdecl,"0x007f91d0 plain ret, ecx unread (the comparator is a stack slot, not described)"
+0x007F9230,convention,__cdecl,"0x007F9230 plain ret, ecx unread; value argument is an Entry by value"
+0x007F92F0,convention,__cdecl,"0x007F92F0 plain ret, ecx unread; value argument is an Entry by value"
+0x007F93A0,signature,void __thiscall f(void *this),"0x007F93A0 plain ret, esi=ecx first"
+0x007F9430,signature,void __thiscall f(void *this),"0x007F9430 plain ret, ecx read"
+0x007F9440,signature,"void * __cdecl f(void *first, void *last, void *dest)","0x007F9440 plain ret, three stack arguments forwarded to 0x007F8EF0; returns dest"
+0x007F9470,signature,"void __cdecl f(void *first, void *last, void *value)","0x007F9470 plain ret, three stack arguments"
+0x007F94A0,convention,__cdecl,"0x007F94A0 plain ret, ecx unread"
+0x007F9550,convention,__cdecl,"0x007f9550 plain ret, ecx unread (the comparator or a by-value Entry is among the stack slots)"
+0x007F9610,convention,__cdecl,"0x007f9610 plain ret, ecx unread (the comparator or a by-value Entry is among the stack slots)"
+0x007F9690,convention,__cdecl,"0x007f9690 plain ret, ecx unread (the comparator or a by-value Entry is among the stack slots)"
+0x007F9750,convention,__cdecl,"0x007f9750 plain ret, ecx unread (the comparator or a by-value Entry is among the stack slots)"
+0x007F9860,convention,__cdecl,"0x007f9860 plain ret, ecx unread (the comparator or a by-value Entry is among the stack slots)"
+0x007F9910,signature,"void * __thiscall f(void *this, void *ret, void *first, void *firstCont, void *last, void *lastCont)","0x007F9910 ret 0x14: returned iterator, then two checked iterators; ebp=ecx"
+0x007F99A0,signature,"void * __cdecl f(void *first, void *last, void *destEnd)","0x007F99A0 plain ret, three stack arguments forwarded to 0x007F9000"
+0x007F99D0,convention,__cdecl,"0x007f99d0 plain ret, ecx unread (the comparator or a by-value Entry is among the stack slots)"
+0x007F9BD0,convention,__cdecl,"0x007f9bd0 plain ret, ecx unread (the comparator or a by-value Entry is among the stack slots)"
+0x007F9C90,convention,__cdecl,"0x007f9c90 plain ret, ecx unread (the comparator or a by-value Entry is among the stack slots)"
+0x007F9E90,convention,__cdecl,"0x007f9e90 plain ret, ecx unread (the comparator or a by-value Entry is among the stack slots)"
+0x007F9F50,convention,__cdecl,"0x007f9f50 plain ret, ecx unread (the comparator or a by-value Entry is among the stack slots)"
+0x007F9FD0,convention,__thiscall,"0x007F9FD0 esi=ecx, reads [esi+4]"
+0x007FA010,signature,"void __stdcall f(void *first, unsigned int count, void *value)","0x007FA010 ret 0xC, ecx unread (push ecx is only a stack slot)"
+0x007FA050,signature,"void * __stdcall f(void *first, void *last, void *dest)","0x007FA050 ret 0xC, ecx unread (push ecx is only a stack slot); calls 0x007F8F50"
+0x007FA080,convention,__cdecl,"0x007fa080 plain ret, ecx unread (the comparator or a by-value Entry is among the stack slots)"
+0x007FDB40,signature,float __thiscall f(void *this),0x007FDB40 reads [ecx+0x214] into ST0
+0x007FDB50,signature,float __thiscall f(void *this),0x007FDB50 reads [ecx+0x218] into ST0
+0x007FDB60,signature,float __thiscall f(void *this),0x007FDB60 reads [ecx+0x21C] into ST0
+0x007FDB70,signature,float __thiscall f(void *this),0x007FDB70 reads [ecx+0x220] into ST0
+0x007FDB80,signature,float __thiscall f(void *this),0x007FDB80 reads [ecx+0x270] into ST0
+0x007FDB90,signature,float __thiscall f(void *this),0x007FDB90 reads [ecx+0x280] into ST0
+0x007FDBA0,signature,float __thiscall f(void *this),0x007FDBA0 reads [ecx+0x284] into ST0
+0x007FDBB0,signature,float __thiscall f(void *this),0x007FDBB0 reads [ecx+0x288] into ST0
+0x007FDBC0,signature,float __thiscall f(void *this),0x007FDBC0 reads [ecx+0x28C] into ST0
+0x007FDBD0,signature,float __thiscall f(void *this),0x007FDBD0 reads [ecx+0x290] into ST0
+0x007FDBE0,signature,float __thiscall f(void *this),0x007FDBE0 reads [ecx+0x294] into ST0
+0x007FDBF0,signature,float __thiscall f(void *this),0x007FDBF0 reads [ecx+0x298] into ST0
+0x007FDC00,signature,float __thiscall f(void *this),0x007FDC00 reads [ecx+0x29C] into ST0
+0x007FDC10,signature,float __thiscall f(void *this),0x007FDC10 reads [ecx+0x2A0] into ST0
+0x007FDC20,signature,float __thiscall f(void *this),0x007FDC20 reads [ecx+0x2A4] into ST0
+0x007FDC30,signature,float __thiscall f(void *this),0x007FDC30 reads [ecx+0x2A8] into ST0
+0x007FDC40,signature,float __thiscall f(void *this),0x007FDC40 reads [ecx+0x2AC] into ST0
+0x007FDC50,signature,float __thiscall f(void *this),0x007FDC50 reads [ecx+0x2B0] into ST0
+0x007FDC60,signature,float __thiscall f(void *this),0x007FDC60 reads [ecx+0x2B4] into ST0
+0x007FDC70,signature,float __thiscall f(void *this),0x007FDC70 reads [ecx+0x2B8] into ST0
+0x007FDC80,signature,float __thiscall f(void *this),0x007FDC80 reads [ecx+0x2BC] into ST0
+0x007FDC90,signature,float __thiscall f(void *this),"0x007FDC90 plain ret, no stack argument; caller 0x0080C372 loads ecx with the paperdoll"
+0x007FDCA0,signature,int __cdecl f(void *creature),"0x007FDCA0 takes [esp+8] into ecx for its callees, plain ret"
+0x007FDCF0,signature,int __thiscall f(void *this),0x007FDCF0 reads [ecx+0x58]
+0x007FDD00,signature,"void __thiscall f(void *this, int id, float *lo, float *hi)","0x007FDD00 ret 0xC, calls 0x007FDCF0 on ecx"
+0x007FE330,signature,"void __thiscall f(void *this, int shape, void *outFace, void *outLashes, float *outWeight)",0x007FE330 ret 0x10 at 0x007FE608
+0x007FE610,signature,int __thiscall f(void *this),"0x007FE610 calls 0x007FDCF0 on ecx, plain ret"
+0x007FE650,signature,"void __thiscall f(void *this, int shape, void *outName, float *outWeight)",0x007FE650 ret 0xC
+0x007FE900,signature,float __thiscall f(void *this),"0x007FE900 loads a float from the portrait settings into ST0, plain ret"
+0x007FE920,signature,float __thiscall f(void *this),"0x007FE920 loads a float from the portrait settings into ST0, plain ret"
+0x007FE940,signature,float __thiscall f(void *this),"0x007FE940 loads a float from the portrait settings into ST0, plain ret"
+0x007FE960,signature,float __thiscall f(void *this),"0x007FE960 loads a float from the portrait settings into ST0, plain ret"
+0x007FE980,signature,float __thiscall f(void *this),"0x007FE980 loads a float from the portrait settings into ST0, plain ret"
+0x007FE9A0,signature,float __thiscall f(void *this),"0x007FE9A0 loads a float from the portrait settings into ST0, plain ret"
+0x007FE9C0,signature,float __thiscall f(void *this),"0x007FE9C0 loads a float from the portrait settings into ST0, plain ret"
+0x007FE9E0,signature,"float __thiscall f(void *this, int id, float weight, bool invert, bool isSigned)",0x007FE9E0 ret 0x10; the two flags are tested with cmp byte ptr [esp+0x14]/[esp+0x10]; result fld before ret
+0x007FEBB0,signature,"void __thiscall f(void *this, int id, float *value, bool invert, bool isSigned)","0x007FEBB0 ret 0x10; flags tested as bytes at 0x007FEBC4; each exit ends fstp to the pointer [ecx]/[eax], no fld before ret"
+0x007FEC70,signature,"void * __cdecl f(void *dest, int e0, int e1, int e2, int e3, int e4, int e5, int e6, int e7)","0x007FEC70 plain ret, dest then a 0x20-byte entry by value (caller pops 0x24 at 0x00804C0F), returns dest in eax"
+0x007FEF20,signature,bool __cdecl f(void),"0x007FEF20 plain ret, no stack arguments, returns al"
+0x007FEF70,signature,float __thiscall f(void *this),0x007FEF70 reads [ecx+0x1F8] into ST0
+0x007FEF90,signature,float __thiscall f(void *this),0x007FEF90 reads [ecx+0x1FC] into ST0
+0x007FEFB0,signature,float __thiscall f(void *this),0x007FEFB0 reads [ecx+0x200] into ST0
+0x007FEFD0,signature,float __thiscall f(void *this),0x007FEFD0 reads [ecx+0x204] into ST0
+0x007FEFF0,signature,float __thiscall f(void *this),0x007FEFF0 reads [ecx+0x208] into ST0
+0x007FF010,signature,float __thiscall f(void *this),0x007FF010 reads [ecx+0x20C] into ST0
+0x007FF030,signature,float __thiscall f(void *this),0x007FF030 reads [ecx+0x210] into ST0
+0x007FF050,signature,float __thiscall f(void *this),0x007FF050 reads [ecx+0x224] into ST0
+0x007FF070,signature,float __thiscall f(void *this),0x007FF070 reads [ecx+0x228] into ST0
+0x007FF090,signature,float __thiscall f(void *this),0x007FF090 reads [ecx+0x22C] into ST0
+0x007FF0B0,signature,float __thiscall f(void *this),0x007FF0B0 reads [ecx+0x230] into ST0
+0x007FF0D0,signature,float __thiscall f(void *this),0x007FF0D0 reads [ecx+0x234] into ST0
+0x007FF0F0,signature,float __thiscall f(void *this),0x007FF0F0 reads [ecx+0x238] into ST0
+0x007FF110,signature,float __thiscall f(void *this),0x007FF110 reads [ecx+0x23C] into ST0
+0x007FF130,signature,float __thiscall f(void *this),0x007FF130 reads [ecx+0x240] into ST0
+0x007FF150,signature,float __thiscall f(void *this),0x007FF150 reads [ecx+0x244] into ST0
+0x007FF170,signature,float __thiscall f(void *this),0x007FF170 reads [ecx+0x248] into ST0
+0x007FF190,signature,float __thiscall f(void *this),0x007FF190 reads [ecx+0x24C] into ST0
+0x007FF1B0,signature,float __thiscall f(void *this),0x007FF1B0 reads [ecx+0x250] into ST0
+0x007FF1D0,signature,float __thiscall f(void *this),0x007FF1D0 reads [ecx+0x254] into ST0
+0x007FF1F0,signature,float __thiscall f(void *this),0x007FF1F0 reads [ecx+0x258] into ST0
+0x007FF210,signature,float __thiscall f(void *this),0x007FF210 reads [ecx+0x25C] into ST0
+0x007FF230,signature,float __thiscall f(void *this),0x007FF230 reads [ecx+0x260] into ST0
+0x007FF250,signature,float __thiscall f(void *this),0x007FF250 reads [ecx+0x264] into ST0
+0x007FF270,signature,float __thiscall f(void *this),0x007FF270 reads [ecx+0x268] into ST0
+0x007FF290,signature,float __thiscall f(void *this),0x007FF290 reads [ecx+0x26C] into ST0
+0x007FF2B0,signature,float __thiscall f(void *this),0x007FF2B0 reads [ecx+0x274] into ST0
+0x007FF2D0,signature,float __thiscall f(void *this),0x007FF2D0 reads [ecx+0x278] into ST0
+0x007FF2F0,signature,float __thiscall f(void *this),0x007FF2F0 reads [ecx+0x27C] into ST0
+0x007FF520,signature,unsigned int * __thiscall f(void *this),"0x007FF520 plain ret; this is the end iterator the caller builds ({0, vector, ptr}), returns ptr-4 after the range tests"
+0x007FF550,signature,void __thiscall f(void *this),"0x007FF550 plain ret, [ecx+4]/[ecx+8] first and last"
+0x007FF570,signature,"int __thiscall f(void *this, void *name)","0x007FF570 ret 4, ecx kept in ebp"
+0x007FF610,signature,"float __thiscall f(void *this, void *name)","0x007FF610 ret 4, fld result"
+0x007FF680,signature,"int __thiscall f(void *this, void *node, void *param)",0x007FF680 ret 8
+0x007FF760,signature,"int __thiscall f(void *this, void *node, void *param, int index)",0x007FF760 ret 0xC
+0x007FF840,signature,"int __thiscall f(void *this, void *node, void *param, int index)",0x007FF840 ret 0xC
+0x007FF970,signature,int __thiscall f(void *this),"0x007FF970 plain ret, reads ecx"
+0x007FF990,signature,"void __thiscall f(void *this, void *name)","0x007FF990 ret 4, ecx read; the argument is unused"
+0x007FF9C0,signature,"void __thiscall f(void *this, void *outIterator, int n)","0x007FF9C0 ret 8, this = iterator, arg1 the result written at 0x007FF9EE..F6"
+0x007FFA00,signature,"void * __thiscall f(void *this, void *first, void *last, void *dest)","0x007FFA00 ret 0xC, ecx unread inside but set by its caller 0x0080016D"
+0x007FFA30,signature,"void * __thiscall f(void *this, void *first, void *last, void *dest)","0x007FFA30 ret 0xC, ecx unread inside but set by its caller"
+0x007FFA60,signature,"void __cdecl f(void *userData, void *name)","0x007FFA60 plain ret, two stack arguments, callback registered at 0x00802321"
+0x007FFA80,signature,"void __thiscall f(void *this, void *outIterator)","0x007FFA80 ret 4, esi=ecx first"
+0x007FFAB0,signature,void __thiscall f(void *this),"0x007ffab0 plain ret, ecx read"
+0x007FFAF0,signature,void __thiscall f(void *this),"0x007ffaf0 plain ret, ecx read"
+0x007FFB30,signature,void __thiscall f(void *this),"0x007ffb30 plain ret, ecx read"
+0x007FFB70,signature,"float __thiscall f(void *this, void *name, int list0, int list1, int list2, int list3)",0x007FFB70 ret 0x14 = name pointer + a 16-byte list by value; callers load ecx with the paperdoll (0x008062D6); returns the index as a float in st0
+0x007FFC10,signature,void __thiscall f(void *this),"0x007FFC10 esi=ecx, plain ret"
+0x007FFD70,signature,"int __cdecl f(void *pairs, int count, void *key)","0x007FFD70 plain ret, callers push 3 arguments; returns the matched pair's value (0x007FFEF4) or 0"
+0x007FFF10,signature,"void * __thiscall f(void *this, void *other)","0x007FFF10 ret 4, returns this (esi=ecx)"
+0x00800060,signature,"void * __thiscall f(void *this, void *other)","0x00800060 ret 4, returns this (esi=ecx)"
+0x008001D0,signature,"void * __thiscall f(void *this, void *other)","0x008001D0 ret 4, returns this (esi=ecx)"
+0x00800340,signature,"void * __thiscall f(void *this, void *outIterator, void *container, void *where, void *value)","0x00800340 ret 0x10: returned iterator, container, position, value (as 21765 of the 21711 batch)"
+0x008003D0,signature,"void * __thiscall f(void *this, void *outIterator, void *container, void *where, void *value)","0x008003d0 ret 0x10: returned iterator, container, position, value (as 21765 of the 21711 batch)"
+0x00800480,signature,"void * __thiscall f(void *this, void *outIterator, void *container, void *where, void *value)","0x00800480 ret 0x10: returned iterator, container, position, value (as 21765 of the 21711 batch)"
+0x00800530,signature,"void * __thiscall f(void *this, void *outIterator, void *container, void *where, void *value)","0x00800530 ret 0x10: returned iterator, container, position, value (as 21765 of the 21711 batch)"
+0x008005C0,signature,"void * __thiscall f(void *this, void *outIterator, void *container, void *where, void *value)","0x008005c0 ret 0x10: returned iterator, container, position, value (as 21765 of the 21711 batch)"
+0x00800670,signature,"void __cdecl f(void *model, void *newPartNames, void *storedPartNames)","0x00800670 plain ret at 0x008007B0, three stack arguments, ecx unread"
+0x008007C0,signature,"void * __thiscall f(void *this, void *other)","0x008007C0 ret 4, returns this (esi=ecx)"
+0x008007E0,signature,"void * __thiscall f(void *this, void *other)","0x008007E0 ret 4, returns this (esi=ecx)"
+0x00800800,signature,"void * __thiscall f(void *this, void *other)","0x00800800 ret 4, returns this (esi=ecx)"
+0x00800820,signature,"void __thiscall f(void *this, void *value)","0x00800820 ret 4, esi=ecx first, the pointer argument is the element to append (push_back)"
+0x008008B0,signature,"void __thiscall f(void *this, void *value)","0x008008B0 ret 4, esi=ecx first, the pointer argument is the element to append (push_back)"
+0x00800950,signature,"void __thiscall f(void *this, void *value)","0x00800950 ret 4, esi=ecx first, the pointer argument is the element to append (push_back)"
+0x008009F0,signature,"void __thiscall f(void *this, void *value)","0x008009F0 ret 4, esi=ecx first, the pointer argument is the element to append (push_back)"
+0x00800A80,signature,"void __thiscall f(void *this, void *value)","0x00800A80 ret 4, esi=ecx first, the pointer argument is the element to append (push_back)"
+0x00800B20,signature,"void __thiscall f(void *this, void *arg1, void *arg2, void *arg3)","0x00800B20 ret 0xC at 0x008021CE, esi=ecx first"
