@@ -12513,3 +12513,82 @@ address,what,value,why
 0x00840B50,signature,void __thiscall f(void *this),"ID 22839 Console::Console::EchoInput: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
 0x00840C20,signature,"void __thiscall f(void *this, int *outX, int *outY, int mode, int index, float x)","ID 22840 Console::Console::GetLineScreenPosition: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
 0x00840D20,signature,"void __thiscall f(void *this, int value)","ID 22841 Console::Console::SetField_0x7C: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
+0x00840D40,signature,int __thiscall f(void *this),"settled: second reading, 0x00840C20 uses it as a line height"
+0x00840D60,signature,"void __thiscall f(void *this, int height)","settled: second reading, one stack argument seen at the call 0x00527AAA"
+0x00840D70,signature,"void __thiscall f(void *this, bool disabled)","settled: second reading, caller 0x00404DEF pushes one byte"
+0x00840D80,signature,"void ** __thiscall f(void *this, unsigned int index)","settled: element type from the second reading, return type from the first"
+0x00840DB0,signature,"void * __thiscall f(void *this, void *stream, bool quiet)",settled: return value read at 0x00840F81 (the first reading)
+0x00840FB0,signature,bool __stdcall f(void *text),"settled: __stdcall since ecx is overwritten, not read as this (ret 4, one stack argument); second reading"
+0x008410B0,signature,"void * __stdcall f(void *left, void *parent, void *right, void *value, unsigned char colour)",two readings agreed
+0x00841160,signature,void __thiscall f(void *this),"settled: second reading, more specific"
+0x008413A0,signature,void __thiscall f(void *this),settled: second reading
+0x00841480,signature,void __thiscall f(void *this),settled: second reading
+0x00841660,signature,"void * __thiscall f(void *this, void *text)",settled: second reading
+0x00841B20,signature,"void __thiscall f(void *this, bool previous)",settled: index at +0xF4 read at 0x00841B73 (the first reading)
+0x00841BF0,signature,"void __thiscall f(void *this, int id)",two readings agreed
+0x00841CC0,signature,void __thiscall f(void *this),"settled: second reading, the objects are ConsoleStrings"
+0x00842E60,signature,"bool __thiscall f(void *this, void *func, void *name)",two readings agreed
+0x00842F10,signature,"void ** __thiscall f(void *this, const int *key)",two readings agreed
+0x00842F90,signature,"void * __thiscall f(void *this, const unsigned short *key)",two readings agreed
+0x00843090,signature,"void __thiscall f(void *this, unsigned char release)",two readings agreed
+0x008431A0,signature,"int __thiscall f(void *this, void *text, int row, unsigned char fromBottom, float seconds)","settled: neutral name, second reading"
+0x008434C0,signature,"int __thiscall f(void *this, void *text, int x, int y, float seconds)",two readings agreed
+0x008435F0,signature,void __thiscall f(void *this),two readings agreed
+0x00843930,signature,void __thiscall f(void *this),two readings agreed
+0x00843A00,signature,"void __thiscall f(void *this, void *prefix)",two readings agreed
+0x00843AF0,signature,"void * __thiscall f(void *this, void *prefix)",two readings agreed
+0x00843B80,signature,void __thiscall f(void *this),two readings agreed
+0x00843DF0,signature,"void __thiscall f(void *this, unsigned char open)","settled: first reading, the byte is the console being open"
+0x00843E70,signature,"bool __thiscall f(void *this, unsigned short key, void *command)",two readings agreed
+0x00843EC0,signature,"bool __thiscall f(void *this, unsigned short key)",two readings agreed
+0x00843F00,signature,void __thiscall f(void *this),settled: second reading; the first reading's KeyedTreeNode dropped as an invented class
+0x00843F90,signature,void * __thiscall f(void *this),two readings agreed
+0x00844120,signature,"void __thiscall f(void *this, int value)","settled: left unnamed, no reader of +0x13C found"
+0x008442B0,signature,"void __thiscall f(void *this, unsigned short ch)",settled: neutral name; the readings differ only in name
+0x00844400,signature,"void * __thiscall f(void *this, unsigned int flags)",two readings agreed
+0x00844420,signature,"void * __thiscall f(void *this, unsigned short ch)","settled: return value read at 0x0084459F (first reading), name OnCharacter"
+0x008445D0,signature,void * __cdecl f(void),two readings agreed
+0x00844640,signature,const wchar_t * __cdecl f(const wchar_t *args),"settled: strings read at 0x00B2B22C "".cns"", 0x00B2B224 ""-q"", 0x00AF0CA4 "" ""; the return is a wide literal"
+0x00844920,signature,"bool __cdecl f(void *func, void *name)","settled: second reading, bl copied to al at 0x0084495E"
+0x00844ED0,signature,"void __cdecl f(unsigned int threadId, void *name)",two readings agreed
+0x00844F40,signature,"void __thiscall f(void *this, unsigned char flag, void *name)","settled: neutral name, both readings found no reader"
+0x00844F70,signature,"void __thiscall f(void *this, int mipSkip)",settled: FILES.md name; constructor value read at 0x00847183-0x00847193
+0x00844F90,signature,int __thiscall f(void *this),settled: folded-getter rule
+0x00844FE0,signature,"void __thiscall f(void *this, void *texture)","settled: second reading; the +0xA0 object is the TexturePool (ctor 0x00849B90), not a loader"
+0x00845190,signature,void __stdcall f(void *texture),"settled: __stdcall, ecx overwritten from the argument at 0x00845197 before any read, ret 4"
+0x008453F0,signature,"void * __thiscall f(void *this, void *texture)","settled: second reading, the loop compares values (0x00845496, 0x00569130), not keys"
+0x00845600,signature,"void * __thiscall f(void *this, void *out, void *name)",settled: name from the second reading
+0x00845820,signature,"void * __stdcall f(void *out, void *data, void *existing, int size)","settled: __stdcall, ecx is a stack reserve not read (push ecx at 0x0084582E), ret 0x10 is four arguments; the caller 0x00846DCB pushes four"
+0x00845910,signature,"void * __stdcall f(void *out, void *data, unsigned int size, void *existing, int flag)","settled: __stdcall, ecx overwritten before any read, ret 0x14 is five arguments"
+0x00845BE0,signature,"void * __cdecl f(void *out, void *resource)",settled: second reading
+0x00845D00,signature,"void __thiscall f(void *this, void *name, void *texture)",settled: FILES.md describes this insert
+0x00845D40,signature,"void __thiscall f(void *this, void *name, void *texture)",settled: pairs with AddNamedTexture
+0x00845D80,signature,"void * __thiscall f(void *this, void *out, void *name, int flags, unsigned char allowAsync)",settled: FILES.md name and signature; ret 0x10 checked
+0x00846460,signature,"void * __thiscall f(void *this, void *out, void *name, int width, int height, int mips, int format, int usage)",settled: ret 0x1C is this and seven arguments; parameter names INFERRED
+0x008465E0,signature,"void __thiscall f(void *this, void *texture)",settled: second reading
+0x00846B90,signature,"void * __thiscall f(void *this, void *out, void *name, void *resource, void *existing, int flag)",settled: ret 0x14 is five arguments; the third is a resource
+0x008470B0,signature,void * __thiscall f(void *this),"settled: second reading, constructor arithmetic read at 0x00847183"
+0x008472C0,signature,void * __cdecl f(void),two readings agreed
+0x00847330,signature,"void * __thiscall f(void *this, void *out, void *name, int width, int height, int format, int unused, unsigned char clear, unsigned char flagA, unsigned char flagB)",settled: ret 0x24 is this and nine arguments; second reading
+0x008474F0,signature,int __cdecl f(void *name),two readings agreed
+0x008475B0,signature,int __cdecl f(void *name),two readings agreed
+0x00847770,signature,"void __cdecl f(void *resource, void *data, int size)",settled: __cdecl with three arguments read at 0x00847770-0x0084778B; the first reading's __stdcall is wrong (plain ret)
+0x008477B0,signature,"void __thiscall f(void *this, void *texture)","settled: the pool, not the manager: its constructor 0x00849B90 zeroes +0x64/+0x68 and the callers are pool code"
+0x008477F0,signature,"void __thiscall f(void *this, void *texture)",settled: as AddTextureSize
+0x00847830,signature,"void * __stdcall f(const int *shape, void *renderer)","settled: free function, ecx is overwritten; ret 8"
+0x00847870,signature,"bool __thiscall f(const int *this, const int *other)","settled: TextureShape, FILES.md's word"
+0x00847900,signature,unsigned int __thiscall f(void *this),settled: Elem24 for the unnamed 24-byte record
+0x00847920,signature,"void __cdecl f(void *first, void *last, const void *value)","settled: first reading, no tag wrapper seen"
+0x00847960,signature,"void * __cdecl f(void *first, void *last, void *dest)","settled: second reading, 22961 builds the tags and calls this at 0x00847B3E"
+0x008479A0,signature,"void * __cdecl f(void *first, void *last, void *destEnd)",settled: second reading
+0x008479F0,signature,"void * __thiscall f(void *this, const int *key)","settled: key is TextureShape (FILES.md), value vector of PoolEntry INFERRED from 0x00847C80"
+0x00847A30,signature,"void __thiscall f(void *this, void *node)","settled: shared by trees of the same node size, named by the pool tree"
+0x00847A80,signature,"void * __cdecl f(void *first, void *last, void *dest)",two readings agreed
+0x00847AD0,signature,void * __cdecl f(void),settled: shared by 0x34-byte-node trees; named by the pool tree
+0x00847B10,signature,"void * __cdecl f(void *first, void *last, void *dest)","settled: second reading, three stack arguments only (0x00847B13-0x00847B1D)"
+0x00847B70,signature,"void * __thiscall f(void *this, void *outIterator, const int *key)",settled: key type as 22957
+0x00847BE0,signature,"void * __thiscall f(void *this, void *out, const int *shape)","settled: second reading, callers are pool code"
+0x00847C40,signature,"void * __stdcall f(void *first, unsigned int count, const void *value)","settled: __stdcall, ret 0xC with the stack reserve push ecx unread"
+0x00847C80,signature,void __thiscall f(void *this),"settled: the pool (ctor 0x00849B90), second reading"
+0x00847E80,signature,"void __thiscall f(void *this, unsigned int index)",settled: second reading
+0x008445D0,clear,_AfxAygshellState,"false library match; the Console::GetInstance singleton getter, static 0x00C39B20"
