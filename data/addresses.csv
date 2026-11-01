@@ -46,11 +46,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 45,function,??_FGThread@@QAEXXZ,0x00401d70,0x00401e60,0x00401d70
 46,function,SmartData::IAttribute::IAttribute,0x00401d80,0x00401e70,0x00401d80
 47,function,SmartData::IAttribute::`scalar deleting destructor',0x00401d90,0x00401e80,0x00401d90
-48,function,,0x00401db0,0x00401ea0,0x00401db0
-49,function,,0x00401e10,0x00401f00,0x00401e10
-50,function,,0x00401e20,0x00401f10,0x00401e20
-51,function,,0x00401e40,0x00401f30,0x00401e40
-52,function,,0x00401e50,0x00401f40,0x00401e50
+48,function,IGUISystem::StaticClassIdPtr,0x00401db0,0x00401ea0,0x00401db0
+49,function,IGUISystem::GetClassInfo,0x00401e10,0x00401f00,0x00401e10
+50,function,IGUISystem::~IGUISystem,0x00401e20,0x00401f10,0x00401e20
+51,function,Stub::ReturnMinusOne_Arg1,0x00401e40,0x00401f30,0x00401e40
+52,function,IGUISystem::`scalar deleting destructor',0x00401e50,0x00401f40,0x00401e50
 53,function,LocString::operator=,0x00401e90,0x00401f80,0x00401e90
 54,function,,0x00401ed0,0x00401fc0,0x00401ed0
 55,function,,0x00401f30,0x00402020,0x00401f30
@@ -90,14 +90,14 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 89,function,Messages::Observable::`scalar deleting destructor',0x004029f0,0x00402b20,0x004029f0
 90,function,std::wstring::~wstring,0x00402a10,0x00640260,0x00402a10
 91,function,`vector constructor iterator',0x00402a20,0x00402b40,0x00402a20
-92,function,,0x00402a60,0x00402bf0,0x00402a60
-93,function,,0x00402a70,0x00402c00,0x00402a70
-94,function,,0x00402a80,0x00402be0,0x00402a80
+92,function,IGUISystem::`scalar deleting destructor',0x00402a60,0x00402bf0,0x00402a60
+93,function,IGUISystem::`scalar deleting destructor',0x00402a70,0x00402c00,0x00402a70
+94,function,IGUISystem::`scalar deleting destructor',0x00402a80,0x00402be0,0x00402a80
 95,function,Messages::MessageObserver::RegisterClass,0x00402a90,0x00402c10,0x00402a90
 96,function,?Swap@GMatrix2D@@QAEXPAV1@@Z,0x00402ab0,0x00402c30,0x00402ab0
 97,function,SmartData::SmartObject::GetDefaultTypeInfo,0x00402b30,0x00402cb0,0x00402b30
-98,function,,0x00402b90,0x00402d10,0x00402b90
-99,function,,0x00402c10,0x00402d90,0x00402c10
+98,function,IGUISystem::Clone,0x00402b90,0x00402d10,0x00402b90
+99,function,IGUISystem::RegisterClass,0x00402c10,0x00402d90,0x00402c10
 100,function,Input::DeviceStates::Get,0x00402c30,0x00402db0,0x00402c30
 101,function,EclipseGame::Get,0x00402ca0,0x00402e20,0x00402ca0
 102,function,,0x00402cb0,0x00402e30,0x00402cb0
@@ -197,7 +197,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 196,function,,0x00406270,0x00401410,0x00406270
 197,function,,0x00406280,0x004066e0,0x00406280
 198,function,std::_Locinfo::~_Locinfo,0x004062d0,0x00406730,0x004062d0
-199,function,,0x004063b0,0x00406810,0x004063b0
+199,function,EclipseGame::CreateGUISystem,0x004063b0,0x00406810,0x004063b0
 200,function,,0x004064f0,0x00406950,0x004064f0
 201,function,,0x00406530,0x00406990,0x00406530
 202,function,,0x00406600,0x00406a60,0x00406600
@@ -3118,12 +3118,12 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 3117,function,,0x00474770,0x0084f670,0x00474770
 3118,function,,0x00474870,0x0084f770,0x00474870
 3119,function,,0x004748b0,0x0084f7b0,0x004748b0
-3120,function,,0x00474940,0x0084f840,0x00474940
+3120,function,OnlineFeatures::AcceptTermsOfService,0x00474940,0x0084f840,0x00474940
 3121,function,,0x004749a0,0x0084f8a0,0x004749a0
 3122,function,,0x004749b0,0x0084f8b0,0x004749b0
 3123,function,,0x004749f0,0x0084f8f0,0x004749f0
 3124,function,,0x00474a90,0x0084f990,0x00474a90
-3125,function,,0x00474c10,0x0084fb10,0x00474c10
+3125,function,OnlineFeatures::GetAchievementList,0x00474c10,0x0084fb10,0x00474c10
 3126,function,,0x00474c20,0x0084fb20,0x00474c20
 3127,function,,0x00474ce0,0x0084fbe0,0x00474ce0
 3128,function,,0x00474dd0,0x0084fcd0,0x00474dd0
@@ -3206,7 +3206,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 3205,function,,0x00478930,0x00852f70,0x00478930
 3206,function,,0x004789b0,0x00852ff0,0x004789b0
 3207,function,,0x00478a40,0x004db550,0x00478a40
-3208,function,,0x00478aa0,0x00853080,0x00478aa0
+3208,function,OnlineFeatures::Disconnect,0x00478aa0,0x00853080,0x00478aa0
 3209,function,,0x00478ae0,0x008530c0,0x00478ae0
 3210,function,,0x00478bb0,0x00853190,0x00478bb0
 3211,function,,0x00478c70,0x00853250,0x00478c70
@@ -3218,7 +3218,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 3217,function,,0x004790d0,0x008536b0,0x004790d0
 3218,function,,0x004791b0,0x00853790,0x004791b0
 3219,function,,0x004794b0,0x00853a90,0x004794b0
-3220,function,,0x00479530,0x00853b10,0x00479530
+3220,function,OnlineFeatures::ClearSavedLogin,0x00479530,0x00853b10,0x00479530
 3221,function,OnlineFeatures::HandleMessage_ReConnectMessage,0x00479610,0x00853bf0,0x00479610
 3222,function,,0x00479620,0x00853c00,0x00479620
 3223,function,,0x004796b0,0x00853c90,0x004796b0
@@ -3261,13 +3261,13 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 3260,function,,0x0047a179,0x004c2369,0x0047a179
 3261,function,,0x0047a1b0,0x008542e0,0x0047a1b0
 3262,function,,0x0047a21f,0x0085434f,0x0047a21f
-3263,function,,0x0047a260,0x00854390,0x0047a260
+3263,function,OnlineFeatures::ClearAchievementStatus,0x0047a260,0x00854390,0x0047a260
 3264,function,,0x0047a2b0,0x008543e0,0x0047a2b0
 3265,function,,0x0047a480,0x008545b0,0x0047a480
 3266,function,,0x0047a4c0,0x008545f0,0x0047a4c0
 3267,function,,0x0047a5c0,0x008546f0,0x0047a5c0
 3268,function,,0x0047a610,0x00854740,0x0047a610
-3269,function,,0x0047a700,0x00854830,0x0047a700
+3269,function,OnlineFeatures::GetAchievement,0x0047a700,0x00854830,0x0047a700
 3270,function,,0x0047a7f0,0x00854920,0x0047a7f0
 3271,function,,0x0047bd60,0x00855e90,0x0047bd60
 3272,function,,0x0047bdf0,0x00855f20,0x0047bdf0
@@ -3517,7 +3517,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 3516,function,,0x0048bb70,0x008624c0,0x0048bb70
 3517,function,,0x0048bd00,0x00862650,0x0048bd00
 3518,function,,0x0048c040,0x00862990,0x0048c040
-3519,function,,0x0048c590,0x00862ee0,0x0048c590
+3519,function,OnlineFeatures::LogoutByPlayer,0x0048c590,0x00862ee0,0x0048c590
 3520,function,,0x0048c5a0,0x00862ef0,0x0048c5a0
 3521,function,,0x0048c610,0x00862f60,0x0048c610
 3522,function,,0x0048c840,0x00863190,0x0048c840
@@ -3965,7 +3965,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 3964,function,,0x004a9500,0x0088c740,0x004a9500
 3965,function,,0x004a9510,0x008707b0,0x004a9510
 3966,function,,0x004a9550,0x008707f0,0x004a9550
-3967,function,,0x004a9570,0x00870810,0x004a9570
+3967,function,GUI::GUIContentManager::OpenRedeemCodePage,0x004a9570,0x00870810,0x004a9570
 3968,function,"SmartData::Attribute<unsigned int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",0x004a9730,0x004fa750,0x004a9730
 3969,function,"SmartData::Attribute<unsigned int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",0x004a9760,0x004fa7a0,0x004a9760
 3970,function,"SmartData::Attribute<unsigned int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::~Attribute",0x004a9770,0x004fa7b0,0x004a9770
@@ -3997,7 +3997,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 3996,function,SmartData::IAttribute::FindMember,0x004aa9f0,0x004c11a0,0x004aa9f0
 3997,function,,0x004aaa00,0x00871a30,0x004aaa00
 3998,function,,0x004aaa20,0x00871a50,0x004aaa20
-3999,function,,0x004aaa40,0x00871a70,0x004aaa40
+3999,function,GUI::GUIContentManager::ContentIdAt,0x004aaa40,0x00871a70,0x004aaa40
 4000,function,,0x004aaab0,0x00871ae0,0x004aaab0
 4001,function,,0x004aacf0,0x00871d20,0x004aacf0
 4002,function,,0x004aad80,0x00871db0,0x004aad80
@@ -4082,7 +4082,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4081,function,,0x004afae0,0x00876df0,0x004afae0
 4082,function,,0x004b0120,0x00877430,0x004b0120
 4083,function,,0x004b0660,0x00877970,0x004b0660
-4084,function,,0x004b0690,0x008779a0,0x004b0690
+4084,function,GUI::GUIPurchaseConfirm::ConfirmPurchase,0x004b0690,0x008779a0,0x004b0690
 4085,function,,0x004b07b0,0x00877ac0,0x004b07b0
 4086,function,,0x004b07c0,0x00877ad0,0x004b07c0
 4087,function,,0x004b0a40,0x00877d50,0x004b0a40
@@ -4104,8 +4104,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4103,function,,0x004b1cb0,0x0088c780,0x004b1cb0
 4104,function,,0x004b1d60,0x0088c830,0x004b1d60
 4105,function,,0x004b1e30,0x0088c900,0x004b1e30
-4106,function,,0x004b24a0,0x004be630,0x004b24a0
-4107,function,,0x004b24d0,0x004be660,0x004b24d0
+4106,function,GUI::DialogBoxClosedMessage::GetType,0x004b24a0,0x004be630,0x004b24a0
+4107,function,GUI::DialogBoxClosedMessage::RegisterClass,0x004b24d0,0x004be660,0x004b24d0
 4108,function,RefreshBalanceAndEntitlementsMessage::GetType,0x004b24f0,0x00865c20,0x004b24f0
 4109,function,RefreshBalanceAndEntitlementsMessage::InitType,0x004b2520,0x00865c50,0x004b2520
 4110,function,OpenTechnicalHelpMessage::GetType,0x004b2540,0x00865c70,0x004b2540
@@ -4148,8 +4148,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4147,function,,0x004b3300,0x00866910,0x004b3300
 4148,function,,0x004b3310,0x00866920,0x004b3310
 4149,function,,0x004b3320,0x00866930,0x004b3320
-4150,function,,0x004b3330,0x004bf6a0,0x004b3330
-4151,function,,0x004b33a0,0x004bf710,0x004b33a0
+4150,function,GUI::DialogBoxClosedMessage::Clone,0x004b3330,0x004bf6a0,0x004b3330
+4151,function,GUI::DialogBoxClosedMessage::GetName,0x004b33a0,0x004bf710,0x004b33a0
 4152,function,RefreshBalanceAndEntitlementsMessage::Clone,0x004b3410,0x00866940,0x004b3410
 4153,function,RefreshBalanceAndEntitlementsMessage::GetName,0x004b3480,0x008669b0,0x004b3480
 4154,function,OpenTechnicalHelpMessage::Clone,0x004b34f0,0x00866a20,0x004b34f0
@@ -4885,7 +4885,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4884,function,Messages::Message::~Message,0x004d20a0,0x008133a0,0x004d20a0
 4885,function,Messages::Message::GetType,0x004d20b0,0x008133b0,0x004d20b0
 4886,function,Messages::Send,0x004d20c0,0x008133c0,0x004d20c0
-4887,function,,0x004d20e0,0x008133e0,0x004d20e0
+4887,function,Messages::Post,0x004d20e0,0x008133e0,0x004d20e0
 4888,function,stdext::hash_map::_Lower_bound,0x004d2160,0x00517890,0x004d2160
 4889,function,Messages::MessageFactory::CreateByHash,0x004d22b0,0x005179e0,0x004d22b0
 4890,function,Messages::FromText,0x004d2320,0x00813460,0x004d2320
@@ -5080,7 +5080,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5079,function,Multithreading::TaskGroup::`scalar deleting destructor',0x004d7e40,0x00a67780,0x004d7e40
 5080,function,Multithreading::TaskGroup::RemoveFromQueue,0x004d7e60,0x00a677a0,0x004d7e60
 5081,function,Multithreading::TaskGroup::TaskGroup,0x004d7ea0,0x00a67840,0x004d7ea0
-5082,function,,0x004d7f20,0x0081fbf0,0x004d7f20
+5082,function,MessageRegistry::AssignClassId,0x004d7f20,0x0081fbf0,0x004d7f20
 5083,function,,0x004d7f40,0x0081fc10,0x004d7f40
 5084,function,,0x004d7f80,0x0081fc50,0x004d7f80
 5085,function,,0x004d7fb0,0x0081fc80,0x004d7fb0
@@ -5089,7 +5089,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5088,function,,0x004d8230,0x0081ff00,0x004d8230
 5089,function,MessageRegistry::Find,0x004d82a0,0x0081ff70,0x004d82a0
 5090,function,MessageRegistry::Dispatch,0x004d8330,0x00820000,0x004d8330
-5091,function,,0x004d8380,0x00820050,0x004d8380
+5091,function,MessageRegistry::DeliverPosted,0x004d8380,0x00820050,0x004d8380
 5092,function,,0x004d8440,0x00820110,0x004d8440
 5093,function,,0x004d8500,0x008201d0,0x004d8500
 5094,function,,0x004d85c0,0x00820290,0x004d85c0
@@ -6546,7 +6546,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6545,function,,0x00510710,0x007fbae0,0x00510710
 6546,function,,0x00510760,0x007fbc70,0x00510760
 6547,function,,0x005107f0,0x007fbd00,0x005107f0
-6548,function,,0x00510820,0x007b8c40,0x00510820
+6548,function,GRefCountBaseImpl::~GRefCountBaseImpl,0x00510820,0x007b8c40,0x00510820
 6549,function,,0x00510830,0x007b9370,0x00510830
 6550,function,,0x00510850,0x007b8c50,0x00510850
 6551,function,,0x005108e0,0x007b8ce0,0x005108e0
@@ -6570,21 +6570,21 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6569,function,,0x00510e10,0x007b9100,0x00510e10
 6570,function,,0x00510e70,0x007b9160,0x00510e70
 6571,function,,0x00510e80,0x007b9170,0x00510e80
-6572,function,,0x00510ee0,0x007b91d0,0x00510ee0
+6572,function,GFxStateBag::GetRenderConfig,0x00510ee0,0x007b91d0,0x00510ee0
 6573,function,,0x00510f00,0x00496ca0,0x00510f00
 6574,function,,0x00510f10,0x00496c60,0x00510f10
-6575,function,,0x00510f20,0x007b91f0,0x00510f20
-6576,function,,0x00510f40,0x007b9260,0x00510f40
-6577,function,,0x00510f50,0x007b9230,0x00510f50
-6578,function,,0x00510f60,0x007b9240,0x00510f60
-6579,function,,0x00510f80,0x007b9270,0x00510f80
+6575,function,GUI::ScaleformMemoryAllocator::AllocAligned,0x00510f20,0x007b91f0,0x00510f20
+6576,function,GUI::ScaleformDebugMemoryAllocator::Free,0x00510f40,0x007b9260,0x00510f40
+6577,function,GUI::ScaleformDebugMemoryAllocator::Alloc,0x00510f50,0x007b9230,0x00510f50
+6578,function,GUI::ScaleformDebugMemoryAllocator::Realloc,0x00510f60,0x007b9240,0x00510f60
+6579,function,GUI::ScaleformDebugMemoryAllocator::AllocAligned,0x00510f80,0x007b9270,0x00510f80
 6580,function,GuiMovie::GetMovieView,0x00510fa0,0x004f8900,0x00510fa0
 6581,function,,0x00510fd0,0x007b9290,0x00510fd0
 6582,function,,0x00510fe0,0x007b92a0,0x00510fe0
 6583,function,,0x00511010,0x007b92d0,0x00511010
 6584,function,EclipseGFxFSCommandHandler::Callback,0x00511030,0x007b92f0,0x00511030
 6585,function,EclipseGFxExternalInterface::Callback,0x00511050,0x007b9310,0x00511050
-6586,function,,0x00511070,0x007b9330,0x00511070
+6586,function,GUI::MovieViewEquals::operator(),0x00511070,0x007b9330,0x00511070
 6587,function,EclipseGFxImageInitializationVisitor::Visit,0x005110b0,0x007b9390,0x005110b0
 6588,function,GUI::ScaleformManager::SetKeyboardFilter,0x005110f0,0x007b93d0,0x005110f0
 6589,function,,0x005111b0,0x007b9490,0x005111b0
@@ -6592,12 +6592,12 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6591,function,,0x00511370,0x007b9650,0x00511370
 6592,function,EclipseGFxFileOpener::OpenFile,0x005113a0,0x007b9680,0x005113a0
 6593,function,GUI::ScaleformManager::MouseOverInterface,0x00511420,0x007b9700,0x00511420
-6594,function,,0x00511450,0x007b9730,0x00511450
+6594,function,"std::_Tree<std::map<std::wstring,GPtr<GFxMovieDef>>>::_Buynode",0x00511450,0x007b9730,0x00511450
 6595,function,,0x005114d9,0x007b97b9,0x005114d9
-6596,function,,0x005114f0,0x007b97d0,0x005114f0
+6596,function,"std::_Tree<std::map<std::wstring,GPtr<GFxMovieView>>>::_Buynode",0x005114f0,0x007b97d0,0x005114f0
 6597,function,,0x00511579,0x007b9859,0x00511579
-6598,function,,0x00511590,0x005bd730,0x00511590
-6599,function,,0x005115d0,0x00454910,0x005115d0
+6598,function,std::_Tree<std::set<void*>>::_Buyheadnode,0x00511590,0x005bd730,0x00511590
+6599,function,std::_Copy_opt<wchar_t*>,0x005115d0,0x00454910,0x005115d0
 6600,function,,0x00511610,0x007d7c80,0x00511610
 6601,function,,0x00511640,0x007b98c0,0x00511640
 6602,function,,0x00511700,0x00454660,0x00511700

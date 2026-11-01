@@ -5599,3 +5599,45 @@ address,what,value,why
 0x007F2210,signature,bool __thiscall Conversation_Start(void *this),plain ret; returns !IsLineAmbient(+0x3C) (0x007F231E-0x007F2328); its tail 0x007F2360 belongs to it
 0x007EED70,signature,"bool __thiscall Conversation_LeaveDialogMode(void *this, bool endConversation)","ret 4 at 0x007EED94/0x007EEDBA; always returns 1 (0x007EED91, 0x007EEDB7); 1 -> GameModeDialog::EndConversation 0x0068F640, 0 -> 0x0068F470 if +0x34; name inferred"
 0x007F0870,signature,"bool __thiscall Conversation_ReleaseParticipants(void *this, bool onlyMarked)",ret 4 at 0x007F0929; AND of 0x007F0790's results; non-zero arg releases only records with byte +5 set (0x007F08A5-0x007F08DD); name inferred
+0x00401DB0,signature,void * __cdecl IGUISystem_StaticClassIdPtr(void),"static getter, plain ret, no ecx use; returns the class node 0x00BF0484"
+0x00401E40,clear,"std::basic_streambuf<char,std::char_traits<char>_>::vfunction2","COMDAT-folded ""return -1"" body also serving IGUISystem/NullGUISystem slot 12 (SceneIdByName); the streambuf label names one owner only"
+0x00401E40,signature,"int __thiscall Stub_ReturnMinusOne_Arg1(void * this, void * arg)","or eax,-1; ret 4"
+0x00401E50,signature,"void * __thiscall IGUISystem_scalar_deleting_destructor(void * this, unsigned int flags)","tests [esp+8]&1, ret 4"
+0x00402B90,signature,void * __thiscall IGUISystem_Clone(void * this),vtable slot 1; plain ret; returns a new 0x58-byte object
+0x004063B0,signature,bool __thiscall EclipseGame_CreateGUISystem(void * this),ecx saved to edi at 0x004063D4 and read at 0x00406450 (+0x250); plain ret; AL is the result
+0x00474940,signature,"void __thiscall OnlineFeatures_AcceptTermsOfService(void * this, bool termsAccepted)",reads [ecx+0xdc] first; ret 4
+0x00478AA0,convention,__fastcall,"this in ecx only, plain ret (Ghidra already shows __fastcall(int)); keep"
+0x0047A260,signature,"void __thiscall OnlineFeatures_ClearAchievementStatus(void * this, int index)",ret 4
+0x0047A700,signature,"void * __thiscall OnlineFeatures_GetAchievement(void * this, void * out, int index)","ret 8 at 0x0047A7EC, returns out (mov eax,edi at 0x0047A7C4); decompiler shows param_2 unused"
+0x004A9570,signature,bool __cdecl GUIContentManager_OpenRedeemCodePage(void),"no stack arguments, ecx not read, plain ret, mov al,1"
+0x004AAA40,signature,"unsigned int __thiscall GUIContentManager_ContentIdAt(void * this, unsigned int index)",ret 4 on every path
+0x004B0690,signature,bool __thiscall GUIPurchaseConfirm_ConfirmPurchase(void * this),"mov esi,ecx at 0x004B06B2 read at 0x004B06F4; plain ret"
+0x004D20E0,signature,"void __cdecl Messages_Post(void * message, void * receiver)",plain ret 0x004D2154; arguments at [esp+0x1c]/[esp+0x20] after a 0x18-byte frame
+0x004D7F20,signature,"void __thiscall MessageRegistry_AssignClassId(void * this, int * classId)",reads [ecx+0x10]; ret 4
+0x004D8380,signature,void __thiscall MessageRegistry_DeliverPosted(void * this),"mov esi,ecx then [esi+0x24]; plain ret"
+0x00510820,clear,??1GRefCountBaseImpl@@UAE@XZ,this is a jmp thunk to 0x00419020 (which carries that mangled name); give it the demangled thunk name
+0x00510EE0,signature,"void * * __thiscall GFxStateBag_GetRenderConfig(void * this, void * * out)","ret 4, returns out"
+0x00510F20,signature,"void * __thiscall ScaleformMemoryAllocator_AllocAligned(void * this, unsigned int size, unsigned int align, unsigned int extra)",ret 0xC; vtable member
+0x00510F40,signature,"void __thiscall ScaleformDebugMemoryAllocator_Free(void * this, void * p, int a2, int a3, int a4, int a5)",ret 0x14
+0x00510F50,signature,"void * __thiscall ScaleformDebugMemoryAllocator_Alloc(void * this, unsigned int size, int a2, int a3, int a4, int a5)",ret 0x14
+0x00510F60,signature,"void * __thiscall ScaleformDebugMemoryAllocator_Realloc(void * this, void * p, unsigned int size, int a3, int a4, int a5, int a6)",ret 0x18
+0x00510F80,signature,"void * __thiscall ScaleformDebugMemoryAllocator_AllocAligned(void * this, unsigned int size, unsigned int align, unsigned int extra, int a4, int a5, int a6, int a7)",ret 0x1C
+0x00511070,signature,"bool __thiscall MovieViewEquals_call(void * this, void * movie)",ret 4
+0x00511450,signature,"void * __thiscall Tree_MovieDefCache_Buynode(void * this, void * left, void * parent, void * right, void * value, char color)",ret 0x14 (EBP frame)
+0x005114F0,signature,"void * __thiscall Tree_MovieViewCache_Buynode(void * this, void * left, void * parent, void * right, void * value, char color)",ret 0x14 (EBP frame)
+0x005115D0,signature,"wchar_t * __cdecl Copy_opt_wchar(wchar_t * first, wchar_t * last, wchar_t * dest)","plain ret, arguments at [esp+4..0xc]"
+0x00401E10,clear,IGUISystem::vfunction1,"it is slot 0 (a jmp to 0x00401DB0, shared with NullGUISystem's vtable); Ghidra's vfunctionN are 1-based and collide (from reading B)"
+0x00402C10,clear,IGUISystem::vfunction3,"it is slot 2, RegisterClass (cmp [node],-1 at 0x00402C18, jmp 0x00402B30) (from reading B)"
+0x00402C10,signature,void __thiscall IGUISystem_RegisterClass(void * this),plain ret
+0x00402A60,signature,"void * __thiscall IGUISystem_scalar_deleting_destructor_adj20(void * this, unsigned int flags)","sub ecx,0x20; jmp 0x00401E50 (ret 4 there)"
+0x00402A70,signature,"void * __thiscall IGUISystem_scalar_deleting_destructor_adj8(void * this, unsigned int flags)","sub ecx,0x8; jmp 0x00401E50"
+0x00402A80,signature,"void * __thiscall IGUISystem_scalar_deleting_destructor_adj1C(void * this, unsigned int flags)","sub ecx,0x1C; jmp 0x00401E50"
+0x00474C10,signature,void * __thiscall OnlineFeatures_GetAchievementList(void * this),"lea eax,[ecx+0x6f00]; ret"
+0x00477F10,signature,"void __thiscall OnlineFeatures_SetAccountName(void * this, void * name)","ret 4; assigns to +0x6BE8, and to +0x6C04 when [name+0x14] != 0 (0x00477F19-0x00477F31); name inferred"
+0x00479530,signature,void __thiscall OnlineFeatures_ClearSavedLogin(void * this),"mov esi,ecx at 0x0047955F; plain ret"
+0x0048C590,signature,void __thiscall OnlineFeatures_LogoutByPlayer(void * this),"mov byte [ecx+0xe4],1 then jmp 0x0048BB70"
+0x004B24A0,signature,void * __thiscall DialogBoxClosedMessage_GetClassIdPtr(void * this),"plain ret, returns 0x00BF3E24"
+0x004B24D0,signature,void __thiscall DialogBoxClosedMessage_RegisterClass(void * this),plain ret
+0x004B3330,signature,void * __thiscall DialogBoxClosedMessage_Clone(void * this),plain ret
+0x004B33A0,signature,void * __thiscall DialogBoxClosedMessage_GetName(void * this),"plain ret, returns a static wstring*"
+0x00511590,signature,void * __thiscall Tree_Set_Buyheadnode(void * this),plain ret; operator_new(0x14)
