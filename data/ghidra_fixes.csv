@@ -5320,3 +5320,83 @@ address,what,value,why
 0x005C05F0,signature,"bool __thiscall EclipsePrivate::CContent_FMOD::GetPlaybackPositionMs(void* this, unsigned long long* outMs)",ret 4; writes the low word and 0
 0x005C0660,signature,"bool __thiscall EclipsePrivate::CContent_FMOD::SetPlaybackPositionMs(void* this, unsigned long long ms)",ret 8; low word passed on (read at 0x005C068C)
 0x005C06B0,signature,"bool __thiscall EclipsePrivate::CContent_FMOD::GetPositionMs(void* this, unsigned int* outMs)",ret 4
+0x005C0710,signature,"bool __thiscall GetInfo(void* this, float* audibility, int* numInstances, int* instancesActive)",ret 0xC; three out-pointers
+0x005C0820,signature,bool __thiscall Pause(void* this),"plain ret; decompiler's SUB41 argument wrong (setPaused(event,1))"
+0x005C0850,signature,bool __thiscall Resume(void* this),"plain ret; setPaused(event,0)"
+0x005C0910,clear,vfunction25,CContent_FMOD::Set3DPanLevel; stores +0x18 not +0x14
+0x005C0910,signature,"void __thiscall Set3DPanLevel(void* this, float level)",ret 4
+0x005C09A0,signature,"void __thiscall ReverbChannelGroup_UpdateFade(void* this, float dt)","ret 4, ecx = instance"
+0x005C1010,signature,"void __thiscall Stop(void* this, int unused)","ret 4, argument never read; decompiler offsets 4 short (+0x128, +0x120)"
+0x005C1050,clear,FID_conflict:`scalar_deleting_destructor',MFC FID match; it is CContentBank_FMOD's scalar deleting destructor
+0x005C1220,clear,vfunction1,CContent_FMOD's scalar deleting destructor
+0x005C17A0,clear,vfunction22,CContentRenderer_FMOD::GetReverbDebugText (slot 21)
+0x005C17A0,signature,"bool __thiscall GetReverbDebugText(void* this, void* out)",ret 4; returns 1
+0x005C18C0,signature,"bool __cdecl FindReverbChannelGroupIndex(void* name, unsigned int* index)","caller add esp,8"
+0x005C19A0,signature,"void __thiscall Update(void* this, float dt)",ret 4; Ghidra lost dt
+0x005C1A40,signature,void* __cdecl GetReverbChannelGroup(unsigned int index),"returns the instance object, not a pointer to its slot"
+0x005C1B40,signature,bool __thiscall ApplyReverbInstance(void* this),plain ret
+0x005C1EB0,signature,"bool __thiscall GetProperty(void* this, void* name, void* value)",ret 8; name is a wstring
+0x005C3130,signature,"void __thiscall GetCategoryDebugText(void* this, void* out)",ret 4
+0x005C37F0,signature,"void __thiscall SetReverbPresets(void* this, void* names)",ret 4; names is a vector of wstring
+0x005C3A50,clear,vfunction9,"CMusicThemeContent_FMOD::GetReturnToMainOnEnd; reads +0x15C, not 0x158"
+0x005C3A60,clear,vfunction14,CMusicThemeContent_FMOD::GetCurrentTrackName
+0x005C3A60,signature,"bool __thiscall GetCurrentTrackName(void* this, void* out)",ret 4
+0x005C3E40,clear,vfunction1,CMusicThemeContent_FMOD's scalar deleting destructor
+0x005C4140,signature,"void* __cdecl CreateReverbChannelGroup(void* name, int index, void* parent, bool withDsp)","4 args (add esp,0x10), 4th never read; returns the object or 0"
+0x005C45C0,signature,"bool __thiscall GetReverbPresetNames(void* this, void* out)",ret 4
+0x005C5310,signature,void __cdecl ReleaseAudioCategoryTable(void),no args; tail jmp 0x005C3FC0
+0x005C53E0,convention,__thiscall,"reads ecx (mov esi,ecx), plain ret; not __fastcall"
+0x005C5A40,clear,vfunction1,CContentRenderer_FMOD's scalar deleting destructor
+0x0079A480,clear,vfunction113,CCTriggerAudioMusicVolume::Load thunk (slot 112) to 0x0079A1D0
+0x0079AB40,clear,vfunction35,CCTriggerAudioVolume::LoadFromSave (slot 34)
+0x0079AB40,signature,"int __thiscall LoadFromSave(void* this, void** saveStruct)",ret 4
+0x0079B010,clear,vfunction115,"CCTriggerAudioReverb::GetDataClass (slot 114, +0x1C8), returns the 'TRAR' data-class index"
+0x0079B090,clear,vfunction1,CCTriggerAudioReverb's scalar deleting destructor
+0x0079B4A0,clear,vfunction115,CCTriggerAudioMusicVolume::GetDataClass ('TRAM')
+0x0079B500,clear,vfunction1,CCTriggerAudioMusicVolume's scalar deleting destructor
+0x0079B5F0,clear,vfunction115,CCTriggerAudioVolume::GetDataClass ('TRAV')
+0x0079B650,clear,vfunction1,CCTriggerAudioVolume's scalar deleting destructor
+0x007C2710,signature,void __thiscall RemoveFromArea(void* this),plain ret; writes +0x254 (decompiler says 0x250)
+0x007C2EC0,clear,vfunction1,CCSoundObject's scalar deleting destructor (shared with the pannable)
+0x0079B020,clear,vfunction1,"adjustor thunk to the class's scalar deleting destructor (sub ecx,N; jmp)"
+0x0079B030,clear,vfunction2,"adjustor thunk to the class's scalar deleting destructor (sub ecx,N; jmp)"
+0x0079B040,clear,vfunction5,"adjustor thunk to the class's scalar deleting destructor (sub ecx,N; jmp)"
+0x0079B050,clear,vfunction1,"adjustor thunk to the class's scalar deleting destructor (sub ecx,N; jmp)"
+0x0079B060,clear,vfunction3,"adjustor thunk to the class's scalar deleting destructor (sub ecx,N; jmp)"
+0x0079B4B0,clear,vfunction5,"adjustor thunk to the class's scalar deleting destructor (sub ecx,N; jmp)"
+0x0079B4C0,clear,vfunction1,"adjustor thunk to the class's scalar deleting destructor (sub ecx,N; jmp)"
+0x0079B4D0,clear,vfunction3,"adjustor thunk to the class's scalar deleting destructor (sub ecx,N; jmp)"
+0x0079B4E0,clear,vfunction1,"adjustor thunk to the class's scalar deleting destructor (sub ecx,N; jmp)"
+0x0079B4F0,clear,vfunction2,"adjustor thunk to the class's scalar deleting destructor (sub ecx,N; jmp)"
+0x0079B600,clear,vfunction1,"adjustor thunk to the class's scalar deleting destructor (sub ecx,N; jmp)"
+0x0079B610,clear,vfunction2,"adjustor thunk to the class's scalar deleting destructor (sub ecx,N; jmp)"
+0x0079B620,clear,vfunction5,"adjustor thunk to the class's scalar deleting destructor (sub ecx,N; jmp)"
+0x0079B630,clear,vfunction1,"adjustor thunk to the class's scalar deleting destructor (sub ecx,N; jmp)"
+0x0079B640,clear,vfunction3,"adjustor thunk to the class's scalar deleting destructor (sub ecx,N; jmp)"
+0x007C2070,clear,vfunction2,"adjustor thunk to the class's scalar deleting destructor (sub ecx,N; jmp)"
+0x007C2080,clear,vfunction1,"adjustor thunk to the class's scalar deleting destructor (sub ecx,N; jmp)"
+0x007C2BB0,clear,vfunction1,"adjustor thunk to the class's scalar deleting destructor (sub ecx,N; jmp)"
+0x007C2BC0,clear,vfunction5,"adjustor thunk to the class's scalar deleting destructor (sub ecx,N; jmp)"
+0x007C2BD0,clear,vfunction3,"adjustor thunk to the class's scalar deleting destructor (sub ecx,N; jmp)"
+0x005C1050,signature,"void* __thiscall scalar_deleting_destructor(void* this, unsigned int flags)",ret 4; vftable 0x00AFF278 slot 0
+0x005C1220,signature,"void* __thiscall scalar_deleting_destructor(void* this, unsigned int flags)",ret 4
+0x005C3E40,signature,"void* __thiscall scalar_deleting_destructor(void* this, unsigned int flags)",ret 4
+0x005C5A40,signature,"void* __thiscall scalar_deleting_destructor(void* this, unsigned int flags)",ret 4
+0x0079B090,signature,"void* __thiscall scalar_deleting_destructor(void* this, unsigned int flags)",ret 4
+0x0079B500,signature,"void* __thiscall scalar_deleting_destructor(void* this, unsigned int flags)",ret 4
+0x0079B650,signature,"void* __thiscall scalar_deleting_destructor(void* this, unsigned int flags)",ret 4
+0x007C2EC0,signature,"void* __thiscall scalar_deleting_destructor(void* this, unsigned int flags)",ret 4
+0x005C1BC0,signature,void __thiscall Pause(void* this),"plain ret, no args"
+0x005C1BF0,signature,void __thiscall Resume(void* this),"plain ret, no args"
+0x005C1D30,signature,bool __thiscall EnsureEventLoaded(void* this),plain ret
+0x0079A480,signature,"int __thiscall Load(void* this, void* a, void* b, void* c)","tail-jumps 0x0079A1D0, which is ret 0xC"
+0x0079B010,signature,int __thiscall GetDataClass(void* this),"mov eax,[0x00C389A8]; ret"
+0x0079B4A0,signature,int __thiscall GetDataClass(void* this),"mov eax,[0x00C389B0]; ret"
+0x0079B5F0,signature,int __thiscall GetDataClass(void* this),"mov eax,[0x00C389AC]; ret"
+0x004CE240,clear,Graphics::ICamera::vfunction27,"identical-code-folded `mov eax,3; ret`, also CCTriggerAudioReverb's Type getter (+0x1CC); no class's name fits all users"
+0x00A11120,clear,Renderer::ADSemanticNameAffinity::vfunction5,"folded `mov eax,4; ret`, also CCTriggerAudioVolume's Type getter (+0x1CC)"
+0x0046E640,clear,Renderer::ADIncludesSemanticAffinity::vfunction5,"folded `mov eax,5; ret`, also CCTriggerAudioMusicVolume's Type getter (+0x1CC)"
+0x005C30A0,signature,"bool __cdecl SetReverbChannelGroupPreset(int index, void* nameWString, float unused, float time)",plain ret; 3rd arg never read; 4th read at 0x005C30F1 (time < 0 -> 0.33); index must be 1..count-1
+0x005C23E0,signature,"bool __thiscall ReverbChannelGroup_SetPreset(void* this, void* nameWString, float fadeGate, float unused)",ret 0xC; gate tested != 0 at 0x005C2709..27 (fade over +0x19C); 3rd arg never read
+0x005C35F0,signature,"bool __thiscall SetReverb(void* this, void* nameWString, float unused, float time)",ret 0xC; 2nd arg passed through to 0x005C30A0's unused 3rd
+0x005B7790,signature,"bool __thiscall SetReverbPreset(void* this, void* nameWString, float unused, float time)","ret 0xC; passes both floats to renderer +0x38 (0x005B77A0..C3); name proposed, the function is unnamed"
