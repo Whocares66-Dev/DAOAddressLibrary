@@ -5834,3 +5834,38 @@ address,what,value,why
 0x00526650,signature,"void* __thiscall ScalarDeletingDestructor(void* this, unsigned int flags)",ret 4.
 0x00489BC0,signature,void* __cdecl MessageFactoryRegistry_Get(void),"Returns the static registry 0x00C2A8DC, built once; plain ret."
 0x00526640,signature,"void* __thiscall ScalarDeletingDestructorAdjustor16(void* this, unsigned int flags)","sub ecx,0x10 then jmp 0x00526650 (ret 4 there); entered through the +0x10 subobject's vtable 0x00AF6A88 slot 0."
+0x00526DE0,signature,"bool __thiscall ScaleformAtlasMap::Insert(void* this, void* name, void* record)",ret 8; two stack args; returns pair.second byte
+0x00526E80,signature,"void __thiscall ScaleformAtlasReader::StartElement(void* this, void* elementName, void* attributes)",ret 8; Ghidra shows no args
+0x005BBA20,convention,__thiscall,reads ECX at 0x005BBA44; plain ret; decompiler shows wrong args to 0x005B6D40
+0x005BBB00,convention,__thiscall,reads ECX at 0x005BBB24; plain ret
+0x005B6D40,signature,"bool __thiscall MusicTheme_SetTrackThunk(void* this, void* name, int a, int b)",jmp [[ECX]]+8 with three stack args pushed by callers 0x005BBAAA; decompiler loses them
+0x005C6F20,signature,"void __thiscall SmartData::TokenManager::ListRootMemberNames(void* this, void* outNames)",ret 4
+0x005E5F60,signature,void __thiscall CClientOptions::RevertAll(void* this),ECX = g_ClientOptions at 0x0072EC03; plain ret
+0x005E49C0,signature,"void __thiscall CClientOptions::CopyGroupFrom(void* this, void* source, unsigned int group)",ret 8; group <= 5 at 0x005E49F1
+0x005EF260,signature,"bool __thiscall AddInManager::IsEnabled(void* this, void* uid)",ret 4 at 0x005EF351
+0x005EF3A0,signature,"void* __thiscall AddInManager::Find(void* this, void* uid)",ret 4 at 0x005EF451
+0x005F0950,signature,"bool __thiscall AddInManager::HasPrerequisites(void* this, void* uid)",ret 4 at 0x005F0A53; Ghidra has __fastcall with no arg
+0x005F6190,signature,"void __thiscall AddInManager::Disable(void* this, void* uid, bool cascade, bool quiet)",ret 0xC at 0x005F65B4
+0x00605920,signature,"void* __thiscall GUI::GoToQuestMessage::GoToQuestMessage(void* this, void* other)","copy ctor, ret 4"
+0x006059F0,signature,"void* __thiscall GUI::GoToCodexMessage::GoToCodexMessage(void* this, void* other)","copy ctor, ret 4"
+0x00605AC0,signature,"void* __thiscall GUI::GoToJournalPRCTabMessage::GoToJournalPRCTabMessage(void* this, void* other)","copy ctor, ret 4"
+0x00605B90,signature,"void* __thiscall GUI::GoToGuiWithFollowerMessage::GoToGuiWithFollowerMessage(void* this, void* other)","copy ctor, ret 4"
+0x00606690,signature,"bool __thiscall GUI::DragonAgeGUISystem::ShowAchievementUnlocked(void* this, void* a, void* b, void* icon, float d)",ret 0x10; float moved by FLD/FSTP at 0x006066A6
+0x007074A0,signature,"void __thiscall GUIAchievementUnlocked_SetData(void* this, void* a, void* b, void* icon, float d)",ret 0x10 at 0x007075D1; decompiler shows one arg
+0x00606BD0,signature,"bool __thiscall GUI::DragonAgeGUISystem::ShowPopup(void* this, void* popupData)",ret 4 at 0x00606C32
+0x00606C60,signature,"void __thiscall GUI::DragonAgeGUISystem::SetFollowerForGui(void* this, int followerId)",ret 4
+0x00606C70,signature,"void __thiscall GUI::DragonAgeGUISystem::PrintMovieHierarchy(void* this, void* movieName)",ret 4; Ghidra shows no args
+0x00606DB0,convention,__thiscall,"reads ECX, plain ret; Ghidra has __fastcall"
+0x00606860,convention,__thiscall,the message is a stack arg (decompiler reads it as unaff_retaddr)
+0x00606910,convention,__thiscall,as 0x00606860
+0x006069C0,convention,__thiscall,as 0x00606860
+0x0060C530,convention,__thiscall,as 0x00606860
+0x00607520,clear,CProcessLocal<CControlSiteFactoryMgr>::CreateObject,"wrong MFC library match: GUI::GoToQuestMessage's registry factory (new 0x24, ctor 0x006058C0)"
+0x00607590,clear,CThreadLocal<_AFXCTL_AMBIENT_CACHE>::CreateObject,wrong MFC library match: GUI::GoToCodexMessage's factory (ctor 0x00605990)
+0x00607600,clear,CThreadLocal<_AFXCTL_AMBIENT_CACHE>::CreateObject,wrong MFC library match: GUI::GoToJournalPRCTabMessage's factory (ctor 0x00605A60)
+0x00607770,clear,CProcessLocal<CControlSiteFactoryMgr>::CreateObject,wrong MFC library match: GUI::GoToGuiWithFollowerMessage's factory (ctor 0x00605B30)
+0x006065B0,clear,GUI::GUISystem::vfunction8,"it is DragonAgeGUISystem's own slot 7 thunk (jmp 0x005239F0), not GUISystem's"
+0x00554D70,signature,void __thiscall IGameRenderOperation::~IGameRenderOperation(void* this),stores the base vftable 0x00AF8C34 only
+0x00606F30,signature,void __thiscall Messages::MessageFactoryEntry::~MessageFactoryEntry(void* this),"deletes +0x20 (vtable +0x10 with 1), destroys the wstring at +4"
+0x00606FA0,signature,void* __cdecl GUI::ShowInventoryGUIMessage::Create(void),"no args, returns the new message; registered at 0x00611B2F"
+0x00606C70,clear,GUI::DragonAgeGUISystem::vfunction79,"it is slot 78 (0x00B0363C), MovieUtils.PrintHierarchy on the movie named by its argument (FindMovie 0x00511730 compares names with 0x004C0DE0)"
