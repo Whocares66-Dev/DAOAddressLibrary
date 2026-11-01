@@ -1953,3 +1953,43 @@ address,what,value,why
 0x005C5CA0,signature,void* __thiscall f(void* this),0x005C5CA0-0x005C5D5A; plain ret; callers include 0x005DC510 CClientExoApp::CClientExoApp
 0x005C5D60,signature,"void* __thiscall f(void* this, void* unused)","0x005C5D60-0x005C5E1B; ret 4; callers include 0x008951B0 Eclipse::GroupedInputMappings::GroupedInputMappings; reconciled: argument never read, ret 4 only"
 0x005C5E20,signature,void __thiscall f(void* this),"0x005C5E20-0x005C5E74; vftables 0x00AFFC5C, 0x00ADDCFC; plain ret"
+0x005C5E80,signature,bool __thiscall f(void* this),"xor al,al; ret"
+0x005C5E90,signature,"void* __thiscall f(void* this, unsigned int flags)","vftable slot; test byte [esp+8],1; ret 4"
+0x005C5EB0,signature,"void* __thiscall f(void* this, void* outText)",vftable slot 12; ecx=this; ret 4
+0x005C5F40,signature,"void* __thiscall f(void* this, void* outText)",vftable slot 11; ecx read; ret 4 at 0x005C5F36
+0x005C5F70,signature,"void __thiscall f(void* this, unsigned int key, void* attribute)",thunk to slot 3 (ret 8) with this+4
+0x005C5F80,signature,"void __thiscall f(void* this, unsigned int key)",thunk to slot 4 (ret 4) with this+4
+0x005C5F90,signature,"void* __thiscall f(void* this, unsigned int key)",thunk to slot 0 (ret 4) with this+4
+0x005C5FA0,signature,unsigned int __thiscall f(void* this),"ecx read, plain ret 0x005C5FC0"
+0x005C5FD0,signature,"void* __cdecl f(unsigned int count, void* hint)",plain ret; caller 0x005C68F8 pushes two and pops after
+0x005C6030,signature,"void* __thiscall f(void* this, void* other)",ecx to esi; ret 4 at 0x005C60FC
+0x005C6100,signature,"void __cdecl f(void* dst, void* src)","plain ret 0x005C6182; callers add esp,8"
+0x005C6190,signature,"void* __cdecl f(void* first, void* last, void* destEnd)",plain ret 0x005C61C0
+0x005C61D0,signature,"void* __cdecl f(void* first, void* last, void* dest)",plain ret 0x005C622D
+0x005C6230,signature,"void* __thiscall f(void* this, unsigned int key)",ecx passed on to 0x005C5F90; ret 4
+0x005C6250,signature,"void* __thiscall f(void* this, void* valuePtr)",ecx=this stored; ret 4 at 0x005C627C
+0x005C6290,signature,"void* __thiscall f(void* this, unsigned int flags)","sub ecx,4; jmp 0x005C6300 (ret 4)"
+0x005C62A0,signature,void __thiscall f(void* this),ecx to esi; plain ret 0x005C62FA
+0x005C6300,signature,"void* __thiscall f(void* this, unsigned int flags)",ret 4 at 0x005C631B
+0x005C7000,signature,"void* __thiscall f(void* this, void* outText, void* tokenPath)",ecx passed on to 0x005C6C80; ret 8 at 0x005C7033
+0x005C7050,signature,"void* __thiscall f(void* this, void* outText, void* text, void* outTokenPaths)",ecx saved at 0x005C7099; ret 0xC at 0x005C733C
+0x005C7350,signature,"void __cdecl f(int value, void* out)",0x005C7350
+0x005C7440,signature,void* __thiscall f(void* this),"vftable slot 0; mov eax,imm; ret"
+0x005C7450,signature,"void* __thiscall f(void* this, void* outText)",vftable slot 11; ret 4 at 0x005C7467
+0x005C7470,signature,void* __thiscall f(void* this),ecx to esi; plain ret 0x005C753B
+0x005C7550,signature,"void __thiscall f(void* this, void* attribute)",vftable slot 0; ecx read; ret 4 at 0x005C7570
+0x005C7580,signature,"void __thiscall f(void* this, void* attribute)",vftable slot 1; ret 4 at 0x005C7597
+0x005C75A0,signature,void __thiscall f(void* this),vftable slot 3; ecx read; plain ret 0x005C75B0
+0x005C75C0,signature,"void* __cdecl f(void* first, void* last, void* dest)",plain ret 0x005C75F0
+0x005C7600,signature,"void* __cdecl f(void* first, void* last, void* dest)",plain ret 0x005C7659
+0x005C7660,signature,void __thiscall f(void* this),ecx to esi; plain ret 0x005C76D9
+0x005C76E0,signature,void __thiscall f(void* this),ecx to esi; plain ret 0x005C7745
+0x005C7750,signature,void __thiscall f(void* this),ecx to ebx; plain ret 0x005C7798
+0x005C77A0,signature,"void* __thiscall f(void* this, void* out, void* first, void* firstOwner, void* last, void* lastOwner)",ecx to ebp; ret 0x14 at 0x005C781B
+0x005C7820,signature,"void* __thiscall f(void* this, unsigned int flags)",vftable slot 2; ret 4 at 0x005C783B
+0x005C7840,signature,"void* __thiscall f(void* this, unsigned int flags)",vftable slot 2; ret 4 at 0x005C785B
+0x005C7860,signature,void __thiscall f(void* this),jmp 0x005C7750
+0x005C7870,convention,__thiscall,ecx to esi; ret 0x90 at 0x005C7994 (a count and a 0x8C-byte value on the stack)
+0x005C79A0,signature,"void* __thiscall f(void* this, unsigned int count)",ecx to esi; ret 4 at 0x005C7A0F
+0x005C7A20,signature,"void* __thiscall f(void* this, void* path, float delay)",ecx to esi; ret 8 at 0x005C7AB9
+0x005C7AC0,signature,"void __thiscall f(void* this, void* skipOwner)",ecx to edi; ret 4 at 0x005C7CA9
