@@ -10785,7 +10785,7 @@ id,subsystem,class,how
 10797,unknown,,
 10798,unknown,,
 10799,App,,callers
-10800,unknown,,
+10800,App,,callers
 10801,unknown,,
 10802,unknown,,
 10803,unknown,,
@@ -10838,15 +10838,15 @@ id,subsystem,class,how
 10850,ThirdParty:STL,,owner
 10851,Core,ECBase::ECDynArray<ECBase::ECDynArray<ECBase::ECString>>,name
 10852,App,CClientOptions,name
-10853,App,CClientOptions,builds
+10853,App,CClientOptions,name
 10854,App,,between
 10855,App,CClientOptions,name
-10856,App,CClientOptions,vtable
-10857,App,CClientOptions,vtable
-10858,App,,callers
-10859,App,,callers
-10860,App,CClientOptions,vtable
-10861,App,CClientOptions,builds
+10856,App,CClientOptions,name
+10857,App,CClientOptions,name
+10858,ThirdParty:STL,std::vector<std::vector<std::wstring>>,name
+10859,ThirdParty:STL,std::vector<std::vector<std::wstring>>,name
+10860,App,CClientOptions,name
+10861,App,CClientOptions,name
 10862,App,,callers
 10863,unknown,,
 10864,Resources,AddInManager,callees
@@ -10976,7 +10976,7 @@ id,subsystem,class,how
 10988,App,AddInManager,callers
 10989,unknown,,
 10990,unknown,,
-10991,App,,callers
+10991,App,AddInManager,callers
 10992,unknown,,
 10993,Resources,,callers
 10994,unknown,,
@@ -12168,7 +12168,7 @@ id,subsystem,class,how
 12180,Core,AbilityTreeNode,between
 12181,Core,Destroyer,builds
 12182,Game,PartyData,callers
-12183,unknown,AbilityTreeNode,
+12183,Game,AbilityTreeNode,callers
 12184,Data,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 12185,Core,"ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
 12186,Core,"ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
@@ -12182,7 +12182,7 @@ id,subsystem,class,how
 12194,Game,CCCreatureStats,name
 12195,Game,PartyData,callers
 12196,Game,AbilityChains,name
-12197,App,,callers
+12197,Game,AbilityChains,name
 12198,Game,AbilityChains,name
 12199,Game,AbilityChains,name
 12200,Game,AbilityChains,name
@@ -12567,7 +12567,7 @@ id,subsystem,class,how
 12580,GameModes,GameModeController,name
 12581,GameModes,GameModeController,name
 12582,GameModes,GameModeController,name
-12583,App,,callers
+12583,GameModes,GameModeController,name
 12584,Game,CCObject,name
 12585,unknown,Stub,
 12586,GameModes,GameModeController,name
@@ -14009,7 +14009,7 @@ id,subsystem,class,how
 14022,GameModes,GameMode,name
 14023,GameModes,GameMode,name
 14024,GameModes,GameMode,name
-14025,App,,callers
+14025,GameModes,GameMode,name
 14026,GameModes,GameMode,name
 14027,GameModes,GameMode,name
 14028,GameModes,GameMode,name
@@ -14966,7 +14966,7 @@ id,subsystem,class,how
 14979,Camera,,between
 14980,Camera,,callers
 14981,Camera,,between
-14982,App,,callers
+14982,Camera,SceneCameraManager,name
 14983,Camera,,between
 14984,Camera,SceneCameraShake,callers
 14985,Camera,,between
@@ -15078,8 +15078,8 @@ id,subsystem,class,how
 15092,GameModes,GameModeLoading,name
 15093,GameModes,GameModeLoading,name
 15094,GameModes,GameModeLoading,name
-15095,App,CKeyboardLCD,builds
-15096,App,CKeyboardLCD,builds
+15095,App,CKeyboardLCD,name
+15096,App,CKeyboardLCD,name
 15097,App,CKeyboardLCD,name
 15098,App,CKeyboardLCD,name
 15099,App,CKeyboardLCD,name
@@ -22814,8 +22814,8 @@ id,subsystem,class,how
 22833,ThirdParty:zlib,,range
 22834,ThirdParty:zlib,,range
 22835,ThirdParty:zlib,,range
-22836,App,Console::IConsole,builds
-22837,App,Console::IConsole,vtable
+22836,App,Console::IConsole,name
+22837,App,Console::IConsole,name
 22838,unknown,,
 22839,unknown,,
 22840,unknown,,
@@ -22836,7 +22836,7 @@ id,subsystem,class,how
 22855,unknown,,
 22856,unknown,,
 22857,unknown,,
-22858,App,,callers
+22858,ThirdParty:STL,"std::map<std::wstring,Console::ConsoleFunc*>",name
 22859,ThirdParty:STL,,string
 22860,ThirdParty:STL,,string
 22861,ThirdParty:STL,,between
@@ -22863,7 +22863,7 @@ id,subsystem,class,how
 22882,unknown,,
 22883,unknown,,
 22884,unknown,,
-22885,App,Console::IConsole,builds
+22885,App,Console::Console,name
 22886,unknown,,
 22887,unknown,,
 22888,unknown,,
@@ -22871,21 +22871,21 @@ id,subsystem,class,how
 22890,App,,callers
 22891,unknown,,
 22892,Physics,Console,callers
-22893,App,Console::ConsoleString,vtable
-22894,App,Console::ConsoleString,builds
-22895,App,Console::ConsoleString,vtable
-22896,App,Console::ConsoleString,builds
-22897,App,,callers
-22898,App,Console::ConsoleString,vtable
-22899,App,Console::ConsoleString,vtable
-22900,App,.?AV?$TemplateConsoleFunc@P6APB_WPB_W@Z@Console@@,vtable
-22901,App,Console::ConsoleFunc,builds
-22902,App,Console::ConsoleFunc,vtable
-22903,App,.?AV?$TemplateConsoleFunc@P6APB_WPB_W@Z@Console@@,builds
-22904,App,Console::ConsoleFunc,builds
-22905,App,.?AV?$TemplateConsoleFunc@P6APB_WPB_W@Z@Console@@,vtable
-22906,App,,between
-22907,App,.?AV?$TemplateConsoleFunc@P6APB_WPB_W@Z@Console@@,vtable
+22893,App,Console::ConsoleString,name
+22894,App,Console::ConsoleString,name
+22895,App,Console::ConsoleString,name
+22896,App,Console::ConsoleString,name
+22897,App,Console::ConsoleString,name
+22898,App,Console::ConsoleString,name
+22899,App,Console::ConsoleString,name
+22900,App,Console::TemplateConsoleFunc<wchar_t const*(*)(wchar_t const*)>,name
+22901,App,Console::ConsoleFunc,name
+22902,App,Console::ConsoleFunc,name
+22903,App,Console::TemplateConsoleFunc<wchar_t const*(*)(wchar_t const*)>,name
+22904,App,Console::ConsoleFunc,name
+22905,App,Console::TemplateConsoleFunc<wchar_t const*(*)(wchar_t const*)>,name
+22906,App,Console::TemplateConsoleFunc<wchar_t const*(*)(wchar_t const*)>,name
+22907,App,Console::TemplateConsoleFunc<wchar_t const*(*)(wchar_t const*)>,name
 22908,Resources,EC::PureResourceHelper,name
 22909,unknown,,
 22910,Rendering,,callers
@@ -24081,7 +24081,7 @@ id,subsystem,class,how
 24135,Input,,between
 24136,Input,,between
 24137,Input,ECInput::RawInputWin32,name
-24138,App,,callers
+24138,Input,ECInput::RawInputWin32,name
 24139,Input,ECInput::RawInputWin32,name
 24140,Input,,between
 24141,Input,,between
@@ -24105,15 +24105,15 @@ id,subsystem,class,how
 24159,ThirdParty:STL,,between
 24160,ThirdParty:STL,std::vector<unsigned short>,name
 24161,ThirdParty:STL,,between
-24162,ThirdParty:STL,,between
+24162,Input,,callers
 24163,ThirdParty:STL,,between
 24164,ThirdParty:STL,std::vector<unsigned short>,name
 24165,unknown,,
-24166,App,,callers
+24166,Input,ECInput::RawInputWin32,name
 24167,App,,callers
-24168,unknown,,
-24169,unknown,,
-24170,App,,callers
+24168,Input,,callers
+24169,Input,,callers
+24170,Input,ECInput::RawInputWin32,name
 24171,Input,,callers
 24172,Input,ECInput::RawInputWin32,name
 24173,Input,,callers
@@ -33197,7 +33197,7 @@ id,subsystem,class,how
 33303,unknown,,
 33304,unknown,,
 33305,unknown,,
-33306,App,Console::ConsoleString,vtable
+33306,App,Console::ConsoleString,name
 33307,unknown,,
 33308,unknown,,
 33309,unknown,,
@@ -42149,8 +42149,8 @@ id,subsystem,class,how
 42256,App,CClientOptions,owner
 42257,App,,owner
 42258,App,,owner
-42259,App,,owner
-42260,App,,owner
+42259,ThirdParty:STL,std::vector<std::vector<std::wstring>>,owner
+42260,ThirdParty:STL,std::vector<std::vector<std::wstring>>,owner
 42261,App,CClientOptions,owner
 42262,App,CClientOptions,owner
 42263,App,CClientOptions,owner
@@ -54897,20 +54897,20 @@ id,subsystem,class,how
 55004,Compiler:EHFunclets,,range
 55005,Compiler:EHFunclets,,range
 55006,Compiler:EHFunclets,,range
-55007,App,Console::IConsole,owner
-55008,App,Console::IConsole,owner
-55009,App,Console::IConsole,owner
-55010,App,Console::IConsole,owner
-55011,App,Console::IConsole,owner
-55012,App,Console::IConsole,owner
-55013,App,Console::IConsole,owner
-55014,App,Console::IConsole,owner
-55015,App,Console::IConsole,owner
-55016,App,Console::IConsole,owner
-55017,App,Console::IConsole,owner
-55018,App,Console::IConsole,owner
-55019,App,Console::IConsole,owner
-55020,App,Console::IConsole,owner
+55007,App,Console::Console,owner
+55008,App,Console::Console,owner
+55009,App,Console::Console,owner
+55010,App,Console::Console,owner
+55011,App,Console::Console,owner
+55012,App,Console::Console,owner
+55013,App,Console::Console,owner
+55014,App,Console::Console,owner
+55015,App,Console::Console,owner
+55016,App,Console::Console,owner
+55017,App,Console::Console,owner
+55018,App,Console::Console,owner
+55019,App,Console::Console,owner
+55020,App,Console::Console,owner
 55021,Compiler:EHFunclets,,range
 55022,Compiler:EHFunclets,,range
 55023,Compiler:EHFunclets,,range
@@ -54930,11 +54930,11 @@ id,subsystem,class,how
 55037,App,,owner
 55038,App,,owner
 55039,App,,owner
-55040,App,.?AV?$TemplateConsoleFunc@P6APB_WPB_W@Z@Console@@,owner
-55041,App,.?AV?$TemplateConsoleFunc@P6APB_WPB_W@Z@Console@@,owner
-55042,App,.?AV?$TemplateConsoleFunc@P6APB_WPB_W@Z@Console@@,owner
-55043,App,.?AV?$TemplateConsoleFunc@P6APB_WPB_W@Z@Console@@,owner
-55044,App,.?AV?$TemplateConsoleFunc@P6APB_WPB_W@Z@Console@@,owner
+55040,App,Console::TemplateConsoleFunc<wchar_t const*(*)(wchar_t const*)>,owner
+55041,App,Console::TemplateConsoleFunc<wchar_t const*(*)(wchar_t const*)>,owner
+55042,App,Console::TemplateConsoleFunc<wchar_t const*(*)(wchar_t const*)>,owner
+55043,App,Console::TemplateConsoleFunc<wchar_t const*(*)(wchar_t const*)>,owner
+55044,App,Console::TemplateConsoleFunc<wchar_t const*(*)(wchar_t const*)>,owner
 55045,Compiler:EHFunclets,,range
 55046,Compiler:EHFunclets,,range
 55047,Rendering,,owner
@@ -58711,7 +58711,7 @@ id,subsystem,class,how
 58818,Compiler:AtexitDtors,,range
 58819,Compiler:AtexitDtors,,range
 58820,Compiler:AtexitDtors,,range
-58821,App,,pointer
+58821,App,`dynamic atexit destructor for 'Eclipse::PlatformWin32::GetExecutableVersion,pointer
 58822,Compiler:AtexitDtors,,range
 58823,Compiler:AtexitDtors,,range
 58824,Compiler:AtexitDtors,,range
