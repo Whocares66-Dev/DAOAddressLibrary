@@ -4374,23 +4374,23 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4373,function,Multithreading::ThreadManager::SetThreadName,0x004bbd70,0x007fde80,0x004bbd70
 4374,function,Multithreading::ThreadManager::SetThreadName::filter,0x004bbddb,0x007fdeeb,0x004bbddb
 4375,function,Multithreading::ThreadManager::SetThreadName::except_block,0x004bbddf,0x007fdeef,0x004bbddf
-4376,function,,0x004bbe00,0x007fdf10,0x004bbe00
-4377,function,,0x004bbe10,0x007fdf20,0x004bbe10
-4378,function,,0x004bbe30,0x007fdf40,0x004bbe30
-4379,function,,0x004bbe40,0x005669b0,0x004bbe40
-4380,function,,0x004bbe60,0x00566a20,0x004bbe60
-4381,function,,0x004bbed0,0x007fdfd0,0x004bbed0
-4382,function,,0x004bbf10,0x007fe010,0x004bbf10
-4383,function,,0x004bbfd0,0x007fe0d0,0x004bbfd0
-4384,function,,0x004bc040,0x005694d0,0x004bc040
-4385,function,,0x004bc080,0x007fe140,0x004bc080
-4386,function,,0x004bc0f0,0x007fe200,0x004bc0f0
-4387,function,,0x004bc170,0x007fe280,0x004bc170
-4388,function,,0x004bc1e0,0x007fe2f0,0x004bc1e0
-4389,function,,0x004bc230,0x007fe340,0x004bc230
-4390,function,,0x004bc2f0,0x007fe400,0x004bc2f0
-4391,function,,0x004bc3a0,0x007fe4b0,0x004bc3a0
-4392,function,,0x004bc450,0x007fe560,0x004bc450
+4376,function,Multithreading::ThreadManager::Get,0x004bbe00,0x007fdf10,0x004bbe00
+4377,function,Multithreading::ThreadManager::Destroy,0x004bbe10,0x007fdf20,0x004bbe10
+4378,function,Multithreading::ThreadManager::IsShuttingDown,0x004bbe30,0x007fdf40,0x004bbe30
+4379,function,std::_Tree<?>::_Max,0x004bbe40,0x005669b0,0x004bbe40
+4380,function,std::_Tree_const_iterator<?>::_Inc,0x004bbe60,0x00566a20,0x004bbe60
+4381,function,std::deque<?>::pop_front,0x004bbed0,0x007fdfd0,0x004bbed0
+4382,function,"std::_Copy_opt<std::_Deque_iterator<Multithreading::Task *>,std::_Deque_iterator<Multithreading::Task *>>",0x004bbf10,0x007fe010,0x004bbf10
+4383,function,"std::_Find<std::_Deque_iterator<Multithreading::Task *>,Multithreading::Task *>",0x004bbfd0,0x007fe0d0,0x004bbfd0
+4384,function,std::_Tree<?>::_Buynode,0x004bc040,0x005694d0,0x004bc040
+4385,function,Multithreading::TaskPriorityMap::IsEmpty,0x004bc080,0x007fe140,0x004bc080
+4386,function,Multithreading::TaskPriorityMap::Front,0x004bc0f0,0x007fe200,0x004bc0f0
+4387,function,"std::map<unsigned int,std::deque<Multithreading::Task *>,std::greater<unsigned int>>::find",0x004bc170,0x007fe280,0x004bc170
+4388,function,Multithreading::TaskDeque::PopFront,0x004bc1e0,0x007fe2f0,0x004bc1e0
+4389,function,"std::copy<std::_Deque_iterator<Multithreading::Task *>,std::_Deque_iterator<Multithreading::Task *>>",0x004bc230,0x007fe340,0x004bc230
+4390,function,Multithreading::ThreadManager::StartAndWait,0x004bc2f0,0x007fe400,0x004bc2f0
+4391,function,Multithreading::ThreadManager::RequestShutdown,0x004bc3a0,0x007fe4b0,0x004bc3a0
+4392,function,Multithreading::ThreadManager::GetNextTask,0x004bc450,0x007fe560,0x004bc450
 4393,function,,0x004bc4e0,0x007fe5f0,0x004bc4e0
 4394,function,,0x004bc540,0x007fe650,0x004bc540
 4395,function,,0x004bc5c0,0x007fe6d0,0x004bc5c0
@@ -4421,12 +4421,12 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4420,function,,0x004bdd80,0x007fff10,0x004bdd80
 4421,function,,0x004bde40,0x007fffd0,0x004bde40
 4422,function,,0x004bded0,0x00800060,0x004bded0
-4423,function,,0x004be090,0x00800220,0x004be090
-4424,function,,0x004be1a0,0x00800330,0x004be1a0
-4425,function,,0x004be350,0x008004e0,0x004be350
-4426,function,,0x004be470,0x00800600,0x004be470
-4427,function,,0x004be560,0x008006f0,0x004be560
-4428,function,,0x004be5f0,0x00800780,0x004be5f0
+4423,function,Multithreading::ThreadManager::ThreadManager,0x004be090,0x00800220,0x004be090
+4424,function,Multithreading::ThreadManager::CreateThread,0x004be1a0,0x00800330,0x004be1a0
+4425,function,Multithreading::TaskQueueVector::DeleteAll,0x004be350,0x008004e0,0x004be350
+4426,function,"std::map<unsigned int,std::deque<Multithreading::Task *>,std::greater<unsigned int>>::operator[]",0x004be470,0x00800600,0x004be470
+4427,function,Multithreading::ThreadManager::~ThreadManager,0x004be560,0x008006f0,0x004be560
+4428,function,Multithreading::ThreadManager::`scalar deleting destructor',0x004be5f0,0x00800780,0x004be5f0
 4429,function,,0x004be610,0x008007a0,0x004be610
 4430,function,,0x004be6a0,0x00800830,0x004be6a0
 4431,function,,0x004be860,0x008009f0,0x004be860
@@ -4594,11 +4594,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4593,function,,0x004c4bc0,0x008060f0,0x004c4bc0
 4594,function,,0x004c4be0,0x00806110,0x004c4be0
 4595,function,ECBase::ECString::Split,0x004c4c20,0x00806150,0x004c4c20
-4596,function,,0x004c4d00,0x00806230,0x004c4d00
-4597,function,,0x004c4d30,0x00806260,0x004c4d30
-4598,function,,0x004c4d50,0x00806280,0x004c4d50
-4599,function,,0x004c4d80,0x008062b0,0x004c4d80
-4600,function,,0x004c4da0,0x008062d0,0x004c4da0
+4596,function,Multithreading::ScopedLock::ScopedLock,0x004c4d00,0x00806230,0x004c4d00
+4597,function,Multithreading::ScopedLock::~ScopedLock,0x004c4d30,0x00806260,0x004c4d30
+4598,function,Multithreading::ScopedLock::Lock,0x004c4d50,0x00806280,0x004c4d50
+4599,function,Multithreading::ScopedLock::Unlock,0x004c4d80,0x008062b0,0x004c4d80
+4600,function,Multithreading::Task::Task,0x004c4da0,0x008062d0,0x004c4da0
 4601,function,,0x004c4de0,0x00806310,0x004c4de0
 4602,function,,0x004c4e10,0x009b98a0,0x004c4e10
 4603,function,,0x004c4e20,0x00806340,0x004c4e20
@@ -4725,21 +4725,21 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4724,function,,0x004caf60,0x0080c360,0x004caf60
 4725,function,,0x004cafd0,0x0080c3d0,0x004cafd0
 4726,function,,0x004cb040,0x0080c440,0x004cb040
-4727,function,,0x004cb130,0x0080c530,0x004cb130
+4727,function,EC::ITimer::ITimer,0x004cb130,0x0080c530,0x004cb130
 4728,function,EC::ITimer::Update,0x004cb160,0x0080c560,0x004cb160
-4729,function,,0x004cb1d0,0x0080c5d0,0x004cb1d0
-4730,function,,0x004cb220,0x0080c620,0x004cb220
-4731,function,,0x004cb230,0x0080c630,0x004cb230
-4732,function,,0x004cb240,0x0080c640,0x004cb240
-4733,function,,0x004cb250,0x0080c650,0x004cb250
-4734,function,,0x004cb260,0x0082c4d0,0x004cb260
-4735,function,,0x004cb280,0x0080c660,0x004cb280
-4736,function,,0x004cb2b0,0x0080c690,0x004cb2b0
-4737,function,,0x004cb300,0x0080c6e0,0x004cb300
-4738,function,,0x004cb310,0x0080c6f0,0x004cb310
-4739,function,,0x004cb340,0x0080c720,0x004cb340
-4740,function,,0x004cb390,0x0080c770,0x004cb390
-4741,function,,0x004cb3b0,0x0080c790,0x004cb3b0
+4729,function,EC::ITimer::SinceUpdate,0x004cb1d0,0x0080c5d0,0x004cb1d0
+4730,function,EC::ITimer::~ITimer,0x004cb220,0x0080c620,0x004cb220
+4731,function,EC::ITimer::GetDeltaSeconds,0x004cb230,0x0080c630,0x004cb230
+4732,function,EC::ITimer::GetDeltaMilliseconds,0x004cb240,0x0080c640,0x004cb240
+4733,function,EC::ITimer::GetTotalSeconds,0x004cb250,0x0080c650,0x004cb250
+4734,function,EC::ITimer::`scalar deleting destructor',0x004cb260,0x0082c4d0,0x004cb260
+4735,function,Multithreading::Mutex::Mutex,0x004cb280,0x0080c660,0x004cb280
+4736,function,Multithreading::Mutex::Lock,0x004cb2b0,0x0080c690,0x004cb2b0
+4737,function,Multithreading::Mutex::Unlock,0x004cb300,0x0080c6e0,0x004cb300
+4738,function,Multithreading::Mutex::~Mutex,0x004cb310,0x0080c6f0,0x004cb310
+4739,function,Vector::Equals4,0x004cb340,0x0080c720,0x004cb340
+4740,function,Vector::NotEquals4,0x004cb390,0x0080c770,0x004cb390
+4741,function,Vector::Dot4,0x004cb3b0,0x0080c790,0x004cb3b0
 4742,function,,0x004cb3e0,0x0080c7c0,0x004cb3e0
 4743,function,,0x004cb480,0x0080c860,0x004cb480
 4744,function,,0x004cb490,0x0076ba90,0x004cb490
@@ -100162,7 +100162,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 100161,data,,0x00c2b574,0x00c30fec,0x00c2b574
 100162,data,,0x00c2b580,0x00c29b5c,0x00c2b580
 100163,data,g_memoryManager,0x00c2b584,0x00c29b60,0x00c2b584
-100164,data,,0x00c2b588,0x00c24bc0,0x00c2b588
+100164,data,g_threadManager,0x00c2b588,0x00c24bc0,0x00c2b588
 100165,data,,0x00c2b58c,0x00c24bc4,0x00c2b58c
 100166,data,,0x00c2b590,0x00c24bc8,0x00c2b590
 100167,data,,0x00c2b594,0x00c24bcc,0x00c2b594

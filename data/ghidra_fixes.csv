@@ -1071,3 +1071,45 @@ address,what,value,why
 0x0072AB20,signature,"void* __thiscall f(void* this, unsigned int flags)",upheld by hand against the check; thunk to 0x72AC30 (ret 4); vftable slot
 0x0072AB30,signature,"void* __thiscall f(void* this, unsigned int flags)",upheld by hand against the check; thunk to 0x72AC30 (ret 4); vftable slot
 0x0072AB40,signature,"void* __thiscall f(void* this, unsigned int flags)",upheld by hand against the check; thunk to 0x72AC30 (ret 4); vftable slot
+0x004BBE00,signature,void* __cdecl f(void),"no stack arguments, plain ret"
+0x004BBE10,signature,void __cdecl f(void),"no stack arguments, plain ret 0x4BBE2C"
+0x004BBE30,signature,bool __thiscall f(void* this),"ecx+0x60 used, plain ret, al"
+0x004BBE40,signature,void* __cdecl f(void* node),"arg [esp+4], plain ret 0x4BBE5B"
+0x004BBE60,signature,void __thiscall f(void* this),"ecx saved in esi, plain ret 0x4BBE9E, no value set in eax"
+0x004BBED0,signature,void __thiscall f(void* this),"ecx fields, plain ret 0x4BBF01"
+0x004BC080,signature,bool __thiscall f(void* this),"ecx in edi, plain ret 0x4BC0E1"
+0x004BC0F0,signature,void* __thiscall f(void* this),"ecx in edi, plain ret; returns a pointer"
+0x004BC170,signature,"void* __thiscall f(void* this, void* result, unsigned int* key)","ret 8 at 0x4BC1D6, ecx read first; returns the result pointer"
+0x004BC1E0,signature,void* __thiscall f(void* this),"ecx in esi, plain ret 0x4BC229"
+0x004BC2F0,signature,void __thiscall f(void* this),"ecx in ebp, plain ret 0x4BC393"
+0x004BC3A0,signature,void __thiscall f(void* this),"ecx in esi, plain ret 0x4BC441"
+0x004BC450,signature,"void* __thiscall f(void* this, unsigned int threadIndex)","vftable slot 1, ret 4 at 0x4BC4DB"
+0x004BE090,signature,void* __thiscall f(void* this),"ecx in esi, plain ret 0x4BE191"
+0x004BE1A0,signature,"void* __thiscall f(void* this, const char* name, bool pooled, int kind, int unknown)","ret 0x10 at 0x4BE349; Addresses.h (name, pooled, kind, ?)"
+0x004BE350,signature,"void __thiscall f(void* this, bool erase)","ret 4 at 0x4BE462, ecx in esi"
+0x004BE470,signature,"void* __thiscall f(void* this, unsigned int* key)","ret 4 at 0x4BE553, ecx in esi"
+0x004BE560,signature,void __thiscall f(void* this),"ecx in esi, plain ret 0x4BE5E5"
+0x004BE5F0,signature,"void* __thiscall f(void* this, unsigned char flags)","vftable slot 0, ret 4; only bit 0 tested at 0x4BE5F8"
+0x004C4D00,signature,"void* __thiscall f(void* this, void* mutex, bool lockNow)",ret 8 at 0x4C4D25/0x4C4D2B
+0x004C4D30,signature,void __thiscall f(void* this),"ecx in esi, plain ret"
+0x004C4D50,signature,"bool __thiscall f(void* this, int timeout)",ret 4 at 0x4C4D7C; timeout -1 is infinite
+0x004C4D80,signature,bool __thiscall f(void* this),"ecx in esi, plain ret"
+0x004C4DA0,signature,"void* __thiscall f(void* this, int kind)","ret 4, ecx in esi"
+0x004CB130,signature,void* __thiscall f(void* this),"ecx in esi, plain ret"
+0x004CB1D0,signature,float __thiscall f(void* this),"vftable slot 4, ecx in esi, plain ret, float in st0"
+0x004CB220,signature,void __thiscall f(void* this),"ecx written through, plain ret"
+0x004CB230,signature,float __thiscall f(void* this),vftable slot 2
+0x004CB250,signature,double __thiscall f(void* this),vftable slot 5
+0x004CB260,signature,"void* __thiscall f(void* this, unsigned char flags)","slot 0, ret 4"
+0x004CB280,signature,"void* __thiscall f(void* this, bool recursive, int unused)","ret 8, ecx in esi"
+0x004CB2B0,signature,"bool __thiscall f(void* this, int timeout)","ret 4, ecx in esi"
+0x004CB300,signature,bool __thiscall f(void* this),"plain ret, ecx used"
+0x004CB310,signature,void __thiscall f(void* this),"ecx in esi, plain ret"
+0x004CB340,signature,"bool __cdecl f(float* a, float* b)","args at [esp+4],[esp+8], plain ret, al"
+0x004CB390,signature,"bool __cdecl f(float* a, float* b)","args re-pushed, plain ret, caller cleans 8"
+0x004CB3B0,signature,"float __cdecl f(float* a, float* b)","args [esp+4],[esp+8], plain ret, float in st0"
+0x004BC040,signature,void* __thiscall f(void* this),"upheld by hand against the check; called with ecx = the tree at +0x24 by 0x4BDE8C, ecx unused"
+0x004CB240,signature,int __thiscall f(void* this),upheld by hand against the check; vftable slot 3
+0x004BBF10,convention,__cdecl,"plain ret; the readers' cdecl, written in full"
+0x004BBFD0,convention,__cdecl,"plain ret; the readers' cdecl, written in full"
+0x004BC230,convention,__cdecl,"plain ret; the readers' cdecl, written in full"
