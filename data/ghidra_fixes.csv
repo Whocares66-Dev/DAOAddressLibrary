@@ -7147,3 +7147,83 @@ address,what,value,why
 0x007B51E0,clear,Renderer::Renderer::vfunction10,"COMDAT-folded getter (mov eax,[ecx+8]; ret), used here as a file map's size by 0x0062593E; the Renderer label misleads."
 0x004137C0,clear,?TryAcquireCommit@GSemaphore@@UAE_NXZ,"COMDAT-folded 'return true' (mov al,1; ret); used here as the gallery's All filter predicate (push at 0x006253DE); the GSemaphore label misleads."
 0x0062C2E0,signature,"void __thiscall f(void *this, unsigned int newSize, unsigned int value0, unsigned int value1, unsigned int value2, unsigned int value3)","std::vector<T16>::resize: the 16-byte value passed by value, as four words (ret 0x14); lib-agent's b01, read by lib-agent"
+0x0067E4D0,signature,"void * __cdecl f(void *first, void *last, void *dest)",0x0067E4D0 pushes 3 and returns the copy loop's end
+0x0067E500,signature,"void __cdecl f(void *first, void *last)",0x0067E500 reads [esp+0x1c] and [esp+0x20] only
+0x0067E570,signature,"void * __cdecl f(void *first, void *last, void *dest_end)","0x0067E570 pushes 3, callee 0x0067BD70 returns the new begin"
+0x0067E5A0,signature,"void * __cdecl f(void *first, void *last, void *dest)","0x0067E5A0 reads [ebp+8],[ebp+0xC],[ebp+0x10]"
+0x0067E640,signature,"void __cdecl f(void *first, unsigned int count, void *value)","0x0067E640 reads [ebp+8],[ebp+0xC],[ebp+0x10]"
+0x0067E6E0,signature,"void __cdecl f(void *result, void *first, void *last, void *pred)",0x0067E6E0 four stack arguments
+0x0067EB40,signature,"void __cdecl f(void *first, void *last)","0x0067EB40 reads [esp+4],[esp+8] only"
+0x0067EBF0,signature,"void __cdecl f(void *result, void *first, void *last, void *pred)",twin of 0x0067E6E0
+0x0067F050,signature,"void __cdecl f(void *first, void *last)",twin of 0x0067EB40
+0x0067F100,signature,"void __cdecl f(void *first, void *last, void *pred)",0x0067F100 reads three arguments
+0x0067F140,signature,"void __cdecl f(void *first, void *last, void *pred)",twin of 0x0067F100
+0x0067F290,signature,"void __thiscall f(void *this, void *are_gff)","one GFF argument, ecx the area"
+0x0067F420,signature,bool __thiscall f(void *this),"ecx read, no stack argument, plain ret"
+0x0067F5C0,signature,"void __thiscall f(void *this, void *object)",one object argument
+0x0067F5F0,signature,void __thiscall f(void *this),ecx only
+0x0067F660,signature,"int __thiscall f(void *this, void *object)","mov eax,1 at 0x0067F804, one argument"
+0x0067F9E0,signature,void __thiscall f(void *this),"slot of a vftable, no stack argument"
+0x0067F9F0,signature,void __thiscall f(void *this),ecx only
+0x0067FA30,signature,"void __thiscall f(void *this, void *out_iterator, void *key)","this the tree, ret 8"
+0x0067FAA0,signature,void __thiscall f(void *this),ecx only
+0x0067FAF0,signature,"void __thiscall f(void *this, unsigned int listener_id, int event_id)","ret 8, ecx the area"
+0x0067FB20,signature,"void __thiscall f(void *this, unsigned int id)","one id, ret 4"
+0x0067FB70,signature,"void __thiscall f(void *this, unsigned int id)",one id
+0x0067FB90,signature,void __thiscall f(void *this),ecx only
+0x0067FBF0,signature,"void __thiscall f(void *this, unsigned int id)",one id
+0x0067FC80,signature,"void * __thiscall f(void *this, void *out_pair, void *key)",ret 8: out and key
+0x0067FCE0,signature,"void __thiscall f(void *this, void *first, void *last)",ret 8
+0x0067FD00,signature,void __thiscall f(void *this),ecx only
+0x0067FD40,signature,"void __thiscall f(void *this, void *out_iterator, unsigned int first_container, void *first, unsigned int last_container, void *last)",ret 0x14
+0x0067FDB0,signature,"void * __thiscall f(void *this, void *first, void *last, void *dest)","ret 0xC, returns the end"
+0x0067FDE0,signature,"void * __thiscall f(void *this, void *dest, unsigned int count, void *value)","ret 0xC, returns first+count*0x50"
+0x0067FE20,signature,"void __cdecl f(void *first, void *last, void *pred)","plain ret, three arguments"
+0x0067FE70,signature,"void __cdecl f(void *first, void *last, void *pred)","plain ret, three arguments"
+0x0067FEC0,signature,"unsigned int __stdcall f(void *candidate, unsigned int type_mask, void *tag, int group, void *source, int hostility, int living, int perceived)","ret 0x20, ecx not read first"
+0x00680070,signature,void __thiscall f(void *this),ecx only
+0x006800B0,signature,void __thiscall f(void *this),ecx only
+0x00681DC0,signature,"void __thiscall f(void *this, void *value)",ret 4
+0x00681E50,signature,"void __thiscall f(void *this, void *value)",ret 4
+0x00681EF0,signature,"void * __thiscall f(void *this, void *other)","ret 4, returns this"
+0x00681F50,signature,"void * __stdcall f(void *out_vector, void *saved_struct, int a3, int a4)",ret 0x10
+0x00682020,signature,"void __thiscall f(void *this, void *position)",ret 4
+0x006823F0,signature,"void __thiscall f(void *this, unsigned int id)",one id
+0x00682500,signature,"float * __thiscall f(void *this, void *key)",ret 4
+0x006825E0,signature,"void * __thiscall f(void *this, void *out)","ret 4, returns out"
+0x00682770,signature,"void * __thiscall f(void *this, unsigned int count)",ret 4
+0x006827E0,signature,"void * __thiscall f(void *this, unsigned int count)",ret 4
+0x00682920,signature,void * __thiscall f(void *this),returns the constructed vector
+0x00682930,signature,"void __thiscall f(void *this, unsigned int listener_id, int event_id)",ret 8
+0x00682A70,signature,"void __thiscall f(void *this, void *are_gff)",one argument
+0x00683C80,signature,void __thiscall f(void *this),plain ret at 0x0068475A
+0x00684760,signature,void __thiscall f(void *this),ecx only
+0x00685E50,signature,"unsigned int __thiscall f(void *this, unsigned int owner, void *position, void *orientation)",ret 0xC
+0x00686080,signature,"void * __thiscall f(void *this, float value)",ret 4
+0x00686100,signature,void __thiscall f(void *this),ecx only
+0x00686140,signature,"void * __stdcall f(void *left, void *parent, void *right, void *pair, unsigned char colour)",ret 0x14 at 0x006861D4
+0x006863C0,signature,"void * __thiscall f(void *this, unsigned char object_type)",ret 4
+0x00686490,signature,void * __cdecl f(void *definition_arg),plain ret at 0x0068669C
+0x006866A0,signature,void __thiscall f(void *this),ecx only
+0x006872A0,signature,"void __thiscall f(void *this, void *name)","ret 4, ecx the registry"
+0x00687410,signature,"bool __thiscall f(void *this, void *name, unsigned int size)","ret 8, ecx the area"
+0x00687980,signature,"void __thiscall f(void *this, void *object, int team)",ret 8
+0x00687A50,signature,"void __thiscall f(void *this, void *object, int team)",ret 8
+0x006880A0,signature,void __thiscall f(void *this),ecx only
+0x006880E0,signature,"void __thiscall f(void *this, bool current)",one flag
+0x006889D0,signature,"void * __thiscall f(void *this, int a1, int a2, int a3, int a4)",ret 0x10
+0x00688C70,signature,void __thiscall f(void *this),"ecx only, plain ret"
+0x00688CB0,signature,"void * __thiscall f(void *this, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19)",ret 0x4C
+0x006898C0,signature,void * __thiscall f(void *this),"vftable slot, thunk to a getter"
+0x006898D0,signature,unsigned char __thiscall f(void *this),vftable slot
+0x006898E0,signature,unsigned int __thiscall f(void *this),vftable slot
+0x006898F0,signature,void * __thiscall f(void *this),vftable slot
+0x00689A40,signature,"void * __cdecl f(unsigned int *first, unsigned int *last, unsigned int *dest)","plain ret, three arguments"
+0x00689A80,signature,unsigned int __thiscall f(void *this),vftable slot
+0x00689A90,signature,unsigned int __thiscall f(void *this),vftable slot
+0x00689B20,signature,"void __thiscall f(void *this, int event_id)",target ret 4
+0x00689B30,signature,"void * __thiscall f(void *this, void *node, void *parent)",ret 8
+0x00689BF0,signature,void __thiscall f(void *this),vftable slot
+0x00689C10,signature,"void __thiscall f(void *this, void *other)",ret 4
+0x00689C90,signature,void __thiscall f(void *this),ecx only
+0x00689CD0,signature,void __thiscall f(void *this),ecx only
