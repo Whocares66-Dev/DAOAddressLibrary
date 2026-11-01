@@ -6716,3 +6716,42 @@ address,what,value,why
 0x00603759,signature,void __cdecl f(void),catch funclet at 0x00603759 (ID 11112)
 0x006037FB,signature,void __cdecl f(void),catch funclet at 0x006037FB (ID 11114)
 0x0060EBAC,signature,void __cdecl f(void),catch funclet at 0x0060EBAC (ID 11493)
+0x005AEE20,signature,void __thiscall AddShape(void* this),0x005AEE20
+0x005AEE80,signature,void __thiscall AddJoint(void* this),0x005AEE80
+0x005AEF30,signature,"void __thiscall SetD6TwistMotionOrDistanceFlags(void* this, unsigned int motion)",0x005AEF30 in vtable 0x00AFE0FC slots 44 and 57 (0-based)
+0x005AEF50,signature,"void __thiscall SetD6Drive(void* this, unsigned int index, unsigned int driveType, float spring, float damping, float forceLimit)",0x005AEF50 jump table 0x005AEFB0 giving +0x108..+0x158
+0x005AEFD0,signature,"void __thiscall SetD6Projection(void* this, unsigned int projectionMode, float distance, float angle)",0x005AEFD0
+0x005AF000,signature,"void __thiscall SetD6GearRatio(void* this, float gearRatio)","0x005AF000, between the projection (slot 53) and SetD6Flags 0x005AF020"
+0x005AF0D0,signature,"void __thiscall SetPulleyMotor(void* this, float velocityTarget, float maxForce, bool freeSpin)","0x005AF0D0, after SetPulleyRatio 0x005AF0B0"
+0x005AF100,signature,"void __thiscall SetPulleyFlags(void* this, unsigned int flags)",0x005AF100
+0x005AF150,signature,"void __thiscall SetRevoluteMotor(void* this, float velocityTarget, float maxForce, bool freeSpin)","0x005AF150, after SetRevoluteSpring 0x005AFF90 and before SetRevoluteFlags 0x005AF180"
+0x005AF290,signature,"void __thiscall GetMemoryFootprint(void* this, unsigned int* size, unsigned int* second)",0x005AF290 slot 1 of vtables 0x00AFE0A8 0x00AFE0BC 0x00AFE0D0 0x00AFE0E4 0x00B27528
+0x005AF540,signature,"void __thiscall SetCollisionObjectDensity(void* this, float density)",0x005AF540
+0x005AF550,signature,"void __thiscall SetCollisionObjectVolume(void* this, float volume)",0x005AF550
+0x005AF570,signature,"void __thiscall SetCollisionObjectCollisionGroup(void* this, unsigned int group)",0x005AF570
+0x005AF580,signature,"void __thiscall SetShapeName(void* this, void* wideName)",0x005AF580 wstring ctor 0x004C2480 and operator= 0x004C2AB0 onto shape+8
+0x005AF730,signature,"void __thiscall SetShapeAllowEmitterSpawn(void* this, bool allow)",0x005AF730
+0x005AF8A0,signature,"void __thiscall SetShapeCollisionMask(void* this, unsigned int maskBits0)",0x005AF8A0
+0x005AF8C0,signature,"void __thiscall SetShapePhysicsMaterialName(void* this, void* wideName)","0x005AF8C0 ctor 0x004C2480, operator= 0x004C2AB0 onto shape+0x74, byte +0x71 = 1"
+0x005AF940,signature,"void __thiscall SetShapeVolume(void* this, float volume)",0x005AF940
+0x005AF960,signature,"void __thiscall SetShapeCollisionGroup(void* this, unsigned int group)",0x005AF960
+0x005AFC30,signature,"void __thiscall SetJointTarget(void* this, void* wideTarget)","0x005AFC30 lea ecx,[joint+0x7C]"
+0x005AFE40,signature,"void __stdcall CopyJointLimitSoftDesc(float* dest, float* src)",0x005AFE40
+0x005AFE70,signature,"void __stdcall CopyJointSpringDesc(float* dest, float* src)",0x005AFE70
+0x005B0070,signature,void __thiscall ~PHYToBlueprintBuilder(void* this),0x005B0070
+0x005B01D0,signature,"void* __thiscall scalardeletingdestructor(void* this, unsigned int flags)",0x005B01D0
+0x005B03A0,signature,void* __thiscall PHYToBlueprintBuilder(void* this),0x005B03A0
+0x005B0420,convention,__thiscall,"0x005B0420 calls 0x004F4710 (handle assign), 0x0049D170 (push_back), 0x00538F30 (destroys the argument)"
+0x005B04A0,signature,"void __thiscall BeginRoot(void* this, void* wideName)",0x005B04A0 slot 3
+0x0074DAA0,signature,"void __thiscall RaisePlaceableCollisionEvent(void* this, unsigned int creatureId)",0x0074DAA0
+0x0074F900,signature,"void __thiscall RaiseTrapTriggeredEvent(void* this, unsigned int objectId, void* position)",0x0074F900
+0x008186C0,signature,"void __thiscall ReleaseTriangleMesh(void* this, void* mesh)",0x008186C0
+0x008186D0,signature,"void __thiscall ReleaseConvexMesh(void* this, void* mesh)",0x008186D0
+0x008186E0,signature,"void __thiscall ReleaseClothMesh(void* this, void* mesh)",0x008186E0
+0x00818720,signature,"void __thiscall GetMemoryFootprint(void* this, unsigned int* amount, unsigned int* second)",0x00818720
+0x00818CA0,signature,"void __thiscall SetDebugRenderOrigin(void* this, void* vector4)",0x00818CA0 slot 18
+0x00818D60,signature,"void* __thiscall CreateTriangleMesh(void* this, void* stream)",0x00818D60
+0x00818DC0,signature,"void* __thiscall CreateConvexMesh(void* this, void* stream)",0x00818DC0
+0x00818E20,signature,"void* __thiscall CreateClothMesh(void* this, void* streamHolder)",0x00818E20
+0x008192C0,signature,"void* __thiscall realloc(void* this, void* memory, unsigned int size)",0x008192C0
+0x008197B0,signature,"void* __thiscall GetNxActor(void* this, unsigned int index)",0x008197B0 slot 28 of vtable 0x00B26C2C
