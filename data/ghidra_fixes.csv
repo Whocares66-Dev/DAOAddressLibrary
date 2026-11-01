@@ -1913,3 +1913,43 @@ address,what,value,why
 0x004ABCC0,signature,"void* __thiscall GetMemberName(void* this, unsigned int key)",0x004ABCC0-0x004ABCD7; vftable slot 7
 0x004ABCE0,signature,void* __thiscall CreateMemberIterator(void* this),0x004ABCE0; vftable slot 17; operator new 0x00413660
 0x004ABD10,signature,void* __thiscall GetValue(void* this),"0x004ABD10; iterator slot 4; array begin [array+4], end [array+8]; offset 0x1C"
+0x004ABD50,signature,"void* __thiscall f(void* this, unsigned int flags)",0x004ABD50 (size 0x20); calls 0x004AB810 and operator delete 0x004136C0; ret 4
+0x004ABD70,signature,"void* __thiscall f(void* this, unsigned int flags)",0x004ABD70 (size 0x20); calls 0x004AB8A0 and operator delete 0x004136C0; ret 4
+0x004ABD90,signature,"void* __thiscall f(void* this, unsigned int flags)",0x004ABD90 (size 0x20); calls 0x004ABA30 and operator delete 0x004136C0; ret 4
+0x004ABDB0,signature,"void* __thiscall f(void* this, unsigned int flags)",0x004ABDB0 (size 0x20); calls 0x004ABBC0 and operator delete 0x004136C0; ret 4
+0x004ABFF0,signature,"void* __thiscall f(void* this, unsigned int flags)",0x004ABFF0 (size 0x20); calls 0x004ABDE0 and operator delete 0x004136C0; ret 4
+0x004ABDE0,signature,void __thiscall f(void* this),"0x004ABDE0-0x004ABE49; vftables 0x00AEDCE4/0x00AEDCD0, IAttribute 0x00ADDCFC; plain ret"
+0x004ABE50,signature,"void* __thiscall f(void* this, unsigned int flags)","0x004ABE50 sub ecx,4; jmp 0x004ABFF0; vftable 0x00AEDCD0"
+0x004ABE60,signature,"bool __cdecl f(void* first, void* last, void* container, void* first2, void* check1, void* check2)","0x004ABE60-0x004ABEE1; size division by 0x1C (imul 0x92492493), element step 0x1C, compare 0x004C0DE0, security check 0x008E11F2; plain ret, caller 0x004ABEF0 add esp,0x18; reconciled: read 0x004ABE60, six args, caller add esp,0x18"
+0x004ABEF0,signature,"bool __cdecl f(void* left, void* right)","0x004ABEF0-0x004ABFAF; begin at +4, end at +8; size compare at 0x004ABF42, call 0x004ABE60 at 0x004ABF85, caller 0x004ABFB0 add esp,8"
+0x004ABFB0,signature,"bool __thiscall f(void* this, void* other)","0x004ABFB0-0x004ABFBE; push other, push ecx, call 0x004ABEF0, ret 4"
+0x004ABFD0,signature,"bool __thiscall f(void* this, void* other)","0x004ABFD0-0x004ABFE1; call 0x004ABFB0 then neg al; sbb eax,eax; add eax,1; ret 4"
+0x004AC6B0,signature,"void* __thiscall f(void* this, void* value)","0x004AC6B0-0x004AC720; vftables 0x00AEDADC/0x00AEDAC4, array copy 0x0048DE30 (one body for every pointer or int array); ret 4"
+0x004AC730,signature,"void* __thiscall f(void* this, void* value)","0x004AC730-0x004AC7A0; vftables 0x00AEDCE4/0x00AEDCD0, string array copy 0x004AC430; ret 4"
+0x004AC900,signature,"void* __thiscall f(void* this, void* value)","0x004AC900-0x004AC970; vftables 0x00AEDB4C/0x00AEDB38, array copy 0x0048DE30; ret 4"
+0x004AC980,signature,"void* __thiscall f(void* this, void* value)","0x004AC980-0x004AC9F0; vftables 0x00AEDBD4/0x00AEDBC0 (stores at 0x004AC9D1/0x004AC9D7), array copy 0x0048DE30; ret 4"
+0x004ACA40,signature,"void* __thiscall f(void* this, void* value)","0x004ACA40-0x004ACAB0; vftables 0x00AEDC5C/0x00AEDC48, array copy 0x0048DE30; ret 4"
+0x004AF5A0,signature,"void* __thiscall f(void* this, void* other)",0x004AF5A0-0x004AF610; arg+0xC into 0x0048DE30; vftables 0x00AEDB4C/0x00AEDB38; ret 4; caller 0x004AF720
+0x004AF620,signature,"void* __thiscall f(void* this, void* other)",0x004AF620-0x004AF690; arg+0xC into 0x0048DE30; caller 0x004AF720; ret 4
+0x004AF6A0,signature,"void* __thiscall f(void* this, void* other)",0x004AF6A0-0x004AF710; arg+0xC into 0x0048DE30; caller 0x004AF720; ret 4
+0x004AF570,signature,"void* __thiscall f(void* this, void* other)",0x004AF570-0x004AF59D; vftables 0x00ADE4E4/0x00ADE4D0; ret 4; 21 callers from 0x004AF720 to 0x007F8640
+0x004AC7B0,signature,"void* __thiscall f(void* this, void* value)",0x004AC7B0-0x004AC7EE; slot 21 of vftable 0x00AEDCE4; ret 4
+0x004ACA00,signature,"void* __thiscall f(void* this, void* value)","0x004ACA00-0x004ACA3F; slot 21 of vftables 0x00AEDADC, 0x00AEDB4C, 0x00AEDBD4, 0x00AEDC5C, 0x00B006DC; ret 4"
+0x004AC7F0,signature,"void __thiscall f(void* this, bool freeStorage)","0x004AC7F0-0x004AC8FA; begin +4, end +8, capacity +0xC; element size 4 (sar 2); callers include 0x0087D690 InputMapper::Dispatch and 0x008949F0 ~GroupedInputMappings; ret 4"
+0x004B0F00,signature,"void __thiscall f(void* this, void* text)","0x004B0F00-0x004B0F78; copy 0x0048DE30, 0x004ACB30 builds a default and assigns it (0x00541980), call [vtable+0x54], temp dtor 0x0046C760; ret 4; slot 10 of 4 pointer/int array vftables"
+0x004B0F80,signature,"void __thiscall f(void* this, void* text)","0x004B0F80-0x004B1000; copy 0x004AC430, 0x004ACAC0 builds a default and assigns it (0x004AC490), call [vtable+0x54], temp dtor 0x004072E0; ret 4; slot 10 of vftable 0x00AEDCE4"
+0x004B1B80,signature,"void* __thiscall f(void* this, void* text)","0x004B1B80-0x004B1BBF; Get 0x0053CC40; slot 10 of vftables 0x00AED6AC, 0x00B0045C, 0x00B02D9C; ret 4"
+0x004B1BC0,signature,"void* __thiscall f(void* this, void* out)","0x004B1BC0-0x004B1BEF; Get 0x0053CC40; slot 11 of vftables 0x00AED6AC, 0x00B0045C, 0x00B02D9C; ret 4"
+0x004B1BF0,signature,"void* __thiscall f(void* this, void* out)",0x004B1BF0-0x004B1C7F; Get 0x0053CC40; slot 12 of vftable 0x00AED6AC; ret 4
+0x005C5A70,signature,void __thiscall f(void* this),0x005C5A70-0x005C5AF9; vftables 0x00AFFB64/0x00AFFB50; plain ret
+0x005C5B00,signature,"void* __thiscall f(void* this, unsigned int flags)","0x005C5B00 sub ecx,4; jmp 0x005C5B10; vftable 0x00AFFB50"
+0x005C5B10,signature,"void* __thiscall f(void* this, unsigned int flags)",0x005C5B10 (size 0x20); calls 0x005C5A70 and operator delete 0x004136C0; ret 4
+0x005C5B30,signature,void __thiscall f(void* this),"0x005C5B30-0x005C5BCB; vftables 0x00AFFC40 (+0), 0x00AFFC30 (+8), 0x00AFFBD4 (+0x1C), 0x00AFFBC0 (+0x20); TokenManager::Get 0x00455BF0; plain ret"
+0x005C5BD0,signature,"void* __thiscall f(void* this, unsigned int flags)","0x005C5BD0 sub ecx,0x1C; jmp 0x005C5C00; vftable 0x00AFFBD4"
+0x005C5BE0,signature,"void* __thiscall f(void* this, unsigned int flags)","0x005C5BE0 sub ecx,0x20; jmp 0x005C5C00; vftable 0x00AFFBC0"
+0x005C5BF0,signature,"void* __thiscall f(void* this, unsigned int flags)","0x005C5BF0 sub ecx,8; jmp 0x005C5C00; vftable 0x00AFFC30"
+0x005C5C00,signature,"void* __thiscall f(void* this, unsigned int flags)","0x005C5C00-0x005C5C1B; vftable 0x00AFFC40; calls 0x005C5B30, operator delete 0x004136C0; ret 4"
+0x005C5C20,signature,"void* __thiscall f(void* this, void* value)",0x005C5C20-0x005C5C90; vftables 0x00AFFB64/0x00AFFB50; ret 4
+0x005C5CA0,signature,void* __thiscall f(void* this),0x005C5CA0-0x005C5D5A; plain ret; callers include 0x005DC510 CClientExoApp::CClientExoApp
+0x005C5D60,signature,"void* __thiscall f(void* this, void* unused)","0x005C5D60-0x005C5E1B; ret 4; callers include 0x008951B0 Eclipse::GroupedInputMappings::GroupedInputMappings; reconciled: argument never read, ret 4 only"
+0x005C5E20,signature,void __thiscall f(void* this),"0x005C5E20-0x005C5E74; vftables 0x00AFFC5C, 0x00ADDCFC; plain ret"
