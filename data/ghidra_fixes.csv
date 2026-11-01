@@ -12358,3 +12358,39 @@ address,what,value,why
 0x0046D170,signature,"void * __thiscall Renderer::SubmissionQueue::SubmissionQueue(void * this, int type)",ret 4; +4 = type at 0x0046D17C (from reading B)
 0x0046DD80,signature,"void * __thiscall Renderer::EmitterManager::EmitterManager(void * this, void * owner)",ret 4 at 0x0046DDFE; owner passed to ISceneSubManager ctor 0x0046C4F0 (from reading B)
 0x0046DAB0,signature,"void __thiscall f(void * this, unsigned int n, unsigned int v0, unsigned int v1, unsigned int v2, unsigned int v3, unsigned int v4, unsigned int v5, unsigned int v6, unsigned int v7)","std::vector<Physics::Contact>::resize: the 32-byte element passed by value, as 8 words (ret 0x24)"
+0x0046F110,signature,"void __thiscall Renderer::SubmissionClass::SetCondition(void* this, void* condition)",ret 4 (0x0046F12D); Ghidra has it unnamed.
+0x0046F130,signature,"void* __thiscall Renderer::SOSemanticOverride::SOSemanticOverride(void* this, wchar_t* semantic)",ret 4; the argument is read at 0x0046F15F ([esp+0x3C]); Ghidra shows no parameter and mislabelled offsets.
+0x0046F1E0,signature,"void __thiscall Renderer::SOSemanticOverride::ExecuteOnObject(void* this, void* object)",vtable slot 2; ret 4.
+0x0046F250,signature,"void* __thiscall Renderer::SOMaterialObjectInstanceOverride::SOMaterialObjectInstanceOverride(void* this, wchar_t* materialObject, wchar_t* unused, wchar_t* semantic)",ret 0xC (0x0046F35B); the second argument is built into a wstring and never read (0x0046F2BD-0x0046F320).
+0x0046F360,signature,"void __thiscall Renderer::SOMaterialObjectInstanceOverride::ExecuteOnObject(void* this, void* object)",vtable slot 2; ret 4.
+0x0046F390,signature,void __thiscall Renderer::SOMaterialObjectInstanceOverride::~SOMaterialObjectInstanceOverride(void* this),plain ret.
+0x0046F420,signature,"void* __thiscall Renderer::SOFBEffectEventTrigger::SOFBEffectEventTrigger(void* this, int kind, int event)",ret 8; returns this through EDX copy; Ghidra shows undefined4 and extraout_EDX.
+0x0046F440,signature,"void __thiscall Renderer::SOFBEffectEventTrigger::Execute(void* this, void* objects)",vtable slot 1; ret 4; Ghidra shows no parameter.
+0x0046F450,signature,"void* __thiscall Renderer::SODistanceSort::SODistanceSort(void* this, int farthest)",ret 4.
+0x0046F470,signature,float __cdecl Renderer::SODistanceSort::DistanceSquaredToEye(void* object),"result in ST0 (0x0046F4E2), plain ret, callers pop."
+0x0046F4F0,signature,void* __thiscall Renderer::SOMaterialSort::SOMaterialSort(void* this),plain ret.
+0x0046F510,signature,"void* __thiscall Renderer::SOSMStartPartition::SOSMStartPartition(void* this, int partition)",ret 4.
+0x0046F530,signature,"void __thiscall Renderer::SOSMStartPartition::Execute(void* this, void* objects)",vtable slot 1; ret 4.
+0x0046F560,signature,"void __thiscall Renderer::SOSMStopPartition::Execute(void* this, void* objects)",vtable slot 1; ret 4; the argument is unused.
+0x0046F590,signature,"void __thiscall Renderer::SOSMRenderFadedSpeedTrees::Execute(void* this, void* objects)",vtable slot 1; ret 4.
+0x0046F5A0,signature,"void* __thiscall Renderer::SOSMBlurPartition::SOSMBlurPartition(void* this, int partition)",ret 4.
+0x0046F5C0,signature,"void __thiscall Renderer::SOSMBlurPartition::Execute(void* this, void* objects)",vtable slot 1; ret 4.
+0x0046F5D0,clear,ADMultiPassAffinity::vfunction5,"Identical-code-folded ""return 9"" shared by 7 vtables (0x00AE82A0 SOSMBlurPartition slot 3 among them); name Stub::ReturnNine."
+0x0046F600,signature,"void __thiscall Renderer::SOSMBindBackbuffer::Execute(void* this, void* objects)",vtable slot 1; ret 4.
+0x0046F630,signature,"void __thiscall Renderer::SOSMResetInvisibles::ExecuteOnObject(void* this, void* object)","vtable slot 2; ret 4; the submitted object itself is used (+0x24 flags, +0x0C stamp), not its slot 6."
+0x00451820,clear,Renderer::SSShadowsEnabled::vfunction2,"This is ShadowMaps::IsEnabled (ID 2224); SSShadowsEnabled's slot 1 is the thunk 0x0046F660 that jumps here, so the label makes the thunk decompile as a self-call."
+0x0046F660,signature,bool __thiscall Renderer::SSShadowsEnabled::IsEnabled(void* this),vtable 0x00AE82D0 slot 1; jmp 0x00451820.
+0x0046F670,signature,bool __thiscall Renderer::SSFBEffectsEnabled::IsEnabled(void* this),vtable 0x00AE82E0 slot 1; returns byte 0x00C1E8B5.
+0x0046F680,convention,__cdecl,"Plain ret, reads [esp+4], caller pops (0x004732C9); Ghidra has __thiscall with a spurious parameter."
+0x0046F680,signature,void* __cdecl Renderer::ISubmissionSwitch::Create(int type),"0 SSShadowsEnabled, 1 SSFBEffectsEnabled, else null."
+0x0046F6D0,signature,void* __fastcall Graphics::MaterialObjectInstance::ResolveShader(void* this),"ECX only, tail jump to 0x004F6A80; returns a shader pointer (the runner calls its slot 3, 0x00470D51), not an int key."
+0x0046F700,signature,"bool __thiscall Renderer::SubmissionClass::GetFirstObjectMaterial(void* objects, void** out)",ECX = class+0x10 (0x00470D00); ret 4.
+0x0046F760,convention,__stdcall,ret 8 (0x0046F7F0); Ghidra shows a cdecl with int* parameters.
+0x0046F760,signature,"bool __stdcall Renderer::SOMaterialSort::Less(void* a, void* b)","Shader, then material object, then address."
+0x004716A0,signature,"void* __thiscall Renderer::SOFBEffectStage::SOFBEffectStage(void* this, wchar_t* effect, wchar_t* stage)",ret 8; the stage name is the second argument (0x004717AF reads [esp+0x60] for 0x0045FA60).
+0x00471830,signature,"void __thiscall Renderer::SOFBEffectStage::Execute(void* this, void* objects)",vtable slot 1; ret 4.
+0x00471850,signature,void __thiscall Renderer::SOFBEffectStage::~SOFBEffectStage(void* this),plain ret.
+0x004718E0,signature,"void* __cdecl Renderer::ISubmissionOperation::Create(int type, void* a, void* b, void* c)","plain ret, callers pop; Ghidra's return SOFBEffectStage* and undefined4 type are wrong."
+0x00471F20,signature,"void __cdecl std::_Sort<Renderer::SQObject**,int,Renderer::SOMaterialSort::Less>(void** first, void** last, int ideal, int pred)","plain ret; the empty predicate is passed as a dword; caller 0x00472266 add esp,0x10."
+0x00472010,signature,"void __thiscall Renderer::SQObjectVector::SortNearestFirst(void* this, void* pred)","ECX = the vector (begin +4, end +8); ret 4."
+0x004F77C0,clear,_AfxAygshellState,"A function-local static getter returning the Graphics::MaterialObjectManager singleton 0x00C308C0, not MFC's _AfxAygshellState."
