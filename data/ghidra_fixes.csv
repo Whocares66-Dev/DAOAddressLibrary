@@ -962,3 +962,34 @@ address,what,value,why
 0x004B99A0,signature,"void* __thiscall f(void* this, int size)",slot 7 ret 4 0x004B99F7
 0x004B9A00,signature,"bool __stdcall f(void* a, void* b)",ret 8 ecx unread 0x004B9A39
 0x004B9A50,signature,"void __stdcall f(void* block, unsigned int size, unsigned int tag)",ret 0xC ecx unread 0x004B9A67
+0x00468250,signature,"void __thiscall f(void* this, void* sound)","slot 3, ret 4, one stack arg 0x00468265"
+0x00468270,signature,void __thiscall f(void* this),"slot 15, plain ret 0x004682C3"
+0x004682D0,signature,"void __thiscall f(void* this, bool cover)","slot 12, ret 4, byte arg 0x004682E5"
+0x00468300,signature,void __thiscall f(void* this),"ecx=this, plain ret 0x004683BD"
+0x004683C0,signature,void __thiscall f(void* this),"ecx=this, plain ret 0x0046844A"
+0x00468450,signature,void __thiscall f(void* this),"constructor, plain ret 0x00468456"
+0x00468460,signature,"void* __thiscall f(void* this, unsigned int flags)","slot 14, ret 4, returns this 0x0046847C"
+0x00468480,signature,bool __thiscall f(void* this),"slot 8, al from +0x45 0x00468496"
+0x004684B0,signature,"void __thiscall f(void* this, bool suspended)","slot 7, ret 4 byte arg 0x004684C5"
+0x004684E0,signature,"void __thiscall f(void* this, bool pause)","slot 2, ret 4 byte arg 0x004684FE"
+0x00468520,signature,void __thiscall f(void* this),"ecx=this, plain ret 0x0046859C"
+0x004685A0,signature,"bool __thiscall f(void* this, bool noWait)","ret 4 byte arg 0x00468604, al result 0x0046876C; reconciled: read 0x4685A0, byte arg at 0x468604 skips the wait path"
+0x004687A0,signature,void __thiscall f(void* this),plain ret 0x00468892
+0x004688A0,signature,void __thiscall f(void* this),"slot 13, plain ret 0x004689E5"
+0x004689F0,signature,"void __thiscall f(void* this, float seconds)","slot 9, ret 4, float arg 0x00468A05"
+0x00468A20,signature,void __thiscall f(void* this),"slot 6, plain ret 0x00468A85"
+0x00468A90,signature,"void* __thiscall f(void* this, void* path, unsigned int flags)","ret 8, both stack args used, ecx never read; callers load ecx with this"
+0x00468BF0,signature,"float __thiscall f(void* this, void* name)","slot 11, ret 4, float result in st0"
+0x00468D00,signature,"void* __thiscall f(void* this, void* renderer)","ret 4, arg stored to +4, returns this 0x00468DEB"
+0x00468E10,signature,"void __thiscall f(void* this, bool enabled)","slot 4, ret 4 byte arg 0x00468E10"
+0x00468E20,signature,"bool __thiscall f(void* this, void* name)","slot 0, ret 4, al result 0x00468EC2"
+0x00468F20,signature,void __thiscall f(void* this),"slot 10, plain ret"
+0x00469070,signature,void __thiscall f(void* this),plain ret 0x0046911E
+0x00469120,signature,"void __thiscall f(void* this, void* path, bool loop)","ret 8: path 0x00469158, loop byte 0x004692C2"
+0x00469370,signature,"void* __thiscall f(void* this, unsigned int flags)","slot 14, ret 4, returns this 0x0046938A"
+0x00469390,signature,"bool __thiscall f(void* this, void* name, bool loop)","slot 1, ret 8, al=1 at 0x0046944C"
+0x004D6960,signature,"bool __cdecl f(void* device, void* frameBuffers)","caller add esp 8 at 0x0046838C; args at [esp+8], [esp+0xC]; returns 1 at 0x4D6A3F"
+0x004D6A50,signature,void __cdecl f(void* frameBuffers),caller add esp 4 at 0x0046869D
+0x004D6BD0,signature,"void __cdecl f(void* frameBuffers, void* bink)",caller add esp 8 at 0x004686F9; second arg unread
+0x004D74F0,signature,void __cdecl f(void),no stack args read; callers add esp 4 after a stray push (0x004688FA-0x0046891D)
+0x004D7540,signature,"void __cdecl f(void* device, unsigned int width, unsigned int height)","caller add esp 0xC at 0x00468DDB; arg2 width to 0xC2C044, arg3 height to 0xC2C040"
