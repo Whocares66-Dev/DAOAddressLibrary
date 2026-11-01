@@ -16644,20 +16644,20 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16643,function,,0x00721940,0x006270d0,0x00721940
 16644,function,GUI::GUIScreenshots::GUIScreenshots(const GUIScreenshots&),0x00721a20,0x006271b0,0x00721a20
 16645,function,GUI::GUIScreenshots::ClearLists,0x00721b10,0x006272a0,0x00721b10
-16646,function,,0x00721bc0,0x00627350,0x00721bc0
-16647,function,,0x00721c30,0x006273c0,0x00721c30
-16648,function,,0x007220f0,0x00627880,0x007220f0
-16649,function,,0x00722180,0x00627910,0x00722180
-16650,function,,0x00722240,0x006279d0,0x00722240
-16651,function,,0x00722300,0x00627a90,0x00722300
-16652,function,,0x007223c0,0x00627b50,0x007223c0
+16646,function,GUI::GUIScreenshots::Clone,0x00721bc0,0x00627350,0x00721bc0
+16647,function,GUI::GUIScreenshots::RefreshData,0x00721c30,0x006273c0,0x00721c30
+16648,function,GUI::GUIScreenshots::Close,0x007220f0,0x00627880,0x007220f0
+16649,function,Messages::RegisterText<DeleteScreenshotsMessage>,0x00722180,0x00627910,0x00722180
+16650,function,Messages::RegisterText<UploadScreenshotsMessage>,0x00722240,0x006279d0,0x00722240
+16651,function,Messages::RegisterText<SelectNoneAllScreenshotsMessage>,0x00722300,0x00627a90,0x00722300
+16652,function,GUI::GUIScreenshots::GUIScreenshots,0x007223c0,0x00627b50,0x007223c0
 16653,function,AddInDetailsMessage::AddInDetailsMessage,0x007228a0,0x00628030,0x007228a0
 16654,function,AddInDetailsMessage::AddInDetailsMessage_copy,0x00722900,0x00628090,0x00722900
 16655,function,Stub::MessageDtor_WString_0x4,0x00722970,0x004f4190,0x00722970
 16656,function,AddInStatusMessage::AddInStatusMessage,0x007229d0,0x00628100,0x007229d0
 16657,function,AddInStatusMessage::AddInStatusMessage_copy,0x00722a30,0x00628160,0x00722a30
-16658,function,,0x00722aa0,0x006281d0,0x00722aa0
-16659,function,,0x00722ac0,0x006281f0,0x00722ac0
+16658,function,GUI::GUIContentManager::~GUIContentManager,0x00722aa0,0x006281d0,0x00722aa0
+16659,function,GUI::GUIContentManager::OnShow,0x00722ac0,0x006281f0,0x00722ac0
 16660,function,Stub::ReturnTrue_4,0x00722ae0,0x00497d20,0x00722ae0
 16661,function,GUI::GUIContentManager::HandleMessage_AddInStatusMessage,0x00722af0,0x00628220,0x00722af0
 16662,function,AddInEnableMessage::Create,0x00722b10,0x00628240,0x00722b10
@@ -16666,9 +16666,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16665,function,AddInStatusMessage::Create,0x00722c80,0x006283b0,0x00722c80
 16666,function,GoToRedeemCodeMessage::Create,0x00722cf0,0x00628420,0x00722cf0
 16667,function,GUIPRCDialogResultMessage::Create,0x00722d50,0x00628480,0x00722d50
-16668,function,,0x00722dd0,0x00628500,0x00722dd0
-16669,function,,0x00722de0,0x00628510,0x00722de0
-16670,function,,0x00722df0,0x00628520,0x00722df0
+16668,function,GUI::GUIContentManager::`scalar deleting destructor'`adjustor{28}',0x00722dd0,0x00628500,0x00722dd0
+16669,function,GUI::GUIContentManager::`scalar deleting destructor'`adjustor{32}',0x00722de0,0x00628510,0x00722de0
+16670,function,GUI::GUIContentManager::`scalar deleting destructor'`adjustor{8}',0x00722df0,0x00628520,0x00722df0
 16671,function,GoToRedeemCodeMessage::GetType,0x00722e00,0x00628530,0x00722e00
 16672,function,GoToRedeemCodeMessage::Clone,0x00722e30,0x00628560,0x00722e30
 16673,function,GoToRedeemCodeMessage::InitType,0x00722ea0,0x006285d0,0x00722ea0
@@ -16694,9 +16694,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16693,function,GUIPRCDialogResultMessage::Clone,0x00723440,0x00628b70,0x00723440
 16694,function,GUIPRCDialogResultMessage::InitType,0x007234b0,0x00628be0,0x007234b0
 16695,function,GUIPRCDialogResultMessage::GetName,0x007234d0,0x00628c30,0x007234d0
-16696,function,,0x00723540,0x00628ca0,0x00723540
-16697,function,,0x00723570,0x00628cd0,0x00723570
-16698,function,,0x00723590,0x00628cf0,0x00723590
+16696,function,GUI::GUIContentManager::GetClassInfo,0x00723540,0x00628ca0,0x00723540
+16697,function,GUI::GUIContentManager::`scalar deleting destructor',0x00723570,0x00628cd0,0x00723570
+16698,function,GUI::GUIContentManager::RefreshData,0x00723590,0x00628cf0,0x00723590
 16699,function,GUI::GUIContentManager::HandleMessage_AddInEnableMessage,0x007235c0,0x00628d20,0x007235c0
 16700,function,GUI::GUIContentManager::HandleMessage_AddInDisableMessage,0x007237c0,0x00628f20,0x007237c0
 16701,function,GUI::GUIContentManager::HandleMessage_GUIPRCDialogResultMessage,0x007239c0,0x00629120,0x007239c0
@@ -16707,22 +16707,22 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16706,function,GUI::GUIContentManager::RegisterHandler_AddInStatusMessage,0x00723ca0,0x00629400,0x00723ca0
 16707,function,GUI::GUIContentManager::RegisterHandler_GoToRedeemCodeMessage,0x00723d20,0x00629480,0x00723d20
 16708,function,GUI::GUIContentManager::RegisterHandler_GUIPRCDialogResultMessage,0x00723da0,0x00629500,0x00723da0
-16709,function,,0x00723e20,0x00629580,0x00723e20
-16710,function,,0x00723ea0,0x00629600,0x00723ea0
-16711,function,,0x00723ef0,0x00629650,0x00723ef0
-16712,function,,0x00723f40,0x006296a0,0x00723f40
-16713,function,,0x00724000,0x00629760,0x00724000
-16714,function,,0x007240c0,0x00629820,0x007240c0
-16715,function,,0x00724180,0x006298e0,0x00724180
-16716,function,,0x00724240,0x006299a0,0x00724240
-16717,function,,0x00724300,0x00629a60,0x00724300
-16718,function,,0x007243c0,0x00629b20,0x007243c0
-16719,function,,0x00724610,0x00629d70,0x00724610
+16709,function,GUI::GUIContentManager::Clone,0x00723e20,0x00629580,0x00723e20
+16710,function,GUI::GUIContentManager::RegisterMessageHandlers,0x00723ea0,0x00629600,0x00723ea0
+16711,function,GUI::GUIContentManager::RegisterClass,0x00723ef0,0x00629650,0x00723ef0
+16712,function,Messages::RegisterText<AddInEnableMessage>,0x00723f40,0x006296a0,0x00723f40
+16713,function,Messages::RegisterText<AddInDisableMessage>,0x00724000,0x00629760,0x00724000
+16714,function,Messages::RegisterText<AddInDetailsMessage>,0x007240c0,0x00629820,0x007240c0
+16715,function,Messages::RegisterText<AddInStatusMessage>,0x00724180,0x006298e0,0x00724180
+16716,function,Messages::RegisterText<GoToRedeemCodeMessage>,0x00724240,0x006299a0,0x00724240
+16717,function,Messages::RegisterText<GUIPRCDialogResultMessage>,0x00724300,0x00629a60,0x00724300
+16718,function,GUI::GUIContentManager::GUIContentManager,0x007243c0,0x00629b20,0x007243c0
+16719,function,GUI::GUIPurchaseConfirm::~GUIPurchaseConfirm,0x00724610,0x00629d70,0x00724610
 16720,function,ConfirmPurchaseMessage::Create,0x00724630,0x00629d90,0x00724630
 16721,function,CancelPurchaseMessage::Create,0x00724690,0x00629df0,0x00724690
-16722,function,,0x007246f0,0x00629e60,0x007246f0
-16723,function,,0x00724700,0x00629e70,0x00724700
-16724,function,,0x00724710,0x00629e50,0x00724710
+16722,function,GUI::GUIPurchaseConfirm::`scalar deleting destructor'`adjustor{32}',0x007246f0,0x00629e60,0x007246f0
+16723,function,GUI::GUIPurchaseConfirm::`scalar deleting destructor'`adjustor{8}',0x00724700,0x00629e70,0x00724700
+16724,function,GUI::GUIPurchaseConfirm::`scalar deleting destructor'`adjustor{28}',0x00724710,0x00629e50,0x00724710
 16725,function,ConfirmPurchaseMessage::GetType,0x00724720,0x00629e80,0x00724720
 16726,function,ConfirmPurchaseMessage::Clone,0x00724750,0x00629eb0,0x00724750
 16727,function,ConfirmPurchaseMessage::InitType,0x007247c0,0x00629f20,0x007247c0
@@ -16731,21 +16731,21 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16730,function,CancelPurchaseMessage::Clone,0x00724880,0x00629fe0,0x00724880
 16731,function,CancelPurchaseMessage::InitType,0x007248f0,0x0062a050,0x007248f0
 16732,function,CancelPurchaseMessage::GetName,0x00724910,0x0062a070,0x00724910
-16733,function,,0x00724980,0x0062a0e0,0x00724980
-16734,function,,0x007249b0,0x0062a110,0x007249b0
-16735,function,,0x007249d0,0x0062a130,0x007249d0
+16733,function,GUI::GUIPurchaseConfirm::GetClassInfo,0x00724980,0x0062a0e0,0x00724980
+16734,function,GUI::GUIPurchaseConfirm::`scalar deleting destructor',0x007249b0,0x0062a110,0x007249b0
+16735,function,GUI::GUIPurchaseConfirm::OnShow,0x007249d0,0x0062a130,0x007249d0
 16736,function,GUI::GUIPurchaseConfirm::HandleMessage_ConfirmPurchaseMessage,0x00724a50,0x0062a1b0,0x00724a50
 16737,function,GUI::GUIPurchaseConfirm::HandleMessage_CancelPurchaseMessage,0x00724aa0,0x0062a200,0x00724aa0
 16738,function,GUI::GUIPurchaseConfirm::RegisterHandler_ConfirmPurchaseMessage,0x00724af0,0x0062a250,0x00724af0
 16739,function,GUI::GUIPurchaseConfirm::RegisterHandler_CancelPurchaseMessage,0x00724b70,0x0062a2d0,0x00724b70
-16740,function,,0x00724bf0,0x0062a350,0x00724bf0
-16741,function,,0x00724c70,0x0062a3d0,0x00724c70
-16742,function,,0x00724c90,0x0062a3f0,0x00724c90
-16743,function,,0x00724ce0,0x0062a440,0x00724ce0
-16744,function,,0x00724da0,0x0062a500,0x00724da0
-16745,function,,0x00724e60,0x0062a5c0,0x00724e60
-16746,function,,0x00724fe0,0x0062a740,0x00724fe0
-16747,function,,0x007250a0,0x0062a800,0x007250a0
+16740,function,GUI::GUIPurchaseConfirm::Clone,0x00724bf0,0x0062a350,0x00724bf0
+16741,function,GUI::GUIPurchaseConfirm::RegisterMessageHandlers,0x00724c70,0x0062a3d0,0x00724c70
+16742,function,GUI::GUIPurchaseConfirm::RegisterClass,0x00724c90,0x0062a3f0,0x00724c90
+16743,function,Messages::RegisterText<ConfirmPurchaseMessage>,0x00724ce0,0x0062a440,0x00724ce0
+16744,function,Messages::RegisterText<CancelPurchaseMessage>,0x00724da0,0x0062a500,0x00724da0
+16745,function,GUI::GUIPurchaseConfirm::GUIPurchaseConfirm,0x00724e60,0x0062a5c0,0x00724e60
+16746,function,GUI::GUIFloatyLayer::GUIFloatyLayer,0x00724fe0,0x0062a740,0x00724fe0
+16747,function,GUI::GUIFloatyLayer::`scalar deleting destructor',0x007250a0,0x0062a800,0x007250a0
 16748,function,,0x007250e0,0x0062a840,0x007250e0
 16749,function,,0x007250f0,0x0062a850,0x007250f0
 16750,function,,0x00725100,0x0062a860,0x00725100
