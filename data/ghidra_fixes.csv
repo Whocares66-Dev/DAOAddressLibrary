@@ -7386,3 +7386,50 @@ address,what,value,why
 0x00699F20,clear,CCObject::vfunction10,"0x00699F20 is in the +0x70 (SEffectsHolder) view of CCObject; this is that view, not the CCObject"
 0x00699F30,clear,CCObject::vfunction13,"0x00699F30 is in the +0x70 (SEffectsHolder) view of CCObject; this is that view, not the CCObject"
 0x00699F60,clear,CCObject::vfunction24,"0x00699F60 is in the +0x70 (SEffectsHolder) view of CCObject; this is that view, not the CCObject"
+0x006283D0,clear,Alert::vfunction1,"Adjustor thunk (sub ecx,0x20) to the scalar deleting destructor, not a slot-1 function."
+0x006283E0,clear,Alert::vfunction3,"Adjustor thunk (sub ecx,8) to the scalar deleting destructor."
+0x006283F0,clear,Alert::vfunction2,"Adjustor thunk (sub ecx,0x1C) to the scalar deleting destructor."
+0x00628570,clear,Alert::vfunction5,"It is slot 4, the scalar deleting destructor (data 0x00B05470)."
+0x00628570,signature,"void* __thiscall Alert_scalar_deleting_dtor(void* this, unsigned int flags)",ret 4; tests [esp+8] bit 0.
+0x00628400,signature,void __thiscall Alert_dtor(void* this),Plain ret; ecx read at 0x00628422.
+0x006289E0,signature,void __thiscall AlertPool_dtor(void* this),Plain ret; ecx read at 0x00628A03.
+0x00628BC0,signature,void* __thiscall AlertPool_Acquire(void* this),Plain ret; ecx read at 0x00628BE7; returns the slot in eax (0x00628C93).
+0x00628DE0,clear,Notifications::vfunction1,"Adjustor thunk (sub ecx,0x20) to the scalar deleting destructor."
+0x00628DF0,clear,Notifications::vfunction3,"Adjustor thunk (sub ecx,8) to the scalar deleting destructor."
+0x00628E00,clear,Notifications::vfunction2,"Adjustor thunk (sub ecx,0x1C) to the scalar deleting destructor."
+0x00629600,clear,Notifications::vfunction5,"It is slot 4, the scalar deleting destructor (data 0x00B05590)."
+0x00629600,signature,"void* __thiscall Notifications_scalar_deleting_dtor(void* this, unsigned int flags)",ret 4; tests [esp+8] bit 0.
+0x00629430,signature,"void* __thiscall AlertPool_ctor(void* this, unsigned int initialCount)",ret 4; ecx read at 0x00629452; returns this.
+0x0062CD20,signature,"unsigned int __cdecl GuiAbilityRecords_FindPrereqRoot(unsigned int abilityId, int maxSteps)","Plain ret; caller cleans with add esp,8 at 0x00716031; ecx not read."
+0x00630380,signature,"void __thiscall CCParty_SetBackpackSort(void* this, int sort)",ret 4 (0x006303AE) or tail jump to a ret-4 Set; ecx read at 0x00630380.
+0x00630E70,clear,PartyPickerEntry::vfunction1,"Adjustor thunk (sub ecx,0x20) to the scalar deleting destructor."
+0x00630E80,clear,PartyPickerEntry::vfunction3,"Adjustor thunk (sub ecx,8) to the scalar deleting destructor."
+0x00630E90,clear,PartyPickerEntry::vfunction2,"Adjustor thunk (sub ecx,0x1C) to the scalar deleting destructor."
+0x00630F40,clear,PartyPickerEntry::vfunction5,"It is slot 4, the scalar deleting destructor (data 0x00B05AF0)."
+0x00630F40,signature,"void* __thiscall PartyPickerEntry_scalar_deleting_dtor(void* this, unsigned int flags)",ret 4; tests [esp+8] bit 0.
+0x00630EA0,signature,void __thiscall PartyPickerEntry_dtor(void* this),Plain ret; ecx read at 0x00630EC2.
+0x00638580,convention,__thiscall,"Ghidra has __fastcall(param_1); this is the party, used as ecx for CCParty::GetHero at 0x006385BD; plain ret."
+0x00638580,signature,void __thiscall CCParty_BuildPartyPickerList(void* this),Plain ret at 0x006389EA; no stack arguments.
+0x0063C260,convention,__thiscall,ret 8; the one caller sets ecx = FloatyLayer::Get() at 0x005239DF; the body overwrites ecx unread at 0x0063C260 (this unused).
+0x0063C260,signature,"void __thiscall GUIFloatyLayer_DisplayStatusMessage(void* this, void* text, unsigned int colour)","[esp+0x34] the ECString (capacity at +0x18), [esp+0x38] the colour (fild); this unused."
+0x0063E5B0,convention,__thiscall,Ghidra has __fastcall(MessageReceiver_data); ecx is the floaty layer (+0x14 tested at 0x0063E5DB); plain ret.
+0x0063E5B0,signature,void __thiscall GUIFloatyLayer_Update(void* this),No stack arguments.
+0x00646740,signature,void __thiscall SaveGame_RecordStorySoFarLevelUp(void* this),"plain ret 0x00647244; callers load ecx = [app+0x14C] (0x007FCC9F, 0x007FCCB8); ecx passed unchanged to SaveGame::GetStorySoFarStruct (0x00646783), which reads [ecx+0x10]."
+0x00652570,signature,"void* __thiscall InvokeCallbackMessage_ctor(void* this, void* movie, void* function, void* argument)","ret 0xC; three ECString* copied to +4, +0x20, +0x3C."
+0x006960C0,signature,"void __thiscall CCObject_GetOffscreenIndicatorPosition(void* this, int* outX, int* outY)","ret 8 at 0x006964C6; ecx read at 0x006960F8; [ebp+8], [ebp+0xC] passed to the camera's projection."
+0x0069E120,signature,void __thiscall CCPlayer_ResetForCharGen(void* this),Plain ret; ecx read at 0x0069E122; caller passes g_clientExoApp+0xD0.
+0x006A9C30,clear,EffectGUIInfo::vfunction2,"Adjustor thunk (sub ecx,0x1C) to the scalar deleting destructor."
+0x006A9C40,clear,EffectGUIInfo::vfunction1,"Adjustor thunk (sub ecx,0x20) to the scalar deleting destructor."
+0x006A9C50,clear,EffectGUIInfo::vfunction3,"Adjustor thunk (sub ecx,8) to the scalar deleting destructor."
+0x006A9D00,clear,EffectGUIInfo::vfunction5,"It is slot 4, the scalar deleting destructor (data 0x00B0FA80)."
+0x006A9D00,signature,"void* __thiscall EffectGUIInfo_scalar_deleting_dtor(void* this, unsigned int flags)",ret 4; tests [esp+8] bit 0.
+0x006AA020,clear,PortraitProperties::vfunction1,"Adjustor thunk (sub ecx,0x20) to the scalar deleting destructor at 0x006AD340."
+0x006AA030,clear,PortraitProperties::vfunction3,"Adjustor thunk (sub ecx,8) to the scalar deleting destructor at 0x006AD340."
+0x00628CB0,signature,void __thiscall Notifications_dtor(void* this),plain ret 0x00628DD7 (B).
+0x00627DD0,signature,void* __thiscall Alert_ctor(void* this),plain ret 0x006283C8; returns this (B).
+0x00629520,signature,void* __thiscall Notifications_ctor(void* this),plain ret 0x006295F1 (B).
+0x00630B80,signature,void* __thiscall PartyPickerEntry_ctor(void* this),plain ret 0x00630E67 (B).
+0x006A99F0,signature,void* __thiscall EffectGUIInfo_ctor(void* this),plain ret 0x006A9C2B (B).
+0x006A9C60,signature,void __thiscall EffectGUIInfo_dtor(void* this),plain ret 0x006A9CFC (B).
+0x006A9F10,signature,void* __thiscall PortraitProperties_ctor(void* this),plain ret 0x006AA01A (B).
+0x00765210,clear,OffscreenIndicatorFloaty::vfunction5,"slot 4, Update(float dt); outside the batch, seen at its call of 0x006960C0 (B)."
