@@ -8029,3 +8029,56 @@ address,what,value,why
 0x0072DB20,clear,GUI::GUITactics::vfunction1,a destructor thunk
 0x0072DB30,signature,"void * __thiscall GUI::GUITactics::`scalar deleting destructor'`adjustor{8}'(void * this, unsigned int flags)","sub ecx,8; jmp 0x0072DB70"
 0x0072DB30,clear,GUI::GUITactics::vfunction3,a destructor thunk
+0x0072DB40,signature,void * __thiscall GUI::GUITactics::GetClassInfo(void * this),receiver slot 0; this unread; returns the class node; plain ret
+0x0072DB70,signature,"void * __thiscall GUI::GUITactics::`scalar deleting destructor'(void * this, unsigned int flags)",slot 4; ret 4; returns this
+0x0072DB90,signature,void __thiscall GUI::GUITactics::RegisterClass(void * this),receiver slot 2; tail jmp 0x00402B30 with ecx = this; plain ret
+0x0072DBD0,signature,void * __thiscall GUI::GUITactics::Clone(void * this),receiver slot 1; returns the new copy or null; plain ret
+0x0072DC60,signature,void * __thiscall GUI::GUIChanters::GUIChanters(void * this),constructor; plain ret; returns this
+0x0072DD20,signature,void __thiscall GUI::GUIChanters::~GUIChanters(void * this),plain ret through the tail jmp/call to GUIScene::~GUIScene
+0x0072DD40,signature,"void * __thiscall GUI::GUIChanters::`scalar deleting destructor'`adjustor{8}'(void * this, unsigned int flags)",adjustor thunk; its target ends ret 4
+0x0072DD50,signature,"void * __thiscall GUI::GUIChanters::`scalar deleting destructor'`adjustor{28}'(void * this, unsigned int flags)",adjustor thunk; its target ends ret 4
+0x0072DD60,signature,"void * __thiscall GUI::GUIChanters::`scalar deleting destructor'`adjustor{32}'(void * this, unsigned int flags)",adjustor thunk; its target ends ret 4
+0x0072DD70,signature,void * __thiscall GUI::GUIChanters::GetClassInfo(void * this),receiver slot 0; this unread; returns the class node; plain ret
+0x0072DDA0,signature,"void * __thiscall GUI::GUIChanters::`scalar deleting destructor'(void * this, unsigned int flags)",slot 4; ret 4; returns this
+0x0072DDC0,signature,void __thiscall GUI::GUIChanters::RegisterClass(void * this),receiver slot 2; tail jmp 0x00402B30 with ecx = this; plain ret
+0x0072DE00,signature,void * __thiscall GUI::GUIChanters::Clone(void * this),receiver slot 1; returns the new copy or null; plain ret
+0x0072DE80,signature,void * __thiscall GUI::GUISaveLoad::GUISaveLoad(void * this),constructor; plain ret; returns this
+0x0072DF40,signature,void __thiscall GUI::GUISaveLoad::~GUISaveLoad(void * this),plain ret through the tail jmp/call to GUIScene::~GUIScene
+0x0072DF60,signature,"void * __thiscall GUI::GUISaveLoad::`scalar deleting destructor'`adjustor{28}'(void * this, unsigned int flags)",adjustor thunk; its target ends ret 4
+0x0072DF70,signature,"void * __thiscall GUI::GUISaveLoad::`scalar deleting destructor'`adjustor{32}'(void * this, unsigned int flags)",adjustor thunk; its target ends ret 4
+0x0072DF80,signature,"void * __thiscall GUI::GUISaveLoad::`scalar deleting destructor'`adjustor{8}'(void * this, unsigned int flags)",adjustor thunk; its target ends ret 4
+0x0072DF90,signature,"void * __thiscall GUI::GUISaveLoad::`scalar deleting destructor'(void * this, unsigned int flags)",slot 4; ret 4; returns this
+0x0072DFB0,signature,void __thiscall GUI::GUISaveLoad::Close(void * this),scene override; plain ret; no stack arguments
+0x0072DFD0,signature,void * __thiscall GUI::GUIMainMenu::GUIMainMenu(void * this),constructor; plain ret; returns this
+0x0072E090,signature,void __thiscall GUI::GUIMainMenu::~GUIMainMenu(void * this),plain ret through the tail jmp/call to GUIScene::~GUIScene
+0x0072E0B0,signature,"void * __thiscall GUI::GUIMainMenu::`scalar deleting destructor'`adjustor{28}'(void * this, unsigned int flags)",adjustor thunk; its target ends ret 4
+0x0072E0C0,signature,"void * __thiscall GUI::GUIMainMenu::`scalar deleting destructor'`adjustor{32}'(void * this, unsigned int flags)",adjustor thunk; its target ends ret 4
+0x0072E0D0,signature,"void * __thiscall GUI::GUIMainMenu::`scalar deleting destructor'`adjustor{8}'(void * this, unsigned int flags)",adjustor thunk; its target ends ret 4
+0x0072E0E0,signature,void * __thiscall GUI::GUIMainMenu::GetClassInfo(void * this),receiver slot 0; this unread; returns the class node; plain ret
+0x0072E110,signature,"void * __thiscall GUI::GUIMainMenu::`scalar deleting destructor'(void * this, unsigned int flags)",slot 4; ret 4; returns this
+0x0072E130,signature,void __thiscall GUI::GUIMainMenu::OnShow(void * this),scene override; plain ret; no stack arguments
+0x0072E190,signature,void __thiscall GUI::GUIMainMenu::RegisterClass(void * this),receiver slot 2; tail jmp 0x00402B30 with ecx = this; plain ret
+0x0072E1D0,signature,void * __thiscall GUI::GUIMainMenu::Clone(void * this),receiver slot 1; returns the new copy or null; plain ret
+0x0072E250,signature,void __thiscall GUI::GUIDeath::Close(void * this),slot 6 of GUIDeath (0x00B19C38) and of GUILoading (0x00B18B50); plain ret 0x0072E2BF; esi = ecx at 0x0072E274
+0x0072E2C0,signature,void __thiscall GUI::GUIDeath::~GUIDeath(void * this),plain ret through the tail jmp/call to GUIScene::~GUIScene
+0x0072E340,signature,"void * __thiscall GUI::GUIDeath::`scalar deleting destructor'`adjustor{8}'(void * this, unsigned int flags)",adjustor thunk; its target ends ret 4
+0x0072E350,signature,"void * __thiscall GUI::GUIDeath::`scalar deleting destructor'`adjustor{28}'(void * this, unsigned int flags)",adjustor thunk; its target ends ret 4
+0x0072E360,signature,"void * __thiscall GUI::GUIDeath::`scalar deleting destructor'`adjustor{32}'(void * this, unsigned int flags)",adjustor thunk; its target ends ret 4
+0x0072E370,signature,void * __thiscall GUI::GUIDeath::GetClassInfo(void * this),receiver slot 0; this unread; returns the class node; plain ret
+0x0072E3A0,signature,void __thiscall GUI::GUIDeath::RegisterClass(void * this),receiver slot 2; tail jmp 0x00402B30 with ecx = this; plain ret
+0x0072E3E0,signature,"void * __thiscall GUI::GUIDeath::GUIDeath(void * this, void * other)",copy constructor; ret 4
+0x0072E460,signature,void * __thiscall GUI::GUIDeath::Clone(void * this),receiver slot 1; returns the new copy or null; plain ret
+0x0072E4D0,signature,"void * __thiscall GUI::GUIDeath::`scalar deleting destructor'(void * this, unsigned int flags)",slot 4; ret 4; returns this
+0x0072E250,clear,GUI::GUILoading::vfunction7,slot 6 (Close) shared by GUIDeath (0x00B19C38) and GUILoading (0x00B18B50)
+0x0072DD60,clear,GUI::GUIChanters::vfunction1,an adjustor{32} thunk; the same label is on the real getter 0x0072DD70
+0x0072DD40,clear,GUI::GUIChanters::vfunction3,an adjustor{8} thunk; the same label is on RegisterClass 0x0072DDC0
+0x0072DD50,clear,GUI::GUIChanters::vfunction2,an adjustor{28} thunk; the same label is on Clone 0x0072DE00
+0x0072E0C0,clear,GUI::GUIMainMenu::vfunction1,an adjustor{32} thunk; the same label is on the real getter 0x0072E0E0
+0x0072E0B0,clear,GUI::GUIMainMenu::vfunction2,an adjustor{28} thunk; the same label is on Clone 0x0072E1D0
+0x0072E0D0,clear,GUI::GUIMainMenu::vfunction3,an adjustor{8} thunk; the same label is on RegisterClass 0x0072E190
+0x0072E360,clear,GUI::GUIDeath::vfunction1,an adjustor{32} thunk; the same label is on the real getter 0x0072E370
+0x0072E340,clear,GUI::GUIDeath::vfunction3,an adjustor{8} thunk; the same label is on RegisterClass 0x0072E3A0
+0x0072E3E0,clear,GUI::GUIDeath::GUIDeath,"the copy constructor (ret 4), not the constructor 0x0072E4F0 that has the same label"
+0x0072E460,clear,GUI::GUIDeath::clone,"lower-case placeholder; it is slot 1 Clone (0x00B19C24), named by its signature row"
+0x0072E130,clear,GUI::GUIMainMenu::vfunction6,"placeholder (1-based: slot 5, OnShow, 0x00B19B7C); named by its signature row"
+0x0072DFB0,clear,GUI::GUISaveLoad::vfunction7,"placeholder (1-based: slot 6, Close, 0x00B19AD8); named by its signature row"
