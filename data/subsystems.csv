@@ -53,7 +53,7 @@ id,subsystem,class,how
 52,GUI,IGUISystem,name
 53,Core,LocString,name
 54,App,UpdateSplashScreenTask,vtable
-55,unknown,,
+55,App,EclipseGame,name
 56,App,,callers
 57,Online,,callers
 58,App,,callers
@@ -210,7 +210,7 @@ id,subsystem,class,how
 209,App,EclipseGame,name
 210,ThirdParty:STL,,string
 211,ThirdParty:STL,,between
-212,ThirdParty:STL,,between
+212,ThirdParty:STL,std::vector<std::wstring>,name
 213,ThirdParty:STL,,between
 214,ThirdParty:STL,,between
 215,ThirdParty:STL,,between
@@ -3549,7 +3549,7 @@ id,subsystem,class,how
 3554,unknown,,
 3555,ThirdParty:STL,,string
 3556,ThirdParty:STL,,string
-3557,unknown,,
+3557,ThirdParty:STL,std::vector<?>,name
 3558,unknown,,
 3559,unknown,,
 3560,unknown,,
@@ -5278,7 +5278,7 @@ id,subsystem,class,how
 5283,Resources,,callers
 5284,ThirdParty:STL,,between
 5285,ThirdParty:STL,,string
-5286,unknown,,
+5286,Resources,,callers
 5287,Resources,GdaStore,name
 5288,Resources,GdaStore,name
 5289,Resources,GdaStore,name
@@ -11475,7 +11475,7 @@ id,subsystem,class,how
 11487,GUI,GUI::HighlightInfo,name
 11488,GUI,GUI::HighlightInfo,name
 11489,GUI,GUI::HighlightInfo,name
-11490,Scripting,ScriptBackend,name
+11490,GUI,GUI::DragonAgeGUISystem,name
 11491,GUI,GUI::DragonAgeGUISystem,name
 11492,ThirdParty:STL,std::list<GUI::SharedMapEntry>,name
 11493,ThirdParty:STL,std::list<GUI::SharedMapEntry>,owner
@@ -11625,7 +11625,7 @@ id,subsystem,class,how
 11637,GUI,GUI::DragonAgeGUISystem,name
 11638,GUI,GUI::DragonAgeGUISystem,name
 11639,GUI,GUI::DragonAgeGUISystem,name
-11640,GUI,GUI,callers
+11640,Messaging,Messages,name
 11641,Data,"SmartData::Attribute<unsigned int,ExplicitObjectIDMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 11642,GUI,GUI::DragonAgeGUISystem,name
 11643,GUI,GUI::DragonAgeGUISystem,name
@@ -12704,10 +12704,10 @@ id,subsystem,class,how
 12717,ThirdParty:STL,ClientAIMaster,between
 12718,ThirdParty:STL,ClientAIMaster,between
 12719,ThirdParty:STL,,string
-12720,unknown,ClientAIMaster,
-12721,World,World,name
-12722,unknown,ClientAIMaster,
-12723,unknown,ClientAIMaster,
+12720,ThirdParty:STL,ClientAIMaster,between
+12721,Game,ClientAIMaster,callers
+12722,ThirdParty:STL,ClientAIMaster,between
+12723,ThirdParty:STL,ClientAIMaster,between
 12724,ThirdParty:STL,std::list<void *>,name
 12725,ThirdParty:STL,std::list<void *>,name
 12726,unknown,ClientAIMaster,
@@ -13679,7 +13679,7 @@ id,subsystem,class,how
 13692,unknown,,
 13693,AI,KDCreatureBranch,name
 13694,unknown,CCArea,
-13695,unknown,,
+13695,Rendering,,callers
 13696,unknown,,
 13697,unknown,,
 13698,unknown,,
@@ -13853,7 +13853,7 @@ id,subsystem,class,how
 13866,unknown,CCArea,
 13867,unknown,,
 13868,unknown,,
-13869,GameModes,,callers
+13869,Conversation,ConversationData,name
 13870,GameModes,GameModeDialogData,name
 13871,GameModes,GameModeDialog,name
 13872,GameModes,GUI,between
@@ -13863,12 +13863,12 @@ id,subsystem,class,how
 13876,GameModes,GameModeDialog,name
 13877,GameModes,GameModeDialog,name
 13878,GameModes,GameModeDialogData,name
-13879,unknown,,
+13879,GameModes,,callers
 13880,Conversation,Conversation,name
 13881,GameModes,GameModeDialog,name
 13882,GameModes,GameModeDialog,name
 13883,Conversation,ConversationData,name
-13884,GameModes,,callers
+13884,GameModes,GameModeDialog,name
 13885,Conversation,Response,name
 13886,Conversation,Response,name
 13887,Conversation,Response,name
@@ -13972,8 +13972,8 @@ id,subsystem,class,how
 13985,unknown,,
 13986,Scripting,ScriptBackend,name
 13987,Scripting,ScriptBackend,name
-13988,App,TrainingTutorial,callers
-13989,Game,TrainingTutorial,callees
+13988,Game,TutorialControl,name
+13989,Game,TutorialControl,name
 13990,Game,Tutorial,name
 13991,Game,Tutorial,name
 13992,Game,Tutorial,name
@@ -14076,7 +14076,7 @@ id,subsystem,class,how
 14089,Game,CCObject,name
 14090,Game,CCObject,name
 14091,Game,CCObject,name
-14092,Game,CCCreature,name
+14092,Game,CCObject,name
 14093,Game,CCCreature,name
 14094,Game,CCCreature,name
 14095,Game,CCCreature,name
@@ -14847,7 +14847,7 @@ id,subsystem,class,how
 14860,Scripting,ScriptBackend,name
 14861,unknown,,
 14862,Game,,callers
-14863,Game,CCCreature,vtable
+14863,Game,CCCreature,name
 14864,Game,CCCreature,vtable
 14865,Game,CCCreature,name
 14866,Game,,callers
@@ -14871,7 +14871,7 @@ id,subsystem,class,how
 14884,Game,,callers
 14885,unknown,,
 14886,unknown,,
-14887,Game,,callers
+14887,Game,CCCreature,name
 14888,Game,CCCreature,vtable
 14889,Game,,between
 14890,Game,CCCreature,name
@@ -16026,7 +16026,7 @@ id,subsystem,class,how
 16041,Scripting,,between
 16042,Scripting,ScriptBackend,name
 16043,unknown,,
-16044,unknown,,
+16044,unknown,ScriptVarTable,
 16045,unknown,,
 16046,unknown,,
 16047,unknown,,
@@ -18331,7 +18331,7 @@ id,subsystem,class,how
 18347,unknown,,
 18348,unknown,,
 18349,unknown,,
-18350,unknown,,
+18350,Core,ECBase::ECDynArray<SmartData::Attribute<?>>,name
 18351,unknown,,
 18352,unknown,,
 18353,unknown,,
@@ -32362,7 +32362,7 @@ id,subsystem,class,how
 32467,unknown,,
 32468,Resources,,callers
 32469,Game,CRules,builds
-32470,unknown,,
+32470,Resources,GdaTables,name
 32471,Resources,GdaTables,name
 32472,Resources,GdaTables,name
 32473,Resources,GdaTables,name
@@ -33520,8 +33520,8 @@ id,subsystem,class,how
 33627,unknown,,
 33628,unknown,,
 33629,unknown,,
-33630,unknown,,
-33631,unknown,,
+33630,Game,EffectsHolder,name
+33631,Game,,between
 33632,Game,EffectsHolder,name
 33633,Game,,between
 33634,Game,EffectsHolder,name
@@ -33538,7 +33538,7 @@ id,subsystem,class,how
 33645,Game,CGameEffect,name
 33646,unknown,,
 33647,unknown,,
-33648,unknown,,
+33648,Game,,callers
 33649,Animation,RootMotion,name
 33650,Animation,RootMotion,name
 33651,Animation,RootMotion,name
@@ -37094,8 +37094,8 @@ id,subsystem,class,how
 37201,ThirdParty:STL,,owner
 37202,ThirdParty:STL,,owner
 37203,ThirdParty:STL,,owner
-37204,Compiler:EHFunclets,,range
-37205,Compiler:EHFunclets,,range
+37204,Resources,,owner
+37205,Resources,,owner
 37206,Resources,GdaStore,owner
 37207,Resources,GdaStore,owner
 37208,Resources,GdaStore,owner
@@ -43567,8 +43567,8 @@ id,subsystem,class,how
 43674,ThirdParty:STL,"std::map<unsigned int,GUI::SharedMapEntry>",owner
 43675,ThirdParty:STL,"std::map<unsigned int,GUI::SharedMapEntry>",owner
 43676,ThirdParty:STL,"std::map<unsigned int,GUI::SharedMapEntry>",owner
-43677,GUI,GUI,owner
-43678,GUI,GUI,owner
+43677,Messaging,Messages,owner
+43678,Messaging,Messages,owner
 43679,GUI,GUI::DragonAgeGUISystem,owner
 43680,GUI,GUI::DragonAgeGUISystem,owner
 43681,GUI,GUI::DragonAgeGUISystem,owner
@@ -45038,12 +45038,12 @@ id,subsystem,class,how
 45145,ThirdParty:STL,ClientAIMaster,owner
 45146,ThirdParty:STL,ClientAIMaster,owner
 45147,ThirdParty:STL,ClientAIMaster,owner
-45148,Compiler:EHFunclets,,range
-45149,Compiler:EHFunclets,,range
-45150,Compiler:EHFunclets,,range
-45151,Compiler:EHFunclets,,range
-45152,Compiler:EHFunclets,,range
-45153,Compiler:EHFunclets,,range
+45148,ThirdParty:STL,ClientAIMaster,owner
+45149,ThirdParty:STL,ClientAIMaster,owner
+45150,ThirdParty:STL,ClientAIMaster,owner
+45151,ThirdParty:STL,ClientAIMaster,owner
+45152,ThirdParty:STL,ClientAIMaster,owner
+45153,ThirdParty:STL,ClientAIMaster,owner
 45154,Compiler:EHFunclets,,range
 45155,Compiler:EHFunclets,,range
 45156,AI,AIMaster,owner
@@ -46134,9 +46134,9 @@ id,subsystem,class,how
 46241,Scripting,ScriptBackend,owner
 46242,Scripting,ScriptBackend,owner
 46243,Scripting,ScriptBackend,owner
-46244,Game,TrainingTutorial,owner
-46245,Game,TrainingTutorial,owner
-46246,Game,TrainingTutorial,owner
+46244,Game,TutorialControl,owner
+46245,Game,TutorialControl,owner
+46246,Game,TutorialControl,owner
 46247,Game,Tutorial,owner
 46248,Game,Tutorial,owner
 46249,Game,Tutorial,owner
