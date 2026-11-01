@@ -625,3 +625,39 @@ address,what,value,why
 0x005A2830,signature,"void __thiscall f(void *this, void *node, void *out)","0x005A2830: ret 8; dispatcher 0x005A62B0 pushes edi (out), ebx (node), ecx=esi"
 0x005A28B0,signature,"void __thiscall f(void *this, void *node, void *out)","0x005A28B0: ret 8; dispatcher 0x005A62B0 pushes edi (out), ebx (node), ecx=esi"
 0x005A28B0,clear,NxStream::NxStream_Constructor_or_Destructor,"0x005A28B0 is the NodeCloth element reader, not an NxStream constructor (reading B; label not checked in Ghidra)"
+0x00A3C9E0,signature,void * __thiscall f(void *this),"GeodesicSphere::GetRandomVertex: settled: names differ only; code is the CRT LCG on the seed at 0xc4bf74, callers at 0x81d08b, 0x81d124, 0x81d767, 0x81da"
+0x00A3CA10,signature,"unsigned int __thiscall f(void *this, void *point)","GeodesicSphere::AddUniqueVertex: settled: 0xa3ca10 returns an existing vertex within 1e-6 on x, y, z, so the name says it is unique"
+0x00A3CAF0,signature,"void __thiscall f(void *this, int i0, int i1, int i2, void *outIndices)",GeodesicSphere::SubdivideTriangle: two readings agreed
+0x00A3CCF0,signature,"void * __thiscall f(void *this, void *first, unsigned int count)","std::vector<unsigned int>::vector: UNSETTLED: A std::vector<unsigned int>::vector, B std::vector<int>::vector; MSVC 8 vector with checked iterators, 4-byte"
+0x00A3CD60,signature,"void * __thiscall f(void *this, int levels)","GeodesicSphere::GeodesicSphere: two readings agreed on the class; settled: subsystem Physics (not Core, not unclear), see 32848's callers lying in Physi"
+0x00A3D200,signature,void * __thiscall f(void *this),Resources::Resources: settled: the ScriptDebugger constructor (0xa3dca0) calls it and its destructor (0xa3dda0) calls Resources::Release (ID 5
+0x00A3D210,signature,void __thiscall f(void *this),Resources::Release: settled: adjustor-style thunk takes its target's name; disassembly 0xa3d210 jmp 0x4d5890; 0x4d5890 jmp 0x4d5860
+0x00A3D270,signature,"bool __thiscall f(void *this, int *pos, unsigned int *out)",ScriptDebugger::ReadInt: two readings agreed
+0x00A3D2C0,signature,"bool __thiscall f(void *this, int *pos, void *out)",ScriptDebugger::ReadString: two readings agreed
+0x00A3D370,signature,"void __thiscall f(void *this, int s0, int s1, int s2, int s3, int s4, int s5, int s6)","ScriptDebugger::ToggleExpanded: settled: the table is the variables already sent to the client (name, type, stack slot, expanded flag; FindVariable and "
+0x00A3D420,signature,"char * __stdcall f(char *text, unsigned int length, unsigned int pos, unsigned int *outNext, int skipTerminator)",ScriptDebugger::FindLineEnd: two readings agreed
+0x00A3D490,signature,"int __thiscall f(void *this, int offset)","ScriptDebugger::FindFunction: settled: FindParameter (0xa3d620) reads a per-function parameter count at +0x44 and FormatFrame prints the function, so "
+0x00A3D4C0,signature,"int __thiscall f(void *this, int offset, int exact)","ScriptDebugger::FindLine: settled: A and B agree on the search, B's description of exact mode kept"
+0x00A3D580,signature,"int __thiscall f(void *this, int file, int offset, int minStackOffset)",ScriptDebugger::FindNextVariableInScope: settled: same function; B's name kept as it covers globals and locals
+0x00A3D620,signature,"int __thiscall f(void *this, int file, int n)","ScriptDebugger::FindFunctionVariable: settled in the decompile of 0xa3d620: B's reading is exact, A's 'n-th parameter' was loose"
+0x00A3D690,signature,int __thiscall f(void *this),"ScriptDebugger::AllocVariableSlot: settled: same function; neutral name kept (A AllocVariableSlot, B AllocWatchSlot), the table is not shown to be watches"
+0x00A3DC20,signature,"int __thiscall f(void *this, void *name, void *type, int stackSlot)","ScriptDebugger::FindVariable: settled in the disassembly at 0xa3ee07-0xa3ee2d (args name, type, slot as SendVariable passes them): A's 'value' second "
+0x00A3DCA0,signature,void * __thiscall f(void *this),ScriptDebugger::ScriptDebugger: settled: B's reading of the decompile kept; session is 0xc4 bytes from the only caller 0xa2da04
+0x00A3DDA0,signature,void __thiscall f(void *this),ScriptDebugger::~ScriptDebugger: two readings agreed
+0x00A3E1B0,signature,"void __thiscall f(void *this, void *name, void *outData, void *outSize, void *owner)","ScriptDebugger::LoadResource: settled: name neutral; Resources::Find is called with type 3 (INFERRED: script source) (A LoadResource, B LoadScriptReso"
+0x00A3E2C0,signature,"unsigned int __thiscall f(void *this, void *type)","ScriptDebugger::GetTypeSize: settled: same function, names differ only (B GetTypeStackSize)"
+0x00A3E3A0,signature,"void * __thiscall f(void *this, void *out, void *type)",ScriptDebugger::GetTypeName: two readings agreed
+0x00A3E500,signature,"void * __thiscall f(void *this, void *out, int slot, void *type)",ScriptDebugger::FormatValue: two readings agreed
+0x00A3E6A0,signature,"int __thiscall f(void *this, int file, int offset)","ScriptDebugger::GetFrameLocalsSize: settled: same function, names differ only (A GetLocalsSize)"
+0x00A3E790,signature,"void * __thiscall f(void *this, void *out, int slot, void *name, void *type)",ScriptDebugger::FormatVariable: two readings agreed
+0x00A3E890,signature,"void __thiscall f(void *this, void *out, int file, int offset, int slot)",ScriptDebugger::FormatFrame: settled: same function; named with its FormatVariable and FormatValue family (B DescribeFrame)
+0x00A3EB50,signature,void __thiscall f(void *this),ScriptDebugger::SendCallStack: two readings agreed
+0x00A3EDB0,signature,"void __thiscall f(void *this, void *id, void *name, void *valueText, void *type, int stackSlot)","ScriptDebugger::SendVariable: settled in the disassembly at 0xa3edeb-0xa3ee2d: arguments are id, name, value text, type, stack slot (B's order); A's p"
+0x00A3F6F0,signature,"void __thiscall f(void *this, int frame)","ScriptDebugger::SendFrameVariables: settled: same function, names differ only (A SendVariables)"
+0x00A3FC30,signature,void __thiscall f(void *this),"ScriptDebugger::SendStringLists: settled: A's neutral name kept; B's 'language' purpose is not shown, the slot 0x44 strings are the engine type names Get"
+0x00A3FF30,signature,"void __thiscall f(void *this, int n0, int n1, int n2, int n3, int n4, int n5, int n6, int currentLine)",ScriptDebugger::SendSource: settled: B's detail that it skips resending when the name equals the last sent (+0xa0) and ends with a G1Di current-line
+0x00A40210,signature,"void __thiscall f(void *this, int frame, int mode)","ScriptDebugger::SelectFrame: settled: same function, names differ only (B ShowFrame)"
+0x00A403B0,signature,"int __thiscall f(void *this, unsigned int mode)",ScriptDebugger::ResumeExecution: settled in the decompile of 0xa403b0: the saved position is read from the VM entry (+0x218/+0x21c) and called for D42e a
+0x00A40450,signature,"void __thiscall f(void *this, int *pos)",ScriptDebugger::ProcessCommand: settled: B's fuller reading checked against the decompile of 0xa40450 (A HandleCommand)
+0x00A406D0,signature,int __thiscall f(void *this),"ScriptDebugger::Poll: settled in the decompile of 0xa406d0: slot 0x64 is called after the loop on every path that does not return 0, not only "
+0x00A3D220,signature,void __thiscall f(void *this),"ScriptDebugger::EndSession: frees the two buffers, then tail-jumps (jmp eax) to the transport's slot 0x58; no stack arguments; lib-agent, two readings, 2026-10-31"
