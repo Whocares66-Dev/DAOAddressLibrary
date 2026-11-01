@@ -9784,3 +9784,39 @@ address,what,value,why
 0x00837970,signature,"void* __cdecl f(void* out, void* hit)",convention and arguments read at 0x00837970-0x008379FA
 0x00837A00,signature,"void* __cdecl f(void* out, void* in)",convention and arguments read at 0x00837A00-0x00837A3A
 0x00837A60,signature,"void* __cdecl f(void* out, void* in)","convention and arguments read at 0x00837A60-0x00837A78 (fld dword, fstp qword)"
+0x00837B70,signature,"void* __cdecl f(void* outMatrix, void* nxMat34)",plain ret at 0x00837BEA; caller adds esp 8 (0x0081DD57); returns the out pointer in eax
+0x00837CE0,signature,void __thiscall f(void* this),plain ret at 0x00837CF8; vftable slot 3; ecx saved in esi
+0x00837FB0,signature,"void __thiscall f(void* this, void* userObject)",ret 4 at 0x00838003; vftable slot 17
+0x00838010,signature,void* __thiscall f(void* this),plain ret at 0x00838062; vftable slot 18; edi returned
+0x008386E0,signature,"void* __thiscall f(void* this, unsigned int flags)",ret 4 at 0x008386FB; vftable slot 0; returns esi=this
+0x00838700,signature,void __thiscall f(void* this),plain ret; vftable slot 1; ecx saved in esi at 0x00838704
+0x008388B0,signature,bool __thiscall f(void* this),plain ret at 0x00838991; ecx in esi at 0x008388DF; al set 0 or 1
+0x008389A0,signature,void __thiscall f(void* this),plain ret; ecx saved in esi at the entry; no result
+0x008389C0,signature,void __thiscall f(void* this),plain ret; ecx saved in esi at the entry; no result
+0x008389E0,signature,void __thiscall f(void* this),plain ret; ecx saved in esi at the entry; no result
+0x00838A00,signature,void __thiscall f(void* this),plain ret; ecx saved in esi at the entry; no result
+0x00838A20,signature,void __thiscall f(void* this),plain ret; ecx saved in esi at the entry; no result
+0x00838A40,signature,void __thiscall f(void* this),plain ret; ecx saved in esi at the entry; no result
+0x00838CC0,signature,void __thiscall f(void* this),plain ret at 0x00838CC6; ecx written through
+0x00838CD0,signature,"void* __thiscall f(void* this, unsigned int flags)",ret 4 at 0x00838CEC; vftable slot 0; returns this
+0x00838CF0,signature,void __thiscall f(void* this),plain ret at 0x00838DBE; vftable slot 1
+0x00838DD0,signature,void __thiscall f(void* this),plain ret at 0x00838DD6
+0x00838E80,signature,void* __thiscall f(void* this),plain ret at 0x00838E8A; vftable slot 2
+0x00838FF0,signature,bool __thiscall f(void* this),plain ret at 0x00839016 and 0x0083901D; vftable slot 9; eax 0 or 1
+0x00839020,signature,void __thiscall f(void* this),plain ret at 0x00839070; vftable slot 10
+0x008391A0,signature,"void* __thiscall f(void* this, void* out, void* name)",ret 8 at 0x00839216; ecx in edi; out returned in eax
+0x00839340,signature,"void __thiscall f(void* this, int roomId)",ret 4 at 0x0083939F; vftable slot 27
+0x00839560,signature,void __thiscall f(void* this),plain ret; vftable slot 11
+0x00839600,signature,void __thiscall f(void* this),plain ret; vftable slot 12
+0x008398F0,signature,"void* __thiscall f(void* this, void* name)",ret 4 at 0x00839AA7; vftable slot 4; actor in eax
+0x00839AE0,signature,void __thiscall f(void* this),plain ret at 0x00839BCC; vftable slot 26
+0x00839FC0,signature,"unsigned int __thiscall f(void* this, void* names)",ret 4 at 0x0083A071; vftable slot 24; vector size returned
+0x0083A300,signature,"void* __thiscall f(void* this, unsigned int value)",ret 4 at 0x0083A30E; vftable slots 9 and 10; result of storeBuffer
+0x0083A530,signature,"void __thiscall f(void* this, unsigned int* size, unsigned int* extra)",ret 8 at 0x0083A550; second base vftable slot 1
+0x0083A680,signature,void __thiscall f(void* this),plain ret at 0x0083A686
+0x0083A690,signature,"void* __thiscall f(void* this, unsigned int flags)",ret 4 at 0x0083A6AC; vftable slot 0
+0x00844970,signature,"void __cdecl f(void* text, int channel, float seconds)",plain ret at 0x00844992; caller 0x00819182 pushes 3 and adds esp 0xC (0x0081918A)
+0x0097B350,signature,void __thiscall f(void* this),plain ret at 0x0097B357; vftable slot 4
+0x00A49590,signature,"bool __thiscall f(void* this, void* boxMin, void* boxMax, float margin, float heightTolerance)",ret 0x10 at 0x00A4970A; ecx moved to edi at 0x00A495B4; four stack arguments read at ebp+8..+0x14
+0x00AD89D0,signature,void __cdecl f(void),plain ret via jmp to ~PhysicsManager; atexit callback
+0x0083A420,signature,"void* __thiscall f(void* this, unsigned int flags)","adjustor thunk (sub ecx,4; jmp 0x0083A560) of the deleting destructor: ret 4, returns this"
