@@ -1545,3 +1545,84 @@ address,what,value,why
 0x004D0BB0,signature,void __thiscall f(void* this),read 0x004D0BB0-0x004D0C4E
 0x004D0C50,signature,"void __thiscall f(void* this, unsigned int n)",read 0x004D0C50-0x004D0C70 (ret 4)
 0x004CF5E0,signature,"void __thiscall f(void* this, void* val)",ret N / ecx use read in 0x004CF5E0-0x004CF68F (ret 4)
+0x004D0C80,signature,"void __thiscall f(void* this, bool destroy)","ret 4 with ecx read at 0x004D0C80, byte arg compared at 0x004D0CA8"
+0x004D1040,signature,"bool __thiscall f(void* this, unsigned int count, int unread)",ret 8 at 0x004D16AA
+0x004D16B0,signature,bool __thiscall f(void* this),"plain ret, ecx read at 0x004D16B4"
+0x004D19D0,signature,"void* __thiscall f(void* this, void* name, unsigned int arg2, bool arg3)","ret 0xC at 0x004D1AFD, three args forwarded to 0x004E6C50 at 0x004D1A05-0x004D1A0A, returns this"
+0x004D1B00,signature,"void* __stdcall f(void* a, void* b, void* c, void* d, void* e)","ret 0x14 at 0x004D1B63, ecx never read"
+0x004D5540,signature,bool __thiscall f(void* this),"plain ret, [ecx] read at 0x004D5540"
+0x004D5570,signature,bool __thiscall f(void* this),"plain ret, [ecx] read at 0x004D5570"
+0x004D55A0,signature,"void* __thiscall f(void* this, void* out)","ret 4 at 0x004D5621, returns the out string"
+0x004D5630,signature,bool __thiscall f(void* this),"plain ret, [ecx] read at 0x004D5655"
+0x004D57D0,signature,"void* __thiscall f(void* this, void* out)","ret 4 at 0x004D5855, returns the out string"
+0x004D58A0,signature,"void __thiscall f(void* this, void* other)",ret 4 at 0x004D58D6
+0x004D58E0,signature,"void* __thiscall f(void* this, void* other)",ret 4 at 0x004D58F6
+0x004D5900,signature,"void* __thiscall f(void* this, void* other)",ret 4 at 0x004D5910
+0x004D5920,signature,"void* __thiscall f(void* this, unsigned int first, unsigned int last)",ret 8 at 0x004D5942
+0x004D5950,signature,"bool __stdcall f(void* object, int unused)","ret 8 at 0x004D595D; caller 0x004D5EB0 pushes (object, 0) at 0x004D5ED6-0x004D5EDA"
+0x004D59A0,signature,void __thiscall f(void* this),plain ret at 0x004D5A0C
+0x004D5A20,signature,"void __thiscall f(void* this, void* writer, unsigned int group)","ret 8 at 0x004D5A4B; field 0x4075 from the address of arg 2, 0x4076 from this+8"
+0x004D5A50,signature,"void* __cdecl f(void* out, void* name, unsigned int mode)",plain ret at 0x004D5A84; caller 0x004D5C35 adds 0xC
+0x004D5A90,signature,"void* __cdecl f(void* out, void* name)",plain ret at 0x004D5ACB; caller adds 8 at 0x004D5C10
+0x004E0BF0,signature,void __thiscall f(void* this),"plain ret at 0x004E0E9B, ecx saved at 0x004E0C2B"
+0x004E0EA0,signature,void __thiscall f(void* this),plain ret at 0x004E1136
+0x004E3670,signature,void __thiscall f(void* this),plain ret at 0x004E36DE
+0x004E3700,signature,"void* __thiscall f(void* this, void* path, void* b, void* c, void* d)","ret 0x10 at 0x004E37A4, ecx saved at 0x004E3724"
+0x004E46E0,convention,__stdcall,"ret 0x1C at 0x004E47ED, a wstring (28 bytes) by value; caller 0x004E5770 pushes it at 0x004E579B-0x004E57A8 and adds nothing after the call at 0x004E57AF; ecx written at 0x004E470D before any read"
+0x004E47F0,signature,"void* __thiscall f(void* this, unsigned int strref)",ret 4 at 0x004E48F7; returns the string of list 0x4A3B (0x004E4911-0x004E4933)
+0x004E4A20,signature,"void __stdcall f(void* first, void* last)",ret 8 at 0x004E4A41
+0x004E4A50,signature,void __thiscall f(void* this),plain ret at 0x004E4A96
+0x004E4AA0,convention,__thiscall,"ret 0x14 at 0x004E4B07, ecx saved at 0x004E4AA8"
+0x004E4B10,signature,"void __thiscall f(void* this, unsigned int index)","ret 4 at 0x004E4BBF, ecx saved at 0x004E4B14"
+0x004E4BD0,signature,"bool __thiscall f(void* this, void* name)","ret 4 at 0x004E4C7F, al=1 at 0x004E4C7B"
+0x004E4CA0,signature,void __thiscall f(void* this),"plain ret at 0x004E4D84, ecx saved at 0x004E4CC5"
+0x004E4D90,signature,void* __thiscall f(void* this),"plain ret at 0x004E4DCA, returns 0x00BF4B20"
+0x004E4DE0,signature,"void* __stdcall f(void* first, void* last, void* dest)","ret 0xC at 0x004E4E06, ecx only a slot"
+0x004E4E10,signature,void __thiscall f(void* this),plain ret at 0x004E4E48
+0x004E5210,signature,"void* __thiscall f(void* this, unsigned int flags)","ret 4 at 0x004E522B, returns this"
+0x004E5230,convention,__thiscall,"ret 0x10 at 0x004E52D5, ecx saved at 0x004E5238"
+0x004E52E0,convention,__thiscall,"ret 0x10 at 0x004E53F2, ecx saved at 0x004E5307"
+0x004E5400,signature,"void* __thiscall f(void* this, void* other)",ret 4 at 0x004E543B
+0x004E5570,signature,"void __thiscall f(void* this, void* value)","ret 4 at 0x004E55E2, ecx saved at 0x004E5574"
+0x004E5610,signature,"void* __thiscall f(void* this, void* other)",thiscall at 0x004E5610
+0x004E5670,signature,"void* __thiscall f(void* this, unsigned int count)",thiscall at 0x004E5670
+0x004E56E0,signature,"void __thiscall f(void* this, void* value, unsigned int index)",thiscall at 0x004E56E0
+0x004E5EF0,signature,"void* __thiscall f(void* this, void* other)",thiscall at 0x004E5EF0
+0x004E5F70,signature,void* __thiscall f(void* this),thiscall at 0x004E5F70
+0x004E6000,signature,void __thiscall f(void* this),thiscall at 0x004E6000
+0x004E6060,signature,void* __thiscall f(void* this),thiscall at 0x004E6060
+0x004E6550,signature,"bool __stdcall f(void* resource, unsigned int a, unsigned int b, unsigned int c)","ret 0x10 at 0x004E656C, al cleared at 0x004E656F, no ecx read"
+0x004E65B0,signature,void __thiscall f(void* this),thiscall at 0x004E65B0
+0x004E65D0,signature,void __thiscall f(void* this),thiscall at 0x004E65D0
+0x004E6600,signature,int __thiscall f(void* this),thiscall at 0x004E6600
+0x004E6620,signature,"void* __cdecl f(void* out, void* container1, void* first, void* container2, void* last, void* value)","cdecl, six stack args, returns out in eax (0x004E6645)"
+0x004E6660,signature,"bool __thiscall f(void* this, void* other)",thiscall at 0x004E6660
+0x004E66D0,signature,"bool __thiscall f(void* this, void* name)",thiscall at 0x004E66D0
+0x004E6740,signature,void __thiscall f(void* this),thiscall at 0x004E6740
+0x004E6880,signature,"void* __thiscall f(void* this, void* name)",thiscall at 0x004E6880
+0x004E68C0,convention,__thiscall,"this in ecx, callee clears: ret N at the end of 0x004E68C0"
+0x004E69F0,signature,"void* __thiscall f(void* this, unsigned int count)",thiscall at 0x004E69F0
+0x004E6A60,signature,"void __thiscall f(void* this, void* other)",thiscall at 0x004E6A60
+0x004E6A90,signature,"bool __thiscall f(void* this, void* names, void* type, unsigned char loaded, unsigned int unread)",thiscall at 0x004E6A90
+0x004E6C50,signature,"void* __thiscall f(void* this, void* name, int priority, unsigned char flag)","thiscall, ret 0xC at 0x004E6D0A"
+0x004E6D10,signature,void __thiscall f(void* this),thiscall at 0x004E6D10
+0x004E6E30,signature,"void* __thiscall f(void* this, unsigned char flags)",thiscall at 0x004E6E30
+0x004E6F30,signature,void* __cdecl f(void* extension),cdecl at 0x004E6F30
+0x004E9B20,signature,void* __thiscall f(void* this),thiscall at 0x004E9B20
+0x004E9B90,signature,void __thiscall f(void* this),thiscall at 0x004E9B90
+0x004E9BF0,signature,"void __thiscall f(void* this, void* file, int a1, int a2, int a3, unsigned int a4, unsigned int a5)","thiscall, ret 0x18 at 0x004E9C1A: six arguments"
+0x004E9C20,signature,"void __thiscall f(void* this, void* path, int a1, int a2, int a3, unsigned int a4, unsigned int a5)",thiscall at 0x004E9C20
+0x004E9C60,signature,"void* __thiscall f(void* this, unsigned int index)",thiscall at 0x004E9C60
+0x004E9C90,signature,"void* __thiscall f(void* this, unsigned char flags)",thiscall at 0x004E9C90
+0x004E9CB0,signature,"void __thiscall f(void* this, void* taskRef)",thiscall at 0x004E9CB0
+0x004E9DD0,signature,void __thiscall f(void* this),thiscall at 0x004E9DD0
+0x004EBB60,signature,void __thiscall f(void* this),thiscall at 0x004EBB60
+0x004EBB70,signature,"bool __thiscall f(void* this, unsigned int rowIndex, unsigned int columnHash, void* out)","vftable slot 16, thiscall, ret 0xC"
+0x004EBBB0,signature,"bool __thiscall f(void* this, unsigned int rowIndex, unsigned int columnHash, void* out)","vftable slot 17, thiscall, ret 0xC"
+0x004EBBF0,signature,"bool __thiscall f(void* this, unsigned int rowId, unsigned int columnHash, int* rowIndex, int* columnIndex)",thiscall at 0x004EBBF0
+0x004EBC50,signature,"bool __thiscall f(void* this, unsigned int rowId, unsigned int columnHash, void* out)","vftable slot 20, thiscall; al tested after the resolve at 0x004EBC6E"
+0x004EBCA0,signature,"void* __cdecl f(void* out, void* base, unsigned int offset)",cdecl at 0x004EBCA0
+0x004EBCF0,signature,"unsigned int __cdecl f(void* base, unsigned int offset)",cdecl at 0x004EBCF0
+0x004EA310,signature,"void* __cdecl f(void* file, int a, int b, int c)","plain ret at 0x004EA34B; four stack args read, passed on to 0x004E9BF0"
+0x004EA350,signature,"void* __cdecl f(void* path, int a, int b, int c)","plain ret; four stack args read, passed on to 0x004E9C20"
+0x004E5FE0,signature,void __thiscall f(void* this),"the readers' convention, upheld against the check; thiscall at 0x004E5FE0"
