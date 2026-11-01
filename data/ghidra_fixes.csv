@@ -8120,3 +8120,46 @@ address,what,value,why
 0x0072E4F0,convention,__thiscall,"constructor, no stack arguments, plain ret at 0x0072E6BE, ecx read at 0x0072E51D"
 0x0072E910,convention,__thiscall,"constructor, no stack arguments, plain ret at 0x0072EA71"
 0x0072EA80,convention,__thiscall,"constructor, no stack arguments, plain ret at 0x0072EB33"
+0x0072F380,signature,void* __thiscall GUI::GUIMap::GetClassInfo(void* this),"vftable slot 0, plain ret, returns the class node; Ghidra labels it vfunction1"
+0x0072F3B0,signature,void __thiscall GUI::GUIMap::RegisterClass(void* this),"vftable slot 2, plain ret or tail jump to 0x00402B30 with this; Ghidra labels it vfunction3"
+0x0072F410,signature,void __thiscall GUI::GUIMap::OnShow(void* this),"vftable slot 5, plain ret; Ghidra labels it vfunction6"
+0x0072F4F0,signature,"void* __thiscall GUI::GUIMap::GUIMap(void* this, void* other)","copy constructor, ret 4; carries the same label as the default constructor"
+0x0072F5D0,signature,void __thiscall GUI::GUIMap::CreateMaskResources(void* this),"ECX read at 0x0072F5FD before any write, plain ret; Ghidra has it as __fastcall FUN_0072f5d0"
+0x0072F9A0,signature,void* __thiscall GUI::GUIMap::Clone(void* this),"vftable slot 1, plain ret; Ghidra labels it clone"
+0x0072FA10,signature,void* __thiscall GUI::GUIMap::GUIMap(void* this),"default constructor, plain ret"
+0x0072FB10,signature,void __thiscall GUI::GUISkills::~GUISkills(void* this),writes [ECX] then jmp 0x00A559E0
+0x0072FB30,signature,"void* __thiscall GUI::GUISkills::`scalar deleting destructor'`adjustor{32}'(void* this, unsigned int flags)","sub ecx,0x20; jmp 0x0072FB90; Ghidra labels it vfunction1"
+0x0072FB40,signature,"void* __thiscall GUI::GUISkills::`scalar deleting destructor'`adjustor{8}'(void* this, unsigned int flags)","sub ecx,8; jmp 0x0072FB90; Ghidra labels it vfunction3"
+0x0072FB50,signature,"void* __thiscall GUI::GUISkills::`scalar deleting destructor'`adjustor{28}'(void* this, unsigned int flags)","sub ecx,0x1c; jmp 0x0072FB90; Ghidra labels it vfunction2"
+0x0072FB60,signature,void* __thiscall GUI::GUISkills::GetClassInfo(void* this),vftable slot 0; Ghidra labels it vfunction1
+0x0072FB90,signature,"void* __thiscall GUI::GUISkills::`scalar deleting destructor'(void* this, unsigned int flags)","vftable slot 4, ret 4; Ghidra labels it vfunction5"
+0x0072FC50,signature,void __thiscall GUI::GUISkills::RegisterClass(void* this),vftable slot 2; Ghidra labels it vfunction3
+0x0072FC90,signature,void* __thiscall GUI::GUISkills::Clone(void* this),vftable slot 1; Ghidra labels it vfunction2
+0x0072FE30,signature,void __thiscall GUI::GUISpellsTalents::~GUISpellsTalents(void* this),writes [ECX] then jmp 0x00A559E0
+0x0072FE50,signature,"void* __thiscall GUI::GUISpellsTalents::`scalar deleting destructor'`adjustor{28}'(void* this, unsigned int flags)","sub ecx,0x1c; jmp 0x0072FEB0; Ghidra labels it vfunction2"
+0x0072FE60,signature,"void* __thiscall GUI::GUISpellsTalents::`scalar deleting destructor'`adjustor{32}'(void* this, unsigned int flags)","sub ecx,0x20; jmp 0x0072FEB0; Ghidra labels it vfunction1"
+0x0072FE70,signature,"void* __thiscall GUI::GUISpellsTalents::`scalar deleting destructor'`adjustor{8}'(void* this, unsigned int flags)","sub ecx,8; jmp 0x0072FEB0; Ghidra labels it vfunction3"
+0x0072FE80,signature,void* __thiscall GUI::GUISpellsTalents::GetClassInfo(void* this),vftable slot 0; Ghidra labels it vfunction1
+0x0072FEB0,signature,"void* __thiscall GUI::GUISpellsTalents::`scalar deleting destructor'(void* this, unsigned int flags)","vftable slot 4, ret 4; Ghidra labels it vfunction5"
+0x0072FED0,signature,void __thiscall GUI::GUISpellsTalents::RegisterClass(void* this),vftable slot 2; Ghidra labels it vfunction3
+0x00730000,signature,void* __thiscall GUI::GUISpellsTalents::Clone(void* this),vftable slot 1; Ghidra labels it vfunction2
+0x007301A0,signature,void __thiscall GUI::GUIItemUpgrade::~GUIItemUpgrade(void* this),plain ret
+0x00730230,signature,"void* __thiscall GUI::GUIItemUpgrade::`scalar deleting destructor'`adjustor{28}'(void* this, unsigned int flags)","sub ecx,0x1c; jmp 0x00730260; Ghidra labels it vfunction2"
+0x00730240,signature,"void* __thiscall GUI::GUIItemUpgrade::`scalar deleting destructor'`adjustor{32}'(void* this, unsigned int flags)","sub ecx,0x20; jmp 0x00730260; Ghidra labels it vfunction1"
+0x00730250,signature,"void* __thiscall GUI::GUIItemUpgrade::`scalar deleting destructor'`adjustor{8}'(void* this, unsigned int flags)","sub ecx,8; jmp 0x00730260; Ghidra labels it vfunction3"
+0x00730260,signature,"void* __thiscall GUI::GUIItemUpgrade::`scalar deleting destructor'(void* this, unsigned int flags)","vftable slot 4, ret 4; Ghidra labels it vfunction5"
+0x00730280,signature,void __thiscall GUI::GUIItemUpgrade::OnShow(void* this),"vftable slot 5, plain ret; Ghidra labels it vfunction6"
+0x00730440,signature,void __thiscall GUI::GUIItemUpgrade::Close(void* this),"vftable slot 6, ends in a tail jmp through the attribute's slot +0x24; Ghidra labels it vfunction7"
+0x00730490,signature,void* __thiscall GUI::GUIItemUpgrade::GUIItemUpgrade(void* this),"default constructor, plain ret"
+0x007310F0,signature,void __thiscall GUI::GUIInventory::~GUIInventory(void* this),plain ret
+0x00731220,signature,"void* __thiscall GUI::GUIInventory::`scalar deleting destructor'`adjustor{28}'(void* this, unsigned int flags)","sub ecx,0x1c; jmp 0x007321B0; Ghidra labels it vfunction2"
+0x00731230,signature,"void* __thiscall GUI::GUIInventory::`scalar deleting destructor'`adjustor{32}'(void* this, unsigned int flags)","sub ecx,0x20; jmp 0x007321B0; Ghidra labels it vfunction1"
+0x00731240,signature,"void* __thiscall GUI::GUIInventory::`scalar deleting destructor'`adjustor{8}'(void* this, unsigned int flags)","sub ecx,8; jmp 0x007321B0; Ghidra labels it vfunction3"
+0x00731250,signature,void* __thiscall GUI::GUIInventory::GetClassInfo(void* this),vftable slot 0; Ghidra labels it vfunction1
+0x007315E0,signature,void __thiscall GUI::GUIInventory::Close(void* this),"vftable slot 6, plain ret; Ghidra labels it vfunction7"
+0x007321B0,signature,"void* __thiscall GUI::GUIInventory::`scalar deleting destructor'(void* this, unsigned int flags)","vftable slot 4, ret 4; Ghidra labels it vfunction5"
+0x007321D0,signature,void __thiscall GUI::GUIInventory::RegisterMessageHandlers(void* this),"vftable slot 3, tail jmp 0x00732130; Ghidra labels it vfunction4"
+0x007F4EA0,signature,"void* __thiscall SlotItemLocation::ItemIn(void* this, int slot)","reads [esp+4] at 0x007F4EA3 into the key's +8, ret 4 at 0x007F4ED6; Ghidra shows no parameter"
+0x007B8ED0,clear,TiXmlDocument::~TiXmlDocument,a __thiscall on GUI::GUIPaperdoll called by GUIInventory::Close at 0x007316D4; not TinyXML's destructor
+0x0072F5D0,convention,__thiscall,"Ghidra shows __fastcall with an unnamed parameter; ECX moved to ESI at 0x0072F5FD before any write, plain ret at 0x0072F993; the one caller passes ECX = the scene at 0x0072FAF4"
+0x004F77C0,clear,_AfxAygshellState,"not MFC: a lazily constructed singleton getter (guard 0x00C30914, object 0x00C308C0) for the material manager that 0x004F79E0 looks names up in; called by GUIMap::CreateMaskResources at 0x0072F643"
