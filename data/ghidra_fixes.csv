@@ -5687,3 +5687,47 @@ address,what,value,why
 0x005182D0,signature,void* __thiscall ScaleformManager_Clone(void* this),Plain ret; returns new 0x204-byte object.
 0x00517BF0,signature,void* __thiscall ScaleformManager_GetClassIdPtr(void* this),vftable 0x00AF566C slot 0; never reads ecx; returns 0x00BF64EC.
 0x00517C20,signature,void __thiscall ScaleformManager_RegisterClass(void* this),vftable slot 2; tail-jumps to 0x005166C0 when [0x00BF64EC] == -1 (0x00517C3D).
+0x00518340,signature,"void* __thiscall ScaleformManager_scalar_deleting_destructor(void* this, unsigned int flags)",ret 4; slot 4 of vftable 0x00AF566C (0x00AF567C).
+0x00518360,signature,"void* __thiscall PrintToLogWindowMessage_ctor(void* this, void* text, void* logType, bool flag)","ret 0xC; three stack arguments (0x0051838D, 0x005183A8, 0x005183BA)."
+0x005183E0,signature,"void* __thiscall PrintToLogWindowMessage_copy_ctor(void* this, void* other)",ret 4.
+0x00518460,signature,void __thiscall PrintToLogWindowMessage_dtor(void* this),Plain ret; ecx is the message.
+0x005184D0,signature,bool __thiscall GuiMovie_IsShown(void* this),"Reads [ecx+0x38] == 2, plain ret."
+0x005184E0,signature,"void __thiscall GuiMovie_SetTimeScale(void* this, float scale)",ret 4; float on the stack (0x005184E0 fld [esp+4]).
+0x00518510,signature,bool __thiscall GuiMovie_IsHoldingButton(void* this),"Reads [ecx+0x34], plain ret."
+0x00518520,signature,"void* __thiscall StdVectorPtr_At(void* this, unsigned int index)",ret 4; checked operator[].
+0x00518550,signature,"void* __cdecl StdCopyOpt_GFxValue(void* first, void* last, void* dest)",Plain ret; caller pushes six (three tag dwords) and adds esp 0x18 (0x00518D77).
+0x005185A0,signature,"void* __cdecl StdCopyBackwardOpt_GFxValue(void* first, void* last, void* destEnd)",Plain ret.
+0x005185F0,signature,void* __thiscall PrintToLogWindowMessage_GetClassIdPtr(void* this),vftable slot 0; ecx unused; returns 0x00BF6EB0.
+0x00518630,signature,void* __thiscall PrintToLogWindowMessage_Clone(void* this),vftable slot 1; ecx passed to the copy ctor (0x0051866E push esi).
+0x005186A0,signature,void* __thiscall PrintToLogWindowMessage_GetParentClassIdPtr(void* this),"vftable slot 2; plain ret; returns 0x00BF0C2C (0x005186AB mov eax, kept to 0x005186F1); Ghidra's vfunction3 label is misleading."
+0x00518700,signature,"void __thiscall PrintToLogWindowMessage_Serialize(void* this, void* archive)",ret 4; archive vtable +0x14 and +0x34.
+0x00518740,signature,"void* __thiscall PrintToLogWindowMessage_scalar_deleting_destructor(void* this, unsigned int flags)",ret 4.
+0x00518760,signature,unsigned int __thiscall GFxImageResource_GetWidth(void* this),Tail-jumps to [ecx+0xC] vtable slot 1.
+0x00518780,signature,unsigned int __thiscall GFxImageResource_GetHeight(void* this),Tail-jumps to [ecx+0xC] vtable slot 2.
+0x005187A0,signature,void __thiscall GuiMovie_AddToRenderer(void* this),Plain ret; the decompiler shows __fastcall with the wrong this.
+0x005187F0,signature,void __thiscall GuiMovie_RemoveFromRenderer(void* this),Plain ret; the decompiler shows __fastcall with the wrong this.
+0x00518970,signature,"void __thiscall GuiMovie_MouseDown(void* this, int button, int* pos, bool doubleClick)",ret 0xC; Ghidra loses the third argument.
+0x00518A50,signature,"void __thiscall GuiMovie_MouseUp(void* this, int button, int* pos)",ret 8.
+0x00518BD0,signature,"void __thiscall GuiMovie_SyncButtons(void* this, bool left, bool middle, bool right, int* pos)","ret 0x10; arg order from the masks 0x11, 0x44, 0x22 and buttons 0, 2, 1; the decompiler loses the body."
+0x00518C60,signature,"void* __cdecl StdUninitCopy_GFxValue(void* first, void* last, void* dest)",Plain ret.
+0x00518D40,signature,"void* __cdecl StdCopy_GFxValue(void* first, void* last, void* dest)",Plain ret; returns dest + (last - first).
+0x00518D90,signature,"void __cdecl StdFill_GFxValue(void* first, void* last, void* value)",Plain ret.
+0x00518DC0,signature,"void __cdecl StdUninitFillN_GFxValue(void* dest, unsigned int count, void* value)",Plain ret.
+0x005199B0,signature,"void* __thiscall StdVectorGFxValue_ctor(void* this, unsigned int count)",ret 4.
+0x00519A20,signature,"void __thiscall StdVectorGFxValue_resize(void* this, unsigned int count)",ret 4; ecx passed through to 0x005196B0; the decompiler shows it without this.
+0x00519AA0,signature,"void __thiscall GuiMovie_QueueTokenValue(void* this, unsigned int id, void* value)","ret 8; id by value (its address passed to the find), value a wstring*; the decompiler loses the body."
+0x00519DC0,signature,void __thiscall StdextHash_clear(void* this),Plain ret.
+0x00519E00,signature,"void* __thiscall StdextHash_erase_range(void* this, void* out, void* firstCont, void* firstNode, void* lastCont, void* lastNode)","ret 0x14; checked iterators (container, node)."
+0x00519EC0,signature,void __thiscall GuiMovie_dtor(void* this),Plain ret.
+0x00519FD0,signature,"unsigned int __thiscall StdextHashMap_erase_key(void* this, void* key)",ret 4; returns the count erased.
+0x0051A3C0,signature,"unsigned int __thiscall GuiMovie_AddTokenObserver(void* this, void* label, void* tokenPath, void* extra)","ret 0xC; Ghidra types param_3 as TokenStringObserver*, which is wrong: all three are wstring*."
+0x0051A4A0,signature,"unsigned int __thiscall GuiMovie_AddTokenObserverWithID(void* this, unsigned int id, void* tokenPath, float delay)",ret 0xC; float read with fld [esp+0x4c] at 0x0051A523.
+0x0051AB70,signature,"void __thiscall GuiMovie_RemoveTokenObserver(void* this, void* label)",ret 4.
+0x0051ABC0,signature,"void __thiscall GuiMovie_RemoveTokenObserverByID(void* this, unsigned int id)",ret 4.
+0x0051C580,signature,"void __cdecl Gui_Get2DACellAsString(void* table, void* out, int row, int column)","Plain ret; four stack arguments (0x0051C582 ebx=row, 0x0051C587 esi=table, 0x0051C591 edi=column, [esp+0x18] out)."
+0x0051D200,signature,"unsigned int __thiscall StdString_find(void* this, char* s, unsigned int pos, unsigned int count)",ret 0xC.
+0x0051D2C0,signature,bool __thiscall StdVectorWstring_empty(void* this),Plain ret.
+0x00524A80,signature,"void* __thiscall ScaleformTokenObserver_ctor(void* this, void* movie, void* label, unsigned int id, void* tokenPath, void* extra, float delay)","ret 0x18 (0x00524B0D); read for this batch: Ghidra's param_4 TokenStringObserver* is the token path wstring*; +0x60 movie, +0x64 extra, +0x80 label, +0x9C id."
+0x00518340,clear,vfunction5,Generic slot label; it is the scalar deleting destructor (slot 4).
+0x005186A0,clear,vfunction3,"Generic slot label; it is slot 2, GetParentClassIdPtr."
+0x00680000,signature,"void* __thiscall StdextHashMapWithDefault_FindOrDefault(void* this, void* key)","ret 4; returns &node->value (node+0x24) or this+0x44, the wrapper's default slot (0x00680060), never inserts; read to settle gui-03."
