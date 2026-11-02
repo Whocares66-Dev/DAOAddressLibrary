@@ -39,7 +39,9 @@ What a run does, on the GOG build's addresses:
   as Ghidra holds it, with or without its namespaces,
   or empty for every non-primary one); `nofunction` removes a function
   Ghidra defined where the table has none (a start inside another
-  function's instruction), so the body goes back to its function.
+  function's instruction), so the body goes back to its function;
+  `returns` (value empty) marks a function Ghidra took for one that never
+  returns as returning.
 
 It talks to the server over MCP's plain HTTP (initialize, then
 `eval_python` with the work as JSON, a few thousand rows a call, then
@@ -76,6 +78,7 @@ from ghidra.program.model.symbol import SourceType
 from ghidra.program.model.symbol import SymbolUtilities
 from ghidra.app.util.cparser.C import CParserUtils
 from ghidra.app.cmd.function import ApplyFunctionSignatureCmd
+from ghidra.app.cmd.function import CreateFunctionCmd
 
 W = json.loads(PAYLOAD)
 TYPE_WORDS = {"void", "int", "bool", "char", "short", "long", "float", "double",
@@ -206,6 +209,13 @@ for address, what, value in W["fixes"]:
             f = fm.getFunctionAt(a)
             if f is not None:
                 fm.removeFunction(a)
+                around = fm.getFunctionContaining(a.subtract(1))
+                if around is not None:
+                    CreateFunctionCmd.fixupFunctionBody(program, around, monitor)
+        elif what == "returns":
+            # Ghidra took it for one that never returns (operator new), which
+            # ends every caller's body at the call.
+            fm.getFunctionAt(a).setNoReturn(False)
         else:
             raise Exception("unknown fix " + what)
     except Exception as e:
@@ -333,7 +343,12 @@ def ghidra_c(prototype):
 
     def simplify(decl):
         decl = decl.strip()
-        if not re.search(r"::|<|>|`|&", decl):
+        # A pointer to a class with no C++ mark (ECString *) is unknown to
+        # the parser too; Windows' types are all capitals (HWND), which it knows.
+        plain_class = "*" in decl and re.match(
+            r"(const\s+)?[A-Z]\w*[a-z]\w*\s*\*", decl
+        )
+        if not plain_class and not re.search(r"::|<|>|`|&", decl):
             return decl
         name = re.search(r"([A-Za-z_]\w*)\s*$", decl)
         pointer = "*" in decl or "&" in decl

@@ -27,6 +27,55 @@ def side():
     return value
 
 
+class NotEntries(unittest.TestCase):
+    """A place inside a function is not a function, however it starts."""
+
+    def code(self, hexes, relocs=(), pointers=()):
+        value = object.__new__(exemap.Side)
+        mem = bytearray(0x1000)
+        body = bytes.fromhex(hexes)
+        mem[0x10 : 0x10 + len(body)] = body
+        reloc = bytearray(0x1000)
+        for where in relocs:
+            reloc[where - 0x400000] = 1
+        value.__dict__.update(
+            base=0x400000,
+            mem=bytes(mem),
+            is_reloc=reloc,
+            text=(0x400010, 0x400010 + len(body) + 8),
+            code_pointers=set(pointers),
+        )
+        return value
+
+    def test_a_tail_reached_only_by_a_conditional_jump_is_not_one(self):
+        # 0x400010: jne 0x400020; padding; 0x400020: the tail.
+        a = self.code("750e" + "90" * 14 + "c3")
+        self.assertEqual(exemap.not_entries(a, {0x400020}), {0x400020})
+
+    def test_where_a_catch_funclet_resumes_is_not_one(self):
+        # 0x400010: mov eax, 0x400016; ret; 0x400016: the continuation.
+        a = self.code("b816004000" + "c3" + "90", relocs=[0x400011])
+        self.assertEqual(exemap.not_entries(a, {0x400016}), {0x400016})
+
+    def test_a_call_makes_it_one_though_a_jump_reaches_it_too(self):
+        # jne 0x400020; call 0x400020 (rel32 9 from 0x400017); padding.
+        a = self.code("750e" + "e809000000" + "90" * 9 + "c3")
+        self.assertEqual(exemap.not_entries(a, {0x400020}), set())
+
+    def test_a_pointer_in_data_makes_it_one(self):
+        a = self.code("750e" + "90" * 14 + "c3", pointers=[0x400020])
+        self.assertEqual(exemap.not_entries(a, {0x400020}), set())
+
+    def test_an_address_held_by_other_code_is_one(self):
+        # push 0x400020 hands over a callback; it is no continuation.
+        a = self.code("6820004000" + "7509" + "90" * 9 + "c3", relocs=[0x400011])
+        self.assertEqual(exemap.not_entries(a, {0x400020}), set())
+
+    def test_an_export_nothing_reaches_stays(self):
+        a = self.code("90" * 16 + "c3")
+        self.assertEqual(exemap.not_entries(a, {0x400020}), set())
+
+
 class SameLayout(unittest.TestCase):
     def test_identical_code_gets_every_id_without_marking_data_as_changed_code(self):
         a, b = side(), side()

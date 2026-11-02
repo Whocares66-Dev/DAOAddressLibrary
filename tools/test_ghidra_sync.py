@@ -90,6 +90,14 @@ class CTypes(unittest.TestCase):
             "void * __thiscall f(void *this, int n)",
         )
 
+    def test_a_pointer_to_a_plain_class_becomes_void_pointer(self):
+        # Ghidra's parser knows no ECString (the sync of 2026-11-01 failed 13
+        # prototypes on it); Windows' all-capital types it knows are kept.
+        self.assertEqual(
+            ghidra_c("void __thiscall f(void* this, ECString* name, HWND window)"),
+            "void __thiscall f(void* this, void *name, HWND window)",
+        )
+
     def test_template_commas_do_not_split(self):
         self.assertEqual(
             ghidra_c("void __cdecl f(std::map<int,int>* m, int x)"),
@@ -118,7 +126,20 @@ class Work(unittest.TestCase):
             self.assertGreaterEqual(address, 0x00400000)
         for address, what, _value in fixes:
             self.assertGreaterEqual(address, 0x00400000)
-            self.assertIn(what, ("convention", "signature", "clear", "nofunction"))
+            self.assertIn(
+                what, ("convention", "signature", "clear", "nofunction", "returns")
+            )
+
+    def test_a_convention_is_one_ghidra_knows(self):
+        # A note in the value ("__thiscall ret 0x18") fails in Ghidra.
+        _rows, fixes = work()
+        for address, what, value in fixes:
+            if what == "convention":
+                self.assertIn(
+                    value,
+                    ("__thiscall", "__stdcall", "__cdecl", "__fastcall"),
+                    hex(address),
+                )
 
 
 if __name__ == "__main__":

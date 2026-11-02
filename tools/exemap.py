@@ -872,6 +872,41 @@ def build(a, b, inventories=None):
     return m
 
 
+def not_entries(side, addresses):
+    """Which of these addresses are places inside a function, not functions:
+    nothing calls them, tail-jumps to them or holds their address, and they
+    are reached only by a conditional or short jump, or as where a catch
+    funclet resumes (its `mov eax, address; ret`, the address the runtime
+    continues at). An address nothing reaches at all is left in: an export is
+    an entry though the game never calls it. Read 2026-11-01: 129 such rows,
+    which start as functions do on a boundary straight after a ret."""
+    addresses = set(addresses)
+    start, end = side.text
+    code = bytes(side.mem[start - side.base : end - side.base])
+    entered, jumped, resumed = set(), set(), set()
+    for k in range(len(code) - 5):
+        byte = code[k]
+        if byte in (0xE8, 0xE9):
+            target = start + k + 5 + struct.unpack_from("<i", code, k + 1)[0]
+            if target in addresses:
+                entered.add(target)
+        elif byte == 0x0F and 0x80 <= code[k + 1] <= 0x8F:
+            target = start + k + 6 + struct.unpack_from("<i", code, k + 2)[0]
+            if target in addresses:
+                jumped.add(target)
+        elif byte == 0xEB or 0x70 <= byte <= 0x7F:
+            target = start + k + 2 + struct.unpack_from("<b", code, k + 1)[0]
+            if target in addresses:
+                jumped.add(target)
+        if side.is_reloc[start - side.base + k]:
+            target = struct.unpack_from("<I", code, k)[0]
+            if target in addresses:
+                resumes = k >= 1 and code[k - 1] == 0xB8 and code[k + 4] == 0xC3
+                (resumed if resumes else entered).add(target)
+    held = set(side.code_pointers)
+    return (jumped | resumed) - entered - held
+
+
 def functions_of(m):
     """The addresses in a map's first build where a function starts: what is
     called or pointed at, and what is only jumped to but starts as a
@@ -888,7 +923,7 @@ def functions_of(m):
             and m.b.starts_function(m.exact[a])
         ):
             out.add(a)
-    return out
+    return out - not_entries(m.a, out)
 
 
 def inventory(side):
