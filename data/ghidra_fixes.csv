@@ -17199,3 +17199,79 @@ address,what,value,why
 0x00574D10,signature,void * __thiscall f(void *this),"plain ret, ecx read"
 0x00574D70,signature,void * __thiscall f(void *this),"plain ret, ecx read"
 0x00574FB0,signature,"void __thiscall f(void *this, void *c1, void *p1, void *c2, void *p2, int tag)","ret 0x14, ecx stored at ebp-0x14 (0x00574FC4); four iterator words and a tag"
+0x0054F970,signature,"void* __thiscall GraphicsStructures::Object::`scalar deleting destructor'(void* this, unsigned int flags)",0x0054F970-0x0054F98B
+0x0054F990,signature,"void* __thiscall GraphicsStructures::Object::Object(void* this, void* name, unsigned int a, unsigned int b, unsigned int c, bool flag)","0x0054F990-0x0054FE15 (scale 0x0054FA46, flags 0x0054FCAE and 0x0054FDB7, time scale 0x0054FD5C)"
+0x0054FE20,signature,"void* __thiscall GraphicsStructures::Object::CreateCopy(void* this, void* arg)","0x0054FE47-0x0054FEDA: SafePointer::Get 0x004621C0, object maker 0x00568590, slot 49 call"
+0x0054FEE0,signature,void __cdecl GraphicsStructures::CreateParticleVertexPools(void),"0x0054FF1B-0x0054FF67, caller 0x00529DE2"
+0x0054FFA0,signature,void __cdecl GraphicsStructures::DestroyParticleVertexPools(void),"0x0054FFA0-0x0054FFC4, caller 0x00527D2E"
+0x0054FFD0,signature,void __cdecl GraphicsStructures::LockParticleVertexPools(void),"0x0054FFD0-0x0054FFE8, caller 0x0046E20D"
+0x0054FFF0,signature,void __cdecl GraphicsStructures::UnlockParticleVertexPools(void),"0x0054FFF0-0x00550008, caller 0x0046D46B"
+0x00550010,signature,void __cdecl GraphicsStructures::ResetParticleVertexPools(void),"0x00550010-0x00550021, caller 0x0052A567"
+0x00550030,signature,int __thiscall GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::SpriteParticle>::GetKind(void* this),"0x00550030 mov eax,6"
+0x00550050,signature,"void __thiscall GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::SpriteParticle>::GetMemoryUsage(void* this, unsigned int* outA, unsigned int* outB)",0x00550050-0x00550089
+0x00550090,signature,void __thiscall GraphicsStructures::ObjectNode::ReleaseDrawBatch(void* this),0x00550090-0x005500BC
+0x005500C0,signature,int __thiscall GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::SpriteParticle>::GetVertexStride(void* this),0x005500C0-0x005500DA
+0x005500E0,signature,"void __thiscall GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::SpriteParticle>::Render(void* this, void* ctx)",0x005500E0-0x00550157
+0x00550160,signature,"bool __thiscall GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::SpriteParticle>::GetVertexDeclaration(void* this, void* outElements)","0x00550160-0x00550256, caller 0x00553E14"
+0x005502B0,signature,"void* __thiscall ECBase::ECDynArray<GraphicsStructures::SpriteParticle>::operator[](void* this, unsigned int index)","0x005502B0 shl eax,7"
+0x005502C0,signature,"void* __thiscall ECBase::ECDynArray<GraphicsStructures::PhysicsSpriteParticle>::operator[](void* this, unsigned int index)","0x005502C0 lea eax,[eax+eax*8]"
+0x005502D0,signature,double __thiscall GraphicsStructures::Object::GetFrameDelta(void* this),0x005502D0-0x005502FA
+0x00550300,signature,unsigned int __thiscall GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::SpriteParticle>::GetParticleCount(void* this),0x00550300
+0x00550310,signature,"void __thiscall GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::SpriteParticle>::UnregisterPhysics(void* this, void* physicsWorld)","0x00550310-0x00550365 bit 0 of bp+0x130, world slot 19 with the wstring at +0x314"
+0x00550370,signature,"void __thiscall GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::SpriteParticle>::RegisterPhysics(void* this, void* physicsWorld)","0x00550370-0x00550481, format wstring 0x00AF86E8, world slot 17"
+0x00550490,signature,"void __thiscall GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::PhysicsSpriteParticle>::UnregisterPhysics(void* this, void* physicsWorld)","0x00550490-0x005504F5, per-particle 0x00553F60"
+0x00550500,signature,void __thiscall ECBase::ECDynArray<GraphicsStructures::SpriteParticle>::~ECDynArray(void* this),0x00550500-0x00550528
+0x00550530,signature,void __thiscall ECBase::ECDynArray<GraphicsStructures::PhysicsSpriteParticle>::~ECDynArray(void* this),0x00550530-0x00550558
+0x00550560,signature,"void __thiscall ECBase::ECDynArray<GraphicsStructures::PhysicsSpriteParticle>::SetCapacity(void* this, unsigned int n)",0x00550560-0x00550644
+0x00550650,signature,"void __thiscall GraphicsStructures::SetParticleVertexStandard(void* this, void* pos, void* uv, unsigned int colour)","0x00550650-0x005506AC, eight ribbon callers"
+0x005506B0,signature,"void __thiscall GraphicsStructures::SetParticleVertexTangent(void* this, void* pos, void* uv, unsigned int colour, void* tangent, void* binormal, void* normal)",0x005506B0-0x0055077B
+0x00550780,signature,void __thiscall GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::SpriteParticle>::~ObjectNodeEmitterSprite(void* this),0x00550780-0x00550809
+0x00550810,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::SpriteParticle>::`scalar deleting destructor'`adjustor{4}'(void* this, unsigned int flags)","adjustor thunk to the scalar deleting destructor, ret 4"
+0x00550820,signature,int __thiscall GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::SpriteParticle>::GetKind`adjustor{384}'(void* this),"0x00550820 sub ecx,0x180"
+0x00550830,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::SpriteParticle>::`scalar deleting destructor'`adjustor{8}'(void* this, unsigned int flags)","adjustor thunk to the scalar deleting destructor, ret 4"
+0x00550840,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::SpriteParticle>::`scalar deleting destructor'`adjustor{384}'(void* this, unsigned int flags)","adjustor thunk to the scalar deleting destructor, ret 4"
+0x00550850,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::SpriteParticle>::`scalar deleting destructor'`adjustor{12}'(void* this, unsigned int flags)","adjustor thunk to the scalar deleting destructor, ret 4"
+0x00550860,signature,void __thiscall GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::SpriteParticle>::FillQuadsStandardVertex(void* this),0x00550860-0x00550D72
+0x00550D80,signature,void __thiscall GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::SpriteParticle>::FillQuadsTangentVertex(void* this),0x00550D80-0x00551361
+0x00551370,signature,void __thiscall GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::PhysicsSpriteParticle>::~ObjectNodeEmitterSprite(void* this),0x00551370-0x005513F9
+0x00551400,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::PhysicsSpriteParticle>::`scalar deleting destructor'`adjustor{4}'(void* this, unsigned int flags)","adjustor thunk to the scalar deleting destructor, ret 4"
+0x0054F940,signature,unsigned int __thiscall GraphicsStructures::Object::vfunction90(void* this),return type and convention read from the ret/ecx use in the disassembly; arguments typed void* where the role is not read
+0x0054F940,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x0054F960,signature,"bool __thiscall GraphicsStructures::Object::vfunction7`adjustor{4}'(void* this, void* arg1, void* arg2)",return type and convention read from the ret/ecx use in the disassembly; arguments typed void* where the role is not read
+0x0054F960,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x0054F970,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x0054F990,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x0054FE20,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x0054FEE0,convention,__cdecl,"plain ret, no this"
+0x0054FFA0,convention,__cdecl,"plain ret, no this"
+0x0054FFD0,convention,__cdecl,"plain ret, no this"
+0x0054FFF0,convention,__cdecl,"plain ret, no this"
+0x00550010,convention,__cdecl,"plain ret, no this"
+0x00550030,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x00550050,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x00550090,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x005500C0,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x005500E0,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x00550160,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x005502B0,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x005502C0,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x005502D0,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x00550300,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x00550310,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x00550370,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x00550490,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x00550500,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x00550530,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x00550560,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x00550650,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x005506B0,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x00550780,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x00550810,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x00550820,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x00550830,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x00550840,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x00550850,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x00550860,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x00550D80,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x00551370,convention,__thiscall,ecx is read as this (or adjusted) before any write
+0x00551400,convention,__thiscall,ecx is read as this (or adjusted) before any write
