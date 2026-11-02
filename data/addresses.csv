@@ -20306,11 +20306,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20305,function,SyncAlign::StepToGoal,0x007c1880,0x006a1b30,0x007c1880
 20306,function,SyncAlign::ReverseIfPositive,0x007c1a30,0x006a1ce0,0x007c1a30
 20307,function,SyncAlign::RefreshWithPartner,0x007c1a60,0x006a1d10,0x007c1a60
-20308,function,,0x007c1aa0,0x006a1d50,0x007c1aa0
+20308,function,SyncAlign::AreBothRatesStopped,0x007c1aa0,0x006a1d50,0x007c1aa0
 20309,function,SyncAlign::AttachRecord,0x007c1b20,0x006a1dd0,0x007c1b20
-20310,function,,0x007c1b70,0x006a1e20,0x007c1b70
+20310,function,SyncAlign::AdjustRootMotion,0x007c1b70,0x006a1e20,0x007c1b70
 20311,function,SyncAlign::StopPartnerRate,0x007c1ea0,0x006a2150,0x007c1ea0
-20312,function,,0x007c1ee0,0x006a2190,0x007c1ee0
+20312,function,SyncAlign::~SyncAlign,0x007c1ee0,0x006a2190,0x007c1ee0
 20313,function,,0x007c1f10,0x006a4340,0x007c1f10
 20314,function,ScriptBackend::ForScript_StopSoundObject,0x007c1ff0,0x006a4420,0x007c1ff0
 20315,function,,0x007c2010,0x006a4440,0x007c2010
@@ -20340,16 +20340,16 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20339,function,CCSoundObject::SaveTemplate,0x007c3170,0x006a55a0,0x007c3170
 20340,function,CCCombatData::SetWeaponsDrawn,0x007c33d0,0x006a5800,0x007c33d0
 20341,function,WeaponSetRecord::WeaponSetRecord,0x007c3410,0x006a5840,0x007c3410
-20342,function,,0x007c3490,0x006a58c0,0x007c3490
+20342,function,CCCombatData::ClearTargetIfGone,0x007c3490,0x006a58c0,0x007c3490
 20343,function,CCCombatData::WeaponsDrawn,0x007c34c0,0x006a58f0,0x007c34c0
-20344,function,,0x007c3500,0x006a5930,0x007c3500
-20345,function,,0x007c3600,0x006a5a30,0x007c3600
+20344,function,CCCombatData::ChooseWeaponSetRecord,0x007c3500,0x006a5930,0x007c3500
+20345,function,CCCombatData::SetWeaponSetRecord,0x007c3600,0x006a5a30,0x007c3600
 20346,function,CCCombatData::RangedSightOffset,0x007c3680,0x006a5ab0,0x007c3680
 20347,function,CCCombatData::FindImpactEffect,0x007c36e0,0x006a5b10,0x007c36e0
 20348,function,ScriptBackend::ForScript_GetAttackImpactDamageEffect,0x007c3770,0x006a5ba0,0x007c3770
 20349,function,CCCombatData::CCCombatData,0x007c37a0,0x006a5bd0,0x007c37a0
 20350,function,CCCombatData::StoreImpactEffect,0x007c3840,0x006a5c70,0x007c3840
-20351,function,,0x007c38d0,0x006a5d00,0x007c38d0
+20351,function,CCCombatData::~CCCombatData,0x007c38d0,0x006a5d00,0x007c38d0
 20352,function,CCWayPoint::SetMapNoteText,0x007c3950,0x006a5d80,0x007c3950
 20353,function,CCWayPoint::SetMapNoteLocString,0x007c39c0,0x006a5df0,0x007c39c0
 20354,function,CCWayPoint::CCWayPoint,0x007c3a30,0x006a5e60,0x007c3a30
@@ -20383,20 +20383,20 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20382,function,CCWayPoint::`scalar deleting destructor',0x007c4950,0x006a6e10,0x007c4950
 20383,function,Lod::IsModelLevelAtMost2OrNull,0x007c4970,0x006ab630,0x007c4970
 20384,function,Lod::IsModelLevelAtMost2,0x007c4990,0x006ab650,0x007c4990
-20385,function,,0x007c49b0,0x006ab670,0x007c49b0
+20385,function,AI::AdjustAILevelForBand,0x007c49b0,0x006ab670,0x007c49b0
 20386,function,GameModes::DistanceToFocus2D,0x007c4a10,0x006ab6d0,0x007c4a10
 20387,function,EffectsHolder::ShouldStartEffectVisual,0x007c4a60,0x006ab720,0x007c4a60
 20388,function,Audio::ShouldPlayMovementSound,0x007c4a80,0x006ab740,0x007c4a80
-20389,function,IsObjectInFloatyRange,0x007c4ae0,0x006ab7a0,0x007c4ae0
+20389,function,IsObjectNearCameraFocus,0x007c4ae0,0x006ab7a0,0x007c4ae0
 20390,function,MovementPath::IsGoalFarFromCameraFocus,0x007c4b80,0x006ab840,0x007c4b80
 20391,function,CClientOptions::GetCorpseLimit,0x007c4bd0,0x006ab890,0x007c4bd0
-20392,function,,0x007c4c30,0x006ab8f0,0x007c4c30
-20393,function,,0x007c4c50,0x006ab910,0x007c4c50
+20392,function,TargetIterator::TargetIterator,0x007c4c30,0x006ab8f0,0x007c4c30
+20393,function,TargetIterator::~TargetIterator,0x007c4c50,0x006ab910,0x007c4c50
 20394,function,AreaObjectsIterator::AreaObjectsIterator,0x007c4c60,0x006ab920,0x007c4c60
 20395,function,AreaObjectsIterator::~AreaObjectsIterator,0x007c4c80,0x006ab940,0x007c4c80
 20396,function,AreaObjectsIterator::IsCandidate,0x007c4c90,0x006ab950,0x007c4c90
 20397,function,"std::_Push_heap<void **,int,void *,bool (__cdecl*)(void *,void *)>",0x007c4ca0,0x006ab960,0x007c4ca0
-20398,function,,0x007c4d00,0x006ab9c0,0x007c4d00
+20398,function,TargetIterator::`scalar deleting destructor',0x007c4d00,0x006ab9c0,0x007c4d00
 20399,function,IsObjectOnScreen,0x007c4d20,0x006ab9e0,0x007c4d20
 20400,function,World::DistanceToCamera,0x007c4e20,0x006abae0,0x007c4e20
 20401,function,World::ObjectScreenX,0x007c4eb0,0x006abb70,0x007c4eb0
@@ -20533,34 +20533,34 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20532,function,Money::UpdateDenominations,0x007c9f50,0x006b1260,0x007c9f50
 20533,function,Money::Add,0x007c9fe0,0x006b12f0,0x007c9fe0
 20534,function,Money::Subtract,0x007ca020,0x006b1330,0x007ca020
-20535,function,,0x007ca060,0x006b1370,0x007ca060
-20536,function,,0x007ca090,0x006b13a0,0x007ca090
-20537,function,,0x007ca0c0,0x006b13d0,0x007ca0c0
-20538,function,,0x007ca110,0x006b1420,0x007ca110
-20539,function,,0x007ca1e0,0x006b1500,0x007ca1e0
-20540,function,,0x007ca1f0,0x006b1510,0x007ca1f0
-20541,function,,0x007ca200,0x006b1520,0x007ca200
-20542,function,,0x007ca210,0x006b14f0,0x007ca210
-20543,function,,0x007ca220,0x006b1530,0x007ca220
-20544,function,,0x007ca240,0x006b1550,0x007ca240
-20545,function,,0x007ca4b0,0x006b17c0,0x007ca4b0
-20546,function,,0x007ca4d0,0x006b17e0,0x007ca4d0
-20547,function,ScriptBackend::ForScript_SetMaxInventorySize,0x007ca4f0,0x006b1800,0x007ca4f0
-20548,function,,0x007ca500,0x006b1810,0x007ca500
-20549,function,,0x007ca570,0x006b1880,0x007ca570
-20550,function,,0x007ca590,0x006b18a0,0x007ca590
+20535,function,Money::Save,0x007ca060,0x006b1370,0x007ca060
+20536,function,Money::SaveEmpty,0x007ca090,0x006b13a0,0x007ca090
+20537,function,Money::Load,0x007ca0c0,0x006b13d0,0x007ca0c0
+20538,function,Money::~Money,0x007ca110,0x006b1420,0x007ca110
+20539,function,Money::`scalar deleting destructor'`adjustor{8}',0x007ca1e0,0x006b1500,0x007ca1e0
+20540,function,Money::`scalar deleting destructor'`adjustor{88}',0x007ca1f0,0x006b1510,0x007ca1f0
+20541,function,Money::`scalar deleting destructor'`adjustor{28}',0x007ca200,0x006b1520,0x007ca200
+20542,function,Money::`scalar deleting destructor'`adjustor{32}',0x007ca210,0x006b14f0,0x007ca210
+20543,function,Money::`scalar deleting destructor',0x007ca220,0x006b1530,0x007ca220
+20544,function,Money::Money,0x007ca240,0x006b1550,0x007ca240
+20545,function,Money::SaveSchema,0x007ca4b0,0x006b17c0,0x007ca4b0
+20546,function,ListItemIteratorImpl::ListItemIteratorImpl,0x007ca4d0,0x006b17e0,0x007ca4d0
+20547,function,ListItemLocation::SetMaxInventorySize,0x007ca4f0,0x006b1800,0x007ca4f0
+20548,function,ListItemLocation::CreateIterator,0x007ca500,0x006b1810,0x007ca500
+20549,function,ArrayItemIteratorImpl::`scalar deleting destructor',0x007ca570,0x006b1880,0x007ca570
+20550,function,ListItemIteratorImpl::CurrentLocation,0x007ca590,0x006b18a0,0x007ca590
 20551,function,ListItemLocation::SameKey,0x007ca5c0,0x006b18d0,0x007ca5c0
-20552,function,,0x007ca5e0,0x006b18f0,0x007ca5e0
-20553,function,,0x007ca6c0,0x006b19d0,0x007ca6c0
-20554,function,,0x007ca730,0x006b1a40,0x007ca730
-20555,function,,0x007ca770,0x006b1a80,0x007ca770
-20556,function,,0x007ca810,0x006b1b20,0x007ca810
-20557,function,,0x007ca850,0x006b1b60,0x007ca850
-20558,function,,0x007ca890,0x006b1ba0,0x007ca890
-20559,function,,0x007ca920,0x006b1c30,0x007ca920
-20560,function,,0x007ca940,0x006b1c50,0x007ca940
-20561,function,,0x007ca990,0x006b1ca0,0x007ca990
-20562,function,,0x007ca9e0,0x006b1cf0,0x007ca9e0
+20552,function,ListItemLocation::FindLocationFor,0x007ca5e0,0x006b18f0,0x007ca5e0
+20553,function,ListItemLocation::PositionToLocation,0x007ca6c0,0x006b19d0,0x007ca6c0
+20554,function,ListItemLocation::LocationToPosition,0x007ca730,0x006b1a40,0x007ca730
+20555,function,ListItemLocation::ReAddItem,0x007ca770,0x006b1a80,0x007ca770
+20556,function,ListItemLocation::SaveItemList,0x007ca810,0x006b1b20,0x007ca810
+20557,function,ListItemLocation::GetItemIdAtIndex,0x007ca850,0x006b1b60,0x007ca850
+20558,function,ListItemLocation::CanAdd,0x007ca890,0x006b1ba0,0x007ca890
+20559,function,ListItemLocation::GetItemCount,0x007ca920,0x006b1c30,0x007ca920
+20560,function,ListItemLocation::GetItemAtLocation,0x007ca940,0x006b1c50,0x007ca940
+20561,function,ListItemLocation::LoadItemList,0x007ca990,0x006b1ca0,0x007ca990
+20562,function,ListItemLocation::ContainsItem,0x007ca9e0,0x006b1cf0,0x007ca9e0
 20563,function,ListItemLocation::FindItemLocation,0x007caa00,0x006b1d10,0x007caa00
 20564,function,ListItemLocation::RemoveItem,0x007caaa0,0x006b1db0,0x007caaa0
 20565,function,ListItemLocation::ListItemLocation,0x007caae0,0x006b1df0,0x007caae0

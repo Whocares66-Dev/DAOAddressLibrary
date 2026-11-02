@@ -15468,3 +15468,41 @@ address,what,value,why
 0x007647D0,convention,__thiscall,"plain ret, reads ecx (this+0x14)"
 0x007647E0,convention,__thiscall,"plain ret, writes this+0x18"
 0x00764800,convention,__thiscall,"plain ret, writes this+0x18"
+0x007C1AA0,signature,bool __thiscall f(void* this),"0x007C1AA0 thiscall, plain ret; caller ExecuteEffect 0x007AAC10"
+0x007C1B70,signature,"void __thiscall f(void* this, float a, void* b, void* c, void* d, void* e)",SyncAlign::AdjustRootMotion at 0x007C1B70
+0x007C1EE0,signature,void __thiscall f(void* this),"0x007C1EE0 thiscall, plain ret"
+0x007C3490,signature,void __thiscall f(void* this),CCCombatData::ClearTargetIfGone at 0x007C3490
+0x007C3500,signature,"void __stdcall f(void* outRecord, void* equipment)","ret 8, ecx never read (0x007C3500); both readings' arguments"
+0x007C3600,signature,"void __thiscall f(void* this, void* record)",CCCombatData::SetWeaponSetRecord at 0x007C3600
+0x007C38D0,signature,void __thiscall f(void* this),"0x007C38D0 thiscall, plain ret"
+0x007C49B0,signature,"int __cdecl f(void* creature, int baseLevel)","0x007C4A04 plain ret, arguments read from [esp+0xC] and [esp+0x10] after two pushes"
+0x007C4C30,signature,"void* __thiscall f(void* this, void* searcher)",0x007C4C30 ret 4
+0x007C4C50,signature,void __thiscall f(void* this),0x007C4C50
+0x007C4D00,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007C4D00 ret 4
+0x007CA060,signature,"void __thiscall f(void* this, void* blockRef)",0x007CA060 ret 4
+0x007CA090,signature,"void __thiscall f(void* this, void* blockRef)",0x007CA090 ret 4
+0x007CA0C0,signature,"void __thiscall f(void* this, void* blockRef)",0x007CA0C0 ret 4
+0x007CA110,signature,void __thiscall f(void* this),"0x007CA110 thiscall, plain ret"
+0x007CA1E0,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007CA1E0 vftable slot
+0x007CA1F0,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007CA1F0 vftable slot
+0x007CA200,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007CA200 vftable slot
+0x007CA210,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007CA210 vftable slot
+0x007CA220,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007CA220 ret 4
+0x007CA240,signature,"void* __thiscall f(void* this, int arg1)","0x007CA240 thiscall; caller Inventory::Inventory; ret 4, so one stack argument (keeper)"
+0x007CA4B0,signature,void __cdecl f(void* saveTemplate),"0x007CA4B0 plain ret, argument loaded into ecx from [esp+8]"
+0x007CA4D0,signature,"void* __thiscall f(void* this, void* itemVector)",0x007CA4D0 ret 4
+0x007CA500,signature,void* __thiscall f(void* this),0x007CA500 vftable slot
+0x007CA570,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007CA570 ret 4
+0x007CA590,signature,"void* __thiscall f(void* this, void* outLocation)",0x007CA590 ret 4
+0x007CA5E0,signature,"void* __thiscall f(void* this, void* outLocation, void* item)",0x007CA6B9 ret 8
+0x007CA6C0,signature,"void* __thiscall f(void* this, void* outLocation, void* position)",0x007CA727 ret 8; the slot's other bodies are SlotItemLocation::PositionToLocation
+0x007CA730,signature,"void* __thiscall f(void* this, void* outPosition, void* location)",0x007CA765 ret 8
+0x007CA770,signature,"void __thiscall f(void* this, void* item)",0x007CA805 ret 4
+0x007CA810,signature,"void __thiscall f(void* this, void* blockRef, void* arg)",0x007CA847 ret 8
+0x007CA850,signature,"unsigned int __thiscall f(void* this, unsigned int index)",ListItemLocation::GetItemIdAtIndex at 0x007CA850
+0x007CA890,signature,"bool __thiscall f(void* this, void* item, void* location)",0x007CA914 ret 8
+0x007CA920,signature,int __thiscall f(void* this),0x007CA920 vftable slot
+0x007CA940,signature,"void* __thiscall f(void* this, void* location)",0x007CA974 ret 4
+0x007CA990,signature,"void __thiscall f(void* this, void* blockRef, void* arg)",0x007CA9D9 ret 8
+0x007CA9E0,signature,"bool __thiscall f(void* this, unsigned int itemId)",0x007CA9F5 ret 4
+0x007CA4F0,signature,"void __thiscall f(void* this, int maxSize)",ecx is the list; jmp to the attribute slot with the argument on the stack
