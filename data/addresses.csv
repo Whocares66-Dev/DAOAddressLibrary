@@ -7699,7 +7699,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7698,function,GraphicsStructures::EmitterRenderData::~EmitterRenderData,0x00540010,0x0077bb80,0x00540010
 7699,function,GraphicsStructures::ObjectNodeEmitter::FillSplats,0x00540090,0x0077bde0,0x00540090
 7700,function,GraphicsStructures::ObjectNodeEmitter::UpdateParentTransform,0x00540300,0x0077c050,0x00540300
-7701,function,ECBase::ECDynArray<?>::ECDynArray,0x00540450,0x0077c1e0,0x00540450
+7701,function,GraphicsStructures::Array<?>::Array,0x00540450,0x0077c1e0,0x00540450
 7702,function,GraphicsStructures::Array<?>::SetSize,0x00540480,0x00772f10,0x00540480
 7703,function,ECBase::ECDynArray<?>::RemoveAt,0x005404e0,0x0077c210,0x005404e0
 7704,function,"std::copy_backward<?*,?*>",0x00540530,0x0077c260,0x00540530
@@ -8768,9 +8768,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 8767,function,std::_Tree<?>::_Rrotate,0x00572740,0x00752be0,0x00572740
 8768,function,,0x005727a0,0x00752c40,0x005727a0
 8769,function,Multithreading::SynchSafePointer<?>::CommitReference,0x00572810,0x004b2a30,0x00572810
-8770,function,ECBase::ECDynArray<Vector4>::PushBack,0x00572830,0x007006b0,0x00572830
+8770,function,GraphicsStructures::Array<Vector4>::PushBack,0x00572830,0x007006b0,0x00572830
 8771,function,ECBase::ECDynArray<Vector4>::At,0x005728b0,0x007004a0,0x005728b0
-8772,function,ECBase::ECDynArray<Vector4>::operator=,0x005728c0,0x0046fbe0,0x005728c0
+8772,function,GraphicsStructures::Array<Vector4>::operator=,0x005728c0,0x0046fbe0,0x005728c0
 8773,function,GraphicsStructures::Array<Vector4>::SetCapacity,0x00572980,0x0046fca0,0x00572980
 8774,function,Multithreading::Task::~Task,0x00572a50,0x00401d40,0x00572a50
 8775,function,GraphicsStructures::ConstructMergeObjectTask::ConstructMergeObjectTask,0x00572a60,0x00752d10,0x00572a60
@@ -8790,7 +8790,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 8789,function,std::_String_const_iterator<char>::_String_const_iterator,0x00573150,0x00488560,0x00573150
 8790,function,std::_Tree<?>::_Lrotate,0x005731b0,0x007532d0,0x005731b0
 8791,function,ECBase::ECDynArray<Vector4>::ECDynArray_copy,0x00573200,0x00753320,0x00573200
-8792,function,ECBase::ECDynArray<Vector4>::ECDynArray_capacity,0x00573220,0x00470160,0x00573220
+8792,function,GraphicsStructures::Array<Vector4>::Array,0x00573220,0x00470160,0x00573220
 8793,function,ECBase::ECDynArray<ECBase::ECDynArray<Vector4>>::~ECDynArray,0x00573250,0x00753340,0x00573250
 8794,function,Vec4_AtOrDefault,0x00573280,0x00753370,0x00573280
 8795,function,std::_Fill<MeshLightmapRecord *>,0x005732b0,0x00711720,0x005732b0
@@ -8819,7 +8819,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 8818,function,,0x00573e20,0x00488630,0x00573e20
 8819,function,,0x00573e60,0x00488720,0x00573e60
 8820,function,,0x00573ed0,0x00619a00,0x00573ed0
-8821,function,ECBase::ECDynArray<ECBase::ECDynArray<Vector4>>::ECDynArray_capacity,0x00573f20,0x007539d0,0x00573f20
+8821,function,GraphicsStructures::Array<GraphicsStructures::Array<Vector4>>::Array,0x00573f20,0x007539d0,0x00573f20
 8822,function,,0x00573f50,0x00712360,0x00573f50
 8823,function,,0x00573f80,0x00712430,0x00573f80
 8824,function,,0x00573ff0,0x007124a0,0x00573ff0
@@ -33389,13 +33389,13 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33388,function,RIMTreeManager::ReadTree,0x00a59cb0,0x00700300,0x00a59cb0
 33389,function,CDataArrays::CDataArrays,0x00a59e10,0x00700460,0x00a59e10
 33390,function,CDataArrays::NotEquals,0x00a59e30,0x00700480,0x00a59e30
-33391,function,ECBase::ECDynArray<Math::Vector4f>::operator=,0x00a59e50,0x007004b0,0x00a59e50
+33391,function,GraphicsStructures::Array<Math::Vector4f>::operator=,0x00a59e50,0x007004b0,0x00a59e50
 33392,function,CDataArrays::GetVector,0x00a59f10,0x00700570,0x00a59f10
 33393,function,ECBase::ECDynArray<Math::Vector4f>::ECDynArray,0x00a59f60,0x007005c0,0x00a59f60
 33394,function,ECBase::ECDynArray<Math::Vector4f>::~ECDynArray,0x00a59f80,0x00700730,0x00a59f80
 33395,function,GraphicsStructures::Array<Math::Vector4f>::SetCapacity,0x00a59fb0,0x00700760,0x00a59fb0
 33396,function,ECBase::ECDynArray<Math::Vector4f>::PushBack,0x00a5a0b0,0x00700860,0x00a5a0b0
-33397,function,ECBase::ECDynArray<Math::Vector4f>::operator=,0x00a5a140,0x007008f0,0x00a5a140
+33397,function,GraphicsStructures::Array<Math::Vector4f>::operator=,0x00a5a140,0x007008f0,0x00a5a140
 33398,function,CDataArrays::GetInteger,0x00a5a220,0x00700a10,0x00a5a220
 33399,function,CDataArrays::GetFloat,0x00a5a250,0x00700a40,0x00a5a250
 33400,function,CDataArrays::GetFlag,0x00a5a280,0x00700a70,0x00a5a280
@@ -33403,7 +33403,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33402,function,CDataArrays::GetString,0x00a5a2e0,0x00700ad0,0x00a5a2e0
 33403,function,CDataArrays::Equals,0x00a5a3a0,0x00700b90,0x00a5a3a0
 33404,function,ECBase::ECDynArray<Math::Vector4f>::ECDynArray,0x00a5a840,0x00701060,0x00a5a840
-33405,function,ECBase::ECDynArray<Math::Vector4f>::ECDynArray,0x00a5a860,0x00701080,0x00a5a860
+33405,function,GraphicsStructures::Array<Math::Vector4f>::Array,0x00a5a860,0x00701080,0x00a5a860
 33406,function,Gff4::BlockRef::SetListElementFloat,0x00a5a890,0x007010b0,0x00a5a890
 33407,function,Gff4::BlockRef::GetStructFieldRef,0x00a5a8e0,0x00567be0,0x00a5a8e0
 33408,function,Gff4::BlockRef::SetListElementVector4,0x00a5a960,0x00701100,0x00a5a960
