@@ -14981,3 +14981,80 @@ address,what,value,why
 0x00A41C90,signature,int __thiscall f(void *this),ret and ecx use read in daoexe --disasm at 0x00A41C90
 0x00A41D00,signature,"void __thiscall f(void *this, unsigned char type, unsigned short sequence, void *payload)",ret and ecx use read in daoexe --disasm at 0x00A41D00
 0x00A41E60,signature,"int __thiscall f(void *this, unsigned int now)",ret and ecx use read in daoexe --disasm at 0x00A41E60
+0x0079C560,signature,"void * __thiscall f(void *this, void *stats, int linkIndex)","ret 8, ecx read; 0x0079C560"
+0x0079C580,signature,"void * __thiscall f(void *this, void *source, void *stats)",ret 8; 0x0079C580
+0x0079C5B0,signature,float __thiscall f(void *this),"plain ret, callers push two dead floats; ecx read; 0x0079C5B0"
+0x0079C600,signature,unsigned int __thiscall f(void *this),vftable slot 15; 0x0079C600
+0x0079C610,signature,"void * __thiscall f(void *this, void *source, void *stats)",ret 8; 0x0079C610
+0x0079C660,signature,"void * __thiscall f(void *this, void *stats, int linkIndex)",ret 8; 0x0079C660
+0x0079C6B0,signature,"void __thiscall f(void *this, float value)",ret 4; 0x0079C6B0
+0x0079C6D0,signature,float __thiscall f(void *this),slot 3; 0x0079C6D0
+0x0079C720,signature,"void * __thiscall f(void *this, void *source, void *stats)",ret 8; 0x0079C720
+0x0079C760,signature,float __thiscall f(void *this),slot 3; 0x0079C760
+0x0079C7C0,signature,unsigned int __thiscall f(void *this),slot 15; 0x0079C7C0
+0x0079C7D0,signature,"void * __thiscall f(void *this, void *source, void *stats)",ret 8; 0x0079C7D0
+0x0079C830,signature,"void * __thiscall f(void *this, void *stats)","Clone, slot 2, ret 4; 0x0079C830"
+0x0079C860,signature,"void __thiscall f(void *this, float value)",ret 4 vftable slot; 0x0079C860
+0x0079C890,signature,"void __thiscall f(void *this, float value)",ret 4 vftable slot; 0x0079C890
+0x0079C8B0,signature,"void __thiscall f(void *this, float value)",ret 4 vftable slot; 0x0079C8B0
+0x0079C8D0,signature,"void __thiscall f(void *this, float value)",ret 4 vftable slot; 0x0079C8D0
+0x0079C910,signature,"void * __thiscall f(void *this, void *stats)","Clone, slot 2, ret 4; 0x0079C910"
+0x0079C970,signature,float __thiscall f(void *this),slot 3; 0x0079C970
+0x0079C9B0,signature,"void * __thiscall f(void *this, void *stats)","Clone, slot 2, ret 4; 0x0079C9B0"
+0x0079C9E0,signature,"void __thiscall f(void *this, void *structReaderOrWriter)","slot 17/18, ret 4; 0x0079C9E0"
+0x0079CA00,signature,"void __thiscall f(void *this, void *structReaderOrWriter)","slot 17/18, ret 4; 0x0079CA00"
+0x0079CA30,signature,"void * __thiscall f(void *this, void *stats, int linkIndex)",ret 8; 0x0079CA30
+0x0079CA80,signature,"void __thiscall f(void *this, void *structReaderOrWriter)","slot 17/18, ret 4; 0x0079CA80"
+0x0079CB30,signature,float __cdecl f(void *properties),"plain ret, one pushed argument (table 0x00C0F604); 0x0079CB30"
+0x0079CC90,signature,float __cdecl f(void *properties),"plain ret, one pushed argument (table 0x00C0F604); 0x0079CC90"
+0x0079CD40,signature,float __cdecl f(void *properties),"plain ret, one pushed argument (table 0x00C0F604); 0x0079CD40"
+0x0079CDF0,signature,float __cdecl f(void *properties),"plain ret, one pushed argument (table 0x00C0F604); 0x0079CDF0"
+0x0079CEA0,signature,float __cdecl f(void *properties),"plain ret, one pushed argument (table 0x00C0F604); 0x0079CEA0"
+0x0079CF50,signature,float __cdecl f(void *properties),"plain ret, one pushed argument (table 0x00C0F604); 0x0079CF50"
+0x0079D000,signature,float __cdecl f(void *properties),"plain ret, one pushed argument (table 0x00C0F604); 0x0079D000"
+0x0079D0F0,signature,float __cdecl f(void *properties),"plain ret, one pushed argument (table 0x00C0F604); 0x0079D0F0"
+0x0079D1E0,signature,"void __thiscall f(void *this, void *structReaderOrWriter)","slot 17/18, ret 4; 0x0079D1E0"
+0x0079D200,signature,"void __thiscall f(void *this, void *structReaderOrWriter)","slot 17/18, ret 4; 0x0079D200"
+0x0079D230,signature,"void __thiscall f(void *this, void *structReaderOrWriter)","slot 17/18, ret 4; 0x0079D230"
+0x0079F2C0,signature,"bool __stdcall f(void *effect, int value)","ret 8, ecx written before read; 0x0079F2C0"
+0x0079F2E0,signature,"bool __stdcall f(void *effect, int flagIndex)",ret 8; 0x0079F2E0
+0x0079F300,signature,"int __stdcall f(void *holder, void *effect)","ret 8, ecx unread; 0x0079F300"
+0x0079F330,signature,"bool __stdcall f(void *holder, void *effect)","ret 8, ecx unread; 0x0079F330"
+0x0079F380,signature,bool __stdcall f(void *effect),ret 4; 0x0079F380
+0x0079F3B0,signature,"int __stdcall f(void *holder, void *effect)",ret 8; 0x0079F3B0
+0x0079F410,signature,"void __cdecl f(void *effect, int creatorId)","plain ret, args effect then id; 0x0079F410"
+0x0079F480,signature,void * __cdecl f(void),no arguments; 0x0079F480
+0x0079F4A0,signature,"bool __thiscall f(void *this, bool requireFlag3)",ret 4; 0x0079F4A0
+0x0079F5D0,signature,"void __thiscall f(void *this, void *holder, void *filter, void *callback)","ret 0xC, ecx stored; 0x0079F5D0"
+0x0079F6C0,signature,"bool __thiscall f(void *this, int type)",ret 4; 0x0079F6C0
+0x0079F7A0,signature,"void __thiscall f(void *this, void *holder, void *effect, bool flag)",ret 0xC; 0x0079F7A0
+0x0079F910,signature,"float __stdcall f(void *holder, int type, float initial, int excludedId)","ret 0x10, ecx unread; 0x0079F910"
+0x0079FA30,signature,"int __stdcall f(void *holder, void *effect)","ret 8, ecx unread; 0x0079FA30"
+0x0079FA70,signature,"void __thiscall f(void *this, void *holder, void *effect, bool flag)","ret 0xC, ecx stored; 0x0079FA70"
+0x0079FD00,signature,"void __thiscall f(void *this, int effectId)",ret 4; 0x0079FD00
+0x007A00A0,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A00A0"
+0x007A0150,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A0150"
+0x007A01A0,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A01A0"
+0x007A0210,signature,"int __thiscall f(void *this, void *holder, void *effect)",ret 8; ecx passed on unchanged to 0x007A0150; 0x007A0210
+0x007A0230,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A0230"
+0x007A0520,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A0520"
+0x007A05F0,signature,"int __thiscall f(void *this, void *holder, void *effect)",ret 8; ecx passed on unchanged to 0x007A0150; 0x007A05F0
+0x007A0610,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A0610"
+0x007A0690,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A0690"
+0x007A06F0,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A06F0"
+0x007A0750,signature,void __thiscall f(void *this),plain ret; 0x007A0750
+0x007A07F0,signature,"void __thiscall f(void *this, void *filter)",ret 4; 0x007A07F0
+0x007A08E0,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A08E0"
+0x007A0A90,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A0A90"
+0x007A0AF0,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A0AF0"
+0x007A12E0,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A12E0"
+0x007A1570,signature,"void __thiscall f(void *this, void *holder)",ret 4; 0x007A1570
+0x007A15E0,signature,"void __thiscall f(void *this, void *holder)",ret 4; 0x007A15E0
+0x007A1650,signature,"void __thiscall f(void *this, void *holder)",ret 4; 0x007A1650
+0x007A1740,signature,"void __thiscall f(void *this, int effectId)",ret 4; 0x007A1740
+0x007A1800,signature,void __thiscall f(void *this),vftable slot 4; 0x007A1800
+0x007A1820,signature,void __thiscall f(void *this),plain ret; 0x007A1820
+0x007A1920,signature,"int __thiscall f(void *this, void *holder, void *effectRef)",ret 8; 0x007A1920
+0x007A1A20,signature,"int __thiscall f(void *this, void *effect)",ret 4; 0x007A1A20
+0x007A1A40,signature,void __thiscall f(void *this),vftable slot 20; 0x007A1A40
+0x007A1B00,signature,"int __stdcall f(void *object, void *position, unsigned char flag, float value, int a, int b)","ret 0x18, ecx unread, first stack argument is the CCObject handed to AddSubAction; 0x007A1B00"
