@@ -16000,3 +16000,38 @@ address,what,value,why
 0x00A6D960,signature,"void * __thiscall f(void *this, void *name)",AnimModelLod::Entry::Entry: convention from its ret and ecx
 0x00A6DA00,signature,"void * __thiscall f(void *this, void *name, int a, int b, int c, int d)",AnimModelLod::AnimModelLod: convention from its ret and ecx
 0x00A6E200,signature,void __thiscall f(void *this),LeanController::Reset: convention from its ret and ecx
+0x005105D0,signature,"void * __thiscall MaterialTextureParam(void * this, ushort stage, void * name, void * samplerName, int usage)","ret 0x10; 0x00510602 stage, 0x00510634 name, 0x00510607 sampler, 0x005105F8 usage"
+0x005106E0,signature,"void * __thiscall GetSamplerName(void * this, void * out)",ret 4; returns out at 0x00510707
+0x00510710,signature,"void * __thiscall `scalar deleting destructor'(void * this, uint flags)",ret 4; bit 0 tested at 0x00510741
+0x00510760,signature,"void * __cdecl Create(void * name, void * samplerName, ushort stage)",plain ret 0x005107D5; args read 0x0051079E..0x005107A6
+0x005107F0,signature,"void * __thiscall GetSamplerName(void * this, void * out)",ret 4; returns out at 0x00510816
+0x005272D0,signature,void __thiscall WaitUntilFinished(void * this),reads ecx at 0x005272D1; plain ret
+0x005272F0,signature,void __stdcall ApplySceneLightQuality(void * scene),"ret 4, ecx not read before 0x005272F0 writes it"
+0x00527310,signature,"void __thiscall SetClearColor(void * this, float * rgba)",vftable slot 57; ret 4 at 0x0052731C
+0x005273B0,signature,void __thiscall BeginPillarbox(void * this),vftable slot 63; plain ret
+0x005274C0,signature,void __thiscall EndPillarbox(void * this),vftable slot 64; plain ret
+0x00527520,signature,void * __thiscall CreateScene(void * this),vftable slot 13; plain ret
+0x00527530,signature,"void * __thiscall CreateSceneCamera(void * this, void * name)",vftable slot 11; ret 4
+0x005275B0,signature,"void __thiscall DestroyScene(void * this, void * scene)",vftable slot 14; ret 4; ecx unused
+0x005275C0,signature,"void * __thiscall CreateModelNode(void * this, void * name, void * a2, void * a3, int a4, int a5, int a6)",vftable slot 34; ret 0x18; pushes at 0x007E38E3..0x007E38EE; a2..a6 roles unread
+0x00527750,signature,"void __thiscall SetFlag_BF7B74(void * this, bool value)",vftable slot 40; ret 4
+0x00527760,signature,"void __thiscall SetSimplePixelShaders(void * this, bool value)",vftable slot 41; ret 4
+0x00527770,signature,"void __thiscall SetFlag_0xC6(void * this, bool value)",vftable slot 43; ret 4
+0x00527780,signature,"void __thiscall SetFlag_0xC7(void * this, bool value)",vftable slot 44; ret 4
+0x00527790,signature,"void * __thiscall SetString_0xD0(void * this, void * value)",vftable slot 46; tail jump to std::wstring::operator=
+0x005277A0,signature,void * __thiscall GetMoviePlayer(void * this),vftable slot 48; tail jump
+0x005277B0,signature,"void __thiscall SetCurrentScene(void * this, void * scene)",vftable slot 8; ret 4
+0x005277D0,signature,void * __thiscall GetDisplayEnumerator(void * this),"vftable slot 47; ecx unused, tail jump"
+0x00527850,signature,"void __thiscall SetLoadingScreenRendering(void * this, bool on)",vftable slot 60; ret 4 at 0x0052789E
+0x005278B0,signature,void * __cdecl GetDirectDriver(void),no ecx read; plain ret
+0x005278C0,clear,D3DDriver::D3DGraphicsDriverManager::vfunction8,Not in that vftable (its slot 7 is 0x008653B0); a free function reading g_graphics
+0x005278F0,signature,void * __cdecl GetSubmitDriver(void),no ecx read; plain ret
+0x00527930,signature,void __cdecl SelectRenderThreadDriver(bool threaded),plain ret; caller cleans at 0x0052A743
+0x00527960,convention,__thiscall,reads ecx at 0x00527961; plain ret
+0x005279D0,convention,__thiscall,"ret 0x40; ecx moved to esi at 0x005279F1; 0x40 bytes by value, a wstring first"
+0x00527A70,signature,"void __thiscall SetWindowSize(void * this, int width, int height)",vftable slot 17; ret 8
+0x00527AC0,signature,"void __thiscall AddFrameBufferEffect(void * this, void * effect)",vftable slot 6; ret 4
+0x00527AE0,signature,"void __thiscall RemoveFrameBufferEffect(void * this, void * effect)",vftable slot 7; ret 4
+0x00527B10,signature,void __thiscall EnableGameRendering(void * this),vftable slot 0; ecx read at 0x00527B12; ends in a tail jump
+0x0086E0F0,clear,D3DDriver::D3DGraphicsCapabilitiesDriver::vfunction5_for_GraphicsCapabilitiesDriver,"A folded getter of +0xC0; here called on a scene for its camera (0x00527331, 0x00527A8A), so the label misleads"
+0x00527320,signature,void __thiscall DrawOverlaySceneAndConsole(void * this),"reads ecx+0x58/+0x60 at 0x0052732D, 0x0052735B; plain ret through the tail jump to Console::Update"
