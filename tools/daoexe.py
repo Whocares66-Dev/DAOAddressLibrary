@@ -8,7 +8,8 @@ address. The default is the GOG build, game/gog/DAOrigins.exe.
     python tools/daoexe.py --class-of 0xVA      the class of the vftable at an address
     python tools/daoexe.py --bases Class        a class's bases, each at its offset in the object
     python tools/daoexe.py --refs 0xVA          code holding the address as a 32-bit immediate
-    python tools/daoexe.py --disasm 0xVA [n]    n instructions from an address (default: to ret)
+    python tools/daoexe.py --callers 0xVA       direct calls and jumps to an address, which --refs cannot see
+    python tools/daoexe.py --disasm 0xVA [n]   n instructions from an address (default: to ret)
     python tools/daoexe.py --commands [text]    the engine's COMMAND_* script command names
     python tools/daoexe.py --strings text       printable strings containing text, with addresses
     python tools/daoexe.py --imports            DLLs imported and the functions from each
@@ -111,6 +112,22 @@ class Image:
             out.append(i - raw + start)
             i = self.data.find(needle, i + 1, raw + end - start)
         return out
+
+    def code_callers(self, target):
+        """Addresses in .text of a direct call or jmp to target: a scan of the
+        bytes, not the instructions, so data in .text could in principle match.
+        code_refs cannot see these: their operand is relative, and readers took
+        its silence for "no caller" (lib-agent-3, 2026-11-02)."""
+        start, end, raw = self.section(".text")
+        text = self.data[raw : raw + end - start]
+        out = []
+        for opcode in (0xE8, 0xE9):
+            i = text.find(opcode)
+            while i != -1 and i + 5 <= len(text):
+                if start + i + 5 + struct.unpack_from("<i", text, i + 1)[0] == target:
+                    out.append(start + i)
+                i = text.find(opcode, i + 1)
+        return sorted(out)
 
     @cached_property
     def relocated(self):
@@ -433,6 +450,10 @@ def main(argv):
         return 0
     if mode == "--refs":
         for r in img.code_refs(int(rest[0], 16)):
+            print(f"{r:#010x}")
+        return 0
+    if mode == "--callers":
+        for r in img.code_callers(int(rest[0], 16)):
             print(f"{r:#010x}")
         return 0
     if mode == "--disasm":

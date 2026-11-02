@@ -84,6 +84,29 @@ MOV_EAX_EAX = bytes([0x89, 0xC0])
 RET = bytes([0xC3])
 
 
+class Callers(unittest.TestCase):
+    def image(self, code):
+        data = bytearray(pe_with_one_vftable())
+        data[0x1000 : 0x1000 + len(code)] = code
+        with tempfile.TemporaryDirectory() as folder:
+            path = os.path.join(folder, "a.exe")
+            with open(path, "wb") as f:
+                f.write(bytes(data))
+            return daoexe.Image(path)
+
+    def test_a_call_and_a_jump_are_found_and_code_refs_sees_neither(self):
+        target = BASE + 0x1040
+        call = b"\xe8" + struct.pack("<i", target - (BASE + 0x1000 + 5))
+        jump = b"\xe9" + struct.pack("<i", target - (BASE + 0x1010 + 5))
+        img = self.image(call + bytes(11) + jump)
+        self.assertEqual(img.code_callers(target), [BASE + 0x1000, BASE + 0x1010])
+        self.assertEqual(img.code_refs(target), [])
+
+    def test_a_call_elsewhere_is_not_a_caller(self):
+        img = self.image(b"\xe8" + struct.pack("<i", 0x100))
+        self.assertEqual(img.code_callers(BASE + 0x1040), [])
+
+
 class Disasm(unittest.TestCase):
     """A function longer than one read runs on to its ret."""
 
