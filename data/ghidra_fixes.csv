@@ -18729,3 +18729,52 @@ address,what,value,why
 0x004FE3D0,signature,"void * __thiscall f(void *this, void *out, void *name, void *existing)",ret 0xC 0x004FE570
 0x004FE680,signature,"void * __thiscall f(void *this, void *out, void *name)",ret 8 0x004FE799
 0x004FE7F0,signature,"void * __thiscall f(void *this, void *out, void *name)",ret 8 0x004FE8A7
+0x004FFE60,signature,void __thiscall std::vector<Graphics::MaterialTextureDeclaration>::_Tidy(void* this),plain ret at 0x004FFE9E
+0x00501A50,signature,void __thiscall Graphics::MaterialObject::ClearParameters(void* this),plain ret at 0x00501CBF; ecx moved to esi first
+0x00848410,signature,"void __thiscall TexManager::TexturePool::ReleaseTexture(void* this, void* texture)",ret 4 at 0x00848687
+0x008488A0,signature,"void __thiscall std::vector<Elem24>::reserve(void* this, unsigned int count)",ret 4 at 0x008488CE
+0x008488E0,signature,"void* __thiscall std::vector<Elem24>::vector(void* this, unsigned int count)",ret 4 at 0x0084894F; returns this
+0x008490A0,signature,void __thiscall TexManager::TexturePool::DestroyAll(void* this),plain ret at 0x0084928E
+0x0084C0F0,signature,"void* __cdecl TexManager::TGA::DecodeUncompressed(const void* pixels, const void* header, const void* format)","plain ret; caller add esp,0xC at 0x0084C4FA"
+0x0084C220,signature,"void* __cdecl TexManager::TGA::DecodeRLE(const void* pixels, const void* header, const void* format)","plain ret; caller add esp,0xC"
+0x0084C430,signature,bool __cdecl TexManager::TGA::Is24BitTrueColor(const void* header),"plain ret; caller add esp,4"
+0x0084C460,signature,bool __cdecl TexManager::TGA::Is32BitTrueColor(const void* header),"plain ret; caller add esp,4"
+0x0084C490,signature,const void* __cdecl TexManager::TGA::GetFormatInfo(const void* header),"plain ret; caller add esp,4 at 0x0084C5A1"
+0x0084C4C0,signature,bool __thiscall TexManager::FillTGADataOp::Execute(void* this),plain ret at 0x0084C509 and 0x0084C584
+0x00A1ECB0,signature,"void __thiscall Renderer::GraphicsCommandRing::SkipBytes(void* this, unsigned int byteCount)",ret 4 at 0x00A1ECD1
+0x00A1ECE0,signature,void __thiscall Renderer::RenderCommandProcessorTask::DrainAndReset(void* this),plain ret at 0x00A1ED27
+0x00A1ED30,signature,"void* __thiscall Renderer::RenderCommandProcessorTask::RenderCommandProcessorTask(void* this, void* threadedDriver)",ret 4 at 0x00A1ED97
+0x00A1F980,signature,"int __thiscall Renderer::RenderCommandProcessorTask::Run(void* this, int arg)",ret 4 at 0x00A1F9F0 and 0x00A1F997
+0x00A21850,signature,void __thiscall Renderer::ScaleformRenderer::ReleaseShaders(void* this),jmp thunk to 0x00A21800 which ends in a plain ret
+0x00A21F10,signature,"void* __thiscall Renderer::ThreadedGraphicsDriver::CreateSwapChain(void* this, int a1, int a2, int a3, int a4, int a5, int a6)",jump thunk to wrapped 0x00869F30 which ends ret 0x18
+0x00A21F30,signature,void* __thiscall Renderer::ThreadedGraphicsDriver::CreateViewport(void* this),jump thunk to wrapped 0x008686C0 plain ret
+0x00A21F40,signature,"void* __thiscall Renderer::ThreadedGraphicsDriver::CreateVertexStream(void* this, int a1, int a2, int a3, int a4, int a5, int a6)",jump thunk to wrapped 0x008687B0 ret 0x18
+0x00A21F50,signature,"void* __thiscall Renderer::ThreadedGraphicsDriver::CreateIndexStream(void* this, int a1, int a2, int a3, int a4)",jump thunk to wrapped 0x0086A3F0 ret 0x10
+0x00A21F60,signature,"void* __thiscall Renderer::ThreadedGraphicsDriver::CreateIndexedBatch(void* this, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)",jump thunk to wrapped 0x0086AB90 ret 0x2C
+0x00A21FB0,signature,"void* __thiscall Renderer::ThreadedGraphicsDriver::vfunction32(void* this, int a1, int a2, int a3)",jump thunk to wrapped 0x00868AB0 ret 0xC
+0x00A21FD0,signature,"void* __thiscall Renderer::ThreadedGraphicsDriver::vfunction34(void* this, int a1, int a2, int a3)",jump thunk to wrapped 0x00868C60 ret 0xC
+0x00A21FE0,signature,"void* __thiscall Renderer::ThreadedGraphicsDriver::CreateTexture2D(void* this, int width, int height, int levels, int usageMask, int formatIndex, int type)",jump thunk to wrapped 0x00868FB0 ret 0x18
+0x00A22020,signature,"void* __thiscall Renderer::ThreadedGraphicsDriver::CreateTextureCubeMap(void* this, int a1, int a2, int a3, int a4, int a5)",jump thunk to wrapped 0x008693C0 ret 0x14
+0x0050B4D0,signature,"void* __thiscall Core::MapValueOrDefault<unsigned int,?>(void* this, void* found)",name and stack arguments match the function's ret and its callers
+0x0052EA80,signature,void __cdecl SpeedTree::GetShaderMatrices(void* dest),name and stack arguments match the function's ret and its callers
+0x0052ED30,signature,"void __cdecl SpeedTree::GetInstanceLeafAngles(void* instance, void** outData, unsigned int* outSize)",name and stack arguments match the function's ret and its callers
+0x00920030,signature,void* __thiscall Graphics::MaterialArtVector4f::GetValuePointer(void* this),name and stack arguments match the function's ret and its callers
+0x00A21F20,signature,"void* __thiscall Renderer::ThreadedGraphicsDriver::CreateDefaultSwapChain(void* this, void* a1)",name and stack arguments match the function's ret and its callers
+0x00A21F70,signature,"void* __thiscall Renderer::ThreadedGraphicsDriver::CreateBatch(void* this, int a1, int a2, int a3, int a4, int a5, int a6)",name and stack arguments match the function's ret and its callers
+0x00A21F80,signature,"void* __thiscall Renderer::ThreadedGraphicsDriver::CreateBatchWithPrimitive(void* this, int a1, int a2, int a3, int a4, int a5, int a6, int a7)",name and stack arguments match the function's ret and its callers
+0x00A21FA0,signature,"void* __thiscall Renderer::ThreadedGraphicsDriver::CreatePixelShaderFromBytecode(void* this, void* bytecode)",name and stack arguments match the function's ret and its callers
+0x00A21FC0,signature,"void* __thiscall Renderer::ThreadedGraphicsDriver::CreateVertexShaderFromBytecode(void* this, void* bytecode)",name and stack arguments match the function's ret and its callers
+0x00A21FF0,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::SetTextureLoadSize(void* this, int width, int height)",name and stack arguments match the function's ret and its callers
+0x00A22000,signature,"void* __thiscall Renderer::ThreadedGraphicsDriver::CreateTextureFromMemory(void* this, const void* data, unsigned int size)",name and stack arguments match the function's ret and its callers
+0x00A22010,signature,"void* __thiscall Renderer::ThreadedGraphicsDriver::CreateVolumeTextureFromMemory(void* this, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8)",name and stack arguments match the function's ret and its callers
+0x00A22030,signature,"void* __thiscall Renderer::ThreadedGraphicsDriver::CreateVolumeTexture(void* this, unsigned int width, unsigned int height, unsigned int depth, unsigned int levels, unsigned int usage, unsigned int format)",name and stack arguments match the function's ret and its callers
+0x00A22040,signature,"void* __thiscall Renderer::ThreadedGraphicsDriver::GetDisplaySettings(void* this, void* out)",name and stack arguments match the function's ret and its callers
+0x0052EA80,convention,__cdecl,plain ret with the caller's add esp
+0x0052ED30,convention,__cdecl,plain ret with the caller's add esp
+0x0084C0F0,convention,__cdecl,plain ret with the caller's add esp
+0x0084C220,convention,__cdecl,plain ret with the caller's add esp
+0x0084C430,convention,__cdecl,plain ret with the caller's add esp
+0x0084C460,convention,__cdecl,plain ret with the caller's add esp
+0x0084C490,convention,__cdecl,plain ret with the caller's add esp
+0x00A1F980,convention,__thiscall,ret 4; reads ecx (edi=ecx at 0x00A1F981) before writing it
+0x00A21F10,convention,__thiscall,jump thunk through this+4; the target's ret 0x18 cleans the stack
