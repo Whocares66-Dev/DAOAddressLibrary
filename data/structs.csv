@@ -521,6 +521,7 @@ Conversation::Participant,0x4,0x1,uint8_t,bound,"0x007F1EA8 cmp byte ptr [esi+4]
 Conversation::Participant,0x5,0x1,uint8_t,markedForRemoval,"0x007F077E mov byte ptr [eax+5],1 in MarkParticipantForRemoval (0x007F0770); AddParticipant clears it for a found record (0x007F1A2A)"
 Conversation::Participant,0x10,0x4,int32,lookAtHandle,"0x007F07D3 cmp dword ptr [esi+0x10],ebx; jle in ReleaseParticipant (0x007F07A0): a handle above 0 is released on the creature (lea edi,[eax+0x2e0] then 0x00702E90); AddParticipant starts it -1 (0x007F1A04)"
 EC::ITimer,0x0,0x20,struct,sizeof,0x00A465EC push 0x20 then ctor 0x004CB130 at 0x00A4660C
+ECFileAccess::PNGFileAccess,0x448,0x1,unsigned char,descriptionWritten,"0x00A3966E cmp byte [esi+0x448],bl; set to 1 at 0x00A396ED; cleared at 0x00A3973D in ReadDescriptionChunk"
 EffectList,0x0,0x14,struct,sizeof,0x0068979D push 0x14 ; the allocation before the constructor call at 0x006897D9 (constructor 0x00A64880)
 EffectList,0x0,0x4,CGameEffect*,topAnimationEffect,"0x00A6493C mov [esi],edi in AddEffect (0x00A64900) when the new effect's animation priority beats the current one's (0x00A64933)"
 EffectList,0x4,0x10,std::vector<CGameEffect*>,effects,"0x00A64885 lea ecx,[esi+4] ; begin +8 and end +0xC are read with sar 2 at 0x00A64646..0x00A6465E by FindTopAnimationEffect ; 4-byte elements"
@@ -594,10 +595,15 @@ GraphicsStructures::CSpeedTreeWind,0x2C,0x4,int,windMatrixCount,"0x00A57227 mov 
 GraphicsStructures::CSpeedTreeWind,0x30,0x4,int,leafAngleCount,"0x00A5722A mov [esi+0x30],ecx in SetNumWindMatricesAndLeafAngles, at least 1"
 GraphicsStructures::CSpeedTreeWind,0x34,0x4,float,strength,"0x00A56490 fstp [esi+0x34] in SetStrengthAndDirection (0x00A56450), clamped to 0..1 ; GetStrengthAndDirection 0x00A566F6 reads it"
 GraphicsStructures::CSpeedTreeWind,0x40,0x10,Vector4,direction,"0x00A564B4 movaps [esi+0x40],xmm0 in SetStrengthAndDirection ; GetStrengthAndDirection 0x00A566FE reads it"
+GraphicsStructures::CSpeedTreeWind,0x50,0x10,float[4],branchOscillationX,"0x00A55D74 fstp [ecx+0x50] in SetBranchOscillationX (four floats +0x50..+0x5C); default block 0x00A574D5 lea ecx,[esi+0x50] then 0x00A57514"
+GraphicsStructures::CSpeedTreeWind,0x60,0x10,float[4],branchOscillationY,"0x00A55D94 fstp [ecx+0x60] in SetBranchOscillationY; default block 0x00A57519 lea ecx,[esi+0x60]"
+GraphicsStructures::CSpeedTreeWind,0x70,0x10,float[4],leafRocking,"0x00A57521 lea ecx,[esi+0x70] default block; the setter SetLeafRocking 0x00A55DB0 was not read, the offset is the constructor's"
 GraphicsStructures::CSpeedTreeWind,0x80,0x10,float[4],leafRustling,0x00A55DD4 fstp [ecx+0x80] ; SetLeafRustling (0x00A55DD0) stores four floats +0x80..+0x8C
+GraphicsStructures::CSpeedTreeWind,0x90,0x40,struct,clothParameters,"0x00A5753A call 0x00A55E30 with ecx=esi+0x90; ten floats +0x90..+0xB4, vector +0xC0..+0xC8 (render-49, LoadWnd 0x00A57CAD..0x00A57F40)"
 GraphicsStructures::CSpeedTreeWind::WindInstance,0x0,0x9C,struct,sizeof,"0x00A57570 push 0x9C ; the CSpeedTreeWind constructor allocates each instance, constructor 0x00A572E0 called at 0x00A5758D"
 GraphicsStructures::CSpeedTreeWind::WindInstance,0x0,0x4,void*,vftable,"0x00A57314 mov dword [esi],0xB593C8"
 GraphicsStructures::CSpeedTreeWind::WindInstance,0x4,0x4,GraphicsStructures::CSpeedTreeWind*,owner,"0x00A5731D mov [esi+4],eax ; 0x00A573F0 mov eax,[ecx+4]; add eax,0x90 in GetOwnerParameters"
+GraphicsStructures::CSpeedTreeWind::WindInstance,0x98,0x4,float,phase,0x00A55CE0 fld [ecx+0x98]; Advance adds strength*40*dt at 0x00A57132..0x00A57138
 GraphicsStructures::Dependency,0x0,0x4,void*,vftable,"0x00542D68 mov [esi],0xAF832C; vftable (0x00AF832C for the base)"
 GraphicsStructures::Dependency,0x4,0x4,GraphicsStructures::Object*,target,"0x00568BEB mov [esi+4],edi; 0x00568C49 mov [esi+4],ecx; the target Object"
 GraphicsStructures::Dependency,0x8,0x4,GraphicsStructures::ObjectNode*,targetNode,"0x00568BEE mov [esi+8],eax; 0x00568C5D mov [esi+8],eax; the target's node found by name"
@@ -906,6 +912,15 @@ Renderer::CShadowCasterCuller,0x2A0,0x8,unsigned long long,terrainCategoryMask,"
 Renderer::CShadowCasterCuller,0x2A8,0x4,float,sweepLimit,"0x00A24798 fld [0xC1C994] (50.0), 0x00A2479E fstp [esi-8] with esi = this+0x2B0; read at 0x00A24C6B"
 Renderer::CShadowCasterCuller,0x2AC,0x4,float,rangeSquared,"0x00A2477C fmul [0xC1C998] (20.0) on camera GetFar, squared at 0x00A24793, stored 0x00A24795; compared at 0x00A24BF7"
 Renderer::CShadowCasterCuller,0x2B0,0xC,float[3],anchorPosition,"0x00A24782 add esi,0x2B0; 0x00A247A6 camera slot 14 writes there; 0x00A24BC4 reads it"
+Renderer::ICameraInternal,0x0,0x4,void*,vftable,"0x00A25B7F mov [esi],0xB58604 (PerspectiveCamera ctor, after the base ctor 0x00465DA0)"
+Renderer::ICameraInternal,0x4,0x4,void*,viewport,"0x004655CE mov ecx,[ecx+4]; call into it in SetViewport 0x004655B0; width and height read through its slots at 0x00A25369, 0x00A2537C"
+Renderer::ICameraInternal,0x30,0x1,unsigned char,projectionDirty,"0x00465AAC cmp byte [esi+0x30],0 in the projection getter; set at 0x00A25A3A, 0x00A25A54; cleared 0x00465ABC"
+Renderer::ICameraInternal,0x40,0x40,Math::Matrix4x4f,projection,"0x00465AC3 movaps xmm0,[esi+0x40] (getter); built into it at 0x00A25AEA lea eax,[esi+0x40] and 0x00A25B17"
+Renderer::ICameraInternal,0x80,0x40,Math::Matrix4x4f,view,"0x00465AF9 movaps xmm0,[ecx+0x80] (view getter)"
+Renderer::ICameraInternal,0xc0,0x40,Math::Matrix4x4f,cameraToWorld,"0x00465A3A fld [ecx+0xCC] position column; 0x00465A7A forward = negated third column (+0xC8,+0xD8,+0xE8); right 0x00465B8A; up 0x00465B4A; used as the world transform at 0x00A25CB2 lea ebx,[esi+0xC0]"
+Renderer::ICameraInternal,0x100,0x1c,std::wstring,name,"0x004655A0 lea eax,[ecx+0x100] (GetName)"
+Renderer::ICameraInternal,0x130,0x4,float,nearDistance,0x00465678 fstp [ecx+0x130] (SetNearFar); read at 0x00A25AED for the projection
+Renderer::ICameraInternal,0x134,0x4,float,farDistance,0x00465682 fstp [ecx+0x134]; read at 0x00A25ADD for the projection
 Renderer::ICuller,0x0,0x4,void*,vftable,"0x00A23F90 mov [ecx],0xB584E0"
 Renderer::ICuller,0x20,0x4,Math::AABB,volume,"0x00A23F96 mov [ecx+0x20],0xAE709C (the CollisionObject base of the box); 0x00A24012 sets the AABB vftable 0xAE70BC; grown by CShadowCasterCuller at 0x00A24D97"
 Renderer::IGenericMeshFrustumCuller,0x0,0x290,struct,sizeof,0x00A24248 push 0x290 in CreateCuller
@@ -928,6 +943,12 @@ Renderer::LightState,0x114,0x4,ResourceHandle,envMapHandle,"0x0046B75F lea ebx,[
 Renderer::LightState,0x130,0x40,float[16],irradianceRed,"0x0046B77E movaps [esi+0x130],xmm0"
 Renderer::LightState,0x170,0x40,float[16],irradianceGreen,"0x0046B7B0 movaps [esi+0x170],xmm0"
 Renderer::LightState,0x1B0,0x40,float[16],irradianceBlue,"0x0046B7E2 movaps [esi+0x1b0],xmm0"
+Renderer::OrthogonalCamera,0x0,0x150,struct,sizeof,0x00537B04 allocation before the constructor call 0x00A25240 at 0x00537B3E; 0x0053790A push 0x150 in CreateGuiScene
+Renderer::OrthogonalCamera,0x140,0x4,float,left,0x00A252E8 fstp [ecx+0x140] (SetBox first argument); first box argument of OrthoOffCenterLH at 0x00A252C8
+Renderer::OrthogonalCamera,0x144,0x4,float,right,0x00A252F2 fstp [ecx+0x144]; second argument of OrthoOffCenterLH at 0x00A252BE
+Renderer::OrthogonalCamera,0x148,0x4,float,bottom,0x00A252FC fstp [ecx+0x148]; third argument of OrthoOffCenterLH at 0x00A252B4; ScreenToWorldRay maps the last pixel row to it (0x00A253E5)
+Renderer::OrthogonalCamera,0x14c,0x4,float,top,0x00A25306 fstp [ecx+0x14C]; fourth argument of OrthoOffCenterLH at 0x00A252AA; pixel row 0 maps to it (0x00A253DF)
+Renderer::PerspectiveCamera,0x0,0x150,struct,sizeof,0x00537A89 push 0x150 before the constructor call 0x00A25B30 at 0x00537AE5
 Renderer::PerspectiveCamera,0x140,0x4,float,fieldOfView,0x00A25A58 fstp [ecx+0x140] (slot 3); used as fov times 0.5 (double 0x00AE70F8) at 0x00A25C66..0x00A25C72
 Renderer::PerspectiveCamera,0x144,0x4,float,aspectRatio,0x00A25A42 fidiv then fstp [esi+0x144]: viewport width over height from slot 2; read back by 0x00A25A00
 Renderer::PerspectiveCamera,0x148,0x1,unsigned char,useDriverAspect,"0x00A25AA1 cmp byte [ecx+0x148],0 in GetAspectCorrection, which asks the graphics object's slot +0x184 when set"
