@@ -493,6 +493,30 @@ GameModeRequest,0x0,0x10,struct,sizeof,"0x006411E5 sub esp,0x10 building the def
 GameModeRequest,0x4,0x4,int32,filedInMode,"0x006414BF mov [esp+0x14],eax, the result of GetGameMode (0x00640060, call at 0x006414B3) = the number of the current mode when the request is filed; stored at 0x00641647 mov [edi+4],edx; SwitchMode keeps it at the controller's +0x7C"
 GameModeRequest,0x8,0x4,int32,force,"0x006414C7 mov [esp+0x18],eax from SetGameMode's second argument; TakeRequest tests it at 0x00640D3A (cmp dword [esi+8],0; with 0 and the same mode the request is dropped)"
 GameModeRequest,0xC,0x4,void*,data,"0x006414CB mov [esp+0x1c],ebp from SetGameMode's third argument; an object freed through its vtable slot 0 then its deleting destructor (slot 1, push 1) when the request is dropped (0x00640D4C..0x00640D71)"
+Graphics::ISceneInstance,0x0,0x100,struct,sizeof,0x0053A4C1 push 0x100
+Graphics::ISceneInstance,0x0,0x4,void*,vftable,"0x0053A013 mov [esi],0xAF7838"
+Graphics::ISceneInstance,0x10,0x1,unsigned char,drawEnabled,"0x0053A019 mov byte [esi+0x10],1; read by ShouldDraw 0x00537F40"
+Graphics::ISceneInstance,0x11,0x1,unsigned char,drawOnce,0x0053A01D clears it; 0x00537F60 clears; 0x00528C99 and 0x0052A5B5 set it
+Graphics::ISceneInstance,0x14,0x10,ECBase::ECDynArray<Vector4>,fogParameters,"0x0053A124 resize to 2 (push 2); read by 0x00539810 (begin +0x18, end +0x1C); semantic FogParameters"
+Graphics::ISceneInstance,0x34,0x10,ECBase::ECDynArray<Vector4>,skyParameters,0x0053A12D resize to 9 (push 9); read by 0x005397A0 (begin +0x38); semantic SkyParameters
+Graphics::ISceneInstance,0x44,0x10,ECBase::ECDynArray<Vector4>,cloudParameters,0x0053A137 resize to 3 (push 3); read by 0x00539880 (begin +0x48); semantic CloudParameters
+Graphics::ISceneInstance,0x64,0x4,void*,layout,"0x00538756 mov eax,[ecx+0x64] (reads +0x90..0x9C into 0x00BF7410, UpdateSky reads +0x120); written by Stub::SetDword_0x64 0x00537F80 (the layout's class is INFERRED from SCENE.md's +0x4E0 link)"
+Graphics::ISceneInstance,0x70,0x10,Vector4,playerPosition,"0x005387BC movaps [ecx+0x70],xmm0; zeroed 0x0053A086"
+Graphics::ISceneInstance,0x80,0x4,void*,speedTreeWorld,"0x00537CD4 mov [esi+0x80],eax after a 0x1C-byte object (0x00537CB3)"
+Graphics::ISceneInstance,0x84,0x4,void*,offscreenTarget,"0x007F4194 mov [ecx+0x84],edx and 0x007BBB16 for portrait and paper doll scenes; zero at 0x0053A0A7. Meaning INFERRED"
+Graphics::ISceneInstance,0x88,0x4,void*,atmosphere,"0x0053A1D6 mov [esi+0x88],eax after a 0x180-byte AtmosphereConstants (0x0053A1A7)"
+Graphics::ISceneInstance,0x90,0x10,std::list<GraphicsStructures::Object*>,objects,0x0053A0B3 call 0x004C5C60; 0x0053A283 AddObject pushes; 0x00537D70 returns its address
+Graphics::ISceneInstance,0xB0,0x10,ECBase::ECDynArray<GraphicsStructures::Object*>,updateObjects,0x0053A323 AddObject pushes objects without flag 0x40; 0x00538E56 UpdateObjects walks it
+Graphics::ISceneInstance,0xC0,0x4,void*,camera,"0x00537C69 mov [ecx+0xC0],eax; the world scene's holds the SceneCamera wrapper (0x0040AF0A..0x0040AF32)"
+Graphics::ISceneInstance,0xC4,0x1,unsigned char,ownsCamera,"0x00537C75 mov [ecx+0xC4],dl; 0x00539A03 deletes the camera when it is 1"
+Graphics::ISceneInstance,0xC8,0x4,void*,physicsManager,"0x00537D91 mov [esi+0xC8],eax (0x00819550 manager, its slot +0x18)"
+Graphics::ISceneInstance,0xCC,0x4,void*,physicsScene,"0x00537DA2 mov [esi+0xCC],eax (manager slot +0xC with 0)"
+Graphics::ISceneInstance,0xD0,0x1,unsigned char,simple,"0x0053A142 mov [esi+0xD0],al (constructor argument); 0x00539713 and 0x0053A343 test it"
+Graphics::ISceneInstance,0xD4,0x4,void*,umbraScene,"0x0053A177 mov [esi+0xD4],eax (Renderer::EclipseUmbraScene, 0x80 bytes, 0x0053A14A)"
+Graphics::ISceneInstance,0xD8,0x4,void*,animManager,"0x0053A185 mov [esi+0xD8],eax (ISceneSubManager::Create 0)"
+Graphics::ISceneInstance,0xDC,0x4,void*,lightManager,"0x0053A199 mov [esi+0xDC],eax (Create 1)"
+Graphics::ISceneInstance,0xE0,0x4,void*,emitterManager,"0x0053A19E mov [esi+0xE0],eax (Create 2)"
+Graphics::ISceneInstance,0xE4,0x10,ECBase::ECDynArray<GraphicsStructures::Object*>,pendingObjects,0x0053A3A5 and 0x00539775 push and remove here in a simple scene
 GraphicsStructures::CSpeedTreeWind,0x0,0xE0,struct,sizeof,"0x00A57631 push 0xE0 ; Create (0x00A57610) allocation, constructor 0x00A57490 called at 0x00A57655"
 GraphicsStructures::CSpeedTreeWind,0x0,0x4,void*,vftable,"0x00A574C4 mov dword [esi],0xB593B4"
 GraphicsStructures::CSpeedTreeWind,0x4,0x4,float,maxBendAngle,0x00A55D14 fstp [ecx+4] in SetMaxBendAngle (0x00A55D10)
@@ -636,8 +660,11 @@ GraphicsStructures::ObjectNodePointLightBlueprint,0x15F,0x1,char,useVariationTin
 GraphicsStructures::SceneCamera,0x0,0x40,struct,sizeof,"0x00527551 push 0x40 (IGraphicsInternal::CreateSceneCamera, then the ctor 0x00537A00 at 0x00527576)"
 GraphicsStructures::SceneCamera,0x0,0x4,void*,vftable,"0x00537A3F mov [esi],0xAF77AC"
 GraphicsStructures::SceneCamera,0x4,0x4,void*,innerCamera,"0x00537727 mov ecx,[esi+4]: the Renderer::PerspectiveCamera or OrthogonalCamera (0x150 bytes each) every forwarder calls through; stored at 0x00537AF1 / 0x00537B4A (Perspective 0xA25B30 at 0x00537AE5, Orthogonal 0xA25240 at 0x00537B3E, chosen by the ctor's third argument)"
+GraphicsStructures::SceneCamera,0x8,0x1C,std::wstring,name,"0x00537A38 lea ecx,[esi+0x8]; call 0x004C2510 (copy of the name argument); 0x00537C10 destroys it"
+GraphicsStructures::SceneCamera,0x24,0x4,void*,sceneCamera,"0x005379EF mov [esi+0x24],eax (SetScene: the scene's camera); 0x0053795A (CreateGuiScene: the orthogonal camera made there); 0x00537BEB deletes it when ownsScene"
 GraphicsStructures::SceneCamera,0x28,0x4,void*,scene,"0x005379E7 mov [esi+0x28],ecx (slot 24); read at 0x00537734 by SetViewport"
 GraphicsStructures::SceneCamera,0x2C,0x1,unsigned char,ownsScene,"0x005379C1 mov byte [esi+0x2C],1 after slot 23 made the GUI scene; 0x00537A9A clears it in the ctor"
+GraphicsStructures::SceneCamera,0x30,0x10,Vector4,vec120,"0x00537B8C movaps [ecx+0x30],xmm0 (slot 4); zeroed from 0x00C1EF40 at 0x00537A80..0x00537A97"
 GraphicsStructures::SpeedTreeForest,0x0,0x600,struct,sizeof,"0x005CBE40 push 0x600 ; BuildTreeForests allocates it, constructor 0x00535BB0 called at 0x005CBE6B (and 0x005CBEB5 for the second)"
 GraphicsStructures::SpeedTreeForest,0x0,0x4,void*,vftable,"0x00535C19 mov dword [esi],0xAF740C"
 GraphicsStructures::SpeedTreeForest,0x38,0x10,std::vector<void*>,modelGroups,"0x00535C12 lea ecx,[esi+0x38] ; GetModelGroupCount (0x005320B0) reads begin +0x3C and end +0x40 with sar 2 ; GetModelGroupAt (0x005320D0) indexes it ; elements are ModelGroup pointers"
