@@ -7279,9 +7279,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7278,function,GraphicsStructures::SpeedTreeModel::FillBillboardInstance,0x00530a20,0x007379b0,0x00530a20
 7279,function,GraphicsStructures::SpeedTreeModel::AppendBillboardTexCoords,0x00530b70,0x00737b00,0x00530b70
 7280,function,GraphicsStructures::SpeedTreeModel::DrawInstance,0x00530c20,0x00737bb0,0x00530c20
-7281,function,,0x00530db0,0x00737d40,0x00530db0
+7281,function,GraphicsStructures::SpeedTreeModel::UpdateShaderConstants,0x00530db0,0x00737d40,0x00530db0
 7282,function,GraphicsStructures::SpeedTreeInstance::`scalar deleting destructor',0x005313a0,0x00738330,0x005313a0
-7283,function,,0x005313c0,0x00738350,0x005313c0
+7283,function,GraphicsStructures::SpeedTreeInstance::SetDrawDistance,0x005313c0,0x00738350,0x005313c0
 7284,function,GraphicsStructures::SpeedTreeInstance::CreatePhysicsActor,0x005313e0,0x00738370,0x005313e0
 7285,function,GraphicsStructures::SpeedTreeInstance::UpdateRenderTransform,0x005317a0,0x00738730,0x005317a0
 7286,function,GraphicsStructures::SpeedTreeInstance::SetPosition,0x00531810,0x007387a0,0x00531810
@@ -7334,7 +7334,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7333,function,,0x00533670,0x00863ea0,0x00533670
 7334,function,,0x005336c0,0x004fe6b0,0x005336c0
 7335,function,,0x00533880,0x0070e8a0,0x00533880
-7336,function,,0x005338b0,0x0073b180,0x005338b0
+7336,function,SpeedTree::SortInstancesFarToNear,0x005338b0,0x0073b180,0x005338b0
 7337,function,std::vector<float>::resize,0x00533920,0x004fe890,0x00533920
 7338,function,GraphicsStructures::SpeedTreeModel::BuildGeometry,0x005339e0,0x0073b1f0,0x005339e0
 7339,function,GraphicsStructures::SpeedTreeModel::Compute,0x00533da0,0x0073b5b0,0x00533da0
@@ -7419,7 +7419,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7418,function,Graphics::ISceneInstance::ClearDrawFlag,0x00537f60,0x0073f890,0x00537f60
 7419,function,Graphics::ISceneInstance::SetFocusObject,0x00537f70,0x0073f8a0,0x00537f70
 7420,function,Stub::SetDword_0x64,0x00537f80,0x005b6bc0,0x00537f80
-7421,function,,0x00537f90,0x0073f8b0,0x00537f90
+7421,function,Graphics::ISceneInstance::ObjectLacksFlag0x100,0x00537f90,0x0073f8b0,0x00537f90
 7422,function,Graphics::ISceneInstance::SetObjectDetached,0x00537fb0,0x0073f8d0,0x00537fb0
 7423,function,Graphics::ISceneInstance::SetCutoff,0x00538060,0x0073f980,0x00538060
 7424,function,Graphics::ISceneInstance::GetWaterFogParameters,0x005380b0,0x0073f9d0,0x005380b0
@@ -7467,7 +7467,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7466,function,,0x00539a90,0x0049d590,0x00539a90
 7467,function,,0x00539c25,0x0049d725,0x00539c25
 7468,function,,0x00539cbd,0x0049d7bd,0x00539cbd
-7469,function,,0x00539d30,0x00740a20,0x00539d30
+7469,function,Graphics::ISceneInstance::SubmitOverlayRenderables,0x00539d30,0x00740a20,0x00539d30
 7470,function,,0x00539ea0,0x0049e9f0,0x00539ea0
 7471,function,Graphics::ISceneInstance::Destroy,0x00539f30,0x00740b90,0x00539f30
 7472,function,std::vector<Math::CollisionOutputParameter>::push_back,0x00539f50,0x0049f420,0x00539f50
@@ -7483,30 +7483,30 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7482,function,Graphics::GraphicsDriver::PresentSurfaceRect,0x0053a7e0,0x007413b0,0x0053a7e0
 7483,function,Graphics::GraphicsDriver::vfunction68,0x0053a820,0x007413f0,0x0053a820
 7484,function,Graphics::GraphicsDriver::vfunction69,0x0053a830,0x00741400,0x0053a830
-7485,function,,0x0053a850,0x00741440,0x0053a850
-7486,function,,0x0053a870,0x00741420,0x0053a870
-7487,function,,0x0053a890,0x00741460,0x0053a890
-7488,function,,0x0053a8b0,0x00741480,0x0053a8b0
-7489,function,,0x0053a8d0,0x007414a0,0x0053a8d0
-7490,function,,0x0053a8f0,0x007414c0,0x0053a8f0
-7491,function,,0x0053a910,0x007414e0,0x0053a910
-7492,function,,0x0053a930,0x00741500,0x0053a930
-7493,function,,0x0053a950,0x00741520,0x0053a950
-7494,function,,0x0053a970,0x00741540,0x0053a970
-7495,function,,0x0053aa00,0x007415d0,0x0053aa00
-7496,function,,0x0053aa50,0x00741620,0x0053aa50
-7497,function,,0x0053aa80,0x00741650,0x0053aa80
-7498,function,,0x0053aab0,0x00741680,0x0053aab0
+7485,function,Graphics::GraphicsDriver::SetTexture,0x0053a850,0x00741440,0x0053a850
+7486,function,Graphics::GraphicsDriver::vfunction70,0x0053a870,0x00741420,0x0053a870
+7487,function,Graphics::GraphicsDriver::SetShaderParameterScalar,0x0053a890,0x00741460,0x0053a890
+7488,function,Graphics::GraphicsDriver::SetShaderParameterFloat4,0x0053a8b0,0x00741480,0x0053a8b0
+7489,function,Graphics::GraphicsDriver::SetShaderParameterVector,0x0053a8d0,0x007414a0,0x0053a8d0
+7490,function,Graphics::GraphicsDriver::SetShaderParameterMatrix,0x0053a8f0,0x007414c0,0x0053a8f0
+7491,function,Graphics::GraphicsDriver::SetShaderParameterBool,0x0053a910,0x007414e0,0x0053a910
+7492,function,Graphics::GraphicsDriver::SetShaderParameterData,0x0053a930,0x00741500,0x0053a930
+7493,function,Graphics::GraphicsDriver::vfunction91,0x0053a950,0x00741520,0x0053a950
+7494,function,Graphics::GraphicsDriver::CreateFontGlyphBatch,0x0053a970,0x00741540,0x0053a970
+7495,function,Graphics::GraphicsDriver::LockBuffer,0x0053aa00,0x007415d0,0x0053aa00
+7496,function,Graphics::GraphicsDriver::UnlockBuffer,0x0053aa50,0x00741620,0x0053aa50
+7497,function,Graphics::GraphicsDriver::SetRenderTargetTexture,0x0053aa80,0x00741650,0x0053aa80
+7498,function,Graphics::GraphicsDriver::UploadTextureLevel,0x0053aab0,0x00741680,0x0053aab0
 7499,function,Graphics::GraphicsDriver::ApplyBrightnessContrastGamma,0x0053ab10,0x007416e0,0x0053ab10
-7500,function,,0x0053ac50,0x00741820,0x0053ac50
-7501,function,,0x0053ac70,0x00741840,0x0053ac70
-7502,function,,0x0053acd0,0x007418a0,0x0053acd0
-7503,function,,0x0053ad20,0x00760770,0x0053ad20
-7504,function,,0x0053ad40,0x00760790,0x0053ad40
-7505,function,,0x0053ae30,0x00760880,0x0053ae30
+7500,function,Graphics::GraphicsDriver::DestroyFontGlyphBatch,0x0053ac50,0x00741820,0x0053ac50
+7501,function,Graphics::GraphicsDriver::SaveToFile,0x0053ac70,0x00741840,0x0053ac70
+7502,function,Graphics::GraphicsDriver::SaveToFileOther,0x0053acd0,0x007418a0,0x0053acd0
+7503,function,MaskedFlagsDiffer,0x0053ad20,0x00760770,0x0053ad20
+7504,function,Graphics::IRenderableNode::SyncUmbraProperties,0x0053ad40,0x00760790,0x0053ad40
+7505,function,Graphics::IRenderableNode::~IRenderableNode,0x0053ae30,0x00760880,0x0053ae30
 7506,function,GraphicsStructures::VertexElement::VertexElement,0x0053af00,0x00742210,0x0053af00
 7507,function,GraphicsStructures::VertexElement::operator=,0x0053af20,0x00742230,0x0053af20
-7508,function,,0x0053af50,0x00742260,0x0053af50
+7508,function,GraphicsStructures::GetVertexElementMasks,0x0053af50,0x00742260,0x0053af50
 7509,function,GraphicsStructures::CountVertexElements,0x0053afd0,0x007422e0,0x0053afd0
 7510,function,GraphicsStructures::GetVertexStride,0x0053aff0,0x00742300,0x0053aff0
 7511,function,std::vector<?>::vector,0x0053b060,0x0058dc60,0x0053b060
@@ -7525,40 +7525,40 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7524,function,"std::vector<std::vector<?>>::resize(unsigned int,std::vector<?>)",0x0053b5c0,0x007428c0,0x0053b5c0
 7525,function,std::vector<std::vector<?>>::vector(unsigned int),0x0053b6b0,0x007429b0,0x0053b6b0
 7526,function,std::vector<std::vector<?>>::resize(unsigned int),0x0053b720,0x00742a20,0x0053b720
-7527,function,,0x0053b750,0x00742a50,0x0053b750
+7527,function,GraphicsStructures::GroupVertexElementsByStream,0x0053b750,0x00742a50,0x0053b750
 7528,function,Physics::DebugLineBatch::FillVertexElements,0x0053ba00,0x007438e0,0x0053ba00
 7529,function,Physics::DebugLineBatch::Clear,0x0053ba50,0x00743930,0x0053ba50
-7530,function,,0x0053ba60,0x00743940,0x0053ba60
+7530,function,Physics::DebugLineBatch::Draw,0x0053ba60,0x00743940,0x0053ba60
 7531,function,Physics::DebugLineBatch::GrowBuffer,0x0053bb40,0x00743a20,0x0053bb40
 7532,function,Renderer::VertexStreamList::AddStream,0x0053bbe0,0x00743ac0,0x0053bbe0
 7533,function,Physics::DebugLineBatch::DebugLineBatch,0x0053bc10,0x00743af0,0x0053bc10
 7534,function,Physics::DebugLineBatch::Get,0x0053bd30,0x00743c10,0x0053bd30
 7535,function,Physics::DebugLineBatch::AddLines,0x0053bdb0,0x00743c90,0x0053bdb0
 7536,function,Graphics::Texture::GetType,0x0053bf50,0x00742d00,0x0053bf50
-7537,function,,0x0053bf70,0x00742d20,0x0053bf70
+7537,function,Graphics::Texture::BindToStage,0x0053bf70,0x00742d20,0x0053bf70
 7538,function,Graphics::Texture::LockMutex,0x0053bfb0,0x00742d60,0x0053bfb0
 7539,function,Multithreading::Mutex::Unlock`adjustor{20}',0x0053bfc0,0x00742d70,0x0053bfc0
 7540,function,Graphics::Texture::GetMemoryFootprint,0x0053bfd0,0x00742d80,0x0053bfd0
-7541,function,,0x0053c020,0x00742dd0,0x0053c020
-7542,function,,0x0053c040,0x00742df0,0x0053c040
-7543,function,,0x0053c060,0x00742e10,0x0053c060
+7541,function,Graphics::Texture::vfunction2,0x0053c020,0x00742dd0,0x0053c020
+7542,function,Graphics::Texture::Lock,0x0053c040,0x00742df0,0x0053c040
+7543,function,Graphics::Texture::Unlock,0x0053c060,0x00742e10,0x0053c060
 7544,function,Graphics::Texture::ReleaseNative,0x0053c080,0x00742e30,0x0053c080
 7545,function,Multithreading::SynchSafePointerList<Graphics::Texture>::SynchSafePointerList,0x0053c0c0,0x00742e70,0x0053c0c0
 7546,function,Multithreading::SynchSafePointerList<Graphics::Texture>::~SynchSafePointerList,0x0053c110,0x00742ec0,0x0053c110
-7547,function,,0x0053c1d0,0x00742f80,0x0053c1d0
-7548,function,,0x0053c280,0x00743030,0x0053c280
-7549,function,,0x0053c290,0x00743040,0x0053c290
+7547,function,Graphics::Texture::Texture,0x0053c1d0,0x00742f80,0x0053c1d0
+7548,function,Graphics::Texture::`scalar deleting destructor'`adjustor{52}',0x0053c280,0x00743030,0x0053c280
+7549,function,Graphics::Texture::~Texture,0x0053c290,0x00743040,0x0053c290
 7550,function,Multithreading::SynchSafePointerList<Graphics::Texture>::`scalar deleting destructor',0x0053c320,0x007430d0,0x0053c320
-7551,function,,0x0053c350,0x00743100,0x0053c350
-7552,function,,0x0053c380,0x00a66bb0,0x0053c380
-7553,function,,0x0053c3d0,0x00a66c00,0x0053c3d0
-7554,function,,0x0053c3e0,0x00a66c10,0x0053c3e0
-7555,function,,0x0053c400,0x00a66c30,0x0053c400
-7556,function,,0x0053c410,0x00a66c40,0x0053c410
-7557,function,,0x0053c420,0x00a66c50,0x0053c420
-7558,function,,0x0053c430,0x00a66c60,0x0053c430
-7559,function,,0x0053c450,0x00a66c80,0x0053c450
-7560,function,,0x0053c4d0,0x00a66d00,0x0053c4d0
+7551,function,Graphics::Texture::`scalar deleting destructor',0x0053c350,0x00743100,0x0053c350
+7552,function,GraphicsStructures::Font::CreateMaterialInstance,0x0053c380,0x00a66bb0,0x0053c380
+7553,function,GraphicsStructures::Font::LockVertexBuffer,0x0053c3d0,0x00a66c00,0x0053c3d0
+7554,function,GraphicsStructures::Font::SetSizeA,0x0053c3e0,0x00a66c10,0x0053c3e0
+7555,function,GraphicsStructures::Font::SetGlyphRects,0x0053c400,0x00a66c30,0x0053c400
+7556,function,GraphicsStructures::Font::SetLeftOffset,0x0053c410,0x00a66c40,0x0053c410
+7557,function,Graphics::IFont::~IFont,0x0053c420,0x00a66c50,0x0053c420
+7558,function,Graphics::IFont::`scalar deleting destructor',0x0053c430,0x00a66c60,0x0053c430
+7559,function,GraphicsStructures::Font::~Font,0x0053c450,0x00a66c80,0x0053c450
+7560,function,GraphicsStructures::Font::Flush,0x0053c4d0,0x00a66d00,0x0053c4d0
 7561,function,GraphicsStructures::Font::LoadDefinition,0x0053c5b0,0x00a66de0,0x0053c5b0
 7562,function,GraphicsStructures::Font::`scalar deleting destructor',0x0053c6f0,0x00a66f20,0x0053c6f0
 7563,function,GraphicsStructures::Font::DrawText,0x0053c710,0x00a66f40,0x0053c710
@@ -7666,7 +7666,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7665,function,"std::_Copy_opt<?*,?*>",0x0053e1a0,0x0077a0a0,0x0053e1a0
 7666,function,"std::_Copy_backward_opt<?*,?*>",0x0053e210,0x0077a110,0x0053e210
 7667,function,GraphicsStructures::EmitterParameters::EmitterParameters,0x0053e280,0x0077a180,0x0053e280
-7668,function,,0x0053e310,0x00770ee0,0x0053e310
+7668,function,GraphicsStructures::Splat::Splat,0x0053e310,0x00770ee0,0x0053e310
 7669,function,GraphicsStructures::EmitterUpdateTask::Execute,0x0053e340,0x0077a210,0x0053e340
 7670,function,GraphicsStructures::Array<?>::~Array,0x0053e370,0x0046fbd0,0x0053e370
 7671,function,GraphicsStructures::SpawnVolumeSphere::Sample,0x0053e380,0x0077a240,0x0053e380
