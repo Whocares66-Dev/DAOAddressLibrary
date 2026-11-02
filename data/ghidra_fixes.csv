@@ -14508,3 +14508,9 @@ address,what,value,why
 0x0050FBC0,convention,__thiscall,outside the batch (render-23): ecx passed through to 0x0050FB30; ret 8
 0x004D38E0,clear,GraphicsStructures::ObjectNodeCloth::vfunction3,a folded getter of the static identity matrix (0x00C2BFB0; 0x004D38F9..0x004D392B); called by ApplyParamDefaults at 0x00502B80
 0x004ECF60,clear,G2DA::IsLoaded,"a folded `mov al,[ecx+4]`; also MaterialArtParameter's has-a-value test (0x00502964)"
+0x00A25AA0,signature,float __thiscall Renderer_PerspectiveCamera_GetAspectCorrection(void* this),"push ecx/pop ecx; plain ret, no stack arguments; reads ecx+0x148; result in st0"
+0x005278C0,signature,void* __cdecl Graphics_GetCurrentDriver(void),"plain ret, never reads ecx; driver pointer in eax"
+0x005278C0,clear,D3DDriver::D3DGraphicsDriverManager::vfunction8,not a method: ignores this; a free getter (0x008653B0 is a jmp thunk to it)
+0x0086B530,signature,float __thiscall D3DDriver_D3DGraphicsDriver_GetAspectCorrection(void* this),fld [ecx+0x7368]; ret; vftable slot 97 (0x00B2E2F8)
+0x0086A500,signature,void __thiscall D3DDriver_D3DGraphicsDriver_UpdateAspectCorrection(void* this),"mov esi,ecx at 0x0086A521 before ecx is written; plain ret"
+0x0096BDE0,clear,Graphics::ICamera::vfunction8,"shared fld1/ret body, also ThreadedGraphicsDriver slot 97 (0x00B584D0); the ICamera name misleads"
