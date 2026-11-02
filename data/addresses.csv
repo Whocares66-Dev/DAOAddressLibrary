@@ -8760,7 +8760,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 8759,function,GraphicsStructures::GraphicsStructuresManager::GetRenderable,0x005725b0,0x00752b20,0x005725b0
 8760,function,GraphicsStructures::ReplaceFirstMeshNode,0x005725d0,0x00752b40,0x005725d0
 8761,function,GraphicsStructures::GraphicsStructuresManager::SetMaterialGlobalFlag,0x00572610,0x00752b80,0x00572610
-8762,function,,0x00572620,0x00752b90,0x00572620
+8762,function,Graphics::GetMaterialGlobalFlag,0x00572620,0x00752b90,0x00572620
 8763,function,Stub::DestructTwoStrings_0x00_0x2C,0x00572630,0x00710c30,0x00572630
 8764,function,Stub::CopyConstructTwoStrings_0x00_0x2C,0x00572690,0x00710cb0,0x00572690
 8765,function,std::_Tree<?>::_Max,0x00572700,0x00752ba0,0x00572700
@@ -8773,45 +8773,45 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 8772,function,ECBase::ECDynArray<Vector4>::operator=,0x005728c0,0x0046fbe0,0x005728c0
 8773,function,ECBase::ECDynArray<Vector4>::SetCapacity,0x00572980,0x0046fca0,0x00572980
 8774,function,Multithreading::Task::~Task,0x00572a50,0x00401d40,0x00572a50
-8775,function,,0x00572a60,0x00752d10,0x00572a60
-8776,function,,0x00572ad0,0x00752d80,0x00572ad0
+8775,function,GraphicsStructures::ConstructMergeObjectTask::ConstructMergeObjectTask,0x00572a60,0x00752d10,0x00572a60
+8776,function,GraphicsStructures::ConstructCrustObjectTask::ConstructCrustObjectTask,0x00572ad0,0x00752d80,0x00572ad0
 8777,function,GraphicsStructures::ConstructCrustObjectTask::~ConstructCrustObjectTask,0x00572b40,0x00752df0,0x00572b40
 8778,function,,0x00572ba0,0x00710d80,0x00572ba0
 8779,function,,0x00572bf0,0x00710dd0,0x00572bf0
-8780,function,,0x00572c40,0x00752e50,0x00572c40
-8781,function,,0x00572d10,0x00752f20,0x00572d10
-8782,function,,0x00572dc0,0x00752fd0,0x00572dc0
-8783,function,,0x00572e90,0x007530a0,0x00572e90
-8784,function,,0x00572f50,0x00753160,0x00572f50
-8785,function,,0x00573010,0x00753220,0x00573010
-8786,function,,0x00573060,0x00753270,0x00573060
-8787,function,,0x005730c0,0x00710be0,0x005730c0
-8788,function,,0x00573110,0x004880b0,0x00573110
-8789,function,,0x00573150,0x00488560,0x00573150
-8790,function,,0x005731b0,0x007532d0,0x005731b0
-8791,function,,0x00573200,0x00753320,0x00573200
-8792,function,,0x00573220,0x00470160,0x00573220
-8793,function,,0x00573250,0x00753340,0x00573250
-8794,function,,0x00573280,0x00753370,0x00573280
-8795,function,,0x005732b0,0x00711720,0x005732b0
-8796,function,,0x005732f0,0x00470220,0x005732f0
-8797,function,,0x00573300,0x007533a0,0x00573300
-8798,function,,0x00573320,0x007117c0,0x00573320
-8799,function,,0x00573380,0x007533c0,0x00573380
-8800,function,,0x005733c0,0x00753400,0x005733c0
-8801,function,,0x00573530,0x00488520,0x00573530
-8802,function,,0x00573570,0x00753570,0x00573570
-8803,function,,0x00573590,0x00711970,0x00573590
-8804,function,,0x005735f0,0x00470720,0x005735f0
-8805,function,,0x005736d0,0x004ec3d0,0x005736d0
-8806,function,,0x00573710,0x004ec410,0x00573710
-8807,function,,0x00573740,0x007119d0,0x00573740
+8780,function,GraphicsStructures::ConstructObjectTask::Execute,0x00572c40,0x00752e50,0x00572c40
+8781,function,GraphicsStructures::ConstructLightmapForExistingModelTask::Execute,0x00572d10,0x00752f20,0x00572d10
+8782,function,GraphicsStructures::ConstructMorphMergeObjectTask::Execute,0x00572dc0,0x00752fd0,0x00572dc0
+8783,function,GraphicsStructures::ConstructMergeObjectTask::Execute,0x00572e90,0x007530a0,0x00572e90
+8784,function,GraphicsStructures::ConstructCrustObjectTask::Execute,0x00572f50,0x00753160,0x00572f50
+8785,function,GraphicsStructures::GraphicsStructuresManager::GetUnitSphereDeviceMesh,0x00573010,0x00753220,0x00573010
+8786,function,GraphicsStructures::GraphicsStructuresManager::GetUnitBoxDeviceMesh,0x00573060,0x00753270,0x00573060
+8787,function,Stub::ConstructTwoStrings_0x00_0x2C,0x005730c0,0x00710be0,0x005730c0
+8788,function,Stub::GetSynchSafePointerCopy_0x38_Deref,0x00573110,0x004880b0,0x00573110
+8789,function,std::_String_const_iterator<char>::_String_const_iterator,0x00573150,0x00488560,0x00573150
+8790,function,std::_Tree<?>::_Lrotate,0x005731b0,0x007532d0,0x005731b0
+8791,function,ECBase::ECDynArray<Vector4>::ECDynArray_copy,0x00573200,0x00753320,0x00573200
+8792,function,ECBase::ECDynArray<Vector4>::ECDynArray_capacity,0x00573220,0x00470160,0x00573220
+8793,function,ECBase::ECDynArray<ECBase::ECDynArray<Vector4>>::~ECDynArray,0x00573250,0x00753340,0x00573250
+8794,function,Vec4_AtOrDefault,0x00573280,0x00753370,0x00573280
+8795,function,std::_Fill<MeshLightmapRecord *>,0x005732b0,0x00711720,0x005732b0
+8796,function,ECBase::ECDynArray<Vector4>::ECDynArray,0x005732f0,0x00470220,0x005732f0
+8797,function,GraphicsStructures::ConstructCrustObjectTask::`scalar deleting destructor',0x00573300,0x007533a0,0x00573300
+8798,function,std::copy_backward<MeshLightmapRecord *>,0x00573320,0x007117c0,0x00573320
+8799,function,GraphicsStructures::ApplyLightmapsOrTextureVariant,0x00573380,0x007533c0,0x00573380
+8800,function,GraphicsStructures::GraphicsStructuresManager::CreateCrustObject,0x005733c0,0x00753400,0x005733c0
+8801,function,std::_String_const_iterator<char>::operator*,0x00573530,0x00488520,0x00573530
+8802,function,std::list<?>::_Buynode,0x00573570,0x00753570,0x00573570
+8803,function,std::copy<MeshLightmapRecord *>,0x00573590,0x00711970,0x00573590
+8804,function,ECBase::ECDynArray<ECBase::ECDynArray<Vector4>>::SetCapacity,0x005735f0,0x00470720,0x005735f0
+8805,function,std::_Copy_opt<Multithreading::SynchSafePointer<?> *>,0x005736d0,0x004ec3d0,0x005736d0
+8806,function,std::_Fill<Multithreading::SynchSafePointer<?> *>,0x00573710,0x004ec410,0x00573710
+8807,function,std::_Uninit_copy<MeshLightmapRecord *>,0x00573740,0x007119d0,0x00573740
 8808,function,,0x005737a9,0x00711a39,0x005737a9
-8809,function,,0x005737e0,0x004ec5f0,0x005737e0
+8809,function,std::_Uninit_copy<Multithreading::SynchSafePointer<?> *>,0x005737e0,0x004ec5f0,0x005737e0
 8810,function,,0x00573849,0x004ec659,0x00573849
-8811,function,,0x00573880,0x00753590,0x00573880
-8812,function,,0x005738f0,0x00753600,0x005738f0
-8813,function,,0x00573a00,0x00753710,0x00573a00
+8811,function,GraphicsStructures::GraphicsStructuresManager::ApplyLightmapToExistingModel,0x00573880,0x00753590,0x00573880
+8812,function,GraphicsStructures::GraphicsStructuresManager::FindByName,0x005738f0,0x00753600,0x005738f0
+8813,function,GraphicsStructures::GraphicsStructuresManager::GetMemoryFootprint,0x00573a00,0x00753710,0x00573a00
 8814,function,std::basic_string<char>::begin,0x00573cc0,0x00488790,0x00573cc0
 8815,function,std::_Fputc,0x00573d00,0x004885c0,0x00573d00
 8816,function,,0x00573d20,0x00488670,0x00573d20
@@ -8819,7 +8819,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 8818,function,,0x00573e20,0x00488630,0x00573e20
 8819,function,,0x00573e60,0x00488720,0x00573e60
 8820,function,,0x00573ed0,0x00619a00,0x00573ed0
-8821,function,,0x00573f20,0x007539d0,0x00573f20
+8821,function,ECBase::ECDynArray<ECBase::ECDynArray<Vector4>>::ECDynArray_capacity,0x00573f20,0x007539d0,0x00573f20
 8822,function,,0x00573f50,0x00712360,0x00573f50
 8823,function,,0x00573f80,0x00712430,0x00573f80
 8824,function,,0x00573ff0,0x007124a0,0x00573ff0
@@ -8835,14 +8835,14 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 8834,function,std::_Destroy_range<?>,0x00574c10,0x007129e0,0x00574c10
 8835,function,std::_Uninit_fill_n<?>,0x00574c30,0x00712a60,0x00574c30
 8836,function,std::_Tree<?>::_Erase,0x00574c70,0x00753a00,0x00574c70
-8837,function,,0x00574cb0,0x00753a40,0x00574cb0
-8838,function,,0x00574d10,0x00753aa0,0x00574d10
-8839,function,,0x00574d70,0x00753b00,0x00574d70
+8837,function,Vec8_BackOrDefault_0x00C31C1C,0x00574cb0,0x00753a40,0x00574cb0
+8838,function,Vec8_BackOrDefault_0x00C31FBC,0x00574d10,0x00753aa0,0x00574d10
+8839,function,Vec8_BackOrDefault_0x00C31BEC,0x00574d70,0x00753b00,0x00574d70
 8840,function,Renderer::LightStatePool::Release,0x00574dd0,0x00753b60,0x00574dd0
 8841,function,Renderer::LightStatePool::ReleaseAll,0x00574ef0,0x00753c80,0x00574ef0
 8842,function,std::_Destroy_range<?>,0x00574f40,0x004edc30,0x00574f40
 8843,function,std::_Uninit_fill_n<?>,0x00574f70,0x004edbf0,0x00574f70
-8844,function,,0x00574fb0,0x00753cd0,0x00574fb0
+8844,function,std::basic_string<char>::_Construct<std::_String_const_iterator<wchar_t>>,0x00574fb0,0x00753cd0,0x00574fb0
 8845,function,,0x005750c6,0x00753de6,0x005750c6
 8846,function,,0x00575110,0x00753e30,0x00575110
 8847,function,,0x00575170,0x00753e90,0x00575170
