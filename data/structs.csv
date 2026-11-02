@@ -157,7 +157,21 @@ CCParty,0x470,0x1C,std::wstring,lastName,"0x0062ECB0 lea eax,[ecx+0x470] in GetL
 CCParty,0x48C,0x1C,std::wstring,dogName,"0x0062ED50 lea eax,[ecx+0x48C] in GetDogNameString; constructed by 0x004C0D90 at 0x0063A89E"
 CCParty,0x4A8,0x1,uint8_t,runWalk,0x0062EC60 flips [ecx+0x4A8] in the ToggleRunWalkMessage handler; constructed 1 (run) at 0x0063A8A6; saved at 0x006347EC
 CCParty,0x4A9,0x1,uint8_t,inventoryFullFlag,"0x00630FF8 cmp byte [esi+0x4A9],0 and 0x00631005 clears it in the party update (which then raises event 85); constructor 0 (0x0063A8AD); set when the Inventory reaches capacity (0x006313C4-0x006313DA)"
+CGameEffect,0x0,0x7C,struct,sizeof,0x00652BB9 push 0x7C ; allocation before the constructor call at 0x00652BD6 (constructor 0x00A652A0)
+CGameEffect,0x0,0x4,void*,vftable,"0x00A652DF mov dword [esi],0xB59700"
+CGameEffect,0x20,0x4,int,id,"0x00A65339 mov [esi+0x20],ecx from the counter 0xC1CF10 ; WriteToSave 0x00A654C7 stores it as field 0x40E5"
+CGameEffect,0x24,0x4,int,effectType,"0x00A652E8 mov [esi+0x24],eax (constructor argument) ; saved as 0x40E6 at 0x00A654DF ; 0x00A65395 cmp [ecx+0x24],0xC"
+CGameEffect,0x28,0x4,int,durationType,"0x0065C77A mov [edi+0x28],ecx in Prepare (0x0065C760), 1..4 or 6, else 3 ; GetAnimationPriority 0x00A65380 cmp [ecx+0x28],6 ; saved as 0x40E7 at 0x00A654F7"
+CGameEffect,0x2C,0x4,int,duration,"0x0065C7AA mov [edi+0x2C],esi in Prepare (milliseconds, only for duration type 2) ; AddElapsed 0x0079F2A9 caps +0x30 at it"
+CGameEffect,0x30,0x4,int,elapsed,"0x0079F2A4 mov eax,[ecx+0x30] ; AddElapsed (0x0079F2A0) adds the time and caps it at +0x2C ; saved as 0x40EA at 0x00A65527"
+CGameEffect,0x40,0x4,int,creatorId,"0x00A65254 mov [ecx+0x40],eax in SetCreator (0x00A65250) ; 0x0079F4F7 mov esi,[eax+0x40] in IsHolderCreator ; saved as 0x40ED at 0x00A65577"
+CGameEffect,0x44,0x4,int,abilityId,"0x0065C7C0 mov [edi+0x44],eax in Prepare (its last argument) ; saved as 0x40EE at 0x00A6558F"
+CGameEffect,0x50,0x1,uint8_t,started,"0x00A65309 mov byte [esi+0x50],bl ; the constructor clears it ; set when the effect's start is handled (not read here)"
+CGameEffect,0x54,0x20,CDataArrays,params,"0x00A652D8 lea ecx,[esi+0x54] ; the base constructor 0x00A59E10 runs on it at 0x00A6530C ; GetVisualParams (0x0079F540) reads values from it at 0x0079F549"
 CResARE,0x18,0x4,void*,vptr,"0x00688D4D mov [edi],0xB0DDFC with edi = esi+0x18 (lea at 0x00688CFB, base constructor 0x0067A4C0 at 0x00688D07); 1 slot"
+EffectList,0x0,0x14,struct,sizeof,0x0068979D push 0x14 ; the allocation before the constructor call at 0x006897D9 (constructor 0x00A64880)
+EffectList,0x0,0x4,CGameEffect*,topAnimationEffect,"0x00A6493C mov [esi],edi in AddEffect (0x00A64900) when the new effect's animation priority beats the current one's (0x00A64933)"
+EffectList,0x4,0x10,std::vector<CGameEffect*>,effects,"0x00A64885 lea ecx,[esi+4] ; begin +8 and end +0xC are read with sar 2 at 0x00A64646..0x00A6465E by FindTopAnimationEffect ; 4-byte elements"
 Equipment,0x0,0x58,struct,sizeof,0x006B441E; sizeof (push 0x58)
 Equipment,0x0,0x4,void*,vptr,0x00798CD7; vptr 0x00B1FB8C
 Equipment,0x8,0x4,void*,dirtyFlaggableVptr,"0x00798CDD, 0x00798CBC; vptr of the DirtyFlaggable base at +0x8, 0x00B1FB7C (base's own 0x00B1FB70 first)"
@@ -165,6 +179,18 @@ Equipment,0xC,0x1,uint8_t,dirty,"0x00798CC2; DirtyFlaggable dirty byte, construc
 Equipment,0x20,0x4,CCCreature*,owner,"0x00798CF7, 0x00798C91; the creature that wears it (constructor argument; the ItemLocation owner id is its object id at +4)"
 Equipment,0x24,0x20,SlotItemLocation,slots,"0x00798D0A, 0x007F5305; the slot locations (constructor 0x007F5290, argument 0xFF; size is the gap to +0x44, the constructor writes up to +0x1C)"
 Equipment,0x44,0x10,ECBase::ECDynArray<?>,weaponSets,"0x00798D1B, 0x00798D44, 0x00798D83; the weapon sets: resized to 2, elements 0x20 bytes"
+GraphicsStructures::CSpeedTreeWind,0x0,0xE0,struct,sizeof,"0x00A57631 push 0xE0 ; Create (0x00A57610) allocation, constructor 0x00A57490 called at 0x00A57655"
+GraphicsStructures::CSpeedTreeWind,0x0,0x4,void*,vftable,"0x00A574C4 mov dword [esi],0xB593B4"
+GraphicsStructures::CSpeedTreeWind,0x4,0x4,float,maxBendAngle,0x00A55D14 fstp [ecx+4] in SetMaxBendAngle (0x00A55D10)
+GraphicsStructures::CSpeedTreeWind,0x20,0x4,float,gustFrequency,0x00A55E20 fld [ecx+0x20] ; GetGustFrequency
+GraphicsStructures::CSpeedTreeWind,0x2C,0x4,int,windMatrixCount,"0x00A57227 mov [esi+0x2C],eax in SetNumWindMatricesAndLeafAngles (0x00A571F0), clamped to 1..7 (0x00A5720A)"
+GraphicsStructures::CSpeedTreeWind,0x30,0x4,int,leafAngleCount,"0x00A5722A mov [esi+0x30],ecx in SetNumWindMatricesAndLeafAngles, at least 1"
+GraphicsStructures::CSpeedTreeWind,0x34,0x4,float,strength,"0x00A56490 fstp [esi+0x34] in SetStrengthAndDirection (0x00A56450), clamped to 0..1 ; GetStrengthAndDirection 0x00A566F6 reads it"
+GraphicsStructures::CSpeedTreeWind,0x40,0x10,Vector4,direction,"0x00A564B4 movaps [esi+0x40],xmm0 in SetStrengthAndDirection ; GetStrengthAndDirection 0x00A566FE reads it"
+GraphicsStructures::CSpeedTreeWind,0x80,0x10,float[4],leafRustling,0x00A55DD4 fstp [ecx+0x80] ; SetLeafRustling (0x00A55DD0) stores four floats +0x80..+0x8C
+GraphicsStructures::CSpeedTreeWind::WindInstance,0x0,0x9C,struct,sizeof,"0x00A57570 push 0x9C ; the CSpeedTreeWind constructor allocates each instance, constructor 0x00A572E0 called at 0x00A5758D"
+GraphicsStructures::CSpeedTreeWind::WindInstance,0x0,0x4,void*,vftable,"0x00A57314 mov dword [esi],0xB593C8"
+GraphicsStructures::CSpeedTreeWind::WindInstance,0x4,0x4,GraphicsStructures::CSpeedTreeWind*,owner,"0x00A5731D mov [esi+4],eax ; 0x00A573F0 mov eax,[ecx+4]; add eax,0x90 in GetOwnerParameters"
 GraphicsStructures::Dependency,0x0,0x4,void*,vftable,"0x00542D68 mov [esi],0xAF832C; vftable (0x00AF832C for the base)"
 GraphicsStructures::Dependency,0x4,0x4,GraphicsStructures::Object*,target,"0x00568BEB mov [esi+4],edi; 0x00568C49 mov [esi+4],ecx; the target Object"
 GraphicsStructures::Dependency,0x8,0x4,GraphicsStructures::ObjectNode*,targetNode,"0x00568BEE mov [esi+8],eax; 0x00568C5D mov [esi+8],eax; the target's node found by name"
@@ -211,17 +237,33 @@ GraphicsStructures::ObjectBlueprint,0xB0,0x1C,std::wstring,remoteMaterialDecal,"
 GraphicsStructures::ObjectBlueprint,0xCC,0x4,float,remoteMaterialAlpha,0x005687AC fld [esi+0xCC]; 0x00568B45; remote material: alpha (0 by default)
 GraphicsStructures::ObjectBlueprint,0xE0,0x10,Vector4,boxMin,"0x005686C9 fld [esi+0xE0]; 0x00566507 fld [esi+0xE0]; ctor 0x00568B58; bounding box minimum, with a w it is divided by"
 GraphicsStructures::ObjectBlueprint,0xF0,0x10,Vector4,boxMax,"0x00568706 fld [esi+0xF0]; 0x00566560 fld [esi+0xF0]; bounding box maximum, with a w it is divided by"
-GraphicsStructures::ObjectNode,0x14,0x4,void*,childrenBegin,"0x0053D174 mov esi,[edi+4] with edi=this+0x10: the child node pointer vector (SCENE.md)"
-GraphicsStructures::ObjectNode,0x18,0x4,void*,childrenEnd,"0x0053D17B mov eax,[edi+8] with edi=this+0x10"
-GraphicsStructures::ObjectNode,0x60,0x40,float[16],worldMatrix,"0x0053CC90 add ecx,-0x120 from the ILight at +0x180: GetTranslationXYZ reads it; elements 3, 7, 11 are the translation and 15 the divisor (0x0053CA7B-0x0053CAC5)"
+GraphicsStructures::ObjectNode,0x0,0x4,void*,vftable,"0x0055ED75 mov dword [esi],0xAF9764"
+GraphicsStructures::ObjectNode,0x4,0x4,void*,vftableSimulatable,"0x0055ED7B mov dword [esi+4],0xAF9740"
+GraphicsStructures::ObjectNode,0x8,0x4,void*,vftableFaceAnimatable,"0x0055ED82 mov dword [esi+8],0xAF972C"
+GraphicsStructures::ObjectNode,0xC,0x4,void*,vftableMemoryFootprint,"0x0055ED89 mov dword [esi+0xC],0xAF9720"
+GraphicsStructures::ObjectNode,0x10,0x10,std::vector<GraphicsStructures::ObjectNode*>,children,"0x0055E103 mov ecx,[esi+0x14] ; GetChild (0x0055E100) reads begin +0x14 and end +0x18 in 4-byte elements ; GetChildCount 0x0055E140 ; AddChild 0x0055F068 pushes onto it"
+GraphicsStructures::ObjectNode,0x60,0x40,Matrix4,worldMatrix,"0x0055EEE5 movaps [esi+0x60],xmm0 in the constructor ; GetWorldMatrix 0x0055DFC7 reads +0x5C..+0x9C through the +4 interface thunk (this = node+4)"
 GraphicsStructures::ObjectNode,0xA0,0x40,float[16],secondMatrix,"0x0053CBC0 lea eax,[ecx+0xa0]: node slot 1; meaning unread"
+GraphicsStructures::ObjectNode,0xE0,0x10,Vector4,localRotation,0x0057223F fstp [eax+0xE0] in ObjectNodeBlueprint::InitNode (0x00572230) from the blueprint's +4 ; the constructor sets +0xEC to 1.0 at 0x0055EDB5
+GraphicsStructures::ObjectNode,0x100,0x10,Vector4,localTranslation,"0x00572266 movaps [eax+0x100],xmm0 in InitNode from the blueprint's +0x20"
+GraphicsStructures::ObjectNode,0x110,0x10,Vector4,localScale,"0x00572271 movaps [eax+0x110],xmm0 in InitNode from the blueprint's +0x30"
 GraphicsStructures::ObjectNode,0x140,0x10,float[4],localTranslationSum,"0x0053CBD0 lea eax,[ecx+0x140]: node slot 8"
-GraphicsStructures::ObjectNode,0x154,0x4,void*,owner,"0x0053CDC3 mov eax,[ecx+0x154]: the owning GraphicsStructures::Object; 0x0053CC00 reads it through the +4 interface"
+GraphicsStructures::ObjectNode,0x154,0x4,void*,owner,"0x0055E6CA mov [edi+0x154],ebp in SetOwner (0x0055E6C0) ; the constructor stores its first argument at 0x0055EE9D ; GetWorldRotation 0x0055DAE3 calls through it"
+GraphicsStructures::ObjectNode,0x15C,0x4,void*,physicsActor,"0x0055DBBD mov [esi+0x15C],eax in SetPhysicsActor (0x0055DBA0) ; GetPhysicsActor 0x0053CBF0 reads [ecx+0x158] through the +4 thunk, ClearPhysicsActor 0x0053CC20 zeroes it"
 GraphicsStructures::ObjectNode,0x168,0x4,int,roomId,"0x0053D168 mov [ecx+0x168],eax in node slot 15: the room object +0x14, -1 for none"
 GraphicsStructures::ObjectNode,0x16C,0x4,void*,drawBatch,"0x005651AF mov [esi+0x16C],eax; 0x00550093 cmp [esi+0x16C],0; 0x005500B1 mov [esi+0x16C],0; the node's draw batch handle (made by CreateDrawBatch, released by ReleaseDrawBatch)"
-GraphicsStructures::ObjectNode,0x174,0x4,void*,blueprint,"0x0053C8E0 mov eax,[ecx+0x174]; 0x0055D760 GetName reads it"
+GraphicsStructures::ObjectNode,0x170,0x4,GraphicsStructures::ObjectNode*,parent,"0x0055F074 mov [ecx+0x170],esi in AddChild (0x0055F060)"
+GraphicsStructures::ObjectNode,0x174,0x4,GraphicsStructures::ObjectNodeBlueprint*,blueprint,"0x0055D760 mov ecx,[ecx+0x174] ; GetName passes it to the blueprint's name getter 0x00571510 ; the constructor stores its second argument at 0x0055EED1"
 GraphicsStructures::ObjectNode,0x179,0x1,unsigned char,byte179,"0x0053CBB0 mov al,[ecx+0x179]: node slot 24; meaning unread"
 GraphicsStructures::ObjectNodeAmbientLight,0x0,0x1B0,struct,sizeof,"0x0053C9FF add [esi],0x1b0 (GetMemoryFootprint reports it)"
+GraphicsStructures::ObjectNodeBlueprint,0x0,0x4,void*,vftable,"0x00571F04 mov dword [esi],0xAF9F04"
+GraphicsStructures::ObjectNodeBlueprint,0x4,0x10,Vector4,rotation,"0x00571EFD lea ecx,[esi+4] ; 0x004CC060 fills four floats ; InitNode copies them to the node's +0xE0 (0x0057223F)"
+GraphicsStructures::ObjectNodeBlueprint,0x20,0x10,Vector4,translation,"0x00571F11 fst [esi+0x20] ; zero in the constructor ; InitNode 0x00572262 movaps xmm0,[ecx+0x20] copies it to the node's +0x100"
+GraphicsStructures::ObjectNodeBlueprint,0x30,0x10,Vector4,scale,"0x00571F22 fst [esi+0x30] ; 1.0 in the constructor ; InitNode 0x0057226D movaps xmm0,[ecx+0x30] copies it to the node's +0x110"
+GraphicsStructures::ObjectNodeBlueprint,0x40,0x40,Matrix4,bindMatrix,"0x00571500 lea eax,[ecx+0x40] ; returned to the node's GetBindMatrices (0x0055DD82), which copies 64 bytes from it at 0x0055DD87..0x0055DDA4"
+GraphicsStructures::ObjectNodeBlueprint,0xC0,0x1C,std::wstring,name,"0x00571510 lea eax,[ecx+0xC0] ; the getter ObjectNode::GetName (0x0055D760) forwards to ; initialised at 0x00571F2B"
+GraphicsStructures::ObjectNodeBlueprint,0xF8,0x10,std::vector<GraphicsStructures::ObjectNodeBlueprint*>,children,"0x00571585 mov ecx,[esi+0xFC] ; GetTreeSize (0x00571570) walks begin +0xFC to end +0x100 in 4-byte elements ; the vector at +0xF8 is initialised at 0x00571F4C"
+GraphicsStructures::ObjectNodeBlueprint,0x10C,0x10,std::vector<?>,exportValues,"0x00571F96 mov eax,[esi+0x110] ; BindExportValues (0x00571F90) walks begin +0x110 to end +0x114 in 0x14-byte elements (the 0x66666667 divide at 0x00571FB5)"
 GraphicsStructures::ObjectNodeCloth,0x0,0x5C0,struct,sizeof,"0x005B36F1 add dword [edi],0x5C0 after ObjectNodeClothBlueprint::instantiate's placement constructor 0x005B3650"
 GraphicsStructures::ObjectNodeCloth,0x3D4,0x4,Physics::PhysicsCloth*,physicsCloth,"0x005657B8 mov [esi+0x3D4],eax; the PhysX cloth made by CreatePhysicsActors (0 until then)"
 GraphicsStructures::ObjectNodeCloth,0x3D8,0x4,Physics::ClothMeshPrototype*,restMesh,"0x005653C9 mov eax,[edi+0x3D8]; ctor 0x00564F88; the rest mesh the cloth was made from"
@@ -248,6 +290,35 @@ GraphicsStructures::ObjectNodePointLight,0x1B4,0x4,float,intensity,0x0053C884 fs
 GraphicsStructures::ObjectNodePointLight,0x1B8,0x4,float,brightness,0x0053CEAE fstp [esi+0x1b8]: (abs r + abs g + abs b)/3; constructor 0x0053CD09 sets 0.0; used by 0x0053D3C2
 GraphicsStructures::ObjectNodePointLight,0x1BC,0x4,float,flickerMultiplier,0x0046B482 fld [ecx+0x1bc] in LightState::Fill; constructor 0x0053CD03 sets 1.0
 GraphicsStructures::ObjectNodePointLightBlueprint,0x15C,0x1,unsigned char,isStatic,"0x0053C8D6 mov al,[eax+0x15c]: BlueprintFlag, read by AddLights at 0x00464F0D"
+GraphicsStructures::SpeedTreeForest,0x0,0x600,struct,sizeof,"0x005CBE40 push 0x600 ; BuildTreeForests allocates it, constructor 0x00535BB0 called at 0x005CBE6B (and 0x005CBEB5 for the second)"
+GraphicsStructures::SpeedTreeForest,0x0,0x4,void*,vftable,"0x00535C19 mov dword [esi],0xAF740C"
+GraphicsStructures::SpeedTreeForest,0x38,0x10,std::vector<void*>,modelGroups,"0x00535C12 lea ecx,[esi+0x38] ; GetModelGroupCount (0x005320B0) reads begin +0x3C and end +0x40 with sar 2 ; GetModelGroupAt (0x005320D0) indexes it ; elements are ModelGroup pointers"
+GraphicsStructures::SpeedTreeForest,0x4C,0x1C,std::wstring,name,"0x00533050 lea eax,[ecx+0x4C] ; GetName returns it ; the constructor initialises it at 0x00535C41 and copies the first argument in at 0x00535DB4"
+GraphicsStructures::SpeedTreeForest,0x110,0x30,Bounds,bounds,"0x0052CFD0 add ecx,0x110 ; GetBounds copies it out through 0x004D4FC0 ; the next member starts at +0x140 (0x00535C6A), so the extent is at most 0x30 ; the type was not read"
+GraphicsStructures::SpeedTreeInstance,0x0,0x130,struct,sizeof,"0x00532854 push 0x130 ; CreateInstance (0x00532830) allocation, constructor 0x00531D00 called at 0x0053287B"
+GraphicsStructures::SpeedTreeInstance,0x0,0x4,void*,vftable,"0x00531D36 mov dword [esi],0xAF7028"
+GraphicsStructures::SpeedTreeInstance,0x8,0x4,uint32_t,flags,"0x0052CF20 mov al,[ecx+8]; and al,1 : bit 0 is IsActive ; 0x0052CF30 shr al,1; and al,1 : bit 1 is IsVisible (SetVisible 0x0052CF47 sets it) ; the constructor stores 3 at 0x00531D3C"
+GraphicsStructures::SpeedTreeInstance,0xC,0x4,int,serial,"0x00531D43 mov [esi+0xC],eax ; the constructor's second argument, which CreateInstance takes from the model's counter (0x00532871 mov ecx,[esi+0x1E8]; push ecx)"
+GraphicsStructures::SpeedTreeInstance,0x10,0x4,GraphicsStructures::SpeedTreeModel*,model,"0x00531D33 mov [esi+0x10],ecx ; the first argument (CreateInstance pushes esi, the model) ; 0x0052E36C mov ecx,[esi+0x10] uses it for the bounds"
+GraphicsStructures::SpeedTreeInstance,0x20,0x10,Vector4,position,"0x00531822 movaps [esi+0x20],xmm0 in SetPosition (0x00531810) ; 0x0052E169 movaps xmm0,[ecx+0x20] in GetBillboardParams"
+GraphicsStructures::SpeedTreeInstance,0x30,0x10,Vector4,tint,"0x0052E202 lea eax,[ecx+0x30] in SetTint (0x0052E1D0) stores the four floats there ; 0x0052E189 fld [ecx+0x34] reads it in GetBillboardParams"
+GraphicsStructures::SpeedTreeInstance,0x60,0x4,float,yaw,0x00531858 fstp [esi+0x60] in SetOrientation (0x00531840) ; 0x0052E497 fld [esi+0x60] feeds the sin and cos of UpdateYawVector
+GraphicsStructures::SpeedTreeInstance,0x64,0x4,float,scale,0x0053187D fstp [esi+0x64] in SetScale (0x00531870)
+GraphicsStructures::SpeedTreeInstance,0x68,0x4,float,windMatrixOffset,"0x005CBFD2 fstp [esi+0x68] of rand()%100 in BuildTreeForests, after the constructor stored rand()%10 over a divisor there (0x00531E5F) : the final value ; 0x0052DFAD fld [esi+0x68] copies it to the model's +0xD10"
+GraphicsStructures::SpeedTreeInstance,0x6C,0x1,uint8_t,drawBillboard,"0x0052CD7A mov byte [esi+0x6C],1 in SetLod (0x0052CD60) when the lod value is 0 or less"
+GraphicsStructures::SpeedTreeInstance,0x70,0x4,float,billboardFade,0x0052CD7E fstp [esi+0x70] ; WriteBillboardLod (0x0052CE50) copies it into four vertices
+GraphicsStructures::SpeedTreeInstance,0x74,0x4,float,lod,0x0052CD6A fst [esi+0x74] ; SetLod's argument
+GraphicsStructures::SpeedTreeInstance,0xE0,0x4,void*,physicsScene,"0x0052CF63 mov ecx,[esi+0xE0] ; ReleasePhysics (0x0052CF60) calls through it and deletes it at 0x0052CF99 ; the constructor zeroes it at 0x00531D9C"
+GraphicsStructures::SpeedTreeInstance,0xE4,0x4,void*,physicsActor,"0x0052CF6D mov eax,[esi+0xE4] ; ReleasePhysics releases it through the scene at 0x0052CF7D ; SetScale 0x00531877 and UpdateRenderTransform 0x005317B1 test it"
+GraphicsStructures::SpeedTreeInstance,0xEC,0x10,float[4],kindAlpha,"0x0052CDAE fstp [esi+0xEC] (branch), 0x0052CDBF [esi+0xF0] (frond), 0x0052CDEC [esi+0xF4] and 0x0052CE0C [esi+0xF8] (leaves) ; GetKindLod divides each by 0xAF6EA8"
+GraphicsStructures::SpeedTreeInstance,0x110,0x4,float,size,0x0052E263 fld [ecx+0x110] ; read first in SetLodDistances (0x0052E260) ; written at 0x0052E47E by UpdateBoundingSphere (0x0052E360)
+GraphicsStructures::SpeedTreeInstance,0x118,0x4,float,nearDistanceSquared,0x0052E331 fstp [ecx+0x118] ; written by SetLodDistances
+GraphicsStructures::SpeedTreeInstance,0x11C,0x4,float,farDistanceSquared,0x0052E33C fstp [ecx+0x11C] ; written by SetLodDistances
+GraphicsStructures::SpeedTreeModel,0x0,0xD60,struct,sizeof,"0x00536D95 push 0xD60 ; SpeedTreeLibrary::AddTree allocates it, constructor 0x005355B0 called at 0x00536DBC"
+GraphicsStructures::SpeedTreeModel,0x1BC,0x4,uint32_t,flags,"0x0052C077 and dword [ecx+0x1BC],0xFBFFFFFF in SetEnabled (0x0052C070) ; bit 26 is the disabled bit (IsEnabled 0x0052CC50) ; 0x00533DA3 tests bit 25 in Compute"
+GraphicsStructures::SpeedTreeModel,0x1E8,0x4,int,instanceCount,"0x00532871 mov ecx,[esi+0x1E8] ; CreateInstance (0x00532830) passes it as the new instance's serial and adds 1 at 0x00532884 ; zero at 0x0053571D"
+GraphicsStructures::SpeedTreeModel,0xAAC,0x4,uint32_t,kindMask,"0x0052DD64 test [ecx+0xAAC],eax ; SelectKind (0x0052DD60) tests the wanted kind's bit"
+GraphicsStructures::SpeedTreeModel,0xBA4,0x4,int,selectedKind,"0x0052DD6A mov [ecx+0xBA4],eax ; SelectKind stores the kind asked for"
 Inventory,0x0,0x54,struct,sizeof,"0x006A29C5, 0x006B4460; sizeof (push 0x54, creature's Inventory)"
 Inventory,0x0,0x4,void*,vptr,0x00740627; vptr 0x00B1B974
 Inventory,0x8,0x10,SmartData::Attribute<Backpack*>,backpack,"0x00740631, 0x00740685; attribute holding the Backpack (value at +0x14; new Backpack allocated 0x50)"
@@ -258,14 +329,32 @@ ItemLocation,0x0,0x8,struct,sizeof,"0x00761170; sizeof (INFERRED: base, not allo
 ItemLocation,0x0,0x4,void*,vptr,"0x00761176; vptr 0x00B1CE74 (Inventory 0x00B1B974, ListItemLocation 0x00B2308C, Equipment 0x00B1FB8C overwrite it)"
 ItemLocation,0x4,0x4,ObjectId,ownerId,0x0076117C; id of the object that owns the location (the constructor's argument)
 ItemPossessor,0x0,0x4,void*,vptr,"0x00763028; vptr 0x00B1C258; the constructor writes nothing else (it sits at CCObject+0x440 in a creature, placeable and store, CCParty+0x70)"
+LeanController,0x0,0x30,struct,sizeof,0x00A6B32B push 0x30 ; the allocation before the constructor call at 0x00A6B347 (constructor 0x00A6DE80)
+LeanController,0x0,0x4,void*,vftable,"0x00A6DE8D mov dword [eax],0xB59BEC"
+LeanController,0x10,0x10,Vector4,direction,"0x00A6DEAB movaps [eax+0x10],xmm0 zero in the constructor ; Update (0x00A6DEE0) tests +0x10..+0x18 against zero at 0x00A6DEEE..0x00A6DF03 and stores the first input to it at 0x00A6DF13"
+LeanController,0x28,0x4,int,hasDirection,"0x00A6DF17 mov dword [esi+0x28],1 when Update stores the first direction ; Reset (0x00A6E200) zeroes it at 0x00A6E224"
 ListItemLocation,0x0,0x4,void*,vptr,0x007CAB1F; vptr 0x00B2308C (Backpack overwrites it with 0x00B26464)
 ListItemLocation,0x8,0x10,ECBase::ECDynArray<ObjectId>,itemIds,"0x007CAB25, 0x007CAABE; the item ids in the location (begin +0xC, end +0x10 of the object)"
 ListItemLocation,0x18,0x10,SmartData::Attribute<int>,itemCount,"0x007CAB3A, 0x007CAAD5; item count, set from the array's length (end-begin)>>2 through the attribute's slot 0x54"
 ListItemLocation,0x28,0x10,SmartData::Attribute<int>,maxItems,"0x007CAB4F, 0x007CA4F0; maximum inventory size, constructed 0x60; SetMaxInventorySize sets it through slot 0x54"
 Messages::Observer,0x20,0x4,void*,vptr,"0x006996E6; vptr, vftable 0x00B0EE88"
 Money,0x0,0xA4,struct,sizeof,0x007406FC; sizeof (push 0xA4 then Money::Money)
+MovementAnimController,0x0,0x180,struct,sizeof,0x00A63A1A push 0x180 ; the allocation before the constructor call at 0x00A63A3E (constructor 0x00A69EC0)
+MovementAnimController,0x0,0x4,void*,vftable,"0x00A69EEA mov dword [esi],0xB59AC0"
+MovementAnimController,0x10,0x4,void*,animBase,"0x00A69EF6 mov [esi+0x10],eax (constructor argument) ; 0x00A6AC22 mov eax,[esi+0x10] then cmp dword [eax+0x13C],0 in EnterIdle"
+MovementAnimController,0x14,0x4,LeanController*,lean,"0x00A6AC16 mov ecx,[esi+0x14] ; EnterIdle calls LeanController::Reset (0x00A6E200) on it ; the constructor zeroes it at 0x00A69EFB"
+MovementAnimController,0x50,0x4,float,blend,0x00A69F43 fstp [esi+0x50] with -1.0 (0xAE2E00) in the constructor
+MovementAnimController,0x54,0x4,int,mode,"0x00A6BC47 mov [ecx+0x54],edx in SetMode (0x00A6BC40) ; Update 0x00A6BF3E cmp [esi+0x54],2"
+MovementAnimController,0x130,0x4,float,remainingDistance,0x00A6B23E fld [eax+0x50] ; 0x00A6B244 fstp [ecx+0x130] ; the caller stores the controller's +0xE8 at input +0x50 (0x00A63584)
+MovementAnimController,0x134,0x4,float,speed,0x00A6B229 fld [eax+0x54] ; fstp [ecx+0x134] ; the caller stores the controller's +0xE0 times +0xD8 at input +0x54 (0x00A63536..0x00A63554)
+MovementAnimController,0x138,0x4,float,targetSpeed,0x00A6B232 fld [eax+0x58] ; fstp [ecx+0x138] ; the caller stores the controller's +0xE4 at input +0x58 (0x00A63564..0x00A6356F)
 Notifications,0x68,0x1C,SmartData::Attribute<ECBase::ECDynArray<Alert*>>,alerts,"0x0063B1C7 lea ecx,[esi+0x398], registered as Alerts; it is Notifications+0x68 (constructed by 0x00628A90 at 0x00629595) (from CCParty, where Notifications sits at +0x330)"
 Notifications,0x84,0x1C,SmartData::Attribute<ECBase::ECDynArray<Alert*>>,uberAlerts,"0x0063B232 lea ecx,[esi+0x3B4], registered as UberAlerts; it is Notifications+0x84 (constructed at 0x006295BF) (from CCParty, where Notifications sits at +0x330)"
+Pathfinding::Path,0x0,0x1,uint8_t,active,"0x00A6296C cmp byte [ecx],0 ; Cancel (0x00A62960) acts only when it is set ; 0x0073D6E8 cmp byte [eax],0 reads it as a search in progress"
+Pathfinding::Path,0x0,0x90,struct,sizeof,0x00A628E6 push 0x90 ; allocation before the constructor call at 0x00A62901 (constructor 0x00A482D0)
+Pathfinding::Path,0x70,0x10,std::vector<Vector3>,waypoints,"0x00A4762C add ecx,0x70 ; GetWaypoint (0x00A47620) reads begin +0x74 and end +0x78 and divides the byte size by 12 with the 0x2AAAAAAB multiply : 12-byte elements"
+Pathfinding::Path,0x80,0x4,void*,waypointExtra,"0x00A4830F push 0x34 ; 0x00A4834A mov [esi+0x80],eax : a 0x34-byte object made in the constructor, passed to 0x00A474A0 by ClearWaypoints (0x00A48448) and deleted by Free (0x00A48489)"
+Pathfinding::Path,0x84,0x4,Vector4*,barredPosition,"0x00A476B3 cmp dword [esi+0x84],0 ; GetBarredPosition (0x00A476B0) makes the 0x10-byte value on first read and returns it"
 PlotItems,0x0,0x50,struct,sizeof,0x007406C5; sizeof (push 0x50 then PlotItems::PlotItems)
 Renderer::LightState,0x110,0x4,void*,currentProbe,"0x0046B743 cmp edi,[esi+0x110]: the probe node whose data is in the state; 0x0046B8F9 clears it"
 Renderer::LightState,0x114,0x4,ResourceHandle,envMapHandle,"0x0046B75F lea ebx,[esi+0x114]; 0x0046B768 ResourceHandle::operator="
