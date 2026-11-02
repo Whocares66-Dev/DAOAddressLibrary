@@ -324,7 +324,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 323,function,,0x0040abf0,0x0040aee0,0x0040abf0
 324,function,,0x0040ad74,0x0040b064,0x0040ad74
 325,function,,0x0040ade0,0x0040b0d0,0x0040ade0
-326,function,,0x0040ae60,0x0040b150,0x0040ae60
+326,function,EclipseGame::CreateScene,0x0040ae60,0x0040b150,0x0040ae60
 327,function,EclipseGame::CreateScenes,0x0040afe0,0x0040b2d0,0x0040afe0
 328,function,,0x0040b030,0x0040b320,0x0040b030
 329,function,,0x0040b0a0,0x0040b390,0x0040b0a0
@@ -2851,7 +2851,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2850,function,Renderer::LightState::~LightState,0x0046bae0,0x008aa750,0x0046bae0
 2851,function,Renderer::LightState::ProvideLightParams,0x0046baf0,0x008aa760,0x0046baf0
 2852,function,Renderer::LightState::ProvideLightProbeCube,0x0046bb30,0x008aa7a0,0x0046bb30
-2853,function,,0x0046bb70,0x008aa7e0,0x0046bb70
+2853,function,Renderer::LightState::Reset,0x0046bb70,0x008aa7e0,0x0046bb70
 2854,function,Renderer::LightState::SetSun,0x0046bb80,0x008aa7f0,0x0046bb80
 2855,function,"std::_Uninit_copy<Vector4 *,Vector4 *>",0x0046bbc0,0x00484e60,0x0046bbc0
 2856,function,Catch_All@0046bc1a,0x0046bc1a,0x00484eba,0x0046bc1a
@@ -3059,7 +3059,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 3058,function,Renderer::SubmissionStage::AddOperation,0x00472370,0x008ae890,0x00472370
 3059,function,Renderer::SubmissionStage::AddAffinityDirective,0x004723d0,0x008ae8f0,0x004723d0
 3060,function,Renderer::SubmissionStage::~SubmissionStage,0x00472410,0x008ae930,0x00472410
-3061,function,,0x00472490,0x007fbdd0,0x00472490
+3061,function,XMLParser2::XMLBuilderBase::CharacterDataCallback,0x00472490,0x007fbdd0,0x00472490
 3062,function,Renderer::SQProgramBuilderXML2::SplitInstructions,0x004724b0,0x008b46e0,0x004724b0
 3063,function,Renderer::StripHashComment,0x00472580,0x008b47b0,0x00472580
 3064,function,Renderer::SQProgramBuilderXML2::ParseRenderMode,0x004725f0,0x008b4820,0x004725f0
@@ -4906,7 +4906,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4905,function,,0x004d2870,0x00819740,0x004d2870
 4906,function,,0x004d290b,0x008197db,0x004d290b
 4907,retired,,,,
-4908,function,,0x004d29a0,0x00819870,0x004d29a0
+4908,function,"std::basic_istream<wchar_t,std::char_traits<wchar_t>>::get",0x004d29a0,0x00819870,0x004d29a0
 4909,function,,0x004d29c0,0x00819890,0x004d29c0
 4910,function,,0x004d29d0,0x008198a0,0x004d29d0
 4911,function,,0x004d29f0,0x008198c0,0x004d29f0
@@ -4924,7 +4924,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4923,function,Math::Matrix4x4f::operator=,0x004d3360,0x00819ae0,0x004d3360
 4924,function,Gff4::SwapMatrix4x4f,0x004d3380,0x00819b00,0x004d3380
 4925,function,Gff4::SwapMatrix4x4fArray,0x004d3390,0x00819b10,0x004d3390
-4926,function,,0x004d33c0,0x00819b40,0x004d33c0
+4926,function,Math::Matrix4x4f::GetZero,0x004d33c0,0x00819b40,0x004d33c0
 4927,function,Math::Matrix4x4f::ToQuaternion,0x004d33f0,0x00819b70,0x004d33f0
 4928,function,Math::Matrix4x4f::OrthoOffCenterLH,0x004d3650,0x00819dd0,0x004d3650
 4929,function,Math::Matrix4x4f::SetRow,0x004d36e0,0x00819e60,0x004d36e0
@@ -4933,7 +4933,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4932,function,Math::Matrix4x4f::Transpose,0x004d37e0,0x00819f40,0x004d37e0
 4933,function,Math::Matrix4x4f::InverseRigid,0x004d3830,0x00819f90,0x004d3830
 4934,function,Math::Matrix4x4f::GetIdentity,0x004d38e0,0x0081a040,0x004d38e0
-4935,function,,0x004d3940,0x0081a0a0,0x004d3940
+4935,function,Math::Matrix4x4f::FromQuaternion,0x004d3940,0x0081a0a0,0x004d3940
 4936,function,Math::Matrix4x4f::PerspectiveFovRH,0x004d3a60,0x0081a1c0,0x004d3a60
 4937,function,Math::Matrix4x4f::FromScale,0x004d3ae0,0x0081a240,0x004d3ae0
 4938,function,Math::Matrix4x4f::FromTranslation,0x004d3b30,0x0081a290,0x004d3b30
@@ -4987,13 +4987,13 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4986,function,Vector::NotEquals,0x004d4ef0,0x00816e20,0x004d4ef0
 4987,function,Vector::Zero,0x004d4f10,0x00816e40,0x004d4f10
 4988,function,Math::Sphere::Sphere,0x004d4f40,0x0081ce60,0x004d4f40
-4989,function,,0x004d4f80,0x0081cea0,0x004d4f80
+4989,function,Math::Sphere::SetCenterRadius,0x004d4f80,0x0081cea0,0x004d4f80
 4990,function,,0x004d4fa0,0x0081cec0,0x004d4fa0
-4991,function,,0x004d4fc0,0x0081cee0,0x004d4fc0
+4991,function,Math::Sphere::operator=,0x004d4fc0,0x0081cee0,0x004d4fc0
 4992,function,TransformPositionInPlace,0x004d4ff0,0x0081cf10,0x004d4ff0
 4993,function,,0x004d5070,0x0081b050,0x004d5070
 4994,function,,0x004d50e0,0x006a6ed0,0x004d50e0
-4995,function,,0x004d5120,0x0081b0c0,0x004d5120
+4995,function,Gff4::ListReader::GetStructReader,0x004d5120,0x0081b0c0,0x004d5120
 4996,function,,0x004d5150,0x0081b0f0,0x004d5150
 4997,function,,0x004d5190,0x0081b130,0x004d5190
 4998,function,,0x004d51d0,0x0081b170,0x004d51d0
@@ -5315,7 +5315,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5314,function,,0x004e1bc0,0x00738da0,0x004e1bc0
 5315,function,ReadIniString,0x004e1bf0,0x0082c960,0x004e1bf0
 5316,function,WriteIniString,0x004e1cd0,0x0082ca40,0x004e1cd0
-5317,function,,0x004e1d40,0x007399f0,0x004e1d40
+5317,function,"std::basic_stringstream<char,std::char_traits<char>,std::allocator<char>>::`vbase destructor'",0x004e1d40,0x007399f0,0x004e1d40
 5318,function,,0x004e1de0,0x00739a90,0x004e1de0
 5319,function,,0x004e1e60,0x00739e00,0x004e1e60
 5320,function,,0x004e1e80,0x00739fc0,0x004e1e80
@@ -5335,10 +5335,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5334,function,,0x004e2230,0x0073ae30,0x004e2230
 5335,function,,0x004e2360,0x0073b0c0,0x004e2360
 5336,function,,0x004e2420,0x0073c280,0x004e2420
-5337,function,,0x004e2500,0x00479410,0x004e2500
+5337,function,std::operator<<<std::char_traits<char>>,0x004e2500,0x00479410,0x004e2500
 5338,function,,0x004e26c8,0x004795d8,0x004e26c8
 5339,retired,,,,
-5340,function,,0x004e2710,0x0073de10,0x004e2710
+5340,function,"std::basic_stringstream<char,std::char_traits<char>,std::allocator<char>>::basic_stringstream",0x004e2710,0x0073de10,0x004e2710
 5341,function,,0x004e27b0,0x0082cab0,0x004e27b0
 5342,function,,0x004e2820,0x0082cb20,0x004e2820
 5343,function,,0x004e2830,0x0082cb30,0x004e2830
@@ -5458,7 +5458,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5457,function,ECResMan::GetFileExtension,0x004e6ee0,0x00818f40,0x004e6ee0
 5458,function,Resource::FindProcessor,0x004e6f30,0x008193f0,0x004e6f30
 5459,function,,0x004e6f50,0x00819410,0x004e6f50
-5460,function,,0x004e6fc0,0x00819480,0x004e6fc0
+5460,function,Resource::RegisterProcessor,0x004e6fc0,0x00819480,0x004e6fc0
 5461,function,,0x004e7030,0x00834260,0x004e7030
 5462,function,,0x004e7050,0x00834280,0x004e7050
 5463,function,,0x004e70f0,0x00834320,0x004e70f0
@@ -5772,27 +5772,27 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5771,function,std::_Distance2<std::_Tree<unsigned int>::iterator>,0x004f2c10,0x007dff00,0x004f2c10
 5772,function,Graphics::MaterialObjectInstance::VisitResources,0x004f2c50,0x007dffc0,0x004f2c50
 5773,function,Graphics::MaterialObjectInstance::GetMemoryFootprint,0x004f2d80,0x007e0150,0x004f2d80
-5774,function,,0x004f2ec0,0x0073ff20,0x004f2ec0
-5775,function,,0x004f2f00,0x007f5c30,0x004f2f00
-5776,function,,0x004f2f60,0x00452160,0x004f2f60
-5777,function,,0x004f2f90,0x005a05c0,0x004f2f90
-5778,function,,0x004f2fd0,0x007e0320,0x004f2fd0
-5779,function,,0x004f3050,0x007e03a0,0x004f3050
-5780,function,,0x004f3200,0x007e0550,0x004f3200
-5781,function,,0x004f32a0,0x007e05f0,0x004f32a0
-5782,function,,0x004f3330,0x007e0880,0x004f3330
+5774,function,ECBase::ECDynArray<Math::VectorUA4f>::DataOrNull,0x004f2ec0,0x0073ff20,0x004f2ec0
+5775,function,"Core::MapTryFind<unsigned int,?>",0x004f2f00,0x007f5c30,0x004f2f00
+5776,function,"std::uninitialized_copy<?*,?*>",0x004f2f60,0x00452160,0x004f2f60
+5777,function,ECBase::ECDynArray<Math::VectorUA4f>::clear,0x004f2f90,0x005a05c0,0x004f2f90
+5778,function,Graphics::MaterialObjectInstance::GetFloatParameter,0x004f2fd0,0x007e0320,0x004f2fd0
+5779,function,Graphics::MaterialObjectInstance::ProvideParameter,0x004f3050,0x007e03a0,0x004f3050
+5780,function,Graphics::MaterialStateOverride::End,0x004f3200,0x007e0550,0x004f3200
+5781,function,Graphics::MaterialStateOverride::ApplyToPass,0x004f32a0,0x007e05f0,0x004f32a0
+5782,function,Graphics::MaterialOpacity::PassBinding::~PassBinding,0x004f3330,0x007e0880,0x004f3330
 5783,function,Graphics::MaterialObjectInstance::ApplyPassParameters,0x004f3340,0x007e0890,0x004f3340
-5784,function,,0x004f33d0,0x005a2490,0x004f33d0
-5785,function,,0x004f3500,0x007e0c40,0x004f3500
-5786,function,,0x004f3540,0x007e0c80,0x004f3540
-5787,function,,0x004f3670,0x0040a7b0,0x004f3670
-5788,function,,0x004f3720,0x00761fa0,0x004f3720
-5789,function,,0x004f3780,0x007e0e20,0x004f3780
+5784,function,ECBase::ECDynArray<Math::VectorUA4f>::Assign,0x004f33d0,0x005a2490,0x004f33d0
+5785,function,Graphics::MaterialPassStateArray::Clear,0x004f3500,0x007e0c40,0x004f3500
+5786,function,"std::vector<std::pair<int,int>>::operator=",0x004f3540,0x007e0c80,0x004f3540
+5787,function,"std::vector<std::pair<int,int>>::resize",0x004f3670,0x0040a7b0,0x004f3670
+5788,function,ECBase::ECDynArray<Math::VectorUA4f>::ECDynArray_copy,0x004f3720,0x00761fa0,0x004f3720
+5789,function,Graphics::MaterialPassStateArray::Clear,0x004f3780,0x007e0e20,0x004f3780
 5790,function,Graphics::MaterialOpacity::~MaterialOpacity,0x004f3790,0x007e0e30,0x004f3790
 5791,function,,0x004f37f0,0x00466db0,0x004f37f0
 5792,function,,0x004f3830,0x007e0e90,0x004f3830
 5793,function,,0x004f3870,0x007e0ed0,0x004f3870
-5794,function,,0x004f3b40,0x007e11a0,0x004f3b40
+5794,function,"std::vector<std::pair<int,int>>::vector",0x004f3b40,0x007e11a0,0x004f3b40
 5795,function,,0x004f3ba0,0x007e1200,0x004f3ba0
 5796,function,"Graphics::MaterialObjectInstance::ParameterValueProvider<ECBase::ECDynArray<Math::VectorUA4f>,Graphics::MaterialObjectInstance::ParameterAccessByValue<ECBase::ECDynArray<Math::VectorUA4f>>>::ParameterValueProvider",0x004f3c80,0x007e12e0,0x004f3c80
 5797,function,ECBase::ECDynArray<Math::VectorUA4f>::operator=,0x004f3ce0,0x005a2bb0,0x004f3ce0
@@ -5803,12 +5803,12 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5802,function,Graphics::MaterialObjectInstance::RemoveVector4ArrayParameter,0x004f3e40,0x007e1480,0x004f3e40
 5803,function,Graphics::MaterialObjectInstance::RemoveMatrixParameter,0x004f3ec0,0x007e1500,0x004f3ec0
 5804,function,Graphics::MaterialObjectInstance::SetParameter,0x004f3f40,0x007e1580,0x004f3f40
-5805,function,,0x004f3fe0,0x007e1620,0x004f3fe0
-5806,function,,0x004f40b0,0x007e16f0,0x004f40b0
-5807,function,,0x004f4150,0x007e1790,0x004f4150
-5808,function,,0x004f41d0,0x007e1810,0x004f41d0
+5805,function,Graphics::MaterialObjectInstance::SetFloatParameter,0x004f3fe0,0x007e1620,0x004f3fe0
+5806,function,Graphics::MaterialObjectInstance::SetMatrixParameter,0x004f40b0,0x007e16f0,0x004f40b0
+5807,function,Graphics::MaterialObjectInstance::GetVector4Parameter,0x004f4150,0x007e1790,0x004f4150
+5808,function,Graphics::MaterialObjectInstance::GetVector4ArrayParameter,0x004f41d0,0x007e1810,0x004f41d0
 5809,function,Graphics::MaterialObjectInstance::PreparePassBlock,0x004f4250,0x007e1890,0x004f4250
-5810,function,,0x004f4380,0x007e19c0,0x004f4380
+5810,function,Graphics::MaterialStateOverride::AddState,0x004f4380,0x007e19c0,0x004f4380
 5811,function,Graphics::MaterialOpacity::SetOpacity,0x004f43c0,0x007e1a00,0x004f43c0
 5812,function,,0x004f44a0,0x007e1ae0,0x004f44a0
 5813,function,,0x004f44c0,0x007e1b00,0x004f44c0
@@ -5835,7 +5835,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5834,function,Graphics::MaterialPassStateArray::Resize,0x004f4f70,0x007e24a0,0x004f4f70
 5835,function,Graphics::MaterialObjectInstance::MaterialObjectInstance,0x004f5080,0x007e25b0,0x004f5080
 5836,function,Graphics::MaterialObjectInstance::~MaterialObjectInstance,0x004f5220,0x007e2750,0x004f5220
-5837,function,,0x004f53f0,0x007e2920,0x004f53f0
+5837,function,Graphics::MaterialStateOverride::Rebuild,0x004f53f0,0x007e2920,0x004f53f0
 5838,function,,0x004f5500,0x007e2a30,0x004f5500
 5839,function,Graphics::MaterialObjectInstance::`scalar deleting destructor',0x004f5700,0x007e2c30,0x004f5700
 5840,function,Graphics::MaterialStateOverride::Apply,0x004f5720,0x007e2c50,0x004f5720
@@ -5843,12 +5843,12 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5842,function,Graphics::MaterialObjectInstance::Render,0x004f5840,0x007e2d70,0x004f5840
 5843,function,,0x004f5a30,0x007e2f60,0x004f5a30
 5844,function,,0x004f5bf0,0x007e3120,0x004f5bf0
-5845,function,,0x004f5ce0,0x007e3210,0x004f5ce0
+5845,function,Graphics::MaterialObjectInstance::SetTextureParameter,0x004f5ce0,0x007e3210,0x004f5ce0
 5846,function,,0x004f5d80,0x007e32b0,0x004f5d80
-5847,function,,0x004f5dc0,0x007e32f0,0x004f5dc0
-5848,function,,0x004f5e30,0x007e3360,0x004f5e30
-5849,function,,0x004f6310,0x007e3840,0x004f6310
-5850,function,,0x004f64c0,0x007e39f0,0x004f64c0
+5847,function,Graphics::MaterialObjectInstance::GetTextureParameter,0x004f5dc0,0x007e32f0,0x004f5dc0
+5848,function,Graphics::MaterialObjectInstance::CopyParametersFrom,0x004f5e30,0x007e3360,0x004f5e30
+5849,function,Graphics::MaterialObjectInstance::ApplyDeclaredTextures,0x004f6310,0x007e3840,0x004f6310
+5850,function,Graphics::MaterialObjectInstance::ApplyDeclaredTexturesExceptLightmap,0x004f64c0,0x007e39f0,0x004f64c0
 5851,function,,0x004f6660,0x007f01a0,0x004f6660
 5852,function,,0x004f6a60,0x007f05a0,0x004f6a60
 5853,function,Stub::GetByte_0x38,0x004f6a70,0x007f09a0,0x004f6a70

@@ -18570,3 +18570,43 @@ address,what,value,why
 0x0054EB20,signature,"bool __thiscall GraphicsStructures::Object::SetMorph(void* this, void* morphPointer, int unused)",ret 8 at 0x0054EC99; this is Object+8; the second argument is only passed on to the nodes
 0x0054ECA0,signature,bool __thiscall GraphicsStructures::Object::ClearMorph(void* this),plain ret at 0x0054ED14 and 0x0054EE3E; this is Object+8
 0x0054EE40,signature,"bool __thiscall GraphicsStructures::Object::AddMorphTargets(void* this, const void* name, const void* preset)",ret 8 at 0x0054F225; this is Object+8; al set to 1 at 0x0054F210
+0x0040AE60,signature,"void* __thiscall EclipseGame::CreateScene(void* this, bool createGuiScene, bool arg2)",ret 8 at 0x0040AFD3; ecx saved to edi at 0x0040AE87; returns the scene instance (ebp)
+0x004D29A0,signature,"void* __thiscall std::basic_istream<wchar_t,std::char_traits<wchar_t>>::get(void* this, wchar_t* ch)",ret 4 at 0x004D29BB; returns this
+0x004D33C0,signature,void* __cdecl Math::Matrix4x4f::GetZero(void),plain ret; returns the static at 0x00C2BF60
+0x004D3940,signature,"void __cdecl Math::Matrix4x4f::FromQuaternion(void* out, const float* quaternion)","plain ret at 0x004D3A53; out [esp+0x24], quaternion [esp+0x28] after sub esp,0x20"
+0x004D4FC0,signature,"void* __thiscall Math::Sphere::operator=(void* this, const void* other)",ret 4 at 0x004D4FE0; eax = ecx at 0x004D4FC6
+0x004E1D40,signature,"void __thiscall std::basic_stringstream<char,std::char_traits<char>,std::allocator<char>>::`vbase destructor'(void* this)",plain ret at 0x004E1DD9; ecx is the virtual-base subobject
+0x004E2500,signature,"void* __cdecl std::operator<<<std::char_traits<char>>(void* ostream, const char* text)","plain ret at 0x004E2668; arguments [ebp+8], [ebp+0xC]"
+0x004E2710,signature,"void* __thiscall std::basic_stringstream<char,std::char_traits<char>,std::allocator<char>>::basic_stringstream(void* this, int openMode, int mostDerived)",ret 8 at 0x004E27A6
+0x004F2F60,signature,"void __stdcall std::uninitialized_copy<?*,?*>(void* first, void* last, void* dest)",ret 0xC at 0x004F2F86; ecx not read
+0x004F2FD0,signature,"float* __thiscall Graphics::MaterialObjectInstance::GetFloatParameter(void* this, const void* name)",ret 4 at 0x004F3046
+0x004F3050,signature,"bool __thiscall Graphics::MaterialObjectInstance::ProvideParameter(void* this, void* request, void* passBlock)",ret 8 at 0x004F31D3; al result
+0x004F3200,signature,void __thiscall Graphics::MaterialStateOverride::End(void* this),plain ret at 0x004F329D; ecx to esi at 0x004F3221
+0x004F32A0,signature,"void __thiscall Graphics::MaterialStateOverride::ApplyToPass(void* this, void* passBinding)",ret 4 at 0x004F3328
+0x004F3330,signature,void __thiscall Graphics::MaterialOpacity::PassBinding::~PassBinding(void* this),"add ecx,4 then jmp to a thiscall release"
+0x004F3500,signature,void __thiscall Graphics::MaterialPassStateArray::Clear(void* this),plain ret at 0x004F3536
+0x004F3540,signature,"void* __thiscall std::vector<std::pair<int,int>>::operator=(void* this, const void* other)",ret 4 at 0x004F3570
+0x004F3670,signature,"void __thiscall std::vector<std::pair<int,int>>::resize(void* this, unsigned int newSize, int firstValue, int secondValue)",ret 0xC at 0x004F36C2
+0x004F3780,signature,void __thiscall Graphics::MaterialPassStateArray::Clear(void* this),jmp thunk to 0x004F3500
+0x004F3B40,signature,"void* __thiscall std::vector<std::pair<int,int>>::vector(void* this, unsigned int count)",ret 4 at 0x004F3B9B
+0x004F3FE0,signature,"void __thiscall Graphics::MaterialObjectInstance::SetFloatParameter(void* this, const void* name, const float* value, bool byReference)",ret 0xC at 0x004F40A4
+0x004F40B0,signature,"void __thiscall Graphics::MaterialObjectInstance::SetMatrixParameter(void* this, const void* name, const void* value, bool byReference)",ret 0xC at 0x004F414D
+0x004F4150,signature,"void* __thiscall Graphics::MaterialObjectInstance::GetVector4Parameter(void* this, const void* name)",ret 4 at 0x004F41C0
+0x004F41D0,signature,"void* __thiscall Graphics::MaterialObjectInstance::GetVector4ArrayParameter(void* this, const void* name)",ret 4 at 0x004F4240
+0x004F4380,signature,"void __thiscall Graphics::MaterialStateOverride::AddState(void* this, int state, int value)",ret 8 at 0x004F43AE
+0x004F53F0,signature,void __thiscall Graphics::MaterialStateOverride::Rebuild(void* this),plain ret at 0x004F54F6
+0x004F5CE0,signature,"void __thiscall Graphics::MaterialObjectInstance::SetTextureParameter(void* this, const void* name, const void* resourceName)",ret 8 at 0x004F5D77
+0x004F5DC0,signature,"void* __thiscall Graphics::MaterialObjectInstance::GetTextureParameter(void* this, const void* name)",ret 4 at 0x004F5E1C and 0x004F5E27
+0x004F5E30,signature,"void __thiscall Graphics::MaterialObjectInstance::CopyParametersFrom(void* this, const void* other)","ret 4 after 0x004F6305; this saved at [esp+0x10], other at [esp+0x38]"
+0x004F6310,signature,"void __thiscall Graphics::MaterialObjectInstance::ApplyDeclaredTextures(void* this, const void* infix)",ret 4 at 0x004F64BA
+0x004F64C0,signature,"void __thiscall Graphics::MaterialObjectInstance::ApplyDeclaredTexturesExceptLightmap(void* this, const wchar_t* name)",ret 4 at 0x004F665D
+0x004F3050,convention,__thiscall,reads ecx as this; ret 8
+0x004F2F60,convention,__stdcall,ecx is not read before it is pushed and overwritten; ret 0xC
+0x004D4F80,signature,"void __thiscall Math::Sphere::SetCenterRadius(void* this, const void* centerRadius)",ret 4 at 0x004D4F9B
+0x004D5120,signature,"void* __thiscall Gff4::ListReader::GetStructReader(void* this, void* out, unsigned int index)",ret 8 at 0x004D5144; the caller at 0x0057F0FA pushes one more word than this pops (not explained)
+0x004E6FC0,signature,"void __cdecl Resource::RegisterProcessor(const void* extension, void* processor)",plain ret 0x004E7021
+0x004F2EC0,signature,void* __thiscall ECBase::ECDynArray<Math::VectorUA4f>::DataOrNull(void* this),plain ret 0x004F2EF0
+0x004F2F00,signature,"void* __thiscall Core::MapTryFind<unsigned int,?>(void* this, void* out, const unsigned int* key)",ret 8 at 0x004F2F5D
+0x004F2F90,signature,void __thiscall ECBase::ECDynArray<Math::VectorUA4f>::clear(void* this),plain ret 0x004F2FC7
+0x004F33D0,signature,"void* __thiscall ECBase::ECDynArray<Math::VectorUA4f>::Assign(void* this, const void* other)",ret 4 at 0x004F34F6
+0x004F3720,signature,"void* __thiscall ECBase::ECDynArray<Math::VectorUA4f>::ECDynArray_copy(void* this, const void* other)",ret 4 at 0x004F3773
