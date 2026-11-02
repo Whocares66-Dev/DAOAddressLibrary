@@ -14438,3 +14438,39 @@ address,what,value,why
 0x0050AD70,signature,"void** __thiscall ECBase::ECDynArray<Graphics::MaterialBuilderTemp*>::At(void* this, unsigned int index)",ret 4; this is the vector at builder+0x10
 0x0050ADA0,signature,"void __thiscall Graphics::MaterialLogicTestTemp::SetDetail(void* this, void* value)",ret 4; value is a std::wstring*
 0x00A222A0,clear,EC::WDObject::vfunction7,"shared slot 3 of every MaterialBuilderTemp vftable: returns the type flag at +0x4 (GetType); out of batch, noted for whoever holds it"
+0x0050AF10,convention,__thiscall,Reads ecx as this (0x0050AF34) and returns with a plain ret; Ghidra has __fastcall(param_1).
+0x0050AF10,signature,void __thiscall Graphics::MaterialPassTemp::BuildPass(void* this),No stack arguments (plain ret at 0x0050B0B4).
+0x0050B0C0,convention,__thiscall,"Reads ecx as this (0x0050B0E5), plain ret; Ghidra has __fastcall(param_1)."
+0x0050B0C0,signature,void __thiscall Graphics::MaterialPassTemp::BuildEffectPass(void* this),No stack arguments (plain ret at 0x0050B1D6).
+0x0050B1E0,signature,"void __thiscall Graphics::MaterialLogicTestTemp::ReadAttributes(void* this, const wchar_t** attributes)",ret 4 (0x0050B2B9); the argument is expat's name/value array (0x0050B209).
+0x0050B510,signature,"void* __thiscall Graphics::MaterialBuilderXML2::FindParamSet(void* this, const wchar_t* name)",ret 4 (0x0050B58C); returns the set or 0.
+0x0050B5A0,convention,__thiscall,"ecx is the vector (0x0050B5A5), plain ret; Ghidra has __fastcall."
+0x0050B5A0,signature,void** __thiscall ECBase::ECDynArray<Graphics::MaterialBuilderTemp*>::Back(void* this),Returns the last element's address or 0xC31258.
+0x0050BA70,signature,"void __thiscall ECBase::ECDynArray<void*>::RemoveAtSwap(void* this, unsigned int index)",ret 4 (0x0050BB1A).
+0x0050BD10,signature,"void __thiscall Graphics::MaterialPassTemp::AddRequiredStream(void* this, void* name)","add ecx,0xb4; jmp vector<wstring>::push_back with one stacked argument; Ghidra shows none."
+0x0050BD20,signature,"void __thiscall Graphics::MaterialPassTemp::AddParam(void* this, void* parameter, bool fromSet)",ret 8 (0x0050BDF4); flag byte at [esp+0x28] (0x0050BD36).
+0x0050BE00,signature,"void __thiscall Graphics::MaterialPassTemp::AddInternalParam(void* this, void* parameter, bool fromSet)",ret 8 (0x0050BED4).
+0x0050BEE0,signature,"void __thiscall Graphics::MaterialPassTemp::AddEffectStage(void* this, void* id)","add ecx,0xc4; jmp push_back."
+0x0050BEF0,signature,"void __thiscall Graphics::MaterialParamSetTemp::CreateInternalParams(void* this, void* out)",ret 4 (0x0050BFA7).
+0x0050BFB0,signature,"void __thiscall Graphics::MaterialParamSetTemp::CreateParams(void* this, void* out)",ret 4 (0x0050C067).
+0x0050C170,signature,"void __thiscall Graphics::MaterialTemp::AddSemantic(void* this, void* child)",ret 4 (0x0050C184); Ghidra shows no parameter.
+0x0050C280,signature,"void __thiscall Graphics::MaterialTemp::SetName(void* this, void* name)","add ecx,0x18; jmp wstring::operator= (one stacked argument)."
+0x0050C310,clear,Graphics::MaterialBuilderTemp::MaterialBuilderTemp,It is MaterialParamSetTemp's destructor: sets vftable 0xAF4DD0 then the base 0xAF4520 and frees members; only caller the sdd 0x0050C653.
+0x0050C310,signature,void __thiscall Graphics::MaterialParamSetTemp::~MaterialParamSetTemp(void* this),Plain ret (0x0050C3C3).
+0x0050C3D0,signature,"void __thiscall Graphics::MaterialTechniqueTemp::AddPass(void* this, void* child)",ret 4 (0x0050C3DD); Ghidra shows (void).
+0x0050C3E0,signature,"void __thiscall Graphics::MaterialParamSetTemp::AddInternalParam(void* this, void* child)",ret 4 (0x0050C3ED); Ghidra shows a void(void).
+0x0050C500,signature,"void __thiscall Graphics::MaterialBuilderTemp::SetName(void* this, void* name)","add ecx,8; jmp wstring::operator= (one stacked argument)."
+0x0050C670,signature,"void* __thiscall Graphics::MaterialBuilderXML2::MaterialBuilderXML2(void* this, void* parser)",ret 4 (0x0050C72E).
+0x0050C740,clear,XMLParser2::IBuilder::IBuilder,"It is MaterialBuilderXML2's destructor: sets vftable 0xAF4E28, frees members, then IBuilder's vftable 0xAE8490; only caller the sdd 0x0050C7C3."
+0x0050C740,signature,void __thiscall Graphics::MaterialBuilderXML2::~MaterialBuilderXML2(void* this),Plain ret (0x0050C7B6).
+0x0050C7E0,signature,"void __thiscall Graphics::MaterialBuilderXML2::EndElement(void* this, const wchar_t* name)",ret 4 (0x0050CEF9).
+0x0050B510,convention,__thiscall,ret 4 and ecx used before written
+0x0050B8C0,signature,void __thiscall f(void* this),"Unnamed FUN_; destructor body, plain ret"
+0x0050BA70,convention,__thiscall,ret 4 and ecx read first
+0x0050BB20,signature,void __thiscall f(void* this),"Labelled MaterialLogicTemp but with no signature; destructor body, plain ret"
+0x0050BEF0,convention,__thiscall,ret 4 and ecx read first
+0x0050BFB0,convention,__thiscall,ret 4 and ecx read first
+0x0050C3E0,convention,__thiscall,ret 4 and ecx read first
+0x0050C500,clear,Graphics::MaterialSemanticTemp::vfunction8,"Misleading: one function shared by the Semantic, Logic, Technique and Pass vftables; it is SetName on this+8"
+0x0050C510,signature,void __thiscall f(void* this),"Unnamed FUN_; destructor body, plain ret"
+0x0050C190,signature,void __thiscall f(void* this),"Unnamed FUN_; destructor body, plain ret"
