@@ -18368,3 +18368,43 @@ address,what,value,why
 0x004D68B0,signature,"void __thiscall f(void *this, unsigned int *slot)",ret 4; clears *slot (0x004D68C3).
 0x004EADF0,signature,"float __cdecl f(float *a, float *b)","plain ret, result on the x87 stack, arguments at [ebp+8],[ebp+0xC]."
 0x005D4540,signature,"int __stdcall f(int a, int b, int c, int d)","ret 0x10, ecx unread."
+0x005435D0,signature,"void __thiscall GraphicsStructures::Object::SetOrientation(void* this, const void* orientation)",read at 0x005435d9 fstp [esi+0x118]
+0x00543660,signature,"bool __thiscall GraphicsStructures::Object::AttachEmitterTargetToObjectNode(void* this, const void* emitterNodeName, void* targetObject, void* targetNode)",read at 0x0054368e call FindRootNodeByName
+0x00543750,signature,"void* __thiscall GraphicsStructures::TriggerSubObject::TriggerSubObject(void* this, const void* points, const void* triangleCorners, unsigned int pointCount, unsigned int cornerCount)",read at 0x00543791 vftable 0xaf83b0
+0x005438E0,signature,void __thiscall GraphicsStructures::TriggerSubObject::~TriggerSubObject(void* this),read at 0x005438f3 ~ECDynArray at +0x10
+0x00543910,signature,"bool __thiscall GraphicsStructures::Object::FindTriggerVertexNearSegment(void* this, const void* start, const void* end, int* outIndex, int unused)","read at 0x00543927 mov [out],-1"
+0x00543AD0,signature,"int __thiscall GraphicsStructures::Object::IntersectTriggerPolygonSegment(void* this, void* start, void* endInOut, void* outHit, float unused, float tolerance)",read at 0x00543afe At(i) on array +4
+0x00543B40,signature,void __thiscall GraphicsStructures::Object::SyncUmbraProxyVisibility(void* this),"read at 0x00543b44 mov esi,[ecx+0x300]"
+0x00543BD0,signature,"bool __thiscall GraphicsStructures::Object::AttachEffectObject(void* this, void* effectObject)","read at 0x00543bf8 cmp [esi+0x26c],0"
+0x00543CC0,signature,"void __thiscall GraphicsStructures::Object::DetachEffectObject(void* this, void* effectObject)","""read at 0x00543cf2 L""""GOB"""""""
+0x00543D70,signature,"void __thiscall GraphicsStructures::Object::SetCrustFollowedObject(void* this, void* target)","read at 0x00543d70 mov eax,[ecx+0x274]"
+0x00543D90,signature,"void __thiscall GraphicsStructures::TriggerSubObject::GetMemoryFootprint(void* this, unsigned int* systemBytes, unsigned int* otherBytes)","read at 0x00543da4 add [eax],0x160"
+0x00543DC0,signature,void* __thiscall GraphicsStructures::Object::GetFaceFXActor(void* this),read at 0x00543dd0 SafePointer::Get
+0x00543DE0,signature,const void* __thiscall GraphicsStructures::Object::GetHeadBaseNodeName(void* this),"read at 0x00543dea mov eax,0xc31c24"
+0x00543DF0,signature,const void* __thiscall GraphicsStructures::Object::GetMouthBaseNodeName(void* this),"read at 0x00543dfa mov eax,0xc31c5c"
+0x00543E00,signature,const void* __thiscall GraphicsStructures::Object::GetNeckNodeName(void* this),"read at 0x00543e0a mov eax,0xc31c40"
+0x00543E10,signature,"void __thiscall GraphicsStructures::Object::SetClothSimulationEnabled(void* this, bool enabled)","read at 0x00543e10 mov eax,[ecx+0x50]"
+0x00543E30,signature,"void __thiscall GraphicsStructures::Object::CollectResourceFootprint(void* this, void* visitor)",read at 0x00543e43 call [node+0x70]
+0x00543E70,signature,void __thiscall GraphicsStructures::Object::CacheSoundMaterial(void* this),"read at 0x00543e7a mov eax,[edx+0x170]"
+0x00543EB0,signature,void __thiscall GraphicsStructures::Object::ResetRemoteMaterial(void* this),"read at 0x00543ed8 cmp [eax+0x90],0"
+0x00545170,signature,"void __thiscall Animation::UpdateVector4Controller(void* this, void* arg0, void* arg1, void* arg2, void* arg3, void* arg4, void* arg5, void* arg6, void* arg7, void* arg8, void* arg9, unsigned int arg10)",read at 0x0054a08f jump table type 3 -> 0x0054a135
+0x005452C0,signature,"void __thiscall GraphicsStructures::Object::ApplyTintColor(void* this, const void* tint)",read at 0x005452e3 loop
+0x00545330,signature,"void __thiscall GraphicsStructures::Object::SetUniformScale(void* this, float scale)",read at 0x00545357 fstp [esi+0x54]
+0x00545540,signature,"bool __thiscall GraphicsStructures::Object::GetWorldBoundingSphere(void* this, void* outCenter, float* outRadius)",read at 0x005455c8 fcomp [0xae7d58]=1e-4
+0x00545830,signature,"void __thiscall GraphicsStructures::Object::ShowBoundsBox(void* this, bool show, void* scene)",read at 0x00545844 g_graphics slot 9
+0x005459E0,signature,"void __thiscall GraphicsStructures::Object::SetTextureVariant(void* this, const void* variantName)","read at 0x005459e9 lea esi,[edi+0x158]"
+0x00545A90,signature,"void __thiscall GraphicsStructures::Object::SetLightmapOnMeshNodes(void* this, void* textures, const void* offsetScale, const wchar_t* meshName)",read at 0x00545ad2 sete (name empty)
+0x00545C90,signature,void* __thiscall GraphicsStructures::Object::GetSingleMeshInterface(void* this),"read at 0x00545cde cmp eax,1"
+0x00545D20,signature,"bool __thiscall GraphicsStructures::Object::HasNodeOfKind(void* this, int kind)",read at 0x00545d66 call [edx+0x1c]
+0x00545D90,signature,"void* __thiscall GraphicsStructures::Object::FindRenderableNodeByName(void* this, const void* name)",read at 0x00545dd6 call [edx+0x10]
+0x00545E30,signature,void __thiscall GraphicsStructures::Object::BakeStatic(void* this),read at 0x00545e45 test eax
+0x00545FD0,signature,"void __thiscall GraphicsStructures::Object::CreateTriggerSubObject(void* this, const void* points, const void* triangleCorners, unsigned int pointCount, unsigned int cornerCount)",read at 0x00545ff4 push 0x160
+0x00546050,signature,"void* __thiscall GraphicsStructures::TriggerSubObject::`scalar deleting destructor'(void* this, unsigned int flags)",read at 0x00546053 call 0x005438e0
+0x00546070,signature,"bool __thiscall GraphicsStructures::Object::IntersectTriggerSegment(void* this, void* start, void* endInOut, int* outVertexIndex, void* outHit, float tolerance)",read at 0x00546108 fld [0xaf80ac]
+0x00546210,signature,int __thiscall GraphicsStructures::Object::SumNodeBatchVertexCounts(void* this),read at 0x0054624d call [edx]
+0x00546280,signature,int __thiscall GraphicsStructures::Object::SumNodeBatchIndexCounts(void* this),read at 0x005462bd call [edx+4]
+0x005462F0,signature,"void __thiscall GraphicsStructures::Object::SetUserParametersOnNodes(void* this, void* parameters)",read at 0x00546336 call [edx+0x30]
+0x005465F0,signature,"void __thiscall GraphicsStructures::Object::SetVfxMeshColorOnNodes(void* this, const void* color)",read at 0x00546636 call [edx+0x28]
+0x00546650,signature,"void __thiscall GraphicsStructures::Object::SetEnvModelCutAwayOverride(void* this, bool override)","read at 0x005466cc mov [eax+0x1c9],bl"
+0x00544CB0,signature,"void* __thiscall ECBase::ECDynArray<?>::At(void* this, unsigned int index)",ecx is this and ret N matches the stack arguments as the listing shows
+0x00545C20,signature,"void __thiscall GraphicsStructures::Object::vfunction12(void* this, int value)",ecx is this and ret N matches the stack arguments as the listing shows
