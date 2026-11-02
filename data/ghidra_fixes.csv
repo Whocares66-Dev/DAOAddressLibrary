@@ -17940,3 +17940,45 @@ address,what,value,why
 0x0041A8E0,signature,"void * __thiscall f(void *this, unsigned int spinCount)",ret N and ecx use read in the disassembly at 0x0041a8e0
 0x00510920,signature,void __thiscall f(void *this),ret N and ecx use read in the disassembly at 0x00510920
 0x0041B8F0,signature,void * __thiscall f(void *this),ret N and ecx use read in the disassembly at 0x0041b8f0
+0x0053C5B0,signature,void __thiscall GraphicsStructures::Font::LoadDefinition(void* this),"plain ret, reads ecx into edi at 0x0053C5E9"
+0x0053C6F0,signature,"void* __thiscall GraphicsStructures::Font::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4; returns this (0x0053C708)
+0x0053C710,signature,"void __thiscall GraphicsStructures::Font::DrawText(void* this, void* text, int x, int y, unsigned int colour)",ret 0x10; the four arguments are forwarded to FontGlyphBatch::AddText (0x0053C758); the return value is not propagated
+0x0053C770,signature,"void* __thiscall GraphicsStructures::Font::Font(void* this, void* device, int sizeA, int sizeB)",ret 0xC; returns this (0x0053C835); sizeA and sizeB roles INFERRED
+0x0053C850,signature,void* __thiscall GraphicsStructures::ObjectNodeLight::GetName`adjustor{384}'(void* this),this is the ILight interface at node+0x180; plain ret via ObjectNode::GetName
+0x0053C860,signature,"void* __thiscall GraphicsStructures::ObjectNodeLight::GetExportValue(void* this, int tag, unsigned char* outOwnerValue)","jmp thunk to ObjectNode::GetExportValue, ret 8 there (0x0055DC5E)"
+0x0053C880,signature,"void __thiscall GraphicsStructures::ObjectNodePointLight::SetIntensity(void* this, float intensity)",ret 4 (0x0053C88A)
+0x0053C890,signature,"void* __thiscall GraphicsStructures::ObjectNodePointLight::GetExportValue(void* this, int tag, unsigned char* outOwnerValue)",ret 8 (0x0053C8C2)
+0x0053C8E0,signature,void* __thiscall GraphicsStructures::ObjectNodeLightProbe::GetEnvMapHandle(void* this),"plain ret, no stack arguments"
+0x0053C8F0,signature,float* __thiscall GraphicsStructures::ObjectNodeLightProbe::GetIrradianceRed(void* this),plain ret
+0x0053C900,signature,float* __thiscall GraphicsStructures::ObjectNodeLightProbe::GetIrradianceGreen(void* this),plain ret
+0x0053C910,signature,float* __thiscall GraphicsStructures::ObjectNodeLightProbe::GetIrradianceBlue(void* this),plain ret
+0x0053C920,signature,"void* __thiscall GraphicsStructures::ObjectNodeLightProbe::GetExportValue(void* this, int tag, unsigned char* outOwnerValue)","jmp thunk to 0x0053C860, ret 8"
+0x0053C930,signature,"void* __thiscall GraphicsStructures::ObjectNodeAmbientLight::GetExportValue(void* this, int tag, unsigned char* outOwnerValue)",ret 8 (0x0053C955)
+0x0053C960,signature,"void __thiscall GraphicsStructures::ObjectNodePointLight::GetMemoryFootprint(void* this, unsigned int* nodeBytes, unsigned int* otherBytes)",ret 8 (0x0053C999); this is the node+0xC IMemoryFootprint interface and is passed on in ecx to 0x0055E5B0
+0x0053C9A0,signature,"void __thiscall GraphicsStructures::ObjectNodeLightProbe::GetMemoryFootprint(void* this, unsigned int* nodeBytes, unsigned int* otherBytes)",ret 8 (0x0053C9D9)
+0x0053C9E0,signature,"void __thiscall GraphicsStructures::ObjectNodeAmbientLight::GetMemoryFootprint(void* this, unsigned int* nodeBytes, unsigned int* otherBytes)",ret 8 (0x0053CA19)
+0x0053CA20,signature,float __cdecl Math::FastSqrtNoRefine(float x),"plain ret, argument at [ebp+8], result in st0 (0x0053CA60)"
+0x0053CA70,signature,"void __thiscall Matrix44::GetTranslationDivW(void* this, float* out)","ret 4 (0x0053CACB); ecx is the matrix (0x0053CA79 mov eax,ecx)"
+0x0053CAD0,signature,"void* __thiscall GraphicsStructures::ILight::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4 (0x0053CAEC)
+0x0053CAF0,signature,"void* __thiscall GraphicsStructures::ObjectNodeLight::ObjectNodeLight(void* this, void* owner, void* blueprint)",ret 8 (0x0053CB68); returns this
+0x0053CB70,signature,"void* __thiscall GraphicsStructures::ObjectNodeLight::`scalar deleting destructor'`adjustor{4}'(void* this, unsigned int flags)",jmp to 0x0053D0A0 which is ret 4
+0x0053CB80,signature,"void* __thiscall GraphicsStructures::ObjectNodeLight::`scalar deleting destructor'`adjustor{8}'(void* this, unsigned int flags)",jmp to 0x0053D0A0 which is ret 4
+0x0053CB90,signature,"void* __thiscall GraphicsStructures::ObjectNodeLight::`scalar deleting destructor'`adjustor{384}'(void* this, unsigned int flags)",jmp to 0x0053D0A0 which is ret 4
+0x0053CBA0,signature,"void* __thiscall GraphicsStructures::ObjectNodeLight::`scalar deleting destructor'`adjustor{12}'(void* this, unsigned int flags)",jmp to 0x0053D0A0 which is ret 4
+0x0053CBB0,signature,unsigned char __thiscall GraphicsStructures::ObjectNode::vfunction24(void* this),"plain ret, al"
+0x0053CBE0,signature,void* __thiscall GraphicsStructures::ObjectNode::GetSimulatableNode(void* this),plain ret
+0x0053CC00,signature,void* __thiscall GraphicsStructures::ObjectNode::GetOwnerSimulatable(void* this),plain ret; this is the node+4 ISimulatableNode interface
+0x0053CC30,signature,void __thiscall GraphicsStructures::ObjectNodeLight::MarkPriority(void* this),plain ret; this is the ILight interface at node+0x180
+0x0053CC50,signature,void __thiscall GraphicsStructures::ObjectNodeLight::~ObjectNodeLight(void* this),called without stack arguments (0x0053D0A3)
+0x0053CC90,signature,"void __thiscall GraphicsStructures::ObjectNodeLight::GetPosition`adjustor{288}'(void* this, float* out)",ret 4 at the target (0x0053CACB); this is the ILight interface
+0x0053CD20,signature,"void* __thiscall GraphicsStructures::ObjectNodePointLight::`scalar deleting destructor'`adjustor{4}'(void* this, unsigned int flags)",jmp to 0x0053D0C0 which is ret 4
+0x0053CD30,signature,"void* __thiscall GraphicsStructures::ObjectNodePointLight::`scalar deleting destructor'`adjustor{8}'(void* this, unsigned int flags)",jmp to 0x0053D0C0 which is ret 4
+0x0053CD40,signature,"void* __thiscall GraphicsStructures::ObjectNodePointLight::`scalar deleting destructor'`adjustor{384}'(void* this, unsigned int flags)",jmp to 0x0053D0C0 which is ret 4
+0x0053CD50,signature,"void* __thiscall GraphicsStructures::ObjectNodePointLight::`scalar deleting destructor'`adjustor{12}'(void* this, unsigned int flags)",jmp to 0x0053D0C0 which is ret 4
+0x0053CD60,signature,void __thiscall GraphicsStructures::ObjectNodePointLight::~ObjectNodePointLight(void* this),called without stack arguments (0x0053D0C3)
+0x0053CE10,signature,"void __thiscall GraphicsStructures::ObjectNodePointLight::SetColor(void* this, const float* colour)",ret 4 (0x0053CE52)
+0x0053CE60,signature,void __thiscall GraphicsStructures::ObjectNodePointLight::RefreshBrightness(void* this),plain ret (0x0053CEB8)
+0x0053C710,convention,__thiscall,"ret 0x10, ecx read as this (0x0053C711)"
+0x0053CA20,convention,__cdecl,"plain ret, no ecx"
+0x0053CBC0,signature,void* __thiscall GraphicsStructures::ObjectNode::vfunction1(void* this),plain ret
+0x0053CBD0,signature,void* __thiscall GraphicsStructures::ObjectNode::vfunction8(void* this),plain ret
