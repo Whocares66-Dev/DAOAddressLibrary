@@ -18826,3 +18826,52 @@ address,what,value,why
 0x00A230E0,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::SetSamplerState(Renderer::ThreadedGraphicsDriver* this, unsigned int sampler, unsigned int state, unsigned int value)",ret 0xC at 0x00A23164
 0x00A23170,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::CopyBackBufferToSurface(Renderer::ThreadedGraphicsDriver* this, void* target, unsigned int backBufferIndex)",ret 8 at 0x00A231EE
 0x00A67860,signature,"bool __thiscall AnimBaseVFX::LoadModel(AnimBaseVFX* this, void* arg1, unsigned int arg2, unsigned int arg3, unsigned int arg4, void* arg5, bool useCrust)","ret 0x18 at 0x00A678F2; six stack arguments, the last a byte compared with 1 at 0x00A67884; returns bl in al (0x00A678EE)"
+0x00554510,signature,"void __thiscall f(void *this, int level, int *rect, int *lockedRect)","ret 0xC at 0x005545B9; ecx saved to esi at 0x00554513; level [esp+0x14] never read, rect [esp+0x18] and lockedRect [esp+0x1C] at 0x00554560/0x00554564"
+0x005545C0,signature,bool __thiscall f(void *this),"vftable slot 17, ecx read at 0x005545C0; plain ret, al=1 at 0x005545C9"
+0x005545F0,signature,void * __thiscall f(void *this),"mov eax,ecx at 0x005545F0; plain ret at 0x00554614"
+0x00554620,signature,"bool __thiscall f(void *this, int a, int b, int c, int d)","vftable slot, ret 0x10 at 0x00554622"
+0x00554630,signature,"void * __thiscall f(void *this, unsigned int flags)",adjustor thunk to 0x00554CF0 (ret 4)
+0x00554640,signature,void __thiscall f(void *this),"mov esi,ecx at 0x00554665; plain ret at 0x005546E7"
+0x005546F0,signature,void * __thiscall f(void *this),"mov edx,ecx; plain ret at 0x0055470D"
+0x00554710,signature,"void * __thiscall f(void *this, unsigned int flags)",adjustor thunk to 0x00554D10 (ret 4)
+0x00554720,signature,void __thiscall f(void *this),ecx stored at 0x00554720; jmp 0x00554640; plain ret
+0x00554740,signature,void * __thiscall f(void *this),"mov edx,ecx; plain ret at 0x0055475D"
+0x00554760,signature,"void * __thiscall f(void *this, unsigned int flags)",adjustor thunk to 0x00554D30 (ret 4)
+0x00554770,signature,void __thiscall f(void *this),jmp 0x00554640 at 0x0055478D
+0x00554790,signature,void * __thiscall f(void *this),"mov edx,ecx; plain ret at 0x005547B5"
+0x005547C0,signature,"void * __thiscall f(void *this, unsigned int flags)",adjustor thunk to 0x00554D50 (ret 4)
+0x005547D0,signature,void __thiscall f(void *this),"mov esi,ecx at 0x005547D1; jmp 0x00554640"
+0x00554800,signature,"bool __thiscall f(void *this, void *src, int level, int unused)","ret 0xC at 0x005548B4 and 0x00554885; src [esp+0x2C] read at 0x0055488C, level [esp+0x30] at 0x00554810"
+0x005548C0,signature,"bool __thiscall f(void *this, int *rect, void *buffer, int level, int unused)","ret 0x10 at 0x00554A03; rect esi, buffer, level [esp+0x70] at 0x0055492E"
+0x00554A10,signature,"bool __thiscall f(void *this, int *rect, void *buffer, int level, int unused)","ret 0x10 at 0x00554B01 and 0x00554A8E; level esi=[esp+0x38] at 0x00554A35, rect edi=[esp+0x34] at 0x00554A97"
+0x00554B10,signature,"bool __thiscall f(void *this, void *srcTexture, int *srcRect, int *dstRect, int level, int unused)","ret 0x14 at 0x00554C49 (five stack arguments): edi=[esp+0x2C] source, esi=[esp+0x30] srcRect, [esp+0x34] dstRect, ebx=[esp+0x38] level"
+0x00554C50,signature,"bool __thiscall f(void *this, int *width, int *height, int *pitch, void **bits)","ret 0x10 at 0x00554CDC; stores 0x00554CAC (arg4), 0x00554CBB (arg1), 0x00554CCE (arg2), 0x00554CD4 (arg3)"
+0x00554CF0,signature,"void * __thiscall f(void *this, unsigned int flags)",ret 4 at 0x00554D0B; flag test at 0x00554CF8
+0x00554D10,signature,"void * __thiscall f(void *this, unsigned int flags)","same shape as 0x00554CF0, calls 0x00554720"
+0x00554D30,signature,"void * __thiscall f(void *this, unsigned int flags)","same shape, calls 0x00554770"
+0x00554D50,signature,"void * __thiscall f(void *this, unsigned int flags)","same shape, calls 0x005547D0"
+0x00554D80,signature,void __thiscall f(void *this),"mov esi,ecx at 0x00554D81; plain ret at 0x00554D9D"
+0x00554DA0,signature,void __thiscall f(void *this),"mov ebx,ecx at 0x00554DA1; plain ret at 0x00554E0D; vftable slot 1"
+0x00554E10,signature,void __thiscall f(void *this),"mov esi,ecx at 0x00554E32; plain ret at 0x00554E74"
+0x005553D0,signature,"void __thiscall f(void *this, int *firstTotal, int *secondTotal)",ret 8 at 0x005554C6; vftable slot 1 of Mesh (already named in the table)
+0x00555590,signature,void __thiscall f(void *this),"mov esi,ecx at 0x005555B5; plain ret at 0x0055565C"
+0x00555660,signature,"void * __thiscall f(void *this, unsigned int flags)",adjustor thunk to 0x005557C0 (ret 4)
+0x005556F0,signature,"void * __thiscall f(void *this, int flag, int mostDerived)","ret 8 at 0x005557B5; flag [esp+0x28] stored to +0x28 at 0x00555785, mostDerived [esp+0x2C] at 0x0055571E"
+0x005557C0,signature,"void * __thiscall f(void *this, unsigned int flags)",ret 4 at 0x005557E3; flag test at 0x005557D0
+0x005703C0,signature,"void * __thiscall f(void *this, int d00, int d01, int d02, int d03, int d04, int d05, int d06, int d07, int d08, int d09, int d10, int d11, int d12, int d13, int d14, int d15, int d16, int d17, int d18, int d19, int d20)","ret 0x54 at 0x00570445: a 0x54-byte StringMap passed by value (21 dwords); mov esi,ecx at 0x005703E4"
+0x00570450,signature,void __thiscall f(void *this),"mov esi,ecx at 0x00570473; plain ret at 0x005704E2"
+0x005727A0,signature,void __thiscall f(void *this),"mov esi,ecx at 0x005727A1; plain ret at 0x005727DE"
+0x00575740,signature,void __thiscall f(void *this),"mov esi,ecx at 0x00575742; plain ret at 0x0057577E"
+0x0058D9B0,signature,void __thiscall f(void *this),"jmp 0x0058D420 whose first use is mov ebx,ecx at 0x0058D421; plain ret"
+0x00596980,signature,int __stdcall f(void *name),ret 4 at 0x00596A93; ecx written at 0x0059698A before any read
+0x00596AA0,signature,int __stdcall f(void *name),ret 4 at 0x00596AB4; returns 0 or 1 in eax (neg/sbb/neg)
+0x00596AC0,signature,unsigned char __stdcall f(void *name),ret 4 at 0x00596ADC and 0x00596AF5; returns al
+0x00596B00,signature,int __stdcall f(void *name),ret 4 at 0x00596B7A
+0x00596B80,signature,int __stdcall f(void *name),ret 4 at 0x00596C13
+0x00597000,signature,int __stdcall f(void *name),ret 4 at 0x00597077 and 0x00597167; arg read at 0x00597034 into esi; ecx written at 0x0059702B
+0x00597530,signature,int __stdcall f(void *name),ret 4 at 0x0059754B and the returns to 0x0059898F; ecx written before use at 0x0059753A
+0x00597A90,signature,"void __thiscall f(void *this, unsigned int fieldId, float *matrix)",ret 8 at 0x00597AC7; ecx passed through to GetFieldPtr at 0x00597A9E; id [ebp+8] tested at 0x00597A99
+0x00599C40,signature,void * __thiscall f(void *this),"mov ebx,ecx at 0x00599C43; plain ret at 0x00599C82 and 0x00599C89"
+0x0059D180,signature,"void * __thiscall f(void *this, void *key)","ret 4 at 0x0059D25C; mov edi,ecx at 0x0059D1A7"
+0x0059D440,signature,"int __thiscall f(void *this, unsigned int count, unsigned int *data)","ret 8 at 0x0059D455 and 0x0059D491; mov edi,ecx at 0x0059D44A"
+0x0059D560,signature,"void __stdcall f(void *stream, void *dstRef)","ret 8 at 0x0059D6D6 and 0x0059D8E7; ecx first written at 0x0059D5C9 (lea ecx,[esp+0x13]); stream [ebp+8] read at 0x0059D58C, dstRef [ebp+0xC] at 0x0059D5C6"
