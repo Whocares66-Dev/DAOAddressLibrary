@@ -17359,3 +17359,29 @@ address,what,value,why
 0x00554500,signature,"bool __thiscall Graphics::TextureInternal::vfunction15(void* this, int a, int b, int c, int d, int e)",Default virtual that takes five arguments and returns false; the 2-D texture overrides it.
 0x005521E0,convention,__stdcall,"ecx is overwritten before it is read (0x005521E6 mov ecx,ebx); the callee cleans 8 bytes (ret 8)"
 0x00553F40,convention,__thiscall,"constructor, ecx = particle"
+0x005793F0,signature,"void * __thiscall f(void *this, unsigned int count)","ret 4, ecx = pool; 0x005793F0..0x0057946D"
+0x005794F0,signature,"void * __thiscall f(void *this, void *event, void *partNames, void *morphHandle, int a4, unsigned char flag, void *name, int w58, int pool, int w4c, int w50, int w54)",ret 0x2C; stores 0x00579532..0x00579594
+0x00579680,signature,"void * __thiscall f(void *this, unsigned int flags)","scalar deleting destructor, ret 4 at 0x0057969B"
+0x005797C0,signature,"void * __thiscall f(void *this, void *out, void *name)",ret 8 at 0x005798F7
+0x00579960,signature,"void * __thiscall f(void *this, void *out, void *name, int unused)",ret 0xC at 0x00579A2B; third not read
+0x00579A30,signature,"void * __thiscall f(void *this, void *out, void *name)",ret 8 at 0x00579A69; slot 15: a morph by name through slot 36
+0x00579A70,signature,"void * __thiscall f(void *this, void *out, void *name)",ret 8 at 0x00579D0F
+0x00579D20,signature,"void * __thiscall f(void *this, void *out, void *name)",ret 8 at 0x00579E4A
+0x00579EB0,signature,"void * __thiscall f(void *this, void *name, void *effectName, void *target, int a4, int pool, int w1, int w2, int w3)",ret 0x20 at 0x0057A02A
+0x0057A0A0,signature,"unsigned char __thiscall f(void *this, void *object8, void *name, void *arg)",ret 0xC at 0x0057A117
+0x0057A180,signature,"unsigned char __thiscall f(void *this, void *object8, void *name, int a, int b, int c)",ret 0x14 at 0x0057A1F7
+0x0057A260,signature,"void * __cdecl f(void *out, void *name, void *device)","plain ret at 0x0057A504, callers clean 12 bytes"
+0x0057A510,signature,"void * __thiscall f(void *this, void *out)",ret 4 at 0x0057A52D
+0x0057A530,signature,"void * __thiscall f(void *this, unsigned int flags)","scalar deleting destructor, ret 4 at 0x0057A54B"
+0x0057A680,signature,"void * __thiscall f(void *this, void *out, void *cont1, void *first, void *cont2, void *last)",ret 0x14 at 0x0057A6E6
+0x0057A6F0,signature,"void * __thiscall f(void *this, void *out, void *name)",ret 8 at 0x0057AB10
+0x0057AB20,signature,"void __thiscall f(void *this, unsigned int index)",ret 4 at 0x0057ABBD
+0x0057ABC0,signature,void __thiscall f(void *this),plain ret at 0x0057AD0F
+0x0057AD10,signature,"void __thiscall f(void *this, void *handle)",ret 4 at 0x0057AD99
+0x0057ADA0,signature,"void * __thiscall f(void *this, void *out, void *name, void *device)",ret 0xC at 0x0057AF4C
+0x0057AFB0,signature,"unsigned char __thiscall f(void *this, void *object8, void *preset, int flag)",ret 0xC at 0x0057B140
+0x0057B2D0,signature,"void __thiscall f(void *this, void *handle)",ret 4 at 0x0057B360
+0x0057B370,signature,"void * __thiscall f(void *this, void *name, void *objectName, int a3, int pool, int w1, int w2, int w3, void *replaceNode, void *variant, void *lightmaps)",ret 0x28 at 0x0057B597
+0x0057B5A0,signature,"void * __thiscall f(void *this, void *partNames, void *objectName, int a3, int pool, int w1, int w2, int w3)",ret 0x1C at 0x0057B813
+0x0057B820,signature,"void * __thiscall f(void *this, void *owner, void *blueprint)",ret 8 at 0x0057B8A4
+0x0057B940,signature,"void __thiscall f(void *this, void *dependency)",ret 4 at 0x0057B94B
