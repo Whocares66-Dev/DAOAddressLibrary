@@ -1,1 +1,147 @@
 struct,offset,size,type,field,evidence
+Backpack,0x0,0x50,struct,sizeof,0x00740685; sizeof (push 0x50 then the Backpack constructor)
+Backpack,0x0,0x4,void*,vptr,0x0080D278; vptr 0x00B26464
+Backpack,0x48,0x4,void*,dirtyFlaggableVptr,"0x0080D27E, 0x0080D266; vptr of the DirtyFlaggable base at +0x48, 0x00B264DC (base's own 0x00B1FB70 first)"
+Backpack,0x4C,0x1,uint8_t,dirty,"0x0080D26C; DirtyFlaggable dirty byte, constructed 0"
+CCObject,0x0,0x440,struct,sizeof,"0x006999CE; sizeof (INFERRED: CCObject is abstract, never allocated alone; ItemPossessor and CItem start at 0x440 in CCCreature, CCPlaceable and CCItem per daoexe --bases; last constructor write is +0x431; 16-byte Vector4s keep it 16-aligned)"
+CCObject,0x0,0x4,void*,vptr,"0x006996E0; vptr, primary vftable 0x00B0EE9C (112 slots); a method in it has this = the object"
+CCObject,0x78,0x10,SmartData::Attribute<?>,tagAttribute,"0x0069970A, 0x00699C31; attribute Tag; its value (+0x84) points to the wstring at +0xB8"
+CCObject,0x88,0x10,SmartData::Attribute<float>,worldPositionX,0x0069972E; attribute WorldPositionX (name wide string 0x00B0ED64); constructed 0.0
+CCObject,0x98,0x10,SmartData::Attribute<float>,worldPositionY,0x00699744; attribute WorldPositionY (name wide string 0x00B0ED44)
+CCObject,0xA8,0x10,SmartData::Attribute<float>,worldOrientationY,0x0069975A; attribute WorldOrientationY (name wide string 0x00B0ED20); there is no Z attribute
+CCObject,0xB8,0x1C,std::wstring,tagText,"0x0069976A, 0x00699C31; tag text; the Tag attribute at +0x78 points at it, SetTag assigns it"
+CCObject,0xD4,0x34,SmartData::Attribute<TlkString>,nameAttribute,"0x00699789; attribute Name (size is the gap to the next constructed member, +0x108)"
+CCObject,0x108,0x10,ECBase::ECDynArray<ObjectId>,attachedIds,"0x0069979D, 0x0069A308; ids of attached objects (begin +0x10C, end +0x110); the destructor passes this object's id to 0x004E9640 on the array of the object at +0x118 and sets +0x118 of each id here to -1"
+CCObject,0x118,0x4,ObjectId,attachedToId,"0x006997AD, 0x0069A2DE; id of the object this one is attached to, -1 when none (constructed -1)"
+CCObject,0x120,0x10,Vector4,position,"0x0069558E, 0x006999D4; position x, y, z (+ a fourth lane); SetPosition stores 16 bytes with movaps; constructed 0,0,0"
+CCObject,0x130,0x10,Vector4,orientation,"0x00694CEC, 0x006999E8; orientation (facing) vector; SetOrientation stores 16 bytes; constructed (0,1,0)"
+CCObject,0x150,0x4,int32,roomId,"0x00695D55, 0x006997FD; id of the room the object is in, -1 when none; SetRoom stores [room+0x14] here"
+CCObject,0x154,0x4,AnimBase*,animBase,"0x00694DDB, 0x0069A000; the animation state; created by CreateAnimBase (AnimBase::Create 0x00A61770), deleted by the destructor; GetAnimation (+0x70 slot 24) reads it as this+0xE4"
+CCObject,0x158,0x4,EffectList*,effectList,"0x00699A1E, 0x006999E0; the effects list (allocated 0x14 bytes, EffectList::EffectList 0x00A64880), destroyed by the destructor"
+CCObject,0x18C,0x1,uint8_t,visibilityState,"0x00695C3A; current visibility byte, written by SetVisibilityImmediate"
+CCObject,0x18D,0x1,uint8_t,visibilityTarget,"0x00695C11, 0x00695C42; visibility target byte, written by SetVisibilityTarget and SetVisibilityImmediate"
+CCObject,0x190,0x4,float,fadeValue,"0x00695068, 0x0069509A; fade value, first argument of SetFade; ApplyFade multiplies it with +0x198"
+CCObject,0x198,0x4,float,fadeScale,"0x0069983B, 0x00695094; fade scale, constructed 1.0"
+CCObject,0x1A4,0x1,uint8_t,fadeFlag,"0x0069506E; fade flag, second argument of SetFade"
+CCObject,0x1AC,0x1,uint8_t,visible,"0x0069A959, 0x0069A985; visible flag: SetVisible (primary vftable slot 79) returns when it equals the argument, else stores it"
+CCObject,0x1B0,0x10,Vector4,groundVector,"0x006954F1, 0x00699A51; ground cache vector, set to (0,0,1) by RefreshGroundCache"
+CCObject,0x1C0,0x4,float,groundHeight,0x006954FC; cached ground height: RefreshGroundCache stores the z at +0x128
+CCObject,0x1C4,0x1,uint8_t,groundCacheValid,0x006954CC; ground cache valid flag; RefreshGroundCache does nothing when set
+CCObject,0x1C8,0x4,int32,visibilityLock,"0x00695C04, 0x00695C2C; when equal to 1, SetVisibilityTarget and SetVisibilityImmediate do nothing"
+CCObject,0x23C,0x1,uint8_t,effectsEmit,0x006951C0; effects-emit flag returned by GetEffectsEmit (vftable slot 78)
+CCObject,0x254,0x4,ObjectId,areaId,"0x006998D6, 0x0069A3AB; id of the area the object is in (constructed from the invalid id at 0x00B5940C; the destructor writes -1)"
+CCObject,0x258,0x1,uint8_t,animBaseCreated,0x00694DBB; set to 1 by CreateAnimBase
+CCObject,0x25C,0x10,SmartData::Attribute<bool>,mapNoteVisibleAttribute,0x006998F2; attribute MapNoteVisible (value byte at +0x268)
+CCObject,0x26C,0x1C,std::wstring,eventScriptName,"0x00651A98; event script name, assigned by SetEventScript"
+CCObject,0x288,0x1,uint8_t,eventScriptSet,0x00651AA3; set to 1 by SetEventScript when it stores the name
+CCObject,0x2A8,0x4,CScriptEvent*,currentScriptEvent,"0x00697318, 0x0069731E, 0x00697343; the event the object's script is handling; RunScriptWithEvent saves, sets and restores it"
+CCObject,0x2B0,0x4,int32,aiLevel,"0x00699FC4, 0x00699B0A; AI level, constructed -1; CCObject::SetAILevel (vftable slot 84) stores it; GetAILevel returns it"
+CCObject,0x2B4,0x4,int32,aiLevelLock,"0x00659EC5, 0x00659E9E, 0x0064B484; AI level lock, constructed 0: the SetAILevel script command sets it to 1 (0 on -1); AIMaster::ForScript_SetAILevel returns at once while it is nonzero"
+CCObject,0x2BC,0x1,uint8_t,destroyable,"0x00699AFD, 0x00659A83; destroyable flag, constructed 1"
+CCObject,0x2BD,0x1,uint8_t,destroyRequested,"0x00696A60, 0x00696A6F; destroy-requested flag: the destroy slot returns when set and sets it to 1"
+CCObject,0x2C0,0x4,int32,immortal,0x00699FE4; immortal flag written by ForScript_Engine_SetImmortal (vftable slot 91)
+CCObject,0x2C4,0x1,uint8_t,plot,0x00699FD4; plot flag written by ForScript_SetPlot (vftable slot 89)
+CCObject,0x2C5,0x1,uint8_t,active,"0x00698D02, 0x00699FA0, 0x00699BA4; active byte, constructed 1; SetActive writes it; IsActive (+0x70 slot 27, reads +0x255 from CCObject+0x70) tests it"
+CCObject,0x2C6,0x1,uint8_t,alwaysVisible,0x00661C58; always-visible flag written by the SetObjectAlwaysVisible command
+CCObject,0x2C8,0x4,Command*,previousCommand,"0x0073C5E0, 0x0069995E; the previous command (GetPreviousCommand), constructed 0"
+CCObject,0x2CC,0x10,undefined4[4],commandQueue,"0x00699964, 0x0073C6E5, 0x0073C7D3; the command queue container (constructor 0x004C5C60 writes +4 head, +8 count, +0xC); its count is the dword at +0x2D4, read by 0x0073C7D3"
+CCObject,0x2DC,0x4,CurrentActionQueue*,currentActionQueue,"0x00699B8B, 0x0073C5F0; the current-action queue (allocated 0x1C bytes, CurrentActionQueue::CurrentActionQueue 0x00745AE0); its first dword is the current command"
+CCObject,0x2E0,0xD4,ScriptVariableTable,scriptVariables,"0x00699974, 0x00703D97; the object's script variables; sized by its constructor 0x00703D80: 13 elements of 0x10, then a dword at +0xD0"
+CCObject,0x3B8,0x4,int32,reactionOverrideSet,"0x0065BBB8; reaction override set (SetReactionOverride writes 1, ResetReaction 0)"
+CCObject,0x3BC,0x4,int32,reactionOverrideValue,0x0065BBC6; reaction override value (the bHostile argument)
+CCObject,0x3C0,0x4,int32,groupId,"0x00699FF4, 0x00699B3A; group id, constructed -1; ForScript_SetGroupId (vftable slot 92) stores it"
+CCObject,0x3C4,0x4,int32,teamId,"0x00699B45, 0x0065BC96; team id, constructed from the global at 0x00B0D948"
+CCObject,0x3CC,0x4,float,interactionRadius,"0x006953D0, 0x00699981; interaction radius, constructed 0; GetInteractionRadius returns it"
+CCObject,0x3D4,0x4,int32,commandResult,"0x0065C0FC, 0x00699B9A; command result, constructed 0x80000000; written by the SetCommandResult command"
+CCObject,0x41C,0x4,CRoom*,room,0x00695D4F; the room the object is in; SetRoom stores it (and the room's id at +0x150)
+CCObject,0x420,0x1,uint8_t,manualPlacement,0x0069A010; manual placement under way; EndManualPlacement (vftable slot 94) clears it
+CCObject,0x421,0x1,uint8_t,deactivationPending,"0x00698CEF, 0x00699FA9, 0x00699ABC; deactivation pending; IsActive (+0x70 slot 27, reads +0x3B1 from CCObject+0x70) is false while set; SetActive writes it"
+CCObject,0x42C,0x1,uint8_t,interactive,"0x0069A020, 0x006999AF; interactive flag, constructed 1; GetObjectInteractive (vftable slot 100) returns it"
+CCObject,0x42D,0x1,uint8_t,highlighted,0x00694E14; highlight flag written by SetHighlighted
+CCObject,0x431,0x1,uint8_t,registeredInWorld,"0x0069A991, 0x0069A9AB, 0x0069A3A1; registered with the world: SetVisible calls World AddObject 0x00649BE0 and sets it; on hide RemoveObject 0x00649C30 and clears it; the destructor clears it"
+Equipment,0x0,0x58,struct,sizeof,0x006B441E; sizeof (push 0x58)
+Equipment,0x0,0x4,void*,vptr,0x00798CD7; vptr 0x00B1FB8C
+Equipment,0x8,0x4,void*,dirtyFlaggableVptr,"0x00798CDD, 0x00798CBC; vptr of the DirtyFlaggable base at +0x8, 0x00B1FB7C (base's own 0x00B1FB70 first)"
+Equipment,0xC,0x1,uint8_t,dirty,"0x00798CC2; DirtyFlaggable dirty byte, constructed 0"
+Equipment,0x20,0x4,CCCreature*,owner,"0x00798CF7, 0x00798C91; the creature that wears it (constructor argument; the ItemLocation owner id is its object id at +4)"
+Equipment,0x24,0x20,SlotItemLocation,slots,"0x00798D0A, 0x007F5305; the slot locations (constructor 0x007F5290, argument 0xFF; size is the gap to +0x44, the constructor writes up to +0x1C)"
+Equipment,0x44,0x10,ECBase::ECDynArray<?>,weaponSets,"0x00798D1B, 0x00798D44, 0x00798D83; the weapon sets: resized to 2, elements 0x20 bytes"
+GraphicsStructures::Dependency,0x0,0x4,void*,vftable,"0x00542D68 mov [esi],0xAF832C; vftable (0x00AF832C for the base)"
+GraphicsStructures::Dependency,0x4,0x4,GraphicsStructures::Object*,target,"0x00568BEB mov [esi+4],edi; 0x00568C49 mov [esi+4],ecx; the target Object"
+GraphicsStructures::Dependency,0x8,0x4,GraphicsStructures::ObjectNode*,targetNode,"0x00568BEE mov [esi+8],eax; 0x00568C5D mov [esi+8],eax; the target's node found by name"
+GraphicsStructures::Dependency,0xC,0x1C,std::wstring,targetNodeName,"0x00568BE8 lea ecx,[esi+0xC]; call 0x004C2AB0; the target's node name"
+GraphicsStructures::NodeAttachDependency,0x0,0x30,struct,sizeof,"0x00568D24 add [eax],0x30"
+GraphicsStructures::NodeAttachDependency,0x2C,0x4,GraphicsStructures::ObjectNode*,followerNode,"0x00568CFD mov ecx,[esi+0x2C]; the following (child) node"
+GraphicsStructures::Object,0x0,0x310,struct,sizeof,0x00568678 push 0x310 before operator new and call 0x0054F990
+GraphicsStructures::Object,0x48,0x10,ECBase::ECDynArray<Multithreading::SynchSafePointer<GraphicsStructures::ObjectBlueprint>>,parts,"0x0056890C lea ecx,[ebx+0x48]; call 0x00568570; the parts list given to Instantiate (merged part blueprints)"
+GraphicsStructures::Object,0x58,0x4,GraphicsStructures::ObjectNode*,rootNode,"0x005688A7 mov [ebx+0x58],eax; the root node of the tree"
+GraphicsStructures::Object,0x80,0x10,ECBase::ECDynArray<int>,intArray,"0x00568749 lea ecx,[ebx+0x80]; call 0x00567BD0; integers, as many as the blueprint's +0x74, zero at first"
+GraphicsStructures::Object,0x140,0x10,Vector4,boundsMin,"0x005686FF movaps [ebx+0x140]; 0x0056653B movaps [edi+0x140],xmm1 (minps); bounds minimum: the blueprint's, divided by its w, then lowered by each part's"
+GraphicsStructures::Object,0x150,0x10,Vector4,boundsMax,"0x0056873C movaps [ebx+0x150]; 0x00566594 movaps [edi+0x150],xmm0 (maxps); bounds maximum, raised by each part's"
+GraphicsStructures::Object,0x1D4,0x10,ECBase::ECDynArray<GraphicsStructures::ExportValue>,exportValues,"0x00568871 lea ecx,[ebx+0x1D4]; 0x005689B7 mov edi,[ebx+0x1DC]; 0x005689E6 mov eax,0x2AAAAAAB; export values, 0x30 bytes each; begin +0x1D8, end +0x1DC"
+GraphicsStructures::Object,0x274,0x4,GraphicsStructures::CrustHookMap*,crustMap,"0x005682DA mov edi,[esi+0x274]; 0x00543D76; the crust map, made when a crust node is instanced"
+GraphicsStructures::Object,0x278,0x1,bool,isCrustEffect,"0x005680DE mov byte [edi+0x278],1; made as a crust effect on a target (InstantiateAsCrust only)"
+GraphicsStructures::Object,0x2F4,0x4,void*,remoteMaterial,"0x005687ED mov [ebx+0x2F4],eax; 0x00568144 (crust variant); the remote material object (0x40 bytes), made when the blueprint has one"
+GraphicsStructures::ObjectAttachDependency,0x0,0x50,struct,sizeof,"0x0054D973 push 0x50 before operator new; 0x00568C84 add [eax],0x50"
+GraphicsStructures::ObjectAttachDependency,0x2C,0x4,GraphicsStructures::Object*,child,"0x00542E01 mov [esi+0x2C],eax; 0x00568C97; the attached (child) Object"
+GraphicsStructures::ObjectAttachDependency,0x30,0x10,Vector4,offsetTranslation,"0x00542E41 fstp [esi+0x30]; 0x00568E2C lea edi,[esi+0x30]; offset translation in the node's frame (0,0,0,1 by default)"
+GraphicsStructures::ObjectAttachDependency,0x40,0x10,Quaternion,offsetRotation,"0x00542E6C fstp [esi+0x40]; 0x00568E76 lea edi,[esi+0x40]; offset rotation (identity by default)"
+GraphicsStructures::ObjectBlueprint,0x0,0x160,struct,sizeof,"0x00595EF0 push 0x160 before operator new, then call 0x00568A30; also 0x005572B8"
+GraphicsStructures::ObjectBlueprint,0x0,0x4,void*,vftable,"0x00568A93 mov [esi],0xAF9CA8; vftable (0x00AF9CA8)"
+GraphicsStructures::ObjectBlueprint,0x4,0x4,void*,vbtable,"0x00568A6E mov [esi+4],0xAF9CB0; 0x00568A9C mov [ecx+esi+4],0xAF9C9C; vbtable pointer; the SynchSafePointerList base sits at +0x120"
+GraphicsStructures::ObjectBlueprint,0x24,0x10,ECBase::ECDynArray<std::wstring>,meshNames,"0x00565FB0 mov eax,[esi+0x28]; 0x00565FB7 mov ecx,[esi+0x2C]; ctor 0x00568ABD; the names of the meshes it uses (0x1C bytes each); begin +0x28, end +0x2C"
+GraphicsStructures::ObjectBlueprint,0x34,0x10,ECBase::ECDynArray<Multithreading::SynchSafePointer<?>>,meshes,"0x00565F13 mov ecx,[esi+0x38]; 0x00565F1B mov eax,[esi+0x3C]; loader push_back 0x00596637; the loaded meshes (8-byte safe pointers); begin +0x38, end +0x3C"
+GraphicsStructures::ObjectBlueprint,0x44,0x4,GraphicsStructures::ObjectNodeBlueprint*,rootNodeBlueprint,"0x005687F3 mov ecx,[esi+0x44]; 0x00568AD8 mov [esi+0x44],ebx; 0x005964BC; the root node blueprint of the tree"
+GraphicsStructures::ObjectBlueprint,0x48,0x4,unsigned int,readerWord,"0x0059657D mov [eax+0x48],ecx; 0x00568881 mov edx,[esi+0x48]; a word the reader copies from its own +0x20, handed to the root node's instantiate as its sixth argument"
+GraphicsStructures::ObjectBlueprint,0x4C,0x1C,std::wstring,faceFxActorName,"0x0056601E mov ecx,[esi+0x60]; 0x00596680 add eax,0x4C; the FaceFX actor's name (its size is at +0x60)"
+GraphicsStructures::ObjectBlueprint,0x70,0x4,int,instanceCount,"0x005685EC add [esi+0x70],1; 0x00568643 mov eax,[esi+0x70]; count of unnamed instances made so far (a number is appended to the name from the second)"
+GraphicsStructures::ObjectBlueprint,0x74,0x4,unsigned int,intArraySize,"0x00568743 mov eax,[esi+0x74]; push eax; call 0x00567BD0; size the Object's integer array at +0x80 is made"
+GraphicsStructures::ObjectBlueprint,0x78,0x1,bool,sortExportValues,"0x005689B1 cmp byte [esi+0x78],0; set when the Object's export values are sorted after they are built"
+GraphicsStructures::ObjectBlueprint,0x7C,0x4,unsigned int,exportValueCount,"0x0056886B mov edx,[esi+0x7C]; call 0x0054C920; size the Object's export-value array at +0x1D4 is made"
+GraphicsStructures::ObjectBlueprint,0x80,0x10,ECBase::ECDynArray<GraphicsStructures::ModelExport>,exports,0x00568B02 call 0x00567D10; 0x00567F00 call 0x005675D0; the model's exports (0x28 bytes each)
+GraphicsStructures::ObjectBlueprint,0x90,0x1,bool,hasRemoteMaterial,"0x00568786 cmp byte [esi+0x90],0; has a remote material (a Tint was in the file)"
+GraphicsStructures::ObjectBlueprint,0x91,0x1,bool,remoteMaterialInvertFresnel,"0x005687B3 movzx ecx,byte [esi+0x91]; remote material: invert the Fresnel"
+GraphicsStructures::ObjectBlueprint,0x94,0x4,float,remoteMaterialFresnelFalloff,0x00568B09 fst [esi+0x94]; 0x005687BD fld [esi+0x94]; remote material: Fresnel falloff (1.0 by default)
+GraphicsStructures::ObjectBlueprint,0xA0,0x10,Vector4,remoteMaterialTint,"0x00568B1B-0x00568B38; 0x005687C5 lea edx,[esi+0xA0]; remote material: tint (1,1,1,1 by default)"
+GraphicsStructures::ObjectBlueprint,0xB0,0x1C,std::wstring,remoteMaterialDecal,"0x005687CB lea ecx,[esi+0xB0]; ctor 0x00568B27; remote material: decal texture name"
+GraphicsStructures::ObjectBlueprint,0xCC,0x4,float,remoteMaterialAlpha,0x005687AC fld [esi+0xCC]; 0x00568B45; remote material: alpha (0 by default)
+GraphicsStructures::ObjectBlueprint,0xE0,0x10,Vector4,boxMin,"0x005686C9 fld [esi+0xE0]; 0x00566507 fld [esi+0xE0]; ctor 0x00568B58; bounding box minimum, with a w it is divided by"
+GraphicsStructures::ObjectBlueprint,0xF0,0x10,Vector4,boxMax,"0x00568706 fld [esi+0xF0]; 0x00566560 fld [esi+0xF0]; bounding box maximum, with a w it is divided by"
+GraphicsStructures::ObjectNode,0x16C,0x4,void*,drawBatch,"0x005651AF mov [esi+0x16C],eax; 0x00550093 cmp [esi+0x16C],0; 0x005500B1 mov [esi+0x16C],0; the node's draw batch handle (made by CreateDrawBatch, released by ReleaseDrawBatch)"
+GraphicsStructures::ObjectNode,0x174,0x4,GraphicsStructures::ObjectNodeBlueprint*,blueprint,"0x00565782 mov ecx,[esi+0x174]; 0x0055D760 mov ecx,[ecx+0x174]; lea eax,[ecx+0xC0] at 0x00571510; the node's blueprint (its +0xC0 is the name, its +0x188 on a cloth is the ClothDescription)"
+GraphicsStructures::ObjectNodeCloth,0x0,0x5C0,struct,sizeof,"0x005B36F1 add dword [edi],0x5C0 after ObjectNodeClothBlueprint::instantiate's placement constructor 0x005B3650"
+GraphicsStructures::ObjectNodeCloth,0x3D4,0x4,Physics::PhysicsCloth*,physicsCloth,"0x005657B8 mov [esi+0x3D4],eax; the PhysX cloth made by CreatePhysicsActors (0 until then)"
+GraphicsStructures::ObjectNodeCloth,0x3D8,0x4,Physics::ClothMeshPrototype*,restMesh,"0x005653C9 mov eax,[edi+0x3D8]; ctor 0x00564F88; the rest mesh the cloth was made from"
+GraphicsStructures::ObjectNodeCloth,0x3DC,0x1,bool,tearable,"0x00565423 cmp byte [edi+0x3DC],dl; ctor 0x00564F8E; the description's tearable flag (a vertex array twice as long when set)"
+GraphicsStructures::ObjectNodeCloth,0x3E0,0x10,ECBase::ECDynArray<?>,uvRanges,"0x005653EF lea esi,[edi+0x3E0]; 0x00565615 mov eax,[edi+0x3E4]; 0x00565627 mov ecx,[edi+0x3E8]; array of (offset, size) pairs of the vertex bytes copied from the rest mesh (texture coordinates); begin at +0x3E4, end at +0x3E8"
+GraphicsStructures::ObjectNodeCloth,0x3F0,0x4,void*,vertexDeclaration,"0x005653E0 mov ecx,[edi+0x3F0]; 0x0056518A mov ecx,[esi+0x3F0]; the node's copy of the vertex declaration, positions and normals turned to Float3"
+GraphicsStructures::ObjectNodeCloth,0x440,0x4,unsigned int,vertexStride,"0x005653F9 mov [edi+0x440],eax; 0x005656C3 mov ecx,[edi+0x440]; vertex stride in bytes of the converted declaration"
+GraphicsStructures::ObjectNodeCloth,0x446,0x1,bool,simulateGate,"0x00564FEC mov byte [esi+0x446],1; simulate gate, 1 from the constructor"
+GraphicsStructures::ObjectNodeCloth,0x447,0x1,bool,simulationEnabled,"0x00564FF3 mov byte [esi+0x447],1; forced-dynamic flag, 1 from the constructor"
+GraphicsStructures::ObjectNodeCloth,0x480,0x4,void*,workingVertices,"0x00565450 mov [edi+0x480],eax; 0x00565493 mov edx,[edi+0x480]; the working vertex array PhysX writes positions and normals into, (tearable+1) x vertex count x stride bytes"
+GraphicsStructures::ObjectNodeCloth,0x484,0x4,unsigned int,restVertexCount,"0x005656E9 mov [edi+0x484],ecx; the rest mesh's vertex count, stored when the array is built"
+GraphicsStructures::ObjectNodeCloth,0x488,0x4,void*,vertexBuffer,"0x00565118 mov eax,[esi+0x488]; the dynamic vertex buffer"
+GraphicsStructures::ObjectNodeCloth,0x48C,0x4,void*,indexBuffer,"0x00565126 cmp [esi+0x48C],0; 0x005651A0 mov ecx,[esi+0x48C]; the dynamic index buffer"
+GraphicsStructures::ObjectNodeCloth,0x494,0x4,unsigned int,windSpace,"0x0056502E mov [esi+0x494],1; wind space, 1 from the constructor"
+GraphicsStructures::ObjectNodeCloth,0x4A0,0xD0,GraphicsStructures::ClothWind,wind,"0x00565038 call 0x005867C0 with ecx=esi+0x4A0; the gust model, constructed in place (size bounded by the next field at +0x570)"
+Inventory,0x0,0x54,struct,sizeof,"0x006A29C5, 0x006B4460; sizeof (push 0x54, creature's Inventory)"
+Inventory,0x0,0x4,void*,vptr,0x00740627; vptr 0x00B1B974
+Inventory,0x8,0x10,SmartData::Attribute<Backpack*>,backpack,"0x00740631, 0x00740685; attribute holding the Backpack (value at +0x14; new Backpack allocated 0x50)"
+Inventory,0x18,0x10,SmartData::Attribute<PlotItems*>,plotItems,"0x00740644, 0x007406C5, 0x007406E3; attribute holding the PlotItems (allocated 0x50, PlotItems::PlotItems 0x0080D0A0)"
+Inventory,0x28,0x10,SmartData::Attribute<Money*>,money,"0x00740655, 0x007406FC, 0x0074071D; attribute holding the Money (allocated 0xA4, Money::Money 0x007CA240)"
+Inventory,0x38,0x1C,SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<int>>>,craftingRecipes,"0x00740672, 0x005E3E88, 0x005E3E93; crafting recipe list: an array of int attributes (16 bytes each); Inventory::Save writes it as field 16227; size is to the end of the object"
+ItemLocation,0x0,0x8,struct,sizeof,"0x00761170; sizeof (INFERRED: base, not allocated alone; the constructor writes +0 and +4, every derived class's first member is at +8)"
+ItemLocation,0x0,0x4,void*,vptr,"0x00761176; vptr 0x00B1CE74 (Inventory 0x00B1B974, ListItemLocation 0x00B2308C, Equipment 0x00B1FB8C overwrite it)"
+ItemLocation,0x4,0x4,ObjectId,ownerId,0x0076117C; id of the object that owns the location (the constructor's argument)
+ItemPossessor,0x0,0x4,void*,vptr,"0x00763028; vptr 0x00B1C258; the constructor writes nothing else (it sits at CCObject+0x440 in a creature, placeable and store, CCParty+0x70)"
+ListItemLocation,0x0,0x4,void*,vptr,0x007CAB1F; vptr 0x00B2308C (Backpack overwrites it with 0x00B26464)
+ListItemLocation,0x8,0x10,ECBase::ECDynArray<ObjectId>,itemIds,"0x007CAB25, 0x007CAABE; the item ids in the location (begin +0xC, end +0x10 of the object)"
+ListItemLocation,0x18,0x10,SmartData::Attribute<int>,itemCount,"0x007CAB3A, 0x007CAAD5; item count, set from the array's length (end-begin)>>2 through the attribute's slot 0x54"
+ListItemLocation,0x28,0x10,SmartData::Attribute<int>,maxItems,"0x007CAB4F, 0x007CA4F0; maximum inventory size, constructed 0x60; SetMaxInventorySize sets it through slot 0x54"
+Messages::Observer,0x20,0x4,void*,vptr,"0x006996E6; vptr, vftable 0x00B0EE88"
+Money,0x0,0xA4,struct,sizeof,0x007406FC; sizeof (push 0xA4 then Money::Money)
+PlotItems,0x0,0x50,struct,sizeof,0x007406C5; sizeof (push 0x50 then PlotItems::PlotItems)
+SEffectsHolder,0x70,0x4,void*,vptr,"0x006996FA; vptr, vftable 0x00B0ED8C (34 slots); a method in it has this = CCObject+0x70 (IsActive, GetAnimation); its constructor 0x0079F460 is called at 0x006996C9"
+"SmartData::Attribute<ECBase::ECHashMap<unsigned int,SmartData::IAttribute*,ECBase::ECHashParams<unsigned int>>,SmartData::NamedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",0x34,0x4,void*,vptr,"0x006996ED; vptr, vftable 0x00B0EE2C (22 slots); the name map of the object's attributes"
+"SmartData::Attribute<ECBase::ECHashMap<unsigned int,SmartData::IAttribute*,ECBase::ECHashParams<unsigned int>>,SmartData::NamedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",0x38,0x4,void*,vptr2,"0x006996F3; second vptr of the same class (ObserverNotification base), vftable 0x00B0EE18; like Attribute<Backpack*>'s 0xB1B7EC at +4"
+SmartData::SmartObject,0x18,0x4,void*,vptr,"0x006996CE; vptr, vftable 0x00B0F060 (offsets of this row and the next four are from the CCObject start)"
