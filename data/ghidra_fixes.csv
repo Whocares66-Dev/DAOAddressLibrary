@@ -15447,3 +15447,25 @@ address,what,value,why
 0x00A55DD0,signature,"void __thiscall f(void *this, float a, float b, float c, float d)",0x00A55DD0-0x00A55DFF
 0x00A55E00,signature,"void __thiscall f(void *this, float *minDuration, float *maxDuration)",0x00A55E00-0x00A55E1F ret 8
 0x00A55E20,signature,float __thiscall f(void *this),0x00A55E20-0x00A55E2F
+0x0069E4C0,convention,__thiscall,"plain ret 0x0069E4E5, reads ecx; no Ghidra function label (reads as FUN_0069e4c0)"
+0x0063DD70,clear,ObjectMap::EraseAllWithValue,"Misleading: it is GUI::GUIFloatyLayer::RemoveFloatiesOfOwner, RemoveFloaty for each floaty whose owner (+0x10) is the argument (0x0063DE2A-0x0063DE3A); only caller CCObject::~CCObject 0x0069A1C3"
+0x0063C320,clear,GUI::GUIFloatyLayer::HasAmbientDialogFloaty,"Misleading: it tests message style 4, the description style (FloatyMessage.as); ambient dialog is style 3"
+0x0063E4A0,signature,"Floaty* __thiscall GUI::GUIFloatyLayer::CreateFloaty(GUIFloatyLayer* this, int kind)",ret 4; returns the pool's floaty in eax; this unused
+0x0063E530,signature,"unsigned __thiscall GUI::GUIFloatyLayer::AddFloaty(GUIFloatyLayer* this, CCObject* owner, int kind)",ret 8 (0x0063E5A1); returns the id from 0x00C343C4
+0x0063C0A0,signature,"void __thiscall GUI::GUIFloatyLayer::WorldToStage(GUIFloatyLayer* this, const float* worldPos, float* x, float* y, bool* onScreen)",ret 0x10 (0x0063C136)
+0x00662180,convention,__stdcall,"int (int command, int argCount); ret 8, ecx not read before written"
+0x00662310,convention,__stdcall,"ret 8 (0x006623D4), ecx not read before written"
+0x00662DB0,convention,__stdcall,"ret 8 (0x00662E93), ecx not read before written"
+0x006A73E0,signature,"bool __thiscall CCCreature::HandleMessage_DisplayFloatyMessage(CCCreature* this, DisplayFloatyMessage* msg)",ret 4
+0x0074BE30,signature,"bool __thiscall CCPlaceable::HandleMessage_DisplayFloatyMessage(CCPlaceable* this, DisplayFloatyMessage* msg)",ret 4 (0x0074BE54)
+0x007C4AE0,signature,bool __cdecl IsObjectInFloatyRange(CCObject* obj),"plain ret; callers add esp,4 (0x00662292, 0x006A535D)"
+0x0074CA80,signature,"void __thiscall CCPlaceable::UpdateInteractionMarker(CCPlaceable* this, bool highlightHeld, bool highlightHeld2)","ret 8 (0x0074CB28); only the second argument is read ([esp+8] before any push, 0x0074CA80); callers pass the same value twice"
+0x006FE4A0,signature,"bool __thiscall CAmbientDialogManager::PlayLine(CAmbientDialogManager* this, void* entry)",ret 4 (0x006FE894); callers test al (0x006FF6CC)
+0x006FF570,signature,"void __thiscall CAmbientDialogManager::Update(CAmbientDialogManager* this, float dt)",dt read at [esp+0x6c] (0x006FF6EB)
+0x00637560,signature,"bool __thiscall CCParty::Add(CCParty* this, unsigned creatureId)","ret 4 (0x00637588, 0x006377C8, 0x006377D4); eax = 1 at 0x006377BF, 0 at 0x006377CE and (null creature) 0x00637588"
+0x00764620,signature,"bool __thiscall IconFloaty::IsKind(IconFloaty* this, int kind)",ret 4; the current signature has no argument
+0x00764640,signature,"bool __thiscall ActionBarFloaty::IsKind(ActionBarFloaty* this, int kind)",ret 4; the current signature has no argument
+0x00764660,signature,"bool __thiscall OffscreenIndicatorFloaty::IsKind(OffscreenIndicatorFloaty* this, int kind)",ret 4; the current signature has no argument
+0x007647D0,convention,__thiscall,"plain ret, reads ecx (this+0x14)"
+0x007647E0,convention,__thiscall,"plain ret, writes this+0x18"
+0x00764800,convention,__thiscall,"plain ret, writes this+0x18"

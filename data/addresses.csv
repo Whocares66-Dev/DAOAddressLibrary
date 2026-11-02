@@ -15895,7 +15895,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15894,function,CAmbientDialogManager::ReadFromSave,0x006fed90,0x005f0980,0x006fed90
 15895,function,CAmbientDialogManager::CAmbientDialogManager,0x006fef20,0x005f0b10,0x006fef20
 15896,function,CAmbientDialogManager::Get,0x006fefa0,0x005f0b90,0x006fefa0
-15897,function,CAmbientDialogManager::RemoveEntry,0x006ff020,0x005f0c10,0x006ff020
+15897,function,CAmbientDialogManager::EndEntry,0x006ff020,0x005f0c10,0x006ff020
 15898,function,CAmbientDialogManager::Arm,0x006ff190,0x005f0d80,0x006ff190
 15899,function,CAmbientDialogManager::Update,0x006ff570,0x005f1160,0x006ff570
 15900,function,CAmbientDialogManager::Clear,0x006ff8e0,0x005f14d0,0x006ff8e0
@@ -18235,7 +18235,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 18234,function,MapItemIteratorImpl::Key,0x00764440,0x00661290,0x00764440
 18235,function,ArrayItemIteratorImpl::~ArrayItemIteratorImpl,0x00764480,0x006612d0,0x00764480
 18236,function,ArrayItemIteratorImpl::ArrayItemIteratorImpl,0x007644a0,0x006612f0,0x007644a0
-18237,function,Vector::operator!=,0x00764500,0x0065ea00,0x00764500
+18237,function,Vector::NotEquals3,0x00764500,0x0065ea00,0x00764500
 18238,function,Floaty::Floaty,0x00764550,0x0065ea50,0x00764550
 18239,function,Floaty::~Floaty,0x00764570,0x0065ea70,0x00764570
 18240,function,Floaty::Init,0x00764580,0x0065ea80,0x00764580
@@ -18254,12 +18254,12 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 18253,function,DebugWorldSpaceTextFloaty::IsKind,0x007646e0,0x0065ebe0,0x007646e0
 18254,function,DebugWorldSpaceTextFloaty::~DebugWorldSpaceTextFloaty,0x007646f0,0x0065ebf0,0x007646f0
 18255,function,Floaty::`scalar deleting destructor',0x00764740,0x0065ec40,0x00764740
-18256,function,OffscreenIndicatorFloaty::Refresh,0x00764760,0x0065ec60,0x00764760
+18256,function,OffscreenIndicatorFloaty::OnSignalDamage,0x00764760,0x0065ec60,0x00764760
 18257,function,DebugWorldSpaceTextFloaty::`scalar deleting destructor',0x00764790,0x0065ec90,0x00764790
 18258,function,Floaty::QueueCreate,0x007647b0,0x0065ecb0,0x007647b0
 18259,function,Floaty::QueueDestroy,0x007647d0,0x0065ecd0,0x007647d0
-18260,function,Floaty::QueueShow,0x007647e0,0x0065ece0,0x007647e0
-18261,function,Floaty::QueueHide,0x00764800,0x0065ed00,0x00764800
+18260,function,Floaty::Show,0x007647e0,0x0065ece0,0x007647e0
+18261,function,Floaty::Hide,0x00764800,0x0065ed00,0x00764800
 18262,function,Floaty::Update,0x00764820,0x0065ed20,0x00764820
 18263,function,StatsFloaty::Init,0x00764a40,0x0065ef40,0x00764a40
 18264,function,MessageFloaty::Init,0x00764a80,0x0065ef80,0x00764a80
@@ -18270,7 +18270,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 18269,function,DebugWorldSpaceTextFloaty::Init,0x00764c60,0x0065f160,0x00764c60
 18270,function,DebugWorldSpaceTextFloaty::Update,0x00764c90,0x0065f190,0x00764c90
 18271,function,StatsFloaty::Update,0x00764e40,0x0065f340,0x00764e40
-18272,function,MessageFloaty::Display,0x00765120,0x0065f620,0x00765120
+18272,function,MessageFloaty::SetMessage,0x00765120,0x0065f620,0x00765120
 18273,function,IconFloaty::SetIcon,0x007651f0,0x0065f6f0,0x007651f0
 18274,function,OffscreenIndicatorFloaty::Update,0x00765210,0x0065f710,0x00765210
 18275,function,PartyPickerEntry::PartyPickerEntry,0x00765360,0x0067cf30,0x00765360
@@ -20387,7 +20387,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20386,function,GameModes::DistanceToFocus2D,0x007c4a10,0x006ab6d0,0x007c4a10
 20387,function,EffectsHolder::ShouldStartEffectVisual,0x007c4a60,0x006ab720,0x007c4a60
 20388,function,Audio::ShouldPlayMovementSound,0x007c4a80,0x006ab740,0x007c4a80
-20389,function,,0x007c4ae0,0x006ab7a0,0x007c4ae0
+20389,function,IsObjectInFloatyRange,0x007c4ae0,0x006ab7a0,0x007c4ae0
 20390,function,MovementPath::IsGoalFarFromCameraFocus,0x007c4b80,0x006ab840,0x007c4b80
 20391,function,CClientOptions::GetCorpseLimit,0x007c4bd0,0x006ab890,0x007c4bd0
 20392,function,,0x007c4c30,0x006ab8f0,0x007c4c30
@@ -20397,7 +20397,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20396,function,AreaObjectsIterator::IsCandidate,0x007c4c90,0x006ab950,0x007c4c90
 20397,function,"std::_Push_heap<void **,int,void *,bool (__cdecl*)(void *,void *)>",0x007c4ca0,0x006ab960,0x007c4ca0
 20398,function,,0x007c4d00,0x006ab9c0,0x007c4d00
-20399,function,World::IsObjectOnScreen,0x007c4d20,0x006ab9e0,0x007c4d20
+20399,function,IsObjectOnScreen,0x007c4d20,0x006ab9e0,0x007c4d20
 20400,function,World::DistanceToCamera,0x007c4e20,0x006abae0,0x007c4e20
 20401,function,World::ObjectScreenX,0x007c4eb0,0x006abb70,0x007c4eb0
 20402,function,AreaObjectsIterator::`scalar deleting destructor',0x007c4f30,0x006abbf0,0x007c4f30
