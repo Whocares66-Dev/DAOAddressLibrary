@@ -14349,3 +14349,44 @@ address,what,value,why
 0x00504230,signature,"void __thiscall Graphics::MaterialPass::GetMemoryFootprint(MaterialPass* this, uint* size, uint* shared)",ret 8 at 0x005043A5
 0x004F6A80,clear,Graphics::MaterialShader::vfunction5,"Folded label: 0x004F6A80 is mov eax,[ecx+0x24] on a material child (the selected technique), not a MaterialShader method; the same bytes are shared"
 0x004F6A90,clear,Graphics::Material::vfunction4,"Folded label: 0x004F6A90 is mov eax,[ecx+0x3c], the serial id of any material-system object, not Material-specific"
+0x00507C30,clear,XMLParser2::IBuilder::IBuilder,"It is MaterialObjectBuilderXML2's destructor (members destroyed, base vftable 0xAE8490 restored), not a constructor."
+0x00507700,signature,void* __thiscall TakeMaterialObject(void* this),Slot 4; returns the MaterialObject or null; plain ret.
+0x005077F0,signature,"void __thiscall EndElement(void* this, const wchar_t* name)",ret 4; called by the expat end handler 0x005076E0.
+0x00507E00,signature,"void __thiscall StartElement(void* this, const wchar_t* name, const wchar_t** attributes)",ret 8; called by StartElementCallback 0x008523F0.
+0x00508220,signature,"void __thiscall ReadAttributes(void* this, const wchar_t** attributes)",ret 4; null-terminated name/value pairs.
+0x00507FE0,signature,"void* __thiscall MaterialObjectBuilderXML2(void* this, void* parser, void* materialObject)","ret 8; second argument is a MaterialObject (its device read at +0x70), not an int."
+0x00508110,signature,"void* __thiscall MaterialObjectBuilderXML2(void* this, void* parser, void* device)",ret 8.
+0x00507CE0,signature,"void* __thiscall insert(void* this, void* outIterator, void* whereContainer, void* wherePtr, const void* value)",ret 0x10; checked iterator passed as two dwords.
+0x00507D70,signature,"void __thiscall push_back(void* this, const void* value)",ret 4.
+0x00507F00,signature,"void __thiscall Clear(void* this, bool release)",ret 4.
+0x00508CF0,signature,"void __thiscall GetMemoryFootprint(void* this, unsigned int* bytes, unsigned int* extra)",ret 8; Ghidra shows no parameters and reads an unnamed stack slot.
+0x00508D00,convention,__thiscall,Reads ecx (this) at 0x00508D05; ret 8; Ghidra decompiles it without this.
+0x00508D00,signature,"void __thiscall SetEffectSource(void* this, const void* effectName, const void* resourceName)",Two wstrings into +0x34 and +0x50.
+0x00509340,convention,__thiscall,"Ghidra has __fastcall(int); ecx is this, the wstring is the stack argument (ret 4)."
+0x00509340,signature,"void __thiscall SetStage(void* this, const void* value)",ret 4.
+0x00509360,convention,__thiscall,Ghidra has __fastcall(int); ret 4 with one stack argument.
+0x00509360,signature,"void __thiscall SetSize(void* this, const void* value)",ret 4.
+0x00509380,signature,"void __thiscall SetSamplerName(void* this, const void* value)","add ecx,0x9C; jmp wstring::operator= (ret 4 there)."
+0x00509390,signature,"void __thiscall SetUsage(void* this, const void* value)","add ecx,0xB8; jmp operator=."
+0x005093A0,signature,"void __thiscall SetPixelShader(void* this, const void* value)","add ecx,0x40; jmp operator=."
+0x005093B0,signature,"void __thiscall SetMin(void* this, const void* value)","add ecx,0x60; jmp operator=."
+0x005093C0,signature,"void __thiscall SetMax(void* this, const void* value)","add ecx,0x7C; jmp operator=."
+0x00509610,signature,"void __thiscall SetVertexShader(void* this, const void* value)","add ecx,0x24; jmp operator=."
+0x005093D0,convention,__thiscall,"Ghidra has __fastcall(int param_1); ecx is the MaterialParamTemp, no stack arguments, plain ret."
+0x005093D0,signature,void* __thiscall CreateArt(void* this),Returns the new MaterialArt parameter or null.
+0x005095A0,signature,"void __thiscall SetShaderModel(void* this, const void* value)",ret 4.
+0x005095E0,signature,"void __thiscall SetTechnique(void* this, void* child)",ret 4.
+0x00509590,signature,"void __thiscall AddTestFlags(void* this, unsigned int flags)",ret 4.
+0x00509620,signature,"void __thiscall SetLogic(void* this, void* child)",ret 4.
+0x005095F0,signature,"void* __thiscall MaterialBuilderTemp(void* this, unsigned int kind)",ret 4.
+0x00509580,signature,void* __thiscall Build(void* this),"Slot 1, plain ret; eax = the art stored at +0xD4 (0x00509588)."
+0x00509630,signature,void __thiscall Build(void* this),"Slot 1, plain ret."
+0x00507C30,signature,void __thiscall ~MaterialObjectBuilderXML2(void* this),plain ret (from reading B)
+0x00507CC0,signature,"void* __thiscall `scalar deleting destructor'(void* this, unsigned int flags)",ret 4 (from reading B)
+0x00508D60,signature,"void __thiscall ReadAttributes(void* this, const wchar_t** attributes)",ret 4 (from reading B)
+0x00508E20,signature,"void __thiscall ReadAttributes(void* this, const wchar_t** attributes)",ret 4 (from reading B)
+0x00508F10,signature,"void __thiscall ReadAttributes(void* this, const wchar_t** attributes)",ret 4 (from reading B)
+0x00508FD0,signature,"void __thiscall ReadAttributes(void* this, const wchar_t** attributes)",ret 4 (from reading B)
+0x00509090,signature,"void __thiscall ReadAttributes(void* this, const wchar_t** attributes)",ret 4 (from reading B)
+0x00509230,signature,"void __thiscall ReadAttributes(void* this, const wchar_t** attributes)",ret 4 (from reading B)
+0x005092F0,signature,"void __thiscall ReadAttributes(void* this, const wchar_t** attributes)",ret 4 (from reading B)
