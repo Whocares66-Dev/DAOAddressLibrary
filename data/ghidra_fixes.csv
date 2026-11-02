@@ -18343,3 +18343,28 @@ address,what,value,why
 0x00543470,signature,"void __thiscall GraphicsStructures::Object::SetPlace(void* this, const void* place)",ret 4 at 0x00543581; this is the Object+8 interface
 0x00543590,signature,"void __thiscall GraphicsStructures::Object::SetPlaceXYZ(void* this, const float* xyz)",ret 4 at 0x005435C3; this is the Object+8 interface
 0x00542860,signature,"bool __thiscall GraphicsStructures::Object::AttachEmitterTargetToObjectNode(void* this, void* ownNodeName, int targetObjectId, void* targetNodeName)",ret 0xC at 0x005428AB
+0x00413310,signature,"int __thiscall f(void *this, float step)",Task slot 2 Execute: ret 4 for the float RunInline passes (0x00401C70).
+0x004BE610,signature,"bool __thiscall f(void *this, void *waiter, void *task)",ret 8; ecx is the ThreadManager (0x004BE62C reads [ecx+eax*4+0x24]).
+0x004C2770,signature,"void * __thiscall f(void *this, long value, const wchar_t *format)",ret 8; the %ld twin.
+0x004C2840,signature,"void * __thiscall f(void *this, unsigned long value, const wchar_t *format)",ret 8; builds a wstring in ecx from a %lu format.
+0x004C5E40,signature,"bool __thiscall f(void *this, void *name)",ret 4; returns al (any source has the lower-cased name).
+0x004C5FA0,signature,"int __thiscall f(void *this, void *name)",ret 4; returns 1 while the rim is loading.
+0x004C6090,signature,"int __thiscall f(void *this, void *name, bool zeroIfMissing)",ret 8; returns the rim map entry's size (+0x30 of the node) or 0 / -1 by the bool (GetRimSize).
+0x004C6270,signature,"bool __thiscall f(void *this, void *name)",ret 4; returns whether the rim map has the name.
+0x004CBCB0,signature,"void __thiscall f(void *this, float *out)",ret 4 (0x004CBCD0): Quaternion::Conjugate.
+0x004CBCE0,signature,"void __thiscall f(void *this, float *out)",ret 4 (0x004CBD26): Quaternion::GetXAxis.
+0x004CBD30,signature,"void __thiscall f(void *this, float *out)",ret 4 (0x004CBD75): Quaternion::GetYAxis.
+0x004CBD80,signature,"void __thiscall f(void *this, float *out)",ret 4 (0x004CBDC5): Quaternion::GetZAxis.
+0x004D3360,signature,"void __thiscall f(void *this, float *src)",ret 4; rep movsd of 16 dwords from the argument into ecx.
+0x004D36E0,signature,"void __thiscall f(void *this, unsigned int row, float *v)",ret 8 (0x004D3703).
+0x004D3730,signature,"void __cdecl f(float *out, float *matrix, float *v)","plain ret, arguments at [ebp+8],[ebp+0xC],[ebp+0x10], ecx unused."
+0x004D37E0,signature,"void __thiscall f(void *this, float *out)",ret 4 (0x004D3827).
+0x004D3830,signature,"void __thiscall f(void *this, float *out)",ret 4 (0x004D38D9).
+0x004D3AE0,signature,"void __cdecl f(float *out, float *scale)",plain ret; ecx not read (0x004D3AE6 calls GetIdentity without it).
+0x004D3B30,signature,"void __cdecl f(float *out, float *translation)",plain ret; ecx not read (0x004D3B36).
+0x004D5CD0,signature,"void __thiscall f(void *this, void *saveStruct)","ret 4; ecx is the id pool, the struct goes to 0x0047C8E0 in ecx (0x004D5CD4)."
+0x004D5EB0,signature,"void * __thiscall f(void *this, unsigned int id, bool take)","ret 8; the id is -1 for none (0x004D5EB0 cmp [esp+4],-1)."
+0x004D67E0,signature,"void __thiscall f(void *this, unsigned int id)",ret 4 (0x004D6830).
+0x004D68B0,signature,"void __thiscall f(void *this, unsigned int *slot)",ret 4; clears *slot (0x004D68C3).
+0x004EADF0,signature,"float __cdecl f(float *a, float *b)","plain ret, result on the x87 stack, arguments at [ebp+8],[ebp+0xC]."
+0x005D4540,signature,"int __stdcall f(int a, int b, int c, int d)","ret 0x10, ecx unread."
