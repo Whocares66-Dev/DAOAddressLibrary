@@ -15506,3 +15506,43 @@ address,what,value,why
 0x007CA990,signature,"void __thiscall f(void* this, void* blockRef, void* arg)",0x007CA9D9 ret 8
 0x007CA9E0,signature,"bool __thiscall f(void* this, unsigned int itemId)",0x007CA9F5 ret 4
 0x007CA4F0,signature,"void __thiscall f(void* this, int maxSize)",ecx is the list; jmp to the attribute slot with the argument on the stack
+0x007E8410,signature,undefined4 __thiscall f(void* this),read at 0x007E8410; ecx use and stack arguments checked in the disassembly
+0x007E85B0,signature,"undefined4 __thiscall f(void* this, unsigned int flags)","adjustor thunk: sub ecx,0x20; jmp 0x007E89D0; SDD ret 4 (the other adjustors alike)"
+0x007E85C0,signature,"undefined4 __thiscall f(void* this, unsigned int flags)",read at 0x007E85C0; ecx use and stack arguments checked in the disassembly
+0x007E85D0,signature,"undefined4 __thiscall f(void* this, unsigned int flags)",read at 0x007E85D0; ecx use and stack arguments checked in the disassembly
+0x007E85E0,signature,"undefined4 __thiscall f(void* this, unsigned int flags)",read at 0x007E85E0; ecx use and stack arguments checked in the disassembly
+0x007E85F0,signature,"undefined4 __thiscall f(void* this, unsigned int flags)",read at 0x007E85F0; ecx use and stack arguments checked in the disassembly
+0x007E8600,signature,undefined4 __thiscall f(void* this),read at 0x007E8600; ecx use and stack arguments checked in the disassembly
+0x007E8700,signature,"void __thiscall f(void* this, void* area)","ret 4, area at [esp+0xc] 0x007E8702"
+0x007E87C0,signature,"void __thiscall f(void* this, void* object, void* hitIds)",ret 8 at 0x007E89CC; object and hit list
+0x007E89D0,signature,"undefined4 __thiscall f(void* this, unsigned int flags)",read at 0x007E89D0; ecx use and stack arguments checked in the disassembly
+0x007E89F0,signature,"void __thiscall f(void* this, void* hitIds)",ret 4 at 0x007E8AAD
+0x007E8AB0,signature,undefined4 __thiscall f(void* this),read at 0x007E8AB0; ecx use and stack arguments checked in the disassembly
+0x007E8B30,signature,undefined4 __thiscall f(void* this),read at 0x007E8B30; ecx use and stack arguments checked in the disassembly
+0x007E8BF0,signature,"undefined4 __thiscall f(void* this, unsigned int flags)",read at 0x007E8BF0; ecx use and stack arguments checked in the disassembly
+0x007E90B0,signature,"void __thiscall f(void* this, int arg1)",ret 4 at 0x007E9167; arg1 passed on to the target's slot 54 at 0x007E9143
+0x007E9B50,signature,"undefined4 __thiscall f(void* this, void* rgba)",read at 0x007E9B50; ecx use and stack arguments checked in the disassembly
+0x007EBCF0,signature,undefined4 __thiscall f(void* this),read at 0x007EBCF0; ecx use and stack arguments checked in the disassembly
+0x007EC2C0,signature,"undefined4 __thiscall f(void* this, void* creature, void* item, int count)","ret 0xC at 0x007EC4EC; creature, item, count passed to 0x007EBD00"
+0x007ECF00,signature,"undefined4 __thiscall f(void* this, void* creature, void* item, int count)","ret 0xC at 0x007ED207; creature, item, count passed to 0x007EB770"
+0x007ED530,signature,"undefined4 __thiscall f(void* this, void* name)",read at 0x007ED530; ecx use and stack arguments checked in the disassembly
+0x007ED5F0,signature,"undefined4 __thiscall f(void* this, void* name)",read at 0x007ED5F0; ecx use and stack arguments checked in the disassembly
+0x007ED6B0,signature,"undefined4 __thiscall f(void* this, void* name)",read at 0x007ED6B0; ecx use and stack arguments checked in the disassembly
+0x007F3D00,signature,undefined4 __thiscall f(void* this),read at 0x007F3D00; ecx use and stack arguments checked in the disassembly
+0x007F41D0,signature,"undefined4 __thiscall f(void* this, void* source)",read at 0x007F41D0; ecx use and stack arguments checked in the disassembly
+0x007F4DA0,signature,"undefined4 __thiscall f(void* this, void* map)",read at 0x007F4DA0; ecx use and stack arguments checked in the disassembly
+0x007F4DC0,signature,"undefined4 __thiscall f(void* this, void* a, void* b)",read at 0x007F4DC0; ecx use and stack arguments checked in the disassembly
+0x007F4DE0,signature,undefined4 __thiscall f(void* this),read at 0x007F4DE0; ecx use and stack arguments checked in the disassembly
+0x007F4E50,signature,"undefined4 __thiscall f(void* this, unsigned int flags)",read at 0x007F4E50; ecx use and stack arguments checked in the disassembly
+0x007F4EE0,signature,"undefined4 __thiscall f(void* this, unsigned int itemId)",read at 0x007F4EE0; ecx use and stack arguments checked in the disassembly
+0x007F4F00,signature,"void __thiscall f(void* this, void* out, int arg2)","ret 8 at 0x007F4F25, only the first argument used"
+0x007F4F30,signature,"undefined4 __thiscall f(void* this, unsigned int slot)",read at 0x007F4F30; ecx use and stack arguments checked in the disassembly
+0x007F4F40,signature,"unsigned int __thiscall f(void* this, int slot)",vftable slot or method; ret N and ecx use as read at 0x007F4F40
+0x007F4F60,signature,"undefined4 __thiscall f(void* this, void* out, void* key)","ret 8 at 0x007F4FC6; arg1 = out iterator, arg2 = key pointer"
+0x007F4FD0,signature,"undefined4 __thiscall f(void* this, unsigned int itemId)",read at 0x007F4FD0; ecx use and stack arguments checked in the disassembly
+0x007F5080,signature,"undefined4 __thiscall f(void* this, void* out, unsigned int itemId)","ret 8; arg1 = out location, arg2 = item id"
+0x007F5170,signature,"undefined4 __thiscall f(void* this, void* location)",read at 0x007F5170; ecx use and stack arguments checked in the disassembly
+0x007F51A0,signature,"undefined4 __thiscall f(void* this, unsigned int slot)",read at 0x007F51A0; ecx use and stack arguments checked in the disassembly
+0x007F5200,signature,"void __thiscall f(void* this, unsigned int itemId, void* position)",vftable slot or method; ret N and ecx use as read at 0x007F5200
+0x007F5250,signature,"undefined4 __thiscall f(void* this, unsigned int itemId)",read at 0x007F5250; ecx use and stack arguments checked in the disassembly
+0x007F5290,signature,"undefined4 __thiscall f(void* this, void* owner, unsigned int invalidSlot)","ret 8 at 0x007F531B; arg1 to ItemLocation ctor 0x00761170, arg2 stored at +0x1C"
