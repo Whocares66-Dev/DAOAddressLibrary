@@ -17,6 +17,9 @@ AbilityInstance,0x118,0x28,SmartData::Attribute<ECBase::ECString>,refTemplate,"0
 AbilityInstance,0x140,0x28,SmartData::Attribute<ECBase::ECString>,itemIcon,"0x0075A7DD lea eax,[esi+0x140] registered under the name pushed at 0x0075A7AA, ItemIcon"
 AbilityInstance,0x168,0x10,SmartData::Attribute<int>,pendingActivation,"0x0075A83C lea eax,[esi+0x168] registered under the name pushed at 0x0075A809, PendingActivation; built by 0x00403510 at 0x0075A3E5"
 AbilityInstance,0x178,0x4,void*,cooldownEntry,"0x0075A3F8 mov [esi+0x178],ebp (0) in the ctor; SetCooldownEntry 0x0075A8A0 reads it at 0x0075A8C9 and stores the new record at 0x0075A951; the record's attributes at +0x24 and +0x34 are re-published as CooldownTime and CooldownPercentage (0x0075A975, 0x0075A9E0)"
+AddInItem,0x0,0x1D0,struct,sizeof,"0x004A3F79 add ebx,0x1d0 in OfferManager::LoadOffers; 0x00479946 0x8d3dcb09 sar 8"
+AddInRecord,0x0,0x2A4,struct,sizeof,"0x005FAA07 add ebx,0x2a4 in AddInsManager::LoadAddIns; 0x005FA82A imul 0x60f25deb sar 8"
+AddInsManager::AddInEntry,0x0,0x1C,std::wstring,name,0x005FA846 filled from AddInRecord+0x1C in LoadAddIns
 AnimBase,0x0,0x230,struct,sizeof,"0x00A617B0 push 0x230 then 0x00A617B5 call 0x00413660 (operator new), the constructor 0x00A60B50 called at 0x00A617D3 (AnimBase's own case of the factory; AnimBaseWield's constructor 0x00A668AC calls the same one)"
 AnimBase,0x0,0x4,void*,vftable,"0x00A60B7E mov dword ptr [esi],0xb5959c in the constructor 0x00A60B50 (a derived constructor overwrites it: 0x00A668BD mov [edi],0xb5973c)"
 AnimBase,0x10,0x1,uint8_t,flags,"0x00A60B84 mov byte ptr [esi+0x10],1 in the constructor; AnimBaseWield's constructor ORs 2 into it (0x00A668B1 or byte ptr [edi+0x10],2)"
@@ -555,6 +558,7 @@ CRoom,0x364,0x4,float,darknessLevel,0x005D33E0 fld [ecx+0x364] in CRoom::GetDark
 CRoom,0x368,0x1,uint8_t,objectsPending,"0x005D2E66 cmp byte [ebp+0x368],0 in CRoom::Update: the room's objects are being built, to be taken in; the ctor zeroes it (0x005D369C)"
 CRoom,0x36C,0x4,float,appliedDarkness,"0x005D2E3E fst [esi+0x36c] in UpdateDarkness: the level last handed to ApplyDarknessLevel (0x005D2E49), which is called only when the level differs from it; the constructor (0x005D3691) and SetFadeEnabled (0x005D210A) reset it to -1.0, so the next update applies"
 CRoom,0x371,0x1,uint8_t,loadingInBackground,"0x005D31E1 cmp byte [esi+0x371],0 in CRoom::SetState (it does nothing while set); the ctor zeroes it (0x005D36A9)"
+CSAreaList::Entry,0x0,0x48,struct,sizeof,0x005FE5A4 imul 0x38e38e39 in ECDynArray<CSAreaList::Entry>::At; 0x005FEAD3 same divide in the size stub
 CameraControllerExplore,0x0,0x1D0,struct,sizeof,"0x006418F5 push 0x1d0 (operator new, then the constructor 0x0076F890); the explore controller GameModeController+0x60 points to"
 CameraControllerExplore,0x4,0x4,CameraRig*,rig,"0x007EE9D1 mov [esi+4],eax in the base constructor 0x007EE9B0; 0x007EE7E1 mov eax,[ecx+4] then reads the rig's zoom in Zoom() 0x007EE7E0"
 CameraControllerExplore,0x8,0x4,ObjectId,targetId,"0x007EE9D4 mov [esi+8],0xffffffff in the base constructor: the followed object, -1 for none"
@@ -611,6 +615,7 @@ CutscenePlayer,0x0,0x250,struct,sizeof,0x007F09D2 push 0x250 (operator new in Co
 CutscenePlayer,0x180,0x10,Math::Vector4f,conversationTurnOffset,"0x007F0B20 movaps [ebx+0x180],xmm0 in Conversation::MakeLineCutscene, from Conversation +0x80; 0x007D8874 add eax,0x180 and 0x007D8890..0x007D88A2 scale x, y, z by 1 - t/3 in UpdateBetweenCategories. Other writers were not looked for. The name is a guess [I]"
 CutscenePlayer,0x1D8,0x4,EC::Cutscene::Actor*,cameraActor,"0x007D881C cmp [eax+0x1d8],esi in UpdateBetweenCategories and 0x007D1038 cmp [eax+0x1d8],esi in ActionShake::Update both test it against the actor; the active camera actor"
 CutscenePlayer,0x23C,0x4,Conversation*,conversation,"0x007F0B0D mov [ebx+0x23c],esi in Conversation::MakeLineCutscene; read at 0x007D8828, 0x007D88EF and 0x007D102E; 0 for a cutscene not made by a line"
+CutscenePlayer::BindRecord,0x0,0x4,uint32_t,objectId,"0x007E323C mov [ecx],eax from object+4 (the id)"
 D3DDriver::D3DGraphicsDriver,0x4,0xCC,int[51],renderStateValueTable,"0x00868EB4 mov eax,[ecx+eax*4+4] (translation of a value index); filled by 0x00868210 (e.g. 0x008682AB [ecx+8]=1); cleared by 0x008681B0 rep stosd 0x33"
 D3DDriver::D3DGraphicsDriver,0xD0,0x2C,int[11],samplerStateValueTable,"0x00868F33 mov eax,[ecx+eax*4+0xd0]; filled by 0x00868210 (0x00868356 [ecx+0xd0]=1 ... 0x00868378 [ecx+0xf4]=6, 0x00868285 [ecx+0xf8]=7)"
 D3DDriver::D3DGraphicsDriver,0x100,0x4,void*,device,"0x00869038 mov eax,[ebx+0x100]: the IDirect3DDevice9; calls through its vtable e.g. +0x5C CreateTexture"
@@ -639,6 +644,9 @@ EC::Cutscene::Actor,0x4E4,0x4,float,animationWeightSum,"0x007DA1EF fst [esi+0x4e
 EC::Cutscene::Actor,0x528,0x10,std::vector<?>,clipRecords,"0x007D608B lea edi,[ecx+0x528]; 0x44-byte records (imul 0x78787879 at 0x007D60A3); record +0x38 start, +0x3C end, +0x40 action (0x007D611B)"
 EC::Cutscene::Actor,0x538,0x10,std::vector<EC::Cutscene::Actor::BlendGadRecord>,blendList,"0x007D818E add ecx,0x538 in AddBlendGad; 0x007D825A add esi,0x538 in ApplyBlendGads walks it (begin +4, end +8) in 0x24-byte records and clears it at 0x007D8481 (0x007D79C0 with 0)"
 EC::Cutscene::Actor,0x548,0x10,std::vector<EC::Cutscene::Actor::BlendGadRecord>,extendedList,"0x007D81F8 add ecx,0x548 in AddExtendedGad; ApplyExtendedGads 0x007D84A0 walks it each step and keeps it. The word at +0 of a record is the clip's weight (BlendGad) or -1.0 (0x00AE2E00), tested at 0x007D8557..0x007D8563"
+EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue,0x0,0x4,int,kind,"0x007DBE85 mov [esi],eax from the parameter record (8e9eb7 conversion)"
+EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue,0x4,0x10,float[4],value,"0x007DBE97 fstp [esi+edi*4+4], component edi"
+EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue,0x14,0x4,uint8_t[4],componentSet,"0x007DBEBF mov [edi+esi+0x14],al per component"
 EC::Cutscene::Actor::ActionShake,0x28,0x1,uint8_t,shakeType,"0x007DAA12 mov [esi+0x28],al after field 5600 (push 0x15E0) in the constructor 0x007DA990; 0x007D0EFF cmp al,1 and 0x007D0F03 cmp al,2 in Update"
 EC::Cutscene::Actor::ActionShake,0x2C,0x4,int32_t,noiseSeed,"0x007DAA50 mov [esi+0x2c],eax after field 5603 (push 0x15E3); passed to CutsceneShake_MakeNoise at 0x007DABD8"
 EC::Cutscene::Actor::ActionShake,0x30,0x4,float,noiseFrequency,0x007DAA6C fstp [esi+0x30] after field 5604; passed at 0x007DABD3
@@ -653,6 +661,7 @@ EC::Cutscene::Actor::BlendGadRecord,0x0,0x4,float,weight,"0x007D8180 AddBlendGad
 EC::Cutscene::Actor::BlendGadRecord,0x4,0xC,float[3],position,0x007D81A6 AddBlendGad copies its second argument's three floats to the record's +4..+0xC; 0x007D83CD..0x007D8402 scales them by s
 EC::Cutscene::Actor::BlendGadRecord,0x10,0x10,float[4],orientation,"0x007D81B8 AddBlendGad copies its third argument's four floats to the record's +0x10..+0x1C (x, y, z, w); 0x007D83C6 lea edx,[ebx+0x10] is the slerp's target (0x004CBC10)"
 EC::Cutscene::Actor::BlendGadRecord,0x20,0x1,uint8_t,applyFutureGads,"0x007D8196 mov byte [esp+0x20],0 in AddBlendGad; 0x007D8217 mov [esp+0x24],al stores AddExtendedGad's fifth argument (the action's +0x83, 0x007D9586 movzx ecx,[esi+0x83]); not read by ApplyBlendGads"
+EC::Cutscene::Actor::FollowerAniHackEntry,0x0,0x1C,std::wstring,name,0x007D766E call 0x004C2510 (wstring copy)
 EC::ITimer,0x0,0x20,struct,sizeof,0x00A465EC push 0x20 then ctor 0x004CB130 at 0x00A4660C
 EC::ModelPlacement,0x5C,0x54,EC::ModelPlacementOverrides,overrides,"0x005CE904 lea ecx,[esi+0x5c]; 0x005CE910 call 0x0054E770; the next member is at +0xB0 (0x005CE915), which gives the size"
 EC::ModelPlacementOverrides,0x0,0x28,"stdext::hash_map<?,?>",parameters,0x0054E7A4 call 0x0054B420 on this; the copy constructor 0x005CED9D calls 0x005CDC80 with the same member
@@ -718,6 +727,7 @@ GUI::GUIScene,0x58,0x1C,std::wstring,name,"0x00523F42 lea ecx,[eax+0x58] in Scen
 GUI::GUIScene,0x74,0x28,SmartData::Attribute<std::wstring>,filename,"0x00523C1F lea ecx,[edi+0x74] then call 0x00403C70 in OpenScreen: the Filename attribute whose text (the movie's name, passed to OpenMovie) is read at +0xC inside it; copied at 0x0061CA32 / 0x0061CA36"
 GUI::GUISystem,0x58,0xC,"std::map<int,GUI::GUIScene*>",scenes,"0x00523EDA lea ebp,[ecx+0x58] and 0x00523ED7 cmp dword [ecx+0x60],eax in SceneIdByName (0x00523ED0): a tree map whose proxy is at +0x58, head at +0x5C (0x005240D9 mov ebp,[ebx+0x5c] in AddScene) and size at +0x60, each value a GUIScene; its name at +0x58 is compared at 0x00523F42"
 GUI::GUISystem,0x120,0x4,GUI::ScaleformManager*,scaleformManager,"0x00523C15 cmp dword [esi+0x120],0 and 0x00523C37 mov ecx,[esi+0x120] in GUI::GUISystem::OpenScreen (0x00523BF0), the receiver of the OpenMovie call"
+GUI::HeadPreset::ModelWeight,0x8,0x4,float,weight,0x00807E65 fld [eax+8]; add; fstp
 GameMode,0x0,0x84,struct,sizeof,"0x0064D3C4 push 0x84 before operator new in GameMode::Clone (0x0064D3A0), which then calls the copy constructor 0x0064D260 (0x0064D3E4); the base constructor 0x00694210 is called by each derived mode's constructor (e.g. 0x0064D559), the derived modes being 0x700 bytes (0x00641953 push 0x700)"
 GameMode,0x0,0x4,void*,vftable,"0x00694224 mov [esi],0x00B06DE4; the SmartObject bases' vptrs follow at +0x8 (0x00B06DD0), +0x1C (0x00B06D74) and +0x20 (0x00B06D60), set at 0x0069422A..0x00694238; derived modes overwrite them"
 GameMode,0x58,0x4,CameraRig*,cameraRig,"0x006942C0 mov ecx,[ecx+0x58]; call 0x006C4C60 (CameraRig::Update) in UpdateCamera; stored by the constructor from its second argument (0x00694262 mov [esi+0x58],ecx), which GameModeController::Initialize passes as its own +0x5C (0x00641970)"
@@ -1501,6 +1511,7 @@ Physics::DebugLineBatch,0x30,0x4,void*,device,"0x0053BC55 mov [esi+0x30],ebx; 0x
 Physics::DebugLineBatch,0x34,0x4,void*,vertexDeclaration,"0x0053BD04 mov [esi+0x34],eax (device slot 0x68)"
 Physics::DebugLineBatch,0x38,0x4,uint32_t,usedLines,"0x0053BC52 mov [esi+0x38],0; Grow compares and copies by it at 0x0053BB4A"
 PlotItems,0x0,0x50,struct,sizeof,0x007406C5; sizeof (push 0x50 then PlotItems::PlotItems)
+PlotManager::PlotEntry,0x0,0x18,struct,sizeof,0x0075DA85 six dwords copied to PlotManager+0x44..0x58 as the default; list element is wstring + these (0x0075BE1B..0x0075BE4E)
 PortraitRenderer,0x0,0xD70,struct,sizeof,"0x006AE2FD push 0xd70 in CCCreature::UpdatePortrait (operator new, then the constructor 0x007F3D80 called at 0x006AE31D)"
 PortraitRenderer,0xD40,0x4,CCCreature*,sourceCreature,"0x007F3DE3 mov [esi+0xD40],eax in the constructor 0x007F3D80; 0x007F4714 cmp [esi+0xD40],0 in Render"
 PortraitRenderer,0xD44,0x1,uint8_t,setUp,"0x007F3DE9 mov byte ptr [esi+0xD44],bl in the constructor; 0x007F3E5B sets it to 1 in Setup 0x007F3E20"
@@ -1635,6 +1646,7 @@ TexManager::PoolEntry,0x4,0x1,bool,available,"0x008485BA mov byte [eax+4],1 on r
 TexManager::TexturePool,0x44,0x20,Multithreading::Mutex,mutex,"0x00849BE4 lea ecx,[esi+0x44] Mutex::Mutex; 0x0084855A ScopedLock on it"
 TexManager::TexturePool,0x68,0x4,int,pooledBytes,"0x0084845B cmp [ebx+0x68],0x9600000 (150 MiB) before trimming; AddTextureSize/SubtractTextureSize at 0x008477B0/0x008477F0 maintain it (not read here)"
 TexManager::TexturePool,0x6C,0x4,int,freeCount,"0x008485BE add [ebx+0x6c],1 when a texture is returned available; 0x00849267 zeroed in DestroyAll"
+TexManager::TexturePool::Spec,0x14,0x4,uint32_t,count,"0x008498C8 cmp [edi+0x14],ebp loop over the count to preallocate"
 TintBlock,0x0,0xBC,struct,sizeof,"0x00748280 constructor; CAppearance holds one at +0x6C with the next member at +0x128; std::vector<TintBlock>::size 0x0069FB10 divides by 0xBC (imul 0xAE4C415D, sar 7 at 0x0069FB22)"
 TintBlock,0x1C,0xA0,Math::VectorUA4f[10],colours,"0x007481AA CopyColours copies ten 16-byte colours at +0x1C,+0x2C,+0x3C,+0x4C,+0x5C,+0x6C,+0x7C,+0x8C,+0x9C,+0xAC; the constructor fills them from 0x007482C6 on"
 TwoDimArrayCache,0x0,0x4,void*,vftable,"0x004E119C mov edx,[esi]; call [edx]: slot 0 makes an entry, slot 1 is the scalar deleting destructor (0x00749DA0)"

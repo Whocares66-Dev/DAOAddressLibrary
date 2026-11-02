@@ -3105,7 +3105,7 @@ id,subsystem,class,how
 3134,Core,ECBase::ECDynArray<OnlineRec84>,name
 3135,Core,ECBase::ECDynArray<Elem148>,name
 3136,Core,ECBase::ECDynArray<Achievement>,name
-3137,Core,ECBase::ECDynArray<Elem676>,name
+3137,Core,ECBase::ECDynArray<AddInRecord>,name
 3138,Messaging,Messages::MessageFactoryEntry,name
 3139,Messaging,ReConnectMessage,name
 3140,unknown,Online::HttpRecord,
@@ -3200,7 +3200,7 @@ id,subsystem,class,how
 3229,ThirdParty:STL,"std::list<std::pair<std::wstring,std::wstring>>",name
 3230,ThirdParty:STL,"std::list<std::pair<std::wstring,std::wstring>>",owner
 3231,Core,ECBase::ECDynArray<OnlineRec24>,name
-3232,Core,ECBase::ECDynArray<Elem464>,name
+3232,Core,ECBase::ECDynArray<AddInItem>,name
 3233,unknown,Gff4::BlockRef,
 3234,unknown,Gff4::BlockRef,
 3235,ThirdParty:STL,std::list<std::wstring>,name
@@ -7918,7 +7918,7 @@ id,subsystem,class,how
 7976,ThirdParty:STL,std::vector<?>,name
 7977,Core,ECBase::ECDynArray<GraphicsStructures::ExportValue>,name
 7978,ThirdParty:STL,std::vector<?>,name
-7979,Core,ECBase::ECDynArray<Elem12A>,name
+7979,Core,ECBase::ECDynArray<GraphicsStructures::Object::ExportCopy>,name
 7980,Core,ECBase::ECDynArray<Animation::BlendNode>,name
 7981,ThirdParty:STL,std::vector<?>,name
 7982,Core,ECBase::ECDynArray<Animation::ClipContribution>,name
@@ -10847,13 +10847,13 @@ id,subsystem,class,how
 10914,ThirdParty:STL,,string
 10915,ThirdParty:STL,,owner
 10916,ThirdParty:STL,,owner
-10917,ThirdParty:STL,std::vector<AddInsManager::Elem2C>,name
-10918,ThirdParty:STL,std::vector<AddInsManager::Elem2C>,name
+10917,ThirdParty:STL,std::vector<AddInsManager::AddInEntry>,name
+10918,ThirdParty:STL,std::vector<AddInsManager::AddInEntry>,name
 10919,ThirdParty:STL,AddInXmlEntry,between
 10920,ThirdParty:STL,std,name
 10921,ThirdParty:STL,std,name
 10922,ThirdParty:STL,std,name
-10923,ThirdParty:STL,std::vector<AddInsManager::Elem2C>,name
+10923,ThirdParty:STL,std::vector<AddInsManager::AddInEntry>,name
 10924,ThirdParty:STL,AddInXmlEntry,between
 10925,ThirdParty:STL,std,name
 10926,ThirdParty:STL,std,name
@@ -10866,7 +10866,7 @@ id,subsystem,class,how
 10933,unknown,AddInsManager,
 10934,unknown,AddInsManager,
 10935,unknown,AddInXmlEntry,
-10936,ThirdParty:STL,std::vector<AddInsManager::Elem2C>,name
+10936,ThirdParty:STL,std::vector<AddInsManager::AddInEntry>,name
 10937,ThirdParty:STL,std,name
 10938,ThirdParty:STL,std,name
 10939,ThirdParty:STL,std,name
@@ -10970,7 +10970,7 @@ id,subsystem,class,how
 11037,ThirdParty:STL,Gff4::Block,between
 11038,ThirdParty:STL,std,name
 11039,ThirdParty:STL,std,name
-11040,GameModes,Stub,callers
+11040,Core,ECBase::ECDynArray<CSAreaList::Entry>,name
 11041,World,CCModule,name
 11042,World,CCModule,name
 11043,World,CCModule,name
@@ -14740,11 +14740,11 @@ id,subsystem,class,how
 14814,ThirdParty:STL,,owner
 14815,Game,CCCreature,name
 14816,unknown,"stdext::hash_map<std::wstring,Resources>",
-14817,ThirdParty:STL,std::vector<Elem0xBC>,name
+14817,ThirdParty:STL,std::vector<TintBlock>,name
 14818,ThirdParty:STL,"std::vector<SmartData::Attribute<short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
 14819,ThirdParty:STL,"std::vector<SmartData::Attribute<short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
 14820,ThirdParty:STL,"std::vector<SmartData::Attribute<short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
-14821,ThirdParty:STL,std::vector<Elem0xBC>,name
+14821,ThirdParty:STL,std::vector<TintBlock>,name
 14822,Game,CCCreature,name
 14823,Game,CCCreatureMember9A4,callers
 14824,unknown,"stdext::hash_map<std::wstring,Resources>",
@@ -18003,14 +18003,14 @@ id,subsystem,class,how
 18086,Game,Plots,name
 18087,Game,Plots,name
 18088,Game,Plots,name
-18089,Game,LocalisedString,between
-18090,Game,PlotElem52,between
-18091,Game,LocalisedString,between
+18089,unknown,LocalisedString,
+18090,ThirdParty:STL,"std::pair<std::wstring const,PlotManager::PlotEntry>",name
+18091,unknown,LocalisedString,
 18092,Game,Plots,name
-18093,ThirdParty:STL,std::list<PlotElem52>,name
+18093,ThirdParty:STL,"std::list<std::pair<std::wstring const,PlotManager::PlotEntry>>",name
 18094,ThirdParty:STL,Gff4::StructReader,between
-18095,ThirdParty:STL,std::list<PlotElem52>,name
-18096,ThirdParty:STL,std::list<PlotElem52>,owner
+18095,ThirdParty:STL,"std::list<std::pair<std::wstring const,PlotManager::PlotEntry>>",name
+18096,ThirdParty:STL,"std::list<std::pair<std::wstring const,PlotManager::PlotEntry>>",owner
 18097,unknown,Gff4::StructReader,
 18098,Game,Plots,name
 18099,Game,Plots,name
@@ -19973,7 +19973,7 @@ id,subsystem,class,how
 20062,GUI,GUI::GUIPaperdoll,name
 20063,GUI,GUI::GUIPaperdoll,name
 20064,GUI,PortraitSettings,callers
-20065,Core,ECBase::ECDynArray<Elem0xC>,name
+20065,Core,ECBase::ECDynArray<GUI::HeadPreset::ModelWeight>,name
 20066,Data,"SmartData::Attribute<unsigned char,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 20067,Core,"ECBase::ECDynArray<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
 20068,Core,ECBase::ECDynArray<GUI::GUIPaperdoll::CharData*>,name
@@ -20559,18 +20559,18 @@ id,subsystem,class,how
 20648,Conversation,EC::Cutscene::Actor::ActionJumpToPlace,name
 20649,Conversation,EC::Cutscene::Actor::ActionSetFog,name
 20650,Animation,FacingDirection,name
-20651,ThirdParty:STL,std::_Tree<Elem88>,name
-20652,ThirdParty:STL,std::_Tree<Elem52>,name
-20653,ThirdParty:STL,std::_Tree<Elem52>,name
-20654,ThirdParty:STL,std::_Tree<Elem88>,name
-20655,ThirdParty:STL,std::_Tree<Elem88>,name
-20656,ThirdParty:STL,std::_Tree<Elem88>::const_iterator,name
-20657,ThirdParty:STL,std::_Tree<Elem88>::const_iterator,name
-20658,ThirdParty:STL,std::_Tree<Elem52>,name
-20659,ThirdParty:STL,std::_Tree<Elem52>::const_iterator,name
+20651,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>",name
+20652,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>>",name
+20653,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>>",name
+20654,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>",name
+20655,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>",name
+20656,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>::const_iterator",name
+20657,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>::const_iterator",name
+20658,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>>",name
+20659,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>>::const_iterator",name
 20660,ThirdParty:STL,std::vector<Elem76>,name
 20661,unknown,WStringArray,
-20662,unknown,Elem68,
+20662,Conversation,EC::Cutscene::Actor::ClipRecord,name
 20663,Core,,name
 20664,ThirdParty:STL,std::allocator<Elem76>,name
 20665,ThirdParty:STL,std::allocator<Elem24>,name
@@ -20609,10 +20609,10 @@ id,subsystem,class,how
 20698,Conversation,EC::Cutscene::Actor::ActionAnimateFace,name
 20699,Conversation,EC::Cutscene::Actor::ActionAnimateFace,name
 20700,ThirdParty:STL,std::_Vector_const_iterator<Elem>,name
-20701,ThirdParty:STL,std::_Tree<Elem52>::const_iterator,name
-20702,ThirdParty:STL,std::_Tree<Elem88>,name
-20703,ThirdParty:STL,std::_Tree<Elem52>,name
-20704,ThirdParty:STL,std::_Tree<Elem52>::_Node,name
+20701,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>>::const_iterator",name
+20702,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>",name
+20703,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>>",name
+20704,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>>::_Node",name
 20705,unknown,Gff4::StructReader,
 20706,unknown,WStringArray,
 20707,unknown,WStringArray,
@@ -20647,10 +20647,10 @@ id,subsystem,class,how
 20736,Conversation,EC::Cutscene::Actor::ActionDrawWeapon,name
 20737,Animation,Clip::EventKey,callers
 20738,ThirdParty:STL,std::list<Elem36>,name
-20739,ThirdParty:STL,std::_Tree<Elem88>,name
-20740,ThirdParty:STL,std::_Tree<Elem52>,name
-20741,ThirdParty:STL,std::_Tree<Elem52>,name
-20742,ThirdParty:STL,std::_Tree<Elem52>,owner
+20739,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>",name
+20740,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>>",name
+20741,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>>",name
+20742,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>>",owner
 20743,ThirdParty:STL,std,name
 20744,ThirdParty:STL,std,name
 20745,ThirdParty:STL,std,name
@@ -20721,9 +20721,9 @@ id,subsystem,class,how
 20810,Conversation,EC::Cutscene::Actor::ActionLinkToActor,name
 20811,Conversation,EC::Cutscene::Actor,name
 20812,ThirdParty:STL,std::vector<?>,name
-20813,ThirdParty:STL,"std::map<std::wstring,Elem60>",name
-20814,ThirdParty:STL,"std::map<std::wstring,Elem24>",name
-20815,ThirdParty:STL,"std::map<std::wstring,Elem24>",name
+20813,ThirdParty:STL,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>",name
+20814,ThirdParty:STL,"std::map<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>",name
+20815,ThirdParty:STL,"std::map<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>",name
 20816,Conversation,EC::Cutscene,callers
 20817,Conversation,EC::Cutscene,callers
 20818,Conversation,EC::Cutscene,callers
@@ -20735,7 +20735,7 @@ id,subsystem,class,how
 20824,Conversation,EC::Cutscene::Actor::ActionLinkToActor,name
 20825,ThirdParty:STL,"std::pair<std::wstring,RefHandle>",name
 20826,ThirdParty:STL,std::vector<EC.Cutscene.Actor.ClipRecord>,name
-20827,ThirdParty:STL,std::vector<ExtendedGad>,name
+20827,ThirdParty:STL,std::vector<EC::Cutscene::Actor::BlendGadRecord>,name
 20828,ThirdParty:STL,std::vector<Elem24>,name
 20829,ThirdParty:STL,std::vector<EC.Cutscene.Actor.ClipRecord>,name
 20830,ThirdParty:STL,std::vector<Elem24>,name
@@ -20747,7 +20747,7 @@ id,subsystem,class,how
 20836,Conversation,EC::Cutscene::Actor::ActionChangeVisibility,name
 20837,Conversation,EC::Cutscene::Actor::ActionFrameBufferEffect,name
 20838,Conversation,EC::Cutscene::Actor::ActionFrameBufferEffect,name
-20839,ThirdParty:STL,std::_Tree<Elem88>,name
+20839,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>",name
 20840,ThirdParty:STL,,string
 20841,ThirdParty:STL,,between
 20842,ThirdParty:STL,,between
@@ -20759,7 +20759,7 @@ id,subsystem,class,how
 20848,ThirdParty:STL,std,name
 20849,ThirdParty:STL,,between
 20850,ThirdParty:STL,,between
-20851,ThirdParty:STL,"std::map<std::wstring,Elem60>",name
+20851,ThirdParty:STL,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>",name
 20852,ThirdParty:STL,,between
 20853,ThirdParty:STL,,string
 20854,ThirdParty:STL,,string
@@ -20787,33 +20787,33 @@ id,subsystem,class,how
 20876,ThirdParty:STL,,between
 20877,ThirdParty:STL,,between
 20878,ThirdParty:STL,,string
-20879,ThirdParty:STL,std::_Tree<Elem20>,name
+20879,ThirdParty:STL,"std::_Tree<std::pair<unsigned int const,CutscenePlayer::ActorDependencyList>>",name
 20880,ThirdParty:STL,std::vector<EC.Cutscene.Actor.ClipRecord>,name
-20881,ThirdParty:STL,std::vector<Elem24>,name
-20882,ThirdParty:STL,std::vector<ExtendedGad>,name
+20881,ThirdParty:STL,std::vector<EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>,name
+20882,ThirdParty:STL,std::vector<EC::Cutscene::Actor::BlendGadRecord>,name
 20883,ThirdParty:STL,std::list<Elem>,name
 20884,ThirdParty:STL,std::list<Elem>,owner
-20885,unknown,Elem76,
-20886,unknown,Elem76,
+20885,unknown,CutscenePlayer::BindRecord,
+20886,unknown,CutscenePlayer::BindRecord,
 20887,Conversation,EC::Cutscene::Actor,name
 20888,Conversation,EC::Cutscene::Actor::ActionLinkToActor,name
-20889,ThirdParty:STL,std::_Tree<Elem52>,name
+20889,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>>",name
 20890,ThirdParty:STL,,string
-20891,ThirdParty:STL,"std::map<std::wstring,Elem24>",name
-20892,ThirdParty:STL,Elem60,between
+20891,ThirdParty:STL,"std::map<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>",name
+20892,Conversation,EC::Cutscene::Actor::FollowerAniHackEntry,name
 20893,ThirdParty:STL,std::list<Elem>,name
-20894,ThirdParty:STL,"std::pair<std::wstring,Elem60>",name
-20895,ThirdParty:STL,std::vector<Elem24>,name
+20894,ThirdParty:STL,"std::pair<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>",name
+20895,ThirdParty:STL,std::vector<EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>,name
 20896,ThirdParty:STL,std::vector<EC.Cutscene.Actor.ClipRecord>,name
-20897,ThirdParty:STL,std::vector<ExtendedGad>,name
-20898,ThirdParty:STL,std::vector<ExtendedGad>,name
+20897,ThirdParty:STL,std::vector<EC::Cutscene::Actor::BlendGadRecord>,name
+20898,ThirdParty:STL,std::vector<EC::Cutscene::Actor::BlendGadRecord>,name
 20899,Core,ECBase::ECDynArray<Resources>,name
 20900,unknown,Elem16,
 20901,ThirdParty:STL,std,name
 20902,ThirdParty:STL,std,name
 20903,ThirdParty:STL,std,name
 20904,ThirdParty:STL,std,owner
-20905,unknown,Elem60,
+20905,Conversation,EC::Cutscene::Actor::FollowerAniHackEntry,name
 20906,Conversation,CutscenePlayer,name
 20907,Conversation,CutscenePlayer,name
 20908,Conversation,CutscenePlayer,name
@@ -20839,10 +20839,10 @@ id,subsystem,class,how
 20928,Conversation,EC::Cutscene::Actor::ActionAnimateFace,name
 20929,Conversation,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterSet,name
 20930,Conversation,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterSet,name
-20931,ThirdParty:STL,"std::pair<std::wstring const,Elem60>",name
+20931,ThirdParty:STL,"std::pair<std::wstring const,EC::Cutscene::Actor::FollowerAniHackEntry>",name
 20932,ThirdParty:STL,,string
 20933,ThirdParty:STL,,string
-20934,ThirdParty:STL,std::_Tree<Elem88>,name
+20934,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>",name
 20935,ThirdParty:STL,Elem16,between
 20936,ThirdParty:STL,std,name
 20937,ThirdParty:STL,std,name
@@ -20897,8 +20897,8 @@ id,subsystem,class,how
 20986,Conversation,EC::Cutscene::Actor::ActionAnimateFace,name
 20987,Conversation,EC::Cutscene::Actor::ActionAnimateFace,name
 20988,ThirdParty:STL,std::list<Elem36>,name
-20989,ThirdParty:STL,std::_Tree<Elem88>,name
-20990,ThirdParty:STL,std::_Tree<Elem88>,owner
+20989,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>",name
+20990,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>",owner
 20991,ThirdParty:STL,std,name
 20992,ThirdParty:STL,std,name
 20993,Conversation,CutscenePlayer,name
@@ -20912,9 +20912,9 @@ id,subsystem,class,how
 21001,ThirdParty:STL,,string
 21002,ThirdParty:STL,,between
 21003,ThirdParty:STL,,owner
-21004,ThirdParty:STL,std::vector<Elem76>,name
+21004,ThirdParty:STL,std::vector<CutscenePlayer::BindRecord>,name
 21005,ThirdParty:STL,,between
-21006,ThirdParty:STL,std::vector<Elem76>,name
+21006,ThirdParty:STL,std::vector<CutscenePlayer::BindRecord>,name
 21007,Conversation,EC::Cutscene::Actor,name
 21008,Conversation,EC::Cutscene::Actor,name
 21009,Conversation,EC::Cutscene::Actor::ActionJumpToCamera,name
@@ -20922,14 +20922,14 @@ id,subsystem,class,how
 21011,Conversation,,range
 21012,ThirdParty:STL,,string
 21013,ThirdParty:STL,,string
-21014,ThirdParty:STL,std::vector<Elem76>,name
+21014,ThirdParty:STL,std::vector<CutscenePlayer::BindRecord>,name
 21015,ThirdParty:STL,std,name
 21016,Conversation,CutscenePlayer,name
 21017,Conversation,EC::Cutscene::Actor::ActionJumpToCamera,name
 21018,Conversation,EC::Cutscene::ActorMember168,name
 21019,Conversation,EC::Cutscene::ActorMember168,name
-21020,ThirdParty:STL,"std::map<unsigned int,Elem16>",name
-21021,ThirdParty:STL,"std::map<unsigned int,Elem16>",name
+21020,ThirdParty:STL,"std::map<unsigned int,CutscenePlayer::ActorDependencyList>",name
+21021,ThirdParty:STL,"std::map<unsigned int,CutscenePlayer::ActorDependencyList>",name
 21022,ThirdParty:STL,,string
 21023,ThirdParty:STL,,string
 21024,ThirdParty:STL,,string
@@ -20937,20 +20937,20 @@ id,subsystem,class,how
 21026,ThirdParty:STL,,owner
 21027,Conversation,EC::Cutscene::Actor,name
 21028,Conversation,EC::Cutscene::Actor,name
-21029,ThirdParty:STL,std::_Tree<Elem88>,name
-21030,ThirdParty:STL,"std::map<std::wstring,Elem60>",name
+21029,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>",name
+21030,ThirdParty:STL,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>",name
 21031,ThirdParty:STL,,string
-21032,ThirdParty:STL,std::vector<Elem76>,name
-21033,ThirdParty:STL,std::vector<Elem76>,name
+21032,ThirdParty:STL,std::vector<CutscenePlayer::BindRecord>,name
+21033,ThirdParty:STL,std::vector<CutscenePlayer::BindRecord>,name
 21034,Conversation,CutscenePlayer,name
-21035,ThirdParty:STL,"std::map<std::wstring,Elem60>",name
-21036,ThirdParty:STL,"std::map<std::wstring,Elem60>",name
-21037,ThirdParty:STL,"std::map<unsigned int,Elem16>",name
-21038,ThirdParty:STL,std::vector<Elem76>,name
+21035,ThirdParty:STL,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>",name
+21036,ThirdParty:STL,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>",name
+21037,ThirdParty:STL,"std::map<unsigned int,CutscenePlayer::ActorDependencyList>",name
+21038,ThirdParty:STL,std::vector<CutscenePlayer::BindRecord>,name
 21039,Conversation,CutscenePlayer,name
 21040,Conversation,CutscenePlayer,name
 21041,Conversation,EC::Cutscene::Actor,name
-21042,ThirdParty:STL,std::vector<Elem76>,name
+21042,ThirdParty:STL,std::vector<CutscenePlayer::BindRecord>,name
 21043,Conversation,CutscenePlayer,name
 21044,Conversation,CutscenePlayer,name
 21045,Conversation,CutscenePlayer,name
@@ -22312,8 +22312,8 @@ id,subsystem,class,how
 22409,ThirdParty:STL,std::vector<NxVec3>,name
 22410,ThirdParty:STL,std,name
 22411,ThirdParty:STL,std::vector<?>,name
-22412,ThirdParty:STL,std::vector<Elem16A>,name
-22413,ThirdParty:STL,std::vector<Elem16A>,name
+22412,ThirdParty:STL,std::vector<NxGroupsMask>,name
+22413,ThirdParty:STL,std::vector<NxGroupsMask>,name
 22414,ThirdParty:STL,std::vector<Elem12A>,name
 22415,ThirdParty:STL,std::vector<NxMat34>,name
 22416,ThirdParty:STL,std::vector<NxQuat>,name
@@ -22874,8 +22874,8 @@ id,subsystem,class,how
 22973,ThirdParty:STL,,string
 22974,ThirdParty:STL,,owner
 22975,ThirdParty:STL,,between
-22976,ThirdParty:STL,std::vector<Elem24>,name
-22977,ThirdParty:STL,std::vector<Elem24>,name
+22976,ThirdParty:STL,std::vector<TexManager::TexturePool::Spec>,name
+22977,ThirdParty:STL,std::vector<TexManager::TexturePool::Spec>,name
 22978,ThirdParty:STL,,between
 22979,ThirdParty:STL,,string
 22980,Rendering,,callers
@@ -38928,8 +38928,8 @@ id,subsystem,class,how
 39165,ThirdParty:STL,std::vector<Elem8>,owner
 39166,Core,ECBase::ECDynArray<GraphicsStructures::ExportValue>,owner
 39167,Core,ECBase::ECDynArray<GraphicsStructures::ExportValue>,owner
-39168,Core,ECBase::ECDynArray<Elem12A>,owner
-39169,Core,ECBase::ECDynArray<Elem12A>,owner
+39168,Core,ECBase::ECDynArray<GraphicsStructures::Object::ExportCopy>,owner
+39169,Core,ECBase::ECDynArray<GraphicsStructures::Object::ExportCopy>,owner
 39170,Core,ECBase::ECDynArray<Animation::BlendNode>,owner
 39171,Core,ECBase::ECDynArray<Animation::BlendNode>,owner
 39172,Core,ECBase::ECDynArray<Elem12A>,owner
@@ -42591,8 +42591,8 @@ id,subsystem,class,how
 42828,Compiler:EHFunclets,,range
 42829,Compiler:EHFunclets,,range
 42830,Compiler:EHFunclets,,range
-42831,ThirdParty:STL,std::vector<AddInsManager::Elem2C>,owner
-42832,ThirdParty:STL,std::vector<AddInsManager::Elem2C>,owner
+42831,ThirdParty:STL,std::vector<AddInsManager::AddInEntry>,owner
+42832,ThirdParty:STL,std::vector<AddInsManager::AddInEntry>,owner
 42833,ThirdParty:STL,std,owner
 42834,ThirdParty:STL,std,owner
 42835,ThirdParty:STL,std,owner
@@ -51046,10 +51046,10 @@ id,subsystem,class,how
 51283,GUI,AbilityGUIInfo,owner
 51284,GUI,AbilityGUIInfo,owner
 51285,GUI,AbilityGUIInfo,owner
-51286,Game,LocalisedString,owner
-51287,Game,LocalisedString,owner
-51288,Game,LocalisedString,owner
-51289,ThirdParty:STL,std::list<PlotElem52>,owner
+51286,Compiler:EHFunclets,,range
+51287,Compiler:EHFunclets,,range
+51288,Compiler:EHFunclets,,range
+51289,ThirdParty:STL,"std::list<std::pair<std::wstring const,PlotManager::PlotEntry>>",owner
 51290,Game,Plots,owner
 51291,Game,Plots,owner
 51292,Game,Plots,owner
@@ -52983,8 +52983,8 @@ id,subsystem,class,how
 53220,Conversation,EC::Cutscene::Actor::ActionSpeakLine,owner
 53221,Conversation,EC::Cutscene::Actor::ActionSpeakLine,owner
 53222,Conversation,EC::Cutscene::Actor::ActionSpeakLine,owner
-53223,ThirdParty:STL,std::_Tree<Elem52>,owner
-53224,ThirdParty:STL,std::_Tree<Elem52>,owner
+53223,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>>",owner
+53224,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>>",owner
 53225,ThirdParty:STL,std,owner
 53226,ThirdParty:STL,std,owner
 53227,ThirdParty:STL,std,owner
@@ -53017,11 +53017,11 @@ id,subsystem,class,how
 53254,ThirdParty:STL,std::vector<EC.Cutscene.Actor.ClipRecord>,owner
 53255,ThirdParty:STL,std::vector<EC.Cutscene.Actor.ClipRecord>,owner
 53256,ThirdParty:STL,std::list<Elem>,owner
-53257,ThirdParty:STL,"std::map<std::wstring,Elem24>",owner
-53258,ThirdParty:STL,"std::map<std::wstring,Elem24>",owner
-53259,ThirdParty:STL,Elem60,owner
-53260,ThirdParty:STL,Elem60,owner
-53261,ThirdParty:STL,Elem60,owner
+53257,ThirdParty:STL,"std::map<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>",owner
+53258,ThirdParty:STL,"std::map<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>",owner
+53259,Conversation,EC::Cutscene::Actor::FollowerAniHackEntry,owner
+53260,Conversation,EC::Cutscene::Actor::FollowerAniHackEntry,owner
+53261,Conversation,EC::Cutscene::Actor::FollowerAniHackEntry,owner
 53262,ThirdParty:STL,std::vector<EC.Cutscene.Actor.ClipRecord>,owner
 53263,ThirdParty:STL,std::vector<EC.Cutscene.Actor.ClipRecord>,owner
 53264,ThirdParty:STL,std,owner
@@ -53063,10 +53063,10 @@ id,subsystem,class,how
 53300,Conversation,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterSet,owner
 53301,Conversation,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterSet,owner
 53302,Conversation,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterSet,owner
-53303,ThirdParty:STL,std::_Tree<Elem88>,owner
-53304,ThirdParty:STL,std::_Tree<Elem88>,owner
-53305,ThirdParty:STL,std::_Tree<Elem88>,owner
-53306,ThirdParty:STL,std::_Tree<Elem88>,owner
+53303,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>",owner
+53304,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>",owner
+53305,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>",owner
+53306,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>",owner
 53307,ThirdParty:STL,std,owner
 53308,ThirdParty:STL,std,owner
 53309,Conversation,EC::Cutscene::Actor::Action,owner
@@ -53152,8 +53152,8 @@ id,subsystem,class,how
 53389,Conversation,EC::Cutscene::Actor::ActionAnimateFace,owner
 53390,Conversation,EC::Cutscene::Actor::ActionAnimateFace,owner
 53391,Conversation,EC::Cutscene::Actor::ActionAnimateFace,owner
-53392,ThirdParty:STL,std::_Tree<Elem88>,owner
-53393,ThirdParty:STL,std::_Tree<Elem88>,owner
+53392,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>",owner
+53393,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>",owner
 53394,Conversation,CutscenePlayer,owner
 53395,Conversation,CutscenePlayer,owner
 53396,Conversation,EC::Cutscene::Actor,owner
@@ -53199,10 +53199,10 @@ id,subsystem,class,how
 53436,Conversation,EC::Cutscene::ActorMember168,owner
 53437,Conversation,EC::Cutscene::ActorMember168,owner
 53438,Conversation,EC::Cutscene::ActorMember168,owner
-53439,ThirdParty:STL,"std::map<unsigned int,Elem16>",owner
-53440,ThirdParty:STL,"std::map<unsigned int,Elem16>",owner
-53441,ThirdParty:STL,"std::map<unsigned int,Elem16>",owner
-53442,ThirdParty:STL,"std::map<unsigned int,Elem16>",owner
+53439,ThirdParty:STL,"std::map<unsigned int,CutscenePlayer::ActorDependencyList>",owner
+53440,ThirdParty:STL,"std::map<unsigned int,CutscenePlayer::ActorDependencyList>",owner
+53441,ThirdParty:STL,"std::map<unsigned int,CutscenePlayer::ActorDependencyList>",owner
+53442,ThirdParty:STL,"std::map<unsigned int,CutscenePlayer::ActorDependencyList>",owner
 53443,ThirdParty:STL,,owner
 53444,ThirdParty:STL,,owner
 53445,Conversation,EC::Cutscene::Actor,owner
@@ -53240,22 +53240,22 @@ id,subsystem,class,how
 53477,Conversation,EC::Cutscene::Actor,owner
 53478,Conversation,EC::Cutscene::Actor,owner
 53479,Conversation,EC::Cutscene::Actor,owner
-53480,ThirdParty:STL,"std::map<std::wstring,Elem60>",owner
-53481,ThirdParty:STL,"std::map<std::wstring,Elem60>",owner
-53482,ThirdParty:STL,"std::map<std::wstring,Elem60>",owner
-53483,ThirdParty:STL,std::vector<Elem76>,owner
-53484,ThirdParty:STL,std::vector<Elem76>,owner
-53485,ThirdParty:STL,"std::map<std::wstring,Elem60>",owner
-53486,ThirdParty:STL,"std::map<std::wstring,Elem60>",owner
-53487,ThirdParty:STL,"std::map<std::wstring,Elem60>",owner
-53488,ThirdParty:STL,"std::map<std::wstring,Elem60>",owner
-53489,ThirdParty:STL,"std::map<std::wstring,Elem60>",owner
-53490,ThirdParty:STL,"std::map<std::wstring,Elem60>",owner
-53491,ThirdParty:STL,"std::map<std::wstring,Elem60>",owner
-53492,ThirdParty:STL,"std::map<std::wstring,Elem60>",owner
-53493,ThirdParty:STL,"std::map<unsigned int,Elem16>",owner
-53494,ThirdParty:STL,"std::map<unsigned int,Elem16>",owner
-53495,ThirdParty:STL,"std::map<unsigned int,Elem16>",owner
+53480,ThirdParty:STL,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>",owner
+53481,ThirdParty:STL,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>",owner
+53482,ThirdParty:STL,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>",owner
+53483,ThirdParty:STL,std::vector<CutscenePlayer::BindRecord>,owner
+53484,ThirdParty:STL,std::vector<CutscenePlayer::BindRecord>,owner
+53485,ThirdParty:STL,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>",owner
+53486,ThirdParty:STL,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>",owner
+53487,ThirdParty:STL,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>",owner
+53488,ThirdParty:STL,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>",owner
+53489,ThirdParty:STL,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>",owner
+53490,ThirdParty:STL,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>",owner
+53491,ThirdParty:STL,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>",owner
+53492,ThirdParty:STL,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>",owner
+53493,ThirdParty:STL,"std::map<unsigned int,CutscenePlayer::ActorDependencyList>",owner
+53494,ThirdParty:STL,"std::map<unsigned int,CutscenePlayer::ActorDependencyList>",owner
+53495,ThirdParty:STL,"std::map<unsigned int,CutscenePlayer::ActorDependencyList>",owner
 53496,Conversation,CutscenePlayer,owner
 53497,Conversation,CutscenePlayer,owner
 53498,Conversation,CutscenePlayer,owner
@@ -53297,8 +53297,8 @@ id,subsystem,class,how
 53534,Conversation,EC::Cutscene::Actor,owner
 53535,Conversation,EC::Cutscene::Actor,owner
 53536,Conversation,EC::Cutscene::Actor,owner
-53537,ThirdParty:STL,std::vector<Elem76>,owner
-53538,ThirdParty:STL,std::vector<Elem76>,owner
+53537,ThirdParty:STL,std::vector<CutscenePlayer::BindRecord>,owner
+53538,ThirdParty:STL,std::vector<CutscenePlayer::BindRecord>,owner
 53539,Conversation,CutscenePlayer,owner
 53540,Conversation,CutscenePlayer,owner
 53541,Conversation,CutscenePlayer,owner

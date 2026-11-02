@@ -3135,7 +3135,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 3134,function,ECBase::ECDynArray<OnlineRec84>::GetCount,0x00474f30,0x0084fdd0,0x00474f30
 3135,function,ECBase::ECDynArray<Elem148>::GetCount,0x00474f50,0x0084fdf0,0x00474f50
 3136,function,ECBase::ECDynArray<Achievement>::GetCount,0x00474f80,0x00853db0,0x00474f80
-3137,function,ECBase::ECDynArray<Elem676>::GetCount,0x00474fb0,0x004bf380,0x00474fb0
+3137,function,ECBase::ECDynArray<AddInRecord>::GetCount,0x00474fb0,0x004bf380,0x00474fb0
 3138,function,Messages::MessageFactoryEntry::~MessageFactoryEntry,0x00474fd0,0x004bf3a0,0x00474fd0
 3139,function,ReConnectMessage::Create,0x00475040,0x0084fe20,0x00475040
 3140,function,Online::HttpRecord::~HttpRecord,0x004750a0,0x0084fe80,0x004750a0
@@ -3230,7 +3230,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 3229,function,"std::list<std::pair<std::wstring,std::wstring>>::_Buynode",0x00479870,0x00769170,0x00479870
 3230,function,Catch_All@004798ec,0x004798ec,0x007691ec,0x004798ec
 3231,function,ECBase::ECDynArray<OnlineRec24>::GetCount,0x00479910,0x00744350,0x00479910
-3232,function,ECBase::ECDynArray<Elem464>::GetCount,0x00479930,0x00552d80,0x00479930
+3232,function,ECBase::ECDynArray<AddInItem>::GetCount,0x00479930,0x00552d80,0x00479930
 3233,function,Gff4::BlockRef::GetStringById,0x00479960,0x004ec2e0,0x00479960
 3234,function,Gff4::BlockRef::SetStringById,0x004799e0,0x004db5b0,0x004799e0
 3235,function,std::list<std::wstring>::_Buyheadnode,0x00479a50,0x004cae10,0x00479a50
@@ -7977,7 +7977,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7976,function,std::vector<?>::resize,0x0054c880,0x0074d410,0x0054c880
 7977,function,ECBase::ECDynArray<GraphicsStructures::ExportValue>::ECDynArray,0x0054c8a0,0x0074d430,0x0054c8a0
 7978,function,std::vector<?>::resize,0x0054c920,0x0074d4b0,0x0054c920
-7979,function,ECBase::ECDynArray<Elem12A>::ECDynArray,0x0054c960,0x0074d4f0,0x0054c960
+7979,function,ECBase::ECDynArray<GraphicsStructures::Object::ExportCopy>::ECDynArray,0x0054c960,0x0074d4f0,0x0054c960
 7980,function,ECBase::ECDynArray<Animation::BlendNode>::ECDynArray,0x0054c9e0,0x0074d570,0x0054c9e0
 7981,function,std::vector<?>::resize,0x0054ca70,0x004bdd50,0x0054ca70
 7982,function,ECBase::ECDynArray<Animation::ClipContribution>::ECDynArray,0x0054cab0,0x0074d600,0x0054cab0
@@ -10915,13 +10915,13 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10914,function,,0x005f21e0,0x004df780,0x005f21e0
 10915,function,,0x005f23d8,0x004df978,0x005f23d8
 10916,function,,0x005f2483,0x004dfa23,0x005f2483
-10917,function,std::vector<AddInsManager::Elem2C>::resize,0x005f2510,0x004dfb40,0x005f2510
-10918,function,std::vector<AddInsManager::Elem2C>::insert,0x005f2630,0x004dfc60,0x005f2630
+10917,function,std::vector<AddInsManager::AddInEntry>::resize,0x005f2510,0x004dfb40,0x005f2510
+10918,function,std::vector<AddInsManager::AddInEntry>::insert,0x005f2630,0x004dfc60,0x005f2630
 10919,function,AddInXmlEntry::operator=,0x005f26e0,0x004dfd10,0x005f26e0
 10920,function,std::_Copy_opt<AddInXmlEntry*>,0x005f2930,0x004dff60,0x005f2930
 10921,function,std::_Copy_backward_opt<AddInRecord*>,0x005f2970,0x004dffa0,0x005f2970
 10922,function,std::_Copy_backward_opt<AddInXmlEntry*>,0x005f29b0,0x004dffe0,0x005f29b0
-10923,function,std::vector<AddInsManager::Elem2C>::push_back,0x005f29f0,0x004e0020,0x005f29f0
+10923,function,std::vector<AddInsManager::AddInEntry>::push_back,0x005f29f0,0x004e0020,0x005f29f0
 10924,function,AddInXmlEntry::AddInXmlEntry,0x005f2a90,0x004e00c0,0x005f2a90
 10925,function,std::_Copy<AddInXmlEntry*>,0x005f2d80,0x004e03b0,0x005f2d80
 10926,function,std::_Copy_backward<AddInRecord*>,0x005f2de0,0x004e0410,0x005f2de0
@@ -10934,7 +10934,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10933,function,AddInsManager::ParsePrereqItem,0x005f3690,0x004e0cc0,0x005f3690
 10934,function,AddInsManager::ParsePrereqItemWithStrref,0x005f38c0,0x004e0ef0,0x005f38c0
 10935,function,AddInXmlEntry::ToAddInRecord,0x005f3ab0,0x004e10e0,0x005f3ab0
-10936,function,std::vector<AddInsManager::Elem2C>::vector,0x005f40b0,0x004e16e0,0x005f40b0
+10936,function,std::vector<AddInsManager::AddInEntry>::vector,0x005f40b0,0x004e16e0,0x005f40b0
 10937,function,std::fill<AddInRecord*>,0x005f4140,0x004e1770,0x005f4140
 10938,function,std::fill<AddInXmlEntry*>,0x005f4170,0x004e17a0,0x005f4170
 10939,function,std::_Uninit_copy<AddInXmlEntry*>,0x005f41a0,0x004e17d0,0x005f41a0
@@ -11038,7 +11038,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 11037,function,Gff4::Block::ReadVector3Checked,0x005fea20,0x004ec360,0x005fea20
 11038,function,"std::fill<CCModule::TagIndexEntry*,CCModule::TagIndexEntry>",0x005fea60,0x004ec3a0,0x005fea60
 11039,function,"std::_Uninit_fill_n<CCModule::TagIndexEntry*,unsigned int,CCModule::TagIndexEntry>",0x005fea90,0x004ec5b0,0x005fea90
-11040,function,Stub::VectorSize_0xB8_Elem72,0x005fead0,0x004ec690,0x005fead0
+11040,function,ECBase::ECDynArray<CSAreaList::Entry>::GetCount,0x005fead0,0x004ec690,0x005fead0
 11041,function,CCModule::RunEventScripts,0x005feb00,0x004ec6c0,0x005feb00
 11042,function,CCModule::WriteToSave,0x005fec00,0x004ec7c0,0x005fec00
 11043,function,CCModule::ReadScriptVariablesFromCifs,0x005ff010,0x004ecbd0,0x005ff010
@@ -14815,11 +14815,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14814,function,,0x006b08e0,0x005a2160,0x006b08e0
 14815,function,CCCreature::HandleMessage_ShowAbilityHeaderMessage,0x006b0980,0x005a2200,0x006b0980
 14816,function,"stdext::hash_map<std::wstring,Resources>::~hash_map",0x006b0a40,0x005a22c0,0x006b0a40
-14817,function,std::vector<Elem0xBC>::_Tidy,0x006b0a80,0x005a1b80,0x006b0a80
+14817,function,std::vector<TintBlock>::_Tidy,0x006b0a80,0x005a1b80,0x006b0a80
 14818,function,"std::vector<SmartData::Attribute<short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::operator=",0x006b0a90,0x005a2340,0x006b0a90
 14819,function,"std::vector<SmartData::Attribute<short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::resize",0x006b0be0,0x005a25c0,0x006b0be0
 14820,function,"std::vector<SmartData::Attribute<short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::insert",0x006b0cd0,0x005a26b0,0x006b0cd0
-14821,function,std::vector<Elem0xBC>::resize,0x006b0d60,0x005a2740,0x006b0d60
+14821,function,std::vector<TintBlock>::resize,0x006b0d60,0x005a2740,0x006b0d60
 14822,function,CCCreature::RegisterHandler_ShowAbilityHeaderMessage,0x006b0e90,0x005a2870,0x006b0e90
 14823,function,CCCreatureMember9A4::~CCCreatureMember9A4,0x006b0f10,0x005a28f0,0x006b0f10
 14824,function,"stdext::hash_map<std::wstring,Resources>::hash_map",0x006b0fb0,0x005a2990,0x006b0fb0
@@ -18088,12 +18088,12 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 18087,function,Plots::IsCodexType,0x0075bcb0,0x006a6f10,0x0075bcb0
 18088,function,Plots::IsTutorialType,0x0075bcf0,0x006a6f50,0x0075bcf0
 18089,function,LocalisedString::ReadGFF4,0x0075bd30,0x006a6f90,0x0075bd30
-18090,function,PlotElem52::PlotElem52,0x0075bde0,0x006a7040,0x0075bde0
+18090,function,"std::pair<std::wstring const,PlotManager::PlotEntry>::pair",0x0075bde0,0x006a7040,0x0075bde0
 18091,function,LocalisedString::ReadGFF4,0x0075be70,0x006a70d0,0x0075be70
 18092,function,Plots::RunPlotScript,0x0075bea0,0x006a7100,0x0075bea0
-18093,function,std::list<PlotElem52>::_Buynode,0x0075c010,0x006a7270,0x0075c010
+18093,function,"std::list<std::pair<std::wstring const,PlotManager::PlotEntry>>::_Buyheadnode",0x0075c010,0x006a7270,0x0075c010
 18094,function,Gff4::StructReader::ReadLocalisedString,0x0075c030,0x006a7290,0x0075c030
-18095,function,std::list<PlotElem52>::_Buynode,0x0075c0c0,0x006a7320,0x0075c0c0
+18095,function,"std::list<std::pair<std::wstring const,PlotManager::PlotEntry>>::_Buynode",0x0075c0c0,0x006a7320,0x0075c0c0
 18096,function,Catch_All@0075c13c,0x0075c13c,0x006a739c,0x0075c13c
 18097,function,Gff4::StructReader::GetLocalisedString,0x0075c160,0x006a73c0,0x0075c160
 18098,function,Plots::GetPlotStruct,0x0075c1b0,0x006a7410,0x0075c1b0
@@ -20063,16 +20063,16 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20062,function,GUI::GUIPaperdoll::HandleMessage_RotatePaperdollRightMessage,0x007b23a0,0x006902c0,0x007b23a0
 20063,function,GUI::GUIPaperdoll::HandleMessage_RotatePaperdollCameraMessage,0x007b2430,0x00690350,0x007b2430
 20064,function,PortraitSettings::CopyFrom,0x007b2730,0x00690650,0x007b2730
-20065,function,ECBase::ECDynArray<Elem0xC>::At,0x007b2780,0x006906a0,0x007b2780
+20065,function,ECBase::ECDynArray<GUI::HeadPreset::ModelWeight>::At,0x007b2780,0x006906a0,0x007b2780
 20066,function,"SmartData::Attribute<unsigned char,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",0x007b27c0,0x006906e0,0x007b27c0
 20067,function,"ECBase::ECDynArray<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::At",0x007b27f0,0x00690710,0x007b27f0
 20068,function,ECBase::ECDynArray<GUI::GUIPaperdoll::CharData*>::At,0x007b2830,0x00690750,0x007b2830
-20069,function,"std::fill<Elem0x40 *,Elem0x40>",0x007b2860,0x00690780,0x007b2860
-20070,function,"std::fill<Elem0x4C *,Elem0x4C>",0x007b28a0,0x006907c0,0x007b28a0
-20071,function,"std::fill<Elem0x54 *,Elem0x54>",0x007b28f0,0x00690810,0x007b28f0
+20069,function,"std::fill<GUI::HeadPreset::MaterialValue *,GUI::HeadPreset::MaterialValue>",0x007b2860,0x00690780,0x007b2860
+20070,function,"std::fill<GUI::HeadPreset::MaterialVector *,GUI::HeadPreset::MaterialVector>",0x007b28a0,0x006907c0,0x007b28a0
+20071,function,"std::fill<GUI::HeadPreset::Texture *,GUI::HeadPreset::Texture>",0x007b28f0,0x00690810,0x007b28f0
 20072,function,"std::find<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification> *,SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",0x007b2930,0x00690850,0x007b2930
-20073,function,"std::_Copy_backward<Elem0x4C *,Elem0x4C *>",0x007b2970,0x00690890,0x007b2970
-20074,function,"std::_Copy_backward<Elem0x54 *,Elem0x54 *>",0x007b29d0,0x006908f0,0x007b29d0
+20073,function,"std::_Copy_backward<GUI::HeadPreset::MaterialVector *,GUI::HeadPreset::MaterialVector *>",0x007b2970,0x00690890,0x007b2970
+20074,function,"std::_Copy_backward<GUI::HeadPreset::Texture *,GUI::HeadPreset::Texture *>",0x007b29d0,0x006908f0,0x007b29d0
 20075,function,GUI::GUIPaperdoll::CommandCreateMorph::~CommandCreateMorph,0x007b2a30,0x00690950,0x007b2a30
 20076,function,GUI::GUIPaperdoll::CommandCreateMorph::`scalar deleting destructor',0x007b2ad0,0x006909f0,0x007b2ad0
 20077,function,GUI::GUIPaperdoll::UpdateCharacterPortrait,0x007b2af0,0x00690a10,0x007b2af0
@@ -20081,36 +20081,36 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20080,function,GUI::GUIPaperdoll::RegisterHandler_RotatePaperdollLeftMessage,0x007b3310,0x00691230,0x007b3310
 20081,function,GUI::GUIPaperdoll::RegisterHandler_RotatePaperdollRightMessage,0x007b3390,0x006912b0,0x007b3390
 20082,function,GUI::GUIPaperdoll::RegisterHandler_RotatePaperdollCameraMessage,0x007b3410,0x00691330,0x007b3410
-20083,function,"std::copy<Elem0x40 *,Elem0x40 *>",0x007b3490,0x00691400,0x007b3490
-20084,function,"std::copy<Elem0x4C *,Elem0x4C *>",0x007b34e0,0x00691450,0x007b34e0
-20085,function,"std::copy<Elem0x54 *,Elem0x54 *>",0x007b3540,0x006914b0,0x007b3540
+20083,function,"std::copy<GUI::HeadPreset::MaterialValue *,GUI::HeadPreset::MaterialValue *>",0x007b3490,0x00691400,0x007b3490
+20084,function,"std::copy<GUI::HeadPreset::MaterialVector *,GUI::HeadPreset::MaterialVector *>",0x007b34e0,0x00691450,0x007b34e0
+20085,function,"std::copy<GUI::HeadPreset::Texture *,GUI::HeadPreset::Texture *>",0x007b3540,0x006914b0,0x007b3540
 20086,function,"std::fill<Elem0x20 *,Elem0x20>",0x007b35a0,0x00853f50,0x007b35a0
-20087,function,"std::_Uninit_copy<Elem0x20 *,Elem0x20 *>",0x007b35d0,0x00691510,0x007b35d0
+20087,function,"std::_Uninit_copy<std::pair<std::wstring,int> *,std::pair<std::wstring,int> *>",0x007b35d0,0x00691510,0x007b35d0
 20088,function,Catch_All@007b363f,0x007b363f,0x0069157f,0x007b363f
 20089,function,"std::_Uninit_copy<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification> *,SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification> *>",0x007b3680,0x006915c0,0x007b3680
-20090,function,"std::_Uninit_copy<Elem0x40 *,Elem0x40 *>",0x007b36c0,0x00691600,0x007b36c0
+20090,function,"std::_Uninit_copy<GUI::HeadPreset::MaterialValue *,GUI::HeadPreset::MaterialValue *>",0x007b36c0,0x00691600,0x007b36c0
 20091,function,Catch_All@007b3729,0x007b3729,0x00691669,0x007b3729
-20092,function,"std::_Uninit_copy<Elem0x4C *,Elem0x4C *>",0x007b3760,0x006916a0,0x007b3760
+20092,function,"std::_Uninit_copy<GUI::HeadPreset::MaterialVector *,GUI::HeadPreset::MaterialVector *>",0x007b3760,0x006916a0,0x007b3760
 20093,function,Catch_All@007b37c9,0x007b37c9,0x00691709,0x007b37c9
-20094,function,"std::_Uninit_copy<Elem0x54 *,Elem0x54 *>",0x007b3800,0x00691740,0x007b3800
+20094,function,"std::_Uninit_copy<GUI::HeadPreset::Texture *,GUI::HeadPreset::Texture *>",0x007b3800,0x00691740,0x007b3800
 20095,function,Catch_All@007b3869,0x007b3869,0x006917a9,0x007b3869
 20096,function,GUI::GUIPaperdoll::UpdateCamera,0x007b38a0,0x006917e0,0x007b38a0
 20097,function,GUI::GUIPaperdoll::LoadHeadFromCharFile,0x007b4210,0x00692150,0x007b4210
 20098,function,std::_Tree<unsigned int>::find,0x007b4470,0x007dfdd0,0x007b4470
-20099,function,"std::_Copy_backward<Elem0x40 *,Elem0x40 *>",0x007b44e0,0x006923b0,0x007b44e0
-20100,function,"std::copy_backward<Elem0x4C *,Elem0x4C *>",0x007b4530,0x00692400,0x007b4530
-20101,function,"std::copy_backward<Elem0x54 *,Elem0x54 *>",0x007b4560,0x00692430,0x007b4560
-20102,function,std::_Destroy_range<Elem0x40 *>,0x007b4590,0x00692460,0x007b4590
-20103,function,std::_Destroy_range<Elem0x4C *>,0x007b4600,0x006924d0,0x007b4600
-20104,function,std::_Destroy_range<Elem0x54 *>,0x007b4670,0x00692540,0x007b4670
-20105,function,"std::_Uninit_fill_n<Elem0x40 *,unsigned int,Elem0x40>",0x007b46f0,0x006925c0,0x007b46f0
+20099,function,"std::_Copy_backward<GUI::HeadPreset::MaterialValue *,GUI::HeadPreset::MaterialValue *>",0x007b44e0,0x006923b0,0x007b44e0
+20100,function,"std::copy_backward<GUI::HeadPreset::MaterialVector *,GUI::HeadPreset::MaterialVector *>",0x007b4530,0x00692400,0x007b4530
+20101,function,"std::copy_backward<GUI::HeadPreset::Texture *,GUI::HeadPreset::Texture *>",0x007b4560,0x00692430,0x007b4560
+20102,function,std::_Destroy_range<GUI::HeadPreset::MaterialValue *>,0x007b4590,0x00692460,0x007b4590
+20103,function,std::_Destroy_range<GUI::HeadPreset::MaterialVector *>,0x007b4600,0x006924d0,0x007b4600
+20104,function,std::_Destroy_range<GUI::HeadPreset::Texture *>,0x007b4670,0x00692540,0x007b4670
+20105,function,"std::_Uninit_fill_n<GUI::HeadPreset::MaterialValue *,unsigned int,GUI::HeadPreset::MaterialValue>",0x007b46f0,0x006925c0,0x007b46f0
 20106,function,Catch_All@007b475b,0x007b475b,0x0069262b,0x007b475b
-20107,function,"std::_Uninit_fill_n<Elem0x4C *,unsigned int,Elem0x4C>",0x007b4790,0x00692660,0x007b4790
+20107,function,"std::_Uninit_fill_n<GUI::HeadPreset::MaterialVector *,unsigned int,GUI::HeadPreset::MaterialVector>",0x007b4790,0x00692660,0x007b4790
 20108,function,Catch_All@007b47fb,0x007b47fb,0x006926cb,0x007b47fb
-20109,function,"std::_Uninit_fill_n<Elem0x54 *,unsigned int,Elem0x54>",0x007b4830,0x00692700,0x007b4830
+20109,function,"std::_Uninit_fill_n<GUI::HeadPreset::Texture *,unsigned int,GUI::HeadPreset::Texture>",0x007b4830,0x00692700,0x007b4830
 20110,function,Catch_All@007b489b,0x007b489b,0x0069276b,0x007b489b
 20111,function,"std::_Uninit_fill_n<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification> *,unsigned int,SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",0x007b48d0,0x006927a0,0x007b48d0
-20112,function,"std::_Uninit_fill_n<Elem0x20 *,unsigned int,Elem0x20>",0x007b4900,0x006927d0,0x007b4900
+20112,function,"std::_Uninit_fill_n<std::pair<std::wstring,int> *,unsigned int,std::pair<std::wstring,int>>",0x007b4900,0x006927d0,0x007b4900
 20113,function,Catch_All@007b4974,0x007b4974,0x00692844,0x007b4974
 20114,function,GUI::GUIPaperdoll::HandleMessage_SetCameraPresetMessage,0x007b49b0,0x00692880,0x007b49b0
 20115,function,"Map<unsigned int,RefHandle>::GetOrDefault",0x007b49d0,0x0083af70,0x007b49d0
@@ -20649,26 +20649,26 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20648,function,EC::Cutscene::Actor::ActionJumpToPlace::OnBind,0x007cd3c0,0x006b4790,0x007cd3c0
 20649,function,EC::Cutscene::Actor::ActionSetFog::Reset,0x007cd3f0,0x006b47c0,0x007cd3f0
 20650,function,FacingDirection::SetFromRotation,0x007cd400,0x006b47d0,0x007cd400
-20651,function,std::_Tree<Elem88>::_Rrotate,0x007cd460,0x006b4830,0x007cd460
-20652,function,std::_Tree<Elem52>::_Min,0x007cd4c0,0x006b4890,0x007cd4c0
-20653,function,std::_Tree<Elem52>::_Rrotate,0x007cd4e0,0x006b48b0,0x007cd4e0
-20654,function,std::_Tree<Elem88>::_Max,0x007cd540,0x006b4910,0x007cd540
-20655,function,std::_Tree<Elem88>::_Min,0x007cd560,0x006b4930,0x007cd560
-20656,function,std::_Tree<Elem88>::const_iterator::operator--,0x007cd580,0x006b49e0,0x007cd580
-20657,function,std::_Tree<Elem88>::const_iterator::operator++,0x007cd610,0x006b4a70,0x007cd610
-20658,function,std::_Tree<Elem52>::_Max,0x007cd680,0x006b4ae0,0x007cd680
-20659,function,std::_Tree<Elem52>::const_iterator::operator--,0x007cd6a0,0x006b4b00,0x007cd6a0
+20651,function,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>::_Rrotate",0x007cd460,0x006b4830,0x007cd460
+20652,function,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>>::_Min",0x007cd4c0,0x006b4890,0x007cd4c0
+20653,function,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>>::_Rrotate",0x007cd4e0,0x006b48b0,0x007cd4e0
+20654,function,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>::_Max",0x007cd540,0x006b4910,0x007cd540
+20655,function,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>::_Min",0x007cd560,0x006b4930,0x007cd560
+20656,function,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>::const_iterator::operator--",0x007cd580,0x006b49e0,0x007cd580
+20657,function,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>::const_iterator::operator++",0x007cd610,0x006b4a70,0x007cd610
+20658,function,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>>::_Max",0x007cd680,0x006b4ae0,0x007cd680
+20659,function,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>>::const_iterator::operator--",0x007cd6a0,0x006b4b00,0x007cd6a0
 20660,function,std::vector<Elem76>::size,0x007cd730,0x0068f6d0,0x007cd730
 20661,function,WStringArray::WStringArray,0x007cd750,0x006b4bb0,0x007cd750
-20662,function,Elem68::Elem68,0x007cd7f0,0x006b4c50,0x007cd7f0
+20662,function,EC::Cutscene::Actor::ClipRecord::ClipRecord,0x007cd7f0,0x006b4c50,0x007cd7f0
 20663,function,GetDoubleAtOffset,0x007cd860,0x004b2a50,0x007cd860
 20664,function,std::allocator<Elem76>::allocate,0x007cd870,0x006ac170,0x007cd870
 20665,function,std::allocator<Elem24>::allocate,0x007cd8d0,0x0048d890,0x007cd8d0
-20666,function,"std::find<Elem68*,Elem68>",0x007cd930,0x006b4d00,0x007cd930
-20667,function,"std::_Copy_opt<Elem68*,Elem68*>",0x007cd9a0,0x006b4d70,0x007cd9a0
-20668,function,"std::_Copy_opt<ExtendedGad*,ExtendedGad*>",0x007cd9f0,0x006b4dc0,0x007cd9f0
-20669,function,"std::_Copy_backward_opt<Elem68*,Elem68*>",0x007cda70,0x006b4e90,0x007cda70
-20670,function,"std::_Copy_backward_opt<ExtendedGad*,ExtendedGad*>",0x007cdac0,0x006b4ee0,0x007cdac0
+20666,function,"std::find<EC::Cutscene::Actor::ClipRecord*,EC::Cutscene::Actor::ClipRecord>",0x007cd930,0x006b4d00,0x007cd930
+20667,function,"std::_Copy_opt<EC::Cutscene::Actor::ClipRecord*,EC::Cutscene::Actor::ClipRecord*>",0x007cd9a0,0x006b4d70,0x007cd9a0
+20668,function,"std::_Copy_opt<EC::Cutscene::Actor::BlendGadRecord*,EC::Cutscene::Actor::BlendGadRecord*>",0x007cd9f0,0x006b4dc0,0x007cd9f0
+20669,function,"std::_Copy_backward_opt<EC::Cutscene::Actor::ClipRecord*,EC::Cutscene::Actor::ClipRecord*>",0x007cda70,0x006b4e90,0x007cda70
+20670,function,"std::_Copy_backward_opt<EC::Cutscene::Actor::BlendGadRecord*,EC::Cutscene::Actor::BlendGadRecord*>",0x007cdac0,0x006b4ee0,0x007cdac0
 20671,function,"std::_Push_heap<float*,int,float>",0x007cdb40,0x006b4f60,0x007cdb40
 20672,function,std::_Rotate<float*>,0x007cdba0,0x006b4fc0,0x007cdba0
 20673,function,CutscenePlayer::SetStage,0x007cdc40,0x006b5060,0x007cdc40
@@ -20699,10 +20699,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20698,function,EC::Cutscene::Actor::ActionAnimateFace::SetPaused,0x007ce990,0x006b5db0,0x007ce990
 20699,function,EC::Cutscene::Actor::ActionAnimateFace::Update,0x007ce9a0,0x006b5dc0,0x007ce9a0
 20700,function,std::_Vector_const_iterator<Elem>::operator*,0x007ceae0,0x007dfa30,0x007ceae0
-20701,function,std::_Tree<Elem52>::const_iterator::operator++,0x007ceb10,0x006b5f00,0x007ceb10
-20702,function,std::_Tree<Elem88>::_Lrotate,0x007ceb80,0x006b5f70,0x007ceb80
-20703,function,std::_Tree<Elem52>::_Lrotate,0x007cebd0,0x006b5fc0,0x007cebd0
-20704,function,std::_Tree<Elem52>::_Node::_Node,0x007cec20,0x006b6010,0x007cec20
+20701,function,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>>::const_iterator::operator++",0x007ceb10,0x006b5f00,0x007ceb10
+20702,function,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>::_Lrotate",0x007ceb80,0x006b5f70,0x007ceb80
+20703,function,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>>::_Lrotate",0x007cebd0,0x006b5fc0,0x007cebd0
+20704,function,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>>::_Node::_Node",0x007cec20,0x006b6010,0x007cec20
 20705,function,Gff4::StructReader::ReadDouble,0x007cec90,0x004b2b20,0x007cec90
 20706,function,WStringArray::Clear,0x007cece0,0x006b6080,0x007cece0
 20707,function,WStringArray::Resize,0x007ced20,0x006b60c0,0x007ced20
@@ -20712,10 +20712,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20711,function,WStringArray::Clear,0x007cefb0,0x006b6320,0x007cefb0
 20712,function,std::_Copy<EC.Cutscene.Actor.ClipRecord*>,0x007cefc0,0x006b6330,0x007cefc0
 20713,function,"std::_Fill<EC.Cutscene.Actor.ClipRecord*,EC.Cutscene.Actor.ClipRecord>",0x007cf020,0x006b6390,0x007cf020
-20714,function,"std::_Fill<ExtendedGad*,ExtendedGad>",0x007cf070,0x006b63e0,0x007cf070
+20714,function,"std::_Fill<EC::Cutscene::Actor::BlendGadRecord*,EC::Cutscene::Actor::BlendGadRecord>",0x007cf070,0x006b63e0,0x007cf070
 20715,function,std::_Copy_backward<Elem24*>,0x007cf0d0,0x0048d970,0x007cf0d0
 20716,function,std::_Copy_backward<EC.Cutscene.Actor.ClipRecord*>,0x007cf130,0x006b64a0,0x007cf130
-20717,function,std::_Copy_backward<ExtendedGad*>,0x007cf190,0x006b6500,0x007cf190
+20717,function,std::_Copy_backward<EC::Cutscene::Actor::BlendGadRecord*>,0x007cf190,0x006b6500,0x007cf190
 20718,function,"std::_Med3<float*,std::less<float>>",0x007cf1f0,0x006b6560,0x007cf1f0
 20719,function,"std::_Adjust_heap<float*,int,float,std::less<float>>",0x007cf260,0x006b65d0,0x007cf260
 20720,function,EC::Cutscene::Curve::GetVertexCount,0x007cf2d0,0x006b6690,0x007cf2d0
@@ -20737,15 +20737,15 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20736,function,EC::Cutscene::Actor::ActionDrawWeapon::AttachSlot,0x007cfdb0,0x006b7170,0x007cfdb0
 20737,function,Clip::EventKey::GetString,0x007cfe70,0x004b5d90,0x007cfe70
 20738,function,std::list<Elem36>::_Buynode,0x007cfeb0,0x006b7230,0x007cfeb0
-20739,function,std::_Tree<Elem88>::_Buynode,0x007cfed0,0x006b7250,0x007cfed0
-20740,function,std::_Tree<Elem52>::_Buynode,0x007cff10,0x006b7290,0x007cff10
-20741,function,std::_Tree<Elem52>::_Buynode,0x007cff50,0x006b72d0,0x007cff50
+20739,function,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>::_Buynode",0x007cfed0,0x006b7250,0x007cfed0
+20740,function,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>>::_Buynode",0x007cff10,0x006b7290,0x007cff10
+20741,function,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>>::_Buynode",0x007cff50,0x006b72d0,0x007cff50
 20742,function,Catch_All@007cffcd,0x007cffcd,0x006b734d,0x007cffcd
-20743,function,std::_Copy<ExtendedGad*>,0x007cfff0,0x006b73b0,0x007cfff0
+20743,function,std::_Copy<EC::Cutscene::Actor::BlendGadRecord*>,0x007cfff0,0x006b73b0,0x007cfff0
 20744,function,std::_Uninit_fill_n<Elem24*>,0x007d0050,0x0048da70,0x007d0050
-20745,function,std::_Uninit_copy<Elem68*>,0x007d00a0,0x006b7410,0x007d00a0
+20745,function,std::_Uninit_copy<EC::Cutscene::Actor::ClipRecord*>,0x007d00a0,0x006b7410,0x007d00a0
 20746,function,Catch_All@007d0109,0x007d0109,0x006b7479,0x007d0109
-20747,function,"std::_Copy_opt<Elem36*,Elem36*>",0x007d0140,0x006b74b0,0x007d0140
+20747,function,"std::_Copy_opt<EC::Cutscene::Actor::BlendGadRecord*,EC::Cutscene::Actor::BlendGadRecord*>",0x007d0140,0x006b74b0,0x007d0140
 20748,function,"std::_Median<float*,std::less<float>>",0x007d01c0,0x006b7530,0x007d01c0
 20749,function,"std::_Make_heap<float*,std::less<float>>",0x007d0270,0x006b75e0,0x007d0270
 20750,function,EC::Cutscene::Curve::GetVertexTime,0x007d02c0,0x006b7630,0x007d02c0
@@ -20776,9 +20776,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20775,function,EC::Cutscene::Actor::ActionAutoAdjustHeight::Update,0x007d1280,0x006b85f0,0x007d1280
 20776,function,"std::copy_backward<Elem24*,Elem24*>",0x007d12c0,0x0048db30,0x007d12c0
 20777,function,"std::copy_backward<EC.Cutscene.Actor.ClipRecord*,EC.Cutscene.Actor.ClipRecord*>",0x007d12f0,0x006b8630,0x007d12f0
-20778,function,"std::copy_backward<ExtendedGad*,ExtendedGad*>",0x007d1320,0x006b8660,0x007d1320
+20778,function,"std::copy_backward<EC::Cutscene::Actor::BlendGadRecord*,EC::Cutscene::Actor::BlendGadRecord*>",0x007d1320,0x006b8660,0x007d1320
 20779,function,std::_Destroy_range<EC.Cutscene.Actor.ClipRecord*>,0x007d1350,0x006b8690,0x007d1350
-20780,function,std::_Uninit_fill_n<ExtendedGad*>,0x007d13c0,0x006b8700,0x007d13c0
+20780,function,std::_Uninit_fill_n<EC::Cutscene::Actor::BlendGadRecord*>,0x007d13c0,0x006b8700,0x007d13c0
 20781,function,std::_Uninit_fill_n<EC.Cutscene.Actor.ClipRecord*>,0x007d1420,0x006b8760,0x007d1420
 20782,function,Catch_All@007d148b,0x007d148b,0x006b87cb,0x007d148b
 20783,function,"std::_Unguarded_partition<float*,std::less<float>>",0x007d14c0,0x006b8800,0x007d14c0
@@ -20811,9 +20811,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20810,function,EC::Cutscene::Actor::ActionLinkToActor::Reset,0x007d35f0,0x006ba930,0x007d35f0
 20811,function,EC::Cutscene::Actor::GetStagePlacePosition,0x007d3600,0x006ba940,0x007d3600
 20812,function,std::vector<?>::begin,0x007d3640,0x007f5c00,0x007d3640
-20813,function,"std::map<std::wstring,Elem60>::lower_bound",0x007d3670,0x006ba980,0x007d3670
-20814,function,"std::map<std::wstring,Elem24>::lower_bound",0x007d3730,0x006baa40,0x007d3730
-20815,function,"std::map<std::wstring,Elem24>::_Erase",0x007d37f0,0x006bab00,0x007d37f0
+20813,function,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>::lower_bound",0x007d3670,0x006ba980,0x007d3670
+20814,function,"std::map<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>::lower_bound",0x007d3730,0x006baa40,0x007d3730
+20815,function,"std::map<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>::_Erase",0x007d37f0,0x006bab00,0x007d37f0
 20816,function,EC::Cutscene::VectorContains<float>,0x007d3830,0x006bab40,0x007d3830
 20817,function,EC::Cutscene::VectorBackOrDefault<float>,0x007d38b0,0x006babc0,0x007d38b0
 20818,function,EC::Cutscene::VectorIndexOf<EC::Cutscene::Actor::ClipRecord>,0x007d3910,0x006bac60,0x007d3910
@@ -20825,19 +20825,19 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20824,function,EC::Cutscene::Actor::ActionLinkToActor::Update,0x007d3cf0,0x006bb040,0x007d3cf0
 20825,function,"std::pair<std::wstring,RefHandle>::~pair",0x007d4040,0x004b33b0,0x007d4040
 20826,function,std::vector<EC.Cutscene.Actor.ClipRecord>::_Destroy,0x007d40a0,0x006bb3f0,0x007d40a0
-20827,function,std::vector<ExtendedGad>::_Ufill,0x007d40c0,0x006bb410,0x007d40c0
+20827,function,std::vector<EC::Cutscene::Actor::BlendGadRecord>::_Ufill,0x007d40c0,0x006bb410,0x007d40c0
 20828,function,std::vector<Elem24>::erase,0x007d4100,0x0048dbc0,0x007d4100
 20829,function,std::vector<EC.Cutscene.Actor.ClipRecord>::_Ufill,0x007d4150,0x006bb450,0x007d4150
 20830,function,std::vector<Elem24>::_Ucopy,0x007d4190,0x006bb490,0x007d4190
 20831,function,std::vector<EC.Cutscene.Actor.ClipRecord>::_Ucopy,0x007d41c0,0x006bb4c0,0x007d41c0
-20832,function,"std::copy<ExtendedGad*,ExtendedGad*>",0x007d41f0,0x006bb4f0,0x007d41f0
+20832,function,"std::copy<EC::Cutscene::Actor::BlendGadRecord*,EC::Cutscene::Actor::BlendGadRecord*>",0x007d41f0,0x006bb4f0,0x007d41f0
 20833,function,EC::Cutscene::Actor::SetVisible,0x007d4220,0x006bb520,0x007d4220
 20834,function,EC::Cutscene::Actor::DetachCrust,0x007d4410,0x006bb710,0x007d4410
 20835,function,EC::Cutscene::Actor::ActionChangeVisibility::Update,0x007d44c0,0x006bb7c0,0x007d44c0
 20836,function,EC::Cutscene::Actor::ActionChangeVisibility::Reset,0x007d44d0,0x006bb7d0,0x007d44d0
 20837,function,EC::Cutscene::Actor::ActionFrameBufferEffect::Update,0x007d4500,0x006bb800,0x007d4500
 20838,function,EC::Cutscene::Actor::ActionFrameBufferEffect::Reset,0x007d4800,0x006bbb00,0x007d4800
-20839,function,std::_Tree<Elem88>::find,0x007d4830,0x006bbb30,0x007d4830
+20839,function,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>::find",0x007d4830,0x006bbb30,0x007d4830
 20840,function,,0x007d48b0,0x006bbbb0,0x007d48b0
 20841,function,,0x007d4b80,0x006bbec0,0x007d4b80
 20842,function,,0x007d4bf0,0x006bbf30,0x007d4bf0
@@ -20849,7 +20849,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20848,function,"std::_Sort<float *,int>",0x007d50b0,0x006bc3f0,0x007d50b0
 20849,function,,0x007d51a0,0x006bc4e0,0x007d51a0
 20850,function,,0x007d5210,0x006bc550,0x007d5210
-20851,function,"std::map<std::wstring,Elem60>::find",0x007d5220,0x006bc560,0x007d5220
+20851,function,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>::find",0x007d5220,0x006bc560,0x007d5220
 20852,function,,0x007d5280,0x006bc5c0,0x007d5280
 20853,function,,0x007d52e0,0x006bc620,0x007d52e0
 20854,function,,0x007d53b0,0x006bc6f0,0x007d53b0
@@ -20877,33 +20877,33 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20876,function,,0x007d6af0,0x006bddf0,0x007d6af0
 20877,function,,0x007d6ba0,0x006bdea0,0x007d6ba0
 20878,function,,0x007d6c00,0x006bdf00,0x007d6c00
-20879,function,std::_Tree<Elem20>::_Erase,0x007d6e00,0x006be100,0x007d6e00
+20879,function,"std::_Tree<std::pair<unsigned int const,CutscenePlayer::ActorDependencyList>>::_Erase",0x007d6e00,0x006be100,0x007d6e00
 20880,function,std::vector<EC.Cutscene.Actor.ClipRecord>::vector,0x007d6e40,0x006be140,0x007d6e40
-20881,function,std::vector<Elem24>::push_back,0x007d6eb0,0x006be1f0,0x007d6eb0
-20882,function,std::vector<ExtendedGad>::push_back,0x007d6f50,0x006be290,0x007d6f50
+20881,function,std::vector<EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>::push_back,0x007d6eb0,0x006be1f0,0x007d6eb0
+20882,function,std::vector<EC::Cutscene::Actor::BlendGadRecord>::push_back,0x007d6f50,0x006be290,0x007d6f50
 20883,function,std::list<Elem>::list,0x007d6ff0,0x006be330,0x007d6ff0
 20884,function,Catch_All@007d7067,0x007d7067,0x006be3a7,0x007d7067
-20885,function,Elem76::Elem76,0x007d7080,0x006be3c0,0x007d7080
-20886,function,Elem76::operator=,0x007d7100,0x006be440,0x007d7100
+20885,function,CutscenePlayer::BindRecord::BindRecord,0x007d7080,0x006be3c0,0x007d7080
+20886,function,CutscenePlayer::BindRecord::operator=,0x007d7100,0x006be440,0x007d7100
 20887,function,EC::Cutscene::Actor::CollectDependencies,0x007d7180,0x006be4c0,0x007d7180
 20888,function,EC::Cutscene::Actor::ActionLinkToActor::CollectDependencies,0x007d7210,0x006be550,0x007d7210
-20889,function,std::_Tree<Elem52>::~_Tree,0x007d7240,0x006be580,0x007d7240
+20889,function,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>>::~_Tree",0x007d7240,0x006be580,0x007d7240
 20890,function,,0x007d7280,0x006be5c0,0x007d7280
-20891,function,"std::map<std::wstring,Elem24>::operator[]",0x007d7550,0x006be890,0x007d7550
-20892,function,Elem60::Elem60,0x007d7640,0x006be980,0x007d7640
+20891,function,"std::map<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>::operator[]",0x007d7550,0x006be890,0x007d7550
+20892,function,EC::Cutscene::Actor::FollowerAniHackEntry::FollowerAniHackEntry,0x007d7640,0x006be980,0x007d7640
 20893,function,std::list<Elem>::clear,0x007d76b0,0x006be9f0,0x007d76b0
-20894,function,"std::pair<std::wstring,Elem60>::pair",0x007d7740,0x006bea80,0x007d7740
-20895,function,std::vector<Elem24>::vector,0x007d77a0,0x006bebf0,0x007d77a0
+20894,function,"std::pair<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>::pair",0x007d7740,0x006bea80,0x007d7740
+20895,function,std::vector<EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>::vector,0x007d77a0,0x006bebf0,0x007d77a0
 20896,function,std::vector<EC.Cutscene.Actor.ClipRecord>::_Tidy,0x007d7820,0x006bec70,0x007d7820
-20897,function,std::vector<ExtendedGad>::vector,0x007d7940,0x006bed90,0x007d7940
-20898,function,std::vector<ExtendedGad>::_Tidy,0x007d79c0,0x006bee10,0x007d79c0
+20897,function,std::vector<EC::Cutscene::Actor::BlendGadRecord>::vector,0x007d7940,0x006bed90,0x007d7940
+20898,function,std::vector<EC::Cutscene::Actor::BlendGadRecord>::_Tidy,0x007d79c0,0x006bee10,0x007d79c0
 20899,function,ECBase::ECDynArray<Resources>::SwapRemoveAt,0x007d7ac0,0x006bef10,0x007d7ac0
 20900,function,Elem16::Elem16,0x007d7b80,0x00452e80,0x007d7b80
-20901,function,"std::_Copy_opt<Elem76*,Elem76*>",0x007d7ba0,0x006beff0,0x007d7ba0
-20902,function,"std::_Copy_backward_opt<Elem76*,Elem76*>",0x007d7bf0,0x006bf040,0x007d7bf0
-20903,function,std::_Uninit_copy<Elem76*>,0x007d7c40,0x006bf090,0x007d7c40
+20901,function,"std::_Copy_opt<CutscenePlayer::BindRecord*,CutscenePlayer::BindRecord*>",0x007d7ba0,0x006beff0,0x007d7ba0
+20902,function,"std::_Copy_backward_opt<CutscenePlayer::BindRecord*,CutscenePlayer::BindRecord*>",0x007d7bf0,0x006bf040,0x007d7bf0
+20903,function,std::_Uninit_copy<CutscenePlayer::BindRecord*>,0x007d7c40,0x006bf090,0x007d7c40
 20904,function,Catch_All@007d7ca9,0x007d7ca9,0x006bf0f9,0x007d7ca9
-20905,function,Elem60::Elem60,0x007d7ce0,0x006bf130,0x007d7ce0
+20905,function,EC::Cutscene::Actor::FollowerAniHackEntry::FollowerAniHackEntry,0x007d7ce0,0x006bf130,0x007d7ce0
 20906,function,CutscenePlayer::AreResourcesLoaded,0x007d7d50,0x006bf1a0,0x007d7d50
 20907,function,CutscenePlayer::MoveHenchmanActorsToEnd,0x007d7e00,0x006bf250,0x007d7e00
 20908,function,CutscenePlayer::MoveCrustActorsToEnd,0x007d80a0,0x006bf4f0,0x007d80a0
@@ -20929,13 +20929,13 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20928,function,EC::Cutscene::Actor::ActionAnimateFace::~ActionAnimateFace,0x007d98d0,0x006c0d20,0x007d98d0
 20929,function,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterSet::ParameterSet,0x007d99b0,0x006c0e00,0x007d99b0
 20930,function,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterSet::~ParameterSet,0x007d9a80,0x006c0ed0,0x007d9a80
-20931,function,"std::pair<std::wstring const,Elem60>::pair",0x007d9b10,0x006c0f60,0x007d9b10
+20931,function,"std::pair<std::wstring const,EC::Cutscene::Actor::FollowerAniHackEntry>::pair",0x007d9b10,0x006c0f60,0x007d9b10
 20932,function,,0x007d9b70,0x006c0fc0,0x007d9b70
 20933,function,,0x007d9c40,0x006c1090,0x007d9c40
-20934,function,std::_Tree<Elem88>::_Erase,0x007d9f30,0x006c1380,0x007d9f30
+20934,function,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>::_Erase",0x007d9f30,0x006c1380,0x007d9f30
 20935,function,Elem16::operator=,0x007d9ff0,0x006c1440,0x007d9ff0
-20936,function,"std::_Fill<Elem76*,Elem76>",0x007da020,0x006c1470,0x007da020
-20937,function,std::_Uninit_fill_n<Elem76*>,0x007da050,0x006c14a0,0x007da050
+20936,function,"std::_Fill<CutscenePlayer::BindRecord*,CutscenePlayer::BindRecord>",0x007da020,0x006c1470,0x007da020
+20937,function,std::_Uninit_fill_n<CutscenePlayer::BindRecord*>,0x007da050,0x006c14a0,0x007da050
 20938,function,Catch_All@007da0bb,0x007da0bb,0x006c150b,0x007da0bb
 20939,function,CutscenePlayer::CollectStepTimes,0x007da0f0,0x006c1540,0x007da0f0
 20940,function,EC::Cutscene::Actor::Advance,0x007da1e0,0x006c1630,0x007da1e0
@@ -20987,10 +20987,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20986,function,EC::Cutscene::Actor::ActionAnimateFace::ActionAnimateFace,0x007dd1b0,0x006c4600,0x007dd1b0
 20987,function,EC::Cutscene::Actor::ActionAnimateFace::`scalar deleting destructor',0x007dd380,0x006c47d0,0x007dd380
 20988,function,std::list<Elem36>::_Tidy,0x007dd3a0,0x006c47f0,0x007dd3a0
-20989,function,std::_Tree<Elem88>::_Buynode,0x007dd3c0,0x006c4810,0x007dd3c0
+20989,function,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>::_Buynode",0x007dd3c0,0x006c4810,0x007dd3c0
 20990,function,Catch_All@007dd449,0x007dd449,0x006c4899,0x007dd449
-20991,function,std::_Destroy_range<Elem76*>,0x007dd460,0x006c48b0,0x007dd460
-20992,function,"std::copy_backward<Elem76*,Elem76*>",0x007dd490,0x006c48e0,0x007dd490
+20991,function,std::_Destroy_range<CutscenePlayer::BindRecord*>,0x007dd460,0x006c48b0,0x007dd460
+20992,function,"std::copy_backward<CutscenePlayer::BindRecord*,CutscenePlayer::BindRecord*>",0x007dd490,0x006c48e0,0x007dd490
 20993,function,CutscenePlayer::Step,0x007dd4c0,0x006c4910,0x007dd4c0
 20994,function,EC::Cutscene::Actor::AddAnimationTree,0x007dd8d0,0x006c4d20,0x007dd8d0
 20995,function,EC::Cutscene::Actor::AddOverlayTree,0x007dda00,0x006c4e50,0x007dda00
@@ -21002,9 +21002,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21001,function,,0x007de5b0,0x006c5a00,0x007de5b0
 21002,function,,0x007de7b0,0x006c5c00,0x007de7b0
 21003,function,,0x007de841,0x006c5c91,0x007de841
-21004,function,std::vector<Elem76>::_Tidy,0x007de860,0x006c5cb0,0x007de860
+21004,function,std::vector<CutscenePlayer::BindRecord>::_Tidy,0x007de860,0x006c5cb0,0x007de860
 21005,function,,0x007de8b0,0x006c5d00,0x007de8b0
-21006,function,std::vector<Elem76>::erase,0x007de8f0,0x006c5d40,0x007de8f0
+21006,function,std::vector<CutscenePlayer::BindRecord>::erase,0x007de8f0,0x006c5d40,0x007de8f0
 21007,function,EC::Cutscene::Actor::SetModel,0x007de970,0x006c5dc0,0x007de970
 21008,function,EC::Cutscene::Actor::AddAction,0x007deac0,0x006c5f10,0x007deac0
 21009,function,EC::Cutscene::Actor::ActionJumpToCamera::PlaceStageCamera,0x007deaf0,0x006c5f40,0x007deaf0
@@ -21012,14 +21012,14 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21011,function,,0x007decf0,0x006c6140,0x007decf0
 21012,function,,0x007ded30,0x006c6180,0x007ded30
 21013,function,,0x007deee0,0x006c6330,0x007deee0
-21014,function,std::vector<Elem76>::_Tidy,0x007df0e0,0x006c6db0,0x007df0e0
-21015,function,"std::_Uninit_copy<Elem76*,Elem76*,std::allocator<Elem76> >",0x007df0f0,0x006c6530,0x007df0f0
+21014,function,std::vector<CutscenePlayer::BindRecord>::_Tidy,0x007df0e0,0x006c6db0,0x007df0e0
+21015,function,"std::_Uninit_copy<CutscenePlayer::BindRecord*,CutscenePlayer::BindRecord*,std::allocator<CutscenePlayer::BindRecord> >",0x007df0f0,0x006c6530,0x007df0f0
 21016,function,CutscenePlayer::ApplyHenchmanActions,0x007df120,0x006c6560,0x007df120
 21017,function,EC::Cutscene::Actor::ActionJumpToCamera::Update,0x007df2f0,0x006c6730,0x007df2f0
 21018,function,EC::Cutscene::ActorMember168::ActorMember168,0x007df4a0,0x006c68e0,0x007df4a0
 21019,function,EC::Cutscene::ActorMember168::~ActorMember168,0x007df530,0x006c6970,0x007df530
-21020,function,"std::map<unsigned int,Elem16>::map",0x007df5d0,0x006c6a10,0x007df5d0
-21021,function,"std::map<unsigned int,Elem16>::~map",0x007df670,0x006c6ab0,0x007df670
+21020,function,"std::map<unsigned int,CutscenePlayer::ActorDependencyList>::map",0x007df5d0,0x006c6a10,0x007df5d0
+21021,function,"std::map<unsigned int,CutscenePlayer::ActorDependencyList>::~map",0x007df670,0x006c6ab0,0x007df670
 21022,function,,0x007df6b0,0x006c6af0,0x007df6b0
 21023,function,,0x007df8b0,0x006c6cf0,0x007df8b0
 21024,function,,0x007df970,0x006c6dc0,0x007df970
@@ -21027,20 +21027,20 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21026,function,,0x007dfbd8,0x006c7028,0x007dfbd8
 21027,function,EC::Cutscene::Actor::Actor,0x007dfc60,0x006c70b0,0x007dfc60
 21028,function,EC::Cutscene::Actor::~Actor,0x007e04e0,0x006c7930,0x007e04e0
-21029,function,std::_Tree<Elem88>::_Tidy,0x007e0850,0x006c7ca0,0x007e0850
-21030,function,"std::map<std::wstring,Elem60>::operator[]",0x007e0890,0x006c7ce0,0x007e0890
+21029,function,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>::_Tidy",0x007e0850,0x006c7ca0,0x007e0850
+21030,function,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>::operator[]",0x007e0890,0x006c7ce0,0x007e0890
 21031,function,,0x007e0990,0x006c7de0,0x007e0990
-21032,function,std::vector<Elem76>::resize,0x007e0b50,0x006c7fa0,0x007e0b50
-21033,function,std::vector<Elem76>::insert,0x007e0c70,0x006c80c0,0x007e0c70
+21032,function,std::vector<CutscenePlayer::BindRecord>::resize,0x007e0b50,0x006c7fa0,0x007e0b50
+21033,function,std::vector<CutscenePlayer::BindRecord>::insert,0x007e0c70,0x006c80c0,0x007e0c70
 21034,function,CutscenePlayer::AddActor,0x007e0d20,0x006c8170,0x007e0d20
-21035,function,"std::map<std::wstring,Elem60>::map",0x007e0dd0,0x006c8220,0x007e0dd0
-21036,function,"std::map<std::wstring,Elem60>::~map",0x007e0e90,0x006c82e0,0x007e0e90
-21037,function,"std::map<unsigned int,Elem16>::operator[]",0x007e0f20,0x006c8370,0x007e0f20
-21038,function,std::vector<Elem76>::push_back,0x007e1000,0x006c8450,0x007e1000
+21035,function,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>::map",0x007e0dd0,0x006c8220,0x007e0dd0
+21036,function,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>::~map",0x007e0e90,0x006c82e0,0x007e0e90
+21037,function,"std::map<unsigned int,CutscenePlayer::ActorDependencyList>::operator[]",0x007e0f20,0x006c8370,0x007e0f20
+21038,function,std::vector<CutscenePlayer::BindRecord>::push_back,0x007e1000,0x006c8450,0x007e1000
 21039,function,CutscenePlayer::Teardown,0x007e10a0,0x006c84f0,0x007e10a0
 21040,function,CutscenePlayer::Load,0x007e1910,0x006c8d60,0x007e1910
 21041,function,EC::Cutscene::Actor::FindFollowerAniHackEntry,0x007e2210,0x006c9660,0x007e2210
-21042,function,std::vector<Elem76>::vector,0x007e2660,0x006c9ab0,0x007e2660
+21042,function,std::vector<CutscenePlayer::BindRecord>::vector,0x007e2660,0x006c9ab0,0x007e2660
 21043,function,CutscenePlayer::CutscenePlayer,0x007e26e0,0x006c9b30,0x007e26e0
 21044,function,CutscenePlayer::CutscenePlayer,0x007e2a70,0x006c9ec0,0x007e2a70
 21045,function,CutscenePlayer::SortActors,0x007e2d70,0x006ca1c0,0x007e2d70
@@ -22410,8 +22410,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 22409,function,std::vector<NxVec3>::~vector,0x00825ec0,0x0049e450,0x00825ec0
 22410,function,"std::fill<std::_Vb_iterator,bool>",0x00825ed0,0x0049e460,0x00825ed0
 22411,function,std::vector<?>::push_back,0x00825f40,0x0049e600,0x00825f40
-22412,function,std::vector<Elem16A>::resize,0x00825fd0,0x0049e720,0x00825fd0
-22413,function,std::vector<Elem16A>::insert,0x00826080,0x0049e7d0,0x00826080
+22412,function,std::vector<NxGroupsMask>::resize,0x00825fd0,0x0049e720,0x00825fd0
+22413,function,std::vector<NxGroupsMask>::insert,0x00826080,0x0049e7d0,0x00826080
 22414,function,std::vector<Elem12A>::resize,0x00826110,0x00401af0,0x00826110
 22415,function,std::vector<NxMat34>::resize,0x008261f0,0x0049e910,0x008261f0
 22416,function,std::vector<NxQuat>::resize,0x008262d0,0x0049ea80,0x008262d0
@@ -22974,8 +22974,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 22973,function,,0x008486a0,0x0048e590,0x008486a0
 22974,function,,0x008487a9,0x0048e699,0x008487a9
 22975,function,,0x008487c0,0x0048e6b0,0x008487c0
-22976,function,std::vector<Elem24>::reserve,0x008488a0,0x0048e790,0x008488a0
-22977,function,std::vector<Elem24>::vector,0x008488e0,0x0048e860,0x008488e0
+22976,function,std::vector<TexManager::TexturePool::Spec>::reserve,0x008488a0,0x0048e790,0x008488a0
+22977,function,std::vector<TexManager::TexturePool::Spec>::vector,0x008488e0,0x0048e860,0x008488e0
 22978,function,,0x00848960,0x0048e8e0,0x00848960
 22979,function,,0x008489c0,0x0048e9d0,0x008489c0
 22980,function,,0x00848c90,0x0048eca0,0x00848c90
