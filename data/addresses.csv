@@ -3566,8 +3566,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 3565,function,std::vector<OnlineRec84>::vector_copy,0x0048de90,0x00864300,0x0048de90
 3566,function,std::vector<OnlineFeatures::Achievement>::vector_copy,0x0048def0,0x00864360,0x0048def0
 3567,function,std::deque<unsigned int>::_Insert<std::_Deque_const_iterator<unsigned int>>,0x0048df50,0x00864420,0x0048df50
-3568,function,std::deque<unsigned int>::_Insert<std::_Deque_const_iterator<unsigned int>>::resume,0x0048e1c8,0x00864698,0x0048e1c8
-3569,function,std::deque<unsigned int>::_Insert<std::_Deque_const_iterator<unsigned int>>::resume_2,0x0048e50f,0x008649df,0x0048e50f
+3568,function,Catch_All@0048e1c8,0x0048e1c8,0x00864698,0x0048e1c8
+3569,function,Catch_All@0048e50f,0x0048e50f,0x008649df,0x0048e50f
 3570,function,std::deque<unsigned int>::insert<std::_Deque_const_iterator<unsigned int>>,0x0048e670,0x00864b40,0x0048e670
 3571,function,std::deque<unsigned int>::deque_copy,0x0048e6d0,0x00864ba0,0x0048e6d0
 3572,function,Catch_All@0048e7bc,0x0048e7bc,0x00864c8c,0x0048e7bc
@@ -6103,7 +6103,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6102,function,,0x004ff6a0,0x007e7ab0,0x004ff6a0
 6103,function,,0x004ff6c0,0x007e7ad0,0x004ff6c0
 6104,function,,0x004ff700,0x007e7b10,0x004ff700
-6105,function,,0x004ff730,0x007e7b40,0x004ff730
+6105,function,Graphics::MaterialObject::FindVector4ArrayParameter,0x004ff730,0x007e7b40,0x004ff730
 6106,function,,0x004ff7a0,0x007e7bb0,0x004ff7a0
 6107,function,,0x004ff930,0x007e7d80,0x004ff930
 6108,function,,0x004ff990,0x007e7de0,0x004ff990
@@ -11678,7 +11678,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 11677,function,"std::_Make_heap<std::pair<unsigned int,float>*,int,std::pair<unsigned int,float>,LodLess>",0x00617570,0x006b3170,0x00617570
 11678,function,std::_Tree<LodMapTraits>::equal_range,0x006175c0,0x006d67a0,0x006175c0
 11679,function,std::_Distance2<std::_Tree_iterator<LodMapTraits>>,0x00617620,0x006d6800,0x00617620
-11680,function,"std::_Sort<std::pair<unsigned int,float>*,int,LodLess>",0x00617660,0x006d6840,0x00617660
+11680,function,"std::_Unguarded_partition<std::pair<unsigned int,float>*,LodLess>",0x00617660,0x006d6840,0x00617660
 11681,function,"std::map<unsigned int,LodEntry>::at",0x00617a70,0x006d6cd0,0x00617a70
 11682,function,"std::_Sort_heap<std::pair<unsigned int,float>*,LodLess>",0x00617ad0,0x006b32a0,0x00617ad0
 11683,function,"ECBase::ECDynArray<std::pair<unsigned int,float>>::RemoveRange",0x00617b30,0x006d6d30,0x00617b30
@@ -17877,7 +17877,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 17876,function,"SmartData::Attribute<ItemRepository*,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",0x0074d3b0,0x00659310,0x0074d3b0
 17877,function,"SmartData::Attribute<ItemRepository*,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",0x0074d3e0,0x00659350,0x0074d3e0
 17878,function,SmartData::IndexedPointerMemberLookup<ItemRepository>::GetMemberName,0x0074d3f0,0x00659360,0x0074d3f0
-17879,function,ECBase::ECStaticArray<WalkPatch*>::DeleteElements,0x0074d470,0x006593e0,0x0074d470
+17879,function,ECBase::ECStaticArray<Pathfinding::AreaGridEntry*>::DeleteElements,0x0074d470,0x006593e0,0x0074d470
 17880,function,"SmartData::Attribute<ItemRepository*,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::~Attribute",0x0074d4b0,0x00659420,0x0074d4b0
 17881,function,"SmartData::Attribute<ItemRepository*,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::GetMemberName",0x0074d510,0x00659480,0x0074d510
 17882,function,"SmartData::Attribute<ItemRepository*,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::CreateMemberIterator",0x0074d530,0x006594a0,0x0074d530
@@ -33024,7 +33024,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33023,function,ECBase::ECDynArray<?>::At,0x00a47520,0x007d0d20,0x00a47520
 33024,function,"std::_Copy_opt<?*,?*>",0x00a47560,0x007d0d60,0x00a47560
 33025,function,"std::_Copy_backward_opt<?*,?*>",0x00a475c0,0x007d0dc0,0x00a475c0
-33026,function,PathSearch::Waypoint,0x00a47620,0x007d0e20,0x00a47620
+33026,function,Pathfinding::Path::GetWaypoint,0x00a47620,0x007d0e20,0x00a47620
 33027,function,Pathfinding::Path::SetWaypoint,0x00a47660,0x007d0e60,0x00a47660
 33028,function,Pathfinding::Path::GetBarredPosition,0x00a476b0,0x007d0eb0,0x00a476b0
 33029,function,"std::_Fill<?*,?>",0x00a476f0,0x007d0ef0,0x00a476f0
@@ -33051,13 +33051,13 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33050,function,ECBase::ECDynArray<?>::InsertAt,0x00a480a0,0x007d18a0,0x00a480a0
 33051,function,std::vector<?>::_Tidy,0x00a48130,0x007d1930,0x00a48130
 33052,function,Pathfinding::PathBase::PathBase,0x00a48220,0x007d1a20,0x00a48220
-33053,function,PathSearch::PathSearch,0x00a482d0,0x007d1ad0,0x00a482d0
+33053,function,Pathfinding::Path::Path,0x00a482d0,0x007d1ad0,0x00a482d0
 33054,function,Pathfinding::Path::AddWaypoint,0x00a48380,0x007d1b80,0x00a48380
 33055,function,Pathfinding::Path::InsertWaypoint,0x00a48390,0x007d1b90,0x00a48390
 33056,function,Pathfinding::Path::SetWaypointAndTruncate,0x00a483a0,0x007d1ba0,0x00a483a0
 33057,function,Pathfinding::Path::ClearWaypoints,0x00a48440,0x007d1c40,0x00a48440
 33058,function,Pathfinding::Path::Free,0x00a48460,0x007d1c60,0x00a48460
-33059,function,PathSearch::~PathSearch,0x00a484c0,0x007d1cc0,0x00a484c0
+33059,function,Pathfinding::Path::~Path,0x00a484c0,0x007d1cc0,0x00a484c0
 33060,function,std::_Tree<?>::_Max,0x00a48550,0x007593c0,0x00a48550
 33061,function,Pathfinding::AreaGridEntry::~AreaGridEntry,0x00a48570,0x007d1d50,0x00a48570
 33062,function,Gff4::StructReader::MakeListReader,0x00a485a0,0x00768e10,0x00a485a0
@@ -33130,34 +33130,34 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33129,function,std::vector<bool>::resize,0x00a4b100,0x007d4000,0x00a4b100
 33130,function,Pathfinding::MapAbstraction::FloodFindRegion,0x00a4b190,0x007d4090,0x00a4b190
 33131,function,Pathfinding::MapAbstraction::RegionOfCell,0x00a4ba20,0x007d4920,0x00a4ba20
-33132,function,Pathfinding::Path::ShouldCollapseTail,0x00a4ba70,0x007d4970,0x00a4ba70
+33132,function,Pathfinding::Pathfinder::ShouldCollapseTail,0x00a4ba70,0x007d4970,0x00a4ba70
 33133,function,Pathfinding::IsObtuseTurn,0x00a4baa0,0x007d49a0,0x00a4baa0
 33134,function,Pathfinding::IsObtuseTurn,0x00a4bb00,0x007d4a00,0x00a4bb00
-33135,function,Pathfinding::Path::CanWalkStraight,0x00a4bb80,0x007d4a80,0x00a4bb80
+33135,function,Pathfinding::Pathfinder::CanWalkStraight,0x00a4bb80,0x007d4a80,0x00a4bb80
 33136,function,Pathfinding::Distance2D,0x00a4bf00,0x007d4e00,0x00a4bf00
 33137,function,Pathfinding::IsFartherThan2D,0x00a4c020,0x007d4f20,0x00a4c020
 33138,function,Pathfinding::OctileDistance2D,0x00a4c090,0x007d4f90,0x00a4c090
 33139,function,Pathfinding::IsGentleTurn,0x00a4c140,0x007d5040,0x00a4c140
 33140,function,Pathfinding::Pathfinder::Collapse,0x00a4c2a0,0x007d51a0,0x00a4c2a0
-33141,function,Pathfinding::Path::IsSmoothingDone,0x00a4c4a0,0x007d53a0,0x00a4c4a0
-33142,function,Pathfinding::Path::NeedsSmoothing,0x00a4c520,0x007d5420,0x00a4c520
-33143,function,Pathfinding::Path::CanCornerPass,0x00a4c580,0x007d5480,0x00a4c580
-33144,function,Pathfinding::Path::CollapseTail,0x00a4c5e0,0x007d54e0,0x00a4c5e0
-33145,function,Pathfinding::Path::AppendCellPath,0x00a4c630,0x007d5530,0x00a4c630
+33141,function,Pathfinding::Pathfinder::IsSmoothingDone,0x00a4c4a0,0x007d53a0,0x00a4c4a0
+33142,function,Pathfinding::Pathfinder::NeedsSmoothing,0x00a4c520,0x007d5420,0x00a4c520
+33143,function,Pathfinding::Pathfinder::CanCornerPass,0x00a4c580,0x007d5480,0x00a4c580
+33144,function,Pathfinding::Pathfinder::CollapseTail,0x00a4c5e0,0x007d54e0,0x00a4c5e0
+33145,function,Pathfinding::Pathfinder::AppendCellPath,0x00a4c630,0x007d5530,0x00a4c630
 33146,function,Pathfinding::Pathfinder::Smooth,0x00a4c790,0x007d5690,0x00a4c790
 33147,function,Pathfinding::Pathfinder::ComputeTailLength,0x00a4c8a0,0x007d57a0,0x00a4c8a0
 33148,function,Pathfinding::Pathfinder::CutCorner,0x00a4c930,0x007d5830,0x00a4c930
 33149,retired,,,,
 33150,function,std::reverse<std::_Vector_iterator<unsigned int>>,0x00a4ce10,0x007d5d10,0x00a4ce10
-33151,function,Pathfinding::Path::SmoothWindow,0x00a4ce40,0x007d5d40,0x00a4ce40
-33152,function,Pathfinding::Path::TailCollapsible,0x00a4cee0,0x007d5de0,0x00a4cee0
+33151,function,Pathfinding::Pathfinder::SmoothWindow,0x00a4ce40,0x007d5d40,0x00a4ce40
+33152,function,Pathfinding::Pathfinder::TailCollapsible,0x00a4cee0,0x007d5de0,0x00a4cee0
 33153,function,Pathfinding::Pathfinder::CutCornersInWindow,0x00a4d030,0x007d5f30,0x00a4d030
-33154,function,Pathfinding::Path::CornerPass,0x00a4d110,0x007d6010,0x00a4d110
-33155,function,Pathfinding::Path::RunLeg,0x00a4d1f0,0x007d60f0,0x00a4d1f0
-33156,function,Pathfinding::Path::Setup,0x00a4d8e0,0x007d67e0,0x00a4d8e0
-33157,function,Pathfinding::Path::ReplanLongRoute,0x00a4dda0,0x007d6ca0,0x00a4dda0
+33154,function,Pathfinding::Pathfinder::CornerPass,0x00a4d110,0x007d6010,0x00a4d110
+33155,function,Pathfinding::Pathfinder::RunLeg,0x00a4d1f0,0x007d60f0,0x00a4d1f0
+33156,function,Pathfinding::Pathfinder::Setup,0x00a4d8e0,0x007d67e0,0x00a4d8e0
+33157,function,Pathfinding::Pathfinder::ReplanLongRoute,0x00a4dda0,0x007d6ca0,0x00a4dda0
 33158,function,Pathfinding::Pathfinder::~Pathfinder,0x00a4e120,0x007d7020,0x00a4e120
-33159,function,Pathfinding::Path::Step,0x00a4e1b0,0x007d70b0,0x00a4e1b0
+33159,function,Pathfinding::Pathfinder::Step,0x00a4e1b0,0x007d70b0,0x00a4e1b0
 33160,function,Pathfinding::Pathfinder::Pathfinder,0x00a4e3a0,0x007d72a0,0x00a4e3a0
 33161,function,Pathfinding::MapAbstractionBuilder::EncodeEdgeByte,0x00a4e420,0x007d7320,0x00a4e420
 33162,function,Pathfinding::MapAbstractionBuilder::EncodeEdgeByte,0x00a4e4b0,0x007d73b0,0x00a4e4b0
@@ -33271,9 +33271,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33270,function,std::vector<std::vector<unsigned int>>::resize,0x00a54000,0x007dd150,0x00a54000
 33271,function,Pathfinding::NodeWordTable::~NodeWordTable,0x00a540f0,0x007dd240,0x00a540f0
 33272,function,Pathfinding::NodeWordTable::Clear,0x00a541c0,0x007dd310,0x00a541c0
-33273,function,Pathfinding::FineSearch::ReadNodeWord,0x00a54320,0x007dd470,0x00a54320
-33274,function,Pathfinding::FineSearch::NodeWordRef,0x00a54590,0x007dd6e0,0x00a54590
-33275,function,Pathfinding::FineSearch::WriteNodeWord,0x00a547f0,0x007dd940,0x00a547f0
+33273,function,Pathfinding::NodeWordTable::ReadNodeWord,0x00a54320,0x007dd470,0x00a54320
+33274,function,Pathfinding::NodeWordTable::NodeWordRef,0x00a54590,0x007dd6e0,0x00a54590
+33275,function,Pathfinding::NodeWordTable::WriteNodeWord,0x00a547f0,0x007dd940,0x00a547f0
 33276,retired,,,,
 33277,function,Pathfinding::FineSearchBase::FineSearchBase,0x00a54a60,0x007ddbb0,0x00a54a60
 33278,function,Pathfinding::FineSearchBase::~FineSearchBase,0x00a54ab0,0x007ddc00,0x00a54ab0
