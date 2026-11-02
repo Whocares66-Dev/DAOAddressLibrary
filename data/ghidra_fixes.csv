@@ -14644,3 +14644,33 @@ address,what,value,why
 0x004FD470,signature,"void __thiscall Graphics::MaterialShaderManager::GetMemoryFootprint(void* this, unsigned int* total, unsigned int* video)",ret 8 at 0x004FD588
 0x004FD6C0,convention,__cdecl,"plain ret, three stack args (first, last, const value*)"
 0x004F9390,clear,GStandardBlockAllocator::vfunction5,"outside the batch: `lea eax,[ecx+8]; ret`, used here as MaterialState's name getter (0x004FC8DF, 0x004FC9D6); a folded getter, the allocator label is a wrong match"
+0x00504DA0,signature,"void __thiscall Graphics::MaterialPass::AddBinding(void* this, void* binding)","ret 4; ecx read at 0x00504DAE/0x00504DC1, Ghidra shows no this"
+0x00504DD0,signature,"void __thiscall Graphics::MaterialParameterBlock::AddRange(void* this, unsigned int slotOffset, unsigned int startRegister, unsigned int count, unsigned char floatFlag, unsigned char vertexStage)",ret 0x14 at 0x00504E06; ecx passed through to 0x0087EBD0
+0x00504E10,signature,void __thiscall Graphics::MaterialParameterBlock::Reset(void* this),plain ret; ecx read at 0x00504E11 (Ghidra: __fastcall)
+0x00504EB0,signature,"bool __thiscall Graphics::MaterialEffectPass::AddStage(void* this, void* name)",ret 4; returns AL
+0x00505150,signature,void __thiscall Graphics::MaterialPass::ResolveParameters(void* this),plain ret 0x00505BF6; ecx read at 0x0050518D (Ghidra: void(void))
+0x00505E50,signature,bool __thiscall Graphics::MaterialEffectPass::AddAllStages(void* this),plain ret; ecx read at 0x00505E52 (Ghidra: __fastcall)
+0x00505F00,signature,"void __thiscall Graphics::MaterialParameterBlock::Allocate(void* this, unsigned int registers)",ret 4 at 0x00505F17
+0x005060C0,signature,bool __thiscall Graphics::MaterialPass::ApplyState(void* this),plain ret; ecx read at 0x005060C0 (Ghidra: __fastcall)
+0x00506110,signature,bool __thiscall Graphics::MaterialPass::LoadVertexShader(void* this),plain ret; ecx read at 0x00506135 (Ghidra: __fastcall)
+0x00506200,signature,bool __thiscall Graphics::MaterialPass::LoadPixelShader(void* this),plain ret; ecx read at 0x00506225 (Ghidra: __fastcall)
+0x005062F0,signature,"void __thiscall Graphics::MaterialPass::LoadStateBlock(void* this, void* name)",ret 4 at 0x005063A8
+0x005063B0,signature,"void __thiscall Graphics::MaterialPass::InitParameterBlock(void* this, void* block)",ret 4 at 0x005064AD; ecx = pass (0x005063B8)
+0x00506520,signature,bool __thiscall Graphics::MaterialPass::Load(void* this),plain ret; returns 1/0 in EAX
+0x00506550,signature,"bool __thiscall Graphics::MaterialPass::Apply(void* this, void* batch, void* context, int drawArg, void* block, unsigned int force)",ret 0x14 at 0x0050667B
+0x00506EB0,signature,"void* __thiscall Graphics::MaterialTechnique::GetPass(void* this, unsigned int index)",ret 4
+0x00506F00,signature,bool __thiscall Graphics::MaterialTechnique::Validate(void* this),plain ret; ecx read at 0x00506F03 (Ghidra: __fastcall)
+0x00506F80,signature,"void __thiscall Graphics::MaterialTechnique::GetMemoryFootprint(void* this, int* systemBytes, int* otherBytes)",ret 8
+0x00507020,signature,"void __thiscall Graphics::MaterialTechnique::VisitShaders(void* this, void* visitor)",ret 4
+0x00507100,signature,void __thiscall Graphics::MaterialTechnique::~MaterialTechnique(void* this),plain ret
+0x00507200,signature,"void __thiscall Graphics::MaterialTechnique::AddPass(void* this, void* pass)","ret 4; the argument is a MaterialPass, Ghidra types it ObjectNode*"
+0x00507260,signature,"void __thiscall Graphics::MaterialLogicBlock::SetTechnique(void* this, void* technique)",ret 4
+0x00507330,signature,bool __thiscall Graphics::MaterialLogicBlock::Validate(void* this),plain ret; ecx read at 0x00507332 (Ghidra: __fastcall)
+0x00507450,signature,"void __thiscall Graphics::MaterialLogicBlock::GetMemoryFootprint(void* this, int* systemBytes, int* otherBytes)",ret 8
+0x00507500,signature,"void __thiscall Graphics::MaterialLogicBlock::VisitShaders(void* this, void* visitor)",ret 4
+0x00507570,signature,void __thiscall Graphics::MaterialLogicBlock::~MaterialLogicBlock(void* this),plain ret
+0x005076C0,signature,"void __thiscall Graphics::MaterialLogicBlock::AddChild(void* this, void* child)","ret 4; ecx read at 0x005076CC, Ghidra shows no this"
+0x005076E0,signature,"void __cdecl XMLParser2::XMLBuilderBase::EndElementCallback(void* userData, void* name)",plain ret; ecx loaded from the stack at 0x005076E0
+0x00505EC0,signature,void __thiscall Graphics::MaterialEffectPass::Load(void* this),plain ret; writes [esi+0x64] from AddAllStages (0x00505EC3..0x00505EC8); from reader B
+0x00505ED0,signature,void __thiscall Graphics::MaterialPass::Rebind(void* this),tail jump to 0x00505150 at 0x00505EFA; from reader B
+0x005060B0,signature,"void __thiscall Graphics::MaterialPass::SetStateOverride(void* this, void* stateHandle)","add ecx,0x5C; jmp 0x004F4710 (ret 4 there); from reader B"
