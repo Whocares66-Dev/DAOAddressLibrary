@@ -16809,3 +16809,47 @@ address,what,value,why
 0x0055CBD0,signature,void * __thiscall f(void *this),"mov eax,[ecx+0x28] (0x0055CBD0)"
 0x0055CBF0,signature,"void __thiscall f(void *this, float *rects)","ret 4, ecx read as the batch (0x0055CBF0..0x0055CC22)"
 0x0055CC30,signature,"void __thiscall f(void *this, unsigned int offset)",ret 4 (0x0055CC30)
+0x0053E370,signature,void __thiscall ECBase::ECDynArray<?>::~ECDynArray(void* this),"frees *this when non-null; no stack arguments, plain ret"
+0x0053E380,signature,"void __thiscall GraphicsStructures::SpawnVolumeSphere::Sample(void* this, float* outPosition, float* outNormal, bool within, bool invertNormals, bool normalsAsDirection)",ret 0x14 at 0x0053E505; ecx read first
+0x0053E540,signature,"void __thiscall GraphicsStructures::SpawnVolumeCylinder::Sample(void* this, float* outPosition, float* outNormal, bool within, bool invertNormals, bool normalsAsDirection)",ret 0x14 at 0x0053E74F
+0x0053E790,signature,"void __thiscall GraphicsStructures::SpawnVolumeBox::Sample(void* this, float* outPosition, float* outNormal, bool within, bool invertNormals, bool normalsAsDirection)","same slot and caller (0x0056004E); min is at this+0x10 and max at this+0x20, Ghidra's SpawnVolumeBox_data offsets are 4 low"
+0x0053EB80,signature,"void __thiscall GraphicsStructures::ObjectNodeEmitter::Collect(void* this, void* context)",ret 4; vtable slot 28
+0x0053EBC0,signature,"void __thiscall GraphicsStructures::ObjectNodeEmitter::BuildUpdateContext(void* this, void* outContext, const float* v0, const float* v1, const float* v2, const float* v3)","ret 0x14; four vec4 pointers copied to +0x00, +0x10, +0x20, +0x30"
+0x0053EC80,signature,"int __thiscall GraphicsStructures::ObjectNodeEmitter::ComputeSpawnCount(void* this, const float* movement, float dt)",ret 8
+0x0053EE60,signature,"void __thiscall GraphicsStructures::ObjectNodeEmitter::SubmitSplats(void* this, void* drawContext)",ret 4
+0x0053EE90,signature,"void __thiscall GraphicsStructures::ObjectNodeEmitter::GetUserParamName(void* this, void* outWString)",ret 4; this is the +0x180 interface
+0x0053EEB0,signature,void __thiscall GraphicsStructures::ObjectNodeEmitter::LoadLiveParametersFromBlueprint(void* this),plain ret; ecx only
+0x0053F150,signature,"void __thiscall ECBase::ECDynArray<Vector4>::SetCapacity(void* this, unsigned int count)",ret 4
+0x0053F220,signature,"void* __thiscall ECBase::ECDynArray<?>::ECDynArray(void* this, unsigned int capacity)",ret 4; returns this
+0x0053F250,signature,"void __thiscall ECBase::ECDynArray<?>::SetSize(void* this, unsigned int count)",ret 4
+0x0053F290,signature,"void* __thiscall std::vector<?>::operator[](void* this, unsigned int index)",ret 4; returns pointer to 4-byte element or the static 0x00C3199C
+0x0053F2C0,signature,"void __cdecl std::fill<?*,?>(void* first, void* last, const void* value)","plain ret, 32-byte elements"
+0x0053F320,signature,"void* __cdecl std::copy_backward<?*,?*>(void* first, void* last, void* destEnd)","plain ret, 12-byte elements, returns new end"
+0x0053F3D0,signature,"void* __thiscall ECBase::ECDynArray<Vector4>::ECDynArray(void* this, unsigned int capacity)",ret 4
+0x0053F400,signature,"void __thiscall ECBase::ECDynArray<Vector4>::SetSize(void* this, unsigned int count)",ret 4
+0x0053F440,signature,"void __thiscall GraphicsStructures::SpawnVolumeMesh::Sample(void* this, float* outPosition, float* outNormal, bool within, bool invertNormals, bool normalsAsDirection)",ret 0x14 at 0x0053F91A
+0x005405E0,signature,"void __thiscall GraphicsStructures::ObjectNodeEmitter::SpawnSplat(void* this, const float* particle)",ret 4; position is particle[0..2]
+0x005411B0,signature,"void __thiscall GraphicsStructures::ObjectNodeEmitter::UpdateSplats(void* this, float dt)",ret 4
+0x005413E0,signature,"void __thiscall GraphicsStructures::ObjectNodeEmitter::SetUserParameters(void* this, void* userParameterMap)",ret 4; this is the +0x180 interface
+0x005418B0,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitter::`scalar deleting destructor'(void* this, unsigned char flags)",ret 4
+0x00541610,signature,void* __thiscall GraphicsStructures::ObjectNodeEmitter::GetOwnerObject(void* this),plain ret; this is the +0x180 interface
+0x00541AA0,signature,"void __thiscall ECBase::ECDynArray<?>::ResizeZeroFilled(void* this, unsigned int count)",ret 4
+0x00541AE0,signature,void* __fastcall GraphicsStructures::EmitterSplatParameters::EmitterSplatParameters(void* this),"plain ret; ecx only, returns this"
+0x00542440,signature,"void __thiscall GraphicsStructures::ObjectNodeEmitter::UpdateMotionFrames(void* this, bool resetPrevious)",ret 4
+0x00542660,signature,"void __thiscall GraphicsStructures::Object::vfunction44(void* this, void* argument)",ret 4
+0x00542680,signature,"void __thiscall GraphicsStructures::Object::SetScale(void* this, float scale)",ret 4
+0x005426A0,signature,"void* __thiscall GraphicsStructures::Object::FindNodeByName(void* this, const wchar_t* name)",ret 4
+0x005415D0,convention,__thiscall,"ecx = interface pointer, adjusted by 4 before the destructor"
+0x005415E0,convention,__thiscall,adjusted by 8
+0x005415F0,convention,__thiscall,adjusted by 0x180
+0x00541600,convention,__thiscall,adjusted by 0xC
+0x0053F070,clear,GraphicsStructures::ObjectNodeEmitter::UpdateFadeIn,the function fades in and out; proposed rename UpdateDistanceFade (0x53F0E4 is the fade-out branch)
+0x0053F380,signature,float __thiscall GraphicsStructures::SpriteParticle::GetPercentLifeElapsed(void* this),"plain ret, float in st0"
+0x0053F980,signature,"void __thiscall GraphicsStructures::ObjectNodeEmitter::Birth(void* this, float* outPositionAndVelocity, const float* position, const float* direction, bool directionGiven)",ret 0x10
+0x00540090,signature,void __thiscall GraphicsStructures::ObjectNodeEmitter::FillSplats(void* this),plain ret
+0x005414E0,signature,void __thiscall GraphicsStructures::ObjectNodeEmitter::~ObjectNodeEmitter(void* this),plain ret
+0x005415D0,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitter::`scalar deleting destructor'`adjustor{4}'(void* this, uint flags)","jmp thunk, ret 4 in the target"
+0x005415E0,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitter::`scalar deleting destructor'`adjustor{8}'(void* this, uint flags)",jmp thunk
+0x005415F0,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitter::`scalar deleting destructor'`adjustor{384}'(void* this, uint flags)",jmp thunk
+0x00541600,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitter::`scalar deleting destructor'`adjustor{12}'(void* this, uint flags)",jmp thunk
+0x00541E00,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitter::ObjectNodeEmitter(void* this, void* owner, void* blueprint)",ret 8
