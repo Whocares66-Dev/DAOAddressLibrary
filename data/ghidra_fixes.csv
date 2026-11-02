@@ -13948,3 +13948,37 @@ address,what,value,why
 0x005BA220,signature,"bool __thiscall f(void* this, void* name, bool precache)",0x005BA220
 0x005BA240,signature,void* __thiscall f(void* this),0x005BA240
 0x005BA350,signature,void __thiscall f(void* this),0x005BA350
+0x005BA530,signature,"bool __thiscall f(void* this, void* name, bool loadProject, bool precache, int mode)",ret 0x10 at 0x005BAC74; ecx moved to ebp at 0x005BA576
+0x005BAC80,signature,"bool __thiscall f(void* this, int startArg, bool cutsceneScale)",ret 8 at 0x005BAF25; ecx to ebp at 0x005BACB1; al set at 0x005BAEEE/0x005BAF06
+0x005BAF30,signature,"void __thiscall f(void* this, bool pin)",ret 4 at 0x005BB031; ecx to esi 0x005BAF5F
+0x005BB510,signature,"bool __thiscall f(void* this, void* name, bool oneShot)",ret 8 at 0x005BB608; al set at 0x005BB5F5/0x005BB612
+0x005BB630,signature,"void __thiscall f(void* this, float dt)",ret 4 at 0x005BBA12; ecx to esi 0x005BB654
+0x005BBBD0,signature,"bool __thiscall f(void* this, void* name)","ret 4 at 0x005BBEDD; caller 0x007F2C50 call 5B9020 then mov ecx,eax"
+0x005BBF60,signature,void __thiscall f(void* this),plain ret 0x005BBFEA; ecx to esi 0x005BBF63
+0x005BBFF0,signature,void __thiscall f(void* this),plain ret; reads [ecx+0x90] at 0x005BBFF9
+0x005BC2F0,signature,"void __thiscall f(void* this, void* settings)",ret 4 at 0x005BC7E9; ecx to esi 0x005BC317
+0x005BC940,signature,"bool __thiscall f(void* this, void* path, void* emitter, void* params)",ret 0xC at 0x005BC982
+0x005BCAB0,signature,"bool __thiscall f(void* this, int soundMatType, int surfaceMaterial, void* position)",ret 0xC at 0x005BCCCA; ecx to edi 0x005BCAE5; returns bl from 0x005BC7F0 at 0x005BCC7F
+0x005BCCD0,signature,void __thiscall f(void* this),plain ret 0x005BCF55; ecx to esi 0x005BCD00
+0x005BCF60,signature,void __thiscall f(void* this),plain ret 0x005BD210; ecx to esi 0x005BCF95
+0x005BD220,signature,"void __thiscall f(void* this, float dt)",ret 4 at 0x005BD612; caller pushes dt 0x005BD8D8
+0x005BD880,signature,"void __thiscall f(void* this, int mode, float dt)",ret 8 at 0x005BDCD3; mode/dt at 0x005BD8BE/0x005BD8D1
+0x005C5A60,signature,void* __thiscall f(void* this),"lea eax,[ecx-0x1C]; ret"
+0x005C6320,signature,"void __cdecl f(void* first, void* last, void* value)","plain ret; args [esp+8],[esp+0x10],[esp+0x18]"
+0x005C6350,signature,"void* __cdecl f(void* first, void* last, void* dest)","plain ret; args [ebp+8],[ebp+0xC],[ebp+0x10]; caller pushes extra tag args and add esp 0x1c"
+0x005C63F0,signature,"void* __thiscall f(void* this, int index, void* out)",ret 8 at 0x005C6427; ecx read at 0x005C63F1
+0x005C6480,signature,"void* __cdecl f(void* first, void* last, void* dest)",plain ret 0x005C64AA; calls 0x005C61D0 with add esp 0x1c
+0x005C64B0,signature,"void __cdecl f(void* dest, unsigned int count, void* value)","plain ret 0x005C6541; args [ebp+8],[ebp+0xC],[ebp+0x10]"
+0x005C6550,signature,"unsigned int __thiscall f(void* this, void* obj)",ret 4 at 0x005C65B7; ecx+4 at 0x005C6554
+0x005C65E0,signature,"void* __thiscall f(void* this, void* dest, unsigned int count, void* value)",ret 0xC at 0x005C6617; ecx not read before the push; callers load ecx with the vector
+0x005C6620,signature,"void __thiscall f(void* this, void* first, void* last)",ret 8 at 0x005C6643; ecx written before read; caller 0x005C6990 loads ecx with the vector
+0x005C6750,signature,"void __thiscall f(void* this, unsigned int key)",ret 4 at 0x005C675E; ecx passed on to 0x005C6650
+0x005C6770,signature,"void* __stdcall f(void* first, void* last, void* dest)",ret 0xC at 0x005C6796; ecx not read
+0x005C6B20,signature,"void* __thiscall f(void* this, void* result, void* container, void* where, void* value)",ret 0x10 at 0x005C6BCD; ecx to edi 0x005C6B29; result pointer is arg 1 and comes back in eax
+0x005C6BD0,signature,"void __thiscall f(void* this, void* value)",ret 4 at 0x005C6C4D; ecx to esi 0x005C6BD5
+0x005C6C80,signature,"void* __thiscall f(void* this, void* path, void* trail)",ret 8 at 0x005C6E6F; ecx to edi 0x005C6CA7
+0x005C7FC0,signature,"void __thiscall f(void* this, void* paths)",ret 4 at 0x005C8040; ecx to esi 0x005C7FE5
+0x005C8050,signature,void __thiscall f(void* this),plain ret; reads [ecx+0x32] at 0x005C8050
+0x005C8070,signature,"void __stdcall f(void* text, unsigned short sep, void* pairs, void* count)",ret 0x10 at 0x005C80E0; ecx written before read
+0x005C82C0,signature,void __thiscall f(void* this),plain ret; reads [edi+0x530] with ecx
+0x005C84D0,signature,int __thiscall f(void* this),plain ret 0x005C8517; ecx to esi 0x005C84D2
