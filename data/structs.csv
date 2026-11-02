@@ -549,7 +549,26 @@ Conversation::Participant,0x5,0x1,uint8_t,markedForRemoval,"0x007F077E mov byte 
 Conversation::Participant,0x10,0x4,int32,lookAtHandle,"0x007F07D3 cmp dword ptr [esi+0x10],ebx; jle in ReleaseParticipant (0x007F07A0): a handle above 0 is released on the creature (lea edi,[eax+0x2e0] then 0x00702E90); AddParticipant starts it -1 (0x007F1A04)"
 EC::Cutscene::Actor,0x528,0x10,std::vector<?>,clipRecords,"0x007D608B lea edi,[ecx+0x528]; 0x44-byte records (imul 0x78787879 at 0x007D60A3); record +0x38 start, +0x3C end, +0x40 action (0x007D611B)"
 EC::ITimer,0x0,0x20,struct,sizeof,0x00A465EC push 0x20 then ctor 0x004CB130 at 0x00A4660C
+ECBase::ECDynArray<?>,0x4,0x4,void*,begin,"0x0068F869 mov eax,[esi+4]"
+ECBase::ECDynArray<?>,0x8,0x4,void*,end,"0x0068F876 mov ebp,[esi+8]"
+ECBase::ECDynArray<?>,0xC,0x4,void*,capacityEnd,"0x0068F90F mov edx,[esi+0xC]"
 ECFileAccess::PNGFileAccess,0x448,0x1,unsigned char,descriptionWritten,"0x00A3966E cmp byte [esi+0x448],bl; set to 1 at 0x00A396ED; cleared at 0x00A3973D in ReadDescriptionChunk"
+ECPrivate::MemoryManager,0x0,0x20,Multithreading::Mutex,mutex,0x004B8D2C call Mutex::Mutex on this
+ECPrivate::MemoryManager,0x0,0x4D4,struct,sizeof,0x004B8DE7 push 0x4D4 (operator new in ECMemory::EnsureInitialized)
+ECPrivate::MemoryManager,0x20,0x120,ECPrivate::Pool,pool,"0x004B8D31 lea ecx,[esi+0x20]; Pool::Pool"
+ECPrivate::MemoryManager,0x140,0x130,ECPrivate::StringPool,stringPool,"0x004B8D41 lea ecx,[esi+0x140]; StringPool::StringPool"
+ECPrivate::MemoryManager,0x270,0x128,ECPrivate::BlockPool,blockPoolA,"0x004B8D51 lea ecx,[esi+0x270]; BlockPool::BlockPool"
+ECPrivate::MemoryManager,0x398,0x128,ECPrivate::BlockPool,blockPoolB,"0x004B8D61 lea ecx,[esi+0x398]; BlockPool::BlockPool"
+ECPrivate::MemoryManager,0x4C0,0x10,ECPrivate::Pool*[4],poolSlots,0x004B8E7F..0x004B8EAC fills +0x4C0..+0x4CC with the four pools; FindPoolContaining loops them at 0x004B8B9C
+ECPrivate::MemoryManager,0x4D0,0x4,uint32_t,currentPoolIndex,"0x004B8D71 mov [esi+0x4D0],0; 0x004B8FC7 adds 1 per pool made; 0x004B8F7A indexes the slots with it"
+ECResMan::ResMan,0x14,0x28,"stdext::hash_map<std::wstring,?>",typeMap,"0x004C5ECC lea ecx,[ebp+0x14] then the find (0x004C5BF0) of the 3-letter type key in ResMan::HasResource; the map is the one 0x004C7000 builds (list head +4, size +8, bucket vector +0x10, mask and max index +0x20/+0x24), so 0x28 bytes; value is the type's list of sources"
+ECResMan::ResMan,0x5C,0x20,Multithreading::Mutex,lockMutex,"0x004C539E add ecx,0x5C then Mutex::Lock in the manager lock 0x004C5390 (unlock 0x004C53B0); 0x20 as the MemoryManager's Mutex is"
+ECResMan::ResMan,0x90,0x28,"stdext::hash_map<std::wstring,ECResMan::RimEntry>",rimMap,"0x004C6015 lea ecx,[esi+0x90] then the find (0x004C5BF0) of the lower-cased rim name in GetRimLoadState; same hash_map layout as typeMap; value is the RimEntry at node+0x24 (key wstring at node+8)"
+ECResMan::ResMan,0xE8,0x20,Multithreading::Mutex,rimMutex,"0x004C5FF2 lea edi,[esi+0xe8] then Mutex::Lock (0x004CB2B0) around every rim map read and write (SetRimState 0x004C61D4, GetRimSize, IsRimRegistered)"
+ECResMan::RimEntry,0x0,0x4,void*,source,"0x004C7BF3 mov [eax],ebp in RegisterRim (the new entry of the rim map at ResMan+0x90): the ResourceSource; read back at node+0x24 as ComesBefore's argument, 0x004C7BB6 mov ecx,[esi+0x24], 0x004E6660"
+ECResMan::RimEntry,0x8,0x4,int32_t,state,"0x004C7BFC mov [eax+8],esi (0) in RegisterRim; SetRimState 0x004C6225 mov [esi+0x2C],eax (node+0x2C); 0 registered, 1 loading, 2 loaded (RegisterRim skips 1 and 2 at 0x004C7BC8-0x004C7BD0)"
+ECResMan::RimEntry,0xC,0x4,uint32_t,size,"0x004C7BFF mov [eax+0xC],ebx; read by GetRimSize 0x004C613B mov ebx,[esi+0x30] (node+0x30)"
+ECResMan::RimEntry,0x10,0x1,uint8_t,loadDone,"0x004C7C02 mov [eax+0x10],ecx; FinishRimLoad 0x004C82E0 mov byte [edi+0x34],1 (node+0x34); SetRimState clears it for a state other than 2 (0x004C622A); GetRimLoadState tests it at 0x004C6044"
 EffectList,0x0,0x14,struct,sizeof,0x0068979D push 0x14 ; the allocation before the constructor call at 0x006897D9 (constructor 0x00A64880)
 EffectList,0x0,0x4,CGameEffect*,topAnimationEffect,"0x00A6493C mov [esi],edi in AddEffect (0x00A64900) when the new effect's animation priority beats the current one's (0x00A64933)"
 EffectList,0x4,0x10,std::vector<CGameEffect*>,effects,"0x00A64885 lea ecx,[esi+4] ; begin +8 and end +0xC are read with sar 2 at 0x00A64646..0x00A6465E by FindTopAnimationEffect ; 4-byte elements"
@@ -591,6 +610,9 @@ GameModeRequest,0x0,0x10,struct,sizeof,"0x006411E5 sub esp,0x10 building the def
 GameModeRequest,0x4,0x4,int32,filedInMode,"0x006414BF mov [esp+0x14],eax, the result of GetGameMode (0x00640060, call at 0x006414B3) = the number of the current mode when the request is filed; stored at 0x00641647 mov [edi+4],edx; SwitchMode keeps it at the controller's +0x7C"
 GameModeRequest,0x8,0x4,int32,force,"0x006414C7 mov [esp+0x18],eax from SetGameMode's second argument; TakeRequest tests it at 0x00640D3A (cmp dword [esi+8],0; with 0 and the same mode the request is dropped)"
 GameModeRequest,0xC,0x4,void*,data,"0x006414CB mov [esp+0x1c],ebp from SetGameMode's third argument; an object freed through its vtable slot 0 then its deleting destructor (slot 1, push 1) when the request is dropped (0x00640D4C..0x00640D71)"
+GdaStore,0x14,0xC,"std::map<?,?>",nameMap,"0x004DF984 add edi,0x14 in DeleteIndexedTables: head node [edx+4] from [edi+0x18] (0x004DF97E), nodes freed at 0x004DF99E"
+GdaStore,0x28,0x4,void**,tableSlots,"0x004DF950 mov eax,[edi+0x28]: array of table pointers deleted one by one (slot 0 with 1, 0x004DF96A)"
+GdaStore,0x2C,0x4,int32_t,tableSlotCount,"0x004DF947 cmp [edi+0x2c],esi: the loop bound of the same array"
 Gff4::Template,0x4,0x4,int,fieldCount,"0x004DC1B3 mov [edi+4],eax after the push_back (count = (end-begin)/12)"
 Gff4::Template,0x10,0x10,std::vector<?>,fields,"0x004DC17D lea esi,[edi+0x10] then std::vector push_back 0x00891840 of the 12-byte {id,type,offset} record built at 0x004DC171"
 Graphics::ISceneInstance,0x0,0x100,struct,sizeof,0x0053A4C1 push 0x100
@@ -876,6 +898,7 @@ IRoomLayout,0xD0,0x10,std::vector<int>,connectivityList,"0x005D3C0D lea ebx,[esi
 IRoomLayout,0x100,0x4,int32_t,seenState,"0x005D2214 mov [ecx+0x100],eax in CRoom::SetSeen, which then gives the same value to StartDarknessFade as its state; CRoom's constructor starts it at 0 (0x005D36E5), a chunk's at 1 (0x005CF84D)"
 IRoomLayout,0x230,0x10,Vector4,boundsMin,"0x00A28720 movaps [esi+0x230],xmm1 in IRoomLayout::SetBounds: the per-component lesser of its two points; which is min and which max is read from the compare flags (test ah,0x41 at 0x00A286B7), not from a name"
 IRoomLayout,0x240,0x10,Vector4,boundsMax,"0x00A28714 movaps [esi+0x240],xmm0 in SetBounds: the per-component greater of the two points (test ah,5 at 0x00A2866A)"
+IRoomLayout,0x260,0x4,Renderer::FrameBufferEffects*,frameBufferEffects,"0x00A28574 cmp [esi+0x260],0 in IRoomLayout slot 2 (shared by CRoom and EC::CExteriorChunk); 0x00A285A4 mov [esi+0x260],eax after new 0x14 (0x00A2857D) and the FrameBufferEffects constructor 0x004572D0 with 3; freed 0x00A29170 in ~IRoomLayout, nulled 0x00A295D3 in the ctor"
 IRoomLayout,0x264,0x4,int32_t,loadState,"0x005D2DF3 cmp [esi+0x264],1 in CRoom::UpdateDarkness; CRoom::Load stores 0 at 0x005D2FCE; 2 not loaded (CRoom ctor 0x005D36EB), 0 a load asked, 1 loaded (the fast-load notes); IRoomLayout::IRoomLayout starts it at 3 (0x00A295D8)"
 IRoomLayout,0x268,0x4,int32_t,requestedState,"0x005D3202 mov [esi+0x268],edi in CRoom::SetState (the state last asked); read by IRoomLayout::GetState at 0x005D33B0 mov eax,[ecx+0x268]"
 IRoomLayout,0x270,0x1,uint8_t,rmlLoaded,"0x005D378A cmp byte [esi+0x270],0 at the start of CRoom::LoadRml (it returns 1 at once if set), set at 0x005D3E7E mov byte [esi+0x270],1 at its end"
@@ -914,7 +937,13 @@ Math::SineFade,0x10,0x4,float,saved,"0x005DC7FE fstp [esi+0x2cc] in the applicat
 Math::SineFade,0x14,0x4,float,elapsed,"0x005CC4F2 fadd [esi+0x14] in Advance: adds the step, clamped to the duration (0x005CC50F); 0x005D8200 fst [esi+0x2d0] in SetTimeScale zeroes it"
 Math::SineFade,0x18,0x4,float,fraction,"0x005CC520 fst [esi+0x18] in Advance: elapsed over duration (0x005CC515), passed to the curve"
 Math::SineFade,0x1C,0x1,uint8_t,active,"0x005CC533 mov byte ptr [esi+0x1c],0 in Advance when the fraction reaches 1; SetTimeScale sets it 1 at 0x005D8217 (ramp above 0, current left to Advance) or 0 at 0x005D822E (current set at once)"
+MessageRegistry,0x4,0x4,void*,rowsBegin,"0x004D7F43 mov ecx,[esi+4] (GetRow); rows are 16 bytes (0x004D7F5D shl eax,4)"
+MessageRegistry,0x8,0x4,void*,rowsEnd,"0x004D7F4B mov eax,[esi+8]"
+MessageRegistry,0x14,0x4,void*,postedQueue,"0x004D8C60 add ecx,0x14; jmp deque push_back (block of two 8-byte elements, 0x004D8C21 push 0x10)"
 Messages::Observer,0x20,0x4,void*,vptr,"0x006996E6; vptr, vftable 0x00B0EE88"
+Messages::PostedMessage,0x0,0x4,int,id,"0x004D7FF0 mov ecx,[eax]; mov [esi],ecx"
+Messages::PostedMessage,0x0,0x8,struct,sizeof,"0x004D8C3F lea edx,[ecx+ebx*8]: elements of 8 bytes in 16-byte blocks"
+Messages::PostedMessage,0x4,0x4,Messages::Message*,message,"0x004D7FFB call [edx+4] (clone); mov [esi+4],eax"
 Money,0x0,0xA4,struct,sizeof,0x007406FC; sizeof (push 0xA4 then Money::Money)
 MovementAnimController,0x0,0x180,struct,sizeof,0x00A63A1A push 0x180 ; the allocation before the constructor call at 0x00A63A3E (constructor 0x00A69EC0)
 MovementAnimController,0x0,0x4,void*,vftable,"0x00A69EEA mov dword [esi],0xB59AC0"
@@ -973,6 +1002,14 @@ Pathfinding::World,0x0,0x4,Pathfinding::AreaGridMap*,areaGrids,"0x00A465F3 mov [
 Pathfinding::World,0x0,0xE4,struct,sizeof,"0x00A454FB push 0xe4 (the singleton's allocation, then ctor 0x00A46590 at 0x00A4551C, stored in [0x00C4C0AC]; DestroyInstance 0x00A45540 frees it)"
 Pathfinding::World,0x4,0xDC,Pathfinding::Pathfinder,pathfinder,"0x00A465BA lea ecx,[esi+4] then ctor 0x00A4E3A0 (embedded, not a pointer); 0x00A466E9 lea ecx,[esi+4] then dtor 0x00A4E120; 0x00A46740 lea ecx,[esi+4] then CanWalkStraight 0x00A4BB80"
 Pathfinding::World,0xE0,0x4,EC::ITimer*,timer,"0x00A46615 mov [esi+0xe0],eax (new 0x20, ctor 0x004CB130 at 0x00A4660C); 0x00A466A9..0x00A466C3 calls its deleting destructor (vtable slot 0) and clears it; 0x00A467AD copies it to the pathfinder's +0xCC each Step"
+Physics::DebugLineBatch,0x0,0x3C,struct,sizeof,"0x0053BD5B push 0x3C (new in the getter 0x0053BD30, ctor 0x0053BC10)"
+Physics::DebugLineBatch,0x20,0x4,uint32_t,vertexStride,"0x0053BC86 mov [esi+0x20],eax (GetVertexStride)"
+Physics::DebugLineBatch,0x24,0x4,void*,vertexBuffer,"0x0053BCBB mov [esi+0x24],eax (device slot 0x54)"
+Physics::DebugLineBatch,0x28,0x4,uint32_t,bufferBytes,"0x0053BC90 mov [esi+0x28],eax (stride * 5000); Grow replaces it at 0x0053BBCB"
+Physics::DebugLineBatch,0x2C,0x4,void*,cpuBuffer,"0x0053BCA1 mov [esi+0x2C],eax (operator new)"
+Physics::DebugLineBatch,0x30,0x4,void*,device,"0x0053BC55 mov [esi+0x30],ebx; 0x0053BCDF mov ecx,[esi+0x30] then call [eax+0x68] (the device's CreateVertexDeclaration slot)"
+Physics::DebugLineBatch,0x34,0x4,void*,vertexDeclaration,"0x0053BD04 mov [esi+0x34],eax (device slot 0x68)"
+Physics::DebugLineBatch,0x38,0x4,uint32_t,usedLines,"0x0053BC52 mov [esi+0x38],0; Grow compares and copies by it at 0x0053BB4A"
 PlotItems,0x0,0x50,struct,sizeof,0x007406C5; sizeof (push 0x50 then PlotItems::PlotItems)
 Renderer::CShadowCasterCuller,0x0,0x2C0,struct,sizeof,0x00A24283 push 0x2C0 in CreateCuller
 Renderer::CShadowCasterCuller,0x290,0xC,float[3],sunDirection,0x00A2475B fstp [esi+0x290] (to 0x298): GetShadowDirection normalised (0x00A2472A call Vector4::NormalizedXYZ)
@@ -980,6 +1017,7 @@ Renderer::CShadowCasterCuller,0x2A0,0x8,unsigned long long,terrainCategoryMask,"
 Renderer::CShadowCasterCuller,0x2A8,0x4,float,sweepLimit,"0x00A24798 fld [0xC1C994] (50.0), 0x00A2479E fstp [esi-8] with esi = this+0x2B0; read at 0x00A24C6B"
 Renderer::CShadowCasterCuller,0x2AC,0x4,float,rangeSquared,"0x00A2477C fmul [0xC1C998] (20.0) on camera GetFar, squared at 0x00A24793, stored 0x00A24795; compared at 0x00A24BF7"
 Renderer::CShadowCasterCuller,0x2B0,0xC,float[3],anchorPosition,"0x00A24782 add esi,0x2B0; 0x00A247A6 camera slot 14 writes there; 0x00A24BC4 reads it"
+Renderer::FrameBufferEffects,0x0,0x14,struct,sizeof,"0x00A2857D push 0x14 (operator new in IRoomLayout slot 2, then the constructor 0x004572D0)"
 Renderer::ICameraInternal,0x0,0x4,void*,vftable,"0x00A25B7F mov [esi],0xB58604 (PerspectiveCamera ctor, after the base ctor 0x00465DA0)"
 Renderer::ICameraInternal,0x4,0x4,void*,viewport,"0x004655CE mov ecx,[ecx+4]; call into it in SetViewport 0x004655B0; width and height read through its slots at 0x00A25369, 0x00A2537C"
 Renderer::ICameraInternal,0x30,0x1,unsigned char,projectionDirty,"0x00465AAC cmp byte [esi+0x30],0 in the projection getter; set at 0x00A25A3A, 0x00A25A54; cleared 0x00465ABC"
