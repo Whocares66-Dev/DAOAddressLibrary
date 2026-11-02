@@ -5990,53 +5990,53 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5989,function,std::_Uninit_fill_n<General::SafePointer>,0x004fc3a0,0x007ed050,0x004fc3a0
 5990,function,,0x004fc40b,0x007ed0bb,0x004fc40b
 5991,function,std::vector<General::SafePointer>::_Ufill,0x004fc440,0x007ed0f0,0x004fc440
-5992,function,,0x004fc480,0x007ed130,0x004fc480
-5993,function,,0x004fc4f0,0x007ed1a0,0x004fc4f0
-5994,function,,0x004fc550,0x0048a880,0x004fc550
-5995,function,,0x004fc640,0x00758800,0x004fc640
-5996,function,,0x004fc6b0,0x007ed5c0,0x004fc6b0
-5997,function,,0x004fc720,0x007ed630,0x004fc720
-5998,function,,0x004fc960,0x007ed870,0x004fc960
-5999,function,,0x004fca90,0x007ed9a0,0x004fca90
-6000,function,,0x004fcb70,0x007eda80,0x004fcb70
-6001,function,,0x004fcbe0,0x007fa4c0,0x004fcbe0
-6002,function,,0x004fcc80,0x007fa560,0x004fcc80
-6003,function,,0x004fcca0,0x007fa580,0x004fcca0
-6004,function,,0x004fccc0,0x007fa5a0,0x004fccc0
-6005,function,,0x004fcce0,0x007fa5c0,0x004fcce0
-6006,function,,0x004fcd40,0x007fa620,0x004fcd40
+5992,function,Graphics::MaterialStateManager::Shutdown,0x004fc480,0x007ed130,0x004fc480
+5993,function,Graphics::MaterialStateManager::PurgeExpired,0x004fc4f0,0x007ed1a0,0x004fc4f0
+5994,function,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialState>>::resize,0x004fc550,0x0048a880,0x004fc550
+5995,function,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialState>>::vector,0x004fc640,0x00758800,0x004fc640
+5996,function,Graphics::MaterialStateManager::Register,0x004fc6b0,0x007ed5c0,0x004fc6b0
+5997,function,Graphics::MaterialStateManager::Load,0x004fc720,0x007ed630,0x004fc720
+5998,function,Graphics::MaterialStateManager::FindOrLoad,0x004fc960,0x007ed870,0x004fc960
+5999,function,Graphics::MaterialStateManager::MaterialStateManager,0x004fca90,0x007ed9a0,0x004fca90
+6000,function,Graphics::MaterialStateManager::Get,0x004fcb70,0x007eda80,0x004fcb70
+6001,function,Graphics::MaterialPixelShader::Create,0x004fcbe0,0x007fa4c0,0x004fcbe0
+6002,function,Graphics::MaterialPixelShader::Bind,0x004fcc80,0x007fa560,0x004fcc80
+6003,function,Graphics::MaterialPixelShader::IsValid,0x004fcca0,0x007fa580,0x004fcca0
+6004,function,Graphics::MaterialPixelShader::ApplyParameters,0x004fccc0,0x007fa5a0,0x004fccc0
+6005,function,Graphics::MaterialShader::~MaterialShader,0x004fcce0,0x007fa5c0,0x004fcce0
+6006,function,Graphics::MaterialShader::`scalar deleting destructor',0x004fcd40,0x007fa620,0x004fcd40
 6007,function,Multithreading::SynchSafePointerList<Graphics::MaterialPixelShader>::~SynchSafePointerList,0x004fcd60,0x007fa640,0x004fcd60
-6008,function,,0x004fce20,0x007fa700,0x004fce20
-6009,function,,0x004fcec0,0x007fa7a0,0x004fcec0
+6008,function,Graphics::MaterialPixelShader::~MaterialPixelShader,0x004fce20,0x007fa700,0x004fce20
+6009,function,Graphics::MaterialPixelShader::`scalar deleting destructor'`adjustor{60}',0x004fcec0,0x007fa7a0,0x004fcec0
 6010,function,Multithreading::SynchSafePointerList<Graphics::MaterialPixelShader>::SynchSafePointerList,0x004fced0,0x007fa7b0,0x004fced0
 6011,function,Multithreading::SynchSafePointerList<Graphics::MaterialPixelShader>::`scalar deleting destructor',0x004fcf20,0x007fa800,0x004fcf20
-6012,function,,0x004fcf50,0x007fa830,0x004fcf50
-6013,function,,0x004fd000,0x007fa8e0,0x004fd000
-6014,function,,0x004fd030,0x007fa910,0x004fd030
-6015,function,,0x004fd0d0,0x007fa9b0,0x004fd0d0
-6016,function,,0x004fd0f0,0x007fa9d0,0x004fd0f0
-6017,function,,0x004fd110,0x007fa9f0,0x004fd110
+6012,function,Graphics::MaterialPixelShader::MaterialPixelShader,0x004fcf50,0x007fa830,0x004fcf50
+6013,function,Graphics::MaterialPixelShader::`scalar deleting destructor',0x004fd000,0x007fa8e0,0x004fd000
+6014,function,Graphics::MaterialVertexShader::Create,0x004fd030,0x007fa910,0x004fd030
+6015,function,Graphics::MaterialVertexShader::Bind,0x004fd0d0,0x007fa9b0,0x004fd0d0
+6016,function,Graphics::MaterialVertexShader::ApplyParameters,0x004fd0f0,0x007fa9d0,0x004fd0f0
+6017,function,Graphics::MaterialPixelShader::GetMemoryFootprint,0x004fd110,0x007fa9f0,0x004fd110
 6018,function,Multithreading::SynchSafePointerList<Graphics::MaterialVertexShader>::~SynchSafePointerList,0x004fd160,0x007faa40,0x004fd160
-6019,function,,0x004fd220,0x007fab00,0x004fd220
-6020,function,,0x004fd2b0,0x007fab90,0x004fd2b0
+6019,function,Graphics::MaterialVertexShader::~MaterialVertexShader,0x004fd220,0x007fab00,0x004fd220
+6020,function,Graphics::MaterialVertexShader::`scalar deleting destructor'`adjustor{60}',0x004fd2b0,0x007fab90,0x004fd2b0
 6021,function,Multithreading::SynchSafePointerList<Graphics::MaterialVertexShader>::SynchSafePointerList,0x004fd2c0,0x007faba0,0x004fd2c0
 6022,function,Multithreading::SynchSafePointerList<Graphics::MaterialVertexShader>::`scalar deleting destructor',0x004fd310,0x007fabf0,0x004fd310
-6023,function,,0x004fd340,0x007fac20,0x004fd340
-6024,function,,0x004fd3f0,0x007facd0,0x004fd3f0
-6025,function,,0x004fd420,0x007eb2e0,0x004fd420
-6026,function,,0x004fd430,0x007eb2f0,0x004fd430
-6027,function,,0x004fd450,0x007eb310,0x004fd450
-6028,function,,0x004fd470,0x007eb330,0x004fd470
-6029,function,,0x004fd590,0x007eb450,0x004fd590
-6030,function,,0x004fd5c0,0x007eb480,0x004fd5c0
-6031,function,,0x004fd610,0x007eb4d0,0x004fd610
-6032,function,,0x004fd640,0x007eb500,0x004fd640
-6033,function,,0x004fd650,0x007eb510,0x004fd650
-6034,function,,0x004fd6c0,0x007eb580,0x004fd6c0
-6035,function,,0x004fd6f0,0x007eb5b0,0x004fd6f0
+6023,function,Graphics::MaterialVertexShader::MaterialVertexShader,0x004fd340,0x007fac20,0x004fd340
+6024,function,Graphics::MaterialVertexShader::`scalar deleting destructor',0x004fd3f0,0x007facd0,0x004fd3f0
+6025,function,Graphics::SetForceSimplePixelShader,0x004fd420,0x007eb2e0,0x004fd420
+6026,function,Multithreading::SynchSafePointer<Graphics::MaterialShader>::MakeWeak,0x004fd430,0x007eb2f0,0x004fd430
+6027,function,Multithreading::SynchSafePointer<Graphics::MaterialShader>::MakeStrong,0x004fd450,0x007eb310,0x004fd450
+6028,function,Graphics::MaterialShaderManager::GetMemoryFootprint,0x004fd470,0x007eb330,0x004fd470
+6029,function,std::_Destroy_range<Multithreading::SynchSafePointer<Graphics::MaterialShader>>,0x004fd590,0x007eb450,0x004fd590
+6030,function,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialShader>>::_Tidy,0x004fd5c0,0x007eb480,0x004fd5c0
+6031,function,Multithreading::SynchSafePointer<Graphics::MaterialShader>::SynchSafePointer_copy,0x004fd610,0x007eb4d0,0x004fd610
+6032,function,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialShader>>::_Tidy,0x004fd640,0x007eb500,0x004fd640
+6033,function,Graphics::MaterialShaderManager::~MaterialShaderManager,0x004fd650,0x007eb510,0x004fd650
+6034,function,std::fill<Multithreading::SynchSafePointer<Graphics::MaterialShader>>,0x004fd6c0,0x007eb580,0x004fd6c0
+6035,function,std::_Uninit_copy<Multithreading::SynchSafePointer<Graphics::MaterialShader>>,0x004fd6f0,0x007eb5b0,0x004fd6f0
 6036,function,,0x004fd759,0x007eb619,0x004fd759
-6037,function,,0x004fd790,0x007eb650,0x004fd790
-6038,function,,0x004fd7b0,0x007eb670,0x004fd7b0
+6037,function,Graphics::MaterialShaderManager::`scalar deleting destructor',0x004fd790,0x007eb650,0x004fd790
+6038,function,std::copy<Multithreading::SynchSafePointer<Graphics::MaterialShader>>,0x004fd7b0,0x007eb670,0x004fd7b0
 6039,function,"std::_Uninit_fill_n<General::SafePointer<?> *,unsigned int,General::SafePointer<?>>",0x004fd7f0,0x007eb6b0,0x004fd7f0
 6040,function,,0x004fd85b,0x007eb71b,0x004fd85b
 6041,function,std::vector<General::SafePointer<?>>::erase,0x004fd890,0x007eb750,0x004fd890

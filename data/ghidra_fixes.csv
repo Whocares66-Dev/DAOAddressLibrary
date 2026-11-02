@@ -14616,3 +14616,31 @@ address,what,value,why
 0x005FFDE0,signature,"void __thiscall f(void* this, void* source)",reconciled signature
 0x005FFE60,signature,"void* __stdcall f(void* first, void* last, void* dest)",reconciled signature
 0x005FFEF0,signature,"void __thiscall f(void* this, unsigned int index)",reconciled signature
+0x004FC480,signature,void __thiscall Graphics::MaterialStateManager::Shutdown(void* this),plain ret; ecx read at 0x004FC481
+0x004FC550,signature,"void __thiscall f(void* this, unsigned int n, unsigned int v0, unsigned int v1)","ret 0xC; value is an 8-byte handle passed by value, released at 0x004FC61F (by-value words counted against the ret, keeper)"
+0x004FC640,signature,"void* __thiscall std::vector<Multithreading::SynchSafePointer<Graphics::MaterialState>>::vector(void* this, unsigned int n)",ret 4; returns this at 0x004FC697
+0x004FC6B0,signature,"void __thiscall f(void* this, unsigned int v0, unsigned int v1)","ret 8; Ghidra shows void(void) and drops ecx (used at 0x004FC6D1) (by-value words counted against the ret, keeper)"
+0x004FC720,signature,"SafePointer* __thiscall Graphics::MaterialStateManager::Load(void* this, SafePointer* out, void* name, void* device)",ret 0xC; ecx saved at 0x004FC752 and passed to Register at 0x004FC90D; Ghidra treats it as non-this
+0x004FC960,signature,"SafePointer* __thiscall Graphics::MaterialStateManager::FindOrLoad(void* this, SafePointer* out, void* name)",ret 8; returns out at 0x004FCA3C
+0x004FCB70,clear,_AfxAygshellState,wrong library match; it is Graphics::MaterialStateManager::Get (static 0x00C30A08)
+0x004FCB70,signature,void* __cdecl Graphics::MaterialStateManager::Get(void),"plain ret, returns 0x00C30A08"
+0x004FCBE0,signature,"bool __thiscall Graphics::MaterialPixelShader::Create(void* this, void* resource)",ret 4; the resource handle is the by-value arg released at 0x004FCC5C; Ghidra drops it
+0x004FD030,signature,"bool __thiscall Graphics::MaterialVertexShader::Create(void* this, void* resource)",ret 4; as the pixel one
+0x004FCCC0,signature,"void __thiscall Graphics::MaterialPixelShader::ApplyParameters(void* this, void* arg)",ret 4 on the null path; tail jmp keeps the argument; Ghidra shows fastcall with no argument
+0x004FD0F0,signature,"void __thiscall Graphics::MaterialVertexShader::ApplyParameters(void* this, void* arg)",ret 4; as the pixel one
+0x004FCCE0,clear,inlined constructor comment,"the decompiler comment ""inlined constructor: Graphics::MaterialShader::MaterialShader"" is wrong; this is the destructor"
+0x004FD420,signature,void __cdecl Graphics::SetForceSimplePixelShader(bool enable),"plain ret, caller pops (0x0052776A pop ecx)"
+0x004FD430,signature,void __thiscall Multithreading::SynchSafePointer<Graphics::MaterialShader>::MakeWeak(void* this),ecx read first; plain ret or tail jmp
+0x004FD450,signature,void __thiscall Multithreading::SynchSafePointer<Graphics::MaterialShader>::MakeStrong(void* this),ecx read first
+0x004FD590,convention,__stdcall,"ret 8, ecx not read; Ghidra shows cdecl"
+0x004FD5C0,signature,void __thiscall std::vector<Multithreading::SynchSafePointer<Graphics::MaterialShader>>::_Tidy(void* this),"plain ret, ecx read at 0x004FD5C1"
+0x004FD610,signature,"void* __thiscall Multithreading::SynchSafePointer<Graphics::MaterialShader>::SynchSafePointer_copy(void* this, void* other)","ret 4; self test 0x004FD614, no release of an old value: a copy constructor"
+0x004FD640,clear,thunk_FUN_004fd5c0,"takes its target's name, std::vector<SynchSafePointer<MaterialShader>>::_Tidy"
+0x004FD650,clear,Graphics::IMemoryFootprint::IMemoryFootprint,"it is Graphics::MaterialShaderManager::~MaterialShaderManager (vftable 0x00AF40D4, tidies both lists, called at exit by 0x00AD5AA0)"
+0x004FD6F0,signature,"void* __cdecl std::_Uninit_copy<SynchSafePointer<MaterialShader>>(void* first, void* last, void* dest)",plain ret; returns dest end at 0x004FD77A
+0x004FD7B0,signature,"void* __cdecl std::copy<SynchSafePointer<MaterialShader>>(void* first, void* last, void* dest)",plain ret; returns dest+n
+0x004FE090,clear,_AfxAygshellState,"wrong library match (outside the batch); it is the MaterialShaderManager singleton getter (static 0x00C31084, ctor 0x004FE020)"
+0x004FD110,signature,"void __thiscall Graphics::MaterialPixelShader::GetMemoryFootprint(void* this, unsigned int* total, unsigned int* video)",ret 8 at 0x004FD156; shared by MaterialVertexShader's slot 1 (0x00AF40B4)
+0x004FD470,signature,"void __thiscall Graphics::MaterialShaderManager::GetMemoryFootprint(void* this, unsigned int* total, unsigned int* video)",ret 8 at 0x004FD588
+0x004FD6C0,convention,__cdecl,"plain ret, three stack args (first, last, const value*)"
+0x004F9390,clear,GStandardBlockAllocator::vfunction5,"outside the batch: `lea eax,[ecx+8]; ret`, used here as MaterialState's name getter (0x004FC8DF, 0x004FC9D6); a folded getter, the allocator label is a wrong match"
