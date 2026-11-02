@@ -18143,3 +18143,39 @@ address,what,value,why
 0x00537150,convention,__thiscall,"ecx is the library (0x00537605) and five stack arguments, ret 0x14; Ghidra lost this"
 0x00536500,clear,Graphics::IWindWorld::IWindWorld,Ghidra's label for the inlined base destructor; the function is SpeedTreeWorld::~SpeedTreeWorld
 0x00534C60,clear,Graphics::IRenderableNode::vfunction35,Ghidra's slot label; the function is the base scalar deleting destructor
+0x00537860,signature,"void __thiscall GraphicsStructures::SceneCamera::ProjectToScreen(void* this, Vector3* worldPoint, float* outX, float* outY, bool* outClipZNotNegative)","jump thunk to ICameraInternal::ProjectToScreen, ret 0x10 (0x00465CD0): four stack arguments"
+0x00537870,signature,"void __thiscall GraphicsStructures::SceneCamera::ScreenPointToRay(void* this, int x, int y, Vector3* outNear, Vector3* outFar)","jump thunk to the inner slot 17, ret 0x10 (0x00A26515, 0x00A254BE)"
+0x00537880,signature,"void __thiscall GraphicsStructures::SceneCamera::GetFrustumCorners(void* this, Vector4* outCorners)","jump thunk to the inner slot 20, ret 4 (0x00A25FE1); eight Vector4s are written"
+0x00537890,signature,"void* __thiscall GraphicsStructures::SceneCamera::GetSubmissionQueue(void* this, int which)",ret 4 (0x005378CE); returns the camera's +8
+0x005378E0,signature,Graphics::ISceneInstance* __thiscall GraphicsStructures::SceneCamera::CreateGuiScene(void* this),plain ret (0x005379D7); eax is [esi+0x28] (0x005379BE)
+0x005379E0,signature,"void __thiscall GraphicsStructures::SceneCamera::SetScene(void* this, Graphics::ISceneInstance* scene)",ret 4 (0x005379F3)
+0x00537A00,signature,"void* __thiscall GraphicsStructures::SceneCamera::SceneCamera(void* this, const std::wstring* name, bool applyAspectCorrection, int orthogonal)",ret 0xC (0x00537B75); returns this
+0x00537B80,signature,"void __thiscall GraphicsStructures::SceneCamera::vfunction4(void* this, const Vector4* value)",ret 4 (0x00537B93)
+0x00537BA0,signature,void __thiscall GraphicsStructures::SceneCamera::~SceneCamera(void* this),plain ret (0x00537C33)
+0x00537C40,signature,"void* __thiscall GraphicsStructures::SceneCamera::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4 (0x00537C5B); returns this
+0x00537C60,signature,"void __thiscall Graphics::ISceneInstance::SetCamera(void* this, void* camera, bool ownsCamera, bool setOwnership)",ret 0xC (0x00537C7B)
+0x00537D70,signature,void* __thiscall Stub::GetAddress_0x90(void* this),plain ret (0x00537D76)
+0x00537E00,signature,bool __thiscall Graphics::ISceneInstance::IsPhysicsSimulationEnabled(void* this),plain ret; tail jump to the physics scene's slot (0x00537E17)
+0x00537F40,signature,bool __thiscall Graphics::ISceneInstance::IsActive(void* this),"plain ret (0x00537F4E, 0x00537F51)"
+0x00537FB0,signature,"void __thiscall Graphics::ISceneInstance::SetObjectDetached(void* this, void* objectInterface, int mode)",ret 8 (0x0053805A)
+0x005387B0,signature,"void __thiscall Graphics::ISceneInstance::SetPlayerPosition(void* this, const Vector4* position)",ret 4 (0x005387C3)
+0x005387D0,signature,"void __thiscall Graphics::ISceneInstance::GetPlayerPosition(void* this, Vector4* outPosition)",ret 4 (0x005387E3)
+0x00538C00,signature,void __thiscall Graphics::ISceneInstance::DetachAllObjects(void* this),plain ret via the tail jump to 0x005484B0
+0x005396B0,signature,void __thiscall Graphics::ISceneInstance::PrepareFrame(void* this),plain ret via the tail jump to 0x00538750
+0x00539710,signature,"void __thiscall Graphics::ISceneInstance::OnObjectRemoved(void* this, void* objectInterface)","ret 4 (0x00539759, 0x0053979D)"
+0x005397A0,signature,"void __thiscall Graphics::ISceneInstance::GetSkyParameters(void* this, void** outData, unsigned int* outBytes)",ret 8 (0x00539801)
+0x00539810,signature,"void __thiscall Graphics::ISceneInstance::GetFogParameters(void* this, void** outData, unsigned int* outBytes)",ret 8 (0x00539871)
+0x00539880,signature,"void __thiscall Graphics::ISceneInstance::GetCloudParameters(void* this, void** outData, unsigned int* outBytes)",ret 8 (0x005398E1)
+0x005398F0,signature,"Math::CollisionOutputParameter* __stdcall std::uninitialized_copy<Math::CollisionOutputParameter*,Math::CollisionOutputParameter*>(Math::CollisionOutputParameter* first, Math::CollisionOutputParameter* last, Math::CollisionOutputParameter* dest)",ret 0xC (0x00539916); ecx is not read
+0x00539920,signature,void __thiscall Graphics::ISceneInstance::~ISceneInstance(void* this),plain ret (0x00539A81)
+0x00539F30,signature,void __cdecl Graphics::ISceneInstance::Destroy(Graphics::ISceneInstance* scene),"plain ret (0x00539F4A); callers add esp,4 (0x00537C0D)"
+0x00539FE0,signature,"void* __thiscall Graphics::ISceneInstance::ISceneInstance(void* this, bool deferring)",ret 4 (0x0053A255); returns this
+0x0053A340,signature,"void __thiscall Graphics::ISceneInstance::OnObjectAdded(void* this, void* objectInterface)","ret 4 (0x0053A389, 0x0053A3CD)"
+0x0053A3D0,signature,"void __thiscall Graphics::ISceneInstance::HandleObjectEvent(void* this, void* objectInterface, int event)",ret 8 (0x0053A3F8); jumps with the same stack to AddObject and RemoveObject
+0x0053A4A0,signature,Graphics::ISceneInstance* __cdecl Graphics::ISceneInstance::Create(bool deferring),"plain ret (0x0053A50B); callers add esp,4 (0x00527527)"
+0x0053A7A0,signature,"int __thiscall Graphics::GraphicsDriver::BindSwapSurface(void* this, void* surface)",ret 4 (0x0053A7AB); ecx is not read
+0x0053A7B0,signature,"void __thiscall Graphics::GraphicsDriver::PresentSurface(void* this, void* surface)",ret 4 through the tail jump to g_graphics slot 55
+0x0053A7E0,signature,"void __thiscall Graphics::GraphicsDriver::PresentSurfaceRect(void* this, void* surface, int a, int b, int c, int d, int e)",ret 0x18 (0x0053A81D): six stack arguments
+0x0053A820,signature,"int __thiscall Graphics::GraphicsDriver::vfunction68(void* this, void* object)",ret 4 (0x0053A82B)
+0x0053A830,signature,"void __thiscall Graphics::GraphicsDriver::vfunction69(void* this, void* object, int arg)",ret 8
+0x00537D70,clear,GraphicsStructures::ObjectNodeTerrain::vfunction,the body is folded and shared by unrelated vtables; it is not ObjectNodeTerrain's
