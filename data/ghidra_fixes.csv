@@ -18610,3 +18610,43 @@ address,what,value,why
 0x004F2F90,signature,void __thiscall ECBase::ECDynArray<Math::VectorUA4f>::clear(void* this),plain ret 0x004F2FC7
 0x004F33D0,signature,"void* __thiscall ECBase::ECDynArray<Math::VectorUA4f>::Assign(void* this, const void* other)",ret 4 at 0x004F34F6
 0x004F3720,signature,"void* __thiscall ECBase::ECDynArray<Math::VectorUA4f>::ECDynArray_copy(void* this, const void* other)",ret 4 at 0x004F3773
+0x004F8080,signature,void* __cdecl Graphics::MaterialManager::Get(void),plain ret; static at 0x00C30934
+0x004F80F0,signature,"void __thiscall Graphics::MaterialManager::AddMaterial(void* this, unsigned int handleWord0, unsigned int handleWord1)",ret 8; the handle is a two-word SynchSafePointer by value
+0x004F8150,signature,"void* __thiscall Graphics::MaterialManager::LoadMaterial(void* this, void* outHandle, void* name, void* resourceContext)",ret 0xC; returns outHandle
+0x004F8370,signature,"void* __thiscall Graphics::MaterialManager::GetMaterial(void* this, void* outHandle, void* name, void* resourceContext)",ret 0xC; returns outHandle
+0x004F8A10,signature,"bool __cdecl Graphics::ProvideBufferParameter(int usage, unsigned char flag, void* renderContext, void** outData, unsigned int* outSize)","plain ret; caller add esp,0x14 at 0x004F9309"
+0x004F8CE0,signature,"bool __cdecl Graphics::ProvideTextureParameter(int usage, void* renderContext, void** outData, unsigned int* outSize)","plain ret; caller add esp,0x10 at 0x004F931F"
+0x004F9250,signature,"bool __cdecl Graphics::ProvideShaderParameter(void* param, void* renderContext, void* passBlock)","plain ret; caller add esp,0xC at 0x00504A11"
+0x004F93A0,signature,bool __thiscall Graphics::MaterialState::IsValid(void* this),plain ret
+0x004FA330,signature,"void* __thiscall std::vector<std::pair<int,int>>::assign_return_this(void* this, void* source)",ret 4
+0x004FA480,signature,"void __thiscall Graphics::MaterialState::AddDeviceStatePair(void* this, void* pair)",jmp thunk to push_back (0x00564DA0); takes its target's one argument
+0x004FB030,signature,void __thiscall std::vector<Graphics::MaterialSamplerState>::_Tidy(void* this),plain ret
+0x004FB480,signature,"void __thiscall std::vector<Graphics::MaterialSamplerState>::push_back(void* this, void* entry)",ret 4
+0x004FB580,signature,"void* __thiscall std::vector<Graphics::MaterialSamplerState>::assign_return_this(void* this, void* source)",ret 4
+0x004FE580,signature,void __thiscall Graphics::MaterialShaderManager::ReloadPixelShaders(void* this),plain ret
+0x004FE600,signature,void __thiscall Graphics::MaterialShaderManager::ReloadVertexShaders(void* this),plain ret
+0x004FE910,signature,void* __thiscall Graphics::MaterialObject::GetDeclaredTextures(void* this),plain ret
+0x004FE920,signature,bool __thiscall Graphics::MaterialObject::IsValid(void* this),plain ret
+0x004FE970,signature,"void __thiscall std::_Tree<std::_Tmap_traits<unsigned int,?>>::const_iterator::operator--(void* this)",plain ret
+0x004FEA00,signature,"void* __thiscall Graphics::MaterialTextureDeclaration::MaterialTextureDeclaration(void* this, void* source)",ret 4
+0x004FEA70,signature,"void* __cdecl std::_Copy_opt<Graphics::MaterialTextureDeclaration*,Graphics::MaterialTextureDeclaration*>(void* first, void* last, void* dest)","plain ret; three stack arguments at +4,+8,+0xC"
+0x004FEAC0,signature,"void* __cdecl std::_Copy_backward_opt<Graphics::MaterialTextureDeclaration*,Graphics::MaterialTextureDeclaration*>(void* first, void* last, void* destEnd)",plain ret
+0x004FEB10,signature,"void __cdecl std::fill<Graphics::MaterialTextureDeclaration*,Graphics::MaterialTextureDeclaration>(void* first, void* last, void* value)",plain ret
+0x004FEB60,signature,"void* __cdecl std::_Tree<std::_Tmap_traits<unsigned int,Math::VectorUA4f>>::_Buynode(void)",plain ret
+0x004FEBA0,signature,"void* __thiscall std::_Tree<std::_Tmap_traits<unsigned int,Math::VectorUA4f>>::_Buynode_value(void* this, void* left, void* parent, void* right, void* pair, unsigned char color)",ret 0x14 at 0x004FEC2E: a __stdcall; this unread (ecx is only a pass-through)
+0x004FEC50,signature,"void* __cdecl std::copy<Graphics::MaterialTextureDeclaration*,Graphics::MaterialTextureDeclaration*>(void* first, void* last, void* dest)",plain ret
+0x004FECA0,signature,"void* __cdecl std::_Uninit_copy<Graphics::MaterialTextureDeclaration*,Graphics::MaterialTextureDeclaration*>(void* first, void* last, void* dest)",plain ret
+0x004FEDB0,signature,"void* __thiscall std::_Tree<std::_Tmap_traits<unsigned int,Math::VectorUA4f>>::_Copy(void* this, void* node, void* parent)",ret 8
+0x004FEE70,signature,"void* __cdecl std::copy_backward<Graphics::MaterialTextureDeclaration*,Graphics::MaterialTextureDeclaration*>(void* first, void* last, void* destEnd)",plain ret
+0x004FEEC0,signature,"void __cdecl std::_Destroy_range<Graphics::MaterialTextureDeclaration*>(void* first, void* last)",plain ret
+0x004FEF30,signature,"void __cdecl std::_Uninit_fill_n<Graphics::MaterialTextureDeclaration*,unsigned int,Graphics::MaterialTextureDeclaration>(void* first, unsigned int count, void* value)",plain ret
+0x004FF6A0,signature,"void __stdcall std::_Destroy<Graphics::MaterialTextureDeclaration*>(void* first, void* last)",ret 8 at 0x004FF6B8
+0x004FF6C0,signature,"void* __stdcall std::uninitialized_fill_n<Graphics::MaterialTextureDeclaration*,unsigned int,Graphics::MaterialTextureDeclaration>(void* first, unsigned int count, void* value)",ret 0xC
+0x004FF700,signature,"void* __stdcall std::uninitialized_copy<Graphics::MaterialTextureDeclaration*,Graphics::MaterialTextureDeclaration*>(void* first, void* last, void* dest)",ret 0xC
+0x004FF7A0,signature,"void __thiscall Graphics::MaterialObject::ProvideParameter(void* this, void* request, void* passBlock)",ret 8
+0x004F93B0,signature,int __stdcall Graphics::ParseDeviceStateName(void* name),ret 4; the argument is a string object compared with 0x4C0E10
+0x004F98B0,signature,unsigned int __stdcall Graphics::ParseDeviceStateValue(void* value),ret 4 (0x004F98C8)
+0x004F9DE0,signature,int __stdcall Graphics::ParseSamplerStateName(void* name),ret 4 (0x004F9DF8)
+0x004F9F10,signature,unsigned int __stdcall Graphics::ParseSamplerStateValue(void* value),ret 4 (0x004F9F28)
+0x004FE950,signature,"void* __cdecl std::_Tree<std::_Tmap_traits<unsigned int,Math::VectorUA4f>>::_Min(void* node)","reads [esp+4], plain ret"
+0x004FED40,signature,"void* __thiscall std::_Tree<std::_Tmap_traits<unsigned int,Math::VectorUA4f>>::find(void* this, void* outIterator, unsigned int* key)",ret 8 (0x004FEDA6); eax = outIterator

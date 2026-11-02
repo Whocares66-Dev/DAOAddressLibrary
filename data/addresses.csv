@@ -5897,31 +5897,31 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5896,function,std::vector<General::SafePointer>::Clear,0x004f7f00,0x007bec50,0x004f7f00
 5897,function,Graphics::MaterialManager::MaterialManager,0x004f7ff0,0x007df0d0,0x004f7ff0
 5898,function,Graphics::MaterialManager::ReleaseAll,0x004f8060,0x007df140,0x004f8060
-5899,function,,0x004f8080,0x007df160,0x004f8080
-5900,function,,0x004f80f0,0x007df1d0,0x004f80f0
-5901,function,,0x004f8150,0x007df230,0x004f8150
-5902,function,,0x004f8370,0x007df450,0x004f8370
+5899,function,Graphics::MaterialManager::Get,0x004f8080,0x007df160,0x004f8080
+5900,function,Graphics::MaterialManager::AddMaterial,0x004f80f0,0x007df1d0,0x004f80f0
+5901,function,Graphics::MaterialManager::LoadMaterial,0x004f8150,0x007df230,0x004f8150
+5902,function,Graphics::MaterialManager::GetMaterial,0x004f8370,0x007df450,0x004f8370
 5903,retired,,,,
 5904,function,Graphics::MaterialManager::LoadStandardMaterials,0x004f8500,0x007df5e0,0x004f8500
 5905,function,,0x004f85d0,0x007ef3e0,0x004f85d0
 5906,function,,0x004f88c0,0x007ef6d0,0x004f88c0
 5907,function,,0x004f8970,0x007ef780,0x004f8970
-5908,function,,0x004f8a10,0x007ef820,0x004f8a10
+5908,function,Graphics::ProvideBufferParameter,0x004f8a10,0x007ef820,0x004f8a10
 5909,retired,,,,
 5910,retired,,,,
-5911,function,,0x004f8ce0,0x007efaf0,0x004f8ce0
+5911,function,Graphics::ProvideTextureParameter,0x004f8ce0,0x007efaf0,0x004f8ce0
 5912,retired,,,,
 5913,function,,0x004f8dc0,0x007efbd0,0x004f8dc0
 5914,function,,0x004f8df0,0x007efc00,0x004f8df0
 5915,function,Graphics::ProvideRemoteMaterialParams,0x004f8f50,0x007efd60,0x004f8f50
-5916,function,,0x004f9250,0x007f0060,0x004f9250
+5916,function,Graphics::ProvideShaderParameter,0x004f9250,0x007f0060,0x004f9250
 5917,retired,,,,
 5918,function,,0x004f9390,0x007e6c80,0x004f9390
-5919,function,,0x004f93a0,0x007f7ce0,0x004f93a0
-5920,function,,0x004f93b0,0x007f7cf0,0x004f93b0
-5921,function,,0x004f98b0,0x007f81f0,0x004f98b0
-5922,function,,0x004f9de0,0x007f8720,0x004f9de0
-5923,function,,0x004f9f10,0x007f8850,0x004f9f10
+5919,function,Graphics::MaterialState::IsValid,0x004f93a0,0x007f7ce0,0x004f93a0
+5920,function,Graphics::ParseDeviceStateName,0x004f93b0,0x007f7cf0,0x004f93b0
+5921,function,Graphics::ParseDeviceStateValue,0x004f98b0,0x007f81f0,0x004f98b0
+5922,function,Graphics::ParseSamplerStateName,0x004f9de0,0x007f8720,0x004f9de0
+5923,function,Graphics::ParseSamplerStateValue,0x004f9f10,0x007f8850,0x004f9f10
 5924,function,,0x004fa060,0x006b4b90,0x004fa060
 5925,function,,0x004fa080,0x007f89a0,0x004fa080
 5926,function,,0x004fa0e0,0x004b2a10,0x004fa0e0
@@ -5932,11 +5932,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5931,function,Multithreading::SynchSafePointerListBase::`scalar deleting destructor',0x004fa250,0x004b69d0,0x004fa250
 5932,function,,0x004fa270,0x007f8a80,0x004fa270
 5933,function,,0x004fa2e0,0x007f8af0,0x004fa2e0
-5934,function,,0x004fa330,0x007f8d80,0x004fa330
+5934,function,"std::vector<std::pair<int,int>>::assign_return_this",0x004fa330,0x007f8d80,0x004fa330
 5935,function,,0x004fa350,0x007f8da0,0x004fa350
 5936,function,Multithreading::SynchSafePointerListBase::SynchSafePointerListBase,0x004fa3d0,0x004b6b90,0x004fa3d0
 5937,function,Graphics::MaterialState::AddDeviceState,0x004fa430,0x007f8e20,0x004fa430
-5938,function,,0x004fa480,0x007f8e70,0x004fa480
+5938,function,Graphics::MaterialState::AddDeviceStatePair,0x004fa480,0x007f8e70,0x004fa480
 5939,function,Graphics::MaterialState::CreateDeviceStates,0x004fa490,0x007f8e80,0x004fa490
 5940,function,Multithreading::SynchSafePointerList<Graphics::MaterialState>::SynchSafePointerList<Graphics::MaterialState>,0x004fa600,0x007f8ff0,0x004fa600
 5941,function,Graphics::MaterialStateEntry::MaterialStateEntry,0x004fa650,0x007f9040,0x004fa650
@@ -5961,15 +5961,15 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5960,function,,0x004fad10,0x007f96e0,0x004fad10
 5961,function,,0x004faedf,0x007f98af,0x004faedf
 5962,function,,0x004faf8e,0x007f995e,0x004faf8e
-5963,function,,0x004fb030,0x007f9630,0x004fb030
+5963,function,std::vector<Graphics::MaterialSamplerState>::_Tidy,0x004fb030,0x007f9630,0x004fb030
 5964,function,,0x004fb070,0x007f9a00,0x004fb070
 5965,function,,0x004fb0b0,0x007f9a40,0x004fb0b0
 5966,function,,0x004fb1d0,0x007f9b60,0x004fb1d0
 5967,function,,0x004fb280,0x007f9c10,0x004fb280
 5968,function,,0x004fb420,0x007f9db0,0x004fb420
-5969,function,,0x004fb480,0x007f9e10,0x004fb480
+5969,function,std::vector<Graphics::MaterialSamplerState>::push_back,0x004fb480,0x007f9e10,0x004fb480
 5970,function,std::vector<Graphics::MaterialSamplerState>::vector,0x004fb520,0x007f9eb0,0x004fb520
-5971,function,,0x004fb580,0x007f9f10,0x004fb580
+5971,function,std::vector<Graphics::MaterialSamplerState>::assign_return_this,0x004fb580,0x007f9f10,0x004fb580
 5972,function,std::vector<Graphics::MaterialSamplerState>::Clear,0x004fb5a0,0x007f9f30,0x004fb5a0
 5973,function,Graphics::MaterialState::MaterialState,0x004fb6b0,0x007fa040,0x004fb6b0
 5974,function,Graphics::MaterialState::`scalar deleting destructor'`adjustor{100}',0x004fb7d0,0x007fa160,0x004fb7d0
@@ -6058,34 +6058,34 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6057,function,,0x004fe1a0,0x007ec060,0x004fe1a0
 6058,function,,0x004fe240,0x007ec100,0x004fe240
 6059,function,,0x004fe3d0,0x007ec290,0x004fe3d0
-6060,function,,0x004fe580,0x007ec440,0x004fe580
-6061,function,,0x004fe600,0x007ec4c0,0x004fe600
+6060,function,Graphics::MaterialShaderManager::ReloadPixelShaders,0x004fe580,0x007ec440,0x004fe580
+6061,function,Graphics::MaterialShaderManager::ReloadVertexShaders,0x004fe600,0x007ec4c0,0x004fe600
 6062,function,,0x004fe680,0x007ec540,0x004fe680
 6063,function,,0x004fe7f0,0x007ec6b0,0x004fe7f0
 6064,function,,0x004fe8f0,0x007e6c70,0x004fe8f0
 6065,function,Graphics::MaterialObject::GetResourceContext,0x004fe900,0x007e6c90,0x004fe900
-6066,function,,0x004fe910,0x007e6ca0,0x004fe910
-6067,function,,0x004fe920,0x00661070,0x004fe920
+6066,function,Graphics::MaterialObject::GetDeclaredTextures,0x004fe910,0x007e6ca0,0x004fe910
+6067,function,Graphics::MaterialObject::IsValid,0x004fe920,0x00661070,0x004fe920
 6068,function,Graphics::MaterialObject::SetOverride,0x004fe930,0x007e6cc0,0x004fe930
 6069,function,Graphics::MaterialObject::SetSemantic,0x004fe940,0x007e6cd0,0x004fe940
-6070,function,,0x004fe950,0x006d62e0,0x004fe950
-6071,function,,0x004fe970,0x006b4950,0x004fe970
-6072,function,,0x004fea00,0x007e6ce0,0x004fea00
-6073,function,,0x004fea70,0x007e6d50,0x004fea70
-6074,function,,0x004feac0,0x007e6da0,0x004feac0
-6075,function,,0x004feb10,0x007e6e40,0x004feb10
-6076,function,,0x004feb60,0x007e6e90,0x004feb60
-6077,function,,0x004feba0,0x007e6ed0,0x004feba0
+6070,function,"std::_Tree<std::_Tmap_traits<unsigned int,Math::VectorUA4f>>::_Min",0x004fe950,0x006d62e0,0x004fe950
+6071,function,"std::_Tree<std::_Tmap_traits<unsigned int,?>>::const_iterator::operator--",0x004fe970,0x006b4950,0x004fe970
+6072,function,Graphics::MaterialTextureDeclaration::MaterialTextureDeclaration,0x004fea00,0x007e6ce0,0x004fea00
+6073,function,"std::_Copy_opt<Graphics::MaterialTextureDeclaration*,Graphics::MaterialTextureDeclaration*>",0x004fea70,0x007e6d50,0x004fea70
+6074,function,"std::_Copy_backward_opt<Graphics::MaterialTextureDeclaration*,Graphics::MaterialTextureDeclaration*>",0x004feac0,0x007e6da0,0x004feac0
+6075,function,"std::fill<Graphics::MaterialTextureDeclaration*,Graphics::MaterialTextureDeclaration>",0x004feb10,0x007e6e40,0x004feb10
+6076,function,"std::_Tree<std::_Tmap_traits<unsigned int,Math::VectorUA4f>>::_Buynode",0x004feb60,0x007e6e90,0x004feb60
+6077,function,"std::_Tree<std::_Tmap_traits<unsigned int,Math::VectorUA4f>>::_Buynode_value",0x004feba0,0x007e6ed0,0x004feba0
 6078,function,,0x004fec31,0x007e6f61,0x004fec31
-6079,function,,0x004fec50,0x007e6f80,0x004fec50
-6080,function,,0x004feca0,0x007e6fd0,0x004feca0
+6079,function,"std::copy<Graphics::MaterialTextureDeclaration*,Graphics::MaterialTextureDeclaration*>",0x004fec50,0x007e6f80,0x004fec50
+6080,function,"std::_Uninit_copy<Graphics::MaterialTextureDeclaration*,Graphics::MaterialTextureDeclaration*>",0x004feca0,0x007e6fd0,0x004feca0
 6081,function,,0x004fed09,0x007e7039,0x004fed09
-6082,function,,0x004fed40,0x007e7460,0x004fed40
-6083,function,,0x004fedb0,0x007e7070,0x004fedb0
+6082,function,"std::_Tree<std::_Tmap_traits<unsigned int,Math::VectorUA4f>>::find",0x004fed40,0x007e7460,0x004fed40
+6083,function,"std::_Tree<std::_Tmap_traits<unsigned int,Math::VectorUA4f>>::_Copy",0x004fedb0,0x007e7070,0x004fedb0
 6084,function,,0x004fee4d,0x007e710d,0x004fee4d
-6085,function,,0x004fee70,0x007e71f0,0x004fee70
-6086,function,,0x004feec0,0x007e7240,0x004feec0
-6087,function,,0x004fef30,0x007e72b0,0x004fef30
+6085,function,"std::copy_backward<Graphics::MaterialTextureDeclaration*,Graphics::MaterialTextureDeclaration*>",0x004fee70,0x007e71f0,0x004fee70
+6086,function,std::_Destroy_range<Graphics::MaterialTextureDeclaration*>,0x004feec0,0x007e7240,0x004feec0
+6087,function,"std::_Uninit_fill_n<Graphics::MaterialTextureDeclaration*,unsigned int,Graphics::MaterialTextureDeclaration>",0x004fef30,0x007e72b0,0x004fef30
 6088,function,,0x004fef9b,0x007e731b,0x004fef9b
 6089,function,Graphics::MaterialObject::CollectResourceFootprint,0x004fefd0,0x007e7350,0x004fefd0
 6090,function,"Map<unsigned int,RefHandle>::Find",0x004ff0e0,0x007e00f0,0x004ff0e0
@@ -6100,11 +6100,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6099,function,Graphics::MaterialObject::HasFloatParameter,0x004ff3f0,0x007e77a0,0x004ff3f0
 6100,function,Graphics::MaterialObject::HasMatrixParameter,0x004ff430,0x007e77e0,0x004ff430
 6101,function,Graphics::MaterialObject::GetMemoryFootprint,0x004ff470,0x007e7820,0x004ff470
-6102,function,,0x004ff6a0,0x007e7ab0,0x004ff6a0
-6103,function,,0x004ff6c0,0x007e7ad0,0x004ff6c0
-6104,function,,0x004ff700,0x007e7b10,0x004ff700
+6102,function,std::_Destroy<Graphics::MaterialTextureDeclaration*>,0x004ff6a0,0x007e7ab0,0x004ff6a0
+6103,function,"std::uninitialized_fill_n<Graphics::MaterialTextureDeclaration*,unsigned int,Graphics::MaterialTextureDeclaration>",0x004ff6c0,0x007e7ad0,0x004ff6c0
+6104,function,"std::uninitialized_copy<Graphics::MaterialTextureDeclaration*,Graphics::MaterialTextureDeclaration*>",0x004ff700,0x007e7b10,0x004ff700
 6105,function,Graphics::MaterialObject::FindVector4ArrayParameter,0x004ff730,0x007e7b40,0x004ff730
-6106,function,,0x004ff7a0,0x007e7bb0,0x004ff7a0
+6106,function,Graphics::MaterialObject::ProvideParameter,0x004ff7a0,0x007e7bb0,0x004ff7a0
 6107,function,,0x004ff930,0x007e7d80,0x004ff930
 6108,function,,0x004ff990,0x007e7de0,0x004ff990
 6109,function,,0x004ff9a0,0x007e7df0,0x004ff9a0
