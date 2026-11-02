@@ -18697,3 +18697,35 @@ address,what,value,why
 0x0053C450,signature,void __thiscall GraphicsStructures::Font::~Font(void *this),plain ret at 0x0053C4CC
 0x0053C4D0,signature,"void __thiscall GraphicsStructures::Font::Flush(void *this, void *context)",ret 4 at 0x0053C5AC; the argument is read at 0x0053C57D and handed to the material instance; vftable 0x00AF7904 slot 3
 0x0053E310,signature,void __thiscall GraphicsStructures::Splat::Splat(void *this),"plain ret at 0x0053E334; passed as an element constructor, so called with ecx = the element"
+0x004C0DE0,signature,"bool __thiscall f(void *this, void *other)",equals the other std::wstring; ret 4 0x004C0E09
+0x004C0E10,signature,"bool __thiscall f(void *this, unsigned short *text)","equals a wide C string, null is empty; ret 4 0x004C0E49"
+0x004C2510,signature,"void * __thiscall f(void *this, void *source)","copy constructor; ret 4 0x004C2533, returns this"
+0x004C3030,signature,"void __cdecl f(void *dest, unsigned short *format, ...)",formats into a wstring; variadic from arg 3 (va_list at 0x004C3055); plain ret 0x004C30E6
+0x004C3360,signature,"void * __thiscall f(void *this, void *result, void *right)","operator+(wstring,wstring); result is stack argument 1; ret 8 0x004C3414"
+0x004C3CF0,signature,"bool __thiscall f(void *this, bool lowercase, bool addAtDot, bool addPunctuation)",ret 0xC 0x004C3D2E and 0x004C3F80; al = removed any 0x004C3F6C
+0x004C4140,signature,"void * __thiscall f(void *this, char *text)",wstring from a narrow C string; ret 4 0x004C42A1
+0x004C5380,signature,void * __cdecl f(void),"mov eax,[0x00C2BE24]; ret"
+0x004D1BD0,signature,void * __thiscall f(void *this),LocString default constructor; plain ret 0x004D1C21
+0x004D1C50,signature,"void * __thiscall f(void *this, unsigned int stringId)",ret 4 0x004D1C62
+0x004D1C70,signature,"void * __thiscall f(void *this, unsigned int stringId)",LocString constructor from an id; ret 4 0x004D1CC6
+0x004D1EB0,signature,void * __thiscall f(void *this),returns this+8 (the std::wstring); plain ret 0x004D1EC1
+0x004D5230,signature,"void * __thiscall f(void *this, unsigned int fieldId)",returns the 12-byte field record or 0; ret 4 0x004D5243 and 0x004D52A3
+0x004D54D0,signature,"void * __thiscall f(void *this, void *out)",builds the 16-byte template view in out; ret 4 0x004D54F4
+0x004D5F00,signature,"bool __thiscall f(void *this, void *outIds)","ret 4 0x004D5FC3, al = 1 0x004D5FBE"
+0x004E0590,signature,"void * __thiscall f(void *this, void *name)",GdaStore this; name a std::wstring*; ret 4 0x004E068B
+0x004E1140,signature,"void * __thiscall f(void *this, unsigned int key)",ret 4 0x004E11EB
+0x004E11F0,signature,"void * __thiscall f(void *this, unsigned int key)",returns the entry (eax from 0x004E1140 kept); ret 4 0x004E11FE
+0x004E1210,signature,"void __thiscall f(void *this, unsigned int key)",ret 4 0x004E126F
+0x004E7050,signature,unsigned int __thiscall f(void *this),"plain ret 0x004E70E2, eax = xor of the four words"
+0x004F2510,signature,unsigned long long __thiscall f(void *this),edx:eax 64-bit mask; ret 0x004F6A66 through the tail jump
+0x004F2530,signature,"void __thiscall f(void *this, void **outData, unsigned int *outSize)",ret 8 0x004F2543
+0x004F2550,signature,"void __thiscall f(void *this, unsigned int index, bool asFloat, bool value)","ret 0xC 0x004F2570, 0x004F2585, 0x004F2599"
+0x004F25B0,signature,bool __thiscall f(void *this),sete al; plain ret
+0x004F85D0,signature,"bool __cdecl f(int usageId, void *renderContext, void *parameter, int arg4)",plain ret 0x004F8660; caller adds 0x10 at 0x004F92A1
+0x004F88C0,signature,"bool __cdecl f(int usageId, void *renderContext, void *parameter, int arg4)","plain ret 0x004F8934; caller add esp,0x10 at 0x004F92B7"
+0x004F8970,signature,"bool __cdecl f(int usageId, void *renderContext, void *parameter, int arg4)","plain ret 0x004F8A00; caller add esp,0x10 at 0x004F92CD"
+0x004F8DF0,signature,"bool __cdecl f(int usageId, void *renderContext, void *parameter, int arg4)","plain ret 0x004F8F1A; caller add esp,0x10 at 0x004F92E3"
+0x004FE240,signature,"void * __thiscall f(void *this, void *out, void *name, void *existing)",ret 0xC 0x004FE3CA
+0x004FE3D0,signature,"void * __thiscall f(void *this, void *out, void *name, void *existing)",ret 0xC 0x004FE570
+0x004FE680,signature,"void * __thiscall f(void *this, void *out, void *name)",ret 8 0x004FE799
+0x004FE7F0,signature,"void * __thiscall f(void *this, void *out, void *name)",ret 8 0x004FE8A7
