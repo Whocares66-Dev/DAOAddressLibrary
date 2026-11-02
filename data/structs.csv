@@ -664,7 +664,7 @@ GraphicsStructures::Dependency,0x0,0x4,void*,vftable,"0x00542D68 mov [esi],0xAF8
 GraphicsStructures::Dependency,0x4,0x4,GraphicsStructures::Object*,target,"0x00568BEB mov [esi+4],edi; 0x00568C49 mov [esi+4],ecx; the target Object"
 GraphicsStructures::Dependency,0x8,0x4,GraphicsStructures::ObjectNode*,targetNode,"0x00568BEE mov [esi+8],eax; 0x00568C5D mov [esi+8],eax; the target's node found by name"
 GraphicsStructures::Dependency,0xC,0x1C,std::wstring,targetNodeName,"0x00568BE8 lea ecx,[esi+0xC]; call 0x004C2AB0; the target's node name"
-GraphicsStructures::Dependency,0x28,0x1,bool,attached,"0x00542D23 mov [esi+0x28],bl; 0x00568DBD cmp byte [esi+0x28],0 and 0x00568DD2 mov [esi+0x28],1 in ObjectAttachDependency::Update"
+GraphicsStructures::Dependency,0x28,0x1,bool,appliedThisFrame,"0x00568DBD cmp [esi+0x28],0 and 0x00568DD2 mov [esi+0x28],1 in Update; 0x00548E88 clears it each frame in Object::InvalidateDependencies; 0x00542D23 clears it at construction"
 GraphicsStructures::EmitterUpdateTask,0x0,0x1C,struct,sizeof,0x00542030 push 0x1C; call operator new at 0x0054209D
 GraphicsStructures::EmitterUpdateTask,0x18,0x4,void*,emitter,"0x005420C3 mov [edi+0x18],esi; 0x0053E340 mov ecx,[ecx+0x18]"
 GraphicsStructures::ExportValue,0x0,0x30,struct,sizeof,"0x00546862 imul ecx (multiplier 0x2AAAAAAB at 0x0054685D), sar 3 at 0x00546864 in the array's Size; stride add [esp+0x10],0x30 at 0x00547CE5"
@@ -714,8 +714,10 @@ GraphicsStructures::Object,0x1F8,0x10,ECBase::ECDynArray<GraphicsStructures::Dep
 GraphicsStructures::Object,0x248,0x4,GraphicsStructures::TriggerSubObject*,triggerSubObject,"0x00542952 cmp [ecx+0x240],eax with ecx = Object+8; 0x0054F39A..0x0054F3A6 destructor deletes it through slot 0 and clears it; TriggerSubObject type INFERRED"
 GraphicsStructures::Object,0x24C,0x4,void*,simulatableUserData,"0x0054F5F4 mov [ecx+0x240],eax and 0x0054F600 mov eax,[ecx+0x240] with ecx = Object+0xC (ISimulatable slots 2 and 3); 0x0054FC90 zeroes it. Name and meaning INFERRED"
 GraphicsStructures::Object,0x250,0x4,GraphicsStructures::Object*,boundsBox,"0x00545909 mov [esi+0x250],eax (esi = Object); the wire box made by ShowBoundsBox; 0x0054551b recreated by SetUniformScale"
+GraphicsStructures::Object,0x258,0x4,void*,room,"0x00548D59 cmp edi,[esi+0x250] and 0x00548D66 mov [esi+0x250],edi with esi = Object+8; the room handed to SetRoom; the root node stores room+0x14 as its id"
 GraphicsStructures::Object,0x25C,0x4,Graphics::ISceneInstance*,scene,"0x0054F610 mov eax,[ecx+0x25C]; 0x0054F624 mov [ecx+0x25C],eax; 0x0054F281 the destructor passes it to ISceneInstance::RemoveObject and 0x0054F29C clears it"
 GraphicsStructures::Object,0x260,0x4,unsigned int,flags,"0x00543b4e mov eax,[ecx+0x260]; bit 1 shown 0x00543b54, bit 2 detached 0x00543b58, 0x4000 0x00543b68, 0x40 baked 0x00545e5c/0x00545e8e, 8 cut-away override 0x005466dd, 0x100 sphere proxy 0x005455e2, 0x10000 and 0x20000 sphere cache 0x0054576c/0x00545fba"
+GraphicsStructures::Object,0x264,0x10,ECBase::ECDynArray<GraphicsStructures::Dependency*>,dependents,"0x00548E9B lea ecx,[esi+0x264]; 0x0054A2C3 lea ecx,[esi+0x264] (RemoveDependency); the dependencies whose target is this Object; begin Object+0x268"
 GraphicsStructures::Object,0x274,0x4,GraphicsStructures::CrustHookMap*,crustMap,"0x005682DA mov edi,[esi+0x274]; 0x00543D76; the crust map, made when a crust node is instanced"
 GraphicsStructures::Object,0x278,0x1,bool,isCrustEffect,"0x005680DE mov byte [edi+0x278],1; made as a crust effect on a target (InstantiateAsCrust only)"
 GraphicsStructures::Object,0x279,0x1,unsigned char,flag279,"0x0054F820 mov al,[ecx+0x271] with ecx = Object+8; 0x0054FCD5 mov [esi+0x279],bl in the constructor. Meaning unread; no other store in the Object's code"
@@ -758,6 +760,7 @@ GraphicsStructures::ObjectBlueprint,0x94,0x4,float,remoteMaterialFresnelFalloff,
 GraphicsStructures::ObjectBlueprint,0xA0,0x10,Vector4,remoteMaterialTint,"0x00568B1B-0x00568B38; 0x005687C5 lea edx,[esi+0xA0]; remote material: tint (1,1,1,1 by default)"
 GraphicsStructures::ObjectBlueprint,0xB0,0x1C,std::wstring,remoteMaterialDecal,"0x005687CB lea ecx,[esi+0xB0]; ctor 0x00568B27; remote material: decal texture name"
 GraphicsStructures::ObjectBlueprint,0xCC,0x4,float,remoteMaterialAlpha,0x005687AC fld [esi+0xCC]; 0x00568B45; remote material: alpha (0 by default)
+GraphicsStructures::ObjectBlueprint,0xD0,0x4,float,presimulateTime,0x00548333 fcomp [eax+0xd0]; written 0x00596268 fstp [ebx+0xd0] from MMHEmitterPresimulateTime; zero at 0x00568B4C
 GraphicsStructures::ObjectBlueprint,0xE0,0x10,Vector4,boxMin,"0x005686C9 fld [esi+0xE0]; 0x00566507 fld [esi+0xE0]; ctor 0x00568B58; bounding box minimum, with a w it is divided by"
 GraphicsStructures::ObjectBlueprint,0xF0,0x10,Vector4,boxMax,"0x00568706 fld [esi+0xF0]; 0x00566560 fld [esi+0xF0]; bounding box maximum, with a w it is divided by"
 GraphicsStructures::ObjectNode,0x0,0x4,void*,vftable,"0x0055ED75 mov dword [esi],0xAF9764"
@@ -812,6 +815,8 @@ GraphicsStructures::ObjectNodeCloth,0x48C,0x4,void*,indexBuffer,"0x00565126 cmp 
 GraphicsStructures::ObjectNodeCloth,0x494,0x4,unsigned int,windSpace,"0x0056502E mov [esi+0x494],1; wind space, 1 from the constructor"
 GraphicsStructures::ObjectNodeCloth,0x4A0,0xD0,GraphicsStructures::ClothWind,wind,"0x00565038 call 0x005867C0 with ecx=esi+0x4A0; the gust model, constructed in place (size bounded by the next field at +0x570)"
 GraphicsStructures::ObjectNodeEmitter,0x310,0x4,ObjectNodeEmitterBlueprint*,emitterBlueprint,"0x0055F1A2 mov ecx,[esi+0x310]; written at 0x00560A53"
+GraphicsStructures::ObjectNodeEmitter,0x410,0x1,bool,burstArmed,"0x005498AA mov byte [eax+0x410],1"
+GraphicsStructures::ObjectNodeEmitter,0x414,0x4,int,emitType,"0x005498A1 cmp dword [eax+0x414],1 (1 is a burst emitter)"
 GraphicsStructures::ObjectNodeEmitter,0x4D8,0x4,void*,splatObject,"0x0053DBD9 mov ecx,[ecx+0x4D8] (tag 0x25 gives its +0x18); 0x0053DC80 reads its +8; written 0x0054200A and 0x00561157"
 GraphicsStructures::ObjectNodeEmitter,0x4DC,0x1,bool,clearRequested,"0x00548310 mov byte [ecx+0x4dc],1; read and cleared at 0x00552D5D and 0x00552D74 in the sprite emitter's Update"
 GraphicsStructures::ObjectNodeEmitter,0x4E0,0x4,float,opacity,0x0053D7DC fst [edx+0x4E0]; 1.0 at construction 0x00542018
@@ -819,6 +824,7 @@ GraphicsStructures::ObjectNodeEmitter,0x4E8,0x4,void*,updateTask,"0x005420C6 mov
 GraphicsStructures::ObjectNodeEmitterBlueprint,0x130,0x1,char,flags130,"0x0055FFE7 mov al,[ecx+0x130]: bit 0 PhysicsEmitter (0x005613D0 test), bit 1 has attachments (0x0055F1A8), bit 5 link particles (0x0055FFF4), bit 7 spawn within volume (0x00560042)"
 GraphicsStructures::ObjectNodeEmitterBlueprint,0x131,0x1,char,flags131,"0x00560017 movzx eax,[ecx+0x131]: bit 0 invert volume normals, bit 4 normals as direction"
 GraphicsStructures::ObjectNodeEmitterBlueprint,0x1FC,0x4,void*,spawnVolume,"0x0056001F mov esi,[ecx+0x1FC]"
+GraphicsStructures::ObjectNodeEmitterBlueprint,0x270,0x10,ECBase::ECDynArray<GraphicsStructures::EmitterPhysicsBindRule>,physicsBindRules,"0x00548BB6 mov edi,[ebp+0x310]; 0x00548BBC add edi,0x270; begin/end read by 0x005484F0/0x00548540 at +4/+8"
 GraphicsStructures::ObjectNodeEmitterBlueprint,0x2C0,0x4,void*,meshParticleModel,"0x0055FFE0 cmp [ecx+0x2C0],0; returned by 0x00560070"
 GraphicsStructures::ObjectNodeEmitterGroup,0x0,0x250,struct,sizeof,"0x0053D4FF add dword [esi],0x250; 0x005B3330 mov eax,0x250 (blueprint GetNodeSize)"
 GraphicsStructures::ObjectNodeEmitterGroup,0x1C0,0x30,Math::Sphere,bounds,"0x0053D87B lea ecx,[esi+0x1C0]; 0x0053D8B5 call 0x004D4F40 (the sphere constructor)"
