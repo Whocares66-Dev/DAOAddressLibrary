@@ -14198,3 +14198,45 @@ address,what,value,why
 0x004FE8F0,clear,CLCDBase::vfunction18,"folded getter of a member's address; here a MaterialObject's name (0x004F75BC, then emptiness test 0x004C0E50 and assign 0x0057F630)"
 0x004F5700,signature,"void* __thiscall Graphics::MaterialObjectInstance::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4 at 0x004F571B
 0x004F6660,signature,unsigned long long __cdecl Graphics::MaterialCategoryFromName(const wchar_t* token),"not in the batch; plain ret, u64 in edx:eax; the 38-name _wcsicmp chain read for 0x004F6B40"
+0x004F77C0,signature,MaterialObjectManager * __cdecl Graphics::MaterialObjectManager::GetInstance(void),No function is defined at this address (get_code: not found); 26 call sites; the bytes are a guarded singleton getter returning 0x00C308C0 with a plain ret at 0x004F7826. Define the function.
+0x004F7730,clear,Graphics::IMemoryFootprint::IMemoryFootprint,"It is MaterialObjectManager's destructor (destroys +0x34 mutex and +4 map, then sets the base vftable)."
+0x004F7DB0,clear,Graphics::IMemoryFootprint::IMemoryFootprint,It is MaterialManager's destructor.
+0x004FC310,clear,Graphics::IMemoryFootprint::IMemoryFootprint,It is MaterialStateManager's destructor.
+0x004F7830,signature,"void __thiscall Graphics::MaterialObjectManager::Register(void * this, void * object)",ret 4; reads ecx at 0x004F7856.
+0x004F78E0,signature,"void * __thiscall Graphics::MaterialObjectManager::GetObject(void * this, void * out, void * name)",ret 8; ecx moved to edi at 0x004F7907 and used as this for 0x004F72D0/0x004F7830; Ghidra shows no this.
+0x004F78E0,convention,__thiscall,As above (decompiled as a plain function with two parameters).
+0x004F79E0,signature,"void * __thiscall Graphics::MaterialObjectManager::CreateInstance(void * this, void * name)",ret 4; ecx passes through to 0x004F78E0 at 0x004F7A0E; Ghidra shows no this.
+0x004F79E0,convention,__thiscall,As above.
+0x004F7AA0,signature,bool __cdecl Graphics::IsValidResourceName(void * name),plain ret; wstring argument at [esp+4]; returns al.
+0x004F7B20,convention,__thiscall,"Ghidra has __fastcall; ecx is this (lock at +0x14), plain ret, no arguments."
+0x004F7BF0,convention,__thiscall,"Ghidra has __fastcall; ecx is this, plain ret."
+0x004F7F00,signature,"void __thiscall std::vector<General::SafePointer>::Clear(void * this, bool release)",ret 4; byte argument tested at 0x004F7F28.
+0x004F8060,signature,void __thiscall Graphics::MaterialManager::ReleaseAll(void * this),"add ecx,4 at 0x004F8062 reads this; Ghidra shows no this."
+0x004F8500,signature,void __thiscall Graphics::MaterialManager::LoadStandardMaterials(void * this),"mov edi,ecx at 0x004F8537 and passed as this to 0x004F8370; plain ret."
+0x004FA430,signature,"void __thiscall Graphics::MaterialState::AddDeviceState(void * this, void * name, void * value)","ret 8; ecx saved at 0x004FA43A, +0x28 vector."
+0x004FA430,convention,__thiscall,As above (decompiled without this).
+0x004FB520,signature,"void * __thiscall std::vector<Graphics::MaterialSamplerState>::vector(void * this, unsigned int count)",ret 4.
+0x004FB5A0,signature,"void __thiscall std::vector<Graphics::MaterialSamplerState>::Clear(void * this, bool release)",ret 4.
+0x004FB6B0,signature,"void * __thiscall Graphics::MaterialState::MaterialState(void * this, void * device, int mostDerived)","ret 8; arg1 stored at +0x48 (0x004FB78B), arg2 tested at 0x004FB6DC. Ghidra's struct puts device at offset_0x40: the struct is 8 bytes low."
+0x004FB8B0,signature,"void __thiscall Graphics::MaterialState::AddSamplerState(void * this, int stage, void * type, void * value, void * texture)","ret 0x10; mov edi,ecx at 0x004FB8F7 and +0x38 vector at 0x004FB9E4; Ghidra shows no this."
+0x004FB8B0,convention,__thiscall,As above.
+0x004FBA20,signature,"void __thiscall Graphics::MaterialState::Clone(void * this, void * out)",ret 4; out handle at [esp+0x20] 0x004FBA80; Ghidra has __fastcall with no out.
+0x004FBB30,signature,"void __thiscall Graphics::MaterialStateManager::BeginState(void * this, void * state)",ret 4; Ghidra has __fastcall without the argument.
+0x004FBBD0,convention,__thiscall,"Ghidra has __fastcall; ecx is this, plain ret."
+0x004FBEE0,signature,"void __thiscall std::vector<Graphics::MaterialSamplerState>::GetRange(void * this, void * first, void * last)",ret 8.
+0x004FBF90,convention,__thiscall,"Ghidra has __fastcall; ecx is the vector, plain ret."
+0x004FBFF0,signature,"void __thiscall Graphics::MaterialStateManager::ApplyState(void * this, void * state)",ret 4; this in edi (0x004FBFFB).
+0x004FC2C0,signature,"void __thiscall Graphics::MaterialStateManager::SetState(void * this, void * state)","ret 4; mov esi,ecx at 0x004FC2C7; Ghidra shows no this."
+0x004FC2C0,convention,__thiscall,As above.
+0x004FC2E0,signature,"void __cdecl std::fill<General::SafePointer>(void * first, void * last, void * value)",plain ret.
+0x004FC3A0,signature,"void __cdecl std::_Uninit_fill_n<General::SafePointer>(void * first, unsigned int count, void * value)","plain ret, caller cleans 0x18 (0x004FC467)."
+0x004FC440,signature,"void * __thiscall std::vector<General::SafePointer>::_Ufill(void * this, void * first, unsigned int count, void * value)",ret 0xC; returns first+count*8 (0x004FC46A).
+0x00844A80,clear,Console::ConsoleString::GetColor,"Folded getter (lea eax,[ecx+0x28]); here it is MaterialState's device-state vector. Listed only: the fold is shared."
+0x004FE8F0,clear,CLCDBase::vfunction18,"Folded getter (lea eax,[ecx+0x1C]); here it is the material object's name. Listed only: the fold is shared."
+0x004F77A0,signature,"void * __thiscall Graphics::MaterialObjectManager::`scalar deleting destructor'(void * this, unsigned int flags)",ret 4; slot 0 of 0x00AF2B90 (B).
+0x004F7CA0,signature,"void __thiscall Graphics::MaterialManager::GetMemoryFootprint(void * this, int * main, int * other)",ret 8; slot 1 of 0x00AF305C.
+0x004F7E20,signature,"void * __thiscall Graphics::MaterialManager::`scalar deleting destructor'(void * this, unsigned int flags)",ret 4; slot 0 of 0x00AF305C.
+0x004FA100,signature,"void __thiscall Graphics::MaterialState::GetMemoryFootprint(void * this, int * main, int * other)",ret 8; slot 1 of 0x00AF4004.
+0x004FBE30,signature,"void __thiscall Graphics::MaterialStateManager::GetMemoryFootprint(void * this, int * main, int * other)",ret 8; slot 1 of 0x00AF4018.
+0x004FCB70,clear,_AfxAygshellState,"It is Graphics::MaterialStateManager::GetInstance (guard 0x00C30FFC, object 0x00C30A08); outside this batch, from both readers."
+0x004FE090,clear,_AfxAygshellState,"It is the MaterialShaderManager getter (guard 0x00C310A8, object 0x00C31084) [I: the class name]; outside this batch, from both readers."
