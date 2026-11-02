@@ -14674,3 +14674,43 @@ address,what,value,why
 0x00505EC0,signature,void __thiscall Graphics::MaterialEffectPass::Load(void* this),plain ret; writes [esi+0x64] from AddAllStages (0x00505EC3..0x00505EC8); from reader B
 0x00505ED0,signature,void __thiscall Graphics::MaterialPass::Rebind(void* this),tail jump to 0x00505150 at 0x00505EFA; from reader B
 0x005060B0,signature,"void __thiscall Graphics::MaterialPass::SetStateOverride(void* this, void* stateHandle)","add ecx,0x5C; jmp 0x004F4710 (ret 4 there); from reader B"
+0x0050CF00,signature,"void* __thiscall Graphics::MaterialBuilderXML2::TakeResult(void* this, void* out)",ret 4 at 0x0050CFB5; out is a returned 8-byte handle
+0x0050CFC0,signature,"void* __thiscall Graphics::MaterialTemp::MaterialTemp(void* this, void* material_p, unsigned int material_weak)",ret 8 at 0x0050D060; handle passed by value (8 bytes)
+0x0050D070,signature,"void* __thiscall Graphics::MaterialTemp::GetMaterial(void* this, void* out)",ret 4 at 0x0050D08D
+0x0050D090,signature,"void __thiscall Graphics::MaterialBuilderXML2::StartElement(void* this, wchar_t* name, wchar_t** attrs)",ret 8 at 0x0050D0E2 and 0x0050D8EB
+0x0050D8F0,signature,"void* __thiscall Graphics::MaterialShader::MaterialShader(void* this, std::wstring* name, int kind)",ret 8 at 0x0050D971; name copied by wstring(const wstring&) 0x004C2510; kind unread (callers pass 2 at 0x004FCFAE and 1 at 0x004FD39E)
+0x0050D980,signature,"void __thiscall std::allocator<std::wstring>::destroy(void* this, void* p)",ret 4 at 0x0050D9A8; ecx unread (member of an empty allocator)
+0x0050D9B0,signature,void* __thiscall std::vector<std::wstring>::back(void* this),plain ret; reads ecx at 0x0050D9B6
+0x0050DA20,signature,"void __cdecl std::_Destroy_range<std::wstring>(void* first, void* last, void* alloc)",plain ret; caller cleans (0x0050E2D6 add esp)
+0x0050DBC0,signature,"void __thiscall std::vector<std::wstring>::_Destroy(void* this, void* first, void* last)",ret 8 at 0x0050DBD8
+0x0050DDE0,signature,"void __thiscall Graphics::MaterialStateBuilderXML2::ReadAttributes(void* this, wchar_t** attrs)",ret 4 at 0x0050E22F
+0x0050E240,signature,"void* __thiscall std::vector<std::wstring>::_Ufill(void* this, void* ptr, unsigned int count, void* val)",ret 0xC at 0x0050E279
+0x0050E280,signature,"void* __thiscall std::vector<std::wstring>::erase(void* this, void* ret, void* first_cont, void* first_ptr, void* last_cont, void* last_ptr)",ret 0x14 at 0x0050E2E9
+0x0050E350,signature,void __thiscall std::vector<std::wstring>::_Tidy(void* this),plain ret 0x0050E38E
+0x0050E390,signature,void __thiscall std::vector<std::wstring>::pop_back(void* this),plain ret 0x0050E3D2
+0x0050E3E0,signature,"void* __thiscall std::vector<std::wstring>::_Umove(void* this, void* first, void* last, void* dest)",ret 0xC at 0x0050E406
+0x0050E440,clear,XMLParser2::IBuilder::IBuilder,"it is Graphics::MaterialStateBuilderXML2::~MaterialStateBuilderXML2 (restores 0x00AF4FBC, destroys members, then sets the base vftable 0x00AE8490); the same mislabel sits on 0x0050C740 (MaterialBuilderXML2's destructor, outside this batch)"
+0x0050E4F0,signature,"void __thiscall Graphics::MaterialStateBuilderXML2::EndElement(void* this, wchar_t* name)",ret 4 at 0x0050E681
+0x0050E9F0,signature,"void* __thiscall Graphics::MaterialStateBuilderXML2::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4 at 0x0050EA0B
+0x0050EA10,signature,"void __thiscall f(void* this, unsigned int n, unsigned int v0, unsigned int v1, unsigned int v2, unsigned int v3, unsigned int v4, unsigned int v5, unsigned int v6)","ret 0x20 at 0x0050EB3B: n plus a 0x1C-byte wstring by value (by-value words counted against the ret, keeper)"
+0x0050EB40,signature,"void* __thiscall std::vector<std::wstring>::insert(void* this, void* ret, void* where_cont, void* where_ptr, void* val)",ret 0x10 at 0x0050EBF1
+0x0050EC00,signature,"void __thiscall std::vector<std::wstring>::push_back(void* this, void* val)",ret 4 at 0x0050EC7A
+0x0050ECB0,signature,"void* __thiscall std::vector<std::wstring>::vector(void* this, unsigned int n)",ret 4 at 0x0050ED20
+0x0050ED30,signature,"void* __thiscall Graphics::MaterialStateBuilderXML2::MaterialStateBuilderXML2(void* this, void* parser, void* device)",ret 8 at 0x0050EE42
+0x0050EE50,signature,"void __thiscall Graphics::MaterialStateBuilderXML2::StartElement(void* this, wchar_t* name, wchar_t** attrs)",ret 8 at 0x0050EFAA
+0x0050EFB0,signature,"void* __thiscall Graphics::MaterialStateBuilderXML2::TakeResult(void* this, void* out)",ret 4 at 0x0050F063
+0x0050F070,signature,"void __thiscall Graphics::MaterialArtParameter::SetName(void* this, void* name)",ret 4 at 0x0050F088
+0x0050F090,signature,void* __thiscall Graphics::MaterialArtParameter::GetName(void* this),plain ret
+0x0050F0B0,signature,int __thiscall Graphics::MaterialArtVector4f::GetType(void* this),plain ret; reads ecx+0x10
+0x0050F0C0,signature,"void __thiscall Graphics::MaterialArtTexture::SetStage(void* this, unsigned short stage)",ret 4 at 0x0050F0C9
+0x0050F0D0,signature,"void __thiscall Graphics::MaterialArtTexture::SetDefault(void* this, void* textureName)",ret 4 at 0x0050F0F7
+0x0050F100,signature,void* __thiscall Graphics::MaterialArtTexture::GetDefaultName(void* this),plain ret
+0x0050F120,signature,unsigned short __thiscall Graphics::MaterialArtTexture::GetStage(void* this),plain ret
+0x0050DA60,convention,__cdecl,"plain ret, the caller's add esp (STL free function)"
+0x0050DAA0,convention,__cdecl,"plain ret, the caller's add esp (STL free function)"
+0x0050DB60,convention,__cdecl,"plain ret, the caller's add esp (STL free function)"
+0x0050DBE0,convention,__cdecl,"plain ret, the caller's add esp (STL free function)"
+0x0050DC10,convention,__cdecl,"plain ret, the caller's add esp (STL free function)"
+0x0050DD50,convention,__cdecl,"plain ret, the caller's add esp (STL free function)"
+0x0050E2F0,convention,__cdecl,"plain ret, the caller's add esp (STL free function)"
+0x0050E410,convention,__cdecl,"plain ret, the caller's add esp (STL free function)"
