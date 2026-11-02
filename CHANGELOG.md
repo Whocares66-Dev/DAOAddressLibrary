@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.9.0
+
+- **The engine is read:** 29,443 IDs are named, 20,099 more than in 0.8.0, and 96.5% of the engine's own functions: 19,410 less 685, nearly all of what is left being the D3D9 driver, which a port replaces, and plumbing. The engine's names come from two independent readings of the code, reconciled; the library names, by their public names, from one pass and a check, and the class records' by a rule across every class. Game, game modes, world, AI, scripting, conversation, animation, input, camera, audio and the interface are done but for a few each. `addrlib.py lookup` finds them.
+- **132 IDs retired:** they were places inside functions, not functions: tails reached only by a jump, where a catch resumes, and a switch's case. Each keeps its number, never given to anything else, with its kind `retired` and no address, so each build's file has that many fewer: 103,057, 103,329 and 103,290 addresses for GOG, EA and Steam. No address of any other ID moved, and the file format is unchanged. DAOLib and the plugins here used none of them. `exemap.py` now knows such places, so a new reading will not number them again.
+- **The shapes of the classes:** `data/structs.csv` is new: 1,665 fields of 194 classes, `CCCreature`, `CCObject`, `CCParty`, `CCArea` and `CRoom` among them, each with the address of an instruction that uses it. `tools/structs.py` checks them for overlaps. About 173 offsets DAOLib already held by hand were compared with these, and none disagreed.
+- **Names put right, globals and library functions named:** one class had two names, or two classes one: `CameraRig` is the game's camera, apart from the renderer's `SceneCamera`; `CRules` was `GdaTables`; `GraphicsStructures::Array` is a 3-word array that shared `ECDynArray`'s name; `EC::ModelPlacement`, `Math::AABB` and `Math::Matrix4x4f` each absorbed another name. Globals named include the game state the code leans on most, and the library functions the engine calls most: `__security_check_cookie`, `rand`, zlib's, and those at the engine's edge in Scaleform, PhysX and FaceFX.
+- **Ghidra:** `tools/ghidra_sync.py` writes all this into the database: 18,876 fixes to what its analysis got wrong (prototypes, conventions, labels, false functions), and the classes' shapes as structs. Only the session keeping this repository writes it.
+
 ## 0.8.0
 
 - **The same files as 0.7.0:** every address, the code index and the file format are unchanged, byte for byte, so nothing needs installing again. This release gives DAOLib 0.8.0 a tag to build against.
