@@ -636,6 +636,10 @@ GdaStore,0x28,0x4,void**,tableSlots,"0x004DF950 mov eax,[edi+0x28]: array of tab
 GdaStore,0x2C,0x4,int32_t,tableSlotCount,"0x004DF947 cmp [edi+0x2c],esi: the loop bound of the same array"
 Gff4::Template,0x4,0x4,int,fieldCount,"0x004DC1B3 mov [edi+4],eax after the push_back (count = (end-begin)/12)"
 Gff4::Template,0x10,0x10,std::vector<?>,fields,"0x004DC17D lea esi,[edi+0x10] then std::vector push_back 0x00891840 of the 12-byte {id,type,offset} record built at 0x004DC171"
+Graphics::IRenderableNode,0x0,0x4,void*,vftable,"0x0053AE5A mov [ebx],0x00AF7554 in the destructor body"
+Graphics::IRenderableNode,0x10,0x10,std::vector<void*>,items,"0x0053AED2 lea ecx,[ebx+0x10]; 0x0053AEDC call 0x0046C760 (the vector tidy) in the destructor"
+Graphics::IRenderableNode,0x20,0x4,void*,umbraBlock,"0x0053AD47 mov ebx,[edi+0x20]; [ebx] and [ebx+4] are the two Umbra objects set at 0x0053ADC2 and 0x0053ADD0, byte [ebx+0xC] gates property 8 (0x0053ADD5); freed 0x0053AE60..0x0053AECF"
+Graphics::IRenderableNode,0x24,0x4,uint32_t,flags,"0x0053AD5D mov esi,[edi+0x24]; tested against the old flags for bits 0x400, 0x100, 0x200 and 0x10 in SyncUmbraProperties"
 Graphics::ISceneInstance,0x0,0x100,struct,sizeof,0x0053A4C1 push 0x100
 Graphics::ISceneInstance,0x0,0x4,void*,vftable,"0x0053A013 mov [esi],0xAF7838"
 Graphics::ISceneInstance,0x10,0x1,unsigned char,drawEnabled,"0x0053A019 mov byte [esi+0x10],1; read by ShouldDraw 0x00537F40"
@@ -706,6 +710,12 @@ Graphics::MaterialTextureDeclaration,0x0,0x40,struct,sizeof,"0x004FEAA5 add esi,
 Graphics::MaterialTextureDeclaration,0x4,0x1C,std::wstring,prefix,"0x004F63CE lea ecx,[esi+4] assigned as the start of the built name; role INFERRED"
 Graphics::MaterialTextureDeclaration,0x20,0x1C,std::wstring,suffix,"0x004F63E9 lea eax,[esi+0x20] appended after the instance's infix string; role INFERRED"
 Graphics::MaterialTextureDeclaration,0x3C,0x4,unsigned int,defaultNameId,"0x004F63FD mov ecx,[esi+0x3C] to MaterialParameterNames::GetName when there is no infix: the default name; role INFERRED"
+Graphics::Texture,0x0,0x4,void*,vftable,"0x0053C230 mov [esi],0xAF78D4"
+Graphics::Texture,0x4,0x4,void*,vbtable,"0x0053C20B mov [esi+4],0xAF78E0; the virtual base offset it holds (0x30) is read at 0x0053C236/0x0053C23A, putting the base at +0x34"
+Graphics::Texture,0x8,0x1,uint8_t,ownsNative,"0x0053C088 cmp [esi+8],0 in ReleaseNative: the native texture is released through the manager (0x00844FE0) only when set; constructor sets 1 at 0x0053C25A"
+Graphics::Texture,0xC,0x4,void*,nativeTexture,"0x0053BF73 mov edx,[ecx+0xC]; constructor zero 0x0053C254; its slots 16, 17 and 19 are reached by Lock, Unlock and vfunction2; a Graphics::TextureInternal"
+Graphics::Texture,0x10,0x4,void*,overrideTexture,"0x0053BF77 mov eax,[ecx+0x10]: bound instead of +0xC when set (BindToStage); constructor zero 0x0053C257; role INFERRED from that one use"
+Graphics::Texture,0x34,0x4,void*,virtualBaseVftable,"0x0053C23A mov [ecx+esi+4],0xAF78C8 and the adjustor at 0x0053C280 (sub ecx,0x34)"
 GraphicsStructures::CSpeedTreeWind,0x0,0xE0,struct,sizeof,"0x00A57631 push 0xE0 ; Create (0x00A57610) allocation, constructor 0x00A57490 called at 0x00A57655"
 GraphicsStructures::CSpeedTreeWind,0x0,0x4,void*,vftable,"0x00A574C4 mov dword [esi],0xB593B4"
 GraphicsStructures::CSpeedTreeWind,0x4,0x4,float,maxBendAngle,0x00A55D14 fstp [ecx+4] in SetMaxBendAngle (0x00A55D10)
@@ -743,6 +753,7 @@ GraphicsStructures::Font,0x4,0x4,void*,glyphBatch,"0x0053C815 mov [esi+4],eax: t
 GraphicsStructures::Font,0x8,0x4,void*,owner,"0x0053C7AC mov [esi+8],eax: the graphics owner whose vtable creates and frees batches"
 GraphicsStructures::Font,0x80C,0x4,int,sizeA,"0x0053C7AF mov [esi+0x80c],ecx; passed to the batch creator at 0x0053C7FE; meaning unread"
 GraphicsStructures::Font,0x810,0x4,int,sizeB,"0x0053C7B5 mov [esi+0x810],edx; passed to the batch creator at 0x0053C7FD; meaning unread"
+GraphicsStructures::Font,0x814,0x4,void*,material,"0x0053C3A8 mov [esi+0x814],eax (CreateMaterialInstance); 0x0053C713 mov ecx,[esi+0x814] in DrawText; released with slot 0 and argument 1 at 0x0053C4AD"
 GraphicsStructures::NodeAttachDependency,0x0,0x30,struct,sizeof,"0x00568D24 add [eax],0x30"
 GraphicsStructures::NodeAttachDependency,0x2C,0x4,GraphicsStructures::ObjectNode*,followerNode,"0x00568CFD mov ecx,[esi+0x2C]; the following (child) node"
 GraphicsStructures::Object,0x0,0x310,struct,sizeof,0x00568678 push 0x310 before operator new and call 0x0054F990
@@ -977,6 +988,7 @@ GraphicsStructures::SpeedTreeInstance,0xE0,0x4,void*,physicsScene,"0x0052CF63 mo
 GraphicsStructures::SpeedTreeInstance,0xE4,0x4,void*,physicsActor,"0x0052CF6D mov eax,[esi+0xE4] ; ReleasePhysics releases it through the scene at 0x0052CF7D ; SetScale 0x00531877 and UpdateRenderTransform 0x005317B1 test it"
 GraphicsStructures::SpeedTreeInstance,0xEC,0x10,float[4],kindAlpha,"0x0052CDAE fstp [esi+0xEC] (branch), 0x0052CDBF [esi+0xF0] (frond), 0x0052CDEC [esi+0xF4] and 0x0052CE0C [esi+0xF8] (leaves) ; GetKindLod divides each by 0xAF6EA8"
 GraphicsStructures::SpeedTreeInstance,0x110,0x4,float,size,0x0052E263 fld [ecx+0x110] ; read first in SetLodDistances (0x0052E260) ; written at 0x0052E47E by UpdateBoundingSphere (0x0052E360)
+GraphicsStructures::SpeedTreeInstance,0x116,0x1,uint8_t,drawDistanceStep,"0x005313C4 mov [ecx+0x116],al in SetDrawDistance (0x005313C0); 0x0052E2C7 movsx eax,[ecx+0x116] in SetLodDistances indexes the multiplier tables 0x00AF6E50 (near) and 0x00AF6E60 (far); 0 to 3, from the placed tree byte +0x24"
 GraphicsStructures::SpeedTreeInstance,0x118,0x4,float,nearDistanceSquared,0x0052E331 fstp [ecx+0x118] ; written by SetLodDistances
 GraphicsStructures::SpeedTreeInstance,0x11C,0x4,float,farDistanceSquared,0x0052E33C fstp [ecx+0x11C] ; written by SetLodDistances
 GraphicsStructures::SpeedTreeLibrary,0x0,0x21C,struct,sizeof,0x005C8A09 push 0x21C (the result stored at [esi+0x534] 0x005C8A42)
@@ -998,6 +1010,17 @@ GraphicsStructures::SpeedTreeModel,0x0,0xD60,struct,sizeof,"0x00536D95 push 0xD6
 GraphicsStructures::SpeedTreeModel,0x0,0x4,void*,vftable,"0x005355F1 mov [esi],0xAF75EC"
 GraphicsStructures::SpeedTreeModel,0xF8,0x4,void*,library,"0x005355F7 mov [esi+0xF8],eax: the SpeedTreeLibrary; read at 0x00534EB8"
 GraphicsStructures::SpeedTreeModel,0xFC,0x4,int,index,"0x00535601 mov [esi+0xFC],0xFFFFFFFF"
+GraphicsStructures::SpeedTreeModel,0x100,0x34,float[13],branchMaterialColors,"0x00533E37 lea ebp,[ebx+0x100] and rep movsd 13 dwords from GetBranchMaterial (0x00533E32); floats 0..2 are read as the diffuse and floats 3..5 (+0x10C) as the ambient by 0x00530E6B..0x00530E92"
+GraphicsStructures::SpeedTreeModel,0x134,0x34,float[13],leafMaterialColors,"0x00533E51 lea edi,[ebx+0x134] and rep movsd 13 dwords from GetLeafMaterial (0x00533E4A); diffuse read at 0x00531291, ambient (+0x140) at 0x00531266"
+GraphicsStructures::SpeedTreeModel,0x168,0x34,float[13],frondMaterialColors,"0x00533E67 lea edi,[ebx+0x168] and rep movsd 13 dwords from GetFrondMaterial (0x00533E60); ambient (+0x174) read at 0x00530EE6"
+GraphicsStructures::SpeedTreeModel,0x19C,0x4,float,lightScalarGlobal,"0x00530E9D fmul [esi+0x19C]; first float of the eight GetLightShaderParams fills at 0x00533E7D (lea eax,[ebx+0x19C] at 0x00533E72); also 0x00530B0A (billboard scalars)"
+GraphicsStructures::SpeedTreeModel,0x1A0,0x4,float,lightScalarBranch,"0x00530E97 fld [esi+0x1A0], times the global scalar, scales the branch diffuse scale (+0xC7C)"
+GraphicsStructures::SpeedTreeModel,0x1A4,0x4,float,lightScalarFrond,"0x00530F08 fld [esi+0x1A4], times the global scalar, scales the frond diffuse scale (+0xC8C)"
+GraphicsStructures::SpeedTreeModel,0x1A8,0x4,float,lightScalarLeaf,"0x00531307 fld [esi+0x1A8], times the global scalar, scales both leaf diffuse scales (+0xC9C, +0xCAC)"
+GraphicsStructures::SpeedTreeModel,0x1AC,0x4,float,materialAmbientScalar,"0x00533E83 fld [ebx+0x1AC] passed to 0x0052C040 for the three materials (0x00533E8F, 0x00533EA5, 0x00533EBB): scales floats 3..5 of each once at load"
+GraphicsStructures::SpeedTreeModel,0x1B0,0x4,float,billboardScalarY,0x00530B19 fld [edi+0x1B0]; fmul [edi+0x19C] stored at 0x00530B25 as the billboard vertex lighting scalar y (v6.y of spt_billboards0.psh)
+GraphicsStructures::SpeedTreeModel,0x1B4,0x4,float,billboardScalarX,0x00530B10 fmul [edi+0x1B4] after fld [edi+0x19C] stored at 0x00530B16 as the billboard vertex lighting scalar x (v6.x of spt_billboards0.psh)
+GraphicsStructures::SpeedTreeModel,0x1B8,0x4,float,billboardScalarZ,0x00530B28 fld [edi+0x1B8] stored at 0x00530B2E as the billboard vertex lighting scalar z; not read by spt_billboards0.psh
 GraphicsStructures::SpeedTreeModel,0x1BC,0x4,uint32_t,flags,"0x0052C077 and dword [ecx+0x1BC],0xFBFFFFFF in SetEnabled (0x0052C070) ; bit 26 is the disabled bit (IsEnabled 0x0052CC50) ; 0x00533DA3 tests bit 25 in Compute"
 GraphicsStructures::SpeedTreeModel,0x1C8,0x1C,std::wstring,name,"0x0053560C lea ecx,[esi+0x1C8]; call 0x004C0D90"
 GraphicsStructures::SpeedTreeModel,0x1E4,0x4,unsigned int,modelId,"0x00535711 mov [esi+0x1E4],ecx (first ctor argument, the counter [0x00C31694] from 0x00536DB2)"
@@ -1008,7 +1031,36 @@ GraphicsStructures::SpeedTreeModel,0x56C,0x1C0,GeometryKind,leafCardGeometry,"0x
 GraphicsStructures::SpeedTreeModel,0x72C,0x1C0,GeometryKind,leafMeshGeometry,0x00535652 on esi+0x72C; inferred as above
 GraphicsStructures::SpeedTreeModel,0x8EC,0x1C0,GeometryKind,billboardGeometry,0x00535662 on esi+0x8EC; inferred as above
 GraphicsStructures::SpeedTreeModel,0xAAC,0x4,uint32_t,kindMask,"0x0052DD64 test [ecx+0xAAC],eax ; SelectKind (0x0052DD60) tests the wanted kind's bit"
+GraphicsStructures::SpeedTreeModel,0xAB0,0x4,float,leafRockScalar,0x00531384 fld [esi+0xAB0] becomes x of g_vLeafAngleScalars (+0xC6C); constructor store 0x005356EB
+GraphicsStructures::SpeedTreeModel,0xAB4,0x4,float,leafRustleScalar,0x00531374 fld [esi+0xAB4] becomes y of g_vLeafAngleScalars; constructor store 0x005356F7
+GraphicsStructures::SpeedTreeModel,0xAC8,0x4,float,cameraAzimuth,"0x00530F9A fst [esi+0xAC8]: atan2(-D.y, -D.x) of the SpeedTree camera direction D, plus 2*pi when negative (0x00530FAB), fmod at 0x00530FC8; zeroed at 0x00535703; no reader found by a displacement scan of .text (the model has one base)"
+GraphicsStructures::SpeedTreeModel,0xACC,0x4,float,alphaMultiplier,"0x0052FCA2 lea eax,[esi+0xACC] bound as g_fAlphaMultiplier; written by UpdateAlphaMultiplier 0x0052CC60 (called at 0x00531231)"
+GraphicsStructures::SpeedTreeModel,0xAD0,0x40,Vector4[4],billboardNormals,"0x00531098..0x005310FA stores four Vector4 (w = 0) from the pointer at scratch S360Billboard+0x1C after UpdateBillboardLighting (0x00531087); 0x005345B7 lea edx,[edi+0xAD0] bound as g_amBBNormals (name at 0x005345A1)"
+GraphicsStructures::SpeedTreeModel,0xB10,0x40,Vector4[4],billboardBinormals,"0x00531126..0x0053118B from S360Billboard+0x20; 0x005345F3 lea ecx,[edi+0xB10] bound as g_amBBBinormals"
+GraphicsStructures::SpeedTreeModel,0xB50,0x40,Vector4[4],billboardTangents,"0x005311B0..0x00531210 from S360Billboard+0x24; 0x00534640 lea eax,[edi+0xB50] bound as g_amBBTangents"
+GraphicsStructures::SpeedTreeModel,0xB90,0x10,std::vector<Vector4>,irradianceParams,"0x00535675 call 0x0046C3B0 (std::vector<Vector4>::vector) with the size argument ebx = 0 (xor at 0x005355E5), so it is built empty; 0x00530DE8 passes it to 0x0052EA80, which writes the 12 globals 0x00C31740..0x00C317F0 into its elements only if it has that many and otherwise into the shared default element 0x00C30438; bound as g_mIrradianceParams at 0x0052FD5F etc.; no vanilla shader declares that name"
 GraphicsStructures::SpeedTreeModel,0xBA4,0x4,int,selectedKind,"0x0052DD6A mov [ecx+0xBA4],eax ; SelectKind stores the kind asked for"
+GraphicsStructures::SpeedTreeModel,0xBA8,0x10,Vector4,lightDirection,"0x00530DC1 lea ecx,[esi+0xBA8], copy of SpeedTree::LightDirection 0x00C31718; bound as g_vLightDir at 0x0052FBA6"
+GraphicsStructures::SpeedTreeModel,0xBB8,0x10,Vector4,lightDiffuse,"0x00530DD6 lea ecx,[esi+0xBB8], copy of SpeedTree::LightDiffuse 0x00C31728, then its w (+0xBC4) replaced at 0x00531077 by (1 - (L.xy . D.xy)) / 2 with L the vector at +0xBA8 and D the camera direction; bound as g_vLightDiffuse at 0x0052FBE5 and 0x005344ED; spt_billboards0.psh reads the w (lrp r0.w, c4.w, v6.y, v6.x)"
+GraphicsStructures::SpeedTreeModel,0xBC8,0x4,float,treeScale,"0x00535752 constructor store; 0x0052FC1E lea eax,[esi+0xBC8] bound as g_fTreeScale"
+GraphicsStructures::SpeedTreeModel,0xBCC,0x10,Vector4,treePos,"0x0052FC63 lea eax,[esi+0xBCC] bound as g_vTreePos; written per draw by SetInstanceConstants (dev/TREES.md section 4)"
+GraphicsStructures::SpeedTreeModel,0xBDC,0x10,Vector4,branchAmbient,"0x00530E75 lea ecx,[esi+0xBDC]; 0x00530E92 Vector4::Set (+0x10C,+0x110,+0x114,0); bound as g_vMaterialAmbient of the branch material (+0xD28) at 0x005304C4"
+GraphicsStructures::SpeedTreeModel,0xBEC,0x10,Vector4,frondAmbient,"0x00530EA6 lea ecx,[esi+0xBEC]; 0x00530F03 Set (+0x174,+0x178,+0x17C,0); bound to the frond material (+0xD2C) at 0x005305E4"
+GraphicsStructures::SpeedTreeModel,0xBFC,0x10,Vector4,leafMeshAmbient,"0x0053124C lea ecx,[esi+0xBFC]; 0x0053126F Set (+0x140,+0x144,+0x148,0); bound with the leaf mesh material (+0xD34) at 0x00530708/0x00530717"
+GraphicsStructures::SpeedTreeModel,0xC0C,0x10,Vector4,leafCardAmbient,"0x005312B4 lea ecx,[esi+0xC0C]; 0x005312D1 Set with the same three; bound with the leaf card material (+0xD30) at 0x00530819/0x00530820"
+GraphicsStructures::SpeedTreeModel,0xC1C,0x10,Vector4,branchDiffuse,"0x0053051F lea eax,[esi+0xC1C] bound as g_vMaterialDiffuse of the branch material; no store anywhere in .text by displacement scan"
+GraphicsStructures::SpeedTreeModel,0xC2C,0x10,Vector4,frondDiffuse,"0x0053063F lea ecx,[esi+0xC2C] bound as g_vMaterialDiffuse of the frond material; no store anywhere in .text by displacement scan"
+GraphicsStructures::SpeedTreeModel,0xC3C,0x10,Vector4,leafMeshDiffuse,"0x00531297 lea ecx,[esi+0xC3C]; 0x005312A0 Set (+0x134,+0x138,+0x13C,0); bound with +0xD34 at 0x00530753"
+GraphicsStructures::SpeedTreeModel,0xC4C,0x10,Vector4,leafCardDiffuse,"0x005312E5 lea ecx,[esi+0xC4C]; 0x00531302 Set with the same three; bound with +0xD30 at 0x00530861"
+GraphicsStructures::SpeedTreeModel,0xC5C,0x10,Vector4,colorMultiplier,"0x00535687 constructor lea ecx,[esi+0xC5C] (1,1,1,1) via 0x004D4DD0; bound as g_vColorMultiplier at 0x0052FD20; written per draw by SetInstanceConstants"
+GraphicsStructures::SpeedTreeModel,0xC6C,0x10,Vector4,leafAngleScalars,"0x00531316 lea ecx,[esi+0xC6C]; 0x00531387 stores (+0xAB0, +0xAB4, 0, 0); bound as g_vLeafAngleScalars at 0x005301B5"
+GraphicsStructures::SpeedTreeModel,0xC7C,0x10,Vector4,branchDiffuseScale,"0x00530E0C lea ecx,[esi+0xC7C], copy of the Vector4 at 0x00BF7410 with rgb times w (x87 traced 0x00530DFE..0x00530E2D); then xyz times +0x1A0 * +0x19C (0x00530E97..0x00530EBC); bound as g_vDiffuseScale of the branch material at 0x0053056D"
+GraphicsStructures::SpeedTreeModel,0xC8C,0x10,Vector4,frondDiffuseScale,"0x00530E36 lea ecx,[esi+0xC8C] copy; xyz times +0x1A4 * +0x19C (0x00530F08..0x00530F4B); bound with +0xD2C at 0x00530687"
+GraphicsStructures::SpeedTreeModel,0xC9C,0x10,Vector4,leafMeshDiffuseScale,"0x00530E46 lea edi,[esi+0xC9C] copy; xyz times +0x1A8 * +0x19C (0x00531307..0x00531364); bound with +0xD34 at 0x0053078F"
+GraphicsStructures::SpeedTreeModel,0xCAC,0x10,Vector4,leafCardDiffuseScale,"0x00530E58 lea ebx,[esi+0xCAC] copy; xyz times the same (0x0053134A..0x0053135E); bound with +0xD30 at 0x005308AF"
+GraphicsStructures::SpeedTreeModel,0xCBC,0x4,float,leafLightingAdjust,0x0053123D fstp [esi+0xCBC] from CSpeedTreeRT::GetLeafLightingAdjustment (call 0x00531238); bound as g_fLeafLightingAdjust at 0x005305AF; no vanilla shader declares it
+GraphicsStructures::SpeedTreeModel,0xD00,0x10,Vector4,rotationTrigValues,0x0052FCCB lea of +0xD00 bound as g_vRotationTrigValues; written per draw by SetInstanceConstants
+GraphicsStructures::SpeedTreeModel,0xD10,0x4,float,windMatrixOffset,"0x0052FB61 lea edi,[esi+0xD10] bound as g_fWindMatrixOffset; constructor store 0x00535749"
 GraphicsStructures::SpeedTreeModel,0xD28,0x4,void*,branchMaterial,"0x00534D6C mov edi,[esi+0xD28] (kind 1 in DrawFadedInstances); ctor zero 0x005356A5"
 GraphicsStructures::SpeedTreeModel,0xD2C,0x4,void*,frondMaterial,"0x00534DA8 mov edi,[esi+0xD2C] (kind 2)"
 GraphicsStructures::SpeedTreeModel,0xD30,0x4,void*,leafCardMaterial,"0x00534DE4 mov edi,[esi+0xD30] (kind 4)"
@@ -1017,6 +1069,10 @@ GraphicsStructures::SpeedTreeModel,0xD3C,0x10,std::vector<void*>,indexBufferHand
 GraphicsStructures::SpeedTreeWorld,0x0,0x1C,struct,sizeof,"0x00537CB3 push 0x1C (the result stored at [scene+0x80], 0x00537CD4)"
 GraphicsStructures::SpeedTreeWorld,0x0,0x4,void*,vftable,"0x005364D7 mov [esi],0xAF75F4"
 GraphicsStructures::SpeedTreeWorld,0xC,0x10,ECBase::ECDynArray<WindProxy*>,windProxies,"0x005364D0 lea ecx,[esi+0xC]; CreateWindProxy files at 0x005365A8; the destructor's DeleteAll at 0x0053653E"
+GraphicsStructures::Splat,0x0,0x50,struct,sizeof,"0x0053FE0F push 0x50 / 0x0053FE06 push 0x0053E310 before the vector constructor 0x008E6707 in Array<?>::SetCapacity 0x0053FD90; 0x0053DD14 lea eax,[eax+eax*4]; shl eax,4 in Array<?>::operator[]"
+GraphicsStructures::Splat,0x20,0x4,float,age,0x00541273 fcom [ecx+0x20] and 0x00541284 fstp [ecx+0x20] in UpdateSplats; zeroed at 0x0053E325
+GraphicsStructures::Splat,0x24,0x4,float,inverseLife,0x00541291 fld [ecx+0x24]; fmul age; zeroed at 0x0053E328
+GraphicsStructures::Splat,0x40,0x4,int,poolSlot,"0x005412A4 mov eax,[ecx+0x40] passed to the pool release 0x00562DB0 at death"
 GraphicsStructures::SplatObject,0x8,0x4,void*,vertexPool,"0x00541C86 mov [esi+8],eax (the 0x68-byte SplatObjectVertexPool); 0x0053DC86 mov ecx,[eax+8]"
 GraphicsStructures::SplatObject,0x18,0x10,float[4],colourMultiplier,"0x00541C17 mov [esi+0x18],ecx .. 0x00541C30 [esi+0x24]; copied from blueprint +0x260; animation tag 0x25"
 GraphicsStructures::SplatObjectVertexPool,0x0,0x68,struct,sizeof,0x00541C47 push 0x68; call operator new
@@ -1027,6 +1083,10 @@ GraphicsStructures::TriggerSubObject,0x10,0xC,GraphicsStructures::Array<Vector4>
 GraphicsStructures::TriggerSubObject,0x20,0x4,void*,boxVftable,"0x005437be mov [esi],0xae70bc (esi = this+0x20); Math::AABB over the points, 0x005438c1 SetFromPoints"
 GraphicsStructures::TriggerSubObject,0x130,0x10,Vector4,boundsMin,"0x00546118 movaps xmm0,[eax+0x130]; AABB minimum, widened by 0.5 for the segment clip"
 GraphicsStructures::TriggerSubObject,0x140,0x10,Vector4,boundsMax,"0x00546147 movaps xmm0,[eax+0x140]; AABB maximum, widened by 0.5"
+GraphicsStructures::VertexElement,0x0,0x18,struct,sizeof,"0x0053B782 mov edx,0x18 / mul edx for the count + 1 elements; 0x0053AF84 add eax,0xC and 0x0053AFBB add eax,0x18 in GetVertexElementMasks; default constructor 0x0053AF00"
+GraphicsStructures::VertexElement,0x0,0x4,int,stream,"0x0053AF80 cmp [eax],-1 ends the list; 0x0053B811 mov ecx,[esi] is the bucket GroupVertexElementsByStream files the element under; role as the stream INFERRED from the grouping"
+GraphicsStructures::VertexElement,0xC,0x4,int,usage,"0x0053AF90 mov ecx,[eax] with eax = element + 0xC; indexes the table 0x00AF7870 (0x0053AF92); 5 is TEXCOORD (0x0053AF9B), 10 COLOR (0x0053AFAC) as D3DDECLUSAGE"
+GraphicsStructures::VertexElement,0x10,0x4,int,usageIndex,"0x0053AFA0 mov ecx,[eax+4] (element + 0x10): the TEXCOORD set number shifted into the mask at 0x0053AFA8; at 0x0053AFB1 the COLOR set number"
 IRoomLayout,0x0,0x4,void*,vftable,"0x00A2942E mov [esi],0xb5875c in IRoomLayout::IRoomLayout (0x00A29400); CRoom::CRoom overwrites it with 0x00AFFFF4 at 0x005D35FF, CExteriorChunk with 0x00AFFEF4 at 0x005CF7D3"
 IRoomLayout,0x14,0x4,int32_t,roomId,"0x00A2943C mov [esi+0x14],edi (-1) in the ctor; CRoom::CRoom stores the room's number at 0x005D3699 mov [esi+0x14],ecx; read as room+0x14 by ObjectNodeLight::SetRoom (0x0053D162) and by the creature's SetRoom (0x00695D10). The same field as structs.csv's CRoom roomId at 0x14: it is this base's, one place for CRoom and CExteriorChunk"
 IRoomLayout,0x40,0x10,Vector4,dynShadowDirection,"0x005D3A75 lea ecx,[esi+0x40] then call 0x00461FA0 (a 16-byte copy) in CRoom::LoadRml, after the field 0xBEE (EnvRoomDynShadowDirection) or 0xC23 (DynamicShadowVectorGame) is read (0x005D39E9, 0x005D3985); the ctor fills it from the negated defaults at 0x00C31980 (0x00A294B7-0x00A294CC)"
