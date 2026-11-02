@@ -14059,3 +14059,42 @@ address,what,value,why
 0x005E4B10,signature,void __thiscall f(void* this),ecx read as this at 0x005E4B10
 0x005E4B20,signature,"void __cdecl f(void* text, void* dst)","no ecx use, stack arguments at 0x005E4B20"
 0x005E4B90,signature,"void* __cdecl f(void* first, void* last, void* dest)","no ecx use, stack arguments at 0x005E4B90"
+0x005F1530,signature,"void* __stdcall f(void* out, void* node)",ret 8 at 0x005F16BB; args at esp+0x68/0x6C before any ecx use
+0x005F16C0,signature,bool __cdecl f(),"plain ret, no stack args (0x005F1890)"
+0x005F18A0,signature,"bool __thiscall f(void* this, void* record)",ret 4; ecx to esi at 0x005F18A5
+0x005F1910,signature,"int __thiscall f(void* this, void* record)",ret 4; ecx to esi at 0x005F1915
+0x005F19B0,signature,"void __stdcall f(void* first, void* last)","ret 8, ecx unused"
+0x005F19E0,signature,void __thiscall f(void* this),plain ret; ecx = vector
+0x005F1A30,signature,"void* __stdcall f(void* first, unsigned int count, void* value)","ret 0xc, ecx unused (0x005F1A64)"
+0x005F1A70,signature,"void __thiscall f(void* this, unsigned int index)","ret 4, ecx to esi (0x005F1A74)"
+0x005F1B20,convention,__thiscall,"ret 0x14, ecx to ebp (0x005F1B28)"
+0x005F1B90,signature,"void* __stdcall f(void* first, void* last, void* dest)","ret 0xc, ecx unused (0x005F1BB6)"
+0x005F1BC0,signature,void __thiscall f(void* this),"ecx to esi (0x005F1BE6), plain ret"
+0x005F1F00,signature,void __thiscall f(void* this),plain jmp to 0x005F19E0
+0x005F1F10,signature,"void __thiscall f(void* this, unsigned int index)","ret 4, ecx to esi (0x005F1F14)"
+0x005F1FC0,signature,void __thiscall f(void* this),"destructor, ecx to esi"
+0x005F2170,convention,__stdcall,"ret 0x548 = two by-value AddInRecords (0x2A4 each), ecx written (0x005F219F) before read"
+0x005F65C0,signature,"bool __thiscall f(void* this, void* node)","ret 4, ecx to ebx (0x005F65E7)"
+0x005F6C30,signature,"bool __thiscall f(void* this, void* node)","ret 4, ecx to ebx (0x005F6C6A)"
+0x005F7280,signature,"void* __cdecl f(void* first, void* last, void* dest)","plain ret, caller cleans (0x005F7297)"
+0x005F72B0,signature,"void* __cdecl f(void* first, void* last, void* dest)",plain ret (0x005F72DC)
+0x005F72E0,convention,__cdecl,"plain ret 0x005F7383, args from ebp+8, +0xC"
+0x005F7390,convention,__cdecl,plain ret 0x005F7433
+0x005F7440,convention,__cdecl,plain ret
+0x005F7500,convention,__cdecl,plain ret
+0x005F7580,signature,"void __stdcall f(void* first, void* last)",ret 8 (0x005F75AE)
+0x005F75B0,convention,__cdecl,"plain ret, caller adds esp 0x10 in 0x005F89A0"
+0x005F7AF0,convention,__cdecl,"plain ret, caller add esp 0xc"
+0x005F7D20,signature,"void* __stdcall f(void* first, unsigned int count, void* value)",ret 0xc (0x005F7D5C)
+0x005F7D60,convention,__thiscall,"ret 0x14, ecx to ebp (0x005F7D63)"
+0x005F7DE0,signature,void __thiscall f(void* this),plain ret; ecx = vector
+0x005F7E30,signature,"void* __stdcall f(void* first, unsigned int count, void* value)",ret 0xc (0x005F7E6C)
+0x005F7E70,signature,"void* __stdcall f(void* first, void* last, void* dest)",ret 0xc (0x005F7E9C)
+0x005F7EA0,signature,"void* __stdcall f(void* first, void* last, void* dest)",ret 0xc (0x005F7ECC)
+0x005F7ED0,convention,__cdecl,plain ret (0x005F7F55)
+0x005F7F60,signature,void __thiscall f(void* this),plain jmp to 0x005F7DE0
+0x005F85F0,convention,__thiscall,"ret 0x2a8, ecx to esi (0x005F8618)"
+0x005F8710,convention,__thiscall,"ret 0x10, ecx to edi (0x005F8721)"
+0x005F87C0,convention,__thiscall,"ret 0x2c8, ecx to esi (0x005F87E0)"
+0x005F88F0,convention,__thiscall,"ret 0x10, ecx to edi (0x005F8901)"
+0x005F89A0,convention,__cdecl,"plain ret, callers add esp"
