@@ -12427,12 +12427,12 @@ address,what,value,why
 0x00534B10,signature,"void __thiscall f(void* this, unsigned int count)",0x00534B10-0x00534B2F
 0x00534B30,signature,"void __thiscall f(void* this, bool freeStorage)","ret 4 at 0x00534C53, ecx kept in esi"
 0x005359F0,signature,"void __thiscall f(void* this, int kind, void* dest)",0x005359F0-0x00535A7F
-0x00535A80,signature,"void __thiscall f(void* this, void* a, void* b)",0x00535A80-0x00535BAF
+0x00535A80,signature,"void __thiscall f(void* this, void* buffer, unsigned int baseOffset)","SpeedTreeModel::CreateLeafMeshLodMeshes: ret 8; both stack arguments go to the renderer slot 0x60, the second unchanged; roles inferred (lib-agent-3, after Unk5-04)"
 0x00535BB0,signature,"void* __thiscall f(void* this, int unused, bool collisionForest)",0x00535BB0-0x00535E5F
 0x00535E60,signature,void __thiscall f(void* this),"plain ret at 0x00535EC8, ecx kept in ebp"
 0x00535ED0,signature,"void* __thiscall f(void* this, void* model)","ret 4, ecx kept in ebp at 0x00535EF7"
 0x00536010,signature,void __stdcall f(void* batch),0x00536010-0x005361F1
-0x00530960,signature,"void __thiscall f(void* this, int arg1, int arg2)","ret 8 at 0x00530A18 (frame 0x18), an argument read in the loop at 0x005309D9; types unread (keeper)"
+0x00530960,signature,"void __thiscall f(void* this, void* buffer, unsigned int baseOffset)","SpeedTreeModel::CreateLeafCardLodMeshes: ret 8; both stack arguments go to the renderer slot 0x64, the second plus a running count; roles inferred (lib-agent-3, after Unk5-04)"
 0x00817310,signature,"void * __thiscall f(void *this, void *out, void *firstCont, void *firstPtr, void *lastCont, void *lastPtr)","ID 22050 std::vector<Animation::AnimationTreeBuilder::Node>::erase: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
 0x00817370,signature,"void * __stdcall f(void *first, void *last, void *dest)","ID 22051 std::_Uninit_copy<Animation::AnimationTreeBuilder::Node *,Animation::AnimationTreeBuilder::Node *,std::allocator<Animation::AnimationTreeBuilder::Node>>: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
 0x00819920,signature,"void * __thiscall f(void *this, void *src)","ID 22118 NxMat34::operator=: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
