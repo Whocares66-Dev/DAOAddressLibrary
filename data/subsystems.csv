@@ -21,7 +21,7 @@ id,subsystem,class,how
 21,ThirdParty:STL,,between
 22,ThirdParty:STL,,string
 23,ThirdParty:STL,,string
-24,Core,ECBase::ECDynArray,name
+24,Core,ECBase::ECDynArray<?>,name
 25,ThirdParty:STL,std::string,name
 26,Core,Eclipse::DAThreadManager,name
 27,ThirdParty:STL,std::logic_error,builds
@@ -184,7 +184,7 @@ id,subsystem,class,how
 185,ThirdParty:STL,std::wstring,owner
 187,ThirdParty:STL,std::wstring,owner
 188,Data,SmartData::IAttribute,name
-189,Core,ECBase::ECList,name
+189,Core,ECBase::ECList<?>,name
 190,ThirdParty:STL,"std::list<std::pair<unsigned int,std::wstring>>",name
 191,ThirdParty:STL,"std::list<std::pair<unsigned int,std::wstring>>",owner
 192,ThirdParty:STL,std,name
@@ -11915,9 +11915,9 @@ id,subsystem,class,how
 11982,GUI,GUI::GUIScreenshotInfo,name
 11983,GUI,GUI::GUIScreenshotInfo,name
 11984,GUI,GUI::GUICommunityFeatures::GUIAchievementInfo,name
-11985,GUI,[thunk]:GUI::GUICommunityFeatures::GUIAchievementInfo,vtable
-11986,GUI,[thunk]:GUI::GUICommunityFeatures::GUIAchievementInfo,vtable
-11987,GUI,[thunk]:GUI::GUICommunityFeatures::GUIAchievementInfo,vtable
+11985,GUI,GUI::GUICommunityFeatures::GUIAchievementInfo,name
+11986,GUI,GUI::GUICommunityFeatures::GUIAchievementInfo,name
+11987,GUI,GUI::GUICommunityFeatures::GUIAchievementInfo,name
 11988,GUI,GUI::GUICommunityFeatures::GUIAchievementInfo,name
 11989,GUI,GUI::GUICommunityFeatures::GUIAchievementInfo,name
 11990,GUI,GUI::GUICommunityFeatures::GUIAchievementInfo,name
@@ -11943,9 +11943,9 @@ id,subsystem,class,how
 12010,Data,"SmartData::Attribute<ECBase::ECDynArray<GUI::GUIScreenshotInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 12011,Data,"SmartData::Attribute<ECBase::ECDynArray<GUI::GUICommunityFeatures::tagFilterData*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 12012,GUI,GUI::GUICommunityFeatures,name
-12013,GUI,[thunk]:GUI::GUICommunityFeatures,vtable
-12014,GUI,[thunk]:GUI::GUICommunityFeatures,vtable
-12015,GUI,[thunk]:GUI::GUICommunityFeatures,vtable
+12013,GUI,GUI::GUICommunityFeatures,name
+12014,GUI,GUI::GUICommunityFeatures,name
+12015,GUI,GUI::GUICommunityFeatures,name
 12016,GUI,GUI::GUICommunityFeatures,name
 12017,Data,"SmartData::Attribute<GUI::GUICommunityFeatures::GUIAchievementInfo*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 12018,Data,"SmartData::Attribute<ECBase::ECDynArray<GUI::GUIScreenshotInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
@@ -12846,7 +12846,7 @@ id,subsystem,class,how
 12916,Messaging,TakeScreenshotMessage,name
 12917,Messaging,TakeScreenshotMessage,name
 12918,Messaging,TakeScreenshotMessage,name
-12919,Data,SmartData::Token,name
+12919,Core,General::Token,name
 12920,Scripting,ScriptCommand,name
 12921,Scripting,ScriptCommand,name
 12922,Scripting,ScriptCommand,name
@@ -12884,8 +12884,8 @@ id,subsystem,class,how
 12954,unknown,EquipSlotKey,
 12955,World,CCModule,name
 12956,World,CCModule,name
-12957,Core,ECBase::ECDynArray,name
-12958,Core,ECBase::ECDynArray,name
+12957,Core,ECBase::ECDynArray<?>,name
+12958,Core,ECBase::ECDynArray<?>,name
 12959,GUI,GUI::InvokeCallbackMessage,name
 12960,World,MapLocation,name
 12961,Messaging,AutoLevelUpMessage,name
@@ -13621,8 +13621,8 @@ id,subsystem,class,how
 13691,World,CCArea,name
 13693,AI,KDCreatureBranch,name
 13694,World,CCArea,name
-13695,ThirdParty:STL,std::vector<unsigned_int>,name
-13696,ThirdParty:STL,"std::map<unsigned_long_long,std::vector<unsigned_int>>",name
+13695,ThirdParty:STL,std::vector<unsigned int>,name
+13696,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",name
 13697,ThirdParty:STL,std::vector<unk_pod>,name
 13698,World,CCArea,name
 13699,World,CCArea,name
@@ -13706,8 +13706,8 @@ id,subsystem,class,how
 13777,World,CCArea,name
 13778,World,"Map<std::wstring,float>",callers
 13779,ThirdParty:STL,"std::map<std::wstring,float>",name
-13780,ThirdParty:STL,"std::map<unsigned_long_long,std::vector<unsigned_int>>",name
-13781,ThirdParty:STL,"std::map<unsigned_long_long,std::vector<unsigned_int>>",owner
+13780,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",name
+13781,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",owner
 13782,World,CCArea,name
 13783,World,CCArea,name
 13784,World,CCArea,name
@@ -13728,13 +13728,13 @@ id,subsystem,class,how
 13799,World,CCArea,name
 13800,World,NamedHashMap,callers
 13801,ThirdParty:STL,,string
-13802,ThirdParty:STL,"std::map<unsigned_long_long,std::vector<unsigned_int>>",name
+13802,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",name
 13803,World,CCArea,name
 13804,World,CCArea,name
 13805,World,CCArea,name
-13806,World,"Map<unsigned_long_long,std::vector<unsigned_int>>",callers
+13806,World,"Map<unsigned long long,std::vector<unsigned int>>",callers
 13807,ThirdParty:STL,,string
-13808,World,"Map<unsigned_long_long,std::vector<unsigned_int>>",callers
+13808,World,"Map<unsigned long long,std::vector<unsigned int>>",callers
 13809,World,CCArea,name
 13810,World,CCArea,name
 13811,Game,SEffectsHolder,name
@@ -13755,10 +13755,10 @@ id,subsystem,class,how
 13826,Data,"SmartData::Attribute<unsigned int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 13827,Game,CGameObject,name
 13828,Game,SEffectsHolder,name
-13829,ThirdParty:STL,std::set<unsigned_int>,name
-13830,ThirdParty:STL,std::set<unsigned_int>,owner
+13829,ThirdParty:STL,std::set<unsigned int>,name
+13830,ThirdParty:STL,std::set<unsigned int>,owner
 13831,World,CCArea,name
-13832,ThirdParty:STL,std::set<unsigned_int>,name
+13832,ThirdParty:STL,std::set<unsigned int>,name
 13833,ThirdParty:STL,std::vector<unk_20byte>,name
 13834,ThirdParty:STL,std::vector<CCArea::StageEntry>,name
 13835,ThirdParty:STL,,string
@@ -13766,26 +13766,26 @@ id,subsystem,class,how
 13837,ThirdParty:STL,,owner
 13838,ThirdParty:STL,std::vector<unk_20byte>,name
 13839,ThirdParty:STL,std::vector<CCArea::StageEntry>,name
-13840,ThirdParty:STL,std::set<unsigned_int>,name
-13841,ThirdParty:STL,std::set<unsigned_int>,owner
-13842,ThirdParty:STL,"stdext::hash_map<unk_key,unk_value>",between
-13843,ThirdParty:STL,"stdext::hash_map<unk_key,unk_value>",owner
+13840,ThirdParty:STL,std::set<unsigned int>,name
+13841,ThirdParty:STL,std::set<unsigned int>,owner
+13842,ThirdParty:STL,"stdext::hash_map<unk_key,?>",between
+13843,ThirdParty:STL,"stdext::hash_map<unk_key,?>",owner
 13844,ThirdParty:STL,std::vector<unk_20byte>,name
 13845,ThirdParty:STL,std::vector<unk_8byte>,name
 13846,ThirdParty:STL,std::vector<CCArea::StageEntry>,name
 13847,ThirdParty:STL,std::vector<?>,name
-13848,ThirdParty:STL,"stdext::hash_map<unk_key,unk_value>",between
+13848,ThirdParty:STL,"stdext::hash_map<unk_key,?>",between
 13849,World,NamedHashMap,callers
-13850,ThirdParty:STL,"std::map<unsigned_long_long,std::vector<unsigned_int>>",name
-13851,ThirdParty:STL,"std::map<unsigned_long_long,std::vector<unsigned_int>>",owner
-13852,ThirdParty:STL,"std::map<unsigned_long_long,std::vector<unsigned_int>>",name
-13853,ThirdParty:STL,"std::map<unsigned_long_long,std::vector<unsigned_int>>",name
-13854,ThirdParty:STL,"std::map<unsigned_long_long,std::vector<unsigned_int>>",owner
+13850,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",name
+13851,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",owner
+13852,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",name
+13853,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",name
+13854,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",owner
 13855,World,CCArea,name
 13856,World,CCArea,name
 13857,World,CCArea,name
 13858,World,CCArea,name
-13859,ThirdParty:STL,"std::map<unsigned_long_long,std::vector<unsigned_int>>",name
+13859,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",name
 13860,World,CCArea,name
 13861,World,CCArea,name
 13862,World,RoomDoorMap,callers
@@ -14088,13 +14088,13 @@ id,subsystem,class,how
 14159,Game,Gff4::Block,between
 14160,Game,CCObject,name
 14161,Game,CCObject,name
-14162,ThirdParty:STL,std::list<unsigned_int>,name
+14162,ThirdParty:STL,std::list<unsigned int>,name
 14163,Game,Gff4::BlockRef,callers
 14164,Game,CCObject,name
 14165,Game,CCObject,name
 14166,Game,CCObject,name
 14167,Game,CCObject,name
-14168,ThirdParty:STL,std::list<unsigned_int>,name
+14168,ThirdParty:STL,std::list<unsigned int>,name
 14169,Game,CommandPool,name
 14170,Game,CCObject,name
 14171,Game,CCObject,name
@@ -14643,7 +14643,7 @@ id,subsystem,class,how
 14716,unknown,DefaultSet<?>,
 14717,unknown,DefaultSet<?>,
 14718,unknown,Gff4::BlockRef,
-14719,ThirdParty:STL,std::vector<unsigned_int>,name
+14719,ThirdParty:STL,std::vector<unsigned int>,name
 14720,Game,CCCreature,name
 14721,Game,CCCreature,name
 14722,ThirdParty:STL,std,name
@@ -15065,7 +15065,7 @@ id,subsystem,class,how
 15140,Save,SaveLoadProxy,name
 15141,App,CClientOptions,name
 15142,Save,SaveLoadProxy,name
-15143,Core,ECBase::ECDynArray,name
+15143,Core,ECBase::ECDynArray<?>,name
 15144,ThirdParty:STL,std,name
 15145,ThirdParty:STL,std,name
 15146,ThirdParty:STL,std,name
@@ -15808,12 +15808,12 @@ id,subsystem,class,how
 15884,Conversation,AmbientDialogEntry,callers
 15885,Conversation,AmbientDialogEntry,callers
 15886,ThirdParty:STL,std::_List_const_iterator<unk_value>,name
-15887,unknown,"stdext::hash_map<unsigned int,unk_value>",
+15887,unknown,"stdext::hash_map<unsigned int,?>",
 15888,Conversation,CAmbientDialogManager,name
 15889,Conversation,CAmbientDialogManager,name
 15890,Conversation,CAmbientDialogManager,name
-15891,Conversation,"stdext::hash_map<unsigned int,unk_value>",between
-15892,Conversation,"stdext::hash_map<unsigned int,unk_value>",owner
+15891,Conversation,"stdext::hash_map<unsigned int,?>",between
+15892,Conversation,"stdext::hash_map<unsigned int,?>",owner
 15893,Conversation,CAmbientDialogManager,name
 15894,Conversation,CAmbientDialogManager,name
 15895,Conversation,CAmbientDialogManager,name
@@ -16027,8 +16027,8 @@ id,subsystem,class,how
 16105,GUI,GUI::GUIJournal,name
 16106,GUI,GUI::GUIJournal,name
 16107,GUI,GUI::GUIJournal,name
-16108,GUI,[thunk]:GUI::GUIJournal,vtable
-16109,GUI,[thunk]:GUI::GUIJournal,vtable
+16108,GUI,GUI::GUIJournal,name
+16109,GUI,GUI::GUIJournal,name
 16110,GUI,GUI::GUIJournal,name
 16111,GUI,GUI::GUIJournal,name
 16112,GUI,GUI::GUIJournal,name
@@ -16045,9 +16045,9 @@ id,subsystem,class,how
 16123,Messaging,ScriptDialogResultMessage,name
 16124,GUI,GUI::GUIPopupLayer,name
 16125,GUI,GUI::GUIPopupLayer,name
-16126,GUI,[thunk]:GUI::GUIPopupLayer,vtable
-16127,GUI,[thunk]:GUI::GUIPopupLayer,vtable
-16128,GUI,[thunk]:GUI::GUIPopupLayer,vtable
+16126,GUI,GUI::GUIPopupLayer,name
+16127,GUI,GUI::GUIPopupLayer,name
+16128,GUI,GUI::GUIPopupLayer,name
 16129,GUI,GUI::GUIPopupLayer,name
 16130,Data,"SmartData::Attribute<unsigned int,ObjectIDMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 16131,GUI,GUI::GUIPopupLayer,name
@@ -16297,9 +16297,9 @@ id,subsystem,class,how
 16378,GUI,GUI::GUIBookback,name
 16379,GUI,GUI::GUIBookback,name
 16380,GUI,GUI::GUIBookback,name
-16381,GUI,[thunk]:GUI::GUIBookback,vtable
-16382,GUI,[thunk]:GUI::GUIBookback,vtable
-16383,GUI,[thunk]:GUI::GUIBookback,vtable
+16381,GUI,GUI::GUIBookback,name
+16382,GUI,GUI::GUIBookback,name
+16383,GUI,GUI::GUIBookback,name
 16384,GUI,GUI::GUIBookback,name
 16385,GUI,GUI::GUIBookback,name
 16386,GUI,GUI::GUIBookback,name
@@ -16440,7 +16440,7 @@ id,subsystem,class,how
 16521,Game,CCCreatureStats,name
 16522,Game,CCCreatureStats,name
 16523,Game,CooldownManager,name
-16524,Core,ECBase::ECList,name
+16524,Core,ECBase::ECList<?>,name
 16525,ThirdParty:STL,std,name
 16526,Game,CooldownManager,name
 16527,Scripting,ScriptBackend,name
@@ -16461,7 +16461,7 @@ id,subsystem,class,how
 16542,ThirdParty:STL,std::vector<unsigned int>,name
 16543,Game,CCCreatureStats,name
 16544,Core,ECBase::ECDynArray<unsigned int>,name
-16545,Core,ECBase::ECDynArray,name
+16545,Core,ECBase::ECDynArray<?>,name
 16546,Game,CooldownManager,name
 16547,Game,CooldownManager,name
 16548,Game,CCCreatureStats,name
@@ -16490,9 +16490,9 @@ id,subsystem,class,how
 16571,Game,CCCreatureStats,name
 16572,GUI,GUI::GUICredits,name
 16573,GUI,GUI::GUICredits,name
-16574,GUI,[thunk]:GUI::GUICredits,vtable
-16575,GUI,[thunk]:GUI::GUICredits,vtable
-16576,GUI,[thunk]:GUI::GUICredits,vtable
+16574,GUI,GUI::GUICredits,name
+16575,GUI,GUI::GUICredits,name
+16576,GUI,GUI::GUICredits,name
 16577,GUI,GUI::GUICredits,name
 16578,GUI,GUI::GUICredits,name
 16579,GUI,GUI::GUICredits,name
@@ -16511,9 +16511,9 @@ id,subsystem,class,how
 16592,Messaging,ShowItemExamineMessage,name
 16593,GUI,GUI::GUIItemExamine,name
 16594,GUI,GUI::GUIItemExamine,name
-16595,GUI,[thunk]:GUI::GUIItemExamine,vtable
-16596,GUI,[thunk]:GUI::GUIItemExamine,vtable
-16597,GUI,[thunk]:GUI::GUIItemExamine,vtable
+16595,GUI,GUI::GUIItemExamine,name
+16596,GUI,GUI::GUIItemExamine,name
+16597,GUI,GUI::GUIItemExamine,name
 16598,GUI,GUI::GUIItemExamine,name
 16599,GUI,GUI::GUIItemExamine,name
 16600,GUI,GUI::GUIItemExamine,name
@@ -16550,16 +16550,16 @@ id,subsystem,class,how
 16631,GUI,GUI::GUIScreenshots,name
 16632,GUI,GUI::GUIScreenshots,name
 16633,GUI,GUI::GUIScreenshots,name
-16634,GUI,[thunk]:GUI::GUIScreenshots,vtable
-16635,GUI,[thunk]:GUI::GUIScreenshots,vtable
-16636,GUI,[thunk]:GUI::GUIScreenshots,vtable
+16634,GUI,GUI::GUIScreenshots,name
+16635,GUI,GUI::GUIScreenshots,name
+16636,GUI,GUI::GUIScreenshots,name
 16637,GUI,GUI::GUIScreenshots,name
 16638,GUI,GUI::GUIScreenshots,name
 16639,ThirdParty:STL,"std::vector<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
 16640,GUI,GUI::GUIScreenshots,name
 16641,ThirdParty:STL,"std::vector<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
 16642,Data,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
-16643,Core,ECBase::ECDynArray,name
+16643,Core,ECBase::ECDynArray<?>,name
 16644,GUI,GUI::GUIScreenshots,name
 16645,GUI,GUI::GUIScreenshots,name
 16646,GUI,GUI::GUIScreenshots,name
@@ -16924,7 +16924,7 @@ id,subsystem,class,how
 17005,Data,SmartData::PointerArrayMemberIteratorImpl<ECBase::ECDynArray<GUI::ChampionshipScoreboardEntry*>>,name
 17006,Data,"SmartData::Attribute<ECBase::ECDynArray<GUI::ChampionshipScoreboardEntry*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 17007,ThirdParty:STL,,string
-17008,Core,ECBase::ECDynArray,name
+17008,Core,ECBase::ECDynArray<?>,name
 17009,Data,"SmartData::Attribute<ECBase::ECDynArray<GUI::ChampionshipScoreboardEntry*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 17010,GUI,GUI::GUIChampionshipScoreboard,name
 17011,GUI,GUI::GUIChampionshipScoreboard,name
@@ -17453,7 +17453,7 @@ id,subsystem,class,how
 17534,Game,CCObject,name
 17535,Game,CCObject,name
 17536,Game,CCObject,name
-17537,Core,ECBase::ECDynArray,name
+17537,Core,ECBase::ECDynArray<?>,name
 17538,Game,CCObject,name
 17539,Game,CCObject,name
 17540,Game,CCObject,name
@@ -17526,7 +17526,7 @@ id,subsystem,class,how
 17607,Data,"SmartData::Attribute<Backpack*,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 17608,Data,"SmartData::Attribute<PlotItems*,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 17609,Game,Inventory,name
-17611,Core,ECBase::ECDynArray,name
+17611,Core,ECBase::ECDynArray<?>,name
 17612,ThirdParty:STL,std,name
 17613,Game,Inventory,name
 17614,Game,Inventory,name
@@ -18322,7 +18322,7 @@ id,subsystem,class,how
 18405,GameModes,GameModePartyPicker,name
 18406,ThirdParty:STL,std::vector<PartyPickerEntry>,name
 18407,Core,ECBase::ECDynArray<PartyPickerEntry>,name
-18408,Core,ECBase::ECDynArray,name
+18408,Core,ECBase::ECDynArray<?>,name
 18409,Core,"ECBase::ECDynArray<SmartData::Attribute<unsigned int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
 18410,Core,ECBase::ECDynArray<SmartData::Attribute<unsigned int>>,name
 18411,Data,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<unsigned int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
@@ -20023,7 +20023,7 @@ id,subsystem,class,how
 20112,ThirdParty:STL,std,name
 20113,ThirdParty:STL,std,owner
 20114,GUI,GUI::GUIPaperdoll,name
-20115,unknown,"Map<unsigned_int,RefHandle>",
+20115,unknown,"Map<unsigned int,RefHandle>",
 20116,ThirdParty:STL,std,name
 20117,Core,"ECBase::ECDynArray<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
 20118,GUI,GUI::GUIPaperdoll,name
@@ -20179,12 +20179,12 @@ id,subsystem,class,how
 20268,ThirdParty:STL,std,owner
 20269,GUI,GUI::GUIPaperdoll,name
 20270,GUI,GUI::GUIPaperdoll,name
-20271,unknown,"Map<unsigned_int,RefHandle>",
-20272,unknown,"Map<unsigned_int,RefHandle>",
+20271,unknown,"Map<unsigned int,RefHandle>",
+20272,unknown,"Map<unsigned int,RefHandle>",
 20273,ThirdParty:STL,,string
 20274,ThirdParty:STL,std::vector<GUI::HeadPreset::ModelWeight>,name
 20275,GUI,GUI::GUIPaperdoll,name
-20276,unknown,"Map<unsigned_int,RefHandle>",
+20276,unknown,"Map<unsigned int,RefHandle>",
 20277,ThirdParty:STL,std::vector<GUI::HeadPreset::ModelWeight>,name
 20278,ThirdParty:STL,std,name
 20279,ThirdParty:STL,std,name
@@ -20569,7 +20569,7 @@ id,subsystem,class,how
 20658,ThirdParty:STL,std::_Tree<Elem52>,name
 20659,ThirdParty:STL,std::_Tree<Elem52>::const_iterator,name
 20660,ThirdParty:STL,std::vector<Elem76>,name
-20661,Conversation,EC::Cutscene::WStringArray,name
+20661,unknown,WStringArray,
 20662,unknown,Elem68,
 20663,Core,,name
 20664,ThirdParty:STL,std::allocator<Elem76>,name
@@ -20953,7 +20953,7 @@ id,subsystem,class,how
 21042,ThirdParty:STL,std::vector<Elem76>,name
 21043,Conversation,CutscenePlayer,name
 21044,Conversation,CutscenePlayer,name
-21045,Conversation,EC::Cutscene::CutscenePlayer,name
+21045,Conversation,CutscenePlayer,name
 21046,Conversation,CutscenePlayer,name
 21047,Conversation,CutscenePlayer,name
 21048,Conversation,CutscenePlayer,name
@@ -21369,7 +21369,7 @@ id,subsystem,class,how
 21461,ThirdParty:STL,std,name
 21462,ThirdParty:STL,std,name
 21463,ThirdParty:STL,std,name
-21464,ThirdParty:STL,"std::map<unknown,owned_ptr>",name
+21464,ThirdParty:STL,"std::map<?,?>",name
 21465,ThirdParty:STL,std::vector<FilteredGroupedItemView::Entry>,name
 21466,ThirdParty:STL,std,name
 21467,ThirdParty:STL,std,name
@@ -21950,7 +21950,7 @@ id,subsystem,class,how
 22045,Animation,Animation::AnimationTreeBuilder::NodeVector,name
 22046,ThirdParty:STL,std,name
 22047,ThirdParty:STL,std,name
-22048,Core,"ECBase::ECHashMap<unsigned int,unk_value>",name
+22048,Core,"ECBase::ECHashMap<unsigned int,?>",name
 22049,Animation,Animation::AnimationTreeBuilder,name
 22050,ThirdParty:STL,std::vector<Animation::AnimationTreeBuilder::Node>,name
 22051,ThirdParty:STL,std,name
@@ -22966,7 +22966,7 @@ id,subsystem,class,how
 23065,ThirdParty:FaceFX,OC3Ent::Face::FxString,name
 23066,Animation,FacialAnimation::FacialAnimationManager,name
 23067,Animation,FacialAnimation::FacialAnimationManager,name
-23068,Core,ECBase::ECList,name
+23068,Core,ECBase::ECList<?>,name
 23069,Animation,FacialAnimation::FacialAnimationManager,name
 23070,Animation,FacialAnimation::FacialAnimationManager,name
 23071,Animation,stdext::_Hash<...>,between
@@ -32105,16 +32105,16 @@ id,subsystem,class,how
 32333,Rendering,Renderer::PerspectiveCamera,vtable
 32334,Rendering,Renderer::PerspectiveCamera,vtable
 32335,Rendering,Renderer::GDynamicVertexStream,name
-32336,Rendering,GDynamicVertexStream,callers
+32336,Rendering,Renderer::GDynamicVertexStream,name
 32337,Rendering,Renderer::GDynamicVertexStream,name
 32338,Rendering,Renderer::GDynamicVertexStream,name
 32339,Rendering,Renderer::GDynamicVertexStream,name
-32340,Rendering,GDynamicVertexStream,callers
-32341,Rendering,GDynamicVertexStream,callers
-32342,Rendering,GDynamicVertexStream,callers
-32343,Rendering,GDynamicVertexStream,callers
+32340,Rendering,Renderer::GDynamicVertexStream,name
+32341,Rendering,Renderer::GDynamicVertexStream,name
+32342,Rendering,Renderer::GDynamicVertexStream,name
+32343,Rendering,Renderer::GDynamicVertexStream,name
 32344,Rendering,Renderer::GDynamicVertexStream,name
-32345,Rendering,GDynamicVertexStream,callers
+32345,Rendering,Renderer::GDynamicVertexStream,name
 32346,Rendering,Renderer::GDynamicVertexStream,name
 32347,Rendering,Renderer::GDynamicVertexStream,name
 32348,Rendering,Renderer::GDynamicVertexStream,name
@@ -32547,7 +32547,7 @@ id,subsystem,class,how
 32777,Resources,CExoGFF,name
 32778,Core,Vector4,name
 32779,unknown,PartyFollow,
-32780,unknown,[thunk]:Resources,
+32780,Resources,Resources,name
 32781,Animation,AnimClip,name
 32782,Animation,AnimClip,name
 32783,Core,Quaternion,name
@@ -32788,7 +32788,7 @@ id,subsystem,class,how
 33018,AI,Pathfinding::Grid,name
 33019,AI,Pathfinding::World,name
 33020,AI,Pathfinding::World,name
-33021,AI,PathFollower,callers
+33021,AI,Pathfinding::PathFollower,name
 33022,ThirdParty:STL,std::allocator<?>,name
 33023,Core,ECBase::ECDynArray<?>,name
 33024,ThirdParty:STL,std,name
@@ -45584,8 +45584,8 @@ id,subsystem,class,how
 45821,World,CCArea,owner
 45822,ThirdParty:STL,WStringMap<void*>,owner
 45823,ThirdParty:STL,WStringMap<void*>,owner
-45824,ThirdParty:STL,"std::map<unsigned_long_long,std::vector<unsigned_int>>",owner
-45825,ThirdParty:STL,"std::map<unsigned_long_long,std::vector<unsigned_int>>",owner
+45824,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",owner
+45825,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",owner
 45826,World,CCArea,owner
 45827,World,CCArea,owner
 45828,World,CCArea,owner
@@ -45608,10 +45608,10 @@ id,subsystem,class,how
 45845,World,CCArea,owner
 45846,World,CCArea,owner
 45847,World,CCArea,owner
-45848,World,"Map<unsigned_long_long,std::vector<unsigned_int>>",owner
-45849,World,"Map<unsigned_long_long,std::vector<unsigned_int>>",owner
-45850,World,"Map<unsigned_long_long,std::vector<unsigned_int>>",owner
-45851,World,"Map<unsigned_long_long,std::vector<unsigned_int>>",owner
+45848,World,"Map<unsigned long long,std::vector<unsigned int>>",owner
+45849,World,"Map<unsigned long long,std::vector<unsigned int>>",owner
+45850,World,"Map<unsigned long long,std::vector<unsigned int>>",owner
+45851,World,"Map<unsigned long long,std::vector<unsigned int>>",owner
 45852,World,CCArea,owner
 45853,World,CCArea,owner
 45854,World,CCArea,owner
@@ -45689,10 +45689,10 @@ id,subsystem,class,how
 45926,World,CCArea,owner
 45927,World,CCArea,owner
 45928,World,CCArea,owner
-45929,ThirdParty:STL,std::set<unsigned_int>,owner
+45929,ThirdParty:STL,std::set<unsigned int>,owner
 45930,ThirdParty:STL,,owner
-45931,ThirdParty:STL,std::set<unsigned_int>,owner
-45932,ThirdParty:STL,"stdext::hash_map<unk_key,unk_value>",owner
+45931,ThirdParty:STL,std::set<unsigned int>,owner
+45932,ThirdParty:STL,"stdext::hash_map<unk_key,?>",owner
 45933,ThirdParty:STL,std::vector<unsigned int>,owner
 45934,ThirdParty:STL,std::vector<unsigned int>,owner
 45935,ThirdParty:STL,std::vector<CCArea::StageEntry>,owner
@@ -45700,8 +45700,8 @@ id,subsystem,class,how
 45937,ThirdParty:STL,"Core::IndexedList<std::pair<unsigned int,std::wstring>>",owner
 45938,ThirdParty:STL,"Core::IndexedList<std::pair<unsigned int,std::wstring>>",owner
 45939,ThirdParty:STL,"Core::IndexedList<std::pair<unsigned int,std::wstring>>",owner
-45940,ThirdParty:STL,"std::map<unsigned_long_long,std::vector<unsigned_int>>",owner
-45941,ThirdParty:STL,"std::map<unsigned_long_long,std::vector<unsigned_int>>",owner
+45940,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",owner
+45941,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",owner
 45942,World,CCArea,owner
 45943,World,CCArea,owner
 45944,World,CCArea,owner
@@ -45780,9 +45780,9 @@ id,subsystem,class,how
 46017,World,CCArea,owner
 46018,World,CCArea,owner
 46019,World,CCArea,owner
-46020,ThirdParty:STL,"std::map<unsigned_long_long,std::vector<unsigned_int>>",owner
-46021,ThirdParty:STL,"std::map<unsigned_long_long,std::vector<unsigned_int>>",owner
-46022,ThirdParty:STL,"std::map<unsigned_long_long,std::vector<unsigned_int>>",owner
+46020,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",owner
+46021,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",owner
+46022,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",owner
 46023,World,RoomDoorMap,owner
 46024,World,RoomDoorMap,owner
 46025,World,CCArea,owner
@@ -48704,7 +48704,7 @@ id,subsystem,class,how
 48941,Conversation,CAmbientDialogManager,owner
 48942,Conversation,CAmbientDialogManager,owner
 48943,Conversation,CAmbientDialogManager,owner
-48944,Conversation,"stdext::hash_map<unsigned int,unk_value>",owner
+48944,Conversation,"stdext::hash_map<unsigned int,?>",owner
 48945,Conversation,CAmbientDialogManager,owner
 48946,Conversation,CAmbientDialogManager,owner
 48947,Conversation,CAmbientDialogManager,owner
@@ -53334,8 +53334,8 @@ id,subsystem,class,how
 53571,Conversation,CutscenePlayer,owner
 53572,Conversation,CutscenePlayer,owner
 53573,Conversation,CutscenePlayer,owner
-53574,Conversation,EC::Cutscene::CutscenePlayer,owner
-53575,Conversation,EC::Cutscene::CutscenePlayer,owner
+53574,Conversation,CutscenePlayer,owner
+53575,Conversation,CutscenePlayer,owner
 53576,Conversation,EC::Cutscene::Actor,owner
 53577,Conversation,EC::Cutscene::Actor,owner
 53578,Conversation,EC::Cutscene::Actor,owner
@@ -59432,7 +59432,7 @@ id,subsystem,class,how
 59669,Compiler:AtexitDtors,,range
 59670,Animation,,pointer
 59671,Animation,,pointer
-59672,Animation,`dynamic atexit destructor for 'Animation::AnimationManager::Instance,pointer
+59672,Animation,`dynamic atexit destructor for 'Animation::AnimationManager::Get,pointer
 59673,Animation,,pointer
 59674,Animation,,pointer
 59675,Compiler:AtexitDtors,,range
