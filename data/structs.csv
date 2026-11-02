@@ -616,6 +616,11 @@ CutscenePlayer,0x180,0x10,Math::Vector4f,conversationTurnOffset,"0x007F0B20 mova
 CutscenePlayer,0x1D8,0x4,EC::Cutscene::Actor*,cameraActor,"0x007D881C cmp [eax+0x1d8],esi in UpdateBetweenCategories and 0x007D1038 cmp [eax+0x1d8],esi in ActionShake::Update both test it against the actor; the active camera actor"
 CutscenePlayer,0x23C,0x4,Conversation*,conversation,"0x007F0B0D mov [ebx+0x23c],esi in Conversation::MakeLineCutscene; read at 0x007D8828, 0x007D88EF and 0x007D102E; 0 for a cutscene not made by a line"
 CutscenePlayer::BindRecord,0x0,0x4,uint32_t,objectId,"0x007E323C mov [ecx],eax from object+4 (the id)"
+D3DDriver::D3DBatch,0x60,0x4,uint32_t,firstVertex,0x00870D72 passed as DrawPrimitive StartVertex and DrawIndexedPrimitive BaseVertexIndex
+D3DDriver::D3DBatch,0x64,0x4,uint32_t,primitiveCount,"0x00870D6F passed as DrawPrimitive PrimitiveCount and DrawIndexedPrimitive PrimCount (device +0x144, +0x148)"
+D3DDriver::D3DBatchIndex,0x70,0x4,uint32_t,minVertexIndex,0x00870E39 DrawIndexedPrimitive MinVertexIndex
+D3DDriver::D3DBatchIndex,0x74,0x4,uint32_t,startIndex,0x00870E32 DrawIndexedPrimitive StartIndex
+D3DDriver::D3DBatchIndex,0x78,0x4,uint32_t,vertexCount,0x00870E35 DrawIndexedPrimitive NumVertices
 D3DDriver::D3DGraphicsDriver,0x4,0xCC,int[51],renderStateValueTable,"0x00868EB4 mov eax,[ecx+eax*4+4] (translation of a value index); filled by 0x00868210 (e.g. 0x008682AB [ecx+8]=1); cleared by 0x008681B0 rep stosd 0x33"
 D3DDriver::D3DGraphicsDriver,0xD0,0x2C,int[11],samplerStateValueTable,"0x00868F33 mov eax,[ecx+eax*4+0xd0]; filled by 0x00868210 (0x00868356 [ecx+0xd0]=1 ... 0x00868378 [ecx+0xf4]=6, 0x00868285 [ecx+0xf8]=7)"
 D3DDriver::D3DGraphicsDriver,0x100,0x4,void*,device,"0x00869038 mov eax,[ebx+0x100]: the IDirect3DDevice9; calls through its vtable e.g. +0x5C CreateTexture"
@@ -624,7 +629,7 @@ D3DDriver::D3DGraphicsDriver,0x108,0x4,unsigned int,clearStencil,"0x008685C4 mov
 D3DDriver::D3DGraphicsDriver,0x10C,0x4,int,unknownSetting,"0x0086B514 mov [ecx+0x10C],eax (slot 94 stores, slot 95 at 0x0086B520 reads); what it means was not read"
 D3DDriver::D3DGraphicsDriver,0x110,0x4,float,clearDepth,0x008685B4 fstp [ecx+0x110] (slot 13); Clear pushes it at 0x00868668
 D3DDriver::D3DGraphicsDriver,0x12C,0x4,void*,parameterCopy,"0x0086BB72 mov [ebp+0x12c],eax: a 0x48-byte copy of the creation parameters (rep movsd 0x12); 0x0086842F reads +0x10 and +0x14 of it"
-D3DDriver::D3DGraphicsDriver,0x130,0x1,bool,createFlag,"0x0086BADF mov byte [ebp+0x130],al; returned by slot 6 at 0x00868442"
+D3DDriver::D3DGraphicsDriver,0x130,0x1,bool,windowed,"0x00869BD6 cmp byte [esi+0x130],0: zero takes window style 0x90080000 (popup), else the saved style; 0x0086BADF stores it; returned by slot 6 at 0x00868442"
 D3DDriver::D3DGraphicsDriver,0x1AC,0x4,D3DDriver::D3DStateCache,stateCache,"0x00868EC3 add ecx,0x1ac then D3DStateCache::SetRenderState; the cache's constructor at 0x0086BB27 (size not read)"
 D3DDriver::D3DGraphicsDriver,0x735C,0x1,bool,inScene,"0x0086874D mov [esi+0x735C],1 (BeginScene); cleared at 0x0086878A; read by slot 20 at 0x008687A0"
 D3DDriver::D3DGraphicsDriver,0x7360,0x4,int,unknown7360,"0x0086B4E8 mov [ecx+0x7360],eax (slot 47); initialised -1 at 0x0086BB46"
@@ -1047,7 +1052,7 @@ GraphicsStructures::ObjectNode,0x8,0x4,void*,vftableFaceAnimatable,"0x0055ED82 m
 GraphicsStructures::ObjectNode,0xC,0x4,void*,vftableMemoryFootprint,"0x0055ED89 mov dword [esi+0xC],0xAF9720"
 GraphicsStructures::ObjectNode,0x10,0x10,std::vector<GraphicsStructures::ObjectNode*>,children,"0x0055E103 mov ecx,[esi+0x14] ; GetChild (0x0055E100) reads begin +0x14 and end +0x18 in 4-byte elements ; GetChildCount 0x0055E140 ; AddChild 0x0055F068 pushes onto it"
 GraphicsStructures::ObjectNode,0x60,0x40,Math::Matrix4x4f,worldMatrix,"0x0055EEE5 movaps [esi+0x60],xmm0 (identity from Matrix4x4f::GetIdentity, call 0x0055EEDD); column-vector layout"
-GraphicsStructures::ObjectNode,0xA0,0x40,float[16],secondMatrix,"0x0053CBC0 lea eax,[ecx+0xa0]: node slot 1; meaning unread"
+GraphicsStructures::ObjectNode,0xA0,0x40,float[16],modelSpaceMatrix,"0x0053CBC0 lea eax,[ecx+0xa0]: node slot 1, GetModelSpaceMatrix"
 GraphicsStructures::ObjectNode,0xE0,0x10,Math::Vector4f,localRotation,0x0057223F fstp [eax+0xE0] in ObjectNodeBlueprint::InitNode (0x00572230) from the blueprint's +4 ; the constructor sets +0xEC to 1.0 at 0x0055EDB5
 GraphicsStructures::ObjectNode,0xF0,0x10,Math::Vector4f,faceRotation,"0x0055EDBB fstp [esi+0xFC]=1.0, 0x0055EDC1..0x0055EDCD zero; FaceFX rotation, identity"
 GraphicsStructures::ObjectNode,0x100,0x10,Math::Vector4f,restTranslation,"0x00572266 movaps [eax+0x100],xmm0 in InitNode from the blueprint's +0x20; the node's translation is +0x100 + animation's +0x120 + FaceFX's +0x130 (0x0055E9D0, ANIMATION.md), so nothing animates this one"
@@ -1510,6 +1515,7 @@ Physics::DebugLineBatch,0x2C,0x4,void*,cpuBuffer,"0x0053BCA1 mov [esi+0x2C],eax 
 Physics::DebugLineBatch,0x30,0x4,void*,device,"0x0053BC55 mov [esi+0x30],ebx; 0x0053BCDF mov ecx,[esi+0x30] then call [eax+0x68] (the device's CreateVertexDeclaration slot)"
 Physics::DebugLineBatch,0x34,0x4,void*,vertexDeclaration,"0x0053BD04 mov [esi+0x34],eax (device slot 0x68)"
 Physics::DebugLineBatch,0x38,0x4,uint32_t,usedLines,"0x0053BC52 mov [esi+0x38],0; Grow compares and copies by it at 0x0053BB4A"
+Physics::PhysicsScene,0x188,0x1,bool,muteActorPoseErrors,0x00821020 stores it; 0x0082C480 copies it into the queued pose command's +0x39
 PlotItems,0x0,0x50,struct,sizeof,0x007406C5; sizeof (push 0x50 then PlotItems::PlotItems)
 PlotManager::PlotEntry,0x0,0x18,struct,sizeof,0x0075DA85 six dwords copied to PlotManager+0x44..0x58 as the default; list element is wstring + these (0x0075BE1B..0x0075BE4E)
 PortraitRenderer,0x0,0xD70,struct,sizeof,"0x006AE2FD push 0xd70 in CCCreature::UpdatePortrait (operator new, then the constructor 0x007F3D80 called at 0x006AE31D)"
@@ -1590,6 +1596,7 @@ Renderer::RenderContext,0xE0,0x4,float,flipbookCoord,0x004F88FC fld dword [eax+0
 Renderer::RenderContext,0xE4,0x4,void*,drawnObject,"0x004F8EB1 mov ecx,[eax+0xE4]; 0x004F8EB7 mov ecx,[ecx+0x154] (the head-bone object, whose +0xE4 is the bone index and +0x80 the bone table) for usage 0x1E"
 Renderer::RenderContext,0xF0,0x40,float[16],viewMatrix,"0x00465F20 lea eax,[ecx+0xF0] (GetViewMatrix)"
 Renderer::RenderContext,0x144,0x4,void*,currentShaderParam,"0x00465F30 mov [ecx+0x144],eax (SetCurrentShaderParam, called with the parameter object's slot 7 result at 0x004F927F); 0x00465F40 reads it"
+Renderer::Renderer,0x8,0x4,Graphics::GraphicsDriver*,device,0x0045A9D0 the slot reads the driver from +8 for its windowed byte
 Renderer::ShaderControlBooleans,0x14,0x18,uint32_t[6],values,"0x004F256C fstp [ecx+eax*4+0x14] (float 1.0 or 0.0) / 0x004F2595 mov [ecx+eax*4+0x14],edx (integer 1 or 0); the size 0x18 given at 0x004F253D; class INFERRED"
 Renderer::ThreadedGraphicsDriver,0x0,0xC,struct,sizeof,0x00529D4E push 0xC (operator new at 0x00529D50)
 Renderer::ThreadedGraphicsDriver,0x0,0x4,void*,vftable,"0x00A22219 mov [esi],0xB5834C"
