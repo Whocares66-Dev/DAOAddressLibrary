@@ -14474,3 +14474,37 @@ address,what,value,why
 0x0050C500,clear,Graphics::MaterialSemanticTemp::vfunction8,"Misleading: one function shared by the Semantic, Logic, Technique and Pass vftables; it is SetName on this+8"
 0x0050C510,signature,void __thiscall f(void* this),"Unnamed FUN_; destructor body, plain ret"
 0x0050C190,signature,void __thiscall f(void* this),"Unnamed FUN_; destructor body, plain ret"
+0x0050FBE0,signature,"void * __thiscall TemplateShaderParam<Matrix4x4f>(void * this, const void * name, int usage)",ret 8; name to 0x0050F810; usage to the base ctor's +0x20 (switched on at 0x0050F91E)
+0x0050FD10,signature,"void * __thiscall TemplateShaderParam<Vector4f>(void * this, const void * name, int usage)",ret 8
+0x0050FDE0,signature,"void * __thiscall TemplateShaderParam<Color4f>(void * this, const void * name, int usage)",ret 8
+0x0050FF90,signature,"void * __thiscall MaterialParamRef(void * this, const void * name)",ret 4
+0x00510030,signature,"void * __thiscall MaterialParamVector4Array(void * this, const void * name)",ret 4
+0x0050FC50,signature,"void __thiscall GetMemoryFootprint(void * this, uint * bytes, uint * other)",ret 8
+0x0050FD90,signature,"void __thiscall GetMemoryFootprint(void * this, uint * bytes, uint * other)",ret 8
+0x0050FE60,signature,"void __thiscall GetMemoryFootprint(void * this, uint * bytes, uint * other)",ret 8
+0x005103C0,signature,"void __thiscall GetMemoryFootprint(void * this, uint * bytes, uint * other)",ret 8
+0x00510410,signature,"void __thiscall GetMemoryFootprint(void * this, uint * bytes, uint * other)",ret 8
+0x0050FCB0,signature,"void __thiscall SetValue(void * this, const void * data, uint size, void * block)",ret 0xC; size unread; block becomes ecx of 0x0050FB30
+0x0050FF50,signature,"void __thiscall SetValue(void * this, const void * data, uint size, void * block)",ret 0xC; size unread
+0x0050FF70,signature,"void __thiscall SetValue(void * this, const void * data, uint size, void * block)",ret 0xC; size unread
+0x00510090,signature,"void __thiscall SetValue(void * this, const void * data, uint size, void * block)",ret 0xC; size passed on
+0x00510000,signature,"void __thiscall SetValue(void * this, const void * data, uint size, void * block)","ret 0xC; data to +0x28, size to +0x24, block unread (Apply 0x0050F943 reads them as pointer and byte count)"
+0x0050FEB0,convention,__thiscall,ecx (the block) passed through to 0x0050FB30 unread; ret 8
+0x0050FEB0,signature,"void __thiscall WriteVector4Parameter(void * block, const void * param, const void * data)",pushes 0x10 and calls 0x0050FB30
+0x00510020,signature,"bool __thiscall Apply(void * this, void * a, void * b, void * c, void * device)",ret 0x10; returns 1
+0x005100B0,signature,void * __cdecl Create(const void * name),"plain ret; caller add esp,4 at 0x0050B446"
+0x00510120,signature,void * __cdecl Create(const void * name),plain ret
+0x00510190,signature,void * __cdecl Create(const void * name),plain ret
+0x00510200,signature,void * __cdecl Create(const void * name),plain ret
+0x00510270,signature,void * __cdecl Create(const void * name),"plain ret; caller add esp,4 at 0x005058BF"
+0x005102E0,signature,void * __cdecl Create(const void * name),plain ret
+0x00510350,signature,void * __cdecl Create(const void * name),plain ret
+0x005104B0,signature,void * __cdecl Create(const void * name),plain ret
+0x00510530,signature,void * __cdecl Create(const void * name),plain ret
+0x00510400,signature,"void __thiscall SetVolume(void * this, int volume)",ret 4; writes +0x50
+0x005105B0,signature,ushort __thiscall GetSamplerIndex(void * this),plain ret; u16 +0x28
+0x005105C0,signature,"void __thiscall SetSamplerIndex(void * this, ushort index)",ret 4
+0x0050FB30,convention,__thiscall,"outside the batch (render-23 owns its name): ecx = the block, read at 0x0050FB5D/0x0050FB8A; ret 0xC"
+0x0050FBC0,convention,__thiscall,outside the batch (render-23): ecx passed through to 0x0050FB30; ret 8
+0x004D38E0,clear,GraphicsStructures::ObjectNodeCloth::vfunction3,a folded getter of the static identity matrix (0x00C2BFB0; 0x004D38F9..0x004D392B); called by ApplyParamDefaults at 0x00502B80
+0x004ECF60,clear,G2DA::IsLoaded,"a folded `mov al,[ecx+4]`; also MaterialArtParameter's has-a-value test (0x00502964)"
