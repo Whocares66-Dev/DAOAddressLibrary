@@ -17755,3 +17755,45 @@ address,what,value,why
 0x0083CCB0,signature,"int __cdecl f(void *strm, const char *version, int stream_size)",inflateInit_: plain ret
 0x0083CDE0,signature,"int __cdecl f(void *strm, int flush)",inflate: plain ret
 0x0083E3D0,signature,int __cdecl f(void *strm),inflateEnd: plain ret
+0x00564920,signature,"void* __thiscall GraphicsStructures::ObjectNodeCloth::`scalar deleting destructor'`adjustor{384}'(void* this, unsigned int flags)","jumps to 0x00564A90, which ends ret 4"
+0x00564930,signature,"void* __thiscall GraphicsStructures::ObjectNodeCloth::`scalar deleting destructor'`adjustor{12}'(void* this, unsigned int flags)","jumps to 0x00564A90, which ends ret 4"
+0x00564940,signature,unsigned int __thiscall GraphicsStructures::ObjectNodeCloth::GetKind(void* this),plain ret; returns 0xA
+0x00564950,signature,int __thiscall Graphics::IRenderableNode::vfunction27(void* this),reads the main vtable through this-0x180 and jumps to slot 16; plain ret
+0x00564970,signature,void* __thiscall GraphicsStructures::ObjectNodeCloth::GetBoundingSphere`adjustor{384}'(void* this),"jumps to 0x00563780, plain ret"
+0x00564990,signature,unsigned int __thiscall GraphicsStructures::ObjectNodeCloth::GetKind`adjustor{384}'(void* this),"jumps to 0x00564940, plain ret"
+0x005649A0,convention,__cdecl,"plain ret with four stack arguments the caller pops (0x00564A0E, 0x00564A1F calls are followed by add esp,0x10)"
+0x005649A0,signature,"void __cdecl std::_Sort<std::pair<unsigned int,unsigned int>*,int>(void* first, void* last, int ideal, void* pred)",ret with no operand; four stack arguments
+0x00564A90,signature,"void* __thiscall GraphicsStructures::ObjectNodeCloth::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x00564EB0,signature,"void* __thiscall GraphicsStructures::ObjectNodeCloth::ObjectNodeCloth(void* this, void* owner, void* blueprint)",ret 8; the two arguments go to the ObjectNode constructor 0x0055ED20
+0x005650E0,signature,"bool __thiscall GraphicsStructures::ObjectNodeCloth::CreateDrawBatch(void* this, void* meshData)",ret 4; al is 1 on success
+0x005653A0,signature,void* __thiscall GraphicsStructures::ObjectNodeCloth::CreateMeshData(void* this),"plain ret, no stack argument; returns the 0x40-byte record or 0"
+0x00565740,signature,"void __thiscall GraphicsStructures::ObjectNodeCloth::CreatePhysicsActors(void* this, void* physicsObject)",ret 4
+0x00565F10,signature,"void* __thiscall GraphicsStructures::ObjectBlueprint::GetMesh(void* this, unsigned int index)",ret 4
+0x00565F70,signature,"void __thiscall GraphicsStructures::ObjectBlueprint::GetMemoryFootprint(void* this, unsigned int* total, unsigned int* other)",ret 8
+0x00567D10,signature,"void* __thiscall ECBase::ECDynArray<GraphicsStructures::ModelExport>::ECDynArray(void* this, unsigned int count)",ret 4
+0x00567E90,signature,void __thiscall GraphicsStructures::ObjectBlueprint::~ObjectBlueprint(void* this),plain ret
+0x00567F70,signature,"void* __thiscall GraphicsStructures::ObjectBlueprint::`scalar deleting destructor'`adjustor{288}'(void* this, unsigned int flags)","jumps to 0x005683C0, which ends ret 4"
+0x00567F80,signature,"void* __thiscall GraphicsStructures::ObjectBlueprint::InstantiateAsCrust(void* this, void* name, void* crustTarget, void* a, void* b, void* c)",ret 0x14
+0x00568270,convention,__cdecl,"plain ret, the Object pushed by the caller (0x0057256E push esi; call; add esp,4)"
+0x00568270,signature,void __cdecl GraphicsStructures::Object::ReleaseContents(void* object),ret with no operand
+0x005683C0,signature,"void* __thiscall GraphicsStructures::ObjectBlueprint::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x00568570,signature,"void* __thiscall ECBase::ECDynArray<Multithreading::SynchSafePointer<GraphicsStructures::ObjectBlueprint>>::Assign(void* this, void* other)",ret 4
+0x00568590,signature,"void* __thiscall GraphicsStructures::ObjectBlueprint::Instantiate(void* this, void* name, void* a, void* b, void* c, void* parts)",ret 0x14
+0x00568A30,signature,"void* __thiscall GraphicsStructures::ObjectBlueprint::ObjectBlueprint(void* this, int constructVirtualBases)",ret 4
+0x00568BB0,signature,"void __thiscall GraphicsStructures::Dependency::Initialize(void* this, void* target, void* node, void* nodeName)",ret 0xC
+0x00568C00,signature,void __thiscall GraphicsStructures::Dependency::Clear(void* this),plain ret
+0x00568C20,signature,"bool __thiscall GraphicsStructures::Dependency::IsBoundToNode(void* this, void* node)",ret 4
+0x00568C30,signature,void __thiscall GraphicsStructures::Dependency::Forget(void* this),plain ret
+0x00568C40,signature,"void __thiscall GraphicsStructures::Dependency::SetTarget(void* this, void* target)",ret 4
+0x00568C70,signature,"void __thiscall GraphicsStructures::ObjectAttachDependency::GetMemoryFootprint(void* this, unsigned int* total, unsigned int* other)",ret 8; ecx unread
+0x00568C90,signature,void __thiscall GraphicsStructures::ObjectAttachDependency::OnAttached(void* this),plain ret
+0x00568CB0,signature,void __thiscall GraphicsStructures::ObjectAttachDependency::OnDetached(void* this),plain ret
+0x00568CF0,signature,bool __thiscall GraphicsStructures::NodeAttachDependency::Update(void* this),plain ret; al is 1
+0x00568D10,signature,"void __thiscall GraphicsStructures::NodeAttachDependency::GetMemoryFootprint(void* this, unsigned int* total, unsigned int* other)",ret 8; ecx unread
+0x00568D30,signature,"void* __thiscall Vector4::AddHomogeneous(void* this, void* other)",ret 4
+0x00568D90,signature,void __thiscall GraphicsStructures::Dependency::Detach(void* this),plain ret (ends in a jump to Clear)
+0x00568DB0,signature,bool __thiscall GraphicsStructures::ObjectAttachDependency::Update(void* this),plain ret
+0x00568EF0,signature,"void __thiscall GraphicsStructures::ObjectAttachDependency::SetTarget(void* this, void* target)",ret 4
+0x00564980,signature,float* __thiscall Math::Matrix4x4f::GetIdentity(void* this),"thunk to 0x004D38E0 (plain ret, ecx unused); in the vftable it takes this"
+0x005683F0,signature,void __thiscall ECBase::ECDynArray<Multithreading::SynchSafePointer<?>>::Clear(void* this),plain ret at 0x00568428
+0x00568430,signature,"void* __thiscall ECBase::ECDynArray<Multithreading::SynchSafePointer<?>>::operator=(void* this, void* other)",ret 4 at 0x00568460/0x005684A9/...

@@ -4932,7 +4932,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4931,function,,0x004d3730,0x00819e90,0x004d3730
 4932,function,,0x004d37e0,0x00819f40,0x004d37e0
 4933,function,,0x004d3830,0x00819f90,0x004d3830
-4934,function,,0x004d38e0,0x0081a040,0x004d38e0
+4934,function,Math::Matrix4x4f::GetIdentity,0x004d38e0,0x0081a040,0x004d38e0
 4935,function,,0x004d3940,0x0081a0a0,0x004d3940
 4936,function,Math::Matrix4x4f::PerspectiveFovRH,0x004d3a60,0x0081a1c0,0x004d3a60
 4937,function,,0x004d3ae0,0x0081a240,0x004d3ae0
@@ -8486,15 +8486,15 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 8485,function,GraphicsStructures::ObjectNodeCloth::~ObjectNodeCloth,0x00564810,0x00751d70,0x00564810
 8486,function,GraphicsStructures::ObjectNodeCloth::`scalar deleting destructor'`adjustor{4}',0x00564900,0x00751e60,0x00564900
 8487,function,GraphicsStructures::ObjectNodeCloth::`scalar deleting destructor'`adjustor{8}',0x00564910,0x00751e70,0x00564910
-8488,function,,0x00564920,0x00751e80,0x00564920
-8489,function,,0x00564930,0x00751e90,0x00564930
-8490,function,,0x00564940,0x008abaf0,0x00564940
-8491,function,,0x00564950,0x007b1ff0,0x00564950
-8492,function,,0x00564970,0x00751f20,0x00564970
-8493,function,,0x00564980,0x00751f30,0x00564980
-8494,function,,0x00564990,0x00751f40,0x00564990
-8495,function,,0x005649a0,0x00751f60,0x005649a0
-8496,function,,0x00564a90,0x00752050,0x00564a90
+8488,function,GraphicsStructures::ObjectNodeCloth::`scalar deleting destructor'`adjustor{384}',0x00564920,0x00751e80,0x00564920
+8489,function,GraphicsStructures::ObjectNodeCloth::`scalar deleting destructor'`adjustor{12}',0x00564930,0x00751e90,0x00564930
+8490,function,GraphicsStructures::ObjectNodeCloth::GetKind,0x00564940,0x008abaf0,0x00564940
+8491,function,Graphics::IRenderableNode::vfunction27,0x00564950,0x007b1ff0,0x00564950
+8492,function,GraphicsStructures::ObjectNodeCloth::GetBoundingSphere`adjustor{384}',0x00564970,0x00751f20,0x00564970
+8493,function,Math::Matrix4x4f::GetIdentity,0x00564980,0x00751f30,0x00564980
+8494,function,GraphicsStructures::ObjectNodeCloth::GetKind`adjustor{384}',0x00564990,0x00751f40,0x00564990
+8495,function,"std::_Sort<std::pair<unsigned int,unsigned int>*,int>",0x005649a0,0x00751f60,0x005649a0
+8496,function,GraphicsStructures::ObjectNodeCloth::`scalar deleting destructor',0x00564a90,0x00752050,0x00564a90
 8497,function,,0x00564ab0,0x007c1b20,0x00564ab0
 8498,function,,0x00564c2a,0x007c1c9a,0x00564c2a
 8499,function,,0x00564c36,0x007c1ca6,0x00564c36
@@ -8502,13 +8502,13 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 8501,function,std::vector<?>::push_back,0x00564da0,0x0048e940,0x00564da0
 8502,function,std::vector<?>::vector,0x00564e30,0x00752070,0x00564e30
 8503,function,std::vector<?>::resize(unsigned int),0x00564e90,0x007520d0,0x00564e90
-8504,function,,0x00564eb0,0x007520f0,0x00564eb0
-8505,function,,0x005650e0,0x00752320,0x005650e0
+8504,function,GraphicsStructures::ObjectNodeCloth::ObjectNodeCloth,0x00564eb0,0x007520f0,0x00564eb0
+8505,function,GraphicsStructures::ObjectNodeCloth::CreateDrawBatch,0x005650e0,0x00752320,0x005650e0
 8506,retired,,,,
 8507,function,GraphicsStructures::ObjectNodeCloth::CollectVertexRanges,0x005651f0,0x00752430,0x005651f0
-8508,function,,0x005653a0,0x007525e0,0x005653a0
+8508,function,GraphicsStructures::ObjectNodeCloth::CreateMeshData,0x005653a0,0x007525e0,0x005653a0
 8509,retired,,,,
-8510,function,,0x00565740,0x00752980,0x00565740
+8510,function,GraphicsStructures::ObjectNodeCloth::CreatePhysicsActors,0x00565740,0x00752980,0x00565740
 8511,function,GraphicsStructures::ExportValue::ExportValue,0x005657d0,0x0075d330,0x005657d0
 8512,function,"std::_Copy_opt<GraphicsStructures::ModelExport*,GraphicsStructures::ModelExport*,std::_Nonscalar_ptr_iterator_tag>",0x005657e0,0x0075d3a0,0x005657e0
 8513,function,"std::_Construct<GraphicsStructures::ModelExport,GraphicsStructures::ModelExport>",0x00565830,0x0075d3f0,0x00565830
@@ -8527,8 +8527,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 8526,function,GraphicsStructures::ExportValue::ExportValue,0x00565e50,0x0075d900,0x00565e50
 8527,function,GraphicsStructures::ExportValue::ExportValue,0x00565e90,0x0075d940,0x00565e90
 8528,function,GraphicsStructures::ExportValue::ExportValue,0x00565ed0,0x0075d980,0x00565ed0
-8529,function,,0x00565f10,0x0075d9c0,0x00565f10
-8530,function,,0x00565f70,0x0075da20,0x00565f70
+8529,function,GraphicsStructures::ObjectBlueprint::GetMesh,0x00565f10,0x0075d9c0,0x00565f10
+8530,function,GraphicsStructures::ObjectBlueprint::GetMemoryFootprint,0x00565f70,0x0075da20,0x00565f70
 8531,function,Stub::VectorSize_Shift3,0x00566060,0x00a41040,0x00566060
 8532,function,"std::_Copy_opt<GraphicsStructures::ModelExport*,GraphicsStructures::ModelExport*>",0x00566080,0x0075db10,0x00566080
 8533,function,std::_Median<?*>,0x005660e0,0x0075db70,0x005660e0
@@ -8537,8 +8537,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 8536,function,"std::_Uninit_copy_Unchecked<GraphicsStructures::ModelExport*,GraphicsStructures::ModelExport*>",0x00566300,0x0075dd90,0x00566300
 8537,function,Catch_All@00566359,0x00566359,0x0075dde9,0x00566359
 8538,function,"std::_Push_heap<GraphicsStructures::ExportValue*,int,GraphicsStructures::ExportValue>",0x00566390,0x0075de20,0x00566390
-8539,function,GraphicsStructures::ObjectNodeBlueprint::ExpandObjectBounds,0x00566410,0x0075dea0,0x00566410
-8540,function,GraphicsStructures::ObjectNodeBlueprint::BuildExportValues,0x005665b0,0x0075e040,0x005665b0
+8539,function,GraphicsStructures::ObjectBlueprint::ExpandObjectBounds,0x00566410,0x0075dea0,0x00566410
+8540,function,GraphicsStructures::ObjectBlueprint::BuildExportValues,0x005665b0,0x0075e040,0x005665b0
 8541,function,"std::_Copy_backward<GraphicsStructures::ModelExport*,GraphicsStructures::ModelExport*>",0x005667e0,0x0075e270,0x005667e0
 8542,function,"std::_Uninit_fill_n_Unchecked<GraphicsStructures::ModelExport*,unsigned int,GraphicsStructures::ModelExport>",0x00566810,0x0075e2a0,0x00566810
 8543,function,Catch_All@00566869,0x00566869,0x0075e2f9,0x00566869
@@ -8569,35 +8569,35 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 8568,function,"std::vector<GraphicsStructures::ModelExport>::resize(unsigned int,GraphicsStructures::ModelExport)",0x00567ab0,0x0075f590,0x00567ab0
 8569,function,std::vector<int>::resize,0x00567bd0,0x0075f7d0,0x00567bd0
 8570,function,GraphicsStructures::ObjectBlueprint::FindNodeByName,0x00567be0,0x0075f7e0,0x00567be0
-8571,function,,0x00567d10,0x0075f910,0x00567d10
+8571,function,ECBase::ECDynArray<GraphicsStructures::ModelExport>::ECDynArray,0x00567d10,0x0075f910,0x00567d10
 8572,function,Multithreading::SynchSafePointerList<GraphicsStructures::ObjectBlueprint>::SynchSafePointerList,0x00567d80,0x0075f980,0x00567d80
 8573,function,Multithreading::SynchSafePointerList<GraphicsStructures::ObjectBlueprint>::~SynchSafePointerList,0x00567dd0,0x0075f9d0,0x00567dd0
-8574,function,,0x00567e90,0x0075fa90,0x00567e90
-8575,function,,0x00567f70,0x0075fb70,0x00567f70
-8576,function,,0x00567f80,0x0075fb80,0x00567f80
-8577,function,,0x00568270,0x0075fe70,0x00568270
+8574,function,GraphicsStructures::ObjectBlueprint::~ObjectBlueprint,0x00567e90,0x0075fa90,0x00567e90
+8575,function,GraphicsStructures::ObjectBlueprint::`scalar deleting destructor'`adjustor{288}',0x00567f70,0x0075fb70,0x00567f70
+8576,function,GraphicsStructures::ObjectBlueprint::InstantiateAsCrust,0x00567f80,0x0075fb80,0x00567f80
+8577,function,GraphicsStructures::Object::ReleaseContents,0x00568270,0x0075fe70,0x00568270
 8578,function,"std::_Copy_opt<?*,?*,std::_Nonscalar_ptr_iterator_tag>",0x00568350,0x00757a70,0x00568350
 8579,function,Multithreading::SynchSafePointerList<GraphicsStructures::ObjectBlueprint>::`scalar deleting destructor',0x00568390,0x0075ff50,0x00568390
-8580,function,,0x005683c0,0x0075ff80,0x005683c0
-8581,function,,0x005683f0,0x0075ffb0,0x005683f0
-8582,function,,0x00568430,0x0075fff0,0x00568430
-8583,function,,0x00568570,0x00760130,0x00568570
+8580,function,GraphicsStructures::ObjectBlueprint::`scalar deleting destructor',0x005683c0,0x0075ff80,0x005683c0
+8581,function,ECBase::ECDynArray<Multithreading::SynchSafePointer<?>>::Clear,0x005683f0,0x0075ffb0,0x005683f0
+8582,function,ECBase::ECDynArray<Multithreading::SynchSafePointer<?>>::operator=,0x00568430,0x0075fff0,0x00568430
+8583,function,ECBase::ECDynArray<Multithreading::SynchSafePointer<GraphicsStructures::ObjectBlueprint>>::Assign,0x00568570,0x00760130,0x00568570
 8584,function,GraphicsStructures::ObjectBlueprint::Instantiate,0x00568590,0x00760150,0x00568590
-8585,function,,0x00568a30,0x007605f0,0x00568a30
-8586,function,,0x00568bb0,0x00778820,0x00568bb0
-8587,function,,0x00568c00,0x00778870,0x00568c00
-8588,function,,0x00568c20,0x00778890,0x00568c20
-8589,function,,0x00568c30,0x007788a0,0x00568c30
-8590,function,,0x00568c40,0x007788b0,0x00568c40
-8591,function,,0x00568c70,0x007788e0,0x00568c70
-8592,function,,0x00568c90,0x00778900,0x00568c90
-8593,function,,0x00568cb0,0x00778920,0x00568cb0
-8594,function,,0x00568cf0,0x00778960,0x00568cf0
-8595,function,,0x00568d10,0x00778980,0x00568d10
-8596,function,,0x00568d30,0x007789a0,0x00568d30
-8597,function,,0x00568d90,0x00778a00,0x00568d90
-8598,function,,0x00568db0,0x00778a20,0x00568db0
-8599,function,,0x00568ef0,0x00778b60,0x00568ef0
+8585,function,GraphicsStructures::ObjectBlueprint::ObjectBlueprint,0x00568a30,0x007605f0,0x00568a30
+8586,function,GraphicsStructures::Dependency::Initialize,0x00568bb0,0x00778820,0x00568bb0
+8587,function,GraphicsStructures::Dependency::Clear,0x00568c00,0x00778870,0x00568c00
+8588,function,GraphicsStructures::Dependency::IsBoundToNode,0x00568c20,0x00778890,0x00568c20
+8589,function,GraphicsStructures::Dependency::Forget,0x00568c30,0x007788a0,0x00568c30
+8590,function,GraphicsStructures::Dependency::SetTarget,0x00568c40,0x007788b0,0x00568c40
+8591,function,GraphicsStructures::ObjectAttachDependency::GetMemoryFootprint,0x00568c70,0x007788e0,0x00568c70
+8592,function,GraphicsStructures::ObjectAttachDependency::OnAttached,0x00568c90,0x00778900,0x00568c90
+8593,function,GraphicsStructures::ObjectAttachDependency::OnDetached,0x00568cb0,0x00778920,0x00568cb0
+8594,function,GraphicsStructures::NodeAttachDependency::Update,0x00568cf0,0x00778960,0x00568cf0
+8595,function,GraphicsStructures::NodeAttachDependency::GetMemoryFootprint,0x00568d10,0x00778980,0x00568d10
+8596,function,Vector4::AddHomogeneous,0x00568d30,0x007789a0,0x00568d30
+8597,function,GraphicsStructures::Dependency::Detach,0x00568d90,0x00778a00,0x00568d90
+8598,function,GraphicsStructures::ObjectAttachDependency::Update,0x00568db0,0x00778a20,0x00568db0
+8599,function,GraphicsStructures::ObjectAttachDependency::SetTarget,0x00568ef0,0x00778b60,0x00568ef0
 8600,function,GraphicsStructures::ObjectNodeEmitterTarget::SetFollowObject,0x00568f20,0x00778b90,0x00568f20
 8601,function,GraphicsStructures::ObjectNodeEmitterTarget::ClearFollowObject,0x00568f30,0x00778ba0,0x00568f30
 8602,function,GraphicsStructures::ObjectNodeEmitterTarget::DeleteFollowObject,0x00568f40,0x00778bb0,0x00568f40
