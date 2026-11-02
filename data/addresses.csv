@@ -7260,14 +7260,14 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7259,function,,0x0052e350,0x00734e90,0x0052e350
 7260,function,,0x0052e360,0x00734ea0,0x0052e360
 7261,function,,0x0052e490,0x00734fd0,0x0052e490
-7262,function,,0x0052e520,0x00735060,0x0052e520
-7263,function,,0x0052e5a0,0x007350e0,0x0052e5a0
-7264,function,,0x0052e630,0x00735170,0x0052e630
-7265,function,,0x0052e680,0x007351e0,0x0052e680
-7266,function,,0x0052e6d0,0x00735230,0x0052e6d0
-7267,function,,0x0052e7e0,0x004f5570,0x0052e7e0
-7268,function,,0x0052e810,0x007357a0,0x0052e810
-7269,function,,0x0052e880,0x00735810,0x0052e880
+7262,function,GraphicsStructures::SpeedTreeForest::UpdateCameraMoved,0x0052e520,0x00735060,0x0052e520
+7263,function,GraphicsStructures::SpeedTreeWorld::Update,0x0052e5a0,0x007350e0,0x0052e5a0
+7264,function,GraphicsStructures::SpeedTreeWorld::WindProxy::WindProxy,0x0052e630,0x00735170,0x0052e630
+7265,function,GraphicsStructures::SpeedTreeWorld::WindProxy::SetPosition,0x0052e680,0x007351e0,0x0052e680
+7266,function,Quaternion::FromYawPitchRoll,0x0052e6d0,0x00735230,0x0052e6d0
+7267,function,ECBase::ECDynArray<?>::At,0x0052e7e0,0x004f5570,0x0052e7e0
+7268,function,"std::_Med3<GraphicsStructures::SpeedTreeInstance**,SpeedTree::FartherFromPoint>",0x0052e810,0x007357a0,0x0052e810
+7269,function,"std::_Push_heap<GraphicsStructures::SpeedTreeInstance**,int,GraphicsStructures::SpeedTreeInstance*,SpeedTree::FartherFromPoint>",0x0052e880,0x00735810,0x0052e880
 7270,function,SpeedTree::SetCameraAndLodFactor,0x0052e8f0,0x00735880,0x0052e8f0
 7271,function,,0x0052ea80,0x00735a10,0x0052ea80
 7272,function,,0x0052ed30,0x00735cc0,0x0052ed30
@@ -7280,7 +7280,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7279,function,GraphicsStructures::SpeedTreeModel::AppendBillboardTexCoords,0x00530b70,0x00737b00,0x00530b70
 7280,function,GraphicsStructures::SpeedTreeModel::DrawInstance,0x00530c20,0x00737bb0,0x00530c20
 7281,function,,0x00530db0,0x00737d40,0x00530db0
-7282,function,,0x005313a0,0x00738330,0x005313a0
+7282,function,GraphicsStructures::SpeedTreeInstance::`scalar deleting destructor',0x005313a0,0x00738330,0x005313a0
 7283,function,,0x005313c0,0x00738350,0x005313c0
 7284,function,GraphicsStructures::SpeedTreeInstance::CreatePhysicsActor,0x005313e0,0x00738370,0x005313e0
 7285,function,GraphicsStructures::SpeedTreeInstance::UpdateRenderTransform,0x005317a0,0x00738730,0x005317a0
@@ -7294,40 +7294,40 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7293,function,SpeedTree::DeleteTransientData,0x00531ac0,0x00738f70,0x00531ac0
 7294,function,SpeedTree::GetModel,0x00531b20,0x00738fd0,0x00531b20
 7295,function,GraphicsStructures::SpeedTreeModel::LoadTree,0x00531b80,0x00739030,0x00531b80
-7296,function,,0x00531d00,0x007391b0,0x00531d00
-7297,function,,0x00531e90,0x00739340,0x00531e90
-7298,function,,0x00531f10,0x007393c0,0x00531f10
-7299,function,,0x00531fa0,0x00739450,0x00531fa0
-7300,function,,0x005320b0,0x00739560,0x005320b0
-7301,function,,0x005320d0,0x00739580,0x005320d0
+7296,function,GraphicsStructures::SpeedTreeInstance::SpeedTreeInstance,0x00531d00,0x007391b0,0x00531d00
+7297,function,GraphicsStructures::SpeedTreeInstance::AttachToPhysicsScene,0x00531e90,0x00739340,0x00531e90
+7298,function,GraphicsStructures::SpeedTreeForest::GetMaterial,0x00531f10,0x007393c0,0x00531f10
+7299,function,GraphicsStructures::SpeedTreeForest::UpdateLightProbe,0x00531fa0,0x00739450,0x00531fa0
+7300,function,GraphicsStructures::SpeedTreeForest::GetModelGroupCount,0x005320b0,0x00739560,0x005320b0
+7301,function,GraphicsStructures::SpeedTreeForest::GetModelGroupAt,0x005320d0,0x00739580,0x005320d0
 7302,function,SpeedTree::GrowBoundsByInstance,0x00532120,0x007395d0,0x00532120
-7303,function,,0x005324e0,0x00739990,0x005324e0
-7304,function,,0x00532540,0x00739b10,0x00532540
-7305,function,,0x00532710,0x00739ce0,0x00532710
-7306,function,,0x005327d0,0x00739da0,0x005327d0
-7307,function,,0x00532830,0x00739e20,0x00532830
+7303,function,GraphicsStructures::SpeedTreeWorld::UpdateWindProxies,0x005324e0,0x00739990,0x005324e0
+7304,function,"std::_Unguarded_partition<GraphicsStructures::SpeedTreeInstance**,SpeedTree::FartherFromPoint>",0x00532540,0x00739b10,0x00532540
+7305,function,"std::_Insertion_sort<GraphicsStructures::SpeedTreeInstance**,SpeedTree::FartherFromPoint>",0x00532710,0x00739ce0,0x00532710
+7306,function,"std::_Make_heap<GraphicsStructures::SpeedTreeInstance**,SpeedTree::FartherFromPoint>",0x005327d0,0x00739da0,0x005327d0
+7307,function,GraphicsStructures::SpeedTreeModel::CreateInstance,0x00532830,0x00739e20,0x00532830
 7308,function,GraphicsStructures::SpeedTreeForest::HasNoInstances,0x005328a0,0x00739e90,0x005328a0
 7309,function,SpeedTree::RemakeBounds,0x005328e0,0x00739ed0,0x005328e0
-7310,function,,0x005329c0,0x00739fb0,0x005329c0
-7311,function,,0x005329d0,0x00717860,0x005329d0
+7310,function,GraphicsStructures::SpeedTreeWorld::SetWind,0x005329c0,0x00739fb0,0x005329c0
+7311,function,"std::map<int,void*>::count",0x005329d0,0x00717860,0x005329d0
 7312,function,SpeedTree::UpdateModels,0x00532a10,0x0073a000,0x00532a10
-7313,function,,0x00532a50,0x0073a040,0x00532a50
-7314,function,,0x00532c70,0x0073a260,0x00532c70
-7315,function,,0x00532dd0,0x004fde20,0x00532dd0
-7316,function,,0x00532e00,0x0073a3c0,0x00532e00
-7317,function,,0x00532e60,0x0073a420,0x00532e60
-7318,function,,0x00532ef0,0x0073a4b0,0x00532ef0
-7319,function,,0x00533030,0x00440680,0x00533030
-7320,function,,0x00533040,0x008abb20,0x00533040
-7321,function,,0x00533050,0x0073a600,0x00533050
-7322,function,,0x00533060,0x0073a610,0x00533060
-7323,function,,0x00533080,0x0073a630,0x00533080
-7324,function,,0x00533140,0x0073a6f0,0x00533140
-7325,function,,0x005331c0,0x0073a770,0x005331c0
-7326,function,,0x005331f0,0x0073a7a0,0x005331f0
-7327,function,,0x00533340,0x0073ac60,0x00533340
-7328,function,,0x00533360,0x0073ac80,0x00533360
-7329,function,,0x005333d0,0x0073acf0,0x005333d0
+7313,function,GraphicsStructures::SpeedTreeForest::DrawBillboards,0x00532a50,0x0073a040,0x00532a50
+7314,function,GraphicsStructures::SpeedTreeForest::FillStaticBillboards,0x00532c70,0x0073a260,0x00532c70
+7315,function,"std::_Fill_n<float*,unsigned int,float>",0x00532dd0,0x004fde20,0x00532dd0
+7316,function,"std::_Sort_heap<GraphicsStructures::SpeedTreeInstance**,SpeedTree::FartherFromPoint>",0x00532e00,0x0073a3c0,0x00532e00
+7317,function,GraphicsStructures::SpeedTreeLibrary::FindModelByName,0x00532e60,0x0073a420,0x00532e60
+7318,function,GraphicsStructures::SpeedTreeForest::~SpeedTreeForest,0x00532ef0,0x0073a4b0,0x00532ef0
+7319,function,Stub::GetAddress_0x80,0x00533030,0x00440680,0x00533030
+7320,function,Stub::ReturnEleven,0x00533040,0x008abb20,0x00533040
+7321,function,GraphicsStructures::SpeedTreeForest::GetName,0x00533050,0x0073a600,0x00533050
+7322,function,Graphics::IRenderableNode::vfunction14,0x00533060,0x0073a610,0x00533060
+7323,function,GraphicsStructures::SpeedTreeForest::SetStaticBillboards,0x00533080,0x0073a630,0x00533080
+7324,function,GraphicsStructures::SpeedTreeForest::DrawModelGroup,0x00533140,0x0073a6f0,0x00533140
+7325,function,GraphicsStructures::SpeedTreeWorld::DestroyWindProxy,0x005331c0,0x0073a770,0x005331c0
+7326,function,"std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char>>::str",0x005331f0,0x0073a7a0,0x005331f0
+7327,function,GraphicsStructures::SpeedTreeForest::`scalar deleting destructor',0x00533340,0x0073ac60,0x00533340
+7328,function,GraphicsStructures::SpeedTreeForest::TryDrawStaticBillboards,0x00533360,0x0073ac80,0x00533360
+7329,function,GraphicsStructures::SpeedTreeForest::DrawModels,0x005333d0,0x0073acf0,0x005333d0
 7330,function,std::basic_ostringstream<char>::str,0x005334f0,0x0073ae10,0x005334f0
 7331,function,"std::_Sort<GraphicsStructures::SpeedTreeInstance**,int,SpeedTree::FartherFromPoint>",0x00533510,0x0073af60,0x00533510
 7332,retired,,,,
@@ -7403,8 +7403,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7402,function,,0x00537c40,0x0073f580,0x00537c40
 7403,function,,0x00537c60,0x0073f5a0,0x00537c60
 7404,function,Graphics::ISceneInstance::EnableSpeedTreeWorld,0x00537c80,0x0073f5c0,0x00537c80
-7405,function,,0x00537d40,0x0073f680,0x00537d40
-7406,function,,0x00537d60,0x0073f6a0,0x00537d60
+7405,function,Graphics::ISceneInstance::UpdateWind,0x00537d40,0x0073f680,0x00537d40
+7406,function,Graphics::ISceneInstance::GetPhysicsScene,0x00537d60,0x0073f6a0,0x00537d60
 7407,function,,0x00537d70,0x00440690,0x00537d70
 7408,function,Graphics::ISceneInstance::CreatePhysicsScene,0x00537d80,0x0073f6b0,0x00537d80
 7409,function,Graphics::ISceneInstance::SetPhysicsSimulationEnabled,0x00537db0,0x0073f6e0,0x00537db0
@@ -33319,34 +33319,34 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33318,function,,0x00a55f00,0x0076da20,0x00a55f00
 33319,function,,0x00a55f40,0x0076da60,0x00a55f40
 33320,function,,0x00a56050,0x0076db70,0x00a56050
-33321,function,,0x00a56140,0x0076dc60,0x00a56140
-33322,function,,0x00a562b0,0x0076ddd0,0x00a562b0
-33323,function,,0x00a56370,0x0076de90,0x00a56370
-33324,function,,0x00a56380,0x0076deb0,0x00a56380
-33325,function,,0x00a563a0,0x0076ded0,0x00a563a0
-33326,function,,0x00a563d0,0x0076df00,0x00a563d0
-33327,function,,0x00a56410,0x0076df40,0x00a56410
-33328,function,,0x00a56450,0x0076df80,0x00a56450
-33329,function,,0x00a566c0,0x0076e1f0,0x00a566c0
+33321,function,GraphicsStructures::CSpeedTreeWind::WindInstance::Smoother::Advance,0x00a56140,0x0076dc60,0x00a56140
+33322,function,GraphicsStructures::CSpeedTreeWind::WindInstance::Oscillation::Fill,0x00a562b0,0x0076ddd0,0x00a562b0
+33323,function,Core::PointerArray::Free,0x00a56370,0x0076de90,0x00a56370
+33324,function,GraphicsStructures::CSpeedTreeWind::WindInstance::GetWindMatrix,0x00a56380,0x0076deb0,0x00a56380
+33325,function,GraphicsStructures::CSpeedTreeWind::WindInstance::GetLeafAngleMatrix,0x00a563a0,0x0076ded0,0x00a563a0
+33326,function,GraphicsStructures::CSpeedTreeWind::WindInstance::GetRustleAngles,0x00a563d0,0x0076df00,0x00a563d0
+33327,function,GraphicsStructures::CSpeedTreeWind::WindInstance::GetRockAngles,0x00a56410,0x0076df40,0x00a56410
+33328,function,GraphicsStructures::CSpeedTreeWind::SetStrengthAndDirection,0x00a56450,0x0076df80,0x00a56450
+33329,function,GraphicsStructures::CSpeedTreeWind::GetWindInstance,0x00a566c0,0x0076e1f0,0x00a566c0
 33330,function,GraphicsStructures::CSpeedTreeWind::GetStrengthAndDirection,0x00a566f0,0x0076e220,0x00a566f0
-33331,function,,0x00a56710,0x0076e240,0x00a56710
+33331,function,Matrix44Array::Matrix44Array,0x00a56710,0x0076e240,0x00a56710
 33332,function,Matrix44Array::Clear,0x00a567b0,0x0076e2e0,0x00a567b0
 33333,function,Matrix44Array::Resize,0x00a567f0,0x0076e320,0x00a567f0
 33334,function,Matrix44::RotateX,0x00a56900,0x0076e430,0x00a56900
 33335,function,Matrix44::RotateY,0x00a569b0,0x0076e4e0,0x00a569b0
 33336,function,Matrix44::RotateZ,0x00a56a60,0x0076e590,0x00a56a60
 33337,function,GraphicsStructures::CSpeedTreeWind::WindInstance::SetMatrixAndLeafAngleCounts,0x00a56b10,0x0076e640,0x00a56b10
-33338,function,,0x00a56bc0,0x0076e6f0,0x00a56bc0
-33339,function,,0x00a57150,0x0076ec80,0x00a57150
-33340,function,,0x00a571f0,0x0076ed20,0x00a571f0
-33341,function,,0x00a57270,0x0076eda0,0x00a57270
-33342,function,,0x00a572d0,0x0076ee00,0x00a572d0
-33343,function,,0x00a572e0,0x0076ee10,0x00a572e0
-33344,function,,0x00a573f0,0x0076ef20,0x00a573f0
-33345,function,,0x00a57400,0x0076ef30,0x00a57400
-33346,function,,0x00a57490,0x0076efc0,0x00a57490
-33347,function,,0x00a575d0,0x0076f100,0x00a575d0
-33348,function,,0x00a575f0,0x0076f120,0x00a575f0
+33338,function,GraphicsStructures::CSpeedTreeWind::WindInstance::Advance,0x00a56bc0,0x0076e6f0,0x00a56bc0
+33339,function,GraphicsStructures::CSpeedTreeWind::~CSpeedTreeWind,0x00a57150,0x0076ec80,0x00a57150
+33340,function,GraphicsStructures::CSpeedTreeWind::SetNumWindMatricesAndLeafAngles,0x00a571f0,0x0076ed20,0x00a571f0
+33341,function,GraphicsStructures::CSpeedTreeWind::Advance,0x00a57270,0x0076eda0,0x00a57270
+33342,function,Matrix44Array::Clear,0x00a572d0,0x0076ee00,0x00a572d0
+33343,function,GraphicsStructures::CSpeedTreeWind::WindInstance::WindInstance,0x00a572e0,0x0076ee10,0x00a572e0
+33344,function,GraphicsStructures::CSpeedTreeWind::WindInstance::GetOwnerParameters,0x00a573f0,0x0076ef20,0x00a573f0
+33345,function,GraphicsStructures::CSpeedTreeWind::WindInstance::~WindInstance,0x00a57400,0x0076ef30,0x00a57400
+33346,function,GraphicsStructures::CSpeedTreeWind::CSpeedTreeWind,0x00a57490,0x0076efc0,0x00a57490
+33347,function,GraphicsStructures::CSpeedTreeWind::`scalar deleting destructor',0x00a575d0,0x0076f100,0x00a575d0
+33348,function,GraphicsStructures::CSpeedTreeWind::WindInstance::`scalar deleting destructor',0x00a575f0,0x0076f120,0x00a575f0
 33349,function,GraphicsStructures::CSpeedTreeWind::Create,0x00a57610,0x0076f140,0x00a57610
 33350,function,GraphicsStructures::CSpeedTreeWind::LoadWnd,0x00a57680,0x0076f1b0,0x00a57680
 33351,function,CGameObject::GetTypeName,0x00a57f70,0x006fd510,0x00a57f70
@@ -33615,7 +33615,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33614,function,MovementController::AdvanceAlongPath,0x00a63f40,0x0070a5d0,0x00a63f40
 33615,function,MovementController::FollowPath,0x00a64350,0x0070a9e0,0x00a64350
 33616,function,MovementController::Update,0x00a644e0,0x0070ab70,0x00a644e0
-33617,function,,0x00a64620,0x007106e0,0x00a64620
+33617,function,ILodRecycler::ILodRecycler,0x00a64620,0x007106e0,0x00a64620
 33618,function,EffectsHolder::HasEffectListField,0x00a64630,0x0070be70,0x00a64630
 33619,function,EffectList::FindTopAnimationEffect,0x00a64640,0x0070be80,0x00a64640
 33620,function,EffectList::GetEffectFlags,0x00a646e0,0x0070bf20,0x00a646e0
@@ -33711,11 +33711,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33710,function,AnimModelLods::HasAnyLodSlot,0x00a67a90,0x00717730,0x00a67a90
 33711,function,AnimModelLods::GetOwnerLodLevel,0x00a67ab0,0x00717750,0x00a67ab0
 33712,function,ECResMan::DeleteSourceTask::Execute,0x00a67ad0,0x00717770,0x00a67ad0
-33713,function,,0x00a67b00,0x007177a0,0x00a67b00
+33713,function,ModelDeleteTask::Queue,0x00a67b00,0x007177a0,0x00a67b00
 33714,function,Multithreading::Task::`scalar deleting destructor',0x00a67bc0,0x00401d70,0x00a67bc0
 33715,function,AnimModelLods::ModelFileForLevel,0x00a67be0,0x007178a0,0x00a67be0
 33716,function,,0x00a67cf0,0x00717a10,0x00a67cf0
-33717,function,,0x00a67d80,0x00717aa0,0x00a67d80
+33717,function,AnimModelLods::ReleaseCurrentModel,0x00a67d80,0x00717aa0,0x00a67d80
 33718,retired,,,,
 33719,function,std::vector<unsigned int>::vector,0x00a67fb0,0x0061b6e0,0x00a67fb0
 33720,function,AnimModelLods::Reset,0x00a67fc0,0x00717cd0,0x00a67fc0
@@ -33833,7 +33833,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33832,function,AnimModelLod::Entry::RequestResources,0x00a6d5a0,0x0071dab0,0x00a6d5a0
 33833,function,AnimModelLod::Entry::Entry,0x00a6d960,0x0071de70,0x00a6d960
 33834,function,AnimModelLod::AnimModelLod,0x00a6da00,0x0071df10,0x00a6da00
-33835,function,,0x00a6db20,0x0071e030,0x00a6db20
+33835,function,AnimModelLod::AnimModelLod,0x00a6db20,0x0071e030,0x00a6db20
 33836,function,InclineController::InclineController,0x00a6dd60,0x0071e270,0x00a6dd60
 33837,function,InclineController::~InclineController,0x00a6dd80,0x0071e290,0x00a6dd80
 33838,function,InclineController::`scalar deleting destructor',0x00a6dd90,0x0071e2a0,0x00a6dd90
@@ -58614,7 +58614,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 58613,function,,0x00ad3320,0x00accdc0,0x00ad3320
 58614,function,,0x00ad3350,0x00accdf0,0x00ad3350
 58615,function,`dynamic initializer for 'g_projectileCache'',0x00ad3370,0x00acce10,0x00ad3370
-58616,function,,0x00ad3400,0x00accea0,0x00ad3400
+58616,function,`dynamic initializer for 'g_visualEffectCache'',0x00ad3400,0x00accea0,0x00ad3400
 58617,function,,0x00ad3490,0x00acb9e0,0x00ad3490
 58618,function,,0x00ad34c0,0x00acba10,0x00ad34c0
 58619,function,,0x00ad34f0,0x00acba40,0x00ad34f0
@@ -58836,7 +58836,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 58835,function,,0x00ad5370,0x00acfc00,0x00ad5370
 58836,function,,0x00ad5380,0x00acfc10,0x00ad5380
 58837,function,`dynamic atexit destructor for 'g_plasmaGlobalCrit'',0x00ad5390,0x00acfc20,0x00ad5390
-58838,function,,0x00ad53c0,0x00ad3000,0x00ad53c0
+58838,function,Stub::NoOp,0x00ad53c0,0x00ad3000,0x00ad53c0
 58839,function,,0x00ad53d0,0x00ad3970,0x00ad53d0
 58840,function,,0x00ad53e0,0x00ad3980,0x00ad53e0
 58841,function,,0x00ad53f0,0x00ad2990,0x00ad53f0
@@ -59647,7 +59647,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 59646,function,,0x00ad87d0,0x00ad27c0,0x00ad87d0
 59647,function,,0x00ad87e0,0x00ad27d0,0x00ad87e0
 59648,function,`dynamic atexit destructor for 'g_projectileCache'',0x00ad87f0,0x00ad27e0,0x00ad87f0
-59649,function,,0x00ad8800,0x00ad27f0,0x00ad8800
+59649,function,`dynamic atexit destructor for 'g_visualEffectCache'',0x00ad8800,0x00ad27f0,0x00ad8800
 59650,function,,0x00ad8810,0x00ad2800,0x00ad8810
 59651,function,,0x00ad8820,0x00ad2810,0x00ad8820
 59652,function,,0x00ad8830,0x00ad1c10,0x00ad8830
@@ -98467,7 +98467,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 98466,data,CCVisualEffect::typeinfo,0x00c11904,0x00c05ca4,0x00c11904
 98467,data,VisualEffectCache::typeinfo,0x00c11924,0x00c05cc4,0x00c11924
 98468,data,VisualEffectCache::VisualEffectEntry::typeinfo,0x00c11944,0x00c05ce4,0x00c11944
-98469,data,,0x00c11978,0x00c05d18,0x00c11978
+98469,data,g_visualEffectCache,0x00c11978,0x00c05d18,0x00c11978
 98470,data,,0x00c11980,0x00c05d20,0x00c11980
 98471,data,,0x00c11990,0x00c05d30,0x00c11990
 98472,data,,0x00c119b8,0x00c05d58,0x00c119b8

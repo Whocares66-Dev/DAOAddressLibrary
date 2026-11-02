@@ -16723,3 +16723,60 @@ address,what,value,why
 0x008456D0,signature,"void* __stdcall TexManager::MakeTextureHandle(void* outHandle, const void* ddsData, int size, void* existingHandle, bool flag)",ret 0x14 at 0x0084580E; returns outHandle.
 0x00845C30,clear,Graphics::IMemoryFootprint::IMemoryFootprint,"Misleading label: this is the TextureManager destructor body (vftable 0x00B2B2B8 stored at 0x00845C58, members destroyed after)."
 0x0084A8C0,clear,Multithreading::Task::Task,Misleading label: this is the TextureLoadTask destructor (vftable 0x00B2B340 stored at 0x0084A8E8).
+0x0052E520,signature,void __thiscall f(void *this),"ecx read as this at 0x52E520, plain ret, no stack argument"
+0x0052E5A0,signature,void __thiscall f(void *this),plain ret; IWindWorld slot 2 called with no argument
+0x0052E630,signature,"void * __thiscall f(void *this, void *world, void *position)",ret 8; caller 0x536586 pushes position then world
+0x0052E680,signature,"void __thiscall f(void *this, void *position)","ret 4; slot 1, called with the position"
+0x0052E7E0,signature,"void * __thiscall f(void *this, unsigned int index)",ret 4; callers push the index
+0x005313A0,signature,"void * __thiscall f(void *this, unsigned int flags)","ret 4, scalar deleting destructor"
+0x00531D00,signature,"void * __thiscall f(void *this, void *model, int id)",ret 8; caller 0x532877 pushes the count then the model
+0x00531E90,signature,"bool __thiscall f(void *this, void *scene)",ret 4; al set at 0x531E9D and 0x531F09
+0x00531F10,signature,void * __thiscall f(void *this),"plain ret, returns a material pointer or null"
+0x00531FA0,signature,void __thiscall f(void *this),plain ret
+0x005320B0,signature,unsigned int __thiscall f(void *this),"plain ret, count"
+0x005320D0,signature,"void * __thiscall f(void *this, unsigned int index)",ret 4
+0x005324E0,signature,void __thiscall f(void *this),plain ret
+0x00532830,signature,void * __thiscall f(void *this),"plain ret, returns the instance"
+0x005329C0,signature,"void __thiscall f(void *this, void *wind)","ret 4; mov [ecx+4],eax"
+0x005329D0,signature,"bool __thiscall f(void *this, int *key)",ret 4; caller 0xA68775 pushes a pointer to the key; setne al
+0x00532A50,signature,"void __thiscall f(void *this, void *context, bool perFrame)",ret 8; bool at [esp+0x24]; callers push bool then context
+0x00532C70,signature,"void __thiscall f(void *this, void *vertices, void *indices)",ret 8; arg 1 advances 0x140 an instance
+0x00532DD0,signature,"float * __stdcall f(float *dest, unsigned int count, float *value)","ret 0xC, ecx written before read"
+0x00532E60,signature,"void * __thiscall f(void *this, void *name)",ret 4
+0x00532EF0,signature,void __thiscall f(void *this),plain ret
+0x00533030,signature,void * __thiscall f(void *this),"lea eax,[ecx+0x80]; ret"
+0x00533040,signature,int __thiscall f(void *this),"vftable slot, returns 11"
+0x00533050,signature,void * __thiscall f(void *this),"lea eax,[ecx+0x4C]; ret"
+0x00533060,signature,"void __thiscall f(void *this, void *out)","ret 4, vftable slot, ecx unread"
+0x00533080,signature,"void __thiscall f(void *this, bool enable)",ret 4; byte at [esp+8]
+0x00533140,signature,"void __stdcall f(void *context, void *group, int kind)","ret 0xC, ecx unread at entry; callers push kind, group, context"
+0x005331C0,signature,"void __thiscall f(void *this, void *proxy)",ret 4
+0x005331F0,signature,"void * __thiscall f(void *this, void *result)",ret 4; the string result by hidden pointer
+0x00533340,signature,"void * __thiscall f(void *this, unsigned int flags)","ret 4, scalar deleting destructor"
+0x00533360,signature,"bool __thiscall f(void *this, void *context)",ret 4; al 1 or 0
+0x005333D0,signature,"void __thiscall f(void *this, void *context)",ret 4
+0x00A56140,signature,"void __thiscall f(void *this, float a, float b, float c)",ret 0xC; three floats at [esp+4..+0xC]
+0x00A562B0,signature,"void __thiscall f(void *this, void *params, float dt, float t)",ret 0xC; Ghidra's decompile: pointer then two floats
+0x00A56380,signature,"void * __thiscall f(void *this, unsigned int index)",ret 4
+0x00A563A0,signature,"void * __thiscall f(void *this, unsigned int index)",ret 4
+0x00A563D0,signature,"bool __thiscall f(void *this, void *out)",ret 4
+0x00A56410,signature,"bool __thiscall f(void *this, void *out)",ret 4
+0x00A56450,signature,"void __thiscall f(void *this, float strength, void *direction, bool all)","ret 0xC; decompile: float, pointer, char"
+0x00A566C0,signature,"void * __thiscall f(void *this, unsigned int index)",ret 4
+0x00A56710,signature,"void * __thiscall f(void *this, unsigned int count)",ret 4; count times 0x40
+0x00A56BC0,signature,"void __thiscall f(void *this, float time, void *cameraDirection, bool a, bool b)","ret 0x10; caller 0x52E5E2-0x52E61B pushes 1, 1, pointer, float"
+0x00A57150,signature,void __thiscall f(void *this),plain ret
+0x00A571F0,signature,"void __thiscall f(void *this, int matrices, int leafAngles)","ret 8; callers push 1, 1"
+0x00A57270,signature,"void __thiscall f(void *this, float time, void *cameraDirection, bool a, bool b)",ret 0x10; forwards the four to 0xA56BC0
+0x00A572E0,signature,"void * __thiscall f(void *this, void *owner)",ret 4
+0x00A573F0,signature,void * __thiscall f(void *this),returns [ecx+4] + 0x90
+0x00A57400,signature,void __thiscall f(void *this),plain ret
+0x00A57490,signature,"void * __thiscall f(void *this, int count)",ret 4; the WindInstance loop runs to it
+0x00A575D0,signature,"void * __thiscall f(void *this, unsigned int flags)",ret 4
+0x00A575F0,signature,"void * __thiscall f(void *this, unsigned int flags)",ret 4
+0x00A64620,signature,void * __thiscall f(void *this),"plain ret, mov eax,ecx"
+0x00A67B00,signature,void __stdcall f(void *model),"ret 4, ecx written first"
+0x00A67D80,signature,"void __thiscall f(void *this, bool recycle)",ret 4; byte at [esp+0x20]
+0x00A6DB20,signature,"void * __thiscall f(void *this, void *models, void *morph, int p3, int p4, int p5, int p6, void *p7, int p8)","ret 0x20 = 8 stack args: models list (+4/+8, 0x1C each), morph pointer (0 selects the merge task), the rest passed to the tasks"
+0x00537D40,signature,void __thiscall f(void *this),"tail jmp to the world's slot 2, no argument"
+0x00537D60,signature,"void * __thiscall f(void *this, int unused)","ret 4, argument unread; callers push 0"
