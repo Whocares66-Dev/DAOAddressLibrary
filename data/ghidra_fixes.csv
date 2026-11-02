@@ -14098,3 +14098,37 @@ address,what,value,why
 0x005F87C0,convention,__thiscall,"ret 0x2c8, ecx to esi (0x005F87E0)"
 0x005F88F0,convention,__thiscall,"ret 0x10, ecx to edi (0x005F8901)"
 0x005F89A0,convention,__cdecl,"plain ret, callers add esp"
+0x00472060,signature,"void __thiscall Renderer::SODistanceSort::SortFarthestFirst(void* nodes, char* pred)","ret 4 at 0x004720A3; ecx = the node vector (+4 first, +8 last); pred is an empty functor read as a byte"
+0x004721C0,signature,"void __thiscall Renderer::SODistanceSort::Execute(void* this, void* nodes)",ret 4 at 0x00472208; slot 1 of 0x00AE8230; mode at this+0xC
+0x00472230,signature,"void __thiscall Renderer::SOMaterialSort::Execute(void* this, void* nodes)",ret 4 at 0x00472272; the decompiler reads the argument as in_stack
+0x004724B0,signature,"int __thiscall Renderer::SQProgramBuilderXML2::SplitInstructions(void* this, wchar_t* text)",ret 4 at 0x0047257D; the caller sets ecx = builder at 0x00474018 though the body never reads it (A proposed __stdcall; thiscall kept since the caller passes this)
+0x00472900,signature,"void __thiscall Renderer::SQProgramBuilderXML2::ReadProgramId(void* this, wchar_t** attrs)",ret 4 at 0x00472991; the decompiler shows no this
+0x00472A00,clear,XMLParser2::IBuilder::IBuilder,"it is SQProgramBuilderXML2's destructor body: sets 0x00AE84A4, destroys +0x24 and +0x14, then the base vtable 0x00AE8490"
+0x00472A00,signature,void __thiscall Renderer::SQProgramBuilderXML2::~SQProgramBuilderXML2(void* this),plain ret
+0x00472A60,signature,int __thiscall Renderer::SQProgramBuilderXML2::PopState(void* this),"reads ecx+0x1C first, plain ret at 0x00472A73; Ghidra shows __fastcall"
+0x00472A80,signature,"void __thiscall Renderer::SQProgramBuilderXML2::EndElement(void* this, wchar_t* name)",ret 4 at 0x00472AC7
+0x00472AF0,signature,"void* __thiscall Renderer::SQProgramBuilderXML2::SQProgramBuilderXML2(void* this, void* parser, void* program)",ret 8 at 0x00472BBD
+0x00472BC0,signature,"void __thiscall Renderer::SQProgramBuilderXML2::StartElement(void* this, wchar_t* name, wchar_t** attrs)",ret 8 at 0x00472C52 and 0x00472DEE
+0x00473C80,signature,"void __thiscall Renderer::SQProgramBuilderXML2::ParseInstruction(void* this, wchar_t* text)",ret 4 at 0x00473CBC
+0x00473F60,signature,"void __thiscall Renderer::SQProgramBuilderXML2::CharacterData(void* this, wchar_t* text, int len)",ret 8 at 0x00473FB2 and 0x00474047
+0x004CB490,signature,float __cdecl Math::ReciprocalNR(float x),"plain ret 0x004CB4C0, result in ST0"
+0x004CBDD0,signature,"float* __cdecl Quaternion::FromDirectionZUp(float* out, float* dir)","plain ret 0x004CBFD9, returns out"
+0x004D2EB0,signature,"void __thiscall Math::AABB::Merge(void* this, float* min3, float* max3)",ret 8 at 0x004D2FB6; Ghidra's AABB type puts min at 0x10C but the disassembly reads 0x110 (the type is shifted by 4)
+0x004D33F0,signature,"void __thiscall Math::Matrix4x4f::ToQuaternion(float* this, float* out, float scale)","ret 8 at 0x004D3550 and 0x004D3648; scale is the 2nd stack arg ([esp+0x80] at 0x004D33F3), out the 1st ([esp+0x84] at 0x004D3503)"
+0x004D3650,signature,"float* __cdecl Math::Matrix4x4f::OrthoOffCenterLH(float* out, float l, float r, float b, float t, float zn, float zf)",plain ret 0x004D36D3; m10 = 1/(zf-zn) makes it LH; b/t roles inferred
+0x004D3A60,signature,"float* __cdecl Math::Matrix4x4f::PerspectiveFovRH(float* out, float fovY, float aspect, float zn, float zf)","plain ret 0x004D3AD0, returns out; the decompiler lost fovY (undefined4 param_2)"
+0x004D3BD0,signature,"float* __cdecl Math::Matrix4x4f::FromAxisAngle(float* out, float* axis, float angle)","plain ret 0x004D3CF8, returns out"
+0x004D3F80,signature,"float* __thiscall Math::Matrix4x4f::InverseScaled(float* this, float* out, float* scale)","ret 8 at 0x004D4058, returns out"
+0x004D4930,signature,"bool __cdecl Vector4::NotEqualsHomogeneous(void* a, void* b)",plain ret 0x004D4949
+0x004D4FF0,signature,"void __thiscall TransformPositionInPlace(void* this, float* matrix)",ret 4 at 0x004D505E
+0x004E13D0,clear,"std::basic_streambuf<char,std::char_traits<char>_>::vfunction5","only `or eax,-1; ret`, a folded stub referenced from 30-50 unrelated vtables"
+0x004E3030,signature,"void __thiscall PostScreenshotToOnlineFeatures(void* this, void* props)",ret 4 at 0x004E3275; this+0x90 is read; class of this not identified
+0x004EB570,signature,"bool __cdecl Geometry::ClipSegmentToAABB(float* from, float* to, float* min, float* max, float* hitOut, float* normalOut)","plain ret 0x004EB5CB / 0x004EB9EB, bool in AL"
+0x004F2620,signature,void __thiscall std::_Tree_const_iterator<?>::operator--(void* this),"ecx = iterator {+0 container, +4 node}; plain ret"
+0x004F26B0,signature,void* __thiscall WStringPair::WStringPair(void* this),returns this
+0x004F2750,signature,"bool __thiscall MaterialObjectRef::SelectSemantic(void* this, void* name)",ret 4 at 0x004F2781
+0x004F27B0,signature,"void* __thiscall MaterialObjectRef::FindSemantic(void* this, void* name)",tail jump to the shader's vslot 6 with the caller's pushed name
+0x004F27D0,signature,"void* __thiscall MaterialObjectRef::FindMaterialById(void* this, int id)",ret 4 at 0x004F27F2
+0x004F2800,signature,bool __thiscall MaterialObjectRef::IsValid(void* this),reads ecx+4; Ghidra shows __fastcall
+0x004F9390,clear,GStandardBlockAllocator::vfunction5,"folded `lea eax,[ecx+8]; ret` getter; used as the material object's shader-pointer field by 0x004F2720/0x004F2730"
+0x004FE8F0,clear,CLCDBase::vfunction18,"folded `lea eax,[ecx+0x1C]; ret` getter; used as the material object's name field by 0x004F2710"
