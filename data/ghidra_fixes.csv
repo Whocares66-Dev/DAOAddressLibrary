@@ -15337,3 +15337,16 @@ address,what,value,why
 0x007A73F0,convention,__thiscall,"SubActionPool::ReleaseAll, ecx = the pool"
 0x007A7840,convention,__thiscall,"SubActionPool destructor, ecx = the pool"
 0x007A98C0,signature,"void * __thiscall f(void *this, unsigned int count)","SubActionPool constructor, ret 4"
+0x004D3B80,signature,"void __cdecl f(float *out, const float *v)","cdecl, plain ret and the caller 0x006A70BD cleans 8 bytes; out and v are 16-byte aligned (movaps)"
+0x0054F750,signature,"void __thiscall f(void *this, int value)","ret 4, ecx = this stored at +0x28 (0x0054F754)"
+0x00569090,signature,"void * __thiscall f(void *this, const void *name)",ret 4 at 0x00569099; ecx read first; returns the array or null
+0x005B76B0,signature,"void __thiscall f(void *this, const void *name)",ret 4 at 0x005B770D; ecx = emitter
+0x005CA660,signature,unsigned char __cdecl f(unsigned int animId),"plain ret, stack argument at 0x005CA662; returns the bool in al"
+0x005CA6E0,signature,int __cdecl f(int animId),"plain ret, argument at 0x005CA6E1"
+0x005CA710,signature,int __cdecl f(int animId),"plain ret, argument at 0x005CA711"
+0x005FFE90,signature,"bool __thiscall f(void *this, int eventType)","ret 4 at 0x005FFEDF; ecx = module, +0x178 the disabled-event set"
+0x00633B60,signature,"unsigned int __thiscall f(void *this, const unsigned int *key)",ret 4 at 0x00633BC7; the key is passed on by pointer to 0x00631540
+0x006368E0,signature,void __thiscall f(void *this),"add ecx,4 then jmp to a thiscall destructor"
+0x006F16C0,signature,"void __thiscall f(void *this, unsigned int count)",jmp to 0x006F12C0 which is ret 4 with ecx = this
+0x0070C770,signature,void __thiscall f(void *this),"plain ret, ecx = CursorTarget"
+0x0075CE00,signature,"void __thiscall f(void *this, void *plmr)","ret 4 at 0x0075D0C4; ecx = plot manager, the argument a GenericRef* (8 bytes {Block*, offset}) of the PRTY field 0x4010"

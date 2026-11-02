@@ -4894,7 +4894,7 @@ id,subsystem,class,how
 4936,Core,Math::Matrix4x4f,name
 4937,Core,,between
 4938,Core,,between
-4939,Game,,callers
+4939,Core,Matrix44,name
 4940,Core,Math::Matrix4x4f,name
 4941,Core,Matrix44,name
 4942,Core,Matrix44,name
@@ -7968,7 +7968,7 @@ id,subsystem,class,how
 8026,Rendering,GraphicsStructures::Object,vtable
 8027,Rendering,GraphicsStructures::Object,vtable
 8028,Rendering,GraphicsStructures::Object,vtable
-8029,Game,,callers
+8029,Game,Stub,callers
 8030,Rendering,GraphicsStructures::Object,vtable
 8031,Rendering,GraphicsStructures::Object,vtable
 8032,Rendering,GraphicsStructures::Object,vtable
@@ -8540,7 +8540,7 @@ id,subsystem,class,how
 8601,Rendering,GraphicsStructures::ObjectNodeEmitterTarget,vtable
 8602,Rendering,GraphicsStructures::ObjectNodeEmitterTarget,vtable
 8603,Rendering,GraphicsStructures::ObjectNodeEmitterTarget,vtable
-8604,Game,,callers
+8604,Rendering,GraphicsStructures::Morph::NodeInfo,name
 8605,Rendering,GraphicsStructures::Morph::NodeInfo,vtable
 8606,Rendering,,between
 8607,Rendering,,between
@@ -9794,7 +9794,7 @@ id,subsystem,class,how
 9858,Core,ECBase::ECDynArray<?>,name
 9859,ThirdParty:STL,std,name
 9860,ThirdParty:STL,SoundManager,between
-9861,Game,,callers
+9861,Game,SoundEmitter,callers
 9862,ThirdParty:STL,SoundEmitter,between
 9863,ThirdParty:STL,SoundManager,between
 9864,ThirdParty:STL,MusicController,between
@@ -10189,10 +10189,10 @@ id,subsystem,class,how
 10255,World,EC::ChunkManager,name
 10256,World,,callers
 10257,Resources,GdaTables,name
-10258,Game,,callers
+10258,Resources,GdaTables,name
 10259,Resources,GdaTables,name
-10260,Game,,callers
-10261,Game,,callers
+10260,Resources,GdaTables,name
+10261,Resources,GdaTables,name
 10262,Resources,GdaTables,name
 10263,Resources,GdaTables,name
 10264,Resources,GdaTables,name
@@ -10992,7 +10992,7 @@ id,subsystem,class,how
 11059,ThirdParty:STL,std::vector<CCModule::TagIndexEntry>,name
 11060,ThirdParty:STL,std::_Tree<?>,name
 11061,ThirdParty:STL,std,name
-11062,Game,,callers
+11062,World,CCModule,name
 11063,Core,ECBase::ECDynArray<CCModule::TagIndexEntry>,name
 11064,ThirdParty:STL,,string
 11065,ThirdParty:STL,,between
@@ -12331,7 +12331,7 @@ id,subsystem,class,how
 12398,ThirdParty:STL,,string
 12399,ThirdParty:STL,,between
 12400,ThirdParty:STL,,between
-12401,Game,,callers
+12401,ThirdParty:STL,"std::map<unsigned int,PartyStoredItem>",name
 12402,ThirdParty:STL,,string
 12403,Core,"ECBase::ECDynArray<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
 12404,Core,"ECBase::ECDynArray<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
@@ -12371,7 +12371,7 @@ id,subsystem,class,how
 12438,ThirdParty:STL,,string
 12439,Data,"SmartData::Attribute<ECBase::ECDynArray<CCCreature*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 12440,Data,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
-12441,Game,,callers
+12441,ThirdParty:STL,std::set<int>,name
 12442,Game,CCParty,name
 12443,Game,CCParty,name
 12444,Game,CCParty,name
@@ -15602,7 +15602,7 @@ id,subsystem,class,how
 15677,ThirdParty:STL,"std::pair<ECBase::ECString,ECBase::ECDynArray<ECBase::ECString>>",name
 15678,Data,"SmartData::Attribute<ECBase::ECDynArray<ChanterEntry*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 15679,Core,"ECBase::ECDynArray<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
-15680,Game,,callers
+15680,Core,"ECBase::ECDynArray<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
 15681,Data,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 15682,Data,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 15683,Data,"SmartData::Attribute<ECBase::ECDynArray<CodexEntry*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
@@ -16136,7 +16136,7 @@ id,subsystem,class,how
 16215,unknown,CursorTarget,
 16216,GameModes,GameModeExplore,name
 16217,GameModes,GameModeExplore,name
-16218,GameModes,,between
+16218,GameModes,CursorTarget,between
 16219,GameModes,GameModeExplore,name
 16220,GameModes,GameModeExplore,name
 16221,GameModes,GameModeExplore,name
@@ -18036,7 +18036,7 @@ id,subsystem,class,how
 18119,Scripting,ScriptBackend,name
 18120,ThirdParty:STL,,string
 18121,ThirdParty:STL,,between
-18122,Game,,callers
+18122,Game,PlotManager,callers
 18123,ThirdParty:STL,,between
 18124,ThirdParty:STL,,string
 18125,Core,ECBase::ECDynArray<unsigned int>,name
@@ -49170,8 +49170,8 @@ id,subsystem,class,how
 49407,Compiler:EHFunclets,,range
 49408,GameModes,GameModeCutscene,owner
 49409,GameModes,GameModeCutscene,owner
-49410,GameModes,,owner
-49411,GameModes,,owner
+49410,GameModes,CursorTarget,owner
+49411,GameModes,CursorTarget,owner
 49412,GameModes,GameModeExplore,owner
 49413,GameModes,GameModeExplore,owner
 49414,GameModes,GameModeExplore,owner
@@ -51061,9 +51061,9 @@ id,subsystem,class,how
 51298,Scripting,ScriptBackend,owner
 51299,Scripting,ScriptBackend,owner
 51300,Scripting,ScriptBackend,owner
-51301,Game,,owner
-51302,Game,,owner
-51303,Game,,owner
+51301,Game,PlotManager,owner
+51302,Game,PlotManager,owner
+51303,Game,PlotManager,owner
 51304,Core,ECBase::ECDynArray<unsigned int>,owner
 51305,Core,ECBase::ECDynArray<unsigned int>,owner
 51306,Game,PlotManager,owner
