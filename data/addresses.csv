@@ -4550,7 +4550,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4549,function,,0x004c2b80,0x008040b0,0x004c2b80
 4550,function,,0x004c2bf0,0x00804120,0x004c2bf0
 4551,function,,0x004c2cc0,0x008041f0,0x004c2cc0
-4552,function,,0x004c2e50,0x00804380,0x004c2e50
+4552,function,ECBase::ECString::StartsWith,0x004c2e50,0x00804380,0x004c2e50
 4553,function,,0x004c2f70,0x008044a0,0x004c2f70
 4554,function,ECBase::ECString::ReplaceFirst,0x004c2fc0,0x008044f0,0x004c2fc0
 4555,function,,0x004c3000,0x00804530,0x004c3000
@@ -7621,7 +7621,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7620,function,,0x0053d040,0x0076c070,0x0053d040
 7621,function,,0x0053d0a0,0x0076c0d0,0x0053d0a0
 7622,function,,0x0053d0c0,0x0076c0f0,0x0053d0c0
-7623,function,,0x0053d0e0,0x0076c110,0x0053d0e0
+7623,function,Light::SetRadius,0x0053d0e0,0x0076c110,0x0053d0e0
 7624,function,,0x0053d110,0x0076c140,0x0053d110
 7625,function,,0x0053d130,0x0076c160,0x0053d130
 7626,function,,0x0053d150,0x0076c180,0x0053d150
@@ -13873,7 +13873,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13872,function,GUI::InvokeConversationOnNPCLineFinished,0x0068cc60,0x005789f0,0x0068cc60
 13873,function,GameModeDialog::IsPointInBounds,0x0068ccf0,0x00578a80,0x0068ccf0
 13874,function,GameModeDialog::UpdateCursorShape,0x0068cd50,0x005cd9b0,0x0068cd50
-13875,function,,0x0068cd60,0x00578ae0,0x0068cd60
+13875,function,EclipseGame::IsCapturingMovie,0x0068cd60,0x00578ae0,0x0068cd60
 13876,function,GameModeDialog::GetReplyIconLabel,0x0068cd80,0x00578b00,0x0068cd80
 13877,function,GameModeDialog::SetNPCLine,0x0068ced0,0x00578c50,0x0068ced0
 13878,function,GameModeDialogData::Create,0x0068cee0,0x00578c60,0x0068cee0
@@ -13960,7 +13960,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13959,function,GameModeCutscene::HasActor,0x00691ee0,0x0057df00,0x00691ee0
 13960,function,GameModeCutsceneData::FreeContents,0x00691f10,0x0057df30,0x00691f10
 13961,function,GameModeCutscene::MarkFinished,0x00691f40,0x0057df60,0x00691f40
-13962,function,,0x00691ff0,0x0057e010,0x00691ff0
+13962,function,GameModeCutscene::SetSubtitle,0x00691ff0,0x0057e010,0x00691ff0
 13963,function,GameModeCutscene::ClearSubtitle,0x006920b0,0x0057e0d0,0x006920b0
 13964,function,GameModeCutsceneData::Create,0x00692150,0x0057e170,0x00692150
 13965,function,GameModeDialog::ShouldUpdateLod,0x00692200,0x00578d20,0x00692200
@@ -14067,7 +14067,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14066,function,CCObject::UpdateModelLoads,0x00695260,0x00586130,0x00695260
 14067,function,CCObject::SaveSchema_ScriptVarTable,0x00695280,0x00586150,0x00695280
 14068,function,CCObject::SaveSchema_EffectList,0x00695290,0x00586160,0x00695290
-14069,function,,0x006952a0,0x00586170,0x006952a0
+14069,function,CCObject::SaveLodState,0x006952a0,0x00586170,0x006952a0
 14070,function,CCObject::RestoreLodState,0x006952c0,0x00586190,0x006952c0
 14071,function,CCObject::ForScript_IsDead,0x00695300,0x005861d0,0x00695300
 14072,function,CCObject::PersonalSpaces,0x00695320,0x005861f0,0x00695320
@@ -14314,7 +14314,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14313,function,CCCreature::CreateStatsFloaty,0x0069e4f0,0x0058f6c0,0x0069e4f0
 14314,function,CCCreature::DestroyStatsFloaty,0x0069e520,0x0058f6f0,0x0069e520
 14315,function,CCCreature::SetLightSubsetIndex,0x0069e550,0x0058f720,0x0069e550
-14316,function,,0x0069e590,0x0058f760,0x0069e590
+14316,function,CCCreature::StopAllSounds,0x0069e590,0x0058f760,0x0069e590
 14317,function,CCCreature::OnAttachPointEvent,0x0069e5b0,0x0058f780,0x0069e5b0
 14318,function,Stub::DestroyWString_0x14,0x0069e680,0x0058f850,0x0069e680
 14319,function,CCCreature::SwingIsMainHand,0x0069e690,0x0058f860,0x0069e690
@@ -15887,7 +15887,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15886,function,std::_List_const_iterator<unk_value>::operator++,0x006fe340,0x004c9d30,0x006fe340
 15887,function,"stdext::hash_map<unsigned int,unk_value>::lower_bound",0x006fe370,0x005f0010,0x006fe370
 15888,function,CAmbientDialogManager::PlayLine,0x006fe4a0,0x005f0160,0x006fe4a0
-15889,function,,0x006fe8a0,0x005f0560,0x006fe8a0
+15889,function,CAmbientDialogManager::ResetEntryTimers,0x006fe8a0,0x005f0560,0x006fe8a0
 15890,function,CAmbientDialogManager::WriteToSave,0x006fe900,0x005f05c0,0x006fe900
 15891,function,"stdext::hash_map<unsigned int,unk_value>::_Copy",0x006feab0,0x0057b780,0x006feab0
 15892,function,Catch_All@006fec34,0x006fec34,0x0057b904,0x006fec34
@@ -15899,7 +15899,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15898,function,CAmbientDialogManager::Arm,0x006ff190,0x005f0d80,0x006ff190
 15899,function,CAmbientDialogManager::Update,0x006ff570,0x005f1160,0x006ff570
 15900,function,CAmbientDialogManager::Clear,0x006ff8e0,0x005f14d0,0x006ff8e0
-15901,function,,0x006ff9e0,0x005f15d0,0x006ff9e0
+15901,function,CAmbientDialogManager::StartAmbient,0x006ff9e0,0x005f15d0,0x006ff9e0
 15902,function,CAmbientDialogManager::RequestLine,0x006ffaa0,0x005f1690,0x006ffaa0
 15903,function,ScriptBackend::ForScript_SetWorldMapGuiStatus,0x006ffb00,0x005f16f0,0x006ffb00
 15904,function,WorldMap::IsTravelInProgress,0x006ffb20,0x005f1710,0x006ffb20
@@ -17910,7 +17910,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 17909,function,CCPlaceable::AddToScene,0x0074f7a0,0x0065b6a0,0x0074f7a0
 17910,function,CCPlaceable::RaiseTrapTriggeredEvent,0x0074f900,0x0065b800,0x0074f900
 17911,function,CCPlaceable::ForScript_SetPlaceableState,0x0074f9d0,0x0065b8d0,0x0074f9d0
-17912,function,,0x0074fbc0,0x0065bac0,0x0074fbc0
+17912,function,CCPlaceable::SnapToCurrentState,0x0074fbc0,0x0065bac0,0x0074fbc0
 17913,function,CCPlaceable::ForScript_SetTrapDetected,0x0074fbd0,0x0065bad0,0x0074fbd0
 17914,function,CCPlaceable::ForScript_SetPlaceableActionResult,0x0074fc10,0x0065bb10,0x0074fc10
 17915,function,CCPlaceable::OnItemRemoved,0x0074fc60,0x0065bb60,0x0074fc60
@@ -20641,11 +20641,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20640,function,EC::Cutscene::Actor::GetModelComponents,0x007cd270,0x006b4640,0x007cd270
 20641,function,CutscenePlayer::IsFinished,0x007cd290,0x006b4660,0x007cd290
 20642,function,EC::Cutscene::Actor::ActionSound::Stop,0x007cd2d0,0x006b46a0,0x007cd2d0
-20643,function,,0x007cd2f0,0x006b46c0,0x007cd2f0
+20643,function,EC::Cutscene::Actor::ActionSound::SetPaused,0x007cd2f0,0x006b46c0,0x007cd2f0
 20644,function,EC::Cutscene::Actor::ActionHeadtracking::WantsSubsteps,0x007cd310,0x006b46e0,0x007cd310
 20645,function,EC::Cutscene::Actor::ActionHeadtracking::Reset,0x007cd340,0x006b4710,0x007cd340
 20646,function,EC::Cutscene::Actor::ActionPlayAnimation::Reset,0x007cd350,0x006b4720,0x007cd350
-20647,function,,0x007cd360,0x006b4730,0x007cd360
+20647,function,EC::Cutscene::Actor::ActionPlayAnimation::ResetAppliedGad,0x007cd360,0x006b4730,0x007cd360
 20648,function,EC::Cutscene::Actor::ActionJumpToPlace::OnBind,0x007cd3c0,0x006b4790,0x007cd3c0
 20649,function,EC::Cutscene::Actor::ActionSetFog::Reset,0x007cd3f0,0x006b47c0,0x007cd3f0
 20650,function,FacingDirection::SetFromRotation,0x007cd400,0x006b47d0,0x007cd400
@@ -20692,12 +20692,12 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20691,function,EC::Cutscene::Actor::ActionSpeakLine::Stop,0x007ce660,0x006b5a80,0x007ce660
 20692,function,EC::Cutscene::Actor::ActionSpeakLine::SetPaused,0x007ce6b0,0x006b5ad0,0x007ce6b0
 20693,function,EC::Cutscene::Actor::ActionSetFog::Update,0x007ce6f0,0x006b5b10,0x007ce6f0
-20694,function,,0x007ce740,0x006b5b60,0x007ce740
-20695,function,,0x007ce880,0x006b5ca0,0x007ce880
+20694,function,EC::Cutscene::Actor::ActionPlayMovie::Update,0x007ce740,0x006b5b60,0x007ce740
+20695,function,EC::Cutscene::Actor::ActionPlayMovie::Stop,0x007ce880,0x006b5ca0,0x007ce880
 20696,function,EC::Cutscene::Actor::ActionPlayMovie::Reset,0x007ce920,0x006b5d40,0x007ce920
 20697,function,EC::Cutscene::Actor::ActionAnimateFace::Stop,0x007ce960,0x006b5d80,0x007ce960
 20698,function,EC::Cutscene::Actor::ActionAnimateFace::SetPaused,0x007ce990,0x006b5db0,0x007ce990
-20699,function,,0x007ce9a0,0x006b5dc0,0x007ce9a0
+20699,function,EC::Cutscene::Actor::ActionAnimateFace::Update,0x007ce9a0,0x006b5dc0,0x007ce9a0
 20700,function,std::_Vector_const_iterator<Elem>::operator*,0x007ceae0,0x007dfa30,0x007ceae0
 20701,function,std::_Tree<Elem52>::const_iterator::operator++,0x007ceb10,0x006b5f00,0x007ceb10
 20702,function,std::_Tree<Elem88>::_Lrotate,0x007ceb80,0x006b5f70,0x007ceb80
@@ -20721,7 +20721,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20720,function,EC::Cutscene::Curve::GetVertexCount,0x007cf2d0,0x006b6690,0x007cf2d0
 20721,function,CutscenePlayer::SeekToNextSkipMarker,0x007cf2e0,0x006b66a0,0x007cf2e0
 20722,function,CutscenePlayer::BindObject,0x007cf390,0x006b6750,0x007cf390
-20723,function,,0x007cf3d0,0x006b6790,0x007cf3d0
+20723,function,CutscenePlayer::UnbindObject,0x007cf3d0,0x006b6790,0x007cf3d0
 20724,function,EC::Cutscene::Actor::GetEntity,0x007cf410,0x006b67d0,0x007cf410
 20725,function,EC::Cutscene::Actor::SetModelPlace,0x007cf450,0x006b6810,0x007cf450
 20726,function,EC::Cutscene::Actor::GetStageLocalPosition,0x007cf640,0x006b6a00,0x007cf640
@@ -20729,7 +20729,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20728,function,EC::Cutscene::Actor::GetStageLocalOrientation,0x007cf6f0,0x006b6ab0,0x007cf6f0
 20729,function,EC::Cutscene::Actor::GetLookAt,0x007cf730,0x006b6af0,0x007cf730
 20730,function,EC::Cutscene::Actor::SetClothPhysics,0x007cf800,0x006b6bc0,0x007cf800
-20731,function,,0x007cf840,0x006b6c00,0x007cf840
+20731,function,EC::Cutscene::Actor::ActionSpeakLine::Update,0x007cf840,0x006b6c00,0x007cf840
 20732,function,EC::Cutscene::Actor::ActionTogglePhysics::Update,0x007cfc90,0x006b7050,0x007cfc90
 20733,function,EC::Cutscene::Actor::ActionSetGore::Update,0x007cfca0,0x006b7060,0x007cfca0
 20734,function,EC::Cutscene::Actor::ActionSetGore::Reset,0x007cfd00,0x006b70c0,0x007cfd00
@@ -20768,9 +20768,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20767,function,EC::Cutscene::Actor::SetLightIntensity,0x007d0c80,0x006b7ff0,0x007d0c80
 20768,function,EC::Cutscene::Actor::ActionHeadtracking::Update,0x007d0d00,0x006b8070,0x007d0d00
 20769,function,EC::Cutscene::Actor::ActionShake::Update,0x007d0ed0,0x006b8240,0x007d0ed0
-20770,function,,0x007d10b0,0x006b8420,0x007d10b0
+20770,function,EC::Cutscene::Actor::ActionPlayAnimation::UndoAppliedGad,0x007d10b0,0x006b8420,0x007d10b0
 20771,function,EC::Cutscene::Actor::ActionLinkToActor::Unlink,0x007d1150,0x006b84c0,0x007d1150
-20772,function,,0x007d11e0,0x006b8550,0x007d11e0
+20772,function,EC::Cutscene::Actor::ActionMakeActiveCamera::Update,0x007d11e0,0x006b8550,0x007d11e0
 20773,function,EC::Cutscene::Actor::ActionDrawWeapon::Update,0x007d1210,0x006b8580,0x007d1210
 20774,function,EC::Cutscene::Actor::ActionDrawWeapon::Reset,0x007d1260,0x006b85d0,0x007d1260
 20775,function,EC::Cutscene::Actor::ActionAutoAdjustHeight::Update,0x007d1280,0x006b85f0,0x007d1280
@@ -20790,7 +20790,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20789,function,Stage::GetCameraAt,0x007d1b50,0x006b8e90,0x007d1b50
 20790,function,Stage::FindCameraByTag,0x007d1bf0,0x006b8f30,0x007d1bf0
 20791,function,Stage::GetPlacePose,0x007d1d40,0x006b9080,0x007d1d40
-20792,function,,0x007d1e10,0x006b9150,0x007d1e10
+20792,function,Stage::GetPlaceDefaultCamera,0x007d1e10,0x006b9150,0x007d1e10
 20793,function,Stage::GetCameraPose,0x007d1ea0,0x006b91e0,0x007d1ea0
 20794,function,Stage::GetBounds,0x007d2170,0x006b94b0,0x007d2170
 20795,function,EC::Cutscene::Curve::Curve,0x007d2350,0x006b9690,0x007d2350
@@ -20801,38 +20801,38 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20800,function,CutscenePlayer::SampleLodPosition,0x007d2cf0,0x006ba030,0x007d2cf0
 20801,function,EC::Cutscene::ReadAreaTagAndLodPosition,0x007d2e70,0x006ba1b0,0x007d2e70
 20802,function,EC::Cutscene::Actor::Action::EvalCurve,0x007d30b0,0x006ba3f0,0x007d30b0
-20803,function,,0x007d3100,0x006ba440,0x007d3100
-20804,function,,0x007d32f0,0x006ba630,0x007d32f0
-20805,function,,0x007d3460,0x006ba7a0,0x007d3460
-20806,function,,0x007d3500,0x006ba840,0x007d3500
+20803,function,EC::Cutscene::Actor::ActionSound::Update,0x007d3100,0x006ba440,0x007d3100
+20804,function,EC::Cutscene::Actor::ActionMoveSpline::Update,0x007d32f0,0x006ba630,0x007d32f0
+20805,function,EC::Cutscene::Actor::ActionRotate::Update,0x007d3460,0x006ba7a0,0x007d3460
+20806,function,EC::Cutscene::Actor::ActionCameraFOV::Update,0x007d3500,0x006ba840,0x007d3500
 20807,function,EC::Cutscene::Actor::ActionLightRadius::Update,0x007d3520,0x006ba860,0x007d3520
 20808,function,EC::Cutscene::Actor::ActionLightIntensity::Update,0x007d3550,0x006ba890,0x007d3550
 20809,function,EC::Cutscene::Actor::ActionLightColor::Update,0x007d3580,0x006ba8c0,0x007d3580
 20810,function,EC::Cutscene::Actor::ActionLinkToActor::Reset,0x007d35f0,0x006ba930,0x007d35f0
-20811,function,,0x007d3600,0x006ba940,0x007d3600
-20812,function,,0x007d3640,0x007f5c00,0x007d3640
-20813,function,,0x007d3670,0x006ba980,0x007d3670
-20814,function,,0x007d3730,0x006baa40,0x007d3730
-20815,function,,0x007d37f0,0x006bab00,0x007d37f0
-20816,function,,0x007d3830,0x006bab40,0x007d3830
-20817,function,,0x007d38b0,0x006babc0,0x007d38b0
+20811,function,EC::Cutscene::Actor::GetStagePlacePosition,0x007d3600,0x006ba940,0x007d3600
+20812,function,std::vector<?>::begin,0x007d3640,0x007f5c00,0x007d3640
+20813,function,"std::map<std::wstring,Elem60>::lower_bound",0x007d3670,0x006ba980,0x007d3670
+20814,function,"std::map<std::wstring,Elem24>::lower_bound",0x007d3730,0x006baa40,0x007d3730
+20815,function,"std::map<std::wstring,Elem24>::_Erase",0x007d37f0,0x006bab00,0x007d37f0
+20816,function,EC::Cutscene::VectorContains<float>,0x007d3830,0x006bab40,0x007d3830
+20817,function,EC::Cutscene::VectorBackOrDefault<float>,0x007d38b0,0x006babc0,0x007d38b0
 20818,function,EC::Cutscene::VectorIndexOf<EC::Cutscene::Actor::ClipRecord>,0x007d3910,0x006bac60,0x007d3910
-20819,function,,0x007d39b0,0x006bad00,0x007d39b0
-20820,function,,0x007d3a10,0x006bad60,0x007d3a10
-20821,function,,0x007d3a90,0x006bade0,0x007d3a90
-20822,function,,0x007d3bc0,0x006baf10,0x007d3bc0
-20823,function,,0x007d3c80,0x006bafd0,0x007d3c80
+20819,function,std::_Sort_heap<float *>,0x007d39b0,0x006bad00,0x007d39b0
+20820,function,CutscenePlayer::UpdateLodPositions,0x007d3a10,0x006bad60,0x007d3a10
+20821,function,EC::Cutscene::Actor::GetExtendedGadOrientation,0x007d3a90,0x006bade0,0x007d3a90
+20822,function,EC::Cutscene::Actor::ResetClipGads,0x007d3bc0,0x006baf10,0x007d3bc0
+20823,function,EC::Cutscene::Actor::ActionPlayAnimation::RotateGadDelta,0x007d3c80,0x006bafd0,0x007d3c80
 20824,function,EC::Cutscene::Actor::ActionLinkToActor::Update,0x007d3cf0,0x006bb040,0x007d3cf0
 20825,function,,0x007d4040,0x004b33b0,0x007d4040
-20826,function,,0x007d40a0,0x006bb3f0,0x007d40a0
-20827,function,,0x007d40c0,0x006bb410,0x007d40c0
-20828,function,,0x007d4100,0x0048dbc0,0x007d4100
-20829,function,,0x007d4150,0x006bb450,0x007d4150
-20830,function,,0x007d4190,0x006bb490,0x007d4190
-20831,function,,0x007d41c0,0x006bb4c0,0x007d41c0
-20832,function,,0x007d41f0,0x006bb4f0,0x007d41f0
+20826,function,std::vector<EC.Cutscene.Actor.ClipRecord>::_Destroy,0x007d40a0,0x006bb3f0,0x007d40a0
+20827,function,std::vector<ExtendedGad>::_Ufill,0x007d40c0,0x006bb410,0x007d40c0
+20828,function,std::vector<Elem24>::erase,0x007d4100,0x0048dbc0,0x007d4100
+20829,function,std::vector<EC.Cutscene.Actor.ClipRecord>::_Ufill,0x007d4150,0x006bb450,0x007d4150
+20830,function,std::vector<Elem24>::_Ucopy,0x007d4190,0x006bb490,0x007d4190
+20831,function,std::vector<EC.Cutscene.Actor.ClipRecord>::_Ucopy,0x007d41c0,0x006bb4c0,0x007d41c0
+20832,function,"std::copy<ExtendedGad*,ExtendedGad*>",0x007d41f0,0x006bb4f0,0x007d41f0
 20833,function,EC::Cutscene::Actor::SetVisible,0x007d4220,0x006bb520,0x007d4220
-20834,function,,0x007d4410,0x006bb710,0x007d4410
+20834,function,EC::Cutscene::Actor::DetachCrust,0x007d4410,0x006bb710,0x007d4410
 20835,function,EC::Cutscene::Actor::ActionChangeVisibility::Update,0x007d44c0,0x006bb7c0,0x007d44c0
 20836,function,EC::Cutscene::Actor::ActionChangeVisibility::Reset,0x007d44d0,0x006bb7d0,0x007d44d0
 20837,function,EC::Cutscene::Actor::ActionFrameBufferEffect::Update,0x007d4500,0x006bb800,0x007d4500
@@ -20846,14 +20846,14 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20845,function,,0x007d4ebe,0x006bc1fe,0x007d4ebe
 20846,function,,0x007d4f60,0x006bc2a0,0x007d4f60
 20847,function,,0x007d5000,0x006bc340,0x007d5000
-20848,function,,0x007d50b0,0x006bc3f0,0x007d50b0
+20848,function,"std::_Sort<float *,int>",0x007d50b0,0x006bc3f0,0x007d50b0
 20849,function,,0x007d51a0,0x006bc4e0,0x007d51a0
 20850,function,,0x007d5210,0x006bc550,0x007d5210
-20851,function,,0x007d5220,0x006bc560,0x007d5220
+20851,function,"std::map<std::wstring,Elem60>::find",0x007d5220,0x006bc560,0x007d5220
 20852,function,,0x007d5280,0x006bc5c0,0x007d5280
 20853,function,,0x007d52e0,0x006bc620,0x007d52e0
 20854,function,,0x007d53b0,0x006bc6f0,0x007d53b0
-20855,function,,0x007d55b0,0x006bbe80,0x007d55b0
+20855,function,std::vector<EC.Cutscene.Actor.ClipRecord>::~vector,0x007d55b0,0x006bbe80,0x007d55b0
 20856,function,,0x007d55f0,0x006bc8f0,0x007d55f0
 20857,function,,0x007d56b0,0x006bc9b0,0x007d56b0
 20858,function,,0x007d57da,0x006bcada,0x007d57da
@@ -20868,9 +20868,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20867,function,,0x007d5f60,0x006bd260,0x007d5f60
 20868,function,,0x007d600a,0x006bd30a,0x007d600a
 20869,function,,0x007d6080,0x006bd380,0x007d6080
-20870,function,,0x007d6140,0x006bd440,0x007d6140
+20870,function,EC::Cutscene::Actor::UpdateFollowerAniHack,0x007d6140,0x006bd440,0x007d6140
 20871,function,,0x007d6630,0x006bd930,0x007d6630
-20872,function,,0x007d67e0,0x006bdae0,0x007d67e0
+20872,function,Core::VectorReserveIfLarger<EC::Cutscene::Actor::ClipRecord>,0x007d67e0,0x006bdae0,0x007d67e0
 20873,function,,0x007d6820,0x006bdb20,0x007d6820
 20874,function,,0x007d6960,0x006bdc60,0x007d6960
 20875,function,,0x007d6a10,0x006bdd10,0x007d6a10
@@ -20907,7 +20907,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20906,function,CutscenePlayer::AreResourcesLoaded,0x007d7d50,0x006bf1a0,0x007d7d50
 20907,function,CutscenePlayer::MoveHenchmanActorsToEnd,0x007d7e00,0x006bf250,0x007d7e00
 20908,function,CutscenePlayer::MoveCrustActorsToEnd,0x007d80a0,0x006bf4f0,0x007d80a0
-20909,function,,0x007d8140,0x006bf590,0x007d8140
+20909,function,CutscenePlayer::LoadSoundProject,0x007d8140,0x006bf590,0x007d8140
 20910,function,EC::Cutscene::Actor::AddBlendGad,0x007d8180,0x006bf5d0,0x007d8180
 20911,function,EC::Cutscene::Actor::AddExtendedGad,0x007d81e0,0x006bf630,0x007d81e0
 20912,function,EC::Cutscene::Actor::ApplyBlendGads,0x007d8240,0x006bf690,0x007d8240
@@ -20918,14 +20918,14 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20917,function,EC::Cutscene::Actor::TraceGroundHeight,0x007d8eb0,0x006c0300,0x007d8eb0
 20918,function,EC::Cutscene::Actor::Action::~Action,0x007d9040,0x006c0490,0x007d9040
 20919,function,EC::Cutscene::Actor::Action::LoadCurves,0x007d90a0,0x006c04f0,0x007d90a0
-20920,function,,0x007d91a0,0x006c05f0,0x007d91a0
+20920,function,EC::Cutscene::Actor::ActionSound::~ActionSound,0x007d91a0,0x006c05f0,0x007d91a0
 20921,function,EC::Cutscene::Actor::ActionShake::~ActionShake,0x007d9270,0x006c06c0,0x007d9270
-20922,function,,0x007d92e0,0x006c0730,0x007d92e0
-20923,function,,0x007d9450,0x006c08a0,0x007d9450
+20922,function,EC::Cutscene::Actor::ActionPlayAnimation::ApplyGadStep,0x007d92e0,0x006c0730,0x007d92e0
+20923,function,EC::Cutscene::Actor::ActionPlayAnimation::AddExtendedGadAtEnd,0x007d9450,0x006c08a0,0x007d9450
 20924,function,EC::Cutscene::Actor::ActionPlayAnimation::~ActionPlayAnimation,0x007d95c0,0x006c0a10,0x007d95c0
 20925,function,EC::Cutscene::Actor::ActionLinkToActor::~ActionLinkToActor,0x007d9660,0x006c0ab0,0x007d9660
 20926,function,EC::Cutscene::Actor::ActionFrameBufferEffect::~ActionFrameBufferEffect,0x007d96d0,0x006c0b20,0x007d96d0
-20927,function,,0x007d9760,0x006c0bb0,0x007d9760
+20927,function,EC::Cutscene::Actor::ActionSpeakLine::~ActionSpeakLine,0x007d9760,0x006c0bb0,0x007d9760
 20928,function,EC::Cutscene::Actor::ActionAnimateFace::~ActionAnimateFace,0x007d98d0,0x006c0d20,0x007d98d0
 20929,function,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterSet::ParameterSet,0x007d99b0,0x006c0e00,0x007d99b0
 20930,function,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterSet::~ParameterSet,0x007d9a80,0x006c0ed0,0x007d9a80
@@ -20940,8 +20940,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20939,function,CutscenePlayer::CollectStepTimes,0x007da0f0,0x006c1540,0x007da0f0
 20940,function,EC::Cutscene::Actor::Advance,0x007da1e0,0x006c1630,0x007da1e0
 20941,function,EC::Cutscene::Actor::SnapToWalkmesh,0x007da4f0,0x006c1940,0x007da4f0
-20942,function,,0x007da530,0x006c1980,0x007da530
-20943,function,,0x007da670,0x006c1ac0,0x007da670
+20942,function,EC::Cutscene::Actor::Action::Action,0x007da530,0x006c1980,0x007da530
+20943,function,EC::Cutscene::Actor::ActionSound::ActionSound,0x007da670,0x006c1ac0,0x007da670
 20944,function,EC::Cutscene::Actor::ActionSound::`scalar deleting destructor',0x007da800,0x006c1c50,0x007da800
 20945,function,EC::Cutscene::Actor::ActionHeadtracking::ActionHeadtracking,0x007da820,0x006c1c70,0x007da820
 20946,function,EC::Cutscene::Actor::ActionMoveSpline::ActionMoveSpline,0x007da950,0x006c1dc0,0x007da950
@@ -20952,24 +20952,24 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20951,function,EC::Cutscene::Actor::ActionLightRadius::ActionLightRadius,0x007dacc0,0x006c2130,0x007dacc0
 20952,function,EC::Cutscene::Actor::ActionLightIntensity::ActionLightIntensity,0x007dace0,0x006c2150,0x007dace0
 20953,function,EC::Cutscene::Actor::ActionLightColor::ActionLightColor,0x007dad00,0x006c2170,0x007dad00
-20954,function,,0x007dad20,0x006c2190,0x007dad20
+20954,function,EC::Cutscene::Actor::ActionPlayAnimation::ActionPlayAnimation,0x007dad20,0x006c2190,0x007dad20
 20955,function,EC::Cutscene::Actor::ActionPlayAnimation::`scalar deleting destructor',0x007db3e0,0x006c2850,0x007db3e0
-20956,function,,0x007db400,0x006c2870,0x007db400
+20956,function,EC::Cutscene::Actor::ActionPlayAnimation::Update,0x007db400,0x006c2870,0x007db400
 20957,function,EC::Cutscene::Actor::ActionLinkToActor::ActionLinkToActor,0x007db900,0x006c2d70,0x007db900
 20958,function,EC::Cutscene::Actor::ActionLinkToActor::`scalar deleting destructor',0x007dba30,0x006c2ea0,0x007dba30
 20959,function,EC::Cutscene::Actor::ActionChangeVisibility::ActionChangeVisibility,0x007dba50,0x006c2ec0,0x007dba50
 20960,function,EC::Cutscene::Actor::ActionChangeVisibility::~ActionChangeVisibility,0x007dbae0,0x006c2f50,0x007dbae0
 20961,function,EC::Cutscene::Actor::ActionChangeVisibility::`scalar deleting destructor',0x007dbb40,0x006c2fb0,0x007dbb40
-20962,function,,0x007dbb60,0x006c2fd0,0x007dbb60
+20962,function,EC::Cutscene::Actor::ActionFrameBufferEffect::ActionFrameBufferEffect,0x007dbb60,0x006c2fd0,0x007dbb60
 20963,function,EC::Cutscene::Actor::ActionFrameBufferEffect::`scalar deleting destructor',0x007dc0b0,0x006c3520,0x007dc0b0
-20964,function,,0x007dc0d0,0x006c3540,0x007dc0d0
+20964,function,EC::Cutscene::Actor::ActionSpeakLine::ActionSpeakLine,0x007dc0d0,0x006c3540,0x007dc0d0
 20965,function,EC::Cutscene::Actor::ActionSpeakLine::`scalar deleting destructor',0x007dc430,0x006c38a0,0x007dc430
-20966,function,,0x007dc450,0x006c38c0,0x007dc450
+20966,function,EC::Cutscene::Actor::ActionJumpToCamera::ActionJumpToCamera,0x007dc450,0x006c38c0,0x007dc450
 20967,function,EC::Cutscene::Actor::ActionJumpToPlace::ActionJumpToPlace,0x007dc580,0x006c3a70,0x007dc580
 20968,function,EC::Cutscene::Actor::ActionJumpToPlace::~ActionJumpToPlace,0x007dc690,0x006c3b80,0x007dc690
 20969,function,EC::Cutscene::Actor::ActionJumpToPlace::`scalar deleting destructor',0x007dc700,0x006c3bf0,0x007dc700
-20970,function,,0x007dc720,0x006c3c10,0x007dc720
-20971,function,,0x007dc890,0x006c3d80,0x007dc890
+20970,function,EC::Cutscene::Actor::ActionJumpToPlace::Update,0x007dc720,0x006c3c10,0x007dc720
+20971,function,EC::Cutscene::Actor::Action::GetGroundDelta,0x007dc890,0x006c3d80,0x007dc890
 20972,function,EC::Cutscene::Actor::ActionMakeActiveCamera::ActionMakeActiveCamera,0x007dc940,0x006c3e30,0x007dc940
 20973,function,EC::Cutscene::Actor::ActionTogglePhysics::ActionTogglePhysics,0x007dc9d0,0x006c3ec0,0x007dc9d0
 20974,function,EC::Cutscene::Actor::ActionSetGore::ActionSetGore,0x007dca60,0x006c3f50,0x007dca60
@@ -20980,7 +20980,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20979,function,EC::Cutscene::Actor::ActionOrientationFollowsCurve::ActionOrientationFollowsCurve,0x007dce10,0x006c4300,0x007dce10
 20980,function,EC::Cutscene::Actor::Action::`scalar deleting destructor',0x007dce30,0x006c1da0,0x007dce30
 20981,function,EC::Cutscene::Actor::ActionDrawWeapon::ActionDrawWeapon,0x007dce50,0x006c4320,0x007dce50
-20982,function,,0x007dcf20,0x006c43f0,0x007dcf20
+20982,function,EC::Cutscene::Actor::ActionPlayMovie::ActionPlayMovie,0x007dcf20,0x006c43f0,0x007dcf20
 20983,function,EC::Cutscene::Actor::ActionJumpToCamera::~ActionJumpToCamera,0x007dd050,0x006c39f0,0x007dd050
 20984,function,EC::Cutscene::Actor::ActionJumpToCamera::`scalar deleting destructor',0x007dd0b0,0x006c3a50,0x007dd0b0
 20985,function,EC::Cutscene::Actor::ActionAutoAdjustHeight::ActionAutoAdjustHeight,0x007dd0d0,0x006c4520,0x007dd0d0
@@ -20994,7 +20994,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20993,function,CutscenePlayer::Step,0x007dd4c0,0x006c4910,0x007dd4c0
 20994,function,EC::Cutscene::Actor::AddAnimationTree,0x007dd8d0,0x006c4d20,0x007dd8d0
 20995,function,EC::Cutscene::Actor::AddOverlayTree,0x007dda00,0x006c4e50,0x007dda00
-20996,function,,0x007ddaa0,0x006c4ef0,0x007ddaa0
+20996,function,EC::Cutscene::Actor::CreateAction,0x007ddaa0,0x006c4ef0,0x007ddaa0
 20997,function,EC::Cutscene::Actor::ActionJumpToCamera::ApplyLookAtHeight,0x007de060,0x006c54b0,0x007de060
 20998,function,EC::Cutscene::Actor::ActionJumpToCamera::ApplyLookAtPitch,0x007de220,0x006c5670,0x007de220
 20999,function,EC::Cutscene::ActorMember168Core::ActorMember168Core,0x007de460,0x006c58b0,0x007de460
@@ -21005,17 +21005,17 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21004,function,std::vector<Elem76>::_Tidy,0x007de860,0x006c5cb0,0x007de860
 21005,function,,0x007de8b0,0x006c5d00,0x007de8b0
 21006,function,,0x007de8f0,0x006c5d40,0x007de8f0
-21007,function,,0x007de970,0x006c5dc0,0x007de970
-21008,function,,0x007deac0,0x006c5f10,0x007deac0
-21009,function,,0x007deaf0,0x006c5f40,0x007deaf0
-21010,function,,0x007decb0,0x006c6100,0x007decb0
+21007,function,EC::Cutscene::Actor::SetModel,0x007de970,0x006c5dc0,0x007de970
+21008,function,EC::Cutscene::Actor::AddAction,0x007deac0,0x006c5f10,0x007deac0
+21009,function,EC::Cutscene::Actor::ActionJumpToCamera::PlaceStageCamera,0x007deaf0,0x006c5f40,0x007deaf0
+21010,function,EC::Cutscene::ActorMember168Core::~ActorMember168Core,0x007decb0,0x006c6100,0x007decb0
 21011,function,,0x007decf0,0x006c6140,0x007decf0
 21012,function,,0x007ded30,0x006c6180,0x007ded30
 21013,function,,0x007deee0,0x006c6330,0x007deee0
 21014,function,std::vector<Elem76>::_Tidy,0x007df0e0,0x006c6db0,0x007df0e0
 21015,function,"std::_Uninit_copy<Elem76*,Elem76*,std::allocator<Elem76> >",0x007df0f0,0x006c6530,0x007df0f0
 21016,function,CutscenePlayer::ApplyHenchmanActions,0x007df120,0x006c6560,0x007df120
-21017,function,,0x007df2f0,0x006c6730,0x007df2f0
+21017,function,EC::Cutscene::Actor::ActionJumpToCamera::Update,0x007df2f0,0x006c6730,0x007df2f0
 21018,function,EC::Cutscene::ActorMember168::ActorMember168,0x007df4a0,0x006c68e0,0x007df4a0
 21019,function,EC::Cutscene::ActorMember168::~ActorMember168,0x007df530,0x006c6970,0x007df530
 21020,function,"std::map<unsigned int,Elem16>::map",0x007df5d0,0x006c6a10,0x007df5d0
@@ -21251,13 +21251,13 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21250,function,,0x007eeb70,0x006d6030,0x007eeb70
 21251,function,CameraControllerBase::SetObjectFollowed,0x007eed00,0x006d61c0,0x007eed00
 21252,function,Conversation::BeginOnce,0x007eed30,0x006d84c0,0x007eed30
-21253,function,,0x007eed70,0x006d8500,0x007eed70
+21253,function,Conversation::LeaveDialogueMode,0x007eed70,0x006d8500,0x007eed70
 21254,function,Conversation::RunAction,0x007eedc0,0x006d8550,0x007eedc0
 21255,function,Conversation::VectorAtOrEmpty<Conversation::Participant>,0x007eef00,0x006d8690,0x007eef00
 21256,function,std::_Uninit_copy<Elem20*>,0x007eef50,0x004bc750,0x007eef50
 21257,function,ConversationFile::EndPlotGuid,0x007eef90,0x006d86e0,0x007eef90
 21258,function,ConversationFile::EndScript,0x007ef010,0x006d8760,0x007ef010
-21259,function,,0x007ef090,0x006d87e0,0x007ef090
+21259,function,Conversation::PlotConditionHolds,0x007ef090,0x006d87e0,0x007ef090
 21260,function,"std::_Uninit_copy<Elem20*,Elem20*,std::allocator<Elem20> >",0x007ef0f0,0x005758d0,0x007ef0f0
 21261,function,Conversation::HasConvHeader,0x007ef150,0x006d8840,0x007ef150
 21262,function,ConversationFile::EndPlotFlag,0x007ef190,0x006d8880,0x007ef190
@@ -21280,8 +21280,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21279,function,Conversation::GetLineActionPlotTest,0x007efa90,0x006d9180,0x007efa90
 21280,function,Conversation::GetLineActionScript,0x007efb10,0x006d9200,0x007efb10
 21281,function,Conversation::GetLineActionScriptParameter,0x007efba0,0x006d9290,0x007efba0
-21282,function,,0x007efc30,0x006d9320,0x007efc30
-21283,function,,0x007efc70,0x006d9360,0x007efc70
+21282,function,Conversation::LineHasCut,0x007efc30,0x006d9320,0x007efc30
+21283,function,Conversation::IsLineSkip,0x007efc70,0x006d9360,0x007efc70
 21284,function,Conversation::GetLineCut,0x007efcc0,0x006d93b0,0x007efcc0
 21285,function,Conversation::GetLineCutResRef,0x007efd80,0x006d9470,0x007efd80
 21286,function,Conversation::GetLineStageAtCurrentLocation,0x007efe40,0x006d9530,0x007efe40
@@ -21291,25 +21291,25 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21290,function,Conversation::GetLineCount,0x007f0010,0x006d9700,0x007f0010
 21291,function,ConversationLine::GetAnimation,0x007f0050,0x006d9740,0x007f0050
 21292,function,ConversationLine::GetRevertAnim,0x007f00a0,0x006d9790,0x007f00a0
-21293,function,,0x007f00f0,0x006d97e0,0x007f00f0
+21293,function,Conversation::GetLineLocString,0x007f00f0,0x006d97e0,0x007f00f0
 21294,function,Conversation::GetLineIcon,0x007f0120,0x006d9810,0x007f0120
 21295,function,Conversation::GetLineStageName,0x007f0170,0x006d9860,0x007f0170
 21296,function,Conversation::GetLineSlideShowTexture,0x007f01c0,0x006d98b0,0x007f01c0
 21297,function,Conversation::LineSpeaker,0x007f0210,0x006d9900,0x007f0210
 21298,function,Conversation::LineListener,0x007f02f0,0x006d99e0,0x007f02f0
 21299,function,Conversation::GetLineSpeakerTag,0x007f03d0,0x006d9ac0,0x007f03d0
-21300,function,,0x007f0420,0x006d9b10,0x007f0420
-21301,function,,0x007f0560,0x006d9c50,0x007f0560
-21302,function,,0x007f05b0,0x006d9ca0,0x007f05b0
-21303,function,,0x007f0620,0x006d9d10,0x007f0620
+21300,function,Conversation::RunLineConditionScript,0x007f0420,0x006d9b10,0x007f0420
+21301,function,Conversation::RunLineAction,0x007f0560,0x006d9c50,0x007f0560
+21302,function,Conversation::WasLineUsedThisConversation,0x007f05b0,0x006d9ca0,0x007f05b0
+21303,function,Conversation::ApplyLineActiveSwitches,0x007f0620,0x006d9d10,0x007f0620
 21304,function,Conversation::MarkParticipantForRemoval,0x007f0770,0x006d9e60,0x007f0770
 21305,function,Conversation::ReleaseParticipant,0x007f0790,0x006d9e80,0x007f0790
 21306,function,Conversation::ReleaseAllParticipants,0x007f0870,0x006d9f60,0x007f0870
 21307,function,Conversation::HasParticipant,0x007f0930,0x006da020,0x007f0930
 21308,function,Conversation::MakeLineCutscene,0x007f0960,0x006da050,0x007f0960
-21309,function,,0x007f0c80,0x006da370,0x007f0c80
+21309,function,Conversation::WasLineSeenInGame,0x007f0c80,0x006da370,0x007f0c80
 21310,function,Conversation::IsLineAvailable,0x007f0d30,0x006da420,0x007f0d30
-21311,function,,0x007f0e80,0x006da570,0x007f0e80
+21311,function,std::vector<Conversation::Participant>::erase,0x007f0e80,0x006da570,0x007f0e80
 21312,function,Conversation::~Conversation,0x007f0f50,0x006da640,0x007f0f50
 21313,function,Conversation::FirstAvailable,0x007f1100,0x006da7f0,0x007f1100
 21314,function,Conversation::FirstAvailableReply,0x007f11f0,0x006da8e0,0x007f11f0
@@ -21317,22 +21317,22 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21316,function,Conversation::RemoveParticipant,0x007f1370,0x006daa60,0x007f1370
 21317,function,std::vector<Conversation::Participant>::resize,0x007f13f0,0x005f4c70,0x007f13f0
 21318,function,Conversation::FirstAvailableStart,0x007f14d0,0x006daae0,0x007f14d0
-21319,function,,0x007f1640,0x006dac50,0x007f1640
+21319,function,Conversation::MarkLineUsedThisConversation,0x007f1640,0x006dac50,0x007f1640
 21320,function,std::vector<Conversation::Participant>::resize,0x007f16b0,0x006dacc0,0x007f16b0
-21321,function,,0x007f1700,0x006dad10,0x007f1700
+21321,function,Conversation::MarkLineSeenInGame,0x007f1700,0x006dad10,0x007f1700
 21322,function,std::vector<Conversation::Participant>::vector,0x007f17f0,0x006dae00,0x007f17f0
 21323,function,Conversation::Conversation,0x007f1850,0x006dae60,0x007f1850
 21324,function,Conversation::Advance,0x007f1910,0x006daf20,0x007f1910
-21325,function,,0x007f19e0,0x006daff0,0x007f19e0
+21325,function,Conversation::AddParticipant,0x007f19e0,0x006daff0,0x007f19e0
 21326,function,Conversation::OfferReplies,0x007f1a40,0x006db050,0x007f1a40
-21327,function,,0x007f1e90,0x006db4a0,0x007f1e90
+21327,function,Conversation::BindParticipant,0x007f1e90,0x006db4a0,0x007f1e90
 21328,function,Conversation::PlayLine,0x007f1ef0,0x006db500,0x007f1ef0
 21329,function,Conversation::Start,0x007f2210,0x006db820,0x007f2210
 21330,retired,,,,
-21331,function,,0x007f2370,0x006db980,0x007f2370
+21331,function,Conversation::PlayStartLine,0x007f2370,0x006db980,0x007f2370
 21332,function,Conversation::BindLookAt,0x007f2460,0x006dba70,0x007f2460
-21333,function,,0x007f26f0,0x006dbd00,0x007f26f0
-21334,function,,0x007f27d0,0x006dbde0,0x007f27d0
+21333,function,Conversation::SendAmbientContinue,0x007f26f0,0x006dbd00,0x007f26f0
+21334,function,Conversation::BindLookAtByObjectId,0x007f27d0,0x006dbde0,0x007f27d0
 21335,function,Conversation::ReleaseLookAt,0x007f2800,0x006dbe10,0x007f2800
 21336,function,Conversation::BuildVoiceOverName,0x007f2b70,0x006dc180,0x007f2b70
 21337,function,Conversation::ReleaseLookAtByObjectId,0x007f2d50,0x006dc360,0x007f2d50
