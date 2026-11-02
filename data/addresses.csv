@@ -4797,7 +4797,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4796,function,Core::InsertedValue<?>,0x004cd610,0x0080e930,0x004cd610
 4797,function,,0x004cd650,0x0080e970,0x004cd650
 4798,function,,0x004cd680,0x0080e9a0,0x004cd680
-4799,function,,0x004cd6c0,0x0080e9e0,0x004cd6c0
+4799,function,std::vector<Resource>::_Tidy,0x004cd6c0,0x0080e9e0,0x004cd6c0
 4800,function,,0x004cd710,0x0080ea30,0x004cd710
 4801,function,,0x004cd780,0x0080eaa0,0x004cd780
 4802,function,std::vector<Resource>::_Tidy,0x004cd7b0,0x0080ead0,0x004cd7b0
@@ -7817,9 +7817,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7816,function,Animation::BlendRotations,0x00544510,0x00745d00,0x00544510
 7817,function,,0x00544620,0x00745e10,0x00544620
 7818,function,,0x00544700,0x00745ef0,0x00544700
-7819,function,Animation::AccumulateOverrideRotation,0x005448c0,0x007460b0,0x005448c0
-7820,function,Animation::ApplyAdditiveRotations,0x005449d0,0x007461c0,0x005449d0
-7821,function,Animation::BlendLayerRotations,0x00544ab0,0x007462a0,0x00544ab0
+7819,function,Animation::AccumulateOverrideVector4,0x005448c0,0x007460b0,0x005448c0
+7820,function,Animation::ApplyAdditiveVector4,0x005449d0,0x007461c0,0x005449d0
+7821,function,Animation::BlendTreeVector4,0x00544ab0,0x007462a0,0x00544ab0
 7822,function,ECBase::ECDynArray<?>::At,0x00544c60,0x004bc620,0x00544c60
 7823,function,,0x00544cb0,0x007464b0,0x00544cb0
 7824,function,"std::_Construct<std::pair<std::wstring,?>,std::pair<std::wstring,?>>",0x00544ce0,0x00711760,0x00544ce0
@@ -9828,7 +9828,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 9827,function,CRules::GetStringByRowId,0x005b6ba0,0x0071f440,0x005b6ba0
 9828,function,MusicController::MusicController,0x005b6be0,0x0071f480,0x005b6be0
 9829,function,MusicController::Initialize,0x005b6cb0,0x0071f550,0x005b6cb0
-9830,function,ScriptBackend::ForScript_SetMusicIntensity,0x005b6cd0,0x0071f570,0x005b6cd0
+9830,function,MusicController::SetIntensity,0x005b6cd0,0x0071f570,0x005b6cd0
 9831,function,MusicThemeWrapper::~MusicThemeWrapper,0x005b6cf0,0x0071f590,0x005b6cf0
 9832,function,MusicThemeWrapper::Restart,0x005b6d10,0x0071f5b0,0x005b6d10
 9833,function,MusicThemeWrapper::SetTheme,0x005b6d20,0x0071f5c0,0x005b6d20
@@ -19529,7 +19529,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 19528,function,Core::DerefValidListIterator<int>,0x0079a190,0x00451ff0,0x0079a190
 19529,function,CCTrigger::Load,0x0079a1d0,0x0066b890,0x0079a1d0
 19530,function,CCTriggerAudioReverb::WriteToSave,0x0079a450,0x0066bb10,0x0079a450
-19531,function,CCTriggerAudioMusicVolume::Load,0x0079a480,0x0066bb40,0x0079a480
+19531,function,CCTrigger::Load,0x0079a480,0x0066bb40,0x0079a480
 19532,function,CCTriggerAudioVolume::Load,0x0079a490,0x0066bb50,0x0079a490
 19533,function,CCTriggerAudioVolume::ReadFields,0x0079a5d0,0x0066bc90,0x0079a5d0
 19534,function,CCTriggerAudioVolume::WriteToSave,0x0079a600,0x0066bcc0,0x0079a600
@@ -102521,7 +102521,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 102520,data,,0x00c395bc,0x00c1abac,0x00c395bc
 102521,data,,0x00c395c0,0x00c1abb0,0x00c395c0
 102522,data,,0x00c395dc,0x00c1abcc,0x00c395dc
-102523,data,,0x00c395e0,0x00c1abd0,0x00c395e0
+102523,data,Animation::AnimationManager::Instance::s_instance,0x00c395e0,0x00c1abd0,0x00c395e0
 102524,data,,0x00c396e0,0x00c1acd0,0x00c396e0
 102525,data,,0x00c396e4,0x00c46700,0x00c396e4
 102526,data,,0x00c396f0,0x00c46710,0x00c396f0
