@@ -17277,3 +17277,43 @@ address,what,value,why
 0x00551400,convention,__thiscall,ecx is read as this (or adjusted) before any write
 0x0054F930,signature,"void __thiscall f(void* this, void* corner0, void* corner1, void* corner2, void* corner3, void* corner4, void* corner5, void* corner6, void* corner7)","sub ecx,4; jmp 0x00543010 (ID 7783, ret 0x20): eight pointers to 16-byte vectors it writes; names one reader's labels (lib-agent-3)"
 0x00550040,signature,"void __thiscall f(void* this, void* arg1, void* arg2, void* arg3)","plain jmp 0x0055E9D0 (ID 8348, ret 0xC) (lib-agent-3)"
+0x00575110,signature,void __thiscall f(void *this),"plain ret via tail jmp to 0x00574EF0, vtable 0x00AFA474 slot 26"
+0x00575170,signature,"void * __thiscall f(void *this, void *name, int a, int b, int c, int d)","ret 0x14 (0x005751DF, 0x00575246); vtable slot 13"
+0x00575250,signature,"void __thiscall f(void *this, void *object)",ret 4 (0x005752C9); vtable slot 9
+0x005752D0,signature,"void __thiscall f(void *this, void *lightState)","ret 4 (0x005752E0), ecx read at 0x005752D5"
+0x005754B0,signature,void * __thiscall f(void *this),"plain ret, returns this or 0 (0x005754FC)"
+0x00575560,signature,void __thiscall f(void *this),"destructor, plain ret (0x00575608)"
+0x00576060,signature,void __thiscall f(void *this),"destructor, plain ret"
+0x00576150,signature,"void * __thiscall f(void *this, void *filename, int mode, int prot)",ret 0xC (0x0057622F)
+0x00576AE0,signature,void __thiscall f(void *this),"destructor, plain ret (0x00576B34)"
+0x00576B40,signature,"void * __thiscall f(void *this, unsigned int flags)","ret 4, vtable 0x00AFA040 slot 0"
+0x00576B60,signature,void __thiscall f(void *this),"destructor, plain ret"
+0x00576BE0,signature,"void * __thiscall f(void *this, unsigned int flags)","ret 4, vtable 0x00AF9FAC slot 0"
+0x00576C00,convention,__thiscall,ret 0x4C: count plus a 0x48-byte record by value; no plain C prototype
+0x00576D20,signature,"void * __thiscall f(void *this, void *source)",ret 4 (0x00576D6x)
+0x00576D80,signature,"void * __thiscall f(void *this, void *source)",ret 4 (0x00576D90)
+0x00576DA0,signature,"void __thiscall f(void *this, unsigned int newSize, int value)",ret 8
+0x00576E90,signature,"void * __thiscall f(void *this, void *source)",ret 4
+0x00576F40,signature,"void * __thiscall f(void *this, void *source)",ret 4
+0x00576FA0,signature,"void * __thiscall f(void *this, void *event, void *partNames, void *name, int limit, int pool, int w0, int w1, int w2)","ret 0x20; arguments in the order the constructor stores them (0x00577007..0x0057711B): event +0x1C, list +0x20, name +0x24, +0x4C, +0x50, then +0x40/+0x44/+0x48; Reset returns nothing"
+0x00577070,signature,"void __thiscall f(void *this, void *event, void *partNames, void *name, int limit, int pool, int w0, int w1, int w2)","ret 0x20; arguments in the order the constructor stores them (0x00577007..0x0057711B): event +0x1C, list +0x20, name +0x24, +0x4C, +0x50, then +0x40/+0x44/+0x48; Reset returns nothing"
+0x00577140,signature,void __thiscall f(void *this),"destructor, plain ret"
+0x005771B0,signature,"void * __thiscall f(void *this, void *a, void *b, int c, int d, int e)",ret 0x14 (0x005772C7); vtable slot 11
+0x00577310,signature,"void __thiscall f(void *this, unsigned char built)",ret 4 (0x005773D3)
+0x00577430,signature,"void * __thiscall f(void *this, unsigned int count)",ret 4
+0x005774A0,signature,"void * __thiscall f(void *this, void *event, void *params, int word, int pool)",ret 0x10
+0x00577520,signature,"void __thiscall f(void *this, void *event, void *params, int word, int pool)",ret 0x10 (0x00577548)
+0x00577550,signature,"void * __thiscall f(void *this, void *existingObject, void *event, void *params, int word, int pool)",ret 0x14
+0x00577590,signature,"void * __thiscall f(void *this, unsigned int flags)","ret 4, vtable 0x00AFA058 slot 0"
+0x005775C0,signature,"void __cdecl f(void *indices, void *points, void *out)","plain ret, caller 0x00578670 adds 0xC after the call"
+0x00577B70,signature,"void __thiscall f(void *this, void *modelName, void *dir, void *name)",ret 0xC (0x00577CD0); vtable slot 28
+0x00578200,signature,void * __thiscall f(void *this),"default constructor, plain ret, returns this"
+0x00578260,signature,"void * __thiscall f(void *this, void *event, void *name, void *name2, int a, int b, int c, void *name3, void *variant, int word, int pool)","ret 0x28, ten stack arguments"
+0x00578340,signature,"void * __thiscall f(void *this, void *objectParams)","ret 4 (0x00578444, 0x0057848F); vtable slot 3"
+0x005784A0,signature,"void * __thiscall f(void *this, void *name, void *name2, int a, int b, int c, void *name3, void *variant)",ret 0x1C; vtable slot 2
+0x005785B0,signature,"void * __thiscall f(void *this, void *points, unsigned int count, int a, int b)",ret 0x10 (0x005786F7); vtable slot 7
+0x00578700,signature,"void __thiscall f(void *this, void *object)",ret 4 (0x00578779); vtable slot 8
+0x00578780,signature,"bool __thiscall f(void *this, void *name, void *outVector)","ret 8, al = found; vtable slot 19"
+0x005788B0,signature,"void * __thiscall f(void *this, void *dir, void *name)",ret 8; vtable slot 30
+0x00578B90,signature,"void __thiscall f(void *this, void *stream, void *name, void *a1, void *a2, void *a3, void *a4, void *a5, void *a6)","ret 0x20, eight stack arguments; vtable slot 29"
+0x00579300,signature,"void __thiscall f(void *this, void *stream)",ret 4; vtable slot 31
