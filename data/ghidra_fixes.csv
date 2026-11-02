@@ -17641,3 +17641,43 @@ address,what,value,why
 0x00564810,convention,__thiscall,ret and the use of ecx before it is written
 0x00564900,convention,__thiscall,ret and the use of ecx before it is written
 0x00564910,convention,__thiscall,ret and the use of ecx before it is written
+0x005B2260,signature,"bool __thiscall f(void *this, void *name, void *texture)",ret 8 with ecx read; 0x005B2260-0x005B2292
+0x005B22A0,signature,"void __thiscall f(void *this, int *size, int *extra)","ret 8, two out pointers; 0x005B22FC"
+0x005B2300,signature,void __thiscall f(void *this),"plain ret, ecx is the node; 0x005B23E1"
+0x005B23F0,signature,"void * __thiscall f(void *this, unsigned int flags)",adjustor to the deleting destructor (ret 4 there); 0x005B23F3
+0x005B2400,signature,"void * __thiscall f(void *this, unsigned int flags)",adjustor to the deleting destructor; 0x005B2403
+0x005B2410,signature,"void * __thiscall f(void *this, unsigned int flags)",adjustor to the deleting destructor; 0x005B2416
+0x005B2420,signature,"void * __thiscall f(void *this, unsigned int flags)",adjustor to the deleting destructor; 0x005B2423
+0x005B2430,signature,"void __thiscall f(void *this, float *out)",forwards to 0x0053CA70 (ret 4); 0x005B243F
+0x005B2450,signature,unsigned char __thiscall f(void *this),"forwards to 0x0053CBB0 (mov al,[ecx+0x179]); 0x005B245F"
+0x005B2470,signature,void * __thiscall f(void *this),"lea eax,[ecx+0xD0]; ret; 0x005B2470"
+0x005B2480,convention,__thiscall,"sub ecx,0x180; jmp 0x005B0F00; 0x005B2480"
+0x005B2490,signature,int __thiscall f(void *this),"sub ecx,0x180; jmp 0x0046E740 (mov eax,8); 0x005B2490"
+0x005B24A0,signature,"bool __thiscall f(void *this, int width, int height, void *nameV, void *nameA, void *nameA2)",ret 0x14 with ecx read; 0x005B2683
+0x005B2690,signature,"void __thiscall f(void *this, void *name, void *texturePointer, int pointerSecondWord)",ret 0xC; safe pointer by value released at 0x005B26D1
+0x005B2700,signature,"void * __thiscall f(void *this, unsigned int flags)","ret 4, returns this; 0x005B271B"
+0x005B2720,signature,"void * __thiscall f(void *this, void *owner, void *blueprint)",ret 8; 0x005B285A
+0x005B2860,signature,"bool __thiscall f(void *this, void *vertices, unsigned int vertexCount, void *indices, unsigned int indexCount, void *vertexDeclaration, int indexSize, int unread)",ret 0x1C = 7 words
+0x005B2B30,signature,"void * __cdecl f(void *memory, void *owner, void *blueprint)","plain ret, caller cleans; 0x005B2B81"
+0x005B2B90,signature,"void * __thiscall f(void *this, void **cursor, void *a2, void *owner, void *a4, void *a5, void *a6)",ret 0x18; 0x005B2CB5
+0x005B2CC0,signature,"bool __thiscall f(void *this, int *width, int *height, int *pitch, void **bitsV, void **bitsA, void **bitsA2)",ret 0x18; 0x005B2E36
+0x005B2E40,signature,bool __thiscall f(void *this),"plain ret, ecx is the part; 0x005B2F3E"
+0x005B2F80,signature,"unsigned int __thiscall f(void *this, void *target)",ret 4; 0x005B2FCE
+0x005B2FE0,signature,"void __thiscall f(void *this, int *size, int *extra)","ret 8, two out pointers; 0x005B3019"
+0x005B3020,signature,"void * __cdecl f(void *memory, void *a, void *b)",plain ret; 0x005B3071
+0x005B3080,signature,"void * __thiscall f(void *this, void **cursor, void *a2, void *owner, void *target, void *a5, void *a6)",ret 0x18; 0x005B3172
+0x005B3180,signature,"void * __thiscall f(void *this, void **cursor, void *a2, void *owner, void *a4, void *a5, void *a6)",ret 0x18; 0x005B325B
+0x005B3260,signature,void * __thiscall f(void *this),"constructor, returns this; 0x005B32B8"
+0x005B32C0,signature,void __thiscall f(void *this),"destructor body, plain ret; 0x005B3320"
+0x005B3330,signature,unsigned int __thiscall f(void *this),"mov eax,0x250; ret; 0x005B3330"
+0x005B3340,signature,"void __thiscall f(void *this, int *size, int *extra)",ret 8; 0x005B3378
+0x005B3380,signature,"void * __cdecl f(void *memory, void *a, void *b)",plain ret; 0x005B33D1
+0x005B33E0,signature,"void * __thiscall f(void *this, unsigned int flags)",ret 4; 0x005B33FB
+0x005B3400,signature,"void __thiscall f(void *this, void *a1, void *groupNode)",ret 8; a2 read at 0x005B3403
+0x005B34B0,signature,"void * __thiscall f(void *this, void **cursor, void *a2, void *owner, void *a4, void *a5, void *a6)",ret 0x18; 0x005B35B6
+0x005B35C0,signature,void * __thiscall f(void *this),"constructor, returns this; 0x005B3649"
+0x005B3650,signature,"void * __cdecl f(void *memory, void *a, void *b)",plain ret; 0x005B36A1
+0x005B36B0,signature,unsigned int __thiscall f(void *this),"mov eax,0x5C0; ret; 0x005B36B0"
+0x005B36C0,signature,"void * __thiscall f(void *this, void **cursor, void *a2, void *owner, void *a4, void *a5, void *a6)","ret 0x18; 0x005B3744, 0x005B3971"
+0x005B3980,signature,void __thiscall f(void *this),"destructor, plain ret; 0x005B39F5"
+0x005B3A00,signature,void __thiscall f(void *this),"destructor body, plain ret; 0x005B3AC7"
