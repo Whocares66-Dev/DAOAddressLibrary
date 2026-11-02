@@ -14132,3 +14132,33 @@ address,what,value,why
 0x004F2800,signature,bool __thiscall MaterialObjectRef::IsValid(void* this),reads ecx+4; Ghidra shows __fastcall
 0x004F9390,clear,GStandardBlockAllocator::vfunction5,"folded `lea eax,[ecx+8]; ret` getter; used as the material object's shader-pointer field by 0x004F2720/0x004F2730"
 0x004FE8F0,clear,CLCDBase::vfunction18,"folded `lea eax,[ecx+0x1C]; ret` getter; used as the material object's name field by 0x004F2710"
+0x004F2810,signature,"void __thiscall MaterialObjectInstance_SetSemanticOverride(void* this, void* material, int clearAfterRender)",ret 8 (0x004F2820); writes +0x3C/+0x40
+0x004F2830,signature,"void __thiscall MaterialObjectInstance_SetInstanceOverride(void* this, void* instance, int clearAfterRender)",ret 8 (0x004F2840); writes +0x44/+0x48
+0x004F28A0,signature,"void* __thiscall ECDynArray_VectorUA4f_At(void* this, unsigned int index)","ret 4 (0x004F28C4); begin +4, end +8, 16-byte elements"
+0x004F2990,signature,bool __thiscall MaterialObjectInstance_HasTextureParameters(void* this),plain ret 0x004F29AD; reads ecx at 0x004F2990
+0x004F29B0,convention,__stdcall,"ret 8 (0x004F2A01), ecx never read; args at [esp+0x14]/[esp+0x18] after the SEH frame"
+0x004F29B0,signature,"void* __stdcall MaterialObjectInstance_CreateVector4Provider(void* value, bool byReference)",byReference tested 0x004F29D0; returns the new provider
+0x004F2A50,convention,__stdcall,"ret 8 (0x004F2A79), ecx never read"
+0x004F2A50,signature,"void* __stdcall MaterialObjectInstance_CreateMatrixProvider(void* value, bool byReference)",byReference [ebp+0xC] 0x004F2A56
+0x004F2B00,signature,"void* __cdecl CopyPairRange(void* first, void* last, void* dest)","plain ret 0x004F2B35; args [esp+4],[esp+8],[esp+0xC]"
+0x004F2B40,signature,"bool __thiscall MaterialObjectInstance_HasSemanticAffinity(void* this, int affinity)",ret 4 (0x004F2B9D); ecx passed on to 0x004F2790
+0x004F2BB0,signature,"void* __thiscall TreeUInt_EqualRange(void* this, void* out, void* key)",ret 8 (0x004F2C0B); out gets 4 dwords
+0x004F2C10,signature,"void __cdecl TreeUInt_Distance(void* firstCont, void* firstNode, void* lastCont, void* lastNode, void* count, int tag)","plain ret 0x004F2C48; caller add esp,0x18 0x004F4989"
+0x004F2C50,signature,"void __thiscall MaterialObjectInstance_VisitResources(void* this, void* sink)",ret 4 (0x004F2D71); vtable slot 3 0x00AF280C
+0x004F2D80,signature,"void __thiscall MaterialObjectInstance_GetMemoryFootprint(void* this, void* systemBytes, void* otherBytes)",ret 8 (0x004F2EB9); vtable slot 1 0x00AF2804
+0x004F3340,signature,"void __thiscall MaterialObjectInstance_ApplyPassParameters(void* this, void* pass, unsigned int index)","ret 8 (0x004F33C1); callers push index, pass, mov ecx,esi (0x004F5958..0x004F595A)"
+0x004F3790,signature,void __thiscall MaterialOpacity_Destroy(void* this),plain ret 0x004F37E0; ecx = instance+0xB4 at 0x004F52D3
+0x004F3D40,signature,"void __thiscall MaterialObjectInstance_RemoveFloatParameter(void* this, void* name)",ret 4 (0x004F3DBC)
+0x004F3DC0,signature,"void __thiscall MaterialObjectInstance_RemoveVector4Parameter(void* this, void* name)",ret 4 (0x004F3E36)
+0x004F3E40,signature,"void __thiscall MaterialObjectInstance_RemoveVector4ArrayParameter(void* this, void* name)",ret 4 (0x004F3EB6)
+0x004F3EC0,signature,"void __thiscall MaterialObjectInstance_RemoveMatrixParameter(void* this, void* name)",ret 4 (0x004F3F3C)
+0x004F4250,signature,"void __thiscall MaterialObjectInstance_PreparePassBlock(void* this, void* pass, unsigned int index)","ret 8 (0x004F4379); callers mov ecx,esi 0x004F5951"
+0x004F43C0,signature,"void __thiscall MaterialOpacity_SetOpacity(void* this, float opacity)",ret 4 (0x004F4473); fld [esp+0x18] 0x004F4479 is the float arg
+0x004F4670,convention,__stdcall,"ret 8 (0x004F46C1), ecx never read (the caller's mov ecx,esi at 0x004F47FF is incidental)"
+0x004F4670,signature,"void* __stdcall MaterialObjectInstance_CreateVector4ArrayProvider(void* value, bool byReference)",byReference tested 0x004F4690
+0x004F4760,signature,"void __thiscall MaterialObjectInstance_SetLightmapOffsetAndScale(void* this, void* value)",ret 4 (0x004F4771); ecx passed through to SetParameter 0x004F476C
+0x004F4780,signature,"void __thiscall MaterialObjectInstance_SetVector4ArrayParameter(void* this, void* name, void* value, bool byReference)","ret 0xC (0x004F47F2, 0x004F48EE)"
+0x004F4940,signature,"unsigned int __thiscall TreeUInt_EraseKey(void* this, void* key)",ret 4 (0x004F49A7); returns the count at [esp+0x24]
+0x004F49B0,signature,"void __thiscall MaterialObjectInstance_SetMaterialObject(void* this, void* objectHandle)",ret 4 (0x004F4A5B)
+0x004F4A60,signature,void __thiscall MaterialObjectInstance_ClearParameters(void* this),tail jmp 0x007F93A0 at 0x004F4AB0; no stack args
+0x004F2850,signature,"void __thiscall Tree_Lrotate(void* this, void* node)","ret 4; ecx = tree, root at [[ecx+4]+4] (from reading B)"
