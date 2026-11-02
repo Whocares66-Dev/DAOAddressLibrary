@@ -17797,3 +17797,52 @@ address,what,value,why
 0x00564980,signature,float* __thiscall Math::Matrix4x4f::GetIdentity(void* this),"thunk to 0x004D38E0 (plain ret, ecx unused); in the vftable it takes this"
 0x005683F0,signature,void __thiscall ECBase::ECDynArray<Multithreading::SynchSafePointer<?>>::Clear(void* this),plain ret at 0x00568428
 0x00568430,signature,"void* __thiscall ECBase::ECDynArray<Multithreading::SynchSafePointer<?>>::operator=(void* this, void* other)",ret 4 at 0x00568460/0x005684A9/...
+0x00527B30,signature,"bool __thiscall Eclipse::IGraphicsInternal::ChangeDisplayMode(void* this, void* hwnd, int height, int width, bool fullscreen)",ret 0x10; viewport args at 0x00527B9B..0x00527BA7 show height before width; decompiler lost arg 1's and the local arguments
+0x00527C70,signature,bool __thiscall Eclipse::IGraphicsInternal::StopRenderer(void* this),"plain ret, returns 1 at 0x00527DFC"
+0x00527E00,signature,"void __thiscall Eclipse::IGraphicsInternal::SetPlayerPosition(void* this, void* position)","tail jump to 0x005387B0, which takes one pointer and has ret 4; the decompiler shows no argument"
+0x00527E10,signature,"void __thiscall Eclipse::IGraphicsInternal::RenderScene(void* this, void* scene)","ret 4, thiscall; Ghidra types the scene as D3DGraphicsCapabilitiesDriver"
+0x00527E90,signature,"void __thiscall Eclipse::IGraphicsInternal::PresentRect(void* this, void* a, void* b, void* c, void* d, void* e)","tail jump to 0x00459460, ret 0x14"
+0x00527EA0,signature,"void* __thiscall Eclipse::IGraphicsInternal::CreateDebugBox(void* this, void* min, void* max)",ret 8; decompiler shows one argument
+0x00527ED0,signature,"void* __thiscall Eclipse::IGraphicsInternal::CreateDebugMesh(void* this, void* points)",ret 4; decompiler shows none
+0x00527EF0,signature,"void* __thiscall Eclipse::IGraphicsInternal::CreateModelNode(void* this, void* a1, void* a2, int a3, int a4, int a5)",ret 0x14
+0x00527F90,signature,"void __thiscall Eclipse::IGraphicsInternal::RequestScreenshot(void* this, void* request, bool deferred, bool hideInterface)",ret 0xC
+0x00528000,signature,"void __thiscall Eclipse::IGraphicsInternal::SetScreenshotSequence(void* this, void* name)",ret 4
+0x00528030,signature,"void __thiscall Eclipse::IGraphicsInternal::SetWorldVisible(void* this, bool visible)",ret 4
+0x00528040,signature,"void __thiscall Eclipse::IGraphicsInternal::SetShadowsEnabled(void* this, bool enabled)",ret 4
+0x00528050,signature,"void __thiscall Eclipse::IGraphicsInternal::SetFrameEffectsEnabled(void* this, bool enabled)",ret 4
+0x00528060,signature,"void __thiscall Eclipse::IGraphicsInternal::ForwardToRenderers(void* this, void* x)",ret 4
+0x00528100,signature,"void* __thiscall GuiMovieRef::GuiMovieRef(void* this, void* movie)","ret 4, returns this"
+0x00528170,signature,"void* __thiscall Eclipse::IGraphicsInternal::CreateModelNodeFromNames(void* this, void* names, void* a2, void* a3, void* a4, void* a5)",ret 0x14
+0x00528380,signature,"void* __thiscall GuiMovieSet::Advance(void* this, void* iterator)",ret 4
+0x00528450,signature,void __thiscall Eclipse::IGraphicsInternal::ApplyLightQuality(void* this),plain ret
+0x005284E0,signature,void __thiscall Eclipse::IGraphicsInternal::SaveScreenshots(void* this),plain ret
+0x00528A30,signature,"void* __thiscall GuiMovieSet::Find(void* this, void* out, void* movie)","ret 8, returns out"
+0x00528B00,signature,bool __thiscall Eclipse::IGraphicsInternal::DestroyRegisteredObjects(void* this),"plain ret, returns 1 at 0x00528BA5"
+0x00528F30,convention,__thiscall,"reads ecx at 0x00528F52, plain ret; Ghidra has __fastcall"
+0x00528FA0,signature,"void __thiscall Eclipse::IGraphicsInternal::UnregisterObject(void* this, void* obj)",ret 4
+0x00529510,signature,"void __thiscall Eclipse::IGraphicsInternal::RegisterObject(void* this, void* obj)",ret 4; body shared with other classes' lists
+0x00529B10,signature,"void __thiscall Eclipse::IGraphicsInternal::RemoveGuiMovie(void* this, void* movie)",ret 4
+0x00529C00,signature,"void __thiscall Eclipse::IGraphicsInternal::DeferDelete(void* this, void* obj)",ret 4; decompiler shows none
+0x00529C20,convention,__thiscall,"adds to ecx at 0x00529C22, plain ret; Ghidra has __fastcall"
+0x0052A090,signature,"void __thiscall Eclipse::IGraphicsInternal::TickScene(void* this, void* scene, bool tickFaces, bool stepWorld, bool frameFirst)",ret 0x10
+0x0052A150,signature,void __thiscall Eclipse::IGraphicsInternal::ResetDevice(void* this),plain ret
+0x0052A210,convention,__thiscall,"reads ecx at 0x0052A214, plain ret; Ghidra has __fastcall"
+0x0052A310,convention,__thiscall,"reads ecx at 0x0052A332, plain ret, returns this"
+0x0052A370,signature,"void* __thiscall GuiMovieEntry::GuiMovieEntry(void* this, void* movie, int id, void* reference)",ret 0xC
+0x0052A400,signature,"void* __thiscall GuiMovieEntry::GuiMovieEntry(void* this, void* other)",ret 4
+0x0052A470,signature,"void __thiscall Eclipse::IGraphicsInternal::UpdateFrame(void* this, bool stepWorld)",ret 4
+0x0052A600,signature,"void __thiscall Eclipse::IGraphicsInternal::RenderFrame(void* this, bool present)",ret 4
+0x0052A7B0,convention,__thiscall,"reads ecx at 0x0052A7B4, plain ret; Ghidra has __fastcall"
+0x0052A7F0,convention,__cdecl,"plain ret, stack arguments, no ecx read before writing it at 0x0052A803"
+0x0045A4F0,clear,Renderer::Renderer::AddShaderParameter,"outside the batch: it queues a screenshot request (0x00527FAF, 0x00528E0D); proposed QueueScreenshot"
+0x0045A500,clear,Renderer::Renderer::ApplyShaderParameters,outside the batch: it calls SaveToFile (driver +0x150) on each queued item; proposed SaveQueuedScreenshots
+0x005278C0,clear,D3DDriver::D3DGraphicsDriverManager::vfunction8,"outside the batch: g_graphics's current-driver getter, +0xBC on the main thread, else +0xB4"
+0x0086E0F0,clear,D3DDriver::D3DGraphicsCapabilitiesDriver::vfunction5_for_GraphicsCapabilitiesDriver,"outside the batch: mov eax,[ecx+0xC0], used here as the scene's camera"
+0x004FCB70,clear,_AfxAygshellState,"outside the batch: a singleton getter over 0x00C30A08, not MFC's"
+0x005283E0,convention,__cdecl,"plain ret at 0052844D; arguments on the stack, result in EAX"
+0x00529C30,signature,void __thiscall std::vector<?>::_Tidy(void* this),plain ret at 00529C6E; it passes this+4/+8 to 00528FC0 and reads no argument of its own (the [esp+4] load at 00529C3B is an uninitialised saved slot)
+0x00527E00,convention,__thiscall,thunk: loads ecx=[ecx+0x58] and jumps; callee 005387B0 does ret 4
+0x00527E90,convention,__thiscall,jmp thunk to [[this+0x5C]+0x18]; caller's args pass through unchanged
+0x0052A210,signature,void __thiscall Eclipse::IGraphicsInternal::HandleDeviceEvents(void* this),plain ret at 0052A304
+0x0052A310,signature,void* __thiscall GuiMovieEntry::GuiMovieEntry(void* this),plain ret at 0052A369
+0x00529C30,convention,__thiscall,"reads ecx at 0x00529C32, plain ret; Ghidra has __fastcall"
