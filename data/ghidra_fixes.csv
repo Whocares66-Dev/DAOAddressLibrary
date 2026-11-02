@@ -18530,3 +18530,43 @@ address,what,value,why
 0x0054A2B0,signature,"void __thiscall GraphicsStructures::Object::RemoveDependent(void* this, void* dependency)",stack arguments match the ret in the disassembly
 0x00549600,signature,void __thiscall GraphicsStructures::Object::vfunction3(void* this),"plain ret, tail jump"
 0x0054A2E0,signature,"bool __thiscall GraphicsStructures::Object::ApplyMorphByName(void* this, const void* morphName, int morphArg)","ret 8, this = Object+8"
+0x0054A3A0,signature,"void* __stdcall std::_Uninit_fill_n(void* first, unsigned int count, const void* value)",ret 0xC at 0x0054A3D5; ecx is pushed on as padding (0x0054A3BE) and never read
+0x0054A3E0,signature,void __thiscall GraphicsStructures::ObjectAttachDependency::RemoveFromFollower(void* this),plain ret at 0x0054A3EF; dependency vftable slot 2
+0x0054B6C0,signature,"unsigned int __thiscall GraphicsStructures::Object::GetNodesOfKind(void* this, int kind, void* outNodes)",ret 8 at 0x0054B755; this is Object+8; the callee reserves the vector (0x0054B6E0)
+0x0054B760,signature,bool __stdcall GraphicsStructures::Object::BindCrustEmittersToPhysics(void* effectObject),ret 4 at 0x0054BAB1; ecx is overwritten at 0x0054B787 before any read (the caller 0x0054DE53 loads the owner into it); the argument is the effect Object base
+0x0054BAC0,signature,unsigned int __thiscall GraphicsStructures::Object::GetSnapToPointCount(void* this),plain ret at 0x0054BBA9 and 0x0054BBB9; this is Object+8
+0x0054BBC0,signature,unsigned int __thiscall GraphicsStructures::Object::GetUsePointCount(void* this),plain ret at 0x0054BCA9 and 0x0054BCB9; this is Object+8
+0x0054BCC0,signature,"bool __thiscall GraphicsStructures::Object::SetFacialAnimationPlayer(void* this, void* facialAnimationPlayer)",ret 4 at 0x0054C168; this is Object+0x10 (IFaceAnimatable); al is the OR of the BindBone results
+0x0054C170,signature,"void __thiscall GraphicsStructures::Object::CollectUserParamNames(void* this, void* outNames)",ret 4 at 0x0054C255; this is Object+8
+0x0054C810,signature,"void* __thiscall ECBase::ECDynArray<Elem8>::ECDynArray(void* this, unsigned int count)",ret 4 at 0x0054C871
+0x0054C8A0,signature,"void* __thiscall ECBase::ECDynArray<GraphicsStructures::ExportValue>::ECDynArray(void* this, unsigned int count)",ret 4 at 0x0054C917
+0x0054C960,signature,"void* __thiscall ECBase::ECDynArray<Elem12A>::ECDynArray(void* this, unsigned int count)",ret 4 at 0x0054C9D6
+0x0054C9E0,signature,"void* __thiscall ECBase::ECDynArray<Animation::BlendNode>::ECDynArray(void* this, unsigned int count)",ret 4 at 0x0054CA5E
+0x0054CAB0,signature,"void* __thiscall ECBase::ECDynArray<Animation::ClipContribution>::ECDynArray(void* this, unsigned int count)",ret 4 at 0x0054CB1C
+0x0054CB50,signature,"void __thiscall ECBase::ECDynArray<Elem12A>::Clear(void* this, bool freeMemory)",ret 4 at 0x0054CC36; the flag is a byte (cmp byte [esp+0x40] at 0x0054CB7B)
+0x0054CCA0,signature,"void* __thiscall GraphicsStructures::Object::FindMaterialInstancesByName(void* this, void* outInstances, const void* name)",ret 8 at 0x0054CD87; the callee constructs the result vector (0x0054CCD8) and returns it
+0x0054CD90,signature,bool __thiscall GraphicsStructures::Object::HasPhysicsNodes(void* this),plain ret at 0x0054CE22; this is the Object base
+0x0054CE30,signature,void* __thiscall GraphicsStructures::Object::GetBoundingShapeObjects(void* this),plain ret at 0x0054D0C8 and 0x0054D220; returns the array at +0x238
+0x0054D230,signature,"bool __thiscall GraphicsStructures::Object::AddAnimationTree(void* this, void* animationTree, unsigned int safePointerFlag)","ret 8 at 0x0054D28C and 0x0054D311; the by-value safe pointer is 8 bytes (pointer, flag byte)"
+0x0054D320,signature,"bool __thiscall GraphicsStructures::Object::RemoveAnimationTree(void* this, const void* name)",ret 4 at 0x0054D338 and 0x0054D37B; the name is a wide string by pointer (0x00548650 compares it)
+0x0054D4A0,signature,void __thiscall GraphicsStructures::Object::RemoveAllAnimationTrees(void* this),plain ret at 0x0054D4AD
+0x0054D4B0,signature,"void __thiscall GraphicsStructures::Object::BuildClipLists(void* this, int unused1, int unused2)",ret 8 at 0x0054D728; neither stack argument is read
+0x0054D730,signature,void __thiscall GraphicsStructures::Object::CreateNodePhysicsActors(void* this),plain ret at 0x0054D78D; this is the Object base
+0x0054D790,signature,"void __thiscall GraphicsStructures::Object::AddRenderableNode(void* this, void* nodeInterface)",ret 4 at 0x0054D7B2
+0x0054D7C0,signature,"void __thiscall GraphicsStructures::Object::AddLightNode(void* this, void* lightInterface)",ret 4 at 0x0054D7E2
+0x0054D7F0,signature,"void __thiscall GraphicsStructures::Object::AddEmitterNode(void* this, void* node)",ret 4 at 0x0054D855
+0x0054D860,signature,"bool __thiscall GraphicsStructures::Object::AttachToObjectNode(void* this, void* targetObject, void* targetNode, const void* nodeName, const void* offsetTranslation, const void* offsetRotation)",ret 0x14 at 0x0054DAB9; this is Object+8
+0x0054DAC0,signature,void __thiscall GraphicsStructures::Object::ReleaseDependencies(void* this),plain ret at 0x0054DB56; this is the Object base
+0x0054DB60,signature,"unsigned int __thiscall GraphicsStructures::Object::GetPhysicsDescriptionNames(void* this, void* outNames)",ret 4 at 0x0054DC72 and 0x0054DC94; this is Object+0xC
+0x0054DCA0,signature,"void __thiscall GraphicsStructures::Object::AddDependent(void* this, void* dependency)",ret 4 at 0x0054DCB0
+0x0054DCC0,signature,void __thiscall GraphicsStructures::Object::ReleaseDependents(void* this),plain ret at 0x0054DD77
+0x0054E0C0,signature,"void __thiscall GraphicsStructures::Object::UnbindEmittersFromPhysics(void* this, void* effectInterface)","ret 4 at 0x0054E172; this is Object+8, the argument another Object's +8 interface (less 8 at 0x0054E0CA)"
+0x0054E180,signature,"void __thiscall GraphicsStructures::Object::TakeOverFrom(void* this, void* sourceObject, bool takePhysics, bool copyMaterials)",ret 0xC at 0x0054E76D; this is the Object base; cmp byte [ebp+0xc] at 0x0054E1D8 and [ebp+0x10] at 0x0054E5F8
+0x0054E770,signature,"void* __thiscall EC::ModelPlacementOverrides::ModelPlacementOverrides(void* this, float x, float y, float z, float w)",ret 0x10 at 0x0054E7DD; the 16 bytes are a Vector4 passed by value (0x0054E7C6 copies it from the stack)
+0x0054E7E0,signature,"void* __thiscall Animation::ModelAnimationTree::Entry::Entry(void* this, bool flag, float time)","ret 8 at 0x0054E87D; flag at [esp+0x24], time at [esp+0x28]; returns this"
+0x0054E880,signature,"bool __thiscall GraphicsStructures::Object::AttachToPhysicsScene(void* this, void* physicsScene)",ret 4 at 0x0054EA4C; this is Object+0xC; al set to 1 at 0x0054EA46
+0x0054EA50,signature,"void __thiscall GraphicsStructures::Object::AddCrustNode(void* this, void* crustNode)",ret 4 at 0x0054EAF4; this is the Object base
+0x0054EB00,signature,"void* __thiscall Multithreading::SynchSafePointer::SynchSafePointer_copy(void* this, const void* source)",ret 4 at 0x0054EB10; returns this
+0x0054EB20,signature,"bool __thiscall GraphicsStructures::Object::SetMorph(void* this, void* morphPointer, int unused)",ret 8 at 0x0054EC99; this is Object+8; the second argument is only passed on to the nodes
+0x0054ECA0,signature,bool __thiscall GraphicsStructures::Object::ClearMorph(void* this),plain ret at 0x0054ED14 and 0x0054EE3E; this is Object+8
+0x0054EE40,signature,"bool __thiscall GraphicsStructures::Object::AddMorphTargets(void* this, const void* name, const void* preset)",ret 8 at 0x0054F225; this is Object+8; al set to 1 at 0x0054F210
