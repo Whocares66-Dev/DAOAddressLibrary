@@ -17982,3 +17982,81 @@ address,what,value,why
 0x0053CA20,convention,__cdecl,"plain ret, no ecx"
 0x0053CBC0,signature,void* __thiscall GraphicsStructures::ObjectNode::vfunction1(void* this),plain ret
 0x0053CBD0,signature,void* __thiscall GraphicsStructures::ObjectNode::vfunction8(void* this),plain ret
+0x0053CEC0,signature,"GraphicsStructures::ObjectNodeLightProbe* __thiscall GraphicsStructures::ObjectNodeLightProbe::ObjectNodeLightProbe(void* this, void* owner, void* blueprint)",ret 8; base light constructor then five vtables
+0x0053CF00,signature,"void* __thiscall GraphicsStructures::ObjectNodeLightProbe::`scalar deleting destructor'`adjustor{384}'(void* this, unsigned int flags)",ret 4 of the target 0x0053D110
+0x0053CF10,signature,"void* __thiscall GraphicsStructures::ObjectNodeLightProbe::`scalar deleting destructor'`adjustor{12}'(void* this, unsigned int flags)",ret 4 of the target 0x0053D110
+0x0053CF20,signature,"void* __thiscall GraphicsStructures::ObjectNodeLightProbe::`scalar deleting destructor'`adjustor{4}'(void* this, unsigned int flags)",ret 4 of the target 0x0053D110
+0x0053CF30,signature,"void* __thiscall GraphicsStructures::ObjectNodeLightProbe::`scalar deleting destructor'`adjustor{8}'(void* this, unsigned int flags)",ret 4 of the target 0x0053D110
+0x0053CF40,signature,void __thiscall GraphicsStructures::ObjectNodeLightProbe::~ObjectNodeLightProbe(void* this),plain jmp to a destructor with no stack argument
+0x0053CF70,signature,"GraphicsStructures::ObjectNodeAmbientLight* __thiscall GraphicsStructures::ObjectNodeAmbientLight::ObjectNodeAmbientLight(void* this, void* owner, void* blueprint)",ret 8
+0x0053CFD0,signature,"void* __thiscall GraphicsStructures::ObjectNodeAmbientLight::`scalar deleting destructor'`adjustor{8}'(void* this, unsigned int flags)",ret 4 of the target 0x0053D130
+0x0053CFE0,signature,"void* __thiscall GraphicsStructures::ObjectNodeAmbientLight::`scalar deleting destructor'`adjustor{384}'(void* this, unsigned int flags)",ret 4 of the target 0x0053D130
+0x0053CFF0,signature,"void* __thiscall GraphicsStructures::ObjectNodeAmbientLight::`scalar deleting destructor'`adjustor{12}'(void* this, unsigned int flags)",ret 4 of the target 0x0053D130
+0x0053D000,signature,"void* __thiscall GraphicsStructures::ObjectNodeAmbientLight::`scalar deleting destructor'`adjustor{4}'(void* this, unsigned int flags)",ret 4 of the target 0x0053D130
+0x0053D010,signature,void __thiscall GraphicsStructures::ObjectNodeAmbientLight::~ObjectNodeAmbientLight(void* this),"plain jmp, no stack argument"
+0x0053D040,signature,"void __thiscall GraphicsStructures::ObjectNodeAmbientLight::Score(void* this, void* position, float size, int room, int otherRoom)",ret 0x10; arguments unread
+0x0053D0A0,signature,"void* __thiscall GraphicsStructures::ObjectNodeLight::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x0053D0C0,signature,"void* __thiscall GraphicsStructures::ObjectNodePointLight::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x0053D110,signature,"void* __thiscall GraphicsStructures::ObjectNodeLightProbe::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x0053D130,signature,"void* __thiscall GraphicsStructures::ObjectNodeAmbientLight::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x0053D150,signature,"void __thiscall GraphicsStructures::ObjectNodeLight::SetRoom(void* this, void* room)",ret 4; node slot 15
+0x0053D210,signature,"bool __thiscall GraphicsStructures::ObjectNodeLight::PassesRoomTest(void* this, int roomId)",ret 4; result in al
+0x0053D4E0,signature,"void __thiscall GraphicsStructures::ObjectNodeEmitterGroup::GetMemoryFootprint(void* this, int* bytes, int* extra)",ret 8; this is the node + 0xC interface
+0x0053D520,signature,"void __thiscall GraphicsStructures::ObjectNodeEmitterGroup::Render(void* this, void* context)",ret 4; this is the node + 0x180 interface
+0x0053D5A0,signature,void __thiscall GraphicsStructures::ObjectNodeEmitterGroup::vfunction16(void* this),plain ret; this is the node + 0x180 interface
+0x0053D660,signature,"void __thiscall GraphicsStructures::ObjectNodeEmitterGroup::RenderPasses(void* this, void* a, void* pass, void* c)",ret 0xC; this is the node + 0x180 interface
+0x0053D7F0,signature,"GraphicsStructures::ObjectNodeEmitterGroup* __thiscall GraphicsStructures::ObjectNodeEmitterGroup::ObjectNodeEmitterGroup(void* this, void* owner, void* blueprint)",ret 8; returns this
+0x0053D950,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitterGroup::`scalar deleting destructor'`adjustor{384}'(void* this, unsigned int flags)",ret 4 of the target 0x0053DA90
+0x0053D960,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitterGroup::`scalar deleting destructor'`adjustor{12}'(void* this, unsigned int flags)",ret 4 of the target 0x0053DA90
+0x0053D970,signature,int __thiscall GraphicsStructures::ObjectNodeEmitterGroup::GetKind`adjustor{384}'(void* this),"jmp to Stub::ReturnTwentyTwo, plain ret"
+0x0053D980,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitterGroup::`scalar deleting destructor'`adjustor{4}'(void* this, unsigned int flags)",ret 4 of the target 0x0053DA90
+0x0053D990,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitterGroup::`scalar deleting destructor'`adjustor{8}'(void* this, unsigned int flags)",ret 4 of the target 0x0053DA90
+0x0053D9A0,signature,void* __thiscall Graphics::IRenderableNode::GetOwnerRenderable(void* this),plain ret
+0x0053D9B0,signature,void __thiscall GraphicsStructures::ObjectNodeEmitterGroup::~ObjectNodeEmitterGroup(void* this),"plain ret, SEH"
+0x0053DA60,signature,"void __thiscall GraphicsStructures::ObjectNodeEmitterGroup::AddEmitter(void* this, void* emitterNode)",ret 4
+0x0053DA90,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitterGroup::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x0053DAB0,signature,void* __thiscall GraphicsStructures::EmitterFlipbook::EmitterFlipbook(void* this),"plain ret, returns this in eax"
+0x0053DAD0,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitter::GetExportValue(void* this, unsigned int tag, unsigned char* isObjectLevel)",ret 8
+0x0053DC80,signature,void* __thiscall GraphicsStructures::ObjectNodeEmitter::LockSplatBuffer(void* this),"tail jmp into ParticleVertexPool::Lock, plain ret"
+0x0053DC90,signature,bool __thiscall GraphicsStructures::ObjectNodeEmitter::UnlockSplatBuffer(void* this),"tail jmp into SplatObjectVertexPool::Unlock, plain ret"
+0x0053E340,signature,"int __thiscall GraphicsStructures::EmitterUpdateTask::Run(void* this, void* unused)",ret 4; reads ecx first; returns 3
+0x0053CEC0,convention,__thiscall,ret 8 at 0x0053CEFC; ecx kept in esi
+0x0053CF00,convention,__thiscall,"jump thunk to 0x0053D110, whose ret is 4"
+0x0053CF10,convention,__thiscall,"jump thunk to 0x0053D110, whose ret is 4"
+0x0053CF20,convention,__thiscall,"jump thunk to 0x0053D110, whose ret is 4"
+0x0053CF30,convention,__thiscall,"jump thunk to 0x0053D110, whose ret is 4"
+0x0053CF40,convention,__thiscall,"jmp to 0x0053CC50, no stack argument"
+0x0053CF70,convention,__thiscall,ret 8 at 0x0053CFC6
+0x0053CFD0,convention,__thiscall,"jump thunk to 0x0053D130, whose ret is 4"
+0x0053CFE0,convention,__thiscall,"jump thunk to 0x0053D130, whose ret is 4"
+0x0053CFF0,convention,__thiscall,"jump thunk to 0x0053D130, whose ret is 4"
+0x0053D000,convention,__thiscall,"jump thunk to 0x0053D130, whose ret is 4"
+0x0053D010,convention,__thiscall,jmp to 0x0053CC50
+0x0053D040,convention,__thiscall,ret 0x10 at 0x0053D098; the four arguments are not read
+0x0053D0A0,convention,__thiscall,ret 4 at 0x0053D0BB
+0x0053D0C0,convention,__thiscall,ret 4 at 0x0053D0DB
+0x0053D0E0,convention,__thiscall,ret 4 at 0x0053D101 and 0x0053D107
+0x0053D110,convention,__thiscall,ret 4 at 0x0053D12B
+0x0053D130,convention,__thiscall,ret 4 at 0x0053D14B
+0x0053D150,convention,__thiscall,ret 4 at 0x0053D200; room read at [esp+0x14] after four pushes
+0x0053D210,convention,__thiscall,ret 4 at 0x0053D22D etc.; al is the result
+0x0053D4E0,convention,__thiscall,"ret 8 at 0x0053D519; this is the +0xC interface, ecx passed on unchanged to 0x0055E5B0"
+0x0053D520,convention,__thiscall,ret 4 at 0x0053D594; this is the renderable interface (node+0x180)
+0x0053D5A0,convention,__thiscall,plain ret at 0x0053D65C; this is the renderable interface
+0x0053D660,convention,__thiscall,ret 0xC at 0x0053D78D; this is the renderable interface; the second argument is never read
+0x0053D790,convention,__thiscall,ret 4 at 0x0053D7EC; this is the node (+0x240 is the vector)
+0x0053D7F0,convention,__thiscall,ret 8 at 0x0053D942
+0x0053D950,convention,__thiscall,"jump thunk to 0x0053DA90, whose ret is 4"
+0x0053D960,convention,__thiscall,"jump thunk to 0x0053DA90, whose ret is 4"
+0x0053D980,convention,__thiscall,"jump thunk to 0x0053DA90, whose ret is 4"
+0x0053D990,convention,__thiscall,"jump thunk to 0x0053DA90, whose ret is 4"
+0x0053D970,convention,__thiscall,"jump thunk to 0x008CCE30, plain ret"
+0x0053D9A0,convention,__thiscall,plain ret at 0x0053D9AA
+0x0053D9B0,convention,__thiscall,plain ret at 0x0053DA58
+0x0053DA60,convention,__thiscall,ret 4 at 0x0053DA85
+0x0053DA90,convention,__thiscall,ret 4 at 0x0053DAAB
+0x0053DAB0,convention,__thiscall,plain ret at 0x0053DAC9; eax = ecx
+0x0053DAD0,convention,__thiscall,ret 8 on every path
+0x0053DC80,convention,__thiscall,tail jump to the pool vtable slot 1; the caller at 0x0046E24F pushes nothing
+0x0053DC90,convention,__thiscall,tail jump to the pool vtable slot 2; the caller at 0x0046D4B1 pushes nothing
+0x0053E340,convention,__thiscall,ret 4 at 0x0053E35E; returns 3 in eax
