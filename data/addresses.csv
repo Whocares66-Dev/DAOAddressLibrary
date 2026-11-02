@@ -9825,7 +9825,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 9824,function,SoundEventInstance::GetCategoryName,0x005b6b30,0x0071f3d0,0x005b6b30
 9825,function,SoundManager::GetProjectEventNames,0x005b6b60,0x0071f400,0x005b6b60
 9826,function,SoundManager::SetReverbPresets,0x005b6b80,0x0071f420,0x005b6b80
-9827,function,GdaTables::GetStringByRowId,0x005b6ba0,0x0071f440,0x005b6ba0
+9827,function,CRules::GetStringByRowId,0x005b6ba0,0x0071f440,0x005b6ba0
 9828,function,MusicController::MusicController,0x005b6be0,0x0071f480,0x005b6be0
 9829,function,MusicController::Initialize,0x005b6cb0,0x0071f550,0x005b6cb0
 9830,function,ScriptBackend::ForScript_SetMusicIntensity,0x005b6cd0,0x0071f570,0x005b6cd0
@@ -19485,7 +19485,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 19484,function,Equipment::SaveSchema,0x007982c0,0x006699c0,0x007982c0
 19485,function,"std::_Copy_opt<EquipmentSet*,EquipmentSet*>",0x007982f0,0x006699f0,0x007982f0
 19486,function,"std::_Copy_backward_opt<EquipmentSet*,EquipmentSet*>",0x00798380,0x00669a80,0x00798380
-19487,function,SlotItemLocation::SlotItemLocation,0x00798410,0x00669b10,0x00798410
+19487,function,SlotItemLocation::SlotItemLocation_copy,0x00798410,0x00669b10,0x00798410
 19488,function,SlotItemLocation::`scalar deleting destructor',0x007984a0,0x00669ba0,0x007984a0
 19489,function,"std::_Fill<EquipmentSet*,EquipmentSet>",0x007984c0,0x00669bc0,0x007984c0
 19490,function,EquipmentSet::`scalar deleting destructor',0x00798530,0x00669c30,0x00798530
@@ -32466,15 +32466,15 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 32465,function,SoundOcclusionCache::Invalidate,0x00a2c560,0x0083d4c0,0x00a2c560
 32466,function,SoundOcclusionCache::SoundOcclusionCache,0x00a2c5a0,0x0083d500,0x00a2c5a0
 32467,function,SoundOcclusionCache::Query,0x00a2c700,0x0083d660,0x00a2c700
-32468,function,GdaTables::PurgeUnused,0x00a2cb60,0x0082c660,0x00a2cb60
+32468,function,CRules::PurgeUnused,0x00a2cb60,0x0082c660,0x00a2cb60
 32469,function,CRules::~CRules,0x00a2cb70,0x0082c670,0x00a2cb70
-32470,function,GdaTables::Load,0x00a2cbc0,0x0082c6c0,0x00a2cbc0
-32471,function,GdaTables::GetString,0x00a2cc40,0x0082c740,0x00a2cc40
-32472,function,GdaTables::GetFloat,0x00a2cc80,0x0082c780,0x00a2cc80
-32473,function,GdaTables::GetInt,0x00a2ccc0,0x0082c7c0,0x00a2ccc0
-32474,function,GdaTables::GetBool,0x00a2cd00,0x0082c800,0x00a2cd00
-32475,function,GdaTables::FindRow,0x00a2cd40,0x0082c840,0x00a2cd40
-32476,function,GdaTables::GetGlobalFloat,0x00a2cd70,0x0082c870,0x00a2cd70
+32470,function,CRules::Load,0x00a2cbc0,0x0082c6c0,0x00a2cbc0
+32471,function,CRules::GetString,0x00a2cc40,0x0082c740,0x00a2cc40
+32472,function,CRules::GetFloat,0x00a2cc80,0x0082c780,0x00a2cc80
+32473,function,CRules::GetInt,0x00a2ccc0,0x0082c7c0,0x00a2ccc0
+32474,function,CRules::GetBool,0x00a2cd00,0x0082c800,0x00a2cd00
+32475,function,CRules::FindRow,0x00a2cd40,0x0082c840,0x00a2cd40
+32476,function,CRules::GetGlobalFloat,0x00a2cd70,0x0082c870,0x00a2cd70
 32477,function,PooledList::~PooledList,0x00a2cda0,0x00567d20,0x00a2cda0
 32478,function,CRules::CRules,0x00a2cdc0,0x0082c8a0,0x00a2cdc0
 32479,function,CRules::`scalar deleting destructor',0x00a2ce50,0x0082c930,0x00a2ce50
@@ -97996,7 +97996,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 97995,data,AppearanceCache::typeinfo,0x00c0cb00,0x00c024f0,0x00c0cb00
 97996,data,TwoDimArrayCache::Entry::typeinfo,0x00c0cb20,0x00c02510,0x00c0cb20
 97997,data,AppearanceCache::AppearanceEntry::typeinfo,0x00c0cb48,0x00c02538,0x00c0cb48
-97998,data,,0x00c0cb78,0x00c02568,0x00c0cb78
+97998,data,g_appearanceCache,0x00c0cb78,0x00c02568,0x00c0cb78
 97999,data,,0x00c0cb80,0x00c02570,0x00c0cb80
 98000,data,,0x00c0cb90,0x00c02580,0x00c0cb90
 98001,data,,0x00c0cbb8,0x00c025a8,0x00c0cbb8
@@ -98456,7 +98456,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 98455,data,,0x00c11840,0x00c05be0,0x00c11840
 98456,data,,0x00c11844,0x00c05be4,0x00c11844
 98457,data,,0x00c11848,0x00c05be8,0x00c11848
-98458,data,,0x00c11850,0x00c05bf0,0x00c11850
+98458,data,g_projectileCache,0x00c11850,0x00c05bf0,0x00c11850
 98459,data,,0x00c11858,0x00c05bf8,0x00c11858
 98460,data,,0x00c11868,0x00c05c08,0x00c11868
 98461,data,,0x00c11890,0x00c05c30,0x00c11890
@@ -99737,7 +99737,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 99736,data,g_pVirtualMachine,0x00c1d080,0x00c17080,0x00c1d080
 99737,data,g_VirtualMachine,0x00c1d084,0x00c17084,0x00c1d084
 99738,data,g_tlkTable,0x00c1d08c,0x00c1708c,0x00c1d08c
-99739,data,g_gdaTables,0x00c1d090,0x00c17090,0x00c1d090
+99739,data,g_rules,0x00c1d090,0x00c17090,0x00c1d090
 99740,data,,0x00c1d094,0x00c17094,0x00c1d094
 99741,data,,0x00c1d098,0x00c17098,0x00c1d098
 99742,data,g_eclipseGame,0x00c1d0a0,0x00c170a0,0x00c1d0a0
