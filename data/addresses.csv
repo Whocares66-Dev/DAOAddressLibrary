@@ -10416,10 +10416,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10415,function,,0x005d2520,0x0074b8e0,0x005d2520
 10416,function,"std::vector<?>::resize(n,val)",0x005d26e0,0x00493620,0x005d26e0
 10417,function,std::vector<?>::vector,0x005d27a0,0x00610d50,0x005d27a0
-10418,function,,0x005d2800,0x00715f10,0x005d2800
-10419,function,,0x005d2880,0x00715f90,0x005d2880
+10418,function,CRoom::ApplyDarknessLevel,0x005d2800,0x00715f10,0x005d2800
+10419,function,CRoom::ResetPendingObjects,0x005d2880,0x00715f90,0x005d2880
 10420,function,CRoom::TakeInObjects,0x005d2970,0x00716080,0x005d2970
-10421,function,,0x005d2b20,0x00716230,0x005d2b20
+10421,function,CRoom::DeleteObjectTasks,0x005d2b20,0x00716230,0x005d2b20
 10422,function,CRoom::QueueObjectTasks,0x005d2b80,0x00716290,0x005d2b80
 10423,function,RoomLoadingTask::Execute,0x005d2d30,0x00716440,0x005d2d30
 10424,function,CRoom::DiscardPendingObjects,0x005d2d60,0x00716470,0x005d2d60
@@ -11029,20 +11029,20 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 11028,function,"std::_Uninit_copy<CCModule::TagIndexEntry*,CCModule::TagIndexEntry*>",0x005fe7c0,0x004ec100,0x005fe7c0
 11029,function,CCModule::Update,0x005fe800,0x004ec140,0x005fe800
 11030,function,CCModule::RunEventScript,0x005fe840,0x004ec180,0x005fe840
-11031,function,,0x005fe8a0,0x004ec1e0,0x005fe8a0
+11031,function,CCModule::FindEventListener,0x005fe8a0,0x004ec1e0,0x005fe8a0
 11032,function,,0x005fe900,0x004ec240,0x005fe900
-11033,function,,0x005fe920,0x004919e0,0x005fe920
-11034,function,,0x005fe960,0x004ec260,0x005fe960
+11033,function,"std::_Tree<std::map<?,?>>::_Buynode",0x005fe920,0x004919e0,0x005fe920
+11034,function,"std::_Distance2<std::_Tree_const_iterator<?>,unsigned int>",0x005fe960,0x004ec260,0x005fe960
 11035,function,,0x005fe9a0,0x00499af0,0x005fe9a0
-11036,function,,0x005fe9e0,0x005bd770,0x005fe9e0
-11037,function,,0x005fea20,0x004ec360,0x005fea20
-11038,function,,0x005fea60,0x004ec3a0,0x005fea60
-11039,function,,0x005fea90,0x004ec5b0,0x005fea90
+11036,function,std::_Tree<std::set<unsigned int>>::_Buynode,0x005fe9e0,0x005bd770,0x005fe9e0
+11037,function,Gff4::Block::ReadVector3Checked,0x005fea20,0x004ec360,0x005fea20
+11038,function,"std::fill<CCModule::TagIndexEntry*,CCModule::TagIndexEntry>",0x005fea60,0x004ec3a0,0x005fea60
+11039,function,"std::_Uninit_fill_n<CCModule::TagIndexEntry*,unsigned int,CCModule::TagIndexEntry>",0x005fea90,0x004ec5b0,0x005fea90
 11040,function,,0x005fead0,0x004ec690,0x005fead0
-11041,function,,0x005feb00,0x004ec6c0,0x005feb00
+11041,function,CCModule::RunEventScripts,0x005feb00,0x004ec6c0,0x005feb00
 11042,function,CCModule::WriteToSave,0x005fec00,0x004ec7c0,0x005fec00
-11043,function,,0x005ff010,0x004ecbd0,0x005ff010
-11044,function,,0x005ff100,0x004eccc0,0x005ff100
+11043,function,CCModule::ReadScriptVariablesFromCifs,0x005ff010,0x004ecbd0,0x005ff010
+11044,function,CCModule::ReadRimTreesFromCifs,0x005ff100,0x004eccc0,0x005ff100
 11045,function,CCModule::FindTagIndex,0x005ff370,0x004ecf30,0x005ff370
 11046,function,CCModule::ForScript_GetObjectByTag,0x005ff450,0x004ed010,0x005ff450
 11047,function,CCModule::GetObjectIdByTag,0x005ff580,0x004ed140,0x005ff580
@@ -11051,7 +11051,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 11050,function,"std::copy_backward<CCModule::TagIndexEntry*,CCModule::TagIndexEntry*>",0x005ff820,0x004ed480,0x005ff820
 11051,function,CCModule::EventHandler,0x005ff850,0x004ed5c0,0x005ff850
 11052,function,CCModule::GetWaypointIdByTag,0x005ff890,0x004ed600,0x005ff890
-11053,function,,0x005ff8b0,0x004ed620,0x005ff8b0
+11053,function,CCModule::ReadFromSave,0x005ff8b0,0x004ed620,0x005ff8b0
 11054,function,std::_Tree<?>::equal_range,0x005ffbf0,0x004ed960,0x005ffbf0
 11055,function,"std::uninitialized_fill_n<CCModule::TagIndexEntry*,unsigned int,CCModule::TagIndexEntry>",0x005ffc50,0x004eda00,0x005ffc50
 11056,function,std::_Tree<?>::_Copy_node,0x005ffc90,0x004eda80,0x005ffc90
@@ -13720,8 +13720,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13719,function,,0x00680220,0x00582550,0x00680220
 13720,function,,0x006804e0,0x00582cd0,0x006804e0
 13721,function,,0x006805b0,0x0056c310,0x006805b0
-13722,function,,0x006807b0,0x0056c510,0x006807b0
-13723,function,,0x006807e0,0x00478c30,0x006807e0
+13722,function,Core::VectorReserveIfLarger<unsigned char>,0x006807b0,0x0056c510,0x006807b0
+13723,function,std::vector<unsigned char>::operator=,0x006807e0,0x00478c30,0x006807e0
 13724,function,,0x00680900,0x0056c5d0,0x00680900
 13725,function,,0x00680acb,0x0056c79b,0x00680acb
 13726,function,,0x00680b75,0x0056c845,0x00680b75
@@ -15965,7 +15965,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15964,function,WorldMap::`scalar deleting destructor',0x00701790,0x005f2ce0,0x00701790
 15965,function,WorldMap::`scalar deleting destructor',0x007017a0,0x005f2cf0,0x007017a0
 15966,function,WorldMap::`scalar deleting destructor',0x007017b0,0x005f2d00,0x007017b0
-15967,function,,0x007017c0,0x005f2d10,0x007017c0
+15967,function,WorldMap::GetClassInfo,0x007017c0,0x005f2d10,0x007017c0
 15968,function,"SmartData::Attribute<MapObject*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",0x007017d0,0x005f2d20,0x007017d0
 15969,function,WorldMap::WorldMap_copy,0x00701800,0x005f2d50,0x00701800
 15970,function,WorldMap::Clone,0x00701920,0x005f2e70,0x00701920
@@ -20003,7 +20003,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20002,function,PartyTactics::RegisterHandler_ValidateActionMessage,0x007b0810,0x0068e5a0,0x007b0810
 20003,function,"std::_Copy_backward<ECBase::ECDynArray *,ECBase::ECDynArray *>",0x007b0890,0x008208f0,0x007b0890
 20004,function,PartyTactics::~PartyTactics,0x007b08d0,0x0068e620,0x007b08d0
-20005,function,,0x007b09c0,0x0068e710,0x007b09c0
+20005,function,PartyTactics::GetClassInfo,0x007b09c0,0x0068e710,0x007b09c0
 20006,function,PartyTactics::`scalar deleting destructor',0x007b09d0,0x0068e720,0x007b09d0
 20007,function,PartyTactics::`scalar deleting destructor',0x007b09e0,0x0068e730,0x007b09e0
 20008,function,PartyTactics::`scalar deleting destructor',0x007b09f0,0x0068e740,0x007b09f0
@@ -20468,7 +20468,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20467,function,"SmartData::Attribute<ECBase::ECDynArray<MapLocation*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::CreateMemberIterator",0x007c6cd0,0x006ad9a0,0x007c6cd0
 20468,function,SmartData::PointerArrayMemberIteratorImpl<ECBase::ECDynArray<MapLocation*>>::GetValue,0x007c6d00,0x006ad9d0,0x007c6d00
 20469,function,"SmartData::Attribute<ECBase::ECDynArray<MapLocation*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",0x007c6d40,0x006ada10,0x007c6d40
-20470,function,,0x007c6d60,0x006ada30,0x007c6d60
+20470,function,std::vector<MapTrail>::_Tidy,0x007c6d60,0x006ada30,0x007c6d60
 20471,function,"std::vector<MapTrailPoint,std::allocator<MapTrailPoint>>::operator=",0x007c6d70,0x006ada40,0x007c6d70
 20472,function,MapPathSearch::Initialize,0x007c6f00,0x006adbd0,0x007c6f00
 20473,function,,0x007c7050,0x006add20,0x007c7050
@@ -21080,7 +21080,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21079,function,CCAreaOfEffectObject::RestoreState,0x007e6410,0x006cd860,0x007e6410
 21080,function,CCAreaOfEffectObject::OnPositionChanged,0x007e64a0,0x006cd8f0,0x007e64a0
 21081,function,CCAreaOfEffectObject::AttachToObject,0x007e64d0,0x006cd920,0x007e64d0
-21082,function,,0x007e6630,0x006cda80,0x007e6630
+21082,function,SaveSchema::MakeAOE1Template,0x007e6630,0x006cda80,0x007e6630
 21083,function,CProjectile::PlaySurfaceHitSound,0x007e67f0,0x006cdc40,0x007e67f0
 21084,function,CProjectile::MarkForRemoval,0x007e6850,0x006cdca0,0x007e6850
 21085,function,CProjectile::StopAttachedEffect,0x007e6860,0x006cdcb0,0x007e6860
@@ -21192,7 +21192,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21191,function,Store::SaveToStruct,0x007eb510,0x006d29f0,0x007eb510
 21192,function,Store::GetSellPrice,0x007eb6f0,0x006d2bd0,0x007eb6f0
 21193,function,Store::GetBuyPrice,0x007eb770,0x006d2c50,0x007eb770
-21194,function,,0x007eb7f0,0x006d2cd0,0x007eb7f0
+21194,function,Store::LoadFromStruct,0x007eb7f0,0x006d2cd0,0x007eb7f0
 21195,function,Store::HandleMessage_OpenStoreMessage,0x007eb9d0,0x006d2eb0,0x007eb9d0
 21196,function,Store::RegisterHandler_OpenStoreMessage,0x007ebae0,0x006d2fc0,0x007ebae0
 21197,function,Store::~Store,0x007ebb40,0x006d3020,0x007ebb40
@@ -21210,7 +21210,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21209,function,Store::LoadFromStruct,0x007ec0b0,0x006d3580,0x007ec0b0
 21210,function,Store::SellItem,0x007ec2c0,0x006d3790,0x007ec2c0
 21211,function,Store::Store_copy,0x007ec4f0,0x006d39c0,0x007ec4f0
-21212,function,,0x007ec600,0x006d3ad0,0x007ec600
+21212,function,SaveSchema::MakeSTO1Template,0x007ec600,0x006d3ad0,0x007ec600
 21213,function,Store::HandleMessage_SellItemMessage,0x007ec740,0x006d3c10,0x007ec740
 21214,function,Store::HandleMessage_CloseStoreMessage,0x007ec8b0,0x006d3d80,0x007ec8b0
 21215,function,Store::BuyItem,0x007ecf00,0x006d43d0,0x007ecf00
@@ -32382,7 +32382,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 32381,function,TreeInstanceArray::Clear,0x00a28840,0x00837d40,0x00a28840
 32382,function,IRoomLayout::GetSceneObject,0x00a28880,0x00837d80,0x00a28880
 32383,function,World::ReadScatterObject,0x00a288e0,0x00837de0,0x00a288e0
-32384,function,,0x00a289b0,0x00837eb0,0x00a289b0
+32384,function,TreeInstanceArray::Clear,0x00a289b0,0x00837eb0,0x00a289b0
 32385,function,TreeInstanceArray::Resize,0x00a289c0,0x00837ec0,0x00a289c0
 32386,function,IRoomLayout::GetSceneObjectCount,0x00a28b30,0x00838030,0x00a28b30
 32387,function,"stdext::hash_map<std::wstring,?>::find",0x00a28b50,0x00761220,0x00a28b50
