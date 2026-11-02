@@ -17,6 +17,33 @@ AbilityInstance,0x118,0x28,SmartData::Attribute<ECBase::ECString>,refTemplate,"0
 AbilityInstance,0x140,0x28,SmartData::Attribute<ECBase::ECString>,itemIcon,"0x0075A7DD lea eax,[esi+0x140] registered under the name pushed at 0x0075A7AA, ItemIcon"
 AbilityInstance,0x168,0x10,SmartData::Attribute<int>,pendingActivation,"0x0075A83C lea eax,[esi+0x168] registered under the name pushed at 0x0075A809, PendingActivation; built by 0x00403510 at 0x0075A3E5"
 AbilityInstance,0x178,0x4,void*,cooldownEntry,"0x0075A3F8 mov [esi+0x178],ebp (0) in the ctor; SetCooldownEntry 0x0075A8A0 reads it at 0x0075A8C9 and stores the new record at 0x0075A951; the record's attributes at +0x24 and +0x34 are re-published as CooldownTime and CooldownPercentage (0x0075A975, 0x0075A9E0)"
+AnimBase,0x14,0x4,void*,sceneInstance,"0x00A5CB7A mov [eax+0x14],ecx in AddToScene; cleared at 0x00A5D99C; AddModelToScene 0x00A5C7F3 and HasSceneInstance 0x00A5C832 test it"
+AnimBase,0x18,0x4,AnimModelLods*,modelLods,"0x00A5CB20 mov ecx,[ecx+0x18] then AnimModelLods::HasAnyLodSlot; the current model is [modelLods+4] (0x00A5CB53)"
+AnimBase,0x64,0x10,std::vector<std::wstring>,treeNames,"0x00A5E0CF add esi,0x64 then Core::VectorIndexOf<std::wstring>; GetNodeById 0x00A5E3F0 reads begin/end at +0x68/+0x6C; index 0 is searched first"
+AnimBase,0xF0,0x4,AnimTbi*,transitionMap,"0x00A5CA03 mov ecx,[esi+0xF0] then AnimTbi::Release; 0x00A5F370 cmp [ebx+0xF0],0 in FindBlendCurve"
+AnimBase,0x120,0x1C,std::wstring,currentAnimName,"0x00A5FCF8 lea edi,[esi+0x120] assigned the name in SetCurrentAnimation; its size field +0x134 is tested at 0x00A5FA27 to choose play by name"
+AnimBase,0x13C,0x4,int,currentAnimId,"0x00A5FD05 mov [esi+0x13C],ebp in SetCurrentAnimation; read at 0x00A5F9CD"
+AnimBase,0x140,0x4,int,nextAnimId,"0x00A5FCD4 mov [esi+0x140],ebp when the row loops; read at 0x00A5FC02 for the follow-up curve"
+AnimBase,0x144,0x4,int,previousAnimId,"0x00A5FCED mov [esi+0x144],eax (the old +0x13C)"
+AnimBase,0x148,0x4,float,speed,0x00A5FD67 fstp [esi+0x148] in SetCurrentAnimation; read at 0x00A5FA5B
+AnimBase,0x14C,0x4,float,blend,0x00A5FD73 fstp [esi+0x14C]; read at 0x00A5FA2E
+AnimBase,0x150,0x4,int,ownerLodLevel,"0x00A5D644 mov [ecx+0x150],eax in SetOwnerLodLevel; constructor sets -1 at 0x00A60C7C"
+AnimBase,0x154,0x4,int,currentLodLevel,"0x00A5D697 mov [esi+0x154],ecx (the +0x150 value) in OnModelActivated"
+AnimBase,0x158,0x4,unsigned int,requestedLodMask,"0x00A5CA6E mov [edi+0x158],ebx in SetRequestedLods; IsLodRequested 0x00A5CAB6 reads it"
+AnimBase,0x15C,0x4,unsigned int,unavailableLevels,"0x00A5CAFD mov [esi+0x15C],edi in SetUnavailableLevels"
+AnimBase,0x160,0x4,void*,modelActivatedCallback,"0x00A5D689 mov eax,[esi+0x160]; called as eax(context,level) at 0x00A5D6A7 (cdecl)"
+AnimBase,0x164,0x4,void*,modelActivatedCallbackArg,"0x00A5D69F mov edx,[esi+0x164] pushed to the callback"
+AnimBase,0x1A8,0x1,bool,voiceAtListener,"0x00A5DBD7 cmp byte [esi+0x1A8],0 in PlayVoice (emitter placed at the listener when set); 0x00A5CD85 in SetPosition"
+AnimBase,0x1AC,0x4,SoundEventInstance*,voiceEvent,"0x00A5C9D2 cmp [ecx+0x1AC],eax in HasVoice; PlayVoice stores it at 0x00A5DB6F; StopVoice deletes it 0x00A5D3B3"
+AnimBase,0x1B0,0x4,void*,voiceEmitter,"0x00A5DBC0 mov [esi+0x1B0],eax in PlayVoice (new 0x60-byte SoundEmitter); StopVoice deletes it 0x00A5D3D8"
+AnimBase,0x1B4,0x1C,std::wstring,faceAnimName,"0x00A5DCA7 lea ecx,[esi+0x1B4] assigned in PlayVoice; StopVoice empties it 0x00A5D41F; its size +0x1C8 is tested at 0x00A5D3FC"
+AnimBase,0x1D0,0x1C,std::wstring,previousRootTree,"0x00A5FCE7 lea ecx,[esi+0x1D0] assigned the old +0x1EC in SetCurrentAnimation"
+AnimBase,0x1EC,0x1C,std::wstring,currentRootTree,"0x00A5FCE0 lea ebx,[esi+0x1EC] assigned the root tree name; compared with EqualsNoCase at 0x00A5FA03"
+AnimBaseWield,0x230,0x8,AnimModelLods*[2],weaponLods,"0x00A66ED7 lea edi,[ebx+0x230] loop of 2 in ReleaseWeapons; 0x00A671DA in ForwardModel37"
+AnimBaseWield,0x238,0x8,int[2],weaponAttachIndex,"0x00A66EAF mov [esi+ebx*4+0x22C],-1 in DetachWeapon for weapon slots 3 and 4 (0x238 and 0x23C); reset to -1 on detach"
+AnimModelLods,0x4,0x4,void*,currentModel,"0x00A5CB53 mov ecx,[eax+4] with eax = [AnimBase+0x18]; the model interface (Object+8) that every AnimBase forwarder calls"
+AnimModelLods,0x8,0x4,void*,pendingModel,"0x00A6891C mov ebp,[esi+8] in ActivatePendingModel; moved to +4 at 0x00A689CC-0x00A689D3"
+AnimModelLods,0xB4,0x4,int,ownerLodLevel,"0x00A689DB mov [esi+0xB4],edx in ActivatePendingModel; AnimBase::SetOwnerLodLevel writes it 0x00A5D651"
 Backpack,0x0,0x50,struct,sizeof,0x00740685; sizeof (push 0x50 then the Backpack constructor)
 Backpack,0x0,0x4,void*,vptr,0x0080D278; vptr 0x00B26464
 Backpack,0x48,0x4,void*,dirtyFlaggableVptr,"0x0080D27E, 0x0080D266; vptr of the DirtyFlaggable base at +0x48, 0x00B264DC (base's own 0x00B1FB70 first)"
@@ -520,6 +547,7 @@ Conversation::Participant,0x0,0x14,struct,sizeof,"0x007EF420 mov eax,0x66666667 
 Conversation::Participant,0x4,0x1,uint8_t,bound,"0x007F1EA8 cmp byte ptr [esi+4],0 in the bind (0x007F1E90): the first-bind test; 0x007F1EDD mov [esi+4],al sets it; 0x007F07AC cmp byte ptr [esi+4],1 in ReleaseParticipant works only on a bound record; AddParticipant starts it 0 (0x007F1A0C)"
 Conversation::Participant,0x5,0x1,uint8_t,markedForRemoval,"0x007F077E mov byte ptr [eax+5],1 in MarkParticipantForRemoval (0x007F0770); AddParticipant clears it for a found record (0x007F1A2A)"
 Conversation::Participant,0x10,0x4,int32,lookAtHandle,"0x007F07D3 cmp dword ptr [esi+0x10],ebx; jle in ReleaseParticipant (0x007F07A0): a handle above 0 is released on the creature (lea edi,[eax+0x2e0] then 0x00702E90); AddParticipant starts it -1 (0x007F1A04)"
+EC::Cutscene::Actor,0x528,0x10,std::vector<?>,clipRecords,"0x007D608B lea edi,[ecx+0x528]; 0x44-byte records (imul 0x78787879 at 0x007D60A3); record +0x38 start, +0x3C end, +0x40 action (0x007D611B)"
 EC::ITimer,0x0,0x20,struct,sizeof,0x00A465EC push 0x20 then ctor 0x004CB130 at 0x00A4660C
 ECFileAccess::PNGFileAccess,0x448,0x1,unsigned char,descriptionWritten,"0x00A3966E cmp byte [esi+0x448],bl; set to 1 at 0x00A396ED; cleared at 0x00A3973D in ReadDescriptionChunk"
 EffectList,0x0,0x14,struct,sizeof,0x0068979D push 0x14 ; the allocation before the constructor call at 0x006897D9 (constructor 0x00A64880)
@@ -563,6 +591,8 @@ GameModeRequest,0x0,0x10,struct,sizeof,"0x006411E5 sub esp,0x10 building the def
 GameModeRequest,0x4,0x4,int32,filedInMode,"0x006414BF mov [esp+0x14],eax, the result of GetGameMode (0x00640060, call at 0x006414B3) = the number of the current mode when the request is filed; stored at 0x00641647 mov [edi+4],edx; SwitchMode keeps it at the controller's +0x7C"
 GameModeRequest,0x8,0x4,int32,force,"0x006414C7 mov [esp+0x18],eax from SetGameMode's second argument; TakeRequest tests it at 0x00640D3A (cmp dword [esi+8],0; with 0 and the same mode the request is dropped)"
 GameModeRequest,0xC,0x4,void*,data,"0x006414CB mov [esp+0x1c],ebp from SetGameMode's third argument; an object freed through its vtable slot 0 then its deleting destructor (slot 1, push 1) when the request is dropped (0x00640D4C..0x00640D71)"
+Gff4::Template,0x4,0x4,int,fieldCount,"0x004DC1B3 mov [edi+4],eax after the push_back (count = (end-begin)/12)"
+Gff4::Template,0x10,0x10,std::vector<?>,fields,"0x004DC17D lea esi,[edi+0x10] then std::vector push_back 0x00891840 of the 12-byte {id,type,offset} record built at 0x004DC171"
 Graphics::ISceneInstance,0x0,0x100,struct,sizeof,0x0053A4C1 push 0x100
 Graphics::ISceneInstance,0x0,0x4,void*,vftable,"0x0053A013 mov [esi],0xAF7838"
 Graphics::ISceneInstance,0x10,0x1,unsigned char,drawEnabled,"0x0053A019 mov byte [esi+0x10],1; read by ShouldDraw 0x00537F40"
@@ -845,6 +875,8 @@ ItemPossessor,0x440,0x4,void*,vptr,"0x006B9F60 mov dword ptr [edi],0xB10334 (edi
 LeanController,0x0,0x30,struct,sizeof,0x00A6B32B push 0x30 ; the allocation before the constructor call at 0x00A6B347 (constructor 0x00A6DE80)
 LeanController,0x0,0x4,void*,vftable,"0x00A6DE8D mov dword [eax],0xB59BEC"
 LeanController,0x10,0x10,Vector4,direction,"0x00A6DEAB movaps [eax+0x10],xmm0 zero in the constructor ; Update (0x00A6DEE0) tests +0x10..+0x18 against zero at 0x00A6DEEE..0x00A6DF03 and stores the first input to it at 0x00A6DF13"
+LeanController,0x20,0x4,float,lean,0x00A6DDC2 fcom [ecx+0x20] in Decay; stored back at 0x00A6DE45 / 0x00A6DE6B
+LeanController,0x24,0x4,float,decayStep,"0x00A6DDF2 fstp [ecx+0x24] (dt/1000 on the first call) and 0x00A6DE23 (min(step*1.5, dt*0.05))"
 LeanController,0x28,0x4,int,hasDirection,"0x00A6DF17 mov dword [esi+0x28],1 when Update stores the first direction ; Reset (0x00A6E200) zeroes it at 0x00A6E224"
 ListItemLocation,0x0,0x4,void*,vptr,0x007CAB1F; vptr 0x00B2308C (Backpack overwrites it with 0x00B26464)
 ListItemLocation,0x8,0x10,ECBase::ECDynArray<ObjectId>,itemIds,"0x007CAB25, 0x007CAABE; the item ids in the location (begin +0xC, end +0x10 of the object)"
@@ -865,11 +897,24 @@ MovementAnimController,0x0,0x180,struct,sizeof,0x00A63A1A push 0x180 ; the alloc
 MovementAnimController,0x0,0x4,void*,vftable,"0x00A69EEA mov dword [esi],0xB59AC0"
 MovementAnimController,0x10,0x4,void*,animBase,"0x00A69EF6 mov [esi+0x10],eax (constructor argument) ; 0x00A6AC22 mov eax,[esi+0x10] then cmp dword [eax+0x13C],0 in EnterIdle"
 MovementAnimController,0x14,0x4,LeanController*,lean,"0x00A6AC16 mov ecx,[esi+0x14] ; EnterIdle calls LeanController::Reset (0x00A6E200) on it ; the constructor zeroes it at 0x00A69EFB"
+MovementAnimController,0x40,0x4,uint32_t,moveFlags,"0x00A6BF1D mov [esi+0x40],eax from ComputeMoveFlags (0x00A6A0B0); bit 0 forward 0x00A6A7F3, bit 1 backward 0x00A6A7E5, bits 2-3 turn 0x00A69BDC, bits 4 and 5 strafe 0x00A6BA07 and 0x00A6BA4E, mask 0x33 at 0x00A6BF29"
 MovementAnimController,0x50,0x4,float,blend,0x00A69F43 fstp [esi+0x50] with -1.0 (0xAE2E00) in the constructor
 MovementAnimController,0x54,0x4,int,mode,"0x00A6BC47 mov [ecx+0x54],edx in SetMode (0x00A6BC40) ; Update 0x00A6BF3E cmp [esi+0x54],2"
+MovementAnimController,0x58,0x4,int,motionClass,"0x00A6A7EB mov [edx+0x58],3 / 0x00A6A815 =1 / 0x00A6A81D =2 / 0x00A6A825 =0 in ComputeMotionClass (3 backward, 1 running, 2 walking, 0 none); read 0x00A6A363 in PlayTransition"
+MovementAnimController,0x64,0x4,float,leafStartOffset,0x00A69B21 fadd [esi+0x64] in StartLeafClips; cleared 0x00A69B40
+MovementAnimController,0x68,0x4,float,appliedPlayRate,0x00A69ACA fstp [esi+0x68] (0.0) in StopLeafClips; 0x00A69B46 sets 1.0 in StartLeafClips
+MovementAnimController,0x6C,0x1,bool,combat,"0x00A6BE48 cmp [esi+0x6C],bl in SetCombat; 0x00A69B5F in ComputeRunBlend"
+MovementAnimController,0x6D,0x1,bool,leafClipsRunning,"0x00A69AA3 cmp byte [esi+0x6D],0 in StopLeafClips (cleared 0x00A69AAD); set 0x00A69AF9 in StartLeafClips"
+MovementAnimController,0x6F,0x1,bool,strafing,"0x00A6BF44 cmp [esi+0x6F],0 picks UpdateStrafeWeights (set) or UpdateMotionWeights; dev/ANIMATION.md '[+0x6F] strafing'"
+MovementAnimController,0x70,0x1,bool,active,"0x00A69CAA mov byte [ecx+0x70],1 in SetState when the state is not 0; cleared 0x00A69E1F in DeactivateWhenFaded"
+MovementAnimController,0xDC,0x4,int,previousState,"0x00A69C96 mov [ecx+0xDC],eax (the old +0x13C) in SetState"
 MovementAnimController,0x130,0x4,float,remainingDistance,0x00A6B23E fld [eax+0x50] ; 0x00A6B244 fstp [ecx+0x130] ; the caller stores the controller's +0xE8 at input +0x50 (0x00A63584)
 MovementAnimController,0x134,0x4,float,speed,0x00A6B229 fld [eax+0x54] ; fstp [ecx+0x134] ; the caller stores the controller's +0xE0 times +0xD8 at input +0x54 (0x00A63536..0x00A63554)
 MovementAnimController,0x138,0x4,float,targetSpeed,0x00A6B232 fld [eax+0x58] ; fstp [ecx+0x138] ; the caller stores the controller's +0xE4 at input +0x58 (0x00A63564..0x00A6356F)
+MovementAnimController,0x13C,0x4,int,state,"0x00A69CA2 mov [ecx+0x13C],eax in SetState (the MovementController's state 0 to 4)"
+MovementAnimController,0x140,0x1C,std::wstring,movementTreeName,"0x00A69F0B lea edi,[esi+0x140] constructed; +0x178 points at it initially (0x00A6A063); SetCombat tests its size at 0x00A6BE51"
+MovementAnimController,0x15C,0x1C,std::wstring,combatTreeName,"0x00A6A04D lea ecx,[esi+0x15C] constructed in the constructor; SetCombat 0x00A6BE8C / 0x00A6BEA1"
+MovementAnimController,0x178,0x4,std::wstring*,currentTreeName,"0x00A6A063 mov [esi+0x178],edi in the constructor; SetCombat 0x00A6BEB3 repoints it; ZeroTreeWeights 0x00A69CFB reads it"
 MovementController,0x0,0x100,struct,sizeof,0x006BA51C call 0x00A632D0 (MovementController::MovementController) with ecx = creature+0xA30; the object is a member of CCCreature with no allocation of its own (nothing else calls the constructor); the constructor writes up to +0xF9 (0x00A633EB) and the next creature member is at 0xB30
 MovementController,0x0,0x4,void*,vptr,"0x00A63303 mov dword ptr [esi],0xB596C0"
 MovementController,0x10,0x4,MovementPath*,path,"0x00A63309 mov [esi+0x10],ebx (zero), then the path made at 0x00A63406 stored at 0x00A63416; CCCreature::Movement 0x006A2570 returns [creature+0xA40]"
