@@ -14514,3 +14514,40 @@ address,what,value,why
 0x0086B530,signature,float __thiscall D3DDriver_D3DGraphicsDriver_GetAspectCorrection(void* this),fld [ecx+0x7368]; ret; vftable slot 97 (0x00B2E2F8)
 0x0086A500,signature,void __thiscall D3DDriver_D3DGraphicsDriver_UpdateAspectCorrection(void* this),"mov esi,ecx at 0x0086A521 before ecx is written; plain ret"
 0x0096BDE0,clear,Graphics::ICamera::vfunction8,"shared fld1/ret body, also ThreadedGraphicsDriver slot 97 (0x00B584D0); the ICamera name misleads"
+0x005D4810,signature,void __thiscall f(void* this),"ecx = app, reads [ecx+0x14C]; plain ret 0x005D483A"
+0x005D4AC0,signature,void* __cdecl f(void),ecx not read; plain ret 0x005D4B11
+0x005D5000,signature,void* __thiscall f(void* this),reads [ecx+0x114]; plain ret 0x005D5014
+0x005D5080,signature,"int __thiscall f(void* this, int a1)",esi = ecx; ret 4 at 0x005D528A
+0x005D5540,signature,"void __thiscall f(void* this, bool paused)",edi = ecx; flag byte at [esp+8]; ret 4
+0x005D5E90,signature,"void __thiscall f(void* this, int mode, int force, void* data)","loads ecx from [ecx+0x114] and jumps to SetGameMode, which takes the three"
+0x005D5EA0,signature,void* __thiscall f(void* this),reads [ecx+0x114]; plain ret 0x005D5EB6
+0x005D5FD0,signature,void __cdecl f(void),"reads the global 0x00C327EC, ecx is only a scratch push; plain ret 0x005D6053"
+0x005D6400,signature,"void* __stdcall f(void* array, unsigned int index)","ret 8 at 0x005D647D, ecx not read; index at [esp+0x18] goes to IntToString"
+0x005D6480,convention,__cdecl,"plain ret, arguments on the stack"
+0x005D7080,signature,"void* __thiscall f(void* this, void* iterator)",ecx = list read at 0x005D7080; ret 4 at 0x005D70C6
+0x005D70D0,convention,__cdecl,ebp frame; plain ret 0x005D717D
+0x005D7840,signature,"void* __stdcall f(void* a1, unsigned int s0, unsigned int s1, unsigned int s2, unsigned int s3, unsigned int s4, unsigned int s5, unsigned int s6)",ret 0x20; ecx written before any read (0x005D7890); static
+0x005D8090,convention,__cdecl,"plain ret 0x005D80FB; first,last at [esp+0x1c],[esp+0x20]"
+0x005D8100,convention,__cdecl,ebp frame; plain ret
+0x005D8360,signature,"void* __stdcall f(void* first, unsigned int count, void* value)","ret 0xC at 0x005D8399; ecx loaded as a value, not this"
+0x005D8610,signature,"void* __stdcall f(void* first, void* last, void* dest)",ret 0xC at 0x005D8636
+0x005D8640,signature,void __thiscall f(void* this),esi = ecx; plain ret 0x005D867E; the first push of ecx is a scratch word
+0x005D8A20,signature,"void __thiscall f(void* this, unsigned int newsize, unsigned int v0, unsigned int v1, unsigned int v2, unsigned int v3, unsigned int v4, unsigned int v5, unsigned int v6, unsigned int v7, unsigned int v8, unsigned int v9, unsigned int v10, unsigned int v11, unsigned int v12, unsigned int v13)","ret 0x3C = the size plus a 0x38-byte pair by value; esi = ecx (by-value words counted against the ret, keeper)"
+0x005D8B50,signature,"void* __thiscall f(void* this, void* source)",esi = ecx; ret 4 at 0x005D8BA3
+0x005D8BB0,signature,"void* __thiscall f(void* this, void* source)",ret 4; assigns this from [esp+4]
+0x005D8E10,convention,__cdecl,plain ret 0x005D8E40
+0x005D8E50,signature,void __thiscall f(void* this),"esi = ecx, lea [esi+0x2DC]; plain ret 0x005D8E78"
+0x005D8F00,signature,"void* __thiscall f(void* this, unsigned int count)",esi = ecx; ret 4 at 0x005D8F5A
+0x005D8F60,signature,"void* __thiscall f(void* this, unsigned int count)",esi = ecx; ret 4 at 0x005D8FC9
+0x005D8FD0,signature,"void* __thiscall f(void* this, void* source)",ret 4; copy constructor of AddInRecord
+0x005D92E0,convention,__cdecl,plain ret 0x005D9337; six stack arguments forwarded to 0x005D8E10
+0x005D95C0,signature,"int __thiscall f(void* this, unsigned int s0, unsigned int s1, unsigned int s2, unsigned int s3, unsigned int s4, unsigned int s5, unsigned int s6, unsigned int a8)","ret 0x20 at 0x005DA4FB (a wstring by value plus one dword); ecx = app (0x005DA5FF mov ecx,esi)"
+0x005DA500,signature,"void* __thiscall f(void* this, void* path, unsigned int a2, unsigned int a3)",esi = ecx; ret 0xC; a2/a3 stored at +0x250/+0x254
+0x005DA7B0,signature,"void* __thiscall f(void* this, void* path)",esi = ecx; ret 4 at 0x005DAA1F
+0x005DAE50,signature,"void __cdecl f(void* unused, void* array)",plain ret 0x005DAEA8; arg 2 at [esp+0x28] is the callee's ecx
+0x005DB630,convention,__cdecl,ebp frame; plain ret 0x005DB6DD
+0x005DCA90,signature,"void* __thiscall f(void* this, void* source)",esi = ecx; ret 4
+0x005DCCA0,signature,"void* __thiscall f(void* this, void* source)",esi = ecx; ret 4 at 0x005DCCF3
+0x005DCD00,signature,"void __thiscall f(void* this, void* moduleInfoList)",ret 4; ecx saved at 0x005DCD44
+0x005D8340,signature,"void __stdcall f(void* first, void* last)","ret 8 at 0x005D8358; ecx is pushed as the allocator argument, not this"
+0x005DB600,convention,__cdecl,plain ret 0x005DB62A; three stack arguments

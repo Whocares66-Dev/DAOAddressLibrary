@@ -10465,7 +10465,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10464,function,Resources::BuildModulePath,0x005d4550,0x004bec40,0x005d4550
 10465,function,Resources::BuildPackagePath,0x005d4740,0x004bee30,0x005d4740
 10466,function,CClientExoApp::NewSaveGame,0x005d4770,0x004bee60,0x005d4770
-10467,function,,0x005d4810,0x004bef00,0x005d4810
+10467,function,CClientExoApp::DeleteSaveGame,0x005d4810,0x004bef00,0x005d4810
 10468,function,CVirtualMachineCmdImplementer::GetWaitUntilDelay,0x005d4840,0x004befb0,0x005d4840
 10469,function,CVirtualMachineCmdImplementer::vfunction15,0x005d4850,0x004befc0,0x005d4850
 10470,function,CVirtualMachineCmdImplementer::`scalar deleting destructor',0x005d4860,0x004befd0,0x005d4860
@@ -10478,7 +10478,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10477,function,LoadModuleSkipUnauthorizedMessage::InitType,0x005d4a30,0x004bf140,0x005d4a30
 10478,function,CClientExoApp::StaticClassInfo,0x005d4a50,0x004bf160,0x005d4a50
 10479,function,GameModeData::GameModeData,0x005d4ab0,0x004bf260,0x005d4ab0
-10480,function,,0x005d4ac0,0x004bf410,0x005d4ac0
+10480,function,GUIDialogResultMessage::Create,0x005d4ac0,0x004bf410,0x005d4ac0
 10481,function,LoadModuleSkipUnauthorizedMessage::Create,0x005d4b30,0x004bf480,0x005d4b30
 10482,function,"std::pair<std::wstring,std::wstring>::~pair",0x005d4b90,0x004eb970,0x005d4b90
 10483,function,"std::pair<std::wstring,std::wstring>::pair_copy",0x005d4bf0,0x00535720,0x005d4bf0
@@ -10492,14 +10492,14 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10491,function,CClientExoApp::SetGUISystem,0x005d4f20,0x004bf9d0,0x005d4f20
 10492,function,LoadExternalSaveMessage::GetName,0x005d4f50,0x004bfa00,0x005d4f50
 10493,function,CClientExoApp::GetModule,0x005d4fc0,0x004bfa70,0x005d4fc0
-10494,function,,0x005d5000,0x004bfab0,0x005d5000
+10494,function,CClientExoApp::GetCamera,0x005d5000,0x004bfab0,0x005d5000
 10495,function,CClientExoApp::GetCameraPosition,0x005d5020,0x004bfad0,0x005d5020
 10496,function,CVirtualMachineCommands::`scalar deleting destructor',0x005d5060,0x004bfb10,0x005d5060
-10497,function,,0x005d5080,0x004bfb30,0x005d5080
+10497,function,CClientExoApp::LoadModuleResources,0x005d5080,0x004bfb30,0x005d5080
 10498,function,CClientExoApp::UnloadModuleResources,0x005d5290,0x004bfd40,0x005d5290
 10499,function,,0x005d5460,0x004bff10,0x005d5460
 10500,function,CClientExoApp::UpdateSound,0x005d54b0,0x004bff60,0x005d54b0
-10501,function,,0x005d5540,0x004bfff0,0x005d5540
+10501,function,CClientExoApp::SetWorldClocksStopped,0x005d5540,0x004bfff0,0x005d5540
 10502,function,,0x005d5600,0x004c00b0,0x005d5600
 10503,function,CClientExoApp::SendShutdownTelemetry,0x005d5640,0x004c00f0,0x005d5640
 10504,function,CClientExoApp::GetParty,0x005d57c0,0x004c0270,0x005d57c0
@@ -10526,10 +10526,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10525,function,,0x005d5cf0,0x004c07a0,0x005d5cf0
 10526,function,,0x005d5dd0,0x004c0880,0x005d5dd0
 10527,function,CClientExoApp::GetGameMode,0x005d5e70,0x004c0920,0x005d5e70
-10528,function,,0x005d5e90,0x004c0940,0x005d5e90
-10529,function,,0x005d5ea0,0x004c0950,0x005d5ea0
+10528,function,CClientExoApp::SetGameMode,0x005d5e90,0x004c0940,0x005d5e90
+10529,function,CClientExoApp::GetLoadingData,0x005d5ea0,0x004c0950,0x005d5ea0
 10530,function,,0x005d5ec0,0x004c0970,0x005d5ec0
-10531,function,,0x005d5fd0,0x004c0a80,0x005d5fd0
+10531,function,CClientExoApp::SendResumeGame,0x005d5fd0,0x004c0a80,0x005d5fd0
 10532,function,CClientExoApp::SendLoadExternalSave,0x005d6060,0x004c0b10,0x005d6060
 10533,function,GUIDialogResultMessage::Clone,0x005d6110,0x004c0c50,0x005d6110
 10534,function,GUIDialogResultMessage::GetName,0x005d6180,0x004c0cc0,0x005d6180
@@ -10541,8 +10541,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10540,function,"SmartData::Attribute<unsigned int,ExplicitObjectIDMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::~Attribute",0x005d6330,0x004c0ea0,0x005d6330
 10541,function,ECBase::ECDynArray<?>::At,0x005d6390,0x004c0f00,0x005d6390
 10542,function,"SmartData::Attribute<unsigned int,ExplicitObjectIDMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",0x005d63e0,0x004c0f50,0x005d63e0
-10543,function,,0x005d6400,0x004c0f80,0x005d6400
-10544,function,,0x005d6480,0x004c1450,0x005d6480
+10543,function,SmartData::ExplicitObjectIDMemberLookup<unsigned int>::GetMemberName,0x005d6400,0x004c0f80,0x005d6400
+10544,function,"std::copy<std::pair<std::wstring,std::wstring>*,std::pair<std::wstring,std::wstring>*>",0x005d6480,0x004c1450,0x005d6480
 10545,function,CTlkTable::CreateGlobal,0x005d64e0,0x004c1510,0x005d64e0
 10546,function,CClientExoApp::UpdateSoundListener,0x005d6610,0x004c1640,0x005d6610
 10547,function,CClientExoApp::SetPaused,0x005d6740,0x004c1770,0x005d6740
@@ -10560,23 +10560,23 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10559,function,"SmartData::Attribute<unsigned int,ExplicitObjectIDMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::FindMember",0x005d7010,0x004c2150,0x005d7010
 10560,function,"SmartData::Attribute<unsigned int,ExplicitObjectIDMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::HasMember",0x005d7040,0x004c2180,0x005d7040
 10561,function,"SmartData::Attribute<unsigned int,ExplicitObjectIDMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::GetMemberName",0x005d7060,0x004c21a0,0x005d7060
-10562,function,,0x005d7080,0x00406480,0x005d7080
-10563,function,,0x005d70d0,0x004ec440,0x005d70d0
-10564,function,,0x005d7149,0x004ec4b9,0x005d7149
+10562,function,std::list<?>::front,0x005d7080,0x00406480,0x005d7080
+10563,function,"std::_Uninit_copy<std::pair<std::wstring,std::wstring>*,std::pair<std::wstring,std::wstring>*>",0x005d70d0,0x004ec440,0x005d70d0
+10564,function,Catch_All@005d7149,0x005d7149,0x004ec4b9,0x005d7149
 10565,function,,0x005d7180,0x004c23a0,0x005d7180
 10566,function,CClientExoApp::FrameUpdate,0x005d7560,0x004c2780,0x005d7560
-10567,function,,0x005d7840,0x004c2a60,0x005d7840
+10567,function,ModuleInfo::LoadFromCif,0x005d7840,0x004c2a60,0x005d7840
 10568,function,CClientExoApp::BeginSave,0x005d7fc0,0x004c31e0,0x005d7fc0
 10569,function,ModuleInfo::`scalar deleting destructor',0x005d8070,0x004c3290,0x005d8070
-10570,function,,0x005d8090,0x004ed410,0x005d8090
-10571,function,,0x005d8100,0x004ec4f0,0x005d8100
-10572,function,,0x005d817e,0x004ec56e,0x005d817e
+10570,function,"std::_Destroy_range<std::pair<std::wstring,std::wstring>*>",0x005d8090,0x004ed410,0x005d8090
+10571,function,"std::_Uninit_fill_n<std::pair<std::wstring,std::wstring>*,unsigned int,std::pair<std::wstring,std::wstring>>",0x005d8100,0x004ec4f0,0x005d8100
+10572,function,Catch_All@005d817e,0x005d817e,0x004ec56e,0x005d817e
 10573,function,CClientExoApp::SetTimeScale,0x005d81c0,0x004c3410,0x005d81c0
 10574,function,CClientExoApp::ReleaseTimeScale,0x005d8240,0x004c34f0,0x005d8240
 10575,function,RIMTreeManager::~RIMTreeManager,0x005d8290,0x004c3540,0x005d8290
 10576,function,RIMTreeManager::`scalar deleting destructor',0x005d8320,0x004c35d0,0x005d8320
-10577,function,,0x005d8340,0x004edb70,0x005d8340
-10578,function,,0x005d8360,0x004ed9c0,0x005d8360
+10577,function,"std::_Destroy_range<std::pair<std::wstring,std::wstring>*>",0x005d8340,0x004edb70,0x005d8340
+10578,function,"std::uninitialized_fill_n<std::pair<std::wstring,std::wstring>*,unsigned int,std::pair<std::wstring,std::wstring>>",0x005d8360,0x004ed9c0,0x005d8360
 10579,function,"SmartData::Attribute<ECBase::ECDynArray<ModuleInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::~Attribute",0x005d83a0,0x004c3650,0x005d83a0
 10580,function,"SmartData::Attribute<ECBase::ECDynArray<ModuleInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",0x005d8410,0x004c36c0,0x005d8410
 10581,function,SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<ModuleInfo*>>::GetMemberName,0x005d8420,0x004c36d0,0x005d8420
@@ -10585,23 +10585,23 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10584,function,SmartData::PointerArrayMemberIteratorImpl<ECBase::ECDynArray<ModuleInfo*>>::GetValue,0x005d84f0,0x004c37a0,0x005d84f0
 10585,function,"SmartData::Attribute<ECBase::ECDynArray<?*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::FindMember",0x005d8530,0x0057f8e0,0x005d8530
 10586,function,"SmartData::Attribute<ECBase::ECDynArray<ModuleInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",0x005d8580,0x004c37e0,0x005d8580
-10587,function,,0x005d85a0,0x004c3860,0x005d85a0
-10588,function,,0x005d8610,0x004edd10,0x005d8610
-10589,function,,0x005d8640,0x004edf20,0x005d8640
+10587,function,"std::vector<std::pair<std::wstring,std::wstring>>::erase",0x005d85a0,0x004c3860,0x005d85a0
+10588,function,"std::uninitialized_copy<std::pair<std::wstring,std::wstring>*,std::pair<std::wstring,std::wstring>*>",0x005d8610,0x004edd10,0x005d8610
+10589,function,"std::vector<std::pair<std::wstring,std::wstring>>::_Tidy",0x005d8640,0x004edf20,0x005d8640
 10590,function,,0x005d8680,0x004c3910,0x005d8680
 10591,function,,0x005d86d0,0x004ee3e0,0x005d86d0
 10592,function,,0x005d88c0,0x004ee5d0,0x005d88c0
 10593,function,,0x005d897c,0x004ee68c,0x005d897c
-10594,function,,0x005d8a20,0x004ef480,0x005d8a20
-10595,function,,0x005d8b50,0x005ef1f0,0x005d8b50
-10596,function,,0x005d8bb0,0x004c40f0,0x005d8bb0
-10597,function,,0x005d8e10,0x004c4350,0x005d8e10
-10598,function,,0x005d8e50,0x004c4390,0x005d8e50
+10594,function,"std::vector<std::pair<std::wstring,std::wstring>>::resize",0x005d8a20,0x004ef480,0x005d8a20
+10595,function,std::vector<?>::vector_copy,0x005d8b50,0x005ef1f0,0x005d8b50
+10596,function,AddInRecord::operator=,0x005d8bb0,0x004c40f0,0x005d8bb0
+10597,function,"std::_Copy_opt<AddInRecord*,AddInRecord*>",0x005d8e10,0x004c4350,0x005d8e10
+10598,function,CClientExoApp::ResetTimeScale,0x005d8e50,0x004c4390,0x005d8e50
 10599,function,"SmartData::Attribute<ECBase::ECDynArray<ModuleInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",0x005d8e80,0x004c43c0,0x005d8e80
-10600,function,,0x005d8f00,0x00610d50,0x005d8f00
-10601,function,,0x005d8f60,0x004eff60,0x005d8f60
-10602,function,,0x005d8fd0,0x004c4440,0x005d8fd0
-10603,function,,0x005d92e0,0x004c47c0,0x005d92e0
+10600,function,std::vector<int>::vector,0x005d8f00,0x00610d50,0x005d8f00
+10601,function,"std::vector<std::pair<std::wstring,std::wstring>>::vector",0x005d8f60,0x004eff60,0x005d8f60
+10602,function,AddInRecord::AddInRecord_copy,0x005d8fd0,0x004c4440,0x005d8fd0
+10603,function,"std::copy<AddInRecord*,AddInRecord*>",0x005d92e0,0x004c47c0,0x005d92e0
 10604,function,CClientExoApp::~CClientExoApp,0x005d9340,0x004c4a00,0x005d9340
 10605,function,CClientExoApp::GetClassInfo,0x005d94e0,0x004c4ba0,0x005d94e0
 10606,function,CKeyboardLCD::`scalar deleting destructor',0x005d94f0,0x004c4bb0,0x005d94f0
@@ -10609,21 +10609,21 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10608,function,CClientExoApp::`scalar deleting destructor',0x005d9520,0x004c4be0,0x005d9520
 10609,function,CClientExoApp::`scalar deleting destructor',0x005d9530,0x004c4bf0,0x005d9530
 10610,function,"SmartData::Attribute<ECBase::ECDynArray<ModuleInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",0x005d9540,0x004c4d10,0x005d9540
-10611,function,,0x005d95c0,0x004c4d90,0x005d95c0
-10612,function,,0x005da500,0x004c5cd0,0x005da500
-10613,function,,0x005da7b0,0x004c5f80,0x005da7b0
+10611,function,CClientExoApp::LoadModule,0x005d95c0,0x004c4d90,0x005d95c0
+10612,function,CClientExoApp::LoadGameFromSlot,0x005da500,0x004c5cd0,0x005da500
+10613,function,CClientExoApp::LoadGameFromFile,0x005da7b0,0x004c5f80,0x005da7b0
 10614,function,CClientExoApp::HandleMessage_GUIDialogResultMessage,0x005daa30,0x004c6200,0x005daa30
 10615,function,CClientExoApp::HandleMessage_LoadModuleSkipUnauthorizedMessage,0x005dad90,0x004c6560,0x005dad90
-10616,function,,0x005dae50,0x00638540,0x005dae50
+10616,function,SmartData::ArrayFromText<?>,0x005dae50,0x00638540,0x005dae50
 10617,function,RIMTreeManager::RIMTreeManager,0x005daeb0,0x004c6620,0x005daeb0
 10618,function,CClientExoApp::CClientExoApp_copy,0x005daf60,0x004c66d0,0x005daf60
 10619,function,CClientExoApp::`scalar deleting destructor',0x005db4a0,0x004c6c10,0x005db4a0
 10620,function,"SmartData::Attribute<ECBase::ECDynArray<ModuleInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::SetFromText",0x005db4c0,0x005e5540,0x005db4c0
 10621,function,CClientExoApp::RegisterHandler_GUIDialogResultMessage,0x005db540,0x004c7220,0x005db540
 10622,function,CClientExoApp::RegisterHandler_LoadModuleSkipUnauthorizedMessage,0x005db5a0,0x004c7280,0x005db5a0
-10623,function,,0x005db600,0x004c72e0,0x005db600
-10624,function,,0x005db630,0x004c7310,0x005db630
-10625,function,,0x005db69f,0x004c737f,0x005db69f
+10623,function,"std::copy<AddInRecord*,AddInRecord*>",0x005db600,0x004c72e0,0x005db600
+10624,function,"std::_Uninit_copy<AddInRecord*,AddInRecord*>",0x005db630,0x004c7310,0x005db630
+10625,function,Catch_All@005db69f,0x005db69f,0x004c737f,0x005db69f
 10626,function,ModuleResourceManager::ModuleResourceManager,0x005db6e0,0x004c73c0,0x005db6e0
 10627,function,ModuleResourceManager::~ModuleResourceManager,0x005db760,0x004c7440,0x005db760
 10628,function,ModuleResourceManager::`scalar deleting destructor',0x005db7d0,0x004c74b0,0x005db7d0
@@ -10639,10 +10639,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10638,function,std::vector<AddInRecord>::~vector,0x005dc4c0,0x004c8ec0,0x005dc4c0
 10639,function,std::vector<AddInRecord>::clear,0x005dc4d0,0x004c8900,0x005dc4d0
 10640,function,CClientExoApp::CClientExoApp,0x005dc510,0x004c8940,0x005dc510
-10641,function,,0x005dca90,0x004c8ed0,0x005dca90
+10641,function,std::vector<AddInRecord>::operator=,0x005dca90,0x004c8ed0,0x005dca90
 10642,function,,0x005dcc20,0x004c9060,0x005dcc20
-10643,function,,0x005dcca0,0x004c90e0,0x005dcca0
-10644,function,,0x005dcd00,0x004c9140,0x005dcd00
+10643,function,std::vector<AddInRecord>::vector_copy,0x005dcca0,0x004c90e0,0x005dcca0
+10644,function,CClientExoApp::RefreshModuleInfoList,0x005dcd00,0x004c9140,0x005dcd00
 10645,function,CClientExoApp::ReturnToStartMenu,0x005dd310,0x004c9750,0x005dd310
 10646,function,,0x005dd5a0,0x004c99e0,0x005dd5a0
 10647,function,CClientOptions::DestroyGlobals,0x005dd600,0x004c9a70,0x005dd600
