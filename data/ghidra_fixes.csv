@@ -17425,3 +17425,25 @@ address,what,value,why
 0x005849A0,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitterSpriteLinked<GraphicsStructures::PhysicsSpriteParticle>::`scalar deleting destructor'`adjustor{8}'(void* this, unsigned int flags)","Return type, convention and stack arguments from the function's ret (see render-58.md)"
 0x005849B0,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitterSpriteLinked<GraphicsStructures::SpriteParticle>::`scalar deleting destructor'`adjustor{384}'(void* this, unsigned int flags)","Return type, convention and stack arguments from the function's ret (see render-58.md)"
 0x00583420,signature,bool __thiscall GraphicsStructures::ObjectNodeEmitterMesh<GraphicsStructures::MeshParticle>::InitializeDrawBatch(void* this),calling convention and stack arguments read from the ret at the function's end
+0x0052AE10,signature,"void __thiscall f(void *this, bool paused)","ret 4, ecx = IGraphicsInternal, byte at +0xCA; 0x52ae10"
+0x0052AE20,signature,void * __thiscall f(void *this),returns [ecx+0xF0]; 0x52ae20
+0x0052AE30,signature,bool __thiscall f(void *this),al = [ecx+0xCB]; 0x52ae30
+0x0052AE40,signature,"void __thiscall f(void *this, bool value)","ret 4, [ecx+0xCB] = arg; 0x52ae40"
+0x0052AE50,signature,bool __thiscall f(void *this),al = [ecx+0x114]; 0x52ae50
+0x0052AE60,signature,void * __thiscall f(void *this),returns [ecx+0x58]; 0x52ae60
+0x0052AE70,signature,bool __thiscall f(void *this),al = [ecx+0xC4]; 0x52ae70
+0x0052AE80,signature,"void __thiscall f(void *this, float dt)","ret 4, fld [esp+4] stored at +0x3C then added to the double at +0x40; 0x52ae80-0x52ae9b"
+0x0052AEA0,signature,"void __thiscall f(void *this, double time)","ret 8, fld qword [esp+4] stored at +0x48; 0x52aea0"
+0x0052AEB0,signature,"void __thiscall f(void *this, void *task)","ret 4, passes &arg to 0x4e9640 on this+0x11C; 0x52aeb0"
+0x0052AED0,signature,"void __thiscall f(void *this, void *task)","ret 4, passes &arg to 0x49d170 on this+0x11C; 0x52aed0"
+0x0052B490,signature,"void __thiscall f(void *this, void *view, int layer, int rect)","ret 0xc, three stack args read at 0x52b4ba, 0x52b54e, 0x52b552; 0x52b490-0x52b5b5"
+0x0052CF60,signature,void __thiscall f(void *this),"plain ret, esi = ecx = SpeedTreeInstance; 0x52cf60"
+0x0052CFD0,signature,"bool __thiscall f(void *this, void *out)","ret 4, al = 1; 0x52cfd0-0x52cfe2"
+0x0052D810,signature,void __cdecl f(void),"no arguments, plain ret, writes globals 0xC31708-0xC31714; 0x52d810-0x52d869"
+0x0052DD20,signature,void __thiscall f(void *this),"plain ret, ecx = SpeedTreeModel passed on to ReleaseGeometry(kind); 0x52dd20"
+0x0052E150,signature,"void * __thiscall f(void *this, void *unused)","ret 4, returns [ecx+0xE8]; 0x52e150"
+0x0052E160,signature,"void __thiscall f(void *this, float *position, float *yaw, float *scale, float *tint, int *drawDistance)","ret 0x14, five out-pointers at [ebp+8..0x18]; 0x52e160-0x52e1c4"
+0x0052E1D0,signature,"void __thiscall f(void *this, const float *tint)","ret 4, reads four floats at [arg]; 0x52e1d0-0x52e25a"
+0x0052E350,signature,"bool __thiscall f(void *this, void *scene)","ret 4, al = 1; 0x52e350"
+0x0052E360,signature,void __thiscall f(void *this),"plain ret, esi = ecx; 0x52e360-0x52e48b"
+0x0052E490,signature,void __thiscall f(void *this),"plain ret, esi = ecx; 0x52e490"
