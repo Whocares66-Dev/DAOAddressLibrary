@@ -18259,3 +18259,47 @@ address,what,value,why
 0x00A55F40,signature,"void __thiscall Matrix44::RotateAxis(Matrix44* this, float angleDegrees, float x, float y, float z)",ret 0x10 at 0x00A56046
 0x00A56050,signature,"Matrix44* __thiscall Matrix44::Multiply3x3(Matrix44* this, Matrix44* out, Matrix44* right)",ret 8 at 0x00A5613B; eax = out
 0x00A55E30,signature,void* __thiscall GraphicsStructures::CSpeedTreeWind::ClothParameters::ClothParameters(void* this),"plain ret at 0x00A55E95, eax=this"
+0x007D6080,signature,"void __thiscall f(void *this, float time)",ret 4
+0x00A52570,signature,"void __thiscall f(void *this, void *goalNode, void *outKeys)","ret 8; this is the AStarSearch, arg1 the popped goal node copy, arg2 the output vector (0x00A53610-0x00A5361C)"
+0x00A52620,signature,"void * __thiscall f(void *this, void *traits, void *alloc)","ret 8 and returns this in eax (0x00A52686 mov eax,esi)"
+0x00A5C980,signature,"bool __thiscall f(void *this, int animId, float time)",ret 8; id 0 or unknown row returns false (0x00A5C991)
+0x00A5CA20,convention,__stdcall,"ret 8, ecx never read (format of an id into a wstring)"
+0x00A5CB50,signature,"bool __thiscall f(void *this, void *name, void *treeName)",ret 8 through the tail jump to the Object's slot 32; HasAnimationById pushes the AnimName and its tree name at 0x00A5D968-0x00A5D96C and nothing cleans after the call
+0x00A5CBA0,convention,__thiscall,"ret, ecx = AnimBase read at once"
+0x00A5CBE0,signature,"bool __thiscall f(void *this, void *direction, bool useElevation)","ret 8 (0x00A5CCA8, 0x00A5CCB2)"
+0x00A5CCC0,signature,"bool __thiscall f(void *this, void *orientation)",ret 4
+0x00A5CD00,signature,"void * __thiscall f(void *this, void *outQuat)","ret 4, returns the out pointer"
+0x00A5CD50,signature,"bool __thiscall f(void *this, void *position)",ret 4
+0x00A5CDF0,signature,"bool __thiscall f(void *this, void *position3)",ret 4
+0x00A5D2B0,convention,__thiscall,"ret, ecx = AnimBase read at once (0x00A5D2B0); jumped to from EC::Cutscene::Actor::ResetModelAnimation"
+0x00A5D360,signature,"bool __thiscall f(void *this, bool deleteEmitter, bool cancelFade)","ret 8; al = result of the face player stop (0x00A5D398 and bl,1)"
+0x00A5D9B0,signature,"void * __thiscall f(void *this, void *outPosition)","ret 4, returns the out pointer"
+0x00A5DA60,signature,"bool __thiscall f(void *this, void *faceAnim, void *faceGroup, void *eventName, bool faceSync, bool keepPrevious, void *reverbPreset)",ret 0x18
+0x00A5DE10,convention,__stdcall,"ret 0x14, ecx reassigned before use (tree node allocation)"
+0x00A5EF30,signature,"bool __thiscall f(void *this, void *name, void *curve, bool fadeIn, void *treeName)",ret 0x10
+0x00A5EFA0,signature,"float __thiscall f(void *this, void *name, void *treeName)","ret 8, st(0) result"
+0x00A5F090,signature,"bool __thiscall f(void *this, void *name, float rate, void *treeName)",ret 0xC
+0x00A5F1E0,signature,"int __thiscall f(void *this, void *name)","ret 4, _ftol2 result in eax"
+0x00A5F2A0,signature,"void __thiscall f(void *this, int animId, float weight, float blend)",ret 0xC
+0x00A5F300,signature,"void __thiscall f(void *this, int animId, void *curve, bool fadeIn)",ret 0xC
+0x00A5F350,signature,"void * __thiscall f(void *this, int idA, int idB, void *treeA, void *treeB)","ret 0x10, returns the curve or 0"
+0x00A5F810,signature,"float __thiscall f(void *this, int animId, void *treeName)",ret 8
+0x00A5F860,signature,"bool __thiscall f(void *this, void *name, void *treeName, float speed, float startOffset, float one, float blend)",ret 0x18
+0x00A5F980,signature,"int __thiscall f(void *this, int animId)",ret 4
+0x00A5F9C0,signature,"void __thiscall f(void *this, float startOffset, bool startRootMotion)",ret 8
+0x00A5FCC0,signature,"void __thiscall f(void *this, int animId, float speed, float blend, float startOffset, void *name, void *treeName, bool startRootMotion)",ret 0x1C
+0x00A60220,signature,"void __thiscall f(void *this, void *name, float speed, float blend, float startOffset, void *treeName, bool startRootMotion)",ret 0x18
+0x00A604A0,signature,"bool __thiscall f(void *this, void *node, void *tintBlock)","ret 8, al = 1 at 0x00A605C4"
+0x00A605E0,signature,"bool __thiscall f(void *this, void *name, float weight, float blend, void *treeName)",ret 0x10
+0x00A60810,signature,"void __thiscall f(void *this, void *treeName, int position)",ret 8
+0x00A61280,signature,"bool __thiscall f(void *this, void *model, float opacity, bool flag)",ret 0xC
+0x00A675D0,signature,"bool __thiscall f(void *this, unsigned char slot, void *heraldryMap)",ret 8
+0x00A676F0,signature,"bool __thiscall f(void *this, bool enabled)",ret 4; slot 21 of AnimBaseWield
+0x00A69AD0,signature,"void __thiscall f(void *this, unsigned int offset)",ret 4
+0x00A69B50,signature,"float __thiscall f(void *this, float speed)",ret 4
+0x00A69BD0,signature,"void __thiscall f(void *this, float lean, float blend)",ret 8
+0x00A69C90,signature,"void __thiscall f(void *this, int state)","ret 4, [esp+4] stored at +0x13C"
+0x00A6A830,signature,"void __thiscall f(void *this, int oldMode, unsigned int offset)",ret 8; SetMode replaces the first argument with the old mode before the jmp (0x00A6BC69-0x00A6BC6D)
+0x00A6B6C0,signature,"void __thiscall f(void *this, int oldMode)",ret 4
+0x00A6BE10,convention,__thiscall,"ret, ecx = MovementAnimController, tail-jumped from MovementController::HardStop"
+0x00A6BE40,signature,"void __thiscall f(void *this, bool combat)","ret 4, bl = [esp+8] byte at 0x00A6BE41"
