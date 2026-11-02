@@ -7736,26 +7736,26 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7735,function,GraphicsStructures::Object::vfunction44,0x00542660,0x00743e80,0x00542660
 7736,function,GraphicsStructures::Object::SetScale,0x00542680,0x00743ea0,0x00542680
 7737,function,GraphicsStructures::Object::FindNodeByName,0x005426a0,0x00743ec0,0x005426a0
-7738,function,,0x005426c0,0x00743ee0,0x005426c0
-7739,function,,0x005426e0,0x00743f00,0x005426e0
+7738,function,GraphicsStructures::Object::FindSimulatableNodeByName,0x005426c0,0x00743ee0,0x005426c0
+7739,function,GraphicsStructures::Object::FindRootNodeByName,0x005426e0,0x00743f00,0x005426e0
 7740,function,GraphicsStructures::Object::EnsureTransformsUpdated,0x00542700,0x00743f20,0x00542700
-7741,function,,0x00542720,0x00743f40,0x00542720
-7742,function,,0x00542770,0x00743f90,0x00542770
-7743,function,,0x005427b0,0x00743fd0,0x005427b0
-7744,function,,0x00542810,0x00744030,0x00542810
-7745,function,,0x00542860,0x00744080,0x00542860
-7746,function,,0x005428b0,0x007440d0,0x005428b0
-7747,function,,0x005428d0,0x007440f0,0x005428d0
-7748,function,,0x005428f0,0x00744110,0x005428f0
-7749,function,,0x00542920,0x00744140,0x00542920
-7750,function,,0x00542950,0x00744170,0x00542950
-7751,function,,0x00542960,0x00744180,0x00542960
-7752,function,,0x00542970,0x00744190,0x00542970
-7753,function,,0x00542980,0x007441a0,0x00542980
-7754,function,,0x005429c0,0x007441e0,0x005429c0
-7755,function,,0x005429e0,0x00744200,0x005429e0
-7756,function,,0x00542a50,0x00744270,0x00542a50
-7757,function,,0x00542a70,0x00744290,0x00542a70
+7741,function,GraphicsStructures::Object::SetPhysicsObject,0x00542720,0x00743f40,0x00542720
+7742,function,GraphicsStructures::Object::DetachPhysicsObject,0x00542770,0x00743f90,0x00542770
+7743,function,GraphicsStructures::Object::AttachToObjectNodeByHandle,0x005427b0,0x00743fd0,0x005427b0
+7744,function,GraphicsStructures::Object::DetachFromObjectNodeByHandle,0x00542810,0x00744030,0x00542810
+7745,function,GraphicsStructures::Object::AttachEmitterTargetToObjectNode,0x00542860,0x00744080,0x00542860
+7746,function,GraphicsStructures::Object::SetKinematic,0x005428b0,0x007440d0,0x005428b0
+7747,function,GraphicsStructures::Object::SetDynamic,0x005428d0,0x007440f0,0x005428d0
+7748,function,GraphicsStructures::Object::AddGroupsMaskBits,0x005428f0,0x00744110,0x005428f0
+7749,function,GraphicsStructures::Object::SetGroupsMask,0x00542920,0x00744140,0x00542920
+7750,function,GraphicsStructures::Object::HasTriggerSubObject,0x00542950,0x00744170,0x00542950
+7751,function,GraphicsStructures::Object::SetForceUpdate,0x00542960,0x00744180,0x00542960
+7752,function,Stub::SetByte_0xBF7B74,0x00542970,0x00744190,0x00542970
+7753,function,GraphicsStructures::Object::MarkDirtyIfShown,0x00542980,0x007441a0,0x00542980
+7754,function,GraphicsStructures::Object::GetSoundMaterial,0x005429c0,0x007441e0,0x005429c0
+7755,function,GraphicsStructures::Object::SetClothSimulationInTree,0x005429e0,0x00744200,0x005429e0
+7756,function,GraphicsStructures::Object::GetRemoteMaterialField,0x00542a50,0x00744270,0x00542a50
+7757,function,GraphicsStructures::Object::TakeModelSwappedFlag,0x00542a70,0x00744290,0x00542a70
 7758,function,GraphicsStructures::Object::SetLightState,0x00542aa0,0x007442c0,0x00542aa0
 7759,function,"std::pair<std::wstring,?>::pair",0x00542ab0,0x007442d0,0x00542ab0
 7760,function,"std::pair<std::wstring,?>::pair",0x00542b10,0x00710d20,0x00542b10
@@ -7764,29 +7764,29 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7763,function,"std::_Fill<?*,?>",0x00542bf0,0x005f3980,0x00542bf0
 7764,function,Graphics::IAnimatable::~IAnimatable,0x00542c30,0x007443d0,0x00542c30
 7765,function,Graphics::IAnimatable::`scalar deleting destructor',0x00542c40,0x007443e0,0x00542c40
-7766,function,,0x00542c60,0x00744420,0x00542c60
-7767,function,,0x00542c70,0x00744430,0x00542c70
+7766,function,Graphics::IRenderable::~IRenderable,0x00542c60,0x00744420,0x00542c60
+7767,function,Graphics::IRenderable::`scalar deleting destructor',0x00542c70,0x00744430,0x00542c70
 7768,function,FacialAnimation::IFaceAnimatable::~IFaceAnimatable,0x00542c90,0x00744450,0x00542c90
 7769,function,FacialAnimation::IFaceAnimatable::`scalar deleting destructor',0x00542ca0,0x00744460,0x00542ca0
-7770,function,,0x00542cc0,0x00744be0,0x00542cc0
-7771,function,,0x00542ce0,0x00744480,0x00542ce0
-7772,function,,0x00542d40,0x007444e0,0x00542d40
-7773,function,,0x00542db0,0x00744560,0x00542db0
-7774,function,,0x00542dd0,0x00744580,0x00542dd0
-7775,function,,0x00542ea0,0x00744650,0x00542ea0
-7776,function,,0x00542ed0,0x00744680,0x00542ed0
-7777,function,,0x00542ef0,0x007446a0,0x00542ef0
-7778,function,,0x00542f20,0x007446d0,0x00542f20
-7779,function,,0x00542f40,0x007446f0,0x00542f40
-7780,function,,0x00542f70,0x00744740,0x00542f70
-7781,function,,0x00542fc0,0x00744790,0x00542fc0
-7782,function,,0x00542fe0,0x007447b0,0x00542fe0
-7783,function,,0x00543010,0x007447e0,0x00543010
-7784,function,,0x00543400,0x00744bd0,0x00543400
-7785,function,,0x00543410,0x00744c00,0x00543410
-7786,function,,0x00543440,0x00744c30,0x00543440
-7787,function,,0x00543470,0x00744c60,0x00543470
-7788,function,,0x00543590,0x00744d80,0x00543590
+7770,function,GraphicsStructures::IObjectNodeFunctor::`scalar deleting destructor',0x00542cc0,0x00744be0,0x00542cc0
+7771,function,GraphicsStructures::Dependency::Dependency,0x00542ce0,0x00744480,0x00542ce0
+7772,function,GraphicsStructures::Dependency::~Dependency,0x00542d40,0x007444e0,0x00542d40
+7773,function,GraphicsStructures::Dependency::`scalar deleting destructor',0x00542db0,0x00744560,0x00542db0
+7774,function,GraphicsStructures::ObjectAttachDependency::ObjectAttachDependency,0x00542dd0,0x00744580,0x00542dd0
+7775,function,GraphicsStructures::ObjectAttachDependency::SetOffsetTranslation,0x00542ea0,0x00744650,0x00542ea0
+7776,function,GraphicsStructures::ObjectAttachDependency::SetOffsetRotation,0x00542ed0,0x00744680,0x00542ed0
+7777,function,GraphicsStructures::ObjectAttachDependency::`scalar deleting destructor',0x00542ef0,0x007446a0,0x00542ef0
+7778,function,GraphicsStructures::NodeAttachDependency::vfunction2,0x00542f20,0x007446d0,0x00542f20
+7779,function,GraphicsStructures::NodeAttachDependency::`scalar deleting destructor',0x00542f40,0x007446f0,0x00542f40
+7780,function,GraphicsStructures::RemoteMaterial::RemoteMaterial,0x00542f70,0x00744740,0x00542f70
+7781,function,GraphicsStructures::Object::GetModelName,0x00542fc0,0x00744790,0x00542fc0
+7782,function,GraphicsStructures::Object::SetRootNodeScale,0x00542fe0,0x007447b0,0x00542fe0
+7783,function,GraphicsStructures::Object::GetWorldBoundingBoxCorners,0x00543010,0x007447e0,0x00543010
+7784,function,GraphicsStructures::IObjectNodeFunctor::~IObjectNodeFunctor,0x00543400,0x00744bd0,0x00543400
+7785,function,GraphicsStructures::Object::ResetHeadBaseNodeToRest,0x00543410,0x00744c00,0x00543410
+7786,function,GraphicsStructures::Object::GetModelNameCopy,0x00543440,0x00744c30,0x00543440
+7787,function,GraphicsStructures::Object::SetPlace,0x00543470,0x00744c60,0x00543470
+7788,function,GraphicsStructures::Object::SetPlaceXYZ,0x00543590,0x00744d80,0x00543590
 7789,function,,0x005435d0,0x00744dc0,0x005435d0
 7790,function,,0x00543660,0x00744e50,0x00543660
 7791,function,,0x00543750,0x00744f40,0x00543750

@@ -18303,3 +18303,43 @@ address,what,value,why
 0x00A6B6C0,signature,"void __thiscall f(void *this, int oldMode)",ret 4
 0x00A6BE10,convention,__thiscall,"ret, ecx = MovementAnimController, tail-jumped from MovementController::HardStop"
 0x00A6BE40,signature,"void __thiscall f(void *this, bool combat)","ret 4, bl = [esp+8] byte at 0x00A6BE41"
+0x005426C0,signature,"void* __thiscall GraphicsStructures::Object::FindSimulatableNodeByName(void* this, const void* name)",ret 4 at 0x005426CE; this is the Object+0xC interface (ecx+0x4c is Object+0x58); tail-jumps to a ret 4 function
+0x005426E0,signature,"void* __thiscall GraphicsStructures::Object::FindRootNodeByName(void* this, const void* name)",ret 4 at 0x005426EE; this is the Object base
+0x00542720,signature,"void __thiscall GraphicsStructures::Object::SetPhysicsObject(void* this, void* physicsObject)",ret 4 at 0x0054276D and the tail jump at 0x00542769 reaches a ret 4
+0x00542770,signature,void* __thiscall GraphicsStructures::Object::DetachPhysicsObject(void* this),plain ret at 0x0054277E and 0x005427AE; returns the old body in eax; this is the Object base
+0x005427B0,signature,"bool __thiscall GraphicsStructures::Object::AttachToObjectNodeByHandle(void* this, unsigned int handle, const void* nodeName)",ret 8 at 0x005427EC and 0x00542805; this is the Object+8 interface
+0x00542810,signature,"bool __thiscall GraphicsStructures::Object::DetachFromObjectNodeByHandle(void* this, unsigned int handle, const void* nodeName)",ret 8 at 0x0054282D and 0x00542850; this is the Object+8 interface
+0x005428B0,signature,void __thiscall GraphicsStructures::Object::SetKinematic(void* this),plain ret at 0x005428C6; tail jump to the physics body's slot; this is the Object+8 interface
+0x005428D0,signature,void __thiscall GraphicsStructures::Object::SetDynamic(void* this),plain ret at 0x005428E6; tail jump; this is the Object+8 interface
+0x005428F0,signature,"void __thiscall GraphicsStructures::Object::AddGroupsMaskBits(void* this, unsigned int bits)",ret 4 at 0x00542911; this is the Object+0xC interface
+0x00542920,signature,"void __thiscall GraphicsStructures::Object::SetGroupsMask(void* this, unsigned int mask)",ret 4 at 0x00542941; this is the Object+0xC interface
+0x00542950,signature,bool __thiscall GraphicsStructures::Object::HasTriggerSubObject(void* this),plain ret at 0x0054295B; this is the Object+8 interface
+0x00542960,signature,"void __thiscall GraphicsStructures::Object::SetForceUpdate(void* this, bool force)",ret 4 at 0x0054296A; this is the Object base
+0x00542970,signature,void __cdecl Stub::SetByte_0xBF7B74(unsigned char value),plain ret at 0x00542979; caller 0x0052775A does pop ecx
+0x00542980,signature,bool __thiscall GraphicsStructures::Object::MarkDirtyIfShown(void* this),plain ret at 0x005429BA and 0x005429BF; this is the Object+0x10 interface
+0x005429C0,signature,"bool __thiscall GraphicsStructures::Object::GetSoundMaterial(void* this, int* outMaterial)",ret 4 at 0x005429CC and 0x005429D7; this is the Object base
+0x005429E0,signature,"void __thiscall GraphicsStructures::Object::SetClothSimulationInTree(void* this, bool enable, void* node)",ret 8 at 0x00542A40; this is saved in ebx and only passed on
+0x00542A50,signature,"void* __thiscall GraphicsStructures::Object::GetRemoteMaterialField(void* this, int channel, bool* unused)",ret 8 at 0x00542A66; this is the Object base
+0x00542A70,signature,bool __thiscall GraphicsStructures::Object::TakeModelSwappedFlag(void* this),plain ret at 0x00542A95; this is the Object base
+0x00542C60,signature,void __thiscall Graphics::IRenderable::~IRenderable(void* this),plain ret at 0x00542C66
+0x00542C70,signature,"void* __thiscall Graphics::IRenderable::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x00542CC0,signature,"void* __thiscall GraphicsStructures::IObjectNodeFunctor::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x00542CE0,signature,void* __thiscall GraphicsStructures::Dependency::Dependency(void* this),plain ret at 0x00542D39; returns this in eax (0x00542D26)
+0x00542D40,signature,void __thiscall GraphicsStructures::Dependency::~Dependency(void* this),plain ret at 0x00542DAB
+0x00542DB0,signature,"void* __thiscall GraphicsStructures::Dependency::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4 (the result is this)
+0x00542DD0,signature,"void* __thiscall GraphicsStructures::ObjectAttachDependency::ObjectAttachDependency(void* this, void* childObject)",ret 4 at 0x00542E93
+0x00542EA0,signature,"void __thiscall GraphicsStructures::ObjectAttachDependency::SetOffsetTranslation(void* this, const void* translation)",ret 4 at 0x00542EC1
+0x00542ED0,signature,"void __thiscall GraphicsStructures::ObjectAttachDependency::SetOffsetRotation(void* this, float x, float y, float z, float w)",ret 0x10 at 0x00542EEC
+0x00542EF0,signature,"void* __thiscall GraphicsStructures::ObjectAttachDependency::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4 at 0x00542F11
+0x00542F20,signature,void __thiscall GraphicsStructures::NodeAttachDependency::vfunction2(void* this),plain ret at 0x00542F30; tail jump to a stub
+0x00542F40,signature,"void* __thiscall GraphicsStructures::NodeAttachDependency::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4 at 0x00542F61
+0x00542F70,signature,"void* __thiscall GraphicsStructures::RemoteMaterial::RemoteMaterial(void* this, void* ownerObject, const void* decalName, const void* tint, float fresnelFalloff, bool invertFresnel, float alpha)",ret 0x18 at 0x00542FB9; returns this
+0x00542FC0,signature,const void* __thiscall GraphicsStructures::Object::GetModelName(void* this),plain ret at 0x00542FD0 and 0x00542FD6; this is the Object+8 interface
+0x00542FE0,signature,"void __thiscall GraphicsStructures::Object::SetRootNodeScale(void* this, const void* scale)",ret 4 at 0x0054300B; the vector must be 16-byte aligned (movaps); this is the Object+8 interface
+0x00543010,signature,"void __thiscall GraphicsStructures::Object::GetWorldBoundingBoxCorners(void* this, void* c0, void* c1, void* c2, void* c3, void* c4, void* c5, void* c6, void* c7)",ret 0x20 at 0x005433F0; this is the Object+4 interface
+0x00543400,signature,void __thiscall GraphicsStructures::IObjectNodeFunctor::~IObjectNodeFunctor(void* this),plain ret at 0x00543406
+0x00543410,signature,void __thiscall GraphicsStructures::Object::ResetHeadBaseNodeToRest(void* this),plain ret at 0x00543431; tail jump to the node reset
+0x00543440,signature,"void* __thiscall GraphicsStructures::Object::GetModelNameCopy(void* this, void* outName)",ret 4 at 0x00543465; this is the Object base
+0x00543470,signature,"void __thiscall GraphicsStructures::Object::SetPlace(void* this, const void* place)",ret 4 at 0x00543581; this is the Object+8 interface
+0x00543590,signature,"void __thiscall GraphicsStructures::Object::SetPlaceXYZ(void* this, const float* xyz)",ret 4 at 0x005435C3; this is the Object+8 interface
+0x00542860,signature,"bool __thiscall GraphicsStructures::Object::AttachEmitterTargetToObjectNode(void* this, void* ownNodeName, int targetObjectId, void* targetNodeName)",ret 0xC at 0x005428AB
