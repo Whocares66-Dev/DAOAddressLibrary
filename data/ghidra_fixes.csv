@@ -16603,3 +16603,43 @@ address,what,value,why
 0x007E9DE0,signature,float __thiscall CCVisualEffect::GetCessationSoundPitch(void* this),"plain ret, x87 return"
 0x00580060,signature,"void * __thiscall f(void *this, void *outIterator, void *whereContainer, void *wherePtr, const void *value)","the checked iterator by value as two words: arg 2 compared with this at 0x0058008C, arg 3 the pointer at 0x00580095; returns outIterator at 0x005800D1; ret 0x10 (lib-agent)"
 0x0058C230,signature,"void * __thiscall f(void *this, const void *other)","copy constructor: this in ecx at 0x0058C253, other at 0x0058C259, returns this at 0x0058C28D; ret 4 (lib-agent)"
+0x005557F0,signature,void * __cdecl f(void),Create: returns the manager from 0x0057B250; no arguments (call at 0x00529C99)
+0x00555800,signature,void __cdecl f(void),Destroy: no arguments (0x00572510)
+0x00555890,signature,void __cdecl f(void *colour),copies 16 bytes from [esp+4] (0x00555894)
+0x00556050,signature,"void __cdecl f(int wireframe, int flagB)","plain ret, caller 0x00545894 add esp,8; bytes stored at 0x0055608A/0x0055608F"
+0x005568C0,signature,"void * __cdecl f(void *centre, float radius, int segments)","caller 0x00573025-0x00573045 add esp,0xC"
+0x00556A40,signature,"void * __cdecl f(void *corner0, void *corner1)","caller 0x005730A3 add esp,8; returns the mesh (0x00556C37); roles of the two corners unread"
+0x00556C50,signature,void __cdecl f(void),no stack reads; plain ret (0x00556D09)
+0x00556D50,signature,"void __cdecl f(void *out, int a, int b, void *vertices, int vertexCount, void *colour, int c)","plain ret, caller 0x00559C3E add esp,0x1C"
+0x00557590,convention,__cdecl,"plain ret, caller add esp,0x20 (0x00558AD8)"
+0x00557B50,signature,void * __cdecl f(void *out),"caller 0x005591AA add esp,4; returns out"
+0x005590E0,signature,"void __cdecl f(void *device, int a, int segments)","caller 0x00529E4D add esp,0xC; reads [ebp+8],[ebp+0xC],[ebp+0x10]"
+0x00559260,signature,"void * __cdecl f(void *corner, void *size, int physics, int ownerId, int flagA, int flagB, float lifetime)","seven stack words, callers add esp,0x1C (0x005458F8, 0x00527EC1); returns the interface (0x005595F5)"
+0x00559620,signature,"void * __cdecl f(int primitiveType, void *points, void *colours, int physics)","wrapper 0x00527ED0 add esp,0x10; type 5 compared at 0x0055975C"
+0x00559BE0,convention,__cdecl,plain ret (0x00559D39)
+0x00559D60,signature,"void __thiscall f(void *this, void *name)",ret 4 of the target 0x004F64C0; this+0x150 read
+0x00559D70,signature,"void __thiscall f(void *this, void *vec4)",ret 4 of 0x004F4760
+0x00559D80,signature,"void __thiscall f(void *this, void *context)",ret 4 (0x00559DC7)
+0x00559DD0,signature,"void __thiscall f(void *this, void *context, int a, int b)",ret 0xC (0x00559E07)
+0x00559E10,signature,"bool __thiscall f(void *this, void *value)","ret 4, al=1 (0x00559E7F-0x00559E91)"
+0x00559EA0,signature,void * __thiscall f(void *this),returns [ecx-0x1C]
+0x00559EB0,signature,"void __thiscall f(void *this, int *a, int *b)","vftable slot, ret 8, ecx unread (0x00559EE9)"
+0x00559EF0,signature,"unsigned char __thiscall f(void *this, void *name, void *value)","ret 8, al 1 or 0"
+0x00559F20,signature,"bool __thiscall f(void *this, int name, void *array)",ret 8 (0x00559F33)
+0x00559F50,signature,"unsigned char __thiscall f(void *this, void *name, float value)","ret 8, address of the argument passed to 0x004F3FE0 (0x00559F5D)"
+0x00559F80,signature,"bool __thiscall f(void *this, int name, void *texture)",ret 8 (0x00559F91)
+0x00559FA0,signature,int __thiscall f(void *this),tail call returns the provider slot 3 result; 0 if none
+0x00559FC0,signature,"void * __thiscall f(void *this, unsigned int type, unsigned char *found)",ret 8; 0x00559FC4 clears *found
+0x0055A020,signature,void __thiscall f(void *this),sets the vtable only
+0x0055A030,signature,"void * __thiscall f(void *this, unsigned int flags)","ret 4 scalar deleting destructor, returns this"
+0x0055A050,signature,"void __thiscall f(void *this, void *materialName)",ret 4 (0x0055A34F)
+0x0055A360,signature,void * __thiscall f(void *this),returns [ecx+0x174]+0x130
+0x0055A370,signature,unsigned char __thiscall f(void *this),al from [chunk+0x1D0]
+0x0055A390,signature,"void __thiscall f(void *this, void *sphere, void *aabb)",tail jump to 0x0057E640 with ret 8
+0x0055A3B0,signature,int __thiscall f(void *this),"no stack arguments, plain ret (0x0055A3FC)"
+0x0055A400,signature,int __thiscall f(void *this),plain ret (0x0055A44C)
+0x0055A450,signature,"void __thiscall f(void *this, void *a, void *b, void *c)",ret 0xC (0x0055A6C3); forwards the three to 0x0055E9D0
+0x0055A6D0,signature,"unsigned char __thiscall f(void *this, void *sphere)","ret 4, al=1 (0x0055A79A)"
+0x0055A7C0,signature,"void * __stdcall f(void *declA, void *declB)","ret 8, ecx not read"
+0x0055A900,signature,"void __thiscall f(void *this, void *visitor)",ret 4 (0x0055A95E)
+0x0055AA50,signature,"void __thiscall f(void *this, unsigned char on)",ret 4 (0x0055AA82)
