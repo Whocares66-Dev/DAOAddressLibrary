@@ -14390,3 +14390,51 @@ address,what,value,why
 0x00509090,signature,"void __thiscall ReadAttributes(void* this, const wchar_t** attributes)",ret 4 (from reading B)
 0x00509230,signature,"void __thiscall ReadAttributes(void* this, const wchar_t** attributes)",ret 4 (from reading B)
 0x005092F0,signature,"void __thiscall ReadAttributes(void* this, const wchar_t** attributes)",ret 4 (from reading B)
+0x005096E0,signature,void __thiscall Graphics::MaterialSemanticTemp::~MaterialSemanticTemp(void* this),"plain ret, reads ecx"
+0x00509760,signature,"void __thiscall Graphics::MaterialSemanticTemp::SetRenderClass(void* this, wchar_t* value)",tail jmp to ECString::Assign (ret 4)
+0x00509770,signature,void* __thiscall Graphics::MaterialInternalParamTemp::MaterialInternalParamTemp(void* this),"returns this in eax, plain ret"
+0x005097F0,signature,void* __thiscall Graphics::MaterialInternalParamTemp::GetParam(void* this),"mov eax,[ecx+0x60]"
+0x00509800,clear,Graphics::MaterialBuilderTemp::MaterialBuilderTemp,"it is MaterialInternalParamTemp's destructor (strings destroyed, base vftable restored), not a constructor"
+0x00509800,signature,void __thiscall Graphics::MaterialInternalParamTemp::~MaterialInternalParamTemp(void* this),plain ret
+0x00509DA0,signature,"void __thiscall Graphics::MaterialInternalParamTemp::SetStage(void* this, void* value)",ret 4; value is a std::wstring*
+0x00509DC0,signature,"void __thiscall Graphics::MaterialInternalParamTemp::SetSamplerName(void* this, void* value)",tail jmp to wstring::operator= (ret 4)
+0x00509DD0,signature,void* __thiscall Graphics::MaterialEffectParamTemp::MaterialEffectParamTemp(void* this),"returns this, plain ret"
+0x00509EA0,clear,Graphics::MaterialBuilderTemp::MaterialBuilderTemp,it is MaterialEffectParamTemp's destructor
+0x00509EA0,signature,void __thiscall Graphics::MaterialEffectParamTemp::~MaterialEffectParamTemp(void* this),plain ret
+0x00509F40,signature,"void* __thiscall Graphics::MaterialEffectParamTemp::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x00509F60,clear,Graphics::MaterialPassTemp::vfunction13,"the body (wstring assign to +0x5C) is MaterialEffectParamTemp::SetEffectID, called directly at 0x0050A9FE for EffectID; MaterialPassTemp's vftable shares it by folding (reader B)"
+0x00509F60,signature,"void __thiscall Graphics::MaterialEffectParamTemp::SetEffectID(void* this, void* value)",tail jmp to wstring::operator= (ret 4)
+0x00509F70,signature,"void __thiscall Graphics::MaterialEffectParamTemp::SetResourceID(void* this, void* value)",tail jmp (ret 4)
+0x00509F80,signature,"void __thiscall Graphics::MaterialEffectParamTemp::SetStage(void* this, void* value)",ret 4
+0x00509FA0,signature,"void __thiscall Graphics::MaterialEffectParamTemp::SetSamplerName(void* this, void* value)",tail jmp (ret 4)
+0x00509FB0,signature,void __thiscall Graphics::MaterialEffectParamTemp::Build(void* this),"plain ret, no stack args"
+0x0050A140,signature,"void __thiscall Graphics::MaterialParamSetTemp::ReadAttributes(void* this, wchar_t** attributes)",ret 4
+0x0050A190,signature,void* __thiscall Graphics::MaterialParamSetRef::MaterialParamSetRef(void* this),"returns this, plain ret"
+0x0050A1F0,clear,Graphics::MaterialBuilderTemp::MaterialBuilderTemp,it is MaterialParamSetRef's destructor
+0x0050A1F0,signature,void __thiscall Graphics::MaterialParamSetRef::~MaterialParamSetRef(void* this),plain ret
+0x0050A250,signature,"void __thiscall Graphics::MaterialParamSetRef::ReadAttributes(void* this, wchar_t** attributes)",ret 4
+0x0050A2A0,signature,void* __thiscall Graphics::MaterialLogicTestTemp::MaterialLogicTestTemp(void* this),"returns this, plain ret"
+0x0050A2C0,signature,"void* __thiscall Graphics::MaterialBuilderTemp::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x0050A2E0,signature,void* __thiscall Graphics::MaterialEffectStageTemp::MaterialEffectStageTemp(void* this),"returns this, plain ret"
+0x0050A340,clear,Graphics::MaterialBuilderTemp::MaterialBuilderTemp,it is MaterialEffectStageTemp's destructor
+0x0050A340,signature,void __thiscall Graphics::MaterialEffectStageTemp::~MaterialEffectStageTemp(void* this),plain ret
+0x0050A3A0,signature,"void* __thiscall Graphics::MaterialEffectStageTemp::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x0050A3C0,signature,void* __thiscall Graphics::MaterialRequiredStreamTemp::MaterialRequiredStreamTemp(void* this),"returns this, plain ret"
+0x0050A420,clear,Graphics::MaterialBuilderTemp::MaterialBuilderTemp,it is MaterialRequiredStreamTemp's destructor
+0x0050A420,signature,void __thiscall Graphics::MaterialRequiredStreamTemp::~MaterialRequiredStreamTemp(void* this),plain ret
+0x0050A480,signature,"void* __thiscall Graphics::MaterialRequiredStreamTemp::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x0050A4A0,signature,"void __thiscall Graphics::MaterialParamTemp::ReadAttributes(void* this, wchar_t** attributes)",ret 4
+0x0050A8C0,signature,"void __thiscall Graphics::MaterialEffectParamTemp::ReadAttributes(void* this, wchar_t** attributes)",ret 4
+0x0050AA90,signature,void* __thiscall Graphics::MaterialParamTemp::MaterialParamTemp(void* this),"returns this, plain ret"
+0x0050AB90,clear,Graphics::MaterialBuilderTemp::MaterialBuilderTemp,it is MaterialParamTemp's destructor
+0x0050AB90,signature,void __thiscall Graphics::MaterialParamTemp::~MaterialParamTemp(void* this),plain ret
+0x0050AC40,signature,void* __thiscall Graphics::MaterialParamTemp::GetParam(void* this),"mov eax,[ecx+0xd4]"
+0x0050AC50,signature,"void* __thiscall Graphics::MaterialParamTemp::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x0050AC70,signature,void* __thiscall Graphics::MaterialUnknownTemp::MaterialUnknownTemp(void* this),"returns this, plain ret"
+0x0050AC90,signature,void* __thiscall Graphics::MaterialSemanticTemp::MaterialSemanticTemp(void* this),"returns this, plain ret"
+0x0050AD10,signature,"void* __thiscall Graphics::MaterialSemanticTemp::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x0050AD30,signature,"void* __thiscall Graphics::MaterialInternalParamTemp::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x0050AD50,signature,"void* __thiscall Graphics::MaterialParamSetRef::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x0050AD70,signature,"void** __thiscall ECBase::ECDynArray<Graphics::MaterialBuilderTemp*>::At(void* this, unsigned int index)",ret 4; this is the vector at builder+0x10
+0x0050ADA0,signature,"void __thiscall Graphics::MaterialLogicTestTemp::SetDetail(void* this, void* value)",ret 4; value is a std::wstring*
+0x00A222A0,clear,EC::WDObject::vfunction7,"shared slot 3 of every MaterialBuilderTemp vftable: returns the type flag at +0x4 (GetType); out of batch, noted for whoever holds it"
