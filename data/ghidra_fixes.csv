@@ -7924,7 +7924,6 @@ address,what,value,why
 0x0072A160,clear,SmartData::TokenStringNotifier::TokenStringNotifier,"it is the GUIStore copy constructor: GUIScene copy 0x0061C9D0 at 0x0072A190, GUIStore vftables at 0x0072A1AA-0x0072A1BE"
 0x0072A160,signature,"GUIStore * __thiscall GUI::GUIStore::GUIStore_copy(GUIStore *this, GUIStore *other)",argument read at 0x0072A18B; ret 4 at 0x0072A247
 0x0072A250,signature,GUIScene * __thiscall GUI::GUIStore::Clone(GUIStore *this),slot 1; returns the new scene (Ghidra's TokenStringNotifier * return follows the wrong label above)
-0x0072B2A0,clear,GUI::GUIScene::OnShow,"a linker-folded jmp to the real GUIScene::OnShow 0x00A55820, which bears the same name; slot 5 of six scene vftables; name it GUI::GUIArmyControl::OnShow (its ID 16950's class), noted shared (reconciled: xrefs 0x00B18B4C, 0x00B19224, 0x00B198DC, 0x00B1A7CC, 0x00B1AA0C, 0x00B1AB3C)"
 0x0072B2A0,signature,void __thiscall GUI::GUIArmyControl::OnShow(GUIScene *this),jmp 0x00A55820; the callee's plain ret
 0x0072B2B0,signature,"void * __thiscall GUI::GUIArmyControl::`scalar deleting destructor'`adjustor{28}'(void *this, uint flags)","sub ecx,0x1C then jmp to the ret 4 function 0x0072B310; Ghidra has vfunction2"
 0x0072B2C0,signature,"void * __thiscall GUI::GUIArmyControl::`scalar deleting destructor'`adjustor{32}'(void *this, uint flags)","sub ecx,0x20; Ghidra has vfunction1"
@@ -15243,47 +15242,47 @@ address,what,value,why
 0x007CCAE0,signature,"void __thiscall f(void* this, bool freeStorage)",read at 0x7ccae0
 0x007CCC00,signature,void* __thiscall f(void* this),read at 0x7ccc00
 0x007CCC10,signature,void __thiscall f(void* this),read at 0x7ccc10
-0x007CCC20,signature,__thiscall f(void* this),args and ret read in the body at 0x007CCC20
-0x007CCD20,signature,__thiscall f(void* this),args and ret read in the body at 0x007CCD20
-0x007E45E0,signature,__thiscall f(void* this),args and ret read in the body at 0x007E45E0
-0x007E4680,signature,"__thiscall f(void* this, unsigned short state, unsigned char index)",args and ret read in the body at 0x007E4680
-0x007E4780,signature,"__thiscall f(void* this, float arg)",args and ret read in the body at 0x007E4780
-0x007E4810,signature,"__thiscall f(void* this, void* point)",args and ret read in the body at 0x007E4810
-0x007E4A30,signature,"__thiscall f(void* this, int entering, unsigned int creatorId, unsigned int objectId, unsigned int abilityId, int immediate)",args and ret read in the body at 0x007E4A30
-0x007E4A50,signature,"__thiscall f(void* this, int eventId, void* a, void* b, void* c, void* d)",args and ret read in the body at 0x007E4A50
-0x007E4AF0,signature,__thiscall f(void* this),args and ret read in the body at 0x007E4AF0
-0x007E4C70,signature,"__thiscall f(void* this, void* saveStruct)",args and ret read in the body at 0x007E4C70
-0x007E5770,signature,__thiscall f(void* this),args and ret read in the body at 0x007E5770
-0x007E58E0,signature,"__thiscall f(void* this, unsigned char flags)",args and ret read in the body at 0x007E58E0
-0x007E58F0,signature,"__thiscall f(void* this, unsigned char flags)",args and ret read in the body at 0x007E58F0
-0x007E5900,signature,"__thiscall f(void* this, unsigned char flags)",args and ret read in the body at 0x007E5900
-0x007E5910,signature,"__thiscall f(void* this, unsigned char flags)",args and ret read in the body at 0x007E5910
-0x007E5920,signature,"__thiscall f(void* this, unsigned char flags)",args and ret read in the body at 0x007E5920
-0x007E5930,signature,"__thiscall f(void* this, unsigned char flags)",args and ret read in the body at 0x007E5930
-0x007E5E60,signature,"__thiscall f(void* this, void* outIds)",args and ret read in the body at 0x007E5E60
-0x007E5F10,signature,"__thiscall f(void* this, unsigned int id)",args and ret read in the body at 0x007E5F10
-0x007E6410,signature,__thiscall f(void* this),args and ret read in the body at 0x007E6410
-0x007E64A0,signature,"__thiscall f(void* this, void* pos, void* arg)",args and ret read in the body at 0x007E64A0
-0x007E67F0,signature,"__thiscall f(void* this, void* hit)",args and ret read in the body at 0x007E67F0
-0x007E6850,signature,__thiscall f(void* this),args and ret read in the body at 0x007E6850
-0x007E6860,signature,__thiscall f(void* this),args and ret read in the body at 0x007E6860
-0x007E6880,signature,"__thiscall f(void* this, void* rotation)",args and ret read in the body at 0x007E6880
-0x007E68B0,signature,__thiscall f(void* this),args and ret read in the body at 0x007E68B0
-0x007E68C0,signature,__thiscall f(void* this),args and ret read in the body at 0x007E68C0
-0x007E69B0,signature,"__thiscall f(void* this, void* area)",args and ret read in the body at 0x007E69B0
-0x007E6A10,signature,__thiscall f(void* this),args and ret read in the body at 0x007E6A10
-0x007E6A80,signature,"__thiscall f(void* this, void* out, void* hitPoint)",args and ret read in the body at 0x007E6A80
-0x007E6B40,signature,__thiscall f(void* this),args and ret read in the body at 0x007E6B40
-0x007E6CB0,signature,"__thiscall f(void* this, float dt)",args and ret read in the body at 0x007E6CB0
-0x007E6D80,signature,"__thiscall f(void* this, void* out)",args and ret read in the body at 0x007E6D80
-0x007E6DA0,signature,__thiscall f(void* this),args and ret read in the body at 0x007E6DA0
-0x007E6EA0,signature,"__thiscall f(void* this, void* out)",args and ret read in the body at 0x007E6EA0
-0x007E6F00,signature,__thiscall f(void* this),args and ret read in the body at 0x007E6F00
-0x007E6F70,signature,__thiscall f(void* this),args and ret read in the body at 0x007E6F70
-0x007E70E0,signature,__thiscall f(void* this),args and ret read in the body at 0x007E70E0
-0x007E7680,signature,__thiscall f(void* this),args and ret read in the body at 0x007E7680
-0x007E76D0,signature,__thiscall f(void* this),args and ret read in the body at 0x007E76D0
-0x007E7F20,signature,"__thiscall f(void* this, void* out)",args and ret read in the body at 0x007E7F20
+0x007CCC20,signature,undefined4 __thiscall f(void* this),args and ret read in the body at 0x007CCC20
+0x007CCD20,signature,undefined4 __thiscall f(void* this),args and ret read in the body at 0x007CCD20
+0x007E45E0,signature,undefined4 __thiscall f(void* this),args and ret read in the body at 0x007E45E0
+0x007E4680,signature,"undefined4 __thiscall f(void* this, unsigned short state, unsigned char index)",args and ret read in the body at 0x007E4680
+0x007E4780,signature,"undefined4 __thiscall f(void* this, float arg)",args and ret read in the body at 0x007E4780
+0x007E4810,signature,"undefined4 __thiscall f(void* this, void* point)",args and ret read in the body at 0x007E4810
+0x007E4A30,signature,"undefined4 __thiscall f(void* this, int entering, unsigned int creatorId, unsigned int objectId, unsigned int abilityId, int immediate)",args and ret read in the body at 0x007E4A30
+0x007E4A50,signature,"undefined4 __thiscall f(void* this, int eventId, void* a, void* b, void* c, void* d)",args and ret read in the body at 0x007E4A50
+0x007E4AF0,signature,undefined4 __thiscall f(void* this),args and ret read in the body at 0x007E4AF0
+0x007E4C70,signature,"undefined4 __thiscall f(void* this, void* saveStruct)",args and ret read in the body at 0x007E4C70
+0x007E5770,signature,undefined4 __thiscall f(void* this),args and ret read in the body at 0x007E5770
+0x007E58E0,signature,"undefined4 __thiscall f(void* this, unsigned char flags)",args and ret read in the body at 0x007E58E0
+0x007E58F0,signature,"undefined4 __thiscall f(void* this, unsigned char flags)",args and ret read in the body at 0x007E58F0
+0x007E5900,signature,"undefined4 __thiscall f(void* this, unsigned char flags)",args and ret read in the body at 0x007E5900
+0x007E5910,signature,"undefined4 __thiscall f(void* this, unsigned char flags)",args and ret read in the body at 0x007E5910
+0x007E5920,signature,"undefined4 __thiscall f(void* this, unsigned char flags)",args and ret read in the body at 0x007E5920
+0x007E5930,signature,"undefined4 __thiscall f(void* this, unsigned char flags)",args and ret read in the body at 0x007E5930
+0x007E5E60,signature,"undefined4 __thiscall f(void* this, void* outIds)",args and ret read in the body at 0x007E5E60
+0x007E5F10,signature,"undefined4 __thiscall f(void* this, unsigned int id)",args and ret read in the body at 0x007E5F10
+0x007E6410,signature,undefined4 __thiscall f(void* this),args and ret read in the body at 0x007E6410
+0x007E64A0,signature,"undefined4 __thiscall f(void* this, void* pos, void* arg)",args and ret read in the body at 0x007E64A0
+0x007E67F0,signature,"undefined4 __thiscall f(void* this, void* hit)",args and ret read in the body at 0x007E67F0
+0x007E6850,signature,undefined4 __thiscall f(void* this),args and ret read in the body at 0x007E6850
+0x007E6860,signature,undefined4 __thiscall f(void* this),args and ret read in the body at 0x007E6860
+0x007E6880,signature,"undefined4 __thiscall f(void* this, void* rotation)",args and ret read in the body at 0x007E6880
+0x007E68B0,signature,undefined4 __thiscall f(void* this),args and ret read in the body at 0x007E68B0
+0x007E68C0,signature,undefined4 __thiscall f(void* this),args and ret read in the body at 0x007E68C0
+0x007E69B0,signature,"undefined4 __thiscall f(void* this, void* area)",args and ret read in the body at 0x007E69B0
+0x007E6A10,signature,undefined4 __thiscall f(void* this),args and ret read in the body at 0x007E6A10
+0x007E6A80,signature,"undefined4 __thiscall f(void* this, void* out, void* hitPoint)",args and ret read in the body at 0x007E6A80
+0x007E6B40,signature,undefined4 __thiscall f(void* this),args and ret read in the body at 0x007E6B40
+0x007E6CB0,signature,"undefined4 __thiscall f(void* this, float dt)",args and ret read in the body at 0x007E6CB0
+0x007E6D80,signature,"undefined4 __thiscall f(void* this, void* out)",args and ret read in the body at 0x007E6D80
+0x007E6DA0,signature,undefined4 __thiscall f(void* this),args and ret read in the body at 0x007E6DA0
+0x007E6EA0,signature,"undefined4 __thiscall f(void* this, void* out)",args and ret read in the body at 0x007E6EA0
+0x007E6F00,signature,undefined4 __thiscall f(void* this),args and ret read in the body at 0x007E6F00
+0x007E6F70,signature,undefined4 __thiscall f(void* this),args and ret read in the body at 0x007E6F70
+0x007E70E0,signature,undefined4 __thiscall f(void* this),args and ret read in the body at 0x007E70E0
+0x007E7680,signature,undefined4 __thiscall f(void* this),args and ret read in the body at 0x007E7680
+0x007E76D0,signature,undefined4 __thiscall f(void* this),args and ret read in the body at 0x007E76D0
+0x007E7F20,signature,"undefined4 __thiscall f(void* this, void* out)",args and ret read in the body at 0x007E7F20
 0x007A1E40,signature,"int __thiscall f(void *this, void *subAction, void *owner)","sub-action handler, type 50, CommandStep: ecx is the handler, args (sub-action, owner), ret 8"
 0x007A1E70,signature,"int __thiscall f(void *this, void *subAction, void *owner)","sub-action handler, type 3: ecx is the handler, args (sub-action, owner), ret 8"
 0x007A1ED0,signature,"int __thiscall f(void *this, void *subAction, void *owner)","sub-action handler, type 22, ret 8: ecx is the handler, args (sub-action, owner), ret 8"
