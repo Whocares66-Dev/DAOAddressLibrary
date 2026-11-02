@@ -18408,3 +18408,46 @@ address,what,value,why
 0x00546650,signature,"void __thiscall GraphicsStructures::Object::SetEnvModelCutAwayOverride(void* this, bool override)","read at 0x005466cc mov [eax+0x1c9],bl"
 0x00544CB0,signature,"void* __thiscall ECBase::ECDynArray<?>::At(void* this, unsigned int index)",ecx is this and ret N matches the stack arguments as the listing shows
 0x00545C20,signature,"void __thiscall GraphicsStructures::Object::vfunction12(void* this, int value)",ecx is this and ret N matches the stack arguments as the listing shows
+0x00546700,signature,"void __thiscall GraphicsStructures::Object::SetVariationTint(void* this, const void* tint)",read at 0x0054673F copy to [edi+0x2cc]
+0x00546890,signature,"void __cdecl std::_Fill<GraphicsStructures::ExportValue *,GraphicsStructures::ExportValue>(void* first, void* last, const void* value)","read at 0x005468A5 add eax,0x30"
+0x00546890,convention,__cdecl,ret and stack arguments as read
+0x00546900,signature,void* __thiscall std::list<?>::_Buynode(void* this),read at 0x00546902 push 0x34
+0x00546970,signature,"void __thiscall GraphicsStructures::Object::SetTintAlpha(void* this, const float* alpha)",read at 0x00546974 fld [eax] (pointer to float)
+0x005469C0,signature,"void* __thiscall GraphicsStructures::Object::FindMaterialInstanceByNodeName(void* this, void* node, const void* nodeName)",read at 0x005469E2 call 0x4C0DE0 operator==
+0x00546A70,signature,int __thiscall GraphicsStructures::Object::CountPlayingAnimationEntries(void* this),read at 0x00546B2C fcomp [ecx+0xc]
+0x00546C50,signature,"bool __thiscall GraphicsStructures::Object::HasAnimationNode(void* this, const void* treeName, const void* nodeName)","read at 0x00546C57 cmp [eax+0x14],0"
+0x00546D10,signature,"void __thiscall GraphicsStructures::Object::RegisterBoneNode(void* this, void* node, int index)",read at 0x00546D3D call [eax+0xec] GetHeadBaseNodeName
+0x00546DE0,signature,"bool __stdcall GraphicsStructures::Object::PlayNodeOnTree(void* tree, const void* nodeName, float a, float b)","read at 0x00546DE0 mov eax,[esp+8]"
+0x00546DE0,convention,__stdcall,ret and stack arguments as read
+0x00546EB0,signature,"bool __thiscall GraphicsStructures::Object::StopAnimationNode(void* this, const void* treeName, const void* nodeName)",read at 0x00546EB6 call [eax+0x14] FindTree
+0x00546F00,signature,"bool __thiscall GraphicsStructures::Object::SetAnimationNodeSpeed(void* this, const void* treeName, const void* nodeName, float speed)",read at 0x00546F2E call [esi+0x38] SetSpeed
+0x00546F40,signature,"bool __thiscall GraphicsStructures::Object::SeekAnimationNode(void* this, const void* treeName, const void* nodeName, float time, int flag)",read at 0x00546F73 call [esi+0x3c] Seek
+0x00546F90,signature,"float __thiscall GraphicsStructures::Object::GetAnimationNodeTime(void* this, const void* treeName, const void* nodeName)",read at 0x00546F93 fldz default
+0x00546FD0,signature,"bool __thiscall GraphicsStructures::Object::StopAnimationNodes(void* this, const void* treeName, const void* nodeNames)","read at 0x00546FF3 mov byte [esp+0x14],1"
+0x00547090,signature,"bool __thiscall GraphicsStructures::Object::SetAnimationNodeWeight(void* this, const void* treeName, const void* nodeName, float weight, float second)",read at 0x005470CA call [esi+0x10] SetWeight
+0x005470E0,signature,"bool __thiscall GraphicsStructures::Object::SetAnimationNodeWeightEased(void* this, const void* treeName, const void* nodeName, float weight, float second)",read at 0x0054711D call [esi+0x14] SetWeightEased
+0x00547130,signature,"bool __thiscall GraphicsStructures::Object::SetAnimationNodeWeightCurve(void* this, const void* treeName, const void* nodeName, unsigned int a, unsigned int b)",read at 0x00547165 call [esi+0x18] SetWeightCurve
+0x00547170,signature,"bool __thiscall GraphicsStructures::Object::SetAnimationNodeNotifyTime(void* this, const void* treeName, const void* nodeName, float time)",read at 0x005471A5 call [edx+0x20] SetNotifyTime
+0x005471C0,signature,"float __thiscall GraphicsStructures::Object::GetAnimationNodeWeight(void* this, const void* treeName, const void* nodeName)",read at 0x005471E6 call [esi+0x1c] GetWeightByName
+0x005472E0,signature,"bool __thiscall GraphicsStructures::Object::IsAnimationNodeAdditive(void* this, const void* treeName, const void* nodeName)",read at 0x00547322 call [edx+0x48] IsAdditive
+0x005473C0,signature,"bool __thiscall GraphicsStructures::Object::IsAnimationNodeOverride(void* this, const void* treeName, const void* nodeName)",read at 0x00547402 call [edx+0x4c] IsOverride
+0x005474A0,signature,"bool __thiscall GraphicsStructures::Object::IsAnimationNodeLooping(void* this, const void* treeName, const void* nodeName)",read at 0x005474E2 call [edx+0x50] IsLooping
+0x00547640,signature,void __thiscall GraphicsStructures::Object::UpdateTreeWeights(void* this),read at 0x0054767F call [edx+0x28] on each element of Object+0x180
+0x005476A0,signature,"void __thiscall GraphicsStructures::Object::UpdateBoundsBoxAndExports(void* this, double unused)",read at 0x005476CF movaps [ecx+0x110]=max-min
+0x00547780,signature,"bool __thiscall GraphicsStructures::Object::UnregisterPhysics(void* this, void* physicsScene)",read at 0x00547796 delete body [eax]
+0x00547880,signature,"void __thiscall GraphicsStructures::Object::ReleaseNodePhysicsActor(void* this, void* actor)",read at 0x00547893 call [eax+0x14] ReleaseActor
+0x00547910,signature,bool __thiscall GraphicsStructures::Object::HasAnimationTrees(void* this),read at 0x0054791E..0x00547938 begin/end test
+0x00547940,signature,"void __thiscall GraphicsStructures::Object::SetPlaceTeleport(void* this, const void* place)","read at 0x00547979 mov [esi+0xe4],1"
+0x00547AE0,signature,"bool __thiscall GraphicsStructures::Object::GetTexturedMeshNames(void* this, wchar_t* out, unsigned int capacity)","read at 0x00547B38 cmp eax,1"
+0x00547D20,signature,"void* __thiscall GraphicsStructures::Object::FindCrustHookNode(void* this, int hookId)","read at 0x00547D20 mov ecx,[ecx+0x26c]"
+0x00547D60,signature,"void* __thiscall GraphicsStructures::Object::FindCrustHookNodeByName(void* this, int hookId, const void* name)",read at 0x00547D72 call 0x562E00
+0x00547E10,signature,"void __thiscall GraphicsStructures::Object::GetSnapToPointPosition(void* this, float* out, unsigned int index)",read at 0x00547E7B call [edx+8] GetWorldTranslation
+0x00547EF0,signature,"void __thiscall GraphicsStructures::Object::GetSnapToPointRotation(void* this, float* out, unsigned int index)",read at 0x00547F53 call [edx+0x14] UpdateAndGetWorldRotation
+0x00547FA0,signature,"void* __thiscall GraphicsStructures::Object::GetUsePointNode(void* this, unsigned int index)","read at 0x00547FA3 mov ecx,[esi+0xcc]"
+0x00548000,signature,"void __thiscall GraphicsStructures::Object::GetMemoryFootprint(void* this, unsigned int* system, unsigned int* other)","read at 0x00548015 add [esi],0x310"
+0x005482C0,signature,void __thiscall GraphicsStructures::Object::ClearEmittersOnNextUpdate(void* this),"read at 0x00548310 mov byte [ecx+0x4dc],1"
+0x00546850,signature,unsigned int __thiscall ECBase::ECDynArray<GraphicsStructures::ExportValue>::GetSize(void* this),plain ret
+0x00546870,signature,unsigned int __thiscall ECBase::ECDynArray<?>::GetSize(void* this),"plain ret, 0x14-byte elements"
+0x005468C0,signature,"void __cdecl std::_Uninit_fill_n<?*,unsigned int,?>(void* dst, unsigned int count, const void* value)",plain ret; callers push three further words
+0x00547C10,signature,"void* __thiscall GraphicsStructures::Object::FindExportValueByTarget(void* this, const void* target)",ret 4; this = Object
+0x005468C0,convention,__cdecl,ret and stack arguments as read
