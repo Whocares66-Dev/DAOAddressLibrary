@@ -42,6 +42,7 @@ What a run does, on the GOG build's addresses:
   function's instruction), so the body goes back to its function;
   `returns` (value empty) marks a function Ghidra took for one that never
   returns as returning.
+- every struct in data/structs.csv: made or replaced under /DAOAddressLibrary.
 
 It talks to the server over MCP's plain HTTP (initialize, then
 `eval_python` with the work as JSON, a few thousand rows a call, then
@@ -64,6 +65,7 @@ import time
 import urllib.request
 from pathlib import Path
 
+import structs
 from msvc_names import split_top
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -75,10 +77,20 @@ CHUNK = 4000
 GHIDRA_SCRIPT = r"""
 import json
 from ghidra.program.model.symbol import SourceType
+from ghidra.program.model.symbol import SymbolType
 from ghidra.program.model.symbol import SymbolUtilities
 from ghidra.app.util.cparser.C import CParserUtils
 from ghidra.app.cmd.function import ApplyFunctionSignatureCmd
 from ghidra.app.cmd.function import CreateFunctionCmd
+from ghidra.program.model.data import (
+    CategoryPath,
+    DataTypeConflictHandler,
+    DoubleDataType,
+    FloatDataType,
+    PointerDataType,
+    StructureDataType,
+    Undefined,
+)
 
 W = json.loads(PAYLOAD)
 TYPE_WORDS = {"void", "int", "bool", "char", "short", "long", "float", "double",
@@ -91,7 +103,7 @@ fm = program.getFunctionManager()
 st = program.getSymbolTable()
 listing = program.getListing()
 SOURCE = SourceType.IMPORTED
-done = {"created": 0, "named": 0, "same": 0, "labels": 0, "fixes": 0}
+done = {"created": 0, "named": 0, "same": 0, "labels": 0, "fixes": 0, "structs": 0}
 faults = []
 spaces = {}
 
@@ -198,9 +210,13 @@ for address, what, value in W["fixes"]:
             if (symbol.getName(), symbol.getParentNamespace()) != kept[:2]:
                 symbol.setNameAndNamespace(kept[0], kept[1], kept[2])
         elif what == "clear":
+            # A function's own symbol is never a label to clear: deleting it
+            # deletes the function, as a thunk's inherited name did 2026-11-01.
             for s in list(st.getSymbols(a)):
                 named = value in (s.getName(), s.getName(True))
-                if (value and named) or (not value and not s.isPrimary()):
+                if s.getSymbolType() != SymbolType.FUNCTION and (
+                    (value and named) or (not value and not s.isPrimary())
+                ):
                     s.delete()
         elif what == "nofunction":
             # A function Ghidra made that is not one, such as a start inside
@@ -220,6 +236,32 @@ for address, what, value in W["fixes"]:
             raise Exception("unknown fix " + what)
     except Exception as e:
         faults.append("fix 0x%08x %s: %s" % (address, what, e))
+
+dtm = program.getDataTypeManager()
+for name, size, fields in W.get("structs", []):
+    try:
+        done["structs"] += 1
+        if dry:
+            continue
+        shape = StructureDataType(
+            CategoryPath("/DAOAddressLibrary"),
+            name.replace("::", ".").replace("<", "(").replace(">", ")").replace(" ", "_"),
+            size,
+            dtm,
+        )
+        for offset, length, kind, field in fields:
+            if kind == "float":
+                word = FloatDataType()
+            elif kind == "double":
+                word = DoubleDataType()
+            elif kind.endswith("*"):
+                word = PointerDataType()
+            else:
+                word = Undefined.getUndefinedDataType(length)
+            shape.replaceAtOffset(offset, word, length, field, None)
+        dtm.addDataType(shape, DataTypeConflictHandler.REPLACE_HANDLER)
+    except Exception as e:
+        faults.append("struct %s: %s" % (name, e))
 
 print("RESULT " + json.dumps({"done": done, "faults": faults[:50], "nfaults": len(faults)}))
 """
@@ -287,6 +329,24 @@ class Server:
             status = self.call("get_task_status", {"task_id": task})
             if "RUNNING" not in status[:400] and "PENDING" not in status[:400]:
                 return status
+
+
+def struct_rows():
+    """data/structs.csv as the script wants it: (name, size, fields), a struct
+    with no sizeof row being as long as its last field."""
+    fields, whole = {}, {}
+    for row in structs.read():
+        offset, size = int(row["offset"], 16), int(row["size"], 16)
+        if row["field"] == structs.SIZEOF:
+            whole[row["struct"]] = size
+        else:
+            fields.setdefault(row["struct"], []).append(
+                (offset, size, row["type"], row["field"])
+            )
+    return [
+        (name, whole.get(name, max(o + s for o, s, _, _ in held)), sorted(held))
+        for name, held in sorted(fields.items())
+    ]
 
 
 def work(limit=None):
@@ -418,6 +478,7 @@ def main(argv):
             "dry": dry,
             "rows": chunk,
             "fixes": fixes if n == len(chunks) - 1 else [],
+            "structs": struct_rows() if n == len(chunks) - 1 else [],
         }
         output = server.run(
             f"PAYLOAD = {json.dumps(json.dumps(payload))}\n" + GHIDRA_SCRIPT
@@ -441,7 +502,8 @@ def main(argv):
     verb = "would change" if dry else "changed"
     print(
         f"{verb}: {totals['created']} functions defined, {totals['named']} renamed, "
-        f"{totals['labels']} labels, {totals['fixes']} fixes; {totals['same']} already right"
+        f"{totals['labels']} labels, {totals['fixes']} fix rows applied, "
+        f"{totals['structs']} structs; {totals['same']} already right"
     )
     for fault in faults[:40]:
         print("  " + fault, file=sys.stderr)
