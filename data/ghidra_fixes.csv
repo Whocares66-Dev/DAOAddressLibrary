@@ -14162,3 +14162,39 @@ address,what,value,why
 0x004F49B0,signature,"void __thiscall MaterialObjectInstance_SetMaterialObject(void* this, void* objectHandle)",ret 4 (0x004F4A5B)
 0x004F4A60,signature,void __thiscall MaterialObjectInstance_ClearParameters(void* this),tail jmp 0x007F93A0 at 0x004F4AB0; no stack args
 0x004F2850,signature,"void __thiscall Tree_Lrotate(void* this, void* node)","ret 4; ecx = tree, root at [[ecx+4]+4] (from reading B)"
+0x004F4C20,signature,"void* __thiscall MaterialPassStateArray_ctor(void* this, unsigned int count)","ret 4, reads ecx"
+0x004F4CC0,signature,"void __thiscall Graphics::MaterialObjectInstance::RemoveTextureParameter(void* this, const void* name)","ret 4; Ghidra's body shows _AfxAygshellState for 0x00506CD0 (a parameter registry singleton, misnamed)"
+0x004F4D20,convention,__thiscall,"ecx is this, no stack args, plain ret; Ghidra shows __fastcall"
+0x004F4D90,signature,"void* __thiscall Graphics::TextureParameterMap::TextureParameterMap(void* this, unsigned int handle_object, unsigned int handle_weak)",ret 8: the default handle is passed by value (8 bytes)
+0x004F4E30,convention,__thiscall,"ecx is this, plain ret"
+0x004F4EC0,signature,"void* __stdcall std::_Tree<std::map<unsigned int,Multithreading::SynchSafePointer>>::_Buynode(void* left, void* parent, void* right, const void* value, unsigned char colour)","ret 0x14 at 0x004F4F4E, ecx never read (both readings)"
+0x004F4F70,signature,"void __thiscall Graphics::MaterialPassStateArray::Resize(void* this, unsigned int count)",ret 4
+0x004F5220,convention,__thiscall,"ecx is this, plain ret"
+0x004F5080,signature,"void* __thiscall Graphics::MaterialObjectInstance::MaterialObjectInstance(void* this, const void* material_object)",ret 4: the argument (a safe pointer to the MaterialObject) is lost in Ghidra's prototype
+0x004F5720,convention,__thiscall,"ecx is the MaterialStateOverride (instance+0xB4), plain ret"
+0x004F6A80,clear,Graphics::MaterialShader::vfunction5,folded getter (+0x24); also MaterialSemantic's technique; rename to the chosen name
+0x004F6AB0,convention,__thiscall,"ecx is this, plain ret"
+0x004F6AD0,signature,"void __thiscall Graphics::MaterialSemantic::NotifyPasses(void* this, void* arg)",ret 4 on the null path; tail-jumps to 0x00507500 with the argument in place
+0x004F6AE0,signature,"void __thiscall Graphics::MaterialSemantic::AddCategories(void* this, unsigned int low, unsigned int high)",ret 8
+0x004F6B00,signature,"void __thiscall Graphics::MaterialSemantic::RemoveCategories(void* this, unsigned int low, unsigned int high)",ret 8
+0x004F6B20,signature,"void* __cdecl std::_Tree<std::map<std::wstring,unsigned int>>::_Max(void* node)","returns the node in eax; plain ret, arg at [esp+4]"
+0x004F6B40,signature,unsigned long long __cdecl Graphics::ParseMaterialCategories(const wchar_t* list),EDX:EAX return
+0x004F6C40,convention,__thiscall,"ecx is this, plain ret"
+0x004F6CD0,signature,bool __thiscall Graphics::MaterialSemantic::Validate(void* this),"plain ret, ecx this"
+0x004F6D10,signature,"void __thiscall Graphics::MaterialSemantic::GetMemoryFootprint(void* this, int* first, int* second)",ret 8; Ghidra's body shows unaff_ESI/unaff_retaddr for the two locals
+0x004F6D60,signature,"void __thiscall Graphics::MaterialSemantic::SetCategories(void* this, const void* list)",ret 4
+0x004F6DA0,signature,int __cdecl Graphics::MaterialSemantic::NameToId(const void* name),returns the id in eax (Ghidra shows void)
+0x004F6E80,signature,"void __thiscall Graphics::MaterialSemantic::SetName(void* this, const void* name)",ret 4
+0x004F6F40,signature,"void* __cdecl std::_Tree<std::map<std::wstring,Multithreading::SynchSafePointer>>::_Min(void** node)",returns the node in eax; plain ret; the argument is a pointer to the starting node (B)
+0x004F6F60,convention,__thiscall,"ecx is the manager, plain ret"
+0x004F7020,signature,"void __thiscall Graphics::MaterialObjectManager::GetMemoryFootprint(void* this, int* first, int* second)",ret 8
+0x004F7140,signature,"void* __thiscall SafePointerNameMap::FindOrDefault(void* this, const void* name)","ret 4 at 0x004F719D; ecx is the map (manager+4), not the manager"
+0x004F71A0,signature,"void* __thiscall Multithreading::SynchSafePointer::SynchSafePointer(void* this, const void* other)",ret 4
+0x004F71D0,signature,"void* __thiscall std::pair<std::wstring const,Multithreading::SynchSafePointer>::pair(void* this, const void* name, const void* pointer)",ret 8 at 0x004F7229
+0x004F7230,signature,"void* __thiscall Graphics::MaterialObjectManager::Find(void* this, void* out, const void* name)",ret 8
+0x004F72D0,signature,"void* __stdcall Graphics::MaterialObjectManager::Load(void* out, const void* name)","ret 8, ecx unread before written"
+0x004F7680,convention,__thiscall,"ecx is the manager, plain ret"
+0x004F25A0,clear,CLCDBase::vfunction14,folded setter of +0x18; here MaterialStateOverride's owner
+0x004FE8F0,clear,CLCDBase::vfunction18,"folded getter of a member's address; here a MaterialObject's name (0x004F75BC, then emptiness test 0x004C0E50 and assign 0x0057F630)"
+0x004F5700,signature,"void* __thiscall Graphics::MaterialObjectInstance::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4 at 0x004F571B
+0x004F6660,signature,unsigned long long __cdecl Graphics::MaterialCategoryFromName(const wchar_t* token),"not in the batch; plain ret, u64 in edx:eax; the 38-name _wcsicmp chain read for 0x004F6B40"
