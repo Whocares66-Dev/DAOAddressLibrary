@@ -18179,3 +18179,44 @@ address,what,value,why
 0x0053A820,signature,"int __thiscall Graphics::GraphicsDriver::vfunction68(void* this, void* object)",ret 4 (0x0053A82B)
 0x0053A830,signature,"void __thiscall Graphics::GraphicsDriver::vfunction69(void* this, void* object, int arg)",ret 8
 0x00537D70,clear,GraphicsStructures::ObjectNodeTerrain::vfunction,the body is folded and shared by unrelated vtables; it is not ObjectNodeTerrain's
+0x00A23200,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::UnbindRenderTarget(void* this, int index)","one stack word, tail jump to InterlockedIncrement pops it"
+0x00A23270,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::StretchRect(void* this, void* src, void* srcRect, void* dst, void* dstRect, int filter)",ret 0x14 at 0x00A2332D
+0x00A23330,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::BindSwapSurface(void* this, void* surface)",tail jump pops one word
+0x00A233A0,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::PresentSurface(void* this, void* surface)",tail jump pops one word
+0x00A23410,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::PresentSurfaceRect(void* this, void* surface, int a, int b, int c, int d, int e)",ret 0x18 at 0x00A234E2
+0x00A234F0,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::SetRenderTargetTexture(void* this, void* texture, int index, bool a, bool b)",ret 0x10 at 0x00A235AF
+0x00A23630,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::SetTexture(void* this, void* texture, int stage)",ret 8 at 0x00A236AE
+0x00A236C0,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::SetShaderParameterData(void* this, void* param, int index, void* data, int size)","ret 0x10 at 0x00A23777 : four stack words (param, index, data, size)"
+0x00A23780,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::SetShaderConstants(void* this, int startRegister, void* data, int count, bool vertex, bool isFloat)",ret 0x14 at 0x00A23848
+0x00A23850,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::SetShaderParameterScalar(void* this, void* param, int index, void* data)",ret 0xC at 0x00A23866
+0x00A23870,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::SetShaderParameterFloat4(void* this, void* param, int index, float* data)",ret 0xC at 0x00A2394E
+0x00A23960,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::SetShaderParameterVector(void* this, void* param, int index, void* data)",ret 0xC at 0x00A23976
+0x00A23980,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::SetShaderParameterMatrix(void* this, void* param, int index, void* data)",ret 0xC at 0x00A23996
+0x00A239A0,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::SetShaderParameterBool(void* this, void* param, int index, bool value)",ret 0xC at 0x00A23A39
+0x00A23A40,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::SetShaderParameterData(void* this, void* param, int index, void* data, int size)","jmp thunk to 0x00A236C0, four stack words"
+0x00A23A50,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::SetVertexShaderConstantsFloat(void* this, int startRegister, void* data, int count)",ret 0xC at 0x00A23A68
+0x00A23A70,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::SetVertexShaderConstantsInt(void* this, int startRegister, void* data, int count)",ret 0xC at 0x00A23A88
+0x00A23A90,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::SetPixelShaderConstantsFloat(void* this, int startRegister, void* data, int count)",ret 0xC at 0x00A23AA8
+0x00A23AB0,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::SetPixelShaderConstantsInt(void* this, int startRegister, void* data, int count)",ret 0xC at 0x00A23AC8
+0x00A23AD0,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::SetShaderConstants(void* this, int startRegister, void* data, int count, bool vertex, bool isFloat)",jmp thunk to 0x00A23780
+0x00A23AE0,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::UploadTextureLevel(void* this, void* texture, int level, int* rect, int unused, void* data)",ret 0x14 at 0x00A23BE5
+0x00A23BF0,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::SetGammaRamp(void* this, void* red, void* green, void* blue)",ret 0xC at 0x00A23C91
+0x00A23CA0,signature,"void* __thiscall Renderer::ThreadedGraphicsDriver::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4 at 0x00A23CBB
+0x00A23F50,signature,bool __stdcall Renderer::CShadowCasterCuller::IsCasterCandidate(void* node),"no ecx use, ret 4 at 0x00A23F7D"
+0x00A23FA0,signature,"void* __thiscall Renderer::ICuller::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4 at 0x00A23FC3
+0x00A23FD0,signature,"void* __thiscall Renderer::IGenericMeshFrustumCuller::IGenericMeshFrustumCuller(void* this, int kind)",ret 4 at 0x00A240C3
+0x00A240D0,signature,void __thiscall Renderer::IGenericMeshFrustumCuller::~IGenericMeshFrustumCuller(void* this),plain ret at 0x00A24138
+0x00A24140,signature,"void* __thiscall Renderer::IGenericMeshFrustumCuller::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4 at 0x00A2415B
+0x00A24160,signature,void* __thiscall Renderer::CShadowCasterCuller::CShadowCasterCuller(void* this),"plain ret at 0x00A241EE, returns this"
+0x00A241F0,signature,"void* __thiscall Renderer::CShadowCasterCuller::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4 at 0x00A24211
+0x00A24220,signature,void* __cdecl Renderer::ICuller::Create(int kind),"plain ret at 0x00A2427D, caller add esp,4"
+0x00A242D0,signature,"void __thiscall Renderer::IGenericMeshFrustumCuller::SetCamera(void* this, void* camera)",ret 4 at 0x00A24480
+0x00A24490,signature,"bool __thiscall Renderer::IGenericMeshFrustumCuller::TestObject(void* this, void* object)",ret 4 at 0x00A244E6
+0x00A24500,signature,"bool __thiscall Renderer::IGenericMeshFrustumCuller::TestSphere(void* this, float* center, float radius)",ret 8 at 0x00A24659
+0x00A246D0,signature,"void __thiscall Renderer::CShadowCasterCuller::SetCamera(void* this, void* camera)",ret 4 at 0x00A247AD
+0x00A247B0,signature,"bool __thiscall Renderer::IGenericMeshFrustumCuller::MatchesCategory(void* this, void* object)",ret 4 at 0x00A247D1
+0x00A247F0,signature,"bool __thiscall Renderer::CShadowCasterCuller::SweepSphereAgainstPlane(void* this, float* outLo, float* outHi, int plane, float* point, float radius)",ret 0x14 at 0x00A24896
+0x00A24930,signature,"bool __thiscall Renderer::IGenericMeshFrustumCuller::TestNode(void* this, void* renderableInterface)",ret 4 at 0x00A24ACE
+0x00A235C0,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::vfunction68(void* this, void* object)","tail jump, ret 4"
+0x00A23F90,signature,void __thiscall Renderer::ICuller::~ICuller(void* this),plain ret at 0x00A23F9D
+0x00A23FD0,convention,__thiscall,"read ecx, one stack argument, ret 4"
