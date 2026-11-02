@@ -95792,7 +95792,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 95791,data,Graphics::ISceneSubManager::typeinfo,0x00bf27e4,0x00c0d964,0x00bf27e4
 95792,data,Graphics::ICamera::typeinfo,0x00bf280c,0x00c07588,0x00bf280c
 95793,data,Renderer::ICameraInternal::typeinfo,0x00bf282c,0x00c0dc3c,0x00bf282c
-95794,data,,0x00bf2853,0x00c0d98c,0x00bf2853
+95794,data,g_rendererSceneEnabled,0x00bf2853,0x00c0d98c,0x00bf2853
 95795,data,,0x00bf2858,,0x00bf2858
 95796,data,Renderer::EclipseUmbraScene::typeinfo,0x00bf28b0,0x00c0d9e8,0x00bf28b0
 95797,data,Graphics::IMoviePlayer::typeinfo,0x00bf28dc,0x00c0e260,0x00bf28dc
@@ -96503,7 +96503,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 96502,data,SmartData::PointerMemberLookup<SmartData::SmartObject*>::typeinfo,0x00bf9a88,0x00bec1c0,0x00bf9a88
 96503,data,SmartData::InternalStorage<SmartData::SmartObject*>::typeinfo,0x00bf9ad8,0x00bec210,0x00bf9ad8
 96504,data,SmartData::TokenManager::typeinfo,0x00bf9b20,0x00bec258,0x00bf9b20
-96505,data,,0x00bf9b50,0x00bec2b0,0x00bf9b50
+96505,data,SmartData::TokenStringObserver::s_updateEnabled,0x00bf9b50,0x00bec2b0,0x00bf9b50
 96506,data,,0x00bf9b51,0x00bec2b1,0x00bf9b51
 96507,data,SmartData::TokenStringNotifier::typeinfo,0x00bf9b54,0x00bec2e0,0x00bf9b54
 96508,data,SmartData::MemberIterator::typeinfo,0x00bf9b80,0x00bec280,0x00bf9b80
@@ -97053,7 +97053,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 97052,data,"Messages::Private::MemberFunctionMessageHandler<GameModeController,SelectPreviousCharacterMessage,&GameModeController::HandleMessage>::typeinfo",0x00c01228,0x00bf3af0,0x00c01228
 97053,data,"Messages::Private::MemberFunctionMessageHandler<GameModeController,RawInputMessage,&GameModeController::HandleMessage>::typeinfo",0x00c012c0,0x00bf3b88,0x00c012c0
 97054,data,GameModeController::typeinfo,0x00c01348,0x00bf3c10,0x00c01348
-97055,data,,0x00c0136c,0x00bf3c34,0x00c0136c
+97055,data,ECBase::ECDynArray<GameModeController::ModeRequest>::s_default,0x00c0136c,0x00bf3c34,0x00c0136c
 97056,data,,0x00c0137c,0x00bf3428,0x00c0137c
 97057,data,,0x00c01380,0x00bf342c,0x00c01380
 97058,data,,0x00c01384,0x00bf3430,0x00c01384
@@ -97124,8 +97124,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 97123,data,SkipCutsceneMessage::s_classInfo,0x00c01c0c,0x00bf2f34,0x00c01c0c
 97124,data,SkipCutsceneMessage::s_classInfo.parent,0x00c01c10,0x00bf2f38,0x00c01c10
 97125,data,GameModeCutsceneData::typeinfo,0x00c01c14,0x00bf44cc,0x00c01c14
-97126,data,,0x00c01c38,0x00bf44f0,0x00c01c38
-97127,data,,0x00c01c3c,0x00bf44f4,0x00c01c3c
+97126,data,GameModeCutscene::s_classInfo,0x00c01c38,0x00bf44f0,0x00c01c38
+97127,data,GameModeCutscene::s_classInfo.parent,0x00c01c3c,0x00bf44f4,0x00c01c3c
 97128,data,"Messages::Private::MemberFunctionMessageHandler<GameModeCutscene,SkipCutsceneMessage,&GameModeCutscene::HandleMessage>::typeinfo",0x00c01c40,0x00bf44f8,0x00c01c40
 97129,data,GameModeCutscene::typeinfo,0x00c01ccc,0x00bf4584,0x00c01ccc
 97130,data,ConsumeTutorialMessage::s_classInfo,0x00c01cec,0x00bf230c,0x00c01cec
@@ -97312,8 +97312,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 97311,data,CClientVirtualMachineCommands::typeinfo,0x00c04334,0x00bf7410,0x00c04334
 97312,data,SkipMovieMessage::s_classInfo,0x00c04360,0x00bf2f60,0x00c04360
 97313,data,SkipMovieMessage::s_classInfo.parent,0x00c04364,0x00bf2f64,0x00c04364
-97314,data,,0x00c04368,0x00bf743c,0x00c04368
-97315,data,,0x00c0436c,0x00bf7440,0x00c0436c
+97314,data,GameModeMovie::s_classInfo,0x00c04368,0x00bf743c,0x00c04368
+97315,data,GameModeMovie::s_classInfo.parent,0x00c0436c,0x00bf7440,0x00c0436c
 97316,data,"Messages::Private::MemberFunctionMessageHandler<GameModeMovie,SkipMovieMessage,&GameModeMovie::HandleMessage>::typeinfo",0x00c04370,0x00bf7448,0x00c04370
 97317,data,GameModeMovie::typeinfo,0x00c043f4,0x00bf74cc,0x00c043f4
 97318,data,,0x00c04410,0x00bf74e8,0x00c04410
@@ -98095,8 +98095,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 98094,data,GameModeDead::typeinfo,0x00c0df18,0x00c03718,0x00c0df18
 98095,data,DeathResurrectPartyMessage::s_classInfo,0x00c0df34,0x00bf3044,0x00c0df34
 98096,data,DeathResurrectPartyMessage::s_classInfo.parent,0x00c0df38,0x00bf3048,0x00c0df38
-98097,data,,0x00c0df3c,0x00c03734,0x00c0df3c
-98098,data,,0x00c0df40,0x00c03738,0x00c0df40
+98097,data,GameModeDead::s_classInfo,0x00c0df3c,0x00c03734,0x00c0df3c
+98098,data,GameModeDead::s_classInfo.parent,0x00c0df40,0x00c03738,0x00c0df40
 98099,data,"Messages::Private::MemberFunctionMessageHandler<GameModeDead,DeathResurrectPartyMessage,&GameModeDead::HandleMessage>::typeinfo",0x00c0df48,0x00c03740,0x00c0df48
 98100,data,GameModeCombat::typeinfo,0x00c0dfd4,0x00c037cc,0x00c0dfd4
 98101,data,,0x00c0dff4,0x00c037ec,0x00c0dff4
@@ -98107,7 +98107,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 98106,data,,0x00c0e008,0x00c03800,0x00c0e008
 98107,data,CameraControllerExplore::g_farDistance,0x00c0e00c,0x00c03804,0x00c0e00c
 98108,data,CameraControllerExplore::g_closeDistance,0x00c0e010,0x00c03808,0x00c0e010
-98109,data,,0x00c0e014,0x00c0380c,0x00c0e014
+98109,data,CameraControllerExplore::s_tacticalPitchDegrees,0x00c0e014,0x00c0380c,0x00c0e014
 98110,data,,0x00c0e018,0x00c03810,0x00c0e018
 98111,data,,0x00c0e01c,0x00c03814,0x00c0e01c
 98112,data,,0x00c0e020,0x00c03818,0x00c0e020
