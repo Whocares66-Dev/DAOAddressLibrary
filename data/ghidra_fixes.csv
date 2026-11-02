@@ -16966,3 +16966,196 @@ address,what,value,why
 0x00561A90,signature,"void* __thiscall std::vector<?>::vector(unsigned int)(void* this, unsigned int count)","esi=ecx, ret 4"
 0x00562700,convention,__thiscall,"reads [ecx+4] first, ret 8, result address returned in eax"
 0x00562700,signature,"void* __thiscall std::_Tree<?>::equal_range(void* this, void* result, unsigned int* key)","reads [ecx+4] first, ret 8, result address returned in eax"
+0x0055CC40,signature,"bool __thiscall f(void *this, const std::wstring *text, int x, int y, unsigned int color)","0x0055CC40: [ebp+0xC] fild at 0x55CC94 is the pen x reset at 0x55CD14, [ebp+0x10] fild at 0x55CC7F is stored at [esp+0x28] and added to each vertex y at 0x55CDF6, [ebp+0x14] goes t"
+0x0055D090,signature,"void * __thiscall f(void *this, const std::wstring *name, void *driver, int a, int b, int c)","0x0055D090: [esp+0xA8] is copied by 0x4C2510 (wstring copy), [esp+0xAC] driver to +0x844, [esp+0xB0/B4/B8] to +0x83C/+0x840/+0x1C FontGlyphBatch"
+0x0055D280,signature,"void __thiscall f(void *this, const wchar_t **attrs)","""0x0055D280 ReadAttributes"
+0x0055D2D0,signature,"void __thiscall f(void *this, const wchar_t *text, int count)",0x0055D2D0 CharacterData
+0x0055D3A0,signature,void * __thiscall TakeResult(void *this),0x0055D3A0 TakeResult
+0x0055D3C0,signature,void __thiscall ~FontBuilderXML2(void *this),0x0055D3C0 ~FontBuilderXML2
+0x0055D430,signature,"void * __thiscall ScalarDeletingDestructor(void *this, unsigned char flags)",0x0055D430 `scalar deleting destructor'
+0x0055D450,signature,"void * __thiscall f(void *this, void *parserFactory, void *sink)",0x0055D450 FontBuilderXML2
+0x0055D520,signature,"void __thiscall f(void *this, const wchar_t *name, const wchar_t **attrs)",0x0055D520 StartElement
+0x0055D5E0,signature,"void __thiscall EndElement(void *this, const wchar_t *name)",0x0055D5E0 EndElement
+0x0055D760,signature,std::wstring * __thiscall f(void *this),"0x0055D760 (mov ecx,[ecx+0x174] GetName"
+0x0055D770,signature,int __cdecl f(const std::wstring *name),"0x0055D770-0x0055DADC, strings read at 0xAF96BC..0xAF920C GetExportValueId"
+0x0055DAE0,signature,"void __thiscall GetWorldRotation(void *this, float *quat4)",0x0055DAE0 GetWorldRotation
+0x0055DB10,signature,"void __thiscall UpdateAndGetWorldRotation(void *this, float *quat4)",0x0055DB10 UpdateAndGetWorldRotation
+0x0055DB50,signature,void __thiscall EnsureTransformsUpdated(void *this),"0x0055DB50 (mov ecx,[ecx+0x154] EnsureTransformsUpdated"
+0x0055DBE0,signature,"void * __thiscall GetExportValue(void *this, int id, unsigned char *found)","0x0055DBE0: jump table 0x55DC64 over the byte table 0x55DC88, read entry by entry GetExportValue"
+0x0055DCB0,signature,"int __thiscall SetVector4ArrayParameter(void *thisAt8, const wchar_t *name, void *values)","0x0055DCB0 (mov ecx,[esi+0x148] with esi=node+8 SetVector4ArrayParameter"
+0x0055DCF0,signature,void * __thiscall GetMaterialObject(void *this),0x0055DCF0 GetMaterialObject
+0x0055DD70,signature,"void __thiscall f(void *this, float *bind16, float *inverseBind16)",0x0055DD70 (call 0x571500 = blueprint +0x40 GetBindMatrices
+0x0055DDE0,signature,"void __thiscall f(void *this, float *xyz)","0x0055DDE0 (add ecx,0x60 GetWorldTranslationXYZ"
+0x0055DDF0,signature,"void __thiscall GetWorldPosition(void *this, float *pos4)",0x0055DDF0 GetWorldTranslation
+0x0055DE20,signature,"void __thiscall UpdateAndGetWorldPosition(void *this, float *pos4)",0x0055DE20 UpdateAndGetWorldTranslation
+0x0055DE60,signature,"void __thiscall f(void *this, const void *other)",0x0055DE60-0x0055DF9E CopyLocalTransformFrom
+0x0055DFB0,signature,"void __thiscall f(void *this, float *matrix16)",0x0055DFB0 (esi+0x5C = node+0x60 GetWorldMatrix
+0x0055E000,signature,"void __thiscall f(void *this, const float *rotation4, const float *translation4, int unused)","0x0055E000: [ebp+8] to [ecx+0xE8..0xF4] (node+0xF0), [ebp+0xC] movaps to [ecx+0x128] (node+0x130) SetFaceFXTransform"
+0x0055E040,signature,"void __thiscall f(void *this, void **umbraObjectRef)","0x0055E040: set(7,0) via thunk 0xA1C71A at 0x55E079, 0x4D3AE0 uniform scale at 0x55E0B2, setObjectToCellMatrix thunk 0xA1C72C at 0x55E0E5 UpdateUmbraObjectBounds"
+0x0055E100,signature,"void * __thiscall f(void *this, unsigned int index)",0x0055E100 GetChild
+0x0055E140,signature,unsigned int __thiscall f(void *this),0x0055E140 GetChildCount
+0x0055E160,signature,void __thiscall f(void *this),0x0055E160 ResetToRestPose
+0x0055E280,signature,"void * __thiscall f(void *this, const void *name)",0x0055E280 FindNodeByName
+0x0055E310,signature,"void __thiscall f(void *this, void *physicsScene)","0x0055E310: children slot 21 at 0x55E356, scene slot 3 call at 0x55E3A1 pushes flag, GetName result, description CreatePhysicsActors"
+0x0055E3D0,signature,"void __thiscall f(void *this, void *physicsScene)",0x0055E3D0 AttachPhysicsActors
+0x0055E470,signature,"void __thiscall f(void *this, void *arg)","0x0055E470: children slot 0x5C/4 at 0x55E4B6, +0x15C slot 0x74/4 at 0x55E4D8 DetachPhysicsActors"
+0x0055E4E0,signature,"void __thiscall f(void *this, void *visitor)",0x0055E4E0 VisitResources
+0x0055E5B0,signature,"void __thiscall f(void *this, int *a, int *b)",0x0055E5B0 GetMemoryFootprint
+0x0055E6C0,signature,"void __thiscall f(void *this, void *owner)",0x0055E6C0 SetOwner
+0x0055E730,signature,void __thiscall f(void *this),0x0055E730 BakeWorldBoundingSphere
+0x0055E860,signature,void __thiscall f(void *this),0x0055E860 AttachToObject
+0x0055E8D0,signature,"void * __thiscall f(void *this, const void *name)",0x0055E8D0 jmp 0x55E280 FindNodeByName_thunk0
+0x0055E8E0,signature,"void * __thiscall f(void *this, const void *name)",0x0055E8E0 FindSimulatableNodeByName
+0x00568F20,signature,"void __thiscall SetTarget(void *this, void *target)",0x00568F20 SetFollowObject
+0x00568F30,signature,void __thiscall ClearTarget(void *this),0x00568F30 ClearFollowObject
+0x00568F40,signature,void __thiscall DestroyTarget(void *this),0x00568F40 DeleteFollowObject
+0x00568F70,signature,"void __thiscall f(void *this, void *a, void *b, void *c)",0x00568F70 UpdateWorldTransform
+0x005690B0,signature,"void __thiscall f(void *this, int *a, int *b)",0x005690B0 GetMemoryFootprint
+0x00569110,signature,"void __thiscall f(void *this, void *visitor)",0x00569110 VisitResources
+0x00569130,signature,"bool __thiscall f(const void *this, const void *other)",0x00569130 operator==
+0x00569150,signature,unsigned int __thiscall f(void *this),0x00569150 size
+0x00569170,signature,"void __stdcall f(void *field, const float *v)",0x00569170 SetVector4Field
+0x005691A0,signature,"void __stdcall f(void *field, const unsigned int *v)",0x005691A0 SetDwordField
+0x005691C0,signature,"void __stdcall f(void *field, const float *v)",0x005691C0 SetFloatField
+0x005691E0,signature,"void __thiscall f(void *this, int fieldId, unsigned int offset)",0x005691E0 SetOffsetFieldById
+0x00569450,signature,"void __thiscall f(void *this, int fieldId, const float *v)",0x00569450 SetVector4FieldById
+0x00569490,signature,"void * __thiscall ScalarDeletingDestructor(void *this, unsigned char flags)",0x00569490 `scalar deleting destructor'
+0x005694B0,signature,"void * __thiscall f(void *this, const void *src)",0x005694B0 NodeInfo_copy
+0x00569500,signature,"void __thiscall f(void *this, int releaseGpu)",0x00569500 Release
+0x00569570,signature,void * __thiscall f(void *this),0x00569570 _Buynode
+0x00569590,signature,void * __thiscall f(void *this),0x00569590 _Buynode
+0x005695B0,signature,void * __thiscall f(void *this),0x005695B0 _Buynode
+0x005695D0,signature,"void * __thiscall f(void *this, const void *name, const void *data)",0x005695D0 NodeInfo
+0x00569620,signature,"void __cdecl _Construct(void *where, const void *src)",0x00569620 NodeInfo>
+0x00569680,signature,"void __thiscall f(void *this, void *visitor)",0x00569680 VisitResources
+0x00569BA0,signature,"void * __thiscall f(void *this, const void *iterator)",0x00569BA0 GetValueOrDefault
+0x00569BE0,signature,void __thiscall f(void *this),0x00569BE0 clear
+0x00569C30,signature,"void * __thiscall f(void *this, void *next, void *prev, const void *nodeInfo)",0x00569C30 _Buynode
+0x00569CD0,signature,"void __thiscall GetMemoryFootprint(void *this, int *a, int *b)",0x00569CD0 GetMemoryFootprint
+0x0056A140,signature,void __thiscall f(void *this),0x0056A140 ~hash_map
+0x0056A2A0,signature,void __thiscall f(void *this),0x0056A2A0 ~StringMap
+0x0056A3F0,signature,"void * __thiscall f(void *this, void *traits, void *alloc)",0x0056A3F0 hash_map
+0x0056B040,signature,"void * __thiscall f(void *this, int a1, int a2, int a3, int a4, int a5, int a6, int a7, unsigned char a8, int a9)",0x0056B040 NodeInfo
+0x0056B400,signature,"void * __thiscall f(void *this, void *blueprintHandle, const std::wstring *name)",0x0056B400 FindBlueprintNode
+0x0056C6F0,signature,"int __thiscall f(void *this, void *stream)",0x0056C6F0 WriteXML
+0x0056E9D0,signature,void __thiscall f(void *this),0x0056E9D0 ~StringMap
+0x0056EB00,signature,"void * __thiscall f(void *this, void *manager, int mostDerived)",0x0056EB00 Morph
+0x0056EC40,signature,void __thiscall f(void *this),0x0056EC40 ~Morph
+0x0056EDF0,signature,"void * __thiscall f(void *this, const void *src)",0x0056EDF0 StringMap_copy
+0x0056EE60,signature,"void * __thiscall f(void *this, const void *key, const void *map)",0x0056EE60 pair
+0x0056EEC0,signature,void __thiscall f(void *this),0x0056EEC0 clear
+0x0056EF50,signature,"void * __thiscall f(void *this, const void *other)",0x0056EF50 pair_copy
+0x0056EFB0,signature,"void __cdecl _Construct(void *where, const void *src)",0x0056EFB0 vector<Vector4>>>>
+0x0056F010,signature,"int __thiscall f(void *this, const unsigned int *def)",0x0056F010 AddSortedTemplate
+0x0056F0D0,signature,"int __thiscall f(void *this, const unsigned int *def)",0x0056F0D0 AddAlignedTemplate
+0x0056F170,signature,"void * __thiscall f(void *this, unsigned char flags)",0x0056F170 `scalar deleting destructor'_thunk144
+0x005701A0,signature,"void __thiscall f(void *this, const void *preset)",0x005701A0-0x00570370 AddTargets
+0x00570B30,signature,"void __thiscall f(void *this, const void *preset)",0x00570B30 (730 instructions read for calls and offsets) ApplyMaterialParameters
+0x00571500,signature,void * __thiscall f(void *this),0x00571500 GetAddress_0x40
+0x00571510,signature,void * __thiscall f(void *this),0x00571510 GetAddress_0xC0
+0x00571520,signature,"void __thiscall f(void *this, void *collector)",0x00571520 CollectResourceFootprint
+0x00571540,signature,void * __thiscall f(void *this),0x00571540 GetValuePointer
+0x00571570,signature,"int __thiscall f(void *this, int arg)",0x00571570 GetTreeSize
+0x005715F0,signature,int __thiscall f(void *this),0x005715F0 GetFilteredTreeSize
+0x00571670,signature,"unsigned char __thiscall f(void *this, void *node, void *a, void *b, void *c, void *d)",0x00571670 UpdateNodeTree
+0x005718A0,signature,"void __thiscall f(void *this, const float *parentRotation4, const float *parentPosition4)",0x005718A0 ComputeBindMatrices
+0x00571990,signature,"void __thiscall f(void *this, int *a, int *b)",0x00571990 GetMemoryFootprint
+0x00571AC0,signature,"void __thiscall f(void *this, std::vector<std::wstring> *names)","""0x00571AC0 CollectMaterialNames"
+0x00571B30,signature,"bool __thiscall f(void *this, const std::wstring *name)",0x00571B30 HasNode
+0x00571CA0,signature,void __thiscall ~ObjectNodeBlueprint(void *this),0x00571CA0 ~ObjectNodeBlueprint
+0x00571DD0,signature,"void * __thiscall ScalarDeletingDestructor(void *this, unsigned char flags)",0x00571DD0 `scalar deleting destructor'
+0x00571DF0,signature,"void __thiscall f(void *this, unsigned int n)",0x00571DF0 resize
+0x00571E20,signature,"void __stdcall f(void *owner, void *a, void *b, unsigned char kind)",0x00571E20 AddExportBinding
+0x00571ED0,signature,void * __thiscall f(void *this),0x00571ED0 ObjectNodeBlueprint
+0x00571F90,signature,"void __thiscall f(void *this, void *target, void *node)",0x00571F90 BindExportValues
+0x00572230,signature,"void __thiscall f(void *this, void *owner, void *a, void *node, void *b)",0x00572230-0x0057228D InitNode
+0x00572290,signature,"void __thiscall f(void *this, void *morphHandle, const void *weights, char apply)",0x00572290 ApplyMorph
+0x005724A0,signature,"void __thiscall f(void *this, int a, void *s1, void *s2, int b, int c, int d, int e, int f, int g)",0x005724A0 SetFields_0x1C_0x58_0x5C_0x60_0x64_0x68_0x6C
+0x00572510,signature,void __cdecl f(void),0x00572510 Destroy
+0x00572530,signature,"bool __thiscall f(void *this, void *objectIface, int batched)",0x00572530 DestroyObject
+0x00572590,signature,"void * __thiscall f(void *this, int handle)",0x00572590 GetObject
+0x005725B0,signature,"void * __thiscall f(void *this, int handle)",0x005725B0 GetRenderable
+0x005725D0,signature,"void __stdcall f(void *objectIface, void *mesh)",0x005725D0 ReplaceFirstMeshNode
+0x00572610,signature,"void __thiscall f(void *this, int flag)",0x00572610 SetMaterialGlobalFlag
+0x0057B9A0,signature,"void __thiscall f(void *this, int *a, int *b)",0x0057B9A0 GetMemoryFootprint
+0x0057B9E0,signature,"void * __thiscall f(void *this, unsigned char flags)",0x0057B9E0 `scalar deleting destructor'_thunk4
+0x0057B9F0,signature,"void * __thiscall f(void *this, unsigned char flags)",0x0057B9F0 `scalar deleting destructor'_thunk8
+0x0057BA00,signature,"void * __thiscall f(void *this, unsigned char flags)",0x0057BA00 `scalar deleting destructor'_thunkC
+0x0057BA10,signature,"void * __thiscall ScalarDeletingDestructor(void *this, unsigned char flags)",0x0057BA10 `scalar deleting destructor'
+0x0057BA30,signature,"void __thiscall f(void *this, void *a, void *b, void *c)",0x0057BA30 UpdateWorldTransform
+0x0057BD90,signature,"void __thiscall f(void *this, float *out4)",0x0057BD90 GetVector4_0x40
+0x0057BDB0,signature,"void __thiscall f(void *this, float *out4)",0x0057BDB0 GetVector4_0x50
+0x0057BDD0,signature,"void __thiscall f(void *this, float *out4)",0x0057BDD0 GetVector4_0x60
+0x0057BF30,signature,"void __thiscall f(void *this, void *emitter, void *params, float dt)",0x0057BF30-0x0057C340 Update
+0x0057C520,signature,"void __thiscall f(void *this, void *a, void *params, float base, float range, void *frame)","0x0057C520: jump table 0x57C798, cmp eax,4 at 0x57C57E InitOrientation"
+0x0057C7B0,signature,"void __thiscall f(void *this, void *a, void *params, float dt)","0x0057C7B0: jump table 0x57CB04, cmp ebx,4 at 0x57C830 UpdateOrientation"
+0x0057CB20,signature,"void * __cdecl f(void *where, void *owner, void *blueprint)",0x0057CB20 Construct
+0x0057CB80,signature,"void * __cdecl f(void *where, void *owner, void *blueprint)",0x0057CB80 Construct
+0x0057CBE0,signature,"void * __thiscall ByteBuffer(void *this, size_t size)",0x0057CBE0 ByteBuffer
+0x0057CC30,signature,"void __thiscall f(void *this, void *owner, void *node)",0x0057CC30 AttachToObject
+0x0057CC70,signature,"void __thiscall f(void *this, void *collector)",0x0057CC70 CollectResourceFootprint
+0x0057CD50,signature,"void __thiscall f(void *this, int *a, int *b)",0x0057CD50 GetMemoryFootprint
+0x0057CDB0,signature,void __thiscall ~ObjectNodeMeshBlueprint(void *this),0x0057CDB0 ~ObjectNodeMeshBlueprint
+0x0057CEB0,signature,int __thiscall f(void *this),0x0057CEB0 GetNodeSize
+0x0057CED0,signature,unsigned char __thiscall f(void *this),0x0057CED0 GetByte_0x1A4
+0x0057CEE0,signature,unsigned char __thiscall f(void *this),0x0057CEE0 GetByte_0x1A8
+0x0057CEF0,signature,unsigned char __thiscall f(void *this),0x0057CEF0 GetByte_0x1A9
+0x0057CF00,signature,unsigned char __thiscall f(void *this),0x0057CF00 GetByte_0x1AA
+0x0057CF10,signature,"void * __thiscall ScalarDeletingDestructor(void *this, unsigned char flags)",0x0057CF10 `scalar deleting destructor'
+0x0057CF30,signature,"void __thiscall f(void *this, std::vector<std::wstring> *names)","""0x0057CF30 CollectMaterialNames"
+0x0057D010,signature,"void * __thiscall f(void *this, int *arenaCursor, unsigned int a, void *owner, void *b, int c, int *d)","0x0057D010: arg 1 [esp+0x64], owner [esp+0x70] pushed to 0x57CB20 (cdecl, add esp,0xC) Instantiate"
+0x0057D7D0,signature,void * __thiscall ObjectNodeMeshBlueprint(void *this),0x0057D7D0 ObjectNodeMeshBlueprint
+0x0057D940,signature,"void __thiscall f(void *this, void *morphHandle, const void *weights, char apply)",0x0057D940 ApplyMorph
+0x0057E4E0,signature,void __thiscall f(void *this),0x0057E4E0 ~MeshChunk
+0x0057E570,signature,"void * __thiscall ScalarDeletingDestructor(void *this, unsigned char flags)",0x0057E570 `scalar deleting destructor'
+0x0057E590,signature,"void __thiscall f(void *this, const void *sphere, const void *aabb)",0x0057E590-0x0057E5F0 SetBounds
+0x0057E600,signature,"void __thiscall GetMemoryFootprint(void *this, int *a, int *b)",0x0057E600 GetMemoryFootprint
+0x0057EEB0,signature,void __thiscall f(void *this),0x0057EEB0 ~MeshBuilderGFF
+0x0057EEC0,signature,"void * __thiscall ScalarDeletingDestructor(void *this, unsigned char flags)",0x0057EEC0 `scalar deleting destructor'
+0x0057EEE0,signature,"bool __thiscall f(void *this, void *structReader, void *a, void *b, void *c, void *d)",0x0057EEE0 ReadMesh
+0x0057F280,signature,"void * __thiscall f(void *this, void *owner)",0x0057F280 MeshBuilderGFF
+0x0057F2A0,signature,"bool __thiscall f(void *this, const void *resourceName)",0x0057F2A0 Load
+0x0057F410,signature,"void * __thiscall StartChildElement(void *this, const wchar_t *name, void *attrs)",0x0057F410 StartChildElement
+0x0057F4C0,signature,"void __cdecl f(const wchar_t *text, float *out, int stride)",0x0057F4C0 ParseFloatList
+0x0058FAC0,signature,"void * __thiscall f(void *this, void *structReader)",0x0058FAC0 ReadWeapontrailBlueprint
+0x0058FF50,signature,"void * __thiscall f(void *this, void *structReader)",0x0058FF50 ReadSnaptoPointBlueprint
+0x00590C80,signature,"void * __thiscall f(void *this, unsigned int arg)",0x00590C80 ModelHierarchyReader
+0x00590CF0,signature,"void * __thiscall f(void *this, void *structReader)",0x00590CF0 ReadUsePointBlueprint
+0x00591070,signature,"void * __thiscall f(void *this, void *structReader)",0x00591070 ReadEmitterGroupBlueprint
+0x00591460,signature,"void * __thiscall f(void *this, void *structReader)",0x00591460 ReadCrustBlueprint
+0x005927B0,signature,"void * __thiscall f(void *this, void *structReader)",0x005927B0 ReadTerrainBlueprint
+0x00592C60,signature,"void * __thiscall f(void *this, void *structReader)",0x00592C60 ReadEmitterBlueprint
+0x00593F20,signature,"void * __thiscall f(void *this, void *structReader)",0x00593F20 ReadLightProbeBlueprint
+0x005942F0,signature,"void * __thiscall f(void *this, void *structReader)",0x005942F0 ReadAmbientLightBlueprint
+0x00594D40,signature,"void * __thiscall f(void *this, void *structReader)",0x00594D40 ReadMeshBlueprint
+0x00595610,signature,"void * __thiscall f(void *this, void *structReader)",0x00595610 ReadBoneBlueprint
+0x00595A90,signature,"void * __thiscall f(void *this, void *structReader)",0x00595A90 ReadEmitterTargetBlueprint
+0x00595E90,signature,"void * __thiscall f(void *this, void *structReader)",0x00595E90 (operator_new 0x160) ReadObjectBlueprint
+0x00596830,signature,"bool __thiscall f(void *this, const void *image, unsigned int size)",0x00596830 ReadGff4
+0x005A4070,signature,"void __thiscall f(void *this, void *a, void *b)",0x005A4070 WriteMeshChunk
+0x005A60D0,signature,"void * __thiscall XMLToGff4Converter(void *this, const char *xml, int size)",0x005A60D0 XMLToGff4Converter
+0x005AB820,signature,"bool __thiscall f(void *this, unsigned char **outData, int *outSize, unsigned int platform)",0x005AB820 BuildMMH
+0x005AB880,signature,"bool __thiscall f(void *this, unsigned char **outData, int *outSize, unsigned char *hasPhysics, unsigned int platform)",0x005AB880 BuildPHY
+0x005AC3D0,signature,"bool __thiscall f(void *this, const void *name)",0x005AC3D0: ids 0x61A8/0x61A9/0x61AA at 0x5AC45C/0x5AC4E5/0x5AC50E LoadDependencyList
+0x005AC5A0,signature,void __thiscall f(void *this),0x005AC5A0 MeshParticle
+0x005AC5E0,signature,"void __thiscall f(void *this, void *emitter, void *params, float dt)",0x005AC5E0 Update
+0x005AC9A0,signature,"void __thiscall f(void *this, void *unused, const void *params, float base, float range, const void *emitterRotation)",0x005AC9A0-0x005ACA13 InitRoll
+0x005ACA20,signature,"void __thiscall f(void *this, float *outQuat, const float *dir)",0x005ACA20 GetOrientation
+0x005ACCE0,signature,"void __thiscall f(void *this, void *emitter, void *params, float dt)",0x005ACCE0 UpdateSpinAndMovementSpread
+0x005B0580,signature,int __thiscall f(void *this),0x005B0580 GetNodeSize
+0x005B0590,signature,"void __thiscall f(void *this, int *a, int *b)",0x005B0590 GetMemoryFootprint
+0x005B05D0,signature,"void * __cdecl f(void *where, void *owner, void *blueprint)",0x005B05D0 ObjectNodeUsePoint
+0x005B0650,signature,"void * __cdecl f(void *where, void *owner, void *blueprint)",0x005B0650 ObjectNodeSnaptoPoint
+0x005B06D0,signature,"void * __thiscall f(void *this, unsigned char flags)",0x005B06D0 `scalar deleting destructor'_thunkC
+0x005B06E0,signature,"void * __thiscall f(void *this, unsigned char flags)",0x005B06E0 `scalar deleting destructor'_thunk8
+0x005B06F0,signature,"void * __thiscall f(void *this, unsigned char flags)",0x005B06F0 `scalar deleting destructor'_thunk4
+0x005B0700,signature,"void * __thiscall ScalarDeletingDestructor(void *this, unsigned char flags)",0x005B0700 `scalar deleting destructor'
+0x005B0720,signature,"void * __thiscall f(void *this, int *arenaCursor, unsigned int a, void *owner, void *b, int c, int *d)",0x005B0720 Instantiate
+0x005B0800,signature,"void * __thiscall f(void *this, int *arenaCursor, unsigned int a, void *owner, void *b, int c, int *d)",0x005B0800 Instantiate
+0x005B08E0,signature,"void __thiscall f(void *this, int *a, int *b)",0x005B08E0 GetMemoryFootprint
+0x005B0920,signature,"void * __cdecl f(void *where, void *owner, void *blueprint)",0x005B0920 ObjectNodeBone
+0x005B09A0,signature,"void * __thiscall f(void *this, int *arenaCursor, unsigned int a, void *owner, void *b, int c, int *d)",0x005B09A0 Instantiate
+0x005B0A90,signature,int __thiscall f(void *this),0x005B0A90 GetNodeSize
+0x005B0AA0,signature,"void __thiscall f(void *this, int *a, int *b)",0x005B0AA0 GetMemoryFootprint
+0x00571500,clear,Graphics::MaterialPassTemp::vfunction7,"8732 is lea eax,[ecx+0x40], ObjectNodeBlueprint bind matrix address; Ghidra class recovery wrong"
+0x00571510,clear,GraphicsStructures::SpeedTreeForest::vfunction4,"8733 is lea eax,[ecx+0xC0], ObjectNodeBlueprint name address; Ghidra class recovery wrong"
