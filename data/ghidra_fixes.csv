@@ -16344,3 +16344,11 @@ address,what,value,why
 0x00A667D0,signature,"void * __cdecl f(int type, int variation, void *outName)",0x00a667d0 -> 0xa665c0 ret 0
 0x00A66950,signature,"void __thiscall f(void *this, unsigned char slot)",0x00A66950-0x00A6696F ret 4
 0x00A38B50,convention,__thiscall,"add ecx,8; jmp 0x004D5890"
+0x007C21C0,signature,"int __thiscall f(void* this, void* reader, void* structRef, int mode)","ret 0xc, slot 23, ecx = this"
+0x007C23D0,signature,bool __thiscall f(void* this),"plain ret, returns 0/1, slot 112"
+0x007C2750,signature,bool __thiscall f(void* this),"plain ret, slot 112, returns base result"
+0x007C2880,signature,"bool __thiscall f(void* this, void* gff, void* gffStruct)",two stack args read at +0x84/+0x88 after the frame; returns ReadFields' result
+0x007C2970,signature,"void __thiscall f(void* this, void* saveStruct)","ret 4, slot 21"
+0x007C2B20,signature,"void* __thiscall f(void* this, void* owner, int objectId)","ret 8, returns this"
+0x007C2BE0,signature,"int __thiscall f(void* this, void* saveStruct)",ret 4
+0x007C2EE0,signature,"void __thiscall f(void* this, float seconds)","ret 4, slot 88"
