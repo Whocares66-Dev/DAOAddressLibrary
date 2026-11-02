@@ -5394,7 +5394,6 @@ address,what,value,why
 0x0079B4A0,signature,int __thiscall GetDataClass(void* this),"mov eax,[0x00C389B0]; ret"
 0x0079B5F0,signature,int __thiscall GetDataClass(void* this),"mov eax,[0x00C389AC]; ret"
 0x004CE240,clear,Graphics::ICamera::vfunction27,"identical-code-folded `mov eax,3; ret`, also CCTriggerAudioReverb's Type getter (+0x1CC); no class's name fits all users"
-0x00A11120,clear,Renderer::ADSemanticNameAffinity::vfunction5,"folded `mov eax,4; ret`, also CCTriggerAudioVolume's Type getter (+0x1CC)"
 0x0046E640,clear,Renderer::ADIncludesSemanticAffinity::vfunction5,"folded `mov eax,5; ret`, also CCTriggerAudioMusicVolume's Type getter (+0x1CC)"
 0x005C30A0,signature,"bool __cdecl SetReverbChannelGroupPreset(int index, void* nameWString, float unused, float time)",plain ret; 3rd arg never read; 4th read at 0x005C30F1 (time < 0 -> 0.33); index must be 1..count-1
 0x005C23E0,signature,"bool __thiscall ReverbChannelGroup_SetPreset(void* this, void* nameWString, float fadeGate, float unused)",ret 0xC; gate tested != 0 at 0x005C2709..27 (fade over +0x19C); 3rd arg never read
@@ -5805,7 +5804,6 @@ address,what,value,why
 0x00524BC0,signature,"void* __thiscall GUI::ScaleformTokenObserver::`scalar deleting destructor'(void* this, uint flags)",ret 4
 0x00525020,signature,"void* __thiscall GUI::PrintToConsoleMessage::PrintToConsoleMessage(void* this, void* other)",ret 4
 0x005BDCF0,clear,GThread::OnExit,"a single ret used as an empty virtual stub (GUISystem slots, slot 3 of the GUI message vtables, called at 0x00523DF6)"
-0x00875220,clear,Graphics::TemplateShaderParamRef<Math::Vector4f>::vfunction8,"folded `mov eax,[ecx+0x50]; ret`, g_graphics' width getter (slot +0x40)"
 0x00525670,clear,CThreadLocal<_AFXCTL_AMBIENT_CACHE>::CreateObject,"MFC name matched on shape; the body allocates a RunConsoleCommandMessage (ctor 0x00525170, vtable 0x00AF68EC)."
 0x005256E0,clear,CThreadLocal<_AFXCTL_AMBIENT_CACHE>::CreateObject,MFC name matched on shape; the body allocates a RunClientScriptMessage (ctor 0x005252A0).
 0x00525750,clear,CThreadLocal<_AFXCTL_AMBIENT_CACHE>::CreateObject,MFC name matched on shape; the body allocates a RunScriptMessage (ctor 0x00525370).
@@ -7383,7 +7381,6 @@ address,what,value,why
 0x00697830,clear,CCObject::vfunction17,"0x00697830 is in the +0x70 (SEffectsHolder) view of CCObject; this is that view, not the CCObject"
 0x00699F20,clear,CCObject::vfunction10,"0x00699F20 is in the +0x70 (SEffectsHolder) view of CCObject; this is that view, not the CCObject"
 0x00699F30,clear,CCObject::vfunction13,"0x00699F30 is in the +0x70 (SEffectsHolder) view of CCObject; this is that view, not the CCObject"
-0x00699F60,clear,CCObject::vfunction24,"0x00699F60 is in the +0x70 (SEffectsHolder) view of CCObject; this is that view, not the CCObject"
 0x006283D0,clear,Alert::vfunction1,"Adjustor thunk (sub ecx,0x20) to the scalar deleting destructor, not a slot-1 function."
 0x006283E0,clear,Alert::vfunction3,"Adjustor thunk (sub ecx,8) to the scalar deleting destructor."
 0x006283F0,clear,Alert::vfunction2,"Adjustor thunk (sub ecx,0x1C) to the scalar deleting destructor."
@@ -8018,7 +8015,6 @@ address,what,value,why
 0x0072DAE0,signature,void __thiscall GUI::GUITactics::OnShow(void * this),vftable slot 5 (entry 0x00B19984); plain ret 0x0072DAF0
 0x0072DAE0,clear,GUI::GUITactics::vfunction6,"slot 5, OnShow (calls GUIScene::OnShow 0x00A55820)"
 0x0072DB00,signature,void __thiscall GUI::GUITactics::Close(void * this),jmp 0x00A55910; slot 6 of eight scene vftables
-0x0072DB00,clear,GUI::GUIScene::Close,"misleading: GUIScene::Close is 0x00A55910; this is a folded slot-6 override of GUIContentManager, GUITactics, GUIMap, GUISkills, GUISpellsTalents, GUIMain, GUILevelUp (0x00B1AA10), GUICharGenBase (0x00B1AB40)"
 0x0072DB10,signature,"void * __thiscall GUI::GUITactics::`scalar deleting destructor'`adjustor{28}'(void * this, unsigned int flags)","sub ecx,0x1C; jmp 0x0072DB70"
 0x0072DB10,clear,GUI::GUITactics::vfunction2,a destructor thunk
 0x0072DB20,signature,"void * __thiscall GUI::GUITactics::`scalar deleting destructor'`adjustor{32}'(void * this, unsigned int flags)","sub ecx,0x20; jmp 0x0072DB70"
@@ -12321,7 +12317,6 @@ address,what,value,why
 0x00469530,signature,"void __thiscall f(void * this, void * drawContext)","__thiscall, ret 4"
 0x004696B0,signature,void __thiscall f(void * this),"__thiscall, tail-jumps to 0x0046D190"
 0x004696D0,signature,"void __thiscall f(void * this, void * items)","__thiscall, ret 4"
-0x00537D70,clear,GraphicsStructures::ObjectNodeTerrain::vfunction29,"Called on the scene by 0x0046700A and the cutoff walk to get the scene's Object list (+0x90, SCENE.md); the terrain-node label misleads at these call sites (folded body)"
 0x00467750,clear,local struct offset_0xc/offset_0x2c/offset_0x30 field names,"the EclipseUmbraScene_data offsets in the decompiler listing are shifted by 4 from the real offsets (+0x10 owner, +0x14 commander, +0x2C sphere model, +0x40 3dgui mask, +0x48 cutoff, +0x4C cutoff switch, +0x4D disabled)"
 0x00469530,clear,SubmissionQueueNULL_data offsets offset_0x0/0x4/0x8/0x10,"real offsets are +0x08 idA, +0x0C idB, +0x10 idC, +0x18 mask; Ghidra's are off by 8"
 0x0046CD10,signature,"void __thiscall Renderer::SubmissionQueueProgram::Clear(void * this, bool releaseStorage)",ret 4; arg tested by 0x0046C970
@@ -14187,7 +14182,6 @@ address,what,value,why
 0x004F7230,signature,"void* __thiscall Graphics::MaterialObjectManager::Find(void* this, void* out, const void* name)",ret 8
 0x004F72D0,signature,"void* __stdcall Graphics::MaterialObjectManager::Load(void* out, const void* name)","ret 8, ecx unread before written"
 0x004F7680,convention,__thiscall,"ecx is the manager, plain ret"
-0x004F25A0,clear,CLCDBase::vfunction14,folded setter of +0x18; here MaterialStateOverride's owner
 0x004FE8F0,clear,CLCDBase::vfunction18,"folded getter of a member's address; here a MaterialObject's name (0x004F75BC, then emptiness test 0x004C0E50 and assign 0x0057F630)"
 0x004F5700,signature,"void* __thiscall Graphics::MaterialObjectInstance::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4 at 0x004F571B
 0x004F6660,signature,unsigned long long __cdecl Graphics::MaterialCategoryFromName(const wchar_t* token),"not in the batch; plain ret, u64 in edx:eax; the 38-name _wcsicmp chain read for 0x004F6B40"
@@ -14247,7 +14241,6 @@ address,what,value,why
 0x004FDFB0,signature,"void* ECBase::ECDynArray<General::SafePointer<?>>:: __thiscall f(void* this, unsigned int count)",RET 4 at 0x004FE01A; returns this 0x004FE007
 0x004FE020,signature,void* __thiscall f(void* this),plain RET at 0x004FE081; returns this 0x004FE06F
 0x004FE090,clear,_AfxAygshellState,"library-signature label; the function is Graphics::MaterialShaderManager::Get, the singleton accessor building 0x00C31084 with 0x004FE020 (0x004FE0D0)"
-0x004F8080,clear,_AfxAygshellState,library-signature label; the function is Graphics::MaterialManager's singleton accessor (static 0x00C30934)
 0x00506CD0,clear,_AfxAygshellState,decompiler shows this label on calls to Graphics::MaterialParameterNames::Get (e.g. 0x004FF223)
 0x004FE900,clear,D3DDriver::D3DBatchIndex::vfunction12,"ICF-folded getter MOV EAX,[ECX+0x70]; called directly on a MaterialObject at 0x00508070; also in vftables 0x00AE49C8, 0x00B2E708, 0x00B31CCC"
 0x004FE930,signature,"void __thiscall f(void* this, void* name)","ADD ECX,0x38; JMP std::wstring::operator= (ret 4 there)"
@@ -14430,7 +14423,6 @@ address,what,value,why
 0x0050AD50,signature,"void* __thiscall Graphics::MaterialParamSetRef::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
 0x0050AD70,signature,"void** __thiscall ECBase::ECDynArray<Graphics::MaterialBuilderTemp*>::At(void* this, unsigned int index)",ret 4; this is the vector at builder+0x10
 0x0050ADA0,signature,"void __thiscall Graphics::MaterialLogicTestTemp::SetDetail(void* this, void* value)",ret 4; value is a std::wstring*
-0x00A222A0,clear,EC::WDObject::vfunction7,"shared slot 3 of every MaterialBuilderTemp vftable: returns the type flag at +0x4 (GetType); out of batch, noted for whoever holds it"
 0x0050AF10,convention,__thiscall,Reads ecx as this (0x0050AF34) and returns with a plain ret; Ghidra has __fastcall(param_1).
 0x0050AF10,signature,void __thiscall Graphics::MaterialPassTemp::BuildPass(void* this),No stack arguments (plain ret at 0x0050B0B4).
 0x0050B0C0,convention,__thiscall,"Reads ecx as this (0x0050B0E5), plain ret; Ghidra has __fastcall(param_1)."
@@ -14499,14 +14491,12 @@ address,what,value,why
 0x005105C0,signature,"void __thiscall SetSamplerIndex(void * this, ushort index)",ret 4
 0x0050FB30,convention,__thiscall,"outside the batch (render-23 owns its name): ecx = the block, read at 0x0050FB5D/0x0050FB8A; ret 0xC"
 0x0050FBC0,convention,__thiscall,outside the batch (render-23): ecx passed through to 0x0050FB30; ret 8
-0x004D38E0,clear,GraphicsStructures::ObjectNodeCloth::vfunction3,a folded getter of the static identity matrix (0x00C2BFB0; 0x004D38F9..0x004D392B); called by ApplyParamDefaults at 0x00502B80
 0x004ECF60,clear,G2DA::IsLoaded,"a folded `mov al,[ecx+4]`; also MaterialArtParameter's has-a-value test (0x00502964)"
 0x00A25AA0,signature,float __thiscall Renderer_PerspectiveCamera_GetAspectCorrection(void* this),"push ecx/pop ecx; plain ret, no stack arguments; reads ecx+0x148; result in st0"
 0x005278C0,signature,void* __cdecl Graphics_GetCurrentDriver(void),"plain ret, never reads ecx; driver pointer in eax"
 0x005278C0,clear,D3DDriver::D3DGraphicsDriverManager::vfunction8,not a method: ignores this; a free getter (0x008653B0 is a jmp thunk to it)
 0x0086B530,signature,float __thiscall D3DDriver_D3DGraphicsDriver_GetAspectCorrection(void* this),fld [ecx+0x7368]; ret; vftable slot 97 (0x00B2E2F8)
 0x0086A500,signature,void __thiscall D3DDriver_D3DGraphicsDriver_UpdateAspectCorrection(void* this),"mov esi,ecx at 0x0086A521 before ecx is written; plain ret"
-0x0096BDE0,clear,Graphics::ICamera::vfunction8,"shared fld1/ret body, also ThreadedGraphicsDriver slot 97 (0x00B584D0); the ICamera name misleads"
 0x005D4810,signature,void __thiscall f(void* this),"ecx = app, reads [ecx+0x14C]; plain ret 0x005D483A"
 0x005D4AC0,signature,void* __cdecl f(void),ecx not read; plain ret 0x005D4B11
 0x005D5000,signature,void* __thiscall f(void* this),reads [ecx+0x114]; plain ret 0x005D5014
@@ -16033,7 +16023,6 @@ address,what,value,why
 0x00527AC0,signature,"void __thiscall AddFrameBufferEffect(void * this, void * effect)",vftable slot 6; ret 4
 0x00527AE0,signature,"void __thiscall RemoveFrameBufferEffect(void * this, void * effect)",vftable slot 7; ret 4
 0x00527B10,signature,void __thiscall EnableGameRendering(void * this),vftable slot 0; ecx read at 0x00527B12; ends in a tail jump
-0x0086E0F0,clear,D3DDriver::D3DGraphicsCapabilitiesDriver::vfunction5_for_GraphicsCapabilitiesDriver,"A folded getter of +0xC0; here called on a scene for its camera (0x00527331, 0x00527A8A), so the label misleads"
 0x00527320,signature,void __thiscall DrawOverlaySceneAndConsole(void * this),"reads ecx+0x58/+0x60 at 0x0052732D, 0x0052735B; plain ret through the tail jump to Console::Update"
 0x00543FC0,signature,"float __thiscall f(void *this, void *out, void *entries, unsigned int count, void *tracks, unsigned int base)","ret 0x14, ecx read; 0x00544E20 pushes five arguments and takes the total weight from ST0"
 0x00544090,signature,"void __thiscall f(void *this, void *out, void *entries, unsigned int count, void *tracks, unsigned int base)","ret 0x14, ecx read"
