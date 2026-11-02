@@ -13982,3 +13982,42 @@ address,what,value,why
 0x005C8070,signature,"void __stdcall f(void* text, unsigned short sep, void* pairs, void* count)",ret 0x10 at 0x005C80E0; ecx written before read
 0x005C82C0,signature,void __thiscall f(void* this),plain ret; reads [edi+0x530] with ecx
 0x005C84D0,signature,int __thiscall f(void* this),plain ret 0x005C8517; ecx to esi 0x005C84D2
+0x005C91B0,signature,void* __cdecl f(void),"new(0x48), links zeroed, +0x44/+0x45 set; ecx not used (the RoomBoundsMap ctor does not load it for the call at 0x005C9AD0)"
+0x005C91F0,signature,void* __thiscall f(void* this),ecx read at 0x005C91F3; plain ret
+0x005C9230,signature,"void* __thiscall f(void* this, void* ptr, unsigned int count, void* value)",ret 0xC; ecx pushed unwritten at 0x005C9230; return edi+esi*8 at 0x005C925A
+0x005C9270,signature,"void __thiscall f(void* this, void* node)",ret 4; ecx copied to ebx at 0x005C927B
+0x005C97B0,signature,void __thiscall f(void* this),"plain ret, this in esi"
+0x005CA610,signature,"bool __cdecl f(unsigned int animId, unsigned int mask)",plain ret; two stack arguments read at 0x005CA610 and 0x005CA644
+0x005CA6B0,signature,int __cdecl f(unsigned int animId),"plain ret at 0x005CA6D8/0x005CA6DC, argument at [esp+8] after one push"
+0x005CA740,signature,"int __cdecl f(unsigned int row, int unsync, int castColumn)",plain ret; table = 0x66 + (arg2 != 0) at 0x005CA75C; column chosen by arg3 at 0x005CA775-0x005CA783
+0x005CAB50,signature,void __thiscall f(void* this),"plain ret, this in esi"
+0x005CB2D0,signature,"void* __thiscall f(void* this, unsigned int s0, unsigned int s1, unsigned int s2, unsigned int s3, unsigned int s4, unsigned int s5, unsigned int s6)","ret 0x1C: a 28-byte std::wstring passed by value, copied with 0x004C2510 at 0x005CB327 and destroyed at 0x005CB338"
+0x005CB360,signature,"unsigned char __thiscall f(void* this, unsigned int* key, void* name)","ret 8; arg1 key copied at 0x005CB38B, arg2 passed to wstring copy 0x004C2510, result byte [eax+8] at 0x005CB3B8"
+0x005CB3F0,signature,"void* __thiscall f(void* this, unsigned int comparator)",ret 4 with the argument never read; ecx saved to esi at 0x005CB412
+0x005CB460,signature,"unsigned char __thiscall f(void* this, void* key, unsigned int* value)","ret 8; arg1 copied by 0x004C2510 at 0x005CB490, arg2 dereferenced at 0x005CB499, result byte [eax+8] at 0x005CB4B8"
+0x005CB4F0,signature,unsigned char __cdecl f(void),plain ret; ecx never read; result al at 0x005CB669 / 0x005CB66D
+0x005CB810,signature,void* __cdecl f(unsigned int animId),"plain ret; add esp,0xC after pushing the local flag and the id"
+0x005CD320,signature,"void* __thiscall f(void* this, void* out, void* key)","ret 8; key hashed at 0x005CD32D, out written at 0x005CD435 / 0x005CD451"
+0x005CD480,signature,"void* __thiscall f(void* this, void* out, void* firstContainer, void* firstPtr, void* lastContainer, void* lastPtr)","ret 0x14: out and two {container, pointer} iterators; element step 8 at 0x005CD4CC"
+0x005CD610,signature,void __thiscall f(void* this),plain ret; this in esi
+0x005CD750,signature,"void* __thiscall f(void* this, void* other)","ret 4 at 0x005CD90E; list clear 0x00406880 is list<pair<unsigned int,wstring>>"
+0x005CD970,signature,"void __thiscall f(void* this, void* reader, void* parent)","ret 8 at 0x005CDC73; reader in edi, second argument tested at 0x005CD9EB"
+0x005CDC80,signature,"void* __thiscall f(void* this, void* other)",ret 4; this saved in esi
+0x005CEA80,signature,"void __thiscall f(void* this, void* parent)",ret 4 at 0x005CED5E; ecx saved to ebx at 0x005CEAC3
+0x005CED70,signature,"void* __thiscall f(void* this, void* other)",ret 4
+0x005CEDD0,signature,"void* __thiscall f(void* this, void* other)",ret 4; this in esi
+0x005CEF40,signature,"void __thiscall f(void* this, unsigned int count)",ret 4; mul by 0x140 at 0x005CEF73
+0x005CFB70,signature,"void __thiscall f(void* this, void* src)",ret 4; edi = esi+0x120 at 0x005CFB78
+0x005CFBD0,signature,void __thiscall f(void* this),"plain ret; lea eax,[ecx+0x2A0]"
+0x005CFBE0,signature,void __thiscall f(void* this),plain ret; iterator pointer at +4
+0x005CFCF0,signature,unsigned int __thiscall f(void* this),ecx read; sar 6
+0x005CFD10,signature,"void* __cdecl f(void* first, void* last, void* dest)","plain ret; add esp,0x18 after the inner call; three arguments read at 0x005CFD13-0x005CFD22"
+0x005D11B0,signature,"void __thiscall f(void* this, unsigned int count, unsigned int v0, unsigned int v1, unsigned int v2, unsigned int v3, unsigned int v4, unsigned int v5, unsigned int v6, unsigned int v7, unsigned int v8, unsigned int v9, unsigned int v10, unsigned int v11, unsigned int v12, unsigned int v13, unsigned int v14, unsigned int v15)",ret 0x44 at 0x005D1288: count and a 64-byte element by value; size = (end-begin)>>6 at 0x005D11EF
+0x005D1DA0,signature,"void* __thiscall f(void* this, unsigned int count)",ret 4; resize 0x005D1D40
+0x005D2480,signature,"void __thiscall f(void* this, void* outBegin, void* outEnd)","ret 8; outputs written at 0x005D24B1, 0x005D24EF and 0x005D2501, 0x005D2507"
+0x005D26E0,signature,"void __thiscall f(void* this, unsigned int count, void* value)",ret 8 at 0x005D2738; sar 2
+0x005D27A0,signature,"void* __thiscall f(void* this, unsigned int count)",ret 4
+0x005D40D0,signature,"void* __thiscall f(void* this, void* other)",ret 4; wstring copy 0x004C2510 at +8
+0x005D4550,signature,"void* __stdcall f(void* out, void* name, unsigned char forWrite)",ret 0xC at 0x005D473D; ecx overwritten before use at 0x005D4587
+0x005D4740,signature,"void* __stdcall f(void* out, void* name)",ret 8
+0x005D4770,signature,void __thiscall f(void* this),"plain ret; this in edi (CClientExoApp, BeginSave)"
