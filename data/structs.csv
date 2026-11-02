@@ -44,6 +44,10 @@ AnimBaseWield,0x238,0x8,int[2],weaponAttachIndex,"0x00A66EAF mov [esi+ebx*4+0x22
 AnimModelLods,0x4,0x4,void*,currentModel,"0x00A5CB53 mov ecx,[eax+4] with eax = [AnimBase+0x18]; the model interface (Object+8) that every AnimBase forwarder calls"
 AnimModelLods,0x8,0x4,void*,pendingModel,"0x00A6891C mov ebp,[esi+8] in ActivatePendingModel; moved to +4 at 0x00A689CC-0x00A689D3"
 AnimModelLods,0xB4,0x4,int,ownerLodLevel,"0x00A689DB mov [esi+0xB4],edx in ActivatePendingModel; AnimBase::SetOwnerLodLevel writes it 0x00A5D651"
+Animation::ModelAnimationTree,0x10,0x10,ECBase::ECDynArray<Animation::ModelAnimationTree::Entry>,entries,"0x00546AD2 mov eax,[edi+0x14] (begin), 0x00546ADD mov ecx,[edi+0x18] (end); 0x00813779 add esi,[edi+0x14] in SetWeight"
+Animation::ModelAnimationTree::Entry,0x0,0x34,struct,sizeof,"0x00546AE7 imul ecx (multiplier 0x4EC4EC4F at 0x00546AE2) with sar 4 (divide by 0x34); stride add ebp,0x34 at 0x00546B56; 0x0081377A imul esi,esi,0x34"
+Animation::ModelAnimationTree::Entry,0xC,0x4,float,weight,0x00546B2C fcomp dword [ecx+0xc] against 0
+Animation::ModelAnimationTree::Entry,0x32,0x1,bool,alive,"0x00546B36 cmp byte [ecx+0x32],0; cleared at 0x00811C9F in RetireIfFinished"
 Backpack,0x0,0x50,struct,sizeof,0x00740685; sizeof (push 0x50 then the Backpack constructor)
 Backpack,0x0,0x4,void*,vptr,0x0080D278; vptr 0x00B26464
 Backpack,0x48,0x4,void*,dirtyFlaggableVptr,"0x0080D27E, 0x0080D266; vptr of the DirtyFlaggable base at +0x48, 0x00B264DC (base's own 0x00B1FB70 first)"
@@ -663,6 +667,9 @@ GraphicsStructures::Dependency,0xC,0x1C,std::wstring,targetNodeName,"0x00568BE8 
 GraphicsStructures::Dependency,0x28,0x1,bool,attached,"0x00542D23 mov [esi+0x28],bl; 0x00568DBD cmp byte [esi+0x28],0 and 0x00568DD2 mov [esi+0x28],1 in ObjectAttachDependency::Update"
 GraphicsStructures::EmitterUpdateTask,0x0,0x1C,struct,sizeof,0x00542030 push 0x1C; call operator new at 0x0054209D
 GraphicsStructures::EmitterUpdateTask,0x18,0x4,void*,emitter,"0x005420C3 mov [edi+0x18],esi; 0x0053E340 mov ecx,[ecx+0x18]"
+GraphicsStructures::ExportValue,0x0,0x30,struct,sizeof,"0x00546862 imul ecx (multiplier 0x2AAAAAAB at 0x0054685D), sar 3 at 0x00546864 in the array's Size; stride add [esp+0x10],0x30 at 0x00547CE5"
+GraphicsStructures::ExportValue,0x10,0x4,float*,target,"0x00547CA3 cmp ebp,[eax+0x10] in FindTrackRowByTarget (all four jump-table cases)"
+GraphicsStructures::ExportValue,0x28,0x4,unsigned int,valueType,"0x00547C94 mov ecx,[eax+0x28]; 0x00547C97 cmp ecx,3 selects one of four jump-table cases at 0x00547D04; 0x00548178 mov eax,[ecx+0x28] in GetMemoryFootprint"
 GraphicsStructures::Font,0x0,0x818,struct,sizeof,"0x0045ABF0 push 0x818, allocation in Renderer::Renderer_Device"
 GraphicsStructures::Font,0x4,0x4,void*,glyphBatch,"0x0053C815 mov [esi+4],eax: the owner slot 57 returns the FontGlyphBatch; AddText 0x0053C754 mov ecx,[esi+4]"
 GraphicsStructures::Font,0x8,0x4,void*,owner,"0x0053C7AC mov [esi+8],eax: the graphics owner whose vtable creates and frees batches"
@@ -678,7 +685,14 @@ GraphicsStructures::Object,0x48,0x10,ECBase::ECDynArray<Multithreading::SynchSaf
 GraphicsStructures::Object,0x58,0x4,GraphicsStructures::ObjectNode*,rootNode,"0x005688A7 mov [ebx+0x58],eax; the root node of the tree"
 GraphicsStructures::Object,0x5C,0x4,float,scale,0x00543051 fld [esi+0x58] with esi = Object+4; used for all three axes of the box's matrix at 0x00543056..0x00543069
 GraphicsStructures::Object,0x60,0x10,ECBase::ECDynArray<Graphics::IRenderableNode*>,renderableNodes,"0x00545d96 mov eax,[edi+0x5c] (edi = Object+8, begin Object+0x64); 0x00545da1 mov ebx,[edi+0x60] (end Object+0x68); nodes of the 35-slot IRenderableNode interface, kind 1 is a mesh"
-GraphicsStructures::Object,0x80,0x10,ECBase::ECDynArray<int>,intArray,"0x00568749 lea ecx,[ebx+0x80]; call 0x00567BD0; integers, as many as the blueprint's +0x74, zero at first"
+GraphicsStructures::Object,0x80,0x10,ECBase::ECDynArray<GraphicsStructures::ObjectNode*>,boneNodes,"0x00546D10 RegisterBoneNode stores each bone node by its index, called only from ObjectNodeBoneBlueprint::Instantiate; 0x00568749 sizes it at instantiation from the blueprint's +0x74"
+GraphicsStructures::Object,0x90,0x10,ECBase::ECDynArray<GraphicsStructures::Object*>,attachedObjects,"0x00547895 mov eax,[esi+0x94] (esi = Object); emptied by +8 slot 54 (0x0054E0C0, lea esi,[ecx+0x88] with ecx = Object+8) which is passed element+8 (the child's +8 interface) at 0x005477E9; SCENE.md called Object +0xA4 the attach list, that one is the emitters"
+GraphicsStructures::Object,0xA0,0x10,ECBase::ECDynArray<GraphicsStructures::ObjectNodeEmitter*>,emitters,"0x005482C5 mov eax,[edi+0x9c] (edi = Object+8, begin Object+0xA4, end +0xA8); 0x00548310 mov byte [ecx+0x4dc],1 on each element; 0x00547A96 call 0x542440 ObjectNodeEmitter::UpdateMotionFrames on each"
+GraphicsStructures::Object,0xC0,0x10,ECBase::ECDynArray<GraphicsStructures::ObjectNode*>,snapToPointNodes,"0x00547E1C mov ecx,[esi+0xbc] (esi = Object+8, begin Object+0xC4, end +0xC8); filled by 0x0054BAC0 from the root node's children of kind 0x10 (0x0054BB75 cmp eax,0x10; push at 0x0054BB81 lea ecx,[ebp+0xb8])"
+GraphicsStructures::Object,0xD0,0x10,ECBase::ECDynArray<GraphicsStructures::ObjectNode*>,usePointNodes,"0x00547FA3 mov ecx,[esi+0xcc] (esi = Object+8, begin Object+0xD4, end +0xD8); filled by 0x0054BBC0 from the root node's children of kind 0xF (0x0054BC75 cmp eax,0xf; push at 0x0054BC81 lea ecx,[ebp+0xc8])"
+GraphicsStructures::Object,0xE1,0x1,bool,snapToPointsBuilt,"0x0054BAC6 cmp byte [ebp+0xd9],0 (ebp = Object+8); set at 0x0054BB91; zeroed in the constructor at 0x0054FADE"
+GraphicsStructures::Object,0xE2,0x1,bool,usePointsBuilt,"0x0054BBC6 cmp byte [ebp+0xda],0 (ebp = Object+8); zeroed in the constructor at 0x0054FAE4"
+GraphicsStructures::Object,0xE4,0x4,int,headBaseNodeIndex,"0x00546D24 cmp dword [esi+0xe4],-1; 0x00546D4B mov [esi+0xe4],edi (the bone index when the node is named like GetHeadBaseNodeName); constructor 0x0054FB00 mov [esi+0xe4],ebp (-1)"
 GraphicsStructures::Object,0xE8,0x4,void*,trackedNode,"0x005455fa mov ecx,[esi+0xe4] (esi = Object+4); 0x00545609 call [vtbl+0x74] GetWorldTranslationXYZ, used for the sphere centre when flags have 0x100"
 GraphicsStructures::Object,0xEC,0x1,bool,placeChanged,"0x00548F5E cmp byte [ebx+0xe8],1 with ebx = Object+4 (UpdateTransforms); set at 0x005434AA (SetPlace) and 0x005429A8"
 GraphicsStructures::Object,0xED,0x1,bool,transformsPending,"0x00548F03 cmp byte [ebx+0xe9],1 gates UpdateTransforms; cleared at 0x00548F67 when nothing needs work; set at 0x005429AF and 0x005434B0"
@@ -690,8 +704,10 @@ GraphicsStructures::Object,0x130,0x10,Vector4,lastOrientation,0x00543629 fstp [e
 GraphicsStructures::Object,0x140,0x10,Vector4,boundsMin,"0x005686FF movaps [ebx+0x140]; 0x0056653B movaps [edi+0x140],xmm1 (minps); bounds minimum: the blueprint's, divided by its w, then lowered by each part's"
 GraphicsStructures::Object,0x150,0x10,Vector4,boundsMax,"0x0056873C movaps [ebx+0x150]; 0x00566594 movaps [edi+0x150],xmm0 (maxps); bounds maximum, raised by each part's"
 GraphicsStructures::Object,0x160,0x1C,std::wstring,textureVariant,"0x005459e9 lea esi,[edi+0x158] (edi = Object+8); assigned at 0x00545a02; read by ObjectNodeMesh::ApplyTextureVariant 0x0055ab84 lea ecx,[eax+0x160]"
+GraphicsStructures::Object,0x17C,0x10,ECBase::ECDynArray<Animation::ModelAnimationTree*>,animationTrees,"0x005485F0 add ecx,0x17C before Core::GetVectorRange (0x005D2480); 0x00546A90 mov ecx,[ebp+0x180]; filled by primary slot 6 at 0x0054D2E1 (lea ecx,[esi+0x17c]; push_back 0x0049D170) after 0x0054D2D5 mov [eax+4],esi (the tree's owner)"
 GraphicsStructures::Object,0x1BC,0x4,Physics::PhysicsObject*,physicsObject,"0x00542723 mov ecx,[esi+0x1bc]; SetPlace calls its slot 0x3c SetPosition (0x00543557); SetKinematic 0x005428C4 slot 0x44; AddGroupsMaskBits 0x00542907 slot 0x4c; stored only by SetPhysicsObject 0x0054273E"
 GraphicsStructures::Object,0x1D4,0x10,ECBase::ECDynArray<GraphicsStructures::ExportValue>,exportValues,"0x00568871 lea ecx,[ebx+0x1D4]; 0x005689B7 mov edi,[ebx+0x1DC]; 0x005689E6 mov eax,0x2AAAAAAB; export values, 0x30 bytes each; begin +0x1D8, end +0x1DC"
+GraphicsStructures::Object,0x1E4,0x10,ECBase::ECDynArray<?>,exportCopies,"0x00547700 mov eax,[esi+0x1e8]; 12-byte records {byte size; void* source; void* destination} at 0x0054775B (movzx ecx,[eax]), 0x0054775E, 0x00547761, copied with memcpy (0x008E24A0) at 0x00547767 when placeChanged; resized by 0x00568213 lea ecx,[edi+0x1e4] through 0x00567A50"
 GraphicsStructures::Object,0x1F8,0x10,ECBase::ECDynArray<GraphicsStructures::Dependency*>,dependencies,"0x00548F1A lea ecx,[ebx+0x1f4] with ebx = Object+4 (UpdateTransforms calls each one's slot 4 Update); 0x0054D8AF lea edi,[ebx+0x1f0] with ebx = Object+8 (AttachToObjectNode searches it)"
 GraphicsStructures::Object,0x248,0x4,GraphicsStructures::TriggerSubObject*,triggerSubObject,"0x00542952 cmp [ecx+0x240],eax with ecx = Object+8; 0x0054F39A..0x0054F3A6 destructor deletes it through slot 0 and clears it; TriggerSubObject type INFERRED"
 GraphicsStructures::Object,0x250,0x4,GraphicsStructures::Object*,boundsBox,"0x00545909 mov [esi+0x250],eax (esi = Object); the wire box made by ShowBoundsBox; 0x0054551b recreated by SetUniformScale"
@@ -784,6 +800,7 @@ GraphicsStructures::ObjectNodeCloth,0x494,0x4,unsigned int,windSpace,"0x0056502E
 GraphicsStructures::ObjectNodeCloth,0x4A0,0xD0,GraphicsStructures::ClothWind,wind,"0x00565038 call 0x005867C0 with ecx=esi+0x4A0; the gust model, constructed in place (size bounded by the next field at +0x570)"
 GraphicsStructures::ObjectNodeEmitter,0x310,0x4,ObjectNodeEmitterBlueprint*,emitterBlueprint,"0x0055F1A2 mov ecx,[esi+0x310]; written at 0x00560A53"
 GraphicsStructures::ObjectNodeEmitter,0x4D8,0x4,void*,splatObject,"0x0053DBD9 mov ecx,[ecx+0x4D8] (tag 0x25 gives its +0x18); 0x0053DC80 reads its +8; written 0x0054200A and 0x00561157"
+GraphicsStructures::ObjectNodeEmitter,0x4DC,0x1,bool,clearRequested,"0x00548310 mov byte [ecx+0x4dc],1; read and cleared at 0x00552D5D and 0x00552D74 in the sprite emitter's Update"
 GraphicsStructures::ObjectNodeEmitter,0x4E0,0x4,float,opacity,0x0053D7DC fst [edx+0x4E0]; 1.0 at construction 0x00542018
 GraphicsStructures::ObjectNodeEmitter,0x4E8,0x4,void*,updateTask,"0x005420C6 mov [esi+0x4E8],edi (the EmitterUpdateTask)"
 GraphicsStructures::ObjectNodeEmitterBlueprint,0x130,0x1,char,flags130,"0x0055FFE7 mov al,[ecx+0x130]: bit 0 PhysicsEmitter (0x005613D0 test), bit 1 has attachments (0x0055F1A8), bit 5 link particles (0x0055FFF4), bit 7 spawn within volume (0x00560042)"
