@@ -16643,3 +16643,83 @@ address,what,value,why
 0x0055A7C0,signature,"void * __stdcall f(void *declA, void *declB)","ret 8, ecx not read"
 0x0055A900,signature,"void __thiscall f(void *this, void *visitor)",ret 4 (0x0055A95E)
 0x0055AA50,signature,"void __thiscall f(void *this, unsigned char on)",ret 4 (0x0055AA82)
+0x007E9E00,convention,__thiscall,"thiscall, plain ret, row id at this+4"
+0x007E9E00,signature,void __thiscall VisualEffectCache::VisualEffectEntry::LoadRow(void* this),"thiscall, plain ret, row id at this+4"
+0x007EA110,convention,__thiscall,"thiscall, plain ret"
+0x007EA110,signature,void __thiscall CCVisualEffect::~CCVisualEffect(void* this),"thiscall, plain ret"
+0x007EA1C0,convention,__thiscall,"ret 0xC, wstring name"
+0x007EA1C0,signature,"bool __thiscall CCVisualEffect::LoadModel(void* this, void* modelName, uint crustTarget, bool crustEffect)","ret 0xC, wstring name"
+0x007EA220,convention,__thiscall,ret 4
+0x007EA220,signature,"void __thiscall CCVisualEffect::PlayPhaseSound(void* this, int phase)",ret 4
+0x007EA530,convention,__thiscall,ret 4
+0x007EA530,signature,"void* __thiscall CCVisualEffect::`scalar deleting destructor'(void* this, uint flags)",ret 4
+0x007EA550,convention,__thiscall,ret 0xC; descriptor+0xC is a tint vec4 pointer
+0x007EA550,signature,"bool __thiscall CCVisualEffect::LoadFromRow(void* this, void* descriptor, uint crustTarget, float size)",ret 0xC; descriptor+0xC is a tint vec4 pointer
+0x007EAB50,convention,__thiscall,ret 4
+0x007EAB50,signature,"bool __thiscall CCVisualEffect::SetPhase(void* this, int phase)",ret 4
+0x007EAC30,convention,__thiscall,"plain ret, returns the phase"
+0x007EAC30,signature,int __thiscall CCVisualEffect::AdvancePhase(void* this),"plain ret, returns the phase"
+0x007EAD30,convention,__thiscall,"plain ret, returns this"
+0x007EAD30,signature,void* __thiscall VisualEffectCache::VisualEffectEntry::VisualEffectEntry(void* this),"plain ret, returns this"
+0x007EAE20,convention,__thiscall,"plain ret, ecx unused"
+0x007EAE20,signature,void* __thiscall VisualEffectCache::CreateEntry(void* this),"plain ret, ecx unused"
+0x007EAF40,convention,__thiscall,ret 4
+0x007EAF40,signature,"void* __thiscall VisualEffectCache::VisualEffectEntry::`scalar deleting destructor'(void* this, uint flags)",ret 4
+0x008149D0,convention,__thiscall,ret 0x10
+0x008149D0,signature,"void __thiscall Animation::ModelAnimationTree::CollectActiveClips(void* this, void* normalNodes, void* overrideEntries, void* additiveEntries, void* scale)",ret 0x10
+0x00814FA0,convention,__thiscall,ret 4
+0x00814FA0,signature,"bool __thiscall Animation::ModelAnimationTree::AppendCachedRoot(void* this, void* normalNodes)",ret 4
+0x0081B2C0,convention,__thiscall,returns this+0xFC
+0x0081B2C0,signature,void* __thiscall Physics::MeshShapePrototype::GetMesh(void* this),returns this+0xFC
+0x0081D190,convention,__stdcall,ret 0xC; ecx not read
+0x008302B0,convention,__thiscall,tail jump to the NxCloth vftable
+0x008302B0,signature,void __thiscall Physics::PhysicsCloth::PutToSleep(void* this),tail jump to the NxCloth vftable
+0x008302C0,convention,__thiscall,plain ret
+0x008302C0,signature,bool __thiscall Physics::PhysicsCloth::IsDynamic(void* this),plain ret
+0x00830410,convention,__thiscall,plain ret
+0x00830410,signature,void __thiscall Physics::PhysicsCloth::WakeUp(void* this),plain ret
+0x00830780,convention,__thiscall,ret 4
+0x00830780,signature,"void __thiscall Physics::PhysicsCloth::GetBoundingSphere(void* this, void* outSphere)",ret 4
+0x00844F10,convention,__cdecl,"plain ret, no arguments"
+0x00844F10,signature,void __cdecl TexManager::TextureManager::DestroyInstance(void),"plain ret, no arguments"
+0x00844F30,convention,__cdecl,plain ret
+0x00844F30,signature,void __cdecl TexManager::EnableAsyncLoading(void),plain ret
+0x00845020,convention,__thiscall,plain ret
+0x00845020,signature,void __thiscall TexManager::TextureManager::Shutdown(void* this),plain ret
+0x008455E0,convention,__stdcall,"ret 0xC, ecx not read"
+0x008455E0,signature,"void __thiscall TexManager::DDSResourceHelper::FreeResource(void* this, void* holder, uint a, uint b)","ret 0xC, ecx not read"
+0x00845C30,convention,__thiscall,plain ret
+0x00845C30,signature,void __thiscall TexManager::TextureManager::~TextureManager(void* this),plain ret
+0x00845CE0,convention,__thiscall,ret 4
+0x00845CE0,signature,"void* __thiscall TexManager::TextureManager::`scalar deleting destructor'(void* this, uint flags)",ret 4
+0x00846680,convention,__thiscall,ret 8
+0x00846680,signature,"void __thiscall TexManager::TextureManager::GetMemoryFootprint(void* this, uint* outA, uint* outB)",ret 8
+0x00847670,convention,__stdcall,"ret 0x14, ecx not read"
+0x00847670,signature,"bool __stdcall TexManager::DDSResourceHelper::LoadResource(void* this, void* ddsBytes, uint size, void** outObject, uint* outObjectSize)","ret 0x14, ecx not read"
+0x008478F0,convention,__cdecl,plain ret
+0x008478F0,signature,void __cdecl TexManager::EnableTexturePool(void),plain ret
+0x0084A840,convention,__thiscall,"plain ret, returns this"
+0x0084A840,signature,void* __thiscall TexManager::TextureLoadTask::TextureLoadTask(void* this),"plain ret, returns this"
+0x0084A8C0,convention,__thiscall,plain ret
+0x0084A8C0,signature,void __thiscall TexManager::TextureLoadTask::~TextureLoadTask(void* this),plain ret
+0x0084A930,convention,__thiscall,"ret 4, returns 2 to wait or 3 done"
+0x0084A930,signature,"int __thiscall TexManager::TextureLoadTask::Run(void* this, void* arg)","ret 4, returns 2 to wait or 3 done"
+0x0084AA40,convention,__thiscall,ret 4
+0x0084AA40,signature,"void* __thiscall TexManager::TextureLoadTask::`scalar deleting destructor'(void* this, uint flags)",ret 4
+0x0084AEF0,convention,__cdecl,plain ret
+0x0084AEF0,signature,bool __cdecl TexManager::DDS::IsCompressedFormatId(uint formatId),plain ret
+0x0084B0E0,convention,__cdecl,"plain ret, returns static descriptor or null"
+0x0084B0E0,signature,void* __cdecl TexManager::DDS::GetFormatInfo(void* pixelFormat),"plain ret, returns static descriptor or null"
+0x0084B7C0,convention,__cdecl,caller cleans 0x14
+0x0084B7C0,signature,"void* __cdecl TexManager::CreateUncompressedTextureFromDDS(void* dds, uint a2, uint a3, void* formatInfo, uint a4)",caller cleans 0x14
+0x0084BF60,convention,__cdecl,caller cleans 0x14
+0x0084BF60,signature,"void* __cdecl TexManager::CreateCompressedTextureFromDDS(void* dds, uint a2, uint a3, void* formatInfo, uint a4)",caller cleans 0x14
+0x0084C010,convention,__cdecl,"plain ret, 12-byte compare"
+0x0084C010,signature,bool __cdecl TexManager::TGA::IsRLETrueColor(void* header),"plain ret, 12-byte compare"
+0x0081B2C0,clear,D3DDriver::D3DGraphicsDriver,"the vftable scan class is wrong; identical-code-folded with a driver getter, the function is a physics MeshShapePrototype getter"
+0x00815870,signature,void __thiscall Graphics::IMemoryFootprint::~IMemoryFootprint(void* this),Plain ret at 0x00815876.
+0x00840D30,signature,"void __thiscall Console::Console::SetFont(void* this, void* font)",ret 4; stores the argument at this+0x74.
+0x00840D30,clear,Console::Console::vfunction15,"Misleading label: slot 3 of the Console vftable at 0x00B2B1A0 (the library's own class cell says D3DBatchIndex, whose slot 8 holds the same folded code)."
+0x008456D0,signature,"void* __stdcall TexManager::MakeTextureHandle(void* outHandle, const void* ddsData, int size, void* existingHandle, bool flag)",ret 0x14 at 0x0084580E; returns outHandle.
+0x00845C30,clear,Graphics::IMemoryFootprint::IMemoryFootprint,"Misleading label: this is the TextureManager destructor body (vftable 0x00B2B2B8 stored at 0x00845C58, members destroyed after)."
+0x0084A8C0,clear,Multithreading::Task::Task,Misleading label: this is the TextureLoadTask destructor (vftable 0x00B2B340 stored at 0x0084A8E8).

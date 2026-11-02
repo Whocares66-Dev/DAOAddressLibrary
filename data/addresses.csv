@@ -21162,18 +21162,18 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21161,function,CCVisualEffect::GetCessationSoundName,0x007e9da0,0x006d1240,0x007e9da0
 21162,function,CCVisualEffect::GetCessationSoundVolume,0x007e9dc0,0x006d1260,0x007e9dc0
 21163,function,CCVisualEffect::GetCessationSoundPitch,0x007e9de0,0x006d1280,0x007e9de0
-21164,function,,0x007e9e00,0x006d12a0,0x007e9e00
-21165,function,,0x007ea110,0x006d15b0,0x007ea110
-21166,function,,0x007ea1c0,0x006d1660,0x007ea1c0
-21167,function,,0x007ea220,0x006d16c0,0x007ea220
-21168,function,,0x007ea530,0x006d19d0,0x007ea530
-21169,function,,0x007ea550,0x006d19f0,0x007ea550
-21170,function,,0x007eab50,0x006d1ff0,0x007eab50
-21171,function,,0x007eac30,0x006d20d0,0x007eac30
-21172,function,,0x007ead30,0x006d21d0,0x007ead30
-21173,function,,0x007eae20,0x006d22c0,0x007eae20
+21164,function,VisualEffectCache::VisualEffectEntry::LoadRow,0x007e9e00,0x006d12a0,0x007e9e00
+21165,function,CCVisualEffect::~CCVisualEffect,0x007ea110,0x006d15b0,0x007ea110
+21166,function,CCVisualEffect::LoadModel,0x007ea1c0,0x006d1660,0x007ea1c0
+21167,function,CCVisualEffect::PlayPhaseSound,0x007ea220,0x006d16c0,0x007ea220
+21168,function,CCVisualEffect::`scalar deleting destructor',0x007ea530,0x006d19d0,0x007ea530
+21169,function,CCVisualEffect::LoadFromRow,0x007ea550,0x006d19f0,0x007ea550
+21170,function,CCVisualEffect::SetPhase,0x007eab50,0x006d1ff0,0x007eab50
+21171,function,CCVisualEffect::AdvancePhase,0x007eac30,0x006d20d0,0x007eac30
+21172,function,VisualEffectCache::VisualEffectEntry::VisualEffectEntry,0x007ead30,0x006d21d0,0x007ead30
+21173,function,VisualEffectCache::CreateEntry,0x007eae20,0x006d22c0,0x007eae20
 21174,function,VisualEffectCache::VisualEffectEntry::~VisualEffectEntry,0x007eae90,0x006d2330,0x007eae90
-21175,function,,0x007eaf40,0x006d23e0,0x007eaf40
+21175,function,VisualEffectCache::VisualEffectEntry::`scalar deleting destructor',0x007eaf40,0x006d23e0,0x007eaf40
 21176,function,BuyItemMessage::Create,0x007eaf60,0x006d2400,0x007eaf60
 21177,function,SellItemMessage::Create,0x007eafe0,0x006d2480,0x007eafe0
 21178,function,CloseStoreMessage::Create,0x007eb060,0x006d2500,0x007eb060
@@ -21993,8 +21993,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21992,function,Animation::ModelAnimationTree::`scalar deleting destructor',0x00814650,0x004bd940,0x00814650
 21993,function,std::vector<Animation::BlendTreeNode>::push_back,0x00814670,0x004bd9f0,0x00814670
 21994,function,Animation::ModelAnimationTree::DumpDebug,0x00814710,0x004bda90,0x00814710
-21995,function,,0x008149d0,0x004bddc0,0x008149d0
-21996,function,,0x00814fa0,0x004be390,0x00814fa0
+21995,function,Animation::ModelAnimationTree::CollectActiveClips,0x008149d0,0x004bddc0,0x008149d0
+21996,function,Animation::ModelAnimationTree::AppendCachedRoot,0x00814fa0,0x004be390,0x00814fa0
 21997,function,Animation::ModelAnimationTree::GetTreeHandle,0x00814fd0,0x004be3c0,0x00814fd0
 21998,function,Animation::ModelAnimationTree::EntryVector::EntryVector,0x00814ff0,0x004be3e0,0x00814ff0
 21999,function,Animation::ModelAnimationTree::ModelAnimationTree,0x00815070,0x004be460,0x00815070
@@ -22012,7 +22012,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 22011,function,Animation::RandomWaveController<float>::Update,0x008156e0,0x00a667f0,0x008156e0
 22012,function,Animation::ModelAnimation::MakeTrackRef,0x00815800,0x004b59d0,0x00815800
 22013,function,Animation::ModelAnimationNode::~ModelAnimationNode,0x00815860,0x004b5a50,0x00815860
-22014,function,,0x00815870,0x004bbf70,0x00815870
+22014,function,Graphics::IMemoryFootprint::~IMemoryFootprint,0x00815870,0x004bbf70,0x00815870
 22015,function,Animation::ModelAnimationNode::`vector deleting destructor',0x00815880,0x004b5a70,0x00815880
 22016,function,Animation::ModelAnimation::GetMemoryFootprint,0x008158e0,0x004b5ad0,0x008158e0
 22017,function,Clip::EventKey::GetTarget,0x00815950,0x004b5d50,0x00815950
@@ -22150,7 +22150,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 22149,function,Physics::PhysicsParticleActor::CreateShapeDesc,0x0081ac50,0x00a5f880,0x0081ac50
 22150,function,Physics::PhysicsParticleActor::Create,0x0081ad50,0x00a5f980,0x0081ad50
 22151,function,Physics::MeshShapePrototype::SetMesh,0x0081b280,0x004b0860,0x0081b280
-22152,function,,0x0081b2c0,0x004b0850,0x0081b2c0
+22152,function,Physics::MeshShapePrototype::GetMesh,0x0081b2c0,0x004b0850,0x0081b2c0
 22153,function,Physics::RigidBodyPrototype::SetName,0x0081b2d0,0x004b08a0,0x0081b2d0
 22154,function,Physics::MeshShapePrototype::GetMemoryFootprint,0x0081b2e0,0x004b08c0,0x0081b2e0
 22155,function,Physics::ShapePrototype::ShapePrototype,0x0081b330,0x004b0b20,0x0081b330
@@ -22542,18 +22542,18 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 22541,function,Physics::MemoryStream::Clone,0x00830190,0x004a8d90,0x00830190
 22542,function,Physics::MemoryStream::~MemoryStream,0x00830220,0x004a8e20,0x00830220
 22543,function,Physics::PhysicsCloth::FreeMeshData,0x00830240,0x004b1e80,0x00830240
-22544,function,,0x008302b0,0x004b1ef0,0x008302b0
-22545,function,,0x008302c0,0x004b1f00,0x008302c0
+22544,function,Physics::PhysicsCloth::PutToSleep,0x008302b0,0x004b1ef0,0x008302b0
+22545,function,Physics::PhysicsCloth::IsDynamic,0x008302c0,0x004b1f00,0x008302c0
 22546,function,Physics::PhysicsCloth::SetStatic,0x008302e0,0x004b1f20,0x008302e0
 22547,function,Physics::PhysicsCloth::ClearStatic,0x00830310,0x004b1f50,0x00830310
 22548,function,Physics::PhysicsCloth::GetMemoryFootprint,0x00830340,0x004b1f80,0x00830340
 22549,function,Physics::PhysicsCloth::PhysicsCloth,0x00830360,0x004b1fa0,0x00830360
 22550,function,Physics::PhysicsCloth::~PhysicsCloth,0x008303a0,0x004b1fe0,0x008303a0
-22551,function,,0x00830410,0x004b2050,0x00830410
+22551,function,Physics::PhysicsCloth::WakeUp,0x00830410,0x004b2050,0x00830410
 22552,function,Physics::PhysicsCloth::CreateClothMesh,0x00830430,0x004b2070,0x00830430
 22553,function,Physics::PhysicsCloth::~PhysicsCloth,0x008304d0,0x004b2110,0x008304d0
 22554,function,Physics::PhysicsCloth::AttachToShapes,0x008304f0,0x004b2130,0x008304f0
-22555,function,,0x00830780,0x004b23c0,0x00830780
+22555,function,Physics::PhysicsCloth::GetBoundingSphere,0x00830780,0x004b23c0,0x00830780
 22556,function,Physics::PhysicsCloth::CreateNxCloth,0x008308b0,0x004b24f0,0x008308b0
 22557,function,Physics::PhysicsCloth::Create,0x00830cb0,0x004b28f0,0x00830cb0
 22558,function,Physics::SphericalJointPrototype::GetFlags,0x00830cf0,0x00a5feb0,0x00830cf0
@@ -22840,7 +22840,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 22839,function,Console::Console::EchoInput,0x00840b50,0x00491440,0x00840b50
 22840,function,Console::Console::GetLineScreenPosition,0x00840c20,0x00491510,0x00840c20
 22841,function,Console::Console::SetField_0x7C,0x00840d20,0x00491610,0x00840d20
-22842,function,,0x00840d30,0x00491620,0x00840d30
+22842,function,Console::Console::SetFont,0x00840d30,0x00491620,0x00840d30
 22843,function,Console::Console::GetLineHeight,0x00840d40,0x00491630,0x00840d40
 22844,function,Console::Console::SetViewportHeight,0x00840d60,0x00491650,0x00840d60
 22845,function,Console::Console::SetDisabled,0x00840d70,0x00491660,0x00840d70
@@ -22908,8 +22908,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 22907,function,Console::TemplateConsoleFunc<wchar_t const*(*)(wchar_t const*)>::Execute,0x00844d80,0x00495940,0x00844d80
 22908,function,EC::PureResourceHelper::`scalar deleting destructor',0x00844eb0,0x00488130,0x00844eb0
 22909,function,TexManager::SetThreadLoadingName,0x00844ed0,0x00487f80,0x00844ed0
-22910,function,,0x00844f10,0x00487fc0,0x00844f10
-22911,function,,0x00844f30,0x00487fe0,0x00844f30
+22910,function,TexManager::TextureManager::DestroyInstance,0x00844f10,0x00487fc0,0x00844f10
+22911,function,TexManager::EnableAsyncLoading,0x00844f30,0x00487fe0,0x00844f30
 22912,function,TexManager::TextureManager::SetFlag_0xA9,0x00844f40,0x00487ff0,0x00844f40
 22913,function,TexManager::TextureManager::FlushPendingLoads,0x00844f60,0x00488010,0x00844f60
 22914,function,TexManager::TextureManager::SetMipSkip,0x00844f70,0x00488020,0x00844f70
@@ -22917,25 +22917,25 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 22916,function,,0x00844fa0,0x009447b0,0x00844fa0
 22917,function,TexManager::TextureManager::SetNextTextureSize,0x00844fb0,0x00488040,0x00844fb0
 22918,function,TexManager::TextureManager::ReleaseDeviceTexture,0x00844fe0,0x00488070,0x00844fe0
-22919,function,,0x00845020,0x00488150,0x00845020
+22919,function,TexManager::TextureManager::Shutdown,0x00845020,0x00488150,0x00845020
 22920,function,TexManager::GetImageFormat,0x008450a0,0x004881d0,0x008450a0
 22921,function,TexManager::ColorizeMipLevels,0x00845190,0x004882c0,0x00845190
 22922,function,TexManager::TextureManager::FindNameByTexture,0x008453f0,0x004887d0,0x008453f0
-22923,function,,0x008455e0,0x00489b50,0x008455e0
+22923,function,TexManager::DDSResourceHelper::FreeResource,0x008455e0,0x00489b50,0x008455e0
 22924,function,TexManager::TextureManager::FindCachedTexture,0x00845600,0x0048a080,0x00845600
-22925,function,,0x008456d0,0x0048a150,0x008456d0
+22925,function,TexManager::MakeTextureHandle,0x008456d0,0x0048a150,0x008456d0
 22926,function,TexManager::TextureManager::LoadTGA,0x00845820,0x0048a2a0,0x00845820
 22927,function,TexManager::TextureManager::LoadWithD3DX,0x00845910,0x0048a390,0x00845910
 22928,function,,0x00845a50,0x0048a4d0,0x00845a50
 22929,function,TexManager::TextureManager::GetResourceTexture,0x00845be0,0x0048a660,0x00845be0
-22930,function,,0x00845c30,0x0048a7b0,0x00845c30
-22931,function,,0x00845ce0,0x0048a860,0x00845ce0
+22930,function,TexManager::TextureManager::~TextureManager,0x00845c30,0x0048a7b0,0x00845c30
+22931,function,TexManager::TextureManager::`scalar deleting destructor',0x00845ce0,0x0048a860,0x00845ce0
 22932,function,TexManager::TextureManager::AddNamedTexture,0x00845d00,0x0048a970,0x00845d00
 22933,function,TexManager::TextureManager::AddCreatedTexture,0x00845d40,0x0048a9b0,0x00845d40
 22934,function,TexManager::TextureManager::Load,0x00845d80,0x0048a9f0,0x00845d80
 22935,function,TexManager::TextureManager::CreateTexture,0x00846460,0x0048b0d0,0x00846460
 22936,function,TexManager::TextureManager::AssignDefaultTexture,0x008465e0,0x0048b250,0x008465e0
-22937,function,,0x00846680,0x0048b2f0,0x00846680
+22937,function,TexManager::TextureManager::GetMemoryFootprint,0x00846680,0x0048b2f0,0x00846680
 22938,function,TexManager::TextureManager::LoadTextureFile,0x00846990,0x0048b600,0x00846990
 22939,function,TexManager::TextureManager::LoadTextureResource,0x00846b90,0x0048b800,0x00846b90
 22940,function,TexManager::TextureManager::ReloadTextures,0x00846e50,0x0048bac0,0x00846e50
@@ -22944,13 +22944,13 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 22943,function,TexManager::TextureManager::CreateRenderTarget,0x00847330,0x0048c010,0x00847330
 22944,function,TexManager::GetTextureWidth,0x008474f0,0x0048c1d0,0x008474f0
 22945,function,TexManager::GetTextureHeight,0x008475b0,0x0048c290,0x008475b0
-22946,function,,0x00847670,0x0048c350,0x00847670
+22946,function,TexManager::DDSResourceHelper::LoadResource,0x00847670,0x0048c350,0x00847670
 22947,function,TexManager::PreloadTexture,0x00847770,0x0048c450,0x00847770
 22948,function,TexManager::TexturePool::AddTextureSize,0x008477b0,0x0048d720,0x008477b0
 22949,function,TexManager::TexturePool::SubtractTextureSize,0x008477f0,0x0048d760,0x008477f0
 22950,function,TexManager::CreatePooledDeviceTexture,0x00847830,0x0048d7a0,0x00847830
 22951,function,TexManager::TextureShape::operator<,0x00847870,0x0048d7e0,0x00847870
-22952,function,,0x008478f0,0x0048d860,0x008478f0
+22952,function,TexManager::EnableTexturePool,0x008478f0,0x0048d860,0x008478f0
 22953,function,std::vector<Elem24>::size,0x00847900,0x0048d870,0x00847900
 22954,function,"std::fill<Elem24 *,Elem24>",0x00847920,0x006b4cc0,0x00847920
 22955,function,"std::_Copy_opt<Elem24 *,Elem24 *>",0x00847960,0x0048d8f0,0x00847960
@@ -23007,10 +23007,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 23006,function,"stdext::hash_map<std::wstring,void *>::operator[]",0x0084a670,0x0061cad0,0x0084a670
 23007,function,TexManager::TextureLoadTaskPool::TextureLoadTaskPool,0x0084a740,0x0048d060,0x0084a740
 23008,function,StringMap<?>::StringMap,0x0084a7d0,0x00763c60,0x0084a7d0
-23009,function,,0x0084a840,0x0048d0f0,0x0084a840
-23010,function,,0x0084a8c0,0x0048d170,0x0084a8c0
-23011,function,,0x0084a930,0x0048d1e0,0x0084a930
-23012,function,,0x0084aa40,0x0048d2f0,0x0084aa40
+23009,function,TexManager::TextureLoadTask::TextureLoadTask,0x0084a840,0x0048d0f0,0x0084a840
+23010,function,TexManager::TextureLoadTask::~TextureLoadTask,0x0084a8c0,0x0048d170,0x0084a8c0
+23011,function,TexManager::TextureLoadTask::Run,0x0084a930,0x0048d1e0,0x0084a930
+23012,function,TexManager::TextureLoadTask::`scalar deleting destructor',0x0084aa40,0x0048d2f0,0x0084aa40
 23013,function,TexManager::PendingLoads::PendingLoads,0x0084aa60,0x0048d310,0x0084aa60
 23014,function,TexManager::PendingLoads::~PendingLoads,0x0084aac0,0x0048d370,0x0084aac0
 23015,function,TexManager::PendingLoads::WaitAndClear,0x0084abb0,0x0048d460,0x0084abb0
@@ -23020,7 +23020,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 23019,function,TexManager::DDS::IsDXT3,0x0084ae90,0x0048fc80,0x0084ae90
 23020,function,TexManager::DDS::IsDXT5,0x0084aeb0,0x0048fca0,0x0084aeb0
 23021,function,TexManager::DDS::IsATI2,0x0084aed0,0x0048fcc0,0x0084aed0
-23022,function,,0x0084aef0,0x0048fce0,0x0084aef0
+23022,function,TexManager::DDS::IsCompressedFormatId,0x0084aef0,0x0048fce0,0x0084aef0
 23023,function,TexManager::DDS::IsA8R8G8B8,0x0084af10,0x0048fd00,0x0084af10
 23024,function,TexManager::DDS::IsR8G8B8,0x0084af60,0x0048fd50,0x0084af60
 23025,function,TexManager::DDS::IsX8R8G8B8,0x0084afa0,0x0048fd90,0x0084afa0
@@ -23029,19 +23029,19 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 23028,function,TexManager::DDS::IsL8,0x0084b040,0x0048fe30,0x0084b040
 23029,function,TexManager::DDS::IsCubeMap,0x0084b070,0x0048fe60,0x0084b070
 23030,function,TexManager::DDS::IsVolume,0x0084b0c0,0x0048feb0,0x0084b0c0
-23031,function,,0x0084b0e0,0x0048fed0,0x0084b0e0
+23031,function,TexManager::DDS::GetFormatInfo,0x0084b0e0,0x0048fed0,0x0084b0e0
 23032,function,TexManager::LargestPowerOfTwoBelow,0x0084b1b0,0x0048ffa0,0x0084b1b0
 23033,function,TexManager::CreateVolumeTextureFallback,0x0084b1d0,0x0048ffc0,0x0084b1d0
 23034,function,TexManager::CreateTexture2DFromDDS,0x0084b280,0x00490070,0x0084b280
 23035,function,TexManager::CreateCubeTextureFromDDS,0x0084b450,0x00490240,0x0084b450
 23036,function,TexManager::CreateVolumeTextureFromDDS,0x0084b630,0x00490420,0x0084b630
-23037,function,,0x0084b7c0,0x004905b0,0x0084b7c0
+23037,function,TexManager::CreateUncompressedTextureFromDDS,0x0084b7c0,0x004905b0,0x0084b7c0
 23038,function,TexManager::CreateCompressedTexture2DFromDDS,0x0084b800,0x004905f0,0x0084b800
 23039,function,TexManager::CreateCompressedVolumeTextureFromDDS,0x0084bb30,0x00490920,0x0084bb30
 23040,function,TexManager::CreateCompressedCubeTextureFromDDS,0x0084bd50,0x00490b40,0x0084bd50
-23041,function,,0x0084bf60,0x00490d50,0x0084bf60
+23041,function,TexManager::CreateCompressedTextureFromDDS,0x0084bf60,0x00490d50,0x0084bf60
 23042,function,TexManager::MakeTexture,0x0084bfa0,0x00490d90,0x0084bfa0
-23043,function,,0x0084c010,0x00490e00,0x0084c010
+23043,function,TexManager::TGA::IsRLETrueColor,0x0084c010,0x00490e00,0x0084c010
 23044,function,,0x0084c0f0,0x00490ee0,0x0084c0f0
 23045,function,,0x0084c220,0x00491010,0x0084c220
 23046,function,,0x0084c430,0x00491220,0x0084c430
