@@ -7807,16 +7807,16 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7806,function,,0x00543e70,0x00745660,0x00543e70
 7807,function,,0x00543eb0,0x007456a0,0x00543eb0
 7808,function,std::vector<?>::empty,0x00543f80,0x00745770,0x00543f80
-7809,function,,0x00543fc0,0x007457b0,0x00543fc0
-7810,function,,0x00544090,0x00745880,0x00544090
-7811,function,,0x00544140,0x00745930,0x00544140
+7809,function,Animation::AccumulateOverrideVector3,0x00543fc0,0x007457b0,0x00543fc0
+7810,function,Animation::ApplyAdditiveVector3,0x00544090,0x00745880,0x00544090
+7811,function,Animation::BlendTreeVector3,0x00544140,0x00745930,0x00544140
 7812,function,Animation::AnyTrackHasKey,0x00544270,0x00745a60,0x00544270
 7813,function,Animation::AccumulateOverrideFloat,0x005442b0,0x00745aa0,0x005442b0
-7814,function,,0x00544370,0x00745b60,0x00544370
+7814,function,Animation::ApplyAdditiveFloat,0x00544370,0x00745b60,0x00544370
 7815,function,Animation::BlendTreeFloat,0x00544410,0x00745c00,0x00544410
 7816,function,Animation::BlendRotations,0x00544510,0x00745d00,0x00544510
-7817,function,,0x00544620,0x00745e10,0x00544620
-7818,function,,0x00544700,0x00745ef0,0x00544700
+7817,function,Animation::ApplyAdditiveRotation,0x00544620,0x00745e10,0x00544620
+7818,function,Animation::BlendTreeRotation,0x00544700,0x00745ef0,0x00544700
 7819,function,Animation::AccumulateOverrideVector4,0x005448c0,0x007460b0,0x005448c0
 7820,function,Animation::ApplyAdditiveVector4,0x005449d0,0x007461c0,0x005449d0
 7821,function,Animation::BlendTreeVector4,0x00544ab0,0x007462a0,0x00544ab0
@@ -7865,7 +7865,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7864,function,,0x00546c50,0x007482a0,0x00546c50
 7865,function,,0x00546d10,0x00748360,0x00546d10
 7866,function,,0x00546de0,0x00748430,0x00546de0
-7867,function,,0x00546e20,0x00748470,0x00546e20
+7867,function,GraphicsStructures::Object::ReleaseTrackRow,0x00546e20,0x00748470,0x00546e20
 7868,function,,0x00546eb0,0x00748500,0x00546eb0
 7869,function,,0x00546f00,0x00748550,0x00546f00
 7870,function,,0x00546f40,0x00748590,0x00546f40
@@ -7989,7 +7989,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7988,function,,0x0054ce30,0x0074d950,0x0054ce30
 7989,function,,0x0054d230,0x0074dd50,0x0054d230
 7990,function,,0x0054d320,0x0074de40,0x0054d320
-7991,function,,0x0054d380,0x0074dea0,0x0054d380
+7991,function,GraphicsStructures::Object::AcquireTrackRow,0x0054d380,0x0074dea0,0x0054d380
 7992,function,,0x0054d4a0,0x0074dfc0,0x0054d4a0
 7993,function,,0x0054d4b0,0x0074dfd0,0x0054d4b0
 7994,function,,0x0054d730,0x0074e250,0x0054d730
@@ -9775,7 +9775,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 9774,function,SoundManager::GetListenerPosition,0x005b5e70,0x004bef80,0x005b5e70
 9775,function,SoundManager::GetCPUUsage,0x005b5ea0,0x0071e740,0x005b5ea0
 9776,function,SoundManager::GetMemoryStats,0x005b5ec0,0x0071e760,0x005b5ec0
-9777,function,,0x005b5f00,0x0071e7a0,0x005b5f00
+9777,function,SoundManager::StopEvent,0x005b5f00,0x0071e7a0,0x005b5f00
 9778,function,SoundManager::LoadSoundSettings,0x005b5f20,0x0071e7c0,0x005b5f20
 9779,function,SoundManager::GetSpeakerModeName,0x005b60d0,0x0071e970,0x005b60d0
 9780,function,SoundManager::GetOutputHandle,0x005b60f0,0x0071e990,0x005b60f0
@@ -9794,7 +9794,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 9793,function,SoundEventInstance::IsPlaying,0x005b6560,0x0071ee00,0x005b6560
 9794,function,SoundEventInstance::IsValid,0x005b6580,0x0071ee20,0x005b6580
 9795,function,SoundEventInstance::FreeEvent,0x005b65a0,0x0071ee40,0x005b65a0
-9796,function,,0x005b65c0,0x0071ee60,0x005b65c0
+9796,function,SoundEventInstance::GetPlaybackPositionMs,0x005b65c0,0x0071ee60,0x005b65c0
 9797,function,SoundEventInstance::GetInfo,0x005b65e0,0x0071ee80,0x005b65e0
 9798,function,SoundEventInstance::SetPlaybackPositionMs,0x005b6600,0x0071eea0,0x005b6600
 9799,function,SoundEventInstance::ApplyVolumeAndPitch,0x005b6630,0x0071eed0,0x005b6630
@@ -10284,7 +10284,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10283,function,GdaTables::LoadAnimNames,0x005cb4f0,0x006fe4c0,0x005cb4f0
 10284,function,GdaTables::ClearAnimNames,0x005cb690,0x006fe660,0x005cb690
 10285,function,GdaTables::GetAnimName,0x005cb720,0x006fe6f0,0x005cb720
-10286,function,,0x005cb780,0x006fe750,0x005cb780
+10286,function,GdaTables::GetAnimId,0x005cb780,0x006fe750,0x005cb780
 10287,function,GdaTables::GetAnimNameOrEmpty,0x005cb810,0x006fe7e0,0x005cb810
 10288,function,ILayoutPolicy::`scalar deleting destructor',0x005cb830,0x00710710,0x005cb830
 10289,function,CFixedPolicy::Decide,0x005cb850,0x00710700,0x005cb850
@@ -15103,21 +15103,21 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15102,function,LookAt::AimInfo::~AimInfo,0x006c9e40,0x005bb900,0x006c9e40
 15103,function,CCreatureAnimController::Pause,0x006c9e60,0x005bb920,0x006c9e60
 15104,function,,0x006c9e80,0x005bb940,0x006c9e80
-15105,function,,0x006c9ef0,0x005bb9b0,0x006c9ef0
-15106,function,,0x006c9f10,0x005bb9d0,0x006c9f10
-15107,function,,0x006c9f80,0x005bba40,0x006c9f80
-15108,function,,0x006c9fe0,0x005bbaa0,0x006c9fe0
-15109,function,,0x006ca040,0x005bbb00,0x006ca040
-15110,function,,0x006ca100,0x005bbbc0,0x006ca100
-15111,function,,0x006ca130,0x005bbbf0,0x006ca130
+15105,function,LookAt::StartPartClips,0x006c9ef0,0x005bb9b0,0x006c9ef0
+15106,function,LookAt::SetTurnSpeedMultiplier,0x006c9f10,0x005bb9d0,0x006c9f10
+15107,function,LookAt::InitState,0x006c9f80,0x005bba40,0x006c9f80
+15108,function,LookAt::SetNeutralOffset,0x006c9fe0,0x005bbaa0,0x006c9fe0
+15109,function,LookAt::SetEyePlacement,0x006ca040,0x005bbb00,0x006ca040
+15110,function,LookAt::SetTargetPosition,0x006ca100,0x005bbbc0,0x006ca100
+15111,function,LookAt::ClearEyeOffsetRotation,0x006ca130,0x005bbbf0,0x006ca130
 15112,function,LookAt::ApplyPart,0x006ca150,0x005bbc10,0x006ca150
-15113,function,,0x006ca250,0x005bbd10,0x006ca250
+15113,function,LookAt::RecomputeTargetRotation,0x006ca250,0x005bbd10,0x006ca250
 15114,function,LookAt::GetModelEyePlacement,0x006ca450,0x005bbf10,0x006ca450
 15115,function,LookAt::LookAt,0x006ca690,0x005bc150,0x006ca690
 15116,function,LookAt::LookAt_FromModel,0x006ca800,0x005bc2c0,0x006ca800
 15117,function,LookAt::SetTargetSlot,0x006ca950,0x005bc410,0x006ca950
 15118,function,LookAt::Apply,0x006ca990,0x005bc450,0x006ca990
-15119,function,,0x006caad0,0x005bc590,0x006caad0
+15119,function,LookAt::GetModelEyePlacementThiscall,0x006caad0,0x005bc590,0x006caad0
 15120,function,CCreatureAnimController::Resume,0x006cab00,0x005bc5c0,0x006cab00
 15121,function,LookAt::ResetToNeutralNoRestart,0x006cab40,0x005bc600,0x006cab40
 15122,function,LookAt::ResetToNeutral,0x006cab90,0x005bc650,0x006cab90
@@ -20299,7 +20299,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20298,function,GUI::GUIPaperdoll::CommandApplyMorph::Execute,0x007c1390,0x0069f730,0x007c1390
 20299,function,SyncAlign::SyncAlign,0x007c1550,0x006a1780,0x007c1550
 20300,function,SyncAlign::GetRecord,0x007c1570,0x006a1820,0x007c1570
-20301,function,,0x007c15c0,0x006a1870,0x007c15c0
+20301,function,SyncAlign::SetDwarfOffset,0x007c15c0,0x006a1870,0x007c15c0
 20302,function,SyncAlign::SetDwarfOffsetFromTable,0x007c1600,0x006a18b0,0x007c1600
 20303,function,SyncAlign::SetRate,0x007c1690,0x006a1940,0x007c1690
 20304,function,SyncAlign::UpdateRecord,0x007c17c0,0x006a1a70,0x007c17c0
@@ -20823,7 +20823,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20822,function,EC::Cutscene::Actor::ResetClipGads,0x007d3bc0,0x006baf10,0x007d3bc0
 20823,function,EC::Cutscene::Actor::ActionPlayAnimation::RotateGadDelta,0x007d3c80,0x006bafd0,0x007d3c80
 20824,function,EC::Cutscene::Actor::ActionLinkToActor::Update,0x007d3cf0,0x006bb040,0x007d3cf0
-20825,function,,0x007d4040,0x004b33b0,0x007d4040
+20825,function,"std::pair<std::wstring,RefHandle>::~pair",0x007d4040,0x004b33b0,0x007d4040
 20826,function,std::vector<EC.Cutscene.Actor.ClipRecord>::_Destroy,0x007d40a0,0x006bb3f0,0x007d40a0
 20827,function,std::vector<ExtendedGad>::_Ufill,0x007d40c0,0x006bb410,0x007d40c0
 20828,function,std::vector<Elem24>::erase,0x007d4100,0x0048dbc0,0x007d4100
@@ -21377,9 +21377,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21376,function,PartLookAtController::NormalizedToClipTime,0x007f53c0,0x006e2120,0x007f53c0
 21377,function,PartLookAtController::Update,0x007f53e0,0x006e2140,0x007f53e0
 21378,function,PartLookAtController::StartClips,0x007f5a20,0x006e2780,0x007f5a20
-21379,function,,0x007f5bc0,0x006e2920,0x007f5bc0
+21379,function,PartLookAtController::PartLookAtController,0x007f5bc0,0x006e2920,0x007f5bc0
 21380,function,LookAt::PartConfig::Load,0x007f5c40,0x006e29a0,0x007f5c40
-21381,function,,0x007f5fb0,0x006e2d10,0x007f5fb0
+21381,function,LookAt::ApplyDegreeTuning,0x007f5fb0,0x006e2d10,0x007f5fb0
 21382,function,LookAt::ComputeLimitsInDegrees,0x007f6170,0x006e2ed0,0x007f6170
 21383,function,LookAt::EnsureConfigsLoaded,0x007f62f0,0x006e3050,0x007f62f0
 21384,function,LookAt::GetPartConfig,0x007f6350,0x006e30b0,0x007f6350
@@ -21840,7 +21840,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21839,function,Animation::AnimationManager::Update,0x0080e280,0x004b2a60,0x0080e280
 21840,function,Animation::AnimationManager::FlushCache,0x0080e2e0,0x004b2b70,0x0080e2e0
 21841,function,Animation::AnimationManager::DeleteEventList,0x0080e2f0,0x004b2be0,0x0080e2f0
-21842,function,,0x0080e360,0x004b2c90,0x0080e360
+21842,function,Clip::EventKey::GetId,0x0080e360,0x004b2c90,0x0080e360
 21843,function,Animation::AnimationManager::ClearEvents,0x0080e3a0,0x004b2cd0,0x0080e3a0
 21844,function,Animation::AnimationManager::GetEventTime,0x0080e3f0,0x004b2d20,0x0080e3f0
 21845,function,Animation::AnimationManager::GetMemoryFootprint,0x0080e6e0,0x004b3010,0x0080e6e0
@@ -21860,14 +21860,14 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21859,function,Animation::AnimationManager::GetTree,0x0080f980,0x004b45a0,0x0080f980
 21860,function,Animation::AnimationManager::CreateTreeFromXml,0x0080fc50,0x004b4870,0x0080fc50
 21861,function,Animation::AnimationManager::GetAnimationLength,0x0080fdf0,0x004b4a10,0x0080fdf0
-21862,function,,0x0080fec0,0x004b4ae0,0x0080fec0
-21863,function,,0x0080ffa0,0x004b4bc0,0x0080ffa0
-21864,function,,0x00810080,0x007ee730,0x00810080
-21865,function,,0x008100c0,0x004b4d40,0x008100c0
-21866,function,,0x00810170,0x007ee770,0x00810170
+21862,function,Animation::AnimationManager::IsAdditive,0x0080fec0,0x004b4ae0,0x0080fec0
+21863,function,Animation::AnimationManager::IsOverride,0x0080ffa0,0x004b4bc0,0x0080ffa0
+21864,function,"std::_Tree<std::wstring,RefHandle>::~_Tree",0x00810080,0x007ee730,0x00810080
+21865,function,"std::_Tree<std::wstring,RefHandle>::_Tree",0x008100c0,0x004b4d40,0x008100c0
+21866,function,"std::_Tree<std::wstring,RefHandle>::_Buynode",0x00810170,0x007ee770,0x00810170
 21867,function,,0x008101f9,0x007ee7f9,0x008101f9
 21868,function,Animation::AnimationManager::AnimationManager,0x00810210,0x004b4df0,0x00810210
-21869,function,,0x00810300,0x004b4ee0,0x00810300
+21869,function,Animation::AnimationManager::SetPaused,0x00810300,0x004b4ee0,0x00810300
 21870,function,Animation::AnimationManager::SetTimeScale,0x00810310,0x004b4ef0,0x00810310
 21871,function,Animation::AnimationManager::GetTime,0x00810320,0x004b4f00,0x00810320
 21872,function,Animation::AnimationManager::GetFrameDelta,0x00810340,0x004b4f20,0x00810340
@@ -21880,44 +21880,44 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21879,function,Animation::AnimationManager::NameMap::operator[],0x00810a60,0x004b56e0,0x00810a60
 21880,function,Animation::AnimationManager::RegisterAnimation,0x00810b50,0x004b57d0,0x00810b50
 21881,function,Animation::AnimationManager::RegisterTree,0x00810c40,0x004b58c0,0x00810c40
-21882,function,,0x00810d30,0x008b3fc0,0x00810d30
+21882,function,Graphics::ISceneSubManager::OnObjectEvent,0x00810d30,0x008b3fc0,0x00810d30
 21883,function,Animation::AnimSceneManagerDefault::BeginUpdate,0x00810d60,0x00a66910,0x00810d60
 21884,function,Animation::AnimSceneManagerDefault::WaitUpdate,0x00810da0,0x00a66950,0x00810da0
 21885,function,Animation::AnimSceneManagerDefault::OnObjectAdded,0x00810db0,0x00a66960,0x00810db0
 21886,function,Animation::AnimSceneManagerDefault::OnObjectRemoved,0x00810e00,0x00a669b0,0x00810e00
-21887,function,,0x00810e30,0x00a65870,0x00810e30
-21888,function,,0x00810e70,0x00a658b0,0x00810e70
-21889,function,,0x00810e90,0x00a658d0,0x00810e90
-21890,function,,0x00810ea0,0x00487f20,0x00810ea0
-21891,function,,0x00810ed0,0x00a658e0,0x00810ed0
-21892,function,,0x00810f10,0x00487f50,0x00810f10
-21893,function,,0x00810f40,0x00a65920,0x00810f40
-21894,function,,0x00810fe0,0x00a659c0,0x00810fe0
-21895,function,,0x00811030,0x00a65a10,0x00811030
-21896,function,,0x008110f0,0x00a65ad0,0x008110f0
-21897,function,,0x00811130,0x00a65b10,0x00811130
-21898,function,,0x008111e0,0x00a65bc0,0x008111e0
-21899,function,,0x00811270,0x00a65c50,0x00811270
-21900,function,,0x008112a0,0x00a65c80,0x008112a0
-21901,function,,0x008112e0,0x00a65cc0,0x008112e0
-21902,function,,0x00811330,0x00a65d10,0x00811330
+21887,function,Animation::AccumulateWeightedFloat,0x00810e30,0x00a65870,0x00810e30
+21888,function,Animation::AddScaledFloat,0x00810e70,0x00a658b0,0x00810e70
+21889,function,Animation::GetNeutralFloat,0x00810e90,0x00a658d0,0x00810e90
+21890,function,Vector4::Add,0x00810ea0,0x00487f20,0x00810ea0
+21891,function,Vector4::DividedByScalar,0x00810ed0,0x00a658e0,0x00810ed0
+21892,function,Vector4::Scaled_cdecl,0x00810f10,0x00487f50,0x00810f10
+21893,function,Animation::AccumulateWeightedVector4,0x00810f40,0x00a65920,0x00810f40
+21894,function,Animation::AddScaledVector4,0x00810fe0,0x00a659c0,0x00810fe0
+21895,function,Animation::AccumulateWeightedVector3,0x00811030,0x00a65a10,0x00811030
+21896,function,Animation::AddScaledVector3,0x008110f0,0x00a65ad0,0x008110f0
+21897,function,Animation::AccumulateWeightedRotation,0x00811130,0x00a65b10,0x00811130
+21898,function,Animation::ComposeAdditiveRotation,0x008111e0,0x00a65bc0,0x008111e0
+21899,function,Animation::GetNeutralVector3,0x00811270,0x00a65c50,0x00811270
+21900,function,Animation::GetNeutralVector4,0x008112a0,0x00a65c80,0x008112a0
+21901,function,Animation::GetNeutralRotation,0x008112e0,0x00a65cc0,0x008112e0
+21902,function,Animation::SampleFloatTrack,0x00811330,0x00a65d10,0x00811330
 21903,function,Animation::DecodeRotation32,0x00811370,0x00a65d50,0x00811370
 21904,function,Animation::DecodeRotation48,0x00811500,0x00a65ee0,0x00811500
 21905,function,Animation::DecodeRotation64,0x00811660,0x00a66040,0x00811660
 21906,function,Animation::ModelAnimationNode::SampleRotation,0x008118d0,0x00a662b0,0x008118d0
-21907,function,,0x00811a60,0x00a66440,0x00811a60
-21908,function,,0x00811b20,0x00a66500,0x00811b20
-21909,function,,0x00811bd0,0x004b9fa0,0x00811bd0
+21907,function,Animation::SampleVector3Track,0x00811a60,0x00a66440,0x00811a60
+21908,function,Animation::SampleVector4Track,0x00811b20,0x00a66500,0x00811b20
+21909,function,Animation::ModelAnimationTree::Entry::GetPlayhead,0x00811bd0,0x004b9fa0,0x00811bd0
 21910,function,Animation::ModelAnimationTree::Entry::Advance,0x00811be0,0x004b9fb0,0x00811be0
 21911,function,Animation::ModelAnimationTree::Entry::RetireIfFinished,0x00811c70,0x004ba040,0x00811c70
-21912,function,,0x00811ce0,0x004ba0b0,0x00811ce0
+21912,function,Animation::ModelAnimationTree::Entry::GetClipLength,0x00811ce0,0x004ba0b0,0x00811ce0
 21913,function,Animation::ModelAnimationTree::Entry::FireEvents,0x00811d10,0x004ba0e0,0x00811d10
-21914,function,,0x00811e30,0x004ba200,0x00811e30
-21915,function,,0x00811e90,0x004ba260,0x00811e90
-21916,function,,0x00811f00,0x004ba2d0,0x00811f00
-21917,function,,0x00811f70,0x004ba340,0x00811f70
-21918,function,,0x00811fa0,0x004ba370,0x00811fa0
-21919,function,,0x00811fd0,0x004ba3c0,0x00811fd0
+21914,function,Animation::ModelAnimationTree::Entry::~Entry,0x00811e30,0x004ba200,0x00811e30
+21915,function,Animation::ModelAnimationTree::Entry::operator=,0x00811e90,0x004ba260,0x00811e90
+21916,function,Animation::ModelAnimationTree::Entry::Entry,0x00811f00,0x004ba2d0,0x00811f00
+21917,function,Animation::AnimationTree::GetNodeName,0x00811f70,0x004ba340,0x00811f70
+21918,function,Animation::AnimationTree::GetNodeClipName,0x00811fa0,0x004ba370,0x00811fa0
+21919,function,std::allocator<Animation::ModelAnimationTree::Entry>::allocate,0x00811fd0,0x004ba3c0,0x00811fd0
 21920,function,Animation::AnimationTree::GetMemoryFootprint,0x00812030,0x004ba420,0x00812030
 21921,function,"std::_Copy_opt<Animation::ModelAnimationTree::Entry *,Animation::ModelAnimationTree::Entry *>",0x00812070,0x004ba460,0x00812070
 21922,function,"std::_Copy_backward_opt<Animation::ModelAnimationTree::Entry *,Animation::ModelAnimationTree::Entry *>",0x008120c0,0x004ba4b0,0x008120c0
@@ -21935,13 +21935,13 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21934,function,,0x00812420,0x004bab80,0x00812420
 21935,function,,0x008125df,0x004bad3f,0x008125df
 21936,function,,0x00812688,0x004bade8,0x00812688
-21937,function,,0x00812710,0x004baea0,0x00812710
+21937,function,std::vector<Animation::ModelAnimationTree::Entry>::resize,0x00812710,0x004baea0,0x00812710
 21938,function,Animation::AnimationTree::GetClipNames,0x00812830,0x004bafc0,0x00812830
-21939,function,,0x00812880,0x004bb010,0x00812880
+21939,function,Animation::AnimationTree::GetNodesWithClips,0x00812880,0x004bb010,0x00812880
 21940,function,Animation::AnimationTree::GetNodeNames,0x008128e0,0x004bb070,0x008128e0
 21941,function,,0x00812940,0x004bb0d0,0x00812940
 21942,function,RefHandle::RefHandle,0x00812e80,0x0069a280,0x00812e80
-21943,function,,0x00812e90,0x004bb620,0x00812e90
+21943,function,"stdext::hash_map<const wchar_t *,?>::operator[]",0x00812e90,0x004bb620,0x00812e90
 21944,function,Multithreading::SynchSafePointerList<Animation::AnimationTree>::SynchSafePointerList,0x00812f20,0x004bb6b0,0x00812f20
 21945,function,Multithreading::SynchSafePointerList<Animation::AnimationTree>::~SynchSafePointerList,0x00812f70,0x004bb700,0x00812f70
 21946,function,Animation::AnimationTree::~AnimationTree,0x00813030,0x004bb7c0,0x00813030
@@ -21958,9 +21958,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21957,function,Animation::ModelAnimationTree::Entry::SetPreviousTime,0x008136c0,0x004bbf20,0x008136c0
 21958,function,Animation::ModelAnimationTree::GetTreeName,0x00813710,0x004bbfc0,0x00813710
 21959,function,Animation::ModelAnimationTree::FindNode,0x00813720,0x004bbfd0,0x00813720
-21960,function,,0x00813740,0x004bbff0,0x00813740
+21960,function,Animation::ModelAnimationTree::SetWeight,0x00813740,0x004bbff0,0x00813740
 21961,function,Animation::ModelAnimationTree::SetWeightEased,0x008137e0,0x004bc090,0x008137e0
-21962,function,,0x00813860,0x004bc110,0x00813860
+21962,function,Animation::ModelAnimationTree::SetWeightCurve,0x00813860,0x004bc110,0x00813860
 21963,function,Animation::ModelAnimationTree::SetNotifyTime,0x008138d0,0x004bc180,0x008138d0
 21964,function,Animation::ModelAnimationTree::GetWeight,0x00813950,0x004bc200,0x00813950
 21965,function,Animation::ModelAnimationTree::IsActive,0x008139b0,0x004bc260,0x008139b0
@@ -21970,13 +21970,13 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21969,function,Animation::ModelAnimationTree::GetTime,0x00813c10,0x004bc4c0,0x00813c10
 21970,function,Animation::ModelAnimationTree::IsLooping,0x00813ca0,0x004bc550,0x00813ca0
 21971,function,Animation::ModelAnimationTree::GetNodesWithClips,0x00813cf0,0x004bc5a0,0x00813cf0
-21972,function,,0x00813d10,0x004bc5c0,0x00813d10
+21972,function,Animation::ModelAnimationTree::GetClipNames,0x00813d10,0x004bc5c0,0x00813d10
 21973,function,Animation::ModelAnimationTree::GetNodeNames,0x00813d30,0x004bc5e0,0x00813d30
 21974,function,Animation::ModelAnimationTree::BindClip,0x00813d50,0x004bc600,0x00813d50
-21975,function,,0x00813d70,0x004bc790,0x00813d70
-21976,function,,0x00813e60,0x004bc880,0x00813e60
-21977,function,,0x00813ee0,0x004bc900,0x00813ee0
-21978,function,,0x00813f70,0x004bc990,0x00813f70
+21975,function,Animation::ModelAnimationTree::PlayNode,0x00813d70,0x004bc790,0x00813d70
+21976,function,Animation::ModelAnimationTree::GetClipLength,0x00813e60,0x004bc880,0x00813e60
+21977,function,Animation::ModelAnimationTree::IsAdditive,0x00813ee0,0x004bc900,0x00813ee0
+21978,function,Animation::ModelAnimationTree::IsOverride,0x00813f70,0x004bc990,0x00813f70
 21979,function,Animation::ModelAnimationTree::CountClips,0x00814000,0x004bca20,0x00814000
 21980,function,Animation::ModelAnimationTree::GetEntry,0x00814080,0x004bcaa0,0x00814080
 21981,function,Animation::ModelAnimationTree::ClearClipIds,0x008140e0,0x004bcb00,0x008140e0
@@ -21984,26 +21984,26 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21983,function,Animation::ModelAnimationTree::EntryRange,0x008141b0,0x004bcc60,0x008141b0
 21984,function,Animation::ModelAnimationTree::Advance,0x00814260,0x004bcd50,0x00814260
 21985,function,Animation::ModelAnimationTree::UpdateWeights,0x00814340,0x004bce30,0x00814340
-21986,function,,0x008143f0,0x004bcee0,0x008143f0
-21987,function,,0x00814460,0x004bcfc0,0x00814460
-21988,function,,0x008144d0,0x004bd090,0x008144d0
-21989,function,,0x00814520,0x004bd0e0,0x00814520
+21986,function,Animation::ModelAnimationTree::EntryVector::Back,0x008143f0,0x004bcee0,0x008143f0
+21987,function,Animation::ControllerEntryVector::Back,0x00814460,0x004bcfc0,0x00814460
+21988,function,std::vector<Animation::ModelAnimationTree::Entry>::_Tidy,0x008144d0,0x004bd090,0x008144d0
+21989,function,std::vector<Animation::ModelAnimationTree::Entry>::_Tidy,0x00814520,0x004bd0e0,0x00814520
 21990,function,Animation::ModelAnimationTree::~ModelAnimationTree,0x00814530,0x004bd660,0x00814530
-21991,function,,0x008145a0,0x004bd7b0,0x008145a0
+21991,function,std::vector<Animation::BlendTreeNode>::insert,0x008145a0,0x004bd7b0,0x008145a0
 21992,function,Animation::ModelAnimationTree::`scalar deleting destructor',0x00814650,0x004bd940,0x00814650
-21993,function,,0x00814670,0x004bd9f0,0x00814670
+21993,function,std::vector<Animation::BlendTreeNode>::push_back,0x00814670,0x004bd9f0,0x00814670
 21994,function,Animation::ModelAnimationTree::DumpDebug,0x00814710,0x004bda90,0x00814710
 21995,function,,0x008149d0,0x004bddc0,0x008149d0
 21996,function,,0x00814fa0,0x004be390,0x00814fa0
 21997,function,Animation::ModelAnimationTree::GetTreeHandle,0x00814fd0,0x004be3c0,0x00814fd0
 21998,function,Animation::ModelAnimationTree::EntryVector::EntryVector,0x00814ff0,0x004be3e0,0x00814ff0
 21999,function,Animation::ModelAnimationTree::ModelAnimationTree,0x00815070,0x004be460,0x00815070
-22000,function,,0x008150f0,0x004b9bf0,0x008150f0
-22001,function,,0x00815100,0x004b9c00,0x00815100
-22002,function,,0x00815110,0x004b9c10,0x00815110
-22003,function,,0x00815130,0x004b9c30,0x00815130
-22004,function,,0x00815190,0x004b9c90,0x00815190
-22005,function,,0x008151f0,0x004b9cf0,0x008151f0
+22000,function,Animation::WeightTween::WeightTween,0x008150f0,0x004b9bf0,0x008150f0
+22001,function,Animation::WeightTween::SetImmediate,0x00815100,0x004b9c00,0x00815100
+22002,function,Animation::WeightTween::SetCurve,0x00815110,0x004b9c10,0x00815110
+22003,function,Animation::WeightTween::SetLinear,0x00815130,0x004b9c30,0x00815130
+22004,function,Animation::WeightTween::SetEased,0x00815190,0x004b9c90,0x00815190
+22005,function,Animation::WeightTween::Update,0x008151f0,0x004b9cf0,0x008151f0
 22006,function,Animation::AnimationTask::AnimationTask,0x008154a0,0x00a665b0,0x008154a0
 22007,function,Animation::AnimationTask::GetName,0x008154c0,0x00a665d0,0x008154c0
 22008,function,Animation::AnimationTask::Execute,0x008154d0,0x00a665e0,0x008154d0
@@ -22015,8 +22015,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 22014,function,,0x00815870,0x004bbf70,0x00815870
 22015,function,Animation::ModelAnimationNode::`vector deleting destructor',0x00815880,0x004b5a70,0x00815880
 22016,function,Animation::ModelAnimation::GetMemoryFootprint,0x008158e0,0x004b5ad0,0x008158e0
-22017,function,,0x00815950,0x004b5d50,0x00815950
-22018,function,,0x00815990,0x004b5dd0,0x00815990
+22017,function,Clip::EventKey::GetTarget,0x00815950,0x004b5d50,0x00815950
+22018,function,Animation::ModelAnimation::SweepEvents,0x00815990,0x004b5dd0,0x00815990
 22019,function,Animation::ModelAnimation::FindEventIndex,0x00815ee0,0x004b6320,0x00815ee0
 22020,function,Animation::ModelAnimation::Load,0x00815fb0,0x004b63f0,0x00815fb0
 22021,function,Animation::ModelAnimation::BindTracks,0x008164c0,0x004b69f0,0x008164c0
@@ -22027,36 +22027,36 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 22026,function,Animation::ModelAnimation::~ModelAnimation,0x00816870,0x004b6e00,0x00816870
 22027,function,Multithreading::SynchSafePointerList<Animation::ModelAnimation>::`scalar deleting destructor',0x00816930,0x004b6ec0,0x00816930
 22028,function,Animation::ModelAnimation::`scalar deleting destructor',0x00816960,0x004b6ef0,0x00816960
-22029,function,,0x00816990,0x004eb970,0x00816990
-22030,function,,0x008169f0,0x004b6f80,0x008169f0
-22031,function,,0x00816a70,0x004b70d0,0x00816a70
-22032,function,,0x00816ad0,0x004b7130,0x00816ad0
-22033,function,,0x00816b40,0x004b71a0,0x00816b40
+22029,function,"std::pair<std::wstring,std::wstring>::~pair",0x00816990,0x004eb970,0x00816990
+22030,function,Animation::AnimationTreeBuilder::Node::Node_copy,0x008169f0,0x004b6f80,0x008169f0
+22031,function,"std::_Copy_opt<Animation::AnimationTreeBuilder::Node *,Animation::AnimationTreeBuilder::Node *>",0x00816a70,0x004b70d0,0x00816a70
+22032,function,Animation::AnimationTreeBuilder::Node::Node,0x00816ad0,0x004b7130,0x00816ad0
+22033,function,"std::_Copy_backward_opt<Animation::AnimationTreeBuilder::Node *,Animation::AnimationTreeBuilder::Node *>",0x00816b40,0x004b71a0,0x00816b40
 22034,function,Animation::AnimationTreeBuilder::NodeVector::At,0x00816ba0,0x004b7210,0x00816ba0
-22035,function,,0x00816be0,0x004b7250,0x00816be0
-22036,function,,0x00816c40,0x004b72b0,0x00816c40
-22037,function,,0x00816ca0,0x004b7350,0x00816ca0
-22038,function,,0x00816d00,0x004b73b0,0x00816d00
+22035,function,"std::_Fill<Animation::AnimationTreeBuilder::Node *,Animation::AnimationTreeBuilder::Node>",0x00816be0,0x004b7250,0x00816be0
+22036,function,"std::_Copy_backward<Animation::AnimationTreeBuilder::Node *,Animation::AnimationTreeBuilder::Node *>",0x00816c40,0x004b72b0,0x00816c40
+22037,function,"std::_Copy<Animation::AnimationTreeBuilder::Node *,Animation::AnimationTreeBuilder::Node *>",0x00816ca0,0x004b7350,0x00816ca0
+22038,function,"std::_Uninit_copy<Animation::AnimationTreeBuilder::Node *,Animation::AnimationTreeBuilder::Node *,std::allocator<Animation::AnimationTreeBuilder::Node>>",0x00816d00,0x004b73b0,0x00816d00
 22039,function,,0x00816d69,0x004b7419,0x00816d69
 22040,function,Animation::AnimationTreeBuilder::LinkParents,0x00816da0,0x004b7450,0x00816da0
-22041,function,,0x00816ea0,0x004b75a0,0x00816ea0
-22042,function,,0x00816ed0,0x004b7650,0x00816ed0
+22041,function,"std::copy_backward<Animation::AnimationTreeBuilder::Node *,Animation::AnimationTreeBuilder::Node *>",0x00816ea0,0x004b75a0,0x00816ea0
+22042,function,"std::_Uninit_fill_n<Animation::AnimationTreeBuilder::Node *,unsigned int,Animation::AnimationTreeBuilder::Node,std::allocator<Animation::AnimationTreeBuilder::Node>>",0x00816ed0,0x004b7650,0x00816ed0
 22043,function,,0x00816f3b,0x004b76bb,0x00816f3b
-22044,function,,0x00816f70,0x004b76f0,0x00816f70
-22045,function,,0x00816fe0,0x004b78b0,0x00816fe0
-22046,function,,0x00817050,0x004b7920,0x00817050
-22047,function,,0x00817090,0x004b7960,0x00817090
-22048,function,,0x008170b0,0x00406f20,0x008170b0
+22044,function,"std::_Destroy_range<Animation::AnimationTreeBuilder::Node *,std::allocator<Animation::AnimationTreeBuilder::Node>>",0x00816f70,0x004b76f0,0x00816f70
+22045,function,Animation::AnimationTreeBuilder::NodeVector::Back,0x00816fe0,0x004b78b0,0x00816fe0
+22046,function,"std::_Uninit_fill_n<Animation::AnimationTreeBuilder::Node *,unsigned int,Animation::AnimationTreeBuilder::Node>",0x00817050,0x004b7920,0x00817050
+22047,function,std::_Destroy_range<Animation::AnimationTreeBuilder::Node *>,0x00817090,0x004b7960,0x00817090
+22048,function,"ECBase::ECHashMap<unsigned int,unk_value>::Find",0x008170b0,0x00406f20,0x008170b0
 22049,function,Animation::AnimationTreeBuilder::ParseAttributes,0x00817120,0x004b79a0,0x00817120
 22050,function,std::vector<Animation::AnimationTreeBuilder::Node>::erase,0x00817310,0x004b7b90,0x00817310
 22051,function,"std::_Uninit_copy<Animation::AnimationTreeBuilder::Node *,Animation::AnimationTreeBuilder::Node *,std::allocator<Animation::AnimationTreeBuilder::Node>>",0x00817370,0x004b7bf0,0x00817370
-22052,function,,0x008173a0,0x004b7cb0,0x008173a0
+22052,function,std::vector<Animation::AnimationTreeBuilder::Node>::_Tidy,0x008173a0,0x004b7cb0,0x008173a0
 22053,function,,0x008173e0,0x004b7d80,0x008173e0
 22054,function,,0x008175af,0x004b7f4f,0x008175af
 22055,function,,0x0081765a,0x004b7ffa,0x0081765a
 22056,function,Animation::AnimationTreeBuilder::~AnimationTreeBuilder,0x008176f0,0x004b8090,0x008176f0
-22057,function,,0x00817770,0x004b8270,0x00817770
-22058,function,,0x00817890,0x004b8390,0x00817890
+22057,function,std::vector<Animation::AnimationTreeBuilder::Node>::resize,0x00817770,0x004b8270,0x00817770
+22058,function,std::vector<Animation::AnimationTreeBuilder::Node>::insert,0x00817890,0x004b8390,0x00817890
 22059,function,Animation::AnimationTreeBuilder::`scalar deleting destructor',0x00817940,0x004b84c0,0x00817940
 22060,function,Animation::AnimationTreeBuilder::NodeVector::PushBack,0x00817960,0x004b84e0,0x00817960
 22061,function,Animation::AnimationTreeBuilder::NodeVector::NodeVector,0x00817a00,0x004b8640,0x00817a00
@@ -22064,10 +22064,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 22063,function,Animation::AnimationTreeBuilder::AnimationTreeBuilder,0x00817aa0,0x004b89b0,0x00817aa0
 22064,function,Animation::AnimationTreeBuilder::OnStartElement,0x00817b40,0x004b8a50,0x00817b40
 22065,function,Animation::AnimationTreeBuilder::OnEndElement,0x00817ca0,0x004b8bb0,0x00817ca0
-22066,function,,0x00817eb0,0x004b9610,0x00817eb0
+22066,function,Animation::AnimationTreeBuilder::FillGff,0x00817eb0,0x004b9610,0x00817eb0
 22067,function,Animation::AnimationTreeBuilder::WriteGff,0x008183a0,0x004b9b00,0x008183a0
-22068,function,,0x00818490,0x00a669e0,0x00818490
-22069,function,,0x00818630,0x007f2d30,0x00818630
+22068,function,Animation::KeyTrack::FindKeyPair,0x00818490,0x00a669e0,0x00818490
+22069,function,Stub::GetAddress_0x10,0x00818630,0x007f2d30,0x00818630
 22070,function,Animation::ModelAnimationNode::GetMemoryFootprint,0x00818640,0x004bbdc0,0x00818640
 22071,function,Physics::PhysicsManager::Lock,0x00818680,0x00496010,0x00818680
 22072,function,Physics::PhysicsManager::Unlock,0x008186b0,0x00496040,0x008186b0
@@ -23066,18 +23066,18 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 23065,function,OC3Ent::Face::FxString::ToWide,0x0084ca90,0x00482ce0,0x0084ca90
 23066,function,FacialAnimation::FacialAnimationManager::UpdatePlayers,0x0084caf0,0x00482d40,0x0084caf0
 23067,function,FacialAnimation::FacialAnimationManager::Update,0x0084cb60,0x00482e50,0x0084cb60
-23068,function,,0x0084cbf0,0x00482f10,0x0084cbf0
+23068,function,ECBase::ECList::Advance,0x0084cbf0,0x00482f10,0x0084cbf0
 23069,function,FacialAnimation::FacialAnimationManager::UnloadBlueprintsOf,0x0084cc50,0x00482fa0,0x0084cc50
 23070,function,FacialAnimation::FacialAnimationManager::GetMemoryFootprint,0x0084cd70,0x004830c0,0x0084cd70
-23071,function,,0x0084cf30,0x00483280,0x0084cf30
+23071,function,stdext::_Hash<...>::erase(const_iterator),0x0084cf30,0x00483280,0x0084cf30
 23072,function,FacialAnimation::FacialAnimationManager::DestroyPlayer,0x0084d060,0x004833b0,0x0084d060
 23073,function,FacialAnimation::FacialAnimationManager::EraseBlueprint,0x0084d120,0x00483470,0x0084d120
 23074,function,FacialAnimation::FacialAnimationManager::UnloadBlueprint,0x0084d1a0,0x004834f0,0x0084d1a0
 23075,function,FacialAnimation::FacialAnimationManager::~FacialAnimationManager,0x0084d2f0,0x00483640,0x0084d2f0
-23076,function,,0x0084d370,0x004836c0,0x0084d370
+23076,function,FacialAnimation::FacialAnimationManager::SetIgnoreVoicePosition,0x0084d370,0x004836c0,0x0084d370
 23077,function,FacialAnimation::FacialAnimationManager::`scalar deleting destructor',0x0084d380,0x004836d0,0x0084d380
 23078,function,FacialAnimation::FacialAnimationManager::CreatePlayer,0x0084d3a0,0x004836f0,0x0084d3a0
-23079,function,,0x0084d460,0x004837b0,0x0084d460
+23079,function,"stdext::hash_map<std::wstring,void *>::insert",0x0084d460,0x004837b0,0x0084d460
 23080,function,FacialAnimation::FacialAnimationBlueprint::FacialAnimationBlueprint,0x0084d4f0,0x00483840,0x0084d4f0
 23081,function,FacialAnimation::FacialAnimationBlueprint::GetMemoryFootprint,0x0084d660,0x004839b0,0x0084d660
 23082,function,FacialAnimation::FacialAnimationBlueprint::GetBoneIndex,0x0084d6d0,0x00483a90,0x0084d6d0
@@ -23099,21 +23099,21 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 23098,function,FacialAnimation::FacialAnimationPlayer::SetPoseStore,0x0084e780,0x00484b40,0x0084e780
 23099,function,FacialAnimation::FacialAnimationPlayer::CancelFadeOut,0x0084e790,0x00484b50,0x0084e790
 23100,function,FacialAnimation::CreateFxActorInstance,0x0084e7a0,0x00484b60,0x0084e7a0
-23101,function,,0x0084e810,0x00484bd0,0x0084e810
-23102,function,,0x0084e830,0x00484bf0,0x0084e830
+23101,function,std::vector<FacialAnimation::FacialAnimationPlayer::PoseEntry>::size,0x0084e810,0x00484bd0,0x0084e810
+23102,function,std::_Allocate<FacialAnimation::FacialAnimationPlayer::PoseEntry>,0x0084e830,0x00484bf0,0x0084e830
 23103,function,FacialAnimation::FacialAnimationPlayer::IsPlaying,0x0084e890,0x00484c80,0x0084e890
 23104,function,FacialAnimation::FacialAnimationPlayer::GetAnimDuration,0x0084e8b0,0x00484ca0,0x0084e8b0
 23105,function,OC3Ent::Face::FxAnimGroupNode::Construct,0x0084e900,0x00484cf0,0x0084e900
 23106,function,FacialAnimation::FacialAnimationPlayer::BoneArray::At,0x0084e960,0x00484d50,0x0084e960
-23107,function,,0x0084e9a0,0x00484dd0,0x0084e9a0
+23107,function,FacialAnimation::FacialAnimationPlayer::PoseEntry::operator=,0x0084e9a0,0x00484dd0,0x0084e9a0
 23108,function,FacialAnimation::FacialAnimationPlayer::BindBone,0x0084ea30,0x00484ee0,0x0084ea30
-23109,function,,0x0084ead0,0x00485030,0x0084ead0
-23110,function,,0x0084eb20,0x00485100,0x0084eb20
+23109,function,"std::_Copy_opt<FacialAnimation::FacialAnimationPlayer::PoseEntry *,FacialAnimation::FacialAnimationPlayer::PoseEntry *>",0x0084ead0,0x00485030,0x0084ead0
+23110,function,"std::_Copy_backward_opt<FacialAnimation::FacialAnimationPlayer::PoseEntry *,FacialAnimation::FacialAnimationPlayer::PoseEntry *>",0x0084eb20,0x00485100,0x0084eb20
 23111,function,FacialAnimation::FacialAnimationPlayer::UnbindBones,0x0084eb70,0x00485150,0x0084eb70
 23112,function,FacialAnimation::FacialAnimationPlayer::StopAnimation,0x0084ec40,0x00485220,0x0084ec40
 23113,function,FacialAnimation::FacialAnimationPlayer::GetMemoryFootprint,0x0084ee40,0x00485420,0x0084ee40
-23114,function,,0x0084ee80,0x004854a0,0x0084ee80
-23115,function,,0x0084eeb0,0x004854d0,0x0084eeb0
+23114,function,"std::_Fill<FacialAnimation::FacialAnimationPlayer::PoseEntry *,FacialAnimation::FacialAnimationPlayer::PoseEntry>",0x0084ee80,0x004854a0,0x0084ee80
+23115,function,"std::_Uninit_copy<FacialAnimation::FacialAnimationPlayer::PoseEntry *,FacialAnimation::FacialAnimationPlayer::PoseEntry *>",0x0084eeb0,0x004854d0,0x0084eeb0
 23116,function,FacialAnimation::FacialAnimationPlayer::PlayAnimation,0x0084eef0,0x00485510,0x0084eef0
 23117,function,"std::copy_backward<FacialAnimation::FacialAnimationPlayer::PoseEntry *,FacialAnimation::FacialAnimationPlayer::PoseEntry *>",0x0084f070,0x004856d0,0x0084f070
 23118,function,"std::_Uninit_fill_n<FacialAnimation::FacialAnimationPlayer::PoseEntry *,unsigned int,FacialAnimation::FacialAnimationPlayer::PoseEntry,std::allocator<FacialAnimation::FacialAnimationPlayer::PoseEntry>>",0x0084f0a0,0x00485700,0x0084f0a0
@@ -23123,7 +23123,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 23122,function,,0x0084f1a0,0x00485ae0,0x0084f1a0
 23123,function,,0x0084f370,0x00485cb0,0x0084f370
 23124,function,,0x0084f37c,0x00485cbc,0x0084f37c
-23125,function,,0x0084f470,0x00485e70,0x0084f470
+23125,function,std::vector<FacialAnimation::FacialAnimationPlayer::PoseEntry>::resize,0x0084f470,0x00485e70,0x0084f470
 23126,function,FacialAnimation::FacialAnimationPlayer::ApplyPose,0x0084f550,0x00485f80,0x0084f550
 23127,function,FacialAnimation::FacialAnimationPlayer::PoseVector::PoseVector,0x008507c0,0x004871f0,0x008507c0
 23128,function,FacialAnimation::FacialAnimationPlayer::PoseVector::Resize,0x00850850,0x00487280,0x00850850
@@ -32771,7 +32771,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 32770,function,PooledList::InsertAfter,0x00a384b0,0x008341c0,0x00a384b0
 32771,function,PooledList::InsertBefore,0x00a38500,0x00834210,0x00a38500
 32772,function,AnimBase::ClipEventsEntry::~ClipEventsEntry,0x00a38550,0x00837250,0x00a38550
-32773,function,,0x00a385b0,0x008372b0,0x00a385b0
+32773,function,AnimBase::ClipEventsEntry::ClipEventsEntry,0x00a385b0,0x008372b0,0x00a385b0
 32774,function,AnimBase::ClipEventsEntry::GetEventTimeMs,0x00a38780,0x00837480,0x00a38780
 32775,function,CExoGFF::~CExoGFF,0x00a38860,0x00837890,0x00a38860
 32776,function,CExoGFF::`scalar deleting destructor',0x00a388d0,0x00837900,0x00a388d0
@@ -32792,10 +32792,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 32791,function,AnimClip::GetLengthMs,0x00a38ed0,0x00839600,0x00a38ed0
 32792,function,AnimClip::HasGobAnim,0x00a38f20,0x00839650,0x00a38f20
 32793,function,AnimClip::GetGobRotation,0x00a38f70,0x008396a0,0x00a38f70
-32794,function,,0x00a390f0,0x00839820,0x00a390f0
+32794,function,AnimClip::GetGobTranslation,0x00a390f0,0x00839820,0x00a390f0
 32795,function,AnimClip::GetRootTranslation,0x00a39260,0x00839990,0x00a39260
 32796,function,AnimClip::GetRootRotation,0x00a39300,0x00839a30,0x00a39300
-32797,function,,0x00a39430,0x00839b60,0x00a39430
+32797,function,AnimClip::AnimClip,0x00a39430,0x00839b60,0x00a39430
 32798,function,AnimClip::HasGobYaw,0x00a394f0,0x00839c20,0x00a394f0
 32799,function,ECFileAccess::PNGFileAccess::BuildCrcTable,0x00a39560,0x008152c0,0x00a39560
 32800,function,ECFileAccess::PNGFileAccess::ComputeCrc,0x00a39600,0x00815360,0x00a39600
@@ -59670,7 +59670,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 59669,function,,0x00ad8940,0x00ad2980,0x00ad8940
 59670,function,AnimationManager_FindTree_KeyString_atexit,0x00ad8950,0x00ad0230,0x00ad8950
 59671,function,AnimationManager_FindAnimation_KeyString_atexit,0x00ad8960,0x00ad0240,0x00ad8960
-59672,function,,0x00ad8970,0x00ad0260,0x00ad8970
+59672,function,`dynamic atexit destructor for 'Animation::AnimationManager::Instance::s_instance'',0x00ad8970,0x00ad0260,0x00ad8970
 59673,function,,0x00ad8980,0x00ad3eb0,0x00ad8980
 59674,function,,0x00ad8990,0x00ad3ec0,0x00ad8990
 59675,function,,0x00ad89a0,0x00ad0270,0x00ad89a0
