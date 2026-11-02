@@ -5853,7 +5853,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5852,function,,0x004f6a60,0x007f05a0,0x004f6a60
 5853,function,Stub::GetByte_0x38,0x004f6a70,0x007f09a0,0x004f6a70
 5854,function,Graphics::MaterialSemantic::GetTechnique,0x004f6a80,0x007fbd30,0x004f6a80
-5855,function,Graphics::MaterialSemantic::GetId,0x004f6a90,0x0047bfc0,0x004f6a90
+5855,function,Stub::GetDword_0x3C,0x004f6a90,0x0047bfc0,0x004f6a90
 5856,function,Graphics::MaterialSemantic::SetTechniqueTree,0x004f6aa0,0x007f05b0,0x004f6aa0
 5857,function,Graphics::MaterialSemantic::SelectTechnique,0x004f6ab0,0x007f05c0,0x004f6ab0
 5858,function,Graphics::MaterialSemantic::NotifyPasses,0x004f6ad0,0x007f05e0,0x004f6ad0
@@ -9947,7 +9947,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 9946,function,EclipsePrivate::CContent::CContent,0x005bddb0,0x007262d0,0x005bddb0
 9947,function,EclipsePrivate::CContent::LoadEvent,0x005bde20,0x00726340,0x005bde20
 9948,function,EclipsePrivate::CContent::GetOcclusion,0x005bde40,0x0076d8a0,0x005bde40
-9949,function,EclipsePrivate::CContent::SetOcclusion,0x005bde60,0x0077e790,0x005bde60
+9949,function,Stub::SetFloatPair_0x10,0x005bde60,0x0077e790,0x005bde60
 9950,function,EclipsePrivate::CContent::GetPanLevel,0x005bde80,0x00726360,0x005bde80
 9951,function,EclipsePrivate::CContent::SetPanLevel,0x005bde90,0x00726370,0x005bde90
 9952,function,EclipsePrivate::CContent::SetVelocity,0x005bdea0,0x00726380,0x005bdea0
@@ -16408,7 +16408,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 16407,function,AreaTransitionMessage::InitType,0x00717e00,0x00608f70,0x00717e00
 16408,function,AreaTransitionMessage::GetName,0x00717e60,0x00609000,0x00717e60
 16409,function,AreaTransitionMessage::AreaTransitionMessage_copy,0x00717ed0,0x00609070,0x00717ed0
-16410,function,SetFullScreenGUIMessage::~SetFullScreenGUIMessage,0x00717f40,0x004f4af0,0x00717f40
+16410,function,Stub::DestroyMessage_WString_0x4,0x00717f40,0x004f4af0,0x00717f40
 16411,function,GameModeGUI::Update,0x00717fa0,0x006090e0,0x00717fa0
 16412,function,GameModeGUI::HandleMessage_FindAbilityChainsMessage,0x00718090,0x006091d0,0x00718090
 16413,function,GameModeGUI::HandleMessage_AreaTransitionMessage,0x007180e0,0x00609220,0x007180e0
@@ -33300,17 +33300,17 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33299,function,Stub::GetFloat_0x48,0x00a55cb0,0x009242f0,0x00a55cb0
 33300,function,,0x00a55cc0,0x0076d760,0x00a55cc0
 33301,function,,0x00a55ce0,0x0076d780,0x00a55ce0
-33302,function,GraphicsStructures::CSpeedTreeWind::WindInstance::SetResponseAndLimit,0x00a55cf0,0x0076d790,0x00a55cf0
-33303,function,GraphicsStructures::CSpeedTreeWind::WindInstance::SetMaxBendAngle,0x00a55d10,0x0076d7b0,0x00a55d10
+33302,function,GraphicsStructures::CSpeedTreeWind::SetResponseAndLimit,0x00a55cf0,0x0076d790,0x00a55cf0
+33303,function,GraphicsStructures::CSpeedTreeWind::SetMaxBendAngle,0x00a55d10,0x0076d7b0,0x00a55d10
 33304,function,Stub::SetFloat2_0x24,0x00a55d20,0x0076d7c0,0x00a55d20
-33305,function,GraphicsStructures::CSpeedTreeWind::WindInstance::SetGustDurationMinMax,0x00a55d40,0x0076d7e0,0x00a55d40
+33305,function,GraphicsStructures::CSpeedTreeWind::SetGustDurationMinMax,0x00a55d40,0x0076d7e0,0x00a55d40
 33306,function,Stub::SetFloat_0x20,0x00a55d60,0x0076d800,0x00a55d60
-33307,function,GraphicsStructures::CSpeedTreeWind::WindInstance::SetBranchOscillationX,0x00a55d70,0x0076d810,0x00a55d70
-33308,function,GraphicsStructures::CSpeedTreeWind::WindInstance::SetBranchOscillationY,0x00a55d90,0x0076d830,0x00a55d90
-33309,function,GraphicsStructures::CSpeedTreeWind::WindInstance::SetLeafRocking,0x00a55db0,0x0076d850,0x00a55db0
-33310,function,GraphicsStructures::CSpeedTreeWind::WindInstance::SetLeafRustling,0x00a55dd0,0x0076d870,0x00a55dd0
-33311,function,GraphicsStructures::CSpeedTreeWind::WindInstance::GetGustDurationMinMax,0x00a55e00,0x0076d8c0,0x00a55e00
-33312,function,GraphicsStructures::CSpeedTreeWind::WindInstance::GetGustFrequency,0x00a55e20,0x0076d8e0,0x00a55e20
+33307,function,GraphicsStructures::CSpeedTreeWind::SetBranchOscillationX,0x00a55d70,0x0076d810,0x00a55d70
+33308,function,GraphicsStructures::CSpeedTreeWind::SetBranchOscillationY,0x00a55d90,0x0076d830,0x00a55d90
+33309,function,GraphicsStructures::CSpeedTreeWind::SetLeafRocking,0x00a55db0,0x0076d850,0x00a55db0
+33310,function,GraphicsStructures::CSpeedTreeWind::SetLeafRustling,0x00a55dd0,0x0076d870,0x00a55dd0
+33311,function,GraphicsStructures::CSpeedTreeWind::GetGustDurationMinMax,0x00a55e00,0x0076d8c0,0x00a55e00
+33312,function,GraphicsStructures::CSpeedTreeWind::GetGustFrequency,0x00a55e20,0x0076d8e0,0x00a55e20
 33313,function,,0x00a55e30,0x0076d950,0x00a55e30
 33314,function,,0x00a55ea0,0x0076d9c0,0x00a55ea0
 33315,function,,0x00a55eb0,0x0076d9d0,0x00a55eb0
@@ -33624,7 +33624,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33623,function,EffectList::RemoveEffect,0x00a64840,0x0070c080,0x00a64840
 33624,function,EffectList::EffectList,0x00a64880,0x0070c0c0,0x00a64880
 33625,function,EffectList::~EffectList,0x00a648a0,0x0070c0e0,0x00a648a0
-33626,function,ScriptBackend::ForScript_AddItemVisualEffect,0x00a64900,0x0070c140,0x00a64900
+33626,function,EffectList::AddEffect,0x00a64900,0x0070c140,0x00a64900
 33627,function,EffectList::CollectMatchingEffects,0x00a64950,0x0070c190,0x00a64950
 33628,function,EffectList::CollectEffectsMatchingPattern,0x00a64a80,0x0070c2c0,0x00a64a80
 33629,function,EffectList::ReadFromSave,0x00a64b10,0x0070c350,0x00a64b10
@@ -33713,7 +33713,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33712,function,ECResMan::DeleteSourceTask::Execute,0x00a67ad0,0x00717770,0x00a67ad0
 33713,function,,0x00a67b00,0x007177a0,0x00a67b00
 33714,function,Multithreading::Task::`scalar deleting destructor',0x00a67bc0,0x00401d70,0x00a67bc0
-33715,function,AnimBase::ModelFileForLevel,0x00a67be0,0x007178a0,0x00a67be0
+33715,function,AnimModelLods::ModelFileForLevel,0x00a67be0,0x007178a0,0x00a67be0
 33716,function,,0x00a67cf0,0x00717a10,0x00a67cf0
 33717,function,,0x00a67d80,0x00717aa0,0x00a67d80
 33718,retired,,,,
