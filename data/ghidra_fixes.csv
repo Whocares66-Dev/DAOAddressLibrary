@@ -15350,3 +15350,25 @@ address,what,value,why
 0x006F16C0,signature,"void __thiscall f(void *this, unsigned int count)",jmp to 0x006F12C0 which is ret 4 with ecx = this
 0x0070C770,signature,void __thiscall f(void *this),"plain ret, ecx = CursorTarget"
 0x0075CE00,signature,"void __thiscall f(void *this, void *plmr)","ret 4 at 0x0075D0C4; ecx = plot manager, the argument a GenericRef* (8 bytes {Block*, offset}) of the PRTY field 0x4010"
+0x00A47660,signature,"void __thiscall f(void *this, float *value, int index)","ret 8, ecx read; value first, index second"
+0x00A48390,signature,"void __thiscall f(void *this, float *value, int index)","ret 8, forwards to ECDynArray::InsertAt"
+0x00A483A0,signature,"void __thiscall f(void *this, float *value, int index)","ret 8 at 0xA483FE; value first, index second"
+0x00A480A0,signature,"void __thiscall f(void *this, float *value, int index)",ret 8 at 0xA4810C
+0x00A478E0,signature,"void __thiscall f(void *this, int index)",ret 4
+0x00A479A0,signature,"void __thiscall f(void *this, int index, int count)",ret 8
+0x00A48130,signature,"void __thiscall f(void *this, bool freeBuffer)",ret 4 at 0xA481D2
+0x00A485A0,signature,"void * __thiscall f(void *this, void *valueRef, void *result)","ret 8 at 0xA485D8; ListReader {data, offset} through result"
+0x00A491A0,signature,"void __thiscall f(void *this, int row, int column)",ret 8
+0x00A491F0,signature,"void __thiscall f(void *this, int row, int column)",ret 8
+0x00A49290,signature,"int __thiscall f(void *this, int row, int column)",ret 8
+0x00A492D0,signature,"float __thiscall f(void *this, int row, int column)",ret 8; height in st0
+0x00A49320,signature,"float __thiscall f(void *this, int row1, int column1, int row2, int column2)",ret 0x10
+0x00A493B0,signature,"float * __thiscall f(void *this, float *out, int row, int column)",ret 0xc at 0xA4940A
+0x00A49410,signature,"int __thiscall f(void *this, float *point)",ret 4
+0x00A49440,signature,"int __thiscall f(void *this, float *point)",ret 4
+0x00A49550,signature,"void __thiscall f(void *this, int row, int column, int kind)",ret 0xc
+0x00A49890,signature,"bool __thiscall f(void *this, float *pos, void *area, int flag)",ret 0xc at 0xA49B65; bl is the result
+0x00A49B70,signature,"float * __thiscall f(void *this, float *out, int row, int column, bool useTrace, void *area)",ret 0x14 at 0xA49BD7
+0x00A49BF0,signature,"bool __thiscall f(void *this, int row1, int column1, int row2, int column2)",ret 0x10
+0x00A49C50,signature,"bool __thiscall f(void *this, int row, int column)",ret 8
+0x00A49C70,signature,"int __thiscall f(void *this, int column, int row)",ret 8 at 0xA49CAC; column vs [grid+0x20]
