@@ -14240,3 +14240,72 @@ address,what,value,why
 0x004FBE30,signature,"void __thiscall Graphics::MaterialStateManager::GetMemoryFootprint(void * this, int * main, int * other)",ret 8; slot 1 of 0x00AF4018.
 0x004FCB70,clear,_AfxAygshellState,"It is Graphics::MaterialStateManager::GetInstance (guard 0x00C30FFC, object 0x00C30A08); outside this batch, from both readers."
 0x004FE090,clear,_AfxAygshellState,"It is the MaterialShaderManager getter (guard 0x00C310A8, object 0x00C31084) [I: the class name]; outside this batch, from both readers."
+0x004FD7F0,convention,__cdecl,"plain RET at 0x004FD88D; callers clean (0x004FDA07 ADD ESP,0x18)"
+0x004FD7F0,signature,"void std::_Uninit_fill_n<General::SafePointer<?> *,unsigned int,General::SafePointer<?>> __cdecl f(void* first, unsigned int count, void* value, void* allocator, int nonscalar_tag, int checked_tag)",six words pushed at 0x004FD9F8..0x004FDA01
+0x004FD890,convention,__thiscall,"ECX read at 0x004FD898 (MOV EBP,ECX); RET 0x14"
+0x004FD890,signature,"void* std::vector<General::SafePointer<?>>:: __thiscall f(void* this, void* result, void* first_container, void* first_ptr, void* last_container, void* last_ptr)",RET 0x14 at 0x004FD8F6; result written 0x004FD8EF..0x004FD8F2
+0x004FD900,convention,__cdecl,plain RET at 0x004FD93D
+0x004FD900,signature,"void* std::_Copy_backward_opt<General::SafePointer<?> *,General::SafePointer<?> *> __cdecl f(void* first, void* last, void* dest_end)",args read 0x004FD901..0x004FD90C; result EBP 0x004FD939
+0x004FD940,convention,__thiscall,ECX read at 0x004FD944; RET 4
+0x004FD940,signature,"void ECBase::ECDynArray<General::SafePointer<?>>:: __thiscall f(void* this, unsigned int index)",RET 4 at 0x004FD9DD
+0x004FD9E0,convention,__thiscall,ECX passed on as an argument at 0x004FD9FE; RET 0xC
+0x004FD9E0,signature,"void* std::vector<General::SafePointer<?>>:: __thiscall f(void* this, void* ptr, unsigned int count, void* value)",RET 0xC at 0x004FDA10; result 0x004FDA0A
+0x004FDA20,signature,void __thiscall f(void* this),plain RET at 0x004FDAC4; vftable slot 2
+0x004FDFB0,signature,"void* ECBase::ECDynArray<General::SafePointer<?>>:: __thiscall f(void* this, unsigned int count)",RET 4 at 0x004FE01A; returns this 0x004FE007
+0x004FE020,signature,void* __thiscall f(void* this),plain RET at 0x004FE081; returns this 0x004FE06F
+0x004FE090,clear,_AfxAygshellState,"library-signature label; the function is Graphics::MaterialShaderManager::Get, the singleton accessor building 0x00C31084 with 0x004FE020 (0x004FE0D0)"
+0x004F8080,clear,_AfxAygshellState,library-signature label; the function is Graphics::MaterialManager's singleton accessor (static 0x00C30934)
+0x00506CD0,clear,_AfxAygshellState,decompiler shows this label on calls to Graphics::MaterialParameterNames::Get (e.g. 0x004FF223)
+0x004FE900,clear,D3DDriver::D3DBatchIndex::vfunction12,"ICF-folded getter MOV EAX,[ECX+0x70]; called directly on a MaterialObject at 0x00508070; also in vftables 0x00AE49C8, 0x00B2E708, 0x00B31CCC"
+0x004FE930,signature,"void __thiscall f(void* this, void* name)","ADD ECX,0x38; JMP std::wstring::operator= (ret 4 there)"
+0x004FE940,convention,__thiscall,ECX written at 0x004FE948; RET 4
+0x004FE940,signature,"void __thiscall f(void* this, void* semantic)",RET 4 at 0x004FE94B
+0x004FEFD0,signature,"void __thiscall f(void* this, void* collector)",RET 4 at 0x004FF0DC; vftable slot 2
+0x004FF0E0,signature,"void* Map<unsigned __thiscall f(void* this, void* result, unsigned int* key)","RET 8 at 0x004FF13D; result {container, node, found byte}"
+0x004FF140,signature,"void* Map<unsigned __thiscall f(void* this, void* result, unsigned int* key)",RET 8 at 0x004FF19D
+0x004FF1A0,signature,"void std::_Tree<std::_Tmap_traits<unsigned __thiscall f(void* this, void* source)",RET 4 at 0x004FF204
+0x004FF220,convention,__thiscall,ECX saved at 0x004FF221 and used at 0x004FF239; RET 4
+0x004FF220,signature,"void* __thiscall f(void* this, void* name)",RET 4; returns GetOrDefault's pointer
+0x004FF250,convention,__thiscall,"ECX saved at 0x004FF254, used 0x004FF275; RET 4"
+0x004FF250,signature,"float* __thiscall f(void* this, void* name)",RET 4 at 0x004FF2AB/0x004FF2B4
+0x004FF2C0,convention,__thiscall,"ECX saved at 0x004FF2C4, used 0x004FF2E5; RET 4"
+0x004FF2C0,signature,"void* __thiscall f(void* this, void* name)",RET 4 at 0x004FF31B/0x004FF324
+0x004FF330,convention,__thiscall,"ECX saved at 0x004FF339, used 0x004FF351; RET 4"
+0x004FF330,signature,"bool __thiscall f(void* this, void* name)",RET 4 at 0x004FF364; AL from found byte 0x004FF35D
+0x004FF370,convention,__thiscall,ECX saved at 0x004FF379; RET 4
+0x004FF370,signature,"bool __thiscall f(void* this, void* name)",RET 4 at 0x004FF3A7
+0x004FF3B0,convention,__thiscall,ECX saved at 0x004FF3B9; RET 4
+0x004FF3B0,signature,"bool __thiscall f(void* this, void* name)",RET 4 at 0x004FF3E7
+0x004FF3F0,convention,__thiscall,ECX saved at 0x004FF3F9; RET 4
+0x004FF3F0,signature,"bool __thiscall f(void* this, void* name)",RET 4 at 0x004FF427
+0x004FF430,convention,__thiscall,ECX saved at 0x004FF439; RET 4
+0x004FF430,signature,"bool __thiscall f(void* this, void* name)",RET 4 at 0x004FF467
+0x004FF470,signature,"void __thiscall f(void* this, unsigned int* size, unsigned int* video_size)",RET 8 at 0x004FF67D/0x004FF696
+0x00500BB0,signature,"void* __thiscall f(void* this, unsigned int count)",RET 4 at 0x00500C19
+0x00500DF0,convention,__thiscall,ECX saved at 0x00500E30 and used at 0x00500F80; RET 8
+0x00500DF0,signature,"void __thiscall f(void* this, void* name, void* resource_name)",RET 8 at 0x00500FC1
+0x00500A50,clear,std::vector<Math::Matrix4x4f>::push_back,"elements are 64-byte texture records {id, wstring base, wstring extension, id} built by 0x004F26B0 (0x00500DF0), not Matrix4x4f"
+0x00501010,convention,__thiscall,"ECX saved at 0x00501011, used 0x00501029; RET 8"
+0x00501010,signature,"void __thiscall f(void* this, void* name, unsigned int value)",RET 8 at 0x0050103F
+0x005010F0,convention,__thiscall,ECX saved at 0x00501112; RET 0x10
+0x005010F0,signature,"void* Map<unsigned __thiscall f(void* this, float default_x, float default_y, float default_z, float default_w)",RET 0x10 at 0x0050115D; 16-byte value copied from the stack at 0x00501142
+0x00501540,convention,__thiscall,"ECX saved at 0x00501565, used 0x0050156C; RET 4"
+0x00501540,signature,"void __thiscall f(void* this, void* name)",RET 4 at 0x005015C9
+0x00501F00,convention,__thiscall,ECX saved at 0x00501F23; RET 0x10
+0x00501F00,signature,"void* Map<unsigned __thiscall f(void* this, void* default_proxy, void* default_first, void* default_last, void* default_end)",RET 0x10 at 0x00501F93; vector passed by value (16 bytes) at 0x00501F66
+0x00501FA0,convention,__thiscall,ECX saved at 0x00501FA4; plain RET
+0x00501FA0,signature,void Map<unsigned __thiscall f(void* this),plain RET at 0x00501FDB
+0x00502220,signature,"void* __thiscall f(void* this, void* resource_context, int most_derived)",RET 8 at 0x0050241B; returns this 0x00502406
+0x00502420,signature,"void* Graphics::MaterialObject::`scalar deleting destructor'`adjustor{288}' __thiscall f(void* this, unsigned int flags)","SUB ECX,0x120; JMP 0x00502740 (ret 4 there)"
+0x00502430,convention,__thiscall,ECX saved at 0x00502456; plain RET
+0x00502430,signature,void __thiscall f(void* this),plain RET at 0x0050260C
+0x00502610,convention,__thiscall,ECX saved at 0x00502636; RET 4
+0x00502610,signature,"void* Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::operator[] __thiscall f(void* this, unsigned int* key)",RET 4 at 0x005026EC; returns node+0x10
+0x005026F0,convention,__thiscall,ECX saved at 0x005026F9; RET 4
+0x005026F0,signature,"void* Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::operator= __thiscall f(void* this, void* source)",RET 4 at 0x00502735; returns this
+0x00502740,signature,"void* Graphics::MaterialObject::`scalar deleting __thiscall f(void* this, unsigned int flags)",RET 4 at 0x00502766
+0x00503110,signature,"bool __thiscall f(void* this, void* semantic)",RET 4 at 0x00503119; AL=1 at 0x00503117
+0x00503120,convention,__cdecl,plain RET at 0x00503129; no ECX use
+0x00503120,signature,void __cdecl f(bool value),byte from [ESP+4] at 0x00503120
+0x00503130,clear,GraphicsStructures::GraphicsStructuresManager::vfunction42,"the vftable slot is 0x00572620, which JMPs here; this is a free getter of 0x00C310F4"
+0x00503130,signature,bool __cdecl f(void),"MOV AL,[0x00C310F4]; RET; ECX not read"
