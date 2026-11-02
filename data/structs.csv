@@ -538,6 +538,24 @@ CRoom,0x364,0x4,float,darknessLevel,0x005D33E0 fld [ecx+0x364] in CRoom::GetDark
 CRoom,0x368,0x1,uint8_t,objectsPending,"0x005D2E66 cmp byte [ebp+0x368],0 in CRoom::Update: the room's objects are being built, to be taken in; the ctor zeroes it (0x005D369C)"
 CRoom,0x36C,0x4,float,appliedDarkness,"0x005D2E3E fst [esi+0x36c] in UpdateDarkness: the level last handed to ApplyDarknessLevel (0x005D2E49), which is called only when the level differs from it; the constructor (0x005D3691) and SetFadeEnabled (0x005D210A) reset it to -1.0, so the next update applies"
 CRoom,0x371,0x1,uint8_t,loadingInBackground,"0x005D31E1 cmp byte [esi+0x371],0 in CRoom::SetState (it does nothing while set); the ctor zeroes it (0x005D36A9)"
+CameraControllerExplore,0x0,0x1D0,struct,sizeof,"0x006418F5 push 0x1d0 (operator new, then the constructor 0x0076F890); the explore controller GameModeController+0x60 points to"
+CameraControllerExplore,0x4,0x4,CameraRig*,rig,"0x007EE9D1 mov [esi+4],eax in the base constructor 0x007EE9B0; 0x007EE7E1 mov eax,[ecx+4] then reads the rig's zoom in Zoom() 0x007EE7E0"
+CameraControllerExplore,0x8,0x4,ObjectId,targetId,"0x007EE9D4 mov [esi+8],0xffffffff in the base constructor: the followed object, -1 for none"
+CameraControllerExplore,0x48,0x4,float,zoomSetting,0x0076FC8F fstp [esi+0x48] in the explore update; the constructor sets it at 0x0076F9F5; runs -1 (tactical) to 1 (close)
+CameraControllerExplore,0x64,0x4,float,zoomLeast,0x007EEA2A fstp [esi+0x64] in the base constructor; 0x007EE794 fld [edx+0x64] in the zoom clamp
+CameraControllerExplore,0x68,0x4,float,zoomMost,0x007EEA2F fstp [esi+0x68] in the base constructor
+CameraControllerExplore,0x70,0x4,float,focusX,0x0076F8D2 fst [esi+0x70] in the explore constructor: the first of the focus point's floats
+CameraControllerExplore,0x90,0x4,int32,closeViewFlag,"0x0076FCA1 mov dword ptr [esi+0x90],0 in the explore update (set at 0x0076FCAD): 1 when zoomed in past the close threshold"
+CameraControllerExplore,0xEC,0x4,float,pullSpeed,0x0076FA40 fst [esi+0xEC] in the explore constructor
+CameraControllerExplore,0xF0,0x4,float,focusOtherOffset,0x0076F90D fst [esi+0xF0] in the explore constructor: the focus's second offset
+CameraControllerExplore,0x100,0x4,float,focusKeptOffset,0x0076F921 fst [esi+0x100] in the explore constructor: the focus's kept offset
+CameraRig,0x0,0x120,struct,sizeof,"0x006418BC push 0x120 (operator new, then the constructor 0x006C3E80); GameModeController+0x5C and GameMode+0x58 point to it"
+CameraRig,0x18,0x4,float,yawKept,0x006C2BA7 SetYaw stores the same value here and at +0x1C
+CameraRig,0x1C,0x4,float,yaw,0x006C2BAA SetYaw's second store; dao::CameraRig::Yaw reads it
+CameraRig,0x20,0x4,float,pitch,0x006C2BD7 SetPitch's first store; dao::CameraRig::Pitch reads it
+CameraRig,0x24,0x4,float,zoom,"0x007EE7E4 fld [eax+0x24] in the controller's Zoom() 0x007EE7E0, eax = [ecx+4] the rig: 0..1"
+CameraRig,0x50,0x4,float,pitchKept,0x006C2BDA SetPitch stores the same value here and at +0x20
+CameraRig,0x80,0x10,Vector4,position,"0x006C4C96 movaps [esi+0x80],xmm0 in CameraRig::Update 0x006C4C60; the constructor stores it at 0x006C3ECE"
 Conversation,0x0,0x1C,std::wstring,name,"0x007EF35B call 0x004C2AB0 with ecx=esi in Open (0x007EF310, arguments: owner id, second id, name): assigns the conversation's resource name; the constructor builds the string (0x007F1879 call 0x004C0D90)"
 Conversation,0x0,0xA0,struct,sizeof,"0x0068CF02 push 0xa0 (then the constructor 0x007F1850 at 0x0068CF21; the other allocation is in the ambient manager, constructor call 0x006FF848). No vftable"
 Conversation,0x1C,0x4,undefined4,resourceHandle,"0x007F1883 lea ecx,[esi+0x1c] then call 0x00451780 in the constructor; Open builds the resource handle at 0x007EF391 lea edi,[esi+0x1c] and reads the data pointer and size from it"
@@ -1239,6 +1257,11 @@ Physics::DebugLineBatch,0x30,0x4,void*,device,"0x0053BC55 mov [esi+0x30],ebx; 0x
 Physics::DebugLineBatch,0x34,0x4,void*,vertexDeclaration,"0x0053BD04 mov [esi+0x34],eax (device slot 0x68)"
 Physics::DebugLineBatch,0x38,0x4,uint32_t,usedLines,"0x0053BC52 mov [esi+0x38],0; Grow compares and copies by it at 0x0053BB4A"
 PlotItems,0x0,0x50,struct,sizeof,0x007406C5; sizeof (push 0x50 then PlotItems::PlotItems)
+PortraitRenderer,0x0,0xD70,struct,sizeof,"0x006AE2FD push 0xd70 in CCCreature::UpdatePortrait (operator new, then the constructor 0x007F3D80 called at 0x006AE31D)"
+PortraitRenderer,0xD40,0x4,CCCreature*,sourceCreature,"0x007F3DE3 mov [esi+0xD40],eax in the constructor 0x007F3D80; 0x007F4714 cmp [esi+0xD40],0 in Render"
+PortraitRenderer,0xD44,0x1,uint8_t,setUp,"0x007F3DE9 mov byte ptr [esi+0xD44],bl in the constructor; 0x007F3E5B sets it to 1 in Setup 0x007F3E20"
+PortraitRenderer,0xD48,0x4,int32,cameraRow,"0x007F3DEF mov dword ptr [esi+0xD48],1 in the constructor; 0x007F31A0 cmp [esi+0xD48],1 in PlaceCamera 0x007F3130: the portraits table row"
+PortraitRenderer,0xD4C,0x1C,std::wstring,textureName,"0x007F3DD8 lea ecx,[esi+0xD4C] in the constructor; 0x007F3F54 lea edi,[esi+0xD4C] in Setup: portrait_<tag><counter>"
 RandomGenerator,0x0,0x10,uint32_t[4],state,"0x004E7053 mov eax,[edx]: the four state words +0 +4 +8 +0xC, rewritten at 0x004E7088, 0x004E70A4, 0x004E70BF, 0x004E70D4; the constructor 0x004E7510 sets them to 0x1745D12D, 0x249248ED, 0x333332F9, 0x383EF9FA at 0x004E755B"
 RandomGenerator,0x10,0x10,uint32_t[4],mask,"0x004E7066 mov edi,[edx+0x10] (+0x14 0x004E7062, +0x18 0x004E707A, +0x1C 0x004E70C6): 0xFFFFFFFF << (32-k), built by the seeder 0x004E70F0"
 RandomGenerator,0x20,0x10,uint32_t[4],rightShift,"0x004E705F mov ecx,[edx+0x20] (+0x24 0x004E7085, +0x28 0x004E70A1, +0x2C 0x004E70BC): k minus t, set at 0x004E70FF and 0x004E7159"
