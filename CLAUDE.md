@@ -34,7 +34,7 @@ The runtime file's format (`src/daoaddr/Library.cpp`'s head, `tools/addrlib.py`'
 
 `README.md`, "What is here", says what each top-level folder is; each tool's head says what it does, and `python tools\addrlib.py --help` lists the table's commands.
 
-`daoexe.py` and `msvc_names.py` came from DAOLib, which has copies its other tools use. This is the lower layer, so a fix belongs here first.
+`daoexe.py` and `msvc_names.py` came from DAOLib, which imports them from here through its submodule (the user, 2026-11-02: "Have the exe live in the address library then, and have lib import it"), so their public surface is a promise to it.
 
 ## Building
 

@@ -1,6 +1,7 @@
 """Read a build of DAOrigins.exe without Ghidra: what the file is, its
 classes and their vtables, the script commands, and disassembly of any
-address. The default is the GOG build, game/gog/DAOrigins.exe.
+address. The default is the GOG build, game/gog/DAOrigins.exe (default_exe says
+where it is looked for when this repository is a submodule).
 
     python tools/daoexe.py --check              which build of data/builds.csv the file is
     python tools/daoexe.py --rtti [text]        classes (undecorated), those containing text
@@ -34,7 +35,17 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import msvc_names  # noqa: E402
 
-EXE = os.path.join(HERE, "..", "game", "gog", "DAOrigins.exe")
+
+def default_exe(here=HERE):
+    """This checkout's GOG file, or, where this repository is a submodule at
+    extern/<name>, the file in the game/ of the project holding it. The first
+    if neither exists, so a missing file is named as here."""
+    own = os.path.join(here, "..", "game", "gog", "DAOrigins.exe")
+    held = os.path.join(here, "..", "..", "..", "game", "DAOrigins.exe")
+    return held if not os.path.exists(own) and os.path.exists(held) else own
+
+
+EXE = default_exe()
 # The builds the address library knows, each with what identifies its file.
 BUILDS = os.path.join(HERE, "..", "data", "builds.csv")
 

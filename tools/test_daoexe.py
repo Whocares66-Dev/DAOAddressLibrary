@@ -84,6 +84,34 @@ MOV_EAX_EAX = bytes([0x89, 0xC0])
 RET = bytes([0xC3])
 
 
+class DefaultExe(unittest.TestCase):
+    def layout(self, root, *files):
+        here = os.path.join(root, "extern", "lib", "tools")
+        os.makedirs(here)
+        for file in files:
+            path = os.path.join(root, *file)
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            with open(path, "wb"):
+                pass
+        return here
+
+    def test_a_submodule_finds_the_file_of_the_project_holding_it(self):
+        with tempfile.TemporaryDirectory() as root:
+            here = self.layout(root, ("game", "DAOrigins.exe"))
+            self.assertTrue(os.path.exists(daoexe.default_exe(here)))
+
+    def test_its_own_file_comes_first(self):
+        own = ("extern", "lib", "game", "gog", "DAOrigins.exe")
+        with tempfile.TemporaryDirectory() as root:
+            here = self.layout(root, own, ("game", "DAOrigins.exe"))
+            self.assertIn("gog", daoexe.default_exe(here))
+
+    def test_with_neither_it_names_its_own(self):
+        with tempfile.TemporaryDirectory() as root:
+            here = self.layout(root)
+            self.assertIn("gog", daoexe.default_exe(here))
+
+
 class Callers(unittest.TestCase):
     def image(self, code):
         data = bytearray(pe_with_one_vftable())
