@@ -16853,3 +16853,36 @@ address,what,value,why
 0x005415F0,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitter::`scalar deleting destructor'`adjustor{384}'(void* this, uint flags)",jmp thunk
 0x00541600,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitter::`scalar deleting destructor'`adjustor{12}'(void* this, uint flags)",jmp thunk
 0x00541E00,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitter::ObjectNodeEmitter(void* this, void* owner, void* blueprint)",ret 8
+0x005B3AD0,signature,"void * __thiscall f(void *this, unsigned char flags)","scalar deleting destructor: ret 4, returns this"
+0x005B5CC0,signature,"void __thiscall f(void *this, unsigned int *size, unsigned int *shared)","IMemoryFootprint slot 1: ret 8, ecx unused"
+0x005B5D00,signature,"void __thiscall f(void *this, unsigned int *size, unsigned int *shared)",IMemoryFootprint slot 1 of the bone: ret 8
+0x005B5D40,signature,"void __thiscall f(void *this, void *a, void *b, void *c)",ret 0xC; the three words are passed on to ObjectNode::UpdateWorldTransform at 0x005B5D5A
+0x005B5DB0,signature,"void __thiscall f(void *this, void *parentBind)",ret 4; the argument is the Matrix44 multiplied at 0x005B5DE0
+0x005D1FC0,signature,"int __thiscall f(void *this, int unused)",Task::Run slot 2: ret 4; returns 3 at 0x005D1FE2; the argument is not read
+0x005D2230,signature,"void __thiscall f(void *this, int level)",ret 4; level indexes +0x298 and +0x2A0 at 0x005D225B
+0x005D5460,signature,"void __thiscall f(void *this, float delta, float time)",ret 8; two floats pushed to the GUI slot 8 at 0x005D5474-0x005D547F
+0x00617040,signature,"void __cdecl f(void *first, int hole, int top, unsigned int id, float distance)","std::_Push_heap: plain ret, five stack words"
+0x006170B0,signature,bool __thiscall f(void *this),plain ret; al = 1 or 0
+0x006186E0,signature,"void __thiscall f(void *this, unsigned int level, unsigned int id)",ret 8; vftable slot 2
+0x00618740,signature,"void * __thiscall f(void *this, unsigned int a, unsigned int b, unsigned int c, unsigned int d)",ret 0x10: the 16-byte traits object by value; returns this
+0x00618790,signature,"void * __thiscall f(void *this, unsigned int count)",ret 4; returns this at 0x006187E9
+0x00618800,signature,"void __thiscall f(void *this, bool freeStorage)",ret 4; flag tested at 0x00618828
+0x006188F0,signature,void * __thiscall f(void *this),plain ret; returns this at 0x0061893D
+0x00618950,signature,"void __thiscall f(void *this, const void *entry)","ret 4; the 16-byte LodEntry {id, count, float, cost} copied at 0x00618954-0x00618981"
+0x006189B0,signature,void * __thiscall f(void *this),plain ret; forwards to 0x00618790 with 0
+0x006189C0,signature,void __thiscall f(void *this),plain ret; band destructor
+0x00618A00,signature,void __thiscall f(void *this),plain ret; destructor body
+0x00618BF0,signature,"bool __thiscall f(void *this, unsigned int level, unsigned int id)",ret 8; vftable slot 1; al set at 0x00618C7B and 0x00618CAA
+0x00618CC0,signature,void * __thiscall f(void *this),plain ret; returns this at 0x00618D85
+0x00618DA0,signature,"void * __thiscall f(void *this, unsigned int flags)",ret 4; bit 0 tested at 0x00618DA8
+0x006C5100,signature,"void __thiscall f(void *this, int value)","ret 4; mov [ecx+0x74],eax"
+0x00706700,signature,bool __cdecl f(void *object),"plain ret; the caller pops one argument (add esp,4 at 0x00A67B2C); ecx is set inside"
+0x00747B70,signature,"void __thiscall f(void *this, int value)","ret 4; mov [ecx+0x20],eax"
+0x0079B310,signature,int __thiscall f(void *this),Task slot 4: plain ret; eax = 1
+0x0079D360,signature,"void * __thiscall f(void *this, unsigned int handle, const void *params, float scale)",ret 0xC; the 16-byte parameters are copied from the pointer; returns this
+0x0079D560,signature,"void * __thiscall f(void *this, unsigned int flags)",ret 4; scalar deleting destructor
+0x0079D580,signature,bool __stdcall f(void *effect),"ret 4; ecx is overwritten (mov ecx,[0xC327EC]) before being read"
+0x0079D690,signature,"bool __stdcall f(void *effect, unsigned int ownerId, void *ownerModel)","ret 0xC; the third word, when non-zero, replaces the owner's slot 0x10C object at 0x0079D6C1-0x0079D6C8"
+0x0079D810,signature,"void __thiscall f(void *this, unsigned int handle)",ret 4; ecx passed on to Find at 0x0079D815
+0x0079D850,signature,"bool __thiscall f(void *this, void *event)","ret 4; al from the slot call, or 0 when the effect is not found (xor bl at 0x0079D85A)"
+0x0079D880,signature,"void __thiscall f(void *this, void *effectSlot)",ret 4; a pointer to the effect pointer (0x0079D8CB)
