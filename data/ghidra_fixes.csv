@@ -18060,3 +18060,43 @@ address,what,value,why
 0x0053DC80,convention,__thiscall,tail jump to the pool vtable slot 1; the caller at 0x0046E24F pushes nothing
 0x0053DC90,convention,__thiscall,tail jump to the pool vtable slot 2; the caller at 0x0046D4B1 pushes nothing
 0x0053E340,convention,__thiscall,ret 4 at 0x0053E35E; returns 3 in eax
+0x0055E900,signature,"void __thiscall GraphicsStructures::ObjectNode::SetRoom(void* this, void* room)",ret 4; this in ecx at 0x0055E912
+0x0055E950,signature,"void __thiscall GraphicsStructures::ObjectNode::UpdateBindPose(void* this, void* parentMatrix)",ret 4 at 0x0055E9CA
+0x0055EC80,signature,"bool __thiscall GraphicsStructures::ObjectNode::ApplyMorph(void* this, void* morph, int arg2, int mode)","ret 0xC at 0x0055ED0F; mov al,1 at 0x0055ED09"
+0x0055ED20,signature,"void* __thiscall GraphicsStructures::ObjectNode::ObjectNode(void* this, void* owner, void* blueprint)",ret 8 at 0x0055EF1A; returns this
+0x0055EF20,signature,void __thiscall GraphicsStructures::ObjectNode::~ObjectNode(void* this),"plain ret at 0x0055F058, this in ecx at 0x0055EF47"
+0x0055F080,signature,"void* __thiscall GraphicsStructures::ObjectNode::GetOrCreateVector4ArrayParameter(void* this, void* name)",ret 4 at 0x0055F137; this is the interface at node+8
+0x0055F140,signature,"void __thiscall GraphicsStructures::ObjectNode::CollectAttachmentEmitters(void* this, void* outNodes)",ret 4 at 0x0055F1CE
+0x0055F1E0,signature,"void __thiscall GraphicsStructures::ObjectNodePointLightBlueprint::GetMemoryFootprint(void* this, int* outBytes, int* outSecondBytes)",ret 8 at 0x0055F219
+0x0055F220,signature,"void* __cdecl GraphicsStructures::ObjectNodePointLightBlueprint::ConstructNode(void* memory, void* owner, void* blueprint)",plain ret at 0x0055F271
+0x0055F280,signature,"void* __cdecl GraphicsStructures::ObjectNodeAmbientLightBlueprint::ConstructNode(void* memory, void* owner, void* blueprint)",plain ret at 0x0055F2D1
+0x0055F2E0,signature,"void* __cdecl GraphicsStructures::ObjectNodeLightProbeBlueprint::ConstructNode(void* memory, void* owner, void* blueprint)",plain ret at 0x0055F331
+0x0055F340,signature,void* __cdecl GraphicsStructures::GetZeroVector4(void),plain ret at 0x0055F372
+0x0055F3E0,signature,int __thiscall GraphicsStructures::ObjectNodePointLightBlueprint::GetNodeSize(void* this),plain ret
+0x0055F3F0,signature,bool __thiscall GraphicsStructures::ObjectNodePointLightBlueprint::GetUseVariationTint(void* this),"plain ret, result in al"
+0x0055F400,signature,void __thiscall GraphicsStructures::ObjectNodePointLightBlueprint::~ObjectNodePointLightBlueprint(void* this),jumps to 0x00571CA0 whose ret is plain
+0x0055F410,signature,void* __thiscall GraphicsStructures::ObjectNodeAmbientLightBlueprint::ObjectNodeAmbientLightBlueprint(void* this),"plain ret at 0x0055F43B; mov eax,esi"
+0x0055F440,signature,int __thiscall GraphicsStructures::ObjectNodeAmbientLightBlueprint::GetNodeSize(void* this),plain ret
+0x0055F450,signature,void __thiscall GraphicsStructures::ObjectNodeAmbientLightBlueprint::~ObjectNodeAmbientLightBlueprint(void* this),jumps to 0x00571CA0
+0x0055F460,signature,void __thiscall GraphicsStructures::ObjectNodeLightProbeBlueprint::ClearIrradiance(void* this),plain ret at 0x0055F708; this in ecx at 0x0055F470
+0x0055F710,signature,"void __thiscall GraphicsStructures::ObjectNodeLightProbeBlueprint::CollectResourceFootprint(void* this, void* collector)",ret 4 at 0x0055F73E
+0x0055F750,signature,"void* __thiscall GraphicsStructures::ObjectNodePointLightBlueprint::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4 at 0x0055F76B
+0x0055F770,signature,"void* __thiscall GraphicsStructures::ObjectNodeAmbientLightBlueprint::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4 at 0x0055F78B
+0x0055F790,signature,"void __thiscall GraphicsStructures::ObjectNodeLightProbeBlueprint::GetMemoryFootprint(void* this, int* outBytes, int* outSecondBytes)",ret 8 at 0x0055F7D6
+0x0055F7E0,signature,"void* __thiscall GraphicsStructures::ObjectNodeAmbientLightBlueprint::Instantiate(void* this, void** cursor, void* aux, void* owner, void* crustTarget, void* objectBlueprint, void* arg6)",ret 0x18 at 0x0055F907
+0x0055F910,signature,"void* __thiscall GraphicsStructures::ObjectNodeLightProbeBlueprint::Instantiate(void* this, void** cursor, void* aux, void* owner, void* crustTarget, void* objectBlueprint, void* arg6)",ret 0x18 at 0x0055FA03
+0x0055FA10,signature,void __thiscall GraphicsStructures::ObjectNodeLightProbeBlueprint::~ObjectNodeLightProbeBlueprint(void* this),plain ret at 0x0055FA80
+0x0055FA90,signature,int __thiscall GraphicsStructures::ObjectNodeLightProbeBlueprint::GetNodeSize(void* this),plain ret
+0x0055FAA0,signature,"void* __thiscall GraphicsStructures::ObjectNodeLightProbeBlueprint::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4 at 0x0055FABB
+0x0055FCB0,signature,"bool __thiscall GraphicsStructures::ObjectNodeLightProbeBlueprint::LoadIrradianceFile(void* this, void* fileName)",ret 4 at 0x0055FE47; result in al
+0x0055FE50,signature,void* __thiscall GraphicsStructures::ObjectNodeLightProbeBlueprint::ObjectNodeLightProbeBlueprint(void* this),plain ret at 0x0055FEC6; returns this
+0x0055FED0,signature,"void __thiscall GraphicsStructures::ObjectNodeLightProbeBlueprint::LoadEnvMap(void* this, void* name)",ret 4 at 0x0055FFD2
+0x0055FFE0,signature,int __thiscall GraphicsStructures::ObjectNodeEmitterBlueprint::GetNodeSize(void* this),plain ret at 0x0055FFFE and 0x0056000F
+0x00560010,signature,"void __thiscall GraphicsStructures::ObjectNodeEmitterBlueprint::SampleSpawnVolume(void* this, void* outPosition, void* outNormal)",ret 8 at 0x00560052
+0x00560060,signature,void* __thiscall GraphicsStructures::ObjectNodeEmitterBlueprint::GetMaterialName(void* this),plain ret
+0x00560080,signature,"void* __cdecl GraphicsStructures::ObjectNodeEmitterBlueprint::ConstructMeshNode(void* memory, void* owner, void* blueprint)",plain ret at 0x005600D1
+0x005600E0,signature,"void* __cdecl GraphicsStructures::ObjectNodeEmitterBlueprint::ConstructLinkedSpriteNode(void* memory, void* owner, void* blueprint)",plain ret at 0x00560131
+0x00560140,signature,"void* __cdecl GraphicsStructures::ObjectNodeEmitterBlueprint::ConstructSpriteNode(void* memory, void* owner, void* blueprint)",plain ret at 0x00560191
+0x005601A0,signature,"void* __cdecl GraphicsStructures::ObjectNodeEmitterBlueprint::ConstructLinkedPhysicsSpriteNode(void* memory, void* owner, void* blueprint)",plain ret at 0x005601F1
+0x00560200,signature,"void* __cdecl GraphicsStructures::ObjectNodeEmitterBlueprint::ConstructPhysicsSpriteNode(void* memory, void* owner, void* blueprint)",plain ret at 0x00560251
+0x00560070,signature,unsigned int __thiscall Stub::GetDword_0x2C0(void* this),plain ret
