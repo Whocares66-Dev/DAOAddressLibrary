@@ -15629,3 +15629,83 @@ address,what,value,why
 0x0076F120,signature,void __thiscall f(void* this),stack and registers read at 0x0076F120
 0x0076F1B0,signature,"void __thiscall f(void* this, float dt)",stack and registers read at 0x0076F1B0
 0x0076F380,signature,"bool __thiscall f(void* this, bool wide)",stack and registers read at 0x0076F380
+0x00A566F0,signature,"void __thiscall f(void *this, float *outStrength, void *outDirection)",GraphicsStructures::CSpeedTreeWind::GetStrengthAndDirection: 0xA566F0-0xA5670B
+0x00A567B0,signature,void __thiscall f(void *this),Matrix44Array::Clear: 0xA567B0-0xA567E6
+0x00A567F0,signature,"void __thiscall f(void *this, unsigned int count)",Matrix44Array::Resize: 0xA567F0-0xA568EF
+0x00A56900,signature,"void __thiscall f(void *this, float degrees)","Matrix44::RotateX: 0xA56900-0xA5699E: (1,0,0),(0,cos,sin),(0,-sin,cos)"
+0x00A569B0,signature,"void __thiscall f(void *this, float degrees)","Matrix44::RotateY: 0xA569B0-0xA56A4E: (cos,0,-sin),(0,1,0),(sin,0,cos)"
+0x00A56A60,signature,"void __thiscall f(void *this, float degrees)","Matrix44::RotateZ: 0xA56A60-0xA56AFE: (cos,sin,0),(-sin,cos,0),(0,0,1)"
+0x00A56B10,signature,"void __thiscall f(void *this, int numWindMatrices, int numLeafAngles)",GraphicsStructures::CSpeedTreeWind::WindInstance::SetMatrixAndLeafAngleCounts: 0xA56B10-0xA56BB3
+0x00A57610,signature,void * __cdecl f(void *arg),GraphicsStructures::CSpeedTreeWind::Create: 0xA57610-0xA5767B
+0x00A57680,signature,"bool __thiscall f(void *this, void *name)",GraphicsStructures::CSpeedTreeWind::LoadWnd: 0xA57680-0xA57F6B
+0x00A57F70,signature,"void __thiscall f(void *this, void *outString)",CGameObject::GetTypeName: 0xA57F70-0xA580D5
+0x00A582C0,signature,"void __thiscall f(void *this, void *saveBlock)",CGameObject::WriteObjectIdToSave: 0xA582C0-0xA582DC
+0x00A582E0,signature,void __cdecl f(void *saveTemplate),CGameObject::DefineObjectIdField: 0xA582E0-0xA582F4
+0x00A58300,signature,void * __thiscall f(void *this),Stub::GetAddress_0x48: 0xA58300
+0x00A58310,signature,void * __cdecl f(void *node),std::_Tree<?>::_Min_0x2d: 0xA58310-0xA5832A
+0x00A583F0,signature,"void __thiscall f(void *this, void *rimName)",RIMTreeManager::SendRimLoaded: 0xA583F0-0xA58470
+0x00A58480,signature,"void __thiscall f(void *this, void *rimName)",RIMTreeManager::SendRimUnloaded: 0xA58480-0xA58500
+0x00A58510,signature,"void * __cdecl f(void *out, void *name)",RIMTree::MakeRimFileName: 0xA58510-0xA5858C
+0x00A587E0,signature,bool __thiscall f(void *this),RIMTree::AreAllRimsLoaded: 0xA587E0-0xA588E6
+0x00A58D40,signature,bool __thiscall f(void *this),RIMTree::HasNoChildren: 0xA58D40-0xA58D4A
+0x00A58D50,signature,"bool __thiscall f(void *this, unsigned int treeId)",RIMTreeManager::IsLoaded: 0xA58D50-0xA58D61
+0x00A58D70,signature,"bool __thiscall f(void *this, unsigned int treeId)",RIMTreeManager::IsLoading: 0xA58D70-0xA58D81
+0x00A58D90,signature,void __thiscall f(void *this),"std::map<std::wstring,RIMTree *>::DeleteAllValues: 0xA58D90-0xA58E25"
+0x00A59770,signature,"void __thiscall f(void *this, void *tree)",RIMTreeManager::RequestLoad: 0xA59770-0xA59857
+0x00A59860,signature,"void __thiscall f(void *this, bool releaseStorage)",ECBase::ECDynArray<RIMTree *>::DeleteAll: 0xA59860-0xA59971
+0x00A59980,signature,"void __thiscall f(void *this, void *structReader, void *parent, void *name)",RIMTree::ReadFromStruct: 0xA59980-0xA59C4A
+0x00A59C50,signature,void __thiscall f(void *this),RIMTreeManager::Clear: 0xA59C50-0xA59CAB
+0x00A59CB0,signature,"bool __thiscall f(void *this, void *structReader, void *parent)",RIMTreeManager::ReadTree: 0xA59CB0-0xA59E07
+0x00A5AA60,signature,"void __thiscall f(void *this, void *resGff, unsigned int parentStruct, void *blockRef)",CDataArrays::WriteToSave: 0xA5AA60-0xA5B2C4
+0x00A5B2D0,signature,"float __thiscall f(void *this, unsigned int index)",Gff4::BlockRef::GetListElementFloat: 0xA5B2D0-0xA5B32B
+0x00A5B330,signature,"void * __thiscall f(void *this, void *out, unsigned int index)",Gff4::BlockRef::GetListElementQuaternion: 0xA5B330-0xA5B3A0
+0x00A5BAD0,signature,"void __thiscall f(void *this, void *resGff, unsigned int parentStruct, void *blockRef)",CDataArrays::ReadFromSave: 0xA5BAD0-0xA5C6BE
+0x00A5C6D0,signature,unsigned int __cdecl f(void *templateSet),CDataArrays::DefineSaveStruct: 0xA5C6D0-0xA5C7EB
+0x00A5C7F0,signature,"void __thiscall f(void *this, void *model)",AnimBase::AddModelToScene: 0xA5C7F0-0xA5C821
+0x00A5C830,signature,bool __thiscall f(void *this),AnimBase::HasSceneInstance: 0xA5C830-0xA5C837
+0x00A5C840,signature,"bool __thiscall f(void *this, unsigned int animId, float weight, float blendTime, void *extra)",AnimBase::SetWeightById: 0xA5C840-0xA5C895
+0x00A5C8A0,signature,"bool __thiscall f(void *this, unsigned int animId, void *curve, int fadeIn, void *extra)",AnimBase::SetBlendCurveById: 0xA5C8A0-0xA5C8EC
+0x00A5E730,signature,"void * __thiscall f(void *this, void *clipName)",AnimBase::FindTreeNameForClip: 0xA5E730-0xA5E896
+0x00A5E8A0,signature,"int __thiscall f(void *this, unsigned int animId)",AnimBase::GetAnimationState: 0xA5E8A0-0xA5E936
+0x00A5E940,signature,"bool __thiscall f(void *this, unsigned int animId)",AnimBase::IsAnimationLooping: 0xA5E940-0xA5E9E9
+0x00A5E9F0,signature,"void * __thiscall f(void *this, void *outResult, void *key)","std::map<std::wstring,?>::find: 0xA5E9F0-0xA5EA4D"
+0x00A5F480,signature,"void __thiscall f(void *this, unsigned int animId)",AnimBase::SetNextAnimationIfNotLooping: 0xA5F480-0xA5F4AA
+0x00A64640,signature,void * __thiscall f(void *this),EffectList::FindTopAnimationEffect: 0xA64640-0xA646D8
+0x00A646E0,signature,unsigned int __thiscall f(void *this),EffectList::GetEffectFlags: 0xA646E0-0xA6473C
+0x00A64840,signature,"void __thiscall f(void *this, void **effect)",EffectList::RemoveEffect: 0xA64840-0xA6487B
+0x00A64880,signature,void * __thiscall f(void *this),EffectList::EffectList: 0xA64880-0xA64895
+0x00A648A0,signature,void __thiscall f(void *this),EffectList::~EffectList: 0xA648A0-0xA648F0
+0x00A64950,signature,"void __thiscall f(void *this, void *outEffects, int type, unsigned char includeInvalid, int creator, int field44, int effectId, int durationType)",EffectList::CollectMatchingEffects: 0xA64950-0xA64A70
+0x00A64A80,signature,"void __thiscall f(void *this, void *pattern, void *outEffects)",EffectList::CollectEffectsMatchingPattern: 0xA64A80-0xA64B0A
+0x00A64B10,signature,"void __thiscall f(void *this, void *resGff, unsigned int parentStruct, void *blockRef)",EffectList::ReadFromSave: 0xA64B10-0xA64CCD
+0x00A64D10,signature,"void __thiscall f(void *this, void *outEffects, int type, int creator, int field44, int effectId, int durationType)",EffectsHolder::CollectMatchingEffects: 0xA64D10-0xA64D6F
+0x00A65490,signature,"void __thiscall f(void *this, void *resGff, unsigned int parentStruct, void *blockRef)",CGameEffect::WriteToSave: 0xA65490-0xA656E3
+0x00A656F0,signature,"void __thiscall f(void *this, void *resGff, unsigned int parentStruct, void *blockRef)",CGameEffect::ReadFromSave: 0xA656F0-0xA659B0
+0x00A659C0,signature,unsigned int __cdecl f(void *templateSet),CGameEffect::DefineSaveStruct: 0xA659C0-0xA65BC7
+0x00A667A0,signature,"void __thiscall f(void *this, unsigned char variation)",CItem::SetVariation: 0xA667A0-0xA667C2
+0x00A67920,signature,void __thiscall f(void *this),AnimModelLods::DeleteAllLodSlots: 0xA67920-0xA67956
+0x00A67960,signature,void __thiscall f(void *this),AnimModelLods::ReleaseCurrentLod: 0xA67960-0xA679BC
+0x00A679C0,signature,"void __thiscall f(void *this, unsigned int level)",AnimModelLods::ReleasePendingLod: 0xA679C0-0xA67A0E
+0x00A67A20,signature,"void __thiscall f(void *this, unsigned int levelMask)",AnimModelLods::ReleaseCurrentLodsInMask: 0xA67A20-0xA67A8C
+0x00A67A90,signature,bool __thiscall f(void *this),AnimModelLods::HasAnyLodSlot: 0xA67A90-0xA67AAC
+0x00A67AB0,signature,int __thiscall f(void *this),AnimModelLods::GetOwnerLodLevel: 0xA67AB0-0xA67AC3
+0x00A67AD0,signature,"int __thiscall f(void *this, void *arg)",ECResMan::DeleteSourceTask::Execute: 0xA67AD0-0xA67AF1
+0x00A67FB0,signature,void __thiscall f(void *this),std::vector<unsigned int>::vector: 0xA67FB0-0xA67FB7
+0x00A67FC0,signature,void __thiscall f(void *this),AnimModelLods::Reset: 0xA67FC0-0xA680F0
+0x00A68100,signature,"void __thiscall f(void *this, void *modelNames, unsigned int level, void *outFileNames, void *outHashes)",AnimModelLods::CollectModelFilesForLevel: 0xA68100-0xA6821A
+0x00A68400,signature,"void __thiscall f(void *this, void *modelNames)",AnimModelLods::CollectModelFiles: 0xA68400-0xA6842D
+0x00A68430,signature,"void __thiscall f(void *this, int level, int role, int a, int b, int c, int d)",AnimModelLods::RequestLodModel: 0xA68430-0xA6863B
+0x00A68910,signature,"bool __thiscall f(void *this, int mode, int level)",AnimModelLods::ActivatePendingModel: 0xA68910-0xA68A2E
+0x00A68B30,signature,"bool __thiscall f(void *this, void *modelNames, int async, int a, int b, int c, int d)",AnimModelLods::LoadModel: 0xA68B30-0xA68C53
+0x00A68C60,signature,"bool __thiscall f(void *this, void *modelNames, int a, int b, int c, int d, int async, void *readyModel)",AnimModelLods::LoadModels: 0xA68C60-0xA68D4D
+0x00A68D50,signature,"bool __thiscall f(void *this, int a, int b, int c, int d, int e, void *crustTarget)",AnimModelLods::LoadCrustModel: 0xA68D50-0xA68D9E
+0x00A68FF0,signature,"bool __thiscall f(void *this, void *other)","std::pair<wchar_t const *,wchar_t const *>::operator<: 0xA68FF0-0xA69072"
+0x00A69080,signature,"void __thiscall f(void *this, void *node)",std::_Tree<?>::_Rrotate_0x2d: 0xA69080-0xA690D3
+0x00A690E0,signature,void * __cdecl f(void *node),std::_Tree<?>::_Min_0x19: 0xA690E0-0xA690FA
+0x00A69100,signature,"void * __thiscall f(void *this, void *key)","std::_Tree<std::pair<wchar_t const *,wchar_t const *>>::_Lbound: 0xA69100-0xA69136"
+0x00A69140,signature,"void __thiscall f(void *this, void *node)",std::_Tree<?>::_Rrotate_0x19: 0xA69140-0xA6918E
+0x00A691A0,signature,"void * __stdcall f(void *left, void *parent, void *right, void *value, unsigned char color)","std::_Tree<std::pair<wchar_t const *,wchar_t const *>>::_Buynode: 0xA691A0-0xA691E1"
+0x00A691F0,signature,void * __cdecl f(void),"std::_Tree<std::pair<wchar_t const *,wchar_t const *>>::_Buynode: 0xA691F0-0xA69225"
+0x00A69230,signature,"void * __thiscall f(void *this, void *outIterator, void *key)","std::map<std::pair<wchar_t const *,wchar_t const *>,void *>::find: 0xA69230-0xA69292"
+0x00A692A0,signature,"void * __thiscall f(void *this, void *key)","std::map<std::pair<wchar_t const *,wchar_t const *>,void *>::FindValueAddress: 0xA692A0-0xA69322"
+0x00A69300,signature,"void * __thiscall f(void *this, void *fromClip, void *toClip)",AnimTbi::FindBlendCurve: 0xA69300-0xA69322
