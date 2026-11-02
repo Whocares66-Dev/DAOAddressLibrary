@@ -139,9 +139,10 @@ for kind, address, parts in W["rows"]:
                     continue
             if not parts:
                 continue
-            # The leaf already right is right: Ghidra's class recovery may have
-            # put it in its class, a better place than a namespace of that name.
-            if f.getName() == parts[-1]:
+            # The whole path, not the leaf: on the leaf alone a class's rename
+            # (Vector::Zero to Vector3::Zero, 2026-11-02) never reached Ghidra.
+            # A namespace Ghidra's class recovery made has the same path.
+            if f.getSymbol().getName(True) == "::".join(parts):
                 done["same"] += 1
                 continue
             done["named"] += 1
