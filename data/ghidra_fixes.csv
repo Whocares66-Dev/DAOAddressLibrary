@@ -16886,3 +16886,83 @@ address,what,value,why
 0x0079D810,signature,"void __thiscall f(void *this, unsigned int handle)",ret 4; ecx passed on to Find at 0x0079D815
 0x0079D850,signature,"bool __thiscall f(void *this, void *event)","ret 4; al from the slot call, or 0 when the effect is not found (xor bl at 0x0079D85A)"
 0x0079D880,signature,"void __thiscall f(void *this, void *effectSlot)",ret 4; a pointer to the effect pointer (0x0079D8CB)
+0x00560370,signature,"void __thiscall GraphicsStructures::ObjectNodeEmitterBlueprint::ResolveTargetNode(void* this, void* model, void* emitter)",ret 8 at 0x005603a9; ecx read first
+0x00560370,convention,__thiscall,ret 8 at 0x005603a9; ecx read first
+0x005603B0,signature,"void __thiscall GraphicsStructures::ObjectNodeEmitterBlueprint::CollectMeshParticleModel(void* this, void* context)",ret 4 at 0x005603df
+0x005603B0,convention,__thiscall,ret 4 at 0x005603df
+0x00560490,signature,"unsigned short* __thiscall GraphicsStructures::SpawnVolumeMesh::GetTriangle(void* this, unsigned int index)",ret 4 at 0x005604c1
+0x00560490,convention,__thiscall,ret 4 at 0x005604c1
+0x005604D0,signature,"void __thiscall GraphicsStructures::ObjectNodeEmitterBlueprint::GetMemoryUsage(void* this, unsigned int* sizeA, unsigned int* sizeB)",ret 8 at 0x0056052c
+0x005604D0,convention,__thiscall,ret 8 at 0x0056052c
+0x005609E0,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitterBlueprint::CreateStandardEmitter(void* this, char** cursor, void* a2, void* owner, void* a4, void* a5, void* a6)",ret 0x18 at 0x00560de9 (ecx saved to esi at 0x00560a0c)
+0x005609E0,convention,__thiscall,ret 0x18 at 0x00560de9 (ecx saved to esi at 0x00560a0c)
+0x00560E10,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitterBlueprint::CreatePhysicsEmitter(void* this, char** cursor, void* a2, void* owner, void* a4, void* a5, void* a6)",ret 0x18 at 0x005612e9
+0x00560E10,convention,__thiscall,ret 0x18 at 0x005612e9
+0x005613D0,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitterBlueprint::CreateNode(void* this, char** cursor, void* a2, void* owner, void* a4, void* a5, void* a6)",tail-jumps to the two makers; ret 0x18 inherited
+0x005613D0,convention,__thiscall,tail-jumps to the two makers; ret 0x18 inherited
+0x00561960,signature,void __thiscall GraphicsStructures::EmitterSplatParameters::~EmitterSplatParameters(void* this),tail jmp 0x004C0DB0; ecx read
+0x00561960,convention,__thiscall,tail jmp 0x004C0DB0; ecx read
+0x00561980,signature,void __thiscall GraphicsStructures::ObjectNodeEmitterBlueprint::~ObjectNodeEmitterBlueprint(void* this),plain ret 0x00561a5d
+0x00561980,convention,__thiscall,plain ret 0x00561a5d
+0x00561A70,signature,"void* __thiscall GraphicsStructures::ObjectNodeEmitterBlueprint::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4 at 0x00561a8b
+0x00561A70,convention,__thiscall,ret 4 at 0x00561a8b
+0x00561B10,signature,void* __thiscall GraphicsStructures::ObjectNodeEmitterBlueprint::ObjectNodeEmitterBlueprint(void* this),plain ret 0x00561e2e
+0x00561B10,convention,__thiscall,plain ret 0x00561e2e
+0x00561E30,signature,void __thiscall GraphicsStructures::ObjectNodeEmitterBlueprint::FinishLoading(void* this),plain ret 0x00562249
+0x00561E30,convention,__thiscall,plain ret 0x00562249
+0x00562250,signature,void* __thiscall GraphicsStructures::VertexPool::VertexPool(void* this),plain ret
+0x00562250,convention,__thiscall,plain ret
+0x00562280,signature,void __thiscall GraphicsStructures::VertexPool::~VertexPool(void* this),plain ret 0x0056230f
+0x00562280,convention,__thiscall,plain ret 0x0056230f
+0x00562310,signature,"void* __thiscall GraphicsStructures::ParticleVertexPool::ParticleVertexPool(void* this, unsigned int stride, unsigned int capacityQuads, unsigned int mostPerAllocation)",ret 0xC at 0x0056243d
+0x00562310,convention,__thiscall,ret 0xC at 0x0056243d
+0x00562440,signature,void __thiscall GraphicsStructures::ParticleVertexPool::~ParticleVertexPool(void* this),plain ret 0x005624cf
+0x00562440,convention,__thiscall,plain ret 0x005624cf
+0x005624D0,signature,void __thiscall GraphicsStructures::ParticleVertexPool::Lock(void* this),plain ret 0x005624fb
+0x005624D0,convention,__thiscall,plain ret 0x005624fb
+0x00562500,signature,bool __thiscall GraphicsStructures::ParticleVertexPool::Unlock(void* this),plain ret; al = 1/0
+0x00562500,convention,__thiscall,plain ret; al = 1/0
+0x00562560,signature,void __thiscall GraphicsStructures::ParticleVertexPool::Reset(void* this),plain ret 0x00562568
+0x00562560,convention,__thiscall,plain ret 0x00562568
+0x00562570,signature,"void* __thiscall GraphicsStructures::ParticleVertexPool::Allocate(void* this, unsigned int* quads, unsigned int* baseVertex)",ret 8 at 0x0056263b
+0x00562570,convention,__thiscall,ret 8 at 0x0056263b
+0x00562640,signature,bool __thiscall GraphicsStructures::SplatObjectVertexPool::Unlock(void* this),plain ret
+0x00562640,convention,__thiscall,plain ret
+0x00562680,signature,unsigned int __thiscall GraphicsStructures::SplatObjectVertexPool::GetFirstVertex(void* this),plain ret
+0x00562680,convention,__thiscall,plain ret
+0x00562690,signature,unsigned int __thiscall GraphicsStructures::SplatObjectVertexPool::GetVertexCount(void* this),plain ret
+0x00562690,convention,__thiscall,plain ret
+0x005626A0,signature,unsigned int __thiscall GraphicsStructures::SplatObjectVertexPool::GetFirstIndex(void* this),plain ret
+0x005626A0,convention,__thiscall,plain ret
+0x005626B0,signature,unsigned int __thiscall GraphicsStructures::SplatObjectVertexPool::GetIndexCount(void* this),plain ret
+0x005626B0,convention,__thiscall,plain ret
+0x005626C0,signature,"void* __thiscall GraphicsStructures::VertexPool::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x005626C0,convention,__thiscall,ret 4
+0x005626E0,signature,"void* __thiscall GraphicsStructures::ParticleVertexPool::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x005626E0,convention,__thiscall,ret 4
+0x00562760,signature,"void* __thiscall GraphicsStructures::SplatObjectVertexPool::SplatObjectVertexPool(void* this, unsigned int columns, unsigned int rows, unsigned int slots)",ret 0xC at 0x00562a91
+0x00562760,convention,__thiscall,ret 0xC at 0x00562a91
+0x00562AA0,signature,void __thiscall GraphicsStructures::SplatObjectVertexPool::~SplatObjectVertexPool(void* this),plain ret 0x00562b37
+0x00562AA0,convention,__thiscall,plain ret 0x00562b37
+0x00562B40,signature,"void* __thiscall GraphicsStructures::SplatObjectVertexPool::AllocateSlot(void* this, unsigned int* outId)",ret 4 at 0x00562c88
+0x00562B40,convention,__thiscall,ret 4 at 0x00562c88
+0x00562C90,signature,"void __thiscall GraphicsStructures::SplatObjectVertexPool::SetSlotColour(void* this, unsigned int id, unsigned int argb, float frame)",ret 0xC at 0x00562d9f
+0x00562C90,convention,__thiscall,ret 0xC at 0x00562d9f
+0x00562DB0,signature,"void __thiscall GraphicsStructures::SplatObjectVertexPool::ReleaseSlot(void* this, unsigned int id)",ret 4 at 0x00562dd9
+0x00562DB0,convention,__thiscall,ret 4 at 0x00562dd9
+0x00562DE0,signature,"void* __thiscall GraphicsStructures::SplatObjectVertexPool::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4
+0x00562DE0,convention,__thiscall,ret 4
+0x00560260,convention,__cdecl,"six pushed words and add esp,0x18 at the caller 0x00560563; plain ret"
+0x00560260,signature,"void* __cdecl std::_Copy_opt<?*,?*>(void* first, void* last, void* dest, void* destChecked, int tagA, int tagB)","six pushed words and add esp,0x18 at the caller 0x00560563; plain ret"
+0x005602B0,convention,__cdecl,"plain ret, two stack arguments read at [esp+0x18], [esp+0x1c] after five pushes"
+0x005602B0,signature,"void* __cdecl std::_Construct<?,?>(void* dest, void* src)","plain ret, two stack arguments read at [esp+0x18], [esp+0x1c] after five pushes"
+0x00560320,convention,__cdecl,"six pushed words, add esp,0x18 at 0x0056047D; plain ret"
+0x00560320,signature,"void* __cdecl std::_Copy_backward_opt<?*,?*>(void* first, void* last, void* destEnd, void* destEndChecked, int tagA, int tagB)","six pushed words, add esp,0x18 at 0x0056047D; plain ret"
+0x005603F0,convention,__cdecl,"plain ret, three stack arguments"
+0x005603F0,signature,"void __cdecl std::fill<?*,?>(void* first, void* last, void* value)","plain ret, three stack arguments"
+0x00560430,convention,__cdecl,"plain ret, three stack arguments, add esp,0x18 after its inner call"
+0x00560430,signature,"void* __cdecl std::copy_backward<?*,?*>(void* first, void* last, void* destEnd)","plain ret, three stack arguments, add esp,0x18 after its inner call"
+0x00561A90,convention,__thiscall,"esi=ecx, ret 4"
+0x00561A90,signature,"void* __thiscall std::vector<?>::vector(unsigned int)(void* this, unsigned int count)","esi=ecx, ret 4"
+0x00562700,convention,__thiscall,"reads [ecx+4] first, ret 8, result address returned in eax"
+0x00562700,signature,"void* __thiscall std::_Tree<?>::equal_range(void* this, void* result, unsigned int* key)","reads [ecx+4] first, ret 8, result address returned in eax"
