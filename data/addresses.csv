@@ -882,7 +882,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 881,function,,0x0041ef10,0x0041f1a0,0x0041ef10
 882,function,,0x0041efd0,0x0041f260,0x0041efd0
 883,function,,0x0041f050,0x00475d20,0x0041f050
-884,function,,0x0041f060,0x00a3eb70,0x0041f060
+884,function,Stub::GetDword_0x14,0x0041f060,0x00a3eb70,0x0041f060
 885,function,,0x0041f070,0x0041f2f0,0x0041f070
 886,function,,0x0041f0f0,0x0041f370,0x0041f0f0
 887,function,,0x0041f110,0x0041f390,0x0041f110
@@ -1062,7 +1062,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 1061,function,,0x00423eb0,0x004240b0,0x00423eb0
 1062,function,,0x00423ed0,0x00423ff0,0x00423ed0
 1063,function,,0x00423ee0,0x009f2ae0,0x00423ee0
-1064,function,,0x00423ef0,0x00a3cba0,0x00423ef0
+1064,function,Stub::SetDword_0x14,0x00423ef0,0x00a3cba0,0x00423ef0
 1065,function,,0x00423f00,0x004240d0,0x00423f00
 1066,function,,0x00423f30,0x00424120,0x00423f30
 1067,function,,0x00423f60,0x00424150,0x00423f60
@@ -5553,7 +5553,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5552,function,ECResMan::ReadRequestTask::`scalar deleting destructor',0x004e9c90,0x0083e7a0,0x004e9c90
 5553,function,ECResMan::TaskPool::Release,0x004e9cb0,0x0083e7c0,0x004e9cb0
 5554,function,ECResMan::TaskPool::ReleaseAll,0x004e9dd0,0x0083e8e0,0x004e9dd0
-5555,function,ECResMan::ReadRequestTask::Run,0x004e9e20,0x0083e930,0x004e9e20
+5555,function,ECResMan::ReadRequestTask::Execute,0x004e9e20,0x0083e930,0x004e9e20
 5556,function,ECResMan::TaskPool::~TaskPool,0x004e9fd0,0x0083eae0,0x004e9fd0
 5557,function,ECResMan::TaskPool::Grow,0x004ea080,0x0083eb90,0x004ea080
 5558,function,ECResMan::TaskPool::Acquire,0x004ea130,0x0083ec40,0x004ea130
@@ -6862,7 +6862,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6861,function,ReplaceDesignerTags,0x0051f110,0x007c7f60,0x0051f110
 6862,function,GuiExternal::ReplaceDesignerTags,0x0051f2f0,0x007c8140,0x0051f2f0
 6863,function,GuiFSCommand::ReplaceDesignerTags,0x0051f410,0x007c8260,0x0051f410
-6864,function,GuiCommands::Find,0x0051f4f0,0x00806f80,0x0051f4f0
+6864,function,"Core::MapFindValue<unsigned int,void*>",0x0051f4f0,0x00806f80,0x0051f4f0
 6865,function,Core::VectorIndexOf<std::wstring>,0x0051f550,0x00505c80,0x0051f550
 6866,function,GuiCommands::DispatchFSCommand,0x0051f5f0,0x007c8340,0x0051f5f0
 6867,function,GuiCommands::DispatchExternalInterface,0x0051f640,0x007c8390,0x0051f640
@@ -7538,7 +7538,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7537,function,,0x0053bf70,0x00742d20,0x0053bf70
 7538,function,Graphics::Texture::LockMutex,0x0053bfb0,0x00742d60,0x0053bfb0
 7539,function,Multithreading::Mutex::Unlock`adjustor{20}',0x0053bfc0,0x00742d70,0x0053bfc0
-7540,function,,0x0053bfd0,0x00742d80,0x0053bfd0
+7540,function,Graphics::Texture::GetMemoryFootprint,0x0053bfd0,0x00742d80,0x0053bfd0
 7541,function,,0x0053c020,0x00742dd0,0x0053c020
 7542,function,,0x0053c040,0x00742df0,0x0053c040
 7543,function,,0x0053c060,0x00742e10,0x0053c060
@@ -7667,7 +7667,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7666,function,"std::_Copy_backward_opt<?*,?*>",0x0053e210,0x0077a110,0x0053e210
 7667,function,GraphicsStructures::EmitterParameters::EmitterParameters,0x0053e280,0x0077a180,0x0053e280
 7668,function,,0x0053e310,0x00770ee0,0x0053e310
-7669,function,GraphicsStructures::EmitterUpdateTask::Run,0x0053e340,0x0077a210,0x0053e340
+7669,function,GraphicsStructures::EmitterUpdateTask::Execute,0x0053e340,0x0077a210,0x0053e340
 7670,function,GraphicsStructures::Array<?>::~Array,0x0053e370,0x0046fbd0,0x0053e370
 7671,function,GraphicsStructures::SpawnVolumeSphere::Sample,0x0053e380,0x0077a240,0x0053e380
 7672,function,GraphicsStructures::SpawnVolumeCylinder::Sample,0x0053e540,0x0077a400,0x0053e540
@@ -7734,7 +7734,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7733,function,GraphicsStructures::PhysicsNodeFunctor::operator(),0x00542610,0x00743e30,0x00542610
 7734,function,GraphicsStructures::RemoteMaterial::GetChannelField,0x00542630,0x00743e50,0x00542630
 7735,function,GraphicsStructures::Object::vfunction44,0x00542660,0x00743e80,0x00542660
-7736,function,GraphicsStructures::Object::SetScale,0x00542680,0x00743ea0,0x00542680
+7736,function,GraphicsStructures::Object::SetAnimationScale,0x00542680,0x00743ea0,0x00542680
 7737,function,GraphicsStructures::Object::FindNodeByName,0x005426a0,0x00743ec0,0x005426a0
 7738,function,GraphicsStructures::Object::FindSimulatableNodeByName,0x005426c0,0x00743ee0,0x005426c0
 7739,function,GraphicsStructures::Object::FindRootNodeByName,0x005426e0,0x00743f00,0x005426e0
@@ -8034,8 +8034,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 8033,function,GraphicsStructures::Object::AsAnimatable,0x0054f790,0x007501e0,0x0054f790
 8034,function,GraphicsStructures::Object::AsFaceAnimatable,0x0054f7a0,0x00750200,0x0054f7a0
 8035,function,Stub::GetFloat_0x5C,0x0054f7b0,0x00750210,0x0054f7b0
-8036,function,GraphicsStructures::Object::SetScaleVector,0x0054f7c0,0x00750220,0x0054f7c0
-8037,function,GraphicsStructures::Object::GetScaleVector,0x0054f7e0,0x00750240,0x0054f7e0
+8036,function,GraphicsStructures::Object::SetAnimationScaleVector,0x0054f7c0,0x00750220,0x0054f7c0
+8037,function,GraphicsStructures::Object::GetAnimationScaleVector,0x0054f7e0,0x00750240,0x0054f7e0
 8038,function,GraphicsStructures::Object::GetMorphSafePointer,0x0054f7f0,0x00750250,0x0054f7f0
 8039,function,GraphicsStructures::Object::GetCrustMap,0x0054f800,0x00750260,0x0054f800
 8040,function,Stub::GetByte_0x270,0x0054f810,0x00402a00,0x0054f810
@@ -8173,7 +8173,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 8172,function,Stub::SetDword_0x2c,0x005552b0,0x00a3cbb0,0x005552b0
 8173,function,Stub::FindByNameNoCase_0x3c_0x5c,0x005552c0,0x00770440,0x005552c0
 8174,retired,,,,
-8175,function,,0x005553d0,0x00770550,0x005553d0
+8175,function,GraphicsStructures::Mesh::GetMemoryFootprint,0x005553d0,0x00770550,0x005553d0
 8176,function,Multithreading::SynchSafePointerList<GraphicsStructures::Mesh>::~SynchSafePointerList,0x005554d0,0x00770650,0x005554d0
 8177,function,,0x00555590,0x00770710,0x00555590
 8178,function,,0x00555660,0x007707e0,0x00555660
@@ -8317,7 +8317,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 8316,function,GraphicsStructures::ObjectNode::SetPhysicsActor,0x0055dba0,0x007771e0,0x0055dba0
 8317,function,GraphicsStructures::ObjectNode::GetExportValue,0x0055dbe0,0x00777220,0x0055dbe0
 8318,function,GraphicsStructures::ObjectNode::SetVector4ArrayParameter,0x0055dcb0,0x007772f0,0x0055dcb0
-8319,function,GraphicsStructures::ObjectNode::GetMaterialObject,0x0055dcf0,0x00777330,0x0055dcf0
+8319,function,GraphicsStructures::ObjectNode::GetDrawBatch,0x0055dcf0,0x00777330,0x0055dcf0
 8320,function,Graphics::IAnimatableNode::~IAnimatableNode,0x0055dd10,0x00777350,0x0055dd10
 8321,function,Graphics::IAnimatableNode::`scalar deleting destructor',0x0055dd20,0x00777360,0x0055dd20
 8322,function,FacialAnimation::IFaceAnimatableNode::~IFaceAnimatableNode,0x0055dd40,0x00777380,0x0055dd40
