@@ -14309,3 +14309,43 @@ address,what,value,why
 0x00503120,signature,void __cdecl f(bool value),byte from [ESP+4] at 0x00503120
 0x00503130,clear,GraphicsStructures::GraphicsStructuresManager::vfunction42,"the vftable slot is 0x00572620, which JMPs here; this is a free getter of 0x00C310F4"
 0x00503130,signature,bool __cdecl f(void),"MOV AL,[0x00C310F4]; RET; ECX not read"
+0x00503140,signature,"void* __thiscall Graphics::Material::FindSemanticByName(void* this, void* name)",ret 4
+0x005031C0,signature,"void* __thiscall Graphics::Material::FindSemanticById(void* this, int id)","ret 4, ecx read at 0x005031C1"
+0x00503240,signature,bool __thiscall Graphics::Material::Validate(void* this),"plain ret, returns +0x38"
+0x005032D0,signature,void __thiscall Graphics::Material::RebindPasses(void* this),"plain ret, ecx read at 0x005032D3"
+0x005033B0,signature,void __thiscall Graphics::Material::SelectTechniques(void* this),ecx read 0x005033B3; tail jmp 0x005032D0
+0x00503410,signature,"void __thiscall Graphics::Material::GetMemoryFootprint(void* this, int* systemBytes, int* otherBytes)",ret 8; outputs zeroed 0x0050341D/0x00503425
+0x00503520,signature,"void __thiscall Graphics::Material::AddSemantic(void* this, void* semantic)",ret 4
+0x00503860,signature,void __thiscall Graphics::Material::~Material(void* this),"plain ret, ecx read 0x00503884"
+0x00503950,signature,void* __thiscall Graphics::MaterialPass::GetStateBlockRef(void* this),"lea eax,[ecx+0x54]; ret"
+0x00503960,signature,void* __thiscall GraphicsStructures::ObjectNode::GetVertexStreamMask(void* this),"returns ecx+0xE0, not ObjectNode_vftable1**"
+0x00503970,signature,bool __thiscall Graphics::MaterialEffectPass::Validate(void* this),"mov al,[ecx+0x64]; ret"
+0x00503980,signature,"void* __thiscall Graphics::MaterialPass::SetVertexShaderName(void* this, void* name)","add ecx,4; jmp wstring::operator= (ret 4 there)"
+0x00503990,signature,"void* __thiscall Graphics::MaterialPass::SetPixelShaderName(void* this, void* name)","add ecx,0x20; jmp wstring::operator="
+0x005039A0,signature,"bool __thiscall GraphicsStructures::ObjectNode::HasVertexStream(void* this, int usage)","jmp 0x00867F60, ret 4 there"
+0x005039B0,signature,void __cdecl Graphics::MaterialPass::ResetFrameStat(void),"no ecx, no args, plain ret"
+0x005039C0,signature,"bool __thiscall Graphics::MaterialPassParameterLess::operator()(void* this, void* a, void* b)","ret 8; ecx = pointer to the stage bool, read at 0x005039C4"
+0x00503AF0,signature,"void __cdecl std::_Push_heap(void** first, int hole, int top, void* value, void* pred)","plain ret, caller add esp,0x14 at 0x00503D2B"
+0x00503B50,signature,"void* __thiscall Graphics::MaterialPass::FindStateBlockEntry(void* this, int state)",ret 4
+0x00503B70,signature,"void __thiscall Graphics::MaterialPass::VisitShaders(void* this, void* visitor)",ret 4
+0x00503BB0,signature,void* __thiscall Graphics::MaterialPass::GetVertexShaderHandle(void* this),"add ecx,0x3C; jmp Stub::GetDword_0x34"
+0x00503BC0,signature,void* __thiscall Graphics::MaterialPass::GetPixelShaderHandle(void* this),"add ecx,0x44; jmp Stub::GetDword_0x34"
+0x00503BD0,signature,void* __thiscall std::_Vector_const_iterator::operator++(void* this),returns this; plain ret
+0x00503C00,signature,"void* __cdecl std::copy(void* first, void* last, void* dest)","plain ret, args at [esp+4..0xC]"
+0x00503C50,signature,"void __cdecl std::_Med3(void** a, void** b, void** c, void* pred)",plain ret
+0x00503CC0,signature,"void __cdecl std::_Adjust_heap(void** first, int hole, int bottom, void* value, void* pred)",plain ret
+0x00503D40,signature,"void __thiscall Graphics::MaterialPass::ApplyParameter(void* this, void* binding, void* block)",ret 8
+0x00503D80,signature,"void __thiscall Graphics::MaterialPass::SetRequiredStreams(void* this, void* names)",ret 4; EBX = arg at 0x00503DB2
+0x00504470,signature,"void __thiscall Graphics::MaterialParameterBlock::UploadConstantRanges(void* this, void* device)",ret 4; ecx = block (0x00506651)
+0x005049B0,signature,"void __thiscall Graphics::MaterialPass::ApplyParameters(void* this, void* context, void* block)",ret 8
+0x00504AE0,signature,"bool __thiscall Graphics::MaterialEffectPass::Apply(void* this, int a1, int a2, int a3, void* block, int flags)",ret 0x14; arguments unused
+0x00504B50,signature,"void __cdecl std::_Sort(void** first, void** last, int ideal, void* pred)","plain ret; recursive callers add esp,0x10"
+0x00504D80,signature,"void __thiscall Graphics::MaterialPass::AddParameter(void* this, void* parameter)",ret 4
+0x005034C0,signature,"void __thiscall Graphics::Material::VisitPassShaders(Material* this, void* device)",ret 4 at 0x0050351B
+0x005035E0,signature,void __thiscall Graphics::Material::DeleteSemantics(Material* this),plain ret
+0x00503780,signature,"Material* __thiscall Graphics::Material::Material(Material* this, int mostDerived)",ret 4 at 0x00503845
+0x00503920,signature,"void* __thiscall Graphics::Material::`scalar deleting destructor'(Material* this, uint flags)",ret 4 at 0x00503943
+0x005040F0,signature,bool __thiscall Graphics::MaterialPass::Validate(MaterialPass* this),plain ret
+0x00504230,signature,"void __thiscall Graphics::MaterialPass::GetMemoryFootprint(MaterialPass* this, uint* size, uint* shared)",ret 8 at 0x005043A5
+0x004F6A80,clear,Graphics::MaterialShader::vfunction5,"Folded label: 0x004F6A80 is mov eax,[ecx+0x24] on a material child (the selected technique), not a MaterialShader method; the same bytes are shared"
+0x004F6A90,clear,Graphics::Material::vfunction4,"Folded label: 0x004F6A90 is mov eax,[ecx+0x3c], the serial id of any material-system object, not Material-specific"
