@@ -17527,3 +17527,37 @@ address,what,value,why
 0x00587260,signature,"void __thiscall GraphicsStructures::StreamDataXMLBuilder::SetPrimitiveType(void* this, int primitiveType)",stack arguments match the function's ret: 0x00587260-0x00587267
 0x00587250,signature,"void __thiscall GraphicsStructures::StreamDataXMLBuilder::SetIndexType(void* this, int indexType)",ret matches the stack arguments
 0x00587250,convention,__thiscall,ret and register use read in the listing
+0x005B0AE0,signature,"void * __cdecl f(void *mem, void *owner, void *blueprint)","plain ret, caller add esp,0xC at 0x005B0BA6; null memory returns null"
+0x005B0B80,signature,"void * __thiscall f(void *this, void **cursor, void *a2, void *owner, void *a4, void *a5, void *a6)","ret 0x18 at 0x005B0C54; cursor [esp+8] at 0x005B0B81, owner [esp+0x1C] at 0x005B0B8A"
+0x005B0C60,signature,unsigned int __thiscall f(void *this),"mov eax,0x1E0; ret"
+0x005B0C70,signature,"void __thiscall f(void *this, void *ctx, unsigned int a, unsigned int b)",ret 0xC at 0x005B0CA5
+0x005B0CB0,signature,"bool __thiscall f(void *this, unsigned int name)",ret 4 at 0x005B0CC3; returns al=1
+0x005B0CD0,signature,"void __thiscall f(void *this, unsigned int *size, unsigned int *shared)",IMemoryFootprint slot 1: ret 8 at 0x005B0D3E
+0x005B0D50,signature,"void __thiscall f(void *this, void *visitor)",ret 4 at 0x005B0DA5
+0x005B0DB0,signature,"float * __cdecl f(float *out, float *a, float *b, float t)",plain ret; out [ebp+8] returned in eax at 0x005B0DC4; t [ebp+0x14]
+0x005B0E20,signature,void __thiscall f(void *this),destructor body: plain ret at 0x005B0EDE
+0x005B0EE0,signature,void * __thiscall f(void *this),"lea eax,[ecx-0x160]; ret"
+0x005B0EF0,signature,int __thiscall f(void *this),"mov eax,0x15; ret"
+0x005B0F60,signature,void __thiscall f(void *this),plain ret at 0x005B1814; ecx = the node
+0x005B1820,signature,void __thiscall f(void *this),"plain ret; ecx = node+0x180 (add ecx,-0x180 at 0x005B182C)"
+0x005B1840,signature,"void __thiscall f(void *this, void *ctx)",ret 4 at 0x005B1870; ecx = node+0x180
+0x005B1880,signature,"void * __thiscall f(void *this, unsigned char flags)","scalar deleting destructor: ret 4 at 0x005B189B, returns this"
+0x005B18A0,signature,"void __thiscall f(void *this, unsigned int *size, unsigned int *shared)",blueprint slot 1: ret 8 at 0x005B18F1
+0x005B1900,signature,"void * __thiscall f(void *this, void *a, void *b)",ret 8 at 0x005B19F1; returns this
+0x005B1A00,signature,"void * __cdecl f(void *mem, void *a, void *b)",plain ret at 0x005B1A51; null memory returns null
+0x005B1A60,signature,"void * __thiscall f(void *this, void **cursor, void *a2, void *owner, void *a4, void *a5, void *driver)","ret 0x18 at 0x005B1E7D; cursor [esp+0xB8], owner [esp+0xC0], driver [esp+0xCC] at entry"
+0x005B1E80,signature,unsigned int __thiscall f(void *this),"mov eax,0x470; ret"
+0x005B1E90,signature,"bool __thiscall f(void *this, unsigned int name, float value)",ret 8; address of arg 2 passed to SetParameter at 0x005B1EA2
+0x005B1EC0,signature,"bool __thiscall f(void *this, unsigned int name, void *vector)",ret 8 at 0x005B1EC9/0x005B1EDF
+0x005B1EF0,signature,"bool __thiscall f(void *this, unsigned int name, void *array)",ret 8 at 0x005B1EF9/0x005B1F0F
+0x005B1F20,signature,"bool __thiscall f(void *this, unsigned int name, void *matrix)",ret 8 at 0x005B1F29/0x005B1F3F
+0x005B1F50,signature,"void __thiscall f(void *this, unsigned int *size, unsigned int *shared)",IMemoryFootprint slot 1: ret 8 at 0x005B1FBE
+0x005B1FD0,signature,void __thiscall f(void *this),"sets vftable, jmp 0x0053AE30 (plain ret)"
+0x005B1FE0,signature,"void * __thiscall f(void *this, unsigned char flags)",scalar deleting destructor: ret 4 at 0x005B2001
+0x005B2010,signature,"void __thiscall f(void *this, void *ctx)",ret 4 at 0x005B204A; ecx = node+0x180
+0x005B2050,signature,"void * __thiscall f(void *this, unsigned int flags)",ret 4 at 0x005B205A/0x005B208B; returns the driver Lock result
+0x005B2090,signature,"void * __thiscall f(void *this, unsigned int flags)",ret 4 at 0x005B209A/0x005B20CB
+0x005B20D0,signature,void __thiscall f(void *this),plain ret at 0x005B20FD
+0x005B2100,signature,void __thiscall f(void *this),plain ret at 0x005B212D
+0x005B2130,signature,"void __thiscall f(void *this, void *transform)",ret 4 at 0x005B2202
+0x005B2210,signature,"void __thiscall f(void *this, void *visitor)",ret 4 at 0x005B2257
