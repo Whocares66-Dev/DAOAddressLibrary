@@ -18451,3 +18451,42 @@ address,what,value,why
 0x005468C0,signature,"void __cdecl std::_Uninit_fill_n<?*,unsigned int,?>(void* dst, unsigned int count, const void* value)",plain ret; callers push three further words
 0x00547C10,signature,"void* __thiscall GraphicsStructures::Object::FindExportValueByTarget(void* this, const void* target)",ret 4; this = Object
 0x005468C0,convention,__cdecl,ret and stack arguments as read
+0x0054F230,signature,void __thiscall GraphicsStructures::Object::~Object(void* this),plain ret at 0x0054F5EE; called with no arguments by 0x0054F973 (scalar deleting destructor)
+0x0054F5F0,signature,"void __thiscall GraphicsStructures::Object::SetSimulatableUserData(void* this, void* value)",ret 4 at 0x0054F5FA; this is the Object+0xC interface
+0x0054F600,signature,void* __thiscall GraphicsStructures::Object::GetSimulatableUserData(void* this),plain ret at 0x0054F606; this is the Object+0xC interface
+0x0054F610,signature,void* __thiscall GraphicsStructures::Object::GetScene(void* this),plain ret at 0x0054F616; this is the Object base
+0x0054F620,signature,"void __thiscall GraphicsStructures::Object::SetScene(void* this, void* scene)",ret 4 at 0x0054F62A; this is the Object base
+0x0054F630,signature,"bool __thiscall GraphicsStructures::Object::IsInScene(void* this, void* scene)",ret 4 at 0x0054F63F; this is the Object+8 interface
+0x0054F650,signature,void* __thiscall GraphicsStructures::Object::GetAnimatable(void* this),plain ret at 0x0054F653; this is the Object+4 interface
+0x0054F660,signature,void* __thiscall GraphicsStructures::Object::GetAnimationTask(void* this),plain ret at 0x0054F666; this is the Object base
+0x0054F670,signature,"void __thiscall GraphicsStructures::Object::SetRoomIds(void* this, int roomId1, int roomId2)",ret 8 at 0x0054F684; this is the Object+8 interface
+0x0054F690,signature,"void __thiscall GraphicsStructures::Object::GetRoomIds(void* this, int* roomId1, int* roomId2)",ret 8 at 0x0054F6A8; this is the Object+8 interface
+0x0054F6B0,signature,bool __thiscall GraphicsStructures::Object::HasFlag0x20(void* this),plain ret at 0x0054F6C9; this is the Object base
+0x0054F6D0,signature,"void __thiscall GraphicsStructures::Object::SetApplyAnimationTrees(void* this, bool value)",ret 4 at 0x0054F6DA; this is the Object base
+0x0054F6E0,signature,"void __thiscall GraphicsStructures::Object::SetByte_0xEF(void* this, const unsigned char* value)",ret 4 at 0x0054F6EC; the argument is dereferenced; this is the Object base
+0x0054F6F0,signature,"void __thiscall GraphicsStructures::Object::GetPlace(void* this, float* out)",ret 4 at 0x0054F717; this is the Object+4 interface; out is four floats
+0x0054F720,signature,"void __thiscall GraphicsStructures::Object::GetOrientation(void* this, float* out)",ret 4 at 0x0054F747; this is the Object+4 interface; out is four floats
+0x0054F760,signature,unsigned char __thiscall GraphicsStructures::Object::GetByte_0xEF(void* this),plain ret at 0x0054F766; this is the Object base
+0x0054F770,signature,void* __thiscall GraphicsStructures::Object::AsSimulatable(void* this),plain ret at 0x0054F77A and 0x0054F77D; this is the Object+8 interface
+0x0054F780,signature,void* __thiscall GraphicsStructures::Object::AsRenderable(void* this),plain ret at 0x0054F78A and 0x0054F78D; this is the Object+8 interface
+0x0054F790,signature,void* __thiscall GraphicsStructures::Object::AsAnimatable(void* this),plain ret at 0x0054F793; this is the Object+8 interface
+0x0054F7A0,signature,void* __thiscall GraphicsStructures::Object::AsFaceAnimatable(void* this),plain ret at 0x0054F7AA and 0x0054F7AD; this is the Object+8 interface
+0x0054F7B0,signature,float __thiscall Stub::GetFloat_0x5C(void* this),plain ret at 0x0054F7B3; float result in st(0)
+0x0054F7C0,signature,"void __thiscall GraphicsStructures::Object::SetScaleVector(void* this, const void* scale)",ret 4 at 0x0054F7D6; this is the Object base; the argument must be 16-byte aligned (movaps)
+0x0054F7E0,signature,void* __thiscall GraphicsStructures::Object::GetScaleVector(void* this),plain ret at 0x0054F7E6; this is the Object base
+0x0054F7F0,signature,void* __thiscall GraphicsStructures::Object::GetMorphSafePointer(void* this),plain ret at 0x0054F7F6; this is the Object base
+0x0054F800,signature,void* __thiscall GraphicsStructures::Object::GetCrustMap(void* this),plain ret at 0x0054F806; this is the Object+8 interface
+0x0054F820,signature,unsigned char __thiscall Stub::GetByte_0x271(void* this),plain ret at 0x0054F826; this is the Object+8 interface
+0x0054F840,signature,void* __thiscall GraphicsStructures::Object::GetFacialAnimationPlayer(void* this),plain ret at 0x0054F846; this is the Object+0x10 interface
+0x0054F850,signature,unsigned int __thiscall GraphicsStructures::Object::GetFlags(void* this),plain ret at 0x0054F856; this is the Object+8 interface
+0x0054F860,signature,void* __thiscall GraphicsStructures::Object::GetBoundsBoxInterface(void* this),plain ret at 0x0054F86D and 0x0054F870; this is the Object+8 interface
+0x0054F880,signature,bool __thiscall GraphicsStructures::Object::HasRemoteMaterial(void* this),plain ret at 0x0054F88B; this is the Object+8 interface
+0x0054F890,signature,void* __thiscall Stub::GetAddress_0x5C(void* this),plain ret at 0x0054F893
+0x0054F8A0,signature,"void __thiscall GraphicsStructures::Object::SetTransformsDirty(void* this, bool dirty)",ret 4 at 0x0054F8B0; this is the Object+8 interface
+0x0054F8C0,signature,"void __thiscall GraphicsStructures::Object::GetPlace_adjustor4(void* this, float* out)","sub ecx,4; jmp 0x0054F6F0 which is ret 4"
+0x0054F8D0,signature,"void __thiscall GraphicsStructures::Object::GetOrientation_adjustor4(void* this, float* out)","sub ecx,4; jmp 0x0054F720 which is ret 4"
+0x0054F8E0,signature,"void* __thiscall GraphicsStructures::Object::scalar_deleting_destructor_adjustor4(void* this, unsigned int flags)","sub ecx,4; jmp 0x0054F970 which is ret 4 at 0x0054F98B"
+0x0054F8F0,signature,"void* __thiscall GraphicsStructures::Object::scalar_deleting_destructor_adjustor8(void* this, unsigned int flags)","sub ecx,8; jmp 0x0054F970 which is ret 4"
+0x0054F900,signature,void* __thiscall GraphicsStructures::Object::GetAnimatable_adjustor8(void* this),"sub ecx,8; jmp 0x0054F650 which is a plain ret"
+0x0054F910,signature,"void* __thiscall GraphicsStructures::Object::scalar_deleting_destructor_adjustor12(void* this, unsigned int flags)","sub ecx,0xC; jmp 0x0054F970 which is ret 4"
+0x0054F920,signature,"void* __thiscall GraphicsStructures::Object::scalar_deleting_destructor_adjustor16(void* this, unsigned int flags)","sub ecx,0x10; jmp 0x0054F970 which is ret 4"
