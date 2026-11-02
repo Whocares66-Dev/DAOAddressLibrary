@@ -15372,3 +15372,78 @@ address,what,value,why
 0x00A49BF0,signature,"bool __thiscall f(void *this, int row1, int column1, int row2, int column2)",ret 0x10
 0x00A49C50,signature,"bool __thiscall f(void *this, int row, int column)",ret 8
 0x00A49C70,signature,"int __thiscall f(void *this, int column, int row)",ret 8 at 0xA49CAC; column vs [grid+0x20]
+0x00A4AF60,signature,"void * __thiscall f(void *this, void *result, void *firstVec, unsigned int *firstWord, unsigned int firstBit, void *lastVec, unsigned int *lastWord, unsigned int lastBit)",0x00A4AF60-0x00A4B077 ret 0x1c
+0x00A4B080,signature,void __thiscall f(void *this),0x00A4B080-0x00A4B0F9 calls 0x00A4AF60
+0x00A4B100,signature,"void __thiscall f(void *this, unsigned int n, bool val)",0x00A4B100-0x00A4B181 ret 8
+0x00A4B190,signature,"int __thiscall f(void *this, int column, int row, int block)","0x00A4B190-0x00A4B9F0 ret 0xc, ecx = this"
+0x00A4BA20,signature,"int __thiscall f(void *this, int column, int row)",0x00A4BA20-0x00A4BA6F ret 8
+0x00A4BB00,signature,"int __stdcall f(float *a, float *b, float *c)",0x00A4BB00-0x00A4BB7F ret 0xc
+0x00A4BF00,signature,"float __stdcall f(float *a, float *b)",0x00A4BF00-0x00A4C01F ret 8
+0x00A4C020,signature,"int __stdcall f(float *a, float *b, float r)",0x00A4C020-0x00A4C08F ret 0xc
+0x00A4C090,signature,"float __stdcall f(float *a, float *b)",0x00A4C090-0x00A4C13F ret 8
+0x00A4C2A0,signature,"int __thiscall f(void *this, void *path, int first, int last)","0x00A4C2A0-0x00A4C49F ret 0xc, edi = ecx"
+0x00A4C790,signature,"int __thiscall f(void *this, void *path, int first, int last)",0x00A4C790-0x00A4C89F ret 0xc
+0x00A4C8A0,signature,"void __thiscall f(void *this, void *state, void *path)",0x00A4C8A0-0x00A4C92F ret 8
+0x00A4C930,signature,"void __thiscall f(void *this, void *path, int i0, int i1, int i2, float size, int *outAdded, int *outChanged)",0x00A4C930-0x00A4CD7F ret 0x1c
+0x00A4D030,signature,"int __thiscall f(void *this, void *state, void *path, float size, unsigned char *outMore)",0x00A4D030-0x00A4D10F ret 0x10
+0x00A4E120,signature,void __thiscall f(void *this),0x00A4E120-0x00A4E1AF
+0x00A4E3A0,signature,void * __thiscall f(void *this),0x00A4E3A0-0x00A4E41B
+0x00A4E420,signature,"unsigned int __thiscall f(void *this, int *record)",0x00A4E420-0x00A4E4AF ret 4
+0x00A4E4B0,signature,"unsigned int __thiscall f(void *this, int blockA, int blockB, unsigned int lowBits)",0x00A4E4B0-0x00A4E54F ret 0xc
+0x00A4E550,signature,"int __thiscall f(void *this, int superBlock)",0x00A4E550-0x00A4E57F ret 4
+0x00A4E580,signature,int __thiscall f(void *this),0x00A4E580-0x00A4E5AF
+0x00A4E5B0,signature,"int __thiscall f(void *this, int block)",0x00A4E5B0-0x00A4E5EF ret 4
+0x00A4E5F0,signature,"void * __thiscall f(void *this, unsigned int i)",0x00A4E5F0-0x00A4E61F ret 4
+0x00A4E620,signature,"void __thiscall f(void *this, int block, int cell, int label)",0x00A4E620-0x00A4E87E ret 0xc
+0x00A4E890,signature,"int __thiscall f(void *this, int block, int label)",0x00A4E890-0x00A4EABF ret 8
+0x00A4EAC0,signature,"int __thiscall f(void *this, int blockColumn, int blockRow)",0x00A4EAC0-0x00A4EBCF ret 8
+0x00A4EBD0,signature,"unsigned char __stdcall f(void *offsets, void *bytes, unsigned int block, int k)",0x00A4EBD0-0x00A4EC22 ret 0x10
+0x00A4EC30,signature,"void __stdcall f(unsigned int index, unsigned char value, void *bytes)",0x00A4EC30-0x00A4EC6F ret 0xc
+0x00A4EC70,signature,"void __cdecl f(void *first, void *last, void *value)",0x00A4EC70-0x00A4EC9F
+0x00A4ECA0,signature,"void __thiscall f(void *this, void *offsets, void *bytes, unsigned int block, int k, int unused, unsigned char value)",0x00A4ECA0-0x00A4ECE8 ret 0x18
+0x00A4ECF0,signature,void __thiscall f(void *this),0x00A4ECF0-0x00A4ED2F
+0x00A51C20,signature,void __thiscall f(void *this),0x00A51C20-0x00A51C5F
+0x00A51C60,signature,"void __thiscall f(void *this, void *a, void *b)",0x00A51C60-0x00A51F2F ret 8
+0x00A51F30,signature,"void __thiscall f(void *this, unsigned int n, int v0, int v1, int v2, int v3)",0x00A51F30-0x00A5201F ret 0x14
+0x00A52020,signature,"void __thiscall f(void *this, unsigned int n, int v0, int v1, int v2, int v3)",0x00A52020-0x00A5210F ret 0x14
+0x00A52350,signature,"int __stdcall f(float *a, float *b)",0x00A52350-0x00A523BF ret 8
+0x00A523C0,signature,"void * __cdecl f(void *first, void *last, void *dest)",0x00A523C0-0x00A523EF
+0x00A523F0,signature,void * __cdecl f(void),0x00A523F0-0x00A5240F
+0x00A52410,signature,"void * __stdcall f(void *next, void *prev, void *pair)",0x00A52410-0x00A5246F ret 0xc
+0x00A52470,signature,"int __thiscall f(void *this, void *out)",0x00A52470-0x00A524CF ret 4
+0x00A52B20,signature,"void * __thiscall f(void *this, unsigned int *key)",0x00A52B20-0x00A52BCF ret 4
+0x00A52BD0,signature,"void __thiscall f(void *this, unsigned int index)",0x00A52BD0-0x00A52D9F ret 4
+0x00A52DA0,signature,"void __thiscall f(void *this, unsigned int index)",0x00A52DA0-0x00A5301F ret 4
+0x00A53020,signature,void * __thiscall f(void *this),0x00A53020-0x00A530CF
+0x00A530D0,signature,void __thiscall f(void *this),0x00A530D0-0x00A530EF
+0x00A530F0,signature,void __thiscall f(void *this),0x00A530F0-0x00A531AF
+0x00A531B0,signature,"void * __thiscall f(void *this, void *out)",0x00A531B0-0x00A531FF ret 4
+0x00A53200,signature,"void __thiscall f(void *this, void *node)",0x00A53200-0x00A5328F ret 4
+0x00A53290,signature,"void __thiscall f(void *this, void *node)",0x00A53290-0x00A532DF ret 4
+0x00A532E0,signature,void * __thiscall f(void *this),0x00A532E0-0x00A5333D
+0x00A53340,signature,"void __thiscall f(void *this, void *cur, float *node, void *env, unsigned int goal)",0x00A53340-0x00A533BF ret 0x10
+0x00A533C0,signature,"void __thiscall f(void *this, void *cur, float *node, void *env, unsigned int goal)",0x00A533C0-0x00A5343F ret 0x10
+0x00A53440,signature,"int __thiscall f(void *this, void *env, unsigned int start, unsigned int goal, void *routeOut, void *limiter, float timeLimit)",0x00A53440-0x00A5360D ret 0x18
+0x00A53640,signature,"void __thiscall f(void *this, int width)",0x00A53640-0x00A5364F ret 4
+0x00A53650,signature,"int __thiscall f(void *this, unsigned int node)",0x00A53650-0x00A5366F ret 4
+0x00A53670,signature,int __stdcall f(unsigned int node),0x00A53670-0x00A53684 ret 4
+0x00A536A0,signature,float __thiscall f(unsigned int *node),0x00A536A0-0x00A536FF
+0x00A53700,signature,"int __stdcall f(unsigned int *a, unsigned int *b)",0x00A53700-0x00A53849 ret 8
+0x00A53F90,signature,void * __thiscall f(void *this),0x00A53F90-0x00A53FFF
+0x00A54000,signature,"void __thiscall f(void *this, unsigned int n, int v0, int v1, int v2, int v3)",0x00A54000-0x00A540EF ret 0x14
+0x00A540F0,signature,void __thiscall f(void *this),0x00A540F0-0x00A541BF
+0x00A541C0,signature,void __thiscall f(void *this),0x00A541C0-0x00A54319
+0x00A54A60,signature,void * __thiscall f(void *this),0x00A54A60-0x00A54AAF
+0x00A54AB0,signature,void __thiscall f(void *this),0x00A54AB0-0x00A54ADF
+0x00A54AE0,signature,void __thiscall f(void *this),0x00A54AE0-0x00A54B2F
+0x00A55CB0,signature,float __thiscall f(void *this),0x00A55CB0
+0x00A55CF0,signature,"void __thiscall f(void *this, float response, float limit)",0x00A55CF0-0x00A55CFE ret 8
+0x00A55D10,signature,"void __thiscall f(void *this, float angle)",0x00A55D10-0x00A55D17 ret 4
+0x00A55D20,signature,"void __thiscall f(void *this, float a, float b)",0x00A55D20-0x00A55D2E ret 8
+0x00A55D40,signature,"void __thiscall f(void *this, float minDuration, float maxDuration)",0x00A55D40-0x00A55D4E ret 8
+0x00A55D70,signature,"void __thiscall f(void *this, float a, float b, float c, float d)",0x00A55D70-0x00A55D8C ret 0x10
+0x00A55D90,signature,"void __thiscall f(void *this, float a, float b, float c, float d)",0x00A55D90-0x00A55DAC
+0x00A55DB0,signature,"void __thiscall f(void *this, float a, float b, float c, float d)",0x00A55DB0-0x00A55DCC
+0x00A55DD0,signature,"void __thiscall f(void *this, float a, float b, float c, float d)",0x00A55DD0-0x00A55DFF
+0x00A55E00,signature,"void __thiscall f(void *this, float *minDuration, float *maxDuration)",0x00A55E00-0x00A55E1F ret 8
+0x00A55E20,signature,float __thiscall f(void *this),0x00A55E20-0x00A55E2F
