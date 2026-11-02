@@ -169,6 +169,7 @@ CGameEffect,0x44,0x4,int,abilityId,"0x0065C7C0 mov [edi+0x44],eax in Prepare (it
 CGameEffect,0x50,0x1,uint8_t,started,"0x00A65309 mov byte [esi+0x50],bl ; the constructor clears it ; set when the effect's start is handled (not read here)"
 CGameEffect,0x54,0x20,CDataArrays,params,"0x00A652D8 lea ecx,[esi+0x54] ; the base constructor 0x00A59E10 runs on it at 0x00A6530C ; GetVisualParams (0x0079F540) reads values from it at 0x0079F549"
 CResARE,0x18,0x4,void*,vptr,"0x00688D4D mov [edi],0xB0DDFC with edi = esi+0x18 (lea at 0x00688CFB, base constructor 0x0067A4C0 at 0x00688D07); 1 slot"
+CRoom,0x14,0x4,int,roomId,"0x0053D162 mov eax,[ebp+0x14] in ObjectNodeLight::SetRoom"
 EffectList,0x0,0x14,struct,sizeof,0x0068979D push 0x14 ; the allocation before the constructor call at 0x006897D9 (constructor 0x00A64880)
 EffectList,0x0,0x4,CGameEffect*,topAnimationEffect,"0x00A6493C mov [esi],edi in AddEffect (0x00A64900) when the new effect's animation priority beats the current one's (0x00A64933)"
 EffectList,0x4,0x10,std::vector<CGameEffect*>,effects,"0x00A64885 lea ecx,[esi+4] ; begin +8 and end +0xC are read with sar 2 at 0x00A64646..0x00A6465E by FindTopAnimationEffect ; 4-byte elements"
@@ -195,6 +196,8 @@ GraphicsStructures::Dependency,0x0,0x4,void*,vftable,"0x00542D68 mov [esi],0xAF8
 GraphicsStructures::Dependency,0x4,0x4,GraphicsStructures::Object*,target,"0x00568BEB mov [esi+4],edi; 0x00568C49 mov [esi+4],ecx; the target Object"
 GraphicsStructures::Dependency,0x8,0x4,GraphicsStructures::ObjectNode*,targetNode,"0x00568BEE mov [esi+8],eax; 0x00568C5D mov [esi+8],eax; the target's node found by name"
 GraphicsStructures::Dependency,0xC,0x1C,std::wstring,targetNodeName,"0x00568BE8 lea ecx,[esi+0xC]; call 0x004C2AB0; the target's node name"
+GraphicsStructures::EmitterUpdateTask,0x0,0x1C,struct,sizeof,0x00542030 push 0x1C; call operator new at 0x0054209D
+GraphicsStructures::EmitterUpdateTask,0x18,0x4,void*,emitter,"0x005420C3 mov [edi+0x18],esi; 0x0053E340 mov ecx,[ecx+0x18]"
 GraphicsStructures::Font,0x0,0x818,struct,sizeof,"0x0045ABF0 push 0x818, allocation in Renderer::Renderer_Device"
 GraphicsStructures::Font,0x4,0x4,void*,glyphBatch,"0x0053C815 mov [esi+4],eax: the owner slot 57 returns the FontGlyphBatch; AddText 0x0053C754 mov ecx,[esi+4]"
 GraphicsStructures::Font,0x8,0x4,void*,owner,"0x0053C7AC mov [esi+8],eax: the graphics owner whose vtable creates and frees batches"
@@ -211,6 +214,7 @@ GraphicsStructures::Object,0x150,0x10,Vector4,boundsMax,"0x0056873C movaps [ebx+
 GraphicsStructures::Object,0x1D4,0x10,ECBase::ECDynArray<GraphicsStructures::ExportValue>,exportValues,"0x00568871 lea ecx,[ebx+0x1D4]; 0x005689B7 mov edi,[ebx+0x1DC]; 0x005689E6 mov eax,0x2AAAAAAB; export values, 0x30 bytes each; begin +0x1D8, end +0x1DC"
 GraphicsStructures::Object,0x274,0x4,GraphicsStructures::CrustHookMap*,crustMap,"0x005682DA mov edi,[esi+0x274]; 0x00543D76; the crust map, made when a crust node is instanced"
 GraphicsStructures::Object,0x278,0x1,bool,isCrustEffect,"0x005680DE mov byte [edi+0x278],1; made as a crust effect on a target (InstantiateAsCrust only)"
+GraphicsStructures::Object,0x2D4,0x10,float[4],variationTint,0x0053CDCF fmul [eax+0x2D4] in ObjectNodeLight::Color when +0x196 is set
 GraphicsStructures::Object,0x2F4,0x4,void*,remoteMaterial,"0x005687ED mov [ebx+0x2F4],eax; 0x00568144 (crust variant); the remote material object (0x40 bytes), made when the blueprint has one"
 GraphicsStructures::ObjectAttachDependency,0x0,0x50,struct,sizeof,"0x0054D973 push 0x50 before operator new; 0x00568C84 add [eax],0x50"
 GraphicsStructures::ObjectAttachDependency,0x2C,0x4,GraphicsStructures::Object*,child,"0x00542E01 mov [esi+0x2C],eax; 0x00568C97; the attached (child) Object"
@@ -248,14 +252,15 @@ GraphicsStructures::ObjectNode,0xE0,0x10,Vector4,localRotation,0x0057223F fstp [
 GraphicsStructures::ObjectNode,0x100,0x10,Vector4,localTranslation,"0x00572266 movaps [eax+0x100],xmm0 in InitNode from the blueprint's +0x20"
 GraphicsStructures::ObjectNode,0x110,0x10,Vector4,localScale,"0x00572271 movaps [eax+0x110],xmm0 in InitNode from the blueprint's +0x30"
 GraphicsStructures::ObjectNode,0x140,0x10,float[4],localTranslationSum,"0x0053CBD0 lea eax,[ecx+0x140]: node slot 8"
-GraphicsStructures::ObjectNode,0x154,0x4,void*,owner,"0x0055E6CA mov [edi+0x154],ebp in SetOwner (0x0055E6C0) ; the constructor stores its first argument at 0x0055EE9D ; GetWorldRotation 0x0055DAE3 calls through it"
+GraphicsStructures::ObjectNode,0x154,0x4,void*,owner,"0x0053D0E7 mov ecx,[ecx+0x154]: the owner Object, asked for a clip track row"
 GraphicsStructures::ObjectNode,0x15C,0x4,void*,physicsActor,"0x0055DBBD mov [esi+0x15C],eax in SetPhysicsActor (0x0055DBA0) ; GetPhysicsActor 0x0053CBF0 reads [ecx+0x158] through the +4 thunk, ClearPhysicsActor 0x0053CC20 zeroes it"
-GraphicsStructures::ObjectNode,0x168,0x4,int,roomId,"0x0053D168 mov [ecx+0x168],eax in node slot 15: the room object +0x14, -1 for none"
+GraphicsStructures::ObjectNode,0x168,0x4,int,roomId,"0x0053D168 mov [ecx+0x168],eax; SetRoom stores the room id (room+0x14 or -1); read by the room test at 0x0053D223"
 GraphicsStructures::ObjectNode,0x16C,0x4,void*,drawBatch,"0x005651AF mov [esi+0x16C],eax; 0x00550093 cmp [esi+0x16C],0; 0x005500B1 mov [esi+0x16C],0; the node's draw batch handle (made by CreateDrawBatch, released by ReleaseDrawBatch)"
 GraphicsStructures::ObjectNode,0x170,0x4,GraphicsStructures::ObjectNode*,parent,"0x0055F074 mov [ecx+0x170],esi in AddChild (0x0055F060)"
 GraphicsStructures::ObjectNode,0x174,0x4,GraphicsStructures::ObjectNodeBlueprint*,blueprint,"0x0055D760 mov ecx,[ecx+0x174] ; GetName passes it to the blueprint's name getter 0x00571510 ; the constructor stores its second argument at 0x0055EED1"
 GraphicsStructures::ObjectNode,0x179,0x1,unsigned char,byte179,"0x0053CBB0 mov al,[ecx+0x179]: node slot 24; meaning unread"
-GraphicsStructures::ObjectNodeAmbientLight,0x0,0x1B0,struct,sizeof,"0x0053C9FF add [esi],0x1b0 (GetMemoryFootprint reports it)"
+GraphicsStructures::ObjectNodeAmbientLight,0x0,0x1B0,struct,sizeof,"0x0053C9FF add dword [esi],0x1B0 in the ambient GetMemoryFootprint (0x0053C9E0)"
+GraphicsStructures::ObjectNodeAmbientLight,0x1A0,0x10,float[4],colour,"0x0053CFAB fst [esi+0x1A0], 0x0053CFB1 +0x1A4, 0x0053CFB9 +0x1A8, 0x0053CFBF +0x1AC: zeroed in the constructor; read by Color (0x0053CD99)"
 GraphicsStructures::ObjectNodeBlueprint,0x0,0x4,void*,vftable,"0x00571F04 mov dword [esi],0xAF9F04"
 GraphicsStructures::ObjectNodeBlueprint,0x4,0x10,Vector4,rotation,"0x00571EFD lea ecx,[esi+4] ; 0x004CC060 fills four floats ; InitNode copies them to the node's +0xE0 (0x0057223F)"
 GraphicsStructures::ObjectNodeBlueprint,0x20,0x10,Vector4,translation,"0x00571F11 fst [esi+0x20] ; zero in the constructor ; InitNode 0x00572262 movaps xmm0,[ecx+0x20] copies it to the node's +0x100"
@@ -279,13 +284,22 @@ GraphicsStructures::ObjectNodeCloth,0x488,0x4,void*,vertexBuffer,"0x00565118 mov
 GraphicsStructures::ObjectNodeCloth,0x48C,0x4,void*,indexBuffer,"0x00565126 cmp [esi+0x48C],0; 0x005651A0 mov ecx,[esi+0x48C]; the dynamic index buffer"
 GraphicsStructures::ObjectNodeCloth,0x494,0x4,unsigned int,windSpace,"0x0056502E mov [esi+0x494],1; wind space, 1 from the constructor"
 GraphicsStructures::ObjectNodeCloth,0x4A0,0xD0,GraphicsStructures::ClothWind,wind,"0x00565038 call 0x005867C0 with ecx=esi+0x4A0; the gust model, constructed in place (size bounded by the next field at +0x570)"
-GraphicsStructures::ObjectNodeLightProbe,0x0,0x1A0,struct,sizeof,"0x0053C9BF add [esi],0x1a0 (GetMemoryFootprint reports it)"
+GraphicsStructures::ObjectNodeEmitter,0x4D8,0x4,void*,splatObject,"0x0053DBD9 mov ecx,[ecx+0x4D8] (tag 0x25 gives its +0x18); 0x0053DC80 reads its +8; written 0x0054200A and 0x00561157"
+GraphicsStructures::ObjectNodeEmitter,0x4E0,0x4,float,opacity,0x0053D7DC fst [edx+0x4E0]; 1.0 at construction 0x00542018
+GraphicsStructures::ObjectNodeEmitter,0x4E8,0x4,void*,updateTask,"0x005420C6 mov [esi+0x4E8],edi (the EmitterUpdateTask)"
+GraphicsStructures::ObjectNodeEmitterGroup,0x0,0x250,struct,sizeof,"0x0053D4FF add dword [esi],0x250; 0x005B3330 mov eax,0x250 (blueprint GetNodeSize)"
+GraphicsStructures::ObjectNodeEmitterGroup,0x1C0,0x30,Math::Sphere,bounds,"0x0053D87B lea ecx,[esi+0x1C0]; 0x0053D8B5 call 0x004D4F40 (the sphere constructor)"
+GraphicsStructures::ObjectNodeLight,0x180,0x4,void*,ilightVftable,"0x0053CB06 mov [esi+0x180],0xAF7960 then 0x0053CB51 the light level 0xAF797C"
+GraphicsStructures::ObjectNodeLight,0x184,0x4,float,score,"0x0053D37F fstp [esi+0x184]; Score writes it, also 0x0053D08E for an ambient light"
+GraphicsStructures::ObjectNodeLight,0x188,0x4,void*,room,"0x0053D16E mov [ecx+0x188],ebp; the CRoom handed to SetRoom, null when none; read at 0x0053D219"
+GraphicsStructures::ObjectNodeLight,0x196,0x1,char,useVariationTint,"0x0053CD90 cmp byte [ecx+0x196],0 in ObjectNodeLight::Color"
+GraphicsStructures::ObjectNodeLightProbe,0x0,0x1A0,struct,sizeof,"0x0053C9BF add dword [esi],0x1A0 in the probe GetMemoryFootprint (0x0053C9A0)"
 GraphicsStructures::ObjectNodeLightProbeBlueprint,0x14C,0x4,ResourceHandle,envMapHandle,"0x0053C8E6 add eax,0x14c; Fill assigns it to LightState+0x114 at 0x0046B768; the full size of the handle was not read, only its first dword is claimed"
 GraphicsStructures::ObjectNodeLightProbeBlueprint,0x160,0x40,float[16],irradianceRed,"0x0058E75F movaps [esi+0x160],xmm0 (GFF id 0x18C0 at 0x0058E735); getter 0x0053C8F6"
 GraphicsStructures::ObjectNodeLightProbeBlueprint,0x1A0,0x40,float[16],irradianceGreen,"0x0058E7BC movaps [esi+0x1a0],xmm0 (GFF id 0x18C1 at 0x0058E77F); getter 0x0053C906"
 GraphicsStructures::ObjectNodeLightProbeBlueprint,0x1E0,0x40,float[16],irradianceBlue,"0x0053C916 add eax,0x1e0 (GFF id 0x18C2 at 0x0058E7DC); copied by Fill 0x0046B7E2"
 GraphicsStructures::ObjectNodePointLight,0x0,0x1C0,struct,sizeof,"0x0053C97F add [esi],0x1c0 (GetMemoryFootprint reports it); EFFECTS.md has the arena size 0x1C0"
-GraphicsStructures::ObjectNodePointLight,0x1B0,0x4,float,radius,0x0053C870 fld [ecx+0x1b0] (Reach); 0x0053C8AB tag 25
+GraphicsStructures::ObjectNodePointLight,0x1B0,0x4,float,radius,"0x0053D0E1 lea esi,[ecx+0x1B0] in SetRadius; read by Reach 0x0053C870 and Score 0x0053D2B0"
 GraphicsStructures::ObjectNodePointLight,0x1B4,0x4,float,intensity,0x0053C884 fstp [ecx+0x1b4] (SetIntensity); constructor 0x0053CCFD sets 1.0
 GraphicsStructures::ObjectNodePointLight,0x1B8,0x4,float,brightness,0x0053CEAE fstp [esi+0x1b8]: (abs r + abs g + abs b)/3; constructor 0x0053CD09 sets 0.0; used by 0x0053D3C2
 GraphicsStructures::ObjectNodePointLight,0x1BC,0x4,float,flickerMultiplier,0x0046B482 fld [ecx+0x1bc] in LightState::Fill; constructor 0x0053CD03 sets 1.0
@@ -319,6 +333,9 @@ GraphicsStructures::SpeedTreeModel,0x1BC,0x4,uint32_t,flags,"0x0052C077 and dwor
 GraphicsStructures::SpeedTreeModel,0x1E8,0x4,int,instanceCount,"0x00532871 mov ecx,[esi+0x1E8] ; CreateInstance (0x00532830) passes it as the new instance's serial and adds 1 at 0x00532884 ; zero at 0x0053571D"
 GraphicsStructures::SpeedTreeModel,0xAAC,0x4,uint32_t,kindMask,"0x0052DD64 test [ecx+0xAAC],eax ; SelectKind (0x0052DD60) tests the wanted kind's bit"
 GraphicsStructures::SpeedTreeModel,0xBA4,0x4,int,selectedKind,"0x0052DD6A mov [ecx+0xBA4],eax ; SelectKind stores the kind asked for"
+GraphicsStructures::SplatObject,0x8,0x4,void*,vertexPool,"0x00541C86 mov [esi+8],eax (the 0x68-byte SplatObjectVertexPool); 0x0053DC86 mov ecx,[eax+8]"
+GraphicsStructures::SplatObject,0x18,0x10,float[4],colourMultiplier,"0x00541C17 mov [esi+0x18],ecx .. 0x00541C30 [esi+0x24]; copied from blueprint +0x260; animation tag 0x25"
+GraphicsStructures::SplatObjectVertexPool,0x0,0x68,struct,sizeof,0x00541C47 push 0x68; call operator new
 Inventory,0x0,0x54,struct,sizeof,"0x006A29C5, 0x006B4460; sizeof (push 0x54, creature's Inventory)"
 Inventory,0x0,0x4,void*,vptr,0x00740627; vptr 0x00B1B974
 Inventory,0x8,0x10,SmartData::Attribute<Backpack*>,backpack,"0x00740631, 0x00740685; attribute holding the Backpack (value at +0x14; new Backpack allocated 0x50)"
