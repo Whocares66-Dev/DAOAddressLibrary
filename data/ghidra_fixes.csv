@@ -13750,3 +13750,44 @@ address,what,value,why
 0x0057E3F0,signature,unsigned int __thiscall f(void* this),args and return read in the function (ID 9003)
 0x0057E410,signature,void* __thiscall f(void* this),args and return read in the function (ID 9004)
 0x0057E640,signature,"void __thiscall f(void* this, void* outSphere, void* outBox)",args and return read in the function (ID 9009)
+0x0057E6A0,signature,"void* __thiscall f(void* this, void* out, unsigned int id)","ret 8, ecx = reader"
+0x0057E6E0,signature,"void* __thiscall f(void* this, void* out, void* field, void* defaultValue)","ret 0xC, ecx = reader"
+0x0057E750,signature,"void* __thiscall f(void* this, void* out, unsigned int id)",ret 8
+0x0057E790,signature,"void* __thiscall f(void* this, void* out, unsigned int id, void* defaultValue)",ret 0xC
+0x0057E7D0,signature,"bool __stdcall f(unsigned int readerImage, unsigned int readerSize, unsigned int readerTemplate, unsigned int readerOffset, void* chunk)","ret 0x14, reader by value at ebp+8, chunk at ebp+0x18"
+0x0057F9B0,signature,"void* __thiscall f(void* this, void* out, unsigned int id)",ret 8
+0x00580260,signature,"int __thiscall f(void* this, unsigned int count, void* src)",ret 8; arg 2 is the source pointer passed to 0xA2B800
+0x00580410,signature,"int __cdecl f(void* text, void* out)","plain ret, two cdecl arguments from 0x580FB0"
+0x005805A0,signature,"int __cdecl f(void* text, void* out)","plain ret, two cdecl arguments from 0x580FB0"
+0x005809F0,signature,"int __cdecl f(void* text, void* out)","plain ret, two cdecl arguments from 0x580FB0"
+0x00580720,signature,"int __cdecl f(void* text, void* out, int count)",plain ret; the dispatcher pushes 2 or 4 as count
+0x00580890,signature,"int __cdecl f(void* text, void* out, int count)",plain ret; the dispatcher pushes 2 or 4 as count
+0x00586270,signature,"void __thiscall f(void* this, float dt, float response, float limit)","ret 0xC, ecx = channel"
+0x005863E0,signature,"void __thiscall f(void* this, float value)",ret 4
+0x00586420,signature,"void __thiscall f(void* this, float minimum, float maximum)",ret 8
+0x00586490,signature,void __thiscall f(void* this),"plain ret, ecx read"
+0x005864E0,signature,void __thiscall f(void* this),"plain ret, ecx read"
+0x005865F0,signature,"void __thiscall f(void* this, void* position)","ret 4, ecx read"
+0x00586770,signature,"float __stdcall f(float lo, float hi)","ret 8, ecx unused"
+0x00589CB0,signature,"void* __cdecl f(void* out, void* data, int offset)","plain ret, three stack arguments"
+0x00589CE0,signature,"void* __cdecl f(void* out, void* data, int offset)","plain ret, returns out"
+0x00589D00,signature,"void* __thiscall f(void* this, void* out, void* field, void* defaultValue)",ret 0xC
+0x00589D70,signature,"void* __thiscall f(void* this, void* out, unsigned int id, void* defaultValue)",ret 0xC
+0x0058B770,signature,"void* __thiscall f(void* this, void* out, unsigned int id)",ret 8
+0x0058DD00,signature,"void __thiscall f(void* this, unsigned int n, unsigned int value0, unsigned int value1)",ret 0xC
+0x0058DDD0,signature,"void* __thiscall f(void* this, void* out, void* where, void* container, void* value)","ret 0x10, hidden out"
+0x0058DE80,signature,"void __thiscall f(void* this, unsigned int n, unsigned int v0, unsigned int v1, unsigned int v2, unsigned int v3, unsigned int v4, unsigned int v5, unsigned int v6, unsigned int v7, unsigned int v8, unsigned int v9, unsigned int v10, unsigned int v11, unsigned int v12, unsigned int v13)",ret 0x3C: n and a 56-byte value
+0x0058DFB0,signature,"void* __thiscall f(void* this, void* out, void* where, void* container, void* value)","ret 0x10, hidden out"
+0x0058E070,signature,"void __thiscall f(void* this, void* first, void* last, void* firstAgain)",ret 0xC
+0x0058E0D0,signature,"void __thiscall f(void* this, void* value)",ret 4
+0x0058E170,signature,"void __thiscall f(void* this, void* value)",ret 4
+0x0058E290,signature,"void __thiscall f(void* this, unsigned int n)",ret 4
+0x0058E2B0,signature,"void __thiscall f(void* this, void* array, unsigned int count)",ret 8
+0x0058E2D0,signature,"void* __thiscall f(void* this, unsigned int n)","ret 4, returns this (constructor)"
+0x0058E340,signature,"void __thiscall f(void* this, unsigned int n)",ret 4
+0x0058E370,signature,"void __thiscall f(void* this, unsigned int n)",ret 4
+0x0058E460,signature,void* __thiscall f(void* this),"constructor, ecx = block"
+0x0058E5D0,signature,"bool __thiscall f(void* this, void* structReader, void* blueprint)","ret 8, ecx + 0x10 = state stack"
+0x0058E6B0,signature,"bool __thiscall f(void* this, void* structReader, void* blueprint)","ret 8; returns true (mov al, 1)"
+0x0058E8F0,signature,"bool __thiscall f(void* this, void* structReader, void* node)",ret 8
+0x0058EB90,signature,"bool __thiscall f(void* this, void* structReader, void* unused, void* ageMapVector)",ret 0xC
