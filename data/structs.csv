@@ -638,6 +638,7 @@ GraphicsStructures::Dependency,0x0,0x4,void*,vftable,"0x00542D68 mov [esi],0xAF8
 GraphicsStructures::Dependency,0x4,0x4,GraphicsStructures::Object*,target,"0x00568BEB mov [esi+4],edi; 0x00568C49 mov [esi+4],ecx; the target Object"
 GraphicsStructures::Dependency,0x8,0x4,GraphicsStructures::ObjectNode*,targetNode,"0x00568BEE mov [esi+8],eax; 0x00568C5D mov [esi+8],eax; the target's node found by name"
 GraphicsStructures::Dependency,0xC,0x1C,std::wstring,targetNodeName,"0x00568BE8 lea ecx,[esi+0xC]; call 0x004C2AB0; the target's node name"
+GraphicsStructures::Dependency,0x28,0x1,bool,attached,"0x00542D23 mov [esi+0x28],bl; 0x00568DBD cmp byte [esi+0x28],0 and 0x00568DD2 mov [esi+0x28],1 in ObjectAttachDependency::Update"
 GraphicsStructures::EmitterUpdateTask,0x0,0x1C,struct,sizeof,0x00542030 push 0x1C; call operator new at 0x0054209D
 GraphicsStructures::EmitterUpdateTask,0x18,0x4,void*,emitter,"0x005420C3 mov [edi+0x18],esi; 0x0053E340 mov ecx,[ecx+0x18]"
 GraphicsStructures::Font,0x0,0x818,struct,sizeof,"0x0045ABF0 push 0x818, allocation in Renderer::Renderer_Device"
@@ -648,15 +649,29 @@ GraphicsStructures::Font,0x810,0x4,int,sizeB,"0x0053C7B5 mov [esi+0x810],edx; pa
 GraphicsStructures::NodeAttachDependency,0x0,0x30,struct,sizeof,"0x00568D24 add [eax],0x30"
 GraphicsStructures::NodeAttachDependency,0x2C,0x4,GraphicsStructures::ObjectNode*,followerNode,"0x00568CFD mov ecx,[esi+0x2C]; the following (child) node"
 GraphicsStructures::Object,0x0,0x310,struct,sizeof,0x00568678 push 0x310 before operator new and call 0x0054F990
+GraphicsStructures::Object,0x38,0x4,unsigned int,groupsMask,"0x005428FD or [esi+0x2c],eax with esi = Object+0xC; 0x00542920 stores it whole; also passed to the physics body"
+GraphicsStructures::Object,0x3C,0x1,bool,groupsMaskPending,"0x0054290C mov byte [esi+0x30],0 with esi = Object+0xC; set to 1 at 0x00542914 and 0x00542944 when there is no physics body yet"
+GraphicsStructures::Object,0x40,0x4,undefined4,blueprintRef,"0x00543442 add ecx,0x40; call 0x004621C0 (General::SafePointer::Get) then +8 is the model-name wstring; 0x00542FC0 reads it as [iface+0x38]"
 GraphicsStructures::Object,0x48,0x10,ECBase::ECDynArray<Multithreading::SynchSafePointer<GraphicsStructures::ObjectBlueprint>>,parts,"0x0056890C lea ecx,[ebx+0x48]; call 0x00568570; the parts list given to Instantiate (merged part blueprints)"
 GraphicsStructures::Object,0x58,0x4,GraphicsStructures::ObjectNode*,rootNode,"0x005688A7 mov [ebx+0x58],eax; the root node of the tree"
+GraphicsStructures::Object,0x5C,0x4,float,scale,0x00543051 fld [esi+0x58] with esi = Object+4; used for all three axes of the box's matrix at 0x00543056..0x00543069
 GraphicsStructures::Object,0x80,0x10,ECBase::ECDynArray<int>,intArray,"0x00568749 lea ecx,[ebx+0x80]; call 0x00567BD0; integers, as many as the blueprint's +0x74, zero at first"
+GraphicsStructures::Object,0xEC,0x1,bool,placeChanged,"0x00548F5E cmp byte [ebx+0xe8],1 with ebx = Object+4 (UpdateTransforms); set at 0x005434AA (SetPlace) and 0x005429A8"
+GraphicsStructures::Object,0xED,0x1,bool,transformsPending,"0x00548F03 cmp byte [ebx+0xe9],1 gates UpdateTransforms; cleared at 0x00548F67 when nothing needs work; set at 0x005429AF and 0x005434B0"
+GraphicsStructures::Object,0xEE,0x1,bool,forceUpdate,"0x00542964 mov [ecx+0xee],al (SetForceUpdate); read as +0xEA at 0x00548F55; zeroed in the constructor 0x0054FAF1"
+GraphicsStructures::Object,0x100,0x10,Vector4,place,"0x00543480 lea edi,[esi+0xf8] with esi = Object+8; the world position, w divided out before use at 0x00543517"
+GraphicsStructures::Object,0x110,0x10,Vector4,lastPlace,"0x0054355C lea eax,[esi+0x108]; the place copied after each SetPlace and read as the old one at 0x005434BE..0x00543501 (INFERRED to be the previous place)"
+GraphicsStructures::Object,0x120,0x10,Quaternion,orientation,"0x00543048 lea edx,[esi+0x11c] with esi = Object+4, handed to Matrix44::FromQuaternionTranslationScale 0x004D3E30"
 GraphicsStructures::Object,0x140,0x10,Vector4,boundsMin,"0x005686FF movaps [ebx+0x140]; 0x0056653B movaps [edi+0x140],xmm1 (minps); bounds minimum: the blueprint's, divided by its w, then lowered by each part's"
 GraphicsStructures::Object,0x150,0x10,Vector4,boundsMax,"0x0056873C movaps [ebx+0x150]; 0x00566594 movaps [edi+0x150],xmm0 (maxps); bounds maximum, raised by each part's"
+GraphicsStructures::Object,0x1BC,0x4,Physics::PhysicsObject*,physicsObject,"0x00542723 mov ecx,[esi+0x1bc]; SetPlace calls its slot 0x3c SetPosition (0x00543557); SetKinematic 0x005428C4 slot 0x44; AddGroupsMaskBits 0x00542907 slot 0x4c; stored only by SetPhysicsObject 0x0054273E"
 GraphicsStructures::Object,0x1D4,0x10,ECBase::ECDynArray<GraphicsStructures::ExportValue>,exportValues,"0x00568871 lea ecx,[ebx+0x1D4]; 0x005689B7 mov edi,[ebx+0x1DC]; 0x005689E6 mov eax,0x2AAAAAAB; export values, 0x30 bytes each; begin +0x1D8, end +0x1DC"
+GraphicsStructures::Object,0x1F8,0x10,ECBase::ECDynArray<GraphicsStructures::Dependency*>,dependencies,"0x00548F1A lea ecx,[ebx+0x1f4] with ebx = Object+4 (UpdateTransforms calls each one's slot 4 Update); 0x0054D8AF lea edi,[ebx+0x1f0] with ebx = Object+8 (AttachToObjectNode searches it)"
+GraphicsStructures::Object,0x248,0x4,GraphicsStructures::TriggerSubObject*,triggerSubObject,"0x00542952 cmp [ecx+0x240],eax with ecx = Object+8; 0x0054F39A..0x0054F3A6 destructor deletes it through slot 0 and clears it; TriggerSubObject type INFERRED"
 GraphicsStructures::Object,0x274,0x4,GraphicsStructures::CrustHookMap*,crustMap,"0x005682DA mov edi,[esi+0x274]; 0x00543D76; the crust map, made when a crust node is instanced"
 GraphicsStructures::Object,0x278,0x1,bool,isCrustEffect,"0x005680DE mov byte [edi+0x278],1; made as a crust effect on a target (InstantiateAsCrust only)"
 GraphicsStructures::Object,0x2D4,0x10,float[4],variationTint,0x0053CDCF fmul [eax+0x2D4] in ObjectNodeLight::Color when +0x196 is set
+GraphicsStructures::Object,0x2F0,0x4,int,soundMaterial,"0x005429C0 mov eax,[ecx+0x2f0]; written at 0x00543EA3 from the root node blueprint's +0x108; starts -1 (0x0054FD64 with ebp = -1 from 0x0054FAFD)"
 GraphicsStructures::Object,0x2F4,0x4,void*,remoteMaterial,"0x005687ED mov [ebx+0x2F4],eax; 0x00568144 (crust variant); the remote material object (0x40 bytes), made when the blueprint has one"
 GraphicsStructures::ObjectAttachDependency,0x0,0x50,struct,sizeof,"0x0054D973 push 0x50 before operator new; 0x00568C84 add [eax],0x50"
 GraphicsStructures::ObjectAttachDependency,0x2C,0x4,GraphicsStructures::Object*,child,"0x00542E01 mov [esi+0x2C],eax; 0x00568C97; the attached (child) Object"
@@ -717,6 +732,7 @@ GraphicsStructures::ObjectNodeBlueprint,0x30,0x10,Vector4,scale,"0x0057226D mova
 GraphicsStructures::ObjectNodeBlueprint,0x40,0x40,Matrix4,bindMatrix,"0x00571500 lea eax,[ecx+0x40] ; returned to the node's GetBindMatrices (0x0055DD82), which copies 64 bytes from it at 0x0055DD87..0x0055DDA4"
 GraphicsStructures::ObjectNodeBlueprint,0xC0,0x1C,std::wstring,name,"0x00571510 lea eax,[ecx+0xC0] ; the getter ObjectNode::GetName (0x0055D760) forwards to ; initialised at 0x00571F2B"
 GraphicsStructures::ObjectNodeBlueprint,0xF8,0x10,std::vector<GraphicsStructures::ObjectNodeBlueprint*>,children,"0x00571585 mov ecx,[esi+0xFC] ; GetTreeSize (0x00571570) walks begin +0xFC to end +0x100 in 4-byte elements ; the vector at +0xF8 is initialised at 0x00571F4C"
+GraphicsStructures::ObjectNodeBlueprint,0x108,0x1,unsigned char,soundMaterial,"0x00595747 mov [ebx+0x108],al after reading field 0x18BA (MMHNodeSoundMaterial, 6330) at 0x00595701; read by 0x00543E9A on the root node's blueprint"
 GraphicsStructures::ObjectNodeBlueprint,0x10C,0x10,std::vector<?>,exportValues,"0x00571F96 mov eax,[esi+0x110] ; BindExportValues (0x00571F90) walks begin +0x110 to end +0x114 in 0x14-byte elements (the 0x66666667 divide at 0x00571FB5)"
 GraphicsStructures::ObjectNodeCloth,0x0,0x5C0,struct,sizeof,"0x005B36F1 add dword [edi],0x5C0 after ObjectNodeClothBlueprint::instantiate's placement constructor 0x005B3650"
 GraphicsStructures::ObjectNodeCloth,0x3D4,0x4,Physics::PhysicsCloth*,physicsCloth,"0x005657B8 mov [esi+0x3D4],eax; the PhysX cloth made by CreatePhysicsActors (0 until then)"
@@ -762,6 +778,13 @@ GraphicsStructures::ObjectNodePointLight,0x1BC,0x4,float,flickerMultiplier,0x004
 GraphicsStructures::ObjectNodePointLightBlueprint,0x0,0x160,struct,sizeof,"0x00594733 push 0x160 (allocation); also 0x0055F1FF add [esi],0x160"
 GraphicsStructures::ObjectNodePointLightBlueprint,0x15C,0x1,unsigned char,isStatic,"0x0053C8D6 mov al,[eax+0x15c]: BlueprintFlag, read by AddLights at 0x00464F0D"
 GraphicsStructures::ObjectNodePointLightBlueprint,0x15F,0x1,char,useVariationTint,"0x0055F3F0 mov al,[ecx+0x15F] (blueprint slot 10) to node+0x196"
+GraphicsStructures::RemoteMaterial,0x0,0x40,struct,sizeof,0x0056878F push 0x40 before operator new and call 0x00542F70
+GraphicsStructures::RemoteMaterial,0x0,0x10,Vector4,tint,0x00542F79 fstp [esi]; channel 0x21 (the object itself) in GetChannelField 0x00542651
+GraphicsStructures::RemoteMaterial,0x10,0x1C,std::wstring,decalName,0x00542F95 call 0x004C2510 on ecx = esi+0x10
+GraphicsStructures::RemoteMaterial,0x2C,0x4,float,fresnelFalloff,0x00542FA2 fstp [esi+0x2c]; channel 0x22 at 0x0054264B
+GraphicsStructures::RemoteMaterial,0x30,0x1,bool,invertFresnel,"0x00542FB0 mov [esi+0x30],cl"
+GraphicsStructures::RemoteMaterial,0x34,0x4,float,alpha,0x00542FAD fstp [esi+0x34]; channel 0x23 at 0x00542645
+GraphicsStructures::RemoteMaterial,0x38,0x4,GraphicsStructures::Object*,owner,"0x00542FB3 mov [esi+0x38],edx (the Object that made it; ebx at 0x005687D6)"
 GraphicsStructures::SceneCamera,0x0,0x40,struct,sizeof,"0x00527551 push 0x40 (IGraphicsInternal::CreateSceneCamera, then the ctor 0x00537A00 at 0x00527576)"
 GraphicsStructures::SceneCamera,0x0,0x4,void*,vftable,"0x00537A3F mov [esi],0xAF77AC"
 GraphicsStructures::SceneCamera,0x4,0x4,void*,innerCamera,"0x00537727 mov ecx,[esi+4]: the Renderer::PerspectiveCamera or OrthogonalCamera (0x150 bytes each) every forwarder calls through; stored at 0x00537AF1 / 0x00537B4A (Perspective 0xA25B30 at 0x00537AE5, Orthogonal 0xA25240 at 0x00537B3E, chosen by the ctor's third argument)"
