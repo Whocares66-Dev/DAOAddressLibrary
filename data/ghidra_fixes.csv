@@ -18220,3 +18220,42 @@ address,what,value,why
 0x00A235C0,signature,"void __thiscall Renderer::ThreadedGraphicsDriver::vfunction68(void* this, void* object)","tail jump, ret 4"
 0x00A23F90,signature,void __thiscall Renderer::ICuller::~ICuller(void* this),plain ret at 0x00A23F9D
 0x00A23FD0,convention,__thiscall,"read ecx, one stack argument, ret 4"
+0x00A24BB0,signature,"bool __thiscall Renderer::CShadowCasterCuller::IsSphereReachable(Renderer::CShadowCasterCuller* this, float* center, float radius)","ret 8 at 0x00A24D0C; center pointer [ebp+8], radius [ebp+0xC]"
+0x00A24D30,signature,"bool __thiscall Renderer::CShadowCasterCuller::TestSphere(Renderer::CShadowCasterCuller* this, float* center, float radius)",ret 8 at 0x00A24DA3
+0x00A24DB0,signature,"bool __thiscall Renderer::CShadowCasterCuller::TestObject(Renderer::CShadowCasterCuller* this, void* object)",ret 4 at 0x00A24E72
+0x00A24E80,signature,"bool __thiscall Renderer::CShadowCasterCuller::TestNode(Renderer::CShadowCasterCuller* this, void* node)",ret 4 at 0x00A2508B
+0x00A25150,signature,"void __thiscall Renderer::IGenericMeshFrustumCuller::FilterNodes(Renderer::IGenericMeshFrustumCuller* this, void* inputList, void* outputList)",ret 8 at 0x00A251B5
+0x00A251C0,signature,"void __thiscall Renderer::IGenericMeshFrustumCuller::FilterObjects(Renderer::IGenericMeshFrustumCuller* this, void* inputList, void* outputList)",ret 8 at 0x00A25235
+0x00A25240,signature,"Renderer::OrthogonalCamera* __thiscall Renderer::OrthogonalCamera::OrthogonalCamera(Renderer::OrthogonalCamera* this, void* name, int queueType)",ret 8 at 0x00A25277
+0x00A25280,signature,void __thiscall Renderer::OrthogonalCamera::~OrthogonalCamera(Renderer::OrthogonalCamera* this),jumps to the base destructor
+0x00A25290,signature,void __thiscall Renderer::OrthogonalCamera::BuildProjection(Renderer::OrthogonalCamera* this),"plain ret at 0x00A252DA after add esp,0x1C"
+0x00A252E0,signature,"void __thiscall Renderer::OrthogonalCamera::SetBounds(Renderer::OrthogonalCamera* this, float left, float right, float bottom, float top, float nearDistance, float farDistance)",ret 0x18 at 0x00A25320
+0x00A25330,signature,"void* __thiscall Renderer::OrthogonalCamera::`scalar deleting destructor'(Renderer::OrthogonalCamera* this, unsigned int flags)",ret 4 at 0x00A2534B
+0x00A25350,signature,"void __thiscall Renderer::OrthogonalCamera::UnprojectScreenPoint(Renderer::OrthogonalCamera* this, int x, int y, float* nearPoint, float* farPoint)",ret 0x10 at 0x00A254BE
+0x00A254D0,signature,"void __thiscall Renderer::OrthogonalCamera::GetFrustumPlanes(Renderer::OrthogonalCamera* this, void* planesOut)",ret 4 at 0x00A259D5
+0x00A259E0,signature,void __thiscall Renderer::PerspectiveCamera::~PerspectiveCamera(Renderer::PerspectiveCamera* this),jumps to the base destructor
+0x00A259F0,signature,float __thiscall Renderer::PerspectiveCamera::GetFieldOfView(Renderer::PerspectiveCamera* this),"plain ret, float in st0"
+0x00A25A00,signature,float __thiscall Renderer::PerspectiveCamera::GetAspectRatio(Renderer::PerspectiveCamera* this),"plain ret, float in st0"
+0x00A25A10,signature,"void __thiscall Renderer::PerspectiveCamera::SetViewport(Renderer::PerspectiveCamera* this, int x, int y, int width, int height)",ret 0x10 at 0x00A25A49
+0x00A25A50,signature,"void __thiscall Renderer::PerspectiveCamera::SetFieldOfView(Renderer::PerspectiveCamera* this, float fieldOfView)",ret 4 at 0x00A25A5E
+0x00A25A70,signature,"void __thiscall Renderer::PerspectiveCamera::SetProjectionParameters(Renderer::PerspectiveCamera* this, float fieldOfView, float aspect, float nearDistance, float farDistance)",ret 0x10 at 0x00A25A9C
+0x00A25AD0,signature,void __thiscall Renderer::PerspectiveCamera::BuildProjection(Renderer::PerspectiveCamera* this),plain ret at 0x00A25B25
+0x00A25B30,signature,"Renderer::PerspectiveCamera* __thiscall Renderer::PerspectiveCamera::PerspectiveCamera(Renderer::PerspectiveCamera* this, void* name, bool applyAspectCorrection, int queueType)","ret 0xC at 0x00A25BBE; arg2 byte stored at +0x148 (0x00A25BA6), arg3 passed to the base"
+0x00A25BE0,signature,"void* __thiscall Renderer::PerspectiveCamera::`scalar deleting destructor'(Renderer::PerspectiveCamera* this, unsigned int flags)",ret 4 at 0x00A25BFB
+0x00A25C00,signature,"void __thiscall Renderer::PerspectiveCamera::GetFrustumCorners(Renderer::PerspectiveCamera* this, void* cornersOut)",ret 4 after 0x00A25FDB; eight Vector4 (0x80 bytes)
+0x00A25FF0,signature,"void __thiscall Renderer::PerspectiveCamera::GetFrustumPlanes(Renderer::PerspectiveCamera* this, void* planesOut)",ret 4 at 0x00A262C6; six 0x20-byte planes
+0x00A262D0,signature,"void __thiscall Renderer::PerspectiveCamera::UnprojectScreenPoint(Renderer::PerspectiveCamera* this, int x, int y, float* nearPoint, float* farPoint)",ret 0x10 at 0x00A26515
+0x00A284E0,signature,"void __cdecl GraphicsStructures::ConvertFloat16ToFloat32(float* destination, unsigned short* source, unsigned int count)","plain ret at 0x00A28544; caller 0x0058266F add esp,0xC"
+0x00A2BE90,signature,"int __thiscall Gff4::File::AddDwordArray(Gff4::File* this, unsigned int typeId, unsigned int count, void* data)",ret 0xC at 0x00A2BEE7
+0x00A39650,signature,void __thiscall ECFileAccess::PNGFileAccess::WriteDescriptionAndEndChunks(ECFileAccess::PNGFileAccess* this),plain ret at 0x00A39716
+0x00A55C80,signature,GraphicsStructures::CSpeedTreeWind::OscillationParameters* __thiscall GraphicsStructures::CSpeedTreeWind::OscillationParameters::OscillationParameters(GraphicsStructures::CSpeedTreeWind::OscillationParameters* this),"mov eax,ecx at 0x00A55C86; plain ret"
+0x00A55CC0,signature,"void __thiscall GraphicsStructures::CSpeedTreeWind::WindInstance::GetSmoothedOscillationValues(GraphicsStructures::CSpeedTreeWind::WindInstance* this, float* out3)",ret 4 at 0x00A55CD5
+0x00A55CE0,signature,float __thiscall GraphicsStructures::CSpeedTreeWind::WindInstance::GetElapsedTime(GraphicsStructures::CSpeedTreeWind::WindInstance* this),"plain ret, float in st0"
+0x00A55EA0,signature,void __thiscall Graphics::IWindInstance::~IWindInstance(Graphics::IWindInstance* this),plain ret
+0x00A55EB0,signature,"void* __thiscall Graphics::IWindInstance::`scalar deleting destructor'(Graphics::IWindInstance* this, unsigned int flags)",ret 4 at 0x00A55ECC
+0x00A55ED0,signature,void __thiscall Graphics::IWindInstanceContainer::~IWindInstanceContainer(Graphics::IWindInstanceContainer* this),plain ret
+0x00A55EE0,signature,"void* __thiscall Graphics::IWindInstanceContainer::`scalar deleting destructor'(Graphics::IWindInstanceContainer* this, unsigned int flags)",ret 4 at 0x00A55EFC
+0x00A55F00,signature,Matrix44* __thiscall Matrix44::Matrix44(Matrix44* this),"mov eax,ecx at 0x00A55F02; plain ret"
+0x00A55F40,signature,"void __thiscall Matrix44::RotateAxis(Matrix44* this, float angleDegrees, float x, float y, float z)",ret 0x10 at 0x00A56046
+0x00A56050,signature,"Matrix44* __thiscall Matrix44::Multiply3x3(Matrix44* this, Matrix44* out, Matrix44* right)",ret 8 at 0x00A5613B; eax = out
+0x00A55E30,signature,void* __thiscall GraphicsStructures::CSpeedTreeWind::ClothParameters::ClothParameters(void* this),"plain ret at 0x00A55E95, eax=this"
