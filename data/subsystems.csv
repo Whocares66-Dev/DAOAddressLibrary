@@ -8482,7 +8482,7 @@ id,subsystem,class,how
 8492,Rendering,GraphicsStructures::ObjectNodeCloth,vtable
 8493,Rendering,GraphicsStructures::ObjectNodeCloth,vtable
 8494,Rendering,GraphicsStructures::ObjectNodeCloth,vtable
-8495,Rendering,,between
+8495,Rendering,,callers
 8496,Rendering,GraphicsStructures::ObjectNodeCloth,vtable
 8497,ThirdParty:STL,,string
 8498,ThirdParty:STL,,owner
@@ -8490,32 +8490,32 @@ id,subsystem,class,how
 8500,ThirdParty:STL,std::vector<?>,name
 8501,ThirdParty:STL,std::vector<?>,name
 8502,ThirdParty:STL,std::vector<?>,name
-8503,unknown,,
+8503,ThirdParty:STL,std::vector<?>,name
 8504,Rendering,GraphicsStructures::ObjectNodeCloth,builds
 8505,Rendering,,callers
-8506,unknown,,
-8507,unknown,,
+8506,Rendering,,between
+8507,Rendering,GraphicsStructures::ObjectNodeCloth,name
 8508,Rendering,,callers
-8509,unknown,,
+8509,Rendering,,between
 8510,Rendering,GraphicsStructures::ObjectNodeCloth,vtable
-8511,unknown,,
-8512,unknown,,
-8513,unknown,,
-8514,unknown,,
-8515,unknown,,
-8516,unknown,,
-8517,unknown,,
-8518,unknown,,
-8519,unknown,,
-8520,unknown,,
-8521,unknown,,
-8522,unknown,,
-8523,unknown,,
-8524,unknown,,
-8525,unknown,,
-8526,unknown,,
-8527,unknown,,
-8528,unknown,,
+8511,Rendering,GraphicsStructures::ExportValue,name
+8512,ThirdParty:STL,std,name
+8513,ThirdParty:STL,std,name
+8514,ThirdParty:STL,std,name
+8515,ThirdParty:STL,std,name
+8516,Rendering,GraphicsStructures::ExportValue,name
+8517,Rendering,GraphicsStructures::ExportValue,name
+8518,Rendering,GraphicsStructures::ExportValue,name
+8519,Rendering,GraphicsStructures::ExportValue,name
+8520,ThirdParty:STL,std,name
+8521,ThirdParty:STL,std,name
+8522,ThirdParty:STL,std,name
+8523,ThirdParty:STL,std,name
+8524,ThirdParty:STL,std,name
+8525,Rendering,GraphicsStructures::ExportValue,name
+8526,Rendering,GraphicsStructures::ExportValue,name
+8527,Rendering,GraphicsStructures::ExportValue,name
+8528,Rendering,GraphicsStructures::ExportValue,name
 8529,Rendering,,callers
 8530,Rendering,GraphicsStructures::ObjectBlueprint,vtable
 8531,unknown,Stub,
@@ -8553,11 +8553,11 @@ id,subsystem,class,how
 8563,ThirdParty:STL,,string
 8564,ThirdParty:STL,,owner
 8565,ThirdParty:STL,,owner
-8566,unknown,,
-8567,unknown,,
-8568,unknown,,
-8569,unknown,,
-8570,unknown,,
+8566,ThirdParty:STL,std,name
+8567,Rendering,GraphicsStructures,name
+8568,ThirdParty:STL,"std::vector<GraphicsStructures::ModelExport>::resize(unsigned int,GraphicsStructures",name
+8569,ThirdParty:STL,std::vector<int>,name
+8570,Rendering,GraphicsStructures::ObjectBlueprint,name
 8571,Rendering,,callers
 8572,Core,Multithreading::SynchSafePointerList<GraphicsStructures::ObjectBlueprint>,name
 8573,Core,Multithreading::SynchSafePointerList<GraphicsStructures::ObjectBlueprint>,name
@@ -8565,7 +8565,7 @@ id,subsystem,class,how
 8575,Rendering,GraphicsStructures::ObjectBlueprint,vtable
 8576,Rendering,,callers
 8577,Rendering,,callers
-8578,unknown,,
+8578,ThirdParty:STL,std,name
 8579,Core,Multithreading::SynchSafePointerList<GraphicsStructures::ObjectBlueprint>,name
 8580,Rendering,GraphicsStructures::ObjectBlueprint,vtable
 8581,Rendering,,between
@@ -8624,10 +8624,10 @@ id,subsystem,class,how
 8634,Rendering,,between
 8635,Rendering,,owner
 8636,Rendering,GraphicsStructures::Morph,vtable
-8637,unknown,,
-8638,GUI,,callers
-8639,unknown,,
-8640,unknown,,
+8637,ThirdParty:STL,std,name
+8638,Core,Multithreading::SynchSafePointer<?>,name
+8639,ThirdParty:STL,std::list<?>,name
+8640,ThirdParty:STL,"std::map<std::wstring,?>",name
 8641,ThirdParty:STL,,string
 8642,ThirdParty:STL,,between
 8643,ThirdParty:STL,,string
@@ -8636,17 +8636,17 @@ id,subsystem,class,how
 8646,ThirdParty:STL,,string
 8647,ThirdParty:STL,,owner
 8648,Rendering,Graphics::IMemoryFootprint,builds
-8649,unknown,,
-8650,unknown,,
+8649,ThirdParty:STL,"std::pair<Multithreading::SynchSafePointer<?>,Core::IndexedList<std::pair<unsigned int,std::wstring>>>",name
+8650,ThirdParty:STL,"std::pair<std::wstring const,std::pair<Multithreading::SynchSafePointer<?>,Core::IndexedList<std::pair<unsigned int,std::wstring>>>>",name
 8651,Rendering,,callers
-8652,unknown,,
-8653,unknown,,
-8654,unknown,,
-8655,unknown,,
+8652,ThirdParty:STL,"Core::IndexedList<std::pair<unsigned int,std::wstring>>",between
+8653,ThirdParty:STL,"Core::IndexedList<std::pair<unsigned int,std::wstring>>",owner
+8654,ThirdParty:STL,,between
+8655,ThirdParty:STL,"std::pair<std::wstring,std::vector<?>>",name
 8656,ThirdParty:STL,,string
-8657,unknown,,
-8658,unknown,,
-8659,unknown,,
+8657,ThirdParty:STL,"std::pair<std::wstring,std::vector<?>>",name
+8658,ThirdParty:STL,"Core::IndexedList<std::pair<unsigned int,std::wstring>>",between
+8659,ThirdParty:STL,"std::list<std::pair<std::wstring,std::vector<?>>>",name
 8660,unknown,,
 8661,unknown,,
 8662,unknown,,
@@ -39448,8 +39448,8 @@ id,subsystem,class,how
 39555,ThirdParty:STL,,owner
 39556,ThirdParty:STL,"std::vector<Renderer::ShaderParameter>::resize(unsigned int,Renderer",owner
 39557,ThirdParty:STL,"std::vector<Renderer::ShaderParameter>::resize(unsigned int,Renderer",owner
-39558,Compiler:EHFunclets,,range
-39559,Compiler:EHFunclets,,range
+39558,Rendering,GraphicsStructures::ObjectBlueprint,owner
+39559,Rendering,GraphicsStructures::ObjectBlueprint,owner
 39560,Rendering,,owner
 39561,Rendering,,owner
 39562,Rendering,GraphicsStructures::ObjectBlueprint,owner
@@ -39493,11 +39493,11 @@ id,subsystem,class,how
 39600,ThirdParty:STL,,owner
 39601,Rendering,Graphics::IMemoryFootprint,owner
 39602,Rendering,Graphics::IMemoryFootprint,owner
-39603,Compiler:EHFunclets,,range
-39604,Compiler:EHFunclets,,range
+39603,ThirdParty:STL,"std::pair<Multithreading::SynchSafePointer<?>,Core::IndexedList<std::pair<unsigned int,std::wstring>>>",owner
+39604,ThirdParty:STL,"std::pair<Multithreading::SynchSafePointer<?>,Core::IndexedList<std::pair<unsigned int,std::wstring>>>",owner
 39605,Rendering,,owner
 39606,Rendering,,owner
-39607,Compiler:EHFunclets,,range
+39607,ThirdParty:STL,"Core::IndexedList<std::pair<unsigned int,std::wstring>>",owner
 39608,Compiler:EHFunclets,,range
 39609,Compiler:EHFunclets,,range
 39610,Compiler:EHFunclets,,range
@@ -45827,9 +45827,9 @@ id,subsystem,class,how
 45934,ThirdParty:STL,std::vector<unsigned int>,owner
 45935,ThirdParty:STL,std::vector<CCArea::StageEntry>,owner
 45936,ThirdParty:STL,std::vector<CCArea::StageEntry>,owner
-45937,Compiler:EHFunclets,,range
-45938,Compiler:EHFunclets,,range
-45939,Compiler:EHFunclets,,range
+45937,ThirdParty:STL,"Core::IndexedList<std::pair<unsigned int,std::wstring>>",owner
+45938,ThirdParty:STL,"Core::IndexedList<std::pair<unsigned int,std::wstring>>",owner
+45939,ThirdParty:STL,"Core::IndexedList<std::pair<unsigned int,std::wstring>>",owner
 45940,ThirdParty:STL,"std::map<unsigned_long_long,std::vector<unsigned_int>>",owner
 45941,ThirdParty:STL,"std::map<unsigned_long_long,std::vector<unsigned_int>>",owner
 45942,World,CCArea,owner
