@@ -14714,3 +14714,36 @@ address,what,value,why
 0x0050DD50,convention,__cdecl,"plain ret, the caller's add esp (STL free function)"
 0x0050E2F0,convention,__cdecl,"plain ret, the caller's add esp (STL free function)"
 0x0050E410,convention,__cdecl,"plain ret, the caller's add esp (STL free function)"
+0x0050F130,signature,"bool __thiscall MaterialArtTexture_HasSameStage(void* this, void* other)",ret 4; reads this+0x10 and other+0x10
+0x0050F160,signature,"void __thiscall MaterialArtTexture_GetMemoryFootprint(void* this, uint* own, uint* children)",ret 8; vftable slot 1
+0x0050F180,signature,"void __thiscall MaterialArtFloat_SetDefault(void* this, void* text)",ret 4; ECString* passed to StringToFloat
+0x0050F1A0,signature,"void __thiscall MaterialArtFloat_SetMin(void* this, void* text)",ret 4
+0x0050F1C0,signature,"void __thiscall MaterialArtFloat_SetMax(void* this, void* text)",ret 4
+0x0050F1E0,signature,float __thiscall MaterialArtFloat_GetMax(void* this),FLD [ECX+0x18]; RET (x87 return)
+0x0050F1F0,signature,"void __thiscall MaterialArtFloat_GetMemoryFootprint(void* this, uint* own, uint* children)",ret 8
+0x0050F210,signature,"void __thiscall MaterialArtVector4f_GetMemoryFootprint(void* this, uint* own, uint* children)",ret 8
+0x0050F230,signature,"void __thiscall MaterialArtMatrix4x4f_GetMemoryFootprint(void* this, uint* own, uint* children)",ret 8
+0x0050F2A0,signature,bool __thiscall MaterialArtParameter_Validate(void* this),plain RET; returns byte +0x0C
+0x0050F2D0,signature,bool __thiscall MaterialArtMatrix4x4f_Validate(void* this),"plain RET; shared slot 8 of Matrix4x4f, Texture, Vector4f, EffectTexture"
+0x0050F2E0,signature,bool __thiscall MaterialArtFloat_Validate(void* this),plain RET
+0x0050F3B0,signature,"void __thiscall MaterialArtTexture_SetSamplerName(void* this, void* name)",ret 4
+0x0050F420,clear,Graphics::IMemoryFootprint::IMemoryFootprint,"it is MaterialArtVector4f's destructor (sets 0x00AF508C, frees the vector, then 0x00AF26D4), called by the scalar deleting destructor 0x0050F4C0"
+0x0050F440,signature,"void * __thiscall f(void* this, unsigned int v0, unsigned int v1, unsigned int v2, unsigned int v3, unsigned int v4, unsigned int v5, unsigned int v6)","ret 0x1C: a 28-byte std::wstring passed by value, destroyed at 0x0050F4A1 (by-value words counted against the ret, keeper)"
+0x0050F540,signature,"void __thiscall MaterialArtVector4f_SetDefault(void* this, void* text)",ret 4
+0x0050F670,signature,"void __thiscall MaterialArtMatrix4x4f_SetDefault(void* this, void* text)",ret 4
+0x0050F7E0,signature,"bool __thiscall MaterialTextureParam_Apply(void* this, void* vs, void* ps, void* unknown, void* driver)",ret 0x10; only the 4th argument is read
+0x0050F810,signature,"void __thiscall MaterialParam_SetName(void* this, void* name)",ret 4
+0x0050F830,signature,void* __thiscall MaterialParam_GetName(void* this),"plain RET, no stack argument (decompiler shows one)"
+0x0050F850,signature,"void __thiscall MaterialParam_GetMemoryFootprint(void* this, uint* own, uint* children)",ret 8
+0x0050F870,signature,"void __thiscall MaterialTextureParam_GetMemoryFootprint(void* this, uint* own, uint* children)",ret 8
+0x0050F8B0,signature,"void __thiscall MaterialTextureParamRef_GetMemoryFootprint(void* this, uint* own, uint* children)",ret 8
+0x0050F8F0,signature,"void __thiscall MaterialTextureParam_SetValue(void* this, void* texture, uint bytes, void* pass)",ret 0xC
+0x0050F910,signature,"bool __thiscall MaterialParamRef_Apply(void* this, void* vs, void* ps, void* unknown, void* driver)","ret 0x10; vs (arg1) read at 0x0050F9AC, ps (arg2) at 0x0050F9D4, driver (arg4) at 0x0050F93D/0x0050F99F"
+0x0050FA20,signature,"void* __thiscall MaterialParam_MaterialParam(void* this, int kind)",ret 4
+0x0050FA70,clear,"std::basic_streambuf<wchar_t,std::char_traits<wchar_t>_>::vfunction5","folded stub (OR AX,0xFFFF; RET) shared by the MaterialParam vftables 0x00AF50C0..0x00AF51E0; name it Stub::ReturnWordMinusOne"
+0x0050FA80,signature,"void* __thiscall TemplateShaderParam_float_ctor(void* this, void* name, int kind)",ret 8
+0x0050FAF0,signature,"void __thiscall TemplateShaderParam_float_GetMemoryFootprint(void* this, uint* own, uint* children)",ret 8
+0x0050FB30,signature,"void __thiscall MaterialParameterBlock_WriteParameter(void* this, void* param, void* src, uint bytes)",ret 0xC; this from ECX (EBX = ECX at 0x0050FB44)
+0x0050FBC0,signature,"void __thiscall MaterialParameterBlock_WriteFloatParameter(void* this, void* param, void* src)",ret 8; ECX passed through to 0x0050FB30
+0x0050F390,signature,"void* __thiscall MaterialArtTexture_scalar_deleting_destructor(void* this, uint flags)",ret 4 (from reading B)
+0x0050F4C0,signature,"void* __thiscall MaterialArtVector4f_scalar_deleting_destructor(void* this, uint flags)",ret 4 (from reading B)
