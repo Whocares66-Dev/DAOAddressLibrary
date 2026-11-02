@@ -15929,3 +15929,44 @@ address,what,value,why
 0x005E52A0,signature,void* __thiscall f(void* this),args and return read at 0x005E52A0 jmp 0x005DD750
 0x005E5FA0,convention,__thiscall,stack arguments and ret read at 0x005E5FA0-0x005E6006
 0x005E6010,convention,__stdcall,stack arguments and ret read at 0x005E6010-0x005E6036
+0x00483890,signature,"void* __thiscall f(void* this, void* other)","ret 4, returns this"
+0x004BF010,signature,void __thiscall f(void* this),tail jump to FreeWhenUnused
+0x004BF030,signature,"void __thiscall f(void* this, void* data, unsigned int size)",ret 8 at 0x004BF05C
+0x004C0A10,signature,unsigned long long __thiscall f(void* this),"plain ret, edx:eax from wcstoi64"
+0x004C25F0,signature,"void __thiscall f(void* this, void* text, unsigned int position)",ret 8 at 0x004C262A
+0x004C5C80,signature,"void* __thiscall f(void* this, void* name, void* type, int arg3, bool wait)",ret 0x10 at 0x004C5E38; ecx=ebx
+0x004C6180,signature,"void __thiscall f(void* this, void* name, int state)",ret 8 at 0x004C6263
+0x004C65F0,signature,"void __thiscall f(void* this, void* source)",ret 4 at 0x004C66EF
+0x004C7630,signature,"void* __thiscall f(void* this, void* key)",ret 4 at 0x004C76F1
+0x004C7700,signature,"void* __thiscall f(void* this, void* key)",ret 4 at 0x004C77EC
+0x004C77F0,signature,"void* __thiscall f(void* this, unsigned int a, unsigned int b, unsigned int c, unsigned int d, unsigned int e)",ret 0x14 at 0x004C786E
+0x004CC0A0,signature,unsigned int __thiscall f(void* this),plain ret returns the entry count
+0x004CD610,signature,void* __stdcall f(void* insertResult),"ret 4, ecx unused"
+0x004CD7B0,signature,void __thiscall f(void* this),"0x4CD7B0 jmp 0x4CD6C0: loop Resource::~Resource 0x4BEAC0, step 0x40, operator delete"
+0x004CDA60,signature,"void __thiscall f(void* this, unsigned int count, unsigned int v0, unsigned int v1, unsigned int v2, unsigned int v3, unsigned int v4, unsigned int v5, unsigned int v6, unsigned int v7, unsigned int v8, unsigned int v9, unsigned int v10, unsigned int v11, unsigned int v12, unsigned int v13, unsigned int v14, unsigned int v15)",ret 0x44 at 0x004CDB49
+0x004D5890,signature,void __thiscall f(void* this),jump to Release
+0x004DF4F0,signature,"bool __thiscall f(void* this, int row, int* value)",ret 8 at 0x004DF524
+0x004DF530,signature,"bool __thiscall f(void* this, int row, void* text)",ret 8 at 0x004DF564
+0x004DF870,signature,void __thiscall f(void* this),plain ret
+0x004E0690,signature,"void __thiscall f(void* this, void* worksheetName, void* filePrefix, int slot)",ret 0xc
+0x004E0A90,signature,void* __thiscall f(void* this),plain ret returns this
+0x004E3620,signature,"bool __thiscall f(void* this, unsigned int size)",ret 4 at 0x004E3668
+0x004E4C90,signature,void __thiscall f(void* this),jump to _Tidy
+0x004E5810,signature,"bool __thiscall f(void* this, void* stem, void* name, bool female)",ret 0xc at 0x004E5A6F
+0x004E5A80,signature,"bool __thiscall f(void* this, void* name)",ret 4 at 0x004E5CE7
+0x004E5CF0,signature,"void __thiscall f(void* this, bool female)",ret 4 at 0x004E5E3B
+0x004E6E50,signature,void __thiscall f(void* this),plain ret
+0x004E6EE0,signature,"void* __cdecl f(void* out, void* path)",plain ret with stack args
+0x004E9AE0,signature,"bool __cdecl f(void* source, unsigned int sourceLength, void* dest, unsigned int* destLength)",plain ret with stack args
+0x004E9FD0,signature,void __thiscall f(void* this),plain ret
+0x004EA080,signature,"bool __thiscall f(void* this, unsigned int count)",ret 4
+0x004EA130,signature,void* __thiscall f(void* this),plain ret returns the task
+0x004EA220,signature,"void* __thiscall f(void* this, unsigned int count)",ret 4 at 0x004EA2A0
+0x004EA2B0,signature,void* __thiscall f(void* this),plain ret; ecx passes through to Acquire
+0x004EDBA0,signature,"bool __thiscall f(void* this, unsigned int first)",ret 4 at 0x004EDC81
+0x005CA960,signature,"void __cdecl f(void* address, void* value)","plain ret, ecx not read"
+0x005CA9C0,signature,"void* __stdcall f(void* next, void* prev, void* value)","ret 0xc, ecx not read"
+0x005CAAB0,signature,void __thiscall f(void* this),plain ret
+0x005D5CF0,signature,"void* __thiscall f(void* this, void* out, void* alias, void* module)",ret 0xc at 0x005D5DC6
+0x005D5DD0,signature,"void* __stdcall f(void* out, void* package, void* alias)","ret 0xc, ecx not read"
+0x005FB800,signature,"void __stdcall f(int quality, void* texturesFolder, void* patchTexturesFolder)","ret 0xc, ecx not read"

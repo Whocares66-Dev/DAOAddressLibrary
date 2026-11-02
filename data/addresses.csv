@@ -3398,7 +3398,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 3397,function,,0x00483540,0x0085c300,0x00483540
 3398,function,,0x00483738,0x0085c4f8,0x00483738
 3399,function,,0x004837f0,0x0085c5b0,0x004837f0
-3400,function,,0x00483890,0x0085c650,0x00483890
+3400,function,"std::map<std::wstring,std::wstring>::map",0x00483890,0x0085c650,0x00483890
 3401,function,,0x0048390c,0x0085c6cc,0x0048390c
 3402,function,,0x00483920,0x004ccab0,0x00483920
 3403,function,,0x00483980,0x004ccb10,0x00483980
@@ -4440,8 +4440,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4439,function,Resource::StartLoad,0x004becd0,0x00800e60,0x004becd0
 4440,function,Resource::FreeWhenUnused,0x004bede0,0x00800f70,0x004bede0
 4441,function,Resource::ReplaceBuffer,0x004bef40,0x008010d0,0x004bef40
-4442,function,,0x004bf010,0x008011a0,0x004bf010
-4443,function,,0x004bf030,0x008011c0,0x004bf030
+4442,function,Resource::DropReference,0x004bf010,0x008011a0,0x004bf010
+4443,function,Resource::AttachMemory,0x004bf030,0x008011c0,0x004bf030
 4444,function,,0x004bf060,0x008011f0,0x004bf060
 4445,function,,0x004bf090,0x00505380,0x004bf090
 4446,function,,0x004bf0b0,0x00801220,0x004bf0b0
@@ -4485,7 +4485,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4484,function,ScriptBackend::ForScript_StringToInt,0x004c0950,0x008028d0,0x004c0950
 4485,function,String::WideToLong,0x004c0990,0x00802910,0x004c0990
 4486,function,ScriptBackend::ForScript_StringToFloat,0x004c09d0,0x00802950,0x004c09d0
-4487,function,,0x004c0a10,0x00802990,0x004c0a10
+4487,function,ECBase::ECString::ToInt64,0x004c0a10,0x00802990,0x004c0a10
 4488,function,ECBase::ECString::EqualsNoCase,0x004c0a50,0x008029d0,0x004c0a50
 4489,function,ECBase::ECString::EqualsNoCase,0x004c0aa0,0x00802a20,0x004c0aa0
 4490,function,,0x004c0b00,0x00802a80,0x004c0b00
@@ -4536,7 +4536,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4535,function,,0x004c2510,0x00803a80,0x004c2510
 4536,function,,0x004c2540,0x00803ab0,0x004c2540
 4537,function,ScriptBackend::ForScript_InsertString,0x004c25d0,0x00803b40,0x004c25d0
-4538,function,,0x004c25f0,0x00803b60,0x004c25f0
+4538,function,ECBase::ECString::Insert,0x004c25f0,0x00803b60,0x004c25f0
 4539,function,,0x004c2630,0x004784b0,0x004c2630
 4540,function,,0x004c2670,0x00803ba0,0x004c2670
 4541,function,,0x004c26b0,0x00803be0,0x004c26b0
@@ -4642,16 +4642,16 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4641,function,ECResMan::ResMan::MakeSource,0x004c5ba0,0x00806fe0,0x004c5ba0
 4642,function,,0x004c5bf0,0x00483a20,0x004c5bf0
 4643,function,,0x004c5c60,0x00406ec0,0x004c5c60
-4644,function,,0x004c5c80,0x00807030,0x004c5c80
+4644,function,ECResMan::ResMan::FindResource,0x004c5c80,0x00807030,0x004c5c80
 4645,function,,0x004c5e40,0x008071f0,0x004c5e40
 4646,function,,0x004c5fa0,0x00807350,0x004c5fa0
 4647,function,,0x004c6090,0x00807440,0x004c6090
-4648,function,,0x004c6180,0x00807530,0x004c6180
+4648,function,ECResMan::ResMan::SetRimState,0x004c6180,0x00807530,0x004c6180
 4649,function,,0x004c6270,0x00807620,0x004c6270
 4650,function,,0x004c6330,0x008076e0,0x004c6330
 4651,function,,0x004c6410,0x008077c0,0x004c6410
 4652,function,,0x004c6490,0x00807840,0x004c6490
-4653,function,,0x004c65f0,0x008079a0,0x004c65f0
+4653,function,ECResMan::ResMan::UnregisterRimsOfSource,0x004c65f0,0x008079a0,0x004c65f0
 4654,function,,0x004c6700,0x00807ab0,0x004c6700
 4655,function,,0x004c67a0,0x004cc580,0x004c67a0
 4656,function,,0x004c6840,0x007619e0,0x004c6840
@@ -4661,9 +4661,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4660,function,,0x004c6a50,0x00807e10,0x004c6a50
 4661,function,,0x004c7000,0x008083c0,0x004c7000
 4662,function,,0x004c7080,0x00808440,0x004c7080
-4663,function,,0x004c7630,0x00808a30,0x004c7630
-4664,function,,0x004c7700,0x00808b00,0x004c7700
-4665,function,,0x004c77f0,0x00808bf0,0x004c77f0
+4663,function,"stdext::hash_map<std::wstring,void*>::operator[]",0x004c7630,0x00808a30,0x004c7630
+4664,function,"stdext::hash_map<std::wstring,?>::operator[]",0x004c7700,0x00808b00,0x004c7700
+4665,function,ECResMan::RimMap::RimMap,0x004c77f0,0x00808bf0,0x004c77f0
 4666,function,ECResMan::ResMan::ResMan,0x004c7880,0x00808c80,0x004c7880
 4667,function,ECResMan::Manager,0x004c7990,0x00808d90,0x004c7990
 4668,function,ECResMan::ResMan::ReleaseSourceRef,0x004c7a10,0x00808e10,0x004c7a10
@@ -4760,7 +4760,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4759,function,,0x004cbfe0,0x0080d370,0x004cbfe0
 4760,function,,0x004cc020,0x0080d3b0,0x004cc020
 4761,function,,0x004cc060,0x0080d3f0,0x004cc060
-4762,function,,0x004cc0a0,0x0080d430,0x004cc0a0
+4762,function,ECResMan::ErfSource::LoadDirectory,0x004cc0a0,0x0080d430,0x004cc0a0
 4763,function,ECResMan::RIMSource::QueueRead,0x004cc1b0,0x0080d540,0x004cc1b0
 4764,function,ECResMan::ResourceSource::GetFileName,0x004cc1e0,0x0080d570,0x004cc1e0
 4765,function,ECResMan::GpuRimName,0x004cc230,0x0080d5c0,0x004cc230
@@ -4794,17 +4794,17 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4793,function,,0x004cd4f0,0x0080e840,0x004cd4f0
 4794,function,,0x004cd5a9,0x0080e8f9,0x004cd5a9
 4795,function,,0x004cd5e0,0x00482ee0,0x004cd5e0
-4796,function,,0x004cd610,0x0080e930,0x004cd610
+4796,function,Core::InsertedValue<?>,0x004cd610,0x0080e930,0x004cd610
 4797,function,,0x004cd650,0x0080e970,0x004cd650
 4798,function,,0x004cd680,0x0080e9a0,0x004cd680
 4799,function,,0x004cd6c0,0x0080e9e0,0x004cd6c0
 4800,function,,0x004cd710,0x0080ea30,0x004cd710
 4801,function,,0x004cd780,0x0080eaa0,0x004cd780
-4802,function,,0x004cd7b0,0x0080ead0,0x004cd7b0
+4802,function,std::vector<Resource>::_Tidy,0x004cd7b0,0x0080ead0,0x004cd7b0
 4803,function,,0x004cd7c0,0x0080eae0,0x004cd7c0
 4804,function,,0x004cd949,0x0080ec69,0x004cd949
 4805,function,,0x004cd9d2,0x0080ecf2,0x004cd9d2
-4806,function,,0x004cda60,0x0080ed80,0x004cda60
+4806,function,"std::vector<Resource>::resize(unsigned int,const Resource&)",0x004cda60,0x0080ed80,0x004cda60
 4807,function,,0x004cdb50,0x0080ee70,0x004cdb50
 4808,function,std::vector<Resource>::vector,0x004ce120,0x0080f440,0x004ce120
 4809,function,ECResMan::ErfSource::ErfSource,0x004ce190,0x0080f4b0,0x004ce190
@@ -5020,7 +5020,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5019,function,Resources::Size,0x004d57b0,0x008170f0,0x004d57b0
 5020,function,Resources::GetName,0x004d57d0,0x00817110,0x004d57d0
 5021,function,Resources::Release,0x004d5860,0x008171a0,0x004d5860
-5022,function,,0x004d5890,0x008171d0,0x004d5890
+5022,function,Resources::Release,0x004d5890,0x008171d0,0x004d5890
 5023,function,Resources::Assign,0x004d58a0,0x008171e0,0x004d58a0
 5024,function,Resources::Resources,0x004d58e0,0x00817220,0x004d58e0
 5025,function,Resources::operator=,0x004d5900,0x00817240,0x004d5900
@@ -5257,8 +5257,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5256,function,,0x004df3e0,0x00831540,0x004df3e0
 5257,function,,0x004df490,0x008315f0,0x004df490
 5258,function,,0x004df4e0,0x0082c650,0x004df4e0
-5259,function,,0x004df4f0,0x00813780,0x004df4f0
-5260,function,,0x004df530,0x008137c0,0x004df530
+5259,function,GdaStore::GetRowId,0x004df4f0,0x00813780,0x004df4f0
+5260,function,GdaStore::GetRowWorksheet,0x004df530,0x008137c0,0x004df530
 5261,function,,0x004df570,0x00813800,0x004df570
 5262,function,GdaStore::FindTable,0x004df580,0x00813810,0x004df580
 5263,function,,0x004df670,0x00845520,0x004df670
@@ -5266,7 +5266,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5265,function,,0x004df700,0x00813900,0x004df700
 5266,function,,0x004df740,0x00505bf0,0x004df740
 5267,function,,0x004df760,0x00405c50,0x004df760
-5268,function,,0x004df870,0x00813a90,0x004df870
+5268,function,GdaStore::DeleteNamedTables,0x004df870,0x00813a90,0x004df870
 5269,function,,0x004df940,0x00813b60,0x004df940
 5270,function,,0x004df9d0,0x00813bf0,0x004df9d0
 5271,function,,0x004dfa40,0x007c1750,0x004dfa40
@@ -5281,10 +5281,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5280,function,,0x004e0050,0x00813e80,0x004e0050
 5281,function,,0x004e04d0,0x00814300,0x004e04d0
 5282,function,,0x004e0590,0x008143c0,0x004e0590
-5283,function,,0x004e0690,0x008144c0,0x004e0690
+5283,function,GdaStore::BuildTable,0x004e0690,0x008144c0,0x004e0690
 5284,function,,0x004e07b0,0x008145e0,0x004e07b0
 5285,function,,0x004e0820,0x00814650,0x004e0820
-5286,function,,0x004e0a90,0x008148c0,0x004e0a90
+5286,function,GdaStore::GdaStore,0x004e0a90,0x008148c0,0x004e0a90
 5287,function,GdaStore::~GdaStore,0x004e0b30,0x00814960,0x004e0b30
 5288,function,GdaStore::Load,0x004e0bf0,0x00814a20,0x004e0bf0
 5289,function,GdaStore::LoadEnvironmentTables,0x004e0ea0,0x00814cd0,0x004e0ea0
@@ -5355,7 +5355,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5354,function,,0x004e3280,0x008167d0,0x004e3280
 5355,function,,0x004e34c0,0x00816a10,0x004e34c0
 5356,function,,0x004e3590,0x00816ae0,0x004e3590
-5357,function,,0x004e3620,0x00816b70,0x004e3620
+5357,function,ECFileAccess::JPGFileAccess::ReadExifBlock,0x004e3620,0x00816b70,0x004e3620
 5358,function,ECFileAccess::JPGFileAccess::ReadExif,0x004e3670,0x00816bc0,0x004e3670
 5359,function,ECFileAccess::JPGFileAccess::JPGFileAccess,0x004e3700,0x00816c50,0x004e3700
 5360,function,,0x004e37b0,0x0083eea0,0x004e37b0
@@ -5388,7 +5388,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5387,function,std::vector<CTlkTable::TlkEntry>::erase,0x004e4aa0,0x0082a7c0,0x004e4aa0
 5388,function,CTlkTable::EraseVectorElementAt<CTlkTable::TlkEntry>,0x004e4b10,0x0082a830,0x004e4b10
 5389,function,CTlkTable::UnloadFile,0x004e4bd0,0x0082a8f0,0x004e4bd0
-5390,function,,0x004e4c90,0x0082a9b0,0x004e4c90
+5390,function,std::vector<CTlkTable::TlkEntry>::_Tidy,0x004e4c90,0x0082a9b0,0x004e4c90
 5391,function,CTlkTable::~CTlkTable,0x004e4ca0,0x0082a9c0,0x004e4ca0
 5392,function,CTlkTable::vfunction1,0x004e4d90,0x0082aab0,0x004e4d90
 5393,function,CTlkTable::`scalar deleting destructor',0x004e4dd0,0x0082aaf0,0x004e4dd0
@@ -5408,9 +5408,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5407,function,std::vector<CTlkTable::TlkEntry>::vector,0x004e5670,0x0082b390,0x004e5670
 5408,function,CTlkTable::InsertVectorElementAt<CTlkTable::TlkEntry>,0x004e56e0,0x0082b400,0x004e56e0
 5409,function,CTlkTable::HandleMessage_RimLoadedMessage,0x004e5770,0x0082b490,0x004e5770
-5410,function,,0x004e5810,0x0082b530,0x004e5810
-5411,function,,0x004e5a80,0x0082b7a0,0x004e5a80
-5412,function,,0x004e5cf0,0x0082ba10,0x004e5cf0
+5410,function,CTlkTable::LoadFile,0x004e5810,0x0082b530,0x004e5810
+5411,function,CTlkTable::LoadTables,0x004e5a80,0x0082b7a0,0x004e5a80
+5412,function,CTlkTable::SetGender,0x004e5cf0,0x0082ba10,0x004e5cf0
 5413,function,CTlkTable::RegisterHandler_RimLoadedMessage,0x004e5e40,0x0082bb60,0x004e5e40
 5414,function,CTlkTable::CTlkTable_copy,0x004e5ef0,0x0082bc10,0x004e5ef0
 5415,function,CTlkTable::Clone,0x004e5f70,0x0082bc90,0x004e5f70
@@ -5454,8 +5454,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5453,function,ECResMan::ResourceSource::ResourceSource,0x004e6c50,0x0083e3f0,0x004e6c50
 5454,function,ECResMan::ResourceSource::~ResourceSource,0x004e6d10,0x0083e4b0,0x004e6d10
 5455,function,ECResMan::ResourceSource::`scalar deleting destructor',0x004e6e30,0x0083e5d0,0x004e6e30
-5456,function,,0x004e6e50,0x00718d90,0x004e6e50
-5457,function,,0x004e6ee0,0x00818f40,0x004e6ee0
+5456,function,std::_Tree<?>::const_iterator::operator++,0x004e6e50,0x00718d90,0x004e6e50
+5457,function,ECResMan::GetFileExtension,0x004e6ee0,0x00818f40,0x004e6ee0
 5458,function,Resource::FindProcessor,0x004e6f30,0x008193f0,0x004e6f30
 5459,function,,0x004e6f50,0x00819410,0x004e6f50
 5460,function,,0x004e6fc0,0x00819480,0x004e6fc0
@@ -5544,7 +5544,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5543,function,,0x004e9a90,0x00819a90,0x004e9a90
 5544,function,,0x004e9aa0,0x00819aa0,0x004e9aa0
 5545,function,,0x004e9ad0,0x00819ad0,0x004e9ad0
-5546,function,,0x004e9ae0,0x0083e5f0,0x004e9ae0
+5546,function,Compression::ZlibUncompress,0x004e9ae0,0x0083e5f0,0x004e9ae0
 5547,function,ECResMan::ReadRequestTask::ReadRequestTask,0x004e9b20,0x0083e630,0x004e9b20
 5548,function,ECResMan::ReadRequestTask::~ReadRequestTask,0x004e9b90,0x0083e6a0,0x004e9b90
 5549,function,ECResMan::ReadRequestTask::Init,0x004e9bf0,0x0083e700,0x004e9bf0
@@ -5554,11 +5554,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5553,function,ECResMan::TaskPool::Release,0x004e9cb0,0x0083e7c0,0x004e9cb0
 5554,function,ECResMan::TaskPool::ReleaseAll,0x004e9dd0,0x0083e8e0,0x004e9dd0
 5555,function,ECResMan::ReadRequestTask::Run,0x004e9e20,0x0083e930,0x004e9e20
-5556,function,,0x004e9fd0,0x0083eae0,0x004e9fd0
-5557,function,,0x004ea080,0x0083eb90,0x004ea080
-5558,function,,0x004ea130,0x0083ec40,0x004ea130
-5559,function,,0x004ea220,0x0083ed30,0x004ea220
-5560,function,,0x004ea2b0,0x0083edc0,0x004ea2b0
+5556,function,ECResMan::TaskPool::~TaskPool,0x004e9fd0,0x0083eae0,0x004e9fd0
+5557,function,ECResMan::TaskPool::Grow,0x004ea080,0x0083eb90,0x004ea080
+5558,function,ECResMan::TaskPool::Acquire,0x004ea130,0x0083ec40,0x004ea130
+5559,function,ECResMan::TaskPool::TaskPool,0x004ea220,0x0083ed30,0x004ea220
+5560,function,ECResMan::TaskPool::NewReadRequestTask,0x004ea2b0,0x0083edc0,0x004ea2b0
 5561,function,ECResMan::ReadRequestTask::CreateForFile,0x004ea310,0x0083ee20,0x004ea310
 5562,function,ECResMan::ReadRequestTask::CreateForPath,0x004ea350,0x0083ee60,0x004ea350
 5563,function,Messages::DataStream::DataStream,0x004ea390,0x007cde40,0x004ea390
@@ -5686,7 +5686,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5685,function,G2DA::GetBoolByIndices,0x004ed7c0,0x00840360,0x004ed7c0
 5686,function,G2DA::GetRowStruct,0x004ed8a0,0x00840440,0x004ed8a0
 5687,function,G2DA::GetCellTypeByIndices,0x004ed970,0x00840510,0x004ed970
-5688,function,,0x004edba0,0x00840740,0x004edba0
+5688,function,G2DA::NumberRows,0x004edba0,0x00840740,0x004edba0
 5689,function,,0x004edc90,0x0083c950,0x004edc90
 5690,function,,0x004edcc0,0x00848af0,0x004edcc0
 5691,function,,0x004edd00,0x0081a7c0,0x004edd00
@@ -10263,11 +10263,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10262,function,GdaTables::GetDeathAnimation,0x005ca740,0x006fd9d0,0x005ca740
 10263,function,GdaTables::GetSyncPlacement,0x005ca7b0,0x006fda40,0x005ca7b0
 10264,function,GdaTables::ComputeSyncPlacement,0x005ca860,0x006fdaf0,0x005ca860
-10265,function,,0x005ca960,0x00505690,0x005ca960
-10266,function,,0x005ca9c0,0x005059a0,0x005ca9c0
+10265,function,"std::allocator<std::pair<unsigned int,std::wstring>>::construct",0x005ca960,0x00505690,0x005ca960
+10266,function,"std::list<std::pair<unsigned int,std::wstring>>::_Buynode",0x005ca9c0,0x005059a0,0x005ca9c0
 10267,function,,0x005caa3c,0x00505a1c,0x005caa3c
 10268,function,"stdext::hash_map<unsigned int,?>::count",0x005caa60,0x006fdcf0,0x005caa60
-10269,function,,0x005caab0,0x00406ce0,0x005caab0
+10269,function,"std::list<std::pair<unsigned int,std::wstring>>::clear",0x005caab0,0x00406ce0,0x005caab0
 10270,function,GdaTables::HasAnimName,0x005caaf0,0x006fdd40,0x005caaf0
 10271,function,"std::list<std::pair<unsigned int,std::wstring>>::~list",0x005cab50,0x00468b70,0x005cab50
 10272,function,,0x005cab70,0x00505ee0,0x005cab70
@@ -10523,8 +10523,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10522,function,CClientExoApp::GetControlledCreatureId,0x005d5ca0,0x004c0750,0x005d5ca0
 10523,function,CClientExoApp::GetControlledCreature,0x005d5cc0,0x004c0770,0x005d5cc0
 10524,function,CClientExoApp::GetControlledCreatureAreaId,0x005d5cd0,0x004c0780,0x005d5cd0
-10525,function,,0x005d5cf0,0x004c07a0,0x005d5cf0
-10526,function,,0x005d5dd0,0x004c0880,0x005d5dd0
+10525,function,ModuleResourceManager::BuildModuleFolder,0x005d5cf0,0x004c07a0,0x005d5cf0
+10526,function,Resources::BuildPackageFolder,0x005d5dd0,0x004c0880,0x005d5dd0
 10527,function,CClientExoApp::GetGameMode,0x005d5e70,0x004c0920,0x005d5e70
 10528,function,CClientExoApp::SetGameMode,0x005d5e90,0x004c0940,0x005d5e90
 10529,function,CClientExoApp::GetLoadingData,0x005d5ea0,0x004c0950,0x005d5ea0
@@ -10991,7 +10991,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10990,function,AddInsManager::AddParsedEntry,0x005fa590,0x004e7bc0,0x005fa590
 10991,function,AddInsManager::WriteAddInsXmlIfDirty,0x005fa730,0x004e7d60,0x005fa730
 10992,function,AddInsManager::LoadAddIns,0x005fa760,0x004e7d90,0x005fa760
-10993,function,,0x005fb800,0x004e8e30,0x005fb800
+10993,function,ModuleResourceManager::BuildTextureFolders,0x005fb800,0x004e8e30,0x005fb800
 10994,function,ModuleResourceManager::SetCurrentTree,0x005fbab0,0x004e9100,0x005fbab0
 10995,function,LoadModuleResourcesTask::LoadModuleResourcesTask,0x005fbb10,0x004e9160,0x005fbb10
 10996,function,LoadModuleResourcesTask::~LoadModuleResourcesTask,0x005fbb80,0x004e91d0,0x005fbb80
