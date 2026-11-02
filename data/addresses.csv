@@ -9842,7 +9842,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 9841,function,MusicThemeWrapper::SetMusicState,0x005b6df0,0x0071f690,0x005b6df0
 9842,function,MusicThemeWrapper::GetCurrentTrackName,0x005b6e10,0x0071f6b0,0x005b6e10
 9843,function,"std::pair<std::wstring,std::wstring>::pair",0x005b6e30,0x004bf4e0,0x005b6e30
-9844,function,,0x005b6e80,0x0071f770,0x005b6e80
+9844,function,SoundManager::SetMusicIntensity,0x005b6e80,0x0071f770,0x005b6e80
 9845,function,SoundEventInstance::SmoothOcclusion,0x005b6eb0,0x0071f7a0,0x005b6eb0
 9846,function,SoundManager::GetMaterialLabelHash,0x005b6f60,0x0071f850,0x005b6f60
 9847,function,MusicController::RestartTheme,0x005b7070,0x0071f960,0x005b7070
@@ -9943,7 +9943,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 9942,function,?OnExit@GThread@@UAEXXZ,0x005bdcf0,0x00744550,0x005bdcf0
 9943,function,EclipsePrivate::CContentRenderer::SetListenerPosition,0x005bdd00,0x00726220,0x005bdd00
 9944,function,EclipsePrivate::CContentRenderer::SetListenerOrientation,0x005bdd20,0x00726240,0x005bdd20
-9945,function,,0x005bdd40,0x00726260,0x005bdd40
+9945,function,EclipsePrivate::CreateContentRenderer_FMOD,0x005bdd40,0x00726260,0x005bdd40
 9946,function,EclipsePrivate::CContent::CContent,0x005bddb0,0x007262d0,0x005bddb0
 9947,function,EclipsePrivate::CContent::LoadEvent,0x005bde20,0x00726340,0x005bde20
 9948,function,EclipsePrivate::CContent::GetOcclusion,0x005bde40,0x0076d8a0,0x005bde40
@@ -9955,8 +9955,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 9954,function,EclipsePrivate::CContent::~CContent,0x005bdee0,0x007263d0,0x005bdee0
 9955,function,EclipsePrivate::CContentRenderer::`scalar deleting destructor',0x005bdef0,0x007263e0,0x005bdef0
 9956,function,EclipsePrivate::CContent::`scalar deleting destructor',0x005bdf10,0x00726400,0x005bdf10
-9957,function,,0x005bdf30,0x00726420,0x005bdf30
-9958,function,,0x005bdfd0,0x007264c0,0x005bdfd0
+9957,function,Core::ClearMapOfOwnedVectors<?>,0x005bdf30,0x00726420,0x005bdf30
+9958,function,EclipsePrivate::CContentBank::CContentBank,0x005bdfd0,0x007264c0,0x005bdfd0
 9959,function,EclipsePrivate::CContentBank::~CContentBank,0x005be080,0x00726570,0x005be080
 9960,function,EclipsePrivate::CContentBank::`scalar deleting destructor',0x005be170,0x00726660,0x005be170
 9961,function,EclipsePrivate::CMusicThemeContent::~CMusicThemeContent,0x005be190,0x00726680,0x005be190
@@ -10012,8 +10012,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10011,function,ReverbChannelGroup_Construct,0x005bf9b0,0x00727ea0,0x005bf9b0
 10012,function,ReverbChannelGroup_Destruct,0x005bfae0,0x00727fd0,0x005bfae0
 10013,function,ReverbChannelGroup_CreateGroupAndDSP,0x005bfb40,0x00728030,0x005bfb40
-10014,function,,0x005bfc00,0x007280f0,0x005bfc00
-10015,function,,0x005bfc40,0x00728130,0x005bfc40
+10014,function,ReverbChannelGroup_BlendInt,0x005bfc00,0x007280f0,0x005bfc00
+10015,function,ReverbChannelGroup_BlendFloat,0x005bfc40,0x00728130,0x005bfc40
 10016,function,ReverbChannelGroup_ApplyToDSP,0x005bfc70,0x00728160,0x005bfc70
 10017,function,EclipsePrivate::CMusicThemeContent_FMOD::SetTrack,0x005bfdf0,0x007282e0,0x005bfdf0
 10018,function,IsMusicEventPlaying,0x005bfe60,0x00728350,0x005bfe60
@@ -10038,7 +10038,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10037,function,EclipsePrivate::CContent_FMOD::SetPlaybackPositionMs,0x005c0660,0x00728b50,0x005c0660
 10038,function,EclipsePrivate::CContent_FMOD::GetPositionMs,0x005c06b0,0x00728ba0,0x005c06b0
 10039,function,EclipsePrivate::CContent_FMOD::GetInfo,0x005c0710,0x00728c00,0x005c0710
-10040,function,,0x005c0790,0x00728c80,0x005c0790
+10040,function,EclipsePrivate::CContent_FMOD::SetCustomRolloffMaxDistance,0x005c0790,0x00728c80,0x005c0790
 10041,function,EclipsePrivate::CContent_FMOD::Pause,0x005c0820,0x00728d10,0x005c0820
 10042,function,EclipsePrivate::CContent_FMOD::Resume,0x005c0850,0x00728d40,0x005c0850
 10043,function,EclipsePrivate::CContent_FMOD::Set3DPosition,0x005c0880,0x00728d70,0x005c0880
@@ -10046,7 +10046,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10045,function,EclipsePrivate::CContent_FMOD::Set3DPanLevel,0x005c0910,0x00728e00,0x005c0910
 10046,function,EclipsePrivate::CContentBank_FMOD::~CContentBank_FMOD,0x005c0940,0x00728e30,0x005c0940
 10047,function,ReverbChannelGroup_UpdateFade,0x005c09a0,0x00728e90,0x005c09a0
-10048,function,,0x005c0d50,0x00729240,0x005c0d50
+10048,function,EclipsePrivate::CMusicThemeContent_FMOD::HasProjectFileChanged,0x005c0d50,0x00729240,0x005c0d50
 10049,function,EclipsePrivate::CMusicThemeContent_FMOD::SetTheme,0x005c0e20,0x00729310,0x005c0e20
 10050,function,EclipsePrivate::CMusicThemeContent_FMOD::Stop,0x005c1010,0x00729500,0x005c1010
 10051,function,EclipsePrivate::CContentBank_FMOD::`scalar deleting destructor',0x005c1050,0x00729540,0x005c1050
@@ -10054,7 +10054,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10053,function,EclipsePrivate::CContent_FMOD::`scalar deleting destructor',0x005c1220,0x00729710,0x005c1220
 10054,function,EclipsePrivate::CContentBank_FMOD::Precache,0x005c1240,0x00729730,0x005c1240
 10055,function,EclipsePrivate::CMusicThemeContent_FMOD::GetDebugText,0x005c13a0,0x00729890,0x005c13a0
-10056,function,,0x005c1770,0x00567c60,0x005c1770
+10056,function,Core::VectorAt<?>,0x005c1770,0x00567c60,0x005c1770
 10057,function,EclipsePrivate::CContentRenderer_FMOD::GetReverbDebugText,0x005c17a0,0x00729c60,0x005c17a0
 10058,function,FindReverbChannelGroupIndex,0x005c18c0,0x00729d80,0x005c18c0
 10059,function,EclipsePrivate::CContentRenderer_FMOD::Update,0x005c19a0,0x00729e60,0x005c19a0
@@ -10089,8 +10089,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 10088,function,EclipsePrivate::CContent_FMOD::ApplyVolumeAndPitch,0x005c3d10,0x0072c1d0,0x005c3d10
 10089,function,EclipsePrivate::CMusicThemeContent_FMOD::`scalar deleting destructor',0x005c3e40,0x0072c300,0x005c3e40
 10090,function,EclipsePrivate::CMusicThemeContent_FMOD::UpdateVolumeAndPitch,0x005c3e60,0x0072c320,0x005c3e60
-10091,function,,0x005c3fc0,0x0072c480,0x005c3fc0
-10092,function,,0x005c4060,0x0072c720,0x005c4060
+10091,function,Core::FreeMapOfWstringPointers,0x005c3fc0,0x0072c480,0x005c3fc0
+10092,function,EclipsePrivate::CMusicThemeContent_FMOD::Restart,0x005c4060,0x0072c720,0x005c4060
 10093,function,CreateReverbChannelGroup,0x005c4140,0x0072c8e0,0x005c4140
 10094,function,EclipsePrivate::CContentRenderer_FMOD::GetProjectEventNames,0x005c4260,0x0072ca00,0x005c4260
 10095,function,EclipsePrivate::CContentRenderer_FMOD::GetReverbPresetNames,0x005c45c0,0x0072cd60,0x005c45c0
@@ -19506,41 +19506,41 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 19505,function,std::vector<EquipmentSet>::resize,0x00798c30,0x0066a330,0x00798c30
 19506,function,Equipment::Equipment,0x00798c60,0x0066a360,0x00798c60
 19507,function,CCTrigger::Update,0x00798db0,0x0066a4b0,0x00798db0
-19508,function,,0x00798de0,0x0066a4e0,0x00798de0
+19508,function,CCTrigger::GetNearestPointOnOutline,0x00798de0,0x0066a4e0,0x00798de0
 19509,function,CCTrigger::GetBoundingBox,0x00799010,0x0066a710,0x00799010
 19510,function,CCTrigger::ContainsPoint,0x00799130,0x0066a830,0x00799130
 19511,function,CCTriggerAudioMusicVolume::SetEnterState,0x00799350,0x0066aa50,0x00799350
-19512,function,,0x00799380,0x0066aa80,0x00799380
+19512,function,CCTriggerAudioMusicVolume::OnEnter,0x00799380,0x0066aa80,0x00799380
 19513,function,CCTrigger::ReadFields,0x007993c0,0x0066aac0,0x007993c0
 19514,function,CCTrigger::RaiseEnterOrExitEvent,0x00799850,0x0066af50,0x00799850
 19515,function,CCTriggerTrap::ReadFields,0x007998c0,0x0066afc0,0x007998c0
 19516,function,CCTriggerAreaTransition::ReadFields,0x00799970,0x0066b070,0x00799970
-19517,function,,0x007999b0,0x0066b0b0,0x007999b0
-19518,function,,0x00799a80,0x0066b180,0x00799a80
-19519,function,,0x00799ad0,0x0066b1d0,0x00799ad0
-19520,function,,0x00799b90,0x0066b290,0x00799b90
+19517,function,CCTriggerAudioReverb::ReadFields,0x007999b0,0x0066b0b0,0x007999b0
+19518,function,CCTriggerAudioMusicVolume::OnExit,0x00799a80,0x0066b180,0x00799a80
+19519,function,CCTriggerAudioMusicVolume::ReadFields,0x00799ad0,0x0066b1d0,0x00799ad0
+19520,function,CCTriggerAudioVolume::WriteSoundListToSave,0x00799b90,0x0066b290,0x00799b90
 19521,function,Gff4::BlockRef::SetListElementVector3,0x00799c30,0x0066b330,0x00799c30
 19522,function,CCTrigger::LoadTemplate,0x00799c80,0x0066b380,0x00799c80
 19523,function,CCTrigger::WriteToSave,0x00799e10,0x0066b510,0x00799e10
 19524,function,CCTriggerTrap::WriteToSave,0x00799ee0,0x0066b5e0,0x00799ee0
 19525,function,CCTriggerAreaTransition::WriteToSave,0x00799f70,0x0066b670,0x00799f70
-19526,function,,0x00799fa0,0x0066b6a0,0x00799fa0
-19527,function,,0x0079a000,0x0066b700,0x0079a000
-19528,function,,0x0079a190,0x00451ff0,0x0079a190
-19529,function,,0x0079a1d0,0x0066b890,0x0079a1d0
-19530,function,,0x0079a450,0x0066bb10,0x0079a450
+19526,function,CCTriggerAudioMusicVolume::WriteToSave,0x00799fa0,0x0066b6a0,0x00799fa0
+19527,function,CCTriggerAudioVolume::ReadSoundList,0x0079a000,0x0066b700,0x0079a000
+19528,function,Core::DerefValidListIterator<int>,0x0079a190,0x00451ff0,0x0079a190
+19529,function,CCTrigger::Load,0x0079a1d0,0x0066b890,0x0079a1d0
+19530,function,CCTriggerAudioReverb::WriteToSave,0x0079a450,0x0066bb10,0x0079a450
 19531,function,CCTriggerAudioMusicVolume::Load,0x0079a480,0x0066bb40,0x0079a480
-19532,function,,0x0079a490,0x0066bb50,0x0079a490
-19533,function,,0x0079a5d0,0x0066bc90,0x0079a5d0
-19534,function,,0x0079a600,0x0066bcc0,0x0079a600
-19535,function,,0x0079a620,0x0066bce0,0x0079a620
+19532,function,CCTriggerAudioVolume::Load,0x0079a490,0x0066bb50,0x0079a490
+19533,function,CCTriggerAudioVolume::ReadFields,0x0079a5d0,0x0066bc90,0x0079a5d0
+19534,function,CCTriggerAudioVolume::WriteToSave,0x0079a600,0x0066bcc0,0x0079a600
+19535,function,CCTriggerAudioVolume::LoadSoundListFromSave,0x0079a620,0x0066bce0,0x0079a620
 19536,function,Gff4::BlockRef::GetListElementVector3,0x0079a770,0x0066be30,0x0079a770
 19537,function,CCTrigger::LoadFromStruct,0x0079a7e0,0x0066bea0,0x0079a7e0
 19538,function,CCTriggerTrap::LoadFromStruct,0x0079a9b0,0x0066c070,0x0079a9b0
-19539,function,,0x0079a9d0,0x0066c090,0x0079a9d0
-19540,function,,0x0079aaa0,0x0066c160,0x0079aaa0
+19539,function,CCTriggerAudioReverb::LoadFromStruct,0x0079a9d0,0x0066c090,0x0079a9d0
+19540,function,CCTriggerAudioMusicVolume::LoadFromStruct,0x0079aaa0,0x0066c160,0x0079aaa0
 19541,function,CCTriggerAudioVolume::LoadFromSave,0x0079ab40,0x0066c200,0x0079ab40
-19542,function,,0x0079ab70,0x0066c230,0x0079ab70
+19542,function,CCTriggerAudioReverb::OnExit,0x0079ab70,0x0066c230,0x0079ab70
 19543,function,CCTrigger::RemoveFromArea,0x0079acf0,0x0066c3b0,0x0079acf0
 19544,function,CCTriggerAudioVolume::RemoveFromArea,0x0079ad70,0x0066c430,0x0079ad70
 19545,function,CCTrigger::~CCTrigger,0x0079add0,0x0066c490,0x0079add0
@@ -19566,9 +19566,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 19565,function,,0x0079b310,0x00685730,0x0079b310
 19566,function,CCTrigger::`scalar deleting destructor',0x0079b320,0x0066c950,0x0079b320
 19567,function,CCTrigger::`scalar deleting destructor',0x0079b330,0x0066c960,0x0079b330
-19568,function,,0x0079b340,0x0066c9e0,0x0079b340
-19569,function,,0x0079b3d0,0x0066ca70,0x0079b3d0
-19570,function,,0x0079b440,0x0066cae0,0x0079b440
+19568,function,CCTriggerAudioReverb::CCTriggerAudioReverb,0x0079b340,0x0066c9e0,0x0079b340
+19569,function,CCTriggerAudioReverb::OnEnter,0x0079b3d0,0x0066ca70,0x0079b3d0
+19570,function,CCTriggerAudioMusicVolume::CCTriggerAudioMusicVolume,0x0079b440,0x0066cae0,0x0079b440
 19571,function,CCTriggerAudioMusicVolume::GetDataClass,0x0079b4a0,0x0066cb40,0x0079b4a0
 19572,function,CCTriggerAudioMusicVolume::`scalar deleting destructor'`adjustor{24}',0x0079b4b0,0x0066cb70,0x0079b4b0
 19573,function,CCTriggerAudioMusicVolume::`scalar deleting destructor'`adjustor{56}',0x0079b4c0,0x0066cb80,0x0079b4c0
@@ -19576,7 +19576,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 19575,function,CCTriggerAudioMusicVolume::`scalar deleting destructor'`adjustor{112}',0x0079b4e0,0x0066cb50,0x0079b4e0
 19576,function,CCTriggerAudioMusicVolume::`scalar deleting destructor'`adjustor{52}',0x0079b4f0,0x0066cb60,0x0079b4f0
 19577,function,CCTriggerAudioMusicVolume::`scalar deleting destructor',0x0079b500,0x0066cba0,0x0079b500
-19578,function,,0x0079b550,0x0066cbf0,0x0079b550
+19578,function,CCTriggerAudioVolume::CCTriggerAudioVolume,0x0079b550,0x0066cbf0,0x0079b550
 19579,function,CCTriggerAudioVolume::GetDataClass,0x0079b5f0,0x0066cc90,0x0079b5f0
 19580,function,CCTriggerAudioVolume::`scalar deleting destructor'`adjustor{112}',0x0079b600,0x0066ccd0,0x0079b600
 19581,function,CCTriggerAudioVolume::`scalar deleting destructor'`adjustor{52}',0x0079b610,0x0066cce0,0x0079b610
@@ -19585,7 +19585,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 19584,function,CCTriggerAudioVolume::`scalar deleting destructor'`adjustor{32}',0x0079b640,0x0066ccc0,0x0079b640
 19585,function,CCTriggerAudioVolume::`scalar deleting destructor',0x0079b650,0x0066ccf0,0x0079b650
 19586,function,CCTrigger::SetLocation,0x0079b6b0,0x0066cd50,0x0079b6b0
-19587,function,,0x0079b7d0,0x0066ce70,0x0079b7d0
+19587,function,CCTriggerAudioVolume::SetLocation,0x0079b7d0,0x0066ce70,0x0079b7d0
 19588,function,CCTrigger::DefineSaveStruct,0x0079b840,0x0066cee0,0x0079b840
 19589,function,CCTriggerTrap::DefineSaveStruct,0x0079b8b0,0x0066cf50,0x0079b8b0
 19590,function,CCTriggerAreaTransition::DefineSaveStruct,0x0079b930,0x0066cfd0,0x0079b930
@@ -20311,17 +20311,17 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20310,function,SyncAlign::AdjustRootMotion,0x007c1b70,0x006a1e20,0x007c1b70
 20311,function,SyncAlign::StopPartnerRate,0x007c1ea0,0x006a2150,0x007c1ea0
 20312,function,SyncAlign::~SyncAlign,0x007c1ee0,0x006a2190,0x007c1ee0
-20313,function,,0x007c1f10,0x006a4340,0x007c1f10
+20313,function,CCSoundObject::CCSoundObject,0x007c1f10,0x006a4340,0x007c1f10
 20314,function,ScriptBackend::ForScript_StopSoundObject,0x007c1ff0,0x006a4420,0x007c1ff0
-20315,function,,0x007c2010,0x006a4440,0x007c2010
-20316,function,,0x007c2040,0x006a4470,0x007c2040
-20317,function,,0x007c2060,0x006a4490,0x007c2060
+20315,function,CCSoundObject::OnPositionChanged,0x007c2010,0x006a4440,0x007c2010
+20316,function,CCSoundObject::OnOrientationChanged,0x007c2040,0x006a4470,0x007c2040
+20317,function,CCSoundObject::SetAddToAreaFlag,0x007c2060,0x006a4490,0x007c2060
 20318,function,CCSoundObject::`scalar deleting destructor'`adjustor{52}',0x007c2070,0x006a44b0,0x007c2070
 20319,function,CCSoundObject::`scalar deleting destructor'`adjustor{56}',0x007c2080,0x006a44d0,0x007c2080
-20320,function,,0x007c2090,0x006a44e0,0x007c2090
+20320,function,CCSoundObject::SetInWorld,0x007c2090,0x006a44e0,0x007c2090
 20321,function,ScriptBackend::ForScript_PlaySoundObject,0x007c20f0,0x006a4540,0x007c20f0
-20322,function,,0x007c2150,0x006a45a0,0x007c2150
-20323,function,,0x007c2190,0x006a45e0,0x007c2190
+20322,function,CCSoundObject::AIUpdate,0x007c2150,0x006a45a0,0x007c2150
+20323,function,CCSoundObject::SetActive,0x007c2190,0x006a45e0,0x007c2190
 20324,function,,0x007c21c0,0x006a4610,0x007c21c0
 20325,function,,0x007c23d0,0x006a4820,0x007c23d0
 20326,function,CCSoundObject::RemoveFromArea,0x007c2710,0x006a4b60,0x007c2710
