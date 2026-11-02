@@ -16780,3 +16780,43 @@ address,what,value,why
 0x00A6DB20,signature,"void * __thiscall f(void *this, void *models, void *morph, int p3, int p4, int p5, int p6, void *p7, int p8)","ret 0x20 = 8 stack args: models list (+4/+8, 0x1C each), morph pointer (0 selects the merge task), the rest passed to the tasks"
 0x00537D40,signature,void __thiscall f(void *this),"tail jmp to the world's slot 2, no argument"
 0x00537D60,signature,"void * __thiscall f(void *this, int unused)","ret 4, argument unread; callers push 0"
+0x0055AA90,signature,"void __thiscall f(void *this, void *context)","ret 4; IRenderableNode slot 5 of the VFX mesh, ecx = node+0x180 (0x0055AA90)"
+0x0055AAD0,signature,"int __thiscall f(void *this, void *context, int a, int b)","ret 0xC; slot 17, tail-jumps to RenderPasses (0x0055AAD0..0x0055AAFC)"
+0x0055AB10,signature,void __thiscall f(void *this),"plain ret, ecx = the mesh node (0x0055AB10..0x0055ABCB)"
+0x0055ABD0,signature,"bool __thiscall f(void *this, void *positions)","ret 4, al returned; ecx = node+0x1AC (0x0055ABD0..0x0055AD72)"
+0x0055AD80,signature,void __thiscall f(void *this),"plain ret, slot 20 (0x0055AD80..0x0055AF9B)"
+0x0055AFA0,signature,"bool __thiscall f(void *this, void *name, void *out)","ret 8, al returned (0x0055AFA0..0x0055B175)"
+0x0055B180,signature,void __thiscall f(void *this),"plain ret, ecx = node+0x180 (0x0055B180..0x0055B270)"
+0x0055B280,signature,void __thiscall f(void *this),"destructor body, plain ret (0x0055B3C1)"
+0x0055B3D0,signature,"void * __thiscall f(void *this, unsigned int flags)","adjustor thunk to 0x0055B520, ret 4 there"
+0x0055B3E0,signature,"void * __thiscall f(void *this, unsigned int flags)",adjustor thunk to 0x0055B520
+0x0055B3F0,signature,"void * __thiscall f(void *this, unsigned int flags)",adjustor thunk to 0x0055B520
+0x0055B400,signature,"void * __thiscall f(void *this, unsigned int flags)",adjustor thunk to 0x0055B520
+0x0055B410,signature,"void * __thiscall f(void *this, unsigned int flags)",adjustor thunk to 0x0055B520
+0x0055B420,signature,void * __thiscall f(void *this),returns this+0x180 or null (0x0055B420)
+0x0055B430,signature,void * __thiscall f(void *this),"lea eax,[ecx-0x120] (0x0055B430)"
+0x0055B440,signature,void * __thiscall f(void *this),"mov eax,[ecx-0x30] (0x0055B440)"
+0x0055B450,signature,unsigned char __thiscall f(void *this),"mov al,[ecx+0x48] (0x0055B450)"
+0x0055B460,signature,unsigned char __thiscall f(void *this),"mov al,[ecx+0x1C9] (0x0055B460)"
+0x0055B470,signature,unsigned char __thiscall f(void *this),"mov al,[ecx+0x1CA] (0x0055B470)"
+0x0055B480,signature,int __thiscall f(void *this),"sub ecx,0x180; jmp 0x0079B310 (mov eax,1) (0x0055B480)"
+0x0055B490,signature,void __thiscall f(void *this),"VFX destructor body, jmp to 0x0055B280 (0x0055B490..0x0055B4BF)"
+0x0055B4D0,signature,"void * __thiscall f(void *this, unsigned int flags)",adjustor thunk to 0x0055B660
+0x0055B4E0,signature,"void * __thiscall f(void *this, unsigned int flags)",adjustor thunk to 0x0055B660
+0x0055B4F0,signature,"void * __thiscall f(void *this, unsigned int flags)",adjustor thunk to 0x0055B660
+0x0055B500,signature,"void * __thiscall f(void *this, unsigned int flags)",adjustor thunk to 0x0055B660
+0x0055B510,signature,"void * __thiscall f(void *this, unsigned int flags)",adjustor thunk to 0x0055B660
+0x0055B520,signature,"void * __thiscall f(void *this, unsigned int flags)","scalar deleting destructor, ret 4, returns this (0x0055B520..0x0055B53A)"
+0x0055B660,signature,"void * __thiscall f(void *this, unsigned int flags)","scalar deleting destructor, ret 4, returns this (0x0055B660..0x0055B67A)"
+0x0055B680,signature,"bool __thiscall f(void *this, unsigned int primitiveCount, unsigned int vertexCount, void *vertexDeclaration)","ret 0xC at 0x0055B85D; ecx = node+0x1AC; xor al,al at 0x0055B848 on the early-out"
+0x0055B860,signature,"void * __thiscall f(void *this, void *owner, void *blueprint)","ret 8, returns this (0x0055B9D1)"
+0x0055B9E0,signature,"void * __thiscall f(void *this, void *owner, void *blueprint)","ret 8, returns this (0x0055BA40)"
+0x0055BA50,signature,"void * __thiscall f(void *this, void **decl, unsigned int *byte_size)","ret 8, eax returned from the driver's Lock (0x0055BB26)"
+0x0055BB30,signature,"void * __thiscall f(void *this, unsigned int *a, unsigned int *byte_size)","ret 8, eax returned from the driver's Lock (0x0055BC09)"
+0x0055BC10,signature,"void __thiscall f(void *this, void *name)","ret 4, ecx = node+0x1AC (0x0055BF99)"
+0x0055CAC0,signature,void __thiscall f(void *this),"destructor body, plain ret (0x0055CB54)"
+0x0055CB60,signature,void __thiscall f(void *this),plain ret (0x0055CB95)
+0x0055CBA0,signature,void __thiscall f(void *this),plain ret (0x0055CBC2)
+0x0055CBD0,signature,void * __thiscall f(void *this),"mov eax,[ecx+0x28] (0x0055CBD0)"
+0x0055CBF0,signature,"void __thiscall f(void *this, float *rects)","ret 4, ecx read as the batch (0x0055CBF0..0x0055CC22)"
+0x0055CC30,signature,"void __thiscall f(void *this, unsigned int offset)",ret 4 (0x0055CC30)
