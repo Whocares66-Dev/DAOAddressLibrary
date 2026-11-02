@@ -16352,3 +16352,8 @@ address,what,value,why
 0x007C2B20,signature,"void* __thiscall f(void* this, void* owner, int objectId)","ret 8, returns this"
 0x007C2BE0,signature,"int __thiscall f(void* this, void* saveStruct)",ret 4
 0x007C2EE0,signature,"void __thiscall f(void* this, float seconds)","ret 4, slot 88"
+0x005E61C0,signature,void __thiscall f(void* this),"erase(begin,end) wrapper, plain ret 0x005E61F8"
+0x005E7B00,signature,"void __thiscall f(void* this, unsigned int n, int v0, int v1, int v2, int v3)",ret 0x14: n plus a 16-byte vector by value; ecx is this 0x005E7B27
+0x005EC7A0,signature,void __cdecl f(void),"no arguments, plain ret 0x005ECA8E, caller 0x00410D30"
+0x006C9E80,signature,void __cdecl f(void),"plain ret, no args 0x006C9EE8"
+0x00842460,signature,"void* __thiscall f(void* this, void* line, bool quiet)","ret 8, ecx saved to edi 0x00842498; returns 0xC39C78"
