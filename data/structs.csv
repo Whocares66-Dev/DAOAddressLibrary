@@ -587,6 +587,9 @@ ECResMan::RimEntry,0x0,0x4,void*,source,"0x004C7BF3 mov [eax],ebp in RegisterRim
 ECResMan::RimEntry,0x8,0x4,int32_t,state,"0x004C7BFC mov [eax+8],esi (0) in RegisterRim; SetRimState 0x004C6225 mov [esi+0x2C],eax (node+0x2C); 0 registered, 1 loading, 2 loaded (RegisterRim skips 1 and 2 at 0x004C7BC8-0x004C7BD0)"
 ECResMan::RimEntry,0xC,0x4,uint32_t,size,"0x004C7BFF mov [eax+0xC],ebx; read by GetRimSize 0x004C613B mov ebx,[esi+0x30] (node+0x30)"
 ECResMan::RimEntry,0x10,0x1,uint8_t,loadDone,"0x004C7C02 mov [eax+0x10],ecx; FinishRimLoad 0x004C82E0 mov byte [edi+0x34],1 (node+0x34); SetRimState clears it for a state other than 2 (0x004C622A); GetRimLoadState tests it at 0x004C6044"
+EclipseGame,0x3C,0x10,std::list<void*>,scenes,"0x0040AFB6 lea ecx,[edi+0x3c]; call 0x0054B3E0 (list push_back) with the scene instance"
+EclipseGame,0x4C,0x4,Graphics::ISceneInstance*,mainScene,"0x0040AFF3 mov [esi+0x4c],eax in CreateScenes; 0x0040AEAC cmp [edi+0x4c] in CreateScene"
+EclipseGame,0x50,0x4,void*,guiScene,"0x0040B013 mov [esi+0x50],eax (the main scene's slot 0x58 result, named L""GUIScene"" at 0x0040B00C); 0x0040AF49 mov eax,[edi+0x50] handed to SceneCamera::SetScene"
 EffectList,0x0,0x14,struct,sizeof,0x0068979D push 0x14 ; the allocation before the constructor call at 0x006897D9 (constructor 0x00A64880)
 EffectList,0x0,0x4,CGameEffect*,topAnimationEffect,"0x00A6493C mov [esi],edi in AddEffect (0x00A64900) when the new effect's animation priority beats the current one's (0x00A64933)"
 EffectList,0x4,0x10,std::vector<CGameEffect*>,effects,"0x00A64885 lea ecx,[esi+4] ; begin +8 and end +0xC are read with sar 2 at 0x00A64646..0x00A6465E by FindTopAnimationEffect ; 4-byte elements"
@@ -657,6 +660,27 @@ Graphics::ISceneInstance,0xD8,0x4,void*,animManager,"0x0053A185 mov [esi+0xD8],e
 Graphics::ISceneInstance,0xDC,0x4,void*,lightManager,"0x0053A199 mov [esi+0xDC],eax (Create 1)"
 Graphics::ISceneInstance,0xE0,0x4,void*,emitterManager,"0x0053A19E mov [esi+0xE0],eax (Create 2)"
 Graphics::ISceneInstance,0xE4,0x10,ECBase::ECDynArray<GraphicsStructures::Object*>,pendingObjects,0x0053A3A5 and 0x00539775 push and remove here in a simple scene
+Graphics::MaterialObjectInstance,0x0,0xE0,struct,sizeof,0x004F7A45 push 0xE0 before the constructor call at 0x004F7A66
+Graphics::MaterialObjectInstance,0x0,0x4,void*,vftable,"0x004F50B7 mov [esi],0xAF2800"
+Graphics::MaterialObjectInstance,0x4,0x8,ResourceHandle,materialObject,"0x004F50BD call 0x00534A70 on esi+4; read by 0x004F6351 lea ecx,[ecx+4] then SafePointer::Get; the material object whose technique draws"
+Graphics::MaterialObjectInstance,0x4C,0x18,Graphics::TextureParameterMap,textureParameters,"0x004F50FD lea ecx,[esi+0x4c]; call 0x004F4D90; map head +0x50, size +0x54 (0x004F5E5C, 0x004F5E42); value ResourceHandle (size 8 in ProvideParameter kind 0 at 0x004F30A6); extent to the next member at +0x64"
+Graphics::MaterialObjectInstance,0x64,0x14,"std::map<unsigned int,void*>",vector4ArrayProviders,"0x004F5102 lea edi,[esi+0x64]; 0x004F5111 head node at +4, size at +8 (0x004F5128 mov [edi+8],ebp); read for kind 3 at 0x004F30EE; value is a provider whose slot 1 returns the array"
+Graphics::MaterialObjectInstance,0x78,0x14,"std::map<unsigned int,void*>",vector4Providers,"0x004F512E lea edi,[esi+0x78]; read for kind 2 at 0x004F30B0 (size 0x10); GetVector4Parameter 0x004F4174 add esi,0x78"
+Graphics::MaterialObjectInstance,0x8C,0x14,"std::map<unsigned int,void*>",floatProviders,"0x004F515A lea edi,[esi+0x8c]; read for kind 1 at 0x004F3146 (size 4); GetFloatParameter 0x004F2FF7 add esi,0x8c; SetFloatParameter 0x004F4007"
+Graphics::MaterialObjectInstance,0xA0,0x14,"std::map<unsigned int,void*>",matrixProviders,"0x004F5189 lea edi,[esi+0xa0]; read for kind 5 at 0x004F3180 (size 0x40); SetMatrixParameter 0x004F40D8"
+Graphics::MaterialObjectInstance,0xB4,0x2C,Graphics::MaterialStateOverride,stateOverride,"0x004F51B8 lea edi,[esi+0xb4]; call 0x004F4D20; callers pass instance+0xB4 as this at 0x005CC89E (add esi,0xb4) and 0x00A61386; size is the gap to the allocation's 0xE0"
+Graphics::MaterialOpacity::PassBinding,0x0,0x4,void*,pass,"0x004F549A mov [eax],edx (the pass pointer from the technique); 0x004F5760 mov ecx,[esi] before SetStateOverride"
+Graphics::MaterialOpacity::PassBinding,0x0,0xC,struct,sizeof,"0x004F4C96 push 0xC (element size to __ehvec_ctor); 0x004F4C59 mov edx,0xC"
+Graphics::MaterialOpacity::PassBinding,0x4,0x8,Multithreading::SynchSafePointer,states,"0x004F54BF call 0x004621C0 on element+4; destroyed by 0x004F3330 (add ecx,4; jmp 0x00538F30); holds the private copy of the pass's state set"
+Graphics::MaterialPassStateArray,0x0,0x4,Graphics::MaterialOpacity::PassBinding*,data,"0x004F4C4D mov [ebp],edi (the element block after the count dword); freed from data-4 at 0x004F351F"
+Graphics::MaterialPassStateArray,0x4,0x4,unsigned int,count,"0x004F4C50 mov [ebp+4],esi; compared at 0x004F5483 cmp esi,[edi+4]"
+Graphics::MaterialStateOverride,0x0,0x4,int,mode,"0x004F4D4F mov [esi],6 (idle); 0x004F44CC mov [esi],eax in Reset; 0x004F4907 cmp eax,[esi] in SetMaterialOpacity; modes seen 0, 2, 4, 5, 6"
+Graphics::MaterialStateOverride,0x4,0x10,"std::vector<std::pair<int,int>>",states,"0x004F4D55 call 0x004F3B40 on esi+4; push_back at 0x004F439E; begin +8 and end +0xC read at 0x004F32A4 and 0x004F32BF; pairs are (DS_ state id, value)"
+Graphics::MaterialStateOverride,0x14,0x4,void*,builtForTechnique,"0x004F5425 mov [edi+0x14],eax (the technique 0x0053CC40 returned); compared at 0x004F5735 and zeroed by AddState at 0x004F43A3 and ClearStates at 0x004F44AD; meaning INFERRED"
+Graphics::MaterialStateOverride,0x18,0x4,Graphics::MaterialObjectInstance*,instance,"0x004F25A4 mov [ecx+0x18],eax (the setter called with the instance at 0x004F51DE); tested at 0x004F5723"
+Graphics::MaterialStateOverride,0x1C,0x1,unsigned char,dirty,0x004F4D68 clears; 0x004F4927 sets it in SetMaterialOpacity; 0x004F322D clears it in End; read at 0x004F572A and in Render 0x004F58B4 (instance+0xD0)
+Graphics::MaterialStateOverride,0x20,0x8,Graphics::MaterialPassStateArray,passBindings,"0x004F4D5B lea ecx,[esi+0x20]; call 0x004F4C20; data pointer +0 and count +4 (0x004F4C4D, 0x004F4C50); read by Apply 0x004F5748 (count +0x24 of the override)"
+Graphics::MaterialStateOverride,0x28,0x4,float*,opacityValue,"0x004F43E3 cmp [esi+0x28],0; 0x004F443B stores the pointer GetFloatParameter returned for mml_fOpacityMultiplier; 0x004F4476 mov ecx,[esi+0x28] then fstp [ecx]; Render reads it at 0x004F58D3 (instance+0xDC)"
 GraphicsStructures::CSpeedTreeWind,0x0,0xE0,struct,sizeof,"0x00A57631 push 0xE0 ; Create (0x00A57610) allocation, constructor 0x00A57490 called at 0x00A57655"
 GraphicsStructures::CSpeedTreeWind,0x0,0x4,void*,vftable,"0x00A574C4 mov dword [esi],0xB593B4"
 GraphicsStructures::CSpeedTreeWind,0x4,0x4,float,maxBendAngle,0x00A55D14 fstp [ecx+4] in SetMaxBendAngle (0x00A55D10)
@@ -1027,6 +1051,9 @@ Math::SineFade,0x10,0x4,float,saved,"0x005DC7FE fstp [esi+0x2cc] in the applicat
 Math::SineFade,0x14,0x4,float,elapsed,"0x005CC4F2 fadd [esi+0x14] in Advance: adds the step, clamped to the duration (0x005CC50F); 0x005D8200 fst [esi+0x2d0] in SetTimeScale zeroes it"
 Math::SineFade,0x18,0x4,float,fraction,"0x005CC520 fst [esi+0x18] in Advance: elapsed over duration (0x005CC515), passed to the curve"
 Math::SineFade,0x1C,0x1,uint8_t,active,"0x005CC533 mov byte ptr [esi+0x1c],0 in Advance when the fraction reaches 1; SetTimeScale sets it 1 at 0x005D8217 (ramp above 0, current left to Advance) or 0 at 0x005D822E (current set at once)"
+Math::Sphere,0x0,0x4,void*,vftable,"0x004D4F4D mov [eax],0xAE70DC"
+Math::Sphere,0x10,0x10,Vector4,center,"0x004D4F53 fst [eax+0x10] and +0x14, +0x18 (ctor); 0x004D4F86-0x004D4F92 SetFromVector4; 0x004D4FD9 movaps [eax+0x10] in operator="
+Math::Sphere,0x20,0x4,float,radius,0x004D4F5E fld1 then fstp [eax+0x20] in the ctor (default radius 1.0); 0x004D4F98 in SetFromVector4
 MessageRegistry,0x4,0x4,void*,rowsBegin,"0x004D7F43 mov ecx,[esi+4] (GetRow); rows are 16 bytes (0x004D7F5D shl eax,4)"
 MessageRegistry,0x8,0x4,void*,rowsEnd,"0x004D7F4B mov eax,[esi+8]"
 MessageRegistry,0x14,0x4,void*,postedQueue,"0x004D8C60 add ecx,0x14; jmp deque push_back (block of two 8-byte elements, 0x004D8C21 push 0x10)"
