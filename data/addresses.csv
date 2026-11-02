@@ -2238,7 +2238,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2237,function,Vector4::Normalized,0x00451a30,0x004992c0,0x00451a30
 2238,function,Vector::Cross,0x00451af0,0x00a33760,0x00451af0
 2239,function,Math::Matrix4x4f::operator=,0x00451b30,0x00495810,0x00451b30
-2240,function,Matrix44::Multiply,0x00451b60,0x004b0910,0x00451b60
+2240,function,Math::Matrix4x4f::Multiply,0x00451b60,0x004b0910,0x00451b60
 2241,function,Math::CollisionObject::`scalar deleting destructor',0x00451bf0,0x004ad730,0x00451bf0
 2242,function,Math::AABB::AABB,0x00451c10,0x004ad6d0,0x00451c10
 2243,function,Math::CollisionObject::CollisionObject,0x00451c60,0x004ad720,0x00451c60
@@ -2251,7 +2251,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2250,function,Renderer::ShadowMaps::Partition::BuildFrustum,0x00451db0,0x0088d210,0x00451db0
 2251,function,Math::CollisionObject::operator=,0x004522e0,0x007a7c40,0x004522e0
 2252,function,Renderer::ShadowMaps::Partition::BuildShadowMatrices,0x004523b0,0x0088d740,0x004523b0
-2253,function,Matrix44::OrthographicOffCenter,0x004524d0,0x0088d860,0x004524d0
+2253,function,Math::Matrix4x4f::OrthographicOffCenter,0x004524d0,0x0088d860,0x004524d0
 2254,function,Renderer::ShadowMaps::Partition::AddSphere,0x00452570,0x0088d900,0x00452570
 2255,function,Renderer::ShadowMaps::ResetPartitions,0x00452910,0x0088dca0,0x00452910
 2256,function,Renderer::ShadowMaps::SetCamera,0x00452960,0x0088dcf0,0x00452960
@@ -2742,7 +2742,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2741,function,Renderer::RenderContext::RenderContext,0x00466120,0x0089a610,0x00466120
 2742,function,Renderer::EclipseUmbraScene::BuildSceneDatabase::NullCommander::~NullCommander,0x004662a0,0x0089f830,0x004662a0
 2743,function,Renderer::EclipseUmbraScene::BuildSceneDatabase::NullCommander::`scalar deleting destructor',0x004662b0,0x0089f840,0x004662b0
-2744,function,Matrix44::Inverse,0x004662d0,0x0089f860,0x004662d0
+2744,function,Math::Matrix4x4f::Inverse,0x004662d0,0x0089f860,0x004662d0
 2745,function,Renderer::EclipseUmbraScene::InvokeObjectVfunction41,0x00466820,0x0089fdb0,0x00466820
 2746,function,Renderer::EclipseUmbraScene::ReleaseUmbraBinding,0x00466840,0x0089fdd0,0x00466840
 2747,function,Renderer::EclipseUmbraScene::BuildSceneDatabase,0x00466880,0x0089fe10,0x00466880
@@ -4937,10 +4937,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4936,function,Math::Matrix4x4f::PerspectiveFovRH,0x004d3a60,0x0081a1c0,0x004d3a60
 4937,function,Math::Matrix4x4f::FromScale,0x004d3ae0,0x0081a240,0x004d3ae0
 4938,function,Math::Matrix4x4f::FromTranslation,0x004d3b30,0x0081a290,0x004d3b30
-4939,function,Matrix44::TranslationFromVector4,0x004d3b80,0x0081a2e0,0x004d3b80
+4939,function,Math::Matrix4x4f::TranslationFromVector4,0x004d3b80,0x0081a2e0,0x004d3b80
 4940,function,Math::Matrix4x4f::FromAxisAngle,0x004d3bd0,0x0081a330,0x004d3bd0
-4941,function,Matrix44::FromQuaternionTranslation,0x004d3d00,0x0081a460,0x004d3d00
-4942,function,Matrix44::FromQuaternionTranslationScale,0x004d3e30,0x0081a590,0x004d3e30
+4941,function,Math::Matrix4x4f::FromQuaternionTranslation,0x004d3d00,0x0081a460,0x004d3d00
+4942,function,Math::Matrix4x4f::FromQuaternionTranslationScale,0x004d3e30,0x0081a590,0x004d3e30
 4943,function,Math::Matrix4x4f::InverseScaled,0x004d3f80,0x0081a6e0,0x004d3f80
 4944,function,"std::basic_ostream<char,std::char_traits<char>>::flush",0x004d4060,0x004791e0,0x004d4060
 4945,function,"std::basic_ostream<char,std::char_traits<char>>::sentry::sentry",0x004d40b0,0x0040aa10,0x004d40b0
@@ -6699,7 +6699,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 6698,function,GUI::ScaleformManager::RegisterMessageHandlers,0x005166c0,0x007be070,0x005166c0
 6699,function,GUI::ScaleformManager::Update,0x00516760,0x007be110,0x00516760
 6700,function,std::vector<Multithreading::SynchSafePointer>::_Tidy,0x00516920,0x007decb0,0x00516920
-6701,function,std::vector<Multithreading::SynchSafePointer>::_Tidy (thunk),0x00516970,0x0074f560,0x00516970
+6701,function,std::vector<Multithreading::SynchSafePointer>::_Tidy,0x00516970,0x0074f560,0x00516970
 6702,function,"std::_Uninit_copy<Multithreading::SynchSafePointer*,Multithreading::SynchSafePointer*>",0x00516980,0x007dee20,0x00516980
 6703,function,,0x005169e9,0x007dee89,0x005169e9
 6704,function,GUI::ScaleformManager::LoadImage,0x00516a20,0x007be2d0,0x00516a20
@@ -7579,7 +7579,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 7578,function,GraphicsStructures::ObjectNodeLightProbe::GetMemoryFootprint,0x0053c9a0,0x0076ba10,0x0053c9a0
 7579,function,GraphicsStructures::ObjectNodeAmbientLight::GetMemoryFootprint,0x0053c9e0,0x0076ba50,0x0053c9e0
 7580,function,Math::FastSqrtNoRefine,0x0053ca20,0x0076bad0,0x0053ca20
-7581,function,Matrix44::GetTranslationDivW,0x0053ca70,0x0076bb20,0x0053ca70
+7581,function,Math::Matrix4x4f::GetTranslationDivW,0x0053ca70,0x0076bb20,0x0053ca70
 7582,function,GraphicsStructures::ILight::`scalar deleting destructor',0x0053cad0,0x0076bb80,0x0053cad0
 7583,function,GraphicsStructures::ObjectNodeLight::ObjectNodeLight,0x0053caf0,0x0076bba0,0x0053caf0
 7584,function,GraphicsStructures::ObjectNodeLight::`scalar deleting destructor'`adjustor{4}',0x0053cb70,0x0076bc40,0x0053cb70
@@ -8443,7 +8443,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 8442,function,GraphicsStructures::SplatObjectVertexPool::SplatObjectVertexPool,0x00562760,0x007a9170,0x00562760
 8443,function,GraphicsStructures::SplatObjectVertexPool::~SplatObjectVertexPool,0x00562aa0,0x007a94b0,0x00562aa0
 8444,function,GraphicsStructures::SplatObjectVertexPool::AllocateSlot,0x00562b40,0x007a9550,0x00562b40
-8445,function,GraphicsStructures::SplatObjectVertexPool::SetSlotColour,0x00562c90,0x007a96a0,0x00562c90
+8445,function,GraphicsStructures::SplatObjectVertexPool::SetSlotColor,0x00562c90,0x007a96a0,0x00562c90
 8446,function,GraphicsStructures::SplatObjectVertexPool::ReleaseSlot,0x00562db0,0x007a97c0,0x00562db0
 8447,function,GraphicsStructures::SplatObjectVertexPool::`scalar deleting destructor',0x00562de0,0x007a97f0,0x00562de0
 8448,function,GraphicsStructures::CrustHookMap::FindSlot,0x00562e00,0x0076c510,0x00562e00
@@ -8835,9 +8835,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 8834,function,std::_Destroy_range<?>,0x00574c10,0x007129e0,0x00574c10
 8835,function,std::_Uninit_fill_n<?>,0x00574c30,0x00712a60,0x00574c30
 8836,function,std::_Tree<?>::_Erase,0x00574c70,0x00753a00,0x00574c70
-8837,function,Vec8_BackOrDefault_0x00C31C1C,0x00574cb0,0x00753a40,0x00574cb0
-8838,function,Vec8_BackOrDefault_0x00C31FBC,0x00574d10,0x00753aa0,0x00574d10
-8839,function,Vec8_BackOrDefault_0x00C31BEC,0x00574d70,0x00753b00,0x00574d70
+8837,function,Core::VectorBackOrDefault<?>,0x00574cb0,0x00753a40,0x00574cb0
+8838,function,Core::VectorBackOrDefault<?>,0x00574d10,0x00753aa0,0x00574d10
+8839,function,Core::VectorBackOrDefault<?>,0x00574d70,0x00753b00,0x00574d70
 8840,function,Renderer::LightStatePool::Release,0x00574dd0,0x00753b60,0x00574dd0
 8841,function,Renderer::LightStatePool::ReleaseAll,0x00574ef0,0x00753c80,0x00574ef0
 8842,function,std::_Destroy_range<?>,0x00574f40,0x004edc30,0x00574f40
@@ -12059,7 +12059,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 12058,function,Notifications::FindByType,0x00628500,0x006a2970,0x00628500
 12059,function,Alert::`scalar deleting destructor',0x00628570,0x006a29e0,0x00628570
 12060,function,std::vector<unsigned int>::back,0x00628590,0x004b7550,0x00628590
-12061,function,std::vector<void*>::_Tidy (thunk),0x006285e0,0x0068c680,0x006285e0
+12061,function,std::vector<void*>::_Tidy,0x006285e0,0x0068c680,0x006285e0
 12062,function,ECBase::ECDynArray<unsigned int>::Back,0x006285f0,0x004b7760,0x006285f0
 12063,function,AlertPool::Release,0x00628650,0x006a2a00,0x00628650
 12064,function,AlertPool::ReleaseAll,0x00628770,0x006a2b20,0x00628770
@@ -14214,7 +14214,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14213,function,CCObject::~CCObject,0x0069a140,0x0058b450,0x0069a140
 14214,function,CCObject::DispatchAnimationEvents,0x0069a600,0x0058b910,0x0069a600
 14215,function,CCObject::QueueAnimationRequest,0x0069a6e0,0x0058b9f0,0x0069a6e0
-14216,function,CCObject::QueueAnimationRequest_copy,0x0069a740,0x0058ba50,0x0069a740
+14216,function,CCObject::QueueAnimationRequest,0x0069a740,0x0058ba50,0x0069a740
 14217,function,CCObject::ApplyEffectsEmitFlag,0x0069a7a0,0x0058bab0,0x0069a7a0
 14218,function,CCObject::AppendModelObjects,0x0069a920,0x0058bc30,0x0069a920
 14219,function,CCObject::SetVisible,0x0069a950,0x0058bc60,0x0069a950
@@ -14432,7 +14432,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14431,function,CCCreature::SetShownInRoom,0x006a0ea0,0x00591fa0,0x006a0ea0
 14432,function,CCCreature::ForEachHandSlotItem,0x006a0ed0,0x00591fd0,0x006a0ed0
 14433,function,CCCreature::SetEffectsActive,0x006a0f10,0x00592010,0x006a0f10
-14434,function,ApplyFacialHairColour,0x006a0fa0,0x005920a0,0x006a0fa0
+14434,function,ApplyFacialHairColor,0x006a0fa0,0x005920a0,0x006a0fa0
 14435,function,RemoveEquipmentPart,0x006a1090,0x00592190,0x006a1090
 14436,function,AnimBase::LoadAppearanceModels,0x006a1180,0x00592280,0x006a1180
 14437,function,AnimBaseWield::LoadWeaponAndApplyParts,0x006a1240,0x00592340,0x006a1240
@@ -14682,7 +14682,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 14681,function,CCCreature::OnAttackImpactReactionEvent,0x006ab040,0x0059c270,0x006ab040
 14682,function,CCCreature::HasLootableBodyBag,0x006ab100,0x0059c330,0x006ab100
 14683,function,ApplyTattooTintParameters,0x006ab170,0x0059c3a0,0x006ab170
-14684,function,CopyTintBlockToTintMaskColours,0x006ab2a0,0x0059c4d0,0x006ab2a0
+14684,function,CopyTintBlockToTintMaskColors,0x006ab2a0,0x0059c4d0,0x006ab2a0
 14685,function,CCCreature::HandleMessage_SwitchWeaponSetMessage,0x006ab380,0x0059c5b0,0x006ab380
 14686,function,CCCreature::HandleMessage_SwitchWeaponSetNowMessage,0x006ab3c0,0x0059c5f0,0x006ab3c0
 14687,function,CCCreature::GetOrCreateSubActionProgress,0x006ab440,0x0059c670,0x006ab440
@@ -15131,7 +15131,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15130,function,RefreshHeroesMessage::GetType,0x006cb430,0x00508b10,0x006cb430
 15131,function,RefreshHeroesForImportMessage::GetType,0x006cb470,0x00508bb0,0x006cb470
 15132,function,SelectHeroMessage::GetType,0x006cb4b0,0x00508c50,0x006cb4b0
-15133,function,SaveLoadProxy::SaveEntry::SaveEntry (copy),0x006cb4f0,0x005bcef0,0x006cb4f0
+15133,function,SaveLoadProxy::SaveEntry::SaveEntry_copy,0x006cb4f0,0x005bcef0,0x006cb4f0
 15134,function,std::allocator<SaveLoadProxy::SaveEntry>::allocate,0x006cb570,0x00640300,0x006cb570
 15135,function,"std::_Copy_opt<SaveLoadProxy::SaveEntry*,SaveLoadProxy::SaveEntry*>",0x006cb5d0,0x005bcf90,0x006cb5d0
 15136,function,"std::_Copy_backward_opt<SaveLoadProxy::SaveEntry*,SaveLoadProxy::SaveEntry*>",0x006cb630,0x005bcff0,0x006cb630
@@ -17770,7 +17770,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 17769,function,CAppearance::SlotOfInventorySlot,0x007480d0,0x00653f30,0x007480d0
 17770,function,CAppearance::EquipmentPartName,0x00748120,0x00653f80,0x00748120
 17771,function,CAppearance::HeadPartName,0x00748160,0x00653fc0,0x00748160
-17772,function,TintBlock::CopyColours,0x007481a0,0x00654000,0x007481a0
+17772,function,TintBlock::CopyColors,0x007481a0,0x00654000,0x007481a0
 17773,function,CAppearance::ClearSlots,0x00748240,0x006540a0,0x00748240
 17774,function,TintBlock::TintBlock,0x00748280,0x00654150,0x00748280
 17775,function,AppearanceCache::AppearanceEntry::Load,0x00748370,0x00654240,0x00748370
@@ -17783,8 +17783,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 17782,function,CAppearance::GetTattooMaskFile,0x007486c0,0x00654590,0x007486c0
 17783,function,CAppearance::GetBodyTintMaskFile,0x00748790,0x00654660,0x00748790
 17784,function,TintFile::GetFileNameFromGdaRow,0x00748860,0x00654730,0x00748860
-17785,function,TintBlock::CopySkinColour,0x007488f0,0x006547c0,0x007488f0
-17786,function,TintBlock::CopyOtherColours,0x00748930,0x00654800,0x00748930
+17785,function,TintBlock::CopySkinColor,0x007488f0,0x006547c0,0x007488f0
+17786,function,TintBlock::CopyOtherColors,0x00748930,0x00654800,0x00748930
 17787,function,CAppearance::ClearInventorySlot,0x007489c0,0x00654890,0x007489c0
 17788,function,CAppearance::SizeFromAprBase,0x00748a40,0x00654980,0x00748a40
 17789,function,CAppearance::ReadFromGff3,0x00748ae0,0x00654a20,0x00748ae0
@@ -18089,11 +18089,11 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 18088,function,Plots::IsTutorialType,0x0075bcf0,0x006a6f50,0x0075bcf0
 18089,function,LocalisedString::ReadGFF4,0x0075bd30,0x006a6f90,0x0075bd30
 18090,function,PlotElem52::PlotElem52,0x0075bde0,0x006a7040,0x0075bde0
-18091,function,LocalisedString::ReadGFF4_2,0x0075be70,0x006a70d0,0x0075be70
+18091,function,LocalisedString::ReadGFF4,0x0075be70,0x006a70d0,0x0075be70
 18092,function,Plots::RunPlotScript,0x0075bea0,0x006a7100,0x0075bea0
 18093,function,std::list<PlotElem52>::_Buynode,0x0075c010,0x006a7270,0x0075c010
 18094,function,Gff4::StructReader::ReadLocalisedString,0x0075c030,0x006a7290,0x0075c030
-18095,function,std::list<PlotElem52>::_Buynode_3,0x0075c0c0,0x006a7320,0x0075c0c0
+18095,function,std::list<PlotElem52>::_Buynode,0x0075c0c0,0x006a7320,0x0075c0c0
 18096,function,Catch_All@0075c13c,0x0075c13c,0x006a739c,0x0075c13c
 18097,function,Gff4::StructReader::GetLocalisedString,0x0075c160,0x006a73c0,0x0075c160
 18098,function,Plots::GetPlotStruct,0x0075c1b0,0x006a7410,0x0075c1b0
@@ -20223,7 +20223,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20222,function,std::vector<GUI::HeadPreset::ModelWeight>::_Tidy,0x007baf20,0x006990c0,0x007baf20
 20223,function,GUI::GUIPaperdoll::RegisterHandler_EquipmentChangedMessage,0x007baf70,0x00699140,0x007baf70
 20224,function,GUI::GUIPaperdoll::RegisterHandler_CharGenAssignAbilityMessage,0x007baff0,0x006991c0,0x007baff0
-20225,function,GUI::GUIPaperdoll::Shutdown (thunk),0x007bb080,0x00699280,0x007bb080
+20225,function,GUI::GUIPaperdoll::Shutdown,0x007bb080,0x00699280,0x007bb080
 20226,function,GUI::GUIPaperdoll::HandleMessage_LoadSeededCharactersMessage,0x007bb090,0x00699290,0x007bb090
 20227,function,GUI::GUIPaperdoll::HandleMessage_UpdatePaperDollFromSeededCharacterMessage,0x007bb3a0,0x006995a0,0x007bb3a0
 20228,function,GUI::GUIPaperdoll::Setup,0x007bb890,0x00699a90,0x007bb890
@@ -20739,7 +20739,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20738,function,std::list<Elem36>::_Buynode,0x007cfeb0,0x006b7230,0x007cfeb0
 20739,function,std::_Tree<Elem88>::_Buynode,0x007cfed0,0x006b7250,0x007cfed0
 20740,function,std::_Tree<Elem52>::_Buynode,0x007cff10,0x006b7290,0x007cff10
-20741,function,std::_Tree<Elem52>::_Buynode_5,0x007cff50,0x006b72d0,0x007cff50
+20741,function,std::_Tree<Elem52>::_Buynode,0x007cff50,0x006b72d0,0x007cff50
 20742,function,Catch_All@007cffcd,0x007cffcd,0x006b734d,0x007cffcd
 20743,function,std::_Copy<ExtendedGad*>,0x007cfff0,0x006b73b0,0x007cfff0
 20744,function,std::_Uninit_fill_n<Elem24*>,0x007d0050,0x0048da70,0x007d0050
@@ -33316,9 +33316,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33315,function,Graphics::IWindInstance::`scalar deleting destructor',0x00a55eb0,0x0076d9d0,0x00a55eb0
 33316,function,Graphics::IWindInstanceContainer::~IWindInstanceContainer,0x00a55ed0,0x0076d9f0,0x00a55ed0
 33317,function,Graphics::IWindInstanceContainer::`scalar deleting destructor',0x00a55ee0,0x0076da00,0x00a55ee0
-33318,function,Matrix44::Matrix44,0x00a55f00,0x0076da20,0x00a55f00
-33319,function,Matrix44::RotateAxis,0x00a55f40,0x0076da60,0x00a55f40
-33320,function,Matrix44::Multiply3x3,0x00a56050,0x0076db70,0x00a56050
+33318,function,Math::Matrix4x4f::Matrix4x4f,0x00a55f00,0x0076da20,0x00a55f00
+33319,function,Math::Matrix4x4f::RotateAxis,0x00a55f40,0x0076da60,0x00a55f40
+33320,function,Math::Matrix4x4f::Multiply3x3,0x00a56050,0x0076db70,0x00a56050
 33321,function,GraphicsStructures::CSpeedTreeWind::WindInstance::Smoother::Advance,0x00a56140,0x0076dc60,0x00a56140
 33322,function,GraphicsStructures::CSpeedTreeWind::WindInstance::Oscillation::Fill,0x00a562b0,0x0076ddd0,0x00a562b0
 33323,function,Core::PointerArray::Free,0x00a56370,0x0076de90,0x00a56370
@@ -33329,18 +33329,18 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33328,function,GraphicsStructures::CSpeedTreeWind::SetStrengthAndDirection,0x00a56450,0x0076df80,0x00a56450
 33329,function,GraphicsStructures::CSpeedTreeWind::GetWindInstance,0x00a566c0,0x0076e1f0,0x00a566c0
 33330,function,GraphicsStructures::CSpeedTreeWind::GetStrengthAndDirection,0x00a566f0,0x0076e220,0x00a566f0
-33331,function,Matrix44Array::Matrix44Array,0x00a56710,0x0076e240,0x00a56710
-33332,function,Matrix44Array::Clear,0x00a567b0,0x0076e2e0,0x00a567b0
-33333,function,Matrix44Array::Resize,0x00a567f0,0x0076e320,0x00a567f0
-33334,function,Matrix44::RotateX,0x00a56900,0x0076e430,0x00a56900
-33335,function,Matrix44::RotateY,0x00a569b0,0x0076e4e0,0x00a569b0
-33336,function,Matrix44::RotateZ,0x00a56a60,0x0076e590,0x00a56a60
+33331,function,Math::Matrix4x4fArray::Matrix4x4fArray,0x00a56710,0x0076e240,0x00a56710
+33332,function,Math::Matrix4x4fArray::Clear,0x00a567b0,0x0076e2e0,0x00a567b0
+33333,function,Math::Matrix4x4fArray::Resize,0x00a567f0,0x0076e320,0x00a567f0
+33334,function,Math::Matrix4x4f::RotateX,0x00a56900,0x0076e430,0x00a56900
+33335,function,Math::Matrix4x4f::RotateY,0x00a569b0,0x0076e4e0,0x00a569b0
+33336,function,Math::Matrix4x4f::RotateZ,0x00a56a60,0x0076e590,0x00a56a60
 33337,function,GraphicsStructures::CSpeedTreeWind::WindInstance::SetMatrixAndLeafAngleCounts,0x00a56b10,0x0076e640,0x00a56b10
 33338,function,GraphicsStructures::CSpeedTreeWind::WindInstance::Advance,0x00a56bc0,0x0076e6f0,0x00a56bc0
 33339,function,GraphicsStructures::CSpeedTreeWind::~CSpeedTreeWind,0x00a57150,0x0076ec80,0x00a57150
 33340,function,GraphicsStructures::CSpeedTreeWind::SetNumWindMatricesAndLeafAngles,0x00a571f0,0x0076ed20,0x00a571f0
 33341,function,GraphicsStructures::CSpeedTreeWind::Advance,0x00a57270,0x0076eda0,0x00a57270
-33342,function,Matrix44Array::Clear,0x00a572d0,0x0076ee00,0x00a572d0
+33342,function,Math::Matrix4x4fArray::Clear,0x00a572d0,0x0076ee00,0x00a572d0
 33343,function,GraphicsStructures::CSpeedTreeWind::WindInstance::WindInstance,0x00a572e0,0x0076ee10,0x00a572e0
 33344,function,GraphicsStructures::CSpeedTreeWind::WindInstance::GetOwnerParameters,0x00a573f0,0x0076ef20,0x00a573f0
 33345,function,GraphicsStructures::CSpeedTreeWind::WindInstance::~WindInstance,0x00a57400,0x0076ef30,0x00a57400
@@ -33466,8 +33466,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33465,function,AnimBase::SetModelFlags,0x00a5d710,0x00703eb0,0x00a5d710
 33466,function,AnimBase::ClearModelFlags,0x00a5d720,0x00703ec0,0x00a5d720
 33467,function,AnimBase::SetTintColor,0x00a5d730,0x00703ed0,0x00a5d730
-33468,function,AnimBase::SetColourAlpha,0x00a5d780,0x00703f20,0x00a5d780
-33469,function,AnimBase::SetColour,0x00a5d7a0,0x00703f40,0x00a5d7a0
+33468,function,AnimBase::SetColorAlpha,0x00a5d780,0x00703f20,0x00a5d780
+33469,function,AnimBase::SetColor,0x00a5d7a0,0x00703f40,0x00a5d7a0
 33470,function,AnimBase::ForwardModel134,0x00a5d7e0,0x00703f80,0x00a5d7e0
 33471,function,AnimBase::GetModelStateBits,0x00a5d800,0x00703fa0,0x00a5d800
 33472,function,AnimBase::SetAnimationPaused,0x00a5d820,0x00703fc0,0x00a5d820
@@ -33527,7 +33527,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33526,function,AnimBase::SetCurrentAnimationByName,0x00a60220,0x00706860,0x00a60220
 33527,function,AnimBase::KeepClipEventHandle,0x00a60260,0x007068a0,0x00a60260
 33528,function,AnimBase::ReleaseClipAttachments,0x00a603c0,0x00706a00,0x00a603c0
-33529,function,AnimBase::SetTintMaskColours,0x00a604a0,0x00706ae0,0x00a604a0
+33529,function,AnimBase::SetTintMaskColors,0x00a604a0,0x00706ae0,0x00a604a0
 33530,function,AnimBase::SetWeight,0x00a605e0,0x00706c20,0x00a605e0
 33531,function,AnimBase::StopAnimation,0x00a606b0,0x00706cf0,0x00a606b0
 33532,function,AnimBase::StopClipGroup,0x00a60740,0x00706d80,0x00a60740
@@ -33688,8 +33688,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 33687,function,AnimBaseWield::ClearModelFlags,0x00a66f60,0x0070fcb0,0x00a66f60
 33688,function,AnimBaseWield::SetOpacity,0x00a66fb0,0x0070fd00,0x00a66fb0
 33689,function,AnimBaseWield::SetTintColor,0x00a67010,0x0070fd60,0x00a67010
-33690,function,AnimBaseWield::SetColourAlpha,0x00a67080,0x0070fdd0,0x00a67080
-33691,function,AnimBaseWield::SetColour,0x00a670d0,0x0070fe20,0x00a670d0
+33690,function,AnimBaseWield::SetColorAlpha,0x00a67080,0x0070fdd0,0x00a67080
+33691,function,AnimBaseWield::SetColor,0x00a670d0,0x0070fe20,0x00a670d0
 33692,function,AnimBaseWield::GetModelStateBits,0x00a67130,0x0070fe80,0x00a67130
 33693,function,AnimBaseWield::SetFlaggedMeshValue,0x00a67180,0x0070fed0,0x00a67180
 33694,function,AnimBaseWield::ForwardModel37,0x00a671d0,0x0070ff20,0x00a671d0
