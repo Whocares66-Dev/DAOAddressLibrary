@@ -16357,3 +16357,91 @@ address,what,value,why
 0x005EC7A0,signature,void __cdecl f(void),"no arguments, plain ret 0x005ECA8E, caller 0x00410D30"
 0x006C9E80,signature,void __cdecl f(void),"plain ret, no args 0x006C9EE8"
 0x00842460,signature,"void* __thiscall f(void* this, void* line, bool quiet)","ret 8, ecx saved to edi 0x00842498; returns 0xC39C78"
+0x006E2FD0,signature,void __cdecl f(void),"plain ret, no args; reads 0xC35A30"
+0x007636A0,signature,void __thiscall f(void *this),"plain ret, ecx kept in esi"
+0x00763C10,signature,void * __stdcall f(void *out),"ret 4, ecx overwritten before read (0x00763C34)"
+0x00763CD0,signature,"void __thiscall f(void *this, float dt)","ret 4, ecx kept in esi at 0x00763CDB; float at [ebp+8]"
+0x0087B970,signature,"bool __thiscall f(void *this, unsigned int index, unsigned int *key)","ret 8, reads the vector at [edi+8]/[edi+0xC]"
+0x0087C840,signature,"void * __thiscall f(void *this, unsigned int n)","ret 4, clears [this+4..+0xC]"
+0x0087C8C0,signature,"void * __thiscall f(void *this, unsigned int n)","ret 4, clears [this+4..+0xC]"
+0x0087CFB0,signature,"void * __thiscall f(void *this, int a, int b, int c, int d)","ret 0x10, ecx kept in esi"
+0x0087D050,signature,void __thiscall f(void *this),"plain ret, ecx kept in esi"
+0x0087D3A0,signature,"void * __thiscall f(void *this, void *key)","ret 4, ecx kept in edi (0x0087D3C6)"
+0x0087D480,signature,"unsigned int __thiscall f(void *this, unsigned int *word, unsigned int *state, void *text, unsigned char *flag)",ret 0x10 (0x0087D599)
+0x0087D9C0,signature,void * __cdecl f(void),"plain ret, no args, ecx not read"
+0x0087D9E0,signature,"void __thiscall f(void *this, void *sink)","ret 4, edi=ecx"
+0x0087DA50,signature,"void __thiscall f(void *this, unsigned int *word, void *out)",ret 8 (0x0087DAB2)
+0x0087DAC0,signature,"void * __thiscall f(void *this, int a, int b, int c, int d)","ret 0x10, esi=ecx"
+0x0087DB00,signature,void __thiscall f(void *this),"plain ret, ebx=ecx"
+0x0087DBD0,signature,"void __thiscall f(void *this, void *value, unsigned int index)",ret 8 (0x0087DC3E)
+0x0087DC50,signature,void __thiscall f(void *this),"plain ret, edi=ecx"
+0x0087DD00,signature,void * __thiscall f(void *this),"plain ret, esi=ecx"
+0x0087DE40,signature,void * __thiscall f(void *this),"lea eax,[ecx+0x150]"
+0x0087DE50,signature,"bool __thiscall f(void *this, int *scancode)","ret 4, ecx used in the address"
+0x0087DF60,signature,bool __stdcall f(int *scancode),"ret 4, ecx never read"
+0x0087DFA0,signature,unsigned int __thiscall f(void *this),"plain ret, ecx passed on to 0x0087DE50"
+0x0087E050,signature,"bool __thiscall f(void *this, unsigned int *word)","ret 4, esi=ecx"
+0x0087E0E0,signature,"void __thiscall f(void *this, unsigned int *word, void *out)","ret 8, ebx=ecx"
+0x0087E300,signature,"void __cdecl f(unsigned short *first, unsigned short *last, unsigned short *value)","stack arguments, plain ret (0x0087E31F)"
+0x0087E320,signature,"void __cdecl f(unsigned short *dest, unsigned int count, unsigned short *value)","stack arguments, plain ret (0x0087E346)"
+0x0087EA50,signature,"void __thiscall f(void *this, unsigned short *value)",ret 4 (0x0087EACD)
+0x0087EE80,signature,"void __thiscall f(void *this, void *sink)","ret 4, edi=ecx"
+0x0087F210,signature,"void __thiscall f(void *this, unsigned int *mask, void *sink)","ret 8, ebp=ecx"
+0x0087F2A0,signature,"void __thiscall f(void *this, unsigned int *mask, void *sink)","ret 8, ebp=ecx"
+0x00880520,signature,"void * __thiscall f(void *this, unsigned int *word, unsigned int *state, unsigned int timestamp, unsigned int sequence)",ret 0x10 (0x00880545)
+0x00880550,signature,"void __thiscall f(void *this, unsigned int *out)","ret 4, reads [ecx],[ecx+4]"
+0x008807B0,signature,"void * __thiscall f(void *this, void *out)","ret 4, ecx used as this+4"
+0x00880F80,signature,"void * __thiscall f(void *this, void *out, unsigned int *key)",ret 8 (0x00880FE6)
+0x00881EE0,signature,"void * __thiscall f(void *this, unsigned int *word)","ret 4, esi=ecx"
+0x00882160,signature,"void * __thiscall f(void *this, int a, int b, int c, int d, int e, int f, int g)","ret 0x1C (a std::wstring by value), esi=ecx"
+0x00882200,signature,"void * __thiscall f(void *this, unsigned int defaultValue)","ret 4, esi=ecx"
+0x00882280,signature,void * __thiscall f(void *this),"plain ret, esi=ecx"
+0x008822F0,signature,void __thiscall f(void *this),"plain ret, esi=ecx"
+0x0088E6A0,signature,void * __cdecl f(void *node),"plain ret, arg [esp+4], ecx not read"
+0x0088E6C0,signature,void * __cdecl f(void *node),"plain ret, arg [esp+4], ecx not read"
+0x0088E6E0,signature,void __thiscall f(void *this),esi=ecx
+0x0088E760,signature,"void __thiscall f(void *this, void *node)","ret 4, reads [ecx+4]"
+0x0088E7C0,signature,"void __thiscall f(void *this, void *node)","ret 4, reads [ecx+4]"
+0x0088E820,signature,void __thiscall f(void *this),esi=ecx
+0x0088E8C0,signature,"void * __stdcall f(void *left, void *parent, void *right, void *value, unsigned char colour)","ret 0x14, ecx never read"
+0x0088E900,signature,"void * __stdcall f(void *left, void *parent, void *right, void *value, unsigned char colour)","ret 0x14, ecx never read"
+0x0088E9B0,signature,void * __cdecl f(void),"plain ret, no args"
+0x0088E9F0,signature,"void * __thiscall f(void *this, void *key)","ret 4, reads [ecx+4]"
+0x0088EAC0,signature,"void * __thiscall f(void *this, void *node, void *parent)","ret 8, esi=ecx"
+0x0088EB80,signature,"void __thiscall f(void *this, void *other)","ret 4, esi=ecx"
+0x0088ED20,signature,"void * __thiscall f(void *this, void *node, void *parent)","ret 8, esi=ecx"
+0x0088F5A0,signature,"bool __thiscall f(void *this, void *text, unsigned char *flag)","ret 8, esi=ecx"
+0x0088F630,signature,"void * __thiscall f(void *this, void *other)","ret 4, esi=ecx"
+0x0088F6C0,signature,"void * __thiscall f(void *this, void *other)","ret 4, esi=ecx"
+0x0088F750,signature,"void __thiscall f(void *this, unsigned int *input)","ret 4, reads [ecx+4],[ecx+8]"
+0x0088F7B0,signature,"void __thiscall f(void *this, unsigned int *input)","ret 4, reads [ecx+0x18],[ecx+0x1C]"
+0x00AD8CD0,convention,__cdecl,"atexit destructor stub: mov ecx,0xC3B2F8; jmp 0x004D20A0, no stack arguments"
+0x00AD8E80,convention,__cdecl,"atexit destructor stub: mov ecx,0xC3B5F8; jmp 0x008822F0, no stack arguments"
+0x0088F860,signature,"void __thiscall f(void *this, void *text)","ret 4, one wstring pointer; ecx+0x5C is the barred set"
+0x00890E10,signature,void __thiscall f(void *this),plain ret; this = the map (head +4); erase and free head
+0x00890E50,convention,__thiscall,"ret 0x88 takes an InputModeGroup by value, ecx read first"
+0x00890F00,signature,void __thiscall f(void *this),plain ret; ecx saved in esi at 0x00890F24
+0x00891090,signature,void * __thiscall f(void *this),plain ret; returns ecx in eax
+0x008910A0,signature,"void * __thiscall f(void *this, int key)",ret 4; key stored at [eax]; returns this
+0x008910C0,signature,"void * __thiscall f(void *this, int key1, int key2)",ret 8; keys at +0 and +4
+0x008910E0,signature,"int * __thiscall f(void *this, int *out)",ret 4; eax = out
+0x00891100,signature,"bool __thiscall f(void *this, int *index, int *word)",ret 8; ecx = Input (bindings at +4); returns 0/1 at 0x00891165/0x00891168
+0x008918E0,signature,"void * __thiscall f(void *this, unsigned int count)",ret 4; ecx saved in esi at 0x00891905
+0x00891B40,signature,"void * __thiscall f(void *this, unsigned int a, unsigned int b, unsigned int c, unsigned int d)","ret 0x10 at 0x00891BB5, hash_compare by value"
+0x00892210,signature,"int __thiscall f(void *this, int *key, int input)",ret 8 at 0x00892299; returns the new binding index
+0x008922A0,signature,"int __thiscall f(void *this, int *key1, int *key2, int input)",ret 0xC; returns the new binding index
+0x00892790,signature,void * __cdecl f(void),"no arguments, ecx unread (0x00892790-0x008927E2), plain ret, returns 0xC141D4"
+0x008927F0,signature,"void * __thiscall f(void *this, void *out)",ret 4; copies the wstring at ecx+0x11C into out
+0x00893810,signature,"int * __thiscall f(void *this, int *out, int slot)",ret 8; slot tested at [esp+8]; eax = out
+0x00893D70,signature,void __thiscall f(void *this),plain ret; ecx saved in esi at 0x00893D76; ends in a tail call
+0x00893E20,signature,void * __thiscall f(void *this),"plain ret; ecx = the vector, returns a pointer to the last element"
+0x008940D0,signature,"void * __thiscall f(void *this, unsigned int count)",ret 4; ecx saved in esi at 0x008940F4
+0x008944E0,signature,"void __thiscall f(void *this, int *index0, int *index1)","ret 8; index0 read at 0x008944E3, index1 at 0x00894505; same shape as 0x00894490"
+0x00894630,convention,__thiscall,"ret 0x1C (a wstring by value), ecx saved in ebp at 0x00894656"
+0x00894710,signature,"void * __thiscall f(void *this, void *name)",ret 4; the name is copied for 0x00894630; returns a wstring pointer
+0x00894B70,convention,__thiscall,vftable slot (0x00B311E0 slot 0): a plain jump
+0x00894B80,convention,__thiscall,"vftable slot thunk: sub ecx,8; jmp 0x00895110"
+0x00894B90,convention,__thiscall,"vftable slot thunk: sub ecx,0x1C; jmp 0x00895110"
+0x00894BA0,convention,__thiscall,"vftable slot thunk: sub ecx,0x20; jmp 0x00895110"
+0x00895310,signature,void __thiscall f(void *this),vftable slot 2 of 0x00B311E0; plain ret; ecx saved in esi
+0x00895E40,signature,"void * __thiscall f(void *this, void *out, int *key)",ret 8; ecx = the map; out returned in eax

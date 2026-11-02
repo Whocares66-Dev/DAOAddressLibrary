@@ -15451,7 +15451,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 15450,function,Input::AllowModes,0x006dc880,0x005ce350,0x006dc880
 15451,function,Input::AllowInputModes,0x006dc8c0,0x005ce390,0x006dc8c0
 15452,function,Input::RegisterInputMessages,0x006dc900,0x005ce3d0,0x006dc900
-15453,function,,0x006e2fd0,0x005d4aa0,0x006e2fd0
+15453,function,Input::SetPerformActionKeys,0x006e2fd0,0x005d4aa0,0x006e2fd0
 15454,function,Input::RegisterActions,0x006e30d0,0x005d4ba0,0x006e30d0
 15455,function,Input::SetDefaultKeyBindings,0x006e9510,0x005dafe0,0x006e9510
 15456,function,Input::LoadKeyBindings,0x006ea8f0,0x005dc3c0,0x006ea8f0
@@ -18208,14 +18208,14 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 18207,function,ScriptBackend::ForScript_MoveItemList,0x007634b0,0x006b10c0,0x007634b0
 18208,function,ScriptBackend::ForScript_MoveAllItems,0x00763570,0x006b1180,0x00763570
 18209,function,PlayerSteering::PlayerSteering,0x00763650,0x006dfcb0,0x00763650
-18210,function,,0x007636a0,0x006dfd00,0x007636a0
+18210,function,PlayerSteering::ApplySteering,0x007636a0,0x006dfd00,0x007636a0
 18211,function,PlayerSteering::StopMoving,0x00763810,0x006dfe70,0x00763810
 18212,function,PlayerSteering::Reset,0x00763830,0x006dfe90,0x00763830
 18213,function,PlayerSteering::LimitTurnRate,0x00763850,0x006dfeb0,0x00763850
 18214,function,PlayerSteering::ReadInput,0x00763a00,0x006e0060,0x00763a00
-18215,function,,0x00763c10,0x006e0270,0x00763c10
+18215,function,PlayerSteering::ReadAnalogAxes,0x00763c10,0x006e0270,0x00763c10
 18216,function,PlayerSteering::StopIfNoInput,0x00763c90,0x006e02f0,0x00763c90
-18217,function,,0x00763cd0,0x006e0330,0x00763cd0
+18217,function,PlayerSteering::UpdateDirection,0x00763cd0,0x006e0330,0x00763cd0
 18218,function,PlayerSteering::MoveToPoint,0x00764020,0x006e0680,0x00764020
 18219,function,PlayerSteering::Update,0x00764150,0x006e07b0,0x00764150
 18220,function,ItemIteratorHandle::ItemIteratorHandle,0x007641d0,0x00660ff0,0x007641d0
@@ -24079,7 +24079,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24078,function,"std::map<InputMapper::KeyWord,std::list<InputMapper::Entry*>>::_Lrotate",0x0087b880,0x005669d0,0x0087b880
 24079,function,"std::_Fill<InputMapper::Entry*,InputMapper::Entry>",0x0087b8d0,0x00451dc0,0x0087b8d0
 24080,function,"std::_Copy_backward_opt<InputMapper::Entry*,InputMapper::Entry*,std::random_access_iterator_tag>",0x0087b910,0x00451e00,0x0087b910
-24081,function,,0x0087b970,0x00451e60,0x0087b970
+24081,function,InputMapper::IsKeyValidForEntry,0x0087b970,0x00451e60,0x0087b970
 24082,function,"std::_Copy_opt<InputMapper::Entry*,InputMapper::Entry*,std::random_access_iterator_tag>",0x0087ba10,0x00451f00,0x0087ba10
 24083,function,"std::_Uninit_copy<InputMapper::Entry*,InputMapper::Entry*,std::allocator<InputMapper::Entry>>",0x0087ba70,0x00451f60,0x0087ba70
 24084,function,"std::_Uninit_copy<InputMapper::Entry*,InputMapper::Entry*,std::allocator<InputMapper::Entry>>::Catch_All@0087BAC9",0x0087bac9,0x00451fb9,0x0087bac9
@@ -24104,8 +24104,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24103,function,,0x0087c490,0x004529c0,0x0087c490
 24104,function,,0x0087c530,0x00452af0,0x0087c530
 24105,function,"std::map<InputMapper::KeyWord,std::list<InputMapper::Entry*>>::_Erase",0x0087c800,0x00452dc0,0x0087c800
-24106,function,,0x0087c840,0x00452e00,0x0087c840
-24107,function,,0x0087c8c0,0x00452ea0,0x0087c8c0
+24106,function,std::vector<InputMapper::Entry>::vector,0x0087c840,0x00452e00,0x0087c840
+24107,function,std::vector<ECInput::Event>::vector,0x0087c8c0,0x00452ea0,0x0087c8c0
 24108,function,InputMapper::CollectMessages,0x0087c950,0x00452f30,0x0087c950
 24109,function,,0x0087cb00,0x00453110,0x0087cb00
 24110,function,,0x0087cbd0,0x004531e0,0x0087cbd0
@@ -24113,38 +24113,38 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24112,function,,0x0087cc80,0x00453290,0x0087cc80
 24113,function,,0x0087ce80,0x00453490,0x0087ce80
 24114,function,,0x0087cec0,0x004534d0,0x0087cec0
-24115,function,,0x0087cfb0,0x004535c0,0x0087cfb0
-24116,function,,0x0087d050,0x00453660,0x0087d050
+24115,function,"std::map<InputMapper::KeyWord,std::list<InputMapper::Entry*>>::map",0x0087cfb0,0x004535c0,0x0087cfb0
+24116,function,"std::map<InputMapper::KeyWord,std::list<InputMapper::Entry*>>::~map",0x0087d050,0x00453660,0x0087d050
 24117,function,,0x0087d090,0x004536a0,0x0087d090
 24118,function,InputMapper::InputMapper,0x0087d280,0x00453890,0x0087d280
 24119,function,InputMapper::Get,0x0087d320,0x00453930,0x0087d320
-24120,function,,0x0087d3a0,0x004539b0,0x0087d3a0
-24121,function,,0x0087d480,0x00453a90,0x0087d480
+24120,function,"std::map<InputMapper::KeyWord,std::list<InputMapper::Entry*>>::operator[]",0x0087d3a0,0x004539b0,0x0087d3a0
+24121,function,InputMapper::AddEntry,0x0087d480,0x00453a90,0x0087d480
 24122,function,InputMapper::SetMappingValue,0x0087d5a0,0x00453bb0,0x0087d5a0
 24123,function,InputMapper::Dispatch,0x0087d690,0x00453ca0,0x0087d690
-24124,function,,0x0087d9c0,0x0060c0d0,0x0087d9c0
-24125,function,,0x0087d9e0,0x00453fd0,0x0087d9e0
-24126,function,,0x0087da50,0x00454040,0x0087da50
-24127,function,,0x0087dac0,0x00454110,0x0087dac0
-24128,function,,0x0087db00,0x00454150,0x0087db00
-24129,function,,0x0087dbd0,0x0056d980,0x0087dbd0
-24130,function,,0x0087dc50,0x00454220,0x0087dc50
-24131,function,,0x0087dd00,0x004542d0,0x0087dd00
+24124,function,std::list<Elem16>::_Buynode_head,0x0087d9c0,0x0060c0d0,0x0087d9c0
+24125,function,Input::DeviceStates::Poll,0x0087d9e0,0x00453fd0,0x0087d9e0
+24126,function,Input::DeviceStates::GetInputState,0x0087da50,0x00454040,0x0087da50
+24127,function,Input::DeviceStates::InitEvents,0x0087dac0,0x00454110,0x0087dac0
+24128,function,Input::DeviceStates::~DeviceStates,0x0087db00,0x00454150,0x0087db00
+24129,function,std::vector<ECInput::IRawInput*>::insert,0x0087dbd0,0x0056d980,0x0087dbd0
+24130,function,Input::DeviceStates::AddRawInputDevice,0x0087dc50,0x00454220,0x0087dc50
+24131,function,Input::DeviceStates::DeviceStates,0x0087dd00,0x004542d0,0x0087dd00
 24132,function,ECInput::IRawInput::~IRawInput,0x0087dd90,0x00454360,0x0087dd90
 24133,function,ECInput::IRawInput::`scalar deleting destructor',0x0087dda0,0x00454370,0x0087dda0
 24134,function,ECInput::RawInputWin32::RefreshDeviceStates,0x0087ddc0,0x00454390,0x0087ddc0
-24135,function,,0x0087de40,0x00454420,0x0087de40
-24136,function,,0x0087de50,0x00454430,0x0087de50
+24135,function,Stub::GetAddress_0x150,0x0087de40,0x00454420,0x0087de40
+24136,function,ECInput::RawInputWin32::IsScancodeDown,0x0087de50,0x00454430,0x0087de50
 24137,function,ECInput::RawInputWin32::QueryAxisState,0x0087de70,0x00454450,0x0087de70
 24138,function,ECInput::RawInputWin32::SetHeldCursorPoint,0x0087df00,0x004544e0,0x0087df00
 24139,function,ECInput::RawInputWin32::Acquire,0x0087df20,0x00454500,0x0087df20
-24140,function,,0x0087df60,0x00454540,0x0087df60
-24141,function,,0x0087dfa0,0x00454580,0x0087dfa0
-24142,function,,0x0087e050,0x00454630,0x0087e050
+24140,function,ECInput::RawInputWin32::IsModifierScancode,0x0087df60,0x00454540,0x0087df60
+24141,function,ECInput::RawInputWin32::GetModifierMask,0x0087dfa0,0x00454580,0x0087dfa0
+24142,function,ECInput::RawInputWin32::IsKeyDown,0x0087e050,0x00454630,0x0087e050
 24143,function,ECInput::RawInputWin32::IsKeyDownWithModifiers,0x0087e080,0x00454690,0x0087e080
-24144,function,,0x0087e0e0,0x004546f0,0x0087e0e0
-24145,function,,0x0087e300,0x00454950,0x0087e300
-24146,function,,0x0087e320,0x00454970,0x0087e320
+24144,function,ECInput::RawInputWin32::QueryMouseState,0x0087e0e0,0x004546f0,0x0087e0e0
+24145,function,"std::_Fill<wchar_t*,wchar_t>",0x0087e300,0x00454950,0x0087e300
+24146,function,"std::_Uninit_fill_n<wchar_t*,unsigned int,wchar_t,std::allocator<wchar_t>>",0x0087e320,0x00454970,0x0087e320
 24147,function,ECInput::RawInputWin32::GetInputState,0x0087e350,0x004549a0,0x0087e350
 24148,function,"std::_Copy_backward_opt<wchar_t*,wchar_t*,std::_Scalar_ptr_iterator_tag>",0x0087e390,0x00454a10,0x0087e390
 24149,function,"std::_Uninitialized_fill_n<wchar_t*,unsigned int,wchar_t,std::allocator<wchar_t>>",0x0087e3d0,0x00454a50,0x0087e3d0
@@ -24160,7 +24160,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24159,function,,0x0087e960,0x00454f50,0x0087e960
 24160,function,std::vector<unsigned short>::reserve,0x0087e9f0,0x00455240,0x0087e9f0
 24161,function,,0x0087ea20,0x004747c0,0x0087ea20
-24162,function,,0x0087ea50,0x00455270,0x0087ea50
+24162,function,std::vector<unsigned short>::push_back,0x0087ea50,0x00455270,0x0087ea50
 24163,function,,0x0087ead0,0x004ef930,0x0087ead0
 24164,function,std::vector<unsigned short>::vector,0x0087eb60,0x004555d0,0x0087eb60
 24165,function,std::vector<?>::push_back,0x0087ebd0,0x00472ce0,0x0087ebd0
@@ -24169,10 +24169,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24168,function,std::vector<unsigned short>::_Tidy,0x0087eca0,0x00455700,0x0087eca0
 24169,function,std::vector<ECInput::Event>::_Tidy,0x0087ed60,0x004557c0,0x0087ed60
 24170,function,ECInput::RawInputWin32::ClearTypedInput,0x0087ee60,0x004558c0,0x0087ee60
-24171,function,,0x0087ee80,0x004558e0,0x0087ee80
+24171,function,ECInput::RawInputWin32::ReleaseHeldKeys,0x0087ee80,0x004558e0,0x0087ee80
 24172,function,ECInput::RawInputWin32::ReleaseHeldMouseButtons,0x0087ef30,0x00455990,0x0087ef30
-24173,function,,0x0087f210,0x00455c70,0x0087f210
-24174,function,,0x0087f2a0,0x00455d00,0x0087f2a0
+24173,function,ECInput::RawInputWin32::EmitKeyReleases,0x0087f210,0x00455c70,0x0087f210
+24174,function,ECInput::RawInputWin32::EmitKeyPresses,0x0087f2a0,0x00455d00,0x0087f2a0
 24175,function,ECInput::RawInputWin32::EmitMouseButtonReleases,0x0087f330,0x00455d90,0x0087f330
 24176,function,ECInput::RawInputWin32::EmitMouseButtonPresses,0x0087f5e0,0x00456040,0x0087f5e0
 24177,function,ECInput::RawInputWin32::RawInputWin32,0x0087f890,0x004562f0,0x0087f890
@@ -24181,8 +24181,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24180,function,ECInput::RawInputWin32::ReadMouse,0x0087ff40,0x004569a0,0x0087ff40
 24181,function,ECInput::RawInputWin32::`scalar deleting destructor',0x008804d0,0x00456f30,0x008804d0
 24182,function,ECInput::RawInputWin32::Poll,0x008804f0,0x00456f50,0x008804f0
-24183,function,,0x00880520,0x00456f80,0x00880520
-24184,function,,0x00880550,0x0081b410,0x00880550
+24183,function,ECInput::Event::Event,0x00880520,0x00456f80,0x00880520
+24184,function,Stub::GetQword_0x0,0x00880550,0x0081b410,0x00880550
 24185,function,InputWord::MakeKeyboard,0x00880570,0x00456ff0,0x00880570
 24186,function,InputWord::MakeMouse,0x00880590,0x00457010,0x00880590
 24187,function,InputWord::MakeAxis,0x008805b0,0x004571e0,0x008805b0
@@ -24196,7 +24196,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24195,function,InputWord::SetMouse,0x00880760,0x004571c0,0x00880760
 24196,function,InputWord::GetState,0x00880780,0x00457200,0x00880780
 24197,function,InputMapper::KeyWord::KeyWord,0x00880790,0x00457210,0x00880790
-24198,function,,0x008807b0,0x00457230,0x008807b0
+24198,function,InputMapper::KeyWord::StripModifiers,0x008807b0,0x00457230,0x008807b0
 24199,function,InputMapper::MergeEvent,0x008807e0,0x00457260,0x008807e0
 24200,function,InputMapper::KeyWord::operator<,0x00880be0,0x00457660,0x00880be0
 24201,function,InputMapper::KeyWord::operator==,0x00880c00,0x00457680,0x00880c00
@@ -24210,8 +24210,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24209,function,"std::map<int,std::wstring>::_Buynode",0x00880e60,0x00457980,0x00880e60
 24210,function,"std::map<int,std::wstring>::_Buynode::Catch_All@00880EF1",0x00880ef1,0x00457a11,0x00880ef1
 24211,function,"std::map<int,InputMapper::KeyRecord>::find",0x00880f10,0x00457a30,0x00880f10
-24212,function,,0x00880f80,0x00457aa0,0x00880f80
-24213,function,,0x00880ff0,0x00457b10,0x00880ff0
+24212,function,"std::map<unsigned int,std::wstring>::find",0x00880f80,0x00457aa0,0x00880f80
+24213,function,InputMapper::KeyRecordMap::Get,0x00880ff0,0x00457b10,0x00880ff0
 24214,function,"std::map<int,std::wstring>::_Erase",0x00881050,0x00457b70,0x00881050
 24215,function,InputWord::ToDisplayText,0x00881090,0x00457bb0,0x00881090
 24216,function,,0x00881310,0x00457ea0,0x00881310
@@ -24221,40 +24221,40 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24220,function,InputNames::HasName,0x00881aa0,0x004587e0,0x00881aa0
 24221,function,,0x00881ae0,0x00458820,0x00881ae0
 24222,function,,0x00881ba0,0x004588e0,0x00881ba0
-24223,function,,0x00881c70,0x004589b0,0x00881c70
+24223,function,InputMapper::KeyRecordMap::Add,0x00881c70,0x004589b0,0x00881c70
 24224,function,,0x00881d20,0x00458a60,0x00881d20
-24225,function,,0x00881ee0,0x00458c20,0x00881ee0
+24225,function,"std::map<unsigned int,std::wstring>::operator[]",0x00881ee0,0x00458c20,0x00881ee0
 24226,function,"std::map<int,std::wstring>::~map",0x00881fd0,0x00458d10,0x00881fd0
 24227,function,InputNames::Register,0x00882010,0x00458d50,0x00882010
 24228,function,InputNames::NameOf,0x00882070,0x00458db0,0x00882070
 24229,function,InputNames::WordOf,0x008820f0,0x00458e30,0x008820f0
-24230,function,,0x00882160,0x00458ea0,0x00882160
-24231,function,,0x00882200,0x00458f40,0x00882200
-24232,function,,0x00882280,0x00458fc0,0x00882280
-24233,function,,0x008822f0,0x007c9eb0,0x008822f0
+24230,function,InputNames::NameByWord::NameByWord,0x00882160,0x00458ea0,0x00882160
+24231,function,InputNames::WordByName::WordByName,0x00882200,0x00458f40,0x00882200
+24232,function,InputNames::InputNames,0x00882280,0x00458fc0,0x00882280
+24233,function,InputNames::~InputNames,0x008822f0,0x007c9eb0,0x008822f0
 24234,function,InputNames::Get,0x00882350,0x00459030,0x00882350
 24235,function,InputWord::Parse,0x008823c0,0x004590a0,0x008823c0
 24236,function,InputMapper::BuildKeyNames,0x00882680,0x00459360,0x00882680
 24237,function,InputWord::ToIniText,0x0088e560,0x00465240,0x0088e560
 24238,function,InputModeGroup::SetAllowAllText,0x0088e690,0x00465370,0x0088e690
-24239,function,,0x0088e6a0,0x00465380,0x0088e6a0
-24240,function,,0x0088e6c0,0x004653a0,0x0088e6c0
-24241,function,,0x0088e6e0,0x004653c0,0x0088e6e0
-24242,function,,0x0088e760,0x004654b0,0x0088e760
-24243,function,,0x0088e7c0,0x00465510,0x0088e7c0
-24244,function,,0x0088e820,0x00465570,0x0088e820
-24245,function,,0x0088e8c0,0x006e5380,0x0088e8c0
-24246,function,,0x0088e900,0x00465610,0x0088e900
+24239,function,"std::map<std::wstring,InputModeGroup>::_Max",0x0088e6a0,0x00465380,0x0088e6a0
+24240,function,"std::map<std::wstring,InputModeGroup>::_Min",0x0088e6c0,0x004653a0,0x0088e6c0
+24241,function,"std::map<std::wstring,InputModeGroup>::iterator::operator++",0x0088e6e0,0x004653c0,0x0088e6e0
+24242,function,"std::map<std::wstring,InputModeGroup>::_Lrotate",0x0088e760,0x004654b0,0x0088e760
+24243,function,"std::map<std::wstring,InputModeGroup>::_Rrotate",0x0088e7c0,0x00465510,0x0088e7c0
+24244,function,"std::map<std::wstring,InputModeGroup>::iterator::operator--",0x0088e820,0x00465570,0x0088e820
+24245,function,"std::map<unsigned int,unsigned int>::_Buynode",0x0088e8c0,0x006e5380,0x0088e8c0
+24246,function,"std::map<std::wstring,bool>::_Buynode",0x0088e900,0x00465610,0x0088e900
 24247,function,,0x0088e991,0x004656a1,0x0088e991
-24248,function,,0x0088e9b0,0x004656c0,0x0088e9b0
-24249,function,,0x0088e9f0,0x00465700,0x0088e9f0
-24250,function,,0x0088eac0,0x007e7130,0x0088eac0
+24248,function,"std::map<std::wstring,InputModeGroup>::_Buynode_head",0x0088e9b0,0x004656c0,0x0088e9b0
+24249,function,"std::map<std::wstring,InputModeGroup>::_Lbound",0x0088e9f0,0x00465700,0x0088e9f0
+24250,function,"std::map<unsigned int,unsigned int>::_Copy(_Nodeptr,_Nodeptr)",0x0088eac0,0x007e7130,0x0088eac0
 24251,function,,0x0088eb5d,0x007e71cd,0x0088eb5d
-24252,function,,0x0088eb80,0x007e7550,0x0088eb80
+24252,function,"std::map<unsigned int,unsigned int>::_Copy(const map&)",0x0088eb80,0x007e7550,0x0088eb80
 24253,function,InputModeGroup::AllowsInput,0x0088ec00,0x004658a0,0x0088ec00
 24254,function,InputModeGroup::BarsInput,0x0088ec40,0x004658e0,0x0088ec40
 24255,function,InputModes::FindName,0x0088eca0,0x00465940,0x0088eca0
-24256,function,,0x0088ed20,0x004659c0,0x0088ed20
+24256,function,"std::map<std::wstring,bool>::_Copy(_Nodeptr,_Nodeptr)",0x0088ed20,0x004659c0,0x0088ed20
 24257,function,,0x0088edbd,0x00465a5d,0x0088edbd
 24258,function,InputModes::AllowsInput,0x0088ede0,0x00465a80,0x0088ede0
 24259,function,,0x0088ef50,0x00465bf0,0x0088ef50
@@ -24263,15 +24263,15 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24262,function,InputModeGroup::BarsText,0x0088f220,0x00466450,0x0088f220
 24263,function,,0x0088f280,0x004664b0,0x0088f280
 24264,function,InputModes::AllowsText,0x0088f430,0x00466800,0x0088f430
-24265,function,,0x0088f5a0,0x00466970,0x0088f5a0
-24266,function,,0x0088f630,0x00466a00,0x0088f630
+24265,function,InputModeGroup::TextSet::Insert,0x0088f5a0,0x00466970,0x0088f5a0
+24266,function,"std::map<unsigned int,unsigned int>::map_copy",0x0088f630,0x00466a00,0x0088f630
 24267,function,,0x0088f6ac,0x00466a7c,0x0088f6ac
-24268,function,,0x0088f6c0,0x00466a90,0x0088f6c0
+24268,function,"std::map<std::wstring,bool>::map_copy",0x0088f6c0,0x00466a90,0x0088f6c0
 24269,function,,0x0088f73c,0x00466b0c,0x0088f73c
-24270,function,,0x0088f750,0x00466b20,0x0088f750
-24271,function,,0x0088f7b0,0x00466b80,0x0088f7b0
+24270,function,InputModeGroup::AllowInput,0x0088f750,0x00466b20,0x0088f750
+24271,function,InputModeGroup::BarInput,0x0088f7b0,0x00466b80,0x0088f7b0
 24272,function,InputModeGroup::Allow,0x0088f810,0x00466be0,0x0088f810
-24273,function,,0x0088f860,0x00466c30,0x0088f860
+24273,function,InputModeGroup::Bar,0x0088f860,0x00466c30,0x0088f860
 24274,function,InputModes::Pop,0x0088f8b0,0x00466c80,0x0088f8b0
 24275,function,InputModeGroup::TextSet::TextSet_copy,0x0088f930,0x00466d40,0x0088f930
 24276,function,InputModeGroup::TextSet::TextSet,0x0088f9a0,0x00466df0,0x0088f9a0
@@ -24297,17 +24297,17 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24296,function,InputModes::Activate,0x00890ca0,0x004680f0,0x00890ca0
 24297,function,InputModes::Push,0x00890d40,0x00468190,0x00890d40
 24298,function,InputModes::Deactivate,0x00890db0,0x00468200,0x00890db0
-24299,function,,0x00890e10,0x00468260,0x00890e10
-24300,function,,0x00890e50,0x004682a0,0x00890e50
-24301,function,,0x00890f00,0x00468350,0x00890f00
+24299,function,"std::map<std::wstring,InputModeGroup>::_Tidy",0x00890e10,0x00468260,0x00890e10
+24300,function,InputModes::GroupByName::GroupByName,0x00890e50,0x004682a0,0x00890e50
+24301,function,InputModes::GroupByName::~GroupByName,0x00890f00,0x00468350,0x00890f00
 24302,function,InputModes::InputModes,0x00890f90,0x004683e0,0x00890f90
 24303,function,InputModes::Get,0x00891010,0x00468460,0x00891010
-24304,function,,0x00891090,0x00a3ed50,0x00891090
-24305,function,,0x008910a0,0x00a3ed60,0x008910a0
-24306,function,,0x008910c0,0x00a3ed80,0x008910c0
-24307,function,,0x008910e0,0x00a3eda0,0x008910e0
+24304,function,InputBinding::InputBinding,0x00891090,0x00a3ed50,0x00891090
+24305,function,InputBinding::InputBinding(int),0x008910a0,0x00a3ed60,0x008910a0
+24306,function,"InputBinding::InputBinding(int,int)",0x008910c0,0x00a3ed80,0x008910c0
+24307,function,InputBinding::FirstKey,0x008910e0,0x00a3eda0,0x008910e0
 24308,function,InputBinding::SecondKey,0x008910f0,0x00a3edb0,0x008910f0
-24309,function,,0x00891100,0x00a3edc0,0x00891100
+24309,function,Input::IsKeyValidForBinding,0x00891100,0x00a3edc0,0x00891100
 24310,function,Input::Bind,0x00891170,0x00a3ee30,0x00891170
 24311,function,"std::list<std::pair<const int,Input::BindingList>>::_Buynode",0x008911e0,0x00a3eea0,0x008911e0
 24312,function,"stdext::hash_map<int,Input::BindingList>::find",0x00891200,0x00a3eec0,0x00891200
@@ -24321,58 +24321,58 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24320,function,std::vector<Input::Binding>::insert,0x00891750,0x0049e860,0x00891750
 24321,function,"std::list<std::pair<const int,Input::BindingList>>::clear",0x00891800,0x00a3f0a0,0x00891800
 24322,function,std::vector<Input::Binding>::push_back,0x00891840,0x0049f380,0x00891840
-24323,function,,0x008918e0,0x00a3f0e0,0x008918e0
+24323,function,std::vector<Input::Binding>::vector,0x008918e0,0x00a3f0e0,0x008918e0
 24324,function,"std::list<std::pair<const int,Input::BindingList>>::~list",0x00891960,0x00a3f160,0x00891960
 24325,function,"std::_Construct<std::pair<const int,Input::BindingList>,std::pair<const int,Input::BindingList>>",0x00891980,0x00a3f180,0x00891980
 24326,function,"stdext::hash_map<int,Input::BindingList>::hash_map",0x008919e0,0x00a3f1e0,0x008919e0
 24327,function,"stdext::hash_map<int,Input::BindingList>::~hash_map",0x00891a60,0x00a3f260,0x00891a60
 24328,function,"std::list<std::pair<const int,Input::BindingList>>::_Buynode",0x00891aa0,0x00a3f2a0,0x00891aa0
 24329,function,"std::list<std::pair<const int,Input::BindingList>>::_Buynode::Catch_All@00891B1C",0x00891b1c,0x00a3f31c,0x00891b1c
-24330,function,,0x00891b40,0x00a3f340,0x00891b40
+24330,function,"stdext::hash_map<int,Input::BindingList>::hash_map(stdext::hash_compare)",0x00891b40,0x00a3f340,0x00891b40
 24331,function,Input::Input,0x00891bc0,0x00a3f3c0,0x00891bc0
 24332,function,Input::Get,0x00891c30,0x00a3f430,0x00891c30
 24333,function,,0x00891cb0,0x00a3f4b0,0x00891cb0
 24334,function,"stdext::hash_map<int,Input::BindingList>::operator[]",0x00892130,0x00a3f930,0x00892130
-24335,function,,0x00892210,0x00a3fa10,0x00892210
-24336,function,,0x008922a0,0x00a3faa0,0x008922a0
+24335,function,Input::AppendBinding,0x00892210,0x00a3fa10,0x00892210
+24336,function,Input::AppendBindingPair,0x008922a0,0x00a3faa0,0x008922a0
 24337,function,Input::IsDown,0x00892340,0x00a3fb40,0x00892340
 24338,function,Input::IntValue,0x008924f0,0x00a3fcf0,0x008924f0
 24339,function,Input::FloatValue,0x008925b0,0x00a3fdb0,0x008925b0
 24340,function,Input::AxisPair,0x00892670,0x00a3fe70,0x00892670
-24341,function,,0x00892790,0x00a3ff90,0x00892790
-24342,function,,0x008927f0,0x00a3fff0,0x008927f0
-24343,function,,0x00892820,0x00a40020,0x00892820
+24341,function,Eclipse::GroupedInputMappings::StaticClassInfo,0x00892790,0x00a3ff90,0x00892790
+24342,function,Eclipse::GroupedInputMappings::GroupedInputs::GetName,0x008927f0,0x00a3fff0,0x008927f0
+24343,function,Input::AddMapperEntry,0x00892820,0x00a40020,0x00892820
 24344,function,Input::BindWithModifierVariants,0x00892850,0x00a40050,0x00892850
 24345,function,Input::BindPairWithModifierVariants,0x00892dc0,0x00a405c0,0x00892dc0
 24346,function,Input::AddBinding,0x008937d0,0x00a40fd0,0x008937d0
 24347,function,Input::AddBindingPair,0x008937f0,0x00a40ff0,0x008937f0
-24348,function,,0x00893810,0x00a41010,0x00893810
+24348,function,Eclipse::GroupedInputMappings::GroupedInputs::GetKeyWord,0x00893810,0x00a41010,0x00893810
 24349,function,Eclipse::GroupedInputMappings::GroupedInputs::IsKeyValid,0x00893840,0x00a41060,0x00893840
 24350,function,Eclipse::GroupedInputMappings::GroupedInputs::SetKey,0x00893a40,0x00a41260,0x00893a40
 24351,function,Eclipse::GroupedInputMappings::TakeKey,0x00893ba0,0x00a413c0,0x00893ba0
-24352,function,,0x00893d70,0x00a41590,0x00893d70
-24353,function,,0x00893e20,0x00a41640,0x00893e20
+24352,function,Eclipse::GroupedInputMappings::ClearKeys,0x00893d70,0x00a41590,0x00893d70
+24353,function,std::vector<Eclipse::GroupedInputMappings::GroupedInputs*>::back,0x00893e20,0x00a41640,0x00893e20
 24354,function,Eclipse::GroupedInputMappings::GroupedInputs::~GroupedInputs,0x00893e80,0x00a416a0,0x00893e80
 24355,function,Eclipse::GroupedInputMappings::GroupedInputs::`scalar deleting destructor',0x00894080,0x00a418a0,0x00894080
 24356,function,Eclipse::GroupedInputMappings::GroupedInputs::`scalar deleting destructor',0x00894090,0x00a418b0,0x00894090
 24357,function,Eclipse::GroupedInputMappings::GroupedInputs::`scalar deleting destructor',0x008940a0,0x00a418c0,0x008940a0
 24358,function,Eclipse::GroupedInputMappings::GroupedInputs::`scalar deleting destructor',0x008940b0,0x00a418d0,0x008940b0
-24359,function,,0x008940d0,0x00a418f0,0x008940d0
+24359,function,std::vector<Eclipse::GroupedInputMappings::GroupedInputs::Mapping>::vector,0x008940d0,0x00a418f0,0x008940d0
 24360,function,Eclipse::GroupedInputMappings::GroupedInputs::GroupedInputs,0x00894140,0x00a41960,0x00894140
 24361,function,Eclipse::GroupedInputMappings::GroupedInputs::AddMapperEntries,0x00894490,0x00a41cb0,0x00894490
-24362,function,,0x008944e0,0x00a41d00,0x008944e0
+24362,function,Eclipse::GroupedInputMappings::GroupedInputs::AddInputBindingEntries,0x008944e0,0x00a41d00,0x008944e0
 24363,function,Eclipse::GroupedInputMappings::AddAction,0x00894530,0x00a41d50,0x00894530
-24364,function,,0x00894630,0x00a41e50,0x00894630
-24365,function,,0x00894710,0x00a41f30,0x00894710
+24364,function,Eclipse::GroupedInputMappings::GetAction,0x00894630,0x00a41e50,0x00894630
+24365,function,Eclipse::GroupedInputMappings::GetKeyText,0x00894710,0x00a41f30,0x00894710
 24366,function,Eclipse::GroupedInputMappings::HandleMessage_EnableKeyRemappingMessage,0x008947f0,0x00a42010,0x008947f0
 24367,function,Eclipse::GroupedInputMappings::HandleMessage_DisableKeyRemappingMessage,0x00894880,0x00a420a0,0x00894880
 24368,function,Eclipse::GroupedInputMappings::RegisterHandler_EnableKeyRemappingMessage,0x008948f0,0x00a42110,0x008948f0
 24369,function,Eclipse::GroupedInputMappings::RegisterHandler_DisableKeyRemappingMessage,0x00894970,0x00a42190,0x00894970
 24370,function,Eclipse::GroupedInputMappings::~GroupedInputMappings,0x008949f0,0x00a42210,0x008949f0
-24371,function,,0x00894b70,0x00a42390,0x00894b70
-24372,function,,0x00894b80,0x00a423c0,0x00894b80
-24373,function,,0x00894b90,0x00a423a0,0x00894b90
-24374,function,,0x00894ba0,0x00a423b0,0x00894ba0
+24371,function,Eclipse::GroupedInputMappings::GetClassInfo,0x00894b70,0x00a42390,0x00894b70
+24372,function,Eclipse::GroupedInputMappings::`scalar deleting destructor'`adjustor{8}',0x00894b80,0x00a423c0,0x00894b80
+24373,function,Eclipse::GroupedInputMappings::`scalar deleting destructor'`adjustor{28}',0x00894b90,0x00a423a0,0x00894b90
+24374,function,Eclipse::GroupedInputMappings::`scalar deleting destructor'`adjustor{32}',0x00894ba0,0x00a423b0,0x00894ba0
 24375,function,Eclipse::GroupedInputMappings::AddMapping,0x00894bb0,0x00a423d0,0x00894bb0
 24376,function,Eclipse::GroupedInputMappings::AddInputMapping,0x00894c40,0x00a42460,0x00894c40
 24377,function,Eclipse::GroupedInputMappings::SetKey,0x00894cc0,0x00a424e0,0x00894cc0
@@ -24383,12 +24383,12 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 24382,function,Eclipse::GroupedInputMappings::GroupedInputMappings,0x008951b0,0x00a429d0,0x008951b0
 24383,function,Eclipse::GroupedInputMappings::vfunction4,0x00895270,0x00a42a90,0x00895270
 24384,function,Eclipse::GroupedInputMappings::clone,0x008952a0,0x00a42ac0,0x008952a0
-24385,function,,0x00895310,0x00a42b30,0x00895310
+24385,function,Eclipse::GroupedInputMappings::RegisterClass,0x00895310,0x00a42b30,0x00895310
 24386,function,Eclipse::GroupedInputMappings::GroupedInputMappings,0x00895330,0x00a42b50,0x00895330
 24387,function,Eclipse::GroupedInputMappings::LoadFromConfig,0x00895580,0x00a42da0,0x00895580
 24388,function,Eclipse::GroupedInputMappings::SaveToConfig,0x00895980,0x00a431a0,0x00895980
 24389,function,Eclipse::GroupedInputMappings::Get,0x00895dc0,0x00a435e0,0x00895dc0
-24390,function,,0x00895e40,0x00a43660,0x00895e40
+24390,function,"std::map<int,std::wstring>::find",0x00895e40,0x00a43660,0x00895e40
 24391,function,Input::RegisterInputName,0x00895eb0,0x00a43980,0x00895eb0
 24392,function,Input::RegisterInputNames,0x00895f10,0x00a439e0,0x00895f10
 24393,function,,0x008973e0,0x004684e0,0x008973e0
@@ -59715,7 +59715,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 59714,function,,0x00ad8c30,0x00acff40,0x00ad8c30
 59715,function,,0x00ad8c70,0x00acff80,0x00ad8c70
 59716,function,,0x00ad8c80,0x00acff90,0x00ad8c80
-59717,function,,0x00ad8cd0,0x00acfc60,0x00ad8cd0
+59717,function,`dynamic atexit destructor for 'InputMapper::Dispatch::s_rawInputMessage'',0x00ad8cd0,0x00acfc60,0x00ad8cd0
 59718,function,,0x00ad8ce0,0x00acfc70,0x00ad8ce0
 59719,function,,0x00ad8cf0,0x00acfc80,0x00ad8cf0
 59720,function,,0x00ad8d00,0x00acfc90,0x00ad8d00
@@ -59742,7 +59742,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 59741,function,,0x00ad8e50,0x00acfde0,0x00ad8e50
 59742,function,,0x00ad8e60,0x00acfdf0,0x00ad8e60
 59743,function,,0x00ad8e70,,0x00ad8e70
-59744,function,,0x00ad8e80,0x00acfe10,0x00ad8e80
+59744,function,`dynamic atexit destructor for 'InputNames::Get::s_instance'',0x00ad8e80,0x00acfe10,0x00ad8e80
 59745,function,,0x00ad8e90,,0x00ad8e90
 59746,function,,0x00ad8ea0,,0x00ad8ea0
 59747,function,,0x00ad8eb0,,0x00ad8eb0
