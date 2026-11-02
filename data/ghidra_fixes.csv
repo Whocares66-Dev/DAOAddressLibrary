@@ -13831,3 +13831,40 @@ address,what,value,why
 0x00599400,signature,"void __thiscall f(void* this, void* xmlNode, void* flatRef)","ret size, ecx and argument reads at 0x00599400; callers load ecx where __thiscall"
 0x00599B60,signature,void* __cdecl f(void),"0x00599B60 plain ret, ecx never read, push 0x38 operator_new"
 0x00599BA0,signature,"void* __stdcall f(void* left, void* parent, void* right, void* value, unsigned char color)","0x00599BA0 ret 0x14 = five stack arguments at [ebp+8..0x18], ecx never read"
+0x00599C90,signature,"void* __thiscall f(void* this, void* key)",prototype read at 0x00599C90-0x00599D45
+0x00599D50,signature,void* __thiscall f(void* this),prototype read at 0x00599D50-0x00599D9E
+0x00599DB0,signature,void* __thiscall f(void* this),prototype read at 0x00599DB0-0x00599E08
+0x00599E10,signature,"void* __thiscall f(void* this, void* out, void* firstContainer, void* first, void* lastContainer, void* last)","prototype read at 0x00599E10-0x00599E70 (ret 0x14: out, firstContainer, first, lastContainer, last)"
+0x00599E80,signature,int __thiscall f(void* this),prototype read at 0x00599E80 calls std::vector::back 0x00599DB0 on this+0xC0
+0x00599E90,signature,void __thiscall f(void* this),prototype read at 0x00599E90-0x00599EF0
+0x00599F00,signature,void __thiscall f(void* this),prototype read at 0x00599F00-0x00599F26
+0x0059A2E0,signature,"void __thiscall f(void* this, void* xmlNode, void* ref)",prototype read at 0x0059A2E0-0x0059A3FB
+0x0059A400,signature,"void __thiscall f(void* this, void* xmlNode, void* ref)","prototype read at 0x0059A400-0x0059BB5F strings D6Flags, XDrive, SlerpDrive, Swing1Limit, DriveAngVel"
+0x0059BB60,signature,"void __thiscall f(void* this, void* xmlNode, void* ref)","prototype read at 0x0059BB60-0x0059C10F strings Pulley1, Pulley2, Ratio, PulleyFlags"
+0x0059C110,signature,"void __thiscall f(void* this, void* xmlNode, void* ref)","prototype read at 0x0059C110-0x0059C73F strings RevoluteFlags, PROJECTIONMODE, Limit, Spring"
+0x0059C740,signature,"void __thiscall f(void* this, void* xmlNode, void* ref)","prototype read at 0x0059C740-0x0059CF7F strings SphereFlags, SwingAxis, TwistSpring, JointSpring"
+0x0059D260,signature,"void __thiscall f(void* this, bool freeStorage)",prototype read at 0x0059D260-0x0059D37B
+0x0059D380,signature,"void __thiscall f(void* this, void* name)",prototype read at 0x0059D380-0x0059D3A2
+0x0059D3B0,signature,"void* __thiscall f(void* this, unsigned int a, unsigned int b, unsigned int c)",prototype read at 0x0059D3B0-0x0059D43A (ret 0xC)
+0x0059D4A0,signature,"int __thiscall f(void* this, unsigned int count, void* src)","prototype read at 0x0059D4A0-0x0059D4F1 (a2b800(2,2,count,1,data), hash map 0x00827140)"
+0x0059D500,signature,"int __thiscall f(void* this, unsigned int count, void* src)",prototype read at 0x0059D500-0x0059D551
+0x005A4770,signature,"void __thiscall f(void* this, void* xmlNode, void* ref)",prototype read at 0x005A4770-0x005A4ACF strings
+0x005A4AD0,signature,"void __thiscall f(void* this, void* xmlNode, void* ref)","prototype read at 0x005A4AD0-0x005A561F strings GROUP_MASK_*, PMatName"
+0x005A5620,signature,"void __thiscall f(void* this, void* xmlNode, void* ref)",prototype read at 0x005A5620-0x005A60CF
+0x005A62B0,signature,"void __thiscall f(void* this, void* xmlNode, void* ref)",prototype read at 0x005A62B0-0x005A708F string compares with EqualsNoCase
+0x005A7090,signature,"void __thiscall f(void* this, void* xmlNode, void* ref)",prototype read at 0x005A7090-0x005A78DF
+0x005A7900,signature,"void __thiscall f(void* this, void* xmlNode, void* flatFile)",prototype read at 0x005A7900-0x005AA41F
+0x005AA420,signature,"void __thiscall f(void* this, void* flatFile)",prototype read at 0x005AA420-0x005AB81F
+0x005AB8F0,signature,"void* __thiscall f(void* this, void* next, void* prev, void* value)",prototype read at 0x005AB8F0-0x005AB93F
+0x005AB940,signature,"void* __thiscall f(void* this, void* out, void* key)",prototype read at 0x005AB940-0x005ABAEF
+0x005ABAF0,signature,"void* __thiscall f(void* this, void* out, void* key)",prototype read at 0x005ABAF0-0x005ABB5F
+0x005ABB60,signature,"void* __thiscall f(void* this, void* out, void* key)",prototype read at 0x005ABB60-0x005ABC37
+0x005AC340,signature,"void* __thiscall f(void* this, void* key)",prototype read at 0x005AC340-0x005AC3C4
+0x005ACB00,signature,"void __thiscall f(void* this, void* props, void* other, float dt)",prototype read at 0x005ACB00-0x005ACCD6
+0x005B5E70,signature,"void __thiscall f(void* this, float* out)",prototype read at 0x005B5E70-0x005B5E9F
+0x005B5EC0,signature,"void __thiscall f(void* this, int* current, int* maximum)",prototype read at 0x005B5EC0-0x005B5EF3
+0x005B5F20,signature,void __thiscall f(void* this),prototype read at 0x005B5F20-0x005B60CF
+0x005B60D0,signature,"bool __thiscall f(void* this, void* name)",prototype read at 0x005B60D0-0x005B60E8
+0x005B6110,signature,float __stdcall f(float decibels),prototype read at 0x005B6110-0x005B6168
+0x005B6180,signature,"bool __cdecl f(void* a, void* b)",prototype read at 0x005B6180-0x005B61AF
+0x005B61B0,signature,float __stdcall f(float slider),prototype read at 0x005B61B0-0x005B6210
