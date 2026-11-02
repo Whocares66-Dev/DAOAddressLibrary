@@ -15,7 +15,7 @@ id,subsystem,class,how
 14,ThirdParty:STL,,between
 15,ThirdParty:STL,,owner
 17,ThirdParty:STL,,owner
-18,ThirdParty:STL,,between
+18,ThirdParty:STL,std::string,name
 19,ThirdParty:STL,,string
 20,ThirdParty:STL,std::logic_error,vtable
 21,ThirdParty:STL,,between
@@ -245,7 +245,7 @@ id,subsystem,class,how
 247,ThirdParty:STL,std::ctype<wchar_t>,vtable
 248,ThirdParty:STL,std::ctype<wchar_t>,vtable
 249,ThirdParty:STL,,between
-250,ThirdParty:STL,,between
+250,ThirdParty:STL,std::ios_base,name
 251,ThirdParty:STL,std::ios_base::failure,builds
 252,ThirdParty:STL,std::ios_base,name
 253,ThirdParty:Scaleform,GImage,name
@@ -258,7 +258,7 @@ id,subsystem,class,how
 260,ThirdParty:STL,"SmartData::Attribute<ECBase::ECHashMap<unsigned int,SmartData::IAttribute*,ECBase::ECHashParams<unsigned int>>,SmartData::NamedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",between
 261,ThirdParty:STL,"SmartData::Attribute<ECBase::ECHashMap<unsigned int,SmartData::IAttribute*,ECBase::ECHashParams<unsigned int>>,SmartData::NamedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",between
 262,ThirdParty:STL,,between
-263,ThirdParty:STL,,between
+263,ThirdParty:STL,"std::list<std::pair<unsigned int,std::wstring>>",name
 264,ThirdParty:STL,,string
 265,ThirdParty:STL,"std::num_put<wchar_t,std::ostreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>",builds
 266,ThirdParty:STL,,between
@@ -330,7 +330,7 @@ id,subsystem,class,how
 334,ThirdParty:STL,"std::num_get<wchar_t,std::istreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>",name
 335,ThirdParty:STL,"std::num_get<wchar_t,std::istreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>",name
 336,ThirdParty:STL,std::vector<unsigned int>,name
-337,ThirdParty:STL,,between
+337,ThirdParty:STL,std::vector<std::wstring>,name
 338,ThirdParty:STL,,between
 339,ThirdParty:STL,,between
 340,ThirdParty:STL,,string
@@ -3677,7 +3677,7 @@ id,subsystem,class,how
 3708,ThirdParty:STL,std,name
 3709,ThirdParty:STL,std,name
 3710,Core,ECBase::ECString,name
-3711,ThirdParty:TinyXML,TiXmlDocument,builds
+3711,ThirdParty:TinyXML,TiXmlDocument,name
 3712,ThirdParty:TinyXML,TiXmlDocument,vtable
 3713,unknown,Offer,
 3714,Core,ECBase::ECDynArray<Offer>,name
@@ -4172,15 +4172,15 @@ id,subsystem,class,how
 4207,ThirdParty:TinyXML,,range
 4208,ThirdParty:TinyXML,,range
 4209,ThirdParty:TinyXML,,range
-4210,ThirdParty:TinyXML,,range
-4211,ThirdParty:TinyXML,,range
+4210,ThirdParty:TinyXML,TiXmlNode,name
+4211,ThirdParty:TinyXML,TiXmlNode,name
 4212,ThirdParty:TinyXML,,range
-4213,ThirdParty:TinyXML,,range
-4214,ThirdParty:TinyXML,,range
-4215,ThirdParty:TinyXML,,range
+4213,ThirdParty:TinyXML,TiXmlNode,name
+4214,ThirdParty:TinyXML,TiXmlNode,name
+4215,ThirdParty:TinyXML,TiXmlNode,name
 4216,ThirdParty:TinyXML,TiXmlElement,vtable
-4217,ThirdParty:TinyXML,,range
-4218,ThirdParty:TinyXML,,range
+4217,ThirdParty:TinyXML,TiXmlElement,name
+4218,ThirdParty:TinyXML,TiXmlDocument,name
 4219,ThirdParty:TinyXML,TiXmlDocument,vtable
 4220,ThirdParty:TinyXML,TiXmlDocument,vtable
 4221,ThirdParty:TinyXML,TiXmlComment,vtable
@@ -4198,23 +4198,23 @@ id,subsystem,class,how
 4233,ThirdParty:TinyXML,TiXmlBase,builds
 4234,ThirdParty:TinyXML,,range
 4235,ThirdParty:TinyXML,TiXmlNode,builds
-4236,ThirdParty:TinyXML,TiXmlNode,builds
-4237,ThirdParty:TinyXML,,range
+4236,ThirdParty:TinyXML,TiXmlNode,name
+4237,ThirdParty:TinyXML,TiXmlNode,name
 4238,ThirdParty:TinyXML,,range
-4239,ThirdParty:TinyXML,,range
-4240,ThirdParty:TinyXML,,range
-4241,ThirdParty:TinyXML,,range
+4239,ThirdParty:TinyXML,TiXmlElement,name
+4240,ThirdParty:TinyXML,TiXmlElement,name
+4241,ThirdParty:TinyXML,TiXmlElement,name
 4242,ThirdParty:TinyXML,TiXmlElement,vtable
 4243,ThirdParty:TinyXML,,range
-4244,ThirdParty:TinyXML,TiXmlDocument,builds
-4245,ThirdParty:TinyXML,TiXmlDocument,builds
-4246,ThirdParty:TinyXML,,range
-4247,ThirdParty:TinyXML,,range
+4244,ThirdParty:TinyXML,TiXmlDocument,name
+4245,ThirdParty:TinyXML,TiXmlDocument,name
+4246,ThirdParty:TinyXML,TiXmlDocument,name
+4247,ThirdParty:TinyXML,TiXmlDocument,name
 4248,ThirdParty:TinyXML,,range
 4249,ThirdParty:TinyXML,TiXmlDocument,vtable
 4250,ThirdParty:TinyXML,,range
 4251,ThirdParty:TinyXML,TiXmlText,vtable
-4252,ThirdParty:TinyXML,TiXmlDeclaration,builds
+4252,ThirdParty:TinyXML,TiXmlDeclaration,name
 4253,ThirdParty:TinyXML,TiXmlDeclaration,vtable
 4254,ThirdParty:TinyXML,TiXmlDeclaration,vtable
 4255,ThirdParty:TinyXML,,range
@@ -4233,9 +4233,9 @@ id,subsystem,class,how
 4268,ThirdParty:TinyXML,TiXmlUnknown,builds
 4269,ThirdParty:TinyXML,TiXmlUnknown,vtable
 4270,ThirdParty:TinyXML,TiXmlNode,vtable
-4271,ThirdParty:TinyXML,TiXmlElement,builds
+4271,ThirdParty:TinyXML,TiXmlElement,name
 4272,ThirdParty:TinyXML,TiXmlElement,builds
-4273,ThirdParty:TinyXML,,range
+4273,ThirdParty:TinyXML,TiXmlElement,name
 4274,ThirdParty:TinyXML,TiXmlElement,vtable
 4275,ThirdParty:TinyXML,TiXmlComment,vtable
 4276,ThirdParty:TinyXML,TiXmlText,vtable
@@ -4256,7 +4256,7 @@ id,subsystem,class,how
 4291,ThirdParty:TinyXML,,range
 4292,ThirdParty:TinyXML,,range
 4293,ThirdParty:TinyXML,,range
-4294,ThirdParty:TinyXML,TiXmlDocument,vtable
+4294,ThirdParty:TinyXML,TiXmlDocument,name
 4295,ThirdParty:TinyXML,TiXmlElement,vtable
 4296,ThirdParty:TinyXML,TiXmlAttribute,vtable
 4297,ThirdParty:TinyXML,TiXmlText,vtable
@@ -4482,13 +4482,13 @@ id,subsystem,class,how
 4518,ThirdParty:STL,,string
 4519,ThirdParty:STL,,string
 4520,ThirdParty:STL,,string
-4521,ThirdParty:STL,,string
+4521,ThirdParty:STL,std::string,name
 4522,ThirdParty:STL,,string
 4523,ThirdParty:STL,,string
 4524,ThirdParty:STL,,string
 4525,ThirdParty:STL,,string
 4526,ThirdParty:STL,,between
-4527,ThirdParty:STL,,string
+4527,ThirdParty:STL,std::wstring,name
 4528,ThirdParty:STL,,between
 4529,ThirdParty:STL,,between
 4530,ThirdParty:STL,,string
@@ -4527,8 +4527,8 @@ id,subsystem,class,how
 4563,ThirdParty:STL,,between
 4564,ThirdParty:STL,,between
 4565,ThirdParty:STL,,between
-4566,ThirdParty:STL,,between
-4567,ThirdParty:STL,,between
+4566,ThirdParty:STL,std::wstring,name
+4567,ThirdParty:STL,std::wstring,name
 4568,ThirdParty:STL,,between
 4569,ThirdParty:STL,std::wstring,name
 4570,unknown,String,
@@ -4867,7 +4867,7 @@ id,subsystem,class,how
 4909,ThirdParty:STL,,between
 4910,ThirdParty:STL,,between
 4911,ThirdParty:STL,,between
-4912,ThirdParty:STL,,between
+4912,ThirdParty:STL,"std::basic_stringstream<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>",name
 4913,ThirdParty:STL,std,name
 4914,Core,Math::CollisionObject,name
 4915,Core,Math::CollisionObject,name
@@ -6329,7 +6329,7 @@ id,subsystem,class,how
 6384,ThirdParty:STL,,string
 6385,Rendering,Graphics::MaterialTechniqueTemp,name
 6386,Rendering,Graphics::MaterialTechniqueTemp,name
-6387,ThirdParty:STL,,string
+6387,ThirdParty:STL,std::_Tree<?>,name
 6388,Core,ECBase::ECDynArray<void*>,name
 6389,Rendering,Graphics::MaterialLogicTemp,name
 6390,Rendering,Graphics::MaterialTechniqueTemp,name
@@ -7903,7 +7903,7 @@ id,subsystem,class,how
 7961,ThirdParty:STL,,between
 7962,ThirdParty:STL,,between
 7963,ThirdParty:STL,,between
-7964,ThirdParty:STL,,string
+7964,ThirdParty:STL,std::list<?>,name
 7965,unknown,"stdext::hash_map<?,?>",
 7966,Rendering,GraphicsStructures::Object,name
 7967,Rendering,GraphicsStructures::Object,name
@@ -8766,7 +8766,7 @@ id,subsystem,class,how
 8827,unknown,,
 8828,unknown,,
 8829,ThirdParty:STL,"std::basic_filebuf<wchar_t,std::char_traits<wchar_t>>",vtable
-8830,ThirdParty:STL,,between
+8830,ThirdParty:STL,std::list<?>,name
 8831,ThirdParty:STL,,between
 8832,ThirdParty:STL,"std::basic_filebuf<wchar_t,std::char_traits<wchar_t>>",vtable
 8833,ThirdParty:STL,std::basic_filebuf<wchar_t>,name
@@ -9813,7 +9813,7 @@ id,subsystem,class,how
 9877,ThirdParty:STL,WStringMap<?>,between
 9878,ThirdParty:STL,,string
 9879,ThirdParty:STL,,string
-9880,ThirdParty:STL,,between
+9880,ThirdParty:STL,std::vector<?>,name
 9881,ThirdParty:STL,,between
 9882,ThirdParty:STL,,between
 9883,ThirdParty:STL,,string
@@ -14105,7 +14105,7 @@ id,subsystem,class,how
 14176,Game,CCObject,name
 14177,Game,CCObject,name
 14178,Game,CCObject,name
-14179,ThirdParty:STL,,string
+14179,ThirdParty:STL,std::list<?>,name
 14180,Game,CCObject,name
 14181,Game,CCObject,name
 14182,Game,CCObject,name
@@ -25780,7 +25780,7 @@ id,subsystem,class,how
 25962,ThirdParty:CRT,,range
 25963,ThirdParty:CRT,,range
 25964,ThirdParty:CRT,,range
-25965,ThirdParty:CRT,,range
+25965,ThirdParty:CRT,,name
 25966,ThirdParty:CRT,,name
 25967,ThirdParty:CRT,,range
 25968,ThirdParty:CRT,,name
@@ -33759,10 +33759,10 @@ id,subsystem,class,how
 33996,ThirdParty:STL,std::logic_error,owner
 33997,ThirdParty:STL,std::ctype<wchar_t>,owner
 33998,ThirdParty:STL,std::ctype<wchar_t>,owner
-33999,ThirdParty:STL,,owner
-34000,ThirdParty:STL,,owner
-34001,ThirdParty:STL,,owner
-34002,ThirdParty:STL,,owner
+33999,ThirdParty:STL,std::ios_base,owner
+34000,ThirdParty:STL,std::ios_base,owner
+34001,ThirdParty:STL,std::ios_base,owner
+34002,ThirdParty:STL,std::ios_base,owner
 34003,ThirdParty:Scaleform,GImage,owner
 34004,ThirdParty:Scaleform,GImage,owner
 34005,App,EclipseGame,owner
@@ -33772,8 +33772,8 @@ id,subsystem,class,how
 34009,ThirdParty:STL,,owner
 34010,ThirdParty:STL,,owner
 34011,ThirdParty:STL,,owner
-34012,ThirdParty:STL,,owner
-34013,ThirdParty:STL,,owner
+34012,ThirdParty:STL,"std::list<std::pair<unsigned int,std::wstring>>",owner
+34013,ThirdParty:STL,"std::list<std::pair<unsigned int,std::wstring>>",owner
 34014,ThirdParty:STL,,owner
 34015,ThirdParty:STL,std::numpunct<wchar_t>,owner
 34016,ThirdParty:STL,std::numpunct<wchar_t>,owner
@@ -36559,8 +36559,8 @@ id,subsystem,class,how
 36796,ThirdParty:TinyXML,TiXmlNode,owner
 36797,ThirdParty:TinyXML,TiXmlNode,owner
 36798,ThirdParty:TinyXML,TiXmlNode,owner
-36799,ThirdParty:TinyXML,,owner
-36800,ThirdParty:TinyXML,,owner
+36799,ThirdParty:TinyXML,TiXmlElement,owner
+36800,ThirdParty:TinyXML,TiXmlElement,owner
 36801,ThirdParty:TinyXML,TiXmlDocument,owner
 36802,ThirdParty:TinyXML,TiXmlDocument,owner
 36803,ThirdParty:TinyXML,TiXmlDocument,owner
@@ -36587,8 +36587,8 @@ id,subsystem,class,how
 36824,ThirdParty:TinyXML,TiXmlElement,owner
 36825,ThirdParty:TinyXML,TiXmlElement,owner
 36826,ThirdParty:TinyXML,TiXmlElement,owner
-36827,ThirdParty:TinyXML,,owner
-36828,ThirdParty:TinyXML,,owner
+36827,ThirdParty:TinyXML,TiXmlDocument,owner
+36828,ThirdParty:TinyXML,TiXmlDocument,owner
 36829,ThirdParty:TinyXML,TiXmlElement,owner
 36830,ThirdParty:TinyXML,TiXmlElement,owner
 36831,ThirdParty:TinyXML,TiXmlDeclaration,owner
@@ -37087,8 +37087,8 @@ id,subsystem,class,how
 37324,Core,Multithreading::Thread,owner
 37325,Core,Multithreading::Thread,owner
 37326,Core,Multithreading::Thread,owner
-37327,ThirdParty:STL,,owner
-37328,ThirdParty:STL,,owner
+37327,ThirdParty:STL,std::vector<std::wstring>,owner
+37328,ThirdParty:STL,std::vector<std::wstring>,owner
 37329,Resources,ECResMan::ResourceSource,owner
 37330,Resources,ECResMan::ResourceSource,owner
 37331,Resources,ECResMan::ResourceSource,owner

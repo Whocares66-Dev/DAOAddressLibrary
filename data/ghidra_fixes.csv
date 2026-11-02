@@ -17681,3 +17681,77 @@ address,what,value,why
 0x005B36C0,signature,"void * __thiscall f(void *this, void **cursor, void *a2, void *owner, void *a4, void *a5, void *a6)","ret 0x18; 0x005B3744, 0x005B3971"
 0x005B3980,signature,void __thiscall f(void *this),"destructor, plain ret; 0x005B39F5"
 0x005B3A00,signature,void __thiscall f(void *this),"destructor body, plain ret; 0x005B3AC7"
+0x008E1613,signature,void __fastcall f(unsigned int cookie),"__security_check_cookie: plain ret, argument in ecx"
+0x008E11F2,signature,void __cdecl f(void),_invalid_parameter_noinfo: plain ret
+0x008E1202,signature,"void __stdcall f(void *pExceptionObject, void *pThrowInfo)","_CxxThrowException: ret 8, no this"
+0x008E1746,signature,int __cdecl f(void (__cdecl *func)(void)),atexit: plain ret
+0x008E687B,signature,"int __cdecl f(const wchar_t *string1, const wchar_t *string2)",_wcsicmp: plain ret
+0x008E24A0,signature,"void * __cdecl f(void *dst, const void *src, size_t count)",memcpy: plain ret
+0x008E3030,signature,"void * __cdecl f(void *dst, const void *src, size_t count)",memmove: plain ret
+0x008E19E0,signature,"void * __cdecl f(void *dst, int value, size_t count)",memset: plain ret
+0x008E185E,signature,"void __stdcall f(void *ptr, unsigned int size, int count, void (__thiscall *dtor)(void *))","__ehvec_dtor: ret 0x10 = 4 stack args, ecx not read as this"
+0x008E6707,signature,"void __stdcall f(void *ptr, unsigned int size, int count, void (__thiscall *ctor)(void *), void (__thiscall *dtor)(void *))",__ehvec_ctor: ret 0x14 = 5 stack args
+0x008E692E,signature,"wchar_t * __cdecl f(wchar_t *string, const wchar_t *delimiters)",wcstok: plain ret
+0x008E690C,signature,"wchar_t * __cdecl f(const wchar_t *string, wchar_t ch)",wcschr: plain ret
+0x008E6A81,signature,void __cdecl f(unsigned int seed),srand: plain ret
+0x008E6A8E,signature,int __cdecl f(void),"rand: plain ret; game behaviour depends on this: the seed is per thread, set by srand on that thread"
+0x008E29F0,signature,"char * __cdecl f(char *dst, const char *src, size_t count)",strncpy: plain ret
+0x008E2DA2,signature,"wchar_t * __cdecl f(wchar_t *dst, const wchar_t *src, size_t count)",wcsncpy: plain ret
+0x008E0E8B,signature,"int __cdecl f(void *dst, size_t dstSize, const void *src, size_t count)",memmove_s: plain ret; returns errno_t
+0x008E53AC,signature,long __cdecl f(const char *string),atol: plain ret
+0x008E53BD,signature,int __cdecl f(const char *string),atoi: plain ret via the atol body
+0x008E643E,signature,int __cdecl f(const wchar_t *string),_wtoi: plain ret via the _wtol body
+0x008E55D7,signature,int __cdecl f(int c),tolower: plain ret
+0x008E1A5A,signature,void __cdecl f(void *memblock),free: plain ret
+0x008E1B3D,signature,int __cdecl f(int c),isdigit: plain ret
+0x008E21AC,signature,__int64 __cdecl f(__int64 *timer),"_time64: plain ret, 64-bit result in edx:eax"
+0x008E2B86,signature,int __cdecl f(void *stream),fclose: plain ret; FILE* declared as void*
+0x008E70BB,signature,"void * __cdecl f(const char *filename, const char *mode)",fopen: plain ret; returns FILE*
+0x008E3750,signature,void __cdecl f(void),"_chkstk: plain ret; size passed in eax, not on the stack"
+0x008E51D0,signature,double __cdecl f(double x),ceil: plain ret; double in st0
+0x008E893A,signature,double __cdecl f(void),_CIatan2: plain ret; operands in st0/st1
+0x008E9EB7,signature,"void * __cdecl f(void *inptr, long vfDelta, void *srcType, void *targetType, int isReference)",__RTDynamicCast: plain ret
+0x004013F0,signature,void __thiscall f(void *this),std::string::~string: plain ret
+0x00407B00,signature,"void __thiscall f(void *this, int state, bool reraise)",std::ios_base::clear: ret 8 = 2 stack args
+0x00408320,signature,void __thiscall f(void *this),"std::list<std::pair<unsigned int,std::wstring>>::~list: plain ret"
+0x0040D670,signature,"void * __thiscall f(void *this, unsigned int count)",std::vector<std::wstring>::vector: ret 4
+0x004C1750,signature,"void * __thiscall f(void *this, const char *ptr, unsigned int count)",std::string::assign: ret 8
+0x004C1F20,signature,"void * __thiscall f(void *this, const wchar_t *ptr, unsigned int count)",std::wstring::assign: ret 8
+0x004C36A0,signature,"void * __thiscall f(void *this, const void *right)",std::wstring::append: ret 4
+0x004C36C0,signature,"void * __thiscall f(void *this, const wchar_t *ptr)",std::wstring::append: ret 4; game behaviour depends on this: a null pointer appends nothing instead of faulting
+0x004D2A20,signature,void * __thiscall f(void *this),"std::basic_stringstream<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>::basic_stringstream: plain ret"
+0x0050B9A0,signature,"void * __thiscall f(void *this, void *retIter, void *firstCont, void *firstNode, void *lastCont, void *lastNode)",std::_Tree<?>::erase: ret 0x14 = 5 stack args; element type unknown
+0x0054B3E0,signature,"void __thiscall f(void *this, const void *value)",std::list<?>::push_back: ret 4; element type unknown
+0x005744E0,signature,void __thiscall f(void *this),std::list<?>::~list: plain ret via the target; element type unknown
+0x005B8190,signature,void __thiscall f(void *this),std::vector<?>::~vector: plain ret via the target; element is a 0x40-byte polymorphic class
+0x004B5480,signature,"bool __thiscall f(void *this, void *removeThis)",TiXmlNode::RemoveChild: ret 4
+0x004B54E0,signature,"void * __thiscall f(void *this, const char *value)",TiXmlNode::FirstChild: ret 4
+0x004B5580,signature,void * __thiscall f(void *this),TiXmlNode::FirstChildElement: plain ret
+0x004B55B0,signature,"void * __thiscall f(void *this, const char *value)",TiXmlNode::FirstChildElement: ret 4
+0x004B55F0,signature,"void * __thiscall f(void *this, const char *value)",TiXmlNode::NextSiblingElement: ret 4
+0x004B5690,signature,const char * __thiscall f(void *this),TiXmlElement::GetText: plain ret
+0x004B56B0,signature,"bool __thiscall f(void *this, void *fp)",TiXmlDocument::SaveFile: ret 4
+0x004B5C40,signature,void __thiscall f(void *this),TiXmlNode::~TiXmlNode: plain ret
+0x004B5CD0,signature,"void * __thiscall f(void *this, void *node)",TiXmlNode::LinkEndChild: ret 4
+0x004B5D80,signature,"const char * __thiscall f(void *this, const char *name)",TiXmlElement::Attribute: ret 4
+0x004B5DA0,signature,"const char * __thiscall f(void *this, const char *name, int *value)",TiXmlElement::Attribute: ret 8
+0x004B5DE0,signature,"void __thiscall f(void *this, const char *name, const char *value)",TiXmlElement::SetAttribute: ret 8
+0x004B6E90,signature,"void __thiscall f(void *this, const char *name, int value)",TiXmlElement::SetAttribute: ret 8
+0x004B6090,signature,void * __thiscall f(void *this),TiXmlDocument::TiXmlDocument: plain ret
+0x004B6120,signature,"void * __thiscall f(void *this, const char *documentName)",TiXmlDocument::TiXmlDocument: ret 4
+0x004980C0,signature,void __thiscall f(void *this),TiXmlDocument::~TiXmlDocument: plain ret
+0x004B61D0,signature,"bool __thiscall f(void *this, void *file, int encoding)",TiXmlDocument::LoadFile: ret 8
+0x004B63B0,signature,"bool __thiscall f(void *this, const char *filename)",TiXmlDocument::SaveFile: ret 4
+0x004B67A0,signature,"void * __thiscall f(void *this, const char *version, const char *encoding, const char *standalone)",TiXmlDeclaration::TiXmlDeclaration: ret 0xC = 3 stack args
+0x004B6D90,signature,"void * __thiscall f(void *this, const char *value)",TiXmlElement::TiXmlElement: ret 4
+0x004B7EF0,signature,"const char * __thiscall f(void *this, const char *text, void *prevData, int encoding)",TiXmlDocument::Parse: ret 0xC = 3 stack args
+0x0083AEC0,signature,"int __cdecl f(unsigned char *dest, unsigned long *destLen, const unsigned char *source, unsigned long sourceLen, int level)",compress2: plain ret
+0x0083AF70,signature,"int __cdecl f(unsigned char *dest, unsigned long *destLen, const unsigned char *source, unsigned long sourceLen)",uncompress: plain ret
+0x0083B360,signature,"int __cdecl f(void *strm, int flush)",deflate: plain ret
+0x0083BB40,signature,int __cdecl f(void *strm),deflateEnd: plain ret
+0x0083C8A0,signature,int __cdecl f(void *strm),deflateReset: plain ret
+0x0083CB50,signature,"int __cdecl f(void *strm, int level, const char *version, int stream_size)",deflateInit_: plain ret
+0x0083CB80,signature,int __cdecl f(void *strm),inflateReset: plain ret
+0x0083CCB0,signature,"int __cdecl f(void *strm, const char *version, int stream_size)",inflateInit_: plain ret
+0x0083CDE0,signature,"int __cdecl f(void *strm, int flush)",inflate: plain ret
+0x0083E3D0,signature,int __cdecl f(void *strm),inflateEnd: plain ret
