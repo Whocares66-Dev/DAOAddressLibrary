@@ -9238,7 +9238,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 9237,function,GraphicsStructures::ModelHierarchyReader::VisitChildNodeAndFinish,0x0058c1a0,0x00786c40,0x0058c1a0
 9238,function,GraphicsStructures::ModelHierarchyReader::VisitChildNode,0x0058c1c0,0x00786c60,0x0058c1c0
 9239,function,std::allocator<GraphicsStructures::TriangleIndices16>::allocate,0x0058c1d0,0x00786c70,0x0058c1d0
-9240,function,std::allocator<GraphicsStructures::ModelNodeRecord>::construct,0x0058c230,0x00786cd0,0x0058c230
+9240,function,GraphicsStructures::ModelNodeRecord::ModelNodeRecord_copy,0x0058c230,0x00786cd0,0x0058c230
 9241,function,std::allocator<GraphicsStructures::ModelNodeRecord>::allocate,0x0058c2b0,0x004ebaf0,0x0058c2b0
 9242,function,GraphicsStructures::ReadMatrix4x4,0x0058c320,0x00786d50,0x0058c320
 9243,function,"std::_Copy_opt<GraphicsStructures::ModelNodeRecord *,GraphicsStructures::ModelNodeRecord *>",0x0058c3a0,0x00786dd0,0x0058c3a0
@@ -19678,10 +19678,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 19677,function,,0x0079d810,0x0066eeb0,0x0079d810
 19678,function,,0x0079d850,0x0066eef0,0x0079d850
 19679,function,,0x0079d880,0x0066ef20,0x0079d880
-19680,function,,0x0079d9a0,0x0066f040,0x0079d9a0
-19681,function,,0x0079d9f0,0x0066f090,0x0079d9f0
-19682,function,,0x0079dae0,0x0066f180,0x0079dae0
-19683,function,,0x0079db90,0x0066f230,0x0079db90
+19680,function,CCVisualEffectPool::ReleaseAll,0x0079d9a0,0x0066f040,0x0079d9a0
+19681,function,VfxManager::FinishPlacement,0x0079d9f0,0x0066f090,0x0079d9f0
+19682,function,CCVisualEffectPool::~CCVisualEffectPool,0x0079dae0,0x0066f180,0x0079dae0
+19683,function,VfxManager::LoadAndPlace,0x0079db90,0x0066f230,0x0079db90
 19684,function,,0x0079dd60,0x00582810,0x0079dd60
 19685,function,,0x0079de4d,0x005828fd,0x0079de4d
 19686,function,"ECBase::ECDynArray<std::pair<unsigned int,CCVisualEffect *>>::Reserve",0x0079de70,0x00583030,0x0079de70
@@ -19692,22 +19692,22 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 19691,function,CCVisualEffectPool::Grow,0x0079e1f0,0x0066f750,0x0079e1f0
 19692,function,CCVisualEffectPool::Acquire,0x0079e2b0,0x0066f810,0x0079e2b0
 19693,function,VfxManager::DestroyEffectIfFinished,0x0079e3a0,0x0066f900,0x0079e3a0
-19694,function,,0x0079e3e0,0x0066f940,0x0079e3e0
+19694,function,VfxManager::StopEffect,0x0079e3e0,0x0066f940,0x0079e3e0
 19695,function,VfxManager::ReleaseListedEffects,0x0079e460,0x0066f9c0,0x0079e460
 19696,function,VfxManager::CollectEffectsOfObject,0x0079e4c0,0x0066fa20,0x0079e4c0
 19697,function,VfxManager::MoveAttachedEffects,0x0079e580,0x0066fae0,0x0079e580
 19698,function,CCVisualEffectPool::CCVisualEffectPool,0x0079e6a0,0x0066fc00,0x0079e6a0
 19699,function,CCVisualEffectPool::NewEffect,0x0079e730,0x0066fc90,0x0079e730
-19700,function,,0x0079e790,0x0066fcf0,0x0079e790
+19700,function,VfxManager::VfxManager,0x0079e790,0x0066fcf0,0x0079e790
 19701,function,VfxManager::Get,0x0079e820,0x0066fd80,0x0079e820
-19702,function,,0x0079e8a0,0x0066fe00,0x0079e8a0
-19703,function,,0x0079eaa0,0x00670000,0x0079eaa0
+19702,function,VfxManager::CreateEffect,0x0079e8a0,0x0066fe00,0x0079e8a0
+19703,function,VfxManager::HandleAnimationEvent,0x0079eaa0,0x00670000,0x0079eaa0
 19704,function,VfxManager::Remove,0x0079eae0,0x00670040,0x0079eae0
-19705,function,,0x0079eb00,0x00670060,0x0079eb00
-19706,function,,0x0079ec20,0x00670180,0x0079ec20
-19707,function,,0x0079eca0,0x00670200,0x0079eca0
-19708,function,,0x0079ed10,0x00670270,0x0079ed10
-19709,function,,0x0079ed50,0x006702b0,0x0079ed50
+19705,function,VfxManager::DispatchAnimationEvents,0x0079eb00,0x00670060,0x0079eb00
+19706,function,VfxManager::RemoveEffectsOfObject,0x0079ec20,0x00670180,0x0079ec20
+19707,function,VfxManager::ApplyRemoteMaterial,0x0079eca0,0x00670200,0x0079eca0
+19708,function,LoadVFXTask::Run,0x0079ed10,0x00670270,0x0079ed10
+19709,function,FinalizeVFXTask::Run,0x0079ed50,0x006702b0,0x0079ed50
 19710,function,VfxManager::Place,0x0079edc0,0x00670320,0x0079edc0
 19711,function,VfxManager::Update,0x0079ee20,0x00670380,0x0079ee20
 19712,function,VfxManager::DuplicateAttachedEffects,0x0079ef50,0x006704b0,0x0079ef50
@@ -20708,7 +20708,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 20707,function,WStringArray::Resize,0x007ced20,0x006b60c0,0x007ced20
 20708,function,ECBase::ECDynArray<EC::Cutscene::Actor::Action*>::At,0x007cee30,0x006b61d0,0x007cee30
 20709,function,DoubleArray::Resize,0x007cee60,0x006b6200,0x007cee60
-20710,function,,0x007cef80,0x007609f0,0x007cef80
+20710,function,std::_Vector_const_iterator<?>::operator!=,0x007cef80,0x007609f0,0x007cef80
 20711,function,WStringArray::Clear,0x007cefb0,0x006b6320,0x007cefb0
 20712,function,std::_Copy<EC.Cutscene.Actor.ClipRecord*>,0x007cefc0,0x006b6330,0x007cefc0
 20713,function,"std::_Fill<EC.Cutscene.Actor.ClipRecord*,EC.Cutscene.Actor.ClipRecord>",0x007cf020,0x006b6390,0x007cf020
@@ -21133,35 +21133,35 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 21132,function,CProjectile::Update,0x007e9630,0x006d0ad0,0x007e9630
 21133,function,CPhysicsTriggerReport::OnTrigger,0x007e96b0,0x006d0b50,0x007e96b0
 21134,function,Stub::FreeBuffer_0xC,0x007e9840,0x006d0ce0,0x007e9840
-21135,function,,0x007e9860,0x006d0d00,0x007e9860
-21136,function,,0x007e9910,0x006d0db0,0x007e9910
-21137,function,,0x007e9950,0x006d0df0,0x007e9950
-21138,function,,0x007e99a0,0x006d0e40,0x007e99a0
-21139,function,,0x007e99d0,0x006d0e70,0x007e99d0
-21140,function,,0x007e9a10,0x006d0eb0,0x007e9a10
-21141,function,,0x007e9a70,0x006d0f10,0x007e9a70
-21142,function,,0x007e9ab0,0x006d0f50,0x007e9ab0
-21143,function,,0x007e9ad0,0x006d0f70,0x007e9ad0
-21144,function,,0x007e9b00,0x006d0fc0,0x007e9b00
-21145,function,,0x007e9b10,0x006d0fd0,0x007e9b10
-21146,function,,0x007e9b20,0x006d0fe0,0x007e9b20
-21147,function,,0x007e9b30,0x006d0fa0,0x007e9b30
-21148,function,,0x007e9b40,0x006d0fb0,0x007e9b40
+21135,function,CCVisualEffect::CCVisualEffect,0x007e9860,0x006d0d00,0x007e9860
+21136,function,CCVisualEffect::ResetVisualState,0x007e9910,0x006d0db0,0x007e9910
+21137,function,CCVisualEffect::PlayPhaseAnimation,0x007e9950,0x006d0df0,0x007e9950
+21138,function,CCVisualEffect::StopPhaseAnimation,0x007e99a0,0x006d0e40,0x007e99a0
+21139,function,CCVisualEffect::FadeOutPhaseAnimation,0x007e99d0,0x006d0e70,0x007e99d0
+21140,function,CCVisualEffect::SetPosition,0x007e9a10,0x006d0eb0,0x007e9a10
+21141,function,CCVisualEffect::SetOrientation,0x007e9a70,0x006d0f10,0x007e9a70
+21142,function,CCVisualEffect::AddToScene,0x007e9ab0,0x006d0f50,0x007e9ab0
+21143,function,CCVisualEffect::GetStopMode,0x007e9ad0,0x006d0f70,0x007e9ad0
+21144,function,CCVisualEffect::`scalar deleting destructor'`adjustor{52}',0x007e9b00,0x006d0fc0,0x007e9b00
+21145,function,CCVisualEffect::`scalar deleting destructor'`adjustor{24}',0x007e9b10,0x006d0fd0,0x007e9b10
+21146,function,CCVisualEffect::`scalar deleting destructor'`adjustor{56}',0x007e9b20,0x006d0fe0,0x007e9b20
+21147,function,CCVisualEffect::`scalar deleting destructor'`adjustor{32}',0x007e9b30,0x006d0fa0,0x007e9b30
+21148,function,CCVisualEffect::`scalar deleting destructor'`adjustor{112}',0x007e9b40,0x006d0fb0,0x007e9b40
 21149,function,VisualEffectParams::SetTint,0x007e9b50,0x006d0ff0,0x007e9b50
-21150,function,,0x007e9b80,0x006d1020,0x007e9b80
-21151,function,,0x007e9c10,0x006d10b0,0x007e9c10
+21150,function,CCVisualEffect::AIUpdate,0x007e9b80,0x006d1020,0x007e9b80
+21151,function,CCVisualEffect::UnloadModel,0x007e9c10,0x006d10b0,0x007e9c10
 21152,function,VfxObject::SetScale,0x007e9c40,0x006d10e0,0x007e9c40
 21153,function,VfxObject::SetTint,0x007e9c70,0x006d1110,0x007e9c70
-21154,function,,0x007e9ca0,0x006d1140,0x007e9ca0
-21155,function,,0x007e9ce0,0x006d1180,0x007e9ce0
-21156,function,,0x007e9d00,0x006d11a0,0x007e9d00
-21157,function,,0x007e9d20,0x006d11c0,0x007e9d20
-21158,function,,0x007e9d40,0x006d11e0,0x007e9d40
-21159,function,,0x007e9d60,0x006d1200,0x007e9d60
-21160,function,,0x007e9d80,0x006d1220,0x007e9d80
-21161,function,,0x007e9da0,0x006d1240,0x007e9da0
-21162,function,,0x007e9dc0,0x006d1260,0x007e9dc0
-21163,function,,0x007e9de0,0x006d1280,0x007e9de0
+21154,function,CCVisualEffect::GetRowPriority,0x007e9ca0,0x006d1140,0x007e9ca0
+21155,function,CCVisualEffect::GetImpactSoundName,0x007e9ce0,0x006d1180,0x007e9ce0
+21156,function,CCVisualEffect::GetImpactSoundVolume,0x007e9d00,0x006d11a0,0x007e9d00
+21157,function,CCVisualEffect::GetImpactSoundPitch,0x007e9d20,0x006d11c0,0x007e9d20
+21158,function,CCVisualEffect::GetDurationSoundName,0x007e9d40,0x006d11e0,0x007e9d40
+21159,function,CCVisualEffect::GetDurationSoundVolume,0x007e9d60,0x006d1200,0x007e9d60
+21160,function,CCVisualEffect::GetDurationSoundPitch,0x007e9d80,0x006d1220,0x007e9d80
+21161,function,CCVisualEffect::GetCessationSoundName,0x007e9da0,0x006d1240,0x007e9da0
+21162,function,CCVisualEffect::GetCessationSoundVolume,0x007e9dc0,0x006d1260,0x007e9dc0
+21163,function,CCVisualEffect::GetCessationSoundPitch,0x007e9de0,0x006d1280,0x007e9de0
 21164,function,,0x007e9e00,0x006d12a0,0x007e9e00
 21165,function,,0x007ea110,0x006d15b0,0x007ea110
 21166,function,,0x007ea1c0,0x006d1660,0x007ea1c0

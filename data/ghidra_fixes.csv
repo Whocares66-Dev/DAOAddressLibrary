@@ -16560,3 +16560,46 @@ address,what,value,why
 0x0058E3A0,signature,void * __thiscall f(void *this),ID 9312: ret and arguments read in daoexe --disasm
 0x0058E420,signature,"void * __thiscall f(void *this, unsigned int flags)",ID 9313: ret and arguments read in daoexe --disasm
 0x005802C0,signature,"int __cdecl f(const wchar_t *text, int indexType, void *out)",ID 9055: ret and arguments read in daoexe --disasm
+0x0079D9A0,signature,void __thiscall CCVisualEffectPool::ReleaseAll(void* this),"plain ret, reads ecx first (0x0079D9A2)"
+0x0079D9F0,signature,"void __thiscall VfxManager::FinishPlacement(void* this, void** effectHolder, unsigned int ownerId, bool loaded, unsigned int crustTarget)","ret 0x10 (0x0079DAD5), ecx saved to edi at 0x0079D9F9"
+0x0079DAE0,signature,void __thiscall CCVisualEffectPool::~CCVisualEffectPool(void* this),"plain ret, ecx saved to esi at 0x0079DB03"
+0x0079DB90,signature,"void __thiscall VfxManager::LoadAndPlace(void* this, void** effectHolder, void* descriptor, unsigned int crustTarget, float size)","ret 0x10 (0x0079DD50), ecx stored at 0x0079DBCE"
+0x0079DB90,clear,FinalizeVFXTask,label is wrong: this is a VfxManager method that only creates a FinalizeVFXTask (vtable 0xB2113C at 0x0079DCF2); the task's Run is 0x0079ED50
+0x0079E3E0,signature,"bool __thiscall VfxManager::StopEffect(void* this, void* effect, bool immediate)","ret 8 (0x0079E454), returns al"
+0x0079E790,signature,void* __thiscall VfxManager::VfxManager(void* this),"plain ret, returns this (0x0079E80B)"
+0x0079E8A0,signature,"void* __thiscall VfxManager::CreateEffect(void* this, void* descriptor, int heldMode, void* position, void* orientation, unsigned int crustTarget)","ret 0x14 (0x0079EA98), returns the effect pointer or 0"
+0x0079EAA0,signature,"bool __thiscall VfxManager::HandleAnimationEvent(void* this, void* event)","ret 4; passes ecx on to tail-called VfxManager methods (0x0079E3A0, 0x0079D850)"
+0x0079EB00,signature,void __thiscall VfxManager::DispatchAnimationEvents(void* this),"plain ret, ecx saved to ebp at 0x0079EB27"
+0x0079EC20,signature,"void __thiscall VfxManager::RemoveEffectsOfObject(void* this, unsigned int objectId, bool stopGracefully)",ret 8 (0x0079EC9C)
+0x0079ECA0,signature,void __stdcall VfxManager::ApplyRemoteMaterial(unsigned int effectHandle),"ret 4 (0x0079ED0B), ecx not read: fetches the manager by Get 0x0079E820"
+0x0079ED10,signature,"int __thiscall LoadVFXTask::Run(void* this, void* arg)","ret 4, arg unused, returns 3"
+0x0079ED50,signature,"int __thiscall FinalizeVFXTask::Run(void* this, void* arg)","ret 4, arg unused, returns 3"
+0x007CEF80,signature,"bool __thiscall std::_Vector_const_iterator<?>::operator!=(void* this, const void* other)","ret 4 (0x007CEFA6), ecx saved to esi at 0x007CEF81"
+0x007E9860,signature,"void* __thiscall CCVisualEffect::CCVisualEffect(void* this, unsigned int ownerId)","ret 4 (0x007E9908), returns this"
+0x007E9910,signature,void __thiscall CCVisualEffect::ResetVisualState(void* this),"plain ret path (tail jmp 0x00696F50), ecx saved to edi"
+0x007E9950,signature,"void __thiscall CCVisualEffect::PlayPhaseAnimation(void* this, unsigned short animationId)",ret 4 (0x007E998E)
+0x007E99A0,signature,"void __thiscall CCVisualEffect::StopPhaseAnimation(void* this, unsigned short animationId)","ret 4 on the null path (0x007E99C1), tail jmp to a ret 4 callee"
+0x007E99D0,signature,"void __thiscall CCVisualEffect::FadeOutPhaseAnimation(void* this, unsigned short animationId)",ret 4 (0x007E9A00)
+0x007E9A10,signature,"void __thiscall CCVisualEffect::SetPosition(void* this, const void* position)","ret 4 (0x007E9A62), aligned 16-byte vector"
+0x007E9A70,signature,"void __thiscall CCVisualEffect::SetOrientation(void* this, const void* orientation)","ret 4 (0x007E9A9E), aligned 16-byte quaternion"
+0x007E9AB0,signature,"void __thiscall CCVisualEffect::AddToScene(void* this, void* scene)","ret 4 on the null path (0x007E9AC8), tail jmp to a ret 4 callee"
+0x007E9AD0,signature,int __thiscall CCVisualEffect::GetStopMode(void* this),plain ret (0x007E9AFC)
+0x007E9B00,signature,"void* __thiscall CCVisualEffect::`scalar deleting destructor'`adjustor{52}'(void* this, unsigned int flags)",jumps to 0x007EA530 (ret 4)
+0x007E9B10,signature,"void* __thiscall CCVisualEffect::`scalar deleting destructor'`adjustor{24}'(void* this, unsigned int flags)",jumps to 0x007EA530 (ret 4)
+0x007E9B20,signature,"void* __thiscall CCVisualEffect::`scalar deleting destructor'`adjustor{56}'(void* this, unsigned int flags)",jumps to 0x007EA530 (ret 4)
+0x007E9B30,signature,"void* __thiscall CCVisualEffect::`scalar deleting destructor'`adjustor{32}'(void* this, unsigned int flags)",jumps to 0x007EA530 (ret 4)
+0x007E9B40,signature,"void* __thiscall CCVisualEffect::`scalar deleting destructor'`adjustor{112}'(void* this, unsigned int flags)",jumps to 0x007EA530 (ret 4)
+0x007E9B80,signature,"void __thiscall CCVisualEffect::AIUpdate(void* this, float dt)","ret 4 (0x007E9C06), dt unused"
+0x007E9C10,signature,void __thiscall CCVisualEffect::UnloadModel(void* this),"plain ret, tail jmp to AnimBase::Unload"
+0x007E9CA0,signature,int __cdecl CCVisualEffect::GetRowPriority(unsigned int rowId),"plain ret (0x007E9CD6), caller adds esp 4 (0x0079F880)"
+0x007E9CE0,signature,const void* __thiscall CCVisualEffect::GetImpactSoundName(void* this),"plain ret, returns row+0x6C"
+0x007E9D00,signature,float __thiscall CCVisualEffect::GetImpactSoundVolume(void* this),"plain ret, x87 return"
+0x007E9D20,signature,float __thiscall CCVisualEffect::GetImpactSoundPitch(void* this),"plain ret, x87 return"
+0x007E9D40,signature,const void* __thiscall CCVisualEffect::GetDurationSoundName(void* this),"plain ret, returns row+0x48"
+0x007E9D60,signature,float __thiscall CCVisualEffect::GetDurationSoundVolume(void* this),"plain ret, x87 return"
+0x007E9D80,signature,float __thiscall CCVisualEffect::GetDurationSoundPitch(void* this),"plain ret, x87 return"
+0x007E9DA0,signature,const void* __thiscall CCVisualEffect::GetCessationSoundName(void* this),"plain ret, returns row+0x90"
+0x007E9DC0,signature,float __thiscall CCVisualEffect::GetCessationSoundVolume(void* this),"plain ret, x87 return"
+0x007E9DE0,signature,float __thiscall CCVisualEffect::GetCessationSoundPitch(void* this),"plain ret, x87 return"
+0x00580060,signature,"void * __thiscall f(void *this, void *outIterator, void *whereContainer, void *wherePtr, const void *value)","the checked iterator by value as two words: arg 2 compared with this at 0x0058008C, arg 3 the pointer at 0x00580095; returns outIterator at 0x005800D1; ret 0x10 (lib-agent)"
+0x0058C230,signature,"void * __thiscall f(void *this, const void *other)","copy constructor: this in ecx at 0x0058C253, other at 0x0058C259, returns this at 0x0058C28D; ret 4 (lib-agent)"
