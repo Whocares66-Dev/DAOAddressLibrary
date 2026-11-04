@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.10.0
+
+- **The engine's functions are named:** 30,035 IDs are named, 592 more than in 0.9.0. The last of the engine's own functions, the D3D9 driver among them, have been read twice and named. What is left unnamed is the compiler's static destructors and a handful of rendering helpers. `addrlib.py lookup` finds them.
+- **Names put right:** 292 renamed. Among them are the vector types (`Math::Vector4f` aligned, `Math::VectorUA4f` unaligned, `Vector3`), the game's record types behind 114 placeholder names, the draw batch's counts, and `MovementController::SlopeFactor` (was `CornerFactor`). An ID's number never changes, so a plugin built on an older name still calls the same function.
+- **5 IDs retired:** pieces of other functions, not functions. Each keeps its number, with its kind `retired` and no address, so each build's file has 5 fewer addresses: 103,052, 103,324 and 103,285 for GOG, EA and Steam. No other address moved, and the file format is unchanged.
+- **More class shapes:** `data/structs.csv` has 1,844 fields of 239 classes, 179 more fields than 0.9.0, among them the D3D state cache and a creature's movement controller (keyboard driving, the ground slope, the move target).
+- **Tools:** `daoexe.py --callers` lists the direct calls and jumps to an address, and `daoexe.py` finds the game when this repository is a submodule. The Ghidra sync now catches a function whose class changed but whose name did not.
+
 ## 0.9.0
 
 - **The engine is read:** 29,443 IDs are named, 20,099 more than in 0.8.0, and 96.5% of the engine's own functions: 19,410 less 685, nearly all of what is left being the D3D9 driver, which a port replaces, and plumbing. The engine's names come from two independent readings of the code, reconciled; the library names, by their public names, from one pass and a check, and the class records' by a rule across every class. Game, game modes, world, AI, scripting, conversation, animation, input, camera, audio and the interface are done but for a few each. `addrlib.py lookup` finds them.
