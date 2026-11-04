@@ -321,7 +321,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 320,function,"std::use_facet<std::num_get<wchar_t,std::istreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>>",0x0040a8e0,0x0040abd0,0x0040a8e0
 321,function,std::use_facet<std::numpunct<wchar_t>>,0x0040aa10,0x0040ad00,0x0040aa10
 322,function,std::vector<std::wstring>::push_back,0x0040ab40,0x0040ae30,0x0040ab40
-323,function,,0x0040abf0,0x0040aee0,0x0040abf0
+323,function,"ECBase::ECHashMap<unsigned int,SmartData::IAttribute*,ECBase::ECHashParams<unsigned int>>::operator=",0x0040abf0,0x0040aee0,0x0040abf0
 324,function,,0x0040ad74,0x0040b064,0x0040ad74
 325,function,,0x0040ade0,0x0040b0d0,0x0040ade0
 326,function,EclipseGame::CreateScene,0x0040ae60,0x0040b150,0x0040ae60
@@ -3448,7 +3448,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 3447,function,AddInItem::AddInItem,0x00485ef0,0x0085d690,0x00485ef0
 3448,function,Gff4::Template::Template,0x004860c0,0x004b8780,0x004860c0
 3449,function,Gff4::Template::AddField,0x004860f0,0x004b87b0,0x004860f0
-3450,function,,0x00486170,0x004c4820,0x00486170
+3450,function,AddInRecord::AddInRecord,0x00486170,0x004c4820,0x00486170
 3451,function,OnlineFeatures::Shutdown,0x00486350,0x0085d860,0x00486350
 3452,function,OnlineFeatures::QueueGameRecord,0x00486640,0x0085db50,0x00486640
 3453,function,OnlineFeatures::OnConnectionLost,0x004866d0,0x0085dbe0,0x004866d0
@@ -3920,7 +3920,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 3919,function,DADM::RestartToInstall,0x004a5c50,0x00869880,0x004a5c50
 3920,function,DADM::IsOfferKnown,0x004a5df0,0x00869a20,0x004a5df0
 3921,function,OfferManager::HasOffer,0x004a5f10,0x00869b40,0x004a5f10
-3922,function,,0x004a5fe0,0x00869c10,0x004a5fe0
+3922,function,DADM::RestartToInstall,0x004a5fe0,0x00869c10,0x004a5fe0
 3923,function,DADM::IsOfferAvailable,0x004a5ff0,0x00869c20,0x004a5ff0
 3924,function,DADM::CountMessagesOfKind,0x004a61a0,0x00869dd0,0x004a61a0
 3925,function,ECBase::ECDynArray<unsigned int>::RemoveAt,0x004a62e0,0x007f5c90,0x004a62e0
@@ -4133,9 +4133,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4132,function,PRCGUIShared::HandleMessage_UpdateGameMessage,0x004b2980,0x00865f90,0x004b2980
 4133,function,PRCGUIShared::HandleMessage_InstallContentMessage,0x004b2a10,0x00866020,0x004b2a10
 4134,function,PRCGUIShared::HandleMessage_OpenTechnicalHelpMessage,0x004b2ad0,0x008660e0,0x004b2ad0
-4135,function,,0x004b2c00,0x00866210,0x004b2c00
+4135,function,GUI::ShowDialogBoxOk,0x004b2c00,0x00866210,0x004b2c00
 4136,function,ContentManager::ShowInstallContentPopup,0x004b2ce0,0x008662f0,0x004b2ce0
-4137,function,,0x004b2df0,0x00866400,0x004b2df0
+4137,function,DADM::ShowDownloadFailedPopup,0x004b2df0,0x00866400,0x004b2df0
 4138,function,RefreshBalanceAndEntitlementsMessage::Create,0x004b2ef0,0x00866500,0x004b2ef0
 4139,function,BuyDownloadMessage::Create,0x004b2f50,0x00866560,0x004b2f50
 4140,function,InstallContentMessage::Create,0x004b2fc0,0x008665d0,0x004b2fc0
@@ -4297,12 +4297,12 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4296,function,,0x004b8430,0x00870100,0x004b8430
 4297,function,,0x004b85d0,0x008702a0,0x004b85d0
 4298,function,,0x004b8760,0x00870430,0x004b8760
-4299,function,,0x004b8ae0,0x0084c170,0x004b8ae0
+4299,function,ECPrivate::Pool::~Pool,0x004b8ae0,0x0084c170,0x004b8ae0
 4300,function,ECMemory::GetCurrentPoolId,0x004b8af0,0x0084c180,0x004b8af0
 4301,function,ECMemory::PushPoolId,0x004b8b20,0x0084c1b0,0x004b8b20
 4302,function,ECMemory::PopPoolId,0x004b8b60,0x0084c1f0,0x004b8b60
 4303,function,ECMemory::FindPoolContaining,0x004b8b90,0x0084c220,0x004b8b90
-4304,function,,0x004b8be0,0x0084c270,0x004b8be0
+4304,function,ECMemory::SetPoolFallback,0x004b8be0,0x0084c270,0x004b8be0
 4305,function,ECPrivate::LogPrintf,0x004b8c60,0x0084c2f0,0x004b8c60
 4306,function,ECPrivate::MemoryManager::MemoryManager,0x004b8d00,0x0084c390,0x004b8d00
 4307,function,ECMemory::EnsureInitialized,0x004b8da0,0x0084c430,0x004b8da0
@@ -4391,25 +4391,25 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4390,function,Multithreading::ThreadManager::StartAndWait,0x004bc2f0,0x007fe400,0x004bc2f0
 4391,function,Multithreading::ThreadManager::RequestShutdown,0x004bc3a0,0x007fe4b0,0x004bc3a0
 4392,function,Multithreading::ThreadManager::GetNextTask,0x004bc450,0x007fe560,0x004bc450
-4393,function,,0x004bc4e0,0x007fe5f0,0x004bc4e0
-4394,function,,0x004bc540,0x007fe650,0x004bc540
-4395,function,,0x004bc5c0,0x007fe6d0,0x004bc5c0
-4396,function,,0x004bc620,0x007fe730,0x004bc620
-4397,function,,0x004bc6a0,0x007fe7b0,0x004bc6a0
-4398,function,,0x004bc770,0x007fe880,0x004bc770
-4399,function,,0x004bc950,0x007fea60,0x004bc950
-4400,function,,0x004bc960,0x007fea70,0x004bc960
-4401,function,,0x004bc9d0,0x007feb60,0x004bc9d0
+4393,function,ECBase::ECDynArray<?>::Back,0x004bc4e0,0x007fe5f0,0x004bc4e0
+4394,function,Multithreading::TaskPriorityMap::PopFront,0x004bc540,0x007fe650,0x004bc540
+4395,function,"std::find<std::_Deque_iterator<Multithreading::Task *>,Multithreading::Task *>",0x004bc5c0,0x007fe6d0,0x004bc5c0
+4396,function,"std::_Copy_opt<std::_Deque_iterator<Multithreading::Task *>,std::_Deque_iterator<Multithreading::Task *>>",0x004bc620,0x007fe730,0x004bc620
+4397,function,Multithreading::ThreadManager::ClearAllQueues,0x004bc6a0,0x007fe7b0,0x004bc6a0
+4398,function,std::deque<Multithreading::Task *>::erase,0x004bc770,0x007fe880,0x004bc770
+4399,function,"std::pair<unsigned int const,std::deque<Multithreading::Task *>>::~pair",0x004bc950,0x007fea60,0x004bc950
+4400,function,std::deque<Multithreading::Task *>::erase,0x004bc960,0x007fea70,0x004bc960
+4401,function,Multithreading::TaskDeque::Remove,0x004bc9d0,0x007feb60,0x004bc9d0
 4402,function,,0x004bcaa0,0x007fec30,0x004bcaa0
-4403,function,,0x004bcc00,0x007fed90,0x004bcc00
-4404,function,,0x004bcc80,0x007fee10,0x004bcc80
-4405,function,,0x004bcd10,0x007feea0,0x004bcd10
-4406,function,,0x004bcd90,0x007fef20,0x004bcd90
+4403,function,std::deque<Multithreading::Task *>::push_front,0x004bcc00,0x007fed90,0x004bcc00
+4404,function,Multithreading::TaskPriorityMap::Remove,0x004bcc80,0x007fee10,0x004bcc80
+4405,function,std::deque<Multithreading::Task *>::push_back,0x004bcd10,0x007feea0,0x004bcd10
+4406,function,std::deque<Multithreading::Task *>::_Insert,0x004bcd90,0x007fef20,0x004bcd90
 4407,function,,0x004bd008,0x007ff198,0x004bd008
 4408,function,,0x004bd34f,0x007ff4df,0x004bd34f
-4409,function,,0x004bd4b0,0x007ff640,0x004bd4b0
-4410,function,,0x004bd500,0x007ff690,0x004bd500
-4411,function,,0x004bd560,0x007ff6f0,0x004bd560
+4409,function,Multithreading::ThreadManager::RemoveTask,0x004bd4b0,0x007ff640,0x004bd4b0
+4410,function,std::deque<Multithreading::Task *>::insert,0x004bd500,0x007ff690,0x004bd500
+4411,function,std::deque<Multithreading::Task *>::deque_copy,0x004bd560,0x007ff6f0,0x004bd560
 4412,function,,0x004bd64c,0x007ff7dc,0x004bd64c
 4413,function,,0x004bd660,0x007ff7f0,0x004bd660
 4414,function,,0x004bd930,0x007ffac0,0x004bd930
@@ -4430,7 +4430,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4429,function,Multithreading::ThreadManager::QueueTask,0x004be610,0x008007a0,0x004be610
 4430,function,Multithreading::ThreadManager::DrainWorkerQueues,0x004be6a0,0x00800830,0x004be6a0
 4431,function,Multithreading::ThreadManager::StopWorkerThreads,0x004be860,0x008009f0,0x004be860
-4432,function,,0x004be890,0x00800a20,0x004be890
+4432,function,Resource::Resource,0x004be890,0x00800a20,0x004be890
 4433,function,Resource::AddReference,0x004be8d0,0x00800a60,0x004be8d0
 4434,function,Resource::GetReadRequest,0x004be8e0,0x00800a70,0x004be8e0
 4435,function,Resource::ReadOnFirstUse,0x004be950,0x00800ae0,0x004be950
@@ -4442,35 +4442,35 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4441,function,Resource::ReplaceBuffer,0x004bef40,0x008010d0,0x004bef40
 4442,function,Resource::DropReference,0x004bf010,0x008011a0,0x004bf010
 4443,function,Resource::AttachMemory,0x004bf030,0x008011c0,0x004bf030
-4444,function,,0x004bf060,0x008011f0,0x004bf060
-4445,function,,0x004bf090,0x00505380,0x004bf090
-4446,function,,0x004bf0b0,0x00801220,0x004bf0b0
+4444,function,Resource::GetBuffer,0x004bf060,0x008011f0,0x004bf060
+4445,function,swprintf,0x004bf090,0x00505380,0x004bf090
+4446,function,ECLog::GetChannelName,0x004bf0b0,0x00801220,0x004bf0b0
 4447,function,ECLog::CloseLogFile,0x004bf180,0x008012f0,0x004bf180
-4448,function,,0x004bf1c0,0x00801330,0x004bf1c0
+4448,function,ECLog::SetChannelEnabled,0x004bf1c0,0x00801330,0x004bf1c0
 4449,function,ECLog::DisableChannel,0x004bf220,0x00801390,0x004bf220
-4450,function,,0x004bf250,0x008013c0,0x004bf250
+4450,function,ECLog::~ECLog,0x004bf250,0x008013c0,0x004bf250
 4451,function,ECLog::SetIniPath,0x004bf300,0x00802be0,0x004bf300
-4452,function,,0x004bf350,0x004695a0,0x004bf350
-4453,function,,0x004bf3d0,0x008014c0,0x004bf3d0
-4454,function,,0x004bf790,0x00801880,0x004bf790
+4452,function,std::operator+,0x004bf350,0x004695a0,0x004bf350
+4453,function,ECLog::OpenLogFile,0x004bf3d0,0x008014c0,0x004bf3d0
+4454,function,ECLog::WriteEntry,0x004bf790,0x00801880,0x004bf790
 4455,function,ECLog::SetLogFile,0x004bf960,0x00801a50,0x004bf960
-4456,function,,0x004bf9a0,0x00801a90,0x004bf9a0
-4457,function,,0x004bfa20,0x00801b10,0x004bfa20
-4458,function,,0x004bfaa0,0x00801b90,0x004bfaa0
-4459,function,,0x004bfd00,0x00801df0,0x004bfd00
-4460,function,,0x004bff10,0x00802000,0x004bff10
-4461,function,,0x004bff40,0x00802030,0x004bff40
+4456,function,ECLog::Log,0x004bf9a0,0x00801a90,0x004bf9a0
+4457,function,ECLog::LogNoFlush,0x004bfa20,0x00801b10,0x004bfa20
+4458,function,ECLog::LoadIni,0x004bfaa0,0x00801b90,0x004bfaa0
+4459,function,ECLog::ECLog,0x004bfd00,0x00801df0,0x004bfd00
+4460,function,EngineServices::InitPerformanceFrequency,0x004bff10,0x00802000,0x004bff10
+4461,function,EngineServices::GetMicroseconds,0x004bff40,0x00802030,0x004bff40
 4462,function,EngineServices::GetByte_0xE4,0x004bff90,0x00802080,0x004bff90
-4463,function,,0x004bffa0,0x00802090,0x004bffa0
-4464,function,,0x004bffc0,0x008020b0,0x004bffc0
-4465,function,,0x004bffd0,0x008020c0,0x004bffd0
+4463,function,EngineServices::GetBuildVersion,0x004bffa0,0x00802090,0x004bffa0
+4464,function,EngineServices::Get,0x004bffc0,0x008020b0,0x004bffc0
+4465,function,EngineServices::GetLog,0x004bffd0,0x008020c0,0x004bffd0
 4466,function,Clock::Microseconds,0x004bfff0,0x008020e0,0x004bfff0
 4467,function,ECFileAccess::Aliases::Get,0x004c0010,0x00802100,0x004c0010
 4468,function,EngineServices::GetRandomGenerator,0x004c0030,0x00802120,0x004c0030
-4469,function,,0x004c0050,0x00802140,0x004c0050
+4469,function,EngineServices::EngineServices,0x004c0050,0x00802140,0x004c0050
 4470,function,EngineServices::~EngineServices,0x004c01a0,0x00802290,0x004c01a0
-4471,function,,0x004c0260,0x00802350,0x004c0260
-4472,function,,0x004c0330,0x0084ecc0,0x004c0330
+4471,function,EngineServices::LaunchProcess,0x004c0260,0x00802350,0x004c0260
+4472,function,swprintf_s,0x004c0330,0x0084ecc0,0x004c0330
 4473,function,WideEqualNoCase,0x004c0350,0x00802420,0x004c0350
 4474,function,,0x004c03c0,0x005f3a00,0x004c03c0
 4475,function,,0x004c03f0,0x00802490,0x004c03f0
@@ -4488,7 +4488,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4487,function,ECBase::ECString::ToInt64,0x004c0a10,0x00802990,0x004c0a10
 4488,function,ECBase::ECString::EqualsNoCase,0x004c0a50,0x008029d0,0x004c0a50
 4489,function,ECBase::ECString::EqualsNoCase,0x004c0aa0,0x00802a20,0x004c0aa0
-4490,function,,0x004c0b00,0x00802a80,0x004c0b00
+4490,function,ECBase::ECString::PrefixEqualsNoCase,0x004c0b00,0x00802a80,0x004c0b00
 4491,function,"ECBase::ECString::EqualsNoCase(const wchar_t*,unsigned int)",0x004c0b60,0x00802ae0,0x004c0b60
 4492,function,,0x004c0bf0,0x00802b70,0x004c0bf0
 4493,function,,0x004c0c40,0x00477330,0x004c0c40
@@ -4547,16 +4547,16 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4546,function,std::wstring::operator=,0x004c2ab0,0x00803fe0,0x004c2ab0
 4547,function,ECBase::ECString::Assign,0x004c2ad0,0x00804000,0x004c2ad0
 4548,function,ScriptBackend::ForScript_IntToString,0x004c2b10,0x00804040,0x004c2b10
-4549,function,,0x004c2b80,0x008040b0,0x004c2b80
-4550,function,,0x004c2bf0,0x00804120,0x004c2bf0
-4551,function,,0x004c2cc0,0x008041f0,0x004c2cc0
+4549,function,ScriptBackend::ForScript_FloatToString,0x004c2b80,0x008040b0,0x004c2b80
+4550,function,ECBase::ECString::AssignUtf8,0x004c2bf0,0x00804120,0x004c2bf0
+4551,function,ECBase::ECString::ToUtf8,0x004c2cc0,0x008041f0,0x004c2cc0
 4552,function,ECBase::ECString::StartsWith,0x004c2e50,0x00804380,0x004c2e50
 4553,function,"std::wstring::replace(unsigned int,unsigned int,const std::wstring&)",0x004c2f70,0x008044a0,0x004c2f70
 4554,function,ECBase::ECString::ReplaceFirst,0x004c2fc0,0x008044f0,0x004c2fc0
-4555,function,,0x004c3000,0x00804530,0x004c3000
+4555,function,ECBase::ECString::ReplaceAll,0x004c3000,0x00804530,0x004c3000
 4556,function,ECBase::ECString::Format,0x004c3030,0x00804560,0x004c3030
-4557,function,,0x004c30f0,0x00804620,0x004c30f0
-4558,function,,0x004c31a0,0x008046d0,0x004c31a0
+4557,function,ECBase::ECString::Left,0x004c30f0,0x00804620,0x004c30f0
+4558,function,ECBase::ECString::Right,0x004c31a0,0x008046d0,0x004c31a0
 4559,function,std::wstring::substr,0x004c3250,0x00804780,0x004c3250
 4560,function,ECBase::ECString::Trim,0x004c3310,0x00804840,0x004c3310
 4561,function,std::operator+,0x004c3360,0x00804890,0x004c3360
@@ -4577,10 +4577,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 4576,function,ECBase::ECString::RemoveInvalidCharacters,0x004c3cf0,0x00805220,0x004c3cf0
 4577,function,,0x004c3f90,0x008054c0,0x004c3f90
 4578,function,,0x004c3fc0,0x008054f0,0x004c3fc0
-4579,function,,0x004c4090,0x008055c0,0x004c4090
+4579,function,std::wstring::replace,0x004c4090,0x008055c0,0x004c4090
 4580,function,std::wstring::wstring(const char*),0x004c4140,0x00805670,0x004c4140
-4581,function,,0x004c42b0,0x008057e0,0x004c42b0
-4582,function,,0x004c4430,0x00805960,0x004c4430
+4581,function,"ECBase::ECString::Assign(const char*,unsigned int)",0x004c42b0,0x008057e0,0x004c42b0
+4582,function,ECBase::ECString::Assign(const char*),0x004c4430,0x00805960,0x004c4430
 4583,function,,0x004c45a0,0x00805ad0,0x004c45a0
 4584,retired,,,,
 4585,function,,0x004c47e9,0x00805d19,0x004c47e9

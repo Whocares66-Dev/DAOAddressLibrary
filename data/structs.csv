@@ -683,6 +683,15 @@ ECInput::RawInputWin32,0x14,0x4,int32_t,mouseX,"0x00880112 add dword [ebp+0x14],
 ECInput::RawInputWin32,0x18,0x4,int32_t,mouseY,"0x00880127 add dword [ebp+0x18],edx in ReadMouse; 0x008804FE mov [esi+0x18],eax in Poll"
 ECInput::RawInputWin32,0x3D,0x100,uint8_t[256],keyboardState,"0x0087DE56 movzx eax,byte [edx+ecx+0x3d] in IsScancodeDown (0x0087DE50): a byte a scan code, bit 7 set when down. The 256 length is the DirectInput keyboard state's, not read here"
 ECInput::RawInputWin32,0x188,0x5,uint8_t[5],mouseButtons,"0x0087E155 test byte [ebx+0x188],0x80 in QueryMouseState (0x0087E0E0); 0x0087EF44 and 0x0087EFAE (ReleaseHeldMouseButtons) and 0x0087F33E (EmitMouseButtonReleases) index it a byte a button; the count of five is DAOLib's"
+ECLog,0x1C,0x1C,std::wstring,logFolder,"0x004BFD50 call 0x004C0D90 on this+0x1C in the constructor; the Logs folder path from SHGetFolderPathW is stored here (INFERRED), destroyed at 0x004BF2CF"
+ECLog,0x38,0x4,ECFileAccess::FileAccess*,file,"0x004BF190 mov ecx,[esi+0x38] then a virtual delete in CloseLogFile; made at 0x004BF513 in OpenLogFile"
+ECLog,0x3C,0x4,unsigned int,entryCount,"0x004BF7EB mov eax,[ebp+0x3C] compared at 0x004BF7EE with [ebp+0x40] in WriteEntry (INFERRED: count of lines or bytes written; the increment was not seen)"
+ECLog,0x40,0x4,unsigned int,entryLimit,"0x004BFD73 mov [esi+0x40],0xFDE8 in the constructor; compared at 0x004BF7EE, past it OpenLogFile is called"
+ECLog,0x48,0x800,wchar_t[0x400],lineBuffer,"0x004BF9D1 lea edi,[esi+0x48] with vswprintf size 0x400 at 0x004BF9E1 in ECLog::Log"
+ECLog,0x848,0x30,unsigned char[0x30],channelEnabled,"0x004BF1E2 mov [eax+esi+0x848],cl in SetChannelEnabled; filled with 1 by memset at 0x004BFDB6"
+ECLog,0x878,0x1,bool,enabled,"0x004BF40D cmp byte [esi+0x878],0 at the start of OpenLogFile and 0x004BF7D6 in WriteEntry; set to 1 at 0x004BFD97"
+ECLog,0x87C,0x1,bool,writeWide,"0x004BF849 cmp byte [ebp+0x87c]: zero converts the line to narrow through 0x004C2480 before writing, nonzero writes the wide bytes (2*len+2) as they are"
+ECLog,0x880,0x4,Multithreading::Mutex*,lock,"0x004BF183 mov ecx,[esi+0x880] then Mutex::Lock 0x004CB2B0 in CloseLogFile; deleted at 0x004BF2AF in ~ECLog"
 ECPrivate::MemoryManager,0x0,0x20,Multithreading::Mutex,mutex,0x004B8D2C call Mutex::Mutex on this
 ECPrivate::MemoryManager,0x0,0x4D4,struct,sizeof,0x004B8DE7 push 0x4D4 (operator new in ECMemory::EnsureInitialized)
 ECPrivate::MemoryManager,0x20,0x120,ECPrivate::Pool,pool,"0x004B8D31 lea ecx,[esi+0x20]; Pool::Pool"
@@ -721,6 +730,9 @@ EclipseGame,0xC8,0x4,Eclipse::PlatformWin32*,platform,"0x007EDFF3 mov ecx,[eax+0
 EffectList,0x0,0x14,struct,sizeof,0x0068979D push 0x14 ; the allocation before the constructor call at 0x006897D9 (constructor 0x00A64880)
 EffectList,0x0,0x4,CGameEffect*,topAnimationEffect,"0x00A6493C mov [esi],edi in AddEffect (0x00A64900) when the new effect's animation priority beats the current one's (0x00A64933)"
 EffectList,0x4,0x10,std::vector<CGameEffect*>,effects,"0x00A64885 lea ecx,[esi+4] ; begin +8 and end +0xC are read with sar 2 at 0x00A64646..0x00A6465E by FindTopAnimationEffect ; 4-byte elements"
+EngineServices,0x0,0x4,BuildVersion*,buildVersion,"0x004C00DF mov [esi],eax after the BuildVersion constructor 0x004DF4E0; read through 0x004621C0 by EngineServices::GetBuildVersion 0x004BFFA0"
+EngineServices,0x4,0x4,ECLog*,log,"0x004C00B3 mov [esi+4],eax after the ECLog constructor; read by 0x00A222A0 (mov eax,[ecx+4]) in EngineServices::GetLog 0x004BFFD0"
+EngineServices,0x10,0x8,unsigned long long,performanceFrequency,"0x004BFF2E mov [esi+0x10],ecx and [esi+0x14],edx after QueryPerformanceFrequency in 0x004BFF10; read at 0x004BFF6C / 0x004BFF70 in GetMicroseconds"
 Equipment,0x0,0x58,struct,sizeof,0x006B441E; sizeof (push 0x58)
 Equipment,0x0,0x4,void*,vptr,0x00798CD7; vptr 0x00B1FB8C
 Equipment,0x8,0x4,void*,dirtyFlaggableVptr,"0x00798CDD, 0x00798CBC; vptr of the DirtyFlaggable base at +0x8, 0x00B1FB7C (base's own 0x00B1FB70 first)"
