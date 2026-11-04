@@ -5384,7 +5384,7 @@ id,subsystem,class,how
 5434,Core,Multithreading::Semaphore,name
 5435,Core,Multithreading::Semaphore,name
 5436,Core,Multithreading::Semaphore,name
-5437,Audio,,callers
+5437,Core,Multithreading::Semaphore,name
 5438,Resources,Resource,name
 5439,Resources,ECResMan::ResourceSource,name
 5440,Resources,ECResMan::ResourceSource,name
@@ -5408,24 +5408,24 @@ id,subsystem,class,how
 5458,Resources,Resource,name
 5459,ThirdParty:STL,,string
 5460,Resources,Resource,name
-5461,App,,range
+5461,Core,RandomGenerator,name
 5462,Core,RandomGenerator,name
-5463,Core,,range
-5464,Core,,range
-5465,Core,,range
+5463,Core,RandomGenerator,name
+5464,Core,RandomGenerator,name
+5465,Core,RandomGenerator,name
 5466,Core,RandomGenerator,name
-5467,Core,,range
-5468,Core,,range
-5469,Core,,range
-5470,Core,,range
+5467,Core,RandomGenerator,name
+5468,Core,RandomGenerator,name
+5469,Core,ScriptVariableNames::Entry,range
+5470,Core,ScriptVariableNames::Entry,range
 5471,ThirdParty:STL,,range
 5472,ThirdParty:STL,,range
-5473,Core,,range
-5474,Core,,range
+5473,Core,ScriptVariableKey,range
+5474,Core,ECBase::ECDynArray<?>,name
 5475,ThirdParty:STL,,range
-5476,Core,,range
-5477,Core,,range
-5478,Core,,range
+5476,Core,NameEntryPool,range
+5477,Core,NameEntryPool,range
+5478,Core,NameEntryPool,range
 5479,ThirdParty:STL,,string
 5480,ThirdParty:STL,,owner
 5481,ThirdParty:STL,,owner
@@ -5473,8 +5473,8 @@ id,subsystem,class,how
 5523,ThirdParty:STL,ScriptVariableNames,range
 5524,ThirdParty:STL,ScriptVariableNames,range
 5525,unknown,Core,
-5526,App,,callers
-5527,Messaging,,range
+5526,Messaging,Messages::Observer,name
+5527,Messaging,Messages::Observer,name
 5528,Messaging,Messages::Observer,name
 5529,Messaging,Messages::Observer,name
 5530,Messaging,Messages::Observer,name
@@ -5484,15 +5484,15 @@ id,subsystem,class,how
 5534,Messaging,Messages::MessageReceiver,name
 5535,Messaging,Messages::MessageReceiver,name
 5536,Messaging,Messages::MessageReceiver,name
-5537,Core,,range
-5538,Core,,range
-5539,Core,,range
-5540,Core,,range
-5541,Core,,range
-5542,Core,,range
-5543,Core,,range
-5544,Core,,range
-5545,Core,,range
+5537,Core,Endian,range
+5538,Core,Endian,range
+5539,Core,Endian,range
+5540,Core,Endian,range
+5541,Core,Endian,range
+5542,Core,Endian,range
+5543,Core,Endian,range
+5544,Core,Endian,range
+5545,Core,Endian,range
 5546,Resources,Compression,callers
 5547,Resources,ECResMan::ReadRequestTask,name
 5548,Resources,ECResMan::ReadRequestTask,name
@@ -5537,7 +5537,7 @@ id,subsystem,class,how
 5591,Messaging,Messages::InputStringDataStream,name
 5592,Messaging,Messages::InputStringDataStream,name
 5593,Messaging,Messages::InputStringDataStream,name
-5594,Core,,range
+5594,Core,Math,range
 5595,Game,Vector3,callers
 5596,Core,Math::Vector4f,name
 5597,Core,Vector3,between
@@ -5561,8 +5561,8 @@ id,subsystem,class,how
 5615,World,EC::WDObject,name
 5616,World,EC::WDObject,name
 5617,World,EC::GameObjectProxy,name
-5618,Core,,range
-5619,Core,,range
+5618,Core,Multithreading::AtomicInt,name
+5619,Core,Multithreading::AtomicInt,name
 5620,Resources,M2DA,name
 5621,Resources,C2DASource,name
 5622,Resources,C2DASource,name
@@ -5632,10 +5632,10 @@ id,subsystem,class,how
 5686,Resources,G2DA,name
 5687,Resources,G2DA,name
 5688,Resources,G2DA,name
-5689,Messaging,,range
-5690,Messaging,,range
-5691,Messaging,,range
-5692,Messaging,,range
+5689,Messaging,Messages,name
+5690,Messaging,Messages,name
+5691,Messaging,Endian,range
+5692,Messaging,Messages,name
 5693,Core,Angle,name
 5694,Core,Math,between
 5695,Core,Vector3,between
@@ -6089,10 +6089,9 @@ id,subsystem,class,how
 6148,ThirdParty:STL,,owner
 6149,ThirdParty:STL,,string
 6150,Rendering,Graphics::MaterialObject,name
-6151,unknown,,
-6152,unknown,,
-6153,unknown,,
-6154,unknown,,
+6151,unknown,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",
+6152,unknown,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",
+6153,unknown,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",
 6155,ThirdParty:STL,,string
 6156,Rendering,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",callers
 6157,Rendering,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",callers
@@ -6490,7 +6489,7 @@ id,subsystem,class,how
 6549,ThirdParty:Scaleform,GFxMovieDef::ResourceVisitor,builds
 6550,GUI,GUI::ScaleformManager,name
 6551,App,GUI,callers
-6552,GUI,,range
+6552,GUI,GuiMovieSet,name
 6553,ThirdParty:Scaleform,GFxMovieDef::ResourceVisitor,name
 6554,GUI,GUI::ScaleformManager,name
 6555,GUI,GUI::ScaleformManager,name
@@ -7064,7 +7063,7 @@ id,subsystem,class,how
 7124,Rendering,Eclipse::IGraphicsInternal,name
 7125,Rendering,GuiMovieEntry,between
 7126,Rendering,Eclipse::IGraphicsInternal,name
-7127,GUI,,callers
+7127,Rendering,Eclipse::IGraphicsInternal,name
 7128,ThirdParty:STL,std,name
 7129,ThirdParty:STL,std::_Tree<?>,name
 7130,ThirdParty:STL,,string
@@ -8752,7 +8751,7 @@ id,subsystem,class,how
 8817,ThirdParty:STL,"std::basic_filebuf<wchar_t,std::char_traits<wchar_t>>",vtable
 8818,ThirdParty:STL,"std::basic_filebuf<wchar_t,std::char_traits<wchar_t>>",vtable
 8819,ThirdParty:STL,"std::basic_filebuf<wchar_t,std::char_traits<wchar_t>>",vtable
-8820,Data,,range
+8820,ThirdParty:STL,std::list<?>,name
 8821,Rendering,GraphicsStructures::Array<GraphicsStructures::Array<Math::Vector4f>>,name
 8822,ThirdParty:STL,,range
 8823,ThirdParty:STL,,range
@@ -20760,7 +20759,7 @@ id,subsystem,class,how
 20853,ThirdParty:STL,,string
 20854,ThirdParty:STL,,string
 20855,ThirdParty:STL,std::vector<EC.Cutscene.Actor.ClipRecord>,name
-20856,Conversation,,callers
+20856,Core,ECBase::ECDynArray<EC::Cutscene::Actor::ClipRecord>,name
 20857,ThirdParty:STL,,string
 20858,ThirdParty:STL,,owner
 20859,ThirdParty:STL,,between
@@ -22344,9 +22343,9 @@ id,subsystem,class,how
 22445,ThirdParty:STL,std::vector<NxGroupsMask>,name
 22446,ThirdParty:STL,std::vector<?>,name
 22447,ThirdParty:STL,std::vector<Physics::ActorUserRecord>,name
-22448,Physics,,callers
+22448,ThirdParty:STL,std::vector<Physics::ActorUserRecord>,name
 22449,ThirdParty:STL,std::vector<Physics::ShapeUserRecord>,name
-22450,Physics,,callers
+22450,ThirdParty:STL,std::vector<Physics::ShapeUserRecord>,name
 22451,Physics,Physics::VariableSetPool<Physics::PhysicsNxActorVariableSet<NxMat34>>,name
 22452,Physics,Physics::VariableSetPool<Physics::PhysicsNxActorVariableSet<NxMat34>>,name
 22453,Physics,Physics::VariableSetPool<Physics::PhysicsNxActorVariableSet<NxQuat>>,name
@@ -22757,7 +22756,7 @@ id,subsystem,class,how
 22859,ThirdParty:STL,,string
 22860,ThirdParty:STL,,string
 22861,App,Console::Console,name
-22862,Tools,,range
+22862,App,Console::Console,name
 22863,ThirdParty:STL,,string
 22864,ThirdParty:STL,,string
 22865,ThirdParty:STL,,string
@@ -22860,13 +22859,13 @@ id,subsystem,class,how
 22963,Rendering,TexManager::TexturePool,name
 22964,ThirdParty:STL,std,name
 22965,Rendering,TexManager::TexturePool,name
-22966,unknown,Core,
+22966,Rendering,Core,callers
 22967,ThirdParty:STL,,string
 22968,ThirdParty:STL,,owner
 22969,ThirdParty:STL,,owner
-22970,unknown,,
+22970,Rendering,TexManager::TexturePool,name
 22971,Rendering,TexManager::TexturePool,name
-22972,unknown,,
+22972,ThirdParty:STL,"std::pair<TexManager::TextureShape,std::vector<TexManager::PoolEntry>>",name
 22973,ThirdParty:STL,,string
 22974,ThirdParty:STL,,owner
 22975,ThirdParty:STL,,between
@@ -32706,8 +32705,8 @@ id,subsystem,class,how
 32940,Network,CNetLayerWindow,pointer
 32941,ThirdParty:STL,,string
 32942,ThirdParty:STL,,string
-32943,Network,,callers
-32944,Network,,callers
+32943,Network,CNetLayerWindow,callers
+32944,Network,CNetLayerWindow,callers
 32945,Network,CNetLayerWindow,callers
 32946,unknown,CNetLayerBufferPool,
 32947,unknown,CNetLayerBufferPool,
@@ -44236,10 +44235,10 @@ id,subsystem,class,how
 44477,GUI,Alert,owner
 44478,Data,SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<Alert*>>,owner
 44479,Data,SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<Alert*>>,owner
-44480,Core,,owner
-44481,Core,,owner
-44482,Core,,owner
-44483,Core,,owner
+44480,Core,NameEntryPool,owner
+44481,Core,NameEntryPool,owner
+44482,Core,NameEntryPool,owner
+44483,Core,NameEntryPool,owner
 44484,GUI,Notifications,owner
 44485,GUI,Notifications,owner
 44486,GUI,Notifications,owner
@@ -54718,18 +54717,18 @@ id,subsystem,class,how
 54959,App,Console::Console,owner
 54960,App,Console::Console,owner
 54961,App,Console::Console,owner
-54962,Tools,,owner
-54963,Tools,,owner
-54964,Tools,,owner
-54965,Tools,,owner
-54966,Tools,,owner
-54967,Tools,,owner
-54968,Tools,,owner
-54969,Tools,,owner
-54970,Tools,,owner
-54971,Tools,,owner
-54972,Tools,,owner
-54973,Tools,,owner
+54962,App,Console::Console,owner
+54963,App,Console::Console,owner
+54964,App,Console::Console,owner
+54965,App,Console::Console,owner
+54966,App,Console::Console,owner
+54967,App,Console::Console,owner
+54968,App,Console::Console,owner
+54969,App,Console::Console,owner
+54970,App,Console::Console,owner
+54971,App,Console::Console,owner
+54972,App,Console::Console,owner
+54973,App,Console::Console,owner
 54974,ThirdParty:STL,"std::map<int,std::wstring>",owner
 54975,ThirdParty:STL,"std::map<int,std::wstring>",owner
 54976,ThirdParty:STL,"std::map<int,std::wstring>",owner
@@ -58635,9 +58634,9 @@ id,subsystem,class,how
 58876,Compiler:AtexitDtors,,range
 58877,Compiler:AtexitDtors,,range
 58878,Compiler:AtexitDtors,,range
-58879,Data,,pointer
-58880,Data,,pointer
-58881,Data,,pointer
+58879,Data,`dynamic atexit destructor for 'SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<PRCOffer*>>::GetMemberName,pointer
+58880,Data,`dynamic atexit destructor for 'SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<PRCDownloadingContent*>>::GetMemberName,pointer
+58881,Data,`dynamic atexit destructor for 'SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<PRCInstalledContent*>>::GetMemberName,pointer
 58882,Compiler:AtexitDtors,,range
 58883,GUI,`dynamic atexit destructor for 'GUI::DialogBoxClosedMessage::GetName,pointer
 58884,Compiler:AtexitDtors,,range
@@ -58654,7 +58653,7 @@ id,subsystem,class,how
 58895,Compiler:AtexitDtors,,range
 58896,Compiler:AtexitDtors,,range
 58897,Compiler:AtexitDtors,,range
-58898,Core,,pointer
+58898,Core,`dynamic atexit destructor for 'Multithreading::SynchSafeDeleteQueue::Get,pointer
 58899,Core,,pointer
 58900,Core,,pointer
 58901,Compiler:AtexitDtors,,range
