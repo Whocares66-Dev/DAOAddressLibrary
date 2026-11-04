@@ -99949,7 +99949,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 99948,data,Renderer::g_defaultColorCurveTexture,0x00c1eb20,0x00c31620,0x00c1eb20
 99949,data,,0x00c1eb28,0x00c31628,0x00c1eb28
 99950,data,std::vector<Renderer::FrameBufferEffect*>::s_default,0x00c1eb2c,0x00c1dc14,0x00c1eb2c
-99951,data,,0x00c1eb30,0x00c3162c,0x00c1eb30
+99951,data,std::vector<Renderer::FBEffectRequest*>::s_default,0x00c1eb30,0x00c3162c,0x00c1eb30
 99952,data,Math::Vector4f::GetOrigin::s_vector,0x00c1eb34,0x00c22288,0x00c1eb34
 99953,data,,0x00c1eb38,0x00c2228c,0x00c1eb38
 99954,data,,0x00c1eb3c,0x00c22290,0x00c1eb3c
@@ -99986,9 +99986,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 99985,data,g_pendingFBBind,0x00c1eda8,0x00c3163c,0x00c1eda8
 99986,data,Renderer::FBRenderTargetResource::Create::s_anonymousCount,0x00c1edac,0x00c31640,0x00c1edac
 99987,data,Renderer::IFBGenericSurfaceResource::ParseSize::s_buffer,0x00c1edb0,0x00c31648,0x00c1edb0
-99988,data,,0x00c1eeb0,0x00c31748,0x00c1eeb0
-99989,data,,0x00c1eeb4,0x00c3174c,0x00c1eeb4
-99990,data,,0x00c1eeb8,0x00c31750,0x00c1eeb8
+99988,data,std::vector<Renderer::FrameBufferFilter*>::s_default,0x00c1eeb0,0x00c31748,0x00c1eeb0
+99989,data,std::vector<Renderer::FrameBufferInstruction*>::s_default,0x00c1eeb4,0x00c3174c,0x00c1eeb4
+99990,data,std::vector<Renderer::FrameBufferStage*>::s_default,0x00c1eeb8,0x00c31750,0x00c1eeb8
 99991,data,Renderer::LightManagerDefault::pointLights,0x00c1eebc,0x00c317f0,0x00c1eebc
 99992,data,Renderer::LightManagerDefault::pointLightsOther,0x00c1eec0,0x00c317f4,0x00c1eec0
 99993,data,Renderer::LightManagerDefault::lightsOfType2,0x00c1eec4,0x00c317f8,0x00c1eec4
@@ -100025,7 +100025,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 100024,data,Renderer::FBEffectBuilderXML2::OnCharacterData::s_text,0x00c1ef70,0x00c31bd8,0x00c1ef70
 100025,data,g_gameRenderingEnabled,0x00c1f370,0x00c319d8,0x00c1f370
 100026,data,g_materialApplyGeneration,0x00c1f374,0x00c319dc,0x00c1f374
-100027,data,,0x00c1f378,0x00c319e4,0x00c1f378
+100027,data,Renderer::LightState::s_defaultIrradiancePtr,0x00c1f378,0x00c319e4,0x00c1f378
 100028,data,,0x00c1f3c0,0x00c31a30,0x00c1f3c0
 100029,data,,0x00c1f3c4,0x00c31a34,0x00c1f3c4
 100030,data,,0x00c1f3c8,0x00c31a38,0x00c1f3c8
@@ -100045,7 +100045,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 100044,data,,0x00c1f494,0x00c31b04,0x00c1f494
 100045,data,,0x00c1f498,0x00c31b08,0x00c1f498
 100046,data,Renderer::SubmissionQueueProgram::SubmissionQueueProgram::s_nextSerial,0x00c1f530,0x00c31ba0,0x00c1f530
-100047,data,,0x00c1f544,0x00c214bc,0x00c1f544
+100047,data,std::vector<GraphicsStructures::ObjectNodeEmitter*>::s_default,0x00c1f544,0x00c214bc,0x00c1f544
 100048,data,Physics::Contact::s_empty,0x00c1f548,0x00c1aab8,0x00c1f548
 100049,data,Renderer::SODistanceSort::s_eyePosition,0x00c1f570,0x00c31bc0,0x00c1f570
 100050,data,,0x00c1f574,0x00c31bc4,0x00c1f574
@@ -100168,7 +100168,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 100167,data,,0x00c2b594,0x00c24bcc,0x00c2b594
 100168,data,,0x00c2b598,0x00c24bd0,0x00c2b598
 100169,data,,0x00c2b59c,0x00c24bd4,0x00c2b59c
-100170,data,,0x00c2b5a0,0x00c24bd8,0x00c2b5a0
+100170,data,g_fullscreen,0x00c2b5a0,0x00c24bd8,0x00c2b5a0
 100171,data,,0x00c2b9b8,0x00c24ff0,0x00c2b9b8
 100172,data,,0x00c2bbc0,0x00c251f8,0x00c2bbc0
 100173,data,,0x00c2bdc8,0x00c25400,0x00c2bdc8
@@ -100315,12 +100315,12 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 100314,data,Graphics::MaterialObjectInstance::s_fallbackMaterialObjectName,0x00c303c0,0x00c23da4,0x00c303c0
 100315,data,,0x00c303dc,0x00c23dc0,0x00c303dc
 100316,data,,0x00c303e4,0x00c23dc8,0x00c303e4
-100317,data,,0x00c303e8,0x00c23504,0x00c303e8
+100317,data,std::vector<Graphics::MaterialSemantic*>::s_default,0x00c303e8,0x00c23504,0x00c303e8
 100318,data,Graphics::MaterialStateOverride::End::s_opacityMultiplierName,0x00c303ec,0x00c23dcc,0x00c303ec
 100319,data,Graphics::MaterialStateOverride::End::s_guard,0x00c30408,0x00c23de8,0x00c30408
 100320,data,Graphics::MaterialStateOverride::SetOpacity::s_opacityMultiplierName,0x00c3040c,0x00c23dec,0x00c3040c
 100321,data,Graphics::MaterialStateOverride::SetOpacity::s_guard,0x00c30428,0x00c23e08,0x00c30428
-100322,data,,0x00c3042c,0x00c23e0c,0x00c3042c
+100322,data,Graphics::MaterialStateOverride::s_defaultEntry,0x00c3042c,0x00c23e0c,0x00c3042c
 100323,data,,0x00c30430,0x00c23e10,0x00c30430
 100324,data,ECBase::ECDynArray<Math::VectorUA4f>::s_default,0x00c30438,0x00c1a3e0,0x00c30438
 100325,data,,0x00c30448,0x00c23e18,0x00c30448
@@ -100347,7 +100347,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 100346,data,Core::VectorBackOrDefault<void *>::s_default,0x00c309b0,0x00c1ad08,0x00c309b0
 100347,data,Graphics::MaterialState::SetMaterialObject::s_stateManager,0x00c309b4,0x00c24bb0,0x00c309b4
 100348,data,Graphics::MaterialState::SetMaterialObject::s_guard,0x00c309b8,0x00c24bb4,0x00c309b8
-100349,data,,0x00c309c0,0x00c24530,0x00c309c0
+100349,data,std::vector<Graphics::MaterialStateEntry>::s_default,0x00c309c0,0x00c24530,0x00c309c0
 100350,data,,0x00c309d4,0x00c24544,0x00c309d4
 100351,data,,0x00c309d8,0x00c24548,0x00c309d8
 100352,data,,0x00c309dc,0x00c2454c,0x00c309dc
@@ -100357,7 +100357,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 100356,data,,0x00c30a00,0x00c24570,0x00c30a00
 100357,data,Graphics::MaterialStateManager::Get::s_instance,0x00c30a08,0x00c23f38,0x00c30a08
 100358,data,Graphics::MaterialStateManager::Get::s_guard,0x00c30ffc,0x00c2452c,0x00c30ffc
-100359,data,,0x00c31000,0x00c24574,0x00c31000
+100359,data,"std::vector<std::pair<int,int>>::s_default",0x00c31000,0x00c24574,0x00c31000
 100360,data,,0x00c31004,0x00c24578,0x00c31004
 100361,data,,0x00c31008,0x00c2457c,0x00c31008
 100362,data,Graphics::MaterialStateManager::Load::s_fileExtension,0x00c31010,0x00c24584,0x00c31010
@@ -100371,12 +100371,12 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 100370,data,,0x00c3107c,0x00c23ef8,0x00c3107c
 100371,data,Graphics::MaterialShaderManager::Get::s_instance,0x00c31084,0x00c23f00,0x00c31084
 100372,data,Graphics::MaterialShaderManager::Get::s_guard,0x00c310a8,0x00c23f24,0x00c310a8
-100373,data,,0x00c310ac,0x00c23f28,0x00c310ac
-100374,data,,0x00c310b4,0x00c23f30,0x00c310b4
+100373,data,Graphics::MaterialShaderManager::s_defaultPixelShader,0x00c310ac,0x00c23f28,0x00c310ac
+100374,data,Graphics::MaterialShaderManager::s_defaultVertexShader,0x00c310b4,0x00c23f30,0x00c310b4
 100375,data,Graphics::MaterialObject::s_nextId,0x00c310bc,0x00c23ea0,0x00c310bc
 100376,data,Graphics::MaterialObject::s_instanceCount,0x00c310c0,0x00c23ea4,0x00c310c0
 100377,data,,0x00c310c4,,0x00c310c4
-100378,data,,0x00c310e0,0x00c23508,0x00c310e0
+100378,data,std::vector<Graphics::MaterialArtParameter*>::s_default,0x00c310e0,0x00c23508,0x00c310e0
 100379,data,ECBase::ECDynArray<Graphics::MaterialPass*>::s_default,0x00c310e4,0x00c234b0,0x00c310e4
 100380,data,Graphics::Material::s_nextSerial,0x00c310ec,0x00c24a8c,0x00c310ec
 100381,data,g_materialGlobalFlag,0x00c310f4,0x00c24a94,0x00c310f4
@@ -100435,14 +100435,14 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 100434,data,StopMovieMessage::GetType::s_guard,0x00c31398,0x00c239f8,0x00c31398
 100435,data,GUI::ScaleformManager::GetClassInfo::s_guard,0x00c3139c,0x00c239fc,0x00c3139c
 100436,data,std::vector<GuiMovie*>::s_default,0x00c313a0,0x00c1c24c,0x00c313a0
-100437,data,,0x00c313a4,0x00c23a00,0x00c313a4
-100438,data,,0x00c313b4,0x00c23a10,0x00c313b4
+100437,data,GUI::ScaleformManager::SendKeysAndText::s_defaultKeyRecord,0x00c313a4,0x00c23a00,0x00c313a4
+100438,data,GUI::ScaleformManager::SendKeysAndText::s_defaultChar,0x00c313b4,0x00c23a10,0x00c313b4
 100439,data,GUI::GUIMessage::GetType::s_guard,0x00c313b8,0x00c1dc18,0x00c313b8
 100440,data,GUI::PrintToLogWindowMessage::GetType::s_guard,0x00c313bc,0x00c1ee30,0x00c313bc
 100441,data,ECBase::ECDynArray<unsigned int>::s_default,0x00c313c0,0x00c1908c,0x00c313c0
 100442,data,,0x00c313c4,0x00c1ad5c,0x00c313c4
 100443,data,GuiMovie::BindRenderTargetImage::s_nameCounter,0x00c313c8,0x00c23a38,0x00c313c8
-100444,data,,0x00c313d0,0x00c23a40,0x00c313d0
+100444,data,GuiMovie::ProcessAddTokenObserverBatch::s_defaultValue,0x00c313d0,0x00c23a40,0x00c313d0
 100445,data,PushGUIScreenMessage::GetType::s_guard,0x00c313e0,0x00c1bc70,0x00c313e0
 100446,data,PlayMovieMessage::GetName::s_name,0x00c313e4,0x00c23a6c,0x00c313e4
 100447,data,PlayMovieMessage::GetName::s_guard,0x00c31400,0x00c23a88,0x00c31400
@@ -100535,7 +100535,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 100534,data,,0x00c31844,0x00c22f54,0x00c31844
 100535,data,,0x00c31848,0x00c22f58,0x00c31848
 100536,data,,0x00c31850,0x00c22f60,0x00c31850
-100537,data,,0x00c31854,0x00c22f64,0x00c31854
+100537,data,ECBase::ECDynArray<GraphicsStructures::SpeedTreeInstance*>::s_default,0x00c31854,0x00c22f64,0x00c31854
 100538,data,ECBase::ECDynArray<float>::s_default,0x00c31858,0x00c1bcb4,0x00c31858
 100539,data,,0x00c3185c,0x00c22f68,0x00c3185c
 100540,data,,0x00c31860,0x00c22f6c,0x00c31860
@@ -100580,19 +100580,19 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 100579,data,Math::Vector4f::UnitZW::s_guard,0x00c31990,0x00c21970,0x00c31990
 100580,data,GraphicsStructures::ParticleRandomSeed,0x00c31994,0x00c2350c,0x00c31994
 100581,data,GraphicsStructures::ObjectNodeEmitter::s_infinity,0x00c31998,0x00c23510,0x00c31998
-100582,data,,0x00c3199c,0x00c2300c,0x00c3199c
+100582,data,ECBase::ECDynArray<GraphicsStructures::Dependency*>::s_default,0x00c3199c,0x00c2300c,0x00c3199c
 100583,data,,0x00c319a0,0x00c1ab34,0x00c319a0
 100584,data,,0x00c319a4,0x00c22ffc,0x00c319a4
 100585,data,ECBase::ECDynArray<GraphicsStructures::ObjectNode*>::s_default,0x00c319a8,0x00c23004,0x00c319a8
-100586,data,,0x00c319ac,0x00c23008,0x00c319ac
+100586,data,ECBase::ECDynArray<Animation::ModelAnimationTree*>::s_default,0x00c319ac,0x00c23008,0x00c319ac
 100587,data,std::vector<Physics::ShapePrototype*>::s_default,0x00c319b0,0x00c1ab2c,0x00c319b0
-100588,data,,0x00c319b4,0x00c23010,0x00c319b4
+100588,data,ECBase::ECDynArray<GraphicsStructures::ObjectNodeCrust*>::s_default,0x00c319b4,0x00c23010,0x00c319b4
 100589,data,GraphicsStructures::Object::SetLightmapOnMeshNodes::s_lightmapOffsetAndScale,0x00c319b8,0x00c23014,0x00c319b8
 100590,data,GraphicsStructures::Object::SetLightmapOnMeshNodes::s_guard,0x00c319c8,0x00c23024,0x00c319c8
 100591,data,GraphicsStructures::Object::GetBounds::s_epsilon,0x00c319cc,0x00c23028,0x00c319cc
 100592,data,GraphicsStructures::Object::GetBounds::s_guard,0x00c319d0,0x00c2302c,0x00c319d0
 100593,data,ECBase::ECDynArray<GraphicsStructures::ExportValue>::s_default,0x00c319d8,0x00c1ad78,0x00c319d8
-100594,data,,0x00c31a08,0x00c23030,0x00c31a08
+100594,data,ECBase::ECDynArray<GraphicsStructures::Object::ExportCopy>::s_default,0x00c31a08,0x00c23030,0x00c31a08
 100595,data,,0x00c31a14,0x00c2303c,0x00c31a14
 100596,data,ECBase::ECDynArray<Animation::ModelAnimationTree::Entry>::s_default,0x00c31a1c,0x00c1acd4,0x00c31a1c
 100597,data,GraphicsStructures::Object::s_rootBoneName,0x00c31a50,0x00c23044,0x00c31a50
@@ -100620,7 +100620,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 100619,data,g_primitiveConeMesh,0x00c31adc,0x00c232f4,0x00c31adc
 100620,data,g_primitiveColor,0x00c31ae4,0x00c232fc,0x00c31ae4
 100621,data,,0x00c31af0,0x00c23308,0x00c31af0
-100622,data,,0x00c31af4,0x00c2330c,0x00c31af4
+100622,data,ECBase::ECDynArray<GraphicsStructures::ObjectNodeBlueprint*>::s_default,0x00c31af4,0x00c2330c,0x00c31af4
 100623,data,GraphicsStructures::CreateBoxDeviceMesh::s_corners,0x00c31af8,0x00c23310,0x00c31af8
 100624,data,,0x00c31afc,0x00c23314,0x00c31afc
 100625,data,,0x00c31b00,0x00c23318,0x00c31b00
@@ -100664,7 +100664,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 100663,data,,0x00c31bb8,0x00c20578,0x00c31bb8
 100664,data,,0x00c31bbc,0x00c2057c,0x00c31bbc
 100665,data,GraphicsStructures::GetZeroVector4::s_guard,0x00c31bc0,0x00c20580,0x00c31bc0
-100666,data,,0x00c31bc4,0x00c23824,0x00c31bc4
+100666,data,ECBase::ECDynArray<GraphicsStructures::AgeMapKey>::s_default,0x00c31bc4,0x00c23824,0x00c31bc4
 100667,data,,0x00c31be4,0x00c23060,0x00c31be4
 100668,data,ECBase::ECDynArray<Multithreading::SynchSafePointer<GraphicsStructures::ObjectBlueprint>>::s_default,0x00c31bec,0x00c2329c,0x00c31bec
 100669,data,std::vector<GraphicsStructures::ModelExport>::s_default,0x00c31bf4,0x00c23374,0x00c31bf4
@@ -100673,7 +100673,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 100672,data,g_neckNodeName,0x00c31c40,0x00c233b8,0x00c31c40
 100673,data,g_mouthBaseNodeName,0x00c31c5c,0x00c233d4,0x00c31c5c
 100674,data,,0x00c31c78,0x00c233f0,0x00c31c78
-100675,data,,0x00c31c7c,0x00c233f4,0x00c31c7c
+100675,data,ECBase::ECDynArray<ECBase::ECDynArray<Math::Vector4f> *>::s_default,0x00c31c7c,0x00c233f4,0x00c31c7c
 100676,data,GraphicsStructures::Morph::ApplyMaterialParameters::s_nullTexture,0x00c31c80,0x00c233f8,0x00c31c80
 100677,data,GraphicsStructures::Morph::ApplyMaterialParameters::s_guard,0x00c31c88,0x00c23400,0x00c31c88
 100678,data,,0x00c31c90,0x00c21510,0x00c31c90
@@ -100689,7 +100689,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 100688,data,g_xmlExtension,0x00c31de0,0x00c230c4,0x00c31de0
 100689,data,GraphicsStructures::GraphicsStructuresManager::LoadObjectBlueprint::s_phyExtension,0x00c31dfc,0x00c230e0,0x00c31dfc
 100690,data,g_triangulateInfinity,0x00c31e18,0x00c230fc,0x00c31e18
-100691,data,,0x00c31e1c,0x00c23100,0x00c31e1c
+100691,data,ECBase::ECDynArray<Renderer::LightState *>::s_default,0x00c31e1c,0x00c23100,0x00c31e1c
 100692,data,GraphicsStructures::GraphicsStructuresManager::CreateCrustObject::s_task,0x00c31e20,0x00c23108,0x00c31e20
 100693,data,,0x00c31e38,0x00c23120,0x00c31e38
 100694,data,GraphicsStructures::GraphicsStructuresManager::CreateCrustObject::s_doneEvent,0x00c31e90,0x00c23178,0x00c31e90
@@ -100704,7 +100704,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 100703,data,,0x00c31f18,0x00c231f8,0x00c31f18
 100704,data,GraphicsStructures::GraphicsStructuresManager::CreateObject::s_doneEvent,0x00c31fb4,0x00c23294,0x00c31fb4
 100705,data,GraphicsStructures::GraphicsStructuresManager::CreateObject::s_guard,0x00c31fb8,0x00c23298,0x00c31fb8
-100706,data,,0x00c31fbc,0x00c232a4,0x00c31fbc
+100706,data,ECBase::ECDynArray<Multithreading::SynchSafePointer<GraphicsStructures::Morph>>::s_default,0x00c31fbc,0x00c232a4,0x00c31fbc
 100707,data,GraphicsStructures::ParticleRandomSeedSpread,0x00c31fc4,0x00c238dc,0x00c31fc4
 100708,data,GraphicsStructures::ObjectNodeMeshBlueprint::Instantiate::s_diffuseName,0x00c31fcc,0x00c23850,0x00c31fcc
 100709,data,GraphicsStructures::ObjectNodeMeshBlueprint::Instantiate::s_normalMapName,0x00c31fe8,0x00c2386c,0x00c31fe8
@@ -101031,7 +101031,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 101030,data,PlaySoundSetEntryMessage::GetName::s_guard,0x00c33780,0x00c1c224,0x00c33780
 101031,data,GUI::ForceInventoryRefreshMessage::GetName::s_name,0x00c33784,0x00c1c228,0x00c33784
 101032,data,GUI::ForceInventoryRefreshMessage::GetName::s_guard,0x00c337a0,0x00c1c244,0x00c337a0
-101033,data,,0x00c337a4,0x00c1c248,0x00c337a4
+101033,data,ECBase::ECDynArray<GUI::HighlightInfo*>::s_default,0x00c337a4,0x00c1c248,0x00c337a4
 101034,data,,0x00c337a8,0x00c1c250,0x00c337a8
 101035,data,,0x00c337c4,0x00c1c26c,0x00c337c4
 101036,data,GUI::DragonAgeGUISystem::UpdateSharedMapCreatures::s_creatureFlags,0x00c337c8,0x00c1c270,0x00c337c8
@@ -101067,7 +101067,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 101066,data,,0x00c33aec,0x00c1c5b4,0x00c33aec
 101067,data,,0x00c33b00,0x00c1c5c8,0x00c33b00
 101068,data,,0x00c33b04,0x00c1c5cc,0x00c33b04
-101069,data,,0x00c33b08,0x00c21ab4,0x00c33b08
+101069,data,LodManager::s_defaultEntry,0x00c33b08,0x00c21ab4,0x00c33b08
 101070,data,LodManager::BandDistance::s_sizeDivisor,0x00c33b10,0x00c21ac0,0x00c33b10
 101071,data,g_lodManager,0x00c33b20,0x00c21ad0,0x00c33b20
 101072,data,g_lodManager.bandPassTimer,0x00c33b44,0x00c21af4,0x00c33b44
@@ -101161,7 +101161,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 101160,data,GUI::GUICommunityFeatures::GetClassInfo::s_guard,0x00c34064,0x00c1fba4,0x00c34064
 101161,data,ECBase::ECDynArray<AchievementRecord*>::s_default,0x00c34068,0x00c1fba8,0x00c34068
 101162,data,ECBase::ECDynArray<GUI::GUIScreenshotInfo*>::s_default,0x00c3406c,0x00c1fbac,0x00c3406c
-101163,data,,0x00c34070,0x00c1fbb0,0x00c34070
+101163,data,ECBase::ECDynArray<GUI::GUICommunityFeatures::tagFilterData*>::s_default,0x00c34070,0x00c1fbb0,0x00c34070
 101164,data,,0x00c34074,0x00c1fbb4,0x00c34074
 101165,data,,0x00c34090,0x00c1fbd0,0x00c34090
 101166,data,,0x00c34094,0x00c1fbd4,0x00c34094
@@ -101292,7 +101292,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 101291,data,ShowPartyPickerMessage::GetType::s_guard,0x00c34a98,0x00c1c6cc,0x00c34a98
 101292,data,DisplayFloatyMessage::GetType::s_guard,0x00c34a9c,0x00c1c73c,0x00c34a9c
 101293,data,,0x00c34aa0,0x00c1df24,0x00c34aa0
-101294,data,,0x00c34aa4,0x00c1df28,0x00c34aa4
+101294,data,ECBase::ECStaticArray<float>::s_default,0x00c34aa4,0x00c1df28,0x00c34aa4
 101295,data,AutoLevelUpMessage::GetName::s_name,0x00c34aa8,0x00c1df30,0x00c34aa8
 101296,data,AutoLevelUpMessage::GetName::s_guard,0x00c34ac4,0x00c1df4c,0x00c34ac4
 101297,data,OpenStoreMessage::GetName::s_name,0x00c34ac8,0x00c1df50,0x00c34ac8
@@ -101751,8 +101751,8 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 101750,data,CraftItemMessage::GetName::s_name,0x00c3669c,0x00c1ffd8,0x00c3669c
 101751,data,CraftItemMessage::GetName::s_guard,0x00c366b8,0x00c1fff4,0x00c366b8
 101752,data,GUI::GUICrafting::GetClassInfo::s_guard,0x00c366bc,0x00c1fff8,0x00c366bc
-101753,data,,0x00c366c0,0x00c1fffc,0x00c366c0
-101754,data,,0x00c366c4,0x00c20000,0x00c366c4
+101753,data,ECBase::ECDynArray<GUI::Ingredient*>::s_default,0x00c366c0,0x00c1fffc,0x00c366c0
+101754,data,ECBase::ECDynArray<GUI::Recipe*>::s_default,0x00c366c4,0x00c20000,0x00c366c4
 101755,data,,0x00c366c8,0x00c20004,0x00c366c8
 101756,data,,0x00c366e4,0x00c20020,0x00c366e4
 101757,data,,0x00c366e8,0x00c20024,0x00c366e8
@@ -101870,13 +101870,13 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 101869,data,GUI::GUICharGen::GetClassInfo::s_guard,0x00c36b48,0x00c20478,0x00c36b48
 101870,data,CharGenUpdateBeardMessage::GetName::s_name,0x00c36b4c,0x00c1d66c,0x00c36b4c
 101871,data,CharGenUpdateBeardMessage::GetName::s_guard,0x00c36b68,0x00c1d688,0x00c36b68
-101872,data,,0x00c36b6c,0x00c2047c,0x00c36b6c
-101873,data,,0x00c36b70,0x00c20480,0x00c36b70
+101872,data,ECBase::ECDynArray<GUI::AppearanceSliderGroup*>::s_default,0x00c36b6c,0x00c2047c,0x00c36b6c
+101873,data,ECBase::ECDynArray<GUI::AppearanceSlider<float>*>::s_default,0x00c36b70,0x00c20480,0x00c36b70
 101874,data,,0x00c36b74,0x00c20484,0x00c36b74
 101875,data,,0x00c36b90,0x00c204a0,0x00c36b90
 101876,data,,0x00c36b94,0x00c204a4,0x00c36b94
 101877,data,,0x00c36bb0,0x00c204c0,0x00c36bb0
-101878,data,,0x00c36bb8,0x00c204c8,0x00c36bb8
+101878,data,GUI::GUICharGen::AddAppearanceSlider::s_defaultSliderEntry,0x00c36bb8,0x00c204c8,0x00c36bb8
 101879,data,,0x00c36bbc,0x00c204cc,0x00c36bbc
 101880,data,,0x00c36bc4,0x00c204d4,0x00c36bc4
 101881,data,GUI::GUICharacterRecord::GetClassInfo::s_guard,0x00c36c08,0x00c20518,0x00c36c08
@@ -102380,7 +102380,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 102379,data,UpdatePaperDollFromSeededCharacterMessage::GetType::s_guard,0x00c38b94,0x00c214ac,0x00c38b94
 102380,data,GUI::GUIPaperdoll::GetClassInfo::s_guard,0x00c38b98,0x00c214b0,0x00c38b98
 102381,data,,0x00c38b9c,0x00c214b4,0x00c38b9c
-102382,data,,0x00c38ba0,0x00c214b8,0x00c38ba0
+102382,data,ECBase::ECDynArray<GUI::GUIPaperdoll::Command*>::s_default,0x00c38ba0,0x00c214b8,0x00c38ba0
 102383,data,,0x00c38ba4,0x00c214c0,0x00c38ba4
 102384,data,,0x00c38bc0,0x00c214dc,0x00c38bc0
 102385,data,,0x00c38bc4,0x00c214e0,0x00c38bc4
@@ -102490,7 +102490,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 102489,data,,0x00c39180,0x00c21e58,0x00c39180
 102490,data,,0x00c39184,0x00c21e5c,0x00c39184
 102491,data,,0x00c39194,0x00c21e6c,0x00c39194
-102492,data,,0x00c39198,0x00c21e70,0x00c39198
+102492,data,std::vector<FilteredGroupedItemView::Entry>::s_default,0x00c39198,0x00c21e70,0x00c39198
 102493,data,GUI::GUICharGenBase::RegisterMessageHandlers::s_registered,0x00c39220,0x00c21ef8,0x00c39220
 102494,data,LoadSeededCharactersMessage::GetName::s_name,0x00c39224,0x00c21efc,0x00c39224
 102495,data,LoadSeededCharactersMessage::GetName::s_guard,0x00c39240,0x00c21f18,0x00c39240
@@ -102680,7 +102680,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 102679,data,FacialAnimation::FacialAnimationManager::Get::s_guard,0x00c39ffc,0x00c1a3dc,0x00c39ffc
 102680,data,,0x00c3a000,0x00c466f0,0x00c3a000
 102681,data,,0x00c3a004,0x00c466f4,0x00c3a004
-102682,data,,0x00c3a008,0x00c19090,0x00c3a008
+102682,data,std::vector<D3DFORMAT>::s_default,0x00c3a008,0x00c19090,0x00c3a008
 102683,data,std::vector<D3DMULTISAMPLE_TYPE>::s_default,0x00c3a00c,0x00c19094,0x00c3a00c
 102684,data,std::vector<D3DAdapterInfo*>::s_default,0x00c3a010,0x00c19098,0x00c3a010
 102685,data,std::vector<D3DDeviceCombo*>::s_default,0x00c3a014,0x00c1909c,0x00c3a014
@@ -102690,7 +102690,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 102689,data,D3DDriver::D3DGraphicsDriverManager::Get::s_guard,0x00c3a0b0,0x00c19138,0x00c3a0b0
 102690,data,,0x00c3a0c0,,0x00c3a0c0
 102691,data,,0x00c3a0c8,,0x00c3a0c8
-102692,data,,0x00c3a0cc,0x00c19154,0x00c3a0cc
+102692,data,std::vector<D3DDISPLAYMODE>::s_default,0x00c3a0cc,0x00c19154,0x00c3a0cc
 102693,data,,0x00c3a0d0,0x00c19158,0x00c3a0d0
 102694,data,,0x00c3a0d4,0x00c1915c,0x00c3a0d4
 102695,data,,0x00c3a0d8,0x00c19160,0x00c3a0d8
