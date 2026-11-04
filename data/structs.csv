@@ -626,8 +626,13 @@ D3DDriver::D3DBatch,0x64,0x4,uint32_t,primitiveCount,"0x00870D6F passed as DrawP
 D3DDriver::D3DBatchIndex,0x70,0x4,uint32_t,minVertexIndex,0x00870E39 DrawIndexedPrimitive MinVertexIndex
 D3DDriver::D3DBatchIndex,0x74,0x4,uint32_t,startIndex,0x00870E32 DrawIndexedPrimitive StartIndex
 D3DDriver::D3DBatchIndex,0x78,0x4,uint32_t,vertexCount,0x00870E35 DrawIndexedPrimitive NumVertices
+D3DDriver::D3DGraphicsCapabilitiesDriver,0x10,0x4,int,gpuCount,"0x0086E3C3 mov [ebp+0x10],ebx (1) or the library's count for ATI; logged as 'Detected %d ... GPU(s)'; the constructor sets 1 at 0x00867FED"
+D3DDriver::D3DGraphicsCapabilitiesDriver,0x18,0x4,int,vendor,"0x0086E25E mov [ebp+0x18],0 when VendorId is 0x10DE, 0x0086E3B7 1 for 0x1002, 0x0086E406 2 otherwise; the constructor sets 2 at 0x00867FF4"
+D3DDriver::D3DGraphicsCapabilitiesDriver,0x20,0x4,D3DDriver::D3DGraphicsDriver*,driver,"0x0086E173 mov eax,[ebp+0x20] then 0x0086E18C mov esi,[eax+0x100] (the device); the CD3DEnumeration member at +0x1C holds it (constructor argument at 0x00868006)"
+D3DDriver::D3DGraphicsCapabilitiesDriver,0x28,0x130,D3DCAPS9,caps,0x0086E157 rep movsd 0x4c dwords from the argument to [ebp+0x28]
 D3DDriver::D3DGraphicsDriver,0x4,0xCC,int[51],renderStateValueTable,"0x00868EB4 mov eax,[ecx+eax*4+4] (translation of a value index); filled by 0x00868210 (e.g. 0x008682AB [ecx+8]=1); cleared by 0x008681B0 rep stosd 0x33"
 D3DDriver::D3DGraphicsDriver,0xD0,0x2C,int[11],samplerStateValueTable,"0x00868F33 mov eax,[ecx+eax*4+0xd0]; filled by 0x00868210 (0x00868356 [ecx+0xd0]=1 ... 0x00868378 [ecx+0xf4]=6, 0x00868285 [ecx+0xf8]=7)"
+D3DDriver::D3DGraphicsDriver,0xFC,0x4,D3DDriver::D3DGraphicsCapabilitiesDriver*,capsDriver,"0x0086BC63 mov [ebp+0xfc],eax (object allocated with push 0x15c at 0x0086BC35, constructor 0x00867FB0); 0x00868390 passes it as ecx to Initialize"
 D3DDriver::D3DGraphicsDriver,0x100,0x4,void*,device,"0x00869038 mov eax,[ebx+0x100]: the IDirect3DDevice9; calls through its vtable e.g. +0x5C CreateTexture"
 D3DDriver::D3DGraphicsDriver,0x104,0x4,unsigned int,clearColor,"0x0086853D mov [ecx+0x104],edx: the packed ARGB clear colour (SetClearColor, slot 12); read back as bytes at 0x00868559; Clear passes it at 0x00868677"
 D3DDriver::D3DGraphicsDriver,0x108,0x4,unsigned int,clearStencil,"0x008685C4 mov [ecx+0x108],eax (slot 14); Clear pushes it at 0x0086866E"
@@ -645,9 +650,22 @@ D3DDriver::D3DGraphicsDriver,0x7364,0x4,int,unknown7364,"0x0086B4EE mov [ecx+0x7
 D3DDriver::D3DGraphicsDriver,0x736C,0x4,D3DDriver::D3DUmbraRenderer*,umbraRenderer,"0x00869D1A mov [esi+0x736C],eax (slot 89 makes it on first use, 0x00869CED push 0x70); freed by slot 90 at 0x00869D55"
 D3DDriver::D3DGraphicsDriverManager,0x2C,0x4,void*,direct3D9,"0x008653C5 call 0x0090A338 with 0x20 (Direct3DCreate9); 0x008653CC mov [esi+0x2C],eax; released at 0x00865398"
 D3DDriver::D3DGraphicsDriverManager,0x8C,0x4,unsigned int,videoMemoryMiB,"0x00865808 mov [ecx+0x8C],eax (QueryVideoMemory); read by slot 9 at 0x00866CA0"
+D3DDriver::D3DStateCache,0x0,0x4,IDirect3DDevice9*,device,"0x0086E618 mov [ecx],eax (SetDevice); 0x0086F452 mov esi,[esi] before every device call"
+D3DDriver::D3DStateCache,0x71AC,0x4,int,streamLimit,"0x0086E643 mov eax,[edx+0xbc] (caps MaxStreams) capped at 16, stored at 0x0086E653"
 D3DDriver::D3DTexture2D,0x44,0x4,int,width,"0x00424040 mov eax,[ecx+0x44] is slot 4 of 0x00B2E91C; LockSystemCopy 0x0055451B calls it for the width"
 D3DDriver::D3DTexture2D,0x48,0x4,int,height,"0x0081F0F0 mov eax,[ecx+0x48] is slot 5 of 0x00B2E91C"
+D3DDriver::D3DTexture2D,0x4C,0x4,IDirect3DTexture9*,deviceTexture,"0x00874B84 mov [esi+0x4c],ecx after CreateTexture (vtable +0x5C); 0x00874B43 tests it to create only once"
+D3DDriver::D3DTexture2D,0x50,0x4,unsigned int,usage,"0x00874B64 mov ebx,[esi+0x50] pushed as Usage of CreateTexture"
+D3DDriver::D3DTexture2D,0x54,0x4,unsigned int,format,"0x00874B5E mov ebx,[esi+0x54] pushed as the D3DFORMAT of CreateTexture"
 D3DDriver::D3DTexture2D,0x58,0x4,int,bytesPerPixel,"0x0052AE60 mov eax,[ecx+0x58] is slot 10 of 0x00B2E91C; multiplied into every row size in 0x00554510 and 0x00554800..0x00554C4F (role INFERRED)"
+D3DDriver::D3DTextureCubeMap,0x3C,0x4,unsigned int,edgeLength,"0x00874BAE mov edx,[esi+0x3c] pushed as EdgeLength of CreateCubeTexture (vtable +0x64)"
+D3DDriver::D3DTextureCubeMap,0x40,0x4,IDirect3DCubeTexture9*,deviceTexture,"0x00874BBC mov [esi+0x40],ecx after CreateCubeTexture"
+D3DDriver::D3DTextureCubeMap,0x44,0x4,unsigned int,usage,"0x00874BA6 mov edx,[esi+0x44] pushed as Usage of CreateCubeTexture"
+D3DDriver::D3DTextureCubeMap,0x48,0x4,unsigned int,format,"0x00874BA0 mov edx,[esi+0x48] pushed as Format of CreateCubeTexture"
+D3DDriver::ShaderMember,0x0,0x1C,struct,sizeof,0x0087155F rep movsd with ecx=7 per element; 0x008714CD..0x008714D6 the vector's size divides by 28
+D3DDriver::ShaderParameter,0x1C,0x4,int,kind,"0x0087179C cmp [esi+0x1c],1 float; 2 int at 0x008717FC; 3 bool at 0x00871478"
+D3DDriver::ShaderParameter,0x20,0x4,unsigned int,registerIndex,"0x0087413E mov eax,[esi+0x20] passed as the start register of SetVertexShaderConstantF"
+D3DDriver::ShaderParameter,0x24,0x4,unsigned int,registerCount,"0x0087412A mov ecx,[esi+0x24]: the cap on registers written"
 EC::ChunkManager,0x0,0x590,struct,sizeof,"0x00689778 push 0x590 before operator new, then the constructor 0x005C9FD0 called at 0x00689794 with the result; the constructor calls IAreaLayout's 0x005C9C10 first (0x005C9FF9), so IAreaLayout is the base at +0 and holds the members below it"
 EC::ChunkManager,0x4E0,0x4,Graphics::ISceneInstance*,scene,"0x005C96D0 mov [esi+0x4e0],eax in EC::ChunkManager::Initialize (0x005C9690), eax the first argument ([ebp+8]); used as the receiver of ISceneInstance calls, 0x005C830D mov ecx,[edi+0x4e0] then call 0x0053A400 (named ISceneInstance::RemoveLayoutObjects in the table) with the old chunk in LoadLayoutChunk; the constructor zeroes it (0x005CA035)"
 EC::ChunkManager,0x4E8,0x10,ECBase::ECDynArray<?>,viewers,"0x005CA2AA lea edi,[esi+0x4e8] in the layout update (0x005CA27C..), the array of objects (pointers, count by (end-begin)>>2 at 0x005CA2C7) the streaming reference point may be taken from when +0x560 is set: the first one whose byte +0x20 is nonzero gives its Vector4 at +0x10 (0x005CA2D3, 0x005CA2E4)"
