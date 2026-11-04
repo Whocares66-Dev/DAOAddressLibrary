@@ -2541,7 +2541,7 @@ id,subsystem,class,how
 2565,Rendering,Renderer::FBFloat32Resource,name
 2566,Rendering,Renderer::FrameBufferEffect,name
 2567,Rendering,Renderer::FrameBufferEffect,name
-2568,Rendering,Renderer::FrameBufferStage,name
+2568,Rendering,Renderer::FrameBufferFilter,name
 2569,Rendering,Renderer::FBIDumpRenderTarget,name
 2570,Rendering,Renderer::FrameBufferEffect,name
 2571,Rendering,Renderer::FrameBufferEffect,name
@@ -2571,7 +2571,7 @@ id,subsystem,class,how
 2595,Rendering,Renderer::FrameBufferStage,name
 2596,Rendering,Renderer::FrameBufferFilter,name
 2597,Rendering,Renderer::FrameBufferFilter,name
-2598,Rendering,Renderer::FrameBufferEffect,name
+2598,Rendering,Renderer::FrameBufferFilter,name
 2599,Rendering,Renderer,name
 2600,Rendering,Renderer,name
 2601,Rendering,Renderer,name
@@ -5921,7 +5921,7 @@ id,subsystem,class,how
 5980,Rendering,Graphics::MaterialStateManager,name
 5981,Rendering,Graphics::MaterialStateManager,name
 5982,ThirdParty:STL,std::vector<Graphics::MaterialSamplerState>,name
-5983,ThirdParty:STL,std::vector<General::SafePointer>,name
+5983,ThirdParty:STL,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialState>>,name
 5984,Rendering,Graphics::MaterialStateManager,name
 5985,Rendering,Graphics::MaterialStateManager,name
 5986,ThirdParty:STL,std,name
@@ -8725,7 +8725,7 @@ id,subsystem,class,how
 8791,Core,ECBase::ECDynArray<Math::Vector4f>,name
 8792,Rendering,GraphicsStructures::Array<Math::Vector4f>,name
 8793,Core,ECBase::ECDynArray<ECBase::ECDynArray<Math::Vector4f>>,name
-8794,Rendering,,callers
+8794,Core,ECBase::ECDynArray<Renderer::LightState*>,name
 8795,ThirdParty:STL,std,name
 8796,Core,ECBase::ECDynArray<Math::Vector4f>,name
 8797,Rendering,GraphicsStructures::ConstructCrustObjectTask,name
@@ -13486,7 +13486,7 @@ id,subsystem,class,how
 13561,AI,KDCreatureNode,name
 13562,AI,KDCreatureNode,name
 13563,World,CCArea,name
-13564,ThirdParty:STL,std::vector<AreaEntry>,name
+13564,ThirdParty:STL,std::vector<?>,name
 13565,Game,EffectsHolder,name
 13566,World,RoomMask,name
 13567,World,RoomMask,name

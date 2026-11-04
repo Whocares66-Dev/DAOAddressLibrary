@@ -2566,7 +2566,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2565,function,Renderer::FBFloat32Resource::OnEvent,0x0045f4b0,0x00897dd0,0x0045f4b0
 2566,function,Renderer::FrameBufferEffect::GetStageCount,0x0045f4e0,0x00897e00,0x0045f4e0
 2567,function,Renderer::FrameBufferEffect::GetStage,0x0045f500,0x00897e20,0x0045f500
-2568,function,Renderer::FrameBufferStage::CallInstructionSlot2,0x0045f550,0x00897e70,0x0045f550
+2568,function,Renderer::FrameBufferFilter::Refresh,0x0045f550,0x00897e70,0x0045f550
 2569,function,Renderer::FBIDumpRenderTarget::Execute,0x0045f5b0,0x00897ed0,0x0045f5b0
 2570,function,Renderer::FrameBufferEffect::RemoveDependent,0x0045f610,0x00897f30,0x0045f610
 2571,function,Renderer::FrameBufferEffect::DetachFromRequirements,0x0045f680,0x00897fa0,0x0045f680
@@ -2596,7 +2596,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 2595,function,Renderer::FrameBufferStage::AddFilter,0x00460400,0x00898950,0x00460400
 2596,function,Renderer::FrameBufferFilter::FrameBufferFilter,0x00460430,0x00898980,0x00460430
 2597,function,Renderer::FrameBufferFilter::~FrameBufferFilter,0x004604e0,0x00898a30,0x004604e0
-2598,function,Renderer::FrameBufferEffect::AddInstruction,0x00460570,0x00898ac0,0x00460570
+2598,function,Renderer::FrameBufferFilter::AddInstruction,0x00460570,0x00898ac0,0x00460570
 2599,function,Renderer::FBParseAssignment,0x00460590,0x00898ae0,0x00460590
 2600,function,Renderer::FBParseCopy,0x00460a40,0x00898f90,0x00460a40
 2601,function,Renderer::FBParseBind,0x00460ce0,0x00899230,0x00460ce0
@@ -5981,7 +5981,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 5980,function,Graphics::MaterialStateManager::LoadDefaults,0x004fbbd0,0x007ec850,0x004fbbd0
 5981,function,Graphics::MaterialStateManager::GetMemoryFootprint,0x004fbe30,0x007ecab0,0x004fbe30
 5982,function,std::vector<Graphics::MaterialSamplerState>::GetRange,0x004fbee0,0x007ecb60,0x004fbee0
-5983,function,std::vector<General::SafePointer>::back,0x004fbf90,0x007ecc10,0x004fbf90
+5983,function,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialState>>::back,0x004fbf90,0x007ecc10,0x004fbf90
 5984,function,Graphics::MaterialStateManager::ApplyState,0x004fbff0,0x007eccd0,0x004fbff0
 5985,function,Graphics::MaterialStateManager::SetState,0x004fc2c0,0x007ecfa0,0x004fc2c0
 5986,function,std::fill<General::SafePointer>,0x004fc2e0,0x007dedf0,0x004fc2e0
@@ -8792,7 +8792,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 8791,function,ECBase::ECDynArray<Math::Vector4f>::ECDynArray_copy,0x00573200,0x00753320,0x00573200
 8792,function,GraphicsStructures::Array<Math::Vector4f>::Array,0x00573220,0x00470160,0x00573220
 8793,function,ECBase::ECDynArray<ECBase::ECDynArray<Math::Vector4f>>::~ECDynArray,0x00573250,0x00753340,0x00573250
-8794,function,Vec4_AtOrDefault,0x00573280,0x00753370,0x00573280
+8794,function,ECBase::ECDynArray<Renderer::LightState*>::At,0x00573280,0x00753370,0x00573280
 8795,function,std::_Fill<MeshLightmapRecord *>,0x005732b0,0x00711720,0x005732b0
 8796,function,ECBase::ECDynArray<Math::Vector4f>::ECDynArray,0x005732f0,0x00470220,0x005732f0
 8797,function,GraphicsStructures::ConstructCrustObjectTask::`scalar deleting destructor',0x00573300,0x007533a0,0x00573300
@@ -13562,7 +13562,7 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 13561,function,KDCreatureNode::SetCreature,0x0067a2f0,0x005663e0,0x0067a2f0
 13562,function,KDCreatureNode::GetEntry,0x0067a350,0x00566440,0x0067a350
 13563,function,CCArea::HandleMessage_OnMinimapScaleChangedMessage,0x0067a370,0x00566460,0x0067a370
-13564,function,std::vector<AreaEntry>::size,0x0067a390,0x006434e0,0x0067a390
+13564,function,std::vector<?>::size,0x0067a390,0x006434e0,0x0067a390
 13565,function,EffectsHolder::~EffectsHolder,0x0067a3b0,0x005664a0,0x0067a3b0
 13566,function,RoomMask::Intersects,0x0067a3c0,0x005664b0,0x0067a3c0
 13567,function,RoomMask::IntersectsRoomMask,0x0067a400,0x005664f0,0x0067a400
