@@ -518,6 +518,7 @@ CClientExoApp,0x214,0x1,uint8_t,conversationAmbient,"0x007EEE00 mov byte ptr [ed
 CClientExoApp,0x2B8,0x4,ObjectId,moduleId,"0x005D4FD4 mov eax,[eax+0x2b8] in GetModule, which looks the id up (0x00A58190); the constructor sets it to -1 (0x005DC7DB)"
 CClientExoApp,0x2BC,0x20,Math::SineFade,timeScale,"0x005D77AA lea ecx,[ebx+0x2bc] then call 0x005CC4D0 (Math::SineFade::Advance) in FrameUpdate, once per frame with the frame step; the live scale is its current value, read at 0x005D77B8 fld [ebx+0x2c8] and handed to the world timer and the scene; SetTimeScale (0x005D81C0) writes it, see the Math::SineFade rows"
 CClientExoApp,0x2DC,0x10,std::vector<unsigned int>,timeScaleHolds,"0x00745DF5 add ecx,0x2dc then push_back 0x006F1340 in AcquireTimeScale (0x00745DF0): pushes its key; SetTimeScale 0x005D81CF and ReleaseTimeScale 0x005D8248 look a key up with 0x008663A0, Release removes it (0x005D8261 call 0x004E9640) and, when the vector is then empty (0x005D8268), calls SetTimeScale(1.0, 0.0, -1) at 0x005D8283; ResetTimeScale clears it (0x005D8E5B); the vector constructor runs at 0x005DC80F"
+CClientOptions,0x4E0,0x10,ClientOption,anisotropicFilteringLevel,"0x005EBD33 lea ecx,[esi+0x4e0] then registers AnisotropicFilteringLevel (0x00B015E0) at 0x005EBD3E, default 0, its int value at +0x4EC"
 CDataArrays,0x0,0x4,void*,vftable,"0x00A59E14 mov dword ptr [eax],0xb5951c in the constructor 0x00A59E10, which then zeroes +4 to +0x1C (CGameEffect holds it at +0x54, 0x20 bytes)"
 CGameEffect,0x0,0x7C,struct,sizeof,0x00652BB9 push 0x7C ; allocation before the constructor call at 0x00652BD6 (constructor 0x00A652A0)
 CGameEffect,0x0,0x4,void*,vftable,"0x00A652DF mov dword [esi],0xB59700"
@@ -626,7 +627,7 @@ D3DDriver::D3DGraphicsDriver,0xD0,0x2C,int[11],samplerStateValueTable,"0x00868F3
 D3DDriver::D3DGraphicsDriver,0x100,0x4,void*,device,"0x00869038 mov eax,[ebx+0x100]: the IDirect3DDevice9; calls through its vtable e.g. +0x5C CreateTexture"
 D3DDriver::D3DGraphicsDriver,0x104,0x4,unsigned int,clearColor,"0x0086853D mov [ecx+0x104],edx: the packed ARGB clear colour (SetClearColor, slot 12); read back as bytes at 0x00868559; Clear passes it at 0x00868677"
 D3DDriver::D3DGraphicsDriver,0x108,0x4,unsigned int,clearStencil,"0x008685C4 mov [ecx+0x108],eax (slot 14); Clear pushes it at 0x0086866E"
-D3DDriver::D3DGraphicsDriver,0x10C,0x4,int,unknownSetting,"0x0086B514 mov [ecx+0x10C],eax (slot 94 stores, slot 95 at 0x0086B520 reads); what it means was not read"
+D3DDriver::D3DGraphicsDriver,0x10C,0x4,int,maxAnisotropy,0x0086BAD5 the constructor sets 1; 0x0086B510 slot 94 (SetMaxAnisotropy) stores it; 0x0086B520 slot 95 returns it
 D3DDriver::D3DGraphicsDriver,0x110,0x4,float,clearDepth,0x008685B4 fstp [ecx+0x110] (slot 13); Clear pushes it at 0x00868668
 D3DDriver::D3DGraphicsDriver,0x12C,0x4,void*,parameterCopy,"0x0086BB72 mov [ebp+0x12c],eax: a 0x48-byte copy of the creation parameters (rep movsd 0x12); 0x0086842F reads +0x10 and +0x14 of it"
 D3DDriver::D3DGraphicsDriver,0x130,0x1,bool,windowed,"0x00869BD6 cmp byte [esi+0x130],0: zero takes window style 0x90080000 (popup), else the saved style; 0x0086BADF stores it; returned by slot 6 at 0x00868442"
