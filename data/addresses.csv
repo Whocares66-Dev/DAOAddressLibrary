@@ -23482,40 +23482,40 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 23481,retired,,,,
 23482,function,D3DDriver::GetFormatStencilBits,0x00865310,0x0046b140,0x00865310
 23483,retired,,,,
-23484,function,,0x00865370,0x0046b1c0,0x00865370
-23485,function,,0x008653b0,0x0046b200,0x008653b0
-23486,function,,0x008653c0,0x0046b210,0x008653c0
-23487,function,,0x00865410,0x0046b260,0x00865410
-23488,function,,0x00865420,0x0046b270,0x00865420
+23484,function,D3DDriver::D3DGraphicsDriverManager::Shutdown,0x00865370,0x0046b1c0,0x00865370
+23485,function,Graphics::GetCurrentDriver,0x008653b0,0x0046b200,0x008653b0
+23486,function,D3DDriver::D3DGraphicsDriverManager::Initialize,0x008653c0,0x0046b210,0x008653c0
+23487,function,D3DDriver::D3DGraphicsDriverManager::ReleaseDriver,0x00865410,0x0046b260,0x00865410
+23488,function,D3DDriver::D3DGraphicsDriverManager::ApplyCreationParameterDefaults,0x00865420,0x0046b270,0x00865420
 23489,function,D3DDriver::IsShaderModel2Capable,0x008655b0,0x0046b400,0x008655b0
 23490,function,D3DDriver::ChooseBehaviorFlags,0x00865610,0x0046b460,0x00865610
 23491,function,D3DDriver::D3DGraphicsDriverManager::QueryVideoMemory,0x00865660,0x0046b4b0,0x00865660
-23492,function,,0x00865830,0x0046b680,0x00865830
+23492,function,D3DDriver::D3DGraphicsDriverManager::DestroyDriver,0x00865830,0x0046b680,0x00865830
 23493,function,IExternalDeviceCaps::~IExternalDeviceCaps,0x00865850,0x0046b6a0,0x00865850
-23494,function,,0x00865860,0x0046b6b0,0x00865860
-23495,function,,0x00865b00,0x0046b950,0x00865b00
+23494,function,D3DDriver::D3DGraphicsDriverManager::AcquireGraphicsDriver,0x00865860,0x0046b6b0,0x00865860
+23495,function,D3DDriver::D3DGraphicsDriverManager::GetEnumeration,0x00865b00,0x0046b950,0x00865b00
 23496,function,D3DDriver::D3DGraphicsDriverManager::ResetDevice,0x00865b40,0x0046b990,0x00865b40
 23497,function,"std::_Uninit_copy<?*,?*,std::allocator<?>>",0x00865eb0,0x00674940,0x00865eb0
 23498,function,"std::_Uninit_copy<?*,?*,std::allocator<?>>",0x00865ee0,0x0046bd30,0x00865ee0
-23499,function,,0x00865f20,0x0046bda0,0x00865f20
-23500,function,,0x00866250,0x0046c0d0,0x00866250
+23499,function,D3DDriver::D3DGraphicsDriverManager::FindBestCreationParameters,0x00865f20,0x0046bda0,0x00865f20
+23500,function,D3DDriver::D3DGraphicsDriverManager::FindClosestDisplayResolution,0x00866250,0x0046c0d0,0x00866250
 23501,function,Core::VectorContains<unsigned int>,0x008663a0,0x0073fd60,0x008663a0
-23502,function,,0x00866410,0x0046c250,0x00866410
-23503,function,,0x008667d0,0x0046c610,0x008667d0
+23502,function,D3DDriver::D3DGraphicsDriverManager::ScoreModeAgainstRequest,0x00866410,0x0046c250,0x00866410
+23503,function,D3DDriver::D3DGraphicsDriverManager::ModeSatisfiesRequest,0x008667d0,0x0046c610,0x008667d0
 23504,function,Graphics::ExternalDeviceCaps::`scalar deleting destructor',0x00866b80,0x0046c9d0,0x00866b80
 23505,function,Graphics::GraphicsDriverManager::~GraphicsDriverManager,0x00866bc0,0x0046ca10,0x00866bc0
 23506,function,Graphics::GraphicsDriverManager::`scalar deleting destructor',0x00866bf0,0x0046ca40,0x00866bf0
 23507,function,D3DDriver::D3DGraphicsDriverManager::~D3DGraphicsDriverManager,0x00866c30,0x0046ca80,0x00866c30
 23508,function,Stub::GetDword_0x8C,0x00866ca0,0x0076dea0,0x00866ca0
-23509,function,,0x00866cb0,0x0046caf0,0x00866cb0
+23509,function,D3DDriver::D3DGraphicsDriverManager::`scalar deleting destructor',0x00866cb0,0x0046caf0,0x00866cb0
 23510,function,std::vector<void *>::operator=,0x00866cd0,0x0046cb10,0x00866cd0
-23511,function,,0x00866e00,0x0046cc40,0x00866e00
+23511,function,D3DDriver::D3DGraphicsDriverManager::FitCreationParametersToMode,0x00866e00,0x0046cc40,0x00866e00
 23512,function,std::vector<void *>::vector_copy,0x00867670,0x0046d4b0,0x00867670
 23513,function,std::vector<void *>::vector,0x008676d0,0x00401bd0,0x008676d0
 23514,function,Core::VectorClear<?>,0x00867740,0x0046d5f0,0x00867740
 23515,function,Graphics::ExternalDeviceCaps::ExternalDeviceCaps,0x00867830,0x0046d6e0,0x00867830
-23516,function,,0x008678a0,0x0046d750,0x008678a0
-23517,function,,0x008678e0,0x0046d790,0x008678e0
+23516,function,D3DDriver::D3DGraphicsDriverManager::D3DGraphicsDriverManager,0x008678a0,0x0046d750,0x008678a0
+23517,function,D3DDriver::D3DGraphicsDriverManager::BuildExternalDeviceCaps,0x008678e0,0x0046d790,0x008678e0
 23518,function,D3DDriver::D3DGraphicsDriverManager::Get,0x00867e30,0x0046dce0,0x00867e30
 23519,function,Graphics::VertexStreamMask::Merge,0x00867ed0,0x00480f00,0x00867ed0
 23520,function,Graphics::VertexStreamMask::AddUsage,0x00867ef0,0x00480f20,0x00867ef0
@@ -23526,123 +23526,123 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 23525,function,Graphics::VertexStreamMask::HasUsage,0x00867f60,0x00480f90,0x00867f60
 23526,function,Graphics::GraphicsCapabilitiesDriver::~GraphicsCapabilitiesDriver,0x00867f80,0x0046dd80,0x00867f80
 23527,function,Graphics::GraphicsCapabilitiesDriver::`scalar deleting destructor',0x00867f90,0x0046dd90,0x00867f90
-23528,function,,0x00867fb0,0x0046ddb0,0x00867fb0
-23529,function,,0x00868040,0x0046de40,0x00868040
-23530,function,,0x00868050,0x0046de50,0x00868050
-23531,function,,0x00868060,0x0046de60,0x00868060
-23532,function,,0x008680c0,0x0046dec0,0x008680c0
+23528,function,D3DDriver::D3DGraphicsCapabilitiesDriver::D3DGraphicsCapabilitiesDriver,0x00867fb0,0x0046ddb0,0x00867fb0
+23529,function,Stub::TailCallVirtual_0xC,0x00868040,0x0046de40,0x00868040
+23530,function,D3DDriver::D3DResetable::IsLost,0x00868050,0x0046de50,0x00868050
+23531,function,D3DDriver::D3DGraphicsCapabilitiesDriver::~D3DGraphicsCapabilitiesDriver,0x00868060,0x0046de60,0x00868060
+23532,function,D3DDriver::D3DGraphicsCapabilitiesDriver::`scalar deleting destructor',0x008680c0,0x0046dec0,0x008680c0
 23533,function,D3DDriver::GetPrimitiveCount,0x008680e0,0x0046dee0,0x008680e0
 23534,retired,,,,
-23535,function,,0x00868140,0x0046dfa0,0x00868140
-23536,function,,0x00868150,0x0046dfb0,0x00868150
-23537,function,,0x00868160,0x0046dfc0,0x00868160
+23535,function,Graphics::GraphicsDriver::GraphicsDriver,0x00868140,0x0046dfa0,0x00868140
+23536,function,Graphics::GraphicsDriver::LoadMeshFromXFile,0x00868150,0x0046dfb0,0x00868150
+23537,function,Graphics::GraphicsDriver::`scalar deleting destructor',0x00868160,0x0046dfc0,0x00868160
 23538,function,Graphics::SwapChain::~SwapChain,0x00868180,0x0046dfe0,0x00868180
 23539,function,Graphics::SwapChain::`scalar deleting destructor',0x00868190,0x0046dff0,0x00868190
 23540,function,D3DDriver::D3DGraphicsDriver::ClearStateValueTables,0x008681b0,0x0046e010,0x008681b0
 23541,function,D3DDriver::D3DGraphicsDriver::InitStateValueTables,0x00868210,0x0046e070,0x00868210
-23542,function,,0x00868390,0x0046e1f0,0x00868390
+23542,function,D3DDriver::D3DGraphicsDriver::SetDevice,0x00868390,0x0046e1f0,0x00868390
 23543,function,D3DDriver::D3DGraphicsDriver::Present,0x00868400,0x0046e260,0x00868400
-23544,function,,0x00868420,0x0046e280,0x00868420
-23545,function,,0x00868490,0x0046e2f0,0x00868490
-23546,function,,0x00868550,0x0046e3b0,0x00868550
-23547,function,,0x008685b0,0x0046e410,0x008685b0
-23548,function,,0x008685c0,0x0046e420,0x008685c0
-23549,function,,0x008685d0,0x0046e430,0x008685d0
-23550,function,,0x008685f0,0x0046e450,0x008685f0
-23551,function,,0x008686c0,0x0046e520,0x008686c0
-23552,function,,0x00868730,0x0046e590,0x00868730
-23553,function,,0x00868760,0x0046e5c0,0x00868760
-23554,function,,0x008687a0,0x0046e600,0x008687a0
-23555,function,,0x008687b0,0x0046e610,0x008687b0
-23556,function,,0x008688c0,0x0046e720,0x008688c0
+23544,function,D3DDriver::D3DGraphicsDriver::GetDisplaySettings,0x00868420,0x0046e280,0x00868420
+23545,function,D3DDriver::D3DGraphicsDriver::SetClearColor,0x00868490,0x0046e2f0,0x00868490
+23546,function,D3DDriver::D3DGraphicsDriver::GetClearColor,0x00868550,0x0046e3b0,0x00868550
+23547,function,D3DDriver::D3DGraphicsDriver::SetClearDepth,0x008685b0,0x0046e410,0x008685b0
+23548,function,D3DDriver::D3DGraphicsDriver::SetClearStencil,0x008685c0,0x0046e420,0x008685c0
+23549,function,D3DDriver::D3DGraphicsDriver::SetScissorRect,0x008685d0,0x0046e430,0x008685d0
+23550,function,D3DDriver::D3DGraphicsDriver::Clear,0x008685f0,0x0046e450,0x008685f0
+23551,function,D3DDriver::D3DGraphicsDriver::CreateViewport,0x008686c0,0x0046e520,0x008686c0
+23552,function,D3DDriver::D3DGraphicsDriver::BeginScene,0x00868730,0x0046e590,0x00868730
+23553,function,D3DDriver::D3DGraphicsDriver::EndScene,0x00868760,0x0046e5c0,0x00868760
+23554,function,D3DDriver::D3DGraphicsDriver::IsInScene,0x008687a0,0x0046e600,0x008687a0
+23555,function,D3DDriver::D3DGraphicsDriver::CreateVertexStream,0x008687b0,0x0046e610,0x008687b0
+23556,function,D3DDriver::D3DGraphicsDriver::DestroyStream,0x008688c0,0x0046e720,0x008688c0
 23557,function,D3DDriver::D3DGraphicsDriver::DrawBatch,0x008688e0,0x0046e740,0x008688e0
 23558,function,D3DDriver::D3DGraphicsDriver::DrawBatchRange,0x008689a0,0x0046e800,0x008689a0
 23559,function,D3DDriver::D3DGraphicsDriver::DrawBatchIndexedRange,0x008689e0,0x0046e840,0x008689e0
-23560,function,,0x00868a20,0x0046e880,0x00868a20
-23561,function,,0x00868ab0,0x0046e910,0x00868ab0
-23562,function,,0x00868b40,0x0046e9a0,0x00868b40
-23563,function,,0x00868bd0,0x0046ea30,0x00868bd0
-23564,function,,0x00868c60,0x0046eac0,0x00868c60
-23565,function,,0x00868cf0,0x0046eb50,0x00868cf0
-23566,function,,0x00868d10,0x0046eb70,0x00868d10
-23567,function,,0x00868d30,0x0046eb90,0x00868d30
-23568,function,,0x00868d50,0x0046ebb0,0x00868d50
-23569,function,,0x00868d80,0x0046ebe0,0x00868d80
-23570,function,,0x00868db0,0x0046ec10,0x00868db0
-23571,function,,0x00868de0,0x0046ec40,0x00868de0
-23572,function,,0x00868e10,0x0046ec70,0x00868e10
-23573,function,,0x00868e90,0x0046ecf0,0x00868e90
-23574,function,,0x00868f10,0x0046ed70,0x00868f10
-23575,function,,0x00868f60,0x0046edc0,0x00868f60
-23576,function,,0x00868fb0,0x0046ee10,0x00868fb0
-23577,function,,0x008690f0,0x0046ef50,0x008690f0
-23578,function,,0x00869200,0x0046f060,0x00869200
-23579,function,,0x008693c0,0x0046f220,0x008693c0
-23580,function,,0x008694d0,0x0046f330,0x008694d0
+23560,function,D3DDriver::D3DGraphicsDriver::CreatePixelShaderFromBytecode,0x00868a20,0x0046e880,0x00868a20
+23561,function,D3DDriver::D3DGraphicsDriver::CreatePixelShaderFromSource,0x00868ab0,0x0046e910,0x00868ab0
+23562,function,D3DDriver::D3DGraphicsDriver::CreateEffectFromMemory,0x00868b40,0x0046e9a0,0x00868b40
+23563,function,D3DDriver::D3DGraphicsDriver::CreateVertexShaderFromBytecode,0x00868bd0,0x0046ea30,0x00868bd0
+23564,function,D3DDriver::D3DGraphicsDriver::CreateVertexShaderFromSource,0x00868c60,0x0046eac0,0x00868c60
+23565,function,D3DDriver::D3DGraphicsDriver::SetPixelShader,0x00868cf0,0x0046eb50,0x00868cf0
+23566,function,D3DDriver::D3DGraphicsDriver::SetVertexShader,0x00868d10,0x0046eb70,0x00868d10
+23567,function,D3DDriver::D3DGraphicsDriver::DestroyShader,0x00868d30,0x0046eb90,0x00868d30
+23568,function,D3DDriver::D3DGraphicsDriver::SetVertexShaderConstantsFloat,0x00868d50,0x0046ebb0,0x00868d50
+23569,function,D3DDriver::D3DGraphicsDriver::SetVertexShaderConstantsInt,0x00868d80,0x0046ebe0,0x00868d80
+23570,function,D3DDriver::D3DGraphicsDriver::SetPixelShaderConstantsFloat,0x00868db0,0x0046ec10,0x00868db0
+23571,function,D3DDriver::D3DGraphicsDriver::SetPixelShaderConstantsInt,0x00868de0,0x0046ec40,0x00868de0
+23572,function,D3DDriver::D3DGraphicsDriver::SetShaderConstants,0x00868e10,0x0046ec70,0x00868e10
+23573,function,D3DDriver::D3DGraphicsDriver::SetRenderState,0x00868e90,0x0046ecf0,0x00868e90
+23574,function,D3DDriver::D3DGraphicsDriver::SetSamplerState,0x00868f10,0x0046ed70,0x00868f10
+23575,function,D3DDriver::D3DGraphicsDriver::SetSamplerStateUnchecked,0x00868f60,0x0046edc0,0x00868f60
+23576,function,D3DDriver::D3DGraphicsDriver::CreateTexture2D,0x00868fb0,0x0046ee10,0x00868fb0
+23577,function,D3DDriver::D3DGraphicsDriver::CreateVolumeTextureFromMemory,0x008690f0,0x0046ef50,0x008690f0
+23578,function,D3DDriver::D3DGraphicsDriver::CreateTextureFromMemory,0x00869200,0x0046f060,0x00869200
+23579,function,D3DDriver::D3DGraphicsDriver::CreateTextureCubeMap,0x008693c0,0x0046f220,0x008693c0
+23580,function,D3DDriver::D3DGraphicsDriver::CreateVolumeTexture,0x008694d0,0x0046f330,0x008694d0
 23581,function,D3DDriver::D3DGraphicsDriver::DestroyTexture,0x008695d0,0x0046f430,0x008695d0
-23582,function,,0x00869610,0x0046f470,0x00869610
-23583,function,,0x008696e0,0x0046f540,0x008696e0
-23584,function,,0x00869840,0x0046f6a0,0x00869840
-23585,function,,0x00869890,0x0046f6f0,0x00869890
-23586,function,,0x008698c0,0x0046f720,0x008698c0
-23587,function,,0x00869900,0x0046f760,0x00869900
+23582,function,D3DDriver::D3DGraphicsDriver::CreateBackBufferRenderTarget,0x00869610,0x0046f470,0x00869610
+23583,function,D3DDriver::D3DGraphicsDriver::CreateTextureRenderTarget,0x008696e0,0x0046f540,0x008696e0
+23584,function,D3DDriver::D3DGraphicsDriver::StretchRect,0x00869840,0x0046f6a0,0x00869840
+23585,function,D3DDriver::D3DGraphicsDriver::SetTexture,0x00869890,0x0046f6f0,0x00869890
+23586,function,D3DDriver::D3DGraphicsDriver::UpdateTexture,0x008698c0,0x0046f720,0x008698c0
+23587,function,D3DDriver::D3DGraphicsDriver::CopyBackBufferToSurface,0x00869900,0x0046f760,0x00869900
 23588,function,Stub::DeleteObject,0x00869960,0x0072e510,0x00869960
-23589,function,,0x00869980,0x0046f800,0x00869980
+23589,function,D3DDriver::D3DGraphicsDriver::UnbindRenderTarget,0x00869980,0x0046f800,0x00869980
 23590,function,Graphics::RenderStream::`scalar deleting destructor'`adjustor{4}',0x008699a0,0x0046f7c0,0x008699a0
 23591,function,Graphics::RenderStream::`scalar deleting destructor',0x008699b0,0x0046f7d0,0x008699b0
 23592,function,D3DDriver::GetVertexElementTypeSize,0x008699e0,0x0046f820,0x008699e0
-23593,function,,0x008699f0,0x0046f830,0x008699f0
-23594,function,,0x00869a60,0x0046f8a0,0x00869a60
-23595,function,,0x00869a90,0x0046f8d0,0x00869a90
-23596,function,,0x00869b90,0x0046f9d0,0x00869b90
-23597,function,,0x00869bd0,0x0046fa10,0x00869bd0
-23598,function,,0x00869c30,0x0046fa70,0x00869c30
-23599,function,,0x00869cc0,0x0046fb00,0x00869cc0
-23600,function,,0x00869d40,0x0046fb80,0x00869d40
-23601,function,,0x00869d70,0x0046fbb0,0x00869d70
-23602,function,,0x00869d90,0x0046fd70,0x00869d90
-23603,function,,0x00869da0,0x0046fd80,0x00869da0
-23604,function,,0x00869e50,0x0046fe30,0x00869e50
-23605,function,,0x00869e60,0x0046fe40,0x00869e60
-23606,function,,0x00869f00,0x0046fee0,0x00869f00
+23593,function,D3DDriver::D3DGraphicsDriver::PackColor,0x008699f0,0x0046f830,0x008699f0
+23594,function,D3DDriver::D3DGraphicsDriver::HasDisplaySettingsChanged,0x00869a60,0x0046f8a0,0x00869a60
+23595,function,D3DDriver::D3DGraphicsDriver::ToggleFullscreen,0x00869a90,0x0046f8d0,0x00869a90
+23596,function,D3DDriver::D3DGraphicsDriver::SetDisplaySettings,0x00869b90,0x0046f9d0,0x00869b90
+23597,function,D3DDriver::D3DGraphicsDriver::ApplyWindowStyle,0x00869bd0,0x0046fa10,0x00869bd0
+23598,function,D3DDriver::D3DGraphicsDriver::SetGammaRamp,0x00869c30,0x0046fa70,0x00869c30
+23599,function,D3DDriver::D3DGraphicsDriver::GetUmbraRenderer,0x00869cc0,0x0046fb00,0x00869cc0
+23600,function,D3DDriver::D3DGraphicsDriver::DestroyUmbraRenderer,0x00869d40,0x0046fb80,0x00869d40
+23601,function,D3DDriver::D3DGraphicsDriver::FlushUmbraLines,0x00869d70,0x0046fbb0,0x00869d70
+23602,function,D3DDriver::D3DGraphicsCapabilitiesDriver::`scalar deleting destructor'`adjustor{28}',0x00869d90,0x0046fd70,0x00869d90
+23603,function,D3DDriver::D3DSwapChain::D3DSwapChain,0x00869da0,0x0046fd80,0x00869da0
+23604,function,D3DDriver::D3DSwapChain::`scalar deleting destructor'`adjustor{4}',0x00869e50,0x0046fe30,0x00869e50
+23605,function,D3DDriver::D3DSwapChain::~D3DSwapChain,0x00869e60,0x0046fe40,0x00869e60
+23606,function,D3DDriver::D3DSwapChain::`scalar deleting destructor',0x00869f00,0x0046fee0,0x00869f00
 23607,function,D3DDriver::GetVertexElementTypeSize,0x00869f20,0x0046ff00,0x00869f20
-23608,function,,0x00869f30,0x0046ff10,0x00869f30
-23609,function,,0x0086a0c0,0x004700a0,0x0086a0c0
+23608,function,D3DDriver::D3DGraphicsDriver::CreateSwapChain,0x00869f30,0x0046ff10,0x00869f30
+23609,function,D3DDriver::D3DGraphicsDriver::CreateDefaultSwapChain,0x0086a0c0,0x004700a0,0x0086a0c0
 23610,function,GraphicsStructures::Array<Math::Vector4f>::PushBack,0x0086a180,0x00470190,0x0086a180
 23611,function,Stub::GetDword_0x1C,0x0086a210,0x008b1550,0x0086a210
-23612,function,,0x0086a220,0x00470230,0x0086a220
-23613,function,,0x0086a310,0x00470320,0x0086a310
-23614,function,,0x0086a320,0x00470330,0x0086a320
-23615,function,,0x0086a330,0x00470340,0x0086a330
-23616,function,,0x0086a3d0,0x004703e0,0x0086a3d0
-23617,function,,0x0086a3f0,0x00470400,0x0086a3f0
+23612,function,D3DDriver::D3DIndexStreamDriver::D3DIndexStreamDriver,0x0086a220,0x00470230,0x0086a220
+23613,function,D3DDriver::D3DIndexStreamDriver::`scalar deleting destructor'`adjustor{4}',0x0086a310,0x00470320,0x0086a310
+23614,function,D3DDriver::D3DIndexStreamDriver::`scalar deleting destructor'`adjustor{36}',0x0086a320,0x00470330,0x0086a320
+23615,function,D3DDriver::D3DIndexStreamDriver::~D3DIndexStreamDriver,0x0086a330,0x00470340,0x0086a330
+23616,function,D3DDriver::D3DIndexStreamDriver::`scalar deleting destructor',0x0086a3d0,0x004703e0,0x0086a3d0
+23617,function,D3DDriver::D3DGraphicsDriver::CreateIndexStream,0x0086a3f0,0x00470400,0x0086a3f0
 23618,function,D3DDriver::D3DGraphicsDriver::UpdateAspectCorrection,0x0086a500,0x00470510,0x0086a500
-23619,function,,0x0086a710,0x00470800,0x0086a710
-23620,function,,0x0086a950,0x00470a40,0x0086a950
-23621,function,,0x0086ab90,0x00470c80,0x0086ab90
-23622,function,,0x0086adf0,0x00470ee0,0x0086adf0
-23623,function,,0x0086af30,0x00471020,0x0086af30
-23624,function,,0x0086afb0,0x004710a0,0x0086afb0
-23625,function,,0x0086b030,0x00471120,0x0086b030
+23619,function,D3DDriver::D3DGraphicsDriver::CreateBatch,0x0086a710,0x00470800,0x0086a710
+23620,function,D3DDriver::D3DGraphicsDriver::CreateBatchWithPrimitive,0x0086a950,0x00470a40,0x0086a950
+23621,function,D3DDriver::D3DGraphicsDriver::CreateIndexedBatch,0x0086ab90,0x00470c80,0x0086ab90
+23622,function,D3DDriver::D3DGraphicsDriver::SetDisplayMode,0x0086adf0,0x00470ee0,0x0086adf0
+23623,function,D3DDriver::D3DGraphicsDriver::ReleaseResetables,0x0086af30,0x00471020,0x0086af30
+23624,function,D3DDriver::D3DGraphicsDriver::RestoreResetables,0x0086afb0,0x004710a0,0x0086afb0
+23625,function,D3DDriver::D3DGraphicsDriver::ResetDevice,0x0086b030,0x00471120,0x0086b030
 23626,function,GraphicsStructures::Array<GraphicsStructures::Array<Math::Vector4f>>::PushBack,0x0086b220,0x00471310,0x0086b220
 23627,function,"std::remove<std::vector<void *>::iterator,void *>",0x0086b2a0,0x00534ee0,0x0086b2a0
-23628,function,,0x0086b330,0x00471390,0x0086b330
+23628,function,D3DDriver::D3DGraphicsDriver::UnregisterResetable,0x0086b330,0x00471390,0x0086b330
 23629,function,D3DDriver::D3DStateCache::~D3DStateCache,0x0086b360,0x004713c0,0x0086b360
 23630,function,D3DDriver::D3DGraphicsDriver::~D3DGraphicsDriver,0x0086b370,0x004713d0,0x0086b370
 23631,function,,0x0086b4b0,0x00471510,0x0086b4b0
 23632,function,Stub::GetByte_0x16C,0x0086b4c0,0x00471520,0x0086b4c0
 23633,function,Stub::GetDword_0x168,0x0086b4d0,0x00751ea0,0x0086b4d0
-23634,function,,0x0086b4e0,0x00471530,0x0086b4e0
-23635,function,,0x0086b500,0x00471550,0x0086b500
+23634,function,D3DDriver::D3DGraphicsDriver::SetTextureLoadSize,0x0086b4e0,0x00471530,0x0086b4e0
+23635,function,D3DDriver::D3DGraphicsDriver::GetDevice,0x0086b500,0x00471550,0x0086b500
 23636,function,D3DDriver::D3DGraphicsDriver::SetMaxAnisotropy,0x0086b510,0x00471560,0x0086b510
 23637,function,D3DDriver::D3DGraphicsDriver::GetMaxAnisotropy,0x0086b520,0x00471570,0x0086b520
 23638,function,D3DDriver::D3DGraphicsDriver::GetAspectCorrection,0x0086b530,0x00471580,0x0086b530
-23639,function,,0x0086b540,0x00471590,0x0086b540
+23639,function,D3DDriver::D3DGraphicsDriver::`scalar deleting destructor',0x0086b540,0x00471590,0x0086b540
 23640,function,D3DDriver::D3DGraphicsDriver::QueryTextureFilterSupport,0x0086b560,0x004715b0,0x0086b560
-23641,function,,0x0086b610,0x00471660,0x0086b610
+23641,function,D3DDriver::D3DGraphicsDriver::LoadMeshFromXFile,0x0086b610,0x00471660,0x0086b610
 23642,function,Core::VectorClear<?>,0x0086b9a0,0x007f0dc0,0x0086b9a0
 23643,function,D3DDriver::D3DGraphicsDriver::D3DGraphicsDriver,0x0086ba80,0x004719f0,0x0086ba80
-23644,function,,0x0086bc90,0x00471c00,0x0086bc90
+23644,function,D3DDriver::D3DGraphicsDriver::RegisterResetable,0x0086bc90,0x00471c00,0x0086bc90
 23645,function,D3DDriver::D3DDisplaySettings::SetFlags,0x0086bcc0,0x00471c30,0x0086bcc0
 23646,function,std::allocator<unsigned long long>::allocate,0x0086bce0,0x00752cb0,0x0086bce0
 23647,function,"std::_Push_heap<_D3DDISPLAYMODE *,int,_D3DDISPLAYMODE>",0x0086bd40,0x00471c60,0x0086bd40
@@ -23684,13 +23684,13 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 23683,function,CD3DEnumeration::EnumerateAdapters,0x0086dc80,0x00473b20,0x0086dc80
 23684,function,CD3DEnumeration::~CD3DEnumeration,0x0086def0,0x00473d90,0x0086def0
 23685,function,CD3DEnumeration::Get,0x0086df60,0x00473e00,0x0086df60
-23686,function,,0x0086dfd0,0x00473e70,0x0086dfd0
-23687,function,,0x0086e000,0x00473ea0,0x0086e000
+23686,function,D3DDriver::D3DResetable::D3DResetable,0x0086dfd0,0x00473e70,0x0086dfd0
+23687,function,D3DDriver::D3DResetable::~D3DResetable,0x0086e000,0x00473ea0,0x0086e000
 23688,function,D3DDriver::NvapiStatusIsError,0x0086e020,0x00473ec0,0x0086e020
-23689,function,,0x0086e070,0x00473f10,0x0086e070
-23690,function,,0x0086e090,0x00473f30,0x0086e090
-23691,function,,0x0086e0c0,0x00473f60,0x0086e0c0
-23692,function,,0x0086e0f0,0x00473f90,0x0086e0f0
+23689,function,D3DDriver::D3DGraphicsCapabilitiesDriver::OnDeviceReset,0x0086e070,0x00473f10,0x0086e070
+23690,function,D3DDriver::D3DGraphicsCapabilitiesDriver::IsShaderModel,0x0086e090,0x00473f30,0x0086e090
+23691,function,D3DDriver::D3DGraphicsCapabilitiesDriver::SupportsShaderModel,0x0086e0c0,0x00473f60,0x0086e0c0
+23692,function,Stub::GetDword_0xC0,0x0086e0f0,0x00473f90,0x0086e0f0
 23693,function,Stub::GetDword_0x94,0x0086e100,0x00473fa0,0x0086e100
 23694,function,D3DDriver::D3DGraphicsCapabilitiesDriver::Initialize,0x0086e110,0x00473fc0,0x0086e110
 23695,function,D3DDriver::D3DDeviceStateBlock::D3DDeviceStateBlock,0x0086e490,0x00474340,0x0086e490
@@ -23722,74 +23722,74 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 23721,function,D3DDriver::D3DDeviceStateCache::DrawPrimitiveUP,0x0086f4b0,0x004753c0,0x0086f4b0
 23722,function,D3DDriver::D3DDeviceStateCache::DrawIndexedPrimitiveUP,0x0086f4e0,0x004753f0,0x0086f4e0
 23723,function,D3DDriver::D3DStateCache::Reset,0x0086f550,0x00475460,0x0086f550
-23724,function,,0x0086fe10,0x00475d40,0x0086fe10
-23725,function,,0x0086fe50,0x00475d80,0x0086fe50
-23726,function,,0x0086fe80,0x00475db0,0x0086fe80
+23724,function,D3DDriver::D3DViewport::Apply,0x0086fe10,0x00475d40,0x0086fe10
+23725,function,D3DDriver::D3DViewport::Set,0x0086fe50,0x00475d80,0x0086fe50
+23726,function,D3DDriver::D3DViewport::D3DViewport,0x0086fe80,0x00475db0,0x0086fe80
 23727,function,General::Token::~Token,0x0086fea0,0x0046df70,0x0086fea0
-23728,function,,0x0086feb0,0x00475dd0,0x0086feb0
-23729,function,,0x0086fed0,0x00475e20,0x0086fed0
+23728,function,D3DDriver::D3DViewport::`scalar deleting destructor',0x0086feb0,0x00475dd0,0x0086feb0
+23729,function,D3DDriver::D3DVertexStreamDriver::OnDeviceReset,0x0086fed0,0x00475e20,0x0086fed0
 23730,function,D3DDriver::D3DResetable::OnDeviceLost,0x0086ff60,0x00475df0,0x0086ff60
-23731,function,,0x0086ff90,0x00475eb0,0x0086ff90
-23732,function,,0x00870020,0x00475f40,0x00870020
-23733,function,,0x008700a0,0x00475fc0,0x008700a0
-23734,function,,0x008700c0,0x00475fe0,0x008700c0
-23735,function,,0x00870130,0x00476050,0x00870130
+23731,function,D3DDriver::D3DIndexStreamDriver::OnDeviceReset,0x0086ff90,0x00475eb0,0x0086ff90
+23732,function,D3DDriver::D3DVertexStreamDriver::Lock,0x00870020,0x00475f40,0x00870020
+23733,function,D3DDriver::D3DVertexStreamDriver::Unlock,0x008700a0,0x00475fc0,0x008700a0
+23734,function,D3DDriver::D3DIndexStreamDriver::Lock,0x008700c0,0x00475fe0,0x008700c0
+23735,function,D3DDriver::D3DIndexStreamDriver::Unlock,0x00870130,0x00476050,0x00870130
 23736,function,D3DDriver::D3DVertexStreamDriver::BindStream,0x00870150,0x00476070,0x00870150
 23737,function,D3DDriver::D3DVertexStreamDriver::ResetFrequency,0x008701c0,0x004760e0,0x008701c0
-23738,function,,0x008701e0,0x00476100,0x008701e0
-23739,function,,0x00870210,0x00476130,0x00870210
+23738,function,D3DDriver::D3DVertexStreamDriver::GetMemoryUsage,0x008701e0,0x00476100,0x008701e0
+23739,function,D3DDriver::D3DIndexStreamDriver::GetMemoryUsage,0x00870210,0x00476130,0x00870210
 23740,function,Graphics::RenderStream::~RenderStream,0x00870240,0x00476160,0x00870240
-23741,function,,0x00870260,0x00476180,0x00870260
+23741,function,D3DDriver::D3DVertexStreamDriver::~D3DVertexStreamDriver,0x00870260,0x00476180,0x00870260
 23742,function,Stub::GetDword_0x38,0x00870300,0x009e7bd0,0x00870300
-23743,function,,0x00870310,0x00476220,0x00870310
-23744,function,,0x00870320,0x00476230,0x00870320
-23745,function,,0x00870330,0x00476240,0x00870330
-23746,function,,0x00870440,0x00476350,0x00870440
+23743,function,D3DDriver::D3DVertexStreamDriver::`scalar deleting destructor'`adjustor{32}',0x00870310,0x00476220,0x00870310
+23744,function,D3DDriver::D3DVertexStreamDriver::`scalar deleting destructor'`adjustor{4}',0x00870320,0x00476230,0x00870320
+23745,function,D3DDriver::D3DVertexStreamDriver::D3DVertexStreamDriver,0x00870330,0x00476240,0x00870330
+23746,function,D3DDriver::D3DVertexStreamDriver::`scalar deleting destructor',0x00870440,0x00476350,0x00870440
 23747,function,std::set<unsigned int>::find,0x00870460,0x0049a2b0,0x00870460
 23748,function,std::set<unsigned int>::Contains,0x008704d0,0x00476370,0x008704d0
 23749,function,,0x00870510,0x0049c240,0x00870510
 23750,function,,0x00870710,0x0049cd10,0x00870710
 23751,function,std::set<unsigned int>::Insert,0x00870780,0x0049f130,0x00870780
 23752,function,Graphics::MemoryFootprintTally::Add,0x008707a0,0x004763b0,0x008707a0
-23753,function,,0x00870810,0x00476420,0x00870810
-23754,function,,0x00870830,0x00476440,0x00870830
-23755,function,,0x00870850,0x00476460,0x00870850
-23756,function,,0x00870870,0x00476480,0x00870870
+23753,function,D3DDriver::D3DVertexStreamDriver::CollectResourceFootprint,0x00870810,0x00476420,0x00870810
+23754,function,D3DDriver::D3DIndexStreamDriver::CollectResourceFootprint,0x00870830,0x00476440,0x00870830
+23755,function,D3DDriver::D3DBatch::SetElementCount,0x00870850,0x00476460,0x00870850
+23756,function,D3DDriver::D3DBatch::SetFirstVertex,0x00870870,0x00476480,0x00870870
 23757,function,D3DDriver::D3DBatchIndex::GetVertexCount,0x00870880,0x00476490,0x00870880
-23758,function,,0x00870890,0x004764c0,0x00870890
-23759,function,,0x00870910,0x00476540,0x00870910
-23760,function,,0x00870980,0x004765b0,0x00870980
-23761,function,,0x008709a0,0x004765d0,0x008709a0
-23762,function,,0x008709b0,0x004765e0,0x008709b0
-23763,function,,0x00870a00,0x00476630,0x00870a00
-23764,function,,0x00870a40,0x00476670,0x00870a40
-23765,function,,0x00870ae0,0x00476710,0x00870ae0
+23758,function,Graphics::Batch::Batch,0x00870890,0x004764c0,0x00870890
+23759,function,Graphics::Batch::~Batch,0x00870910,0x00476540,0x00870910
+23760,function,Graphics::Batch::`scalar deleting destructor',0x00870980,0x004765b0,0x00870980
+23761,function,Graphics::Batch::`scalar deleting destructor'`adjustor{4}',0x008709a0,0x004765d0,0x008709a0
+23762,function,D3DDriver::D3DBatch::GetVertexStreamBuffer,0x008709b0,0x004765e0,0x008709b0
+23763,function,D3DDriver::D3DBatch::GetVertexStreamStride,0x00870a00,0x00476630,0x00870a00
+23764,function,D3DDriver::D3DBatch::GetMemoryFootprint,0x00870a40,0x00476670,0x00870a40
+23765,function,D3DDriver::D3DBatch::CollectResourceFootprint,0x00870ae0,0x00476710,0x00870ae0
 23766,function,D3DDriver::D3DBatch::BindVertexStreams,0x00870b50,0x00476780,0x00870b50
 23767,function,D3DDriver::D3DBatchIndex::UnbindStreams,0x00870c90,0x004768c0,0x00870c90
 23768,function,D3DDriver::D3DBatch::Draw,0x00870d40,0x00476970,0x00870d40
 23769,function,D3DDriver::D3DBatch::DrawRange,0x00870d90,0x004769c0,0x00870d90
 23770,function,D3DDriver::D3DBatchIndex::Draw,0x00870de0,0x00476a10,0x00870de0
 23771,function,D3DDriver::D3DBatchIndex::DrawRange,0x00870e70,0x00476aa0,0x00870e70
-23772,function,,0x00870f00,0x00476b30,0x00870f00
-23773,function,,0x00870f20,0x00476b50,0x00870f20
-23774,function,,0x00870f40,0x00476b70,0x00870f40
-23775,function,,0x00870fd0,0x00476c00,0x00870fd0
-23776,function,,0x00870fe0,0x00476c10,0x00870fe0
-23777,function,,0x00871000,0x00476c30,0x00871000
-23778,function,,0x00871010,0x00476c40,0x00871010
-23779,function,,0x00871030,0x00476c60,0x00871030
-23780,function,,0x00871050,0x00476c80,0x00871050
-23781,function,,0x00871110,0x00476d40,0x00871110
-23782,function,,0x00871170,0x00476da0,0x00871170
+23772,function,D3DDriver::D3DBatchIndex::GetMemoryFootprint,0x00870f00,0x00476b30,0x00870f00
+23773,function,D3DDriver::D3DBatchIndex::CollectResourceFootprint,0x00870f20,0x00476b50,0x00870f20
+23774,function,D3DDriver::D3DBatch::~D3DBatch,0x00870f40,0x00476b70,0x00870f40
+23775,function,D3DDriver::D3DBatch::`scalar deleting destructor'`adjustor{4}',0x00870fd0,0x00476c00,0x00870fd0
+23776,function,D3DDriver::D3DBatchIndex::~D3DBatchIndex,0x00870fe0,0x00476c10,0x00870fe0
+23777,function,D3DDriver::D3DBatchIndex::`scalar deleting destructor'`adjustor{4}',0x00871000,0x00476c30,0x00871000
+23778,function,D3DDriver::D3DBatch::`scalar deleting destructor',0x00871010,0x00476c40,0x00871010
+23779,function,D3DDriver::D3DBatchIndex::`scalar deleting destructor',0x00871030,0x00476c60,0x00871030
+23780,function,D3DDriver::D3DBatch::D3DBatch,0x00871050,0x00476c80,0x00871050
+23781,function,D3DDriver::D3DBatch::AddVertexStream,0x00871110,0x00476d40,0x00871110
+23782,function,D3DDriver::D3DBatchIndex::D3DBatchIndex,0x00871170,0x00476da0,0x00871170
 23783,function,D3DDriver::ShaderParameter::PackMember,0x008711c0,0x00476df0,0x008711c0
-23784,function,,0x008713d0,0x00477000,0x008713d0
-23785,function,,0x00871400,0x00477030,0x00871400
-23786,function,,0x00871430,0x00477060,0x00871430
-23787,function,,0x00871450,0x00477080,0x00871450
+23784,function,D3DDriver::D3DPixelShader::OnDeviceLost,0x008713d0,0x00477000,0x008713d0
+23785,function,D3DDriver::D3DPixelShader::OnDeviceReset,0x00871400,0x00477030,0x00871400
+23786,function,D3DDriver::D3DPixelShader::GetParameterRegister,0x00871430,0x00477060,0x00871430
+23787,function,D3DDriver::D3DPixelShader::GetParameterRegisterByName,0x00871450,0x00477080,0x00871450
 23788,function,D3DDriver::D3DPixelShader::SetBoolConstant,0x00871470,0x004770a0,0x00871470
-23789,function,,0x008714b0,0x004770e0,0x008714b0
+23789,function,D3DDriver::D3DPixelShader::GetConstants,0x008714b0,0x004770e0,0x008714b0
 23790,function,std::vector<?>::size,0x008714c0,0x004770f0,0x008714c0
-23791,function,,0x008714f0,0x00477170,0x008714f0
+23791,function,D3DDriver::D3DPixelShader::SetParameterBool,0x008714f0,0x00477170,0x008714f0
 23792,function,"std::_Copy_opt<D3DDriver::ShaderMember*,D3DDriver::ShaderMember*,std::_Nonscalar_ptr_iterator_tag>",0x00871510,0x00477240,0x00871510
 23793,function,"std::_Uninit_copy<D3DDriver::ShaderMember*,D3DDriver::ShaderMember*,std::allocator<D3DDriver::ShaderMember>>",0x00871570,0x004772a0,0x00871570
 23794,function,"std::_Copy_backward_opt<D3DDriver::ShaderMember*,D3DDriver::ShaderMember*,std::_Nonscalar_ptr_iterator_tag>",0x008715a0,0x004772d0,0x008715a0
@@ -23800,10 +23800,10 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 23799,function,D3DDriver::D3DPixelShader::SetFloatConstant,0x00871790,0x004776a0,0x00871790
 23800,function,D3DDriver::D3DPixelShader::SetIntConstant,0x008717f0,0x00477700,0x008717f0
 23801,function,"std::copy_backward<D3DDriver::ShaderMember*,D3DDriver::ShaderMember*>",0x00871850,0x004778a0,0x00871850
-23802,function,,0x00871880,0x00477980,0x00871880
-23803,function,,0x008718a0,0x004779a0,0x008718a0
-23804,function,,0x00871900,0x00477a00,0x00871900
-23805,function,,0x00871920,0x00477a20,0x00871920
+23802,function,D3DDriver::D3DPixelShader::SetParameterScalar,0x00871880,0x00477980,0x00871880
+23803,function,D3DDriver::D3DPixelShader::SetParameterData,0x008718a0,0x004779a0,0x008718a0
+23804,function,D3DDriver::D3DPixelShader::SetParameterVector,0x00871900,0x00477a00,0x00871900
+23805,function,D3DDriver::D3DPixelShader::SetParameterMatrix,0x00871920,0x00477a20,0x00871920
 23806,function,std::vector<D3DDriver::ShaderMember>::erase,0x00871940,0x00477d30,0x00871940
 23807,function,std::vector<D3DDriver::ShaderMember>::_Ufill,0x008719a0,0x00477d90,0x008719a0
 23808,function,std::string::_Construct<std::wstring::const_iterator>,0x008719e0,0x00477dd0,0x008719e0
@@ -23863,9 +23863,9 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 23862,function,"std::_Uninit_fill_n<D3DDriver::ShaderParameter*,unsigned int,D3DDriver::ShaderParameter,std::allocator<D3DDriver::ShaderParameter>>",0x00873270,0x00479fc0,0x00873270
 23863,function,"std::_Uninit_fill_n<D3DDriver::ShaderParameter*,unsigned int,D3DDriver::ShaderParameter,std::allocator<D3DDriver::ShaderParameter>>::Catch_All@008732DB",0x008732db,0x0047a02b,0x008732db
 23864,function,std::vector<D3DDriver::ShaderParameter>::_Tidy,0x00873320,0x0047a070,0x00873320
-23865,function,,0x00873330,0x0047a080,0x00873330
-23866,function,,0x00873460,0x0047a1b0,0x00873460
-23867,function,,0x00873470,0x0047a1c0,0x00873470
+23865,function,D3DDriver::D3DPixelShader::~D3DPixelShader,0x00873330,0x0047a080,0x00873330
+23866,function,D3DDriver::D3DPixelShader::`scalar deleting destructor'`adjustor{8}',0x00873460,0x0047a1b0,0x00873460
+23867,function,D3DDriver::D3DPixelShader::`scalar deleting destructor',0x00873470,0x0047a1c0,0x00873470
 23868,function,"std::_Uninitialized_fill_n<D3DDriver::ShaderParameter*,unsigned int,D3DDriver::ShaderParameter,std::allocator<D3DDriver::ShaderParameter>>",0x00873490,0x0047a1e0,0x00873490
 23869,function,"std::_Uninitialized_copy<D3DDriver::ShaderParameter*,D3DDriver::ShaderParameter*,std::allocator<D3DDriver::ShaderParameter>>",0x008734d0,0x0047a220,0x008734d0
 23870,function,,0x00873500,0x0047a250,0x00873500
@@ -23873,38 +23873,38 @@ id,kind,name,gog-1.05,ea-1.05,steam-1.05
 23872,function,,0x0087376d,0x0047a4bd,0x0087376d
 23873,function,std::vector<D3DDriver::ShaderParameter>::resize,0x00873810,0x0047a560,0x00873810
 23874,function,std::vector<D3DDriver::ShaderParameter>::vector,0x00873940,0x0047a690,0x00873940
-23875,function,,0x008739b0,0x0047a700,0x008739b0
-23876,function,,0x00873e40,0x0047ab90,0x00873e40
+23875,function,D3DDriver::D3DPixelShader::D3DPixelShader,0x008739b0,0x0047a700,0x008739b0
+23876,function,D3DDriver::D3DPixelShader::D3DPixelShader,0x00873e40,0x0047ab90,0x00873e40
 23877,function,Graphics::RenderFX::~RenderFX,0x00873fb0,0x0047ad00,0x00873fb0
 23878,function,Graphics::RenderFX::`scalar deleting destructor',0x00873fc0,0x0047ad10,0x00873fc0
-23879,function,,0x00873fe0,0x0047ad30,0x00873fe0
-23880,function,,0x00874020,0x0047ad70,0x00874020
-23881,function,,0x00874080,0x0047add0,0x00874080
+23879,function,D3DDriver::D3DRenderFX::D3DRenderFX,0x00873fe0,0x0047ad30,0x00873fe0
+23880,function,D3DDriver::D3DRenderFX::~D3DRenderFX,0x00874020,0x0047ad70,0x00874020
+23881,function,D3DDriver::D3DRenderFX::`scalar deleting destructor',0x00874080,0x0047add0,0x00874080
 23882,function,Graphics::Shader::GetParameterByName,0x008740a0,0x0047adf0,0x008740a0
 23883,function,Graphics::Shader::IsValid,0x008740b0,0x0047ae00,0x008740b0
-23884,function,,0x008740d0,0x0047ae20,0x008740d0
+23884,function,D3DDriver::D3DVertexShader::OnDeviceReset,0x008740d0,0x0047ae20,0x008740d0
 23885,function,D3DDriver::D3DVertexShader::SetFloatConstant,0x00874100,0x0047ae50,0x00874100
 23886,function,D3DDriver::D3DVertexShader::SetIntConstant,0x00874150,0x0047aea0,0x00874150
 23887,function,D3DDriver::D3DVertexShader::SetBoolConstant,0x008741a0,0x0047aef0,0x008741a0
-23888,function,,0x008741f0,0x0047af40,0x008741f0
-23889,function,,0x00874210,0x0047af60,0x00874210
-23890,function,,0x00874230,0x0047af80,0x00874230
-23891,function,,0x00874290,0x0047afe0,0x00874290
-23892,function,,0x008742b0,0x0047b000,0x008742b0
-23893,function,,0x008742d0,0x0047b070,0x008742d0
-23894,function,,0x008743d0,0x0047b170,0x008743d0
-23895,function,,0x008743e0,0x0047b180,0x008743e0
-23896,function,,0x00874400,0x0047b1a0,0x00874400
-23897,function,,0x00874870,0x0047b610,0x00874870
-23898,function,,0x008749c0,0x0047b760,0x008749c0
-23899,function,,0x008749d0,0x0047b770,0x008749d0
+23888,function,D3DDriver::D3DVertexShader::SetParameterScalar,0x008741f0,0x0047af40,0x008741f0
+23889,function,D3DDriver::D3DVertexShader::SetParameterBool,0x00874210,0x0047af60,0x00874210
+23890,function,D3DDriver::D3DVertexShader::SetParameterData,0x00874230,0x0047af80,0x00874230
+23891,function,D3DDriver::D3DVertexShader::SetParameterVector,0x00874290,0x0047afe0,0x00874290
+23892,function,D3DDriver::D3DVertexShader::SetParameterMatrix,0x008742b0,0x0047b000,0x008742b0
+23893,function,D3DDriver::D3DVertexShader::~D3DVertexShader,0x008742d0,0x0047b070,0x008742d0
+23894,function,D3DDriver::D3DVertexShader::`scalar deleting destructor'`adjustor{8}',0x008743d0,0x0047b170,0x008743d0
+23895,function,D3DDriver::D3DVertexShader::`scalar deleting destructor',0x008743e0,0x0047b180,0x008743e0
+23896,function,D3DDriver::D3DVertexShader::D3DVertexShader,0x00874400,0x0047b1a0,0x00874400
+23897,function,D3DDriver::D3DVertexShader::D3DVertexShader,0x00874870,0x0047b610,0x00874870
+23898,function,D3DDriver::D3DTextureMixIn::D3DTextureMixIn,0x008749c0,0x0047b760,0x008749c0
+23899,function,D3DDriver::D3DTexture2D::BindToStage,0x008749d0,0x0047b770,0x008749d0
 23900,function,Graphics::TextureInternal::BindToStage,0x00874a00,0x0047b7a0,0x00874a00
-23901,function,,0x00874a30,0x0047b7d0,0x00874a30
+23901,function,D3DDriver::D3DTexture2D::BindToStageIfValid,0x00874a30,0x0047b7d0,0x00874a30
 23902,function,Graphics::TextureInternal::BindToStageIfValid,0x00874a60,0x0047b800,0x00874a60
-23903,function,,0x00874a90,0x0047b830,0x00874a90
-23904,function,,0x00874af0,0x0047b890,0x00874af0
-23905,function,,0x00874b10,0x0047b8b0,0x00874b10
-23906,function,,0x00874b30,0x0047b8d0,0x00874b30
+23903,function,D3DDriver::D3DTextureVolume::Lock,0x00874a90,0x0047b830,0x00874a90
+23904,function,D3DDriver::D3DTextureVolume::Unlock,0x00874af0,0x0047b890,0x00874af0
+23905,function,D3DDriver::D3DTexture2D::OnDeviceLost,0x00874b10,0x0047b8b0,0x00874b10
+23906,function,D3DDriver::D3DTexture2D::ReleaseForReset,0x00874b30,0x0047b8d0,0x00874b30
 23907,function,D3DDriver::D3DTexture2D::CreateDeviceTexture,0x00874b40,0x0047b8e0,0x00874b40
 23908,function,D3DDriver::D3DTextureCubeMap::CreateDeviceTexture,0x00874b90,0x0047b930,0x00874b90
 23909,function,,0x00874bd0,0x0047b970,0x00874bd0

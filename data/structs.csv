@@ -621,8 +621,14 @@ CutscenePlayer,0x180,0x10,Math::Vector4f,conversationTurnOffset,"0x007F0B20 mova
 CutscenePlayer,0x1D8,0x4,EC::Cutscene::Actor*,cameraActor,"0x007D881C cmp [eax+0x1d8],esi in UpdateBetweenCategories and 0x007D1038 cmp [eax+0x1d8],esi in ActionShake::Update both test it against the actor; the active camera actor"
 CutscenePlayer,0x23C,0x4,Conversation*,conversation,"0x007F0B0D mov [ebx+0x23c],esi in Conversation::MakeLineCutscene; read at 0x007D8828, 0x007D88EF and 0x007D102E; 0 for a cutscene not made by a line"
 CutscenePlayer::BindRecord,0x0,0x4,uint32_t,objectId,"0x007E323C mov [ecx],eax from object+4 (the id)"
+D3DDriver::D3DBatch,0x1C,0x4,void*,vertexDeclaration,"0x008710EE mov [esi+0x1C],edx (arg 5, the object 0x00879F30 made from the element list); 0x00870F75..0x00870F8A deletes it through its slot 0; 0x00870A4E uses its sub-object at +0xC for the footprint"
+D3DDriver::D3DBatch,0x20,0x10,std::vector<void*>,vertexStreams,0x00871134 push_back of arg 1 of AddVertexStream; 0x008709B3 and 0x00870AF0 index it; elements are D3DVertexStreamDriver (their slots 5 and 7 are called)
+D3DDriver::D3DBatch,0x30,0x10,std::vector<uint32_t>,streamNumbers,0x00871141 push_back of arg 2; 0x00870C18..0x00870C2D passes the element as SetStreamSource's StreamNumber (0x00870C6F call to 0x00870150)
+D3DDriver::D3DBatch,0x40,0x10,std::vector<uint32_t>,streamOffsets,0x0087114E push_back of arg 3; 0x00870BD4 reads it as the stream's byte offset
+D3DDriver::D3DBatch,0x50,0x10,std::vector<uint32_t>,streamStrides,0x0087115B push_back of arg 4; slot 18 0x00870A03 returns the element
 D3DDriver::D3DBatch,0x60,0x4,uint32_t,firstVertex,0x00870D72 passed as DrawPrimitive StartVertex and DrawIndexedPrimitive BaseVertexIndex
 D3DDriver::D3DBatch,0x64,0x4,uint32_t,primitiveCount,"0x00870D6F passed as DrawPrimitive PrimitiveCount and DrawIndexedPrimitive PrimCount (device +0x144, +0x148)"
+D3DDriver::D3DBatch,0x68,0x4,uint32_t,primitiveType,"0x008710E8 mov [esi+0x68],eax (arg 3, a D3DPRIMITIVETYPE from the table at 0x00B2DC00); 0x00870853 passes it to 0x008680E0 to get the primitive count"
 D3DDriver::D3DBatchIndex,0x70,0x4,uint32_t,minVertexIndex,0x00870E39 DrawIndexedPrimitive MinVertexIndex
 D3DDriver::D3DBatchIndex,0x74,0x4,uint32_t,startIndex,0x00870E32 DrawIndexedPrimitive StartIndex
 D3DDriver::D3DBatchIndex,0x78,0x4,uint32_t,vertexCount,0x00870E35 DrawIndexedPrimitive NumVertices
@@ -640,20 +646,59 @@ D3DDriver::D3DGraphicsDriver,0x10C,0x4,int,maxAnisotropy,0x0086BAD5 the construc
 D3DDriver::D3DGraphicsDriver,0x110,0x4,float,clearDepth,0x008685B4 fstp [ecx+0x110] (slot 13); Clear pushes it at 0x00868668
 D3DDriver::D3DGraphicsDriver,0x12C,0x4,void*,parameterCopy,"0x0086BB72 mov [ebp+0x12c],eax: a 0x48-byte copy of the creation parameters (rep movsd 0x12); 0x0086842F reads +0x10 and +0x14 of it"
 D3DDriver::D3DGraphicsDriver,0x130,0x1,bool,windowed,"0x00869BD6 cmp byte [esi+0x130],0: zero takes window style 0x90080000 (popup), else the saved style; 0x0086BADF stores it; returned by slot 6 at 0x00868442"
+D3DDriver::D3DGraphicsDriver,0x134,0x10,int[4],windowedRect,0x0086BB9C..0x0086BBB1 stored from GetClientRect (0x0086BB8A) of the window; ToggleWindowed 0x00869B11 reads it as the rectangle when going to windowed
+D3DDriver::D3DGraphicsDriver,0x144,0x10,int[4],fullscreenRect,"0x0086BBEE..0x0086BC2F zero, zero, then right and bottom from the display settings +0x10 and +0x14; ToggleWindowed 0x00869B2B reads it when going to full screen"
+D3DDriver::D3DGraphicsDriver,0x164,0x4,D3DDriver::D3DGraphicsDriverManager*,manager,"0x0086BABB mov [ebp+0x164],ecx (constructor argument 3, the manager 0x00865A83 calls it on); ToggleWindowed 0x00869B61 and SetWindowed 0x0086AE90 call its slot 17"
 D3DDriver::D3DGraphicsDriver,0x168,0x4,HWND,hwnd,"0x0086BAE5 mov [ebp+0x168],ebx (constructor argument 3); ebx is the window passed to GetClientRect, GetWindowRect and GetWindowLongW"
+D3DDriver::D3DGraphicsDriver,0x16C,0x1,bool,resetFailed,"0x0086B4B4 mov [ecx+0x16c],al (slot 99); cleared by the constructor 0x0086BAEB; read by slot 100 0x0086B4C0. Role INFERRED: the manager sets it to 1 (0x00865CF9) after ResetDevice returned false"
+D3DDriver::D3DGraphicsDriver,0x170,0x4,unsigned int,windowStyle,"0x0086BC0F mov [ebp+0x170],eax from GetWindowLongW(hwnd, GWL_STYLE) at 0x0086BC09; restored by ApplyWindowStyle 0x00869BDC"
+D3DDriver::D3DGraphicsDriver,0x174,0x10,std::vector<D3DDriver::D3DResetable*>,resetables,"0x0086BAF8 constructed; begin +0x178 and end +0x17C read at 0x0086AF35; RegisterResetable 0x0086BCA8 pushes, UnregisterResetable 0x0086B348 removes"
+D3DDriver::D3DGraphicsDriver,0x184,0x20,Multithreading::Mutex,resetablesMutex,0x0086BB0B constructor call on [ebp+0x184]; locked at 0x0086B33E and 0x0086BC9E around the list (size not read: next member at 0x1A4)
 D3DDriver::D3DGraphicsDriver,0x1A4,0x4,unsigned int,unsupportedFilterFlags,"0x0086B594 or [esi+0x1A4],2 .. 0x0086B5DE: bits for the texture filters the device's TextureFilterCaps lacks (QueryTextureFilterSupport)"
 D3DDriver::D3DGraphicsDriver,0x1A8,0x4,unsigned int,unsupportedFilterFlags2,"0x0086B5E8 or [esi+0x1A8],8; 0x10 and 0x20 or-ed at 0x0086B5EF/0x0086B5F5"
 D3DDriver::D3DGraphicsDriver,0x1AC,0x4,D3DDriver::D3DStateCache,stateCache,"0x00868EC3 add ecx,0x1ac then D3DStateCache::SetRenderState; the cache's constructor at 0x0086BB27 (size not read)"
 D3DDriver::D3DGraphicsDriver,0x735C,0x1,bool,inScene,"0x0086874D mov [esi+0x735C],1 (BeginScene); cleared at 0x0086878A; read by slot 20 at 0x008687A0"
-D3DDriver::D3DGraphicsDriver,0x7360,0x4,int,unknown7360,"0x0086B4E8 mov [ecx+0x7360],eax (slot 47); initialised -1 at 0x0086BB46"
-D3DDriver::D3DGraphicsDriver,0x7364,0x4,int,unknown7364,"0x0086B4EE mov [ecx+0x7364],edx (slot 47); initialised -1 at 0x0086BB4C"
+D3DDriver::D3DGraphicsDriver,0x7360,0x4,int,textureLoadWidth,"0x00869227 read for the next texture load (a negative value becomes -2, D3DX_DEFAULT_NONPOW2); 0x0086B4E8 mov [ecx+0x7360],eax (slot 47); initialised -1 at 0x0086BB46"
+D3DDriver::D3DGraphicsDriver,0x7364,0x4,int,textureLoadHeight,"0x00869238 read for the next texture load (a negative value becomes -2, D3DX_DEFAULT_NONPOW2); 0x0086B4EE mov [ecx+0x7364],edx (slot 47); initialised -1 at 0x0086BB4C"
 D3DDriver::D3DGraphicsDriver,0x736C,0x4,D3DDriver::D3DUmbraRenderer*,umbraRenderer,"0x00869D1A mov [esi+0x736C],eax (slot 89 makes it on first use, 0x00869CED push 0x70); freed by slot 90 at 0x00869D55"
 D3DDriver::D3DGraphicsDriverManager,0x2C,0x4,void*,direct3D9,"0x008653C5 call 0x0090A338 with 0x20 (Direct3DCreate9); 0x008653CC mov [esi+0x2C],eax; released at 0x00865398"
+D3DDriver::D3DGraphicsDriverManager,0x30,0x4,D3DDriver::D3DGraphicsCapabilitiesDriverManager*,capabilitiesManager,"0x008653EF mov [esi+0x30],eax (8-byte object, vftable 0xB2DAD8, d3d pointer at +4); deleted in Shutdown 0x0086537A"
+D3DDriver::D3DGraphicsDriverManager,0x34,0x1,bool,initialized,"0x008653F4 mov [esi+0x34],al in Initialize; 0x00867E8A cmp byte [0xC3A054],0 tests it on the global manager 0x00C3A020"
+D3DDriver::D3DGraphicsDriverManager,0x38,0x4,void*,enumeration,"0x00865B10 mov [edi+0x38],eax in GetEnumeration: the CD3DEnumeration (adapter list at +0x5C, begin +0x60, end +0x64, read at 0x00867953)"
+D3DDriver::D3DGraphicsDriverManager,0x3C,0x4,D3DDriver::D3DGraphicsDriver*,driver,"0x00865AB7 mov [esi+0x3c],edi in CreateDriver; deleted by DestroyDriver 0x00865842"
+D3DDriver::D3DGraphicsDriverManager,0x40,0x4,int,driverRefCount,"0x00865ABA mov [esi+0x40],1 in CreateDriver; 0x00865898 add [esi+0x40],1 when the driver exists; 0x00865410 decrements"
+D3DDriver::D3DGraphicsDriverManager,0x44,0x4,int,bestAdapterIndex,"0x0086616B mov [ebx+0x44],ecx in ChooseDeviceSettings: index of the best adapter in the enumeration"
+D3DDriver::D3DGraphicsDriverManager,0x48,0x4,int,bestDeviceIndex,"0x0086616E mov [ebx+0x48],edx: index of the best device in that adapter"
+D3DDriver::D3DGraphicsDriverManager,0x4C,0x4,int,bestComboIndex,"0x00866171 mov [ebx+0x4c],edi: index of the best device combo in that device"
 D3DDriver::D3DGraphicsDriverManager,0x8C,0x4,unsigned int,videoMemoryMiB,"0x00865808 mov [ecx+0x8C],eax (QueryVideoMemory); read by slot 9 at 0x00866CA0"
+D3DDriver::D3DIndexStreamDriver,0x0,0x4C,struct,sizeof,0x0086A4AE push 0x4c before operator new in CreateIndexStream; GetMemoryFootprint adds 0x4c at 0x00870224
+D3DDriver::D3DIndexStreamDriver,0x1C,0x4,unsigned int,size,"0x0086A276 mov [esi+0x1c],edi (constructor argument 2, the byte length); read by GetMemoryFootprint 0x0087022B and OnDeviceReset 0x0086FFA6"
+D3DDriver::D3DIndexStreamDriver,0x20,0x4,unsigned int,format,"0x0086A279 mov [esi+0x20],eax (constructor argument 4, 101 D3DFMT_INDEX16 or 102 INDEX32)"
+D3DDriver::D3DIndexStreamDriver,0x30,0x1,bool,locked,"0x0086A2B1 mov [esi+0x30],bl; Lock 0x008700CF sets it; Unlock 0x00870130 tests and clears it"
+D3DDriver::D3DIndexStreamDriver,0x34,0x4,IDirect3DIndexBuffer9*,indexBuffer,"0x0086A2B4 mov [esi+0x34],edx (constructor argument 1); Lock calls its slot 11 at 0x0087011D; released at 0x0086A382"
+D3DDriver::D3DIndexStreamDriver,0x38,0x4,unsigned int,usage,"0x0086A2B7 mov [esi+0x38],eax (constructor argument 3, the D3DUSAGE flags); OnDeviceReset 0x0086FFAB pushes it to CreateIndexBuffer"
+D3DDriver::D3DIndexStreamDriver,0x3C,0x4,void*,shadowCopy,"0x0086A2C8 mov [esi+0x3c],eax (operator new of size bytes, memcpy or memset); freed at 0x0086A388; OnDeviceReset 0x0086FFE6 copies it back"
+D3DDriver::D3DPixelShader,0x14,0x4,void*,compiledCode,"0x00873D6F lea ebp,[esi+0x14] as D3DXCompileShaderFromFileW's ppShader (an ID3DXBuffer*); Released in a loop at 0x00873377 until its count is 0; null for the bytecode path (0x00873EFD)"
+D3DDriver::D3DPixelShader,0x18,0x4,void*,shader,"0x00873DB1 lea ecx,[esi+0x18] as CreatePixelShader's ppShader (IDirect3DPixelShader9*); 0x008713DE Releases it in OnDeviceLost"
+D3DDriver::D3DPixelShader,0x20,0x4,void*,device,"0x00873ABE mov [esi+0x20],ecx (arg 4, the IDirect3DDevice9*); 0x00873F0E reads its vtable +0x1A8"
+D3DDriver::D3DPixelShader,0x28,0x10,std::vector<D3DDriver::ShaderParameter>,parameters,"0x00873A45 lea ecx,[esi+0x28]; 0x0087A0A0 searches it by name; 0x0087342C tidies it"
+D3DDriver::D3DPixelShader,0x90,0x4,void*,bytecodeCopy,"0x00873F89 mov [esi+0x90],edi (operator new + memcpy of the code, size from GetFunction); 0x00871406 reads it as OnDeviceReset's pFunction; deleted at 0x008733AA"
+D3DDriver::D3DPixelShader,0x94,0x10,std::vector<D3DDriver::ShaderConstant>,constants,"0x00873A8D lea ecx,[esi+0x94]; 0x00873F2E..0x00873F3A fills it from the constant table; slot 12 0x008714B0 returns its address"
+D3DDriver::D3DRenderFX,0x4,0x4,void*,effect,0x0087400B &[esi+4] is D3DXCreateEffect's ppEffect (ID3DXEffect*); 0x0087404E Releases it in the destructor
+D3DDriver::D3DResetable,0x0,0x4,void*,vftable,"0x0086DFD7 mov [esi],0xB2E32C"
+D3DDriver::D3DResetable,0x4,0x4,D3DDriver::D3DGraphicsDriver*,driver,"0x0086DFDD mov [esi+4],ecx (the constructor's argument); 0x0086E00E reads it to call driver slot 108"
+D3DDriver::D3DResetable,0x8,0x1,bool,lost,"0x0086DFE0 mov byte [esi+8],0; set to 1 by the vertex stream's release 0x0086FF68; read by slot 4 0x00868050 and tested by OnDeviceReset 0x0086FEDA"
+D3DDriver::D3DResetable,0x9,0x1,bool,registered,"0x0086DFE4 mov byte [esi+9],1 after the driver's slot 107 (+0x1AC) registered it; 0x0086E002 cmp byte [eax+9],0 in the destructor before slot 108 (+0x1B0)"
 D3DDriver::D3DStateCache,0x0,0x4,IDirect3DDevice9*,device,"0x0086E618 mov [ecx],eax (SetDevice); 0x0086F452 mov esi,[esi] before every device call"
 D3DDriver::D3DStateCache,0x71A4,0x4,int,textureStageCount,"0x0086E61A mov [ecx+0x71a4],8 in the set-up"
 D3DDriver::D3DStateCache,0x71A8,0x4,int,samplerCount,"0x0086E63D: 4 when D3DCAPS9 PixelShaderVersion's major byte (+0xCD) is below 2, else 16; the reset loops over it (0x0086FB96)"
 D3DDriver::D3DStateCache,0x71AC,0x4,int,streamCount,"0x0086E643 mov eax,[edx+0xbc] (caps MaxStreams) capped at 16, stored at 0x0086E653"
+D3DDriver::D3DSwapChain,0x0,0x28,struct,sizeof,"0x0086A05F push 0x28 before operator new, constructor 0x00869DA0 at 0x0086A098"
+D3DDriver::D3DSwapChain,0x10,0x4,IDirect3DSwapChain9*,d3dSwapChain,"0x00869E12 mov [esi+0x10],eax (constructor argument 1); released at 0x00869EC9; its slot 5 (GetBackBuffer) called at 0x00869E25"
+D3DDriver::D3DSwapChain,0x18,0x4,D3DDriver::D3DGraphicsDriver*,driver,"0x00869E15 mov [esi+0x18],ebx (constructor argument 2); 0x00879277 reads its +0x100 device"
+D3DDriver::D3DSwapChain,0x1C,0x4,IDirect3DSurface9*,backBuffer,0x00869E1D GetBackBuffer writes to [esi+0x1c]; released at 0x00869EB1
+D3DDriver::D3DSwapChain,0x20,0x4,IDirect3DSurface9*,depthStencil,"0x00869E03 mov [esi+0x20],edx (constructor argument 4); released at 0x00869E9A"
+D3DDriver::D3DSwapChain,0x24,0x1,bool,hasDepthStencil,"0x00869E27 cmp [esi+0x20],0; setne; mov [esi+0x24],al"
 D3DDriver::D3DTexture2D,0x44,0x4,int,width,"0x00424040 mov eax,[ecx+0x44] is slot 4 of 0x00B2E91C; LockSystemCopy 0x0055451B calls it for the width"
 D3DDriver::D3DTexture2D,0x48,0x4,int,height,"0x0081F0F0 mov eax,[ecx+0x48] is slot 5 of 0x00B2E91C"
 D3DDriver::D3DTexture2D,0x4C,0x4,IDirect3DTexture9*,deviceTexture,"0x00874B84 mov [esi+0x4c],ecx after CreateTexture (vtable +0x5C); 0x00874B43 tests it to create only once"
@@ -664,6 +709,15 @@ D3DDriver::D3DTextureCubeMap,0x3C,0x4,unsigned int,edgeLength,"0x00874BAE mov ed
 D3DDriver::D3DTextureCubeMap,0x40,0x4,IDirect3DCubeTexture9*,deviceTexture,"0x00874BBC mov [esi+0x40],ecx after CreateCubeTexture"
 D3DDriver::D3DTextureCubeMap,0x44,0x4,unsigned int,usage,"0x00874BA6 mov edx,[esi+0x44] pushed as Usage of CreateCubeTexture"
 D3DDriver::D3DTextureCubeMap,0x48,0x4,unsigned int,format,"0x00874BA0 mov edx,[esi+0x48] pushed as Format of CreateCubeTexture"
+D3DDriver::D3DVertexShader,0x74,0x4,void*,bytecodeCopy,"0x0087499B mov [esi+0x74],edi (copy of the code); 0x008740E5 reads it (+0x6C of the resetable) as OnDeviceReset's pFunction; deleted at 0x00874346"
+D3DDriver::D3DVertexShader,0x78,0x10,std::vector<D3DDriver::ShaderConstant>,constants,"0x008744D3 lea ecx,[esi+0x78]; 0x00874355 tidies it"
+D3DDriver::D3DVertexStreamDriver,0x0,0x50,struct,sizeof,0x00868861 push 0x50 before operator new in CreateVertexStream; GetMemoryFootprint adds 0x50 at 0x008701F4
+D3DDriver::D3DVertexStreamDriver,0x1C,0x4,unsigned int,size,"0x00870382 mov [esi+0x1c],edi (constructor argument, the byte length); GetMemoryFootprint reads it at 0x008701FB; OnDeviceReset 0x0086FEEC"
+D3DDriver::D3DVertexStreamDriver,0x2C,0x1,bool,locked,"0x008703C2 mov [esi+0x2c],bl; Lock 0x00870035 sets it, Unlock 0x008700A6 clears it"
+D3DDriver::D3DVertexStreamDriver,0x30,0x4,IDirect3DVertexBuffer9*,vertexBuffer,"0x008703C5 mov [esi+0x30],ecx; Lock calls its slot 11 at 0x00870087; released at 0x008702B2"
+D3DDriver::D3DVertexStreamDriver,0x34,0x4,unsigned int,usage,"0x008703C8 mov [esi+0x34],edx (the D3DUSAGE flags); OnDeviceReset 0x0086FEE6 reads it for CreateVertexBuffer"
+D3DDriver::D3DVertexStreamDriver,0x38,0x4,void*,shadowCopy,"0x008703F9 mov [esi+0x38],eax (operator new of size bytes, memcpy or memset); freed at 0x008702B8; OnDeviceReset 0x0086FF23 copies it back"
+D3DDriver::D3DVertexStreamDriver,0x48,0x4,int,frequencyMode,"0x008703D3 [esi+0x48]=2 when arg 6 is 1, 0x008703E3 =1 when arg 7 is 1, else 0; read at 0x0087015B: 1 gives D3DSTREAMSOURCE_INDEXEDDATA (0x40000000) | count (0x0087018C), 2 gives D3DSTREAMSOURCE_INSTANCEDATA | 1 (0x80000001, 0x00870177)"
 D3DDriver::ShaderMember,0x0,0x1C,struct,sizeof,0x0087155F rep movsd with ecx=7 per element; 0x008714CD..0x008714D6 the vector's size divides by 28
 D3DDriver::ShaderParameter,0x1C,0x4,int,kind,"0x0087179C cmp [esi+0x1c],1 float; 2 int at 0x008717FC; 3 bool at 0x00871478"
 D3DDriver::ShaderParameter,0x20,0x4,unsigned int,registerIndex,"0x0087413E mov eax,[esi+0x20] passed as the start register of SetVertexShaderConstantF"
@@ -836,6 +890,8 @@ Gff4::TemplateView,0x0,0x4,void*,image,"0x004D5086 mov [eax],ecx in the checked 
 Gff4::TemplateView,0x4,0x4,uint32_t,imageSize,"0x004D5088 mov [eax+4],esi"
 Gff4::TemplateView,0x8,0x4,void*,templateRecord,"0x004D508B mov [eax+8],edx: the 16-byte struct table entry (a Gff4::Template* for Template::GetView, 0x004D9D31); the field count is its +4 (0x004D51E7)"
 Gff4::TemplateView,0xC,0x4,void*,fields,"0x004D508E mov [eax+0xC],edi: the 12-byte field records {id, type word, offset} searched at 0x004D5270; the vector's first element for Template::GetView (0x004D9D35)"
+Graphics::Batch,0x8,0x4,int,typeTag,"0x008708E0 mov [esi+8],eax (arg 1); D3DBatch passes 4 (0x0086A7FB) or 0x16 (0x0086AA3B), D3DBatchIndex 2 or 0x17 (0x0086AC64: neg al; sbb; and 0x15; add 2); slot 1 (Stub::GetDword_0x8) returns it"
+Graphics::Batch,0x18,0x1,bool,indexed,"0x008708EC mov [esi+0x18],cl (arg 2): 0 from 0x00871050's callers, 1 from D3DBatchIndex 0x00871179 (role INFERRED)"
 Graphics::IRenderableNode,0x0,0x4,void*,vftable,"0x0053AE5A mov [ebx],0x00AF7554 in the destructor body"
 Graphics::IRenderableNode,0x10,0x10,std::vector<void*>,items,"0x0053AED2 lea ecx,[ebx+0x10]; 0x0053AEDC call 0x0046C760 (the vector tidy) in the destructor"
 Graphics::IRenderableNode,0x20,0x4,void*,umbraBlock,"0x0053AD47 mov ebx,[edi+0x20]; [ebx] and [ebx+4] are the two Umbra objects set at 0x0053ADC2 and 0x0053ADD0, byte [ebx+0xC] gates property 8 (0x0053ADD5); freed 0x0053AE60..0x0053AECF"
