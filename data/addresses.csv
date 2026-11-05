@@ -14745,7 +14745,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14744,function,CCCreature::RefreshCommandDisplayStrings,,0x006ae550,0x0059f800,0x006ae550
 14745,function,CCCreature::UpdatePartyAreaSlot,,0x006ae780,0x0059fa30,0x006ae780
 14746,function,CCCreature::ForScript_CanUseItem,,0x006ae8b0,0x0059fb60,0x006ae8b0
-14747,function,CCItem::AddReservation,,0x006aec10,0x0059ff10,0x006aec10
+14747,function,CCItem::ReleaseReservation,"Removes the creature id from the item's +0x6EC list of creatures holding a place in its stack (Core::VectorRemoveValue, 0x006AEC1B); the counterpart of AddReservationIfAbsent",0x006aec10,0x0059ff10,0x006aec10
 14748,function,SwapRemoveList::Remove,,0x006aec30,0x0059ff30,0x006aec30
 14749,function,"SmartData::Attribute<ECBase::ECDynArray<CCreatureAttribute*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::~Attribute",,0x006aed50,0x005a0050,0x006aed50
 14750,function,"SmartData::Attribute<ECBase::ECDynArray<CCreatureAttribute*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x006aedc0,0x005a00d0,0x006aedc0
