@@ -443,7 +443,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 442,function,Eclipse::PlatformWin32::PumpMessages,,0x004147b0,0x00414f10,0x004147b0
 443,function,Eclipse::PlatformWin32::QueueKeyEvent,,0x00414860,0x00414fc0,0x00414860
 444,function,"std::operator<(std::wstring const&,std::wstring const&)",,0x00414930,0x00415090,0x00414930
-445,function,Eclipse::PlatformWin32::OnWindowMessage,,0x00414970,0x004150d0,0x00414970
+445,function,Eclipse::PlatformWin32::OnWindowMessage,"Window procedure. WM_ACTIVATE and WM_KILLFOCUS only clip or release the cursor (vftable slots 11, 12, 14); WM_ACTIVATEAPP sets the active byte +0x61 that IsWindowActive returns (0x00414B4E, 0x00414B65). Focus changes neither sound nor pause",0x00414970,0x004150d0,0x00414970
 446,function,std::_Tree<std::wstring>::_Lbound,,0x004151a0,0x00505ad0,0x004151a0
 447,function,Eclipse::PlatformWin32::WindowProc,,0x00415260,0x00415900,0x00415260
 448,function,,,0x00415290,0x004580a0,0x00415290

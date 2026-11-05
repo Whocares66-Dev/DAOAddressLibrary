@@ -842,6 +842,7 @@ Eclipse::GroupedInputMappings::GroupedInputs,0x100,0x10,std::vector<Mapping>,sec
 Eclipse::GroupedInputMappings::GroupedInputs,0x110,0x4,uint32_t,keyWord0,"0x0089381B mov ecx,[ecx+0x110] in GroupedInputs::GetKeyWord (0x00893810); the constructor zeroes it (0x0089424E)"
 Eclipse::GroupedInputMappings::GroupedInputs,0x114,0x4,uint32_t,keyWord1,"0x00893826 mov edx,[ecx+0x114] in GetKeyWord, the second key; the constructor zeroes it (0x00894254)"
 Eclipse::GroupedInputMappings::GroupedInputs,0x11C,0x1C,std::wstring,name,"0x00894261 lea ecx,[esi+0x11c] in the constructor, the action's name; GroupedInputs::GetName (0x008927F0) copies it out"
+Eclipse::PlatformWin32,0x61,0x1,bool,windowActive,"0x00414B4E and 0x00414B65 in OnWindowMessage set it to 1 and 0 on WM_ACTIVATEAPP; IsWindowActive (0x004169A0, vftable slot 1) returns it"
 EclipseGame,0x3C,0x10,std::list<void*>,scenes,"0x0040AFB6 lea ecx,[edi+0x3c]; call 0x0054B3E0 (list push_back) with the scene instance"
 EclipseGame,0x4C,0x4,Graphics::ISceneInstance*,mainScene,"0x0040AFF3 mov [esi+0x4c],eax in CreateScenes; 0x0040AEAC cmp [edi+0x4c] in CreateScene"
 EclipseGame,0x50,0x4,void*,guiScene,"0x0040B013 mov [esi+0x50],eax (the main scene's slot 0x58 result, named L""GUIScene"" at 0x0040B00C); 0x0040AF49 mov eax,[edi+0x50] handed to SceneCamera::SetScene"
