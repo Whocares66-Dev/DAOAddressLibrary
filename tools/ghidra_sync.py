@@ -449,13 +449,25 @@ def ghidra_c(prototype):
         )
 
     def simplify_head(text):
-        # The return type and the name (which the table replaces).
+        # The return type and the name (which the table replaces). Only the
+        # name went before 2026-11-05, and with it every return type but a
+        # pointer: 352 bool, int and float functions read as void in Ghidra.
         if not re.search(r"::|<|>|`|&", text):
             return text
         conv = re.search(r"__(thiscall|stdcall|cdecl|fastcall)", text)
-        pointer = "*" in text.split(conv.group(0))[0] if conv else "*" in text
-        returns = "void *" if pointer else "void"
-        return returns + (" " + conv.group(0) if conv else "") + " f"
+        if conv:
+            returns = text[: conv.start()].strip()
+        else:
+            depth, cut = 0, -1
+            for i, ch in enumerate(text.rstrip()):
+                depth += ch == "<"
+                depth -= ch == ">"
+                if ch == " " and depth == 0:
+                    cut = i
+            returns = text[:cut].strip() if cut >= 0 else ""
+        if re.search(r"::|<|>|`|&", returns) or "*" in returns:
+            returns = "void *" if "*" in returns or "&" in returns else "void"
+        return (returns or "void") + (" " + conv.group(0) if conv else "") + " f"
 
     params = [simplify(p) for p in split_params(inner)] if inner.strip() else []
     return f"{simplify_head(head)}({', '.join(params) if params else 'void'}){tail}"

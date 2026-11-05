@@ -90,6 +90,21 @@ class CTypes(unittest.TestCase):
             "void * __thiscall f(void *this, int n)",
         )
 
+    def test_a_plain_return_is_kept_when_the_name_is_cpp(self):
+        # 352 such fixes went in as void before 2026-11-05.
+        self.assertEqual(
+            ghidra_c("bool __thiscall Foo::IsSet(void *this, int n)"),
+            "bool __thiscall f(void *this, int n)",
+        )
+        self.assertEqual(
+            ghidra_c("unsigned int __cdecl Tactics::Bit(unsigned int type)"),
+            "unsigned int __cdecl f(unsigned int type)",
+        )
+        self.assertEqual(
+            ghidra_c("float Map<unsigned int, int>::Get(int key)"),
+            "float f(int key)",
+        )
+
     def test_a_pointer_to_a_plain_class_becomes_void_pointer(self):
         # Ghidra's parser knows no ECString (the sync of 2026-11-01 failed 13
         # prototypes on it); Windows' all-capital types it knows are kept.

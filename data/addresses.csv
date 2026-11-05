@@ -16557,7 +16557,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16556,function,CCCreatureStats::`scalar deleting destructor',,0x0071ddc0,0x0061bf50,0x0071ddc0
 16557,function,CCCreatureStats::SaveSchema_Fields,,0x0071dde0,0x0061bf70,0x0071dde0
 16558,function,CCCreatureStats::SaveSchema,,0x0071de50,0x0061bfe0,0x0071de50
-16559,function,CCCreatureStats::CheckModalAbilities,,0x0071dee0,0x0061c070,0x0071dee0
+16559,function,CCCreatureStats::CheckModalAbilities,"Checks the creature's modal abilities, given autoCancel, an ability and a shapechange flag; called by CCCreature::SetAppearance (0x006C1591) with (0, 0, 1)",0x0071dee0,0x0061c070,0x0071dee0
 16560,function,CCCreatureStats::RemoveQueuedAbilityCommands,,0x0071e0d0,0x0061c260,0x0071e0d0
 16561,function,CCCreatureStats::RefreshQueuedAbilities,,0x0071e1d0,0x0061c360,0x0071e1d0
 16562,function,CCCreatureStats::RefreshCreatureAttributes,,0x0071e300,0x0061c490,0x0071e300
@@ -19901,7 +19901,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19900,function,CScriptLocation::ReadFromGff,,0x007abd20,0x00689a50,0x007abd20
 19901,function,CScriptLocation::WriteToGff,,0x007abe10,0x00689b40,0x007abe10
 19902,function,PartyTacticEntry::Reset,,0x007abec0,0x00689bf0,0x007abec0
-19903,function,PartyTactics::TargetTypeToAbilityTargetBit,,0x007ac000,0x00689d30,0x007ac000
+19903,function,PartyTactics::TargetTypeToAbilityTargetBit,"Maps a tactics target type to the ability target bit: 1 (self) gives 1, 3 gives 4, any other 2; returned in eax",0x007ac000,0x00689d30,0x007ac000
 19904,function,DirtyPresetMessage::GetType,,0x007ac020,0x00689d50,0x007ac020
 19905,function,DirtyPresetMessage::InitType,,0x007ac060,0x00689d90,0x007ac060
 19906,function,LoadPresetMessage::GetType,,0x007ac0c0,0x00689df0,0x007ac0c0
