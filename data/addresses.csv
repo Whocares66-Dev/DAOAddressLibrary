@@ -12726,9 +12726,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12725,function,std::list<void *>::insert,,0x00649db0,0x00532710,0x00649db0
 12726,function,ClientAIMaster::AddEventNow,,0x00649e40,0x005327a0,0x00649e40
 12727,function,ClientAIMaster::AddEventLater,,0x00649fa0,0x00532900,0x00649fa0
-12728,function,ClientAIMaster::UpdateObjectsPaused,,0x0064a100,0x00532a60,0x0064a100
+12728,function,ClientAIMaster::UpdateObjectsPaused,"While paused, for each object only CCCreature::UpdateByte0xCFC and UpdateSelectionRing (0x0064A178, 0x0064A18A); no animation events are dispatched",0x0064a100,0x00532a60,0x0064a100
 12729,function,ClientAIMaster::AddEventDeltaTime,,0x0064a230,0x00532b90,0x0064a230
-12730,function,ClientAIMaster::Update,"Drains due delayed events (IsFrontEventDue, PopFrontEvent), sets +0x5C, then for every object in its list (+0x10), unfiltered, calls UpdateFade and vtable +0x160 (CCCreature::RefreshIsInParty, CCPlaceable::UpdateRoomVisibility, nothing for CCObject); while paused calls UpdateObjectsPaused instead",0x0064a2d0,0x00532c30,0x0064a2d0
+12730,function,ClientAIMaster::Update,"Drains due delayed events (IsFrontEventDue, PopFrontEvent), sets +0x5C, then for every object in its list (+0x10), unfiltered, calls UpdateFade and vtable +0x160 (CCCreature::RefreshIsInParty, CCPlaceable::UpdateRoomVisibility, nothing for CCObject); while paused calls UpdateObjectsPaused instead; after the loop, AnimationManager slot 0x40 with 1 (0x0064A4A1, ClearEvents), dropping animation events not taken that frame",0x0064a2d0,0x00532c30,0x0064a2d0
 12731,function,Commands::Start,,0x0064a500,0x00532e60,0x0064a500
 12732,function,Commands::End,,0x0064a510,0x00532e70,0x0064a510
 12733,function,AIMaster::DeleteEventData,,0x0064a520,0x00532e80,0x0064a520
@@ -21881,10 +21881,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21880,function,Animation::AnimationManager::RegisterAnimation,,0x00810b50,0x004b57d0,0x00810b50
 21881,function,Animation::AnimationManager::RegisterTree,,0x00810c40,0x004b58c0,0x00810c40
 21882,function,Graphics::ISceneSubManager::OnObjectEvent,,0x00810d30,0x008b3fc0,0x00810d30
-21883,function,Animation::AnimSceneManagerDefault::BeginUpdate,,0x00810d60,0x00a66910,0x00810d60
+21883,function,Animation::AnimSceneManagerDefault::BeginUpdate,"Starts the scene's animation task group (+0xC) on the thread manager: TaskGroup::Begin (0x00810D66), then clears the group's +0x18/+0x19 when it holds tasks",0x00810d60,0x00a66910,0x00810d60
 21884,function,Animation::AnimSceneManagerDefault::WaitUpdate,,0x00810da0,0x00a66950,0x00810da0
-21885,function,Animation::AnimSceneManagerDefault::OnObjectAdded,,0x00810db0,0x00a66960,0x00810db0
-21886,function,Animation::AnimSceneManagerDefault::OnObjectRemoved,,0x00810e00,0x00a669b0,0x00810e00
+21885,function,Animation::AnimSceneManagerDefault::OnObjectAdded,Adds an object's id to the scene's animation group unless flag 0x40 of its slot +0xA4 is set (0x00810DD4); with OnObjectRemoved the only gate on which objects animate,0x00810db0,0x00a66960,0x00810db0
+21886,function,Animation::AnimSceneManagerDefault::OnObjectRemoved,Removes an object's id from the scene's animation group,0x00810e00,0x00a669b0,0x00810e00
 21887,function,Animation::AccumulateWeightedFloat,,0x00810e30,0x00a65870,0x00810e30
 21888,function,Animation::AddScaledFloat,,0x00810e70,0x00a658b0,0x00810e70
 21889,function,Animation::GetNeutralFloat,,0x00810e90,0x00a658d0,0x00810e90
@@ -22006,7 +22006,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22005,function,Animation::WeightTween::Update,,0x008151f0,0x004b9cf0,0x008151f0
 22006,function,Animation::AnimationTask::AnimationTask,,0x008154a0,0x00a665b0,0x008154a0
 22007,function,Animation::AnimationTask::GetName,,0x008154c0,0x00a665d0,0x008154c0
-22008,function,Animation::AnimationTask::Execute,,0x008154d0,0x00a665e0,0x008154d0
+22008,function,Animation::AnimationTask::Execute,"Advances one object's animation by the manager's frame delta times its +0x2E8, the clock picked by +0x260 bit 13: UpdatePhase 0x100 and 1 always; clip lists, animation controllers and bounds (0x10000, 0x10, 0x1000) only when Object::IsVisible or TakeNewOrSwappedFlag (0x00815540)",0x008154d0,0x00a665e0,0x008154d0
 22009,function,Animation::RandomWaveController<float>::~RandomWaveController,,0x008155d0,0x00a666e0,0x008155d0
 22010,function,Animation::RandomWaveController<float>::RandomWaveController,,0x008155f0,0x00a66700,0x008155f0
 22011,function,Animation::RandomWaveController<float>::Update,,0x008156e0,0x00a667f0,0x008156e0
