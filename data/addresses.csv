@@ -14082,7 +14082,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14081,function,Gff4::Block::WriteVector4At,,0x00695470,0x005863e0,0x00695470
 14082,function,Gff4::Block::ReadFloatVector4At,,0x006954a0,0x00586460,0x006954a0
 14083,function,CCObject::RefreshGroundCache,,0x006954c0,0x00586480,0x006954c0
-14084,function,CCObject::SetPosition,,0x00695540,0x00586500,0x00695540
+14084,function,CCObject::SetPosition,"Moves the object: unless force is set, returns when the position equals +0x120 (0x0069555E); stores it at +0x120, clears +0x1C4 and calls vtable +0x7C (OnPositionChanged) with the old position and 0",0x00695540,0x00586500,0x00695540
 14085,function,CCObject::OnOrientationChanged,,0x006955c0,0x00586580,0x006955c0
 14086,function,CCObject::DebugTraceByTag,,0x00695620,0x005865e0,0x00695620
 14087,function,CCObject::CanGlow,,0x00695640,0x00586600,0x00695640
