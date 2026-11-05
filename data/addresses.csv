@@ -2304,7 +2304,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2303,function,Renderer::LoadFrameBufferEffects,,0x004558f0,0x00890690,0x004558f0
 2304,function,Renderer::FrameBufferEffect::Create,,0x00455910,0x008906b0,0x00455910
 2305,function,Renderer::ParseFBEffectEvent,,0x00455980,0x00890720,0x00455980
-2306,function,Renderer::GetPreallocatedResource,,0x00455ac0,0x00890860,0x00455ac0
+2306,function,Renderer::GetPreallocatedResource,"Returns the preallocated frame-buffer resource for an index: only 1 is valid, giving FrameBufferEffects::s_preallocatedResources[0] (0x00455ACF); anything else gives null",0x00455ac0,0x00890860,0x00455ac0
 2307,function,Renderer::SetEffectPassFlag,,0x00455ae0,0x00890880,0x00455ae0
 2308,function,Renderer::ClearEffectPassFlag,,0x00455b00,0x008908a0,0x00455b00
 2309,function,Renderer::SetFlag_0xC1E8B7,,0x00455b20,0x008908c0,0x00455b20
@@ -2492,13 +2492,13 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2491,function,Renderer::EclipseUmbraCommander::EclipseUmbraCommander,,0x0045c6c0,0x008a2e20,0x0045c6c0
 2492,function,Renderer::EclipseUmbraCommander::`scalar deleting destructor',,0x0045c780,0x008a2ee0,0x0045c780
 2493,function,Renderer::EclipseUmbraCommander::FlushQueries,,0x0045c7c0,0x008a2f20,0x0045c7c0
-2494,function,Renderer::EclipseUmbraCommander::command,,0x0045c8e0,0x008a3040,0x0045c8e0
+2494,function,Renderer::EclipseUmbraCommander::command,"Runs Umbra's commands. Cases 0xA0/0xA1 begin and end the depth pass, both gated by g_rendererSceneEnabled: begin clears colour to s_depthPassClearColor when g_depthPassColorWrite is set; end hands the colour target to GetPreallocatedResource(1) (0x0045CC1D)",0x0045c8e0,0x008a3040,0x0045c8e0
 2495,retired,,,,,
 2496,retired,,,,,
 2497,function,Renderer::FrameBufferInstruction::~FrameBufferInstruction,,0x0045d070,0x00895a50,0x0045d070
 2498,function,Renderer::FBEclipseResource::FBEclipseResource,,0x0045d080,0x00895a60,0x0045d080
 2499,function,Renderer::FrameBufferResource::`scalar deleting destructor',,0x0045d0b0,0x00897aa0,0x0045d0b0
-2500,function,Renderer::FBBackbufferResource::FBBackbufferResource,,0x0045d0e0,0x00895a90,0x0045d0e0
+2500,function,Renderer::FBBackbufferResource::FBBackbufferResource,"A frame-buffer resource naming a backbuffer target: FrameBufferResource's constructor with kind 1 (0x0045D0EA), then stores its index argument at +0x2C; it holds no texture of its own until GetPreallocatedResource resolves it",0x0045d0e0,0x00895a90,0x0045d0e0
 2501,function,Renderer::FrameBufferFilter::GetFloatParameter,,0x0045d110,0x00895ac0,0x0045d110
 2502,function,Renderer::FrameBufferFilter::GetVector4Parameter,,0x0045d130,0x00895ae0,0x0045d130
 2503,function,Renderer::FrameBufferFilter::GetTextureParameter,,0x0045d150,0x00895b00,0x0045d150
@@ -61884,7 +61884,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 61883,data,,,0x00ae76b8,0x00b25bf0,0x00ae76b8
 61884,data,,,0x00ae76e0,0x00b25c18,0x00ae76e0
 61885,data,Renderer::EclipseUmbraCommander::vftable,,0x00ae7700,0x00b25c38,0x00ae7700
-61886,data,,,0x00ae7708,0x00b25c40,0x00ae7708
+61886,data,Renderer::EclipseUmbraCommander::command::s_depthPassClearColor,"The colour the Umbra depth pass clears to, (0.34464, 0.99609, 0.996084) with alpha 1 pushed at the call; read only by EclipseUmbraCommander::command's case 0xA0 (0x0045CB80..0x0045CB94), when g_depthPassColorWrite is set",0x00ae7708,0x00b25c40,0x00ae7708
 61887,data,,,0x00ae770c,0x00b25c44,0x00ae770c
 61888,data,,,0x00ae7710,0x00b25c48,0x00ae7710
 61889,data,,,0x00ae7714,0x00b255cc,0x00ae7714
