@@ -12728,7 +12728,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12727,function,ClientAIMaster::AddEventLater,,0x00649fa0,0x00532900,0x00649fa0
 12728,function,ClientAIMaster::UpdateObjectsPaused,,0x0064a100,0x00532a60,0x0064a100
 12729,function,ClientAIMaster::AddEventDeltaTime,,0x0064a230,0x00532b90,0x0064a230
-12730,function,ClientAIMaster::Update,,0x0064a2d0,0x00532c30,0x0064a2d0
+12730,function,ClientAIMaster::Update,"Drains due delayed events (IsFrontEventDue, PopFrontEvent), sets +0x5C, then for every object in its list (+0x10), unfiltered, calls UpdateFade and vtable +0x160 (CCCreature::RefreshIsInParty, CCPlaceable::UpdateRoomVisibility, nothing for CCObject); while paused calls UpdateObjectsPaused instead",0x0064a2d0,0x00532c30,0x0064a2d0
 12731,function,Commands::Start,,0x0064a500,0x00532e60,0x0064a500
 12732,function,Commands::End,,0x0064a510,0x00532e70,0x0064a510
 12733,function,AIMaster::DeleteEventData,,0x0064a520,0x00532e80,0x0064a520
@@ -13007,7 +13007,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13006,function,ScriptCommand::GETORIENTATION,,0x00655290,0x005411f0,0x00655290
 13007,function,ScriptCommand::SETORIENTATION,,0x00655340,0x005412a0,0x00655340
 13008,function,ScriptCommand::GETPOSITION,,0x00655400,0x00541360,0x00655400
-13009,function,ScriptCommand::SETPOSITION,,0x006554b0,0x00541410,0x006554b0
+13009,function,ScriptCommand::SETPOSITION,"SETPOSITION: a party member that is not controlled, moved near the controlled creature, is placed in formation; the safe form finds GetSafeLocation(5.0) and, if found, removes sync effects, stops the sync rates, RootMotion::Reset and SetPosition, else leaves it; the plain form just SetPosition",0x006554b0,0x00541410,0x006554b0
 13010,function,ScriptCommand::SETFACINGPOSITION,,0x006556b0,0x00541610,0x006556b0
 13011,function,ScriptCommand::SETFACINGOBJECT,,0x00655790,0x005416f0,0x00655790
 13012,function,ScriptCommand::GETANGLEBETWEENOBJECTS,,0x00655910,0x00541870,0x00655910
@@ -13646,7 +13646,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13645,function,CCArea::GetNextObjectId,,0x0067cc80,0x00568db0,0x0067cc80
 13646,function,CCArea::FindObjectIndexByX,,0x0067cd00,0x00568e30,0x0067cd00
 13647,function,CCArea::FindNearestNamedEntry,The area's StageList entry (0x50 bytes) with the given tag that is nearest the position; a static empty entry when none matches,0x0067cdd0,0x00568f00,0x0067cdd0
-13648,function,CCArea::IsSegmentClearExceptMover,,0x0067cfa0,0x005690d0,0x0067cfa0
+13648,function,CCArea::IsSegmentClearExceptMover,"Closest-hit ray along the segment with both ends lifted 0.500001, mask 0x2011134 (0x2011124 with excludeCreatures); true when nothing is hit, or the hit has flag 0x10 and is the mover itself (the id read through the controller's +0x10)",0x0067cfa0,0x005690d0,0x0067cfa0
 13649,function,CCArea::RemoveFromCreatureTree,,0x0067d0f0,0x00569220,0x0067d0f0
 13650,function,CCArea::StopVfxByKey,,0x0067d110,0x00569240,0x0067d110
 13651,function,std::_Tree<Elem>::_Buynode,,0x0067d280,0x005693b0,0x0067d280
@@ -14447,7 +14447,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14446,function,CCCreature::EyesLocal,"The creature's eyes in model space: midpoint of bones eye_Left/eye_Right, else LeftEye/RightEye, else Head, else (0, 0, 1.75)",0x006a1bf0,0x00592d10,0x006a1bf0
 14447,function,CCCreature::HeadTransform,,0x006a1ef0,0x00593010,0x006a1ef0
 14448,function,CCCreature::HandleMessage_AcquireAllItemsMessage,,0x006a1fd0,0x005930f0,0x006a1fd0
-14449,function,CCCreature::ResetRootMotion,,0x006a2150,0x00593270,0x006a2150
+14449,function,CCCreature::ResetRootMotion,"RootMotion::Reset on the animation object's root motion (the creature's +0x70 holder slot 0x60, then +0x80)",0x006a2150,0x00593270,0x006a2150
 14450,function,CCCreature::SetTag,,0x006a2170,0x00593290,0x006a2170
 14451,function,CCCreature::PersonalSpace,,0x006a21a0,0x005932c0,0x006a21a0
 14452,function,CCCreature::QueueDriveCommand,,0x006a21c0,0x005932e0,0x006a21c0
@@ -14564,7 +14564,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14563,function,CCCreature::ThrottleUpdate,,0x006a5200,0x005963c0,0x006a5200
 14564,function,CCCreature::UpdateInteractionMarker,,0x006a52c0,0x00596480,0x006a52c0
 14565,function,CCCreature::ClearByte_0x250,,0x006a53d0,0x00596590,0x006a53d0
-14566,function,CCCreature::UpdateAILevel,,0x006a53e0,0x005965a0,0x006a53e0
+14566,function,CCCreature::UpdateAILevel,"AI level: 4 for the controlled creature, 2 with a combat record (+0xC60), 3 in the party, 1 in the controlled creature's area; levels 2 and 1 go through AI::AdjustAILevelForBand; stored by ForScript_SetAILevel",0x006a53e0,0x005965a0,0x006a53e0
 14567,function,CCCreature::UpdateLightSubsetIndex,,0x006a5490,0x00596650,0x006a5490
 14568,function,CCCreature::UpdateVegetationSound,,0x006a5510,0x005966d0,0x006a5510
 14569,function,CCCreature::UpdateWeaponTrees,,0x006a56b0,0x00596870,0x006a56b0
@@ -14668,7 +14668,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14667,function,Catch_All@006aa3ff,,0x006aa3ff,0x0059b62f,0x006aa3ff
 14668,function,CCCreature::PlaceInPartyFormation,,0x006aa440,0x0059b670,0x006aa440
 14669,function,CCCreature::UpdateSoundEmitters,,0x006aa4d0,0x0059b700,0x006aa4d0
-14670,function,CCCreature::Play,,0x006aa7e0,0x0059ba10,0x006aa7e0
+14670,function,CCCreature::Play,"vtable +0xB0: plays an animation through CCObject::Play; on success clears the sync rate when its fourth argument is set or the animation is 1, turns combat trees on for 100/110 and off for 101/111, and marks placement dirty when the new state is 1 or differs",0x006aa7e0,0x0059ba10,0x006aa7e0
 14671,function,CCCreature::SetVisible,,0x006aa890,0x0059bac0,0x006aa890
 14672,function,CCCreature::FadeOutFinishedAnimation,,0x006aa8f0,0x0059bb20,0x006aa8f0
 14673,function,CCCreature::PlayMovementSoundInstance,,0x006aa940,0x0059bb70,0x006aa940
@@ -14830,11 +14830,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14829,function,std::vector<AbilityHeader>::push_back,,0x006b1140,0x005a2bd0,0x006b1140
 14830,function,CCCreature::UpdateControllerExtents,,0x006b11d0,0x005a2c60,0x006b11d0
 14831,function,CCCreature::ForScript_GetClassRank,,0x006b1560,0x005a2ff0,0x006b1560
-14832,function,CCCreature::ControllerOverlaps,,0x006b1600,0x005a3090,0x006b1600
-14833,function,CCCreature::SnapToGround,,0x006b1790,0x005a3220,0x006b1790
+14832,function,CCCreature::ControllerOverlaps,"Tests the controller's capsule at the given position (physics scene slot 0x34, mask 0x2011134), ignoring the creature's own id; returns any hit",0x006b1600,0x005a3090,0x006b1600
+14833,function,CCCreature::SnapToGround,"With a physics controller: takes the ground height and, unless its flag is set, moves only on ControllerOverlaps; a moving creature takes CCArea::NearestFree against its movement direction, a standing one GetSafeLocation(10.0), then SetPosition; places the controller at groundHeight + controllerCenterY",0x006b1790,0x005a3220,0x006b1790
 14834,function,CCCreature::ReapplyGoreThreshold,,0x006b19b0,0x005a3440,0x006b19b0
 14835,function,SetModelGoreThreshold,,0x006b1bc0,0x005a3650,0x006b1bc0
-14836,function,CCCreature::CreatePhysicsController,,0x006b1ed0,0x005a3960,0x006b1ed0
+14836,function,CCCreature::CreatePhysicsController,"Rebuilds the capsule controller unless dead with decay behaviour 2, under SimulateDeath, with script local int 11 set, or without a model; stops while +0xC90 is set; controllerRadius = max(0.6 x appearance radius, 0.1), 60-degree slope limit; then SnapToGround(1), or in game mode 9 places it directly",0x006b1ed0,0x005a3960,0x006b1ed0
 14837,function,CCCreature::SyncPositionFromController,,0x006b2220,0x005a3cb0,0x006b2220
 14838,function,ItemMove::operator=,,0x006b2320,0x005a3db0,0x006b2320
 14839,function,ItemMove::ItemMove_copy,,0x006b23b0,0x005a3e40,0x006b23b0
@@ -14862,7 +14862,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14861,function,CCCreature::ApplyAnimationTree,,0x006b5b30,0x005a75c0,0x006b5b30
 14862,function,CCCreature::RemoveTemporaryAnimationTrees,,0x006b5d00,0x005a7790,0x006b5d00
 14863,function,CCCreature::SetActive,,0x006b5d90,0x005a7820,0x006b5d90
-14864,function,CCCreature::OnPositionChanged,,0x006b5ef0,0x005a7980,0x006b5ef0
+14864,function,CCCreature::OnPositionChanged,"Snaps the controller (SnapToGround(0)) only with one, +0x420 and snappingToGround clear, and a squared move over 0.05 or the flag; then updates the room, explored map, path grid obstacle, light subset, placement, vegetation sound, and triggers unless the flag is set",0x006b5ef0,0x005a7980,0x006b5ef0
 14865,function,CCCreature::ForScript_SetClassRank,,0x006b6120,0x005a7bb0,0x006b6120
 14866,function,CCCreature::PlayAnimationEventSound,,0x006b6290,0x005a7d20,0x006b6290
 14867,function,CCCreature::UpdateController,,0x006b6880,0x005a8310,0x006b6880
@@ -14920,7 +14920,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14919,function,CCCreature::GetItemLocation,,0x006ba800,0x005ac2c0,0x006ba800
 14920,function,CCCreature::IsPickable,,0x006ba810,0x005ac2d0,0x006ba810
 14921,function,CCCreature::ShouldShowInteractiveEffect,,0x006ba840,0x005ac300,0x006ba840
-14922,function,CCCreature::EndManualPlacement,,0x006ba870,0x005ac330,0x006ba870
+14922,function,CCCreature::EndManualPlacement,"vtable +0x178: when +0x420 is set, clears it and runs SnapToGround(0)",0x006ba870,0x005ac330,0x006ba870
 14923,function,CCCreature::CCCreature_Clone,,0x006ba890,0x005ac350,0x006ba890
 14924,function,CCCreature::~CCCreature,,0x006bafe0,0x005acaa0,0x006bafe0
 14925,function,CCCreature::UpdateMovement,,0x006bb890,0x005ad350,0x006bb890
@@ -14949,7 +14949,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14948,function,CCCreature::BuildModel,,0x006bdc70,0x005af730,0x006bdc70
 14949,function,CCCreature::HandleMessage_EquipItemMessage,,0x006be330,0x005afdf0,0x006be330
 14950,function,CCCreature::HandleMessage_SetSoundSetMessage,,0x006be480,0x005aff40,0x006be480
-14951,function,CCCreature::Update,,0x006be4b0,0x005aff70,0x006be4b0
+14951,function,CCCreature::Update,"Returns at once, skipping StepCommands at its end (0x006BE958), when active (+0x2C5) is 0, when there is no current game mode, or in dialogue for a participant (GameModeDialog::IsParticipant)",0x006be4b0,0x005aff70,0x006be4b0
 14952,function,CCCreature::LoadFromStruct,,0x006be980,0x005b0440,0x006be980
 14953,function,CCCreature::ApplySpawnDead,,0x006bf710,0x005b11d0,0x006bf710
 14954,function,CCCreature::GetKillerDeathAnimation,,0x006bf8a0,0x005b1360,0x006bf8a0
@@ -17736,7 +17736,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17735,function,Commands::PlayAnimationEnd,,0x00746e80,0x00652ce0,0x00746e80
 17736,function,Commands::MoveToObjectStart,,0x00746f00,0x00652d60,0x00746f00
 17737,function,CurrentActionQueue::Read,,0x00747100,0x00652f60,0x00747100
-17738,function,Commands::ExecuteEffectEnd,,0x00747250,0x006530b0,0x00747250
+17738,function,Commands::ExecuteEffectEnd,"With a creature and a started command: SetControllerInteractionCount(1), EndManualPlacement (vtable +0x178), SyncAlign::ReverseIfPositive and StopPartnerRate; then Commands::EndShared",0x00747250,0x006530b0,0x00747250
 17739,function,Commands::InteractEnd,,0x007472e0,0x00653140,0x007472e0
 17740,function,Commands::FlyEnd,,0x00747330,0x00653190,0x00747330
 17741,function,Commands::DeathblowEnd,,0x00747360,0x006531c0,0x00747360
@@ -33488,7 +33488,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33487,function,"std::map<std::wstring,AnimBase::ClipEventsEntry*>::clear",,0x00a5e2f0,0x00704ad0,0x00a5e2f0
 33488,function,AnimBase::GetNodeById,,0x00a5e390,0x00704b70,0x00a5e390
 33489,function,AnimBase::FindNodeByAnimationId,,0x00a5e500,0x00704ce0,0x00a5e500
-33490,function,AnimBase::PlayAnimationById,,0x00a5e670,0x00704e50,0x00a5e670
+33490,function,AnimBase::PlayAnimationById,"Plays an animation by id (0 returns false) through its name; when its seventh argument is set and the play succeeded, starts root motion (RootMotion::Start) with the clip's node, the current position and orientation, and the rate",0x00a5e670,0x00704e50,0x00a5e670
 33491,function,AnimBase::FindTreeNameForClip,,0x00a5e730,0x00704f10,0x00a5e730
 33492,function,AnimBase::GetAnimationState,,0x00a5e8a0,0x00705080,0x00a5e8a0
 33493,function,AnimBase::IsAnimationLooping,,0x00a5e940,0x00705120,0x00a5e940
@@ -33613,8 +33613,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33612,function,MovementController::AdvanceWaypoint,,0x00a63e10,0x0070a4a0,0x00a63e10
 33613,function,MovementController::DistanceToEnd,,0x00a63e80,0x0070a510,0x00a63e80
 33614,function,MovementController::AdvanceAlongPath,,0x00a63f40,0x0070a5d0,0x00a63f40
-33615,function,MovementController::FollowPath,,0x00a64350,0x0070a9e0,0x00a64350
-33616,function,MovementController::Update,,0x00a644e0,0x0070ab70,0x00a644e0
+33615,function,MovementController::FollowPath,"Stores the distance left at +0xE8; sets state 3 when it is under the stop clip's remaining travel plus 1e-6 (0x00A643D5), finishes the step (UpdateSpeed, SlopeFactor, AdvanceAlongPath), faces the move target when hasMoveTarget, and sets state 3 again on arrival (0x00A644BC)",0x00a64350,0x0070a9e0,0x00a64350
+33616,function,MovementController::Update,"Runs while enabled with input +0x34: copies the facing, sets +0xE8 to -1.0; states 1 and 2 step (StepPosition when driven, else FollowPath with a path), states 3 and 4 turn (TurnTowardMovement) and zero speed at once; state 3 returns to 0 once motionBusyGate is clear or the anim controller's mode has no bit of 0x1C",0x00a644e0,0x0070ab70,0x00a644e0
 33617,function,ILodRecycler::ILodRecycler,,0x00a64620,0x007106e0,0x00a64620
 33618,function,EffectsHolder::HasEffectListField,,0x00a64630,0x0070be70,0x00a64630
 33619,function,EffectList::FindTopAnimationEffect,Scans the effect list (+8) from the back for the effect with the highest animation priority above 0; an earlier effect replaces the one held only when its priority is strictly greater,0x00a64640,0x0070be80,0x00a64640
@@ -33648,9 +33648,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33647,function,CGameEffect::ReadFromSave,,0x00a656f0,0x0070b2f0,0x00a656f0
 33648,function,CGameEffect::DefineSaveStruct,,0x00a659c0,0x0070b5c0,0x00a659c0
 33649,function,RootMotion::RootMotion,,0x00a65b70,0x0070b770,0x00a65b70
-33650,function,RootMotion::Start,,0x00a65bd0,0x0070b7d0,0x00a65bd0
+33650,function,RootMotion::Start,"Starts root motion for a clip: clipTimeMs 0, keeps the clip only if 0x00A38F20 accepts it (else null), position from the argument, base and current orientation the yaw of the given quaternion, playRate the rate, both scales 1.0; leaves the targets and +0x68..+0x6A alone",0x00a65bd0,0x0070b7d0,0x00a65bd0
 33651,function,RootMotion::Init,,0x00a65c80,0x0070b880,0x00a65c80
-33652,function,RootMotion::Reset,,0x00a65cf0,0x0070b8f0,0x00a65cf0
+33652,function,RootMotion::Reset,"With a clip held: clipTimeMs, clip and endTimeMs to 0 and the flags +0x68..+0x6A to 0; without one, nothing",0x00a65cf0,0x0070b8f0,0x00a65cf0
 33653,function,RootMotion::SetYawScale,,0x00a65d10,0x0070b910,0x00a65d10
 33654,retired,,,,,
 33655,function,RootMotion::AddRotation,,0x00a65e60,0x0070ba60,0x00a65e60
@@ -33762,7 +33762,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33761,function,MovementAnimController::GetTransitionClipId,,0x00a69ba0,0x00719e20,0x00a69ba0
 33762,function,MovementAnimController::SetRunLeanWeights,,0x00a69bd0,0x00719e50,0x00a69bd0
 33763,function,MovementAnimController::IsRunSpeed,,0x00a69c70,0x00719ef0,0x00a69c70
-33764,function,MovementAnimController::SetState,,0x00a69c90,0x00719f10,0x00a69c90
+33764,function,MovementAnimController::SetState,"Only records the state: previousState = state, state = new, active = 1 when new is not 0; MovementAnimController::Update acts on it",0x00a69c90,0x00719f10,0x00a69c90
 33765,function,MovementAnimController::ActivateTree,,0x00a69cc0,0x00719f40,0x00a69cc0
 33766,function,MovementAnimController::ZeroTreeWeights,,0x00a69cf0,0x00719f70,0x00a69cf0
 33767,function,MovementAnimController::DeactivateWhenFaded,,0x00a69df0,0x0071a070,0x00a69df0
@@ -33778,7 +33778,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33777,function,MovementAnimController::ComputePlayRate,,0x00a6aa70,0x0071acf0,0x00a6aa70
 33778,function,MovementAnimController::EnterIdle,,0x00a6abf0,0x0071ae70,0x00a6abf0
 33779,function,MovementAnimController::StopTriggerGuard,,0x00a6acf0,0x0071af70,0x00a6acf0
-33780,function,MovementAnimController::EnterStop,,0x00a6ad50,0x0071afd0,0x00a6ad50
+33780,function,MovementAnimController::EnterStop,"Resets the lean, plays the stop transition clip GetTransitionClipId(1) (none: EndTransition); its rate is 1.0, or with distance left (remainingDistance > 0) max(0.25, remaining / the clip's travel), written to the root motion's translationScale (AnimBase +0xB4)",0x00a6ad50,0x0071afd0,0x00a6ad50
 33781,function,MovementAnimController::EnterStart,,0x00a6ae30,0x0071b0b0,0x00a6ae30
 33782,function,MovementAnimController::EnterTurnInPlace,,0x00a6aff0,0x0071b270,0x00a6aff0
 33783,function,MovementAnimController::SetInput,,0x00a6b180,0x0071b400,0x00a6b180
@@ -33794,7 +33794,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33793,function,"std::copy<std::wstring*,std::wstring*>",,0x00a6bbe0,0x0071be60,0x00a6bbe0
 33794,function,"std::_Copy_opt<unsigned int*,unsigned int*>",,0x00a6bc10,0x0046bd70,0x00a6bc10
 33795,function,MovementAnimController::SetMode,,0x00a6bc40,0x0071be90,0x00a6bc40
-33796,function,MovementAnimController::UpdateNoMotion,,0x00a6bcc0,0x0071bf10,0x00a6bcc0
+33796,function,MovementAnimController::UpdateNoMotion,"Mode changes when not moving: mode 2 goes to 8 (stop) in state 3, else to idle (1); mode 4 to 8 unless +0x6E; mode 1 out of combat with turn bits (moveFlags & 0xC) in state 4 to 0x10; mode 8 (after stopping the leaf clips once faded) and 0x10 go to idle in state 0",0x00a6bcc0,0x0071bf10,0x00a6bcc0
 33797,function,MovementAnimController::UpdateMotion,,0x00a6bd80,0x0071bfd0,0x00a6bd80
 33798,function,MovementAnimController::HardStop,,0x00a6be10,0x0071c060,0x00a6be10
 33799,function,MovementAnimController::SetCombat,,0x00a6be40,0x0071c090,0x00a6be40
