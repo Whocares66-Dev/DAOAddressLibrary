@@ -7879,7 +7879,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7878,function,GraphicsStructures::Object::GetClipLength,,0x00547210,0x00748860,0x00547210
 7879,function,GraphicsStructures::Object::IsAnimationNodeAdditive,,0x005472e0,0x00748930,0x005472e0
 7880,function,GraphicsStructures::Object::IsAnimationNodeOverride,,0x005473c0,0x00748a10,0x005473c0
-7881,function,GraphicsStructures::Object::IsAnimationNodeLooping,,0x005474a0,0x00748af0,0x005474a0
+7881,function,GraphicsStructures::Object::IsAnimationNodeLooping,"(clipName, treeName): finds the named tree (slot 0x14, FindAnimationTree), or with an empty tree name asks each tree at +0x180..+0x184, and returns the tree's IsLooping (slot 0x50) answer; false when the clip is in none",0x005474a0,0x00748af0,0x005474a0
 7882,function,GraphicsStructures::Object::UpdateControllers,,0x00547580,0x00748bd0,0x00547580
 7883,function,GraphicsStructures::Object::UpdateTreeWeights,,0x00547640,0x00748c90,0x00547640
 7884,function,GraphicsStructures::Object::UpdateBoundsBoxAndExports,,0x005476a0,0x00748cf0,0x005476a0
@@ -8031,7 +8031,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8030,function,GraphicsStructures::Object::GetByte_0xEF,,0x0054f760,0x007501c0,0x0054f760
 8031,function,GraphicsStructures::Object::AsSimulatable,,0x0054f770,0x007501f0,0x0054f770
 8032,function,GraphicsStructures::Object::AsRenderable,,0x0054f780,0x007501d0,0x0054f780
-8033,function,GraphicsStructures::Object::AsAnimatable,,0x0054f790,0x007501e0,0x0054f790
+8033,function,GraphicsStructures::Object::AsAnimatable,"Returns the Object from its interface at Object+8 (lea eax,[ecx-8]); slot 0x4C of that interface's vtable (0x00AF8434)",0x0054f790,0x007501e0,0x0054f790
 8034,function,GraphicsStructures::Object::AsFaceAnimatable,,0x0054f7a0,0x00750200,0x0054f7a0
 8035,function,Stub::GetFloat_0x5C,,0x0054f7b0,0x00750210,0x0054f7b0
 8036,function,GraphicsStructures::Object::SetAnimationScaleVector,,0x0054f7c0,0x00750220,0x0054f7c0
@@ -10255,7 +10255,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10254,function,EC::ChunkManager::Update,,0x005ca1b0,0x006fd0b0,0x005ca1b0
 10255,function,EC::ChunkManager::`scalar deleting destructor',,0x005ca570,0x006fd470,0x005ca570
 10256,function,EC::ChunkManager::LoadStatic,,0x005ca590,0x006fd490,0x005ca590
-10257,function,GdaTables::AnimTypeHasFlag,,0x005ca610,0x006fd8a0,0x005ca610
+10257,function,GdaTables::AnimTypeHasFlag,"(animId, mask): true when animId is non-zero and the Animations table's Type column (hash 0x12A02374) AND mask is non-zero; IsAnimationLooping asks it with mask 1",0x005ca610,0x006fd8a0,0x005ca610
 10258,function,GdaTables::GetAnimDisableLookAt,,0x005ca660,0x006fd8f0,0x005ca660
 10259,function,GdaTables::GetAnimTransitionTo,,0x005ca6b0,0x006fd940,0x005ca6b0
 10260,function,GdaTables::GetAnimReplacement,,0x005ca6e0,0x006fd970,0x005ca6e0
@@ -10547,7 +10547,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10546,function,CClientExoApp::UpdateSoundListener,,0x005d6610,0x004c1640,0x005d6610
 10547,function,CClientExoApp::SetPaused,,0x005d6740,0x004c1770,0x005d6740
 10548,function,CClientExoApp::UnloadModule,,0x005d6a50,0x004c1a80,0x005d6a50
-10549,function,CClientExoApp::GetControlledCreatureArea,,0x005d6b30,0x004c1b60,0x005d6b30
+10549,function,CClientExoApp::GetControlledCreatureArea,GetAreaById(GetControlledCreatureAreaId()),0x005d6b30,0x004c1b60,0x005d6b30
 10550,function,CClientExoApp::RunScriptOnControlledCreature,,0x005d6b50,0x004c1b80,0x005d6b50
 10551,function,CClientExoApp::RemakeTreeBounds,,0x005d6c20,0x004c1c50,0x005d6c20
 10552,function,CClientExoApp::RaiseModulePresave,,0x005d6c40,0x004c1c70,0x005d6c40
@@ -12719,7 +12719,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12718,function,ClientAIMaster::~ClientAIMaster,,0x00649a40,0x00532400,0x00649a40
 12719,function,,,0x00649ad0,0x00807be0,0x00649ad0
 12720,function,ClientAIMaster::ClientAIMaster,,0x00649b30,0x00532490,0x00649b30
-12721,function,ClientAIMaster::AddObject,,0x00649be0,0x00532540,0x00649be0
+12721,function,ClientAIMaster::AddObject,"Inserts the object's ID (its attribute at +4; none for -1) into the AI master's object list; called only by CCObject::SetVisible, when the object becomes visible and its byte +0x431 is clear",0x00649be0,0x00532540,0x00649be0
 12722,function,ClientAIMaster::UnregisterObject,,0x00649c30,0x00532590,0x00649c30
 12723,function,ClientAIMaster::FlushDeferredRemovals,,0x00649c80,0x005325e0,0x00649c80
 12724,function,ClientAIMaster::InsertListElementAfter<void *>,,0x00649cf0,0x00532650,0x00649cf0
@@ -13921,7 +13921,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13920,function,GameModeDialog::ResetConversationState,"Resets the conversation state: timer, speaker, owner and line ids to -1, and the counters",0x0068f420,0x0057b360,0x0068f420
 13921,function,GameModeDialog::AbortConversation,,0x0068f470,0x0057b3b0,0x0068f470
 13922,function,GameModeDialog::EndConversation,,0x0068f640,0x0057b580,0x0068f640
-13923,function,GameModeDialog::DeactivateHostiles,,0x0068f6b0,0x0057b5f0,0x0068f6b0
+13923,function,GameModeDialog::DeactivateHostiles,"Walks ClientAIMaster's object list (app+0xC4); each creature whose IsHostile attribute (+0x4E8) is set and which is active (slot 0x6C of its +0x70 interface, CCObject::IsActive) is made inactive (vtable +0x140)",0x0068f6b0,0x0057b5f0,0x0068f6b0
 13924,function,GameModeDialog::ReactivateHostiles,,0x0068f7a0,0x0057b6e0,0x0068f7a0
 13925,function,GameModeDialog::AddKeptCreature,,0x0068f820,0x0057b760,0x0068f820
 13926,function,ECBase::ECDynArray<unk_ptr>::DestroyAll,,0x0068f840,0x005e3260,0x0068f840
@@ -14059,7 +14059,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14058,function,CCObject::RequestAILevelUpdate,,0x00695170,0x00586040,0x00695170
 14059,function,CCObject::Area,,0x00695180,0x00586050,0x00695180
 14060,function,CCObject::SetModelRoom,,0x006951a0,0x00586070,0x006951a0
-14061,function,CCObject::GetEffectsEmit,,0x006951c0,0x00586090,0x006951c0
+14061,function,CCObject::GetShownInRoom,"Returns the object's shown-in-room flag (+0x23C), which SetShownInRoom writes and ClientScriptCommand::GETISVISIBLE answers; vtable +0x138, which CCCreature overrides",0x006951c0,0x00586090,0x006951c0
 14062,function,CCObject::ResetFade,,0x006951d0,0x005860a0,0x006951d0
 14063,function,CCObject::SetModelLodMask,,0x00695200,0x005860d0,0x00695200
 14064,function,CCObject::SetUnavailableLevels,,0x00695220,0x005860f0,0x00695220
@@ -14190,7 +14190,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14189,function,SEffectsHolder::SetFadeScale,,0x00699f60,0x0058b260,0x00699f60
 14190,function,Stub::ReturnZero_4,,0x00699f70,0x0058b270,0x00699f70
 14191,function,CCObject::ForScript_SetLocName,,0x00699f80,0x0058b290,0x00699f80
-14192,function,CCObject::IsActive,,0x00699fa0,0x0058b2b0,0x00699fa0
+14192,function,CCObject::IsActive,"Whether the object is active: its active byte (+0x2C5) set and deactivationPending (+0x421) clear. Slot 27 of the vtable of the interface at +0x70, so this is object+0x70 (+0x255 and +0x3B1 in the code)",0x00699fa0,0x0058b2b0,0x00699fa0
 14193,function,CCObject::SetAILevel,,0x00699fc0,0x0058b2d0,0x00699fc0
 14194,function,CCObject::ForScript_SetPlot,,0x00699fd0,0x0058b2e0,0x00699fd0
 14195,function,CCObject::ForScript_Engine_SetImmortal,,0x00699fe0,0x00a11da0,0x00699fe0
@@ -14215,7 +14215,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14214,function,CCObject::DispatchAnimationEvents,,0x0069a600,0x0058b910,0x0069a600
 14215,function,CCObject::QueueAnimationRequest,,0x0069a6e0,0x0058b9f0,0x0069a6e0
 14216,function,CCObject::QueueAnimationRequest,,0x0069a740,0x0058ba50,0x0069a740
-14217,function,CCObject::ApplyEffectsEmitFlag,,0x0069a7a0,0x0058bab0,0x0069a7a0
+14217,function,CCObject::ApplyShownInRoomFlag,"Applies the shown-in-room flag to the object's effect visuals; called by CCObject::SetShownInRoom and CCPlaceable::SetShownInRoom when the flag changes, and two other callers",0x0069a7a0,0x0058bab0,0x0069a7a0
 14218,function,CCObject::AppendModelObjects,,0x0069a920,0x0058bc30,0x0069a920
 14219,function,CCObject::SetVisible,,0x0069a950,0x0058bc60,0x0069a950
 14220,function,CCObject::ReadFields,,0x0069aad0,0x0058bde0,0x0069aad0
@@ -14308,7 +14308,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14307,function,UnequipItemMessage::GetType,,0x0069e3a0,0x00509280,0x0069e3a0
 14308,function,SwitchWeaponSetMessage::GetType,,0x0069e3e0,0x00509320,0x0069e3e0
 14309,function,SwitchWeaponSetMessage::InitType,,0x0069e420,0x00509360,0x0069e420
-14310,function,CCCreature::SetIsPlayerCharacter,,0x0069e480,0x0058f650,0x0069e480
+14310,function,CCCreature::SetIsPlayerCharacter,Stores the CharType byte (+0x7D4); CCPlayer::CreateHero calls it with 1 (0x0069DA05),0x0069e480,0x0058f650,0x0069e480
 14311,function,CCCreature::CreateOffscreenIndicatorFloaty,,0x0069e490,0x0058f660,0x0069e490
 14312,function,CCCreature::RemoveFloaty,,0x0069e4c0,0x0058f690,0x0069e4c0
 14313,function,CCCreature::CreateStatsFloaty,,0x0069e4f0,0x0058f6c0,0x0069e4f0
@@ -14428,7 +14428,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14427,function,CCCreature::DisableControllerCollision,,0x006a0df0,0x00591ef0,0x006a0df0
 14428,function,CCCreature::EnableControllerCollision,,0x006a0e10,0x00591f10,0x006a0e10
 14429,function,CCCreature::AdjustControllerInteractionCount,,0x006a0e30,0x00591f30,0x006a0e30
-14430,function,CCCreature::GetEffectsEmit,,0x006a0e70,0x00591f70,0x006a0e70
+14430,function,CCCreature::GetShownInRoom,"CCObject's shown-in-room flag (+0x23C) and, besides, either attribute +0x4F8 or a zero stealth word (+0x7F0); vtable +0x138",0x006a0e70,0x00591f70,0x006a0e70
 14431,function,CCCreature::SetShownInRoom,,0x006a0ea0,0x00591fa0,0x006a0ea0
 14432,function,CCCreature::ForEachHandSlotItem,,0x006a0ed0,0x00591fd0,0x006a0ed0
 14433,function,CCCreature::SetEffectsActive,"Enables (holder slot +0x14) or disables (+0x18) the creature's effects holder and those of the items in equipment slots 0..0x13; called only by EC::Cutscene::Actor::SetVisible (0x007D43BA, 0x007D43D6)",0x006a0f10,0x00592010,0x006a0f10
@@ -14478,7 +14478,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14477,function,CCCreature::OnItemRemoved,,0x006a2fa0,0x005940c0,0x006a2fa0
 14478,function,CCCreature::UpdateMeleeRingCentre,,0x006a3060,0x00594180,0x006a3060
 14479,function,CCCreature::ApplyRootMotion,,0x006a3150,0x00594270,0x006a3150
-14480,function,CCCreature::ReleaseMeleeRingClaim,,0x006a3610,0x00594730,0x006a3610
+14480,function,CCCreature::ReleaseMeleeRingClaim,(targetId): releases this creature's claim in the target's melee rings (target+0xB44); its only direct caller is Commands::EndShared (0x00746A65),0x006a3610,0x00594730,0x006a3610
 14481,function,CCCreature::GetGender,,0x006a3650,0x00594770,0x006a3650
 14482,function,CCCreature::IsDead,,0x006a3660,0x00594780,0x006a3660
 14483,function,CCCreature::ResetStealthCheckCountdown,,0x006a3690,0x005947b0,0x006a3690
@@ -14885,8 +14885,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14884,function,SaveSchema::MakeCRL1Template,,0x006b8020,0x005a9ab0,0x006b8020
 14885,function,SaveSchema::AddCRP1Fields,,0x006b80b0,0x005a9b40,0x006b80b0
 14886,function,SaveSchema::MakeCRP1Template,,0x006b81c0,0x005a9c50,0x006b81c0
-14887,function,CCCreature::OnGroupChanged,,0x006b8250,0x005a9ce0,0x006b8250
-14888,function,CCCreature::ForScript_SetGroupId,,0x006b8450,0x005a9ee0,0x006b8450
+14887,function,CCCreature::OnGroupChanged,"Sets the cached IsHostile attribute (+0x4E8) from the hostility between the party's group (party+0x1E4) and this creature's group (+0x3C0), and queues creatures on +0xC28; called only by ForScript_SetGroupId",0x006b8250,0x005a9ce0,0x006b8250
+14888,function,CCCreature::ForScript_SetGroupId,"(group), vtable +0x170: when the group differs from +0x3C0, stores it and calls OnGroupChanged (0x006B8466)",0x006b8450,0x005a9ee0,0x006b8450
 14889,function,CCCreature::QueuePerceivedOfGroup,,0x006b8470,0x005a9f00,0x006b8470
 14890,function,CCCreature::FindPerceptionNewcomers,,0x006b8540,0x005a9fd0,0x006b8540
 14891,function,CCCreature::UpdatePerception,,0x006b89b0,0x005aa440,0x006b89b0
@@ -15693,7 +15693,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15692,function,"std::_Sort<CodexEntry**,int,CodexEntryNameLess>",,0x006f1c00,0x005e36e0,0x006f1c00
 15693,function,Journal::AddEntry,,0x006f1cf0,0x005e37d0,0x006f1cf0
 15694,function,Journal::AddPlotGroup,,0x006f1df0,0x005e38d0,0x006f1df0
-15695,function,Journal::GetUnreadCodexEntryNames,,0x006f1ee0,0x005e39c0,0x006f1ee0
+15695,function,Journal::GetUnreadCodexEntryNames,"(out): for each codex group of the journal (the attribute at +0xBC) and each entry (+0x9C) whose Updated attribute (+0xD4) is set, appends the entry's name (+0x58)",0x006f1ee0,0x005e39c0,0x006f1ee0
 15696,function,Journal::RebuildPlotGivers,,0x006f1fe0,0x005e3ac0,0x006f1fe0
 15697,function,Journal::RebuildPlotDestinations,,0x006f20e0,0x005e3bc0,0x006f20e0
 15698,function,Journal::ClearChanterBoard,,0x006f2580,0x005e4060,0x006f2580
@@ -15705,7 +15705,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15704,function,CodexEntry::`scalar deleting destructor'`adjustor{8}',,0x006f2b70,0x005e4650,0x006f2b70
 15705,function,CodexEntry::~CodexEntry,,0x006f2b80,0x005e4660,0x006f2b80
 15706,function,CodexEntry::`scalar deleting destructor',,0x006f2c30,0x005e4710,0x006f2c30
-15707,function,CodexEntry::SetDescription,,0x006f2c50,0x005e4730,0x006f2c50
+15707,function,CodexEntry::SetDescription,"(index, text, markUpdated), ret 0xC: stores the flag's description and, with markUpdated, sets the entry's Updated attribute (+0xD4)",0x006f2c50,0x005e4730,0x006f2c50
 15708,function,CodexGroup::CodexGroup,,0x006f2d20,0x005e4800,0x006f2d20
 15709,function,CodexGroup::`scalar deleting destructor'`adjustor{28}',,0x006f2f80,0x005e4a80,0x006f2f80
 15710,function,CodexGroup::`scalar deleting destructor'`adjustor{32}',,0x006f2f90,0x005e4a60,0x006f2f90
@@ -15732,7 +15732,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15731,function,Journal::DefineSaveStruct,,0x006f3bd0,0x005e58a0,0x006f3bd0
 15732,function,Journal::SetActivePlot,,0x006f4080,0x005e5d50,0x006f4080
 15733,function,Journal::AddCodexEntry,,0x006f4150,0x005e5e20,0x006f4150
-15734,function,Journal::UpdateCodexEntry,,0x006f42d0,0x005e5fa0,0x006f42d0
+15734,function,Journal::UpdateCodexEntry,"(resref, flag, text, updated, notify, uber), ret 0x18: finds the entry and calls CodexEntry::SetDescription (0x006F43B4); with updated marks the group and the journal updated",0x006f42d0,0x005e5fa0,0x006f42d0
 15735,function,Journal::AddPlotGiver,,0x006f4640,0x005e6310,0x006f4640
 15736,function,Journal::RemovePlotGiver,,0x006f4680,0x005e6350,0x006f4680
 15737,function,Journal::BuildChanterBoard,,0x006f46a0,0x005e6370,0x006f46a0
@@ -15872,7 +15872,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15871,function,ArmyControl::RegisterClass,,0x006fd8c0,0x005ef610,0x006fd8c0
 15872,function,"SmartData::Attribute<ECBase::ECDynArray<ArmyInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x006fd8e0,0x005ef630,0x006fd8e0
 15873,function,ArmyControl::ArmyControl_copy,,0x006fd960,0x005ef6b0,0x006fd960
-15874,function,ArmyControl::LoadArmyInfosFromGda,,0x006fda30,0x005ef780,0x006fda30
+15874,function,ArmyControl::LoadArmyInfosFromGda,"Walks plotactiondefines (table 0x8E) by row; each row with a non-zero ID (0x66FBC936) and ActionSet (0x16A3CB96) becomes an ArmyInfo in the control's list, in row order",0x006fda30,0x005ef780,0x006fda30
 15875,function,ScriptBackend::ForScript_SetPlotActionSet,,0x006fdb40,0x005ef890,0x006fdb40
 15876,function,ArmyControl::ReadFromSave,,0x006fdcf0,0x005efa40,0x006fdcf0
 15877,function,ArmyInfo::DefineSaveStruct,,0x006fde00,0x005efb50,0x006fde00
@@ -16515,7 +16515,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16514,function,CCCreatureStats::AddToCurrent,,0x0071b370,0x00619330,0x0071b370
 16515,function,CCCreatureStats::ApplyItemStats,,0x0071b3c0,0x00619380,0x0071b3c0
 16516,function,CCCreatureStats::ApplyPassive,,0x0071b600,0x006195c0,0x0071b600
-16517,function,CCCreatureStats::ReapplyPassivesForCondition,,0x0071b970,0x00619930,0x0071b970
+16517,function,CCCreatureStats::ReapplyPassivesForCondition,"Reapplies the passives for a weapon condition, storing it at +0x1B8 (appliedStyleCondition, 0x0071BA2B) when it changes; called only by CCCreature::OnItemEquipped and OnItemUnequipped",0x0071b970,0x00619930,0x0071b970
 16518,function,CCCreatureStats::SaveToStruct,,0x0071ba40,0x00619a50,0x0071ba40
 16519,function,ScriptBackend::ForScript_GetBackgroundDefaultsIndex,,0x0071be90,0x00619ea0,0x0071be90
 16520,function,CCCreatureStats::HasAbility,,0x0071bec0,0x00619ed0,0x0071bec0
@@ -17856,7 +17856,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17855,function,CCPlaceable::PlayImpactSound,,0x0074c110,0x00658070,0x0074c110
 17856,function,CCPlaceable::PlayOpenContainerSound,,0x0074c2b0,0x00658210,0x0074c2b0
 17857,function,CCPlaceable::OnAnimationEvent,,0x0074c360,0x006582c0,0x0074c360
-17858,function,CCPlaceable::GetAction,,0x0074c720,0x00658680,0x0074c720
+17858,function,CCPlaceable::GetAction,"(index), vtable +0x100: Action0 or Action1 of the placeable's current state row (state controller +0x654, state +0x658) through PlaceableStateTable::GetAction (0x00A3BAE0); an action of 4 reads as 0 while byte +0x2C4 is set",0x0074c720,0x00658680,0x0074c720
 17859,function,CCPlaceable::RefreshActionLabels,,0x0074c760,0x006586c0,0x0074c760
 17860,function,CCPlaceable::IsWithinCameraRange,,0x0074ca20,0x00658980,0x0074ca20
 17861,function,CCPlaceable::IsRoomInView,,0x0074ca70,0x006589d0,0x0074ca70
@@ -17929,7 +17929,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17928,function,CCPlaceable::IsPickable,,0x00750ed0,0x0065cdc0,0x00750ed0
 17929,function,CCPlaceable::GetLocString_0x590,,0x00750ef0,0x0065cde0,0x00750ef0
 17930,function,CCPlaceable::SetLocString_0x590,,0x00750f00,0x0065cdf0,0x00750f00
-17931,function,CCPlaceable::GetHealth,,0x00750f50,0x0065ce40,0x00750f50
+17931,function,CCPlaceable::GetHealth,Returns the placeable's health (+0x66C); InitFields zeroes it and max health (+0x670) (0x0074EEC4),0x00750f50,0x0065ce40,0x00750f50
 17932,function,CCPlaceable::GetMaxHealth,,0x00750f60,0x0065ce50,0x00750f60
 17933,function,CCPlaceable::SetMaxHealth,,0x00750f70,0x0065ce60,0x00750f70
 17934,function,CCPlaceable::GetHeight,,0x00750f80,0x0065ce70,0x00750f80
@@ -18048,7 +18048,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18047,function,CCItem::CreateItemsFromTemplate,,0x007595a0,0x00667db0,0x007595a0
 18048,function,CCItem::SplitOff,,0x00759740,0x00667f50,0x00759740
 18049,function,CCItem::ApplyLastOnHitPropertyVfx,,0x00759880,0x00668090,0x00759880
-18050,function,CCItem::ApplyProperties,,0x00759a40,0x00668250,0x00759a40
+18050,function,CCItem::ApplyProperties,"(wearer, outerItem), ret 8: ApplyProperty for each entry of the item's list (+0x680), then the same for each rune item (+0x4BC), recursively, then vtable +0x64",0x00759a40,0x00668250,0x00759a40
 18051,function,CCItem::HandleMessage_AttachRuneToItemMessage,,0x00759b00,0x00668310,0x00759b00
 18052,function,CCItem::HandleMessage_DetachRuneFromItemMessage,,0x00759c60,0x00668470,0x00759c60
 18053,function,CCItem::RegisterHandler_AttachRuneToItemMessage,,0x00759e50,0x00668660,0x00759e50
@@ -18120,7 +18120,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18119,function,ScriptBackend::ForScript_GetPlotGUID,,0x0075cb30,0x006a7d90,0x0075cb30
 18120,function,,,0x0075ccd0,0x006a7f30,0x0075ccd0
 18121,function,,,0x0075cd70,0x00807b50,0x0075cd70
-18122,function,PlotManager::WriteToSave,,0x0075ce00,0x006a7fd0,0x0075ce00
+18122,function,PlotManager::WriteToSave,"Writes the plot map (0x4011; each name 0x4012, words 0x4013..0x4016) and, where the struct has field 0x4089, the unread codex entry names from Journal::GetUnreadCodexEntryNames (0x0075D006)",0x0075ce00,0x006a7fd0,0x0075ce00
 18123,function,,,0x0075d0d0,0x006a82a0,0x0075d0d0
 18124,function,,,0x0075d150,0x006a8320,0x0075d150
 18125,function,ECBase::ECDynArray<unsigned int>::Clear,,0x0075d700,0x006a88d0,0x0075d700
@@ -18130,7 +18130,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18129,function,PlotManager::PlotManager,,0x0075dac0,0x006a8c90,0x0075dac0
 18130,function,PlotManager::Clear,,0x0075db30,0x006a8d00,0x0075db30
 18131,function,PlotManager::LoadPlotResources,Loads every PLO resource into the plot map; plot-group types (Plots::IsPlotGroupType) become Journal::AddPlotGroup entries and codex types AddCodexEntry; ends with the empty-name group (string 0x557F7),0x0075db80,0x006a8d50,0x0075db80
-18132,function,PlotManager::Load,,0x0075e300,0x006a94d0,0x0075e300
+18132,function,PlotManager::Load,"Reads the plot map and the unread-names list (0x4089), then for each codex plot and each flag 0..127 calls Journal::UpdateCodexEntry (0x0075E78F)",0x0075e300,0x006a94d0,0x0075e300
 18133,function,PlotManager::FindPlot,,0x0075e850,0x006a9a20,0x0075e850
 18134,function,PlotManager::~PlotManager,,0x0075e9f0,0x006a9bc0,0x0075e9f0
 18135,function,PlotManager::GetPlotFlag,,0x0075ea60,0x006a9c30,0x0075ea60
@@ -21968,7 +21968,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21967,function,Animation::ModelAnimationTree::SetSpeed,,0x00813a80,0x004bc330,0x00813a80
 21968,function,Animation::ModelAnimationTree::Seek,,0x00813b00,0x004bc3b0,0x00813b00
 21969,function,Animation::ModelAnimationTree::GetTime,,0x00813c10,0x004bc4c0,0x00813c10
-21970,function,Animation::ModelAnimationTree::IsLooping,,0x00813ca0,0x004bc550,0x00813ca0
+21970,function,Animation::ModelAnimationTree::IsLooping,"(name, bool *looping): finds the node by name (slot 0x70); looping = the complement of bit 0 of the byte at +8 of the node's record; returns whether the node exists",0x00813ca0,0x004bc550,0x00813ca0
 21971,function,Animation::ModelAnimationTree::GetNodesWithClips,,0x00813cf0,0x004bc5a0,0x00813cf0
 21972,function,Animation::ModelAnimationTree::GetClipNames,,0x00813d10,0x004bc5c0,0x00813d10
 21973,function,Animation::ModelAnimationTree::GetNodeNames,,0x00813d30,0x004bc5e0,0x00813d30
@@ -33491,7 +33491,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33490,function,AnimBase::PlayAnimationById,"Plays an animation by id (0 returns false) through its name; when its seventh argument is set and the play succeeded, starts root motion (RootMotion::Start) with the clip's node, the current position and orientation, and the rate",0x00a5e670,0x00704e50,0x00a5e670
 33491,function,AnimBase::FindTreeNameForClip,,0x00a5e730,0x00704f10,0x00a5e730
 33492,function,AnimBase::GetAnimationState,,0x00a5e8a0,0x00705080,0x00a5e8a0
-33493,function,AnimBase::IsAnimationLooping,,0x00a5e940,0x00705120,0x00a5e940
+33493,function,AnimBase::IsAnimationLooping,"(animId): whether the clip loops. With no model (this+0x18)+4, AnimTypeHasFlag(animId, 1). Else the clip's name (GetAnimName; false if none), the model's Object (slot 0x4C, AsAnimatable), the tree that has the clip (FindTreeNameForClip): with one, Object::IsAnimationNodeLooping (slot 0x78); with none, AnimTypeHasFlag(animId, 1)",0x00a5e940,0x00705120,0x00a5e940
 33494,function,"std::map<std::wstring,?>::find",,0x00a5e9f0,0x007051d0,0x00a5e9f0
 33495,function,,,0x00a5ea50,0x00720360,0x00a5ea50
 33496,function,,,0x00a5ec50,0x004580a0,0x00a5ec50
@@ -33662,7 +33662,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33661,function,CItem::GetEquippableSlots,,0x00a66440,0x0070cad0,0x00a66440
 33662,function,Items::SlotToMask,,0x00a66470,0x0070cb00,0x00a66470
 33663,function,Items::MaskToSlot,,0x00a66490,0x0070cb20,0x00a66490
-33664,function,CItem::IsTwoHanded,,0x00a664c0,0x0070cb50,0x00a664c0
+33664,function,CItem::IsTwoHanded,Whether the item is two-handed: CItem::GetEquippableSlots() == Items::SlotToMask(0),0x00a664c0,0x0070cb50,0x00a664c0
 33665,function,CItem::IsHeavyOneHanded,,0x00a664e0,0x0070cb70,0x00a664e0
 33666,function,CItem::`scalar deleting destructor',,0x00a66550,0x0070cbe0,0x00a66550
 33667,function,CItem::GetInventorySize,,0x00a66570,0x0070cc00,0x00a66570

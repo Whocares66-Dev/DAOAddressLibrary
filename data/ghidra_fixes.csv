@@ -18431,7 +18431,7 @@ address,what,value,why
 0x005471C0,signature,"float __thiscall GraphicsStructures::Object::GetAnimationNodeWeight(void* this, const void* treeName, const void* nodeName)",read at 0x005471E6 call [esi+0x1c] GetWeightByName
 0x005472E0,signature,"bool __thiscall GraphicsStructures::Object::IsAnimationNodeAdditive(void* this, const void* treeName, const void* nodeName)",read at 0x00547322 call [edx+0x48] IsAdditive
 0x005473C0,signature,"bool __thiscall GraphicsStructures::Object::IsAnimationNodeOverride(void* this, const void* treeName, const void* nodeName)",read at 0x00547402 call [edx+0x4c] IsOverride
-0x005474A0,signature,"bool __thiscall GraphicsStructures::Object::IsAnimationNodeLooping(void* this, const void* treeName, const void* nodeName)",read at 0x005474E2 call [edx+0x50] IsLooping
+0x005474A0,signature,"bool __thiscall f(void *this, const void *clipName, const void *treeName)","GraphicsStructures::Object::IsAnimationNodeLooping (7881): the second argument [esp+0x14] is the tree's name (its size +0x14 tested at 0x005474AB, passed to FindAnimationTree, slot 0x14), the first [esp+0x10] the clip's, passed to the tree's IsLooping (slot 0x50, 0x005474DF); ret 8; paragon-agent-2's items/world reading, checked 2026-11-05"
 0x00547640,signature,void __thiscall GraphicsStructures::Object::UpdateTreeWeights(void* this),read at 0x0054767F call [edx+0x28] on each element of Object+0x180
 0x005476A0,signature,"void __thiscall GraphicsStructures::Object::UpdateBoundsBoxAndExports(void* this, double unused)",read at 0x005476CF movaps [ecx+0x110]=max-min
 0x00547780,signature,"bool __thiscall GraphicsStructures::Object::UnregisterPhysics(void* this, void* physicsScene)",read at 0x00547796 delete body [eax]

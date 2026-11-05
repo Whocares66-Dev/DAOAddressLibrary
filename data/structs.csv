@@ -362,7 +362,7 @@ CCObject,0x1B0,0x10,Math::Vector4f,groundVector,"0x006954F1, 0x00699A51; ground 
 CCObject,0x1C0,0x4,float,groundHeight,0x006954FC; cached ground height: RefreshGroundCache stores the z at +0x128
 CCObject,0x1C4,0x1,uint8_t,groundCacheValid,0x006954CC; ground cache valid flag; RefreshGroundCache does nothing when set
 CCObject,0x1C8,0x4,int32,visibilityLock,"0x00695C04, 0x00695C2C; when equal to 1, SetVisibilityTarget and SetVisibilityImmediate do nothing"
-CCObject,0x23C,0x1,uint8_t,effectsEmit,0x006951C0; effects-emit flag returned by GetEffectsEmit (vftable slot 78)
+CCObject,0x23C,0x1,uint8_t,shownInRoom,"0x0069B64C mov [ecx+0x23C],al in SetShownInRoom; 0x006951C0 GetShownInRoom returns it (vftable slot 78, +0x138); ClientScriptCommand::GETISVISIBLE answers it (0x006D5A16)"
 CCObject,0x254,0x4,ObjectId,areaId,"0x006998D6, 0x0069A3AB; id of the area the object is in (constructed from the invalid id at 0x00B5940C; the destructor writes -1)"
 CCObject,0x258,0x1,uint8_t,animBaseCreated,0x00694DBB; set to 1 by CreateAnimBase
 CCObject,0x25C,0x10,SmartData::Attribute<bool>,mapNoteVisibleAttribute,0x006998F2; attribute MapNoteVisible (value byte at +0x268)
