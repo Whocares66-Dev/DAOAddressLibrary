@@ -2313,7 +2313,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2312,function,SmartData::TokenManager::Get,,0x00455bf0,0x00468550,0x00455bf0
 2313,function,Renderer::FBEffectRequest::FBEffectRequest,,0x00455c70,0x00890930,0x00455c70
 2314,function,Gff4::StructReader::GetValueRefById,,0x00455cf0,0x005f3870,0x00455cf0
-2315,function,Renderer::CacheFrameParameters,,0x00455d50,0x008909b0,0x00455d50
+2315,function,Renderer::CacheFrameParameters,"Each frame stores the scene camera's far plane (its vtable +0x40, 0x00455D6F) in g_sceneFocalPlane, which FBEclipseResource::OnEvent copies into a focalplane resource (kind 3, 0x0045EFB2)",0x00455d50,0x008909b0,0x00455d50
 2316,function,Renderer::SetRenderTarget,,0x00455da0,0x00890a00,0x00455da0
 2317,function,Renderer::ReleaseRenderTargets,,0x00455ec0,0x00890b20,0x00455ec0
 2318,function,Renderer::FrameBufferEffects::ForgetBoundTarget,,0x00455f50,0x00890bb0,0x00455f50
@@ -2531,7 +2531,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2530,function,Renderer::FBRenderTargetResource::SetFormat,,0x0045dd90,0x00896740,0x0045dd90
 2531,function,Renderer::FBRenderTargetResource::SetDepthFormat,,0x0045dda0,0x00896750,0x0045dda0
 2532,function,Renderer::FBRenderTargetResource::ReleaseTexture,,0x0045ddb0,0x00896760,0x0045ddb0
-2533,function,Renderer::FBFloat32Resource::SetAttribute,,0x0045dde0,0x00896790,0x0045dde0
+2533,function,Renderer::FBFloat32Resource::SetAttribute,"Parses one ffx attribute of a float resource: value (atof, stored at +0x2C and, while the range +0x30..+0x34 is not empty, clamped to it; sets dirty +0x28), expose, slider, animatable, and range (""%f %f"" into +0x30/+0x34, 0x0045DF5B)",0x0045dde0,0x00896790,0x0045dde0
 2534,retired,,,,,
 2535,function,Renderer::FBEclipseResource::SetAttribute,,0x0045df70,0x00896920,0x0045df70
 2536,function,Renderer::FBBackbufferResource::SetAttribute,,0x0045e080,0x00896a30,0x0045e080
@@ -2549,7 +2549,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2548,function,Renderer::FBRenderTargetResource::SetTextureParam8,,0x0045ed20,0x00897660,0x0045ed20
 2549,function,Renderer::FBRenderTargetResource::SetTextureParamC,,0x0045ed40,0x00897680,0x0045ed40
 2550,function,Renderer::FBRenderTargetResource::SetAutoClear,,0x0045ed60,0x008976a0,0x0045ed60
-2551,function,Renderer::FBFloat32Resource::SetValue,,0x0045ed90,0x008976d0,0x0045ed90
+2551,function,Renderer::FBFloat32Resource::SetValue,"Sets the float at +0x2C as given, with no range clamp; zeroes +0x40, +0x4C and +0x50, clears +0x54 and sets dirty +0x28. ret 4",0x0045ed90,0x008976d0,0x0045ed90
 2552,function,Renderer::FBFloat32Resource::GetValue,,0x0045edb0,0x008976f0,0x0045edb0
 2553,function,Renderer::FBFloat32Resource::BlendFrom,,0x0045edc0,0x00897700,0x0045edc0
 2554,function,Renderer::FBVector4fResource::SetAttribute,,0x0045ee20,0x00897760,0x0045ee20
@@ -2589,7 +2589,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2588,function,,,0x00460120,0x00466730,0x00460120
 2589,function,"std::map<std::wstring,unsigned int>::insert",,0x004601f0,0x00415a30,0x004601f0
 2590,function,Renderer::FrameBufferEffect::AddResource,,0x00460280,0x00898810,0x00460280
-2591,function,Renderer::FrameBufferEffect::FindResource,,0x004602d0,0x00898860,0x004602d0
+2591,function,Renderer::FrameBufferEffect::FindResource,"Looks a resource up by name in the effect's map at +0x34: on a hit returns it (through the map's operator[], 0x0046030C); on a miss returns null without inserting anything",0x004602d0,0x00898860,0x004602d0
 2592,function,std::_Tree<std::wstring>::~_Tree,,0x00460330,0x00466d00,0x00460330
 2593,function,Renderer::FrameBufferEffect::AddStage,,0x00460370,0x008988c0,0x00460370
 2594,function,Renderer::FrameBufferStage::~FrameBufferStage,,0x00460390,0x008988e0,0x00460390
@@ -13895,7 +13895,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13894,function,Conversation::IsLineNoVOIngame,,0x0068d8a0,0x005796c0,0x0068d8a0
 13895,function,GameModeDialog::TakeReply,"Takes the player's reply: stops the previous speaker's voice (and plays its pause row with blend -2.0 when asked), journals the line when it has text, Conversation::Advance, MarkFinished when that returns false",0x0068d8f0,0x00579710,0x0068d8f0
 13896,function,GameModeDialog::HandleMessage_SkipDialogMessage,"Skip: ignored while finished or the lockout (+0x258) runs; seeks the cutscene's next skip marker, else offers the replies, and takes a lone empty reply",0x0068dc10,0x00579a30,0x0068dc10
-13897,function,GameModeDialog::Update,"Per frame: takes a queued reply, plays a lone empty continue when the voice ends, fades the partner (SetFade), places the no-cut camera and sets da_dof's focus to the camera-speaker distance, or updates the line's cutscene; offers replies when the line timer runs out",0x0068ddd0,0x00579c30,0x0068ddd0
+13897,function,GameModeDialog::Update,"Per frame: takes a queued reply, plays a lone empty continue when the voice ends, fades the partner (SetFade), places the no-cut camera and, if da_dof has a ""focus"" resource (FindResource, 0x0068E182; null skips it), sets it to the camera-speaker distance, or updates the line's cutscene; offers replies when the line timer runs out",0x0068ddd0,0x00579c30,0x0068ddd0
 13898,function,GameModeDialog::ShowLine,"Shows an NPC line: either a cutscene (MakeLineCutscene, SetStageByTag, Start) or, without one, adds speaker and partner as participants, sets their mutual look-at, PlaceDialogueCamera, plays the voice and the line animation (blend -2.0); the line timer is the voice length (1.0 with no VO) less 0.3",0x0068e250,0x0057a0b0,0x0068e250
 13899,function,"SmartData::Attribute<ECBase::ECDynArray<Response*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::~Attribute",,0x0068ecc0,0x0057ab20,0x0068ecc0
 13900,function,"SmartData::Attribute<ECBase::ECDynArray<Response*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x0068ed30,0x0057ab90,0x0068ed30
