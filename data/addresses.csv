@@ -5697,7 +5697,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5696,function,Vector3::NormalizedOrXAxis,,0x004ede50,0x007b0930,0x004ede50
 5697,function,Math::SineEaseLookup,,0x004edf40,0x0081b560,0x004edf40
 5698,function,Quaternion::FromTo,,0x004edf80,0x0081b5a0,0x004edf80
-5699,function,Quaternion::FromYawPitchRoll,,0x004ee200,0x0081b820,0x004ee200
+5699,function,Quaternion::FromYawPitchRoll,"__cdecl (out, yaw, pitch, roll) in degrees (scaled by pi/360 for the half angles): three Quaternion::FromAxisAngle rotations about the unit Y, X and Z vectors multiplied together into out",0x004ee200,0x0081b820,0x004ee200
 5700,function,Quaternion::Yaw,,0x004ee310,0x0081b930,0x004ee310
 5701,function,Quaternion::Pitch,,0x004ee370,0x0081b990,0x004ee370
 5702,function,Quaternion::Roll,,0x004ee420,0x0081ba40,0x004ee420
@@ -12749,7 +12749,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12748,function,AIMaster::PopEvent,,0x0064a8a0,0x00533240,0x0064a8a0
 12749,function,AIMaster::ProcessEvent,,0x0064a8c0,0x00533260,0x0064a8c0
 12750,function,AIMaster::WriteEventQueue,,0x0064a9d0,0x00533370,0x0064a9d0
-12751,function,AIMaster::Load,,0x0064aad0,0x00533470,0x0064aad0
+12751,function,AIMaster::Load,"Reads the save's AI event list (field 0x40F6): each CAIEvent read is appended with AIEventList::PushBack in file order, with no sort by time",0x0064aad0,0x00533470,0x0064aad0
 12752,function,AIMaster::LevelList::NextObject,,0x0064ac10,0x005335b0,0x0064ac10
 12753,function,AIMaster::ClearEvents,,0x0064ac80,0x00533620,0x0064ac80
 12754,function,AIMaster::AddEventDeltaTime,,0x0064ace0,0x00533680,0x0064ace0
@@ -13443,7 +13443,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13442,function,ScriptCommand::GETPRCENABLED,,0x0066d6d0,0x00559530,0x0066d6d0
 13443,function,ScriptCommand::ISPRCAVAILABLE,,0x0066d930,0x00559790,0x0066d930
 13444,function,MapLocation::SetStatus,,0x0066da00,0x00559860,0x0066da00
-13445,function,ScriptCommand::INTRIGGER,,0x0066da90,0x005598f0,0x0066da90
+13445,function,ScriptCommand::INTRIGGER,"Script INTRIGGER: pops the object and the trigger id; for a creature answers Core::VectorContains(creature+0xBA8, id) (0x0066DAEA), whether it is inside that trigger",0x0066da90,0x005598f0,0x0066da90
 13446,function,ScriptCommand::GETSINGLENEARESTOBJECTBYTAG,,0x0066db20,0x00559980,0x0066db20
 13447,function,ScriptCommand::SETWORLDMAPLOCATIONSTATUS,,0x0066dc90,0x00559af0,0x0066dc90
 13448,function,ScriptCommand::VectorFrontOrNull<?>,,0x0066dd20,0x00559b80,0x0066dd20
@@ -13793,7 +13793,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13792,function,CCArea::AddPooledObject,,0x00687360,0x005731b0,0x00687360
 13793,function,CCArea::CreatePool,,0x00687410,0x00573260,0x00687410
 13794,function,CCArea::CreatePoolCreatures,,0x00687570,0x005733c0,0x00687570
-13795,function,CCArea::CreateObject,,0x00687830,0x00573680,0x00687830
+13795,function,CCArea::CreateObject,"(type, templateRef, position): when the template's name has a creature pool, takes its first available creature (SetAvailable 0, ResetPooledCreature, SetPosition) or returns null if none is free; without a pool, CreateObjectFromTemplate",0x00687830,0x00573680,0x00687830
 13796,function,CCArea::AddObjectToTeam,,0x00687980,0x005737d0,0x00687980
 13797,function,CCArea::RemoveObjectFromTeam,,0x00687a50,0x005738a0,0x00687a50
 13798,function,CCArea::ReadTriggerList,,0x00687ac0,0x00573910,0x00687ac0
@@ -14366,7 +14366,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14365,function,CCCreature::ReleasePortrait,,0x0069f470,0x005905e0,0x0069f470
 14366,function,CCCreature::SetIsStatue,,0x0069f4a0,0x00590610,0x0069f4a0
 14367,function,Combat::MergeAttackResults,,0x0069f530,0x005906a0,0x0069f530
-14368,function,CCCreature::SetAnimationPaused,,0x0069f590,0x00590700,0x0069f590
+14368,function,CCCreature::SetAnimationPaused,"(paused): CCObject's pause, then the creature's LookAt: Disable when pausing, Enable when resuming (0x0069F5AC, 0x0069F5B6)",0x0069f590,0x00590700,0x0069f590
 14369,function,SoundPlayParams::SoundPlayParams,,0x0069f5c0,0x00590730,0x0069f5c0
 14370,function,SoundEmitter::SetPosition,,0x0069f5e0,0x00590750,0x0069f5e0
 14371,function,AnimBase::SetWeightRequest,,0x0069f620,0x00590790,0x0069f620
@@ -14420,7 +14420,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14419,function,CCCreature::ReleaseAnimationState,,0x006a06b0,0x005917b0,0x006a06b0
 14420,function,CCCreature::ReloadHeldItemModels,,0x006a0710,0x00591810,0x006a0710
 14421,function,CCCreature::ReloadHeldItemModel,,0x006a0730,0x00591830,0x006a0730
-14422,function,CCCreature::MakeAmmunition,,0x006a0750,0x00591850,0x006a0750
+14422,function,CCCreature::MakeAmmunition,"(ammo base item, launcher, set): makes the engine's ammunition item (CCItem, variation from the rules), sets its made-ammunition attribute (+0x5D0), clears droppable (+0x4B0) and equips it",0x006a0750,0x00591850,0x006a0750
 14423,function,CCCreature::SetSoundMaterials,,0x006a0910,0x00591a10,0x006a0910
 14424,function,CCCreature::ReserveAreaSlot,,0x006a0ce0,0x00591de0,0x006a0ce0
 14425,function,CCCreature::ReleaseAreaSlot,,0x006a0d40,0x00591e40,0x006a0d40
@@ -14431,7 +14431,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14430,function,CCCreature::GetEffectsEmit,,0x006a0e70,0x00591f70,0x006a0e70
 14431,function,CCCreature::SetShownInRoom,,0x006a0ea0,0x00591fa0,0x006a0ea0
 14432,function,CCCreature::ForEachHandSlotItem,,0x006a0ed0,0x00591fd0,0x006a0ed0
-14433,function,CCCreature::SetEffectsActive,,0x006a0f10,0x00592010,0x006a0f10
+14433,function,CCCreature::SetEffectsActive,"Enables (holder slot +0x14) or disables (+0x18) the creature's effects holder and those of the items in equipment slots 0..0x13; called only by EC::Cutscene::Actor::SetVisible (0x007D43BA, 0x007D43D6)",0x006a0f10,0x00592010,0x006a0f10
 14434,function,ApplyFacialHairColor,,0x006a0fa0,0x005920a0,0x006a0fa0
 14435,function,RemoveEquipmentPart,,0x006a1090,0x00592190,0x006a1090
 14436,function,AnimBase::LoadAppearanceModels,,0x006a1180,0x00592280,0x006a1180
@@ -14508,7 +14508,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14507,function,CCCreature::UpdateByte0xCFC,,0x006a42e0,0x00595470,0x006a42e0
 14508,function,EffectDisplayEntry::SyncFromEffect,,0x006a4360,0x005954f0,0x006a4360
 14509,function,CWalkHitInfo::CWalkHitInfo,,0x006a43f0,0x00595580,0x006a43f0
-14510,function,CCItem::IsDroppableByte,,0x006a4440,0x005955f0,0x006a4440
+14510,function,CCItem::IsDroppableByte,"__cdecl (item): returns the item's droppable byte +0x4B0, which MakeAmmunition clears; read by CCCreature::HasLootableItems through a pointer (0x006A9102, 0x006A911D)",0x006a4440,0x005955f0,0x006a4440
 14511,function,CombatTreeSetRecord::CombatTreeSetRecord,,0x006a4450,0x00595600,0x006a4450
 14512,function,CCCreature::IsStealthedHostileTo,,0x006a44d0,0x00595680,0x006a44d0
 14513,function,CCPlaceable::IsInventoryEmpty,,0x006a4500,0x005956b0,0x006a4500
@@ -14573,7 +14573,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14572,function,CCCreature::MakeAbilityCastSoundKey,,0x006a5b00,0x00596cc0,0x006a5b00
 14573,function,CCCreature::OnAnimEventWeaponBlocked,,0x006a5b70,0x00596d30,0x006a5b70
 14574,function,CCCreature::OnAnimEventDecapitateVFX,,0x006a5c10,0x00596dd0,0x006a5c10
-14575,function,CCCreature::DestroyMadeAmmo,,0x006a5cd0,0x00596e90,0x006a5cd0
+14575,function,CCCreature::DestroyMadeAmmo,"(weaponSet): unless g_inventoryFlags has 0x200, removes the made ammunition (+0x5D0 set) from that set's ranged-ammo slot and destroys it (vtable +0x198)",0x006a5cd0,0x00596e90,0x006a5cd0
 14576,function,CCCreature::SnapToGround,,0x006a5de0,0x00596fa0,0x006a5de0
 14577,function,CCCreature::ForScript_SetControllable,,0x006a5f40,0x00597100,0x006a5f40
 14578,function,CCCreature::SetSelectionVfx,,0x006a5f90,0x00597150,0x006a5f90
@@ -14675,7 +14675,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14674,function,CCCreature::BuildFootDownSoundKey,,0x006aaaa0,0x0059bcd0,0x006aaaa0
 14675,function,CCCreature::OnDeathblowAttackEvent,,0x006aabb0,0x0059bde0,0x006aabb0
 14676,function,CCCreature::OnEquipAnimationEvent,,0x006aac00,0x0059be30,0x006aac00
-14677,function,CCCreature::OnDecapitateEvent,,0x006aac20,0x0059be50,0x006aac20
+14677,function,CCCreature::OnDecapitateEvent,"Animation event 0x1C: sets the appearance's (+0x7B0) +0x5D byte, decapitated, and updates the head part's visibility (CAppearance::UpdateHeadPartVisibility)",0x006aac20,0x0059be50,0x006aac20
 14678,function,CCCreature::UpdateSelectionRing,,0x006aac50,0x0059be80,0x006aac50
 14679,function,CCCreature::SetCursorTargeted,,0x006aae00,0x0059c030,0x006aae00
 14680,function,CCCreature::PlayMissEvadeReaction,,0x006aae20,0x0059c050,0x006aae20
@@ -14733,7 +14733,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14732,function,CCCreature::TurnToAngle,,0x006ade40,0x0059f020,0x006ade40
 14733,function,CCCreature::MoveToLocation,,0x006adf70,0x0059f150,0x006adf70
 14734,function,CCCreature::SetCombatState,,0x006ae0a0,0x0059f280,0x006ae0a0
-14735,function,CCCreature::UpdateTriggerSet,,0x006ae100,0x0059f2e0,0x006ae100
+14735,function,CCCreature::UpdateTriggerSet,"(newSet): each object in the +0xBA8 set but not in newSet gets EXIT (vtable +0x17C with 0); each in newSet but not in +0xBA8 gets ENTER (1), skipped for a creature-kind object while this creature IsInConversation",0x006ae100,0x0059f2e0,0x006ae100
 14736,function,CCCreature::IsInsideTriggerOrAOE,,0x006ae2b0,0x0059f490,0x006ae2b0
 14737,function,CCCreature::UpdatePortrait,,0x006ae2d0,0x0059f4b0,0x006ae2d0
 14738,function,CCItem::HasReservation,,0x006ae360,0x0059f540,0x006ae360
@@ -14839,7 +14839,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14838,function,ItemMove::operator=,,0x006b2320,0x005a3db0,0x006b2320
 14839,function,ItemMove::ItemMove_copy,,0x006b23b0,0x005a3e40,0x006b23b0
 14840,function,CCCreature::SaveToStruct,,0x006b2470,0x005a3f00,0x006b2470
-14841,function,CCCreature::RefreshTriggerMembership,,0x006b2f70,0x005a4a00,0x006b2f70
+14841,function,CCCreature::RefreshTriggerMembership,"(oldPos, newPos): for an active creature takes CCArea::GetAreasOfEffectAffecting(newPos) and, when it differs from the trigger set at +0xBA8, runs UpdateTriggerSet and stores the new set; called on position, health, activity and death changes",0x006b2f70,0x005a4a00,0x006b2f70
 14842,function,CCCreature::ReattachAreasOfEffect,,0x006b3070,0x005a4b00,0x006b3070
 14843,function,CCCreature::AddPerceived,,0x006b3240,0x005a4cd0,0x006b3240
 14844,function,CCCreature::TriggerPerception,,0x006b32a0,0x005a4d30,0x006b32a0
@@ -14968,7 +14968,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14967,function,CCCreature::OnModelLoadedCallback,,0x006c13b0,0x005b2df0,0x006c13b0
 14968,function,CCCreature::RegisterClass,,0x006c13e0,0x005b2e20,0x006c13e0
 14969,function,CCCreature::SetAppearance,"__thiscall, ret 0x10: (CAppearance* appearance, ?, ?, bool force). Returns 1 at once when modelBuildAllowed (+0x7B4) is clear or appearance is null. Unless force is set, an appearance with the same row (+0x58) and byte +0x50 as the current one (+0x7B0) is not reapplied. Otherwise it rebuilds the creature's model and calls CCCreatureStats::CheckModalAbilities(stats, 0, 0, 1) (0x006C1591).",0x006c1400,0x005b2e40,0x006c1400
-14970,function,CCCreature::OnItemEquipped,,0x006c16e0,0x005b3120,0x006c16e0
+14970,function,CCCreature::OnItemEquipped,"Item-equipped handler: a two-handed item unequips the off hand (an off-hand item a two-handed main); sets the wearer, applies item stats and properties while +0xC58 is 0, sets the appearance slot, refreshes weapon style trees, then delivers EQUIP (event 0xB) with the slot and (g_inventoryFlags >> 7) & 1",0x006c16e0,0x005b3120,0x006c16e0
 14971,function,CCCreature::OnItemUnequipped,,0x006c19f0,0x005b3430,0x006c19f0
 14972,function,CCCreature::RebuildAppearanceFromEquipment,,0x006c1bf0,0x005b3630,0x006c1bf0
 14973,function,CCCreature::LoadAppearance,,0x006c1e00,0x005b3840,0x006c1e00
@@ -15101,7 +15101,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15100,function,CKeyboardLCD::UpdateCharacterInfo,,0x006c9a50,0x005bb510,0x006c9a50
 15101,function,CKeyboardLCD::ShowLoading,,0x006c9d00,0x005bb7c0,0x006c9d00
 15102,function,LookAt::AimInfo::~AimInfo,,0x006c9e40,0x005bb900,0x006c9e40
-15103,function,CCreatureAnimController::Pause,,0x006c9e60,0x005bb920,0x006c9e60
+15103,function,LookAt::Disable,"If the look-at state (+0xDC) is not 0, sets it to 2 (returning to neutral) and dirty (+0x144); called by CCCreature::SetAnimationPaused(true) and UpdateIdleTwitch (0x006AB8D7)",0x006c9e60,0x005bb920,0x006c9e60
 15104,function,Animation::InitializeLookAtThresholds,,0x006c9e80,0x005bb940,0x006c9e80
 15105,function,LookAt::StartPartClips,,0x006c9ef0,0x005bb9b0,0x006c9ef0
 15106,function,LookAt::SetTurnSpeedMultiplier,,0x006c9f10,0x005bb9d0,0x006c9f10
@@ -15748,7 +15748,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15747,function,Journal::RegisterHandler_ClearChanterBoardMessage,,0x006f4f30,0x005e6c00,0x006f4f30
 15748,function,Journal::HandleMessage_SetActiveQuestMessage,,0x006f4fb0,0x005e6c80,0x006f4fb0
 15749,function,Journal::UpdateEntry,,0x006f5040,0x005e6d10,0x006f5040
-15750,function,Journal::CompletePlot,,0x006f5380,0x005e7050,0x006f5380
+15750,function,Journal::CompletePlot,"(resref, fireEvent): moves the plot entry and its chain from the plot list to the completed list, clearing the active plot if it was it; with fireEvent raises event 0x62 on the module (AddEventDeltaTime, handler 10) with the entry's name as string 0",0x006f5380,0x005e7050,0x006f5380
 15751,function,Journal::SortCodexEntries,,0x006f5750,0x005e7420,0x006f5750
 15752,function,,,0x006f58e0,0x005e75b0,0x006f58e0
 15753,function,,,0x006f59e0,0x005e76b0,0x006f59e0
@@ -16551,7 +16551,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16550,function,CCCreatureStats::`scalar deleting destructor'`adjustor{28}',,0x0071d900,0x0061ba20,0x0071d900
 16551,function,CCCreatureStats::`scalar deleting destructor'`adjustor{32}',,0x0071d910,0x0061ba30,0x0071d910
 16552,function,CCCreatureStats::GetAbilityList,,0x0071d920,0x0061ba50,0x0071d920
-16553,function,ScriptBackend::ForScript_Engine_SetModalAbilityGUI,,0x0071da90,0x0061bbc0,0x0071da90
+16553,function,ScriptBackend::ForScript_Engine_SetModalAbilityGUI,"(this = creature stats, ability, status, quiet), ret 0xC: status 0 removes the ability id from the +0xF8 vector if there, else adds it if absent; on a change queues a play-animation (block 0x88 on, 0x89 off) when the ability's BlendTree and the hand items allow",0x0071da90,0x0061bbc0,0x0071da90
 16554,function,CCCreatureStats::SetCooldown,,0x0071dce0,0x0061be10,0x0071dce0
 16555,function,ScriptBackend::ForScript_GetConditionedAbilities,"__thiscall on the creature's stats, ret 8: (outVector, conditions). For each modal ability in the stats' list at +0xFC, in order, calls ForScript_CanUseConditionedAbility(ability, conditions, 0), and pushes the ability into outVector unless the answer is 1.",0x0071dd10,0x0061be40,0x0071dd10
 16556,function,CCCreatureStats::`scalar deleting destructor',,0x0071ddc0,0x0061bf50,0x0071ddc0
@@ -17564,7 +17564,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17563,function,CCArea::CreatureContactTest,,0x0073d570,0x00649110,0x0073d570
 17564,function,MovementPath::HasPathSearch,,0x0073d6e0,0x00649280,0x0073d6e0
 17565,function,CCArea::VisitCreatures_NoOp,,0x0073d710,0x006492b0,0x0073d710
-17566,function,CCArea::IsSegmentClearOfCreatures,,0x0073d780,0x00649320,0x0073d780
+17566,function,CCArea::IsSegmentClearOfCreatures,"(x0, y0, x1, y1, mover, limitToStartRadii, testPushAside, outBlockerId, testWalkTarget), ret 0x24: creatures within 6 m in x of the segment (FindObjectIndexByX), not the mover or its walk target (mover+0x94), tested against the segment with their radius plus the mover's and 0.01; CanBePushedAside when asked",0x0073d780,0x00649320,0x0073d780
 17567,function,CCArea::GetGridHeightAt,,0x0073de20,0x006499c0,0x0073de20
 17568,function,CCArea::GetGridCellSize,,0x0073de50,0x006499f0,0x0073de50
 17569,function,CCArea::IsLocationSafe,,0x0073de70,0x00649a10,0x0073de70
@@ -17871,7 +17871,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17870,function,CCPlaceable::EventHandler,,0x0074d030,0x00658f90,0x0074d030
 17871,function,CCPlaceable::InMeleeReach,,0x0074d0a0,0x00659000,0x0074d0a0
 17872,function,CCPlaceable::IsRemovedWhenDead,,0x0074d1b0,0x00659110,0x0074d1b0
-17873,function,CCPlaceable::OnAnimEventAnimationDone,,0x0074d200,0x00659160,0x0074d200
+17873,function,CCPlaceable::OnAnimEventAnimationDone,"End of a placeable's state-transition animation: clears +0x6CC; when its health (+0x66C) is 0 or less and IsRemovedWhenDead, SetVisibilityTarget(0) and vtable +0x198(3000), destroy after 3 s; then CCObject::OnAnimEventAnimationDone",0x0074d200,0x00659160,0x0074d200
 17874,function,CCPlaceable::HasLosMask,,0x0074d250,0x006591b0,0x0074d250
 17875,function,CCPlaceable::SetCollisionBlocking,,0x0074d350,0x006592b0,0x0074d350
 17876,function,"SmartData::Attribute<ItemRepository*,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x0074d3b0,0x00659310,0x0074d3b0
@@ -18129,7 +18129,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18128,function,PlotManager::InitMapWithDefault,,0x0075da30,0x006a8c00,0x0075da30
 18129,function,PlotManager::PlotManager,,0x0075dac0,0x006a8c90,0x0075dac0
 18130,function,PlotManager::Clear,,0x0075db30,0x006a8d00,0x0075db30
-18131,function,PlotManager::LoadPlotResources,,0x0075db80,0x006a8d50,0x0075db80
+18131,function,PlotManager::LoadPlotResources,Loads every PLO resource into the plot map; plot-group types (Plots::IsPlotGroupType) become Journal::AddPlotGroup entries and codex types AddCodexEntry; ends with the empty-name group (string 0x557F7),0x0075db80,0x006a8d50,0x0075db80
 18132,function,PlotManager::Load,,0x0075e300,0x006a94d0,0x0075e300
 18133,function,PlotManager::FindPlot,,0x0075e850,0x006a9a20,0x0075e850
 18134,function,PlotManager::~PlotManager,,0x0075e9f0,0x006a9bc0,0x0075e9f0
@@ -18143,7 +18143,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18142,function,PlotManager::GetFlagJournalText,,0x0075f520,0x006aa6f0,0x0075f520
 18143,function,PlotManager::HasFlag,,0x0075f640,0x006aa810,0x0075f640
 18144,function,ScriptBackend::ForScript_GetPlotFlagRewardId,,0x0075f710,0x006aa8e0,0x0075f710
-18145,function,PlotManager::SetPlotFlag,,0x0075f7e0,0x006aa9b0,0x0075f7e0
+18145,function,PlotManager::SetPlotFlag,"Sets a plot flag; its tail updates the journal: AddUberQuestAlert for a plot not yet in the plot list, AddEntry or UpdateEntry, AddJournalAlert for an update, and CompletePlot (0x00760101) for a flag that ends the plot",0x0075f7e0,0x006aa9b0,0x0075f7e0
 18146,function,ScriptBackend::ForScript_ShowAllCodexEntries,,0x00760250,0x006ab420,0x00760250
 18147,function,PartyFollow::SetCatchUp,,0x00760460,0x006e1410,0x00760460
 18148,function,PartyFollow::GetSlotLength,,0x00760520,0x006e14d0,0x00760520
