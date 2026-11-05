@@ -138,6 +138,9 @@ CCArea,0x52C,0x10,SmartData::Attribute<float>,minimapTop,"0x00689625 lea eax,[es
 CCArea,0x53C,0x10,SmartData::Attribute<float>,minimapRight,"0x00689687 lea eax,[esi+0x53C], registered as MinimapRight; constructed 0.0 by 0x005DDB90 in the fldz sequence at 0x00688FD8..0x00689057"
 CCArea,0x54C,0x10,SmartData::Attribute<float>,minimapWidth,"0x006896E9 lea eax,[esi+0x54C], registered as MinimapWidth; constructed 0.0 by 0x005DDB90 in the fldz sequence at 0x00688FD8..0x00689057"
 CCArea,0x55C,0x10,SmartData::Attribute<float>,minimapHeight,"0x0068974B lea eax,[esi+0x55C], registered as MinimapHeight; constructed 0.0 by 0x005DDB90 in the fldz sequence at 0x00688FD8..0x00689057"
+CCArea,0x574,0x4,float,minimapScale,"0x0067A379 fstp [ecx+0x574] from the message's +4 (Area.OnMinimapScaleChanged, screen pixels per map pixel); ClampToMapRadius multiplies a map-pixel distance by it (0x0060BE86)"
+CCArea,0x578,0x4,float,mapPixelsX,0x0060CA85 fld [eax+0x578] in WorldToMapPosition: the fraction across the area times it is the map picture's x pixel; no immediate writer found
+CCArea,0x57C,0x4,float,mapPixelsY,0x0060CAD9 fmul [ecx+0x57c] in WorldToMapPosition: the y fraction from Top to Bottom times it; no immediate writer found
 CCArea,0x584,0x4,void*,creatureTree,"0x0067D0F0 mov eax,[ecx+0x584] in CCArea::RemoveFromCreatureTree: when not null it is passed with the creature to 0x0067B4F0; constructor 0 (0x0068925B)"
 CCArea,0x5D8,0x8,undefined4[2],creatureTreeRoot,"0x0067A262 mov [ecx+0x5D8],eax and 0x0067A268 mov [ecx+0x5DC],eax (CCArea::ClearCreatureTreeRoot, eax = 0): two dwords"
 CCArea,0x608,0x1,uint8_t,roomsSeenDirty,"0x0068AFBD cmp byte [esi+0x608],1 in the area's update, which then runs 0x006886F0 (RoomsSeen); set to 1 by the constructor (0x0068934A) and by 0x0068AFB1 when the party's rooms changed"
