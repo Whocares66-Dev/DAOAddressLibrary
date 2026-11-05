@@ -43,6 +43,8 @@ What a run does, on the GOG build's addresses:
   `returns` (value empty) marks a function Ghidra took for one that never
   returns as returning.
 - every struct in data/structs.csv: made or replaced under /DAOAddressLibrary.
+- every comment in the table's comment column: the plate comment at its
+  address. One the table takes out stays in Ghidra.
 
 It talks to the server over MCP's plain HTTP (initialize, then
 `eval_python` with the work as JSON, a few thousand rows a call, then
@@ -103,7 +105,8 @@ fm = program.getFunctionManager()
 st = program.getSymbolTable()
 listing = program.getListing()
 SOURCE = SourceType.IMPORTED
-done = {"created": 0, "named": 0, "same": 0, "labels": 0, "fixes": 0, "structs": 0}
+done = {"created": 0, "named": 0, "same": 0, "labels": 0, "fixes": 0, "structs": 0,
+        "comments": 0}
 faults = []
 spaces = {}
 
@@ -264,6 +267,19 @@ for name, size, fields in W.get("structs", []):
     except Exception as e:
         faults.append("struct %s: %s" % (name, e))
 
+from ghidra.program.model.listing import CodeUnit
+for address, text in W.get("comments", []):
+    a = toAddr(address)
+    try:
+        unit = listing.getCodeUnitAt(a)
+        if unit is None or unit.getComment(CodeUnit.PLATE_COMMENT) == text:
+            continue
+        done["comments"] += 1
+        if not dry:
+            unit.setComment(CodeUnit.PLATE_COMMENT, text)
+    except Exception as e:
+        faults.append("comment 0x%08x: %s" % (address, e))
+
 print("RESULT " + json.dumps({"done": done, "faults": faults[:50], "nfaults": len(faults)}))
 """
 
@@ -348,6 +364,18 @@ def struct_rows():
         (name, whole.get(name, max(o + s for o, s, _, _ in held)), sorted(held))
         for name, held in sorted(fields.items())
     ]
+
+
+def comment_rows():
+    """(address, comment) of every ID the table comments, in this build:
+    each becomes the plate comment at its address. A comment taken out of
+    the table is left in Ghidra, as a name the table drops is."""
+    with open(ROOT / "data" / "addresses.csv", newline="", encoding="utf-8") as f:
+        return [
+            (int(row[BUILD], 16), row["comment"])
+            for row in csv.DictReader(f)
+            if row.get("comment") and row[BUILD]
+        ]
 
 
 def work(limit=None):
@@ -480,6 +508,7 @@ def main(argv):
             "rows": chunk,
             "fixes": fixes if n == len(chunks) - 1 else [],
             "structs": struct_rows() if n == len(chunks) - 1 else [],
+            "comments": comment_rows() if n == len(chunks) - 1 else [],
         }
         output = server.run(
             f"PAYLOAD = {json.dumps(json.dumps(payload))}\n" + GHIDRA_SCRIPT
@@ -504,7 +533,8 @@ def main(argv):
     print(
         f"{verb}: {totals['created']} functions defined, {totals['named']} renamed, "
         f"{totals['labels']} labels, {totals['fixes']} fix rows applied, "
-        f"{totals['structs']} structs; {totals['same']} already right"
+        f"{totals['structs']} structs, {totals.get('comments', 0)} comments; "
+        f"{totals['same']} already right"
     )
     for fault in faults[:40]:
         print("  " + fault, file=sys.stderr)

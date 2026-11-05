@@ -287,6 +287,67 @@ class Check(unittest.TestCase):
         db.columns.append("c")
         self.assertEqual(self.faults(db), 1)
 
+    def test_a_comment_is_one_line_and_a_retired_id_has_none(self):
+        db = database()
+        db.rows[2].comment = "first line\nsecond"
+        self.assertEqual(self.faults(db), 1)
+        db = database()
+        db.rows[2].addresses.clear()
+        db.rows[2].kind = "retired"
+        db.rows[2].comment = "was a tail"
+        self.assertEqual(self.faults(db), 1)
+
+
+class Comments(unittest.TestCase):
+    """The comment column, after the name: read from a table with or without
+    it (`kept` reads tables from before it), written back, and set."""
+
+    OLD = "id,kind,name,a,b\n1,function,First,0x00401000,\n"
+    NEW = 'id,kind,name,comment,a,b\n1,function,First,"Does it, once",0x00401000,\n'
+
+    def test_a_table_from_before_the_column_reads_with_no_comments(self):
+        db = addrlib.Database()
+        db.read_table(self.OLD.splitlines(keepends=True))
+        self.assertEqual(db.columns, ["a", "b"])
+        self.assertEqual(db.rows[1].comment, "")
+        self.assertEqual(db.rows[1].addresses, {"a": 0x401000})
+
+    def test_a_comment_is_read_and_its_column_is_not_a_build(self):
+        db = addrlib.Database()
+        db.read_table(self.NEW.splitlines(keepends=True))
+        self.assertEqual(db.columns, ["a", "b"])
+        self.assertEqual(db.rows[1].comment, "Does it, once")
+
+    def test_a_comment_is_written_back_as_it_was_read(self):
+        db = addrlib.Database()
+        db.read_table(self.NEW.splitlines(keepends=True))
+        with tempfile.TemporaryDirectory() as folder:
+            table = os.path.join(folder, "addresses.csv")
+            notes = os.path.join(folder, "notes.csv")
+            old = addrlib.ADDRESSES, addrlib.NOTES
+            addrlib.ADDRESSES, addrlib.NOTES = table, notes
+            try:
+                db.save()
+            finally:
+                addrlib.ADDRESSES, addrlib.NOTES = old
+            with open(table, encoding="utf-8", newline="") as f:
+                self.assertEqual(f.read(), self.NEW)
+
+    def test_a_comment_is_set_changed_and_taken_out(self):
+        db = database()
+        self.assertEqual(addrlib.set_comment(db, 2, "Sets the flag"), "")
+        self.assertEqual(addrlib.set_comment(db, 2, ""), "Sets the flag")
+        self.assertEqual(db.rows[2].comment, "")
+
+    def test_what_is_not_a_one_line_comment_is_refused(self):
+        db = database()
+        for bad in (" lead", "trail ", "one\ntwo", "tab\there"):
+            with self.assertRaises(ValueError):
+                addrlib.set_comment(db, 2, bad)
+        db.rows[2].kind = "retired"
+        with self.assertRaises(ValueError):
+            addrlib.set_comment(db, 2, "was a tail")
+
 
 class Saving(unittest.TestCase):
     def setUp(self):

@@ -9,6 +9,8 @@ Age: Origins, and where each is in every build of DAOrigins.exe.
     python tools/addrlib.py name 10547 CClientExoApp::SetPaused      name an ID
     python tools/addrlib.py name 0x005D6740 CClientExoApp::SetPaused --build gog-1.05
     python tools/addrlib.py names FILE [--build KEY]   many: `ID or 0xADDRESS<TAB>name` lines
+    python tools/addrlib.py comment 10547 "what it does"   say what an ID's thing is or does ("" takes it out)
+    python tools/addrlib.py comments FILE [--build KEY]   many: `ID or 0xADDRESS<TAB>comment` lines
     python tools/addrlib.py pack DIR             write each build's runtime file into DIR, and the code index
     python tools/addrlib.py code                 read each build's code hash into data/builds.csv (needs game/)
     python tools/addrlib.py check                the table is sound (no game needed)
@@ -42,6 +44,13 @@ classes' vftables and type descriptors); the rest are given by whoever
 worked out what a function or a global is, with `name`. A name can be given
 to any ID and changed; it is the ID that does not change. Nothing a program
 reads at run time holds names, so naming one rebuilds nothing.
+
+The `comment` column, after the name, says in a line what a name cannot:
+what the thing does, the fields it touches, what it gates. The user,
+2026-11-04, when a reader's notes on two functions had nowhere to go but a
+commit message: "Add a column of comment to the table if necessary". It is
+written with `comment`, like a name, and runs to no build's file; Ghidra's
+copy gets it as the function's or the label's plate comment.
 
 Reading a build needs its executable, under game/ (ignored by git); the
 table, lookup, name, pack, check and kept do not.
@@ -92,10 +101,11 @@ NOTE_FLAGS = {
 
 
 class Row:
-    def __init__(self, kind, name, addresses):
+    def __init__(self, kind, name, addresses, comment=""):
         self.kind = kind
         self.name = name
         self.addresses = addresses  # {build key: address}
+        self.comment = comment
 
 
 def write_if_changed(path, text):
@@ -141,25 +151,29 @@ class Database:
         """The table's rows, from data/addresses.csv's text."""
         reader = csv.reader(lines)
         header = next(reader)
-        self.columns = header[3:]
+        # A table from before the comment column (2026-11-04) has its builds
+        # straight after the name; `kept` reads such tables from history.
+        first = 4 if header[3:4] == ["comment"] else 3
+        self.columns = header[first:]
         for line in reader:
             addresses = {
                 key: int(cell, 16)
-                for key, cell in zip(self.columns, line[3:], strict=True)
+                for key, cell in zip(self.columns, line[first:], strict=True)
                 if cell
             }
-            self.rows[int(line[0])] = Row(line[1], line[2], addresses)
+            comment = line[3] if first == 4 else ""
+            self.rows[int(line[0])] = Row(line[1], line[2], addresses, comment)
 
     def save(self):
         table = io.StringIO(newline="")
         writer = csv.writer(table, lineterminator="\n")
-        writer.writerow(["id", "kind", "name", *self.columns])
+        writer.writerow(["id", "kind", "name", "comment", *self.columns])
         for number, row in self.rows.items():
             cells = [
                 f"{row.addresses[key]:#010x}" if key in row.addresses else ""
                 for key in self.columns
             ]
-            writer.writerow([number, row.kind, row.name, *cells])
+            writer.writerow([number, row.kind, row.name, row.comment, *cells])
         notes = io.StringIO(newline="")
         writer = csv.writer(notes, lineterminator="\n")
         writer.writerow(["id", "build", "flag", "detail"])
@@ -351,6 +365,8 @@ def describe(db, number):
         for key in db.columns
     )
     lines = [f"{number:>6}  {row.kind:<8}  {cells}  {row.name}"]
+    if row.comment:
+        lines.append(f"            {row.comment}")
     for noted, key, flag, detail in db.notes:
         if noted == number:
             lines.append(f"            {key}: {flag}: {detail}")
@@ -430,6 +446,39 @@ def set_name(db, number, name):
         raise ValueError(f"ID {number} is retired")
     before, row.name = row.name, name
     return before
+
+
+def set_comment(db, number, comment):
+    """Comments an ID, or with "" takes its comment out; what it said
+    before. A comment is one line, as a name is, and a retired ID has
+    nothing to say."""
+    if comment != comment.strip() or "\n" in comment or "\t" in comment:
+        raise ValueError(f"ID {number}: {comment!r} is not a one-line comment")
+    row = db.rows[number]
+    if row.kind == "retired" and comment:
+        raise ValueError(f"ID {number} is retired")
+    before, row.comment = row.comment, comment
+    return before
+
+
+def comment(db, pairs, only=None):
+    """The `comment` and `comments` commands: comments them and saves."""
+    changed, faults = 0, []
+    for what, text in pairs:
+        try:
+            number = resolve(db, what, only)
+            changed += set_comment(db, number, text) != text
+        except ValueError as fault:
+            faults.append(str(fault))
+    for fault in faults[:40]:
+        print(fault, file=sys.stderr)
+    if len(pairs) == 1 and not faults:
+        print(describe(db, resolve(db, pairs[0][0], only)))
+    else:
+        print(f"{changed} commented, {len(faults)} not")
+    if changed:
+        db.save()
+    return 1 if faults else 0
 
 
 def name_many(db, pairs, only=None):
@@ -703,6 +752,10 @@ def check(db):
             faults.append(f"ID {number}: kind {row.kind!r}")
         if not row.addresses and row.kind != "retired":
             faults.append(f"ID {number}: in no build, and not retired")
+        if "\n" in row.comment or "\t" in row.comment:
+            faults.append(f"ID {number}: a comment of more than one line")
+        if row.comment and row.kind == "retired":
+            faults.append(f"ID {number}: retired, with a comment")
         for key, address in row.addresses.items():
             low, high = bounds.get(key, (0, 0))
             if not low <= address < high:
@@ -834,6 +887,14 @@ def main(argv):
     if command == "names" and len(rest) == 1:
         try:
             return name(db, pairs_in(rest[0]), only)
+        except (OSError, ValueError) as fault:
+            print(fault, file=sys.stderr)
+            return 1
+    if command == "comment" and len(rest) == 2:
+        return comment(db, [tuple(rest)], only)
+    if command == "comments" and len(rest) == 1:
+        try:
+            return comment(db, pairs_in(rest[0]), only)
         except (OSError, ValueError) as fault:
             print(fault, file=sys.stderr)
             return 1

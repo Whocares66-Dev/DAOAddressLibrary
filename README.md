@@ -53,11 +53,12 @@ python tools\addrlib.py lookup 0x005D6740                    # an address, in an
 python tools\addrlib.py lookup 10547                         # an ID
 python tools\addrlib.py lookup SetPaused                     # a name, or part of one
 python tools\addrlib.py name 10547 CClientExoApp::SetPaused  # name an ID
+python tools\addrlib.py comment 10547 "Pauses the game"      # say what it does
 ```
 
 `python tools\addrlib.py --help` lists every command.
 
-The table's `name` column is the one place a name is written down. A project that uses the IDs holds the numbers and looks the names up here.
+The table's `name` column is the one place a name is written down. A project that uses the IDs holds the numbers and looks the names up here. The `comment` column beside it says in a line what the thing does, where a name cannot.
 
 ## The promise
 
