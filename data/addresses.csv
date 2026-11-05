@@ -5599,7 +5599,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5598,function,Geometry::ComputeOutcode,,0x004eae80,0x008366e0,0x004eae80
 5599,function,Geometry::FootOnSegment,,0x004eaf10,0x00836770,0x004eaf10
 5600,function,Geometry::PointWithinRadius2D,,0x004eb010,0x00836870,0x004eb010
-5601,function,Geometry::PointInTriangle,,0x004eb070,0x008368d0,0x004eb070
+5601,function,Geometry::PointInTriangle,"True when point p lies in triangle a, b, c in x and y: each edge's cross product with p is >= 0 (clockwise winding; a point on an edge is inside)",0x004eb070,0x008368d0,0x004eb070
 5602,function,Geometry::PointInPolygon2D,,0x004eb100,0x00836960,0x004eb100
 5603,function,Geometry::SegmentMeetsCircle,,0x004eb240,0x00836aa0,0x004eb240
 5604,function,Geometry::WithinRadius2D,,0x004eb340,0x00836ba0,0x004eb340
@@ -10261,7 +10261,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10260,function,GdaTables::GetAnimReplacement,,0x005ca6e0,0x006fd970,0x005ca6e0
 10261,function,GdaTables::GetAnimState,,0x005ca710,0x006fd9a0,0x005ca710
 10262,function,GdaTables::GetDeathAnimation,,0x005ca740,0x006fd9d0,0x005ca740
-10263,function,GdaTables::GetSyncPlacement,,0x005ca7b0,0x006fda40,0x005ca7b0
+10263,function,GdaTables::GetSyncPlacement,"Reads a sync placement row: (table, row, &percentage, &angleAttack, &angleTarget, &distance), by column hash; false unless the row exists and Percentage > 0",0x005ca7b0,0x006fda40,0x005ca7b0
 10264,function,GdaTables::ComputeSyncPlacement,,0x005ca860,0x006fdaf0,0x005ca860
 10265,function,"std::allocator<std::pair<unsigned int,std::wstring>>::construct",,0x005ca960,0x00505690,0x005ca960
 10266,function,"std::list<std::pair<unsigned int,std::wstring>>::_Buynode",,0x005ca9c0,0x005059a0,0x005ca9c0
@@ -10413,7 +10413,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10412,function,CRoom::CanSeeRoom,,0x005d22e0,0x00715d70,0x005d22e0
 10413,function,CRoom::Show,,0x005d2360,0x00715df0,0x005d2360
 10414,function,Core::GetVectorRange<?>,,0x005d2480,0x00749a60,0x005d2480
-10415,function,,,0x005d2520,0x0074b8e0,0x005d2520
+10415,function,std::vector<?>::_Insert_n,"The insert-n of a 4-byte-element vector, folded across element types: throws length_error when 0x3FFFFFFF - size < count (0x005D255E..0x005D2569); reached from resize and insert",0x005d2520,0x0074b8e0,0x005d2520
 10416,function,"std::vector<?>::resize(n,val)",,0x005d26e0,0x00493620,0x005d26e0
 10417,function,std::vector<?>::vector,,0x005d27a0,0x00610d50,0x005d27a0
 10418,function,CRoom::ApplyDarknessLevel,,0x005d2800,0x00715f10,0x005d2800
@@ -12267,8 +12267,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12266,function,CCParty::GetPartyPoolCount,,0x0062f9b0,0x0060b6c0,0x0062f9b0
 12267,function,ScriptBackend::ForScript_GETPARTYSIZE,,0x0062f9d0,0x0060b6e0,0x0062f9d0
 12268,function,CCParty::IsPerceivingHostiles,,0x0062f9f0,0x0060b700,0x0062f9f0
-12269,function,CCParty::AddItemAbilityToMembers,,0x0062fa70,0x0060b780,0x0062fa70
-12270,function,CCParty::RemoveItemAbilityFromMembers,,0x0062fb40,0x0060b850,0x0062fb40
+12269,function,CCParty::AddItemAbilityToMembers,"Gives an item's ability to every pool member (+0x240) with AddAbility, unless the hero already has it from that source (HasAbilitySource with the item's tag, +0xB8)",0x0062fa70,0x0060b780,0x0062fa70
+12270,function,CCParty::RemoveItemAbilityFromMembers,"On an item's removal: if the hero still has the ability from another item (FindAbilityItem), re-adds it with that item as source; else RemoveAbility from every member and a ForceInventoryRefreshMessage",0x0062fb40,0x0060b850,0x0062fb40
 12271,function,ScriptBackend::GetControlledArea,,0x0062fd10,0x0060ba20,0x0062fd10
 12272,function,CCParty::UpdateMemberGuiStats,,0x0062fd60,0x0060ba70,0x0062fd60
 12273,function,CCParty::GetCommonEffectFlags,,0x0062ffc0,0x0060bcd0,0x0062ffc0
@@ -12278,7 +12278,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12277,function,CCParty::SetHero,,0x00630240,0x0060bf50,0x00630240
 12278,function,CCParty::SetBackpackSort,,0x00630380,0x0060c090,0x00630380
 12279,function,Gff4::Block::SetLocalisedString,,0x006303c0,0x00588b20,0x006303c0
-12280,function,CCCreature::GetLevel,,0x00630460,0x0052bdb0,0x00630460
+12280,function,CCCreature::GetLevel,"The creature's level: Attributes[15]'s Total (+0x78), truncated",0x00630460,0x0052bdb0,0x00630460
 12281,function,"std::list<std::pair<unsigned int const,FollowerInfo>>::_Buynode",,0x006304b0,0x0060c0f0,0x006304b0
 12282,function,std::_Tree<?>::_Erase,,0x00630500,0x0047c260,0x00630500
 12283,function,std::_Tree<?>::_Buynode,,0x00630540,0x0047c2a0,0x00630540
@@ -12306,8 +12306,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12305,function,CCParty::RegisterWithTokenManager,,0x006310c0,0x0060cb50,0x006310c0
 12306,function,CCParty::ModifyFollowerApproval,,0x006311a0,0x0060cc30,0x006311a0
 12307,function,ScriptBackend::ForScript_SetFollowerApprovalDescription,,0x00631290,0x0060cd20,0x00631290
-12308,function,CCParty::OnItemAdded,,0x006313a0,0x0060ce30,0x006313a0
-12309,function,CCParty::OnItemRemoved,,0x00631470,0x0060cf00,0x00631470
+12308,function,CCParty::OnItemAdded,"When an item joins the party inventory: if its ability (+0x660) is not 200000, AddItemAbilityToMembers",0x006313a0,0x0060ce30,0x006313a0
+12309,function,CCParty::OnItemRemoved,"When an item leaves the party inventory: if its ability (+0x660) is not 200000, RemoveItemAbilityFromMembers",0x00631470,0x0060cf00,0x00631470
 12310,function,"std::map<unsigned int,PartyStoredItem>::find",,0x006314d0,0x0060cf60,0x006314d0
 12311,function,"std::map<unsigned int,PartyStoredItem>::equal_range",,0x00631540,0x0060d110,0x00631540
 12312,function,PartyMemberApproval::`scalar deleting destructor',,0x006315a0,0x0060d170,0x006315a0
@@ -12475,7 +12475,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12474,function,CCParty::`scalar deleting destructor',,0x00639d80,0x00615730,0x00639d80
 12475,function,CCParty::`scalar deleting destructor',,0x00639d90,0x00615740,0x00639d90
 12476,function,CCParty::GetOwnerId,,0x00639da0,0x00615770,0x00639da0
-12477,function,CCParty::Deselect,,0x00639db0,0x00615780,0x00639db0
+12477,function,CCParty::Deselect,"Deselects a creature in the selection (+0x184): removed when more than one is selected; when it is the only one, CycleSelection",0x00639db0,0x00615780,0x00639db0
 12478,function,CCParty::Select,,0x00639e50,0x00615820,0x00639e50
 12479,function,CCParty::OnSelectionChanged,,0x00639f80,0x00615950,0x00639f80
 12480,function,CCParty::HandleMessage_SelectCharacterMessage,,0x00639f90,0x00615960,0x00639f90
@@ -13439,7 +13439,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13438,function,ScriptCommand::GETCOMMANDQUEUESIZE,,0x0066d1c0,0x00559020,0x0066d1c0
 13439,function,ScriptCommand::LOADCUTSCENE,,0x0066d230,0x00559090,0x0066d230
 13440,function,ScriptCommand::GETNUMTACTICS,,0x0066d580,0x005593e0,0x0066d580
-13441,function,ScriptCommand::SETNUMTACTICS,,0x0066d600,0x00559460,0x0066d600
+13441,function,ScriptCommand::SETNUMTACTICS,"SETNUMTACTICS: sets the number of tactics slots (a uint), notifying only when the count grows",0x0066d600,0x00559460,0x0066d600
 13442,function,ScriptCommand::GETPRCENABLED,,0x0066d6d0,0x00559530,0x0066d6d0
 13443,function,ScriptCommand::ISPRCAVAILABLE,,0x0066d930,0x00559790,0x0066d930
 13444,function,MapLocation::SetStatus,,0x0066da00,0x00559860,0x0066da00
@@ -13524,7 +13524,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13523,function,CommandPool::AddBlock,,0x006744e0,0x00560540,0x006744e0
 13524,function,ScriptCommand::REMOVEEFFECT,,0x00674590,0x005605f0,0x00674590
 13525,function,ScriptCommand::REMOVEEFFECTSBYCREATOR,,0x00674690,0x005606f0,0x00674690
-13526,function,ScriptCommand::REMOVEITEMVFX,,0x006747f0,0x00560850,0x006747f0
+13526,function,ScriptCommand::REMOVEITEMVFX,"REMOVEITEMVFX: pops an object and an effect id; for an item, removes its effects of type 4 with that id (RemoveMatchingEffects on +0x70), with +0x75 set while it runs",0x006747f0,0x00560850,0x006747f0
 13527,function,ScriptCommand::REMOVEALLITEMVFXS,,0x006748e0,0x00560940,0x006748e0
 13528,function,CommandPool::TakeFreeCommand,,0x006749a0,0x00560a00,0x006749a0
 13529,function,CommandPool::AllocateCommand,,0x00674a90,0x00560af0,0x00674a90
@@ -13686,7 +13686,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13685,function,CCArea::EventHandler,,0x0067f180,0x0056b360,0x0067f180
 13686,function,CCArea::RaiseAreaLoadSpecialEvent,,0x0067f1c0,0x0056b3a0,0x0067f1c0
 13687,function,CCArea::LoadLayout,,0x0067f290,0x0056b470,0x0067f290
-13688,function,CCArea::AddWaitingObjects,,0x0067f420,0x0056b600,0x0067f420
+13688,function,CCArea::AddWaitingObjects,Moves waiting placeables (+0x244) and creatures (+0x254) into the area in queue order; a creature whose +0x7BC is set stays queued,0x0067f420,0x0056b600,0x0067f420
 13689,function,CCArea::SetFocusObject,,0x0067f5c0,0x0056b7a0,0x0067f5c0
 13690,function,CCArea::DestroyOwnedObjects,,0x0067f5f0,0x0056b7d0,0x0067f5f0
 13691,function,CCArea::ResortObjectByX,,0x0067f660,0x0056b840,0x0067f660
@@ -13750,7 +13750,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13749,function,CCArea::UpdateTriggersAtListener,,0x00682020,0x0056dc90,0x00682020
 13750,function,CCArea::AddToStaticObjectList,,0x006823f0,0x0056e060,0x006823f0
 13751,function,CCArea::AddToMobileObjectList,,0x00682420,0x0056e090,0x00682420
-13752,function,CCArea::AddToObjectLists,,0x00682450,0x0056e0c0,0x00682450
+13752,function,CCArea::AddToObjectLists,"Adds an object to the area's lists by type, static (5, 8, 10, 12, 13, 15) or mobile (6, 7, 9), then into the list at +0x690 in x order (FindObjectIndexByX)",0x00682450,0x0056e0c0,0x00682450
 13753,function,"std::map<std::wstring,float>::operator[]",,0x00682500,0x0056e170,0x00682500
 13754,function,CCModule::GetLinkAreaMiniMaps,,0x006825e0,0x0056e2d0,0x006825e0
 13755,function,std::vector<float>::insert,,0x00682610,0x0056e300,0x00682610
@@ -14580,7 +14580,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14579,function,CCCreature::RaiseAttackImpact,,0x006a6080,0x00597240,0x006a6080
 14580,function,CCCreature::OnAnimEventAttackImpact,,0x006a6230,0x005973f0,0x006a6230
 14581,function,CCCreature::OnAnimEventDeathblowDamage,,0x006a62f0,0x005974b0,0x006a62f0
-14582,function,CCCreature::FindAbilityItem,,0x006a6400,0x005975c0,0x006a6400
+14582,function,CCCreature::FindAbilityItem,"Finds an item with the given ability id (+0x660) in the creature's inventory (+0xBF0), an item whose tag matches first",0x006a6400,0x005975c0,0x006a6400
 14583,function,HandleEquipAnimationEvent,,0x006a64b0,0x00597670,0x006a64b0
 14584,function,CCCreature::RefreshWieldedWeapons,,0x006a6640,0x00597800,0x006a6640
 14585,function,ApplyGhostVfxToItem,,0x006a6690,0x00597850,0x006a6690
@@ -14625,7 +14625,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14624,function,CCCreature::HasLootableItems,,0x006a90d0,0x0059a290,0x006a90d0
 14625,function,CCCreature::GetDeathblowAttackAnimationId,,0x006a9140,0x0059a300,0x006a9140
 14626,function,Pathfinding::Path::GetPointCount,,0x006a91c0,0x0059a380,0x006a91c0
-14627,function,CCCreature::ForScript_SpawnBodyBag,,0x006a91e0,0x0059a3a0,0x006a91e0
+14627,function,CCCreature::ForScript_SpawnBodyBag,Spawns the body bag; first sets the decay delay to 1000 when DecayBehaviour is 3,0x006a91e0,0x0059a3a0,0x006a91e0
 14628,function,CCCreature::ForScript_InteractWithObject,,0x006a9390,0x0059a550,0x006a9390
 14629,function,CCCreature::HandleEmptiedBodyBag,,0x006a93f0,0x0059a5b0,0x006a93f0
 14630,function,CCCreature::StopMovement,,0x006a9430,0x0059a5f0,0x006a9430
@@ -14635,7 +14635,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14634,function,CCItem::GetReservationCount,,0x006a9600,0x0059a7c0,0x006a9600
 14635,function,std::auto_ptr<std::wstring>::~auto_ptr,,0x006a9620,0x0059a7e0,0x006a9620
 14636,function,SubActionProgress::SubActionProgress,,0x006a9640,0x0059a800,0x006a9640
-14637,function,CCreatureAttribute::CCreatureAttribute,,0x006a96c0,0x0059a880,0x006a96c0
+14637,function,CCreatureAttribute::CCreatureAttribute,"Constructs a creature attribute: four float SmartData attributes, Base, Current, Total and Modifier",0x006a96c0,0x0059a880,0x006a96c0
 14638,function,CCreatureAttribute::`scalar deleting destructor'`adjustor{28}',,0x006a9900,0x0059aac0,0x006a9900
 14639,function,CCreatureAttribute::`scalar deleting destructor'`adjustor{32}',,0x006a9910,0x0059aad0,0x006a9910
 14640,function,CCreatureAttribute::`scalar deleting destructor'`adjustor{8}',,0x006a9920,0x0059aae0,0x006a9920
@@ -14846,7 +14846,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14845,function,ScriptBackend::ForScript_GetPerceivedCreatureList,,0x006b3330,0x005a4dc0,0x006b3330
 14846,function,CCCreature::TakeItemsByTag,,0x006b3410,0x005a4ea0,0x006b3410
 14847,function,CCCreature::ForScript_RemoveItemProperty,,0x006b3540,0x005a4fd0,0x006b3540
-14848,function,CCCreature::SEffectsHolder_OnDeath,,0x006b3620,0x005a50b0,0x006b3620
+14848,function,CCCreature::SEffectsHolder_OnDeath,"On death: look-at to neutral, MovementController::HardStop, lifts the movement obstacle unless DecayBehaviour is 2, RefreshTriggerMembership, then slot 0x154",0x006b3620,0x005a50b0,0x006b3620
 14849,function,CCCreature::SEffectsHolder_OnRevive,,0x006b3690,0x005a5120,0x006b3690
 14850,function,,,0x006b36d0,0x005a5160,0x006b36d0
 14851,function,"SmartData::Attribute<ECBase::ECDynArray<CCreatureAttribute*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x006b3c80,0x005a5710,0x006b3c80
@@ -16560,7 +16560,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16559,function,CCCreatureStats::CheckModalAbilities,"Checks the creature's modal abilities, given autoCancel, an ability and a shapechange flag; called by CCCreature::SetAppearance (0x006C1591) with (0, 0, 1)",0x0071dee0,0x0061c070,0x0071dee0
 16560,function,CCCreatureStats::RemoveQueuedAbilityCommands,,0x0071e0d0,0x0061c260,0x0071e0d0
 16561,function,CCCreatureStats::RefreshQueuedAbilities,,0x0071e1d0,0x0061c360,0x0071e1d0
-16562,function,CCCreatureStats::RefreshCreatureAttributes,,0x0071e300,0x0061c490,0x0071e300
+16562,function,CCCreatureStats::RefreshCreatureAttributes,"Refreshes each creature attribute's Base, Current, Total and Modifier from CreatureProperties, by the attribute's type",0x0071e300,0x0061c490,0x0071e300
 16563,function,CCCreatureStats::CCCreatureStats,,0x0071e940,0x0061cba0,0x0071e940
 16564,function,CCCreatureStats::AddAbility,,0x0071eac0,0x0061cd20,0x0071eac0
 16565,function,CCCreatureStats::LoadTemplateAbilityList,,0x0071ecd0,0x0061cf30,0x0071ecd0
@@ -17548,7 +17548,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17547,function,CCObject::SetCurrentCommand,,0x0073cb20,0x006485a0,0x0073cb20
 17548,function,CCObject::RunCurrentCommand,,0x0073cb60,0x006485e0,0x0073cb60
 17549,function,,,0x0073ccd0,0x00648750,0x0073ccd0
-17550,function,CCObject::QueueCommand,,0x0073cd10,0x00648790,0x0073cd10
+17550,function,CCObject::QueueCommand,"Queues a command on the object: a player command raises 0x5E; for a creature and command type 0x19, CheckModalAbilities is called (0x0073CEF3)",0x0073cd10,0x00648790,0x0073cd10
 17551,function,CCObject::LinkSubAction,,0x0073cf20,0x006489a0,0x0073cf20
 17552,function,SubActionPool::Grow,,0x0073cf50,0x006489d0,0x0073cf50
 17553,function,CCObject::QueueNewCommand,,0x0073d000,0x00648a80,0x0073d000
@@ -19838,7 +19838,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19837,function,CSSubActionHandler::GetInteractionAnimation,,0x007a4bc0,0x006760f0,0x007a4bc0
 19838,function,CSSubActionHandler::PlayClipTimed,,0x007a4d50,0x00676280,0x007a4d50
 19839,function,CSSubActionHandler::QueueAimFireIfSeen,,0x007a4dd0,0x00676300,0x007a4dd0
-19840,function,CSSubActionHandler::SetWeaponState,,0x007a4f90,0x006764c0,0x007a4f90
+19840,function,CSSubActionHandler::SetWeaponState,"Draws or sheathes the weapon for a sub-action; Drive, MoveToLocation, ApproachRanged and ApproachMelee call CheckModalAbilities right after it",0x007a4f90,0x006764c0,0x007a4f90
 19841,function,CSSubActionHandler::ApproachGoalMoved,,0x007a50f0,0x00676620,0x007a50f0
 19842,function,CSSubActionHandler::TurnToward,,0x007a51f0,0x00676720,0x007a51f0
 19843,function,CSSubActionHandler::ChooseAwayGoal,,0x007a5450,0x00676980,0x007a5450
@@ -19892,7 +19892,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19891,function,CombatAnimPicker::CombatAnimPicker,,0x007aaa50,0x0067bbf0,0x007aaa50
 19892,function,CombatAnimPicker::~CombatAnimPicker,,0x007aaad0,0x0067bc70,0x007aaad0
 19893,function,CSSubActionHandler::~CSSubActionHandler,,0x007aab60,0x0067bd00,0x007aab60
-19894,function,CSSubActionHandler::ExecuteEffect,,0x007aac10,0x0067bdb0,0x007aac10
+19894,function,CSSubActionHandler::ExecuteEffect,"Runs a sub-action's effect; in its duration-6 branch, when the time runs out, raises the DEATH event, deselects a party member (CCParty::Deselect) and destroys the physics controller",0x007aac10,0x0067bdb0,0x007aac10
 19895,function,CSSubActionHandler::CSSubActionHandler,,0x007ab830,0x0067cab0,0x007ab830
 19896,function,CSSubActionHandler::`scalar deleting destructor',,0x007ab8b0,0x0067cb30,0x007ab8b0
 19897,function,CSSubActionHandler::Initialize,,0x007ab8d0,0x0067cb50,0x007ab8d0
@@ -19978,7 +19978,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19977,function,"SmartData::Attribute<ECBase::ECDynArray<PartyTacticEntry*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x007af0e0,0x0068cea0,0x007af0e0
 19978,function,"std::fill<ECBase::ECDynArray *,ECBase::ECDynArray>",,0x007af160,0x00742370,0x007af160
 19979,function,PartyTacticEntry::DefineSaveStruct,,0x007af190,0x0068cf50,0x007af190
-19980,function,PartyTactics::ResizeEntries,,0x007af2e0,0x0068d0a0,0x007af2e0
+19980,function,PartyTactics::ResizeEntries,"Resizes the party tactics entries to n: deletes the entries from n up (unsigned compare), resizes the vector to n, then makes n - old new PartyTacticEntry objects of 0x160 bytes",0x007af2e0,0x0068d0a0,0x007af2e0
 19981,function,PartyTactics::ReadEntriesFromSave,,0x007af420,0x0068d1e0,0x007af420
 19982,function,ScriptBackend::ForScript_AddTacticPresetID,,0x007af4e0,0x0068d2a0,0x007af4e0
 19983,function,PartyTactics::ListBaseConditions,,0x007af570,0x0068d330,0x007af570
@@ -20586,7 +20586,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20585,function,MeleeRing::ClearDisabled,,0x007cb180,0x006b2520,0x007cb180
 20586,function,MeleeRing::ClearNearOnly,,0x007cb1a0,0x006b2540,0x007cb1a0
 20587,function,MeleeRing::ClearClaimMargin,,0x007cb1c0,0x006b2560,0x007cb1c0
-20588,function,MeleeRing::ClearBodyMargin,,0x007cb200,0x006b25a0,0x007cb200
+20588,function,MeleeRing::ClearBodyMargin,Clears a body's guard: every place whose guard (+0x14) is the id gets -1,0x007cb200,0x006b25a0,0x007cb200
 20589,function,MeleeRing::MarkDisabledArc,,0x007cb240,0x006b25e0,0x007cb240
 20590,function,FixedArray<unsigned int>::Resize,,0x007cb2f0,0x0053e3a0,0x007cb2f0
 20591,function,"FixedArray<std::pair<unsigned int,float>>::Resize",,0x007cb370,0x006b2690,0x007cb370
@@ -20596,11 +20596,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20595,function,MeleeRing::PlaceFacesAway,,0x007cb700,0x006b2aa0,0x007cb700
 20596,function,MeleeRing::PlaceCoveredByCircle,,0x007cb790,0x006b2b30,0x007cb790
 20597,function,MeleeRing::MarkClaimMargin,,0x007cb870,0x006b2c10,0x007cb870
-20598,function,MeleeRing::MarkMargin,,0x007cb920,0x006b2cc0,0x007cb920
+20598,function,MeleeRing::MarkMargin,"Guards the places just outside a body's span: max(s_markMarginPlaces, s_claimMarginPlaces) places below low and above high get guard (+0x14) = id where it is -1",0x007cb920,0x006b2cc0,0x007cb920
 20599,function,MeleeRing::WidthInPlaces,,0x007cb9e0,0x006b2d80,0x007cb9e0
 20600,function,MeleeRing::StandPoint,,0x007cba90,0x006b2e30,0x007cba90
-20601,function,MeleeRing::ClearBody,,0x007cbbf0,0x006b2f90,0x007cbbf0
-20602,function,MeleeRings::ClearBody,,0x007cbc50,0x006b2ff0,0x007cbc50
+20601,function,MeleeRing::ClearBody,Takes a body off the ring: places whose body (+0xC) is the id get -1 and distance 65505.0; then ClearBodyMargin,0x007cbbf0,0x006b2f90,0x007cbbf0
+20602,function,MeleeRings::ClearBody,ClearBody on every melee ring; called by CCCreature::UpdatePerception (0x006B8BF6) for a creature no longer perceived,0x007cbc50,0x006b2ff0,0x007cbc50
 20603,function,MeleeRings::BuildEdgeDistanceKeys,,0x007cbca0,0x006b3040,0x007cbca0
 20604,function,MeleeRing::Clear,,0x007cbdd0,0x006b31c0,0x007cbdd0
 20605,function,"std::_Insertion_sort<std::pair<unsigned int,float>*,LodLess>",,0x007cbeb0,0x006d6c50,0x007cbeb0
@@ -20614,8 +20614,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20613,function,MeleeRing::GetBodiesInArc,,0x007cc4f0,0x006b38c0,0x007cc4f0
 20614,function,MeleeRings::ClaimNearest,,0x007cc5b0,0x006b3980,0x007cc5b0
 20615,function,MeleeRings::GetBodiesInArc,,0x007cc6e0,0x006b3ab0,0x007cc6e0
-20616,function,MeleeRing::PlacesCoveredBy,,0x007cc730,0x006b3b00,0x007cc730
-20617,function,MeleeRing::MarkPerceivedBody,,0x007cc870,0x006b3c40,0x007cc870
+20616,function,MeleeRing::PlacesCoveredBy,"Lists the ring places a body at a point with a radius covers: after a WithinRadius2D test, walks up then down from PlaceOfPoint, stopping at a place that faces away or the circle no longer covers",0x007cc730,0x006b3b00,0x007cc730
+20617,function,MeleeRing::MarkPerceivedBody,"Marks a perceived body on the ring: ClearBody(id), then the places it covers (PlacesCoveredBy) take it, and MarkMargin guards the places around them",0x007cc870,0x006b3c40,0x007cc870
 20618,function,MeleeRings::Clear,,0x007ccae0,0x006b3eb0,0x007ccae0
 20619,function,MeleeRings::MeleeRings,,0x007ccc00,0x006b3fd0,0x007ccc00
 20620,function,MeleeRings::DestroyRings,,0x007ccc10,0x006b3fe0,0x007ccc10
@@ -21089,7 +21089,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21088,function,CastRecordHolder::Get`adjustor{1160}',,0x007e68b0,0x006cdd00,0x007e68b0
 21089,function,ProjectileCache::ProjectileEntry::Load,,0x007e68c0,0x006cdd50,0x007e68c0
 21090,function,CProjectile::AddModelToArea,,0x007e69b0,0x006cde40,0x007e69b0
-21091,function,CProjectile::IsInsideCasterSpace,,0x007e6a10,0x006cdea0,0x007e6a10
+21091,function,CProjectile::IsInsideCasterSpace,"True when the projectile row's Simulation flag (+0x3A) is 0, the caster (+0x4BC) exists, and the distance flown (+0x468) is under the caster's radius (slot 0x9C) + 1.2",0x007e6a10,0x006cdea0,0x007e6a10
 21092,function,CProjectile::ComputeStuckPosition,,0x007e6a80,0x006cdf10,0x007e6a80
 21093,function,CProjectile::BeginCessation,,0x007e6b40,0x006cdfd0,0x007e6b40
 21094,function,CProjectile::UpdateImpactTimer,,0x007e6c60,0x006ce0f0,0x007e6c60
@@ -21127,7 +21127,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21126,function,ProjectileCache::CreateEntry,,0x007e8b30,0x006cffd0,0x007e8b30
 21127,function,ProjectileCache::ProjectileEntry::~ProjectileEntry,,0x007e8ba0,0x006d0040,0x007e8ba0
 21128,function,ProjectileCache::ProjectileEntry::`scalar deleting destructor',,0x007e8bf0,0x006d0090,0x007e8bf0
-21129,function,CProjectile::SweepCollision,,0x007e8c10,0x006d00b0,0x007e8c10
+21129,function,CProjectile::SweepCollision,"Collision sweep: a static ray (mask 0x1024) unless still inside the caster's space, then, when the row's DynamicCollisions (+0x39) is set, an object ray (mask 0x20002) with side rays at +- the width (+0x470)",0x007e8c10,0x006d00b0,0x007e8c10
 21130,function,CProjectile::Arrive,,0x007e90b0,0x006d0550,0x007e90b0
 21131,function,CProjectile::UpdateFlying,,0x007e9170,0x006d0610,0x007e9170
 21132,function,CProjectile::Update,,0x007e9630,0x006d0ad0,0x007e9630
@@ -33617,14 +33617,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33616,function,MovementController::Update,,0x00a644e0,0x0070ab70,0x00a644e0
 33617,function,ILodRecycler::ILodRecycler,,0x00a64620,0x007106e0,0x00a64620
 33618,function,EffectsHolder::HasEffectListField,,0x00a64630,0x0070be70,0x00a64630
-33619,function,EffectList::FindTopAnimationEffect,,0x00a64640,0x0070be80,0x00a64640
+33619,function,EffectList::FindTopAnimationEffect,Scans the effect list (+8) from the back for the effect with the highest animation priority above 0; an earlier effect replaces the one held only when its priority is strictly greater,0x00a64640,0x0070be80,0x00a64640
 33620,function,EffectList::GetEffectFlags,,0x00a646e0,0x0070bf20,0x00a646e0
 33621,function,EffectsHolder::GetEffectsFlags,,0x00a64740,0x0070bf80,0x00a64740
 33622,function,CGameEffect::MatchesAll,,0x00a64770,0x0070bfb0,0x00a64770
 33623,function,EffectList::RemoveEffect,,0x00a64840,0x0070c080,0x00a64840
 33624,function,EffectList::EffectList,,0x00a64880,0x0070c0c0,0x00a64880
 33625,function,EffectList::~EffectList,,0x00a648a0,0x0070c0e0,0x00a648a0
-33626,function,EffectList::AddEffect,,0x00a64900,0x0070c140,0x00a64900
+33626,function,EffectList::AddEffect,"Adds a non-null effect to the list (+4) and makes it the top (+0) when its animation priority is above 0, it is not invalid (+0x48), and the current top's priority is not higher",0x00a64900,0x0070c140,0x00a64900
 33627,function,EffectList::CollectMatchingEffects,,0x00a64950,0x0070c190,0x00a64950
 33628,function,EffectList::CollectEffectsMatchingPattern,,0x00a64a80,0x0070c2c0,0x00a64a80
 33629,function,EffectList::ReadFromSave,,0x00a64b10,0x0070c350,0x00a64b10
@@ -33640,7 +33640,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33639,function,CGameEffect::GetEffectsTableInt,,0x00a65260,0x0070ae60,0x00a65260
 33640,function,CGameEffect::CGameEffect,,0x00a652a0,0x0070aea0,0x00a652a0
 33641,function,CGameEffect::`scalar deleting destructor',,0x00a65360,0x0070af60,0x00a65360
-33642,function,CGameEffect::GetAnimationPriority,,0x00a65380,0x0070af80,0x00a65380
+33642,function,CGameEffect::GetAnimationPriority,An effect's animation priority (this in ecx): 999 for duration type 6 (+0x28); 0 when it has no animation (+0x34) and its type (+0x24) is 12 or more; else +0x38,0x00a65380,0x0070af80,0x00a65380
 33643,function,CGameEffect::GetIgnoreDeath,,0x00a653a0,0x0070afa0,0x00a653a0
 33644,function,CGameEffect::ConsidersHostile,,0x00a653b0,0x0070afb0,0x00a653b0
 33645,function,CGameEffect::IsSync,,0x00a653d0,0x0070afd0,0x00a653d0
