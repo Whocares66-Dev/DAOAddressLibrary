@@ -13252,7 +13252,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13251,function,ScriptCommand::GETPCSPEAKER,,0x00661870,0x0054d5d0,0x00661870
 13252,function,ScriptCommand::SETACTIVE,,0x006618b0,0x0054d610,0x006618b0
 13253,function,ScriptCommand::SETFORCEVISIBLE,,0x00661c00,0x0054d960,0x00661c00
-13254,function,ScriptCommand::FireProjectile,,0x00661c70,0x0054d9d0,0x00661c70
+13254,function,ScriptCommand::FireProjectile,"COMMAND_FIREPROJECTILE (0xC1) and COMMAND_FIREHOMINGPROJECTILE (0x172). Pops nType and vSourcePosition. Then, for 0xC1 only, vTargetPosition; for 0x172 only, an object. Then nCrustEffectId; for 0xC1 only, bWideAngle; then oEventTarget. It makes a projectile in the area and writes +0x4A4 (type), +0x4D0..+0x4EC (source and target vectors), +0x4C0 (0x172's object, OBJECT_INVALID for 0xC1), +0x4AC (crust effect), +0x4B9 (wide angle), +0x4C4 (event target) and +0x448 = 2 (flying). Returns the projectile's id.",0x00661c70,0x0054d9d0,0x00661c70
 13255,function,ScriptCommand::SETPROJECTILEIMPACTEVENT,,0x00661e50,0x0054dbb0,0x00661e50
 13256,function,ScriptCommand::DISPLAYPORTRAITMESSAGE,,0x00661f40,0x0054dca0,0x00661f40
 13257,function,ScriptCommand::DISPLAYFLOATYMESSAGE,,0x00662180,0x0054dee0,0x00662180
@@ -14485,7 +14485,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14484,function,CCCreature::SetAnimationSpeed,,0x006a3700,0x00594820,0x006a3700
 14485,function,CCCreature::DestroyTactics,,0x006a3710,0x00594830,0x006a3710
 14486,function,CCCreature::IsImmortal,,0x006a3750,0x00594870,0x006a3750
-14487,function,CCCreature::FindDeathblowSyncPlacement,,0x006a3780,0x00594910,0x006a3780
+14487,function,CCCreature::FindDeathblowSyncPlacement,"__thiscall on the attacker, ret 4: (target). For i = 1..5, reads sync placement table 117+i (GdaTables::GetSyncPlacement: table, the target's appearance row at +0x7B0 +0x58, and four out-pointers on the stack, two to the same local). Each row gives a yaw and an offset, which are rotated into the target's frame and compared with the attacker's position against a size-scaled limit (slot 0x9C). Returns the index 1..5 of the placement chosen, or 0 when none fits or a table row is missing.",0x006a3780,0x00594910,0x006a3780
 14488,function,CCCreature::QueueInteractCommand,,0x006a3920,0x00594ab0,0x006a3920
 14489,function,CCCreature::CanBleed,,0x006a3a30,0x00594bc0,0x006a3a30
 14490,function,CCCreature::GetDecayBehaviour,,0x006a3a80,0x00594c10,0x006a3a80
@@ -14967,7 +14967,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14966,function,CCCreature::RegisterMessageHandlers,,0x006c1310,0x005b2d50,0x006c1310
 14967,function,CCCreature::OnModelLoadedCallback,,0x006c13b0,0x005b2df0,0x006c13b0
 14968,function,CCCreature::RegisterClass,,0x006c13e0,0x005b2e20,0x006c13e0
-14969,function,CCCreature::SetAppearance,,0x006c1400,0x005b2e40,0x006c1400
+14969,function,CCCreature::SetAppearance,"__thiscall, ret 0x10: (CAppearance* appearance, ?, ?, bool force). Returns 1 at once when modelBuildAllowed (+0x7B4) is clear or appearance is null. Unless force is set, an appearance with the same row (+0x58) and byte +0x50 as the current one (+0x7B0) is not reapplied. Otherwise it rebuilds the creature's model and calls CCCreatureStats::CheckModalAbilities(stats, 0, 0, 1) (0x006C1591).",0x006c1400,0x005b2e40,0x006c1400
 14970,function,CCCreature::OnItemEquipped,,0x006c16e0,0x005b3120,0x006c16e0
 14971,function,CCCreature::OnItemUnequipped,,0x006c19f0,0x005b3430,0x006c19f0
 14972,function,CCCreature::RebuildAppearanceFromEquipment,,0x006c1bf0,0x005b3630,0x006c1bf0
@@ -16553,7 +16553,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16552,function,CCCreatureStats::GetAbilityList,,0x0071d920,0x0061ba50,0x0071d920
 16553,function,ScriptBackend::ForScript_Engine_SetModalAbilityGUI,,0x0071da90,0x0061bbc0,0x0071da90
 16554,function,CCCreatureStats::SetCooldown,,0x0071dce0,0x0061be10,0x0071dce0
-16555,function,ScriptBackend::ForScript_GetConditionedAbilities,,0x0071dd10,0x0061be40,0x0071dd10
+16555,function,ScriptBackend::ForScript_GetConditionedAbilities,"__thiscall on the creature's stats, ret 8: (outVector, conditions). For each modal ability in the stats' list at +0xFC, in order, calls ForScript_CanUseConditionedAbility(ability, conditions, 0), and pushes the ability into outVector unless the answer is 1.",0x0071dd10,0x0061be40,0x0071dd10
 16556,function,CCCreatureStats::`scalar deleting destructor',,0x0071ddc0,0x0061bf50,0x0071ddc0
 16557,function,CCCreatureStats::SaveSchema_Fields,,0x0071dde0,0x0061bf70,0x0071dde0
 16558,function,CCCreatureStats::SaveSchema,,0x0071de50,0x0061bfe0,0x0071de50
@@ -19714,7 +19714,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19713,function,EffectsManager::MarkStaticsInitialized,,0x0079f110,0x00670670,0x0079f110
 19714,function,EffectsManager::EffectsManager,,0x0079f120,0x00670680,0x0079f120
 19715,function,EffectsManager::~EffectsManager,,0x0079f140,0x006706a0,0x0079f140
-19716,function,EffectsHolder::TryStartEffectAnimation,,0x0079f180,0x006706e0,0x0079f180
+19716,function,EffectsHolder::TryStartEffectAnimation,"__cdecl (holder, effect), returns bool. False unless the holder's slot +4 returns something; false if the holder's current top effect has a higher animation priority than this one, or if this one isn't IsSync. Otherwise tail-calls the holder's slot +0x68 (CCObject::IsNotDeathblowing on objects).",0x0079f180,0x006706e0,0x0079f180
 19717,function,EffectsHolder::AddEffectListField,,0x0079f1e0,0x00670740,0x0079f1e0
 19718,function,EffectsHolder::HasEffectListField,,0x0079f1f0,0x00670750,0x0079f1f0
 19719,function,SEffectsHolder::WriteToSave,,0x0079f200,0x00670760,0x0079f200
@@ -19723,7 +19723,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19722,function,EffectsHolder::GetTopEffectAnimationPriority,,0x0079f270,0x006707d0,0x0079f270
 19723,function,CGameEffect::AddElapsed,,0x0079f2a0,0x00670800,0x0079f2a0
 19724,function,EffectMatcher::IsSync,,0x0079f2c0,0x00670820,0x0079f2c0
-19725,function,EffectMatcher::EngineFlagIs,,0x0079f2e0,0x00670840,0x0079f2e0
+19725,function,EffectMatcher::EngineFlagIs,"__stdcall (effect, index), returns bool: true when CDataArrays::GetFlag(index) on the effect's data arrays (+0x54) is 1.",0x0079f2e0,0x00670840,0x0079f2e0
 19726,function,EffectsManager::ApplyCameraShake,,0x0079f300,0x00670860,0x0079f300
 19727,function,EffectsManager::IsVisualUnstarted,,0x0079f330,0x00670890,0x0079f330
 19728,function,EffectsManager::IsHeldOrNonVisualEffect,,0x0079f380,0x006708e0,0x0079f380
@@ -19770,7 +19770,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19769,function,EffectsHolder::RemoveMatchingEffects,,0x007a0c90,0x006721f0,0x007a0c90
 19770,function,SEffectsHolder::RemoveDeathEffects,,0x007a0d30,0x00672290,0x007a0d30
 19771,function,EffectsHolder::RemoveSyncEffects,,0x007a0dc0,0x00672320,0x007a0dc0
-19772,function,EffectsManager::ApplyEffect,,0x007a0e30,0x00672390,0x007a0e30
+19772,function,EffectsManager::ApplyEffect,"__thiscall, ret 8: (holder, effect). Returns 1 for a null effect, and 3 (marking it invalid) for an effect already invalid (+0x48) or of type 0. Types 1..11 with a handler in the manager's table at this +0 go to that handler when the holder's slot +0x6C allows, and its result is returned. Otherwise it handles sync partners (distance check and removal of the matching effects), raises the apply event, and for EFFECT_TYPE_UPKEEP (0x3F8) passes the sum of every upkeep effect's float 0 to the holder's slot +0x80 (CCCreature::SEffectsHolder_SetAbilityUpkeepCost). It sets the effect's end time from its animation's length. For EFFECT_TYPE_SIMULATE_DEATH (0x415) it calls slot +0x78 (CCCreature::SEffectsHolder_OnDeath) when no death effect is on top. It queues the effect's animation (slot +0x1C, CCObject::QueueEffectAnimation), calls slot +0x70 (CCCreature::SEffectsHolder_OnSyncEffectApplied) when TryStartEffectAnimation succeeds and the holder's byte +4 is set, and returns 0.",0x007a0e30,0x00672390,0x007a0e30
 19773,function,EffectsManager::ApplyDeathEffectHandler,,0x007a12e0,0x00672840,0x007a12e0
 19774,function,EffectsManager::RemoveDeathEffectHandler,,0x007a1410,0x00672970,0x007a1410
 19775,function,EffectsManager::Update,,0x007a1500,0x00672a60,0x007a1500
@@ -19982,7 +19982,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19981,function,PartyTactics::ReadEntriesFromSave,,0x007af420,0x0068d1e0,0x007af420
 19982,function,ScriptBackend::ForScript_AddTacticPresetID,,0x007af4e0,0x0068d2a0,0x007af4e0
 19983,function,PartyTactics::ListBaseConditions,,0x007af570,0x0068d330,0x007af570
-19984,function,PartyTactics::ListItems,,0x007af6c0,0x0068d480,0x007af6c0
+19984,function,PartyTactics::ListItems,"Lists the party inventory's items (party +0x20C, ItemLocation::AppendItemsTo) whose ability (item +0x660) has, in ABI_base (table 1), column 0x0F642429 with the target type's bit (TargetTypeToAbilityTargetBit) and column 0x50A30845 nonzero. __cdecl (targetType, outVector): with outVector null it returns 1 at the first such item (an existence test); otherwise it pushes each such item's id into outVector and returns 0.",0x007af6c0,0x0068d480,0x007af6c0
 19985,function,PartyTactics::DefineSaveStructs,,0x007af850,0x0068d610,0x007af850
 19986,function,"std::_Copy_opt<ECBase::ECDynArray<?>*,ECBase::ECDynArray<?>*>",,0x007af9f0,0x0068d7b0,0x007af9f0
 19987,function,"std::_Uninit_copy<ECBase::ECDynArray<?>*,ECBase::ECDynArray<?>*,std::allocator<ECBase::ECDynArray<?>>>",,0x007afa30,0x0068d7f0,0x007afa30
@@ -21106,7 +21106,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21105,function,CProjectile::ReleaseModelAndEffects,,0x007e7680,0x006ceb10,0x007e7680
 21106,function,CProjectile::ScatterMissAim,,0x007e76d0,0x006ceb60,0x007e76d0
 21107,function,CProjectile::StickInTarget,,0x007e79d0,0x006cee60,0x007e79d0
-21108,function,CProjectile::ComputeLaunchAngle,,0x007e7cf0,0x006cf180,0x007e7cf0
+21108,function,CProjectile::ComputeLaunchAngle,"Returns the launch pitch in degrees (x 57.29578) for the ballistic arc from the projectile's position to its destination (GetDestination): x is the horizontal distance and y the height difference. g = Mass (+0x460, the projectile table's Mass read at launch) x -9.81, and v = InitialSpeed (+0x464). The discriminant is v^4 - g(g x^2 + 2 y v^2). The flag +0x4B9 (FireProjectile's bWideAngle) chooses between the two roots. x <= 1e-6 returns 0; a discriminant <= 0 calls MarkForRemoval and returns 0.",0x007e7cf0,0x006cf180,0x007e7cf0
 21109,retired,,,,,
 21110,retired,,,,,
 21111,function,CProjectile::GetLaunchRotation,,0x007e7f20,0x006cf3b0,0x007e7f20
@@ -21120,7 +21120,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21119,function,CProjectile::`scalar deleting destructor'`adjustor{56}',,0x007e85f0,0x006cfa90,0x007e85f0
 21120,function,CProjectile::~CProjectile,,0x007e8600,0x006cfaa0,0x007e8600
 21121,function,CProjectile::Start,,0x007e8700,0x006cfba0,0x007e8700
-21122,function,CProjectile::RaiseAttackImpact,,0x007e87c0,0x006cfc60,0x007e87c0
+21122,function,CProjectile::RaiseAttackImpact,"Raises event 0x1D (attack impact) from the projectile. Object 0 is the event target (+0x4C4). Ints 0..2 are the attack record's [0] and [2], and +0x4B0. Vector 0 is the projectile's position (+0x120); vector 1 is the Y axis of the model's rotation (GetModelRotation, Quaternion::GetYAxis). Objects 1.. are the hit targets passed in, or the record's own target (+4) when none are passed. Then, unless the record's result is 0, 3 or 5, it walks the list at +0x4F8.",0x007e87c0,0x006cfc60,0x007e87c0
 21123,function,CProjectile::`scalar deleting destructor',,0x007e89d0,0x006cfe70,0x007e89d0
 21124,function,CProjectile::RaiseImpact,,0x007e89f0,0x006cfe90,0x007e89f0
 21125,function,ProjectileCache::ProjectileEntry::ProjectileEntry,,0x007e8ab0,0x006cff50,0x007e8ab0
