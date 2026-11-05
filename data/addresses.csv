@@ -14506,7 +14506,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14505,function,CCCreature::PlayAttackAnimationRow,,0x006a41a0,0x00595330,0x006a41a0
 14506,function,CCCreature::GetMinimapFlags,,0x006a4270,0x00595400,0x006a4270
 14507,function,CCCreature::UpdateByte0xCFC,,0x006a42e0,0x00595470,0x006a42e0
-14508,function,EffectDisplayEntry::SyncFromEffect,,0x006a4360,0x005954f0,0x006a4360
+14508,function,EffectDisplayEntry::SyncFromEffect,"Fills an effect bar entry from a CGameEffect: AbilityID attribute (entry+0x58) from effect+0x44; RemainingPercent (+0x68) = (dur - elapsed) / dur, 0 when dur (effect+0x2C) is 0, elapsed at effect+0x30; RemainingTime (+0x78) = dur - elapsed (ms); IsConsideredHostile (+0x88) = CGameEffect::ConsidersHostile.",0x006a4360,0x005954f0,0x006a4360
 14509,function,CWalkHitInfo::CWalkHitInfo,,0x006a43f0,0x00595580,0x006a43f0
 14510,function,CCItem::IsDroppableByte,"__cdecl (item): returns the item's droppable byte +0x4B0, which MakeAmmunition clears; read by CCCreature::HasLootableItems through a pointer (0x006A9102, 0x006A911D)",0x006a4440,0x005955f0,0x006a4440
 14511,function,CombatTreeSetRecord::CombatTreeSetRecord,,0x006a4450,0x00595600,0x006a4450
@@ -14925,7 +14925,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14924,function,CCCreature::~CCCreature,,0x006bafe0,0x005acaa0,0x006bafe0
 14925,function,CCCreature::UpdateMovement,,0x006bb890,0x005ad350,0x006bb890
 14926,function,CCCreature::MoveTo,,0x006bbb70,0x005ad630,0x006bbb70
-14927,function,CCCreature::RefreshPoolMemberState,,0x006bbcb0,0x005ad770,0x006bbcb0
+14927,function,CCCreature::RefreshPoolMemberState,"If the dirty byte creature+0xC3D is set (cleared here; set by MarkEffectsDirty through the effects holder at +0x70, and by InitMembers) and the creature is in the party pool: paralyze/poison flags, quickbar-locked from effects flags, RefreshEffectList, RefreshInputEffectGroups for the controlled one, then the +0x604/+0x614 pair for a lone matching effect.",0x006bbcb0,0x005ad770,0x006bbcb0
 14928,function,CCCreature::RemoveItemGhostEffect,,0x006bbf10,0x005ad9d0,0x006bbf10
 14929,function,CCCreature::SetGhost,,0x006bbfc0,0x005ada80,0x006bbfc0
 14930,function,CCCreature::HandleMessage_UnequipItemMessage,,0x006bc050,0x005adb10,0x006bc050
@@ -14938,7 +14938,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14937,function,CCCreature::Equip,,0x006bc7f0,0x005ae2b0,0x006bc7f0
 14938,function,CCCreature::LoadEquipItemList,,0x006bcc30,0x005ae6f0,0x006bcc30
 14939,function,CCCreature::GetSummonEffectObject,,0x006bce50,0x005ae910,0x006bce50
-14940,function,CCCreature::UpdateAbilityEffectStatus,,0x006bcf50,0x005aea10,0x006bcf50
+14940,function,CCCreature::UpdateAbilityEffectStatus,"Per frame for the controlled creature: RefreshPoolMemberState, then for each ability effect not yet seen SyncFromEffect on the entry found (FindInListByAttribute0x58) in the list at creature+0x5B8; called only from GameModeExplore::Update 0x00712F90 (+0x2BA) in the GOG exe.",0x006bcf50,0x005aea10,0x006bcf50
 14941,function,CCCreature::ForScript_SetSoundSet,,0x006bd0e0,0x005aeba0,0x006bd0e0
 14942,function,CCCreature::CloneObject,,0x006bd3b0,0x005aee70,0x006bd3b0
 14943,function,CCCreature::RegisterHandler_UnequipItemMessage,,0x006bd420,0x005aeee0,0x006bd420
