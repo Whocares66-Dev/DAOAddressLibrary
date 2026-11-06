@@ -60485,8 +60485,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 60484,data,,,0x00adeb88,0x00ad8b98,0x00adeb88
 60485,data,,,0x00adeb94,0x00ad8ba4,0x00adeb94
 60486,data,,,0x00adebac,0x00ad8bbc,0x00adebac
-60487,data,,,0x00adebc4,0x00ad8bd4,0x00adebc4
-60488,data,,,0x00adebc8,0x00ad8bd8,0x00adebc8
+60487,data,EclipseGame::ProcessCommandLineOption::s_captureMovieLodDistanceSq,"float 4.6e18 (2^62, effectively unlimited), loaded at 0x00404E37 and stored to both SpeedTree::s_lodNearDistanceSq/s_lodFarDistanceSq (0x00BF73F0/F4) by the capturemovie launch option, so tree LODs never blend out while recording; squared metres (INFERRED unit from the SpeedTree rows' notes)",0x00adebc4,0x00ad8bd4,0x00adebc4
+60488,data,EclipseGame::ProcessCommandLineOption::s_captureMovieShadowRangeSq,"float 1500.0, loaded at 0x00404E1F and stored to g_shadowRangeOverrideSq (0x00BF2094) by the capturemovie launch option; compared against a distance at 0x00452CE0 (squared distance, INFERRED unit)",0x00adebc8,0x00ad8bd8,0x00adebc8
 60489,data,,,0x00adebcc,0x00ad8bdc,0x00adebcc
 60490,data,,,0x00adebd0,0x00ad8be0,0x00adebd0
 60491,data,,,0x00adebdc,0x00ad8bec,0x00adebdc
@@ -60525,7 +60525,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 60524,data,"std::num_get<wchar_t,std::istreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>::vftable",,0x00adee5c,0x00ad8e6c,0x00adee5c
 60525,data,std::numpunct<wchar_t>::vftable,,0x00adee90,0x00ad8ea0,0x00adee90
 60526,data,,,0x00adeea8,0x00ad8eb8,0x00adeea8
-60527,data,,,0x00adeeac,0x00ad8ebc,0x00adeeac
+60527,data,g_cameraFarClipDistance,"float 4000.0 metres, the far clip plane: passed as the second float with a near plane (0.15 in EclipseGame::CreateScene 0x0040AF65, 0.25 / 0.01 in GameModeFlyCam::Enter 0x0076D530 / Leave 0x0076D5D9) to a camera object's vtable slot +0x18; matches CAMERA.md 'near 0.01 / far 4000'; the slot being (near,far) is INFERRED",0x00adeeac,0x00ad8ebc,0x00adeeac
 60528,data,,,0x00adeeb0,0x00ad8ec0,0x00adeeb0
 60529,data,,,0x00adeeb4,0x00ad8ec4,0x00adeeb4
 60530,data,,,0x00adeecc,0x00ad8edc,0x00adeecc
@@ -63015,16 +63015,16 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 63014,data,,,0x00af07cc,0x00b1b730,0x00af07cc
 63015,data,,,0x00af07d4,0x00b1b738,0x00af07d4
 63016,data,,,0x00af07dc,0x00b1b740,0x00af07dc
-63017,data,,,0x00af07e0,0x00b1b748,0x00af07e0
+63017,data,g_crc32Table,"uint32[256], the standard CRC-32 table (polynomial 0xEDB88320, entry 1 = 0x77073096): indexed by (crc ^ byte) & 0xFF in Crc32 (0x004CA985) and by each byte of a wide char in Crc32Wide (0x004CA9D4, 0x004CA9EB); the size column includes 4 bytes of the next row",0x00af07e0,0x00b1b748,0x00af07e0
 63018,data,EC::ITimer::vftable,,0x00af0be4,0x00b1bb4c,0x00af0be4
 63019,data,,,0x00af0c00,0x00b1bb68,0x00af0c00
-63020,data,,,0x00af0c10,0x00b1bb78,0x00af0c10
+63020,data,Math::FastSin::s_sineSeriesCoefficients,"double[5] at 0xAF0C10: 1/6, 1/120, 1/5040, 1/362880, and -2.39e-8 (the series' last term, about 1/11! with a fitted value); alternately subtracted and added as a Horner chain on x squared in FastSin (0x004CB448 fsub, 0x004CB430 fadd, ...); a minimax fit to sin, unitless, argument in radians",0x00af0c10,0x00b1bb78,0x00af0c10
 63021,data,,,0x00af0c18,0x00b1bb80,0x00af0c18
 63022,data,,,0x00af0c20,0x00b1bb88,0x00af0c20
 63023,data,,,0x00af0c28,0x00b1bb90,0x00af0c28
 63024,data,,,0x00af0c30,0x00b1bb98,0x00af0c30
 63025,data,,,0x00af0c38,0x00ae5c00,0x00af0c38
-63026,data,,,0x00af0c40,0x00b1bba0,0x00af0c40
+63026,data,Math::FastAtan2::s_arctanSeriesCoefficients,"double[8] at 0xAF0C40..0xAF0C78: 0.33333, 0.19994, 0.14209, 0.10656, 0.07529, 0.04291, 0.01617, 0.00287, a minimax series of atan in the ratio squared, alternately added and subtracted as a Horner chain (0x004CB9C4..0x004CBA64); result in radians",0x00af0c40,0x00b1bba0,0x00af0c40
 63027,data,,,0x00af0c48,0x00b1bba8,0x00af0c48
 63028,data,,,0x00af0c50,0x00b1bbb0,0x00af0c50
 63029,data,,,0x00af0c58,0x00b1bbb8,0x00af0c58
@@ -63149,7 +63149,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 63148,data,C2DASource::vftable,,0x00af158c,0x00b1d6cc,0x00af158c
 63149,data,M2DA::vftable,,0x00af15ec,0x00b1d72c,0x00af15ec
 63150,data,G2DA::vftable,,0x00af164c,0x00b1d8c4,0x00af164c
-63151,data,,,0x00af16a8,0x00b1be48,0x00af16a8
+63151,data,Math::SineEaseLookup::s_sineEaseTable,"Table of 1001 floats (0x00AF16A8, 4004 bytes), a sine ease curve from 0 to 1 sampled at thousandths; SineEaseLookup clamps the integer index to 0..1000 and returns fld [index*4+table] at 0x004EDF73.",0x00af16a8,0x00b1be48,0x00af16a8
 63152,data,,,0x00af264c,0x00b161d8,0x00af264c
 63153,data,,,0x00af2658,0x00af68e8,0x00af2658
 63154,data,,,0x00af2660,0x00af6230,0x00af2660
@@ -63789,7 +63789,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 63788,data,Eclipse::IGraphics::vftable,,0x00af6b4c,0x00b0edb4,0x00af6b4c
 63789,data,,,0x00af6c58,0x00b098a8,0x00af6c58
 63790,data,,,0x00af6c60,0x00ae3c08,0x00af6c60
-63791,data,,,0x00af6c68,0x00ae72f0,0x00af6c68
+63791,data,g_aspectRatioSixteenByNine,Double 16/9 (1.7778). IGraphicsInternal::BeginPillarbox compares the window's aspect to it at 0x0052741C to decide on pillarbox bars; CClientOptions::BuildResolutionChoices (0x005E46BA) tests it to label a resolution 16:9 (tolerance 1e-6). Unit: width/height ratio.,0x00af6c68,0x00ae72f0,0x00af6c68
 63792,data,,,0x00af6c70,0x00aea0b4,0x00af6c70
 63793,data,Eclipse::UpdateAndRenderLoadingGUITask::vftable,,0x00af6c80,0x00b0eec0,0x00af6c80
 63794,data,,,0x00af6c94,0x00ae4d1c,0x00af6c94
@@ -64695,12 +64695,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 64694,data,,,0x00afeb44,0x00b0deb8,0x00afeb44
 64695,data,,,0x00afeb60,0x00ae6668,0x00afeb60
 64696,data,,,0x00afeb74,0x00ae6648,0x00afeb74
-64697,data,,,0x00afeb9c,0x00b0dedc,0x00afeb9c
+64697,data,SoundManager::SoundManager::s_listenerBalance,"Float 0.17, sound_settings row 17 default (Camera/player listener balance), stored at manager+0x38 at 0x005B8E5F; the listener sits at player + 0.17*(camera-player) (dev/AUDIO.md section 1). Ratio, unitless.",0x00afeb9c,0x00b0dedc,0x00afeb9c
 64698,data,,,0x00afeba0,0x00af4e5c,0x00afeba0
-64699,data,,,0x00afeba4,0x00b0dee0,0x00afeba4
+64699,data,SoundManager::SoundManager::s_stealthDuckingDecibels,"Float -12, sound_settings row 0 default (Stealth Ducking), stored at manager+0x28 at 0x005B8E35; quiets a stealthed creature's footstep and movement emitters (dev/AUDIO.md section 3). Unit: decibels.",0x00afeba4,0x00b0dee0,0x00afeba4
 64700,data,,,0x00afeba8,0x00af7eb0,0x00afeba8
 64701,data,,,0x00afebb0,0x00af6228,0x00afebb0
-64702,data,,,0x00afebb8,0x00b0dee4,0x00afebb8
+64702,data,Audio::VolumeSliderToDecibels::s_fullVolumeSliderThreshold,"Float 9.99: a volume slider above it gives 0 dB (compare at 0x005B61BA); below it the function returns (10 - slider) * -3 dB, and under 0.01 the floor of -60 dB. Unit: slider position 0..10.",0x00afebb8,0x00b0dee4,0x00afebb8
 64703,data,,,0x00afebbc,0x00b0dee8,0x00afebbc
 64704,data,,,0x00afebc0,0x00af6958,0x00afebc0
 64705,data,,,0x00afebc8,0x00af696c,0x00afebc8
@@ -64898,7 +64898,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 64897,data,CVirtualMachineCommands::vftable,,0x00b0030c,0x00ae62f4,0x00b0030c
 64898,data,,,0x00b00374,0x00ae635c,0x00b00374
 64899,data,,,0x00b003a8,0x00ae6390,0x00b003a8
-64900,data,,,0x00b003cc,0x00ae63bc,0x00b003cc
+64900,data,CClientExoApp::AutosaveAndWaitForLoading::s_updateSeconds,"Float 999.0 passed as the time step to GameModeController::Update (0x00641F90) at 0x005D5F34 and 0x005D5F76, which the function spins until the mode's virtual [+0x2C] says loading is done. Unit: seconds (a deliberately huge step so each pass finishes whatever is queued).",0x00b003cc,0x00ae63bc,0x00b003cc
 64901,data,,,0x00b003d0,0x00ae63c0,0x00b003d0
 64902,data,,,0x00b00400,0x00ae63f0,0x00b00400
 64903,data,"SmartData::Attribute<unsigned int,ExplicitObjectIDMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::vftable_at_4",,0x00b00448,0x00ae6438,0x00b00448
@@ -65012,7 +65012,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 65011,data,,,0x00b010d8,0x00ae72f8,0x00b010d8
 65012,data,,,0x00b010f0,0x00ae7310,0x00b010f0
 65013,data,,,0x00b010f8,0x00ae7318,0x00b010f8
-65014,data,,,0x00b01108,0x00ae7328,0x00b01108
+65014,data,CClientOptions::BuildResolutionChoices::s_aspectRatioFourByThree,"Double 4/3 (1.3333). BuildResolutionChoices (0x005E4652) compares a resolution's width/height to it (tolerance 1e-6) to label it 4:3 (the label string at 0x00B01110). Others of the list: 1.25 (5:4), 1.6 (16:10), 16/9, shared with other code. Ratio.",0x00b01108,0x00ae7328,0x00b01108
 65015,data,,,0x00b01110,0x00ae7330,0x00b01110
 65016,data,,,0x00b01120,0x00ae7348,0x00b01120
 65017,data,CClientOptions::vftable_at_20,,0x00b01140,0x00ae7368,0x00b01140
@@ -65487,7 +65487,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 65486,data,,,0x00b045fc,0x00b00db4,0x00b045fc
 65487,data,,,0x00b04610,0x00b00dc8,0x00b04610
 65488,data,,,0x00b0461c,0x00b00dd4,0x00b0461c
-65489,data,,,0x00b04628,0x00b07590,0x00b04628
+65489,data,DateTimeLocalization::ApplyDateTimeFormat::s_monthNameStringIds,"12 uint32 talk-table string ids (0x00052433..0x0005243E, 0x00B04628, 0x30 bytes) indexed by the month (dword [+0x10] of the time struct, tm_mon) at 0x00620243 and made into a LocString for the month name. INFERRED that the index is tm_mon.",0x00b04628,0x00b07590,0x00b04628
 65490,data,,,0x00b04658,0x00b075c0,0x00b04658
 65491,data,,,0x00b04664,0x00b075cc,0x00b04664
 65492,data,,,0x00b04670,0x00b075d8,0x00b04670
@@ -67167,8 +67167,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 67166,data,,,0x00b10784,0x00af7e0c,0x00b10784
 67167,data,,,0x00b10794,0x00af7e1c,0x00b10794
 67168,data,,,0x00b107a4,0x00af7e2c,0x00b107a4
-67169,data,,,0x00b107d0,0x00af7e58,0x00b107d0
-67170,data,,,0x00b107e8,0x00af7e70,0x00b107e8
+67169,data,CameraRig::AddBehaviour::s_behaviourChannelMasks,"Table of 6 uint32 masks {1,2,3,2,7,4} indexed by behaviour kind (0..5, the switch in CameraRig::Update: position blend, rotation blend, orbit, look-at, cutscene camera, scalar blend). AddBehaviour (0x006C44EF, 0x006C44FA) tests mask[new] & mask[existing] among behaviours of equal priority; an overlap replaces the old one (replacement INFERRED from the following branch).",0x00b107d0,0x00af7e58,0x00b107d0
+67170,data,CameraRig::Update::s_substepSecondsFloat,"Float 0.015, the length of one camera substep: CameraRig::Update (0x006C4CDF) uses it when the remaining time is not smaller than the step. Unit: seconds. dev/CAMERA.md: behaviours run in substeps of at most 0.015 s.",0x00b107e8,0x00af7e70,0x00b107e8
 67171,data,CameraRig::SceneCamera::s_defaultLimits,"float[4] table at 0xb107ec: 3.12414 (179 degrees), 0.0174533 (1 degree), 10, 5; copied into the camera at +8, +0xc, +0x10, +0x14 (0x6c3f76 to 0x6c3fa9). INFERRED: angle and distance limits",0x00b107ec,0x00af7e74,0x00b107ec
 67172,data,,,0x00b107f0,0x00af7e78,0x00b107f0
 67173,data,,,0x00b107f4,0x00af7e7c,0x00b107f4
@@ -67177,8 +67177,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 67176,data,g_cameraYawOffsetDegrees,Double 270.0 (degrees): CameraRig::GetYawDegrees subtracts it (0x006C21F7) and CameraControllerBase::TurnBehind adds it (0x007EE8AE) when converting between the camera yaw and the facing (DAOLib dev/CAMERA.md),0x00b10808,0x00af7e90,0x00b10808
 67177,data,,,0x00b10810,0x00af7ea0,0x00b10810
 67178,data,g_defaultFieldOfView,"Float 1.5708 (pi/2 radians, 90 degrees): the default field of view of Renderer::PerspectiveCamera (stored at +0x140, 0x00A25B69) and the initial value of several CameraRig fields (0x006C402F); INFERRED",0x00b10814,0x00af7eb8,0x00b10814
-67179,data,,,0x00b10818,0x00af7ec0,0x00b10818
-67180,data,,,0x00b10820,0x00af7ec8,0x00b10820
+67179,data,CameraRig::Update::s_substepSeconds,"Double 0.015, the camera substep: compared to the remaining time at 0x006C4CC4 and subtracted after each substep at 0x006C4DE3. Unit: seconds.",0x00b10818,0x00af7ec0,0x00b10818
+67180,data,CameraRig::Update::s_negativeSubstepSeconds,"Double -0.015 (negated camera substep); dt is divided by it at 0x006C4C90 and truncated (_ftol2), so 1 minus the result is the number of substeps to run. Unit: seconds.",0x00b10820,0x00af7ec8,0x00b10820
 67181,data,GameModeLoadingData::vftable,,0x00b1082c,0x00af7ed4,0x00b1082c
 67182,data,GameModeLoading::vftable_at_20,,0x00b1084c,0x00af7ef4,0x00b1084c
 67183,data,GameModeLoading::vftable_at_1c,,0x00b10864,0x00af7f0c,0x00b10864
@@ -68615,7 +68615,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 68614,data,,,0x00b1ce50,0x00b0923c,0x00b1ce50
 68615,data,,,0x00b1ce5c,0x00b09248,0x00b1ce5c
 68616,data,,,0x00b1ce64,0x00b0b4f4,0x00b1ce64
-68617,data,,,0x00b1ce68,0x00b0b4f8,0x00b1ce68
+68617,data,PartyFollow::WouldBeLocation::s_minUnitDirectionLength,"Double 0.99. WouldBeLocation takes the length of the vector at object+0xAB0 and, when it is not above 0.99 (not a usable unit direction), replaces it with the vector at +0x130 (fcomp at 0x007608A1). Unitless length; which vectors these are is INFERRED.",0x00b1ce68,0x00b0b4f8,0x00b1ce68
 68618,data,ItemLocation::vftable,,0x00b1ce74,0x00b05624,0x00b1ce74
 68619,data,,,0x00b1cedc,0x00b08408,0x00b1cedc
 68620,data,,,0x00b1ceec,0x00b0b4d0,0x00b1ceec
@@ -69844,7 +69844,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69843,data,,,0x00b2b1f0,0x00ae4df8,0x00b2b1f0
 69844,data,,,0x00b2b224,0x00ae4e2c,0x00b2b224
 69845,data,,,0x00b2b22c,0x00ae4e34,0x00b2b22c
-69846,data,,,0x00b2b238,0x00ae4e40,0x00b2b238
+69846,data,Console::s_lineFadeSeconds,"Float 5.0. ConsoleString's constructor sets the line's fade time to it (capped by the line's lifetime at +0x20; 0x00844A17, 0x00844A43), UpdateColor compares the remaining time to it (0x00844AA0) to start fading the colour, and PrintQueuedLines passes it as the line's time (0x00841308). Unit: seconds. Partly INFERRED.",0x00b2b238,0x00ae4e40,0x00b2b238
 69847,data,Console::ConsoleString::vftable,,0x00b2b240,0x00ae4e48,0x00b2b240
 69848,data,Console::ConsoleFunc::vftable,,0x00b2b260,0x00ae4e68,0x00b2b260
 69849,data,.?AV?$TemplateConsoleFunc@P6APB_WPB_W@Z@Console@@::vftable,,0x00b2b274,0x00ae4e7c,0x00b2b274
@@ -74660,7 +74660,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 74659,data,,,0x00b58df0,0x00b1d9d8,0x00b58df0
 74660,data,,,0x00b58df1,0x00b1d9d9,0x00b58df1
 74661,data,,,0x00b58df4,0x00b1d9dc,0x00b58df4
-74662,data,,,0x00b58dfc,0x00b1d9e4,0x00b58dfc
+74662,data,CNetLayerBufferPage::ChangeRefCount::s_maxRefCount,"Int 0x400 the page's reference count is clamped to (0x00A42FE2). Network layer, probably unused in single player.",0x00b58dfc,0x00b1d9e4,0x00b58dfc
 74663,data,,,0x00b58e00,0x00b1d9e8,0x00b58e00
 74664,data,,,0x00b58e04,0x00b1d9ec,0x00b58e04
 74665,data,,,0x00b58e08,0x00b1d9f0,0x00b58e08
