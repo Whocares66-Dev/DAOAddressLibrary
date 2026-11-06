@@ -2743,7 +2743,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2742,function,Renderer::EclipseUmbraScene::BuildSceneDatabase::NullCommander::~NullCommander,,0x004662a0,0x0089f830,0x004662a0
 2743,function,Renderer::EclipseUmbraScene::BuildSceneDatabase::NullCommander::`scalar deleting destructor',,0x004662b0,0x0089f840,0x004662b0
 2744,function,Math::Matrix4x4f::Inverse,,0x004662d0,0x0089f860,0x004662d0
-2745,function,Renderer::EclipseUmbraScene::InvokeObjectVfunction41,,0x00466820,0x0089fdb0,0x00466820
+2745,function,Renderer::EclipseUmbraScene::ClearObjectVisibleFlag,"Clears flag 0x20, the visible-this-frame bit, on one object: its +8 flags interface's slot 0xA0 with 0x20 (0x0046682C); ClearObjectsVisibleFlag calls it for each object at the head of the frame",0x00466820,0x0089fdb0,0x00466820
 2746,function,Renderer::EclipseUmbraScene::ReleaseUmbraBinding,,0x00466840,0x0089fdd0,0x00466840
 2747,function,Renderer::EclipseUmbraScene::BuildSceneDatabase,,0x00466880,0x0089fe10,0x00466880
 2748,function,Renderer::EclipseUmbraScene::ApplyCutoffToMesh,,0x00466930,0x0089fec0,0x00466930
@@ -33457,7 +33457,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33456,function,AnimBase::ForwardAnimatable30,,0x00a5d330,0x00703ad0,0x00a5d330
 33457,function,AnimBase::StopVoice,,0x00a5d360,0x00703b00,0x00a5d360
 33458,function,AnimBase::IsVoiceFinished,,0x00a5d440,0x00703be0,0x00a5d440
-33459,function,AnimBase::SetModelFlag20,,0x00a5d4a0,0x00703c40,0x00a5d4a0
+33459,function,AnimBase::SetModelVisibleFlag,"Sets flag 0x20, the visible-this-frame bit, on the animated model (+0x18's +4) through its flags interface's slot 0x9C (0x00A5D4B5), as Umbra's case 0x30 does for a visible object",0x00a5d4a0,0x00703c40,0x00a5d4a0
 33460,function,AnimBase::GetVoiceLength,,0x00a5d4d0,0x00703c70,0x00a5d4d0
 33461,function,AnimBase::LoadTransitionMap,,0x00a5d5a0,0x00703d40,0x00a5d5a0
 33462,function,AnimBase::LodLevelFromBand,,0x00a5d5d0,0x00703d70,0x00a5d5d0
@@ -33673,7 +33673,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33672,function,AnimBaseWield::AnimBaseWield,,0x00a66880,0x0070f5d0,0x00a66880
 33673,function,AnimBaseWield::RemoveFromScene,,0x00a66930,0x0070f680,0x00a66930
 33674,function,AnimBaseWield::ResetWeaponLods,,0x00a66950,0x0070f6a0,0x00a66950
-33675,function,AnimBaseWield::SetModelFlag20,,0x00a66980,0x0070f6d0,0x00a66980
+33675,function,AnimBase::SetModelVisibleFlag,"A lone jmp to AnimBase::SetModelVisibleFlag (0x00A5D4A0): slot 32 (+0x80) of AnimBaseWield's, AnimBaseParts' and AnimBaseHead's vftables",0x00a66980,0x0070f6d0,0x00a66980
 33676,function,AnimBaseWield::UpdateModelLoads,,0x00a66990,0x0070f6e0,0x00a66990
 33677,function,AnimBaseWield::LodLevelFromBand,,0x00a669c0,0x0070f710,0x00a669c0
 33678,function,AnimBaseWield::ReleaseModelLod,,0x00a66a00,0x0070f750,0x00a66a00
