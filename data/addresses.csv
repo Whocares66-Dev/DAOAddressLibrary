@@ -19669,7 +19669,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19668,function,LoadVFXTask::LoadVFXTask,,0x0079d360,0x0066ea00,0x0079d360
 19669,function,LoadVFXTask::~LoadVFXTask,,0x0079d3c0,0x0066ea60,0x0079d3c0
 19670,function,VfxManager::AddEffectToScene,,0x0079d410,0x0066eab0,0x0079d410
-19671,function,Camera::StartShake,,0x0079d4d0,0x0066eb70,0x0079d4d0
+19671,function,VfxManager::StartCameraShake,Starts a camera shake for an effect: this (the VfxManager) is unused; gets the camera (CClientExoApp::GetCamera) and calls CameraRig::StartShake with the duration in ms / 1000.0 as seconds and four floats (0x0079D519); ret 0x14; called by CCObject::ApplyCameraShake,0x0079d4d0,0x0066eb70,0x0079d4d0
 19672,function,"ECBase::ECDynArray<std::pair<unsigned int,CCVisualEffect *>>::At",,0x0079d530,0x0066ebd0,0x0079d530
 19673,function,LoadVFXTask::`scalar deleting destructor',,0x0079d560,0x0066ec00,0x0079d560
 19674,function,VfxManager::SyncEffectToOwner,,0x0079d580,0x0066ec20,0x0079d580
