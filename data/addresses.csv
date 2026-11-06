@@ -98510,7 +98510,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 98509,data,FilteredGroupedItemView::Entry::typeinfo,,0x00c11df8,0x00c066b8,0x00c11df8
 98510,data,FilteredGroupedItemView::typeinfo,,0x00c11e24,0x00c066e4,0x00c11e24
 98511,data,FilteredGroupedItemView::s_classInfo,"Class node {int id = -1 in .data; parent pointer at +4}, 8 bytes with 98512; StaticClassInfo 0x007FB140 returns its address (mov eax at 0x007FB18D) after a one-shot guard (bit 0 of 0x00C39194); the id (-1 in the file) is filled in elsewhere, and no immediate writer of it was found [C for the node].",0x00c11e4c,0x00c0670c,0x00c11e4c
-98512,data,,,0x00c11e50,0x00c06710,0x00c11e50
+98512,data,FilteredGroupedItemView::s_classInfo.parent,"StaticClassInfo stores the parent class-info pointer 0xbf047c here, beside the named s_classInfo at 0xc11e4c.",0x00c11e50,0x00c06710,0x00c11e50
 98513,data,LoadSeededCharactersMessage::typeinfo,,0x00c11e54,0x00c06714,0x00c11e54
 98514,data,UpdatePaperDollFromSeededCharacterMessage::typeinfo,,0x00c11e80,0x00c06740,0x00c11e80
 98515,data,CharGenStartMessage::typeinfo,,0x00c11eb8,0x00c06778,0x00c11eb8
@@ -99731,7 +99731,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 99730,data,,,0x00c1d044,0x00c17044,0x00c1d044
 99731,data,,,0x00c1d048,0x00c17048,0x00c1d048
 99732,data,,,0x00c1d04c,0x00c1704c,0x00c1d04c
-99733,data,,,0x00c1d050,0x00c17050,0x00c1d050
+99733,data,std::vector<Gff4::Template>::s_default,GetTemplateView calls Gff4::Template::GetView with this default as the element.,0x00c1d050,0x00c17050,0x00c1d050
 99734,data,,,0x00c1d060,0x00c17060,0x00c1d060
 99735,data,,,0x00c1d078,0x00c17078,0x00c1d078
 99736,data,g_pVirtualMachine,,0x00c1d080,0x00c17080,0x00c1d080
@@ -99963,7 +99963,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 99962,data,,,0x00c1eb70,0x00c31770,0x00c1eb70
 99963,data,Renderer::Renderer::Renderer::s_physicsMaterialName,,0x00c1eb74,0x00c31774,0x00c1eb74
 99964,data,Renderer::Renderer::Renderer::s_physicsSemanticName,,0x00c1eb90,0x00c31790,0x00c1eb90
-99965,data,,,0x00c1ebb0,0x00c317b0,0x00c1ebb0
+99965,data,std::vector<std::wstring>::s_default2,Constructed with std::wstring::wstring and destroyed with ~wstring; SaveQueuedScreenshots returns it for an out-of-range index. Container form inferred.,0x00c1ebb0,0x00c317b0,0x00c1ebb0
 99966,data,,,0x00c1ebcc,0x00c317cc,0x00c1ebcc
 99967,data,,,0x00c1ebd0,0x00c317d0,0x00c1ebd0
 99968,data,,,0x00c1ebd4,0x00c317d4,0x00c1ebd4
@@ -100062,7 +100062,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100061,data,ReConnectMessage::GetName::s_name,"The function-static string (0x1c bytes, an ECString) GetName builds once from its literal and returns by address; an atexit destructor frees it",0x00c2a8b4,0x00c30ab4,0x00c2a8b4
 100062,data,ReConnectMessage::GetName::s_guard,Bit 0 guard of GetName's function-static string ReConnectMessage::GetName::s_name; the atexit destructor clears it,0x00c2a8d0,0x00c30ad0,0x00c2a8d0
 100063,data,ECBase::ECDynArray<int>::s_default,,0x00c2a8d4,0x00c19238,0x00c2a8d4
-100064,data,,,0x00c2a8d8,0x00c30ad4,0x00c2a8d8
+100064,data,ECBase::ECDynArray<ECResMan::ErfSource*>::s_default,"Out-of-range element of the list OnlineFeatures::UnlockPendingErfSources walks: passed to UnlockErfSource and then ErfSource::LoadDirectory (0x00488645), which shows the element is an ErfSource*; ECDynArray against std::vector is by layout only.",0x00c2a8d8,0x00c30ad4,0x00c2a8d8
 100065,data,MessageFactoryRegistry::Get::s_instance,"Function-static MessageFactoryRegistry (0x28 bytes, a hash_map) built on first call by 0x004852b0, with atexit 0x00ad5570; MessageFactoryRegistry::Get (0x00489bc0) returns it.",0x00c2a8dc,0x00c1aee4,0x00c2a8dc
 100066,data,,,0x00c2a8e0,0x00c1aee8,0x00c2a8e0
 100067,data,,,0x00c2a8e4,0x00c1aeec,0x00c2a8e4
@@ -100123,7 +100123,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100122,data,SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<PRCOffer*>>::GetMemberName::s_name,"Function-static std::wstring (0x1c bytes), the member name the lookup returns for an index; destroyed by an atexit destructor.",0x00c2b378,0x00c31088,0x00c2b378
 100123,data,SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<PRCOffer*>>::GetMemberName::s_guard,Init guard word of that GetMemberName::s_name.,0x00c2b394,0x00c310a4,0x00c2b394
 100124,data,ContentManager::StaticClassInfo::s_guard,"Init guard word of ContentManager::s_classInfo, tested and set at the start of ContentManager::StaticClassInfo (0x004af4b0).",0x00c2b398,0x00c310a8,0x00c2b398
-100125,data,,,0x00c2b3a0,0x00c1b818,0x00c2b3a0
+100125,data,std::vector<Online::EntitlementInfo>::s_default,"An Online::EntitlementInfo built by EntitlementInfo::EntitlementInfo in the initializer 0x00aceb70 (atexit ~EntitlementInfo), returned by PRCOffer, PRCInstalledContent, ContentManager::ValidatePurchase and AddInsManager for an out-of-range element; the vector kind is by its layout. AddInXmlEntry::ToAddInRecord also copies it through std::vector<PrereqItem>::push_back (0x005F405E), so that push_back is shared with or named for another element type.",0x00c2b3a0,0x00c1b818,0x00c2b3a0
 100126,data,,,0x00c2b3e8,,0x00c2b3e8
 100127,data,,,0x00c2b3f0,,0x00c2b3f0
 100128,data,GUI::DialogBoxClosedMessage::GetType::s_guard,"Guard word (4 bytes, bit 0) of GUI::DialogBoxClosedMessage's class node: GetType 0x004B24A0 tests it at 0x004B24A7 and on the first call sets it and stores the node's parent link Messages::Message::s_classInfo 0x00BF0C2C; InitType and the RegisterHandler_ function of the same message (when it has one) test the same bit [C].",0x00c2b3f4,0x00c1adc4,0x00c2b3f4
@@ -100177,7 +100177,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100176,data,g_services,,0x00c2bdf8,0x00c25430,0x00c2bdf8
 100177,data,ECBase::ECString::s_emptyChars,,0x00c2bdfc,0x00c25434,0x00c2bdfc
 100178,data,g_emptyString,,0x00c2be00,0x00c25438,0x00c2be00
-100179,data,,,0x00c2be1c,0x00c1f1f0,0x00c2be1c
+100179,data,std::vector<ScriptVariableNames::Entry*>::s_default,ScriptVariableKey::NameEquals_wstring passes the element (or this default) to ScriptVariableNames::Entry::NameEquals_wstring.,0x00c2be1c,0x00c1f1f0,0x00c2be1c
 100180,data,std::vector<Messages::Observer*>::s_default,Default element: the address NotifyObservers and ~Observable use when an index is out of range in the vector of Observer pointers at Observable+4; element type INFERRED from ~Observable passing the Observable to the element's Observer method at 0x4c4ec6,0x00c2be20,0x00c25454,0x00c2be20
 100181,data,g_worldDatabase,,0x00c2be24,0x00c25458,0x00c2be24
 100182,data,ECResMan::Manager::s_manager,,0x00c2be28,0x00c2545c,0x00c2be28
@@ -100252,7 +100252,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100251,data,,,0x00c2c0c0,0x00c22f78,0x00c2c0c0
 100252,data,RimLoadedMessage::GetType::s_guard,"Bit 0 guard of GetType's one-time write of RimLoadedMessage::s_classInfo.parent; the same bit is tested by InitType, RegisterHandler_RimLoadedMessage, which inline the same link. It is also the outer guard of the nested GameMessage link (Messages::GameMessage::s_classInfoParentSet).",0x00c2c0c4,0x00c1c714,0x00c2c0c4
 100253,data,RimUnloadedMessage::GetType::s_guard,"Bit 0 guard of GetType's one-time write of RimUnloadedMessage::s_classInfo.parent; the same bit is tested by InitType, RegisterHandler_RimUnloadedMessage, which inline the same link. It is also the outer guard of the nested GameMessage link (Messages::GameMessage::s_classInfoParentSet).",0x00c2c0c8,0x00c1c718,0x00c2c0c8
-100254,data,,,0x00c2c0cc,0x00c258a0,0x00c2c0cc
+100254,data,CTlkTable::GetClassInfo::s_guard,GetClassInfo tests and sets bit 0 of 0xc2c0cc; RegisterClass and the two RegisterHandler functions carry inlined copies.,0x00c2c0cc,0x00c258a0,0x00c2c0cc
 100255,data,CTlkTable::s_defaultEntry,,0x00c2c0d0,0x00c258a4,0x00c2c0d0
 100256,data,,,0x00c2c0d4,0x00c258a8,0x00c2c0d4
 100257,data,Resource::s_processors,"Global wstring-keyed map (WStringMap<void*>) of resource processors: constructed at startup by the dynamic initialiser 0x00aced70 (0x005b8710), atexit stub 0x00ad5870; Resource::RegisterProcessor (0x004e6fc0) inserts, Resource::FindProcessor (0x004e6f30) looks a type name up and returns the stored pointer.",0x00c2c0dc,0x00c255d8,0x00c2c0dc
@@ -100274,7 +100274,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100273,data,std::vector<unsigned int>::s_default,4-byte zero default element of ECResMan::TaskPool's free-index list (this+0x20 in Release 0x004e9cb0); also returned by std::vector<unsigned int>::operator[] (0x004e9c60).,0x00c301f4,0x00c29aa4,0x00c301f4
 100274,data,ECResMan::ReadRequestTask::s_taskPool,The static ECResMan::TaskPool of ReadRequestTask objects (0x44 bytes),0x00c301f8,0x00c29aa8,0x00c301f8
 100275,data,,,0x00c3023c,0x00c29a54,0x00c3023c
-100276,data,,,0x00c30240,0x00c29a58,0x00c30240
+100276,data,std::vector<Gff4::StructReader>::s_default2,"M2DA::GetStringByIndices calls Gff4::StructReader::GetTemplateView on it, and std::vector<Gff4::StructReader>::at returns it: a second copy of the named 0xc330e8.",0x00c30240,0x00c29a58,0x00c30240
 100277,data,,,0x00c30250,0x00c29b4c,0x00c30250
 100278,data,,,0x00c30254,0x00c29b50,0x00c30254
 100279,data,,,0x00c30258,0x00c29b54,0x00c30258
@@ -100323,7 +100323,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100322,data,Graphics::MaterialStateOverride::s_defaultEntry,"The name stands: the global is the out-of-range default entry of the override's array, and every reference is in Rebuild. The container is {data,count} with 12-byte entries, not a vector; Graphics::MaterialPassStateArray::s_default would keep the array's class.",0x00c3042c,0x00c23e0c,0x00c3042c
 100323,data,,,0x00c30430,0x00c23e10,0x00c30430
 100324,data,ECBase::ECDynArray<Math::VectorUA4f>::s_default,"A Math::VectorUA4f (16 bytes, unaligned float4) returned by ECDynArray<VectorUA4f>::At 0x004F28A0 for an out-of-range index and written into by SetVector4ArrayParameter 0x004F489E and by ProvideRemoteMaterialParams 0x004F909E (71 users in all: the shader-parameter providers).",0x00c30438,0x00c1a3e0,0x00c30438
-100325,data,,,0x00c30448,0x00c23e18,0x00c30448
+100325,data,std::vector<Graphics::MaterialTextureDeclaration>::s_default,"A 0x40-byte element built by WStringPair::WStringPair in the initializer 0x00acefa0, returned by MaterialObjectInstance::ApplyDeclaredTextures (0x004f63b9) for the vector of MaterialObject::GetDeclaredTextures, which structs.csv types as std::vector<MaterialTextureDeclaration> (sar 6).",0x00c30448,0x00c23e18,0x00c30448
 100326,data,Graphics::ParseMaterialCategories::s_buffer,"A wchar_t[512] scratch (0x400 bytes): ParseMaterialCategories 0x004F6B70 copies a category list into it, terminates it (0x004F6B84) and tokenises it with the delimiters at 0x00AF0C98.",0x00c30488,0x00c24650,0x00c30488
 100327,data,Graphics::MaterialSemantic::s_nextInstanceId,Dword: the MaterialSemantic constructor 0x004F6C0B gives each instance the current value (stored at +0x28) and adds 1 (0x004F6C21).,0x00c30888,0x00c24a50,0x00c30888
 100328,data,Graphics::MaterialSemantic::s_nextNameId,"Dword: the next free semantic id; the name-to-id function 0x004F6DA0 (NameToId) looks a name up in s_idsByName and, for a new one, inserts the pair (the address of this dword is the value source, 0x004F6E10) and adds 1 (0x004F6E3C).",0x00c3088c,0x00c24a54,0x00c3088c
@@ -100562,7 +100562,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100561,data,g_fogOverrideIntensity,Float written from parameter +0x10 by SetFogOverride (0x005389d2) and copied to sky block+0x0c by UpdateSky (0x0053903a-0x00539043); dev/CUTSCENES.md calls the cutscene field AtmoFogIntensity.,0x00c318c0,0x00c22fd0,0x00c318c0
 100562,data,g_fogOverrideCap,Float written from parameter +0x14 by SetFogOverride (0x005389db) and copied to sky block+0x10 by UpdateSky (0x00539025-0x00539031); AtmoFogCap in dev/CUTSCENES.md.,0x00c318c4,0x00c22fd4,0x00c318c4
 100563,data,g_fogOverrideZenith,Float written from parameter +0x18 by SetFogOverride (0x005389e4) and copied to sky block+0x14 by UpdateSky (0x0053904c-0x00539052); AtmoFogZenith in dev/CUTSCENES.md.,0x00c318c8,0x00c22fd8,0x00c318c8
-100564,data,,,0x00c318d0,0x00c22fe0,0x00c318d0
+100564,data,ECBase::ECDynArray<GraphicsStructures::Object*>::s_default2,"Out-of-range slot of Object::attachedObjects (structs.csv, ECDynArray<Object*> at +0x90) in UnregisterPhysics and ReleaseNodePhysicsActor; the same type as 99756.",0x00c318d0,0x00c22fe0,0x00c318d0
 100565,data,,,0x00c318d4,0x00c22fe8,0x00c318d4
 100566,data,Physics::DebugLineBatch::s_instance,"Pointer to the single DebugLineBatch, created on first use by DebugLineBatch::Get (0x0053BD52, 0x0053BD5B) and returned afterwards.",0x00c318e4,0x00c22ff8,0x00c318e4
 100567,data,GraphicsStructures::Font::Flush::s_defaultSemantic,std::wstring (0x1c bytes) L'Default' (0x00AE75C0) built on the first call of Font::Flush 0x0053c4d0 (0x0053c522) and passed to MaterialObjectInstance::SelectSemantic 0x004f2750 (0x0053c54f); named by the table's atexit destructor 0x00AD5DC0.,0x00c318e8,0x00c46788,0x00c318e8
@@ -100760,9 +100760,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100759,data,,,0x00c323bc,,0x00c323bc
 100760,data,,,0x00c323c0,,0x00c323c0
 100761,data,g_allLinesListName,"Static std::wstring L""all_lines_list"" built at startup by the dynamic initializer at 0x00ACFF00 (destroyed at exit by 0x00AD6200), passed by SoundManager::EventExists (0x005BA82A) and SoundEventInstance::Resolve (0x005BBD7C).",0x00c323c8,0x00c22bf0,0x00c323c8
-100762,data,,,0x00c323e4,0x00c22c0c,0x00c323e4
-100763,data,,,0x00c323e8,0x00c22c10,0x00c323e8
-100764,data,,,0x00c323ec,0x00c22c14,0x00c323ec
+100762,data,std::vector<SoundDuck*>::s_default,OnStart/OnStop of the SoundEventInstance call SoundDuck::OnStart/OnStop with the element (or this default) in ecx.,0x00c323e4,0x00c22c0c,0x00c323e4
+100763,data,std::vector<SoundEventInstance*>::s_default,SoundEmitter::SetReverbPresetName calls SoundEventInstance::SetReverbPresetName with the element (or this default) in ecx.,0x00c323e8,0x00c22c10,0x00c323e8
+100764,data,std::vector<SoundEmitter*>::s_default,StopAllEmitters calls SoundEmitter::StopAllInstances with the element (or this default) in ecx.,0x00c323ec,0x00c22c14,0x00c323ec
 100765,data,SoundEventInstance::Resolve::s_useMaxPlaybacksFix,"ECString function static in SoundEventInstance::Resolve (0x005ba530) holding the wide text 'UseMaxPlaybacksFix' (the name of the event user property, see AUDIO.md), built at 0x005ba9b7 (0x004c2480) on the first call, atexit stub 0x00ad6210.",0x00c323f0,0x00c22c18,0x00c323f0
 100766,data,SoundEventInstance::Resolve::s_guard,"Guard of the 'UseMaxPlaybacksFix' string: bit 0 tested at 0x005ba992, set at 0x005ba99b; an exception funclet (0x00a8bb54) clears it.",0x00c3240c,0x00c22c34,0x00c3240c
 100767,data,MusicController::Update::s_mainTrack0,"ECString function static in MusicController::Update (0x005bb630): the track name 'main', used for the game modes 0 and 8 (0x005bb839-0x005bb952, passed to 0x005b6d40, the track switch); atexit stub 0x00ad6240. AUDIO.md: explore, pregame, dialogue and cutscene play 'main'.",0x00c32410,0x00c22c38,0x00c32410
@@ -100841,7 +100841,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100840,data,LoadExternalSaveMessage::GetType::s_guard,"Bit 0 guard of GetType's one-time write of LoadExternalSaveMessage::s_classInfo.parent; the same bit is tested by InitType, RegisterHandler_LoadExternalSaveMessage, which inline the same link. It is also the outer guard of the nested GameMessage link (Messages::GameMessage::s_classInfoParentSet).",0x00c3280c,0x00c1add0,0x00c3280c
 100841,data,GUIDialogResultMessage::GetType::s_guard,"Bit 0 guard of GetType's one-time write of GUIDialogResultMessage::s_classInfo.parent; the same bit is tested by InitType, RegisterHandler_GUIDialogResultMessage, which inline the same link.",0x00c32810,0x00c1add4,0x00c32810
 100842,data,LoadModuleSkipUnauthorizedMessage::GetType::s_guard,"Bit 0 guard of GetType's one-time write of LoadModuleSkipUnauthorizedMessage::s_classInfo.parent; the same bit is tested by InitType, RegisterHandler_LoadModuleSkipUnauthorizedMessage, which inline the same link.",0x00c32814,0x00c1add8,0x00c32814
-100843,data,,,0x00c32818,0x00c1addc,0x00c32818
+100843,data,CClientExoApp::StaticClassInfo::s_guard,"StaticClassInfo opens with test byte [0xc32818],1 then or-sets it: the function-local static's guard.",0x00c32818,0x00c1addc,0x00c32818
 100844,data,SaveGameMessage::GetName::s_name,"The function-static string (0x1c bytes, an ECString) GetName builds once from its literal and returns by address; an atexit destructor frees it",0x00c3281c,0x00c1ae00,0x00c3281c
 100845,data,SaveGameMessage::GetName::s_guard,Bit 0 guard of GetName's function-static string SaveGameMessage::GetName::s_name; the atexit destructor clears it,0x00c32838,0x00c1ae1c,0x00c32838
 100846,data,ResumeGameMessage::GetName::s_name,"The function-static string (0x1c bytes, an ECString) GetName builds once from its literal and returns by address; an atexit destructor frees it",0x00c3283c,0x00c1ae20,0x00c3283c
@@ -100867,7 +100867,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100866,data,,,0x00c329ec,0x00c1b2d0,0x00c329ec
 100867,data,SetClientOptionMessage::GetType::s_guard,"Bit 0 guard of GetType's one-time write of SetClientOptionMessage::s_classInfo.parent; the same bit is tested by InitType, RegisterHandler_SetClientOptionMessage, which inline the same link. It is also the outer guard of the nested GameMessage link (Messages::GameMessage::s_classInfoParentSet).",0x00c32a24,0x00c1b308,0x00c32a24
 100868,data,RestoreDefaultsMessage::GetType::s_guard,"Bit 0 guard of GetType's one-time write of RestoreDefaultsMessage::s_classInfo.parent; the same bit is tested by InitType, RegisterHandler_RestoreDefaultsMessage, which inline the same link. It is also the outer guard of the nested GameMessage link (Messages::GameMessage::s_classInfoParentSet).",0x00c32a28,0x00c1b30c,0x00c32a28
-100869,data,,,0x00c32a2c,0x00c1b310,0x00c32a2c
+100869,data,CClientOptions::StaticClassInfo::s_guard,"StaticClassInfo opens with test byte [0xc32a2c],1 then or-sets it: the function-local static's guard.",0x00c32a2c,0x00c1b310,0x00c32a2c
 100870,data,,,0x00c32a30,0x00c1b314,0x00c32a30
 100871,data,"SmartData::IndexedMemberLookup<ECBase::ECDynArray<SmartData::Attribute<ECBase::ECString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>>::GetMemberName::s_name","ECString function static (empty string) of GetMemberName, atexit stub 0x00ad6400.",0x00c32a34,0x00c1b318,0x00c32a34
 100872,data,"SmartData::IndexedMemberLookup<ECBase::ECDynArray<SmartData::Attribute<ECBase::ECString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>>::GetMemberName::s_guard","Guard of the static at 0x00C32A34: bit 0 tested at 0x005dfe65, set at 0x005dfe6d; the funclet 0x00a8ef90 clears it.",0x00c32a50,0x00c1b334,0x00c32a50
@@ -100890,7 +100890,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100889,data,std::vector<AddInXmlEntry>::s_default,"0x2C4-byte default AddInXmlEntry (divisor 708 at 0x005fa254): constructed by the dynamic initialiser 0x00ad03c0 (AddInXmlEntry::AddInXmlEntry 0x005f3240), atexit stub 0x00ad6490 (~AddInXmlEntry 0x005f1fc0); AddInsManager::SaveAddInsXml (0x005fa090) compares the entry's name with the one it reads, falling back to this on an out-of-range index. The row's 0x5E4 is the distance to the next row. Container kind INFERRED.",0x00c32af8,0x00c1b550,0x00c32af8
 100890,data,g_addInsManager,,0x00c32dc0,0x00c1b858,0x00c32dc0
 100891,data,g_moduleResourcesMutex,,0x00c330bc,0x00c1bb54,0x00c330bc
-100892,data,,,0x00c330dc,0x00c1bb74,0x00c330dc
+100892,data,ModuleResourceManager::LoadModuleResources::s_guard,"LoadModuleResources tests and sets bit 0; the atexit function at 0xa93a16 clears it, as a function-local static's guard.",0x00c330dc,0x00c1bb74,0x00c330dc
 100893,data,std::vector<EventListenerEntry*>::s_default,"null slot for an out-of-range index of the event listener vectors of module, area and object (entry first dword is the event id); element type name (inferred) . Real size 4",0x00c330e0,0x00c1bb78,0x00c330e0
 100894,data,ECBase::ECDynArray<Resources>::s_default,,0x00c330e4,0x00c1bb7c,0x00c330e4
 100895,data,std::vector<Gff4::StructReader>::s_default,"0x10-byte out-of-range element of the module cif area lists (stride 0x10, the size of a Gff4::StructReader); element type (inferred)",0x00c330e8,0x00c1bb80,0x00c330e8
@@ -101307,13 +101307,13 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 101306,data,g_plotSummaryOpenTag,,0x00c34b64,0x00c1df8c,0x00c34b64
 101307,data,,,0x00c34b78,0x00c1dfa0,0x00c34b78
 101308,data,ScriptCommand::GETPLOTSUMMARY::s_guard,"dword of guard bits: bit 0 for g_plotSummaryOpenTag, bit 1 for g_plotSummaryCloseTag (constructed on first use)",0x00c34b80,0x00c1dfa8,0x00c34b80
-101309,data,,,0x00c34b84,0x00c1dfd0,0x00c34b84
+101309,data,ECBase::ECDynArray<std::wstring*>::s_default,"Out-of-range slot returned by ECDynArray<std::wstring*>::At (0x00a2dab0), named for the type.",0x00c34b84,0x00c1dfd0,0x00c34b84
 101310,data,ECBase::ECDynArray<CGameEffect*>::s_default,,0x00c34b88,0x00c1dfd8,0x00c34b88
 101311,data,ECBase::ECDynArray<Command*>::s_default,,0x00c34b8c,0x00c1dfdc,0x00c34b8c
 101312,data,g_skipCharGenKey,,0x00c34b90,0x00c1dfe0,0x00c34b90
 101313,data,g_debugOptionsKey,,0x00c34bac,0x00c1dffc,0x00c34bac
 101314,data,ScriptCommand::READINIENTRY::s_guard,"""guard bits for the function-static strings of READINIENTRY (bit 0: L""""DebugOptions"""" at c34bac)""",0x00c34bc8,0x00c1e018,0x00c34bc8
-101315,data,,,0x00c34bcc,0x00c1e01c,0x00c34bcc
+101315,data,FixedArray<unsigned int>::s_default,"InitTargetHookTables calls FixedArray<unsigned int>::Resize on the array whose out-of-range slot this is, then fills it.",0x00c34bcc,0x00c1e01c,0x00c34bcc
 101316,data,SaveGame::s_areaTemplate,,0x00c34bd0,0x00c1e020,0x00c34bd0
 101317,data,CCArea::RoomsSeen::s_roomsSeenDisabled,,0x00c34bd4,0x00c1e024,0x00c34bd4
 101318,data,,,0x00c34bd8,,0x00c34bd8
@@ -101336,7 +101336,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 101335,data,CCArea::s_emptyPooledVfx,,0x00c34d50,0x00c1e1a0,0x00c34d50
 101336,data,,,0x00c34d54,0x00c1e1a4,0x00c34d54
 101337,data,,,0x00c34d58,0x00c1e1a8,0x00c34d58
-101338,data,,,0x00c34d60,0x00c1e1b0,0x00c34d60
+101338,data,std::vector<AreaEntry>::s_default,The static initialiser calls AreaEntry::AreaEntry on it; FindNearestNamedEntry returns it for an out-of-range index (wstring at +0x18). Container form inferred from begin-at-+4 addressing.,0x00c34d60,0x00c1e1b0,0x00c34d60
 101339,data,GameModeDialog::PlaceDialogueCamera::s_nudgeScale,"Function-static float set once from the constant 0x00B0E1D8 (0.000609) and multiplied with the camera offset in PlaceDialogueCamera (0x0068D7C1), where a sine of 2 degrees (0x00B0E1D0) is also used; INFERRED role.",0x00c34db0,0x00c1e238,0x00c34db0
 101340,data,GameModeDialog::PlaceDialogueCamera::s_guard,guard bit 0 for the static above,0x00c34db4,0x00c1e23c,0x00c34db4
 101341,data,ECBase::ECDynArray<Response*>::s_default,"4-byte null T* kept as the element returned when the index is out of range (array begin +4, end +8): read by SmartData::PointerArrayMemberIteratorImpl<ECBase::ECDynArray<Response*>>::GetValue at 0x0068ee32 (the inlined At); same shape as 0x0062b910.",0x00c34db8,0x00c1e240,0x00c34db8
@@ -101886,7 +101886,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 101885,data,SmartData::IndexedPointerMemberLookup<Backpack>::GetMemberName::s_guard,"4-byte (a dword whose bit 0 is the flag) MSVC guard for the function static s_name (ID 101884) of SmartData::IndexedPointerMemberLookup<Backpack>::GetMemberName: tested at 0x0073f895, set at 0x0073f89d on the first call, cleared by the exception funclet 0x00aaf640 if the constructor throws.",0x00c36c30,0x00c20540,0x00c36c30
 101886,data,SmartData::IndexedPointerMemberLookup<PlotItems>::GetMemberName::s_name,"std::wstring (0x1c) function static: the decimal string of the index, built by ScriptBackend::ForScript_IntToString 0x004c2b10 at 0x0073f9bf and returned by SmartData::IndexedPointerMemberLookup<PlotItems>::GetMemberName (ID 17595) as the member's name; constructed on first call by std::wstring::wstring at 0x0073f993 (under the guard dword of the row beside), destroyed at exit by the atexit stub 0x00ad79b0.",0x00c36c34,0x00c20544,0x00c36c34
 101887,data,SmartData::IndexedPointerMemberLookup<PlotItems>::GetMemberName::s_guard,"4-byte (a dword whose bit 0 is the flag) MSVC guard for the function static s_name (ID 101886) of SmartData::IndexedPointerMemberLookup<PlotItems>::GetMemberName: tested at 0x0073f985, set at 0x0073f98d on the first call, cleared by the exception funclet 0x00aaf670 if the constructor throws.",0x00c36c50,0x00c20560,0x00c36c50
-101888,data,,,0x00c36c58,0x00c20588,0x00c36c58
+101888,data,std::vector<TintBlock>::s_default,The static initialiser calls TintBlock::TintBlock on it; ApplySkinTintToParts and ApplyMaterialOverrides return it for an out-of-range index.,0x00c36c58,0x00c20588,0x00c36c58
 101889,data,CAppearance::EquipmentPartName::s_equipmentPartNames,,0x00c36d18,0x00c20648,0x00c36d18
 101890,data,,,0x00c36d34,0x00c20664,0x00c36d34
 101891,data,,,0x00c36d50,0x00c20680,0x00c36d50
@@ -102340,7 +102340,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 102339,data,SetBehaviourMessage::GetType::s_guard,"Bit 0 guard of GetType's one-time write of SetBehaviourMessage::s_classInfo.parent; the same bit is tested by InitType, RegisterHandler_SetBehaviourMessage, which inline the same link. It is also the outer guard of the nested GameMessage link (Messages::GameMessage::s_classInfoParentSet).",0x00c389e8,0x00c21300,0x00c389e8
 102340,data,RefreshTacticsDataMessage::GetType::s_guard,"Bit 0 guard of GetType's one-time write of RefreshTacticsDataMessage::s_classInfo.parent; the same bit is tested by InitType, RegisterHandler_RefreshTacticsDataMessage, which inline the same link. It is also the outer guard of the nested GameMessage link (Messages::GameMessage::s_classInfoParentSet).",0x00c389ec,0x00c21304,0x00c389ec
 102341,data,ValidateActionMessage::GetType::s_guard,"Bit 0 guard of GetType's one-time write of ValidateActionMessage::s_classInfo.parent; the same bit is tested by InitType, RegisterHandler_ValidateActionMessage, which inline the same link. It is also the outer guard of the nested GameMessage link (Messages::GameMessage::s_classInfoParentSet).",0x00c389f0,0x00c21308,0x00c389f0
-102342,data,,,0x00c389f4,0x00c2130c,0x00c389f4
+102342,data,PartyTactics::StaticClassInfo::s_guard,"StaticClassInfo opens with test byte [0xc389f4],1 then or-sets it: the function-local static's guard.",0x00c389f4,0x00c2130c,0x00c389f4
 102343,data,ECBase::ECDynArray<PartyTacticEntry*>::s_default,,0x00c389f8,0x00c21310,0x00c389f8
 102344,data,DirtyPresetMessage::GetName::s_name,"The function-static string (0x1c bytes, an ECString) GetName builds once from its literal and returns by address; an atexit destructor frees it",0x00c389fc,0x00c21314,0x00c389fc
 102345,data,DirtyPresetMessage::GetName::s_guard,Bit 0 guard of GetName's function-static string DirtyPresetMessage::GetName::s_name; the atexit destructor clears it,0x00c38a18,0x00c21330,0x00c38a18
@@ -102779,7 +102779,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 102778,data,std::vector<Eclipse::GroupedInputMappings::GroupedInputs*>::s_default,"4-byte null pointer returned for an out-of-range index of the mappings' GroupedInputs* vector in TakeKey, ClearKeys, LoadFromConfig and SaveToConfig (19 fallback sites; the exe's own symbol for the accessor is std::vector<...GroupedInputs*>::back).",0x00c3bac0,0x00c466c4,0x00c3bac0
 102779,data,Eclipse::GroupedInputMappings::GetKeyText::s_noKeyMappedText,"""function-static wstring """"No key mapped"""" (0x1c bytes), returned for a key with no mapping""",0x00c3bac4,0x00c466c8,0x00c3bac4
 102780,data,Eclipse::GroupedInputMappings::GetKeyText::s_guard,init guard dword of 102779,0x00c3bae0,0x00c466e4,0x00c3bae0
-102781,data,,,0x00c3bae4,0x00c466e8,0x00c3bae4
+102781,data,std::vector<Eclipse::GroupedInputMappings::Mapping>::s_default,"8-byte out-of-range element returned by GroupedInputs::IsKeyValid and SetKey for the first-key vector at GroupedInputs+0xf0, which structs.csv types as std::vector<Mapping>.",0x00c3bae4,0x00c466e8,0x00c3bae4
 102782,data,,,0x00c3baec,,0x00c3baec
 102783,data,,,0x00c3bb24,,0x00c3bb24
 102784,data,,,0x00c3bb5c,,0x00c3bb5c
@@ -103123,7 +103123,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 103122,data,,,0x00c4be0c,,0x00c4be0c
 103123,data,,,0x00c4be28,,0x00c4be28
 103124,data,ECBase::ECDynArray<char>::s_default,"4-byte (one byte read) default returned by ECDynArray<char>::At 0x00a2da80 for an out-of-range index (mov eax,0xc4be44 at 0x00a2daa2); the element is 1 byte (index added unscaled).",0x00c4be44,0x00c2584c,0x00c4be44
-103125,data,,,0x00c4be48,0x00c25850,0x00c4be48
+103125,data,ECBase::ECDynArray<std::wstring*>::s_default2,"Out-of-range slot returned by a second ECDynArray<std::wstring*>::At (0x00a2dae0), named for the same type as 101309.",0x00c4be48,0x00c25850,0x00c4be48
 103126,data,,,0x00c4be4c,0x00c25854,0x00c4be4c
 103127,data,CNetLayer::GetHostAddressPortString::s_text,std::wstring (0x1C) function-static that holds the host address and port text CNetLayer::GetHostAddressPortString builds and returns; atexit 0x00AD9340 named by the exe's own symbol.,0x00c4be68,0x00c25870,0x00c4be68
 103128,data,,,0x00c4be6c,0x00c25874,0x00c4be6c
