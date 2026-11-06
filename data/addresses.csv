@@ -61872,7 +61872,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 61871,data,,,0x00ae753c,0x00b0fa28,0x00ae753c
 61872,data,,,0x00ae7540,0x00af6ac8,0x00ae7540
 61873,data,,,0x00ae7544,0x00b25238,0x00ae7544
-61874,data,,,0x00ae7564,0x00b25a64,0x00ae7564
+61874,data,Renderer::Renderer::vftable,"Table of 17 code pointers (first 0x004597D0) with no RTTI locator, stored at [this] by the constructors and destructor of Renderer::Renderer (0x0045A817, 0x0045AA2E, 0x0045AB57): the class's vftable.",0x00ae7564,0x00b25a64,0x00ae7564
 61875,data,,,0x00ae75a8,0x00b25aa8,0x00ae75a8
 61876,data,,,0x00ae75c0,0x00aea0d0,0x00ae75c0
 61877,data,Renderer::EclipseUmbraServices::vftable,,0x00ae75d4,0x00b25b24,0x00ae75d4
@@ -61997,11 +61997,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 61996,data,,,0x00ae7f84,0x00b2650c,0x00ae7f84
 61997,data,,,0x00ae7f90,0x00b26518,0x00ae7f90
 61998,data,,,0x00ae7f9c,0x00b26524,0x00ae7f9c
-61999,data,,,0x00ae7fb0,0x00b25c64,0x00ae7fb0
-62000,data,,,0x00ae7fbc,0x00b25c70,0x00ae7fbc
-62001,data,,,0x00ae7fc8,0x00b25c7c,0x00ae7fc8
-62002,data,,,0x00ae7fd4,0x00b25c88,0x00ae7fd4
-62003,data,,,0x00ae7fe0,0x00b25c94,0x00ae7fe0
+61999,data,Renderer::LightState::Fill::s_staticPositionRegisters,"Table of three int32 {0, 5, 7}: the g_vLightParams float4 slot (state +0x40, stride 16 bytes) that Fill writes the position and radius of static light 0, 1 and 2 into (0x0046B59E, 0x0046B690); EFFECTS.md has it.",0x00ae7fb0,0x00b25c64,0x00ae7fb0
+62000,data,Renderer::LightState::Fill::s_staticColourRegisters,"Table of three int32 {1, 6, 8}: the g_vLightParams float4 slot Fill writes the colour of static light 0, 1 and 2 into (0x0046B5A5, 0x0046B697).",0x00ae7fbc,0x00b25c70,0x00ae7fbc
+62001,data,Renderer::LightState::Fill::s_dynamicPositionRegisters,"Table of int32 {9, 10, 0}: the g_vLightParams slot of the position and radius of dynamic light 0 and 1 (the third entry is padding, the dynamic list holds two) at 0x0046B416 and 0x0046B504.",0x00ae7fc8,0x00b25c7c,0x00ae7fc8
+62002,data,Renderer::LightState::Fill::s_dynamicColourRegisters,"Table of int32 {11, 12, 0}: the g_vLightParams slot of the colour of dynamic light 0 and 1 (third entry padding) at 0x0046B41D and 0x0046B50B.",0x00ae7fd4,0x00b25c88,0x00ae7fd4
+62003,data,Renderer::LightList::AdvanceFades::s_fadeOutSeconds,"Float 0.25 seconds: AdvanceFades adds the frame time (0xC31650 + 0x3C) to a dropped light's fade timer (ref +0xC) and releases the light's slot once the timer passes it (0x0046AE12); EFFECTS.md ""a dropped light fades out over 0.25"".",0x00ae7fe0,0x00b25c94,0x00ae7fe0
 62004,data,,,0x00ae7fe8,0x00af7ea8,0x00ae7fe8
 62005,data,,,0x00ae7ff0,0x00afeaa0,0x00ae7ff0
 62006,data,Graphics::ISceneSubManager::vftable,,0x00ae7ffc,0x00b26020,0x00ae7ffc
@@ -63801,13 +63801,13 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 63800,data,,,0x00af6d04,0x00b0ef3c,0x00af6d04
 63801,data,Eclipse::IGraphicsInternal::vftable,,0x00af6d2c,0x00b0ef64,0x00af6d2c
 63802,data,,,0x00af6e48,0x00b0f080,0x00af6e48
-63803,data,,,0x00af6e4c,0x00b0f084,0x00af6e4c
-63804,data,,,0x00af6e50,0x00b0f088,0x00af6e50
-63805,data,,,0x00af6e60,0x00b0f098,0x00af6e60
+63803,data,GraphicsStructures::SpeedTreeInstance::SetLodDistances::s_maxLodSize,"float 30.0: the upper clamp of the tree instance's size (instance +0x110) before it picks its LOD distances, at 0x0052E2B1 (the lower clamp 2.0 is a pooled literal). t = (size - 2)/28, near and far distances lerp over t (TREES.md, level of detail). Unit is the model's size in metres [INFERRED unit].",0x00af6e4c,0x00b0f084,0x00af6e4c
+63804,data,GraphicsStructures::SpeedTreeInstance::SetLodDistances::s_nearDistanceScaleByDrawDistance,"float table, 4 entries {1.0, 1.5, 2.0, 0.001}, indexed by the instance's draw-distance setting (signed byte at +0x116, times 4), multiplies the near LOD distance at 0x0052E2FC; the result is squared into instance +0x118. The last entry is the smallest setting. TREES.md has the lerp(15,20,t) base.",0x00af6e50,0x00b0f088,0x00af6e50
+63805,data,GraphicsStructures::SpeedTreeInstance::SetLodDistances::s_farDistanceScaleByDrawDistance,"float table, 4 entries {1.0, 1.5, 2.0, 0.004}, indexed by the draw-distance setting (+0x116), multiplies the far LOD distance at 0x0052E322; squared into instance +0x11C. Pairs with the near table (they differ only in the last entry).",0x00af6e60,0x00b0f098,0x00af6e60
 63806,data,CSpeedTreeAllocator::vftable,,0x00af6e80,0x00b0f0b8,0x00af6e80
 63807,data,,,0x00af6e8c,0x00b0f0c4,0x00af6e8c
-63808,data,,,0x00af6e98,0x00b0f0e8,0x00af6e98
-63809,data,,,0x00af6ea0,0x00b0f0f0,0x00af6ea0
+63808,data,GraphicsStructures::SpeedTreeModel::UpdateAlphaMultiplier::s_minAlphaMultiplier,"float 0.12: the floor of a tree model's alpha multiplier. The code takes max(global float 0x00BF73FC, 0.12) and stores it at model +0xACC, read at 0x0052CCA9 (only for models whose +0x1BC has bit 0x40000000). Unit is a 0..1 alpha ratio. What 0x00BF73FC is (the tree draw/fade factor of TREES.md) was not re-read.",0x00af6e98,0x00b0f0e8,0x00af6e98
+63809,data,GraphicsStructures::SpeedTreeModel::UpdateAlphaMultiplier::s_minAlphaMultiplierCompare,double 0.12: the same floor as a double; the comparison operand (fcom qword) at 0x0052CC9A that decides whether the float 0.12 replaces the global. Same value and meaning as the float row.,0x00af6ea0,0x00b0f0f0,0x00af6ea0
 63810,data,,,0x00af6ea8,0x00ae3bd0,0x00af6ea8
 63811,data,Graphics::IWindWorld::vftable,,0x00af6eb4,0x00b0f0fc,0x00af6eb4
 63812,data,,,0x00af6ec8,0x00b0f110,0x00af6ec8
@@ -63827,7 +63827,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 63826,data,,,0x00af7000,0x00b0f234,0x00af7000
 63827,data,,,0x00af700c,0x00b0f240,0x00af700c
 63828,data,GraphicsStructures::SpeedTreeInstance::vftable,,0x00af7028,0x00b0f25c,0x00af7028
-63829,data,,,0x00af7060,0x00b0f290,0x00af7060
+63829,data,GraphicsStructures::SpeedTreeInstance::SetLodDistances::s_sizeRange,double 28.0 (the clamp's 30 - 2): divisor that turns the clamped size into t = (size - 2)/28 at 0x0052E2D2. Metres-ish size units [INFERRED].,0x00af7060,0x00b0f290,0x00af7060
 63830,data,,,0x00af7068,0x00af7278,0x00af7068
 63831,data,,,0x00af7070,0x00b0f298,0x00af7070
 63832,data,,,0x00af7078,0x00b0a200,0x00af7078
@@ -63836,7 +63836,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 63835,data,,,0x00af70a8,0x00af7530,0x00af70a8
 63836,data,,,0x00af70b0,0x00ae3c98,0x00af70b0
 63837,data,,,0x00af70b8,0x00b0d760,0x00af70b8
-63838,data,,,0x00af70c0,0x00b0f2f8,0x00af70c0
+63838,data,SpeedTree::UpdateWinds::s_windSwayAmplitude,"Double 0.0015: UpdateWinds multiplies sin and cos of a running time (the factors 0.1, 0.075 and 0.05 beside it) by it to build a small time-varying wind vector offset (0x0052F293, 0x0052F2C3); the role as an amplitude is INFERRED.",0x00af70c0,0x00b0f2f8,0x00af70c0
 63839,data,,,0x00af70c8,0x00af55b0,0x00af70c8
 63840,data,,,0x00af70d0,0x00b0f300,0x00af70d0
 63841,data,,,0x00af70f8,0x00b0f328,0x00af70f8
@@ -63897,15 +63897,15 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 63896,data,,,0x00af77a0,0x00b0faa8,0x00af77a0
 63897,data,GraphicsStructures::SceneCamera::vftable,,0x00af77ac,0x00b0fab4,0x00af77ac
 63898,data,Math::CollisionOutputParameter::vftable,,0x00af7820,0x00ae5298,0x00af7820
-63899,data,,,0x00af7828,0x00b0d7c8,0x00af7828
-63900,data,,,0x00af782c,0x00b0d7cc,0x00af782c
+63899,data,g_preethamAirRefractiveIndex,"Float 1.0003: the air's refractive index n that UpdateSky, SetAtmosphere and SetDefaults pass to AtmosphereSky::Recompute (0x0055BFA0) and a renderer call as the Preetham sky model's n; SKY.md says Recompute never reads it.",0x00af7828,0x00b0d7c8,0x00af7828
+63900,data,g_preethamMolecularDensity,"Float 2.545e+25 (molecules per cubic metre): the Preetham model's N argument passed with 1.0003 and 0.0035 (0x00539091, 0x00538FD1); never read by Recompute.",0x00af782c,0x00b0d7cc,0x00af782c
 63901,data,,,0x00af7830,0x00b0d7d0,0x00af7830
 63902,data,Graphics::ISceneInstance::vftable,,0x00af7838,0x00b0fb28,0x00af7838
 63903,data,,,0x00af7844,0x00aea094,0x00af7844
 63904,data,,,0x00af7858,0x00ae5d08,0x00af7858
 63905,data,,,0x00af7860,0x00b0fb70,0x00af7860
-63906,data,,,0x00af7868,0x00b0fb78,0x00af7868
-63907,data,,,0x00af7870,0x00b0fd38,0x00af7870
+63906,data,Graphics::GraphicsDriver::ApplyBrightnessContrastGamma::s_contrastAngleRange,"Double 0.523599 (pi/6, 30 degrees): ApplyBrightnessContrastGamma multiplies the contrast setting (-1 to 1) by it before adding pi/4 and taking tan (0x0053AB2C), so the ramp's slope runs from tan(15 degrees) to tan(75 degrees)",0x00af7868,0x00b0fb78,0x00af7868
+63907,data,GraphicsStructures::GetVertexElementMasks::s_usageMask,"uint32 table, 14 entries (0x38 bytes) {1,2,4,...,8192}: one bit per D3D vertex-element usage 0..13, indexed by the element's usage at 0x0053AF92 and OR-ed into the mesh's element mask. The two dwords after it (5000 and a float) are other rows, not part of the table.",0x00af7870,0x00b0fd38,0x00af7870
 63908,data,,,0x00af78b0,0x00ae3c10,0x00af78b0
 63909,data,Multithreading::SynchSafePointerList<Graphics::Texture>::vftable_at_4,,0x00af78bc,0x00b0fd74,0x00af78bc
 63910,data,Graphics::Texture::vftable_at_34,,0x00af78c8,0x00b0fd80,0x00af78c8
@@ -63943,7 +63943,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 63942,data,GraphicsStructures::ObjectNodeEmitterGroup::vftable_at_8,,0x00af7de0,0x00b16ce0,0x00af7de0
 63943,data,GraphicsStructures::ObjectNodeEmitterGroup::vftable_at_4,,0x00af7df4,0x00b16cf4,0x00af7df4
 63944,data,GraphicsStructures::ObjectNodeEmitterGroup::vftable,,0x00af7e14,0x00b16d14,0x00af7e14
-63945,data,,,0x00af7ea0,0x00b12290,0x00af7ea0
+63945,data,GraphicsStructures::ObjectNodeEmitterBlueprint::CreatePhysicsEmitter::s_splatGridDimension,"int32 5: passed (0x00561129) to the SplatObject constructor, which hands it to SplatObjectVertexPool as the second dimension of a grid (vertices = first x second, indices = 6*(first-1)*(second-1), at 0x005627F2-0x00562810). Count of vertices; role as a grid side INFERRED.",0x00af7ea0,0x00b12290,0x00af7ea0
 63946,data,,,0x00af7eb0,0x00ae59d0,0x00af7eb0
 63947,data,g_randomScale15,,0x00af7eb8,0x00ae59d8,0x00af7eb8
 63948,data,GraphicsStructures::EmitterUpdateTask::vftable,,0x00af7ec4,0x00b122a0,0x00af7ec4
@@ -63958,7 +63958,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 63957,data,GraphicsStructures::ObjectNodeEmitter::vftable_at_8,,0x00af7fd8,0x00b12360,0x00af7fd8
 63958,data,GraphicsStructures::ObjectNodeEmitter::vftable_at_4,,0x00af7fec,0x00b12374,0x00af7fec
 63959,data,GraphicsStructures::ObjectNodeEmitter::vftable,,0x00af800c,0x00b12394,0x00af800c
-63960,data,,,0x00af80ac,0x00b0fda8,0x00af80ac
+63960,data,GraphicsStructures::Object::s_triggerSegmentTolerance,"float 0.5: IntersectTriggerSegment grows the trigger's AABB (object +0x248 box at +0x130/+0x140) by it on every axis before clipping the segment (0x00546108), and FindTriggerVertexNearSegment accepts a vertex within this distance of the segment (fcomp at 0x00543A8D). Metres [INFERRED].",0x00af80ac,0x00b0fda8,0x00af80ac
 63961,data,GraphicsStructures::IObjectNodeFunctor::vftable,,0x00af80b8,0x00b0fdb4,0x00af80b8
 63962,data,Graphics::IAnimatable::vftable,,0x00af80c4,0x00b0fdc4,0x00af80c4
 63963,data,Graphics::IBaseObject::vftable,,0x00af816c,0x00b0fe6c,0x00af816c
@@ -63990,8 +63990,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 63989,data,GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::PhysicsSpriteParticle>::vftable_at_8,,0x00af8950,0x00b117a8,0x00af8950
 63990,data,GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::PhysicsSpriteParticle>::vftable_at_4,,0x00af8964,0x00b117bc,0x00af8964
 63991,data,GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::PhysicsSpriteParticle>::vftable,,0x00af8984,0x00b117dc,0x00af8984
-63992,data,,,0x00af8a3c,0x00b11894,0x00af8a3c
-63993,data,,,0x00af8a40,0x00b11898,0x00af8a40
+63992,data,g_particleSubstepSeconds,"Float 0.0666 (seconds, about 1/15): the length of one particle simulation substep used by the sprite, physics-sprite and mesh emitters' Update when an emitter is caught up over elapsed time (0x00552DF6, 0x005535C6, 0x00584039).",0x00af8a3c,0x00b11894,0x00af8a3c
+63993,data,g_particleSubstepDivisor,"Double 0.0666 (seconds): the same substep length as a divisor: the number of catch-up substeps is max(1, floor(elapsed / 0.0666)) in the three emitter Update functions (0x00552DC2, 0x00553592, 0x00584008).",0x00af8a40,0x00b11898,0x00af8a40
 63994,data,,,0x00af8a48,0x00b118a0,0x00af8a48
 63995,data,General::Token::vftable,,0x00af8a74,0x00ae3a08,0x00af8a74
 63996,data,Graphics::TextureInternal::vftable_at_4,,0x00af8a7c,0x00b0fb84,0x00af8a7c
@@ -64012,7 +64012,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 64011,data,,,0x00af8ce8,0x00b10af8,0x00af8ce8
 64012,data,,,0x00af8cf4,0x00b10b04,0x00af8cf4
 64013,data,,,0x00af8d00,0x00b10b10,0x00af8d00
-64014,data,,,0x00af8d08,0x00b10b18,0x00af8d08
+64014,data,GraphicsStructures::SetPrimitiveMaterial::s_opaqueAlphaThreshold,Double 0.999999: SetPrimitiveMaterial compares the current primitive alpha (0x00C31AF0) with it and adds flag 0x40 (a translucent draw) to the material flags when the alpha is below (0x005563BA-0x005563C7).,0x00af8d08,0x00b10b18,0x00af8d08
 64015,data,,,0x00af8d10,0x00afad2c,0x00af8d10
 64016,data,,,0x00af8d1c,0x00b10b20,0x00af8d1c
 64017,data,,,0x00af8d28,0x00b10b2c,0x00af8d28
@@ -64028,7 +64028,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 64027,data,,,0x00af8dc8,0x00b10bb8,0x00af8dc8
 64028,data,,,0x00af8df4,0x00b118c4,0x00af8df4
 64029,data,GraphicsStructures::IObjectNodeMesh::vftable,,0x00af8e04,0x00b118d4,0x00af8e04
-64030,data,,,0x00af8e28,0x00b11924,0x00af8e28
+64030,data,GraphicsStructures::ObjectNodeMesh::SetTintColor::s_tintComponentCeiling,"float 0.98: a tint component at or above 1.0 is replaced by it (0x0055A9D9-0x0055AA03, the three of the tint at edx), then the tint goes to the material parameter. Keeps a tint just below full white (ratio 0..1).",0x00af8e28,0x00b11924,0x00af8e28
 64031,data,,,0x00af8e2c,0x00b11928,0x00af8e2c
 64032,data,GraphicsStructures::ObjectNodeMesh::vftable_at_1ac,,0x00af8e50,0x00b1194c,0x00af8e50
 64033,data,GraphicsStructures::ObjectNodeMesh::vftable_at_180,,0x00af8e7c,0x00b11974,0x00af8e7c
@@ -64043,20 +64043,20 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 64042,data,GraphicsStructures::ObjectNodeVFXMesh::vftable_at_4,,0x00af90bc,0x00b11bb4,0x00af90bc
 64043,data,GraphicsStructures::ObjectNodeVFXMesh::vftable,,0x00af90dc,0x00b11bd4,0x00af90dc
 64044,data,,,0x00af9170,0x00b11c68,0x00af9170
-64045,data,,,0x00af917c,0x00b113d4,0x00af917c
-64046,data,,,0x00af9180,0x00b113d8,0x00af9180
-64047,data,,,0x00af9184,0x00b113dc,0x00af9184
-64048,data,,,0x00af9188,0x00b113e0,0x00af9188
+64045,data,AtmosphereSky::Recompute::s_mieAngularDivisor,"Float 12.566 = 4 pi. DivideXYZ divisor in the Mie term: block +0xB0 = beta_M * (1 - g^2) / (4 pi), loaded at 0x0055C2E5. dev/SKY.md c2.",0x00af917c,0x00b113d4,0x00af917c
+64046,data,AtmosphereSky::Recompute::s_rayleighAngularDivisor,Float 50.2655 = 16 pi. The Rayleigh term: block +0xC0 = beta_R * 3 / (16 pi) (the 3.0 is 0x00AE7130); read at 0x0055C24A. dev/SKY.md c3.,0x00af9180,0x00b113d8,0x00af9180
+64047,data,AtmosphereSky::Recompute::s_mieK,"float 0.67, the K factor of Mie scattering: beta_M = mieMultiplier*K*0.434*c*4*pi^3*(1/lambda)^2, at 0x0055C0F8. Unitless (SKY.md).",0x00af9184,0x00b113dc,0x00af9184
+64048,data,AtmosphereSky::Recompute::s_inverseWavelengths,"Table of three doubles in memory order {2105263.25, 1754386.0, 1538461.5}: 1/lambda in 1/metre for lambda = 475, 570, 650 nm (blue, green, red); the code reads them reversed to fill (r,g,b) and squares each with pow(x, 2.0): (1/lambda)^2 in beta_M (0x0055C083..0x0055C0BD).",0x00af9188,0x00b113e0,0x00af9188
 64049,data,,,0x00af9190,0x00b113e8,0x00af9190
 64050,data,,,0x00af9198,0x00b113f0,0x00af9198
-64051,data,,,0x00af91a0,0x00b113f8,0x00af91a0
-64052,data,,,0x00af91a8,0x00b11400,0x00af91a8
-64053,data,,,0x00af91b0,0x00b11408,0x00af91b0
-64054,data,,,0x00af91b8,0x00b11410,0x00af91b8
-64055,data,,,0x00af91c0,0x00b11418,0x00af91c0
+64051,data,AtmosphereSky::Recompute::s_mieScale,double 0.434: the Preetham/Mie constant multiplied into beta_M (0x0055C071). Unitless.,0x00af91a0,0x00b113f8,0x00af91a0
+64052,data,AtmosphereSky::Recompute::s_mieConcentrationScale,"double 1e-17: scale of the Mie concentration c = (6.544*turbidity - 6.51)*1e-17, at 0x0055C063. Unitless scale.",0x00af91a8,0x00b11400,0x00af91a8
+64053,data,AtmosphereSky::Recompute::s_mieTurbidityOffset,"double 6.51: the subtracted offset of c = (6.544*T - 6.51)*1e-17, at 0x0055C057. Unitless.",0x00af91b0,0x00b11408,0x00af91b0
+64054,data,AtmosphereSky::Recompute::s_mieTurbidityScale,"double 6.544: the turbidity (block +0x38) multiplier of c = (6.544*T - 6.51)*1e-17, at 0x0055C050. Unitless.",0x00af91b8,0x00b11410,0x00af91b8
+64055,data,AtmosphereSky::Recompute::s_rayleighCoefficients,"Table of three floats in memory order {2.44e-5, 1.18e-5, 6.95e-6}, per metre: Preetham's Rayleigh scattering coefficients for blue, green and red. The code reads them reversed, 0x00AF91C8 (red) first, to make beta_R = rayleighMultiplier * (6.95e-6, 1.18e-5, 2.44e-5) at 0x0055BFEF..0x0055C003. dev/SKY.md.",0x00af91c0,0x00b11418,0x00af91c0
 64056,data,,,0x00af91c4,0x00b1141c,0x00af91c4
 64057,data,,,0x00af91c8,0x00b11420,0x00af91c8
-64058,data,,,0x00af91cc,0x00b11424,0x00af91cc
+64058,data,AtmosphereSky::SetDefaults::s_defaultCloudDepth,"float -120.0: SetDefaults stores it to the sky block +0x5C, the cloud depth field (Sky.h), at 0x0055C962. Unit as the field's.",0x00af91cc,0x00b11424,0x00af91cc
 64059,data,,,0x00af91d0,0x00aea0a0,0x00af91d0
 64060,data,,,0x00af91d4,0x00b5404c,0x00af91d4
 64061,data,GraphicsStructures::FontBuilderXML2::vftable,,0x00af91e8,0x00b54060,0x00af91e8
@@ -64198,7 +64198,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 64197,data,GraphicsStructures::ObjectNodeCrust::vftable_at_4,,0x00afa590,0x00b12458,0x00afa590
 64198,data,GraphicsStructures::ObjectNodeCrust::vftable,,0x00afa5b4,0x00b1247c,0x00afa5b4
 64199,data,,,0x00afa63c,0x00b158a8,0x00afa63c
-64200,data,,,0x00afa648,0x00b158b8,0x00afa648
+64200,data,g_particleGravity,"double -9.8, metres per second squared (INFERRED unit): gravity acceleration. SpriteParticle::Update (fmul qword at 0x0057C13B) and MeshParticle::Update (0x005AC80B) multiply it by the emitter's GravityMultiplier (+0x28) in the step's position term; dev/EFFECTS.md has p.z += -9.8*Gravity*0.5*(T^2-(T-h)^2)",0x00afa648,0x00b158b8,0x00afa648
 64201,data,,,0x00afa650,0x00b158c0,0x00afa650
 64202,data,GraphicsStructures::ObjectNodeMeshBlueprint::vftable,,0x00afa65c,0x00b15574,0x00afa65c
 64203,data,,,0x00afa70c,0x00b0c7d0,0x00afa70c
@@ -64253,7 +64253,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 64252,data,GraphicsStructures::ObjectNodeEmitterSpriteLinked<GraphicsStructures::PhysicsSpriteParticle>::vftable_at_8,,0x00afaf08,0x00b16b50,0x00afaf08
 64253,data,GraphicsStructures::ObjectNodeEmitterSpriteLinked<GraphicsStructures::PhysicsSpriteParticle>::vftable_at_4,,0x00afaf1c,0x00b16b64,0x00afaf1c
 64254,data,GraphicsStructures::ObjectNodeEmitterSpriteLinked<GraphicsStructures::PhysicsSpriteParticle>::vftable,,0x00afaf3c,0x00b16b84,0x00afaf3c
-64255,data,,,0x00afaff8,0x00b12504,0x00afaff8
+64255,data,GraphicsStructures::ClothWindChannel::Advance::s_maxTimeStep,"Float 0.05 seconds: Advance clamps the elapsed time to it when it is above the double 0.05 (0x00586274-0x00586289), so a long frame advances the cloth's wind noise by at most 0.05 s.",0x00afaff8,0x00b12504,0x00afaff8
 64256,data,,,0x00afb000,0x00b12514,0x00afb000
 64257,data,,,0x00afb014,0x00b12528,0x00afb014
 64258,data,,,0x00afb028,0x00b1253c,0x00afb028
@@ -65397,7 +65397,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 65396,data,,,0x00b03bf0,0x00ae58a0,0x00b03bf0
 65397,data,,,0x00b03bf8,0x00af6220,0x00b03bf8
 65398,data,LodManager::vftable,,0x00b03c04,0x00b0adb4,0x00b03c04
-65399,data,,,0x00b03c10,0x00b0adc0,0x00b03c10
+65399,data,LodManager::Update::s_reclassifyIntervalSeconds,"Float 0.333333 seconds: Update counts its timer (+0x24) down by the frame time and, when it runs out, reloads it with this and rebuilds the bands, so the LOD bands are recomputed three times a second (0x0061908E; PARTY.md ""every 1/3 s"").",0x00b03c10,0x00b0adc0,0x00b03c10
 65400,data,,,0x00b03c18,0x00b0adc8,0x00b03c18
 65401,data,DoLoginMessage::vftable,,0x00b03c24,0x00b00474,0x00b03c24
 65402,data,DoLogoutMessage::vftable,,0x00b03c44,0x00b00494,0x00b03c44
@@ -69276,7 +69276,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69275,data,CProjectile::vftable,,0x00b23bb4,0x00b0a33c,0x00b23bb4
 69276,data,ProjectileCache::vftable,,0x00b23d80,0x00b0a508,0x00b23d80
 69277,data,ProjectileCache::ProjectileEntry::vftable,,0x00b23d8c,0x00b0a514,0x00b23d8c
-69278,data,,,0x00b23d94,0x00b0a51c,0x00b23d94
+69278,data,CCVisualEffect::SetPhase::s_phaseAnimationTable,"table of 6 entries of 8 bytes {u32 phase; u16 animation id, padded}: phase 0 to 0, 1 vfxcast to 500, 2 vfximpact to 502, 3 vfxduration to 501, 4 vfxcessation to 503, 5 (done) to 0. SetPhase searches it from the last entry down (cmp at 0x007EAB93, movzx of the id at 0x007EABA2); dev/EFFECTS.md line 85",0x00b23d94,0x00b0a51c,0x00b23d94
 69279,data,,,0x00b23d98,0x00b0a520,0x00b23d98
 69280,data,CCVisualEffect::vftable_at_70,,0x00b23dcc,0x00b0a554,0x00b23dcc
 69281,data,CCVisualEffect::vftable_at_38,,0x00b23e58,0x00b0a5e0,0x00b23e58
@@ -69856,7 +69856,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69855,data,,,0x00b2b2ec,0x00ae4a90,0x00b2b2ec
 69856,data,,,0x00b2b318,0x00ae4abc,0x00b2b318
 69857,data,TexManager::TextureLoadTask::vftable,,0x00b2b340,0x00ae4aec,0x00b2b340
-69858,data,,,0x00b2b3e0,0x00ae4b8c,0x00b2b3e0
+69858,data,TexManager::DDS::GetFormatInfo::s_formatInfo,"table of 10 records of 0x14 bytes, 5 u32 each {format enum 0..9; a format code (0x16 0x18 0x1A 0x28 for the 4-pixel-block formats, 3 4 4 0x25 0x21 0xC for the plain ones); block width in pixels (4 or 1); bytes per block",0x00b2b3e0,0x00ae4b8c,0x00b2b3e0
 69859,data,,,0x00b2b3f4,0x00ae4ba0,0x00b2b3f4
 69860,data,,,0x00b2b408,0x00ae4bb4,0x00b2b408
 69861,data,,,0x00b2b41c,0x00ae4bc8,0x00b2b41c
@@ -69866,7 +69866,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69865,data,,,0x00b2b46c,0x00ae4c18,0x00b2b46c
 69866,data,,,0x00b2b480,0x00ae4c2c,0x00b2b480
 69867,data,,,0x00b2b494,0x00ae4c40,0x00b2b494
-69868,data,,,0x00b2b4ac,0x00ae4c58,0x00b2b4ac
+69868,data,TexManager::TGA::GetFormatInfo::s_formatInfo,"table of 2 records of 0x14 bytes {format enum 3 and 4; 4; 4 or 3 bytes per pixel; 0; 0}: the TGA reader's format info, 32-bit then 24-bit (INFERRED). GetFormatInfo (0x0084C490) returns the first for one predicate and the second (and eax, 0xB2B4C0 at 0x0084C4B7) for the other",0x00b2b4ac,0x00ae4c58,0x00b2b4ac
 69869,data,,,0x00b2b4c0,0x00ae4c6c,0x00b2b4c0
 69870,data,TexManager::FillTGADataOp::vftable,,0x00b2b4d8,0x00ae4c84,0x00b2b4d8
 69871,data,FacialAnimation::FacialAnimationManager::vftable,,0x00b2b4ec,0x00ae48ac,0x00b2b4ec
@@ -69989,14 +69989,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69988,data,Graphics::ExternalDeviceCaps::vftable,,0x00b2db38,0x00ae3664,0x00b2db38
 69989,data,Graphics::GraphicsDriverManager::vftable,,0x00b2db4c,0x00ae3678,0x00b2db4c
 69990,data,D3DDriver::D3DGraphicsDriverManager::vftable,,0x00b2db7c,0x00ae36a4,0x00b2db7c
-69991,data,,,0x00b2dbc4,0x00ae47a4,0x00b2dbc4
-69992,data,,,0x00b2dc00,0x00ae36f0,0x00b2dc00
-69993,data,,,0x00b2dc18,0x00ae3708,0x00b2dc18
-69994,data,,,0x00b2dc20,0x00ae3710,0x00b2dc20
-69995,data,,,0x00b2dc30,0x00ae3720,0x00b2dc30
-69996,data,,,0x00b2dd3c,0x00ae382c,0x00b2dd3c
-69997,data,,,0x00b2dd70,0x00ae3860,0x00b2dd70
-69998,data,,,0x00b2de18,0x00ae3908,0x00b2de18
+69991,data,Graphics::VertexStreamMask::s_usageBit,"table of 14 u32: the single bit (1 to 0x2000) of each vertex usage, 0 as the end. AddUsage ORs it into the mask (0x00867EF4) and HasUsage ANDs it (0x00867F64)",0x00b2dbc4,0x00ae47a4,0x00b2dbc4
+69992,data,D3DDriver::D3DGraphicsDriver::s_primitiveTypeToD3D,"table of 6 u32 {4,5,6,2,3,1}: the engine's primitive kind to D3DPRIMITIVETYPE (triangle list, strip, fan, line list, line strip, point list). Read by CreateBatch, CreateBatchWithPrimitive and CreateIndexedBatch (mov esi at 0x0086A794, 0x0086A9D4, 0x0086AC14)",0x00b2dc00,0x00ae36f0,0x00b2dc00
+69993,data,D3DDriver::D3DGraphicsDriver::CreateIndexStream::s_indexFormatToD3D,"table of 2 u32 {0x65, 0x66}: the engine's index width to D3DFORMAT INDEX16 and INDEX32. mov edi at 0x0086A41A",0x00b2dc18,0x00ae3708,0x00b2dc18
+69994,data,D3DDriver::D3DGraphicsDriver::s_poolToD3D,"table of 4 u32 {0,1,2,3}: the engine's pool kind to D3DPOOL (default, managed, system memory, scratch). Passed as the pool argument of the device's CreateTexture (slot +0x5C) in CreateTexture2D (0x00869005) and CreateTextureCubeMap (0x00869407)",0x00b2dc20,0x00ae3710,0x00b2dc20
+69995,data,D3DDriver::D3DGraphicsDriver::SetRenderState::s_renderStateToD3D,"table of 67 u32 D3DRENDERSTATETYPE values (7, 8, 9, 0xE, 0xF, 0x13, 0x14, 0x16 ... 0xCD), indexed by the engine's render state; SetRenderState passes the entry to the state cache (mov edx at 0x00868EB8)",0x00b2dc30,0x00ae3720,0x00b2dc30
+69996,data,D3DDriver::D3DGraphicsDriver::s_samplerStateToD3D,"table of 12 u32 {1,2,3,5,6,7,8,9,10,11,12,4}: the engine's sampler state to D3DSAMPLERSTATETYPE (address U, V, W, then mag, min, mip filter, mip bias, max mip level, max anisotropy, sRGB, element index, border colour last), 0 as the end. Read by SetSamplerState and SetSamplerStateUnchecked (0x00868F40, 0x00868F86)",0x00b2dd3c,0x00ae382c,0x00b2dd3c
+69997,data,D3DDriver::D3DGraphicsDriver::s_formatToD3D,"Table of 42 u32 D3DFORMAT values, the engine's pixel format to D3D's (A8R8G8B8, X8R8G8B8, ... 'DXT1' to 'DXT5', R16F to A32B32G32R32F, 'ATI2'), indexed by the engine format in CreateTexture2D (0x00869031), CreateTextureCubeMap and CreateTextureRenderTarget; its sizes are 69998",0x00b2dd70,0x00ae3860,0x00b2dd70
+69998,data,D3DDriver::D3DGraphicsDriver::s_formatElementSize,"Table of 42 u32, parallel to the format table (69997): the bytes per pixel, or per 4x4 block for DXT, of each engine format, read with it (0x0086906E in CreateTexture2D) and given to the texture's constructor. The game's own error: A32B32G32R32F (entry 36) holds 32 where 16 is right; the 16-bit float formats are right",0x00b2de18,0x00ae3908,0x00b2de18
 69999,data,Graphics::GraphicsCapabilitiesDriver::vftable,,0x00b2dec0,0x00ae39b0,0x00b2dec0
 70000,data,D3DDriver::D3DGraphicsCapabilitiesDriver::vftable_at_1c,,0x00b2dedc,0x00ae39d0,0x00b2dedc
 70001,data,D3DDriver::D3DGraphicsCapabilitiesDriver::vftable,,0x00b2def4,0x00ae39e8,0x00b2def4
@@ -70060,13 +70060,13 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 70059,data,D3DDriver::D3DRenderTarget::vftable,,0x00b2eb00,0x00ae4638,0x00b2eb00
 70060,data,Renderer::IUmbraRenderer::vftable,,0x00b2eb28,0x00ae4668,0x00b2eb28
 70061,data,D3DDriver::D3DUmbraRenderer::vftable,,0x00b2eb5c,0x00ae46a4,0x00b2eb5c
-70062,data,,,0x00b2eb90,0x00ae46d8,0x00b2eb90
+70062,data,D3DDriver::D3DSwapChain::SaveToFile::s_formatToD3D,"a second copy of the engine-format to D3DFORMAT table (41 u32, the same values as 69997, in the swap chain's translation unit). SaveToFile indexes it with the format being saved (mov edx at 0x00879861)",0x00b2eb90,0x00ae46d8,0x00b2eb90
 70063,data,D3DDriver::D3DSaveSurfaceTask::vftable,,0x00b2ec38,0x00ae478c,0x00b2ec38
-70064,data,,,0x00b2ec50,0x00ae47e0,0x00b2ec50
-70065,data,,,0x00b2ec98,0x00ae4828,0x00b2ec98
+70064,data,D3DDriver::D3DVertexDeclaration::CreateDeviceDeclaration::s_elementTypeToD3D,"table of 18 entries, read as the low byte of each u32 (movzx at 0x00879E66): 0 to 17 in order, the engine's vertex element type to D3DDECLTYPE. An identity map, so the engine's enum is D3D's",0x00b2ec50,0x00ae47e0,0x00b2ec50
+70065,data,D3DDriver::D3DVertexDeclaration::CreateDeviceDeclaration::s_elementUsageToD3D,"table of 14 entries, low byte of each u32 read (movzx at 0x00879E76): 0 to 13 in order, the engine's vertex element usage to D3DDECLUSAGE. An identity map",0x00b2ec98,0x00ae4828,0x00b2ec98
 70066,data,D3DDriver::D3DVertexDeclaration::vftable_at_c,,0x00b2ecd4,0x00ae4864,0x00b2ecd4
 70067,data,D3DDriver::D3DVertexDeclaration::vftable,,0x00b2ece0,0x00ae4870,0x00b2ece0
-70068,data,,,0x00b2ecfc,0x00ae488c,0x00b2ecfc
+70068,data,D3DDriver::ShaderConstantTable::ReadConstants::s_registerSetKind,"table of 3 u32 {2,1,0}: a compiled constant's D3DXREGISTER_SET (bool, int4, float4) to the engine's constant kind (float 0, int 1, bool 2), INFERRED. mov edx at 0x0087B361, next to a test for a sampler set (3)",0x00b2ecfc,0x00ae488c,0x00b2ecfc
 70069,data,ECInput::IRawInput::vftable,,0x00b2ed14,0x00ae1118,0x00b2ed14
 70070,data,ECInput::RawInputWin32::vftable,,0x00b2ed28,0x00ae112c,0x00b2ed28
 70071,data,,,0x00b2ed38,0x00ae1140,0x00b2ed38
@@ -74599,7 +74599,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 74598,data,Renderer::ICuller::vftable,,0x00b584e0,0x00b25e50,0x00b584e0
 74599,data,Renderer::IGenericMeshFrustumCuller::vftable,,0x00b58504,0x00b25e74,0x00b58504
 74600,data,Renderer::CShadowCasterCuller::vftable,,0x00b58528,0x00b25e98,0x00b58528
-74601,data,,,0x00b58548,0x00b25eb8,0x00b58548
+74601,data,Renderer::CShadowCasterCuller::SweepSphereAgainstPlane::s_infiniteTime,"Float 1e+32: when the sphere does not move toward or away from the plane (the approach speed is zero) but lies within its radius of the plane, SweepSphereAgainstPlane returns the interval [0, 1e32] (0x00A2488B), an open-ended time of overlap; INFERRED from the branch structure.",0x00b58548,0x00b25eb8,0x00b58548
 74602,data,Renderer::OrthogonalCamera::vftable,,0x00b58554,0x00b25ec4,0x00b58554
 74603,data,Renderer::PerspectiveCamera::vftable,,0x00b58604,0x00b25f74,0x00b58604
 74604,data,GTexture::vftable,,0x00b586b0,0x00b26384,0x00b586b0
@@ -74755,7 +74755,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 74754,data,,,0x00b593a8,0x00b11488,0x00b593a8
 74755,data,GraphicsStructures::CSpeedTreeWind::vftable,,0x00b593b4,0x00b11494,0x00b593b4
 74756,data,GraphicsStructures::CSpeedTreeWind::WindInstance::vftable,,0x00b593c8,0x00b114a8,0x00b593c8
-74757,data,,,0x00b593f4,0x00b114d8,0x00b593f4
+74757,data,GraphicsStructures::CSpeedTreeWind::LoadWnd::s_defaultGustFrequency,"float 9.96, the default of LvlWindSptGustFrequency (gusts per minute) when the .wnd lacks it; LoadWnd divides it by the double 60 (0x00B03BF8) to make +0x20. fld at 0x00A578D8; dev/TREES.md section 5",0x00b593f4,0x00b114d8,0x00b593f4
 74758,data,,,0x00b593fa,0x00b0d3fe,0x00b593fa
 74759,data,,,0x00b593fb,0x00b0d3ff,0x00b593fb
 74760,data,,,0x00b593fc,0x00b0d400,0x00b593fc
