@@ -63591,7 +63591,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 63590,data,EclipseGFxImageLoader::vftable,,0x00af5404,0x00b16eb4,0x00af5404
 63591,data,EclipseGFxImageInitializationVisitor::vftable,,0x00af5410,0x00b16ec0,0x00af5410
 63592,data,,,0x00af5418,0x00af989c,0x00af5418
-63593,data,,,0x00af5438,0x00b16ed0,0x00af5438
+63593,data,GUI::ScaleformManager::ResizeView::s_stageHeight,"double 768.0 pixels, the Flash stage height; below 1024x768 and a narrow aspect the view scale is 768 / height (the wide case uses 1024 / width); fdivr at 0x0051129b",0x00af5438,0x00b16ed0,0x00af5438
 63594,data,"Messages::Private::MemberFunctionMessageHandler<GUI::ScaleformManager,PlayMovieMessage,&GUI::ScaleformManager::HandleMessage>::vftable",,0x00af5444,0x00b16edc,0x00af5444
 63595,data,"Messages::Private::MemberFunctionMessageHandler<GUI::ScaleformManager,StopMovieMessage,&GUI::ScaleformManager::HandleMessage>::vftable",,0x00af5450,0x00b16ee8,0x00af5450
 63596,data,"Messages::Private::MemberFunctionMessageHandler<GUI::ScaleformManager,GUICursorScrollUpMessage,&GUI::ScaleformManager::HandleMessage>::vftable",,0x00af545c,0x00b16ef4,0x00af545c
@@ -63637,7 +63637,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 63636,data,,,0x00af56a8,0x00ae9da0,0x00af56a8
 63637,data,GUI::PrintToLogWindowMessage::vftable,,0x00af56b8,0x00af8a80,0x00af56b8
 63638,data,,,0x00af56d0,0x00afd5c4,0x00af56d0
-63639,data,,,0x00af56e4,0x00b17420,0x00af56e4
+63639,data,GuiMovie::SendMouseMove::s_offscreenMouseCoordinate,"float -999.0 pixels; INFERRED: stored as both x and y of a mouse-move event sent to the movie view (vtable+0x98) in the branch at 0x5188fd, a position far off screen",0x00af56e4,0x00b17420,0x00af56e4
 63640,data,,,0x00af56e8,0x00b17424,0x00af56e8
 63641,data,,,0x00af5704,0x00b17440,0x00af5704
 63642,data,,,0x00af5720,0x00b1745c,0x00af5720
@@ -65157,7 +65157,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 65156,data,CCModule::vftable,,0x00b01e5c,0x00ae82d4,0x00b01e5c
 65157,data,,,0x00b01ed0,0x00ae8348,0x00b01ed0
 65158,data,,,0x00b01edc,0x00ae8354,0x00b01edc
-65159,data,,,0x00b01eec,0x00ae8364,0x00b01eec
+65159,data,GUI::DragonAgeGUISystem::UpdateSharedMapCreatures::s_updateInterval,"float 1/15 s (0.0666667): the time accumulated at [edi+0x158] is compared against it (fcomp at 0x610e87), so shared map creatures are refreshed about fifteen times a second; the row's next 4 bytes (pi) are not read here",0x00b01eec,0x00ae8364,0x00b01eec
 65160,data,GUI::ShowInventoryGUIMessage::vftable,,0x00b01ef8,0x00ae8370,0x00b01ef8
 65161,data,GUI::HideInventoryGUIMessage::vftable,,0x00b01f18,0x00ae8390,0x00b01f18
 65162,data,GUI::ShowJournalGUIMessage::vftable,,0x00b01f38,0x00ae83b0,0x00b01f38
@@ -66978,7 +66978,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 66977,data,CCCreature::s_wieldBodyOverlayWeight,float 0.05: weight handed to SetBodyOverlayWeightSlot0 in ApplyWieldModelTrees (0x006B79C2) and BuildModel (0x006BE211). Weight 0..1,0x00b0f26c,0x00af686c,0x00b0f26c
 66978,data,CCCreature::UpdateController::s_gravity,Float -9.81 (metres per second squared): the vertical term UpdateController hands to the physics controller move call (0x006B6A3B),0x00b0f274,0x00af6874,0x00b0f274
 66979,data,CCCreature::UpdateController::s_minMoveDistance,"Float 0.001 (metres): the min-distance argument of the controller move calls in UpdateController (0x006B6A79, 0x006B6AE0); INFERRED from the PhysX controller move signature",0x00b0f278,0x00af6878,0x00b0f278
-66980,data,,,0x00b0f27c,0x00af687c,0x00b0f27c
+66980,data,PortraitProperties::PortraitProperties::s_defaultDistance,"float 0.6, the constructor's default portrait camera distance (record +0x60; pitch +0x58, rotation +0x5C, set to 0), metres INFERRED; fld at 0x006a9fe9",0x00b0f27c,0x00af687c,0x00b0f27c
 66981,data,CCCreature::CreatePhysicsController::s_minHeight,"Float 1.426 (metres): the controller height is raised to it when below the double 1.426 (0x006B1FFF); 1.426 is the dwarf height (DAOLib dev/CAMERA.md), INFERRED that the gating function 0x006A2CE0 selects dwarves",0x00b0f280,0x00af6880,0x00b0f280
 66982,data,CCCreature::CreatePhysicsController::s_minRadius,Float 0.35 (metres): the controller radius (the appearance PerSpace) is raised to it when below the double 0.35 (0x006B201A),0x00b0f284,0x00af6884,0x00b0f284
 66983,data,,,0x00b0f28c,0x00af688c,0x00b0f28c
@@ -69005,7 +69005,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69004,data,,,0x00b21774,0x00b07c0c,0x00b21774
 69005,data,,,0x00b2178c,0x00b07c24,0x00b2178c
 69006,data,,,0x00b217c4,0x00b07c5c,0x00b217c4
-69007,data,,,0x00b217e8,0x00b07c80,0x00b217e8
+69007,data,GUI::GUIPaperdoll::GUIPaperdoll::s_initialCameraPitch,"float -10.0 degrees, the paperdoll camera's pitch stored at this+0x164 by the constructor; dev/CHARGEN.md; fld at 0x007bffef. The row's next float is 4.0, not read here",0x00b217e8,0x00b07c80,0x00b217e8
 69008,data,,,0x00b217f0,0x00b07c88,0x00b217f0
 69009,data,EquipmentChangedMessage::vftable,,0x00b217f8,0x00b07c90,0x00b217f8
 69010,data,SetCameraPresetMessage::vftable,,0x00b21818,0x00b07cb0,0x00b21818
@@ -69029,12 +69029,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69028,data,,,0x00b21958,0x00b07df8,0x00b21958
 69029,data,,,0x00b21980,0x00b07e20,0x00b21980
 69030,data,,,0x00b21994,0x00b07e34,0x00b21994
-69031,data,,,0x00b219b4,0x00b07e54,0x00b219b4
+69031,data,GUI::GUIPaperdoll::UpdateCamera::s_cameraFarDistance,"float 200.0, metres; INFERRED far clip: pushed with 0.1 (0xae7bd8) as the two floats of the paperdoll camera object's vtable+0x18 call at 0x7b418d, read as its near and far planes",0x00b219b4,0x00b07e54,0x00b219b4
 69032,data,,,0x00b219b8,0x00b07e60,0x00b219b8
 69033,data,,,0x00b219bc,0x00b07e70,0x00b219bc
-69034,data,,,0x00b219c0,0x00b07e74,0x00b219c0
+69034,data,GUI::GUIPaperdoll::UpdateCamera::s_shaleSubjectHeight,"float 2.1, metres: the subject height used to frame the camera for the creature template gen00fl_shale, loaded at 0x7b3afa (dev/CHARGEN.md:182, :220)",0x00b219c0,0x00b07e74,0x00b219c0
 69035,data,,,0x00b219c4,0x00b07e78,0x00b219c4
-69036,data,,,0x00b219e0,0x00b07e94,0x00b219e0
+69036,data,GUI::GUIPaperdoll::UpdateCamera::s_charGenSubjectHeight,"float 1.9, metres: the fixed subject height used to frame the camera in the character-creation game mode (mode 0xB), loaded at 0x7b3ad0 (dev/CHARGEN.md:182, :220); the row's next 4 bytes are a pointer",0x00b219e0,0x00b07e94,0x00b219e0
 69037,data,"SmartData::Attribute<ECBase::ECDynArray<GUI::GUIPaperdoll::CharData*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::vftable_at_4",,0x00b219e8,0x00b07e9c,0x00b219e8
 69038,data,"SmartData::Attribute<ECBase::ECDynArray<GUI::GUIPaperdoll::CharData*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::vftable",,0x00b219fc,0x00b07eb4,0x00b219fc
 69039,data,SmartData::PointerArrayMemberIteratorImpl<ECBase::ECDynArray<GUI::GUIPaperdoll::CharData*>>::vftable,,0x00b21a58,0x00b07f10,0x00b21a58
@@ -69325,7 +69325,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69324,data,,,0x00b24698,0x00b0aea8,0x00b24698
 69325,data,,,0x00b246a8,0x00b0aeb8,0x00b246a8
 69326,data,,,0x00b246b4,0x00b0b448,0x00b246b4
-69327,data,,,0x00b246cc,0x00b0b460,0x00b246cc
+69327,data,PortraitRenderer::Render::s_unsetCameraValue,"float 65505.0, the 'unset' marker pushed seven times as the camera arguments (pitch, rotation, distance, offsets, lights) when the creature is not tagged player or paperdoll, so PlaceCamera takes them from the portraits table; fld at 0x007f4977 and 0x007f49a4; dev/GUI.md",0x00b246cc,0x00b0b460,0x00b246cc
 69328,data,,,0x00b246d4,0x00b0b468,0x00b246d4
 69329,data,,,0x00b246ec,0x00b0b480,0x00b246ec
 69330,data,,,0x00b24714,0x00b0b4a8,0x00b24714
@@ -69377,10 +69377,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69376,data,"Messages::Private::MemberFunctionMessageHandler<GUI::GUICharGenBase,CharGenAssignAttributeMessage,&GUI::GUICharGenBase::HandleMessage>::vftable",,0x00b24d5c,0x00b0bb04,0x00b24d5c
 69377,data,"Messages::Private::MemberFunctionMessageHandler<GUI::GUICharGenBase,CharGenAssignAbilityMessage,&GUI::GUICharGenBase::HandleMessage>::vftable",,0x00b24d68,0x00b0bb10,0x00b24d68
 69378,data,"Messages::Private::MemberFunctionMessageHandler<GUI::GUICharGenBase,AutoLevelUpMessage,&GUI::GUICharGenBase::HandleMessage>::vftable",,0x00b24d74,0x00b0bb1c,0x00b24d74
-69379,data,,,0x00b24d7c,0x00b0bb24,0x00b24d7c
+69379,data,GUI::GUIPaperdoll::s_morphWeightThreshold,"float 0.001, a morph target weight: weights within it of zero count as zero (SliderValueFromWeight 0x7fea5c, ReadSlidersFromRecipe 0x80643c, SetMorphTargetWeight 0x807ed2, BuildMorphRecipe 0x809bff; dev/CHARGEN.md:464)",0x00b24d7c,0x00b0bb24,0x00b24d7c
 69380,data,,,0x00b24d80,0x00b0bb28,0x00b24d80
 69381,data,GUI::GUIPaperdoll::CommandApplyMorph::vftable,,0x00b24d88,0x00b0bb30,0x00b24d88
-69382,data,,,0x00b24d94,0x00b0bb3c,0x00b24d94
+69382,data,GUI::GUIPaperdoll::GetPortraitExpressionMax::s_expressionMax,"float 2/15 (0.133333): the whole body of GetPortraitExpressionMax (0x7fdc90) returns it, the upper end of the portrait Expression slider; INFERRED unit seconds of the expression clip's time (dev/CHARGEN.md:341)",0x00b24d94,0x00b0bb3c,0x00b24d94
 69383,data,,,0x00b24d98,0x00b0bb40,0x00b24d98
 69384,data,,,0x00b24db4,0x00b0bb5c,0x00b24db4
 69385,data,,,0x00b24dd0,0x00b0bb78,0x00b24dd0
@@ -69555,7 +69555,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69554,data,,,0x00b2601c,0x00b0ce0c,0x00b2601c
 69555,data,,,0x00b26038,0x00b0ce28,0x00b26038
 69556,data,,,0x00b26054,0x00b0ce44,0x00b26054
-69557,data,,,0x00b26070,0x00b0ce60,0x00b26070
+69557,data,GUI::GUIPaperdoll::ResetMorphEditor::s_defaultFacialHairColour,"Math::Vector4f (0.08, 0.04, 0.05, 1.0): the default set as the material vector g_vFacialHairColour on the mesh FaceM1 when the morph editor resets; x loaded at 0x0080843C, y (69558) at 0x00808432; the blue 0.05 is a shared literal.",0x00b26070,0x00b0ce60,0x00b26070
 69558,data,,,0x00b26074,0x00b0ce64,0x00b26074
 69559,data,,,0x00b26078,0x00b0ce68,0x00b26078
 69560,data,,,0x00b26094,0x00b0ce84,0x00b26094
@@ -69588,11 +69588,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69587,data,,,0x00b26388,0x00b0d178,0x00b26388
 69588,data,,,0x00b263a4,0x00b0d194,0x00b263a4
 69589,data,,,0x00b263c0,0x00b0d1b0,0x00b263c0
-69590,data,,,0x00b263c4,0x00b0d1b4,0x00b263c4
-69591,data,,,0x00b263c8,0x00b0d1b8,0x00b263c8
-69592,data,,,0x00b263cc,0x00b0d1bc,0x00b263cc
-69593,data,,,0x00b263d0,0x00b0d1c0,0x00b263d0
-69594,data,,,0x00b263d4,0x00b0d1c4,0x00b263d4
+69590,data,GUI::GUIPaperdoll::BuildSliderEntries::s_portraitMoveLeftRightMax,"float 0.036, metres: upper end of the portrait Move Left/Right slider (entry index 0x35, setter SetPortraitMoveLeftRight), stored at 0x80c203 (the lower end is the next row)",0x00b263c4,0x00b0d1b4,0x00b263c4
+69591,data,GUI::GUIPaperdoll::BuildSliderEntries::s_portraitMoveLeftRightMin,"float -0.036, metres: lower end of the portrait Move Left/Right slider (entry 0x35), loaded at 0x80c1f1",0x00b263c8,0x00b0d1b8,0x00b263c8
+69592,data,GUI::GUIPaperdoll::BuildSliderEntries::s_portraitCameraDistanceMax,"float 0.72: upper end of the portrait Camera Distance slider (entry 0x34, SetPortraitCameraDistance; lower end 0.5), loaded at 0x80c17b",0x00b263cc,0x00b0d1bc,0x00b263cc
+69593,data,GUI::GUIPaperdoll::BuildSliderEntries::s_portraitTurnLeftRightMin,"float -45.0, degrees: lower end of the portrait Turn Left/Right slider (entry 0x33; upper end 45), loaded at 0x80c0e1",0x00b263d0,0x00b0d1c0,0x00b263d0
+69594,data,GUI::GUIPaperdoll::BuildSliderEntries::s_portraitLookUpDownMin,"float -30.0, degrees: lower end of the portrait Look Up/Down slider (entry 0x32; upper end 30), loaded at 0x80c059; the row's next 4 bytes are a pointer",0x00b263d4,0x00b0d1c4,0x00b263d4
 69595,data,PlotItems::vftable,,0x00b263dc,0x00b0d1d4,0x00b263dc
 69596,data,PlotItems::vftable_at_48,,0x00b26454,0x00b0d24c,0x00b26454
 69597,data,Backpack::vftable,,0x00b26464,0x00b0d25c,0x00b26464
