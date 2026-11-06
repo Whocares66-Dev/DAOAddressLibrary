@@ -63817,7 +63817,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 63816,data,Physics::ShapePrototype::vftable,,0x00af6f3c,0x00ae5c70,0x00af6f3c
 63817,data,Physics::BoxShapePrototype::vftable,,0x00af6f4c,0x00ae5c80,0x00af6f4c
 63818,data,Physics::CapsuleShapePrototype::vftable,,0x00af6f5c,0x00ae5c90,0x00af6f5c
-63819,data,,,0x00af6f68,0x00ae5c9c,0x00af6f68
+63819,data,Physics::CapsuleShapePrototype::s_capsuleAxisRotation,"Float -1.5708 (-pi/2 radians, -90 degrees) passed as the angle to a rotation builder (0x004CBC40) by both CapsuleShapePrototype constructors at 0x0052D3C1 and 0x005AF47B, standing the capsule upright; INFERRED",0x00af6f68,0x00ae5c9c,0x00af6f68
 63820,data,Physics::SphereShapePrototype::vftable,,0x00af6f70,0x00ae5ca4,0x00af6f70
 63821,data,CInstancePhysicsNode::vftable,,0x00af6f80,0x00b0f19c,0x00af6f80
 63822,data,ECSpeedTreeAllocator::vftable,,0x00af6fa0,0x00b0f1bc,0x00af6fa0
@@ -64162,7 +64162,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 64161,data,GraphicsStructures::ObjectNodeBlueprint::vftable,,0x00af9f04,0x00b121ec,0x00af9f04
 64162,data,GraphicsStructures::ConstructMergeObjectTask::vftable,,0x00af9fac,0x00b10584,0x00af9fac
 64163,data,GraphicsStructures::ConstructCrustObjectTask::vftable,,0x00af9fc4,0x00b1059c,0x00af9fc4
-64164,data,,,0x00af9fd8,0x00aea078,0x00af9fd8
+64164,data,g_reverbDefaultAirAbsorptionHF,"float -5.0 at 0x5bfa76 and 0x5c24d8: field before HFReference in the FMOD Ex FMOD_REVERB_PROPERTIES the group fills (AirAbsorptionHF, dB). INFERRED from FMOD Ex's struct order",0x00af9fd8,0x00aea078,0x00af9fd8
 64165,data,"std::basic_filebuf<wchar_t,std::char_traits<wchar_t>>::vftable",,0x00af9fe0,0x00ae49c0,0x00af9fe0
 64166,data,"std::codecvt<wchar_t,char,int>::vftable",,0x00afa01c,0x00ae49fc,0x00afa01c
 64167,data,GraphicsStructures::ConstructObjectTask::vftable,,0x00afa040,0x00b105b4,0x00afa040
@@ -64186,7 +64186,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 64185,data,,,0x00afa400,0x00b10970,0x00afa400
 64186,data,,,0x00afa424,0x00b10994,0x00afa424
 64187,data,,,0x00afa42c,0x00b1099c,0x00afa42c
-64188,data,,,0x00afa450,0x00b08420,0x00afa450
+64188,data,SyncAlign::ReverseIfPositive::s_reverseRate,"Float -10.0: when the rate is above 1e-6, ReverseIfPositive calls SyncAlign::SetRate(-10.0) (0x007C1A51), a reversed playback rate; INFERRED that it is a rate multiplier",0x00afa450,0x00b08420,0x00afa450
 64189,data,GraphicsStructures::ConstructMorphMergeObjectTask::vftable,,0x00afa458,0x00b109c4,0x00afa458
 64190,data,GraphicsStructures::GraphicsStructuresManager::vftable,,0x00afa474,0x00b109dc,0x00afa474
 64191,data,,,0x00afa51c,0x00b10a84,0x00afa51c
@@ -64301,7 +64301,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 64300,data,,,0x00afb3cc,0x00b10f5c,0x00afb3cc
 64301,data,,,0x00afb3e8,0x00b10f78,0x00afb3e8
 64302,data,,,0x00afb3fc,0x00b10f98,0x00afb3fc
-64303,data,,,0x00afb408,0x00b12cd0,0x00afb408
+64303,data,g_physicsJointDefaultAngle,"Float 0.0872664 radians (5 degrees): the default angle when a physics joint limit is missing in ReadXMLJointD6 (0x0059A8EF) and for two angle pairs of ReadPHYJoint (0x0058B055, 0x0058B404)",0x00afb408,0x00b12cd0,0x00afb408
 64304,data,GraphicsStructures::ObjectNodeUsePointBlueprint::vftable,,0x00afb414,0x00b12cdc,0x00afb414
 64305,data,GraphicsStructures::ObjectNodeSnaptoPointBlueprint::vftable,,0x00afb4bc,0x00b12d84,0x00afb4bc
 64306,data,GraphicsStructures::ObjectNodeBoneBlueprint::vftable,,0x00afb564,0x00b12e2c,0x00afb564
@@ -64755,7 +64755,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 64754,data,EclipsePrivate::CContentRenderer::vftable,,0x00aff084,0x00b0e2f4,0x00aff084
 64755,data,EclipsePrivate::CContent::vftable,,0x00aff0f4,0x00b0e364,0x00aff0f4
 64756,data,EclipsePrivate::CContentBank::vftable,,0x00aff1ac,0x00b0e41c,0x00aff1ac
-64757,data,,,0x00aff1c8,0x00b0e438,0x00aff1c8
+64757,data,g_reverbDefaultFadeSeconds,float 0.33: SetReverbChannelGroupPreset uses it when its fade argument is negative (0x005C30E5) and ReverbChannelGroup_Construct stores it at group+0x19C (0x005BFAA5). Seconds. INFERRED as a fade time,0x00aff1c8,0x00b0e438,0x00aff1c8
 64758,data,EclipsePrivate::CMusicThemeContent::vftable,,0x00aff1d0,0x00b0e440,0x00aff1d0
 64759,data,EclipsePrivate::CContentRenderer_FMOD::vftable,,0x00aff20c,0x00b0e47c,0x00aff20c
 64760,data,EclipsePrivate::CContentBank_FMOD::vftable,,0x00aff278,0x00b0e4e8,0x00aff278
@@ -64773,12 +64773,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 64772,data,,,0x00aff3c0,0x00b0e630,0x00aff3c0
 64773,data,,,0x00aff3d0,0x00af8238,0x00aff3d0
 64774,data,,,0x00aff3d8,0x00b0e640,0x00aff3d8
-64775,data,,,0x00aff3e0,0x00b0e648,0x00aff3e0
-64776,data,,,0x00aff3e4,0x00b0e64c,0x00aff3e4
+64775,data,g_reverbDefaultLFReference,"float 250 (Hz): LFReference in the default reverb properties (0x5bfa8a, 0x5c24ef, 0x5c2642)",0x00aff3e0,0x00b0e648,0x00aff3e0
+64776,data,g_reverbDefaultHFReference,"float 5000 (Hz): HFReference in the default reverb properties (0x5bfa80, 0x5c24e2, 0x5c2635)",0x00aff3e4,0x00b0e64c,0x00aff3e4
 64777,data,,,0x00aff3e8,0x00ae5ce8,0x00aff3e8
 64778,data,,,0x00aff3ec,0x00b0e650,0x00aff3ec
-64779,data,,,0x00aff3f0,0x00b0e654,0x00aff3f0
-64780,data,,,0x00aff3f4,0x00b0e658,0x00aff3f4
+64779,data,g_reverbDefaultReflectionsDelay,"float 0.007 (seconds): ReflectionsDelay of the default reverb properties (0x5bfa0b, 0x5c2479)",0x00aff3f0,0x00b0e654,0x00aff3f0
+64780,data,g_reverbDefaultEnvironmentSize,"float 7.5: EnvSize of the default reverb properties (0x5bf9ca, 0x5c2440)",0x00aff3f4,0x00b0e658,0x00aff3f4
 64781,data,,,0x00aff3f8,0x00b0e65c,0x00aff3f8
 64782,data,,,0x00aff404,0x00b0e668,0x00aff404
 64783,data,,,0x00aff418,0x00b0e67c,0x00aff418
@@ -64798,8 +64798,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 64797,data,,,0x00aff6c8,0x00b0e928,0x00aff6c8
 64798,data,,,0x00aff6dc,0x00b0e93c,0x00aff6dc
 64799,data,,,0x00aff6f0,0x00b0e950,0x00aff6f0
-64800,data,,,0x00aff75c,0x00b0e9bc,0x00aff75c
-64801,data,,,0x00aff760,0x00b0e9c0,0x00aff760
+64800,data,ReverbChannelGroup_SetPreset::s_genericDecayHFRatio,float 0.83: DecayHFRatio stored at +0xbc in a preset block (0x5c256e) beside decay time 1.49 and room -1000/-100: the generic I3DL2 preset,0x00aff75c,0x00b0e9bc,0x00aff75c
+64801,data,ReverbChannelGroup_SetPreset::s_genericDecayTime,float 1.49 seconds: DecayTime stored at +0xb8 (0x5c2553) in the generic preset,0x00aff760,0x00b0e9c0,0x00aff760
 64802,data,,,0x00aff764,0x00b0e9c4,0x00aff764
 64803,data,,,0x00aff76c,0x00b0e9cc,0x00aff76c
 64804,data,,,0x00aff778,0x00b0e9d8,0x00aff778
@@ -64812,7 +64812,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 64811,data,,,0x00aff84c,0x00b0eaac,0x00aff84c
 64812,data,,,0x00aff85c,0x00b0eabc,0x00aff85c
 64813,data,EclipsePrivate::CMusicThemeContent_FMOD::vftable,,0x00aff86c,0x00b0eacc,0x00aff86c
-64814,data,,,0x00aff8a4,0x00b0eb04,0x00aff8a4
+64814,data,EclipsePrivate::CMusicThemeContent_FMOD::Update::s_trackWaitSeconds,"Float 12.0 (seconds): the music state machine zeroes its wait timer (+0x12C) once it passes 12 s, at 0x005C4BD7, 0x005C4C45 and 0x005C4EAE; DAOLib dev/AUDIO.md states the wait is ""at most 12 s""",0x00aff8a4,0x00b0eb04,0x00aff8a4
 64815,data,,,0x00aff8a8,0x00b0eb08,0x00aff8a8
 64816,data,,,0x00aff8d4,0x00b0eb34,0x00aff8d4
 64817,data,,,0x00aff8ec,0x00b0eb4c,0x00aff8ec
@@ -64844,10 +64844,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 64843,data,SmartData::MemberIterator::vftable,,0x00affd98,0x00ae3584,0x00affd98
 64844,data,SmartData::TokenStringReplacer::vftable,,0x00affda0,0x00b4dfc4,0x00affda0
 64845,data,,,0x00affdbc,0x00b0d378,0x00affdbc
-64846,data,,,0x00affdcc,0x00b0d388,0x00affdcc
+64846,data,EC::ChunkManager::LoadTrees::s_unitDiagonal,"Float 0.57735 (1/sqrt 3), all three components of a vector (0.57735, 0.57735, 0.57735) that LoadTrees passes to 0x004D4DF0 at 0x005C8BC6; a diagonal unit direction (no data case), INFERRED",0x00affdcc,0x00b0d388,0x00affdcc
 64847,data,,,0x00affdd0,0x00b0d38c,0x00affdd0
 64848,data,,,0x00affde0,0x00b0d39c,0x00affde0
-64849,data,,,0x00affdf0,0x00b0d3a8,0x00affdf0
+64849,data,EC::ChunkManager::s_viewerJumpDistanceSquared,"Double 900.0 (a squared distance, 30 m): when the viewer is more than 30 m from its previous position SetViewer (0x005C987C) and Update (0x005CA329) restart the chunk load and pause the game (SetPaused(true) at 0x005C98CA); the squared-distance reading of 0x0045B080 is INFERRED",0x00affdf0,0x00b0d3a8,0x00affdf0
 64850,data,,,0x00affdf8,0x00b0d3b0,0x00affdf8
 64851,data,IAreaLayout::vftable,,0x00affe00,0x00b0d3b8,0x00affe00
 64852,data,EC::ChunkManager::vftable,,0x00affe24,0x00b0d3dc,0x00affe24
@@ -64856,19 +64856,19 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 64855,data,,,0x00affe68,0x00b0459c,0x00affe68
 64856,data,,,0x00affe70,0x00afa694,0x00affe70
 64857,data,CCameraFixedPolicy::vftable,,0x00affe7c,0x00b0d978,0x00affe7c
-64858,data,,,0x00affe84,0x00b0d980,0x00affe84
+64858,data,EC::TileFade::Begin::s_fadeSeconds,Float 0.1 (seconds): the fade time TileFade::Begin returns for a tile that starts fading; after more than 5 tiles have begun it returns 0.0001 instead (0x005CBC44),0x00affe84,0x00b0d980,0x00affe84
 64859,data,,,0x00affe90,0x00ae6218,0x00affe90
 64860,data,FreeLODMemoryTask::vftable,,0x00affe9c,0x00b0d994,0x00affe9c
-64861,data,,,0x00affeb0,0x00b0d9a8,0x00affeb0
-64862,data,,,0x00affeb8,0x00b0d9b0,0x00affeb8
+64861,data,EC::ChunkTile::SetBounds::s_minFarDistance,"Double 160.0 (metres): SetBounds stores max(160, radius / 0.05241) at tile +0x2B4, the far distance from the tile radius; the doubles 0.05241, 0.577 and 0.777 look like tan 3, 30 and 38 degrees, INFERRED",0x00affeb0,0x00b0d9a8,0x00affeb0
+64862,data,EC::ChunkTile::SetBounds::s_farRadiusDivisor,"Double 0.05241: SetBounds divides the tile radius term by it for the far distance, floored at 160 m (s_minFarDistance) and stored at tile +0x2B4 (0x005CBDA4)",0x00affeb8,0x00b0d9b0,0x00affeb8
 64863,data,,,0x00affec0,0x00b07260,0x00affec0
-64864,data,,,0x00affec8,0x00b0d9b8,0x00affec8
+64864,data,EC::ChunkTile::SetBounds::s_nearRadiusDivisor,"Double 0.577: SetBounds divides the tile radius by it, caps the result at 15 m, squares it and stores it at tile +0x2AC (0x005CBD4C)",0x00affec8,0x00b0d9b8,0x00affec8
 64865,data,,,0x00affed0,0x00b0d9c0,0x00affed0
-64866,data,,,0x00affed8,0x00b0d9c8,0x00affed8
-64867,data,,,0x00affee0,0x00b0d9e0,0x00affee0
-64868,data,,,0x00affee8,0x00b0d9e8,0x00affee8
+64866,data,EC::ChunkTile::SetBounds::s_midRadiusDivisor,"Double 0.777: SetBounds divides the tile radius by it for the mid distance, floored at 80 m (a pooled double) and stored at tile +0x2A8 (0x005CBD29)",0x00affed8,0x00b0d9c8,0x00affed8
+64867,data,EC::ChunkTile::PlaceModel::s_farDistancePadding,"Double 70.0 (metres): PlaceModel sets the tile model distance to max(1.1 * d, d + 70), where d is the model value at +0xB0 (0x005CCAC2); INFERRED that d is the model radius",0x00affee0,0x00b0d9e0,0x00affee0
+64868,data,EC::ChunkTile::CollectModels::s_cullRatioSquared,Double 2500.0 (50 squared): CollectModels collects a tile's two models only if tile +0x2E4 divided by the squared radius +0x2A4 is at most 2500 (0x005CD92C); INFERRED as distance squared over radius squared,0x00affee8,0x00b0d9e8,0x00affee8
 64869,data,EC::CExteriorChunk::vftable,,0x00affef4,0x00b0d9f4,0x00affef4
-64870,data,,,0x00afff78,0x00b0d7a8,0x00afff78
+64870,data,EC::ChunkManager::SetChunkSize::s_chunkDiagonalFactor,"double 1.41 (about sqrt 2): the chunk size times it is stored at +0xb0 (0x5cf998), the chunk's diagonal radius. Unit: ratio",0x00afff78,0x00b0d7a8,0x00afff78
 64871,data,,,0x00afff80,0x00b0d7b0,0x00afff80
 64872,data,,,0x00afff88,0x00b0d7b8,0x00afff88
 64873,data,,,0x00afff90,0x00b0d7c0,0x00afff90
@@ -65378,7 +65378,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 65377,data,,,0x00b03a40,0x00ae9f58,0x00b03a40
 65378,data,,,0x00b03a4c,0x00ae9f64,0x00b03a4c
 65379,data,,,0x00b03a84,0x00ae9f9c,0x00b03a84
-65380,data,,,0x00b03aa8,0x00ae9ff8,0x00b03aa8
+65380,data,CCObject::UpdateFade::s_fadeMilliseconds,"Double 500.0 (milliseconds): UpdateFade divides the elapsed millisecond count by it (0x00695B0F, 0x00695B9F), so a fade in or out takes half a second",0x00b03aa8,0x00ae9ff8,0x00b03aa8
 65381,data,,,0x00b03ab0,0x00aea018,0x00b03ab0
 65382,data,,,0x00b03ab8,0x00aea020,0x00b03ab8
 65383,data,,,0x00b03ad8,0x00aea040,0x00b03ad8
@@ -65612,7 +65612,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 65611,data,Notifications::vftable_at_1c,,0x00b05514,0x00b08604,0x00b05514
 65612,data,Notifications::vftable_at_8,,0x00b05570,0x00b08660,0x00b05570
 65613,data,Notifications::vftable,,0x00b05580,0x00b08670,0x00b05580
-65614,data,,,0x00b05594,0x00af6010,0x00b05594
+65614,data,g_quickbarFieldIds,"Table of uint32, 5 used entries 0x3FB4, 0x3FB9, 0x3FBA, 0x3FBB, 0x3FBC (16308, 16313 to 16316): the GFF4 field ids of a creature's quickbar lists, indexed by CreatureAbilities::SaveQuickbars (0x0062B220), LoadQuickbars (0x0062C420) and CCCreatureStats::DefineCPS1Schema (0x0062D626)",0x00b05594,0x00af6010,0x00b05594
 65615,data,Destroyer::DestroyerHelper<AbilityInstance>::vftable,,0x00b055ac,0x00af6028,0x00b055ac
 65616,data,,,0x00b055b0,0x00af602c,0x00b055b0
 65617,data,,,0x00b055b4,0x00af6030,0x00b055b4
@@ -65626,7 +65626,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 65625,data,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::vftable_at_4",,0x00b056f0,0x00af6180,0x00b056f0
 65626,data,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::vftable",,0x00b05704,0x00af6194,0x00b05704
 65627,data,"SmartData::ArrayMemberIteratorImpl<ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>>::vftable",,0x00b05760,0x00af61f0,0x00b05760
-65628,data,,,0x00b05774,0x00afdf78,0x00b05774
+65628,data,CCParty::s_replanSeconds,Float 0.5 (seconds): CCParty::Update accumulates a timer at +0x228 and replans when it passes 0.5 (0x00630FAF); ForceReplan stores 0.5 in +0x224 (0x0062EB90) to make the next update replan; INFERRED,0x00b05774,0x00afdf78,0x00b05774
 65629,data,,,0x00b0577c,0x00af6208,0x00b0577c
 65630,data,FocusCameraOnObject::vftable,,0x00b05784,0x00aea278,0x00b05784
 65631,data,HideAlertMessage::vftable,,0x00b057b4,0x00afdf8c,0x00b057b4
@@ -65816,7 +65816,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 65815,data,,,0x00b06ac4,0x00aedc1c,0x00b06ac4
 65816,data,,,0x00b06ad0,0x00aedc28,0x00b06ad0
 65817,data,,,0x00b06adc,0x00aedc34,0x00b06adc
-65818,data,,,0x00b06afc,0x00aedc54,0x00b06afc
+65818,data,World_Update::s_phaseBudgetsMicroseconds,"uint32[5] table {128, 192, 480, 1200, 3000} (the fifth is the next row): World_Update walks it from the end (0x64b06b, 0x64b1d4) and compares each entry with Clock::Microseconds differences, a time budget per phase. Unit: microseconds. INFERRED that each entry is a per-phase budget",0x00b06afc,0x00aedc54,0x00b06afc
 65819,data,,,0x00b06b0c,0x00aedc64,0x00b06b0c
 65820,data,,,0x00b06b10,0x00aedc68,0x00b06b10
 65821,data,,,0x00b06b20,0x00aedc78,0x00b06b20
@@ -65860,8 +65860,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 65859,data,,,0x00b07d50,0x00aef148,0x00b07d50
 65860,data,DisplayFloatyMessage::vftable,,0x00b07d5c,0x00aeb478,0x00b07d5c
 65861,data,,,0x00b07d88,0x00aef164,0x00b07d88
-65862,data,,,0x00b07d98,0x00aef178,0x00b07d98
-65863,data,,,0x00b07da0,0x00aef180,0x00b07da0
+65862,data,ScriptCommand::FEETTOMETERS::s_metersPerFoot,Double 0.3048 (metres per foot): the script command FeetToMeters multiplies its argument by it (0x0064FD95),0x00b07d98,0x00aef178,0x00b07d98
+65863,data,ScriptCommand::YARDSTOMETERS::s_metersPerYard,"Double 0.9114 (metres per yard, as written in the exe): YardsToMeters multiplies its argument by it (0x0064FDF5); the true value is 0.9144, so this looks like a typo in the engine",0x00b07da0,0x00aef180,0x00b07da0
 65864,data,TakeScreenshotMessage::vftable,,0x00b07dac,0x00aeb808,0x00b07dac
 65865,data,,,0x00b07dd8,0x00aef1a8,0x00b07dd8
 65866,data,,,0x00b07e00,0x00aef1d0,0x00b07e00
@@ -66744,7 +66744,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 66743,data,ProjectileLoadTask::vftable,,0x00b0d8f8,0x00af4cb8,0x00b0d8f8
 66744,data,ProjectileInitTask::vftable,,0x00b0d910,0x00af4cd0,0x00b0d910
 66745,data,CProjectileManager::vftable,,0x00b0d928,0x00af4ce8,0x00b0d928
-66746,data,,,0x00b0d948,0x00af4d08,0x00b0d948
+66746,data,g_invalidTeamId,"Int32 -1 (0xFFFFFFFF): the team id GETTEAMID returns when the object is not found (0x0065BCF9), the default CCObject::CCObject sets, and the value GETTEAM tests for (0x0066E618)",0x00b0d948,0x00af4d08,0x00b0d948
 66747,data,,,0x00b0d94c,0x00af4d0c,0x00b0d94c
 66748,data,Physics::IPhysicsTriggerReport::vftable,,0x00b0d958,0x00af4d18,0x00b0d958
 66749,data,EffectsHolder::vftable,,0x00b0d964,0x00af4d24,0x00b0d964
@@ -66764,11 +66764,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 66763,data,KDCreatureNode::vftable,,0x00b0da4c,0x00af4e0c,0x00b0da4c
 66764,data,,,0x00b0da54,0x00af4e14,0x00b0da54
 66765,data,"Messages::Private::MemberFunctionMessageHandler<CCArea,OnMinimapScaleChangedMessage,&CCArea::HandleMessage>::vftable",,0x00b0da94,0x00af4e54,0x00b0da94
-66766,data,,,0x00b0daa0,0x00af4e60,0x00b0daa0
+66766,data,CCArea::IsSegmentClearExceptMover::s_segmentHeightOffset,double 0.500001 added to a segment end's height (0x67d022). Unit: metres,0x00b0daa0,0x00af4e60,0x00b0daa0
 66767,data,,,0x00b0daa8,0x00af4e68,0x00b0daa8
 66768,data,,,0x00b0dab4,0x00af4e74,0x00b0dab4
 66769,data,,,0x00b0dac0,0x00af4e80,0x00b0dac0
-66770,data,,,0x00b0dacc,0x00af4e8c,0x00b0dacc
+66770,data,CCArea::GetReverbPresetAtPoint::s_initialSmallestArea,Float 1e7: the start value of the smallest rectangle area while the function picks the reverb region with the smallest x-y rectangle at a point (0x0067DD0F; DAOLib dev/AUDIO.md),0x00b0dacc,0x00af4e8c,0x00b0dacc
 66771,data,,,0x00b0dad0,0x00af4e90,0x00b0dad0
 66772,data,,,0x00b0dae0,0x00af4ea0,0x00b0dae0
 66773,data,KDCreatureBranch::vftable,,0x00b0daf4,0x00af4eb4,0x00b0daf4
@@ -66840,10 +66840,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 66839,data,Response::vftable_at_1c,,0x00b0e14c,0x00af551c,0x00b0e14c
 66840,data,Response::vftable_at_8,,0x00b0e1a8,0x00af5578,0x00b0e1a8
 66841,data,Response::vftable,,0x00b0e1b8,0x00af5588,0x00b0e1b8
-66842,data,,,0x00b0e1d0,0x00af55a0,0x00b0e1d0
-66843,data,,,0x00b0e1d8,0x00af55a8,0x00b0e1d8
-66844,data,,,0x00b0e1e0,0x00af55b8,0x00b0e1e0
-66845,data,,,0x00b0e1e8,0x00af55c0,0x00b0e1e8
+66842,data,GameModeDialog::PlaceDialogueCamera::s_sin2Degrees,Double 0.0348995 (sin 2 degrees): used to turn the camera offset by 2 degrees at 0x0068D7D5; INFERRED,0x00b0e1d0,0x00af55a0,0x00b0e1d0
+66843,data,GameModeDialog::PlaceDialogueCamera::s_oneMinusCos2Degrees,"Float 0.000609159 (1 - cos 2 degrees), copied once into a function-scope static at 0x00C34DB0 (0x0068D7A3) and used with the 2 degree sine; INFERRED",0x00b0e1d8,0x00af55a8,0x00b0e1d8
+66844,data,GameModeDialog::PlaceDialogueCamera::s_sin15Degrees,Double 0.258819 (sin 15 degrees): with cos 15 degrees it turns the camera offset 15 degrees about the vertical axis (0x0068D6D8); INFERRED,0x00b0e1e0,0x00af55b8,0x00b0e1e0
+66845,data,GameModeDialog::PlaceDialogueCamera::s_cos15Degrees,Double 0.965926 (cos 15 degrees) of the same 15 degree turn (0x0068D6CA); INFERRED,0x00b0e1e8,0x00af55c0,0x00b0e1e8
 66846,data,,,0x00b0e1f0,0x00af55c8,0x00b0e1f0
 66847,data,,,0x00b0e1f8,0x00ae3630,0x00b0e1f8
 66848,data,,,0x00b0e200,0x00af55d0,0x00b0e200
@@ -66882,8 +66882,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 66881,data,,,0x00b0e638,0x00af5a18,0x00b0e638
 66882,data,,,0x00b0e648,0x00af5a28,0x00b0e648
 66883,data,,,0x00b0e680,0x00af5a60,0x00b0e680
-66884,data,,,0x00b0e6b0,0x00af5a90,0x00b0e6b0
-66885,data,,,0x00b0e6b4,0x00af5a94,0x00b0e6b4
+66884,data,GameModeCutscene::SetLodBandEdges::s_band2Edge,"Float 39.0 (metres): the edge of LOD band 2 in a cutscene (band 0 is 19), passed to the LodManager at 0x00C33B20 with 10 as the cost cap (0x00691EBC; DAOLib dev/PARTY.md ""Thresholds per game mode"")",0x00b0e6b0,0x00af5a90,0x00b0e6b0
+66885,data,GameModeCutscene::SetLodBandEdges::s_band0Edge,"Float 19.0 (metres): the edge of LOD band 0 in a cutscene (explore uses 10), cost cap 10 (0x00691E82; DAOLib dev/PARTY.md)",0x00b0e6b4,0x00af5a94,0x00b0e6b4
 66886,data,GameModeCutsceneData::vftable,,0x00b0e6bc,0x00af5a9c,0x00b0e6bc
 66887,data,"Messages::Private::MemberFunctionMessageHandler<GameModeCutscene,SkipCutsceneMessage,&GameModeCutscene::HandleMessage>::vftable",,0x00b0e6dc,0x00af5abc,0x00b0e6dc
 66888,data,GameModeCutscene::vftable_at_20,,0x00b0e6e8,0x00af5ac8,0x00b0e6e8
@@ -66913,9 +66913,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 66912,data,TutorialControl::vftable_at_1c,,0x00b0eab4,0x00af5e94,0x00b0eab4
 66913,data,TutorialControl::vftable_at_8,,0x00b0eb10,0x00af5ef0,0x00b0eb10
 66914,data,TutorialControl::vftable,,0x00b0eb20,0x00af5f00,0x00b0eb20
-66915,data,,,0x00b0eb34,0x00af5f14,0x00b0eb34
+66915,data,GameMode::s_idleCursorSeconds,Float 3.0 (seconds): GameMode::Enter sets the idle timer at +0x74 to it (0x00694BD6) and UpdateIdleCursor compares the timer against it (0x00694920); the use as the idle-cursor period is INFERRED,0x00b0eb34,0x00af5f14,0x00b0eb34
 66916,data,,,0x00b0eb38,0x00af5f18,0x00b0eb38
-66917,data,,,0x00b0eb3c,0x00af5f1c,0x00b0eb3c
+66917,data,GameMode::SetLodBandEdges::s_band2Edge,"Float 29.0 (metres): the edge of LOD band 2 in explore, combat and loading, cost cap 10 (0x00694326; DAOLib dev/PARTY.md)",0x00b0eb3c,0x00af5f1c,0x00b0eb3c
 66918,data,,,0x00b0eb40,0x00af5f20,0x00b0eb40
 66919,data,,,0x00b0eb5c,0x00af5f3c,0x00b0eb5c
 66920,data,,,0x00b0eb74,0x00af5f54,0x00b0eb74
@@ -66959,7 +66959,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 66958,data,,,0x00b0f104,0x00af6704,0x00b0f104
 66959,data,,,0x00b0f110,0x00af6710,0x00b0f110
 66960,data,,,0x00b0f118,0x00af6718,0x00b0f118
-66961,data,,,0x00b0f120,0x00af6720,0x00b0f120
+66961,data,CCObject::Play::s_startJitterCenter,"Double 0.45 (seconds): Play adds (rand() % 90) / 100 - 0.45 to a start time, a random offset of -0.45 to +0.44 s (0x0069B493); INFERRED as a start offset",0x00b0f120,0x00af6720,0x00b0f120
 66962,data,CScriptEvent::vftable,,0x00b0f12c,0x00af672c,0x00b0f12c
 66963,data,,,0x00b0f138,0x00af6738,0x00b0f138
 66964,data,,,0x00b0f140,0x00af6740,0x00b0f140
@@ -66973,14 +66973,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 66972,data,,,0x00b0f21c,0x00af681c,0x00b0f21c
 66973,data,,,0x00b0f23c,0x00af683c,0x00b0f23c
 66974,data,,,0x00b0f254,0x00af6854,0x00b0f254
-66975,data,,,0x00b0f264,0x00af6864,0x00b0f264
+66975,data,g_lineOfSightEyeHeight,"Float 1.8 (metres): added to the z of the observer in CHECKLINEOFSIGHTPOSITION (0x00655D34), CHECKLINEOFSIGHTOBJECT (0x00668ECD) and the client copy (0x006D900D), the eye height of the line-of-sight ray",0x00b0f264,0x00af6864,0x00b0f264
 66976,data,,,0x00b0f268,0x00af6868,0x00b0f268
-66977,data,,,0x00b0f26c,0x00af686c,0x00b0f26c
-66978,data,,,0x00b0f274,0x00af6874,0x00b0f274
-66979,data,,,0x00b0f278,0x00af6878,0x00b0f278
+66977,data,CCCreature::s_wieldBodyOverlayWeight,float 0.05: weight handed to SetBodyOverlayWeightSlot0 in ApplyWieldModelTrees (0x006B79C2) and BuildModel (0x006BE211). Weight 0..1,0x00b0f26c,0x00af686c,0x00b0f26c
+66978,data,CCCreature::UpdateController::s_gravity,Float -9.81 (metres per second squared): the vertical term UpdateController hands to the physics controller move call (0x006B6A3B),0x00b0f274,0x00af6874,0x00b0f274
+66979,data,CCCreature::UpdateController::s_minMoveDistance,"Float 0.001 (metres): the min-distance argument of the controller move calls in UpdateController (0x006B6A79, 0x006B6AE0); INFERRED from the PhysX controller move signature",0x00b0f278,0x00af6878,0x00b0f278
 66980,data,,,0x00b0f27c,0x00af687c,0x00b0f27c
-66981,data,,,0x00b0f280,0x00af6880,0x00b0f280
-66982,data,,,0x00b0f284,0x00af6884,0x00b0f284
+66981,data,CCCreature::CreatePhysicsController::s_minHeight,"Float 1.426 (metres): the controller height is raised to it when below the double 1.426 (0x006B1FFF); 1.426 is the dwarf height (DAOLib dev/CAMERA.md), INFERRED that the gating function 0x006A2CE0 selects dwarves",0x00b0f280,0x00af6880,0x00b0f280
+66982,data,CCCreature::CreatePhysicsController::s_minRadius,Float 0.35 (metres): the controller radius (the appearance PerSpace) is raised to it when below the double 0.35 (0x006B201A),0x00b0f284,0x00af6884,0x00b0f284
 66983,data,,,0x00b0f28c,0x00af688c,0x00b0f28c
 66984,data,,,0x00b0f290,0x00af6890,0x00b0f290
 66985,data,,,0x00b0f294,0x00af6894,0x00b0f294
@@ -66990,21 +66990,21 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 66989,data,SwitchWeaponSetMessage::vftable,,0x00b0f2c0,0x00aeac98,0x00b0f2c0
 66990,data,,,0x00b0f2ec,0x00af68bc,0x00b0f2ec
 66991,data,,,0x00b0f2f8,0x00af68c8,0x00b0f2f8
-66992,data,,,0x00b0f30c,0x00af68dc,0x00b0f30c
-66993,data,,,0x00b0f310,0x00af68e0,0x00b0f310
+66992,data,CCCreature::GetControllerHeight::s_maxHeight,"Float 1.7 (metres): GetControllerHeight returns it when the creature height (vtable +0x1B0) is above 1.7, capping the physics controller height (0x0069EE46)",0x00b0f30c,0x00af68dc,0x00b0f30c
+66993,data,CCCreature::GetControllerHeight::s_maxHeightLimit,Double 1.7 (metres): the height GetControllerHeight compares the creature height (vtable +0x1B0) with before capping it at the float 1.7 (0x0069EE20),0x00b0f310,0x00af68e0,0x00b0f310
 66994,data,,,0x00b0f318,0x00af68f0,0x00b0f318
 66995,data,,,0x00b0f328,0x00af6900,0x00b0f328
 66996,data,,,0x00b0f358,0x00af6930,0x00b0f358
 66997,data,,,0x00b0f380,0x00af6960,0x00b0f380
 66998,data,PartLookAtController::vftable,,0x00b0f388,0x00af6968,0x00b0f388
 66999,data,,,0x00b0f38c,0x00aec6bc,0x00b0f38c
-67000,data,,,0x00b0f3bc,0x00af697c,0x00b0f3bc
+67000,data,CCCreature::ForEachHandSlotItem::s_handSlots,"Table of uint32 {0, 1, 2}: the equipment slots ForEachHandSlotItem visits, MAIN, OFFHAND and RANGEDAMMO (0x006A0EE0; slot names from DAOLib dev/ITEMS.md)",0x00b0f3bc,0x00af697c,0x00b0f3bc
 67001,data,,,0x00b0f3c8,0x00af6988,0x00b0f3c8
 67002,data,,,0x00b0f3f0,0x00af69b0,0x00b0f3f0
 67003,data,,,0x00b0f400,0x00af69c0,0x00b0f400
 67004,data,Physics::SCtrlCapsuleDesc::vftable,,0x00b0f418,0x00af69d8,0x00b0f418
 67005,data,,,0x00b0f420,0x00af69e0,0x00b0f420
-67006,data,,,0x00b0f44c,0x00af6a0c,0x00b0f44c
+67006,data,g_defaultCreatureHeight,"Float 1.75 (metres): the height of a creature with no appearance height, in CCCreature::GetHeight (0x006A1B5C), EyesLocal (0x006A1ECD, the eye z) and EC::Cutscene::Actor::GetHeight (0x007CE5ED)",0x00b0f44c,0x00af6a0c,0x00b0f44c
 67007,data,,,0x00b0f450,0x00af6a10,0x00b0f450
 67008,data,,,0x00b0f45c,0x00af6a1c,0x00b0f45c
 67009,data,,,0x00b0f468,0x00af6a28,0x00b0f468
@@ -67013,7 +67013,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 67012,data,,,0x00b0f4a0,0x00af6a60,0x00b0f4a0
 67013,data,,,0x00b0f4b4,0x00af6a74,0x00b0f4b4
 67014,data,,,0x00b0f4c8,0x00af6a88,0x00b0f4c8
-67015,data,,,0x00b0f500,0x00af6ac0,0x00b0f500
+67015,data,CCCreature::s_bodyRadiusScale,"Double 0.6: the appearance radius (CAppearance +0x60, the PerSpace) multiplied by it in SetupMovementPath (0x006A2A59), CreateMeleeRings (0x006AC39E) and CreatePhysicsController (0x006B2028); the meaning of the product is INFERRED",0x00b0f500,0x00af6ac0,0x00b0f500
 67016,data,CWalkHitInfo::vftable,,0x00b0f50c,0x00af6ad0,0x00b0f50c
 67017,data,"SmartData::Attribute<PortraitProperties*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::vftable_at_4",,0x00b0f518,0x00af6b50,0x00b0f518
 67018,data,"SmartData::Attribute<PortraitProperties*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::vftable",,0x00b0f52c,0x00af6b64,0x00b0f52c
@@ -67043,12 +67043,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 67042,data,,,0x00b0f810,0x00af6e48,0x00b0f810
 67043,data,,,0x00b0f81c,0x00af6e54,0x00b0f81c
 67044,data,,,0x00b0f830,0x00ae4ed0,0x00b0f830
-67045,data,,,0x00b0f838,0x00af6e68,0x00b0f838
+67045,data,CCCreature::UpdateVegetationSound::s_intervalStep,"double 0.004: step added per unit of the random index (0x6a5676): interval = index * 0.004 + 0.8, stored at +0xa00. Unit: seconds",0x00b0f838,0x00af6e68,0x00b0f838
 67046,data,,,0x00b0f840,0x00af6e70,0x00b0f840
 67047,data,,,0x00b0f84c,0x00af6e88,0x00b0f84c
-67048,data,,,0x00b0f858,0x00af6ea0,0x00b0f858
-67049,data,,,0x00b0f860,0x00af6ea8,0x00b0f860
-67050,data,,,0x00b0f880,0x00af6ec8,0x00b0f880
+67048,data,CCCreature::PathBlocker::s_blockerDistanceSquared,double 25.0: a squared distance compared at 0x6a7eda (5 m). Unit: m^2. INFERRED role,0x00b0f858,0x00af6ea0,0x00b0f858
+67049,data,ScriptBackend::ForScript_ScaleEquippedItems::s_materialColumnHashes,"Table of 8 uint32 CRC hashes of the ts_material columns Material1 to Material8, indexed by the level column (0x006A89EA; DAOLib dev/ITEMS.md ""ScaleEquippedItems"")",0x00b0f860,0x00af6ea8,0x00b0f860
+67050,data,ScriptBackend::ForScript_ScaleEquippedItems::s_equipmentSlots,"Table of 12 uint32 equipment slots 0 MAIN, 1 OFFHAND, 2 RANGEDAMMO, 4 CHEST, 5 HEAD, 6 BOOTS, 7 GLOVES, 9 RING1, 10 RING2, 11 NECK, 12 BELT, 13 BITE, walked by ScaleEquippedItems (0x006A89BB; DAOLib dev/ITEMS.md)",0x00b0f880,0x00af6ec8,0x00b0f880
 67051,data,,,0x00b0f8b0,0x00af6ef8,0x00b0f8b0
 67052,data,,,0x00b0f8c4,0x00af6f0c,0x00b0f8c4
 67053,data,,,0x00b0f8d0,0x00af6f18,0x00b0f8d0
@@ -67075,12 +67075,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 67074,data,PortraitProperties::vftable_at_1c,,0x00b0fb74,0x00af71bc,0x00b0fb74
 67075,data,PortraitProperties::vftable_at_8,,0x00b0fbd0,0x00af7218,0x00b0fbd0
 67076,data,PortraitProperties::vftable,,0x00b0fbe0,0x00af7228,0x00b0fbe0
-67077,data,,,0x00b0fbf8,0x00af7240,0x00b0fbf8
+67077,data,CCCreature::UpdateSoundEmitters::s_intervalBase,Double 0.3 (seconds): the next sound emitter update timer at +0xA04 is random * 0.002 + 0.3 (0x006AA723); INFERRED,0x00b0fbf8,0x00af7240,0x00b0fbf8
 67078,data,,,0x00b0fc00,0x00af7248,0x00b0fc00
 67079,data,,,0x00b0fc08,0x00af7250,0x00b0fc08
 67080,data,,,0x00b0fc1c,0x00af7264,0x00b0fc1c
 67081,data,,,0x00b0fc2c,0x00af7280,0x00b0fc2c
-67082,data,,,0x00b0fc58,0x00af72ac,0x00b0fc58
+67082,data,CCCreature::s_partyRangeSquared,"Float 2500.0 (a squared distance, 50 m): passed with the creature position to CCParty (0x00630120) by UpdateIdleTwitch (0x006AB758) and Update (0x006BE647) to gate the work by distance from the party; INFERRED",0x00b0fc58,0x00af72ac,0x00b0fc58
 67083,data,,,0x00b0fc5c,0x00af72b0,0x00b0fc5c
 67084,data,"SmartData::Attribute<ECBase::ECDynArray<CCreatureAttribute*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::vftable_at_4",,0x00b0fc70,0x00af72c8,0x00b0fc70
 67085,data,"SmartData::Attribute<ECBase::ECDynArray<CCreatureAttribute*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::vftable",,0x00b0fc84,0x00af72dc,0x00b0fc84
@@ -67096,8 +67096,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 67095,data,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::vftable",,0x00b0fe3c,0x00af7494,0x00b0fe3c
 67096,data,"SmartData::ArrayMemberIteratorImpl<ECBase::ECDynArray<SmartData::Attribute<short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>>::vftable",,0x00b0fe98,0x00af74f0,0x00b0fe98
 67097,data,,,0x00b0feac,0x00af7504,0x00b0feac
-67098,data,,,0x00b0fed8,0x00af7538,0x00b0fed8
-67099,data,,,0x00b0fee0,0x00af7540,0x00b0fee0
+67098,data,CCCreature::CreatePhysicsController::s_minRadiusLimit,"Double 0.35 (metres), the radius threshold compared at 0x006B200D",0x00b0fed8,0x00af7538,0x00b0fed8
+67099,data,CCCreature::CreatePhysicsController::s_minHeightLimit,"Double 1.426 (metres), the value the controller height is compared with before it is raised to the float 1.426 (0x006B1FF2)",0x00b0fee0,0x00af7540,0x00b0fee0
 67100,data,,,0x00b0fee8,0x00af7548,0x00b0fee8
 67101,data,,,0x00b0ff0c,0x00af756c,0x00b0ff0c
 67102,data,,,0x00b0ff3c,0x00af759c,0x00b0ff3c
@@ -67146,7 +67146,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 67145,data,,,0x00b10660,0x00af7ce0,0x00b10660
 67146,data,,,0x00b10670,0x00af7cf8,0x00b10670
 67147,data,,,0x00b106a0,0x00af7d28,0x00b106a0
-67148,data,,,0x00b106ac,0x00af7d34,0x00b106ac
+67148,data,CCCreature::Update::s_partyCheckPeriod,Float 3000.0: CCCreature::Update adds the frame time to a timer at +0xC84 and runs the party range check every time it passes 3000 (0x006BE616); the unit (milliseconds) is INFERRED,0x00b106ac,0x00af7d34,0x00b106ac
 67149,data,,,0x00b106b0,0x00af7d38,0x00b106b0
 67150,data,,,0x00b106bc,0x00af7d44,0x00b106bc
 67151,data,,,0x00b106cc,0x00af7d54,0x00b106cc
@@ -67169,14 +67169,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 67168,data,,,0x00b107a4,0x00af7e2c,0x00b107a4
 67169,data,,,0x00b107d0,0x00af7e58,0x00b107d0
 67170,data,,,0x00b107e8,0x00af7e70,0x00b107e8
-67171,data,,,0x00b107ec,0x00af7e74,0x00b107ec
+67171,data,CameraRig::SceneCamera::s_defaultLimits,"float[4] table at 0xb107ec: 3.12414 (179 degrees), 0.0174533 (1 degree), 10, 5; copied into the camera at +8, +0xc, +0x10, +0x14 (0x6c3f76 to 0x6c3fa9). INFERRED: angle and distance limits",0x00b107ec,0x00af7e74,0x00b107ec
 67172,data,,,0x00b107f0,0x00af7e78,0x00b107f0
 67173,data,,,0x00b107f4,0x00af7e7c,0x00b107f4
 67174,data,,,0x00b107f8,0x00af7e80,0x00b107f8
 67175,data,,,0x00b107fc,0x00af7e84,0x00b107fc
-67176,data,,,0x00b10808,0x00af7e90,0x00b10808
+67176,data,g_cameraYawOffsetDegrees,Double 270.0 (degrees): CameraRig::GetYawDegrees subtracts it (0x006C21F7) and CameraControllerBase::TurnBehind adds it (0x007EE8AE) when converting between the camera yaw and the facing (DAOLib dev/CAMERA.md),0x00b10808,0x00af7e90,0x00b10808
 67177,data,,,0x00b10810,0x00af7ea0,0x00b10810
-67178,data,,,0x00b10814,0x00af7eb8,0x00b10814
+67178,data,g_defaultFieldOfView,"Float 1.5708 (pi/2 radians, 90 degrees): the default field of view of Renderer::PerspectiveCamera (stored at +0x140, 0x00A25B69) and the initial value of several CameraRig fields (0x006C402F); INFERRED",0x00b10814,0x00af7eb8,0x00b10814
 67179,data,,,0x00b10818,0x00af7ec0,0x00b10818
 67180,data,,,0x00b10820,0x00af7ec8,0x00b10820
 67181,data,GameModeLoadingData::vftable,,0x00b1082c,0x00af7ed4,0x00b1082c
@@ -67201,7 +67201,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 67200,data,,,0x00b10b3c,0x00af81e4,0x00b10b3c
 67201,data,,,0x00b10b6c,0x00af8214,0x00b10b6c
 67202,data,,,0x00b10b78,0x00af8220,0x00b10b78
-67203,data,,,0x00b10b8c,0x00af8240,0x00b10b8c
+67203,data,g_minPitchDegrees,"Float -90.0 (degrees): the lower pitch bound in GameModeFlyCam::UpdateMouseLook (0x0076D6F6), LookAt::RecomputeTargetRotation (0x006CA329) and a third function (0x00AD1570)",0x00b10b8c,0x00af8240,0x00b10b8c
 67204,data,,,0x00b10b90,0x00af8248,0x00b10b90
 67205,data,,,0x00b10b98,0x00af8250,0x00b10b98
 67206,data,,,0x00b10ba0,0x00af825c,0x00b10ba0
@@ -67625,8 +67625,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 67624,data,ArmyControl::vftable_at_1c,,0x00b151cc,0x00afbe1c,0x00b151cc
 67625,data,ArmyControl::vftable_at_8,,0x00b15228,0x00afbe78,0x00b15228
 67626,data,ArmyControl::vftable,,0x00b15238,0x00afbe88,0x00b15238
-67627,data,,,0x00b1524c,0x00afbe9c,0x00b1524c
-67628,data,,,0x00b15250,0x00afbea0,0x00b15250
+67627,data,CAmbientDialogManager::Arm::s_triggerRange,Float 35.0 (metres): the ambient conversation is armed only inside this distance of the player (0x006FF3BF); INFERRED,0x00b1524c,0x00afbe9c,0x00b1524c
+67628,data,CAmbientDialogManager::PlayLine::s_lineDelay,Float 7.0 (seconds): stored in +0x10 of the entry after a line starts (0x006FE4F8); INFERRED as the delay to the next,0x00b15250,0x00afbea0,0x00b15250
 67629,data,,,0x00b15254,0x00afbea4,0x00b15254
 67630,data,,,0x00b15290,0x00afbee0,0x00b15290
 67631,data,HideGUIScreenMessage::vftable,,0x00b152e8,0x00aea8a8,0x00b152e8
@@ -67735,7 +67735,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 67734,data,,,0x00b160f8,0x00afcc78,0x00b160f8
 67735,data,,,0x00b16114,0x00afcc94,0x00b16114
 67736,data,,,0x00b16130,0x00afccb0,0x00b16130
-67737,data,,,0x00b16148,0x00afccc8,0x00b16148
+67737,data,GameModeExplore::Update::s_cursorUpdateSeconds,"Float 0.0666667 (1/15 s): Update stores it as the timer at +0x6E4 and runs UpdateCursor (0x0070F270) and 0x0070D6E0, so the explore cursor pick runs fifteen times a second (0x0071305C)",0x00b16148,0x00afccc8,0x00b16148
 67738,data,,,0x00b16154,0x00afccd4,0x00b16154
 67739,data,SelectPartyMemberIndexMessage::vftable,,0x00b16160,0x00aeae48,0x00b16160
 67740,data,PerformPrimaryActionOnTargetUnderCursorMessage::vftable,,0x00b16190,0x00aeb3b8,0x00b16190
@@ -67822,14 +67822,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 67821,data,,,0x00b1699c,0x00afd464,0x00b1699c
 67822,data,,,0x00b169c4,0x00afd48c,0x00b169c4
 67823,data,,,0x00b169d8,0x00afd4a0,0x00b169d8
-67824,data,,,0x00b169e8,0x00afd4b4,0x00b169e8
+67824,data,SyncAlign::SetRate::s_maxRate,Float 99.0: SyncAlign::SetRate compares the rate with it (0x007C16CC) and sets a flag at +0x10 above it; INFERRED limit,0x00b169e8,0x00afd4b4,0x00b169e8
 67825,data,,,0x00b169ec,0x00afd4b8,0x00b169ec
 67826,data,,,0x00b169f0,0x00afd4bc,0x00b169f0
 67827,data,,,0x00b16a1c,0x00afd4e8,0x00b16a1c
 67828,data,,,0x00b16a48,0x00afd514,0x00b16a48
 67829,data,,,0x00b16a70,0x00afd53c,0x00b16a70
 67830,data,,,0x00b16a90,0x00afd55c,0x00b16a90
-67831,data,,,0x00b16ab0,0x00afd57c,0x00b16ab0
+67831,data,GameModeExplore::GameModeExplore::s_initialDistance,"Float 99999.0 stored at +0xB4 and +0xB8 by the constructor (0x007139E1), a ""no value"" distance start; INFERRED",0x00b16ab0,0x00afd57c,0x00b16ab0
 67832,data,,,0x00b16ab4,0x00afd584,0x00b16ab4
 67833,data,,,0x00b16ad4,0x00afd5a4,0x00b16ad4
 67834,data,,,0x00b16af4,0x00afd5d8,0x00b16af4
@@ -67904,8 +67904,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 67903,data,"Messages::Private::MemberFunctionMessageHandler<GameModeCharGen,ExitToStartMenuMessage,&GameModeCharGen::HandleMessage>::vftable",,0x00b1746c,0x00afdf54,0x00b1746c
 67904,data,"Messages::Private::MemberFunctionMessageHandler<GameModeCharGen,CharGenGoBackMessage,&GameModeCharGen::HandleMessage>::vftable",,0x00b17478,0x00afdf60,0x00b17478
 67905,data,,,0x00b17480,0x00afdf68,0x00b17480
-67906,data,,,0x00b17490,0x00afe900,0x00b17490
-67907,data,,,0x00b174a0,0x00afe910,0x00b174a0
+67906,data,CCCreatureStats::s_abilityListFieldIds,"uint32[4] {0x3fb2, 0x3fb1, 0x3fb3, 0xffffffff}: GFF4 list fields saved/loaded (SaveToStruct 0x71bb8d, LoadFromStruct 0x71edf3, 4 iterations) with the flags in the next row; the list elements go to CCCreatureStats::AddAbility. INFERRED meaning of the lists",0x00b17490,0x00afe900,0x00b17490
+67907,data,CCCreatureStats::s_abilityListEnabled,"Table of 4 bytes {1, 1, 1, 0}: whether each ability list of s_abilityListFieldIds is saved and loaded (0x0071BB80, 0x0071EDEC); DAOLib dev/SAVE_WRITER.md",0x00b174a0,0x00afe910,0x00b174a0
 67908,data,,,0x00b174a4,0x00afe914,0x00b174a4
 67909,data,,,0x00b174bc,0x00afe92c,0x00b174bc
 67910,data,,,0x00b174d4,0x00afe944,0x00b174d4
@@ -68412,7 +68412,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 68411,data,,,0x00b1b7c8,0x00b04190,0x00b1b7c8
 68412,data,,,0x00b1b7d0,0x00b04198,0x00b1b7d0
 68413,data,,,0x00b1b7d8,0x00b041a0,0x00b1b7d8
-68414,data,,,0x00b1b7e0,0x00b041a8,0x00b1b7e0
+68414,data,CCObject::RequestPath::s_stepScale,Double 0.003: the step RequestPath passes to MovementPath::Step is scale * 0.003 (0x0073EE3A); the role was not found (see also the address library comment of ID 97974),0x00b1b7e0,0x00b041a8,0x00b1b7e0
 68415,data,"SmartData::Attribute<Backpack*,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::vftable_at_4",,0x00b1b7ec,0x00b041b4,0x00b1b7ec
 68416,data,"SmartData::Attribute<Backpack*,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::vftable",,0x00b1b804,0x00b041cc,0x00b1b804
 68417,data,SmartData::PointerArrayMemberIteratorImpl<Backpack>::vftable,,0x00b1b860,0x00b04228,0x00b1b860
@@ -68542,7 +68542,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 68541,data,,,0x00b1c478,0x00b051b0,0x00b1c478
 68542,data,,,0x00b1c4a0,0x00b051d8,0x00b1c4a0
 68543,data,,,0x00b1c4bc,0x00b051f4,0x00b1c4bc
-68544,data,,,0x00b1c4d8,0x00b05210,0x00b1c4d8
+68544,data,CCItem::RecalculateCost::s_stackCostFraction,"double 0.33: for base item type 7, count * 0.33 rounded (0x755609, 0x755628). Unit: ratio",0x00b1c4d8,0x00b05210,0x00b1c4d8
 68545,data,CCItem::vftable_at_440,,0x00b1c4e4,0x00b0521c,0x00b1c4e4
 68546,data,CCItem::vftable_at_70,,0x00b1c4f4,0x00b0522c,0x00b1c4f4
 68547,data,CCItem::vftable_at_38,,0x00b1c580,0x00b052b8,0x00b1c580
@@ -68619,7 +68619,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 68618,data,ItemLocation::vftable,,0x00b1ce74,0x00b05624,0x00b1ce74
 68619,data,,,0x00b1cedc,0x00b08408,0x00b1cedc
 68620,data,,,0x00b1ceec,0x00b0b4d0,0x00b1ceec
-68621,data,,,0x00b1cef0,0x00b096e8,0x00b1cef0
+68621,data,PlayerSteering::ApplySteering::s_runThreshold,"Double 0.95: when the steering magnitude (+0x20) is below it the move flag is 1, a walk, otherwise 0, a run (0x007637CF)",0x00b1cef0,0x00b096e8,0x00b1cef0
 68622,data,ItemIteratorImpl::vftable,,0x00b1cefc,0x00b04f58,0x00b1cefc
 68623,data,MapItemIteratorImpl::vftable,,0x00b1cf1c,0x00b04f78,0x00b1cf1c
 68624,data,ArrayItemIteratorImpl::vftable,,0x00b1cf3c,0x00b04f98,0x00b1cf3c
@@ -68634,7 +68634,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 68633,data,,,0x00b1d07c,0x00b04d98,0x00b1d07c
 68634,data,,,0x00b1d0ac,0x00b04dc8,0x00b1d0ac
 68635,data,,,0x00b1d0cc,0x00b04dec,0x00b1d0cc
-68636,data,,,0x00b1d0e4,0x00b06d40,0x00b1d0e4
+68636,data,GameModePartyPicker::Update::s_idleSeconds,"Float 2.0 (seconds): compared with the timer at +0xD4 in two places of Update (0x0076C7AF, 0x0076C8E8); INFERRED",0x00b1d0e4,0x00b06d40,0x00b1d0e4
 68637,data,ExitPartyPickerMessage::vftable,,0x00b1d0f0,0x00aeb958,0x00b1d0f0
 68638,data,UnselectPartyMemberMessage::vftable,,0x00b1d120,0x00aeb988,0x00b1d120
 68639,data,,,0x00b1d14c,0x00aed490,0x00b1d14c
@@ -68671,10 +68671,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 68670,data,GameModeFlyCam::vftable_at_8,,0x00b1d5f8,0x00b071b0,0x00b1d5f8
 68671,data,GameModeFlyCam::vftable,,0x00b1d60c,0x00b071c4,0x00b1d60c
 68672,data,,,0x00b1d688,0x00b07240,0x00b1d688
-68673,data,,,0x00b1d690,0x00b07248,0x00b1d690
-68674,data,,,0x00b1d698,0x00b07250,0x00b1d698
-68675,data,,,0x00b1d69c,0x00b07254,0x00b1d69c
-68676,data,,,0x00b1d6a0,0x00b07258,0x00b1d6a0
+68673,data,GameModeFlyCam::UpdateMouseLook::s_lookRateScale,"double -0.25, multiplies the speed factor (1 by default, 22 or 0.03 with a held key) to give the free camera's look rate, negative so the axis is inverted; fmul at 0x0076D85A. INFERRED as a look scale",0x00b1d690,0x00b07248,0x00b1d690
+68674,data,GameModeFlyCam::s_slowSpeedFactor,"Float 0.03: the speed factor while the slow key (id 0x23) is held, in Update (0x0076DE77) and UpdateMouseLook (0x0076D842); the default factor is 1.0",0x00b1d698,0x00b07250,0x00b1d698
+68675,data,GameModeFlyCam::s_fastSpeedFactor,"Float 22.0: the speed factor while the fast key (id 0x22) is held, in Update (0x0076DE50) and UpdateMouseLook (0x0076D81B)",0x00b1d69c,0x00b07254,0x00b1d69c
+68676,data,GameModeFlyCam::UpdateMouseLook::s_minPitchDegrees,"double -90.0 (degrees), the fly camera's pitch lower limit: the new pitch is compared with it at 0x0076D6EC and clamped (the float -90 at 0x00B10B8C is the other side of the same test). INFERRED unit degrees from the value",0x00b1d6a0,0x00b07258,0x00b1d6a0
 68677,data,GameModeDead::vftable_at_20,,0x00b1d6ac,0x00b0726c,0x00b1d6ac
 68678,data,GameModeDead::vftable_at_1c,,0x00b1d6c4,0x00b07284,0x00b1d6c4
 68679,data,GameModeDead::vftable_at_8,,0x00b1d720,0x00b072e0,0x00b1d720
@@ -68687,9 +68687,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 68686,data,GameModeCombat::vftable_at_1c,,0x00b1d82c,0x00b073ec,0x00b1d82c
 68687,data,GameModeCombat::vftable_at_8,,0x00b1d888,0x00b07448,0x00b1d888
 68688,data,GameModeCombat::vftable,,0x00b1d89c,0x00b0745c,0x00b1d89c
-68689,data,,,0x00b1d91c,0x00b074dc,0x00b1d91c
+68689,data,CameraControllerExplore::GetRoofCutoffHeight::s_roofCutoffHeights,"float[3] {3.0, 4.0, 5.5} metres, the camera height above the focus past which the roof fades, indexed by the area's ChunkManager +0x78 (0..2); fld [eax*4+0xB1D91C] at 0x0076FD54 (CAMERA.md 'A roof fade')",0x00b1d91c,0x00b074dc,0x00b1d91c
 68690,data,,,0x00b1d924,0x00b074e4,0x00b1d924
-68691,data,,,0x00b1d928,0x00b074e8,0x00b1d928
+68691,data,CameraControllerExplore::SetPitchLockForView::s_pitchLockByView,"int[2] {0, 1} indexed by the view (ctl+0x90), copied to the pitch-lock flag ctl+0x5C; mov at 0x0076EA96. The entry count is INFERRED from the row's size",0x00b1d928,0x00b074e8,0x00b1d928
 68692,data,,,0x00b1d930,0x00b074f0,0x00b1d930
 68693,data,,,0x00b1d938,0x00b074f8,0x00b1d938
 68694,data,,,0x00b1d944,0x00b07504,0x00b1d944
@@ -68947,12 +68947,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 68946,data,,,0x00b21160,0x00b06ca0,0x00b21160
 68947,data,,,0x00b21168,0x00b06ca8,0x00b21168
 68948,data,CSubActionController::vftable,,0x00b21170,0x00b06cb0,0x00b21170
-68949,data,,,0x00b2117c,0x00b06cbc,0x00b2117c
+68949,data,CSSubActionHandler::AimWait::s_aimToleranceDegrees,float 67.5 degrees: AimWait keeps waiting while AngleBetweenUnitDegrees (aim vs facing) is not above it; fcomp at 0x007A2594. INFERRED purpose,0x00b2117c,0x00b06cbc,0x00b2117c
 68950,data,,,0x00b21180,0x00b06cc0,0x00b21180
 68951,data,,,0x00b21194,0x00b06cd4,0x00b21194
-68952,data,,,0x00b211a0,0x00b06ce0,0x00b211a0
-68953,data,,,0x00b211a8,0x00b06ce8,0x00b211a8
-68954,data,,,0x00b211b0,0x00b06cf8,0x00b211b0
+68952,data,CSSubActionHandler::ChooseAwayGoal::s_awayDistanceScale,Double 1.26: the away goal distance is the parameter times 1.26 (0x007A557C),0x00b211a0,0x00b06ce0,0x00b211a0
+68953,data,CSSubActionHandler::MoveUpdate::s_stalledMoveDistanceSquared,double 0.0004 m^2 (0.02 m squared): a move step that goes less than this counts as standing still for the stall counter (TURN_BASED.md); fcomp at 0x007A97BD,0x00b211a8,0x00b06ce8,0x00b211a8
+68954,data,CSSubActionHandler::ApproachMelee::s_pathShortcutBudgetSeconds,"float 0.003 s, the time budget handed to the melee approach's path look-ahead (PATHFINDING.md); fld at 0x007AA9DC",0x00b211b0,0x00b06cf8,0x00b211b0
 68955,data,CSSubActionHandler::vftable,,0x00b211b8,0x00b06d00,0x00b211b8
 68956,data,,,0x00b211c4,0x00b06d0c,0x00b211c4
 68957,data,,,0x00b211f4,0x00b07668,0x00b211f4
@@ -69113,11 +69113,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69112,data,CCSoundObjectPannable::vftable_at_20,,0x00b223b8,0x00b08ae8,0x00b223b8
 69113,data,CCSoundObjectPannable::vftable_at_18,,0x00b223c8,0x00b08af8,0x00b223c8
 69114,data,CCSoundObjectPannable::vftable,,0x00b223e4,0x00b08b14,0x00b223e4
-69115,data,,,0x00b225a8,0x00b08cd8,0x00b225a8
-69116,data,,,0x00b225b0,0x00b08ce0,0x00b225b0
-69117,data,,,0x00b225b8,0x00b08ce8,0x00b225b8
+69115,data,CCSoundObjectPannable::AIUpdate::s_placedRearmSeconds,"float 0.06 s, the placement timer (+0x4D0) after the sound is placed (AUDIO.md); fld at 0x007C30FC",0x00b225a8,0x00b08cd8,0x00b225a8
+69116,data,CCSoundObjectPannable::AIUpdate::s_randomRearmOffsetSeconds,double 0.005 s subtracted from rand()%100 times the step to re-arm the placement timer (AUDIO.md); fsub at 0x007C3064. The row's first 4 bytes read as a float 2 are the double's low half,0x00b225b0,0x00b08ce0,0x00b225b0
+69117,data,CCSoundObjectPannable::AIUpdate::s_randomRearmStepSeconds,double 0.0003 s per unit of rand()%100 in the re-armed placement timer (AUDIO.md); fmul at 0x007C305E,0x00b225b8,0x00b08ce8,0x00b225b8
 69118,data,,,0x00b225c0,0x00b08cf0,0x00b225c0
-69119,data,,,0x00b225d8,0x00b08d08,0x00b225d8
+69119,data,CCCombatData::RangedSightOffset::s_bowSightOffset,"float 0.35 m: the sight offset for a main-hand item of base type 6 (short bow, longbow, crossbow; COMBAT.md); fld at 0x007C36B2",0x00b225d8,0x00b08d08,0x00b225d8
 69120,data,,,0x00b225dc,0x00b08d0c,0x00b225dc
 69121,data,,,0x00b225ec,0x00b08d1c,0x00b225ec
 69122,data,,,0x00b22608,0x00b08d38,0x00b22608
@@ -69146,8 +69146,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69145,data,,,0x00b22ae4,0x00b09214,0x00b22ae4
 69146,data,,,0x00b22af0,0x00b09220,0x00b22af0
 69147,data,,,0x00b22b00,0x00b09230,0x00b22b00
-69148,data,,,0x00b22b0c,0x00b09250,0x00b22b0c
-69149,data,,,0x00b22b10,0x00b09258,0x00b22b10
+69148,data,IsObjectNearCameraFocus::s_nearDistanceSquared,float 2500 m^2 (50 m): an object is near the camera focus when DistanceSquaredXY is not above it; fcomp at 0x007C4B4C,0x00b22b0c,0x00b09250,0x00b22b0c
+69149,data,MovementPath::IsGoalFarFromCameraFocus::s_farDistance,double 29.0 metres: the goal is far when DistanceToFocus2D exceeds it; fcomp at 0x007C4BB2. INFERRED unit (metres),0x00b22b10,0x00b09258,0x00b22b10
 69150,data,TargetIterator::vftable,,0x00b22b1c,0x00b09264,0x00b22b1c
 69151,data,AreaObjectsIterator::vftable,,0x00b22b2c,0x00b09274,0x00b22b2c
 69152,data,MapTrailPoint::vftable,,0x00b22b3c,0x00b09284,0x00b22b3c
@@ -69189,8 +69189,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69188,data,,,0x00b23058,0x00b097c0,0x00b23058
 69189,data,ListItemIteratorImpl::vftable,,0x00b23068,0x00b097d0,0x00b23068
 69190,data,ListItemLocation::vftable,,0x00b2308c,0x00b097f4,0x00b2308c
-69191,data,,,0x00b230f8,0x00b09860,0x00b230f8
-69192,data,,,0x00b230fc,0x00b09864,0x00b230fc
+69191,data,MeleeRing::BuildPlaces::s_placesPerRing,"int table, one entry {40}: the number of places in a melee ring, indexed by the ring's count index (+0x18, always 0) at 0x007CB427 (TURN_BASED.md)",0x00b230f8,0x00b09860,0x00b230f8
+69192,data,CCCreature::CreateMeleeRings::s_ringTableIds,"Table of 9 uint32 125 to 133 (0x7D to 0x85) passed to GdaStore::FindTable (0x004DF580) for rings 1 to 9 (0x006AC3F5); that these are the ""meleering"" worksheet ids is INFERRED (DAOLib dev/TURN_BASED.md says rings 1 to 9 come from the meleering table)",0x00b230fc,0x00b09864,0x00b230fc
 69193,data,,,0x00b23120,0x00b09888,0x00b23120
 69194,data,,,0x00b23124,0x00b0988c,0x00b23124
 69195,data,,,0x00b23128,0x00b09890,0x00b23128
@@ -69199,11 +69199,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69198,data,,,0x00b23140,0x00b098b0,0x00b23140
 69199,data,,,0x00b23164,0x00b098d4,0x00b23164
 69200,data,,,0x00b23174,0x00b098e4,0x00b23174
-69201,data,,,0x00b23194,0x00b09904,0x00b23194
+69201,data,Stage::GetBounds::s_boundsMaxStart,"float -65505, the starting value of the bounds' maximum corner before points are folded in (the minimum starts at the pooled +65505); fld at 0x007D21CC. INFERRED",0x00b23194,0x00b09904,0x00b23194
 69202,data,,,0x00b23198,0x00b09908,0x00b23198
 69203,data,,,0x00b231b0,0x00b09920,0x00b231b0
-69204,data,,,0x00b231b8,0x00b09928,0x00b231b8
-69205,data,,,0x00b231c0,0x00b09930,0x00b231c0
+69204,data,g_secondsPerAnimationFrame,"Double 0.0333333 (1/30 s): one animation frame, added by EC::Cutscene::Actor::CollectStepTimes (0x007D8DCD, 0x007D8E73) and PartLookAtController::NormalizedToClipTime (0x007F53C9) and StartClips",0x00b231b8,0x00b09928,0x00b231b8
+69205,data,EC::Cutscene::Actor::TraceGroundHeight::s_noGroundHeight,"float -100000 metres, the height used as the starting/fallback value of the ground trace; fld at 0x007D8F0D. INFERRED",0x00b231c0,0x00b09930,0x00b231c0
 69206,data,EC::Cutscene::Actor::Action::vftable,,0x00b231c8,0x00b09938,0x00b231c8
 69207,data,EC::Cutscene::Actor::ActionSound::vftable,,0x00b231f0,0x00b09960,0x00b231f0
 69208,data,EC::Cutscene::Actor::ActionShake::vftable,,0x00b23218,0x00b09988,0x00b23218
@@ -69212,7 +69212,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69211,data,EC::Cutscene::Actor::ActionFrameBufferEffect::vftable,,0x00b23290,0x00b09a00,0x00b23290
 69212,data,EC::Cutscene::Actor::ActionSpeakLine::vftable,,0x00b232b8,0x00b09a28,0x00b232b8
 69213,data,EC::Cutscene::Actor::ActionAnimateFace::vftable,,0x00b232e0,0x00b09a50,0x00b232e0
-69214,data,,,0x00b23304,0x00b09a74,0x00b23304
+69214,data,EC::Cutscene::Actor::SnapToWalkmesh::s_traceHeight,Float 100000.0 (metres) passed to TraceGroundHeight as the trace height (0x007DA513),0x00b23304,0x00b09a74,0x00b23304
 69215,data,EC::Cutscene::Actor::ActionHeadtracking::vftable,,0x00b2330c,0x00b09a7c,0x00b2330c
 69216,data,EC::Cutscene::Actor::ActionMoveSpline::vftable,,0x00b23334,0x00b09aa4,0x00b23334
 69217,data,EC::Cutscene::Actor::ActionRotate::vftable,,0x00b2335c,0x00b09acc,0x00b2335c
@@ -69222,7 +69222,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69221,data,EC::Cutscene::Actor::ActionLightColor::vftable,,0x00b233fc,0x00b09b6c,0x00b233fc
 69222,data,,,0x00b23420,0x00ae5cfc,0x00b23420
 69223,data,,,0x00b23430,0x00b09b90,0x00b23430
-69224,data,,,0x00b23438,0x00b09b98,0x00b23438
+69224,data,EC::Cutscene::Actor::ActionPlayAnimation::Update::s_frameSeconds,Double 0.033333 (about 1/30 s): the elapsed time is divided by it to get a frame number (0x007DB5C6),0x00b23438,0x00b09b98,0x00b23438
 69225,data,EC::Cutscene::Actor::ActionChangeVisibility::vftable,,0x00b23444,0x00b09ba4,0x00b23444
 69226,data,EC::Cutscene::Actor::ActionJumpToCamera::vftable,,0x00b2346c,0x00b09bcc,0x00b2346c
 69227,data,EC::Cutscene::Actor::ActionJumpToPlace::vftable,,0x00b23494,0x00b09bf4,0x00b23494
@@ -69261,13 +69261,13 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69260,data,CCAreaOfEffectObject::vftable,,0x00b23854,0x00b09fcc,0x00b23854
 69261,data,,,0x00b23a14,0x00b0a18c,0x00b23a14
 69262,data,,,0x00b23a2c,0x00b0a1a4,0x00b23a2c
-69263,data,,,0x00b23a44,0x00b0a1bc,0x00b23a44
-69264,data,,,0x00b23a4c,0x00b0a1c4,0x00b23a4c
-69265,data,,,0x00b23a50,0x00b0a1c8,0x00b23a50
+69263,data,CProjectile::ScatterMissAim::s_minScatterScale,float 0.2: lower bound of the miss scatter factor (distance/10 times a random 0..1 fraction) - a smaller value is replaced by it; fld at 0x007E78ED. INFERRED from the compare direction,0x00b23a44,0x00b0a1bc,0x00b23a44
+69264,data,CProjectile::UpdateFlying::s_arrivalDistance,float 0.01 m: a non-simulated projectile ends within it of its destination (EFFECTS.md); fcomp at 0x007E95A3,0x00b23a4c,0x00b0a1c4,0x00b23a4c
+69265,data,CProjectile::BeginCessation::s_minAlphaFadeSeconds,"float 0.75 s: with AlphaFade the cessation time T = max(T, 0.75) (EFFECTS.md); fld at 0x007E6C0F. The row's following floats 0.1 and 0.5 are not referenced here",0x00b23a50,0x00b0a1c8,0x00b23a50
 69266,data,,,0x00b23a64,0x00b0a1dc,0x00b23a64
 69267,data,,,0x00b23a68,0x00b0a1e8,0x00b23a68
 69268,data,,,0x00b23a78,0x00b0a1f8,0x00b23a78
-69269,data,,,0x00b23a80,0x00b0a208,0x00b23a80
+69269,data,CProjectile::ComputeLaunchAngle::s_gravity,Double -9.81 (metres per second squared): the gravity of the launch angle solution (0x007E7DB0),0x00b23a80,0x00b0a208,0x00b23a80
 69270,data,CProjectile::vftable_at_70,,0x00b23a8c,0x00b0a214,0x00b23a8c
 69271,data,CProjectile::vftable_at_38,,0x00b23b18,0x00b0a2a0,0x00b23b18
 69272,data,CProjectile::vftable_at_34,,0x00b23b2c,0x00b0a2b4,0x00b23b2c
@@ -69311,10 +69311,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69310,data,,,0x00b24514,0x00b0ac9c,0x00b24514
 69311,data,,,0x00b24528,0x00b0acb0,0x00b24528
 69312,data,,,0x00b24538,0x00b0acc0,0x00b24538
-69313,data,,,0x00b2454c,0x00b0acd4,0x00b2454c
+69313,data,CameraControllerBase::s_noTargetHeight,"Float -9999.0: the ""no target height"" value the constructor writes to +0x50 (0x007EEA0F) and Update compares (0x007EEC23); INFERRED",0x00b2454c,0x00b0acd4,0x00b2454c
 69314,data,,,0x00b24554,0x00b0acdc,0x00b24554
-69315,data,,,0x00b24558,0x00b0ace0,0x00b24558
-69316,data,,,0x00b24560,0x00b0ace8,0x00b24560
+69315,data,CameraControllerBase::ReadInput::s_minOrbitRate,"double -20.0, the lower clamp of the mouse orbit's yaw/pitch rate (CAMERA.md: clamp(..., -20, 20)); fld at 0x007EE11E",0x00b24558,0x00b0ace0,0x00b24558
+69316,data,CameraControllerBase::ReadInput::s_orbitMouseScale,"double 0.04, multiplies the mouse movement and sensitivity into the orbit rate (CAMERA.md); fmul at 0x007EE0F3 and 0x007EE104. The row's first 4 bytes read as a float 2 are the double's low half",0x00b24560,0x00b0ace8,0x00b24560
 69317,data,CameraControllerBase::vftable,,0x00b2456c,0x00b0acf4,0x00b2456c
 69318,data,,,0x00b245bc,0x00b0add0,0x00b245bc
 69319,data,,,0x00b245dc,0x00b0adf0,0x00b245dc
@@ -69606,10 +69606,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69605,data,,,0x00b265f4,0x00b53f3c,0x00b265f4
 69606,data,,,0x00b265f8,0x00b53f40,0x00b265f8
 69607,data,,,0x00b265fc,0x00b53f44,0x00b265fc
-69608,data,,,0x00b26630,0x00b53f78,0x00b26630
-69609,data,,,0x00b26634,0x00b53f7c,0x00b26634
-69610,data,,,0x00b26638,0x00b53f80,0x00b26638
-69611,data,,,0x00b2663c,0x00b53f84,0x00b2663c
+69608,data,Animation::DecodeRotation32::s_componentRange,Float 1023.0: the 10 bit range of a component of the 32 bit packed quaternion; the decode is (raw - 511.5) * 2 / (1023 * sqrt 2) (0x00811389),0x00b26630,0x00b53f78,0x00b26630
+69609,data,Animation::DecodeRotation48::s_componentCenter,Float 32767.5: the middle of a 16 bit component of the 48 bit packed quaternion (0x00811548); INFERRED,0x00b26634,0x00b53f7c,0x00b26634
+69610,data,Animation::DecodeRotation64::s_componentRange,Float 2097151.0 (2^21 - 1): the range of a 21 bit component of the 64 bit packed quaternion (0x00811697),0x00b26638,0x00b53f80,0x00b26638
+69611,data,Animation::DecodeRotation64::s_componentCenter,Float 1048575.0 (about 2^20): the middle of a 21 bit component of the 64 bit quaternion (0x0081167D); INFERRED,0x00b2663c,0x00b53f84,0x00b2663c
 69612,data,Multithreading::SynchSafePointerList<Animation::AnimationTree>::vftable_at_4,,0x00b26644,0x00ae5eb8,0x00b26644
 69613,data,Animation::AnimationTree::vftable_at_54,,0x00b26650,0x00ae5ec4,0x00b26650
 69614,data,Animation::AnimationTree::vftable,,0x00b2665c,0x00ae5ed0,0x00b2665c
@@ -69671,7 +69671,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69670,data,,,0x00b26db4,0x00ae5a7c,0x00b26db4
 69671,data,,,0x00b26db8,0x00ae5a80,0x00b26db8
 69672,data,,,0x00b26dd8,0x00ae5278,0x00b26dd8
-69673,data,,,0x00b26dec,0x00ae528c,0x00b26dec
+69673,data,Physics::PhysicsScene::Simulate::s_minStepSeconds,"The float 0.0166667 (1/60 s) is the least time gathered at scene+0xCC that Simulate (0x0082d00f) will step the physics scene for; at or below it the frame time is kept for the next frame, above 0.1 s (the double 0xAE7D70) one step of 0.1 s is made and the sum cleared",0x00b26dec,0x00ae528c,0x00b26dec
 69674,data,NxUserRaycastReport::vftable,,0x00b26df8,0x00ae52a4,0x00b26df8
 69675,data,NxUserTriggerReport::vftable,,0x00b26e04,0x00ae52c0,0x00b26e04
 69676,data,NxUserActorPairFiltering::vftable,,0x00b26e10,0x00ae52cc,0x00b26e10
@@ -69691,7 +69691,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69690,data,NxCapsuleControllerDesc::vftable,,0x00b270c0,0x00ae55c8,0x00b270c0
 69691,data,NxBoxControllerDesc::vftable,,0x00b270d0,0x00ae55d8,0x00b270d0
 69692,data,Physics::PhysicsActorPairFiltering::vftable,,0x00b270e0,0x00ae55e8,0x00b270e0
-69693,data,,,0x00b270e8,0x00ae55f0,0x00b270e8
+69693,data,Physics::PhysicsActorPairFiltering::onActorPairs::s_collidingGroups,"Table of three uint16 collision-group ids {4, 1, 6} (4 is the creatures per COLLISION.md): onActorPairs (0x00821a70) leaves a pair unfiltered only when one of its two actors is in one of these groups and neither is in group 3, otherwise it sets the pair's filtered byte (+8 of the 12-byte entry)",0x00b270e8,0x00ae55f0,0x00b270e8
 69694,data,Physics::RaycastReportClosest::vftable,,0x00b270f4,0x00ae55fc,0x00b270f4
 69695,data,Physics::RaycastReportAll::vftable,,0x00b27100,0x00ae5608,0x00b27100
 69696,data,Physics::PhysicsScene::PhysicsEntityReport<unsigned int>::vftable,,0x00b2710c,0x00ae5618,0x00b2710c
@@ -69703,7 +69703,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69702,data,,,0x00b27228,0x00ae573c,0x00b27228
 69703,data,,,0x00b27230,0x00ae574c,0x00b27230
 69704,data,,,0x00b27238,0x00ae5754,0x00b27238
-69705,data,,,0x00b27240,0x00ae5760,0x00b27240
+69705,data,Physics::PhysicsScene::SaveStaticPhysics::s_probeRadiusSquared,"double 200.0 m^2, square-rooted (about 14.14 m) into the radius passed with a point to the walk-grid query 0x00A49590 while saving static physics; fld at 0x0082AB5F. INFERRED",0x00b27240,0x00ae5760,0x00b27240
 69706,data,Physics::PhysicsObject::vftable,,0x00b2724c,0x00ae576c,0x00b2724c
 69707,data,,,0x00b272c0,0x00ae57e0,0x00b272c0
 69708,data,Physics::PhysicsScene::vftable,,0x00b272d4,0x00ae5804,0x00b272d4
@@ -69743,8 +69743,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69742,data,NxD6JointDesc::vftable,,0x00b275cc,0x00b48638,0x00b275cc
 69743,data,Physics::IPhysicsWorld::vftable,,0x00b275dc,0x00ae58c4,0x00b275dc
 69744,data,Physics::PhysicsWorld::vftable,,0x00b27608,0x00ae58f0,0x00b27608
-69745,data,,,0x00b27630,0x00ae5918,0x00b27630
-69746,data,,,0x00b27634,0x00ae591c,0x00b27634
+69745,data,Physics::PhysicsWorld::CreateScene::s_maxTimestepSeconds,float 0.0333333 s (1/30) stored in the PhysX scene description at [esp+0x44]; fld at 0x00837466. INFERRED as the scene's maximum timestep,0x00b27630,0x00ae5918,0x00b27630
+69746,data,g_physicsGravityZ,"The float -9.8 (m/s^2) is the z component of the gravity vector (0, 0, -9.8) CreateScene puts in the scene descriptor (0x00837454), also loaded into a vector at 0x008c15a7 and 0x008cfaa8 in two unnamed functions",0x00b27634,0x00ae591c,0x00b27634
 69747,data,NxEffectorDesc::vftable,,0x00b2763c,0x00ae5984,0x00b2763c
 69748,data,NxSpringAndDamperEffectorDesc::vftable,,0x00b2764c,0x00ae5994,0x00b2764c
 69749,data,Physics::PhysicsControllerHitReport::vftable,,0x00b2765c,0x00ae5ac8,0x00b2765c
@@ -69874,7 +69874,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69873,data,FacialAnimation::FacialAnimationBlueprint::vftable,,0x00b2b544,0x00ae4904,0x00b2b544
 69874,data,,,0x00b2b554,0x00ae4918,0x00b2b554
 69875,data,,,0x00b2b560,0x00ae4924,0x00b2b560
-69876,data,,,0x00b2b56c,0x00ae4930,0x00b2b56c
+69876,data,FacialAnimation::FacialAnimationPlayer::Update::s_stopFadeSeconds,float 2.0 s: after a face animation instance stops it keeps applying its last pose with weight 1 - 0.5*(now - stop) while now - stop < 2.0 (ANIMATION.md); fld at 0x0085101D,0x00b2b56c,0x00ae4930,0x00b2b56c
 69877,data,,,0x00b2b570,0x00ae4934,0x00b2b570
 69878,data,,,0x00b2b574,0x00ae4938,0x00b2b574
 69879,data,,,0x00b2b578,0x00ae493c,0x00b2b578
@@ -74641,7 +74641,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 74640,data,,,0x00b58cf0,0x00b1bd34,0x00b58cf0
 74641,data,,,0x00b58cf4,0x00b1bd38,0x00b58cf4
 74642,data,,,0x00b58d28,0x00b1d788,0x00b58d28
-74643,data,,,0x00b58d30,0x00b1d790,0x00b58d30
+74643,data,CutsceneShake_MakeNoise::s_negSamplePeriod,"The double -0.01 (seconds, stored to float precision) is the shake noise's sample period negated: the sample count is 1 minus floor((stop - start) / -0.01) (0x00a3c543), 100 samples a second, as CUTSCENES.md says",0x00b58d30,0x00b1d790,0x00b58d30
 74644,data,,,0x00b58d38,0x00b1be40,0x00b58d38
 74645,data,,,0x00b58d3c,0x00b1d91c,0x00b58d3c
 74646,data,,,0x00b58d40,0x00b1d920,0x00b58d40
@@ -74664,7 +74664,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 74663,data,,,0x00b58e00,0x00b1d9e8,0x00b58e00
 74664,data,,,0x00b58e04,0x00b1d9ec,0x00b58e04
 74665,data,,,0x00b58e08,0x00b1d9f0,0x00b58e08
-74666,data,,,0x00b58e0c,0x00b1d9f4,0x00b58e0c
+74666,data,CNetLayer::QueueOutgoingMessage::s_splitSize,"The integer 0x200 (512 bytes) is compared with the remaining message length in QueueOutgoingMessage (0x00a33625); at or above it the message goes on to be split or sent, below it a shorter path is taken; the meaning is INFERRED",0x00b58e0c,0x00b1d9f4,0x00b58e0c
 74667,data,,,0x00b58e10,0x00b1d9f8,0x00b58e10
 74668,data,,,0x00b58e14,0x00b1d9fc,0x00b58e14
 74669,data,,,0x00b58e18,0x00b1da00,0x00b58e18
@@ -74738,17 +74738,17 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 74737,data,,,0x00b59264,0x00b1de58,0x00b59264
 74738,data,,,0x00b59270,0x00b1de64,0x00b59270
 74739,data,,,0x00b5927c,0x00b1de70,0x00b5927c
-74740,data,,,0x00b592b0,0x00b1823c,0x00b592b0
+74740,data,Pathfinding::Grid::CanStep::s_maxStepHeight,float 0.5 m: the fine search's step test fails when CellHeightDifference exceeds it (PATHFINDING.md); fcomp at 0x00A455FD,0x00b592b0,0x00b1823c,0x00b592b0
 74741,data,Pathfinding::SearchEnvironment::vftable,,0x00b592b8,0x00b18244,0x00b592b8
 74742,data,Pathfinding::MapSuperAbstractionSearchEnvironment::vftable,,0x00b592cc,0x00b18258,0x00b592cc
 74743,data,Pathfinding::MapSearchEnvironment::vftable,,0x00b592e0,0x00b18274,0x00b592e0
 74744,data,Pathfinding::MapAbstractionSearchEnvironment::vftable,,0x00b592f4,0x00b18288,0x00b592f4
-74745,data,,,0x00b59304,0x00b18298,0x00b59304
-74746,data,,,0x00b59310,0x00b181f0,0x00b59310
-74747,data,,,0x00b59314,0x00b1829c,0x00b59314
-74748,data,,,0x00b59318,0x00b182a0,0x00b59318
-74749,data,,,0x00b5931c,0x00b182a4,0x00b5931c
-74750,data,,,0x00b59324,0x00b182ac,0x00b59324
+74745,data,Pathfinding::AreaGridEntry::Load::s_minCellSize,float 0.01 m: a loaded walk-grid cell size not above the pooled double 0.01 is replaced by it (grid +0x30 is the cell size; PATHFINDING.md); fld at 0x00A48A15. The row's later 1e-6 and 1.0 are not referenced here,0x00b59304,0x00b18298,0x00b59304
+74746,data,Pathfinding::Grid::Grid::s_defaultCellSize,The float 0.75 (metres) is the cell size the Grid constructor writes to +0x30 (0x00a48f28) before a loaded area overwrites it; the shipped areas' cells are 0.5 m,0x00b59310,0x00b181f0,0x00b59310
+74747,data,Pathfinding::Grid::CanStepCoarse::s_maxStepHeight,float 0.5 m: the coarse level's step test fails when CellHeightDifference exceeds it (PATHFINDING.md); fcomp at 0x00A49C2D,0x00b59314,0x00b1829c,0x00b59314
+74748,data,Pathfinding::Pathfinder::Pathfinder::s_pathSmoothingSize,float 2.0 m stored in the search object at +0xC8 and used by the path collapse for every mover (PATHFINDING.md); fld at 0x00A4E3DC,0x00b59318,0x00b182a0,0x00b59318
+74749,data,Pathfinding::Pathfinder::CornerPass::s_cutCornerSize,"The float 1.5 (metres) is pushed by CornerPass (0x00a4d13a) as the float argument of 0xa4d030, which passes it on to CutCorner (0xa4c930) for the window of path points; the role of the argument is INFERRED",0x00b5931c,0x00b182a4,0x00b5931c
+74750,data,Pathfinding::Pathfinder::s_maxStepHeight,"float 0.5 m: the straight walk's step test fails when CellHeightDifference exceeds it (PATHFINDING.md; fcomp at 0x00A4BDF6); CutCorner passes the same pooled 0.5 as an argument (fld at 0x00A4CA49). The row's later floats 0.5, 1.2 and the words 0xFFFF, 0xFFFE are other uses",0x00b59324,0x00b182ac,0x00b59324
 74751,data,,,0x00b59340,0x00b175c4,0x00b59340
 74752,data,Graphics::IWindInstance::vftable,,0x00b59364,0x00b11440,0x00b59364
 74753,data,Graphics::IWindInstanceContainer::vftable,,0x00b59394,0x00b11470,0x00b59394
@@ -74801,14 +74801,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 74800,data,,,0x00b59660,0x00b0d6cc,0x00b59660
 74801,data,,,0x00b5967c,0x00b0d6e8,0x00b5967c
 74802,data,,,0x00b59688,0x00b0d6f4,0x00b59688
-74803,data,,,0x00b596ac,0x00b0d718,0x00b596ac
+74803,data,CSSubActionHandler::TurnToward::s_doneAngleDegrees,float 1.0: TurnToward finishes (or sets the turn flag) when the remaining angle is below it; fcompp at 0x007A52CC and 0x007A52EE. INFERRED unit degrees (MovementController's facing threshold is 0.999999 degrees),0x00b596ac,0x00b0d718,0x00b596ac
 74804,data,,,0x00b596b8,0x00b0d724,0x00b596b8
 74805,data,MovementController::vftable,,0x00b596c0,0x00b0d72c,0x00b596c0
 74806,data,,,0x00b596c4,0x00b0d730,0x00b596c4
 74807,data,,,0x00b596cc,0x00b0d738,0x00b596cc
-74808,data,,,0x00b596d8,0x00b0d748,0x00b596d8
-74809,data,,,0x00b596e0,0x00b0d750,0x00b596e0
-74810,data,,,0x00b596e8,0x00b0d758,0x00b596e8
+74808,data,MovementController::SlopeFactor::s_slopeSlowdownScale,"The double 0.65 (stored to float precision) scales -(ground normal . move direction) in SlopeFactor (0x00a6349e), which sets the speed multiplier at +0xD8 to 1 minus that, floored at 0, for a creature in state 2 outside combat, so running uphill slows by up to 65 percent per unit of slope",0x00b596d8,0x00b0d748,0x00b596d8
+74809,data,g_minTurnAngleDegrees,"The double 0.999999 (degrees) is the least angle between the facing and the wanted direction that starts a turn: SetDesiredFacing (0x00a6395b), MovementController::Update (0x00a645d0) and MovementAnimController::PlayTransition compare an AngleBetween result with it (ANIMATION.md)",0x00b596e0,0x00b0d750,0x00b596e0
+74810,data,MovementController::TurnTowardMovement::s_turnTimeSlopeSeconds,double 0.28 s: the turn time is 0.4 - 0.28*|delta|/180 seconds (ANIMATION.md); fmul at 0x00A63C34,0x00b596e8,0x00b0d758,0x00b596e8
 74811,data,,,0x00b596f0,0x00b0d790,0x00b596f0
 74812,data,CGameEffect::vftable,,0x00b59700,0x00b0d76c,0x00b59700
 74813,data,,,0x00b5970c,0x00b0d778,0x00b5970c
@@ -74825,18 +74825,18 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 74824,data,,,0x00b598e0,0x00b0db90,0x00b598e0
 74825,data,AnimBaseParts::vftable,,0x00b598fc,0x00b0dbac,0x00b598fc
 74826,data,AnimBaseHead::vftable,,0x00b599b4,0x00b0dc64,0x00b599b4
-74827,data,,,0x00b59a6c,0x00b0dd1c,0x00b59a6c
-74828,data,,,0x00b59a70,0x00b0dd20,0x00b59a70
-74829,data,,,0x00b59a78,0x00b0dd28,0x00b59a78
-74830,data,,,0x00b59a7c,0x00b0dd2c,0x00b59a7c
+74827,data,MovementAnimController::EnterStart::s_straightStartMaxDegrees,"float 45.0 degrees: below it the straight start clip, above it the 90-degree clip (ANIMATION.md); fld at 0x00A6AEA9",0x00b59a6c,0x00b0dd1c,0x00b59a6c
+74828,data,MovementAnimController::EnterStart::s_halfTurnStartMinDegrees,"float 157.5 degrees: at and over it the 180-degree start clip, below it the 90-degree clip (ANIMATION.md); fld at 0x00A6AECD",0x00b59a70,0x00b0dd20,0x00b59a70
+74829,data,MovementAnimController::EnterTurnInPlace::s_turnRateExplore,"The float 120.0 (degrees per second) is the base turn rate for the turn-in-place clip outside combat, rate = min(1.3, 120 * clip seconds / angle) (0x00a6b091, ANIMATION.md)",0x00b59a78,0x00b0dd28,0x00b59a78
+74830,data,MovementAnimController::EnterTurnInPlace::s_turnRateCombat,"The float 240.0 (degrees per second) is the base turn rate for the turn-in-place clip in combat, with the clip rate capped at 3.0 (0xAE7130) (0x00a6b089, ANIMATION.md)",0x00b59a7c,0x00b0dd2c,0x00b59a7c
 74831,data,,,0x00b59a84,0x00b0dd34,0x00b59a84
 74832,data,,,0x00b59a98,0x00b0dd48,0x00b59a98
 74833,data,,,0x00b59ab8,0x00b0dd68,0x00b59ab8
 74834,data,MovementAnimController::vftable,,0x00b59ac0,0x00b0dd70,0x00b59ac0
-74835,data,,,0x00b59ac4,0x00b0dd74,0x00b59ac4
-74836,data,,,0x00b59ac8,0x00b0dd78,0x00b59ac8
-74837,data,,,0x00b59acc,0x00b0dd7c,0x00b59acc
-74838,data,,,0x00b59ad0,0x00b0dd80,0x00b59ad0
+74835,data,MovementAnimController::ComputeMoveFlags::s_backwardSectorMinDegrees,float 91.0 degrees: an angle between the move direction and the facing past it counts as moving backwards (ANIMATION.md: 89/91/179 thresholds); fld at 0x00A6A1A1. INFERRED role,0x00b59ac4,0x00b0dd74,0x00b59ac4
+74836,data,MovementAnimController::ComputeMoveFlags::s_directBackwardMinDegrees,float 179.0 degrees: the angle at which the backward weight saturates (ANIMATION.md); fld at 0x00A6A179. INFERRED role,0x00b59ac8,0x00b0dd78,0x00b59ac8
+74837,data,MovementAnimController::ComputeMoveFlags::s_forwardSectorMaxDegrees,float 89.0 degrees: an angle below it counts as moving forwards (ANIMATION.md); fld at 0x00A6A163. INFERRED role,0x00b59acc,0x00b0dd7c,0x00b59acc
+74838,data,MovementAnimController::EnterTurnInPlace::s_maxClipRateExplore,"The float 1.3 is the highest clip rate EnterTurnInPlace gives the turn-in-place clip outside combat (0x00a6b07b, ANIMATION.md); in combat 3.0 (0xAE7130) is used",0x00b59ad0,0x00b0dd80,0x00b59ad0
 74839,data,,,0x00b59ad4,0x00b0dd84,0x00b59ad4
 74840,data,,,0x00b59ae0,0x00b0dd90,0x00b59ae0
 74841,data,,,0x00b59af0,0x00b0dda0,0x00b59af0
