@@ -10259,7 +10259,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10258,function,GdaTables::GetAnimDisableLookAt,,0x005ca660,0x006fd8f0,0x005ca660
 10259,function,GdaTables::GetAnimTransitionTo,,0x005ca6b0,0x006fd940,0x005ca6b0
 10260,function,GdaTables::GetAnimReplacement,,0x005ca6e0,0x006fd970,0x005ca6e0
-10261,function,GdaTables::GetAnimState,,0x005ca710,0x006fd9a0,0x005ca710
+10261,function,GdaTables::GetAnimState,The anim_base column 0xE991BD51 (0x005CA719) of a table row; -1 when the row or value is absent,0x005ca710,0x006fd9a0,0x005ca710
 10262,function,GdaTables::GetDeathAnimation,,0x005ca740,0x006fd9d0,0x005ca740
 10263,function,GdaTables::GetSyncPlacement,"Reads a sync placement row: (table, row, &percentage, &angleAttack, &angleTarget, &distance), by column hash; false unless the row exists and Percentage > 0",0x005ca7b0,0x006fda40,0x005ca7b0
 10264,function,GdaTables::ComputeSyncPlacement,,0x005ca860,0x006fdaf0,0x005ca860
@@ -14335,7 +14335,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14334,function,CCCreature::MarkEffectsDirty,,0x0069eb30,0x0058fd00,0x0069eb30
 14335,function,CCCreature::SEffectsHolder_SetAbilityUpkeepCost,,0x0069eb40,0x0058fd10,0x0069eb40
 14336,function,CCCreature::ApplyControllerInteraction,,0x0069eb60,0x0058fd30,0x0069eb60
-14337,function,CCCreature::SetControllerInteractionCount,,0x0069ebb0,0x0058fd80,0x0069ebb0
+14337,function,CCCreature::SetControllerInteractionCount,"Stores its byte argument at +0x778 and tail-jumps to ApplyControllerInteraction (0x0069EBC1), which pops it (ret 4)",0x0069ebb0,0x0058fd80,0x0069ebb0
 14338,function,CCCreature::RefreshControllerInteraction,,0x0069ebd0,0x0058fda0,0x0069ebd0
 14339,function,AttackRecord::operator=,,0x0069ebf0,0x0058fdc0,0x0069ebf0
 14340,function,CCItem::CallVisualSlot6,,0x0069ec40,0x0058fe10,0x0069ec40
@@ -17533,7 +17533,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17532,function,GUI::GUICharacterRecord::`scalar deleting destructor',,0x0073c420,0x00647e30,0x0073c420
 17533,function,GUI::GUICharacterRecord::GUICharacterRecord,,0x0073c440,0x00647e50,0x0073c440
 17534,function,CCObject::GetPreviousCommand,,0x0073c5e0,0x00647ff0,0x0073c5e0
-17535,function,CCObject::GetCurrentCommand,,0x0073c5f0,0x00648000,0x0073c5f0
+17535,function,CCObject::GetCurrentCommand,"Returns [[this+0x2DC]]: the object's current command record, read through the command queue at +0x2DC",0x0073c5f0,0x00648000,0x0073c5f0
 17536,function,CCObject::GetCurrentCommandType,,0x0073c600,0x00648010,0x0073c600
 17537,function,ECBase::ECDynArray<?>::GetAt,,0x0073c620,0x00648030,0x0073c620
 17538,function,CCObject::HasCommandOfType,,0x0073c650,0x006480d0,0x0073c650
@@ -17718,7 +17718,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17717,function,Commands::ReleaseLookAtAndProjectiles,"Clears the creature's look-at shot-loaded byte (LookAt +0x0E), then pops projectile ids from the creature's queue and removes each from the projectile manager; the loop compares a rising count with the shrinking queue size, so only the first half of the queue is released",0x00745d70,0x00651bd0,0x00745d70
 17718,function,CSCommandHandler::`scalar deleting destructor',,0x00745dd0,0x00651c30,0x00745dd0
 17719,function,CClientExoApp::AcquireTimeScale,,0x00745df0,0x00651c50,0x00745df0
-17720,function,Commands::DeathblowStart,,0x00745e10,0x00651c70,0x00745e10
+17720,function,Commands::DeathblowStart,"Deathblow command start (ret 8): once AddPlayAnimationSubAction answers, CClientExoApp::AcquireTimeScale (0x0074641C) and, with a placement, CameraControllerBase::SetObjectFollowed(id, 1) (0x00746440) and the command's data flag 1 set (CDataArrays::SetFlag, 0x0074644D); called with ecx = the handler",0x00745e10,0x00651c70,0x00745e10
 17721,function,CommandPool::CommandPool,,0x00746490,0x006522f0,0x00746490
 17722,function,Command::BuildSaveTemplate,,0x00746520,0x00652380,0x00746520
 17723,function,SubAction::BuildSaveTemplate,,0x00746620,0x00652480,0x00746620
@@ -17739,7 +17739,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17738,function,Commands::ExecuteEffectEnd,"With a creature and a started command: SetControllerInteractionCount(1), EndManualPlacement (vtable +0x178), SyncAlign::ReverseIfPositive and StopPartnerRate; then Commands::EndShared",0x00747250,0x006530b0,0x00747250
 17739,function,Commands::InteractEnd,,0x007472e0,0x00653140,0x007472e0
 17740,function,Commands::FlyEnd,,0x00747330,0x00653190,0x00747330
-17741,function,Commands::DeathblowEnd,,0x00747360,0x006531c0,0x00747360
+17741,function,Commands::DeathblowEnd,"Deathblow command end (ret 8): with flag 1, SetObjectFollowed(id, 0); ReleaseTimeScale; SetControllerInteractionCount(1); vtable +0x178 (EndManualPlacement); SyncAlign::ReverseIfPositive; CCArea::GetSafeLocation then SetPosition on a find (0x00747447, 0x00747459); EndShared",0x00747360,0x006531c0,0x00747360
 17742,function,CSCommandHandler::Initialize,,0x00747480,0x006532e0,0x00747480
 17743,function,CAppearance::SetOriginalType,,0x00747b40,0x006539a0,0x00747b40
 17744,function,CAppearance::SetGender,,0x00747b50,0x006539b0,0x00747b50
@@ -19731,7 +19731,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19730,function,CGameEffect::SetCreatorFromObjectId,,0x0079f410,0x00670970,0x0079f410
 19731,function,SEffectsHolder::SEffectsHolder,,0x0079f460,0x006709c0,0x0079f460
 19732,function,EffectsManager::Get,,0x0079f480,0x006709e0,0x0079f480
-19733,function,SEffectsHolder::HasTopDeathEffect,,0x0079f4a0,0x00670a00,0x0079f4a0
+19733,function,SEffectsHolder::HasTopDeathEffect,"True when the holder's top animation effect is valid (+0x48 == 0) with duration type 6 (+0x28, 0x0079F4B6); with its flag argument it also needs the effect's data flag 3 (CDataArrays::GetFlag); ret 4",0x0079f4a0,0x00670a00,0x0079f4a0
 19734,function,CGameEffect::IsHolderCreator,,0x0079f4f0,0x00670a50,0x0079f4f0
 19735,function,CGameEffect::SyncPartner,,0x0079f510,0x00670a70,0x0079f510
 19736,function,CGameEffect::GetVisualParams,,0x0079f540,0x00670aa0,0x0079f540
