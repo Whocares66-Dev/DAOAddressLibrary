@@ -16330,7 +16330,7 @@ address,what,value,why
 0x00A66550,signature,"void * __thiscall f(void *this, unsigned char flags)",0x00A66550-0x00A6656B ret 4
 0x00A66570,signature,"int * __thiscall f(void *this, int *out)",ret 0 at the end of 0x00a66570
 0x00A66770,signature,"void __thiscall f(void *this, unsigned short baseItemId)",0x00A66770-0x00A66794 ret 4
-0x00A667D0,signature,"void * __cdecl f(int type, int variation, void *outName)",0x00a667d0 -> 0xa665c0 ret 0
+0x00A667D0,signature,"void * __cdecl f(void *result, int baseItem, int variation)","Items::GetVariationModelName (33671): returns a std::wstring by value, the hidden result first ([esp+0x44] after its 0x40 frame, built at 0x00A66814), then baseItem and variation, passed to Items::GetVariationNames 0x00A665C0 with result as modelName and a local as iconName (0x00A6683A..0x00A66846); plain ret, the caller pops 0xC (0x006A69C0); checked in the exe 2026-11-06"
 0x00A66950,signature,"void __thiscall f(void *this, unsigned char slot)",0x00A66950-0x00A6696F ret 4
 0x00A38B50,convention,__thiscall,"add ecx,8; jmp 0x004D5890"
 0x007C21C0,signature,"int __thiscall f(void* this, void* reader, void* structRef, int mode)","ret 0xc, slot 23, ecx = this"
