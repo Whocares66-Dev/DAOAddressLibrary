@@ -45,6 +45,10 @@ What a run does, on the GOG build's addresses:
 - every struct in data/structs.csv: made or replaced under /DAOAddressLibrary.
 - every comment in the table's comment column: the plate comment at its
   address. One the table takes out stays in Ghidra.
+- every field of data/structs.csv onto Ghidra's own class type of that
+  class (/ClassDataTypes, its class recovery), whose offset_0xN names count
+  from after the vptr and so read 4 short: the field at its real place gets
+  the table's name and its real offset as the comment.
 
 It talks to the server over MCP's plain HTTP (initialize, then
 `eval_python` with the work as JSON, a few thousand rows a call, then
@@ -106,7 +110,7 @@ st = program.getSymbolTable()
 listing = program.getListing()
 SOURCE = SourceType.IMPORTED
 done = {"created": 0, "named": 0, "same": 0, "labels": 0, "fixes": 0, "structs": 0,
-        "comments": 0}
+        "comments": 0, "classfields": 0}
 faults = []
 spaces = {}
 
@@ -266,6 +270,81 @@ for name, size, fields in W.get("structs", []):
         dtm.addDataType(shape, DataTypeConflictHandler.REPLACE_HANDLER)
     except Exception as e:
         faults.append("struct %s: %s" % (name, e))
+
+# Ghidra's own class types (/ClassDataTypes/<class>/<class>, from its class
+# recovery) name their fields offset_0xN with N counted after the vptr, 4
+# short of the field's place, and a reader of a decompile reads them as the
+# offsets: four readers did by 2026-11-05 (a MovementController, a
+# PlatformWin32, a SpeedTreeInstance, and CCObject +0x23C taken for an
+# effects flag). The table's field names go onto those types at the right
+# place, through a nested <class>_data where the type has one, each with its
+# real offset in the comment. Undefined bytes become the field; a type
+# already there is kept.
+from ghidra.program.model.data import Structure
+
+
+def class_field(shape, offset, leaf):
+    # The component starting at offset, inside the class's own <class>_data
+    # if it is there. Not inside another's: a base class's _data is shared
+    # by every class built on it, and two classes' names would take turns.
+    while True:
+        unit = shape.getComponentContaining(offset)
+        if unit is None:
+            return None, None, offset
+        inner = unit.getDataType()
+        if isinstance(inner, Structure) and inner.getName() == leaf + "_data" \
+                and offset - unit.getOffset() < inner.getLength():
+            offset -= unit.getOffset()
+            shape = inner
+            continue
+        if unit.getOffset() != offset:
+            return None, None, offset
+        return shape, unit, offset
+
+
+for name, size, fields in W.get("structs", []):
+    parts = name.split("::")
+    owner = dtm.getDataType(CategoryPath("/ClassDataTypes/" + "/".join(parts)), parts[-1])
+    if not isinstance(owner, Structure):
+        continue
+    for offset, length, kind, field in fields:
+        if offset == 0:
+            continue
+        try:
+            shape, unit, at = class_field(owner, offset, parts[-1])
+            if unit is None:
+                continue
+            note = "%s +0x%X (DAOAddressLibrary data/structs.csv)" % (name, offset)
+            if unit.getFieldName() == field and unit.getComment() == note:
+                continue
+            done["classfields"] += 1
+            if dry:
+                continue
+            free = Undefined.isUndefined(unit.getDataType()) and all(
+                Undefined.isUndefined(shape.getComponentContaining(at + i).getDataType())
+                for i in range(length)
+                if at + i < shape.getLength()
+            )
+            widened = False
+            if free and length > unit.getLength() and at + length <= shape.getLength():
+                # Only plain undefined bytes count as free to Ghidra: a range
+                # holding an undefined4 is refused, and the field is then
+                # named where it starts, its size left as Ghidra has it.
+                try:
+                    shape.replaceAtOffset(at, Undefined.getUndefinedDataType(length), length, field, note)
+                    widened = True
+                except Exception:
+                    pass
+            if not widened and Undefined.isUndefined(unit.getDataType()):
+                # Ghidra's default undefined byte holds no name; an explicit
+                # undefined of the same size does.
+                shape.replaceAtOffset(at, Undefined.getUndefinedDataType(unit.getLength()),
+                                      unit.getLength(), field, note)
+            elif not widened:
+                unit.setFieldName(field)
+                unit.setComment(note)
+        except Exception as e:
+            faults.append("class field %s +0x%x %s: %s" % (name, offset, field, e))
 
 from ghidra.program.model.listing import CodeUnit
 for address, text in W.get("comments", []):
@@ -545,7 +624,8 @@ def main(argv):
     print(
         f"{verb}: {totals['created']} functions defined, {totals['named']} renamed, "
         f"{totals['labels']} labels, {totals['fixes']} fix rows applied, "
-        f"{totals['structs']} structs, {totals.get('comments', 0)} comments; "
+        f"{totals['structs']} structs, {totals.get('comments', 0)} comments, "
+        f"{totals.get('classfields', 0)} class-type fields named; "
         f"{totals['same']} already right"
     )
     for fault in faults[:40]:
