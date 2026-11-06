@@ -33316,7 +33316,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33315,function,Graphics::IWindInstance::`scalar deleting destructor',,0x00a55eb0,0x0076d9d0,0x00a55eb0
 33316,function,Graphics::IWindInstanceContainer::~IWindInstanceContainer,,0x00a55ed0,0x0076d9f0,0x00a55ed0
 33317,function,Graphics::IWindInstanceContainer::`scalar deleting destructor',,0x00a55ee0,0x0076da00,0x00a55ee0
-33318,function,Math::Matrix4x4f::Matrix4x4f,,0x00a55f00,0x0076da20,0x00a55f00
+33318,function,Math::Matrix4x4f::Matrix4x4f,"Not the identity: stores 1.0 at +0x0, +0x14 and +0x3C but the float 1.1 (0x00B38438) at +0x28, so diag(1, 1, 1.1, 1) with zeros elsewhere (0x00A55F25..0x00A55F2B); six direct callers, what they use it for not read",0x00a55f00,0x0076da20,0x00a55f00
 33319,function,Math::Matrix4x4f::RotateAxis,,0x00a55f40,0x0076da60,0x00a55f40
 33320,function,Math::Matrix4x4f::Multiply3x3,,0x00a56050,0x0076db70,0x00a56050
 33321,function,GraphicsStructures::CSpeedTreeWind::WindInstance::Smoother::Advance,,0x00a56140,0x0076dc60,0x00a56140
