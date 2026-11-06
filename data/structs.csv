@@ -367,6 +367,7 @@ CCObject,0x1C0,0x4,float,groundHeight,0x006954FC; cached ground height: RefreshG
 CCObject,0x1C4,0x1,uint8_t,groundCacheValid,0x006954CC; ground cache valid flag; RefreshGroundCache does nothing when set
 CCObject,0x1C8,0x4,int32,visibilityLock,"0x00695C04, 0x00695C2C; when equal to 1, SetVisibilityTarget and SetVisibilityImmediate do nothing"
 CCObject,0x23C,0x1,uint8_t,shownInRoom,"0x0069B64C mov [ecx+0x23C],al in SetShownInRoom; 0x006951C0 GetShownInRoom returns it (vftable slot 78, +0x138); ClientScriptCommand::GETISVISIBLE answers it (0x006D5A16)"
+CCObject,0x250,0x1,uint8_t,unusedFlag250,"0x00695970 mov byte [ecx+0x250],0 in slot 69 (ClearByte_0x250; CCCreature's override 0x006A53D0) clears it, the constructor zeroes it (0x006998C0) and CCObject_copy copies it (0x00751984); nothing in .text reads it but the copy and nothing sets it non-zero: a dead flag"
 CCObject,0x254,0x4,ObjectId,areaId,"0x006998D6, 0x0069A3AB; id of the area the object is in (constructed from the invalid id at 0x00B5940C; the destructor writes -1)"
 CCObject,0x258,0x1,uint8_t,animBaseCreated,0x00694DBB; set to 1 by CreateAnimBase
 CCObject,0x25C,0x10,SmartData::Attribute<bool>,mapNoteVisibleAttribute,0x006998F2; attribute MapNoteVisible (value byte at +0x268)
