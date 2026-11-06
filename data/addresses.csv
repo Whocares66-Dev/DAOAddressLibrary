@@ -100578,7 +100578,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100577,data,Math::Vector4f::UnitZW::s_vector.z,,0x00c31988,0x00c21968,0x00c31988
 100578,data,Math::Vector4f::UnitZW::s_vector.w,,0x00c3198c,0x00c2196c,0x00c3198c
 100579,data,Math::Vector4f::UnitZW::s_guard,"init guard bit 0 of Math::Vector4f::UnitZW::s_vector (c31980..c3198c), tested inline by ReadRmlHeader and the IRoomLayout ctor. Real size 4",0x00c31990,0x00c21970,0x00c31990
-100580,data,GraphicsStructures::ParticleRandomSeed,,0x00c31994,0x00c2350c,0x00c31994
+100580,data,g_randomState,"The state of the engine's own random generator (x * 0x343FD + 0x269EC3, MSVC rand's constants, not the CRT's), stepped by RandomUnitFloat, RandomBelow and RandomSignedUnitFloat (0x0053DEF6); the particle emitters' births and spawn volumes and the look-at's decisions share it",0x00c31994,0x00c2350c,0x00c31994
 100581,data,GraphicsStructures::ObjectNodeEmitter::s_infinity,"Float +infinity (0x7F800000): the startup initializer 0x00ACF710 copies the constant at 0x00C14FC8 here; ObjectNodeEmitter::SpawnSplat 0x005405e0 (0x00540c9a, 0x0054100d) and the emitter constructor 0x00541e00 (0x0054203d, with its negation) use it as a bounds seed. Role as the seed INFERRED.",0x00c31998,0x00c23510,0x00c31998
 100582,data,ECBase::ECDynArray<GraphicsStructures::Dependency*>::s_default,"Null pointer fallback for the Object dependency arrays (Object+0x1f8 dependencies per dev structs.csv): Object::ReleaseDependencies 0x0054dac0 (0x0054db0a) calls virtual +0x20 on the element; also AttachToObjectNode, TakeOverFrom, AttachToPhysicsScene, ObjectNodeEmitter::UpdateParentTransform.",0x00c3199c,0x00c2300c,0x00c3199c
 100583,data,,,0x00c319a0,0x00c1ab34,0x00c319a0
