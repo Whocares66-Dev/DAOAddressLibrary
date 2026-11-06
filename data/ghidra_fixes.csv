@@ -6640,7 +6640,7 @@ address,what,value,why
 0x00601390,signature,"void __thiscall f(void *this, unsigned int n, int v0, int v1, int v2, int v3, int v4, int v5, int v6, int v7, int v8, int v9, int v10, int v11, int v12, int v13, int v14, int v15, int v16, int v17, int v18, int v19, int v20, int v21, int v22, int v23, int v24, int v25, int v26, int v27, int v28, int v29, int v30, int v31, int v32, int v33)",prototype from ret N and the reads of ecx/stack at 0x00601390 (ID 11081)
 0x006014D0,signature,"void __thiscall f(void *this, unsigned int n, int v0, int v1, int v2, int v3)",prototype from ret N and the reads of ecx/stack at 0x006014D0 (ID 11082)
 0x00601580,signature,"void __thiscall f(void *this, void *out, void *whereCont, void *wherePtr, void *val)",prototype from ret N and the reads of ecx/stack at 0x00601580 (ID 11083)
-0x00601610,signature,"void __thiscall f(void *this, int eventId, int remove)",prototype from ret N and the reads of ecx/stack at 0x00601610 (ID 11084)
+0x00601610,signature,"void __thiscall f(void *this, int eventId, int bEnable)","CCModule::SetEventEnabled (11084): bEnable 0 inserts eventId into the disabled set at +0x178 (0x00600E40, set insert), non-zero erases it (0x006010C0); ret 8; was named remove, the wrong way round; paragon-agent's World triage, checked in the exe 2026-11-05"
 0x00601640,signature,"void __thiscall f(void *this, unsigned int n)",prototype from ret N and the reads of ecx/stack at 0x00601640 (ID 11085)
 0x00601690,signature,"void __thiscall f(void *this, void *val)",prototype from ret N and the reads of ecx/stack at 0x00601690 (ID 11086)
 0x00601740,signature,"void __thiscall f(void *this, void *val)",prototype from ret N and the reads of ecx/stack at 0x00601740 (ID 11087)

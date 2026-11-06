@@ -4973,7 +4973,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4972,function,Vector3::ToSpherical,,0x004d4a40,0x008186e0,0x004d4a40
 4973,function,Vector3::AngleBetweenUnit,,0x004d4b80,0x00818820,0x004d4b80
 4974,function,Vector3::AngleBetweenUnitDegrees,,0x004d4bf0,0x00818890,0x004d4bf0
-4975,function,Vector3::AngleBetweenRadians,,0x004d4c20,0x008188c0,0x004d4c20
+4975,function,Vector3::AngleBetweenRadians,"The unsigned angle in radians between two vectors in x and y: both normalized, then AngleBetweenUnit (acos of the dot product)",0x004d4c20,0x008188c0,0x004d4c20
 4976,function,Vector3::AngleBetween,,0x004d4c90,0x00818930,0x004d4c90
 4977,function,Vector3::SignedAngleBetweenRadians,,0x004d4cc0,0x00818960,0x004d4cc0
 4978,function,Vector3::SignedAngleBetween,,0x004d4d10,0x008189b0,0x004d4d10
@@ -5600,7 +5600,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5599,function,Geometry::FootOnSegment,,0x004eaf10,0x00836770,0x004eaf10
 5600,function,Geometry::PointWithinRadius2D,,0x004eb010,0x00836870,0x004eb010
 5601,function,Geometry::PointInTriangle,"True when point p lies in triangle a, b, c in x and y: each edge's cross product with p is >= 0 (clockwise winding; a point on an edge is inside)",0x004eb070,0x008368d0,0x004eb070
-5602,function,Geometry::PointInPolygon2D,,0x004eb100,0x00836960,0x004eb100
+5602,function,Geometry::PointInPolygon2D,"True when the point is inside the polygon (x, y): sums AngleBetweenRadians from the point to each edge's two ends, an unsigned angle (acos), and answers |sum| > pi (0x004EB218); not a signed winding test; fewer than 3 points gives false",0x004eb100,0x00836960,0x004eb100
 5603,function,Geometry::SegmentMeetsCircle,,0x004eb240,0x00836aa0,0x004eb240
 5604,function,Geometry::WithinRadius2D,,0x004eb340,0x00836ba0,0x004eb340
 5605,function,Geometry::InCone2D,,0x004eb3b0,0x00836c10,0x004eb3b0
@@ -11082,7 +11082,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 11081,function,std::vector<CCModule::TagIndexEntry>::resize,,0x00601390,0x004ef7f0,0x00601390
 11082,function,std::vector<Gff4::StructReader>::resize,,0x006014d0,0x00536ae0,0x006014d0
 11083,function,std::vector<Gff4::StructReader>::insert,,0x00601580,0x004ef930,0x00601580
-11084,function,CCModule::SetEventEnabled,,0x00601610,0x004ef9c0,0x00601610
+11084,function,CCModule::SetEventEnabled,"Enables or disables a module event: bEnable 0 adds eventId to the disabled set at +0x178, non-zero takes it out",0x00601610,0x004ef9c0,0x00601610
 11085,function,std::vector<CCModule::TagIndexEntry>::resize,,0x00601640,0x004efb30,0x00601640
 11086,function,std::vector<CCModule::TagIndexEntry>::push_back,,0x00601690,0x004efb80,0x00601690
 11087,function,std::vector<Gff4::StructReader>::push_back,,0x00601740,0x004efc30,0x00601740
