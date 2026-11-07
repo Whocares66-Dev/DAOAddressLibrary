@@ -6142,22 +6142,22 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6141,function,Multithreading::SynchSafePointerList<Graphics::MaterialObject>::`scalar deleting destructor',,0x00501510,0x007e96e0,0x00501510
 6142,function,Graphics::MaterialObject::SetMaterial,,0x00501540,0x007e9710,0x00501540
 6143,function,Graphics::MaterialObject::SetVector4Parameter,,0x005015d0,0x007e97a0,0x005015d0
-6144,function,,,0x00501610,0x007e97e0,0x00501610
-6145,function,,,0x005016e0,0x007e98b0,0x005016e0
-6146,function,,,0x00501771,0x007e9941,0x00501771
-6147,function,,,0x00501790,0x007e9960,0x00501790
-6148,function,,,0x0050182d,0x007e99fd,0x0050182d
-6149,function,,,0x00501850,0x007e9a20,0x00501850
+6144,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::erase(first,last)","Erases [first,last); the whole tree at once (_Erase of the root, head relinked, size 0) when the range is begin..end, else one by one through 6139",0x00501610,0x007e97e0,0x00501610
+6145,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::_Buynode","Allocates a 0x24-byte node (left, parent, right, key, ECDynArray<VectorUA4f> value copied, colour +0x20, isnil +0x21 = 0)",0x005016e0,0x007e98b0,0x005016e0
+6146,function,Catch_All@00501771,_Buynode's catch(...): frees the node and rethrows,0x00501771,0x007e9941,0x00501771
+6147,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::_Copy_nodes","Copies a subtree recursively (nodes by _Buynode 6145), its root's parent set to the given node",0x00501790,0x007e9960,0x00501790
+6148,function,Catch_All@0050182d,_Copy_nodes' catch(...): erases what was copied and rethrows,0x0050182d,0x007e99fd,0x0050182d
+6149,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::_Insert","Links a new node (6145) under the given parent, left or right, and rebalances; throws length_error past 0x0CCCCCCB elements",0x00501850,0x007e9a20,0x00501850
 6150,function,Graphics::MaterialObject::ClearParameters,,0x00501a50,0x007e9c20,0x00501a50
 6151,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::_Tidy",,0x00501cc0,0x007e9e90,0x00501cc0
 6152,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::_Copy",,0x00501d00,0x007e9ed0,0x00501d00
-6153,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::_Copy_nodes",,0x00501d80,0x007e9f50,0x00501d80
+6153,function,"std::map<unsigned int,Multithreading::SynchSafePointer>::_Copy_nodes","Copies a subtree recursively; its nodes hold a SynchSafePointer (0x1C-byte nodes, isnil +0x19), not this file's Map's",0x00501d80,0x007e9f50,0x00501d80
 6154,retired,,,,,
-6155,function,,,0x00501e40,0x007ea010,0x00501e40
+6155,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::insert","insert(value): finds the place by key (unsigned compare, 0x00501E64) and inserts with _Insert unless the key is there; returns pair<iterator,bool>",0x00501e40,0x007ea010,0x00501e40
 6156,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::Map",,0x00501f00,0x007ea0d0,0x00501f00
 6157,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::~Map",,0x00501fa0,0x007ea170,0x00501fa0
-6158,function,,,0x00501fe0,0x007ea1b0,0x00501fe0
-6159,function,,,0x00502060,0x007ea230,0x00502060
+6158,function,"std::map<unsigned int,Multithreading::SynchSafePointer>::_Copy","Copies another map's tree into this one (6153), then sets the head's leftmost and rightmost and the size",0x00501fe0,0x007ea1b0,0x00501fe0
+6159,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::insert(hint,value)","insert(where, value): inserts beside the hint when the key fits there, else falls back to insert(value) 6155",0x00502060,0x007ea230,0x00502060
 6160,function,Graphics::MaterialObject::MaterialObject,,0x00502220,0x007ea3f0,0x00502220
 6161,function,Graphics::MaterialObject::`scalar deleting destructor'`adjustor{288}',,0x00502420,0x007ea5f0,0x00502420
 6162,function,Graphics::MaterialObject::~MaterialObject,,0x00502430,0x007ea600,0x00502430
