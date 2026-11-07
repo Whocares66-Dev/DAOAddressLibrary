@@ -403,7 +403,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 402,function,Eclipse::IPlatform::IPlatform,,0x00413780,0x00413fd0,0x00413780
 403,function,Eclipse::IPlatform::~IPlatform,,0x00413790,0x00413fe0,0x00413790
 404,function,Stub::ReturnZero,,0x004137b0,0x00734c90,0x004137b0
-405,function,?TryAcquireCommit@GSemaphore@@UAE_NXZ,,0x004137c0,0x00868f30,0x004137c0
+405,function,Stub::ReturnTrue,,0x004137c0,0x00868f30,0x004137c0
 406,function,Stub::ReturnFalse_12,,0x004137d0,0x00726210,0x004137d0
 407,function,Eclipse::IPlatform::`scalar deleting destructor',,0x004137e0,0x00414000,0x004137e0
 408,function,std::char_traits<wchar_t>::compare,,0x00413800,0x00414020,0x00413800
@@ -13895,8 +13895,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13894,function,Conversation::IsLineNoVOIngame,,0x0068d8a0,0x005796c0,0x0068d8a0
 13895,function,GameModeDialog::TakeReply,"Takes the player's reply: stops the previous speaker's voice (and plays its pause row with blend -2.0 when asked), journals the line when it has text, Conversation::Advance, MarkFinished when that returns false",0x0068d8f0,0x00579710,0x0068d8f0
 13896,function,GameModeDialog::HandleMessage_SkipDialogMessage,"Skip: ignored while finished or the lockout (+0x258) runs; seeks the cutscene's next skip marker, else offers the replies, and takes a lone empty reply",0x0068dc10,0x00579a30,0x0068dc10
-13897,function,GameModeDialog::Update,"Per frame: takes a queued reply, plays a lone empty continue when the voice ends, fades the partner (SetFade), places the no-cut camera and, if da_dof has a ""focus"" resource (FindResource, 0x0068E182; null skips it), sets it to the camera-speaker distance, or updates the line's cutscene; offers replies when the line timer runs out",0x0068ddd0,0x00579c30,0x0068ddd0
-13898,function,GameModeDialog::ShowLine,"Shows an NPC line: either a cutscene (MakeLineCutscene, SetStageByTag, Start) or, without one, adds speaker and partner as participants, sets their mutual look-at, PlaceDialogueCamera, plays the voice and the line animation (blend -2.0); the line timer is the voice length (1.0 with no VO) less 0.3",0x0068e250,0x0057a0b0,0x0068e250
+13897,function,GameModeDialog::Update,"Per frame: takes a queued reply, plays a lone empty continue when the voice ends, fades the partner (SetFade), places the no-cut camera and, if da_dof has a ""focus"" resource (FindResource, 0x0068E182; null skips it), sets it to the camera-speaker distance, or updates the line's cutscene. The cut path offers the replies at once when the cut IsFinished and the line timer is not below 0 (0x0068DE8E); the tail, when +0x2BC is clear, counts a timer not below 0 down by dt and offers at 0 or less (0x0068E1FD), then sets the timer to -1; the tail runs on the cut path too",0x0068ddd0,0x00579c30,0x0068ddd0
+13898,function,GameModeDialog::ShowLine,"Shows an NPC line: either a cutscene (MakeLineCutscene, SetStageByTag, Start) or, without one, adds speaker and partner as participants, sets their mutual look-at, PlaceDialogueCamera, plays the voice and the line animation (blend -2.0). The line timer +0x2C4: a cut line's run time (cut +8), or 1.0 when the cut plays until VO (cut +0x11C, field 5018) and the line is NoVOIngame; a no-cut line with its speaker gets 1.0 (NoVOIngame) or GetVoiceLength; a forced (slideshow) line (+0x20D, 0x0068E485) or a missing speaker (0x0068E728) writes none; the tail takes 0.3 off, none below 0 (0x0068EC1F)",0x0068e250,0x0057a0b0,0x0068e250
 13899,function,"SmartData::Attribute<ECBase::ECDynArray<Response*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::~Attribute",,0x0068ecc0,0x0057ab20,0x0068ecc0
 13900,function,"SmartData::Attribute<ECBase::ECDynArray<Response*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x0068ed30,0x0057ab90,0x0068ed30
 13901,function,SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<Response*>>::GetMemberName,,0x0068ed40,0x0057aba0,0x0068ed40
@@ -14025,7 +14025,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14024,function,GameMode::ResetTimeInModes,,0x00694340,0x005803c0,0x00694340
 14025,function,GameMode::SendTimeInModesTelemetry,,0x00694390,0x00580410,0x00694390
 14026,function,GameMode::Leave,,0x006945a0,0x00580620,0x006945a0
-14027,function,GameMode::Update,,0x00694640,0x005806c0,0x00694640
+14027,function,GameMode::Update,"Every mode's update tail: UpdateCamera (slot 0x58), LodManager::Update when slot 0x44 answers true, UpdateInputContext (slot 0x74), UpdateCursorShape (slot 0x70), the ambient dialog manager's Update, then CCModule::Update where a module exists and slot 0x50 answers true (false only in Loading: Stub::ReturnFalse at its vftable 0x00B108D4+0x50). GameModeGUI::Update 0x00717FA0 and GameModePartyPicker::Update 0x0076C720 never call it",0x00694640,0x005806c0,0x00694640
 14028,function,GameMode::OnPausedChanged,,0x006946e0,0x00580760,0x006946e0
 14029,function,GameMode::UpdateInputContext,,0x00694730,0x005807b0,0x00694730
 14030,function,GameMode::UpdateCursorShape,,0x00694800,0x00580880,0x00694800
@@ -14919,7 +14919,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14918,function,CCCreature::`scalar deleting destructor'`adjustor{112}',,0x006ba7f0,0x005ac280,0x006ba7f0
 14919,function,CCCreature::GetItemLocation,,0x006ba800,0x005ac2c0,0x006ba800
 14920,function,CCCreature::IsPickable,,0x006ba810,0x005ac2d0,0x006ba810
-14921,function,CCCreature::ShouldShowInteractiveEffect,,0x006ba840,0x005ac300,0x006ba840
+14921,function,CCCreature::ShouldShowInteractiveEffect,"Slot 0x94 of CCCreature's primary vftable 0x00B10484: true when HasLootableItems (0x006A90D0), IsDead (slot 0x1D0) answers 1, and +0x42C is set; ClearType2EffectVisualsInArea 0x007F2FF0 stops type-2 effect visuals only on objects answering true",0x006ba840,0x005ac300,0x006ba840
 14922,function,CCCreature::EndManualPlacement,"vtable +0x178: when +0x420 is set, clears it and runs SnapToGround(0)",0x006ba870,0x005ac330,0x006ba870
 14923,function,CCCreature::CCCreature_Clone,,0x006ba890,0x005ac350,0x006ba890
 14924,function,CCCreature::~CCCreature,,0x006bafe0,0x005acaa0,0x006bafe0
@@ -17899,7 +17899,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17898,function,CCPlaceable::UpdateDoorCollision,,0x0074e850,0x0065a750,0x0074e850
 17899,function,CCPlaceable::HandleMessage_InventoryClosedMessage,,0x0074e8d0,0x0065a7d0,0x0074e8d0
 17900,function,CCPlaceable::SetCurrentHealth,,0x0074e8e0,0x0065a7e0,0x0074e8e0
-17901,function,CCPlaceable::ShouldShowInteractiveEffect,,0x0074e940,0x0065a840,0x0074e940
+17901,function,CCPlaceable::ShouldShowInteractiveEffect,"Slot 0x94 of CCPlaceable's primary vftable 0x00B1C084: true when +0x42C is set, the item location at +0x678 holds items (ItemLocation::GetItemCount 0x00761220 non-zero), and GetAction (slot 0x100) is 3 or 11",0x0074e940,0x0065a840,0x0074e940
 17902,function,CCPlaceable::RegisterHandler_DisplayFloatyMessage,,0x0074e990,0x0065a890,0x0074e990
 17903,function,CCPlaceable::RegisterHandler_InventoryClosedMessage,,0x0074ea10,0x0065a910,0x0074ea10
 17904,function,CCPlaceable::InitFields,,0x0074ea90,0x0065a990,0x0074ea90
@@ -21038,18 +21038,18 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21037,function,"std::map<unsigned int,CutscenePlayer::ActorDependencyList>::operator[]",,0x007e0f20,0x006c8370,0x007e0f20
 21038,function,std::vector<CutscenePlayer::BindRecord>::push_back,,0x007e1000,0x006c8450,0x007e1000
 21039,function,CutscenePlayer::Teardown,,0x007e10a0,0x006c84f0,0x007e10a0
-21040,function,CutscenePlayer::Load,,0x007e1910,0x006c8d60,0x007e1910
+21040,function,CutscenePlayer::Load,"+0x14, the last frame, is ftol(fps * run time), truncated (0x007E1B27): fps +4 (field 5016, default 30, read only while EclipseGame +0x254 is 0), run time +8 (field 5000)",0x007e1910,0x006c8d60,0x007e1910
 21041,function,EC::Cutscene::Actor::FindFollowerAniHackEntry,,0x007e2210,0x006c9660,0x007e2210
 21042,function,std::vector<CutscenePlayer::BindRecord>::vector,,0x007e2660,0x006c9ab0,0x007e2660
 21043,function,CutscenePlayer::CutscenePlayer,,0x007e26e0,0x006c9b30,0x007e26e0
 21044,function,CutscenePlayer::CutscenePlayer,,0x007e2a70,0x006c9ec0,0x007e2a70
-21045,function,CutscenePlayer::SortActors,,0x007e2d70,0x006ca1c0,0x007e2d70
+21045,function,CutscenePlayer::SortActors,"The dependency map is keyed by the actors' addresses (std::map<unsigned int, ActorDependencyList>), so independent actors come out in heap-address order; each round takes the first with no dependencies (else the map's first) and removes it from the others' lists, then the first actor with +0x24 (Master, field 5223) goes to the front",0x007e2d70,0x006ca1c0,0x007e2d70
 21046,function,CutscenePlayer::BindObjectToActor,,0x007e30b0,0x006ca500,0x007e30b0
 21047,function,CutscenePlayer::BindObjectIdToActor,,0x007e3330,0x006ca780,0x007e3330
 21048,function,CutscenePlayer::BindObjectIdToActorByTag,,0x007e3390,0x006ca7e0,0x007e3390
 21049,function,EC::Cutscene::Actor::ApplyFollowerAniHack,,0x007e33c0,0x006ca810,0x007e33c0
 21050,function,EC::Cutscene::Actor::Bind,,0x007e36b0,0x006cab00,0x007e36b0
-21051,function,CutscenePlayer::Update,,0x007e3d30,0x006cb180,0x007e3d30
+21051,function,CutscenePlayer::Update,"State 3, while the area chunk queue is empty: warm-up +0x114 (0: Step with dt 0; 1: dt 0; then acc +0x10 += dt); frame = ftol(acc*fps + 0.5), clamped to the last frame +0x14 (setting ended, +0x18) only while +0x18 is clear (0x007E439F), so once ended the frame runs on past +0x14 when +0x110 is set; the clock +0xC = frame/fps; Skip when ended and +0x110 clear",0x007e3d30,0x006cb180,0x007e3d30
 21052,function,CCAreaOfEffectObject::FreeStateBuffers,,0x007e45e0,0x006cba30,0x007e45e0
 21053,function,CCAreaOfEffectObject::SetStateAnimation,,0x007e4680,0x006cbad0,0x007e4680
 21054,function,CCAreaOfEffectObject::SetCreatorId,,0x007e4720,0x006cbb70,0x007e4720
