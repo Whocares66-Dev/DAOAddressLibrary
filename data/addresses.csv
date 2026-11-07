@@ -3359,7 +3359,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3358,function,,,0x004818d0,0x0085b0b0,0x004818d0
 3359,function,std::vector<?>::~vector,,0x00481940,0x0085b120,0x00481940
 3360,function,,,0x00481950,0x0085b130,0x00481950
-3361,function,,,0x004819b0,0x004c3800,0x004819b0
+3361,function,std::vector<PrereqItem>::erase,"erase(first, last): copies the tail down and destroys what is left",0x004819b0,0x004c3800,0x004819b0
 3362,function,,,0x00481a10,0x00692f50,0x00481a10
 3363,function,,,0x00481a80,0x00712bf0,0x00481a80
 3364,function,,,0x00481b20,0x004c34c0,0x00481b20
@@ -3371,7 +3371,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3370,function,,,0x00481f50,0x00536930,0x00481f50
 3371,function,,,0x00482100,0x0047e170,0x00482100
 3372,function,,,0x004821d0,0x0085b530,0x004821d0
-3373,function,,,0x00482290,0x0085b5f0,0x00482290
+3373,function,ECBase::ECDynArray<OnlineRec24>::RemoveAt,"removes element [index] of a vector of 0x24-byte records, index bounds-checked",0x00482290,0x0085b5f0,0x00482290
 3374,function,,,0x00482350,0x004cc500,0x00482350
 3375,function,,,0x004823d0,0x00506000,0x004823d0
 3376,function,,,0x00482440,0x0081ea70,0x00482440
@@ -4909,7 +4909,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4908,function,"std::basic_istream<wchar_t,std::char_traits<wchar_t>>::get",,0x004d29a0,0x00819870,0x004d29a0
 4909,function,,,0x004d29c0,0x00819890,0x004d29c0
 4910,function,,,0x004d29d0,0x008198a0,0x004d29d0
-4911,function,,,0x004d29f0,0x008198c0,0x004d29f0
+4911,function,"std::operator>>(std::basic_istream<wchar_t,std::char_traits<wchar_t>>&,unsigned char&)",reads an unsigned int from a wide stream and stores its low byte,0x004d29f0,0x008198c0,0x004d29f0
 4912,function,"std::basic_stringstream<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>::basic_stringstream",,0x004d2a20,0x008198f0,0x004d2a20
 4913,function,"std::getline<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>",,0x004d2a30,0x00819900,0x004d2a30
 4914,function,Math::CollisionObject::SetMatrixA,,0x004d2a60,0x0081c4f0,0x004d2a60
@@ -5201,7 +5201,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5200,function,,,0x004dc350,0x0081f710,0x004dc350
 5201,function,,,0x004dc3a0,0x004b8920,0x004dc3a0
 5202,function,,,0x004dc3f9,0x004b8979,0x004dc3f9
-5203,function,,,0x004dc430,0x0082ec90,0x004dc430
+5203,function,Gff4::Block::Clear,"frees a block's data and clears and frees its child blocks recursively, then empties the child map",0x004dc430,0x0082ec90,0x004dc430
 5204,function,,,0x004dc530,0x0082ed90,0x004dc530
 5205,function,,,0x004dc680,0x0082eee0,0x004dc680
 5206,function,,,0x004dc750,0x0082efb0,0x004dc750
@@ -9872,17 +9872,17 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9871,function,WStringMap<?>::ClearAndDeleteValues,,0x005b7bc0,0x007202d0,0x005b7bc0
 9872,function,,,0x005b7c50,0x00819050,0x005b7c50
 9873,function,,,0x005b7f20,0x00819320,0x005b7f20
-9874,function,,,0x005b7ff0,0x004c3860,0x005b7ff0
-9875,function,,,0x005b8060,0x00720650,0x005b8060
+9874,function,"std::vector<std::pair<std::wstring,std::wstring>>::erase","erase(first, last) of pairs of two wstrings (0x38 bytes)",0x005b7ff0,0x004c3860,0x005b7ff0
+9875,function,WStringMap<?>::Find,"finds a wide-string key and returns its value (node +0x28), or 0",0x005b8060,0x00720650,0x005b8060
 9876,function,SoundManager::LoadSoundSet,,0x005b80b0,0x007206a0,0x005b80b0
 9877,function,WStringMap<?>::ClearAndDeleteValues,,0x005b8120,0x00720710,0x005b8120
 9878,function,,,0x005b8130,0x00720720,0x005b8130
 9879,function,,,0x005b8160,0x00720750,0x005b8160
 9880,function,std::vector<?>::~vector,,0x005b8190,0x005315d0,0x005b8190
 9881,function,,,0x005b81a0,0x004edf20,0x005b81a0
-9882,function,,,0x005b81e0,0x00720840,0x005b81e0
+9882,function,"ECBase::ECDynArray<std::pair<std::wstring,std::wstring>>::RemoveAt","removes element [index] of a vector of wstring pairs, index bounds-checked",0x005b81e0,0x00720840,0x005b81e0
 9883,function,,,0x005b82a0,0x00720900,0x005b82a0
-9884,function,,,0x005b8330,0x00720990,0x005b8330
+9884,function,WStringMap<?>::ClearAndDeleteValues,thunk of WStringMap<?>::ClearAndDeleteValues,0x005b8330,0x00720990,0x005b8330
 9885,function,,,0x005b8340,0x007209a0,0x005b8340
 9886,function,"std::vector<std::pair<std::wstring,std::wstring>>::resize",,0x005b8500,0x004ef480,0x005b8500
 9887,function,SoundManager::UnloadProject,,0x005b8630,0x00720b60,0x005b8630
@@ -18119,9 +18119,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18118,function,Plots::GetFlagIdByIndex,,0x0075ca80,0x006a7ce0,0x0075ca80
 18119,function,ScriptBackend::ForScript_GetPlotGUID,,0x0075cb30,0x006a7d90,0x0075cb30
 18120,function,,,0x0075ccd0,0x006a7f30,0x0075ccd0
-18121,function,,,0x0075cd70,0x00807b50,0x0075cd70
+18121,function,"stdext::hash_map<std::wstring,?>::~hash_map","destroys a wide-string-keyed hash_map: its wstring at +0x28, the bucket array at +0x14 and the list at +4",0x0075cd70,0x00807b50,0x0075cd70
 18122,function,PlotManager::WriteToSave,"Writes the plot map (0x4011; each name 0x4012, words 0x4013..0x4016) and, where the struct has field 0x4089, the unread codex entry names from Journal::GetUnreadCodexEntryNames (0x0075D006)",0x0075ce00,0x006a7fd0,0x0075ce00
-18123,function,,,0x0075d0d0,0x006a82a0,0x0075d0d0
+18123,function,"stdext::hash_map<std::wstring,PlotManager::PlotEntry>::hash_map","constructs the plot manager's hash_map: a list head, 9 buckets, load counters of 1",0x0075d0d0,0x006a82a0,0x0075d0d0
 18124,function,,,0x0075d150,0x006a8320,0x0075d150
 18125,function,ECBase::ECDynArray<unsigned int>::Clear,,0x0075d700,0x006a88d0,0x0075d700
 18126,function,PlotManager::BuildSaveTemplate,,0x0075d7f0,0x006a89c0,0x0075d7f0
@@ -20871,11 +20871,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20870,function,EC::Cutscene::Actor::UpdateFollowerAniHack,,0x007d6140,0x006bd440,0x007d6140
 20871,function,,,0x007d6630,0x006bd930,0x007d6630
 20872,function,Core::VectorReserveIfLarger<EC::Cutscene::Actor::ClipRecord>,,0x007d67e0,0x006bdae0,0x007d67e0
-20873,function,,,0x007d6820,0x006bdb20,0x007d6820
-20874,function,,,0x007d6960,0x006bdc60,0x007d6960
-20875,function,,,0x007d6a10,0x006bdd10,0x007d6a10
-20876,function,,,0x007d6af0,0x006bddf0,0x007d6af0
-20877,function,,,0x007d6ba0,0x006bdea0,0x007d6ba0
+20873,function,std::vector<EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>::resize,"resize(n, value) of 0x18-byte ParameterValues",0x007d6820,0x006bdb20,0x007d6820
+20874,function,std::vector<EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>::insert,"insert(where, value) of one ParameterValue through _Insert_n",0x007d6960,0x006bdc60,0x007d6960
+20875,function,std::vector<EC::Cutscene::Actor::BlendGadRecord>::resize,"resize(n, value) of 0x24-byte BlendGadRecords",0x007d6a10,0x006bdd10,0x007d6a10
+20876,function,std::vector<EC::Cutscene::Actor::BlendGadRecord>::insert,"insert(where, value) of one BlendGadRecord through _Insert_n",0x007d6af0,0x006bddf0,0x007d6af0
+20877,function,std::list<Elem>::assign,"empties the list, then inserts a range into it",0x007d6ba0,0x006bdea0,0x007d6ba0
 20878,function,,,0x007d6c00,0x006bdf00,0x007d6c00
 20879,function,"std::_Tree<std::pair<unsigned int const,CutscenePlayer::ActorDependencyList>>::_Erase",,0x007d6e00,0x006be100,0x007d6e00
 20880,function,std::vector<EC.Cutscene.Actor.ClipRecord>::vector,,0x007d6e40,0x006be140,0x007d6e40
@@ -33744,7 +33744,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33743,function,AnimTbi::FindBlendCurve,,0x00a69300,0x00718ff0,0x00a69300
 33744,function,,,0x00a69330,0x007194e0,0x00a69330
 33745,function,,,0x00a69420,0x007196a0,0x00a69420
-33746,function,,,0x00a69460,0x007196e0,0x00a69460
+33746,function,AnimTbi::AnimTbi,"constructs an AnimTbi: its name, an empty map, and the list read from the file",0x00a69460,0x007196e0,0x00a69460
 33747,function,,,0x00a696b0,0x00719930,0x00a696b0
 33748,function,AnimTbi::Acquire,,0x00a69770,0x007199f0,0x00a69770
 33749,function,,,0x00a69820,0x00719aa0,0x00a69820
@@ -58809,7 +58809,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 58808,function,,,0x00ad5170,0x00acdb20,0x00ad5170
 58809,function,,,0x00ad5190,0x00acdb40,0x00ad5190
 58810,function,,,0x00ad51b0,0x00acfa40,0x00ad51b0
-58811,function,,,0x00ad51c0,0x00acfa50,0x00ad51c0
+58811,function,`dynamic atexit destructor for 'Input::DeviceStates::Get::s_instance'',destroys the input device states' singleton at exit,0x00ad51c0,0x00acfa50,0x00ad51c0
 58812,function,,,0x00ad51d0,0x00acfa60,0x00ad51d0
 58813,function,,,0x00ad51e0,0x00acfa70,0x00ad51e0
 58814,function,,,0x00ad51f0,0x00acfa80,0x00ad51f0
@@ -58900,7 +58900,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 58899,function,`dynamic atexit destructor for 'Math::Vector4f::Zero::s_vector'',Static Math::Vector4f copy-built from an all-zero 16-byte global and returned by reference as the zero vector; trivial destructor.,0x00ad57e0,0x00ad3660,0x00ad57e0
 58900,function,`dynamic atexit destructor for 'Math::Vector4f::UnitW::s_vector2'',"Static Math::Vector4f copy-built from the constant (0,0,0,1) at 0xbf47bc and returned by reference as the W unit vector; trivial destructor.",0x00ad57f0,0x00ad3670,0x00ad57f0
 58901,function,,,0x00ad5800,0x00ad3680,0x00ad5800
-58902,function,,,0x00ad5810,0x00ad3690,0x00ad5810
+58902,function,`dynamic atexit destructor for 'CpuFeatures::Get::s_instance'',"the CPU features singleton's exit stub, empty (a lone ret)",0x00ad5810,0x00ad3690,0x00ad5810
 58903,function,,,0x00ad5820,0x00ad3f20,0x00ad5820
 58904,function,,,0x00ad5830,0x00ad3f30,0x00ad5830
 58905,function,,,0x00ad5840,0x00ad3f40,0x00ad5840
@@ -59054,13 +59054,13 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 59053,function,,,0x00ad61e0,0x00ad2fc0,0x00ad61e0
 59054,function,,,0x00ad61f0,0x00ad2fd0,0x00ad61f0
 59055,function,,,0x00ad6200,0x00ad2cd0,0x00ad6200
-59056,function,,,0x00ad6210,0x00ad2ce0,0x00ad6210
-59057,function,,,0x00ad6220,0x00ad2cf0,0x00ad6220
-59058,function,,,0x00ad6230,0x00ad2d00,0x00ad6230
-59059,function,,,0x00ad6240,0x00ad2d10,0x00ad6240
-59060,function,,,0x00ad6250,0x00ad2d20,0x00ad6250
-59061,function,,,0x00ad6260,0x00ad2d30,0x00ad6260
-59062,function,,,0x00ad6270,0x00ad2d40,0x00ad6270
+59056,function,`dynamic atexit destructor for 'SoundEventInstance::Resolve::s_useMaxPlaybacksFix'',"destroys the static wstring ""UseMaxPlaybacksFix"" at exit",0x00ad6210,0x00ad2ce0,0x00ad6210
+59057,function,`dynamic atexit destructor for 'MusicController::Update::s_chargenTrack'',"destroys the static track name ""chargen"" at exit",0x00ad6220,0x00ad2cf0,0x00ad6220
+59058,function,`dynamic atexit destructor for 'MusicController::Update::s_deathTrack'',"destroys the static track name ""death"" at exit",0x00ad6230,0x00ad2d00,0x00ad6230
+59059,function,`dynamic atexit destructor for 'MusicController::Update::s_mainTrack0'',"destroys the static track name ""main"" of game modes 0 and 8 at exit",0x00ad6240,0x00ad2d10,0x00ad6240
+59060,function,`dynamic atexit destructor for 'MusicController::Update::s_mainTrack4'',"destroys the static track name ""main"" of game mode 4 at exit",0x00ad6250,0x00ad2d20,0x00ad6250
+59061,function,`dynamic atexit destructor for 'MusicController::Update::s_mainTrack5'',"destroys the static track name ""main"" of game mode 5 at exit",0x00ad6260,0x00ad2d30,0x00ad6260
+59062,function,`dynamic atexit destructor for 'MusicController::Update::s_combatTrack'',"destroys the static track name ""combat"" at exit",0x00ad6270,0x00ad2d40,0x00ad6270
 59063,function,,,0x00ad6280,0x00ad1350,0x00ad6280
 59064,function,,,0x00ad6290,0x00ad2d50,0x00ad6290
 59065,function,,,0x00ad62a0,0x00ad2d60,0x00ad62a0
@@ -59396,7 +59396,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 59395,function,,,0x00ad77d0,0x00ad1f30,0x00ad77d0
 59396,function,,,0x00ad77e0,0x00ad1f40,0x00ad77e0
 59397,function,,,0x00ad77f0,0x00ad1f50,0x00ad77f0
-59398,function,,,0x00ad7800,0x00ad1f60,0x00ad7800
+59398,function,`dynamic atexit destructor for 'GUI::IntToStaticString::s_buffer'',destroys the static wstring IntToStaticString returns at exit,0x00ad7800,0x00ad1f60,0x00ad7800
 59399,function,,,0x00ad7810,0x00ad1f70,0x00ad7810
 59400,function,`dynamic atexit destructor for 'SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<GUI::TournamentScoreboardEntry*>>::GetMemberName::s_name'',Static wstring assigned the decimal text of the index parameter on each call and returned as the member name.,0x00ad7820,0x00ad1f80,0x00ad7820
 59401,function,`dynamic atexit destructor for 'SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<GUI::ChampionshipScoreboardEntry*>>::GetMemberName::s_name'',Static wstring assigned the decimal text of the index parameter on each call and returned as the member name.,0x00ad7830,0x00ad1f90,0x00ad7830
@@ -59709,8 +59709,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 59708,function,,,0x00ad8bd0,0x00acfff0,0x00ad8bd0
 59709,function,FacialAnimationManager_Instance_atexit,,0x00ad8be0,0x00ad0000,0x00ad8be0
 59710,function,,,0x00ad8bf0,,0x00ad8bf0
-59711,function,,,0x00ad8c00,0x00acff10,0x00ad8c00
-59712,function,,,0x00ad8c10,0x00acff20,0x00ad8c10
+59711,function,`dynamic atexit destructor for 'D3DDriver::D3DGraphicsDriverManager::Get::s_instance'',destroys the graphics driver manager's singleton at exit,0x00ad8c00,0x00acff10,0x00ad8c00
+59712,function,`dynamic atexit destructor for 'CD3DEnumeration::Get::s_instance'',destroys the Direct3D enumeration's singleton at exit,0x00ad8c10,0x00acff20,0x00ad8c10
 59713,function,,,0x00ad8c20,0x00acff30,0x00ad8c20
 59714,function,,,0x00ad8c30,0x00acff40,0x00ad8c30
 59715,function,,,0x00ad8c70,0x00acff80,0x00ad8c70
@@ -59809,7 +59809,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 59808,function,,,0x00ad9370,0x00ad3720,0x00ad9370
 59809,function,`dynamic atexit destructor for 'CNetLayerInternal::GetEndpointAddressString::s_text'',,0x00ad9380,0x00ad37b0,0x00ad9380
 59810,function,`dynamic atexit destructor for 'CNetLayerInternal::GetLocalHostAddressString::s_text'',,0x00ad9390,0x00ad37c0,0x00ad9390
-59811,function,,,0x00ad93a0,0x00ad37d0,0x00ad93a0
+59811,function,`dynamic atexit destructor for 'CNetLayerInternal::GetLocalAddressString::s_text'',destroys the static local-address text at exit,0x00ad93a0,0x00ad37d0,0x00ad93a0
 59812,function,,,0x00ad93b0,0x00ad2fe0,0x00ad93b0
 59813,function,`dynamic atexit destructor for 'CDataArrays::GetString::s_emptyString'',"Static empty wstring returned by reference when the array is missing or the index is past its end; the table's registering function 0xa5a2b0 is GetObject, the push is in GetString (0xa5a2e0).",0x00ad93c0,0x00ad29c0,0x00ad93c0
 59814,function,,,0x00ad93d0,0x00ad29d0,0x00ad93d0
@@ -59845,11 +59845,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 59844,function,,,0x00ad9630,0x00ad2c50,0x00ad9630
 59845,function,,,0x00ad9640,0x00ad2c60,0x00ad9640
 59846,function,,,0x00ad9650,0x00ad2c70,0x00ad9650
-59847,function,,,0x00ad9660,0x00ad2c80,0x00ad9660
-59848,function,,,0x00ad9670,0x00ad2c90,0x00ad9670
-59849,function,,,0x00ad9680,0x00ad2ca0,0x00ad9680
-59850,function,,,0x00ad9690,0x00ad2cb0,0x00ad9690
-59851,function,,,0x00ad96a0,0x00ad2cc0,0x00ad96a0
+59847,function,`dynamic atexit destructor for 'AnimModelLod::Entry::RequestResources::s_mmhExtension'',"destroys the static wstring "".mmh"" at exit",0x00ad9660,0x00ad2c80,0x00ad9660
+59848,function,`dynamic atexit destructor for 'AnimModelLod::Entry::RequestResources::s_mshExtension'',"destroys the static wstring ""msh"" at exit",0x00ad9670,0x00ad2c90,0x00ad9670
+59849,function,`dynamic atexit destructor for 'AnimModelLod::Entry::RequestResources::s_maoExtension'',"destroys the static wstring ""mao"" at exit",0x00ad9680,0x00ad2ca0,0x00ad9680
+59850,function,`dynamic atexit destructor for 'AnimModelLod::Entry::RequestResources::s_extension'',destroys the static wstring holding a resource's extension at exit,0x00ad9690,0x00ad2cb0,0x00ad9690
+59851,function,`dynamic atexit destructor for 'AnimModelLod::Entry::RequestResources::s_fileName'',destroys the static wstring holding a resource's file name at exit,0x00ad96a0,0x00ad2cc0,0x00ad96a0
 59852,data,advapi32.dll!RegQueryValueExA,,0x00ada000,0x00ad4004,0x00ada000
 59853,data,advapi32.dll!StartServiceW,,0x00ada004,0x00ad401c,0x00ada004
 59854,data,advapi32.dll!QueryServiceStatusEx,,0x00ada008,0x00ad4020,0x00ada008
