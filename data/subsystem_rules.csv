@@ -423,3 +423,144 @@ ECPrivate,Core,the engine allocator's private namespace (its free functions; ECP
 BinkVideo,Video,"the engine's Bink movie glue (lib-agent-3, 2026-10-31)"
 DebugOptions::*,Tools,debug options (its SliderRangeMap) (2026-10-31)
 RandomGenerator,Core,"the engine generator (2026-11-02, lib-agent-2): Next, and the entropy it gathers"
+AddInRecord,Resources,"0x00484600 AddInRecord::~AddInRecord: AddIns.xml and the add-in packages: the sources the resource manager searches (texture-quality sources, game-version check)"
+AddInXmlEntry,Resources,"0x005f3240 AddInXmlEntry::AddInXmlEntry: AddIns.xml and the add-in packages: the sources the resource manager searches (texture-quality sources, game-version check)"
+AddInsManager,Resources,"0x005edb10 AddInsManager::MarkAddInsXmlDirty: AddIns.xml and the add-in packages: the sources the resource manager searches (texture-quality sources, game-version check)"
+AlertPool,GUI,"0x00628650 AlertPool::Release: GUI classes: rim slots, alert pool, character-creation sliders"
+AnimWeightRequests,Animation,0x007f4a50 AnimWeightRequests::Apply: animation weight requests
+ArrivalPoint,World,"0x005fe060 ArrivalPoint::~ArrivalPoint: area transition arrival point (CCModule, DOAREATRANSITION, game mode loading); area list entry"
+Audio,Audio,"0x005b6110 Audio::DecibelsToGain: the engine side of FMOD: event instances, listener, ducking, projects, occlusion, music themes, dB conversion"
+ByteArray,Core,"0x00666e70 ByteArray::Resize: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+CCModule::AreaListEntry,World,"0x00602dc0 CCModule::AreaListEntry::AreaListEntry: area transition arrival point (CCModule, DOAREATRANSITION, game mode loading); area list entry"
+CCVisualEffectPool,Rendering,"0x0079e1f0 CCVisualEffectPool::Grow: model LOD slots and budget, effect pool, materials, trees, placed models with lightmaps"
+CD3DEnumeration,Rendering,"0x0086d0f0 CD3DEnumeration::ResetPossibleDepthStencilFormats: Direct3D 9 adapter, device and format enumeration for the renderer"
+CResRef,Resources,"0x00a29fe0 CResRef::Equals: resource names, file access and RIM trees, a talk-table string read from a struct"
+ChunkPool<160>,Core,"0x006c37f0 ChunkPool<160>::Release: generic engine allocator and container: chunk pool and a node-pooled list (users in several subsystems, e.g. AIEventList)"
+ChunkPool<8>,Core,"0x006b3fc0 ChunkPool<8>::Grow: generic engine allocator and container: chunk pool and a node-pooled list (users in several subsystems, e.g. AIEventList)"
+ClampedUnitFloat,Core,"0x0069f8d0 ClampedUnitFloat::SetValue: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+ClientAIMaster,AI,"0x00649990 ClientAIMaster::DiscardDelayedPayload: followers catch up and formation slots (PartyFollow::Update), threat entries, the AI event queue, map path search open list"
+Container12,Core,"0x0067a850 Container12::Container12: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+Convert,Core,"0x006f4d90 Convert::StringToUint16: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+Core,Core,"0x0046dcb0 Core::VectorRemoveValueUnordered<unsigned int>: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+Core::PointerArray,Core,"0x005c8650 Core::PointerArray::Free: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+CreatureAbilities,Game,"0x00629f90 CreatureAbilities::GetInstanceList: game rules and objects: abilities and quickbars, hostility groups, plot flags, effects, item iterators, placeable states table, pooled creatures (CCArea::CreatePoolCreatures)"
+CutscenePlayer::BindRecord,Conversation,0x007d7080 CutscenePlayer::BindRecord::BindRecord: CutscenePlayer record
+CutsceneShake_CosineInterpolate,Conversation,0x00a3c0c0 CutsceneShake interpolation used by MakeOctaveNoise for ActionShake
+CutsceneShake_FillRandom,Conversation,0x00a3c030 CutsceneShake noise generator; sole user is EC::Cutscene::Actor::ActionShake::ActionShake
+CutsceneShake_GaussianSmooth,Conversation,0x00a3c110 CutsceneShake smoothing for ActionShake
+CutsceneShake_MakeOctaveNoise,Conversation,0x00a3c1e0 CutsceneShake octave noise for ActionShake
+DADM,Online,"0x004a4ad0 DADM::CloseHeartBeatSocket: DADM is the Dragon Age download manager (StartDADMServiceTask is Online): control and heartbeat sockets, packet buffer, content, message and offer entries"
+DefaultSet<?>,Core,"0x006ad480 DefaultSet<?>::Begin: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+DeletingMap,Core,"0x0062b530 DeletingMap::DeleteAll: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+ECFileAccess,Resources,"0x004c8f60 ECFileAccess::DeleteFile: resource names, file access and RIM trees, a talk-table string read from a struct"
+EffectsManager,Game,"0x0079f110 EffectsManager::MarkStaticsInitialized: game rules and objects: abilities and quickbars, hostility groups, plot flags, effects, item iterators, placeable states table, pooled creatures (CCArea::CreatePoolCreatures)"
+Elem16,Core,"0x007d7b80 Elem16::Elem16: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+EquipSlotKey,Game,"0x00652340 EquipSlotKey::EquipSlotKey: game rules and objects: abilities and quickbars, hostility groups, plot flags, effects, item iterators, placeable states table, pooled creatures (CCArea::CreatePoolCreatures)"
+EventListener,Scripting,"0x00706270 EventListener::EventListener: script variables (save label per type), values on the VM stack, script cache; EventListener is the script-event listener CCModule, CCArea and CCObject register and read from GFF3"
+ExpandDesignerTag,GUI,"0x0051d620 ExpandDesignerTag, only caller is ReplaceDesignerTags (GUI)"
+FixedArray<unsigned int>,Core,"0x00455b30 FixedArray<unsigned int>::FixedArray: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+FormatUIntToWString,Data,"0x004b1a90 FormatUIntToWString, callers are SmartData::Attribute<unsigned int>::GetText"
+GPtr<GFxMovieDef>,ThirdParty:Scaleform,0x00510a00 GPtr<GFxMovieDef>::~GPtr: Scaleform smart pointer to GFx types
+GPtr<GFxMovieView>,ThirdParty:Scaleform,0x005109e0 GPtr<GFxMovieView>::~GPtr: Scaleform smart pointer to GFx types
+GUI,GUI,"0x00726b80 GUI::ResetDynArray: GUI classes: rim slots, alert pool, character-creation sliders"
+GUICharGen::SliderEntry,GUI,"0x00734560 GUICharGen::SliderEntry::SliderEntry: GUI classes: rim slots, alert pool, character-creation sliders"
+General::SafePointer,Core,"0x004621c0 General::SafePointer::Get: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+General::SafePointer<Renderer::ObjectNodeLightReference>,Core,"0x00462920 General::SafePointer<Renderer::ObjectNodeLightReference>::Reset: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+IdMap<std::wstring>,Core,"0x005cb2d0 IdMap<std::wstring>::IdMap: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+Input::DeviceStates,Input,0x00402c30 Input::DeviceStates::Get: device states; the cursor target built by the game mode
+ItemIteratorHandle,Game,"0x007641d0 ItemIteratorHandle::ItemIteratorHandle: game rules and objects: abilities and quickbars, hostility groups, plot flags, effects, item iterators, placeable states table, pooled creatures (CCArea::CreatePoolCreatures)"
+LodBand,Rendering,"0x006182f0 LodBand::RemoveObject: model LOD slots and budget, effect pool, materials, trees, placed models with lightmaps"
+"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",Core,"0x00501cc0 Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::_Tidy: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+"Map<unsigned int,RefHandle>",Core,"0x007b49d0 Map<unsigned int,RefHandle>::GetOrDefault: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+MaterialObjectRef,Rendering,"0x004f2750 MaterialObjectRef::SelectSemantic: model LOD slots and budget, effect pool, materials, trees, placed models with lightmaps"
+Math,Core,"0x00a2c4f0 Math::SphereVolume: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+MessageFactoryRegistry,Messaging,0x00489bc0 MessageFactoryRegistry::Get: message factory registry
+MusicController,Audio,"0x005b6be0 MusicController::MusicController: the engine side of FMOD: event instances, listener, ducking, projects, occlusion, music themes, dB conversion"
+MusicThemeWrapper,Audio,"0x005b6cf0 MusicThemeWrapper::~MusicThemeWrapper: the engine side of FMOD: event instances, listener, ducking, projects, occlusion, music themes, dB conversion"
+NameRegistry,Core,"0x00a32300 NameRegistry::HashName: RemoveEntry, FreeTables and the destructor form a self-contained hash registry of named entries"
+Offer,Online,"0x00497360 Offer::Offer: DLC offers (offers.xml), their text, texture-quality telemetry; beside ContentManager and PRC (Online)"
+OfferManager,Online,"0x00497b60 OfferManager::GetOfferList: DLC offers (offers.xml), their text, texture-quality telemetry; beside ContentManager and PRC (Online)"
+ParseUIntFromWString,Data,"0x004b19e0 ParseUIntFromWString, only caller is SmartData::Attribute<unsigned int>::SetFromText"
+PartyFollow,AI,"0x00760460 PartyFollow::SetCatchUp: followers catch up and formation slots (PartyFollow::Update), threat entries, the AI event queue, map path search open list"
+PlaceableStateTable,Game,"0x00a3ba20 PlaceableStateTable::~PlaceableStateTable: game rules and objects: abilities and quickbars, hostility groups, plot flags, effects, item iterators, placeable states table, pooled creatures (CCArea::CreatePoolCreatures)"
+PlaceableStateTable::Row,Game,"0x00a3b9f0 PlaceableStateTable::Row::Row: game rules and objects: abilities and quickbars, hostility groups, plot flags, effects, item iterators, placeable states table, pooled creatures (CCArea::CreatePoolCreatures)"
+PlotManager,Game,"0x0075da30 PlotManager::InitMapWithDefault: game rules and objects: abilities and quickbars, hostility groups, plot flags, effects, item iterators, placeable states table, pooled creatures (CCArea::CreatePoolCreatures)"
+PooledList,Core,"0x00a37e40 PooledList::GetNodeValue: generic engine allocator and container: chunk pool and a node-pooled list (users in several subsystems, e.g. AIEventList)"
+PooledListNodePool,Core,"0x00a37ee0 PooledListNodePool::FreeNode: generic engine allocator and container: chunk pool and a node-pooled list (users in several subsystems, e.g. AIEventList)"
+PtrVector,Core,"0x00843090 PtrVector::DeleteAll: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+QuickslotEntry,Game,"0x00629fd0 QuickslotEntry::QuickslotEntry: game rules and objects: abilities and quickbars, hostility groups, plot flags, effects, item iterators, placeable states table, pooled creatures (CCArea::CreatePoolCreatures)"
+RIMTree,Resources,"0x00a58510 RIMTree::MakeRimFileName: resource names, file access and RIM trees, a talk-table string read from a struct"
+Rec40,GUI,0x007b19f0 Rec40::Rec40_copy: copy of GUI::HeadPreset::MaterialValue records (callers are the std uninit copies of it)
+Rec4C,GUI,0x007b1a60 Rec4C::Rec4C_copy: copy of GUI::HeadPreset::MaterialValue records (callers are the std uninit copies of it)
+Rec54,GUI,0x007b1ae0 Rec54::Rec54_copy: copy of GUI::HeadPreset::MaterialValue records (callers are the std uninit copies of it)
+Rect,Core,"0x0070a9b0 Rect::ContainsPointWithMargin: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+RefHandle,Core,"0x00812e80 RefHandle::RefHandle: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+ResRef,Resources,"0x00a29e50 ResRef::ResRef: resource names, file access and RIM trees, a talk-table string read from a struct"
+SafePointerNameMap,Core,"0x004f7140 SafePointerNameMap::FindOrDefault: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+SaveLoadProxy::SaveEntry,Save,0x006cb380 SaveLoadProxy::SaveEntry::SaveEntry: the save game structure definitions and entries
+SaveSchema,Save,0x006b7cf0 SaveSchema::AddPartyCreatureFields: the save game structure definitions and entries
+ScriptCache,Scripting,"0x00a2efd0 ScriptCache::ScriptCache: script variables (save label per type), values on the VM stack, script cache; EventListener is the script-event listener CCModule, CCArea and CCObject register and read from GFF3"
+ScriptStackValue,Scripting,"0x00a2db10 ScriptStackValue::ScriptStackValue: script variables (save label per type), values on the VM stack, script cache; EventListener is the script-event listener CCModule, CCArea and CCObject register and read from GFF3"
+ScriptVariable,Scripting,"0x007026c0 ScriptVariable::FreeValue: script variables (save label per type), values on the VM stack, script cache; EventListener is the script-event listener CCModule, CCArea and CCObject register and read from GFF3"
+ScriptVariableKey,Scripting,"0x00702760 ScriptVariableKey::GetName: script variables (save label per type), values on the VM stack, script cache; EventListener is the script-event listener CCModule, CCArea and CCObject register and read from GFF3"
+ScriptVariableTable,Scripting,"0x007024a0 ScriptVariableTable::GetSaveLabelForType: script variables (save label per type), values on the VM stack, script cache; EventListener is the script-event listener CCModule, CCArea and CCObject register and read from GFF3"
+SmartData,Data,"0x004a06c0 SmartData::StringToValue<short>: SmartData reflection helpers (attribute text conversion, member-name map)"
+SoundDuck,Audio,"0x005b6230 SoundDuck::OnStop: the engine side of FMOD: event instances, listener, ducking, projects, occlusion, music themes, dB conversion"
+SoundEmitter,Audio,"0x005b8aa0 SoundEmitter::SoundEmitter: the engine side of FMOD: event instances, listener, ducking, projects, occlusion, music themes, dB conversion"
+SoundEventInstance,Audio,"0x005b6180 SoundEventInstance::LessByDistance: the engine side of FMOD: event instances, listener, ducking, projects, occlusion, music themes, dB conversion"
+SoundManager,Audio,"0x005b5e70 SoundManager::GetListenerPosition: the engine side of FMOD: event instances, listener, ducking, projects, occlusion, music themes, dB conversion"
+SoundOcclusionCache,Audio,"0x00a2c560 SoundOcclusionCache::Invalidate: the engine side of FMOD: event instances, listener, ducking, projects, occlusion, music themes, dB conversion"
+SoundProjectMap,Audio,"0x005b8b40 SoundProjectMap::SoundProjectMap: the engine side of FMOD: event instances, listener, ducking, projects, occlusion, music themes, dB conversion"
+SpeedTree::FartherFromPoint,Rendering,"0x0052d530 SpeedTree::FartherFromPoint::operator(): model LOD slots and budget, effect pool, materials, trees, placed models with lightmaps"
+Stage,Conversation,0x007d18a0 Stage::GetPlaceCount: a cutscene .stg stage: places and cameras (Stage::GetPlacePose is Conversation; CUTSCENES.md)
+String,Core,"0x00413170 String::TextToInt: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+StringHandlePair,Core,0x0069f780 StringHandlePair::~StringHandlePair: callers are CCCreature::SoundSetData::InsertName: a generic name and handle pair
+StringMap<?>,Core,"0x00569ba0 StringMap<?>::GetValueOrDefault: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+StringMap<std::vector<Math::Vector4f>>,Core,"0x0056de80 StringMap<std::vector<Math::Vector4f>>::~StringMap: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+SwapRemoveList,Core,"0x006aec30 SwapRemoveList::Remove: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+ThreatTable,AI,"0x00740af0 ThreatTable::GetEntry: followers catch up and formation slots (PartyFollow::Update), threat entries, the AI event queue, map path search open list"
+TlkString,Resources,"0x0062ed60 TlkString::ReadFromStruct: resource names, file access and RIM trees, a talk-table string read from a struct"
+Vector3,Core,"0x00451950 Vector3::Vector3: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+WStringArray,Core,"0x007cd750 WStringArray::WStringArray: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+WStringPair,Core,"0x004f26b0 WStringPair::WStringPair: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+WStringVector_DefaultConstruct,Core,"0x00802220 WStringVector_DefaultConstruct, a generic container constructor"
+`vector constructor iterator',Compiler,0x00402a20 the compiler's vector constructor iterator helper
+memcmp,ThirdParty:CRT,"0x0051af70 memcmp, the C runtime"
+"operator<(PartyPickerEntry,PartyPickerEntry)",GUI,0x007657c0 operator< over PartyPickerEntry (GUI rule)
+stdext,ThirdParty:STL,0x0050E410 stdext::_Unchecked_move_backward: MSVC's stdext checked-iterator helpers
+wmemset,ThirdParty:CRT,"0x00401b90 wmemset, the C runtime"
+CNetLayer*,Network,"0x00a42ef0 CNetLayerBufferPage::CNetLayerBufferPage: CNetLayer internals: sequence window, idle and ack timers, packet buffer pool"
+CameraRig*,Camera,"0x006c2220 CameraRig::UpdateScalarBlend: the explore camera rig (pull-in, orbit, blends, shake); CameraRig::UpdatePullIn is its own (CAMERA.md)"
+D3D*,Rendering,"0x0086da10 D3DAdapterInfo::~D3DAdapterInfo: Direct3D 9 adapter, device and format enumeration for the renderer"
+DADM::*,Online,"0x004a4c70 DADM::ContentEntry::ContentEntry: DADM is the Dragon Age download manager (StartDADMServiceTask is Online): control and heartbeat sockets, packet buffer, content, message and offer entries"
+Gff4::*,Resources,"0x00475930 Gff4::Block::SetStringPtr: the engine GFF4 reader and writer (file format code beside CExoGFF/CResGFF, Resources)"
+NameRegistry::*,Core,"0x00a32360 NameRegistry::Bucket::~Bucket: engine base library: containers, strings, math, name hashing, cpu detection, locale formatting (generic code with users in many subsystems)"
+Online::*,Online,0x00475170 Online::EntitlementInfo::EntitlementInfo_copy: the Online namespace: HTTP requests and entitlements; HttpRecord is the element of the queue HttpManager::QueueRequest keeps
+stdext::*,ThirdParty:STL,"0x0054B420 stdext::hash_map's and _Hash's instantiations: MSVC's stdext extensions, as std::*"
+IsCreatureHostile,AI,0x0064B900: reads the two creatures' groups (+0x3C0) and looks the pair up in AIMaster::FindHostilityRow / HostilityRow::IsHostileTo; the hostility table is AIMaster's
+IsObjectInArea,World,"0x0065C7D0: compares an object's area (vftable +0x18 then +0xA0, or +8) with the area given; a world query, its one caller ScriptCommand::APPLYEFFECTATLOCATION 0x0065C933"
+IsObjectOnScreen,World,"0x007C4D20: projects the object's position through g_graphics' view and tests EclipseGame's client rect; same object file as World::DistanceToCamera 0x007C4E20 and World::ObjectScreenX 0x007C4EB0, which the World rule places"
+OpenWebPage,App,"0x004796B0: ShellExecuteW(""open"") on a URL containing ""http""; the platform layer, called from GUI menus (0x0060B68E) and PRCGUIShared (0x004B2B79)"
+Unwind@005c81c0,Compiler:EHFunclets,"0x005C81C0: an exception-unwind funclet (Unwind@), as every other"
+Unwind@005c8640,Compiler:EHFunclets,"0x005C8640: an exception-unwind funclet (Unwind@), as every other"
+AIEventList,Core,0x00A3BB80 GetFrontNode: folded list walks used both by AIMaster::AddEventNow 0x0064A6B5 (AI) and PlaceableStateTableCache::Acquire 0x00A3BE66 (Game); generic container code
+AddInItem,Online,"0x004844D0: an offers.xml item: built by OfferManager::LoadOffers 0x004A40B7 and ContentManager::ValidatePurchase 0x004B11B8, parsed by ParseOfferFields/ParsePRCItem, read by OfferManager::BuildPresentationLists 0x0049E507; operator= is already Online"
+AnimModelLod*,Animation,"0x00A67920 AnimModelLods::DeleteAllLodSlots: AnimBase's models per level of detail (AnimBase::LoadModel 0x00A68B30); nine of these classes' functions are already Animation by callers, and AnimBase* is Animation"
+CombatAnimTable,Game,0x00A3A260 GetColumnBitWidth: the packed table that picks an attack's animation; its Load 0x00A3B240 and two others are already Game by callers
+CpuFeatures,Core,0x004D2600: the processor feature probe; its DetectSSE/DetectSSE2/Detect (0x004D2480..0x004D25E0) are Core by subsystem_ranges.csv
+CreaturePool,World,"0x0069F870: an area's pool of creatures, made by CreaturePoolRef::Ensure 0x0069FCC0 for CCArea::CreatePoolCreatures 0x00687720"
+CreaturePoolRef,World,"0x0069E300 SetAvailable: the area's pooled creatures: CCArea::CreatePoolCreatures 0x00687720 and CCArea::CreateObject 0x006878EF draw from it; CCCreature only saves and loads its flag (0x006B2EE3, 0x006BF644)"
+CursorTarget,GameModes,0x0070C520: its constructor resets GameModeExplore::ResetAbilityTargeting; its destructor 0x0070C770 is already GameModes
+DateTimeLocalization,Core,"0x0061FBA0 ReadColumnForTag: dates, times and numbers formatted by the language, used by Save (SaveLoadProxy::AddSaveFileInfo 0x006CFA50), Online (OnlineFeatures::MergeOnlineAchievements 0x0047DEB4), GUI (GuiFSCommand::FormatFloat 0x0051D575) and GameModes; base localisation, as LocString"
+EC::ModelPlacement,World,0x00A29690 ReadLightmapAtlases: a placed model of a level's layout (EC::ReadModelPlacement 0x00A29A80); nine of its functions are already World by callers
+EC::ModelPlacementOverrides,World,"0x0054E770: a placed model's overrides, held by EC::ModelPlacement (World)"
+GroupHostility,AI,"0x0064C260 Save: the group hostility table, whose rows (HostilityRow) AIMaster holds and reads (AIMaster::FindHostilityRow, IsCreatureHostile 0x0064B900)"
+HashMapUIntToString,Core,"0x00412E20 TryInsert: an ECHashMap insert (ECBase::* is Core), for SmartData's member names (0x004133B7)"
+HostilityRow,AI,"0x0064B570: a group's row of AIMaster's hostility table (AIMaster::InitHostilityTable 0x0064BE45, FindOrCreateHostilityRow 0x0064BF29)"
+LocalisedString,Resources,0x0075BD30 ReadGFF4: reads a localised string out of a GFF4; its one caller is Gff4::StructReader::ReadLocalisedString 0x0075C067 (Gff4::* is Resources)
+MapExploredGrid,World,"0x007C9690 IsCellInGrid: the explored-cell grid; its other five functions (Init 0x007C9580, SetBits, OrBits, GetBits, MakeCurrent) are already World by callers"
+MapPathSearch,World,0x007C57E0 PopLowestCost: the world map's path search; its constructor 0x007C70B0 and the other two are already World
+SpellRimSlots,Resources,"0x00706EF0 ReleaseById: nine slots of RIM resource packages: WaitUntilLoaded 0x00706390 polls ECResMan::ResMan::GetRimLoadState, ReleaseById calls RimRefCount::Release (Resources); OnScriptEvent 0x00707000 releases one on event 0x3F0"
+TreeInstance,World,"0x00A28620: a tree placed in a level's layout, beside TreeInstanceArray (World) and IRoomLayout::ReadTreeInstances 0x00A28D50 (World)"
+World::HitResult,World,"0x00648B10: the result of the World class's ray casts (World::Raycast 0x006497A0, RaycastClosest 0x00648C60), which the World rule places"
+Gff4,Resources,"0x004753C0 Gff4::ReadChildString: the engine's GFF4 reader and writer, beside CExoGFF (both readings); the save-profile schema definitions (Gff4::DefineSaveprofile*, IDs 3460-3464, 3483, 3485) are Online's use of it"
