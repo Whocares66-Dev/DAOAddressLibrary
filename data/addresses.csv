@@ -5470,7 +5470,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5469,function,ScriptVariableNames::Entry::NameEquals_wcharptr,Compares the entry's name (wstring at entry+0xC) with a wide C string through the std::operator== overload 0x004C0E10; ScriptVariableKey::ScriptVariableKey 0x004E8750 uses it to walk a hash bucket's chain (class INFERRED from the +0xC name and +0x28 chain link read there).,0x004e7740,0x00834970,0x004e7740
 5470,function,ScriptVariableNames::Entry::NameEquals_wstring,Same against a std::wstring (operator== 0x004C0DE0); only 0x004E77E0 calls it.,0x004e7750,0x00834980,0x004e7750
 5471,function,,,0x004e7760,0x0072e8e0,0x004e7760
-5472,function,,,0x004e7780,0x00834990,0x004e7780
+5472,function,std::_Tree::_Rrotate,"Right rotation of the node argument (ret 4, the tree in ecx), folded across the trees whose node has isnil at +0x21; 28 call sites",0x004e7780,0x00834990,0x004e7780
 5473,function,ScriptVariableKey::NameEquals_wstring,"Finds the entry the key (names table at +0, index at +4) points to in the table's entry vector, or the default entry when out of range, and compares its name to the wstring argument; with no table and index 0 it compares against the empty string 0x00C2BE00; ScriptVariableTable::WriteToSave and WriteToSaveFixedList call it.",0x004e77e0,0x00834a60,0x004e77e0
 5474,function,ECBase::ECDynArray<?>::At,,0x004e7850,0x0048c490,0x004e7850
 5475,function,,,0x004e7880,0x00711940,0x004e7880
@@ -6137,7 +6137,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6136,function,"Map<unsigned int,Math::VectorUA4f>::Map",,0x005010f0,0x007e9280,0x005010f0
 6137,function,"std::map<unsigned int,Math::VectorUA4f>::operator=",,0x00501160,0x007e9330,0x00501160
 6138,function,"std::_Tree<std::_Tmap_traits<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>>::_Erase",,0x005011b0,0x007e9380,0x005011b0
-6139,function,,,0x005011f0,0x007e93c0,0x005011f0
+6139,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::erase(iterator)","Erases one node: unlinks and rebalances it, fixes the head's leftmost and rightmost, frees it, returns the next node; throws ""invalid map/set<T> iterator"" on the head (isnil +0x21)",0x005011f0,0x007e93c0,0x005011f0
 6140,function,Multithreading::SynchSafePointerList<Graphics::MaterialObject>::SynchSafePointerList,,0x005014c0,0x007e9690,0x005014c0
 6141,function,Multithreading::SynchSafePointerList<Graphics::MaterialObject>::`scalar deleting destructor',,0x00501510,0x007e96e0,0x00501510
 6142,function,Graphics::MaterialObject::SetMaterial,,0x00501540,0x007e9710,0x00501540
