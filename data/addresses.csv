@@ -14476,7 +14476,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14475,function,CCCreature::CountItemsByTag,,0x006a2ea0,0x00593fc0,0x006a2ea0
 14476,function,CCCreature::OnItemAdded,,0x006a2ee0,0x00594000,0x006a2ee0
 14477,function,CCCreature::OnItemRemoved,,0x006a2fa0,0x005940c0,0x006a2fa0
-14478,function,CCCreature::UpdateMeleeRingCentre,,0x006a3060,0x00594180,0x006a3060
+14478,function,CCCreature::UpdateMeleeRingCentre,"Centre = the anchor (the ring's crust node, else +0x120) + the ring's offset (+0x24) times the raw +0x130 vector, z included",0x006a3060,0x00594180,0x006a3060
 14479,function,CCCreature::ApplyRootMotion,,0x006a3150,0x00594270,0x006a3150
 14480,function,CCCreature::ReleaseMeleeRingClaim,(targetId): releases this creature's claim in the target's melee rings (target+0xB44); its only direct caller is Commands::EndShared (0x00746A65),0x006a3610,0x00594730,0x006a3610
 14481,function,CCCreature::GetGender,,0x006a3650,0x00594770,0x006a3650
@@ -14839,7 +14839,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14838,function,ItemMove::operator=,,0x006b2320,0x005a3db0,0x006b2320
 14839,function,ItemMove::ItemMove_copy,,0x006b23b0,0x005a3e40,0x006b23b0
 14840,function,CCCreature::SaveToStruct,,0x006b2470,0x005a3f00,0x006b2470
-14841,function,CCCreature::RefreshTriggerMembership,"(oldPos, newPos): for an active creature takes CCArea::GetAreasOfEffectAffecting(newPos) and, when it differs from the trigger set at +0xBA8, runs UpdateTriggerSet and stores the new set; called on position, health, activity and death changes",0x006b2f70,0x005a4a00,0x006b2f70
+14841,function,CCCreature::RefreshTriggerMembership,"(oldPos, newPos): for an active creature takes CCArea::GetAreasOfEffectAffecting(newPos) and, when it differs from the trigger set at +0xBA8, runs UpdateTriggerSet and stores the new set only when that answers 1 (an event raised, 0x006B302D); called on position, health, activity and death changes; returns 0 at once with no area",0x006b2f70,0x005a4a00,0x006b2f70
 14842,function,CCCreature::ReattachAreasOfEffect,,0x006b3070,0x005a4b00,0x006b3070
 14843,function,CCCreature::AddPerceived,,0x006b3240,0x005a4cd0,0x006b3240
 14844,function,CCCreature::TriggerPerception,,0x006b32a0,0x005a4d30,0x006b32a0
@@ -15078,7 +15078,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15077,function,GameModeLoading::~GameModeLoading,,0x006c6330,0x005b7df0,0x006c6330
 15078,function,GameModeLoading::SetLoadKind,,0x006c63f0,0x005b7eb0,0x006c63f0
 15079,retired,,,,,
-15080,function,GameModeLoading::Worker,,0x006c6520,0x005b7fe0,0x006c6520
+15080,function,GameModeLoading::Worker,"State 5 with save type 3 ([+0xC]==3): the hero's +0x120/+0x130 are set from table 0x120's three floats for CCPlayer::WriteToSave, then restored (SetPosition 0x006C684F, SetOrientation 0x006C685E)",0x006c6520,0x005b7fe0,0x006c6520
 15081,function,GameModeLoading::Clone,,0x006c6d00,0x005b87c0,0x006c6d00
 15082,function,GameModeLoading::`scalar deleting destructor',,0x006c6d70,0x005b8830,0x006c6d70
 15083,function,GameModeLoading::AcceptData,,0x006c6d90,0x005b8850,0x006c6d90
@@ -18403,7 +18403,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18402,function,"std::_Sort<CCWayPoint **,int,Pred>",,0x0076ad50,0x006824d0,0x0076ad50
 18403,function,GameModePartyPicker::`scalar deleting destructor',,0x0076ae40,0x006825c0,0x0076ae40
 18404,function,SharedCharacterStage::GetObjectList,,0x0076ae60,0x006825e0,0x0076ae60
-18405,function,GameModePartyPicker::SortAndPlaceEntries,,0x0076ae90,0x00682610,0x0076ae90
+18405,function,GameModePartyPicker::SortAndPlaceEntries,"Places each entry's clone at its mark's +0x120 and raw +0x130 (SetOrientation at 0x0076B3A0); (0,0,0) for both with no mark",0x0076ae90,0x00682610,0x0076ae90
 18406,function,std::vector<PartyPickerEntry>::vector,,0x0076b3f0,0x00682b70,0x0076b3f0
 18407,function,ECBase::ECDynArray<PartyPickerEntry>::Clear,,0x0076b450,0x00682bd0,0x0076b450
 18408,function,ECBase::ECDynArray<?>::FindOrAppend,,0x0076b540,0x00531870,0x0076b540
