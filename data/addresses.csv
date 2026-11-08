@@ -12211,8 +12211,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12210,function,PartyMemberRecord::PartyMemberRecord,,0x0062ea80,0x0060ab60,0x0062ea80
 12211,function,FocusCameraOnObject::GetType,,0x0062eab0,0x00506ee0,0x0062eab0
 12212,function,FocusCameraOnObject::InitType,,0x0062eaf0,0x00506f20,0x0062eaf0
-12213,function,CCParty::FlipFormationSide,,0x0062eb50,0x0060ab90,0x0062eb50
-12214,function,CCParty::ForceReplan,,0x0062eb90,0x0060abd0,0x0062eb90
+12213,function,CCParty::FlipFormationSide,"FlipFormationSide: when +0x228 > 0.26 (0x00C1CED0): +0x224 = -0.5 (0x00AE7100), +0x228 = 0, the side byte +0x450 toggled; callers MoveGroupTo 0x00638B25, CCCreature::SteerDrive 0x006ADD4F",0x0062eb50,0x0060ab90,0x0062eb50
+12214,function,CCParty::ForceReplan,"ForceReplan: the follow accumulator +0x224 = 0.5 (0x00B05774); called only by CSSubActionHandler::Drive (0x007A8E1F, 0x007A8F6D)",0x0062eb90,0x0060abd0,0x0062eb90
 12215,function,ScriptBackend::ForScript_ShowDeathScreen,,0x0062eba0,0x0060abe0,0x0062eba0
 12216,function,CCParty::EnsurePlotManager,,0x0062ebc0,0x0060ac00,0x0062ebc0
 12217,function,CCParty::HandleMessage_ToggleRunWalkMessage,,0x0062ec60,0x0060aca0,0x0062ec60
@@ -12455,7 +12455,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12454,function,CCParty::Load,,0x00637d50,0x00613730,0x00637d50
 12455,function,CCParty::RestoreSelection,,0x00638560,0x00613f40,0x00638560
 12456,function,CCParty::BuildPartyPickerList,,0x00638580,0x00613f60,0x00638580
-12457,function,CCParty::MoveGroupTo,,0x006389f0,0x006143d0,0x006389f0
+12457,function,CCParty::MoveGroupTo,"MoveGroupTo: way = point - leader +0x120 in 3-D, normalized, or the leader's +0x130 where it is exactly zero (0x00638A9F); FlipFormationSide when dot(+0x130, way) < 0 strictly (0x00638B0D); +300 ms to every mover when the leader's squared 2-D distance to the point exceeds the selection's last creature's (0x00638BD5); each mover's delay is min(slot+1, count)*300 plus that (0x00638C94), divided by 5 when the leader IsInCombat (0x00638BE8, 0x00638CA7)",0x006389f0,0x006143d0,0x006389f0
 12458,function,ScriptBackend::ForScript_StorePartyInventory,,0x00638d10,0x006146f0,0x00638d10
 12459,function,ScriptBackend::ForScript_StoreFollowerInventory,,0x00638eb0,0x00614890,0x00638eb0
 12460,function,ScriptBackend::ForScript_RestorePartyInventory,,0x00639070,0x00614a50,0x00639070
@@ -14454,7 +14454,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14453,function,CCCreature::QueueTurnCommand,,0x006a22d0,0x005933f0,0x006a22d0
 14454,function,CCCreature::SetStealthEnabled,,0x006a2400,0x00593520,0x006a2400
 14455,function,CCCreature::Movement,,0x006a2570,0x00593690,0x006a2570
-14456,function,CCCreature::IsInCombat,,0x006a2580,0x005936a0,0x006a2580
+14456,function,CCCreature::IsInCombat,IsInCombat: [[this+0xC60]] == 1 (the combat data's state),0x006a2580,0x005936a0,0x006a2580
 14457,function,ScriptBackend::ForScript_IsHumanoid,,0x006a25a0,0x005936c0,0x006a25a0
 14458,function,CCCreature::EventHandler,,0x006a25c0,0x005936e0,0x006a25c0
 14459,function,CCCreature::ChooseAmbientIdle,,0x006a26d0,0x005937f0,0x006a26d0
@@ -18151,7 +18151,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18150,function,PartyFollow::PartyFollow,,0x007607f0,0x006e17a0,0x007607f0
 18151,function,PartyFollow::WouldBeLocation,,0x00760810,0x006e17c0,0x00760810
 18152,function,PartyFollow::LeaderPerceives,,0x00760940,0x006e18f0,0x00760940
-18153,function,PartyFollow::ShouldMove,"The 2-D distance between the two creatures (the second's movement point +0x30 when it has a path and is moving) is compared with the first's slot 0x9C value plus [this+slot*4] (0x00760A87, the slot argument unchecked) plus s_followSlack, plus the double at 0x00AE7108 when the second's movement state +0xB20 is 0 or 4",0x00760980,0x006e1930,0x00760980
+18153,function,PartyFollow::ShouldMove,"The 2-D distance between the two creatures (the second's movement point +0x30 when it has a path and is moving) is compared with the first's slot 0x9C value plus [this+slot*4] (0x00760A87, the slot argument unchecked) plus s_followSlack, plus the double at 0x00AE7108 when the second's movement state +0xB20 is 0 or 4; the first's (leader's) Deathblow test is GetCurrentCommandType == 0x26 alone (0x00760AFC), the second's command type is GetCurrentCommandType or, with none, the queue's first (+0x2CC) byte +2; for a MoveToLocation (0x14) command, flag 6 (CDataArrays::GetFlag, 0x00760BFA) is read from the current command's front sub-action data (+0x2DC record, +0x14 count, +0xC list, +0x1C) while it has sub-actions, else from the queue's first (+0x2CC, +4); none, or the flag clear, moves (0x00760BC1-0x00760C0A); with it set it moves only when neither is in combat, the second is not dead (slot 0x1D0) and LeaderPerceives answers false",0x00760980,0x006e1930,0x00760980
 18154,function,PartyFollow::ResetCatchUp,,0x00760c60,0x006e1c10,0x00760c60
 18155,function,PartyFollow::Update,"For a follower more than 1.0 from its spot (Distance2D, 0x00761004): when LeaderPerceives, SetCatchUp at 0x00761031 comes before the command-type (0x14) test; otherwise the jump: WouldBeLocation, ClearAllCommands, SetOrientation(Normalized(leader +0x130)) at 0x0076111C, QueueJumpToLocation",0x00760dc0,0x006e1d70,0x00760dc0
 18156,function,ItemLocation::ItemLocation,,0x00761170,0x0069f8f0,0x00761170
@@ -32777,7 +32777,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32776,function,CExoGFF::`scalar deleting destructor',,0x00a388d0,0x00837900,0x00a388d0
 32777,function,CExoGFF::CExoGFF,,0x00a388f0,0x00837920,0x00a388f0
 32778,function,Math::Vector4f::Add,,0x00a38a20,0x00839150,0x00a38a20
-32779,function,PartyFollow::SlotOffsetLocation,,0x00a38a40,0x00839170,0x00a38a40
+32779,function,PartyFollow::SlotOffsetLocation,"SlotOffsetLocation (out, base, dir), ret 0xC: out = base + the slot offset (this) rotated by Quaternion::FromYawPitchRoll(ToAngle(dir), 0, 0): only the direction's bearing counts (Normalized, RotateVector, scaled back by the offset's length)",0x00a38a40,0x00839170,0x00a38a40
 32780,function,Resources::Release`adjustor{8}',,0x00a38b50,0x00839280,0x00a38b50
 32781,function,AnimClip::NextRotationKey,,0x00a38b60,0x00839290,0x00a38b60
 32782,function,AnimClip::NextVectorKey,,0x00a38b70,0x008392a0,0x00a38b70
