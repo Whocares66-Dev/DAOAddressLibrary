@@ -353,6 +353,7 @@ CCObject,0x108,0x10,ECBase::ECDynArray<ObjectId>,attachedIds,"0x0069979D, 0x0069
 CCObject,0x118,0x4,ObjectId,attachedToId,"0x006997AD, 0x0069A2DE; id of the object this one is attached to, -1 when none (constructed -1)"
 CCObject,0x120,0x10,Math::Vector4f,position,"0x0069558E, 0x006999D4; position x, y, z (+ a fourth lane); SetPosition stores 16 bytes with movaps; constructed 0,0,0"
 CCObject,0x130,0x10,Math::Vector4f,orientation,"0x00694CEC, 0x006999E8; orientation (facing) vector; SetOrientation stores 16 bytes; constructed (0,1,0)"
+CCObject,0x140,0x10,Quaternion,placementRotation,"0x00697BAF fstp [esi] with esi = this+0x140 in LoadPlacementFromStruct (field 5); the constructor sets it to the identity (0x006997E3..0x006997F7); CCPlaceable::OnModelReady passes it to AnimBase::SetOrientation (0x0075200C, 0x00752015); SaveToStruct does not write it. Ghidra class type: offset_0x13c"
 CCObject,0x150,0x4,int32,roomId,"0x00695D55, 0x006997FD; id of the room the object is in, -1 when none; SetRoom stores [room+0x14] here"
 CCObject,0x154,0x4,AnimBase*,animBase,"0x00694DDB, 0x0069A000; the animation state; created by CreateAnimBase (AnimBase::Create 0x00A61770), deleted by the destructor; GetAnimation (+0x70 slot 24) reads it as this+0xE4"
 CCObject,0x158,0x4,EffectList*,effectList,"0x00699A1E, 0x006999E0; the effects list (allocated 0x14 bytes, EffectList::EffectList 0x00A64880), destroyed by the destructor"

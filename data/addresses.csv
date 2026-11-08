@@ -5698,9 +5698,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5697,function,Math::SineEaseLookup,,0x004edf40,0x0081b560,0x004edf40
 5698,function,Quaternion::FromTo,,0x004edf80,0x0081b5a0,0x004edf80
 5699,function,Quaternion::FromYawPitchRoll,"__cdecl (out, yaw, pitch, roll) in degrees (scaled by pi/360 for the half angles): three Quaternion::FromAxisAngle rotations about the unit Y, X and Z vectors multiplied together into out",0x004ee200,0x0081b820,0x004ee200
-5700,function,Quaternion::Yaw,,0x004ee310,0x0081b930,0x004ee310
-5701,function,Quaternion::Pitch,,0x004ee370,0x0081b990,0x004ee370
-5702,function,Quaternion::Roll,,0x004ee420,0x0081ba40,0x004ee420
+5700,function,Quaternion::Yaw,"atan2(-2(xy - wz), 1 - 2(x^2 + z^2)) in degrees (-2.0 at 0x00AF2660, 57.2958 at 0x00AF0E50)",0x004ee310,0x0081b930,0x004ee310
+5701,function,Quaternion::Pitch,"Elevation of GetYAxis(q), computed inline: atan2(z, sqrt(x^2 + y^2)) of the Y axis, in degrees",0x004ee370,0x0081b990,0x004ee370
+5702,function,Quaternion::Roll,"Takes the yaw out (a rotation about UnitZ by -Yaw) and then the pitch (about UnitX by -Pitch), and answers atan2(-X.z, X.x) of the remainder's X axis, in degrees",0x004ee420,0x0081ba40,0x004ee420
 5703,function,Vector3::ToAngle,,0x004ee570,0x0081bb90,0x004ee570
 5704,function,Vector3::Elevation,,0x004ee5a0,0x0081bbc0,0x004ee5a0
 5705,function,Geometry::ProjectOnLine,,0x004ee610,0x0081bc30,0x004ee610
@@ -13143,7 +13143,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13142,function,ScriptCommand::SETINDIVIDUALIMPACTAOEEVENT,,0x0065c580,0x005482e0,0x0065c580
 13143,function,CGameEffect::Prepare,,0x0065c760,0x005484c0,0x0065c760
 13144,function,IsObjectInArea,,0x0065c7d0,0x00548530,0x0065c7d0
-13145,function,ScriptCommand::APPLYEFFECTATLOCATION,,0x0065c830,0x00548590,0x0065c830
+13145,function,ScriptCommand::APPLYEFFECTATLOCATION,"After CGameEffect::Prepare, SetVector(0, loc+0) at 0x0065C986 and SetVector(1, loc+0x10) at 0x0065C9AF",0x0065c830,0x00548590,0x0065c830
 13146,function,ScriptCommand::APPLYEFFECTONOBJECT,,0x0065ca20,0x00548780,0x0065ca20
 13147,function,ScriptCommand::GETITEMPOSSESSEDBY,,0x0065cba0,0x00548900,0x0065cba0
 13148,function,ScriptCommand::SWITCHWEAPONSET,,0x0065ccc0,0x00548a20,0x0065ccc0
@@ -13294,7 +13294,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13293,function,ScriptCommand::SETCREATURERANK,,0x00664520,0x00550280,0x00664520
 13294,function,ScriptCommand::GETCANDIEPERMANENTLY,,0x006645a0,0x00550300,0x006645a0
 13295,function,ScriptCommand::GETCOMBATANTTYPE,,0x00664640,0x005503a0,0x00664640
-13296,function,ScriptCommand::GETVISUALEFFECTLOCATION,,0x006646b0,0x00550410,0x006646b0
+13296,function,ScriptCommand::GETVISUALEFFECTLOCATION,"An effect structure (type 4): with an area id as its object 0 the location is the effect's vectors 0 and 1 and that id; with an object, its raw +0x120, +0x130 and area +0x254; an id of 0 leaves the location empty (0x006647C3)",0x006646b0,0x00550410,0x006646b0
 13297,function,ScriptCommand::REQUESTTARGET,,0x00664840,0x005505a0,0x00664840
 13298,function,ScriptCommand::SETATMOSPHERE,,0x00664a10,0x00550770,0x00664a10
 13299,function,ScriptCommand::SETATMOSPHERE_RGB,,0x00664d60,0x00550ac0,0x00664d60
@@ -14083,7 +14083,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14082,function,Gff4::Block::ReadFloatVector4At,,0x006954a0,0x00586460,0x006954a0
 14083,function,CCObject::RefreshGroundCache,,0x006954c0,0x00586480,0x006954c0
 14084,function,CCObject::SetPosition,"Moves the object: unless force is set, returns when the position equals +0x120 (0x0069555E); stores it at +0x120, clears +0x1C4 and calls vtable +0x7C (OnPositionChanged) with the old position and 0",0x00695540,0x00586500,0x00695540
-14085,function,CCObject::OnOrientationChanged,,0x006955c0,0x00586580,0x006955c0
+14085,function,CCObject::OnOrientationChanged,"The model's AnimBase::SetFacingFromDirection(+0x130, type byte +0x14 == 0x12, 0x006955EA), then the WorldOrientationY attribute (+0xA8) slot 0x54 with ToAngle(+0x130)",0x006955c0,0x00586580,0x006955c0
 14086,function,CCObject::DebugTraceByTag,,0x00695620,0x005865e0,0x00695620
 14087,function,CCObject::CanGlow,,0x00695640,0x00586600,0x00695640
 14088,function,CCObject::IsRootMotionClipHeld,,0x00695670,0x00586630,0x00695670
@@ -14159,11 +14159,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14158,function,CCObject::UpdatePlotMarker,,0x006979a0,0x00588a20,0x006979a0
 14159,function,Gff4::Block::ReadQuaternionChecked,,0x00697aa0,0x00588d10,0x00697aa0
 14160,function,CCObject::OnPositionChanged,,0x00697ae0,0x00588d70,0x00697ae0
-14161,function,CCObject::LoadPlacementFromStruct,,0x00697b50,0x00588de0,0x00697b50
+14161,function,CCObject::LoadPlacementFromStruct,"Field 4 into SetPosition (default the current +0x120), field 5 into +0x140 (default the current +0x140, 0x00697BA8), then SetOrientation(GetYAxis(+0x140)); answers 1",0x00697b50,0x00588de0,0x00697b50
 14162,function,std::list<unsigned int>::front,,0x00697bf0,0x0059f620,0x00697bf0
 14163,function,Gff4::BlockRef::GetQuaternion,,0x00697c10,0x00588e80,0x00697c10
 14164,function,CCObject::UpdateMovement,,0x00697c90,0x00588fc0,0x00697c90
-14165,function,CCObject::SaveToStruct,,0x00697ee0,0x00589210,0x00697ee0
+14165,function,CCObject::SaveToStruct,"Field 5 (when the struct has it, HasField 0x00697F38) is the model's AnimBase::GetOrientation if there is a model (+0x70 slot 0x60), else FromYawPitchRoll(ToAngle(+0x130), Elevation(+0x130), 0); +0x140 is not saved",0x00697ee0,0x00589210,0x00697ee0
 14166,function,CCObject::UnregisterEventListener,,0x006983a0,0x005896d0,0x006983a0
 14167,function,CCObject::RemoveAttachedObject,,0x006983d0,0x00589700,0x006983d0
 14168,function,std::list<unsigned int>::pop_front,,0x00698400,0x00589730,0x00698400
@@ -14183,7 +14183,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14182,function,CCObject::SetSceneControlled,,0x00698e50,0x0058a140,0x00698e50
 14183,function,CCObject::LoadFromStruct,,0x00698ed0,0x0058a1c0,0x00698ed0
 14184,function,ECBase::ECDynArray<unk_ptr>::DeleteAll,,0x00699560,0x0058a850,0x00699560
-14185,function,CCObject::CCObject,,0x00699670,0x0058a960,0x00699670
+14185,function,CCObject::CCObject,"+0x140..+0x14C is the identity quaternion (0,0,0,1) (0x006997E3..0x006997F7)",0x00699670,0x0058a960,0x00699670
 14186,function,CCObject::SetFacingAngle,,0x00699eb0,0x0058b1a0,0x00699eb0
 14187,function,SEffectsHolder::CallAttributeVfunction15,,0x00699f20,0x0058b210,0x00699f20
 14188,function,SEffectsHolder::PlayAnimation,,0x00699f30,0x0058b220,0x00699f30
@@ -17953,7 +17953,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17952,function,CCObject::CCObject_copy,,0x007515d0,0x0065d4c0,0x007515d0
 17953,function,CCPlaceable::BuildSaveTemplate,,0x00751c30,0x0065db20,0x00751c30
 17954,function,CCPlaceable::CollectNodePoints,,0x00751ea0,0x0065dd90,0x00751ea0
-17955,function,CCPlaceable::OnModelReady,,0x00751fb0,0x0065dea0,0x00751fb0
+17955,function,CCPlaceable::OnModelReady,"With argument 0: the model's AnimBase::SetPosition(+0x120) and SetOrientation(+0x140) at 0x00752015, then ForScript_SetPlaceableState(+0x658), CollectNodePoints and GetModelTopHeight into +0x6C8",0x00751fb0,0x0065dea0,0x00751fb0
 17956,function,CCPlaceable::OnModelReadyCallback,,0x007520e0,0x0065dfd0,0x007520e0
 17957,function,CCPlaceable::CCPlaceable_copy,,0x00752110,0x0065e000,0x00752110
 17958,function,CCPlaceable::LoadModel,,0x00752600,0x0065e4f0,0x00752600
@@ -18151,9 +18151,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18150,function,PartyFollow::PartyFollow,,0x007607f0,0x006e17a0,0x007607f0
 18151,function,PartyFollow::WouldBeLocation,,0x00760810,0x006e17c0,0x00760810
 18152,function,PartyFollow::LeaderPerceives,,0x00760940,0x006e18f0,0x00760940
-18153,function,PartyFollow::ShouldMove,,0x00760980,0x006e1930,0x00760980
+18153,function,PartyFollow::ShouldMove,"The 2-D distance between the two creatures (the second's movement point +0x30 when it has a path and is moving) is compared with the first's slot 0x9C value plus [this+slot*4] (0x00760A87, the slot argument unchecked) plus s_followSlack, plus the double at 0x00AE7108 when the second's movement state +0xB20 is 0 or 4",0x00760980,0x006e1930,0x00760980
 18154,function,PartyFollow::ResetCatchUp,,0x00760c60,0x006e1c10,0x00760c60
-18155,function,PartyFollow::Update,,0x00760dc0,0x006e1d70,0x00760dc0
+18155,function,PartyFollow::Update,"For a follower more than 1.0 from its spot (Distance2D, 0x00761004): when LeaderPerceives, SetCatchUp at 0x00761031 comes before the command-type (0x14) test; otherwise the jump: WouldBeLocation, ClearAllCommands, SetOrientation(Normalized(leader +0x130)) at 0x0076111C, QueueJumpToLocation",0x00760dc0,0x006e1d70,0x00760dc0
 18156,function,ItemLocation::ItemLocation,,0x00761170,0x0069f8f0,0x00761170
 18157,function,ItemLocation::~ItemLocation,,0x00761190,0x0069f910,0x00761190
 18158,function,ItemLocation::CanAddChecked,,0x007611a0,0x0069f920,0x007611a0
@@ -33443,7 +33443,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33442,function,AnimBase::HasAnimationByName,,0x00a5cb50,0x007032f0,0x00a5cb50
 33443,function,AnimBase::AddToScene,,0x00a5cb70,0x00703310,0x00a5cb70
 33444,function,AnimBase::GetSceneInstance,,0x00a5cba0,0x00703340,0x00a5cba0
-33445,function,AnimBase::SetFacingFromDirection,,0x00a5cbe0,0x00703380,0x00a5cbe0
+33445,function,AnimBase::SetFacingFromDirection,"Answers false with no model state; else sets the model's rotation to FromYawPitchRoll(ToAngle(dir), useElevation ? Elevation(dir) : Pitch(current), Roll(current)) through slot 0x1C",0x00a5cbe0,0x00703380,0x00a5cbe0
 33446,function,AnimBase::SetOrientation,,0x00a5ccc0,0x00703460,0x00a5ccc0
 33447,function,AnimBase::GetOrientation,,0x00a5cd00,0x007034a0,0x00a5cd00
 33448,function,AnimBase::SetPosition(Math::Vector4f*),,0x00a5cd50,0x007034f0,0x00a5cd50
@@ -33600,7 +33600,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33599,function,MovementController::StopClipTravelLeft,,0x00a636b0,0x00709d40,0x00a636b0
 33600,function,MovementController::DirectionToTarget,,0x00a63770,0x00709e00,0x00a63770
 33601,function,MovementController::SetState,"No-op if the state is unchanged; stores state (+0xF0), tells the animation controller (+0x70), stateNotIdle = state != 0; state 0 also ClearMoveTarget and zeroes speed, targetSpeed and driven; +0xF6 is 1 for state 2 and 0 for the others; state 3 also zeroes targetSpeed",0x00a63800,0x00709e90,0x00a63800
-33602,function,MovementController::SetDesiredFacing,,0x00a638b0,0x00709f40,0x00a638b0
+33602,function,MovementController::SetDesiredFacing,"|dir|^2 is tested in 3-D: at or below 1e-6 (0x00B596B8) the desired facing +0x90..+0x98 is zeroed and the state is left; otherwise +0x90 = Normalized(x,y,0), and SetState(4) unless the current facing +0xA0 is non-zero and within g_minTurnAngleDegrees of it (0x00A6395B), the state +0xF0 is not 0, or motionBusyGate +0x74 is set with the animation controller's +0x10->+0xC0 non-zero",0x00a638b0,0x00709f40,0x00a638b0
 33603,function,MovementController::SetMoving,,0x00a639c0,0x0070a050,0x00a639c0
 33604,function,MovementController::CreateAnimController,,0x00a639f0,0x0070a080,0x00a639f0
 33605,function,MovementController::RequestStop,State 1 or 2 (moving) goes to SetState(3); 4 goes to SetState(0); 0 and 3 are left; touches neither the path nor the speed itself,0x00a63ac0,0x0070a150,0x00a63ac0
