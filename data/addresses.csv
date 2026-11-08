@@ -12130,7 +12130,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12129,function,CreatureAbilities::NextFreeQuickslot,,0x0062ad80,0x00581890,0x0062ad80
 12130,function,PartyData::DetachInstanceCooldown,,0x0062af50,0x00581a60,0x0062af50
 12131,function,CreatureAbilities::FindInstance,,0x0062af90,0x00581aa0,0x0062af90
-12132,function,CreatureAbilities::SetInstanceError,,0x0062afd0,0x00581ae0,0x0062afd0
+12132,function,CreatureAbilities::SetInstanceError,"(ability, reason, tag) ret 0xC: FindInstance(ability, tag); when found, sets the instance's IsError (+0x78) = reason != -1 and Error (+0x88) = reason through the attributes' slot 0x54 (AbilityInstance::AbilityInstance 0x0075A230 defaults IsError 0, Error -1)",0x0062afd0,0x00581ae0,0x0062afd0
 12133,function,"CreatureAbilities::DeleteAndClearMap<int,QuickslotEntry *>",,0x0062b020,0x00581b30,0x0062b020
 12134,function,"ECBase::ECDynArray<std::pair<unsigned int,unsigned int>>::Contains",,0x0062b0c0,0x00581c10,0x0062b0c0
 12135,function,"ECBase::ECDynArray<std::pair<unsigned int,unsigned int>>::IndexOf",,0x0062b140,0x00581cc0,0x0062b140
@@ -12204,7 +12204,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12203,function,AbilityChains::CollectEntriesNotIn,,0x0062e2c0,0x00585350,0x0062e2c0
 12204,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::SetFromText",,0x0062e3d0,0x00585460,0x0062e3d0
 12205,function,PartyData::PartyData,,0x0062e460,0x005854f0,0x0062e460
-12206,function,AbilityChains::RebuildMovieQuickSlots,,0x0062e680,0x00585710,0x0062e680
+12206,function,AbilityChains::RebuildMovieQuickSlots,"Only while +0x2C (dirty) is set, which it clears: QuickSlots entry n = FindInstance(slot n's ability, tag), made with CreateAbilityInstance when missing and the slot's resref (+0x20) is not empty (CResRef::IsNotEmpty 0x0062E750); so the slot's shown error is its (ability, tag) instance's",0x0062e680,0x00585710,0x0062e680
 12207,function,AbilityChains::RefreshReadyFlags,,0x0062e7d0,0x00585860,0x0062e7d0
 12208,function,AbilityChains::Find,,0x0062e9c0,0x00585a50,0x0062e9c0
 12209,function,Vector3::IsZeroXYZ,,0x0062ea50,0x0060aaf0,0x0062ea50
@@ -13987,7 +13987,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13986,function,ScriptBackend::ForScript_SetTrainingMode,,0x00692e90,0x0057ee70,0x00692e90
 13987,function,ScriptBackend::ForScript_BeginTrainingStep,,0x00693190,0x0057f170,0x00693190
 13988,function,TutorialControl::RefreshPopup,,0x006931e0,0x0057f1c0,0x006931e0
-13989,function,TutorialControl::SendEvent,,0x00693290,0x0057f270,0x00693290
+13989,function,TutorialControl::SendEvent,"(type, arg) ret 8: only when arg is 0 or equals +0xA0, +0x88 != 0 and +0x9C == type; then, for the controlled creature (none: nothing), a new CScriptEvent of that type with integer 0 = +0x88, delivered by CCObject::DeliverEventScript with L""genev_tutorial"", which runs it at once (CVirtualMachine::RunScript) with the creature as its target; returns nothing",0x00693290,0x0057f270,0x00693290
 13990,function,Tutorial::Tutorial,,0x00693390,0x0057f370,0x00693390
 13991,function,Tutorial::`scalar deleting destructor',,0x00693560,0x0057f540,0x00693560
 13992,function,Tutorial::`scalar deleting destructor',,0x00693570,0x0057f550,0x00693570
@@ -14875,7 +14875,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14874,function,CCCreature::RebuildPhysicsAtPosition,,0x006b7530,0x005a8fc0,0x006b7530
 14875,function,CCCreature::HandleMessage_PlaySoundSetEntryMessage,,0x006b7590,0x005a9020,0x006b7590
 14876,function,CCCreature::HandleMessage_HideAbilityHeaderMessage,,0x006b75b0,0x005a9040,0x006b75b0
-14877,function,CCCreature::Unequip,,0x006b7690,0x005a9120,0x006b7690
+14877,function,CCCreature::Unequip,"(out ItemMove, item) ret 8: no test that the item is equipped. g_inventoryFlags |= 0x42 for the call (restored at the end); the item's slot and set from FindItemLocationOrInvalid. Made ammo (+0x5D0) -> DestroyMadeAmmo(set), done; else MoveItemToSlot into the creature's backpack (+0xBF0 -> +8). After a done move of a base type 7 item: the item in equipment slot 0 of that set, and its 2DA value (table 6, column hash 0xE6203B7E) -> MakeAmmunition. Then, for a party member with a module TutorialControl (+0x498), SendEvent(0x42E, slot). Always UpdateQuickbarUsable",0x006b7690,0x005a9120,0x006b7690
 14878,function,CCCreature::ApplyWieldModelTrees,,0x006b78d0,0x005a9360,0x006b78d0
 14879,function,SaveSchema::AddCreatureCommonFields,,0x006b7a30,0x005a94c0,0x006b7a30
 14880,function,SaveSchema::AddPartyCreatureFields,,0x006b7cf0,0x005a9780,0x006b7cf0
@@ -16538,10 +16538,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16537,function,CCCreatureStats::EnsurePartyData,,0x0071ccd0,0x0061aab0,0x0071ccd0
 16538,function,ScriptBackend::ForScript_GetRemainingCooldown,,0x0071ce60,0x0061ac40,0x0071ce60
 16539,function,CCCreatureStats::CanUseAbility,,0x0071ce90,0x0061ac70,0x0071ce90
-16540,function,CCCreatureStats::RefreshQuickslotUsable,,0x0071d1b0,0x0061b0a0,0x0071d1b0
-16541,function,CCCreatureStats::PublishQuickslotReasons,,0x0071d2b0,0x0061b1a0,0x0071d2b0
+16540,function,CCCreatureStats::RefreshQuickslotUsable,"(all): CanUseAbility(ability, &reason = -1, &tag) per record of the current bar's std::map (PartyData +0x1B0's, at +0x14C), every record or only the one at the cursor (+0x1BC); keeps the reason at record +0x64 and +0x68 = (old != new); the usable bool CanUseAbility returns is not kept",0x0071d1b0,0x0061b0a0,0x0071d1b0
+16541,function,CCCreatureStats::PublishQuickslotReasons,"When any record of the current bar has +0x68 set, refreshes all first (RefreshQuickslotUsable(1), 0x0071D369); then SetInstanceError(ability, reason +0x64, &tag) on the party data for every record in map order",0x0071d2b0,0x0061b1a0,0x0071d2b0
 16542,function,std::vector<unsigned int>::append,,0x0071d410,0x0083b530,0x0071d410
-16543,function,CCCreatureStats::UpdateQuickbarUsable,,0x0071d4a0,0x0061b4d0,0x0071d4a0
+16543,function,CCCreatureStats::UpdateQuickbarUsable,"One round-robin step per call, for the controlled creature or the one the GUI system shows (g_clientExoApp+0x158, +0x15C); needs +0x5C and +0x1B4: refresh the record at the cursor (+0x1BC), cursor++ while below count-1 (unsigned), else PublishQuickslotReasons and reset to 0. Called per frame by CCParty::UpdateMemberGuiStats 0x0062FD60 for each active member (the pool in camp), from the explore (combat's 0x0076E6C0 calls explore's), GUI and chargen updates, and by CCCreature::AIUpdate; also on equip, unequip, drop item, set quickslot, weapon-set switch and SetSelectedChar",0x0071d4a0,0x0061b4d0,0x0071d4a0
 16544,function,ECBase::ECDynArray<unsigned int>::`default constructor closure',,0x0071d570,0x0061b6e0,0x0071d570
 16545,function,ECBase::ECDynArray<?>::SwapRemoveAt,,0x0071d580,0x0074d2f0,0x0071d580
 16546,function,CooldownManager::SetCooldown,,0x0071d630,0x0061b760,0x0071d630
@@ -18000,7 +18000,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17999,function,CCItem::GetModelObject,,0x00753e70,0x006626b0,0x00753e70
 18000,function,CCItem::RegisterHandler_RepairItemMessage,,0x00753fa0,0x006627e0,0x00753fa0
 18001,function,CCItem::SaveToStruct,,0x00754020,0x00662860,0x00754020
-18002,function,CCItem::LoadPlacementFromStruct,,0x007545f0,0x00662e30,0x007545f0
+18002,function,CCItem::LoadPlacementFromStruct,"CCItem vftable 0x00B1C61C slot 0x58, the Gff4 branch of CCItem::LoadTemplate 0x00755820: position and orientation (CCObject::LoadPlacementFromStruct 0x00697B50), BaseItem (1000), stack (0x3EA) and ModelVariation (0x3EF, CItem::SetVariation) only. A CExoGFF (GFF3, .uti) template goes to slot 0x5C, CCItem::ReadFields 0x007572D0, which calls CCObject::ReadFields 0x0069AAD0 (Tag, TemplateResRef, ...)",0x007545f0,0x00662e30,0x007545f0
 18003,function,CCItem::RegisterDataTree,,0x007546f0,0x00662f30,0x007546f0
 18004,function,CCItem::GetRequirement,,0x00755270,0x00663ab0,0x00755270
 18005,function,CCItem::RecalculateCost,,0x00755430,0x00663c70,0x00755430
@@ -20561,7 +20561,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20560,function,ListItemLocation::GetItemAtLocation,,0x007ca940,0x006b1c50,0x007ca940
 20561,function,ListItemLocation::LoadItemList,,0x007ca990,0x006b1ca0,0x007ca990
 20562,function,ListItemLocation::ContainsItem,,0x007ca9e0,0x006b1cf0,0x007ca9e0
-20563,function,ListItemLocation::FindItemLocation,,0x007caa00,0x006b1d10,0x007caa00
+20563,function,ListItemLocation::FindItemLocation,"A list location's (backpack, plot items, repository) key for an item it holds: {the item's index in +8 (VectorIndexOf), the item's +0x600 stackingGroupId, slot 0xFF (0x007CAA3E), set -1 (0x007CAA45), -1, -1}; an item not held gets ItemLocation::s_invalidLocation (0x00C1CEF8)",0x007caa00,0x006b1d10,0x007caa00
 20564,function,ListItemLocation::RemoveItem,,0x007caaa0,0x006b1db0,0x007caaa0
 20565,function,ListItemLocation::ListItemLocation,,0x007caae0,0x006b1df0,0x007caae0
 20566,function,SmartData::Attribute::Get`adjustor{56}',,0x007cab80,0x006b1e90,0x007cab80
