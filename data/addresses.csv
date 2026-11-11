@@ -14834,7 +14834,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14833,function,CCCreature::SnapToGround,"With a physics controller: takes the ground height and, unless its flag is set, moves only on ControllerOverlaps; a moving creature takes CCArea::NearestFree against its movement direction, a standing one GetSafeLocation(10.0), then SetPosition; places the controller at groundHeight + controllerCenterY",0x006b1790,0x005a3220,0x006b1790
 14834,function,CCCreature::ReapplyGoreThreshold,,0x006b19b0,0x005a3440,0x006b19b0
 14835,function,SetModelGoreThreshold,,0x006b1bc0,0x005a3650,0x006b1bc0
-14836,function,CCCreature::CreatePhysicsController,"Rebuilds the capsule controller unless dead with decay behaviour 2, under SimulateDeath, with script local int 11 set, or without a model; stops while +0xC90 is set; controllerRadius = max(0.6 x appearance radius, 0.1), 60-degree slope limit; then SnapToGround(1), or in game mode 9 places it directly",0x006b1ed0,0x005a3960,0x006b1ed0
+14836,function,CCCreature::CreatePhysicsController,"Rebuilds the capsule controller unless dead with a decay behaviour other than 2 (decay behaviour 2 keeps it; 0x006B1F36), under SimulateDeath, with script local int 11 set, or without a model; stops while +0xC90 is set; controllerRadius = max(0.6 x appearance radius, 0.1), 60-degree slope limit; then SnapToGround(1), or in game mode 9 places it directly",0x006b1ed0,0x005a3960,0x006b1ed0
 14837,function,CCCreature::SyncPositionFromController,,0x006b2220,0x005a3cb0,0x006b2220
 14838,function,ItemMove::operator=,,0x006b2320,0x005a3db0,0x006b2320
 14839,function,ItemMove::ItemMove_copy,,0x006b23b0,0x005a3e40,0x006b23b0
