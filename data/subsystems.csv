@@ -3329,7 +3329,7 @@ id,subsystem,class,how
 3358,ThirdParty:STL,,between
 3359,ThirdParty:STL,std::vector<?>,name
 3360,ThirdParty:STL,,between
-3361,Resources,,callers
+3361,ThirdParty:STL,std::vector<PrereqItem>,name
 3362,ThirdParty:STL,,between
 3363,ThirdParty:STL,,string
 3364,ThirdParty:STL,,between
@@ -3341,9 +3341,9 @@ id,subsystem,class,how
 3370,ThirdParty:STL,,string
 3371,ThirdParty:STL,,string
 3372,ThirdParty:STL,,string
-3373,Online,,callers
-3374,ThirdParty:STL,,between
-3375,ThirdParty:STL,,between
+3373,Core,ECBase::ECDynArray<OnlineRec24>,name
+3374,unknown,,
+3375,unknown,,
 3376,ThirdParty:STL,,string
 3377,ThirdParty:STL,,string
 3378,ThirdParty:STL,,string
@@ -4862,7 +4862,7 @@ id,subsystem,class,how
 4908,ThirdParty:STL,"std::basic_istream<wchar_t,std::char_traits<wchar_t>>",name
 4909,ThirdParty:STL,,between
 4910,ThirdParty:STL,,between
-4911,Rendering,,callers
+4911,ThirdParty:STL,std,name
 4912,ThirdParty:STL,"std::basic_stringstream<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>",name
 4913,ThirdParty:STL,std,name
 4914,Core,Math::CollisionObject,name
@@ -5148,12 +5148,12 @@ id,subsystem,class,how
 5195,Resources,Gff4::Template,name
 5196,ThirdParty:STL,,range
 5197,ThirdParty:STL,,string
-5198,ThirdParty:STL,,between
-5199,ThirdParty:STL,,between
-5200,ThirdParty:STL,,between
-5201,ThirdParty:STL,,between
-5202,ThirdParty:STL,,owner
-5203,Resources,,callers
+5198,unknown,,
+5199,unknown,,
+5200,unknown,,
+5201,unknown,,
+5202,unknown,,
+5203,Resources,Gff4::Block,name
 5204,ThirdParty:STL,,string
 5205,ThirdParty:STL,,string
 5206,ThirdParty:STL,,range
@@ -5419,7 +5419,7 @@ id,subsystem,class,how
 5469,Core,ScriptVariableNames::Entry,range
 5470,Core,ScriptVariableNames::Entry,range
 5471,ThirdParty:STL,,range
-5472,ThirdParty:STL,,range
+5472,ThirdParty:STL,std::_Tree,name
 5473,Scripting,ScriptVariableKey,name
 5474,Core,ECBase::ECDynArray<?>,name
 5475,ThirdParty:STL,,range
@@ -6077,26 +6077,26 @@ id,subsystem,class,how
 6136,Rendering,"Map<unsigned int,Math::VectorUA4f>",callers
 6137,ThirdParty:STL,"std::map<unsigned int,Math::VectorUA4f>",name
 6138,ThirdParty:STL,"std::_Tree<std::_Tmap_traits<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>>",name
-6139,ThirdParty:STL,,string
+6139,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",name
 6140,Core,Multithreading::SynchSafePointerList<Graphics::MaterialObject>,name
 6141,Core,Multithreading::SynchSafePointerList<Graphics::MaterialObject>,name
 6142,Rendering,Graphics::MaterialObject,name
 6143,Rendering,Graphics::MaterialObject,name
-6144,ThirdParty:STL,,string
-6145,ThirdParty:STL,,between
-6146,ThirdParty:STL,,owner
-6147,ThirdParty:STL,,between
-6148,ThirdParty:STL,,owner
-6149,ThirdParty:STL,,string
+6144,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",name
+6145,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",name
+6146,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",owner
+6147,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",name
+6148,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",owner
+6149,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",name
 6150,Rendering,Graphics::MaterialObject,name
 6151,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",name
 6152,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",name
-6153,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",name
-6155,ThirdParty:STL,,string
+6153,ThirdParty:STL,"std::map<unsigned int,Multithreading::SynchSafePointer>",name
+6155,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",name
 6156,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",name
 6157,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",name
-6158,unknown,,
-6159,ThirdParty:STL,,string
+6158,ThirdParty:STL,"std::map<unsigned int,Multithreading::SynchSafePointer>",name
+6159,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",name
 6160,Rendering,Graphics::MaterialObject,name
 6161,Rendering,Graphics::MaterialObject,name
 6162,Rendering,Graphics::MaterialObject,name
@@ -9802,17 +9802,17 @@ id,subsystem,class,how
 9871,unknown,WStringMap<?>,
 9872,ThirdParty:STL,,string
 9873,ThirdParty:STL,,string
-9874,unknown,,
-9875,Audio,,callers
+9874,ThirdParty:STL,"std::vector<std::pair<std::wstring,std::wstring>>",name
+9875,Audio,WStringMap<?>,callers
 9876,Audio,SoundManager,name
 9877,unknown,WStringMap<?>,
 9878,ThirdParty:STL,,string
 9879,ThirdParty:STL,,string
 9880,ThirdParty:STL,std::vector<?>,name
-9881,ThirdParty:STL,,between
-9882,Audio,,callers
+9881,unknown,,
+9882,Core,"ECBase::ECDynArray<std::pair<std::wstring,std::wstring>>",name
 9883,ThirdParty:STL,,string
-9884,Audio,,callers
+9884,Audio,WStringMap<?>,callers
 9885,ThirdParty:STL,,string
 9886,ThirdParty:STL,"std::vector<std::pair<std::wstring,std::wstring>>",name
 9887,Audio,SoundManager,name
@@ -12028,7 +12028,7 @@ id,subsystem,class,how
 12100,GUI,Notifications,name
 12101,GUI,Notifications,name
 12102,GUI,Notifications,name
-12103,Game,CreatureAbilities,name
+12103,Game,PartyData,name
 12104,Game,QuickslotEntry,name
 12105,Resources,Gff4::Block,name
 12106,Resources,Gff4::Block,name
@@ -12042,26 +12042,26 @@ id,subsystem,class,how
 12114,Resources,Gff4::BlockRef,name
 12115,ThirdParty:STL,std,name
 12116,Game,AbilityInstance,name
-12117,Game,CreatureAbilities,name
-12118,Game,CreatureAbilities,name
-12119,Game,CreatureAbilities,name
-12120,Game,CreatureAbilities,name
-12121,Game,CreatureAbilities,name
-12122,Game,PartyData,callers
+12117,Game,PartyData,name
+12118,Game,PartyData,name
+12119,Game,PartyData,name
+12120,Game,PartyData,name
+12121,Game,PartyData,name
+12122,Game,PartyData,name
 12123,ThirdParty:STL,"std::map<int,void*>",name
 12124,Resources,Gff4::BlockRef,name
 12125,ThirdParty:STL,"std::map<int,void*>",name
 12126,ThirdParty:STL,std,name
 12127,ThirdParty:STL,std,name
-12128,Game,CreatureAbilities,name
-12129,Game,CreatureAbilities,name
-12130,Game,PartyData,callers
-12131,Game,CreatureAbilities,name
-12132,Game,CreatureAbilities,name
-12133,Game,CreatureAbilities,name
+12128,Game,PartyData,name
+12129,Game,PartyData,name
+12130,Game,PartyData,name
+12131,Game,PartyData,name
+12132,Game,PartyData,name
+12133,Game,PartyData,name
 12134,Core,"ECBase::ECDynArray<std::pair<unsigned int,unsigned int>>",name
 12135,Core,"ECBase::ECDynArray<std::pair<unsigned int,unsigned int>>",name
-12136,Game,CreatureAbilities,name
+12136,Game,PartyData,name
 12137,Core,DeletingMap,name
 12138,ThirdParty:STL,"std::vector<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
 12139,ThirdParty:STL,"std::vector<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
@@ -12095,19 +12095,19 @@ id,subsystem,class,how
 12167,ThirdParty:STL,,string
 12168,ThirdParty:STL,,owner
 12169,ThirdParty:STL,,owner
-12170,Game,CreatureAbilities,name
-12171,Game,CreatureAbilities,name
+12170,Game,PartyData,name
+12171,Game,PartyData,name
 12172,ThirdParty:STL,"std::map<int,void*>",name
 12173,ThirdParty:STL,"std::vector<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
 12174,ThirdParty:STL,"std::vector<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
-12175,Game,CreatureAbilities,name
+12175,Game,PartyData,name
 12176,GUI,GuiAbilityRecords,name
 12177,GUI,GuiAbilityRecords,name
 12178,Core,"ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
 12179,Core,"ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
 12180,Core,AbilityTreeNode,between
 12181,Core,Destroyer,builds
-12182,Game,PartyData,callers
+12182,Game,PartyData,name
 12183,Game,AbilityTreeNode,callers
 12184,Data,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 12185,Core,"ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
@@ -12117,10 +12117,10 @@ id,subsystem,class,how
 12189,Core,ECBase::ECDynArray<?>,name
 12190,Data,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 12191,ThirdParty:STL,"std::map<int,QuickslotEntry*>",name
-12192,Game,CreatureAbilities,name
+12192,Game,PartyData,name
 12193,Game,CCCreatureStats,name
 12194,Game,CCCreatureStats,name
-12195,Game,PartyData,callers
+12195,Game,PartyData,name
 12196,Game,AbilityChains,name
 12197,Game,AbilityChains,name
 12198,Game,AbilityChains,name
@@ -12130,7 +12130,7 @@ id,subsystem,class,how
 12202,Core,"ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
 12203,Game,AbilityChains,name
 12204,Data,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
-12205,Game,PartyData,callers
+12205,Game,PartyData,name
 12206,Game,AbilityChains,name
 12207,Game,AbilityChains,name
 12208,Game,AbilityChains,name
@@ -18030,9 +18030,9 @@ id,subsystem,class,how
 18118,Game,Plots,name
 18119,Scripting,ScriptBackend,name
 18120,ThirdParty:STL,,string
-18121,unknown,,
+18121,ThirdParty:STL,"stdext::hash_map<std::wstring,?>",name
 18122,Game,PlotManager,name
-18123,Game,,callers
+18123,ThirdParty:STL,"stdext::hash_map<std::wstring,PlotManager::PlotEntry>",name
 18124,ThirdParty:STL,,string
 18125,Core,ECBase::ECDynArray<unsigned int>,name
 18126,Game,PlotManager,name
@@ -20776,11 +20776,11 @@ id,subsystem,class,how
 20870,Conversation,EC::Cutscene::Actor,name
 20871,ThirdParty:STL,,string
 20872,Core,Core,name
-20873,unknown,,
-20874,unknown,,
-20875,unknown,,
-20876,unknown,,
-20877,unknown,,
+20873,ThirdParty:STL,std::vector<EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>,name
+20874,ThirdParty:STL,std::vector<EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>,name
+20875,ThirdParty:STL,std::vector<EC::Cutscene::Actor::BlendGadRecord>,name
+20876,ThirdParty:STL,std::vector<EC::Cutscene::Actor::BlendGadRecord>,name
+20877,ThirdParty:STL,std::list<Elem>,name
 20878,ThirdParty:STL,,string
 20879,ThirdParty:STL,"std::_Tree<std::pair<unsigned int const,CutscenePlayer::ActorDependencyList>>",name
 20880,ThirdParty:STL,std::vector<EC.Cutscene.Actor.ClipRecord>,name
@@ -28301,7 +28301,7 @@ id,subsystem,class,how
 28508,ThirdParty:Scaleform,GFxMovieRoot,name
 28509,ThirdParty:Scaleform,GFxMovieRoot,name
 28510,ThirdParty:Scaleform,GFxMovieRoot,name
-28511,ThirdParty:Scaleform,,range
+28511,ThirdParty:Scaleform,GFxMovieRoot,name
 28512,ThirdParty:Scaleform,GFxMovieRoot,vtable
 28513,ThirdParty:Scaleform,GFxMovieRoot,vtable
 28514,ThirdParty:Scaleform,GFxMovieRoot,vtable
@@ -32169,7 +32169,7 @@ id,subsystem,class,how
 32402,Resources,ResRef,name
 32403,Resources,ResRef,name
 32404,Resources,ResRef,name
-32405,Scripting,ScriptBackend,name
+32405,Resources,CResRef,name
 32406,Resources,CResRef,name
 32407,Resources,CResRef,name
 32408,Resources,CResRef,name
@@ -33501,7 +33501,7 @@ id,subsystem,class,how
 33743,Animation,AnimTbi,callers
 33744,ThirdParty:STL,,string
 33745,ThirdParty:STL,,between
-33746,Resources,,callees
+33746,Resources,AnimTbi,callees
 33747,ThirdParty:STL,,between
 33748,Animation,AnimTbi,callers
 33749,ThirdParty:STL,,string
@@ -34905,9 +34905,9 @@ id,subsystem,class,how
 35147,Online,OnlineFeatures,owner
 35148,Online,OnlineFeatures,owner
 35149,Online,OnlineFeatures,owner
-35150,ThirdParty:STL,,owner
-35151,ThirdParty:STL,,owner
-35152,ThirdParty:STL,,owner
+35150,Compiler:EHFunclets,,range
+35151,Compiler:EHFunclets,,range
+35152,Compiler:EHFunclets,,range
 35153,ThirdParty:STL,,owner
 35154,ThirdParty:STL,,owner
 35155,ThirdParty:STL,,owner
@@ -36916,7 +36916,7 @@ id,subsystem,class,how
 37158,ThirdParty:STL,,owner
 37159,Messaging,MessageRegistry,owner
 37160,Messaging,MessageRegistry,owner
-37161,ThirdParty:STL,,owner
+37161,Compiler:EHFunclets,,range
 37162,ThirdParty:STL,,owner
 37163,ThirdParty:STL,,owner
 37164,ThirdParty:STL,,owner
@@ -37407,12 +37407,12 @@ id,subsystem,class,how
 37649,Rendering,"Map<unsigned int,Math::VectorUA4f>",owner
 37650,Rendering,Renderer::FBTextureResource,owner
 37651,Rendering,Renderer::FBTextureResource,owner
-37652,ThirdParty:STL,,owner
-37653,ThirdParty:STL,,owner
-37654,ThirdParty:STL,,owner
+37652,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",owner
+37653,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",owner
+37654,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",owner
 37655,ThirdParty:STL,,owner
 37656,ThirdParty:STL,,owner
-37657,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",owner
+37657,ThirdParty:STL,"std::map<unsigned int,Multithreading::SynchSafePointer>",owner
 37658,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",owner
 37659,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",owner
 37660,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",owner
@@ -44264,27 +44264,27 @@ id,subsystem,class,how
 44506,GUI,Notifications,owner
 44507,GUI,Notifications,owner
 44508,GUI,Notifications,owner
-44509,Game,CreatureAbilities,owner
-44510,Game,CreatureAbilities,owner
-44511,Game,CreatureAbilities,owner
-44512,Game,CreatureAbilities,owner
-44513,Game,CreatureAbilities,owner
-44514,Game,CreatureAbilities,owner
-44515,Game,CreatureAbilities,owner
-44516,Game,CreatureAbilities,owner
-44517,Game,CreatureAbilities,owner
-44518,Game,CreatureAbilities,owner
-44519,Game,CreatureAbilities,owner
-44520,Game,CreatureAbilities,owner
-44521,Game,CreatureAbilities,owner
-44522,Game,CreatureAbilities,owner
-44523,Game,CreatureAbilities,owner
-44524,Game,CreatureAbilities,owner
-44525,Game,CreatureAbilities,owner
-44526,Game,CreatureAbilities,owner
-44527,Game,CreatureAbilities,owner
-44528,Game,CreatureAbilities,owner
-44529,Game,CreatureAbilities,owner
+44509,Game,PartyData,owner
+44510,Game,PartyData,owner
+44511,Game,PartyData,owner
+44512,Game,PartyData,owner
+44513,Game,PartyData,owner
+44514,Game,PartyData,owner
+44515,Game,PartyData,owner
+44516,Game,PartyData,owner
+44517,Game,PartyData,owner
+44518,Game,PartyData,owner
+44519,Game,PartyData,owner
+44520,Game,PartyData,owner
+44521,Game,PartyData,owner
+44522,Game,PartyData,owner
+44523,Game,PartyData,owner
+44524,Game,PartyData,owner
+44525,Game,PartyData,owner
+44526,Game,PartyData,owner
+44527,Game,PartyData,owner
+44528,Game,PartyData,owner
+44529,Game,PartyData,owner
 44530,Data,SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<AbilityInstance*>>,owner
 44531,Data,SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<AbilityInstance*>>,owner
 44532,Data,SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<AbilityGUIInfo*>>,owner
@@ -44295,10 +44295,10 @@ id,subsystem,class,how
 44537,ThirdParty:STL,,owner
 44538,ThirdParty:STL,"std::vector<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",owner
 44539,ThirdParty:STL,"std::vector<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",owner
-44540,Game,CreatureAbilities,owner
-44541,Game,CreatureAbilities,owner
-44542,Game,CreatureAbilities,owner
-44543,Game,CreatureAbilities,owner
+44540,Game,PartyData,owner
+44541,Game,PartyData,owner
+44542,Game,PartyData,owner
+44543,Game,PartyData,owner
 44544,GUI,GuiAbilityRecords,owner
 44545,GUI,GuiAbilityRecords,owner
 44546,GUI,GuiAbilityRecords,owner
@@ -44307,21 +44307,21 @@ id,subsystem,class,how
 44549,Core,ECBase::ECDynArray<SmartData::Attribute<int>>,owner
 44550,Core,"ECBase::ECDynArray<SmartData::Attribute<int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",owner
 44551,Core,"ECBase::ECDynArray<SmartData::Attribute<int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",owner
-44552,Game,CreatureAbilities,owner
-44553,Game,CreatureAbilities,owner
-44554,Game,CreatureAbilities,owner
-44555,Game,CreatureAbilities,owner
-44556,Game,CreatureAbilities,owner
-44557,Game,CreatureAbilities,owner
-44558,Game,CreatureAbilities,owner
-44559,Game,CreatureAbilities,owner
-44560,Game,CreatureAbilities,owner
-44561,Game,CreatureAbilities,owner
-44562,Game,CreatureAbilities,owner
-44563,Game,CreatureAbilities,owner
-44564,Game,CreatureAbilities,owner
-44565,Game,CreatureAbilities,owner
-44566,Game,CreatureAbilities,owner
+44552,Game,PartyData,owner
+44553,Game,PartyData,owner
+44554,Game,PartyData,owner
+44555,Game,PartyData,owner
+44556,Game,PartyData,owner
+44557,Game,PartyData,owner
+44558,Game,PartyData,owner
+44559,Game,PartyData,owner
+44560,Game,PartyData,owner
+44561,Game,PartyData,owner
+44562,Game,PartyData,owner
+44563,Game,PartyData,owner
+44564,Game,PartyData,owner
+44565,Game,PartyData,owner
+44566,Game,PartyData,owner
 44567,Game,PartyData,owner
 44568,Game,PartyData,owner
 44569,Game,PartyData,owner
@@ -57758,11 +57758,11 @@ id,subsystem,class,how
 58000,Animation,AnimModelLods,owner
 58001,Animation,AnimModelLods,owner
 58002,Animation,AnimModelLods,owner
-58003,Resources,,owner
-58004,Resources,,owner
-58005,Resources,,owner
-58006,Resources,,owner
-58007,Resources,,owner
+58003,Resources,AnimTbi,owner
+58004,Resources,AnimTbi,owner
+58005,Resources,AnimTbi,owner
+58006,Resources,AnimTbi,owner
+58007,Resources,AnimTbi,owner
 58008,ThirdParty:STL,,owner
 58009,ThirdParty:STL,,owner
 58010,ThirdParty:STL,,owner
@@ -58526,7 +58526,7 @@ id,subsystem,class,how
 58768,Compiler:DynamicInit,,range
 58769,Compiler:DynamicInit,,range
 58770,Compiler:DynamicInit,,range
-58771,Compiler:DynamicInit,,range
+58771,Compiler:DynamicInit,`dynamic initializer for 'Pathfinding::Grid,range
 58772,Compiler:DynamicInit,,range
 58773,Compiler:DynamicInit,,range
 58774,Compiler:DynamicInit,,range
@@ -58566,7 +58566,7 @@ id,subsystem,class,how
 58808,Compiler:DynamicInit,,range
 58809,Compiler:DynamicInit,,range
 58810,Compiler:AtexitDtors,,range
-58811,Input,,pointer
+58811,Input,`dynamic atexit destructor for 'Input::DeviceStates::Get,pointer
 58812,Compiler:AtexitDtors,,range
 58813,Compiler:AtexitDtors,,range
 58814,Compiler:AtexitDtors,,range
@@ -58657,7 +58657,7 @@ id,subsystem,class,how
 58899,Core,`dynamic atexit destructor for 'Math::Vector4f::Zero,pointer
 58900,Core,`dynamic atexit destructor for 'Math::Vector4f::UnitW,pointer
 58901,Compiler:AtexitDtors,,range
-58902,Core,,pointer
+58902,Core,`dynamic atexit destructor for 'CpuFeatures::Get,pointer
 58903,Compiler:AtexitDtors,,range
 58904,Compiler:AtexitDtors,,range
 58905,Compiler:AtexitDtors,,range
@@ -58811,13 +58811,13 @@ id,subsystem,class,how
 59053,Compiler:AtexitDtors,,range
 59054,Compiler:AtexitDtors,,range
 59055,Compiler:AtexitDtors,,range
-59056,Audio,,pointer
-59057,Audio,,pointer
-59058,Audio,,pointer
-59059,Audio,,pointer
-59060,Audio,,pointer
-59061,Audio,,pointer
-59062,Audio,,pointer
+59056,Audio,`dynamic atexit destructor for 'SoundEventInstance::Resolve,pointer
+59057,Audio,`dynamic atexit destructor for 'MusicController::Update,pointer
+59058,Audio,`dynamic atexit destructor for 'MusicController::Update,pointer
+59059,Audio,`dynamic atexit destructor for 'MusicController::Update,pointer
+59060,Audio,`dynamic atexit destructor for 'MusicController::Update,pointer
+59061,Audio,`dynamic atexit destructor for 'MusicController::Update,pointer
+59062,Audio,`dynamic atexit destructor for 'MusicController::Update,pointer
 59063,Compiler:AtexitDtors,,range
 59064,Compiler:AtexitDtors,,range
 59065,Compiler:AtexitDtors,,range
@@ -59153,7 +59153,7 @@ id,subsystem,class,how
 59395,Compiler:AtexitDtors,,range
 59396,Compiler:AtexitDtors,,range
 59397,Compiler:AtexitDtors,,range
-59398,GUI,,pointer
+59398,GUI,`dynamic atexit destructor for 'GUI::IntToStaticString,pointer
 59399,Compiler:AtexitDtors,,range
 59400,Data,`dynamic atexit destructor for 'SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<GUI::TournamentScoreboardEntry*>>::GetMemberName,pointer
 59401,Data,`dynamic atexit destructor for 'SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<GUI::ChampionshipScoreboardEntry*>>::GetMemberName,pointer
@@ -59466,8 +59466,8 @@ id,subsystem,class,how
 59708,Compiler:AtexitDtors,,range
 59709,Animation,,pointer
 59710,Compiler:AtexitDtors,,range
-59711,Rendering,,pointer
-59712,Rendering,,pointer
+59711,Rendering,`dynamic atexit destructor for 'D3DDriver::D3DGraphicsDriverManager::Get,pointer
+59712,Rendering,`dynamic atexit destructor for 'CD3DEnumeration::Get,pointer
 59713,Compiler:AtexitDtors,,range
 59714,Compiler:AtexitDtors,,range
 59715,Compiler:AtexitDtors,,range
@@ -59566,7 +59566,7 @@ id,subsystem,class,how
 59808,Compiler:AtexitDtors,,range
 59809,Network,`dynamic atexit destructor for 'CNetLayerInternal::GetEndpointAddressString,pointer
 59810,Network,`dynamic atexit destructor for 'CNetLayerInternal::GetLocalHostAddressString,pointer
-59811,Network,,pointer
+59811,Network,`dynamic atexit destructor for 'CNetLayerInternal::GetLocalAddressString,pointer
 59812,Compiler:AtexitDtors,,range
 59813,Game,`dynamic atexit destructor for 'CDataArrays::GetString,pointer
 59814,Compiler:AtexitDtors,,range
@@ -59602,8 +59602,8 @@ id,subsystem,class,how
 59844,Compiler:AtexitDtors,,range
 59845,Compiler:AtexitDtors,,range
 59846,Compiler:AtexitDtors,,range
-59847,Animation,,pointer
-59848,Animation,,pointer
-59849,Animation,,pointer
-59850,Animation,,pointer
-59851,Animation,,pointer
+59847,Animation,`dynamic atexit destructor for 'AnimModelLod::Entry::RequestResources,pointer
+59848,Animation,`dynamic atexit destructor for 'AnimModelLod::Entry::RequestResources,pointer
+59849,Animation,`dynamic atexit destructor for 'AnimModelLod::Entry::RequestResources,pointer
+59850,Animation,`dynamic atexit destructor for 'AnimModelLod::Entry::RequestResources,pointer
+59851,Animation,`dynamic atexit destructor for 'AnimModelLod::Entry::RequestResources,pointer
