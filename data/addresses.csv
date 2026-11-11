@@ -12101,7 +12101,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12100,function,Notifications::AddCodexAlert,,0x00629d00,0x006a40b0,0x00629d00
 12101,function,Notifications::AddAbilityAlert,,0x00629dc0,0x006a4170,0x00629dc0
 12102,function,Notifications::HideUberAlert,,0x00629e50,0x006a4200,0x00629e50
-12103,function,PartyData::GetInstanceList,,0x00629f90,0x00580cc0,0x00629f90
+12103,function,PartyMemberAbilities::GetInstanceList,,0x00629f90,0x00580cc0,0x00629f90
 12104,function,QuickslotEntry::QuickslotEntry,,0x00629fd0,0x00580d00,0x00629fd0
 12105,function,Gff4::Block::WriteByte,,0x0062a040,0x0052ae90,0x0062a040
 12106,function,Gff4::Block::GetBlockData,,0x0062a060,0x0052aed0,0x0062a060
@@ -12115,26 +12115,26 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12114,function,Gff4::BlockRef::GetWideStringPointer,,0x0062a260,0x0052b990,0x0062a260
 12115,function,"std::_Uninit_copy<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*>",,0x0062a2c0,0x00580f50,0x0062a2c0
 12116,function,AbilityInstance::FindInList,,0x0062a300,0x00580f90,0x0062a300
-12117,function,PartyData::GetModuleListWithCurrent,,0x0062a3b0,0x00581040,0x0062a3b0
-12118,function,PartyData::GetModuleOverrideListWithCurrent,,0x0062a560,0x005811f0,0x0062a560
-12119,function,PartyData::AddInstancesToStats,,0x0062a8a0,0x00581530,0x0062a8a0
-12120,function,PartyData::RemoveInstancesFromStats,,0x0062a980,0x00581610,0x0062a980
-12121,function,PartyData::HasItemAbilitySource,,0x0062aa20,0x005816b0,0x0062aa20
-12122,function,PartyData::CanUseItem,,0x0062aa80,0x00581710,0x0062aa80
+12117,function,PartyMemberAbilities::GetModuleListWithCurrent,,0x0062a3b0,0x00581040,0x0062a3b0
+12118,function,PartyMemberAbilities::GetModuleOverrideListWithCurrent,,0x0062a560,0x005811f0,0x0062a560
+12119,function,PartyMemberAbilities::AddInstancesToStats,,0x0062a8a0,0x00581530,0x0062a8a0
+12120,function,PartyMemberAbilities::RemoveInstancesFromStats,,0x0062a980,0x00581610,0x0062a980
+12121,function,PartyMemberAbilities::HasItemAbilitySource,,0x0062aa20,0x005816b0,0x0062aa20
+12122,function,PartyMemberAbilities::CanUseItem,,0x0062aa80,0x00581710,0x0062aa80
 12123,function,"std::map<int,void*>::find",,0x0062aaf0,0x007047c0,0x0062aaf0
 12124,function,Gff4::BlockRef::GetUInt8,,0x0062ab60,0x00588f00,0x0062ab60
 12125,function,"std::map<int,void*>::erase",,0x0062abc0,0x00648060,0x0062abc0
 12126,function,"std::_Uninit_fill_n<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,unsigned int,SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",,0x0062ac30,0x00581780,0x0062ac30
 12127,function,"std::_Copy_opt<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*>",,0x0062ac60,0x004cbda0,0x0062ac60
-12128,function,PartyData::HasQuickslotFor,,0x0062aca0,0x005817b0,0x0062aca0
-12129,function,PartyData::NextFreeQuickslot,,0x0062ad80,0x00581890,0x0062ad80
-12130,function,PartyData::DetachInstanceCooldown,,0x0062af50,0x00581a60,0x0062af50
-12131,function,PartyData::FindInstance,,0x0062af90,0x00581aa0,0x0062af90
-12132,function,PartyData::SetInstanceError,"(ability, reason, tag) ret 0xC: FindInstance(ability, tag); when found, sets the instance's IsError (+0x78) = reason != -1 and Error (+0x88) = reason through the attributes' slot 0x54 (AbilityInstance::AbilityInstance 0x0075A230 defaults IsError 0, Error -1)",0x0062afd0,0x00581ae0,0x0062afd0
-12133,function,"PartyData::DeleteAndClearMap<int,QuickslotEntry *>",,0x0062b020,0x00581b30,0x0062b020
+12128,function,PartyMemberAbilities::HasQuickslotFor,,0x0062aca0,0x005817b0,0x0062aca0
+12129,function,PartyMemberAbilities::NextFreeQuickslot,,0x0062ad80,0x00581890,0x0062ad80
+12130,function,PartyMemberAbilities::DetachInstanceCooldown,,0x0062af50,0x00581a60,0x0062af50
+12131,function,PartyMemberAbilities::FindInstance,,0x0062af90,0x00581aa0,0x0062af90
+12132,function,PartyMemberAbilities::SetInstanceError,"(ability, reason, tag) ret 0xC: FindInstance(ability, tag); when found, sets the instance's IsError (+0x78) = reason != -1 and Error (+0x88) = reason through the attributes' slot 0x54 (AbilityInstance::AbilityInstance 0x0075A230 defaults IsError 0, Error -1)",0x0062afd0,0x00581ae0,0x0062afd0
+12133,function,"PartyMemberAbilities::DeleteAndClearMap<int,QuickslotEntry *>",,0x0062b020,0x00581b30,0x0062b020
 12134,function,"ECBase::ECDynArray<std::pair<unsigned int,unsigned int>>::Contains",,0x0062b0c0,0x00581c10,0x0062b0c0
 12135,function,"ECBase::ECDynArray<std::pair<unsigned int,unsigned int>>::IndexOf",,0x0062b140,0x00581cc0,0x0062b140
-12136,function,PartyData::SaveQuickbars,,0x0062b1e0,0x00581da0,0x0062b1e0
+12136,function,PartyMemberAbilities::SaveQuickbars,,0x0062b1e0,0x00581da0,0x0062b1e0
 12137,function,DeletingMap::DeleteAll,,0x0062b530,0x007c0100,0x0062b530
 12138,function,"std::vector<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::_Ufill",,0x0062b5c0,0x005820f0,0x0062b5c0
 12139,function,"std::vector<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::_Ucopy",,0x0062b600,0x00581c90,0x0062b600
@@ -12168,19 +12168,19 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12167,function,,,0x0062bd10,0x00582da0,0x0062bd10
 12168,function,,,0x0062be96,0x00582f26,0x0062be96
 12169,function,,,0x0062bf18,0x00582fa8,0x0062bf18
-12170,function,PartyData::RemoveQuickslotsFor,,0x0062bfa0,0x00583060,0x0062bfa0
-12171,function,PartyData::ClearQuickslot,,0x0062c0f0,0x005831b0,0x0062c0f0
+12170,function,PartyMemberAbilities::RemoveQuickslotsFor,,0x0062bfa0,0x00583060,0x0062bfa0
+12171,function,PartyMemberAbilities::ClearQuickslot,,0x0062c0f0,0x005831b0,0x0062c0f0
 12172,function,"std::map<int,void*>::insert",,0x0062c160,0x0070e8a0,0x0062c160
 12173,function,"std::vector<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::operator=",,0x0062c190,0x00583220,0x0062c190
 12174,function,"std::vector<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::resize",,0x0062c2e0,0x00583370,0x0062c2e0
-12175,function,PartyData::LoadQuickbars,,0x0062c3d0,0x00583460,0x0062c3d0
+12175,function,PartyMemberAbilities::LoadQuickbars,,0x0062c3d0,0x00583460,0x0062c3d0
 12176,function,GuiAbilityRecords::Find,,0x0062c730,0x005837c0,0x0062c730
 12177,function,GuiAbilityRecords::FindPrereqRoot,,0x0062cd20,0x00583db0,0x0062cd20
 12178,function,"ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ECDynArray",,0x0062cd70,0x00583e00,0x0062cd70
 12179,function,"ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::operator=",,0x0062cdd0,0x00583e60,0x0062cdd0
 12180,function,AbilityTreeNode::FreeChildren,,0x0062cdf0,0x00583e80,0x0062cdf0
 12181,function,Destroyer::AddAbilityInstance,,0x0062cf10,0x00583fa0,0x0062cf10
-12182,function,PartyData::RemoveAbility,,0x0062cf60,0x00583ff0,0x0062cf60
+12182,function,PartyMemberAbilities::RemoveAbility,,0x0062cf60,0x00583ff0,0x0062cf60
 12183,function,AbilityTreeNode::DestroyChildren,,0x0062d000,0x00584090,0x0062d000
 12184,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x0062d060,0x005840f0,0x0062d060
 12185,function,"ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ECDynArray",,0x0062d0e0,0x00584170,0x0062d0e0
@@ -12190,10 +12190,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12189,function,ECBase::ECDynArray<?>::ECDynArray,,0x0062d2a0,0x00584330,0x0062d2a0
 12190,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Set",,0x0062d310,0x005843a0,0x0062d310
 12191,function,"std::map<int,QuickslotEntry*>::map",,0x0062d350,0x005843e0,0x0062d350
-12192,function,PartyData::~PartyData,,0x0062d380,0x00584410,0x0062d380
+12192,function,PartyMemberAbilities::~PartyMemberAbilities,,0x0062d380,0x00584410,0x0062d380
 12193,function,CCCreatureStats::DefineCPS1Schema,,0x0062d550,0x005845e0,0x0062d550
 12194,function,CCCreatureStats::BuildCPS1Template,,0x0062d6d0,0x00584760,0x0062d6d0
-12195,function,PartyData::AddOrUpdateInstance,,0x0062d760,0x005847f0,0x0062d760
+12195,function,PartyMemberAbilities::AddOrUpdateInstance,,0x0062d760,0x005847f0,0x0062d760
 12196,function,AbilityChains::CreateAbilityInstance,,0x0062d960,0x005849f0,0x0062d960
 12197,function,AbilityChains::Clear,,0x0062da80,0x00584b10,0x0062da80
 12198,function,AbilityChains::CreateNode,,0x0062dab0,0x00584b40,0x0062dab0
@@ -12203,7 +12203,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12202,function,"ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ClearAndFree",,0x0062e250,0x005852e0,0x0062e250
 12203,function,AbilityChains::CollectEntriesNotIn,,0x0062e2c0,0x00585350,0x0062e2c0
 12204,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::SetFromText",,0x0062e3d0,0x00585460,0x0062e3d0
-12205,function,PartyData::PartyData,,0x0062e460,0x005854f0,0x0062e460
+12205,function,PartyMemberAbilities::PartyMemberAbilities,"Builds the 0x1B4-byte object at CCCreatureStats+0x1B4. CCCreatureStats::EnsurePartyMemberAbilities 0x0071CCD0 allocates it only when a creature joins the party pool (CCParty::AddToPool 0x0063A020, SetFollowerState 0x0063B9A0), so it is per creature, a party member's own. No RTTI or string names the class; the name is from what RegisterPartyMemberAbilitiesAttributes 0x0071AB10 publishes to the GUI: +0x00 QuickbarLocked (bool), +0x10 QuickSlots, +0x30 AutoLevelUp (int), +0x40 Spells, +0x5C Talents, +0x78 Skills, +0x94 ItemAbilities (each an ECDynArray<AbilityInstance*>), +0xB0 TalentChains, +0xCC SpellChains, +0xE8 SkillChains (ECDynArray<AbilityGUIInfo*>). Then +0x104 and +0x120 the module list and override list (wstrings, saved with the quickbars), +0x13C an ECDynArray, +0x14C five map<int,QuickslotEntry*> (one per quickbar, 0x14 each), +0x1B0 the current bar index. Was CreatureAbilities (b01), then PartyData (2026-11-11), both readers' names; read 2026-11-11.",0x0062e460,0x005854f0,0x0062e460
 12206,function,AbilityChains::RebuildMovieQuickSlots,"Only while +0x2C (dirty) is set, which it clears: QuickSlots entry n = FindInstance(slot n's ability, tag), made with CreateAbilityInstance when missing and the slot's resref (+0x20) is not empty (CResRef::IsNotEmpty 0x0062E750); so the slot's shown error is its (ability, tag) instance's",0x0062e680,0x00585710,0x0062e680
 12207,function,AbilityChains::RefreshReadyFlags,,0x0062e7d0,0x00585860,0x0062e7d0
 12208,function,AbilityChains::Find,,0x0062e9c0,0x00585a50,0x0062e9c0
@@ -16503,7 +16503,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16502,function,CreatureProperties::AddModifier,,0x0071a800,0x006187c0,0x0071a800
 16503,function,CooldownEntry::CooldownEntry,,0x0071a8f0,0x006188b0,0x0071a8f0
 16504,function,CCCreatureStats::RegisterAttributes,,0x0071a940,0x00618900,0x0071a940
-16505,function,CCCreatureStats::RegisterPartyDataAttributes,,0x0071ab10,0x00618ad0,0x0071ab10
+16505,function,CCCreatureStats::RegisterPartyMemberAbilitiesAttributes,,0x0071ab10,0x00618ad0,0x0071ab10
 16506,function,CCCreatureStats::GetBackground,,0x0071afb0,0x00618f70,0x0071afb0
 16507,function,CCCreatureStats::GetClass,,0x0071b010,0x00618fd0,0x0071b010
 16508,function,CCCreatureStats::SetClass,,0x0071b070,0x00619030,0x0071b070
@@ -16535,10 +16535,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16534,function,CCCreatureStats::Cooldowns,,0x0071ca00,0x0061a9d0,0x0071ca00
 16535,function,CCCreatureStats::TickCooldowns,,0x0071ca70,0x0061aa40,0x0071ca70
 16536,function,,,0x0071ca90,0x0083b070,0x0071ca90
-16537,function,CCCreatureStats::EnsurePartyData,,0x0071ccd0,0x0061aab0,0x0071ccd0
+16537,function,CCCreatureStats::EnsurePartyMemberAbilities,,0x0071ccd0,0x0061aab0,0x0071ccd0
 16538,function,ScriptBackend::ForScript_GetRemainingCooldown,,0x0071ce60,0x0061ac40,0x0071ce60
 16539,function,CCCreatureStats::CanUseAbility,,0x0071ce90,0x0061ac70,0x0071ce90
-16540,function,CCCreatureStats::RefreshQuickslotUsable,"(all): CanUseAbility(ability, &reason = -1, &tag) per record of the current bar's std::map (PartyData +0x1B0's, at +0x14C), every record or only the one at the cursor (+0x1BC); keeps the reason at record +0x64 and +0x68 = (old != new); the usable bool CanUseAbility returns is not kept",0x0071d1b0,0x0061b0a0,0x0071d1b0
+16540,function,CCCreatureStats::RefreshQuickslotUsable,"(all): CanUseAbility(ability, &reason = -1, &tag) per record of the current bar's std::map (PartyMemberAbilities +0x1B0's, at +0x14C), every record or only the one at the cursor (+0x1BC); keeps the reason at record +0x64 and +0x68 = (old != new); the usable bool CanUseAbility returns is not kept",0x0071d1b0,0x0061b0a0,0x0071d1b0
 16541,function,CCCreatureStats::PublishQuickslotReasons,"When any record of the current bar has +0x68 set, refreshes all first (RefreshQuickslotUsable(1), 0x0071D369); then SetInstanceError(ability, reason +0x64, &tag) on the party data for every record in map order",0x0071d2b0,0x0061b1a0,0x0071d2b0
 16542,function,std::vector<unsigned int>::append,,0x0071d410,0x0083b530,0x0071d410
 16543,function,CCCreatureStats::UpdateQuickbarUsable,"One round-robin step per call, for the controlled creature or the one the GUI system shows (g_clientExoApp+0x158, +0x15C); needs +0x5C and +0x1B4: refresh the record at the cursor (+0x1BC), cursor++ while below count-1 (unsigned), else PublishQuickslotReasons and reset to 0. Called per frame by CCParty::UpdateMemberGuiStats 0x0062FD60 for each active member (the pool in camp), from the explore (combat's 0x0076E6C0 calls explore's), GUI and chargen updates, and by CCCreature::AIUpdate; also on equip, unequip, drop item, set quickslot, weapon-set switch and SetSelectedChar",0x0071d4a0,0x0061b4d0,0x0071d4a0
@@ -65612,7 +65612,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 65611,data,Notifications::vftable_at_1c,,0x00b05514,0x00b08604,0x00b05514
 65612,data,Notifications::vftable_at_8,,0x00b05570,0x00b08660,0x00b05570
 65613,data,Notifications::vftable,,0x00b05580,0x00b08670,0x00b05580
-65614,data,g_quickbarFieldIds,"Table of uint32, 5 used entries 0x3FB4, 0x3FB9, 0x3FBA, 0x3FBB, 0x3FBC (16308, 16313 to 16316): the GFF4 field ids of a creature's quickbar lists, indexed by PartyData::SaveQuickbars (0x0062B220), LoadQuickbars (0x0062C420) and CCCreatureStats::DefineCPS1Schema (0x0062D626)",0x00b05594,0x00af6010,0x00b05594
+65614,data,g_quickbarFieldIds,"Table of uint32, 5 used entries 0x3FB4, 0x3FB9, 0x3FBA, 0x3FBB, 0x3FBC (16308, 16313 to 16316): the GFF4 field ids of a creature's quickbar lists, indexed by PartyMemberAbilities::SaveQuickbars (0x0062B220), LoadQuickbars (0x0062C420) and CCCreatureStats::DefineCPS1Schema (0x0062D626)",0x00b05594,0x00af6010,0x00b05594
 65615,data,Destroyer::DestroyerHelper<AbilityInstance>::vftable,,0x00b055ac,0x00af6028,0x00b055ac
 65616,data,,,0x00b055b0,0x00af602c,0x00b055b0
 65617,data,,,0x00b055b4,0x00af6030,0x00b055b4
@@ -96951,7 +96951,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 96950,data,"SmartData::IndexedMemberLookup<ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>>::typeinfo",,0x00bff7a0,0x00bf4e30,0x00bff7a0
 96951,data,"SmartData::InternalStorage<ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>>::typeinfo",,0x00bff860,0x00bf4ef0,0x00bff860
 96952,data,"SmartData::ArrayMemberIteratorImpl<ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>>::typeinfo",,0x00bff920,0x00bf4fb0,0x00bff920
-96953,data,AbilityChains::s_outOfRangeEntry,"8-byte entry {int abilityId = 0, uint creatureId = -1} in the file, no immediate writer found: the ECDynArray out-of-range cell of the chain list (this+4 begin, +8 end, 8-byte elements); AbilityChains::RefreshReadyFlags (0x0062E7D0) and CollectEntriesNotIn (0x0062E2C0) fall back to it when an index is past the end, the ability id goes to PartyData::FindInstance (0x0062AF90) and the creature id to GetCreatureById, -1 is skipped; the rest of the listed size is RTTI.",0x00bff9e4,0x00bf5074,0x00bff9e4
+96953,data,AbilityChains::s_outOfRangeEntry,"8-byte entry {int abilityId = 0, uint creatureId = -1} in the file, no immediate writer found: the ECDynArray out-of-range cell of the chain list (this+4 begin, +8 end, 8-byte elements); AbilityChains::RefreshReadyFlags (0x0062E7D0) and CollectEntriesNotIn (0x0062E2C0) fall back to it when an index is past the end, the ability id goes to PartyMemberAbilities::FindInstance (0x0062AF90) and the creature id to GetCreatureById, -1 is skipped; the rest of the listed size is RTTI.",0x00bff9e4,0x00bf5074,0x00bff9e4
 96954,data,ToggleRunWalkMessage::s_classInfo,,0x00bff9f0,0x00bf1bc0,0x00bff9f0
 96955,data,ToggleRunWalkMessage::s_classInfo.parent,,0x00bff9f4,0x00bf1bc4,0x00bff9f4
 96956,data,FocusCameraOnObject::typeinfo,,0x00bff9f8,0x00bf1c28,0x00bff9f8
