@@ -28384,7 +28384,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28383,function,,,0x009503f0,0x00927b80,0x009503f0
 28384,function,,,0x009506f0,0x00927e80,0x009506f0
 28385,function,,,0x009507d0,0x00927f60,0x009507d0
-28386,function,,,0x00950870,0x00928000,0x00950870
+28386,function,GFxMovieRoot::HitTest,"(float x, float y, uint type) thiscall: Scaleform's HitTest. It maps the point through the view's viewport scale and offset, then hit-tests each level through the inverse of its matrix, by type 0 to 3 (switch at 0x0095096F; Scaleform's HitTest_Bounds, Shapes, ButtonEvents, ShapesNoInvisible). GFxMovieRoot vftable slot +0xA4. GUI::ScaleformManager::MoviesUnderPoint calls it there with type 3 (0x00515603, 0x00515621). Readings: paragon-agent and addr-lib-agent, 2026-11-11.",0x00950870,0x00928000,0x00950870
 28387,function,,,0x009509e0,0x00928170,0x009509e0
 28388,function,,,0x00950a90,0x00928220,0x00950a90
 28389,function,,,0x00950b90,0x00928320,0x00950b90
