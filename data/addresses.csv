@@ -9874,7 +9874,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9873,function,,,0x005b7f20,0x00819320,0x005b7f20
 9874,function,"std::vector<std::pair<std::wstring,std::wstring>>::erase","erase(first, last) of pairs of two wstrings (0x38 bytes)",0x005b7ff0,0x004c3860,0x005b7ff0
 9875,function,WStringMap<?>::Find,"finds a wide-string key and returns its value (node +0x28), or 0",0x005b8060,0x00720650,0x005b8060
-9876,function,SoundManager::LoadSoundSet,,0x005b80b0,0x007206a0,0x005b80b0
+9876,function,SoundManager::GetProjectGroupProperty,"(projectName, groupName, propertyName, int *out) ret 0x10, al result. Finds projectName in the SoundProjectMap at this+0x94 (std::map find 0x00A5E9F0) and, when it is loaded, returns the project's CContentBank_FMOD::GetGroupProperty (vftable 0x00AFF278 slot +0x14, 0x005C2290) with (group, property, out); false when the project is not loaded. It loads nothing: SoundManager::LoadProject 0x005BA220 does, and its one caller CCCreature::ForScript_SetSoundSet calls that first (0x006BD182), then this with L""VO"", L""Disable2DAProbabilities"" (0x006BD1E1). Was LoadSoundSet. Readings: lib-agent-2 and addr-lib-agent, 2026-11-11.",0x005b80b0,0x007206a0,0x005b80b0
 9877,function,WStringMap<?>::ClearAndDeleteValues,,0x005b8120,0x00720710,0x005b8120
 9878,function,,,0x005b8130,0x00720720,0x005b8130
 9879,function,,,0x005b8160,0x00720750,0x005b8160
