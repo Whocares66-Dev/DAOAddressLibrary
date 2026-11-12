@@ -33567,7 +33567,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33566,function,MovementParameters::MovementParameters,,0x00a62830,0x00708e70,0x00a62830
 33567,function,MovementPath::Free,,0x00a62880,0x00708ec0,0x00a62880
 33568,function,MovementPath::Reset,,0x00a62890,0x00708ed0,0x00a62890
-33569,function,MovementPath::Cancel,,0x00a62960,0x00708fa0,0x00a62960
+33569,function,MovementPath::Cancel,"(this) fastcall: only when the hold state this+0x18 is 2 (set by FinishDirectPath 0x00A62C30, after HoldAtWaypoint 0x00A62BC0 set 1) and the path's active byte ([this+0x14]) is set. Removes the two held waypoints, sets the next waypoint to 0 and the state to 0, and keeps the path object. Its one caller is CSSubActionHandler::MoveUpdate 0x007A92B2. Read 2026-11-11 (paragon-agent-2, addr-lib-agent).",0x00a62960,0x00708fa0,0x00a62960
 33570,function,MovementPath::SetStart,,0x00a62990,0x00708fd0,0x00a62990
 33571,function,MovementPath::SetGoal,,0x00a629c0,0x00709000,0x00a629c0
 33572,function,MovementPath::SetObstacle,,0x00a629f0,0x00709030,0x00a629f0
@@ -33575,8 +33575,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33574,function,MovementPath::RandomWaitMs,,0x00a62ae0,0x00709120,0x00a62ae0
 33575,function,MovementPath::MovementPath,,0x00a62b20,0x00709160,0x00a62b20
 33576,function,MovementPath::AddWaypoint,,0x00a62b90,0x007091d0,0x00a62b90
-33577,function,MovementPath::HoldAtWaypoint,,0x00a62bc0,0x00709200,0x00a62bc0
-33578,function,MovementPath::FinishDirectPath,,0x00a62c30,0x00709270,0x00a62c30
+33577,function,MovementPath::HoldAtWaypoint,"(this) fastcall: when the path (this+0x14) has waypoints (+0x74..+0x78, 12 bytes each), copies its current waypoint (index path+0x88) to this+0x20..+0x2C and sets the hold state this+0x18 = 1; otherwise sets it to 0. Called by CSSubActionHandler::MoveUpdate (0x007A9270, 0x007A9341). Read 2026-11-11 (paragon-agent-2, addr-lib-agent).",0x00a62bc0,0x00709200,0x00a62bc0
+33578,function,MovementPath::FinishDirectPath,"(this) thiscall: only when the hold state this+0x18 is 1 (HoldAtWaypoint). Removes all the path's waypoints, adds the held point (this+0x20) twice, sets the next waypoint to 1 and the state to 2. Called by CSSubActionHandler::MoveUpdate (0x007A9450) and ApproachMelee (0x007AA85D). Read 2026-11-11 (paragon-agent-2, addr-lib-agent).",0x00a62c30,0x00709270,0x00a62c30
 33579,function,MovementPath::LookAheadApproach,,0x00a62c90,0x007092d0,0x00a62c90
 33580,function,MovementPath::IsLongPath,,0x00a62e00,0x00709440,0x00a62e00
 33581,function,MovementPath::Clear,,0x00a62f30,0x00709570,0x00a62f30
