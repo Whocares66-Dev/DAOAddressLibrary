@@ -7990,7 +7990,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7989,function,GraphicsStructures::Object::AddAnimationTree,,0x0054d230,0x0074dd50,0x0054d230
 7990,function,GraphicsStructures::Object::RemoveAnimationTree,,0x0054d320,0x0074de40,0x0054d320
 7991,function,GraphicsStructures::Object::AcquireTrackRow,,0x0054d380,0x0074dea0,0x0054d380
-7992,function,GraphicsStructures::Object::RemoveAllAnimationTrees,,0x0054d4a0,0x0074dfc0,0x0054d4a0
+7992,function,GraphicsStructures::Object::RemoveAllAnimationTrees,"GraphicsStructures::Object vftable 0x00AF85DC slot +0x60, its only table. Reached through CCObject::GetModelObject then the interface's slot +0x4C (AsAnimatable): CutscenePlayer::Teardown 0x007E1616, Conversation::BindLookAt (after 0x007F26A5). Read 2026-11-12.",0x0054d4a0,0x0074dfc0,0x0054d4a0
 7993,function,GraphicsStructures::Object::BuildClipLists,,0x0054d4b0,0x0074dfd0,0x0054d4b0
 7994,function,GraphicsStructures::Object::CreateNodePhysicsActors,,0x0054d730,0x0074e250,0x0054d730
 7995,function,GraphicsStructures::Object::AddRenderableNode,,0x0054d790,0x0074e2b0,0x0054d790
@@ -14096,7 +14096,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14095,function,CCCreature::SetRootMotionEndTime,,0x00695780,0x00586740,0x00695780
 14096,function,CCCreature::AnimationStepLength,,0x006957a0,0x00586760,0x006957a0
 14097,function,CCObject::OnAnimEventDetonateEmitter,,0x006958a0,0x00586860,0x006958a0
-14098,function,CCObject::GetModelObject,,0x006958d0,0x00586890,0x006958d0
+14098,function,CCObject::GetModelObject,"(this) thiscall: the object's current model, as its interface at GraphicsStructures::Object+8 (vftable 0x00AF8434, GraphicsStructures::Object::vftable_at_8), or 0. It calls slot +0x60 of the CCObject vftable at this+0x70, CCObject::GetAnimation 0x0069A000 (the AnimBase at this+0x154), then returns [[anim+0x18]+4], AnimModelLods::currentModel. Callers then use that interface's slots: +0x4C AsAnimatable 0x0054F790 (lea eax,[ecx-8]: the Object itself, primary vftable 0x00AF85DC), +0x5C AsRenderable, +0x60 AsFaceAnimatable. 0x0054F790 sits in no other table, so a call through this result resolves to GraphicsStructures::Object. Read 2026-11-12.",0x006958d0,0x00586890,0x006958d0
 14099,function,CCObject::PlayOnAnimBase,,0x006958f0,0x005868b0,0x006958f0
 14100,function,CCObject::ClearByte_0x250,,0x00695970,0x00586930,0x00695970
 14101,function,CCObject::ApplyRootMotion,,0x00695980,0x00586940,0x00695980
@@ -21037,7 +21037,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21036,function,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>::~map",,0x007e0e90,0x006c82e0,0x007e0e90
 21037,function,"std::map<unsigned int,CutscenePlayer::ActorDependencyList>::operator[]",,0x007e0f20,0x006c8370,0x007e0f20
 21038,function,std::vector<CutscenePlayer::BindRecord>::push_back,,0x007e1000,0x006c8450,0x007e1000
-21039,function,CutscenePlayer::Teardown,,0x007e10a0,0x006c84f0,0x007e10a0
+21039,function,CutscenePlayer::Teardown,"Indirect sites read 2026-11-12: 0x007E1601 CCObject::GetModelObject on [esp+0x1C] gives the model interface (GraphicsStructures::Object+8). 0x007E160D calls its slot +0x4C, GraphicsStructures::Object::AsAnimatable 0x0054F790, which returns the Object. 0x007E1616 calls that Object's slot +0x60 (vftable 0x00AF85DC), GraphicsStructures::Object::RemoveAllAnimationTrees 0x0054D4A0: the actor model's animation trees are dropped. Conversation::BindLookAt does the same at 0x007F26A5.",0x007e10a0,0x006c84f0,0x007e10a0
 21040,function,CutscenePlayer::Load,"+0x14, the last frame, is ftol(fps * run time), truncated (0x007E1B27): fps +4 (field 5016, default 30, read only while EclipseGame +0x254 is 0), run time +8 (field 5000)",0x007e1910,0x006c8d60,0x007e1910
 21041,function,EC::Cutscene::Actor::FindFollowerAniHackEntry,,0x007e2210,0x006c9660,0x007e2210
 21042,function,std::vector<CutscenePlayer::BindRecord>::vector,,0x007e2660,0x006c9ab0,0x007e2660
