@@ -28339,7 +28339,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28338,function,,,0x0094e510,0x00925ca0,0x0094e510
 28339,function,,,0x0094e570,0x00925d00,0x0094e570
 28340,function,,,0x0094e5f0,0x00925d80,0x0094e5f0
-28341,function,,,0x0094e6d0,0x00925e60,0x0094e6d0
+28341,function,GFxMovieRoot::GetTopMostEntity,Picks the topmost entity at the event point for the mouse; called from GFxMovieRoot::Advance (ID 28507),0x0094e6d0,0x00925e60,0x0094e6d0
 28342,function,,,0x0094e750,0x00925ee0,0x0094e750
 28343,function,,,0x0094e7a0,0x00925f30,0x0094e7a0
 28344,retired,,,,,
@@ -28406,7 +28406,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28405,function,,,0x00952020,0x009296e0,0x00952020
 28406,function,,,0x00952090,0x00929750,0x00952090
 28407,function,,,0x009520e0,0x00929810,0x009520e0
-28408,function,,,0x00952150,0x00929880,0x00952150
+28408,function,GFxMouseState::SetActiveEntity,Stores the active entity and keeps the previous one,0x00952150,0x00929880,0x00952150
 28409,function,,,0x009521f0,0x00929920,0x009521f0
 28410,function,,,0x00952330,0x00929a60,0x00952330
 28411,function,,,0x00952420,0x00929b50,0x00952420
@@ -28464,7 +28464,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28463,function,,,0x00955c70,0x0092d3c0,0x00955c70
 28464,function,,,0x00955df0,0x0092d540,0x00955df0
 28465,function,,,0x00955e30,0x0092d580,0x00955e30
-28466,function,,,0x00955f90,0x0092d6e0,0x00955f90
+28466,function,GFxMovieRoot::InsertEmptyAction,Appends to a per-priority action queue,0x00955f90,0x0092d6e0,0x00955f90
 28467,function,,,0x00956050,0x0092d7a0,0x00956050
 28468,function,,,0x009560d0,0x0092d820,0x009560d0
 28469,function,,,0x00956140,0x0092d890,0x00956140
@@ -28481,7 +28481,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28480,function,,,0x00956830,0x0092df80,0x00956830
 28481,function,,,0x009568f0,0x0092e040,0x009568f0
 28482,function,,,0x00956910,0x0092e060,0x00956910
-28483,function,,,0x009569d0,0x0092e120,0x009569d0
+28483,function,GFxMovieRoot::DoActions,Drains the action queue,0x009569d0,0x0092e120,0x009569d0
 28484,function,,,0x00956a20,0x0092e170,0x00956a20
 28485,function,,,0x00956c00,0x0092e350,0x00956c00
 28486,function,,,0x00956df0,0x0092e540,0x00956df0
@@ -28709,7 +28709,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28708,function,,,0x00965110,0x0093c910,0x00965110
 28709,function,,,0x00965140,0x0093c940,0x00965140
 28710,function,,,0x00965190,0x0093c990,0x00965190
-28711,function,,,0x009652d0,0x0093cad0,0x009652d0
+28711,function,GFxSprite::OnButtonEvent,GFxSprite vtable slot +0xDC; passes events it does not handle to the parent,0x009652d0,0x0093cad0,0x009652d0
 28712,function,,,0x00965320,0x0093cb20,0x00965320
 28713,function,,,0x00965350,0x0093cb50,0x00965350
 28714,function,,,0x00965390,0x0093cb90,0x00965390
@@ -28747,7 +28747,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28746,function,,,0x00965e70,0x0093d670,0x00965e70
 28747,function,,,0x00965f20,0x0093d720,0x00965f20
 28748,function,,,0x00965f90,0x0093d790,0x00965f90
-28749,function,,,0x00966020,0x0093d820,0x00966020
+28749,function,GFxSprite::PropagateMouseEvent,GFxSprite vtable slot +0x84,0x00966020,0x0093d820,0x00966020
 28750,function,,,0x00966080,0x0093d880,0x00966080
 28751,function,,,0x009660e0,0x0093d8e0,0x009660e0
 28752,function,,,0x00966150,0x0093d950,0x00966150
@@ -28795,7 +28795,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28794,retired,,,,,
 28795,function,,,0x00967ab0,0x0093f330,0x00967ab0
 28796,function,,,0x00967b70,0x0093f3f0,0x00967b70
-28797,function,,,0x00967c90,0x0093f510,0x00967c90
+28797,function,GFxSprite::OnEvent,"GFxSprite vtable slot +0x6C; plays the _up/_down/_over frames, then queues the clip handler",0x00967c90,0x0093f510,0x00967c90
 28798,function,,,0x00967f10,0x0093f790,0x00967f10
 28799,function,,,0x00967f80,0x0093f800,0x00967f80
 28800,function,,,0x00967fc0,0x0093f840,0x00967fc0
@@ -28917,7 +28917,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28916,function,,,0x0096ee10,0x00990780,0x0096ee10
 28917,function,,,0x0096ee80,0x00946600,0x0096ee80
 28918,function,,,0x0096ef20,0x009466a0,0x0096ef20
-28919,function,,,0x0096ef90,0x00946710,0x0096ef90
+28919,function,GFx_GenerateMouseEvents,Emits button events 0x400 to 0x10000 for a change of mouse state,0x0096ef90,0x00946710,0x0096ef90
 28920,function,,,0x0096f340,0x00903e90,0x0096f340
 28921,function,,,0x0096f3b0,0x00946ac0,0x0096f3b0
 28922,function,,,0x0096f470,0x00946b80,0x0096f470
