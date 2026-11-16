@@ -9812,7 +9812,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9811,function,SoundEventInstance::Set3DPosition,,0x005b67d0,0x0071f070,0x005b67d0
 9812,function,SoundEventInstance::Set3DOrientation,,0x005b67f0,0x0071f090,0x005b67f0
 9813,function,SoundEventInstance::SetOrientationFromQuat,,0x005b6810,0x0071f0b0,0x005b6810
-9814,function,SoundEventInstance::GetProjectName,,0x005b6860,0x0071f100,0x005b6860
+9814,function,SoundEventInstance::GetEventPath,"Copies the content's name (the event path, content+0x1C) into the out string; when the content reports a sound-definition index of 0 or more (content slot 0xA8, 0x005B68DA), the part after the last / is replaced by that line's name (template voice lines). Answers false with no content. Used by StopByPath (0x005BA100) to compare with a path, by PinProject (0x005BAF30) to cut the project name, by ParseEventParameters for its log text.",0x005b6860,0x0071f100,0x005b6860
 9815,function,SoundEventInstance::SetPitchOffset,,0x005b6980,0x0071f220,0x005b6980
 9816,function,SoundEventInstance::SetReverbPresetName,,0x005b69a0,0x0071f240,0x005b69a0
 9817,function,SoundEventInstance::ApplyReverbInstance,,0x005b69d0,0x0071f270,0x005b69d0
@@ -9914,7 +9914,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9913,function,MusicThemeWrapper::MusicThemeWrapper,,0x005b9710,0x00721c30,0x005b9710
 9914,function,SoundEventInstance::ParseEventParameters,,0x005b9750,0x00721c70,0x005b9750
 9915,function,SoundManager::StopAllEmitters,,0x005ba090,0x007225b0,0x005ba090
-9916,function,ScriptBackend::ForScript_StopSound,,0x005ba100,0x00722620,0x005ba100
+9916,function,SoundManager::StopByPath,"Stops (not immediately) every live instance in the manager's list (+0xAC..+0xB0) whose GetEventPath equals the path argument. ECX = SoundManager::Get() (0x00651201..0x00651203 in STOPSOUND). 10 callers, among them SoundEventInstance::Resolve, the ducking events and the interface.",0x005ba100,0x00722620,0x005ba100
 9917,function,SoundManager::LoadProject,,0x005ba220,0x00722740,0x005ba220
 9918,function,SoundEventInstance::SoundEventInstance,,0x005ba240,0x00722760,0x005ba240
 9919,function,SoundEventInstance::~SoundEventInstance,,0x005ba350,0x00722870,0x005ba350
@@ -9931,7 +9931,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9930,function,SoundManager::Shutdown,,0x005bbf60,0x00724480,0x005bbf60
 9931,function,SoundManager::UpdatePlaybackLimits,,0x005bbff0,0x00724510,0x005bbff0
 9932,function,SoundManager::ApplyVolumeOptions,,0x005bc2f0,0x00724810,0x005bc2f0
-9933,function,ScriptBackend::ForScript_PlaySound,,0x005bc7f0,0x00724d10,0x005bc7f0
+9933,function,SoundManager::PlayOneShot,"The manager's general play-one-shot (ECX = SoundManager::Get(), 0x0065CF8C..0x0065CF93 in PLAYSOUND; 12 callers). Empty path: nothing. New SoundEventInstance (push 0xC8 at 0x005BC835), Resolve(path, loadProject, false, 0), PinProject(false) which marks it owned by the manager, optional Set3DPosition, optional SoundPlayParams (bit 1 volume dB, 2 pitch offset, 4 cutscene distance scale, 8 occludable byte, 0x10 one named parameter), Start(0, scale). A failed resolve or start deletes the instance; SoundManager::Update deletes it when it has finished.",0x005bc7f0,0x00724d10,0x005bc7f0
 9934,function,SoundManager::PlayOnEmitter,,0x005bc940,0x00724e60,0x005bc940
 9935,function,SoundManager::PlayWeaponHitSound,,0x005bcab0,0x00724fd0,0x005bcab0
 9936,function,MusicController::UpdateDucks,,0x005bccd0,0x007251f0,0x005bccd0
@@ -14858,7 +14858,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14857,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Set",,0x006b3f80,0x005a5a10,0x006b3f80
 14858,function,ChunkPool<8>::Grow,,0x006b3fc0,0x005a5a50,0x006b3fc0
 14859,function,CCCreature::InitMembers,,0x006b4070,0x005a5b00,0x006b4070
-14860,function,ScriptBackend::ForScript_PlaySoundSet,,0x006b5740,0x005a71d0,0x006b5740
+14860,function,CCCreature::PlaySoundSet,"Plays a creature's sound-set line; ECX is the creature (0x006B759B..0x006B75A0 in HandleMessage_PlaySoundSetEntryMessage, 0x007660EF in the party picker's SelectEntry). Unless a voice is already playing (and the force argument is clear) or the creature has no sound set: reads tables sst_<set> and sse_<set>, picks an entry through the manager's shuffle bag (PickRandomSoundSetEntry, AddSoundSetEntries), and plays it. 5 callers.",0x006b5740,0x005a71d0,0x006b5740
 14861,function,CCCreature::ApplyAnimationTree,,0x006b5b30,0x005a75c0,0x006b5b30
 14862,function,CCCreature::RemoveTemporaryAnimationTrees,,0x006b5d00,0x005a7790,0x006b5d00
 14863,function,CCCreature::SetActive,,0x006b5d90,0x005a7820,0x006b5d90
@@ -20312,14 +20312,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20311,function,SyncAlign::StopPartnerRate,,0x007c1ea0,0x006a2150,0x007c1ea0
 20312,function,SyncAlign::~SyncAlign,,0x007c1ee0,0x006a2190,0x007c1ee0
 20313,function,CCSoundObject::CCSoundObject,,0x007c1f10,0x006a4340,0x007c1f10
-20314,function,ScriptBackend::ForScript_StopSoundObject,,0x007c1ff0,0x006a4420,0x007c1ff0
+20314,function,CCSoundObject::Stop,"With an instance (+0x440): playing-asked (+0x4A1) = 0, then SoundEventInstance::Stop(0). Callers: SOUNDOBJECTSTOP, SetInWorld 0x007C2090, SetActive 0x007C2190.",0x007c1ff0,0x006a4420,0x007c1ff0
 20315,function,CCSoundObject::OnPositionChanged,,0x007c2010,0x006a4440,0x007c2010
 20316,function,CCSoundObject::OnOrientationChanged,,0x007c2040,0x006a4470,0x007c2040
 20317,function,CCSoundObject::SetAddToAreaFlag,,0x007c2060,0x006a4490,0x007c2060
 20318,function,CCSoundObject::`scalar deleting destructor'`adjustor{52}',,0x007c2070,0x006a44b0,0x007c2070
 20319,function,CCSoundObject::`scalar deleting destructor'`adjustor{56}',,0x007c2080,0x006a44d0,0x007c2080
-20320,function,CCSoundObject::SetActive,,0x007c2090,0x006a44e0,0x007c2090
-20321,function,ScriptBackend::ForScript_PlaySoundObject,,0x007c20f0,0x006a4540,0x007c20f0
+20320,function,CCSoundObject::SetInWorld,"Vtable slot 80 (byte offset 0x140): the override of CCObject::SetActive (0x00698CD0), which it does not call. Stores the argument at +0x4A2 (in the world); true makes the event instance by slot 112 when +0x440 is null, false stops the sound (CCSoundObject::Stop) and deletes the instance. Called through the slot for every sound object by CCArea::SetSoundsAndMusicActive (0x0067C1CB..0x0067C1D2). The other SetActive, 0x007C2190, writes +0x4A0.",0x007c2090,0x006a44e0,0x007c2090
+20321,function,CCSoundObject::Play,"With an instance (+0x440): playing-asked (+0x4A1) = 1, the reverb preset at its place (CCArea::GetReverbPresetAtPoint, the area from vtable slot 0xA0) given to the instance, then SoundEventInstance::Start(0, false). Callers: SOUNDOBJECTPLAY (ECX = the object from the cast at 0x0065BD74), AIUpdate 0x007C2150, SetActive 0x007C2190.",0x007c20f0,0x006a4540,0x007c20f0
 20322,function,CCSoundObject::AIUpdate,,0x007c2150,0x006a45a0,0x007c2150
 20323,function,CCSoundObject::SetActive,,0x007c2190,0x006a45e0,0x007c2190
 20324,function,CCSoundObject::ReadFields,,0x007c21c0,0x006a4610,0x007c21c0
