@@ -24186,7 +24186,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24185,function,InputWord::MakeKeyboard,,0x00880570,0x00456ff0,0x00880570
 24186,function,InputWord::MakeMouse,,0x00880590,0x00457010,0x00880590
 24187,function,InputWord::MakeAxis,,0x008805b0,0x004571e0,0x008805b0
-24188,function,InputWord::MakeNumbered,,0x008805d0,0x00457030,0x008805d0
+24188,function,InputWord::MakeGamepad,"Makes an input word of device 4 (the gamepad): the code OR 0x40000000, ret 4, returns ECX. InputWord::Validated 0x00880C40 accepts a device-4 word only when InputCode::IsGamepadButton (0x00880670, codes 0..0x1F) says so; InputMapper::BuildKeyNames calls it 36 times for the gamepad key names and Input::RegisterActions 0x006E30D0 for the gamepad bindings. Was named MakeNumbered.",0x008805d0,0x00457030,0x008805d0
 24189,function,InputWord::StripModifiers,,0x008805f0,0x00457050,0x008805f0
 24190,function,InputWord::GetCode,,0x00880610,0x00457070,0x00880610
 24191,function,InputWord::GetModifiers,,0x00880620,0x00457080,0x00880620
@@ -24391,12 +24391,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24390,function,"std::map<int,std::wstring>::find",,0x00895e40,0x00a43660,0x00895e40
 24391,function,Input::RegisterInputName,,0x00895eb0,0x00a43980,0x00895eb0
 24392,function,Input::RegisterInputNames,,0x00895f10,0x00a439e0,0x00895f10
-24393,function,,,0x008973e0,0x004684e0,0x008973e0
-24394,function,,,0x008973f0,0x004684f0,0x008973f0
-24395,function,,,0x00897400,0x00468500,0x00897400
-24396,function,,,0x00897410,0x00468510,0x00897410
-24397,function,,,0x00897420,0x00468520,0x00897420
-24398,function,,,0x00897430,0x00468530,0x00897430
+24393,function,Input::StateAnswer::StateAnswer,"The empty state answer, an 8-byte value-and-tag pair that Input::DeviceStates::GetInputState fills in: stores tag 3 (no device answered) at +4 and leaves the value at +0 (0x008973E2); returns ECX, plain ret. Called on a local by Input::IsDown, IntValue, FloatValue and AxisPair before the query.",0x008973e0,0x004684e0,0x008973e0
+24394,function,Input::StateAnswer::AsBool,"Reads a state answer as a bool: 0 when the tag at +4 is 3 (empty), else the byte at +0 (0x008973F0..0x008973F9). Called by Input::IsDown.",0x008973f0,0x004684f0,0x008973f0
+24395,function,Input::StateAnswer::AsInt,"Reads a state answer as an int: 0 when the tag at +4 is 3 (empty), else the dword at +0 (0x00897400..0x00897409). Called by Input::IntValue and Input::AxisPair.",0x00897400,0x00468500,0x00897400
+24396,function,Input::StateAnswer::AsFloat,"Reads a state answer as a float: 0.0 when the tag at +4 is 3 (empty), else the float at +0 (0x00897410..0x00897419). Called by Input::FloatValue.",0x00897410,0x00468510,0x00897410
+24397,function,Input::StateAnswer::SetBool,"Stores a bool (one byte at +0) and tag 0 at +4 of the state answer, ret 4. Called by ECInput::RawInputWin32::IsKeyDownWithModifiers and QueryMouseState (0x0087E173, 0x0087E1B9 and the other button cases) with the button's state.",0x00897420,0x00468520,0x00897420
+24398,function,Input::StateAnswer::SetInt,"Stores an int at +0 and tag 1 at +4 of the state answer, ret 4. Called by ECInput::RawInputWin32::QueryAxisState with the cursor x or y (+4, +8) and by QueryMouseState (0x0087E128) with the mouse x or y (+0x14, +0x18).",0x00897430,0x00468530,0x00897430
 24399,function,,,0x00897440,0x00a3a820,0x00897440
 24400,function,,,0x00897460,0x00a3a840,0x00897460
 24401,function,,,0x00897480,0x00a3a860,0x00897480
