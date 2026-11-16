@@ -19,13 +19,13 @@ Run them from the repository's root, at below-normal priority, with the ghidra-d
 
 | Command | Writes | Time |
 |---|---|---|
-| `python tools/facts_dump.py --changed` | records missing, or whose function or a type its decompile goes through changed | about 5 min to hash, then 0.2 s a record |
-| `python tools/facts_dump.py --missing` | functions with no record | 0.2 s a record |
-| `python tools/facts_dump.py --all` | every function (about 60,000) | about 3.5 h |
-| `python tools/facts_dump.py 0x0069BD60 ...` or `--from FILE` | those addresses, `{}` where no function begins | 0.2 s a record |
+| `python tools/facts_dump.py --changed` | records missing, or whose function or a type its decompile goes through changed | about 17 min to hash, then 0.1 s a record |
+| `python tools/facts_dump.py --missing` | functions with no record | 0.1 s a record |
+| `python tools/facts_dump.py --all` | every function (about 60,000) | about 1.7 h |
+| `python tools/facts_dump.py 0x0069BD60 ...` or `--from FILE` | those addresses, `{}` where no function begins | 0.1 s a record |
 | `python tools/facts_dump.py --check 30` | nothing: compares 30 records made here with the server's own `get_code`, byte for byte | about 1 min |
 
-`--workers N` decompiles on N threads; the default is one, and more is for when the machine's cores are free (the user, 2026-11-16: "don't use parallelism yet. We have cores occupied by other things").
+The times are one worker's at below-normal priority, measured 2026-11-16 on the whole store (59,657 functions). `--workers N` decompiles on N threads; the default is one, and more is for when the machine's cores are free (the user, 2026-11-16: "don't use parallelism yet. We have cores occupied by other things").
 
 A run can be stopped at any point: each record is written atomically as its batch returns. Set `CHAIN_CACHE` to a scratch folder to try a change to the tool without touching the store.
 
