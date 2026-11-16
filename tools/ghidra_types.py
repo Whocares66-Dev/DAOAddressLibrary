@@ -33,7 +33,11 @@ So, in order:
   unless it is one of those two kinds: syncs before 2026-11-16 put the
   note on Ghidra's own as well, so the note alone does not make a thing
   the table's (six rows had a base's vftable pointer at the base's offset
-  in a CCObject, corrected 2026-11-16). Ghidra has many classes short
+  in a CCObject, corrected 2026-11-16). Those syncs also gave a nested
+  class's data the name of the table's field at its first byte: a
+  controller's whole base, 108 bytes, was `rig` for the pointer at +4,
+  and the decompiler wrote `(this->rig).field_0x26`. Such a one takes
+  back its type's name. Ghidra has many classes short
   (GraphicsStructures::Object 40 bytes of 784), and past a type's end the
   decompiler writes `this[1].field_0x4` for `this + 0x6dc`: the class's
   own type grows to the table's size and to a field past its end. Many of
@@ -185,7 +189,7 @@ SCALAR = {
 }
 for key in ("placeholders", "typed", "untyped", "beyond", "blocked", "built", "renamed",
             "slots", "classes", "grown", "unpacked", "damage", "typedfixes", "notype",
-            "noroom", "eh", "byvalue", "dropped", "nothis"):
+            "noroom", "eh", "byvalue", "dropped", "nothis", "restored"):
     done.setdefault(key, 0)
 unresolved = {}
 
@@ -435,7 +439,8 @@ def merge_field(owner, parts, name, size, offset, length, tree, field):
                 same_type(unit.getDataType(), kind) if kind is not None
                 else unit.getLength() == length or not Undefined.isUndefined(unit.getDataType())):
         return
-    if kind is not None and unit is not None and unit.getOffset() == at             and same_type(unit.getDataType(), kind):
+    if kind is not None and unit is not None and unit.getOffset() == at and same_type(
+            unit.getDataType(), kind):
         # Already the table's type: the row was renamed.
         done["classfields"] += 1
         if not dry:
@@ -473,14 +478,25 @@ NOTE = re.compile(r"^(.+) \+0x([0-9A-F]+) \(%s\)$" % re.escape(OURS))
 
 
 def drop_stale(wrote):
-    # A field the table wrote at a place it no longer has one.
+    # A field the table wrote at a place it no longer has one; and a nested
+    # class's data an old sync named for a field of another length.
     for shape in list(dtm.getAllStructures()):
         if not shape.getCategoryPath().isAncestorOrSelf(ROOT) or shape.getDescription() == OURS:
             continue
         stale = []
         for unit in shape.getDefinedComponents():
             found = NOTE.match(unit.getComment() or "")
-            if found and (found.group(1), int(found.group(2), 16)) not in wrote                     and not is_kept(unit):
+            if not found:
+                continue
+            length = wrote.get((found.group(1), int(found.group(2), 16)))
+            kind = unit.getDataType()
+            if isinstance(kind, Structure):
+                if length != unit.getLength():
+                    done["restored"] += 1
+                    if not dry:
+                        unit.setFieldName(kind.getName())
+                        unit.setComment(None)
+            elif length is None and not is_kept(unit):
                 stale.append(unit.getOffset())
         done["dropped"] += len(stale)
         if stale and not dry:
@@ -714,7 +730,8 @@ if W.get("types"):
         except Exception as e:
             faults.append("struct %s: %s" % (name, e))
     try:
-        drop_stale({(name, offset) for name, _, _, fields in W["structs"] for offset, _, _, _ in fields})
+        drop_stale({(name, offset): length
+                    for name, _, _, fields in W["structs"] for offset, length, _, _ in fields})
     except Exception as e:
         faults.append("dropped fields: %s" % e)
     # The folder nothing pointed at.

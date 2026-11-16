@@ -702,7 +702,8 @@ def main(argv):
             f"{totals['grown']} class types grown to a field, {totals['beyond']} past a nested type's end, {totals['blocked']} on a vftable "
             f"pointer or nested class, {totals['placeholders']} placeholders replaced ({totals['byvalue']} by-value uses made bytes), "
             f"{totals['classes']} namespaces made classes, {totals['unpacked']} types unpacked, "
-            f"{totals['renamed']} offset_0xN renamed, {totals['dropped']} fields the table no longer has cleared"
+            f"{totals['renamed']} offset_0xN renamed, {totals['dropped']} fields the table no longer has cleared, "
+            f"{totals['restored']} nested classes given back their own name"
         )
         if notes.get("unresolved"):
             print(
