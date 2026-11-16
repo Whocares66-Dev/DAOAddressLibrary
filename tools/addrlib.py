@@ -66,6 +66,7 @@ import os
 import struct
 import subprocess
 import sys
+import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.normpath(os.path.join(HERE, ".."))
@@ -117,8 +118,25 @@ def write_if_changed(path, text):
         with open(path, encoding="utf-8", newline="") as f:
             if f.read().replace("\r\n", "\n") == text:
                 return False
-    with open(path, "w", encoding="utf-8", newline="") as f:
-        f.write(text)
+    # Written beside and moved over, so a write that fails (the file open in
+    # another process, as on 2026-11-16 with a reader's lookup; a full disk)
+    # leaves the table as it was and never a part of it.
+    beside = f"{path}.{os.getpid()}.tmp"
+    try:
+        with open(beside, "w", encoding="utf-8", newline="") as f:
+            f.write(text)
+        for attempt in range(20):
+            try:
+                os.replace(beside, path)
+                break
+            except PermissionError:
+                # Windows refuses while a reader has the table open.
+                if attempt == 19:
+                    raise
+                time.sleep(0.25)
+    finally:
+        if os.path.exists(beside):
+            os.remove(beside)
     return True
 
 
