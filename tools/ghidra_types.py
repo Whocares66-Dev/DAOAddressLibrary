@@ -51,7 +51,11 @@ So, in order:
 - the recovered types' own names for what they guessed, offset_0xN with N
   counted from after the vptr or from the start of <Class>_data, become
   field_0xN with N the offset in the class, which is what a reader takes
-  them for (four readers were misled by 2026-11-05);
+  them for (four readers were misled by 2026-11-05). The bytes of
+  <Class>_data that nothing has defined had no name at all, and the
+  decompiler made one from the byte's place in <Class>_data, the same
+  wrong count (paragon-agent's writers, 2026-11-16: a sheet copied
+  `field_0x20` for +0xA4): each is defined a byte named field_0xN too;
 - each vftable's slots take the names and prototypes of the functions in
   them, where the table names the function: `(*this->vftablePtr->vfunction34)()`
   reads `(*this->vftablePtr->PropagateMouseEvent)()`, with that function's
@@ -166,6 +170,8 @@ from ghidra.program.model.data import (
     Structure,
     StructureDataType,
     Undefined,
+    Undefined1DataType,
+    Undefined4DataType,
     UnionDataType,
     UnsignedCharDataType,
     UnsignedIntegerDataType,
@@ -189,7 +195,7 @@ SCALAR = {
 }
 for key in ("placeholders", "typed", "untyped", "beyond", "blocked", "built", "renamed",
             "slots", "classes", "grown", "unpacked", "damage", "typedfixes", "notype",
-            "noroom", "eh", "byvalue", "dropped", "nothis", "restored"):
+            "noroom", "eh", "byvalue", "dropped", "nothis", "restored", "filled"):
     done.setdefault(key, 0)
 unresolved = {}
 
@@ -517,6 +523,33 @@ def true_offsets(owner, leaf):
                 done["renamed"] += 1
                 if not dry:
                     unit.setFieldName("field_0x%X" % (base + unit.getOffset()))
+        if base and not shape.isPackingEnabled():
+            # A byte nobody has defined has no name, and the decompiler
+            # makes one from where it is in <leaf>_data: GameModeCutscene's
+            # +0xA4 read `(this->GameModeCutscene_data).field_0x20`. Each is
+            # named for its place in the class: four bytes together where
+            # they are a word of the object (as bytes apart, a store of a
+            # word read as four stores of a byte each, in 74 functions of
+            # 743 tried), a byte alone otherwise.
+            def free(i):
+                unit = shape.getComponentContaining(i)
+                return i < shape.getLength() and (
+                    unit is None or unit.getDataType().getName() == "undefined")
+
+            at = 0
+            while at < shape.getLength():
+                if not free(at):
+                    unit = shape.getComponentContaining(at)
+                    at = unit.getOffset() + max(1, unit.getLength())
+                    continue
+                word = (base + at) % 4 == 0 and free(at + 1) and free(at + 2) and free(at + 3)
+                size = 4 if word else 1
+                done["filled"] += size
+                if not dry:
+                    shape.replaceAtOffset(
+                        at, Undefined4DataType.dataType if word else Undefined1DataType.dataType,
+                        size, "field_0x%X" % (base + at), None)
+                at += size
 
 
 def namespace_of(parts):

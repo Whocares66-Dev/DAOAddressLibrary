@@ -703,7 +703,8 @@ def main(argv):
             f"pointer or nested class, {totals['placeholders']} placeholders replaced ({totals['byvalue']} by-value uses made bytes), "
             f"{totals['classes']} namespaces made classes, {totals['unpacked']} types unpacked, "
             f"{totals['renamed']} offset_0xN renamed, {totals['dropped']} fields the table no longer has cleared, "
-            f"{totals['restored']} nested classes given back their own name"
+            f"{totals['restored']} nested classes given back their own name, "
+            f"{totals['filled']} undefined bytes of a class's data named for their place"
         )
         if notes.get("unresolved"):
             print(
