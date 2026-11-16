@@ -208,7 +208,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 207,function,"SmartData::MapMemberIteratorImpl<ECBase::ECHashMap<unsigned int,SmartData::IAttribute*,ECBase::ECHashParams<unsigned int>>>::GetValue",,0x00406840,0x00406ca0,0x00406840
 208,function,"std::list<std::pair<unsigned int,std::wstring>>::clear",,0x00406880,0x007c15f0,0x00406880
 209,function,EclipseGame::DestroyScene,,0x004068c0,0x00406d20,0x004068c0
-210,function,,,0x00406970,0x00406dd0,0x00406970
+210,function,std::wstring::append,"std::wstring::append(size_t count, wchar_t ch), ret 8: checks the length (0x7FFFFFFE), grows with _Copy 0x00405EB0 when over capacity, fills count characters (0x00409030), NUL-terminates. Called with 0x5F ('_') and 1 at 0x00A666AD in Items::GetVariationNames.",0x00406970,0x00406dd0,0x00406970
 211,function,,,0x00406a20,0x00406e80,0x00406a20
 212,function,std::vector<std::wstring>::~vector,,0x00406a60,0x0083de00,0x00406a60
 213,function,,,0x00406ab0,0x00406ee0,0x00406ab0
@@ -4474,7 +4474,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4473,function,WideEqualNoCase,,0x004c0350,0x00802420,0x004c0350
 4474,function,,,0x004c03c0,0x005f3a00,0x004c03c0
 4475,function,,,0x004c03f0,0x00802490,0x004c03f0
-4476,function,,,0x004c04c0,0x00802560,0x004c04c0
+4476,function,std::wstring::rfind,"std::wstring::rfind(const wchar_t*, size_t pos, size_t n), ret 0xC: scans backwards from min(pos, size-n) comparing n characters; returns the index or -1 (0x004C059E). The other two overloads 0x004C1030 (NUL-terminated string) and 0x004C1070 (one character) call it.",0x004c04c0,0x00802560,0x004c04c0
 4477,function,,,0x004c05b0,0x00802650,0x004c05b0
 4478,function,,,0x004c0640,0x008026e0,0x004c0640
 4479,function,,,0x004c06e0,0x00802780,0x004c06e0
@@ -4506,13 +4506,13 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4505,function,std::wstring::find,,0x004c0f70,0x00802da0,0x004c0f70
 4506,function,ECBase::ECString::Find,,0x004c0fb0,0x00802de0,0x004c0fb0
 4507,function,std::wstring::find,,0x004c1000,0x00802e30,0x004c1000
-4508,function,,,0x004c1030,0x00802e60,0x004c1030
-4509,function,,,0x004c1070,0x00802ea0,0x004c1070
+4508,function,std::wstring::rfind,,0x004c1030,0x00802e60,0x004c1030
+4509,function,std::wstring::rfind,"std::wstring::rfind(wchar_t): stores the character on the stack and calls the pointer form 0x004C04C0 with the address, npos (-1) and length 1; ret 4.",0x004c1070,0x00802ea0,0x004c1070
 4510,function,,,0x004c1090,0x00802ec0,0x004c1090
 4511,function,,,0x004c10c0,0x00802ef0,0x004c10c0
 4512,function,,,0x004c10f0,0x00802f20,0x004c10f0
 4513,function,,,0x004c1120,0x00802f50,0x004c1120
-4514,function,,,0x004c1150,0x00802f80,0x004c1150
+4514,function,ECBase::ECString::Crc32,"Crc32Wide over the wstring's characters (inline buffer or heap pointer chosen by the capacity at +0x18, length at +0x14); the game's column and table name hash (lower-case UTF-16LE CRC-32, e.g. ""type"" gives 0x12A02374). Used for itemprps.ScalingVector at 0x007593C2.",0x004c1150,0x00802f80,0x004c1150
 4515,function,,,0x004c1180,0x00477760,0x004c1180
 4516,function,,,0x004c1240,0x00802fb0,0x004c1240
 4517,function,std::wstring::assign,,0x004c1270,0x00477bf0,0x004c1270
@@ -6065,7 +6065,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6064,function,Stub::GetAddress_0x1C,"Returns this+0x1C; folded for Material, MaterialObjectRef::GetName's target and the Logitech LCD classes' slot; for materials it is the address of the name.",0x004fe8f0,0x007e6c70,0x004fe8f0
 6065,function,Graphics::MaterialObject::GetResourceContext,,0x004fe900,0x007e6c90,0x004fe900
 6066,function,Graphics::MaterialObject::GetDeclaredTextures,,0x004fe910,0x007e6ca0,0x004fe910
-6067,function,Graphics::MaterialObject::IsValid,,0x004fe920,0x00661070,0x004fe920
+6067,function,Stub::GetByte_0x10,"Two-instruction body (mov al,[ecx+0x10]; ret) shared by unrelated classes: Graphics::MaterialObject::IsValid and slot 3 (IsValid) of MapItemIteratorImpl 0x00B1CF1C (so also SlotItemIteratorImpl), where it is the valid byte at +0x10.",0x004fe920,0x00661070,0x004fe920
 6068,function,Graphics::MaterialObject::SetOverride,,0x004fe930,0x007e6cc0,0x004fe930
 6069,function,Graphics::MaterialObject::SetSemantic,,0x004fe940,0x007e6cd0,0x004fe940
 6070,function,"std::_Tree<std::_Tmap_traits<unsigned int,Math::VectorUA4f>>::_Min",,0x004fe950,0x006d62e0,0x004fe950
@@ -11063,7 +11063,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 11062,function,CCModule::IsEventEnabled,,0x005ffe90,0x004edd40,0x005ffe90
 11063,function,ECBase::ECDynArray<CCModule::TagIndexEntry>::RemoveAt,,0x005ffef0,0x004edda0,0x005ffef0
 11064,function,,,0x005fffb0,0x005a0c10,0x005fffb0
-11065,function,,,0x00600270,0x004edf90,0x00600270
+11065,function,CCModule::RemoveNamedSlot,"Removes a tag from the module's tag index (CCModule::FindTagIndex, entries of 0x88 bytes at +0x198): from the tag's first entry walks to the entry whose object id (entry word 0x21) equals objectId, and erases it only if its tag still compares equal (_wcsncmp, 0x40 characters); returns 1 if erased. Counterpart of SetNamedSlot 0x00602650; ret 8 (tag, objectId).",0x00600270,0x004edf90,0x00600270
 11066,function,,,0x006003e0,0x006ff260,0x006003e0
 11067,function,,,0x00600440,0x005a0f10,0x00600440
 11068,function,,,0x00600510,0x004ee110,0x00600510
@@ -12225,7 +12225,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12224,function,TlkString::ReadFromStruct,,0x0062ed60,0x00586290,0x0062ed60
 12225,function,CCModule::GetPartyPicker,,0x0062ee20,0x0053e130,0x0062ee20
 12226,function,Stub::CopyPointeeVfunc6Struct24,,0x0062ee50,0x0052ad90,0x0062ee50
-12227,function,Stub::RestoreGlobal_00C371B4,,0x0062eeb0,0x0053e160,0x0062eeb0
+12227,function,Stub::RestoreGlobal_00C371B4,"Setter used as an exception-unwind helper: stores [ecx] to g_inventoryFlags. Not called from normal code (so Ghidra shows no callers) but jumped to from about thirty unwind funclets (jmp 0x0062EEB0, e.g. 0x00AB2B43, 0x00AB0A16), which restore the saved flag word when an exception leaves a function that had OR'ed bits into it.",0x0062eeb0,0x0053e160,0x0062eeb0
 12228,function,std::_Tree::_Min,,0x0062eec0,0x0047c0f0,0x0062eec0
 12229,function,HideAlertMessage::GetType,,0x0062eee0,0x0060ae00,0x0062eee0
 12230,function,HideAlertMessage::InitType,,0x0062ef10,0x0060ae30,0x0062ef10
@@ -12409,7 +12409,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12408,function,ScriptBackend::ForScript_AddNonPartyFollower,,0x006342e0,0x0060fe50,0x006342e0
 12409,function,CCParty::WriteToSave,,0x006343a0,0x0060ff10,0x006343a0
 12410,function,ECBase::ECDynArray<unsigned int>::ClearAndFree,,0x00634db0,0x00610920,0x00634db0
-12411,function,"std::map<unsigned int,PartyPoolInfo>::operator[]",,0x00634e10,0x00610980,0x00634e10
+12411,function,"std::map<unsigned int,PartyStoredItem>::operator[]","operator[] of the map CCParty keeps at +0x434 (item id to PartyStoredItem: owner id, slot, set; a missing key is inserted with the 12-byte value zeroed, 0x00634E10). Callers: ForScript_StorePartyInventory 0x00638DE6, StoreFollowerInventory 0x00638F9E, the restore pair and CCParty::Load. CCParty::ForgetStoredItem erases from the same map with find/erase of std::map<unsigned int,PartyStoredItem>.",0x00634e10,0x00610980,0x00634e10
 12412,function,"stdext::hash_map<unsigned int,FollowerInfo>::hash_map",,0x00634ea0,0x00610a10,0x00634ea0
 12413,function,ECBase::ECDynArray<unsigned int>::Clear,,0x00634f20,0x00720cd0,0x00634f20
 12414,function,"SmartData::Attribute<ECBase::ECDynArray<unsigned int>,ObjectIDArrayMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x00635000,0x00610a90,0x00635000
@@ -14338,8 +14338,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14337,function,CCCreature::SetControllerInteractionCount,"Stores its byte argument at +0x778 and tail-jumps to ApplyControllerInteraction (0x0069EBC1), which pops it (ret 4)",0x0069ebb0,0x0058fd80,0x0069ebb0
 14338,function,CCCreature::RefreshControllerInteraction,,0x0069ebd0,0x0058fda0,0x0069ebd0
 14339,function,CastRecord::operator=,"Assigns a CastRecord (0x44 bytes): +0x00..+0x0C by dwords, the Vector4f at +0x10 by movaps (0x0069EC19), the wide string at +0x20 (0x004C2AB0), +0x3C and +0x40. Its one caller, CCCreature::OnAnimEventProjectileLoad 0x006B72A2, copies the creature's cast record (GetCastRecord 0x006A0180) into the projectile's (CastRecordHolder::Get on CProjectile+0x488). An AttackRecord is 0xC bytes and is not this.",0x0069ebf0,0x0058fdc0,0x0069ebf0
-14340,function,CCItem::CallVisualSlot6,,0x0069ec40,0x0058fe10,0x0069ec40
-14341,function,CCItem::CallVisualSlot5Null,,0x0069ec50,0x0058fe20,0x0069ec50
+14340,function,CCItem::RemoveAllEffectsCallback,"Plain function (cdecl, item): calls slot 6 (RemoveAllEffects) of the item's effects holder at +0x70. Passed as a per-item callback to 0x006A0ED0 by CCCreature::ReapplyGoreThreshold (0x006B1A00).",0x0069ec40,0x0058fe10,0x0069ec40
+14341,function,CCItem::ApplyAllEffectsCallback,"Plain function (cdecl, item): calls slot 5 (ApplyAllEffects) of the item's effects holder at +0x70 with 0. The per-item callback that follows the remove callback 0x0069EC40 in CCCreature::ReapplyGoreThreshold (0x006B1B9B).",0x0069ec50,0x0058fe20,0x0069ec50
 14342,function,TintBlock::TintBlock(const TintBlock&),,0x0069ec70,0x0058fe40,0x0069ec70
 14343,function,CCCreature::RenderPortrait,,0x0069ed50,0x0058ff20,0x0069ed50
 14344,function,HideAbilityHeaderMessage::GetType,,0x0069ed70,0x0050bd70,0x0069ed70
@@ -14581,9 +14581,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14580,function,CCCreature::OnAnimEventAttackImpact,,0x006a6230,0x005973f0,0x006a6230
 14581,function,CCCreature::OnAnimEventDeathblowDamage,,0x006a62f0,0x005974b0,0x006a62f0
 14582,function,CCCreature::FindAbilityItem,"Finds an item with the given ability id (+0x660) in the creature's inventory (+0xBF0), an item whose tag matches first",0x006a6400,0x005975c0,0x006a6400
-14583,function,HandleEquipAnimationEvent,,0x006a64b0,0x00597670,0x006a64b0
+14583,function,CCCreature::HandleEquipAnimationEvent,"ecx = the CCCreature, ret 4 (equip animation event id): reads table 0x5F row = the id (columns 0x1BFDF3BC and 0x6DBFE040 as booleans) and the weapon slot's base item row through the appearance at +0x7B0, then attaches the weapon part. Callers: OnEquipAnimationEvent, RefreshWieldedWeapons, RecheckWeaponsDrawn, Conversation::BindLookAt.",0x006a64b0,0x00597670,0x006a64b0
 14584,function,CCCreature::RefreshWieldedWeapons,,0x006a6640,0x00597800,0x006a6640
-14585,function,ApplyGhostVfxToItem,,0x006a6690,0x00597850,0x006a6690
+14585,function,CCCreature::ApplyGhostVfxToItem,"Plain cdecl callback (item, ecx unused): builds a 0x7C-byte CGameEffect (duration type 4, 0x00A5B710 given 0xBBF, +0x44 = 0x249F4) and adds it to the item's effects holder (item+0x70, 0x006A671E); called from CCCreature::OnItemEquipped 0x006C1893 on the item when the creature's ghost flag (+0xC90) is set, beside ApplyHandItemStealth.",0x006a6690,0x00597850,0x006a6690
 14586,function,CCCreature::ConsumeAmmunition,,0x006a6740,0x00597900,0x006a6740
 14587,function,CCCreature::SetGender,,0x006a68c0,0x00597a80,0x006a68c0
 14588,function,EquipWeaponModel,,0x006a6940,0x00597b00,0x006a6940
@@ -17966,14 +17966,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17965,function,CCObject::ReleaseAnimation,,0x00752b80,0x006613c0,0x00752b80
 17966,function,CCItem::SetStackSize,,0x00752ba0,0x006613e0,0x00752ba0
 17967,function,CCItem::SetUnique,,0x00752bd0,0x00661410,0x00752bd0
-17968,function,ScriptBackend::ForScript_SetItemIrremovable,,0x00752bf0,0x00661430,0x00752bf0
-17969,function,ScriptBackend::ForScript_SetItemIndestructible,,0x00752c30,0x00661470,0x00752c30
+17968,function,CCItem::SetIrremovable,"__thiscall on a CCItem (ret 4: value): sets the Irremovable attribute (+0x630) and, if the item is in a location (+0x4E8), calls that location's slot 10 (ReAddItem) with the item. Called from CCItem::LoadFromStruct 0x00758711 as well as the script command.",0x00752bf0,0x00661430,0x00752bf0
+17969,function,CCItem::SetIndestructible,"__thiscall on a CCItem (ret 4: value): sets the Indestructible attribute (+0x640), calls the location's slot 10 if the item is in one (+0x4E8), then the item's slot 25 (+0x64). Called from CCItem::LoadFromStruct 0x0075874B as well as the script command.",0x00752c30,0x00661470,0x00752c30
 17970,function,CCItem::GetBaseItemType,,0x00752c70,0x006614b0,0x00752c70
 17971,function,CCItem::GetShowMaterial,,0x00752c80,0x006614c0,0x00752c80
 17972,function,CCItem::ForScript_DestroyObject,,0x00752c90,0x006614d0,0x00752c90
 17973,function,CCItem::HandleMessage_RepairItemMessage,,0x00752cd0,0x00661510,0x00752cd0
 17974,function,CCItem::IsCurrentVfxProperty,,0x00752d60,0x006615a0,0x00752d60
-17975,function,ScriptBackend::ForScript_SetItemAbilityId,,0x00752d80,0x006615c0,0x00752d80
+17975,function,CCItem::SetAbilityId,"__thiscall on a CCItem (ret 4: value): sets the AbilityId attribute (+0x660), calls the location's slot 10 if the item is in one, then the item's slot 25. Called by CCItem::ReadFields and LoadFromStruct as well as the script command.",0x00752d80,0x006615c0,0x00752d80
 17976,function,CCItem::StaticClassInfo,,0x00752dc0,0x00661600,0x00752dc0
 17977,function,CCItem::SetDescription,,0x00752e20,0x00661660,0x00752e20
 17978,function,CCItem::InitDefaults,,0x00752e90,0x006616d0,0x00752e90
@@ -17995,7 +17995,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17994,function,CCItem::ClearPropertyEffectIds,,0x00753be0,0x00662420,0x00753be0
 17995,function,CCItem::IsStackable,,0x00753c60,0x006624a0,0x00753c60
 17996,function,CCItem::GetMaterialTypeMaterial,,0x00753c90,0x006624d0,0x00753c90
-17997,function,ScriptBackend::ForScript_GetItemStat,,0x00753ce0,0x00662520,0x00753ce0
+17997,function,CCItem::GetStat,__thiscall on a CCItem (ret 4: stat id): value of the stat column (CCItem::GetStatColumnHash) in table 0x6E for the base item row (word at +0x464) times the material multiplier from table 0x9F (1.0 when none or not above 0). Callers: ScriptCommand::GETITEMSTAT and GuiFSCommand::GetItemStat.,0x00753ce0,0x00662520,0x00753ce0
 17998,function,CCItem::GetRuneSlotCount,,0x00753d90,0x006625d0,0x00753d90
 17999,function,CCItem::GetModelObject,,0x00753e70,0x006626b0,0x00753e70
 18000,function,CCItem::RegisterHandler_RepairItemMessage,,0x00753fa0,0x006627e0,0x00753fa0
@@ -18004,7 +18004,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18003,function,CCItem::RegisterDataTree,,0x007546f0,0x00662f30,0x007546f0
 18004,function,CCItem::GetRequirement,,0x00755270,0x00663ab0,0x00755270
 18005,function,CCItem::RecalculateCost,,0x00755430,0x00663c70,0x00755430
-18006,function,ScriptBackend::ForScript_GetItemPropertyPower,,0x007556d0,0x00663f10,0x007556d0
+18006,function,CCItem::SumPropertyPower,"__thiscall on a CCItem (ret 0xC: propertyId, int* sum, includeRunes): adds to *sum the power (+0x69C list) of every entry of the property list (+0x680) equal to propertyId; with includeRunes == 1 recurses into the items in the rune slots (+0x4BC).",0x007556d0,0x00663f10,0x007556d0
 18007,function,"std::_Copy_opt<unsigned int *,unsigned int *>",,0x007557f0,0x0049a370,0x007557f0
 18008,function,CCItem::LoadTemplate,,0x00755820,0x00664030,0x00755820
 18009,function,CCItem::CanMergeWith,,0x00755a70,0x00664280,0x00755a70
@@ -18025,10 +18025,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18024,function,,,0x007564d7,0x00664ce7,0x007564d7
 18025,function,CCItem::`scalar deleting destructor',,0x007564f0,0x00664d00,0x007564f0
 18026,function,"std::vector<SmartData::Attribute<int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ReserveIfLarger",,0x00756510,0x00664d20,0x00756510
-18027,function,ScriptBackend::ForScript_SetItemMaterialType,,0x00756540,0x00664d50,0x00756540
+18027,function,CCItem::SetMaterialType,"__thiscall on a CCItem (ret 4): removes the wearer's item stats (CCCreatureStats::ApplyItemStats with -1), stores the new material type through the attribute at +0x4FC, applies the stats again with +1, refreshes the wearer's appearance slot material and resizes the rune slot list for the new material. Also the item's own loaders call it (CCItem::LoadFromStruct 0x00758778, ReadFields, CopyFrom), besides ScriptCommand::SETITEMMATERIALTYPE.",0x00756540,0x00664d50,0x00756540
 18028,function,std::vector<?>::clear,,0x00756700,0x00664f10,0x00756700
 18029,function,CCItem::AddProperty,,0x00756800,0x00665010,0x00756800
-18030,function,ScriptBackend::ForScript_GetItemProperties,,0x00756950,0x00665160,0x00756950
+18030,function,CCItem::CollectProperties,"__thiscall on a CCItem (ret 8: vector<unsigned>* out, includeRunes): appends each property id of the item's list (+0x680) not yet in out; with includeRunes == 1 recurses into the rune items (+0x4BC).",0x00756950,0x00665160,0x00756950
 18031,function,CCItem::CCItem,,0x00756a40,0x00665250,0x00756a40
 18032,function,CCItem::CCItem_copy,,0x00756da0,0x006655b0,0x00756da0
 18033,function,CCItem::SaveSchema,,0x007570f0,0x00665900,0x007570f0
@@ -18168,45 +18168,45 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18167,function,ItemLocation::`scalar deleting destructor',,0x007612c0,0x006687f0,0x007612c0
 18168,function,ItemLocation::FindItemLocationOrInvalid,,0x007612e0,0x0069fa40,0x007612e0
 18169,function,ItemLocation::FindLocationForOrInvalid,,0x00761340,0x0069faa0,0x00761340
-18170,function,Backpack::FindByTag,,0x007613a0,0x0069fb00,0x007613a0
+18170,function,ItemLocation::FindByTag,"ecx = any ItemLocation (a creature's Inventory or Equipment, a placeable's or store's ItemRepository; 0x006A2E60 tries the Inventory then the Equipment): walks CreateIterator (slot 23) and returns the first item whose tag (object string at +0xB8) equals the argument, or 0. Uses only the base table.",0x007613a0,0x0069fb00,0x007613a0
 18171,function,ItemLocation::SaveEmptyItemList,,0x00761470,0x0069fbd0,0x00761470
 18172,function,ItemLocation::MakeAllItemsDroppable,,0x007614b0,0x0069fc10,0x007614b0
 18173,function,ItemLocation::PositionToLocation,,0x00761560,0x0069fcc0,0x00761560
 18174,function,ItemLocation::LocationToPosition,,0x007615a0,0x0069fd00,0x007615a0
-18175,function,Backpack::CountByTag,,0x007615f0,0x0069fd50,0x007615f0
+18175,function,ItemLocation::CountByTag,"ecx = any ItemLocation, ret 4 (tag): counts the items whose tag equals the argument by walking the base table's iterator. Callers: CCCreature::CountItemsByTag, ItemPossessor::CountItemsByTag, Inventory::CraftRecipe, the crafting screen's ingredient count.",0x007615f0,0x0069fd50,0x007615f0
 18176,function,ItemMove::~ItemMove,,0x007616c0,0x0069fe20,0x007616c0
 18177,function,ItemLocation::DestroyAllItems,,0x00761720,0x0069fe80,0x00761720
 18178,function,ItemMove::ItemMove,,0x007617f0,0x0069ff50,0x007617f0
 18179,function,ItemLocation::AppendItemsTo,,0x00761870,0x0069ffd0,0x00761870
-18180,function,Backpack::AddItem,,0x00761940,0x006a00a0,0x00761940
+18180,function,ItemLocation::AddItemFindingPlace,"ecx = any ItemLocation, ret 8 (out ItemMove, item): the ordinary add where the place is chosen by the location: sets g_inventoryFlags bit 8 around location->Add(item, FindLocationFor(item)) (slot 1). Callers: CCCreature::LoadEquipItemList (an Equipment), Inventory::CraftRecipe, LoadItemsFromTemplate, ListItemLocation::ReAddItem.",0x00761940,0x006a00a0,0x00761940
 18181,function,ItemLocation::Remove,,0x007619e0,0x006a0140,0x007619e0
 18182,function,ItemLocation::RemoveByTag,,0x00761b30,0x006a0290,0x00761b30
 18183,function,ItemLocation::SaveItemList,,0x00761d10,0x006a0470,0x00761d10
-18184,function,Backpack::LoadItemsFromTemplate,,0x00761ec0,0x006a0620,0x00761ec0
+18184,function,ItemLocation::LoadItemsFromTemplate,"ecx = any ItemLocation, ret 8 (gff struct, template index): reads the template's ItemList: for each element makes a CCItem (0x700 bytes, id -1), CCItem::LoadFromListEntry, deletes it on failure, else AddItemFindingPlace. Callers: CCCreature::LoadEquipItemList, CCPlaceable::ReadFields, Store::ReadFields.",0x00761ec0,0x006a0620,0x00761ec0
 18185,function,ItemLocation::TryAddItem,,0x00762010,0x006a0770,0x00762010
-18186,function,ScriptBackend::ForScript_RemoveItem,,0x00762100,0x006a0860,0x00762100
-18187,function,ScriptBackend::ForScript_RemoveItemsByTag,,0x007621e0,0x006a0940,0x007621e0
+18186,function,ItemLocation::RemoveItemFromItsLocation,"Plain cdecl function (out ItemMove, item, count): the item's current location is item+0x4E8; a null location gives success 1 with the item, else CanRemoveChecked and the location's Remove (slot 2). Nine direct callers in the engine (drop, rune attach, MoveItemTo, SwitchToSet, destroy and others) besides ScriptCommand::REMOVEITEMFROMINVENTORY; 0x00763040 is the stdcall twin.",0x00762100,0x006a0860,0x00762100
+18187,function,ItemMove::DestroyDisplacedItems,"Method of an ItemMove record (ecx = the record, plain __fastcall): calls slot 102 (+0x198, argument 0) of every item on the record's displaced list (+0x20) to destroy it, then clears the list. Callers: ScriptCommand::REMOVEITEMSBYTAG 0x006660C0 and ItemLocation::LoadItemList 0x007626C0 (what a loaded item displaced).",0x007621e0,0x006a0940,0x007621e0
 18188,function,ItemLocation::Add,,0x00762240,0x006a09a0,0x00762240
 18189,function,ItemLocation::AddItemListToSchema,,0x00762610,0x006a0d70,0x00762610
 18190,function,ItemLocation::LoadItemList,,0x007626c0,0x006a0e20,0x007626c0
 18191,function,ItemLocation::MoveItemTo,,0x00762990,0x006a10f0,0x00762990
 18192,function,ItemLocation::AddItemTo,,0x00762b90,0x006a12f0,0x00762b90
-18193,function,ItemLocation::MoveItemToSlot,,0x00762c40,0x006a13a0,0x00762c40
+18193,function,ItemLocation::MoveItemFindingPlace,"Plain function (out ItemMove, item, dest location): a null item gives the empty record; else sets g_inventoryFlags bit 8 around MoveItemTo(item, dest, dest->FindLocationFor(item)) (0x00762CBD-0x00762CCA), then calls the destination owner's possessor slot 4 with the result (0x00762CFD; the party's telemetry hook). The mover nearly everything uses: Unequip, Equip's displaced items, loot, buy, sell, ForScript_MoveItem, the weapon set switch. It names no slot; the old name misled.",0x00762c40,0x006a13a0,0x00762c40
 18194,function,ItemLocation::MoveItemList,,0x00762d60,0x006a14c0,0x00762d60
 18195,function,ItemLocation::MoveAllItems,,0x00762e90,0x006a15f0,0x00762e90
 18196,function,ItemMove::MoveItemsTo,,0x00762fb0,0x006a1710,0x00762fb0
 18197,function,ItemPossessor::ItemPossessor,,0x00763020,0x006b0c30,0x00763020
 18198,function,ItemPossessor::~ItemPossessor,,0x00763030,0x006b0c40,0x00763030
-18199,function,ScriptBackend::ForScript_RemoveItem_stdcall,,0x00763040,0x006b0c50,0x00763040
+18199,function,ItemLocation::RemoveItemFromItsLocation_stdcall,"Stdcall twin (ret 0xC: out, item, count) of 0x00762100: pushes its three arguments and calls it (0x00763059). Callers: CCItem::EventHandler, CSSubActionHandler::DropItem, Store::SellItem, Store::BuyItem, the store close handler.",0x00763040,0x006b0c50,0x00763040
 18200,function,ItemPossessor::TakeItemsByTag,,0x00763070,0x006b0c80,0x00763070
 18201,function,ItemPossessor::CountItemsByTag,,0x007630d0,0x006b0ce0,0x007630d0
 18202,function,ItemPossessor::RaiseInventoryAddedEvent,,0x00763100,0x006b0d10,0x00763100
 18203,function,ItemPossessor::RaiseInventoryRemovedEvent,,0x00763240,0x006b0e50,0x00763240
 18204,function,ItemPossessor::OnItemAdded,,0x00763390,0x006b0fa0,0x00763390
 18205,function,ItemPossessor::OnItemRemoved,,0x007633c0,0x006b0fd0,0x007633c0
-18206,function,ScriptBackend::ForScript_MoveItem,,0x007633f0,0x006b1000,0x007633f0
-18207,function,ScriptBackend::ForScript_MoveItemList,,0x007634b0,0x006b10c0,0x007634b0
-18208,function,ScriptBackend::ForScript_MoveAllItems,,0x00763570,0x006b1180,0x00763570
+18206,function,ItemPossessor::MoveItemIn,"ecx = an ItemPossessor (creature+0x440, placeable+0x440 or the party's possessor; callers 0x006A71B2, 0x0074FD42), ret 8 (out ItemMove, item): moves one item into this possessor's location (possessor slot 6 GetItemLocation, +0x18) with ItemLocation::MoveItemFindingPlace; the empty record when the possessor has no location.",0x007633f0,0x006b1000,0x007633f0
+18207,function,ItemPossessor::MoveItemListIn,"ecx = an ItemPossessor, ret 8 (out ItemMove, items): as MoveItemIn for a list of items (ItemLocation::MoveItemList) into this possessor's location. Callers: ScriptCommand::CREATEITEMONOBJECT, CCCreature::MoveLootToBag.",0x007634b0,0x006b10c0,0x007634b0
+18208,function,ItemPossessor::MoveAllItemsIn,"ecx = the destination ItemPossessor, ret 8 (out ItemMove, sourceObjectId): looks the source up with CClientExoApp::GetItemPossessorById, takes its location (slot 6) and moves every item into this possessor's location (ItemLocation::MoveAllItems). Callers: ScriptCommand::MOVEALLITEMS, CCCreature::HandleMessage_AcquireAllItemsMessage.",0x00763570,0x006b1180,0x00763570
 18209,function,PlayerSteering::PlayerSteering,,0x00763650,0x006dfcb0,0x00763650
 18210,function,PlayerSteering::ApplySteering,,0x007636a0,0x006dfd00,0x007636a0
 18211,function,PlayerSteering::StopMoving,,0x00763810,0x006dfe70,0x00763810
@@ -19452,7 +19452,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19451,function,EquipmentItemIteratorImpl::CurrentId,,0x00797240,0x00668940,0x00797240
 19452,function,EquipmentItemIteratorImpl::Key,,0x007972b0,0x006689b0,0x007972b0
 19453,function,Equipment::SameKey,,0x007973a0,0x00668aa0,0x007973a0
-19454,function,ScriptBackend::ForScript_GetActiveWeaponSet,,0x00797410,0x00668b10,0x00797410
+19454,function,Equipment::GetActiveWeaponSet,"ecx = an Equipment, plain getter (add ecx,0x10; jmp Attribute::Get): the active weapon set attribute at Equipment+0x10 (SwitchToSet writes it at 0x00797A79, saved as field 0x3F5A). Called by the engine as well as by the script command (CCCreature::ConsumeAmmunition, ForScript_SwitchWeaponSet, RebuildAppearanceFromEquipment, GUI::WriteHeroStatsXml).",0x00797410,0x00668b10,0x00797410
 19455,function,SlotItemLocation::PositionToLocation,,0x00797420,0x00668b20,0x00797420
 19456,function,SlotItemLocation::LocationToPosition,,0x00797490,0x00668b90,0x00797490
 19457,function,std::vector<EquipmentSet>::operator[],,0x007974d0,0x00668bd0,0x007974d0
@@ -20555,7 +20555,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20554,function,ListItemLocation::LocationToPosition,,0x007ca730,0x006b1a40,0x007ca730
 20555,function,ListItemLocation::ReAddItem,,0x007ca770,0x006b1a80,0x007ca770
 20556,function,ListItemLocation::SaveItemList,,0x007ca810,0x006b1b20,0x007ca810
-20557,function,ListItemLocation::GetItemIdAtIndex,,0x007ca850,0x006b1b60,0x007ca850
+20557,function,ListItemLocation::GetItemAtIndex,"Slot 9 of ListItemLocation (ret 4: index): returns the element of the item vector at +0x0C (a CCItem*; ListItemLocation::FindLocationFor passes it to CCItem::CanStack at 0x007CA61A), or the default element when out of range. The base's GetItemAttributeByIndex adds 0x34 to it.",0x007ca850,0x006b1b60,0x007ca850
 20558,function,ListItemLocation::CanAdd,,0x007ca890,0x006b1ba0,0x007ca890
 20559,function,ListItemLocation::GetItemCount,,0x007ca920,0x006b1c30,0x007ca920
 20560,function,ListItemLocation::GetItemAtLocation,,0x007ca940,0x006b1c50,0x007ca940
@@ -20564,7 +20564,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20563,function,ListItemLocation::FindItemLocation,"A list location's (backpack, plot items, repository) key for an item it holds: {the item's index in +8 (VectorIndexOf), the item's +0x600 stackingGroupId, slot 0xFF (0x007CAA3E), set -1 (0x007CAA45), -1, -1}; an item not held gets ItemLocation::s_invalidLocation (0x00C1CEF8)",0x007caa00,0x006b1d10,0x007caa00
 20564,function,ListItemLocation::RemoveItem,,0x007caaa0,0x006b1db0,0x007caaa0
 20565,function,ListItemLocation::ListItemLocation,,0x007caae0,0x006b1df0,0x007caae0
-20566,function,SmartData::Attribute::Get`adjustor{56}',,0x007cab80,0x006b1e90,0x007cab80
+20566,function,ListItemLocation::GetSortMode,Slot 11 of ListItemLocation: the Attribute<int> at +0x38 (the backpack sort mode that CCParty::SetBackpackSort 0x00630380 writes); the base class (0x004137B0) answers 0.,0x007cab80,0x006b1e90,0x007cab80
 20567,function,ListItemLocation::~ListItemLocation,,0x007cab90,0x006b1ea0,0x007cab90
 20568,function,ListItemLocation::InsertItem,,0x007cac30,0x006b1f40,0x007cac30
 20569,function,ListItemLocation::AddSaveFieldsToSchema,,0x007cac90,0x006b1fa0,0x007cac90
@@ -21789,7 +21789,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21788,function,Backpack::Save,,0x0080d140,0x006f9cf0,0x0080d140
 21789,function,Backpack::Load,,0x0080d160,0x006f9d10,0x0080d160
 21790,function,Backpack::SaveEmpty,,0x0080d180,0x006f9d30,0x0080d180
-21791,function,Backpack::MarkDirty,,0x0080d1a0,0x006f9bd0,0x0080d1a0
+21791,function,Stub::SetByteTo1_0x4C,"Slots 21 and 22 (after-add and after-remove hooks, ret 4: the ItemMove record, ignored) of Backpack, PlotItems and ItemRepository: sets the DirtyFlaggable byte at +0x4C to 1. One body shared by the three leaves' tables, so it is not Backpack's alone.",0x0080d1a0,0x006f9bd0,0x0080d1a0
 21792,function,Backpack::~Backpack,,0x0080d1b0,0x006f9d50,0x0080d1b0
 21793,function,Backpack::`scalar deleting destructor'`adjustor{72}',,0x0080d1f0,0x006f9d90,0x0080d1f0
 21794,function,Backpack::`scalar deleting destructor',,0x0080d200,0x006f9da0,0x0080d200
@@ -69600,7 +69600,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 69599,data,ItemRepository::vftable,,0x00b264ec,0x00b0d2e4,0x00b264ec
 69600,data,ItemRepository::vftable_at_48,,0x00b26558,0x00b0d350,0x00b26558
 69601,data,MapTrail::vftable,,0x00b26564,0x00b0d35c,0x00b26564
-69602,data,,,0x00b26568,0x00b0d360,0x00b26568
+69602,data,ItemFilter::IsCraftingItem::s_craftingTagMarker,"Wide string L""_im_cft"": ItemFilter::IsCraftingItem 0x0080E090 finds it in the item's tag (string at +0xB8) and answers true when it begins at character 3.",0x00b26568,0x00b0d360,0x00b26568
 69603,data,Animation::AnimationManager::vftable,,0x00b26584,0x00ae5d14,0x00b26584
 69604,data,Animation::g_rotationOrder,,0x00b265f0,0x00b53f38,0x00b265f0
 69605,data,,,0x00b265f4,0x00b53f3c,0x00b265f4
@@ -99709,11 +99709,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 99708,data,CCParty::FlipFormationSide::s_formationFlipMinSeconds,,0x00c1ced0,0x00c06c04,0x00c1ced0
 99709,data,MovementController::typeinfo,,0x00c1ced4,0x00c06c08,0x00c1ced4
 99710,data,ItemLocation::s_invalidLocation,,0x00c1cef8,0x00c06c2c,0x00c1cef8
-99711,data,,,0x00c1cefc,0x00c06c30,0x00c1cefc
+99711,data,ItemLocation::s_invalidLocation.group,"Second dword of the invalid ItemLocation key: the stacking group (CCItem+0x600) in a list location's key, 0 here. The key is {index, group, slot 0xFF, set -1, -1, -1}, copied by CItem::CItem 0x00A662B0..0x00A662DF and by ListItemLocation::FindItemLocation 0x007CAA53..0x007CAA8E.",0x00c1cefc,0x00c06c30,0x00c1cefc
 99712,data,ItemLocation::s_invalidLocation.slot,,0x00c1cf00,0x00c06c34,0x00c1cf00
 99713,data,ItemLocation::s_invalidLocation.set,,0x00c1cf04,0x00c06c38,0x00c1cf04
-99714,data,,,0x00c1cf08,0x00c06c3c,0x00c1cf08
-99715,data,,,0x00c1cf0c,0x00c06c40,0x00c1cf0c
+99714,data,ItemLocation::s_invalidLocation.field4,Fifth dword of the invalid ItemLocation key (-1); no code reads it apart from copying the whole 24-byte key.,0x00c1cf08,0x00c06c3c,0x00c1cf08
+99715,data,ItemLocation::s_invalidLocation.field5,Sixth dword of the invalid ItemLocation key (-1); no code reads it apart from copying the whole 24-byte key.,0x00c1cf0c,0x00c06c40,0x00c1cf0c
 99716,data,CGameEffect::s_nextEffectId,,0x00c1cf10,0x00c06c44,0x00c1cf10
 99717,data,CGameEffect::typeinfo,,0x00c1cf14,0x00c06c48,0x00c1cf14
 99718,data,AnimBaseWield::AttachWeaponToNode::s_defaultWeaponOffset,,0x00c1cf30,0x00c06c68,0x00c1cf30
@@ -101933,7 +101933,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 101932,data,,,0x00c37178,0x00c20c68,0x00c37178
 101933,data,,,0x00c37194,0x00c20c84,0x00c37194
 101934,data,g_debugPartyFollowFormation,"selector of the follow-formation table when not arriving: 1 -> 0xc0d3a0, 2 -> 0xc0d450, 3 -> 0xc0d500, 4 -> 0xc0d2f0, anything else -> 0xc0d240; BSS with only the read, so always 0; 4 bytes. Agrees with dev/PARTY.md",0x00c371b0,0x00c21d68,0x00c371b0
-101935,data,g_inventoryFlags,,0x00c371b4,0x00c21604,0x00c371b4
+101935,data,g_inventoryFlags,"Global word of bits that callers OR in around an operation and restore afterwards (each writer saves the old word; unwind funclets restore it through 0x0062EEB0). Readers: 0x001 ItemLocation::Add 0x007622E4 (no stack merging); 0x002 ItemPossessor::RaiseInventoryAddedEvent 0x00763123 and RaiseInventoryRemovedEvent 0x00763263 (no event), CCParty::OnItemAdded 0x006313E1 (no event to the controlled creature); 0x004 CCParty::OnItemAdded 0x0063141A (no items-received notice); 0x010 ListItemLocation::CanAdd 0x007CA890 (true whatever the capacity); 0x020 RaiseInventoryRemovedEvent 0x00763301; 0x040 CCParty::OnItemAdded 0x0063142E (not marked newly acquired); 0x080 CCCreature::OnItemEquipped 0x006C18D2; 0x100 ItemLocation::CanAddChecked 0x007611A0 and CanRemoveChecked 0x007611E0 (answer true unasked); 0x200 CCCreature::MakeAmmunition 0x006A0780 and DestroyMadeAmmo 0x006A5D02 (do nothing); 0x400 both raise functions 0x007631C1 and 0x00763316 (event delivered at once). Writers seen: creature acquire handlers 0x424 (0x006A7184), Equip 0x52, Unequip 0x42, Equipment::SwitchToSet 0x202, ScriptCommand::MOVEITEM 0x10, CCPlaceable::HandleMessage_AcquireItemMessage 0x400, ItemLocation::AddItemTo and MoveItemFindingPlace 0x8, the party store and restore inventory functions 0x100.",0x00c371b4,0x00c21604,0x00c371b4
 101936,data,GameModeExplore::s_steeringReset,"Byte set to 1 by GameModeExplore::FlagSteeringReset (0x0070AB00, reached by a tail jump from RetargetCamera at 0x0070BE2A); PlayerSteering::UpdateDirection (0x00763CD0) tests it at 0x00763E5B and, when set, clears its byte +0x3E and returns before reading the move keys; no immediate reference clears it, so it stays set once set [C for the references; whether a base+offset write clears it is not known].",0x00c371b8,0x00c21c84,0x00c371b8
 101937,data,PlayerSteering::UpdateDirection::s_skipRamp,,0x00c371b9,0x00c21c85,0x00c371b9
 101938,data,,,0x00c371bc,,0x00c371bc
