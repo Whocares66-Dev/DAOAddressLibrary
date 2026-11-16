@@ -12728,7 +12728,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12727,function,ClientAIMaster::AddEventLater,,0x00649fa0,0x00532900,0x00649fa0
 12728,function,ClientAIMaster::UpdateObjectsPaused,"While paused, for each object only CCCreature::UpdateByte0xCFC and UpdateSelectionRing (0x0064A178, 0x0064A18A); no animation events are dispatched",0x0064a100,0x00532a60,0x0064a100
 12729,function,ClientAIMaster::AddEventDeltaTime,,0x0064a230,0x00532b90,0x0064a230
-12730,function,ClientAIMaster::Update,"Drains due delayed events (IsFrontEventDue, PopFrontEvent), sets +0x5C, then for every object in its list (+0x10), unfiltered, calls UpdateFade and vtable +0x160 (CCCreature::RefreshIsInParty, CCPlaceable::UpdateRoomVisibility, nothing for CCObject); while paused calls UpdateObjectsPaused instead; after the loop, AnimationManager slot 0x40 with 1 (0x0064A4A1, ClearEvents), dropping animation events not taken that frame",0x0064a2d0,0x00532c30,0x0064a2d0
+12730,function,ClientAIMaster::Update,"Drains due delayed events (IsFrontEventDue, PopFrontEvent), sets +0x5C, then for every object id in its list (+0x0, objectIds), unfiltered, calls UpdateFade and virtual slot 88 (+0x160, called at 0x0064A457 with the frame's seconds): AIUpdate, which is CCCreature::AIUpdate 0x006BD4D0 for a creature, CCPlaceable::AIUpdate 0x0074D8C0 for a placeable and a no-op (Stub::NoOp_4) in CCObject; while paused calls UpdateObjectsPaused instead; after the loop, AnimationManager slot 0x40 with 1 (0x0064A4A1, ClearEvents), dropping animation events not taken that frame. Corrected 2026-11-16: the earlier note named slot +0x160 CCCreature::RefreshIsInParty.",0x0064a2d0,0x00532c30,0x0064a2d0
 12731,function,Commands::Start,,0x0064a500,0x00532e60,0x0064a500
 12732,function,Commands::End,,0x0064a510,0x00532e70,0x0064a510
 12733,function,AIMaster::DeleteEventData,,0x0064a520,0x00532e80,0x0064a520
@@ -14098,7 +14098,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14097,function,CCObject::OnAnimEventDetonateEmitter,,0x006958a0,0x00586860,0x006958a0
 14098,function,CCObject::GetModelObject,"(this) thiscall: the object's current model, as its interface at GraphicsStructures::Object+8 (vftable 0x00AF8434, GraphicsStructures::Object::vftable_at_8), or 0. It calls slot +0x60 of the CCObject vftable at this+0x70, CCObject::GetAnimation 0x0069A000 (the AnimBase at this+0x154), then returns [[anim+0x18]+4], AnimModelLods::currentModel. Callers then use that interface's slots: +0x4C AsAnimatable 0x0054F790 (lea eax,[ecx-8]: the Object itself, primary vftable 0x00AF85DC), +0x5C AsRenderable, +0x60 AsFaceAnimatable. 0x0054F790 sits in no other table, so a call through this result resolves to GraphicsStructures::Object. Read 2026-11-12.",0x006958d0,0x00586890,0x006958d0
 14099,function,CCObject::PlayOnAnimBase,,0x006958f0,0x005868b0,0x006958f0
-14100,function,CCObject::ClearByte_0x250,,0x00695970,0x00586930,0x00695970
+14100,function,CCObject::OnAnimationPlayed,"Virtual slot 69. Clears the byte at object+0x250. Its one caller is CCObject::Play (indirect call [vtable+0x114] at 0x0069B5EB, right after PlayOnAnimBase started the animation and +0x3D0 was zeroed); CCCreature overrides it to also run ResumeLookAt.",0x00695970,0x00586930,0x00695970
 14101,function,CCObject::ApplyRootMotion,,0x00695980,0x00586940,0x00695980
 14102,function,CCObject::GetFadeTargetAlpha,,0x00695a60,0x00586a20,0x00695a60
 14103,function,CCObject::UpdateFade,,0x00695a90,0x00586a50,0x00695a90
@@ -14505,7 +14505,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14504,function,CCCreature::GetSwingResults,,0x006a40d0,0x00595260,0x006a40d0
 14505,function,CCCreature::PlayAttackAnimationRow,,0x006a41a0,0x00595330,0x006a41a0
 14506,function,CCCreature::GetMinimapFlags,,0x006a4270,0x00595400,0x006a4270
-14507,function,CCCreature::UpdateByte0xCFC,,0x006a42e0,0x00595470,0x006a42e0
+14507,function,CCCreature::UpdateModelOnScreen,"Sets creature+0xCFC to 1 when the creature's model object (CCObject::GetModelObject, then its slot +0xA4 GetFlags) has bit 0x20 (the visible bit: an emitter with UpdateOnlyWhenVisible skips while it is clear), or the CAppearance at +0x7B0 has word +0x58 equal to 0xE, or the object found by id from creature+0xA08 (the selection VFX handle) has a model with bit 0x20; else 0. Called by ThrottleUpdate 0x006A5204 and ClientAIMaster::UpdateObjectsPaused 0x0064A178. The proposal's reading that the second object is what the creature is attached to is wrong: 0x006A4314 loads +0xA08.",0x006a42e0,0x00595470,0x006a42e0
 14508,function,EffectGUIInfo::SyncFromEffect,"Fills an effect bar entry from a CGameEffect: AbilityID attribute (entry+0x58) from effect+0x44; RemainingPercent (+0x68) = (dur - elapsed) / dur, 0 when dur (effect+0x2C) is 0, elapsed at effect+0x30; RemainingTime (+0x78) = dur - elapsed (ms); IsConsideredHostile (+0x88) = CGameEffect::ConsidersHostile.",0x006a4360,0x005954f0,0x006a4360
 14509,function,CWalkHitInfo::CWalkHitInfo,,0x006a43f0,0x00595580,0x006a43f0
 14510,function,CCItem::IsDroppableByte,"__cdecl (item): returns the item's droppable byte +0x4B0, which MakeAmmunition clears; read by CCCreature::HasLootableItems through a pointer (0x006A9102, 0x006A911D)",0x006a4440,0x005955f0,0x006a4440
@@ -14563,7 +14563,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14562,function,CCCreature::GetSyncTreeName,,0x006a51c0,0x00596380,0x006a51c0
 14563,function,CCCreature::ThrottleUpdate,,0x006a5200,0x005963c0,0x006a5200
 14564,function,CCCreature::UpdateInteractionMarker,,0x006a52c0,0x00596480,0x006a52c0
-14565,function,CCCreature::ClearByte_0x250,,0x006a53d0,0x00596590,0x006a53d0
+14565,function,CCCreature::OnAnimationPlayed,"Virtual slot 69, called by CCObject::Play (0x0069B5EB) after it started an animation. Clears object byte +0x250 (CCObject::OnAnimationPlayed) and then jumps to ResumeLookAt 0x006A0040: look-at is reset to neutral when the playing animation disables it (GdaTables::GetAnimDisableLookAt on animation+0x13C), else enabled unless its state (+0xDC) is already 1 or 2.",0x006a53d0,0x00596590,0x006a53d0
 14566,function,CCCreature::UpdateAILevel,"AI level: 4 for the controlled creature, 2 with a combat record (+0xC60), 3 in the party, 1 in the controlled creature's area; levels 2 and 1 go through AI::AdjustAILevelForBand; stored by ForScript_SetAILevel",0x006a53e0,0x005965a0,0x006a53e0
 14567,function,CCCreature::UpdateLightSubsetIndex,,0x006a5490,0x00596650,0x006a5490
 14568,function,CCCreature::UpdateVegetationSound,,0x006a5510,0x005966d0,0x006a5510
@@ -16537,7 +16537,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16536,function,,,0x0071ca90,0x0083b070,0x0071ca90
 16537,function,CCCreatureStats::EnsureCreatureAbilities,,0x0071ccd0,0x0061aab0,0x0071ccd0
 16538,function,ScriptBackend::ForScript_GetRemainingCooldown,,0x0071ce60,0x0061ac40,0x0071ce60
-16539,function,CCCreatureStats::CanUseAbility,,0x0071ce90,0x0061ac70,0x0071ce90
+16539,function,CCCreatureStats::CanUseAbility,"Cost test: the cost (table 1 column 0xF03D763E) is multiplied by a factor made from property 41 (0x29) read through virtual slot 6 (+0x18, GetModifier, call at 0x0071D03F), not its total, then compared with property 8's current (slot 9, +0x24, 0x0071D097).",0x0071ce90,0x0061ac70,0x0071ce90
 16540,function,CCCreatureStats::RefreshQuickslotUsable,"(all): CanUseAbility(ability, &reason = -1, &tag) per record of the current bar's std::map (CreatureAbilities +0x1B0's, at +0x14C), every record or only the one at the cursor (+0x1BC); keeps the reason at record +0x64 and +0x68 = (old != new); the usable bool CanUseAbility returns is not kept",0x0071d1b0,0x0061b0a0,0x0071d1b0
 16541,function,CCCreatureStats::PublishQuickslotReasons,"When any record of the current bar has +0x68 set, refreshes all first (RefreshQuickslotUsable(1), 0x0071D369); then SetInstanceError(ability, reason +0x64, &tag) on the party data for every record in map order",0x0071d2b0,0x0061b1a0,0x0071d2b0
 16542,function,std::vector<unsigned int>::append,,0x0071d410,0x0083b530,0x0071d410
@@ -66981,9 +66981,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 66980,data,PortraitProperties::PortraitProperties::s_defaultDistance,"float 0.6, the constructor's default portrait camera distance (record +0x60; pitch +0x58, rotation +0x5C, set to 0), metres INFERRED; fld at 0x006a9fe9",0x00b0f27c,0x00af687c,0x00b0f27c
 66981,data,CCCreature::CreatePhysicsController::s_minHeight,"Float 1.426 (metres): the controller height is raised to it when below the double 1.426 (0x006B1FFF); 1.426 is the dwarf height (DAOLib dev/CAMERA.md), INFERRED that the gating function 0x006A2CE0 selects dwarves",0x00b0f280,0x00af6880,0x00b0f280
 66982,data,CCCreature::CreatePhysicsController::s_minRadius,Float 0.35 (metres): the controller radius (the appearance PerSpace) is raised to it when below the double 0.35 (0x006B201A),0x00b0f284,0x00af6884,0x00b0f284
-66983,data,,,0x00b0f28c,0x00af688c,0x00b0f28c
-66984,data,,,0x00b0f290,0x00af6890,0x00b0f290
-66985,data,,,0x00b0f294,0x00af6894,0x00b0f294
+66983,data,__real@3f000000,"Float 0.5, shared by four readers: CCCreature::ThrottleUpdate (fld at 0x006A526C) takes it as the longest wait between a throttled creature's full AIUpdates; also read in CreatePhysicsController 0x006B20F5, UpdateController 0x006B6AF9 and UpdateMovement 0x006BBA19.",0x00b0f28c,0x00af688c,0x00b0f28c
+66984,data,__real@3dcccccd,"Float 0.1, shared by six readers: CCCreature::ThrottleUpdate (fld at 0x006A5282) takes it as the wait at model detail level 0 (virtual slot +0x64 of the object at creature+0x70 answers 0); also SetBodyOverlayWeightSlot0 0x006A6E75 and 0x006A6F0D, SetBodyOverlayWeightSlot1 0x006A6FB4, CreatePhysicsController 0x006B205F and UpdateController 0x006B6A23.",0x00b0f290,0x00af6890,0x00b0f290
+66985,data,__real@3e4ccccd,"Float 0.2, shared by three readers: CCCreature::ThrottleUpdate (fld at 0x006A528F) takes it as the wait at model detail level 2; also SetBodyOverlayWeightSlot0 0x006A6EFD and SetBodyOverlayWeightSlot1 0x006A6F99.",0x00b0f294,0x00af6894,0x00b0f294
 66986,data,,,0x00b0f298,0x00af6898,0x00b0f298
 66987,data,,,0x00b0f2a4,0x00af68a4,0x00b0f2a4
 66988,data,Physics::SCtrlDesc::vftable,,0x00b0f2b4,0x00af68b4,0x00b0f2b4
