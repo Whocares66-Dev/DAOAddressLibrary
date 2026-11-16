@@ -10697,7 +10697,7 @@ address,what,value,why
 0x007E3330,signature,"bool __thiscall f(void *this, int actorId, int objectId, bool putBack)",ID 21047 CutscenePlayer::BindObjectIdToActor at 0x007E3330: ret N/4 and the first use of ecx read in daoexe --disasm
 0x007E3390,signature,"bool __thiscall f(void *this, void *tag, int objectId, bool putBack)",ID 21048 CutscenePlayer::BindObjectIdToActorByTag at 0x007E3390: ret N/4 and the first use of ecx read in daoexe --disasm
 0x007E33C0,signature,void __thiscall f(void *this),ID 21049 EC::Cutscene::Actor::ApplyFollowerAniHack at 0x007E33C0: ret N/4 and the first use of ecx read in daoexe --disasm
-0x007E36B0,signature,void __thiscall f(void *this),ID 21050 EC::Cutscene::Actor::Bind at 0x007E36B0: ret N/4 and the first use of ecx read in daoexe --disasm
+0x007E36B0,signature,bool __thiscall f(void *this),ID 21050 EC::Cutscene::Actor::Bind: replaces the existing signature row (void). AL is 0 at 0x007E36FB when already bound and 1 at 0x007E3D00; ret with no argument (0x007E3D25); ECX is moved to ESI at 0x007E36F0 before any write; CutscenePlayer::Update tests AL after the call at 0x007E3E90.
 0x007E4720,signature,"void __thiscall f(void *this, unsigned int creatorId)",ID 21054 CCAreaOfEffectObject::SetCreatorId at 0x007E4720: ret N/4 and the first use of ecx read in daoexe --disasm
 0x007E4DA0,signature,"void __thiscall f(void *this, int areaEffectId)",ID 21063 CCAreaOfEffectObject::SetAreaEffectId at 0x007E4DA0: ret N/4 and the first use of ecx read in daoexe --disasm
 0x007E5060,signature,"void __thiscall f(void *this, void *gff3Struct, void *resGff, void *gff4Struct)",ID 21064 CCAreaOfEffectObject::ReadFields at 0x007E5060: ret N/4 and the first use of ecx read in daoexe --disasm

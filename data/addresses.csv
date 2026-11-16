@@ -13872,7 +13872,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13871,function,GameModeDialog::IsParticipant,,0x0068cc30,0x005789c0,0x0068cc30
 13872,function,GUI::InvokeConversationOnNPCLineFinished,,0x0068cc60,0x005789f0,0x0068cc60
 13873,function,GameModeDialog::IsPointInBounds,"Whether a point lies inside the xy box +0x2D0..+0x2E4 (the no-cut participants, or the cutscene's stage bounds)",0x0068ccf0,0x00578a80,0x0068ccf0
-13874,function,GameModeDialog::UpdateCursorShape,,0x0068cd50,0x005cd9b0,0x0068cd50
+13874,function,GameModeDialog::UpdateCursorShape,"One call of GameMode::UpdateIdleCursor with the same argument. Three modes' vftables hold it: GameModeDialog's, GameModeCutscene's and GameModeMovie's.",0x0068cd50,0x005cd9b0,0x0068cd50
 13875,function,EclipseGame::IsCapturingMovie,,0x0068cd60,0x00578ae0,0x0068cd60
 13876,function,GameModeDialog::GetReplyIconLabel,,0x0068cd80,0x00578b00,0x0068cd80
 13877,function,GameModeDialog::SetNPCLine,,0x0068ced0,0x00578c50,0x0068ced0
@@ -13963,7 +13963,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13962,function,GameModeCutscene::SetSubtitle,,0x00691ff0,0x0057e010,0x00691ff0
 13963,function,GameModeCutscene::ClearSubtitle,,0x006920b0,0x0057e0d0,0x006920b0
 13964,function,GameModeCutsceneData::Create,,0x00692150,0x0057e170,0x00692150
-13965,function,GameModeDialog::ShouldUpdateLod,,0x00692200,0x00578d20,0x00692200
+13965,function,GameModeDialog::ShouldUpdateLod,"Answers true unless the graphics driver's movie player says a movie is playing (g_graphics slot +0xC0, then that object's slot +0x20; 0x00692200 to 0x0069221D). It reads no this, and GameModeCutscene's vftable holds it as well as GameModeDialog's.",0x00692200,0x00578d20,0x00692200
 13966,function,GameModeData::`scalar deleting destructor',,0x00692230,0x004c14f0,0x00692230
 13967,function,GameModeCutscene::~GameModeCutscene,,0x00692250,0x0057e220,0x00692250
 13968,function,GameModeCutscene::IsFinished,,0x006922d0,0x0057e2a0,0x006922d0
@@ -20762,7 +20762,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20761,function,EC::Cutscene::Actor::RealignOrientation,,0x007d0850,0x006b7bc0,0x007d0850
 20762,function,EC::Cutscene::Actor::HasHeadtrackingAction,,0x007d09c0,0x006b7d30,0x007d09c0
 20763,function,EC::Cutscene::Actor::HasRealignContAt,,0x007d0a50,0x006b7dc0,0x007d0a50
-20764,function,EC::Cutscene::Actor::ResetActions,,0x007d0b20,0x006b7e90,0x007d0b20
+20764,function,EC::Cutscene::Actor::StopActions,"Calls vtable slot 3 (+0xC, Stop) of every action in the actor's list (+0x518); Actor::Reset 0x007D8920 calls slot 2 (Reset, +0x8) instead (0x007D8A8E). Called from CutscenePlayer::Update 0x007E4354, 0x007E4365 and 0x007E454E on every actor when a jump target is taken.",0x007d0b20,0x006b7e90,0x007d0b20
 20765,function,EC::Cutscene::Actor::SetLightRadius,,0x007d0b80,0x006b7ef0,0x007d0b80
 20766,function,EC::Cutscene::Actor::SetLightColor,,0x007d0c00,0x006b7f70,0x007d0c00
 20767,function,EC::Cutscene::Actor::SetLightIntensity,,0x007d0c80,0x006b7ff0,0x007d0c80
@@ -20868,7 +20868,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20867,function,,,0x007d5f60,0x006bd260,0x007d5f60
 20868,function,,,0x007d600a,0x006bd30a,0x007d600a
 20869,function,EC::Cutscene::Actor::RemoveAnimationsNotCovering,,0x007d6080,0x006bd380,0x007d6080
-20870,function,EC::Cutscene::Actor::UpdateFollowerAniHack,,0x007d6140,0x006bd440,0x007d6140
+20870,function,EC::Cutscene::Actor::UpdatePose,"Plays the actor's pose, previous-pose and transition clips (poses 450/454/458, clip names 478/494/4B0, delay 4D8, transition length 4D0); runs only for an actor with a pose (+0x450). The follower rule is one branch near its end (+0x4E0 gates SetRootWeightById at 0x007D652C). Called by UpdateBetweenCategories at 0x007D863B with ECX the actor.",0x007d6140,0x006bd440,0x007d6140
 20871,function,,,0x007d6630,0x006bd930,0x007d6630
 20872,function,Core::VectorReserveIfLarger<EC::Cutscene::Actor::ClipRecord>,,0x007d67e0,0x006bdae0,0x007d67e0
 20873,function,std::vector<EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>::resize,"resize(n, value) of 0x18-byte ParameterValues",0x007d6820,0x006bdb20,0x007d6820
@@ -21037,7 +21037,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21036,function,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>::~map",,0x007e0e90,0x006c82e0,0x007e0e90
 21037,function,"std::map<unsigned int,CutscenePlayer::ActorDependencyList>::operator[]",,0x007e0f20,0x006c8370,0x007e0f20
 21038,function,std::vector<CutscenePlayer::BindRecord>::push_back,,0x007e1000,0x006c8450,0x007e1000
-21039,function,CutscenePlayer::Teardown,"Indirect sites, read 2026-11-12. The actor EBX is CClientExoApp::GetObjectById's object (0x007E1320), any CCObject class; slot targets are per class, from the 17 CCObject-family primary vftables. 0x007E133D slot +0x10, the creature cast: Stub::ReturnThis 0x0079AF30 in CCCreature (0x00B10484), Stub::ReturnZero 0x004137B0 in every other class. 0x007E134A slot +0x24, the placeable cast: ReturnThis in CCPlaceable (0x00B1C084), ReturnZero in the rest; its result [esp+0x1C] is the object GetModelObject is later called on. 0x007E136F slot +0x108 CCObject::ResetVisualState 0x00696F50 (CCVisualEffect::ResetVisualState 0x007E9910 in CCVisualEffect). 0x007E137F slot +0x104 with [edi+0x20], CCObject::AddToScene 0x00696F00 (CCPlaceable::AddToScene 0x0074F7A0, CCVisualEffect::AddToScene 0x007E9AB0). The model chain: CCObject::GetModelObject returns the interface at GraphicsStructures::Object+8 (vftable 0x00AF8434). 0x007E15FB calls its slot +0x1C (edi = that vftable + 0x1C, 0x007E15C9), GraphicsStructures::Object::SetOrientation 0x005435D0, with the quaternion from Quaternion::FromYawPitchRoll. 0x007E160D and 0x007E16BD call slot +0x4C, GraphicsStructures::Object::AsAnimatable 0x0054F790, which returns the Object; 0x007E1616 calls that Object's slot +0x60 (vftable 0x00AF85DC), GraphicsStructures::Object::RemoveAllAnimationTrees 0x0054D4A0. 0x007E1690 calls Animation::AnimationManager::Get's singleton (vftable 0x00B26584) at slot +0x1C, Animation::AnimationManager::GetTree 0x0080F980. 0x007E17B9 calls g_clientExoApp+0x158 (the GUI system, CClientExoApp::SetGUISystem) at slot +0x38 with 0x21: GUI::DragonAgeGUISystem::CloseScene 0x00606650, or Stub::ReturnFalse_4 0x0091FC50 in GUI::NullGUISystem (the two systems EclipseGame::CreateGUISystem makes). 0x007E17DF calls g_graphics (Eclipse::CreateGraphics builds an Eclipse::IGraphicsInternal, vftable 0x00AF6D2C) at slot +0x10C, Eclipse::IGraphicsInternal::ClearCutsceneRunning 0x00527820. Each named target other than the shared CCObject ones sits in one table only (Ghidra's data references). Conversation::BindLookAt uses the same model chain at 0x007F26A5.",0x007e10a0,0x006c84f0,0x007e10a0
+21039,function,CutscenePlayer::~CutscenePlayer,"The destructor of CutscenePlayer (the class has no virtual table, so no deleting-destructor wrapper): sets state 7, resets and deletes the actors, puts bound objects back, restores the scene and shadow range, then destroys the members. All 11 callers (0x0068E42F, 0x0068EF6B, 0x0068F4B5, 0x0068F600, 0x0068FE09, 0x0068FE9E, 0x00691123, 0x00691444, 0x00691F1D, 0x006921B4, 0x006925B9) call operator delete (0x004136C0) on the object straight after.",0x007e10a0,0x006c84f0,0x007e10a0
 21040,function,CutscenePlayer::Load,"+0x14, the last frame, is ftol(fps * run time), truncated (0x007E1B27): fps +4 (field 5016, default 30, read only while EclipseGame +0x254 is 0), run time +8 (field 5000)",0x007e1910,0x006c8d60,0x007e1910
 21041,function,EC::Cutscene::Actor::FindFollowerAniHackEntry,,0x007e2210,0x006c9660,0x007e2210
 21042,function,std::vector<CutscenePlayer::BindRecord>::vector,,0x007e2660,0x006c9ab0,0x007e2660
@@ -21048,7 +21048,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21047,function,CutscenePlayer::BindObjectIdToActor,,0x007e3330,0x006ca780,0x007e3330
 21048,function,CutscenePlayer::BindObjectIdToActorByTag,,0x007e3390,0x006ca7e0,0x007e3390
 21049,function,EC::Cutscene::Actor::ApplyFollowerAniHack,,0x007e33c0,0x006ca810,0x007e33c0
-21050,function,EC::Cutscene::Actor::Bind,,0x007e36b0,0x006cab00,0x007e36b0
+21050,function,EC::Cutscene::Actor::Bind,"Returns false when the actor was already bound (0x007E36FB xor al,al at the head), true at the end (0x007E3D00 mov al,1; plain ret at 0x007E3D25). CutscenePlayer::Update tests AL after the call at 0x007E3E90 (state 1: with yieldWhileBinding set it returns after each actor bound); the call at 0x007E4124 ignores it.",0x007e36b0,0x006cab00,0x007e36b0
 21051,function,CutscenePlayer::Update,"State 3, while the area chunk queue is empty: warm-up +0x114 (0: Step with dt 0; 1: dt 0; then acc +0x10 += dt); frame = ftol(acc*fps + 0.5), clamped to the last frame +0x14 (setting ended, +0x18) only while +0x18 is clear (0x007E439F), so once ended the frame runs on past +0x14 when +0x110 is set; the clock +0xC = frame/fps; Skip when ended and +0x110 clear",0x007e3d30,0x006cb180,0x007e3d30
 21052,function,CCAreaOfEffectObject::FreeStateBuffers,,0x007e45e0,0x006cba30,0x007e45e0
 21053,function,CCAreaOfEffectObject::SetStateAnimation,,0x007e4680,0x006cbad0,0x007e4680
