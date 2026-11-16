@@ -157,6 +157,7 @@ from ghidra.program.model.data import (
     LongLongDataType,
     Pointer,
     PointerDataType,
+    PointerTypedef,
     ShortDataType,
     Structure,
     StructureDataType,
@@ -169,7 +170,7 @@ from ghidra.program.model.data import (
     VoidDataType,
     WideCharDataType,
 )
-from ghidra.program.model.listing import CodeUnit, GhidraClass
+from ghidra.program.model.listing import CodeUnit, Function, GhidraClass, ParameterImpl
 
 ROOT = program.getPreferredRootNamespaceCategoryPath() or CategoryPath("/ClassDataTypes")
 OURS = "DAOAddressLibrary data/structs.csv"
@@ -184,7 +185,7 @@ SCALAR = {
 }
 for key in ("placeholders", "typed", "untyped", "beyond", "blocked", "built", "renamed",
             "slots", "classes", "grown", "unpacked", "damage", "typedfixes", "notype",
-            "noroom", "eh", "byvalue", "dropped"):
+            "noroom", "eh", "byvalue", "dropped", "nothis"):
     done.setdefault(key, 0)
 unresolved = {}
 
@@ -591,11 +592,42 @@ def slot_names():
                 faults.append("slot %s +0x%x: %s" % (kind.getName(), unit.getOffset(), e))
 
 
+def this_at(f, kind, shift):
+    # A method called with this `shift` bytes into its object (a later
+    # base's vftable): this becomes a pointer Ghidra knows to be that far
+    # in, and the decompiler writes ADJ(this)->field with the object's own
+    # fields. Ghidra types a class's this itself unless the function's
+    # storage is its own, so the parameters are kept where they are and
+    # this alone retyped.
+    params = list(f.getParameters())
+    first = params[0].getVariableStorage().getRegister() if params else None
+    if first is None or first.getName() != "ECX":
+        done["nothis"] += 1
+        return
+    name = "%s_plus_0x%X_ptr" % (kind.getName(), shift)
+    if f.hasCustomVariableStorage() and params[0].getDataType().getName() == name:
+        return
+    done["typedfixes"] += 1
+    if dry:
+        return
+    pointer = PointerTypedef(name, kind, 4, dtm, shift)
+    pointer.setCategoryPath(kind.getCategoryPath())
+    pointer = dtm.resolve(pointer, DataTypeConflictHandler.REPLACE_HANDLER)
+    f.setCustomVariableStorage(True)
+    new = [ParameterImpl("this", pointer, params[0].getVariableStorage(), program)] + [
+        ParameterImpl(p.getName(), p.getDataType(), p.getVariableStorage(), program)
+        for p in params[1:]]
+    f.replaceParameters(Function.FunctionUpdateType.CUSTOM_STORAGE, True, SOURCE, new)
+
+
 def typed_fix(address, what, tree, text):
     a = toAddr(address)
     kind = build(tree, None, [], "", True)
     if kind is None:
         done["notype"] += 1
+        return
+    if what == "thisat":
+        this_at(fm.getFunctionAt(a), kind, int(text.rsplit("+", 1)[1], 16))
         return
     if what == "returntype":
         f = fm.getFunctionAt(a)

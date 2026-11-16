@@ -3,6 +3,9 @@ passed to: types tools/ghidra_sync.py gives them in Ghidra.
 
     python tools/receivers.py            what the GOG build says, and what it does not settle
 
+It also reads which methods are called with this inside their object
+(`thisat`): subobject_methods says how.
+
 A method takes its object in ECX. So where the code loads ECX and calls a
 class's method with nothing between that writes ECX, what was loaded is an
 object of that class:
@@ -175,7 +178,61 @@ def read():
         for row in db.rows.values()
         if row.kind == "data" and row.name
     }
-    return scan(img, functions, owner), bases, functions, names
+    return scan(img, functions, owner), bases, functions, names, img
+
+
+# `sub ecx, N` or `add ecx, N`, then a jump: a thunk that moves this from
+# a base to the object and goes on to the method.
+ADJUSTOR = re.compile(rb"(\x83[\xe9\xc1].|\x81[\xe9\xc1].{4})\xe9", re.S)
+
+
+def subobject_methods(img, functions, bases):
+    """[(address, "thisat", "Class+0xN", why)]: the methods whose this points
+    N bytes into their object.
+
+    A class with several bases has a vftable for each, and a method it
+    overrides in a later base's table is called with this at that base:
+    CCObject::QueueEffectAnimation, in CCObject's table at +0x70, reads the
+    object's effect list at [ecx+0xE8], which is CCObject +0x158. Ghidra
+    gives every method of a class a this at the object's start, so it showed
+    that read as a field 0x70 bytes before the right one, by name.
+
+    What counts: the table names the function in a class; that class holds
+    it in vftables at one offset, not 0; every other class holding it
+    derives from that one; no class holds it in a table at +0, where this
+    would be the object; and it is not an adjustor thunk, which is in such
+    a table to move this back."""
+    held = collections.defaultdict(set)
+    for _vftable, decorated, offset, table in img.vtables:
+        cls = msvc_names.undecorate(decorated)
+        for function in table:
+            held[function].add((cls, offset))
+    out = []
+    for address, places in sorted(held.items()):
+        name = functions.get(address, (None, None))[1]
+        owner = subsystems.owner_of(name)
+        if owner is None or "adjustor{" in name:
+            continue
+        if ADJUSTOR.match(img.bytes_at(address, 7)):
+            continue
+        offsets = {offset for cls, offset in places if cls == owner}
+        others = {cls for cls, _ in places if cls != owner}
+        if (
+            len(offsets) != 1
+            or any(offset == 0 for _, offset in places)
+            or any(owner not in bases.get(cls, ()) for cls in others)
+        ):
+            continue
+        (offset,) = offsets
+        out.append(
+            (
+                address,
+                "thisat",
+                f"{owner}+0x{offset:X}",
+                f"in {owner}'s vftable at +0x{offset:X} and in none at +0",
+            )
+        )
+    return out
 
 
 def is_constructor(name, cls):
@@ -186,7 +243,7 @@ def is_constructor(name, cls):
     return name == f"{cls}::{leaf}"
 
 
-def rows(found, bases, functions, names):
+def rows(found, bases, functions, names, img=None):
     """(settled rows [(address, what, value, why)], unsettled lines)."""
     settled, unsettled = [], []
     for table, what, form, noun in (
@@ -220,6 +277,8 @@ def rows(found, bases, functions, names):
                 f"{' and its bases' if len(seen) > 1 else ''}: {shown} (tools/receivers.py)"
             )
             settled.append((key, what, form.format(cls), why))
+    if img is not None:
+        settled += subobject_methods(img, functions, bases)
     return settled, unsettled
 
 
@@ -228,8 +287,7 @@ def main(argv):
         print(__doc__)
         return 0
     daoexe.low_priority()
-    found, bases, functions, names = read()
-    settled, unsettled = rows(found, bases, functions, names)
+    settled, unsettled = rows(*read())
     for address, what, value, why in settled:
         print(f"0x{address:08X} {what} {value}: {why}")
     print(f"{len(settled)} settled, {len(unsettled)} not:")

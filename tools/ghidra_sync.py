@@ -49,8 +49,9 @@ What a run does, on the GOG build's addresses:
   a function's return, in the types a struct's field is written in
   (`CCParty *`).
 - what tools/receivers.py reads from the code of what a global holds and
-  what a getter returns, as `datatype` and `returntype` rows nobody wrote:
-  its head says what counts.
+  what a getter returns, as `datatype` and `returntype` rows nobody wrote,
+  and which methods are called with this inside their object and how far
+  in (`thisat`, Class+0xN): its head says what counts.
 - every struct in data/structs.csv: its fields onto the type Ghidra's
   decompiler uses for that class, with their types, and each vftable's
   slots named and typed for the functions in them. tools/ghidra_types.py
@@ -384,7 +385,7 @@ def comment_rows():
         ]
 
 
-TYPED = ("datatype", "returntype")
+TYPED = ("datatype", "returntype", "thisat")
 
 
 def typed_fixes(fixes):
@@ -407,7 +408,15 @@ def typed_fixes(fixes):
         if (address, what) not in held
     ]
     return [
-        (address, what, ghidra_types.field_type(value), value)
+        (
+            address,
+            what,
+            # `thisat`'s value is Class+0xN: the class is the type.
+            ghidra_types.field_type(
+                value.rsplit("+", 1)[0] if what == "thisat" else value
+            ),
+            value,
+        )
         for address, what, value in typed
     ]
 
@@ -703,7 +712,8 @@ def main(argv):
     if "fixes" in only:
         print(
             f"typed fixes: {totals['typedfixes']} applied, {totals['notype']} whose class "
-            f"Ghidra has no type for, {totals['noroom']} objects with no room or no layout"
+            f"Ghidra has no type for, {totals['noroom']} objects with no room or no layout, "
+            f"{totals['nothis']} methods whose this is not in ECX"
         )
     if "eh" in only:
         print(f"exception handling: {totals['eh']} labels and comments")

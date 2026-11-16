@@ -102,5 +102,78 @@ class Rows(unittest.TestCase):
         self.assertFalse(receivers.is_constructor("A::B::Run", "A::B"))
 
 
+class FakeImage:
+    """What subobject_methods reads of an image: its vftables and a
+    function's first bytes."""
+
+    def __init__(self, vtables, code=None):
+        self.vtables = vtables
+        self.code = code or {}
+
+    def bytes_at(self, va, n):
+        return self.code.get(va, b"\x55\x8b\xec\x56\x8b\xf1\x5e")[:n]
+
+
+class SubobjectMethods(unittest.TestCase):
+    functions = {
+        0x10: (1, "Derived::OnSide"),
+        0x20: (2, "Derived::Run"),
+        0x30: (3, "Derived::Walk`adjustor{8}'"),
+        0x40: (4, "Derived::Back"),
+        0x50: (5, "Derived::Shared"),
+    }
+    bases = {"Derived": {"Base", "Side"}, "Most": {"Derived"}, "Other": set()}
+
+    def found(self, vtables, code=None):
+        rows = receivers.subobject_methods(
+            FakeImage(vtables, code), self.functions, self.bases
+        )
+        return [(address, what, value) for address, what, value, _ in rows]
+
+    def test_a_method_only_in_a_later_bases_table_has_this_there(self):
+        self.assertEqual(
+            self.found(
+                [
+                    (0x900, ".?AVDerived@@", 0, [0x20]),
+                    (0x910, ".?AVDerived@@", 8, [0x10]),
+                    (0x920, ".?AVMost@@", 8, [0x10]),
+                ]
+            ),
+            [(0x10, "thisat", "Derived+0x8")],
+        )
+
+    def test_one_also_in_a_table_at_the_start_is_left(self):
+        self.assertEqual(
+            self.found(
+                [
+                    (0x900, ".?AVDerived@@", 0, [0x10]),
+                    (0x910, ".?AVDerived@@", 8, [0x10]),
+                ]
+            ),
+            [],
+        )
+
+    def test_an_adjustor_thunk_is_left_by_name_and_by_code(self):
+        sub_ecx_jmp = b"\x83\xe9\x08\xe9\x00\x00\x00"
+        self.assertEqual(
+            self.found(
+                [(0x910, ".?AVDerived@@", 8, [0x30, 0x40])], {0x40: sub_ecx_jmp}
+            ),
+            [],
+        )
+
+    def test_one_an_unrelated_class_holds_too_is_left(self):
+        # The linker folds identical functions: the name is one class's.
+        self.assertEqual(
+            self.found(
+                [
+                    (0x910, ".?AVDerived@@", 8, [0x50]),
+                    (0x930, ".?AVOther@@", 4, [0x50]),
+                ]
+            ),
+            [],
+        )
+
+
 if __name__ == "__main__":
     unittest.main()
