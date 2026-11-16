@@ -254,7 +254,9 @@ def decompile_text(f):
     n = f.getName(True)
     try:
         d, o = decompiler()
-        r = d.decompileFunction(f, o.getDefaultTimeout(), TaskMonitor.DUMMY)
+        # Longer than get_code's own limit: Scaleform's script interpreter
+        # (0x0093DF70, 19,577 bytes) takes about 100 seconds.
+        r = d.decompileFunction(f, max(o.getDefaultTimeout(), 300), TaskMonitor.DUMMY)
         if r.isTimedOut():
             return HEAD + 'Decompilation timed out for function: ' + n, []
         if not r.decompileCompleted():

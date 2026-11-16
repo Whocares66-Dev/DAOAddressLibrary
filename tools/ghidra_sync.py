@@ -265,6 +265,64 @@ for address, what, value in W["fixes"]:
     except Exception as e:
         faults.append("fix 0x%08x %s: %s" % (address, what, e))
 
+# A switch Ghidra did not follow: `jmp [reg*4 + table]` with no reference to
+# where it goes. Its function then ends at the jump, the cases are code in no
+# function, and the decompile stops at "Could not recover jumptable". Six of
+# the build's 615 (2026-11-16): the script interpreter's two, whose cases run
+# to 0x00942A5B, MovementController::GetSpeed's, three in libraries. The
+# decompiler gives up where a path reaches the jump without passing the test
+# of its index, so it cannot tell the cases' numbers either: the cases are
+# given by address, and a comment at the jump says which entries go to each.
+# The table is the words at its address that point into the code, up to the
+# first that does not or the first something else refers to (checked against
+# the six jumps' own bounds).
+done["switches"] = 0
+if W.get("switches"):
+    import re as _re
+    from java.util import ArrayList
+    from ghidra.program.model.listing import CodeUnit
+    from ghidra.program.model.pcode import JumpTable
+    from ghidra.program.model.symbol import RefType
+    _text = program.getMemory().getBlock(".text")
+    _refs = program.getReferenceManager()
+    for ins in listing.getInstructions(_text.getStart(), True):
+        if ins.getMnemonicString() != "JMP":
+            continue
+        found = _re.match(r"JMP dword ptr \[\w+\*0x4 \+ (0x[0-9a-f]+)\]$", str(ins))
+        if not found or any(r.getReferenceType().isFlow() for r in ins.getReferencesFrom()):
+            continue
+        a = ins.getAddress()
+        try:
+            f = fm.getFunctionContaining(a)
+            if f is None:
+                raise Exception("in no function")
+            table = toAddr(int(found.group(1), 16))
+            goes = []
+            while True:
+                at = table.add(4 * len(goes))
+                to = table.getNewAddress(program.getMemory().getInt(at) & 0xFFFFFFFF)
+                if not _text.contains(to) or (goes and _refs.hasReferencesTo(at)):
+                    break
+                goes.append(to)
+            if not goes:
+                raise Exception("no table at %s" % table)
+            done["switches"] += 1
+            if dry:
+                continue
+            for to in goes:
+                _refs.addMemoryReference(a, to, RefType.COMPUTED_JUMP, SOURCE, 0)
+            JumpTable(a, ArrayList(goes), True, len(goes)).writeOverride(f)
+            CreateFunctionCmd.fixupFunctionBody(program, f, monitor)
+            by = {}
+            for i, to in enumerate(goes):
+                by.setdefault(to, []).append(str(i))
+            listing.setComment(a, CodeUnit.PRE_COMMENT, "A switch through the %d entries at %s, which Ghidra did not "
+                               "follow; its case labels here are not the entries' numbers. Entries: %s" % (
+                                   len(goes), table, "; ".join(
+                                       "%s -> %s" % (", ".join(n), to) for to, n in sorted(by.items()))))
+        except Exception as e:
+            faults.append("switch at %s: %s" % (a, e))
+
 dtm = program.getDataTypeManager()
 @TYPES@
 from ghidra.program.model.listing import CodeUnit
@@ -655,6 +713,7 @@ def main(argv):
             if last and "fixes" in only
             else [],
             "typed": typed_fixes(fixes) if last and "fixes" in only else [],
+            "switches": last and "fixes" in only,
             "eh": eh_rows() if last and "eh" in only else [],
             "types": last and "types" in only,
             "structs": struct_rows() if last and "types" in only else [],
@@ -717,6 +776,7 @@ def main(argv):
             f"Ghidra has no type for, {totals['noroom']} objects with no room or no layout, "
             f"{totals['nothis']} methods whose this is not in ECX"
         )
+        print(f"switches: {totals.get('switches', 0)} given the cases of their tables")
     if "eh" in only:
         print(f"exception handling: {totals['eh']} labels and comments")
     for fault in faults[:40]:
