@@ -12606,7 +12606,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12605,function,GameModeController::`scalar deleting destructor',,0x00640c30,0x00536520,0x00640c30
 12606,function,GameModeController::`scalar deleting destructor',,0x00640c40,0x00536500,0x00640c40
 12607,function,GameModeController::`scalar deleting destructor',,0x00640c50,0x00536510,0x00640c50
-12608,function,GameModeController::TakeRequest,,0x00640c60,0x00536530,0x00640c60
+12608,function,GameModeController::TakeRequest,"Takes the next request for SwitchMode. The current mode (+0x74) being absent, base (slot 0x28 IsBaseMode) or finished (slot 0x2C) lets a request be taken; a mode that is only interruptible (slot 0x30) lets one be taken when the queue is not empty. A request comes from the back of the queue at +0x9C (std::vector back 0x00640CE1, shrink 0x00640D12) or else from the base slot at +0x8C (0x00640D17); a request for the current mode with force 0 is dropped. For the chosen mode, slot 0x24 (TakesData) true means the request must carry data: none and it returns false (0x00640DB4), else AcceptData (slot 0x14) is called with it and the data freed (0x00640DD3). Returns true when a request was taken",0x00640c60,0x00536530,0x00640c60
 12609,function,GameModeController::`scalar deleting destructor',,0x00640e40,0x00536710,0x00640e40
 12610,function,,,0x00640e60,0x0068c860,0x00640e60
 12611,function,std::vector<T16>::operator=,,0x00640eb0,0x00536b90,0x00640eb0
@@ -12616,14 +12616,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12615,function,GameModeController::InsertRequest,,0x00641220,0x0083a600,0x00641220
 12616,function,std::vector<GameModeRequest>::clear,,0x006412a0,0x005371f0,0x006412a0
 12617,function,GameModeController::GameModeController,,0x00641370,0x005372c0,0x00641370
-12618,function,GameModeController::SetGameMode,,0x006414a0,0x005373f0,0x006414a0
+12618,function,GameModeController::SetGameMode,"Files a request for a mode. The arguments are the mode number, the force flag and the data object. If the requested mode's slot 0x28 (IsBaseMode, 0x006414DD) answers true the request is stored in the base slot at +0x8C (0x00641666), replacing the old one, and the saving flags of the mode (+0x68) are applied; otherwise it is inserted at index 0 of the queue at +0x9C (InsertRequest 0x00641220 called at 0x006415B6) (the loop before it, 0x00641534..0x006415A7, walks the queued requests and was not read further). The request's second field is GetGameMode() at the time of the call",0x006414a0,0x005373f0,0x006414a0
 12619,function,GameModeController::HandleMessage_SetGameModeMessage,,0x006416e0,0x00537630,0x006416e0
 12620,function,GameModeController::ClearRequests,,0x00641700,0x00537650,0x00641700
 12621,function,GameModeController::Clone,,0x00641780,0x005376d0,0x00641780
 12622,function,GameModeController::RegisterHandler_SetGameModeMessage,,0x006417f0,0x00537740,0x006417f0
 12623,function,GameModeController::Initialize,,0x00641870,0x005377c0,0x00641870
 12624,function,GameModeController::SwitchMode,,0x00641d30,0x00537c80,0x00641d30
-12625,function,GameModeController::Update,,0x00641f90,0x00537ee0,0x00641f90
+12625,function,GameModeController::Update,"One frame of the mode machine: SwitchMode (at most one switch a frame), then if the current mode's slot 0x48 (RunsWorld) is true and the application's ClientAIMaster exists, ClientAIMaster::Update and World_Update; then the current mode's Update (slot 8); then the roof fade at +0xB0 (Math::SineFade::Advance) whose value is copied to +0xD0. Callers: CClientExoApp::FrameUpdate and AutosaveAndWaitForLoading",0x00641f90,0x00537ee0,0x00641f90
 12626,function,GameModeController::Shutdown,,0x00642010,0x00538010,0x00642010
 12627,function,GameModeController::HandleMessage_TakeScreenshotMessage,,0x00642050,0x00538050,0x00642050
 12628,function,GameModeController::RegisterHandler_TakeScreenshotMessage,,0x00642a50,0x00538a50,0x00642a50
@@ -14889,7 +14889,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14888,function,CCCreature::ForScript_SetGroupId,"(group), vtable +0x170: when the group differs from +0x3C0, stores it and calls OnGroupChanged (0x006B8466)",0x006b8450,0x005a9ee0,0x006b8450
 14889,function,CCCreature::QueuePerceivedOfGroup,,0x006b8470,0x005a9f00,0x006b8470
 14890,function,CCCreature::FindPerceptionNewcomers,,0x006b8540,0x005a9fd0,0x006b8540
-14891,function,CCCreature::UpdatePerception,,0x006b89b0,0x005aa440,0x006b89b0
+14891,function,CCCreature::UpdatePerception,"Runs the creature's perception pass. Called only from CCCreature::Update 0x006BE7A4, and only when the controller's current mode answers true to its vtable slot 0x4C (RunsPerception: true only for Explore and Combat; the call is 0x006BE799)",0x006b89b0,0x005aa440,0x006b89b0
 14892,function,CCCreature::ForScript_ClearPerceptionList,,0x006b8d20,0x005aa7b0,0x006b8d20
 14893,function,CCCreature::RefreshWeaponStyleTrees,,0x006b8d40,0x005aa7d0,0x006b8d40
 14894,function,CCCreature::AddWeaponAnimationTrees,,0x006b8e70,0x005aa900,0x006b8e70
@@ -15446,7 +15446,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15445,function,GameModeMovie::Clone,,0x006dc530,0x005ce000,0x006dc530
 15446,function,GameModeMovie::GameModeMovie,,0x006dc5a0,0x005ce070,0x006dc5a0
 15447,function,GameModeMovie::QueueMovie,,0x006dc660,0x005ce130,0x006dc660
-15448,function,ScriptBackend::ForScript_PlayMovie,,0x006dc680,0x005ce150,0x006dc680
+15448,function,GameModeMovie::PlayMovie,"Starts a movie: a GameModeMovie method (ecx is the Movie mode, index 10 of the controller's mode array at +0x58: PLAYMOVIE 0x0065ED2B, CutscenePlayer::Update 0x007E4258 and PlayStartupMovies all pass it). Does nothing when GameModeMovie+0x99 (disabled) is set; otherwise queues the movie name (QueueMovie 0x006DC660 when the name is not empty), asks the controller for mode 10 (SetGameMode(10,0,0), 0x006DC6D0), makes a sound call (0x006DC6FD) and sets +0x84 (playing) to 1",0x006dc680,0x005ce150,0x006dc680
 15449,function,GameModeMovie::PlayStartupMovies,,0x006dc730,0x005ce200,0x006dc730
 15450,function,Input::AllowModes,,0x006dc880,0x005ce350,0x006dc880
 15451,function,Input::AllowInputModes,,0x006dc8c0,0x005ce390,0x006dc8c0
@@ -24532,8 +24532,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24531,function,,,0x0089aea0,0x00a3e250,0x0089aea0
 24532,function,,,0x0089af10,0x00a3e2c0,0x0089af10
 24533,function,,,0x0089af70,0x00a3e320,0x0089af70
-24534,function,,,0x0089af90,0x00a3e340,0x0089af90
-24535,function,,,0x0089afa0,0x004764b0,0x0089afa0
+24534,function,Stub::SetDword_0x6C,,0x0089af90,0x00a3e340,0x0089af90
+24535,function,Stub::SetDword_0x70,,0x0089afa0,0x004764b0,0x0089afa0
 24536,function,,,0x0089afb0,0x00a3e350,0x0089afb0
 24537,function,,,0x0089afc0,0x00a3e360,0x0089afc0
 24538,function,,,0x0089afd0,0x00a3e370,0x0089afd0
@@ -65842,7 +65842,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 65841,data,GameMode::vftable_at_20,,0x00b06d60,0x00aee178,0x00b06d60
 65842,data,GameMode::vftable_at_1c,,0x00b06d74,0x00aee18c,0x00b06d74
 65843,data,GameMode::vftable_at_8,,0x00b06dd0,0x00aee1e8,0x00b06dd0
-65844,data,GameMode::vftable,,0x00b06de4,0x00aee1fc,0x00b06de4
+65844,data,GameMode::vftable,"GameMode's virtual table. Slots the engine reads as per-mode answers (all called on the controller's current mode, +0x74, or on the requested mode's object): 9 (+0x24) TakesData, true for Dialog, Cutscene, Loading and Pregame, read by GameModeController::TakeRequest 0x00640DA6 (a request for such a mode with no data is dropped, else AcceptData slot 5 is called with it); 10 (+0x28) IsBaseMode, true for Explore, Combat, Dead, FlyCam and Fixed, read by SetGameMode 0x006414DD (a request for such a mode goes to the base slot +0x8C, not the queue) and TakeRequest 0x00640C8B (any request replaces such a mode); 11 (+0x2C) IsFinished; 12 (+0x30) IsInterruptible; 16 (+0x40) ShouldShowSelectionRings (Explore's own 0x0070B540, true for Combat, false elsewhere), read by CCCreature::UpdateSelectionRing 0x006AAC66 and SetActive 0x006B5E49; 17 (+0x44) ShouldUpdateLod, true unless overridden (Dialog and Cutscene share 0x00692200, Loading 0x006C58E0), read by GameMode::Update 0x00694654; 18 (+0x48) RunsWorld, read by GameModeController::Update 0x00641FA8 before ClientAIMaster::Update and World_Update, false for Cutscene, Loading, Movie, CharGen, PartyPicker and Fixed; 19 (+0x4C) RunsPerception, true only for Explore and Combat, read by CCCreature::Update 0x006BE799 before UpdatePerception; 20 (+0x50) UpdatesModule, false only for Loading, read by GameMode::Update 0x006946B0; 21 (+0x54) RunsAmbientDialog, true only for Explore and Combat, read by CAmbientDialogManager::Update 0x006FF5BD. In the base these slots are the shared stubs Stub::ReturnFalse / Stub::ReturnTrue, so the slot names live here, not on a function",0x00b06de4,0x00aee1fc,0x00b06de4
 65845,data,,,0x00b06e5c,0x00aee274,0x00b06e5c
 65846,data,,,0x00b06e80,0x00aee298,0x00b06e80
 65847,data,AutoLevelUpMessage::vftable,,0x00b07be0,0x00aef000,0x00b07be0
