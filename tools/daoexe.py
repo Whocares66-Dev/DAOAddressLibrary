@@ -232,24 +232,37 @@ class Image:
     def bases(self, decorated):
         """[(decorated base, offset in the object, bases it contains)] from the
         class hierarchy descriptor of the class's primary vftable, the class
-        itself first. A base descriptor is the base's type descriptor, the
-        number of bases below it, then its displacement (mdisp, pdisp, vdisp);
-        pdisp is -1 unless the base is virtual, which this does not resolve."""
-        for va, name, offset, _ in self.vtables:
-            if name != decorated or offset != 0:
+        itself first; None for a class with no vftable at offset 0. pdisp is
+        -1 unless the base is virtual, which this does not resolve:
+        hierarchy() says which are."""
+        if not any(n == decorated and o == 0 for _, n, o, _ in self.vtables):
+            return None
+        return [row[:3] for row in self.hierarchy(decorated)]
+
+    def hierarchy(self, decorated):
+        """[(decorated base, offset in the object, bases it contains, whether
+        it is reached through a virtual base)] from the class hierarchy
+        descriptor any of the class's vftables points at, the class itself
+        first and each base before its own bases. A base descriptor is the
+        base's type descriptor, the number of bases below it, then its
+        displacement (mdisp, pdisp, vdisp); pdisp is -1 unless the base is
+        virtual, and then mdisp is not its offset in the object."""
+        for va, name, _, _ in self.vtables:
+            if name != decorated:
                 continue
-            hierarchy = self.u32(self.u32(va - 4) + 16)
-            count, array = self.u32(hierarchy + 8), self.u32(hierarchy + 12)
+            descriptor_of = self.u32(self.u32(va - 4) + 16)
+            count = self.u32(descriptor_of + 8)
+            array = self.u32(descriptor_of + 12)
             out = []
             for i in range(count):
                 descriptor = self.u32(array + 4 * i)
-                contained = self.u32(descriptor + 4)
-                mdisp = struct.unpack("<i", self.bytes_at(descriptor + 8, 4))[0]
+                mdisp, pdisp = struct.unpack("<ii", self.bytes_at(descriptor + 8, 8))
                 out.append(
                     (
                         self.type_descriptors.get(self.u32(descriptor), "?"),
                         mdisp,
-                        contained,
+                        self.u32(descriptor + 4),
+                        pdisp != -1,
                     )
                 )
             return out

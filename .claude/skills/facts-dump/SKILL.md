@@ -1,6 +1,6 @@
 ---
 name: facts-dump
-description: Write Paragon's facts store (one JSON a function, its decompile, disassembly, callees, callers, branches) from the ghidra-dao database. Use after every ghidra_sync.py run, and when a reader reports a function missing from the store or stale in it.
+description: Write Paragon's facts store (one JSON a function, its decompile, disassembly, callees, callers, branches) from the ghidra-dao database, and its vtables store (one JSON a class, its virtual tables slot by slot and its bases) from the exe. Use after every ghidra_sync.py run, after a commit that names functions, and when a reader reports a function or class missing from a store or stale in it.
 ---
 
 # The facts store
@@ -36,3 +36,12 @@ A run can be stopped at any point: each record is written atomically as its batc
 ## The record's form
 
 `{"version": 3, "value": {...}, "source": "<sha1>", "types": [...]}`. `value` is the form Paragon's old client wrote, and readers take only it. A change to `value`'s form bumps `FACTS_VERSION` and is told to paragon-agent first, so `packet.py` moves with it.
+
+# The vtables store
+
+`tools/vtables_dump.py` writes it, beside the facts store in `vtables`, a file a class that has a virtual table; its head says what a record holds, what `declared` and `defined` mean and cannot see, and how a class becomes a file's name. It reads the exe and the table, not Ghidra, so it needs no server and takes seconds.
+
+- After a commit that names functions: `python tools/vtables_dump.py` rewrites every file (2,084 classes, 2,990 tables).
+- `python tools/vtables_dump.py CCObject` prints one class's record and writes nothing.
+
+A change to the record's form bumps its `VERSION` and is told to paragon-agent first.
