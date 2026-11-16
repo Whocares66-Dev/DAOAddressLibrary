@@ -15026,7 +15026,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15025,function,CameraRig::ReleaseAllBehaviours,,0x006c3d60,0x005b5820,0x006c3d60
 15026,function,ChunkPool<160>::ChunkPool,,0x006c3dd0,0x005b5890,0x006c3dd0
 15027,function,ChunkPool<160>::AcquireAndInit,,0x006c3e60,0x005b5920,0x006c3e60
-15028,function,CameraRig::SceneCamera,,0x006c3e80,0x005b5940,0x006c3e80
+15028,function,CameraRig::CameraRig,"The rig's constructor (CameraRig, 0x120 bytes, no vtable): operator new(0x120) then this call at 0x006418BC..0x006418ED in GameModeController::Initialize; stores the result at GameModeController +0x5C. Sets every field: pitch limits from s_defaultLimits, FOV 60 (0xA0), countdown -1.0 (+4), release allowed 1 (+0x3C), pitch pi/2 (+0x20), far radius 1.0 (+0x4C), and allocates the 0x30-byte CameraRigShake at +0x114 (0x006C3F43).",0x006c3e80,0x005b5940,0x006c3e80
 15029,function,CameraRig::~CameraRig,,0x006c4070,0x005b5b30,0x006c4070
 15030,function,CameraRig::FadeNearbyObjects,,0x006c4130,0x005b5bf0,0x006c4130
 15031,function,CameraRig::ClearBehaviours,,0x006c4410,0x005b5ed0,0x006c4410
@@ -16176,7 +16176,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16175,function,GameModeExplore::GetClassInfo,,0x0070b4b0,0x005fc970,0x0070b4b0
 16176,function,GameModeExplore::IsInTargetingMode,,0x0070b4e0,0x005fc9a0,0x0070b4e0
 16177,function,World::RaycastHit::operator=,,0x0070b4f0,0x005fc9b0,0x0070b4f0
-16178,function,GameModeExplore::vfunction17,,0x0070b540,0x005fca00,0x0070b540
+16178,function,GameModeExplore::ShouldShowSelectionRings,"GameMode vtable slot 16 (offset 0x40), called on GameModeController +0x74 (the current mode) by CCCreature::UpdateSelectionRing 0x006AAC66 and CCCreature::SetActive 0x006B5E49: when it answers false the creature's selection vfx is cleared (SetSelectionVfx(0,0)). Explore answers true when the mode number is 1 (combat; [ecx+0x5C] at 0x0070B541), or the controller's slot 15 (IsTacticalCamera) is true (0x0070B55A), or input 0x3A is down (0x0070B573); GameMode's own slot is Stub::ReturnFalse so other modes show no rings.",0x0070b540,0x005fca00,0x0070b540
 16179,function,GameModeExplore::CastCursorRay,,0x0070b590,0x005fca50,0x0070b590
 16180,function,GameModeExplore::UpdateCamera,,0x0070b6c0,0x005fcb80,0x0070b6c0
 16181,function,GameModeExplore::UpdateLookAtOffset,,0x0070b7d0,0x005fcc90,0x0070b7d0
@@ -18486,7 +18486,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18485,function,CameraControllerExplore::~CameraControllerExplore,,0x0076ef00,0x00686640,0x0076ef00
 18486,function,CameraControllerExplore::IsTacticalView,,0x0076ef10,0x00686650,0x0076ef10
 18487,function,CameraControllerExplore::GetModeName,,0x0076ef20,0x00686660,0x0076ef20
-18488,function,CameraControllerExplore::IsTacticalCamera,,0x0076ef50,0x00686690,0x0076ef50
+18488,function,CameraControllerExplore::IsTacticalCamera,"CameraControllerExplore vtable slots 2, 15 and 17 (offsets 0x08, 0x3C, 0x44): returns [ecx+0x90] == 1, the tactical side of the view (the eased zoom below 0.5, set at 0x0076FCAD); IsTacticalView 0x0076EF10 (slot 3) returns it != 0. Asked by CameraControllerBase::ReadInput (slot 2 at 0x007EE46D) and by GameModeExplore::ShouldShowSelectionRings (slot 15 at 0x0070B55A).",0x0076ef50,0x00686690,0x0076ef50
 18489,function,CameraControllerExplore::IsPanDragging,,0x0076ef60,0x006866a0,0x0076ef60
 18490,function,CameraControllerExplore::ApplyOrbit,,0x0076efa0,0x006866e0,0x0076efa0
 18491,function,CameraControllerExplore::UpdateCollisionMode,,0x0076f0b0,0x006867f0,0x0076f0b0
@@ -67169,7 +67169,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 67168,data,,,0x00b107a4,0x00af7e2c,0x00b107a4
 67169,data,CameraRig::AddBehaviour::s_behaviourChannelMasks,"Table of 6 uint32 masks {1,2,3,2,7,4} indexed by behaviour kind (0..5, the switch in CameraRig::Update: position blend, rotation blend, orbit, look-at, cutscene camera, scalar blend). AddBehaviour (0x006C44EF, 0x006C44FA) tests mask[new] & mask[existing] among behaviours of equal priority; an overlap replaces the old one (replacement INFERRED from the following branch).",0x00b107d0,0x00af7e58,0x00b107d0
 67170,data,CameraRig::Update::s_substepSecondsFloat,"Float 0.015, the length of one camera substep: CameraRig::Update (0x006C4CDF) uses it when the remaining time is not smaller than the step. Unit: seconds. dev/CAMERA.md: behaviours run in substeps of at most 0.015 s.",0x00b107e8,0x00af7e70,0x00b107e8
-67171,data,CameraRig::SceneCamera::s_defaultLimits,"float[4] table at 0xb107ec: 3.12414 (179 degrees), 0.0174533 (1 degree), 10, 5; copied into the camera at +8, +0xc, +0x10, +0x14 (0x6c3f76 to 0x6c3fa9). INFERRED: angle and distance limits",0x00b107ec,0x00af7e74,0x00b107ec
+67171,data,CameraRig::CameraRig::s_defaultLimits,"float[4] table at 0xb107ec: 3.12414 (179 degrees), 0.0174533 (1 degree), 10, 5; copied into the rig (CameraRig, no vtable) at +8 pitchMax, +0xC pitchMin, +0x10 and +0x14 (0x6c3f76 to 0x6c3fa9). UpdateOrbit 0x006C2D24..0x006C2D63 clamps the orbit pitch between +0xC and +8; the close view overwrites them with 150 and 30 degrees every frame (CameraControllerExplore::UpdatePitch 0x0076F1F1, 0x0076F1F8); no reader of +0x10 and +0x14 found. Name is the function-local style of the table: the constructor CameraRig::CameraRig 0x006C3E80.",0x00b107ec,0x00af7e74,0x00b107ec
 67172,data,,,0x00b107f0,0x00af7e78,0x00b107f0
 67173,data,,,0x00b107f4,0x00af7e7c,0x00b107f4
 67174,data,,,0x00b107f8,0x00af7e80,0x00b107f8
