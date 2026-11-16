@@ -14235,7 +14235,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14234,function,SaveSchema::AddCommandListAndActionQueueFields,,0x0069b7a0,0x0058cab0,0x0069b7a0
 14235,function,SaveSchema::AddObjectNameField,,0x0069b7f0,0x0058cb00,0x0069b7f0
 14236,function,SaveSchema::AddObjectLoopingAnimationField,,0x0069b810,0x0058cb20,0x0069b810
-14237,function,CCObject::RemoveInnateType2Effects,,0x0069b830,0x0058cb40,0x0069b830
+14237,function,CCObject::RemoveInteractiveEffect,"Removes the object's effects of type 2 with duration type 5 and invalid word 0, the ones AddInteractiveEffect (0x0069B900) makes; SetObjectInteractive calls one or the other.",0x0069b830,0x0058cb40,0x0069b830
 14238,function,CCObject::AddInteractiveEffect,,0x0069b900,0x0058cc10,0x0069b900
 14239,function,CCObject::SetObjectInteractive,,0x0069ba70,0x0058cd80,0x0069ba70
 14240,function,CScriptEvent::InitStaticOnce,,0x0069baa0,0x0058cdb0,0x0069baa0
@@ -14506,7 +14506,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14505,function,CCCreature::PlayAttackAnimationRow,,0x006a41a0,0x00595330,0x006a41a0
 14506,function,CCCreature::GetMinimapFlags,,0x006a4270,0x00595400,0x006a4270
 14507,function,CCCreature::UpdateByte0xCFC,,0x006a42e0,0x00595470,0x006a42e0
-14508,function,EffectDisplayEntry::SyncFromEffect,"Fills an effect bar entry from a CGameEffect: AbilityID attribute (entry+0x58) from effect+0x44; RemainingPercent (+0x68) = (dur - elapsed) / dur, 0 when dur (effect+0x2C) is 0, elapsed at effect+0x30; RemainingTime (+0x78) = dur - elapsed (ms); IsConsideredHostile (+0x88) = CGameEffect::ConsidersHostile.",0x006a4360,0x005954f0,0x006a4360
+14508,function,EffectGUIInfo::SyncFromEffect,"Fills an effect bar entry from a CGameEffect: AbilityID attribute (entry+0x58) from effect+0x44; RemainingPercent (+0x68) = (dur - elapsed) / dur, 0 when dur (effect+0x2C) is 0, elapsed at effect+0x30; RemainingTime (+0x78) = dur - elapsed (ms); IsConsideredHostile (+0x88) = CGameEffect::ConsidersHostile.",0x006a4360,0x005954f0,0x006a4360
 14509,function,CWalkHitInfo::CWalkHitInfo,,0x006a43f0,0x00595580,0x006a43f0
 14510,function,CCItem::IsDroppableByte,"__cdecl (item): returns the item's droppable byte +0x4B0, which MakeAmmunition clears; read by CCCreature::HasLootableItems through a pointer (0x006A9102, 0x006A911D)",0x006a4440,0x005955f0,0x006a4440
 14511,function,CombatTreeSetRecord::CombatTreeSetRecord,,0x006a4450,0x00595600,0x006a4450
@@ -19748,8 +19748,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19747,function,EffectsManager::RaiseApplyEffect,,0x0079fe90,0x006713f0,0x0079fe90
 19748,function,EffectsManager::ApplyVisualEffect,,0x007a00a0,0x00671600,0x007a00a0
 19749,function,EffectsManager::RemoveVisualEffect,,0x007a0150,0x006716b0,0x007a0150
-19750,function,EffectsManager::ApplyEffectType2,,0x007a01a0,0x00671700,0x007a01a0
-19751,function,EffectsManager::RemoveVisualEffect,,0x007a0200,0x00671760,0x007a0200
+19750,function,EffectsManager::ApplyInteractiveMarker,"The apply handler of effect type 2, the effect CCObject::AddInteractiveEffect makes: sets the effect's script integer 0 to 0x47B, a visual's row, and applies the visual (ApplyVisualEffect 0x007A00A0) when the client option at g_ClientOptions+0x1D8 is on; answers 0 when it is off.",0x007a01a0,0x00671700,0x007a01a0
+19751,function,EffectsManager::RemoveInteractiveMarker,"The remove handler of effect type 2 (InitHandlerTables stores it at 0x007A187A): one jump to RemoveVisualEffect (0x007A0150), which is type 4's.",0x007a0200,0x00671760,0x007a0200
 19752,function,EffectsManager::RemoveVisualEffectKeep,,0x007a0210,0x00671770,0x007a0210
 19753,function,EffectsManager::ApplyAreaOfEffect,,0x007a0230,0x00671790,0x007a0230
 19754,function,EffectsManager::RemoveAreaOfEffect,,0x007a0520,0x00671a80,0x007a0520
@@ -33620,7 +33620,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33619,function,EffectList::FindTopAnimationEffect,Scans the effect list (+8) from the back for the effect with the highest animation priority above 0; an earlier effect replaces the one held only when its priority is strictly greater,0x00a64640,0x0070be80,0x00a64640
 33620,function,EffectList::GetEffectFlags,,0x00a646e0,0x0070bf20,0x00a646e0
 33621,function,EffectsHolder::GetEffectsFlags,,0x00a64740,0x0070bf80,0x00a64740
-33622,function,CGameEffect::MatchesAll,,0x00a64770,0x0070bfb0,0x00a64770
+33622,function,EffectMatcherVector::MatchesAll,"Its this is the vector of matchers (entries of 0xC bytes from +4 to +8: a function, its argument, a byte); the effect is the stack argument. False as soon as an entry's function(effect, argument) answers the entry's byte, else true.",0x00a64770,0x0070bfb0,0x00a64770
 33623,function,EffectList::RemoveEffect,,0x00a64840,0x0070c080,0x00a64840
 33624,function,EffectList::EffectList,,0x00a64880,0x0070c0c0,0x00a64880
 33625,function,EffectList::~EffectList,,0x00a648a0,0x0070c0e0,0x00a648a0
@@ -33631,7 +33631,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33630,function,EffectsHolder::AddEffectListField,,0x00a64ce0,0x0070c520,0x00a64ce0
 33631,function,EffectsHolder::CollectMatchingEffects,,0x00a64d10,0x0070c550,0x00a64d10
 33632,function,EffectsHolder::CollectEffects,,0x00a64d80,0x0070c5c0,0x00a64d80
-33633,function,EffectsHolder::WriteToSave,,0x00a64e20,0x0070c660,0x00a64e20
+33633,function,EffectList::WriteToSave,"Its this is the EffectList, not the holder: the effects vector is read at +8 and +0xC, and SEffectsHolder::WriteToSave (0x0079F200) calls it on what its slot +8 answers. Writes each effect whose invalid word is not 1 into the struct list 0x40EF.",0x00a64e20,0x0070c660,0x00a64e20
 33634,function,EffectsHolder::GetAbilityEffects,,0x00a64fa0,0x0070c7e0,0x00a64fa0
 33635,function,CGameEffect::ReadEffectRow,,0x00a650c0,0x0070acb0,0x00a650c0
 33636,function,CGameEffect::CGameEffect_copy,,0x00a65130,0x0070ad20,0x00a65130

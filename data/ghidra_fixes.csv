@@ -15001,10 +15001,10 @@ address,what,value,why
 0x0079D230,signature,"void __thiscall f(void *this, void *structReaderOrWriter)","slot 17/18, ret 4; 0x0079D230"
 0x0079F2C0,signature,"bool __stdcall f(void *effect, int value)","ret 8, ecx written before read; 0x0079F2C0"
 0x0079F2E0,signature,"bool __stdcall f(void *effect, int flagIndex)",ret 8; 0x0079F2E0
-0x0079F300,signature,"int __stdcall f(void *holder, void *effect)","ret 8, ecx unread; 0x0079F300"
+0x0079F300,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx unread; 0x0079F300. The apply handler of effect type 6 (InitHandlerTables 0x007A18A9), called at 0x007A0F18 with the manager in ecx as every handler is"
 0x0079F330,signature,"bool __stdcall f(void *holder, void *effect)","ret 8, ecx unread; 0x0079F330"
 0x0079F380,signature,bool __stdcall f(void *effect),ret 4; 0x0079F380
-0x0079F3B0,signature,"int __stdcall f(void *holder, void *effect)",ret 8; 0x0079F3B0
+0x0079F3B0,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx unread; 0x0079F3B0. The callback SEffectsHolder::StartHeldVisualEffect hands to ForEachMatchingEffect (0x0079FD47), which calls it at 0x0079F66C with the manager in ecx"
 0x0079F410,signature,"void __cdecl f(void *effect, int creatorId)","plain ret, args effect then id; 0x0079F410"
 0x0079F480,signature,void * __cdecl f(void),no arguments; 0x0079F480
 0x0079F4A0,signature,"bool __thiscall f(void *this, bool requireFlag3)",ret 4; 0x0079F4A0
@@ -15012,7 +15012,7 @@ address,what,value,why
 0x0079F6C0,signature,"bool __thiscall f(void *this, int type)",ret 4; 0x0079F6C0
 0x0079F7A0,signature,"void __thiscall f(void *this, void *holder, void *effect, bool flag)",ret 0xC; 0x0079F7A0
 0x0079F910,signature,"float __stdcall f(void *holder, int type, float initial, int excludedId)","ret 0x10, ecx unread; 0x0079F910"
-0x0079FA30,signature,"int __stdcall f(void *holder, void *effect)","ret 8, ecx unread; 0x0079FA30"
+0x0079FA30,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx unread; 0x0079FA30. The remove handler of effect type 10 (InitHandlerTables 0x007A190C), called with the manager in ecx as every handler is"
 0x0079FA70,signature,"void __thiscall f(void *this, void *holder, void *effect, bool flag)","ret 0xC, ecx stored; 0x0079FA70"
 0x0079FD00,signature,"void __thiscall f(void *this, int effectId)",ret 4; 0x0079FD00
 0x007A00A0,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A00A0"
@@ -15021,6 +15021,7 @@ address,what,value,why
 0x007A0210,signature,"int __thiscall f(void *this, void *holder, void *effect)",ret 8; ecx passed on unchanged to 0x007A0150; 0x007A0210
 0x007A0230,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A0230"
 0x007A0520,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A0520"
+0x007A05B0,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx unread; 0x007A05B0. The apply handler of effect type 8 (InitHandlerTables 0x007A18CF), called with the manager in ecx as every handler is"
 0x007A05F0,signature,"int __thiscall f(void *this, void *holder, void *effect)",ret 8; ecx passed on unchanged to 0x007A0150; 0x007A05F0
 0x007A0610,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A0610"
 0x007A0690,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A0690"
