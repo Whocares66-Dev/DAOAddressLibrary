@@ -20016,7 +20016,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20015,function,std::vector<std::vector<?>>::operator=,,0x007b0d70,0x0068eab0,0x007b0d70
 20016,function,PartyTactics::RegisterClass,,0x007b0ec0,0x0068ec00,0x007b0ec0
 20017,function,"std::_Uninit_copy<ECBase::ECDynArray<?>*,ECBase::ECDynArray<?>*>",,0x007b0ee0,0x0068ea10,0x007b0ee0
-20018,function,std::vector<std::vector<?>>::vector_copy,,0x007b0f10,0x0068ec20,0x007b0f10
+20018,function,std::vector<std::vector<?>>::vector_copy,"Copy of a vector of ECDynArray<PartyTacticEntry*> (PartyTactics custom preset slots at +0xA4): zeroes +4,+8,+0xC then calls std::vector<std::vector<?>>::operator= (0x007B0D70) with the other vector; ret 4 (0x007B0F63). Only caller is PartyTactics::PartyTactics_copy (0x007B0F70). Name left in the neighbours style (clear 0x007B0C80, operator= 0x007B0D70).",0x007b0f10,0x0068ec20,0x007b0f10
 20019,function,PartyTactics::PartyTactics_copy,,0x007b0f70,0x0068ec80,0x007b0f70
 20020,function,PartyTactics::Clone,,0x007b1080,0x0068ed90,0x007b1080
 20021,function,std::vector<std::vector<?>>::resize,,0x007b10f0,0x0068ee00,0x007b10f0
@@ -63636,7 +63636,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 63635,data,,,0x00af5694,0x00b17160,0x00af5694
 63636,data,,,0x00af56a8,0x00ae9da0,0x00af56a8
 63637,data,GUI::PrintToLogWindowMessage::vftable,,0x00af56b8,0x00af8a80,0x00af56b8
-63638,data,,,0x00af56d0,0x00afd5c4,0x00af56d0
+63638,data,GuiMovie::s_fscRetvalPath,"Narrow string ""_root.fsc_retval"": the movie variable a GUI fscommand handler writes its answer to. Used by GuiMovie::SetFSCommandReturnValue (0x00518830), GuiFSCommand::ListMemberNames (0x00520340) and the ListTactic* handlers (0x00714860..0x007150EA); the twin string at 0x00B16AF4 (""_root.fsc_retval2"") holds the object ids of ListTacticTargets and ListTacticConditions.",0x00af56d0,0x00afd5c4,0x00af56d0
 63639,data,GuiMovie::SendMouseMove::s_offscreenMouseCoordinate,"float -999.0 pixels; INFERRED: stored as both x and y of a mouse-move event sent to the movie view (vtable+0x98) in the branch at 0x5188fd, a position far off screen",0x00af56e4,0x00b17420,0x00af56e4
 63640,data,,,0x00af56e8,0x00b17424,0x00af56e8
 63641,data,,,0x00af5704,0x00b17440,0x00af5704
@@ -67381,7 +67381,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 67380,data,,,0x00b13068,0x00af9a00,0x00b13068
 67381,data,,,0x00b1309c,0x00aec3c0,0x00b1309c
 67382,data,,,0x00b130d8,0x00aec3fc,0x00b130d8
-67383,data,,,0x00b13118,0x00af9a38,0x00b13118
+67383,data,Input::s_toggleFullScreenGuiMessageTacticsText,"Wide string ""ToggleFullScreenGUIMessage Tactics"": the message text bound to the ToggleTactics input action (name string 0x00AF59F0); pushed at 0x006DD887 and 0x006E272E (Input::RegisterInputMessages) and 0x006E62A4 (Input::RegisterActions).",0x00b13118,0x00af9a38,0x00b13118
 67384,data,,,0x00b13160,0x00af9a80,0x00b13160
 67385,data,,,0x00b131a8,0x00af9ac8,0x00b131a8
 67386,data,,,0x00b131e8,0x00af9b08,0x00b131e8
