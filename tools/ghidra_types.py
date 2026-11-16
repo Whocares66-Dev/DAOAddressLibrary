@@ -26,7 +26,14 @@ So, in order:
   <Class>_data, as before), now with their types. Ghidra's guesses in the
   way (an `int offset_0x508` where the table has a 16-byte attribute) give
   way to the table, which has an instruction for each field; a vftable
-  pointer or a nested class's data does not. Ghidra has many classes short
+  pointer or a nested class's data does not. A field that already has the
+  table's type takes the table's name, a nested class too: it is the
+  table's own, renamed (CGameEffect's second CDataArrays). A field carrying
+  the table's note at a place the table no longer has one is cleared,
+  unless it is one of those two kinds: syncs before 2026-11-16 put the
+  note on Ghidra's own as well, so the note alone does not make a thing
+  the table's (six rows had a base's vftable pointer at the base's offset
+  in a CCObject, corrected 2026-11-16). Ghidra has many classes short
   (GraphicsStructures::Object 40 bytes of 784), and past a type's end the
   decompiler writes `this[1].field_0x4` for `this + 0x6dc`: the class's
   own type grows to the table's size and to a field past its end. Many of
@@ -177,7 +184,7 @@ SCALAR = {
 }
 for key in ("placeholders", "typed", "untyped", "beyond", "blocked", "built", "renamed",
             "slots", "classes", "grown", "unpacked", "damage", "typedfixes", "notype",
-            "noroom", "eh", "byvalue"):
+            "noroom", "eh", "byvalue", "dropped"):
     done.setdefault(key, 0)
 unresolved = {}
 
@@ -427,6 +434,13 @@ def merge_field(owner, parts, name, size, offset, length, tree, field):
                 same_type(unit.getDataType(), kind) if kind is not None
                 else unit.getLength() == length or not Undefined.isUndefined(unit.getDataType())):
         return
+    if kind is not None and unit is not None and unit.getOffset() == at             and same_type(unit.getDataType(), kind):
+        # Already the table's type: the row was renamed.
+        done["classfields"] += 1
+        if not dry:
+            unit.setFieldName(field)
+            unit.setComment(note)
+        return
     over = []
     i = at
     while i < at + length:
@@ -452,6 +466,26 @@ def merge_field(owner, parts, name, size, offset, length, tree, field):
         shape.clearAtOffset(start)
     shape.replaceAtOffset(at, kind if kind is not None else Undefined.getUndefinedDataType(length),
                           length, field, note)
+
+
+NOTE = re.compile(r"^(.+) \+0x([0-9A-F]+) \(%s\)$" % re.escape(OURS))
+
+
+def drop_stale(wrote):
+    # A field the table wrote at a place it no longer has one.
+    for shape in list(dtm.getAllStructures()):
+        if not shape.getCategoryPath().isAncestorOrSelf(ROOT) or shape.getDescription() == OURS:
+            continue
+        stale = []
+        for unit in shape.getDefinedComponents():
+            found = NOTE.match(unit.getComment() or "")
+            if found and (found.group(1), int(found.group(2), 16)) not in wrote                     and not is_kept(unit):
+                stale.append(unit.getOffset())
+        done["dropped"] += len(stale)
+        if stale and not dry:
+            fixed(shape)
+            for start in sorted(stale, reverse=True):
+                shape.clearAtOffset(start)
 
 
 def true_offsets(owner, leaf):
@@ -647,6 +681,10 @@ if W.get("types"):
                     faults.append("class field %s +0x%x %s: %s" % (name, offset, field, e))
         except Exception as e:
             faults.append("struct %s: %s" % (name, e))
+    try:
+        drop_stale({(name, offset) for name, _, _, fields in W["structs"] for offset, _, _, _ in fields})
+    except Exception as e:
+        faults.append("dropped fields: %s" % e)
     # The folder nothing pointed at.
     old = dtm.getCategory(CategoryPath("/DAOAddressLibrary"))
     if old is not None and not dry:

@@ -7,12 +7,15 @@ tools/names.py writes for its ImportNames.java, and how the work is read.
 ctest runs this too (tests/CMakeLists.txt).
 """
 
+import contextlib
 import csv
+import io
 import os
 import sys
 import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import ghidra_sync  # noqa: E402
 from ghidra_sync import ghidra_c, ghidra_parts, work  # noqa: E402
 
 
@@ -165,6 +168,16 @@ class Work(unittest.TestCase):
                     ("__thiscall", "__stdcall", "__cdecl", "__fastcall"),
                     hex(address),
                 )
+
+
+class Options(unittest.TestCase):
+    def test_a_word_it_does_not_know_starts_nothing(self):
+        # main() asks the table and the server for nothing before this check,
+        # so these return without either; --help once ran a whole sync.
+        with contextlib.redirect_stdout(io.StringIO()) as said:
+            for words in (["--help"], ["types"], ["--only"], ["--no-save", "--limit"]):
+                self.assertEqual(ghidra_sync.main(words), 2, words)
+        self.assertIn("--dry-run", said.getvalue())
 
 
 if __name__ == "__main__":

@@ -568,7 +568,7 @@ CItem,0x30,0x1C,std::wstring,modelName,"0x00A66780 lea ecx,[esi+0x30] passed to 
 CItem,0x4C,0x1C,std::wstring,iconName,"0x00A6677C lea eax,[esi+0x4C] passed to 0x00A665C0 in CItem::SetBaseItem; CCItem::RegisterDataTree sets the Icon attribute from it (0x00754798 lea edx,[edi+0x48C]); built at 0x00A662F4"
 CNetLayerWindow,0x164,0x10,CNetLayerIdQueue,primaryQueue,"0x00A42A8A lea ecx,[esi+0x164] for the push (0x00A42A10), 0x00A42315 for PopFront (0x00A42010); its count is read at +0x16C (0x00A42A53)"
 CNetLayerWindow,0x174,0x10,CNetLayerIdQueue,secondaryQueue,"0x00A42AEA lea ecx,[esi+0x174] for the push, 0x00A422E2 for PopFront; its count is read at +0x17C (0x00A42AB3)"
-CResARE,0x18,0x4,void*,vptr,"0x00688D4D mov [edi],0xB0DDFC with edi = esi+0x18 (lea at 0x00688CFB, base constructor 0x0067A4C0 at 0x00688D07); 1 slot"
+CResARE,0x0,0x4,void*,vptr,"0x00688D4D mov [edi],0xB0DDFC with edi = esi+0x18 (lea at 0x00688CFB, base constructor 0x0067A4C0 at 0x00688D07); 1 slot ; filed at +0x18 until 2026-11-16, which is where a CCArea holds this class"
 CRoom,0x0,0x380,struct,sizeof,"0x005C8DBC push 0x380 (operator new, then CRoom::CRoom 0x005D35C0 called at 0x005C8DDA); IRoomLayout takes the first 0x2E0 bytes, CRoom's own members begin at +0x2E0 (0x005D35F5 lea ecx,[esi+0x2e0])"
 CRoom,0x0,0x4,void*,vftable,"0x005D35FF mov [esi],0xaffff4 in CRoom::CRoom; IRoomLayout's own table is set by its constructor 0x00A29400 before it"
 CRoom,0x2F4,0x1,uint8_t,fadeEnabled,"0x005D2110 mov [ecx+0x2f4],al in CRoom::SetFadeEnabled; UpdateDarkness uses level 0 in place of the fade's when it is 0 (0x005D2E15, 0x005D2E22); the constructor sets 1 at 0x005D370B"
@@ -1540,8 +1540,7 @@ Inventory,0x38,0x1C,SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute
 ItemLocation,0x0,0x8,struct,sizeof,"0x00761170; sizeof (INFERRED: base, not allocated alone; the constructor writes +0 and +4, every derived class's first member is at +8)"
 ItemLocation,0x0,0x4,void*,vptr,"0x00761176; vptr 0x00B1CE74 (Inventory 0x00B1B974, ListItemLocation 0x00B2308C, Equipment 0x00B1FB8C overwrite it)"
 ItemLocation,0x4,0x4,ObjectId,ownerId,0x0076117C; id of the object that owns the location (the constructor's argument)
-ItemPossessor,0x0,0x4,void*,vptr,"0x00763028; vptr 0x00B1C258; the constructor writes nothing else (it sits at CCObject+0x440 in a creature, placeable and store, CCParty+0x70)"
-ItemPossessor,0x440,0x4,void*,vptr,"0x006B9F60 mov dword ptr [edi],0xB10334 (edi = this+0x440, 9 slots; ItemPossessor::ItemPossessor 0x00763020 called at 0x006B9F27); the only base at this place, so filed under the base. A method in vftable 0xB10334 sees this = creature+0x440, so its offsets are 0x440 low (--bases CCCreature)"
+ItemPossessor,0x0,0x4,void*,vptr,"0x00763028; vptr 0x00B1C258; the constructor writes nothing else (it sits at CCObject+0x440 in a creature, placeable and store, CCParty+0x70) ; in a creature the pointer holds CCCreature's own table for this base: 0x006B9F60 mov dword ptr [edi],0xB10334 with edi = the creature + 0x440 (a row filed here at +0x440 until 2026-11-16)"
 LeanController,0x0,0x30,struct,sizeof,0x00A6B32B push 0x30 ; the allocation before the constructor call at 0x00A6B347 (constructor 0x00A6DE80)
 LeanController,0x0,0x4,void*,vftable,"0x00A6DE8D mov dword [eax],0xB59BEC"
 LeanController,0x10,0x10,Math::Vector4f,direction,"0x00A6DEAB movaps [eax+0x10],xmm0 zero in the constructor ; Update (0x00A6DEE0) tests +0x10..+0x18 against zero at 0x00A6DEEE..0x00A6DF03 and stores the first input to it at 0x00A6DF13"
@@ -1578,8 +1577,8 @@ Math::Sphere,0x20,0x4,float,radius,0x004D4F5E fld1 then fstp [eax+0x20] in the c
 MessageRegistry,0x4,0x4,void*,rowsBegin,"0x004D7F43 mov ecx,[esi+4] (GetRow); rows are 16 bytes (0x004D7F5D shl eax,4)"
 MessageRegistry,0x8,0x4,void*,rowsEnd,"0x004D7F4B mov eax,[esi+8]"
 MessageRegistry,0x14,0x4,void*,postedQueue,"0x004D8C60 add ecx,0x14; jmp deque push_back (block of two 8-byte elements, 0x004D8C21 push 0x10)"
+Messages::Observer,0x0,0x4,void*,vptr,"0x006996E6; vptr, vftable 0x00B0EE88 ; filed at +0x20 until 2026-11-16, which is where a CCObject holds this class"
 Messages::Observer,0x4,0x10,std::vector<Messages::Observable*>,observed,"0x004E9715 lea ecx,[esi+4]; call 0x005D27A0 in the constructor; 0x004E96C1 and 0x004E96E8 remove a value from it (0x004E9640)"
-Messages::Observer,0x20,0x4,void*,vptr,"0x006996E6; vptr, vftable 0x00B0EE88"
 Messages::PostedMessage,0x0,0x4,int,id,"0x004D7FF0 mov ecx,[eax]; mov [esi],ecx"
 Messages::PostedMessage,0x0,0x8,struct,sizeof,"0x004D8C3F lea edx,[ecx+ebx*8]: elements of 8 bytes in 16-byte blocks"
 Messages::PostedMessage,0x4,0x4,Messages::Message*,message,"0x004D7FFB call [edx+4] (clone); mov [esi+4],eax"
@@ -1827,9 +1826,9 @@ SaveLoadProxy,0x58,0x1,uint8_t,savingAllowed,"0x00694BB0 and 0x00694BC8 in GameM
 SaveLoadProxy,0x5C,0x10,SmartData::Attribute<bool>,savingEnabled,"0x006D226B lea ecx,[esi+0x5c] then the bool Attribute constructor 0x00478190 in SaveLoadProxy::SaveLoadProxy; registered as L""SavingEnabled"" (0x006D2465, 0x006D2498); set from +0x58 by PublishSavingEnabled (0x006CB701); read by HandleMessage_SaveGameMessage (0x006D1D0E)"
 SaveLoadProxy,0xAC,0x10,SmartData::Attribute<int>,mode,"0x006D22F6 lea ecx,[esi+0xac] then the int Attribute constructor 0x00403510 with 0 in SaveLoadProxy::SaveLoadProxy; registered as L""Mode"" (0x006D24C1, 0x006D24F4)"
 ScriptVariableNames::Entry,0xC,0x1C,std::wstring,name,"0x004E7740 add ecx,0xc; jmp 0x004C0E10 (compare); 0x004E7926 lea ecx,[eax+0xc] ~wstring in Release"
-"SmartData::Attribute<ECBase::ECHashMap<unsigned int,SmartData::IAttribute*,ECBase::ECHashParams<unsigned int>>,SmartData::NamedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",0x34,0x4,void*,vptr,"0x006996ED; vptr, vftable 0x00B0EE2C (22 slots); the name map of the object's attributes"
-"SmartData::Attribute<ECBase::ECHashMap<unsigned int,SmartData::IAttribute*,ECBase::ECHashParams<unsigned int>>,SmartData::NamedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",0x38,0x4,void*,vptr2,"0x006996F3; second vptr of the same class (ObserverNotification base), vftable 0x00B0EE18; like Attribute<Backpack*>'s 0xB1B7EC at +4"
-SmartData::SmartObject,0x18,0x4,void*,vptr,"0x006996CE; vptr, vftable 0x00B0F060 (offsets of this row and the next four are from the CCObject start)"
+"SmartData::Attribute<ECBase::ECHashMap<unsigned int,SmartData::IAttribute*,ECBase::ECHashParams<unsigned int>>,SmartData::NamedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",0x0,0x4,void*,vptr,"0x006996ED; vptr, vftable 0x00B0EE2C (22 slots); the name map of the object's attributes ; filed at +0x34 until 2026-11-16, which is where a CCObject holds this class"
+"SmartData::Attribute<ECBase::ECHashMap<unsigned int,SmartData::IAttribute*,ECBase::ECHashParams<unsigned int>>,SmartData::NamedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",0x4,0x4,void*,vptr2,"0x006996F3; second vptr of the same class (ObserverNotification base), vftable 0x00B0EE18; like Attribute<Backpack*>'s 0xB1B7EC at +4 ; filed at +0x38 until 2026-11-16: +4 of the class, which a CCObject holds at +0x34"
+SmartData::SmartObject,0x0,0x4,void*,vptr,"0x006996CE; vptr, vftable 0x00B0F060 ; filed at +0x18 until 2026-11-16, which is where a CCObject holds this class"
 StringMap<StringMap<std::vector<Vector4>>>,0x0,0x28,"stdext::hash_map<std::wstring,StringMap<std::vector<Math::Vector4f>>>",map,0x005703FE call 0x00570080 with ecx = this
 StringMap<StringMap<std::vector<Vector4>>>,0x28,0x1C,std::wstring,name,0x0057040B call 0x004C0D90 on esi+0x28
 StringMap<StringMap<std::vector<Vector4>>>,0x44,0x54,StringMap<std::vector<Math::Vector4f>>,defaultValue,"0x00570415 lea ecx,[esi+0x44]; 0x0057041D call StringMap_copy 0x0056EDF0 on the by-value argument; destroyed 0x00570484"

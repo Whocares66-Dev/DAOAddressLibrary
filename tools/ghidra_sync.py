@@ -608,9 +608,18 @@ def discard(server):
 
 
 PARTS = ("rows", "fixes", "types", "eh", "comments")
+OPTIONS = ("--dry-run", "--limit", "--only", "--no-save", "--discard")
 
 
 def main(argv):
+    # A word this does not know must not read as "apply everything": --help
+    # ran a whole sync and saved it, twice, on 2026-11-16.
+    values = {i + 1 for i, word in enumerate(argv) if word in ("--limit", "--only")}
+    if len(argv) in values or any(
+        w not in OPTIONS and i not in values for i, w in enumerate(argv)
+    ):
+        print(__doc__.split("\n\nThe user, ")[0])
+        return 2
     if "--discard" in argv:
         print(discard(Server()))
         return 0
@@ -684,7 +693,7 @@ def main(argv):
             f"{totals['grown']} class types grown to a field, {totals['beyond']} past a nested type's end, {totals['blocked']} on a vftable "
             f"pointer or nested class, {totals['placeholders']} placeholders replaced ({totals['byvalue']} by-value uses made bytes), "
             f"{totals['classes']} namespaces made classes, {totals['unpacked']} types unpacked, "
-            f"{totals['renamed']} offset_0xN renamed"
+            f"{totals['renamed']} offset_0xN renamed, {totals['dropped']} fields the table no longer has cleared"
         )
         if notes.get("unresolved"):
             print(
