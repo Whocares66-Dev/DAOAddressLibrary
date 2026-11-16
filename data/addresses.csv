@@ -6789,7 +6789,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6788,function,GuiMovie::RemoveTokenObserver,,0x0051ab70,0x007c3000,0x0051ab70
 6789,function,GuiMovie::RemoveTokenObserverByID,,0x0051abc0,0x007c3050,0x0051abc0
 6790,function,GuiMovie::ProcessRemoveTokenObserverBatch,,0x0051ac10,0x007c30a0,0x0051ac10
-6791,function,GUI::MovieRecord::Step,,0x0051ada0,0x007c3230,0x0051ada0
+6791,function,GuiMovie::Step,"GuiMovie per-frame step, ret 0xC: (float dt, float dt2, bool gated). Returns at once unless active (+0x28) and, when the third argument is set, flag 0x10 of +0x24; picks dt2 instead of dt when flag 8 of +0x24 is set, calls the view's vtable+0x94 and +0x78 (advance, with dt * timeScale +0x30), then the token-observer batches (0x0051A8B0, 0x0051AC10), adds itself to the renderer (0x005187A0) if +0x29 is clear, and when the outro was started (+0x101) polls _root.WaitingToBeStopped. Callers pass a GuiMovie* in ECX (ScaleformManager::Update 0x00516823, HideMovie 0x005119D2). Read 2026-11-16.",0x0051ada0,0x007c3230,0x0051ada0
 6792,function,memcmp,,0x0051af70,0x009df150,0x0051af70
 6793,function,PlayMovieMessage::PlayMovieMessage,,0x0051b000,0x007c4000,0x0051b000
 6794,function,PlayMovieMessage::PlayMovieMessage_copy,,0x0051b060,0x007c4060,0x0051b060
@@ -11178,7 +11178,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 11177,function,PlaySoundSetEntryMessage::GetType,,0x00606510,0x004f4b50,0x00606510
 11178,function,PlaySoundSetEntryMessage::InitType,,0x00606550,0x004f4b90,0x00606550
 11179,function,GUI::DragonAgeGUISystem::Shutdown,,0x006065b0,0x004f4bf0,0x006065b0
-11180,function,GUI::DragonAgeGUISystem::CloseInGameScenes,,0x006065c0,0x004f4c00,0x006065c0
+11180,function,GUI::DragonAgeGUISystem::CacheInGameScenes,"Preloads the shared atlases (ScaleformManager::PreloadSharedAtlases, 0x00518060 on [this+0x120]) and then calls vtable slot 0x50 (GUISystem::CacheScene) for eleven scene ids in this order: 8, 0x3B, 0x3C, 0x2F, 0x28, 0x1C, 0x2A, 0x2B, 0x29, 0x2C, 0x37 (0x006065D7..0x00606641). It closes nothing; the old name CloseInGameScenes was wrong. Read 2026-11-16.",0x006065c0,0x004f4c00,0x006065c0
 11181,function,GUI::DragonAgeGUISystem::CloseScene,,0x00606650,0x004f4c90,0x00606650
 11182,function,GUI::DragonAgeGUISystem::ShowAchievementUnlocked,,0x00606690,0x004f4cd0,0x00606690
 11183,function,GUI::DragonAgeGUISystem::HideScene,,0x006066f0,0x004f4d30,0x006066f0
@@ -60380,7 +60380,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 60379,data,Messages::IObservable::vftable,,0x00addcb8,0x00ad7ccc,0x00addcb8
 60380,data,Messages::Observable::vftable,,0x00addccc,0x00ad7ce0,0x00addccc
 60381,data,GAcquireInterface::vftable,,0x00addce0,0x00ad7cf4,0x00addce0
-60382,data,SmartData::IAttribute::vftable,,0x00addcfc,0x00ad7d0c,0x00addcfc
+60382,data,SmartData::IAttribute::vftable,"IAttribute slot map read 2026-11-16 (offset: meaning): +0x00 FindMember(id); +0x04 destructor; +0x08 HasMember; +0x0C AddMember(id,attr); +0x10 RemoveMember; +0x14 SetMemberName(name,id); +0x18 GetMemberId(name) (TokenManager::ResolvePath 0x005C6C80 calls it when +0x20 answers false); +0x1C GetMemberName; +0x20 members-found-by-name-hash (Stub::ReturnTrue for the named map, Stub::ReturnFalse otherwise); +0x24 NotifyObservers; +0x28 SetFromText; +0x2C GetTextInto; +0x30 GetText; +0x34 GetNumber; +0x38 GetTypeTag; +0x3C SetFromAttribute; +0x40 member count (Stub::ReturnZero); +0x44 CreateMemberIterator; +0x48 GetObservable (Stub::GetAddress_0x4: this+4); +0x4C GetOwner (SmartObject::GetOwner: this-0x1C, 0x005C5A60); +0x50 no-op; +0x54 Set(value).",0x00addcfc,0x00ad7d0c,0x00addcfc
 60383,data,IGUISystem::vftable_at_20,,0x00addd54,0x00ad7d64,0x00addd54
 60384,data,IGUISystem::vftable_at_1c,,0x00addd6c,0x00ad7d7c,0x00addd6c
 60385,data,IGUISystem::vftable_at_8,,0x00adddc8,0x00ad7dd8,0x00adddc8
