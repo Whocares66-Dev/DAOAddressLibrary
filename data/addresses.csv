@@ -21330,12 +21330,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21329,function,Conversation::Start,,0x007f2210,0x006db820,0x007f2210
 21330,retired,,,,,
 21331,function,Conversation::PlayStartLine,,0x007f2370,0x006db980,0x007f2370
-21332,function,Conversation::BindLookAt,,0x007f2460,0x006dba70,0x007f2460
+21332,function,Conversation::BindObjectForScene,"Static (cdecl, the object is the stack argument; ECX unused). Takes an object into a staged scene, not only a look-at: SetActive(1) and SetVisible(1) (0x007F24B7), SaveLodState, event 86 delivered to the creature (script event type 0x56), movement hard-stopped and disabled, look-at reset, physics controller destroyed, all commands cleared, animation interrupted, sounds stopped, appearance re-set without weapons (equip events 5 and 6, combat trees off). Undone by ReleaseObjectFromScene. Callers: CutscenePlayer::BindObject and the by-id wrapper used by BindParticipant.",0x007f2460,0x006dba70,0x007f2460
 21333,function,Conversation::SendAmbientContinue,,0x007f26f0,0x006dbd00,0x007f26f0
-21334,function,Conversation::BindLookAtByObjectId,,0x007f27d0,0x006dbde0,0x007f27d0
-21335,function,Conversation::ReleaseLookAt,,0x007f2800,0x006dbe10,0x007f2800
+21334,function,Conversation::BindObjectForSceneByObjectId,,0x007f27d0,0x006dbde0,0x007f27d0
+21335,function,Conversation::ReleaseObjectFromScene,"Static (cdecl, the object is the stack argument). Gives an object back from a staged scene: RestoreLodState, appearance rebuilt from equipment, position snapped to ground (or a safe location for a party member), then either SendAmbientContinue (bit 0 of the creature's local int 1 AMBIENT_SYSTEM_STATE set by ReleaseParticipant, event 1026) or a reset animation, movement re-enabled. Inverse of BindObjectForScene. Callers: CutscenePlayer::UnbindObject and the by-id wrapper used by ReleaseParticipant.",0x007f2800,0x006dbe10,0x007f2800
 21336,function,Conversation::BuildVoiceOverName,,0x007f2b70,0x006dc180,0x007f2b70
-21337,function,Conversation::ReleaseLookAtByObjectId,,0x007f2d50,0x006dc360,0x007f2d50
+21337,function,Conversation::ReleaseObjectFromSceneByObjectId,,0x007f2d50,0x006dc360,0x007f2d50
 21338,function,Conversation::ResolveObjectTag,,0x007f2d80,0x006dc390,0x007f2d80
 21339,function,GameModes::ClearType2EffectVisualsInArea,,0x007f2ff0,0x006dc600,0x007f2ff0
 21340,function,PortraitRenderer::UpdateGraphicsObject,,0x007f3120,0x006de380,0x007f3120
@@ -27212,7 +27212,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 27211,function,,,0x009173b0,0x008ee680,0x009173b0
 27212,function,,,0x009173f0,0x008ee6c0,0x009173f0
 27213,function,,,0x00917420,0x008ee6f0,0x00917420
-27214,function,,,0x00917480,0x0057e2b0,0x00917480
+27214,function,Stub::ReturnOne_4,"mov eax,1; ret 4. One shared stub: its address is in the virtual tables of about a dozen unrelated classes (0x00B0E454 is GameModeDialog slot 30; also 0x00B0E7E4..0x00B0E80C, 0x00B163F0, 0x00B1D7AC, 0x00B1D918, 0x00B48EE8), so it is no one class's method; the Ghidra label GFxMovieDefImplKeyInterface::vfunction4 is misleading.",0x00917480,0x0057e2b0,0x00917480
 27215,function,,,0x00917490,0x008ee750,0x00917490
 27216,function,,,0x009174d0,0x008ee7e0,0x009174d0
 27217,function,,,0x00917520,0x008ee880,0x00917520
