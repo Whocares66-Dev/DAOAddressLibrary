@@ -5737,7 +5737,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5736,function,Graphics::MaterialObjectInstance::GetCategories,,0x004f2510,0x007df6b0,0x004f2510
 5737,function,Renderer::ShaderControlBooleans::GetData,,0x004f2530,0x007df6d0,0x004f2530
 5738,function,Renderer::ShaderControlBooleans::SetBoolean,,0x004f2550,0x007df6f0,0x004f2550
-5739,function,,,0x004f25a0,0x007df740,0x004f25a0
+5739,function,Stub::SetDword_0x18,"Linker-folded one-liner: [ecx+0x18] = arg, ret 4. Held by the vtables of the Logitech LCD classes (CLCDBase and its children, CEzLcdPage) and called by MaterialObjectInstance::MaterialObjectInstance (0x004F5080) and by CCObject::RunCurrentCommand at 0x0073CBE3, where ecx is a SubAction and it stores the start-delay countdown (SubAction+0x18). Not one class method.",0x004f25a0,0x007df740,0x004f25a0
 5740,function,Graphics::MaterialStateOverride::IsIdle,,0x004f25b0,0x007df750,0x004f25b0
 5741,function,Graphics::MaterialObjectInstance::IParameterValueProvider<Math::VectorUA4f>::~IParameterValueProvider<Math::VectorUA4f>,,0x004f25c0,0x007df760,0x004f25c0
 5742,function,Graphics::MaterialObjectInstance::IParameterValueProvider<ECBase::ECDynArray<Math::VectorUA4f>>::~IParameterValueProvider<ECBase::ECDynArray<Math::VectorUA4f>>,,0x004f25d0,0x007df770,0x004f25d0
@@ -14482,7 +14482,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14481,function,CCCreature::GetGender,,0x006a3650,0x00594770,0x006a3650
 14482,function,CCCreature::IsDead,,0x006a3660,0x00594780,0x006a3660
 14483,function,CCCreature::ResetStealthCheckCountdown,,0x006a3690,0x005947b0,0x006a3690
-14484,function,CCCreature::SetAnimationSpeed,,0x006a3700,0x00594820,0x006a3700
+14484,function,CCCreature::SetMovementSpeedMultiplier,"The creature's override of SEffectsHolder's slot +0x58, so this is the creature + 0x70: stores its float at this+0xA94, which is MovementController +0xD4 (speedMultiplier, the factor GetSpeed multiplies by at 0x00A6319D). EffectsManager::ApplyMovementRate (0x007A0610) calls the slot with the product of the holder's movement-rate effects. Was named SetAnimationSpeed.",0x006a3700,0x00594820,0x006a3700
 14485,function,CCCreature::DestroyTactics,,0x006a3710,0x00594830,0x006a3710
 14486,function,CCCreature::IsImmortal,,0x006a3750,0x00594870,0x006a3750
 14487,function,CCCreature::FindDeathblowSyncPlacement,"__thiscall on the attacker, ret 4: (target). For i = 1..5, reads sync placement table 117+i (GdaTables::GetSyncPlacement: table, the target's appearance row at +0x7B0 +0x58, and four out-pointers on the stack, two to the same local). Each row gives a yaw and an offset, which are rotated into the target's frame and compared with the attacker's position against a size-scaled limit (slot 0x9C). Returns the index 1..5 of the placement chosen, or 0 when none fits or a table row is missing.",0x006a3780,0x00594910,0x006a3780
@@ -17545,9 +17545,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17544,function,CCObject::ForScript_ClearAllCommands,,0x0073c930,0x006483b0,0x0073c930
 17545,function,CCObject::ForScript_RemoveCommand,,0x0073c9e0,0x00648460,0x0073c9e0
 17546,function,CCObject::ForScript_RemoveCommandByIndex,,0x0073ca90,0x00648510,0x0073ca90
-17547,function,CCObject::SetCurrentCommand,,0x0073cb20,0x006485a0,0x0073cb20
+17547,function,CCObject::SetPreviousCommand,"Releases the object previous command (CCObject+0x2C8, CommandPool::Release on the pool at [aiMaster+0x6C]+4) if there is one, then stores the argument there. Only caller Commands::EndShared (0x00746900), which first zeroes the current command ([queue+0], queue at +0x2DC) and then passes the command that just ended, so what is stored is the previous command that GETPREVIOUSCOMMAND returns.",0x0073cb20,0x006485a0,0x0073cb20
 17548,function,CCObject::RunCurrentCommand,,0x0073cb60,0x006485e0,0x0073cb60
-17549,function,,,0x0073ccd0,0x00648750,0x0073ccd0
+17549,function,std::list<?>::push_front,"Inserts the value (one dword argument) as the first element of a std::list: _Buynode(first, first->prev, value), the size increment, then relinked at the head (0x0073CCD0..0x0073CD01). Counterpart of push_back 0x0054B3E0, which inserts before the head node. Reached for the front insert of QueueCommand (0x0073CD10), LinkSubAction (0x0073CF20) and ClientAIMaster::AddEventLater.",0x0073ccd0,0x00648750,0x0073ccd0
 17550,function,CCObject::QueueCommand,"Queues a command on the object: a player command raises 0x5E; for a creature and command type 0x19, CheckModalAbilities is called (0x0073CEF3)",0x0073cd10,0x00648790,0x0073cd10
 17551,function,CCObject::LinkSubAction,,0x0073cf20,0x006489a0,0x0073cf20
 17552,function,SubActionPool::Grow,,0x0073cf50,0x006489d0,0x0073cf50
@@ -17657,7 +17657,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17656,function,SubAction::FreeData,,0x00742140,0x0064e060,0x00742140
 17657,function,SubAction::GetProgress,,0x00742160,0x0064e080,0x00742160
 17658,function,CSCommandHandler::End,,0x00742190,0x0064e0b0,0x00742190
-17659,function,Stub::ReturnTrue_8,,0x007421d0,0x00673520,0x007421d0
+17659,function,Stub::ReturnTrue_8,"Returns 1, ret 8 (command, object). Installed as the start handler of command types 26, 29 and 30 (CSCommandHandler::Initialize 0x00747519, 0x007475DE, 0x007475F2) and as the handler of sub-actions 29, 41 and 49 (CSSubActionHandler::Initialize 0x007ABA63, 0x007ABAD9, 0x007ABB0D).",0x007421d0,0x00673520,0x007421d0
 17660,function,Commands::ExamineStart,,0x007421e0,0x0064e0f0,0x007421e0
 17661,function,Commands::TurnStart,,0x00742200,0x0064e110,0x00742200
 17662,function,Commands::DropItemStart,,0x00742280,0x0064e190,0x00742280
@@ -17700,7 +17700,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17699,function,std::list<unsigned int>::remove,,0x00744d50,0x0073fc50,0x00744d50
 17700,function,Command::Read,,0x00744df0,0x00650c60,0x00744df0
 17701,function,SubAction::Read,,0x00744fc0,0x00650e30,0x00744fc0
-17702,function,ActionQueue::Write,,0x00745110,0x00650f80,0x00745110
+17702,function,CurrentActionQueue::Write,"Saves a CurrentActionQueue (this) into a GFF4 struct: the current command (this+0) as reference field 0x4150 through Command::Write, and the sub-action list (this+0xC, count at +0x14) as struct list 0x415A through SubAction::Write. Caller CCObject::SaveToStruct passes ecx = [object+0x2DC] (0x006982EA). Counterpart of CurrentActionQueue::Read.",0x00745110,0x00650f80,0x00745110
 17703,function,Core::ListRemoveValue<unsigned int>,,0x00745230,0x0073fd50,0x00745230
 17704,function,CurrentActionQueue::RemoveSubAction,,0x00745240,0x006510a0,0x00745240
 17705,function,CSCommandHandler::GetMovementMode,,0x00745250,0x006510b0,0x00745250
@@ -17722,7 +17722,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17721,function,CommandPool::CommandPool,,0x00746490,0x006522f0,0x00746490
 17722,function,Command::BuildSaveTemplate,,0x00746520,0x00652380,0x00746520
 17723,function,SubAction::BuildSaveTemplate,,0x00746620,0x00652480,0x00746620
-17724,function,ActionQueue::BuildSaveTemplate,,0x00746770,0x006525d0,0x00746770
+17724,function,CurrentActionQueue::BuildSaveTemplate,,0x00746770,0x006525d0,0x00746770
 17725,function,CSCommandHandler::CSCommandHandler,,0x00746840,0x006526a0,0x00746840
 17726,function,CommandPool::New,,0x007468c0,0x00652720,0x007468c0
 17727,function,Commands::EndShared,"Ends a command: ReleaseSubActions, clear the current command, SendCommandComplete; for a creature not driven, RequestStop and the move target cleared inline; SelectPrimaryPath, ReleaseMeleeRingClaim, ReleaseLookAtAndProjectiles, ResumeLookAt, ResetTwitchCountdown(0), attack and cast records reset, root-motion flags (+0xE8..+0xEA) cleared",0x00746900,0x00652760,0x00746900
@@ -19799,7 +19799,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19798,function,CSSubActionHandler::SpeakString,,0x007a1fc0,0x00673530,0x007a1fc0
 19799,function,CSSubActionHandler::SpeakStrref,,0x007a2080,0x006735f0,0x007a2080
 19800,function,CSSubActionHandler::Wait,,0x007a20c0,0x00673630,0x007a20c0
-19801,function,CSSubActionHandler::RemoveTemporaryTrees,,0x007a2110,0x00673680,0x007a2110
+19801,function,CSSubActionHandler::ApplyOrRemoveAnimationTree,"Sub-action handler slot 5 (table store 0x007ABACF). this = CSSubActionHandler, args (subAction, owner): the creature is the owner through vftable +0x10; the sub-action data holds string 0, integer 1 and flags 0 and 1. With flag 0 set it calls CCCreature::RemoveTemporaryAnimationTrees (0x006B5D00), otherwise CCCreature::ApplyAnimationTree(integer 1, string 0, flag 1) (0x006B5B30). Returns -1 with no creature, else 1.",0x007a2110,0x00673680,0x007a2110
 19802,function,CSSubActionHandler::ApproachTimedOut,,0x007a2210,0x00673780,0x007a2210
 19803,function,CSSubActionHandler::HasCreatureAndSubAction,,0x007a2240,0x006737b0,0x007a2240
 19804,function,CSSubActionHandler::HasData,,0x007a2260,0x006737d0,0x007a2260
