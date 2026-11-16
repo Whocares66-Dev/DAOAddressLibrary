@@ -4,6 +4,9 @@ with data/addresses.csv and data/ghidra_fixes.csv.
     python tools/ghidra_sync.py              apply everything, then save the program
     python tools/ghidra_sync.py --dry-run    count what would change, change nothing
     python tools/ghidra_sync.py --limit N    only the first N rows of the table (a trial)
+    python tools/ghidra_sync.py --only types,eh    only these parts (rows, fixes, types, eh, comments)
+    python tools/ghidra_sync.py --no-save    apply and leave it unsaved, to look at before keeping it
+    python tools/ghidra_sync.py --discard    drop everything done since the last save
 
 The user, 2026-10-31, relayed by paragon-agent: "If we know something that
 ghidra gets wrong, we should fix the ghidra database. As we apply more
@@ -41,14 +44,31 @@ What a run does, on the GOG build's addresses:
   Ghidra defined where the table has none (a start inside another
   function's instruction), so the body goes back to its function;
   `returns` (value empty) marks a function Ghidra took for one that never
-  returns as returning.
-- every struct in data/structs.csv: made or replaced under /DAOAddressLibrary.
+  returns as returning; `callfixup` gives a function one of the compiler
+  spec's call fixups by name; `datatype` types a global and `returntype`
+  a function's return, in the types a struct's field is written in
+  (`CCParty *`).
+- what tools/receivers.py reads from the code of what a global holds and
+  what a getter returns, as `datatype` and `returntype` rows nobody wrote:
+  its head says what counts.
+- every struct in data/structs.csv: its fields onto the type Ghidra's
+  decompiler uses for that class, with their types, and each vftable's
+  slots named and typed for the functions in them. tools/ghidra_types.py
+  is this half and its head says how.
+- every function that is a piece of another's exception handling (an
+  unwind funclet, a catch block, an __ehhandler stub) and that the table
+  neither names nor comments: named Unwind@, Catch@ or EhHandler@ and its
+  address, as Ghidra's own analysis names them, with the function it
+  belongs to in its plate comment.
 - every comment in the table's comment column: the plate comment at its
   address. One the table takes out stays in Ghidra.
-- every field of data/structs.csv onto Ghidra's own class type of that
-  class (/ClassDataTypes, its class recovery), whose offset_0xN names count
-  from after the vptr and so read 4 short: the field at its real place gets
-  the table's name and its real offset as the comment.
+
+A run that leaves a class type shorter than it was, or without a vftable
+pointer or a nested class it had, has damaged it: such a run is discarded
+whole and nothing saved (2026-11-16: writing by offset into types Ghidra
+lays out itself did both, and was seen only because the run was not saved).
+A change to how types are written is tried with --no-save and looked at
+through tools/facts_dump.py on a sample before it is kept.
 
 It talks to the server over MCP's plain HTTP (initialize, then
 `eval_python` with the work as JSON, a few thousand rows a call, then
@@ -71,6 +91,7 @@ import time
 import urllib.request
 from pathlib import Path
 
+import ghidra_types
 import structs
 from msvc_names import split_top
 
@@ -88,16 +109,6 @@ from ghidra.program.model.symbol import SymbolUtilities
 from ghidra.app.util.cparser.C import CParserUtils
 from ghidra.app.cmd.function import ApplyFunctionSignatureCmd
 from ghidra.app.cmd.function import CreateFunctionCmd
-from ghidra.program.model.data import (
-    CategoryPath,
-    DataTypeConflictHandler,
-    DoubleDataType,
-    FloatDataType,
-    PointerDataType,
-    StructureDataType,
-    Undefined,
-)
-
 W = json.loads(PAYLOAD)
 TYPE_WORDS = {"void", "int", "bool", "char", "short", "long", "float", "double",
               "unsigned", "signed", "uint", "ushort", "uchar"}
@@ -240,112 +251,21 @@ for address, what, value in W["fixes"]:
             # Ghidra took it for one that never returns (operator new), which
             # ends every caller's body at the call.
             fm.getFunctionAt(a).setNoReturn(False)
+        elif what == "callfixup":
+            # One of the compiler spec's call fixups, which Ghidra's analysis
+            # gives by name and so missed where the name came later, from
+            # the table: __security_check_cookie's callers each kept an
+            # extraout_EAX for the value it was thought to clobber.
+            f = fm.getFunctionAt(a)
+            if f.getCallFixup() != value:
+                f.setCallFixup(value)
         else:
             raise Exception("unknown fix " + what)
     except Exception as e:
         faults.append("fix 0x%08x %s: %s" % (address, what, e))
 
 dtm = program.getDataTypeManager()
-for name, size, fields in W.get("structs", []):
-    try:
-        done["structs"] += 1
-        if dry:
-            continue
-        shape = StructureDataType(
-            CategoryPath("/DAOAddressLibrary"),
-            name.replace("::", ".").replace("<", "(").replace(">", ")").replace(" ", "_"),
-            size,
-            dtm,
-        )
-        for offset, length, kind, field in fields:
-            if kind == "float":
-                word = FloatDataType()
-            elif kind == "double":
-                word = DoubleDataType()
-            elif kind.endswith("*"):
-                word = PointerDataType()
-            else:
-                word = Undefined.getUndefinedDataType(length)
-            shape.replaceAtOffset(offset, word, length, field, None)
-        dtm.addDataType(shape, DataTypeConflictHandler.REPLACE_HANDLER)
-    except Exception as e:
-        faults.append("struct %s: %s" % (name, e))
-
-# Ghidra's own class types (/ClassDataTypes/<class>/<class>, from its class
-# recovery) name their fields offset_0xN with N counted after the vptr, 4
-# short of the field's place, and a reader of a decompile reads them as the
-# offsets: four readers did by 2026-11-05 (a MovementController, a
-# PlatformWin32, a SpeedTreeInstance, and CCObject +0x23C taken for an
-# effects flag). The table's field names go onto those types at the right
-# place, through a nested <class>_data where the type has one, each with its
-# real offset in the comment. Undefined bytes become the field; a type
-# already there is kept.
-from ghidra.program.model.data import Structure
-
-
-def class_field(shape, offset, leaf):
-    # The component starting at offset, inside the class's own <class>_data
-    # if it is there. Not inside another's: a base class's _data is shared
-    # by every class built on it, and two classes' names would take turns.
-    while True:
-        unit = shape.getComponentContaining(offset)
-        if unit is None:
-            return None, None, offset
-        inner = unit.getDataType()
-        if isinstance(inner, Structure) and inner.getName() == leaf + "_data" \
-                and offset - unit.getOffset() < inner.getLength():
-            offset -= unit.getOffset()
-            shape = inner
-            continue
-        if unit.getOffset() != offset:
-            return None, None, offset
-        return shape, unit, offset
-
-
-for name, size, fields in W.get("structs", []):
-    parts = name.split("::")
-    owner = dtm.getDataType(CategoryPath("/ClassDataTypes/" + "/".join(parts)), parts[-1])
-    if not isinstance(owner, Structure):
-        continue
-    for offset, length, kind, field in fields:
-        if offset == 0:
-            continue
-        try:
-            shape, unit, at = class_field(owner, offset, parts[-1])
-            if unit is None:
-                continue
-            note = "%s +0x%X (DAOAddressLibrary data/structs.csv)" % (name, offset)
-            if unit.getFieldName() == field and unit.getComment() == note:
-                continue
-            done["classfields"] += 1
-            if dry:
-                continue
-            free = Undefined.isUndefined(unit.getDataType()) and all(
-                Undefined.isUndefined(shape.getComponentContaining(at + i).getDataType())
-                for i in range(length)
-                if at + i < shape.getLength()
-            )
-            widened = False
-            if free and length > unit.getLength() and at + length <= shape.getLength():
-                # Only plain undefined bytes count as free to Ghidra: a range
-                # holding an undefined4 is refused, and the field is then
-                # named where it starts, its size left as Ghidra has it.
-                try:
-                    shape.replaceAtOffset(at, Undefined.getUndefinedDataType(length), length, field, note)
-                    widened = True
-                except Exception:
-                    pass
-            if not widened and Undefined.isUndefined(unit.getDataType()):
-                # Ghidra's default undefined byte holds no name; an explicit
-                # undefined of the same size does.
-                shape.replaceAtOffset(at, Undefined.getUndefinedDataType(unit.getLength()),
-                                      unit.getLength(), field, note)
-            elif not widened:
-                unit.setFieldName(field)
-                unit.setComment(note)
-        except Exception as e:
-            faults.append("class field %s +0x%x %s: %s" % (name, offset, field, e))
-
+@TYPES@
 from ghidra.program.model.listing import CodeUnit
 for address, text in W.get("comments", []):
     a = toAddr(address)
@@ -360,7 +280,7 @@ for address, text in W.get("comments", []):
         faults.append("comment 0x%08x: %s" % (address, e))
 
 print("RESULT " + json.dumps({"done": done, "faults": faults[:50], "nfaults": len(faults)}))
-"""
+""".replace("@TYPES@", ghidra_types.GHIDRA_TYPES)
 
 
 class Server:
@@ -428,8 +348,10 @@ class Server:
 
 
 def struct_rows():
-    """data/structs.csv as the script wants it: (name, size, fields), a struct
-    with no sizeof row being as long as its last field."""
+    """data/structs.csv as the script wants it: (name, its parts in Ghidra,
+    size, fields), a struct with no sizeof row being as long as its last
+    field, and a field (offset, size, its type as ghidra_types.field_type
+    reads it, name)."""
     fields, whole = {}, {}
     for row in structs.read():
         offset, size = int(row["offset"], 16), int(row["size"], 16)
@@ -437,10 +359,15 @@ def struct_rows():
             whole[row["struct"]] = size
         else:
             fields.setdefault(row["struct"], []).append(
-                (offset, size, row["type"], row["field"])
+                (offset, size, ghidra_types.field_type(row["type"]), row["field"])
             )
     return [
-        (name, whole.get(name, max(o + s for o, s, _, _ in held)), sorted(held))
+        (
+            name,
+            ghidra_parts(name),
+            max(whole.get(name, 0), *(o + s for o, s, _, _ in held)),
+            sorted(held, key=lambda field: field[0]),
+        )
         for name, held in sorted(fields.items())
     ]
 
@@ -455,6 +382,89 @@ def comment_rows():
             for row in csv.DictReader(f)
             if row.get("comment") and row[BUILD]
         ]
+
+
+TYPED = ("datatype", "returntype")
+
+
+def typed_fixes(fixes):
+    """The fixes that give a type (a global's, a function's return), with it
+    read as ghidra_types.field_type reads a struct's: they are applied after
+    the types, which they name. With them what tools/receivers.py reads
+    from the build's code, where the file has no row of its own for the
+    address and the build's image is here."""
+    typed = [(address, what, value) for address, what, value in fixes if what in TYPED]
+    held = {(address, what) for address, what, _ in typed}
+    try:
+        import receivers
+
+        settled, _ = receivers.rows(*receivers.read())
+    except FileNotFoundError:
+        settled = []
+    typed += [
+        (address, what, value)
+        for address, what, value, _why in settled
+        if (address, what) not in held
+    ]
+    return [
+        (address, what, ghidra_types.field_type(value), value)
+        for address, what, value in typed
+    ]
+
+
+EH_TEXT = {
+    "Unwind": "Unwind funclet of {owner}: the compiler's cleanup of one of its locals when an "
+    "exception passes through. It runs in that function's frame, so EBP here is that "
+    "function's and unaff_EBP is expected.",
+    "Catch": "Catch block of {owner}: it runs in that function's frame, so EBP here is that "
+    "function's and unaff_EBP is expected.",
+    "EhHandler": "Exception handler stub of {owner}: loads that function's FuncInfo and jumps "
+    "to the C++ frame handler.",
+}
+
+
+def eh_rows():
+    """(address, label, plate comment) of each function that is part of
+    another's exception handling and that the table neither names nor
+    comments: 18,727 of the GOG build's functions are such pieces, a third
+    of what Ghidra decompiles, each read as a function of its own with an
+    unexplained unaff_EBP. tools/subsystems.py finds them (`owner`); this
+    says which kind each is, from the same FuncInfo. Nothing if the build's
+    image is not here."""
+    import addrlib
+    import daoexe
+    import subsystems
+
+    db = addrlib.Database.load()
+    build = next(b for b in db.builds if b["key"] == BUILD)
+    image = ROOT / build["image"]
+    if not image.exists():
+        return []
+    functions = subsystems.gog_functions(db)
+    reading = subsystems.read_build(str(image), sorted(functions))
+    img = daoexe.Image(str(image))
+    commented = {row.addresses.get(BUILD) for row in db.rows.values() if row.comment}
+    kinds = {}
+    for piece in reading.owned:
+        info = subsystems.handler_info(img, piece)
+        if info is None:
+            continue
+        kinds[piece] = "EhHandler"
+        for kind, address in subsystems.eh_kinds(img, info):
+            kinds.setdefault(address, kind)
+    out = []
+    for piece, owner in sorted(reading.owned.items()):
+        if functions[piece][1] or piece in commented or piece not in kinds:
+            continue
+        name = functions[owner][1] or f"FUN_{owner:08x}"
+        out.append(
+            (
+                piece,
+                f"{kinds[piece]}@{piece:08x}",
+                EH_TEXT[kinds[piece]].format(owner=f"{name} (0x{owner:08X})"),
+            )
+        )
+    return out
 
 
 def work(limit=None):
@@ -584,22 +594,53 @@ def sha256():
         ).lower()
 
 
+def discard(server):
+    """Drops everything done since the last save. The server has no undo,
+    and its script holds one transaction from save to save; a transaction
+    inside it that ends uncommitted makes the whole of it roll back when it
+    ends, which the save does (tried on a copy of the project, 2026-11-16:
+    a renamed type was back under its name and the program unchanged)."""
+    server.run(
+        "discarding = currentProgram.startTransaction('discard unsaved changes')\n"
+        "currentProgram.endTransaction(discarding, False)\n"
+    )
+    return server.call("save_program", {}).splitlines()[-1]
+
+
+PARTS = ("rows", "fixes", "types", "eh", "comments")
+
+
 def main(argv):
+    if "--discard" in argv:
+        print(discard(Server()))
+        return 0
     dry = "--dry-run" in argv
     limit = int(argv[argv.index("--limit") + 1]) if "--limit" in argv else None
+    only = argv[argv.index("--only") + 1].split(",") if "--only" in argv else PARTS
+    if unknown := set(only) - set(PARTS):
+        print(f"--only takes {', '.join(PARTS)}: not {', '.join(sorted(unknown))}")
+        return 2
     rows, fixes = work(limit)
+    if "rows" not in only:
+        rows = []
     server = Server()
-    totals, faults = {}, []
+    totals, faults, notes = {}, [], {}
     chunks = [rows[i : i + CHUNK] for i in range(0, len(rows), CHUNK)] or [[]]
     for n, chunk in enumerate(chunks):
+        last = n == len(chunks) - 1
         payload = {
             "build": BUILD,
             "sha256": sha256(),
             "dry": dry,
             "rows": chunk,
-            "fixes": fixes if n == len(chunks) - 1 else [],
-            "structs": struct_rows() if n == len(chunks) - 1 else [],
-            "comments": comment_rows() if n == len(chunks) - 1 else [],
+            "fixes": [f for f in fixes if f[1] not in TYPED]
+            if last and "fixes" in only
+            else [],
+            "typed": typed_fixes(fixes) if last and "fixes" in only else [],
+            "eh": eh_rows() if last and "eh" in only else [],
+            "types": last and "types" in only,
+            "structs": struct_rows() if last and "types" in only else [],
+            "comments": comment_rows() if last and "comments" in only else [],
         }
         output = server.run(
             f"PAYLOAD = {json.dumps(json.dumps(payload))}\n" + GHIDRA_SCRIPT
@@ -613,21 +654,50 @@ def main(argv):
             return 1
         result = json.loads(result)
         for key, value in result["done"].items():
-            totals[key] = totals.get(key, 0) + value
+            if isinstance(value, int):
+                totals[key] = totals.get(key, 0) + value
+            else:
+                notes[key] = value
         faults += result["faults"]
+        counts = {k: v for k, v in result["done"].items() if isinstance(v, int)}
         print(
-            f"rows {n * CHUNK + len(chunk):>6} of {len(rows)}: {result['done']}, {result['nfaults']} faults"
+            f"rows {n * CHUNK + len(chunk):>6} of {len(rows)}: {counts}, {result['nfaults']} faults"
         )
-    if not dry:
+    if totals.get("damage"):
+        # A class type shrank or lost a vftable pointer or a nested class:
+        # nothing of this run is kept.
+        discard(server)
+        print("DAMAGE to class types: the run was discarded, nothing saved")
+    elif not dry and "--no-save" not in argv:
         print(server.call("save_program", {}).splitlines()[-1])
     verb = "would change" if dry else "changed"
     print(
         f"{verb}: {totals['created']} functions defined, {totals['named']} renamed, "
         f"{totals['labels']} labels, {totals['fixes']} fix rows applied, "
-        f"{totals['structs']} structs, {totals.get('comments', 0)} comments, "
-        f"{totals.get('classfields', 0)} class-type fields named; "
-        f"{totals['same']} already right"
+        f"{totals.get('comments', 0)} comments; {totals['same']} already right"
     )
+    if "types" in only:
+        print(
+            f"types: {totals['structs']} structs, {totals['built']} built whole, "
+            f"{totals['classfields']} fields written onto class types, "
+            f"{totals['typed']} fields typed and {totals['untyped']} left undefined bytes, "
+            f"{totals['grown']} class types grown to a field, {totals['beyond']} past a nested type's end, {totals['blocked']} on a vftable "
+            f"pointer or nested class, {totals['placeholders']} placeholders replaced ({totals['byvalue']} by-value uses made bytes), "
+            f"{totals['classes']} namespaces made classes, {totals['unpacked']} types unpacked, "
+            f"{totals['renamed']} offset_0xN renamed"
+        )
+        if notes.get("unresolved"):
+            print(
+                "  types not found, or not the field's size: "
+                + ", ".join(f"{name} ({count})" for name, count in notes["unresolved"])
+            )
+    if "fixes" in only:
+        print(
+            f"typed fixes: {totals['typedfixes']} applied, {totals['notype']} whose class "
+            f"Ghidra has no type for, {totals['noroom']} objects with no room or no layout"
+        )
+    if "eh" in only:
+        print(f"exception handling: {totals['eh']} labels and comments")
     for fault in faults[:40]:
         print("  " + fault, file=sys.stderr)
     return 1 if faults else 0

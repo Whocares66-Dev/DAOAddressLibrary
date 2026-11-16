@@ -10,7 +10,10 @@ often off by 8 or 0x20 bytes (the user, 2026-11-02: keep the layouts here).
 tools/ghidra_sync.py writes them into the database.
 
 A row is a field read in the code, its `evidence` the address of an instruction
-that reads or writes it; a row whose field is `sizeof` gives the class's whole
+that reads or writes it, and its `type` what tools/ghidra_types.py gives the
+field in Ghidra: a C scalar, `T*`, `T[n]`, a class as the table names it, or
+`union{T a;U b}` for one place read two ways. A type it does not know leaves
+the field its name over undefined bytes; a row whose field is `sizeof` gives the class's whole
 size, its evidence where it is allocated. Offsets are from the start of the
 class named, a base's fields under the base's own name.
 """

@@ -1863,3 +1863,6 @@ WorldDatabase::IdPool,0x0,0x10,struct,sizeof,"0x004D59A1 push 0x10 (operator new
 WorldDatabase::IdPool,0x4,0x4,uint32_t,last,"0x004D5938 mov [eax+0x4],edx in the ctor: the most id; TakeNextId compares against it at 0x004D5DDA cmp eax,[edi+4]"
 WorldDatabase::IdPool,0x8,0x4,uint32_t,lastGiven,"0x004D593B mov [eax+0x8],ecx (first-1) in the ctor; TakeNextId adds 1 at 0x004D5DD3, TakeId raises it at 0x004D5E93; saved as SavegameWorldDBLastID, field 0x4076, by IdPool::Save at 0x004D5A44 (pool+8)"
 WorldDatabase::IdPool,0xC,0x1,uint8_t,wrapped,"0x004D593E mov byte [eax+0xC],0 in the ctor; TakeNextId sets it to 1 when lastGiven reaches last (0x004D5DE4) and only then looks for ids in use (0x004D5DEB cmp byte [edi+0xC],0)"
+std::wstring,0x4,0x10,union{wchar_t[8] buf;wchar_t* ptr},storage,"0x004C0E5D mov eax,[eax+4] reads it as a pointer to the characters when the capacity at +0x18 is 8 or more (0x004C0E54 cmp, 0x004C0E5B jb), and 0x004C0E62 add eax,4 takes its own address as the characters otherwise: std::wstring::operator!= (ID 4501)"
+std::wstring,0x14,0x4,unsigned int,size,"0x004C0E58 mov edx,[eax+0x14] is the count std::wstring::operator!= gives compare for its argument, 0x004C0E67 mov eax,[ecx+0x14] the one for this"
+std::wstring,0x18,0x4,unsigned int,capacity,"0x004C0E54 cmp dword ptr [eax+0x18],8: below 8 the characters are in the object, at +4"

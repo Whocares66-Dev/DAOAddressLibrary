@@ -7,6 +7,7 @@
     python tools/facts_dump.py 0x004C0E50 ...  these addresses ({} where no function begins)
     python tools/facts_dump.py --from FILE     the addresses in FILE, one a line
     python tools/facts_dump.py --check N       N records made here against the server's own get_code, byte for byte
+    python tools/facts_dump.py --all --workers 4   decompile on four threads
 
 The store is `$CHAIN_CACHE\\facts`, else `%LOCALAPPDATA%\\paragon-chain\\facts`,
 a file `0x%08X.json` an address. Paragon's port pipeline reads it
@@ -17,24 +18,31 @@ user's word (dev/FACTS_DUMP.md), that the database's one writer keep the
 store too, since it trailed every sync: holes where ghidra_sync had since
 defined functions, and old names in every decompile.
 
-A record is `{"version": 3, "value": {...}, "source": "<sha1>"}`. `value`
-is what the old client wrote, field for field: its FACTS script is below
-unchanged but for running over a batch, and `decompile` and `disassembly`
-are the text the server's get_code tool gives (GhidrAssistMCP's
+A record is `{"version": 3, "value": {...}, "source": "<sha1>", "types":
+[...]}`. `value` is what the old client wrote, field for field: its FACTS
+script is below unchanged but for running over a batch, and `decompile` and
+`disassembly` are the text the server's get_code tool gives (GhidrAssistMCP's
 GetCodeTool: the same DecompInterface on the program's options, the same
 listing walk, the same "[Context] Operating on" head), made here in the same
 pass rather than in two more calls a function. `--check` holds this to
 that. An address where no function begins has `{}` as its value, as before.
 
-`source` is a hash, taken in Ghidra, of what a record is made from and
-cheap to read without decompiling: the function's name, prototype and
-calling convention, its body and bytes, its comments, the names and
-prototypes of its callees and callers, the labels its instructions refer
-to, and the layout of each type in its prototype. `--changed` recomputes it
-for every function and redoes the records whose hash differs, and the ones
-written before it (no `source`). What it does not see is a type used only
-inside a body (a local's struct); after a struct is changed that no
-signature carries, run `--all`.
+`types` is the structures, unions and function types the decompile went
+through (the type of every value in it), and `source` a hash, taken in
+Ghidra, of what the record is made from: the function's name, prototype,
+convention and comments, its body, the names and types of what its
+instructions refer to, the names and prototypes of its callees and callers,
+and the layout of each of those types. `--changed` takes that hash again
+for every function, without decompiling, and redoes the records whose hash
+differs or that were written before `types` was kept. So a struct's new
+field or a vftable's renamed slot redoes the functions that go through that
+type and no others (renaming one field of CCArea marked the 18 of a sample
+of 743 that use it, 2026-11-16), and `--all` is for a change to this tool.
+
+`--workers N` decompiles a batch on N threads, each with a decompiler
+process of its own; one, the default, is what every run so far has used.
+Sending batches at once from here gains nothing (4 at once took 0.30 s a
+function for 0.20 s alone).
 
 Run it after each ghidra_sync.py run, `--changed`, and never while one is
 running; only this repository writes the store, as only it writes the
@@ -52,6 +60,7 @@ from ghidra_sync import Server, sha256
 
 FACTS_VERSION = 3
 BATCH = 150  # functions an eval_python call: about 40 s of decompiling
+HASHED = 3000  # functions a call that only hashes
 STORE = (
     Path(
         os.environ.get("CHAIN_CACHE")
@@ -189,42 +198,68 @@ def facts(addr):
 """
 
 # What the server's get_code gives, made here (GhidrAssistMCP's GetCodeTool,
-# DecompilerService and the backend's context head, read 2026-11-16).
+# DecompilerService and the backend's context head, read 2026-11-16), and what
+# a record is made from.
 TEXT = r"""
+import threading
+from concurrent.futures import ThreadPoolExecutor
 from ghidra.app.decompiler import DecompInterface, DecompileOptions
+from ghidra.program.model.data import Array, Composite, FunctionDefinition, Pointer, TypeDef
 from ghidra.program.model.listing import CodeUnit
 from java.security import MessageDigest
 from java.lang import String as JString
 
 HEAD = '[Context] Operating on: ' + prog.getDomainFile().getName() + '\n\n'
-_dec = [None]
+dtm = prog.getDataTypeManager()
+_local = threading.local()
+_made = []
 
 def decompiler():
-    if _dec[0] is None:
+    # One a thread: a DecompInterface is one decompiler process.
+    if getattr(_local, 'dec', None) is None:
         o = DecompileOptions()
         o.grabFromProgram(prog)
         d = DecompInterface()
         d.setOptions(o)
         d.openProgram(prog)
-        _dec[0] = (d, o)
-    return _dec[0]
+        _local.dec = (d, o)
+        _made.append(d)
+    return _local.dec
+
+def touched(high):
+    # The structures, unions and function types the decompile went through:
+    # the type of every value in it, with its pointers and arrays taken off.
+    out = set()
+    ops = high.getPcodeOps()
+    while ops.hasNext():
+        op = ops.next()
+        for v in [op.getOutput()] + list(op.getInputs()):
+            h = v.getHigh() if v is not None else None
+            t = h.getDataType() if h is not None else None
+            while isinstance(t, (Pointer, Array, TypeDef)):
+                t = t.getBaseDataType() if isinstance(t, TypeDef) else t.getDataType()
+            if isinstance(t, (Composite, FunctionDefinition)):
+                out.add(t.getPathName())
+    return sorted(out)
 
 def decompile_text(f):
+    # (get_code's text, the types it went through)
     n = f.getName(True)
     try:
         d, o = decompiler()
         r = d.decompileFunction(f, o.getDefaultTimeout(), TaskMonitor.DUMMY)
         if r.isTimedOut():
-            return HEAD + 'Decompilation timed out for function: ' + n
+            return HEAD + 'Decompilation timed out for function: ' + n, []
         if not r.decompileCompleted():
-            return HEAD + 'Decompilation error for function ' + n + ': ' + str(r.getErrorMessage())
+            return HEAD + 'Decompilation error for function ' + n + ': ' + str(r.getErrorMessage()), []
         c = r.getDecompiledFunction().getC()
         if c is None or not c.strip():
-            return HEAD + 'No decompiled code available for function: ' + n
-        return HEAD + 'Decompiled function ' + n + ':\n\n' + c
+            return HEAD + 'No decompiled code available for function: ' + n, []
+        high = r.getHighFunction()
+        return HEAD + 'Decompiled function ' + n + ':\n\n' + c, touched(high) if high is not None else []
     except Exception as e:
-        _dec[0] = None
-        return HEAD + 'Error decompiling function ' + n + ': ' + str(e)
+        _local.dec = None
+        return HEAD + 'Error decompiling function ' + n + ': ' + str(e), []
 
 def disassembly_text(f):
     out = ['Disassembly of function: ', f.getName(True), '\n', 'Entry Point: ', str(f.getEntryPoint()), '\n\n']
@@ -244,15 +279,24 @@ def disassembly_text(f):
 def proto(g):
     return '%s|%s' % (g.getSignature().getPrototypeString(), g.getCallingConventionName())
 
-def type_layout(t):
-    while hasattr(t, 'getDataType') and t.getDataType() is not None and t.getDataType() is not t:
-        t = t.getDataType()
-    if hasattr(t, 'getComponents'):
-        return t.getPathName() + '{' + ';'.join('%d:%s:%s' % (c.getOffset(), c.getFieldName(), c.getDataType().getName())
-                                                 for c in t.getComponents()) + '}'
-    return t.getPathName()
+_layouts = {}
 
-def source(f):
+def layout(path):
+    # What of a type shows in a decompile: its fields' places, names and types.
+    if path not in _layouts:
+        t = dtm.getDataType(path)
+        if t is None:
+            text = 'gone'
+        elif isinstance(t, FunctionDefinition):
+            text = t.getPrototypeString(True)
+        else:
+            text = '%d{%s}' % (t.getLength(), ';'.join(
+                '%d:%d:%s:%s' % (c.getOffset(), c.getLength(), c.getFieldName(), c.getDataType().getName())
+                for c in t.getDefinedComponents()))
+        _layouts[path] = text
+    return _layouts[path]
+
+def source(f, types):
     # A hash of what the record is made from; see facts_dump.py's head.
     # Java's digest: the server's Python cannot import hashlib (KeyError, 2026-11-16).
     h = MessageDigest.getInstance('SHA-1')
@@ -262,10 +306,8 @@ def source(f):
     t = real(f)
     for g in (f, t) if t is not f else (f,):
         add(g.getName(True)); add(proto(g))
-        add(type_layout(g.getReturnType()))
-        for p in g.getParameters():
-            add(type_layout(p.getDataType()))
         add(g.getComment())
+        add(L.getCodeUnitAt(g.getEntryPoint()).getComment(CodeUnit.PLATE_COMMENT))
         for r in g.getBody().getAddressRanges():
             add(str(r))
         for ins in L.getInstructions(g.getBody(), True):
@@ -273,10 +315,14 @@ def source(f):
             add(ins.getComment(CodeUnit.EOL_COMMENT))
             for to in sorted((r.getToAddress() for r in ins.getReferencesFrom()), key=str):
                 add(label(to))
+                d = L.getDataAt(to) if to.isMemoryAddress() else None
+                add(d.getDataType().getName() if d is not None else None)
         for c in sorted(g.getCalledFunctions(TaskMonitor.DUMMY), key=lambda x: x.getEntryPoint().getOffset()):
-            add(c.getName(True)); add(proto(c)); add(proto(real(c)))
+            add(c.getName(True)); add(proto(c)); add(proto(real(c))); add(c.getCallFixup())
         for c in sorted(g.getCallingFunctions(TaskMonitor.DUMMY), key=lambda x: x.getEntryPoint().getOffset()):
             add(c.getName(True))
+    for path in sorted(types):
+        add(path); add(layout(path))
     return ''.join('%02x' % (b & 0xFF) for b in h.digest())
 
 def check_build(sha):
@@ -290,18 +336,22 @@ DUMP = (
     + r"""
 W = json.loads(PAYLOAD)
 check_build(W['sha256'])
-res = {}
-for a in W['addrs']:
+
+def record(a):
     f = fm.getFunctionAt(toAddr(a))
     if f is None:
-        res[a] = [{}, None]
-        continue
+        return a, [{}, None, []]
     v = facts(a)
-    v['decompile'] = decompile_text(f)
+    v['decompile'], types = decompile_text(f)
     v['disassembly'] = disassembly_text(f)
-    res[a] = [v, source(f)]
-if _dec[0] is not None:
-    _dec[0][0].dispose()
+    return a, [v, source(f, types), types]
+
+# A thread each worker, which with one is this run in order: the decompiler
+# is a process of its own and Java gives up Python's lock while it waits.
+with ThreadPoolExecutor(max_workers=max(1, W['workers'])) as pool:
+    res = dict(pool.map(record, W['addrs']))
+for d in _made:
+    d.dispose()
 print('RESULT ' + json.dumps(res))
 """
 )
@@ -312,17 +362,13 @@ LIST = (
     + r"""
 W = json.loads(PAYLOAD)
 check_build(W['sha256'])
-res = {}
-for f in fm.getFunctions(True):
-    if f.isExternal():
-        continue
-    a = hx(f.getEntryPoint())
-    if W['hash'] and a >= W['from']:
-        if len(res) >= W['count']:
-            break
-        res[a] = source(f)
-    elif not W['hash']:
-        res[a] = None
+if W['hash'] is None:
+    res = [hx(f.getEntryPoint()) for f in fm.getFunctions(True) if not f.isExternal()]
+else:
+    res = {}
+    for a, types in W['hash'].items():
+        f = fm.getFunctionAt(toAddr(a))
+        res[a] = source(f, types) if f is not None else None
 print('RESULT ' + json.dumps(res))
 """
 )
@@ -347,12 +393,13 @@ def stored(addr):
         return None
 
 
-def store(addr, value, src):
+def store(addr, value, src, types):
     p = path(addr)
     tmp = p.with_name(p.name + ".%d.tmp" % os.getpid())
     record = {"version": FACTS_VERSION, "value": value}
     if src is not None:
         record["source"] = src
+        record["types"] = types
     with open(tmp, "w", encoding="utf-8") as f:
         json.dump(record, f)
     os.replace(tmp, p)
@@ -369,29 +416,42 @@ def run(server, script, payload):
 
 def functions(server):
     """Every function the database defines, by entry."""
-    return sorted(run(server, LIST, {"hash": False, "from": "", "count": 0}))
+    return sorted(run(server, LIST, {"hash": None}))
 
 
-def hashes(server):
-    """Every function's source hash, a few thousand a call."""
-    out, start = {}, ""
-    while True:
-        got = run(server, LIST, {"hash": True, "from": start, "count": 3000})
-        got = {a: h for a, h in got.items() if a not in out}
-        if not got:
-            return out
-        out.update(got)
-        start = max(got)
-        print(f"hashed {len(out)}", flush=True)
+def changed(server):
+    """The functions whose record is missing, of another version, or no
+    longer what Ghidra holds: each record's `source` against the hash taken
+    now of the function and of the types the record says it went through."""
+    todo, held = [], {}
+    for addr in functions(server):
+        record = stored(addr)
+        if (
+            record is None
+            or record.get("version") != FACTS_VERSION
+            or "types" not in record
+        ):
+            todo.append(addr)
+        else:
+            held[addr] = (record.get("source"), record["types"])
+    addrs = sorted(held)
+    for i in range(0, len(addrs), HASHED):
+        part = {a: held[a][1] for a in addrs[i : i + HASHED]}
+        todo += [
+            a for a, h in run(server, LIST, {"hash": part}).items() if h != held[a][0]
+        ]
+        print(f"hashed {min(i + HASHED, len(addrs))} of {len(addrs)}", flush=True)
+    return sorted(todo)
 
 
-def dump(server, addrs):
+def dump(server, addrs, workers=1):
     STORE.mkdir(parents=True, exist_ok=True)
     began, done = time.time(), 0
     for i in range(0, len(addrs), BATCH):
         part = addrs[i : i + BATCH]
-        for a, (value, src) in run(server, DUMP, {"addrs": part}).items():
-            store(a, value, src)
+        made = run(server, DUMP, {"addrs": part, "workers": workers})
+        for a, (value, src, types) in made.items():
+            store(a, value, src, types)
         done += len(part)
         rate = (time.time() - began) / done
         print(
@@ -426,7 +486,7 @@ def check(server, n):
     every = functions(server)
     step = max(1, len(every) // n)
     sample = every[::step][:n]
-    made = run(server, DUMP, {"addrs": sample})
+    made = run(server, DUMP, {"addrs": sample, "workers": 1})
     bad = 0
     for a in sample:
         value = made[a][0]
@@ -459,21 +519,17 @@ def main(argv):
     server = Server()
     if "--check" in argv:
         return check(server, int(argv[argv.index("--check") + 1]))
+    workers = int(argv[argv.index("--workers") + 1]) if "--workers" in argv else 1
     if "--all" in argv:
         todo = functions(server)
     elif "--missing" in argv:
         todo = [a for a in functions(server) if not path(a).exists()]
     elif "--changed" in argv:
-        todo = []
-        for a, h in hashes(server).items():
-            r = stored(a)
-            if r is None or r.get("version") != FACTS_VERSION or r.get("source") != h:
-                todo.append(a)
-        todo.sort()
+        todo = changed(server)
     else:
         todo = addresses(argv)
     print(f"{len(todo)} to write into {STORE}", flush=True)
-    dump(server, todo)
+    dump(server, todo, workers)
     return 0
 
 

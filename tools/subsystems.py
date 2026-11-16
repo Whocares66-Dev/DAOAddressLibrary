@@ -385,6 +385,42 @@ def eh_pieces(img, handler, func_info):
     return pieces
 
 
+def handler_info(img, va):
+    """The FuncInfo an __ehhandler stub at va loads, or None: the stub ends
+    `mov eax, FuncInfo; jmp __CxxFrameHandler3`, as read_build finds it."""
+    import capstone
+
+    md = capstone.Cs(capstone.CS_ARCH_X86, capstone.CS_MODE_32)
+    head = list(md.disasm(img.bytes_at(va, 48), va))
+    for a, b in zip(head, head[1:], strict=False):
+        if (
+            a.mnemonic == "mov"
+            and a.op_str.startswith("eax, 0x")
+            and b.mnemonic == "jmp"
+            and img.u32(int(a.op_str[5:], 16)) in EH_MAGIC
+        ):
+            return int(a.op_str[5:], 16)
+    return None
+
+
+def eh_kinds(img, func_info):
+    """("Unwind"|"Catch", address) of each funclet of a FuncInfo's unwind map
+    and each catch block of its try map, as eh_pieces walks them."""
+    max_state, unwind, tries, try_map = struct.unpack(
+        "<iIiI", img.bytes_at(func_info + 4, 16)
+    )
+    for i in range(max(0, min(max_state, 4096))):
+        action = img.u32(unwind + 8 * i + 4)
+        if action:
+            yield "Unwind", action
+    for t in range(max(0, min(tries, 4096))):
+        catches, handlers = struct.unpack("<iI", img.bytes_at(try_map + 20 * t + 12, 8))
+        for c in range(max(0, min(catches, 256))):
+            block = img.u32(handlers + 16 * c + 12)
+            if block:
+                yield "Catch", block
+
+
 def read_build(path, starts):
     """A build's Reading (above)."""
     import capstone

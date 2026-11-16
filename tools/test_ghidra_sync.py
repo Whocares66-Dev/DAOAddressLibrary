@@ -142,7 +142,17 @@ class Work(unittest.TestCase):
         for address, what, _value in fixes:
             self.assertGreaterEqual(address, 0x00400000)
             self.assertIn(
-                what, ("convention", "signature", "clear", "nofunction", "returns")
+                what,
+                (
+                    "convention",
+                    "signature",
+                    "clear",
+                    "nofunction",
+                    "returns",
+                    "callfixup",
+                    "datatype",
+                    "returntype",
+                ),
             )
 
     def test_a_convention_is_one_ghidra_knows(self):
