@@ -14337,7 +14337,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14336,function,CCCreature::ApplyControllerInteraction,,0x0069eb60,0x0058fd30,0x0069eb60
 14337,function,CCCreature::SetControllerInteractionCount,"Stores its byte argument at +0x778 and tail-jumps to ApplyControllerInteraction (0x0069EBC1), which pops it (ret 4)",0x0069ebb0,0x0058fd80,0x0069ebb0
 14338,function,CCCreature::RefreshControllerInteraction,,0x0069ebd0,0x0058fda0,0x0069ebd0
-14339,function,AttackRecord::operator=,,0x0069ebf0,0x0058fdc0,0x0069ebf0
+14339,function,CastRecord::operator=,"Assigns a CastRecord (0x44 bytes): +0x00..+0x0C by dwords, the Vector4f at +0x10 by movaps (0x0069EC19), the wide string at +0x20 (0x004C2AB0), +0x3C and +0x40. Its one caller, CCCreature::OnAnimEventProjectileLoad 0x006B72A2, copies the creature's cast record (GetCastRecord 0x006A0180) into the projectile's (CastRecordHolder::Get on CProjectile+0x488). An AttackRecord is 0xC bytes and is not this.",0x0069ebf0,0x0058fdc0,0x0069ebf0
 14340,function,CCItem::CallVisualSlot6,,0x0069ec40,0x0058fe10,0x0069ec40
 14341,function,CCItem::CallVisualSlot5Null,,0x0069ec50,0x0058fe20,0x0069ec50
 14342,function,TintBlock::TintBlock(const TintBlock&),,0x0069ec70,0x0058fe40,0x0069ec70
@@ -14618,7 +14618,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14617,function,CCCreature::JoinPartyInventory,,0x006a8c10,0x00599dd0,0x006a8c10
 14618,function,CCCreature::CanBePushedAside,,0x006a8d10,0x00599ed0,0x006a8d10
 14619,function,CCCreature::IsStillPerceived,,0x006a8d60,0x00599f20,0x006a8d60
-14620,function,CCCreature::MeleeRingSpot,,0x006a8ee0,0x0059a0a0,0x006a8ee0
+14620,function,CCCreature::MeleeRingSpot,"Slot 0x98: finds a free place on this creature's rings for the creature attackerId (the claimant). Five stack arguments (ret 0x14), of which this version reads attackerId, out (the place's stand point) and claim; it calls MeleeRings::ClaimNearest 0x007CC5B0 on this+0xB44 with the claimant's area (+0x254), position (+0x120), personal space (its slot 0x9C) and its ring 0's offset (+0x24), and lifts and puts back the claimant's path obstacle around the call (0x00A627D0, 0x006A3BC0). Swing calls it with claim 1.",0x006a8ee0,0x0059a0a0,0x006a8ee0
 14621,function,CCCreature::ForScript_SwitchWeaponSet,,0x006a8fa0,0x0059a160,0x006a8fa0
 14622,function,CCCreature::GetDefaultEffectFlags,,0x006a9000,0x0059a1c0,0x006a9000
 14623,function,CCCreature::EnsurePartyTactics,,0x006a9030,0x0059a1f0,0x006a9030
@@ -16530,7 +16530,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16529,function,CooldownManager::CooldownManager,,0x0071c660,0x0061a600,0x0071c660
 16530,function,CooldownManager::~CooldownManager,,0x0071c6c0,0x0061a690,0x0071c6c0
 16531,function,CooldownManager::Remove,,0x0071c7e0,0x0061a7b0,0x0071c7e0
-16532,function,CooldownManager::Tick,,0x0071c840,0x0061a810,0x0071c840
+16532,function,CooldownManager::Tick,"Walks the running list (+0x10): takes the step from each entry's timeLeft (+0x24, slot 0x54 of the attribute), sets fractionLeft (+0x34) to the new timeLeft over the entry's duration (+0x20, only while duration is above 0) and, when timeLeft reaches 0, erases the entry from the running list and deletes it unless it is also in the known list (+0). The decompile shows the fraction's numerator as unaff_EBP: it is the new time left, the value stored just before (0x0071C89D, read again at 0x0071C8C8).",0x0071c840,0x0061a810,0x0071c840
 16533,function,CCCreatureStats::ReapplyAnimationTrees,,0x0071c990,0x0061a960,0x0071c990
 16534,function,CCCreatureStats::Cooldowns,,0x0071ca00,0x0061a9d0,0x0071ca00
 16535,function,CCCreatureStats::TickCooldowns,,0x0071ca70,0x0061aa40,0x0071ca70
@@ -20619,7 +20619,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20618,function,MeleeRings::Clear,,0x007ccae0,0x006b3eb0,0x007ccae0
 20619,function,MeleeRings::MeleeRings,,0x007ccc00,0x006b3fd0,0x007ccc00
 20620,function,MeleeRings::DestroyRings,,0x007ccc10,0x006b3fe0,0x007ccc10
-20621,function,MeleeRings::DestroyRings,,0x007ccc20,0x006b3ff0,0x007ccc20
+20621,function,MeleeRings::DestroyRings,"A one-instruction thunk, jmp 0x007CCC10 (MeleeRings::DestroyRings, which calls MeleeRings::Clear(true) 0x007CCAE0). CCCreature::CreateMeleeRings calls this address (0x006AC2B4); MeleeRings::~MeleeRings 0x007CCD20 calls 0x007CCC10 directly.",0x007ccc20,0x006b3ff0,0x007ccc20
 20622,function,MeleeRings::At,,0x007ccc30,0x006b4000,0x007ccc30
 20623,function,MeleeRings::~MeleeRings,,0x007ccd20,0x006b40f0,0x007ccd20
 20624,function,EC::Cutscene::Actor::ClipRecord::ClipRecord,,0x007ccd70,0x006b4140,0x007ccd70
@@ -21054,7 +21054,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21053,function,CCAreaOfEffectObject::SetStateAnimation,,0x007e4680,0x006cbad0,0x007e4680
 21054,function,CCAreaOfEffectObject::SetCreatorId,,0x007e4720,0x006cbb70,0x007e4720
 21055,function,CCAreaOfEffectObject::CornerFromLocal,,0x007e4730,0x006cbb80,0x007e4730
-21056,function,CCAreaOfEffectObject::AIUpdate,"INFERRED verb, the body read",0x007e4780,0x006cbbd0,0x007e4780
+21056,function,CCAreaOfEffectObject::AIUpdate,"Slot 88 (+0x160) of CCObject's main table, which ClientAIMaster::Update calls on every object in its list with the step in seconds (0x0064A457 mov edx,[eax+0x160]). Here it clears each flag of the array at +0x448 (count at +0x464) and, where the matching short in the array at +0x48C is 1, calls SetStateAnimation(2, index); then sets +0x494 to 1 once +0x490 is non-null. These fields (+0x440..+0x498) are not in the table yet.",0x007e4780,0x006cbbd0,0x007e4780
 21057,function,CCAreaOfEffectObject::ContainsPoint,,0x007e4810,0x006cbc60,0x007e4810
 21058,function,CCAreaOfEffectObject::SetShape,,0x007e4920,0x006cbd70,0x007e4920
 21059,function,CCAreaOfEffectObject::RaiseEnterOrExitEvent,,0x007e4a30,0x006cbe80,0x007e4a30
@@ -25890,7 +25890,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 25889,function,,,0x008e5f28,0x008bc968,0x008e5f28
 25890,function,_CIcos,,0x008e6020,0x008be430,0x008e6020
 25891,function,,,0x008e6078,0x008be488,0x008e6078
-25892,function,,,0x008e6110,0x008bd9e0,0x008e6110
+25892,function,floor,"The CRT floor for a double: the sse2 path (0x008E6150..0x008E6230) truncates by shifting the mantissa and takes 1 off a negative with a fraction, the other path rounds with the control word and reports error 0x3ED through ___libm_error_support. Argument on the stack at [esp+4], result in st0. Called by MeleeRing::FloorToPlace 0x007CAE30, ShadowMaps::Partition::FitProjection, Animation::ModelAnimationTree::Entry::FireEvents and others.",0x008e6110,0x008bd9e0,0x008e6110
 25893,function,_CIsqrt,,0x008e6240,0x008bcb50,0x008e6240
 25894,function,,,0x008e625d,0x008bcb6d,0x008e625d
 25895,function,_CItan,,0x008e6340,0x008be560,0x008e6340
@@ -61970,7 +61970,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 61969,data,,,0x00ae7d50,0x00b0d98c,0x00ae7d50
 61970,data,,,0x00ae7d58,0x00b100c0,0x00ae7d58
 61971,data,Renderer::EclipseUmbraScene::vftable,,0x00ae7d64,0x00b25b18,0x00ae7d64
-61972,data,,,0x00ae7d70,0x00ae3648,0x00ae7d70
+61972,data,__real@3fb99999a0000000,Double 0.10000000149011612 (the float 0.1 widened). Shared by about fifty readers. MeleeRing::BuildPlaces adds it to the ring's radius (fadd at 0x007CB41B) and MeleeRing::Claim takes it off again to get the den's radius (fsub at 0x007CC2FE).,0x00ae7d70,0x00ae3648,0x00ae7d70
 61973,data,,,0x00ae7d78,0x00b140b0,0x00ae7d78
 61974,data,,,0x00ae7d94,0x00b0f0d0,0x00ae7d94
 61975,data,,,0x00ae7dac,0x00b18c40,0x00ae7dac
@@ -64702,7 +64702,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 64701,data,,,0x00afebb0,0x00af6228,0x00afebb0
 64702,data,Audio::VolumeSliderToDecibels::s_fullVolumeSliderThreshold,"Float 9.99: a volume slider above it gives 0 dB (compare at 0x005B61BA); below it the function returns (10 - slider) * -3 dB, and under 0.01 the floor of -60 dB. Unit: slider position 0..10.",0x00afebb8,0x00b0dee4,0x00afebb8
 64703,data,,,0x00afebbc,0x00b0dee8,0x00afebbc
-64704,data,,,0x00afebc0,0x00af6958,0x00afebc0
+64704,data,__real@3ff3333340000000,"Double 1.2000000476837158 (the float 1.2 widened). Shared: 0x005B6EEA, 0x005B6F0B, 0x0061722B, 0x006A3D1D, 0x006A3DE6, 0x00746391, 0x007E6A4F and 0x00A53396 also read it. In CCCreature::CreateMeleeRings it is added to PersonalSpace for ring 0 (fadd at 0x006AC3B6) and to the table's Radius for rings 1 to 9 (0x006AC492) before MeleeRing::BuildPlaces adds 0.1.",0x00afebc0,0x00af6958,0x00afebc0
 64705,data,,,0x00afebc8,0x00af696c,0x00afebc8
 64706,data,,,0x00afebd0,0x00ae7340,0x00afebd0
 64707,data,,,0x00afebd8,0x00b0deec,0x00afebd8
@@ -65395,7 +65395,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 65394,data,ILodRecycler::vftable,,0x00b03bdc,0x00b0ada4,0x00b03bdc
 65395,data,,,0x00b03be8,0x00b06cf0,0x00b03be8
 65396,data,,,0x00b03bf0,0x00ae58a0,0x00b03bf0
-65397,data,,,0x00b03bf8,0x00af6220,0x00b03bf8
+65397,data,__real@404e000000000000,"Double 60.0, shared by ten readers. The steepest elevation in degrees: MeleeRing::PointFits compares a stand point's elevation with it (fcomp at 0x007CB13F), CCCreature::RefreshMeleeRing a place's (0x006AC892) and CSSubActionHandler::Swing the attacker's to its target (0x007A88F3).",0x00b03bf8,0x00af6220,0x00b03bf8
 65398,data,LodManager::vftable,,0x00b03c04,0x00b0adb4,0x00b03c04
 65399,data,LodManager::Update::s_reclassifyIntervalSeconds,"Float 0.333333 seconds: Update counts its timer (+0x24) down by the frame time and, when it runs out, reloads it with this and rebuilds the bands, so the LOD bands are recomputed three times a second (0x0061908E; PARTY.md ""every 1/3 s"").",0x00b03c10,0x00b0adc0,0x00b03c10
 65400,data,,,0x00b03c18,0x00b0adc8,0x00b03c18
@@ -67013,7 +67013,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 67012,data,,,0x00b0f4a0,0x00af6a60,0x00b0f4a0
 67013,data,,,0x00b0f4b4,0x00af6a74,0x00b0f4b4
 67014,data,,,0x00b0f4c8,0x00af6a88,0x00b0f4c8
-67015,data,CCCreature::s_bodyRadiusScale,"Double 0.6: the appearance radius (CAppearance +0x60, the PerSpace) multiplied by it in SetupMovementPath (0x006A2A59), CreateMeleeRings (0x006AC39E) and CreatePhysicsController (0x006B2028); the meaning of the product is INFERRED",0x00b0f500,0x00af6ac0,0x00b0f500
+67015,data,CCCreature::s_bodyRadiusScale,"Double 0.6: the appearance radius (CAppearance +0x60, the PerSpace) multiplied by it in SetupMovementPath (0x006A2A59) and CreatePhysicsController (0x006B2028); the meaning of the product is INFERRED. In CCCreature::CreateMeleeRings (fmul at 0x006AC39E) the operand is not the PerSpace but the clamped MeleeRingOffset (to plus or minus s_meleeRingOffsetLimit, 0x006AC393), and the product is ring 0's offset, stored at MeleeRing+0x24 (0x006AC3E6).",0x00b0f500,0x00af6ac0,0x00b0f500
 67016,data,CWalkHitInfo::vftable,,0x00b0f50c,0x00af6ad0,0x00b0f50c
 67017,data,"SmartData::Attribute<PortraitProperties*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::vftable_at_4",,0x00b0f518,0x00af6b50,0x00b0f518
 67018,data,"SmartData::Attribute<PortraitProperties*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::vftable",,0x00b0f52c,0x00af6b64,0x00b0f52c
@@ -97171,7 +97171,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 97170,data,CCCreature::LeaveCombat::s_weaponSheatheDelayMaxMs,,0x00c021f8,0x00bf5208,0x00c021f8
 97171,data,CCCreature::IsWithinCombatApproachRange::s_combatApproachSlack,,0x00c021fc,0x00bf520c,0x00c021fc
 97172,data,CCCreature::IsWithinCombatApproachRange::s_combatApproachRangeExtra,,0x00c02200,0x00bf5210,0x00c02200
-97173,data,CCCreature::CreateMeleeRings::s_meleeRingOffsetLimit,,0x00c02204,0x00bf5214,0x00c02204
+97173,data,CCCreature::CreateMeleeRings::s_meleeRingOffsetLimit,"Float 0.5: the limit CCCreature::CreateMeleeRings clamps the creature's MeleeRingOffset to (plus or minus, 0x006AC346..0x006AC393) before the multiplication by s_bodyRadiusScale (0.6). Its only reader.",0x00c02204,0x00bf5214,0x00c02204
 97174,data,CCCreature::FindDeathblowSyncPlacement::s_deathblowSyncMaxDistance,,0x00c02208,0x00bf5218,0x00c02208
 97175,data,CCCreature::SetGlow::s_glowColorHostile,,0x00c0220c,0x00bf521c,0x00c0220c
 97176,data,CCCreature::SetGlow::s_glowColorFriendly,,0x00c02218,0x00bf5228,0x00c02218
@@ -98414,8 +98414,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 98413,data,ListItemIteratorImpl::typeinfo,,0x00c11188,0x00c05504,0x00c11188
 98414,data,ListItemLocation::typeinfo,,0x00c111ac,0x00c05528,0x00c111ac
 98415,data,MeleeRing::s_claimMarginPlaces,"Int 1, the loop bound (counter <= 1, so 2 places) of the guard margin each side of a claim in MarkClaimMargin (0x007CB8BF), no immediate writer found (TURN_BASED.md line 332).",0x00c111cc,0x00c05548,0x00c111cc
-98416,data,MeleeRing::MarkMargin::s_markMarginPlaces,,0x00c111d0,0x00c0554c,0x00c111d0
-98417,data,MeleeRing::StandPoint::s_standPointStepFraction,,0x00c111d4,0x00c05550,0x00c111d4
+98416,data,MeleeRing::MarkMargin::s_markMarginPlaces,"Int 1: with s_claimMarginPlaces, the larger of the two sets how many places MeleeRing::MarkMargin guards beyond each end of a body's span (read at 0x007CB921). Its only reader.",0x00c111d0,0x00c0554c,0x00c111d0
+98417,data,MeleeRing::StandPoint::s_standPointStepFraction,"Float 0.1: MeleeRing::StandPoint multiplies a difference of two of its distance arguments by it (fld at 0x007CBB3C, fmulp at 0x007CBB42) and compares the result with the float after it (0x00C111D8). Its only reader.",0x00c111d4,0x00c05550,0x00c111d4
 98418,data,MeleeRing::s_standPointMinStep,"Float 0.01, the smallest inward step in metres of StandPoint (max(step, 0.01)); no immediate writer found (TURN_BASED.md line 575).",0x00c111d8,0x00c05554,0x00c111d8
 98419,data,EC::Cutscene::Actor::RealignOrientation::s_toleranceDegrees,"Float 10.0, a tolerance in degrees (times pi/180 and 0.5, then sine-ed and compared at 0x007D0982) under which a cutscene actor is not re-turned toward its target; read only by RealignOrientation; INFERRED as an angle.",0x00c111dc,0x00c05558,0x00c111dc
 98420,data,AnimBase::typeinfo,,0x00c111e0,0x00c0555c,0x00c111e0
