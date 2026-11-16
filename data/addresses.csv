@@ -14151,7 +14151,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14150,function,CCObject::FindNearestByTag,,0x006973b0,0x00588430,0x006973b0
 14151,function,CCObject::BeginConversation,,0x006976b0,0x00588730,0x006976b0
 14152,function,CCObject::QueueEffectAnimation,,0x006977c0,0x00588840,0x006977c0
-14153,function,CCObject::SEffectsHolder_CreateVisual,,0x00697830,0x005888b0,0x00697830
+14153,function,CCObject::SEffectsHolder_CreateVisual,"Also skipped while the object's area (slot 0xA0 result, ebx) has CCArea+0x234 (loadedFromSave) set (0x0069786E cmp [ebx+0x234],0; jnz 0x006978AA).",0x00697830,0x005888b0,0x00697830
 14154,function,CCObject::RemoveVisualEffects,,0x006978c0,0x00588940,0x006978c0
 14155,function,CCObject::ResumeEffects,,0x006978f0,0x00588970,0x006978f0
 14156,function,CCObject::UpdateControlledRoom,,0x00697930,0x005889b0,0x00697930
@@ -14173,7 +14173,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14172,function,CCObject::GetProjectileQueue,,0x006984f0,0x00589820,0x006984f0
 14173,function,CCObject::RaiseProjectileLaunched,"Pops the front projectile id, marks it flying (+0x448 = 2) and, if its +0x4BA is set, calls this object's vftable slot 0xF4 (an empty function for CCObject; CCCreature::ConsumeAmmunition for a creature); returns 1",0x006985a0,0x005898d0,0x006985a0
 14174,function,CCObject::DeliverEventScript,,0x006985f0,0x00589920,0x006985f0
-14175,function,CCObject::RaiseEnterOrExitEvent,,0x00698850,0x00589b80,0x00698850
+14175,function,CCObject::RaiseEnterOrExitEvent,"Returns without raising anything while the object's area (slot 0xA0) has CCArea+0x234 (loadedFromSave) set (0x00698886 cmp [eax+0x234],esi; jnz 0x0069893F). GameModeLoading::UpdateGameLoad clears the flag on every area at 0x006C82BC.",0x00698850,0x00589b80,0x00698850
 14176,function,CCObject::RunEventScript,,0x00698960,0x00589c90,0x00698960
 14177,function,CCObject::EventHandler,,0x00698a50,0x00589d80,0x00698a50
 14178,function,CCObject::SetEventEnabled,,0x00698c00,0x00589f30,0x00698c00
@@ -15087,7 +15087,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15086,function,GameModeLoading::ReadArrivalPoint,,0x006c7080,0x005b8b40,0x006c7080
 15087,function,GameModeLoading::UpdateAreaTransition,,0x006c7380,0x005b8e40,0x006c7380
 15088,function,GameModeLoading::PlaceParty,,0x006c73c0,0x005b8e80,0x006c73c0
-15089,function,GameModeLoading::UpdateGameLoad,,0x006c76f0,0x005b91b0,0x006c76f0
+15089,function,GameModeLoading::UpdateGameLoad,The loop over the module's areas ending at 0x006C82CF clears CCArea+0x234 (loadedFromSave) on each (0x006C82BC): the end of the window in which objects raise no ENTER or EXIT event and create no visuals. UpdateAreaListSwap 0x006C8800 does the same at 0x006C8DFC.,0x006c76f0,0x005b91b0,0x006c76f0
 15090,function,GameModeLoading::UpdateLightLoading,,0x006c8420,0x005b9ee0,0x006c8420
 15091,function,GameModeLoading::RemovePartyFromArea,,0x006c8720,0x005ba1e0,0x006c8720
 15092,function,GameModeLoading::UpdateAreaListSwap,,0x006c8800,0x005ba2c0,0x006c8800
