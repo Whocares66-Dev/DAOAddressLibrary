@@ -1,0 +1,36 @@
+---
+name: facts-dump
+description: Write Paragon's facts store (one JSON a function, its decompile, disassembly, callees, callers, branches) from the ghidra-dao database. Use after every ghidra_sync.py run, and when a reader reports a function missing from the store or stale in it.
+---
+
+# The facts store
+
+`tools/facts_dump.py` writes it; its head says what a record holds and how `--changed` decides. The store is `$CHAIN_CACHE\facts`, else `%LOCALAPPDATA%\paragon-chain\facts`, a file `0x%08X.json` an address. Paragon's port pipeline (`tools/chain/packet.py`) and the overseer read it and never touch Ghidra. Only this repository writes it, as only it writes the database.
+
+## When
+
+- After each `python tools/ghidra_sync.py` that changed anything: `--changed`. Never while a sync is running.
+- When a reader reports an address missing or stale: that address, or `--missing`.
+- After a struct changed that no function's signature carries (the hash does not see it): `--all`.
+
+## Commands
+
+Run them from the repository's root, at below-normal priority, with the ghidra-dao server up (DAOLib's `tools\ghidra-mcp.ps1`).
+
+| Command | Writes | Time |
+|---|---|---|
+| `python tools/facts_dump.py --changed` | records missing, written before the hash was kept, or whose function changed | about 5 min to hash, then 0.2 s a record |
+| `python tools/facts_dump.py --missing` | functions with no record | 0.2 s a record |
+| `python tools/facts_dump.py --all` | every function (about 60,000) | about 3.5 h |
+| `python tools/facts_dump.py 0x0069BD60 ...` or `--from FILE` | those addresses, `{}` where no function begins | 0.2 s a record |
+| `python tools/facts_dump.py --check 30` | nothing: compares 30 records made here with the server's own `get_code`, byte for byte | about 1 min |
+
+A run can be stopped at any point: each record is written atomically as its batch returns. Set `CHAIN_CACHE` to a scratch folder to try a change to the tool without touching the store.
+
+## Checking a record
+
+`python tools/chain/packet.py 0x004C0E50` in Paragon (`C:\project\DAOParagonEngine`) prints the packet built from it; the name and decompile should be what Ghidra now shows. After a change to the tool, `--check` must say `0 texts differ`.
+
+## The record's form
+
+`{"version": 3, "value": {...}, "source": "<sha1>"}`. `value` is the form Paragon's old client wrote, and readers take only it. A change to `value`'s form bumps `FACTS_VERSION` and is told to paragon-agent first, so `packet.py` moves with it.

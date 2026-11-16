@@ -26,7 +26,7 @@ Download `DAOAddressLibrary-<version>.zip` from [Releases](https://github.com/Wh
 - **The reader**, [src/daoaddr](src/daoaddr/Library.h): a small C++20 library, standard library only, that loads a build's file and answers "where is this ID" and "what ID is at this address".
 - **The shapes of the classes**, [data/structs.csv](data/structs.csv): a field per row, with the address of an instruction that uses it; `tools/structs.py` checks it.
 - **What Ghidra gets wrong**, [data/ghidra_fixes.csv](data/ghidra_fixes.csv): a calling convention, a signature or a misleading label for an address of the GOG build, one per line with why; `tools\ghidra_sync.py` writes it and the table's names into DAOLib's Ghidra database, and its head says how.
-- **The tools**, [tools/](tools): `addrlib.py` works on the table; `ghidra_sync.py` copies it into Ghidra; the rest read the game's executables to fill it.
+- **The tools**, [tools/](tools): `addrlib.py` works on the table; `ghidra_sync.py` copies it into Ghidra and `facts_dump.py` writes Paragon's facts store from Ghidra (its skill, `.claude/skills/facts-dump`); the rest read the game's executables to fill it.
 
 ## Using it
 
