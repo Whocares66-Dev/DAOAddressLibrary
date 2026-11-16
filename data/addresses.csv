@@ -881,7 +881,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 880,function,,,0x0041ee30,0x0041f0c0,0x0041ee30
 881,function,,,0x0041ef10,0x0041f1a0,0x0041ef10
 882,function,,,0x0041efd0,0x0041f260,0x0041efd0
-883,function,,,0x0041f050,0x00475d20,0x0041f050
+883,function,Stub::GetDword_0x10,"mov eax,[ecx+0x10]; ret. Linker-folded getter: slot 14 of CClientVirtualMachineCommands (the wait-until timeout, 30000 at construction, 0x006D3A08) and a slot of the Renderer, D3D texture and file classes' vtables. Not one class's method.",0x0041f050,0x00475d20,0x0041f050
 884,function,Stub::GetDword_0x14,,0x0041f060,0x00a3eb70,0x0041f060
 885,function,,,0x0041f070,0x0041f2f0,0x0041f070
 886,function,,,0x0041f0f0,0x0041f370,0x0041f0f0
@@ -1061,7 +1061,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 1060,function,,,0x00423ea0,0x004240a0,0x00423ea0
 1061,function,,,0x00423eb0,0x004240b0,0x00423eb0
 1062,function,Stub::SetDword_0xC,,0x00423ed0,0x00423ff0,0x00423ed0
-1063,function,,,0x00423ee0,0x009f2ae0,0x00423ee0
+1063,function,Stub::SetDword_0x10,"mov eax,[esp+4]; mov [ecx+0x10],eax; ret 4. Linker-folded setter: slot 15 of CClientVirtualMachineCommands (sets the wait-until timeout, called by STOREWAITUNTILTIMER at 0x00A31B82) and the vtables of GTextureImplNode, Renderer::GTextureD3D9Impl and OC3Ent::Face::FxArchiveStoreMemoryNoCopy. Not one class's method.",0x00423ee0,0x009f2ae0,0x00423ee0
 1064,function,Stub::SetDword_0x14,,0x00423ef0,0x00a3cba0,0x00423ef0
 1065,function,,,0x00423f00,0x004240d0,0x00423f00
 1066,function,,,0x00423f30,0x00424120,0x00423f30
@@ -2628,7 +2628,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2627,function,Math::Vector4f::NormalizedXYZ,,0x00462060,0x005053f0,0x00462060
 2628,function,Math::Vector4f::Vector4f,,0x00462180,0x00401c80,0x00462180
 2629,function,Math::VectorUA4f::VectorUA4f,,0x004621a0,0x00816e00,0x004621a0
-2630,function,General::SafePointer::Get,,0x004621c0,0x008218c0,0x004621c0
+2630,function,Stub::GetDword_0x0,"mov eax,[ecx]; ret. Linker-folded one-instruction getter: the Renderer's General::SafePointer reads it, but so does CVirtualMachine::RunScript, RunLoadedScript and RunScriptChunk with ecx = the machine's stack (this+0x1738), where it reads the stack pointer SP (0x00A30AD7, 0x00A31D3C). Misleading under a SafePointer name in the machine's functions.",0x004621c0,0x008218c0,0x004621c0
 2631,function,Renderer::LightList::ScoreGreater,,0x004621d0,0x0089c4a0,0x004621d0
 2632,function,Renderer::LightManagerDefault::ApplyQuality,,0x00462210,0x0089c4e0,0x00462210
 2633,function,Renderer::LightManagerDefault::GetShadowDirection,,0x00462290,0x0089c560,0x00462290
@@ -10467,7 +10467,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10466,function,CClientExoApp::NewSaveGame,,0x005d4770,0x004bee60,0x005d4770
 10467,function,CClientExoApp::DeleteSaveGame,,0x005d4810,0x004bef00,0x005d4810
 10468,function,CVirtualMachineCmdImplementer::GetWaitUntilDelay,,0x005d4840,0x004befb0,0x005d4840
-10469,function,CVirtualMachineCmdImplementer::vfunction15,,0x005d4850,0x004befc0,0x005d4850
+10469,function,CVirtualMachineCmdImplementer::GetWaitUntilTimeout,"Answers 30000: the wait-until timeout in milliseconds. Slot 14 of CVirtualMachineCmdImplementer (held by it and by CVirtualMachineCommands only); the game never calls it. The client overrides it with Stub::GetDword_0x10 (0x0041F050, its +0x10, 30000 at construction) and WaitUntil 0x006D3BD0 compares its delay argument with it. Slot 15 sets it (STOREWAITUNTILTIMER, call at 0x00A31B82).",0x005d4850,0x004befc0,0x005d4850
 10470,function,CVirtualMachineCmdImplementer::`scalar deleting destructor',,0x005d4860,0x004befd0,0x005d4860
 10471,function,GUIDialogResultMessage::GUIDialogResultMessage,,0x005d4880,0x004beff0,0x005d4880
 10472,function,GUIDialogResultMessage::GetType,,0x005d48e0,0x004bf050,0x005d48e0
@@ -13486,7 +13486,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13485,function,ScriptCommand::COMMANDUSEABILITY,,0x006701b0,0x0055c040,0x006701b0
 13486,function,ScriptCommand::COMMANDDOFUNCTION,,0x006703c0,0x0055c250,0x006703c0
 13487,function,ScriptCommand::COMMANDDOEVENT,,0x006704d0,0x0055c360,0x006704d0
-13488,function,CVirtualMachineCommands::SetTextField_0x78,,0x006705f0,0x0055c480,0x006705f0
+13488,function,AIMaster::AppendCommaText,"Appends the given text and a comma to the AIMaster's string at +0x78, only when its +0x74 is non-zero. Called with ecx = the AIMaster (the app's +0x1AC) by the game implementer's ReportMessage (slot 3, 0x00670940, call at 0x006709B1) when the text is not empty; CVirtualMachine::RunScript passes the script's name there (0x00A31F5A), so +0x78 collects script names. Twin of ClientAIMaster::AppendCommaText 0x006D3970.",0x006705f0,0x0055c480,0x006705f0
 13489,function,,,0x00670690,0x0055c520,0x00670690
 13490,function,,,0x00670849,0x0055c6d9,0x00670849
 13491,function,,,0x00670855,0x0055c6e5,0x00670855
@@ -14213,8 +14213,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14212,function,CCObject::RunEventScript`adjustor{112}',,0x0069a130,0x0058b440,0x0069a130
 14213,function,CCObject::~CCObject,,0x0069a140,0x0058b450,0x0069a140
 14214,function,CCObject::DispatchAnimationEvents,,0x0069a600,0x0058b910,0x0069a600
-14215,function,CCObject::QueueAnimationRequest,,0x0069a6e0,0x0058b9f0,0x0069a6e0
-14216,function,CCObject::QueueAnimationRequest,,0x0069a740,0x0058ba50,0x0069a740
+14215,function,CCObject::QueueLoopingAnimationRequest,"Queues an AnimationRequest (animId, durationMs, speed, flag; state 0) on the LOOPING queue at CCObject+0x178. Called by CCObject::Play (0x0069B612) with durationMs -1 when IsAnimationLooping(animId) is 1. CCObject::UpdateMovement starts it with PlayAnimationById and stops it with StopAnimationById when its counter (+0x14, copied from durationMs, -1 = never) runs below 0. Same code as 0x0069A740 apart from the queue.",0x0069a6e0,0x0058b9f0,0x0069a6e0
+14216,function,CCObject::QueueOnceAnimationRequest,"Queues an AnimationRequest (animId, durationMs 0, speed, flag; state 0) on the ONCE queue at CCObject+0x168. Called by CCObject::Play (0x0069B61C) when the animation is not looping. CCObject::UpdateMovement starts it with PlayAnimationById and removes it a frame later. Same code as 0x0069A6E0 apart from the queue.",0x0069a740,0x0058ba50,0x0069a740
 14217,function,CCObject::ApplyShownInRoomFlag,"Applies the shown-in-room flag to the object's effect visuals; called by CCObject::SetShownInRoom and CCPlaceable::SetShownInRoom when the flag changes, and two other callers",0x0069a7a0,0x0058bab0,0x0069a7a0
 14218,function,CCObject::AppendModelObjects,,0x0069a920,0x0058bc30,0x0069a920
 14219,function,CCObject::SetVisible,"Writes the object's visible byte +0x1AC (0x0069A985), nothing when unchanged; showing it adds it once to ClientAIMaster (AddObject, +0x431); CCCreature::RefreshMeleeRing recomputes ring centres only while it is 0 (0x006AC51F)",0x0069a950,0x0058bc60,0x0069a950
@@ -30388,7 +30388,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30387,function,,,0x009bd2b0,0x00993e80,0x009bd2b0
 30388,function,,,0x009bd320,0x00993ef0,0x009bd320
 30389,function,,,0x009bd3c0,0x00994000,0x009bd3c0
-30390,function,,,0x009bd510,0x008ee4a0,0x009bd510
+30390,function,Stub::ReturnZero_4,"xor eax,eax; ret 4: answers 0 and ignores its argument. Linker-folded: slot 5 of CClientVirtualMachineCommands (CreateGameDefinedStructure: the client makes no engine structures), and the vtables of CCObject and its derived classes, the GAS* and GFx classes, Graphics::ICamera, and SmartData::Attribute instantiations, so not one class's method.",0x009bd510,0x008ee4a0,0x009bd510
 30391,function,,,0x009bd520,0x00994150,0x009bd520
 30392,function,,,0x009bd530,0x00994160,0x009bd530
 30393,function,,,0x009bd560,0x00994190,0x009bd560
@@ -32486,11 +32486,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32485,retired,,,,,
 32486,function,CVirtualMachineStack::SetCellType,,0x00a2d090,0x00821810,0x00a2d090
 32487,function,CVirtualMachineStack::AddToInteger,,0x00a2d110,0x00821890,0x00a2d110
-32488,function,CVirtualMachine::PopBasePointer,,0x00a2d140,0x008218d0,0x00a2d140
-32489,function,CVirtualMachine::PushBasePointer,,0x00a2d180,0x00821910,0x00a2d180
+32488,function,CVirtualMachine::PopReturnAddress,"Pops the return stack (depth +0x1750) into *out; answers 0 and resets the depth to 0 when it was empty. Called only by RETN (0x00A30A26), which loads the popped word into the instruction pointer; -1 ends the run.",0x00a2d140,0x008218d0,0x00a2d140
+32489,function,CVirtualMachine::PushReturnAddress,"Pushes a word on the machine's return stack (array at +0x175C, depth at +0x1750) and answers whether the depth is still below 0x80. It pushes return addresses, not base pointers: JSR pushes the address after itself (0x00A30A6E, ip+6), RunLoadedScript pushes -1 so the outermost RETN ends the run (0x00A31D66). The base pointer is a cell on the value stack (SAVEBP, 0x00A30F5A).",0x00a2d180,0x00821910,0x00a2d180
 32490,function,CVirtualMachine::GetReturnInteger,,0x00a2d1b0,0x00821940,0x00a2d1b0
 32491,function,CVirtualMachine::StackPeekString,,0x00a2d1e0,0x00821970,0x00a2d1e0
-32492,function,ScriptBackend::ForScript_DebugSpawnScriptDebugger,,0x00a2d230,0x008219c0,0x00a2d230
+32492,function,CVirtualMachine::RequestDebuggerBreak,"Stores its argument in the machine's +0x196C. Called with ecx = g_pVirtualMachine by ScriptCommand::DEBUGSPAWNDEBUGGER (0x00654D30, only when byte +0x194 of the object that 0x005D4FC0 returns is set) with 1; RunScriptChunk then calls RunDebugSession after the next ACTION (0x00A309A1) and clears it.",0x00a2d230,0x008219c0,0x00a2d230
 32493,function,CVirtualMachine::SetCommandImplementer,,0x00a2d240,0x008219d0,0x00a2d240
 32494,function,ScriptArray::ScriptArray_copy,,0x00a2d260,0x008219f0,0x00a2d260
 32495,function,ScriptArray::GetIntVector,,0x00a2d330,0x00821ac0,0x00a2d330
@@ -33548,7 +33548,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33547,function,AnimBase::SetFlaggedMeshValue,,0x00a61920,0x00707f60,0x00a61920
 33548,function,AnimBase::AddTreeResource,,0x00a61940,0x00707f80,0x00a61940
 33549,function,AnimBase::AddTree,,0x00a61b10,0x00708150,0x00a61b10
-33550,function,,,0x00a61fc0,0x00708600,0x00a61fc0
+33550,function,AnimBase::EraseSharedTreeClipCache,"Called only by AnimBase::RemoveTree (0x00A6227A) when a tree's shared TreeClipCache count (cache+0) has dropped to 0. this = the static map AnimBase::s_treesByName (ecx 0x00C4C21C), the argument = the result of its find {map, node, found}; it deletes the TreeClipCache held in the node (node+0x28: destructor 0x00A616B0, operator delete) and erases the node (0x005B7C50). Not a TreeClipCache method: ecx is the map. ret 4.",0x00a61fc0,0x00708600,0x00a61fc0
 33551,function,AnimBase::RemoveTree,,0x00a62030,0x00708670,0x00a62030
 33552,function,AnimBase::~AnimBase,,0x00a62300,0x00708940,0x00a62300
 33553,function,AnimBase::`scalar deleting destructor',,0x00a62570,0x00708bb0,0x00a62570
@@ -99734,8 +99734,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 99733,data,std::vector<Gff4::Template>::s_default,GetTemplateView calls Gff4::Template::GetView with this default as the element.,0x00c1d050,0x00c17050,0x00c1d050
 99734,data,,,0x00c1d060,0x00c17060,0x00c1d060
 99735,data,,,0x00c1d078,0x00c17078,0x00c1d078
-99736,data,g_pVirtualMachine,,0x00c1d080,0x00c17080,0x00c1d080
-99737,data,g_VirtualMachine,,0x00c1d084,0x00c17084,0x00c1d084
+99736,data,g_pVirtualMachine,"The game's script machine (CVirtualMachine, 0x198C bytes): constructed in CClientExoApp::Initialize 0x005DB7F0 (store at 0x005DBDB3) with extensions .ncs/.nss/.ndb and the CVirtualMachineCommands implementer (863 handlers, the app's +0x1E4). Runs every object, area and module script. The client's machine is g_VirtualMachine 0x00C1D084.",0x00c1d080,0x00c17080,0x00c1d080
+99737,data,g_VirtualMachine,"The client's script machine (CVirtualMachine, 0x198C bytes): constructed in CClientExoApp::Initialize 0x005DB7F0 (store at 0x005DBB0C) with extensions .ncc/.nsc/.ndc and the CClientVirtualMachineCommands implementer (172 handlers, the app's +0x1DC). Runs the client-side scripts; its WAITFOR/WAITUNTIL queue on ClientAIMaster. The game's machine is g_pVirtualMachine 0x00C1D080.",0x00c1d084,0x00c17084,0x00c1d084
 99738,data,g_tlkTable,,0x00c1d08c,0x00c1708c,0x00c1d08c
 99739,data,g_rules,,0x00c1d090,0x00c17090,0x00c1d090
 99740,data,EclipseGame::s_exitCode,"dword, 0 in the file: EclipseGame::Shutdown (0x004031f0) passes it to EclipseGame::RequestExit (0x00401bd0); EclipseGame::Restart (0x00403e30) sets it to 999 (0x3e7) before calling Shutdown, so 999 is the restart code; INFERRED.",0x00c1d094,0x00c17094,0x00c1d094

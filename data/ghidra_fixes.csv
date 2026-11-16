@@ -7352,8 +7352,8 @@ address,what,value,why
 0x00699F30,signature,"void __thiscall f(void *this, unsigned int animId)",0x00699F30
 0x00699F60,signature,"void __thiscall f(void *this, float value)",0x00699F60
 0x00699F70,signature,"unsigned short __thiscall f(void *this, int arg)","0x00699F70: xor ax,ax"
-0x0069A6E0,signature,"void __thiscall f(void *this, unsigned int animId, int mode, float speed, int flag)",0x0069A6E0
-0x0069A740,signature,"void __thiscall f(void *this, int animId, int loops, float speed, int flag)",0x0069A740
+0x0069A6E0,signature,"void __thiscall f(void *this, unsigned int animId, int durationMs, float speed, int flag)","replaces the row 0x0069A6E0 (parameter 2 was 'mode'): looping-queue overload; Play 0x0069B612 pushes -1 as the second argument, UpdateMovement counts it down in milliseconds; ret 0x10"
+0x0069A740,signature,"void __thiscall f(void *this, unsigned int animId, int durationMs, float speed, int flag)","replaces the row 0x0069A740 (animId was int, parameter 2 'loops'): once-queue overload; Play 0x0069B61C pushes 0 as the second argument; ret 0x10"
 0x0069A7A0,signature,void __thiscall f(void *this),0x0069A7A0
 0x0069A920,signature,"void __thiscall f(void *this, void *outVector)",0x0069A920
 0x0069B270,signature,"void __thiscall f(void *this, unsigned int listenerId, int eventType)",0x0069B270
@@ -16302,7 +16302,7 @@ address,what,value,why
 0x00A5D890,signature,void __thiscall f(void *this),0x00A5D890-0x00A5D918 ret 0
 0x00A5D920,signature,"bool __thiscall f(void *this, void *animIdPtr, void *arg)",0x00A5D920-0x00A5D978; EFFECTS.md:590 ret 8
 0x00A5E500,signature,"void * __thiscall f(void *this, unsigned int animId)","0x00A5E500-0x00A5E66A; ANIMATION.md:470, 1635 ret 4"
-0x00A5E670,signature,"bool __thiscall f(void *this, unsigned int animId, int flag, float a, float b, float c, float d, bool recordTransition)",0x00A5E670-0x00A5E725; ANIMATION.md:528 ret 28
+0x00A5E670,signature,"bool __thiscall f(void *this, unsigned int animId, float speed, float startOffset, float weight, float blend, void *treeName, bool startRootMotion)","0x00A5E670-0x00A5E725; ret 0x1C; replaces the row of 2026-10-31 whose parameters were (int flag, float a, float b, float c, float d, bool recordTransition): the second argument is the speed (FLD [EBP+0xC] is passed to PlayAnimationByName and to RootMotion::Start as the rate), the next three floats are startOffset, weight and blend as PlayAnimationByName takes them (callers 0x007F4A50 AnimWeightRequests::Apply pushes 1.0, 0.0, weight, blend, 0, false; 0x00697C90 pushes speed, 0.0, 1.0, 1.0, 0, true), the sixth argument [EBP+0x1C] is the tree-name pointer (null from the callers) and the last byte starts root motion"
 0x00A60260,signature,"void __thiscall f(void *this, const std::wstring *clipName, void *handle)","0x00A60260-0x00A603B8; AUDIO.md:1317, 1516 ret 8"
 0x00A60980,signature,"void __thiscall f(void *this, void *treeName, void *beforeName)","0x00a60980: VectorIndexOf<std::wstring> 0x51f550, RemoveAt 0 ret 8"
 0x00A60B30,signature,"void __thiscall f(void *this, void *name, unsigned int level)",0x00a60b30 -> 0x54b380 ret 8
@@ -18285,7 +18285,7 @@ address,what,value,why
 0x00A5F300,signature,"void __thiscall f(void *this, int animId, void *curve, bool fadeIn)",ret 0xC
 0x00A5F350,signature,"void * __thiscall f(void *this, int idA, int idB, void *treeA, void *treeB)","ret 0x10, returns the curve or 0"
 0x00A5F810,signature,"float __thiscall f(void *this, int animId, void *treeName)",ret 8
-0x00A5F860,signature,"bool __thiscall f(void *this, void *name, void *treeName, float speed, float startOffset, float one, float blend)",ret 0x18
+0x00A5F860,signature,"bool __thiscall f(void *this, void *name, void *treeName, float speed, float startOffset, float weight, float blend)","ret 0x18; same as the row of paragon's reading with the fifth parameter named weight (it is the 'one' the clip is started with, PlayAnimationById's weight); the sixth, blend, is what 0x00A5F8FE passes to FadeInTreeIfSilent (FLD [ESP+0x40])"
 0x00A5F980,signature,"int __thiscall f(void *this, int animId)",ret 4
 0x00A5F9C0,signature,"void __thiscall f(void *this, float startOffset, bool startRootMotion)",ret 8
 0x00A5FCC0,signature,"void __thiscall f(void *this, int animId, float speed, float blend, float startOffset, void *name, void *treeName, bool startRootMotion)",ret 0x1C
