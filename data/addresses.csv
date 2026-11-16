@@ -33008,15 +33008,15 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33007,function,Pathfinding::World::CanWalkStraight,,0x00a46710,0x007cff70,0x00a46710
 33008,function,Pathfinding::World::CanWalkStraightInArea,,0x00a46760,0x007cffc0,0x00a46760
 33009,function,Pathfinding::World::StepPath,,0x00a467a0,0x007d0000,0x00a467a0
-33010,function,Pathfinding::Grid::GetClearance,,0x00a46830,0x007d0090,0x00a46830
+33010,function,Pathfinding::World::GetClearance,"this is the Pathfinding::World, not a grid. Takes a POINTER to the area id (CCArea::GetGridClearance 0x0067C950 passes the address of a local holding its area attribute, ret 4): answers the area grid's clearance float (Grid +0x34, 0x00A4685E) or 1.0 when the world's map has no grid for the area or the grid is empty (0x00A46831 fld1). Tests the AreaGridMap pointer [ecx] first (0x00A46837).",0x00a46830,0x007d0090,0x00a46830
 33011,function,Pathfinding::World::GetCellData,,0x00a46870,0x007d00d0,0x00a46870
 33012,function,Pathfinding::World::GetStampRecordSize,,0x00a468f0,0x007d0150,0x00a468f0
 33013,function,Pathfinding::World::GetCellSize,,0x00a46980,0x007d01e0,0x00a46980
 33014,function,Pathfinding::World::StampCreature,,0x00a469c0,0x007d0220,0x00a469c0
 33015,function,Pathfinding::World::StampPatch,,0x00a46cc0,0x007d0520,0x00a46cc0
 33016,function,Pathfinding::World::StampPlaceablePatch,,0x00a46e60,0x007d06c0,0x00a46e60
-33017,function,Pathfinding::Grid::CircleClear,,0x00a46fc0,0x007d0820,0x00a46fc0
-33018,function,Pathfinding::Grid::TriangleClear,,0x00a471e0,0x007d0a40,0x00a471e0
+33017,function,Pathfinding::World::CircleClear,"this is the Pathfinding::World (CClientExoApp+0x118; its first member, the AreaGridMap, is loaded by mov ecx,[ecx] at 0x00A46FCC), not a grid. Answers whether a circle (area id, position, radius, flagA, flagB) is clear of blocked cells. Answers FALSE (not clear) when the area has no grid or an empty one (0x00A46FE0, 0x00A46FEA, 0x00A46FF4, 0x00A46FFE all jump to 0x00A471C6, xor al,al; ret 0x14), true when the box lies outside the +-infinity bound (0x00A47053). Walks the cells of the circle's box: a cell of kind 7 or more blocks, kind 6 blocks too when flagA, and a cell with a nonzero counter blocks when flagB; a blocked cell blocks when its centre is within the radius or within one cell size of the position. Callers: MovementPath::IsFree (passes its +0xC, the world; true only when that pointer is null), CCCreature::RefreshMeleeRing, MeleeRing::PointFits.",0x00a46fc0,0x007d0820,0x00a46fc0
+33018,function,Pathfinding::World::TriangleClear,"this is the Pathfinding::World (as for CircleClear: mov ecx,[ecx] at 0x00A471EF then AreaGridMap::Find). TriangleClear(areaId, p0, p1, p2): false when the area has no grid or an empty one (0x00A47389) or when the centre of a cell of kind 7 or more inside the triangle's bounding box lies within the triangle (Geometry::PointInTriangle 0x004EB070, 0x00A47353); true otherwise, and true when the box is outside the +-infinity bound. One caller: CCCreature::RefreshMeleeRing 0x006AC76B.",0x00a471e0,0x007d0a40,0x00a471e0
 33019,function,Pathfinding::World::GetCellHeight,,0x00a473a0,0x007d0c00,0x00a473a0
 33020,function,Pathfinding::World::Step,,0x00a473f0,0x007d0c50,0x00a473f0
 33021,function,Pathfinding::PathFollower::Reset,,0x00a474a0,0x007d0d00,0x00a474a0
@@ -33563,7 +33563,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33562,function,MovementPath::SetRadius,,0x00a62730,0x00708d70,0x00a62730
 33563,function,MovementPath::LiftObstacle,,0x00a627d0,0x00708e10,0x00a627d0
 33564,function,MovementPath::SetFound,,0x00a62810,0x00708e50,0x00a62810
-33565,function,MovementPath::SetFlag_0x9C,,0x00a62820,0x00708e60,0x00a62820
+33565,function,MovementPath::SetFailed,"Stores the byte it is given at +0x9C. CCObject::RequestPath calls it with 1 when the path request answers 5 (no path, 0x0073EA80's else-if branch). The constructor zeroes it; no reader of +0x9C was found in the exe's functions.",0x00a62820,0x00708e60,0x00a62820
 33566,function,MovementParameters::MovementParameters,,0x00a62830,0x00708e70,0x00a62830
 33567,function,MovementPath::Free,,0x00a62880,0x00708ec0,0x00a62880
 33568,function,MovementPath::Reset,,0x00a62890,0x00708ed0,0x00a62890
@@ -98287,16 +98287,16 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 98286,data,LoadVFXTask::typeinfo,,0x00c0f660,0x00c02ec0,0x00c0f660
 98287,data,FinalizeVFXTask::typeinfo,,0x00c0f67c,0x00c02edc,0x00c0f67c
 98288,data,CSSubActionHandler::s_blockerProbeStepMax,"Float 0.25, the longest step in metres of the probe a mover sends ahead to find creatures in its way, a min() with the x/y length of the goal vector in HandleCreaturesInTheWay (0x007A3869) and CreaturesInTheWayInCombat (0x007A9068); no immediate writer found (PATHFINDING.md).",0x00c0f69c,0x00c02efc,0x00c0f69c
-98289,data,CSSubActionHandler::ReactToCreatureInTheWay::s_reactBaseChance,,0x00c0f6a0,0x00c02f00,0x00c0f6a0
-98290,data,CSSubActionHandler::ReactToCreatureInTheWay::s_reactChancePerCreature,,0x00c0f6a4,0x00c02f04,0x00c0f6a4
+98289,data,CSSubActionHandler::ReactToCreatureInTheWay::s_reactBaseChance,"Int 50 in the file: the base chance, in percent, that a blocked mover not in the party reacts by going into in-the-way state 2; ReactToCreatureInTheWay compares rand()%100 with base - (blockers - 1) * s_reactChancePerCreature (0x007A3B4C).",0x00c0f6a0,0x00c02f00,0x00c0f6a0
+98290,data,CSSubActionHandler::ReactToCreatureInTheWay::s_reactChancePerCreature,Int 20 in the file: the percent taken off the base chance (s_reactBaseChance) for each blocker beyond the first (0x007A3B56).,0x00c0f6a4,0x00c02f04,0x00c0f6a4
 98291,data,CSSubActionHandler::Fly::s_flyTurnMaxDistance,,0x00c0f6a8,0x00c02f08,0x00c0f6a8
 98292,data,CSSubActionHandler::s_flyMaxDistance,"Float 30.0, the horizontal distance (m) from the goal beyond which Fly returns -4 (fail), read at 0x007A2CE6 only by Fly; INFERRED as a distance from the x/y length at 0x007A2C1E.",0x00c0f6ac,0x00c02f0c,0x00c0f6ac
 98293,data,CSSubActionHandler::Fly::s_flyDefaultEventFraction,,0x00c0f6b0,0x00c02f10,0x00c0f6b0
 98294,data,CSSubActionHandler::Fly::s_flySmallTurnMaxDegrees,,0x00c0f6b4,0x00c02f14,0x00c0f6b4
 98295,data,CSSubActionHandler::Fly::s_flyMediumTurnMaxDegrees,,0x00c0f6b8,0x00c02f18,0x00c0f6b8
-98296,data,CSSubActionHandler::ApproachGoalMoved::s_approachRepathNearRange,,0x00c0f6bc,0x00c02f1c,0x00c0f6bc
-98297,data,CSSubActionHandler::ApproachGoalMoved::s_approachRepathFarTolerance,,0x00c0f6c0,0x00c02f20,0x00c0f6c0
-98298,data,CSSubActionHandler::MoveUpdate::s_reactToBlockersInCombat,,0x00c0f6c4,0x00c02f24,0x00c0f6c4
+98296,data,CSSubActionHandler::ApproachGoalMoved::s_approachRepathNearRange,"Float 4.0 in the file, read at 0x007A518F in CSSubActionHandler::ApproachGoalMoved: compared (fcomp) with a distance held on the FPU stack; when that distance is above 4.0 the repath tolerance becomes s_approachRepathFarTolerance, otherwise it stays 0.",0x00c0f6bc,0x00c02f1c,0x00c0f6bc
+98297,data,CSSubActionHandler::ApproachGoalMoved::s_approachRepathFarTolerance,"Float 1.5 in the file, read at 0x007A51A0 in CSSubActionHandler::ApproachGoalMoved: the repath tolerance stored at [esp+0xC] when the compared distance exceeds s_approachRepathNearRange (4.0).",0x00c0f6c0,0x00c02f20,0x00c0f6c0
+98298,data,CSSubActionHandler::MoveUpdate::s_reactToBlockersInCombat,"Byte 1 in the file: whether a mover in combat reacts to creatures in the way. Tested at 0x007A929A (after a blocked move is stopped, sets in-the-way state 3 with a 200 ms timer) and at 0x007A95A6 (CreaturesInTheWayInCombat is called only when it is nonzero).",0x00c0f6c4,0x00c02f24,0x00c0f6c4
 98299,data,CSSubActionHandler::s_standingLimitMs,"Int 1000, the milliseconds a mover may stand still (under 2 cm moved in an update shorter than 300 ms) before MoveUpdate returns -4, times 1 when the creature's combat state and byte +0xCFC are set else times 2; no immediate writer found (TURN_BASED.md line 215, 576).",0x00c0f6c8,0x00c02f28,0x00c0f6c8
 98300,data,CSubActionController::typeinfo,,0x00c0f6cc,0x00c02f2c,0x00c0f6cc
 98301,data,CSSubActionHandler::typeinfo,,0x00c0f6f0,0x00c02f50,0x00c0f6f0
@@ -99703,9 +99703,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 99702,data,Graphics::IWindInstanceContainer::typeinfo,,0x00c1ce24,0x00c084b4,0x00c1ce24
 99703,data,GraphicsStructures::CSpeedTreeWind::typeinfo,,0x00c1ce54,0x00c084e4,0x00c1ce54
 99704,data,GraphicsStructures::CSpeedTreeWind::WindInstance::typeinfo,,0x00c1ce84,0x00c08514,0x00c1ce84
-99705,data,MovementPath::RandomWaitMs::s_randomWaitMinMs,,0x00c1cec4,0x00c06bf8,0x00c1cec4
-99706,data,MovementPath::RandomWaitMs::s_randomWaitMaxMs,,0x00c1cec8,0x00c06bfc,0x00c1cec8
-99707,data,MovementController::AdvanceAlongPath::s_blendAdvanceStep,,0x00c1cecc,0x00c06c00,0x00c1cecc
+99705,data,MovementPath::RandomWaitMs::s_randomWaitMinMs,"Int 200 (ms) in the file: the low bound of the random wait of a blocked walker; MovementPath::RandomWaitMs answers min + rand() % (max - min), so 200 to 399 ms (0x00A62AE5, 0x00A62B13).",0x00c1cec4,0x00c06bf8,0x00c1cec4
+99706,data,MovementPath::RandomWaitMs::s_randomWaitMaxMs,Int 400 (ms) in the file: the upper bound (exclusive) of the random wait; read at 0x00A62AFC by MovementPath::RandomWaitMs.,0x00c1cec8,0x00c06bfc,0x00c1cec8
+99707,data,MovementController::AdvanceAlongPath::s_blendAdvanceStep,"Byte 1 in the file: whether MovementController::AdvanceAlongPath blends its heading toward the next waypoint (the blend is 1 - 0.9^ceil(dt/0.075)); when 0 the blend is 1.0, the heading jumps (cmp byte at 0x00A64015, fld1 at 0x00A64024).",0x00c1cecc,0x00c06c00,0x00c1cecc
 99708,data,CCParty::FlipFormationSide::s_formationFlipMinSeconds,,0x00c1ced0,0x00c06c04,0x00c1ced0
 99709,data,MovementController::typeinfo,,0x00c1ced4,0x00c06c08,0x00c1ced4
 99710,data,ItemLocation::s_invalidLocation,,0x00c1cef8,0x00c06c2c,0x00c1cef8
