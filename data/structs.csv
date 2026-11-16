@@ -1,5 +1,13 @@
 struct,offset,size,type,field,evidence
+AIMaster,0x0,0x64,AIMaster::LevelList[5],levelLists,"0x0064B31A call 0x008E6707 (vector constructor iterator) with element size 0x14 (push at 0x0064B317) and count 5 over this, element constructor 0x0064B290; World_Update 0x0064B064 takes level 4 at this+0x50 and steps down by 0x14"
+AIMaster,0x0,0xA0,struct,sizeof,"0x005DBC8D push 0xa0 before operator new in CClientExoApp::Initialize, then AIMaster::AIMaster 0x0064B2E0 at 0x005DBCAF"
+AIMaster,0x64,0x4,void*,eventQueue,"0x0064B31F lea ecx,[esi+0x64] then Container12::Container12 0x0067A850 (stores a pointer to a new 0xC-byte list head); PopEvent 0x0064A8A1 lea esi,[ecx+0x64] and AddEventNow 0x0064A69F add edi,0x64 use it as the AIEventList this"
 AIMaster,0x68,0x4,EffectsManager*,effectsManager,"0x0064B371 mov [esi+0x68],eax in AIMaster::AIMaster, the 8 bytes allocated at 0x0064B34B and constructed by 0x0079F120 ; 0x0079F48F mov eax,[eax+0x68] in EffectsManager::Get (0x0079F480)"
+AIMaster,0x6C,0x4,CSCommandHandler*,commandHandler,"0x0064B39E mov [esi+0x6C],eax after the 0xBC-byte allocation (0x0064B379) and CSCommandHandler::CSCommandHandler 0x00746840"
+AIMaster,0x70,0x4,CSSubActionHandler*,subActionHandler,"0x0064B3D3 mov [esi+0x70],eax after the 0xC8-byte allocation (0x0064B3AE) and CSSubActionHandler::CSSubActionHandler 0x007AB830"
+AIMaster::LevelList,0x0,0x10,std::vector<unsigned int>,objectIds,"0x0064B295 call 0x00519A40 (vector constructor) in the LevelList constructor; NextObject 0x0064AC14 reads begin at +4 and 0x0064AC1B end at +8, elements are object ids"
+AIMaster::LevelList,0x0,0x14,struct,sizeof,0x0064B317 push 0x14 (element size of the vector constructor iterator over five lists in AIMaster::AIMaster)
+AIMaster::LevelList,0x10,0x4,int,cursor,"0x0064B29A mov [esi+0x10],0 in the constructor; NextObject 0x0064AC25 add [esi+0x10],1 and wraps to 0 at the count (0x0064AC2E)"
 AbilityInstance,0x0,0x17C,struct,sizeof,"0x0062D81F push 0x17c (operator new, then the ctor 0x0075A230 called at 0x0062D83B)"
 AbilityInstance,0x0,0x4,void*,vftable,"0x0075A275 mov [esi],0xb1c9c8; the SmartObject base is built first by 0x005C5CA0 (0x0075A25D) and its vftable overwritten"
 AbilityInstance,0x8,0x4,void*,vftableObserver,"0x0075A27B mov [esi+0x8],0xb1c9b8 (the Messages::Observer base)"
@@ -72,6 +80,13 @@ Backpack,0x0,0x50,struct,sizeof,0x00740685; sizeof (push 0x50 then the Backpack 
 Backpack,0x0,0x4,void*,vptr,0x0080D278; vptr 0x00B26464
 Backpack,0x48,0x4,void*,dirtyFlaggableVptr,"0x0080D27E, 0x0080D266; vptr of the DirtyFlaggable base at +0x48, 0x00B264DC (base's own 0x00B1FB70 first)"
 Backpack,0x4C,0x1,uint8_t,dirty,"0x0080D26C; DirtyFlaggable dirty byte, constructed 0"
+CAIEvent,0x0,0x1C,struct,sizeof,"0x0064A659 push 0x1c before operator new in AIMaster::AddEventNow, then CAIEvent::CAIEvent 0x0079BDA0 at 0x0064A673"
+CAIEvent,0x4,0x4,int,dueDay,"0x0079BDAD mov [eax+4],ecx (0) in the constructor; AddEventNow 0x0064A6AC stores the day argument; CompareTimes 0x0064A6E7 takes it first (a day) and +8 second (bounded by milliseconds per day, 0x00A35BE8); saved as field 0x40F7 (WriteBaseToSave 0x0079BE44)"
+CAIEvent,0x8,0x4,int,dueMilliseconds,"0x0079BDB0 mov [eax+8],ecx (0) in the constructor; AddEventNow 0x0064A695 stores the millisecond argument; the millisecond-of-day half of the due time; saved as 0x40F8 (0x0079BE61)"
+CAIEvent,0xC,0x4,ObjectId,callerId,"0x0079BDB3 mov [eax+0xC],edx (-1) in the constructor; ProcessEvent 0x0064A8D8 reads it and passes it second to the target's handler; saved as 0x40F9 (0x0079BE79)"
+CAIEvent,0x10,0x4,ObjectId,targetId,"0x0064A8E4 mov esi,[ecx+0x10] in ProcessEvent: the id looked up with GetGameObjectById (0x0064A90C) to be handed the event; the constructor sets -1 (0x0079BDB6); saved as 0x40FA (0x0079BE91)"
+CAIEvent,0x14,0x4,int,kind,"0x0079BDB9 mov [eax+0x14],ecx (0) in the constructor; ProcessEvent 0x0064A8DC passes it first to the handler and DeleteEventData 0x0064A520 switches on it; saved as 0x40FB (0x0079BEA9)"
+CAIEvent,0x18,0x4,void*,data,"0x0079BDBC mov [eax+0x18],ecx (0) in the constructor; ProcessEvent 0x0064A8E8 passes it third and deletes it (DeleteEventData 0x0064A520) when no target takes the event"
 CAppearance,0x0,0x1F0,struct,sizeof,"0x006B40D6 push 0x1F0 before operator new 0x00413660, then the constructor 0x0074A440 called at 0x006B4105; creature+0x7B0 holds a pointer to it (0x006B4114), not the object"
 CAppearance,0x0,0x4,void*,vftable,"0x0074A46D mov dword ptr [esi],0xB1BB6C in the constructor"
 CAppearance,0x10,0x4,unsigned int,bodyTintMask,"0x00423EE4 mov [ecx+0x10],eax, the setter ReadFromGff3 calls with BodyTintMask (string 0x00B1BB00 pushed at 0x00748B95); GetBodyTintMaskFile reads it"
@@ -375,9 +390,13 @@ CCObject,0x258,0x1,uint8_t,animBaseCreated,0x00694DBB; set to 1 by CreateAnimBas
 CCObject,0x25C,0x10,SmartData::Attribute<bool>,mapNoteVisibleAttribute,0x006998F2; attribute MapNoteVisible (value byte at +0x268)
 CCObject,0x26C,0x1C,std::wstring,eventScriptName,"0x00651A98; event script name, assigned by SetEventScript"
 CCObject,0x288,0x1,uint8_t,eventScriptSet,0x00651AA3; set to 1 by SetEventScript when it stores the name
+CCObject,0x28C,0xC,std::set<int>,disabledEvents,"0x00698490 add ecx,0x28C then the tree lookup in IsEventEnabled (answers true when the event type is absent); SetEventEnabled 0x00698C00 inserts the type when its flag is 0 and erases it otherwise; built in the constructor at 0x00699907 (set head node at +0x290, size +0x294)"
+CCObject,0x298,0x10,std::vector<void*>,eventListeners,"0x0069B2E0 add esi,0x298 in RegisterEventListener; begin at +0x29C, end at +0x2A0 (FindEventEntry 0x00697360 reads them); entries are 0x14-byte records (event type, then a vector of listener ids) kept sorted by type (0x0069B31B cmp ebp,[eax] then insert before the first greater); built at 0x00699942"
 CCObject,0x2A8,0x4,CScriptEvent*,currentScriptEvent,"0x00697318, 0x0069731E, 0x00697343; the event the object's script is handling; RunScriptWithEvent saves, sets and restores it"
+CCObject,0x2AC,0x4,CScriptEvent*,redirectedEvent,"0x00698791 mov [esi+0x2AC],ecx in DeliverEventScript (esi = the listening object) stores the delivering event round RunEventScript, cleared at 0x00698799; the destructor deletes it through its vtable (0x0069A265-0x0069A277); the constructor zeroes it (0x00699B28)"
 CCObject,0x2B0,0x4,int32,aiLevel,"0x00699FC4, 0x00699B0A; AI level, constructed -1; CCObject::SetAILevel (vftable slot 84) stores it; GetAILevel returns it"
 CCObject,0x2B4,0x4,int32,aiLevelLock,"0x00659EC5, 0x00659E9E, 0x0064B484; AI level lock, constructed 0: the SetAILevel script command sets it to 1 (0 on -1); AIMaster::ForScript_SetAILevel returns at once while it is nonzero"
+CCObject,0x2B8,0x4,ObjectTimer*,objectTimer,"0x00699A9A mov [esi+0x2B8],eax after the 0xC-byte allocation at 0x00699A6A (push 0xc at 0x00699A4A) and its constructor 0x0041CAF0; the destructor frees it at 0x0069A449-0x0069A463; GetObjectTimer 0x0069A0C0 (declared by SEffectsHolder, this = object+0x70) returns [this+0x248]"
 CCObject,0x2BC,0x1,uint8_t,destroyable,"0x00699AFD, 0x00659A83; destroyable flag, constructed 1"
 CCObject,0x2BD,0x1,uint8_t,destroyRequested,"0x00696A60, 0x00696A6F; destroy-requested flag: the destroy slot returns when set and sets it to 1"
 CCObject,0x2C0,0x4,int32,immortal,0x00699FE4; immortal flag written by ForScript_Engine_SetImmortal (vftable slot 91)
@@ -616,6 +635,13 @@ CameraRig,0x20,0x4,float,pitch,0x006C2BD7 SetPitch's first store; dao::CameraRig
 CameraRig,0x24,0x4,float,zoom,"0x007EE7E4 fld [eax+0x24] in the controller's Zoom() 0x007EE7E0, eax = [ecx+4] the rig: 0..1"
 CameraRig,0x50,0x4,float,pitchKept,0x006C2BDA SetPitch stores the same value here and at +0x20
 CameraRig,0x80,0x10,Math::Vector4f,position,"0x006C4C96 movaps [esi+0x80],xmm0 in CameraRig::Update 0x006C4C60; the constructor stores it at 0x006C3ECE"
+ClientAIMaster,0x0,0x10,std::list<unsigned int>,objectIds,"0x00649B5C call 0x004C5C60 (the list constructor, 0x10 bytes) on this; AddObject 0x00649C10 push_back of the object id; UnregisterObject 0x00649C66 removes from it"
+ClientAIMaster,0x0,0x60,struct,sizeof,"0x005DB90C push 0x60 before operator new in CClientExoApp::Initialize, then ClientAIMaster::ClientAIMaster 0x00649B30"
+ClientAIMaster,0x10,0xC,void*[3],walkCursor,"0x0064A419 lea edi,[ebx+0x10] in Update (also UpdateObjectsPaused 0x0064A128): passed to the list begin as the walk's iterator; constructed as a pair<iterator,bool> at 0x00649B6C (0x005389F0 zeroes a dword, a dword and a byte)"
+ClientAIMaster,0x1C,0x10,std::vector<unsigned int>,deferredRemovals,"0x00649C4E lea ecx,[esi+0x1C] then push_back in UnregisterObject while the walking byte is set; FlushDeferredRemovals 0x00649C87 reads begin at +0x20 and end at +0x24"
+ClientAIMaster,0x48,0x10,std::list<CAIEvent*>,delayedEvents,"0x006499D0 cmp [ecx+0x50],0 (the list's count) then add ecx,0x48 and front in IsFrontEventDue; built at 0x00649B8A call 0x004C5C60"
+ClientAIMaster,0x58,0x4,ObjectTimer*,timer,"0x00649BC2 mov [esi+0x58],eax after the 0xC-byte allocation (0x00649B97) and ObjectTimer constructor 0x0041CAF0; Update 0x0064A2D6 reads it"
+ClientAIMaster,0x5C,0x1,uint8_t,walking,"0x0064A41F mov byte [ebx+0x5C],1 before the walk and 0x0064A479 mov byte [ebx+0x5C],0 after it in Update (also UpdateObjectsPaused 0x0064A12C, 0x0064A1E9); UnregisterObject 0x00649C3F tests it to defer the removal"
 Command,0x0,0x2,uint16_t,sequence,"0x00742080 mov [ecx],ax in Command::SetSequence; CommandPool::New (0x007468E1) stamps it from the pool counter"
 Command,0x0,0x14,struct,sizeof,"0x006744F3 lea eax,[ebx+ebx*4] then add eax,eax twice = count*0x14 passed to operator new in CommandPool::AddBlock; the block is carved in 0x14 steps (0x0067457C add edi,0x14)"
 Command,0x2,0x1,uint8_t,type,"0x00742094 mov [ecx+2],al in Command::SetType; CSCommandHandler::End reads it (0x0074219A movzx eax,byte [edx+2]) to index the handler table"
@@ -837,6 +863,20 @@ EC::ModelPlacementOverrides,0x0,0x28,"stdext::hash_map<?,?>",parameters,0x0054E7
 EC::ModelPlacementOverrides,0x0,0x54,struct,sizeof,"0x005CE915 the next member of ModelPlacement is at +0xB0, the overrides at +0x5C"
 EC::ModelPlacementOverrides,0x28,0x1C,std::wstring,name,0x0054E7B4 call 0x004C0D90 on this+0x28; 0x005CEDAD the copy constructor does the same
 EC::ModelPlacementOverrides,0x44,0x10,Math::VectorUA4f,value,0x0054E7C6 call 0x00933D70 (Vector4 copy of the by-value argument) on this+0x44; meaning unread
+EC::WorldTimer,0x0,0x60,struct,sizeof,"0x005DB81E push 0x60 before operator new in CClientExoApp::Initialize, then EC::WorldTimer::WorldTimer 0x00A35F30"
+EC::WorldTimer,0x20,0x1,uint8_t,fixedStep,"0x00A35A1D cmp byte [esi+0x20],0 in Advance: 0 follows the total seconds, else a fixed step is added; the constructor clears it (0x00A35F6F)"
+EC::WorldTimer,0x24,0x4,int,fixedStepRate,0x00A35A56 idiv dword [esi+0x24] in Advance: the fixed step is 1000000 divided by this (steps a second); the constructor does not set it
+EC::WorldTimer,0x28,0x8,int64_t,worldMicroseconds,"0x00A35A5F mov [esi+0x2C],edx and 0x00A35A62 mov [esi+0x28],eax in Advance store the sum; TotalMicroseconds 0x00A35A70 returns the pair; the constructor starts it from the real clock (0x00A35F8C)"
+EC::WorldTimer,0x30,0x8,int64_t,previousWorldMicroseconds,"0x00A35A27 mov [esi+0x30],ecx (the old +0x28) and 0x00A35A2A mov [esi+0x34],edi in Advance"
+EC::WorldTimer,0x38,0x4,int,frozenDay,"0x00A35E05 mov [esi+0x38],edx in Freeze (the day from WorldTime); WorldTime 0x00A35B01 returns it while the frozen byte is set"
+EC::WorldTimer,0x3C,0x4,int,frozenMilliseconds,"0x00A35E0A mov [esi+0x3C],eax in Freeze (the millisecond of the day); WorldTime 0x00A35B0A returns it while frozen"
+EC::WorldTimer,0x40,0x4,int,dayOffset,"0x00A35ACE mov [esi+0x40],edi in SetWorldTime (the requested day minus the day of the world microseconds); WorldTime 0x00A35B43 adds it"
+EC::WorldTimer,0x44,0x4,int,millisecondOffset,"0x00A35AD9 mov [esi+0x44],edi in SetWorldTime; WorldTime 0x00A35B48 adds it"
+EC::WorldTimer,0x48,0x4,int,minutesPerHour,"0x00A35E59 mov [ecx+0x48],edx in SetMinutesPerHour (a 0 is made 1 at 0x00A35E5E); the constructor passes 5 (0x00A35F5D)"
+EC::WorldTimer,0x4C,0x4,int,millisecondsPerDay,"0x00A35E79 mov [ecx+0x4C],eax (minutes per hour x 0x15F900, 1440000); CompareTimes 0x00A35BE8 bounds the milliseconds by it"
+EC::WorldTimer,0x50,0x4,int,secondsPerDay,"0x00A35E76 mov [ecx+0x50],edx (minutes per hour x 0x5A0, 1440)"
+EC::WorldTimer,0x54,0x4,float,timeScale,"0x00A35FAA fstp [esi+0x54] sets 1.0 in the constructor; Update 0x00A3595D multiplies the step by it, SinceUpdate 0x00A359D1 too"
+EC::WorldTimer,0x58,0x1,uint8_t,frozen,"0x00A359ED mov [esi+0x58],al (1) in SetFrozen and 0x00A359FC clears it; Update 0x00A358F6 and SinceUpdate 0x00A35986 test it"
 ECBase::ECDynArray<?>,0x4,0x4,void*,begin,"0x0068F869 mov eax,[esi+4]"
 ECBase::ECDynArray<?>,0x8,0x4,void*,end,"0x0068F876 mov ebp,[esi+8]"
 ECBase::ECDynArray<?>,0xC,0x4,void*,capacityEnd,"0x0068F90F mov edx,[esi+0xC]"

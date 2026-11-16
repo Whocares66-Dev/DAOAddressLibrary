@@ -757,7 +757,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 756,function,,,0x0041ca50,0x0041cd80,0x0041ca50
 757,function,,,0x0041ca90,0x0041cdc0,0x0041ca90
 758,function,,,0x0041cad0,0x0041ce00,0x0041cad0
-759,function,,,0x0041caf0,0x0041ce20,0x0041caf0
+759,function,Stub::ZeroDwords_0_4_8,"Folded one-liner: zeroes the dwords at ecx+0, +4, +8. Constructs the 0xC-byte ObjectTimer of CCObject (0x00699A86), CCArea, CCModule and ClientAIMaster (0x00649BB9), but also 12-byte locals in ScriptCommand::GETARRAYSIZE (0x0066091A) and TexManager, so not one class method.",0x0041caf0,0x0041ce20,0x0041caf0
 760,function,,,0x0041cb00,0x0041ce30,0x0041cb00
 761,function,,,0x0041cb10,0x0041ce60,0x0041cb10
 762,function,,,0x0041cb20,0x0041ce70,0x0041cb20
@@ -1060,7 +1060,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 1059,function,,,0x00423e80,0x00424080,0x00423e80
 1060,function,,,0x00423ea0,0x004240a0,0x00423ea0
 1061,function,,,0x00423eb0,0x004240b0,0x00423eb0
-1062,function,,,0x00423ed0,0x00423ff0,0x00423ed0
+1062,function,Stub::SetDword_0xC,,0x00423ed0,0x00423ff0,0x00423ed0
 1063,function,,,0x00423ee0,0x009f2ae0,0x00423ee0
 1064,function,Stub::SetDword_0x14,,0x00423ef0,0x00a3cba0,0x00423ef0
 1065,function,,,0x00423f00,0x004240d0,0x00423f00
@@ -5040,8 +5040,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5039,function,WorldDatabase::TakeId,,0x004d5e60,0x00817770,0x004d5e60
 5040,function,WorldDatabase::FindObject,,0x004d5eb0,0x008177c0,0x004d5eb0
 5041,function,WorldDatabase::GetObjectIds,,0x004d5f00,0x008178b0,0x004d5f00
-5042,function,,,0x004d5fd0,0x00817980,0x004d5fd0
-5043,function,,,0x004d6450,0x005f0770,0x004d6450
+5042,function,"stdext::hash_map<unsigned int,?>::insert","Insert of a (uint key, value) pair into a hash_map whose node hash is the key (node+8 = key, value at node+0xC): grows the bucket vector when the count passes it (0x004D5FE8), finds the bucket range, links a new node, returns pair<iterator,bool> through its first argument (ret 8). Called by WorldDatabase::AddObjectWithId (0x004D668F, ecx = the database) and CAmbientDialogManager::StartAmbient (0x006FFA7F, its own map).",0x004d5fd0,0x00817980,0x004d5fd0
+5043,function,"stdext::hash_map<?,?>::clear","Empties a hash_map: resets the node list head and size (+0xC) and frees each node, resets the bucket vector to 9 entries and the mask and max index (+0x20, +0x24) to 1. Called by WorldDatabase::DeleteAllObjects (0x004D66A0), stdext::hash_map<std::wstring *,?>::erase(first,last) and ECResMan::ResourceSource::~ResourceSource, so key-generic.",0x004d6450,0x005f0770,0x004d6450
 5044,function,WorldDatabase::IdPool::DefineSaveStruct,,0x004d64c0,0x00817e00,0x004d64c0
 5045,function,WorldDatabase::DefineSaveStruct,,0x004d6570,0x00817eb0,0x004d6570
 5046,function,WorldDatabase::WorldDatabase,,0x004d65a0,0x00817ee0,0x004d65a0
@@ -12757,7 +12757,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12756,function,AIMaster::UpdateState,,0x0064ae30,0x005337d0,0x0064ae30
 12757,function,AIMaster::Update,,0x0064af00,0x005338a0,0x0064af00
 12758,function,AIMaster::~AIMaster,,0x0064af50,0x005338f0,0x0064af50
-12759,function,World_Update,,0x0064b010,0x005339b0,0x0064b010
+12759,function,AIMaster::UpdateObjects,"The per-frame world step, called by GameModeController::Update (0x00641FD1) and GameModeLoading::AreaLoadSteps (0x006C915E) with ecx = the app's AIMaster (+0x1AC). Returns at once while the world clocks are stopped (app +0x100); else AIMaster::Update (0x0064B047, drains due events), CCArea::RebuildCreatureTree for the controlled creature's area, then walks the five level lists (AIMaster+0x50 down by 0x14, 0x0064B064) taking objects with LevelList::NextObject under a per-level time budget (unlimited while the game mode is 9), and for each active object (byte +0x2C5) calls vtable +0x15C and +0x64; ends with CCModule::UpdateAreaList.",0x0064b010,0x005339b0,0x0064b010
 12760,function,AIMaster::LevelList::Remove,,0x0064b210,0x00533bb0,0x0064b210
 12761,function,AIMaster::ClearAILevel,,0x0064b240,0x00533be0,0x0064b240
 12762,function,AIMaster::LevelList::LevelList,,0x0064b290,0x00533c30,0x0064b290
@@ -16788,7 +16788,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16787,function,SmartData::PointerArrayMemberIteratorImpl<ECBase::ECDynArray<PRCInstalledContent*>>::IsValid,,0x007267d0,0x005e0a70,0x007267d0
 16788,function,SmartData::PointerArrayMemberIteratorImpl<ECBase::ECDynArray<GUI::Ingredient*>>::GetValue,,0x00726800,0x006327d0,0x00726800
 16789,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::Recipe*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::~Attribute",,0x00726840,0x00632810,0x00726840
-16790,function,SmartData::PointerArrayMemberIteratorImpl<ECBase::ECDynArray<PRCInstalledContent*>>::MoveNext,,0x007268b0,0x005bf4a0,0x007268b0
+16790,function,Stub::IncrementDword_0x8,,0x007268b0,0x005bf4a0,0x007268b0
 16791,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::Recipe*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x007268c0,0x00632880,0x007268c0
 16792,function,Stub::ReturnFirstArg_4,,0x007268d0,0x006326e0,0x007268d0
 16793,function,SmartData::IndexedPointerMemberLookup::GetMemberId,,0x007268e0,0x005e1210,0x007268e0
@@ -32236,7 +32236,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32235,function,Renderer::ThreadedGraphicsDriver::ThreadedGraphicsDriver,,0x00a221e0,0x008a61c0,0x00a221e0
 32236,function,Renderer::ThreadedGraphicsDriver::vfunction8,,0x00a22280,0x008a6260,0x00a22280
 32237,function,Renderer::ThreadedGraphicsDriver::vfunction9,,0x00a22290,0x008a6270,0x00a22290
-32238,function,Renderer::ThreadedGraphicsDriver::GetWrappedDriver,,0x00a222a0,0x007f33f0,0x00a222a0
+32238,function,Stub::GetDword_0x4,,0x00a222a0,0x007f33f0,0x00a222a0
 32239,function,Renderer::ThreadedGraphicsDriver::GetUmbraRenderer,,0x00a222b0,0x008a6280,0x00a222b0
 32240,function,Renderer::ThreadedGraphicsDriver::DestroyUmbraRenderer,,0x00a222c0,0x008a6290,0x00a222c0
 32241,function,Renderer::ThreadedGraphicsDriver::~ThreadedGraphicsDriver,,0x00a222d0,0x008a62a0,0x00a222d0
