@@ -75,7 +75,12 @@ STORE = (
 
 # Runs inside Ghidra (pyghidra). The part from COMMON to the end of facts() is
 # Paragon's old client (440ceac0^:tools/chain/ghidra_mcp.py) as it was, so the
-# records keep their form.
+# records keep their form, but for one thing. For a thunk (a function that is
+# one jump to another) it described the function jumped to, under the thunk's
+# address: the record at 0x00A084B0 said it was operator_new at 0x00413660
+# with six instructions, beside the thunk's own one-line disassembly (a
+# reader of paragon's, 2026-11-16: "holds operator_new's record"). A thunk's
+# record is now its own, with what it jumps to as its one callee.
 COMMON = r"""
 import json
 from ghidra.util.task import TaskMonitor
@@ -155,12 +160,14 @@ def facts(addr):
     f = fm.getFunctionAt(toAddr(addr))
     if f is None:
         return None
-    f = real(f)
     b = f.getBody()
     out = {'address': hx(f.getEntryPoint()), 'name': f.getName(True),
            'ranges': [[hx(r.getMinAddress()), hx(r.getMaxAddress())] for r in b.getAddressRanges()],
            'callees': [], 'callers': [], 'branches': [], 'indirect': [], 'instructions': 0}
-    for c in sorted(f.getCalledFunctions(TaskMonitor.DUMMY), key=lambda x: x.getEntryPoint().getOffset()):
+    called = set(f.getCalledFunctions(TaskMonitor.DUMMY))
+    if f.isThunk() and f.getThunkedFunction(False) is not None:
+        called.add(f.getThunkedFunction(False))
+    for c in sorted(called, key=lambda x: x.getEntryPoint().getOffset()):
         s = stats(c)
         if c.isThunk():
             s['via_thunk'] = hx(c.getEntryPoint())
