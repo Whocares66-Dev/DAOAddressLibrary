@@ -8455,7 +8455,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8454,function,GraphicsStructures::CrustHookMap::AddNode,,0x00563450,0x0076cb60,0x00563450
 8455,function,GraphicsStructures::ObjectNodeCloth::ClearPhysicsActor,,0x00563500,0x007509a0,0x00563500
 8456,function,GraphicsStructures::ObjectNodeCloth::UpdateDrawIndexCount,,0x00563510,0x007509b0,0x00563510
-8457,function,GraphicsStructures::ObjectNodeCloth::SetClothMeshPrototype,,0x00563550,0x007509f0,0x00563550
+8457,function,GraphicsStructures::ObjectNodeCloth::SetRestMesh,"Stores the mesh chunk (a GraphicsStructures::MeshChunk, the blueprint's +0x18C: the cloth reads its vertex declaration +0x20, index count +0x2C, vertex count +0x4C from it in CreateMeshData 0x005653A0) into ObjectNodeCloth +0x3D8 and the tearable flag into +0x3DC; called from ObjectNodeClothBlueprint::Instantiate (0x005B3721). Not a Physics::ClothMeshPrototype: that class is only the stack descriptor built in CookClothMesh (0x00597B20).",0x00563550,0x007509f0,0x00563550
 8458,function,GraphicsStructures::ObjectNodeCloth::EnableSimulation,,0x00563570,0x00750a10,0x00563570
 8459,function,GraphicsStructures::ObjectNodeCloth::DisableSimulation,,0x00563590,0x00750a30,0x00563590
 8460,function,GraphicsStructures::ObjectNodeCloth::SetWindEnabled,,0x005635b0,0x00750a50,0x005635b0
@@ -9372,7 +9372,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9371,function,Gff4::FlatRef::SetFloat16Field,,0x00597a90,0x007926f0,0x00597a90
 9372,function,Gff4::FlatRef::SetFloat4Field,,0x00597ad0,0x00792730,0x00597ad0
 9373,function,Physics::ClothMeshPrototype::GetMemoryFootprint,,0x00597b00,0x00792760,0x00597b00
-9374,function,GraphicsStructures::ObjectNodeClothBlueprint::CookClothMesh,,0x00597b20,0x00792780,0x00597b20
+9374,function,GraphicsStructures::ObjectNodeClothBlueprint::CookClothMesh,"Builds a Physics::ClothMeshPrototype on the stack (vftable 0xAFC09C, size 0x38) from the blueprint mesh chunk at +0xB8, the per-vertex mass vector and the per-vertex flag vector, then has PhysicsManager::CookClothMesh (0x008196F0) cook it into a new Physics::MemoryStream (new 8); returns the stream, or 0 if the cooking failed.",0x00597b20,0x00792780,0x00597b20
 9375,function,,,0x00597cf0,0x004aa570,0x00597cf0
 9376,function,"std::_Tree_nod<std::map<std::wstring,?>>::_Node::_Node",,0x00597f00,0x00792950,0x00597f00
 9377,function,GraphicsStructures::ReadXMLAgeMap,,0x00597f60,0x007929b0,0x00597f60
@@ -12204,8 +12204,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12203,function,AbilityChains::CollectEntriesNotIn,,0x0062e2c0,0x00585350,0x0062e2c0
 12204,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::SetFromText",,0x0062e3d0,0x00585460,0x0062e3d0
 12205,function,CreatureAbilities::CreatureAbilities,"Builds the 0x1B4-byte object at CCCreatureStats+0x1B4: the creature's ability interface. CreatureAbilities is a reader's name; no RTTI or string names the class. CCCreatureStats::EnsureCreatureAbilities 0x0071CCD0 allocates it only when the creature joins the party pool (CCParty::AddToPool 0x0063A020, SetFollowerState 0x0063B9A0). Its fields are what RegisterCreatureAbilitiesAttributes 0x0071AB10 publishes to the GUI: +0x00 QuickbarLocked (bool), +0x10 QuickSlots, +0x30 AutoLevelUp (int), +0x40 Spells, +0x5C Talents, +0x78 Skills, +0x94 ItemAbilities (each an ECDynArray<AbilityInstance*>), +0xB0 TalentChains, +0xCC SpellChains, +0xE8 SkillChains (ECDynArray<AbilityGUIInfo*>). Then +0x104 and +0x120 the module list and override list (wstrings, saved with the quickbars), +0x13C an ECDynArray, +0x14C five map<int,QuickslotEntry*> (one per quickbar, 0x14 each), +0x1B0 the current bar index. Read 2026-11-11.",0x0062e460,0x005854f0,0x0062e460
-12206,function,AbilityChains::RebuildMovieQuickSlots,"Only while +0x2C (dirty) is set, which it clears: QuickSlots entry n = FindInstance(slot n's ability, tag), made with CreateAbilityInstance when missing and the slot's resref (+0x20) is not empty (CResRef::IsNotEmpty 0x0062E750); so the slot's shown error is its (ability, tag) instance's",0x0062e680,0x00585710,0x0062e680
-12207,function,AbilityChains::RefreshReadyFlags,,0x0062e7d0,0x00585860,0x0062e7d0
+12206,function,CreatureAbilities::RebuildMovieQuickSlots,"Only while +0x2C (dirty) is set, which it clears: QuickSlots entry n = FindInstance(slot n's ability, tag), made with CreateAbilityInstance when missing and the slot's resref (+0x20) is not empty (CResRef::IsNotEmpty 0x0062E750); so the slot's shown error is its (ability, tag) instance's",0x0062e680,0x00585710,0x0062e680
+12207,function,CreatureAbilities::RefreshReadyFlags,"this is a CreatureAbilities (CCCreatureStats::RefreshQueuedAbilities 0x0071E1D0 passes the one at stats+0x1B4): for each (ability id, item id) 8-byte entry of the list argument it finds the AbilityInstance with FindInstance and sets its +0x168 flag (1 when the instance has no cooldown entry with time left and its attributes +0x68, +0x78, +0x98 are all 0, else 0); entries of the previous list at this+0x13C that are not in the new one (CollectEntriesNotIn 0x0062E2C0) get the flag cleared, then 0x0062E996 stores the new list at +0x13C",0x0062e7d0,0x00585860,0x0062e7d0
 12208,function,AbilityChains::Find,,0x0062e9c0,0x00585a50,0x0062e9c0
 12209,function,Vector3::IsZeroXYZ,,0x0062ea50,0x0060aaf0,0x0062ea50
 12210,function,PartyMemberRecord::PartyMemberRecord,,0x0062ea80,0x0060ab60,0x0062ea80
@@ -14300,7 +14300,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14299,function,CCPlayer::ResetForCharGen,,0x0069e120,0x0058f3c0,0x0069e120
 14300,function,Gff4::DefinePlayerStruct,,0x0069e170,0x0058f410,0x0069e170
 14301,function,Physics::SCtrlDesc::`scalar deleting destructor',,0x0069e260,0x00592830,0x0069e260
-14302,function,CCreaturePoolRef::GetName,,0x0069e280,0x0058f5b0,0x0069e280
+14302,function,CreaturePoolRef::GetName,,0x0069e280,0x0058f5b0,0x0069e280
 14303,function,CreaturePoolRef::SetAvailable,,0x0069e300,0x0058f630,0x0069e300
 14304,function,CreaturePoolRef::GetAvailable,,0x0069e310,0x0058f640,0x0069e310
 14305,function,AcquireItemMessage::GetType,,0x0069e320,0x00509000,0x0069e320
