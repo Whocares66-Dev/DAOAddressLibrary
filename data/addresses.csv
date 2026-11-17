@@ -13801,7 +13801,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13800,function,NamedHashMap::ClearAndDeleteValues,,0x00687f20,0x00573d70,0x00687f20
 13801,function,,,0x00687fc0,0x00573e10,0x00687fc0
 13802,function,"std::map<unsigned long long,std::vector<unsigned int>>::_Tidy",,0x006880a0,0x00571ee0,0x006880a0
-13803,function,CCArea::SetCurrent,,0x006880e0,0x00573ef0,0x006880e0
+13803,function,CCArea::SetCurrent,"SetCurrent(flag): walks the area vector of object ids at +0x694/+0x698 (0x0068814D to 0x00688190), looks each up (0x005D5BE0) and calls its vtable slot 41 (+0xA4, RequestAILevelUpdate) with the flag (0x00688184), then the area-wide steps; called by CCArea::AddObject, RemoveObject and CCPlayer::SetControlled.",0x006880e0,0x00573ef0,0x006880e0
 13804,function,CCArea::ReadFromSave,,0x006882c0,0x005740d0,0x006882c0
 13805,function,CCArea::RoomsSeen,,0x006886f0,0x00574500,0x006886f0
 13806,function,"Map<unsigned long long,std::vector<unsigned int>>::Map",,0x006889d0,0x005747e0,0x006889d0
@@ -15087,10 +15087,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15086,function,GameModeLoading::ReadArrivalPoint,,0x006c7080,0x005b8b40,0x006c7080
 15087,function,GameModeLoading::UpdateAreaTransition,,0x006c7380,0x005b8e40,0x006c7380
 15088,function,GameModeLoading::PlaceParty,,0x006c73c0,0x005b8e80,0x006c73c0
-15089,function,GameModeLoading::UpdateGameLoad,The loop over the module's areas ending at 0x006C82CF clears CCArea+0x234 (loadedFromSave) on each (0x006C82BC): the end of the window in which objects raise no ENTER or EXIT event and create no visuals. UpdateAreaListSwap 0x006C8800 does the same at 0x006C8DFC.,0x006c76f0,0x005b91b0,0x006c76f0
+15089,function,GameModeLoading::UpdateGameLoad,"The loop over the module areas ending at 0x006C82CF clears CCArea+0x234 (loadingFromSave) on each (0x006C82BC): the end of the window in which objects raise no ENTER or EXIT event and create no visuals; this is state 0x16 (jump table 0x006C83BC entry 22 = 0x006C8289), which then sets state 0x17. State 0x15 (entry 0x006C8262) calls GameModeLoading::PlaceParty 0x006C73C0 and CCParty::RestoreSelection, then sets state 0x16. UpdateAreaListSwap 0x006C8800 does the same at 0x006C8DFC.",0x006c76f0,0x005b91b0,0x006c76f0
 15090,function,GameModeLoading::UpdateLightLoading,,0x006c8420,0x005b9ee0,0x006c8420
 15091,function,GameModeLoading::RemovePartyFromArea,,0x006c8720,0x005ba1e0,0x006c8720
-15092,function,GameModeLoading::UpdateAreaListSwap,,0x006c8800,0x005ba2c0,0x006c8800
+15092,function,GameModeLoading::UpdateAreaListSwap,State 0xC (jump table 0x006C8EB4 entry 12 = 0x006C8DCE) clears CCArea+0x234 (loadingFromSave) on every area of the module list (0x006C8DFC) and sets state 0xD; state 0xD (entry 0x006C8E18) calls GameModeLoading::PlaceParty 0x006C73C0 and sets state 0xE.,0x006c8800,0x005ba2c0,0x006c8800
 15093,function,GameModeLoading::AreaLoadSteps,,0x006c8ef0,0x005ba9b0,0x006c8ef0
 15094,function,GameModeLoading::Update,,0x006c9680,0x005bb140,0x006c9680
 15095,function,CKeyboardLCD::CKeyboardLCD,,0x006c9760,0x005bb220,0x006c9760
@@ -17920,7 +17920,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17919,function,CCPlaceable::RestoreState,,0x007500d0,0x0065bfd0,0x007500d0
 17920,function,CCPlaceable::LoadWalkPatches,,0x007500e0,0x0065bfe0,0x007500e0
 17921,function,CCPlaceable::ReadFields,,0x00750370,0x0065c270,0x00750370
-17922,function,CCPlaceable::RemoveFromArea,,0x00750a60,0x0065c960,0x00750a60
+17922,function,CCPlaceable::RemoveFromArea,"Removes the placeable from its area: gets the area (0x00695180), takes the object id out of the area trap-id list CCArea+0x338 (0x00750A84; the field is an ECDynArray of ids, not an offset) and the other lists the area keeps. The same list holds trap triggers and placeables with TrapFlag set.",0x00750a60,0x0065c960,0x00750a60
 17923,function,CCPlaceable::RegisterMessageHandlers,,0x00750ae0,0x0065c9e0,0x00750ae0
 17924,function,CCPlaceable::SetLocation,,0x00750b10,0x0065ca10,0x00750b10
 17925,function,CCPlaceable::CCPlaceable,,0x00750ce0,0x0065cbe0,0x00750ce0
@@ -19508,7 +19508,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19507,function,CCTrigger::Update,,0x00798db0,0x0066a4b0,0x00798db0
 19508,function,CCTrigger::GetNearestPointOnOutline,,0x00798de0,0x0066a4e0,0x00798de0
 19509,function,CCTrigger::GetBoundingBox,,0x00799010,0x0066a710,0x00799010
-19510,function,CCTrigger::ContainsPoint,,0x00799130,0x0066a830,0x00799130
+19510,function,CCTrigger::ContainsPoint,"Outline test in the x/y plane over the outline edges (indices from +0x498, points from +0x490, last wraps to first, 0x00799130 to 0x007993xx). An edge whose two x are equal is skipped (fucompp, test ah 0x44, jnp 0x0079918E). The decompile misrenders the x87 compares (test ah 0x41 / jp after fcomp at 0x0079922F and 0x00799292): read the instructions, not the decompile.",0x00799130,0x0066a830,0x00799130
 19511,function,CCTriggerAudioMusicVolume::SetEnterState,,0x00799350,0x0066aa50,0x00799350
 19512,function,CCTriggerAudioMusicVolume::OnEnter,,0x00799380,0x0066aa80,0x00799380
 19513,function,CCTrigger::ReadFields,,0x007993c0,0x0066aac0,0x007993c0
