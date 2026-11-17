@@ -14611,7 +14611,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14610,function,CCCreature::GetHandWeaponArmourPenetration,,0x006a87e0,0x005999a0,0x006a87e0
 14611,function,CCCreature::CanPerformPlaceableAction,,0x006a8860,0x00599a20,0x006a8860
 14612,function,ScriptBackend::ForScript_ScaleEquippedItems,,0x006a88f0,0x00599ab0,0x006a88f0
-14613,function,CCCreature::RemoveAbility,,0x006a8a40,0x00599c00,0x006a8a40
+14613,function,CCCreature::RemoveAbility,"this = creature, args (ability, tag*, flag): CCCreatureStats::RemoveAbility on the stats attribute with type 4 (item ability) and mode 3 - (flag != 0), i.e. 3 for flag 0, 2 for any other. Only caller CCParty::RemoveItemAbilityFromMembers.",0x006a8a40,0x00599c00,0x006a8a40
 14614,function,CCCreature::AddAbility,,0x006a8a70,0x00599c30,0x006a8a70
 14615,function,CCCreature::GetAppearanceHasTurnAttacks,,0x006a8aa0,0x00599c60,0x006a8aa0
 14616,function,CCCreature::RestoreState,,0x006a8ac0,0x00599c80,0x006a8ac0
@@ -14968,7 +14968,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14967,function,CCCreature::OnModelLoadedCallback,,0x006c13b0,0x005b2df0,0x006c13b0
 14968,function,CCCreature::RegisterClass,,0x006c13e0,0x005b2e20,0x006c13e0
 14969,function,CCCreature::SetAppearance,"__thiscall, ret 0x10: (CAppearance* appearance, ?, ?, bool force). Returns 1 at once when modelBuildAllowed (+0x7B4) is clear or appearance is null. Unless force is set, an appearance with the same row (+0x58) and byte +0x50 as the current one (+0x7B0) is not reapplied. Otherwise it rebuilds the creature's model and calls CCCreatureStats::CheckModalAbilities(stats, 0, 0, 1) (0x006C1591).",0x006c1400,0x005b2e40,0x006c1400
-14970,function,CCCreature::OnItemEquipped,"Item-equipped handler: a two-handed item unequips the off hand (an off-hand item a two-handed main); sets the wearer, applies item stats and properties while +0xC58 is 0, sets the appearance slot, refreshes weapon style trees, then delivers EQUIP (event 0xB) with the slot and (g_inventoryFlags >> 7) & 1",0x006c16e0,0x005b3120,0x006c16e0
+14970,function,CCCreature::OnItemEquipped,"Item-equipped handler: a two-handed item unequips the off hand (an off-hand item a two-handed main); sets the wearer, applies item stats and properties while +0xC58 (loading) is 0 (0x006C17C7 cmp [esi+0xc58],0 / jnz 0x006C17F2 skips only those), sets the appearance slot, refreshes weapon style trees, then calls CCCreatureStats::ReapplyPassivesForCondition (0x006C18A8) whether or not loading, then delivers EQUIP (event 0xB) with the slot and (g_inventoryFlags >> 7) & 1. Only an early exit at 0x006C1718 skips the passives.",0x006c16e0,0x005b3120,0x006c16e0
 14971,function,CCCreature::OnItemUnequipped,,0x006c19f0,0x005b3430,0x006c19f0
 14972,function,CCCreature::RebuildAppearanceFromEquipment,,0x006c1bf0,0x005b3630,0x006c1bf0
 14973,function,CCCreature::LoadAppearance,,0x006c1e00,0x005b3840,0x006c1e00
@@ -16468,7 +16468,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16467,function,GameModeCharGen::RegisterHandler_CharGenGoBackMessage,,0x00719880,0x0060a9e0,0x00719880
 16468,function,GameModeCharGen::RegisterMessageHandlers,,0x00719910,0x0060aa70,0x00719910
 16469,function,GameModeCharGen::RegisterClass,,0x00719940,0x0060aaa0,0x00719940
-16470,function,ScriptBackend::GetAbilityType,,0x00719990,0x00617930,0x00719990
+16470,function,ScriptBackend::GetAbilityType,"(ability, hint) -> ability type. A non-zero hint is returned unread; for hint 0 it reads table 1 (rules) column 0xE1A8F4EA (CRC-32 of 'abilitytype') of the ability row and returns 0 when the row or cell is missing (0x00719990..0x007199BE). Callers in CCCreatureStats pass 0 (AddAbility 0x0071EAF6).",0x00719990,0x00617930,0x00719990
 16471,function,CCCreatureStats::GetAbilityVector,,0x007199d0,0x00617970,0x007199d0
 16472,function,CCCreatureStats::GetAbilityVector,,0x007199f0,0x00617990,0x007199f0
 16473,function,CCCreatureStats::NotifyPropertyChanged,,0x00719a00,0x006179a0,0x00719a00
@@ -16514,7 +16514,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16513,function,CCCreatureStats::SetCurrent,,0x0071b320,0x006192e0,0x0071b320
 16514,function,CCCreatureStats::AddToCurrent,,0x0071b370,0x00619330,0x0071b370
 16515,function,CCCreatureStats::ApplyItemStats,,0x0071b3c0,0x00619380,0x0071b3c0
-16516,function,CCCreatureStats::ApplyPassive,,0x0071b600,0x006195c0,0x0071b600
+16516,function,CCCreatureStats::ApplyPassive,"this = creature stats, args (ability, condition, apply), ret 0xC. Reads the ability's passive row (table 1 column 0xC4EE8EE0, then table 0x75); the sign is -1 when apply is false; the factor is 1 if the row's condition word (column 0xCA5FBBE9) is 0 or has the bit of the given condition. Loops pairs Prop<i>/Modifier<i> for i = 1..3 and adds Modifier*factor to property Prop; a Prop of 0 or a missing Modifier ends the loop (0x0071B8FB), later pairs are not read. Health (property 7) when applying and the max health changed has its current raised by the modifier (0x0071B852..0x0071B897).",0x0071b600,0x006195c0,0x0071b600
 16517,function,CCCreatureStats::ReapplyPassivesForCondition,"Reapplies the passives for a weapon condition, storing it at +0x1B8 (appliedStyleCondition, 0x0071BA2B) when it changes; called only by CCCreature::OnItemEquipped and OnItemUnequipped",0x0071b970,0x00619930,0x0071b970
 16518,function,CCCreatureStats::SaveToStruct,,0x0071ba40,0x00619a50,0x0071ba40
 16519,function,ScriptBackend::ForScript_GetBackgroundDefaultsIndex,,0x0071be90,0x00619ea0,0x0071be90
@@ -16550,8 +16550,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16549,function,CCCreatureStats::`scalar deleting destructor'`adjustor{8}',,0x0071d8f0,0x0061ba40,0x0071d8f0
 16550,function,CCCreatureStats::`scalar deleting destructor'`adjustor{28}',,0x0071d900,0x0061ba20,0x0071d900
 16551,function,CCCreatureStats::`scalar deleting destructor'`adjustor{32}',,0x0071d910,0x0061ba30,0x0071d910
-16552,function,CCCreatureStats::GetAbilityList,,0x0071d920,0x0061ba50,0x0071d920
-16553,function,ScriptBackend::ForScript_Engine_SetModalAbilityGUI,"(this = creature stats, ability, status, quiet), ret 0xC: status 0 removes the ability id from the +0xF8 vector if there, else adds it if absent; on a change queues a play-animation (block 0x88 on, 0x89 off) when the ability's BlendTree and the hand items allow",0x0071da90,0x0061bbc0,0x0071da90
+16552,function,CCCreatureStats::GetAbilityList,"this = creature stats, args (out vector, type, onlyCooling). Type 0 appends the vectors of types 1..3, 1..3 appends that one, 4 (item abilities) or anything else returns 0 with nothing appended. With onlyCooling set, entries whose ForScript_GetRemainingCooldown is <= 0 are swap-removed (walking from the end), so only cooling abilities stay (0x0071D920 decompile).",0x0071d920,0x0061ba50,0x0071d920
+16553,function,ScriptBackend::ForScript_Engine_SetModalAbilityGUI,"(this = creature stats, ability, status, quiet), ret 0xC: status 0 removes the ability id from the +0xF8 vector if there, else adds it if absent; on a change queues a play-animation (block 0x88 on, 0x89 off) when the ability's BlendTree and the hand items allow. SetAbilityGuiAttribute (0x00719A40) runs after every path, with 0x80000000 (EBP, 0x0071DAD2) when the list did not change, 0 when removed, 1 when added (0x0071DCA0..0x0071DCA8); nothing at all runs when the stats have no creature (0x0071DAC4).",0x0071da90,0x0061bbc0,0x0071da90
 16554,function,CCCreatureStats::SetCooldown,,0x0071dce0,0x0061be10,0x0071dce0
 16555,function,ScriptBackend::ForScript_GetConditionedAbilities,"__thiscall on the creature's stats, ret 8: (outVector, conditions). For each modal ability in the stats' list at +0xFC, in order, calls ForScript_CanUseConditionedAbility(ability, conditions, 0), and pushes the ability into outVector unless the answer is 1.",0x0071dd10,0x0061be40,0x0071dd10
 16556,function,CCCreatureStats::`scalar deleting destructor',,0x0071ddc0,0x0061bf50,0x0071ddc0
@@ -16562,10 +16562,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16561,function,CCCreatureStats::RefreshQueuedAbilities,,0x0071e1d0,0x0061c360,0x0071e1d0
 16562,function,CCCreatureStats::RefreshCreatureAttributes,"Refreshes each creature attribute's Base, Current, Total and Modifier from CreatureProperties, by the attribute's type",0x0071e300,0x0061c490,0x0071e300
 16563,function,CCCreatureStats::CCCreatureStats,,0x0071e940,0x0061cba0,0x0071e940
-16564,function,CCCreatureStats::AddAbility,,0x0071eac0,0x0061cd20,0x0071eac0
+16564,function,CCCreatureStats::AddAbility,"this = creature stats, args (ability, type, itemId), ret 0xC. The type argument at [esp+0x6C] is never read: the type comes from GetAbilityType(ability, 0) at 0x0071EAFB (table 1 column AbilityType); ability is read at 0x0071EAF2, itemId at 0x0071EB27.",0x0071eac0,0x0061cd20,0x0071eac0
 16565,function,CCCreatureStats::LoadTemplateAbilityList,,0x0071ecd0,0x0061cf30,0x0071ecd0
 16566,function,CCCreatureStats::LoadFromStruct,,0x0071edc0,0x0061d020,0x0071edc0
-16567,function,CCCreatureStats::RemoveAbility,,0x0071ef00,0x0061d160,0x0071ef00
+16567,function,CCCreatureStats::RemoveAbility,"this = creature stats, args (ability, type, tag*, mode), ret 0x10. Does nothing unless HasAbility (0x0071EF54). Mode 0/3: full stats-side removal (acquired event, ApplyPassive off, cooldown removed, vector entry removed, party survival update, animation-tree count dropped, quickslots detached), then the interface's CreatureAbilities::RemoveAbility. Mode 1 (0x0071F110) skips the interface's RemoveAbility and keeps its instance; mode 2 (0x0071EF61 jump to 0x0071F110) skips all the stats-side removal and does only the interface's RemoveAbility. RemoveQueuedAbilityCommands runs in every mode.",0x0071ef00,0x0061d160,0x0071ef00
 16568,function,ScriptBackend::ForScript_CharGen_ClearAbilityList,,0x0071f160,0x0061d3c0,0x0071f160
 16569,function,CCCreatureStats::LoadTemplateAbilityLists,,0x0071f1f0,0x0061d450,0x0071f1f0
 16570,function,CCCreatureStats::SetQuickslot,,0x0071f230,0x0061d490,0x0071f230
