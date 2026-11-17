@@ -13109,7 +13109,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13108,function,ScriptCommand::LOCATION,,0x0065ace0,0x00546a40,0x0065ace0
 13109,function,ScriptCommand::ISLOCATIONVALID,,0x0065ae20,0x00546b80,0x0065ae20
 13110,function,ScriptCommand::ISLOCATIONSAFE,,0x0065af40,0x00546ca0,0x0065af40
-13111,function,ScriptCommand::GETSAFELOCATION,,0x0065b0d0,0x00546e30,0x0065b0d0
+13111,function,ScriptCommand::GETSAFELOCATION,"Calls CCArea::GetSafeLocation (0x0073E370) with a temporary mover, radius 20.0, reachable 1, and copies the found vector over the location's position only when the answer is 0 (0x0065B1FF jnz over the movaps at 0x0065B20A); when the answer is non-zero the location is returned as it was given.",0x0065b0d0,0x00546e30,0x0065b0d0
 13112,function,ScriptCommand::GETLOCATION,,0x0065b2a0,0x00547000,0x0065b2a0
 13113,function,ScriptCommand::SETLOCATION,,0x0065b3b0,0x00547110,0x0065b3b0
 13114,function,ScriptCommand::GETPOSITIONFROMLOCATION,,0x0065b4d0,0x00547230,0x0065b4d0
@@ -17562,13 +17562,13 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17561,function,CCArea::GetGroundHeight,,0x0073d520,0x00648fa0,0x0073d520
 17562,function,RandomSymmetric,,0x0073d540,0x00648fc0,0x0073d540
 17563,function,CCArea::CreatureContactTest,,0x0073d570,0x00649110,0x0073d570
-17564,function,MovementPath::HasPathSearch,,0x0073d6e0,0x00649280,0x0073d6e0
+17564,function,MovementPath::HasPathSearch,"True when the MovementPath has a Pathfinding::Path (+0x14) and either its active byte (Path+0x0) is set or the vector at Path+0x14 (begin +0x18, end +0x1C: the route of the first, coarser search, the table's superRoute) is not empty; false with no path. So after a leg answered 6 or the first search failed (active cleared) a search is still reported while that route remains.",0x0073d6e0,0x00649280,0x0073d6e0
 17565,function,CCArea::VisitCreatures_NoOp,,0x0073d710,0x006492b0,0x0073d710
 17566,function,CCArea::IsSegmentClearOfCreatures,"(x0, y0, x1, y1, mover, limitToStartRadii, testPushAside, outBlockerId, testWalkTarget), ret 0x24: creatures within 6 m in x of the segment (FindObjectIndexByX), not the mover or its walk target (mover+0x94), tested against the segment with their radius plus the mover's and 0.01; CanBePushedAside when asked",0x0073d780,0x00649320,0x0073d780
 17567,function,CCArea::GetGridHeightAt,,0x0073de20,0x006499c0,0x0073de20
 17568,function,CCArea::GetGridCellSize,,0x0073de50,0x006499f0,0x0073de50
 17569,function,CCArea::IsLocationSafe,,0x0073de70,0x00649a10,0x0073de70
-17570,function,CCArea::FanSearch,,0x0073df70,0x00649b10,0x0073df70
+17570,function,CCArea::FanSearch,"The random angle J (0x00C36C10 generator, a whole number -45 to 14) is added to the angle in radians without conversion: only a (the loop angle in degrees) is multiplied by 0.01745328 (0x0073E13A fmul), J is added after (0x0073E147 fadd [esp+0x24]), so the fan's centre is the direction turned by J radians.",0x0073df70,0x00649b10,0x0073df70
 17571,function,CCArea::GetSafeLocation,,0x0073e370,0x00649f10,0x0073e370
 17572,function,CCArea::NearestFree,,0x0073e7f0,0x0064a390,0x0073e7f0
 17573,function,CCObject::RequestPath,,0x0073ea80,0x0064a620,0x0073ea80
@@ -33283,11 +33283,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33282,function,Pathfinding::FineSearch::HeapSiftUp,,0x00a54b80,0x007ddcd0,0x00a54b80
 33283,function,Pathfinding::FineSearch::HeapSiftDown,,0x00a54cd0,0x007dde20,0x00a54cd0
 33284,function,Pathfinding::FineSearch::FineSearch,,0x00a54ea0,0x007ddff0,0x00a54ea0
-33285,function,Pathfinding::FineSearch::BuildPath,,0x00a54ef0,0x007de040,0x00a54ef0
+33285,function,Pathfinding::FineSearch::BuildPath,"Builds a leg's cell list from the end node back along the direction codes (each cell word bits 26 to 29, 3*dcolumn+drow+4) while the cell reached is closed, end first and start last. Then the door rule: the list is scanned from its first element (the end) for a cell the environment's vtable slot 3 accepts (MapSearchEnvironment::IsDoorCell, kind 7); the first found replaces the whole list (0x00A55040 to 0x00A5512C), so a leg whose cells cross a kind-7 cell anywhere ends on it and RunLeg answers 6 with that cell as the barred position.",0x00a54ef0,0x007de040,0x00a54ef0
 33286,function,Pathfinding::FineSearch::HeapPop,,0x00a55160,0x007de2b0,0x00a55160
 33287,function,Pathfinding::FineSearch::HeapPush,,0x00a55220,0x007de370,0x00a55220
 33288,function,Pathfinding::FineSearch::SiftUpNode,,0x00a55280,0x007de3d0,0x00a55280
-33289,function,Pathfinding::FineSearch::PushOpenNode,,0x00a552e0,0x007de430,0x00a552e0
+33289,function,Pathfinding::FineSearch::PushOpenNode,"Opens a node: h = Cost(node, goal, goal); g = parent g * 0.5 + Cost(parent, node, goal) plus 1.0 when the node's direction code (bits 26 to 29) differs from the parent's and neither is 0 (0x00A5535D to 0x00A5536D). Code 0 is the step (-1,-1), so it never pays or causes a turn; the start's word has code 4 (Search 0x00A55680 or eax,0xFFFE8000 then shl 0xD sets bit 28), so every first step but (-1,-1) pays the turn.",0x00a552e0,0x007de430,0x00a552e0
 33290,function,Pathfinding::FineSearch::RelaxOpenNode,,0x00a55480,0x007de5d0,0x00a55480
 33291,function,Pathfinding::FineSearch::Search,,0x00a555b0,0x007de700,0x00a555b0
 33292,function,GUI::GUIScene::OnShow,,0x00a55820,0x007c3400,0x00a55820
@@ -99697,7 +99697,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 99696,data,Pathfinding::MapSuperAbstractionSearchEnvironment::typeinfo,,0x00c1cd3c,0x00c0a50c,0x00c1cd3c
 99697,data,Pathfinding::MapSearchEnvironment::typeinfo,,0x00c1cd7c,0x00c0a54c,0x00c1cd7c
 99698,data,Pathfinding::MapAbstractionSearchEnvironment::typeinfo,,0x00c1cdac,0x00c0a57c,0x00c1cdac
-99699,data,Pathfinding::MapSearchEnvironment::Cost::s_cellFlagCostWeight,,0x00c1cde8,0x00c0a5b8,0x00c1cde8
+99699,data,Pathfinding::MapSearchEnvironment::Cost::s_cellFlagCostWeight,"The float 3.0 (bytes 00 00 40 40). Its one reader is MapSearchEnvironment::Cost (0x00A45BA9 fmul): the fine search adds Grid::CellRingCounter (0x00A49240, bits 6 and 7 of a cell byte) times this to a step's cost for a cell that carries a ring counter.",0x00c1cde8,0x00c0a5b8,0x00c1cde8
 99700,data,GraphicsStructures::CSpeedTreeWind::WindInstance::s_phaseRate,"Float 40.0 (file 0x42200000): WindInstance::Advance (0x00A56BC0) adds pow(strength, 1) * 40 * dt to the phase at +0x98 (0x00A57114-0x00A57138), the 40 * dt of TREES.md:325.",0x00c1cdec,0x00c0847c,0x00c1cdec
 99701,data,Graphics::IWindInstance::typeinfo,,0x00c1cdfc,0x00c0848c,0x00c1cdfc
 99702,data,Graphics::IWindInstanceContainer::typeinfo,,0x00c1ce24,0x00c084b4,0x00c1ce24

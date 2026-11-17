@@ -9550,7 +9550,7 @@ address,what,value,why
 0x00A4BAA0,signature,"bool __stdcall f(int x1, int y1, int x2, int y2, int x3, int y3)","ret 0x18 at 0x00A4BAFD, six stack ints, ecx never read"
 0x00A4C4A0,signature,"bool __thiscall f(void* this, void* pathSearch, void* pathSearchHolder)","ret 8; the caller loads ecx = Path (0x00A4E1E4), the body never reads it"
 0x00A4C5E0,signature,"int __thiscall f(void* this, void* pathSearch, void* pathSearchHolder)","ret 8; the caller loads ecx = Path (0x00A4E364), the body never reads it; returns 3"
-0x00A4C630,signature,"void __thiscall f(void* this, void* path, void* pathSearch, void* cells, int cut, bool lastLeg)","ret 0x14 at 0x00A4C789, ecx saved at 0x00A4C646"
+0x00A4C630,signature,"void __thiscall f(void *this, void *path, void *pathSearch, void *cells, int cut, bool firstLeg)","replaces the stored signature, whose last parameter was named lastLeg: ret 0x14 at 0x00A4C789, ecx saved at 0x00A4C646; the last argument [ebp+0x18] is tested at 0x00A4C672 and makes the first index 1 (skipping the leg's start cell, the last of the end-first list); RunLeg 0x00A4D789 pushes 1 in the branch where GetPointCount is 0 (the start waypoint was just added) and 0x00A4D7DB pushes 0 otherwise"
 0x00A4CE10,signature,"void __cdecl f(void* firstContainer, void* first, void* lastContainer, void* last)","plain ret, four stack words (caller adds esp 0x10); pointers at [esp+8] and [esp+0x10]"
 0x00A4CE40,signature,"int __thiscall f(void* this, void* pathSearch, void* pathSearchHolder)","ret 8; the caller loads ecx = Path (0x00A4E30C), the body never reads it; returns 3"
 0x00A4CEE0,signature,"bool __thiscall f(void* this, void* pathSearch, void* pathSearchHolder)","ret 8 at 0x00A4CF2F, ecx moved to ebp at 0x00A4CEF0"
