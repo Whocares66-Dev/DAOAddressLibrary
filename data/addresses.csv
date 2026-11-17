@@ -33790,7 +33790,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33789,function,MovementAnimController::OnEnterStopMode,,0x00a6b760,0x0071b9e0,0x00a6b760
 33790,function,MovementAnimController::OnEnterTurnMode,,0x00a6b780,0x0071ba00,0x00a6b780
 33791,function,MovementAnimController::UpdateMotionWeights,,0x00a6b7a0,0x0071ba20,0x00a6b7a0
-33792,function,MovementAnimController::UpdateStrafeWeights,,0x00a6b9b0,0x0071bc30,0x00a6b9b0
+33792,function,MovementAnimController::UpdateStrafeWeights,"The strafing frame: plays the walk-forward or walk-backward clip (moveFlags bit 1) at weight +0x4C (the straight share) and the two side clips of that direction at 1 - that, by moveFlags bits 4 and 5 (0x00A6B9C3 fld [esi+0x4c], FLD1 at 0x00A6B9C6), then sets the walk and run blend parameters. Ends ret 4 (0x00A6BBD6): thiscall with one unused stack argument, called from Update 0x00A6BF4D.",0x00a6b9b0,0x0071bc30,0x00a6b9b0
 33793,function,"std::copy<std::wstring*,std::wstring*>",,0x00a6bbe0,0x0071be60,0x00a6bbe0
 33794,function,"std::_Copy_opt<unsigned int*,unsigned int*>",,0x00a6bc10,0x0046bd70,0x00a6bc10
 33795,function,MovementAnimController::SetMode,,0x00a6bc40,0x0071be90,0x00a6bc40
@@ -58805,8 +58805,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 58804,function,,,0x00ad4fc0,0x00acd970,0x00ad4fc0
 58805,function,,,0x00ad5060,0x00acda10,0x00ad5060
 58806,function,,,0x00ad5130,0x00acdae0,0x00ad5130
-58807,function,,,0x00ad5150,0x00acdb00,0x00ad5150
-58808,function,,,0x00ad5170,0x00acdb20,0x00ad5170
+58807,function,`dynamic initializer for 'MovementAnimController::OnAnimEvent::s_walkAnimIds'',Builds the walk-row list MovementAnimController::OnAnimEvent::s_walkAnimIds (0x00C4C8AC) from the eight ints at 0x00B59A98 (std::vector ctor 0x00A6CA90 with count 8 at 0x00AD5150..0x00AD515C) and registers its destructor 0x00AD9630 with atexit.,0x00ad5150,0x00acdb00,0x00ad5150
+58808,function,`dynamic initializer for 'MovementAnimController::s_leafNamesNonCombat'',Builds MovementAnimController::s_leafNamesNonCombat (0x00C4C8BC) from the five wstrings at 0x00C4C748 (std::vector<std::wstring> ctor 0x00A6CA10 with count 5 at 0x00AD5170..0x00AD517C) and registers its destructor 0x00AD9640 with atexit.,0x00ad5170,0x00acdb20,0x00ad5170
 58809,function,,,0x00ad5190,0x00acdb40,0x00ad5190
 58810,function,,,0x00ad51b0,0x00acfa40,0x00ad51b0
 58811,function,`dynamic atexit destructor for 'Input::DeviceStates::Get::s_instance'',destroys the input device states' singleton at exit,0x00ad51c0,0x00acfa50,0x00ad51c0
