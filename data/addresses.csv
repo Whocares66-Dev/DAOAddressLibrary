@@ -2618,7 +2618,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2617,function,Renderer::FBTextureResource::Create,,0x00461e10,0x0089a360,0x00461e10
 2618,function,Renderer::LightList::LightBefore,,0x00461eb0,0x0089c3b0,0x00461eb0
 2619,function,Renderer::LightList::SetLimits,,0x00461f10,0x0089c410,0x00461f10
-2620,function,Renderer::AdvanceLightGroupFades,,0x00461f20,0x0089c420,0x00461f20
+2620,function,Renderer::LightList::AdvanceGroupFades,"Thunk to LightGroup::AdvanceFades(group, atOnce): ECX is a LightList at all four call sites (0x0046447A, 0x00464487, 0x0046452F, 0x00464718: the list the group is chosen from) but is overwritten at 0x00461F24 without being read, so the list is unused; the group is the first stack argument, atOnce the second (ret 8). Returns the count of fade-outs ended.",0x00461f20,0x0089c420,0x00461f20
 2621,function,Renderer::LightManagerDefault::MarkChanged,,0x00461f40,0x0089c440,0x00461f40
 2622,function,Renderer::LightManagerDefault::MarkLayoutChanged,,0x00461f60,0x0089c460,0x00461f60
 2623,function,Renderer::LightManagerDefault::NextFrame,,0x00461f80,0x0089c480,0x00461f80
@@ -2835,16 +2835,16 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2834,function,std::_Sort_heap<Renderer::LightSlot **>,,0x0046abe0,0x008a4cd0,0x0046abe0
 2835,function,Renderer::LightSlot::~LightSlot,,0x0046ac30,0x008a4d20,0x0046ac30
 2836,function,"std::_Sort<Renderer::LightSlot **,int>",,0x0046ac50,0x008a4d40,0x0046ac50
-2837,function,Renderer::LightList::RemoveSlot,,0x0046ad40,0x008a4e30,0x0046ad40
-2838,function,Renderer::LightList::AdvanceFades,,0x0046ad90,0x008a4e80,0x0046ad90
-2839,function,Renderer::LightSlotVector::Sort,,0x0046ae60,0x008a4f50,0x0046ae60
-2840,function,Renderer::LightList::Clear,,0x0046aeb0,0x008a4fa0,0x0046aeb0
-2841,function,Renderer::LightList::LightList,,0x0046afd0,0x008a50c0,0x0046afd0
-2842,function,Renderer::LightList::ClearKeepStorage,,0x0046afe0,0x008a50d0,0x0046afe0
-2843,function,Renderer::LightList::~LightList,,0x0046aff0,0x008a50e0,0x0046aff0
+2837,function,Renderer::LightGroup::RemoveSlot,,0x0046ad40,0x008a4e30,0x0046ad40
+2838,function,Renderer::LightGroup::AdvanceFades,"Walks a LightGroup (this: begin +4, end +8, 4-byte LightSlot*; the group argument of LightList::ChooseFor 0x00463E40, ECX at 0x00464058 and 0x004641F1) from the last slot to the first: a slot whose light reference is gone is removed (0x0046ADE1); otherwise a slot not held (state != 2) adds the frame step (g_graphics+0x3C) to its fade time and, when `force` is set or the time passes 0.25 s (0x00AE7FE0), fading in (1) becomes held (2, time 0) and fading out (3) is removed. Returns how many fade-outs ended.",0x0046ad90,0x008a4e80,0x0046ad90
+2839,function,Renderer::LightGroup::Sort,,0x0046ae60,0x008a4f50,0x0046ae60
+2840,function,Renderer::LightGroup::Clear,,0x0046aeb0,0x008a4fa0,0x0046aeb0
+2841,function,Renderer::LightGroup::LightGroup,,0x0046afd0,0x008a50c0,0x0046afd0
+2842,function,Renderer::LightGroup::ClearKeepStorage,,0x0046afe0,0x008a50d0,0x0046afe0
+2843,function,Renderer::LightGroup::~LightGroup,,0x0046aff0,0x008a50e0,0x0046aff0
 2844,function,Renderer::LightState::~LightState,,0x0046b040,0x008a5130,0x0046b040
 2845,function,Renderer::LightSlot::LightSlot,,0x0046b0e0,0x008a51d0,0x0046b0e0
-2846,function,Renderer::LightSlotVector::AddLight,,0x0046b150,0x008a5240,0x0046b150
+2846,function,Renderer::LightGroup::AddLight,,0x0046b150,0x008a5240,0x0046b150
 2847,function,Renderer::LightState::SetDefaultProbeCube,,0x0046b1e0,0x008a52d0,0x0046b1e0
 2848,function,Renderer::LightState::Fill,,0x0046b260,0x008a5350,0x0046b260
 2849,function,Renderer::LightState::LightState,,0x0046b920,0x008a5a10,0x0046b920
@@ -7568,7 +7568,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7567,function,GraphicsStructures::ObjectNodePointLight::Reach,,0x0053c870,0x0076b8e0,0x0053c870
 7568,function,GraphicsStructures::ObjectNodePointLight::SetIntensity,,0x0053c880,0x0076b8f0,0x0053c880
 7569,function,GraphicsStructures::ObjectNodePointLight::GetExportValue,,0x0053c890,0x0076b900,0x0053c890
-7570,function,GraphicsStructures::ObjectNodePointLight::BlueprintFlag,,0x0053c8d0,0x0076b940,0x0053c8d0
+7570,function,GraphicsStructures::ObjectNodePointLight::IsStatic,"Returns the blueprint's byte +0x15C (ObjectNodePointLightBlueprint isStatic) through this+0x174. Not virtual: called directly from LightManagerDefault::AddLights (0x00464F0D, 0x00465006) and RemoveLights (0x0046525E, 0x00465357) with ECX = the ILight at +0x180 minus 0x180, after the ILight type check (slot 4) answered point light.",0x0053c8d0,0x0076b940,0x0053c8d0
 7571,function,GraphicsStructures::ObjectNodeLightProbe::GetEnvMapHandle,,0x0053c8e0,0x0076b950,0x0053c8e0
 7572,function,GraphicsStructures::ObjectNodeLightProbe::GetIrradianceRed,,0x0053c8f0,0x0076b960,0x0053c8f0
 7573,function,GraphicsStructures::ObjectNodeLightProbe::GetIrradianceGreen,,0x0053c900,0x0076b970,0x0053c900
@@ -7594,7 +7594,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7593,function,GraphicsStructures::ObjectNode::GetOwnerSimulatable,,0x0053cc00,0x00751f00,0x0053cc00
 7594,function,GraphicsStructures::ObjectNode::ClearPhysicsActor,,0x0053cc20,0x0076bc60,0x0053cc20
 7595,function,GraphicsStructures::ObjectNodeLight::MarkPriority,,0x0053cc30,0x0076bc70,0x0053cc30
-7596,function,SmartData::Attribute::Get,,0x0053cc40,0x0041f2e0,0x0053cc40
+7596,function,SmartData::Attribute::Get,"Shared code (return [this+0xC]). At ILight slot 5 of the four light tables (0x00AF797C ObjectNodeLight, 0x00AF7A6C point, 0x00AF7B5C probe, 0x00AF7C4C ambient) this is GraphicsStructures::ILight::GetAffectDomain: this is the ILight at node +0x180, so it returns node +0x18C (affectDomain; 1 = figures, anything else = the level), read by LightManagerDefault::AddLights at 0x00464EA3.",0x0053cc40,0x0041f2e0,0x0053cc40
 7597,function,GraphicsStructures::ObjectNodeLight::~ObjectNodeLight,,0x0053cc50,0x0076bc80,0x0053cc50
 7598,function,GraphicsStructures::ObjectNodeLight::GetPosition`adjustor{288}',,0x0053cc90,0x0076bcc0,0x0053cc90
 7599,function,GraphicsStructures::ObjectNodePointLight::ObjectNodePointLight,,0x0053cca0,0x0076bcd0,0x0053cca0
@@ -7729,7 +7729,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7728,function,GraphicsStructures::SplatObject::SplatObject,,0x00541bd0,0x0077d8d0,0x00541bd0
 7729,function,GraphicsStructures::ObjectNodeEmitter::ObjectNodeEmitter,,0x00541e00,0x0077db00,0x00541e00
 7730,function,GraphicsStructures::ObjectNodeEmitter::BindToPhysicsShapes,,0x005420f0,0x0077ddf0,0x005420f0
-7731,function,GraphicsStructures::Object::ResolveAttachPose,,0x005422d0,0x0077dfd0,0x005422d0
+7731,function,GraphicsStructures::ObjectNodeEmitter::ResolveAttachPose,"The emitter's particle inheritance 4 (InheritFromParentToolsetHack): this is the emitter (ECX = esi in UpdateMotionFrames 0x00542440 at 0x0054258C, and in its own recursion at 0x0054240B), not an Object. Walks the active attach dependencies of the owner Object (+0x154, list at +0x1F8; or the given parent Object) and writes the first target node's world position into +0x470 and its rotation into +0x4A0; with no parent object given it recurses on the target's owner Object (0x00542402), with one it reads the target node directly (0x00542412..0x00542430); with none found it stores zero and the identity (0x005423AD..0x005423D6).",0x005422d0,0x0077dfd0,0x005422d0
 7732,function,GraphicsStructures::ObjectNodeEmitter::UpdateMotionFrames,,0x00542440,0x0077e140,0x00542440
 7733,function,GraphicsStructures::PhysicsNodeFunctor::operator(),,0x00542610,0x00743e30,0x00542610
 7734,function,GraphicsStructures::RemoteMaterial::GetChannelField,,0x00542630,0x00743e50,0x00542630
@@ -62001,7 +62001,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 62000,data,Renderer::LightState::Fill::s_staticColourRegisters,"Table of three int32 {1, 6, 8}: the g_vLightParams float4 slot Fill writes the colour of static light 0, 1 and 2 into (0x0046B5A5, 0x0046B697).",0x00ae7fbc,0x00b25c70,0x00ae7fbc
 62001,data,Renderer::LightState::Fill::s_dynamicPositionRegisters,"Table of int32 {9, 10, 0}: the g_vLightParams slot of the position and radius of dynamic light 0 and 1 (the third entry is padding, the dynamic list holds two) at 0x0046B416 and 0x0046B504.",0x00ae7fc8,0x00b25c7c,0x00ae7fc8
 62002,data,Renderer::LightState::Fill::s_dynamicColourRegisters,"Table of int32 {11, 12, 0}: the g_vLightParams slot of the colour of dynamic light 0 and 1 (third entry padding) at 0x0046B41D and 0x0046B50B.",0x00ae7fd4,0x00b25c88,0x00ae7fd4
-62003,data,Renderer::LightList::AdvanceFades::s_fadeOutSeconds,"Float 0.25 seconds: AdvanceFades adds the frame time (0xC31650 + 0x3C) to a dropped light's fade timer (ref +0xC) and releases the light's slot once the timer passes it (0x0046AE12); EFFECTS.md ""a dropped light fades out over 0.25"".",0x00ae7fe0,0x00b25c94,0x00ae7fe0
+62003,data,Renderer::LightGroup::AdvanceFades::s_fadeOutSeconds,"Float 0.25 seconds: AdvanceFades adds the frame time (0xC31650 + 0x3C) to a dropped light's fade timer (ref +0xC) and releases the light's slot once the timer passes it (0x0046AE12); EFFECTS.md ""a dropped light fades out over 0.25"".",0x00ae7fe0,0x00b25c94,0x00ae7fe0
 62004,data,,,0x00ae7fe8,0x00af7ea8,0x00ae7fe8
 62005,data,,,0x00ae7ff0,0x00afeaa0,0x00ae7ff0
 62006,data,Graphics::ISceneSubManager::vftable,,0x00ae7ffc,0x00b26020,0x00ae7ffc
@@ -64677,7 +64677,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 64676,data,GraphicsStructures::ObjectNodeWeapontrail::vftable_at_8,,0x00afe600,0x00b16280,0x00afe600
 64677,data,GraphicsStructures::ObjectNodeWeapontrail::vftable_at_4,,0x00afe614,0x00b16294,0x00afe614
 64678,data,GraphicsStructures::ObjectNodeWeapontrail::vftable,,0x00afe634,0x00b162b4,0x00afe634
-64679,data,,,0x00afe6b8,0x00afcef0,0x00afe6b8
+64679,data,__real@405e000000000000,"Double 120.0, shared: ObjectNodeWeapontrail::UpdateTrail (fld at 0x005B10F4, segments laid per second) and ObjectNodeWeapontrailBlueprint::Instantiate (0x005B1BE8, segment count = duration * 120), EC::ChunkManager::LoadInteriorRooms (0x005C8FE1) and GameModeExplore::UpdateLookAtOffset (0x0070B8F0) read it too, so it keeps a neutral name.",0x00afe6b8,0x00afcef0,0x00afe6b8
 64680,data,GraphicsStructures::IObjectNodeTerrain::vftable,,0x00afe6c4,0x00b1633c,0x00afe6c4
 64681,data,GraphicsStructures::ObjectNodeTerrain::vftable_at_180,,0x00afe77c,0x00b163f4,0x00afe77c
 64682,data,GraphicsStructures::ObjectNodeTerrain::vftable_at_c,,0x00afe834,0x00b164ac,0x00afe834
@@ -99883,7 +99883,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 99882,data,,,0x00c1e7d8,0x00c31308,0x00c1e7d8
 99883,data,,,0x00c1e7dc,0x00c3130c,0x00c1e7dc
 99884,data,Renderer::ShadowMaps::Update::s_speedTreeLightSwitch,,0x00c1e7e0,0x00c31310,0x00c1e7e0
-99885,data,Renderer::ShadowMaps::s_flags,,0x00c1e7e4,0x00c31314,0x00c1e7e4
+99885,data,Renderer::ShadowMaps::s_flags,"Bit flags: 1 created (Create 0x004556AD and 0x00455655; Shutdown clears 0x00453B29), 2 enabled (SetEnabled 0x00451807/0x0045180F; most calls test bits 0 and 1 together), 4 a frame is set up (Update sets it at 0x00453945 once created and enabled, clears it at 0x00453A99; Create also sets it), 8 a partition is current (StartPartition sets it 0x00453489, StopPartition clears it 0x00452D74), 0x10 enable at the next Update (Update 0x0045390E tests it, calls SetEnabled(1) and clears it) but no instruction in the exe sets it.",0x00c1e7e4,0x00c31314,0x00c1e7e4
 99886,data,Renderer::ShadowMaps::s_partitionMask,"Dword, the OR of GetPartitionMask (0x004518A0, 1 << index) of the two partitions, 3 after Create, stored at the end of SetPartitions 0x00455696; no code reads it.",0x00c1e7e8,0x00c31318,0x00c1e7e8
 99887,data,Renderer::ShadowMaps::s_partitionCount,,0x00c1e7ec,0x00c3131c,0x00c1e7ec
 99888,data,Renderer::ShadowMaps::s_activePartitionCount,"Dword, equal to s_partitionCount (SetPartitions 0x004554ED/0x004554F3, zero at Shutdown 0x00453B36 and in Create 0x004556BE for detail 0); the loops that touch every partition read this one (Update 0x00453A4C, StartPartition clamp 0x0045345E).",0x00c1e7f0,0x00c31320,0x00c1e7f0

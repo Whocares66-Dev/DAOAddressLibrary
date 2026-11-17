@@ -11915,8 +11915,8 @@ address,what,value,why
 0x00461C00,signature,bool __thiscall Renderer::FBRenderTargetResource::Create(void * this),vtable 0x00AE74A4 slot 1; returns the byte +0x28 (0x00461DEA); plain ret
 0x00461E10,signature,bool __thiscall Renderer::FBTextureResource::Create(void * this),"vtable 0x00AE7BB0 slot 1; AL = 1 or 0 (0x00461E84, 0x00461E98); plain ret"
 0x00461EB0,signature,"bool __cdecl Renderer::LightList::LightBefore(void * a, void * b)","plain ret, args at [esp+4]/[esp+8]; Ghidra returns ushort from leaked FPU status"
-0x00461F20,convention,__stdcall,ret 8 with ecx loaded from [esp+4] at 0x00461F24; Ghidra shows a two-argument function without a convention
-0x00461F20,signature,"int __stdcall Renderer::AdvanceLightGroupFades(void * group, bool atOnce)","tail of 0x0046AD90(group, atOnce), which returns the count dropped"
+0x00461F20,convention,__thiscall,"LightList::AdvanceGroupFades: replaces the existing __stdcall convention row; every caller loads ECX with a LightList (lea ecx,[esi+0x24] at 0x00464477, 0x0046447A, 0x00464487, 0x0046452F, 0x00464718) and the function ret 8 over two stack arguments, so it is a thiscall that ignores this (ECX overwritten at 0x00461F24)"
+0x00461F20,signature,"int __thiscall f(void *this, void *group, bool atOnce)","replaces the existing signature row (__stdcall, no this); tail of LightGroup::AdvanceFades(group, atOnce) 0x0046AD90, returns the count of fade-outs ended; ret 8"
 0x00461FD0,signature,float * __cdecl Vector4::UnitW(void),returns 0x00C1EEF0
 0x00462060,signature,"float * __cdecl Vector4::NormalizedXYZ(float * out, float * v)",plain ret; returns out (0x00462125)
 0x004621D0,signature,"bool __cdecl Renderer::LightList::ScoreGreater(void * a, void * b)","plain ret; args at [esp+0xC]/[esp+0x10] after sub esp,8; Ghidra shows no parameters"
@@ -18996,3 +18996,4 @@ address,what,value,why
 0x007C9440,signature,"void __thiscall f(void *this, void *other)","MapObject::CopyPinsFrom: ret 4 at 0x007C9576, ecx the receiving MapObject, the argument the map whose pins move"
 0x00701550,signature,void __thiscall f(void *this),"WorldMap::MergeLoadedMaps: plain ret at 0x00701615, ecx the WorldMap (Ghidra has __fastcall with an int)"
 0x00700F50,signature,"void * __thiscall f(void *this, void *name)","WorldMap::FindLoadedMapByName: ret 4, ecx the WorldMap; answers the MapObject or null"
+0x005420F0,signature,"bool __thiscall f(void *this, void *actor, bool spawnOnSurface, bool useNormalForVelocity)","ObjectNodeEmitter::BindToPhysicsShapes: ret 0xC, ECX is the emitter (callers 0x0054DF53, 0x00548BEA), three pushed arguments (the physics actor read at +0x50 for its shapes, and the two bytes stored at record +8 and +9); returns whether any shape was bound (bl at 0x005422BA); no existing signature row"
