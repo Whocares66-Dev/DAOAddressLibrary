@@ -13099,11 +13099,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13098,function,ScriptCommand::TRIGGERPERCEPTION,,0x0065a7b0,0x00546510,0x0065a7b0
 13099,function,ScriptCommand::CLEARPERCEPTIONLIST,,0x0065a870,0x005465d0,0x0065a870
 13100,function,ScriptCommand::OPENSTORE,,0x0065a8b0,0x00546610,0x0065a8b0
-13101,function,ScriptCommand::GetStoreMoney,,0x0065a980,0x005466e0,0x0065a980
+13101,function,ScriptCommand::STOREGETMONEY_STORESETMONEY,"Registered for both COMMAND_STOREGETMONEY (448, handler pushed at 0x00677881) and COMMAND_STORESETMONEY (449, handler pushed at 0x00677897) in InitializeCommands 0x00675210, so the script command that should set the store's money only reads it. Pops an object, calls object slot +0x50 to get the Store, pushes Store+0x474 (money; -1 when there is no store).",0x0065a980,0x005466e0,0x0065a980
 13102,function,ScriptCommand::STOREGETMAXBUYPRICE,,0x0065a9f0,0x00546750,0x0065a9f0
 13103,function,ScriptCommand::STORESETMAXBUYPRICE,,0x0065aa60,0x005467c0,0x0065aa60
 13104,function,ScriptCommand::STORESETMARKUP,,0x0065aad0,0x005468a0,0x0065aad0
-13105,function,ScriptCommand::GetStoreMarkUpOrMarkDown,,0x0065ab50,0x00546830,0x0065ab50
+13105,function,ScriptCommand::STOREGETMARKUP_STOREGETMARKDOWN,"Registered for both COMMAND_STOREGETMARKUP (452, handler pushed at 0x006778D9) and COMMAND_STOREGETMARKDOWN (313, handler pushed at 0x00677905) in InitializeCommands 0x00675210, but it pushes Store+0x478 (maxBuyPrice, the field STOREGETMAXBUYPRICE 0x0065A9F0 reads), not markUp (+0x454) or markDown (+0x464); 100 when there is no store (STOREGETMAXBUYPRICE gives -1). The setters STORESETMARKUP 0x0065AAD0 and STORESETMARKDOWN 0x0065ABC0 do write +0x454 and +0x464 (slot +0x54 of the attribute).",0x0065ab50,0x00546830,0x0065ab50
 13106,function,ScriptCommand::STORESETMARKDOWN,,0x0065abc0,0x00546920,0x0065abc0
 13107,function,ScriptCommand::OPENITEMUPGRADEGUI,,0x0065ac40,0x005469a0,0x0065ac40
 13108,function,ScriptCommand::LOCATION,,0x0065ace0,0x00546a40,0x0065ace0
@@ -21192,7 +21192,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21191,function,Store::SaveToStruct,,0x007eb510,0x006d29f0,0x007eb510
 21192,function,Store::GetSellPrice,,0x007eb6f0,0x006d2bd0,0x007eb6f0
 21193,function,Store::GetBuyPrice,,0x007eb770,0x006d2c50,0x007eb770
-21194,function,Store::LoadFromStruct,,0x007eb7f0,0x006d2cd0,0x007eb7f0
+21194,function,Store::LoadFromAreaStruct,"Not a virtual: the area's entry for a store, called only by CCArea::ReadStoreList 0x0067AC00 (0x0067AD06, 0x0067ADE9) with ECX the new Store, ret 0xC (gff3, index, block ref). Without a save block it reads TemplateResRef from the area struct, calls LoadTemplate then ReadFields; with a block it reads the template name from the block (string id 3), LoadTemplate, then the virtual LoadFromStruct (slot 34, 0x007EC0B0, ID 21209). Last, files the store in the module under its tag (CCModule::SetNamedSlot with the object string at +0xB8). Same role as CCPlaceable::LoadFromAreaInstance.",0x007eb7f0,0x006d2cd0,0x007eb7f0
 21195,function,Store::HandleMessage_OpenStoreMessage,,0x007eb9d0,0x006d2eb0,0x007eb9d0
 21196,function,Store::RegisterHandler_OpenStoreMessage,,0x007ebae0,0x006d2fc0,0x007ebae0
 21197,function,Store::~Store,,0x007ebb40,0x006d3020,0x007ebb40
@@ -21207,7 +21207,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21206,function,Store::WillBuy,,0x007ebd00,0x006d31d0,0x007ebd00
 21207,function,Store::`scalar deleting destructor',,0x007ebdb0,0x006d3280,0x007ebdb0
 21208,function,Store::ReadFields,,0x007ebdd0,0x006d32a0,0x007ebdd0
-21209,function,Store::LoadFromStruct,,0x007ec0b0,0x006d3580,0x007ec0b0
+21209,function,Store::LoadFromStruct,"Vtable slot 34 of Store (0x00B242D4), ret 4 (block ref): loads a store from a save block: CCObject::LoadFromStruct, then markDown (+0x464, field 0x3F16), markUp (+0x454, 0x3F17), money (+0x474, 0x3F18), maxBuyPrice (+0x478, 0x3F19), the willNotBuy list (+0x47C, 0x3F1A) and willOnlyBuy list (+0x48C, 0x3F1B). The area's own entry is Store::LoadFromAreaStruct 0x007EB7F0.",0x007ec0b0,0x006d3580,0x007ec0b0
 21210,function,Store::SellItem,,0x007ec2c0,0x006d3790,0x007ec2c0
 21211,function,Store::Store_copy,,0x007ec4f0,0x006d39c0,0x007ec4f0
 21212,function,SaveSchema::MakeSTO1Template,,0x007ec600,0x006d3ad0,0x007ec600
@@ -62528,7 +62528,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 62527,data,,,0x00aed07c,0x00b22124,0x00aed07c
 62528,data,,,0x00aed0ac,0x00b22154,0x00aed0ac
 62529,data,,,0x00aed0e0,0x00b22188,0x00aed0e0
-62530,data,,,0x00aed110,0x00ae3650,0x00aed110
+62530,data,__real@4059000000000000,"Double 100.0, the divisor of both store prices: Store::GetSellPrice 0x007EB6F0 (fdiv at 0x007EB740) and Store::GetBuyPrice 0x007EB770 (0x007EB7C2) compute percent / 100.0 * cost. Shared by some fifty other readers in the exe, so it keeps a neutral name.",0x00aed110,0x00ae3650,0x00aed110
 62531,data,,,0x00aed118,0x00b221b4,0x00aed118
 62532,data,,,0x00aed124,0x00b221c0,0x00aed124
 62533,data,,,0x00aed158,0x00b221f4,0x00aed158
@@ -66943,7 +66943,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 66942,data,CCObject::vftable_at_38,,0x00b0ee18,0x00af6418,0x00b0ee18
 66943,data,CCObject::vftable_at_34,,0x00b0ee2c,0x00af642c,0x00b0ee2c
 66944,data,CCObject::vftable_at_20,,0x00b0ee88,0x00af6488,0x00b0ee88
-66945,data,CCObject::vftable,,0x00b0ee9c,0x00af649c,0x00b0ee9c
+66945,data,CCObject::vftable,"CCObject's virtual table. Slot 25 (+0x64) is Stub::NoOp 0x005BDCF0, called by AIMaster::UpdateObjects 0x0064B010 after slot 87 (0x0064B164) for each active object. Slot 87 (+0x15C) is a pure virtual here (0x008E17D6); the level pass AIMaster::UpdateObjects calls it for each active object (byte +0x2C5) at 0x0064B158..0x0064B160, and the classes name theirs Update (CCCreature::Update 0x006BE4B0, CCPlaceable::Update 0x0074DA40). Slot 88 (+0x160) is Stub::NoOp_4 here; ClientAIMaster::Update 0x0064A2D0 calls it for every object in its list at 0x0064A457..0x0064A463, and the classes name theirs AIUpdate (CCCreature::AIUpdate 0x006BD4D0, CCPlaceable::AIUpdate 0x0074D8C0). The Ghidra vtable members NoOp_4_160 and the like are made from the stub's own name by ghidra_types.slot_names, so the slot's meaning is kept here, not in a function name.",0x00b0ee9c,0x00af649c,0x00b0ee9c
 66946,data,CCObject::vftable_at_18,,0x00b0f060,0x00af6660,0x00b0f060
 66947,data,,,0x00b0f074,0x00af6674,0x00b0f074
 66948,data,,,0x00b0f084,0x00af6684,0x00b0f084
