@@ -15850,7 +15850,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15849,function,ArmyInfo::ArmyInfo,,0x006fcbd0,0x005ee8c0,0x006fcbd0
 15850,function,ArmyInfo::`scalar deleting destructor',,0x006fcf10,0x005eec00,0x006fcf10
 15851,function,ArmyControl::RegisterMessageHandlers,,0x006fcf30,0x005eec20,0x006fcf30
-15852,function,ScriptBackend::ForScript_SETPLOTACTIONCOOLDOWN,,0x006fcf40,0x005eec30,0x006fcf40
+15852,function,ScriptBackend::ForScript_SETPLOTACTIONCOOLDOWN,"Starts a plot action's cooldown on its ArmyInfo (found by id with ArmyControl::FindArmyInfoById): when the cooldown asked for is not negative it is stored in cooldownTotal (+0x9C) and the CooldownTime attribute (+0xA0), CooldownPercent (+0xB0) is set to 1, and the script's event type, source and target ids and string are kept in ArmyInfo +0xC0..+0xCC. ArmyControl::UpdateCooldowns 0x006FC7B0 counts CooldownTime down and, when it reaches 0, delivers a CScriptEvent of that type through AIMaster::DeliverNow 0x0064AD80.",0x006fcf40,0x005eec30,0x006fcf40
 15853,function,ScriptBackend::ForScript_GetPlotActionState,,0x006fd020,0x005eed10,0x006fd020
 15854,function,ScriptBackend::ForScript_SetPlotActionCount,,0x006fd050,0x005eed40,0x006fd050
 15855,function,ScriptBackend::ForScript_GetPlotActionCount,,0x006fd080,0x005eed70,0x006fd080
@@ -32967,7 +32967,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32966,function,CNetLayerInternal::CloseUdpSockets,,0x00a43810,0x00846e30,0x00a43810
 32967,function,CNetLayerInternal::StartWinSock,,0x00a43880,0x00846ea0,0x00a43880
 32968,function,CNetLayerInternal::ReceiveDatagram,,0x00a43900,0x00846f20,0x00a43900
-32969,function,CNetLayerInternal::FillLocalAddressList,,0x00a439e0,0x00847000,0x00a439e0
+32969,function,CNetLayerInternal::FillLocalAddressList,"Fills CNetLayerInternal localAddresses (+0x50, one IPv4 address per 16 bytes) with 127.0.0.1 and then every address gethostbyname answers for the machine's own name (loop 0x00A43A4C..0x00A43A65), setting localAddressCount (+0x48) and localAddressesFilled (+0x44). The array has room for 127 records before the mutex at +0x84C and the loop does not check the count.",0x00a439e0,0x00847000,0x00a439e0
 32970,function,CNetLayerInternal::PollResolveHost,,0x00a43ab0,0x008470d0,0x00a43ab0
 32971,function,CNetLayerInternal::GetResolvedAddress,,0x00a43b10,0x00847130,0x00a43b10
 32972,function,CNetLayerInternal::EndResolveHost,,0x00a43b50,0x00847170,0x00a43b50
