@@ -782,8 +782,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 781,function,,,0x0041cdb0,0x0041d0d0,0x0041cdb0
 782,function,,,0x0041cdd0,0x009dea60,0x0041cdd0
 783,function,,,0x0041cde0,0x009dea70,0x0041cde0
-784,function,,,0x0041cdf0,0x0041d0f0,0x0041cdf0
-785,function,,,0x0041ce30,0x0041d130,0x0041ce30
+784,function,FESL::Alloc,"Allocates size bytes through the allocator object at 0x00C1D9E0 (virtual slot 7, called with size and 0), printing ""no FESL allocator defined"" and falling back to malloc when none is set. DirtySDK callers push a tag and a memory group after the size; they are not read.",0x0041cdf0,0x0041d0f0,0x0041cdf0
+785,function,FESL::Free,"Frees through the allocator object at 0x00C1D9E0 (virtual slot 8, called with the pointer and 0), or free() when none; the other arguments callers push (a size, or a tag and memory group) are not read.",0x0041ce30,0x0041d130,0x0041ce30
 786,function,,,0x0041ce70,0x004a8c60,0x0041ce70
 787,function,,,0x0041ce80,0x0041d170,0x0041ce80
 788,function,,,0x0041cec0,0x0041d1b0,0x0041cec0
@@ -1979,238 +1979,238 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 1978,function,,,0x00443c70,0x00443f30,0x00443c70
 1979,function,,,0x00443d00,0x00443fc0,0x00443d00
 1980,function,,,0x00443e60,0x00444120,0x00443e60
-1981,function,,,0x00443fc0,0x00444280,0x00443fc0
-1982,function,,,0x004441a0,0x00444460,0x004441a0
-1983,function,,,0x004442a0,0x00444560,0x004442a0
-1984,function,,,0x00444330,0x004445f0,0x00444330
-1985,function,,,0x00444430,0x004446f0,0x00444430
-1986,function,,,0x004444a0,0x00444760,0x004444a0
-1987,function,,,0x004444f0,0x004447b0,0x004444f0
-1988,function,,,0x00444640,0x00444900,0x00444640
-1989,function,,,0x004446e0,0x004449a0,0x004446e0
-1990,function,,,0x00444780,0x00444a40,0x00444780
-1991,function,,,0x00444830,0x00444af0,0x00444830
-1992,function,,,0x00444980,0x00444c40,0x00444980
-1993,function,,,0x004449c0,0x00444c80,0x004449c0
-1994,function,,,0x004449f0,0x00444cb0,0x004449f0
-1995,function,,,0x00444a00,0x00444cc0,0x00444a00
-1996,function,,,0x00444a30,0x00444cf0,0x00444a30
-1997,function,,,0x00444a50,0x00444d10,0x00444a50
-1998,function,,,0x00444aa0,0x00444d60,0x00444aa0
-1999,function,,,0x00444b30,0x00444df0,0x00444b30
-2000,function,,,0x00444b70,0x00444e30,0x00444b70
-2001,function,,,0x00444c60,0x00444f20,0x00444c60
-2002,function,,,0x00444cc0,0x00444f80,0x00444cc0
-2003,function,,,0x00444d80,0x00445040,0x00444d80
-2004,function,,,0x00444de0,0x004450a0,0x00444de0
-2005,function,,,0x00444e20,0x004450e0,0x00444e20
-2006,function,,,0x00444e40,0x00445100,0x00444e40
-2007,function,,,0x00444f20,0x004451e0,0x00444f20
-2008,function,,,0x00444f90,0x00445250,0x00444f90
-2009,function,,,0x00444fb0,0x00445270,0x00444fb0
-2010,function,,,0x00444ff0,0x004452b0,0x00444ff0
-2011,function,,,0x00445050,0x00445310,0x00445050
-2012,function,,,0x004450c0,0x00445380,0x004450c0
-2013,function,,,0x00445140,0x00445400,0x00445140
-2014,function,,,0x00445170,0x00445430,0x00445170
-2015,function,,,0x00445230,0x004454f0,0x00445230
-2016,function,,,0x004452f0,0x004455b0,0x004452f0
-2017,function,,,0x00445330,0x004455f0,0x00445330
-2018,function,,,0x00445460,0x00445720,0x00445460
-2019,function,,,0x004455c0,0x00445880,0x004455c0
-2020,function,,,0x00445660,0x00445920,0x00445660
-2021,function,,,0x00445760,0x00445a20,0x00445760
-2022,function,,,0x00445900,0x00445bc0,0x00445900
-2023,function,,,0x00445a70,0x00445d30,0x00445a70
-2024,function,,,0x00445c70,0x00445f30,0x00445c70
-2025,function,,,0x00445cc0,0x00445f80,0x00445cc0
-2026,function,,,0x00445d20,0x00445fe0,0x00445d20
-2027,function,,,0x00445e80,0x00446140,0x00445e80
-2028,function,,,0x00446010,0x004462d0,0x00446010
-2029,function,,,0x00446090,0x00446350,0x00446090
-2030,function,,,0x00446110,0x004463d0,0x00446110
-2031,function,,,0x00446140,0x00446400,0x00446140
-2032,function,,,0x00446220,0x004464e0,0x00446220
-2033,function,,,0x00446260,0x00446520,0x00446260
-2034,function,,,0x00446280,0x00446540,0x00446280
-2035,function,,,0x00446710,0x004469d0,0x00446710
-2036,function,,,0x00446820,0x00446ae0,0x00446820
-2037,function,,,0x004468e0,0x00446ba0,0x004468e0
-2038,function,,,0x00446940,0x00446c00,0x00446940
-2039,function,,,0x00446a30,0x00446cf0,0x00446a30
-2040,function,,,0x00446b60,0x00446e20,0x00446b60
-2041,function,,,0x00446b90,0x00446e50,0x00446b90
-2042,function,,,0x00446bf0,0x00446eb0,0x00446bf0
-2043,function,,,0x00446d60,0x00447020,0x00446d60
-2044,function,,,0x00446f90,0x00447250,0x00446f90
-2045,function,,,0x004471c0,0x00447480,0x004471c0
-2046,function,,,0x00447270,0x00447530,0x00447270
-2047,function,,,0x00447330,0x004475f0,0x00447330
-2048,function,,,0x00447380,0x00447640,0x00447380
-2049,function,,,0x004473a0,0x00447660,0x004473a0
-2050,function,,,0x004473f0,0x004476b0,0x004473f0
-2051,function,,,0x00447470,0x00447730,0x00447470
-2052,function,,,0x004474b0,0x00447770,0x004474b0
-2053,function,,,0x00447590,0x00447850,0x00447590
-2054,function,,,0x00447730,0x004479f0,0x00447730
-2055,function,,,0x004477c0,0x00447a80,0x004477c0
-2056,function,,,0x004478a0,0x00447b60,0x004478a0
-2057,function,,,0x00447960,0x00447c20,0x00447960
-2058,function,,,0x00447a10,0x00447cd0,0x00447a10
-2059,function,,,0x00447da0,0x00448060,0x00447da0
-2060,function,,,0x00447ed0,0x00448190,0x00447ed0
-2061,function,,,0x00447f50,0x00448210,0x00447f50
-2062,function,,,0x00447f60,0x00448220,0x00447f60
-2063,function,,,0x00448090,0x00448350,0x00448090
-2064,function,,,0x004480e0,0x004483a0,0x004480e0
-2065,function,,,0x00448130,0x004483f0,0x00448130
-2066,function,,,0x004481b0,0x00448470,0x004481b0
-2067,function,,,0x004481d0,0x00448490,0x004481d0
-2068,function,,,0x004482d0,0x00448590,0x004482d0
-2069,function,,,0x00448310,0x004485d0,0x00448310
-2070,function,,,0x00448410,0x004486d0,0x00448410
-2071,function,,,0x00448480,0x00448740,0x00448480
-2072,function,,,0x00448570,0x00448830,0x00448570
-2073,function,,,0x00448660,0x00448920,0x00448660
-2074,function,,,0x00448710,0x004489d0,0x00448710
-2075,function,,,0x00448770,0x00448a30,0x00448770
-2076,function,,,0x00448850,0x00448b10,0x00448850
-2077,function,,,0x00448a10,0x00448cd0,0x00448a10
-2078,function,,,0x00448b40,0x00448e00,0x00448b40
-2079,function,,,0x00448c20,0x00448ee0,0x00448c20
-2080,function,,,0x00448c40,0x00448f00,0x00448c40
-2081,function,,,0x00448d80,0x00449040,0x00448d80
-2082,function,,,0x00448e30,0x004490f0,0x00448e30
-2083,function,,,0x00448e90,0x00449150,0x00448e90
-2084,function,,,0x00448f60,0x00449220,0x00448f60
-2085,function,,,0x004490e0,0x004493a0,0x004490e0
-2086,function,,,0x004493b0,0x00449670,0x004493b0
+1981,function,DirtySDK::TagFieldReserve,"Finds the tag in a ""tag=value"" list, removes any old entry and returns where a new value of the given length goes (separator in the globals 0x00BF1E98 and 0x00BF1E9C). Shared by TagFieldSetNumber (0x00444330), TagFieldSetBinary (0x00444640) and TagFieldSetString (0x00444830).",0x00443fc0,0x00444280,0x00443fc0
+1982,function,DirtySDK::TagFieldFind,"Returns the text after ""tag="" for the case-insensitive tag in a tag=value list, or null.",0x004441a0,0x00444460,0x004441a0
+1983,function,DirtySDK::TagFieldGetDelim,Copies a value from its start up to the first character below the separator (a quote toggles that) into the buffer; the default is copied when the value pointer is null.,0x004442a0,0x00444560,0x004442a0
+1984,function,DirtySDK::TagFieldSetNumber,Writes an integer (decimal) as a tag value through TagFieldReserve (0x00443FC0).,0x00444330,0x004445f0,0x00444330
+1985,function,DirtySDK::TagFieldGetNumber,"Parses a tag value: optional - or +, a ""$"" prefix means hexadecimal, else decimal; the second argument is returned for a null value.",0x00444430,0x004446f0,0x00444430
+1986,function,DirtySDK::TagFieldGetAddress,"Parses a dotted quad in a tag value into a packed address, first octet in the top byte.",0x004444a0,0x00444760,0x004444a0
+1987,function,DirtySDK::TagFieldGetString,"Copies a tag value into a buffer, decoding %XX escapes; the value ends at a quote (when it starts with one) or a character below 0x20; a null buffer returns the length.",0x004444f0,0x004447b0,0x004444f0
+1988,function,DirtySDK::TagFieldSetBinary,"Writes a tag value of ""$"" plus the hex digits of the bytes.",0x00444640,0x00444900,0x00444640
+1989,function,DirtySDK::TagFieldSplit,"Splits ""name=value"": copies the name into the buffer and returns the pointer after the ""="".",0x004446e0,0x004449a0,0x004446e0
+1990,function,DirtySDK::TagFieldDelete,"Removes a tag and its value from the list, trimming the whitespace left.",0x00444780,0x00444a40,0x00444780
+1991,function,DirtySDK::TagFieldSetString,"Sets a tag to a string, percent-encoding unsafe bytes and quoting when it holds a space or comma; a null value deletes the tag (TagFieldDelete 0x00444780); -1 when it does not fit.",0x00444830,0x00444af0,0x00444830
+1992,function,DirtySDK::NetLibIdleThread,"Thread routine of the library idle thread. Started by NetLibCreate (0x00444B70; CreateThread call at 0x00444BD4, null argument, priority set with SetThreadPriority from NetLibCreate's argument, handle closed at once). Sets the busy flag 0x00BF1EA4 to 1, then while the run handle 0x00C1DAA0 is non-zero calls NetIdleCall (0x0044C180) and Sleep(0x32); then clears the busy flag. NetLibDestroy (0x00444C60) zeroes the run handle and waits for the flag to drop. Waits on no object; ends by returning (plain ret, no return value).",0x00444980,0x00444c40,0x00444980
+1993,function,DirtySDK::NetTickQpc,"Millisecond clock: QueryPerformanceCounter divided (64-bit) by the per-millisecond frequency 0x00C1DA98. NetLibCreate installs it in the clock pointer 0x00C1DAA8 only when the flag 0x00C1DAA4 is set; that flag is only read in the code read, so the pointer is GetTickCount (0x0041E870).",0x004449c0,0x00444c80,0x004449c0
+1994,function,DirtySDK::NetTick,"Jumps through the clock pointer 0x00C1DAA8 (GetTickCount, or NetTickQpc): the library's millisecond clock; callers keep the result as a 32-bit time.",0x004449f0,0x00444cb0,0x004449f0
+1995,function,DirtySDK::NetCritInit,"Zeroes owner thread, count and lock flag and calls InitializeCriticalSection on the CRITICAL_SECTION at +0xC; a null pointer means the global lock 0x00C1DA50. Callers push a second argument (a name such as ""recvthread"") that is not read.",0x00444a00,0x00444cc0,0x00444a00
+1996,function,DirtySDK::NetCritKill,Clears the lock flag and DeleteCriticalSection; null means the global lock 0x00C1DA50.,0x00444a30,0x00444cf0,0x00444a30
+1997,function,DirtySDK::NetCritTry,"Non-blocking enter: succeeds when the calling thread already owns it, or when InterlockedExchange of the lock flag at +8 found it free (then EnterCriticalSection and record the thread id at +0); counts recursion at +4; returns 1 or 0.",0x00444a50,0x00444d10,0x00444a50
+1998,function,DirtySDK::NetCritEnter,"Blocking enter of a NetCrit: owner shortcut, else the lock-flag exchange, else EnterCriticalSection with a Sleep(1) retry; records the owner and the recursion count. Null means the global lock 0x00C1DA50.",0x00444aa0,0x00444d60,0x00444aa0
+1999,function,DirtySDK::NetCritLeave,"Decrements the recursion count; at one clears owner, count and flag and calls LeaveCriticalSection.",0x00444b30,0x00444df0,0x00444b30
+2000,function,DirtySDK::NetLibCreate,"Argument is a thread priority. Resets the idle list (NetIdleReset 0x0044C0C0), initialises the global lock 0x00C1DA50 and the idle lock 0x00C1DA74 (the pointer 0x00BF1EA0 refers to it), sets the run handle 0x00C1DAA0 to 1 and does CreateThread(NetLibIdleThread, null) at 0x00444BD4 with SetThreadPriority and CloseHandle; then picks the clock: NetTickQpc when 0x00C1DAA4 is set and QueryPerformanceFrequency works, otherwise GetTickCount.",0x00444b70,0x00444e30,0x00444b70
+2001,function,DirtySDK::NetLibDestroy,"Zeroes the run handle 0x00C1DAA0, Sleeps 1 ms until the idle thread's busy flag 0x00BF1EA4 is no longer positive, then deletes the idle lock and the global lock critical sections.",0x00444c60,0x00444f20,0x00444c60
+2002,function,DirtySDK::NetConnGetMacAddressNetbios,"Netbios NCBRESET (0x32) on adapter numbers 0 to 9 until one succeeds, then NCBASTAT (0x33) on the name ""*"" into a 0xF0-byte buffer; the first 6 bytes are the MAC. 0 or -1.",0x00444cc0,0x00444f80,0x00444cc0
+2003,function,DirtySDK::NetConnStartup,"Allocates the 0xC-byte connection record (tag ""ncon""), runs SocketCreate(2) (0x00448A10) and ProtoUpnpCreate (0x0044B690), stores the record at 0x00C1DAB4; -1 if already started, -2 when the allocation fails.",0x00444d80,0x00445040,0x00444d80
+2004,function,DirtySDK::NetConnConnect,"Sets the connection state (+4) to 1 and, when the UPnP object exists, runs ProtoUpnpControl(upnp, ""macr"", ""dscg"") to start the UPnP discovery sequence.",0x00444de0,0x004450a0,0x00444de0
+2005,function,DirtySDK::NetConnDisconnect,Sets the connection state back to 0 when it is 1.,0x00444e20,0x004450e0,0x00444e20
+2006,function,DirtySDK::NetConnStatus,"Selector query: ""open"" is whether started; ""addr"" the local address (0x0044A080); ""bbnd"" and ""type"" answer 1 and 4; ""conn"" answers ""+onl"" or ""-dsc"" by state; ""onln"" is state==1; ""macx"" copies the NetBIOS MAC (0x00444CC0) into the buffer. Callers push four arguments (selector, value, buffer, length).",0x00444e40,0x00445100,0x00444e40
+2007,function,DirtySDK::NetConnShutdown,"Destroys the UPnP object, clears the hook table (0x004481B0), calls SocketDestroy (0x00449FB0) and frees the connection record; -1 when not started.",0x00444f20,0x004451e0,0x00444f20
+2008,function,DirtySDK::TelemApiCallCallback,Calls the function pointer at +0x650 + 8*index (index in EDX) of the telemetry state in EAX when it is set; TelemApiUpdate (0x00445900) calls it after the output buffer has drained.,0x00444f90,0x00445250,0x00444f90
+2009,function,DirtySDK::TelemApiEventCount,"Number of events in the ring buffer (size at +0x66C, head +0x670, tail +0x674, flags +0x678: bit 0 empty, bit 1 full); status selector ""nume"".",0x00444fb0,0x00445270,0x00444fb0
+2010,function,DirtySDK::TelemApiFilterAllows,"Scans the (type, subtype, enable) filter list (count at +0x4CC, wildcard 0x2A2A2A2A ""****"") and returns whether the event is enabled.",0x00444ff0,0x004452b0,0x00444ff0
+2011,function,DirtySDK::TelemApiSend,When the ProtoAries link is not online (status 3) sets a tag from the string at +8 and connects it to the address and port at +0x88 and +0x8C; then sends one message of the given type from the buffer at +0x4C0 with ProtoAriesSend.,0x00445050,0x00445310,0x00445050
+2012,function,DirtySDK::TelemApiCheckCountryList,"Looks the 2-character locale at +0x98 up in the 3-byte-per-entry list at +0x9C; sets +0x49C to 1 when listed, else 0.",0x004450c0,0x00445380,0x004450c0
+2013,function,DirtySDK::TelemApiIsEnabled,"Status selector ""nabl"": 1 unless halted (flag 4), country-listed (+0x49C) or disabled by ""unbl"" (+0x4A0).",0x00445140,0x00445400,0x00445140
+2014,function,DirtySDK::TelemApiCreate,"Allocates 0xE88 plus 0x1C per ring slot (default 0x40 slots; tag ""telm""); sets the ring size, the buffers, a timeout of 15000 and a flush threshold of 75 percent of the slots.",0x00445170,0x00445430,0x00445170
+2015,function,DirtySDK::TelemApiAuthorize,"Parses a comma-separated grant string: an address (TagFieldGetAddress, +0x88), a number (+0x8C), a locale (+0x98, checked with TelemApiCheckCountryList) and a text (+8); stamps NetTick at +0x4B0; returns ""miss"" (0x6D697373) when a field is absent.",0x00445230,0x004454f0,0x00445230
+2016,function,DirtySDK::TelemApiStart,"Pushes the memory group, creates the ProtoAries link (buffer 0x2000, ProtoAriesCreate 0x00446090), pops the group and marks the telemetry state active (+0x90).",0x004452f0,0x004455b0,0x004452f0
+2017,function,DirtySDK::TelemApiStatus,"Selector query over the ring state: ""full"", ""ctry"", ""evth"", ""evtt"", ""halt"", ""lclc"", ""maxe"", ""mfit"", ""mpty"", ""nabl"", ""nflt"", ""nume"", ""ssiz"", ""time"".",0x00445330,0x004455f0,0x00445330
+2018,function,DirtySDK::TelemApiControl,"Selector setter: ""logc"" (log class character), ""auth"", ""cdbl"" (country list), ""halt"", ""thrs"" (flush threshold percent), ""time"", ""unbl"".",0x00445460,0x00445720,0x00445460
+2019,function,DirtySDK::TelemApiRingPop,Takes the 7-dword record at the head into the caller's buffer and advances the head; when head meets tail sets the empty flag and calls the callback at +0x658.,0x004455c0,0x00445880,0x004455c0
+2020,function,DirtySDK::TelemApiRingPush,Stores a 7-dword event record at the tail; when the tail comes next to the head sets the full flag and calls the callback at +0x650.,0x00445660,0x00445920,0x00445660
+2021,function,DirtySDK::TelemApiFlushEvents,"Pops up to 0x15 events and formats each as ""%08X/%c/%c%c%c%c/%c%c%c%c/%s"", joined by commas, then sends them in one ""&lgr"" message (0x266C6772) through TelemApiSend.",0x00445760,0x00445a20,0x00445760
+2022,function,DirtySDK::TelemApiUpdate,"Pumps the ProtoAries link (0x00446280); answers ""&beg"" messages with the IDENT tag and ""&lgr"" ones with a flush, drains the output buffer, and flushes queued events when the threshold or the timeout is reached.",0x00445900,0x00445bc0,0x00445900
+2023,function,DirtySDK::TelemApiEvent,"Checks that type and subtype are four alphanumeric characters, applies the filter (0x00444FF0) and pushes the event with its text.",0x00445a70,0x00445d30,0x00445a70
+2024,function,DirtySDK::TelemApiStop,"Updates once, then closes and destroys the ProtoAries link and clears the active flag.",0x00445c70,0x00445f30,0x00445c70
+2025,function,DirtySDK::TelemApiDestroy,"Stops like TelemApiStop and frees the telemetry state (tag ""telm"").",0x00445cc0,0x00445f80,0x00445cc0
+2026,function,DirtySDK::Base64Encode,"Base64 encodes the bytes (length, input, output) with = padding.",0x00445d20,0x00445fe0,0x00445d20
+2027,function,DirtySDK::Base64Decode,Decodes base64 whose length is a multiple of 4 into the output buffer; false on a bad character.,0x00445e80,0x00446140,0x00445e80
+2028,function,DirtySDK::ProtoAriesCompactSendBuffer,Drops whole messages from the front of the send buffer (size at +8 of each 12-byte header) up to the sent count and shifts the rest down; returns the free space or -1 when less than asked.,0x00446010,0x004462d0,0x00446010
+2029,function,DirtySDK::ProtoAriesCreate,"Allocates 0x2FC plus twice the buffer size (tag ""pari"") and sets up the receive and send buffers.",0x00446090,0x00446350,0x00446090
+2030,function,DirtySDK::ProtoAriesDestroy,"Destroys the ProtoSSL object and frees the state (tag ""pari"").",0x00446110,0x004463d0,0x00446110
+2031,function,DirtySDK::ProtoAriesStatus,"Selector query: ""addr"", ""cryp"", ""ibuf"", ""ladr"", ""lprt"", ""obuf"", ""port"", ""secu"", ""stat""; any other selector goes to ProtoSSLStat.",0x00446140,0x00446400,0x00446140
+2032,function,DirtySDK::ProtoAriesClose,"Destroys the ProtoSSL object, empties the output buffer and sets the state to 4 (closed).",0x00446220,0x004464e0,0x00446220
+2033,function,DirtySDK::ProtoAriesSecure,"Sets the word at +0x94 to whether the argument is 1; the status selector ""secu"" reads it.",0x00446260,0x00446520,0x00446260
+2034,function,DirtySDK::ProtoAriesUpdate,"Link state machine: 1 accept, 2 connect after a timeout (ProtoSSLConnect), 3 online, 4 closed; pumps ProtoSSLUpdate, sends the buffered output with ProtoSSLSend and reads 12-byte message headers then payloads with ProtoSSLRecv, applying the secure-mode decrypt and MAC check.",0x00446280,0x00446540,0x00446280
+2035,function,DirtySDK::ProtoAriesSend,"Appends a 12-byte header (type, subtype, size, big-endian) and the payload to the send buffer, signs and encrypts it in secure mode, then updates.",0x00446710,0x004469d0,0x00446710
+2036,function,DirtySDK::ProtoAriesPeek,"Returns the size of the complete message waiting and its type, subtype and payload pointer without consuming it; -1 when none.",0x00446820,0x00446ae0,0x00446820
+2037,function,DirtySDK::ProtoAriesRecv,"Peeks the next message, copies up to the buffer size of its payload and consumes it.",0x004468e0,0x00446ba0,0x004468e0
+2038,function,DirtySDK::ProtoAriesConnect,"Starts a connection: stores the address and port (big-endian) and the optional 0x40-byte name, state 2, and in secure mode resends the ""?tic"" ticket.",0x00446940,0x00446c00,0x00446940
+2039,function,DirtySDK::ProtoHttpUrlParse,"Splits a URL given in EAX: the scheme up to "":"" into the first buffer, the host after ""//"" up to ""/"", ""?"" or "":"" into the second, and an optional port number.",0x00446a30,0x00446cf0,0x00446a30
+2040,function,DirtySDK::ProtoHttpCloseConnection,"If ProtoSSL reports the socket live, disconnects it and clears the keep-alive flag (+0xD6B).",0x00446b60,0x00446e20,0x00446b60
+2041,function,DirtySDK::ProtoHttpResetRequest,Clears the two 0x400-byte header areas and the request state fields.,0x00446b90,0x00446e50,0x00446b90
+2042,function,DirtySDK::ProtoHttpFormatRequestHeader,"Writes ""METHOD URL HTTP/1.1"", Host, Transfer-Encoding or Content-Length, ""Connection: Close"", ""User-Agent: ProtoHttp 1.2/DS 6.3.6.0"" and Accept lines into the request buffer; the DS version, 6.3.6.0, identifies the DirtySDK build.",0x00446bf0,0x00446eb0,0x00446bf0
+2043,function,DirtySDK::ProtoHttpRequest,"Starts a request: parses the URL (0x00446A30), reuses the connection when scheme, host and port match, else connects with ProtoSSLConnect, formats the header and queues the body; state 1 (connecting) or 2 (sending).",0x00446d60,0x00447020,0x00446d60
+2044,function,DirtySDK::ProtoHttpParseHeader,"Finds the blank line ending the response header, checks ""HTTP"" and ""HTTP/1.0"" and the status code (+0x1C), then reads the other header fields with ds_stristr; the date goes through ds_strtotime.",0x00446f90,0x00447250,0x00446f90
+2045,function,DirtySDK::ProtoHttpNextChunk,Reads a hexadecimal chunk size line from the receive buffer and returns how many bytes of the chunk can be handed out.,0x004471c0,0x00447480,0x004471c0
+2046,function,DirtySDK::ProtoHttpAppendChunk,"Appends ""size-in-hex CRLF data CRLF"" to the send buffer for a chunked body, moving the buffer down when it is full; size 0 or less writes the end.",0x00447270,0x00447530,0x00447270
+2047,function,DirtySDK::ProtoHttpDestroy,"Destroys the ProtoSSL object and frees the receive buffer and the state (tag ""phtp"").",0x00447330,0x004475f0,0x00447330
+2048,function,DirtySDK::ProtoHttpGet,Starts a GET (HEAD when the third argument is non-zero) through ProtoHttpRequest (0x00446D60).,0x00447380,0x00447640,0x00447380
+2049,function,DirtySDK::ProtoHttpPost,Starts a POST (PUT when the last argument is non-zero) with a body; the length is taken from the string when not given.,0x004473a0,0x00447660,0x004473a0
+2050,function,DirtySDK::ProtoHttpSend,"Sends more of a body: through ProtoHttpAppendChunk when the post size is unknown, else ProtoSSLSend; returns the count or -1.",0x004473f0,0x004476b0,0x004473f0
+2051,function,DirtySDK::ProtoHttpAbort,Disconnects the connection if open and resets the request.,0x00447470,0x00447730,0x00447470
+2052,function,DirtySDK::ProtoHttpControl,"Selector setter: ""apnd"" (extra header lines), ""disc"", ""hver"", ""keep"", ""rmax"" (redirect limit), ""spam"", ""time"" (timeout ms).",0x004474b0,0x00447770,0x004474b0
+2053,function,DirtySDK::ProtoHttpStatus,"Selector query: ""sque"", ""host"", ""rtxt"", ""done"", ""data"", ""code"" (response status), ""time"", ""info"", ""head"", ""body"", ""date"", ""htxt"".",0x00447590,0x00447850,0x00447590
+2054,function,DirtySDK::ProtoHttpUrlEncodeIntParm,"Appends the integer, as decimal text, to the end of the buffer.",0x00447730,0x004479f0,0x00447730
+2055,function,DirtySDK::ProtoHttpUrlEncodeStrParm,"Appends the prefix string, then the value URL-encoded (%XX), to the buffer.",0x004477c0,0x00447a80,0x004477c0
+2056,function,DirtySDK::ProtoHttpFollowRedirect,"On a 3xx answer takes the target (pointer at +0x54) up to the first blank into the URL buffer, counts against the redirect limit and issues the request again; past the limit sets the error state 7.",0x004478a0,0x00447b60,0x004478a0
+2057,function,DirtySDK::ProtoHttpCreate,"Allocates 0xD74 bytes (tag ""phtp""), a ProtoSSL object and a receive buffer (at least 0x1000); defaults: timeout 30000, redirect limit 3.",0x00447960,0x00447c20,0x00447960
+2058,function,DirtySDK::ProtoHttpUpdate,"Request state machine: 1 connecting, 2 sending, 3 waiting for the first byte, 4 reading the header, 5 body, 6 done, 7 error; applies the timeout and keep-alive.",0x00447a10,0x00447cd0,0x00447a10
+2059,function,DirtySDK::ProtoHttpRecv,"Reads response data: -2 error, -3 not ready, -4 post pending, -1 end; compacts the buffer, undoes chunking, copies between the minimum and maximum asked.",0x00447da0,0x00448060,0x00447da0
+2060,function,DirtySDK::ProtoHttpRecvAll,Reads the whole response into a buffer through ProtoHttpRecv and NUL-terminates it; -5 when the buffer is full.,0x00447ed0,0x00448190,0x00447ed0
+2061,function,DirtySDK::SocketLookup,Thunk: jmp 0x00449CA0.,0x00447f50,0x00448210,0x00447f50
+2062,function,DirtySDK::NetConnGetMacAddressString,"Returns the global string ""$"" plus 12 hex digits of the MAC (from NetConnStatus ""macx""), built once at 0x00C1DBD0.",0x00447f60,0x00448220,0x00447f60
+2063,function,DirtySDK::NetConnIdleAdd,"Adds (proc, ref) to the 0x20-entry hook table at 0x00C1DAB8; -1 if present, -2 if full.",0x00448090,0x00448350,0x00448090
+2064,function,DirtySDK::NetConnIdleDel,"Removes (proc, ref) from the hook table 0x00C1DAB8; -1 if absent.",0x004480e0,0x004483a0,0x004480e0
+2065,function,DirtySDK::NetConnIdle,"When started, every 5 ms or more calls each hook of the table 0x00C1DAB8 with (ref, tick). Its callers (0x0042EBD0, 0x004323C0) are game-side; the library's own thread does not call it.",0x00448130,0x004483f0,0x00448130
+2066,function,DirtySDK::NetConnIdleReset,Clears the hook table 0x00C1DAB8.,0x004481b0,0x00448470,0x004481b0
+2067,function,DirtySDK::SocketWildcardMatch,"Compares the name in EAX with the pattern in EDI where a leading or trailing ""*"" matches a suffix or prefix.",0x004481d0,0x00448490,0x004481d0
+2068,function,DirtySDK::SocketFindNameMapEntry,Scans the 0x20 entries (0x6C bytes each) of the name map in the socket state for one whose pattern matches; returns the entry or 0.,0x004482d0,0x00448590,0x004482d0
+2069,function,DirtySDK::SocketTranslateAddress,"Rewrites the sockaddr in EDI into ESI through the name map entry (0x004482D0) and the address map (0x14-byte entries at state+8: address and mask, replacement address and port).",0x00448310,0x004485d0,0x00448310
+2070,function,DirtySDK::SocketTranslateError,"Maps a negative result and the WSA error code (ECX) to the library's codes: 0 for WSAEWOULDBLOCK and WSA_IO_PENDING, -5, -2, -6, -11, -13 or -7.",0x00448410,0x004486d0,0x00448410
+2071,function,DirtySDK::SocketOpenFromHandle,"Wraps the SOCKET in EAX (or a new socket() when it is -1) in a 0x5A0-byte record (tag ""dsoc""): non-blocking, SO_BROADCAST for datagrams, receive event and the ""recvthread"" lock, linked at the head of the list at state+0; stack arguments are family, type, protocol. Used by SocketAccept.",0x00448480,0x00448740,0x00448480
+2072,function,DirtySDK::SocketCloseInternal,"Unlinks the socket in ESI from the list, deletes its lock and event under the socket lock and the receive-event lock, optionally shutdown and closesocket (first stack argument 1), sets the handle to -1 and puts the record on the closed list at state+4, which SocketIdle frees.",0x00448570,0x00448830,0x00448570
+2073,function,DirtySDK::SocketIdle,"Registered with NetIdleAdd by SocketCreate: fires each socket's timed callback (+0x50, interval +0x48 ms since +0x44, called with the record, 0 and +0x4C) and frees the sockets on the closed list.",0x00448660,0x00448920,0x00448660
+2074,function,DirtySDK::SocketRecvDone,"After data arrived (socket in ESI): stamps NetTick big-endian into +0xA2..+0xA5 unless the type is 1, and calls the user callback when the mask bit 2 at +0x40 is set.",0x00448710,0x004489d0,0x00448710
+2075,function,DirtySDK::SocketRecvPost,"Socket in EAX: with nothing buffered posts an overlapped WSARecvFrom (type 2; buffer 0x4F0 bytes at +0xB0, sender at +0x9A) or WSARecv; completes at once through SocketRecvDone or marks the receive pending (+0x98) on WSA_IO_PENDING.",0x00448770,0x00448a30,0x00448770
+2076,function,DirtySDK::SocketRecvThread,"Thread routine of the winsock receive thread, started once by SocketCreate (0x00448A10; CreateThread call at 0x00448B01, null argument, handle closed at once). It reads the socket state 0x00C1DBE0 and loops while state+0x1058 is non-zero: lock the list, build up to 0x40 event handles (the state's event at +0x1060 first, then the event at +0x64 of each datagram or raw socket with nothing buffered), complete pending overlapped receives with WSAGetOverlappedResult and repost them with SocketRecvPost, then WSAWaitForMultipleEvents(count, handles, FALSE, INFINITE) with the receive-event lock (state+0x1064) held across the wait, and WSAResetEvent on the signalled one. SocketDestroy (0x00449FB0) clears +0x1058 and sets the event; the thread clears its busy flag +0x105C on the way out, which SocketDestroy waits for. Plain ret, no return value.",0x00448850,0x00448b10,0x00448850
+2077,function,DirtySDK::SocketCreate,"Argument is the thread priority. Allocates the 0x1090-byte socket state (tag ""dsoc""), runs NetLibCreate with the priority, registers SocketIdle with NetIdleAdd, WSAStartup(2), creates the receive event (auto-reset) and its lock ""recv-event-crit"", and starts SocketRecvThread (CreateThread at 0x00448B01); -1 if already created, -2 when the allocation fails.",0x00448a10,0x00448cd0,0x00448a10
+2078,function,DirtySDK::SocketOpen,"socket(family, type, protocol) wrapped in a 0x5A0-byte record: non-blocking, SO_BROADCAST for datagrams, event and ""recvthread"" lock, linked at the head of the list at state+0.",0x00448b40,0x00448e00,0x00448b40
+2079,function,DirtySDK::SocketClose,SocketCloseInternal(1): shutdown and close.,0x00448c20,0x00448ee0,0x00448c20
+2080,function,DirtySDK::SocketBind,"Binds; a datagram socket bound to one of the virtual ports added with ""vadd"" (state+0x1008) is closed instead and marked virtual (+0x16, port at +0x3C); wakes the receive thread for datagram and raw sockets.",0x00448c40,0x00448f00,0x00448c40
+2081,function,DirtySDK::SocketConnect,"Binds to the any-address, translates the destination with SocketTranslateAddress and calls connect(); wakes the receive thread for datagram sockets.",0x00448d80,0x00449040,0x00448d80
+2082,function,DirtySDK::SocketAccept,accept() on a listening stream socket and wraps the new SOCKET in a record with SocketOpenFromHandle.,0x00448e30,0x004490f0,0x00448e30
+2083,function,DirtySDK::SocketSendto,Offers the data to the send hook at state+0x1088 first; for raw sockets sets the TTL from byte 8 and skips the IP header; then send() or sendto() with the translated address.,0x00448e90,0x00449150,0x00448e90
+2084,function,DirtySDK::SocketRecvfrom,"For datagram and raw sockets returns the datagram buffered by the receive thread (+0xB0, sender +0x9A) under the socket lock and wakes the thread; for stream sockets calls recv or recvfrom directly.",0x00448f60,0x00449220,0x00448f60
+2085,function,DirtySDK::SocketInfo,"Selector query: with a null socket ""bind"" (find the socket bound to a port), ""maxp"" (0x4F0), ""xmap"", ""xnam""; with a socket ""bind"", ""prot"", ""conn"" and ""peer"" (getpeername), ""stat"" (connect progress: 1 connected, -1 failed, 0 pending).",0x004490e0,0x004493a0,0x004490e0
+2086,function,DirtySDK::SocketControl,"Selector setter: ""ladr"" (state+0x1054), ""madr"", ""ndly"" (TCP_NODELAY), ""poll"" (select), ""push"" (inject a datagram), ""radr"" (SO_REUSEADDR), ""sdcb"" (send hook, state+0x1088 and +0x108C), ""vadd"" and ""vdel"" (virtual ports), ""xdns"", ""xmap"" and ""xnam"" (tables), ""+max"", ""-max"", ""+xnm"", ""-xnm"".",0x004493b0,0x00449670,0x004493b0
 2087,retired,,,,,
-2088,function,,,0x00449be0,0x00449eb0,0x00449be0
-2089,function,,,0x00449c20,0x00449ef0,0x00449c20
-2090,function,,,0x00449ca0,0x00449f70,0x00449ca0
-2091,function,,,0x00449dd0,0x0044a0a0,0x00449dd0
-2092,function,,,0x00449fb0,0x0044a280,0x00449fb0
-2093,function,,,0x0044a080,0x0044a350,0x0044a080
-2094,function,,,0x0044a110,0x0044a3e0,0x0044a110
-2095,function,,,0x0044a180,0x0044a450,0x0044a180
-2096,function,,,0x0044a3e0,0x0044a6b0,0x0044a3e0
-2097,function,,,0x0044a3f0,0x0044a6c0,0x0044a3f0
-2098,function,,,0x0044a410,0x0044a6e0,0x0044a410
-2099,function,,,0x0044a430,0x0044a700,0x0044a430
-2100,function,,,0x0044a460,0x0044a730,0x0044a460
-2101,function,,,0x0044a4a0,0x0044a770,0x0044a4a0
-2102,function,,,0x0044a4c0,0x0044a790,0x0044a4c0
-2103,function,,,0x0044a500,0x0044a7d0,0x0044a500
-2104,function,,,0x0044a620,0x0044a8f0,0x0044a620
-2105,function,,,0x0044a640,0x0044a910,0x0044a640
-2106,function,,,0x0044a690,0x0044a960,0x0044a690
-2107,function,,,0x0044a6e0,0x0044a9b0,0x0044a6e0
-2108,function,,,0x0044a770,0x0044aa40,0x0044a770
-2109,function,,,0x0044a7b0,0x0044aa80,0x0044a7b0
-2110,function,,,0x0044a7f0,0x0044aac0,0x0044a7f0
-2111,function,,,0x0044a840,0x0044ab10,0x0044a840
-2112,function,,,0x0044a8c0,0x0044ab90,0x0044a8c0
-2113,function,,,0x0044ac60,0x0044af30,0x0044ac60
-2114,function,,,0x0044acd0,0x0044afa0,0x0044acd0
-2115,function,,,0x0044adb0,0x0044b080,0x0044adb0
-2116,function,,,0x0044b290,0x0044b560,0x0044b290
-2117,function,,,0x0044b680,0x0044b950,0x0044b680
-2118,function,,,0x0044b690,0x0044b960,0x0044b690
-2119,function,,,0x0044b7d0,0x0044baa0,0x0044b7d0
-2120,function,,,0x0044b820,0x0044baf0,0x0044b820
-2121,function,,,0x0044b860,0x0044bb30,0x0044b860
-2122,function,,,0x0044b900,0x0044bbd0,0x0044b900
-2123,function,,,0x0044b950,0x0044bc20,0x0044b950
-2124,function,,,0x0044b9b0,0x0044bc80,0x0044b9b0
-2125,function,,,0x0044b9e0,0x0044bcb0,0x0044b9e0
-2126,function,,,0x0044ba30,0x0044bd00,0x0044ba30
-2127,function,,,0x0044ba80,0x0044bd50,0x0044ba80
-2128,function,,,0x0044bc30,0x0044bf00,0x0044bc30
-2129,function,,,0x0044bcc0,0x0044bf90,0x0044bcc0
-2130,function,,,0x0044c0c0,0x0044c390,0x0044c0c0
-2131,function,,,0x0044c0d0,0x0044c3a0,0x0044c0d0
-2132,function,,,0x0044c100,0x0044c3d0,0x0044c100
-2133,function,,,0x0044c160,0x0044c430,0x0044c160
-2134,function,,,0x0044c180,0x0044c450,0x0044c180
-2135,function,,,0x0044c230,0x0044c500,0x0044c230
-2136,function,,,0x0044c250,0x0044c520,0x0044c250
-2137,function,,,0x0044c270,0x0044c540,0x0044c270
-2138,function,,,0x0044c280,0x0044c550,0x0044c280
-2139,function,,,0x0044c2f0,0x0044c5c0,0x0044c2f0
-2140,function,,,0x0044c420,0x0044c6f0,0x0044c420
-2141,function,,,0x0044c6e0,0x0044c9b0,0x0044c6e0
-2142,function,,,0x0044cb80,0x0044ce50,0x0044cb80
-2143,function,,,0x0044cbd0,0x0044cea0,0x0044cbd0
-2144,function,,,0x0044cc40,0x0044cf10,0x0044cc40
-2145,function,,,0x0044ccb0,0x0044cf80,0x0044ccb0
-2146,function,,,0x0044cd90,0x0044d060,0x0044cd90
-2147,function,,,0x0044db90,0x0044de60,0x0044db90
-2148,function,,,0x0044dbd0,0x0044dea0,0x0044dbd0
-2149,function,,,0x0044dc00,0x0044ded0,0x0044dc00
-2150,function,,,0x0044dc80,0x0044df50,0x0044dc80
-2151,function,,,0x0044de00,0x0044e0d0,0x0044de00
-2152,function,,,0x0044de20,0x0044e0f0,0x0044de20
-2153,function,,,0x0044ded0,0x0044e1a0,0x0044ded0
-2154,function,,,0x0044df50,0x0044e220,0x0044df50
-2155,function,,,0x0044dfc0,0x0044e290,0x0044dfc0
-2156,function,,,0x0044e280,0x0044e550,0x0044e280
-2157,function,,,0x0044e2d0,0x0044e5a0,0x0044e2d0
-2158,function,,,0x0044e4a0,0x0044e770,0x0044e4a0
-2159,function,,,0x0044e4d0,0x0044e7a0,0x0044e4d0
-2160,function,,,0x0044e780,0x0044ea50,0x0044e780
-2161,function,,,0x0044eb60,0x0044ee30,0x0044eb60
-2162,function,,,0x0044ec00,0x0044eed0,0x0044ec00
-2163,function,,,0x0044ece0,0x0044efb0,0x0044ece0
-2164,function,,,0x0044ed70,0x0044f040,0x0044ed70
-2165,function,,,0x0044edb0,0x0044f080,0x0044edb0
-2166,function,,,0x0044ee00,0x0044f0d0,0x0044ee00
-2167,function,,,0x0044ee30,0x0044f100,0x0044ee30
-2168,function,,,0x0044ef40,0x0044f210,0x0044ef40
-2169,function,,,0x0044ef70,0x0044f240,0x0044ef70
-2170,function,,,0x0044ef90,0x0044f260,0x0044ef90
-2171,function,,,0x0044eff0,0x0044f2c0,0x0044eff0
-2172,function,,,0x0044f010,0x0044f2e0,0x0044f010
-2173,function,,,0x0044f0b0,0x0044f380,0x0044f0b0
-2174,function,,,0x0044f160,0x0044f430,0x0044f160
-2175,function,,,0x0044f530,0x0044f800,0x0044f530
-2176,function,,,0x0044f5c0,0x0044f890,0x0044f5c0
-2177,function,,,0x0044f660,0x0044f930,0x0044f660
-2178,function,,,0x0044f690,0x0044f960,0x0044f690
-2179,function,,,0x0044f780,0x0044fa50,0x0044f780
-2180,function,,,0x0044f810,0x0044fae0,0x0044f810
-2181,function,,,0x0044f860,0x0044fb30,0x0044f860
-2182,function,,,0x0044f950,0x0044fc20,0x0044f950
-2183,function,,,0x0044f990,0x0044fc60,0x0044f990
-2184,function,,,0x0044fae0,0x0044fdb0,0x0044fae0
-2185,function,,,0x0044fb20,0x0044fdf0,0x0044fb20
-2186,function,,,0x0044fb60,0x0044fe30,0x0044fb60
-2187,function,,,0x0044fd00,0x0044ffd0,0x0044fd00
-2188,function,,,0x0044fec0,0x00450190,0x0044fec0
-2189,function,,,0x0044ff70,0x00450240,0x0044ff70
+2088,function,DirtySDK::SocketLookupFree,Free function (slot 3) of a lookup record: InterlockedExchange of the owner flag at +0x54; frees the record when the lookup thread had already set it.,0x00449be0,0x00449eb0,0x00449be0
+2089,function,DirtySDK::SocketLookupThread,"Thread routine of one host-name lookup, started by SocketLookup (0x00449CA0; CreateThread call at 0x00449DB9) with the 0x5C-byte lookup record as its argument. Calls gethostbyname on the name at +0x10; stores status 1 and the first address (+4) or status -1 in the record; then InterlockedExchange of the owner flag at +0x54: if that was already set (the caller released the record) it frees the record (tag ""dsoc""), otherwise the caller frees it through SocketLookupFree. Returns 0.",0x00449c20,0x00449ef0,0x00449c20
+2090,function,DirtySDK::SocketLookup,"Allocates the 0x5C-byte lookup record (tag ""dsoc""; done function at +8, free function SocketLookupFree at +0xC, name copy at +0x10); a dotted-quad name is parsed at once (status 1, owner flag set), otherwise starts SocketLookupThread; returns the record.",0x00449ca0,0x00449f70,0x00449ca0
+2091,function,DirtySDK::SocketGetLocalAddress,"Fills the local interface address used to reach the given address: the one set with ""ladr"" (state+0x1054), else a UDP socket with WSAIoctl SIO_ROUTING_INTERFACE_QUERY or connect() plus getsockname, else gethostbyname(gethostname()).",0x00449dd0,0x0044a0a0,0x00449dd0
+2092,function,DirtySDK::SocketDestroy,"Removes SocketIdle, clears state+0x1058 and sets the receive event, waits (Sleep 1) for the receive thread to clear state+0x105C, closes every socket, runs SocketIdle once more, deletes the lock, closes the event, frees the state and calls NetLibDestroy; WSACleanup unless the stack argument is non-zero.",0x00449fb0,0x0044a280,0x00449fb0
+2093,function,DirtySDK::NetConnQueryLocalAddress,"NetConnStatus ""addr"": SocketGetLocalAddress for a fixed probe address, returned byte-swapped.",0x0044a080,0x0044a350,0x0044a080
+2094,function,DirtySDK::SocketParseDottedQuad,Parses four decimal octets separated by dots into bytes +4..+7 of the record; zeroes them and returns -1 on failure.,0x0044a110,0x0044a3e0,0x0044a110
+2095,function,DirtySDK::SocketFormatDottedQuad,Writes the dotted-quad text of the four bytes at +4 into the buffer (needs 16 bytes); returns the buffer or null.,0x0044a180,0x0044a450,0x0044a180
+2096,function,DirtySDK::SocketHtons,Byte swap of a 16-bit value.,0x0044a3e0,0x0044a6b0,0x0044a3e0
+2097,function,DirtySDK::SocketHtonl,Byte swap of a 32-bit value.,0x0044a3f0,0x0044a6c0,0x0044a3f0
+2098,function,DirtySDK::SocketNtohs,Byte swap of a 16-bit value (same code as SocketHtons).,0x0044a410,0x0044a6e0,0x0044a410
+2099,function,DirtySDK::SocketNtohl,Byte swap of a 32-bit value (same code as SocketHtonl).,0x0044a430,0x0044a700,0x0044a430
+2100,function,DirtySDK::SocketInAddrGetText,Dotted-quad text of an address into the static buffer 0x00C1E608.,0x0044a460,0x0044a730,0x0044a460
+2101,function,DirtySDK::ProtoUpnpFormatInt,The integer in EAX as text in the static buffer 0x00C1E61C; returns the buffer.,0x0044a4a0,0x0044a770,0x0044a4a0
+2102,function,DirtySDK::ProtoUpnpSendSsdpSearch,"Opens the UDP socket when needed and sends the ""M-SEARCH * HTTP/1.1 ... WANConnectionDevice:1"" request to the multicast address kept at +0x18 (239.255.255.250:1900).",0x0044a4c0,0x0044a790,0x0044a4c0
+2103,function,DirtySDK::ProtoUpnpParseSsdpResponse,"Checks an SSDP answer for ""HTTP"", copies its status text to +0x30 and the host and path of its location URL to +0xB0.",0x0044a500,0x0044a7d0,0x0044a500
+2104,function,DirtySDK::ProtoUpnpGetHostText,Text of the configured host address (+0x6F0) or the empty string.,0x0044a620,0x0044a8f0,0x0044a620
+2105,function,DirtySDK::ProtoUpnpResetRequest,"Clears the response buffer (0x4000 bytes at +0xF49), sets the request-idle flag and the HTTP object's keep-alive.",0x0044a640,0x0044a910,0x0044a640
+2106,function,DirtySDK::ProtoUpnpPollResponse,"Updates the HTTP object and reads the response line by line into the response buffer; 1 done, 0 pending, -1 error.",0x0044a690,0x0044a960,0x0044a690
+2107,function,DirtySDK::ProtoUpnpBeginSoapRequest,"Sets the HTTP header lines (User-Agent, Content-Type, SOAPAction) and starts the SOAP envelope text in the request buffer (+0x749).",0x0044a6e0,0x0044a9b0,0x0044a6e0
+2108,function,DirtySDK::ProtoUpnpAddSoapArgument,"Appends ""<name>value</name>"" to the SOAP envelope (name in EDX, value on the stack, state in ESI).",0x0044a770,0x0044aa40,0x0044a770
+2109,function,DirtySDK::ProtoUpnpEndSoapRequest,Closes the SOAP envelope text.,0x0044a7b0,0x0044aa80,0x0044a7b0
+2110,function,DirtySDK::ProtoUpnpSendSoapRequest,Posts the finished SOAP envelope to the control URL through ProtoHttpPost.,0x0044a7f0,0x0044aac0,0x0044a7f0
+2111,function,DirtySDK::ProtoUpnpCheckResponse,Polls the response; on HTTP status 500 reads UPnPError.errorCode into +0x6EC; -1 for any status but 200.,0x0044a840,0x0044ab10,0x0044a840
+2112,function,DirtySDK::ProtoUpnpParseDeviceDescription,"Parses the gateway's device description XML: root.URLBase, the WANConnectionDevice with manufacturer, model name and number, and its service list (service type, control URL, SCPD URL) into the 0x140-byte service entries.",0x0044a8c0,0x0044ab90,0x0044a8c0
+2113,function,DirtySDK::ProtoUpnpParseExternalAddress,Reads NewExternalIPAddress of a GetExternalIPAddressResponse into +0x1B0.,0x0044ac60,0x0044af30,0x0044ac60
+2114,function,DirtySDK::ProtoUpnpParsePortMappingEntry,"Reads NewInternalClient, NewInternalPort, NewEnabled and NewPortMappingDescription of a GetSpecificPortMappingEntryResponse.",0x0044acd0,0x0044afa0,0x0044acd0
+2115,function,DirtySDK::ProtoUpnpControl,"Selector setter and command starter: ""abrt"", ""extp"", ""host"", ""intp"", ""ldur"", ""port"", ""spam""; ""macr"" runs a macro of further commands (""dscg"", ""addp"", ""test"" tables at 0x00AE60F8, 0x00AE6138, 0x00AE6168); ""disc"" starts SSDP discovery; ""desc"", ""sdsc"", ""gadr"", ""ggpt"", ""gvar"", ""gprt"", ""aprt"" (AddPortMapping, description ""EA Tunnel"") and ""dprt"" (DeletePortMapping).",0x0044adb0,0x0044b080,0x0044adb0
+2116,function,DirtySDK::ProtoUpnpUpdate,"State machine (state at +0x6E4) behind ProtoUpnpIdle: 1 SSDP search every 15 s and collecting answers, 2 device description, 3 service description, 4 variable, 5 external address, 6 and 8 port mapping query and add, 7 delete; result bits in +0x28.",0x0044b290,0x0044b560,0x0044b290
+2117,function,DirtySDK::ProtoUpnpIdle,Idle hook ProtoUpnpCreate registers with NetConnIdleAdd: runs ProtoUpnpUpdate on the singleton at 0x00C1E62C.,0x0044b680,0x0044b950,0x0044b680
+2118,function,DirtySDK::ProtoUpnpCreate,"Singleton: returns the existing object at 0x00C1E62C with its count raised, else allocates 0x4F4C bytes (tag ""pupp""), a ProtoUdp (4 packets of 0x400) and a ProtoHttp, defaults the multicast address to 239.255.255.250:1900 and registers ProtoUpnpIdle with NetConnIdleAdd.",0x0044b690,0x0044b960,0x0044b690
+2119,function,DirtySDK::ProtoUpnpDestroy,"Drops one reference; at zero destroys the ProtoHttp and ProtoUdp, removes the idle hook and frees the object.",0x0044b7d0,0x0044baa0,0x0044b7d0
+2120,function,DirtySDK::ds_snzprintf,"vsnprintf into a buffer that always ends in NUL; returns the length, 0 when truncated or on error.",0x0044b820,0x0044baf0,0x0044b820
+2121,function,DirtySDK::ds_stristr,Case-insensitive strstr; null for an empty or null argument.,0x0044b860,0x0044bb30,0x0044b860
+2122,function,DirtySDK::ds_stricmp,Case-insensitive strcmp.,0x0044b900,0x0044bbd0,0x0044b900
+2123,function,DirtySDK::ds_strnicmp,Case-insensitive strncmp.,0x0044b950,0x0044bc20,0x0044b950
+2124,function,DirtySDK::ds_strnzcpy,strncpy that always NUL-terminates.,0x0044b9b0,0x0044bc80,0x0044b9b0
+2125,function,DirtySDK::ds_strsubzcpy,"Copies at most the given number of characters of the source into a destination of given size, NUL-terminating.",0x0044b9e0,0x0044bcb0,0x0044b9e0
+2126,function,DirtySDK::ds_strnzcat,"Appends to the string in a buffer of the given size, NUL-terminating.",0x0044ba30,0x0044bd00,0x0044ba30
+2127,function,DirtySDK::ds_secstotime,"Converts seconds since 1970 to broken-down time (seconds, minutes, hours, day, month, year minus 1900, ...) with the leap-year rule.",0x0044ba80,0x0044bd50,0x0044ba80
+2128,function,DirtySDK::ds_timetosecs,Inverse of ds_secstotime: binary search over seconds for the broken-down time given.,0x0044bc30,0x0044bf00,0x0044bc30
+2129,function,DirtySDK::ds_strtotime,Parses an HTTP date string (names from the table at 0x00BF1FE4) to seconds with ds_timetosecs.,0x0044bcc0,0x0044bf90,0x0044bcc0
+2130,function,DirtySDK::NetIdleReset,Empties the idle procedure list (count at 0x00C1E738).,0x0044c0c0,0x0044c390,0x0044c0c0
+2131,function,DirtySDK::NetIdleAdd,"Appends (proc, ref) to the idle list at 0x00C1E638 (8 bytes each); a null proc is ignored.",0x0044c0d0,0x0044c3a0,0x0044c0d0
+2132,function,DirtySDK::NetIdleDel,"Clears the idle entry equal to (proc, ref); NetIdleCall closes the gap.",0x0044c100,0x0044c3d0,0x0044c100
+2133,function,DirtySDK::NetIdleSync,Enters and leaves the idle lock (0x00BF1EA0): returns once any NetIdleCall running on another thread has finished.,0x0044c160,0x0044c430,0x0044c160
+2134,function,DirtySDK::NetIdleCall,"If NetCritTry takes the idle lock, calls each registered proc(ref), dropping cleared entries, then leaves the lock; NetLibIdleThread calls it every 50 ms.",0x0044c180,0x0044c450,0x0044c180
+2135,function,DirtySDK::DirtyMemGroupEnter,Pushes a memory-group id on the stack at 0x00BF2038 (at most 0x10 deep).,0x0044c230,0x0044c500,0x0044c230
+2136,function,DirtySDK::DirtyMemGroupLeave,Pops the memory-group stack.,0x0044c250,0x0044c520,0x0044c250
+2137,function,DirtySDK::DirtyMemGroupQuery,Returns the memory-group id on top of the stack; the library passes it to its allocations.,0x0044c270,0x0044c540,0x0044c270
+2138,function,DirtySDK::ProtoSSLMixRandom,"Adds the tick, a counter and uninitialised stack words to the entropy words at 0x00C1E740 and, when an RC4 state is given in EDI, reseeds it (CryptArc4Init, CryptArc4Apply).",0x0044c280,0x0044c550,0x0044c280
+2139,function,DirtySDK::ProtoSSLReset,"State in EAX: closes the socket, frees a pending lookup through its free function (+0xC), sets state 0 and, when asked, allocates the 0x8958-byte secure-session block and seeds MD5 and SHA-1 contexts in it.",0x0044c2f0,0x0044c5c0,0x0044c2f0
+2140,function,DirtySDK::ProtoSSLBuildRecord,"Builds one SSL 3.0 record in the send buffer of the session block (ProtoSSL+0x124): type from the stack, version 3.0, then the header bytes given in EAX (length) and EDX (pointer) followed by the payload from the stack; the 2-byte length goes into the 5-byte record header at +0x958. A handshake record (type 0x16) is also fed to the running handshake MD5 (+0x154, CryptMD5Update 0x00450E70) and SHA-1 (+0x1B0, CryptSha1Update 0x004505E0). From ProtoSSL state 0x18 to 0x1E with a cipher suite chosen (+0x20) it appends the SSL 3.0 MAC (write secret +0x148, the 0x36 pad 0x00AE69C0 and 0x5C pad 0x00AE69F0, 8-byte sequence number from +4, type, 2-byte length; MD5 for MAC length 0x10, SHA-1 for 0x14) and RC4-encrypts payload plus MAC with the write state at +0x30E (CryptArc4Apply 0x0044F0B0). Then counts the sequence (+4), stores the length in the header and the total in +0xC, and clears +8 (sent so far). Usercall: EAX header length, EDX header pointer, stack (ssl, type, payload, payloadLength); plain ret; returns 0. Called by SendClientHello, SendClientKeyExchange, the change-cipher-spec step, SendFinished, ProtoSSLSend and ProtoSSLUpdate (alert).",0x0044c420,0x0044c6f0,0x0044c420
+2141,function,DirtySDK::ProtoSSLProcessRecord,"Checks and unpacks the record just received into the session block's receive buffer (+0x4958): the read count (+0x14) must equal the expected total (+0x18) else returns -1; record type 0x14 to 0x17 else -2; version bytes 3, 0 else -3; header length plus 5 equal to the total else -4. From ProtoSSL state 0x1A to 0x1E with a suite set it RC4-decrypts the payload with the read state at +0x20C, strips the MAC (length from the suite entry, +4), and checks the SSL 3.0 MAC over the sequence number (+0x10), type and length with the read MAC secret (+0x144), MD5 or SHA-1 by MAC length with the 0x36 and 0x5C pads; a mismatch returns -5 (MD5) or -6 (SHA-1). A handshake record received before state 0x1A is added to the running handshake hashes (+0x154 MD5, +0x1B0 SHA-1). Counts the read sequence (+0x10). Returns 0 on success. Called only by ProtoSSLUpdate.",0x0044c6e0,0x0044c9b0,0x0044c6e0
+2142,function,DirtySDK::ProtoSSLFindHandshakeMessage,"Returns a pointer to the next handshake message of the given type in the received record (type byte, 3-byte length) or 0, advancing the read position.",0x0044cb80,0x0044ce50,0x0044cb80
+2143,function,DirtySDK::ProtoSSLRsaRecoverDigest,"RSA public-key operation on a signature, for certificate checking: EAX is a key entry (modulus pointer +0x18, modulus length +0x1C, 4-byte exponent +0x20: an entry of the trusted-certificate table 0x00AE6DA0), ECX the signature length, stack (signature, output), EDI the number of bytes wanted. Builds a CryptRSA state on the stack (CryptRSAInit 0x00451640, CryptRSAInitSignature 0x00451730, CryptRSAEncrypt 0x00451740: signature ^ e mod n) and copies the last EDI bytes of the result, the digest (0x10 MD5 or 0x14 SHA-1) at the end of the PKCS#1 block. Called by ProtoSSLParseCertificate (0x0044D9CA) only. Not a key expansion; that is in ProtoSSLSendClientKeyExchange.",0x0044cbd0,0x0044cea0,0x0044cbd0
+2144,function,DirtySDK::ProtoSSLAsn1ReadLength,Reads a DER tag and length at EAX within the limit ESI; returns the pointer to the contents.,0x0044cc40,0x0044cf10,0x0044cc40
+2145,function,DirtySDK::ProtoSSLFindOid,Compares a DER object identifier with the 6-dword entries at 0x00AE6A30 and returns the matching id or 0.,0x0044ccb0,0x0044cf80,0x0044ccb0
+2146,function,DirtySDK::ProtoSSLParseCertificate,"Parses a DER X.509 certificate and checks it: (ssl, out ProtoSSLCertificate of 0x548 bytes, der pointer, der length), plain ret, returns 0 or a negative code (-1 to -0x1B, one per failure). Walks SEQUENCE tags with ProtoSSLAsn1ReadLength (0x0044CC40): serial number (+0x1C4/+0x1C8), signature algorithm OID (ProtoSSLFindOid 0x0044CCB0, +0x1E8; 8 md5WithRSA, 9 sha1WithRSA), issuer name attributes (country, state, locality, organization, org unit, common name, 0x20 bytes each from +4), validity (+0x184, +0x1A4), subject name (+0xC4, same layout), public key algorithm (+0x2F0, must be 7 rsaEncryption), the key (+0x334/+0x338) with its modulus (+0x438/+0x43C) and exponent (+0x4C0/+0x4C4), and the signature (+0x1EC/+0x1F0). Fails with -0x18 when the subject common name is not the host name the ProtoSSL state holds at +0xC. Then looks the issuer up in the trusted-certificate table at 0x00AE6DA0 (entries of 0x24 bytes, ended by a null first pointer), requires the signature length to equal its modulus length (-0x1A), hashes the to-be-signed bytes with MD5 or SHA-1 and compares with the digest ProtoSSLRsaRecoverDigest (0x0044CBD0) recovers (-0x1B on a mismatch). Called by ProtoSSLHandleCertificate (0x0044DF50) with the certificate at session+0x410.",0x0044cd90,0x0044d060,0x0044cd90
+2147,function,DirtySDK::ProtoSSLCreate,"Allocates the 0x128-byte ProtoSSL state (tag ""pssl"").",0x0044db90,0x0044de60,0x0044db90
+2148,function,DirtySDK::ProtoSSLDestroy,Resets (ProtoSSLReset) and frees the ProtoSSL state.,0x0044dbd0,0x0044dea0,0x0044dbd0
+2149,function,DirtySDK::ProtoSSLAccept,Accepts a connection on the socket (SocketAccept) into a new ProtoSSL state in the plain state 0x1F.,0x0044dc00,0x0044ded0,0x0044dc00
+2150,function,DirtySDK::ProtoSSLConnect,"Opens a TCP socket, copies the host name (up to "":port"") from the string, parses a dotted quad or starts SocketLookup (30 s), sets the port; state 1 (resolving) or 2 (connecting). The second argument chooses secure (SSL) or plain.",0x0044dc80,0x0044df50,0x0044dc80
+2151,function,DirtySDK::ProtoSSLDisconnect,Resets the connection (ProtoSSLReset).,0x0044de00,0x0044e0d0,0x0044de00
+2152,function,DirtySDK::ProtoSSLSendClientHello,"Builds version 3.0, the client random, an empty session id, the cipher suites 0x0005 and 0x0004 and no compression; sends it as record type 0x16; returns state 0x15.",0x0044de20,0x0044e0f0,0x0044de20
+2153,function,DirtySDK::ProtoSSLParseServerHello,"Checks version 3.0, copies the 32-byte server random and matches the chosen cipher suite against the table at 0x00AE6A26, setting the pointer to the matching MAC pad constants; returns 0x15.",0x0044ded0,0x0044e1a0,0x0044ded0
+2154,function,DirtySDK::ProtoSSLHandleCertificate,"Checks the chain length and runs the certificate parser 0x0044CD90; 0x15 on success, 0x1004 on error.",0x0044df50,0x0044e220,0x0044df50
+2155,function,DirtySDK::ProtoSSLSendClientKeyExchange,"Handshake step for state 0x16: ClientKeyExchange. Makes a 48-byte pre-master secret at session+0x64 (ProtoSSLMixRandom 0x0044C280 fills it, then the version bytes 3, 0 on top), RSA-encrypts it with the server's public key from the certificate (modulus at session+0x84C, length +0x848, exponent +0x8D4, length +0x8D0; CryptRSAInit 0x00451640, CryptRSAInitMaster 0x004516A0 for the PKCS#1 type 2 padding, CryptRSAEncrypt 0x00451740). Derives the master secret (session+0x94, 0x30 bytes) the SSL 3.0 way, three rounds of MD5(premaster + SHA1('A', 'BB', 'CCC' + premaster + client random +0x24 + server random +0x44)), and expands the key block (session+0xC4, 0x80 bytes, eight rounds over the master secret, server random then client random, with 'A' to 'HHHHHHHH') into the MAC secrets and keys, setting the pointers +0x148 (client write MAC), +0x144 (server write MAC), +0x150 (client write key), +0x14C (server write key). Sends handshake message 0x10 (4-byte header, length) through ProtoSSLBuildRecord with the encrypted secret as payload. Returns the next state 0x17. Stack argument: the ProtoSSL state.",0x0044dfc0,0x0044e290,0x0044dfc0
+2156,function,DirtySDK::ProtoSSLActivateWriteCipher,"Sets the RC4 write cipher up (state at +0x30E, 16-byte key pointed to by +0x150), sends the pending record and resets the write sequence (+4); returns state 0x18.",0x0044e280,0x0044e550,0x0044e280
+2157,function,DirtySDK::ProtoSSLSendFinished,"Handshake step for state 0x18: sends the Finished message (handshake type 0x14, length 0x24). A copy of the running handshake MD5 (+0x154) and SHA-1 (+0x1B0) contexts has the sender label 'CLNT' (0x00AE6E54) and the master secret (+0x94) added, then the SSL 3.0 inner and outer hashes with the 0x36 and 0x5C pads (0x00AE69C0, 0x00AE69F0): MD5 gives 16 bytes, SHA-1 20, together the 36-byte payload, sent with ProtoSSLBuildRecord (type 0x16). Returns the next state 0x19. Stack argument: the ProtoSSL state.",0x0044e2d0,0x0044e5a0,0x0044e2d0
+2158,function,DirtySDK::ProtoSSLActivateReadCipher,"Sets the RC4 read cipher up (state at +0x20C, key pointed to by +0x14C) and resets the read sequence (+0x10); returns state 0x1A.",0x0044e4a0,0x0044e770,0x0044e4a0
+2159,function,DirtySDK::ProtoSSLVerifyServerFinished,"Handshake step for state 0x1A: checks the server's Finished message. EAX is the ProtoSSL state, the stack argument the 36-byte Finished body found by ProtoSSLFindHandshakeMessage(0x14). Builds the same MD5 and SHA-1 values as ProtoSSLSendFinished with the sender label 'SRVR' (0x00AE6E5C) over the handshake hashes at +0x154 and +0x1B0 and compares the first 16 bytes and the next 20. Returns state 0x1E (connected) when both match, 0x1004 (handshake failed) otherwise.",0x0044e4d0,0x0044e7a0,0x0044e4d0
+2160,function,DirtySDK::ProtoSSLUpdate,"Connection and SSL 3.0 handshake state machine: 1 waits for the lookup record (+4, done function in slot 2), 2 SocketConnect, 3 polls ""stat""; 0x14 to 0x18 client hello, certificate, key exchange and cipher specs; 0x1E secure and 0x1F plain; sends the outgoing record buffer with SocketSendto and reads the 5-byte record header and payload with SocketRecvfrom.",0x0044e780,0x0044ea50,0x0044e780
+2161,function,DirtySDK::ProtoSSLSend,Plain: SocketSendto; secure (state 0x1E): sends up to 16000 bytes as record type 0x17 and updates.,0x0044eb60,0x0044ee30,0x0044eb60
+2162,function,DirtySDK::ProtoSSLRecv,"Plain: SocketRecvfrom; secure: copies the decrypted application-data record bytes (type 0x17), NUL-terminating when shorter than the buffer.",0x0044ec00,0x0044eed0,0x0044ec00
+2163,function,DirtySDK::ProtoSSLStat,"Selector query: ""sock"" gives the socket; any other goes to SocketInfo, with ""stat"" mapped by the ProtoSSL state to 0 (busy), 1 (up) or negative.",0x0044ece0,0x0044efb0,0x0044ece0
+2164,function,DirtySDK::ProtoAriesGetSecureState,Copies out the 0x20-byte key and the 0x34-byte ticket record kept at +0x98 of the link.,0x0044ed70,0x0044f040,0x0044ed70
+2165,function,DirtySDK::ProtoAriesSecureInit,Sets up two RC4 states (CryptArc4Init) from the two 16-byte halves of a 32-byte key; a null key leaves secure mode off.,0x0044edb0,0x0044f080,0x0044edb0
+2166,function,DirtySDK::ProtoAriesSecureDecrypt,RC4-decrypts a buffer in place with the receive state and marks the stream started.,0x0044ee00,0x0044f0d0,0x0044ee00
+2167,function,DirtySDK::ProtoAriesSecureVerify,"Checks the 8-byte MD5-based trailer of a received message: -1 too short, -2 mismatch, 0 ok.",0x0044ee30,0x0044f100,0x0044ee30
+2168,function,DirtySDK::ProtoAriesSecureStrip,Message length without the 8-byte trailer when secure.,0x0044ef40,0x0044f210,0x0044ef40
+2169,function,DirtySDK::ProtoAriesSecureGrow,Message length plus the 8-byte trailer when secure.,0x0044ef70,0x0044f240,0x0044ef70
+2170,function,DirtySDK::ProtoAriesSecureSign,Writes the 8-byte MD5-based trailer after a message in secure mode.,0x0044ef90,0x0044f260,0x0044ef90
+2171,function,DirtySDK::ProtoAriesSecureEncrypt,RC4-encrypts a buffer in place with the send state when secure.,0x0044eff0,0x0044f2c0,0x0044eff0
+2172,function,DirtySDK::CryptArc4Init,"RC4 key schedule: 256-byte state, key, key length, iteration count.",0x0044f010,0x0044f2e0,0x0044f010
+2173,function,DirtySDK::CryptArc4Apply,RC4 keystream XOR over a buffer.,0x0044f0b0,0x0044f380,0x0044f0b0
+2174,function,DirtySDK::MergeSort,"Bottom-up merge sort of an array (context, base, count, element size, compare function); scratch arrays on the stack up to 0x200 elements, else allocated (tag ""lsor"").",0x0044f160,0x0044f430,0x0044f160
+2175,function,DirtySDK::ProtoUdpCreate,"Allocates the ring-buffer UDP wrapper (tag ""pudp""; slots of packet size plus 0x14 bytes; lock ""protoudp"").",0x0044f530,0x0044f800,0x0044f530
+2176,function,DirtySDK::ProtoUdpRecv,Takes the next datagram from the ring buffer under the lock; copies it and its 0x10-byte sender; -1 if the caller's buffer is too small.,0x0044f5c0,0x0044f890,0x0044f5c0
+2177,function,DirtySDK::ProtoUdpSend,SocketSendto on the UDP socket to the address; -1 without a socket.,0x0044f660,0x0044f930,0x0044f660
+2178,function,DirtySDK::ProtoUdpUpdate,"Under the lock drains the socket with SocketRecvfrom into the ring buffer, filtered by source address and port.",0x0044f690,0x0044f960,0x0044f690
+2179,function,DirtySDK::ProtoUdpOpen,"Closes any socket, clears the ring state, opens a UDP socket and binds it to the port.",0x0044f780,0x0044fa50,0x0044f780
+2180,function,DirtySDK::ProtoUdpDestroy,"Closes the socket, kills the lock and frees the object (tag ""pudp"").",0x0044f810,0x0044fae0,0x0044f810
+2181,function,DirtySDK::XmlDecodeEntity,"Decodes the character reference or entity after ""&"" (#NN, #xHH, amp, apos, quot, lt, gt) into a byte (default ""~"").",0x0044f860,0x0044fb30,0x0044f860
+2182,function,DirtySDK::XmlContent,"Returns the start of an element's contents after its opening tag, or null for an empty element.",0x0044f950,0x0044fc20,0x0044f950
+2183,function,DirtySDK::XmlAttribValue,Finds an attribute by name (EAX) in an opening tag and returns its value start.,0x0044f990,0x0044fc60,0x0044f990
+2184,function,DirtySDK::XmlIsCDataStart,"True when the text at EAX is ""<![CDATA["".",0x0044fae0,0x0044fdb0,0x0044fae0
+2185,function,DirtySDK::XmlIsCDataEnd,"True when the text at EAX is ""]]>"".",0x0044fb20,0x0044fdf0,0x0044fb20
+2186,function,DirtySDK::XmlSkip,"Skips one element (comments, declarations, CDATA and nested elements) and returns the pointer after its end tag.",0x0044fb60,0x0044fe30,0x0044fb60
+2187,function,DirtySDK::XmlFind,"Finds an element by dotted path (""root.device""; ""%*:"" matches any namespace prefix) and returns its start.",0x0044fd00,0x0044ffd0,0x0044fd00
+2188,function,DirtySDK::XmlNext,Next sibling element with the same name.,0x0044fec0,0x00450190,0x0044fec0
+2189,function,DirtySDK::XmlContentGetString,"Copies the element contents (entities decoded, CDATA read, trailing blanks trimmed) into a buffer; the last argument is the default.",0x0044ff70,0x00450240,0x0044ff70
 2190,retired,,,,,
-2191,function,,,0x004500a0,0x00450370,0x004500a0
-2192,function,,,0x00450130,0x00450400,0x00450130
-2193,function,,,0x004501c0,0x00450490,0x004501c0
-2194,function,,,0x004502a0,0x00450570,0x004502a0
-2195,function,,,0x00450390,0x00450660,0x00450390
-2196,function,,,0x004503e0,0x004506b0,0x004503e0
-2197,function,,,0x004505a0,0x00450870,0x004505a0
-2198,function,,,0x004505e0,0x004508b0,0x004505e0
-2199,function,,,0x00450690,0x00450960,0x00450690
-2200,function,,,0x00450760,0x00450a30,0x00450760
-2201,function,,,0x00450e40,0x00451110,0x00450e40
-2202,function,,,0x00450e70,0x00451140,0x00450e70
-2203,function,,,0x00450f20,0x004511f0,0x00450f20
-2204,function,,,0x00451030,0x00451300,0x00451030
-2205,function,,,0x00451080,0x00451350,0x00451080
-2206,function,,,0x004510d0,0x004513a0,0x004510d0
-2207,function,,,0x004511f0,0x004514c0,0x004511f0
-2208,function,,,0x00451290,0x00451560,0x00451290
-2209,function,,,0x00451640,0x00451910,0x00451640
-2210,function,,,0x004516a0,0x00451970,0x004516a0
-2211,function,,,0x00451730,0x00451a00,0x00451730
-2212,function,,,0x00451740,0x00451a10,0x00451740
+2191,function,DirtySDK::XmlContentGetInteger,Parses the element contents as a signed decimal integer; the second argument is the default.,0x004500a0,0x00450370,0x004500a0
+2192,function,DirtySDK::XmlContentGetAddress,"Parses the element contents as a dotted quad, first octet in the top byte; default when not one.",0x00450130,0x00450400,0x00450130
+2193,function,DirtySDK::XmlAttribGetString,"Copies an attribute value (entities decoded, quotes removed) into a buffer.",0x004501c0,0x00450490,0x004501c0
+2194,function,DirtySDK::XmlAttribGetInteger,"Attribute as an integer; ""true"" is 1, ""false"" is 0.",0x004502a0,0x00450570,0x004502a0
+2195,function,DirtySDK::CryptSha1ToBytes,Writes up to 20 bytes of the SHA-1 state big-endian.,0x00450390,0x00450660,0x00450390
+2196,function,DirtySDK::CryptSha1ProcessBlock,"SHA-1 compression function for one 64-byte block. Usercall: EAX the block (the context's buffer at +0x1C), stack the CryptSha1 context whose state words at +8 to +0x18 are updated. Identified by the big-endian word load, the 80-word expansion (xor of w[i-3], w[i-8], w[i-14], w[i-16], rotate left 1) and the four round constants 0x5A827999, 0x6ED9EBA1, 0x8F1BBCDC, 0xCA62C1D6. Called by CryptSha1Update and CryptSha1Final.",0x004503e0,0x004506b0,0x004503e0
+2197,function,DirtySDK::CryptSha1Init,SHA-1 context: count 0 and the standard IV 0x67452301 ... 0xC3D2E1F0.,0x004505a0,0x00450870,0x004505a0
+2198,function,DirtySDK::CryptSha1Update,"Buffers input in 64-byte blocks (byte count at +0, fill at +4, buffer at +0x1C) and runs the block function 0x004503E0.",0x004505e0,0x004508b0,0x004505e0
+2199,function,DirtySDK::CryptSha1Final,"Pads, appends the bit length, runs the last block and writes the digest with CryptSha1ToBytes.",0x00450690,0x00450960,0x00450690
+2200,function,DirtySDK::CryptMD5ProcessBlock,"MD5 compression function for one 64-byte block. Usercall: ECX the block (copied to 16 stack words), EBX the CryptMD5 context whose state words at +0x4C to +0x58 are updated. Identified by the four rounds of 16 steps with the sine-table constants 0xD76AA478, 0xE8C7B756, 0x242070DB and so on, and the F/G/H/I mixing. Called by CryptMD5Update and CryptMD5Final.",0x00450760,0x00450a30,0x00450760
+2201,function,DirtySDK::CryptMD5Init,MD5 context: count 0 at +0x48 and the standard IV 0x67452301 ... 0x10325476 at +0x4C.,0x00450e40,0x00451110,0x00450e40
+2202,function,DirtySDK::CryptMD5Update,Buffers input in 64-byte blocks; a negative length means a NUL-terminated string.,0x00450e70,0x00451140,0x00450e70
+2203,function,DirtySDK::CryptMD5Final,"CryptMD5Final(ctx, out, length): pads with 0x80 and zeros, writes the bit count (little endian) at +0x38, runs CryptMD5ProcessBlock (0x00450760) and writes the digest from the state words at +0x4C. A length above 0x20 writes 32 lowercase hex digits and a terminating zero; otherwise it writes the first length bytes of the digest (at most 16).",0x00450f20,0x004511f0,0x00450f20
+2204,function,DirtySDK::CryptBigAdd,"Big-number add on arrays of 16-bit words, most significant word first. Usercall: EAX first addend, EDX second, ECX word count, stack output (may alias an input). Returns the carry out. Used by CryptBigModMul to double and add.",0x00451030,0x00451300,0x00451030
+2205,function,DirtySDK::CryptBigSub,"Big-number subtract on arrays of 16-bit words, most significant word first. Usercall: ECX minuend, EAX subtrahend, EDX word count, stack output; returns the borrow (0 when the minuend is not smaller). Used by CryptBigModMul to reduce by the modulus.",0x00451080,0x00451350,0x00451080
+2206,function,DirtySDK::CryptBigModMul,"Modular multiplication of two big numbers by binary double-and-add: out = a * b mod m on arrays of 16-bit words. EDI the word count, stack (out, a, b, m). Scans the bits of a from the top; each step doubles the accumulator with CryptBigAdd and subtracts m (CryptBigSub) when it is not smaller or overflowed, and when the bit is set adds b and reduces again. Two 0x200-byte stack temporaries. Called by CryptBigModExp.",0x004510d0,0x004513a0,0x004510d0
+2207,function,DirtySDK::CryptBigFromBytes,"Converts a big-endian byte string to an array of 16-bit words, most significant first: EAX byte count, ECX wanted word count (negative: just (count+1)/2), EDX destination, stack source. Zero-fills extra leading words, handles an odd byte count with a leading short word. Returns the word count. Used by CryptBigModExp for modulus and base.",0x004511f0,0x004514c0,0x004511f0
+2208,function,DirtySDK::CryptBigModExp,"Modular exponentiation on byte strings, base ^ exponent mod modulus, the heart of the RSA public operation. Stack (out, base, length, exponent bytes), EAX the modulus bytes, ESI the exponent length; converts to words (CryptBigFromBytes) and multiplies with CryptBigModMul. Special-cases the exponents 3 (square, multiply), 0x11 (four squarings, multiply) and 0x10001 (sixteen squarings, multiply); any other exponent goes through square-and-multiply over its bits. Writes length bytes big-endian. Called only by CryptRSAEncrypt.",0x00451290,0x00451560,0x00451290
+2209,function,DirtySDK::CryptRSAInit,"CryptRSAInit(state, modulus, modulusLength, exponent, exponentLength): stores the two lengths (each limited to 0x100) at +0 and +4 and copies the modulus to +0x408 and the exponent to +0x509 of the CryptRSA state. Plain ret.",0x00451640,0x00451910,0x00451640
+2210,function,DirtySDK::CryptRSAInitMaster,"CryptRSAInitMaster(state, secret, length): fills the state's data block (+8, as long as the modulus) with a PKCS#1 v1.5 type 2 block: 0x00, 0x02, random non-zero padding (seeded from NetTick, multiplier 0x10DCD), 0x00, then the secret at the end. Used for the 48-byte pre-master secret in ProtoSSLSendClientKeyExchange.",0x004516a0,0x00451970,0x004516a0
+2211,function,DirtySDK::CryptRSAInitSignature,"CryptRSAInitSignature(state, data, length): copies length bytes into the state's data block at +8 (the signature to be checked with CryptRSAEncrypt). Plain ret (a jmp into memcpy with the destination moved).",0x00451730,0x00451a00,0x00451730
+2212,function,DirtySDK::CryptRSAEncrypt,"CryptRSAEncrypt(state): runs CryptBigModExp on the data block at +8 in place, modulus at +0x408, exponent at +0x509 (lengths at +0 and +4). The public-key operation: encrypts with the public key, or recovers the block signed with the private one.",0x00451740,0x00451a10,0x00451740
 2213,function,,,0x00451768,0x00451a38,0x00451768
 2214,function,,,0x0045176e,0x00451a3e,0x0045176e
 2215,function,,,0x00451774,0x00451a44,0x00451774
@@ -8230,7 +8230,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8229,function,GraphicsStructures::ObjectNodeMesh::SetLightmapOffsetAndScale,,0x00559d70,0x00774d90,0x00559d70
 8230,function,GraphicsStructures::ObjectNodeMesh::Render,,0x00559d80,0x00774da0,0x00559d80
 8231,function,GraphicsStructures::ObjectNodeMesh::RenderPasses,,0x00559dd0,0x00774df0,0x00559dd0
-8232,function,GraphicsStructures::IObjectNodeMesh::SetColor,,0x00559e10,0x00774e30,0x00559e10
+8232,function,GraphicsStructures::ObjectNodeMesh::SetColor,,0x00559e10,0x00774e30,0x00559e10
 8233,function,GraphicsStructures::ObjectNodeMesh::GetBoundingSphere,,0x00559ea0,0x00774ec0,0x00559ea0
 8234,function,GraphicsStructures::ObjectNodeMesh::GetMemoryFootprint,,0x00559eb0,0x00774ed0,0x00559eb0
 8235,function,Graphics::IRenderableNode::SetVectorParameter,,0x00559ef0,0x00779ea0,0x00559ef0
@@ -8246,8 +8246,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8245,function,GraphicsStructures::ObjectNodeMesh::GetMeshName,,0x0055a360,0x007752f0,0x0055a360
 8246,function,GraphicsStructures::ObjectNodeMesh::GetMeshChunkFlag_0x1D0,,0x0055a370,0x00775300,0x0055a370
 8247,function,GraphicsStructures::ObjectNodeMesh::GetBounds,,0x0055a390,0x00775320,0x0055a390
-8248,function,GraphicsStructures::IObjectNodeMesh::UnlockVertexBuffer,,0x0055a3b0,0x00775340,0x0055a3b0
-8249,function,GraphicsStructures::IObjectNodeMesh::UnlockIndexBuffer,,0x0055a400,0x00775390,0x0055a400
+8248,function,GraphicsStructures::ObjectNodeMesh::UnlockVertexBuffer,,0x0055a3b0,0x00775340,0x0055a3b0
+8249,function,GraphicsStructures::ObjectNodeMesh::UnlockIndexBuffer,,0x0055a400,0x00775390,0x0055a400
 8250,function,GraphicsStructures::ObjectNodeMesh::UpdateWorldTransform,,0x0055a450,0x007753e0,0x0055a450
 8251,function,GraphicsStructures::ObjectNodeMesh::GetWorldBoundingSphere,,0x0055a6d0,0x00775660,0x0055a6d0
 8252,function,GraphicsStructures::ObjectNodeMesh::MergeVertexDeclarations,,0x0055a7c0,0x00775750,0x0055a7c0
@@ -8257,7 +8257,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8256,function,GraphicsStructures::ObjectNodeVFXMesh::Render,,0x0055aa90,0x00775a20,0x0055aa90
 8257,function,GraphicsStructures::ObjectNodeVFXMesh::RenderPasses,,0x0055aad0,0x00775a60,0x0055aad0
 8258,function,GraphicsStructures::ObjectNodeMesh::ApplyTextureVariant,,0x0055ab10,0x00775aa0,0x0055ab10
-8259,function,GraphicsStructures::IObjectNodeMesh::SetVertexPositions,,0x0055abd0,0x00775b60,0x0055abd0
+8259,function,GraphicsStructures::ObjectNodeMesh::SetVertexPositions,,0x0055abd0,0x00775b60,0x0055abd0
 8260,function,GraphicsStructures::ObjectNodeMesh::BakeWorldPlacement,,0x0055ad80,0x00775d10,0x0055ad80
 8261,function,Graphics::IRenderableNode::GetTextureDefaultName,,0x0055afa0,0x0077bc00,0x0055afa0
 8262,function,GraphicsStructures::ObjectNodeMesh::UpdateBonePalette,,0x0055b180,0x00775f70,0x0055b180
@@ -8283,12 +8283,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8282,function,GraphicsStructures::ObjectNodeMesh::`scalar deleting destructor',,0x0055b520,0x00776320,0x0055b520
 8283,function,GraphicsStructures::ObjectNodeMesh::ApplyMorph,,0x0055b540,0x00776340,0x0055b540
 8284,function,GraphicsStructures::ObjectNodeVFXMesh::`scalar deleting destructor',,0x0055b660,0x00776460,0x0055b660
-8285,function,GraphicsStructures::IObjectNodeMesh::RebuildRenderMesh,,0x0055b680,0x00776480,0x0055b680
+8285,function,GraphicsStructures::ObjectNodeMesh::RebuildRenderMesh,,0x0055b680,0x00776480,0x0055b680
 8286,function,GraphicsStructures::ObjectNodeMesh::ObjectNodeMesh,,0x0055b860,0x00776660,0x0055b860
 8287,function,GraphicsStructures::ObjectNodeVFXMesh::ObjectNodeVFXMesh,,0x0055b9e0,0x007767e0,0x0055b9e0
-8288,function,GraphicsStructures::IObjectNodeMesh::LockVertexBuffer,,0x0055ba50,0x00776850,0x0055ba50
-8289,function,GraphicsStructures::IObjectNodeMesh::LockIndexBuffer,,0x0055bb30,0x00776930,0x0055bb30
-8290,function,GraphicsStructures::IObjectNodeMesh::ReplaceMesh,,0x0055bc10,0x00776a10,0x0055bc10
+8288,function,GraphicsStructures::ObjectNodeMesh::LockVertexBuffer,,0x0055ba50,0x00776850,0x0055ba50
+8289,function,GraphicsStructures::ObjectNodeMesh::LockIndexBuffer,,0x0055bb30,0x00776930,0x0055bb30
+8290,function,GraphicsStructures::ObjectNodeMesh::ReplaceMesh,,0x0055bc10,0x00776a10,0x0055bc10
 8291,function,AtmosphereSky::Recompute,,0x0055bfa0,0x0076cc10,0x0055bfa0
 8292,function,AtmosphereSky::SetDefaults,,0x0055c910,0x0076d580,0x0055c910
 8293,function,GraphicsStructures::FontGlyphBatch::~FontGlyphBatch,,0x0055cac0,0x00743130,0x0055cac0
@@ -9656,19 +9656,19 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9655,function,GraphicsStructures::ObjectNodeWeapontrail::ObjectNodeWeapontrail,,0x005b1a00,0x007b15f0,0x005b1a00
 9656,function,GraphicsStructures::ObjectNodeWeapontrailBlueprint::Instantiate,,0x005b1a60,0x007b1650,0x005b1a60
 9657,function,GraphicsStructures::ObjectNodeTerrainBlueprint::GetNodeSize,,0x005b1e80,0x007b1a70,0x005b1e80
-9658,function,Graphics::IRenderableNode::SetFloatParameter,,0x005b1e90,0x007b1a80,0x005b1e90
-9659,function,Graphics::IRenderableNode::SetVectorParameter,,0x005b1ec0,0x007b1ab0,0x005b1ec0
-9660,function,Graphics::IRenderableNode::SetVector4ArrayParameter,,0x005b1ef0,0x007b1ae0,0x005b1ef0
-9661,function,Graphics::IRenderableNode::SetMatrixParameter,,0x005b1f20,0x007b1b10,0x005b1f20
+9658,function,GraphicsStructures::ObjectNodeTerrain::SetFloatParameter,,0x005b1e90,0x007b1a80,0x005b1e90
+9659,function,GraphicsStructures::ObjectNodeTerrain::SetVectorParameter,,0x005b1ec0,0x007b1ab0,0x005b1ec0
+9660,function,GraphicsStructures::ObjectNodeTerrain::SetVector4ArrayParameter,,0x005b1ef0,0x007b1ae0,0x005b1ef0
+9661,function,GraphicsStructures::ObjectNodeTerrain::SetMatrixParameter,,0x005b1f20,0x007b1b10,0x005b1f20
 9662,function,GraphicsStructures::ObjectNodeTerrain::GetMemoryFootprint,,0x005b1f50,0x007b1b40,0x005b1f50
 9663,function,GraphicsStructures::IObjectNodeTerrain::~IObjectNodeTerrain,,0x005b1fd0,0x007b1bc0,0x005b1fd0
 9664,function,GraphicsStructures::IObjectNodeTerrain::`scalar deleting destructor',,0x005b1fe0,0x007b1bd0,0x005b1fe0
 9665,function,GraphicsStructures::ObjectNodeTerrain::Render,,0x005b2010,0x007b1c00,0x005b2010
-9666,function,GraphicsStructures::IObjectNodeTerrain::LockVertexBuffer,,0x005b2050,0x007b1c40,0x005b2050
-9667,function,GraphicsStructures::IObjectNodeTerrain::LockIndexBuffer,,0x005b2090,0x007b1c80,0x005b2090
-9668,function,GraphicsStructures::IObjectNodeTerrain::UnlockVertexBuffer,,0x005b20d0,0x007b1cc0,0x005b20d0
-9669,function,GraphicsStructures::IObjectNodeTerrain::UnlockIndexBuffer,,0x005b2100,0x007b1cf0,0x005b2100
-9670,function,GraphicsStructures::IObjectNodeTerrain::SetTransform,,0x005b2130,0x007b1d20,0x005b2130
+9666,function,GraphicsStructures::ObjectNodeTerrain::LockVertexBuffer,,0x005b2050,0x007b1c40,0x005b2050
+9667,function,GraphicsStructures::ObjectNodeTerrain::LockIndexBuffer,,0x005b2090,0x007b1c80,0x005b2090
+9668,function,GraphicsStructures::ObjectNodeTerrain::UnlockVertexBuffer,,0x005b20d0,0x007b1cc0,0x005b20d0
+9669,function,GraphicsStructures::ObjectNodeTerrain::UnlockIndexBuffer,,0x005b2100,0x007b1cf0,0x005b2100
+9670,function,GraphicsStructures::ObjectNodeTerrain::SetTransform,,0x005b2130,0x007b1d20,0x005b2130
 9671,function,GraphicsStructures::ObjectNodeTerrain::CollectResourceFootprint,,0x005b2210,0x007b1e00,0x005b2210
 9672,function,Graphics::IRenderableNode::SetTextureParameter,,0x005b2260,0x00751500,0x005b2260
 9673,function,GraphicsStructures::ObjectNodeTerrainBlueprint::GetMemoryFootprint,,0x005b22a0,0x007b1e50,0x005b22a0
@@ -9682,15 +9682,15 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9681,function,GraphicsStructures::ObjectNodeTerrain::GetLightState,,0x005b2470,0x00428450,0x005b2470
 9682,function,GraphicsStructures::ObjectNode::GetName`adjustor{384}',,0x005b2480,0x00751f50,0x005b2480
 9683,function,Stub::ReturnEight`adjustor{384}',,0x005b2490,0x007b2020,0x005b2490
-9684,function,GraphicsStructures::IObjectNodeTerrain::CreateMaskTextures,,0x005b24a0,0x007b2030,0x005b24a0
-9685,function,GraphicsStructures::IObjectNodeTerrain::SetMaskTexture,,0x005b2690,0x007b2220,0x005b2690
+9684,function,GraphicsStructures::ObjectNodeTerrain::CreateMaskTextures,,0x005b24a0,0x007b2030,0x005b24a0
+9685,function,GraphicsStructures::ObjectNodeTerrain::SetMaskTexture,,0x005b2690,0x007b2220,0x005b2690
 9686,function,GraphicsStructures::ObjectNodeTerrain::`scalar deleting destructor',,0x005b2700,0x007b2290,0x005b2700
 9687,function,GraphicsStructures::ObjectNodeTerrain::ObjectNodeTerrain,,0x005b2720,0x007b22b0,0x005b2720
-9688,function,GraphicsStructures::IObjectNodeTerrain::CreateMesh,,0x005b2860,0x007b23f0,0x005b2860
+9688,function,GraphicsStructures::ObjectNodeTerrain::CreateMesh,,0x005b2860,0x007b23f0,0x005b2860
 9689,function,GraphicsStructures::ObjectNodeTerrain::ObjectNodeTerrain,,0x005b2b30,0x007b26c0,0x005b2b30
 9690,function,GraphicsStructures::ObjectNodeTerrainBlueprint::Instantiate,,0x005b2b90,0x007b2720,0x005b2b90
-9691,function,GraphicsStructures::IObjectNodeTerrain::LockMaskTextures,,0x005b2cc0,0x007b2850,0x005b2cc0
-9692,function,GraphicsStructures::IObjectNodeTerrain::UnlockMaskTextures,,0x005b2e40,0x007b29d0,0x005b2e40
+9691,function,GraphicsStructures::ObjectNodeTerrain::LockMaskTextures,,0x005b2cc0,0x007b2850,0x005b2cc0
+9692,function,GraphicsStructures::ObjectNodeTerrain::UnlockMaskTextures,,0x005b2e40,0x007b29d0,0x005b2e40
 9693,function,GraphicsStructures::ObjectNodeCrustBlueprint::GetTreeSize,,0x005b2f80,0x007b2b10,0x005b2f80
 9694,function,GraphicsStructures::ObjectNodeCrustBlueprint::GetMemoryFootprint,,0x005b2fe0,0x007b2b70,0x005b2fe0
 9695,function,GraphicsStructures::ObjectNodeCrust::ObjectNodeCrust,,0x005b3020,0x007b2bb0,0x005b3020
@@ -13809,7 +13809,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13808,function,"Map<unsigned long long,std::vector<unsigned int>>::~Map",,0x00688c70,0x00574a80,0x00688c70
 13809,function,CCArea::CCArea,,0x00688cb0,0x00574ac0,0x00688cb0
 13810,function,CCArea::GetMessageReceiverClass,,0x006898c0,0x005756d0,0x006898c0
-13811,function,SEffectsHolder::GetObjectType,,0x006898d0,0x005756e0,0x006898d0
+13811,function,CCArea::GetObjectType,,0x006898d0,0x005756e0,0x006898d0
 13812,function,Stub::GetDword_0x334,,0x006898e0,0x005756f0,0x006898e0
 13813,function,CCArea::AsEffectsHolder,,0x006898f0,0x00575700,0x006898f0
 13814,function,CResGFF::CResGFF,,0x00689900,0x00575710,0x00689900
@@ -14185,9 +14185,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14184,function,ECBase::ECDynArray<unk_ptr>::DeleteAll,,0x00699560,0x0058a850,0x00699560
 14185,function,CCObject::CCObject,"+0x140..+0x14C is the identity quaternion (0,0,0,1) (0x006997E3..0x006997F7)",0x00699670,0x0058a960,0x00699670
 14186,function,CCObject::SetFacingAngle,,0x00699eb0,0x0058b1a0,0x00699eb0
-14187,function,SEffectsHolder::CallAttributeVfunction15,,0x00699f20,0x0058b210,0x00699f20
-14188,function,SEffectsHolder::PlayAnimation,,0x00699f30,0x0058b220,0x00699f30
-14189,function,SEffectsHolder::SetFadeScale,,0x00699f60,0x0058b260,0x00699f60
+14187,function,CCObject::CallAttributeVfunction15,,0x00699f20,0x0058b210,0x00699f20
+14188,function,CCObject::PlayAnimation,,0x00699f30,0x0058b220,0x00699f30
+14189,function,CCObject::SetFadeScale,,0x00699f60,0x0058b260,0x00699f60
 14190,function,Stub::ReturnZero_4,,0x00699f70,0x0058b270,0x00699f70
 14191,function,CCObject::ForScript_SetLocName,,0x00699f80,0x0058b290,0x00699f80
 14192,function,CCObject::IsActive,"Whether the object is active: its active byte (+0x2C5) set and deactivationPending (+0x421) clear. Slot 27 of the vtable of the interface at +0x70, so this is object+0x70 (+0x255 and +0x3B1 in the code)",0x00699fa0,0x0058b2b0,0x00699fa0
@@ -61786,21 +61786,21 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 61785,data,,,0x00ae699c,0x00ae09c4,0x00ae699c
 61786,data,,,0x00ae69ac,0x00ae09d4,0x00ae69ac
 61787,data,,,0x00ae69b8,0x00ae09e0,0x00ae69b8
-61788,data,,,0x00ae69c0,0x00ae09e8,0x00ae69c0
-61789,data,,,0x00ae69f0,0x00ae0a18,0x00ae69f0
-61790,data,,,0x00ae6a20,0x00ae0a48,0x00ae6a20
+61788,data,DirtySDK::g_ssl3MacPad1,"48 bytes of 0x36 ('6'), the SSL 3.0 inner MAC pad; the SHA-1 users read the first 0x28 bytes. Read by ProtoSSLBuildRecord, ProtoSSLProcessRecord, ProtoSSLSendClientKeyExchange, ProtoSSLSendFinished, ProtoSSLVerifyServerFinished.",0x00ae69c0,0x00ae09e8,0x00ae69c0
+61789,data,DirtySDK::g_ssl3MacPad2,"48 bytes of 0x5C, the SSL 3.0 outer MAC pad; the SHA-1 users read the first 0x28 bytes.",0x00ae69f0,0x00ae0a18,0x00ae69f0
+61790,data,DirtySDK::g_sslCipherSuites,"Table of the two cipher suites the library offers, 5-byte entries: u16 suite id (5 = RSA_WITH_RC4_128_SHA, 4 = RSA_WITH_RC4_128_MD5), u8 1, u8 cipher (1 = RC4), u8 MAC length (0x14, 0x10). ProtoSSLParseServerHello matches the server's choice and keeps a pointer to the entry at session+0x20 (0x0044DF35).",0x00ae6a20,0x00ae0a48,0x00ae6a20
 61791,data,,,0x00ae6a21,0x00ae0a49,0x00ae6a21
 61792,data,,,0x00ae6a2b,0x00ae0a53,0x00ae6a2b
-61793,data,,,0x00ae6a30,0x00ae0a58,0x00ae6a30
+61793,data,DirtySDK::g_asn1OidTable,"Table of DER object identifiers ProtoSSLFindOid (0x0044CCB0) matches: 0x18-byte entries of id, length, up to 16 bytes. Ids: 1 country (2.5.4.6), 3 locality (2.5.4.7), 2 state (2.5.4.8), 4 organization (2.5.4.10), 5 organizational unit (2.5.4.11), 6 common name (2.5.4.3), 7 rsaEncryption, 8 md5WithRSAEncryption, 9 sha1WithRSAEncryption (1.2.840.113549.1.1.x).",0x00ae6a30,0x00ae0a58,0x00ae6a30
 61794,data,,,0x00ae6a34,0x00ae0a5c,0x00ae6a34
 61795,data,,,0x00ae6a38,0x00ae0a60,0x00ae6a38
 61796,data,,,0x00ae6b20,0x00ae0b48,0x00ae6b20
 61797,data,,,0x00ae6ba0,0x00ae0bc8,0x00ae6ba0
 61798,data,,,0x00ae6c20,0x00ae0c48,0x00ae6c20
 61799,data,,,0x00ae6ca0,0x00ae0cc8,0x00ae6ca0
-61800,data,,,0x00ae6da0,0x00ae0dc8,0x00ae6da0
-61801,data,,,0x00ae6e54,0x00ae0e7c,0x00ae6e54
-61802,data,,,0x00ae6e5c,0x00ae0e84,0x00ae6e5c
+61800,data,DirtySDK::g_sslTrustedCertificates,"The certificate authorities the library trusts, 0x24-byte entries ended by a null first pointer: string pointers for the issuer country, state, locality, organization, (organizational unit, not compared) and common name, a modulus pointer (+0x18), the modulus length (+0x1C: 0x80, 0x7D, 0x80, 0x100) and the 4-byte public exponent (+0x20). ProtoSSLParseCertificate compares the certificate's issuer with these and checks the signature with the matching key. Four entries, all country US.",0x00ae6da0,0x00ae0dc8,0x00ae6da0
+61801,data,DirtySDK::g_ssl3SenderClient,"The text 'CLNT', the SSL 3.0 sender label of the client's Finished message (ProtoSSLSendFinished).",0x00ae6e54,0x00ae0e7c,0x00ae6e54
+61802,data,DirtySDK::g_ssl3SenderServer,"The text 'SRVR', the SSL 3.0 sender label of the server's Finished message (ProtoSSLVerifyServerFinished).",0x00ae6e5c,0x00ae0e84,0x00ae6e5c
 61803,data,,,0x00ae6e64,0x00ae0e8c,0x00ae6e64
 61804,data,,,0x00ae6f70,0x00ae0f98,0x00ae6f70
 61805,data,,,0x00ae7070,0x00ae1098,0x00ae7070
@@ -65842,7 +65842,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 65841,data,GameMode::vftable_at_20,,0x00b06d60,0x00aee178,0x00b06d60
 65842,data,GameMode::vftable_at_1c,,0x00b06d74,0x00aee18c,0x00b06d74
 65843,data,GameMode::vftable_at_8,,0x00b06dd0,0x00aee1e8,0x00b06dd0
-65844,data,GameMode::vftable,"GameMode's virtual table. Slots the engine reads as per-mode answers (all called on the controller's current mode, +0x74, or on the requested mode's object): 9 (+0x24) TakesData, true for Dialog, Cutscene, Loading and Pregame, read by GameModeController::TakeRequest 0x00640DA6 (a request for such a mode with no data is dropped, else AcceptData slot 5 is called with it); 10 (+0x28) IsBaseMode, true for Explore, Combat, Dead, FlyCam and Fixed, read by SetGameMode 0x006414DD (a request for such a mode goes to the base slot +0x8C, not the queue) and TakeRequest 0x00640C8B (any request replaces such a mode); 11 (+0x2C) IsFinished; 12 (+0x30) IsInterruptible; 16 (+0x40) ShouldShowSelectionRings (Explore's own 0x0070B540, true for Combat, false elsewhere), read by CCCreature::UpdateSelectionRing 0x006AAC66 and SetActive 0x006B5E49; 17 (+0x44) ShouldUpdateLod, true unless overridden (Dialog and Cutscene share 0x00692200, Loading 0x006C58E0), read by GameMode::Update 0x00694654; 18 (+0x48) RunsWorld, read by GameModeController::Update 0x00641FA8 before ClientAIMaster::Update and World_Update, false for Cutscene, Loading, Movie, CharGen, PartyPicker and Fixed; 19 (+0x4C) RunsPerception, true only for Explore and Combat, read by CCCreature::Update 0x006BE799 before UpdatePerception; 20 (+0x50) UpdatesModule, false only for Loading, read by GameMode::Update 0x006946B0; 21 (+0x54) RunsAmbientDialog, true only for Explore and Combat, read by CAmbientDialogManager::Update 0x006FF5BD. In the base these slots are the shared stubs Stub::ReturnFalse / Stub::ReturnTrue, so the slot names live here, not on a function",0x00b06de4,0x00aee1fc,0x00b06de4
+65844,data,GameMode::vftable,"GameMode's virtual table. Slots the engine reads as per-mode answers (all called on the controller's current mode, +0x74, or on the requested mode's object): 9 (+0x24) TakesData, true for Dialog, Cutscene, Loading and Pregame, read by GameModeController::TakeRequest 0x00640DA6 (a request for such a mode with no data is dropped, else AcceptData slot 5 is called with it); 10 (+0x28) IsBaseMode, true for Explore, Combat, Dead, FlyCam and Fixed, read by SetGameMode 0x006414DD (a request for such a mode goes to the base slot +0x8C, not the queue) and TakeRequest 0x00640C8B (any request replaces such a mode); 11 (+0x2C) IsFinished; 12 (+0x30) IsInterruptible; 16 (+0x40) ShouldShowSelectionRings (Explore's own 0x0070B540, true for Combat, false elsewhere), read by CCCreature::UpdateSelectionRing 0x006AAC66 and SetActive 0x006B5E49; 17 (+0x44) ShouldUpdateLod, true unless overridden (Dialog and Cutscene share 0x00692200, Loading 0x006C58E0), read by GameMode::Update 0x00694654; 18 (+0x48) RunsWorld, read by GameModeController::Update 0x00641FA8 before ClientAIMaster::Update and World_Update, false for Cutscene, Loading, Movie, CharGen, PartyPicker and Fixed; 19 (+0x4C) RunsPerception, true only for Explore and Combat, read by CCCreature::Update 0x006BE799 before UpdatePerception; 20 (+0x50) UpdatesModule, false only for Loading, read by GameMode::Update 0x006946B0; 21 (+0x54) RunsAmbientDialog, true only for Explore and Combat, read by CAmbientDialogManager::Update 0x006FF5BD. In the base these slots are the shared stubs Stub::ReturnFalse / Stub::ReturnTrue, so the slot names live here, not on a function. Past slot 29 (+0x74, the last of this 30-slot table) a derived mode's own table may carry more slots that the derived class itself declares, not inherited ones: GameModeExplore +0x78 UpdateLookAtOffset and +0x7C a Stub::ReturnOne_4, GameModeCombat +0x78 Stub::NoOp over Explore's, GameModeDead +0x78 Stub::ReturnOne_4 and +0x7C Stub::ReturnOne, GameModeDialog +0x78 Stub::ReturnOne_4, GameModeCutscene +0x78..+0xA0 (see its vftable); the other modes' tables end at slot 29, so a call through +0x78 or beyond is only valid on an object known to be one of those classes (the one such call, GameModeExplore::UpdateCamera 0x0070B702, is on its own this)",0x00b06de4,0x00aee1fc,0x00b06de4
 65845,data,,,0x00b06e5c,0x00aee274,0x00b06e5c
 65846,data,,,0x00b06e80,0x00aee298,0x00b06e80
 65847,data,AutoLevelUpMessage::vftable,,0x00b07be0,0x00aef000,0x00b07be0
@@ -66889,7 +66889,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 66888,data,GameModeCutscene::vftable_at_20,,0x00b0e6e8,0x00af5ac8,0x00b0e6e8
 66889,data,GameModeCutscene::vftable_at_1c,,0x00b0e6fc,0x00af5adc,0x00b0e6fc
 66890,data,GameModeCutscene::vftable_at_8,,0x00b0e758,0x00af5b38,0x00b0e758
-66891,data,GameModeCutscene::vftable,,0x00b0e76c,0x00af5b4c,0x00b0e76c
+66891,data,GameModeCutscene::vftable,"GameModeCutscene's virtual table: 41 slots (0x00B0E76C..0x00B0E80C; the next word, 0x00B0E810, is the wide string 'Cutscene...' which is not relocated, so the table ends there and is not cut short by it). Slots 0..29 are GameMode's, with the cutscene's own functions in 0 GetClassInfo, 1 Clone, 2 RegisterClass, 3 RegisterMessageHandlers, 4 destructor, 5 (+0x14) AcceptData 0x00691D20, 6 Enter 0x00692980, 7 Leave 0x00692450, 8 Update 0x00692C60, 11 (+0x2C) IsFinished 0x006922D0, 26 (+0x68) SetLodBandEdges 0x00691E70; the per-mode answers (see GameMode::vftable) are 9 TakesData true (0x004137C0 Stub::ReturnTrue), 17 ShouldUpdateLod 0x00692200 (shared with Dialog), 18 RunsWorld false, 28 UpdateCursorShape 0x0068CD50 (shared with Dialog and Movie), the rest GameMode's own. Slots 30..40 (+0x78..+0xA0) are not in GameMode's table: they are 11 virtuals GameModeCutscene declares itself, every one a shared stub that only answers true: 30 +0x78, 32 +0x80, 34 +0x88, 36 +0x90, 37 +0x94, 38 +0x98, 39 +0x9C, 40 +0xA0 are Stub::ReturnOne_4 0x00917480 (mov eax,1; ret 4: one argument, true) and 31 +0x7C, 33 +0x84, 35 +0x8C are Stub::ReturnOne 0x0079B310 (no argument, true). No instruction in the exe calls any of them: a scan of every function in the facts store for a call through [vtable+0x78..0xA0] found none on a game mode except GameModeExplore::UpdateCamera 0x0070B702 calling Explore's own +0x78, and the ones near them in GameModeCutscene::Enter 0x00692BE1 and Leave 0x00692608 and GameModeDialog (0x006911C4, 0x0068F691, 0x006913E0) go through the object at CClientExoApp+0x158 or a creature, not a mode. So what each slot asks is not shown by a caller: the cutscene's table has them, the code never asks",0x00b0e76c,0x00af5b4c,0x00b0e76c
 66892,data,,,0x00b0e810,0x00af5bf0,0x00b0e810
 66893,data,,,0x00b0e834,0x00af5c14,0x00b0e834
 66894,data,,,0x00b0e848,0x00af5c28,0x00b0e848
@@ -95698,17 +95698,17 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 95697,data,,,0x00bf1e0c,0x00bebe0c,0x00bf1e0c
 95698,data,,,0x00bf1e10,0x00bebe10,0x00bf1e10
 95699,data,,,0x00bf1e14,0x00bebe14,0x00bf1e14
-95700,data,,,0x00bf1e98,0x00bebe98,0x00bf1e98
-95701,data,,,0x00bf1e9c,0x00bebe9c,0x00bf1e9c
-95702,data,,,0x00bf1ea0,0x00bebea0,0x00bf1ea0
-95703,data,,,0x00bf1ea4,0x00bebea4,0x00bf1ea4
+95700,data,DirtySDK::g_tagFieldSeparator,The character TagField writers put after a tag value (0x0A at start).,0x00bf1e98,0x00bebe98,0x00bf1e98
+95701,data,DirtySDK::g_tagFieldSeparatorEnabled,Non-zero when TagField writers append the separator (1 at start).,0x00bf1e9c,0x00bebe9c,0x00bf1e9c
+95702,data,DirtySDK::g_netIdleCritPtr,Pointer to g_netIdleCrit (0x00C1DA74).,0x00bf1ea0,0x00bebea0,0x00bf1ea0
+95703,data,DirtySDK::g_netIdleThreadBusy,"-1 before the idle thread starts, 1 while NetLibIdleThread runs, 0 after it ends; NetLibDestroy waits on it.",0x00bf1ea4,0x00bebea4,0x00bf1ea4
 95704,data,,,0x00bf1ea8,0x00bebea8,0x00bf1ea8
 95705,data,,,0x00bf1fa8,0x00bebfa8,0x00bf1fa8
 95706,data,,,0x00bf1fe4,0x00bebfe4,0x00bf1fe4
 95707,data,,,0x00bf1fe8,0x00bebfe8,0x00bf1fe8
 95708,data,,,0x00bf2004,0x00bec004,0x00bf2004
 95709,data,,,0x00bf2008,0x00bec008,0x00bf2008
-95710,data,,,0x00bf2038,0x00bec038,0x00bf2038
+95710,data,DirtySDK::g_memGroupStack,"Memory-group stack of DirtyMemGroupEnter; depth at 0x00C1E73C, first pushed element at index 1.",0x00bf2038,0x00bec038,0x00bf2038
 95711,data,,,0x00bf2078,0x00bec078,0x00bf2078
 95712,data,Renderer::ShadowMaps::Update::s_blurWidth,,0x00bf2084,0x00c0d294,0x00bf2084
 95713,data,Renderer::ShadowMaps::Partition::FitProjection::s_boundsSmoothing,,0x00bf2088,0x00c0d298,0x00bf2088
@@ -99823,21 +99823,21 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 99822,data,,,0x00c1da18,0x00c17a18,0x00c1da18
 99823,data,,,0x00c1da1c,0x00c17a1c,0x00c1da1c
 99824,data,,,0x00c1da20,0x00c17a20,0x00c1da20
-99825,data,,,0x00c1da50,0x00c17a50,0x00c1da50
+99825,data,DirtySDK::g_netCrit,The global NetCrit used when a NetCrit function gets a null pointer (0x24 bytes).,0x00c1da50,0x00c17a50,0x00c1da50
 99826,data,,,0x00c1da54,0x00c17a54,0x00c1da54
 99827,data,,,0x00c1da58,0x00c17a58,0x00c1da58
 99828,data,,,0x00c1da5c,0x00c17a5c,0x00c1da5c
-99829,data,,,0x00c1da74,0x00c17a74,0x00c1da74
+99829,data,DirtySDK::g_netIdleCrit,The NetCrit NetIdleCall and NetIdleSync use; 0x00BF1EA0 points at it (0x24 bytes).,0x00c1da74,0x00c17a74,0x00c1da74
 99830,data,,,0x00c1da78,0x00c17a78,0x00c1da78
 99831,data,,,0x00c1da7c,0x00c17a7c,0x00c1da7c
 99832,data,,,0x00c1da80,0x00c17a80,0x00c1da80
-99833,data,,,0x00c1da98,0x00c17a98,0x00c1da98
+99833,data,DirtySDK::g_netTickQpcPerMs,"QueryPerformanceFrequency divided by 1000, the divisor of NetTickQpc.",0x00c1da98,0x00c17a98,0x00c1da98
 99834,data,,,0x00c1da9c,0x00c17a9c,0x00c1da9c
-99835,data,,,0x00c1daa0,0x00c17aa0,0x00c1daa0
-99836,data,,,0x00c1daa4,0x00c17aa4,0x00c1daa4
-99837,data,GTimer::g_clock,,0x00c1daa8,0x00c17aa8,0x00c1daa8
-99838,data,,,0x00c1dab4,0x00c17ab4,0x00c1dab4
-99839,data,,,0x00c1dab8,0x00c17ab8,0x00c1dab8
+99835,data,DirtySDK::g_netIdleThreadRun,"Idle thread run flag: 1, then the (closed) CreateThread handle; NetLibDestroy zeroes it to stop NetLibIdleThread.",0x00c1daa0,0x00c17aa0,0x00c1daa0
+99836,data,DirtySDK::g_netTickUseQpc,"When non-zero NetLibCreate uses the performance-counter clock; only read (0x00444BFE) in the code read, so always 0 there.",0x00c1daa4,0x00c17aa4,0x00c1daa4
+99837,data,DirtySDK::g_netTickClock,"The clock function pointer NetTick jumps through: GetTickCount (0x0041E870) or NetTickQpc. Replaces the name GTimer::g_clock; the only references (0x004449F2, 0x00444C28, 0x00444C47) are in this library.",0x00c1daa8,0x00c17aa8,0x00c1daa8
+99838,data,DirtySDK::g_netConn,"The 0xC-byte connection record of NetConnStartup (memory group, state, ProtoUpnp pointer).",0x00c1dab4,0x00c17ab4,0x00c1dab4
+99839,data,DirtySDK::g_netConnIdleHooks,"Table of 0x20 (proc, ref) pairs run by NetConnIdle, 0x100 bytes.",0x00c1dab8,0x00c17ab8,0x00c1dab8
 99840,data,,,0x00c1dabc,0x00c17abc,0x00c1dabc
 99841,data,,,0x00c1dbb8,0x00c17bb8,0x00c1dbb8
 99842,data,,,0x00c1dbb9,0x00c17bb9,0x00c1dbb9
@@ -99861,16 +99861,16 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 99860,data,,,0x00c1dbdb,0x00c17bdb,0x00c1dbdb
 99861,data,,,0x00c1dbdc,0x00c17bdc,0x00c1dbdc
 99862,data,,,0x00c1dbdd,0x00c17bdd,0x00c1dbdd
-99863,data,,,0x00c1dbe0,0x00c17be0,0x00c1dbe0
+99863,data,DirtySDK::g_socketState,"The 0x1090-byte socket state of SocketCreate: socket list, closed list, tables, receive-thread control.",0x00c1dbe0,0x00c17be0,0x00c1dbe0
 99864,data,,,0x00c1e608,0x00c18608,0x00c1e608
 99865,data,,,0x00c1e61c,0x00c1861c,0x00c1e61c
-99866,data,,,0x00c1e62c,0x00c1862c,0x00c1e62c
+99866,data,DirtySDK::g_protoUpnp,The ProtoUpnp singleton.,0x00c1e62c,0x00c1862c,0x00c1e62c
 99867,data,,,0x00c1e630,0x00c18630,0x00c1e630
 99868,data,,,0x00c1e634,0x00c18634,0x00c1e634
-99869,data,,,0x00c1e638,0x00c18638,0x00c1e638
+99869,data,DirtySDK::g_netIdleProcs,"The idle list of NetIdleAdd: (proc, ref) pairs, count at 0x00C1E738.",0x00c1e638,0x00c18638,0x00c1e638
 99870,data,,,0x00c1e63c,0x00c1863c,0x00c1e63c
-99871,data,,,0x00c1e738,0x00c18738,0x00c1e738
-99872,data,,,0x00c1e73c,0x00c1873c,0x00c1e73c
+99871,data,DirtySDK::g_netIdleProcCount,Count of entries in g_netIdleProcs.,0x00c1e738,0x00c18738,0x00c1e738
+99872,data,DirtySDK::g_memGroupDepth,Depth of the memory-group stack.,0x00c1e73c,0x00c1873c,0x00c1e73c
 99873,data,,,0x00c1e740,0x00c18740,0x00c1e740
 99874,data,,,0x00c1e744,0x00c18744,0x00c1e744
 99875,data,,,0x00c1e748,0x00c18748,0x00c1e748
@@ -103292,142 +103292,142 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 103291,data,,,0x00c4dae4,0x00c47b04,0x00c4dae4
 103292,data,,,0x00c4e000,0x00c48000,0x00c4e000
 103293,data,,,0x00c4e08d,0x00c4808d,0x00c4e08d
-103294,function,,,,0x00402b80,0x00475860
-103295,function,,,,0x004038e0,0x004781c0
-103296,function,,,,0x00403c00,0x00478490
-103297,function,,,,0x004117c4,0x00488774
+103294,function,,,0x00475860,0x00402b80,0x00475860
+103295,function,,,0x004781c0,0x004038e0,0x004781c0
+103296,function,,,0x00478490,0x00403c00,0x00478490
+103297,function,,,0x00488774,0x004117c4,0x00488774
 103298,retired,,,,,
-103299,function,,,,0x00413950,0x004893b0
-103300,function,,,,0x00422650,0x00436ef0
-103301,function,,,,0x004226b0,0x00422490
-103302,function,,,,0x004525b0,0x007d5f60
-103303,function,,,,0x0045265a,0x007d600a
-103304,function,,,,0x00452960,0x007d6ba0
-103305,function,,,,0x00452a60,0x007d6ff0
-103306,function,,,,0x00452ad7,0x007d7067
-103307,function,,,,0x004530e0,0x007d9ff0
-103308,function,,,,0x00455080,0x005002a0
-103309,function,,,,0x0046a330,0x005c7350
-103310,function,,,,0x0046a430,0x005c7450
-103311,function,,,,0x0046a450,0x004a1ca0
-103312,function,,,,0x00472bc0,0x0087ead0
+103299,function,,,0x004893b0,0x00413950,0x004893b0
+103300,function,,,0x00436ef0,0x00422650,0x00436ef0
+103301,function,,,0x00422490,0x004226b0,0x00422490
+103302,function,,,0x007d5f60,0x004525b0,0x007d5f60
+103303,function,,,0x007d600a,0x0045265a,0x007d600a
+103304,function,,,0x007d6ba0,0x00452960,0x007d6ba0
+103305,function,,,0x007d6ff0,0x00452a60,0x007d6ff0
+103306,function,,,0x007d7067,0x00452ad7,0x007d7067
+103307,function,,,0x007d9ff0,0x004530e0,0x007d9ff0
+103308,function,,,0x005002a0,0x00455080,0x005002a0
+103309,function,,,0x005c7350,0x0046a330,0x005c7350
+103310,function,,,0x005c7450,0x0046a430,0x005c7450
+103311,function,,,0x004a1ca0,0x0046a450,0x004a1ca0
+103312,function,,,0x0087ead0,0x00472bc0,0x0087ead0
 103313,function,,,,0x00473fb0,
-103314,function,,,,0x00489ff0,0x00515fb0
-103315,function,,,,0x0048a740,0x0057a680
-103316,function,,,,0x0048bd20,0x004fc640
-103317,function,,,,0x0048cf90,0x0084a670
-103318,function,,,,0x004b3470,0x0080e970
-103319,function,,,,0x004b3b90,0x0080f090
-103320,function,,,,0x004b3fa0,0x004f4710
-103321,function,,,,0x004b4ca0,0x00810080
-103322,function,,,,0x004b4ce0,0x00458ab0
-103323,function,,,,0x004b5000,0x00810170
-103324,function,,,,0x004b5089,0x008101f9
-103325,function,,,,0x004b50c0,0x00810420
-103326,function,,,,0x004b5330,0x00810640
-103327,function,,,,0x004b6f20,0x00816990
-103328,function,,,,0x004bb610,0x00812e80
+103314,function,,,0x00515fb0,0x00489ff0,0x00515fb0
+103315,function,,,0x0057a680,0x0048a740,0x0057a680
+103316,function,,,0x004fc640,0x0048bd20,0x004fc640
+103317,function,,,0x0084a670,0x0048cf90,0x0084a670
+103318,function,,,0x0080e970,0x004b3470,0x0080e970
+103319,function,,,0x0080f090,0x004b3b90,0x0080f090
+103320,function,,,0x004f4710,0x004b3fa0,0x004f4710
+103321,function,,,0x00810080,0x004b4ca0,0x00810080
+103322,function,,,0x00458ab0,0x004b4ce0,0x00458ab0
+103323,function,,,0x00810170,0x004b5000,0x00810170
+103324,function,,,0x008101f9,0x004b5089,0x008101f9
+103325,function,,,0x00810420,0x004b50c0,0x00810420
+103326,function,,,0x00810640,0x004b5330,0x00810640
+103327,function,,,0x00816990,0x004b6f20,0x00816990
+103328,function,,,0x00812e80,0x004bb610,0x00812e80
 103329,function,,,,0x004c9a40,
-103330,function,,,,0x004d03a0,0x0086b9a0
-103331,function,,,,0x004ef380,0x00701640
-103332,function,,,,0x004fe950,0x00610060
-103333,function,,,,0x00527f20,0x0063d330
-103334,function,,,,0x0055edf0,0x006352c0
-103335,function,,,,0x0057ad70,0x0048d870
-103336,function,,,,0x0057aea0,0x0072bc30
-103337,function,,,,0x005bfe10,0x0072c730
-103338,function,,,,0x005f07e0,0x0071d580
-103339,function,,,,0x0060f610,0x005d26e0
-103340,function,,,,0x0064bd40,0x0071ca90
-103341,function,,,,0x0064c080,0x0071d410
-103342,function,,,,0x0068cf20,0x007af160
-103343,function,,,,0x006929b0,0x00538c90
-103344,function,,,,0x00693100,0x00538f30
-103345,function,,,,0x006935f0,0x004f3330
-103346,function,,,,0x00693740,0x007b55f0
-103347,function,,,,0x00695aa0,0x004f45b0
-103348,function,,,,0x00698f00,0x004f3830
-103349,function,,,,0x00699110,0x00534a70
-103350,function,,,,0x00699250,0x004f71a0
-103351,function,,,,0x00699f40,0x00458420
-103352,function,,,,0x006befd0,0x007d7b80
-103353,function,,,,0x006fc190,0x005d2520
-103354,function,,,,0x006fc520,0x006f1340
-103355,function,,,,0x006ff4f0,0x00a5fee0
-103356,function,,,,0x00704540,0x00a5de10
-103357,function,,,,0x00705230,0x00a5ec50
-103358,function,,,,0x00705a90,0x00601130
-103359,function,,,,0x00712b50,0x0054a3f0
-103360,function,,,,0x0071d020,0x006f1160
-103361,function,,,,0x00720c80,0x0076b540
-103362,function,,,,0x0072c800,0x00706a30
-103363,function,,,,0x00742440,0x007af9f0
-103364,function,,,,0x00742480,0x007b0890
-103365,function,,,,0x00742560,0x0053b250
-103366,function,,,,0x0074f290,0x00516920
-103367,function,,,,0x00757960,0x004fc2e0
-103368,function,,,,0x00757990,0x00516980
-103369,function,,,,0x007579f9,0x005169e9
-103370,function,,,,0x00757ab0,0x004fc3a0
-103371,function,,,,0x00757b1b,0x004fc40b
-103372,function,,,,0x00757c80,0x00556d10
-103373,function,,,,0x00758190,0x004fc440
-103374,function,,,,0x00758320,0x005173a0
-103375,function,,,,0x00758350,0x005173d0
-103376,function,,,,0x007584d3,0x00517553
-103377,function,,,,0x0075855e,0x005175de
-103378,function,,,,0x007585f0,0x004fc550
-103379,function,,,,0x007586e0,0x00517670
-103380,function,,,,0x0075f6b0,0x0086b9a0
-103381,function,,,,0x007c40d0,0x0051b0d0
+103330,function,,,0x0086b9a0,0x004d03a0,0x0086b9a0
+103331,function,,,0x00701640,0x004ef380,0x00701640
+103332,function,,,0x00610060,0x004fe950,0x00610060
+103333,function,,,0x0063d330,0x00527f20,0x0063d330
+103334,function,,,0x006352c0,0x0055edf0,0x006352c0
+103335,function,,,0x0048d870,0x0057ad70,0x0048d870
+103336,function,,,0x0072bc30,0x0057aea0,0x0072bc30
+103337,function,,,0x0072c730,0x005bfe10,0x0072c730
+103338,function,,,0x0071d580,0x005f07e0,0x0071d580
+103339,function,,,0x005d26e0,0x0060f610,0x005d26e0
+103340,function,,,0x0071ca90,0x0064bd40,0x0071ca90
+103341,function,,,0x0071d410,0x0064c080,0x0071d410
+103342,function,,,0x007af160,0x0068cf20,0x007af160
+103343,function,,,0x00538c90,0x006929b0,0x00538c90
+103344,function,,,0x00538f30,0x00693100,0x00538f30
+103345,function,,,0x004f3330,0x006935f0,0x004f3330
+103346,function,,,0x007b55f0,0x00693740,0x007b55f0
+103347,function,,,0x004f45b0,0x00695aa0,0x004f45b0
+103348,function,,,0x004f3830,0x00698f00,0x004f3830
+103349,function,,,0x00534a70,0x00699110,0x00534a70
+103350,function,,,0x004f71a0,0x00699250,0x004f71a0
+103351,function,,,0x00458420,0x00699f40,0x00458420
+103352,function,,,0x007d7b80,0x006befd0,0x007d7b80
+103353,function,,,0x005d2520,0x006fc190,0x005d2520
+103354,function,,,0x006f1340,0x006fc520,0x006f1340
+103355,function,,,0x00a5fee0,0x006ff4f0,0x00a5fee0
+103356,function,,,0x00a5de10,0x00704540,0x00a5de10
+103357,function,,,0x00a5ec50,0x00705230,0x00a5ec50
+103358,function,,,0x00601130,0x00705a90,0x00601130
+103359,function,,,0x0054a3f0,0x00712b50,0x0054a3f0
+103360,function,,,0x006f1160,0x0071d020,0x006f1160
+103361,function,,,0x0076b540,0x00720c80,0x0076b540
+103362,function,,,0x00706a30,0x0072c800,0x00706a30
+103363,function,,,0x007af9f0,0x00742440,0x007af9f0
+103364,function,,,0x007b0890,0x00742480,0x007b0890
+103365,function,,,0x0053b250,0x00742560,0x0053b250
+103366,function,,,0x00516920,0x0074f290,0x00516920
+103367,function,,,0x004fc2e0,0x00757960,0x004fc2e0
+103368,function,,,0x00516980,0x00757990,0x00516980
+103369,function,,,0x005169e9,0x007579f9,0x005169e9
+103370,function,,,0x004fc3a0,0x00757ab0,0x004fc3a0
+103371,function,,,0x004fc40b,0x00757b1b,0x004fc40b
+103372,function,,,0x00556d10,0x00757c80,0x00556d10
+103373,function,,,0x004fc440,0x00758190,0x004fc440
+103374,function,,,0x005173a0,0x00758320,0x005173a0
+103375,function,,,0x005173d0,0x00758350,0x005173d0
+103376,function,,,0x00517553,0x007584d3,0x00517553
+103377,function,,,0x005175de,0x0075855e,0x005175de
+103378,function,,,0x004fc550,0x007585f0,0x004fc550
+103379,function,,,0x00517670,0x007586e0,0x00517670
+103380,function,,,0x0086b9a0,0x0075f6b0,0x0086b9a0
+103381,function,,,0x0051b0d0,0x007c40d0,0x0051b0d0
 103382,function,,,,0x007c8de0,
-103383,function,,,,0x007cc290,0x00525240
-103384,function,,,,0x007ded30,0x0054eb00
-103385,function,,,,0x007ded50,0x00516970
-103386,function,,,,0x007deec0,0x00568350
-103387,function,,,,0x007def40,0x0057ab20
-103388,function,,,,0x007e0db0,0x00457690
-103389,function,,,,0x007ed530,0x00517700
-103390,function,,,,0x007edda0,0x0080ea00
-103391,function,,,,0x007ee1f0,0x004f71d0
-103392,function,,,,0x007ee810,0x008100c0
-103393,function,,,,0x007ee8c0,0x00458a20
-103394,function,,,,0x007eee80,0x00810860
-103395,function,,,,0x007ef080,0x00458d60
-103396,function,,,,0x00801470,0x004bf300
-103397,function,,,,0x008780b0,0x004b0f00
+103383,function,,,0x00525240,0x007cc290,0x00525240
+103384,function,,,0x0054eb00,0x007ded30,0x0054eb00
+103385,function,,,0x00516970,0x007ded50,0x00516970
+103386,function,,,0x00568350,0x007deec0,0x00568350
+103387,function,,,0x0057ab20,0x007def40,0x0057ab20
+103388,function,,,0x00457690,0x007e0db0,0x00457690
+103389,function,,,0x00517700,0x007ed530,0x00517700
+103390,function,,,0x0080ea00,0x007edda0,0x0080ea00
+103391,function,,,0x004f71d0,0x007ee1f0,0x004f71d0
+103392,function,,,0x008100c0,0x007ee810,0x008100c0
+103393,function,,,0x00458a20,0x007ee8c0,0x00458a20
+103394,function,,,0x00810860,0x007eee80,0x00810860
+103395,function,,,0x00458d60,0x007ef080,0x00458d60
+103396,function,,,0x004bf300,0x00801470,0x004bf300
+103397,function,,,0x004b0f00,0x008780b0,0x004b0f00
 103398,retired,,,,,
-103399,function,,,,0x008dd610,0x00906fc4
+103399,function,,,0x00906fc4,0x008dd610,0x00906fc4
 103400,function,,,,0x008df7f0,
 103401,function,,,,0x008df8a0,
-103402,function,,,,0x0091c190,0x00944a60
-103403,function,,,,0x00a677e0,0x0040d610
-103404,function,,,,0x00a6a470,0x00a74720
-103405,function,,,,0x00a6a478,0x00a74728
-103406,function,,,,0x00a6a480,0x00a74730
-103407,function,,,,0x00a6ad50,0x00aba370
-103408,function,,,,0x00a6ad70,0x00aba3f0
-103409,function,,,,0x00a6e9c0,0x00a70cb0
-103410,function,,,,0x00a6e9c8,0x00a70cb8
-103411,function,,,,0x00a6e9d3,0x00a70cc3
-103412,function,,,,0x00a6ea60,0x00a7d520
-103413,function,,,,0x00a6ea68,0x00a7d528
-103414,function,,,,0x00a6ed50,0x00acdef0
-103415,function,,,,0x00a6ed58,0x00acdef8
-103416,function,,,,0x00a6ef70,0x00a7dce0
-103417,function,,,,0x00a71130,0x00a87360
-103418,function,,,,0x00a71138,0x00a87368
-103419,function,,,,0x00a71151,0x00a87381
-103420,function,,,,0x00a712a8,0x00abefd8
-103421,function,,,,0x00a712b0,0x00abefe0
-103422,function,,,,0x00a712bb,0x00abefeb
-103423,function,,,,0x00a712c6,0x00abeff6
-103424,function,,,,0x00a713e0,0x00abf020
-103425,function,,,,0x00a713f1,0x00abf031
-103426,function,,,,0x00a716e0,0x00a8b680
-103427,function,,,,0x00a716e8,0x00a8b688
-103428,function,,,,0x00a718e0,0x00a85e60
-103429,function,,,,0x00a718e8,0x00a85e68
+103402,function,,,0x00944a60,0x0091c190,0x00944a60
+103403,function,,,0x0040d610,0x00a677e0,0x0040d610
+103404,function,,,0x00a74720,0x00a6a470,0x00a74720
+103405,function,,,0x00a74728,0x00a6a478,0x00a74728
+103406,function,,,0x00a74730,0x00a6a480,0x00a74730
+103407,function,,,0x00aba370,0x00a6ad50,0x00aba370
+103408,function,,,0x00aba3f0,0x00a6ad70,0x00aba3f0
+103409,function,,,0x00a70cb0,0x00a6e9c0,0x00a70cb0
+103410,function,,,0x00a70cb8,0x00a6e9c8,0x00a70cb8
+103411,function,,,0x00a70cc3,0x00a6e9d3,0x00a70cc3
+103412,function,,,0x00a7d520,0x00a6ea60,0x00a7d520
+103413,function,,,0x00a7d528,0x00a6ea68,0x00a7d528
+103414,function,,,0x00acdef0,0x00a6ed50,0x00acdef0
+103415,function,,,0x00acdef8,0x00a6ed58,0x00acdef8
+103416,function,,,0x00a7dce0,0x00a6ef70,0x00a7dce0
+103417,function,,,0x00a87360,0x00a71130,0x00a87360
+103418,function,,,0x00a87368,0x00a71138,0x00a87368
+103419,function,,,0x00a87381,0x00a71151,0x00a87381
+103420,function,,,0x00abefd8,0x00a712a8,0x00abefd8
+103421,function,,,0x00abefe0,0x00a712b0,0x00abefe0
+103422,function,,,0x00abefeb,0x00a712bb,0x00abefeb
+103423,function,,,0x00abeff6,0x00a712c6,0x00abeff6
+103424,function,,,0x00abf020,0x00a713e0,0x00abf020
+103425,function,,,0x00abf031,0x00a713f1,0x00abf031
+103426,function,,,0x00a8b680,0x00a716e0,0x00a8b680
+103427,function,,,0x00a8b688,0x00a716e8,0x00a8b688
+103428,function,,,0x00a85e60,0x00a718e0,0x00a85e60
+103429,function,,,0x00a85e68,0x00a718e8,0x00a85e68
 103430,function,,,,0x00a73440,
 103431,function,,,,0x00a73448,
 103432,function,,,,0x00a73453,
@@ -103444,33 +103444,33 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 103443,function,,,,0x00a734eb,
 103444,function,,,,0x00a74ae3,
 103445,function,,,,0x00a75f06,
-103446,function,,,,0x00a82110,0x00ab8be0
-103447,function,,,,0x00a82118,0x00ab8be8
-103448,function,,,,0x00a91410,0x00acd970
-103449,function,,,,0x00a91418,0x00acd978
+103446,function,,,0x00ab8be0,0x00a82110,0x00ab8be0
+103447,function,,,0x00ab8be8,0x00a82118,0x00ab8be8
+103448,function,,,0x00acd970,0x00a91410,0x00acd970
+103449,function,,,0x00acd978,0x00a91418,0x00acd978
 103450,function,,,,0x00a99f20,
 103451,function,,,,0x00a99f28,
 103452,function,,,,0x00a99f33,
 103453,function,,,,0x00a99f3b,
 103454,function,,,,0x00a99f49,
 103455,function,,,,0x00a99f51,
-103456,function,,,,0x00a9c500,0x00ab8e00
-103457,function,,,,0x00aa3fb0,0x00a8b6b0
-103458,function,,,,0x00aa3fb8,0x00a8b6b8
-103459,function,,,,0x00aa9b00,0x00a7cd30
-103460,function,,,,0x00aa9b08,0x00a7cd38
-103461,function,,,,0x00aaa208,0x00a7dce8
-103462,function,,,,0x00aaa2d0,0x00a7fd60
-103463,function,,,,0x00aaa2e1,0x00a7fd71
-103464,function,,,,0x00aaa300,0x00a7d4f0
-103465,function,,,,0x00aaa311,0x00a7d501
-103466,function,,,,0x00aaa4c0,0x00a7ff50
-103467,function,,,,0x00aaa4c8,0x00a7ff58
-103468,function,,,,0x00aace00,0x00a7f140
-103469,function,,,,0x00aace19,0x00a7f159
-103470,function,,,,0x00aace21,0x00a7f161
-103471,function,,,,0x00aad130,0x00a7d550
-103472,function,,,,0x00aad138,0x00a7d558
+103456,function,,,0x00ab8e00,0x00a9c500,0x00ab8e00
+103457,function,,,0x00a8b6b0,0x00aa3fb0,0x00a8b6b0
+103458,function,,,0x00a8b6b8,0x00aa3fb8,0x00a8b6b8
+103459,function,,,0x00a7cd30,0x00aa9b00,0x00a7cd30
+103460,function,,,0x00a7cd38,0x00aa9b08,0x00a7cd38
+103461,function,,,0x00a7dce8,0x00aaa208,0x00a7dce8
+103462,function,,,0x00a7fd60,0x00aaa2d0,0x00a7fd60
+103463,function,,,0x00a7fd71,0x00aaa2e1,0x00a7fd71
+103464,function,,,0x00a7d4f0,0x00aaa300,0x00a7d4f0
+103465,function,,,0x00a7d501,0x00aaa311,0x00a7d501
+103466,function,,,0x00a7ff50,0x00aaa4c0,0x00a7ff50
+103467,function,,,0x00a7ff58,0x00aaa4c8,0x00a7ff58
+103468,function,,,0x00a7f140,0x00aace00,0x00a7f140
+103469,function,,,0x00a7f159,0x00aace19,0x00a7f159
+103470,function,,,0x00a7f161,0x00aace21,0x00a7f161
+103471,function,,,0x00a7d550,0x00aad130,0x00a7d550
+103472,function,,,0x00a7d558,0x00aad138,0x00a7d558
 103473,function,,,,0x00ab0fd8,
 103474,function,,,,0x00ab0fe6,
 103475,function,,,,0x00ab0ff1,
@@ -103497,8 +103497,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 103496,function,,,,0x00ab12f6,
 103497,function,,,,0x00ab1304,
 103498,function,,,,0x00ab1320,
-103499,function,,,,0x00ab25a0,0x00a81330
-103500,function,,,,0x00ab25a8,0x00a81338
+103499,function,,,0x00a81330,0x00ab25a0,0x00a81330
+103500,function,,,0x00a81338,0x00ab25a8,0x00a81338
 103501,function,,,,0x00abe8b5,
 103502,function,,,,0x00abe8c3,
 103503,function,,,,0x00abe981,
@@ -103814,8 +103814,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 103813,function,,,,0x00ad3ea0,
 103814,data,kernel32.dll!GetFileAttributesW,,,0x00ad427c,
 103815,data,,,,0x00ade828,
-103816,data,,,,0x00adf9cc,0x00ae1a0c
-103817,data,,,,0x00ae7494,0x00b0126c
+103816,data,,,0x00ae1a0c,0x00adf9cc,0x00ae1a0c
+103817,data,,,0x00b0126c,0x00ae7494,0x00b0126c
 103818,data,,,,0x00b170d4,
 103819,data,,,,0x00b170dc,
 103820,data,,,,0x00b170fc,
@@ -103933,19 +103933,19 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 103932,data,,,,0x00b53bc0,
 103933,data,,,,0x00b53bcc,
 103934,data,,,,0x00b53bd8,
-103935,data,,,,0x00b54d70,0x00b5d7c8
-103936,data,,,,0x00b54d84,0x00b5d7dc
-103937,data,,,,0x00b54d94,0x00b5d7ec
-103938,data,,,,0x00b54db4,0x00b5d80c
-103939,data,,,,0x00b54dd0,0x00b5d828
-103940,data,,,,0x00b54dec,0x00b5d844
-103941,data,,,,0x00b54dfc,0x00b5d854
-103942,data,,,,0x00b54e04,0x00b5d85c
-103943,data,,,,0x00b54e20,0x00b5d878
-103944,data,,,,0x00b54e3c,0x00b5d894
-103945,data,,,,0x00b54e4c,0x00b5d8a4
-103946,data,,,,0x00b54e54,0x00b5d8ac
-103947,data,,,,0x00b54e70,0x00b5d8c8
+103935,data,,,0x00b5d7c8,0x00b54d70,0x00b5d7c8
+103936,data,,,0x00b5d7dc,0x00b54d84,0x00b5d7dc
+103937,data,,,0x00b5d7ec,0x00b54d94,0x00b5d7ec
+103938,data,,,0x00b5d80c,0x00b54db4,0x00b5d80c
+103939,data,,,0x00b5d828,0x00b54dd0,0x00b5d828
+103940,data,,,0x00b5d844,0x00b54dec,0x00b5d844
+103941,data,,,0x00b5d854,0x00b54dfc,0x00b5d854
+103942,data,,,0x00b5d85c,0x00b54e04,0x00b5d85c
+103943,data,,,0x00b5d878,0x00b54e20,0x00b5d878
+103944,data,,,0x00b5d894,0x00b54e3c,0x00b5d894
+103945,data,,,0x00b5d8a4,0x00b54e4c,0x00b5d8a4
+103946,data,,,0x00b5d8ac,0x00b54e54,0x00b5d8ac
+103947,data,,,0x00b5d8c8,0x00b54e70,0x00b5d8c8
 103948,data,,,,0x00b57a70,
 103949,data,,,,0x00b57a84,
 103950,data,,,,0x00b57a94,
@@ -103958,82 +103958,82 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 103957,data,,,,0x00b7cf70,
 103958,data,,,,0x00b7cf80,
 103959,data,,,,0x00b7cf8c,
-103960,data,,,,0x00b88ce0,0x00b8ec30
-103961,data,,,,0x00b8d460,0x00b933f0
-103962,data,,,,0x00b8e758,0x00b98e58
-103963,data,,,,0x00b8e768,0x00b98e68
-103964,data,,,,0x00b8e77c,0x00b98e7c
-103965,data,,,,0x00b8e7a0,0x00b98ea0
-103966,data,,,,0x00b8e7d8,0x00b98ed8
-103967,data,,,,0x00b8e7e8,0x00b98ee8
-103968,data,,,,0x00b8e7fc,0x00b98efc
-103969,data,,,,0x00b8e820,0x00b98f20
-103970,data,,,,0x00b8f050,0x00bd62c0
-103971,data,,,,0x00b8f060,0x00bd62d0
-103972,data,,,,0x00b8f070,0x00bd62e0
-103973,data,,,,0x00b8f084,0x00bd62f4
-103974,data,,,,0x00b8f0a8,0x00bd6378
-103975,data,,,,0x00b8f0b8,0x00bd6388
-103976,data,,,,0x00b8f0c8,0x00bd6398
-103977,data,,,,0x00b8f0dc,0x00bd63ac
-103978,data,,,,0x00b907bc,0x00baf5e8
-103979,data,,,,0x00b92dd8,0x00b95410
-103980,data,,,,0x00b92de8,0x00b95420
-103981,data,,,,0x00b92e68,0x00ba193c
-103982,data,,,,0x00b92e70,0x00ba1944
-103983,data,,,,0x00b930c4,0x00be9084
-103984,data,,,,0x00b930cc,0x00be908c
-103985,data,,,,0x00b9329c,0x00ba21e0
-103986,data,,,,0x00b932a4,0x00ba21e8
-103987,data,,,,0x00b9554c,0x00baaac8
-103988,data,,,,0x00b9555c,0x00baaad8
-103989,data,,,,0x00b95644,0x00bda5f8
-103990,data,,,,0x00b95664,0x00bda618
-103991,data,,,,0x00b95738,0x00bda63c
-103992,data,,,,0x00b95748,0x00bda64c
-103993,data,,,,0x00b9575c,0x00bda660
-103994,data,,,,0x00b95774,0x00bda678
-103995,data,,,,0x00b95ac4,0x00bae508
-103996,data,,,,0x00b95acc,0x00bae510
-103997,data,,,,0x00b95d5c,0x00ba94d8
-103998,data,,,,0x00b95d64,0x00ba94e0
+103960,data,,,0x00b8ec30,0x00b88ce0,0x00b8ec30
+103961,data,,,0x00b933f0,0x00b8d460,0x00b933f0
+103962,data,,,0x00b98e58,0x00b8e758,0x00b98e58
+103963,data,,,0x00b98e68,0x00b8e768,0x00b98e68
+103964,data,,,0x00b98e7c,0x00b8e77c,0x00b98e7c
+103965,data,,,0x00b98ea0,0x00b8e7a0,0x00b98ea0
+103966,data,,,0x00b98ed8,0x00b8e7d8,0x00b98ed8
+103967,data,,,0x00b98ee8,0x00b8e7e8,0x00b98ee8
+103968,data,,,0x00b98efc,0x00b8e7fc,0x00b98efc
+103969,data,,,0x00b98f20,0x00b8e820,0x00b98f20
+103970,data,,,0x00bd62c0,0x00b8f050,0x00bd62c0
+103971,data,,,0x00bd62d0,0x00b8f060,0x00bd62d0
+103972,data,,,0x00bd62e0,0x00b8f070,0x00bd62e0
+103973,data,,,0x00bd62f4,0x00b8f084,0x00bd62f4
+103974,data,,,0x00bd6378,0x00b8f0a8,0x00bd6378
+103975,data,,,0x00bd6388,0x00b8f0b8,0x00bd6388
+103976,data,,,0x00bd6398,0x00b8f0c8,0x00bd6398
+103977,data,,,0x00bd63ac,0x00b8f0dc,0x00bd63ac
+103978,data,,,0x00baf5e8,0x00b907bc,0x00baf5e8
+103979,data,,,0x00b95410,0x00b92dd8,0x00b95410
+103980,data,,,0x00b95420,0x00b92de8,0x00b95420
+103981,data,,,0x00ba193c,0x00b92e68,0x00ba193c
+103982,data,,,0x00ba1944,0x00b92e70,0x00ba1944
+103983,data,,,0x00be9084,0x00b930c4,0x00be9084
+103984,data,,,0x00be908c,0x00b930cc,0x00be908c
+103985,data,,,0x00ba21e0,0x00b9329c,0x00ba21e0
+103986,data,,,0x00ba21e8,0x00b932a4,0x00ba21e8
+103987,data,,,0x00baaac8,0x00b9554c,0x00baaac8
+103988,data,,,0x00baaad8,0x00b9555c,0x00baaad8
+103989,data,,,0x00bda5f8,0x00b95644,0x00bda5f8
+103990,data,,,0x00bda618,0x00b95664,0x00bda618
+103991,data,,,0x00bda63c,0x00b95738,0x00bda63c
+103992,data,,,0x00bda64c,0x00b95748,0x00bda64c
+103993,data,,,0x00bda660,0x00b9575c,0x00bda660
+103994,data,,,0x00bda678,0x00b95774,0x00bda678
+103995,data,,,0x00bae508,0x00b95ac4,0x00bae508
+103996,data,,,0x00bae510,0x00b95acc,0x00bae510
+103997,data,,,0x00ba94d8,0x00b95d5c,0x00ba94d8
+103998,data,,,0x00ba94e0,0x00b95d64,0x00ba94e0
 103999,data,,,,0x00b976d0,
 104000,data,,,,0x00b97734,
 104001,data,,,,0x00b9870c,
 104002,data,,,,0x00b98cdc,
-104003,data,,,,0x00ba3b60,0x00bd4a7c
-104004,data,,,,0x00ba3b68,0x00bd4a84
+104003,data,,,0x00bd4a7c,0x00ba3b60,0x00bd4a7c
+104004,data,,,0x00bd4a84,0x00ba3b68,0x00bd4a84
 104005,data,,,,0x00bab678,
-104006,data,,,,0x00bb0a64,0x00be8a00
-104007,data,,,,0x00bb0a6c,0x00be8a08
+104006,data,,,0x00be8a00,0x00bb0a64,0x00be8a00
+104007,data,,,0x00be8a08,0x00bb0a6c,0x00be8a08
 104008,data,,,,0x00bb81c4,
 104009,data,,,,0x00bb81e8,
-104010,data,,,,0x00bc14ac,0x00bae534
-104011,data,,,,0x00bc14b4,0x00bae53c
-104012,data,,,,0x00bc6660,0x00ba116c
-104013,data,,,,0x00bc6668,0x00ba1174
-104014,data,,,,0x00bc6d10,0x00ba3ecc
-104015,data,,,,0x00bc6d20,0x00ba3edc
-104016,data,,,,0x00bc6d34,0x00ba3ef0
-104017,data,,,,0x00bc6d4c,0x00ba3f08
-104018,data,,,,0x00bc6d70,0x00ba18dc
-104019,data,,,,0x00bc6d80,0x00ba18ec
-104020,data,,,,0x00bc6d94,0x00ba1900
-104021,data,,,,0x00bc6dac,0x00ba1918
-104022,data,,,,0x00bc6ef0,0x00ba4018
-104023,data,,,,0x00bc6f00,0x00ba4028
-104024,data,,,,0x00bc6f10,0x00ba4038
-104025,data,,,,0x00bc6f34,0x00ba405c
-104026,data,,,,0x00bc6f5c,0x00ba4084
-104027,data,,,,0x00bc95a0,0x00ba3304
-104028,data,,,,0x00bc95b0,0x00ba3314
-104029,data,,,,0x00bc9844,0x00ba1968
-104030,data,,,,0x00bc984c,0x00ba1970
+104010,data,,,0x00bae534,0x00bc14ac,0x00bae534
+104011,data,,,0x00bae53c,0x00bc14b4,0x00bae53c
+104012,data,,,0x00ba116c,0x00bc6660,0x00ba116c
+104013,data,,,0x00ba1174,0x00bc6668,0x00ba1174
+104014,data,,,0x00ba3ecc,0x00bc6d10,0x00ba3ecc
+104015,data,,,0x00ba3edc,0x00bc6d20,0x00ba3edc
+104016,data,,,0x00ba3ef0,0x00bc6d34,0x00ba3ef0
+104017,data,,,0x00ba3f08,0x00bc6d4c,0x00ba3f08
+104018,data,,,0x00ba18dc,0x00bc6d70,0x00ba18dc
+104019,data,,,0x00ba18ec,0x00bc6d80,0x00ba18ec
+104020,data,,,0x00ba1900,0x00bc6d94,0x00ba1900
+104021,data,,,0x00ba1918,0x00bc6dac,0x00ba1918
+104022,data,,,0x00ba4018,0x00bc6ef0,0x00ba4018
+104023,data,,,0x00ba4028,0x00bc6f00,0x00ba4028
+104024,data,,,0x00ba4038,0x00bc6f10,0x00ba4038
+104025,data,,,0x00ba405c,0x00bc6f34,0x00ba405c
+104026,data,,,0x00ba4084,0x00bc6f5c,0x00ba4084
+104027,data,,,0x00ba3304,0x00bc95a0,0x00ba3304
+104028,data,,,0x00ba3314,0x00bc95b0,0x00ba3314
+104029,data,,,0x00ba1968,0x00bc9844,0x00ba1968
+104030,data,,,0x00ba1970,0x00bc984c,0x00ba1970
 104031,data,,,,0x00bccef0,
 104032,data,,,,0x00bcd014,
 104033,data,,,,0x00bcd108,
-104034,data,,,,0x00bce01c,0x00ba5068
-104035,data,,,,0x00bce024,0x00ba5070
+104034,data,,,0x00ba5068,0x00bce01c,0x00ba5068
+104035,data,,,0x00ba5070,0x00bce024,0x00ba5070
 104036,data,,,,0x00bd9b78,
 104037,data,,,,0x00bd9d64,
 104038,data,,,,0x00bd9e20,
@@ -104396,3 +104396,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 104395,data,,,,0x00c46618,
 104396,data,,,,0x00c46650,
 104397,data,,,,0x00c46688,
+104398,function,,,0x004d24dc,0x0081361c,0x004d24dc
+104399,function,,,0x004d24ec,0x0081362c,0x004d24ec
+104400,function,,,0x004d258d,0x008136cd,0x004d258d
+104401,function,,,0x004d259d,0x008136dd,0x004d259d
+104402,function,,,0x00501e1d,0x007e9fed,0x00501e1d
+104403,function,GameModeCharGen::SetFinished,"Stores 1 in GameModeCharGen +0x86 (finished) and returns. Reached only by the tail jump at 0x0060B241 in GUI::DragonAgeGUISystem::FinishFullScreenGUIForMode, with ecx = the character-generation mode; it follows the destructor's own tail jump with no padding, which is why it had no ID until 2026-11-16.",0x00719290,0x0060a3f0,0x00719290
+104404,function,CNetLayerInternal::ReceiveTcpSocket,"The internal half of CNetLayer::ReceiveTcpSocket (0x00A34760), which loads ecx from its +8 and tail-jumps here. For the socket slot *socketIndex: when its state word at this+0xCF0+4*i is 1, selects for reading on the socket at this+0xCD0+4*i and, if it is readable, recv's up to *size bytes into *buffer. Answers -1 where select or recv fails or the peer closed, 1 with *size set to what arrived, 0 when nothing is waiting. It follows the function before it with no padding after that one's tail jump, which is why it had no ID until 2026-11-16.",0x00a43ba0,0x008471c0,0x00a43ba0

@@ -144,9 +144,19 @@ class Side:
         within a function, to a loop the compiler aligned with nops, does
         not."""
         at = va - self.base
-        if va % 16 != 0 or not self.in_text(va - 3):
+        if va % 16 != 0 or not self.in_text(va - 5):
             return False
-        return self.mem[at - 1] in (0xCC, 0xC3) or self.mem[at - 3] == 0xC2
+        if self.mem[at - 1] in (0xCC, 0xC3) or self.mem[at - 3] == 0xC2:
+            return True
+        # Or straight after the tail call that ends the one before, a
+        # `jmp rel32` into the code, where the boundary needed no padding:
+        # GameModeCharGen's destructor ends `jmp 0x00694280` at 0x0071928B
+        # and the function at 0x00719290, which only a tail jump reaches,
+        # had no ID (paragon-agent's game-modes sheets, 2026-11-16). Two in
+        # the GOG build.
+        if self.mem[at - 5] != 0xE9:
+            return False
+        return self.in_text(va + struct.unpack_from("<i", self.mem, at - 4)[0])
 
     def relocs_in(self, va, size):
         """Offsets within [va, va+size) where a relocated word starts."""
