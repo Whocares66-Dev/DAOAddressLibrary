@@ -16275,7 +16275,7 @@ address,what,value,why
 0x00A58120,signature,"bool __stdcall f(unsigned int id, unsigned int *out)",ret 8 at the end of 0x00a58120
 0x00A581F0,signature,"bool __thiscall f(void *this, unsigned int mask)",0x00A581F0-0x00A58208 ret 4
 0x00A58210,signature,bool __stdcall f(unsigned int id),ret 4 at the end of 0x00a58210
-0x00A58240,signature,"void * __thiscall f(void *this, unsigned int objectId, unsigned char objectType)",0x00A58240-0x00A582B8 ret 8
+0x00A58240,signature,"void * __thiscall f(void *this, unsigned char objectType, unsigned int objectId)","CGameObject::CGameObject: REPLACES the existing signature row for this address, which has the two arguments the other way round. ret 8; the first stack argument is stored as the type byte at [this+0x14] (0x00A5829E mov al,[esp+0x24]) and the second is given to the id attribute setter (0x00A5828A mov eax,[esp+0x28]); the callers push the type last, e.g. push -1, push 0x11 at 0x007F7B10 in MapLocation::MapLocation"
 0x00A59E10,signature,void * __thiscall f(void *this),ret 4 at the end of 0x00a59e10
 0x00A59E30,signature,"bool __thiscall f(void *this, unsigned int arg)",0x00A59E30-0x00A59E43 ret 4
 0x00A59E50,signature,"void * __thiscall f(void *this, void *other)",0x00a59e50 ret 4
@@ -18983,3 +18983,16 @@ address,what,value,why
 0x00897420,signature,"void __thiscall f(void *this, bool value)","Input::StateAnswer::SetBool: ret 4, ecx the answer (0x0087E171 mov ecx,esi in QueryMouseState), the byte at esp+4 stored"
 0x00897430,signature,"void __thiscall f(void *this, int value)","Input::StateAnswer::SetInt: ret 4, ecx the answer (0x0087E126 mov ecx,esi in QueryMouseState), the dword at esp+4 stored"
 0x0093E084,nofunction,,"the head of the loop of the function at 0x0093DF70 (ID 28092, Scaleform's ActionScript interpreter): 0x00942A9B jumps back to it and nothing calls it. Ghidra's class recovery had made it a function and named it a GFxLogBase constructor or destructor, which ended the real function after 276 bytes (paragon-agent, 2026-11-16: the interpreter around 0x00941400 to 0x00942A5B ""is not a function in Ghidra or the store"")"
+0x00660063,nofunction,,"a function Ghidra defined at 0x00660063 (labelled MapTrail::vfunction3): it is the tail of ScriptCommand::GETPLOTFLAGNAME 0x0065FFB0, which falls through to it after pushing the arguments at 0x0066005D to 0x00660062; the code calls PlotManager::GetFlagName 0x0075F420 and StackPushString and ends with ret 8 at 0x006600F6; areas sheets, checked in the exe"
+0x006F58E0,signature,"void __thiscall f(void *this, void *tag, void *plotGuid)","Journal::RemovePlotDestination: ret 8 at 0x006F59DA, ecx read as the journal (lea ebp,[ecx+0x118] at 0x006F58E9); the one caller PlotManager::SetPlotFlag 0x0075F7E0 loads the journal into ecx before the call at 0x0075FB59"
+0x0075CB30,signature,"bool __thiscall f(void *this, void *resRef, void *guidOut)","PlotManager::GetPlotGuidByResRef: ret 8 at 0x0075CC91, ecx the plot manager (callers load it from [object+0x210]); the first stack argument is compared with each plot's template resref and the second receives the GUID"
+0x0075F070,signature,"void * __thiscall f(void *this, void *out, void *plotGuid)","PlotManager::GetPlotResRef: ret 8 at 0x0075F15D, ecx the plot manager (callers load it from [object+0x210], e.g. 0x0065FDBB); returns its output string argument"
+0x0075F710,signature,"int __thiscall f(void *this, void *plotGuid, int flag)","PlotManager::GetFlagRewardId: ret 8 at 0x0075F7D7, ecx the plot manager (0x0075F737 mov esi,ecx then FindPlot)"
+0x00760250,signature,void __thiscall f(void *this),"PlotManager::ShowAllCodexEntries: plain ret at 0x0076045E, ecx the plot manager (the caller SHOWALLCODEXENTRIES 0x006658B0 loads [object+0x210] into ecx at 0x006658BF)"
+0x00700990,signature,"void __thiscall f(void *this, void *area, void *waypoint, void *startPin)",WorldMap::StartTravelling: ret 0xC at 0x00700A51; ecx the WorldMap (Ghidra typed this as int); the decompile's param_4 is the start pin passed on to MapObject::BuildTravelPath
+0x007C5D60,signature,"bool __thiscall f(void *this, void *areaTag)","MapObject::SetPlayerLocationByArea: ret 4, ecx the MapObject (it reads this+0xD0 and sets this+0x16C), answers 1 when a pin matched, else 0"
+0x007C5E30,signature,"void * __thiscall f(void *this, void *areaTag)","MapObject::FindPinByString: ret 4, ecx the MapObject; answers the MapLocation or null"
+0x007C5EE0,signature,"void * __thiscall f(void *this, unsigned int index)","MapObject::PinAt: ret 4, ecx the MapObject; answers the MapLocation at the index or null"
+0x007C9440,signature,"void __thiscall f(void *this, void *other)","MapObject::CopyPinsFrom: ret 4 at 0x007C9576, ecx the receiving MapObject, the argument the map whose pins move"
+0x00701550,signature,void __thiscall f(void *this),"WorldMap::MergeLoadedMaps: plain ret at 0x00701615, ecx the WorldMap (Ghidra has __fastcall with an int)"
+0x00700F50,signature,"void * __thiscall f(void *this, void *name)","WorldMap::FindLoadedMapByName: ret 4, ecx the WorldMap; answers the MapObject or null"

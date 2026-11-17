@@ -2945,7 +2945,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2944,function,Renderer::ADMaterialNameAffinity::`scalar deleting destructor',,0x0046e4e0,0x008aec20,0x0046e4e0
 2945,function,Renderer::ADSemanticNameAffinity::ADSemanticNameAffinity,,0x0046e500,0x008aec40,0x0046e500
 2946,function,Renderer::ADIncludesSemanticAffinity::ADIncludesSemanticAffinity,,0x0046e5a0,0x008aece0,0x0046e5a0
-2947,function,Renderer::ADIncludesSemanticAffinity::GetType,,0x0046e640,0x007f2dd0,0x0046e640
+2947,function,Stub::ReturnFive,"mov eax,5; ret. A folded body: used as slot 115 (GetTriggerType) of CCTriggerAudioMusicVolume, where 5 is the music-volume kind; the table knew it under an unrelated renderer class name. The other trigger kinds answer 1 area transition, 2 trap, 3 reverb, 4 volume.",0x0046e640,0x007f2dd0,0x0046e640
 2948,function,Renderer::ADNoShadowCastAffinity::Matches,,0x0046e650,0x008aed80,0x0046e650
 2949,function,Renderer::ADMultiPassAffinity::Matches,,0x0046e670,0x008aeda0,0x0046e670
 2950,function,Renderer::ADNodeShadowCasterAffinity::ADNodeShadowCasterAffinity,,0x0046e690,0x008aedc0,0x0046e690
@@ -12377,7 +12377,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12376,function,,,0x00632c00,0x0060e6a0,0x00632c00
 12377,function,,,0x00632ca0,0x0060e740,0x00632ca0
 12378,function,,,0x00632f60,0x0060ea00,0x00632f60
-12379,function,,,0x00633160,0x00872e40,0x00633160
+12379,function,std::vector<unsigned int>::operator!=,"Calls std::vector<unsigned int>::operator== 0x00739170 and negates it (7 instructions). CCArea::Update 0x0068AF30 uses it to compare the party's rooms this frame with last frame (+0x61C against +0x60C); other callers are ECDynArray and AnimBase templates, so it is a shared template instance and not the area's.",0x00633160,0x00872e40,0x00633160
 12380,function,,,0x00633180,0x0060ec00,0x00633180
 12381,function,,,0x006331c0,0x0060ec40,0x006331c0
 12382,function,,,0x00633346,0x0060edc6,0x00633346
@@ -13556,7 +13556,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13555,function,AreaEntry::~AreaEntry,,0x0067a110,0x00566200,0x0067a110
 13556,function,CCArea::ImportanceFilterMatches,,0x0067a170,0x00566260,0x0067a170
 13557,function,Renderer::FrameBufferEffect::SetFloatParameter,,0x0067a1d0,0x005662c0,0x0067a1d0
-13558,function,CCArea::ClearCreatureTreeRoot,,0x0067a260,0x00566350,0x0067a260
+13558,function,CCArea::ResetCreatureTreePools,"Stores 0 in the two dwords at CCArea+0x5D8 (0x0067A262, 0x0067A268). Those are the used counts of the two node pools (leaf, branch) that AllocCreatureTreeNode 0x00685A60 reads and increments at [this+kind*4+0x5D8]: the pools are reset; the tree root (+0x584) is separate. Called by RebuildCreatureTree, DestroyContents and the constructor.",0x0067a260,0x00566350,0x0067a260
 13559,function,KDCreatureNode::LinkSorted,,0x0067a270,0x00566360,0x0067a270
 13560,function,KDCreatureBranch::GetSplit,,0x0067a2d0,0x005663c0,0x0067a2d0
 13561,function,KDCreatureNode::SetCreature,,0x0067a2f0,0x005663e0,0x0067a2f0
@@ -13727,7 +13727,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13726,function,,,0x00680b75,0x0056c845,0x00680b75
 13727,function,"std::_Sort<CCArea::CreatureTreeEntry*,int,CompareByX>",,0x00680c00,0x0056c8d0,0x00680c00
 13728,function,"std::_Sort<CCArea::CreatureTreeEntry*,int,CompareByY>",,0x00680cf0,0x0056c9c0,0x00680cf0
-13729,function,,,0x00680de0,0x0056cab0,0x00680de0
+13729,function,"Core::MapEraseDeleteVector<int,?>","this is the team map (std::map<int,vector*>) that GetTeamMapForType returns, not the area: finds the key, deletes the vector the entry holds (std::vector<void*>::_Tidy, operator delete) and erases the entry. Only caller CCArea::RemoveObjectFromTeam 0x00687A50, when a team's vector has become empty.",0x00680de0,0x0056cab0,0x00680de0
 13730,function,,,0x00680e60,0x0056cb30,0x00680e60
 13731,function,,,0x00680eb0,0x0056cb80,0x00680eb0
 13732,function,,,0x00680f00,0x00693650,0x00680f00
@@ -14733,7 +14733,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14732,function,CCCreature::TurnToAngle,,0x006ade40,0x0059f020,0x006ade40
 14733,function,CCCreature::MoveToLocation,,0x006adf70,0x0059f150,0x006adf70
 14734,function,CCCreature::SetCombatState,,0x006ae0a0,0x0059f280,0x006ae0a0
-14735,function,CCCreature::UpdateTriggerSet,"(newSet): each object in the +0xBA8 set but not in newSet gets EXIT (vtable +0x17C with 0); each in newSet but not in +0xBA8 gets ENTER (1), skipped for a creature-kind object while this creature IsInConversation",0x006ae100,0x0059f2e0,0x006ae100
+14735,function,CCCreature::UpdateTriggerSet,"For each object in the +0xBA8 trigger set not in newSet calls vtable +0x17C with 0 (EXIT); for each in newSet not in the set calls it with 1 (ENTER), skipped when the object answers non-null to vtable slot 3 (+0xC, the area-of-effect cast, which only CCAreaOfEffectObject overrides) and this creature IsInConversation. Corrects the earlier note that said creature-kind.",0x006ae100,0x0059f2e0,0x006ae100
 14736,function,CCCreature::IsInsideTriggerOrAOE,,0x006ae2b0,0x0059f490,0x006ae2b0
 14737,function,CCCreature::UpdatePortrait,,0x006ae2d0,0x0059f4b0,0x006ae2d0
 14738,function,CCItem::HasReservation,,0x006ae360,0x0059f540,0x006ae360
@@ -15750,7 +15750,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15749,function,Journal::UpdateEntry,,0x006f5040,0x005e6d10,0x006f5040
 15750,function,Journal::CompletePlot,"(resref, fireEvent): moves the plot entry and its chain from the plot list to the completed list, clearing the active plot if it was it; with fireEvent raises event 0x62 on the module (AddEventDeltaTime, handler 10) with the entry's name as string 0",0x006f5380,0x005e7050,0x006f5380
 15751,function,Journal::SortCodexEntries,,0x006f5750,0x005e7420,0x006f5750
-15752,function,,,0x006f58e0,0x005e75b0,0x006f58e0
+15752,function,Journal::RemovePlotDestination,"this = the Journal (called from PlotManager::SetPlotFlag 0x0075FB59 with ECX the journal); ret 8, arguments (tag, plotGuid) as pointers to strings. Finds the tag in the plot destination map at +0x118, removes the GUID from its list; when the list is empty erases the tag and calls the object slot +0x184 (SetPlotDestination) with 0 on every object of that tag in the module tag index; always ends with RebuildPlotDestinations.",0x006f58e0,0x005e75b0,0x006f58e0
 15753,function,,,0x006f59e0,0x005e76b0,0x006f59e0
 15754,function,"std::map<ECBase::ECString,ECBase::ECDynArray<ECBase::ECString>>::~map",,0x006f5be0,0x005e7da0,0x006f5be0
 15755,function,"SmartData::Attribute<unsigned short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::SetFromText",,0x006f5c20,0x005e78b0,0x006f5c20
@@ -17894,7 +17894,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17893,function,CCPlaceable::GetPatchUseSpot,,0x0074dfb0,0x00659f20,0x0074dfb0
 17894,function,CCPlaceable::StampTrapPatch,,0x0074e5e0,0x0065a550,0x0074e5e0
 17895,function,CCPlaceable::UnstampTrapPatch,,0x0074e640,0x0065a5b0,0x0074e640
-17896,function,CCPlaceable::ForScript_SetPlotGiver,,0x0074e6a0,0x005948a0,0x0074e6a0
+17896,function,CCObject::SetPlotGiver,"Slot 98 (+0x188) of both CCCreature and CCPlaceable (CCObject itself has a no-op there). Sets the byte CCObject+0x25A (is a plot giver) and, when it changed, tells the journal (AddPlotGiver 0x006F4640 or RemovePlotGiver 0x006F4680) and calls UpdatePlotMarker (slot +0x18C). Called with 0 by both destructors and by the SETPLOTGIVER script command through the slot.",0x0074e6a0,0x005948a0,0x0074e6a0
 17897,function,CCPlaceable::HandleEmptiedContainer,,0x0074e710,0x0065a610,0x0074e710
 17898,function,CCPlaceable::UpdateDoorCollision,,0x0074e850,0x0065a750,0x0074e850
 17899,function,CCPlaceable::HandleMessage_InventoryClosedMessage,,0x0074e8d0,0x0065a7d0,0x0074e8d0
@@ -18117,7 +18117,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18116,function,Plots::GetFlagAssistTag,,0x0075c980,0x006a7be0,0x0075c980
 18117,function,Plots::GetFlagAssistAdvancesPlot,,0x0075ca20,0x006a7c80,0x0075ca20
 18118,function,Plots::GetFlagIdByIndex,,0x0075ca80,0x006a7ce0,0x0075ca80
-18119,function,ScriptBackend::ForScript_GetPlotGUID,,0x0075cb30,0x006a7d90,0x0075cb30
+18119,function,PlotManager::GetPlotGuidByResRef,"this = the PlotManager. ret 8, arguments (resref in, GUID out) as pointers to strings. Walks every plot entry that has a resource, reads plot 0 of that resource (field 3, the template resref), and when it equals the argument string overwrites it with the entry key (the GUID); true when found.",0x0075cb30,0x006a7d90,0x0075cb30
 18120,function,,,0x0075ccd0,0x006a7f30,0x0075ccd0
 18121,function,"stdext::hash_map<std::wstring,?>::~hash_map","destroys a wide-string-keyed hash_map: its wstring at +0x28, the bucket array at +0x14 and the list at +4",0x0075cd70,0x00807b50,0x0075cd70
 18122,function,PlotManager::WriteToSave,"Writes the plot map (0x4011; each name 0x4012, words 0x4013..0x4016) and, where the struct has field 0x4089, the unread codex entry names from Journal::GetUnreadCodexEntryNames (0x0075D006)",0x0075ce00,0x006a7fd0,0x0075ce00
@@ -18136,15 +18136,15 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18135,function,PlotManager::GetPlotFlag,,0x0075ea60,0x006a9c30,0x0075ea60
 18136,function,PlotManager::GetPlotName,,0x0075ed50,0x006a9f20,0x0075ed50
 18137,function,PlotManager::GetRootPlotName,,0x0075ee60,0x006aa030,0x0075ee60
-18138,function,ScriptBackend::ForScript_GetPlotResRef,,0x0075f070,0x006aa240,0x0075f070
+18138,function,PlotManager::GetPlotResRef,"this = the party PlotManager (callers load it from [object+0x210] into ECX, e.g. 0x0065FDBB in GETPLOTRESREF). Finds the plot with FindPlot and answers its template resref from the .plo it names.",0x0075f070,0x006aa240,0x0075f070
 18139,function,PlotManager::GetRootPlotResRef,,0x0075f160,0x006aa330,0x0075f160
 18140,function,PlotManager::GetPlotAllowPausing,,0x0075f350,0x006aa520,0x0075f350
 18141,function,PlotManager::GetFlagName,,0x0075f420,0x006aa5f0,0x0075f420
 18142,function,PlotManager::GetFlagJournalText,,0x0075f520,0x006aa6f0,0x0075f520
 18143,function,PlotManager::HasFlag,,0x0075f640,0x006aa810,0x0075f640
-18144,function,ScriptBackend::ForScript_GetPlotFlagRewardId,,0x0075f710,0x006aa8e0,0x0075f710
+18144,function,PlotManager::GetFlagRewardId,,0x0075f710,0x006aa8e0,0x0075f710
 18145,function,PlotManager::SetPlotFlag,"Sets a plot flag; its tail updates the journal: AddUberQuestAlert for a plot not yet in the plot list, AddEntry or UpdateEntry, AddJournalAlert for an update, and CompletePlot (0x00760101) for a flag that ends the plot",0x0075f7e0,0x006aa9b0,0x0075f7e0
-18146,function,ScriptBackend::ForScript_ShowAllCodexEntries,,0x00760250,0x006ab420,0x00760250
+18146,function,PlotManager::ShowAllCodexEntries,,0x00760250,0x006ab420,0x00760250
 18147,function,PartyFollow::SetCatchUp,,0x00760460,0x006e1410,0x00760460
 18148,function,PartyFollow::GetSlotLength,,0x00760520,0x006e14d0,0x00760520
 18149,function,PartyFollow::SlotLocation,,0x007605b0,0x006e1560,0x007605b0
@@ -19529,14 +19529,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19528,function,Core::DerefValidListIterator<int>,,0x0079a190,0x00451ff0,0x0079a190
 19529,function,CCTrigger::Load,,0x0079a1d0,0x0066b890,0x0079a1d0
 19530,function,CCTriggerAudioReverb::SaveToStruct,,0x0079a450,0x0066bb10,0x0079a450
-19531,function,CCTrigger::Load,,0x0079a480,0x0066bb40,0x0079a480
+19531,function,CCTriggerAudioMusicVolume::Load,"One-instruction thunk, jmp 0x0079A1D0 (CCTrigger::Load); it is the slot 112 entry of CCTriggerAudioMusicVolume (0x00B20A2C table), where the other kinds point straight at CCTrigger::Load or have their own.",0x0079a480,0x0066bb40,0x0079a480
 19532,function,CCTriggerAudioVolume::Load,,0x0079a490,0x0066bb50,0x0079a490
 19533,function,CCTriggerAudioVolume::ReadFields,,0x0079a5d0,0x0066bc90,0x0079a5d0
 19534,function,CCTriggerAudioVolume::SaveToStruct,,0x0079a600,0x0066bcc0,0x0079a600
 19535,function,CCTriggerAudioVolume::LoadSoundListFromSave,,0x0079a620,0x0066bce0,0x0079a620
 19536,function,Gff4::BlockRef::GetListElementVector3,,0x0079a770,0x0066be30,0x0079a770
 19537,function,CCTrigger::LoadFromStruct,,0x0079a7e0,0x0066bea0,0x0079a7e0
-19538,function,CCTriggerTrap::LoadFromStruct,,0x0079a9b0,0x0066c070,0x0079a9b0
+19538,function,CCTrigger::LoadFromStructBaseOnly,"Slot 34 of CCTriggerTrap and CCTriggerAreaTransition (0x00B20524, 0x00B2083C): if the save struct is non-null calls CCTrigger::LoadFromStruct 0x0079A7E0 and returns true, else false. Neither kind has fields of its own to restore here (their own fields are read by ReadFields). The audio kinds have their own slot-34 functions.",0x0079a9b0,0x0066c070,0x0079a9b0
 19539,function,CCTriggerAudioReverb::LoadFromStruct,,0x0079a9d0,0x0066c090,0x0079a9d0
 19540,function,CCTriggerAudioMusicVolume::LoadFromStruct,,0x0079aaa0,0x0066c160,0x0079aaa0
 19541,function,CCTriggerAudioVolume::LoadFromStruct,,0x0079ab40,0x0066c200,0x0079ab40
@@ -20428,7 +20428,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20427,function,"std::_Copy_opt<MapTrailPoint*,MapTrailPoint*>",,0x007c5980,0x006ac630,0x007c5980
 20428,function,"std::_Uninit_fill_n<MapTrail*,unsigned int,MapTrail>",,0x007c59d0,0x006ac680,0x007c59d0
 20429,function,Catch_All@007c5a3a,,0x007c5a3a,0x006ac6ea,0x007c5a3a
-20430,function,MapTravelPoint::GetConnectionCount,,0x007c5a70,0x006ac720,0x007c5a70
+20430,function,MapLocation::GetConnectionCount,"this = a MapLocation (a pin): answers the count of its connection vector at +0x1BC, [this+0x1C0] and [this+0x1C4] shifted right by 4 (elements of 0x10 bytes), 0 when empty. Its one caller is MapPathSearch::RelaxNeighbours 0x007C6480 with the pin from MapObject::PinAt. The old name said MapTravelPoint, which is the route point class (0x78 bytes) and has no such fields.",0x007c5a70,0x006ac720,0x007c5a70
 20431,function,MapTravelPoint::MapTravelPoint,,0x007c5a90,0x006ac740,0x007c5a90
 20432,function,MapTravelPoint::`scalar deleting destructor',,0x007c5bf0,0x006ac8a0,0x007c5bf0
 20433,function,MapTravelPoint::MapTravelPoint,,0x007c5c10,0x006ac8c0,0x007c5c10
@@ -20473,7 +20473,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20472,function,MapPathSearch::Initialize,,0x007c6f00,0x006adbd0,0x007c6f00
 20473,function,std::vector<MapTrailPoint>::operator=,,0x007c7050,0x006add20,0x007c7050
 20474,function,MapTrail::operator=,,0x007c7070,0x006add40,0x007c7070
-20475,function,MapPathSearch::MapPathSearch,,0x007c70b0,0x006add80,0x007c70b0
+20475,function,MapPathSearch::MapPathSearch,"The constructor is the whole search: (map, goalIndex, startIndex). MapObject::BuildTravelPath 0x007C7720 passes the player's pin as the goal and the destination as the start (the pushes at 0x007C77E9 to 0x007C77EC), so the search runs from the destination back to the player's pin and reading the predecessors from the goal gives the trails in travel order. The names are right for the search; they are the reverse of the caller's sense.",0x007c70b0,0x006add80,0x007c70b0
 20476,function,"SmartData::Attribute<ECBase::ECDynArray<MapLocation*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x007c7230,0x006adf00,0x007c7230
 20477,function,"SmartData::Attribute<ECBase::ECDynArray<MapTravelPoint*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x007c72b0,0x006adf80,0x007c72b0
 20478,function,"std::fill<MapTrail*,MapTrail>",,0x007c7330,0x006ae000,0x007c7330
@@ -20505,15 +20505,15 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20504,function,MapObject::MapObject,,0x007c89f0,0x006af6c0,0x007c89f0
 20505,function,MapObject::LoadFromResource,,0x007c8e40,0x006afb10,0x007c8e40
 20506,function,MapObject::CopyPinsFrom,,0x007c9440,0x006b0110,0x007c9440
-20507,function,MapExploredGrid::Init,,0x007c9580,0x006b0250,0x007c9580
-20508,function,MapExploredGrid::SetBits,,0x007c9620,0x006b02f0,0x007c9620
-20509,function,MapExploredGrid::OrBits,,0x007c9640,0x006b0310,0x007c9640
-20510,function,MapExploredGrid::GetBits,,0x007c9680,0x006b0350,0x007c9680
-20511,function,MapExploredGrid::IsCellInGrid,,0x007c9690,0x006b0360,0x007c9690
-20512,function,MapExploredGrid::CellToBit,,0x007c96c0,0x006b0390,0x007c96c0
+20507,function,ExploredAreaMap::Init,,0x007c9580,0x006b0250,0x007c9580
+20508,function,ExploredAreaMap::SetBits,,0x007c9620,0x006b02f0,0x007c9620
+20509,function,ExploredAreaMap::OrBits,,0x007c9640,0x006b0310,0x007c9640
+20510,function,ExploredAreaMap::GetBits,,0x007c9680,0x006b0350,0x007c9680
+20511,function,ExploredAreaMap::IsCellInGrid,,0x007c9690,0x006b0360,0x007c9690
+20512,function,ExploredAreaMap::CellToBit,,0x007c96c0,0x006b0390,0x007c96c0
 20513,function,ExploredAreaMap::CellToClip,,0x007c9700,0x006b03d0,0x007c9700
-20514,function,MapExploredGrid::WorldToCell,,0x007c9740,0x006b0410,0x007c9740
-20515,function,MapExploredGrid::CellToWorld,,0x007c9800,0x006b04d0,0x007c9800
+20514,function,ExploredAreaMap::WorldToCell,,0x007c9740,0x006b0410,0x007c9740
+20515,function,ExploredAreaMap::CellToWorld,,0x007c9800,0x006b04d0,0x007c9800
 20516,function,MinimapRenderOperation::Execute,,0x007c9840,0x006b0520,0x007c9840
 20517,function,IGameRenderOperation::`scalar deleting destructor',,0x007c9870,0x006b09e0,0x007c9870
 20518,function,ExploredAreaMap::ExploredAreaMap,,0x007c9890,0x006b0550,0x007c9890
@@ -20527,8 +20527,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20526,function,ExploredAreaMap::MarkPosition,,0x007c9d20,0x006b0a00,0x007c9d20
 20527,function,ExploredAreaMap::RequestMaskRepaint,,0x007c9d70,0x006b0a50,0x007c9d70
 20528,function,MinimapRefreshOperation::Restore,,0x007c9dd0,0x006b0ab0,0x007c9dd0
-20529,function,MapExploredGrid::MakeCurrent,,0x007c9de0,0x006b0ac0,0x007c9de0
-20530,function,MapExploredGrid::SetAllExplored,,0x007c9e00,0x006b0ae0,0x007c9e00
+20529,function,ExploredAreaMap::MakeCurrent,,0x007c9de0,0x006b0ac0,0x007c9de0
+20530,function,ExploredAreaMap::SetAllExplored,,0x007c9e00,0x006b0ae0,0x007c9e00
 20531,function,ExploredAreaMap::UpdateMapNoteVisibility,,0x007c9e30,0x006b0b10,0x007c9e30
 20532,function,Money::UpdateDenominations,,0x007c9f50,0x006b1260,0x007c9f50
 20533,function,Money::Add,,0x007c9fe0,0x006b12f0,0x007c9fe0
@@ -58605,8 +58605,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 58604,function,,,0x00ad3100,0x00accba0,0x00ad3100
 58605,function,,,0x00ad31a0,0x00accc40,0x00ad31a0
 58606,function,,,0x00ad3240,0x00accce0,0x00ad3240
-58607,function,,,0x00ad3260,0x00accd00,0x00ad3260
-58608,function,,,0x00ad3270,0x00accd10,0x00ad3270
+58607,function,ExploredAreaMap::InitExploreRadius,Startup (dynamic) initialiser: fld float [0x00B1A72C] (36.0); fstp [0x00C38DF0] = ExploredAreaMap::s_exploreRadius. Three instructions.,0x00ad3260,0x00accd00,0x00ad3260
+58608,function,ExploredAreaMap::InitNoExploredCellRadius,Startup (dynamic) initialiser: s_noExploredCellRadius (0x00C38DF4) = s_exploreRadius (0x00C38DF0) times the double 0.95 at 0x00B1CEF0 = 34.2. Four instructions.,0x00ad3270,0x00accd10,0x00ad3270
 58609,function,,,0x00ad3290,0x00accd30,0x00ad3290
 58610,function,,,0x00ad32c0,0x00accd60,0x00ad32c0
 58611,function,,,0x00ad32e0,0x00accd80,0x00ad32e0
@@ -61812,7 +61812,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 61811,data,Math::Sphere::vftable,,0x00ae70dc,0x00aeeff8,0x00ae70dc
 61812,data,Math::Plane::vftable,,0x00ae70e4,0x00af6210,0x00ae70e4
 61813,data,Renderer::IPartitionUmbraCommander::vftable,,0x00ae70ec,0x00b24e50,0x00ae70ec
-61814,data,,,0x00ae70f8,0x00ae4980,0x00ae70f8
+61814,data,__real@3fe0000000000000,"Double 0.5, shared by some 180 readers (pathfinding, shadow maps, ExploredAreaMap::WorldToCell at 0x007C977C where it rounds the cell to the nearest grid corner), so it keeps a neutral name.",0x00ae70f8,0x00ae4980,0x00ae70f8
 61815,data,,,0x00ae7100,0x00afdf84,0x00ae7100
 61816,data,,,0x00ae7104,0x00ae52f4,0x00ae7104
 61817,data,,,0x00ae7108,0x00ae4780,0x00ae7108
@@ -68408,7 +68408,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 68407,data,,,0x00b1b764,0x00b0412c,0x00b1b764
 68408,data,,,0x00b1b784,0x00b0414c,0x00b1b784
 68409,data,,,0x00b1b7b4,0x00b0417c,0x00b1b7b4
-68410,data,,,0x00b1b7c0,0x00b04188,0x00b1b7c0
+68410,data,__real@4018000000000000,"Double 6.0, shared: ExploredAreaMap::Init divides the area rectangle by it for the grid cell size in metres (0x007C95AC), and Bezier::DerivativeAt, GColor::SetHSV/GetHSV and CCArea::IsSegmentClearOfCreatures (0x0073D987) read it too, so it keeps a neutral name.",0x00b1b7c0,0x00b04188,0x00b1b7c0
 68411,data,,,0x00b1b7c8,0x00b04190,0x00b1b7c8
 68412,data,,,0x00b1b7d0,0x00b04198,0x00b1b7d0
 68413,data,,,0x00b1b7d8,0x00b041a0,0x00b1b7d8
@@ -102408,7 +102408,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 102407,data,MapObject::VectorAtOrEmpty<MapTrail>::s_empty,,0x00c38da0,0x00c217e0,0x00c38da0
 102408,data,ExploredAreaMap::s_current,,0x00c38dec,0x00c2182c,0x00c38dec
 102409,data,ExploredAreaMap::s_exploreRadius,"Float 36.0 (from 0xb1a72c, stored by the dynamic initializer 0x00ad3260): the radius of the explored disc, scaled by the map width in RequestMaskRepaint to the brush size.",0x00c38df0,0x00c21830,0x00c38df0
-102410,data,ExploredAreaMap::s_noExploredCellRadius,"A float set to 34.2 (ExploredAreaMap::s_brushRadius times the double 0.95 at 0x00b1cef0) by the startup initialiser 0x00ad3270 and read by ExploredAreaMap::NoExploredCellNear (0x007c9a50, at 0x007c9a6b and 0x007c9b6f) as the radius R within which a set cell makes the answer false; the row's size 0xc is only the distance to the next global.",0x00c38df4,0x00c21834,0x00c38df4
+102410,data,ExploredAreaMap::s_noExploredCellRadius,"A float set to 34.2 (ExploredAreaMap::s_exploreRadius times the double 0.95 at 0x00b1cef0) by the startup initialiser 0x00ad3270 and read by ExploredAreaMap::NoExploredCellNear (0x007c9a50, at 0x007c9a6b and 0x007c9b6f) as the radius R within which a set cell makes the answer false; the row's size 0xc is only the distance to the next global. (Corrected: the first sentence named s_brushRadius, which is not a name the table has.)",0x00c38df4,0x00c21834,0x00c38df4
 102411,data,MeleeRings::s_emptyEdgeKey,,0x00c38df8,0x00c21838,0x00c38df8
 102412,data,ECBase::ECDynArray<MeleeRing*>::s_default,"Null pointer (4 bytes, zero bss) returned for an out-of-range index of a creature's array of rings, read by MeleeRings::At, ClearBody, ClaimNearest, NearestUsableRing, BuildEdgeDistanceKeys and ReleaseClaim (TURN_BASED.md line 358); the element type name is INFERRED.",0x00c38e00,0x00c21840,0x00c38e00
 102413,data,EC::Cutscene::Actor::FindFollowerAniHackEntry::s_loaded,"Byte, loaded-once flag: FindFollowerAniHackEntry (0x007E2210) reads GDA table 0x121 (columns Tag, Animation and two more) into s_entries when it is clear and sets it at 0x007E25AD.",0x00c38e08,0x00c21848,0x00c38e08
