@@ -9429,7 +9429,7 @@ address,what,value,why
 0x006FC3A0,signature,"void* __thiscall f(void* this, unsigned int flags)",CSAreaList::`scalar deleting destructor': 0x006FC3A0-0x006FC3BB
 0x006FFEE0,signature,void* __cdecl f(void),WorldMap::GetClassIdPtr: 0x006FFEE0-0x006FFF32
 0x007006F0,signature,"void __thiscall f(void* this, void* fromLocation, void* toLocation)",WorldMap::RaiseBeginTravelEvent: 0x007006F0-0x0070082A
-0x00700830,signature,void __cdecl f(void),WorldMap::RaisePreTransitionEvent: 0x00700830-0x007008C3
+0x00700830,signature,void __thiscall f(void *this),"WorldMap::RaisePreTransitionEvent: REPLACES the existing signature row (void __cdecl f(void)). Plain ret at 0x007008C3 and ECX is not read, so the callee is the same either way, but the one caller, WorldMap::HandleMessage_WorldMapPreTransitionMessage, sets ecx = the WorldMap (0x00700C71 mov ecx,esi; call 0x00700830, esi = this from 0x00700BCF), so it is a method."
 0x00700E00,signature,void __thiscall f(void* this),WorldMap::SwapMaps: 0x00700E00-0x00700E58
 0x00700E60,signature,void __thiscall f(void* this),WorldMap::ResolveMapConnections: 0x00700E60-0x00700EAE
 0x00701520,signature,void __thiscall f(void* this),WorldMap::RegisterMessageHandlers: 0x00701520-0x0070153F
