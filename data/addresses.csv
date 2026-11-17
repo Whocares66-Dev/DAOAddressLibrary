@@ -15749,7 +15749,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15748,function,Journal::HandleMessage_SetActiveQuestMessage,,0x006f4fb0,0x005e6c80,0x006f4fb0
 15749,function,Journal::UpdateEntry,,0x006f5040,0x005e6d10,0x006f5040
 15750,function,Journal::CompletePlot,"(resref, fireEvent): moves the plot entry and its chain from the plot list to the completed list, clearing the active plot if it was it; with fireEvent raises event 0x62 on the module (AddEventDeltaTime, handler 10) with the entry's name as string 0",0x006f5380,0x005e7050,0x006f5380
-15751,function,Journal::SortCodexEntries,,0x006f5750,0x005e7420,0x006f5750
+15751,function,Journal::SortCodexEntries,"Finds and deletes groups with no entries, sorts each remaining group (std::_Sort with CodexEntryNameLess) and numbers the entries into their Index from ONE counter that starts at 1 (0x006F575B) and is not reset between groups (incremented 0x006F58A7): Index is the place in the whole codex, groups in list order.",0x006f5750,0x005e7420,0x006f5750
 15752,function,Journal::RemovePlotDestination,"this = the Journal (called from PlotManager::SetPlotFlag 0x0075FB59 with ECX the journal); ret 8, arguments (tag, plotGuid) as pointers to strings. Finds the tag in the plot destination map at +0x118, removes the GUID from its list; when the list is empty erases the tag and calls the object slot +0x184 (SetPlotDestination) with 0 on every object of that tag in the module tag index; always ends with RebuildPlotDestinations.",0x006f58e0,0x005e75b0,0x006f58e0
 15753,function,,,0x006f59e0,0x005e76b0,0x006f59e0
 15754,function,"std::map<ECBase::ECString,ECBase::ECDynArray<ECBase::ECString>>::~map",,0x006f5be0,0x005e7da0,0x006f5be0
@@ -15783,7 +15783,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15782,function,"std::map<ECBase::ECString,ECBase::ECDynArray<ECBase::ECString>>::_Copy_tree",,0x006f6f60,0x005e8c30,0x006f6f60
 15783,function,"std::map<ECBase::ECString,ECBase::ECDynArray<ECBase::ECString>>::map",,0x006f6fe0,0x005e8cb0,0x006f6fe0
 15784,function,Catch_All@006f705c,,0x006f705c,0x005e8d2c,0x006f705c
-15785,function,Journal::~Journal,,0x006f7070,0x005e8d40,0x006f7070
+15785,function,Journal::~Journal,"Deletes the codex groups, plot tips, both quest lists, plot groups and conversation records, clears the giver list and the token; the orphans vector at +0x90 is only freed (the _Tidy call on ECX=this+0x90 at 0x006F7242), its entries are not deleted.",0x006f7070,0x005e8d40,0x006f7070
 15786,function,Journal::ReadFromSave,,0x006f7290,0x005e8f60,0x006f7290
 15787,function,PlotDestinationMap::PlotDestinationMap_copy,,0x006f82b0,0x005e9f80,0x006f82b0
 15788,function,Journal::Journal_copy,,0x006f8320,0x005e9ff0,0x006f8320
@@ -97316,7 +97316,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 97315,data,GameModeMovie::s_classInfo.parent,,0x00c0436c,0x00bf7440,0x00c0436c
 97316,data,"Messages::Private::MemberFunctionMessageHandler<GameModeMovie,SkipMovieMessage,&GameModeMovie::HandleMessage>::typeinfo",,0x00c04370,0x00bf7448,0x00c04370
 97317,data,GameModeMovie::typeinfo,,0x00c043f4,0x00bf74cc,0x00c043f4
-97318,data,g_plotGroupLastId,,0x00c04410,0x00bf74e8,0x00c04410
+97318,data,g_plotGroupLastId,"PlotGroup::AssignIdIfUnset 0x006EB5C0 does ++ on this 16-bit counter (movzx/add ax,1 at 0x006EB5D4..0x006EB5DF) when a group priority is 0xFFFF and stores the result as the priority. Its value in the exe data is 0xFFFF, so the first group numbered in a process gets 0. Written only by Journal::ReadFromSave 0x006F7290 (set to 0xFFFF when the save has the group list, raised to the largest saved priority); nothing resets it at a new game.",0x00c04410,0x00bf74e8,0x00c04410
 97319,data,AcceptChantersQuestMessage::s_classInfo,,0x00c04414,0x00bf29a4,0x00c04414
 97320,data,AcceptChantersQuestMessage::s_classInfo.parent,,0x00c04418,0x00bf29a8,0x00c04418
 97321,data,ClearChanterBoardMessage::s_classInfo,,0x00c0441c,0x00bf29d8,0x00c0441c
