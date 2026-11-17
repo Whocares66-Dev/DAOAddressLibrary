@@ -10,7 +10,7 @@ import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import structs  # noqa: E402
-from ghidra_types import field_type  # noqa: E402
+from ghidra_types import field_type, template_of, with_instances  # noqa: E402
 
 
 class FieldType(unittest.TestCase):
@@ -69,6 +69,68 @@ class FieldType(unittest.TestCase):
         for row in structs.read():
             read = field_type(row["type"])
             self.assertTrue(read is None or "k" in read, row["type"])
+
+
+def row(struct, offset, size, kind, field):
+    return {
+        "struct": struct,
+        "offset": offset,
+        "size": size,
+        "type": kind,
+        "field": field,
+        "evidence": "0x00401000",
+    }
+
+
+class Families(unittest.TestCase):
+    table = (
+        row("std::vector<T>", "0x0", "0x10", "struct", "sizeof"),
+        row("std::vector<T>", "0x4", "0x4", "T*", "first"),
+        row("Pair<K,V>", "0x0", "0x4", "K", "key"),
+        row("Pair<K,V>", "0x4", "0x4", "V*", "value"),
+        row("Holder", "0x0", "0x10", "std::vector<unsigned int>", "ids"),
+        row("Holder", "0x10", "0x10", "std::vector<Pair<int,Thing>>", "pairs"),
+        row("Holder", "0x20", "0x10", "std::vector<Known>", "known"),
+        row("std::vector<Known>", "0x4", "0x4", "Known*", "begin"),
+    )
+
+    def made(self):
+        out = with_instances(self.table)
+        return {(r["struct"], r["field"]): r["type"] for r in out}
+
+    def test_a_template_ends_in_its_arguments(self):
+        self.assertEqual(
+            template_of("std::map<unsigned int,std::vector<void*>>"),
+            ("std::map", ["unsigned int", "std::vector<void*>"]),
+        )
+        self.assertIsNone(template_of("CCArea"))
+
+    def test_an_instance_a_field_names_gets_the_familys_rows(self):
+        made = self.made()
+        self.assertEqual(made["std::vector<unsigned int>", "first"], "unsigned int*")
+        self.assertEqual(made["std::vector<unsigned int>", "sizeof"], "struct")
+
+    def test_what_an_instance_names_in_turn_is_made_too(self):
+        made = self.made()
+        self.assertEqual(
+            made["std::vector<Pair<int,Thing>>", "first"], "Pair<int,Thing>*"
+        )
+        self.assertEqual(made["Pair<int,Thing>", "key"], "int")
+        self.assertEqual(made["Pair<int,Thing>", "value"], "Thing*")
+
+    def test_a_struct_with_rows_of_its_own_keeps_them(self):
+        made = self.made()
+        self.assertEqual(made["std::vector<Known>", "begin"], "Known*")
+        self.assertNotIn(("std::vector<Known>", "first"), made)
+
+    def test_the_familys_own_rows_are_not_sent(self):
+        self.assertFalse(
+            any("<T>" in struct or "<K,V>" in struct for struct, _ in self.made())
+        )
+
+    def test_a_table_with_no_family_is_as_it_was(self):
+        plain = [r for r in self.table if r["struct"] == "Holder"]
+        self.assertEqual(with_instances(plain), plain)
 
 
 if __name__ == "__main__":

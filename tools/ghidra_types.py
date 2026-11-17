@@ -106,7 +106,92 @@ SCALARS = {
     "unsigned long long": "ulonglong",
     "uint64_t": "ulonglong",
     "void": "void",
+    # An object's id, a 32-bit word (41 fields on 2026-11-16).
+    "ObjectId": "uint",
 }
+
+
+def template_of(name):
+    """(what comes before a class's last `<...>`, its arguments), or None
+    for a class that ends in no template brackets."""
+    if not name.endswith(">"):
+        return None
+    depth = 0
+    for at in range(len(name) - 1, -1, -1):
+        depth += name[at] == ">"
+        depth -= name[at] == "<"
+        if depth == 0:
+            break
+    else:
+        return None
+    arguments, piece, depth = [], "", 0
+    for ch in name[at + 1 : -1]:
+        depth += ch == "<"
+        depth -= ch == ">"
+        if ch == "," and depth == 0:
+            arguments.append(piece.strip())
+            piece = ""
+        else:
+            piece += ch
+    return name[:at], [*arguments, piece.strip()]
+
+
+def class_names(tree):
+    """The classes a field_type tree names."""
+    if tree is None:
+        return []
+    if tree["k"] == "class":
+        return [tree["text"]]
+    if tree["k"] == "union":
+        return [name for member, _ in tree["members"] for name in class_names(member)]
+    return class_names(tree.get("to") or tree.get("of"))
+
+
+def with_instances(rows):
+    """The table's rows without the families' own, and after them the rows
+    of each instance of a family that some field's type names.
+
+    A family is a struct written once for every argument, its name ending
+    in single capitals for them: `std::vector<T>` with a `T*` first, or
+    `std::map<K,V>`. A field typed `std::vector<unsigned int>` then has a
+    layout, that family's with unsigned int for T, and so does what such a
+    layout names in turn. 944 fields named a class with no rows of its own
+    on 2026-11-16, 163 of them a std::vector and 264 a SmartData::Attribute,
+    each a different class to Ghidra. A struct the table has rows for under
+    its own name is left as the table has it."""
+    families = {}
+    for row in rows:
+        split = template_of(row["struct"])
+        if split and all(re.fullmatch("[A-Z]", a) for a in split[1]):
+            families.setdefault((split[0], len(split[1])), (split[1], []))[1].append(
+                row
+            )
+    if not families:
+        return list(rows)
+    have = {row["struct"] for row in rows}
+    written = {id(row) for _, layout in families.values() for row in layout}
+    out = [row for row in rows if id(row) not in written]
+    waiting = list(out)
+    while waiting:
+        row = waiting.pop()
+        for name in class_names(field_type(row["type"])):
+            split = template_of(name)
+            family = families.get((split[0], len(split[1]))) if split else None
+            if name in have or family is None:
+                continue
+            have.add(name)
+            letters, layout = family
+            given = dict(zip(letters, split[1], strict=True))
+            for field in layout:
+                made = dict(field, struct=name)
+                made["type"] = re.sub(
+                    r"\b[A-Z]\b",
+                    lambda m, given=given: given.get(m.group(), m.group()),
+                    field["type"],
+                )
+                out.append(made)
+                waiting.append(made)
+    return out
 
 
 def parts_of(name):

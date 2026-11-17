@@ -412,7 +412,7 @@ def struct_rows():
     field, and a field (offset, size, its type as ghidra_types.field_type
     reads it, name)."""
     fields, whole = {}, {}
-    for row in structs.read():
+    for row in ghidra_types.with_instances(structs.read()):
         offset, size = int(row["offset"], 16), int(row["size"], 16)
         if row["field"] == structs.SIZEOF:
             whole[row["struct"]] = size
