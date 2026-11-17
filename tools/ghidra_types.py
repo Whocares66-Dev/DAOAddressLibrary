@@ -158,7 +158,15 @@ def with_instances(rows):
     layout names in turn. 944 fields named a class with no rows of its own
     on 2026-11-16, 163 of them a std::vector and 264 a SmartData::Attribute,
     each a different class to Ghidra. A struct the table has rows for under
-    its own name is left as the table has it."""
+    its own name is left as the table has it.
+
+    A family's last field may hold an argument itself, not a pointer to it:
+    SmartData::Attribute<T> keeps its value at +0xC, so one of int is 0x10
+    bytes and one of a wide string 0x28. That field is written with a
+    four-byte argument's size; an instance's is its own argument's, and
+    its sizeof grows by the difference, to a multiple of four. Where the
+    argument's size is not known the instance has neither that field nor
+    a size."""
     families = {}
     for row in rows:
         split = template_of(row["struct"])
@@ -168,30 +176,88 @@ def with_instances(rows):
             )
     if not families:
         return list(rows)
-    have = {row["struct"] for row in rows}
     written = {id(row) for _, layout in families.values() for row in layout}
     out = [row for row in rows if id(row) not in written]
-    waiting = list(out)
-    while waiting:
-        row = waiting.pop()
+    have = {row["struct"] for row in rows}
+    sizes = {
+        row["struct"]: int(row["size"], 16) for row in out if row["field"] == "sizeof"
+    }
+
+    def instance(name):
+        split = template_of(name)
+        family = families.get((split[0], len(split[1]))) if split else None
+        if name in have or family is None:
+            return
+        have.add(name)
+        letters, layout = family
+        given = dict(zip(letters, split[1], strict=True))
+        for argument in split[1]:
+            for inner in class_names(field_type(argument)):
+                instance(inner)
+        fields = sorted(
+            (f for f in layout if f["field"] != "sizeof"),
+            key=lambda f: int(f["offset"], 16),
+        )
+        grown = 0
+        for field in fields:
+            made = dict(field, struct=name)
+            made["type"] = re.sub(
+                r"\b[A-Z]\b", lambda m: given.get(m.group(), m.group()), field["type"]
+            )
+            if field["type"] in given and field is fields[-1]:
+                size = tree_size(field_type(made["type"]), sizes)
+                if size is None:
+                    grown = None
+                    continue
+                grown = size - int(field["size"], 16)
+                made["size"] = f"0x{size:X}"
+            out.append(made)
+            for inner in class_names(field_type(made["type"])):
+                instance(inner)
+        whole = next((f for f in layout if f["field"] == "sizeof"), None)
+        if whole is not None and grown is not None:
+            size = -(-(int(whole["size"], 16) + grown) // 4) * 4
+            sizes[name] = size
+            out.append(dict(whole, struct=name, size=f"0x{size:X}"))
+
+    for row in list(out):
         for name in class_names(field_type(row["type"])):
-            split = template_of(name)
-            family = families.get((split[0], len(split[1]))) if split else None
-            if name in have or family is None:
-                continue
-            have.add(name)
-            letters, layout = family
-            given = dict(zip(letters, split[1], strict=True))
-            for field in layout:
-                made = dict(field, struct=name)
-                made["type"] = re.sub(
-                    r"\b[A-Z]\b",
-                    lambda m, given=given: given.get(m.group(), m.group()),
-                    field["type"],
-                )
-                out.append(made)
-                waiting.append(made)
+            instance(name)
     return out
+
+
+SIZES = {
+    "int": 4,
+    "uint": 4,
+    "short": 2,
+    "ushort": 2,
+    "char": 1,
+    "uchar": 1,
+    "bool": 1,
+    "float": 4,
+    "double": 8,
+    "wchar": 2,
+    "longlong": 8,
+    "ulonglong": 8,
+}
+
+
+def tree_size(tree, sizes):
+    """How many bytes a field_type tree is, given the structs' sizes, or
+    None where it cannot be told."""
+    if tree is None:
+        return None
+    if tree["k"] == "scalar":
+        return SIZES.get(tree["name"])
+    if tree["k"] == "ptr":
+        return 4
+    if tree["k"] == "array":
+        inner = tree_size(tree["of"], sizes)
+        return None if inner is None else inner * tree["n"]
+    if tree["k"] == "class":
+        return sizes.get(tree["text"])
+    inner = [tree_size(member, sizes) for member, _ in tree["members"]]
+    return None if None in inner else max(inner)
 
 
 def parts_of(name):

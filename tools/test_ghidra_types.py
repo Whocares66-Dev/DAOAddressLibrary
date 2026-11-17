@@ -128,6 +128,27 @@ class Families(unittest.TestCase):
             any("<T>" in struct or "<K,V>" in struct for struct, _ in self.made())
         )
 
+    def test_a_last_field_that_holds_the_argument_is_the_arguments_size(self):
+        table = (
+            row("Attribute<T>", "0x0", "0x10", "struct", "sizeof"),
+            row("Attribute<T>", "0x0", "0x4", "void*", "vftable"),
+            row("Attribute<T>", "0xC", "0x4", "T", "value"),
+            row("Wide", "0x0", "0x1C", "struct", "sizeof"),
+            row("Owner", "0x0", "0x28", "Attribute<Wide>", "name"),
+            row("Owner", "0x28", "0x10", "Attribute<bool>", "flag"),
+            row("Owner", "0x38", "0x10", "Attribute<int>", "count"),
+            row("Owner", "0x48", "0x4", "Attribute<Unread>*", "other"),
+        )
+        made = {(r["struct"], r["field"]): r["size"] for r in with_instances(table)}
+        self.assertEqual(made["Attribute<Wide>", "value"], "0x1C")
+        self.assertEqual(made["Attribute<Wide>", "sizeof"], "0x28")
+        self.assertEqual(made["Attribute<bool>", "value"], "0x1")
+        self.assertEqual(made["Attribute<bool>", "sizeof"], "0x10")
+        self.assertEqual(made["Attribute<int>", "sizeof"], "0x10")
+        self.assertEqual(made["Attribute<Unread>", "vftable"], "0x4")
+        self.assertNotIn(("Attribute<Unread>", "value"), made)
+        self.assertNotIn(("Attribute<Unread>", "sizeof"), made)
+
     def test_a_table_with_no_family_is_as_it_was(self):
         plain = [r for r in self.table if r["struct"] == "Holder"]
         self.assertEqual(with_instances(plain), plain)
