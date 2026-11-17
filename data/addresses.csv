@@ -2346,7 +2346,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2345,function,Gff4::ValueRef::ReadFloat,,0x00456b80,0x005f4270,0x00456b80
 2346,function,Gff4::ValueRef::ReadVector4,,0x00456b90,0x00891460,0x00456b90
 2347,function,std::_Sort_heap<Renderer::FrameBufferEffect * *>,,0x00456bc0,0x00891490,0x00456bc0
-2348,function,Renderer::FrameBufferEffects::Draw,,0x00456c10,0x008914e0,0x00456c10
+2348,function,Renderer::FrameBufferEffects::SendEvent,"Sends one event id to every effect of the list: nothing when the list's switch byte (+0x10) is 0, otherwise calls slot 1 (Run) of each effect with the event when g_frameEffectsEnabled (0x00C1E8B5) is set or the effect's availability byte (+0x88) is set (0x00456C60..0x00456C82). It draws nothing itself; its one caller is TriggerEvent 0x00456E70, which sends to the loaded list, the current list and the screen list in that order. Was Draw.",0x00456c10,0x008914e0,0x00456c10
 2349,function,Renderer::FrameBufferEffects::Find,,0x00456ca0,0x00891570,0x00456ca0
 2350,function,Renderer::FrameBufferEffects::ClearTargets,,0x00456d20,0x008915f0,0x00456d20
 2351,function,Renderer::FindFrameBufferEffect,,0x00456e60,0x00891730,0x00456e60
@@ -12795,7 +12795,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12794,function,ScreenFade::ScreenFade,,0x0064c3f0,0x00534d90,0x0064c3f0
 12795,function,ScreenFade::SetBlurState,,0x0064c420,0x00534dc0,0x0064c420
 12796,function,ScreenFade::Release,,0x0064c540,0x00534f70,0x0064c540
-12797,function,FadeEffects::SetColorFade,,0x0064c5a0,0x00534fd0,0x0064c5a0
+12797,function,ScreenFade::SetColorFade,"A method of ScreenFade, not of a FadeEffects class: its one caller GameModeExplore::Update 0x00712F90 loads ECX from CClientExoApp +0x154 (0x0071322E), the same ScreenFade that SetBlurState gets at 0x0060B1E9. Reads the colour-fade effect at this+0x14 and its Time resource at +0x18; when the value goes to or from 0 the effect is removed from or added to g_screenFrameBufferEffects (0x004E9640 / 0x00457400 on 0x00C1EAC4), then Time is written (SetValue for a Float32, +0x30 for an Eclipse resource) and the value stored at +0x1C.",0x0064c5a0,0x00534fd0,0x0064c5a0
 12798,function,ScreenFade::CreateEffects,,0x0064c630,0x00535170,0x0064c630
 12799,function,GameModePregame::AcceptData,,0x0064ca30,0x00538ba0,0x0064ca30
 12800,function,RefreshCreditEntriesMessage::GetType,,0x0064ca70,0x0050a6e0,0x0064ca70
@@ -14046,8 +14046,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14045,function,CCObject::IsWithinCameraRange,,0x00694df0,0x00585cc0,0x00694df0
 14046,function,CCObject::SetHighlighted,,0x00694e10,0x00585ce0,0x00694e10
 14047,function,CCObject::IsAnimationActive,,0x00694e20,0x00585cf0,0x00694e20
-14048,function,CCCreature::AnimationLength,,0x00694e50,0x00585d20,0x00694e50
-14049,function,CCCreature::HasAnimation,,0x00694e70,0x00585d40,0x00694e70
+14048,function,CCObject::AnimationLength,"A clip's length by animation id for any CCObject: with the object's animation (+0x154) it tail-jumps to AnimBase::GetNodeLengthById 0x00A5F7A0, else returns 0 (0x00694E50..0x00694E5F, ret 4). It is not CCCreature's: CCVisualEffect::GetStopMode 0x007E9AD0 calls it with the effect as this (mov ecx,esi at 0x007E9AE6, 0x007E9AD8), and EffectsManager::FitDurationToVisual and CSSubActionHandler callers reach it on any object. The address lies among CCObject's methods (0x00694DB0 CreateAnimBase .. 0x00694E90 FadeOutFinishedAnimation). Was CCCreature::AnimationLength.",0x00694e50,0x00585d20,0x00694e50
+14049,function,CCObject::HasAnimation,"True when the object's animation (+0x154) has the animation id: AnimBase 0x00A5E390 on [ecx+0x154], false with no animation (0x00694E70..0x00694E88). Between CCObject::AnimationLength and FadeOutFinishedAnimation, and CCObject::Play 0x0069B3D0 calls it with its own this. Was CCCreature::HasAnimation.",0x00694e70,0x00585d40,0x00694e70
 14050,function,CCObject::FadeOutFinishedAnimation,,0x00694e90,0x00585d60,0x00694e90
 14051,function,CCObject::OnAnimationEvent,,0x00694ee0,0x00585db0,0x00694ee0
 14052,function,CCObject::HasAnimationModel,,0x00694fc0,0x00585e90,0x00694fc0
@@ -19677,7 +19677,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19676,function,VfxManager::Find,,0x0079d780,0x0066ee20,0x0079d780
 19677,function,VfxManager::StartHeldEffect,,0x0079d810,0x0066eeb0,0x0079d810
 19678,function,VfxManager::DetonateEmitter,,0x0079d850,0x0066eef0,0x0079d850
-19679,function,VfxManager::ReturnEffectToPool,,0x0079d880,0x0066ef20,0x0079d880
+19679,function,CCVisualEffectPool::Release,"Returns an effect to the pool: under the pool's mutex (+0x24) finds the pointer in the slot vector (+0x10), runs the effect's destructor without delete (slot 0 with 0, 0x0079D8F9), takes one off inUse (+0x20), swaps the freed slot with the last taken one and clears the caller's pointer. It touches only the pool's own fields; called by CCVisualEffectPool::ReleaseAll 0x0079D9D2 with the pool as this, and by VfxManager::FinishPlacement, DestroyEffect and ReleaseListedEffects with the manager, whose first 0x44 bytes are the pool. Was VfxManager::ReturnEffectToPool.",0x0079d880,0x0066ef20,0x0079d880
 19680,function,CCVisualEffectPool::ReleaseAll,,0x0079d9a0,0x0066f040,0x0079d9a0
 19681,function,VfxManager::FinishPlacement,,0x0079d9f0,0x0066f090,0x0079d9f0
 19682,function,CCVisualEffectPool::~CCVisualEffectPool,,0x0079dae0,0x0066f180,0x0079dae0
@@ -58129,8 +58129,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 58128,function,,,0x00ace530,0x00acf290,0x00ace530
 58129,function,,,0x00ace550,0x00acf2b0,0x00ace550
 58130,function,,,0x00ace570,0x00acf2d0,0x00ace570
-58131,function,,,0x00ace5a0,0x00acf300,0x00ace5a0
-58132,function,,,0x00ace5c0,0x00acf320,0x00ace5c0
+58131,function,`dynamic initializer for 'g_loadedFrameBufferEffects'',"Runs Renderer::FrameBufferEffects::FrameBufferEffects (0x004572D0, reserve 3) on g_loadedFrameBufferEffects 0x00C1EAB0 and registers 0x00AD5460 with atexit (0x00ACE5A0..0x00ACE5B1).",0x00ace5a0,0x00acf300,0x00ace5a0
+58132,function,`dynamic initializer for 'g_screenFrameBufferEffects'',"Runs Renderer::FrameBufferEffects::FrameBufferEffects (0x004572D0, reserve 3) on g_screenFrameBufferEffects 0x00C1EAC4 and registers 0x00AD5470 with atexit (0x00ACE5C0..0x00ACE5D1).",0x00ace5c0,0x00acf320,0x00ace5c0
 58133,function,,,0x00ace5e0,0x00acf340,0x00ace5e0
 58134,function,,,0x00ace600,0x00acf360,0x00ace600
 58135,function,,,0x00ace620,0x00acf380,0x00ace620
@@ -58846,8 +58846,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 58845,function,,,0x00ad5430,0x00ad39c0,0x00ad5430
 58846,function,,,0x00ad5440,0x00ad39d0,0x00ad5440
 58847,function,,,0x00ad5450,0x00ad39e0,0x00ad5450
-58848,function,,,0x00ad5460,0x00ad39f0,0x00ad5460
-58849,function,,,0x00ad5470,0x00ad3a00,0x00ad5470
+58848,function,`dynamic atexit destructor for 'g_loadedFrameBufferEffects'',Jumps to Renderer::FrameBufferEffects::~FrameBufferEffects (0x00458260) with ECX = g_loadedFrameBufferEffects 0x00C1EAB0.,0x00ad5460,0x00ad39f0,0x00ad5460
+58849,function,`dynamic atexit destructor for 'g_screenFrameBufferEffects'',Jumps to Renderer::FrameBufferEffects::~FrameBufferEffects (0x00458260) with ECX = g_screenFrameBufferEffects 0x00C1EAC4.,0x00ad5470,0x00ad3a00,0x00ad5470
 58850,function,,,0x00ad5480,0x00ad3a10,0x00ad5480
 58851,function,,,0x00ad5490,0x00ad3a20,0x00ad5490
 58852,function,,,0x00ad54a0,0x00ad3a30,0x00ad54a0
@@ -63787,8 +63787,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 63786,data,,,0x00af6aec,0x00b18148,0x00af6aec
 63787,data,Messages::GFxValueDataStream::vftable,,0x00af6b0c,0x00b181ac,0x00af6b0c
 63788,data,Eclipse::IGraphics::vftable,,0x00af6b4c,0x00b0edb4,0x00af6b4c
-63789,data,,,0x00af6c58,0x00b098a8,0x00af6c58
-63790,data,,,0x00af6c60,0x00ae3c08,0x00af6c60
+63789,data,__real@4022000000000000,Double 9.0. Neutral name: two unrelated readers. IGraphicsInternal::BeginPillarbox divides by it (fdiv at 0x00527438) after multiplying the window height by 16.0 (__real@4030000000000000) to get the 16:9 width; Bezier::DerivativeAt 0x007CCFAE loads it too.,0x00af6c58,0x00b098a8,0x00af6c58
+63790,data,__real@4030000000000000,"Double 16.0, shared by many readers (BeginPillarbox 0x0052742D multiplies the height by it, GraphicsStructures::Array<Math::Vector4f>::PushBack 0x00572860, and about a dozen more from 0x0086A1AC to 0x0092B6F9), so it keeps a neutral name.",0x00af6c60,0x00ae3c08,0x00af6c60
 63791,data,g_aspectRatioSixteenByNine,Double 16/9 (1.7778). IGraphicsInternal::BeginPillarbox compares the window's aspect to it at 0x0052741C to decide on pillarbox bars; CClientOptions::BuildResolutionChoices (0x005E46BA) tests it to label a resolution 16:9 (tolerance 1e-6). Unit: width/height ratio.,0x00af6c68,0x00ae72f0,0x00af6c68
 63792,data,,,0x00af6c70,0x00aea0b4,0x00af6c70
 63793,data,Eclipse::UpdateAndRenderLoadingGUITask::vftable,,0x00af6c80,0x00b0eec0,0x00af6c80
@@ -99915,7 +99915,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 99914,data,g_mainRenderTarget,,0x00c1e8a4,0x00c313a4,0x00c1e8a4
 99915,data,Renderer::FrameBufferEffects::s_fullScreenQuad,Pointer to the full-screen quad object CreateFullScreenQuad (0x00457B40) makes once (the guard is the test of this word at 0x00457B6E); DrawFilterQuad (0x00456072) draws it unless an override quad is set.,0x00c1e8a8,0x00c313a8,0x00c1e8a8
 99916,data,Renderer::FrameBufferEffects::DrawFilterQuad::s_overrideQuad,,0x00c1e8ac,0x00c313ac,0x00c1e8ac
-99917,data,g_frameBufferEffects,,0x00c1e8b0,0x00c313b0,0x00c1e8b0
+99917,data,g_currentFrameBufferEffects,"The list the frame effects are currently read from: TriggerEvent 0x00456EB5 sends events to it after the loaded list, and the two script commands (FB_SETEFFECTRESOURCE 0x00651932, FB_SETEFFECTENABLED 0x00651A2F) act on it. Written by CCArea::SetCurrentFrameEffects 0x0067B1B0 (the area's list at +0x5F4, or null), CCArea::SelectFrameBufferEffects 0x0067E350 (the room's or the area's) and Renderer::BeginRender 0x00459B00 / EndRender 0x004598F0 (the renderer's own list, then the saved one back). Was g_frameBufferEffects.",0x00c1e8b0,0x00c313b0,0x00c1e8b0
 99918,data,Renderer::FrameBufferEffects::DrawFilterQuad::s_keepOverrideQuad,,0x00c1e8b4,0x00c313b4,0x00c1e8b4
 99919,data,g_frameEffectsEnabled,,0x00c1e8b5,0x00c313b5,0x00c1e8b5
 99920,data,Renderer::FrameBufferEffects::s_started,"Byte, 1 after Startup (0x00458B10) and 0 after Shutdown (0x0045883F); ShadowMaps::Create (0x00455583) will not make maps until it is set.",0x00c1e8b6,0x00c313b6,0x00c1e8b6
