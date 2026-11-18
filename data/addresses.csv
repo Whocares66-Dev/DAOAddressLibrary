@@ -16569,7 +16569,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16568,function,ScriptBackend::ForScript_CharGen_ClearAbilityList,,0x0071f160,0x0061d3c0,0x0071f160
 16569,function,CCCreatureStats::LoadTemplateAbilityLists,,0x0071f1f0,0x0061d450,0x0071f1f0
 16570,function,CCCreatureStats::SetQuickslot,,0x0071f230,0x0061d490,0x0071f230
-16571,function,CCCreatureStats::LoadFromTemplate,,0x0071f520,0x0061d780,0x0071f520
+16571,function,CCCreatureStats::LoadFromTemplate,"The creature stats' template reader, vftable slot 0x14 (CCCreatureStats::vftable 0x00B176B8), called from CCCreature::ReadFields at 0x006C07A3: resets the properties to their defaults (ResetToDefaultsFromTemplate), clears their modified flags when flags bit 0 is set (0x0071F53E), sets the class from property 27, then reads StartingPackage, the template ability lists and PerceptionClass (perception range from rules table 0x86); it reads no property value (Health, MaxHealth) from the template",0x0071f520,0x0061d780,0x0071f520
 16572,function,GUI::GUICredits::Close,,0x0071f620,0x0061d880,0x0071f620
 16573,function,GUI::GUICredits::~GUICredits,,0x0071f6c0,0x0061d920,0x0071f6c0
 16574,function,GUI::GUICredits::`scalar deleting destructor'`adjustor{8}',,0x0071f760,0x0061d9e0,0x0071f760
@@ -19431,7 +19431,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19430,function,CCCreatureStats::RegenerateAll,,0x00795ba0,0x0065fac0,0x00795ba0
 19431,function,CreatureProperties::ResetToDefaults,,0x00795c10,0x0065fb30,0x00795c10
 19432,function,CreatureProperties::ClearAllModified,,0x00795da0,0x0065fcc0,0x00795da0
-19433,function,CreatureProperties::ResetToDefaultsFromTemplate,,0x00795e20,0x0065fd40,0x00795e20
+19433,function,CreatureProperties::ResetToDefaultsFromTemplate,"Ignores its two template arguments: calls CreatureProperties::ResetToDefaults 0x00795C10 and returns, ret 8",0x00795e20,0x0065fd40,0x00795e20
 19434,function,CreatureProperties::Load,,0x00795e30,0x0065fd50,0x00795e30
 19435,function,CreatureProperties::CloneDefaultProperties,,0x00796170,0x00660090,0x00796170
 19436,function,CreatureProperty::Create,,0x00796230,0x00660150,0x00796230
