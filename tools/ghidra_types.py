@@ -1018,3 +1018,161 @@ for address, label, text in W.get("eh", []):
     except Exception as e:
         faults.append("eh 0x%08x: %s" % (address, e))
 """
+
+# Runs inside Ghidra, on its own, after the types are in: W["getters"] is
+# (address, offset) of each `getter` row of data/ghidra_fixes.csv, code the
+# linker shares between getters of the field at that offset. One prototype
+# cannot say what each caller gets: SmartData::Attribute::Get (mov eax,
+# [ecx+0xC]) answers a CCCreatureStats* at one of its 2,044 calls and an int
+# at the next. So each call whose receiver the decompiler types as a struct
+# with a four-byte field at the offset gets, at the call, a prototype that
+# returns that field's type (Ghidra's "override signature"), and what follows
+# reads as that type: CCCreature::ReadFields' call through the stats
+# attribute reads (*stats->vftablePtr->LoadFromTemplate)(...) (paragon-agent,
+# 2026-11-18). A call whose receiver has no such field is left alone, and one
+# that had a prototype from here and no longer earns it loses it.
+# Marking the function inline was tried first and dropped: typed receivers
+# read as the field, but the other seven in eight read *(int *)(x + 100)
+# for Get(x + 0x58), which hides that an attribute is at +0x58.
+GHIDRA_GETTERS = r"""
+import json
+from ghidra.app.decompiler import DecompInterface
+from ghidra.program.model.data import (
+    Array, Composite, FunctionDefinitionDataType, ParameterDefinitionImpl, Pointer,
+    PointerDataType, Structure, TypeDef, Undefined,
+)
+from ghidra.program.model.pcode import HighFunctionDBUtil, PcodeOp
+from ghidra.program.model.symbol import SymbolType
+W = json.loads(PAYLOAD)
+program = currentProgram
+if program.getExecutableSHA256().lower() != W["sha256"]:
+    raise Exception("not the " + W["build"] + " build: " + program.getExecutableSHA256())
+dry = W["dry"]
+fm = program.getFunctionManager()
+st = program.getSymbolTable()
+dtm = program.getDataTypeManager()
+done = {"getters": 0, "getterdropped": 0, "gettersame": 0, "getterfailed": 0}
+faults = []
+
+
+def receiver(value):
+    # The struct the decompiler takes the call's this to point to, or None.
+    # Under a cast is what the value is; the cast is to the callee's (or an
+    # earlier run's) parameter.
+    made = value.getDef()
+    if made is not None and made.getOpcode() == PcodeOp.CAST:
+        value = made.getInput(0)
+    high = value.getHigh()
+    kind = high.getDataType() if high is not None else None
+    if isinstance(kind, TypeDef) or not isinstance(kind, Pointer):
+        return None
+    to = kind.getDataType()
+    return to if isinstance(to, Structure) else None
+
+
+def shape(callee, owner, offset):
+    # (what the call returns, the struct its this points to) for a receiver
+    # of this struct, or None.
+    unit = owner.getComponentContaining(offset) if owner is not None else None
+    if unit is None or unit.getOffset() != offset or unit.getLength() != 4:
+        return None
+    kind = unit.getDataType()
+    if Undefined.isUndefined(kind) or isinstance(kind, (Composite, Array)):
+        return None
+    return kind, owner
+
+
+def held_at(at):
+    # (the label Ghidra keeps a call's own prototype as, that prototype), or
+    # (None, None). It is in a namespace `override` of the caller's, named
+    # prt_ and the call's address.
+    for symbol in st.getSymbols(at):
+        if symbol.getSymbolType() == SymbolType.LABEL and symbol.getName().startswith("prt"):
+            held = HighFunctionDBUtil.readOverride(symbol)
+            if held is not None:
+                return symbol, held.getDataType()
+    return None, None
+
+
+def is_shape(has, want):
+    # Ghidra renames the prototype it keeps, so the two are compared by what
+    # they say and not as types.
+    args = list(has.getArguments())
+    return has.getCallingConventionName() == "__thiscall" and len(args) == 1 \
+        and has.getReturnType().isEquivalent(want[0]) \
+        and args[0].getDataType().isEquivalent(PointerDataType(want[1], dtm))
+
+
+def calls(dec, f, callee, offset):
+    # One reading of a caller: [calls given a prototype, calls that lost
+    # theirs, calls that had the one they earn], or None if it did not
+    # decompile.
+    high = dec.decompileFunction(f, 120, monitor).getHighFunction()
+    if high is None:
+        return None
+    given, lost, same = 0, 0, 0
+    ops = high.getPcodeOps()
+    while ops.hasNext():
+        op = ops.next()
+        if op.getOpcode() != PcodeOp.CALL or op.getNumInputs() < 2 \
+                or op.getInput(0).getAddress() != callee.getEntryPoint():
+            continue
+        at = op.getSeqnum().getTarget()
+        want = shape(callee, receiver(op.getInput(1)), offset)
+        symbol, has = held_at(at)
+        if want is None:
+            if symbol is not None:
+                lost += 1
+                if not dry:
+                    symbol.delete()
+        elif has is not None and is_shape(has, want):
+            same += 1
+        else:
+            given += 1
+            if not dry:
+                made = FunctionDefinitionDataType(callee.getName())
+                made.setReturnType(want[0])
+                made.setArguments([ParameterDefinitionImpl("this", PointerDataType(want[1], dtm), None)])
+                made.setCallingConvention("__thiscall")
+                # It replaces the label the call had, if any.
+                HighFunctionDBUtil.writeOverride(f, at, made)
+    return given, lost, same
+
+
+def settle(dec, f, callee, offset):
+    # A caller is read again after a change to it: what one call returns
+    # types the receiver of the next (Get(Get(&a->b)->c)), so one reading
+    # does not find them all.
+    wrote = 0
+    for _ in range(6):
+        got = calls(dec, f, callee, offset)
+        if got is None:
+            done["getterfailed"] += 1
+            return
+        done["getters"] += got[0]
+        done["getterdropped"] += got[1]
+        if dry or not (got[0] or got[1]):
+            done["gettersame"] += got[2] - wrote
+            return
+        wrote += got[0]
+
+
+dec = DecompInterface()
+dec.openProgram(program)
+try:
+    for address, offset in W["getters"]:
+        callee = fm.getFunctionAt(toAddr(address))
+        callers = {}
+        for ref in program.getReferenceManager().getReferencesTo(callee.getEntryPoint()):
+            f = fm.getFunctionContaining(ref.getFromAddress()) if ref.getReferenceType().isCall() else None
+            if f is not None:
+                callers[f.getEntryPoint().getOffset()] = f
+        for _, f in sorted(callers.items()):
+            try:
+                settle(dec, f, callee, offset)
+            except Exception as e:
+                faults.append("getter calls in %s: %s" % (f.getName(True), e))
+finally:
+    dec.dispose()
+print("RESULT " + json.dumps({"done": done, "faults": faults[:50], "nfaults": len(faults)}))
+"""

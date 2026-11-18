@@ -4,7 +4,7 @@ with data/addresses.csv and data/ghidra_fixes.csv.
     python tools/ghidra_sync.py              apply everything, then save the program
     python tools/ghidra_sync.py --dry-run    count what would change, change nothing
     python tools/ghidra_sync.py --limit N    only the first N rows of the table (a trial)
-    python tools/ghidra_sync.py --only types,eh    only these parts (rows, fixes, types, eh, comments)
+    python tools/ghidra_sync.py --only types,eh    only these parts (rows, fixes, types, eh, comments, getters)
     python tools/ghidra_sync.py --no-save    apply and leave it unsaved, to look at before keeping it
     python tools/ghidra_sync.py --discard    drop everything done since the last save
 
@@ -47,7 +47,10 @@ What a run does, on the GOG build's addresses:
   returns as returning; `callfixup` gives a function one of the compiler
   spec's call fixups by name; `datatype` types a global and `returntype`
   a function's return, in the types a struct's field is written in
-  (`CCParty *`).
+  (`CCParty *`); `getter` (value the offset, `0xC`) says the function is
+  code shared by getters of the four-byte field at that offset of this,
+  whose calls each return the type of their own receiver's field
+  (tools/ghidra_types.py, GHIDRA_GETTERS: the `getters` part).
 - what tools/receivers.py reads from the code of what a global holds and
   what a getter returns, as `datatype` and `returntype` rows nobody wrote,
   and which methods are called with this inside their object and how far
@@ -691,7 +694,35 @@ def discard(server):
     return server.call("save_program", {}).splitlines()[-1]
 
 
-PARTS = ("rows", "fixes", "types", "eh", "comments")
+PARTS = ("rows", "fixes", "types", "eh", "comments", "getters")
+
+
+def getter_calls(server, fixes, dry):
+    """Runs the `getters` part, a script of its own since it decompiles every
+    caller of each `getter` row's function: (its counts, its faults), or
+    None if the script did not answer."""
+    payload = {
+        "build": BUILD,
+        "sha256": sha256(),
+        "dry": dry,
+        "getters": [
+            (a, int(value, 16)) for a, what, value in fixes if what == "getter"
+        ],
+    }
+    output = server.run(
+        f"PAYLOAD = {json.dumps(json.dumps(payload))}\n" + ghidra_types.GHIDRA_GETTERS,
+        timeout=3600,
+    )
+    result = next(
+        (line[7:] for line in output.splitlines() if line.startswith("RESULT ")), None
+    )
+    if result is None:
+        print(output[-2000:], file=sys.stderr)
+        return None
+    result = json.loads(result)
+    return result["done"], result["faults"]
+
+
 OPTIONS = ("--dry-run", "--limit", "--only", "--no-save", "--discard")
 
 
@@ -726,7 +757,7 @@ def main(argv):
             "sha256": sha256(),
             "dry": dry,
             "rows": chunk,
-            "fixes": [f for f in fixes if f[1] not in TYPED]
+            "fixes": [f for f in fixes if f[1] not in TYPED and f[1] != "getter"]
             if last and "fixes" in only
             else [],
             "typed": typed_fixes(fixes) if last and "fixes" in only else [],
@@ -758,6 +789,14 @@ def main(argv):
         print(
             f"rows {n * CHUNK + len(chunk):>6} of {len(rows)}: {counts}, {result['nfaults']} faults"
         )
+    if "getters" in only and not totals.get("damage"):
+        # After the types and the prototypes: it reads what each caller's
+        # decompile makes of them.
+        answer = getter_calls(server, fixes, dry)
+        if answer is None:
+            return 1
+        totals.update(answer[0])
+        faults += answer[1]
     if totals.get("damage"):
         # A class type shrank or lost a vftable pointer or a nested class:
         # nothing of this run is kept.
@@ -798,6 +837,12 @@ def main(argv):
         print(f"switches: {totals.get('switches', 0)} given the cases of their tables")
     if "eh" in only:
         print(f"exception handling: {totals['eh']} labels and comments")
+    if "getters" in only:
+        print(
+            f"shared getters: {totals['getters']} calls given their receiver's field's type, "
+            f"{totals['gettersame']} that had it, {totals['getterdropped']} that lost it, "
+            f"{totals['getterfailed']} callers not decompiled"
+        )
     for fault in faults[:40]:
         print("  " + fault, file=sys.stderr)
     return 1 if faults else 0

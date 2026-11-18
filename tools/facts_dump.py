@@ -31,8 +31,9 @@ that. An address where no function begins has `{}` as its value, as before.
 through (the type of every value in it), and `source` a hash, taken in
 Ghidra, of what the record is made from: the function's name, prototype,
 convention and comments, its body, the names and types of what its
-instructions refer to, the names and prototypes of its callees and callers,
-and the layout of each of those types. `--changed` takes that hash again
+instructions refer to, the prototype a call in it has of its own, the names
+and prototypes of its callees and callers, and the layout of each of those
+types. `--changed` takes that hash again
 for every function, without decompiling, and redoes the records whose hash
 differs or that were written before `types` was kept. So a struct's new
 field or a vftable's renamed slot redoes the functions that go through that
@@ -213,6 +214,8 @@ from concurrent.futures import ThreadPoolExecutor
 from ghidra.app.decompiler import DecompInterface, DecompileOptions
 from ghidra.program.model.data import Array, Composite, FunctionDefinition, Pointer, TypeDef
 from ghidra.program.model.listing import CodeUnit
+from ghidra.program.model.pcode import HighFunctionDBUtil
+from ghidra.program.model.symbol import SymbolType
 from java.security import MessageDigest
 from java.lang import String as JString
 
@@ -326,6 +329,16 @@ def source(f, types):
                 add(label(to))
                 d = L.getDataAt(to) if to.isMemoryAddress() else None
                 add(d.getDataType().getName() if d is not None else None)
+        # A call given a prototype of its own (ghidra_sync's getters part).
+        # Nothing is added where a function has none, so its hash is what
+        # it was before these were kept. Ghidra keeps one as a label at the
+        # call, in a namespace `override` of the function's.
+        kept = st.getNamespace('override', g)
+        held = [(s.getAddress().getOffset(), HighFunctionDBUtil.readOverride(s))
+                for s in (st.getSymbols(kept) if kept is not None else ())
+                if s.getSymbolType() == SymbolType.LABEL]
+        for at, override in sorted((at, o.getDataType().getPrototypeString(True)) for at, o in held if o is not None):
+            add('call at %08x' % at); add(override)
         for c in sorted(g.getCalledFunctions(TaskMonitor.DUMMY), key=lambda x: x.getEntryPoint().getOffset()):
             add(c.getName(True)); add(proto(c)); add(proto(real(c))); add(c.getCallFixup())
         for c in sorted(g.getCallingFunctions(TaskMonitor.DUMMY), key=lambda x: x.getEntryPoint().getOffset()):
