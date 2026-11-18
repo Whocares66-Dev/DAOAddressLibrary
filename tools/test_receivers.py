@@ -114,6 +114,23 @@ class FakeImage:
         return self.code.get(va, b"\x55\x8b\xec\x56\x8b\xf1\x5e")[:n]
 
 
+class SharedGetters(unittest.TestCase):
+    def test_a_function_that_only_reads_a_field_is_one(self):
+        code = {
+            0x1000: b"\x8b\x01\xc3\xcc\xcc\xcc\xcc",  # mov eax,[ecx]; ret
+            0x1010: b"\x8b\x41\x0c\xc3\xcc\xcc\xcc",  # mov eax,[ecx+0xC]; ret
+            0x1020: b"\x8b\x81\x40\x0a\x00\x00\xc3",  # mov eax,[ecx+0xA40]; ret
+            0x1030: b"\x8b\x41\x0c\x8b\x00\xc3\xcc",  # ...; mov eax,[eax]; ret
+            0x1040: b"\x8a\x41\x0c\xc3\xcc\xcc\xcc",  # mov al,[ecx+0xC]; ret
+            0x1050: b"\x8b\x41\x0c\xc2\x04\x00\xcc",  # ...; ret 4
+        }
+        functions = {va: (1, "f") for va in code} | {0x1060: (1, "g")}
+        self.assertEqual(
+            receivers.shared_getters(FakeImage([], code), functions),
+            [(0x1000, 0), (0x1010, 0xC), (0x1020, 0xA40)],
+        )
+
+
 class SubobjectMethods(unittest.TestCase):
     functions = {
         0x10: (1, "Derived::OnSide"),

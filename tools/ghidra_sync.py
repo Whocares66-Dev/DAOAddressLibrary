@@ -47,10 +47,7 @@ What a run does, on the GOG build's addresses:
   returns as returning; `callfixup` gives a function one of the compiler
   spec's call fixups by name; `datatype` types a global and `returntype`
   a function's return, in the types a struct's field is written in
-  (`CCParty *`); `getter` (value the offset, `0xC`) says the function is
-  code shared by getters of the four-byte field at that offset of this,
-  whose calls each return the type of their own receiver's field
-  (tools/ghidra_types.py, GHIDRA_GETTERS: the `getters` part).
+  (`CCParty *`).
 - what tools/receivers.py reads from the code of what a global holds and
   what a getter returns, as `datatype` and `returntype` rows nobody wrote,
   and which methods are called with this inside their object and how far
@@ -697,17 +694,22 @@ def discard(server):
 PARTS = ("rows", "fixes", "types", "eh", "comments", "getters")
 
 
-def getter_calls(server, fixes, dry):
+def getter_calls(server, dry):
     """Runs the `getters` part, a script of its own since it decompiles every
-    caller of each `getter` row's function: (its counts, its faults), or
-    None if the script did not answer."""
+    caller of the functions tools/receivers.py finds to be a getter every
+    class shares (shared_getters): (its counts, its faults), or None if the
+    script did not answer. Nothing to do if the build's image is not here."""
+    import receivers
+
+    try:
+        _, _, functions, _, img = receivers.read()
+    except FileNotFoundError:
+        return {}, []
     payload = {
         "build": BUILD,
         "sha256": sha256(),
         "dry": dry,
-        "getters": [
-            (a, int(value, 16)) for a, what, value in fixes if what == "getter"
-        ],
+        "getters": receivers.shared_getters(img, functions),
     }
     output = server.run(
         f"PAYLOAD = {json.dumps(json.dumps(payload))}\n" + ghidra_types.GHIDRA_GETTERS,
@@ -757,7 +759,7 @@ def main(argv):
             "sha256": sha256(),
             "dry": dry,
             "rows": chunk,
-            "fixes": [f for f in fixes if f[1] not in TYPED and f[1] != "getter"]
+            "fixes": [f for f in fixes if f[1] not in TYPED]
             if last and "fixes" in only
             else [],
             "typed": typed_fixes(fixes) if last and "fixes" in only else [],
@@ -792,7 +794,7 @@ def main(argv):
     if "getters" in only and not totals.get("damage"):
         # After the types and the prototypes: it reads what each caller's
         # decompile makes of them.
-        answer = getter_calls(server, fixes, dry)
+        answer = getter_calls(server, dry)
         if answer is None:
             return 1
         totals.update(answer[0])
@@ -839,9 +841,10 @@ def main(argv):
         print(f"exception handling: {totals['eh']} labels and comments")
     if "getters" in only:
         print(
-            f"shared getters: {totals['getters']} calls given their receiver's field's type, "
-            f"{totals['gettersame']} that had it, {totals['getterdropped']} that lost it, "
-            f"{totals['getterfailed']} callers not decompiled"
+            f"shared getters: {totals.get('getters', 0)} calls given their receiver's "
+            f"field's type, {totals.get('gettersame', 0)} that had it, "
+            f"{totals.get('getterdropped', 0)} that lost it, "
+            f"{totals.get('getterfailed', 0)} callers not decompiled"
         )
     for fault in faults[:40]:
         print("  " + fault, file=sys.stderr)

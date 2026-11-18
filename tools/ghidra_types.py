@@ -1020,17 +1020,19 @@ for address, label, text in W.get("eh", []):
 """
 
 # Runs inside Ghidra, on its own, after the types are in: W["getters"] is
-# (address, offset) of each `getter` row of data/ghidra_fixes.csv, code the
-# linker shares between getters of the field at that offset. One prototype
-# cannot say what each caller gets: SmartData::Attribute::Get (mov eax,
-# [ecx+0xC]) answers a CCCreatureStats* at one of its 2,044 calls and an int
-# at the next. So each call whose receiver the decompiler types as a struct
+# (address, offset) of each function that only reads the four-byte field at
+# that offset of this (tools/receivers.py, shared_getters), code the linker
+# has every class's getter of a field there share. One prototype cannot say
+# what each caller gets: SmartData::Attribute::Get (mov eax,[ecx+0xC])
+# answers a CCCreatureStats* at one of its 2,044 calls and an int at the
+# next. So each call whose receiver the decompiler types as a struct
 # with a four-byte field at the offset gets, at the call, a prototype that
 # returns that field's type (Ghidra's "override signature"), and what follows
 # reads as that type: CCCreature::ReadFields' call through the stats
 # attribute reads (*stats->vftablePtr->LoadFromTemplate)(...) (paragon-agent,
-# 2026-11-18). A call whose receiver has no such field is left alone, and one
-# that had a prototype from here and no longer earns it loses it.
+# 2026-11-18). A call whose receiver has no such field is left alone, as is
+# one whose field is of the type the function's own prototype returns, and
+# one that had a prototype from here and no longer earns it loses it.
 # Marking the function inline was tried first and dropped: typed receivers
 # read as the field, but the other seven in eight read *(int *)(x + 100)
 # for Get(x + 0x58), which hides that an attribute is at +0x58.
@@ -1073,11 +1075,19 @@ def receiver(value):
 def shape(callee, owner, offset):
     # (what the call returns, the struct its this points to) for a receiver
     # of this struct, or None.
-    unit = owner.getComponentContaining(offset) if owner is not None else None
-    if unit is None or unit.getOffset() != offset or unit.getLength() != 4:
+    # The field is looked for through the structs held by value: a class's
+    # own fields are in its <Class>_data, and a base's in the base.
+    unit, inside = None, owner
+    while isinstance(inside, Structure):
+        unit = inside.getComponentContaining(offset)
+        inside = unit.getDataType() if unit is not None else None
+        if unit is not None:
+            offset -= unit.getOffset()
+    if unit is None or offset != 0 or unit.getLength() != 4:
         return None
     kind = unit.getDataType()
-    if Undefined.isUndefined(kind) or isinstance(kind, (Composite, Array)):
+    if Undefined.isUndefined(kind) or isinstance(kind, (Composite, Array)) \
+            or kind.isEquivalent(callee.getReturnType()):
         return None
     return kind, owner
 

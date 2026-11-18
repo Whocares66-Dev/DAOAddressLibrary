@@ -4,7 +4,8 @@ passed to: types tools/ghidra_sync.py gives them in Ghidra.
     python tools/receivers.py            what the GOG build says, and what it does not settle
 
 It also reads which methods are called with this inside their object
-(`thisat`): subobject_methods says how.
+(`thisat`): subobject_methods says how; and which functions are a getter
+every class shares, whose calls are typed one by one: shared_getters.
 
 A method takes its object in ECX. So where the code loads ECX and calls a
 class's method with nothing between that writes ECX, what was loaded is an
@@ -184,6 +185,27 @@ def read():
 # `sub ecx, N` or `add ecx, N`, then a jump: a thunk that moves this from
 # a base to the object and goes on to the method.
 ADJUSTOR = re.compile(rb"(\x83[\xe9\xc1].|\x81[\xe9\xc1].{4})\xe9", re.S)
+
+
+def shared_getters(img, functions):
+    """[(address, offset)] of each function that is `mov eax,[ecx+offset];
+    ret` and nothing else. The linker folds identical functions, so there
+    is one for an offset in the whole build and every class's getter of a
+    four-byte field there is it, whichever class the table names it for:
+    106 of them, 3,029 calls, 2,020 of those SmartData::Attribute::Get's
+    (+0xC) and 627 the read of +0 (2026-11-18). No one prototype says what
+    such a function returns; tools/ghidra_sync.py's `getters` part types
+    each call by its receiver."""
+    out = []
+    for va in sorted(functions):
+        code = img.bytes_at(va, 7)
+        if code[:3] == b"\x8b\x01\xc3":
+            out.append((va, 0))
+        elif code[:2] == b"\x8b\x41" and code[3:4] == b"\xc3":
+            out.append((va, code[2]))
+        elif code[:2] == b"\x8b\x81" and code[6:7] == b"\xc3":
+            out.append((va, int.from_bytes(code[2:6], "little")))
+    return out
 
 
 def subobject_methods(img, functions, bases):

@@ -155,28 +155,7 @@ class Work(unittest.TestCase):
                     "callfixup",
                     "datatype",
                     "returntype",
-                    "getter",
                 ),
-            )
-
-    def test_a_getter_is_the_read_of_its_offset_and_nothing_else(self):
-        # A row with the wrong offset would type every call of the function
-        # as another field. mov eax,[ecx+disp8]; ret, or the disp32 form.
-        import daoexe
-
-        path = daoexe.default_exe(os.path.dirname(os.path.abspath(__file__)))
-        getters = [(a, int(v, 16)) for a, what, v in work()[1] if what == "getter"]
-        self.assertTrue(getters)
-        if not os.path.exists(path):
-            self.skipTest("the GOG build's exe is not here")
-        img = daoexe.Image(path)
-        for address, offset in getters:
-            short = b"\x8b\x41" + bytes([offset & 0xFF]) + b"\xc3"
-            long = b"\x8b\x81" + offset.to_bytes(4, "little") + b"\xc3"
-            self.assertIn(
-                img.bytes_at(address, 7)[: 4 if offset < 0x80 else 7],
-                (short, long),
-                hex(address),
             )
 
     def test_a_convention_is_one_ghidra_knows(self):
