@@ -443,6 +443,23 @@ def comment_rows():
         ]
 
 
+def slot_names():
+    """{table address: {slot: (method, its overrides)}} for the vftable slots
+    that take their name from their overrides (tools/vtables_dump.py,
+    inherited_names), as JSON keys. Nothing if the build's image is not
+    here."""
+    import vtables_dump
+
+    try:
+        found = vtables_dump.inherited_names(*vtables_dump.read())
+    except FileNotFoundError:
+        return {}
+    return {
+        f"0x{va:08X}": {str(slot): said for slot, said in slots.items()}
+        for va, slots in found.items()
+    }
+
+
 TYPED = ("datatype", "returntype", "thisat")
 
 
@@ -717,6 +734,7 @@ def main(argv):
             "eh": eh_rows() if last and "eh" in only else [],
             "types": last and "types" in only,
             "structs": struct_rows() if last and "types" in only else [],
+            "slotnames": slot_names() if last and "types" in only else {},
             "comments": comment_rows() if last and "comments" in only else [],
         }
         output = server.run(
@@ -763,7 +781,8 @@ def main(argv):
             f"{totals['classes']} namespaces made classes, {totals['unpacked']} types unpacked, "
             f"{totals['renamed']} offset_0xN renamed, {totals['dropped']} fields the table no longer has cleared, "
             f"{totals['restored']} nested classes given back their own name, "
-            f"{totals['filled']} undefined bytes of a class's data named for their place"
+            f"{totals['filled']} undefined bytes of a class's data named for their place, "
+            f"{totals.get('slots', 0)} vftable slots named or typed"
         )
         if notes.get("unresolved"):
             print(

@@ -96,6 +96,33 @@ class Tables(unittest.TestCase):
         self.assertEqual(made["vftables"][0]["slots"][2]["offset"], "0x8")
 
 
+class InheritedNames(unittest.TestCase):
+    def test_a_slot_takes_the_one_name_its_overrides_go_by(self):
+        # Base's second slot (0x11) has no name; Derived's and Most's tables
+        # hold Derived::Walk there.
+        names = {0x10: "Base::Stand", 0x31: "Derived::Walk", 0x43: "Most::Fly"}
+        self.assertEqual(
+            vtables_dump.inherited_names(KNOWN, names),
+            {
+                0x100: {1: ("Walk", [0x31])},
+                0x200: {0: ("Fly", [0x43])},
+                0x310: {0: ("Fly", [0x43])},
+            },
+        )
+
+    def test_overrides_that_disagree_name_nothing(self):
+        names = {0x33: "Derived::Swim", 0x43: "Most::Fly"}
+        self.assertEqual(vtables_dump.inherited_names(KNOWN, names), {})
+
+    def test_a_named_slot_keeps_its_name(self):
+        names = {0x11: "Base::Run", 0x31: "Derived::Walk"}
+        self.assertEqual(vtables_dump.inherited_names(KNOWN, names), {})
+
+    def test_a_destructor_and_folded_code_say_nothing(self):
+        for name in ("Derived::`scalar deleting destructor'", "Stub::ReturnFalse"):
+            self.assertEqual(vtables_dump.inherited_names(KNOWN, {0x31: name}), {})
+
+
 class Files(unittest.TestCase):
     def test_a_class_is_its_file(self):
         self.assertEqual(

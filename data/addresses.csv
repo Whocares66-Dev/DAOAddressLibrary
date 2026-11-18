@@ -5260,7 +5260,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5259,function,GdaStore::GetRowId,,0x004df4f0,0x00813780,0x004df4f0
 5260,function,GdaStore::GetRowWorksheet,,0x004df530,0x008137c0,0x004df530
 5261,function,Stub::ZeroDwords_4_8,,0x004df570,0x00813800,0x004df570
-5262,function,GdaStore::FindTable,,0x004df580,0x00813810,0x004df580
+5262,function,GdaStore::FindTable,"The C2DASource* for a table id, or 0: the object at +0x30 maps the id to an index into tableSlots (its slot 0x1C; -1 is none, 0x004DF5C3), and an empty slot is loaded first through GetRowWorksheet (0x004DF5FC)",0x004df580,0x00813810,0x004df580
 5263,function,Stub::ListFrontOrDefault,"On a std::list: when empty gives out.valid=0 and returns the default value at +0xC, else out={list,first node,valid=1} with checked-iterator asserts and returns the first node's value (+8); reached from ResMan::AddSource, CCCreature::TurnToAngle, CooldownManager::Find and RunCurrentCommand.",0x004df670,0x00845520,0x004df670
 5264,function,,,0x004df6c0,0x007dff80,0x004df6c0
 5265,function,,,0x004df700,0x00813900,0x004df700
@@ -14488,7 +14488,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14487,function,CCCreature::FindDeathblowSyncPlacement,"__thiscall on the attacker, ret 4: (target). For i = 1..5, reads sync placement table 117+i (GdaTables::GetSyncPlacement: table, the target's appearance row at +0x7B0 +0x58, and four out-pointers on the stack, two to the same local). Each row gives a yaw and an offset, which are rotated into the target's frame and compared with the attacker's position against a size-scaled limit (slot 0x9C). Returns the index 1..5 of the placement chosen, or 0 when none fits or a table row is missing.",0x006a3780,0x00594910,0x006a3780
 14488,function,CCCreature::QueueInteractCommand,,0x006a3920,0x00594ab0,0x006a3920
 14489,function,CCCreature::CanBleed,,0x006a3a30,0x00594bc0,0x006a3a30
-14490,function,CCCreature::GetDecayBehaviour,,0x006a3a80,0x00594c10,0x006a3a80
+14490,function,CCCreature::GetDecayBehaviour,"int: column 0x98BFB469 of 2DA 2 at the row of the appearance's type (the word at +0x58 of +0x7B0), through the table's GetIntByRowId; 0 where the cell is absent, the out local being zeroed first (0x006A3AA5)",0x006a3a80,0x00594c10,0x006a3a80
 14491,function,CCCreature::CanCorpseDecay,,0x006a3ad0,0x00594c60,0x006a3ad0
 14492,retired,,,,,
 14493,function,CCCreature::FillCastRecordFromEffect,,0x006a3b90,0x00594d20,0x006a3b90
@@ -32471,7 +32471,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32470,function,CRules::Load,,0x00a2cbc0,0x0082c6c0,0x00a2cbc0
 32471,function,CRules::GetString,,0x00a2cc40,0x0082c740,0x00a2cc40
 32472,function,CRules::GetFloat,,0x00a2cc80,0x0082c780,0x00a2cc80
-32473,function,CRules::GetInt,,0x00a2ccc0,0x0082c7c0,0x00a2ccc0
+32473,function,CRules::GetInt,"bool: *out = the int cell at (row id, column hash) of 2DA `table`, through the GdaStore at +4 (FindTable) and the table's slot 0x28, GetIntByRowId; false, out untouched, where there is no such table (0x00A2CCEC)",0x00a2ccc0,0x0082c7c0,0x00a2ccc0
 32474,function,CRules::GetBool,,0x00a2cd00,0x0082c800,0x00a2cd00
 32475,function,CRules::FindRow,,0x00a2cd40,0x0082c840,0x00a2cd40
 32476,function,CRules::GetGlobalFloat,,0x00a2cd70,0x0082c870,0x00a2cd70

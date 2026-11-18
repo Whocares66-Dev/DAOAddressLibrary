@@ -59,7 +59,10 @@ So, in order:
 - each vftable's slots take the names and prototypes of the functions in
   them, where the table names the function: `(*this->vftablePtr->vfunction34)()`
   reads `(*this->vftablePtr->PropagateMouseEvent)()`, with that function's
-  parameters.
+  parameters. A slot whose function has no name, as an abstract class's
+  are, takes the name its overrides share (tools/vtables_dump.py,
+  inherited_names) and their prototype where they share that too: a
+  C2DASource's `vfunction11` reads `GetIntByRowId`.
 
 A field's type is the table's `type` text: a C scalar, `T*`, `T[n]`, a
 class named as the table names it (found as `this` would find it; by value
@@ -314,6 +317,7 @@ from ghidra.program.model.data import (
     FunctionDefinitionDataType,
     IntegerDataType,
     LongLongDataType,
+    ParameterDefinitionImpl,
     Pointer,
     PointerDataType,
     PointerTypedef,
@@ -743,8 +747,45 @@ def damage(before):
 UNNAMED = re.compile(r"^(FUN_|thunk_FUN_|vfunction\d+|_*purecall)")
 
 
+def shared_shape(overrides, kind):
+    # The prototype the functions at these addresses share but for whose
+    # method each is, as a slot of the vftable type `kind`: this is that
+    # table's class where the table is the class's first (the others' this
+    # is inside the object: void*). None where they differ in convention,
+    # in what they return or in a parameter, or are not __thiscall.
+    shapes = []
+    for address in overrides:
+        f = fm.getFunctionAt(toAddr(address))
+        if f is None:
+            return None
+        shapes.append(FunctionDefinitionDataType(f, False))
+    first = shapes[0]
+    args = list(first.getArguments())
+    if not args or first.getCallingConventionName() != "__thiscall":
+        return None
+    for other in shapes[1:]:
+        theirs = list(other.getArguments())
+        same = other.getCallingConventionName() == "__thiscall" and len(theirs) == len(args) \
+            and other.hasVarArgs() == first.hasVarArgs() \
+            and other.getReturnType().isEquivalent(first.getReturnType()) \
+            and all(a.getDataType().isEquivalent(b.getDataType())
+                    for a, b in zip(args[1:], theirs[1:]))
+        if not same:
+            return None
+    path = kind.getCategoryPath()
+    owner = dtm.getDataType(path, path.getName())
+    whole = owner is not None and kind.getName() == path.getName() + "_vftable"
+    receiver = PointerDataType(owner if whole else VoidDataType.dataType, dtm)
+    args[0] = ParameterDefinitionImpl("this", receiver, None)
+    first.setArguments(args)
+    return first
+
+
 def slot_names():
-    # Each vftable's slots, named and typed for the functions in them.
+    # Each vftable's slots, named and typed for the functions in them. A slot
+    # that holds no function with a name (an abstract class's _purecall)
+    # takes the name its overrides go by and the prototype they share,
+    # W["slotnames"]; where they share none it keeps the type it has.
     memory = program.getMemory()
     seen = set()
     for symbol in st.getSymbolIterator("*vftable*", True):
@@ -757,21 +798,29 @@ def slot_names():
         if not isinstance(kind, Structure) or "_vftable" not in kind.getName():
             continue
         used = set()
+        inherited = W.get("slotnames", {}).get("0x%08X" % base.getOffset(), {})
         for unit in kind.getDefinedComponents():
             try:
                 if unit.getLength() != 4:
                     continue
                 f = fm.getFunctionAt(toAddr(memory.getInt(base.add(unit.getOffset())) & 0xFFFFFFFF))
-                if f is None:
+                named = f.getThunkedFunction(True) if f is not None and f.isThunk() else f
+                own = named is not None and not UNNAMED.match(named.getName())
+                field, overrides = (named.getName(), None) if own \
+                    else inherited.get(str(unit.getOffset() // 4), (None, None))
+                if field is None:
                     continue
-                named = f.getThunkedFunction(True) if f.isThunk() else f
-                if named is None or UNNAMED.match(named.getName()):
-                    continue
-                field = re.sub(r"[^A-Za-z0-9_~]", "_", named.getName())
+                field = re.sub(r"[^A-Za-z0-9_~]", "_", field)
                 if field in used:
                     field = "%s_%X" % (field, unit.getOffset())
                 used.add(field)
-                want = FunctionDefinitionDataType(f, False)
+                want = FunctionDefinitionDataType(f, False) if own else shared_shape(overrides, kind)
+                if want is None:
+                    if unit.getFieldName() != field:
+                        done["slots"] += 1
+                        if not dry:
+                            unit.setFieldName(field)
+                    continue
                 want.setName("%s_%X" % (kind.getName(), unit.getOffset()))
                 want.setCategoryPath(kind.getCategoryPath())
                 has = unit.getDataType()
@@ -932,10 +981,6 @@ if W.get("types"):
             except Exception as e:
                 faults.append("offsets %s: %s" % (shape.getPathName(), e))
     done["unresolved"] = sorted(unresolved.items(), key=lambda kv: -kv[1])[:40]
-    try:
-        slot_names()
-    except Exception as e:
-        faults.append("vftable slots: %s" % e)
     damage(guard)
 
 for address, what, tree, text in W.get("typed", []):
@@ -943,6 +988,16 @@ for address, what, tree, text in W.get("typed", []):
         typed_fix(address, what, tree, text)
     except Exception as e:
         faults.append("fix 0x%08x %s %s: %s" % (address, what, text, e))
+
+# After the typed fixes, which change prototypes (a return's type, a this
+# inside its object): before them a whole run typed 842 slots from the
+# prototypes the signature rows had just put back, and a run of the types
+# alone typed them from the fixed ones (2026-11-18).
+if W.get("types"):
+    try:
+        slot_names()
+    except Exception as e:
+        faults.append("vftable slots: %s" % e)
 
 EH_NAMES = ("FUN_", "Unwind@", "Catch@", "EhHandler@")
 for address, label, text in W.get("eh", []):

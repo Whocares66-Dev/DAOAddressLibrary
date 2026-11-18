@@ -126,6 +126,48 @@ def origins(known, cls, offset):
     return out
 
 
+def method_of(name):
+    """The method a function's name says it is, or None where the name says
+    nothing of that: a destructor, which every class has under its own name,
+    a `Stub::` name, which is for what folded code does and not for any one
+    class's method, and a name still decorated."""
+    if not name or name.startswith(("Stub::", "?")) or "destructor" in name:
+        return None
+    return name.rsplit("::", 1)[-1]
+
+
+def inherited_names(known, names):
+    """{table address: {slot: (method, its overrides' addresses)}} for the
+    slots the table (data/addresses.csv) has no name for, where every named
+    function that a table continuing this one holds at the slot is the same
+    method: an override goes by the name of what it overrides, so that is
+    the slot's name. It names an abstract class's slots, which hold
+    _purecall (C2DASource's, from G2DA's and M2DA's), and says nothing where
+    the classes below disagree."""
+    said = {}
+    for cls, (tables, _) in known.items():
+        for offset, (_, slots) in tables.items():
+            above = extends(known, cls, offset)
+            while above is not None:
+                va, theirs = known[above[0]][0][above[1]]
+                for i, function in enumerate(slots[: len(theirs)]):
+                    method = method_of(names.get(function))
+                    if method and not names.get(theirs[i]):
+                        held = said.setdefault(va, {}).setdefault(i, {})
+                        held.setdefault(method, set()).add(function)
+                above = extends(known, *above)
+    agreed = {
+        va: {
+            i: (method, sorted(functions))
+            for i, methods in slots.items()
+            if len(methods) == 1
+            for method, functions in methods.items()
+        }
+        for va, slots in said.items()
+    }
+    return {va: slots for va, slots in agreed.items() if slots}
+
+
 def direct_bases(hierarchy):
     """Indexes into a hierarchy of the class's own bases: each is followed by
     the bases it contains."""
