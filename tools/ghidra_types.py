@@ -1186,3 +1186,88 @@ finally:
     dec.dispose()
 print("RESULT " + json.dumps({"done": done, "faults": faults[:50], "nfaults": len(faults)}))
 """
+
+# Runs inside Ghidra, on its own, after the fixes: gives a function the
+# parameters its own decompile finds, where Ghidra stores fewer stack
+# parameters than the function's ret takes off the stack and no signature row
+# says what they are (W["rows"], their addresses). Such a function reads
+# rightly by itself, since the decompiler works its parameters out as it
+# goes, but a caller's decompile is made without that and loses arguments at
+# some of its calls: CResGFF::ReadFieldINT() for 83 calls with a label and a
+# default, ECString::Assign() at 61 of its 368 (paragon-agent, 2026-11-18 and
+# -19: a porter took the on-hit labels for unknown). 6,431 functions were so
+# on 2026-11-19, 2,065 of them the engine's with 13,542 calls. What is stored
+# is the decompiler's reading (Ghidra's "commit params"): the count
+# and the convention are the code's, the names are param_N and the types its
+# guesses, and a signature row replaces them. What a function returns is
+# not stored: the decompile's void for one whose value only its callers use
+# cost them the value (extraout_ 240 to 432 in the sample of 743).
+GHIDRA_PARAMS = r"""
+import json
+from ghidra.app.decompiler import DecompInterface
+from ghidra.program.model.pcode import HighFunctionDBUtil
+from ghidra.program.model.symbol import SourceType
+W = json.loads(PAYLOAD)
+program = currentProgram
+if program.getExecutableSHA256().lower() != W["sha256"]:
+    raise Exception("not the " + W["build"] + " build: " + program.getExecutableSHA256())
+dry = W["dry"]
+listing = program.getListing()
+held = set(W["rows"])
+done = {"params": 0, "paramsfailed": 0}
+faults = []
+PIECES = ("Unwind@", "Catch@", "EhHandler@")
+
+
+def short(f):
+    # How many bytes more the function's ret takes off the stack than its
+    # stored parameters hold.
+    purge = 0
+    for ins in listing.getInstructions(f.getBody(), True):
+        if ins.getMnemonicString() == "RET" and ins.getNumOperands():
+            purge = max(purge, ins.getScalar(0).getValue())
+    stack = sum(max(p.getLength(), 4) for p in f.getParameters() if p.isStackVariable())
+    return max(0, purge - stack)
+
+
+def found(high):
+    # The bytes of stack parameters the decompile finds.
+    proto = high.getFunctionPrototype()
+    total = 0
+    for i in range(proto.getNumParams()):
+        storage = proto.getParam(i).getStorage()
+        if storage.isStackStorage():
+            total += max(storage.size(), 4)
+    return total
+
+
+dec = DecompInterface()
+dec.openProgram(program)
+try:
+    for f in program.getFunctionManager().getFunctions(True):
+        if f.isThunk() or f.getEntryPoint().getOffset() in held or f.getName().startswith(PIECES):
+            continue
+        try:
+            if short(f) == 0:
+                continue
+            done["params"] += 1
+            if dry:
+                continue
+            # Only where the decompile finds all the ret takes: an argument
+            # the function never reads is one it does not find, and storing
+            # the short list made that function's own decompile worse, as
+            # did filling it up with words (both tried 2026-11-19).
+            high = dec.decompileFunction(f, 120, monitor).getHighFunction()
+            stored = sum(max(q.getLength(), 4) for q in f.getParameters() if q.isStackVariable())
+            if high is None or found(high) < stored + short(f):
+                done["params"] -= 1
+                done["paramsfailed"] += 1
+                continue
+            HighFunctionDBUtil.commitParamsToDatabase(
+                high, True, HighFunctionDBUtil.ReturnCommitOption.NO_COMMIT, SourceType.ANALYSIS)
+        except Exception as e:
+            faults.append("parameters of %s: %s" % (f.getName(True), e))
+finally:
+    dec.dispose()
+print("RESULT " + json.dumps({"done": done, "faults": faults[:50], "nfaults": len(faults)}))
+"""

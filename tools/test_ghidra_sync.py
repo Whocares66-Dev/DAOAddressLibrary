@@ -23,6 +23,15 @@ class Parts(unittest.TestCase):
     def test_plain(self):
         self.assertEqual(ghidra_parts("CCArea::AddObject"), ["CCArea", "AddObject"])
         self.assertEqual(ghidra_parts("g_hoverObject"), ["g_hoverObject"])
+        self.assertEqual(
+            ghidra_parts("std::wstring::wstring(const std::wstring&)"),
+            ["std", "wstring", "wstring(const_std.wstring&)"],
+        )
+        self.assertEqual(
+            ghidra_parts("std::operator<(std::wstring const&,std::wstring const&)"),
+            ["std", "operator<(std.wstring_const&,std.wstring_const&)"],
+        )
+        self.assertEqual(ghidra_parts("Functor::operator()"), ["Functor", "operator()"])
 
     def test_none_for_no_name(self):
         self.assertIsNone(ghidra_parts(""))

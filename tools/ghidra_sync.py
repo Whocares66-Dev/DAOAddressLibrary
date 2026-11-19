@@ -4,7 +4,7 @@ with data/addresses.csv and data/ghidra_fixes.csv.
     python tools/ghidra_sync.py              apply everything, then save the program
     python tools/ghidra_sync.py --dry-run    count what would change, change nothing
     python tools/ghidra_sync.py --limit N    only the first N rows of the table (a trial)
-    python tools/ghidra_sync.py --only types,eh    only these parts (rows, fixes, types, eh, comments, getters)
+    python tools/ghidra_sync.py --only types,eh    only these parts (rows, fixes, types, eh, comments, params, getters)
     python tools/ghidra_sync.py --no-save    apply and leave it unsaved, to look at before keeping it
     python tools/ghidra_sync.py --discard    drop everything done since the last save
 
@@ -665,10 +665,24 @@ def ghidra_parts(name):
     """A name's namespaces and leaf as Ghidra holds them, the way DAOLib's
     tools/names.py writes them for its ImportNames.java (so the two agree
     and neither undoes the other): split at `::` outside template brackets,
-    and inside a part `::` written `.` and a space `_`."""
+    and inside a part `::` written `.` and a space `_`. A parameter list
+    (`X::X(const N::X&)`, how the table tells overloads apart) stays whole
+    on the leaf: split with the rest, its `::` made namespaces of
+    `wstring(const_std` (2026-11-20)."""
     if not name:
         return None
-    return [part.replace("::", ".").replace(" ", "_") for part in split_top(name)]
+    head, params = name, ""
+    if name.endswith(")") and not name.endswith("operator()"):
+        depth = 0
+        for i in range(len(name) - 1, -1, -1):
+            depth += name[i] == ")"
+            depth -= name[i] == "("
+            if depth == 0:
+                head, params = name[:i], name[i:]
+                break
+    parts = split_top(head)
+    parts[-1] += params
+    return [part.replace("::", ".").replace(" ", "_") for part in parts]
 
 
 def sha256():
@@ -691,7 +705,7 @@ def discard(server):
     return server.call("save_program", {}).splitlines()[-1]
 
 
-PARTS = ("rows", "fixes", "types", "eh", "comments", "getters")
+PARTS = ("rows", "fixes", "types", "eh", "comments", "params", "getters")
 
 
 def getter_calls(server, dry):
@@ -705,15 +719,33 @@ def getter_calls(server, dry):
         _, _, functions, _, img = receivers.read()
     except FileNotFoundError:
         return {}, []
-    payload = {
-        "build": BUILD,
-        "sha256": sha256(),
-        "dry": dry,
-        "getters": receivers.shared_getters(img, functions),
-    }
+    return own_part(
+        server,
+        ghidra_types.GHIDRA_GETTERS,
+        dry,
+        getters=receivers.shared_getters(img, functions),
+    )
+
+
+def stored_parameters(server, fixes, dry):
+    """Runs the `params` part, a script of its own since it decompiles every
+    function it gives parameters to (tools/ghidra_types.py, GHIDRA_PARAMS):
+    (its counts, its faults), or None. A function with a signature row is
+    the row's."""
+    return own_part(
+        server,
+        ghidra_types.GHIDRA_PARAMS,
+        dry,
+        rows=sorted({a for a, what, _ in fixes if what == "signature"}),
+    )
+
+
+def own_part(server, script, dry, **work):
+    """Runs a part that is a script of its own: (its counts, its faults), or
+    None if it did not answer."""
+    payload = {"build": BUILD, "sha256": sha256(), "dry": dry, **work}
     output = server.run(
-        f"PAYLOAD = {json.dumps(json.dumps(payload))}\n" + ghidra_types.GHIDRA_GETTERS,
-        timeout=3600,
+        f"PAYLOAD = {json.dumps(json.dumps(payload))}\n" + script, timeout=3600
     )
     result = next(
         (line[7:] for line in output.splitlines() if line.startswith("RESULT ")), None
@@ -791,6 +823,14 @@ def main(argv):
         print(
             f"rows {n * CHUNK + len(chunk):>6} of {len(rows)}: {counts}, {result['nfaults']} faults"
         )
+    if "params" in only and not totals.get("damage"):
+        # After the fixes, whose rows say which functions are not its to
+        # touch, and before the getters, which read callers' decompiles.
+        answer = stored_parameters(server, fixes, dry)
+        if answer is None:
+            return 1
+        totals.update(answer[0])
+        faults += answer[1]
     if "getters" in only and not totals.get("damage"):
         # After the types and the prototypes: it reads what each caller's
         # decompile makes of them.
@@ -839,6 +879,11 @@ def main(argv):
         print(f"switches: {totals.get('switches', 0)} given the cases of their tables")
     if "eh" in only:
         print(f"exception handling: {totals['eh']} labels and comments")
+    if "params" in only:
+        print(
+            f"parameters: {totals.get('params', 0)} functions given the parameters their "
+            f"decompile finds, {totals.get('paramsfailed', 0)} it found none for"
+        )
     if "getters" in only:
         print(
             f"shared getters: {totals.get('getters', 0)} calls given their receiver's "
