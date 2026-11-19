@@ -228,6 +228,16 @@ def owner_of(name):
         if not scopes or "?" in scopes:
             return None
         return "::".join(reversed(scopes.split("@")))
+    # A parameter list tells overloads apart (X::X(const N::X&)) and is no
+    # part of where the name is.
+    if name.endswith(")") and not name.endswith("operator()"):
+        depth = 0
+        for i in range(len(name) - 1, -1, -1):
+            depth += name[i] == ")"
+            depth -= name[i] == "("
+            if depth == 0:
+                name = name[:i]
+                break
     if "::" not in name:
         return None
     return "::".join(msvc_names.split_top(name)[:-1]) or None
@@ -534,6 +544,12 @@ def place(functions, reading, rules, ranges):
         owner = owner_of(name)
         if owner:
             classes[va] = owner
+        # The linker's own code is that whatever it is named for: an import
+        # thunk named FMOD::Event::stop, as each is since 2026-11-20, is
+        # still a jump through the import table and no part of Audio.
+        if (s := in_ranges(ranges, va)) and s.startswith("Linker:"):
+            placed[va] = (s, "range")
+            continue
         # A name with no class (operator_new, _CIsqrt) may have a rule of its own.
         if s := rules.subsystem(owner or (name if name and "?" not in name else None)):
             placed[va] = (s, "name")
