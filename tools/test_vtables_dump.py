@@ -123,6 +123,18 @@ class InheritedNames(unittest.TestCase):
             self.assertEqual(vtables_dump.inherited_names(KNOWN, {0x31: name}), {})
 
 
+class SharedNotes(unittest.TestCase):
+    def test_a_function_two_unrelated_classes_hold_is_shared(self):
+        known = dict(KNOWN)
+        known["Other"] = ({0: (0x700, [0x70, 0x20])}, [("Other", 0, 0, False)])
+        notes = vtables_dump.shared_notes(known)
+        # 0x20 is Side's slot 0 and Other's slot 1; 0x10 is Base's, which
+        # Derived and Most inherit, and is not shared.
+        self.assertEqual(list(notes), [0x20])
+        self.assertIn("2 classes", notes[0x20])
+        self.assertIn("Other (slot 1), Side (slot 0)", notes[0x20])
+
+
 class Files(unittest.TestCase):
     def test_a_class_is_its_file(self):
         self.assertEqual(

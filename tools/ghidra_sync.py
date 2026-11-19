@@ -265,6 +265,44 @@ for address, what, value in W["fixes"]:
     except Exception as e:
         faults.append("fix 0x%08x %s: %s" % (address, what, e))
 
+# A function Ghidra has that the table does not, and that is the rest of the
+# table's function before it: that one runs up to it and enters it by its own
+# conditional jump, which only code of the same function does. Ghidra's
+# class recovery and its own function finding make these where a function
+# has a ret in its middle, and the function before then stops there:
+# ECString::RemoveInvalidCharacters at 0x41 of its 0x27F bytes, ten in all
+# when decomp-agent's rebuilds showed it (2026-11-20). Checked at every run,
+# so a re-analysis cannot bring one back unseen.
+done["rejoined"] = 0
+if W.get("starts"):
+    known = set(W["starts"])
+    refs = program.getReferenceManager()
+    for f in list(fm.getFunctions(True)):
+        try:
+            entry = f.getEntryPoint()
+            if entry.getOffset() in known:
+                continue
+            before = fm.getFunctionContaining(entry.subtract(1))
+            if before is None or before.getEntryPoint().getOffset() not in known:
+                continue
+            entered = False
+            for at in f.getBody().getAddresses(True):
+                for r in refs.getReferencesTo(at):
+                    kind = r.getReferenceType()
+                    if kind.isJump() and kind.isConditional() and before.getBody().contains(r.getFromAddress()):
+                        entered = True
+                        break
+                if entered:
+                    break
+            if not entered:
+                continue
+            done["rejoined"] += 1
+            if not dry:
+                fm.removeFunction(entry)
+                CreateFunctionCmd.fixupFunctionBody(program, before, monitor)
+        except Exception as e:
+            faults.append("rejoining %s: %s" % (f.getName(True), e))
+
 # A switch Ghidra did not follow: `jmp [reg*4 + table]` with no reference to
 # where it goes. Its function then ends at the jump, the cases are code in no
 # function, and the decompile stops at "Could not recover jumptable". Six of
@@ -434,13 +472,42 @@ def struct_rows():
 def comment_rows():
     """(address, comment) of every ID the table comments, in this build:
     each becomes the plate comment at its address. A comment taken out of
-    the table is left in Ghidra, as a name the table drops is."""
+    the table is left in Ghidra, as a name the table drops is. After it,
+    or alone, what the build says of a function that several classes share
+    (tools/vtables_dump.py, shared_notes; tools/receivers.py,
+    shared_getters): read from the exe at each run, never written in the
+    table."""
     with open(ROOT / "data" / "addresses.csv", newline="", encoding="utf-8") as f:
-        return [
-            (int(row[BUILD], 16), row["comment"])
+        said = {
+            int(row[BUILD], 16): row["comment"]
             for row in csv.DictReader(f)
             if row.get("comment") and row[BUILD]
-        ]
+        }
+    for address, note in shared().items():
+        said[address] = f"{said[address]}\n{note}" if address in said else note
+    return sorted(said.items())
+
+
+def shared():
+    """{address: note} of the functions several classes share. Nothing if
+    the build's image is not here."""
+    import receivers
+    import vtables_dump
+
+    try:
+        known, _ = vtables_dump.read()
+        _, _, functions, _, img = receivers.read()
+    except FileNotFoundError:
+        return {}
+    notes = vtables_dump.shared_notes(known)
+    for address, offset in receivers.shared_getters(img, functions):
+        note = (
+            f"Shared: every class's getter of the four-byte field at +0x{offset:X} is this "
+            "function, whichever class it is named for; each call returns its own "
+            "receiver's field."
+        )
+        notes[address] = f"{notes[address]}\n{note}" if address in notes else note
+    return notes
 
 
 def slot_names():
@@ -461,6 +528,64 @@ def slot_names():
 
 
 TYPED = ("datatype", "returntype", "thisat")
+C_WORDS = {
+    "void",
+    "bool",
+    "char",
+    "short",
+    "int",
+    "long",
+    "float",
+    "double",
+    "unsigned",
+    "signed",
+    "wchar_t",
+    "uint",
+    "ushort",
+    "uchar",
+    "undefined4",
+    "undefined",
+}
+
+
+def class_pointers(prototype):
+    """What a signature row says of classes, which Ghidra's C parser cannot
+    be given (ghidra_c writes them void *): ({parameter index: type text},
+    the return's type text or None), counting parameters after this. Only
+    a pointer to a class with a name: `CResGFF *gff`, `Math::Vector4f *`,
+    not `void *`, `int *` or a template with an argument left `?`."""
+    head, sep, rest = prototype.partition("(")
+    if not sep:
+        return {}, None
+
+    def pointer(text):
+        text = re.sub(r"\b(const|struct|class)\b", " ", text).strip()
+        if "*" not in text or "?" in text or "&" in text:
+            return None
+        base = text.replace("*", " ").strip()
+        if not base or set(base.split()) & C_WORDS or not re.match(r"[A-Za-z_]", base):
+            return None
+        return base + "*" * text.count("*")
+
+    inner = rest.rpartition(")")[0]
+    decls = split_params(inner) if inner.strip() not in ("", "void") else []
+    if "__thiscall" in head:
+        decls = decls[1:]
+    params = {}
+    for i, decl in enumerate(decls):
+        m = re.match(r"^(.*\*)\s*([A-Za-z_]\w*)?\s*$", decl.strip())
+        found = pointer(m.group(1)) if m else None
+        if found:
+            params[i] = found
+    conv = re.search(r"__(thiscall|stdcall|cdecl|fastcall)", head)
+    returns = (
+        head[: conv.start()]
+        if conv
+        else head.rsplit(" ", 1)[0]
+        if " " in head.strip()
+        else ""
+    )
+    return params, pointer(returns)
 
 
 def typed_fixes(fixes):
@@ -482,6 +607,17 @@ def typed_fixes(fixes):
         for address, what, value, _why in settled
         if (address, what) not in held
     ]
+    held = {(address, what) for address, what, _ in typed}
+    # The classes the signature rows name, which their C had to leave out.
+    with open(ROOT / "data" / "ghidra_fixes.csv", newline="", encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            if row["what"] != "signature":
+                continue
+            address = int(row["address"], 16)
+            params, returns = class_pointers(row["value"])
+            if returns and (address, "returntype") not in held:
+                typed.append((address, "returntype", returns))
+            typed += [(address, f"param{i}", text) for i, text in params.items()]
     return [
         (
             address,
@@ -625,9 +761,14 @@ def ghidra_c(prototype):
         # The return type and the name (which the table replaces). Only the
         # name went before 2026-11-05, and with it every return type but a
         # pointer: 352 bool, int and float functions read as void in Ghidra.
-        if not re.search(r"::|<|>|`|&", text):
-            return text
         conv = re.search(r"__(thiscall|stdcall|cdecl|fastcall)", text)
+        # A pointer to a class with no C++ mark (CResRef *) is unknown to
+        # the parser as a return too: 300 rows failed on one, 2026-11-20.
+        plain_class = conv and re.match(
+            r"\s*(const\s+)?[A-Z]\w*[a-z]\w*\s*\*", text[: conv.start()]
+        )
+        if not plain_class and not re.search(r"::|<|>|`|&", text):
+            return text
         if conv:
             returns = text[: conv.start()].strip()
         else:
@@ -779,6 +920,7 @@ def main(argv):
         print(f"--only takes {', '.join(PARTS)}: not {', '.join(sorted(unknown))}")
         return 2
     rows, fixes = work(limit)
+    all_rows = rows
     if "rows" not in only:
         rows = []
     server = Server()
@@ -796,6 +938,11 @@ def main(argv):
             else [],
             "typed": typed_fixes(fixes) if last and "fixes" in only else [],
             "switches": last and "fixes" in only,
+            "starts": sorted(a for kind, a, _ in all_rows if kind == "function")
+            # Never with --limit: a table cut short would make most
+            # functions look like ones the table does not have.
+            if last and "fixes" in only and limit is None
+            else [],
             "eh": eh_rows() if last and "eh" in only else [],
             "types": last and "types" in only,
             "structs": struct_rows() if last and "types" in only else [],
@@ -877,6 +1024,10 @@ def main(argv):
             f"{totals['nothis']} methods whose this is not in ECX"
         )
         print(f"switches: {totals.get('switches', 0)} given the cases of their tables")
+        print(
+            f"split functions: {totals.get('rejoined', 0)} that were the rest of the "
+            "table's function before them, given back to it"
+        )
     if "eh" in only:
         print(f"exception handling: {totals['eh']} labels and comments")
     if "params" in only:

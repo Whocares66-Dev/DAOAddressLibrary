@@ -886,6 +886,19 @@ def typed_fix(address, what, tree, text):
         if not dry:
             f.setReturnType(kind, SOURCE)
         return
+    if what.startswith("param"):
+        # A parameter a signature row gives a class: its C went in as void *.
+        f = fm.getFunctionAt(a)
+        own = [p for p in f.getParameters() if not p.isAutoParameter()]
+        if f.getCallingConventionName() == "__thiscall" and f.hasCustomVariableStorage():
+            own = own[1:]
+        index = int(what[5:])
+        if index >= len(own) or same_type(own[index].getDataType(), kind):
+            return
+        done["typedfixes"] += 1
+        if not dry:
+            own[index].setDataType(kind, SOURCE)
+        return
     have = listing.getDataAt(a)
     if have is not None and same_type(have.getDataType(), kind):
         return

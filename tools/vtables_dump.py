@@ -168,6 +168,36 @@ def inherited_names(known, names):
     return {va: slots for va, slots in agreed.items() if slots}
 
 
+def shared_notes(known):
+    """{function address: a sentence} for each function that is in the
+    vftables of two classes or more that do not get it from one another:
+    the linker folded identical functions into it, or the classes inherit it
+    from a base the build has no table for. Its name is then one class's
+    for all of them, and a reader of a call to it should know (decomp-agent,
+    2026-11-20: callers' decompiles show another class's name). 411
+    functions; the most shared after _purecall are the empty ones."""
+    holders = {}
+    for cls, (tables, _) in known.items():
+        for offset, (_, slots) in tables.items():
+            for i, (function, (_, defined)) in enumerate(
+                zip(slots, origins(known, cls, offset), strict=True)
+            ):
+                holders.setdefault(function, {}).setdefault(defined or cls, i)
+    notes = {}
+    for function, classes in holders.items():
+        if len(classes) < 2:
+            continue
+        listed = sorted(classes.items())
+        shown = ", ".join(f"{cls} (slot {slot})" for cls, slot in listed[:6])
+        more = f" and {len(listed) - 6} more" if len(listed) > 6 else ""
+        notes[function] = (
+            f"Shared: this one function is in the vftables of {len(listed)} classes that do "
+            "not get it from one another (identical code the linker folded, or a base the "
+            f"build has no table for), so its name is one class's for all: {shown}{more}."
+        )
+    return notes
+
+
 def direct_bases(hierarchy):
     """Indexes into a hierarchy of the class's own bases: each is followed by
     the bases it contains."""
