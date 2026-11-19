@@ -258,8 +258,11 @@ def decompile_text(f):
     try:
         d, o = decompiler()
         # Longer than get_code's own limit: Scaleform's script interpreter
-        # (0x0093DF70, 19,577 bytes) takes about 100 seconds.
-        r = d.decompileFunction(f, max(o.getDefaultTimeout(), 300), TaskMonitor.DUMMY)
+        # (0x0093DF70, 19,577 bytes) takes about 100 seconds, and at 300 two
+        # of the engine's had no decompile at all: Messages::RegisterFactories
+        # (0x0078D1A0) takes 240 and InputMapper::BuildKeyNames (0x00882680)
+        # 470 (decomp-agent, 2026-11-20).
+        r = d.decompileFunction(f, max(o.getDefaultTimeout(), 900), TaskMonitor.DUMMY)
         if r.isTimedOut():
             return HEAD + 'Decompilation timed out for function: ' + n, []
         if not r.decompileCompleted():
