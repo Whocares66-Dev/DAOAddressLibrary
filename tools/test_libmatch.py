@@ -75,7 +75,7 @@ class Bytes(unittest.TestCase):
         }
         found, shared = libmatch.by_bytes(lib, body)
         # _twice is two functions of the build; _a and _b are one shape.
-        self.assertEqual(found, {0x1000: ("_once", {})})
+        self.assertEqual(found, {0x1000: ("_once", {}, 0)})
         self.assertEqual(shared, 2)
 
 

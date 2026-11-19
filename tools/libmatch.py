@@ -216,8 +216,8 @@ def build_functions(img, starts):
 
 
 def by_bytes(lib, body):
-    """({address: (symbol, its relocations)}, how many library functions
-    shared their bytes with another of another name)."""
+    """({address: (symbol, its relocations, its place in lib)}, how many
+    library functions shared their bytes with another of another name)."""
     by_length = collections.defaultdict(list)
     for va, code in body.items():
         by_length[len(code)].append(va)
@@ -225,7 +225,7 @@ def by_bytes(lib, body):
     for name, code, relocs in lib:
         seen[shape(code, relocs)].add(name)
     found, shared = {}, 0
-    for name, code, relocs in lib:
+    for n, (name, code, relocs) in enumerate(lib):
         if len(seen[shape(code, relocs)]) > 1:
             shared += 1
             continue
@@ -234,7 +234,7 @@ def by_bytes(lib, body):
         if len(hits) != 1:
             continue
         va = hits[0]
-        found[va] = None if va in found and found[va][0] != name else (name, relocs)
+        found[va] = None if va in found and found[va][0] != name else (name, relocs, n)
     return {va: v for va, v in found.items() if v}, shared
 
 
@@ -242,7 +242,7 @@ def by_calls(direct, body, known):
     """({address: symbol} for what the matched functions call and bytes did
     not name, the calls that disagree with a match)."""
     called = collections.defaultdict(collections.Counter)
-    for va, (_, relocs) in direct.items():
+    for va, (_, relocs, *_) in direct.items():
         code = body[va]
         for off, (kind, target) in relocs.items():
             if kind == REL32 and target and off + 4 <= len(code):
@@ -277,11 +277,13 @@ def main(argv):
             if r["kind"] == "function" and r["gog-1.05"]
         }
     body = build_functions(img, sorted(rows))
-    lib, defined = [], {}
+    lib, origin, defined = [], [], {}
     for path in libs:
         for member, obj in members(path):
             found = functions(obj)
-            lib += [f for f in found if len(f[1]) >= MIN]
+            long = [f for f in found if len(f[1]) >= MIN]
+            lib += long
+            origin += [(os.path.basename(path), member)] * len(long)
             for name, _, _ in found:
                 defined.setdefault(name, (os.path.basename(path), member))
     direct, shared = by_bytes(lib, body)
@@ -304,7 +306,11 @@ def main(argv):
             out.writerow(("id", "address", "library", "object", "symbol", "how"))
             for va in sorted(set(direct) | set(extra)):
                 symbol = direct[va][0] if va in direct else extra[va]
-                library, member = defined.get(symbol, ("", ""))
+                library, member = (
+                    origin[direct[va][2]]
+                    if va in direct
+                    else defined.get(symbol, ("", ""))
+                )
                 how = "bytes" if va in direct else "called"
                 out.writerow(
                     (rows[va]["id"], f"0x{va:08X}", library, member, symbol, how)
