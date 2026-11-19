@@ -2,6 +2,7 @@
 
     python tools/libmatch.py LIB [LIB ...]     what the GOG build has of these .lib files
     python tools/libmatch.py --names LIB ...   the same, as `ID<TAB>name` lines for addrlib.py names
+    python tools/libmatch.py --write LIB ...   write data/libmatch.csv: what was matched, and from where
 
 decomp-agent, 2026-11-20, on the user's word: bring the third-party code to
 the engine's standard before anyone reads it. The build links its C runtime
@@ -21,6 +22,16 @@ library functions share, names nothing by itself.
 
 It needs game/ and the libraries, which are in no repository; what it finds
 goes into the table with addrlib.py names, so nothing reads it at run time.
+
+data/libmatch.csv records each function matched: its ID and address, the
+library and the object file its code is from, the symbol, and how it was
+matched. `bytes` is the library's own code, byte for byte but for what the
+linker fills in: a rebuild of the game can link the library for it and
+needs no one to read it (decomp-agent asked for the list for that,
+2026-11-20). `called` is a name only, the function a matched one calls
+there; its bytes were not compared (it is short, or shared, or of another
+length in the table), so it says what the function is and not that the
+library's object is it.
 """
 
 import collections
@@ -35,6 +46,7 @@ import subsystems
 
 ROOT = subsystems.REPO
 
+FILE = os.path.join(subsystems.REPO, "data", "libmatch.csv")
 MIN = 16  # bytes: shorter code is not one function's alone
 REL32 = 0x14  # IMAGE_REL_I386_REL32: a call or jump's target
 
@@ -250,8 +262,8 @@ def by_calls(direct, body, known):
 
 
 def main(argv):
-    names_only = "--names" in argv
-    libs = [a for a in argv if a != "--names"]
+    names_only, write = "--names" in argv, "--write" in argv
+    libs = [a for a in argv if a not in ("--names", "--write")]
     if not libs:
         print(__doc__)
         return 2
@@ -265,10 +277,13 @@ def main(argv):
             if r["kind"] == "function" and r["gog-1.05"]
         }
     body = build_functions(img, sorted(rows))
-    lib = []
+    lib, defined = [], {}
     for path in libs:
-        for _, obj in members(path):
-            lib += [f for f in functions(obj) if len(f[1]) >= MIN]
+        for member, obj in members(path):
+            found = functions(obj)
+            lib += [f for f in found if len(f[1]) >= MIN]
+            for name, _, _ in found:
+                defined.setdefault(name, (os.path.basename(path), member))
     direct, shared = by_bytes(lib, body)
     extra, clash = by_calls(direct, body, rows)
     print(
@@ -283,6 +298,18 @@ def main(argv):
             f"  0x{to:08X} is {direct[to][0]} by its bytes, called as {names}",
             file=sys.stderr,
         )
+    if write:
+        with open(FILE, "w", newline="", encoding="utf-8") as f:
+            out = csv.writer(f, lineterminator="\n")
+            out.writerow(("id", "address", "library", "object", "symbol", "how"))
+            for va in sorted(set(direct) | set(extra)):
+                symbol = direct[va][0] if va in direct else extra[va]
+                library, member = defined.get(symbol, ("", ""))
+                how = "bytes" if va in direct else "called"
+                out.writerow(
+                    (rows[va]["id"], f"0x{va:08X}", library, member, symbol, how)
+                )
+        return 0
     for va in sorted(set(direct) | set(extra)):
         symbol = direct[va][0] if va in direct else extra[va]
         name, row = plain(symbol), rows[va]
