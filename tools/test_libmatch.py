@@ -79,6 +79,29 @@ class Bytes(unittest.TestCase):
         self.assertEqual(shared, 2)
 
 
+class Tables(unittest.TestCase):
+    def test_shared_code_is_told_apart_by_the_vftable_it_stores(self):
+        # mov dword ptr [ecx], <vftable>; then padding to 16 bytes
+        def ctor(table):
+            code = bytes([0xC7, 0x01]) + struct.pack("<I", table)
+            return code + bytes([0x8B, 0xC1, 0xC3]) + bytes([0x90]) * 8
+
+        relocs_a = {2: (libmatch.DIR32, "??_7A@std@@6B@")}
+        relocs_b = {2: (libmatch.DIR32, "??_7B@std@@6B@")}
+        lib = [
+            ("??0A@std@@QAE@XZ", ctor(0), relocs_a),
+            ("??0B@std@@QAE@XZ", ctor(0), relocs_b),
+        ]
+        body = {0x1000: ctor(0x5000), 0x2000: ctor(0x6000), 0x3000: ctor(0x7000)}
+        found = libmatch.by_tables(
+            lib, body, {}, {"A@std@@": {0x5000}, "B@std@@": {0x6000}}
+        )
+        self.assertEqual(
+            {va: v[0] for va, v in found.items()},
+            {0x1000: "??0A@std@@QAE@XZ", 0x2000: "??0B@std@@QAE@XZ"},
+        )
+
+
 class Calls(unittest.TestCase):
     def test_what_a_matched_function_calls_is_what_the_library_says(self):
         code = b"\xe8" + struct.pack("<i", 0x2000 - 0x1005) + b"\xc3"

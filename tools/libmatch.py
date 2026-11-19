@@ -18,7 +18,9 @@ library's function calls symbol S at a relocation and the build's calls
 address A at the same place, A is S. That is tools/exemap.py's rule (two
 instructions otherwise the same hold them), and nothing is named by
 resemblance: code shorter than 16 bytes, and code two differently named
-library functions share, names nothing by itself.
+library functions share, names nothing by itself. Shared code is told apart
+where each function stores its own class's vftable (the constructors of
+the standard exceptions), the build's tables being known by their RTTI.
 
 It needs game/ and the libraries, which are in no repository; what it finds
 goes into the table with addrlib.py names, so nothing reads it at run time.
@@ -238,6 +240,47 @@ def by_bytes(lib, body):
     return {va: v for va, v in found.items() if v}, shared
 
 
+DIR32 = 0x06  # IMAGE_REL_I386_DIR32: an address held as it is
+
+
+def by_tables(lib, body, taken, vftables):
+    """{address: (symbol, its relocations, its place in lib)} for functions
+    whose bytes several library functions of different names share, told
+    apart by the vftable each stores: std::bad_alloc's constructor and
+    std::bad_cast's are one shape, and each writes its own class's table.
+    vftables: {a class as its symbols end, `bad_alloc@std@@`: its tables'
+    addresses in the build}."""
+    by_length = collections.defaultdict(list)
+    for va, code in body.items():
+        if va not in taken:
+            by_length[len(code)].append(va)
+    names = collections.defaultdict(set)
+    for name, code, relocs in lib:
+        names[shape(code, relocs)].add(name)
+    fits = collections.defaultdict(dict)
+    for n, (name, code, relocs) in enumerate(lib):
+        tables = [
+            (off, target[4:-3])
+            for off, (kind, target) in relocs.items()
+            if kind == DIR32
+            and target
+            and target.startswith("??_7")
+            and target.endswith("6B@")
+        ]
+        if len(names[shape(code, relocs)]) < 2 or not tables:
+            continue
+        pattern = pattern_of(code, relocs)
+        for va in by_length.get(len(code), ()):
+            if pattern.match(body[va]) and all(
+                struct.unpack_from("<I", body[va], off)[0] in vftables.get(cls, ())
+                for off, cls in tables
+            ):
+                fits[va][name] = (name, relocs, n)
+    return {
+        va: next(iter(found.values())) for va, found in fits.items() if len(found) == 1
+    }
+
+
 def by_calls(direct, body, known):
     """({address: symbol} for what the matched functions call and bytes did
     not name, the calls that disagree with a match)."""
@@ -287,11 +330,17 @@ def main(argv):
             for name, _, _ in found:
                 defined.setdefault(name, (os.path.basename(path), member))
     direct, shared = by_bytes(lib, body)
+    vftables = collections.defaultdict(set)
+    for va, decorated, _, _ in img.vtables:
+        vftables[decorated[4:]].add(va)
+    told = by_tables(lib, body, direct, vftables)
+    direct.update(told)
     extra, clash = by_calls(direct, body, rows)
     print(
         f"{len(lib)} library functions of {MIN} bytes or more; {len(direct)} functions "
         f"of the build are one's bytes ({shared} library functions shared theirs with "
-        f"another name); {len(extra)} more by what those call; {len(clash)} calls "
+        f"another name, {len(told)} of them told apart by the vftable they store); "
+        f"{len(extra)} more by what those call; {len(clash)} calls "
         "disagree with a match",
         file=sys.stderr,
     )

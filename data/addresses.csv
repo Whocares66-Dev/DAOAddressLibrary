@@ -2,7 +2,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 1,function,Eclipse::DAThreadManager::DAThreadManager,,0x00401000,0x00401000,0x00401000
 2,function,Eclipse::DAThreadManager::IsMultithreaded,,0x00401020,0x00401020,0x00401020
 3,function,Eclipse::DAThreadManager::~DAThreadManager,,0x00401030,0x00401030,0x00401030
-4,function,,,0x00401040,0x00401040,0x00401040
+4,function,std::bad_alloc::bad_alloc,,0x00401040,0x00401040,0x00401040
 5,function,,,0x00401060,0x00401060,0x00401060
 6,function,,,0x00401070,0x00401070,0x00401070
 7,function,,,0x004010a0,0x00401100,0x004010a0
@@ -25,7 +25,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24,function,ECBase::ECDynArray<?>::Back,,0x00401740,0x00401600,0x00401740
 25,function,std::string::assign,,0x004017a0,0x00401660,0x004017a0
 26,function,Eclipse::DAThreadManager::Initialize,,0x004017d0,0x00401690,0x004017d0
-27,function,,,0x004019d0,0x00401890,0x004019d0
+27,function,std::logic_error::logic_error,,0x004019d0,0x00401890,0x004019d0
 28,function,,,0x00401a40,0x00401900,0x00401a40
 29,function,,,0x00401a60,0x004019c0,0x00401a60
 30,function,,,0x00401aa0,0x00401a00,0x00401aa0
@@ -25699,16 +25699,16 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 25698,function,std::exception::exception,,0x008e0f45,0x008b74a3,0x008e0f45
 25699,function,std::exception::~exception,,0x008e0f9d,0x008b74fb,0x008e0f9d
 25700,function,,,0x008e0fb3,0x008b7511,0x008e0fb3
-25701,function,,,0x008e0fc0,0x008b751e,0x008e0fc0
-25702,function,,,0x008e0fd9,0x008b7537,0x008e0fd9
+25701,function,std::bad_cast::bad_cast,,0x008e0fc0,0x008b751e,0x008e0fc0
+25702,function,std::bad_cast::bad_cast,,0x008e0fd9,0x008b7537,0x008e0fd9
 25703,function,,,0x008e0ff1,0x008b754f,0x008e0ff1
-25704,function,,,0x008e0ffc,0x008b755a,0x008e0ffc
-25705,function,,,0x008e1015,0x008b7573,0x008e1015
+25704,function,std::bad_typeid::bad_typeid,,0x008e0ffc,0x008b755a,0x008e0ffc
+25705,function,std::bad_typeid::bad_typeid,,0x008e1015,0x008b7573,0x008e1015
 25706,function,,,0x008e102d,0x008b758b,0x008e102d
 25707,function,,,0x008e1045,0x008b75a3,0x008e1045
 25708,function,,,0x008e105d,0x008b75bb,0x008e105d
 25709,function,,,0x008e1068,0x008b75c6,0x008e1068
-25710,function,,,0x008e1084,0x008b75e2,0x008e1084
+25710,function,std::bad_cast::`scalar deleting destructor',,0x008e1084,0x008b75e2,0x008e1084
 25711,function,,,0x008e10a6,0x008b7604,0x008e10a6
 25712,function,_initp_misc_invarg,,0x008e10c8,0x008b7626,0x008e10c8
 25713,function,_invoke_watson,,0x008e10d2,0x008b7630,0x008e10d2
@@ -25788,7 +25788,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 25787,function,_execl,,0x008e2d59,0x008b92b9,0x008e2d59
 25788,function,wcsncpy,,0x008e2da2,0x008b9302,0x008e2da2
 25789,function,fast_error_exit,,0x008e2ddf,0x008b933f,0x008e2ddf
-25790,function,,,0x008e2e03,0x008b9363,0x008e2e03
+25790,function,check_managed_app,,0x008e2e03,0x008b9363,0x008e2e03
 25791,function,,,0x008e2fd1,0x008b9531,0x008e2fd1
 25792,function,,,0x008e2fe5,0x008b9545,0x008e2fe5
 25793,function,,,0x008e300b,0x008b956b,0x008e300b
@@ -25962,7 +25962,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 25961,function,wcstoxq,,0x008e84c8,0x008bfdda,0x008e84c8
 25962,function,,,0x008e8778,0x008c008a,0x008e8778
 25963,function,_wcsnicmp_l,,0x008e87a2,0x008c00b4,0x008e87a2
-25964,function,,,0x008e888a,0x008c019c,0x008e888a
+25964,function,_wcsnicmp,,0x008e888a,0x008c019c,0x008e888a
 25965,function,_CIatan2,,0x008e893a,0x008bdc6a,0x008e893a
 25966,function,_CIsin,,0x008e8990,0x008bca60,0x008e8990
 25967,function,,,0x008e89e8,0x008bcab8,0x008e89e8
@@ -26032,7 +26032,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 26031,function,__crtLCMapStringA_stat,,0x008eac73,0x008c0f73,0x008eac73
 26032,function,__crtLCMapStringA,,0x008eb015,0x008c1315,0x008eb015
 26033,function,__pctype_func,,0x008eb058,0x008c1358,0x008eb058
-26034,function,,,0x008eb081,0x008c1381,0x008eb081
+26034,function,__init_ctype,,0x008eb081,0x008c1381,0x008eb081
 26035,function,___mb_cur_max_l_func,,0x008eb43f,0x008c173f,0x008eb43f
 26036,function,___lc_codepage_func,,0x008eb455,0x008c1755,0x008eb455
 26037,function,___lc_handle_func,,0x008eb47b,0x008c177b,0x008eb47b
@@ -26075,7 +26075,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 26074,function,x64toa_s,,0x008ecc1b,0x008c2f1e,0x008ecc1b
 26075,function,_ui64toa_s,,0x008ecd11,0x008c3014,0x008ecd11
 26076,function,,,0x008ecd2e,0x008c3031,0x008ecd2e
-26077,function,,,0x008ecd39,0x008c303c,0x008ecd39
+26077,function,std::bad_exception::`scalar deleting destructor',,0x008ecd39,0x008c303c,0x008ecd39
 26078,function,__TypeMatch,,0x008ecd5b,0x008c305e,0x008ecd5b
 26079,function,__FrameUnwindFilter,,0x008ecdb7,0x008c30ba,0x008ecdb7
 26080,function,__FrameUnwindToState,,0x008ecdfb,0x008c30fe,0x008ecdfb
@@ -26087,7 +26087,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 26086,function,__DestructExceptionObject,,0x008ecf21,0x008c3224,0x008ecf21
 26087,function,,,0x008ecf64,0x008c3267,0x008ecf64
 26088,function,,,0x008ecf6d,0x008c3270,0x008ecf6d
-26089,function,,,0x008ecf75,0x008c3278,0x008ecf75
+26089,function,__AdjustPointer,,0x008ecf75,0x008c3278,0x008ecf75
 26090,function,IsInExceptionSpec,,0x008ecfad,0x008c32b0,0x008ecfad
 26091,function,CallUnexpected,,0x008ed026,0x008c3329,0x008ed026
 26092,function,_catch$?CallUnexpected@@YAXPBU_s_ESTypeList@@@Z$0,,0x008ed057,0x008c335a,0x008ed057
@@ -26105,7 +26105,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 26104,function,CatchIt,,0x008ed41b,0x008c371e,0x008ed41b
 26105,function,FindHandlerForForeignException,,0x008ed487,0x008c378a,0x008ed487
 26106,function,FindHandler,,0x008ed579,0x008c387c,0x008ed579
-26107,function,,,0x008ed8cf,0x008c3bd2,0x008ed8cf
+26107,function,std::bad_exception::bad_exception,,0x008ed8cf,0x008c3bd2,0x008ed8cf
 26108,function,__InternalCxxFrameHandler,,0x008ed8e7,0x008c3bea,0x008ed8e7
 26109,function,_strtod_l,,0x008ed9cb,0x008c3cce,0x008ed9cb
 26110,function,strtod,,0x008edae6,0x008c3de9,0x008edae6
@@ -26263,7 +26263,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 26262,function,,,0x008f3c13,0x008c9ed3,0x008f3c13
 26263,function,,,0x008f3c16,0x008c9ed6,0x008f3c16
 26264,function,_local_unwind4,,0x008f3c20,0x008c9ee0,0x008f3c20
-26265,function,,,0x008f3cb0,0x008c9f70,0x008f3cb0
+26265,function,_unwind_handler4,,0x008f3cb0,0x008c9f70,0x008f3cb0
 26266,function,_EH4_CallFilterFunc,,0x008f3d12,0x008c9fd2,0x008f3d12
 26267,function,_EH4_GlobalUnwind,,0x008f3d42,0x008ca002,0x008f3d42
 26268,function,,,0x008f3d57,0x008ca017,0x008f3d57
@@ -26287,11 +26287,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 26286,function,__security_init_cookie,,0x008f4907,0x008cabc6,0x008f4907
 26287,function,,,0x008f49a0,0x008cac60,0x008f49a0
 26288,function,,,0x008f49be,0x008cac7e,0x008f49be
-26289,function,,,0x008f4c21,0x008caee1,0x008f4c21
+26289,function,_fFEXP,,0x008f4c21,0x008caee1,0x008f4c21
 26290,function,,,0x008f4d61,0x008cb021,0x008f4d61
 26291,function,_ffexpm1,,0x008f4d6e,0x008cb02e,0x008f4d6e
 26292,function,_trandisp1,,0x008f4e20,0x008cb0e0,0x008f4e20
-26293,function,,,0x008f4e87,0x008cb147,0x008f4e87
+26293,function,_trandisp2,,0x008f4e87,0x008cb147,0x008f4e87
 26294,function,,,0x008f4f24,0x008cb1e4,0x008f4f24
 26295,function,,,0x008f4f2d,0x008cb1ed,0x008f4f2d
 26296,function,_tosnan1,,0x008f4f32,0x008cb1f2,0x008f4f32
@@ -26387,13 +26387,13 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 26386,function,,,0x008fc82c,0x008d0a8c,0x008fc82c
 26387,function,,,0x008fc835,0x008d0a95,0x008fc835
 26388,function,,,0x008fc858,0x008d0ab8,0x008fc858
-26389,function,,,0x008fc870,0x008d0ad0,0x008fc870
+26389,function,_cintrindisp2,,0x008fc870,0x008d0ad0,0x008fc870
 26390,function,,,0x008fc93a,0x008d0b9a,0x008fc93a
 26391,function,,,0x008fcaf0,0x008cf240,0x008fcaf0
 26392,function,,,0x008fcb0e,0x008cf25e,0x008fcb0e
 26393,function,,,0x008fccc0,0x008d1690,0x008fccc0
 26394,function,,,0x008fccde,0x008d16ae,0x008fccde
-26395,function,,,0x008fd240,0x008d2ee0,0x008fd240
+26395,function,fdiv_main_routine,,0x008fd240,0x008d2ee0,0x008fd240
 26396,function,,,0x008fd364,0x008d3004,0x008fd364
 26397,function,,,0x008fd36a,0x008d300a,0x008fd36a
 26398,function,,,0x008fd36f,0x008d300f,0x008fd36f
@@ -26460,7 +26460,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 26459,function,,,0x008fd7e2,0x008d3482,0x008fd7e2
 26460,function,_safe_fdivr,,0x008fda31,0x008d36d1,0x008fda31
 26461,function,_fprem_common,,0x008fda46,0x008d36e6,0x008fda46
-26462,function,,,0x008fdc4c,0x008d38ec,0x008fdc4c
+26462,function,_adj_fprem,,0x008fdc4c,0x008d38ec,0x008fdc4c
 26463,function,_CIpow_pentium4,,0x008fdfd0,0x008cdfd0,0x008fdfd0
 26464,function,_pow_pentium4,,0x008fdfe9,0x008cdfe9,0x008fdfe9
 26465,retired,,,,,
@@ -26497,7 +26497,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 26496,function,__set_fpsr_sse2,,0x008fff0c,0x008d0642,0x008fff0c
 26497,function,,,0x008fff39,0x008d066f,0x008fff39
 26498,function,,,0x008fff55,0x008d068b,0x008fff55
-26499,function,,,0x008fff80,0x008d1c10,0x008fff80
+26499,function,_CIatan_pentium4,,0x008fff80,0x008d1c10,0x008fff80
 26500,function,,,0x008fff9e,0x008d1c2e,0x008fff9e
 26501,retired,,,,,
 26502,function,__ansicp,,0x0090026c,0x008d685a,0x0090026c
@@ -26534,7 +26534,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 26533,function,,,0x00903186,0x008d9774,0x00903186
 26534,function,,,0x0090319d,0x008d978b,0x0090319d
 26535,function,_unwind_handler,,0x009031e8,0x008d97d4,0x009031e8
-26536,function,,,0x0090322d,0x008d9819,0x0090322d
+26536,function,_local_unwind2,,0x0090322d,0x008d9819,0x0090322d
 26537,function,,,0x009032d4,0x008d98c0,0x009032d4
 26538,function,_NLG_Notify,,0x009032dd,0x008d98c9,0x009032dd
 26539,function,_NLG_Call,,0x009032fc,0x008d98e8,0x009032fc
@@ -33851,7 +33851,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33850,function,_towupper_l,,0x00a6e389,0x00a68949,0x00a6e389
 33851,function,,,0x00a6e437,0x00a689f7,0x00a6e437
 33852,function,_CIexp,,0x00a6e48c,0x008c035c,0x00a6e48c
-33853,function,,,0x00a6e4e0,0x00a68a80,0x00a6e4e0
+33853,function,strspn,,0x00a6e4e0,0x00a68a80,0x00a6e4e0
 33854,function,,,0x00a6e678,0x00a68c18,0x00a6e678
 33855,function,,,0x00a6e67d,0x00a68ce6,0x00a6e67d
 33856,function,,,0x00a6e69b,0x00a68d04,0x00a6e69b
