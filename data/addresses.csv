@@ -3303,7 +3303,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3302,function,"std::_Insertion_sort<OnlineFeatures::Achievement**,AchievementLess>",,0x0047d270,0x00857090,0x0047d270
 3303,function,std::list<std::wstring>::erase,,0x0047d340,0x00505c10,0x0047d340
 3304,function,OnlineFeatures::RequestTermsOfService,,0x0047d3b0,0x00857160,0x0047d3b0
-3305,function,ScriptBackend::ForScript_SendOnlineTelemetry,,0x0047d4d0,0x00857280,0x0047d4d0
+3305,function,OnlineFeatures::SendOnlineTelemetry,,0x0047d4d0,0x00857280,0x0047d4d0
 3306,function,OnlineFeatures::UnlockAchievementByName,,0x0047d7c0,0x00857570,0x0047d7c0
 3307,function,OnlineFeatures::UnlockAchievementByIndex,,0x0047dac0,0x00857870,0x0047dac0
 3308,function,OnlineFeatures::MergeOnlineAchievements,,0x0047dc60,0x00857a10,0x0047dc60
@@ -3312,12 +3312,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3311,function,OnlineFeatures::OnCountryListReceived,,0x0047e560,0x00858310,0x0047e560
 3312,function,OnlineFeatures::OnPersonaListReceived,,0x0047e780,0x00858530,0x0047e780
 3313,function,OnlineFeatures::LogAwardList,,0x0047e960,0x00858710,0x0047e960
-3314,function,ScriptBackend::ForScript_IncrementAchievementCountByID,,0x0047eb30,0x008588e0,0x0047eb30
+3314,function,OnlineFeatures::ForScript_IncrementAchievementCountByID,,0x0047eb30,0x008588e0,0x0047eb30
 3315,function,OnlineFeatures::LoadAchievementDefinitions,,0x0047ec00,0x008589b0,0x0047ec00
 3316,function,OnlineFeatures::ImportLocalAchievementData,,0x0047ee30,0x00858be0,0x0047ee30
 3317,function,OnlineFeatures::LoadProfileAddinList,,0x0047f160,0x00858f10,0x0047f160
 3318,function,OnlineFeatures::LoadProfileOfferList,,0x0047f3b0,0x00859160,0x0047f3b0
-3319,function,ScriptBackend::ForScript_UpdateOnlineStatistic,,0x0047f5f0,0x008593a0,0x0047f5f0
+3319,function,OnlineFeatures::ForScript_UpdateOnlineStatistic,,0x0047f5f0,0x008593a0,0x0047f5f0
 3320,function,OnlineFeatures::OnStatisticReceived,,0x0047fa60,0x00859810,0x0047fa60
 3321,function,OnlineFeatures::RegisterMessageHandlers,,0x0047fc70,0x00859a20,0x0047fc70
 3322,function,std::vector<?>::data,,0x0047fc80,0x00481350,0x0047fc80
@@ -3330,7 +3330,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3329,function,OnlineFeatures::SendHardwareTelemetry,,0x0047ff00,0x00859b50,0x0047ff00
 3330,function,OnlineFeatures::OnAwardsRetrieved,,0x00480300,0x00859f50,0x00480300
 3331,function,OnlineFeatures::LoadProfile,,0x00480440,0x0085a090,0x00480440
-3332,function,ScriptBackend::ForScript_GetOnlineStatistic,,0x00480980,0x0085a5d0,0x00480980
+3332,function,OnlineFeatures::ForScript_GetOnlineStatistic,,0x00480980,0x0085a5d0,0x00480980
 3333,function,"std::list<std::pair<std::wstring,std::wstring>>::~list",,0x00480b80,0x0085a7d0,0x00480b80
 3334,function,"std::map<std::wstring,std::wstring>::_Copy(_Nodeptr,_Nodeptr)",,0x00480ba0,0x0085a7f0,0x00480ba0
 3335,function,Catch_All@00480c3d,,0x00480c3d,0x0085a88d,0x00480c3d
@@ -4482,9 +4482,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4481,function,,,0x004c0830,0x00405960,0x004c0830
 4482,function,,,0x004c08d0,0x005f3ba0,0x004c08d0
 4483,function,,,0x004c0930,0x00477220,0x004c0930
-4484,function,ScriptBackend::ForScript_StringToInt,,0x004c0950,0x008028d0,0x004c0950
+4484,function,String::WideToLongSigned,,0x004c0950,0x008028d0,0x004c0950
 4485,function,String::WideToLong,,0x004c0990,0x00802910,0x004c0990
-4486,function,ScriptBackend::ForScript_StringToFloat,,0x004c09d0,0x00802950,0x004c09d0
+4486,function,String::WideToFloat,,0x004c09d0,0x00802950,0x004c09d0
 4487,function,ECBase::ECString::ToInt64,,0x004c0a10,0x00802990,0x004c0a10
 4488,function,ECBase::ECString::EqualsNoCase,,0x004c0a50,0x008029d0,0x004c0a50
 4489,function,ECBase::ECString::EqualsNoCase,,0x004c0aa0,0x00802a20,0x004c0aa0
@@ -4535,7 +4535,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4534,function,std::wstring::wstring,,0x004c2480,0x008039f0,0x004c2480
 4535,function,std::wstring::wstring(const std::wstring&),,0x004c2510,0x00803a80,0x004c2510
 4536,function,,,0x004c2540,0x00803ab0,0x004c2540
-4537,function,ScriptBackend::ForScript_InsertString,,0x004c25d0,0x00803b40,0x004c25d0
+4537,function,std::wstring::insert,,0x004c25d0,0x00803b40,0x004c25d0
 4538,function,ECBase::ECString::Insert,,0x004c25f0,0x00803b60,0x004c25f0
 4539,function,std::wstring::wstring(const wchar_t*),,0x004c2630,0x004784b0,0x004c2630
 4540,function,"std::wstring::wstring(const std::wstring&,unsigned int,unsigned int)",,0x004c2670,0x00803ba0,0x004c2670
@@ -4546,8 +4546,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4545,function,ECBase::ECString::FromDouble,,0x004c29e0,0x00803f10,0x004c29e0
 4546,function,std::wstring::operator=,,0x004c2ab0,0x00803fe0,0x004c2ab0
 4547,function,ECBase::ECString::Assign,,0x004c2ad0,0x00804000,0x004c2ad0
-4548,function,ScriptBackend::ForScript_IntToString,,0x004c2b10,0x00804040,0x004c2b10
-4549,function,ScriptBackend::ForScript_FloatToString,,0x004c2b80,0x008040b0,0x004c2b80
+4548,function,String::IntToWide,,0x004c2b10,0x00804040,0x004c2b10
+4549,function,String::FloatToWide,,0x004c2b80,0x008040b0,0x004c2b80
 4550,function,ECBase::ECString::AssignUtf8,"Clears this, then converts a narrow UTF-8 (code page 65001) C string to wide with MultiByteToWideChar and assigns it; null or empty gives the empty string.",0x004c2bf0,0x00804120,0x004c2bf0
 4551,function,ECBase::ECString::ToUtf8,Converts this wstring to UTF-8 with WideCharToMultiByte (code page 65001) into a std::string returned through the hidden pointer.,0x004c2cc0,0x008041f0,0x004c2cc0
 4552,function,ECBase::ECString::StartsWith,,0x004c2e50,0x00804380,0x004c2e50
@@ -4569,9 +4569,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4568,function,,,0x004c3700,0x00804c30,0x004c3700
 4569,function,std::wstring::append,,0x004c3780,0x00804cb0,0x004c3780
 4570,function,String::ToUpperAscii,,0x004c3800,0x00804d30,0x004c3800
-4571,function,ScriptBackend::ForScript_StringUpperCase,,0x004c38e0,0x00804e10,0x004c38e0
+4571,function,String::ToUpperAscii,,0x004c38e0,0x00804e10,0x004c38e0
 4572,function,String::ToLowerAscii,,0x004c3970,0x00804ea0,0x004c3970
-4573,function,ScriptBackend::ForScript_StringLowerCase,,0x004c3a50,0x00804f80,0x004c3a50
+4573,function,String::ToLowerAscii,,0x004c3a50,0x00804f80,0x004c3a50
 4574,function,,,0x004c3ae0,0x00805010,0x004c3ae0
 4575,function,,,0x004c3bc0,0x008050f0,0x004c3bc0
 4576,function,ECBase::ECString::RemoveInvalidCharacters,,0x004c3cf0,0x00805220,0x004c3cf0
@@ -12079,11 +12079,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12078,function,Notifications::`scalar deleting destructor'`adjustor{32}',,0x00628de0,0x006a31a0,0x00628de0
 12079,function,Notifications::`scalar deleting destructor'`adjustor{8}',,0x00628df0,0x006a31b0,0x00628df0
 12080,function,Notifications::`scalar deleting destructor'`adjustor{28}',,0x00628e00,0x006a3190,0x00628e00
-12081,function,ScriptBackend::ForScript_ShowSpecUnlockedNotification,,0x00628e10,0x006a31c0,0x00628e10
+12081,function,Notifications::ForScript_ShowSpecUnlockedNotification,,0x00628e10,0x006a31c0,0x00628e10
 12082,function,Notifications::AddUberQuestAlert,,0x00628fe0,0x006a3390,0x00628fe0
 12083,function,Notifications::AddUberCodexAlert,,0x006290e0,0x006a3490,0x006290e0
 12084,function,Notifications::AddUberAbilityAlert,,0x006291c0,0x006a3570,0x006291c0
-12085,function,ScriptBackend::ForScript_ShowAreaUnlockedNotification,,0x00629360,0x006a3710,0x00629360
+12085,function,Notifications::ForScript_ShowAreaUnlockedNotification,,0x00629360,0x006a3710,0x00629360
 12086,function,AlertPool::AlertPool,,0x00629430,0x006a37e0,0x00629430
 12087,function,AlertPool::NewAlert,,0x006294c0,0x006a3870,0x006294c0
 12088,function,Notifications::Notifications,,0x00629520,0x006a38d0,0x00629520
@@ -12213,7 +12213,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12212,function,FocusCameraOnObject::InitType,,0x0062eaf0,0x00506f20,0x0062eaf0
 12213,function,CCParty::FlipFormationSide,"FlipFormationSide: when +0x228 > 0.26 (0x00C1CED0): +0x224 = -0.5 (0x00AE7100), +0x228 = 0, the side byte +0x450 toggled; callers MoveGroupTo 0x00638B25, CCCreature::SteerDrive 0x006ADD4F",0x0062eb50,0x0060ab90,0x0062eb50
 12214,function,CCParty::ForceReplan,"ForceReplan: the follow accumulator +0x224 = 0.5 (0x00B05774); called only by CSSubActionHandler::Drive (0x007A8E1F, 0x007A8F6D)",0x0062eb90,0x0060abd0,0x0062eb90
-12215,function,ScriptBackend::ForScript_ShowDeathScreen,,0x0062eba0,0x0060abe0,0x0062eba0
+12215,function,CCParty::ForScript_ShowDeathScreen,,0x0062eba0,0x0060abe0,0x0062eba0
 12216,function,CCParty::EnsurePlotManager,,0x0062ebc0,0x0060ac00,0x0062ebc0
 12217,function,CCParty::HandleMessage_ToggleRunWalkMessage,,0x0062ec60,0x0060aca0,0x0062ec60
 12218,function,CCParty::FindItemByTag,,0x0062ec80,0x0060acc0,0x0062ec80
@@ -12269,7 +12269,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12268,function,CCParty::IsPerceivingHostiles,,0x0062f9f0,0x0060b700,0x0062f9f0
 12269,function,CCParty::AddItemAbilityToMembers,"Gives an item's ability to every pool member (+0x240) with AddAbility, unless the hero already has it from that source (HasAbilitySource with the item's tag, +0xB8)",0x0062fa70,0x0060b780,0x0062fa70
 12270,function,CCParty::RemoveItemAbilityFromMembers,"On an item's removal: if the hero still has the ability from another item (FindAbilityItem), re-adds it with that item as source; else RemoveAbility from every member and a ForceInventoryRefreshMessage",0x0062fb40,0x0060b850,0x0062fb40
-12271,function,ScriptBackend::GetControlledArea,,0x0062fd10,0x0060ba20,0x0062fd10
+12271,function,CCParty::GetControlledArea,,0x0062fd10,0x0060ba20,0x0062fd10
 12272,function,CCParty::UpdateMemberGuiStats,,0x0062fd60,0x0060ba70,0x0062fd60
 12273,function,CCParty::GetCommonEffectFlags,,0x0062ffc0,0x0060bcd0,0x0062ffc0
 12274,function,CCParty::RefreshMembers,,0x00630040,0x0060bd50,0x00630040
@@ -12305,7 +12305,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12304,function,CCParty::Update,,0x00630f60,0x0060c9f0,0x00630f60
 12305,function,CCParty::RegisterWithTokenManager,,0x006310c0,0x0060cb50,0x006310c0
 12306,function,CCParty::ModifyFollowerApproval,,0x006311a0,0x0060cc30,0x006311a0
-12307,function,ScriptBackend::ForScript_SetFollowerApprovalDescription,,0x00631290,0x0060cd20,0x00631290
+12307,function,CCParty::ForScript_SetFollowerApprovalDescription,,0x00631290,0x0060cd20,0x00631290
 12308,function,CCParty::OnItemAdded,"When an item joins the party inventory: if its ability (+0x660) is not 200000, AddItemAbilityToMembers",0x006313a0,0x0060ce30,0x006313a0
 12309,function,CCParty::OnItemRemoved,"When an item leaves the party inventory: if its ability (+0x660) is not 200000, RemoveItemAbilityFromMembers",0x00631470,0x0060cf00,0x00631470
 12310,function,"std::map<unsigned int,PartyStoredItem>::find",,0x006314d0,0x0060cf60,0x006314d0
@@ -12343,7 +12343,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12342,function,"SmartData::Attribute<ECBase::ECDynArray<CCCreature*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x00631d30,0x0060d7d0,0x00631d30
 12343,function,"std::fill<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",,0x00631d50,0x0060d7f0,0x00631d50
 12344,function,CCParty::GetFollowerSlot,,0x00631d90,0x0060d830,0x00631d90
-12345,function,ScriptBackend::ForScript_RemoveNonPartyFollower,,0x00631e00,0x0060d8a0,0x00631e00
+12345,function,CCParty::ForScript_RemoveNonPartyFollower,,0x00631e00,0x0060d8a0,0x00631e00
 12346,function,CCParty::UpdatePortraitsForArea,,0x00631eb0,0x0060d950,0x00631eb0
 12347,function,CCParty::UpdateSurvival,,0x00631f30,0x0060d9d0,0x00631f30
 12348,function,"std::vector<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::_Ufill",,0x00632250,0x0060dcf0,0x00632250
@@ -12364,13 +12364,13 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12363,function,"SmartData::Attribute<ECBase::ECDynArray<PartyMemberApproval*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x00632620,0x0060e0c0,0x00632620
 12364,function,CCParty::GetFollowerWouldBeLocation,,0x00632640,0x0060e0e0,0x00632640
 12365,function,CCParty::CatchUpMembers,,0x006326c0,0x0060e160,0x006326c0
-12366,function,ScriptBackend::ForScript_GetFollowerState,,0x00632810,0x0060e2b0,0x00632810
-12367,function,ScriptBackend::ForScript_SetFollowerSubState,,0x00632880,0x0060e320,0x00632880
-12368,function,ScriptBackend::ForScript_GetFollowerSubState,,0x006328e0,0x0060e380,0x006328e0
-12369,function,ScriptBackend::ForScript_SetFollowerLocked,,0x00632950,0x0060e3f0,0x00632950
-12370,function,ScriptBackend::ForScript_IsFollowerLocked,,0x006329b0,0x0060e450,0x006329b0
-12371,function,ScriptBackend::ForScript_SetFollowPartyLeader,,0x00632a20,0x0060e4c0,0x00632a20
-12372,function,ScriptBackend::ForScript_GetFollowPartyLeader,,0x00632a80,0x0060e520,0x00632a80
+12366,function,CCParty::ForScript_GetFollowerState,,0x00632810,0x0060e2b0,0x00632810
+12367,function,CCParty::ForScript_SetFollowerSubState,,0x00632880,0x0060e320,0x00632880
+12368,function,CCParty::ForScript_GetFollowerSubState,,0x006328e0,0x0060e380,0x006328e0
+12369,function,CCParty::ForScript_SetFollowerLocked,,0x00632950,0x0060e3f0,0x00632950
+12370,function,CCParty::ForScript_IsFollowerLocked,,0x006329b0,0x0060e450,0x006329b0
+12371,function,CCParty::ForScript_SetFollowPartyLeader,,0x00632a20,0x0060e4c0,0x00632a20
+12372,function,CCParty::ForScript_GetFollowPartyLeader,,0x00632a80,0x0060e520,0x00632a80
 12373,function,"ECBase::ECDynArray<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::erase",,0x00632af0,0x0060e590,0x00632af0
 12374,function,"std::copy_backward<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*>",,0x00632b60,0x0060e600,0x00632b60
 12375,function,CCParty::GetFollowerFormationPositionForControlled,,0x00632bb0,0x0060e650,0x00632bb0
@@ -12404,9 +12404,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12403,function,"ECBase::ECDynArray<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ECDynArray",,0x00633d90,0x0060f900,0x00633d90
 12404,function,"ECBase::ECDynArray<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::operator=",,0x00633df0,0x0060f960,0x00633df0
 12405,function,CCParty::UpdateHostileIndicators,,0x00633e10,0x0060f980,0x00633e10
-12406,function,ScriptBackend::ForScript_GetFollowerApproval,,0x006341c0,0x0060fd30,0x006341c0
+12406,function,CCParty::ForScript_GetFollowerApproval,,0x006341c0,0x0060fd30,0x006341c0
 12407,function,CCParty::RebuildSelectionIds,,0x00634260,0x0060fdd0,0x00634260
-12408,function,ScriptBackend::ForScript_AddNonPartyFollower,,0x006342e0,0x0060fe50,0x006342e0
+12408,function,CCParty::ForScript_AddNonPartyFollower,,0x006342e0,0x0060fe50,0x006342e0
 12409,function,CCParty::WriteToSave,,0x006343a0,0x0060ff10,0x006343a0
 12410,function,ECBase::ECDynArray<unsigned int>::ClearAndFree,,0x00634db0,0x00610920,0x00634db0
 12411,function,"std::map<unsigned int,PartyStoredItem>::operator[]","operator[] of the map CCParty keeps at +0x434 (item id to PartyStoredItem: owner id, slot, set; a missing key is inserted with the 12-byte value zeroed, 0x00634E10). Callers: ForScript_StorePartyInventory 0x00638DE6, StoreFollowerInventory 0x00638F9E, the restore pair and CCParty::Load. CCParty::ForgetStoredItem erases from the same map with find/erase of std::map<unsigned int,PartyStoredItem>.",0x00634e10,0x00610980,0x00634e10
@@ -12456,10 +12456,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12455,function,CCParty::RestoreSelection,,0x00638560,0x00613f40,0x00638560
 12456,function,CCParty::BuildPartyPickerList,,0x00638580,0x00613f60,0x00638580
 12457,function,CCParty::MoveGroupTo,"MoveGroupTo: way = point - leader +0x120 in 3-D, normalized, or the leader's +0x130 where it is exactly zero (0x00638A9F); FlipFormationSide when dot(+0x130, way) < 0 strictly (0x00638B0D); +300 ms to every mover when the leader's squared 2-D distance to the point exceeds the selection's last creature's (0x00638BD5); each mover's delay is min(slot+1, count)*300 plus that (0x00638C94), divided by 5 when the leader IsInCombat (0x00638BE8, 0x00638CA7)",0x006389f0,0x006143d0,0x006389f0
-12458,function,ScriptBackend::ForScript_StorePartyInventory,,0x00638d10,0x006146f0,0x00638d10
-12459,function,ScriptBackend::ForScript_StoreFollowerInventory,,0x00638eb0,0x00614890,0x00638eb0
-12460,function,ScriptBackend::ForScript_RestorePartyInventory,,0x00639070,0x00614a50,0x00639070
-12461,function,ScriptBackend::ForScript_RestoreFollowerInventory,,0x00639290,0x00614c70,0x00639290
+12458,function,CCParty::ForScript_StorePartyInventory,,0x00638d10,0x006146f0,0x00638d10
+12459,function,CCParty::ForScript_StoreFollowerInventory,,0x00638eb0,0x00614890,0x00638eb0
+12460,function,CCParty::ForScript_RestorePartyInventory,,0x00639070,0x00614a50,0x00639070
+12461,function,CCParty::ForScript_RestoreFollowerInventory,,0x00639290,0x00614c70,0x00639290
 12462,function,MessageFactoryRegistry::RegisterText<HideAlertMessage>,,0x00639530,0x00614f10,0x00639530
 12463,function,MessageFactoryRegistry::RegisterText<HideUberAlertMessage>,,0x006395f0,0x00614fd0,0x006395f0
 12464,function,CCParty::RegisterHandler_SelectNextCharacterMessage,,0x006396b0,0x00615090,0x006396b0
@@ -12655,14 +12655,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12654,function,Gff4::Block::ReadUInt64,,0x00643400,0x0052b7d0,0x00643400
 12655,function,SaveGame::GetPlayerCharCharStruct,,0x00643420,0x0052b7f0,0x00643420
 12656,function,SaveGame::StampVersion,,0x006434f0,0x0052b8c0,0x006434f0
-12657,function,ScriptBackend::ForScript_SetCheatUsedFlag,,0x00643570,0x0052b940,0x00643570
+12657,function,SaveGame::ForScript_SetCheatUsedFlag,,0x00643570,0x0052b940,0x00643570
 12658,function,CreatureProperties::GetTotal,,0x006435c0,0x0052b9f0,0x006435c0
 12659,function,CreatureProperties::GetBase,,0x006436b0,0x0052bae0,0x006436b0
 12660,function,CreatureProperties::GetCurrent,,0x006437a0,0x0052bbd0,0x006437a0
 12661,function,CreatureProperties::GetModifier,,0x00643890,0x0052bcc0,0x00643890
 12662,function,Gff4::Block::ReadUInt64Checked,,0x00643980,0x0052be20,0x00643980
 12663,function,SaveGame::GetAreaStruct,,0x006439a0,0x0052be40,0x006439a0
-12664,function,ScriptBackend::ForScript_LogStoryEvent,,0x00643bf0,0x0052c090,0x00643bf0
+12664,function,SaveGame::ForScript_LogStoryEvent,,0x00643bf0,0x0052c090,0x00643bf0
 12665,function,SaveGame::CharacterSavesFolder,,0x00643d00,0x0052c1a0,0x00643d00
 12666,function,SaveGame::SlotFolder,,0x00643dd0,0x0052c270,0x00643dd0
 12667,function,Gff4::BlockRef::GetUInt64,,0x00643ed0,0x0052c430,0x00643ed0
@@ -12764,7 +12764,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12763,function,AIMaster::LevelList::AddUnique,,0x0064b2b0,0x00533c50,0x0064b2b0
 12764,function,AIMaster::AIMaster,,0x0064b2e0,0x00533c80,0x0064b2e0
 12765,function,AIMaster::SetAILevel,,0x0064b400,0x00533da0,0x0064b400
-12766,function,ScriptBackend::ForScript_SetAILevel,,0x0064b480,0x00533e20,0x0064b480
+12766,function,AIMaster::ForScript_SetAILevel,,0x0064b480,0x00533e20,0x0064b480
 12767,function,AIMaster::DefineSaveStruct,,0x0064b4d0,0x00533e70,0x0064b4d0
 12768,function,HostilityRow::HostilityRow,,0x0064b570,0x00533f10,0x0064b570
 12769,function,std::vector<HostilityRow*>::operator[],,0x0064b580,0x00533f20,0x0064b580
@@ -12961,7 +12961,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12960,function,MapLocation::SetLocName,,0x00652600,0x0053e640,0x00652600
 12961,function,AutoLevelUpMessage::Clone,,0x00652650,0x0053e690,0x00652650
 12962,function,AutoLevelUpMessage::GetName,,0x006526c0,0x0053e700,0x006526c0
-12963,function,ScriptBackend::ForScript_SetLoadHint,,0x00652730,0x0053e770,0x00652730
+12963,function,GUI::GUILoading::ForScript_SetLoadHint,,0x00652730,0x0053e770,0x00652730
 12964,function,OpenStoreMessage::Clone,,0x00652780,0x0053e7c0,0x00652780
 12965,function,OpenStoreMessage::GetName,,0x006527f0,0x0053e830,0x006527f0
 12966,function,CVirtualMachineCommands::~CVirtualMachineCommands,,0x00652860,0x0053e8a0,0x00652860
@@ -13002,7 +13002,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13001,function,ScriptCommand::REMOVEITEMSUBITEM,,0x00654f30,0x00540e90,0x00654f30
 13002,function,ScriptCommand::GetAreaOrAttackTarget,,0x00655000,0x00540f60,0x00655000
 13003,function,ScriptCommand::GETFACING,,0x00655090,0x00540ff0,0x00655090
-13004,function,ScriptBackend::SetFacing,,0x00655170,0x005410d0,0x00655170
+13004,function,SetFacing,,0x00655170,0x005410d0,0x00655170
 13005,function,ScriptCommand::SETFACING,,0x006551d0,0x00541130,0x006551d0
 13006,function,ScriptCommand::GETORIENTATION,,0x00655290,0x005411f0,0x00655290
 13007,function,ScriptCommand::SETORIENTATION,,0x00655340,0x005412a0,0x00655340
@@ -13421,7 +13421,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13420,function,ScriptCommand::REMOVEITEMFROMINVENTORY,,0x0066c400,0x005582d0,0x0066c400
 13421,function,ScriptCommand::BACKGROUNDDEFAULTSINDEX,,0x0066c500,0x005583d0,0x0066c500
 13422,function,ScriptCommand::UPLOADSCREENSHOT,,0x0066c580,0x00558450,0x0066c580
-13423,function,ScriptBackend::ForScript_GetCreaturePropertyType,,0x0066c770,0x00558640,0x0066c770
+13423,function,CreatureProperties::ForScript_GetCreaturePropertyType,,0x0066c770,0x00558640,0x0066c770
 13424,function,CreatureProperties::SetBase,,0x0066c870,0x00558740,0x0066c870
 13425,function,CreatureProperties::SetCurrent,,0x0066c960,0x00558830,0x0066c960
 13426,function,"std::_Fill<?*,?>",,0x0066ca50,0x007d29c0,0x0066ca50
@@ -13432,7 +13432,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13431,function,ScriptCommand::SetCreatureManaOrStamina,,0x0066cd00,0x00558b60,0x0066cd00
 13432,function,ScriptCommand::GetCreatureMaxManaOrStamina,,0x0066cdc0,0x00558c20,0x0066cdc0
 13433,function,ScriptCommand::SetCreatureMaxManaOrStamina,,0x0066ce90,0x00558cf0,0x0066ce90
-13434,function,ScriptBackend::GetCreatureProperty,,0x0066cf60,0x00558dc0,0x0066cf60
+13434,function,GetCreatureProperty,,0x0066cf60,0x00558dc0,0x0066cf60
 13435,function,ScriptCommand::GETCREATUREATTRIBUTE,,0x0066d0a0,0x00558f00,0x0066d0a0
 13436,function,ScriptCommand::GETCREATUREPROPERTY,,0x0066d0e0,0x00558f40,0x0066d0e0
 13437,function,ScriptCommand::GETCREATUREPROPERTYTYPE,,0x0066d120,0x00558f80,0x0066d120
@@ -13518,7 +13518,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13517,function,ScriptCommand::GETITEMVFXS,,0x00673be0,0x0055fc40,0x00673be0
 13518,function,ScriptCommand::GetEffectsOrHasEffects,,0x00673d70,0x0055fdd0,0x00673d70
 13519,function,ScriptCommand::GETEFFECTSBYCREATOR,,0x00673fb0,0x00560010,0x00673fb0
-13520,function,ScriptBackend::MakeEffectFilter,,0x006741e0,0x00560240,0x006741e0
+13520,function,"EffectMatcherVector::EffectMatcherVector(EffectMatcher::Fn,int,bool)",,0x006741e0,0x00560240,0x006741e0
 13521,function,ScriptCommand::GETITEMPROPERTIES,,0x00674260,0x005602c0,0x00674260
 13522,function,ScriptCommand::GETCONDITIONEDABILITIES,,0x006743a0,0x00560400,0x006743a0
 13523,function,CommandPool::AddBlock,,0x006744e0,0x00560540,0x006744e0
@@ -13765,7 +13765,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13764,function,CCArea::ReadCreatureList,,0x00683820,0x0056f600,0x00683820
 13765,function,CCArea::WriteToSave,,0x00683c80,0x0056fa60,0x00683c80
 13766,function,CCArea::DestroyContents,,0x00684760,0x00570540,0x00684760
-13767,function,ScriptBackend::GetNearestObjects,,0x006849c0,0x005707a0,0x006849c0
+13767,function,CCArea::GetNearestObjects,,0x006849c0,0x005707a0,0x006849c0
 13768,function,CCArea::GetNearestObjectsToLocation,,0x00684dd0,0x00570bb0,0x00684dd0
 13769,function,CCArea::GetDoorsBetweenRooms,,0x00685100,0x00570ee0,0x00685100
 13770,function,CCArea::RaycastAllSegmentWalk,,0x006851d0,0x00570fb0,0x006851d0
@@ -13984,8 +13984,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13983,function,Messages::MessageReceiver::CallInitMessageReceiver,,0x00692df0,0x0057edd0,0x00692df0
 13984,function,TutorialControl::StaticClassInfo,,0x00692e00,0x0057ede0,0x00692e00
 13985,function,TutorialControl::SetEnabled,,0x00692e60,0x0057ee40,0x00692e60
-13986,function,ScriptBackend::ForScript_SetTrainingMode,,0x00692e90,0x0057ee70,0x00692e90
-13987,function,ScriptBackend::ForScript_BeginTrainingStep,,0x00693190,0x0057f170,0x00693190
+13986,function,TutorialControl::ForScript_SetTrainingMode,,0x00692e90,0x0057ee70,0x00692e90
+13987,function,TutorialControl::ForScript_BeginTrainingStep,,0x00693190,0x0057f170,0x00693190
 13988,function,TutorialControl::RefreshPopup,,0x006931e0,0x0057f1c0,0x006931e0
 13989,function,TutorialControl::SendEvent,"(type, arg) ret 8: only when arg is 0 or equals +0xA0, +0x88 != 0 and +0x9C == type; then, for the controlled creature (none: nothing), a new CScriptEvent of that type with integer 0 = +0x88, delivered by CCObject::DeliverEventScript with L""genev_tutorial"", which runs it at once (CVirtualMachine::RunScript) with the creature as its target; returns nothing",0x00693290,0x0057f270,0x00693290
 13990,function,Tutorial::Tutorial,,0x00693390,0x0057f370,0x00693390
@@ -14275,14 +14275,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14274,function,std::vector<std::wstring>::resize,,0x0069cc70,0x0058de80,0x0069cc70
 14275,function,CScriptEvent::DefineSaveStruct,,0x0069cca0,0x0058deb0,0x0069cca0
 14276,function,CScriptEvent::ReadFromSave,,0x0069cdc0,0x0058dfd0,0x0069cdc0
-14277,function,ScriptBackend::ForScript_SetEventResource,,0x0069cf90,0x0058e1a0,0x0069cf90
+14277,function,CScriptEvent::ForScript_SetEventResource,,0x0069cf90,0x0058e1a0,0x0069cf90
 14278,function,CScriptEvent::GrowEffectList,,0x0069d050,0x0058e260,0x0069d050
 14279,function,CScriptEvent::SetEffect,,0x0069d120,0x0058e330,0x0069d120
 14280,function,CCPlayer::CreateParty,,0x0069d200,0x0058e430,0x0069d200
 14281,function,CCPlayer::ResetPlayTime,,0x0069d2b0,0x0058e4e0,0x0069d2b0
 14282,function,CCPlayer::GetControlledCreature,,0x0069d2e0,0x0058e510,0x0069d2e0
 14283,function,CCPlayer::GetControlledCreatureAreaId,,0x0069d320,0x0058e550,0x0069d320
-14284,function,ScriptBackend::ForScript_GetPlayTime,,0x0069d340,0x0058e570,0x0069d340
+14284,function,CCPlayer::ForScript_GetPlayTime,,0x0069d340,0x0058e570,0x0069d340
 14285,function,CCPlayer::~CCPlayer,,0x0069d380,0x0058e620,0x0069d380
 14286,function,CCPlayer::`scalar deleting destructor',,0x0069d420,0x0058e6e0,0x0069d420
 14287,function,CCPlayer::`scalar deleting destructor',,0x0069d430,0x0058e6c0,0x0069d430
@@ -14361,7 +14361,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14360,function,ClampReach60,,0x0069f330,0x005904a0,0x0069f330
 14361,function,CCCreature::SetDecayDelay,,0x0069f360,0x005904d0,0x0069f360
 14362,function,CCCreature::SnapshotAppearance,,0x0069f3a0,0x00590510,0x0069f3a0
-14363,function,ScriptBackend::ForScript_InitHeartbeat,,0x0069f440,0x005905b0,0x0069f440
+14363,function,CCCreature::ForScript_InitHeartbeat,,0x0069f440,0x005905b0,0x0069f440
 14364,function,CCCreature::ForScript_EndHeartbeat,,0x0069f460,0x005905d0,0x0069f460
 14365,function,CCCreature::ReleasePortrait,,0x0069f470,0x005905e0,0x0069f470
 14366,function,CCCreature::SetIsStatue,,0x0069f4a0,0x00590610,0x0069f4a0
@@ -14455,7 +14455,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14454,function,CCCreature::SetStealthEnabled,,0x006a2400,0x00593520,0x006a2400
 14455,function,CCCreature::Movement,,0x006a2570,0x00593690,0x006a2570
 14456,function,CCCreature::IsInCombat,IsInCombat: [[this+0xC60]] == 1 (the combat data's state),0x006a2580,0x005936a0,0x006a2580
-14457,function,ScriptBackend::ForScript_IsHumanoid,,0x006a25a0,0x005936c0,0x006a25a0
+14457,function,CCCreature::ForScript_IsHumanoid,,0x006a25a0,0x005936c0,0x006a25a0
 14458,function,CCCreature::EventHandler,,0x006a25c0,0x005936e0,0x006a25c0
 14459,function,CCCreature::ChooseAmbientIdle,,0x006a26d0,0x005937f0,0x006a26d0
 14460,function,CCCreature::LoadTemplate,,0x006a27b0,0x005938d0,0x006a27b0
@@ -14610,7 +14610,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14609,function,CCCreature::GetHandWeaponStrengthModifier,,0x006a8770,0x00599930,0x006a8770
 14610,function,CCCreature::GetHandWeaponArmourPenetration,,0x006a87e0,0x005999a0,0x006a87e0
 14611,function,CCCreature::CanPerformPlaceableAction,,0x006a8860,0x00599a20,0x006a8860
-14612,function,ScriptBackend::ForScript_ScaleEquippedItems,,0x006a88f0,0x00599ab0,0x006a88f0
+14612,function,CCCreature::ForScript_ScaleEquippedItems,,0x006a88f0,0x00599ab0,0x006a88f0
 14613,function,CCCreature::RemoveAbility,"this = creature, args (ability, tag*, flag): CCCreatureStats::RemoveAbility on the stats attribute with type 4 (item ability) and mode 3 - (flag != 0), i.e. 3 for flag 0, 2 for any other. Only caller CCParty::RemoveItemAbilityFromMembers.",0x006a8a40,0x00599c00,0x006a8a40
 14614,function,CCCreature::AddAbility,,0x006a8a70,0x00599c30,0x006a8a70
 14615,function,CCCreature::GetAppearanceHasTurnAttacks,,0x006a8aa0,0x00599c60,0x006a8aa0
@@ -14843,7 +14843,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14842,function,CCCreature::ReattachAreasOfEffect,,0x006b3070,0x005a4b00,0x006b3070
 14843,function,CCCreature::AddPerceived,,0x006b3240,0x005a4cd0,0x006b3240
 14844,function,CCCreature::TriggerPerception,,0x006b32a0,0x005a4d30,0x006b32a0
-14845,function,ScriptBackend::ForScript_GetPerceivedCreatureList,,0x006b3330,0x005a4dc0,0x006b3330
+14845,function,CCCreature::ForScript_GetPerceivedCreatureList,,0x006b3330,0x005a4dc0,0x006b3330
 14846,function,CCCreature::TakeItemsByTag,,0x006b3410,0x005a4ea0,0x006b3410
 14847,function,CCCreature::ForScript_RemoveItemProperty,,0x006b3540,0x005a4fd0,0x006b3540
 14848,function,CCCreature::SEffectsHolder_OnDeath,"On death: look-at to neutral, MovementController::HardStop, lifts the movement obstacle unless DecayBehaviour is 2, RefreshTriggerMembership, then slot 0x154",0x006b3620,0x005a50b0,0x006b3620
@@ -15835,7 +15835,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15834,function,CSAreaList::`scalar deleting destructor',,0x006fc3a0,0x005ee090,0x006fc3a0
 15835,function,ArmyControl::StaticClassInfo,,0x006fc3c0,0x005ee0b0,0x006fc3c0
 15836,function,ECBase::ECDynArray<ArmyInfo*>::operator[],,0x006fc420,0x005ee110,0x006fc420
-15837,function,ScriptBackend::ForScript_SetPlotActionsEnabled,,0x006fc450,0x005ee140,0x006fc450
+15837,function,ArmyControl::ForScript_SetPlotActionsEnabled,,0x006fc450,0x005ee140,0x006fc450
 15838,function,ArmyControl::HandleMessage_UsePlotActionMessage,,0x006fc480,0x005ee170,0x006fc480
 15839,function,ArmyInfo::~ArmyInfo,,0x006fc580,0x005ee270,0x006fc580
 15840,function,ArmyInfo::`scalar deleting destructor'`adjustor{28}',,0x006fc650,0x005ee340,0x006fc650
@@ -15850,12 +15850,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15849,function,ArmyInfo::ArmyInfo,,0x006fcbd0,0x005ee8c0,0x006fcbd0
 15850,function,ArmyInfo::`scalar deleting destructor',,0x006fcf10,0x005eec00,0x006fcf10
 15851,function,ArmyControl::RegisterMessageHandlers,,0x006fcf30,0x005eec20,0x006fcf30
-15852,function,ScriptBackend::ForScript_SETPLOTACTIONCOOLDOWN,"Starts a plot action's cooldown on its ArmyInfo (found by id with ArmyControl::FindArmyInfoById): when the cooldown asked for is not negative it is stored in cooldownTotal (+0x9C) and the CooldownTime attribute (+0xA0), CooldownPercent (+0xB0) is set to 1, and the script's event type, source and target ids and string are kept in ArmyInfo +0xC0..+0xCC. ArmyControl::UpdateCooldowns 0x006FC7B0 counts CooldownTime down and, when it reaches 0, delivers a CScriptEvent of that type through AIMaster::DeliverNow 0x0064AD80.",0x006fcf40,0x005eec30,0x006fcf40
-15853,function,ScriptBackend::ForScript_GetPlotActionState,,0x006fd020,0x005eed10,0x006fd020
-15854,function,ScriptBackend::ForScript_SetPlotActionCount,,0x006fd050,0x005eed40,0x006fd050
-15855,function,ScriptBackend::ForScript_GetPlotActionCount,,0x006fd080,0x005eed70,0x006fd080
+15852,function,ArmyControl::ForScript_SetPlotActionCooldown,"Starts a plot action's cooldown on its ArmyInfo (found by id with ArmyControl::FindArmyInfoById): when the cooldown asked for is not negative it is stored in cooldownTotal (+0x9C) and the CooldownTime attribute (+0xA0), CooldownPercent (+0xB0) is set to 1, and the script's event type, source and target ids and string are kept in ArmyInfo +0xC0..+0xCC. ArmyControl::UpdateCooldowns 0x006FC7B0 counts CooldownTime down and, when it reaches 0, delivers a CScriptEvent of that type through AIMaster::DeliverNow 0x0064AD80.",0x006fcf40,0x005eec30,0x006fcf40
+15853,function,ArmyControl::ForScript_GetPlotActionState,,0x006fd020,0x005eed10,0x006fd020
+15854,function,ArmyControl::ForScript_SetPlotActionCount,,0x006fd050,0x005eed40,0x006fd050
+15855,function,ArmyControl::ForScript_GetPlotActionCount,,0x006fd080,0x005eed70,0x006fd080
 15856,function,ArmyInfo::ReadFromSave,,0x006fd0b0,0x005eeda0,0x006fd0b0
-15857,function,ScriptBackend::ForScript_SetPlotActionState,,0x006fd150,0x005eee40,0x006fd150
+15857,function,ArmyControl::ForScript_SetPlotActionState,,0x006fd150,0x005eee40,0x006fd150
 15858,function,"SmartData::Attribute<ECBase::ECDynArray<ArmyInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::~Attribute",,0x006fd350,0x005ef040,0x006fd350
 15859,function,"SmartData::Attribute<ECBase::ECDynArray<ArmyInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x006fd3c0,0x005ef0b0,0x006fd3c0
 15860,function,SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<ArmyInfo*>>::GetMemberName,,0x006fd3d0,0x005ef0c0,0x006fd3d0
@@ -15873,7 +15873,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15872,function,"SmartData::Attribute<ECBase::ECDynArray<ArmyInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x006fd8e0,0x005ef630,0x006fd8e0
 15873,function,ArmyControl::ArmyControl(const ArmyControl&),,0x006fd960,0x005ef6b0,0x006fd960
 15874,function,ArmyControl::LoadArmyInfosFromGda,"Walks plotactiondefines (table 0x8E) by row; each row with a non-zero ID (0x66FBC936) and ActionSet (0x16A3CB96) becomes an ArmyInfo in the control's list, in row order",0x006fda30,0x005ef780,0x006fda30
-15875,function,ScriptBackend::ForScript_SetPlotActionSet,,0x006fdb40,0x005ef890,0x006fdb40
+15875,function,ArmyControl::ForScript_SetPlotActionSet,,0x006fdb40,0x005ef890,0x006fdb40
 15876,function,ArmyControl::ReadFromSave,,0x006fdcf0,0x005efa40,0x006fdcf0
 15877,function,ArmyInfo::DefineSaveStruct,,0x006fde00,0x005efb50,0x006fde00
 15878,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::HighlightInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::SetFromText",,0x006fdee0,0x005e5540,0x006fdee0
@@ -15901,7 +15901,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15900,function,CAmbientDialogManager::Clear,,0x006ff8e0,0x005f14d0,0x006ff8e0
 15901,function,CAmbientDialogManager::StartAmbient,,0x006ff9e0,0x005f15d0,0x006ff9e0
 15902,function,CAmbientDialogManager::RequestLine,,0x006ffaa0,0x005f1690,0x006ffaa0
-15903,function,ScriptBackend::ForScript_SetWorldMapGuiStatus,,0x006ffb00,0x005f16f0,0x006ffb00
+15903,function,WorldMap::ForScript_SetWorldMapGuiStatus,,0x006ffb00,0x005f16f0,0x006ffb00
 15904,function,WorldMap::IsTravelInProgress,,0x006ffb20,0x005f1710,0x006ffb20
 15905,function,HideGUIScreenMessage::HideGUIScreenMessage_FromName,,0x006ffb30,0x005f1720,0x006ffb30
 15906,function,HideGUIScreenMessage::GetType,,0x006ffb90,0x004f4620,0x006ffb90
@@ -15915,9 +15915,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15914,function,WorldMapSwapMapsMessage::InitType,,0x006ffe20,0x0050a4a0,0x006ffe20
 15915,function,WorldMapPreTransitionMessage::Create,,0x006ffe80,0x0050d240,0x006ffe80
 15916,function,WorldMap::StaticClassInfo,,0x006ffee0,0x005f1780,0x006ffee0
-15917,function,ScriptBackend::ForScript_OpenPrimaryWorldMap,,0x006fff40,0x005f17e0,0x006fff40
-15918,function,ScriptBackend::ForScript_ClosePrimaryWorldMap,,0x006ffff0,0x005f1890,0x006ffff0
-15919,function,ScriptBackend::ForScript_OpenFadeMap,,0x007000a0,0x005f1940,0x007000a0
+15917,function,WorldMap::ForScript_OpenPrimaryWorldMap,,0x006fff40,0x005f17e0,0x006fff40
+15918,function,WorldMap::ForScript_ClosePrimaryWorldMap,,0x006ffff0,0x005f1890,0x006ffff0
+15919,function,WorldMap::ForScript_OpenFadeMap,,0x007000a0,0x005f1940,0x007000a0
 15920,function,WorldMap::GetGuiStatus,,0x00700150,0x005f19f0,0x00700150
 15921,function,WorldMap::GetTravelState,,0x00700160,0x005f1a00,0x00700160
 15922,function,HideGUIScreenMessage::Clone,,0x00700170,0x005126b0,0x00700170
@@ -15940,13 +15940,13 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15939,function,WorldMap::RaisePreTransitionEvent,"Takes no argument and never reads ECX (the entry push of ecx is a stack slot): builds a 0x50-byte CScriptEvent of type 0x5C (92) targeted at the module object (the module attribute at +4, the id), and hands it to AIMaster::DeliverNow with 10 (0x0070088D, 0x007008AE). Called once, from WorldMap::HandleMessage_WorldMapPreTransitionMessage at 0x00700C73 with ecx = the WorldMap (mov ecx,esi at 0x00700C71), when GUITravelStatus is 2.",0x00700830,0x005f1db0,0x00700830
 15940,function,WorldMap::RaisePostTransitionEvent,,0x007008d0,0x005f1e50,0x007008d0
 15941,function,WorldMap::StartTravelling,,0x00700990,0x005f1f10,0x00700990
-15942,function,ScriptBackend::ForScript_WorldMapCompleteRandomEncounter,,0x00700a60,0x005f1fe0,0x00700a60
+15942,function,WorldMap::ForScript_WorldMapCompleteRandomEncounter,,0x00700a60,0x005f1fe0,0x00700a60
 15943,function,WorldMap::RefreshPlayerPins,,0x00700a90,0x005f2010,0x00700a90
 15944,function,WorldMap::RegisterHandler_WorldMapClosedMessage,,0x00700b10,0x005f20b0,0x00700b10
 15945,function,WorldMap::HandleMessage_WorldMapPreTransitionMessage,,0x00700b90,0x005f2130,0x00700b90
 15946,function,WorldMap::BeginTravelFromAreaTransition,,0x00700ca0,0x005f2240,0x00700ca0
-15947,function,ScriptBackend::ForScript_SetWorldMapPrimary,,0x00700d80,0x005f2320,0x00700d80
-15948,function,ScriptBackend::ForScript_SetWorldMapSecondary,,0x00700db0,0x005f2350,0x00700db0
+15947,function,WorldMap::ForScript_SetWorldMapPrimary,,0x00700d80,0x005f2320,0x00700d80
+15948,function,WorldMap::ForScript_SetWorldMapSecondary,,0x00700db0,0x005f2350,0x00700db0
 15949,function,WorldMap::SwapMaps,,0x00700e00,0x005f23a0,0x00700e00
 15950,function,WorldMap::ResolveMapConnections,,0x00700e60,0x005f2400,0x00700e60
 15951,function,WorldMap::FindMapByName,,0x00700eb0,0x005f2450,0x00700eb0
@@ -16004,17 +16004,17 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16003,function,Gff4::ValueRef::ReadDword,,0x00702e20,0x005f4260,0x00702e20
 16004,function,Gff4::ValueRef::ReadString,,0x00702e30,0x005f4280,0x00702e30
 16005,function,std::copy_backward<ScriptVariable*>,,0x00702e60,0x004bcc30,0x00702e60
-16006,function,ScriptBackend::ForScript_GetLocalInt,,0x00702e90,0x005f42b0,0x00702e90
-16007,function,ScriptBackend::ForScript_GetLocalFloat,,0x00702ec0,0x005f42e0,0x00702ec0
-16008,function,ScriptBackend::ForScript_GetLocalString,,0x00702ef0,0x005f4310,0x00702ef0
-16009,function,ScriptBackend::ForScript_GetLocalObject,,0x00702fb0,0x005f43d0,0x00702fb0
-16010,function,ScriptBackend::ForScript_GetLocalLocation,,0x00702fe0,0x005f4400,0x00702fe0
-16011,function,ScriptBackend::ForScript_GetLocalPlayer,,0x007030a0,0x005f44c0,0x007030a0
-16012,function,ScriptBackend::ForScript_GetLocalEvent,,0x007030c0,0x005f44e0,0x007030c0
-16013,function,ScriptBackend::ForScript_GetLocalCommand,,0x00703170,0x005f4590,0x00703170
-16014,function,ScriptBackend::ForScript_GetLocalEffect,,0x00703210,0x005f4630,0x00703210
-16015,function,ScriptBackend::ForScript_GetLocalItemProperty,,0x007032c0,0x005f46e0,0x007032c0
-16016,function,ScriptBackend::ForScript_GetLocalResource,,0x00703370,0x005f4790,0x00703370
+16006,function,ScriptVariableTable::ForScript_GetLocalInt,,0x00702e90,0x005f42b0,0x00702e90
+16007,function,ScriptVariableTable::ForScript_GetLocalFloat,,0x00702ec0,0x005f42e0,0x00702ec0
+16008,function,ScriptVariableTable::ForScript_GetLocalString,,0x00702ef0,0x005f4310,0x00702ef0
+16009,function,ScriptVariableTable::ForScript_GetLocalObject,,0x00702fb0,0x005f43d0,0x00702fb0
+16010,function,ScriptVariableTable::ForScript_GetLocalLocation,,0x00702fe0,0x005f4400,0x00702fe0
+16011,function,ScriptVariableTable::ForScript_GetLocalPlayer,,0x007030a0,0x005f44c0,0x007030a0
+16012,function,ScriptVariableTable::ForScript_GetLocalEvent,,0x007030c0,0x005f44e0,0x007030c0
+16013,function,ScriptVariableTable::ForScript_GetLocalCommand,,0x00703170,0x005f4590,0x00703170
+16014,function,ScriptVariableTable::ForScript_GetLocalEffect,,0x00703210,0x005f4630,0x00703210
+16015,function,ScriptVariableTable::ForScript_GetLocalItemProperty,,0x007032c0,0x005f46e0,0x007032c0
+16016,function,ScriptVariableTable::ForScript_GetLocalResource,,0x00703370,0x005f4790,0x00703370
 16017,function,ECBase::ECDynArray<ScriptVariable>::Back,,0x00703410,0x005f4830,0x00703410
 16018,function,ScriptVariableTable::~ScriptVariableTable,,0x00703480,0x005f48e0,0x00703480
 16019,function,,,0x00703550,0x005f49b0,0x00703550
@@ -16030,17 +16030,17 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16029,function,Catch_All@00703d34,,0x00703d34,0x005f5274,0x00703d34
 16030,retired,,,,,
 16031,function,ScriptVariableTable::ScriptVariableTable,,0x00703d80,0x005f52c0,0x00703d80
-16032,function,ScriptBackend::ForScript_SetLocalInt,,0x00703db0,0x005f52f0,0x00703db0
-16033,function,ScriptBackend::ForScript_SetLocalFloat,,0x00703df0,0x005f5330,0x00703df0
-16034,function,ScriptBackend::ForScript_SetLocalString,,0x00703e30,0x005f5370,0x00703e30
-16035,function,ScriptBackend::ForScript_SetLocalObject,,0x00703e70,0x005f53b0,0x00703e70
-16036,function,ScriptBackend::ForScript_SetLocalLocation,,0x00703eb0,0x005f53f0,0x00703eb0
-16037,function,ScriptBackend::ForScript_SetLocalPlayer,,0x00703f50,0x005f5490,0x00703f50
-16038,function,ScriptBackend::ForScript_SetLocalEvent,,0x00703f80,0x005f54c0,0x00703f80
-16039,function,ScriptBackend::ForScript_SetLocalCommand,,0x00704020,0x005f5560,0x00704020
-16040,function,ScriptBackend::ForScript_SetLocalEffect,,0x007040c0,0x005f5600,0x007040c0
-16041,function,ScriptBackend::ForScript_SetLocalItemProperty,,0x00704160,0x005f56a0,0x00704160
-16042,function,ScriptBackend::ForScript_SetLocalResource,,0x00704200,0x005f5740,0x00704200
+16032,function,ScriptVariableTable::ForScript_SetLocalInt,,0x00703db0,0x005f52f0,0x00703db0
+16033,function,ScriptVariableTable::ForScript_SetLocalFloat,,0x00703df0,0x005f5330,0x00703df0
+16034,function,ScriptVariableTable::ForScript_SetLocalString,,0x00703e30,0x005f5370,0x00703e30
+16035,function,ScriptVariableTable::ForScript_SetLocalObject,,0x00703e70,0x005f53b0,0x00703e70
+16036,function,ScriptVariableTable::ForScript_SetLocalLocation,,0x00703eb0,0x005f53f0,0x00703eb0
+16037,function,ScriptVariableTable::ForScript_SetLocalPlayer,,0x00703f50,0x005f5490,0x00703f50
+16038,function,ScriptVariableTable::ForScript_SetLocalEvent,,0x00703f80,0x005f54c0,0x00703f80
+16039,function,ScriptVariableTable::ForScript_SetLocalCommand,,0x00704020,0x005f5560,0x00704020
+16040,function,ScriptVariableTable::ForScript_SetLocalEffect,,0x007040c0,0x005f5600,0x007040c0
+16041,function,ScriptVariableTable::ForScript_SetLocalItemProperty,,0x00704160,0x005f56a0,0x00704160
+16042,function,ScriptVariableTable::ForScript_SetLocalResource,,0x00704200,0x005f5740,0x00704200
 16043,function,ScriptVariableTable::ReadFromGff3,,0x00704240,0x005f5780,0x00704240
 16044,function,ScriptVariableTable::DefineSaveStruct,,0x007048d0,0x005f5e10,0x007048d0
 16045,function,ScriptVariableTable::WriteToSaveFixedList,,0x00704ba0,0x005f60e0,0x00704ba0
@@ -16468,7 +16468,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16467,function,GameModeCharGen::RegisterHandler_CharGenGoBackMessage,,0x00719880,0x0060a9e0,0x00719880
 16468,function,GameModeCharGen::RegisterMessageHandlers,,0x00719910,0x0060aa70,0x00719910
 16469,function,GameModeCharGen::RegisterClass,,0x00719940,0x0060aaa0,0x00719940
-16470,function,ScriptBackend::GetAbilityType,"(ability, hint) -> ability type. A non-zero hint is returned unread; for hint 0 it reads table 1 (rules) column 0xE1A8F4EA (CRC-32 of 'abilitytype') of the ability row and returns 0 when the row or cell is missing (0x00719990..0x007199BE). Callers in CCCreatureStats pass 0 (AddAbility 0x0071EAF6).",0x00719990,0x00617930,0x00719990
+16470,function,GetAbilityType,"(ability, hint) -> ability type. A non-zero hint is returned unread; for hint 0 it reads table 1 (rules) column 0xE1A8F4EA (CRC-32 of 'abilitytype') of the ability row and returns 0 when the row or cell is missing (0x00719990..0x007199BE). Callers in CCCreatureStats pass 0 (AddAbility 0x0071EAF6).",0x00719990,0x00617930,0x00719990
 16471,function,CCCreatureStats::GetAbilityVector,,0x007199d0,0x00617970,0x007199d0
 16472,function,CCCreatureStats::GetAbilityVector,,0x007199f0,0x00617990,0x007199f0
 16473,function,CCCreatureStats::NotifyPropertyChanged,,0x00719a00,0x006179a0,0x00719a00
@@ -16478,7 +16478,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16477,function,CCCreatureStats::RebuildQuickbar,,0x00719ab0,0x00617a50,0x00719ab0
 16478,function,CCCreatureStats::SetQuickbarLocked,,0x00719ac0,0x00617a60,0x00719ac0
 16479,function,CCCreatureStats::SetQuickslotBar,,0x00719ae0,0x00617a80,0x00719ae0
-16480,function,ScriptBackend::ForScript_SetAutoLevelUp,,0x00719b10,0x00617ab0,0x00719b10
+16480,function,CCCreatureStats::ForScript_SetAutoLevelUp,,0x00719b10,0x00617ab0,0x00719b10
 16481,function,CCCreatureStats::GuiAbilitiesAddIfNotOwner,,0x00719b30,0x00617ad0,0x00719b30
 16482,function,CCCreatureStats::GuiAbilitiesRemoveIfOwner,,0x00719b50,0x00617af0,0x00719b50
 16483,function,CCCreatureStats::UnregisterAttributes,,0x00719b70,0x00617b10,0x00719b70
@@ -16517,7 +16517,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16516,function,CCCreatureStats::ApplyPassive,"this = creature stats, args (ability, condition, apply), ret 0xC. Reads the ability's passive row (table 1 column 0xC4EE8EE0, then table 0x75); the sign is -1 when apply is false; the factor is 1 if the row's condition word (column 0xCA5FBBE9) is 0 or has the bit of the given condition. Loops pairs Prop<i>/Modifier<i> for i = 1..3 and adds Modifier*factor to property Prop; a Prop of 0 or a missing Modifier ends the loop (0x0071B8FB), later pairs are not read. Health (property 7) when applying and the max health changed has its current raised by the modifier (0x0071B852..0x0071B897).",0x0071b600,0x006195c0,0x0071b600
 16517,function,CCCreatureStats::ReapplyPassivesForCondition,"Reapplies the passives for a weapon condition, storing it at +0x1B8 (appliedStyleCondition, 0x0071BA2B) when it changes; called only by CCCreature::OnItemEquipped and OnItemUnequipped",0x0071b970,0x00619930,0x0071b970
 16518,function,CCCreatureStats::SaveToStruct,,0x0071ba40,0x00619a50,0x0071ba40
-16519,function,ScriptBackend::ForScript_GetBackgroundDefaultsIndex,,0x0071be90,0x00619ea0,0x0071be90
+16519,function,CCCreatureStats::ForScript_GetBackgroundDefaultsIndex,,0x0071be90,0x00619ea0,0x0071be90
 16520,function,CCCreatureStats::HasAbility,,0x0071bec0,0x00619ed0,0x0071bec0
 16521,function,CCCreatureStats::IsAbilityAvailable,,0x0071bef0,0x00619f00,0x0071bef0
 16522,function,CCCreatureStats::HasAbilitySource,,0x0071c0a0,0x0061a0b0,0x0071c0a0
@@ -16525,8 +16525,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16524,function,ECBase::ECList<?>::GetNext_0xC,,0x0071c190,0x00532310,0x0071c190
 16525,function,"std::find<ECBase::ECList::iterator,void *>",,0x0071c210,0x0061a1a0,0x0071c210
 16526,function,CooldownManager::Find,,0x0071c250,0x0061a1f0,0x0071c250
-16527,function,ScriptBackend::ForScript_CanUseConditionedAbility,,0x0071c310,0x0061a2b0,0x0071c310
-16528,function,ScriptBackend::ForScript_GetQuickslot,,0x0071c620,0x0061a5c0,0x0071c620
+16527,function,CCCreatureStats::ForScript_CanUseConditionedAbility,,0x0071c310,0x0061a2b0,0x0071c310
+16528,function,CCCreatureStats::ForScript_GetQuickslot,,0x0071c620,0x0061a5c0,0x0071c620
 16529,function,CooldownManager::CooldownManager,,0x0071c660,0x0061a600,0x0071c660
 16530,function,CooldownManager::~CooldownManager,,0x0071c6c0,0x0061a690,0x0071c6c0
 16531,function,CooldownManager::Remove,,0x0071c7e0,0x0061a7b0,0x0071c7e0
@@ -16536,7 +16536,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16535,function,CCCreatureStats::TickCooldowns,,0x0071ca70,0x0061aa40,0x0071ca70
 16536,function,,,0x0071ca90,0x0083b070,0x0071ca90
 16537,function,CCCreatureStats::EnsureCreatureAbilities,,0x0071ccd0,0x0061aab0,0x0071ccd0
-16538,function,ScriptBackend::ForScript_GetRemainingCooldown,,0x0071ce60,0x0061ac40,0x0071ce60
+16538,function,CCCreatureStats::ForScript_GetRemainingCooldown,,0x0071ce60,0x0061ac40,0x0071ce60
 16539,function,CCCreatureStats::CanUseAbility,"Cost test: the cost (table 1 column 0xF03D763E) is multiplied by a factor made from property 41 (0x29) read through virtual slot 6 (+0x18, GetModifier, call at 0x0071D03F), not its total, then compared with property 8's current (slot 9, +0x24, 0x0071D097).",0x0071ce90,0x0061ac70,0x0071ce90
 16540,function,CCCreatureStats::RefreshQuickslotUsable,"(all): CanUseAbility(ability, &reason = -1, &tag) per record of the current bar's std::map (CreatureAbilities +0x1B0's, at +0x14C), every record or only the one at the cursor (+0x1BC); keeps the reason at record +0x64 and +0x68 = (old != new); the usable bool CanUseAbility returns is not kept",0x0071d1b0,0x0061b0a0,0x0071d1b0
 16541,function,CCCreatureStats::PublishQuickslotReasons,"When any record of the current bar has +0x68 set, refreshes all first (RefreshQuickslotUsable(1), 0x0071D369); then SetInstanceError(ability, reason +0x64, &tag) on the party data for every record in map order",0x0071d2b0,0x0061b1a0,0x0071d2b0
@@ -16551,9 +16551,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16550,function,CCCreatureStats::`scalar deleting destructor'`adjustor{28}',,0x0071d900,0x0061ba20,0x0071d900
 16551,function,CCCreatureStats::`scalar deleting destructor'`adjustor{32}',,0x0071d910,0x0061ba30,0x0071d910
 16552,function,CCCreatureStats::GetAbilityList,"this = creature stats, args (out vector, type, onlyCooling). Type 0 appends the vectors of types 1..3, 1..3 appends that one, 4 (item abilities) or anything else returns 0 with nothing appended. With onlyCooling set, entries whose ForScript_GetRemainingCooldown is <= 0 are swap-removed (walking from the end), so only cooling abilities stay (0x0071D920 decompile).",0x0071d920,0x0061ba50,0x0071d920
-16553,function,ScriptBackend::ForScript_Engine_SetModalAbilityGUI,"(this = creature stats, ability, status, quiet), ret 0xC: status 0 removes the ability id from the +0xF8 vector if there, else adds it if absent; on a change queues a play-animation (block 0x88 on, 0x89 off) when the ability's BlendTree and the hand items allow. SetAbilityGuiAttribute (0x00719A40) runs after every path, with 0x80000000 (EBP, 0x0071DAD2) when the list did not change, 0 when removed, 1 when added (0x0071DCA0..0x0071DCA8); nothing at all runs when the stats have no creature (0x0071DAC4).",0x0071da90,0x0061bbc0,0x0071da90
+16553,function,CCCreatureStats::ForScript_Engine_SetModalAbilityGUI,"(this = creature stats, ability, status, quiet), ret 0xC: status 0 removes the ability id from the +0xF8 vector if there, else adds it if absent; on a change queues a play-animation (block 0x88 on, 0x89 off) when the ability's BlendTree and the hand items allow. SetAbilityGuiAttribute (0x00719A40) runs after every path, with 0x80000000 (EBP, 0x0071DAD2) when the list did not change, 0 when removed, 1 when added (0x0071DCA0..0x0071DCA8); nothing at all runs when the stats have no creature (0x0071DAC4).",0x0071da90,0x0061bbc0,0x0071da90
 16554,function,CCCreatureStats::SetCooldown,,0x0071dce0,0x0061be10,0x0071dce0
-16555,function,ScriptBackend::ForScript_GetConditionedAbilities,"__thiscall on the creature's stats, ret 8: (outVector, conditions). For each modal ability in the stats' list at +0xFC, in order, calls ForScript_CanUseConditionedAbility(ability, conditions, 0), and pushes the ability into outVector unless the answer is 1.",0x0071dd10,0x0061be40,0x0071dd10
+16555,function,CCCreatureStats::ForScript_GetConditionedAbilities,"__thiscall on the creature's stats, ret 8: (outVector, conditions). For each modal ability in the stats' list at +0xFC, in order, calls ForScript_CanUseConditionedAbility(ability, conditions, 0), and pushes the ability into outVector unless the answer is 1.",0x0071dd10,0x0061be40,0x0071dd10
 16556,function,CCCreatureStats::`scalar deleting destructor',,0x0071ddc0,0x0061bf50,0x0071ddc0
 16557,function,CCCreatureStats::SaveSchema_Fields,,0x0071dde0,0x0061bf70,0x0071dde0
 16558,function,CCCreatureStats::SaveSchema,,0x0071de50,0x0061bfe0,0x0071de50
@@ -16566,7 +16566,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16565,function,CCCreatureStats::LoadTemplateAbilityList,,0x0071ecd0,0x0061cf30,0x0071ecd0
 16566,function,CCCreatureStats::LoadFromStruct,,0x0071edc0,0x0061d020,0x0071edc0
 16567,function,CCCreatureStats::RemoveAbility,"this = creature stats, args (ability, type, tag*, mode), ret 0x10. Does nothing unless HasAbility (0x0071EF54). Mode 0/3: full stats-side removal (acquired event, ApplyPassive off, cooldown removed, vector entry removed, party survival update, animation-tree count dropped, quickslots detached), then the interface's CreatureAbilities::RemoveAbility. Mode 1 (0x0071F110) skips the interface's RemoveAbility and keeps its instance; mode 2 (0x0071EF61 jump to 0x0071F110) skips all the stats-side removal and does only the interface's RemoveAbility. RemoveQueuedAbilityCommands runs in every mode.",0x0071ef00,0x0061d160,0x0071ef00
-16568,function,ScriptBackend::ForScript_CharGen_ClearAbilityList,,0x0071f160,0x0061d3c0,0x0071f160
+16568,function,CCCreatureStats::ForScript_CharGen_ClearAbilityList,,0x0071f160,0x0061d3c0,0x0071f160
 16569,function,CCCreatureStats::LoadTemplateAbilityLists,,0x0071f1f0,0x0061d450,0x0071f1f0
 16570,function,CCCreatureStats::SetQuickslot,,0x0071f230,0x0061d490,0x0071f230
 16571,function,CCCreatureStats::LoadFromTemplate,"The creature stats' template reader, vftable slot 0x14 (CCCreatureStats::vftable 0x00B176B8), called from CCCreature::ReadFields at 0x006C07A3: resets the properties to their defaults (ResetToDefaultsFromTemplate), clears their modified flags when flags bit 0 is set (0x0071F53E), sets the class from property 27, then reads StartingPackage, the template ability lists and PerceptionClass (perception range from rules table 0x86); it reads no property value (Health, MaxHealth) from the template",0x0071f520,0x0061d780,0x0071f520
@@ -16967,7 +16967,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16966,function,GUI::GUIPartyPicker::RegisterClass,,0x0072b570,0x006374e0,0x0072b570
 16967,function,GUI::GUIPartyPicker::OnShow,,0x0072b5b0,0x00637520,0x0072b5b0
 16968,function,GUI::GUIPartyPicker::Clone,,0x0072b600,0x00637570,0x0072b600
-16969,function,ScriptBackend::ForScript_SetTournamentScoreboardEntry,,0x0072b690,0x00637600,0x0072b690
+16969,function,GUI::GUITournamentScoreboard::ForScript_SetTournamentScoreboardEntry,,0x0072b690,0x00637600,0x0072b690
 16970,function,GUI::TournamentScoreboardEntry::TournamentScoreboardEntry,,0x0072b750,0x006376c0,0x0072b750
 16971,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::TournamentScoreboardEntry*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::~Attribute",,0x0072b930,0x00637950,0x0072b930
 16972,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::TournamentScoreboardEntry*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x0072b9a0,0x006379c0,0x0072b9a0
@@ -16991,7 +16991,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16990,function,GUI::GUITournamentScoreboard::~GUITournamentScoreboard,,0x0072c0f0,0x00637fa0,0x0072c0f0
 16991,function,GUI::GUITournamentScoreboard::Clone,,0x0072c180,0x00638030,0x0072c180
 16992,function,GUI::GUITournamentScoreboard::`scalar deleting destructor',,0x0072c1f0,0x006380a0,0x0072c1f0
-16993,function,ScriptBackend::ForScript_SetChampionshipScoreboardEntry,,0x0072c210,0x006380c0,0x0072c210
+16993,function,GUI::GUIChampionshipScoreboard::ForScript_SetChampionshipScoreboardEntry,,0x0072c210,0x006380c0,0x0072c210
 16994,function,GUI::ChampionshipScoreboardEntry::ChampionshipScoreboardEntry,,0x0072c2d0,0x00638180,0x0072c2d0
 16995,function,GUI::ChampionshipScoreboardEntry::`scalar deleting destructor'`adjustor{28}',,0x0072c4b0,0x006378a0,0x0072c4b0
 16996,function,GUI::ChampionshipScoreboardEntry::`scalar deleting destructor'`adjustor{32}',,0x0072c4c0,0x00638360,0x0072c4c0
@@ -17043,7 +17043,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17042,function,GUI::GUIGeneralScoreboard::GUIGeneralScoreboard,,0x0072d730,0x006394c0,0x0072d730
 17043,function,GUI::GUIGeneralScoreboard::~GUIGeneralScoreboard,,0x0072d7b0,0x00639540,0x0072d7b0
 17044,function,GUI::GUIGeneralScoreboard::Close,,0x0072d840,0x006395d0,0x0072d840
-17045,function,ScriptBackend::ForScript_AddGeneralScoreboardEntry,,0x0072d860,0x006395f0,0x0072d860
+17045,function,GUI::GUIGeneralScoreboard::ForScript_AddGeneralScoreboardEntry,,0x0072d860,0x006395f0,0x0072d860
 17046,function,GUI::GUIGeneralScoreboard::Clone,,0x0072d970,0x00639700,0x0072d970
 17047,function,GUI::GUIGeneralScoreboard::`scalar deleting destructor',,0x0072d9e0,0x00639770,0x0072d9e0
 17048,function,GUI::GUITactics::GUITactics,,0x0072da00,0x00639790,0x0072da00
@@ -17520,7 +17520,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17519,function,GUI::GUICharGen::GUICharGen,,0x0073b460,0x00646e70,0x0073b460
 17520,function,GUI::GUICharacterRecord::Close,,0x0073bf30,0x00647940,0x0073bf30
 17521,function,GUI::GUICharacterRecord::UpdatePaperdoll,,0x0073bf60,0x00647970,0x0073bf60
-17522,function,ScriptBackend::ForScript_SetGameCompletionPercentage,,0x0073bf80,0x00647990,0x0073bf80
+17522,function,GUI::GUICharacterRecord::ForScript_SetGameCompletionPercentage,,0x0073bf80,0x00647990,0x0073bf80
 17523,function,GUI::GUICharacterRecord::~GUICharacterRecord,,0x0073bff0,0x00647a00,0x0073bff0
 17524,function,GUI::GUICharacterRecord::`scalar deleting destructor'`adjustor{8}',,0x0073c0e0,0x00647b10,0x0073c0e0
 17525,function,GUI::GUICharacterRecord::`scalar deleting destructor'`adjustor{28}',,0x0073c0f0,0x00647af0,0x0073c0f0
@@ -17625,25 +17625,25 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17624,function,ThreatTable::GetEntry,,0x00740af0,0x0064ca10,0x00740af0
 17625,function,"std::_Med3<ThreatTable::Entry *,ThreatTable::EntryLess>",,0x00740b30,0x0064ca50,0x00740b30
 17626,function,"std::_Push_heap<ThreatTable::Entry *,int,ThreatTable::Entry>",,0x00740c20,0x0064cb40,0x00740c20
-17627,function,ScriptBackend::ForScript_GetThreatEnemy,,0x00740cc0,0x0064cbe0,0x00740cc0
-17628,function,ScriptBackend::ForScript_GetThreatValueByIndex,,0x00740d10,0x0064cc30,0x00740d10
+17627,function,ThreatTable::ForScript_GetThreatEnemy,,0x00740cc0,0x0064cbe0,0x00740cc0
+17628,function,ThreatTable::ForScript_GetThreatValueByIndex,,0x00740d10,0x0064cc30,0x00740d10
 17629,function,ThreatTable::FindEntryIndex,,0x00740d70,0x0064cc90,0x00740d70
 17630,function,"std::_Median<ThreatTable::Entry *,ThreatTable::EntryLess>",,0x00740e10,0x0064cd30,0x00740e10
 17631,function,"std::_Adjust_heap<ThreatTable::Entry *,int,ThreatTable::Entry>",,0x00740ed0,0x0064cdf0,0x00740ed0
-17632,function,ScriptBackend::ForScript_GetThreatValueByObjectID,,0x00740fa0,0x0064cec0,0x00740fa0
+17632,function,ThreatTable::ForScript_GetThreatValueByObjectID,,0x00740fa0,0x0064cec0,0x00740fa0
 17633,function,"std::_Unguarded_partition<ThreatTable::Entry *,ThreatTable::EntryLess>",,0x00741020,0x0064cf40,0x00741020
 17634,function,"std::_Insertion_sort<ThreatTable::Entry *,ThreatTable::EntryLess>",,0x00741610,0x0064d530,0x00741610
 17635,function,"std::_Make_heap<ThreatTable::Entry *,int,ThreatTable::Entry>",,0x007416c0,0x0064d5e0,0x007416c0
 17636,function,ThreatTable::GetLastEntry,,0x00741730,0x0064d650,0x00741730
 17637,function,"std::_Sort_heap<ThreatTable::Entry *,int,ThreatTable::Entry>",,0x007417a0,0x0064d6c0,0x007417a0
 17638,function,ThreatTable::RemoveAt,,0x00741840,0x0064d760,0x00741840
-17639,function,ScriptBackend::ForScript_ClearEnemyThreat,,0x00741900,0x0064d820,0x00741900
+17639,function,ThreatTable::ForScript_ClearEnemyThreat,,0x00741900,0x0064d820,0x00741900
 17640,function,"std::_Sort<ThreatTable::Entry *,int,ThreatTable::EntryLess>",,0x00741920,0x0064d840,0x00741920
 17641,function,ThreatTable::Sort,,0x00741a60,0x0064d980,0x00741a60
 17642,function,ThreatTable::UpdateAndSort,,0x00741ac0,0x0064d9e0,0x00741ac0
 17643,function,ThreatTable::ThreatTable,,0x00741cf0,0x0064dc10,0x00741cf0
 17644,function,std::vector<?>::vector,,0x00741d70,0x0064dc90,0x00741d70
-17645,function,ScriptBackend::ForScript_UpdateThreatTable,,0x00741d80,0x0064dca0,0x00741d80
+17645,function,ThreatTable::ForScript_UpdateThreatTable,,0x00741d80,0x0064dca0,0x00741d80
 17646,function,ThreatTable::~ThreatTable,,0x00741ec0,0x0064dde0,0x00741ec0
 17647,function,Command::Command,,0x00741f10,0x0064de30,0x00741f10
 17648,function,Command::Command(const Command&),,0x00741f30,0x0064de50,0x00741f30
@@ -17776,7 +17776,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17775,function,AppearanceCache::AppearanceEntry::Load,,0x00748370,0x00654240,0x00748370
 17776,function,CAppearance::SetRadius,,0x007484a0,0x00654370,0x007484a0
 17777,function,CAppearance::SetHeight,,0x007484e0,0x006543b0,0x007484e0
-17778,function,ScriptBackend::ForScript_GetCreatureGoreLevel,,0x00748520,0x006543f0,0x00748520
+17778,function,CAppearance::ForScript_GetCreatureGoreLevel,,0x00748520,0x006543f0,0x00748520
 17779,function,CAppearance::EquipmentVariationTable,,0x00748550,0x00654420,0x00748550
 17780,function,CAppearance::GetSlotSoundMatType,,0x007485d0,0x006544a0,0x007485d0
 17781,function,CAppearance::HeadVariationTable,,0x00748630,0x00654500,0x00748630
@@ -20290,7 +20290,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20289,function,GUI::HeadPreset::HeadPreset,,0x007bfd80,0x0069e120,0x007bfd80
 20290,function,GUI::GUIPaperdoll::GUIPaperdoll,,0x007bfe10,0x0069e1b0,0x007bfe10
 20291,function,GUI::GUIPaperdoll::UpdateCharGenScreenshot,,0x007c0190,0x0069e530,0x007c0190
-20292,function,ScriptBackend::ForScript_PreloadCharGen,,0x007c0480,0x0069e820,0x007c0480
+20292,function,ForScript_PreloadCharGen,,0x007c0480,0x0069e820,0x007c0480
 20293,function,GUI::ComposeMorphTask::ComposeMorphTask,,0x007c0ac0,0x0069ee60,0x007c0ac0
 20294,function,GUI::ComposeMorphTask::~ComposeMorphTask,,0x007c0b60,0x0069ef00,0x007c0b60
 20295,function,GUI::ComposeMorphTask::`scalar deleting destructor',,0x007c0bd0,0x0069ef70,0x007c0bd0
@@ -20346,7 +20346,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20345,function,CCCombatData::SetWeaponSetRecord,,0x007c3600,0x006a5a30,0x007c3600
 20346,function,CCCombatData::RangedSightOffset,,0x007c3680,0x006a5ab0,0x007c3680
 20347,function,CCCombatData::FindImpactEffect,,0x007c36e0,0x006a5b10,0x007c36e0
-20348,function,ScriptBackend::ForScript_GetAttackImpactDamageEffect,,0x007c3770,0x006a5ba0,0x007c3770
+20348,function,CCCombatData::ForScript_GetAttackImpactDamageEffect,,0x007c3770,0x006a5ba0,0x007c3770
 20349,function,CCCombatData::CCCombatData,,0x007c37a0,0x006a5bd0,0x007c37a0
 20350,function,CCCombatData::StoreImpactEffect,,0x007c3840,0x006a5c70,0x007c3840
 20351,function,CCCombatData::~CCCombatData,,0x007c38d0,0x006a5d00,0x007c38d0
@@ -67047,8 +67047,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 67046,data,,,0x00b0f840,0x00af6e70,0x00b0f840
 67047,data,,,0x00b0f84c,0x00af6e88,0x00b0f84c
 67048,data,CCCreature::PathBlocker::s_blockerDistanceSquared,double 25.0: a squared distance compared at 0x6a7eda (5 m). Unit: m^2. INFERRED role,0x00b0f858,0x00af6ea0,0x00b0f858
-67049,data,ScriptBackend::ForScript_ScaleEquippedItems::s_materialColumnHashes,"Table of 8 uint32 CRC hashes of the ts_material columns Material1 to Material8, indexed by the level column (0x006A89EA; DAOLib dev/ITEMS.md ""ScaleEquippedItems"")",0x00b0f860,0x00af6ea8,0x00b0f860
-67050,data,ScriptBackend::ForScript_ScaleEquippedItems::s_equipmentSlots,"Table of 12 uint32 equipment slots 0 MAIN, 1 OFFHAND, 2 RANGEDAMMO, 4 CHEST, 5 HEAD, 6 BOOTS, 7 GLOVES, 9 RING1, 10 RING2, 11 NECK, 12 BELT, 13 BITE, walked by ScaleEquippedItems (0x006A89BB; DAOLib dev/ITEMS.md)",0x00b0f880,0x00af6ec8,0x00b0f880
+67049,data,CCCreature::ForScript_ScaleEquippedItems::s_materialColumnHashes,"Table of 8 uint32 CRC hashes of the ts_material columns Material1 to Material8, indexed by the level column (0x006A89EA; DAOLib dev/ITEMS.md ""ScaleEquippedItems"")",0x00b0f860,0x00af6ea8,0x00b0f860
+67050,data,CCCreature::ForScript_ScaleEquippedItems::s_equipmentSlots,"Table of 12 uint32 equipment slots 0 MAIN, 1 OFFHAND, 2 RANGEDAMMO, 4 CHEST, 5 HEAD, 6 BOOTS, 7 GLOVES, 9 RING1, 10 RING2, 11 NECK, 12 BELT, 13 BITE, walked by ScaleEquippedItems (0x006A89BB; DAOLib dev/ITEMS.md)",0x00b0f880,0x00af6ec8,0x00b0f880
 67051,data,,,0x00b0f8b0,0x00af6ef8,0x00b0f8b0
 67052,data,,,0x00b0f8c4,0x00af6f0c,0x00b0f8c4
 67053,data,,,0x00b0f8d0,0x00af6f18,0x00b0f8d0
