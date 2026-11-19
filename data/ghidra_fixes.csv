@@ -225,7 +225,7 @@ address,what,value,why
 0x00A60D50,signature,"bool __thiscall f(void* this, unsigned char index, void* texture)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
 0x00A60FC0,signature,"void __thiscall f(void* this, void* tree)",ret 4; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
 0x00A61500,convention,__stdcall,ret 8; the model is [esp+4]; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
-0x00A61500,signature,"bool __stdcall f(void* model, int value)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
+0x00A61500,signature,"bool __stdcall f(Graphics::IBaseObject *model, int value)",parameter model: calls model slots 0x68 and 0xA4 (GetFlags)
 0x00A61900,signature,"void __thiscall f(void* this, float a, int b)",ret 8; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
 0x00A61940,signature,"bool __thiscall f(void* this, unsigned long long treeRef)",ret 8: an 8-byte resource reference by value; paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31
 0x00A62030,signature,"bool __thiscall f(void* this, void* tree, unsigned int flags)","ret 8; the decompiler gives void, AL is returned (0x00A622D2); paragon-agent's #351 animation readers; convention and ret checked in the exe 2026-10-31"
@@ -992,7 +992,7 @@ address,what,value,why
 0x004D6A50,signature,void __cdecl f(void* frameBuffers),caller add esp 4 at 0x0046869D
 0x004D6BD0,signature,"void __cdecl f(void* frameBuffers, void* bink)",caller add esp 8 at 0x004686F9; second arg unread
 0x004D74F0,signature,void __cdecl f(void),no stack args read; callers add esp 4 after a stray push (0x004688FA-0x0046891D)
-0x004D7540,signature,"void __cdecl f(void* device, unsigned int width, unsigned int height)","caller add esp 0xC at 0x00468DDB; arg2 width to 0xC2C044, arg3 height to 0xC2C040"
+0x004D7540,signature,"void __cdecl f(Graphics::GraphicsDriver *device, unsigned int width, unsigned int height)","parameter device: CreateDrawResources calls device slots 0x54, 0x64, 0x114 (GraphicsDriver table 0x00B2DF1C); the caller MoviePlayerInternal::MoviePlayerInternal passes the result of GetDirectDriver 0x005278B0 (0x00468DD0 call, 0x00468DD6 call)"
 0x004B9A70,signature,"void* __thiscall f(void* this, void* block)",0x004B9A70-0x004B9A90
 0x004B9AA0,signature,"void* __thiscall f(void* this, void* block)",0x004B9AA0-0x004B9B20 reads [block-8] footer size
 0x004B9B20,signature,"void __thiscall f(void* this, void* block)","0x004B9B20: list index = bit length of [block] capped at 0x13, head at [this+idx*4+4], used byte [block+7]=0, doubly linked by +8/+0xC"
@@ -1333,7 +1333,7 @@ address,what,value,why
 0x0058CAA0,convention,__cdecl,0x0058CAA0 calls the copy constructor 0x0058C230 with a try level
 0x0058CB09,convention,__cdecl,"0x0058CB09 calls std::wstring::~wstring in a loop, then _CxxThrowException 0x008E1202(0,0)"
 0x0058CB40,signature,"bool __stdcall f(void* reader, void* node)",__stdcall: 0x0058CB40 push 0x179F
-0x0058CBD0,signature,"bool __thiscall f(void* this, void* node)",__thiscall: 0x0058CBD0 [edx+0x30..0x60] tests then [edx+0x6C..0xA0]
+0x0058CBD0,signature,"bool __thiscall f(void* this, GraphicsStructures::ObjectNodeBlueprint *node)",parameter node: VisitNodeChildren reads the ECDynArray<ObjectNodeBlueprint*> at node+0xFC and recurses with its elements (0x0058CDCD); ObjectNodeBlueprint's table 0x00AF9F04 has the 0x30..0xA0 slots it calls
 0x0058CDF0,signature,"void* __cdecl f(void* first, void* last, void* dest)",0x0058CDF0: ret
 0x0058CE20,signature,"void* __thiscall f(void* this, void* out, void* field, void* defaultValue)",__thiscall: 0x0058CE20 via 0x00880550 and 0x0058CA80
 0x0058CE90,signature,"void* __cdecl f(void* first, void* last, void* dest)",0x0058CE90: ret
@@ -1656,7 +1656,7 @@ address,what,value,why
 0x004EC8C0,signature,void __thiscall f(void* this),ret and arguments read in the code; reconciled from both readings
 0x004EC900,signature,bool __thiscall f(void* this),ret and arguments read in the code; reconciled from both readings
 0x004EC910,signature,"int __thiscall f(void* this, int rowId)",ret and arguments read in the code; reconciled from both readings
-0x004ECA10,signature,"bool __thiscall f(void* this, void* g2da)",ret and arguments read in the code; reconciled from both readings
+0x004ECA10,signature,"bool __thiscall f(void* this, G2DA *g2da)","parameter g2da: MergePart passes it to the non-virtual G2DA::GetRowStruct as this and calls slots 0x10, 0x14, 0x18, 0x38 of the C2DASource interface that G2DA (table 0x00AF164C) implements"
 0x004ECAF0,signature,void __thiscall f(void* this),ret and arguments read in the code; reconciled from both readings
 0x004ECB60,signature,"bool __thiscall f(void* this, void* g2da, bool reserveRows)",ret and arguments read in the code; reconciled from both readings
 0x004ECBB0,signature,"bool __thiscall f(void* this, void* resource, bool reserveRows)",ret and arguments read in the code; reconciled from both readings
@@ -5167,13 +5167,13 @@ address,what,value,why
 0x00451950,signature,void * __thiscall f(void *this),"zeroes [ecx..+8], mov eax,ecx"
 0x00451960,signature,float * __cdecl f(void),"plain ret, returns 0x00C1E870"
 0x00451D00,signature,void __thiscall f(void *this),"plain ret, ecx = partition (esi)"
-0x00451DB0,signature,"void __thiscall f(void *this, void *camera, float *value)",ret 8 at 0x004522D6; camera read at 0x00451DC7
+0x00451DB0,signature,"void __thiscall f(void *this, Renderer::ICameraInternal *camera, float *value)","parameter camera: BuildFrustum calls camera slots 0x38 GetPosition, 0x2C, 0x94 GetNear, 0x40 GetFar, all in Renderer::ICameraInternal's table 0x00AE7C8C; its caller Partition::BeginFrame 0x00453710 passes the scene camera"
 0x004522E0,signature,"void * __thiscall f(void *this, void *source)",ret 4 at 0x004523A4; ecx moved to eax at 0x004522E6
 0x004523B0,signature,void __thiscall f(void *this),"plain ret, ecx = partition (esi)"
 0x004524D0,signature,"void __cdecl f(float *out, float left, float right, float bottom, float top, float zNear, float zFar)",plain ret at 0x00452562; arguments at [ebp+8]..[ebp+0x20]
 0x00452570,signature,"void __thiscall f(void *this, float *center, float radius)","ret 8, ecx = partition, center [esp+4], radius [esp+8]"
 0x00452910,signature,void __cdecl f(void),"plain ret, no inputs"
-0x00452960,signature,void __cdecl f(void *camera),"plain ret, camera [ebp+8] stored at 0xC1E7FC"
+0x00452960,signature,void __cdecl f(Renderer::ICameraInternal *camera),"parameter camera: SetCamera stores it at s_camera 0x00C1E7FC and calls slots 0x38 GetPosition, 0x2C GetForward, 0x94 GetNear, 0x40 GetFar (decompile; ICameraInternal's table 0x00AE7C8C names them)"
 0x00452A90,signature,void __cdecl f(float *direction),"plain ret, direction [ebp+8]"
 0x00452CB0,signature,void __cdecl f(void),"plain ret, no inputs"
 0x00452E90,signature,void __cdecl f(void *partition),"plain ret, partition [esp+4]; caller add esp 4 at 0x0045322E"
@@ -6796,8 +6796,8 @@ address,what,value,why
 0x00423E70,signature,void* __thiscall GetName(void* this),"slot 12, returns this+0x50"
 0x00451CD0,signature,"void* __thiscall `scalar deleting destructor'(void* this, unsigned int flags)","slot 0, ret 4 at 0x00451CF1"
 0x00452E10,signature,void __cdecl EnsureInstance(void),ret with no args; ecx not read as this
-0x00454BD0,signature,"void __thiscall MarkObjectInPartition(void* this, void* object)",ret 4 at 0x00454D69; ecx saved to ebx
-0x00454D70,signature,"void __thiscall MarkNodeInPartition(void* this, void* node, void* bounds)","ret 8 at 0x00454EAB, two stack args [ebp+8],[ebp+0xC]"
+0x00454BD0,signature,"void __thiscall MarkObjectInPartition(void* this, Graphics::IBaseObject *object)",parameter object: MarkObjectInPartition calls slot 0xA4 (GetFlags) and forms object-8 as the GraphicsStructures::Object: IBaseObject is the sub-object at +8 (table 0x00AF8434)
+0x00454D70,signature,"void __thiscall MarkNodeInPartition(void* this, Graphics::IRenderableNode *node, void* bounds)","parameter node: MarkNodeInPartition calls node slots 0x7C (GetWorldBoundingSphere) and 0x20 on the Graphics::IRenderableNode base found at +0x180 of every GraphicsStructures::ObjectNode* class (e.g. ObjectNodeMesh's table at +0x180, 0x00AF8E7C), as ApplyCutoffToNode's node-0x180 shows"
 0x004552A0,signature,"void __thiscall command(void* this, unsigned int command)","slot 1, ret 4 at 0x00455344"
 0x00456740,signature,"void* __thiscall ReadStringById(void* this, unsigned int id, void* defaultString)","ret 8 at 0x0045676F, ecx moved to esi"
 0x00456D20,signature,void __cdecl ClearTargets(void),0x00456D20
@@ -7021,7 +7021,7 @@ address,what,value,why
 0x0064B240,signature,"int __thiscall f(void *this, void *object)",read in the exe at 0x0064B240 (AIMaster::ClearAILevel)
 0x0064B290,signature,void * __thiscall f(void *this),read in the exe at 0x0064B290 (AIMaster::LevelList::LevelList)
 0x0064B2B0,signature,"int __thiscall f(void *this, unsigned int objectId)",read in the exe at 0x0064B2B0 (AIMaster::LevelList::AddUnique)
-0x0064B400,signature,"int __thiscall f(void *this, void *object, unsigned int level)",read in the exe at 0x0064B400 (AIMaster::SetAILevel)
+0x0064B400,signature,"int __thiscall f(void *this, CCObject *object, unsigned int level)","parameter object: AIMaster::SetAILevel reads object+0x2B0, calls ClearAILevel on it and slot 0x150 = CCObject::SetAILevel (table 0x00B0EE9C)"
 0x0064C100,signature,"void __thiscall f(void *this, void *dataSource)",read in the exe at 0x0064C100 (GroupHostility::LoadMasterlist)
 0x0064C260,signature,"void __cdecl f(void *unused, void *saveWriter)",read in the exe at 0x0064C260 (GroupHostility::Save)
 0x0064C310,signature,"void __thiscall f(void *this, void *saveReader)",read in the exe at 0x0064C310 (GroupHostility::Load)
@@ -7709,7 +7709,7 @@ address,what,value,why
 0x006BCE50,signature,int __thiscall f(void *this),0x006BCE50: 0x006BCE50-0x006BCF4F
 0x006BF8A0,signature,int __thiscall f(void *this),0x006BF8A0: 0x006BF8A0-0x006BF9EF
 0x006BF9F0,signature,"void __cdecl f(int value, void *dest)",0x006BF9F0: 0x006BF9F0-0x006BFADE
-0x006BFCD0,signature,"void __cdecl f(void *appearance, void *sink)",0x006BFCD0: 0x006BFCD0-0x006C04C0
+0x006BFCD0,signature,"void __cdecl f(void *appearance, AnimBase *sink)","parameter sink: SetupHeadParts calls sink slots 0x0C, 0x10, 0x14, 0x18 = AnimBase::SetHeraldryMap, SetTintMask, ApplyMaterialOverrides, AddModelByName (table 0x00B5959C); its caller CCCreature::OnModelLoaded passes ebp at 0x006C0545, on which it calls AnimBase methods at 0x006C0522 and 0x006C0531"
 0x006C1E00,signature,"int __thiscall f(void *this, int a, int b, int c, int d)",0x006C1E00: 0x006C1E00-0x006C1E1F
 0x006C21C0,signature,float __thiscall f(void *this),0x006C21C0: 0x006C21C0-0x006C221F
 0x006C3260,signature,bool __thiscall f(void *this),0x006C3260: 0x006C3260
@@ -7733,7 +7733,7 @@ address,what,value,why
 0x006C97F0,signature,void __thiscall f(void *this),0x006C97F0: 0x006C97F0-0x006C9A4F
 0x006C9A50,signature,"void __thiscall f(void *this, void *party, float dt, unsigned char force)",0x006C9A50: 0x006C9A50-0x006C9D00 (ret 0xC)
 0x006C9E40,signature,void __thiscall f(void *this),0x006C9E40: 0x006C9E40-0x006C9E5F
-0x006CA450,signature,"int __cdecl f(void *cfg, void *model, void *outPos, void *outRot, void *outUp, void *aimInfo)",0x006CA450: 0x006CA450-0x006CA68F
+0x006CA450,signature,"int __cdecl f(void *cfg, Graphics::IBaseObject *model, void *outPos, void *outRot, void *outUp, void *aimInfo)",parameter model: tests model != 0 and != 8 (the null of the +8 sub-object) and calls slot 0x7C (FindCrustHookNode)
 0x006CA690,signature,"void * __thiscall f(void *this, void *creature)",0x006CA690: 0x006CA690-0x006CA7FF (ret 4)
 0x006CA800,signature,"void * __thiscall f(void *this, void *model)",0x006CA800: 0x006CA800-0x006CA94F (ret 4)
 0x006CA950,signature,"void __thiscall f(void *this, int objectId, int slot)",0x006CA950: 0x006CA950-0x006CA98F (ret 8)
@@ -9235,7 +9235,7 @@ address,what,value,why
 0x0079F110,signature,void __cdecl f(void),"ID 19713 EffectsManager::MarkStaticsInitialized: ret and ecx read in the exe, 0x0079F110-0x0079F11F"
 0x0079F120,signature,void *__thiscall f(void *this),"ID 19714 EffectsManager::EffectsManager: ret and ecx read in the exe, 0x0079F120-0x0079F13F"
 0x0079F140,signature,void __thiscall f(void *this),"ID 19715 EffectsManager::~EffectsManager: ret and ecx read in the exe, 0x0079F140-0x0079F17F"
-0x0079F180,signature,"unsigned int __cdecl f(void *holder, void *effect)","ID 19716 EffectsHolder::TryStartEffectAnimation: ret and ecx read in the exe, 0x0079F180-0x0079F1DF"
+0x0079F180,signature,"unsigned int __cdecl f(SEffectsHolder *holder, void *effect)","parameter holder: TryStartEffectAnimation calls holder slots 0x04 and 0x68 (SEffectsHolder table 0x00B0DF14: 34 slots, slot 0x68 IsNotDeathblowing); the sub-object at CCObject+0x70"
 0x0079F1E0,signature,"void __cdecl f(void *unused, void *builder)","ID 19717 EffectsHolder::AddEffectListField: ret and ecx read in the exe, 0x0079F1E0 jmp 0x00A64CE0"
 0x0079F1F0,signature,bool __cdecl f(void *saveStruct),"ID 19718 EffectsHolder::HasEffectListField: ret and ecx read in the exe, 0x0079F1F0 jmp 0x00A64630"
 0x0079F200,signature,"void __thiscall f(void *this, void *saveStruct)","ID 19719 SEffectsHolder::WriteToSave: ret and ecx read in the exe, 0x0079F200-0x0079F214"
@@ -10407,7 +10407,7 @@ address,what,value,why
 0x005D5020,signature,"void* __thiscall f(void* this, float* out)","ret 4, ecx passed on to 0x005D5000; 0x005D5020"
 0x005D5290,signature,bool __thiscall f(void* this),ecx read at 0x005D52C4; returns true (eax=edi+2 with edi=-1 at 0x005D542C); caller 0x005D6AA5
 0x005D54B0,signature,"void __thiscall f(void* this, float dt)",ret 4; 0x005D54B0
-0x005D5870,signature,"void* __thiscall f(void* this, unsigned int id)","ret 4, 91 callers; 0x005D5870"
+0x005D5870,signature,"CCItem * __thiscall f(void* this, unsigned int id)","return type: 0x005D58A9 returns slot 0x14 (AsItem, ReturnThis in CCItem's table 0x00B1C4F4) of the object whose type byte [+0x14] is the item type"
 0x005D59B0,signature,"void* __thiscall f(void* this, unsigned int id)",ret 4; 0x005D59B0
 0x005D5A00,signature,"void* __thiscall f(void* this, unsigned int id)",ret 4; 0x005D5A00
 0x005D5A50,signature,"void* __thiscall f(void* this, unsigned int id)",ret 4; 0x005D5A50
@@ -10750,7 +10750,7 @@ address,what,value,why
 0x007F53C0,signature,"float __thiscall f(void *this, float u)","ID 21376 PartLookAtController::NormalizedToClipTime at 0x007F53C0: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
 0x007F53E0,signature,"void __thiscall f(void *this, float dt, float qx, float qy, float qz, float qw, bool forceApply)","ID 21377 PartLookAtController::Update at 0x007F53E0: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
 0x007F5A20,signature,void __thiscall f(void *this),"ID 21378 PartLookAtController::StartClips at 0x007F5A20: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
-0x007F5C40,signature,"void __thiscall f(void *this, void *gdaTable, unsigned int rowId)","ID 21380 LookAt::PartConfig::Load at 0x007F5C40: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
+0x007F5C40,signature,"void __thiscall f(void *this, C2DASource *gdaTable, unsigned int rowId)","parameter gdaTable: Load calls gdaTable slots 0x24 and 0x28 (C2DASource slots 9 and 10, the float and int by-row-id readers of G2DA 0x00AF164C and M2DA 0x00AF15EC); C2DASource's table 0x00AF158C has all 22 slots as _purecall"
 0x007F6170,signature,void __cdecl f(void),"ID 21382 LookAt::ComputeLimitsInDegrees at 0x007F6170: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
 0x007F62F0,signature,void __cdecl f(void),"ID 21383 LookAt::EnsureConfigsLoaded at 0x007F62F0: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
 0x007F6350,signature,void * __cdecl f(int row),"ID 21384 LookAt::GetPartConfig at 0x007F6350: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
@@ -11318,10 +11318,10 @@ address,what,value,why
 0x00466880,signature,void __thiscall f(void *this),"plain ret, ecx moved to esi"
 0x00466930,signature,"bool __thiscall f(void *this, void *meshNode)","ret 4, ecx in ebx; al is the result"
 0x00466EB0,signature,void * __stdcall f(void *aabb),"ret 4, ecx overwritten before use; returns the OBBModel"
-0x00466F40,signature,"bool __thiscall f(void *this, void *node)","ret 4, ecx in edi"
+0x00466F40,signature,"bool __thiscall f(void *this, Graphics::IRenderableNode *node)",parameter node: ApplyCutoffToNode calls node slots 0x18 (GetMaterialInstance) and 0x1C and treats node-0x180 as the ObjectNode itself: the IRenderableNode sub-object
 0x004670C0,signature,"void __thiscall f(void *this, float value, unsigned char force)","ret 8, ecx in ebx"
 0x004675D0,signature,"void __thiscall f(void *this, void *node)","ret 4, ecx in ebx"
-0x004678F0,signature,"void __thiscall f(void *this, void *node)","ret 4, ecx in edi, callers do not pop"
+0x004678F0,signature,"void __thiscall f(void *this, Graphics::IRenderableNode *node)",parameter node: AddNode calls node slots 0x1C and 0x18 and uses node-0x180 as the ObjectNode: the IRenderableNode sub-object
 0x00469470,signature,"void __thiscall f(void *this, char *message)","ret 4, vtable slot 1 of the Umbra services"
 0x004694F0,convention,__thiscall,"vftable slot 4, plain jump through [ecx+4]"
 0x00469500,convention,__thiscall,"vftable slot 5, plain jump through [ecx+4]"
@@ -12047,7 +12047,7 @@ address,what,value,why
 0x00506D40,signature,"unsigned int __thiscall f(void* this, void* name)",0x00506D40-0x00506E26
 0x00506E30,signature,unsigned char __thiscall f(void* this),0x00506E30
 0x00506E40,signature,unsigned char __thiscall f(void* this),0x00506E40-0x00506EA9
-0x00507280,signature,"unsigned char __thiscall f(void* this, void* device)",0x00507280-0x00507328
+0x00507280,signature,"unsigned char __thiscall f(void* this, Graphics::GraphicsDriver *device)","parameter device: TestsPass calls device slot 0xA8 (GraphicsDriver slot 42, _purecall in the base, overridden by both drivers)"
 0x005073C0,signature,"void* __thiscall f(void* this, void* device)",0x005073C0-0x0050744C
 0x005077A0,signature,void __thiscall f(void* this),0x005077A0-0x005077E6
 0x005109E0,signature,void __thiscall f(void* this),0x005109E0
@@ -12309,11 +12309,11 @@ address,what,value,why
 0x00465BB0,signature,"void __thiscall f(void * this, float * world, float * x, float * y, char * inFront)","__thiscall, ret 0x10"
 0x00465D00,signature,void __thiscall f(void * this),"__thiscall, plain ret"
 0x00465DA0,signature,"void * __thiscall f(void * this, void * name, int queueType)","__thiscall, ret 8; first arg to the wstring ctor 0x00465E05, second to 0x0046D1A0 at 0x00465E7D"
-0x00466A20,signature,"void __thiscall f(void * this, void * camera)","__thiscall, ret 4; ecx saved at 0x00466A4D"
+0x00466A20,signature,"void __thiscall f(void * this, Renderer::ICameraInternal *camera)","parameter camera: UpdateUmbraCamera calls camera slots 0x2C, 0x30 GetUp, 0x38, 0x40, 0x88 GetProjectionMatrix, 0x94, 0x6C, 0x70: all in Renderer::ICameraInternal's table 0x00AE7C8C (0x6C, 0x70, 0x88 and 0x94 are declared by it, not by Graphics::ICamera)"
 0x00467000,signature,void __thiscall f(void * this),"__thiscall, plain ret"
 0x00467670,signature,"void __thiscall f(void * this, void * objectInterface)","__thiscall, ret 4"
 0x00467750,signature,"void * __thiscall f(void * this, void * scene)","__thiscall, ret 4"
-0x00467FF0,signature,"void __thiscall f(void * this, void * objectInterface)","__thiscall, ret 4"
+0x00467FF0,signature,"void __thiscall f(void * this, Graphics::IBaseObject *objectInterface)",parameter objectInterface: AddObject calls slots 0xA4 GetFlags and 0x9C SetFlagBits and forms (Object*)(objectInterface-8)
 0x00469530,signature,"void __thiscall f(void * this, void * drawContext)","__thiscall, ret 4"
 0x004696B0,signature,void __thiscall f(void * this),"__thiscall, tail-jumps to 0x0046D190"
 0x004696D0,signature,"void __thiscall f(void * this, void * items)","__thiscall, ret 4"
@@ -12693,7 +12693,7 @@ address,what,value,why
 0x0084B1B0,signature,unsigned int __cdecl f(unsigned int n),ret and arguments read in daoexe --disasm at 0x0084b1b0
 0x0084B1D0,signature,"void __cdecl f(const void *ddsHeader, const void *data, void *device, const void *formatInfo)",ret and arguments read in daoexe --disasm at 0x0084b1d0
 0x0084B280,signature,"void * __cdecl f(const void *ddsHeader, const void *data, void *device, const void *formatInfo, int arg5)",ret and arguments read in daoexe --disasm at 0x0084b280
-0x0084B450,signature,"void * __cdecl f(const void *ddsHeader, const void *data, void *device, const void *formatInfo, unsigned int mips)",ret and arguments read in daoexe --disasm at 0x0084b450
+0x0084B450,signature,"void * __cdecl f(const void *ddsHeader, const void *data, Graphics::GraphicsDriver *device, const void *formatInfo, unsigned int mips)",parameter device: calls device slots 0xA8 and 0xB0 (GraphicsDriver slots 42 and 44)
 0x0084B630,signature,"void * __cdecl f(const void *ddsHeader, const void *data, void *device, const void *formatInfo, int arg5)",ret and arguments read in daoexe --disasm at 0x0084b630
 0x0084B800,signature,"void * __cdecl f(const void *ddsHeader, const void *data, void *device, const void *formatInfo, int keepSmallMips)",ret and arguments read in daoexe --disasm at 0x0084b800
 0x0084BB30,signature,"void * __cdecl f(const void *ddsHeader, const void *data, void *device, const void *formatInfo, int arg5)",ret and arguments read in daoexe --disasm at 0x0084bb30
@@ -13148,7 +13148,7 @@ address,what,value,why
 0x007421E0,signature,"int __thiscall f(void *this, void *command, void *object)","start/end handler called as handler(command, object) with ecx = CSCommandHandler by 0x00742DA0/0x00742190: type 19 start, ret 8"
 0x00742200,signature,"int __thiscall f(void *this, CCommand *command, CCObject *object)","start/end handler called as handler(command, object) with ecx = CSCommandHandler by 0x00742DA0/0x00742190: TurnStart, ret 8; a void * here is the class DAODecomp's matching definition gives"
 0x00742280,signature,"int __thiscall f(void *this, void *command, void *object)","start/end handler called as handler(command, object) with ecx = CSCommandHandler by 0x00742DA0/0x00742190: type 27 start, ret 8"
-0x007423C0,signature,"int __thiscall f(void *this, void *command, void *object)","start/end handler called as handler(command, object) with ecx = CSCommandHandler by 0x00742DA0/0x00742190: type 28 start, ret 8"
+0x007423C0,signature,"int __thiscall f(void *this, void *command, CCObject *object)",parameter object: PickupItemStart calls object slot 0x10 (CGameObject::AsCreature)
 0x00742500,signature,"int __thiscall f(void *this, void *command, void *object)","start/end handler called as handler(command, object) with ecx = CSCommandHandler by 0x00742DA0/0x00742190: type 4 start, ret 8"
 0x007425A0,signature,"int __thiscall f(void *this, void *command, void *object)","start/end handler called as handler(command, object) with ecx = CSCommandHandler by 0x00742DA0/0x00742190: default start, ret 8"
 0x007425B0,signature,"int __thiscall f(void *this, void *command, void *object)","start/end handler called as handler(command, object) with ecx = CSCommandHandler by 0x00742DA0/0x00742190: DoFunctionStart, ret 8"
@@ -13159,7 +13159,7 @@ address,what,value,why
 0x007428B0,signature,"int __thiscall f(void *this, CCommand *command, CCObject *object)","start/end handler called as handler(command, object) with ecx = CSCommandHandler by 0x00742DA0/0x00742190: type 12 start, ret 8; a void * here is the class DAODecomp's matching definition gives"
 0x007429F0,signature,"int __thiscall f(void *this, void *command, void *object)","start/end handler called as handler(command, object) with ecx = CSCommandHandler by 0x00742DA0/0x00742190: SheathingStart, ret 8"
 0x00742AD0,signature,"int __thiscall f(void *this, void *command, void *object)","start/end handler called as handler(command, object) with ecx = CSCommandHandler by 0x00742DA0/0x00742190: type 15 start, ret 8"
-0x00742C30,signature,"int __thiscall f(void *this, void *command, void *object)","start/end handler called as handler(command, object) with ecx = CSCommandHandler by 0x00742DA0/0x00742190: FlyStart, ret 8"
+0x00742C30,signature,"int __thiscall f(void *this, void *command, CCObject *object)",parameter object: FlyStart calls slot 0x10 and passes object as this to the non-virtual CCObject::AddSubAction
 0x00743290,signature,"int __thiscall f(void *this, void *command, void *object)","start/end handler called as handler(command, object) with ecx = CSCommandHandler by 0x00742DA0/0x00742190: type 7 start, ret 8"
 0x00743420,signature,"int __thiscall f(void *this, void *command, void *object)","start/end handler called as handler(command, object) with ecx = CSCommandHandler by 0x00742DA0/0x00742190: type 8 start, ret 8"
 0x00744870,signature,"int __thiscall f(void *this, void *command, void *object)","start/end handler called as handler(command, object) with ecx = CSCommandHandler by 0x00742DA0/0x00742190: PlayAnimationStart, ret 8"
@@ -14322,7 +14322,7 @@ address,what,value,why
 0x00503CC0,signature,"void __cdecl std::_Adjust_heap(void** first, int hole, int bottom, void* value, void* pred)",plain ret
 0x00503D40,signature,"void __thiscall Graphics::MaterialPass::ApplyParameter(void* this, void* binding, void* block)",ret 8
 0x00503D80,signature,"void __thiscall Graphics::MaterialPass::SetRequiredStreams(void* this, void* names)",ret 4; EBX = arg at 0x00503DB2
-0x00504470,signature,"void __thiscall Graphics::MaterialParameterBlock::UploadConstantRanges(void* this, void* device)",ret 4; ecx = block (0x00506651)
+0x00504470,signature,"void __thiscall Graphics::MaterialParameterBlock::UploadConstantRanges(void* this, Graphics::GraphicsDriver *device)","parameter device: UploadConstantRanges calls device slot 0x124 (a _purecall in Graphics::GraphicsDriver 0x00B2DF1C, overridden by both drivers); its caller MaterialPass::Apply 0x00506550 gets the device from GetCurrentDriver 0x005278C0"
 0x005049B0,signature,"void __thiscall Graphics::MaterialPass::ApplyParameters(void* this, void* context, void* block)",ret 8
 0x00504AE0,signature,"bool __thiscall Graphics::MaterialEffectPass::Apply(void* this, int a1, int a2, int a3, void* block, int flags)",ret 0x14; arguments unused
 0x00504B50,signature,"void __cdecl std::_Sort(void** first, void** last, int ideal, void* pred)","plain ret; recursive callers add esp,0x10"
@@ -14493,7 +14493,7 @@ address,what,value,why
 0x0050FBC0,convention,__thiscall,outside the batch (render-23): ecx passed through to 0x0050FB30; ret 8
 0x004ECF60,clear,G2DA::IsLoaded,"a folded `mov al,[ecx+4]`; also MaterialArtParameter's has-a-value test (0x00502964)"
 0x00A25AA0,signature,float __thiscall Renderer_PerspectiveCamera_GetAspectCorrection(void* this),"push ecx/pop ecx; plain ret, no stack arguments; reads ecx+0x148; result in st0"
-0x005278C0,signature,void* __cdecl Graphics_GetCurrentDriver(void),"plain ret, never reads ecx; driver pointer in eax"
+0x005278C0,signature,Graphics::GraphicsDriver * __cdecl Graphics_GetCurrentDriver(void),"return type: 0x005278D2 and 0x005278DF return [g_graphics+0xBC] or +0xB4: the render-thread driver, selected by SelectRenderThreadDriver 0x00527930"
 0x005278C0,clear,D3DDriver::D3DGraphicsDriverManager::vfunction8,not a method: ignores this; a free getter (0x008653B0 is a jmp thunk to it)
 0x0086B530,signature,float __thiscall D3DDriver_D3DGraphicsDriver_GetAspectCorrection(void* this),fld [ecx+0x7368]; ret; vftable slot 97 (0x00B2E2F8)
 0x0086A500,signature,void __thiscall D3DDriver_D3DGraphicsDriver_UpdateAspectCorrection(void* this),"mov esi,ecx at 0x0086A521 before ecx is written; plain ret"
@@ -14937,7 +14937,7 @@ address,what,value,why
 0x00A3AC90,signature,"void * __thiscall f(void *this, const unsigned int *key)",ret and ecx use read in daoexe --disasm at 0x00A3AC90
 0x00A3AD20,signature,"void __stdcall f(unsigned int key, void *widths, int totalBits, void *outValues)",ret and ecx use read in daoexe --disasm at 0x00A3AD20
 0x00A3AE10,signature,"void __stdcall f(void *columnIds, void *outWidths, int *totalBits, void *gdaTable)",ret and ecx use read in daoexe --disasm at 0x00A3AE10
-0x00A3AEF0,signature,"bool __stdcall f(unsigned int row, void *columnIds, void *outValues, void *gdaTable)",ret and ecx use read in daoexe --disasm at 0x00A3AEF0
+0x00A3AEF0,signature,"bool __stdcall f(unsigned int row, void *columnIds, void *outValues, C2DASource *gdaTable)","parameter gdaTable: ReadRowColumns calls gdaTable slot 0x28, the same reader of the C2DASource interface"
 0x00A3AFE0,signature,"unsigned int __thiscall f(void *this, unsigned int key, unsigned int attackerId)",ret and ecx use read in daoexe --disasm at 0x00A3AFE0
 0x00A3B100,signature,void * __thiscall f(void *this),ret and ecx use read in daoexe --disasm at 0x00A3B100
 0x00A3B1A0,signature,void __thiscall f(void *this),ret and ecx use read in daoexe --disasm at 0x00A3B1A0
@@ -15012,14 +15012,14 @@ address,what,value,why
 0x0079F6C0,signature,"bool __thiscall f(void *this, int type)",ret 4; 0x0079F6C0
 0x0079F7A0,signature,"void __thiscall f(void *this, void *holder, void *effect, bool flag)",ret 0xC; 0x0079F7A0
 0x0079F910,signature,"float __stdcall f(void *holder, int type, float initial, int excludedId)","ret 0x10, ecx unread; 0x0079F910"
-0x0079FA30,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx unread; 0x0079FA30. The remove handler of effect type 10 (InitHandlerTables 0x007A190C), called with the manager in ecx as every handler is"
-0x0079FA70,signature,"void __thiscall f(void *this, void *holder, void *effect, bool flag)","ret 0xC, ecx stored; 0x0079FA70"
+0x0079FA30,signature,"int __thiscall f(void *this, SEffectsHolder *holder, void *effect)",parameter holder: RemoveAlpha calls holder slot 0x5C (SEffectsHolder slot 23)
+0x0079FA70,signature,"void __thiscall f(void *this, SEffectsHolder *holder, void *effect, bool flag)",parameter holder: FitDurationToVisual takes the same holder argument as its siblings
 0x0079FD00,signature,"void __thiscall f(void *this, int effectId)",ret 4; 0x0079FD00
 0x007A00A0,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A00A0"
 0x007A0150,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A0150"
 0x007A01A0,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A01A0"
 0x007A0210,signature,"int __thiscall f(void *this, void *holder, void *effect)",ret 8; ecx passed on unchanged to 0x007A0150; 0x007A0210
-0x007A0230,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A0230"
+0x007A0230,signature,"int __thiscall f(void *this, SEffectsHolder *holder, void *effect)",parameter holder: ApplyAreaOfEffect calls holder slot 0x20 (SEffectsHolder GetOwnerId) and reads the byte at holder+4
 0x007A0520,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A0520"
 0x007A05B0,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx unread; 0x007A05B0. The apply handler of effect type 8 (InitHandlerTables 0x007A18CF), called with the manager in ecx as every handler is"
 0x007A05F0,signature,"int __thiscall f(void *this, void *holder, void *effect)",ret 8; ecx passed on unchanged to 0x007A0150; 0x007A05F0
@@ -15028,7 +15028,7 @@ address,what,value,why
 0x007A06F0,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A06F0"
 0x007A0750,signature,void __thiscall f(void *this),plain ret; 0x007A0750
 0x007A07F0,signature,"void __thiscall f(void *this, void *filter)",ret 4; 0x007A07F0
-0x007A08E0,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A08E0"
+0x007A08E0,signature,"int __thiscall f(void *this, SEffectsHolder *holder, void *effect)",parameter holder: RemoveEffect takes the same holder argument as its siblings
 0x007A0A90,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A0A90"
 0x007A0AF0,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A0AF0"
 0x007A12E0,signature,"int __thiscall f(void *this, void *holder, void *effect)","ret 8, ecx read or passed on; 0x007A12E0"
@@ -15282,14 +15282,14 @@ address,what,value,why
 0x007A2080,signature,"int __thiscall f(void *this, void *subAction, void *owner)","sub-action handler, type 35: ecx is the handler, args (sub-action, owner), ret 8"
 0x007A20C0,signature,"int __thiscall f(void *this, void *subAction, void *owner)","sub-action handler, type 36: ecx is the handler, args (sub-action, owner), ret 8"
 0x007A2110,signature,"int __thiscall f(void *this, void *subAction, void *owner)","sub-action handler, type 5: ecx is the handler, args (sub-action, owner), ret 8"
-0x007A2410,signature,"int __thiscall f(void *this, void *subAction, void *owner)","sub-action handler, type 6: ecx is the handler, args (sub-action, owner), ret 8"
+0x007A2410,signature,"int __thiscall f(void *this, void *subAction, CCObject *owner)",parameter owner: AimWait calls owner slot 0x10
 0x007A25C0,signature,"int __thiscall f(void *this, void *subAction, void *owner)","sub-action handler, type 19: ecx is the handler, args (sub-action, owner), ret 8"
 0x007A2650,signature,"int __thiscall f(void *this, void *subAction, void *owner)","sub-action handler, type 20: ecx is the handler, args (sub-action, owner), ret 8"
-0x007A26E0,signature,"int __thiscall f(void *this, void *subAction, void *owner)","sub-action handler, type 48: ecx is the handler, args (sub-action, owner), ret 8"
+0x007A26E0,signature,"int __thiscall f(void *this, void *subAction, CCObject *owner)",parameter owner: DrawOrSheathe calls slot 0x10 and passes owner as this to CCObject::AddSubAction
 0x007A2990,signature,"int __thiscall f(void *this, void *subAction, void *owner)","sub-action handler, type 30: ecx is the handler, args (sub-action, owner), ret 8"
 0x007A2A50,signature,"int __thiscall f(void *this, void *subAction, void *owner)","sub-action handler, type 31: ecx is the handler, args (sub-action, owner), ret 8"
-0x007A2B60,signature,"int __thiscall f(void *this, void *subAction, void *owner)","sub-action handler, type 47: ecx is the handler, args (sub-action, owner), ret 8"
-0x007A3440,signature,"int __thiscall f(void *this, void *subAction, void *owner)","sub-action handler, type 13: ecx is the handler, args (sub-action, owner), ret 8"
+0x007A2B60,signature,"int __thiscall f(void *this, void *subAction, CCObject *owner)",parameter owner: Fly calls owner slot 0x10
+0x007A3440,signature,"int __thiscall f(void *this, void *subAction, CCObject *owner)",parameter owner: AttackPendingTurn calls owner slot 0x10
 0x007A3700,signature,"int __thiscall f(void *this, void *subAction, void *owner)","sub-action handler, type 12: ecx is the handler, args (sub-action, owner), ret 8"
 0x007A48B0,signature,"int __thiscall f(void *this, void *subAction, void *owner)","sub-action handler, type 44: ecx is the handler, args (sub-action, owner), ret 8"
 0x007A49E0,signature,"int __thiscall f(void *this, void *subAction, void *owner)","sub-action handler, type 45: ecx is the handler, args (sub-action, owner), ret 8"
@@ -15808,7 +15808,7 @@ address,what,value,why
 0x00538060,signature,"void __thiscall f(void* this, float value, bool flag)",read in 0x00538060
 0x00538140,signature,"void* __thiscall f(void* this, void* src)",read in 0x00538140
 0x0053A400,signature,"void __thiscall f(void* this, void* roomLayout)",read in 0x0053A400
-0x0053A510,signature,"void __thiscall f(void* this, void* object, void* parent, void* placement)",read in 0x0053A510
+0x0053A510,signature,"void __thiscall f(void* this, Graphics::IBaseObject *object, void* parent, void* placement)",parameter object: PlaceModelObject calls object slots 0x18 (SetPlaceTeleport) and 0xAC (SetUniformScale): IBaseObject slots (table 0x00AF8434)
 0x0053D790,signature,"void __thiscall f(void* this, float opacity)",read in 0x0053D790
 0x0053DCB0,signature,void __thiscall f(void* this),read in 0x0053DCB0
 0x0053DCD0,signature,void __thiscall f(void* this),read in 0x0053DCD0
@@ -16004,7 +16004,7 @@ address,what,value,why
 0x00527520,signature,void * __thiscall CreateScene(void * this),vftable slot 13; plain ret
 0x00527530,signature,"void * __thiscall CreateSceneCamera(void * this, void * name)",vftable slot 11; ret 4
 0x005275B0,signature,"void __thiscall DestroyScene(void * this, void * scene)",vftable slot 14; ret 4; ecx unused
-0x005275C0,signature,"void * __thiscall CreateModelNode(void * this, void * name, void * a2, void * a3, int a4, int a5, int a6)",vftable slot 34; ret 0x18; pushes at 0x007E38E3..0x007E38EE; a2..a6 roles unread
+0x005275C0,signature,"Graphics::IBaseObject * __thiscall CreateModelNode(void * this, void * name, void * a2, void * a3, int a4, int a5, int a6)",return type: slot 0x88 of g_graphics: Actor::Bind stores its result at 0x007E38F7 into the same Actor+0x154
 0x00527750,signature,"void __thiscall SetFlag_BF7B74(void * this, bool value)",vftable slot 40; ret 4
 0x00527760,signature,"void __thiscall SetSimplePixelShaders(void * this, bool value)",vftable slot 41; ret 4
 0x00527770,signature,"void __thiscall SetFlag_0xC6(void * this, bool value)",vftable slot 43; ret 4
@@ -16014,9 +16014,9 @@ address,what,value,why
 0x005277B0,signature,"void __thiscall SetCurrentScene(void * this, void * scene)",vftable slot 8; ret 4
 0x005277D0,signature,void * __thiscall GetDisplayEnumerator(void * this),"vftable slot 47; ecx unused, tail jump"
 0x00527850,signature,"void __thiscall SetLoadingScreenRendering(void * this, bool on)",vftable slot 60; ret 4 at 0x0052789E
-0x005278B0,signature,void * __cdecl GetDirectDriver(void),no ecx read; plain ret
+0x005278B0,signature,Graphics::GraphicsDriver * __cdecl GetDirectDriver(void),return type: 0x005278B5 returns [g_graphics+0xB4]; StartRenderer 0x00529D74 passes it to the ThreadedGraphicsDriver constructor 0x00A221E0 and 0x00529E43 pushes it for the primitives
 0x005278C0,clear,D3DDriver::D3DGraphicsDriverManager::vfunction8,Not in that vftable (its slot 7 is 0x008653B0); a free function reading g_graphics
-0x005278F0,signature,void * __cdecl GetSubmitDriver(void),no ecx read; plain ret
+0x005278F0,signature,Graphics::GraphicsDriver * __cdecl GetSubmitDriver(void),"return type: returns [g_graphics+0xC0], set from +0xB8 or +0xB4 by SetMultiProcessorMode 0x00527900 (0x00527919, 0x00527926)"
 0x00527930,signature,void __cdecl SelectRenderThreadDriver(bool threaded),plain ret; caller cleans at 0x0052A743
 0x00527960,convention,__thiscall,reads ecx at 0x00527961; plain ret
 0x005279D0,convention,__thiscall,"ret 0x40; ecx moved to esi at 0x005279F1; 0x40 bytes by value, a wstring first"
@@ -16603,7 +16603,7 @@ address,what,value,why
 0x00556D50,signature,"void __cdecl f(void *out, int a, int b, void *vertices, int vertexCount, void *colour, int c)","plain ret, caller 0x00559C3E add esp,0x1C"
 0x00557590,convention,__cdecl,"plain ret, caller add esp,0x20 (0x00558AD8)"
 0x00557B50,signature,void * __cdecl f(void *out),"caller 0x005591AA add esp,4; returns out"
-0x005590E0,signature,"void __cdecl f(void *device, int a, int segments)","caller 0x00529E4D add esp,0xC; reads [ebp+8],[ebp+0xC],[ebp+0x10]"
+0x005590E0,signature,"void __cdecl f(Graphics::GraphicsDriver *device, int a, int segments)","parameter device: stores its first argument in g_primitiveGraphicsDriver 0x00C31AA4 at 0x00559115; the caller 0x00529E4D (StartRenderer) pushes [esi+0xB4], the direct driver (0x00529E43)"
 0x00559260,signature,"void * __cdecl f(void *corner, void *size, int physics, int ownerId, int flagA, int flagB, float lifetime)","seven stack words, callers add esp,0x1C (0x005458F8, 0x00527EC1); returns the interface (0x005595F5)"
 0x00559620,signature,"void * __cdecl f(int primitiveType, void *points, void *colours, int physics)","wrapper 0x00527ED0 add esp,0x10; type 5 compared at 0x0055975C"
 0x00559BE0,convention,__cdecl,plain ret (0x00559D39)
@@ -17368,7 +17368,7 @@ address,what,value,why
 0x00579A30,signature,"void * __thiscall f(void *this, void *out, void *name)",ret 8 at 0x00579A69; slot 15: a morph by name through slot 36
 0x00579A70,signature,"void * __thiscall f(void *this, void *out, void *name)",ret 8 at 0x00579D0F
 0x00579D20,signature,"void * __thiscall f(void *this, void *out, void *name)",ret 8 at 0x00579E4A
-0x00579EB0,signature,"void * __thiscall f(void *this, void *name, void *effectName, void *target, int a4, int pool, int w1, int w2, int w3)",ret 0x20 at 0x0057A02A
+0x00579EB0,signature,"void * __thiscall f(void *this, void *name, void *effectName, Graphics::IBaseObject *target, int a4, int pool, int w1, int w2, int w3)",parameter target: calls target slot 0x6C and forms target-8
 0x0057A0A0,signature,"unsigned char __thiscall f(void *this, void *object8, void *name, void *arg)",ret 0xC at 0x0057A117
 0x0057A180,signature,"unsigned char __thiscall f(void *this, void *object8, void *name, int a, int b, int c)",ret 0x14 at 0x0057A1F7
 0x0057A260,signature,"void * __cdecl f(void *out, void *name, void *device)","plain ret at 0x0057A504, callers clean 12 bytes"
@@ -17805,7 +17805,7 @@ address,what,value,why
 0x00527E90,signature,"void __thiscall Eclipse::IGraphicsInternal::PresentRect(void* this, void* a, void* b, void* c, void* d, void* e)","tail jump to 0x00459460, ret 0x14"
 0x00527EA0,signature,"void* __thiscall Eclipse::IGraphicsInternal::CreateDebugBox(void* this, void* min, void* max)",ret 8; decompiler shows one argument
 0x00527ED0,signature,"void* __thiscall Eclipse::IGraphicsInternal::CreateDebugMesh(void* this, void* points)",ret 4; decompiler shows none
-0x00527EF0,signature,"void* __thiscall Eclipse::IGraphicsInternal::CreateModelNode(void* this, void* a1, void* a2, int a3, int a4, int a5)",ret 0x14
+0x00527EF0,signature,"Graphics::IBaseObject * __thiscall Eclipse::IGraphicsInternal::CreateModelNode(void* this, void* a1, void* a2, int a3, int a4, int a5)","return type: slot 0x80 of g_graphics: EC::Cutscene::Actor::Bind stores its result at 0x007E38B5 into Actor+0x154, which is then called through IBaseObject slots (GetPlace 0x34, SetOrientation 0x1C, AsAnimatable 0x4C)"
 0x00527F90,signature,"void __thiscall Eclipse::IGraphicsInternal::RequestScreenshot(void* this, void* request, bool deferred, bool hideInterface)",ret 0xC
 0x00528000,signature,"void __thiscall Eclipse::IGraphicsInternal::SetScreenshotSequence(void* this, std::wstring *name)",ret 4; a void * here is the class DAODecomp's matching definition gives
 0x00528030,signature,"void __thiscall Eclipse::IGraphicsInternal::SetWorldVisible(void* this, bool visible)",ret 4
@@ -18158,7 +18158,7 @@ address,what,value,why
 0x00537D70,signature,void* __thiscall Stub::GetAddress_0x90(void* this),plain ret (0x00537D76)
 0x00537E00,signature,bool __thiscall Graphics::ISceneInstance::IsPhysicsSimulationEnabled(void* this),plain ret; tail jump to the physics scene's slot (0x00537E17)
 0x00537F40,signature,bool __thiscall Graphics::ISceneInstance::IsActive(void* this),"plain ret (0x00537F4E, 0x00537F51)"
-0x00537FB0,signature,"void __thiscall Graphics::ISceneInstance::SetObjectDetached(void* this, void* objectInterface, int mode)",ret 8 (0x0053805A)
+0x00537FB0,signature,"void __thiscall Graphics::ISceneInstance::SetObjectDetached(void* this, Graphics::IBaseObject *objectInterface, int mode)",parameter objectInterface: SetObjectDetached calls slot 0xA4 (GetFlags) on it
 0x005387B0,signature,"void __thiscall Graphics::ISceneInstance::SetPlayerPosition(void* this, const Vector4* position)",ret 4 (0x005387C3)
 0x005387D0,signature,"void __thiscall Graphics::ISceneInstance::GetPlayerPosition(void* this, Vector4* outPosition)",ret 4 (0x005387E3)
 0x00538C00,signature,void __thiscall Graphics::ISceneInstance::DetachAllObjects(void* this),plain ret via the tail jump to 0x005484B0
@@ -18211,7 +18211,7 @@ address,what,value,why
 0x00A24160,signature,void* __thiscall Renderer::CShadowCasterCuller::CShadowCasterCuller(void* this),"plain ret at 0x00A241EE, returns this"
 0x00A241F0,signature,"void* __thiscall Renderer::CShadowCasterCuller::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4 at 0x00A24211
 0x00A24220,signature,void* __cdecl Renderer::ICuller::Create(int kind),"plain ret at 0x00A2427D, caller add esp,4"
-0x00A242D0,signature,"void __thiscall Renderer::IGenericMeshFrustumCuller::SetCamera(void* this, void* camera)",ret 4 at 0x00A24480
+0x00A242D0,signature,"void __thiscall Renderer::IGenericMeshFrustumCuller::SetCamera(void* this, Renderer::ICameraInternal *camera)",parameter camera: IGenericMeshFrustumCuller::SetCamera reads the same camera slots as ShadowMaps::SetCamera; CShadowCasterCuller::SetCamera 0x00A246D0 passes the camera on
 0x00A24490,signature,"bool __thiscall Renderer::IGenericMeshFrustumCuller::TestObject(void* this, IObjectStandIn *object)",ret 4 at 0x00A244E6; a void * here is the class DAODecomp's matching definition gives
 0x00A24500,signature,"bool __thiscall Renderer::IGenericMeshFrustumCuller::TestSphere(void* this, float* center, float radius)",ret 8 at 0x00A24659
 0x00A246D0,signature,"void __thiscall Renderer::CShadowCasterCuller::SetCamera(void* this, void* camera)",ret 4 at 0x00A247AD
@@ -18293,7 +18293,7 @@ address,what,value,why
 0x00A604A0,signature,"bool __thiscall f(void *this, void *node, void *tintBlock)","ret 8, al = 1 at 0x00A605C4"
 0x00A605E0,signature,"bool __thiscall f(void *this, void *name, float weight, float blend, void *treeName)",ret 0x10
 0x00A60810,signature,"void __thiscall f(void *this, void *treeName, int position)",ret 8
-0x00A61280,signature,"bool __thiscall f(void *this, void *model, float opacity, bool flag)",ret 0xC
+0x00A61280,signature,"bool __thiscall f(void *this, Graphics::IBaseObject *model, float opacity, bool flag)",parameter model: ApplyModelOpacity calls model slot 0x68 (GetNodesOfKind)
 0x00A675D0,signature,"bool __thiscall f(void *this, unsigned char slot, void *heraldryMap)",ret 8
 0x00A676F0,signature,"bool __thiscall f(void *this, bool enabled)",ret 4; slot 21 of AnimBaseWield
 0x00A69AD0,signature,"void __thiscall f(void *this, unsigned int offset)",ret 4
@@ -19362,7 +19362,7 @@ address,what,value,why
 0x005D57E0,signature,WorldMap * __thiscall f(void *this),proven by DAODecomp: its definition `WorldMap* CClientExoApp::GetWorldMap()` (member) compiles to this function's bytes; ret plain read in the code
 0x005D5810,signature,Journal * __thiscall f(void *this),proven by DAODecomp: its definition `Journal* CClientExoApp::GetJournal()` (member) compiles to this function's bytes; ret plain read in the code
 0x005D5840,signature,"unsigned int __thiscall f(void *this, int id)",proven by DAODecomp: its definition `unsigned int CClientExoApp::GetGameObjectById(int id)` (member) compiles to this function's bytes; ret 0x4 read in the code
-0x005D5BE0,signature,"int __thiscall f(void *this, unsigned int id)",proven by DAODecomp: its definition `int CClientExoApp::GetObjectById(unsigned int id)` (member) compiles to this function's bytes; ret 0x4 read in the code
+0x005D5BE0,signature,"CCObject * __thiscall f(void *this, unsigned int id)","return type: 0x005D5BE0 body calls slot 0x18 of the found CGameObject (ReturnThis in the CCObject table 0x00B0EE9C) and returns it; callers call CCObject slots 0x98, 0x10 on it (e.g. 0x007AA560 SetupApproach)"
 0x005D5C60,signature,"int __thiscall f(void *this, int id)",proven by DAODecomp: its definition `int CClientExoApp::GetWayPointById(int id)` (member) compiles to this function's bytes; ret 0x4 read in the code
 0x005D5CA0,signature,int __thiscall f(void *this),proven by DAODecomp: its definition `int CClientExoApp::GetControlledCreatureId()` (member) compiles to this function's bytes; ret plain read in the code
 0x005D6C20,signature,void __thiscall f(void *this),proven by DAODecomp: its definition `void CClientExoApp::RemakeTreeBounds()` (member) compiles to this function's bytes; ret plain read in the code
@@ -20308,7 +20308,7 @@ address,what,value,why
 0x005BFF20,signature,"void __thiscall f(void *this, int paused)",proven by DAODecomp: its definition `void EclipsePrivate::CMusicThemeContent_FMOD::SetPaused(int paused)` (member) compiles to this function's bytes; ret 0x4 read in the code
 0x005C8210,signature,"EC::CExteriorChunk * __thiscall f(void *this, int id, int cellIndex, void *name)","proven by DAODecomp: its definition `EC::CExteriorChunk* EC::ChunkManager::NewExteriorChunk(int id, int cellIndex, void* name)` (member) compiles to this function's bytes; ret 0xC read in the code"
 0x005C87F0,signature,void __thiscall f(void *this),proven by DAODecomp: its definition `void EC::ChunkManager::BuildRoomMasks()` (member) compiles to this function's bytes; ret plain read in the code
-0x005D58C0,signature,"int __thiscall f(void *this, unsigned int id)",proven by DAODecomp: its definition `int CClientExoApp::GetCreatureById(unsigned int id)` (member) compiles to this function's bytes; ret 0x4 read in the code
+0x005D58C0,signature,"CCCreature * __thiscall f(void *this, unsigned int id)","return type: returns slot 0x10 (CGameObject::AsCreature, ReturnThis in CCCreature's table 0x00B10484) of the object whose type byte [+0x14] is the creature type"
 0x005D5910,signature,"unsigned int __thiscall f(void *this, unsigned int id)",proven by DAODecomp: its definition `unsigned int CClientExoApp::GetModuleById(unsigned int id)` (member) compiles to this function's bytes; ret 0x4 read in the code
 0x005D5960,signature,"unsigned __thiscall f(void *this, unsigned int id)",proven by DAODecomp: its definition `unsigned CClientExoApp::GetAreaById(unsigned int id)` (member) compiles to this function's bytes; ret 0x4 read in the code
 0x005D5AF0,signature,"int __thiscall f(void *this, unsigned int id)",proven by DAODecomp: its definition `int CClientExoApp::GetProjectileById(unsigned int id)` (member) compiles to this function's bytes; ret 0x4 read in the code
@@ -21340,3 +21340,5 @@ address,what,value,why
 0x00A42A10,signature,"void __thiscall f(void *this, unsigned short *param_1)","declared by DAODecomp's matched callers: `void CNetLayerIdQueue::FUN_00A42A10(unsigned short *)` (member), from the symbol each of two or more of them names here, and they compile to their own bytes with it; ret 0x4 read in the code"
 0x00A652A0,signature,"void * __thiscall f(void *this, int param_1)","declared by DAODecomp's matched callers: `CGameEffect::CGameEffect(int)` (member), from the symbol each of two or more of them names here, and they compile to their own bytes with it; ret 0x4 read in the code"
 0x00C31650,datatype,Eclipse::IGraphicsInternal *,"g_graphics: Eclipse::CreateGraphics stores the object it makes here and Eclipse::DestroyGraphics clears it; every use is a call through its vftable (slot 0x24 51 times, 0xC0 19), which tools/receivers.py cannot read a class from, so 150 calls read (**(code **)(*g_graphics + 0x24))() (decomp-agent, 2026-11-20). The table of that class, 0x00AF6D2C, has the 69 slots"
+0x00C31AA4,datatype,Graphics::GraphicsDriver *,"g_primitiveGraphicsDriver: stored at 0x00559115 in InitializePrimitives (0x005590E0) from its first argument, which StartRenderer pushes at 0x00529E43 as [esi+0xB4], the direct driver; used through GraphicsDriver slots 0x54, 0x58, 0x60"
+0x00C1E7FC,datatype,Renderer::ICameraInternal *,"Renderer::ShadowMaps::s_camera: stored by SetCamera 0x00452960 from its camera argument and called through slots 0x2C, 0x38, 0x40, 0x94 of ICameraInternal's table"
