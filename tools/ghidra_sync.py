@@ -528,6 +528,27 @@ def slot_names():
 
 
 TYPED = ("datatype", "returntype", "thisat")
+WINDOWS_WORDS = {
+    "HWND",
+    "HANDLE",
+    "HINSTANCE",
+    "HMODULE",
+    "DWORD",
+    "WORD",
+    "BYTE",
+    "BOOL",
+    "UINT",
+    "LONG",
+    "ULONG",
+    "WPARAM",
+    "LPARAM",
+    "HRESULT",
+    "GUID",
+    "RECT",
+    "POINT",
+    "HDC",
+    "HKEY",
+}
 C_WORDS = {
     "void",
     "bool",
@@ -741,10 +762,13 @@ def ghidra_c(prototype):
 
     def simplify(decl):
         decl = decl.strip()
-        # A pointer to a class with no C++ mark (ECString *) is unknown to
-        # the parser too; Windows' types are all capitals (HWND), which it knows.
-        plain_class = "*" in decl and re.match(
-            r"(const\s+)?[A-Z]\w*[a-z]\w*\s*\*", decl
+        # A pointer to anything but C's own words and the Windows types
+        # Ghidra has is unknown to the parser: a class with no C++ mark
+        # (ECString *), __m128 *, D3DCAPS9 *, a one-letter V *. 18 rows
+        # failed on such, 2026-11-20.
+        plain_class = "*" in decl and not (
+            set(re.sub(r"\*.*$", "", decl).replace("const", "").split())
+            <= C_WORDS | WINDOWS_WORDS
         )
         if not plain_class and not re.search(r"::|<|>|`|&", decl):
             return decl
