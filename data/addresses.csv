@@ -36,7 +36,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 35,function,ECFileAccess::DirectoryEntry::DirectoryEntry,,0x00401c50,0x00401d20,0x00401c50
 36,function,Multithreading::Task::RunInline,,0x00401c70,0x00401d50,0x00401c70
 37,function,LocString::~LocString,,0x00401c90,0x004c9db0,0x00401c90
-38,function,Messages::IObservable::IObservable,,0x00401ca0,0x00401d90,0x00401ca0
+38,function,Messages::IObservable::~IObservable,,0x00401ca0,0x00401d90,0x00401ca0
 39,function,Messages::IObservable::`scalar deleting destructor',,0x00401cb0,0x00401da0,0x00401cb0
 40,function,??1GDefaultAcquireInterface@@UAE@XZ,,0x00401cd0,0x00401dc0,0x00401cd0
 41,function,,,0x00401ce0,0x00401dd0,0x00401ce0
@@ -44,7 +44,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 43,function,??_FGEvent@@QAEXXZ,,0x00401d50,0x00401e40,0x00401d50
 44,function,??_FGSemaphore@@QAEXXZ,,0x00401d60,0x00401e50,0x00401d60
 45,function,??_FGThread@@QAEXXZ,,0x00401d70,0x00401e60,0x00401d70
-46,function,SmartData::IAttribute::IAttribute,,0x00401d80,0x00401e70,0x00401d80
+46,function,SmartData::IAttribute::~IAttribute,,0x00401d80,0x00401e70,0x00401d80
 47,function,SmartData::IAttribute::`scalar deleting destructor',,0x00401d90,0x00401e80,0x00401d90
 48,function,IGUISystem::StaticClassIdPtr,,0x00401db0,0x00401ea0,0x00401db0
 49,function,IGUISystem::GetClassInfo,,0x00401e10,0x00401f00,0x00401e10
@@ -99,7 +99,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 98,function,IGUISystem::Clone,,0x00402b90,0x00402d10,0x00402b90
 99,function,IGUISystem::RegisterClass,,0x00402c10,0x00402d90,0x00402c10
 100,function,Input::DeviceStates::Get,,0x00402c30,0x00402db0,0x00402c30
-101,function,EclipseGame::Get,,0x00402ca0,0x00402e20,0x00402ca0
+101,function,EclipseGame::Get,"No code of its own: one jmp to the function of the same name at 0x00401F30 (ID 55), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00402ca0,0x00402e20,0x00402ca0
 102,function,EclipseGame::ShutdownUtilities,,0x00402cb0,0x00402e30,0x00402cb0
 103,function,AddInsManager::LoadAddInsXml,,0x00402ce0,0x00402e60,0x00402ce0
 104,function,EclipseGame::InitializeInput,,0x00402e10,0x00402f90,0x00402e10
@@ -223,7 +223,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 222,function,,,0x00406f60,0x00407350,0x00406f60
 223,function,SmartData::IAttribute::HasMember,,0x00407230,0x00407620,0x00407230
 224,function,"SmartData::Attribute<ECBase::ECHashMap<unsigned int,SmartData::IAttribute*,ECBase::ECHashParams<unsigned int>>,SmartData::NamedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::CreateMemberIterator",,0x00407290,0x00407680,0x00407290
-225,function,std::vector<std::wstring>::~vector,,0x004072e0,0x0083e050,0x004072e0
+225,function,std::vector<std::wstring>::~vector,"No code of its own: one jmp to the function of the same name at 0x00406A60 (ID 212), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x004072e0,0x0083e050,0x004072e0
 226,function,SmartData::NamedMemberLookup::FindMember,,0x004072f0,0x004076d0,0x004072f0
 227,function,SmartData::NamedMemberLookup::GetMemberName,,0x00407350,0x00407730,0x00407350
 228,function,"std::basic_stringstream<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>::str",,0x004073c0,0x004077a0,0x004073c0
@@ -391,9 +391,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 390,function,"SmartData::Attribute<ECBase::ECHashMap<unsigned int,SmartData::IAttribute*,ECBase::ECHashParams<unsigned int>>,SmartData::NamedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::SetFromText",,0x00413590,0x00413de0,0x00413590
 391,function,"SmartData::Attribute<ECBase::ECHashMap<unsigned int,SmartData::IAttribute*,ECBase::ECHashParams<unsigned int>>,SmartData::NamedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::RemoveMember",,0x00413630,0x00413e80,0x00413630
 392,function,operator_new,,0x00413660,0x00413eb0,0x00413660
-393,function,ECMemory::GetCurrentPoolId,,0x00413670,0x00413ed0,0x00413670
-394,function,ECMemory::PushPoolId,,0x00413680,0x00413ee0,0x00413680
-395,function,ECMemory::PopPoolId,,0x00413690,0x00413ef0,0x00413690
+393,function,ECMemory::GetCurrentPoolId,"No code of its own: one jmp to the function of the same name at 0x004B8AF0 (ID 4300), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00413670,0x00413ed0,0x00413670
+394,function,ECMemory::PushPoolId,"No code of its own: one jmp to the function of the same name at 0x004B8B20 (ID 4301), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00413680,0x00413ee0,0x00413680
+395,function,ECMemory::PopPoolId,"No code of its own: one jmp to the function of the same name at 0x004B8B60 (ID 4302), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00413690,0x00413ef0,0x00413690
 396,function,ECMemory::ReallocateOrAllocate,,0x004136a0,0x00413f00,0x004136a0
 397,function,operator_delete,,0x004136c0,0x00413ec0,0x004136c0
 398,function,ECMemory::AllocateSwapped,,0x004136d0,0x00413f20,0x004136d0
@@ -425,7 +425,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 424,function,Eclipse::PlatformWin32::GetClientRect,,0x00413dd0,0x004145f0,0x00413dd0
 425,function,Eclipse::PlatformWin32::IsSSESupported,,0x00413e10,0x00414630,0x00413e10
 426,function,Eclipse::PlatformWin32::InitializePhysics,,0x00413e20,0x00414640,0x00413e20
-427,function,std::wstring::~wstring,,0x00413e40,0x0071f6d0,0x00413e40
+427,function,std::wstring::~wstring,"No code of its own: one jmp to the function of the same name at 0x004C0DB0 (ID 4498), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00413e40,0x0071f6d0,0x00413e40
 428,function,CommitOptionsMessage::GetType,,0x00413e50,0x00414660,0x00413e50
 429,function,CommitOptionsMessage::InitType,,0x00413e90,0x004146a0,0x00413e90
 430,function,Eclipse::PlatformWin32::CreateSplashScreen,,0x00413ef0,0x00414700,0x00413ef0
@@ -2241,10 +2241,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2240,function,Math::Matrix4x4f::Multiply,,0x00451b60,0x004b0910,0x00451b60
 2241,function,Math::CollisionObject::`scalar deleting destructor',,0x00451bf0,0x004ad730,0x00451bf0
 2242,function,Math::AABB::AABB,,0x00451c10,0x004ad6d0,0x00451c10
-2243,function,Math::CollisionObject::CollisionObject,,0x00451c60,0x004ad720,0x00451c60
-2244,function,Math::Sphere::Sphere,,0x00451c70,0x00539db0,0x00451c70
+2243,function,Math::CollisionObject::~CollisionObject,,0x00451c60,0x004ad720,0x00451c60
+2244,function,Math::Sphere::~Sphere,,0x00451c70,0x00539db0,0x00451c70
 2245,function,Math::Sphere::`scalar deleting destructor',,0x00451c80,0x00539dc0,0x00451c80
-2246,function,Math::Plane::Plane,,0x00451ca0,0x00585b50,0x00451ca0
+2246,function,Math::Plane::~Plane,,0x00451ca0,0x00585b50,0x00451ca0
 2247,function,Math::Plane::`scalar deleting destructor',,0x00451cb0,0x00585b60,0x00451cb0
 2248,function,Renderer::IPartitionUmbraCommander::`scalar deleting destructor',,0x00451cd0,0x0088d130,0x00451cd0
 2249,function,Renderer::ShadowMaps::Partition::Reset,,0x00451d00,0x0088d160,0x00451d00
@@ -2768,7 +2768,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2767,function,Renderer::MoviePlayerInternal::SetCropToFill,,0x004682d0,0x008b2c70,0x004682d0
 2768,function,Renderer::MoviePlayerInternal::CreateFrameBuffers,,0x00468300,0x008b2ca0,0x00468300
 2769,function,Renderer::MoviePlayerInternal::DestroyFrameBuffers,,0x004683c0,0x008b2d60,0x004683c0
-2770,function,Graphics::IMoviePlayer::IMoviePlayer,,0x00468450,0x008b2df0,0x00468450
+2770,function,Graphics::IMoviePlayer::~IMoviePlayer,,0x00468450,0x008b2df0,0x00468450
 2771,function,Graphics::IMoviePlayer::`scalar deleting destructor',,0x00468460,0x008b2e00,0x00468460
 2772,function,Renderer::MoviePlayerInternal::IsPlaying,,0x00468480,0x008b2e20,0x00468480
 2773,function,Renderer::MoviePlayerInternal::SetHidden,,0x004684b0,0x008b2e50,0x004684b0
@@ -2848,10 +2848,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2847,function,Renderer::LightState::SetDefaultProbeCube,,0x0046b1e0,0x008a52d0,0x0046b1e0
 2848,function,Renderer::LightState::Fill,,0x0046b260,0x008a5350,0x0046b260
 2849,function,Renderer::LightState::LightState,,0x0046b920,0x008a5a10,0x0046b920
-2850,function,Renderer::LightState::~LightState,,0x0046bae0,0x008aa750,0x0046bae0
+2850,function,Renderer::LightState::~LightState,"No code of its own: one jmp to the function of the same name at 0x0046B040 (ID 2844), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x0046bae0,0x008aa750,0x0046bae0
 2851,function,Renderer::LightState::ProvideLightParams,,0x0046baf0,0x008aa760,0x0046baf0
 2852,function,Renderer::LightState::ProvideLightProbeCube,,0x0046bb30,0x008aa7a0,0x0046bb30
-2853,function,Renderer::LightState::Reset,,0x0046bb70,0x008aa7e0,0x0046bb70
+2853,function,Renderer::LightState::Reset,"No code of its own: one jmp to the function of the same name at 0x0046A4E0 (ID 2823), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x0046bb70,0x008aa7e0,0x0046bb70
 2854,function,Renderer::LightState::SetSun,,0x0046bb80,0x008aa7f0,0x0046bb80
 2855,function,"std::_Uninit_copy<Math::Vector4f *,Math::Vector4f *>",,0x0046bbc0,0x00484e60,0x0046bbc0
 2856,function,Catch_All@0046bc1a,,0x0046bc1a,0x00484eba,0x0046bc1a
@@ -3656,9 +3656,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3655,function,std::vector<OnlineRec48>::erase,,0x004929e0,0x00886790,0x004929e0
 3656,function,"std::_Uninitialized_copy<OnlineRec68*,OnlineRec68*,std::allocator<OnlineRec68>>",,0x00492a50,0x00886800,0x00492a50
 3657,function,"std::_Uninitialized_copy<OnlineRec48*,OnlineRec48*,std::allocator<OnlineRec48>>",,0x00492a80,0x00886830,0x00492a80
-3658,function,std::vector<OnlineRec68>::_Tidy,,0x00492ab0,0x00886860,0x00492ab0
+3658,function,std::vector<OnlineRec68>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x00492820 (ID 3649), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00492ab0,0x00886860,0x00492ab0
 3659,function,ECBase::ECDynArray<OnlineRec68>::RemoveAt,,0x00492ac0,0x00886870,0x00492ac0
-3660,function,std::vector<OnlineRec48>::_Tidy,,0x00492b70,0x00886780,0x00492b70
+3660,function,std::vector<OnlineRec48>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x004928E0 (ID 3652), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00492b70,0x00886780,0x00492b70
 3661,function,ECBase::ECDynArray<OnlineRec48>::RemoveAt,,0x00492b80,0x00886920,0x00492b80
 3662,function,,,0x00492c40,0x008869e0,0x00492c40
 3663,function,,,0x00492e2a,0x00886bca,0x00492e2a
@@ -3769,8 +3769,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3768,function,"std::_Uninitialized_copy<OfferTag*,OfferTag*,std::allocator<OfferTag>>",,0x0049bba0,0x0087cf80,0x0049bba0
 3769,function,std::vector<PrereqItem>::clear,,0x0049bbd0,0x004c38d0,0x0049bbd0
 3770,function,std::vector<PRCItem>::clear,,0x0049bc10,0x0069b0c0,0x0049bc10
-3771,function,std::vector<Offer>::_Tidy,,0x0049bc50,0x0087ce70,0x0049bc50
-3772,function,std::vector<OfferTag>::_Tidy,,0x0049bc60,0x0087cf00,0x0049bc60
+3771,function,std::vector<Offer>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x0049B930 (ID 3760), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x0049bc50,0x0087ce70,0x0049bc50
+3772,function,std::vector<OfferTag>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x0049B9F0 (ID 3763), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x0049bc60,0x0087cf00,0x0049bc60
 3773,function,ECBase::ECDynArray<OfferTag>::RemoveAt,,0x0049bc70,0x0087cfb0,0x0049bc70
 3774,function,,,0x0049bd30,0x0074b8e0,0x0049bd30
 3775,function,,,0x0049bef0,0x0087d070,0x0049bef0
@@ -3856,7 +3856,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3855,function,std::vector<AddInItem>::_Tidy,,0x004a1fd0,0x00882700,0x004a1fd0
 3856,function,"std::_Uninitialized_fill_n<AddInItem*,unsigned int,AddInItem,std::allocator<AddInItem>>",,0x004a2020,0x00882750,0x004a2020
 3857,function,"std::_Uninitialized_copy<AddInItem*,AddInItem*,std::allocator<AddInItem>>",,0x004a2060,0x00882790,0x004a2060
-3858,function,std::vector<AddInItem>::_Tidy,,0x004a2090,0x008827c0,0x004a2090
+3858,function,std::vector<AddInItem>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x004A1FD0 (ID 3855), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x004a2090,0x008827c0,0x004a2090
 3859,function,"std::vector<AddInItem>::erase(iterator,iterator)",,0x004a20a0,0x008827d0,0x004a20a0
 3860,function,,,0x004a2120,0x00882850,0x004a2120
 3861,function,,,0x004a2318,0x00882a48,0x004a2318
@@ -3905,7 +3905,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3904,function,DADM::ClearBusy,,0x004a54f0,0x00869120,0x004a54f0
 3905,function,DADM::BeginContentEvent,,0x004a5500,0x00869130,0x004a5500
 3906,function,DADM::MessageEntry::MessageEntry,,0x004a5530,0x00869160,0x004a5530
-3907,function,DADM::PacketBuffer::Free,,0x004a5590,0x008691c0,0x004a5590
+3907,function,DADM::PacketBuffer::Free,"No code of its own: one jmp to the function of the same name at 0x004A49C0 (ID 3878), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x004a5590,0x008691c0,0x004a5590
 3908,function,DADM::PacketBuffer::Allocate,,0x004a55a0,0x008691d0,0x004a55a0
 3909,function,DADM::PacketBuffer::Append,,0x004a55f0,0x00869220,0x004a55f0
 3910,function,DADM::PacketBuffer::ReadWString,,0x004a5660,0x00869290,0x004a5660
@@ -3920,7 +3920,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3919,function,DADM::RestartToInstall,,0x004a5c50,0x00869880,0x004a5c50
 3920,function,DADM::IsOfferKnown,,0x004a5df0,0x00869a20,0x004a5df0
 3921,function,OfferManager::HasOffer,,0x004a5f10,0x00869b40,0x004a5f10
-3922,function,DADM::RestartToInstall,,0x004a5fe0,0x00869c10,0x004a5fe0
+3922,function,DADM::RestartToInstall,"No code of its own: one jmp to the function of the same name at 0x004A5C50 (ID 3919), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x004a5fe0,0x00869c10,0x004a5fe0
 3923,function,DADM::IsOfferAvailable,,0x004a5ff0,0x00869c20,0x004a5ff0
 3924,function,DADM::CountMessagesOfKind,,0x004a61a0,0x00869dd0,0x004a61a0
 3925,function,ECBase::ECDynArray<unsigned int>::RemoveAt,,0x004a62e0,0x007f5c90,0x004a62e0
@@ -4032,7 +4032,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4031,function,"SmartData::Attribute<ECBase::ECDynArray<PRCInstalledContent*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x004abd70,0x00872dd0,0x004abd70
 4032,function,"SmartData::Attribute<ECBase::ECDynArray<PRCDownloadingContent*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x004abd90,0x00872df0,0x004abd90
 4033,function,"SmartData::Attribute<ECBase::ECDynArray<PRCOffer*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x004abdb0,0x00872e10,0x004abdb0
-4034,function,std::vector<std::wstring>::~vector,,0x004abdd0,0x00872e30,0x004abdd0
+4034,function,std::vector<std::wstring>::~vector,"No code of its own: one jmp to the function of the same name at 0x004072E0 (ID 225), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x004abdd0,0x00872e30,0x004abdd0
 4035,function,"SmartData::Attribute<ECBase::ECDynArray<ECBase::ECString>,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::~Attribute",,0x004abde0,0x00872e60,0x004abde0
 4036,function,"SmartData::Attribute<ECBase::ECDynArray<ECBase::ECString>,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x004abe50,0x00872ed0,0x004abe50
 4037,function,"std::equal<std::wstring const*,std::wstring const*>",,0x004abe60,0x00872ee0,0x004abe60
@@ -4297,7 +4297,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4296,function,TiXmlAttribute::Parse,,0x004b8430,0x00870100,0x004b8430
 4297,function,,,0x004b85d0,0x008702a0,0x004b85d0
 4298,function,,,0x004b8760,0x00870430,0x004b8760
-4299,function,ECPrivate::Pool::~Pool,,0x004b8ae0,0x0084c170,0x004b8ae0
+4299,function,ECPrivate::Pool::~Pool,"No code of its own: one jmp to the function of the same name at 0x004B93D0 (ID 4315), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x004b8ae0,0x0084c170,0x004b8ae0
 4300,function,ECMemory::GetCurrentPoolId,,0x004b8af0,0x0084c180,0x004b8af0
 4301,function,ECMemory::PushPoolId,,0x004b8b20,0x0084c1b0,0x004b8b20
 4302,function,ECMemory::PopPoolId,,0x004b8b60,0x0084c1f0,0x004b8b60
@@ -4707,7 +4707,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4706,function,ECFileAccess::DeleteTree,,0x004c9b10,0x0080af10,0x004c9b10
 4707,function,ECResMan::GetExtensionForType,,0x004c9e30,0x0080b230,0x004c9e30
 4708,function,ECFileAccess::Aliases::Clear,,0x004ca590,0x0080b990,0x004ca590
-4709,function,ECFileAccess::Aliases::Clear,,0x004ca610,0x0080ba10,0x004ca610
+4709,function,ECFileAccess::Aliases::Clear,"No code of its own: one jmp to the function of the same name at 0x004CA590 (ID 4708), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x004ca610,0x0080ba10,0x004ca610
 4710,function,ECFileAccess::Aliases::Add,,0x004ca620,0x0080ba20,0x004ca620
 4711,function,ECFileAccess::Aliases::Remove,,0x004ca710,0x0080bb10,0x004ca710
 4712,function,ECFileAccess::Aliases::Path,,0x004ca780,0x0080bb80,0x004ca780
@@ -4800,7 +4800,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4799,function,std::vector<Resource>::_Tidy,,0x004cd6c0,0x0080e9e0,0x004cd6c0
 4800,function,std::vector<Resource>::erase,,0x004cd710,0x0080ea30,0x004cd710
 4801,function,,,0x004cd780,0x0080eaa0,0x004cd780
-4802,function,std::vector<Resource>::_Tidy,,0x004cd7b0,0x0080ead0,0x004cd7b0
+4802,function,std::vector<Resource>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x004CD6C0 (ID 4799), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x004cd7b0,0x0080ead0,0x004cd7b0
 4803,function,,,0x004cd7c0,0x0080eae0,0x004cd7c0
 4804,function,,,0x004cd949,0x0080ec69,0x004cd949
 4805,function,,,0x004cd9d2,0x0080ecf2,0x004cd9d2
@@ -5020,7 +5020,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5019,function,Resources::Size,,0x004d57b0,0x008170f0,0x004d57b0
 5020,function,Resources::GetName,,0x004d57d0,0x00817110,0x004d57d0
 5021,function,Resources::Release,,0x004d5860,0x008171a0,0x004d5860
-5022,function,Resources::Release,,0x004d5890,0x008171d0,0x004d5890
+5022,function,Resources::Release,"No code of its own: one jmp to the function of the same name at 0x004D5860 (ID 5021), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x004d5890,0x008171d0,0x004d5890
 5023,function,Resources::Assign,,0x004d58a0,0x008171e0,0x004d58a0
 5024,function,Resources::Resources(const Resources&),,0x004d58e0,0x00817220,0x004d58e0
 5025,function,Resources::operator=,,0x004d5900,0x00817240,0x004d5900
@@ -5154,7 +5154,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5153,function,Gff4::GetTypeLayout,,0x004da8e0,0x0082d860,0x004da8e0
 5154,function,Gff4::File::NewBlock,,0x004da9b0,0x0082d930,0x004da9b0
 5155,function,Gff4::File::GetRootRef,,0x004daaa0,0x0082da20,0x004daaa0
-5156,function,Gff4::File::FindTemplateByLabel,,0x004daae0,0x0082da60,0x004daae0
+5156,function,Gff4::File::FindTemplateByLabel,"No code of its own: one jmp to the function of the same name at 0x004DA6B0 (ID 5149), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x004daae0,0x0082da60,0x004daae0
 5157,function,Gff4::File::GetTypeAlignmentFwd,,0x004daaf0,0x0082da70,0x004daaf0
 5158,function,Gff4::File::GetTypeSizeFwd,,0x004dab10,0x0082da90,0x004dab10
 5159,function,Gff4::File::FieldLess,,0x004dab30,0x0082dab0,0x004dab30
@@ -5388,7 +5388,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5387,function,std::vector<CTlkTable::TlkEntry>::erase,,0x004e4aa0,0x0082a7c0,0x004e4aa0
 5388,function,CTlkTable::EraseVectorElementAt<CTlkTable::TlkEntry>,,0x004e4b10,0x0082a830,0x004e4b10
 5389,function,CTlkTable::UnloadFile,,0x004e4bd0,0x0082a8f0,0x004e4bd0
-5390,function,std::vector<CTlkTable::TlkEntry>::_Tidy,,0x004e4c90,0x0082a9b0,0x004e4c90
+5390,function,std::vector<CTlkTable::TlkEntry>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x004E4A50 (ID 5386), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x004e4c90,0x0082a9b0,0x004e4c90
 5391,function,CTlkTable::~CTlkTable,,0x004e4ca0,0x0082a9c0,0x004e4ca0
 5392,function,CTlkTable::GetClassInfo,,0x004e4d90,0x0082aab0,0x004e4d90
 5393,function,CTlkTable::`scalar deleting destructor',,0x004e4dd0,0x0082aaf0,0x004e4dd0
@@ -5561,7 +5561,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5560,function,ECResMan::TaskPool::NewReadRequestTask,,0x004ea2b0,0x0083edc0,0x004ea2b0
 5561,function,ECResMan::ReadRequestTask::CreateForFile,,0x004ea310,0x0083ee20,0x004ea310
 5562,function,ECResMan::ReadRequestTask::CreateForPath,,0x004ea350,0x0083ee60,0x004ea350
-5563,function,Messages::DataStream::DataStream,,0x004ea390,0x007cde40,0x004ea390
+5563,function,Messages::DataStream::~DataStream,,0x004ea390,0x007cde40,0x004ea390
 5564,function,Messages::DataStream::`scalar deleting destructor',,0x004ea3a0,0x007cde50,0x004ea3a0
 5565,function,Messages::InputStringDataStream::~InputStringDataStream,,0x004ea3c0,0x00833350,0x004ea3c0
 5566,function,Messages::InputStringDataStream::ReadUInt8,,0x004ea430,0x008333c0,0x004ea430
@@ -5628,7 +5628,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5627,function,Gff4::ReadWString,,0x004ebd00,0x004bf590,0x004ebd00
 5628,function,Gff4::ReadFloat,,0x004ebd30,0x004b5a30,0x004ebd30
 5629,function,Gff4::ReadByte,,0x004ebd40,0x004b5a40,0x004ebd40
-5630,function,C2DASource::C2DASource,,0x004ebd50,0x00839dd0,0x004ebd50
+5630,function,C2DASource::~C2DASource,,0x004ebd50,0x00839dd0,0x004ebd50
 5631,function,C2DASource::`scalar deleting destructor',,0x004ebd60,0x00839de0,0x004ebd60
 5632,function,M2DA::GetStringByRowId,,0x004ebd80,0x00839e00,0x004ebd80
 5633,function,M2DA::GetFloatByRowId,,0x004ebdd0,0x00839e50,0x004ebdd0
@@ -5787,7 +5787,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5786,function,"std::vector<std::pair<int,int>>::operator=",,0x004f3540,0x007e0c80,0x004f3540
 5787,function,"std::vector<std::pair<int,int>>::resize",,0x004f3670,0x0040a7b0,0x004f3670
 5788,function,ECBase::ECDynArray<Math::VectorUA4f>::ECDynArray(const ECBase::ECDynArray<Math::VectorUA4f>&),,0x004f3720,0x00761fa0,0x004f3720
-5789,function,Graphics::MaterialPassStateArray::Clear,,0x004f3780,0x007e0e20,0x004f3780
+5789,function,Graphics::MaterialPassStateArray::Clear,"No code of its own: one jmp to the function of the same name at 0x004F3500 (ID 5785), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x004f3780,0x007e0e20,0x004f3780
 5790,function,Graphics::MaterialStateOverride::~MaterialStateOverride,,0x004f3790,0x007e0e30,0x004f3790
 5791,function,,,0x004f37f0,0x00466db0,0x004f37f0
 5792,function,"std::map<unsigned int,Multithreading::SynchSafePointer>::_Erase",,0x004f3830,0x007e0e90,0x004f3830
@@ -6030,7 +6030,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6029,function,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialShader>>::_Destroy,,0x004fd590,0x007eb450,0x004fd590
 6030,function,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialShader>>::_Tidy,,0x004fd5c0,0x007eb480,0x004fd5c0
 6031,function,Multithreading::SynchSafePointer<Graphics::MaterialShader>::SynchSafePointer(const Multithreading::SynchSafePointer<Graphics::MaterialShader>&),,0x004fd610,0x007eb4d0,0x004fd610
-6032,function,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialShader>>::_Tidy,,0x004fd640,0x007eb500,0x004fd640
+6032,function,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialShader>>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x004FD5C0 (ID 6030), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x004fd640,0x007eb500,0x004fd640
 6033,function,Graphics::MaterialShaderManager::~MaterialShaderManager,,0x004fd650,0x007eb510,0x004fd650
 6034,function,std::fill<Multithreading::SynchSafePointer<Graphics::MaterialShader>>,,0x004fd6c0,0x007eb580,0x004fd6c0
 6035,function,std::_Uninit_copy<Multithreading::SynchSafePointer<Graphics::MaterialShader>>,,0x004fd6f0,0x007eb5b0,0x004fd6f0
@@ -7223,9 +7223,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7222,function,GraphicsStructures::SpeedTreeWorld::GetWindByFraction,,0x0052d060,0x00733ee0,0x0052d060
 7223,function,GraphicsStructures::SpeedTreeWorld::WindProxy::UpdateWind,,0x0052d0e0,0x00733f60,0x0052d0e0
 7224,function,GraphicsStructures::SpeedTreeModel::LodMeshArray::GetAt,,0x0052d100,0x00733f80,0x0052d100
-7225,function,Physics::ISimulatable::ISimulatable,,0x0052d120,0x00733fa0,0x0052d120
+7225,function,Physics::ISimulatable::~ISimulatable,,0x0052d120,0x00733fa0,0x0052d120
 7226,function,Physics::ISimulatable::`scalar deleting destructor',,0x0052d130,0x00733fb0,0x0052d130
-7227,function,Physics::ISimulatableNode::ISimulatableNode,,0x0052d150,0x00733fd0,0x0052d150
+7227,function,Physics::ISimulatableNode::~ISimulatableNode,,0x0052d150,0x00733fd0,0x0052d150
 7228,function,Physics::ShapePrototype::ShapePrototype,,0x0052d160,0x004b09a0,0x0052d160
 7229,function,Physics::ShapePrototype::~ShapePrototype,,0x0052d250,0x004b0a90,0x0052d250
 7230,function,Physics::ShapePrototype::`scalar deleting destructor',,0x0052d2c0,0x004b0bc0,0x0052d2c0
@@ -7516,7 +7516,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7515,function,"std::_Uninit_fill_n<std::vector<?>*,unsigned int,std::vector<?>>",,0x0053b1b0,0x007424c0,0x0053b1b0
 7516,function,Catch_All@0053b21b,,0x0053b21b,0x0074252b,0x0053b21b
 7517,function,std::vector<std::vector<?>>::erase,,0x0053b250,0x0068e0b0,0x0053b250
-7518,function,std::vector<std::vector<?>>::_Tidy,,0x0053b2c0,0x0068c900,0x0053b2c0
+7518,function,std::vector<std::vector<?>>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x0053B160 (ID 7514), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x0053b2c0,0x0068c900,0x0053b2c0
 7519,function,"std::_Uninit_fill_n<std::vector<?>*,unsigned int,std::vector<?>>",,0x0053b2d0,0x007425d0,0x0053b2d0
 7520,function,"std::_Uninit_copy<std::vector<?>*,std::vector<?>*>",,0x0053b310,0x00742610,0x0053b310
 7521,function,,,0x0053b340,0x00742640,0x0053b340
@@ -8066,7 +8066,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8065,function,GraphicsStructures::UnlockParticleVertexPools,,0x0054fff0,0x00770a80,0x0054fff0
 8066,function,GraphicsStructures::ResetParticleVertexPools,,0x00550010,0x00770aa0,0x00550010
 8067,function,GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::SpriteParticle>::GetKind,,0x00550030,0x009002a0,0x00550030
-8068,function,GraphicsStructures::ObjectNode::UpdateWorldTransform,,0x00550040,0x00770ac0,0x00550040
+8068,function,GraphicsStructures::ObjectNode::UpdateWorldTransform,"No code of its own: one jmp to the function of the same name at 0x0055E9D0 (ID 8348), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00550040,0x00770ac0,0x00550040
 8069,function,GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::SpriteParticle>::GetMemoryFootprint,,0x00550050,0x00770ca0,0x00550050
 8070,function,GraphicsStructures::ObjectNode::ReleaseDrawBatch,,0x00550090,0x00770af0,0x00550090
 8071,function,GraphicsStructures::ObjectNodeEmitterSprite<GraphicsStructures::SpriteParticle>::GetVertexStride,,0x005500c0,0x00770ad0,0x005500c0
@@ -8181,9 +8181,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8180,function,Multithreading::SynchSafePointerList<GraphicsStructures::Mesh>::`scalar deleting destructor',,0x005556c0,0x00770840,0x005556c0
 8181,function,GraphicsStructures::Mesh::Mesh,,0x005556f0,0x00770870,0x005556f0
 8182,function,GraphicsStructures::Mesh::`scalar deleting destructor',,0x005557c0,0x00770940,0x005557c0
-8183,function,GraphicsStructures::GraphicsStructuresManager::Create,,0x005557f0,0x00750930,0x005557f0
-8184,function,GraphicsStructures::GraphicsStructuresManager::Destroy,,0x00555800,0x00750940,0x00555800
-8185,function,GraphicsStructures::GraphicsStructuresManager::Get,,0x00555810,0x00750950,0x00555810
+8183,function,GraphicsStructures::GraphicsStructuresManager::Create,"No code of its own: one jmp to the function of the same name at 0x0057B250 (ID 8955), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x005557f0,0x00750930,0x005557f0
+8184,function,GraphicsStructures::GraphicsStructuresManager::Destroy,"No code of its own: one jmp to the function of the same name at 0x00572510 (ID 8756), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00555800,0x00750940,0x00555800
+8185,function,GraphicsStructures::GraphicsStructuresManager::Get,"No code of its own: one jmp to the function of the same name at 0x00572500 (ID 8755), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00555810,0x00750950,0x00555810
 8186,function,GraphicsStructures::CreateWithRenderDevice,,0x00555820,0x00750960,0x00555820
 8187,function,GraphicsStructures::GetPrimitiveMaterial,,0x00555860,0x00759380,0x00555860
 8188,function,GraphicsStructures::SetPrimitiveColor,,0x00555890,0x007593b0,0x00555890
@@ -8342,7 +8342,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8341,function,GraphicsStructures::ObjectNode::SetOwner,,0x0055e6c0,0x00777d00,0x0055e6c0
 8342,function,GraphicsStructures::ObjectNode::BakeWorldPlacement,,0x0055e730,0x00777d70,0x0055e730
 8343,function,GraphicsStructures::ObjectNode::AttachToObject,,0x0055e860,0x00777ea0,0x0055e860
-8344,function,GraphicsStructures::ObjectNode::FindNodeByName,,0x0055e8d0,0x00777f10,0x0055e8d0
+8344,function,GraphicsStructures::ObjectNode::FindNodeByName,"No code of its own: one jmp to the function of the same name at 0x0055E280 (ID 8335), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x0055e8d0,0x00777f10,0x0055e8d0
 8345,function,GraphicsStructures::ObjectNode::FindSimulatableNodeByName,,0x0055e8e0,0x00777f20,0x0055e8e0
 8346,function,GraphicsStructures::ObjectNode::SetRoom,,0x0055e900,0x00777f40,0x0055e900
 8347,function,GraphicsStructures::ObjectNode::UpdateBindPose,,0x0055e950,0x00777f90,0x0055e950
@@ -8412,7 +8412,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8411,function,std::vector<?>::_Tidy,,0x00561430,0x0085a8e0,0x00561430
 8412,function,std::vector<?>::erase,,0x00561480,0x007abe50,0x00561480
 8413,function,"std::uninitialized_copy<?*,?*>",,0x005614f0,0x00788160,0x005614f0
-8414,function,std::vector<?>::_Tidy,,0x00561520,0x0088bcb0,0x00561520
+8414,function,std::vector<?>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x00561430 (ID 8411), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00561520,0x0088bcb0,0x00561520
 8415,function,,,0x00561530,0x00788660,0x00561530
 8416,function,,,0x00561708,0x00788838,0x00561708
 8417,function,,,0x005617b3,0x007888e3,0x005617b3
@@ -8491,7 +8491,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8490,function,GraphicsStructures::ObjectNodeCloth::GetKind,,0x00564940,0x008abaf0,0x00564940
 8491,function,Graphics::IRenderableNode::GetRoomId,,0x00564950,0x007b1ff0,0x00564950
 8492,function,GraphicsStructures::ObjectNodeCloth::GetBoundingSphere`adjustor{384}',,0x00564970,0x00751f20,0x00564970
-8493,function,Math::Matrix4x4f::GetIdentity,,0x00564980,0x00751f30,0x00564980
+8493,function,Math::Matrix4x4f::GetIdentity,"No code of its own: one jmp to the function of the same name at 0x004D38E0 (ID 4934), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00564980,0x00751f30,0x00564980
 8494,function,GraphicsStructures::ObjectNodeCloth::GetKind`adjustor{384}',,0x00564990,0x00751f40,0x00564990
 8495,function,"std::_Sort<std::pair<unsigned int,unsigned int>*,int>",,0x005649a0,0x00751f60,0x005649a0
 8496,function,GraphicsStructures::ObjectNodeCloth::`scalar deleting destructor',,0x00564a90,0x00752050,0x00564a90
@@ -8560,14 +8560,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8559,function,"std::_Uninit_copy<GraphicsStructures::ModelExport*,GraphicsStructures::ModelExport*>",,0x00567400,0x0075ee40,0x00567400
 8560,function,std::_Sort_heap<GraphicsStructures::ExportValue*>,,0x00567430,0x0075ee70,0x00567430
 8561,function,"std::_Sort<?*,int>",,0x00567490,0x0075ef70,0x00567490
-8562,function,std::vector<GraphicsStructures::ModelExport>::_Tidy,,0x005675d0,0x0075f0b0,0x005675d0
+8562,function,std::vector<GraphicsStructures::ModelExport>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x00567340 (ID 8557), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x005675d0,0x0075f0b0,0x005675d0
 8563,function,,,0x005675e0,0x0075f0c0,0x005675e0
 8564,function,,,0x005677b6,0x0075f296,0x005677b6
 8565,function,,,0x00567863,0x0075f343,0x00567863
 8566,function,"std::_Sort<GraphicsStructures::ExportValue*,int>",,0x00567900,0x0075f3e0,0x00567900
 8567,function,GraphicsStructures::SortVector<?>,,0x00567a50,0x0075f530,0x00567a50
 8568,function,"std::vector<GraphicsStructures::ModelExport>::resize(unsigned int,GraphicsStructures::ModelExport)",,0x00567ab0,0x0075f590,0x00567ab0
-8569,function,std::vector<int>::resize,,0x00567bd0,0x0075f7d0,0x00567bd0
+8569,function,std::vector<int>::resize,"No code of its own: one jmp to the function of the same name at 0x004A66D0 (ID 3930), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00567bd0,0x0075f7d0,0x00567bd0
 8570,function,GraphicsStructures::ObjectBlueprint::FindNodeByName,,0x00567be0,0x0075f7e0,0x00567be0
 8571,function,ECBase::ECDynArray<GraphicsStructures::ModelExport>::ECDynArray,,0x00567d10,0x0075f910,0x00567d10
 8572,function,Multithreading::SynchSafePointerList<GraphicsStructures::ObjectBlueprint>::SynchSafePointerList,,0x00567d80,0x0075f980,0x00567d80
@@ -8760,7 +8760,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8759,function,GraphicsStructures::GraphicsStructuresManager::GetRenderable,,0x005725b0,0x00752b20,0x005725b0
 8760,function,GraphicsStructures::ReplaceFirstMeshNode,,0x005725d0,0x00752b40,0x005725d0
 8761,function,Graphics::SetMaterialGlobalFlag,,0x00572610,0x00752b80,0x00572610
-8762,function,Graphics::GetMaterialGlobalFlag,,0x00572620,0x00752b90,0x00572620
+8762,function,Graphics::GetMaterialGlobalFlag,"No code of its own: one jmp to the function of the same name at 0x00503130 (ID 6175), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00572620,0x00752b90,0x00572620
 8763,function,Stub::DestructTwoStrings_0x00_0x2C,,0x00572630,0x00710c30,0x00572630
 8764,function,Stub::CopyConstructTwoStrings_0x00_0x2C,,0x00572690,0x00710cb0,0x00572690
 8765,function,std::_Tree<?>::_Max,,0x00572700,0x00752ba0,0x00572700
@@ -9035,7 +9035,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9034,function,GraphicsStructures::MeshXMLBuilder::ReadAttributes,,0x0057f780,0x00780ea0,0x0057f780
 9035,function,GraphicsStructures::MeshChunkXMLBuilder::ReadAttributes,,0x0057f7f0,0x00780f10,0x0057f7f0
 9036,function,GraphicsStructures::MeshChunkXMLBuilder::EndChildElement,,0x0057f910,0x00781030,0x0057f910
-9037,function,XMLParser2::IBuilder::IBuilder,,0x0057f970,0x004b7200,0x0057f970
+9037,function,XMLParser2::IBuilder::~IBuilder,,0x0057f970,0x004b7200,0x0057f970
 9038,function,ECBase::ECDynArray<?>::At,,0x0057f980,0x00781090,0x0057f980
 9039,function,Gff4::FlatRef::GetFieldRefById,,0x0057f9b0,0x007810c0,0x0057f9b0
 9040,function,GraphicsStructures::MeshChunkXMLBuilder::WriteBounds,,0x0057fa10,0x00781120,0x0057fa10
@@ -9246,7 +9246,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9245,function,GraphicsStructures::ObjectNodeTerrainBlueprint::ObjectNodeTerrainBlueprint,,0x0058c460,0x00786f50,0x0058c460
 9246,function,GraphicsStructures::ObjectNodeTerrainBlueprint::~ObjectNodeTerrainBlueprint,,0x0058c4e0,0x00786fd0,0x0058c4e0
 9247,function,GraphicsStructures::ObjectNodeTerrainBlueprint::`scalar deleting destructor',,0x0058c570,0x00787060,0x0058c570
-9248,function,GraphicsStructures::SpawnVolume::SpawnVolume,,0x0058c590,0x00787080,0x0058c590
+9248,function,GraphicsStructures::SpawnVolume::~SpawnVolume,,0x0058c590,0x00787080,0x0058c590
 9249,function,GraphicsStructures::SpawnVolume::`scalar deleting destructor',,0x0058c5a0,0x00787090,0x0058c5a0
 9250,function,GraphicsStructures::ObjectNodeCrustBlueprint::GetHookID,,0x0058c5c0,0x007870c0,0x0058c5c0
 9251,function,GraphicsStructures::ObjectNodeCrustBlueprint::`scalar deleting destructor',,0x0058c5d0,0x007870d0,0x0058c5d0
@@ -9293,7 +9293,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9292,function,,,0x0058d710,0x007883c0,0x0058d710
 9293,function,,,0x0058d8bb,0x0078856b,0x0058d8bb
 9294,function,,,0x0058d8c7,0x00788577,0x0058d8c7
-9295,function,std::vector<GraphicsStructures::ClothAttachment>::_Tidy,,0x0058d9b0,0x007881c0,0x0058d9b0
+9295,function,std::vector<GraphicsStructures::ClothAttachment>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x0058D420 (ID 9288), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x0058d9b0,0x007881c0,0x0058d9b0
 9296,function,,,0x0058d9c0,0x00788970,0x0058d9c0
 9297,function,,,0x0058dbad,0x00788b5d,0x0058dbad
 9298,function,,,0x0058dc69,0x00788c19,0x0058dc69
@@ -9471,7 +9471,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9470,function,GraphicsStructures::PHYToXMLBuilder::GetXml,,0x005acd50,0x007ac8d0,0x005acd50
 9471,function,GraphicsStructures::PHYToXMLBuilder::CreateElement,,0x005acdc0,0x007ac940,0x005acdc0
 9472,function,GraphicsStructures::PHYToXMLBuilder::SetAttribute,,0x005ace50,0x007ac9d0,0x005ace50
-9473,function,GraphicsStructures::PHYBuilder::PHYBuilder,,0x005acec0,0x007aca40,0x005acec0
+9473,function,GraphicsStructures::PHYBuilder::~PHYBuilder,,0x005acec0,0x007aca40,0x005acec0
 9474,function,GraphicsStructures::PHYBuilder::`scalar deleting destructor',,0x005aced0,0x007aca50,0x005aced0
 9475,function,GraphicsStructures::PHYToXMLBuilder::FormatVec3,,0x005acef0,0x007aca70,0x005acef0
 9476,function,GraphicsStructures::PHYToXMLBuilder::FormatVec4,,0x005acf30,0x007acab0,0x005acf30
@@ -9641,7 +9641,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9640,function,GraphicsStructures::ObjectNodeWeapontrail::~ObjectNodeWeapontrail,,0x005b0e20,0x007b0a20,0x005b0e20
 9641,function,Graphics::IRenderableNode::GetModelWorldMatrix,,0x005b0ee0,0x007b0ae0,0x005b0ee0
 9642,function,Stub::ReturnTwentyOne,,0x005b0ef0,0x007b0af0,0x005b0ef0
-9643,function,GraphicsStructures::ObjectNode::GetName,,0x005b0f00,0x007b2010,0x005b0f00
+9643,function,GraphicsStructures::ObjectNode::GetName,"No code of its own: one jmp to the function of the same name at 0x0055D760 (ID 8310), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x005b0f00,0x007b2010,0x005b0f00
 9644,function,GraphicsStructures::ObjectNodeWeapontrail::`scalar deleting destructor'`adjustor{4}',,0x005b0f10,0x007b0b20,0x005b0f10
 9645,function,Stub::ReturnTwentyOne`adjustor{384}',,0x005b0f20,0x007b0b30,0x005b0f20
 9646,function,GraphicsStructures::ObjectNodeWeapontrail::`scalar deleting destructor'`adjustor{8}',,0x005b0f30,0x007b0b40,0x005b0f30
@@ -9875,7 +9875,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9874,function,"std::vector<std::pair<std::wstring,std::wstring>>::erase","erase(first, last) of pairs of two wstrings (0x38 bytes)",0x005b7ff0,0x004c3860,0x005b7ff0
 9875,function,WStringMap<?>::Find,"finds a wide-string key and returns its value (node +0x28), or 0",0x005b8060,0x00720650,0x005b8060
 9876,function,SoundManager::GetProjectGroupProperty,"(projectName, groupName, propertyName, int *out) ret 0x10, al result. Finds projectName in the SoundProjectMap at this+0x94 (std::map find 0x00A5E9F0) and, when it is loaded, returns the project's CContentBank_FMOD::GetGroupProperty (vftable 0x00AFF278 slot +0x14, 0x005C2290) with (group, property, out); false when the project is not loaded. It loads nothing: SoundManager::LoadProject 0x005BA220 does, and its one caller CCCreature::ForScript_SetSoundSet calls that first (0x006BD182), then this with L""VO"", L""Disable2DAProbabilities"" (0x006BD1E1). Was LoadSoundSet. Readings: lib-agent-2 and addr-lib-agent, 2026-11-11.",0x005b80b0,0x007206a0,0x005b80b0
-9877,function,WStringMap<?>::ClearAndDeleteValues,,0x005b8120,0x00720710,0x005b8120
+9877,function,WStringMap<?>::ClearAndDeleteValues,"No code of its own: one jmp to the function of the same name at 0x005B7BC0 (ID 9871), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x005b8120,0x00720710,0x005b8120
 9878,function,,,0x005b8130,0x00720720,0x005b8130
 9879,function,,,0x005b8160,0x00720750,0x005b8160
 9880,function,std::vector<?>::~vector,,0x005b8190,0x005315d0,0x005b8190
@@ -10160,7 +10160,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10159,function,std::vector<SmartData::TokenPath>::push_back,,0x005c6bd0,0x00469a50,0x005c6bd0
 10160,function,SmartData::TokenManager::ResolvePath,,0x005c6c80,0x00469c60,0x005c6c80
 10161,function,SmartData::TokenManager::Find,,0x005c6e80,0x00469e60,0x005c6e80
-10162,function,SmartData::TokenManager::ResolvePath,,0x005c6f10,0x00469ef0,0x005c6f10
+10162,function,SmartData::TokenManager::ResolvePath,"No code of its own: one jmp to the function of the same name at 0x005C6C80 (ID 10160), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x005c6f10,0x00469ef0,0x005c6f10
 10163,function,SmartData::TokenManager::ListRootMemberNames,,0x005c6f20,0x00469f00,0x005c6f20
 10164,function,SmartData::TokenManager::GetTokenText,,0x005c7000,0x00469fe0,0x005c7000
 10165,function,SmartData::TokenManager::ReplaceTokens,,0x005c7050,0x0046a030,0x005c7050
@@ -10224,7 +10224,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10223,function,EC::ChunkManager::LoadSkydome,,0x005c88e0,0x006fb520,0x005c88e0
 10224,function,EC::ChunkManager::LoadTrees,,0x005c89b0,0x006fb5f0,0x005c89b0
 10225,function,IAreaLayout::FindRoomById,,0x005c8c50,0x006fb890,0x005c8c50
-10226,function,Core::PointerArray::Free,,0x005c8ca0,0x006fb8e0,0x005c8ca0
+10226,function,Core::PointerArray::Free,"No code of its own: one jmp to the function of the same name at 0x005C8650 (ID 10219), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x005c8ca0,0x006fb8e0,0x005c8ca0
 10227,function,ECBase::ECDynArray<EC::ChunkViewer*>::At,,0x005c8cb0,0x006fb8f0,0x005c8cb0
 10228,function,EC::RoomBounds::RoomBounds,,0x005c8ce0,0x006fb920,0x005c8ce0
 10229,function,EC::ChunkManager::NewRoom,,0x005c8d10,0x006fb9a0,0x005c8d10
@@ -10477,7 +10477,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10476,function,LoadModuleSkipUnauthorizedMessage::GetType,,0x005d4a00,0x004bf110,0x005d4a00
 10477,function,LoadModuleSkipUnauthorizedMessage::InitType,,0x005d4a30,0x004bf140,0x005d4a30
 10478,function,CClientExoApp::StaticClassInfo,,0x005d4a50,0x004bf160,0x005d4a50
-10479,function,GameModeData::GameModeData,,0x005d4ab0,0x004bf260,0x005d4ab0
+10479,function,GameModeData::~GameModeData,,0x005d4ab0,0x004bf260,0x005d4ab0
 10480,function,GUIDialogResultMessage::Create,,0x005d4ac0,0x004bf410,0x005d4ac0
 10481,function,LoadModuleSkipUnauthorizedMessage::Create,,0x005d4b30,0x004bf480,0x005d4b30
 10482,function,"std::pair<std::wstring,std::wstring>::~pair",,0x005d4b90,0x004eb970,0x005d4b90
@@ -10773,7 +10773,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10772,function,ECBase::ECDynArray<SmartData::Attribute<int>>::ECDynArray(const ECBase::ECDynArray<SmartData::Attribute<int>>&),,0x005e34e0,0x004cfeb0,0x005e34e0
 10773,function,"ECBase::ECDynArray<SmartData::Attribute<int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::operator=",,0x005e3540,0x004cff10,0x005e3540
 10774,function,"ECBase::ECDynArray<SmartData::Attribute<ECBase::ECString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ECDynArray",,0x005e3560,0x004cff30,0x005e3560
-10775,function,ECBase::ECDynArray<SmartData::Attribute<ECBase::ECString>>::resize,,0x005e35c0,0x004cff90,0x005e35c0
+10775,function,ECBase::ECDynArray<SmartData::Attribute<ECBase::ECString>>::resize,"No code of its own: one jmp to the function of the same name at 0x005E1070 (ID 10766), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x005e35c0,0x004cff90,0x005e35c0
 10776,function,"ECBase::ECDynArray<SmartData::Attribute<ECBase::ECString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::Clear",,0x005e35d0,0x004cffa0,0x005e35d0
 10777,function,ECBase::ECDynArray<?>::ECDynArray,,0x005e36c0,0x004d0090,0x005e36c0
 10778,function,ECBase::ECDynArray<?>::Clear,,0x005e3720,0x004d00f0,0x005e3720
@@ -10798,7 +10798,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10797,function,CClientOptions::BuildResolutionChoices,,0x005e40f0,0x004d0d80,0x005e40f0
 10798,function,CClientOptions::CopyToSaved,,0x005e4880,0x004d1510,0x005e4880
 10799,function,CClientOptions::CopyTabFrom,,0x005e49c0,0x004d1650,0x005e49c0
-10800,function,std::vector<ECBase::ECDynArray<ECBase::ECString>>::_Tidy,,0x005e4b10,0x004d17a0,0x005e4b10
+10800,function,std::vector<ECBase::ECDynArray<ECBase::ECString>>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x005E3CB0 (ID 10787), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x005e4b10,0x004d17a0,0x005e4b10
 10801,function,"SmartData::ArrayFromText<ECBase::ECDynArray<SmartData::Attribute<int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>>",,0x005e4b20,0x004d17b0,0x005e4b20
 10802,function,"std::_Copy_opt<ECBase::ECDynArray<ECBase::ECString>*,ECBase::ECDynArray<ECBase::ECString>*>",,0x005e4b90,0x004d1820,0x005e4b90
 10803,function,"std::_Copy_backward_opt<ECBase::ECDynArray<ECBase::ECString>*,ECBase::ECDynArray<ECBase::ECString>*>",,0x005e4bd0,0x004d1860,0x005e4bd0
@@ -10908,7 +10908,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10907,function,std::vector<?>::erase,,0x005f1b20,0x004df030,0x005f1b20
 10908,function,"std::uninitialized_copy<?*,?*>",,0x005f1b90,0x004df0a0,0x005f1b90
 10909,function,AddInsManager::ResetWorkingEntry,,0x005f1bc0,0x004df0d0,0x005f1bc0
-10910,function,std::vector<?>::_Tidy,,0x005f1f00,0x004df410,0x005f1f00
+10910,function,std::vector<?>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x005F19E0 (ID 10904), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x005f1f00,0x004df410,0x005f1f00
 10911,function,AddInsManager::EraseVectorElementAt<?>,,0x005f1f10,0x004df420,0x005f1f10
 10912,function,AddInXmlEntry::~AddInXmlEntry,,0x005f1fc0,0x004df4d0,0x005f1fc0
 10913,function,AddInRecord::operator<,,0x005f2170,0x004df680,0x005f2170
@@ -10966,7 +10966,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10965,function,"std::uninitialized_copy<AddInRecord*,AddInRecord*>",,0x005f7e70,0x004e54a0,0x005f7e70
 10966,function,"std::uninitialized_copy<AddInXmlEntry*,AddInXmlEntry*>",,0x005f7ea0,0x004e54d0,0x005f7ea0
 10967,function,std::_Sort_heap<AddInRecord*>,,0x005f7ed0,0x004e5500,0x005f7ed0
-10968,function,std::vector<AddInXmlEntry>::_Tidy,,0x005f7f60,0x004e5590,0x005f7f60
+10968,function,std::vector<AddInXmlEntry>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x005F7DE0 (ID 10963), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x005f7f60,0x004e5590,0x005f7f60
 10969,function,,,0x005f7f70,0x004e55a0,0x005f7f70
 10970,function,,,0x005f8152,0x004e5782,0x005f8152
 10971,function,,,0x005f8201,0x004e5831,0x005f8201
@@ -11840,7 +11840,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 11839,function,GUI::GUIScene::RegisterClass,,0x0061c9b0,0x005f8f40,0x0061c9b0
 11840,function,GUI::GUIScene::GUIScene,,0x0061c9d0,0x005f8f60,0x0061c9d0
 11841,function,GUI::GUIScene::`scalar deleting destructor'`adjustor{8}',,0x0061cad0,0x005f9070,0x0061cad0
-11842,function,GUI::GUIScene::GetClassInfo,,0x0061cae0,0x005f9080,0x0061cae0
+11842,function,GUI::GUIScene::GetClassInfo,"No code of its own: one jmp to the function of the same name at 0x00619AF0 (ID 11733), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x0061cae0,0x005f9080,0x0061cae0
 11843,function,GUI::GUIScene::Clone,,0x0061caf0,0x005f9260,0x0061caf0
 11844,function,"SmartData::Attribute<ECBase::ECDynArray<GUIISOEntry*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x0061cb60,0x0062eaa0,0x0061cb60
 11845,function,GUI::GUILogin::GUILogin,,0x0061cbe0,0x0062eb20,0x0061cbe0
@@ -12059,7 +12059,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12058,function,Notifications::FindByType,,0x00628500,0x006a2970,0x00628500
 12059,function,Alert::`scalar deleting destructor',,0x00628570,0x006a29e0,0x00628570
 12060,function,std::vector<unsigned int>::back,,0x00628590,0x004b7550,0x00628590
-12061,function,std::vector<void*>::_Tidy,,0x006285e0,0x0068c680,0x006285e0
+12061,function,std::vector<void*>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x0046C760 (ID 2883), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x006285e0,0x0068c680,0x006285e0
 12062,function,ECBase::ECDynArray<unsigned int>::Back,,0x006285f0,0x004b7760,0x006285f0
 12063,function,AlertPool::Release,,0x00628650,0x006a2a00,0x00628650
 12064,function,AlertPool::ReleaseAll,,0x00628770,0x006a2b20,0x00628770
@@ -12843,7 +12843,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12842,function,CVirtualMachineCommands::GetGameDefinedStructureName,,0x0064ddd0,0x00539fe0,0x0064ddd0
 12843,function,ShowPartyPickerMessage::GetType,,0x0064dea0,0x00509c10,0x0064dea0
 12844,function,ShowPartyPickerMessage::InitType,,0x0064dee0,0x00509c50,0x0064dee0
-12845,function,Messages::Message::~Message,,0x0064df40,0x00539ef0,0x0064df40
+12845,function,Messages::Message::~Message,"No code of its own: one jmp to the function of the same name at 0x004D20A0 (ID 4884), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x0064df40,0x00539ef0,0x0064df40
 12846,function,ScriptCommand::PRINTINTEGER,,0x0064df50,0x0053a0b0,0x0064df50
 12847,function,ScriptCommand::PRINTFLOAT,,0x0064dfa0,0x0053a100,0x0064dfa0
 12848,function,ScriptCommand::PRINTSTRING,,0x0064e0f0,0x0053a250,0x0064e0f0
@@ -13568,7 +13568,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13567,function,RoomMask::IntersectsRoomMask,,0x0067a400,0x005664f0,0x0067a400
 13568,function,RoomMask::FromIndex,,0x0067a440,0x00566530,0x0067a440
 13569,function,CResARE::CResARE,,0x0067a4c0,0x005665b0,0x0067a4c0
-13570,function,CResGFF::~CResGFF,,0x0067a560,0x00566650,0x0067a560
+13570,function,CResGFF::~CResGFF,"No code of its own: one jmp to the function of the same name at 0x00A36130 (ID 32711), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x0067a560,0x00566650,0x0067a560
 13571,function,OnMinimapScaleChangedMessage::GetType,,0x0067a570,0x00566660,0x0067a570
 13572,function,OnMinimapScaleChangedMessage::InitType,,0x0067a5a0,0x00566690,0x0067a5a0
 13573,function,IKDNode::`scalar deleting destructor',,0x0067a5c0,0x005666b0,0x0067a5c0
@@ -13808,7 +13808,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13807,function,,,0x00688a70,0x00574880,0x00688a70
 13808,function,"Map<unsigned long long,std::vector<unsigned int>>::~Map",,0x00688c70,0x00574a80,0x00688c70
 13809,function,CCArea::CCArea,,0x00688cb0,0x00574ac0,0x00688cb0
-13810,function,CCArea::GetClassInfo,,0x006898c0,0x005756d0,0x006898c0
+13810,function,CCArea::GetClassInfo,"No code of its own: one jmp to the function of the same name at 0x0067A5E0 (ID 13574), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x006898c0,0x005756d0,0x006898c0
 13811,function,CCArea::GetObjectType,,0x006898d0,0x005756e0,0x006898d0
 13812,function,Stub::GetDword_0x334,,0x006898e0,0x005756f0,0x006898e0
 13813,function,CCArea::AsEffectsHolder,,0x006898f0,0x00575700,0x006898f0
@@ -14208,7 +14208,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14207,function,CCObject::GetObjectTimer,,0x0069a0c0,0x0058b3d0,0x0069a0c0
 14208,function,Stub::GetDword_0xE8,,0x0069a0d0,0x0058b3e0,0x0069a0d0
 14209,function,CCObject::MeleeRingSpot,,0x0069a0e0,0x0058b3f0,0x0069a0e0
-14210,function,CCObject::GetModelObject,,0x0069a100,0x0058b410,0x0069a100
+14210,function,CCObject::GetModelObject,"No code of its own: one jmp to the function of the same name at 0x006958D0 (ID 14098), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x0069a100,0x0058b410,0x0069a100
 14211,function,CCObject::SetMouseOver,,0x0069a110,0x0058b420,0x0069a110
 14212,function,CCObject::RunEventScript`adjustor{112}',,0x0069a130,0x0058b440,0x0069a130
 14213,function,CCObject::~CCObject,,0x0069a140,0x0058b450,0x0069a140
@@ -14353,9 +14353,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14352,function,CCCreature::HasEquippableSlotMatch,,0x0069f110,0x005902a0,0x0069f110
 14353,function,CCCreature::InPartyByte,,0x0069f140,0x005902d0,0x0069f140
 14354,function,CCCreature::UpdateApproachTimeout,,0x0069f150,0x005902e0,0x0069f150
-14355,function,CCObject::UpdateModelLoads,,0x0069f170,0x00590300,0x0069f170
+14355,function,CCObject::UpdateModelLoads,"No code of its own: one jmp to the function of the same name at 0x00695260 (ID 14066), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x0069f170,0x00590300,0x0069f170
 14356,function,CCCreature::SetModelLodLevel,,0x0069f180,0x00590310,0x0069f180
-14357,function,CCObject::SetModelLodMask,,0x0069f1d0,0x00590360,0x0069f1d0
+14357,function,CCObject::SetModelLodMask,"No code of its own: one jmp to the function of the same name at 0x00695200 (ID 14063), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x0069f1d0,0x00590360,0x0069f1d0
 14358,function,CCObject::SetPlotDestination,,0x0069f1e0,0x00657d80,0x0069f1e0
 14359,function,CCCreature::RefreshInputEffectGroups,,0x0069f200,0x00590370,0x0069f200
 14360,function,ClampReach60,,0x0069f330,0x005904a0,0x0069f330
@@ -14766,7 +14766,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14765,function,"SmartData::Attribute<ECBase::ECDynArray<EffectGUIInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::GetMemberName",,0x006af1a0,0x005a04a0,0x006af1a0
 14766,function,"SmartData::Attribute<ECBase::ECDynArray<EffectGUIInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::CreateMemberIterator",,0x006af1c0,0x005a04c0,0x006af1c0
 14767,function,SmartData::PointerArrayMemberIteratorImpl<ECBase::ECDynArray<EffectGUIInfo*>>::GetValue,,0x006af1f0,0x005a04f0,0x006af1f0
-14768,function,"std::vector<SmartData::Attribute<unsigned int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::_Tidy",,0x006af230,0x00693600,0x006af230
+14768,function,"std::vector<SmartData::Attribute<unsigned int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::_Tidy","No code of its own: one jmp to the function of the same name at 0x00768F20 (ID 18350), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x006af230,0x00693600,0x006af230
 14769,function,"SmartData::Attribute<ECBase::ECDynArray<CCreatureAttribute*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x006af240,0x005a0560,0x006af240
 14770,function,"SmartData::Attribute<ECBase::ECDynArray<ClassRank*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x006af260,0x005a0580,0x006af260
 14771,function,"SmartData::Attribute<ECBase::ECDynArray<EffectGUIInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x006af280,0x005a05a0,0x006af280
@@ -14815,7 +14815,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14814,function,,,0x006b08e0,0x005a2160,0x006b08e0
 14815,function,CCCreature::HandleMessage_ShowAbilityHeaderMessage,,0x006b0980,0x005a2200,0x006b0980
 14816,function,"stdext::hash_map<std::wstring,Resources>::~hash_map",,0x006b0a40,0x005a22c0,0x006b0a40
-14817,function,std::vector<TintBlock>::_Tidy,,0x006b0a80,0x005a1b80,0x006b0a80
+14817,function,std::vector<TintBlock>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x006AF8F0 (ID 14783), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x006b0a80,0x005a1b80,0x006b0a80
 14818,function,"std::vector<SmartData::Attribute<short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::operator=",,0x006b0a90,0x005a2340,0x006b0a90
 14819,function,"std::vector<SmartData::Attribute<short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::resize",,0x006b0be0,0x005a25c0,0x006b0be0
 14820,function,"std::vector<SmartData::Attribute<short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::insert",,0x006b0cd0,0x005a26b0,0x006b0cd0
@@ -15642,8 +15642,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15641,function,"std::_Make_heap<CodexEntry**,int,CodexEntry*,CodexEntryNameLess>",,0x006f0640,0x005e20c0,0x006f0640
 15642,function,"Journal::MapTryFind<ECBase::ECString,ECBase::ECDynArray<ECBase::ECString>>",,0x006f0680,0x005e2100,0x006f0680
 15643,function,"std::pair<ECBase::ECString const,ECBase::ECDynArray<ECBase::ECString>>::~pair",,0x006f06e0,0x005e2160,0x006f06e0
-15644,function,"std::vector<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::_Tidy",,0x006f0740,0x005e21c0,0x006f0740
-15645,function,"std::vector<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::_Tidy",,0x006f0750,0x005e21d0,0x006f0750
+15644,function,"std::vector<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::_Tidy","No code of its own: one jmp to the function of the same name at 0x006EF2B0 (ID 15593), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x006f0740,0x005e21c0,0x006f0740
+15645,function,"std::vector<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::_Tidy","No code of its own: one jmp to the function of the same name at 0x006F0740 (ID 15644), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x006f0750,0x005e21d0,0x006f0750
 15646,function,,,0x006f0760,0x005e2230,0x006f0760
 15647,function,,,0x006f092c,0x005e23fc,0x006f092c
 15648,function,,,0x006f09d7,0x005e24a7,0x006f09d7
@@ -15678,7 +15678,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15677,function,"std::pair<ECBase::ECString,ECBase::ECDynArray<ECBase::ECString>>::pair(const std::pair<ECBase::ECString,ECBase::ECDynArray<ECBase::ECString>>&)",,0x006f1580,0x005e2f50,0x006f1580
 15678,function,"SmartData::Attribute<ECBase::ECDynArray<ChanterEntry*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x006f15e0,0x005e2fb0,0x006f15e0
 15679,function,"ECBase::ECDynArray<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ECDynArray",,0x006f1660,0x005e3030,0x006f1660
-15680,function,"ECBase::ECDynArray<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::resize",,0x006f16c0,0x005e3090,0x006f16c0
+15680,function,"ECBase::ECDynArray<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::resize","No code of its own: one jmp to the function of the same name at 0x006F12C0 (ID 15672), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x006f16c0,0x005e3090,0x006f16c0
 15681,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x006f16d0,0x005e30a0,0x006f16d0
 15682,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Set",,0x006f1750,0x005e3120,0x006f1750
 15683,function,"SmartData::Attribute<ECBase::ECDynArray<CodexEntry*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x006f1790,0x005e3160,0x006f1790
@@ -15845,7 +15845,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15844,function,ArmyControl::RegisterHandler_UsePlotActionMessage,,0x006fc730,0x005ee420,0x006fc730
 15845,function,ArmyControl::UpdateCooldowns,,0x006fc7b0,0x005ee4a0,0x006fc7b0
 15846,function,ArmyControl::FindArmyInfoById,,0x006fca50,0x005ee740,0x006fca50
-15847,function,ArmyControl::FindArmyInfoById,,0x006fcad0,0x005ee7c0,0x006fcad0
+15847,function,ArmyControl::FindArmyInfoById,"No code of its own: one jmp to the function of the same name at 0x006FCA50 (ID 15846), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x006fcad0,0x005ee7c0,0x006fcad0
 15848,function,ArmyControl::WriteToSave,,0x006fcae0,0x005ee7d0,0x006fcae0
 15849,function,ArmyInfo::ArmyInfo,,0x006fcbd0,0x005ee8c0,0x006fcbd0
 15850,function,ArmyInfo::`scalar deleting destructor',,0x006fcf10,0x005eec00,0x006fcf10
@@ -16470,7 +16470,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16469,function,GameModeCharGen::RegisterClass,,0x00719940,0x0060aaa0,0x00719940
 16470,function,GetAbilityType,"(ability, hint) -> ability type. A non-zero hint is returned unread; for hint 0 it reads table 1 (rules) column 0xE1A8F4EA (CRC-32 of 'abilitytype') of the ability row and returns 0 when the row or cell is missing (0x00719990..0x007199BE). Callers in CCCreatureStats pass 0 (AddAbility 0x0071EAF6).",0x00719990,0x00617930,0x00719990
 16471,function,CCCreatureStats::GetAbilityVector,,0x007199d0,0x00617970,0x007199d0
-16472,function,CCCreatureStats::GetAbilityVector,,0x007199f0,0x00617990,0x007199f0
+16472,function,CCCreatureStats::GetAbilityVector,"No code of its own: one jmp to the function of the same name at 0x007199D0 (ID 16471), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x007199f0,0x00617990,0x007199f0
 16473,function,CCCreatureStats::NotifyPropertyChanged,,0x00719a00,0x006179a0,0x00719a00
 16474,function,CCCreatureStats::SetAbilityGuiAttribute,,0x00719a40,0x006179e0,0x00719a40
 16475,function,CCCreatureStats::GetAbilityGuiInfo,,0x00719a70,0x00617a10,0x00719a70
@@ -17266,7 +17266,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17265,function,GUI::GUIConversation::OnShow,,0x00733840,0x0063f6a0,0x00733840
 17266,function,GUI::GUIConversation::RegisterClass,,0x00733870,0x0063f6d0,0x00733870
 17267,function,GUI::GUIConversation::Clone,,0x007338b0,0x0063f710,0x007338b0
-17268,function,GUI::GUIScene::~GUIScene,,0x00733930,0x0063f790,0x00733930
+17268,function,GUI::GUIScene::~GUIScene,"No code of its own: one jmp to the function of the same name at 0x00A559E0 (ID 33295), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00733930,0x0063f790,0x00733930
 17269,function,GUI::GUILevelUp::~GUILevelUp,,0x00733940,0x0063f7a0,0x00733940
 17270,function,GUI::GUILevelUp::`scalar deleting destructor'`adjustor{8}',,0x00733960,0x0063f7e0,0x00733960
 17271,function,GUI::GUILevelUp::`scalar deleting destructor'`adjustor{28}',,0x00733970,0x0063f7c0,0x00733970
@@ -17675,7 +17675,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17674,function,Commands::PlaySoundStart,,0x00742ad0,0x0064e9e0,0x00742ad0
 17675,function,Commands::ExecuteEffectStart,,0x00742b70,0x0064ea80,0x00742b70
 17676,function,Commands::FlyStart,,0x00742c30,0x0064eb40,0x00742c30
-17677,function,CCommandController::CCommandController,,0x00742ce0,0x0064ebf0,0x00742ce0
+17677,function,CCommandController::~CCommandController,,0x00742ce0,0x0064ebf0,0x00742ce0
 17678,function,CCommandController::`scalar deleting destructor',,0x00742cf0,0x0064ec00,0x00742cf0
 17679,function,EffectMatcher::VfxIs,,0x00742d10,0x0064ec20,0x00742d10
 17680,function,MovementController::ClearMoveTarget,"Clears the move target: moveTargetId = -1, aimAtStrikePoint and hasMoveTarget = 0, moveTargetPoint = (0,0,0); EndShared does the same inline",0x00742d30,0x0064ec40,0x00742d30
@@ -17821,7 +17821,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17820,function,SaveGame::MakeAppearancePoolTemplate,,0x0074a0e0,0x00656020,0x0074a0e0
 17821,function,SaveGame::AddAppearanceHeroFields,,0x0074a170,0x006560b0,0x0074a170
 17822,function,SaveGame::MakeAppearanceHeroTemplate,,0x0074a1a0,0x006560e0,0x0074a1a0
-17823,function,TwoDimArrayCache::Entry::Entry,,0x0074a230,0x00656170,0x0074a230
+17823,function,TwoDimArrayCache::Entry::~Entry,,0x0074a230,0x00656170,0x0074a230
 17824,function,TwoDimArrayCache::Entry::`scalar deleting destructor',,0x0074a240,0x00656180,0x0074a240
 17825,function,AppearanceCache::AppearanceEntry::AppearanceEntry,,0x0074a260,0x006561a0,0x0074a260
 17826,function,AppearanceCache::CreateEntry,,0x0074a320,0x00656260,0x0074a320
@@ -18161,7 +18161,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18160,function,ItemLocation::GetItemCount,,0x00761220,0x0069f9a0,0x00761220
 18161,function,ItemLocation::ContainsItemOrFalse,,0x00761230,0x0069f9b0,0x00761230
 18162,function,ItemLocation::GetItemAt,,0x00761260,0x0069f9e0,0x00761260
-18163,function,ItemLocation::GetItemCount,,0x00761270,0x0069f9f0,0x00761270
+18163,function,ItemLocation::GetItemCount,"No code of its own: one jmp to the function of the same name at 0x00761220 (ID 18160), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00761270,0x0069f9f0,0x00761270
 18164,function,ItemLocation::GetItemAttributeByIndex,,0x00761280,0x0069fa00,0x00761280
 18165,function,ItemLocation::CanAdd,,0x007612a0,0x0069fa20,0x007612a0
 18166,function,ItemLocation::CanRemove,,0x007612b0,0x0069fa30,0x007612b0
@@ -18472,7 +18472,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18471,function,GameModeCombat::`scalar deleting destructor',,0x0076e880,0x00685fc0,0x0076e880
 18472,function,GameModeCombat::Clone,,0x0076e8a0,0x00685fe0,0x0076e8a0
 18473,function,GameModeCombat::GameModeCombat,,0x0076e920,0x00686060,0x0076e920
-18474,function,Stub::NoOp,,0x0076ea10,0x00686150,0x0076ea10
+18474,function,Stub::NoOp,"No code of its own: one jmp to the function of the same name at 0x005BDCF0 (ID 9942), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x0076ea10,0x00686150,0x0076ea10
 18475,function,Vector3::ProjectOnto,,0x0076ea20,0x00686160,0x0076ea20
 18476,function,CameraControllerExplore::SetPitchLockForView,,0x0076ea90,0x006861d0,0x0076ea90
 18477,function,CameraControllerExplore::GetViewBlend,,0x0076eab0,0x006861f0,0x0076eab0
@@ -19476,7 +19476,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19475,function,std::vector<EquipmentSet>::_Tidy,,0x00797ff0,0x006696f0,0x00797ff0
 19476,function,DirtyFlaggable::~DirtyFlaggable,,0x00798040,0x00669740,0x00798040
 19477,function,DirtyFlaggable::`scalar deleting destructor',,0x00798060,0x00669760,0x00798060
-19478,function,std::vector<EquipmentSet>::_Tidy,,0x007980a0,0x006697a0,0x007980a0
+19478,function,std::vector<EquipmentSet>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x00797FF0 (ID 19475), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x007980a0,0x006697a0,0x007980a0
 19479,function,Equipment::~Equipment,,0x007980b0,0x006697b0,0x007980b0
 19480,function,Equipment::GetItemByIndex,,0x00798150,0x00669850,0x00798150
 19481,function,Equipment::`scalar deleting destructor'`adjustor{8}',,0x00798160,0x00669860,0x00798160
@@ -19715,8 +19715,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19714,function,EffectsManager::EffectsManager,,0x0079f120,0x00670680,0x0079f120
 19715,function,EffectsManager::~EffectsManager,,0x0079f140,0x006706a0,0x0079f140
 19716,function,EffectsHolder::TryStartEffectAnimation,"__cdecl (holder, effect), returns bool. False unless the holder's slot +4 returns something; false if the holder's current top effect has a higher animation priority than this one, or if this one isn't IsSync. Otherwise tail-calls the holder's slot +0x68 (CCObject::IsNotDeathblowing on objects).",0x0079f180,0x006706e0,0x0079f180
-19717,function,EffectsHolder::AddEffectListField,,0x0079f1e0,0x00670740,0x0079f1e0
-19718,function,EffectsHolder::HasEffectListField,,0x0079f1f0,0x00670750,0x0079f1f0
+19717,function,EffectsHolder::AddEffectListField,"No code of its own: one jmp to the function of the same name at 0x00A64CE0 (ID 33630), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x0079f1e0,0x00670740,0x0079f1e0
+19718,function,EffectsHolder::HasEffectListField,"No code of its own: one jmp to the function of the same name at 0x00A64630 (ID 33618), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x0079f1f0,0x00670750,0x0079f1f0
 19719,function,SEffectsHolder::WriteToSave,,0x0079f200,0x00670760,0x0079f200
 19720,function,SEffectsHolder::ReadFromSave,,0x0079f220,0x00670780,0x0079f220
 19721,function,EffectsHolder::GetTopEffectAnimation,,0x0079f240,0x006707a0,0x0079f240
@@ -19804,7 +19804,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19803,function,CSSubActionHandler::HasCreatureAndSubAction,,0x007a2240,0x006737b0,0x007a2240
 19804,function,CSSubActionHandler::HasData,,0x007a2260,0x006737d0,0x007a2260
 19805,function,CSSubActionHandler::ClampRangeFloats,,0x007a2270,0x006737e0,0x007a2270
-19806,function,CSubActionController::CSubActionController,,0x007a2300,0x00673870,0x007a2300
+19806,function,CSubActionController::~CSubActionController,,0x007a2300,0x00673870,0x007a2300
 19807,function,CSubActionController::`scalar deleting destructor',,0x007a2310,0x00673880,0x007a2310
 19808,function,std::_Tree_const_iterator<?>::_Inc,,0x007a2330,0x0068f660,0x007a2330
 19809,function,MovementController::HasAlternatePath,,0x007a23a0,0x006738a0,0x007a23a0
@@ -20026,7 +20026,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20025,function,GUI::GUIPaperdoll::CommandCreateCreature::Finish,,0x007b1680,0x0068f370,0x007b1680
 20026,function,GUI::GUIPaperdoll::CommandCreateMorph::Finish,,0x007b16f0,0x0068f3e0,0x007b16f0
 20027,function,GUI::GUIPaperdoll::RefreshTokens,,0x007b1720,0x0068f410,0x007b1720
-20028,function,GraphicsStructures::GraphicsStructuresManager::Get,,0x007b1730,0x0068f420,0x007b1730
+20028,function,GraphicsStructures::GraphicsStructuresManager::Get,"No code of its own: one jmp to the function of the same name at 0x00555810 (ID 8185), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x007b1730,0x0068f420,0x007b1730
 20029,function,CharGen::PreloadRims,,0x007b1740,0x0068f430,0x007b1740
 20030,function,CharGen::WaitForRims,,0x007b17e0,0x0068f4d0,0x007b17e0
 20031,function,CharGen::ReleaseRims,,0x007b1880,0x0068f570,0x007b1880
@@ -20137,7 +20137,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20136,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::GUIPaperdoll::CharData*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::CreateMemberIterator",,0x007b52a0,0x00693280,0x007b52a0
 20137,function,SmartData::PointerArrayMemberIteratorImpl<ECBase::ECDynArray<GUI::GUIPaperdoll::CharData*>>::GetValue,,0x007b52d0,0x006932b0,0x007b52d0
 20138,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::GUIPaperdoll::CharData*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x007b5310,0x006933e0,0x007b5310
-20139,function,"std::vector<std::pair<std::wstring,int>>::_Tidy",,0x007b5330,0x0085c720,0x007b5330
+20139,function,"std::vector<std::pair<std::wstring,int>>::_Tidy","No code of its own: one jmp to the function of the same name at 0x007B4F80 (ID 20122), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x007b5330,0x0085c720,0x007b5330
 20140,function,std::vector<GUI::HeadPreset::MaterialValue>::erase,,0x007b5340,0x00693410,0x007b5340
 20141,function,std::vector<GUI::HeadPreset::MaterialVector>::erase,,0x007b53a0,0x00693470,0x007b53a0
 20142,function,std::vector<GUI::HeadPreset::Texture>::erase,,0x007b5400,0x006934d0,0x007b5400
@@ -20235,7 +20235,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20234,function,"std::_Copy_backward_opt<GUI::HeadPreset::ModelWeight*,GUI::HeadPreset::ModelWeight*>",,0x007bbf40,0x0069a1b0,0x007bbf40
 20235,function,GUI::GUIPaperdoll::SetTextureHandle,,0x007bbf80,0x0069a1f0,0x007bbf80
 20236,function,GUI::GUIPaperdoll::SetMode,,0x007bbff0,0x0069a260,0x007bbff0
-20237,function,std::vector<GUI::HeadPreset::ModelWeight>::_Tidy,,0x007bc010,0x0069a390,0x007bc010
+20237,function,std::vector<GUI::HeadPreset::ModelWeight>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x007BAF20 (ID 20222), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x007bc010,0x0069a390,0x007bc010
 20238,function,"std::_Copy_backward<GUI::HeadPreset::ModelWeight*,GUI::HeadPreset::ModelWeight*>",,0x007bc020,0x0069a3a0,0x007bc020
 20239,function,GUI::HeadPreset::~HeadPreset,,0x007bc080,0x0069a400,0x007bc080
 20240,function,GUI::GUIPaperdoll::SetCreature,,0x007bc110,0x0069a490,0x007bc110
@@ -20468,7 +20468,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20467,function,"SmartData::Attribute<ECBase::ECDynArray<MapLocation*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::CreateMemberIterator",,0x007c6cd0,0x006ad9a0,0x007c6cd0
 20468,function,SmartData::PointerArrayMemberIteratorImpl<ECBase::ECDynArray<MapLocation*>>::GetValue,,0x007c6d00,0x006ad9d0,0x007c6d00
 20469,function,"SmartData::Attribute<ECBase::ECDynArray<MapLocation*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x007c6d40,0x006ada10,0x007c6d40
-20470,function,std::vector<MapTrail>::_Tidy,,0x007c6d60,0x006ada30,0x007c6d60
+20470,function,std::vector<MapTrail>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x007C6B30 (ID 20461), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x007c6d60,0x006ada30,0x007c6d60
 20471,function,"std::vector<MapTrailPoint,std::allocator<MapTrailPoint>>::operator=",,0x007c6d70,0x006ada40,0x007c6d70
 20472,function,MapPathSearch::Initialize,,0x007c6f00,0x006adbd0,0x007c6f00
 20473,function,std::vector<MapTrailPoint>::operator=,,0x007c7050,0x006add20,0x007c7050
@@ -20709,7 +20709,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20708,function,ECBase::ECDynArray<EC::Cutscene::Actor::Action*>::At,,0x007cee30,0x006b61d0,0x007cee30
 20709,function,DoubleArray::Resize,,0x007cee60,0x006b6200,0x007cee60
 20710,function,std::_Vector_const_iterator<?>::operator!=,,0x007cef80,0x007609f0,0x007cef80
-20711,function,WStringArray::Clear,,0x007cefb0,0x006b6320,0x007cefb0
+20711,function,WStringArray::Clear,"No code of its own: one jmp to the function of the same name at 0x007CECE0 (ID 20706), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x007cefb0,0x006b6320,0x007cefb0
 20712,function,std::_Copy<EC.Cutscene.Actor.ClipRecord*>,,0x007cefc0,0x006b6330,0x007cefc0
 20713,function,"std::_Fill<EC.Cutscene.Actor.ClipRecord*,EC.Cutscene.Actor.ClipRecord>",,0x007cf020,0x006b6390,0x007cf020
 20714,function,"std::_Fill<EC::Cutscene::Actor::BlendGadRecord*,EC::Cutscene::Actor::BlendGadRecord>",,0x007cf070,0x006b63e0,0x007cf070
@@ -21012,7 +21012,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21011,function,"std::map<unsigned int,CutscenePlayer::ActorDependencyList>::_Tidy","Erases every node (0x007D9B70), deletes the head and zeroes head and size; the unwind funclet 0x00ABAFF8 of the map constructor 0x007DF5D0 jumps here.",0x007decf0,0x006c6140,0x007decf0
 21012,function,,,0x007ded30,0x006c6180,0x007ded30
 21013,function,,,0x007deee0,0x006c6330,0x007deee0
-21014,function,std::vector<CutscenePlayer::BindRecord>::_Tidy,,0x007df0e0,0x006c6db0,0x007df0e0
+21014,function,std::vector<CutscenePlayer::BindRecord>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x007DE860 (ID 21004), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x007df0e0,0x006c6db0,0x007df0e0
 21015,function,"std::_Uninit_copy<CutscenePlayer::BindRecord*,CutscenePlayer::BindRecord*,std::allocator<CutscenePlayer::BindRecord> >",,0x007df0f0,0x006c6530,0x007df0f0
 21016,function,CutscenePlayer::ApplyHenchmanActions,,0x007df120,0x006c6560,0x007df120
 21017,function,EC::Cutscene::Actor::ActionJumpToCamera::Update,,0x007df2f0,0x006c6730,0x007df2f0
@@ -21411,7 +21411,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21410,function,"std::_Uninit_fill_n<MapLocationConnection *,unsigned int,MapLocationConnection>",,0x007f72e0,0x006e3fe0,0x007f72e0
 21411,function,std::vector<MapLocationConnection>::erase,,0x007f7320,0x006e4020,0x007f7320
 21412,function,"std::_Uninit_copy<MapLocationConnection *,MapLocationConnection *>",,0x007f73a0,0x006e40a0,0x007f73a0
-21413,function,std::vector<MapLocationConnection>::_Tidy,,0x007f73d0,0x006e40d0,0x007f73d0
+21413,function,std::vector<MapLocationConnection>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x007F7290 (ID 21409), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x007f73d0,0x006e40d0,0x007f73d0
 21414,function,MapLocation::~MapLocation,,0x007f73e0,0x006e40e0,0x007f73e0
 21415,function,MapLocation::`scalar deleting destructor',,0x007f7570,0x006e4270,0x007f7570
 21416,function,MapLocation::`scalar deleting destructor',,0x007f7580,0x006e4280,0x007f7580
@@ -21987,7 +21987,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21986,function,Animation::ModelAnimationTree::EntryVector::Back,,0x008143f0,0x004bcee0,0x008143f0
 21987,function,Animation::ControllerEntryVector::Back,,0x00814460,0x004bcfc0,0x00814460
 21988,function,std::vector<Animation::ModelAnimationTree::Entry>::_Tidy,,0x008144d0,0x004bd090,0x008144d0
-21989,function,std::vector<Animation::ModelAnimationTree::Entry>::_Tidy,,0x00814520,0x004bd0e0,0x00814520
+21989,function,std::vector<Animation::ModelAnimationTree::Entry>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x008144D0 (ID 21988), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00814520,0x004bd0e0,0x00814520
 21990,function,Animation::ModelAnimationTree::~ModelAnimationTree,,0x00814530,0x004bd660,0x00814530
 21991,function,std::vector<Animation::BlendTreeNode>::insert,,0x008145a0,0x004bd7b0,0x008145a0
 21992,function,Animation::ModelAnimationTree::`scalar deleting destructor',,0x00814650,0x004bd940,0x00814650
@@ -22281,7 +22281,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22280,function,NxUserRaycastReport::~NxUserRaycastReport,,0x00821110,0x004978d0,0x00821110
 22281,function,Physics::PhysicsScene::RaycastAnySegment,,0x00821120,0x004978e0,0x00821120
 22282,function,Physics::PhysicsScene::RaycastAnyRay,,0x008212f0,0x00497ab0,0x008212f0
-22283,function,Physics::IPhysicsScene::IPhysicsScene,,0x00821410,0x00497bd0,0x00821410
+22283,function,Physics::IPhysicsScene::~IPhysicsScene,,0x00821410,0x00497bd0,0x00821410
 22284,function,Physics::IPhysicsScene::`scalar deleting destructor',,0x00821420,0x00497be0,0x00821420
 22285,function,Physics::PhysicsScene::AddImpulseToAllActors,,0x00821440,0x00497c00,0x00821440
 22286,function,Physics::GroupsMaskEquals,,0x00821520,0x00497ce0,0x00821520
@@ -22629,7 +22629,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22628,function,Physics::PointInPlaneJointPrototype::Clone,,0x00836e80,0x00a64dc0,0x00836e80
 22629,function,Physics::PointOnLineJointPrototype::Clone,,0x00836f30,0x00a64e70,0x00836f30
 22630,function,Physics::PrismaticJointPrototype::Clone,,0x00836fe0,0x00a64f20,0x00836fe0
-22631,function,Physics::IPhysicsWorld::IPhysicsWorld,,0x00837090,0x004a85b0,0x00837090
+22631,function,Physics::IPhysicsWorld::~IPhysicsWorld,,0x00837090,0x004a85b0,0x00837090
 22632,function,Physics::IPhysicsWorld::`scalar deleting destructor',,0x008370a0,0x004a85c0,0x008370a0
 22633,function,Physics::PhysicsWorld::BeginUpdate,,0x008370c0,0x004a85e0,0x008370c0
 22634,function,Physics::PhysicsWorld::StepScene,,0x008370f0,0x004a8610,0x008370f0
@@ -22718,11 +22718,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22717,function,Physics::PhysicsNxActorVariableSet<NxQuat>::Apply,,0x00838ad0,0x004ae800,0x00838ad0
 22718,function,Physics::PhysicsNxActorVariableSet<NxMat34>::Apply,,0x00838c50,0x004ae980,0x00838c50
 22719,function,Physics::TriggerEventObj::`scalar deleting destructor',,0x00838ca0,0x004aeba0,0x00838ca0
-22720,function,Physics::IPhysicsTrigger::IPhysicsTrigger,,0x00838cc0,0x004ae9d0,0x00838cc0
+22720,function,Physics::IPhysicsTrigger::~IPhysicsTrigger,,0x00838cc0,0x004ae9d0,0x00838cc0
 22721,function,Physics::IPhysicsTrigger::`scalar deleting destructor',,0x00838cd0,0x004ae9e0,0x00838cd0
 22722,function,Physics::TriggerEventObjImp::ReadShape,,0x00838cf0,0x004aea00,0x00838cf0
 22723,function,Physics::PhysicsTriggerReport::PhysicsTriggerReport,,0x00838dc0,0x004aead0,0x00838dc0
-22724,function,Physics::TriggerEventObj::TriggerEventObj,,0x00838dd0,0x004aeae0,0x00838dd0
+22724,function,Physics::TriggerEventObj::~TriggerEventObj,,0x00838dd0,0x004aeae0,0x00838dd0
 22725,function,Physics::PhysicsTrigger::PhysicsTrigger,,0x00838de0,0x004aeaf0,0x00838de0
 22726,function,Physics::PhysicsTrigger::~PhysicsTrigger,,0x00838e00,0x004aeb10,0x00838e00
 22727,function,,,0x00838e60,0x004aeb70,0x00838e60
@@ -22780,7 +22780,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22779,function,Physics::MemoryReadStream::readDouble,,0x0083a5d0,0x004b04d0,0x0083a5d0
 22780,function,Physics::MemoryReadStream::readBuffer,,0x0083a5f0,0x004b04f0,0x0083a5f0
 22781,function,Physics::Joint::GetActors,,0x0083a620,0x00a64fd0,0x0083a620
-22782,function,Physics::IPhysicsJoint::IPhysicsJoint,,0x0083a680,0x00a65030,0x0083a680
+22782,function,Physics::IPhysicsJoint::~IPhysicsJoint,,0x0083a680,0x00a65030,0x0083a680
 22783,function,Physics::IPhysicsJoint::`scalar deleting destructor',,0x0083a690,0x00a65040,0x0083a690
 22784,function,Physics::Joint::Joint,,0x0083a6b0,0x00a65060,0x0083a6b0
 22785,function,Physics::Joint::~Joint,,0x0083a6d0,0x00a65080,0x0083a6d0
@@ -22834,7 +22834,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22833,function,_tr_flush_block,,0x0083ff40,0x00a5e810,0x0083ff40
 22834,function,inflate_fast,,0x00840150,0x00a5c340,0x00840150
 22835,function,inflate_table,,0x00840610,0x00a5c800,0x00840610
-22836,function,Console::IConsole::IConsole,,0x00840b00,0x004913f0,0x00840b00
+22836,function,Console::IConsole::~IConsole,,0x00840b00,0x004913f0,0x00840b00
 22837,function,Console::IConsole::`scalar deleting destructor',,0x00840b10,0x00491400,0x00840b10
 22838,function,Console::Console::ClearInput,,0x00840b30,0x00491420,0x00840b30
 22839,function,Console::Console::EchoInput,,0x00840b50,0x00491440,0x00840b50
@@ -23052,7 +23052,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23051,function,FacialAnimation::FacialAnimationManager::Allocate,,0x0084c600,0x00482870,0x0084c600
 23052,function,FacialAnimation::FacialAnimationManager::AllocateDebug,,0x0084c620,0x00482890,0x0084c620
 23053,function,FacialAnimation::FacialAnimationManager::Free,,0x0084c630,0x004828a0,0x0084c630
-23054,function,OC3Ent::Face::FxFree,,0x0084c650,0x004828c0,0x0084c650
+23054,function,OC3Ent::Face::FxFree,"No code of its own: one jmp to the function of the same name at 0x00A085C0 (ID 31456), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x0084c650,0x004828c0,0x0084c650
 23055,function,OC3Ent::Face::FxWString::WidenChars,,0x0084c660,0x004828d0,0x0084c660
 23056,function,OC3Ent::Face::FxWString::FxWString,,0x0084c6a0,0x00482910,0x0084c6a0
 23057,function,OC3Ent::Face::FxString::~FxString,,0x0084c6f0,0x009e4670,0x0084c6f0
@@ -23141,7 +23141,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23140,function,XMLParser2::IXMLParser::GetExpatParser,,0x00851610,0x00a57b80,0x00851610
 23141,function,XMLParser2::IXMLParser::Parse,,0x00851620,0x00a57b90,0x00851620
 23142,function,XMLParser2::DestroyXMLParser,,0x00851640,0x00a57bb0,0x00851640
-23143,function,XMLParser2::IXMLParser::IXMLParser,,0x00851660,0x00a57bd0,0x00851660
+23143,function,XMLParser2::IXMLParser::~IXMLParser,,0x00851660,0x00a57bd0,0x00851660
 23144,function,XMLParser2::IXMLParser::`scalar deleting destructor',,0x00851670,0x00a57be0,0x00851670
 23145,function,XMLParser2::XMLParser::XMLParser,,0x00851690,0x00a57c00,0x00851690
 23146,function,XMLParser2::XMLParser::~XMLParser,,0x00851710,0x00a57c80,0x00851710
@@ -23533,7 +23533,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23532,function,D3DDriver::D3DGraphicsCapabilitiesDriver::`scalar deleting destructor',Slot 0: runs the destructor body 0x00868060 and frees the object when bit 0 of the flag is set.,0x008680c0,0x0046dec0,0x008680c0
 23533,function,D3DDriver::GetPrimitiveCount,"Primitive count from an element count and a D3DPRIMITIVETYPE (point n, line list n/2, strip n-1, triangle list n/3, strip and fan n-2).",0x008680e0,0x0046dee0,0x008680e0
 23534,retired,,,,,
-23535,function,Graphics::GraphicsDriver::GraphicsDriver,Constructor: stores the vftable 0xB2DF1C and nothing else (the base driver has no members); called by the Direct3D and queued drivers' constructors.,0x00868140,0x0046dfa0,0x00868140
+23535,function,Graphics::GraphicsDriver::~GraphicsDriver,Constructor: stores the vftable 0xB2DF1C and nothing else (the base driver has no members); called by the Direct3D and queued drivers' constructors.,0x00868140,0x0046dfa0,0x00868140
 23536,function,Graphics::GraphicsDriver::LoadMeshFromXFile,,0x00868150,0x0046dfb0,0x00868150
 23537,function,Graphics::GraphicsDriver::`scalar deleting destructor',Slot 0: sets the base vftable and frees the object when bit 0 of the flag is set.,0x00868160,0x0046dfc0,0x00868160
 23538,function,Graphics::SwapChain::~SwapChain,Sets the class vptr only; reached from the unwind funclets 0x00AC26A0 and 0x00AC26D0.,0x00868180,0x0046dfe0,0x00868180
@@ -23896,7 +23896,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23895,function,D3DDriver::D3DVertexShader::`scalar deleting destructor',Runs ~D3DVertexShader and frees the object if the delete flag is set.,0x008743e0,0x0047b180,0x008743e0
 23896,function,D3DDriver::D3DVertexShader::D3DVertexShader,,0x00874400,0x0047b1a0,0x00874400
 23897,function,D3DDriver::D3DVertexShader::D3DVertexShader,,0x00874870,0x0047b610,0x00874870
-23898,function,D3DDriver::D3DTextureMixIn::D3DTextureMixIn,Sets the mixin vftable (0x00B2E84C); reached from the four texture constructors.,0x008749c0,0x0047b760,0x008749c0
+23898,function,D3DDriver::D3DTextureMixIn::~D3DTextureMixIn,Sets the mixin vftable (0x00B2E84C); reached from the four texture constructors.,0x008749c0,0x0047b760,0x008749c0
 23899,function,D3DDriver::D3DTexture2D::BindToStage,Sets texture stage a1 to the device texture through D3DStateCache::SetTexture (0x0086EB90).,0x008749d0,0x0047b770,0x008749d0
 23900,function,Graphics::TextureInternal::BindToStage,,0x00874a00,0x0047b7a0,0x00874a00
 23901,function,D3DDriver::D3DTexture2D::BindToStageIfValid,"The same, skipped when the stage index is negative.",0x00874a30,0x0047b7d0,0x00874a30
@@ -23977,7 +23977,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23976,function,D3DDriver::D3DRenderTarget::`scalar deleting destructor',Runs ~D3DRenderTarget (0x00876A50) and frees the object when the flag bit is set.,0x00876f10,0x0047dc80,0x00876f10
 23977,function,D3DDriver::D3DRenderTarget::OnDeviceReset,"After IDirect3DDevice9::Reset, a back buffer target gets the back buffer again (GetBackBuffer), its size (GetDesc), the viewport reset and the depth surface again (GetDepthStencilSurface); a texture target is rebuilt through CreateTexture2DTarget or CreateCubeFaceTarget.",0x00876f30,0x0047dca0,0x00876f30
 23978,function,D3DDriver::D3DRenderTarget::SaveToFile,"Saves a rectangle of the colour surface to an image file with D3DXSaveSurfaceToFileW (arguments: path, image format 0 to 4, rect, screenshot info), then for PNG and JPG writes the screenshot info into the file and posts it to the online features; the slot Graphics::GraphicsDriver::SaveToFileOther (0x0053AD15) calls.",0x00877030,0x0047e3d0,0x00877030
-23979,function,Renderer::IUmbraRenderer::IUmbraRenderer,,0x00877270,0x0047e610,0x00877270
+23979,function,Renderer::IUmbraRenderer::~IUmbraRenderer,,0x00877270,0x0047e610,0x00877270
 23980,function,Renderer::IUmbraRenderer::`scalar deleting destructor',,0x00877280,0x0047e620,0x00877280
 23981,function,D3DDriver::D3DUmbraRenderer::CreatePositionVertexDeclaration,,0x008772a0,0x0047e640,0x008772a0
 23982,function,D3DDriver::D3DUmbraRenderer::BeginBatch,,0x00877300,0x0047e6a0,0x00877300
@@ -24092,7 +24092,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24091,function,std::vector<InputMapper::Entry>::_Tidy,,0x0087bc40,0x004521a0,0x0087bc40
 24092,function,std::vector<InputMapper::Entry>::erase,,0x0087bc90,0x004521f0,0x0087bc90
 24093,function,"std::_Uninitialized_copy<InputMapper::Entry*,InputMapper::Entry*,std::allocator<InputMapper::Entry>>",,0x0087bd00,0x00452260,0x0087bd00
-24094,function,std::vector<InputMapper::Entry>::_Tidy,,0x0087bd30,0x004526d0,0x0087bd30
+24094,function,std::vector<InputMapper::Entry>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x0087BC40 (ID 24091), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x0087bd30,0x004526d0,0x0087bd30
 24095,function,,,0x0087bd40,0x00452290,0x0087bd40
 24096,function,,,0x0087bf18,0x00452468,0x0087bf18
 24097,function,,,0x0087bfc5,0x00452515,0x0087bfc5
@@ -32186,16 +32186,16 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32185,function,Renderer::ScaleformRenderer::BeginDisplay,,0x00a20f10,0x00894a50,0x00a20f10
 32186,function,Renderer::ScaleformRenderer::PushBlendMode,,0x00a215e0,0x00895120,0x00a215e0
 32187,function,Renderer::ScaleformRenderer::PopBlendMode,,0x00a21630,0x00895170,0x00a21630
-32188,function,GArrayDataBase<?>::Clear,,0x00a216a0,0x008951e0,0x00a216a0
+32188,function,GArrayDataBase<?>::Clear,"No code of its own: one jmp to the function of the same name at 0x009738F0 (ID 29006), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00a216a0,0x008951e0,0x00a216a0
 32189,function,Renderer::ScaleformRenderer::ShaderRecord::~ShaderRecord,,0x00a216b0,0x008951f0,0x00a216b0
 32190,function,Renderer::ScaleformRenderer::~ScaleformRenderer,,0x00a216c0,0x00895200,0x00a216c0
 32191,function,Renderer::ScaleformRenderer::`scalar deleting destructor',,0x00a217d0,0x00895310,0x00a217d0
 32192,function,Renderer::ScaleformRenderer::ShaderRecord::ShaderRecord,,0x00a217f0,0x00895330,0x00a217f0
 32193,function,Renderer::ScaleformRenderer::ReleaseShaders,,0x00a21800,0x00895340,0x00a21800
-32194,function,Renderer::ScaleformRenderer::ReleaseShaders,,0x00a21850,0x00895390,0x00a21850
+32194,function,Renderer::ScaleformRenderer::ReleaseShaders,"No code of its own: one jmp to the function of the same name at 0x00A21800 (ID 32193), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00a21850,0x00895390,0x00a21850
 32195,function,Renderer::ScaleformRenderer::LoadShaders,,0x00a21860,0x008953a0,0x00a21860
 32196,function,Renderer::ScaleformRenderer::ScaleformRenderer,,0x00a21d20,0x00895860,0x00a21d20
-32197,function,Renderer::ScaleformRenderer::LoadShaders,,0x00a21f00,0x00895a40,0x00a21f00
+32197,function,Renderer::ScaleformRenderer::LoadShaders,"No code of its own: one jmp to the function of the same name at 0x00A21860 (ID 32195), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00a21f00,0x00895a40,0x00a21f00
 32198,function,Renderer::ThreadedGraphicsDriver::CreateSwapChain,,0x00a21f10,0x008a5f10,0x00a21f10
 32199,function,Renderer::ThreadedGraphicsDriver::CreateDefaultSwapChain,,0x00a21f20,0x008a5f20,0x00a21f20
 32200,function,Renderer::ThreadedGraphicsDriver::CreateViewport,,0x00a21f30,0x008a5f30,0x00a21f30
@@ -32280,12 +32280,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32279,function,Renderer::ThreadedGraphicsDriver::SetShaderParameterVector,,0x00a23960,0x008a7930,0x00a23960
 32280,function,Renderer::ThreadedGraphicsDriver::SetShaderParameterMatrix,,0x00a23980,0x008a7950,0x00a23980
 32281,function,Renderer::ThreadedGraphicsDriver::SetShaderParameterBool,,0x00a239a0,0x008a7970,0x00a239a0
-32282,function,Renderer::ThreadedGraphicsDriver::SetShaderParameterData,,0x00a23a40,0x008a7a10,0x00a23a40
+32282,function,Renderer::ThreadedGraphicsDriver::SetShaderParameterData,"No code of its own: one jmp to the function of the same name at 0x00A236C0 (ID 32275), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00a23a40,0x008a7a10,0x00a23a40
 32283,function,Renderer::ThreadedGraphicsDriver::SetVertexShaderConstantsFloat,,0x00a23a50,0x008a7a20,0x00a23a50
 32284,function,Renderer::ThreadedGraphicsDriver::SetVertexShaderConstantsInt,,0x00a23a70,0x008a7a40,0x00a23a70
 32285,function,Renderer::ThreadedGraphicsDriver::SetPixelShaderConstantsFloat,,0x00a23a90,0x008a7a60,0x00a23a90
 32286,function,Renderer::ThreadedGraphicsDriver::SetPixelShaderConstantsInt,,0x00a23ab0,0x008a7a80,0x00a23ab0
-32287,function,Renderer::ThreadedGraphicsDriver::SetShaderConstants,,0x00a23ad0,0x008a7aa0,0x00a23ad0
+32287,function,Renderer::ThreadedGraphicsDriver::SetShaderConstants,"No code of its own: one jmp to the function of the same name at 0x00A23780 (ID 32276), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00a23ad0,0x008a7aa0,0x00a23ad0
 32288,function,Renderer::ThreadedGraphicsDriver::UploadTextureLevel,,0x00a23ae0,0x008a7ab0,0x00a23ae0
 32289,function,Renderer::ThreadedGraphicsDriver::SetGammaRamp,,0x00a23bf0,0x008a7bc0,0x00a23bf0
 32290,function,Renderer::ThreadedGraphicsDriver::`scalar deleting destructor',,0x00a23ca0,0x008a7c70,0x00a23ca0
@@ -32382,7 +32382,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32381,function,TreeInstanceArray::Clear,,0x00a28840,0x00837d40,0x00a28840
 32382,function,IRoomLayout::GetSceneObject,,0x00a28880,0x00837d80,0x00a28880
 32383,function,World::ReadScatterObject,,0x00a288e0,0x00837de0,0x00a288e0
-32384,function,TreeInstanceArray::Clear,,0x00a289b0,0x00837eb0,0x00a289b0
+32384,function,TreeInstanceArray::Clear,"No code of its own: one jmp to the function of the same name at 0x00A28840 (ID 32381), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00a289b0,0x00837eb0,0x00a289b0
 32385,function,TreeInstanceArray::Resize,,0x00a289c0,0x00837ec0,0x00a289c0
 32386,function,IRoomLayout::GetSceneObjectCount,,0x00a28b30,0x00838030,0x00a28b30
 32387,function,"stdext::hash_map<std::wstring,?>::find",,0x00a28b50,0x00761220,0x00a28b50
@@ -32478,7 +32478,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32477,function,PooledList::~PooledList,,0x00a2cda0,0x00567d20,0x00a2cda0
 32478,function,CRules::CRules,,0x00a2cdc0,0x0082c8a0,0x00a2cdc0
 32479,function,CRules::`scalar deleting destructor',,0x00a2ce50,0x0082c930,0x00a2ce50
-32480,function,CRules::Load,,0x00a2ce70,0x0082c950,0x00a2ce70
+32480,function,CRules::Load,"No code of its own: one jmp to the function of the same name at 0x00A2CBC0 (ID 32470), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00a2ce70,0x0082c950,0x00a2ce70
 32481,function,CVirtualMachineScript::CVirtualMachineScript,,0x00a2ce80,0x00821600,0x00a2ce80
 32482,function,CVirtualMachineScript::ParseHeader,,0x00a2cf10,0x00821690,0x00a2cf10
 32483,function,Stub::ClearFiveDwords,,0x00a2cff0,0x00821770,0x00a2cff0
@@ -32559,7 +32559,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32558,function,CVirtualMachine::StackPopValue,,0x00a2f720,0x00823e80,0x00a2f720
 32559,function,CVirtualMachine::StackPopCells,,0x00a2f780,0x00823ee0,0x00a2f780
 32560,function,ScriptStackValue::~ScriptStackValue,,0x00a2f7c0,0x00823f20,0x00a2f7c0
-32561,function,CVirtualMachineStack::Clear,,0x00a2f7e0,0x00823f40,0x00a2f7e0
+32561,function,CVirtualMachineStack::Clear,"No code of its own: one jmp to the function of the same name at 0x00A2F330 (ID 32548), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00a2f7e0,0x00823f40,0x00a2f7e0
 32562,function,CVirtualMachineStack::CopyCell,,0x00a2f7f0,0x00823f50,0x00a2f7f0
 32563,function,CVirtualMachineStack::ReadArrayElement,,0x00a2f840,0x00823fa0,0x00a2f840
 32564,function,CVirtualMachineStack::SaveStack,,0x00a2fb90,0x008242f0,0x00a2fb90
@@ -32583,7 +32583,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32582,function,NameRegistry::RemoveEntry,,0x00a325d0,0x00826d30,0x00a325d0
 32583,function,NameRegistry::FreeTables,,0x00a326d0,0x00826e30,0x00a326d0
 32584,function,NameRegistry::~NameRegistry,,0x00a328a0,0x00827000,0x00a328a0
-32585,function,INetLayer::INetLayer,,0x00a32b20,0x00827280,0x00a32b20
+32585,function,INetLayer::~INetLayer,,0x00a32b20,0x00827280,0x00a32b20
 32586,function,INetLayer::`scalar deleting destructor',,0x00a32b30,0x00827290,0x00a32b30
 32587,function,CNetLayerSessionInfo::CNetLayerSessionInfo,,0x00a32b50,0x008272b0,0x00a32b50
 32588,function,CNetLayerSessionListEntry::CNetLayerSessionListEntry,,0x00a32be0,0x00827340,0x00a32be0
@@ -32852,7 +32852,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32851,function,std::vector<unsigned int>::vector,,0x00a3ccf0,0x0081ab40,0x00a3ccf0
 32852,function,GeodesicSphere::GeodesicSphere,,0x00a3cd60,0x0081abb0,0x00a3cd60
 32853,function,Resources::Resources,,0x00a3d200,0x00840830,0x00a3d200
-32854,function,Resources::Release,,0x00a3d210,0x00840840,0x00a3d210
+32854,function,Resources::Release,"No code of its own: one jmp to the function of the same name at 0x004D5890 (ID 5022), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00a3d210,0x00840840,0x00a3d210
 32855,function,ScriptDebugger::EndSession,,0x00a3d220,0x00840850,0x00a3d220
 32856,function,ScriptDebugger::ReadInt,,0x00a3d270,0x008408a0,0x00a3d270
 32857,function,ScriptDebugger::ReadString,,0x00a3d2c0,0x008408f0,0x00a3d2c0
@@ -32986,7 +32986,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32985,function,Pathfinding::MapSearchEnvironment::IsDoorCell,,0x00a45570,0x007cedf0,0x00a45570
 32986,function,Pathfinding::Grid::CanStepOnto,,0x00a455a0,0x007ce5b0,0x00a455a0
 32987,function,Pathfinding::Grid::CanStep,,0x00a455c0,0x007cee20,0x00a455c0
-32988,function,Pathfinding::SearchEnvironment::SearchEnvironment,,0x00a45620,0x007cee80,0x00a45620
+32988,function,Pathfinding::SearchEnvironment::~SearchEnvironment,,0x00a45620,0x007cee80,0x00a45620
 32989,function,Pathfinding::SearchEnvironment::`scalar deleting destructor',,0x00a45630,0x007cf550,0x00a45630
 32990,function,Pathfinding::MapSuperAbstractionSearchEnvironment::MapSuperAbstractionSearchEnvironment,,0x00a45650,0x007cee90,0x00a45650
 32991,function,Pathfinding::MapSuperAbstractionSearchEnvironment::Cost,,0x00a45670,0x007ceeb0,0x00a45670
@@ -33279,7 +33279,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33278,function,Pathfinding::FineSearchBase::~FineSearchBase,,0x00a54ab0,0x007ddc00,0x00a54ab0
 33279,function,Pathfinding::FineSearchBase::Clear,,0x00a54ae0,0x007ddc30,0x00a54ae0
 33280,function,Pathfinding::FineSearch::NodeState,,0x00a54b30,0x007ddc80,0x00a54b30
-33281,function,Pathfinding::NodeWordTable::NodeWordRef,,0x00a54b70,0x007ddcc0,0x00a54b70
+33281,function,Pathfinding::NodeWordTable::NodeWordRef,"No code of its own: one jmp to the function of the same name at 0x00A54590 (ID 33274), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00a54b70,0x007ddcc0,0x00a54b70
 33282,function,Pathfinding::FineSearch::HeapSiftUp,,0x00a54b80,0x007ddcd0,0x00a54b80
 33283,function,Pathfinding::FineSearch::HeapSiftDown,,0x00a54cd0,0x007dde20,0x00a54cd0
 33284,function,Pathfinding::FineSearch::FineSearch,,0x00a54ea0,0x007ddff0,0x00a54ea0
@@ -33340,7 +33340,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33339,function,GraphicsStructures::CSpeedTreeWind::~CSpeedTreeWind,,0x00a57150,0x0076ec80,0x00a57150
 33340,function,GraphicsStructures::CSpeedTreeWind::SetNumWindMatricesAndLeafAngles,,0x00a571f0,0x0076ed20,0x00a571f0
 33341,function,GraphicsStructures::CSpeedTreeWind::Advance,,0x00a57270,0x0076eda0,0x00a57270
-33342,function,Math::Matrix4x4fArray::Clear,,0x00a572d0,0x0076ee00,0x00a572d0
+33342,function,Math::Matrix4x4fArray::Clear,"No code of its own: one jmp to the function of the same name at 0x00A567B0 (ID 33332), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00a572d0,0x0076ee00,0x00a572d0
 33343,function,GraphicsStructures::CSpeedTreeWind::WindInstance::WindInstance,,0x00a572e0,0x0076ee10,0x00a572e0
 33344,function,GraphicsStructures::CSpeedTreeWind::WindInstance::GetOwnerParameters,,0x00a573f0,0x0076ef20,0x00a573f0
 33345,function,GraphicsStructures::CSpeedTreeWind::WindInstance::~WindInstance,,0x00a57400,0x0076ef30,0x00a57400
@@ -33565,7 +33565,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33564,function,MovementPath::SetFound,,0x00a62810,0x00708e50,0x00a62810
 33565,function,MovementPath::SetFailed,"Stores the byte it is given at +0x9C. CCObject::RequestPath calls it with 1 when the path request answers 5 (no path, 0x0073EA80's else-if branch). The constructor zeroes it; no reader of +0x9C was found in the exe's functions.",0x00a62820,0x00708e60,0x00a62820
 33566,function,MovementParameters::MovementParameters,,0x00a62830,0x00708e70,0x00a62830
-33567,function,MovementPath::Free,,0x00a62880,0x00708ec0,0x00a62880
+33567,function,MovementPath::Free,"No code of its own: one jmp to the function of the same name at 0x00A625B0 (ID 33555), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00a62880,0x00708ec0,0x00a62880
 33568,function,MovementPath::Reset,,0x00a62890,0x00708ed0,0x00a62890
 33569,function,MovementPath::Cancel,"(this) fastcall: only when the hold state this+0x18 is 2 (set by FinishDirectPath 0x00A62C30, after HoldAtWaypoint 0x00A62BC0 set 1) and the path's active byte ([this+0x14]) is set. Removes the two held waypoints, sets the next waypoint to 0 and the state to 0, and keeps the path object. Its one caller is CSSubActionHandler::MoveUpdate 0x007A92B2. Read 2026-11-11 (paragon-agent-2, addr-lib-agent).",0x00a62960,0x00708fa0,0x00a62960
 33570,function,MovementPath::SetStart,,0x00a62990,0x00708fd0,0x00a62990
