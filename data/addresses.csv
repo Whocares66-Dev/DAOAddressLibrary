@@ -4824,7 +4824,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4823,function,ECResMan::DirectorySource::ListNames,,0x004ced00,0x00810010,0x004ced00
 4824,function,ECResMan::DirectorySource::ReleaseChildren,,0x004cedf0,0x00810100,0x004cedf0
 4825,function,"stdext::hash_map<std::wstring *,?>::iterator::operator*",,0x004ceea0,0x005beff0,0x004ceea0
-4826,function,std::_Destroy_range<std::wstring>,,0x004ceee0,0x008101b0,0x004ceee0
+4826,function,std::vector<std::wstring>::_Destroy,,0x004ceee0,0x008101b0,0x004ceee0
 4827,function,ECResMan::ResourceMap::Find,,0x004cef10,0x008101e0,0x004cef10
 4828,function,ECResMan::ResourceMap::Remove,,0x004cef80,0x00810250,0x004cef80
 4829,function,ECResMan::DirectorySource::Find,,0x004cf010,0x008102e0,0x004cf010
@@ -5383,7 +5383,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5382,function,TlkFile::FindString,,0x004e47f0,0x0082a510,0x004e47f0
 5383,function,,,0x004e4950,0x0082a670,0x004e4950
 5384,function,CTlkTable::GetString,,0x004e4990,0x0082a6b0,0x004e4990
-5385,function,std::_Destroy_range<CTlkTable::TlkEntry>,,0x004e4a20,0x0082a740,0x004e4a20
+5385,function,std::vector<CTlkTable::TlkEntry>::_Destroy,,0x004e4a20,0x0082a740,0x004e4a20
 5386,function,std::vector<CTlkTable::TlkEntry>::_Tidy,,0x004e4a50,0x0082a770,0x004e4a50
 5387,function,std::vector<CTlkTable::TlkEntry>::erase,,0x004e4aa0,0x0082a7c0,0x004e4aa0
 5388,function,CTlkTable::EraseVectorElementAt<CTlkTable::TlkEntry>,,0x004e4b10,0x0082a830,0x004e4b10
@@ -6027,7 +6027,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6026,function,Multithreading::SynchSafePointer<Graphics::MaterialShader>::MakeWeak,,0x004fd430,0x007eb2f0,0x004fd430
 6027,function,Multithreading::SynchSafePointer<Graphics::MaterialShader>::MakeStrong,,0x004fd450,0x007eb310,0x004fd450
 6028,function,Graphics::MaterialShaderManager::GetMemoryFootprint,,0x004fd470,0x007eb330,0x004fd470
-6029,function,std::_Destroy_range<Multithreading::SynchSafePointer<Graphics::MaterialShader>>,,0x004fd590,0x007eb450,0x004fd590
+6029,function,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialShader>>::_Destroy,,0x004fd590,0x007eb450,0x004fd590
 6030,function,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialShader>>::_Tidy,,0x004fd5c0,0x007eb480,0x004fd5c0
 6031,function,Multithreading::SynchSafePointer<Graphics::MaterialShader>::SynchSafePointer(const Multithreading::SynchSafePointer<Graphics::MaterialShader>&),,0x004fd610,0x007eb4d0,0x004fd610
 6032,function,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialShader>>::_Tidy,,0x004fd640,0x007eb500,0x004fd640
@@ -7448,7 +7448,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7447,function,"std::copy_backward<Math::CollisionOutputParameter*,Math::CollisionOutputParameter*>",,0x00538b20,0x0049a3d0,0x00538b20
 7448,function,"std::_Uninit_fill_n<Math::CollisionOutputParameter*,unsigned int,Math::CollisionOutputParameter>",,0x00538b70,0x0049a480,0x00538b70
 7449,function,Graphics::ISceneInstance::DetachAllObjects,,0x00538c00,0x0073fcf0,0x00538c00
-7450,function,std::_Destroy_range<Math::CollisionOutputParameter>,,0x00538c60,0x0049a960,0x00538c60
+7450,function,std::vector<Math::CollisionOutputParameter>::_Destroy,,0x00538c60,0x0049a960,0x00538c60
 7451,function,Multithreading::SynchSafePointerListBase::Remove,,0x00538c90,0x007e4be0,0x00538c90
 7452,function,Graphics::ISceneInstance::FinishDraw,,0x00538d80,0x0073fdd0,0x00538d80
 7453,function,Graphics::ISceneInstance::UpdateObjects,,0x00538e50,0x0073fea0,0x00538e50
@@ -8832,7 +8832,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8831,function,,,0x005744f0,0x00712aa0,0x005744f0
 8832,function,,,0x00574520,0x00489050,0x00574520
 8833,function,std::basic_filebuf<wchar_t>::_Endwrite,,0x005748f0,0x00488d30,0x005748f0
-8834,function,std::_Destroy_range<?>,,0x00574c10,0x007129e0,0x00574c10
+8834,function,std::vector<?>::_Destroy,,0x00574c10,0x007129e0,0x00574c10
 8835,function,std::_Uninit_fill_n<?>,,0x00574c30,0x00712a60,0x00574c30
 8836,function,std::_Tree<?>::_Erase,,0x00574c70,0x00753a00,0x00574c70
 8837,function,Core::VectorBackOrDefault<?>,,0x00574cb0,0x00753a40,0x00574cb0
@@ -8840,7 +8840,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8839,function,Core::VectorBackOrDefault<?>,,0x00574d70,0x00753b00,0x00574d70
 8840,function,Renderer::LightStatePool::Release,,0x00574dd0,0x00753b60,0x00574dd0
 8841,function,Renderer::LightStatePool::ReleaseAll,,0x00574ef0,0x00753c80,0x00574ef0
-8842,function,std::_Destroy_range<?>,,0x00574f40,0x004edc30,0x00574f40
+8842,function,std::vector<?>::_Destroy,,0x00574f40,0x004edc30,0x00574f40
 8843,function,std::_Uninit_fill_n<?>,,0x00574f70,0x004edbf0,0x00574f70
 8844,function,std::basic_string<char>::_Construct<std::_String_const_iterator<wchar_t>>,,0x00574fb0,0x00753cd0,0x00574fb0
 8845,function,,,0x005750c6,0x00753de6,0x005750c6
@@ -14770,7 +14770,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14769,function,"SmartData::Attribute<ECBase::ECDynArray<CCreatureAttribute*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x006af240,0x005a0560,0x006af240
 14770,function,"SmartData::Attribute<ECBase::ECDynArray<ClassRank*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x006af260,0x005a0580,0x006af260
 14771,function,"SmartData::Attribute<ECBase::ECDynArray<EffectGUIInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x006af280,0x005a05a0,0x006af280
-14772,function,std::_Destroy_range<TintBlock>,,0x006af2a0,0x005a0600,0x006af2a0
+14772,function,std::vector<TintBlock>::_Destroy,,0x006af2a0,0x005a0600,0x006af2a0
 14773,function,"std::uninitialized_fill_n<TintBlock*,unsigned int,TintBlock>",,0x006af2d0,0x005a0630,0x006af2d0
 14774,function,"std::remove<SmartData::Attribute<short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,SmartData::Attribute<short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",,0x006af310,0x005a0670,0x006af310
 14775,function,SwapRemoveList::Clear,,0x006af390,0x005a06f0,0x006af390
@@ -20114,16 +20114,16 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20113,function,Catch_All@007b4974,,0x007b4974,0x00692844,0x007b4974
 20114,function,GUI::GUIPaperdoll::HandleMessage_SetCameraPresetMessage,,0x007b49b0,0x00692880,0x007b49b0
 20115,function,"Map<unsigned int,RefHandle>::GetOrDefault",,0x007b49d0,0x0083af70,0x007b49d0
-20116,function,"std::_Destroy_range<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",,0x007b4a30,0x004cbf50,0x007b4a30
+20116,function,"std::vector<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::_Destroy",,0x007b4a30,0x004cbf50,0x007b4a30
 20117,function,"ECBase::ECDynArray<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::IndexOf",,0x007b4a60,0x006928a0,0x007b4a60
 20118,function,GUI::GUIPaperdoll::RegisterHandler_SetCameraPresetMessage,,0x007b4af0,0x00692930,0x007b4af0
 20119,function,"std::fill<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",,0x007b4b70,0x00581d60,0x007b4b70
 20120,function,GUI::GUIPaperdoll::Update,,0x007b4bb0,0x00692ad0,0x007b4bb0
-20121,function,"std::_Destroy_range<std::pair<std::wstring,int>>",,0x007b4f50,0x00692ec0,0x007b4f50
+20121,function,"std::vector<std::pair<std::wstring,int>>::_Destroy",,0x007b4f50,0x00692ec0,0x007b4f50
 20122,function,"std::vector<std::pair<std::wstring,int>>::_Tidy",,0x007b4f80,0x0085b190,0x007b4f80
-20123,function,std::_Destroy_range<GUI::HeadPreset::MaterialValue>,,0x007b4fd0,0x00692ef0,0x007b4fd0
-20124,function,std::_Destroy_range<GUI::HeadPreset::MaterialVector>,,0x007b4ff0,0x00692f10,0x007b4ff0
-20125,function,std::_Destroy_range<GUI::HeadPreset::Texture>,,0x007b5010,0x00692f30,0x007b5010
+20123,function,std::vector<GUI::HeadPreset::MaterialValue>::_Destroy,,0x007b4fd0,0x00692ef0,0x007b4fd0
+20124,function,std::vector<GUI::HeadPreset::MaterialVector>::_Destroy,,0x007b4ff0,0x00692f10,0x007b4ff0
+20125,function,std::vector<GUI::HeadPreset::Texture>::_Destroy,,0x007b5010,0x00692f30,0x007b5010
 20126,function,"std::uninitialized_fill_n<GUI::HeadPreset::MaterialValue*,unsigned int,GUI::HeadPreset::MaterialValue>",,0x007b5030,0x00692fc0,0x007b5030
 20127,function,"std::uninitialized_fill_n<GUI::HeadPreset::MaterialVector*,unsigned int,GUI::HeadPreset::MaterialVector>",,0x007b5070,0x00693000,0x007b5070
 20128,function,"std::uninitialized_fill_n<GUI::HeadPreset::Texture*,unsigned int,GUI::HeadPreset::Texture>",,0x007b50b0,0x00693040,0x007b50b0
@@ -20219,7 +20219,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20218,function,GUI::GUIPaperdoll::ReadCharFile,,0x007ba7f0,0x006988f0,0x007ba7f0
 20219,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::SetFromText",,0x007bae00,0x00698f40,0x007bae00
 20220,function,Gff4::FlatFile::WriteUIntList,,0x007bae90,0x00698fd0,0x007bae90
-20221,function,std::_Destroy_range<GUI::HeadPreset::ModelWeight>,,0x007baef0,0x00699090,0x007baef0
+20221,function,std::vector<GUI::HeadPreset::ModelWeight>::_Destroy,,0x007baef0,0x00699090,0x007baef0
 20222,function,std::vector<GUI::HeadPreset::ModelWeight>::_Tidy,,0x007baf20,0x006990c0,0x007baf20
 20223,function,GUI::GUIPaperdoll::RegisterHandler_EquipmentChangedMessage,,0x007baf70,0x00699140,0x007baf70
 20224,function,GUI::GUIPaperdoll::RegisterHandler_CharGenAssignAbilityMessage,,0x007baff0,0x006991c0,0x007baff0
@@ -22348,8 +22348,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22347,function,std::vector<NxGroupsMask>::back,,0x00823a00,0x0049b120,0x00823a00
 22348,function,std::vector<?>::back,,0x00823a60,0x0049b180,0x00823a60
 22349,function,std::vector<NxMat34>::erase,,0x00823ad0,0x0049b280,0x00823ad0
-22350,function,std::_Destroy_range<NxQuat>,,0x00823b30,0x0049b320,0x00823b30
-22351,function,std::_Destroy_range<NxVec3>,,0x00823b60,0x0049b350,0x00823b60
+22350,function,std::vector<NxQuat>::_Destroy,,0x00823b30,0x0049b320,0x00823b30
+22351,function,std::vector<NxVec3>::_Destroy,,0x00823b60,0x0049b350,0x00823b60
 22352,function,Physics::VariableSetPool<Physics::PhysicsNxActorVariableSet<NxMat34>>::ReleaseAll,,0x00823b90,0x0049b380,0x00823b90
 22353,function,Physics::VariableSetPool<Physics::PhysicsNxActorVariableSet<NxQuat>>::ReleaseAll,,0x00823be0,0x0049b3d0,0x00823be0
 22354,function,Physics::VariableSetPool<Physics::PhysicsNxActorVariableSet<NxVec3>>::ReleaseAll,,0x00823c30,0x0049b420,0x00823c30
