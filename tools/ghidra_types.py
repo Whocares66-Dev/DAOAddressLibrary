@@ -923,8 +923,38 @@ def typed_fix(address, what, tree, text):
         DataUtilities.createData(program, a, kind, -1, mode)
 
 
+def interface_types():
+    # The interfaces of DLLs the game imports (Direct3D 9, PhysX), whose
+    # classes the exe has no RTTI for: W["interfaces"], data/interfaces.csv.
+    # Each is a struct that is a pointer to its table, the table a pointer
+    # a slot with the method's name. The slots are left untyped pointers:
+    # the call's arguments are then the decompiler's own reading of it, and
+    # a prototype guessed from a header's text would drop or invent some.
+    for name, methods in W.get("interfaces", {}).items():
+        table = StructureDataType(ROOT, name + "Vtbl", 0)
+        for method in methods:
+            table.add(PointerDataType(VoidDataType.dataType, dtm), 4,
+                      "destructor" if method == "~" else method, None)
+        shape = StructureDataType(ROOT, name, 0)
+        have = dtm.getDataType(ROOT, name)
+        had = dtm.getDataType(ROOT, name + "Vtbl")
+        if isinstance(have, Structure) and have.getNumDefinedComponents() == 1 \
+                and isinstance(had, Structure) and had.isEquivalent(table):
+            continue
+        done["interfaces"] = done.get("interfaces", 0) + 1
+        if dry:
+            continue
+        table = dtm.addDataType(table, DataTypeConflictHandler.REPLACE_HANDLER)
+        shape.add(PointerDataType(table, dtm), 4, "lpVtbl", None)
+        dtm.addDataType(shape, DataTypeConflictHandler.REPLACE_HANDLER)
+
+
 if W.get("types"):
     guard = kept_parts()
+    try:
+        interface_types()
+    except Exception as e:
+        faults.append("interfaces: %s" % e)
     try:
         merge_placeholders()
     except Exception as e:

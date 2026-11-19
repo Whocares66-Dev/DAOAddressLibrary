@@ -52,6 +52,10 @@ What a run does, on the GOG build's addresses:
   what a getter returns, as `datatype` and `returntype` rows nobody wrote,
   and which methods are called with this inside their object and how far
   in (`thisat`, Class+0xN): its head says what counts.
+- every interface in data/interfaces.csv (tools/interfaces.py: Direct3D 9
+  and PhysX, whose classes the exe has no RTTI for): a type that is a
+  pointer to a table of named slots, so a field or parameter of that type
+  has its virtual calls by name.
 - every struct in data/structs.csv: its fields onto the type Ghidra's
   decompiler uses for that class, with their types, and each vftable's
   slots named and typed for the functions in them. tools/ghidra_types.py
@@ -93,6 +97,7 @@ import urllib.request
 from pathlib import Path
 
 import ghidra_types
+import interfaces
 import structs
 from msvc_names import split_top
 
@@ -971,6 +976,7 @@ def main(argv):
             "types": last and "types" in only,
             "structs": struct_rows() if last and "types" in only else [],
             "slotnames": slot_names() if last and "types" in only else {},
+            "interfaces": interfaces.tables() if last and "types" in only else {},
             "comments": comment_rows() if last and "comments" in only else [],
         }
         output = server.run(
@@ -1034,7 +1040,8 @@ def main(argv):
             f"{totals['renamed']} offset_0xN renamed, {totals['dropped']} fields the table no longer has cleared, "
             f"{totals['restored']} nested classes given back their own name, "
             f"{totals['filled']} undefined bytes of a class's data named for their place, "
-            f"{totals.get('slots', 0)} vftable slots named or typed"
+            f"{totals.get('slots', 0)} vftable slots named or typed, "
+            f"{totals.get('interfaces', 0)} interface types made"
         )
         if notes.get("unresolved"):
             print(

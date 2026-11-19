@@ -6742,14 +6742,14 @@ address,what,value,why
 0x005B04A0,signature,"void __thiscall BeginRoot(void* this, void* wideName)",0x005B04A0 slot 3
 0x0074DAA0,signature,"void __thiscall RaisePlaceableCollisionEvent(void* this, unsigned int creatureId)",0x0074DAA0
 0x0074F900,signature,"void __thiscall RaiseTrapTriggeredEvent(void* this, unsigned int objectId, void* position)",0x0074F900
-0x008186C0,signature,"void __thiscall ReleaseTriangleMesh(void* this, void* mesh)",0x008186C0
-0x008186D0,signature,"void __thiscall ReleaseConvexMesh(void* this, void* mesh)",0x008186D0
-0x008186E0,signature,"void __thiscall ReleaseClothMesh(void* this, void* mesh)",0x008186E0
+0x008186C0,signature,"void __thiscall ReleaseTriangleMesh(void* this, NxTriangleMesh *mesh)","tail-jumps through [[this+0x28]+0x24] = NxPhysicsSDK::releaseTriangleMesh with the same argument (PhysicsManager +0x28 is the NxPhysicsSDK, 0x008194A6/0x008194B1)"
+0x008186D0,signature,"void __thiscall ReleaseConvexMesh(void* this, NxConvexMesh *mesh)",tail-jumps through [[this+0x28]+0x4c] = NxPhysicsSDK::releaseConvexMesh with the same argument
+0x008186E0,signature,"void __thiscall ReleaseClothMesh(void* this, NxClothMesh *mesh)",tail-jumps through [[this+0x28]+0x58] = NxPhysicsSDK::releaseClothMesh with the same argument
 0x00818720,signature,"void __thiscall GetMemoryFootprint(void* this, unsigned int* amount, unsigned int* second)",0x00818720
 0x00818CA0,signature,"void __thiscall SetDebugRenderOrigin(void* this, void* vector4)",0x00818CA0 slot 18
-0x00818D60,signature,"void* __thiscall CreateTriangleMesh(void* this, void* stream)",0x00818D60
-0x00818DC0,signature,"void* __thiscall CreateConvexMesh(void* this, void* stream)",0x00818DC0
-0x00818E20,signature,"void* __thiscall CreateClothMesh(void* this, void* streamHolder)",0x00818E20
+0x00818D60,signature,"NxTriangleMesh *__thiscall CreateTriangleMesh(void* this, void* stream)","returns NxPhysicsSDK::createTriangleMesh (slot 0x20, 0x00818D9A) called on [this+0x28]"
+0x00818DC0,signature,"NxConvexMesh *__thiscall CreateConvexMesh(void* this, void* stream)",returns NxPhysicsSDK::createConvexMesh (slot 0x48) called on [this+0x28]
+0x00818E20,signature,"NxClothMesh *__thiscall CreateClothMesh(void* this, void* streamHolder)",returns NxPhysicsSDK::createClothMesh (slot 0x54) tail-called on [this+0x28]
 0x008192C0,signature,"void* __thiscall realloc(void* this, void* memory, unsigned int size)",0x008192C0
 0x008197B0,signature,"void* __thiscall GetNxActor(void* this, unsigned int index)",0x008197B0 slot 28 of vtable 0x00B26C2C
 0x0062F680,signature,"void* __thiscall ECBase::ECDynArray<?>::At(void* this, unsigned int index)",0x0062F680-0x0062F6AC; callers 0x00673630 0x007AF6C0
@@ -8640,7 +8640,7 @@ address,what,value,why
 0x00819980,signature,bool __thiscall f(void* this),return and argument use read at 0x00819980
 0x00819990,signature,bool __thiscall f(void* this),return and argument use read at 0x00819990
 0x008199A0,signature,bool __thiscall f(void* this),return and argument use read at 0x008199A0
-0x0081A030,signature,"float* __thiscall f(void* this, float* out, void* shape)",return and argument use read at 0x0081A030
+0x0081A030,signature,"float* __thiscall f(void* this, float* out, NxShape *shape)","0x0081A08F/0x0081A0A4 call [shape vtable+0x6c] (NxShape::is, non-const overload) with 2 then on the result 0x0081A0AF slot 0x44 getGlobalPosition and 0x0081A0C8 slot 0xa0 (NxBoxShape::getDimensions); 0x0081A1A4 is(1) then 0x0081A1C0 slot 0xa4 (NxSphereShape::getWorldSphere); sphere/box/capsule type codes 1/2/3 match NxShapeType"
 0x0081A850,signature,"float* __thiscall f(void* this, float* out)",return and argument use read at 0x0081A850
 0x0081AC40,signature,"void __thiscall f(void* this, void* otherActor, void* outVector)",return and argument use read at 0x0081AC40
 0x0081AD50,signature,"void __thiscall f(void* this, void* scene, float* velocity, float kinematicTest, void* bodyPrototype, void* owner, int unknown)",return and argument use read at 0x0081AD50
@@ -8651,23 +8651,23 @@ address,what,value,why
 0x0081C130,signature,"void* __cdecl f(void* shapeArg, float* position, void* rotation)",return and argument use read at 0x0081C130
 0x0081C300,signature,"bool __thiscall f(void* this, void* outVector)",return and argument use read at 0x0081C300
 0x0081C470,signature,void* __thiscall f(void* this),return and argument use read at 0x0081C470
-0x0081C490,signature,void* __cdecl f(void* actor),return and argument use read at 0x0081C490
-0x0081C4F0,signature,int __cdecl f(void* actor),return and argument use read at 0x0081C4F0
-0x0081C5C0,signature,"void __cdecl f(void* actor, int objectId)",return and argument use read at 0x0081C5C0
+0x0081C490,signature,void* __cdecl f(NxActor *actor),"0x0081C4A1 mov edx,[eax+0x58] = NxActor::getGroup (result compared with group 4/3), and the userData word at actor+4 (NxActor.userData) is the record it reads; callers pass NxActors: PhysicsActor::Create 0x00820B18 calls NxScene::createActor (slot 0x1c, 1 arg) and 0x00820B6D hands the result to SetActorObjectId; RaycastReportClosest::onHit 0x00821F9D calls NxShape::getActor (slot 4) and passes the result to GetActorSoundMaterial; PhysicsActor::ReleaseNxActorAt 0x0081EAA0 passes the actor it released to DestroyActorUserRecord"
+0x0081C4F0,signature,int __cdecl f(NxActor *actor),"0x0081C501 mov edx,[eax+0x58] = NxActor::getGroup (result compared with group 4/3), and the userData word at actor+4 (NxActor.userData) is the record it reads; callers pass NxActors: PhysicsActor::Create 0x00820B18 calls NxScene::createActor (slot 0x1c, 1 arg) and 0x00820B6D hands the result to SetActorObjectId; RaycastReportClosest::onHit 0x00821F9D calls NxShape::getActor (slot 4) and passes the result to GetActorSoundMaterial; PhysicsActor::ReleaseNxActorAt 0x0081EAA0 passes the actor it released to DestroyActorUserRecord"
+0x0081C5C0,signature,"void __cdecl f(NxActor *actor, int objectId)","0x0081C5CB mov edx,[eax+0x58] = NxActor::getGroup (result compared with group 4/3), and the userData word at actor+4 (NxActor.userData) is the record it reads; callers pass NxActors: PhysicsActor::Create 0x00820B18 calls NxScene::createActor (slot 0x1c, 1 arg) and 0x00820B6D hands the result to SetActorObjectId; RaycastReportClosest::onHit 0x00821F9D calls NxShape::getActor (slot 4) and passes the result to GetActorSoundMaterial; PhysicsActor::ReleaseNxActorAt 0x0081EAA0 passes the actor it released to DestroyActorUserRecord"
 0x0081C620,signature,"void __cdecl f(Physics::PhysicsObject *actor, void* owner)",return and argument use read at 0x0081C620; a void * here is the class DAODecomp's matching definition gives
-0x0081C680,signature,"void __cdecl f(void* actor, int soundMaterial)",return and argument use read at 0x0081C680
-0x0081C6E0,signature,"void __cdecl f(void* actor, int roomId)",return and argument use read at 0x0081C6E0
+0x0081C680,signature,"void __cdecl f(NxActor *actor, int soundMaterial)","0x0081C68B mov edx,[eax+0x58] = NxActor::getGroup (result compared with group 4/3), and the userData word at actor+4 (NxActor.userData) is the record it reads; callers pass NxActors: PhysicsActor::Create 0x00820B18 calls NxScene::createActor (slot 0x1c, 1 arg) and 0x00820B6D hands the result to SetActorObjectId; RaycastReportClosest::onHit 0x00821F9D calls NxShape::getActor (slot 4) and passes the result to GetActorSoundMaterial; PhysicsActor::ReleaseNxActorAt 0x0081EAA0 passes the actor it released to DestroyActorUserRecord"
+0x0081C6E0,signature,"void __cdecl f(NxActor *actor, int roomId)","0x0081C6EB mov edx,[eax+0x58] = NxActor::getGroup (result compared with group 4/3), and the userData word at actor+4 (NxActor.userData) is the record it reads; callers pass NxActors: PhysicsActor::Create 0x00820B18 calls NxScene::createActor (slot 0x1c, 1 arg) and 0x00820B6D hands the result to SetActorObjectId; RaycastReportClosest::onHit 0x00821F9D calls NxShape::getActor (slot 4) and passes the result to GetActorSoundMaterial; PhysicsActor::ReleaseNxActorAt 0x0081EAA0 passes the actor it released to DestroyActorUserRecord"
 0x0081C740,signature,void __thiscall f(void* this),return and argument use read at 0x0081C740
 0x0081C750,signature,void* __thiscall f(void* this),return and argument use read at 0x0081C750
 0x0081C770,signature,float __cdecl f(Shape *shape),return and argument use read at 0x0081C770; a void * here is the class DAODecomp's matching definition gives
 0x0081C790,signature,unsigned char __cdecl f(Shape *shape),return and argument use read at 0x0081C790; a void * here is the class DAODecomp's matching definition gives
-0x0081C7B0,signature,void* __cdecl f(void* shape),return and argument use read at 0x0081C7B0
-0x0081C7D0,signature,"void __cdecl f(void* shape, float volume)",return and argument use read at 0x0081C7D0
-0x0081C830,signature,"void __cdecl f(void* shape, unsigned char allow)",return and argument use read at 0x0081C830
-0x0081C880,signature,"void __cdecl f(void* shape, void* prototype)",return and argument use read at 0x0081C880
+0x0081C7B0,signature,void* __cdecl f(NxShape *shape),"reads only the userData word at shape+4 (NxShape.userData); callers pass shapes from NxActor::getShapes / createShape (PhysicsActor::CreateTriggerShapes 0x00820120: 0x00820230 NxShape::getGroupsMask slot 0x90 on the same shape, 0x00820281..0x00820290 SetShapeVolume/GetShapeOwner/SetShapeOwner on the shape createShape (actor slot 0x44) returned)"
+0x0081C7D0,signature,"void __cdecl f(NxShape *shape, float volume)","reads only the userData word at shape+4 (NxShape.userData); callers pass shapes from NxActor::getShapes / createShape (PhysicsActor::CreateTriggerShapes 0x00820120: 0x00820230 NxShape::getGroupsMask slot 0x90 on the same shape, 0x00820281..0x00820290 SetShapeVolume/GetShapeOwner/SetShapeOwner on the shape createShape (actor slot 0x44) returned)"
+0x0081C830,signature,"void __cdecl f(NxShape *shape, unsigned char allow)","reads only the userData word at shape+4 (NxShape.userData); callers pass shapes from NxActor::getShapes / createShape (PhysicsActor::CreateTriggerShapes 0x00820120: 0x00820230 NxShape::getGroupsMask slot 0x90 on the same shape, 0x00820281..0x00820290 SetShapeVolume/GetShapeOwner/SetShapeOwner on the shape createShape (actor slot 0x44) returned)"
+0x0081C880,signature,"void __cdecl f(NxShape *shape, void* prototype)","reads only the userData word at shape+4 (NxShape.userData); callers pass shapes from NxActor::getShapes / createShape (PhysicsActor::CreateTriggerShapes 0x00820120: 0x00820230 NxShape::getGroupsMask slot 0x90 on the same shape, 0x00820281..0x00820290 SetShapeVolume/GetShapeOwner/SetShapeOwner on the shape createShape (actor slot 0x44) returned)"
 0x0081C8D0,signature,void __thiscall f(void* this),return and argument use read at 0x0081C8D0
-0x0081C8E0,signature,void __cdecl f(void* actor),return and argument use read at 0x0081C8E0
-0x0081C940,signature,void __cdecl f(void* shape),return and argument use read at 0x0081C940
+0x0081C8E0,signature,void __cdecl f(NxActor *actor),"0x0081C8F3 mov edx,[eax+0x58] = NxActor::getGroup (result compared with group 4/3), and the userData word at actor+4 (NxActor.userData) is the record it reads; callers pass NxActors: PhysicsActor::Create 0x00820B18 calls NxScene::createActor (slot 0x1c, 1 arg) and 0x00820B6D hands the result to SetActorObjectId; RaycastReportClosest::onHit 0x00821F9D calls NxShape::getActor (slot 4) and passes the result to GetActorSoundMaterial; PhysicsActor::ReleaseNxActorAt 0x0081EAA0 passes the actor it released to DestroyActorUserRecord"
+0x0081C940,signature,void __cdecl f(NxShape *shape),"reads only the userData word at shape+4 (NxShape.userData); callers pass shapes from NxActor::getShapes / createShape (PhysicsActor::CreateTriggerShapes 0x00820120: 0x00820230 NxShape::getGroupsMask slot 0x90 on the same shape, 0x00820281..0x00820290 SetShapeVolume/GetShapeOwner/SetShapeOwner on the shape createShape (actor slot 0x44) returned)"
 0x0081CCE0,signature,unsigned int __thiscall f(void* this),return and argument use read at 0x0081CCE0
 0x0081CD70,signature,void __thiscall f(void* this),return and argument use read at 0x0081CD70
 0x0081CD90,signature,void __thiscall f(void* this),return and argument use read at 0x0081CD90
@@ -9033,13 +9033,13 @@ address,what,value,why
 0x0081EA30,signature,"void __thiscall f(void* this, unsigned int value)","ret 4 at 0x0081EA93, vftable slot 31"
 0x0081EAA0,signature,"void __thiscall f(void* this, unsigned int index)","ret 4 at 0x0081EBAA, this in ecx read at 0x0081EAA4"
 0x0081EBB0,signature,"void** __thiscall f(void* this, void** out, void* name)","ret 8 at 0x0081ECF2; out written at 0x0081EC9C and 0x0081ECBF and returned (mov eax,esi/edi)"
-0x0081ED60,signature,"void __thiscall f(void* this, void* actor)",ret 4 at 0x0081ED7D
+0x0081ED60,signature,"void __thiscall f(void* this, NxActor *actor)","searches PhysicsActor's NxActor* array (ECDynArray<NxActor*>, +0x10) for it and hands it to ReleaseNxActorAt 0x0081EAA0, which calls NxActor slots 0x4c, 0x50, 0x10 getName, 0xc setName on it"
 0x0081ED80,signature,"void __thiscall f(void* this, unsigned int count, unsigned int value)","ret 8 at 0x0081EDD8, this in ecx moved to esi at 0x0081ED86; the value's address is passed on at 0x0081EDC0"
 0x0081EE40,signature,"void* __thiscall f(void* this, unsigned int count)","ret 4 at 0x0081EE9A, returns this (mov eax,esi at 0x0081EE88)"
 0x0081EEA0,signature,"void __thiscall f(void* this, unsigned int count)",ret 4 at 0x0081EEAD; ecx untouched
 0x0081EEB0,signature,"void __thiscall f(void* this, bool deleteElements)","ret 4 at 0x0081EFB9, flag read at 0x0081EF25"
 0x0081F0F0,signature,unsigned int __thiscall f(void* this),"mov eax,[ecx+0x48]; ret at 0x0081F0F3"
-0x0081FD90,signature,"void __thiscall f(void* this, void* nxActor)",ret 4 at 0x0081FDDE
+0x0081FD90,signature,"void __thiscall f(void* this, NxActor *nxActor)","0x0081FD99 slot 0x4c NxActor::getNbShapes and 0x0081FDA7 slot 0x50 NxActor::getShapes on it, copying the NxShape* array"
 0x0081FDF0,signature,void __thiscall f(void* this),this in ecx kept in ebx (0x0081FDF4); ends jmp Mutex::Unlock 0x004CB300 at 0x0081FEEE; no stack args
 0x0081FF00,signature,void __thiscall f(void* this),ends jmp Mutex::Unlock 0x004CB300 at 0x0081FFFE; no stack args
 0x00820FC0,signature,"unsigned int __thiscall f(void* this, NxShape *shape)","ret 4 at 0x00820FD4; the only stack argument is the shape, ecx unused; a void * here is the class DAODecomp's matching definition gives"
@@ -9709,7 +9709,7 @@ address,what,value,why
 0x00827EC0,signature,void* __thiscall f(void* this),"0x00827EC0, pool objects built by the constructors of the 0x0082BE50 family, used by the scene queueing at 0x0082C480-0x0082C860, Multithreading::ScopedLock 0x004C4D00"
 0x00828060,signature,void* __thiscall f(void* this),"0x00828060, pool objects built by the constructors of the 0x0082BE50 family, used by the scene queueing at 0x0082C480-0x0082C860, Multithreading::ScopedLock 0x004C4D00"
 0x008282B0,signature,void* __thiscall f(void* this),"0x008282B0, 0x00828200 (grow), 0x0082C1B0, 0x0082C860"
-0x008283A0,signature,"void __thiscall f(void* this, void* actor)","0x008283A0, 0x0082A6F0 (ecx=[encoder+0x44]), 0x0063C4B0 IndexOf, 0x0049D170 push_back, 0x008245E0"
+0x008283A0,signature,"void __thiscall f(void* this, NxActor *actor)","only caller 0x0082A757 is UserDataEncoder::NXU_notifyActor 0x0082A6F0, whose actor argument is read with NxActor slots 0x4c getNbShapes / 0x50 getShapes and its userData word at +4 set"
 0x008283D0,signature,"void __thiscall f(void* this, void* triangleMesh)","0x008283D0, 0x0082A810, 0x0063C4B0, 0x0049D170, 0x00824650"
 0x00829D90,signature,"void __thiscall f(void* this, void* cloth)","0x00829D90, ~PhysicsObject 0x00839C50 second loop over this+0x18, drain 0x00829F70"
 0x00829E10,signature,"void __thiscall f(void* this, void* controller)","0x00829E10, 0x00837CE0, 0x0082A070 (drain: object with vftable 0xB26E1C = NxUserControllerHitReport freed, [scene+0x28] slot 3), 0x0082C2F0"
@@ -9725,9 +9725,9 @@ address,what,value,why
 0x0082C090,signature,"void* __thiscall f(void* this, unsigned int capacity)","0x0082C090, 0x00AD3780, 0x00828150, refs of 0xC399C0 only 0x00823E64"
 0x0082C120,signature,"void* __thiscall f(void* this, unsigned int capacity)","0x0082C120, 0x00AD37A0, 0x00828200, 0x0082C860"
 0x0082C2F0,signature,void __thiscall f(void* this),"0x0082C2F0, 0x0082CCC0 (caller), 0x00829E90, 0x00829F70, 0x0082A070, 0x00823DE0, 0x00819550 PhysicsManager::Get"
-0x0082C680,signature,"void __thiscall f(void* this, void* nxActor, void* quat)","0x0082C680, 0x0081E7F0 (caller), 0x0082BFC0, 0x00823580 (release), 0x0049D170, Apply 0x00838AD0; same shape as the dev/COLLISION.md SetGlobalPose notes"
-0x0082C770,signature,"void __thiscall f(void* this, void* nxActor, void* vec3)","0x0082C770, 0x0081E780, 0x0082C070, 0x008236A0, Apply 0x00838A60"
-0x0082C860,signature,"void __thiscall f(void* this, void* nxCloth, float value, int parameter)","0x0082C860, 0x005635B0 (push 0xC / 0xD), 0x00563950, 0x00838700 jump table at 0x00838868"
+0x0082C680,signature,"void __thiscall f(void* this, NxActor *nxActor, void* quat)","stored at [variableSet+4] of a PhysicsNxActorVariableSet<NxQuat>, whose Apply 0x00838AD0 calls NxActor::getGlobalOrientationQuat 0x30 / setGlobalOrientationQuat 0x20 on it"
+0x0082C770,signature,"void __thiscall f(void* this, NxActor *nxActor, void* vec3)","stored at [variableSet+4] of a PhysicsNxActorVariableSet<NxVec3>, whose Apply 0x00838A60 calls NxActor::getGlobalPosition 0x28 / setGlobalPosition 0x18 on it"
+0x0082C860,signature,"void __thiscall f(void* this, NxCloth *nxCloth, float value, int parameter)","stored in a PhysicsNxClothVariableSet<float> at +4 whose Apply 0x00838700 calls NxCloth setters (slots 0x44, 0xc, 0x14, 0x1c, 0x24, 0x2c, 0x34, 0xf0, 0xf8, 0x130, 0x110)"
 0x0082CBB0,signature,"unsigned int __thiscall f(void* this, void* key)","0x0082CBB0, 0x0082D800, 0x00822C00, 0x0084C9F0, 0x00878E60"
 0x0082CC20,signature,"void* __thiscall f(void* this, void* result, void* container, unsigned int* word, unsigned int bit, bool val)","0x0082CC20 ret 0x14, 0x0082D3B0, 0x0082BD80 (_Insert_n)"
 0x0082D3B0,signature,"void __thiscall f(void* this, bool val)","0x0082D3B0, 0x0082D900 (arg [esp+0x3c] = enable), 0x0082CC20"
@@ -12431,7 +12431,7 @@ address,what,value,why
 0x0081CC30,signature,"void * __thiscall f(void *this, std::wstring *outWString)","ID 22201 Physics::GetShapeName: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20); a void * here is the class DAODecomp's matching definition gives"
 0x0081CCF0,signature,void * __thiscall f(void *this),"ID 22203 Physics::MaterialPrototype::MaterialPrototype: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
 0x0081CDD0,signature,"void __thiscall f(void *this, int value)","ID 22207 Stub::SetDword_0x1C: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
-0x0081CE60,signature,"float * __stdcall f(float *out, void *shape)","ID 22210 Physics::GetRandomPointInShape: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
+0x0081CE60,signature,"float * __stdcall f(float *out, NxShape *shape)","0x0081CEBF/0x0081CED4 [shape vtable+0x6c] NxShape::is(2) then 0x0081CEDF slot 0x44 getGlobalPosition, 0x0081CEF8 slot 0xa0 NxBoxShape::getDimensions; 0x0081CFD4 is(3) then 0x0081CFF0 slot 0xb0 NxCapsuleShape::getWorldCapsule; 0x0081D0E0 is(1) then 0x0081D0EB slot 0xa4 NxSphereShape::getWorldSphere"
 0x00823370,signature,void * __thiscall f(void *this),"ID 22339 std::_Vb_const_iterator::_Getptr: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
 0x008233C0,signature,"void * __thiscall f(void *this, void *out, int n)","ID 22340 std::_Vb_iterator::operator+: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
 0x00823430,signature,"unsigned int * __stdcall f(unsigned int *dst, unsigned int count, const unsigned int *val)","ID 22341 std::fill_n<unsigned int *,unsigned int,unsigned int>: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
@@ -12448,8 +12448,8 @@ address,what,value,why
 0x00823C30,signature,void __thiscall f(void *this),"ID 22354 Physics::VariableSetPool<Physics::PhysicsNxActorVariableSet<NxVec3>>::ReleaseAll: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
 0x00823C80,signature,void __thiscall f(void *this),"ID 22355 Physics::VariableSetPool<Physics::PhysicsNxActorVariableSet_Unknown16>::ReleaseAll: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
 0x00823CD0,signature,void __thiscall f(void *this),"ID 22356 Physics::VariableSetPool<Physics::PhysicsNxClothVariableSet<float>>::ReleaseAll: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
-0x00823D20,signature,"void __thiscall f(void *this, void *nxActor)","ID 22357 Physics::PhysicsScene::ReleaseNxActor: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
-0x00823DA0,signature,"void __thiscall f(void *this, void *triangleMesh)","ID 22358 Physics::PhysicsScene::ReleaseSdkResource: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
+0x00823D20,signature,"void __thiscall f(void *this, NxActor *nxActor)","0x00823D43 NxActor::getNbShapes (slot 0x4c) on it, then 0x00823D83 passed to NxScene::releaseActor (slot 0x20, 1 arg) on [this+0x24]"
+0x00823DA0,signature,"void __thiscall f(void *this, NxTriangleMesh *triangleMesh)","0x00823DCD passes it to NxPhysicsSDK::releaseTriangleMesh (slot 0x24, 1 arg), on the SDK that 0x00823DC1 NxScene::getPhysicsSDK (slot 0x154 on [this+0x24]) returned"
 0x00823DE0,signature,void __stdcall f(void *variableSet),"ID 22359 Physics::PhysicsScene::ReleaseVariableSet: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
 0x00823F40,signature,"void * __thiscall f(void *this, void *out)","ID 22363 std::vector<bool>::end: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
 0x00823F90,signature,"void * __thiscall f(void *this, void *out, int n)","ID 22364 std::_Vb_iterator::operator-: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
@@ -12463,8 +12463,8 @@ address,what,value,why
 0x008244B0,signature,"void * __thiscall f(void *this, void *out, void *firstCont, void *firstPtr, void *lastCont, void *lastPtr)","ID 22373 std::vector<NxQuat>::erase: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
 0x00824530,signature,"void * __thiscall f(void *this, void *out, void *firstCont, void *firstPtr, void *lastCont, void *lastPtr)","ID 22374 std::vector<NxVec3>::erase: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
 0x008245B0,signature,"void * __stdcall f(void *first, void *last, void *dest)","ID 22375 std::_Uninit_copy<NxVec3 *,NxVec3 *,std::allocator<NxVec3>>: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
-0x008246C0,signature,"void __thiscall f(void *this, void *nxActor)","ID 22378 Physics::PhysicsScene::RemoveVariableSetsOfActor: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
-0x008247B0,signature,"void __thiscall f(void *this, void *nxCloth)","ID 22379 Physics::PhysicsScene::RemoveVariableSetsOfCloth: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
+0x008246C0,signature,"void __thiscall f(void *this, NxActor *nxActor)","compared with the actor each variable set reports (variable-set slot 0xc returns [set+4], the NxActor* of PhysicsNxActorVariableSet, whose Apply calls NxActor slots 0x28/0x18, 0x30/0x20, 0x34/0x14)"
+0x008247B0,signature,"void __thiscall f(void *this, NxCloth *nxCloth)","compared with the cloth each variable set reports (slot 0x14 returns [set+4], the NxCloth* of PhysicsNxClothVariableSet<float>, whose Apply 0x00838700 calls NxCloth slots 0x44 setThickness, 0xc setBendingStiffness, 0x114/0x110 getExternalAcceleration/setExternalAcceleration ...)"
 0x00824AB0,signature,void __thiscall f(void *this),"ID 22382 std::vector<bool>::_Xlen: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
 0x00825840,signature,"void __cdecl f(void *firstCont, void *firstPtr, unsigned int firstOff, void *lastCont, void *lastPtr, unsigned int lastOff, const bool *val)","ID 22400 std::_Fill<std::_Vb_iterator,bool>: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
 0x00825930,signature,"void * __cdecl f(void *out, void *cont1, void *ptr1, unsigned int off1, void *cont2, void *ptr2, unsigned int off2, void *cont3, void *ptr3, unsigned int off3)","ID 22401 std::_Copy_opt<std::_Vb_iterator,std::_Vb_iterator>: ret and ecx read in daoexe --disasm, two readings reconciled (batch 20)"
@@ -12654,7 +12654,7 @@ address,what,value,why
 0x00564D10,signature,"void* __thiscall f(void* thisVec, void* result, void* whereCont, void* wherePtr, void* value)",read at 0x00564D10 (both readings agree on the arguments)
 0x00564DA0,signature,"void __thiscall f(void* thisVec, void* value)",read at 0x00564DA0 (both readings agree on the arguments)
 0x00564E30,signature,"void* __thiscall f(void* thisVec, unsigned int count)",read at 0x00564E30 (both readings agree on the arguments)
-0x0081D190,signature,"void __stdcall f(void *shape, void *outPoint, void *outNormal)","Physics::GetRandomPointAndNormalInShape: NxShape at [ebp+8] (null-tested 0x0081D1A6), out point and normal; ret 0xC; ecx unread (lib-agent, after b20)"
+0x0081D190,signature,"void __stdcall f(NxShape *shape, void *outPoint, void *outNormal)","0x0081D21C/0x0081D231 [shape vtable+0x6c] NxShape::is(2) then 0x0081D23C slot 0x44 getGlobalPosition, 0x0081D255 slot 0xa0 NxBoxShape::getDimensions; 0x0081D5FC is(3) then 0x0081D618 slot 0xb0 NxCapsuleShape::getWorldCapsule; 0x0081D9B0 is(1)"
 0x008495B0,signature,"void * __thiscall f(void *this, int cmp0, int cmp1, int cmp2, int cmp3)",ret and arguments read in daoexe --disasm at 0x008495b0
 0x00849650,signature,void __thiscall f(void *this),ret and arguments read in daoexe --disasm at 0x00849650
 0x00849690,signature,"void * __thiscall f(void *this, const void *key)",ret and arguments read in daoexe --disasm at 0x00849690
