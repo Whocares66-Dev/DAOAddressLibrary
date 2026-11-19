@@ -2341,7 +2341,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2340,function,std::_Insertion_sort<Renderer::FrameBufferEffect * *>,,0x00456900,0x00891340,0x00456900
 2341,function,Gff4::StructReader::ReadList,,0x00456990,0x004b2b80,0x00456990
 2342,function,Renderer::CreateMainRenderTarget,,0x004569f0,0x008913d0,0x004569f0
-2343,function,"std::map<std::wstring,?>::lower_bound",,0x00456a80,0x004b31f0,0x00456a80
+2343,function,"std::map<std::wstring,?>::_Lbound",,0x00456a80,0x004b31f0,0x00456a80
 2344,function,Gff4::StructReader::ReadListById,,0x00456b40,0x004b2c50,0x00456b40
 2345,function,Gff4::ValueRef::ReadFloat,,0x00456b80,0x005f4270,0x00456b80
 2346,function,Gff4::ValueRef::ReadVector4,,0x00456b90,0x00891460,0x00456b90
@@ -3122,7 +3122,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3121,function,OnlineFeatures::OnStoreAvailable,,0x004749a0,0x0084f8a0,0x004749a0
 3122,function,OnlineFeatures::OnAccountCreated,,0x004749b0,0x0084f8b0,0x004749b0
 3123,function,OnlineFeatures::OnPersonaNameSuggested,,0x004749f0,0x0084f8f0,0x004749f0
-3124,function,OnlineFeatures::AchievementInfo::AchievementInfo(const OnlineFeatures::AchievementInfo&),,0x00474a90,0x0084f990,0x00474a90
+3124,function,OnlineFeatures::Achievement::Achievement(const OnlineFeatures::Achievement&),,0x00474a90,0x0084f990,0x00474a90
 3125,function,OnlineFeatures::GetAchievementList,,0x00474c10,0x0084fb10,0x00474c10
 3126,function,OnlineFeatures::CanShowOnlineScreen,,0x00474c20,0x0084fb20,0x00474c20
 3127,function,OnlineFeatures::GetOnlineToken,,0x00474ce0,0x0084fbe0,0x00474ce0
@@ -3147,7 +3147,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3146,function,std::_Allocate<Elem148>,,0x00475300,0x0084ffb0,0x00475300
 3147,function,std::_Allocate<OnlineFeatures::Achievement>,,0x00475360,0x00850010,0x00475360
 3148,function,Gff4::ReadChildString,,0x004753c0,0x004ebc20,0x004753c0
-3149,function,OnlineFeatures::AchievementInfo::operator=,,0x00475410,0x00850070,0x00475410
+3149,function,OnlineFeatures::Achievement::operator=,,0x00475410,0x00850070,0x00475410
 3150,function,"std::_Copy_opt<OnlineRec24*,OnlineRec24*>",,0x00475530,0x00850190,0x00475530
 3151,function,"std::_Copy_opt<OnlineRec84*,OnlineRec84*>",,0x00475570,0x008501d0,0x00475570
 3152,function,"std::_Copy_opt<OnlineFeatures::Achievement*,OnlineFeatures::Achievement*>",,0x004755c0,0x00850220,0x004755c0
@@ -3233,7 +3233,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3232,function,ECBase::ECDynArray<AddInItem>::GetCount,,0x00479930,0x00552d80,0x00479930
 3233,function,Gff4::BlockRef::GetStringById,,0x00479960,0x004ec2e0,0x00479960
 3234,function,Gff4::BlockRef::SetStringById,,0x004799e0,0x004db5b0,0x004799e0
-3235,function,std::list<std::wstring>::_Buyheadnode,,0x00479a50,0x004cae10,0x00479a50
+3235,function,std::list<std::wstring>::_Buynode,,0x00479a50,0x004cae10,0x00479a50
 3236,function,std::list<Elem68>::_Buyheadnode,,0x00479a70,0x004cae30,0x00479a70
 3237,function,Gff4::Block::ReadUint32Checked,,0x00479a90,0x0052be00,0x00479a90
 3238,function,Gff4::Block::ReadByteChecked,,0x00479ab0,0x00569510,0x00479ab0
@@ -6151,7 +6151,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6150,function,Graphics::MaterialObject::ClearParameters,,0x00501a50,0x007e9c20,0x00501a50
 6151,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::_Tidy",,0x00501cc0,0x007e9e90,0x00501cc0
 6152,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::_Copy",,0x00501d00,0x007e9ed0,0x00501d00
-6153,function,"std::map<unsigned int,Multithreading::SynchSafePointer>::_Copy_nodes","Copies a subtree recursively; its nodes hold a SynchSafePointer (0x1C-byte nodes, isnil +0x19), not this file's Map's",0x00501d80,0x007e9f50,0x00501d80
+6153,function,"std::map<unsigned int,Multithreading::SynchSafePointer>::_Copy","Copies a subtree recursively; its nodes hold a SynchSafePointer (0x1C-byte nodes, isnil +0x19), not this file's Map's",0x00501d80,0x007e9f50,0x00501d80
 6154,retired,,,,,
 6155,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::insert","insert(value): finds the place by key (unsigned compare, 0x00501E64) and inserts with _Insert unless the key is there; returns pair<iterator,bool>",0x00501e40,0x007ea010,0x00501e40
 6156,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::Map",,0x00501f00,0x007ea0d0,0x00501f00
@@ -20811,7 +20811,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20810,function,EC::Cutscene::Actor::ActionLinkToActor::Reset,,0x007d35f0,0x006ba930,0x007d35f0
 20811,function,EC::Cutscene::Actor::GetStagePlacePosition,,0x007d3600,0x006ba940,0x007d3600
 20812,function,std::vector<?>::begin,,0x007d3640,0x007f5c00,0x007d3640
-20813,function,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>::lower_bound",,0x007d3670,0x006ba980,0x007d3670
+20813,function,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>::_Lbound",,0x007d3670,0x006ba980,0x007d3670
 20814,function,"std::map<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>::lower_bound",,0x007d3730,0x006baa40,0x007d3730
 20815,function,"std::map<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>::_Erase",,0x007d37f0,0x006bab00,0x007d37f0
 20816,function,EC::Cutscene::VectorContains<float>,,0x007d3830,0x006bab40,0x007d3830
