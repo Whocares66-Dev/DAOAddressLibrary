@@ -73,6 +73,36 @@ class SetsVftableTest(unittest.TestCase):
         self.assertFalse(sets("cmp", "dword ptr [esi], 0xb05dbc"))
 
 
+class _Bytes:
+    """An image that is one table at 0x1000, for seh_pieces."""
+
+    def __init__(self, words):
+        import struct
+
+        self.data = struct.pack("<%dI" % len(words), *words) + bytes(64)
+
+    def bytes_at(self, va, n):
+        return self.data[va - 0x1000 : va - 0x1000 + n]
+
+
+class SehPiecesTest(unittest.TestCase):
+    TEXT = (0x401000, 0x900000)
+    TOP = subsystems.SEH_TOP
+
+    def test_finally_and_except(self):
+        # _free's table: no GS cookie, one __finally (filter 0) at 0x008E1AB0.
+        img = _Bytes([self.TOP, 0, 0xFFFFFFCC, 0, self.TOP, 0, 0x8E1AB0])
+        self.assertEqual(subsystems.seh_pieces(img, 0x1000, self.TEXT), {0x8E1AB0})
+        img = _Bytes([self.TOP, 0, 0xFFFFFFCC, 0, self.TOP, 0x500000, 0x500010])
+        self.assertEqual(
+            subsystems.seh_pieces(img, 0x1000, self.TEXT), {0x500000, 0x500010}
+        )
+
+    def test_a_string_is_no_table(self):
+        img = _Bytes([0x74636576, 0x3C726F, 0, 0, 0, 0, 0])  # "vector<..."
+        self.assertEqual(subsystems.seh_pieces(img, 0x1000, self.TEXT), set())
+
+
 class PlaceTest(unittest.TestCase):
     def place(
         self,

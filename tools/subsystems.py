@@ -61,7 +61,9 @@ first, and its `how` column says which:
            for the 9,780 still unknown, 2026-10-31)
   owner    it is part of another function's exception handling: the
            __ehhandler stub that function's prologue pushes, or a funclet
-           or catch block its FuncInfo lists. It goes where its function
+           or catch block its FuncInfo lists, or (structured exception
+           handling, the C runtime's) a filter or an __except or
+           __finally block of the scope table its prologue pushes. It goes where its function
            went, by whichever of the above, and has its class
 
 `callers`, `callees` and `between` say less than the rest: a helper of one
@@ -395,6 +397,43 @@ def eh_pieces(img, handler, func_info):
     return pieces
 
 
+SEH_TOP = 0xFFFFFFFE  # a scope record's EnclosingLevel when none encloses it
+
+
+def seh_pieces(img, table, text):
+    """The __except filters and the __except and __finally blocks of an SEH4
+    scope table at an address, or an empty set where it is not one. The C
+    runtime's functions use structured exception handling, not C++'s: the
+    prologue pushes the table (`push offset table; call __SEH_prolog4`, or
+    the same with __except_handler4 inline), and the runtime calls the
+    blocks it lists while it unwinds. The table is four cookie offsets (-2
+    for none), then one record a scope of (EnclosingLevel, filter, handler),
+    a filter of 0 making the handler a __finally block. 81 such blocks had
+    IDs and were placed by range, not as their functions' pieces (issue #17,
+    2026-11-20)."""
+    start, end = text
+    head = struct.unpack("<4I", img.bytes_at(table, 16))
+    if any(
+        o != SEH_TOP
+        and not -0x10000 < struct.unpack("<i", struct.pack("<I", o))[0] < 0x10000
+        for o in head
+    ):
+        return set()
+    pieces = set()
+    for k in range(64):
+        level, filt, handler = struct.unpack(
+            "<3I", img.bytes_at(table + 16 + 12 * k, 12)
+        )
+        if not (level == SEH_TOP or level < k) or not start <= handler < end:
+            break
+        if filt and not start <= filt < end:
+            break
+        pieces.add(handler)
+        if filt:
+            pieces.add(filt)
+    return pieces
+
+
 def handler_info(img, va):
     """The FuncInfo an __ehhandler stub at va loads, or None: the stub ends
     `mov eax, FuncInfo; jmp __CxxFrameHandler3`, as read_build finds it."""
@@ -488,6 +527,18 @@ def read_build(path, starts):
             at = img.data.find(text + b"\0", at + 1)
     owned, refs, strings = {}, {}, {}
     calls, imports, writes = {}, {}, {}
+    rdata = img.section(".rdata")[:2]
+    scope_tables = {}
+
+    def scope_table(value):
+        """Whether a pushed address is an SEH4 scope table; a string or other
+        datum is not, and goes on to the checks after."""
+        if not rdata[0] <= value < rdata[1]:
+            return False
+        if value not in scope_tables:
+            scope_tables[value] = seh_pieces(img, value, (text_start, text_end))
+        return bool(scope_tables[value])
+
     for i, va in enumerate(starts):
         end = min(starts[i + 1] if i + 1 < len(starts) else text_end, va + 0x8000)
         out, dlls, held, held_refs, held_strings = set(), set(), set(), set(), set()
@@ -501,6 +552,10 @@ def read_build(path, starts):
                             held.add(cls)
                     elif ins.mnemonic == "push" and value in handlers:
                         for piece in eh_pieces(img, value, handlers[value]):
+                            if piece in function_set and piece != va:
+                                owned.setdefault(piece, va)
+                    elif ins.mnemonic == "push" and scope_table(value):
+                        for piece in scope_tables[value]:
                             if piece in function_set and piece != va:
                                 owned.setdefault(piece, va)
                     elif value in marker:
