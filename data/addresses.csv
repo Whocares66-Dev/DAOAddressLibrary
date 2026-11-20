@@ -190,7 +190,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 189,function,ECBase::ECList<?>::GetNext,,0x00406030,0x004c21c0,0x00406030
 190,function,"std::list<std::pair<unsigned int,std::wstring>>::_Buynode",,0x004060b0,0x004064e0,0x004060b0
 191,function,Catch_All@0040612c,,0x0040612c,0x0040655c,0x0040612c
-192,function,"std::copy_backward<std::wstring*,std::wstring*>",,0x00406150,0x00406580,0x00406150
+192,function,"stdext::_Unchecked_move_backward<std::wstring*,std::wstring*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<std::wstring*,std::wstring*>.",0x00406150,0x00406580,0x00406150
 193,function,"std::_Uninit_fill_n<std::wstring*,unsigned int,std::wstring>",,0x00406180,0x004065b0,0x00406180
 194,function,Catch_All@004061eb,,0x004061eb,0x0040661b,0x004061eb
 195,function,"std::equal<std::_List_const_iterator<?>,std::_List_const_iterator<?>>",,0x00406220,0x00406650,0x00406220
@@ -3282,11 +3282,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3281,function,std::list<OnlineRec28>::_Buynode,,0x0047c9f0,0x004fd210,0x0047c9f0
 3282,function,Catch_All@0047ca6c,,0x0047ca6c,0x004fd28c,0x0047ca6c
 3283,function,"std::_Copy_backward<OnlineRec40A*,OnlineRec40A*>",,0x0047ca90,0x00856a10,0x0047ca90
-3284,function,"std::copy_backward<OnlineRec24*,OnlineRec24*>",,0x0047cae0,0x00856a60,0x0047cae0
+3284,function,"stdext::_Unchecked_move_backward<OnlineRec24*,OnlineRec24*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<OnlineRec24*,OnlineRec24*>.",0x0047cae0,0x00856a60,0x0047cae0
 3285,function,"std::_Copy_backward<PrereqItem*,PrereqItem*>",,0x0047cb10,0x004c32b0,0x0047cb10
 3286,function,"std::_Copy_backward<PRCItem*,PRCItem*>",,0x0047cb60,0x00856a90,0x0047cb60
-3287,function,"std::copy_backward<OnlineRec84*,OnlineRec84*>",,0x0047cbb0,0x00856ae0,0x0047cbb0
-3288,function,"std::copy_backward<OnlineFeatures::Achievement*,OnlineFeatures::Achievement*>",,0x0047cbe0,0x00856b10,0x0047cbe0
+3287,function,"stdext::_Unchecked_move_backward<OnlineRec84*,OnlineRec84*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<OnlineRec84*,OnlineRec84*>.",0x0047cbb0,0x00856ae0,0x0047cbb0
+3288,function,"stdext::_Unchecked_move_backward<OnlineFeatures::Achievement*,OnlineFeatures::Achievement*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<OnlineFeatures::Achievement*,OnlineFeatures::Achievement*>.",0x0047cbe0,0x00856b10,0x0047cbe0
 3289,function,std::_Destroy_range<OnlineRec40A*>,,0x0047cc10,0x00856b40,0x0047cc10
 3290,function,std::_Destroy_range<PrereqItem*>,,0x0047cc80,0x004c3300,0x0047cc80
 3291,function,"std::_Uninit_fill_n<OnlineRec40A*,unsigned int,OnlineRec40A>",,0x0047ccf0,0x00856bb0,0x0047ccf0
@@ -3499,7 +3499,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3498,function,"SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::SetFromText",,0x00489c40,0x004c8680,0x00489c40
 3499,function,"SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::GetTextInto",,0x00489c80,0x004c86c0,0x00489c80
 3500,function,"SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::GetText",,0x00489cb0,0x004c86f0,0x00489cb0
-3501,function,"std::copy_backward<Online::DatedRecord*,Online::DatedRecord*>",,0x00489d40,0x00860870,0x00489d40
+3501,function,"stdext::_Unchecked_move_backward<Online::DatedRecord*,Online::DatedRecord*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<Online::DatedRecord*,Online::DatedRecord*>.",0x00489d40,0x00860870,0x00489d40
 3502,function,"std::_Uninit_copy<Online::DatedRecord*,Online::DatedRecord*>",,0x00489d70,0x008608a0,0x00489d70
 3503,function,,,0x00489ddf,0x0086090f,0x00489ddf
 3504,function,OnlineFeatures::DefineProfileFields,,0x00489e20,0x00860950,0x00489e20
@@ -3638,8 +3638,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3637,function,"std::_Uninit_copy<OnlineRec48*,OnlineRec48*>",,0x004920a0,0x00885f00,0x004920a0
 3638,function,Catch_All@00492109,,0x00492109,0x00885f69,0x00492109
 3639,function,"std::map<std::wstring,std::wstring>::_Lbound",,0x00492140,0x00536300,0x00492140
-3640,function,"std::copy_backward<OnlineRec68*,OnlineRec68*>",,0x00492200,0x00885fa0,0x00492200
-3641,function,"std::copy_backward<OnlineRec48*,OnlineRec48*>",,0x00492230,0x00885fd0,0x00492230
+3640,function,"stdext::_Unchecked_move_backward<OnlineRec68*,OnlineRec68*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<OnlineRec68*,OnlineRec68*>.",0x00492200,0x00885fa0,0x00492200
+3641,function,"stdext::_Unchecked_move_backward<OnlineRec48*,OnlineRec48*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<OnlineRec48*,OnlineRec48*>.",0x00492230,0x00885fd0,0x00492230
 3642,function,"std::_Uninit_fill_n<OnlineRec68*,unsigned int,OnlineRec68>",,0x00492260,0x00886000,0x00492260
 3643,function,Catch_All@004922cb,,0x004922cb,0x0088606b,0x004922cb
 3644,function,"std::_Uninit_fill_n<OnlineRec48*,unsigned int,OnlineRec48>",,0x00492300,0x008860a0,0x00492300
@@ -3744,8 +3744,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3743,function,OfferManager::GetDecodedOfferText,,0x0049a640,0x0087ba30,0x0049a640
 3744,function,OfferManager::SetOfferSeen,,0x0049a730,0x0087bb20,0x0049a730
 3745,function,OfferManager::ResolveAddInImage,,0x0049a7c0,0x0087bbb0,0x0049a7c0
-3746,function,"std::copy_backward<Offer*,Offer*>",,0x0049a8f0,0x0087bce0,0x0049a8f0
-3747,function,"std::copy_backward<OfferTag*,OfferTag*>",,0x0049a920,0x0087bd10,0x0049a920
+3746,function,"stdext::_Unchecked_move_backward<Offer*,Offer*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<Offer*,Offer*>.",0x0049a8f0,0x0087bce0,0x0049a8f0
+3747,function,"stdext::_Unchecked_move_backward<OfferTag*,OfferTag*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<OfferTag*,OfferTag*>.",0x0049a920,0x0087bd10,0x0049a920
 3748,function,"std::_Uninit_fill_n<Offer*,unsigned int,Offer>",,0x0049a950,0x0087bd40,0x0049a950
 3749,function,Catch_All@0049a9be,,0x0049a9be,0x0087bdae,0x0049a9be
 3750,function,"std::_Uninit_fill_n<OfferTag*,unsigned int,OfferTag>",,0x0049aa00,0x0087bdf0,0x0049aa00
@@ -3829,7 +3829,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3828,function,"std::basic_istream<wchar_t,std::char_traits<wchar_t>>::operator>>(short&)",,0x0049fc50,0x004c7080,0x0049fc50
 3829,function,Catch_All@0049fd24,,0x0049fd24,0x004c7154,0x0049fd24
 3830,retired,,,,,
-3831,function,"std::copy_backward<AddInItem*,AddInItem*>",,0x0049fdf0,0x00880460,0x0049fdf0
+3831,function,"stdext::_Unchecked_move_backward<AddInItem*,AddInItem*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<AddInItem*,AddInItem*>.",0x0049fdf0,0x00880460,0x0049fdf0
 3832,function,"std::_Uninit_copy<AddInItem*,AddInItem*>",,0x0049fe20,0x00880490,0x0049fe20
 3833,function,Catch_All@0049fe8f,,0x0049fe8f,0x008804ff,0x0049fe8f
 3834,function,"std::_Median<AddInItem*,AddInItemPriorityLess>",,0x0049fed0,0x00880540,0x0049fed0
@@ -5378,7 +5378,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5377,function,,,0x004e459c,0x0082a2bc,0x004e459c
 5378,function,TlkFile::TlkFile,Zeroes the two leading dwords and copy-assigns the by-value wstring argument to the file name at +8.,0x004e45d0,0x0082a2f0,0x004e45d0
 5379,function,"std::_Copy_backward_opt<?*,?*>",,0x004e4650,0x0082a370,0x004e4650
-5380,function,"std::copy<?*,?*>",,0x004e46b0,0x0082a3d0,0x004e46b0
+5380,function,"stdext::_Unchecked_move_backward<?*,?*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy<?*,?*>.",0x004e46b0,0x0082a3d0,0x004e46b0
 5381,function,TlkFile::Create,,0x004e46e0,0x0082a400,0x004e46e0
 5382,function,TlkFile::FindString,,0x004e47f0,0x0082a510,0x004e47f0
 5383,function,std::vector<?>::_Ufill,,0x004e4950,0x0082a670,0x004e4950
@@ -5504,7 +5504,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5503,function,ScriptVariableNames::RegisterWellKnown,,0x004e85c0,0x00835660,0x004e85c0
 5504,function,ScriptVariableKey::ScriptVariableKey,,0x004e8750,0x008357f0,0x004e8750
 5505,function,std::vector<Elem14>::erase,,0x004e88c0,0x00835960,0x004e88c0
-5506,function,std::copy_backward<Elem14*>,,0x004e8930,0x008359d0,0x004e8930
+5506,function,"stdext::_Unchecked_move_backward<Elem14*,Elem14*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<Elem14*>.",0x004e8930,0x008359d0,0x004e8930
 5507,function,ScriptVariableKey::ScriptVariableKey_wstring,,0x004e8960,0x00835a00,0x004e8960
 5508,function,std::vector<Elem14>::clear,,0x004e8990,0x00835a30,0x004e8990
 5509,function,std::vector<Elem14>::_Ufill,,0x004e89d0,0x00835a70,0x004e89d0
@@ -5948,7 +5948,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5947,function,"std::copy<Graphics::MaterialStateEntry*,Graphics::MaterialStateEntry*>",,0x004fa9a0,0x007f9330,0x004fa9a0
 5948,function,"std::fill<Graphics::MaterialStateEntry*,Graphics::MaterialStateEntry>",,0x004fa9d0,0x007f9360,0x004fa9d0
 5949,function,Multithreading::SynchSafePointerList<Graphics::MaterialState>::`scalar deleting destructor',,0x004faa00,0x007f9390,0x004faa00
-5950,function,"std::_Copy_backward_opt<Graphics::MaterialStateEntry*,Graphics::MaterialStateEntry*>",,0x004faa30,0x007f93c0,0x004faa30
+5950,function,"stdext::_Unchecked_move_backward<Graphics::MaterialStateEntry*,Graphics::MaterialStateEntry*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::_Copy_backward_opt<Graphics::MaterialStateEntry*,Graphics::MaterialStateEntry*>.",0x004faa30,0x007f93c0,0x004faa30
 5951,function,"std::_Uninit_copy<Graphics::MaterialStateEntry*,Graphics::MaterialStateEntry*,std::allocator<Graphics::MaterialStateEntry>>",,0x004faa60,0x007f93f0,0x004faa60
 5952,function,,,0x004faac9,0x007f9459,0x004faac9
 5953,function,"std::_Destroy_range<Graphics::MaterialStateEntry*,std::allocator<Graphics::MaterialStateEntry>>",,0x004fab00,0x007f9490,0x004fab00
@@ -7180,7 +7180,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7179,function,,,0x0052b2cb,0x0073214b,0x0052b2cb
 7180,function,,,0x0052b300,0x00732180,0x0052b300
 7181,function,std::vector<?>::erase,,0x0052b370,0x007321f0,0x0052b370
-7182,function,"std::_Copy_backward<?*,?*>",,0x0052b3d0,0x00732250,0x0052b3d0
+7182,function,"stdext::_Unchecked_move_backward<?*,?*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::_Copy_backward<?*,?*>.",0x0052b3d0,0x00732250,0x0052b3d0
 7183,function,std::vector<?>::_Ufill,,0x0052b400,0x00732280,0x0052b400
 7184,function,std::_Tree<?>::insert,,0x0052b440,0x007322c0,0x0052b440
 7185,function,std::vector<?>::_Ucopy,,0x0052b460,0x007322e0,0x0052b460
@@ -7903,7 +7903,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7902,function,std::list<?>::clear,,0x005484b0,0x0073fc10,0x005484b0
 7903,function,ECBase::ECDynArray<ObjectNodeEmitterBlueprint::Attachment>::begin,,0x005484f0,0x00749b00,0x005484f0
 7904,function,ECBase::ECDynArray<ObjectNodeEmitterBlueprint::Attachment>::end,,0x00548540,0x00749b50,0x00548540
-7905,function,"std::_Copy_backward<?*,?*>",,0x005485b0,0x004bcc00,0x005485b0
+7905,function,"stdext::_Unchecked_move_backward<?*,?*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::_Copy_backward<?*,?*>.",0x005485b0,0x004bcc00,0x005485b0
 7906,function,GraphicsStructures::Object::FindAnimationTree,,0x005485e0,0x00749bc0,0x005485e0
 7907,function,GraphicsStructures::Object::FindAnimationTreeIndex,,0x00548650,0x00749c30,0x00548650
 7908,function,GraphicsStructures::Object::PlayAnimationNode,,0x005486c0,0x00749ca0,0x005486c0
@@ -8404,7 +8404,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8403,function,GraphicsStructures::EvaluateAgeMap,,0x005607c0,0x007ab2e0,0x005607c0
 8404,function,GraphicsStructures::ObjectNodeEmitterBlueprint::CreateStandardEmitter,,0x005609e0,0x007ab500,0x005609e0
 8405,function,GraphicsStructures::ObjectNodeEmitterBlueprint::CreatePhysicsEmitter,,0x00560e10,0x007ab930,0x00560e10
-8406,function,"std::copy_backward<?*,?*>",,0x00561310,0x00787a00,0x00561310
+8406,function,"stdext::_Unchecked_move_backward<?*,?*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<?*,?*>.",0x00561310,0x00787a00,0x00561310
 8407,function,"std::_Uninit_fill_n<?*,unsigned int,?>",,0x00561340,0x00787a60,0x00561340
 8408,function,Catch_All@00561399,,0x00561399,0x00787ab9,0x00561399
 8409,function,GraphicsStructures::ObjectNodeEmitterBlueprint::Instantiate,,0x005613d0,0x007abe30,0x005613d0
@@ -8539,7 +8539,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8538,function,"std::_Push_heap<GraphicsStructures::ExportValue*,int,GraphicsStructures::ExportValue>",,0x00566390,0x0075de20,0x00566390
 8539,function,GraphicsStructures::ObjectBlueprint::ExpandObjectBounds,,0x00566410,0x0075dea0,0x00566410
 8540,function,GraphicsStructures::ObjectBlueprint::BuildExportValues,,0x005665b0,0x0075e040,0x005665b0
-8541,function,"std::_Copy_backward<GraphicsStructures::ModelExport*,GraphicsStructures::ModelExport*>",,0x005667e0,0x0075e270,0x005667e0
+8541,function,"stdext::_Unchecked_move_backward<GraphicsStructures::ModelExport*,GraphicsStructures::ModelExport*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::_Copy_backward<GraphicsStructures::ModelExport*,GraphicsStructures::ModelExport*>.",0x005667e0,0x0075e270,0x005667e0
 8542,function,"std::_Uninit_fill_n_Unchecked<GraphicsStructures::ModelExport*,unsigned int,GraphicsStructures::ModelExport>",,0x00566810,0x0075e2a0,0x00566810
 8543,function,Catch_All@00566869,,0x00566869,0x0075e2f9,0x00566869
 8544,function,std::_Unguarded_partition<?*>,,0x005668a0,0x0075e330,0x005668a0
@@ -8820,7 +8820,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8819,function,,,0x00573e60,0x00488720,0x00573e60
 8820,function,std::list<?>::_Tidy,"Walks a circular doubly linked list freeing each node, frees the head and zeroes head and size; folded across SmartObject, GameModeDialog and the SmartData attribute destructors.",0x00573ed0,0x00619a00,0x00573ed0
 8821,function,GraphicsStructures::Array<GraphicsStructures::Array<Math::Vector4f>>::Array,,0x00573f20,0x007539d0,0x00573f20
-8822,function,,,0x00573f50,0x00712360,0x00573f50
+8822,function,"stdext::_Unchecked_move_backward<?*,?*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off).",0x00573f50,0x00712360,0x00573f50
 8823,function,,,0x00573f80,0x00712430,0x00573f80
 8824,function,,,0x00573ff0,0x007124a0,0x00573ff0
 8825,function,,,0x0057405b,0x0071250b,0x0057405b
@@ -9270,9 +9270,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9269,function,Catch_All@0058cb09,,0x0058cb09,0x007876e9,0x0058cb09
 9270,function,GraphicsStructures::ReadNodeTranslation,,0x0058cb40,0x00787720,0x0058cb40
 9271,function,GraphicsStructures::ModelHierarchyReader::VisitNodeChildren,,0x0058cbd0,0x007877b0,0x0058cbd0
-9272,function,"std::_Copy_backward<GraphicsStructures::TriangleIndices16*,GraphicsStructures::TriangleIndices16*>",,0x0058cdf0,0x007879d0,0x0058cdf0
+9272,function,"stdext::_Unchecked_move_backward<GraphicsStructures::TriangleIndices16*,GraphicsStructures::TriangleIndices16*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::_Copy_backward<GraphicsStructures::TriangleIndices16*,GraphicsStructures::TriangleIndices16*>.",0x0058cdf0,0x007879d0,0x0058cdf0
 9273,function,Gff4::StructReader::ReadVector4,,0x0058ce20,0x0070d520,0x0058ce20
-9274,function,"std::_Copy_backward<GraphicsStructures::ClothAttachment*,GraphicsStructures::ClothAttachment*>",,0x0058ce90,0x00787a30,0x0058ce90
+9274,function,"stdext::_Unchecked_move_backward<GraphicsStructures::ClothAttachment*,GraphicsStructures::ClothAttachment*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::_Copy_backward<GraphicsStructures::ClothAttachment*,GraphicsStructures::ClothAttachment*>.",0x0058ce90,0x00787a30,0x0058ce90
 9275,function,"std::_Uninit_fill_n_Unchecked<GraphicsStructures::ClothAttachment*,unsigned int,GraphicsStructures::ClothAttachment>",,0x0058cec0,0x00787af0,0x0058cec0
 9276,function,Catch_All@0058cf2b,,0x0058cf2b,0x00787b5b,0x0058cf2b
 9277,function,GraphicsStructures::ReadNodeRotation,,0x0058cf60,0x00787b90,0x0058cf60
@@ -9748,7 +9748,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9747,function,XML_Document_Node::AppendText,,0x005b4f70,0x007b47a0,0x005b4f70
 9748,function,"std::_Uninit_copy<std::pair<std::wstring,std::wstring>*,std::pair<std::wstring,std::wstring>*>",,0x005b5060,0x004ec440,0x005b5060
 9749,function,,,0x005b50d9,0x004ec4b9,0x005b50d9
-9750,function,"std::uninitialized_copy<std::pair<std::wstring,std::wstring>*>",,0x005b5110,0x004ed4b0,0x005b5110
+9750,function,"stdext::_Unchecked_move_backward<std::pair<std::wstring,std::wstring>*,std::pair<std::wstring,std::wstring>*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::uninitialized_copy<std::pair<std::wstring,std::wstring>*>.",0x005b5110,0x004ed4b0,0x005b5110
 9751,function,"std::_Uninit_fill_n<std::pair<std::wstring,std::wstring>*,unsigned int,std::pair<std::wstring,std::wstring>>",,0x005b5140,0x004ec4f0,0x005b5140
 9752,function,,,0x005b51be,0x004ec56e,0x005b51be
 9753,function,"std::_Destroy_range<std::pair<std::wstring,std::wstring>>",,0x005b5200,0x004ed410,0x005b5200
@@ -10143,7 +10143,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10142,function,Catch_All@005c63af,,0x005c63af,0x004691af,0x005c63af
 10143,function,SmartData::TokenPath::GetSegment,,0x005c63f0,0x004691f0,0x005c63f0
 10144,function,SmartData::TokenStringObserver::UpdateAll,,0x005c6430,0x00469230,0x005c6430
-10145,function,"std::copy_backward<SmartData::TokenPath*,SmartData::TokenPath*>",,0x005c6480,0x00469280,0x005c6480
+10145,function,"stdext::_Unchecked_move_backward<SmartData::TokenPath*,SmartData::TokenPath*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<SmartData::TokenPath*,SmartData::TokenPath*>.",0x005c6480,0x00469280,0x005c6480
 10146,function,"std::_Uninit_fill_n<SmartData::TokenPath*,unsigned int,SmartData::TokenPath,std::allocator<SmartData::TokenPath>>",,0x005c64b0,0x004692b0,0x005c64b0
 10147,function,Catch_All@005c650c,,0x005c650c,0x0046930c,0x005c650c
 10148,function,SmartData::TokenManager::FindKeyOfObject,,0x005c6550,0x00469350,0x005c6550
@@ -10716,7 +10716,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10715,function,"std::vector<SmartData::Attribute<int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::_Ufill",,0x005dfa10,0x004cc1a0,0x005dfa10
 10716,function,"std::vector<SmartData::Attribute<ECBase::ECString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::_Ufill",,0x005dfa50,0x004cc1e0,0x005dfa50
 10717,function,"std::vector<SmartData::Attribute<int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::_Ucopy",,0x005dfa90,0x004cc020,0x005dfa90
-10718,function,"std::copy_backward<SmartData::Attribute<ECBase::ECString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,SmartData::Attribute<ECBase::ECString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*>",,0x005dfac0,0x004cc220,0x005dfac0
+10718,function,"stdext::_Unchecked_move_backward<SmartData::Attribute<ECBase::ECString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,SmartData::Attribute<ECBase::ECString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<SmartData::Attribute<ECBase::ECString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,SmartData::Attribute<ECBase::ECString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*>.",0x005dfac0,0x004cc220,0x005dfac0
 10719,function,,,0x005dfaf0,0x004cc250,0x005dfaf0
 10720,function,"std::vector<SmartData::Attribute<ECBase::ECString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::erase",,0x005dfb00,0x004cc260,0x005dfb00
 10721,function,"std::vector<SmartData::Attribute<int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::erase",,0x005dfb70,0x005824e0,0x005dfb70
@@ -10894,7 +10894,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10893,function,AddInsManager::MarkAddInSeen,,0x005f10b0,0x004de5c0,0x005f10b0
 10894,function,AddInsManager::ClearAddInSeenFlags,,0x005f1280,0x004de790,0x005f1280
 10895,function,AddInsManager::ResolveAddInImageName,,0x005f1350,0x004de860,0x005f1350
-10896,function,"std::copy_backward<?*,?*>",,0x005f1470,0x004de980,0x005f1470
+10896,function,"stdext::_Unchecked_move_backward<?*,?*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<?*,?*>.",0x005f1470,0x004de980,0x005f1470
 10897,function,"std::_Uninit_fill_n<?*,unsigned int,?>",,0x005f14a0,0x004de9b0,0x005f14a0
 10898,function,Catch_All@005f14f9,,0x005f14f9,0x004dea09,0x005f14f9
 10899,function,AddInsManager::ReadLocalizedText,,0x005f1530,0x004dea40,0x005f1530
@@ -10948,8 +10948,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10947,function,AddInsManager::Disable,,0x005f6190,0x004e37c0,0x005f6190
 10948,function,AddInsManager::ParseAddInItem,,0x005f65c0,0x004e3bf0,0x005f65c0
 10949,function,AddInsManager::ParseAddInItemWithStrref,,0x005f6c30,0x004e4260,0x005f6c30
-10950,function,"std::copy_backward<AddInRecord*,AddInRecord*>",,0x005f7280,0x004e48b0,0x005f7280
-10951,function,"std::copy_backward<AddInXmlEntry*,AddInXmlEntry*>",,0x005f72b0,0x004e48e0,0x005f72b0
+10950,function,"stdext::_Unchecked_move_backward<AddInRecord*,AddInRecord*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<AddInRecord*,AddInRecord*>.",0x005f7280,0x004e48b0,0x005f7280
+10951,function,"stdext::_Unchecked_move_backward<AddInXmlEntry*,AddInXmlEntry*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<AddInXmlEntry*,AddInXmlEntry*>.",0x005f72b0,0x004e48e0,0x005f72b0
 10952,function,"std::_Uninit_fill_n<AddInRecord*,unsigned int,AddInRecord>",,0x005f72e0,0x004e4910,0x005f72e0
 10953,function,Catch_All@005f734e,,0x005f734e,0x004e497e,0x005f734e
 10954,function,"std::_Uninit_fill_n<AddInXmlEntry*,unsigned int,AddInXmlEntry>",,0x005f7390,0x004e49c0,0x005f7390
@@ -11048,7 +11048,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 11047,function,CCModule::GetObjectIdByTag,,0x005ff580,0x004ed140,0x005ff580
 11048,function,CCModule::ReleaseResources,,0x005ff740,0x004ed300,0x005ff740
 11049,function,Gff4::BlockRef::ReadVector3ById,,0x005ff7a0,0x004ed360,0x005ff7a0
-11050,function,"std::copy_backward<CCModule::TagIndexEntry*,CCModule::TagIndexEntry*>",,0x005ff820,0x004ed480,0x005ff820
+11050,function,"stdext::_Unchecked_move_backward<CCModule::TagIndexEntry*,CCModule::TagIndexEntry*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<CCModule::TagIndexEntry*,CCModule::TagIndexEntry*>.",0x005ff820,0x004ed480,0x005ff820
 11051,function,CCModule::EventHandler,,0x005ff850,0x004ed5c0,0x005ff850
 11052,function,CCModule::GetWaypointIdByTag,,0x005ff890,0x004ed600,0x005ff890
 11053,function,CCModule::ReadFromSave,,0x005ff8b0,0x004ed620,0x005ff8b0
@@ -11108,7 +11108,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 11107,function,CCModule::OpenCampaignCif,,0x00603090,0x004f1620,0x00603090
 11108,function,ECResMan::ReloadChangedResources,,0x006031c0,0x004f1750,0x006031c0
 11109,function,"std::_Copy<CCModule::AreaListEntry*,CCModule::AreaListEntry*>",,0x00603660,0x004f1bf0,0x00603660
-11110,function,"std::copy_backward<CCModule::AreaListEntry*,CCModule::AreaListEntry*>",,0x006036c0,0x004f1c50,0x006036c0
+11110,function,"stdext::_Unchecked_move_backward<CCModule::AreaListEntry*,CCModule::AreaListEntry*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<CCModule::AreaListEntry*,CCModule::AreaListEntry*>.",0x006036c0,0x004f1c50,0x006036c0
 11111,function,"std::_Uninit_copy<CCModule::AreaListEntry*,CCModule::AreaListEntry*>",,0x006036f0,0x004f1c80,0x006036f0
 11112,function,Catch_All@00603759,,0x00603759,0x004f1ce9,0x00603759
 11113,function,"std::_Uninit_fill_n<CCModule::AreaListEntry*,unsigned int,CCModule::AreaListEntry>",,0x00603790,0x004f1d20,0x00603790
@@ -13672,7 +13672,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13671,function,KDCreatureBranch::GetNodeMasks,,0x0067e420,0x0056a5a0,0x0067e420
 13672,function,"std::copy<CCArea::StageEntry*,CCArea::StageEntry*>",,0x0067e4d0,0x0056a6b0,0x0067e4d0
 13673,function,"std::_Destroy_range<CCArea::StageEntry,std::allocator<CCArea::StageEntry>>",,0x0067e500,0x0056a6e0,0x0067e500
-13674,function,"std::copy_backward<CCArea::StageEntry*,CCArea::StageEntry*>",,0x0067e570,0x0056a750,0x0067e570
+13674,function,"stdext::_Unchecked_move_backward<CCArea::StageEntry*,CCArea::StageEntry*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<CCArea::StageEntry*,CCArea::StageEntry*>.",0x0067e570,0x0056a750,0x0067e570
 13675,function,"std::_Uninit_copy<CCArea::StageEntry*,CCArea::StageEntry*,std::allocator<CCArea::StageEntry>>",,0x0067e5a0,0x0056a780,0x0067e5a0
 13676,function,Catch_All@0067e609,,0x0067e609,0x0056a7e9,0x0067e609
 13677,function,"std::_Uninit_fill_n<CCArea::StageEntry*,unsigned int,CCArea::StageEntry,std::allocator<CCArea::StageEntry>>",,0x0067e640,0x0056a820,0x0067e640
@@ -14720,7 +14720,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14719,function,std::vector<unsigned int>::erase,,0x006ad590,0x004540b0,0x006ad590
 14720,function,CCCreature::RegisterHandler_SwitchWeaponSetMessage,,0x006ad5f0,0x0059e7d0,0x006ad5f0
 14721,function,CCCreature::RegisterHandler_SwitchWeaponSetNowMessage,,0x006ad670,0x0059e850,0x006ad670
-14722,function,"std::copy_backward<TintBlock*,TintBlock*>",,0x006ad6f0,0x0059e8d0,0x006ad6f0
+14722,function,"stdext::_Unchecked_move_backward<TintBlock*,TintBlock*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<TintBlock*,TintBlock*>.",0x006ad6f0,0x0059e8d0,0x006ad6f0
 14723,function,"std::_Uninit_fill_n<TintBlock*,unsigned int,TintBlock,std::allocator<TintBlock>>",,0x006ad720,0x0059e900,0x006ad720
 14724,function,Catch_All@006ad78e,,0x006ad78e,0x0059e96e,0x006ad78e
 14725,function,"std::_Remove_copy<SmartData::Attribute<short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,SmartData::Attribute<short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,SmartData::Attribute<short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",,0x006ad7d0,0x0059e9b0,0x006ad7d0
@@ -15175,7 +15175,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15174,function,HeroInfo::HeroInfo,,0x006ccf30,0x005be970,0x006ccf30
 15175,function,HeroInfo::`scalar deleting destructor',,0x006cd590,0x005befd0,0x006cd590
 15176,function,std::set<int>::find,,0x006cd5b0,0x005bf030,0x006cd5b0
-15177,function,"std::copy_backward<SaveLoadProxy::SaveEntry*,SaveLoadProxy::SaveEntry*>",,0x006cd620,0x005bf0a0,0x006cd620
+15177,function,"stdext::_Unchecked_move_backward<SaveLoadProxy::SaveEntry*,SaveLoadProxy::SaveEntry*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<SaveLoadProxy::SaveEntry*,SaveLoadProxy::SaveEntry*>.",0x006cd620,0x005bf0a0,0x006cd620
 15178,function,"std::_Uninit_fill_n<SaveLoadProxy::SaveEntry*,unsigned int,SaveLoadProxy::SaveEntry,std::allocator<SaveLoadProxy::SaveEntry>>",,0x006cd650,0x005bf0d0,0x006cd650
 15179,function,Catch_All@006cd6bb,,0x006cd6bb,0x005bf13b,0x006cd6bb
 15180,function,"std::_Destroy_range<SaveLoadProxy::SaveEntry,std::allocator<SaveLoadProxy::SaveEntry>>",,0x006cd6f0,0x005bf170,0x006cd6f0
@@ -15636,7 +15636,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15635,function,"SmartData::Attribute<ECBase::ECDynArray<PlotTip*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x006eff40,0x005e19f0,0x006eff40
 15636,function,"std::vector<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::erase",,0x006eff60,0x005e1a10,0x006eff60
 15637,function,"std::uninitialized_copy<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*>",,0x006effd0,0x005e00f0,0x006effd0
-15638,function,"std::copy_backward<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*>",,0x006f0000,0x005e1a80,0x006f0000
+15638,function,"stdext::_Unchecked_move_backward<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*>.",0x006f0000,0x005e1a80,0x006f0000
 15639,function,"std::vector<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::clear",,0x006f0030,0x005e1ab0,0x006f0030
 15640,function,"std::_Unguarded_partition<CodexEntry**,CodexEntryNameLess>",,0x006f0070,0x005e1af0,0x006f0070
 15641,function,"std::_Make_heap<CodexEntry**,int,CodexEntry*,CodexEntryNameLess>",,0x006f0640,0x005e20c0,0x006f0640
@@ -15814,7 +15814,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15813,function,CSAreaList::GetAreaByIndex,,0x006fa8b0,0x005ec5a0,0x006fa8b0
 15814,function,CSAreaList::FindArea,,0x006fa910,0x005ec600,0x006fa910
 15815,function,CSAreaList::FindAreaIndexById,,0x006faaf0,0x005ec7e0,0x006faaf0
-15816,function,"std::copy_backward<CSAreaList::Entry*,CSAreaList::Entry*>",,0x006fab80,0x005ec870,0x006fab80
+15816,function,"stdext::_Unchecked_move_backward<CSAreaList::Entry*,CSAreaList::Entry*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<CSAreaList::Entry*,CSAreaList::Entry*>.",0x006fab80,0x005ec870,0x006fab80
 15817,function,CSAreaList::LoadAreas,,0x006fabb0,0x005ec8a0,0x006fabb0
 15818,function,std::vector<CSAreaList::Entry>::_Ufill,,0x006fadf0,0x005ecae0,0x006fadf0
 15819,function,std::vector<CSAreaList::Entry>::erase,,0x006fae30,0x005ecb20,0x006fae30
@@ -16003,7 +16003,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16002,function,ScriptVariableTable::FindVariable,,0x00702d50,0x005f4190,0x00702d50
 16003,function,Gff4::ValueRef::ReadDword,,0x00702e20,0x005f4260,0x00702e20
 16004,function,Gff4::ValueRef::ReadString,,0x00702e30,0x005f4280,0x00702e30
-16005,function,std::copy_backward<ScriptVariable*>,,0x00702e60,0x004bcc30,0x00702e60
+16005,function,"stdext::_Unchecked_move_backward<ScriptVariable*,ScriptVariable*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<ScriptVariable*>.",0x00702e60,0x004bcc30,0x00702e60
 16006,function,ScriptVariableTable::ForScript_GetLocalInt,,0x00702e90,0x005f42b0,0x00702e90
 16007,function,ScriptVariableTable::ForScript_GetLocalFloat,,0x00702ec0,0x005f42e0,0x00702ec0
 16008,function,ScriptVariableTable::ForScript_GetLocalString,,0x00702ef0,0x005f4310,0x00702ef0
@@ -17447,7 +17447,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17446,function,GUI::GUICharGen::RegisterHandler_CharGenResetCreatureMessage,,0x007388c0,0x006444b0,0x007388c0
 17447,function,GUI::GUICharGen::RegisterHandler_UpdateHeroAppearanceMessage,,0x00738970,0x00644560,0x00738970
 17448,function,GUI::GUICharGen::RegisterHandler_ImportHeroMessage,,0x00738a20,0x00644610,0x00738a20
-17449,function,"std::copy_backward<GUICharGen::SliderEntry *,GUICharGen::SliderEntry *>",,0x00738ad0,0x006446c0,0x00738ad0
+17449,function,"stdext::_Unchecked_move_backward<GUICharGen::SliderEntry *,GUICharGen::SliderEntry *>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<GUICharGen::SliderEntry *,GUICharGen::SliderEntry *>.",0x00738ad0,0x006446c0,0x00738ad0
 17450,function,"std::_Uninit_fill_n<GUICharGen::SliderEntry *,unsigned int,GUICharGen::SliderEntry,std::allocator<GUICharGen::SliderEntry> >",,0x00738b00,0x006446f0,0x00738b00
 17451,function,Catch_All@00738b6b,,0x00738b6b,0x0064475b,0x00738b6b
 17452,function,"std::_Destroy_range<GUICharGen::SliderEntry *,std::allocator<GUICharGen::SliderEntry> >",,0x00738ba0,0x00644790,0x00738ba0
@@ -18329,7 +18329,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18328,function,GameModePartyPicker::RegisterHandler_SubmitPartyChangesMessage,,0x00767ad0,0x0067f3c0,0x00767ad0
 18329,function,GameModePartyPicker::RegisterHandler_UnselectPartyMemberMessage,,0x00767b60,0x0067f450,0x00767b60
 18330,function,GameModePartyPicker::RegisterHandler_ClearPartyPickerMessage,,0x00767bf0,0x0067f4e0,0x00767bf0
-18331,function,"std::copy_backward<GameModePartyPicker::StageEntry *,GameModePartyPicker::StageEntry *>",,0x00767c80,0x0067f570,0x00767c80
+18331,function,"stdext::_Unchecked_move_backward<GameModePartyPicker::StageEntry *,GameModePartyPicker::StageEntry *>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<GameModePartyPicker::StageEntry *,GameModePartyPicker::StageEntry *>.",0x00767c80,0x0067f570,0x00767c80
 18332,function,"std::_Uninit_fill_n<GameModePartyPicker::StageEntry *,unsigned int,GameModePartyPicker::StageEntry,std::allocator<GameModePartyPicker::StageEntry>>",,0x00767cb0,0x0067f5a0,0x00767cb0
 18333,function,"std::_Uninit_fill_n<SmartData::Attribute<unsigned int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification> *,unsigned int,SmartData::Attribute<unsigned int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>,std::allocator<SmartData::Attribute<unsigned int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>>",,0x00767ce0,0x0067f5d0,0x00767ce0
 18334,function,std::_Insertion_sort<CCObject **>,,0x00767d10,0x0067f600,0x00767d10
@@ -20098,8 +20098,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20097,function,GUI::GUIPaperdoll::LoadHeadFromCharFile,,0x007b4210,0x00692150,0x007b4210
 20098,function,std::_Tree<unsigned int>::find,,0x007b4470,0x007dfdd0,0x007b4470
 20099,function,"std::_Copy_backward<GUI::HeadPreset::MaterialValue *,GUI::HeadPreset::MaterialValue *>",,0x007b44e0,0x006923b0,0x007b44e0
-20100,function,"std::copy_backward<GUI::HeadPreset::MaterialVector *,GUI::HeadPreset::MaterialVector *>",,0x007b4530,0x00692400,0x007b4530
-20101,function,"std::copy_backward<GUI::HeadPreset::Texture *,GUI::HeadPreset::Texture *>",,0x007b4560,0x00692430,0x007b4560
+20100,function,"stdext::_Unchecked_move_backward<GUI::HeadPreset::MaterialVector *,GUI::HeadPreset::MaterialVector *>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<GUI::HeadPreset::MaterialVector *,GUI::HeadPreset::MaterialVector *>.",0x007b4530,0x00692400,0x007b4530
+20101,function,"stdext::_Unchecked_move_backward<GUI::HeadPreset::Texture *,GUI::HeadPreset::Texture *>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<GUI::HeadPreset::Texture *,GUI::HeadPreset::Texture *>.",0x007b4560,0x00692430,0x007b4560
 20102,function,std::_Destroy_range<GUI::HeadPreset::MaterialValue *>,,0x007b4590,0x00692460,0x007b4590
 20103,function,std::_Destroy_range<GUI::HeadPreset::MaterialVector *>,,0x007b4600,0x006924d0,0x007b4600
 20104,function,std::_Destroy_range<GUI::HeadPreset::Texture *>,,0x007b4670,0x00692540,0x007b4670
@@ -20264,7 +20264,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20263,function,std::_Tree<RefHandleMapTraits>::_Tidy,,0x007bd290,0x0069b590,0x007bd290
 20264,function,"std::map<?,?>::_Insert",,0x007bd2d0,0x0069b5d0,0x007bd2d0
 20265,function,std::vector<GUI::HeadPreset::ModelWeight>::erase,,0x007bd4d0,0x0069b7d0,0x007bd4d0
-20266,function,"std::copy_backward<GUI::HeadPreset::ModelWeight*,GUI::HeadPreset::ModelWeight*>",,0x007bd540,0x0069b840,0x007bd540
+20266,function,"stdext::_Unchecked_move_backward<GUI::HeadPreset::ModelWeight*,GUI::HeadPreset::ModelWeight*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<GUI::HeadPreset::ModelWeight*,GUI::HeadPreset::ModelWeight*>.",0x007bd540,0x0069b840,0x007bd540
 20267,function,"std::_Uninit_fill_n<GUI::HeadPreset::ModelWeight*,unsigned int,GUI::HeadPreset::ModelWeight>",,0x007bd570,0x0069b870,0x007bd570
 20268,function,Catch_All@007bd5e4,,0x007bd5e4,0x0069b8e4,0x007bd5e4
 20269,function,GUI::GUIPaperdoll::`scalar deleting destructor',,0x007bd620,0x0069b920,0x007bd620
@@ -20493,7 +20493,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20492,function,MapObject::`scalar deleting destructor',,0x007c81f0,0x006aeec0,0x007c81f0
 20493,function,"std::copy<MapTrail*,MapTrail*>",,0x007c8210,0x006aeee0,0x007c8210
 20494,function,std::vector<MapTrail>::erase,,0x007c8270,0x006aef40,0x007c8270
-20495,function,"std::copy_backward<MapTrail*,MapTrail*>",,0x007c82e0,0x006aefb0,0x007c82e0
+20495,function,"stdext::_Unchecked_move_backward<MapTrail*,MapTrail*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<MapTrail*,MapTrail*>.",0x007c82e0,0x006aefb0,0x007c82e0
 20496,function,std::vector<MapTrail>::_Insert_n,,0x007c8310,0x006aefe0,0x007c8310
 20497,function,,,0x007c84dc,0x006af1ac,0x007c84dc
 20498,function,,,0x007c8587,0x006af257,0x007c8587
@@ -20774,9 +20774,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20773,function,EC::Cutscene::Actor::ActionDrawWeapon::Update,,0x007d1210,0x006b8580,0x007d1210
 20774,function,EC::Cutscene::Actor::ActionDrawWeapon::Reset,,0x007d1260,0x006b85d0,0x007d1260
 20775,function,EC::Cutscene::Actor::ActionAutoAdjustHeight::Update,,0x007d1280,0x006b85f0,0x007d1280
-20776,function,"std::copy_backward<Elem24*,Elem24*>",,0x007d12c0,0x0048db30,0x007d12c0
-20777,function,"std::copy_backward<EC.Cutscene.Actor.ClipRecord*,EC.Cutscene.Actor.ClipRecord*>",,0x007d12f0,0x006b8630,0x007d12f0
-20778,function,"std::copy_backward<EC::Cutscene::Actor::BlendGadRecord*,EC::Cutscene::Actor::BlendGadRecord*>",,0x007d1320,0x006b8660,0x007d1320
+20776,function,"stdext::_Unchecked_move_backward<Elem24*,Elem24*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<Elem24*,Elem24*>.",0x007d12c0,0x0048db30,0x007d12c0
+20777,function,"stdext::_Unchecked_move_backward<EC.Cutscene.Actor.ClipRecord*,EC.Cutscene.Actor.ClipRecord*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<EC.Cutscene.Actor.ClipRecord*,EC.Cutscene.Actor.ClipRecord*>.",0x007d12f0,0x006b8630,0x007d12f0
+20778,function,"stdext::_Unchecked_move_backward<EC::Cutscene::Actor::BlendGadRecord*,EC::Cutscene::Actor::BlendGadRecord*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<EC::Cutscene::Actor::BlendGadRecord*,EC::Cutscene::Actor::BlendGadRecord*>.",0x007d1320,0x006b8660,0x007d1320
 20779,function,std::_Destroy_range<EC.Cutscene.Actor.ClipRecord*>,,0x007d1350,0x006b8690,0x007d1350
 20780,function,std::_Uninit_fill_n<EC::Cutscene::Actor::BlendGadRecord*>,,0x007d13c0,0x006b8700,0x007d13c0
 20781,function,std::_Uninit_fill_n<EC.Cutscene.Actor.ClipRecord*>,,0x007d1420,0x006b8760,0x007d1420
@@ -20990,7 +20990,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20989,function,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>::_Buynode",,0x007dd3c0,0x006c4810,0x007dd3c0
 20990,function,Catch_All@007dd449,,0x007dd449,0x006c4899,0x007dd449
 20991,function,std::_Destroy_range<CutscenePlayer::BindRecord*>,,0x007dd460,0x006c48b0,0x007dd460
-20992,function,"std::copy_backward<CutscenePlayer::BindRecord*,CutscenePlayer::BindRecord*>",,0x007dd490,0x006c48e0,0x007dd490
+20992,function,"stdext::_Unchecked_move_backward<CutscenePlayer::BindRecord*,CutscenePlayer::BindRecord*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<CutscenePlayer::BindRecord*,CutscenePlayer::BindRecord*>.",0x007dd490,0x006c48e0,0x007dd490
 20993,function,CutscenePlayer::Step,,0x007dd4c0,0x006c4910,0x007dd4c0
 20994,function,EC::Cutscene::Actor::AddAnimationTree,,0x007dd8d0,0x006c4d20,0x007dd8d0
 20995,function,EC::Cutscene::Actor::AddOverlayTree,,0x007dda00,0x006c4e50,0x007dda00
@@ -21403,7 +21403,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21402,function,"std::_Uninit_fill_n<MapLocationConnection*,unsigned int,MapLocationConnection>",,0x007f6b30,0x006e3830,0x007f6b30
 21403,function,MapLocation::SaveToStruct,,0x007f6b60,0x006e3860,0x007f6b60
 21404,function,MapLocation::GetConnection,,0x007f6c60,0x006e3960,0x007f6c60
-21405,function,"std::_Copy_backward<MapLocationConnection *,MapLocationConnection *>",,0x007f6cb0,0x006e39b0,0x007f6cb0
+21405,function,"stdext::_Unchecked_move_backward<MapLocationConnection *,MapLocationConnection *>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::_Copy_backward<MapLocationConnection *,MapLocationConnection *>.",0x007f6cb0,0x006e39b0,0x007f6cb0
 21406,function,MapLocation::LoadFromResource,,0x007f6ce0,0x006e39e0,0x007f6ce0
 21407,function,MapLocation::LoadFromSave,,0x007f7090,0x006e3d90,0x007f7090
 21408,function,std::_Destroy_range<MapLocationConnection *>,,0x007f7260,0x006e3f60,0x007f7260
@@ -21474,7 +21474,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21473,function,"std::_Adjust_heap<FilteredGroupedItemView::Entry*,int,FilteredGroupedItemView::Entry,FilteredGroupedItemView::EntryNameLess>",,0x007f9750,0x006e6460,0x007f9750
 21474,function,"std::_Pop_heap<FilteredGroupedItemView::Entry*,FilteredGroupedItemView::Entry,FilteredGroupedItemView::EntryNameLess>",,0x007f9860,0x006e6570,0x007f9860
 21475,function,std::vector<FilteredGroupedItemView::Entry>::erase,,0x007f9910,0x006e6620,0x007f9910
-21476,function,"std::copy_backward<FilteredGroupedItemView::Entry*,FilteredGroupedItemView::Entry*>",,0x007f99a0,0x006e66b0,0x007f99a0
+21476,function,"stdext::_Unchecked_move_backward<FilteredGroupedItemView::Entry*,FilteredGroupedItemView::Entry*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<FilteredGroupedItemView::Entry*,FilteredGroupedItemView::Entry*>.",0x007f99a0,0x006e66b0,0x007f99a0
 21477,function,"std::_Unguarded_partition<FilteredGroupedItemView::Entry*,FilteredGroupedItemView::EntryOrder>",,0x007f99d0,0x006e66e0,0x007f99d0
 21478,function,"std::_Insertion_sort<FilteredGroupedItemView::Entry*,FilteredGroupedItemView::EntryOrder>",,0x007f9bd0,0x006e68e0,0x007f9bd0
 21479,function,"std::_Unguarded_partition<FilteredGroupedItemView::Entry*,FilteredGroupedItemView::EntryNameLess>",,0x007f9c90,0x006e69a0,0x007f9c90
@@ -21808,7 +21808,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21807,function,"std::_Uninit_fill_n<MapTrailPoint*,unsigned int,MapTrailPoint>",,0x0080d500,0x006fa0a0,0x0080d500
 21808,function,MapTrailPoint::LoadFromResource,,0x0080d540,0x006fa0e0,0x0080d540
 21809,function,MapTrail::GetPoint,,0x0080d5d0,0x006fa170,0x0080d5d0
-21810,function,"std::_Copy_backward<MapTrailPoint*,MapTrailPoint*>",,0x0080d630,0x006fa1d0,0x0080d630
+21810,function,"stdext::_Unchecked_move_backward<MapTrailPoint*,MapTrailPoint*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::_Copy_backward<MapTrailPoint*,MapTrailPoint*>.",0x0080d630,0x006fa1d0,0x0080d630
 21811,function,std::vector<MapTrailPoint>::_Tidy,,0x0080d660,0x006fa200,0x0080d660
 21812,function,"std::_Uninit_fill_n<MapTrailPoint*,unsigned int,MapTrailPoint,std::allocator<MapTrailPoint>>",,0x0080d6b0,0x006fa250,0x0080d6b0
 21813,function,std::vector<MapTrailPoint>::~vector,,0x0080d6f0,0x006fa290,0x0080d6f0
@@ -21924,7 +21924,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21923,function,"std::_Fill<Animation::ModelAnimationTree::Entry *,Animation::ModelAnimationTree::Entry>",,0x00812110,0x004ba500,0x00812110
 21924,function,"std::_Uninit_copy<Animation::ModelAnimationTree::Entry *,Animation::ModelAnimationTree::Entry *,std::allocator<Animation::ModelAnimationTree::Entry>>",,0x00812140,0x004ba530,0x00812140
 21925,function,Catch_All@008121a9,,0x008121a9,0x004ba599,0x008121a9
-21926,function,"std::_Copy_backward<Animation::ModelAnimationTree::Entry *,Animation::ModelAnimationTree::Entry *>",,0x008121e0,0x004ba780,0x008121e0
+21926,function,"stdext::_Unchecked_move_backward<Animation::ModelAnimationTree::Entry *,Animation::ModelAnimationTree::Entry *>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::_Copy_backward<Animation::ModelAnimationTree::Entry *,Animation::ModelAnimationTree::Entry *>.",0x008121e0,0x004ba780,0x008121e0
 21927,function,"std::_Uninit_fill_n<Animation::ModelAnimationTree::Entry *,unsigned int,Animation::ModelAnimationTree::Entry,std::allocator<Animation::ModelAnimationTree::Entry>>",,0x00812210,0x004ba7b0,0x00812210
 21928,function,Catch_All@0081227b,,0x0081227b,0x004ba81b,0x0081227b
 21929,function,std::_Destroy_range<Animation::ModelAnimationTree::Entry *>,,0x008122b0,0x004ba8c0,0x008122b0
@@ -22039,7 +22039,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22038,function,"std::_Uninit_copy<Animation::AnimationTreeBuilder::Node *,Animation::AnimationTreeBuilder::Node *,std::allocator<Animation::AnimationTreeBuilder::Node>>",,0x00816d00,0x004b73b0,0x00816d00
 22039,function,,,0x00816d69,0x004b7419,0x00816d69
 22040,function,Animation::AnimationTreeBuilder::LinkParents,,0x00816da0,0x004b7450,0x00816da0
-22041,function,"std::copy_backward<Animation::AnimationTreeBuilder::Node *,Animation::AnimationTreeBuilder::Node *>",,0x00816ea0,0x004b75a0,0x00816ea0
+22041,function,"stdext::_Unchecked_move_backward<Animation::AnimationTreeBuilder::Node *,Animation::AnimationTreeBuilder::Node *>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<Animation::AnimationTreeBuilder::Node *,Animation::AnimationTreeBuilder::Node *>.",0x00816ea0,0x004b75a0,0x00816ea0
 22042,function,"std::_Uninit_fill_n<Animation::AnimationTreeBuilder::Node *,unsigned int,Animation::AnimationTreeBuilder::Node,std::allocator<Animation::AnimationTreeBuilder::Node>>",,0x00816ed0,0x004b7650,0x00816ed0
 22043,function,,,0x00816f3b,0x004b76bb,0x00816f3b
 22044,function,"std::_Destroy_range<Animation::AnimationTreeBuilder::Node *,std::allocator<Animation::AnimationTreeBuilder::Node>>",,0x00816f70,0x004b76f0,0x00816f70
@@ -22324,8 +22324,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22323,function,"stdext::hash_map<unsigned int,?>::equal_range",,0x00822c00,0x0060cfd0,0x00822c00
 22324,function,std::vector<bool>::begin,,0x00822d40,0x0049a270,0x00822d40
 22325,function,"std::_Distance2<std::_Tree_iterator<?>,unsigned int>",,0x00822d80,0x00704830,0x00822d80
-22326,function,"std::_Copy_backward<NxSweepQueryHit*,NxSweepQueryHit*>",,0x00822dc0,0x0049a3a0,0x00822dc0
-22327,function,"std::_Copy_backward<?*,?*>",,0x00822df0,0x0046c220,0x00822df0
+22326,function,"stdext::_Unchecked_move_backward<NxSweepQueryHit*,NxSweepQueryHit*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::_Copy_backward<NxSweepQueryHit*,NxSweepQueryHit*>.",0x00822dc0,0x0049a3a0,0x00822dc0
+22327,function,"stdext::_Unchecked_move_backward<?*,?*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::_Copy_backward<?*,?*>.",0x00822df0,0x0046c220,0x00822df0
 22328,function,Physics::PhysicsScene::FetchResults,,0x00822e20,0x0049a550,0x00822e20
 22329,function,std::vector<bool>::~vector,,0x00822fe0,0x0049a710,0x00822fe0
 22330,function,std::_Vb_const_iterator::operator+=,,0x00823010,0x0049a740,0x00823010
@@ -23115,7 +23115,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23114,function,"std::_Fill<FacialAnimation::FacialAnimationPlayer::PoseEntry *,FacialAnimation::FacialAnimationPlayer::PoseEntry>",,0x0084ee80,0x004854a0,0x0084ee80
 23115,function,"std::_Uninit_copy<FacialAnimation::FacialAnimationPlayer::PoseEntry *,FacialAnimation::FacialAnimationPlayer::PoseEntry *>",,0x0084eeb0,0x004854d0,0x0084eeb0
 23116,function,FacialAnimation::FacialAnimationPlayer::PlayAnimation,,0x0084eef0,0x00485510,0x0084eef0
-23117,function,"std::copy_backward<FacialAnimation::FacialAnimationPlayer::PoseEntry *,FacialAnimation::FacialAnimationPlayer::PoseEntry *>",,0x0084f070,0x004856d0,0x0084f070
+23117,function,"stdext::_Unchecked_move_backward<FacialAnimation::FacialAnimationPlayer::PoseEntry *,FacialAnimation::FacialAnimationPlayer::PoseEntry *>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<FacialAnimation::FacialAnimationPlayer::PoseEntry *,FacialAnimation::FacialAnimationPlayer::PoseEntry *>.",0x0084f070,0x004856d0,0x0084f070
 23118,function,"std::_Uninit_fill_n<FacialAnimation::FacialAnimationPlayer::PoseEntry *,unsigned int,FacialAnimation::FacialAnimationPlayer::PoseEntry,std::allocator<FacialAnimation::FacialAnimationPlayer::PoseEntry>>",,0x0084f0a0,0x00485700,0x0084f0a0
 23119,function,"std::uninitialized_fill_n<FacialAnimation::FacialAnimationPlayer::PoseEntry *,unsigned int,FacialAnimation::FacialAnimationPlayer::PoseEntry>",,0x0084f0d0,0x004857b0,0x0084f0d0
 23120,function,"std::uninitialized_copy<FacialAnimation::FacialAnimationPlayer::PoseEntry *,FacialAnimation::FacialAnimationPlayer::PoseEntry *>",,0x0084f110,0x004857f0,0x0084f110
@@ -23653,7 +23653,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23652,function,std::_Median<_D3DDISPLAYMODE *>,,0x0086c130,0x00472020,0x0086c130
 23653,function,"std::_Make_heap<_D3DDISPLAYMODE *,int,_D3DDISPLAYMODE>",,0x0086c1e0,0x004720d0,0x0086c1e0
 23654,function,"std::_Copy_backward_opt<unsigned int *,unsigned int *>",,0x0086c240,0x007d2de0,0x0086c240
-23655,function,"std::copy_backward<unsigned int *,unsigned int *>",,0x0086c280,0x00472130,0x0086c280
+23655,function,"stdext::_Unchecked_move_backward<unsigned int *,unsigned int *>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<unsigned int *,unsigned int *>.",0x0086c280,0x00472130,0x0086c280
 23656,function,std::_Unguarded_partition<_D3DDISPLAYMODE *>,,0x0086c2b0,0x00472160,0x0086c2b0
 23657,function,std::_Insertion_sort<_D3DDISPLAYMODE *>,,0x0086c700,0x004725b0,0x0086c700
 23658,function,std::_Sort_heap<_D3DDISPLAYMODE *>,,0x0086c7c0,0x004726a0,0x0086c7c0
@@ -23799,7 +23799,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23798,function,D3DDriver::ShaderParameter::PackData,,0x00871690,0x004775a0,0x00871690
 23799,function,D3DDriver::D3DPixelShader::SetFloatConstant,,0x00871790,0x004776a0,0x00871790
 23800,function,D3DDriver::D3DPixelShader::SetIntConstant,,0x008717f0,0x00477700,0x008717f0
-23801,function,"std::copy_backward<D3DDriver::ShaderMember*,D3DDriver::ShaderMember*>","Wrapper that passes (first,last,destEnd) and the tag to _Copy_backward_opt (0x008715A0).",0x00871850,0x004778a0,0x00871850
+23801,function,"stdext::_Unchecked_move_backward<D3DDriver::ShaderMember*,D3DDriver::ShaderMember*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<D3DDriver::ShaderMember*,D3DDriver::ShaderMember*>.",0x00871850,0x004778a0,0x00871850
 23802,function,D3DDriver::D3DPixelShader::SetParameterScalar,,0x00871880,0x00477980,0x00871880
 23803,function,D3DDriver::D3DPixelShader::SetParameterData,,0x008718a0,0x004779a0,0x008718a0
 23804,function,D3DDriver::D3DPixelShader::SetParameterVector,,0x00871900,0x00477a00,0x00871900
@@ -23834,7 +23834,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23833,function,std::vector<D3DDriver::ShaderMember>::resize,,0x00872550,0x00478fd0,0x00872550
 23834,function,std::vector<D3DDriver::ShaderConstant>::erase,,0x00872640,0x004790c0,0x00872640
 23835,function,std::vector<D3DDriver::ShaderConstant>::_Ufill,,0x008726a0,0x00479120,0x008726a0
-23836,function,"std::copy_backward<D3DDriver::ShaderConstant*,D3DDriver::ShaderConstant*>",,0x008726e0,0x00479160,0x008726e0
+23836,function,"stdext::_Unchecked_move_backward<D3DDriver::ShaderConstant*,D3DDriver::ShaderConstant*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<D3DDriver::ShaderConstant*,D3DDriver::ShaderConstant*>.",0x008726e0,0x00479160,0x008726e0
 23837,function,"std::_Destroy_range<D3DDriver::ShaderParameter,std::allocator<D3DDriver::ShaderParameter>>",,0x00872710,0x00479190,0x00872710
 23838,function,std::vector<unsigned char>::operator=,,0x00872760,0x00479290,0x00872760
 23839,function,std::vector<D3DDriver::ShaderMember>::operator=,,0x00872780,0x004792b0,0x00872780
@@ -23859,7 +23859,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23858,function,Catch_All@00873119,,0x00873119,0x00479e29,0x00873119
 23859,function,std::vector<D3DDriver::ShaderConstant>::vector,"Size constructor: zeroes begin/end/capacity and, for a non-zero count, builds an empty ShaderConstant (a std::string with size 0, capacity 0xF) and resizes to the count (0x00872E90).",0x00873160,0x00479eb0,0x00873160
 23860,function,std::vector<D3DDriver::ShaderParameter>::erase,,0x008731e0,0x00479f30,0x008731e0
-23861,function,"std::copy_backward<D3DDriver::ShaderParameter*,D3DDriver::ShaderParameter*>",,0x00873240,0x00479f90,0x00873240
+23861,function,"stdext::_Unchecked_move_backward<D3DDriver::ShaderParameter*,D3DDriver::ShaderParameter*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<D3DDriver::ShaderParameter*,D3DDriver::ShaderParameter*>.",0x00873240,0x00479f90,0x00873240
 23862,function,"std::_Uninit_fill_n<D3DDriver::ShaderParameter*,unsigned int,D3DDriver::ShaderParameter,std::allocator<D3DDriver::ShaderParameter>>",,0x00873270,0x00479fc0,0x00873270
 23863,function,"std::_Uninit_fill_n<D3DDriver::ShaderParameter*,unsigned int,D3DDriver::ShaderParameter,std::allocator<D3DDriver::ShaderParameter>>::Catch_All@008732DB",,0x008732db,0x0047a02b,0x008732db
 23864,function,std::vector<D3DDriver::ShaderParameter>::_Tidy,Only a jmp to std::vector<D3DDriver::ShaderParameter>::_Tidy (0x00873010); the unwind funclets use this entry.,0x00873320,0x0047a070,0x00873320
@@ -23993,7 +23993,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23992,function,"std::_Copy_backward_opt<D3DDriver::D3DUmbraRenderer::DebugLine*,D3DDriver::D3DUmbraRenderer::DebugLine*,std::random_access_iterator_tag>",,0x008778d0,0x0047ec10,0x008778d0
 23993,function,"std::_Construct<D3DDriver::D3DUmbraRenderer::DebugLine,D3DDriver::D3DUmbraRenderer::DebugLine>",,0x00877930,0x0047ec70,0x00877930
 23994,function,"stdext::hash_map<int,IDirect3DQuery9*>::equal_range",,0x008779c0,0x00813940,0x008779c0
-23995,function,"std::copy_backward<D3DDriver::D3DUmbraRenderer::DebugLine*,D3DDriver::D3DUmbraRenderer::DebugLine*>",,0x00877b00,0x0047ed00,0x00877b00
+23995,function,"stdext::_Unchecked_move_backward<D3DDriver::D3DUmbraRenderer::DebugLine*,D3DDriver::D3DUmbraRenderer::DebugLine*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<D3DDriver::D3DUmbraRenderer::DebugLine*,D3DDriver::D3DUmbraRenderer::DebugLine*>.",0x00877b00,0x0047ed00,0x00877b00
 23996,function,"std::_Uninit_copy<D3DDriver::D3DUmbraRenderer::DebugLine*,D3DDriver::D3DUmbraRenderer::DebugLine*,std::allocator<D3DDriver::D3DUmbraRenderer::DebugLine>>",,0x00877b30,0x0047ed30,0x00877b30
 23997,function,"std::_Uninit_copy<D3DDriver::D3DUmbraRenderer::DebugLine*,D3DDriver::D3DUmbraRenderer::DebugLine*,std::allocator<D3DDriver::D3DUmbraRenderer::DebugLine>>::Catch_All@00877B86",,0x00877b86,0x0047ed86,0x00877b86
 23998,function,"std::_Uninit_fill_n<D3DDriver::D3DUmbraRenderer::DebugLine*,unsigned int,D3DDriver::D3DUmbraRenderer::DebugLine,std::allocator<D3DDriver::D3DUmbraRenderer::DebugLine>>",,0x00877bb0,0x0047edb0,0x00877bb0
@@ -24083,7 +24083,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24082,function,"std::_Copy_opt<InputMapper::Entry*,InputMapper::Entry*,std::random_access_iterator_tag>",,0x0087ba10,0x00451f00,0x0087ba10
 24083,function,"std::_Uninit_copy<InputMapper::Entry*,InputMapper::Entry*,std::allocator<InputMapper::Entry>>",,0x0087ba70,0x00451f60,0x0087ba70
 24084,function,"std::_Uninit_copy<InputMapper::Entry*,InputMapper::Entry*,std::allocator<InputMapper::Entry>>::Catch_All@0087BAC9",,0x0087bac9,0x00451fb9,0x0087bac9
-24085,function,"std::copy_backward<InputMapper::Entry*,InputMapper::Entry*>",,0x0087bb00,0x00452030,0x0087bb00
+24085,function,"stdext::_Unchecked_move_backward<InputMapper::Entry*,InputMapper::Entry*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<InputMapper::Entry*,InputMapper::Entry*>.",0x0087bb00,0x00452030,0x0087bb00
 24086,function,"std::_Uninit_fill_n<InputMapper::Entry*,unsigned int,InputMapper::Entry,std::allocator<InputMapper::Entry>>",,0x0087bb30,0x00452060,0x0087bb30
 24087,function,"std::_Uninit_fill_n<InputMapper::Entry*,unsigned int,InputMapper::Entry,std::allocator<InputMapper::Entry>>::Catch_All@0087BB89",,0x0087bb89,0x004520b9,0x0087bb89
 24088,function,"std::_Uninitialized_fill_n<InputMapper::Entry*,unsigned int,InputMapper::Entry,std::allocator<InputMapper::Entry>>",,0x0087bbc0,0x004520f0,0x0087bbc0
@@ -33029,7 +33029,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33028,function,Pathfinding::Path::GetBarredPosition,,0x00a476b0,0x007d0eb0,0x00a476b0
 33029,function,"std::_Fill<?*,?>",,0x00a476f0,0x007d0ef0,0x00a476f0
 33030,function,"std::_Uninit_copy<?*,?*>",,0x00a47720,0x007d0f20,0x00a47720
-33031,function,"std::copy_backward<?*,?*>",,0x00a47750,0x007d0f50,0x00a47750
+33031,function,"stdext::_Unchecked_move_backward<?*,?*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<?*,?*>.",0x00a47750,0x007d0f50,0x00a47750
 33032,function,"std::_Uninit_fill_n<?*,unsigned int,?,std::allocator<?>>",,0x00a47780,0x007d0f80,0x00a47780
 33033,function,Pathfinding::PathBase::~PathBase,,0x00a477b0,0x007d0fb0,0x00a477b0
 33034,function,Pathfinding::PathFollower::~PathFollower,,0x00a477f0,0x007d0ff0,0x00a477f0
