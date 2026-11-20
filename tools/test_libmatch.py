@@ -39,6 +39,11 @@ class Plain(unittest.TestCase):
         self.assertIsNone(libmatch.plain("__imp__Sleep@4"))
         self.assertIsNone(
             libmatch.plain(
+                "_catch$?_Copy@?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@IAEXII@Z$0"
+            )
+        )
+        self.assertIsNone(
+            libmatch.plain(
                 "??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@D@0@AAV10@PBD@Z"
             )
         )

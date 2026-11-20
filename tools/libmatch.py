@@ -158,7 +158,9 @@ SPECIAL = {
 
 def plain(symbol):
     """A symbol's name as the table writes one, or None where this cannot tell."""
-    if symbol.startswith("__imp_"):
+    # An import's thunk, and a label the compiler makes for a piece of a
+    # function ($catch, $unwind, $ehhandler): no function's name.
+    if symbol.startswith("__imp_") or "$" in symbol:
         return None
     if symbol.startswith("?"):
         m = re.match(r"^\?\?([01])((?:\w+@)+)@", symbol)
