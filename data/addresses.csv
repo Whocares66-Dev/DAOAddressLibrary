@@ -19,7 +19,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18,function,std::string::~string,,0x004013f0,0x00477480,0x004013f0
 19,function,std::string::_Grow,,0x00401420,0x00401350,0x00401420
 20,function,,,0x004014e0,0x00401960,0x004014e0
-21,function,,,0x00401530,0x0074b050,0x00401530
+21,function,std::vector<?>::erase,,0x00401530,0x0074b050,0x00401530
 22,function,std::string::_Substr,,0x00401590,0x00401450,0x00401590
 23,function,std::string::assign,,0x00401670,0x00401530,0x00401670
 24,function,ECBase::ECDynArray<?>::Back,,0x00401740,0x00401600,0x00401740
@@ -30,7 +30,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 29,function,std::string::_Construct,,0x00401a60,0x004019c0,0x00401a60
 30,function,std::logic_error::logic_error,,0x00401aa0,0x00401a00,0x00401aa0
 31,function,std::length_error::length_error,,0x00401b20,0x00401a80,0x00401b20
-32,function,,,0x00401b40,0x00401aa0,0x00401b40
+32,function,std::vector<?>::_Buy,,0x00401b40,0x00401aa0,0x00401b40
 33,function,wmemset,,0x00401b90,0x00401c40,0x00401b90
 34,function,EclipseGame::RequestExit,,0x00401bd0,0x00401ca0,0x00401bd0
 35,function,ECFileAccess::DirectoryEntry::DirectoryEntry,,0x00401c50,0x00401d20,0x00401c50
@@ -302,7 +302,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 301,function,,,0x00409b6d,0x00409e0d,0x00409b6d
 302,function,,,0x00409c27,0x00409ec7,0x00409c27
 303,function,"std::basic_istream<wchar_t,std::char_traits<wchar_t>>::_Ipfx",,0x00409cc0,0x00409f60,0x00409cc0
-304,function,,,0x00409d80,0x0040a020,0x00409d80
+304,function,std::list<?>::_Insert,,0x00409d80,0x0040a020,0x00409d80
 305,function,,,0x00409e2a,0x0040a0ca,0x00409e2a
 306,function,ECFileAccess::FindLanguageEntry,,0x00409ea0,0x0040a140,0x00409ea0
 307,function,"std::num_put<wchar_t,std::ostreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>::_Getcat",,0x0040a1d0,0x0040a470,0x0040a1d0
@@ -2584,7 +2584,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2583,function,Renderer::FrameBufferEventGroup::Run,,0x0045fcd0,0x008985b0,0x0045fcd0
 2584,function,Renderer::FrameBufferEventGroup::RunOwnEvent,,0x0045fd40,0x00898620,0x0045fd40
 2585,function,Renderer::FrameBufferEffect::DeleteResources,,0x0045fd50,0x00898630,0x0045fd50
-2586,function,,,0x0045fde0,0x00466130,0x0045fde0
+2586,function,"std::map<std::wstring,?>::erase",,0x0045fde0,0x00466130,0x0045fde0
 2587,function,Renderer::FrameBufferEffect::Run,,0x004600b0,0x008986c0,0x004600b0
 2588,function,"std::map<std::wstring,?>::erase",,0x00460120,0x00466730,0x00460120
 2589,function,"std::map<std::wstring,unsigned int>::insert",,0x004601f0,0x00415a30,0x004601f0
@@ -3358,19 +3358,19 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3357,function,std::list<OnlineRec28>::_Tidy,,0x00481830,0x004fe320,0x00481830
 3358,function,std::vector<OnlineRec24>::erase,,0x004818d0,0x0085b0b0,0x004818d0
 3359,function,std::vector<?>::~vector,,0x00481940,0x0085b120,0x00481940
-3360,function,,,0x00481950,0x0085b130,0x00481950
+3360,function,std::vector<std::vector<?>>::erase,,0x00481950,0x0085b130,0x00481950
 3361,function,std::vector<PrereqItem>::erase,"erase(first, last): copies the tail down and destroys what is left",0x004819b0,0x004c3800,0x004819b0
-3362,function,,,0x00481a10,0x00692f50,0x00481a10
-3363,function,,,0x00481a80,0x00712bf0,0x00481a80
+3362,function,std::vector<?>::erase,,0x00481a10,0x00692f50,0x00481a10
+3363,function,std::list<?>::_Incsize,,0x00481a80,0x00712bf0,0x00481a80
 3364,function,"std::uninitialized_copy<PrereqItem *,PrereqItem *>",,0x00481b20,0x004c34c0,0x00481b20
 3365,function,std::_Sort<?>,,0x00481b50,0x0085b1e0,0x00481b50
-3366,function,,,0x00481c40,0x004cc580,0x00481c40
+3366,function,std::list<?>::_Incsize,,0x00481c40,0x004cc580,0x00481c40
 3367,function,,,0x00481ce0,0x004019b0,0x00481ce0
 3368,function,DADM::~DADM,,0x00481cf0,0x0085b2d0,0x00481cf0
 3369,function,OnlineFeatures::LoadProfile,,0x00481d30,0x0085b310,0x00481d30
 3370,function,"std::map<std::wstring,std::wstring>::insert",,0x00481f50,0x00536930,0x00481f50
 3371,function,"std::map<std::wstring,std::wstring>::erase",,0x00482100,0x0047e170,0x00482100
-3372,function,,,0x004821d0,0x0085b530,0x004821d0
+3372,function,"std::map<?,?>::insert",,0x004821d0,0x0085b530,0x004821d0
 3373,function,ECBase::ECDynArray<OnlineRec24>::RemoveAt,"removes element [index] of a vector of 0x24-byte records, index bounds-checked",0x00482290,0x0085b5f0,0x00482290
 3374,function,,,0x00482350,0x004cc500,0x00482350
 3375,function,,,0x004823d0,0x00506000,0x004823d0
@@ -3391,7 +3391,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3390,function,std::vector<PRCItem>::_Insert_n,,0x00482e20,0x0085bd90,0x00482e20
 3391,function,,,0x00482faf,0x0085bf1f,0x00482faf
 3392,function,,,0x00483038,0x0085bfa8,0x00483038
-3393,function,,,0x004830c0,0x00478700,0x004830c0
+3393,function,std::vector<?>::_Insert_n,,0x004830c0,0x00478700,0x004830c0
 3394,function,std::vector<OnlineRec84>::_Insert_n,,0x00483270,0x0085c030,0x00483270
 3395,function,,,0x00483439,0x0085c1f9,0x00483439
 3396,function,,,0x00483445,0x0085c205,0x00483445
@@ -3402,8 +3402,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3401,function,,,0x0048390c,0x0085c6cc,0x0048390c
 3402,function,,,0x00483920,0x004ccab0,0x00483920
 3403,function,,,0x00483980,0x004ccb10,0x00483980
-3404,function,,,0x004839e0,0x0085c6e0,0x004839e0
-3405,function,,,0x00483a20,0x00a436d0,0x00483a20
+3404,function,"stdext::hash_map<?,?>::~hash_map",,0x004839e0,0x0085c6e0,0x004839e0
+3405,function,"std::map<?,?>::insert",,0x00483a20,0x00a436d0,0x00483a20
 3406,function,std::list<OnlineRec28>::~list,,0x00483be0,0x004fe870,0x00483be0
 3407,function,std::vector<PrereqItem>::_Tidy,,0x00483c00,0x004c3960,0x00483c00
 3408,function,std::vector<OnlineRec40A>::resize,,0x00483c40,0x0085c730,0x00483c40
@@ -3414,7 +3414,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3413,function,std::vector<OnlineRec84>::resize,,0x004840e0,0x0085ca30,0x004840e0
 3414,function,std::vector<OnlineRec84>::insert,,0x004841d0,0x0085cb20,0x004841d0
 3415,function,std::vector<OnlineFeatures::Achievement>::resize,,0x00484280,0x0085cbd0,0x00484280
-3416,function,,,0x004843b0,0x004cd570,0x004843b0
+3416,function,std::list<?>::_Insert,,0x004843b0,0x004cd570,0x004843b0
 3417,function,,,0x0048445a,0x004cd61a,0x0048445a
 3418,function,AddInItem::~AddInItem,,0x004844d0,0x0085cd00,0x004844d0
 3419,function,AddInRecord::~AddInRecord,,0x00484600,0x004c39a0,0x00484600
@@ -3438,7 +3438,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3437,function,std::vector<OnlineRec84>::vector,,0x00485690,0x0085d3a0,0x00485690
 3438,function,std::vector<OnlineFeatures::Achievement>::vector,,0x004856f0,0x0085d400,0x004856f0
 3439,function,std::vector<OnlineFeatures::Achievement>::resize(unsigned int),,0x00485770,0x0085d480,0x00485770
-3440,function,,,0x004857a0,0x004feb00,0x004857a0
+3440,function,"stdext::hash_map<?,?>::insert",,0x004857a0,0x004feb00,0x004857a0
 3441,function,,,0x00485c80,0x0085d4b0,0x00485c80
 3442,function,std::list<std::wstring>::list,,0x00485d50,0x004d0250,0x00485d50
 3443,function,Catch_All@00485dc7,,0x00485dc7,0x004d02c7,0x00485dc7
@@ -3668,11 +3668,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3667,function,,,0x004931e1,0x00886f81,0x004931e1
 3668,function,LockerManager::StartDownload,,0x00493280,0x00887020,0x00493280
 3669,function,LockerManager::FinishDownload,,0x00493850,0x008875f0,0x00493850
-3670,function,,,0x004938a0,0x00536cd0,0x004938a0
-3671,function,,,0x00493aa0,0x00887640,0x00493aa0
-3672,function,,,0x00493bc0,0x00887760,0x00493bc0
-3673,function,,,0x00493c70,0x00887810,0x00493c70
-3674,function,,,0x00493d90,0x004cd810,0x00493d90
+3670,function,"std::map<std::wstring,?>::insert",,0x004938a0,0x00536cd0,0x004938a0
+3671,function,std::vector<?>::resize,,0x00493aa0,0x00887640,0x00493aa0
+3672,function,std::vector<?>::insert,,0x00493bc0,0x00887760,0x00493bc0
+3673,function,std::vector<?>::resize,,0x00493c70,0x00887810,0x00493c70
+3674,function,std::vector<?>::vector,,0x00493d90,0x004cd810,0x00493d90
 3675,function,"std::map<std::wstring,std::wstring>::operator[]",,0x00493e30,0x00536f30,0x00493e30
 3676,function,std::vector<OnlineRec68>::push_back,,0x00493f20,0x00887930,0x00493f20
 3677,function,std::vector<LockerUploadRequest>::vector,,0x00493fc0,0x008879d0,0x00493fc0
@@ -4411,12 +4411,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4410,function,std::deque<Multithreading::Task *>::insert,,0x004bd500,0x007ff690,0x004bd500
 4411,function,std::deque<Multithreading::Task *>::deque(const std::deque<Multithreading::Task *>&),,0x004bd560,0x007ff6f0,0x004bd560
 4412,function,,,0x004bd64c,0x007ff7dc,0x004bd64c
-4413,function,,,0x004bd660,0x007ff7f0,0x004bd660
-4414,function,,,0x004bd930,0x007ffac0,0x004bd930
+4413,function,"std::map<?,?>::erase",,0x004bd660,0x007ff7f0,0x004bd660
+4414,function,"std::map<?,?>::_Erase",,0x004bd930,0x007ffac0,0x004bd930
 4415,function,,,0x004bd970,0x007ffb00,0x004bd970
 4416,function,,,0x004bda40,0x007ffbd0,0x004bda40
 4417,function,,,0x004bdad1,0x007ffc61,0x004bdad1
-4418,function,,,0x004bdaf0,0x007ffc80,0x004bdaf0
+4418,function,"std::map<?,?>::_Insert",,0x004bdaf0,0x007ffc80,0x004bdaf0
 4419,function,,,0x004bdcf0,0x007ffe80,0x004bdcf0
 4420,function,,,0x004bdd80,0x007fff10,0x004bdd80
 4421,function,,,0x004bde40,0x007fffd0,0x004bde40
@@ -4652,9 +4652,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4651,function,"stdext::hash_map<std::wstring,?>::erase",,0x004c6410,0x008077c0,0x004c6410
 4652,function,ECResMan::ResMan::SweepClosedSources,,0x004c6490,0x00807840,0x004c6490
 4653,function,ECResMan::ResMan::UnregisterRimsOfSource,,0x004c65f0,0x008079a0,0x004c65f0
-4654,function,,,0x004c6700,0x00807ab0,0x004c6700
-4655,function,,,0x004c67a0,0x004cc580,0x004c67a0
-4656,function,,,0x004c6840,0x007619e0,0x004c6840
+4654,function,std::list<?>::_Incsize,,0x004c6700,0x00807ab0,0x004c6700
+4655,function,std::list<?>::_Incsize,,0x004c67a0,0x004cc580,0x004c67a0
+4656,function,"stdext::hash_map<?,?>::~hash_map",,0x004c6840,0x007619e0,0x004c6840
 4657,function,ECResMan::ResMan::RegisterSourceMaker,,0x004c6880,0x00807c40,0x004c6880
 4658,function,std::list<std::wstring>::push_back,,0x004c68e0,0x00807ca0,0x004c68e0
 4659,function,ECResMan::ResMan::RescanDirectorySources,"Under the Mutex at +0x10c, walks the source list at +4 and rescans (DirectorySource::Rescan) each loose-file source whose name is in the given StringList, collecting into a list at +0x108 that it hands back; called by ReloadChangedResources and DADM::ApplyInstalledContent; what the returned list is used for is INFERRED.",0x004c6920,0x00807ce0,0x004c6920
@@ -4698,10 +4698,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4697,function,ECFileAccess::CreateDirectory,,0x004c9010,0x0080a410,0x004c9010
 4698,function,ECFileAccess::FileAccess::FileAccess,,0x004c9170,0x0080a570,0x004c9170
 4699,function,ECFileAccess::FileAccess::WriteWString,"Writes count wide characters of a std::wstring (SSO-aware, count*2 bytes) to the file handle at +4 with WriteFile, and adds the elapsed Clock::Microseconds and the bytes to the file-access I/O counters.",0x004c9300,0x0080a700,0x004c9300
-4700,function,,,0x004c9390,0x0080a790,0x004c9390
-4701,function,,,0x004c93e0,0x0080a7e0,0x004c93e0
+4700,function,std::list<?>::_Splice,,0x004c9390,0x0080a790,0x004c9390
+4701,function,std::list<?>::push_back,,0x004c93e0,0x0080a7e0,0x004c93e0
 4702,function,,,0x004c9420,0x0080a820,0x004c9420
-4703,function,,,0x004c9550,0x0080a950,0x004c9550
+4703,function,std::list<?>::sort,,0x004c9550,0x0080a950,0x004c9550
 4704,function,ECFileAccess::FindFiles,,0x004c97c0,0x0080abc0,0x004c97c0
 4705,function,ECFileAccess::FindAllFiles,,0x004c9a90,0x0080ae90,0x004c9a90
 4706,function,ECFileAccess::DeleteTree,,0x004c9b10,0x0080af10,0x004c9b10
@@ -4796,7 +4796,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4795,function,,,0x004cd5e0,0x00482ee0,0x004cd5e0
 4796,function,Core::InsertedValue<?>,,0x004cd610,0x0080e930,0x004cd610
 4797,function,,,0x004cd650,0x0080e970,0x004cd650
-4798,function,,,0x004cd680,0x0080e9a0,0x004cd680
+4798,function,std::vector<?>::_Ufill,,0x004cd680,0x0080e9a0,0x004cd680
 4799,function,std::vector<Resource>::_Tidy,,0x004cd6c0,0x0080e9e0,0x004cd6c0
 4800,function,std::vector<Resource>::erase,,0x004cd710,0x0080ea30,0x004cd710
 4801,function,,,0x004cd780,0x0080eaa0,0x004cd780
@@ -5095,16 +5095,16 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5094,function,,,0x004d85c0,0x00820290,0x004d85c0
 5095,function,,,0x004d8640,0x00820310,0x004d8640
 5096,function,,,0x004d86c0,0x00820390,0x004d86c0
-5097,function,,,0x004d88f0,0x007feae0,0x004d88f0
+5097,function,std::deque<?>::_Xlen,,0x004d88f0,0x007feae0,0x004d88f0
 5098,function,,,0x004d8970,0x008205c0,0x004d8970
-5099,function,,,0x004d8a80,0x008206d0,0x004d8a80
+5099,function,std::deque<?>::_Growmap,,0x004d8a80,0x008206d0,0x004d8a80
 5100,function,std::deque<Messages::PostedMessage>::push_back,,0x004d8be0,0x00820830,0x004d8be0
 5101,function,std::deque<Messages::PostedMessage>::push_back`adjustor{20}',,0x004d8c60,0x008208b0,0x004d8c60
 5102,function,,,0x004d8c70,0x00820a10,0x004d8c70
 5103,function,,,0x004d8df0,0x00820b90,0x004d8df0
 5104,function,,,0x004d8e79,0x00820c19,0x004d8e79
 5105,function,,,0x004d8ef0,0x00820c90,0x004d8ef0
-5106,function,,,0x004d8fe0,0x00820d80,0x004d8fe0
+5106,function,std::vector<?>::insert,,0x004d8fe0,0x00820d80,0x004d8fe0
 5107,function,std::vector<ECBase::ECDynArray<?>>::push_back,,0x004d9070,0x00820e10,0x004d9070
 5108,function,std::vector<ECBase::ECDynArray<void*>>::vector,"Linker-folded template body: constructs a vector of ECDynArray elements (0x10 bytes each) with an optional element count (ret 4): zeroes +4, +8, +0xC and, for a count above 0, fills with default ECDynArrays (0x005D27A0) through 0x004D8EF0. Used for PartyTactics+0xA4 (0x007B11F3) and by FUN_004D9170 (called from MessageRegistry::Get), so the element type is not one class.",0x004d9100,0x00820ea0,0x004d9100
 5109,function,,,0x004d9170,0x00820f10,0x004d9170
@@ -5175,10 +5175,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5174,function,"std::_Push_heap<Gff4::Field *,int,Gff4::Field,Gff4::File::FieldLess>",,0x004db520,0x0082e310,0x004db520
 5175,function,Gff4::File::IsRootBlockValid,,0x004db5b0,0x0082e3a0,0x004db5b0
 5176,function,,,0x004db5c0,0x0082e3b0,0x004db5c0
-5177,function,,,0x004db640,0x006e0ef0,0x004db640
+5177,function,"std::map<?,?>::insert",,0x004db640,0x006e0ef0,0x004db640
 5178,function,,,0x004db700,0x0082e430,0x004db700
 5179,function,,,0x004db7b0,0x0082e4e0,0x004db7b0
-5180,function,,,0x004db870,0x004b8110,0x004db870
+5180,function,std::vector<?>::operator=,,0x004db870,0x004b8110,0x004db870
 5181,function,,,0x004db9d0,0x0082e5a0,0x004db9d0
 5182,function,std::vector<Gff4::Template>::operator=,,0x004dba00,0x004b8440,0x004dba00
 5183,function,,,0x004dba20,0x004b7cf0,0x004dba20
@@ -5272,18 +5272,18 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5271,function,std::list<?>::~list,,0x004dfa40,0x007c1750,0x004dfa40
 5272,function,ECResMan::NameList::NameList,,0x004dfa60,0x00505f80,0x004dfa60
 5273,function,ECResMan::NameList::~NameList,,0x004dfae0,0x00506000,0x004dfae0
-5274,function,,,0x004dfb50,0x00817810,0x004dfb50
-5275,function,,,0x004dfbf0,0x006e0fb0,0x004dfbf0
-5276,function,,,0x004dfdb0,0x00813c60,0x004dfdb0
+5274,function,std::list<?>::_Incsize,,0x004dfb50,0x00817810,0x004dfb50
+5275,function,"std::map<?,?>::insert",,0x004dfbf0,0x006e0fb0,0x004dfbf0
+5276,function,std::list<?>::_Splice,,0x004dfdb0,0x00813c60,0x004dfdb0
 5277,function,std::list<std::wstring>::push_back,,0x004dfe00,0x00813cb0,0x004dfe00
-5278,function,,,0x004dfe40,0x006e1170,0x004dfe40
-5279,function,,,0x004dfec0,0x00813cf0,0x004dfec0
+5278,function,"std::map<?,?>::operator[]",,0x004dfe40,0x006e1170,0x004dfe40
+5279,function,std::list<std::wstring>::merge,,0x004dfec0,0x00813cf0,0x004dfec0
 5280,function,,,0x004e0050,0x00813e80,0x004e0050
 5281,function,,,0x004e04d0,0x00814300,0x004e04d0
 5282,function,GdaStore::FindTableByName,,0x004e0590,0x008143c0,0x004e0590
 5283,function,GdaStore::BuildTable,,0x004e0690,0x008144c0,0x004e0690
 5284,function,,,0x004e07b0,0x008145e0,0x004e07b0
-5285,function,,,0x004e0820,0x00814650,0x004e0820
+5285,function,std::list<?>::sort,,0x004e0820,0x00814650,0x004e0820
 5286,function,GdaStore::GdaStore,,0x004e0a90,0x008148c0,0x004e0a90
 5287,function,GdaStore::~GdaStore,,0x004e0b30,0x00814960,0x004e0b30
 5288,function,GdaStore::Load,,0x004e0bf0,0x00814a20,0x004e0bf0
@@ -5381,7 +5381,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5380,function,,,0x004e46b0,0x0082a3d0,0x004e46b0
 5381,function,TlkFile::Create,,0x004e46e0,0x0082a400,0x004e46e0
 5382,function,TlkFile::FindString,,0x004e47f0,0x0082a510,0x004e47f0
-5383,function,,,0x004e4950,0x0082a670,0x004e4950
+5383,function,std::vector<?>::_Ufill,,0x004e4950,0x0082a670,0x004e4950
 5384,function,CTlkTable::GetString,,0x004e4990,0x0082a6b0,0x004e4990
 5385,function,std::vector<CTlkTable::TlkEntry>::_Destroy,,0x004e4a20,0x0082a740,0x004e4a20
 5386,function,std::vector<CTlkTable::TlkEntry>::_Tidy,,0x004e4a50,0x0082a770,0x004e4a50
@@ -5477,7 +5477,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5476,function,NameEntryPool::ReleaseEntry,"Under the pool's mutex (+0x24) finds the given entry pointer in the entry vector at +0x10 and, if it is among the first +0x20 in-use ones, destroys its name (wstring at entry+0xC), swaps it past the in-use range, decrements the count and nulls the caller's pointer; the free side of NameEntryPool::AllocateEntry.",0x004e78b0,0x00834ad0,0x004e78b0
 5477,function,NameEntryPool::ReleaseAllEntries,"Loops over the in-use entries (count at +0x20) calling ReleaseEntry on each, then sets the count to 0.",0x004e79d0,0x00834bf0,0x004e79d0
 5478,function,NameEntryPool::~NameEntryPool,"Destructor: ReleaseAllEntries, deletes each block pointer in the vector at +0, destroys the mutex at +0x24 and tidies both vectors; its caller 58911 is the pool's atexit destructor.",0x004e7a20,0x00834c40,0x004e7a20
-5479,function,,,0x004e7ad0,0x005060b0,0x004e7ad0
+5479,function,std::vector<?>::_Insert_n,,0x004e7ad0,0x005060b0,0x004e7ad0
 5480,function,,,0x004e7c4a,0x0050622a,0x004e7c4a
 5481,function,,,0x004e7c56,0x00506236,0x004e7c56
 5482,function,std::vector<Elem8>::resize,,0x004e7d30,0x005064c0,0x004e7d30
@@ -5515,8 +5515,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5514,function,,,0x004e8e35,0x00835ed5,0x004e8e35
 5515,function,,,0x004e8ec0,0x00835f60,0x004e8ec0
 5516,function,,,0x004e8ee0,0x00835f80,0x004e8ee0
-5517,function,,,0x004e8ff0,0x00836090,0x004e8ff0
-5518,function,,,0x004e92c0,0x00836360,0x004e92c0
+5517,function,"std::map<?,?>::erase",,0x004e8ff0,0x00836090,0x004e8ff0
+5518,function,"std::map<?,?>::_Erase",,0x004e92c0,0x00836360,0x004e92c0
 5519,function,,,0x004e9300,0x008363a0,0x004e9300
 5520,function,,,0x004e9370,0x00836410,0x004e9370
 5521,function,,,0x004e9440,0x008364e0,0x004e9440
@@ -5791,7 +5791,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5790,function,Graphics::MaterialStateOverride::~MaterialStateOverride,,0x004f3790,0x007e0e30,0x004f3790
 5791,function,,,0x004f37f0,0x00466db0,0x004f37f0
 5792,function,"std::map<unsigned int,Multithreading::SynchSafePointer>::_Erase",,0x004f3830,0x007e0e90,0x004f3830
-5793,function,,,0x004f3870,0x007e0ed0,0x004f3870
+5793,function,"std::map<?,?>::erase",,0x004f3870,0x007e0ed0,0x004f3870
 5794,function,"std::vector<std::pair<int,int>>::vector",,0x004f3b40,0x007e11a0,0x004f3b40
 5795,function,"Core::VectorClear<std::pair<int,int>>","Clears a vector of 8-byte pairs, and with the flag set also frees its storage (same shape as Core::VectorClear<Physics::Contact> at 0x0046DBD0); called by ~MaterialState and by ClearStates on the override's state list.",0x004f3ba0,0x007e1200,0x004f3ba0
 5796,function,"Graphics::MaterialObjectInstance::ParameterValueProvider<ECBase::ECDynArray<Math::VectorUA4f>,Graphics::MaterialObjectInstance::ParameterAccessByValue<ECBase::ECDynArray<Math::VectorUA4f>>>::ParameterValueProvider",,0x004f3c80,0x007e12e0,0x004f3c80
@@ -5836,12 +5836,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5835,function,Graphics::MaterialObjectInstance::MaterialObjectInstance,,0x004f5080,0x007e25b0,0x004f5080
 5836,function,Graphics::MaterialObjectInstance::~MaterialObjectInstance,,0x004f5220,0x007e2750,0x004f5220
 5837,function,Graphics::MaterialStateOverride::Rebuild,,0x004f53f0,0x007e2920,0x004f53f0
-5838,function,,,0x004f5500,0x007e2a30,0x004f5500
+5838,function,"std::map<?,?>::_Insert",,0x004f5500,0x007e2a30,0x004f5500
 5839,function,Graphics::MaterialObjectInstance::`scalar deleting destructor',,0x004f5700,0x007e2c30,0x004f5700
 5840,function,Graphics::MaterialStateOverride::Apply,,0x004f5720,0x007e2c50,0x004f5720
-5841,function,,,0x004f5780,0x007e2cb0,0x004f5780
+5841,function,"std::map<?,?>::insert",,0x004f5780,0x007e2cb0,0x004f5780
 5842,function,Graphics::MaterialObjectInstance::Render,,0x004f5840,0x007e2d70,0x004f5840
-5843,function,,,0x004f5a30,0x007e2f60,0x004f5a30
+5843,function,"std::map<?,?>::insert",,0x004f5a30,0x007e2f60,0x004f5a30
 5844,function,"std::map<unsigned int,Multithreading::SynchSafePointer>::operator[]",,0x004f5bf0,0x007e3120,0x004f5bf0
 5845,function,Graphics::MaterialObjectInstance::SetTextureParameter,,0x004f5ce0,0x007e3210,0x004f5ce0
 5846,function,Graphics::MaterialObjectInstance::SetTextureParameterFromHandle,"If the given ResourceHandle holds a texture, turns the parameter name into an id (MaterialParameterNames::GetOrAddId) and assigns the handle into the texture map; INFERRED the name since 5845 is the by-name overload.",0x004f5d80,0x007e32b0,0x004f5d80
@@ -5931,7 +5931,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5930,function,Multithreading::SynchSafePointerListBase::IsUnreferenced,,0x004fa240,0x004b69c0,0x004fa240
 5931,function,Multithreading::SynchSafePointerListBase::`scalar deleting destructor',,0x004fa250,0x004b69d0,0x004fa250
 5932,function,Graphics::MaterialState::FindDeviceState,"Linear search of the (state id, value) pairs in deviceStates (+0x2C..+0x30, MaterialState structs.csv row) for the first whose id equals the argument; returns the pair's address or null; callers are the state-block lookups and the depth-pass colour-write setter.",0x004fa270,0x007f8a80,0x004fa270
-5933,function,,,0x004fa2e0,0x007f8af0,0x004fa2e0
+5933,function,std::vector<?>::_Buy,,0x004fa2e0,0x007f8af0,0x004fa2e0
 5934,function,"std::vector<std::pair<int,int>>::assign_return_this",,0x004fa330,0x007f8d80,0x004fa330
 5935,function,,,0x004fa350,0x007f8da0,0x004fa350
 5936,function,Multithreading::SynchSafePointerListBase::SynchSafePointerListBase,,0x004fa3d0,0x004b6b90,0x004fa3d0
@@ -5956,15 +5956,15 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5955,function,,,0x004fabdb,0x007f956b,0x004fabdb
 5956,function,,,0x004fac10,0x007f95a0,0x004fac10
 5957,function,,,0x004fac40,0x007f95d0,0x004fac40
-5958,function,,,0x004fac60,0x007f95f0,0x004fac60
-5959,function,,,0x004faca0,0x007f9670,0x004faca0
+5958,function,std::vector<?>::_Ufill,,0x004fac60,0x007f95f0,0x004fac60
+5959,function,std::vector<?>::erase,,0x004faca0,0x007f9670,0x004faca0
 5960,function,,,0x004fad10,0x007f96e0,0x004fad10
 5961,function,,,0x004faedf,0x007f98af,0x004faedf
 5962,function,,,0x004faf8e,0x007f995e,0x004faf8e
 5963,function,std::vector<Graphics::MaterialSamplerState>::_Tidy,,0x004fb030,0x007f9630,0x004fb030
-5964,function,,,0x004fb070,0x007f9a00,0x004fb070
-5965,function,,,0x004fb0b0,0x007f9a40,0x004fb0b0
-5966,function,,,0x004fb1d0,0x007f9b60,0x004fb1d0
+5964,function,std::vector<?>::clear,,0x004fb070,0x007f9a00,0x004fb070
+5965,function,std::vector<?>::resize,,0x004fb0b0,0x007f9a40,0x004fb0b0
+5966,function,std::vector<?>::insert,,0x004fb1d0,0x007f9b60,0x004fb1d0
 5967,function,,,0x004fb280,0x007f9c10,0x004fb280
 5968,function,,,0x004fb420,0x007f9db0,0x004fb420
 5969,function,std::vector<Graphics::MaterialSamplerState>::push_back,,0x004fb480,0x007f9e10,0x004fb480
@@ -6045,11 +6045,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6044,function,std::vector<General::SafePointer<?>>::_Ufill,,0x004fd9e0,0x007eb8a0,0x004fd9e0
 6045,function,Graphics::MaterialShaderManager::PurgeReleased,,0x004fda20,0x007eb8e0,0x004fda20
 6046,function,,,0x004fdad0,0x007eb990,0x004fdad0
-6047,function,,,0x004fdb00,0x007eb9c0,0x004fdb00
+6047,function,std::vector<?>::_Insert_n,,0x004fdb00,0x007eb9c0,0x004fdb00
 6048,function,,,0x004fdc83,0x007ebb43,0x004fdc83
 6049,function,,,0x004fdd0e,0x007ebbce,0x004fdd0e
-6050,function,,,0x004fdda0,0x007ebcf0,0x004fdda0
-6051,function,,,0x004fde90,0x007ebc60,0x004fde90
+6050,function,std::vector<?>::resize,,0x004fdda0,0x007ebcf0,0x004fdda0
+6051,function,std::vector<?>::insert,,0x004fde90,0x007ebc60,0x004fde90
 6052,function,std::vector<General::SafePointer<?>>::push_back,,0x004fdf20,0x007ebde0,0x004fdf20
 6053,function,ECBase::ECDynArray<General::SafePointer<?>>::ECDynArray,,0x004fdfb0,0x007ebe70,0x004fdfb0
 6054,function,Graphics::MaterialShaderManager::MaterialShaderManager,,0x004fe020,0x007ebee0,0x004fe020
@@ -6107,22 +6107,22 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6106,function,Graphics::MaterialObject::ProvideParameter,,0x004ff7a0,0x007e7bb0,0x004ff7a0
 6107,function,std::vector<Graphics::MaterialTextureDeclaration>::erase,,0x004ff930,0x007e7d80,0x004ff930
 6108,function,,,0x004ff990,0x007e7de0,0x004ff990
-6109,function,,,0x004ff9a0,0x007e7df0,0x004ff9a0
-6110,function,,,0x004ffc60,0x007e80b0,0x004ffc60
+6109,function,"std::map<?,?>::erase",,0x004ff9a0,0x007e7df0,0x004ff9a0
+6110,function,"std::map<?,?>::_Insert",,0x004ffc60,0x007e80b0,0x004ffc60
 6111,function,std::vector<Graphics::MaterialTextureDeclaration>::_Tidy,,0x004ffe60,0x007e7d40,0x004ffe60
-6112,function,,,0x004ffea0,0x007e82b0,0x004ffea0
-6113,function,,,0x004ffee0,0x007e82f0,0x004ffee0
+6112,function,std::vector<?>::clear,,0x004ffea0,0x007e82b0,0x004ffea0
+6113,function,std::vector<?>::_Buy,,0x004ffee0,0x007e82f0,0x004ffee0
 6114,function,,,0x004fff30,0x007e8340,0x004fff30
 6115,function,,,0x005000bc,0x007e84cc,0x005000bc
 6116,function,,,0x00500145,0x007e8555,0x00500145
 6117,function,"std::map<unsigned int,?>::erase",,0x005001d0,0x007e85e0,0x005001d0
 6118,function,,,0x005002a0,0x006e0fb0,0x005002a0
-6119,function,,,0x00500460,0x007e86b0,0x00500460
+6119,function,"std::map<?,?>::insert",,0x00500460,0x007e86b0,0x00500460
 6120,function,,,0x00500520,0x007e8770,0x00500520
-6121,function,,,0x00500670,0x007e88c0,0x00500670
-6122,function,,,0x00500760,0x007e89b0,0x00500760
-6123,function,,,0x005007f0,0x005b5520,0x005007f0
-6124,function,,,0x00500870,0x007e8a40,0x00500870
+6121,function,std::vector<?>::resize,,0x00500670,0x007e88c0,0x00500670
+6122,function,std::vector<?>::insert,,0x00500760,0x007e89b0,0x00500760
+6123,function,"std::map<?,?>::operator[]",,0x005007f0,0x005b5520,0x005007f0
+6124,function,"std::map<?,?>::insert",,0x00500870,0x007e8a40,0x00500870
 6125,function,ECBase::ECDynArray<?>::operator=,,0x00500a30,0x007e8c00,0x00500a30
 6126,function,std::vector<Math::Matrix4x4f>::push_back,,0x00500a50,0x007e8c20,0x00500a50
 6127,function,"std::map<unsigned int,?>::~map",,0x00500ae0,0x007e92f0,0x00500ae0
@@ -6442,7 +6442,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6441,function,"stdext::_Unchecked_move_backward<std::wstring*,std::wstring*>",,0x0050e410,0x007fc930,0x0050e410
 6442,function,Graphics::MaterialStateBuilderXML2::~MaterialStateBuilderXML2,,0x0050e440,0x007fc960,0x0050e440
 6443,function,Graphics::MaterialStateBuilderXML2::EndElement,,0x0050e4f0,0x007fca10,0x0050e4f0
-6444,function,,,0x0050e690,0x007fcbb0,0x0050e690
+6444,function,std::vector<std::wstring>::_Insert_n,,0x0050e690,0x007fcbb0,0x0050e690
 6445,function,,,0x0050e895,0x007fcdb5,0x0050e895
 6446,function,,,0x0050e94f,0x007fce6f,0x0050e94f
 6447,function,Graphics::MaterialStateBuilderXML2::`scalar deleting destructor',,0x0050e9f0,0x007fcf10,0x0050e9f0
@@ -6641,7 +6641,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6640,function,GUI::ScaleformManager::HandleMessage_GUICursorMiddleButtonDblClickMessage,,0x005129e0,0x007ba9f0,0x005129e0
 6641,function,GUI::ScaleformManager::StopDragging,,0x005129f0,0x007baa00,0x005129f0
 6642,function,"std::map<std::wstring,?>::find",,0x00512a10,0x00818fd0,0x00512a10
-6643,function,,,0x00512a90,0x0049bba0,0x00512a90
+6643,function,std::set<?>::erase,,0x00512a90,0x0049bba0,0x00512a90
 6644,function,,,0x00512d50,0x0049c170,0x00512d50
 6645,function,GUI::ScaleformManager::RegisterHandler_GUICursorLeftButtonDownMessage,,0x00512e20,0x007baa20,0x00512e20
 6646,function,GUI::ScaleformManager::RegisterHandler_GUICursorLeftButtonDblClickMessage,,0x00512eb0,0x007baab0,0x00512eb0
@@ -6652,14 +6652,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6651,function,GUI::ScaleformManager::RegisterHandler_GUICursorMiddleButtonDownMessage,,0x00513180,0x007bad80,0x00513180
 6652,function,GUI::ScaleformManager::RegisterHandler_GUICursorMiddleButtonDblClickMessage,,0x00513210,0x007bae10,0x00513210
 6653,function,GUI::ScaleformManager::RegisterHandler_GUICursorMiddleButtonUpMessage,,0x005132a0,0x007baea0,0x005132a0
-6654,function,,,0x00513330,0x007baf30,0x00513330
-6655,function,,,0x00513530,0x007bb130,0x00513530
+6654,function,"std::map<?,?>::_Insert",,0x00513330,0x007baf30,0x00513330
+6655,function,"std::map<?,?>::_Insert",,0x00513530,0x007bb130,0x00513530
 6656,function,,,0x00513730,0x007bb330,0x00513730
-6657,function,,,0x00513a20,0x007bb620,0x00513a20
+6657,function,"std::map<std::wstring,?>::erase",,0x00513a20,0x007bb620,0x00513a20
 6658,function,,,0x00513cf0,0x007bb960,0x00513cf0
-6659,function,,,0x00513d70,0x00454fe0,0x00513d70
-6660,function,,,0x00513dc0,0x007bb9e0,0x00513dc0
-6661,function,,,0x00513f70,0x007bbb90,0x00513f70
+6659,function,std::vector<?>::_Buy,,0x00513d70,0x00454fe0,0x00513d70
+6660,function,"std::map<std::wstring,?>::insert",,0x00513dc0,0x007bb9e0,0x00513dc0
+6661,function,"std::map<std::wstring,?>::insert",,0x00513f70,0x007bbb90,0x00513f70
 6662,function,"std::map<ECBase::ECString,GFxMovieDef *>::erase",,0x00514120,0x007bbd40,0x00514120
 6663,function,"std::map<ECBase::ECString,GPtr<GFxMovieView>>::erase",,0x005141f0,0x007bbe10,0x005141f0
 6664,function,std::vector<wchar_t>::operator=,,0x005142c0,0x004552f0,0x005142c0
@@ -6765,11 +6765,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6764,function,std::vector<GFxValue>::_Insert_n,,0x00519390,0x007c18c0,0x00519390
 6765,function,,,0x0051950d,0x007c1a3d,0x0051950d
 6766,function,,,0x00519519,0x007c1a49,0x00519519
-6767,function,,,0x005195f0,0x007e0b80,0x005195f0
-6768,function,,,0x005196b0,0x007c1d80,0x005196b0
+6767,function,"std::map<?,?>::insert",,0x005195f0,0x007e0b80,0x005195f0
+6768,function,std::vector<?>::resize,,0x005196b0,0x007c1d80,0x005196b0
 6769,function,,,0x00519760,0x0048c7b0,0x00519760
 6770,function,"std::map<unsigned int,Floaty*>::erase",,0x005197f0,0x007a9100,0x005197f0
-6771,function,,,0x00519860,0x007c1e30,0x00519860
+6771,function,std::vector<?>::_Assign_n,,0x00519860,0x007c1e30,0x00519860
 6772,function,,,0x005198d0,0x007f0dc0,0x005198d0
 6773,function,std::vector<GFxValue>::vector,,0x005199b0,0x007c1ea0,0x005199b0
 6774,function,std::vector<GFxValue>::resize,,0x00519a20,0x007c1f10,0x00519a20
@@ -6870,7 +6870,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6869,function,GuiFSCommand::SetValueUnicode,,0x0051f6e0,0x007c8430,0x0051f6e0
 6870,function,GuiFSCommand::EraseVectorRange<std::wstring>,,0x0051f910,0x007c8660,0x0051f910
 6871,function,GuiFSCommand::PopContext,,0x0051fa40,0x007c8790,0x0051fa40
-6872,function,,,0x0051fb90,0x005f7db0,0x0051fb90
+6872,function,"std::map<std::wstring,?>::insert",,0x0051fb90,0x005f7db0,0x0051fb90
 6873,function,"std::map<unsigned int,?>::operator[]",,0x0051fd90,0x00455550,0x0051fd90
 6874,function,"std::map<std::wstring,?>::operator[]",,0x0051fe10,0x00898730,0x0051fe10
 6875,function,"std::operator<<(std::wostream&,char const*)",,0x0051fef0,0x00506770,0x0051fef0
@@ -7042,7 +7042,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7041,function,"std::_Construct<std::pair<std::wstring const,GUI::AtlasEntry>,std::pair<std::wstring const,GUI::AtlasEntry>>",,0x00526670,0x007cd3e0,0x00526670
 7042,function,"std::list<std::pair<std::wstring const,GUI::AtlasEntry>>::_Buynode",,0x005266f0,0x007cd460,0x005266f0
 7043,function,Catch_All@0052676c,,0x0052676c,0x007cd4dc,0x0052676c
-7044,function,,,0x00526790,0x007cd500,0x00526790
+7044,function,std::list<?>::_Incsize,,0x00526790,0x007cd500,0x00526790
 7045,function,,,0x00526830,0x007cd5a0,0x00526830
 7046,function,ScaleformAtlasMap::Insert,,0x00526de0,0x007cdb50,0x00526de0
 7047,function,ScaleformAtlasReader::StartElement,,0x00526e80,0x007cdbf0,0x00526e80
@@ -7174,7 +7174,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7173,function,Eclipse::IGraphicsInternal::AddEndFrameTask,,0x0052aed0,0x00731d50,0x0052aed0
 7174,function,Eclipse::IGraphicsInternal::~IGraphicsInternal,,0x0052aef0,0x00731d70,0x0052aef0
 7175,function,Eclipse::IGraphicsInternal::`scalar deleting destructor',,0x0052afe0,0x00731e60,0x0052afe0
-7176,function,,,0x0052b000,0x00731e80,0x0052b000
+7176,function,"std::map<?,?>::_Insert",,0x0052b000,0x00731e80,0x0052b000
 7177,function,,,0x0052b200,0x00732080,0x0052b200
 7178,function,"std::_Uninit_fill_n<GuiMovieEntry*,unsigned int,GuiMovieEntry>",,0x0052b260,0x007320e0,0x0052b260
 7179,function,,,0x0052b2cb,0x0073214b,0x0052b2cb
@@ -7468,7 +7468,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7467,function,,,0x00539c25,0x0049d725,0x00539c25
 7468,function,,,0x00539cbd,0x0049d7bd,0x00539cbd
 7469,function,Graphics::ISceneInstance::SubmitOverlayRenderables,,0x00539d30,0x00740a20,0x00539d30
-7470,function,,,0x00539ea0,0x0049e9f0,0x00539ea0
+7470,function,std::vector<?>::insert,,0x00539ea0,0x0049e9f0,0x00539ea0
 7471,function,Graphics::ISceneInstance::Destroy,,0x00539f30,0x00740b90,0x00539f30
 7472,function,std::vector<Math::CollisionOutputParameter>::push_back,,0x00539f50,0x0049f420,0x00539f50
 7473,function,Graphics::ISceneInstance::ISceneInstance,,0x00539fe0,0x00740bb0,0x00539fe0
@@ -7943,7 +7943,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7942,function,"std::_Uninit_fill_n<Elem48*,unsigned int,Elem48>",,0x0054a3a0,0x004bcd10,0x0054a3a0
 7943,function,GraphicsStructures::ObjectAttachDependency::RemoveFromFollower,,0x0054a3e0,0x0074b8d0,0x0054a3e0
 7944,function,,,0x0054a3f0,0x00761900,0x0054a3f0
-7945,function,,,0x0054a490,0x0075eed0,0x0054a490
+7945,function,std::list<?>::_Incsize,,0x0054a490,0x0075eed0,0x0054a490
 7946,function,std::vector<?>::_Buy,,0x0054a530,0x0074bb00,0x0054a530
 7947,function,std::vector<?>::_Insert_n,,0x0054a580,0x00472810,0x0054a580
 7948,function,,,0x0054a70a,0x0047299a,0x0054a70a
@@ -7954,13 +7954,13 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7953,function,std::vector<Animation::BlendTreeNode>::_Insert_n,,0x0054aac0,0x004bd0f0,0x0054aac0
 7954,function,,,0x0054ac7b,0x004bd2ab,0x0054ac7b
 7955,function,,,0x0054ac87,0x004bd2b7,0x0054ac87
-7956,function,,,0x0054ad70,0x004bd3a0,0x0054ad70
+7956,function,std::vector<?>::_Insert_n,,0x0054ad70,0x004bd3a0,0x0054ad70
 7957,function,,,0x0054af3a,0x004bd56a,0x0054af3a
 7958,function,,,0x0054af46,0x004bd576,0x0054af46
 7959,function,std::vector<?>::resize,,0x0054b030,0x00472b10,0x0054b030
-7960,function,,,0x0054b0e0,0x0074be90,0x0054b0e0
-7961,function,,,0x0054b1c0,0x004bd6d0,0x0054b1c0
-7962,function,,,0x0054b2a0,0x004bd860,0x0054b2a0
+7960,function,std::vector<?>::resize,,0x0054b0e0,0x0074be90,0x0054b0e0
+7961,function,std::vector<?>::resize,,0x0054b1c0,0x004bd6d0,0x0054b1c0
+7962,function,std::vector<?>::resize,,0x0054b2a0,0x004bd860,0x0054b2a0
 7963,function,,,0x0054b380,0x00506670,0x0054b380
 7964,function,std::list<?>::push_back,,0x0054b3e0,0x0075f790,0x0054b3e0
 7965,function,"stdext::hash_map<?,?>::hash_map",,0x0054b420,0x00713570,0x0054b420
@@ -8495,7 +8495,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8494,function,GraphicsStructures::ObjectNodeCloth::GetKind`adjustor{384}',,0x00564990,0x00751f40,0x00564990
 8495,function,"std::_Sort<std::pair<unsigned int,unsigned int>*,int>",,0x005649a0,0x00751f60,0x005649a0
 8496,function,GraphicsStructures::ObjectNodeCloth::`scalar deleting destructor',,0x00564a90,0x00752050,0x00564a90
-8497,function,,,0x00564ab0,0x007c1b20,0x00564ab0
+8497,function,std::vector<?>::_Insert_n,,0x00564ab0,0x007c1b20,0x00564ab0
 8498,function,,,0x00564c2a,0x007c1c9a,0x00564c2a
 8499,function,,,0x00564c36,0x007c1ca6,0x00564c36
 8500,function,std::vector<?>::insert,,0x00564d10,0x0048e7d0,0x00564d10
@@ -8639,12 +8639,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8638,function,Multithreading::SynchSafePointer<?>::Release,,0x00569ed0,0x00693400,0x00569ed0
 8639,function,std::list<?>::~list,,0x00569ee0,0x007616e0,0x00569ee0
 8640,function,"std::map<std::wstring,?>::count",,0x00569f00,0x004b7c70,0x00569f00
-8641,function,,,0x00569f40,0x00761700,0x00569f40
+8641,function,std::list<?>::_Incsize,,0x00569f40,0x00761700,0x00569f40
 8642,function,,,0x00569fe0,0x007617a0,0x00569fe0
-8643,function,,,0x0056a000,0x007617c0,0x0056a000
-8644,function,,,0x0056a0a0,0x00761860,0x0056a0a0
+8643,function,std::list<?>::_Incsize,,0x0056a000,0x007617c0,0x0056a000
+8644,function,std::list<?>::_Incsize,,0x0056a0a0,0x00761860,0x0056a0a0
 8645,function,stdext::hash_map<?>::~hash_map,,0x0056a140,0x007619a0,0x0056a140
-8646,function,,,0x0056a180,0x00761ae0,0x0056a180
+8646,function,std::list<?>::_Insert,,0x0056a180,0x00761ae0,0x0056a180
 8647,function,,,0x0056a22a,0x00761b8a,0x0056a22a
 8648,function,StringMap<?>::~StringMap,,0x0056a2a0,0x00761c00,0x0056a2a0
 8649,function,"std::pair<Multithreading::SynchSafePointer<?>,Core::IndexedList<std::pair<unsigned int,std::wstring>>>::~pair",,0x0056a330,0x00761c90,0x0056a330
@@ -8685,7 +8685,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8684,function,"std::list<std::pair<std::wstring,std::pair<Multithreading::SynchSafePointer<?>,StringMap<?>>>>::clear",,0x0056cbc0,0x007643b0,0x0056cbc0
 8685,function,Gff4::FlatRef::SetStringField,,0x0056cc70,0x004b9020,0x0056cc70
 8686,function,"std::pair<std::wstring,std::pair<Multithreading::SynchSafePointer<?>,StringMap<?>>>::pair(const std::pair<std::wstring,std::pair<Multithreading::SynchSafePointer<?>,StringMap<?>>>&)",,0x0056ccd0,0x00764460,0x0056ccd0
-8687,function,,,0x0056cd30,0x007644c0,0x0056cd30
+8687,function,std::list<?>::_Insert,,0x0056cd30,0x007644c0,0x0056cd30
 8688,function,,,0x0056cdda,0x0076456a,0x0056cdda
 8689,function,Gff4::FlatFile::~FlatFile,,0x0056ce50,0x004b90c0,0x0056ce50
 8690,function,GraphicsStructures::Morph::NodeInfo::Write,,0x0056cef0,0x007645e0,0x0056cef0
@@ -8741,7 +8741,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8740,function,GraphicsStructures::ObjectNodeBlueprint::GetMemoryFootprint,,0x00571990,0x007791c0,0x00571990
 8741,function,GraphicsStructures::ObjectNodeBlueprint::CollectMaterialNames,,0x00571ac0,0x007792f0,0x00571ac0
 8742,function,GraphicsStructures::Morph::HasNode,,0x00571b30,0x00779360,0x00571b30
-8743,function,,,0x00571b80,0x007793b0,0x00571b80
+8743,function,std::vector<?>::reserve,,0x00571b80,0x007793b0,0x00571b80
 8744,function,,,0x00571c87,0x007794b7,0x00571c87
 8745,function,GraphicsStructures::ObjectNodeBlueprint::~ObjectNodeBlueprint,,0x00571ca0,0x007794d0,0x00571ca0
 8746,function,std::vector<?>::reserve,,0x00571da0,0x007795d0,0x00571da0
@@ -8853,8 +8853,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8852,function,std::basic_filebuf<wchar_t>::close,,0x005754b0,0x004895e0,0x005754b0
 8853,function,std::vector<MeshLightmapRecord>::erase,,0x00575500,0x00712a00,0x00575500
 8854,function,Renderer::LightStatePool::~LightStatePool,,0x00575560,0x00754010,0x00575560
-8855,function,,,0x00575610,0x00712b10,0x00575610
-8856,function,,,0x00575650,0x004ede60,0x00575650
+8855,function,std::vector<?>::clear,,0x00575610,0x00712b10,0x00575610
+8856,function,std::vector<?>::_Tidy,,0x00575650,0x004ede60,0x00575650
 8857,function,std::vector<Multithreading::SynchSafePointer<?>>::erase,,0x005756a0,0x004edeb0,0x005756a0
 8858,function,,,0x00575710,0x004edf60,0x00575710
 8859,function,std::vector<MeshLightmapRecord>::~vector,,0x00575740,0x00712ad0,0x00575740
@@ -8867,19 +8867,19 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8866,function,,,0x00575b40,0x00489a50,0x00575b40
 8867,function,std::locale::facet::`scalar deleting destructor',,0x00575bd0,0x00409260,0x00575bd0
 8868,function,,,0x00575bf0,0x00489ae0,0x00575bf0
-8869,function,,,0x00575c60,0x007540c0,0x00575c60
+8869,function,"std::map<std::wstring,?>::erase",,0x00575c60,0x007540c0,0x00575c60
 8870,function,,,0x00575f30,0x00489be0,0x00575f30
 8871,function,GraphicsStructures::ModelHierarchyReader::~ModelHierarchyReader,,0x00576060,0x00754390,0x00576060
 8872,function,,,0x005760c0,0x00489d10,0x005760c0
-8873,function,,,0x00576100,0x00712d10,0x00576100
+8873,function,std::vector<?>::_Buy,,0x00576100,0x00712d10,0x00576100
 8874,function,std::basic_filebuf<wchar_t>::open,,0x00576150,0x006fc350,0x00576150
 8875,function,,,0x00576250,0x00712d60,0x00576250
 8876,function,,,0x00576417,0x00712f27,0x00576417
 8877,function,,,0x005764c4,0x00712fd4,0x005764c4
-8878,function,,,0x00576560,0x007543f0,0x00576560
-8879,function,,,0x00576630,0x004ee100,0x00576630
-8880,function,,,0x00576640,0x00713190,0x00576640
-8881,function,,,0x005767c0,0x004ee730,0x005767c0
+8878,function,std::_Tree<?>::erase,,0x00576560,0x007543f0,0x00576560
+8879,function,std::vector<Resources>::_Tidy,,0x00576630,0x004ee100,0x00576630
+8880,function,std::vector<MeshLightmapRecord>::operator=,,0x00576640,0x00713190,0x00576640
+8881,function,std::vector<Resources>::_Insert_n,,0x005767c0,0x004ee730,0x005767c0
 8882,function,,,0x00576943,0x004ee8b3,0x00576943
 8883,function,,,0x005769ce,0x004ee93e,0x005769ce
 8884,function,GraphicsStructures::ObjectParams::~ObjectParams,,0x00576a60,0x00712c90,0x00576a60
@@ -8906,8 +8906,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8905,function,GraphicsStructures::TriangulatePolygon,,0x005775c0,0x00754bc0,0x005775c0
 8906,function,GraphicsStructures::GraphicsStructuresManager::ExportObjectMeshXml,,0x00577b70,0x00755170,0x00577b70
 8907,function,"std::basic_ofstream<wchar_t,std::char_traits<wchar_t>>::basic_ofstream",,0x00577ce0,0x007552e0,0x00577ce0
-8908,function,,,0x00577de0,0x00489b70,0x00577de0
-8909,function,,,0x00577e50,0x00489d50,0x00577e50
+8908,function,"std::basic_ofstream<wchar_t,std::char_traits<wchar_t>>::~basic_ofstream",,0x00577de0,0x00489b70,0x00577de0
+8909,function,"std::basic_ofstream<wchar_t,std::char_traits<wchar_t>>::`scalar deleting destructor'",,0x00577e50,0x00489d50,0x00577e50
 8910,function,std::_Tree<?>::_Tidy,,0x00577e90,0x007553e0,0x00577e90
 8911,function,stdext::_Hash<?>::_Hash,,0x00577ed0,0x00755420,0x00577ed0
 8912,function,std::vector<?>::vector,,0x00577f50,0x004f0140,0x00577f50
@@ -9290,11 +9290,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9289,function,std::vector<GraphicsStructures::ClothAttachment>::erase,,0x0058d470,0x007880e0,0x0058d470
 9290,function,"std::_Uninit_copy<GraphicsStructures::ClothAttachment*,GraphicsStructures::ClothAttachment*>",,0x0058d4f0,0x00788190,0x0058d4f0
 9291,function,,,0x0058d520,0x007881d0,0x0058d520
-9292,function,,,0x0058d710,0x007883c0,0x0058d710
+9292,function,std::vector<GraphicsStructures::TriangleIndices16>::_Insert_n,,0x0058d710,0x007883c0,0x0058d710
 9293,function,,,0x0058d8bb,0x0078856b,0x0058d8bb
 9294,function,,,0x0058d8c7,0x00788577,0x0058d8c7
 9295,function,std::vector<GraphicsStructures::ClothAttachment>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x0058D420 (ID 9288), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x0058d9b0,0x007881c0,0x0058d9b0
-9296,function,,,0x0058d9c0,0x00788970,0x0058d9c0
+9296,function,std::vector<GraphicsStructures::ClothAttachment>::_Insert_n,,0x0058d9c0,0x00788970,0x0058d9c0
 9297,function,,,0x0058dbad,0x00788b5d,0x0058dbad
 9298,function,,,0x0058dc69,0x00788c19,0x0058dc69
 9299,function,std::vector<GraphicsStructures::TriangleIndices16>::resize,,0x0058dd00,0x00788cb0,0x0058dd00
@@ -9401,14 +9401,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9400,function,GraphicsStructures::XMLToGff4Converter::GetCurrentNodeType,,0x00599e80,0x00794800,0x00599e80
 9401,function,GraphicsStructures::StreamData::~StreamData,,0x00599e90,0x00794810,0x00599e90
 9402,function,GraphicsStructures::XMLToGff4Converter::PopNodeType,,0x00599f00,0x00794880,0x00599f00
-9403,function,,,0x00599f30,0x007948b0,0x00599f30
-9404,function,,,0x0059a130,0x00794ab0,0x0059a130
+9403,function,"std::map<?,?>::_Insert",,0x00599f30,0x007948b0,0x00599f30
+9404,function,"std::map<std::wstring,?>::insert",,0x0059a130,0x00794ab0,0x0059a130
 9405,function,GraphicsStructures::ReadXMLBoundingBox,,0x0059a2e0,0x00794c60,0x0059a2e0
 9406,function,GraphicsStructures::ReadXMLJointD6,,0x0059a400,0x00794d80,0x0059a400
 9407,function,GraphicsStructures::ReadXMLJointPulley,,0x0059bb60,0x007964e0,0x0059bb60
 9408,function,GraphicsStructures::ReadXMLJointRevolute,,0x0059c110,0x00796a90,0x0059c110
 9409,function,GraphicsStructures::ReadXMLJointSpherical,,0x0059c740,0x007970c0,0x0059c740
-9410,function,,,0x0059cf80,0x00797900,0x0059cf80
+9410,function,"std::map<std::wstring,?>::insert",,0x0059cf80,0x00797900,0x0059cf80
 9411,function,WStringMap<Gff4::FlatRef>::operator[],,0x0059d180,0x00797b00,0x0059d180
 9412,function,GraphicsStructures::DeleteAllStreamData,,0x0059d260,0x00797be0,0x0059d260
 9413,function,GraphicsStructures::XMLToGff4Converter::PushNodeType,,0x0059d380,0x00797d60,0x0059d380
@@ -9456,8 +9456,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9455,function,"stdext::hash_map<const wchar_t *,?>::equal_range",,0x005ab940,0x004ba5d0,0x005ab940
 9456,function,"stdext::hash_map<const wchar_t *,?>::find",,0x005abaf0,0x004ba850,0x005abaf0
 9457,function,Animation::FindNoCase,,0x005abb60,0x0076faf0,0x005abb60
-9458,function,,,0x005abc40,0x0076fbd0,0x005abc40
-9459,function,,,0x005abce0,0x004ef760,0x005abce0
+9458,function,std::list<?>::_Incsize,,0x005abc40,0x0076fbd0,0x005abc40
+9459,function,std::vector<?>::insert,,0x005abce0,0x004ef760,0x005abce0
 9460,function,std::vector<Resources>::push_back,,0x005abd70,0x004efaa0,0x005abd70
 9461,function,,,0x005abe00,0x0076fc70,0x005abe00
 9462,function,"stdext::hash_map<const wchar_t *,?>::operator[]",,0x005ac340,0x007701b0,0x005ac340
@@ -9757,7 +9757,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9756,function,"std::uninitialized_fill_n<std::pair<std::wstring,std::wstring>*,unsigned int,std::pair<std::wstring,std::wstring>>",,0x005b53d0,0x004ed9c0,0x005b53d0
 9757,function,"std::vector<std::pair<std::wstring,std::wstring>>::_Destroy",,0x005b5410,0x004edb70,0x005b5410
 9758,function,XML_Document_Node::~XML_Document_Node,,0x005b5430,0x007b49f0,0x005b5430
-9759,function,,,0x005b5550,0x004ef320,0x005b5550
+9759,function,std::vector<GraphicsStructures::ModelNodeRecord>::_Buy,,0x005b5550,0x004ef320,0x005b5550
 9760,function,,,0x005b55b0,0x004ee3e0,0x005b55b0
 9761,function,,,0x005b57a0,0x004ee5d0,0x005b57a0
 9762,function,,,0x005b585c,0x004ee68c,0x005b585c
@@ -9883,7 +9883,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9882,function,"ECBase::ECDynArray<std::pair<std::wstring,std::wstring>>::RemoveAt","removes element [index] of a vector of wstring pairs, index bounds-checked",0x005b81e0,0x00720840,0x005b81e0
 9883,function,,,0x005b82a0,0x00720900,0x005b82a0
 9884,function,WStringMap<?>::ClearAndDeleteValues,thunk of WStringMap<?>::ClearAndDeleteValues,0x005b8330,0x00720990,0x005b8330
-9885,function,,,0x005b8340,0x007209a0,0x005b8340
+9885,function,"std::map<?,?>::insert",,0x005b8340,0x007209a0,0x005b8340
 9886,function,"std::vector<std::pair<std::wstring,std::wstring>>::resize",,0x005b8500,0x004ef480,0x005b8500
 9887,function,SoundManager::UnloadProject,,0x005b8630,0x00720b60,0x005b8630
 9888,function,WStringMap<void*>::_Tidy,,0x005b8650,0x008194f0,0x005b8650
@@ -10270,10 +10270,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10269,function,"std::list<std::pair<unsigned int,std::wstring>>::clear",,0x005caab0,0x00406ce0,0x005caab0
 10270,function,GdaTables::HasAnimName,,0x005caaf0,0x006fdd40,0x005caaf0
 10271,function,"std::list<std::pair<unsigned int,std::wstring>>::~list",,0x005cab50,0x00468b70,0x005cab50
-10272,function,,,0x005cab70,0x00505ee0,0x005cab70
-10273,function,,,0x005cac10,0x00506070,0x005cac10
+10272,function,std::list<?>::_Incsize,,0x005cab70,0x00505ee0,0x005cab70
+10273,function,"stdext::hash_map<?,?>::~hash_map",,0x005cac10,0x00506070,0x005cac10
 10274,function,,,0x005cac50,0x005063a0,0x005cac50
-10275,function,,,0x005cace0,0x006fdda0,0x005cace0
+10275,function,std::vector<?>::_Assign_n,,0x005cace0,0x006fdda0,0x005cace0
 10276,function,,,0x005cad50,0x006fde10,0x005cad50
 10277,function,,,0x005cadd0,0x0056e250,0x005cadd0
 10278,function,,,0x005cae50,0x006fde90,0x005cae50
@@ -10322,7 +10322,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10321,function,EC::CExteriorChunk::IsLoadPending,,0x005cd2d0,0x00712830,0x005cd2d0
 10322,function,"stdext::hash_map<std::wstring,?>::lower_bound",,0x005cd320,0x00712880,0x005cd320
 10323,function,"std::vector<?>::erase(first,last)",,0x005cd480,0x00710730,0x005cd480
-10324,function,,,0x005cd4f0,0x00713070,0x005cd4f0
+10324,function,std::list<?>::_Insert,,0x005cd4f0,0x00713070,0x005cd4f0
 10325,function,,,0x005cd59a,0x0071311a,0x005cd59a
 10326,function,EC::ModelPlacement::~ModelPlacement,,0x005cd610,0x00713430,0x005cd610
 10327,function,EC::ChunkTile::~ChunkTile,,0x005cd690,0x007134b0,0x005cd690
@@ -10393,8 +10393,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10392,function,EC::ChunkManager::GetRoomBoundsMax,,0x005d0d40,0x0070e4e0,0x005d0d40
 10393,function,EC::ChunkManager::GetRoomName,,0x005d0e00,0x0070e5a0,0x005d0e00
 10394,function,EC::ChunkManager::GetRoomIdOfCell,,0x005d0e20,0x0070e5c0,0x005d0e20
-10395,function,,,0x005d0e40,0x0070e5e0,0x005d0e40
-10396,function,,,0x005d1040,0x0070e7e0,0x005d1040
+10395,function,"std::map<?,?>::_Insert",,0x005d0e40,0x0070e5e0,0x005d0e40
+10396,function,"std::map<?,?>::insert",,0x005d1040,0x0070e7e0,0x005d1040
 10397,function,"std::map<int,?>::insert",,0x005d1100,0x0070e8d0,0x005d1100
 10398,function,"std::vector<Math::CollisionOutputParameter>::resize(n,val)",,0x005d11b0,0x00531700,0x005d11b0
 10399,function,IAreaLayout::Load,,0x005d1290,0x0070e980,0x005d1290
@@ -10588,8 +10588,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10587,function,"std::vector<std::pair<std::wstring,std::wstring>>::erase",,0x005d85a0,0x004c3860,0x005d85a0
 10588,function,"std::uninitialized_copy<std::pair<std::wstring,std::wstring>*,std::pair<std::wstring,std::wstring>*>",,0x005d8610,0x004edd10,0x005d8610
 10589,function,"std::vector<std::pair<std::wstring,std::wstring>>::_Tidy",,0x005d8640,0x004edf20,0x005d8640
-10590,function,,,0x005d8680,0x004c3910,0x005d8680
-10591,function,,,0x005d86d0,0x004ee3e0,0x005d86d0
+10590,function,std::vector<AddInRecord>::_Buy,,0x005d8680,0x004c3910,0x005d8680
+10591,function,"std::vector<std::pair<std::wstring,std::wstring>>::_Insert_n",,0x005d86d0,0x004ee3e0,0x005d86d0
 10592,function,,,0x005d88c0,0x004ee5d0,0x005d88c0
 10593,function,,,0x005d897c,0x004ee68c,0x005d897c
 10594,function,"std::vector<std::pair<std::wstring,std::wstring>>::resize",,0x005d8a20,0x004ef480,0x005d8a20
@@ -10755,9 +10755,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10754,function,"std::operator==<SmartData::Attribute<int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>,std::allocator<SmartData::Attribute<int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>>",,0x005e0800,0x00582b10,0x005e0800
 10755,function,"ECBase::ECDynArray<SmartData::Attribute<int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::operator==",,0x005e0890,0x00582ba0,0x005e0890
 10756,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x005e08b0,0x004cd0a0,0x005e08b0
-10757,function,,,0x005e08d0,0x004cd0c0,0x005e08d0
-10758,function,,,0x005e0920,0x004cd110,0x005e0920
-10759,function,,,0x005e0a40,0x004cd230,0x005e0a40
+10757,function,std::vector<?>::_Buy,,0x005e08d0,0x004cd0c0,0x005e08d0
+10758,function,std::vector<?>::resize,,0x005e0920,0x004cd110,0x005e0920
+10759,function,std::vector<?>::insert,,0x005e0a40,0x004cd230,0x005e0a40
 10760,function,,,0x005e0af0,0x004cd2e0,0x005e0af0
 10761,function,,,0x005e0c76,0x004cd466,0x005e0c76
 10762,function,,,0x005e0cf8,0x004cd4e8,0x005e0cf8
@@ -10816,7 +10816,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10815,function,std::_Tree<?>::_Copy,,0x005e5470,0x004d2140,0x005e5470
 10816,function,Catch_All@005e550d,,0x005e550d,0x004d21dd,0x005e550d
 10817,function,std::_Tree<?>::_Copy(std::_Tree<?> const &),,0x005e5530,0x004d2200,0x005e5530
-10818,function,,,0x005e55b0,0x004d2280,0x005e55b0
+10818,function,"std::map<std::wstring,?>::erase",,0x005e55b0,0x004d2280,0x005e55b0
 10819,function,,,0x005e5880,0x004d2550,0x005e5880
 10820,function,"std::map<?,?>::map(const std::map<?,?>&)",,0x005e5950,0x004d2620,0x005e5950
 10821,function,,,0x005e59cc,0x004d269c,0x005e59cc
@@ -10846,7 +10846,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10845,function,CClientOptions::ApplyIniVersionDefaults,,0x005e6360,0x004d33c0,0x005e6360
 10846,function,CClientOptions::LoadFromDragonAgeIni,,0x005e6600,0x004d3690,0x005e6600
 10847,function,std::vector<std::vector<std::wstring>>::operator=,,0x005e6720,0x004d37b0,0x005e6720
-10848,function,,,0x005e6870,0x004d3900,0x005e6870
+10848,function,std::vector<?>::_Insert_n,,0x005e6870,0x004d3900,0x005e6870
 10849,function,,,0x005e69f7,0x004d3a87,0x005e69f7
 10850,function,,,0x005e6a80,0x004d3b10,0x005e6a80
 10851,function,ECBase::ECDynArray<ECBase::ECDynArray<ECBase::ECString>>::ECDynArray(const ECBase::ECDynArray<ECBase::ECDynArray<ECBase::ECString>>&),,0x005e6b00,0x004d3b90,0x005e6b00
@@ -10912,7 +10912,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10911,function,AddInsManager::EraseVectorElementAt<?>,,0x005f1f10,0x004df420,0x005f1f10
 10912,function,AddInXmlEntry::~AddInXmlEntry,,0x005f1fc0,0x004df4d0,0x005f1fc0
 10913,function,AddInRecord::operator<,,0x005f2170,0x004df680,0x005f2170
-10914,function,,,0x005f21e0,0x004df780,0x005f21e0
+10914,function,std::vector<AddInsManager::AddInEntry>::_Insert_n,,0x005f21e0,0x004df780,0x005f21e0
 10915,function,,,0x005f23d8,0x004df978,0x005f23d8
 10916,function,,,0x005f2483,0x004dfa23,0x005f2483
 10917,function,std::vector<AddInsManager::AddInEntry>::resize,,0x005f2510,0x004dfb40,0x005f2510
@@ -10967,10 +10967,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10966,function,"std::uninitialized_copy<AddInXmlEntry*,AddInXmlEntry*>",,0x005f7ea0,0x004e54d0,0x005f7ea0
 10967,function,std::_Sort_heap<AddInRecord*>,,0x005f7ed0,0x004e5500,0x005f7ed0
 10968,function,std::vector<AddInXmlEntry>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x005F7DE0 (ID 10963), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x005f7f60,0x004e5590,0x005f7f60
-10969,function,,,0x005f7f70,0x004e55a0,0x005f7f70
+10969,function,std::vector<AddInRecord>::_Insert_n,,0x005f7f70,0x004e55a0,0x005f7f70
 10970,function,,,0x005f8152,0x004e5782,0x005f8152
 10971,function,,,0x005f8201,0x004e5831,0x005f8201
-10972,function,,,0x005f82a0,0x004e58d0,0x005f82a0
+10972,function,std::vector<AddInXmlEntry>::_Insert_n,,0x005f82a0,0x004e58d0,0x005f82a0
 10973,function,,,0x005f8498,0x004e5ac8,0x005f8498
 10974,function,,,0x005f8550,0x004e5b80,0x005f8550
 10975,function,std::vector<AddInRecord>::resize,,0x005f85f0,0x004e5c20,0x005f85f0
@@ -11062,14 +11062,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 11061,function,"std::uninitialized_copy<CCModule::TagIndexEntry*,CCModule::TagIndexEntry*>",,0x005ffe60,0x004edce0,0x005ffe60
 11062,function,CCModule::IsEventEnabled,,0x005ffe90,0x004edd40,0x005ffe90
 11063,function,ECBase::ECDynArray<CCModule::TagIndexEntry>::RemoveAt,,0x005ffef0,0x004edda0,0x005ffef0
-11064,function,,,0x005fffb0,0x005a0c10,0x005fffb0
+11064,function,std::set<?>::erase,,0x005fffb0,0x005a0c10,0x005fffb0
 11065,function,CCModule::RemoveNamedSlot,"Removes a tag from the module's tag index (CCModule::FindTagIndex, entries of 0x88 bytes at +0x198): from the tag's first entry walks to the entry whose object id (entry word 0x21) equals objectId, and erases it only if its tag still compares equal (_wcsncmp, 0x40 characters); returns 1 if erased. Counterpart of SetNamedSlot 0x00602650; ret 8 (tag, objectId).",0x00600270,0x004edf90,0x00600270
 11066,function,,,0x006003e0,0x006ff260,0x006003e0
 11067,function,"std::map<?,?>::erase",,0x00600440,0x005a0f10,0x00600440
-11068,function,,,0x00600510,0x004ee110,0x00600510
+11068,function,std::vector<CCModule::TagIndexEntry>::_Insert_n,,0x00600510,0x004ee110,0x00600510
 11069,function,,,0x006006d9,0x004ee2d9,0x006006d9
 11070,function,,,0x006006e5,0x004ee2e5,0x006006e5
-11071,function,,,0x006007e0,0x004ee9d0,0x006007e0
+11071,function,std::vector<Gff4::StructReader>::_Insert_n,,0x006007e0,0x004ee9d0,0x006007e0
 11072,function,,,0x00600963,0x004eeb53,0x00600963
 11073,function,,,0x0060096f,0x004eeb5f,0x0060096f
 11074,function,CCModule::ForScript_DoAreaTransition,,0x00600a40,0x004eec30,0x00600a40
@@ -11119,7 +11119,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 11118,function,std::vector<CCModule::AreaListEntry>::erase,,0x006038f0,0x004f1e80,0x006038f0
 11119,function,"std::uninitialized_copy<CCModule::AreaListEntry*,CCModule::AreaListEntry*>",,0x00603960,0x004f1ef0,0x00603960
 11120,function,std::vector<CCModule::AreaListEntry>::~vector,,0x00603990,0x004f2220,0x00603990
-11121,function,,,0x006039a0,0x004f1f20,0x006039a0
+11121,function,std::vector<CCModule::AreaListEntry>::_Insert_n,,0x006039a0,0x004f1f20,0x006039a0
 11122,function,,,0x00603b6c,0x004f20ec,0x00603b6c
 11123,function,,,0x00603c17,0x004f2197,0x00603c17
 11124,function,std::vector<CCModule::AreaListEntry>::resize,,0x00603ca0,0x004f2230,0x00603ca0
@@ -11523,7 +11523,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 11522,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::HighlightInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::CreateMemberIterator",,0x0060fd70,0x004fe4e0,0x0060fd70
 11523,function,SmartData::PointerArrayMemberIteratorImpl<ECBase::ECDynArray<GUI::HighlightInfo*>>::GetValue,,0x0060fda0,0x004fe510,0x0060fda0
 11524,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::HighlightInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x0060fde0,0x004fe550,0x0060fde0
-11525,function,,,0x0060fe00,0x00712bf0,0x0060fe00
+11525,function,std::list<?>::_Incsize,,0x0060fe00,0x00712bf0,0x0060fe00
 11526,function,GUI::DragonAgeGUISystem::RegisterHandler_HideGUIScreenMessage,,0x0060fea0,0x004fe570,0x0060fea0
 11527,function,GUI::DragonAgeGUISystem::RegisterHandler_DialogBoxClosedMessage,,0x0060ff50,0x004fe620,0x0060ff50
 11528,function,std::list<GuiListEntry>::~list,,0x0060ffe0,0x004fe870,0x0060ffe0
@@ -11531,7 +11531,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 11530,function,std::vector<unsigned int>::resize,,0x00610060,0x0075f7d0,0x00610060
 11531,function,stdext::_Hash<GUI::SharedMapHashTraits>::_Hash,,0x00610070,0x004fe960,0x00610070
 11532,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::HighlightInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x00610100,0x004fea60,0x00610100
-11533,function,,,0x00610180,0x004feb00,0x00610180
+11533,function,"stdext::hash_map<?,?>::insert",,0x00610180,0x004feb00,0x00610180
 11534,function,GUI::DragonAgeGUISystem::DragonAgeGUISystem(const GUI::DragonAgeGUISystem&),,0x00610660,0x004fefe0,0x00610660
 11535,function,GUI::DragonAgeGUISystem::ShowStartMenu,,0x00610820,0x004ff1a0,0x00610820
 11536,function,GUI::DragonAgeGUISystem::CloseStartMenu,,0x00610830,0x004ff1b0,0x00610830
@@ -11682,10 +11682,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 11681,function,"std::map<unsigned int,LodEntry>::at",,0x00617a70,0x006d6cd0,0x00617a70
 11682,function,"std::_Sort_heap<std::pair<unsigned int,float>*,LodLess>",,0x00617ad0,0x006b32a0,0x00617ad0
 11683,function,"ECBase::ECDynArray<std::pair<unsigned int,float>>::RemoveRange",,0x00617b30,0x006d6d30,0x00617b30
-11684,function,,,0x00617c30,0x006d6e30,0x00617c30
-11685,function,,,0x00617e30,0x006d7030,0x00617e30
-11686,function,,,0x006180f0,0x006d72f0,0x006180f0
-11687,function,,,0x006181b0,0x006d73b0,0x006181b0
+11684,function,"std::map<?,?>::_Insert",,0x00617c30,0x006d6e30,0x00617c30
+11685,function,"std::map<?,?>::erase",,0x00617e30,0x006d7030,0x00617e30
+11686,function,"std::map<?,?>::insert",,0x006180f0,0x006d72f0,0x006180f0
+11687,function,std::_Tree<?>::erase,,0x006181b0,0x006d73b0,0x006181b0
 11688,function,std::_Tree<LodMapTraits>::erase,,0x00618280,0x006d7480,0x00618280
 11689,function,LodBand::RemoveObject,,0x006182f0,0x006d7610,0x006182f0
 11690,function,LodBand::EvictOverBudget,,0x00618370,0x006d7690,0x00618370
@@ -12165,7 +12165,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12164,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x0062bc00,0x00582bc0,0x0062bc00
 12165,function,,,0x0062bc20,0x00582be0,0x0062bc20
 12166,function,,,0x0062bca0,0x00582c60,0x0062bca0
-12167,function,,,0x0062bd10,0x00582da0,0x0062bd10
+12167,function,"std::vector<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::_Insert_n",,0x0062bd10,0x00582da0,0x0062bd10
 12168,function,,,0x0062be96,0x00582f26,0x0062be96
 12169,function,,,0x0062bf18,0x00582fa8,0x0062bf18
 12170,function,CreatureAbilities::RemoveQuickslotsFor,,0x0062bfa0,0x00583060,0x0062bfa0
@@ -12374,12 +12374,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12373,function,"ECBase::ECDynArray<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::erase",,0x00632af0,0x0060e590,0x00632af0
 12374,function,"std::copy_backward<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*>",,0x00632b60,0x0060e600,0x00632b60
 12375,function,CCParty::GetFollowerFormationPositionForControlled,,0x00632bb0,0x0060e650,0x00632bb0
-12376,function,,,0x00632c00,0x0060e6a0,0x00632c00
-12377,function,,,0x00632ca0,0x0060e740,0x00632ca0
-12378,function,,,0x00632f60,0x0060ea00,0x00632f60
+12376,function,std::list<?>::_Incsize,,0x00632c00,0x0060e6a0,0x00632c00
+12377,function,"std::map<?,?>::erase",,0x00632ca0,0x0060e740,0x00632ca0
+12378,function,"std::map<?,?>::_Insert",,0x00632f60,0x0060ea00,0x00632f60
 12379,function,std::vector<unsigned int>::operator!=,"Calls std::vector<unsigned int>::operator== 0x00739170 and negates it (7 instructions). CCArea::Update 0x0068AF30 uses it to compare the party's rooms this frame with last frame (+0x61C against +0x60C); other callers are ECDynArray and AnimBase templates, so it is a shared template instance and not the area's.",0x00633160,0x00872e40,0x00633160
-12380,function,,,0x00633180,0x0060ec00,0x00633180
-12381,function,,,0x006331c0,0x0060ec40,0x006331c0
+12380,function,std::vector<?>::clear,,0x00633180,0x0060ec00,0x00633180
+12381,function,"std::vector<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::_Insert_n",,0x006331c0,0x0060ec40,0x006331c0
 12382,function,,,0x00633346,0x0060edc6,0x00633346
 12383,function,,,0x006333c8,0x0060ee48,0x006333c8
 12384,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::~Attribute",,0x00633450,0x0060eed0,0x00633450
@@ -12396,11 +12396,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12395,function,"ECBase::ECDynArray<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::operator!=",,0x00633750,0x0060f200,0x00633750
 12396,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x00633770,0x0060f220,0x00633770
 12397,function,"std::map<unsigned int,PartyStoredItem>::erase",,0x00633790,0x0060f240,0x00633790
-12398,function,,,0x00633860,0x0060f310,0x00633860
-12399,function,,,0x00633920,0x0060f3d0,0x00633920
-12400,function,,,0x00633a70,0x0060f520,0x00633a70
+12398,function,"std::map<?,?>::insert",,0x00633860,0x0060f310,0x00633860
+12399,function,std::vector<?>::operator=,,0x00633920,0x0060f3d0,0x00633920
+12400,function,std::vector<?>::resize,,0x00633a70,0x0060f520,0x00633a70
 12401,function,"std::map<unsigned int,PartyStoredItem>::erase",,0x00633b60,0x0060f6d0,0x00633b60
-12402,function,,,0x00633bd0,0x0060f740,0x00633bd0
+12402,function,"std::map<?,?>::insert",,0x00633bd0,0x0060f740,0x00633bd0
 12403,function,"ECBase::ECDynArray<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ECDynArray",,0x00633d90,0x0060f900,0x00633d90
 12404,function,"ECBase::ECDynArray<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::operator=",,0x00633df0,0x0060f960,0x00633df0
 12405,function,CCParty::UpdateHostileIndicators,,0x00633e10,0x0060f980,0x00633e10
@@ -12608,7 +12608,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12607,function,GameModeController::`scalar deleting destructor',,0x00640c50,0x00536510,0x00640c50
 12608,function,GameModeController::TakeRequest,"Takes the next request for SwitchMode. The current mode (+0x74) being absent, base (slot 0x28 IsBaseMode) or finished (slot 0x2C) lets a request be taken; a mode that is only interruptible (slot 0x30) lets one be taken when the queue is not empty. A request comes from the back of the queue at +0x9C (std::vector back 0x00640CE1, shrink 0x00640D12) or else from the base slot at +0x8C (0x00640D17); a request for the current mode with force 0 is dropped. For the chosen mode, slot 0x24 (TakesData) true means the request must carry data: none and it returns false (0x00640DB4), else AcceptData (slot 0x14) is called with it and the data freed (0x00640DD3). Returns true when a request was taken",0x00640c60,0x00536530,0x00640c60
 12609,function,GameModeController::`scalar deleting destructor',,0x00640e40,0x00536710,0x00640e40
-12610,function,,,0x00640e60,0x0068c860,0x00640e60
+12610,function,std::vector<?>::_Buy,,0x00640e60,0x0068c860,0x00640e60
 12611,function,std::vector<T16>::operator=,,0x00640eb0,0x00536b90,0x00640eb0
 12612,function,std::vector<GameModeRequest>::vector(const std::vector<GameModeRequest>&),,0x00640ff0,0x00536ed0,0x00640ff0
 12613,function,GameModeController::GameModeController(const GameModeController&),,0x00641050,0x00537020,0x00641050
@@ -12704,7 +12704,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12703,function,std::vector<Math::CollisionOutputParameter>::empty,,0x00648c30,0x00811da0,0x00648c30
 12704,function,World::RaycastClosest,,0x00648c60,0x005312b0,0x00648c60
 12705,function,World::IsRayClear,,0x00648da0,0x005313f0,0x00648da0
-12706,function,,,0x00648e70,0x005315e0,0x00648e70
+12706,function,std::vector<?>::reserve,,0x00648e70,0x005315e0,0x00648e70
 12707,function,,,0x00648f77,0x005316e7,0x00648f77
 12708,function,std::vector<Math::CollisionOutputParameter>::resize,,0x00648f90,0x005317e0,0x00648f90
 12709,function,World::RaycastObjectIds,,0x00648fc0,0x00531920,0x00648fc0
@@ -13487,7 +13487,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13486,function,ScriptCommand::COMMANDDOFUNCTION,,0x006703c0,0x0055c250,0x006703c0
 13487,function,ScriptCommand::COMMANDDOEVENT,,0x006704d0,0x0055c360,0x006704d0
 13488,function,AIMaster::AppendCommaText,"Appends the given text and a comma to the AIMaster's string at +0x78, only when its +0x74 is non-zero. Called with ecx = the AIMaster (the app's +0x1AC) by the game implementer's ReportMessage (slot 3, 0x00670940, call at 0x006709B1) when the text is not empty; CVirtualMachine::RunScript passes the script's name there (0x00A31F5A), so +0x78 collects script names. Twin of ClientAIMaster::AppendCommaText 0x006D3970.",0x006705f0,0x0055c480,0x006705f0
-13489,function,,,0x00670690,0x0055c520,0x00670690
+13489,function,std::vector<?>::_Insert_n,,0x00670690,0x0055c520,0x00670690
 13490,function,,,0x00670849,0x0055c6d9,0x00670849
 13491,function,,,0x00670855,0x0055c6e5,0x00670855
 13492,function,CVirtualMachineCommands::ReportMessage,,0x00670940,0x0055c7d0,0x00670940
@@ -13715,11 +13715,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13714,function,std::vector<CCArea::StageEntry>::~vector,,0x00680070,0x0056c2d0,0x00680070
 13715,function,"std::vector<std::pair<std::wstring,std::wstring>>::clear",,0x006800b0,0x0056c190,0x006800b0
 13716,function,CCArea::IsEventTypeEnabled,,0x006800f0,0x0056c1d0,0x006800f0
-13717,function,,,0x00680150,0x0056c230,0x00680150
-13718,function,,,0x006801f0,0x00575b60,0x006801f0
-13719,function,,,0x00680220,0x00582550,0x00680220
+13717,function,std::vector<?>::reserve,,0x00680150,0x0056c230,0x00680150
+13718,function,std::vector<CCArea::StageEntry>::_Ucopy,,0x006801f0,0x00575b60,0x006801f0
+13719,function,"std::map<?,?>::erase",,0x00680220,0x00582550,0x00680220
 13720,function,"std::map<?,?>::erase",,0x006804e0,0x00582cd0,0x006804e0
-13721,function,,,0x006805b0,0x0056c310,0x006805b0
+13721,function,"std::map<?,?>::_Insert",,0x006805b0,0x0056c310,0x006805b0
 13722,function,Core::VectorReserveIfLarger<unsigned char>,,0x006807b0,0x0056c510,0x006807b0
 13723,function,std::vector<unsigned char>::operator=,,0x006807e0,0x00478c30,0x006807e0
 13724,function,,,0x00680900,0x0056c5d0,0x00680900
@@ -13728,21 +13728,21 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13727,function,"std::_Sort<CCArea::CreatureTreeEntry*,int,CompareByX>",,0x00680c00,0x0056c8d0,0x00680c00
 13728,function,"std::_Sort<CCArea::CreatureTreeEntry*,int,CompareByY>",,0x00680cf0,0x0056c9c0,0x00680cf0
 13729,function,"Core::MapEraseDeleteVector<int,?>","this is the team map (std::map<int,vector*>) that GetTeamMapForType returns, not the area: finds the key, deletes the vector the entry holds (std::vector<void*>::_Tidy, operator delete) and erases the entry. Only caller CCArea::RemoveObjectFromTeam 0x00687A50, when a team's vector has become empty.",0x00680de0,0x0056cab0,0x00680de0
-13730,function,,,0x00680e60,0x0056cb30,0x00680e60
-13731,function,,,0x00680eb0,0x0056cb80,0x00680eb0
-13732,function,,,0x00680f00,0x00693650,0x00680f00
-13733,function,,,0x00680f50,0x0056cbd0,0x00680f50
-13734,function,,,0x00681100,0x006d74f0,0x00681100
-13735,function,,,0x00681190,0x0056ceb0,0x00681190
-13736,function,,,0x006812b0,0x0056cfd0,0x006812b0
-13737,function,,,0x00681360,0x0055c860,0x00681360
+13730,function,std::vector<?>::_Buy,,0x00680e60,0x0056cb30,0x00680e60
+13731,function,std::vector<?>::_Buy,,0x00680eb0,0x0056cb80,0x00680eb0
+13732,function,std::vector<?>::_Buy,,0x00680f00,0x00693650,0x00680f00
+13733,function,"std::map<std::wstring,?>::insert",,0x00680f50,0x0056cbd0,0x00680f50
+13734,function,std::vector<?>::insert,,0x00681100,0x006d74f0,0x00681100
+13735,function,std::vector<?>::resize,,0x00681190,0x0056ceb0,0x00681190
+13736,function,std::vector<?>::insert,,0x006812b0,0x0056cfd0,0x006812b0
+13737,function,std::vector<?>::resize,,0x00681360,0x0055c860,0x00681360
 13738,function,,,0x00681440,0x0056d130,0x00681440
 13739,function,,,0x00681710,0x0056d400,0x00681710
 13740,function,,,0x00681750,0x0056d440,0x00681750
-13741,function,,,0x00681780,0x0056d470,0x00681780
-13742,function,,,0x00681930,0x00834cf0,0x00681930
-13743,function,,,0x00681a60,0x0056d620,0x00681a60
-13744,function,,,0x00681bc0,0x0056d780,0x00681bc0
+13741,function,"std::vector<std::pair<std::wstring,std::wstring>>::operator=",,0x00681780,0x0056d470,0x00681780
+13742,function,std::vector<?>::operator=,,0x00681930,0x00834cf0,0x00681930
+13743,function,std::vector<?>::operator=,,0x00681a60,0x0056d620,0x00681a60
+13744,function,"std::map<std::wstring,?>::insert",,0x00681bc0,0x0056d780,0x00681bc0
 13745,function,std::vector<unk_8byte>::push_back,,0x00681dc0,0x006d7580,0x00681dc0
 13746,function,std::vector<CCArea::StageEntry>::push_back,,0x00681e50,0x0056da20,0x00681e50
 13747,function,"std::vector<std::pair<std::wstring,std::wstring>>::vector",,0x00681ef0,0x0056db60,0x00681ef0
@@ -13788,7 +13788,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13787,function,CCArea::RebuildCreatureTree,,0x00686c10,0x005729f0,0x00686c10
 13788,function,CCArea::SpatialQuerySphere,,0x00686f70,0x00572d50,0x00686f70
 13789,function,"std::map<?,std::map<?,?>*>::clear",,0x00686fe0,0x00572e30,0x00686fe0
-13790,function,,,0x006870a0,0x00572ef0,0x006870a0
+13790,function,"std::map<?,?>::_Insert",,0x006870a0,0x00572ef0,0x006870a0
 13791,function,MessageFactoryRegistry::RegisterMessageFactory<OnMinimapScaleChangedMessage>,,0x006872a0,0x005730f0,0x006872a0
 13792,function,CCArea::AddPooledObject,,0x00687360,0x005731b0,0x00687360
 13793,function,CCArea::CreatePool,,0x00687410,0x00573260,0x00687410
@@ -13833,8 +13833,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13832,function,std::set<unsigned int>::_Copy_tree,,0x00689c10,0x0059f680,0x00689c10
 13833,function,std::vector<unk_20byte>::clear,,0x00689c90,0x00575b20,0x00689c90
 13834,function,std::vector<CCArea::StageEntry>::clear,,0x00689cd0,0x00575b90,0x00689cd0
-13835,function,,,0x00689d10,0x00575bd0,0x00689d10
-13836,function,,,0x00689d60,0x00575c20,0x00689d60
+13835,function,std::vector<?>::_Buy,,0x00689d10,0x00575bd0,0x00689d10
+13836,function,std::list<?>::_Insert,,0x00689d60,0x00575c20,0x00689d60
 13837,function,,,0x00689e0a,0x00575cca,0x00689e0a
 13838,function,std::vector<unk_20byte>::operator=,,0x00689e80,0x00575d40,0x00689e80
 13839,function,std::vector<CCArea::StageEntry>::operator=,,0x00689fd0,0x00575e90,0x00689fd0
@@ -13916,7 +13916,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13915,function,GameModeDialog::RegisterHandler_SkipDialogMessage,,0x0068f1f0,0x0057b130,0x0068f1f0
 13916,function,GameModeDialog::RegisterMessageHandlers,,0x0068f280,0x0057b1c0,0x0068f280
 13917,function,GameModeDialog::RegisterClass,,0x0068f2a0,0x0057b1e0,0x0068f2a0
-13918,function,,,0x0068f300,0x0057b240,0x0068f300
+13918,function,std::list<?>::_Insert,,0x0068f300,0x0057b240,0x0068f300
 13919,function,,,0x0068f3aa,0x0057b2ea,0x0068f3aa
 13920,function,GameModeDialog::ResetConversationState,"Resets the conversation state: timer, speaker, owner and line ids to -1, and the counters",0x0068f420,0x0057b360,0x0068f420
 13921,function,GameModeDialog::AbortConversation,,0x0068f470,0x0057b3b0,0x0068f470
@@ -14261,7 +14261,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14260,function,std::vector<std::wstring>::erase,,0x0069c280,0x0083de50,0x0069c280
 14261,function,std::vector<std::wstring>::_Ufill,,0x0069c300,0x0058d4c0,0x0069c300
 14262,function,std::vector<std::wstring>::clear,,0x0069c340,0x00492d70,0x0069c340
-14263,function,,,0x0069c380,0x0058d530,0x0069c380
+14263,function,std::vector<?>::_Buy,,0x0069c380,0x0058d530,0x0069c380
 14264,function,,,0x0069c3e0,0x0058d590,0x0069c3e0
 14265,function,,,0x0069c5cd,0x0058d77d,0x0069c5cd
 14266,function,,,0x0069c687,0x0058d837,0x0069c687
@@ -14789,7 +14789,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14788,function,CCCreature::OnManaStaminaChanged,,0x006afb90,0x005a1480,0x006afb90
 14789,retired,,,,,
 14790,function,CCCreature::SendPerceptionAppear,,0x006afcf0,0x005a15e0,0x006afcf0
-14791,function,,,0x006afe40,0x0056cd80,0x006afe40
+14791,function,std::vector<?>::_Construct_n,,0x006afe40,0x0056cd80,0x006afe40
 14792,function,,,0x006afee0,0x0056ce20,0x006afee0
 14793,function,MinimizedAbilityHeaderList::Remove,,0x006aff00,0x005a1730,0x006aff00
 14794,function,,,0x006aff70,0x005a17a0,0x006aff70
@@ -15751,14 +15751,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15750,function,Journal::CompletePlot,"(resref, fireEvent): moves the plot entry and its chain from the plot list to the completed list, clearing the active plot if it was it; with fireEvent raises event 0x62 on the module (AddEventDeltaTime, handler 10) with the entry's name as string 0",0x006f5380,0x005e7050,0x006f5380
 15751,function,Journal::SortCodexEntries,"Finds and deletes groups with no entries, sorts each remaining group (std::_Sort with CodexEntryNameLess) and numbers the entries into their Index from ONE counter that starts at 1 (0x006F575B) and is not reset between groups (incremented 0x006F58A7): Index is the place in the whole codex, groups in list order.",0x006f5750,0x005e7420,0x006f5750
 15752,function,Journal::RemovePlotDestination,"this = the Journal (called from PlotManager::SetPlotFlag 0x0075FB59 with ECX the journal); ret 8, arguments (tag, plotGuid) as pointers to strings. Finds the tag in the plot destination map at +0x118, removes the GUID from its list; when the list is empty erases the tag and calls the object slot +0x184 (SetPlotDestination) with 0 on every object of that tag in the module tag index; always ends with RebuildPlotDestinations.",0x006f58e0,0x005e75b0,0x006f58e0
-15753,function,,,0x006f59e0,0x005e76b0,0x006f59e0
+15753,function,"std::map<?,?>::_Insert",,0x006f59e0,0x005e76b0,0x006f59e0
 15754,function,"std::map<ECBase::ECString,ECBase::ECDynArray<ECBase::ECString>>::~map",,0x006f5be0,0x005e7da0,0x006f5be0
 15755,function,"SmartData::Attribute<unsigned short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::SetFromText",,0x006f5c20,0x005e78b0,0x006f5c20
 15756,function,"SmartData::Attribute<unsigned short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::GetTextInto",,0x006f5c60,0x005e78f0,0x006f5c60
 15757,function,"SmartData::Attribute<unsigned short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::GetText",,0x006f5c90,0x005e7920,0x006f5c90
 15758,function,Journal::RegisterHandler_SetActiveQuestMessage,,0x006f5d20,0x005e79b0,0x006f5d20
 15759,function,Journal::CompletePlotGroup,,0x006f5da0,0x005e7a30,0x006f5da0
-15760,function,,,0x006f5ea0,0x005e7b30,0x006f5ea0
+15760,function,"std::map<std::wstring,?>::insert",,0x006f5ea0,0x005e7b30,0x006f5ea0
 15761,function,Journal::RegisterMessageHandlers,,0x006f6050,0x005e7ce0,0x006f6050
 15762,function,PlotDestinationMap::Insert,,0x006f6090,0x005e7d20,0x006f6090
 15763,function,Journal::RegisterClass,,0x006f6110,0x005e7de0,0x006f6110
@@ -15789,9 +15789,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15788,function,Journal::Journal(const Journal&),,0x006f8320,0x005e9ff0,0x006f8320
 15789,function,Journal::`scalar deleting destructor',,0x006f8510,0x005ea1e0,0x006f8510
 15790,function,Journal::Clone,,0x006f8530,0x005ea200,0x006f8530
-15791,function,,,0x006f85a0,0x005ea270,0x006f85a0
+15791,function,"std::map<?,?>::_Insert",,0x006f85a0,0x005ea270,0x006f85a0
 15792,function,DebugOptions::GetSliderRange,,0x006f87a0,0x005ea470,0x006f87a0
-15793,function,,,0x006f87b0,0x005ea480,0x006f87b0
+15793,function,"std::map<std::wstring,?>::insert",,0x006f87b0,0x005ea480,0x006f87b0
 15794,function,DebugOptions::SliderRangeMap::Insert,,0x006f8960,0x005ea630,0x006f8960
 15795,function,DebugOptions::SliderRangeMap::SliderRangeMap,,0x006f89f0,0x005ea6c0,0x006f89f0
 15796,function,DebugOptions::DebugOptions,,0x006f8a80,0x005ea750,0x006f8a80
@@ -16017,7 +16017,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16016,function,ScriptVariableTable::ForScript_GetLocalResource,,0x00703370,0x005f4790,0x00703370
 16017,function,ECBase::ECDynArray<ScriptVariable>::Back,,0x00703410,0x005f4830,0x00703410
 16018,function,ScriptVariableTable::~ScriptVariableTable,,0x00703480,0x005f48e0,0x00703480
-16019,function,,,0x00703550,0x005f49b0,0x00703550
+16019,function,std::vector<?>::_Insert_n,,0x00703550,0x005f49b0,0x00703550
 16020,function,,,0x0070371a,0x005f4b7a,0x0070371a
 16021,function,,,0x00703726,0x005f4b86,0x00703726
 16022,function,std::vector<ScriptVariable>::insert,,0x00703810,0x005f4d50,0x00703810
@@ -16063,7 +16063,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16062,function,KeyedEntryList::ReleaseIfListed,,0x00706700,0x005f7c80,0x00706700
 16063,function,KeyedEntryList::RemoveValue,,0x00706750,0x005f7cd0,0x00706750
 16064,function,KeyedEntryList::TakeByKey,,0x007067c0,0x005f7d40,0x007067c0
-16065,function,,,0x00706830,0x0072c520,0x00706830
+16065,function,"std::map<std::wstring,?>::insert",,0x00706830,0x0072c520,0x00706830
 16066,function,"std::map<std::wstring,int>::operator[]",,0x00706a30,0x005f7fb0,0x00706a30
 16067,function,std::vector<KeyedEntryList::Entry>::_Tidy,,0x00706b10,0x0056e540,0x00706b10
 16068,function,SpellRimSlots::ReleaseAll,,0x00706c00,0x005f8090,0x00706c00
@@ -18021,7 +18021,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18020,function,CCItem::`scalar deleting destructor'`adjustor{52}',,0x007562c0,0x00664aa0,0x007562c0
 18021,function,CCItem::`scalar deleting destructor'`adjustor{24}',,0x007562d0,0x00664ab0,0x007562d0
 18022,function,CCItem::RemoveProperty,,0x007562e0,0x00664af0,0x007562e0
-18023,function,,,0x007563d0,0x00664be0,0x007563d0
+18023,function,std::vector<?>::reserve,,0x007563d0,0x00664be0,0x007563d0
 18024,function,,,0x007564d7,0x00664ce7,0x007564d7
 18025,function,CCItem::`scalar deleting destructor',,0x007564f0,0x00664d00,0x007564f0
 18026,function,"std::vector<SmartData::Attribute<int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ReserveIfLarger",,0x00756510,0x00664d20,0x00756510
@@ -18118,7 +18118,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18117,function,Plots::GetFlagAssistAdvancesPlot,,0x0075ca20,0x006a7c80,0x0075ca20
 18118,function,Plots::GetFlagIdByIndex,,0x0075ca80,0x006a7ce0,0x0075ca80
 18119,function,PlotManager::GetPlotGuidByResRef,"this = the PlotManager. ret 8, arguments (resref in, GUID out) as pointers to strings. Walks every plot entry that has a resource, reads plot 0 of that resource (field 3, the template resref), and when it equals the argument string overwrites it with the entry key (the GUID); true when found.",0x0075cb30,0x006a7d90,0x0075cb30
-18120,function,,,0x0075ccd0,0x006a7f30,0x0075ccd0
+18120,function,std::list<?>::_Incsize,,0x0075ccd0,0x006a7f30,0x0075ccd0
 18121,function,"stdext::hash_map<std::wstring,?>::~hash_map","destroys a wide-string-keyed hash_map: its wstring at +0x28, the bucket array at +0x14 and the list at +4",0x0075cd70,0x00807b50,0x0075cd70
 18122,function,PlotManager::WriteToSave,"Writes the plot map (0x4011; each name 0x4012, words 0x4013..0x4016) and, where the struct has field 0x4089, the unread codex entry names from Journal::GetUnreadCodexEntryNames (0x0075D006)",0x0075ce00,0x006a7fd0,0x0075ce00
 18123,function,"stdext::hash_map<std::wstring,PlotManager::PlotEntry>::hash_map","constructs the plot manager's hash_map: a list head, 9 buckets, load counters of 1",0x0075d0d0,0x006a82a0,0x0075d0d0
@@ -18358,12 +18358,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18357,function,"std::_Sort_heap<GameModePartyPicker::StageEntry *,std::less<GameModePartyPicker::StageEntry>>",,0x007696f0,0x00680f40,0x007696f0
 18358,function,GameModePartyPicker::RegisterMessageHandlers,,0x00769750,0x00680fa0,0x00769750
 18359,function,std::vector<GameModePartyPicker::StageEntry>::erase,,0x007697b0,0x00681010,0x007697b0
-18360,function,,,0x00769830,0x006e42b0,0x00769830
+18360,function,std::vector<?>::_Xlen,,0x00769830,0x006e42b0,0x00769830
 18361,function,std::vector<?>::~vector,,0x007698b0,0x00681000,0x007698b0
 18362,function,,,0x007698c0,0x00681090,0x007698c0
-18363,function,,,0x007698d0,0x006810a0,0x007698d0
-18364,function,,,0x00769910,0x005e21e0,0x00769910
-18365,function,,,0x00769960,0x006810e0,0x00769960
+18363,function,std::vector<?>::clear,,0x007698d0,0x006810a0,0x007698d0
+18364,function,std::vector<?>::_Buy,,0x00769910,0x005e21e0,0x00769910
+18365,function,std::vector<?>::_Insert_n,,0x00769960,0x006810e0,0x00769960
 18366,function,,,0x00769b20,0x006812a0,0x00769b20
 18367,function,,,0x00769bbe,0x0068133e,0x00769bbe
 18368,function,,,0x00769c40,0x006813c0,0x00769c40
@@ -19682,7 +19682,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19681,function,VfxManager::FinishPlacement,,0x0079d9f0,0x0066f090,0x0079d9f0
 19682,function,CCVisualEffectPool::~CCVisualEffectPool,,0x0079dae0,0x0066f180,0x0079dae0
 19683,function,VfxManager::LoadAndPlace,,0x0079db90,0x0066f230,0x0079db90
-19684,function,,,0x0079dd60,0x00582810,0x0079dd60
+19684,function,std::vector<?>::reserve,,0x0079dd60,0x00582810,0x0079dd60
 19685,function,,,0x0079de4d,0x005828fd,0x0079de4d
 19686,function,"ECBase::ECDynArray<std::pair<unsigned int,CCVisualEffect *>>::Reserve",,0x0079de70,0x00583030,0x0079de70
 19687,function,"ECBase::ECDynArray<std::pair<unsigned int,CCVisualEffect *>>::ECDynArray",,0x0079dea0,0x0066f400,0x0079dea0
@@ -19867,9 +19867,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19866,function,CSSubActionHandler::UseAbility,,0x007a7440,0x00678970,0x007a7440
 19867,function,SubActionPool::~SubActionPool,,0x007a7840,0x00678d70,0x007a7840
 19868,function,CSSubActionHandler::UseObject,,0x007a78f0,0x00678e20,0x007a78f0
-19869,function,,,0x007a7c00,0x00719220,0x007a7c00
+19869,function,"std::map<?,?>::erase",,0x007a7c00,0x00719220,0x007a7c00
 19870,function,,,0x007a7ec0,0x007195d0,0x007a7ec0
-19871,function,,,0x007a7f90,0x00679130,0x007a7f90
+19871,function,std::vector<?>::_Insert_n,,0x007a7f90,0x00679130,0x007a7f90
 19872,function,,,0x007a8104,0x006792a4,0x007a8104
 19873,function,,,0x007a8110,0x006792b0,0x007a8110
 19874,function,std::vector<unsigned int>::insert,,0x007a81e0,0x00679380,0x007a81e0
@@ -20144,9 +20144,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20143,function,"std::uninitialized_copy<GUI::HeadPreset::MaterialValue*,GUI::HeadPreset::MaterialValue*>",,0x007b5460,0x00693530,0x007b5460
 20144,function,"std::uninitialized_copy<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*>",,0x007b5490,0x00692aa0,0x007b5490
 20145,function,std::vector<GUI::HeadPreset::MaterialVector>::_Tidy,,0x007b54c0,0x00694760,0x007b54c0
-20146,function,,,0x007b5500,0x004c3b40,0x007b5500
-20147,function,,,0x007b5550,0x006936a0,0x007b5550
-20148,function,,,0x007b55a0,0x006936f0,0x007b55a0
+20146,function,std::vector<?>::_Buy,,0x007b5500,0x004c3b40,0x007b5500
+20147,function,std::vector<?>::_Buy,,0x007b5550,0x006936a0,0x007b5550
+20148,function,std::vector<?>::_Buy,,0x007b55a0,0x006936f0,0x007b55a0
 20149,function,,,0x007b55f0,0x0081ea70,0x007b55f0
 20150,function,,,0x007b5640,0x00693790,0x007b5640
 20151,function,,,0x007b57cc,0x0069391c,0x007b57cc
@@ -20189,7 +20189,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20188,function,"std::vector<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::push_back",,0x007b6f40,0x00695090,0x007b6f40
 20189,function,GUI::GUIPaperdoll::CharData::~CharData,,0x007b6fd0,0x00695120,0x007b6fd0
 20190,function,GUI::GUIPaperdoll::HandleMessage_CharGenAssignAttributeMessage,,0x007b70c0,0x00695210,0x007b70c0
-20191,function,,,0x007b7170,0x006952c0,0x007b7170
+20191,function,"std::map<?,?>::erase",,0x007b7170,0x006952c0,0x007b7170
 20192,function,ECBase::ECDynArray<unk_ptr>::DeleteAllVirtual,,0x007b7440,0x00535060,0x007b7440
 20193,function,std::vector<GUI::HeadPreset::MaterialValue>::vector,,0x007b7550,0x00695590,0x007b7550
 20194,function,std::vector<GUI::HeadPreset::MaterialVector>::vector,,0x007b75c0,0x00695600,0x007b75c0
@@ -20262,7 +20262,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20261,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::GUIPaperdoll::CharData*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x007bcfb0,0x0069b2b0,0x007bcfb0
 20262,function,GUI::GUIPaperdoll::RegisterTokens,,0x007bd030,0x0069b330,0x007bd030
 20263,function,std::_Tree<RefHandleMapTraits>::_Tidy,,0x007bd290,0x0069b590,0x007bd290
-20264,function,,,0x007bd2d0,0x0069b5d0,0x007bd2d0
+20264,function,"std::map<?,?>::_Insert",,0x007bd2d0,0x0069b5d0,0x007bd2d0
 20265,function,std::vector<GUI::HeadPreset::ModelWeight>::erase,,0x007bd4d0,0x0069b7d0,0x007bd4d0
 20266,function,"std::copy_backward<GUI::HeadPreset::ModelWeight*,GUI::HeadPreset::ModelWeight*>",,0x007bd540,0x0069b840,0x007bd540
 20267,function,"std::_Uninit_fill_n<GUI::HeadPreset::ModelWeight*,unsigned int,GUI::HeadPreset::ModelWeight>",,0x007bd570,0x0069b870,0x007bd570
@@ -20271,7 +20271,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20270,function,GUI::GUIPaperdoll::RegisterMessageHandlers,,0x007bd640,0x0069b940,0x007bd640
 20271,function,"Map<unsigned int,RefHandle>::Map",,0x007bd6c0,0x0069b9c0,0x007bd6c0
 20272,function,"Map<unsigned int,RefHandle>::~Map",,0x007bd760,0x0069ba60,0x007bd760
-20273,function,,,0x007bd7f0,0x0069baf0,0x007bd7f0
+20273,function,"std::map<?,?>::insert",,0x007bd7f0,0x0069baf0,0x007bd7f0
 20274,function,std::vector<GUI::HeadPreset::ModelWeight>::clear,,0x007bd8b0,0x0069bbb0,0x007bd8b0
 20275,function,GUI::GUIPaperdoll::RegisterClass,,0x007bd8f0,0x0069bc20,0x007bd8f0
 20276,function,"Map<unsigned int,RefHandle>::Insert",,0x007bd920,0x0069bc50,0x007bd920
@@ -20838,26 +20838,26 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20837,function,EC::Cutscene::Actor::ActionFrameBufferEffect::Update,,0x007d4500,0x006bb800,0x007d4500
 20838,function,EC::Cutscene::Actor::ActionFrameBufferEffect::Reset,,0x007d4800,0x006bbb00,0x007d4800
 20839,function,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>::find",,0x007d4830,0x006bbb30,0x007d4830
-20840,function,,,0x007d48b0,0x006bbbb0,0x007d48b0
-20841,function,,,0x007d4b80,0x006bbec0,0x007d4b80
-20842,function,,,0x007d4bf0,0x006bbf30,0x007d4bf0
+20840,function,"std::map<std::wstring,?>::erase",,0x007d48b0,0x006bbbb0,0x007d48b0
+20841,function,std::vector<?>::erase,,0x007d4b80,0x006bbec0,0x007d4b80
+20842,function,std::vector<?>::erase,,0x007d4bf0,0x006bbf30,0x007d4bf0
 20843,function,,,0x007d4c40,0x006bbf80,0x007d4c40
 20844,function,,,0x007d4e0f,0x006bc14f,0x007d4e0f
 20845,function,,,0x007d4ebe,0x006bc1fe,0x007d4ebe
-20846,function,,,0x007d4f60,0x006bc2a0,0x007d4f60
-20847,function,,,0x007d5000,0x006bc340,0x007d5000
+20846,function,std::list<?>::_Incsize,,0x007d4f60,0x006bc2a0,0x007d4f60
+20847,function,std::vector<?>::insert,,0x007d5000,0x006bc340,0x007d5000
 20848,function,"std::_Sort<float *,int>",,0x007d50b0,0x006bc3f0,0x007d50b0
 20849,function,,,0x007d51a0,0x006bc4e0,0x007d51a0
 20850,function,,,0x007d5210,0x006bc550,0x007d5210
 20851,function,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>::find",,0x007d5220,0x006bc560,0x007d5220
 20852,function,,,0x007d5280,0x006bc5c0,0x007d5280
 20853,function,"std::map<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>::erase",,0x007d52e0,0x006bc620,0x007d52e0
-20854,function,,,0x007d53b0,0x006bc6f0,0x007d53b0
+20854,function,"std::map<?,?>::_Insert",,0x007d53b0,0x006bc6f0,0x007d53b0
 20855,function,std::vector<EC.Cutscene.Actor.ClipRecord>::~vector,,0x007d55b0,0x006bbe80,0x007d55b0
 20856,function,ECBase::ECDynArray<EC::Cutscene::Actor::ClipRecord>::RemoveAt,"Bounds-checks the index against the vector of 0x44-byte records (size by the imul 0x78787879 divide), then erases that one element (0x007D4B80); Actor::RemoveAnimationsNotCovering calls it at 0x007D6126 on Actor+0x528 (clipRecords). Name INFERRED.",0x007d55f0,0x006bc8f0,0x007d55f0
 20857,function,,,0x007d56b0,0x006bc9b0,0x007d56b0
 20858,function,,,0x007d57da,0x006bcada,0x007d57da
-20859,function,,,0x007d57f0,0x006bcaf0,0x007d57f0
+20859,function,std::vector<?>::resize,,0x007d57f0,0x006bcaf0,0x007d57f0
 20860,function,,,0x007d5910,0x006bcc10,0x007d5910
 20861,function,,,0x007d5ad4,0x006bcdd4,0x007d5ad4
 20862,function,,,0x007d5ae0,0x006bcde0,0x007d5ae0
@@ -20869,14 +20869,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20868,function,,,0x007d600a,0x006bd30a,0x007d600a
 20869,function,EC::Cutscene::Actor::RemoveAnimationsNotCovering,,0x007d6080,0x006bd380,0x007d6080
 20870,function,EC::Cutscene::Actor::UpdatePose,"Plays the actor's pose, previous-pose and transition clips (poses 450/454/458, clip names 478/494/4B0, delay 4D8, transition length 4D0); runs only for an actor with a pose (+0x450). The follower rule is one branch near its end (+0x4E0 gates SetRootWeightById at 0x007D652C). Called by UpdateBetweenCategories at 0x007D863B with ECX the actor.",0x007d6140,0x006bd440,0x007d6140
-20871,function,,,0x007d6630,0x006bd930,0x007d6630
+20871,function,"std::map<std::wstring,?>::insert",,0x007d6630,0x006bd930,0x007d6630
 20872,function,Core::VectorReserveIfLarger<EC::Cutscene::Actor::ClipRecord>,,0x007d67e0,0x006bdae0,0x007d67e0
 20873,function,std::vector<EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>::resize,"resize(n, value) of 0x18-byte ParameterValues",0x007d6820,0x006bdb20,0x007d6820
 20874,function,std::vector<EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>::insert,"insert(where, value) of one ParameterValue through _Insert_n",0x007d6960,0x006bdc60,0x007d6960
 20875,function,std::vector<EC::Cutscene::Actor::BlendGadRecord>::resize,"resize(n, value) of 0x24-byte BlendGadRecords",0x007d6a10,0x006bdd10,0x007d6a10
 20876,function,std::vector<EC::Cutscene::Actor::BlendGadRecord>::insert,"insert(where, value) of one BlendGadRecord through _Insert_n",0x007d6af0,0x006bddf0,0x007d6af0
 20877,function,std::list<Elem>::assign,"empties the list, then inserts a range into it",0x007d6ba0,0x006bdea0,0x007d6ba0
-20878,function,,,0x007d6c00,0x006bdf00,0x007d6c00
+20878,function,"std::map<std::wstring,?>::insert",,0x007d6c00,0x006bdf00,0x007d6c00
 20879,function,"std::_Tree<std::pair<unsigned int const,CutscenePlayer::ActorDependencyList>>::_Erase",,0x007d6e00,0x006be100,0x007d6e00
 20880,function,std::vector<EC.Cutscene.Actor.ClipRecord>::vector,,0x007d6e40,0x006be140,0x007d6e40
 20881,function,std::vector<EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>::push_back,,0x007d6eb0,0x006be1f0,0x007d6eb0
@@ -20999,19 +20999,19 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20998,function,EC::Cutscene::Actor::ActionJumpToCamera::ApplyLookAtPitch,,0x007de220,0x006c5670,0x007de220
 20999,function,EC::Cutscene::ActorMember168Core::ActorMember168Core,,0x007de460,0x006c58b0,0x007de460
 21000,function,,,0x007de4e0,0x006c5930,0x007de4e0
-21001,function,,,0x007de5b0,0x006c5a00,0x007de5b0
-21002,function,,,0x007de7b0,0x006c5c00,0x007de7b0
+21001,function,"std::map<std::wstring,?>::_Insert",,0x007de5b0,0x006c5a00,0x007de5b0
+21002,function,"std::map<?,?>::_Buynode",,0x007de7b0,0x006c5c00,0x007de7b0
 21003,function,,,0x007de841,0x006c5c91,0x007de841
 21004,function,std::vector<CutscenePlayer::BindRecord>::_Tidy,,0x007de860,0x006c5cb0,0x007de860
-21005,function,,,0x007de8b0,0x006c5d00,0x007de8b0
+21005,function,std::vector<?>::_Ufill,,0x007de8b0,0x006c5d00,0x007de8b0
 21006,function,std::vector<CutscenePlayer::BindRecord>::erase,,0x007de8f0,0x006c5d40,0x007de8f0
 21007,function,EC::Cutscene::Actor::SetModel,,0x007de970,0x006c5dc0,0x007de970
 21008,function,EC::Cutscene::Actor::AddAction,,0x007deac0,0x006c5f10,0x007deac0
 21009,function,EC::Cutscene::Actor::ActionJumpToCamera::PlaceStageCamera,,0x007deaf0,0x006c5f40,0x007deaf0
 21010,function,EC::Cutscene::ActorMember168Core::~ActorMember168Core,,0x007decb0,0x006c6100,0x007decb0
 21011,function,"std::map<unsigned int,CutscenePlayer::ActorDependencyList>::_Tidy","Erases every node (0x007D9B70), deletes the head and zeroes head and size; the unwind funclet 0x00ABAFF8 of the map constructor 0x007DF5D0 jumps here.",0x007decf0,0x006c6140,0x007decf0
-21012,function,,,0x007ded30,0x006c6180,0x007ded30
-21013,function,,,0x007deee0,0x006c6330,0x007deee0
+21012,function,"std::map<std::wstring,?>::insert",,0x007ded30,0x006c6180,0x007ded30
+21013,function,"std::map<?,?>::_Insert",,0x007deee0,0x006c6330,0x007deee0
 21014,function,std::vector<CutscenePlayer::BindRecord>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x007DE860 (ID 21004), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x007df0e0,0x006c6db0,0x007df0e0
 21015,function,"std::_Uninit_copy<CutscenePlayer::BindRecord*,CutscenePlayer::BindRecord*,std::allocator<CutscenePlayer::BindRecord> >",,0x007df0f0,0x006c6530,0x007df0f0
 21016,function,CutscenePlayer::ApplyHenchmanActions,,0x007df120,0x006c6560,0x007df120
@@ -21020,16 +21020,16 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21019,function,EC::Cutscene::ActorMember168::~ActorMember168,,0x007df530,0x006c6970,0x007df530
 21020,function,"std::map<unsigned int,CutscenePlayer::ActorDependencyList>::map",,0x007df5d0,0x006c6a10,0x007df5d0
 21021,function,"std::map<unsigned int,CutscenePlayer::ActorDependencyList>::~map",,0x007df670,0x006c6ab0,0x007df670
-21022,function,,,0x007df6b0,0x006c6af0,0x007df6b0
-21023,function,,,0x007df8b0,0x006c6cf0,0x007df8b0
-21024,function,,,0x007df970,0x006c6dc0,0x007df970
+21022,function,"std::map<std::wstring,?>::insert",,0x007df6b0,0x006c6af0,0x007df6b0
+21023,function,"std::map<?,?>::insert",,0x007df8b0,0x006c6cf0,0x007df8b0
+21024,function,std::vector<?>::_Insert_n,,0x007df970,0x006c6dc0,0x007df970
 21025,function,,,0x007dfb2f,0x006c6f7f,0x007dfb2f
 21026,function,,,0x007dfbd8,0x006c7028,0x007dfbd8
 21027,function,EC::Cutscene::Actor::Actor,,0x007dfc60,0x006c70b0,0x007dfc60
 21028,function,EC::Cutscene::Actor::~Actor,,0x007e04e0,0x006c7930,0x007e04e0
 21029,function,"std::_Tree<std::_Tmap_traits<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>>::_Tidy",,0x007e0850,0x006c7ca0,0x007e0850
 21030,function,"std::map<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>::operator[]",,0x007e0890,0x006c7ce0,0x007e0890
-21031,function,,,0x007e0990,0x006c7de0,0x007e0990
+21031,function,"std::map<?,?>::insert",,0x007e0990,0x006c7de0,0x007e0990
 21032,function,std::vector<CutscenePlayer::BindRecord>::resize,,0x007e0b50,0x006c7fa0,0x007e0b50
 21033,function,std::vector<CutscenePlayer::BindRecord>::insert,,0x007e0c70,0x006c80c0,0x007e0c70
 21034,function,CutscenePlayer::AddActor,,0x007e0d20,0x006c8170,0x007e0d20
@@ -21932,7 +21932,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21931,function,Animation::ModelAnimationTree::FindEntryIndex,,0x00812320,0x004ba930,0x00812320
 21932,function,std::vector<Animation::ModelAnimationTree::Entry>::erase,,0x00812370,0x004ba980,0x00812370
 21933,function,"std::_Uninit_copy<Animation::ModelAnimationTree::Entry *,Animation::ModelAnimationTree::Entry *>",,0x008123f0,0x004baa00,0x008123f0
-21934,function,,,0x00812420,0x004bab80,0x00812420
+21934,function,std::vector<?>::_Insert_n,,0x00812420,0x004bab80,0x00812420
 21935,function,,,0x008125df,0x004bad3f,0x008125df
 21936,function,,,0x00812688,0x004bade8,0x00812688
 21937,function,std::vector<Animation::ModelAnimationTree::Entry>::resize,,0x00812710,0x004baea0,0x00812710
@@ -22289,7 +22289,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22288,function,Stub::ReturnTrue_8,,0x00821560,0x00497d30,0x00821560
 22289,function,,,0x00821570,0x00497d40,0x00821570
 22290,function,,,0x00821580,0x00497d50,0x00821580
-22291,function,,,0x008215a0,0x007b90a0,0x008215a0
+22291,function,std::set<?>::_Rrotate,,0x008215a0,0x007b90a0,0x008215a0
 22292,function,,,0x00821600,0x00497f60,0x00821600
 22293,function,,,0x00821680,0x00498050,0x00821680
 22294,function,NxPlaneShapeDesc::isValid,,0x00821700,0x004986c0,0x00821700
@@ -22363,7 +22363,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22362,function,Physics::PhysicsScene::PhysicsEntityReport<NxShape*>::`scalar deleting destructor',,0x00823f10,0x0049b700,0x00823f10
 22363,function,std::vector<bool>::end,,0x00823f40,0x0049b730,0x00823f40
 22364,function,std::_Vb_iterator::operator-,,0x00823f90,0x0049b780,0x00823f90
-22365,function,,,0x00824000,0x004baa30,0x00824000
+22365,function,std::list<?>::_Incsize,,0x00824000,0x004baa30,0x00824000
 22366,function,Physics::VariableSetPool<Physics::PhysicsNxActorVariableSet<NxMat34>>::~VariableSetPool,,0x008240a0,0x0049b7f0,0x008240a0
 22367,function,Physics::VariableSetPool<Physics::PhysicsNxActorVariableSet<NxQuat>>::~VariableSetPool,,0x00824150,0x0049b8a0,0x00824150
 22368,function,Physics::VariableSetPool<Physics::PhysicsNxActorVariableSet<NxVec3>>::~VariableSetPool,,0x00824200,0x0049b950,0x00824200
@@ -22382,20 +22382,20 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22381,function,std::vector<bool>::back,,0x00824a30,0x0049c9c0,0x00824a30
 22382,function,std::vector<bool>::_Xlen,,0x00824ab0,0x0049ca40,0x00824ab0
 22383,function,,,0x00824b30,0x007bb8f0,0x00824b30
-22384,function,,,0x00824ba0,0x0049cac0,0x00824ba0
+22384,function,std::vector<?>::reserve,,0x00824ba0,0x0049cac0,0x00824ba0
 22385,function,,,0x00824c91,0x0049cbb1,0x00824c91
 22386,function,std::vector<?>::~vector,,0x00824cb0,0x0049e440,0x00824cb0
-22387,function,,,0x00824cc0,0x0049cc80,0x00824cc0
+22387,function,std::vector<?>::insert,,0x00824cc0,0x0049cc80,0x00824cc0
 22388,function,,,0x00824d50,0x0049cd80,0x00824d50
 22389,function,,,0x00824ee4,0x0049cf14,0x00824ee4
 22390,function,,,0x00824ef0,0x0049cf20,0x00824ef0
 22391,function,,,0x00824fc0,0x0049d2a0,0x00824fc0
 22392,function,,,0x008251b8,0x0049d498,0x008251b8
 22393,function,,,0x008251c4,0x0049d4a4,0x008251c4
-22394,function,,,0x008252b0,0x0049d830,0x008252b0
+22394,function,std::vector<?>::_Insert_n,,0x008252b0,0x0049d830,0x008252b0
 22395,function,,,0x00825444,0x0049d9c4,0x00825444
 22396,function,,,0x008254c6,0x0049da46,0x008254c6
-22397,function,,,0x00825550,0x0049dad0,0x00825550
+22397,function,std::vector<?>::_Insert_n,,0x00825550,0x0049dad0,0x00825550
 22398,function,,,0x00825714,0x0049dc94,0x00825714
 22399,function,,,0x008257b6,0x0049dd36,0x008257b6
 22400,function,"std::_Fill<std::_Vb_iterator,bool>",,0x00825840,0x0049ddc0,0x00825840
@@ -22857,13 +22857,13 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22856,function,Console::Console::RemoveMessage,,0x00841bf0,0x00492700,0x00841bf0
 22857,function,Console::Console::DrawStrings,,0x00841cc0,0x004927d0,0x00841cc0
 22858,function,"Console::DeleteAndClearMap<std::wstring,Console::ConsoleFunc *>",,0x00841fd0,0x00492ae0,0x00841fd0
-22859,function,,,0x00842060,0x007e0680,0x00842060
-22860,function,,,0x00842260,0x00492b70,0x00842260
+22859,function,"std::map<?,?>::_Insert",,0x00842060,0x007e0680,0x00842060
+22860,function,"std::map<?,?>::_Insert",,0x00842260,0x00492b70,0x00842260
 22861,function,Console::Console::RunCommandWithoutArguments,,0x00842460,0x00492db0,0x00842460
 22862,function,Console::Console::ExecuteCommand,,0x008425c0,0x00492f10,0x008425c0
-22863,function,,,0x00842950,0x007d1eb0,0x00842950
+22863,function,"std::map<?,?>::insert",,0x00842950,0x007d1eb0,0x00842950
 22864,function,,,0x00842a10,0x004932a0,0x00842a10
-22865,function,,,0x00842ad0,0x007f8b40,0x00842ad0
+22865,function,"std::map<?,?>::insert",,0x00842ad0,0x007f8b40,0x00842ad0
 22866,function,,,0x00842c90,0x00493450,0x00842c90
 22867,retired,,,,,
 22868,function,Console::Console::AddFunction,,0x00842e60,0x00493870,0x00842e60
@@ -22965,15 +22965,15 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22964,function,"std::_Uninit_fill_n<Elem24 *,unsigned int,Elem24>",,0x00847c40,0x006bac20,0x00847c40
 22965,function,TexManager::TexturePool::RecreateTextures,,0x00847c80,0x0048dc10,0x00847c80
 22966,function,Core::VectorEraseAt<?>,,0x00847e80,0x00751cd0,0x00847e80
-22967,function,,,0x00847f20,0x0048de10,0x00847f20
+22967,function,std::vector<?>::_Insert_n,,0x00847f20,0x0048de10,0x00847f20
 22968,function,,,0x008480f0,0x0048dfe0,0x008480f0
 22969,function,,,0x008480fc,0x0048dfec,0x008480fc
 22970,function,TexManager::TexturePool::DestroyFreeTextures,,0x008481f0,0x0048e0e0,0x008481f0
 22971,function,TexManager::TexturePool::ReleaseTexture,,0x00848410,0x0048e300,0x00848410
 22972,function,"std::pair<TexManager::TextureShape,std::vector<TexManager::PoolEntry>>::~pair","Tidies the vector at +0x14 of the object (the pair's second); called only from the unwind funclet 0x00AC1BA8 (lea ecx,[ebp-0x30]) of map<TextureShape,vector<PoolEntry>>::operator[] 0x00849693. INFERRED from that frame.",0x00848690,0x0048e580,0x00848690
-22973,function,,,0x008486a0,0x0048e590,0x008486a0
+22973,function,std::vector<?>::reserve,,0x008486a0,0x0048e590,0x008486a0
 22974,function,,,0x008487a9,0x0048e699,0x008487a9
-22975,function,,,0x008487c0,0x0048e6b0,0x008487c0
+22975,function,std::vector<?>::resize,,0x008487c0,0x0048e6b0,0x008487c0
 22976,function,std::vector<TexManager::TexturePool::Spec>::reserve,,0x008488a0,0x0048e790,0x008488a0
 22977,function,std::vector<TexManager::TexturePool::Spec>::vector,,0x008488e0,0x0048e860,0x008488e0
 22978,function,,,0x00848960,0x0048e8e0,0x00848960
@@ -22981,9 +22981,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22980,function,"std::map<?,std::vector<void*>>::_Erase","Frees a red-black subtree whose nodes hold a 0x14-byte key and a vector<void*> at +0x20 (tidied by 0x0046C760); called by TexturePool::DestroyAll, so INFERRED the pool's shape-to-textures map.",0x00848c90,0x0048eca0,0x00848c90
 22981,function,,,0x00848cd0,0x0048ece0,0x00848cd0
 22982,function,"std::map<?,?>::erase",,0x00848d30,0x0048ed40,0x00848d30
-22983,function,,,0x00848e00,0x0048ee10,0x00848e00
+22983,function,"std::map<std::wstring,?>::_Buynode",,0x00848e00,0x0048ee10,0x00848e00
 22984,function,,,0x00848e7d,0x0048ee8d,0x00848e7d
-22985,function,,,0x00848ea0,0x0048eeb0,0x00848ea0
+22985,function,"std::map<?,?>::_Insert",,0x00848ea0,0x0048eeb0,0x00848ea0
 22986,function,TexManager::TexturePool::DestroyAll,,0x008490a0,0x0048f0b0,0x008490a0
 22987,function,,,0x00849290,0x0048f2a0,0x00849290
 22988,function,,,0x00849380,0x0048f390,0x00849380
@@ -23658,7 +23658,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23657,function,std::_Insertion_sort<_D3DDISPLAYMODE *>,,0x0086c700,0x004725b0,0x0086c700
 23658,function,std::_Sort_heap<_D3DDISPLAYMODE *>,,0x0086c7c0,0x004726a0,0x0086c7c0
 23659,function,"std::_Sort<_D3DDISPLAYMODE *,int>",,0x0086c840,0x00472720,0x0086c840
-23660,function,,,0x0086c930,0x007dc740,0x0086c930
+23660,function,std::vector<?>::_Insert_n,,0x0086c930,0x007dc740,0x0086c930
 23661,function,,,0x0086caa4,0x007dc8b4,0x0086caa4
 23662,function,,,0x0086cab0,0x007dc8c0,0x0086cab0
 23663,function,std::vector<unsigned int>::insert,,0x0086cb80,0x00472a80,0x0086cb80
@@ -23818,13 +23818,13 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23817,function,"std::_Copy_backward_opt<D3DDriver::ShaderConstant*,D3DDriver::ShaderConstant*,std::_Nonscalar_ptr_iterator_tag>",,0x00871d30,0x004783c0,0x00871d30
 23818,function,"std::_Uninit_copy<D3DDriver::ShaderConstant*,D3DDriver::ShaderConstant*,std::allocator<D3DDriver::ShaderConstant>>",,0x00871d80,0x00478410,0x00871d80
 23819,function,Catch_All@00871dd9,,0x00871dd9,0x00478469,0x00871dd9
-23820,function,,,0x00871e20,0x007c1840,0x00871e20
+23820,function,std::vector<?>::_Xlen,,0x00871e20,0x007c1840,0x00871e20
 23821,function,,,0x00871ea0,0x004784f0,0x00871ea0
 23822,function,,,0x00871ec0,0x00478510,0x00871ec0
 23823,function,,,0x00871f10,0x00478560,0x00871f10
 23824,function,,,0x00871f69,0x004785b9,0x00871f69
 23825,function,,,0x00871fa0,0x004785f0,0x00871fa0
-23826,function,,,0x00872000,0x004788b0,0x00872000
+23826,function,std::vector<?>::_Insert_n,,0x00872000,0x004788b0,0x00872000
 23827,function,,,0x008721d3,0x00478a83,0x008721d3
 23828,function,,,0x008721df,0x00478a8f,0x008721df
 23829,function,"std::_Copy_opt<D3DDriver::ShaderConstant*,D3DDriver::ShaderConstant*,std::random_access_iterator_tag>",,0x008722e0,0x00478b90,0x008722e0
@@ -23945,8 +23945,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23944,function,"std::map<D3DDriver::ScratchTextureKey,IDirect3DTexture9*>::_Buynode",,0x00875640,0x0047c2e0,0x00875640
 23945,function,"std::map<D3DDriver::ScratchTextureKey,IDirect3DTexture9*>::find",,0x00875690,0x0047c330,0x00875690
 23946,function,D3DDriver::ClearScratchTextureCache,,0x00875700,0x0047c3a0,0x00875700
-23947,function,,,0x008757e0,0x0047c480,0x008757e0
-23948,function,,,0x008759e0,0x0047c680,0x008759e0
+23947,function,"std::map<?,?>::_Insert",,0x008757e0,0x0047c480,0x008757e0
+23948,function,"std::map<?,?>::erase",,0x008759e0,0x0047c680,0x008759e0
 23949,function,,,0x00875ca0,0x0047c940,0x00875ca0
 23950,function,,,0x00875d90,0x0047ca30,0x00875d90
 23951,function,,,0x00875e60,0x0047cb00,0x00875e60
@@ -24096,11 +24096,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24095,function,,,0x0087bd40,0x00452290,0x0087bd40
 24096,function,,,0x0087bf18,0x00452468,0x0087bf18
 24097,function,,,0x0087bfc5,0x00452515,0x0087bfc5
-24098,function,,,0x0087c060,0x007e0920,0x0087c060
+24098,function,std::vector<?>::_Insert_n,,0x0087c060,0x007e0920,0x0087c060
 24099,function,,,0x0087c1e3,0x007e0aa3,0x0087c1e3
 24100,function,,,0x0087c1ef,0x007e0aaf,0x0087c1ef
 24101,function,,,0x0087c2c0,0x004526e0,0x0087c2c0
-24102,function,,,0x0087c3e0,0x00452800,0x0087c3e0
+24102,function,std::vector<?>::insert,,0x0087c3e0,0x00452800,0x0087c3e0
 24103,function,std::vector<InputMapper::Entry>::push_back,,0x0087c490,0x004529c0,0x0087c490
 24104,function,,,0x0087c530,0x00452af0,0x0087c530
 24105,function,"std::map<InputMapper::KeyWord,std::list<InputMapper::Entry*>>::_Erase",,0x0087c800,0x00452dc0,0x0087c800
@@ -24110,7 +24110,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24109,function,,,0x0087cb00,0x00453110,0x0087cb00
 24110,function,,,0x0087cbd0,0x004531e0,0x0087cbd0
 24111,function,,,0x0087cc67,0x00453277,0x0087cc67
-24112,function,,,0x0087cc80,0x00453290,0x0087cc80
+24112,function,"std::map<?,?>::_Insert",,0x0087cc80,0x00453290,0x0087cc80
 24113,function,,,0x0087ce80,0x00453490,0x0087ce80
 24114,function,,,0x0087cec0,0x004534d0,0x0087cec0
 24115,function,"std::map<InputMapper::KeyWord,std::list<InputMapper::Entry*>>::map",,0x0087cfb0,0x004535c0,0x0087cfb0
@@ -24154,10 +24154,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24153,function,,,0x0087e5bc,0x00454cbc,0x0087e5bc
 24154,function,,,0x0087e690,0x00454d90,0x0087e690
 24155,function,,,0x0087e77b,0x00454e7b,0x0087e77b
-24156,function,,,0x0087e7a0,0x004746b0,0x0087e7a0
+24156,function,std::vector<?>::reserve,,0x0087e7a0,0x004746b0,0x0087e7a0
 24157,function,,,0x0087e891,0x004747a1,0x0087e891
-24158,function,,,0x0087e8b0,0x00454ea0,0x0087e8b0
-24159,function,,,0x0087e960,0x00454f50,0x0087e960
+24158,function,std::vector<?>::resize,,0x0087e8b0,0x00454ea0,0x0087e8b0
+24159,function,std::vector<?>::insert,,0x0087e960,0x00454f50,0x0087e960
 24160,function,std::vector<unsigned short>::reserve,,0x0087e9f0,0x00455240,0x0087e9f0
 24161,function,,,0x0087ea20,0x004747c0,0x0087ea20
 24162,function,std::vector<unsigned short>::push_back,,0x0087ea50,0x00455270,0x0087ea50
@@ -24214,15 +24214,15 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24213,function,InputMapper::KeyRecordMap::Get,,0x00880ff0,0x00457b10,0x00880ff0
 24214,function,"std::map<int,std::wstring>::_Erase",,0x00881050,0x00457b70,0x00881050
 24215,function,InputWord::ToDisplayText,,0x00881090,0x00457bb0,0x00881090
-24216,function,,,0x00881310,0x00457ea0,0x00881310
-24217,function,,,0x00881510,0x0085aeb0,0x00881510
-24218,function,,,0x00881710,0x004582a0,0x00881710
-24219,function,,,0x008819e0,0x00458570,0x008819e0
+24216,function,"std::map<?,?>::_Insert",,0x00881310,0x00457ea0,0x00881310
+24217,function,"std::map<?,?>::_Insert",,0x00881510,0x0085aeb0,0x00881510
+24218,function,"std::map<?,?>::erase",,0x00881710,0x004582a0,0x00881710
+24219,function,"std::map<?,?>::insert",,0x008819e0,0x00458570,0x008819e0
 24220,function,InputNames::HasName,,0x00881aa0,0x004587e0,0x00881aa0
-24221,function,,,0x00881ae0,0x00458820,0x00881ae0
+24221,function,"std::map<?,?>::insert",,0x00881ae0,0x00458820,0x00881ae0
 24222,function,,,0x00881ba0,0x004588e0,0x00881ba0
 24223,function,InputMapper::KeyRecordMap::Add,,0x00881c70,0x004589b0,0x00881c70
-24224,function,,,0x00881d20,0x00458a60,0x00881d20
+24224,function,"std::map<?,?>::insert",,0x00881d20,0x00458a60,0x00881d20
 24225,function,"std::map<unsigned int,std::wstring>::operator[]",,0x00881ee0,0x00458c20,0x00881ee0
 24226,function,"std::map<int,std::wstring>::~map",,0x00881fd0,0x00458d10,0x00881fd0
 24227,function,InputNames::Register,,0x00882010,0x00458d50,0x00882010
@@ -24257,11 +24257,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24256,function,"std::map<std::wstring,bool>::_Copy(_Nodeptr,_Nodeptr)",,0x0088ed20,0x004659c0,0x0088ed20
 24257,function,,,0x0088edbd,0x00465a5d,0x0088edbd
 24258,function,InputModes::AllowsInput,,0x0088ede0,0x00465a80,0x0088ede0
-24259,function,,,0x0088ef50,0x00465bf0,0x0088ef50
+24259,function,"std::map<?,?>::_Insert",,0x0088ef50,0x00465bf0,0x0088ef50
 24260,function,"std::map<std::wstring,bool>::_Copy(const map&)",,0x0088f150,0x00465df0,0x0088f150
 24261,function,InputModeGroup::AllowsText,,0x0088f1d0,0x00466400,0x0088f1d0
 24262,function,InputModeGroup::BarsText,,0x0088f220,0x00466450,0x0088f220
-24263,function,,,0x0088f280,0x004664b0,0x0088f280
+24263,function,"std::map<std::wstring,?>::insert",,0x0088f280,0x004664b0,0x0088f280
 24264,function,InputModes::AllowsText,,0x0088f430,0x00466800,0x0088f430
 24265,function,InputModeGroup::TextSet::Insert,,0x0088f5a0,0x00466970,0x0088f5a0
 24266,function,"std::map<unsigned int,unsigned int>::map(const std::map<unsigned int,unsigned int>&)",,0x0088f630,0x00466a00,0x0088f630
@@ -24312,11 +24312,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24311,function,"std::list<std::pair<const int,Input::BindingList>>::_Buynode",,0x008911e0,0x00a3eea0,0x008911e0
 24312,function,"stdext::hash_map<int,Input::BindingList>::find",,0x00891200,0x00a3eec0,0x00891200
 24313,function,"std::pair<const int,Input::BindingList>::~pair",,0x00891330,0x00a3eff0,0x00891330
-24314,function,,,0x00891340,0x00a3f000,0x00891340
-24315,function,,,0x008913e0,0x0049cff0,0x008913e0
+24314,function,std::list<?>::_Incsize,,0x00891340,0x00a3f000,0x00891340
+24315,function,std::vector<?>::_Insert_n,,0x008913e0,0x0049cff0,0x008913e0
 24316,function,,,0x00891599,0x0049d1a9,0x00891599
 24317,function,,,0x008915a5,0x0049d1b5,0x008915a5
-24318,function,,,0x00891690,0x00761a20,0x00891690
+24318,function,std::vector<?>::_Construct_n,,0x00891690,0x00761a20,0x00891690
 24319,function,,,0x00891730,0x00761ac0,0x00891730
 24320,function,std::vector<Input::Binding>::insert,,0x00891750,0x0049e860,0x00891750
 24321,function,"std::list<std::pair<const int,Input::BindingList>>::clear",,0x00891800,0x00a3f0a0,0x00891800
@@ -24462,9 +24462,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24461,function,,,0x00899030,0x00a3c3e0,0x00899030
 24462,function,,,0x0089918f,0x00a3c53f,0x0089918f
 24463,function,,,0x0089919b,0x00a3c54b,0x0089919b
-24464,function,,,0x00899280,0x00a3c630,0x00899280
+24464,function,std::vector<?>::insert,,0x00899280,0x00a3c630,0x00899280
 24465,function,,,0x00899310,0x00a3c6c0,0x00899310
-24466,function,,,0x008993f0,0x00a3c7a0,0x008993f0
+24466,function,std::vector<?>::push_back,,0x008993f0,0x00a3c7a0,0x008993f0
 24467,function,CLCDOutput::AddScreen,,0x00899460,0x00a3c810,0x00899460
 24468,function,,,0x00899470,0x00a3c820,0x00899470
 24469,function,CLCDManager::Initialize,,0x008994e0,0x00a3c890,0x008994e0
@@ -24510,8 +24510,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24509,function,,,0x00899ff0,0x00424220,0x00899ff0
 24510,function,,,0x0089a000,0x00a3d3a0,0x0089a000
 24511,function,CLCDStreamingText::Initialize,,0x0089a010,0x00a3d3b0,0x0089a010
-24512,function,,,0x0089a070,0x00a3d410,0x0089a070
-24513,function,,,0x0089a0d0,0x00a3d470,0x0089a0d0
+24512,function,"std::_String_const_iterator<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>::_String_const_iterator",,0x0089a070,0x00a3d410,0x0089a070
+24513,function,std::list<?>::erase,,0x0089a0d0,0x00a3d470,0x0089a0d0
 24514,function,CLCDStreamingText::SetOrigin,,0x0089a1a0,0x00a3d540,0x0089a1a0
 24515,function,CLCDStreamingText::RemoveAllText,,0x0089a230,0x00a3d5d0,0x0089a230
 24516,function,CLCDStreamingText::RecalcTextBoxOrigins,,0x0089a2a0,0x00a3d640,0x0089a2a0
@@ -32444,7 +32444,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32443,function,"std::_Sort_heap<Gff4::Field *,Gff4::FlatFile::FieldAlignmentGreater>",,0x00a2af80,0x0081e500,0x00a2af80
 32444,function,Gff4::SwapStructEndian,,0x00a2b020,0x0081e5a0,0x00a2b020
 32445,function,std::vector<unsigned int>::vector,,0x00a2b430,0x007d7d40,0x00a2b430
-32446,function,,,0x00a2b4a0,0x0081e9b0,0x00a2b4a0
+32446,function,std::vector<?>::_Construct_n,,0x00a2b4a0,0x0081e9b0,0x00a2b4a0
 32447,function,,,0x00a2b540,0x0081ea50,0x00a2b540
 32448,function,"std::_Sort<Gff4::Field*,int,Gff4::File::FieldAlignmentGreater>",,0x00a2b560,0x0081eac0,0x00a2b560
 32449,function,"stdext::hash_map<unsigned int,unsigned int>::hash_map",,0x00a2b6a0,0x0081ec00,0x00a2b6a0
@@ -32524,8 +32524,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32523,function,ScriptArrayRef::ScriptArrayRef,,0x00a2dfd0,0x00822730,0x00a2dfd0
 32524,function,ScriptArrayRef::ScriptArrayRef::Catch_All@00A2E038,,0x00a2e038,0x00822798,0x00a2e038
 32525,function,ScriptArrayRef::`scalar deleting destructor',,0x00a2e060,0x008227c0,0x00a2e060
-32526,function,,,0x00a2e0b0,0x00822810,0x00a2e0b0
-32527,function,,,0x00a2e260,0x008229c0,0x00a2e260
+32526,function,std::vector<?>::_Insert_n,,0x00a2e0b0,0x00822810,0x00a2e0b0
+32527,function,std::vector<?>::reserve,,0x00a2e260,0x008229c0,0x00a2e260
 32528,function,std::vector<unsigned char>::resize,,0x00a2e300,0x00822a60,0x00a2e300
 32529,function,std::vector<unsigned char>::reserve,,0x00a2e3b0,0x00822b10,0x00a2e3b0
 32530,function,ScriptArray::ScriptArray,,0x00a2e3e0,0x00822b40,0x00a2e3e0
@@ -32813,10 +32813,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32812,function,CombatAnimTable::PackKeyFromLists,,0x00a3a440,0x0083af10,0x00a3a440
 32813,function,CombatAnimTable::PickRandomRow,,0x00a3a4a0,0x0083afd0,0x00a3a4a0
 32814,function,CombatAnimTable::PickRandomAnimation,,0x00a3a510,0x0083b040,0x00a3a510
-32815,function,,,0x00a3a540,0x00719020,0x00a3a540
+32815,function,"std::map<?,?>::_Insert",,0x00a3a540,0x00719020,0x00a3a540
 32816,function,,,0x00a3a740,0x0083b070,0x00a3a740
-32817,function,,,0x00a3a980,0x0083b2b0,0x00a3a980
-32818,function,,,0x00a3aa40,0x0083b370,0x00a3aa40
+32817,function,"std::map<?,?>::insert",,0x00a3a980,0x0083b2b0,0x00a3a980
+32818,function,"std::map<?,?>::insert",,0x00a3aa40,0x0083b370,0x00a3aa40
 32819,function,std::vector<unsigned int>::append,,0x00a3ac00,0x0083b530,0x00a3ac00
 32820,function,"std::map<unsigned int,std::pair<unsigned int,unsigned int>>::operator[]",,0x00a3ac90,0x0083b5c0,0x00a3ac90
 32821,function,CombatAnimTable::SplitKey,,0x00a3ad20,0x0083b650,0x00a3ad20
@@ -32939,7 +32939,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32938,function,CNetLayerWindow::Service,,0x00a42380,0x008459a0,0x00a42380
 32939,function,CNetLayerWindow::DeliverNextMessage,,0x00a42570,0x00845b90,0x00a42570
 32940,function,CNetLayerWindow::~CNetLayerWindow,,0x00a428f0,0x00845f10,0x00a428f0
-32941,function,,,0x00a42970,0x00845f90,0x00a42970
+32941,function,std::list<?>::_Incsize,,0x00a42970,0x00845f90,0x00a42970
 32942,function,std::list<unsigned short>::push_back,,0x00a42a10,0x00846030,0x00a42a10
 32943,function,CNetLayerWindow::QueueFramePrimary,,0x00a42a50,0x00846070,0x00a42a50
 32944,function,CNetLayerWindow::QueueFrameSecondary,,0x00a42ab0,0x008460d0,0x00a42ab0
@@ -33174,7 +33174,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33173,function,Pathfinding::MapAbstractionBuilder::SetParentEntrance,,0x00a4eca0,0x007d7cb0,0x00a4eca0
 33174,function,std::vector<?>::clear,,0x00a4ecf0,0x007d7d00,0x00a4ecf0
 33175,function,std::vector<?>::_Buy,,0x00a4ed30,0x00455030,0x00a4ed30
-33176,function,,,0x00a4ed80,0x007d7db0,0x00a4ed80
+33176,function,std::vector<?>::vector,,0x00a4ed80,0x007d7db0,0x00a4ed80
 33177,function,,,0x00a4ee55,0x007d7e85,0x00a4ee55
 33178,function,std::vector<Pathfinding::MapAbstractionBuilder::EdgeRecord>::operator=,,0x00a4ee70,0x00455410,0x00a4ee70
 33179,function,Pathfinding::MapAbstractionBuilder::EncodeFirstLevel,,0x00a4efb0,0x007d7ea0,0x00a4efb0
@@ -33208,10 +33208,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33207,function,std::vector<std::vector<Pathfinding::MapAbstractionBuilder::EdgeRecord>>::_Umove,,0x00a50df0,0x007d9cf0,0x00a50df0
 33208,function,Pathfinding::MapAbstractionBuilder::ConnectBlockToNeighbours,,0x00a50e20,0x007d9d20,0x00a50e20
 33209,function,Pathfinding::MapAbstractionBuilder::BuildSuperLevel,,0x00a50fc0,0x007d9ec0,0x00a50fc0
-33210,function,,,0x00a51620,0x007da520,0x00a51620
+33210,function,std::vector<std::vector<?>>::_Insert_n,,0x00a51620,0x007da520,0x00a51620
 33211,function,,,0x00a517a3,0x007da6a3,0x00a517a3
 33212,function,,,0x00a5182c,0x007da72c,0x00a5182c
-33213,function,,,0x00a518b0,0x007da7b0,0x00a518b0
+33213,function,std::vector<std::vector<?>>::_Insert_n,,0x00a518b0,0x007da7b0,0x00a518b0
 33214,function,,,0x00a51a33,0x007da933,0x00a51a33
 33215,function,,,0x00a51abc,0x007da9bc,0x00a51abc
 33216,function,Pathfinding::MapAbstractionBuilder::MapAbstractionBuilder,,0x00a51b40,0x007daa40,0x00a51b40
@@ -33225,7 +33225,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33224,function,"std::list<std::pair<unsigned int const,Pathfinding::AStarSearch::Node>>::_Buynode",,0x00a523f0,0x007db2c0,0x00a523f0
 33225,function,"std::list<std::pair<unsigned int const,Pathfinding::AStarSearch::Node>>::_Buynode",,0x00a52410,0x007db2e0,0x00a52410
 33226,function,Pathfinding::AStarSearch::NodeState,,0x00a52470,0x007db340,0x00a52470
-33227,function,,,0x00a524d0,0x007db3a0,0x00a524d0
+33227,function,std::list<?>::_Incsize,,0x00a524d0,0x007db3a0,0x00a524d0
 33228,function,Pathfinding::AStarSearch::BuildPath,,0x00a52570,0x007db440,0x00a52570
 33229,function,"stdext::hash_map<unsigned int,?>::hash_map",,0x00a52620,0x007db4f0,0x00a52620
 33230,function,,,0x00a526a0,0x007db570,0x00a526a0
@@ -33250,7 +33250,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33249,function,Pathfinding::FineSearch::NodeF,,0x00a536a0,0x007dc560,0x00a536a0
 33250,function,Pathfinding::FineSearch::HeapNodeWorse,,0x00a53700,0x007dc5c0,0x00a53700
 33251,function,Pathfinding::FineSearch::HeapFront,,0x00a53850,0x007dc710,0x00a53850
-33252,function,,,0x00a53880,0x007dc990,0x00a53880
+33252,function,std::vector<?>::vector,,0x00a53880,0x007dc990,0x00a53880
 33253,function,,,0x00a53953,0x007dca63,0x00a53953
 33254,function,,,0x00a53970,0x007d1fa0,0x00a53970
 33255,function,,,0x00a539a0,0x007dcb40,0x00a539a0
@@ -33260,11 +33260,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33259,function,,,0x00a53ac0,0x007dcc60,0x00a53ac0
 33260,function,,,0x00a53b56,0x007dccf6,0x00a53b56
 33261,function,,,0x00a53ba0,0x007d87b0,0x00a53ba0
-33262,function,,,0x00a53bf0,0x007dcd40,0x00a53bf0
-33263,function,,,0x00a53c50,0x007dcda0,0x00a53c50
+33262,function,std::vector<std::vector<?>>::erase,,0x00a53bf0,0x007dcd40,0x00a53bf0
+33263,function,std::vector<?>::_Ufill,,0x00a53c50,0x007dcda0,0x00a53c50
 33264,function,,,0x00a53c90,0x007dcde0,0x00a53c90
 33265,function,std::vector<std::vector<unsigned int>>::_Tidy,,0x00a53cc0,0x007d2010,0x00a53cc0
-33266,function,,,0x00a53d00,0x007dce50,0x00a53d00
+33266,function,std::vector<std::vector<?>>::_Insert_n,,0x00a53d00,0x007dce50,0x00a53d00
 33267,function,,,0x00a53e83,0x007dcfd3,0x00a53e83
 33268,function,,,0x00a53f0c,0x007dd05c,0x00a53f0c
 33269,function,Pathfinding::NodeWordTable::NodeWordTable,,0x00a53f90,0x007dd0e0,0x00a53f90
@@ -33493,7 +33493,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33492,function,AnimBase::GetAnimationState,,0x00a5e8a0,0x00705080,0x00a5e8a0
 33493,function,AnimBase::IsAnimationLooping,"(animId): whether the clip loops. With no model (this+0x18)+4, AnimTypeHasFlag(animId, 1). Else the clip's name (GetAnimName; false if none), the model's Object (slot 0x4C, AsAnimatable), the tree that has the clip (FindTreeNameForClip): with one, Object::IsAnimationNodeLooping (slot 0x78); with none, AnimTypeHasFlag(animId, 1)",0x00a5e940,0x00705120,0x00a5e940
 33494,function,"std::map<std::wstring,?>::find",,0x00a5e9f0,0x007051d0,0x00a5e9f0
-33495,function,,,0x00a5ea50,0x00720360,0x00a5ea50
+33495,function,"std::map<?,?>::_Insert",,0x00a5ea50,0x00720360,0x00a5ea50
 33496,function,,,0x00a5ec50,0x004580a0,0x00a5ec50
 33497,function,AnimBase::GetNodeLengthByName,,0x00a5ee50,0x00705430,0x00a5ee50
 33498,function,AnimBase::SetBlendCurve,,0x00a5ef30,0x00705510,0x00a5ef30
@@ -33508,9 +33508,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33507,function,AnimBase::FindBlendCurve,,0x00a5f350,0x00705930,0x00a5f350
 33508,function,AnimBase::GetClipRootTreeName,,0x00a5f440,0x00705a20,0x00a5f440
 33509,function,AnimBase::SetNextAnimationIfNotLooping,,0x00a5f480,0x00705a60,0x00a5f480
-33510,function,,,0x00a5f4b0,0x00720780,0x00a5f4b0
+33510,function,"std::map<?,?>::insert",,0x00a5f4b0,0x00720780,0x00a5f4b0
 33511,function,,,0x00a5f570,0x00705c40,0x00a5f570
-33512,function,,,0x00a5f690,0x00705d60,0x00a5f690
+33512,function,std::vector<?>::reserve,,0x00a5f690,0x00705d60,0x00a5f690
 33513,function,,,0x00a5f781,0x00705e51,0x00a5f781
 33514,function,AnimBase::GetNodeLengthById,,0x00a5f7a0,0x00705e70,0x00a5f7a0
 33515,function,AnimBase::GetWeightById,,0x00a5f810,0x00705ee0,0x00a5f810
@@ -33823,7 +33823,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33822,function,AnimModelLod::~AnimModelLod,,0x00a6cf40,0x0071d450,0x00a6cf40
 33823,function,std::vector<Multithreading::SynchSafePointer<?>>::_Ufill,,0x00a6d010,0x0071d520,0x00a6d010
 33824,function,std::vector<Multithreading::SynchSafePointer<?>>::_Ucopy,,0x00a6d050,0x0071d560,0x00a6d050
-33825,function,,,0x00a6d080,0x0071d590,0x00a6d080
+33825,function,std::vector<?>::_Insert_n,,0x00a6d080,0x0071d590,0x00a6d080
 33826,function,,,0x00a6d203,0x0071d713,0x00a6d203
 33827,function,,,0x00a6d28e,0x0071d79e,0x00a6d28e
 33828,function,std::vector<Multithreading::SynchSafePointer<?>>::resize,,0x00a6d320,0x0071d830,0x00a6d320
@@ -103300,20 +103300,20 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 103299,function,,,0x004893b0,0x00413950,0x004893b0
 103300,function,,,0x00436ef0,0x00422650,0x00436ef0
 103301,function,,,0x00422490,0x004226b0,0x00422490
-103302,function,,,0x007d5f60,0x004525b0,0x007d5f60
+103302,function,std::list<?>::_Insert,,0x007d5f60,0x004525b0,0x007d5f60
 103303,function,,,0x007d600a,0x0045265a,0x007d600a
-103304,function,,,0x007d6ba0,0x00452960,0x007d6ba0
-103305,function,,,0x007d6ff0,0x00452a60,0x007d6ff0
+103304,function,std::list<?>::_Assign,,0x007d6ba0,0x00452960,0x007d6ba0
+103305,function,std::list<?>::list,,0x007d6ff0,0x00452a60,0x007d6ff0
 103306,function,,,0x007d7067,0x00452ad7,0x007d7067
 103307,function,,,0x007d9ff0,0x004530e0,0x007d9ff0
-103308,function,,,0x005002a0,0x00455080,0x005002a0
+103308,function,"std::map<?,?>::insert",,0x005002a0,0x00455080,0x005002a0
 103309,function,,,0x005c7350,0x0046a330,0x005c7350
 103310,function,,,0x005c7450,0x0046a430,0x005c7450
 103311,function,,,0x004a1ca0,0x0046a450,0x004a1ca0
-103312,function,,,0x0087ead0,0x00472bc0,0x0087ead0
+103312,function,std::vector<?>::insert,,0x0087ead0,0x00472bc0,0x0087ead0
 103313,function,,,,0x00473fb0,
 103314,function,,,0x00515fb0,0x00489ff0,0x00515fb0
-103315,function,,,0x0057a680,0x0048a740,0x0057a680
+103315,function,std::vector<?>::erase,,0x0057a680,0x0048a740,0x0057a680
 103316,function,,,0x004fc640,0x0048bd20,0x004fc640
 103317,function,,,0x0084a670,0x0048cf90,0x0084a670
 103318,function,,,0x0080e970,0x004b3470,0x0080e970
@@ -103321,63 +103321,63 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 103320,function,,,0x004f4710,0x004b3fa0,0x004f4710
 103321,function,,,0x00810080,0x004b4ca0,0x00810080
 103322,function,,,0x00458ab0,0x004b4ce0,0x00458ab0
-103323,function,,,0x00810170,0x004b5000,0x00810170
+103323,function,"std::map<std::wstring,?>::_Buynode",,0x00810170,0x004b5000,0x00810170
 103324,function,,,0x008101f9,0x004b5089,0x008101f9
-103325,function,,,0x00810420,0x004b50c0,0x00810420
-103326,function,,,0x00810640,0x004b5330,0x00810640
+103325,function,"std::map<?,?>::_Insert",,0x00810420,0x004b50c0,0x00810420
+103326,function,"std::map<std::wstring,?>::insert",,0x00810640,0x004b5330,0x00810640
 103327,function,,,0x00816990,0x004b6f20,0x00816990
 103328,function,,,0x00812e80,0x004bb610,0x00812e80
 103329,function,,,,0x004c9a40,
 103330,function,,,0x0086b9a0,0x004d03a0,0x0086b9a0
-103331,function,,,0x00701640,0x004ef380,0x00701640
+103331,function,std::vector<?>::_Buy,,0x00701640,0x004ef380,0x00701640
 103332,function,,,0x00610060,0x004fe950,0x00610060
 103333,function,,,0x0063d330,0x00527f20,0x0063d330
 103334,function,,,0x006352c0,0x0055edf0,0x006352c0
-103335,function,,,0x0048d870,0x0057ad70,0x0048d870
+103335,function,std::vector<?>::operator=,,0x0048d870,0x0057ad70,0x0048d870
 103336,function,,,0x0072bc30,0x0057aea0,0x0072bc30
-103337,function,,,0x0072c730,0x005bfe10,0x0072c730
+103337,function,std::vector<?>::reserve,,0x0072c730,0x005bfe10,0x0072c730
 103338,function,,,0x0071d580,0x005f07e0,0x0071d580
-103339,function,,,0x005d26e0,0x0060f610,0x005d26e0
+103339,function,std::vector<?>::resize,,0x005d26e0,0x0060f610,0x005d26e0
 103340,function,,,0x0071ca90,0x0064bd40,0x0071ca90
 103341,function,,,0x0071d410,0x0064c080,0x0071d410
 103342,function,,,0x007af160,0x0068cf20,0x007af160
 103343,function,,,0x00538c90,0x006929b0,0x00538c90
 103344,function,,,0x00538f30,0x00693100,0x00538f30
 103345,function,,,0x004f3330,0x006935f0,0x004f3330
-103346,function,,,0x007b55f0,0x00693740,0x007b55f0
+103346,function,std::vector<?>::_Buy,,0x007b55f0,0x00693740,0x007b55f0
 103347,function,,,0x004f45b0,0x00695aa0,0x004f45b0
-103348,function,,,0x004f3830,0x00698f00,0x004f3830
+103348,function,"std::map<?,?>::_Erase",,0x004f3830,0x00698f00,0x004f3830
 103349,function,,,0x00534a70,0x00699110,0x00534a70
 103350,function,,,0x004f71a0,0x00699250,0x004f71a0
 103351,function,,,0x00458420,0x00699f40,0x00458420
 103352,function,,,0x007d7b80,0x006befd0,0x007d7b80
-103353,function,,,0x005d2520,0x006fc190,0x005d2520
-103354,function,,,0x006f1340,0x006fc520,0x006f1340
+103353,function,std::vector<?>::_Insert_n,,0x005d2520,0x006fc190,0x005d2520
+103354,function,std::vector<?>::push_back,,0x006f1340,0x006fc520,0x006f1340
 103355,function,,,0x00a5fee0,0x006ff4f0,0x00a5fee0
 103356,function,,,0x00a5de10,0x00704540,0x00a5de10
-103357,function,,,0x00a5ec50,0x00705230,0x00a5ec50
-103358,function,,,0x00601130,0x00705a90,0x00601130
-103359,function,,,0x0054a3f0,0x00712b50,0x0054a3f0
-103360,function,,,0x006f1160,0x0071d020,0x006f1160
+103357,function,"std::map<?,?>::_Insert",,0x00a5ec50,0x00705230,0x00a5ec50
+103358,function,"std::map<std::wstring,?>::insert",,0x00601130,0x00705a90,0x00601130
+103359,function,std::list<?>::_Incsize,,0x0054a3f0,0x00712b50,0x0054a3f0
+103360,function,std::vector<?>::insert,,0x006f1160,0x0071d020,0x006f1160
 103361,function,,,0x0076b540,0x00720c80,0x0076b540
 103362,function,,,0x00706a30,0x0072c800,0x00706a30
 103363,function,,,0x007af9f0,0x00742440,0x007af9f0
 103364,function,,,0x007b0890,0x00742480,0x007b0890
-103365,function,,,0x0053b250,0x00742560,0x0053b250
-103366,function,,,0x00516920,0x0074f290,0x00516920
+103365,function,std::vector<?>::erase,,0x0053b250,0x00742560,0x0053b250
+103366,function,std::vector<?>::_Tidy,,0x00516920,0x0074f290,0x00516920
 103367,function,,,0x004fc2e0,0x00757960,0x004fc2e0
 103368,function,,,0x00516980,0x00757990,0x00516980
 103369,function,,,0x005169e9,0x007579f9,0x005169e9
 103370,function,,,0x004fc3a0,0x00757ab0,0x004fc3a0
 103371,function,,,0x004fc40b,0x00757b1b,0x004fc40b
 103372,function,,,0x00556d10,0x00757c80,0x00556d10
-103373,function,,,0x004fc440,0x00758190,0x004fc440
+103373,function,std::vector<?>::_Ufill,,0x004fc440,0x00758190,0x004fc440
 103374,function,,,0x005173a0,0x00758320,0x005173a0
-103375,function,,,0x005173d0,0x00758350,0x005173d0
+103375,function,std::vector<?>::_Insert_n,,0x005173d0,0x00758350,0x005173d0
 103376,function,,,0x00517553,0x007584d3,0x00517553
 103377,function,,,0x005175de,0x0075855e,0x005175de
-103378,function,,,0x004fc550,0x007585f0,0x004fc550
-103379,function,,,0x00517670,0x007586e0,0x00517670
+103378,function,std::vector<?>::resize,,0x004fc550,0x007585f0,0x004fc550
+103379,function,std::vector<?>::insert,,0x00517670,0x007586e0,0x00517670
 103380,function,,,0x0086b9a0,0x0075f6b0,0x0086b9a0
 103381,function,,,0x0051b0d0,0x007c40d0,0x0051b0d0
 103382,function,,,,0x007c8de0,
@@ -103387,12 +103387,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 103386,function,,,0x00568350,0x007deec0,0x00568350
 103387,function,,,0x0057ab20,0x007def40,0x0057ab20
 103388,function,,,0x00457690,0x007e0db0,0x00457690
-103389,function,,,0x00517700,0x007ed530,0x00517700
+103389,function,std::vector<?>::push_back,,0x00517700,0x007ed530,0x00517700
 103390,function,,,0x0080ea00,0x007edda0,0x0080ea00
 103391,function,,,0x004f71d0,0x007ee1f0,0x004f71d0
 103392,function,,,0x008100c0,0x007ee810,0x008100c0
 103393,function,,,0x00458a20,0x007ee8c0,0x00458a20
-103394,function,,,0x00810860,0x007eee80,0x00810860
+103394,function,"std::map<std::wstring,?>::insert",,0x00810860,0x007eee80,0x00810860
 103395,function,,,0x00458d60,0x007ef080,0x00458d60
 103396,function,,,0x004bf300,0x00801470,0x004bf300
 103397,function,,,0x004b0f00,0x008780b0,0x004b0f00
