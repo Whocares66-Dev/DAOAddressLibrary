@@ -5789,7 +5789,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5788,function,ECBase::ECDynArray<Math::VectorUA4f>::ECDynArray(const ECBase::ECDynArray<Math::VectorUA4f>&),,0x004f3720,0x00761fa0,0x004f3720
 5789,function,Graphics::MaterialPassStateArray::Clear,"No code of its own: one jmp to the function of the same name at 0x004F3500 (ID 5785), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x004f3780,0x007e0e20,0x004f3780
 5790,function,Graphics::MaterialStateOverride::~MaterialStateOverride,,0x004f3790,0x007e0e30,0x004f3790
-5791,function,"std::map<unsigned int,Multithreading::SynchSafePointer>::_Erase",,0x004f37f0,0x00466db0,0x004f37f0
+5791,function,"std::map<unsigned int,Multithreading::SynchSafePointer>::_Tidy","Its bytes are std::map's _Tidy as VC8 compiles it, which ~map shares (it only calls _Tidy), not _Erase's: tools/stlmatch.py, 2026-11-20. A helper's reading had named it _Erase.",0x004f37f0,0x00466db0,0x004f37f0
 5792,function,"std::map<unsigned int,Multithreading::SynchSafePointer>::_Erase",,0x004f3830,0x007e0e90,0x004f3830
 5793,function,"std::map<?,?>::erase",,0x004f3870,0x007e0ed0,0x004f3870
 5794,function,"std::vector<std::pair<int,int>>::vector",,0x004f3b40,0x007e11a0,0x004f3b40
