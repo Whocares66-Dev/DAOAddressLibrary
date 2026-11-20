@@ -63,6 +63,7 @@ import glob
 import hashlib
 import io
 import os
+import re
 import struct
 import subprocess
 import sys
@@ -224,6 +225,27 @@ def image_path(build):
     return os.path.join(REPO, build["image"])
 
 
+def undecorate_symbol(symbol):
+    """A decorated function's name as the table writes one
+    (?Flush@GBufferedFile@@UAE_NXZ is GBufferedFile::Flush), by Windows'
+    own UnDecorateSymbolName with the name only; the symbol itself where that
+    cannot read it or is not there. The GOG build's 141 exported functions
+    had come in decorated (decomp-agent, 2026-11-20)."""
+    if not symbol.startswith("?") or sys.platform != "win32":
+        return symbol
+    import ctypes
+
+    buf = ctypes.create_string_buffer(4096)
+    undname_name_only = 0x1000
+    dbghelp = ctypes.WinDLL("dbghelp")
+    if not dbghelp.UnDecorateSymbolName(
+        symbol.encode("latin1"), buf, len(buf), undname_name_only
+    ):
+        return symbol
+    name = buf.value.decode("latin1")
+    return re.sub(r"\b(class|struct|union|enum) ", "", name)
+
+
 def names_in(side):
     """{address: name} for what a build's own image names: its entry point,
     exports, imports, and the RTTI classes' vftables and type descriptors."""
@@ -238,7 +260,7 @@ def names_in(side):
         out[va] = f"{daoexe.undecorate(decorated)}::{leaf}"
     for (dll, function), slot in side.import_slots().items():
         out[slot] = f"{dll}!{function}"
-    out |= {va: name for name, va in side.exports().items()}
+    out |= {va: undecorate_symbol(name) for name, va in side.exports().items()}
     out[img.image_base + img.entry_point_rva] = "entry"
     return out
 

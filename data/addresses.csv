@@ -38,12 +38,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 37,function,LocString::~LocString,,0x00401c90,0x004c9db0,0x00401c90
 38,function,Messages::IObservable::~IObservable,,0x00401ca0,0x00401d90,0x00401ca0
 39,function,Messages::IObservable::`scalar deleting destructor',,0x00401cb0,0x00401da0,0x00401cb0
-40,function,??1GDefaultAcquireInterface@@UAE@XZ,,0x00401cd0,0x00401dc0,0x00401cd0
+40,function,GDefaultAcquireInterface::~GDefaultAcquireInterface,,0x00401cd0,0x00401dc0,0x00401cd0
 41,function,,,0x00401ce0,0x00401dd0,0x00401ce0
-42,function,??_FGMutex@@QAEXXZ,,0x00401d40,0x00401e30,0x00401d40
-43,function,??_FGEvent@@QAEXXZ,,0x00401d50,0x00401e40,0x00401d50
-44,function,??_FGSemaphore@@QAEXXZ,,0x00401d60,0x00401e50,0x00401d60
-45,function,??_FGThread@@QAEXXZ,,0x00401d70,0x00401e60,0x00401d70
+42,function,GMutex::`default constructor closure',,0x00401d40,0x00401e30,0x00401d40
+43,function,GEvent::`default constructor closure',,0x00401d50,0x00401e40,0x00401d50
+44,function,GSemaphore::`default constructor closure',,0x00401d60,0x00401e50,0x00401d60
+45,function,GThread::`default constructor closure',,0x00401d70,0x00401e60,0x00401d70
 46,function,SmartData::IAttribute::~IAttribute,,0x00401d80,0x00401e70,0x00401d80
 47,function,SmartData::IAttribute::`scalar deleting destructor',,0x00401d90,0x00401e80,0x00401d90
 48,function,IGUISystem::StaticClassIdPtr,,0x00401db0,0x00401ea0,0x00401db0
@@ -94,7 +94,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 93,function,IGUISystem::`scalar deleting destructor',,0x00402a70,0x00402c00,0x00402a70
 94,function,IGUISystem::`scalar deleting destructor',,0x00402a80,0x00402be0,0x00402a80
 95,function,Messages::MessageObserver::RegisterClass,,0x00402a90,0x00402c10,0x00402a90
-96,function,?Swap@GMatrix2D@@QAEXPAV1@@Z,,0x00402ab0,0x00402c30,0x00402ab0
+96,function,GMatrix2D::Swap,,0x00402ab0,0x00402c30,0x00402ab0
 97,function,SmartData::SmartObject::RegisterClass,,0x00402b30,0x00402cb0,0x00402b30
 98,function,IGUISystem::Clone,,0x00402b90,0x00402d10,0x00402b90
 99,function,IGUISystem::RegisterClass,,0x00402c10,0x00402d90,0x00402c10
@@ -251,9 +251,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 250,function,std::ios_base::clear,,0x00407b00,0x00407e40,0x00407b00
 251,function,std::ios_base::failure::failure,,0x00407c30,0x00407f70,0x00407c30
 252,function,std::ios_base::_Init,,0x00407c50,0x00407f90,0x00407c50
-253,function,??0GImage@@QAE@ABVGImageBase@@@Z,,0x00407cd0,0x00408010,0x00407cd0
+253,function,GImage::GImage,,0x00407cd0,0x00408010,0x00407cd0
 254,function,GImage::`scalar deleting destructor',,0x00407d40,0x00408080,0x00407d40
-255,function,??0GImage@@QAE@ABV0@@Z,,0x00407d90,0x004080d0,0x00407d90
+255,function,GImage::GImage,,0x00407d90,0x004080d0,0x00407d90
 256,function,EclipseGame::Destroy,,0x00407e00,0x00408140,0x00407e00
 257,function,EclipseGame::ProcessCommandLine,,0x00407e30,0x00408170,0x00407e30
 258,function,"std::list<std::pair<std::wstring,?>>::_Erase",,0x00408040,0x00408380,0x00408040
@@ -466,64 +466,64 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 465,function,,,0x00416e40,0x004171c0,0x00416e40
 466,function,,,0x00416e90,0x00417210,0x00416e90
 467,function,,,0x00416f00,0x00417280,0x00416f00
-468,function,?Wait@GEvent@@QAE_NI@Z,,0x00416f50,0x004172d0,0x00416f50
-469,function,?ResetEvent@GEvent@@QAEXXZ,,0x00416fd0,0x00417350,0x00416fd0
-470,function,?TryAcquire@GEvent@@UAE_NXZ,,0x00416ff0,0x00418a30,0x00416ff0
-471,function,?TryAcquireCommit@GEvent@@UAE_NXZ,,0x00417000,0x00417370,0x00417000
+468,function,GEvent::Wait,,0x00416f50,0x004172d0,0x00416f50
+469,function,GEvent::ResetEvent,,0x00416fd0,0x00417350,0x00416fd0
+470,function,GEvent::TryAcquire,,0x00416ff0,0x00418a30,0x00416ff0
+471,function,GEvent::TryAcquireCommit,,0x00417000,0x00417370,0x00417000
 472,function,,,0x00417030,0x004173a0,0x00417030
-473,function,?ObtainSemaphore@GSemaphore@@QAE_NHI@Z,,0x00417040,0x004173b0,0x00417040
-474,function,??EGSemaphore@@QAEHH@Z,,0x00417130,0x004174a0,0x00417130
-475,function,??YGSemaphore@@QAEHH@Z,,0x00417180,0x004174f0,0x00417180
-476,function,?CanAcquire@GSemaphore@@UAE_NXZ,,0x004171d0,0x00417540,0x004171d0
-477,function,?TryAcquire@GSemaphore@@UAE_NXZ,,0x004171f0,0x00417560,0x004171f0
-478,function,?IsSignaled@GSemaphore@@UBE_NXZ,,0x00417200,0x00417570,0x00417200
+473,function,GSemaphore::ObtainSemaphore,,0x00417040,0x004173b0,0x00417040
+474,function,GSemaphore::operator++,,0x00417130,0x004174a0,0x00417130
+475,function,GSemaphore::operator+=,,0x00417180,0x004174f0,0x00417180
+476,function,GSemaphore::CanAcquire,,0x004171d0,0x00417540,0x004171d0
+477,function,GSemaphore::TryAcquire,,0x004171f0,0x00417560,0x004171f0
+478,function,GSemaphore::IsSignaled,,0x00417200,0x00417570,0x00417200
 479,function,,,0x00417210,0x00417580,0x00417210
 480,function,,,0x00417230,0x004175a0,0x00417230
 481,function,,,0x00417250,0x004175c0,0x00417250
 482,function,,,0x00417260,0x004175d0,0x00417260
-483,function,?GetAcquireInterface@GSemaphore@@UAEPAVGAcquireInterface@@XZ,,0x00417280,0x00418a20,0x00417280
-484,function,?GetDefaultAcquireInterface@GDefaultAcquireInterface@@SAPAV1@XZ,,0x00417290,0x004175f0,0x00417290
-485,function,?GetAcquireInterface@GWaitable@@UAEPAVGAcquireInterface@@XZ,,0x004172c0,0x00417620,0x004172c0
+483,function,GSemaphore::GetAcquireInterface,,0x00417280,0x00418a20,0x00417280
+484,function,GDefaultAcquireInterface::GetDefaultAcquireInterface,,0x00417290,0x004175f0,0x00417290
+485,function,GWaitable::GetAcquireInterface,,0x004172c0,0x00417620,0x004172c0
 486,function,,,0x004172d0,0x008efa50,0x004172d0
 487,function,,,0x00417370,0x00417630,0x00417370
-488,function,?AddWaitHandler@GWaitable@@QAE_NP6AXPAX@Z0@Z,,0x004173c0,0x00417680,0x004173c0
-489,function,?RemoveWaitHandler@GWaitable@@QAE_NP6AXPAX@Z0@Z,,0x00417420,0x004176e0,0x00417420
+488,function,GWaitable::AddWaitHandler,,0x004173c0,0x00417680,0x004173c0
+489,function,GWaitable::RemoveWaitHandler,,0x00417420,0x004176e0,0x00417420
 490,function,,,0x004174d0,0x00417790,0x004174d0
 491,function,,,0x00417520,0x004177e0,0x00417520
 492,function,,,0x00417550,0x00417810,0x00417550
-493,function,?CallWaitHandlers@HandlerArray@GWaitable@@QAEXXZ,,0x004175d0,0x00417890,0x004175d0
-494,function,?CallWaitHandlers@GWaitable@@QAEXXZ,,0x00417690,0x00417950,0x00417690
+493,function,GWaitable::HandlerArray::CallWaitHandlers,,0x004175d0,0x00417890,0x004175d0
+494,function,GWaitable::CallWaitHandlers,,0x00417690,0x00417950,0x00417690
 495,function,,,0x004176a0,0x00417960,0x004176a0
-496,function,?Release@HandlerArray@GWaitable@@QAEXXZ,,0x004176b0,0x00417970,0x004176b0
+496,function,GWaitable::HandlerArray::Release,,0x004176b0,0x00417970,0x004176b0
 497,function,,,0x004176f0,0x004179b0,0x004176f0
-498,function,??0GEvent@@QAE@_N0@Z,,0x00417710,0x004179d0,0x00417710
-499,function,??1GEvent@@UAE@XZ,,0x00417760,0x00417a20,0x00417760
-500,function,?PulseEvent@GEvent@@QAEXXZ,,0x00417790,0x00417a50,0x00417790
-501,function,??0GSemaphore@@QAE@H_N@Z,,0x004177f0,0x00417ab0,0x004177f0
-502,function,??1GSemaphore@@UAE@XZ,,0x00417840,0x00417b00,0x00417840
-503,function,?ReleaseSemaphore@GSemaphore@@QAE_NH@Z,,0x00417870,0x00417b30,0x00417870
-504,function,??FGSemaphore@@QAEHH@Z,,0x004178f0,0x00417bb0,0x004178f0
-505,function,??ZGSemaphore@@QAEHH@Z,,0x00417950,0x00417c10,0x00417950
-506,function,?TryAcquireCancel@GSemaphore@@UAE_NXZ,,0x004179c0,0x00417c80,0x004179c0
+498,function,GEvent::GEvent,,0x00417710,0x004179d0,0x00417710
+499,function,GEvent::~GEvent,,0x00417760,0x00417a20,0x00417760
+500,function,GEvent::PulseEvent,,0x00417790,0x00417a50,0x00417790
+501,function,GSemaphore::GSemaphore,,0x004177f0,0x00417ab0,0x004177f0
+502,function,GSemaphore::~GSemaphore,,0x00417840,0x00417b00,0x00417840
+503,function,GSemaphore::ReleaseSemaphore,,0x00417870,0x00417b30,0x00417870
+504,function,GSemaphore::operator--,,0x004178f0,0x00417bb0,0x004178f0
+505,function,GSemaphore::operator-=,,0x00417950,0x00417c10,0x00417950
+506,function,GSemaphore::TryAcquireCancel,,0x004179c0,0x00417c80,0x004179c0
 507,function,,,0x004179d0,0x00417c90,0x004179d0
 508,function,,,0x00417a10,0x00417cd0,0x00417a10
 509,function,,,0x00417a20,0x00417ce0,0x00417a20
 510,function,,,0x00417a50,0x00417d10,0x00417a50
-511,function,?CreateWaitableIncrement@GSemaphore@@QAEPAVGWaitable@@H@Z,,0x00417a70,0x00417d30,0x00417a70
+511,function,GSemaphore::CreateWaitableIncrement,,0x00417a70,0x00417d30,0x00417a70
 512,function,GEvent::`scalar deleting destructor',,0x00417ab0,0x00417d70,0x00417ab0
 513,function,GSemaphore::`scalar deleting destructor',,0x00417b20,0x00417de0,0x00417b20
 514,function,GWaitable::`scalar deleting destructor',,0x00417b80,0x00417e40,0x00417b80
 515,function,,,0x00417ba0,0x00417e60,0x00417ba0
-516,function,?Wait@GWaitable@@QAE_NI@Z,,0x00417bc0,0x00417e80,0x00417bc0
+516,function,GWaitable::Wait,,0x00417bc0,0x00417e80,0x00417bc0
 517,function,,,0x00417ce0,0x00417fa0,0x00417ce0
-518,function,?AcquireMultipleObjects@GAcquireInterface@@SA_NPAPAVGWaitable@@II@Z,,0x00417d20,0x00417fe0,0x00417d20
+518,function,GAcquireInterface::AcquireMultipleObjects,,0x00417d20,0x00417fe0,0x00417d20
 519,function,,,0x00417ed0,0x00418190,0x00417ed0
-520,function,?AcquireOneOfMultipleObjects@GAcquireInterface@@SAHPAPAVGWaitable@@II@Z,,0x00417f10,0x004181d0,0x00417f10
-521,function,?SetEvent@GEvent@@QAEXXZ,,0x00418060,0x00418320,0x00418060
+520,function,GAcquireInterface::AcquireOneOfMultipleObjects,,0x00417f10,0x004181d0,0x00417f10
+521,function,GEvent::SetEvent,,0x00418060,0x00418320,0x00418060
 522,function,GSemaphoreWaitableIncrement::`scalar deleting destructor',,0x004180c0,0x00418380,0x004180c0
 523,function,,,0x004180e0,0x004183a0,0x004180e0
 524,function,,,0x004180f0,0x004183b0,0x004180f0
-525,function,?Acquire@GWaitable@@QAE_NI@Z,,0x00418100,0x004183c0,0x00418100
+525,function,GWaitable::Acquire,,0x00418100,0x004183c0,0x00418100
 526,function,,,0x00418130,0x004183f0,0x00418130
 527,function,,,0x00418140,0x00418400,0x00418140
 528,function,,,0x00418150,0x00418410,0x00418150
@@ -532,11 +532,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 531,function,,,0x004181d0,0x00418490,0x004181d0
 532,function,,,0x004181f0,0x004184b0,0x004181f0
 533,function,,,0x00418210,0x004184d0,0x00418210
-534,function,??0GMutex@@QAE@_N0@Z,,0x00418220,0x004184e0,0x00418220
-535,function,?Lock@GMutex@@QAEXXZ,,0x00418270,0x00418530,0x00418270
-536,function,?TryLock@GMutex@@QAE_NXZ,,0x00418280,0x00418540,0x00418280
-537,function,?IsSignaled@GMutex@@UBE_NXZ,,0x00418290,0x00418550,0x00418290
-538,function,?TryAcquire@GMutex@@UAE_NXZ,,0x004182a0,0x00418560,0x004182a0
+534,function,GMutex::GMutex,,0x00418220,0x004184e0,0x00418220
+535,function,GMutex::Lock,,0x00418270,0x00418530,0x00418270
+536,function,GMutex::TryLock,,0x00418280,0x00418540,0x00418280
+537,function,GMutex::IsSignaled,,0x00418290,0x00418550,0x00418290
+538,function,GMutex::TryAcquire,,0x004182a0,0x00418560,0x004182a0
 539,function,,,0x004182b0,0x00418570,0x004182b0
 540,function,,,0x004182e0,0x004185a0,0x004182e0
 541,function,,,0x00418320,0x004185e0,0x00418320
@@ -547,59 +547,59 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 546,function,,,0x00418450,0x00418710,0x00418450
 547,function,,,0x00418540,0x00418800,0x00418540
 548,function,,,0x00418570,0x00418830,0x00418570
-549,function,??0GWaitCondition@@QAE@XZ,,0x004185b0,0x00418870,0x004185b0
-550,function,?Wait@GWaitCondition@@QAE_NPAVGMutex@@I@Z,,0x004185e0,0x004188a0,0x004185e0
-551,function,?Notify@GWaitCondition@@QAEXXZ,,0x004185f0,0x004188b0,0x004185f0
-552,function,?NotifyAll@GWaitCondition@@QAEXXZ,,0x00418600,0x004188c0,0x00418600
-553,function,?Run@GThread@@UAEHXZ,,0x00418610,0x004188d0,0x00418610
+549,function,GWaitCondition::GWaitCondition,,0x004185b0,0x00418870,0x004185b0
+550,function,GWaitCondition::Wait,,0x004185e0,0x004188a0,0x004185e0
+551,function,GWaitCondition::Notify,,0x004185f0,0x004188b0,0x004185f0
+552,function,GWaitCondition::NotifyAll,,0x00418600,0x004188c0,0x00418600
+553,function,GThread::Run,,0x00418610,0x004188d0,0x00418610
 554,function,,,0x00418630,0x004188f0,0x00418630
-555,function,?Sleep@GThread@@UAE_NI@Z,,0x00418650,0x00418910,0x00418650
-556,function,?MSleep@GThread@@UAE_NI@Z,,0x00418670,0x00418930,0x00418670
-557,function,?GetCPUCount@GThread@@SAHXZ,,0x00418680,0x00418940,0x00418680
+555,function,GThread::Sleep,,0x00418650,0x00418910,0x00418650
+556,function,GThread::MSleep,,0x00418670,0x00418930,0x00418670
+557,function,GThread::GetCPUCount,,0x00418680,0x00418940,0x00418680
 558,function,,,0x004186a0,0x00418960,0x004186a0
 559,function,,,0x004186b0,0x00418970,0x004186b0
-560,function,??1GMutex@@UAE@XZ,,0x004186d0,0x00418990,0x004186d0
-561,function,??1GWaitCondition@@QAE@XZ,,0x00418710,0x004189d0,0x00418710
-562,function,??1GThread@@UAE@XZ,,0x00418730,0x004189f0,0x00418730
-563,function,?GetExitFlag@GThread@@QBE_NXZ,,0x00418760,0x00418a50,0x00418760
-564,function,?IsFinished@GThread@@QBE_NXZ,,0x00418770,0x00418a40,0x00418770
-565,function,?IsSuspended@GThread@@QBE_NXZ,,0x00418780,0x00418a60,0x00418780
-566,function,?GetThreadState@GThread@@QBE?AW4ThreadState@1@XZ,,0x00418790,0x00418a70,0x00418790
+560,function,GMutex::~GMutex,,0x004186d0,0x00418990,0x004186d0
+561,function,GWaitCondition::~GWaitCondition,,0x00418710,0x004189d0,0x00418710
+562,function,GThread::~GThread,,0x00418730,0x004189f0,0x00418730
+563,function,GThread::GetExitFlag,,0x00418760,0x00418a50,0x00418760
+564,function,GThread::IsFinished,,0x00418770,0x00418a40,0x00418770
+565,function,GThread::IsSuspended,,0x00418780,0x00418a60,0x00418780
+566,function,GThread::GetThreadState,,0x00418790,0x00418a70,0x00418790
 567,function,GMutex::`scalar deleting destructor',,0x004187b0,0x00418ad0,0x004187b0
 568,function,GThread::`scalar deleting destructor',,0x00418820,0x00418b40,0x00418820
 569,function,,,0x00418890,0x00418bb0,0x00418890
 570,function,,,0x004188a0,0x00418bc0,0x004188a0
-571,function,?Resume@GThread@@QAE_NXZ,,0x004188b0,0x00418bd0,0x004188b0
+571,function,GThread::Resume,,0x004188b0,0x00418bd0,0x004188b0
 572,function,,,0x004188f0,0x00418c10,0x004188f0
 573,function,,,0x00418920,0x00418c40,0x00418920
-574,function,?SetExitFlag@GThread@@QAEX_N@Z,,0x00418950,0x00418c70,0x00418950
-575,function,?Suspend@GThread@@QAE_NXZ,,0x00418980,0x00418ca0,0x00418980
+574,function,GThread::SetExitFlag,,0x00418950,0x00418c70,0x00418950
+575,function,GThread::Suspend,,0x00418980,0x00418ca0,0x00418980
 576,function,,,0x004189b0,0x00418cd0,0x004189b0
 577,function,,,0x00418a20,0x00418d40,0x00418a20
 578,function,,,0x00418a50,0x00418d70,0x00418a50
-579,function,?Unlock@GMutex@@QAEXXZ,,0x00418a90,0x00418db0,0x00418a90
-580,function,?IsLockedByAnotherThread@GMutex@@QAE_NXZ,,0x00418aa0,0x00418dc0,0x00418aa0
-581,function,?GetAcquireInterface@GMutex@@UAEPAVGAcquireInterface@@XZ,,0x00418ab0,0x00418dd0,0x00418ab0
-582,function,?CanAcquire@GMutex@@UAE_NXZ,,0x00418ac0,0x00418de0,0x00418ac0
-583,function,?TryAcquireCancel@GMutex@@UAE_NXZ,,0x00418ad0,0x00418df0,0x00418ad0
-584,function,??0GThread@@QAE@IH@Z,,0x00418ae0,0x00418e00,0x00418ae0
+579,function,GMutex::Unlock,,0x00418a90,0x00418db0,0x00418a90
+580,function,GMutex::IsLockedByAnotherThread,,0x00418aa0,0x00418dc0,0x00418aa0
+581,function,GMutex::GetAcquireInterface,,0x00418ab0,0x00418dd0,0x00418ab0
+582,function,GMutex::CanAcquire,,0x00418ac0,0x00418de0,0x00418ac0
+583,function,GMutex::TryAcquireCancel,,0x00418ad0,0x00418df0,0x00418ad0
+584,function,GThread::GThread,,0x00418ae0,0x00418e00,0x00418ae0
 585,function,,,0x00418b40,0x00418e60,0x00418b40
 586,function,,,0x00418ba0,0x00418ec0,0x00418ba0
 587,function,,,0x00418bd0,0x00418ef0,0x00418bd0
 588,function,,,0x00418c10,0x00418f30,0x00418c10
 589,function,,,0x00418c90,0x00418fb0,0x00418c90
 590,function,,,0x00418ce0,0x00419000,0x00418ce0
-591,function,?FinishAllThreads@GThread@@SAXXZ,,0x00418d40,0x00419060,0x00418d40
+591,function,GThread::FinishAllThreads,,0x00418d40,0x00419060,0x00418d40
 592,function,,,0x00418d50,0x00419070,0x00418d50
-593,function,?Start@GThread@@UAE_NW4ThreadState@1@@Z,,0x00418dc0,0x004190e0,0x00418dc0
-594,function,?Exit@GThread@@UAEXH@Z,,0x00418e80,0x004191a0,0x00418e80
-595,function,??0GThread@@QAE@P6AHPAV0@PAX@Z1IHW4ThreadState@0@@Z,,0x00418ee0,0x00419200,0x00418ee0
+593,function,GThread::Start,,0x00418dc0,0x004190e0,0x00418dc0
+594,function,GThread::Exit,,0x00418e80,0x004191a0,0x00418e80
+595,function,GThread::GThread,,0x00418ee0,0x00419200,0x00418ee0
 596,function,,,0x00418f60,0x00419280,0x00418f60
 597,function,,,0x00418f70,0x00419290,0x00418f70
-598,function,??0GRefCountBaseImpl@@QAE@XZ,,0x00418f90,0x004192b0,0x00418f90
-599,function,??0GRefCountBaseImpl@@QAE@PAVGRefCountImpl@@0@Z,,0x00418fd0,0x004192f0,0x00418fd0
-600,function,??1GRefCountBaseImpl@@UAE@XZ,,0x00419020,0x00419340,0x00419020
-601,function,?SetRefCountMode@GRefCountBaseImpl@@QAE_NI@Z,,0x00419040,0x00419360,0x00419040
+598,function,GRefCountBaseImpl::GRefCountBaseImpl,,0x00418f90,0x004192b0,0x00418f90
+599,function,GRefCountBaseImpl::GRefCountBaseImpl,,0x00418fd0,0x004192f0,0x00418fd0
+600,function,GRefCountBaseImpl::~GRefCountBaseImpl,,0x00419020,0x00419340,0x00419020
+601,function,GRefCountBaseImpl::SetRefCountMode,,0x00419040,0x00419360,0x00419040
 602,function,,,0x00419080,0x004193a0,0x00419080
 603,function,GRefCountBaseImpl::`scalar deleting destructor',,0x004190c0,0x004193e0,0x004190c0
 604,function,GRefCountBaseImpl::AddRef,,0x00419120,0x00419440,0x00419120
@@ -629,9 +629,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 628,function,,,0x00419cc0,0x00419fc0,0x00419cc0
 629,function,,,0x00419cf0,0x00419ff0,0x00419cf0
 630,function,,,0x00419d50,0x0041a050,0x00419d50
-631,function,??0GImage@@QAE@XZ,,0x00419e20,0x0041a120,0x00419e20
-632,function,??0GImage@@QAE@W4ImageFormat@GImageBase@@KK@Z,,0x00419e60,0x0041a160,0x00419e60
-633,function,??1GImage@@UAE@XZ,,0x00419ef0,0x0041a1f0,0x00419ef0
+631,function,GImage::GImage,,0x00419e20,0x0041a120,0x00419e20
+632,function,GImage::GImage,,0x00419e60,0x0041a160,0x00419e60
+633,function,GImage::~GImage,,0x00419ef0,0x0041a1f0,0x00419ef0
 634,function,GImage::Create,,0x00419f20,0x0041a220,0x00419f20
 635,function,,,0x00419f80,0x0041a280,0x00419f80
 636,function,,,0x0041a660,0x0041a960,0x0041a660
@@ -691,7 +691,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 690,function,,,0x0041b8b0,0x0041bbb0,0x0041b8b0
 691,function,GFile::GFile,,0x0041b8f0,0x0041bbf0,0x0041b8f0
 692,function,,,0x0041b910,0x0041bc10,0x0041b910
-693,function,?IsValid@GSysFile@@UAE_NXZ,,0x0041b920,0x0041bf20,0x0041b920
+693,function,GSysFile::IsValid,,0x0041b920,0x0041bf20,0x0041b920
 694,function,,,0x0041b940,0x0041bc20,0x0041b940
 695,function,,,0x0041b950,0x0041bc30,0x0041b950
 696,function,,,0x0041b960,0x0041bc40,0x0041b960
@@ -711,32 +711,32 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 710,function,,,0x0041ba50,0x0041bd40,0x0041ba50
 711,function,,,0x0041ba60,0x0041bd50,0x0041ba60
 712,function,GUnopenedFile::`scalar deleting destructor',,0x0041ba70,0x0041bd60,0x0041ba70
-713,function,??0GSysFile@@QAE@XZ,,0x0041baa0,0x0041bd90,0x0041baa0
-714,function,?Open@GSysFile@@QAE_NPBDHH@Z,,0x0041bb20,0x0041be10,0x0041bb20
-715,function,?GetErrorCode@GSysFile@@UAEHXZ,,0x0041bc10,0x0041bf00,0x0041bc10
-716,function,?Close@GSysFile@@UAE_NXZ,,0x0041bc30,0x0041bf40,0x0041bc30
+713,function,GSysFile::GSysFile,,0x0041baa0,0x0041bd90,0x0041baa0
+714,function,GSysFile::Open,,0x0041bb20,0x0041be10,0x0041bb20
+715,function,GSysFile::GetErrorCode,,0x0041bc10,0x0041bf00,0x0041bc10
+716,function,GSysFile::Close,,0x0041bc30,0x0041bf40,0x0041bc30
 717,function,GDelegatedFile::`scalar deleting destructor',,0x0041bcb0,0x0041bfc0,0x0041bcb0
-718,function,??0GSysFile@@QAE@PBDHH@Z,,0x0041bce0,0x0041bff0,0x0041bce0
-719,function,?CopyFromStream@GBufferedFile@@UAEHPAVGFile@@H@Z,,0x0041bd20,0x0041cb30,0x0041bd20
-720,function,??0GBufferedFile@@IAE@XZ,,0x0041bdd0,0x0041c030,0x0041bdd0
-721,function,??0GBufferedFile@@QAE@PAVGFile@@@Z,,0x0041be20,0x0041c080,0x0041be20
-722,function,?FlushBuffer@GBufferedFile@@IAEXXZ,,0x0041be90,0x0041c0f0,0x0041be90
-723,function,?LoadBuffer@GBufferedFile@@IAEXXZ,,0x0041bf00,0x0041c160,0x0041bf00
-724,function,?Tell@GBufferedFile@@UAEHXZ,,0x0041bf40,0x0041c1a0,0x0041bf40
-725,function,?LTell@GBufferedFile@@UAE_JXZ,,0x0041bf80,0x0041c1e0,0x0041bf80
-726,function,?GetLength@GBufferedFile@@UAEHXZ,,0x0041bfe0,0x0041c240,0x0041bfe0
-727,function,?LGetLength@GBufferedFile@@UAE_JXZ,,0x0041c020,0x0041c280,0x0041c020
-728,function,?SkipBytes@GBufferedFile@@UAEHH@Z,,0x0041c070,0x0041c2d0,0x0041c070
-729,function,?BytesAvailable@GBufferedFile@@UAEHXZ,,0x0041c0d0,0x0041c330,0x0041c0d0
-730,function,?Flush@GBufferedFile@@UAE_NXZ,,0x0041c100,0x0041c360,0x0041c100
-731,function,?Seek@GBufferedFile@@UAEHHH@Z,,0x0041c120,0x0041c380,0x0041c120
-732,function,?LSeek@GBufferedFile@@UAE_J_JH@Z,,0x0041c1c0,0x0041c420,0x0041c1c0
-733,function,?ChangeSize@GBufferedFile@@UAE_NH@Z,,0x0041c2a0,0x0041c500,0x0041c2a0
-734,function,?Close@GBufferedFile@@UAE_NXZ,,0x0041c2c0,0x0041c520,0x0041c2c0
-735,function,??1GBufferedFile@@UAE@XZ,,0x0041c2f0,0x0041c550,0x0041c2f0
-736,function,?SetBufferMode@GBufferedFile@@IAE_NW4BufferModeType@1@@Z,,0x0041c330,0x0041c590,0x0041c330
-737,function,?Write@GBufferedFile@@UAEHPBEH@Z,,0x0041c390,0x0041c5f0,0x0041c390
-738,function,?Read@GBufferedFile@@UAEHPAEH@Z,,0x0041c430,0x0041c690,0x0041c430
+718,function,GSysFile::GSysFile,,0x0041bce0,0x0041bff0,0x0041bce0
+719,function,GBufferedFile::CopyFromStream,,0x0041bd20,0x0041cb30,0x0041bd20
+720,function,GBufferedFile::GBufferedFile,,0x0041bdd0,0x0041c030,0x0041bdd0
+721,function,GBufferedFile::GBufferedFile,,0x0041be20,0x0041c080,0x0041be20
+722,function,GBufferedFile::FlushBuffer,,0x0041be90,0x0041c0f0,0x0041be90
+723,function,GBufferedFile::LoadBuffer,,0x0041bf00,0x0041c160,0x0041bf00
+724,function,GBufferedFile::Tell,,0x0041bf40,0x0041c1a0,0x0041bf40
+725,function,GBufferedFile::LTell,,0x0041bf80,0x0041c1e0,0x0041bf80
+726,function,GBufferedFile::GetLength,,0x0041bfe0,0x0041c240,0x0041bfe0
+727,function,GBufferedFile::LGetLength,,0x0041c020,0x0041c280,0x0041c020
+728,function,GBufferedFile::SkipBytes,,0x0041c070,0x0041c2d0,0x0041c070
+729,function,GBufferedFile::BytesAvailable,,0x0041c0d0,0x0041c330,0x0041c0d0
+730,function,GBufferedFile::Flush,,0x0041c100,0x0041c360,0x0041c100
+731,function,GBufferedFile::Seek,,0x0041c120,0x0041c380,0x0041c120
+732,function,GBufferedFile::LSeek,,0x0041c1c0,0x0041c420,0x0041c1c0
+733,function,GBufferedFile::ChangeSize,,0x0041c2a0,0x0041c500,0x0041c2a0
+734,function,GBufferedFile::Close,,0x0041c2c0,0x0041c520,0x0041c2c0
+735,function,GBufferedFile::~GBufferedFile,,0x0041c2f0,0x0041c550,0x0041c2f0
+736,function,GBufferedFile::SetBufferMode,,0x0041c330,0x0041c590,0x0041c330
+737,function,GBufferedFile::Write,,0x0041c390,0x0041c5f0,0x0041c390
+738,function,GBufferedFile::Read,,0x0041c430,0x0041c690,0x0041c430
 739,function,GBufferedFile::`scalar deleting destructor',,0x0041c530,0x0041c790,0x0041c530
 740,function,,,0x0041c590,0x0041c7f0,0x0041c590
 741,function,,,0x0041c5d0,0x0041c830,0x0041c5d0
@@ -752,7 +752,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 751,function,,,0x0041c830,0x0041ca90,0x0041c830
 752,function,,,0x0041c8a0,0x0041cb20,0x0041c8a0
 753,function,,,0x0041c8b0,0x0041cbe0,0x0041c8b0
-754,function,?GetFileStat@GSysFile@@SA_NPAUGFileStat@@PBD@Z,,0x0041c8e0,0x0041cc10,0x0041c8e0
+754,function,GSysFile::GetFileStat,,0x0041c8e0,0x0041cc10,0x0041c8e0
 755,function,,,0x0041c940,0x0041cc70,0x0041c940
 756,function,GFILEFile::`scalar deleting destructor',,0x0041ca50,0x0041cd80,0x0041ca50
 757,function,,,0x0041ca90,0x0041cdc0,0x0041ca90
@@ -2555,7 +2555,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2554,function,Renderer::FBVector4fResource::SetAttribute,,0x0045ee20,0x00897760,0x0045ee20
 2555,function,Renderer::FBEclipseResource::OnEvent,,0x0045eee0,0x00897820,0x0045eee0
 2556,function,FloatRamp::Advance,,0x0045f080,0x008979c0,0x0045f080
-2557,function,std::_Tree::const_iterator::operator++,,0x0045f110,0x004577c0,0x0045f110
+2557,function,std::_Tree::const_iterator::_Inc,,0x0045f110,0x004577c0,0x0045f110
 2558,function,Renderer::FBFloat32Resource::FBFloat32Resource,,0x0045f180,0x00897a50,0x0045f180
 2559,function,Renderer::FrameBufferResource::IsValid,,0x0045f1c0,0x00897a90,0x0045f1c0
 2560,function,Renderer::FrameBufferEffect::LoadEffectFile,,0x0045f1d0,0x00897ad0,0x0045f1d0
@@ -2564,7 +2564,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2563,function,Renderer::FBIAssignFloat32FromResource::FBIAssignFloat32FromResource,,0x0045f3a0,0x00897ca0,0x0045f3a0
 2564,function,Renderer::FBIAssignFloat32FromResource::Execute,,0x0045f490,0x00897db0,0x0045f490
 2565,function,Renderer::FBFloat32Resource::OnEvent,,0x0045f4b0,0x00897dd0,0x0045f4b0
-2566,function,Renderer::FrameBufferEffect::GetStageCount,,0x0045f4e0,0x00897e00,0x0045f4e0
+2566,function,Renderer::FrameBufferEffect::GetStageCount,"Its bytes are also Renderer::TaskGroup's vftable 0x00AF0F70 slot 4: a vector's size from +0x28 and +0x2C, which the linker made one function of (decomp-agent, 2026-11-20).",0x0045f4e0,0x00897e00,0x0045f4e0
 2567,function,Renderer::FrameBufferEffect::GetStage,,0x0045f500,0x00897e20,0x0045f500
 2568,function,Renderer::FrameBufferFilter::Refresh,"Calls slot 2 (Refresh, as FBIBindTarget::Refresh 0x0045E650) of every instruction in the filter's vector (begin +0x28, end +0x2C, default std::vector<FrameBufferInstruction*>::s_default 0x00C1EEB4); FrameBufferStage::Refresh calls it on each filter in the stage's vector at +0x28 (0x0045F711, default std::vector<FrameBufferFilter*>::s_default 0x00C1EEB0).",0x0045f550,0x00897e70,0x0045f550
 2569,function,Renderer::FBIDumpRenderTarget::Execute,,0x0045f5b0,0x00897ed0,0x0045f5b0
@@ -3610,7 +3610,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3609,function,LockerUploadRequest::LockerUploadRequest,,0x00491300,0x00885160,0x00491300
 3610,function,LockerUploadRequest::~LockerUploadRequest,,0x00491380,0x008851e0,0x00491380
 3611,function,LockerDownloadRequest::LockerDownloadRequest,,0x00491400,0x00885260,0x00491400
-3612,function,LockerDownloadRequest::~LockerDownloadRequest,,0x00491460,0x008852c0,0x00491460
+3612,function,LockerDownloadRequest::~LockerDownloadRequest,"Its bytes are probably also WStringPair's destructor: 14 of its callers are catch funclets destroying a WStringPair (decomp-agent, 2026-11-20).",0x00491460,0x008852c0,0x00491460
 3613,function,LockerManager::AcquireLockerUrl,,0x004914c0,0x00885320,0x004914c0
 3614,function,LockerManager::DeleteFileById,,0x004916b0,0x00885510,0x004916b0
 3615,function,LockerManager::UpdateDirectoryStats,,0x004917a0,0x00885600,0x004917a0
@@ -4495,7 +4495,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4494,function,,,0x004c0cc4,0x004773b4,0x004c0cc4
 4495,retired,,,,,
 4496,function,,,0x004c0d55,0x00477445,0x004c0d55
-4497,function,std::wstring::wstring,,0x004c0d90,0x00802bc0,0x004c0d90
+4497,function,std::wstring::wstring,"Its bytes are also ECBase::ECString's default constructor: an empty wstring's initialization, which the linker made one function of (decomp-agent, 2026-11-20).",0x004c0d90,0x00802bc0,0x004c0d90
 4498,function,std::wstring::~wstring,,0x004c0db0,0x00802be0,0x004c0db0
 4499,function,ECBase::ECString::operator==,"__thiscall, ret 4: this string against another (ecx read at 0x004C0DF7, the argument a string object), compare(0, size(), other) through std::wstring::compare (ID 431), 1 when equal. A member, which std::basic_string's operator== is not, among ECString's functions: so ECString's (decomp-agent, 2026-11-19: its callers pass this in ecx)",0x004c0de0,0x00802c10,0x004c0de0
 4500,function,ECBase::ECString::operator==,"__thiscall, ret 4: this string against a wide C string, a null one read as empty (0x004C0E1A); its length is counted and compare(0, size(), text, length) called through std::wstring::compare (ID 431), 1 when equal. ScriptVariableNames::Entry::NameEquals_wcharptr 0x004E7740 calls it on the string at entry +0xC",0x004c0e10,0x00802c40,0x004c0e10
@@ -6116,7 +6116,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6115,function,,,0x005000bc,0x007e84cc,0x005000bc
 6116,function,,,0x00500145,0x007e8555,0x00500145
 6117,function,"std::map<unsigned int,?>::erase",,0x005001d0,0x007e85e0,0x005001d0
-6118,function,,,0x005002a0,0x006e0fb0,0x005002a0
+6118,function,"std::map<?,?>::insert",,0x005002a0,0x006e0fb0,0x005002a0
 6119,function,"std::map<?,?>::insert",,0x00500460,0x007e86b0,0x00500460
 6120,function,,,0x00500520,0x007e8770,0x00500520
 6121,function,std::vector<?>::resize,,0x00500670,0x007e88c0,0x00500670
@@ -6276,7 +6276,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6275,function,Graphics::MaterialTechnique::AddPass,,0x00507200,0x007fd970,0x00507200
 6276,function,Graphics::MaterialTechnique::`scalar deleting destructor',,0x00507240,0x007fd9b0,0x00507240
 6277,function,Graphics::MaterialLogicBlock::SetTechnique,,0x00507260,0x007fd9e0,0x00507260
-6278,function,?IsSignaled@GEvent@@UBE_NXZ,,0x00507270,0x00780360,0x00507270
+6278,function,GEvent::IsSignaled,,0x00507270,0x00780360,0x00507270
 6279,function,Graphics::MaterialLogicBlock::TestsPass,,0x00507280,0x007fd9f0,0x00507280
 6280,function,Graphics::MaterialLogicBlock::Validate,,0x00507330,0x007fdaa0,0x00507330
 6281,function,Graphics::MaterialLogicBlock::SelectTechnique,,0x005073c0,0x007fdb30,0x005073c0
@@ -7942,7 +7942,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7941,function,GraphicsStructures::Object::ApplyMorphByName,,0x0054a2e0,0x0074b810,0x0054a2e0
 7942,function,"std::_Uninit_fill_n<Elem48*,unsigned int,Elem48>",,0x0054a3a0,0x004bcd10,0x0054a3a0
 7943,function,GraphicsStructures::ObjectAttachDependency::RemoveFromFollower,,0x0054a3e0,0x0074b8d0,0x0054a3e0
-7944,function,,,0x0054a3f0,0x00761900,0x0054a3f0
+7944,function,std::list<?>::_Incsize,,0x0054a3f0,0x00761900,0x0054a3f0
 7945,function,std::list<?>::_Incsize,,0x0054a490,0x0075eed0,0x0054a490
 7946,function,std::vector<?>::_Buy,,0x0054a530,0x0074bb00,0x0054a530
 7947,function,std::vector<?>::_Insert_n,,0x0054a580,0x00472810,0x0054a580
@@ -8516,7 +8516,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8515,function,"std::_Rotate<?*,int,?>",,0x005658f0,0x0064c900,0x005658f0
 8516,function,GraphicsStructures::ExportValue::ExportValue,,0x00565a00,0x0075d4b0,0x00565a00
 8517,function,GraphicsStructures::ExportValue::ExportValue,,0x00565a30,0x0075d4e0,0x00565a30
-8518,function,GraphicsStructures::ExportValue::ExportValue,,0x00565a50,0x0075d500,0x00565a50
+8518,function,GraphicsStructures::ExportValue::Init,,0x00565a50,0x0075d500,0x00565a50
 8519,function,GraphicsStructures::ExportValue::ExportValue,,0x00565a70,0x0075d520,0x00565a70
 8520,function,"std::fill<GraphicsStructures::ModelExport*,GraphicsStructures::ModelExport>",,0x00565a90,0x0075d540,0x00565a90
 8521,function,"std::_Copy_backward_opt<GraphicsStructures::ModelExport*,GraphicsStructures::ModelExport*>",,0x00565ad0,0x0075d580,0x00565ad0
@@ -8525,7 +8525,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8524,function,"std::_Push_heap<?*,int,?>",,0x00565cf0,0x0075d7a0,0x00565cf0
 8525,function,GraphicsStructures::ExportValue::operator<,,0x00565d60,0x0075d810,0x00565d60
 8526,function,GraphicsStructures::ExportValue::ExportValue,,0x00565e50,0x0075d900,0x00565e50
-8527,function,GraphicsStructures::ExportValue::ExportValue,,0x00565e90,0x0075d940,0x00565e90
+8527,function,GraphicsStructures::ExportValue::Init,,0x00565e90,0x0075d940,0x00565e90
 8528,function,GraphicsStructures::ExportValue::ExportValue,,0x00565ed0,0x0075d980,0x00565ed0
 8529,function,GraphicsStructures::ObjectBlueprint::GetMesh,,0x00565f10,0x0075d9c0,0x00565f10
 8530,function,GraphicsStructures::ObjectBlueprint::GetMemoryFootprint,,0x00565f70,0x0075da20,0x00565f70
@@ -9225,7 +9225,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9224,function,ReadPHYNode,,0x0058ba10,0x007864b0,0x0058ba10
 9225,function,ReadPHYRoot,,0x0058bb90,0x00786630,0x0058bb90
 9226,function,GraphicsStructures::PHYLoader::PHYLoader,,0x0058bd60,0x00786800,0x0058bd60
-9227,function,LoadPHY,,0x0058bdd0,0x00786870,0x0058bdd0
+9227,function,GraphicsStructures::PHYLoader::LoadPHY,,0x0058bdd0,0x00786870,0x0058bdd0
 9228,function,GraphicsStructures::PHYLoader::LoadFromResource,,0x0058bf00,0x007869a0,0x0058bf00
 9229,function,GraphicsStructures::ObjectNodeUsePointBlueprint::`scalar deleting destructor',,0x0058bfc0,0x00786a60,0x0058bfc0
 9230,function,GraphicsStructures::ObjectNodeSnaptoPointBlueprint::`scalar deleting destructor',,0x0058bff0,0x00786a90,0x0058bff0
@@ -9617,7 +9617,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9616,function,Stub::ReturnSixteen,,0x005b0570,0x007fb2e0,0x005b0570
 9617,function,GraphicsStructures::ObjectNodeUsePointBlueprint::GetNodeSize,,0x005b0580,0x007b0100,0x005b0580
 9618,function,GraphicsStructures::ObjectNodeUsePointBlueprint::GetMemoryFootprint,,0x005b0590,0x007b0110,0x005b0590
-9619,function,GraphicsStructures::ObjectNodeUsePoint::ObjectNodeUsePoint,,0x005b05d0,0x007b0150,0x005b05d0
+9619,function,GraphicsStructures::ObjectNodeUsePoint::Create,,0x005b05d0,0x007b0150,0x005b05d0
 9620,function,GraphicsStructures::ObjectNodeSnaptoPoint::ObjectNodeSnaptoPoint,,0x005b0650,0x007b01d0,0x005b0650
 9621,function,GraphicsStructures::ObjectNode::`scalar deleting destructor'`adjustor{12}',,0x005b06d0,0x007b0260,0x005b06d0
 9622,function,GraphicsStructures::ObjectNode::`scalar deleting destructor'`adjustor{8}',,0x005b06e0,0x007b0270,0x005b06e0
@@ -9961,7 +9961,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9960,function,EclipsePrivate::CContentBank::`scalar deleting destructor',,0x005be170,0x00726660,0x005be170
 9961,function,EclipsePrivate::CMusicThemeContent::~CMusicThemeContent,,0x005be190,0x00726680,0x005be190
 9962,function,EclipsePrivate::CMusicThemeContent::`scalar deleting destructor',,0x005be1a0,0x00726690,0x005be1a0
-9963,function,ReverbChannelGroup_GetName,,0x005be1c0,0x007266b0,0x005be1c0
+9963,function,EclipsePrivate::ReverbChannelGroup::GetName,,0x005be1c0,0x007266b0,0x005be1c0
 9964,function,FMODMemoryReallocCallback,,0x005be1e0,0x007266d0,0x005be1e0
 9965,function,FMODMemoryFreeCallback,,0x005be200,0x007266f0,0x005be200
 9966,function,FMODFileHandle::FMODFileHandle,,0x005be210,0x00726700,0x005be210
@@ -10016,7 +10016,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10015,function,ReverbChannelGroup_BlendFloat,,0x005bfc40,0x00728130,0x005bfc40
 10016,function,ReverbChannelGroup_ApplyToDSP,,0x005bfc70,0x00728160,0x005bfc70
 10017,function,EclipsePrivate::CMusicThemeContent_FMOD::SetTrack,,0x005bfdf0,0x007282e0,0x005bfdf0
-10018,function,IsMusicEventPlaying,,0x005bfe60,0x00728350,0x005bfe60
+10018,function,CMusicThemeContent_FMOD::IsMusicEventPlaying,,0x005bfe60,0x00728350,0x005bfe60
 10019,function,StopMusicEvent,,0x005bfea0,0x00728390,0x005bfea0
 10020,function,EclipsePrivate::CMusicThemeContent_FMOD::StopAllEvents,,0x005bfec0,0x007283b0,0x005bfec0
 10021,function,EclipsePrivate::CMusicThemeContent_FMOD::SetPaused,,0x005bff20,0x00728410,0x005bff20
@@ -11077,7 +11077,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 11076,function,,,0x00600e40,0x004ef030,0x00600e40
 11077,function,,,0x00600f00,0x004ef0f0,0x00600f00
 11078,function,,,0x006010c0,0x004ef2b0,0x006010c0
-11079,function,,,0x00601130,0x00458630,0x00601130
+11079,function,"std::map<std::wstring,?>::insert",,0x00601130,0x00458630,0x00601130
 11080,function,std::vector<CCModule::TagIndexEntry>::insert,,0x006012e0,0x004ef3d0,0x006012e0
 11081,function,std::vector<CCModule::TagIndexEntry>::resize,,0x00601390,0x004ef7f0,0x00601390
 11082,function,std::vector<Gff4::StructReader>::resize,,0x006014d0,0x00536ae0,0x006014d0
@@ -13586,7 +13586,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13585,function,CCArea::ApplyEffectsAfterLoad,,0x0067aa80,0x00566b10,0x0067aa80
 13586,function,CCArea::CreateVisualForEffect,,0x0067ab40,0x00566bd0,0x0067ab40
 13587,function,CCArea::ReadStoreList,,0x0067ac00,0x00566c90,0x0067ac00
-13588,function,DeleteObjectById,,0x0067ae60,0x00566ef0,0x0067ae60
+13588,function,CCArea::DeleteObjectById,,0x0067ae60,0x00566ef0,0x0067ae60
 13589,function,GetCCObjectById,,0x0067ae90,0x00566f20,0x0067ae90
 13590,function,CCArea::GetDebugString,,0x0067aed0,0x00566f60,0x0067aed0
 13591,function,CCArea::ApplyAreaDataGrade,,0x0067afd0,0x00567060,0x0067afd0
@@ -17005,7 +17005,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17004,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::ChampionshipScoreboardEntry*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::CreateMemberIterator",,0x0072c6a0,0x006384b0,0x0072c6a0
 17005,function,SmartData::PointerArrayMemberIteratorImpl<ECBase::ECDynArray<GUI::ChampionshipScoreboardEntry*>>::GetValue,,0x0072c6d0,0x006384e0,0x0072c6d0
 17006,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::ChampionshipScoreboardEntry*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x0072c710,0x00638520,0x0072c710
-17007,function,,,0x0072c730,0x004baad0,0x0072c730
+17007,function,std::vector<?>::reserve,,0x0072c730,0x004baad0,0x0072c730
 17008,function,ECBase::ECDynArray<?>::ReserveIfAboveSize,,0x0072c7e0,0x005c0090,0x0072c7e0
 17009,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::ChampionshipScoreboardEntry*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x0072c810,0x006385a0,0x0072c810
 17010,function,GUI::GUIChampionshipScoreboard::GUIChampionshipScoreboard,,0x0072c890,0x00638620,0x0072c890
@@ -20865,7 +20865,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20864,function,,,0x007d5dc9,0x006bd0c9,0x007d5dc9
 20865,function,,,0x007d5dd5,0x006bd0d5,0x007d5dd5
 20866,function,std::vector<EC::Cutscene::Actor::ClipRecord>::push_back,,0x007d5ec0,0x006bd1c0,0x007d5ec0
-20867,function,,,0x007d5f60,0x006bd260,0x007d5f60
+20867,function,std::list<?>::_Insert,,0x007d5f60,0x006bd260,0x007d5f60
 20868,function,,,0x007d600a,0x006bd30a,0x007d600a
 20869,function,EC::Cutscene::Actor::RemoveAnimationsNotCovering,,0x007d6080,0x006bd380,0x007d6080
 20870,function,EC::Cutscene::Actor::UpdatePose,"Plays the actor's pose, previous-pose and transition clips (poses 450/454/458, clip names 478/494/4B0, delay 4D8, transition length 4D0); runs only for an actor with a pose (+0x450). The follower rule is one branch near its end (+0x4E0 gates SetRootWeightById at 0x007D652C). Called by UpdateBetweenCategories at 0x007D863B with ECX the actor.",0x007d6140,0x006bd440,0x007d6140
@@ -21872,11 +21872,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21871,function,Animation::AnimationManager::GetTime,,0x00810320,0x004b4f00,0x00810320
 21872,function,Animation::AnimationManager::GetFrameDelta,,0x00810340,0x004b4f20,0x00810340
 21873,function,Animation::AnimationManager::~AnimationManager,,0x00810360,0x004b4f40,0x00810360
-21874,function,,,0x00810420,0x007ee950,0x00810420
+21874,function,"std::map<?,?>::_Insert",,0x00810420,0x007ee950,0x00810420
 21875,function,Animation::AnimationManager::`scalar deleting destructor',,0x00810620,0x004b50a0,0x00810620
-21876,function,,,0x00810640,0x007eec40,0x00810640
+21876,function,"std::map<std::wstring,?>::insert",,0x00810640,0x007eec40,0x00810640
 21877,function,Animation::AnimationManager::Get,,0x008107f0,0x004b52c0,0x008107f0
-21878,function,,,0x00810860,0x004b54e0,0x00810860
+21878,function,"std::map<std::wstring,?>::insert",,0x00810860,0x004b54e0,0x00810860
 21879,function,Animation::AnimationManager::NameMap::operator[],,0x00810a60,0x004b56e0,0x00810a60
 21880,function,Animation::AnimationManager::RegisterAnimation,,0x00810b50,0x004b57d0,0x00810b50
 21881,function,Animation::AnimationManager::RegisterTree,,0x00810c40,0x004b58c0,0x00810c40
@@ -21950,7 +21950,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21949,function,Animation::AnimationTree::AnimationTree,,0x00813300,0x004bba90,0x00813300
 21950,function,Animation::AnimationTree::AnimationTree,,0x008133e0,0x004bbb70,0x008133e0
 21951,function,Animation::ModelAnimationTree::ResizeEntries,,0x008134b0,0x004bbc40,0x008134b0
-21952,function,Animation::AnimationTree::ScalarDeletingDestructor,,0x008134e0,0x004bbc70,0x008134e0
+21952,function,Animation::AnimationTree::`scalar deleting destructor',,0x008134e0,0x004bbc70,0x008134e0
 21953,function,Animation::AnimationTree::CreateInstance,,0x00813510,0x004bbca0,0x00813510
 21954,function,Animation::ModelAnimationTree::GetWeightByName,,0x00813630,0x004bbe00,0x00813630
 21955,function,Animation::ModelAnimationTree::HasNode,,0x00813650,0x004bbe20,0x00813650
@@ -22284,7 +22284,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22283,function,Physics::IPhysicsScene::~IPhysicsScene,,0x00821410,0x00497bd0,0x00821410
 22284,function,Physics::IPhysicsScene::`scalar deleting destructor',,0x00821420,0x00497be0,0x00821420
 22285,function,Physics::PhysicsScene::AddImpulseToAllActors,,0x00821440,0x00497c00,0x00821440
-22286,function,Physics::GroupsMaskEquals,,0x00821520,0x00497ce0,0x00821520
+22286,function,Physics::PhysicsScene::GroupsMaskEquals,,0x00821520,0x00497ce0,0x00821520
 22287,function,NXU_userNotify::~NXU_userNotify,,0x00821550,0x00497d10,0x00821550
 22288,function,Stub::ReturnTrue_8,,0x00821560,0x00497d30,0x00821560
 22289,function,,,0x00821570,0x00497d40,0x00821570
@@ -22485,14 +22485,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22484,function,"stdext::hash_map<?,?>::clear",,0x0082bd10,0x004a43c0,0x0082bd10
 22485,function,std::vector<bool>::_Insert_n,,0x0082bd80,0x004a4430,0x0082bd80
 22486,function,Physics::VariableSetPool<Physics::PhysicsNxActorVariableSet<NxMat34>>::VariableSetPool,,0x0082be50,0x004a4500,0x0082be50
-22487,function,Physics::PhysicsNxActorVariableSet<NxMat34>::PhysicsNxActorVariableSet<NxMat34>,,0x0082bee0,0x004a4590,0x0082bee0
+22487,function,Physics::VariableSetPool<Physics::PhysicsNxActorVariableSet<NxMat34>>::Acquire,"Calls the pool's Allocate with the caller's ecx (Physics::PhysicsScene::s_nxMat34VariableSetPool) and constructs a PhysicsNxActorVariableSet<NxMat34> in what it returns: not a constructor (decomp-agent, 2026-11-20).",0x0082bee0,0x004a4590,0x0082bee0
 22488,function,Physics::VariableSetPool<Physics::PhysicsNxActorVariableSet<NxQuat>>::VariableSetPool,,0x0082bf30,0x004a45e0,0x0082bf30
 22489,function,Physics::PhysicsNxActorVariableSet<NxQuat>::PhysicsNxActorVariableSet<NxQuat>,,0x0082bfc0,0x004a4670,0x0082bfc0
 22490,function,Physics::VariableSetPool<Physics::PhysicsNxActorVariableSet<NxVec3>>::VariableSetPool,,0x0082bfe0,0x004a4690,0x0082bfe0
-22491,function,Physics::PhysicsNxActorVariableSet<NxVec3>::PhysicsNxActorVariableSet<NxVec3>,,0x0082c070,0x004a4720,0x0082c070
+22491,function,Physics::VariableSetPool<Physics::PhysicsNxActorVariableSet<NxVec3>>::Acquire,"Calls the pool's Allocate with the caller's ecx (Physics::PhysicsScene::s_nxVec3VariableSetPool) and constructs a PhysicsNxActorVariableSet<NxVec3> in what it returns: not a constructor (decomp-agent, 2026-11-20).",0x0082c070,0x004a4720,0x0082c070
 22492,function,Physics::VariableSetPool<?>::VariableSetPool,,0x0082c090,0x004a4740,0x0082c090
 22493,function,Physics::VariableSetPool<Physics::PhysicsNxClothVariableSet<float>>::VariableSetPool,,0x0082c120,0x004a47d0,0x0082c120
-22494,function,Physics::PhysicsNxClothVariableSet<float>::PhysicsNxClothVariableSet<float>,,0x0082c1b0,0x004a4860,0x0082c1b0
+22494,function,Physics::VariableSetPool<Physics::PhysicsNxClothVariableSet<float>>::Acquire,"Calls the pool's Allocate with the caller's ecx (Physics::PhysicsScene::s_nxClothFloatVariableSetPool) and constructs a PhysicsNxClothVariableSet<float> in what it returns: not a constructor (decomp-agent, 2026-11-20).",0x0082c1b0,0x004a4860,0x0082c1b0
 22495,function,Physics::PhysicsScene::PhysicsEntityReport<unsigned int>::onEvent,,0x0082c1d0,0x004a4880,0x0082c1d0
 22496,function,Physics::PhysicsScene::FlushDeferred,,0x0082c2f0,0x004a49a0,0x0082c2f0
 22497,function,Physics::PhysicsScene::CreatePhysicsObject,,0x0082c400,0x004a4ab0,0x0082c400
@@ -23138,8 +23138,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23137,function,XMLParser2::ExpatParser::ExpatParser,,0x008514f0,0x00a57a60,0x008514f0
 23138,function,XMLParser2::ExpatParser::~ExpatParser,,0x00851510,0x00a57a80,0x00851510
 23139,function,XMLParser2::ExpatParser::Parse,,0x00851520,0x00a57a90,0x00851520
-23140,function,XMLParser2::IXMLParser::GetExpatParser,,0x00851610,0x00a57b80,0x00851610
-23141,function,XMLParser2::IXMLParser::Parse,,0x00851620,0x00a57b90,0x00851620
+23140,function,XMLParser2::XMLParser::GetExpatParser,,0x00851610,0x00a57b80,0x00851610
+23141,function,XMLParser2::XMLParser::Parse,,0x00851620,0x00a57b90,0x00851620
 23142,function,XMLParser2::DestroyXMLParser,,0x00851640,0x00a57bb0,0x00851640
 23143,function,XMLParser2::IXMLParser::~IXMLParser,,0x00851660,0x00a57bd0,0x00851660
 23144,function,XMLParser2::IXMLParser::`scalar deleting destructor',,0x00851670,0x00a57be0,0x00851670
@@ -24161,7 +24161,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24160,function,std::vector<unsigned short>::reserve,,0x0087e9f0,0x00455240,0x0087e9f0
 24161,function,,,0x0087ea20,0x004747c0,0x0087ea20
 24162,function,std::vector<unsigned short>::push_back,,0x0087ea50,0x00455270,0x0087ea50
-24163,function,,,0x0087ead0,0x004ef930,0x0087ead0
+24163,function,std::vector<?>::insert,,0x0087ead0,0x004ef930,0x0087ead0
 24164,function,std::vector<unsigned short>::vector,,0x0087eb60,0x004555d0,0x0087eb60
 24165,function,std::vector<?>::push_back,,0x0087ebd0,0x00472ce0,0x0087ebd0
 24166,function,ECInput::RawInputWin32::AddTypedCharacter,,0x0087ec60,0x004556c0,0x0087ec60
@@ -26906,7 +26906,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 26905,function,,,0x0090c320,0x008e2fd0,0x0090c320
 26906,function,,,0x0090c340,0x008e2ff0,0x0090c340
 26907,function,,,0x0090c3a0,0x008e3050,0x0090c3a0
-26908,function,??1GFxLoader@@UAE@XZ,,0x0090c400,0x008e30b0,0x0090c400
+26908,function,GFxLoader::~GFxLoader,,0x0090c400,0x008e30b0,0x0090c400
 26909,function,,,0x0090c440,0x008e3100,0x0090c440
 26910,function,GFxLoader::CreateMovie,,0x0090c470,0x008e3130,0x0090c470
 26911,function,,,0x0090c4a0,0x008e3160,0x0090c4a0
@@ -27893,7 +27893,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 27892,function,,,0x00933cb0,0x0090b3d0,0x00933cb0
 27893,function,,,0x00933cf0,0x0090b410,0x00933cf0
 27894,function,,,0x00933d40,0x0090b460,0x00933d40
-27895,function,Math::VectorUA4f::VectorUA4f,,0x00933d70,0x00816de0,0x00933d70
+27895,function,Math::VectorUA4f::VectorUA4f,"Its bytes are also Math::VectorUA4f::operator=(const VectorUA4f&): copies four dwords and returns this, which the copy constructor does too; the linker made one function of the two (decomp-agent, 2026-11-20).",0x00933d70,0x00816de0,0x00933d70
 27896,function,,,0x00933d90,0x0090b490,0x00933d90
 27897,function,,,0x00933dd0,0x0090b4d0,0x00933dd0
 27898,function,,,0x00933e20,0x0090b520,0x00933e20
@@ -29037,39 +29037,39 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 29036,function,,,0x00977740,0x0094ebb0,0x00977740
 29037,function,,,0x009778a0,0x0094ed10,0x009778a0
 29038,function,GFxFontCacheManager::`scalar deleting destructor',,0x009778d0,0x0094ed40,0x009778d0
-29039,function,?IsValid@GMatrix2D@@QBE_NXZ,,0x009778f0,0x008e5410,0x009778f0
-29040,function,?SetIdentity@GMatrix2D@@QAEXXZ,,0x009779b0,0x008e54d0,0x009779b0
-29041,function,?SetLerp@GMatrix2D@@QAEXABV1@0M@Z,,0x009779d0,0x008e54f0,0x009779d0
-29042,function,?Format@GMatrix2D@@QBEXPAD@Z,,0x00977a80,0x008e55a0,0x00977a80
-29043,function,?Transform@GMatrix2D@@QBEXPAV?$GPoint@M@@ABV2@@Z,,0x00977ad0,0x008e55f0,0x00977ad0
-29044,function,?TransformVector@GMatrix2D@@QBEXPAV?$GPoint@M@@ABV2@@Z,,0x00977b00,0x008e5620,0x00977b00
-29045,function,?SetInverse@GMatrix2D@@QAEXABV1@@Z,,0x00977b30,0x008e5650,0x00977b30
-29046,function,?DoesFlip@GMatrix2D@@QBE_NXZ,,0x00977bd0,0x008e56f0,0x00977bd0
-29047,function,?GetDeterminant@GMatrix2D@@QBEMXZ,,0x00977c00,0x008e5720,0x00977c00
-29048,function,?GetX@GMatrix2D@@QBEMXZ,,0x00977c20,0x008e5740,0x00977c20
-29049,function,?GetY@GMatrix2D@@QBEMXZ,,0x00977c30,0x008e5750,0x00977c30
-29050,function,?GetXScale@GMatrix2D@@QBENXZ,,0x00977c40,0x008e5760,0x00977c40
-29051,function,?GetYScale@GMatrix2D@@QBENXZ,,0x00977c60,0x008e5780,0x00977c60
-29052,function,?GetRotation@GMatrix2D@@QBENXZ,,0x00977c80,0x008e57a0,0x00977c80
-29053,function,?Prepend@GMatrix2D@@QAEAAV1@ABV1@@Z,,0x00977c90,0x008e57b0,0x00977c90
-29054,function,?Append@GMatrix2D@@QAEAAV1@ABV1@@Z,,0x00977d50,0x008e5870,0x00977d50
-29055,function,?TransformByInverse@GMatrix2D@@QBEXPAV?$GPoint@M@@ABV2@@Z,,0x00977e10,0x008e5930,0x00977e10
-29056,function,?GetMaxScale@GMatrix2D@@QBEMXZ,,0x00977ea0,0x008e59c0,0x00977ea0
+29039,function,GMatrix2D::IsValid,,0x009778f0,0x008e5410,0x009778f0
+29040,function,GMatrix2D::SetIdentity,,0x009779b0,0x008e54d0,0x009779b0
+29041,function,GMatrix2D::SetLerp,,0x009779d0,0x008e54f0,0x009779d0
+29042,function,GMatrix2D::Format,,0x00977a80,0x008e55a0,0x00977a80
+29043,function,GMatrix2D::Transform,,0x00977ad0,0x008e55f0,0x00977ad0
+29044,function,GMatrix2D::TransformVector,,0x00977b00,0x008e5620,0x00977b00
+29045,function,GMatrix2D::SetInverse,,0x00977b30,0x008e5650,0x00977b30
+29046,function,GMatrix2D::DoesFlip,,0x00977bd0,0x008e56f0,0x00977bd0
+29047,function,GMatrix2D::GetDeterminant,,0x00977c00,0x008e5720,0x00977c00
+29048,function,GMatrix2D::GetX,,0x00977c20,0x008e5740,0x00977c20
+29049,function,GMatrix2D::GetY,,0x00977c30,0x008e5750,0x00977c30
+29050,function,GMatrix2D::GetXScale,,0x00977c40,0x008e5760,0x00977c40
+29051,function,GMatrix2D::GetYScale,,0x00977c60,0x008e5780,0x00977c60
+29052,function,GMatrix2D::GetRotation,,0x00977c80,0x008e57a0,0x00977c80
+29053,function,GMatrix2D::Prepend,,0x00977c90,0x008e57b0,0x00977c90
+29054,function,GMatrix2D::Append,,0x00977d50,0x008e5870,0x00977d50
+29055,function,GMatrix2D::TransformByInverse,,0x00977e10,0x008e5930,0x00977e10
+29056,function,GMatrix2D::GetMaxScale,,0x00977ea0,0x008e59c0,0x00977ea0
 29057,function,,,0x00977f00,0x008e5a20,0x00977f00
 29058,function,,,0x00977fe0,0x008e5b00,0x00977fe0
-29059,function,?EncloseTransform@GMatrix2D@@QBEXPAV?$GRect@M@@ABV2@@Z,,0x00978020,0x008e5b40,0x00978020
-29060,function,?Format@GColor@@QBEXPAD@Z,,0x00978290,0x0094ed60,0x00978290
-29061,function,?SetHSV@GColor@@QAEXHHH@Z,,0x009782c0,0x0094ed90,0x009782c0
-29062,function,?SetHSV@GColor@@QAEXMMM@Z,,0x00978420,0x0094eef0,0x00978420
-29063,function,?GetHSV@GColor@@QBEXPAH00@Z,,0x009785e0,0x0094f0b0,0x009785e0
-29064,function,?ConvertHSIToRGB@GColor@@SGXNNNPAN00@Z,,0x00978760,0x0094f230,0x00978760
-29065,function,?Blend@GColor@@SG?AV1@V1@0M@Z,,0x00978900,0x0094f3d0,0x00978900
-29066,function,?GetHSV@GColor@@QBEXPAM00@Z,,0x00978aa0,0x0094f570,0x00978aa0
-29067,function,?SetHSI@GColor@@QAEXMMM@Z,,0x00978c80,0x0094f750,0x00978c80
-29068,function,?ConvertRGBToHSI@GColor@@SGXNNNPAN00@Z,,0x00978d60,0x0094f830,0x00978d60
-29069,function,?SetHSI@GColor@@QAEXHHH@Z,,0x00978e50,0x0094f920,0x00978e50
-29070,function,?GetHSI@GColor@@QBEXPAM00@Z,,0x00978ea0,0x0094f970,0x00978ea0
-29071,function,?GetHSI@GColor@@QBEXPAH00@Z,,0x00978f60,0x0094fa30,0x00978f60
+29059,function,GMatrix2D::EncloseTransform,,0x00978020,0x008e5b40,0x00978020
+29060,function,GColor::Format,,0x00978290,0x0094ed60,0x00978290
+29061,function,GColor::SetHSV,,0x009782c0,0x0094ed90,0x009782c0
+29062,function,GColor::SetHSV,,0x00978420,0x0094eef0,0x00978420
+29063,function,GColor::GetHSV,,0x009785e0,0x0094f0b0,0x009785e0
+29064,function,GColor::ConvertHSIToRGB,,0x00978760,0x0094f230,0x00978760
+29065,function,GColor::Blend,,0x00978900,0x0094f3d0,0x00978900
+29066,function,GColor::GetHSV,,0x00978aa0,0x0094f570,0x00978aa0
+29067,function,GColor::SetHSI,,0x00978c80,0x0094f750,0x00978c80
+29068,function,GColor::ConvertRGBToHSI,,0x00978d60,0x0094f830,0x00978d60
+29069,function,GColor::SetHSI,,0x00978e50,0x0094f920,0x00978e50
+29070,function,GColor::GetHSI,,0x00978ea0,0x0094f970,0x00978ea0
+29071,function,GColor::GetHSI,,0x00978f60,0x0094fa30,0x00978f60
 29072,function,,,0x00978fc0,0x008e5db0,0x00978fc0
 29073,function,,,0x00979020,0x008e5e10,0x00979020
 29074,function,,,0x00979080,0x008e5e70,0x00979080
@@ -32139,7 +32139,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32138,function,Renderer::GraphicsCommandRing::SkipBytes,,0x00a1ecb0,0x008a37d0,0x00a1ecb0
 32139,function,Renderer::RenderCommandProcessorTask::DrainAndReset,,0x00a1ece0,0x008a3800,0x00a1ece0
 32140,function,Renderer::RenderCommandProcessorTask::RenderCommandProcessorTask,,0x00a1ed30,0x008a3850,0x00a1ed30
-32141,function,Renderer::PlayCommand,,0x00a1eda0,0x008a38c0,0x00a1eda0
+32141,function,Renderer::RenderCommandProcessorTask::PlayCommand,,0x00a1eda0,0x008a38c0,0x00a1eda0
 32142,function,Renderer::RenderCommandProcessorTask::Execute,,0x00a1f980,0x008a44a0,0x00a1f980
 32143,function,Renderer::ScaleformRenderer::BeginFrame,,0x00a1fa00,0x00893530,0x00a1fa00
 32144,function,Renderer::ScaleformRenderer::SetPixelShader,,0x00a1fa50,0x00893580,0x00a1fa50
@@ -32414,7 +32414,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32413,function,CResRef::FromWideCString,,0x00a2a1e0,0x008213f0,0x00a2a1e0
 32414,function,CResRef::IsNotEqual,,0x00a2a200,0x00821410,0x00a2a200
 32415,function,CResRef::SetFromWString,,0x00a2a220,0x00821430,0x00a2a220
-32416,function,CResRef::FromWString,,0x00a2a2b0,0x008214c0,0x00a2a2b0
+32416,function,CResRef::CResRef,,0x00a2a2b0,0x008214c0,0x00a2a2b0
 32417,function,CResRef::EqualsWString,,0x00a2a2d0,0x008214e0,0x00a2a2d0
 32418,function,CResRef::NotEqualsWString,,0x00a2a3d0,0x008215e0,0x00a2a3d0
 32419,function,Gff4::FlatRef::Set,,0x00a2a3f0,0x0081cf90,0x00a2a3f0
@@ -32448,7 +32448,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32447,function,,,0x00a2b540,0x0081ea50,0x00a2b540
 32448,function,"std::_Sort<Gff4::Field*,int,Gff4::File::FieldAlignmentGreater>",,0x00a2b560,0x0081eac0,0x00a2b560
 32449,function,"stdext::hash_map<unsigned int,unsigned int>::hash_map",,0x00a2b6a0,0x0081ec00,0x00a2b6a0
-32450,function,Gff4::MakeSortedStruct,,0x00a2b720,0x0082e9c0,0x00a2b720
+32450,function,Gff4::File::MakeSortedStruct,,0x00a2b720,0x0082e9c0,0x00a2b720
 32451,function,Gff4::File::AppendData,,0x00a2b800,0x0081ecd0,0x00a2b800
 32452,function,Gff4::SwapImageEndian,,0x00a2b900,0x0081edd0,0x00a2b900
 32453,function,std::vector<unsigned char>::_Tidy,,0x00a2ba50,0x0081ef20,0x00a2ba50
@@ -33075,7 +33075,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33074,function,Pathfinding::AreaGridMap::AddAreaGrid,,0x00a48e30,0x007d26e0,0x00a48e30
 33075,function,Pathfinding::Grid::Grid,,0x00a48f00,0x007ce040,0x00a48f00
 33076,function,Pathfinding::Grid::SetNormal,,0x00a48f70,0x007ce0b0,0x00a48f70
-33077,function,Pathfinding::FindSubsetShift,,0x00a48fb0,0x007ce0f0,0x00a48fb0
+33077,function,Pathfinding::Grid::FindSubsetShift,,0x00a48fb0,0x007ce0f0,0x00a48fb0
 33078,function,Pathfinding::Grid::GetLightSubset,,0x00a49010,0x007ce150,0x00a49010
 33079,function,Pathfinding::Grid::CellKind,,0x00a49070,0x007ce1b0,0x00a49070
 33080,function,Pathfinding::Grid::AddPlaceableCounter,,0x00a490b0,0x007ce1f0,0x00a490b0
@@ -33134,7 +33134,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33133,function,Pathfinding::IsObtuseTurn,,0x00a4baa0,0x007d49a0,0x00a4baa0
 33134,function,Pathfinding::IsObtuseTurn,,0x00a4bb00,0x007d4a00,0x00a4bb00
 33135,function,Pathfinding::Pathfinder::CanWalkStraight,,0x00a4bb80,0x007d4a80,0x00a4bb80
-33136,function,Pathfinding::Distance2D,,0x00a4bf00,0x007d4e00,0x00a4bf00
+33136,function,Pathfinding::Pathfinder::Distance2D,,0x00a4bf00,0x007d4e00,0x00a4bf00
 33137,function,Pathfinding::IsFartherThan2D,,0x00a4c020,0x007d4f20,0x00a4c020
 33138,function,Pathfinding::OctileDistance2D,,0x00a4c090,0x007d4f90,0x00a4c090
 33139,function,Pathfinding::IsGentleTurn,,0x00a4c140,0x007d5040,0x00a4c140
@@ -33494,7 +33494,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33493,function,AnimBase::IsAnimationLooping,"(animId): whether the clip loops. With no model (this+0x18)+4, AnimTypeHasFlag(animId, 1). Else the clip's name (GetAnimName; false if none), the model's Object (slot 0x4C, AsAnimatable), the tree that has the clip (FindTreeNameForClip): with one, Object::IsAnimationNodeLooping (slot 0x78); with none, AnimTypeHasFlag(animId, 1)",0x00a5e940,0x00705120,0x00a5e940
 33494,function,"std::map<std::wstring,?>::find",,0x00a5e9f0,0x007051d0,0x00a5e9f0
 33495,function,"std::map<?,?>::_Insert",,0x00a5ea50,0x00720360,0x00a5ea50
-33496,function,,,0x00a5ec50,0x004580a0,0x00a5ec50
+33496,function,"std::map<?,?>::_Insert",,0x00a5ec50,0x004580a0,0x00a5ec50
 33497,function,AnimBase::GetNodeLengthByName,,0x00a5ee50,0x00705430,0x00a5ee50
 33498,function,AnimBase::SetBlendCurve,,0x00a5ef30,0x00705510,0x00a5ef30
 33499,function,AnimBase::GetWeight,,0x00a5efa0,0x00705580,0x00a5efa0
@@ -73594,12 +73594,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 73593,data,GASStyleSheetCtorFunction::vftable,,0x00b50bc4,0x00b3dc04,0x00b50bc4
 73594,data,,,0x00b50bfc,0x00b3dc3c,0x00b50bfc
 73595,data,,,0x00b50c24,0x00b3dc64,0x00b50c24
-73596,data,?A0x2df6e4b4::StatusWindowLoader::vftable_at_10,,0x00b50c34,0x00b3dc74,0x00b50c34
-73597,data,?A0x2df6e4b4::StatusWindowLoader::vftable,,0x00b50c94,0x00b3dcd4,0x00b50c94
+73596,data,`anonymous namespace'::StatusWindowLoader::vftable_at_10,,0x00b50c34,0x00b3dc74,0x00b50c34
+73597,data,`anonymous namespace'::StatusWindowLoader::vftable,,0x00b50c94,0x00b3dcd4,0x00b50c94
 73598,data,,,0x00b50cc0,0x00b3dd00,0x00b50cc0
 73599,data,,,0x00b50ce4,0x00b3dd24,0x00b50ce4
-73600,data,?A0x2df6e4b4::LangBarLoader::vftable_at_10,,0x00b50d14,0x00b3dd54,0x00b50d14
-73601,data,?A0x2df6e4b4::LangBarLoader::vftable,,0x00b50d74,0x00b3ddb4,0x00b50d74
+73600,data,`anonymous namespace'::LangBarLoader::vftable_at_10,,0x00b50d14,0x00b3dd54,0x00b50d14
+73601,data,`anonymous namespace'::LangBarLoader::vftable,,0x00b50d74,0x00b3ddb4,0x00b50d74
 73602,data,,,0x00b50da0,0x00b3dde0,0x00b50da0
 73603,data,,,0x00b50dc0,0x00b3de00,0x00b50dc0
 73604,data,,,0x00b50de8,0x00b3de34,0x00b50de8
@@ -96009,7 +96009,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 96008,data,C2DASource::typeinfo,,0x00bf4d40,0x00c0be50,0x00bf4d40
 96009,data,M2DA::typeinfo,,0x00bf4d5c,0x00c0be6c,0x00bf4d5c
 96010,data,G2DA::typeinfo,,0x00bf4d70,0x00c0bf30,0x00bf4d70
-96011,data,CameraControllerExplore::s_noPanDragPoint.x,,0x00bf4d84,0x00c0be80,0x00bf4d84
+96011,data,CameraControllerExplore::s_noPanDragPoint,,0x00bf4d84,0x00c0be80,0x00bf4d84
 96012,data,CameraControllerExplore::s_noPanDragPoint.y,,0x00bf4d88,0x00c0be84,0x00bf4d88
 96013,data,CBWCBase::typeinfo,,0x00bf4d90,0x00c0bf8c,0x00bf4d90
 96014,data,CBWCXor::typeinfo,,0x00bf4da8,0x00c0bfa4,0x00bf4da8
@@ -99294,8 +99294,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 99293,data,GASStyleSheetProto::typeinfo,,0x00c1a648,0x00c13990,0x00c1a648
 99294,data,GASStyleSheetCtorFunction::typeinfo,,0x00c1a66c,0x00c139b4,0x00c1a66c
 99295,data,GASMovieClipLoader::typeinfo,,0x00c1a694,0x00c139dc,0x00c1a694
-99296,data,?A0x2df6e4b4::StatusWindowLoader::typeinfo,,0x00c1a6b8,0x00c13a00,0x00c1a6b8
-99297,data,?A0x2df6e4b4::LangBarLoader::typeinfo,,0x00c1a6e8,0x00c13a30,0x00c1a6e8
+99296,data,`anonymous namespace'::StatusWindowLoader::typeinfo,,0x00c1a6b8,0x00c13a00,0x00c1a6b8
+99297,data,`anonymous namespace'::LangBarLoader::typeinfo,,0x00c1a6e8,0x00c13a30,0x00c1a6e8
 99298,data,GASNumberCtorFunction::typeinfo,,0x00c1a714,0x00c13a5c,0x00c1a714
 99299,data,GASNumberObject::typeinfo,,0x00c1a738,0x00c13a80,0x00c1a738
 99300,data,"GASPrototype<GASNumberObject,GASEnvironment>::typeinfo",,0x00c1a758,0x00c13aa0,0x00c1a758
@@ -100786,7 +100786,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100785,data,EclipsePrivate::s_nullCategory,null mapped pointer returned for an end iterator of the category map (the node value at +0x28 otherwise),0x00c32544,0x00c22d34,0x00c32544
 100786,data,,,0x00c32548,,0x00c32548
 100787,data,EclipsePrivate::g_reverbChannelGroups,,0x00c32550,0x00c22d40,0x00c32550
-100788,data,EclipsePrivate::s_reverbChannelGroups._First,,0x00c32554,0x00c22d44,0x00c32554
+100788,data,EclipsePrivate::s_reverbChannelGroups,,0x00c32554,0x00c22d44,0x00c32554
 100789,data,EclipsePrivate::s_reverbChannelGroups._Last,,0x00c32558,0x00c22d48,0x00c32558
 100790,data,,,0x00c32560,,0x00c32560
 100791,data,EclipsePrivate::g_nullReverbChannelGroup,,0x00c32564,0x00c22d54,0x00c32564
@@ -103292,116 +103292,116 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 103291,data,,,0x00c4dae4,0x00c47b04,0x00c4dae4
 103292,data,,,0x00c4e000,0x00c48000,0x00c4e000
 103293,data,,,0x00c4e08d,0x00c4808d,0x00c4e08d
-103294,function,,,0x00475860,0x00402b80,0x00475860
-103295,function,,,0x004781c0,0x004038e0,0x004781c0
-103296,function,,,0x00478490,0x00403c00,0x00478490
-103297,function,,,0x00488774,0x004117c4,0x00488774
+103294,function,"std::_Construct<std::wstring,std::wstring>",,0x00475860,0x00402b80,0x00475860
+103295,function,"SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x004781c0,0x004038e0,0x004781c0
+103296,function,"SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x00478490,0x00403c00,0x00478490
+103297,function,Catch_All@00488774,,0x00488774,0x004117c4,0x00488774
 103298,retired,,,,,
-103299,function,,,0x004893b0,0x00413950,0x004893b0
+103299,function,ParseBoolFromWString,,0x004893b0,0x00413950,0x004893b0
 103300,function,,,0x00436ef0,0x00422650,0x00436ef0
 103301,function,,,0x00422490,0x004226b0,0x00422490
 103302,function,std::list<?>::_Insert,,0x007d5f60,0x004525b0,0x007d5f60
 103303,function,,,0x007d600a,0x0045265a,0x007d600a
 103304,function,std::list<?>::_Assign,,0x007d6ba0,0x00452960,0x007d6ba0
 103305,function,std::list<?>::list,,0x007d6ff0,0x00452a60,0x007d6ff0
-103306,function,,,0x007d7067,0x00452ad7,0x007d7067
-103307,function,,,0x007d9ff0,0x004530e0,0x007d9ff0
+103306,function,Catch_All@007d7067,,0x007d7067,0x00452ad7,0x007d7067
+103307,function,Elem16::operator=,,0x007d9ff0,0x004530e0,0x007d9ff0
 103308,function,"std::map<?,?>::insert",,0x005002a0,0x00455080,0x005002a0
-103309,function,,,0x005c7350,0x0046a330,0x005c7350
-103310,function,,,0x005c7450,0x0046a430,0x005c7450
-103311,function,,,0x004a1ca0,0x0046a450,0x004a1ca0
+103309,function,IntegerToECString,,0x005c7350,0x0046a330,0x005c7350
+103310,function,"SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::GetTextInto",,0x005c7450,0x0046a430,0x005c7450
+103311,function,"SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::GetText",,0x004a1ca0,0x0046a450,0x004a1ca0
 103312,function,std::vector<?>::insert,,0x0087ead0,0x00472bc0,0x0087ead0
 103313,function,,,,0x00473fb0,
-103314,function,,,0x00515fb0,0x00489ff0,0x00515fb0
+103314,function,std::_Destroy_range<Multithreading::SynchSafePointer<?> *>,,0x00515fb0,0x00489ff0,0x00515fb0
 103315,function,std::vector<?>::erase,,0x0057a680,0x0048a740,0x0057a680
-103316,function,,,0x004fc640,0x0048bd20,0x004fc640
-103317,function,,,0x0084a670,0x0048cf90,0x0084a670
-103318,function,,,0x0080e970,0x004b3470,0x0080e970
+103316,function,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialState>>::vector,,0x004fc640,0x0048bd20,0x004fc640
+103317,function,"stdext::hash_map<std::wstring,void *>::operator[]",,0x0084a670,0x0048cf90,0x0084a670
+103318,function,"std::_Tree<std::wstring,RefHandle>::_Erase",,0x0080e970,0x004b3470,0x0080e970
 103319,function,,,0x0080f090,0x004b3b90,0x0080f090
-103320,function,,,0x004f4710,0x004b3fa0,0x004f4710
-103321,function,,,0x00810080,0x004b4ca0,0x00810080
-103322,function,,,0x00458ab0,0x004b4ce0,0x00458ab0
+103320,function,ResourceHandle::operator=,,0x004f4710,0x004b3fa0,0x004f4710
+103321,function,"std::_Tree<std::wstring,RefHandle>::~_Tree",,0x00810080,0x004b4ca0,0x00810080
+103322,function,Stub::CopyConstruct_WString_Handle_0x1C,,0x00458ab0,0x004b4ce0,0x00458ab0
 103323,function,"std::map<std::wstring,?>::_Buynode",,0x00810170,0x004b5000,0x00810170
 103324,function,,,0x008101f9,0x004b5089,0x008101f9
 103325,function,"std::map<?,?>::_Insert",,0x00810420,0x004b50c0,0x00810420
 103326,function,"std::map<std::wstring,?>::insert",,0x00810640,0x004b5330,0x00810640
-103327,function,,,0x00816990,0x004b6f20,0x00816990
-103328,function,,,0x00812e80,0x004bb610,0x00812e80
+103327,function,"std::pair<std::wstring,std::wstring>::~pair",,0x00816990,0x004b6f20,0x00816990
+103328,function,RefHandle::RefHandle,,0x00812e80,0x004bb610,0x00812e80
 103329,function,,,,0x004c9a40,
-103330,function,,,0x0086b9a0,0x004d03a0,0x0086b9a0
+103330,function,Core::VectorClear<?>,,0x0086b9a0,0x004d03a0,0x0086b9a0
 103331,function,std::vector<?>::_Buy,,0x00701640,0x004ef380,0x00701640
-103332,function,,,0x00610060,0x004fe950,0x00610060
-103333,function,,,0x0063d330,0x00527f20,0x0063d330
-103334,function,,,0x006352c0,0x0055edf0,0x006352c0
+103332,function,std::vector<unsigned int>::resize,,0x00610060,0x004fe950,0x00610060
+103333,function,std::vector<unsigned int>::resize,,0x0063d330,0x00527f20,0x0063d330
+103334,function,ECBase::ECDynArray<?*>::DeleteAll,,0x006352c0,0x0055edf0,0x006352c0
 103335,function,std::vector<?>::operator=,,0x0048d870,0x0057ad70,0x0048d870
-103336,function,,,0x0072bc30,0x0057aea0,0x0072bc30
+103336,function,ECBase::ECDynArray<?>::operator=,,0x0072bc30,0x0057aea0,0x0072bc30
 103337,function,std::vector<?>::reserve,,0x0072c730,0x005bfe10,0x0072c730
-103338,function,,,0x0071d580,0x005f07e0,0x0071d580
+103338,function,ECBase::ECDynArray<?>::SwapRemoveAt,,0x0071d580,0x005f07e0,0x0071d580
 103339,function,std::vector<?>::resize,,0x005d26e0,0x0060f610,0x005d26e0
 103340,function,,,0x0071ca90,0x0064bd40,0x0071ca90
-103341,function,,,0x0071d410,0x0064c080,0x0071d410
-103342,function,,,0x007af160,0x0068cf20,0x007af160
-103343,function,,,0x00538c90,0x006929b0,0x00538c90
-103344,function,,,0x00538f30,0x00693100,0x00538f30
-103345,function,,,0x004f3330,0x006935f0,0x004f3330
+103341,function,std::vector<unsigned int>::append,,0x0071d410,0x0064c080,0x0071d410
+103342,function,"std::fill<ECBase::ECDynArray *,ECBase::ECDynArray>",,0x007af160,0x0068cf20,0x007af160
+103343,function,Multithreading::SynchSafePointerListBase::Remove,,0x00538c90,0x006929b0,0x00538c90
+103344,function,Multithreading::SynchSafePointer<?>::Release,,0x00538f30,0x00693100,0x00538f30
+103345,function,Graphics::MaterialOpacity::PassBinding::~PassBinding,,0x004f3330,0x006935f0,0x004f3330
 103346,function,std::vector<?>::_Buy,,0x007b55f0,0x00693740,0x007b55f0
-103347,function,,,0x004f45b0,0x00695aa0,0x004f45b0
+103347,function,Multithreading::SynchSafePointerListBase::AddHolder,,0x004f45b0,0x00695aa0,0x004f45b0
 103348,function,"std::map<?,?>::_Erase",,0x004f3830,0x00698f00,0x004f3830
-103349,function,,,0x00534a70,0x00699110,0x00534a70
-103350,function,,,0x004f71a0,0x00699250,0x004f71a0
-103351,function,,,0x00458420,0x00699f40,0x00458420
-103352,function,,,0x007d7b80,0x006befd0,0x007d7b80
+103349,function,Multithreading::SynchSafePointer<?>::SynchSafePointer,,0x00534a70,0x00699110,0x00534a70
+103350,function,Multithreading::SynchSafePointer::SynchSafePointer,,0x004f71a0,0x00699250,0x004f71a0
+103351,function,General::SafePointer::Assign,,0x00458420,0x00699f40,0x00458420
+103352,function,Elem16::Elem16,,0x007d7b80,0x006befd0,0x007d7b80
 103353,function,std::vector<?>::_Insert_n,,0x005d2520,0x006fc190,0x005d2520
 103354,function,std::vector<?>::push_back,,0x006f1340,0x006fc520,0x006f1340
-103355,function,,,0x00a5fee0,0x006ff4f0,0x00a5fee0
-103356,function,,,0x00a5de10,0x00704540,0x00a5de10
+103355,function,"std::map<std::wstring,?>::insert",,0x00a5fee0,0x006ff4f0,0x00a5fee0
+103356,function,"std::map<std::wstring,?>::_Buynode",,0x00a5de10,0x00704540,0x00a5de10
 103357,function,"std::map<?,?>::_Insert",,0x00a5ec50,0x00705230,0x00a5ec50
 103358,function,"std::map<std::wstring,?>::insert",,0x00601130,0x00705a90,0x00601130
 103359,function,std::list<?>::_Incsize,,0x0054a3f0,0x00712b50,0x0054a3f0
 103360,function,std::vector<?>::insert,,0x006f1160,0x0071d020,0x006f1160
-103361,function,,,0x0076b540,0x00720c80,0x0076b540
-103362,function,,,0x00706a30,0x0072c800,0x00706a30
-103363,function,,,0x007af9f0,0x00742440,0x007af9f0
-103364,function,,,0x007b0890,0x00742480,0x007b0890
+103361,function,ECBase::ECDynArray<?>::FindOrAppend,,0x0076b540,0x00720c80,0x0076b540
+103362,function,"std::map<std::wstring,int>::operator[]",,0x00706a30,0x0072c800,0x00706a30
+103363,function,"std::_Copy_opt<ECBase::ECDynArray<?>*,ECBase::ECDynArray<?>*>",,0x007af9f0,0x00742440,0x007af9f0
+103364,function,"std::_Copy_backward<ECBase::ECDynArray *,ECBase::ECDynArray *>",,0x007b0890,0x00742480,0x007b0890
 103365,function,std::vector<?>::erase,,0x0053b250,0x00742560,0x0053b250
 103366,function,std::vector<?>::_Tidy,,0x00516920,0x0074f290,0x00516920
-103367,function,,,0x004fc2e0,0x00757960,0x004fc2e0
-103368,function,,,0x00516980,0x00757990,0x00516980
+103367,function,std::fill<General::SafePointer>,,0x004fc2e0,0x00757960,0x004fc2e0
+103368,function,"std::_Uninit_copy<Multithreading::SynchSafePointer*,Multithreading::SynchSafePointer*>",,0x00516980,0x00757990,0x00516980
 103369,function,,,0x005169e9,0x007579f9,0x005169e9
-103370,function,,,0x004fc3a0,0x00757ab0,0x004fc3a0
+103370,function,std::_Uninit_fill_n<General::SafePointer>,,0x004fc3a0,0x00757ab0,0x004fc3a0
 103371,function,,,0x004fc40b,0x00757b1b,0x004fc40b
-103372,function,,,0x00556d10,0x00757c80,0x00556d10
+103372,function,"std::_Copy_backward_opt<?*,?*>",,0x00556d10,0x00757c80,0x00556d10
 103373,function,std::vector<?>::_Ufill,,0x004fc440,0x00758190,0x004fc440
-103374,function,,,0x005173a0,0x00758320,0x005173a0
+103374,function,"std::uninitialized_copy<Multithreading::SynchSafePointer*,Multithreading::SynchSafePointer*>",,0x005173a0,0x00758320,0x005173a0
 103375,function,std::vector<?>::_Insert_n,,0x005173d0,0x00758350,0x005173d0
 103376,function,,,0x00517553,0x007584d3,0x00517553
 103377,function,,,0x005175de,0x0075855e,0x005175de
 103378,function,std::vector<?>::resize,,0x004fc550,0x007585f0,0x004fc550
 103379,function,std::vector<?>::insert,,0x00517670,0x007586e0,0x00517670
-103380,function,,,0x0086b9a0,0x0075f6b0,0x0086b9a0
-103381,function,,,0x0051b0d0,0x007c40d0,0x0051b0d0
+103380,function,Core::VectorClear<?>,,0x0086b9a0,0x0075f6b0,0x0086b9a0
+103381,function,Stub::MessageWithWStringAt4_Destroy,,0x0051b0d0,0x007c40d0,0x0051b0d0
 103382,function,,,,0x007c8de0,
-103383,function,,,0x00525240,0x007cc290,0x00525240
-103384,function,,,0x0054eb00,0x007ded30,0x0054eb00
-103385,function,,,0x00516970,0x007ded50,0x00516970
-103386,function,,,0x00568350,0x007deec0,0x00568350
-103387,function,,,0x0057ab20,0x007def40,0x0057ab20
-103388,function,,,0x00457690,0x007e0db0,0x00457690
+103383,function,GUI::RunConsoleCommandMessage::~RunConsoleCommandMessage,,0x00525240,0x007cc290,0x00525240
+103384,function,Multithreading::SynchSafePointer<?>::SynchSafePointer(const Multithreading::SynchSafePointer<?>&),,0x0054eb00,0x007ded30,0x0054eb00
+103385,function,std::vector<Multithreading::SynchSafePointer>::_Tidy,,0x00516970,0x007ded50,0x00516970
+103386,function,"std::_Copy_opt<?*,?*,std::_Nonscalar_ptr_iterator_tag>",,0x00568350,0x007deec0,0x00568350
+103387,function,std::vector<Multithreading::SynchSafePointer<?>>::erase_at,,0x0057ab20,0x007def40,0x0057ab20
+103388,function,std::vector<Math::Vector4f>::vector,,0x00457690,0x007e0db0,0x00457690
 103389,function,std::vector<?>::push_back,,0x00517700,0x007ed530,0x00517700
 103390,function,,,0x0080ea00,0x007edda0,0x0080ea00
-103391,function,,,0x004f71d0,0x007ee1f0,0x004f71d0
-103392,function,,,0x008100c0,0x007ee810,0x008100c0
-103393,function,,,0x00458a20,0x007ee8c0,0x00458a20
+103391,function,"std::pair<std::wstring const,Multithreading::SynchSafePointer>::pair",,0x004f71d0,0x007ee1f0,0x004f71d0
+103392,function,"std::_Tree<std::wstring,RefHandle>::_Tree",,0x008100c0,0x007ee810,0x008100c0
+103393,function,Stub::Destroy_Map_WString_0xC_Handle_0x28,,0x00458a20,0x007ee8c0,0x00458a20
 103394,function,"std::map<std::wstring,?>::insert",,0x00810860,0x007eee80,0x00810860
-103395,function,,,0x00458d60,0x007ef080,0x00458d60
-103396,function,,,0x004bf300,0x00801470,0x004bf300
-103397,function,,,0x004b0f00,0x008780b0,0x004b0f00
+103395,function,"std::map<std::wstring,SmartHandle>::operator[]",,0x00458d60,0x007ef080,0x00458d60
+103396,function,ECLog::SetIniPath,,0x004bf300,0x00801470,0x004bf300
+103397,function,"SmartData::Attribute<ECBase::ECDynArray<int>,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::SetFromText",,0x004b0f00,0x008780b0,0x004b0f00
 103398,retired,,,,,
 103399,function,,,0x00906fc4,0x008dd610,0x00906fc4
 103400,function,,,,0x008df7f0,
 103401,function,,,,0x008df8a0,
 103402,function,,,0x00944a60,0x0091c190,0x00944a60
-103403,function,,,0x0040d610,0x00a677e0,0x0040d610
+103403,function,std::vector<unsigned int>::vector,,0x0040d610,0x00a677e0,0x0040d610
 103404,function,,,0x00a74720,0x00a6a470,0x00a74720
 103405,function,,,0x00a74728,0x00a6a478,0x00a74728
 103406,function,,,0x00a74730,0x00a6a480,0x00a74730

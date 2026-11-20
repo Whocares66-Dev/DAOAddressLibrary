@@ -88,6 +88,11 @@ class _Parser:
             raise ValueError(f"empty name at {self.i} in {self.s!r}")
         self.i = end + 1
         self.remember(name)
+        # ?A0x2df6e4b4 is the compiler's tag for one file's anonymous
+        # namespace; undname writes it so (decomp-agent, 2026-11-20: six of
+        # the table's names held the tag).
+        if name.startswith("?A"):
+            return "`anonymous namespace'"
         return name
 
     def qualified(self):

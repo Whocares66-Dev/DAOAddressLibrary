@@ -26,6 +26,12 @@ class Plain(unittest.TestCase):
             "EC::Cutscene::Actor::ActionRotate",
         )
 
+    def test_anonymous_namespace(self):
+        self.assertEqual(
+            parse(".?AVLangBarLoader@?A0x2df6e4b4@@"),
+            "`anonymous namespace'::LangBarLoader",
+        )
+
 
 class Templates(unittest.TestCase):
     PAUSE = (
