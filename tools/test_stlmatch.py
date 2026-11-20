@@ -92,6 +92,25 @@ class Merge(unittest.TestCase):
         )
 
 
+class Kinds(unittest.TestCase):
+    def test_memberwise_assignment(self):
+        self.assertEqual(
+            stlmatch.struct("U", 8),
+            "struct U_8 { int a[2]; U_8 &operator=(const U_8 &o) "
+            "{ a[0] = o.a[0]; a[1] = o.a[1]; return *this; } };",
+        )
+
+    def test_shorts_only_where_ints_do_not_fit(self):
+        self.assertIsNone(stlmatch.struct("H", 8))
+        self.assertEqual(stlmatch.struct("H", 6), "struct H_6 { short a[3]; };")
+
+    def test_element_of_new_kind(self):
+        self.assertEqual(
+            stlmatch.element_of("std::vector<struct W_12,x>::erase"),
+            (12, stlmatch.KIND["W"]),
+        )
+
+
 class Generated(unittest.TestCase):
     def test_every_kind_and_container(self):
         lines = [x for v in stlmatch.instantiations().values() for x in v]

@@ -33,6 +33,18 @@ Only unnamed IDs are named; --agree writes how the named ones compare.
 the generated types whose code it is. DAODecomp's stl_bruteforce.py starts
 from it to find the real type (decomp-agent asked, 2026-11-20).
 
+What it cannot reach, read 2026-11-20: 989 of the build's functions are this
+code, and widening the kinds after the first 915 (inline memberwise operator=,
+empty inline destructors, sizes to 256 and DAODecomp's big records, shorts,
+containers as elements; floats added nothing and were taken out) found 8
+unnamed more. A miss's bytes say why: where a member copies an element, the
+copy is inlined and is the element's own fields (vector<Physics::Contact>'s
+_Insert_n moves some through the FPU, vector<Renderer::ShaderParameter>'s a
+byte at +0x38), so only the class's real members make that code. That is
+DAODecomp's matcher's work, from a name. 16-byte aligned elements
+(Math::Vector4f) cannot be generated: VC8 does not instantiate a whole
+container of one (members take it by value, C2719).
+
 It needs game/ and the compiler, which are in no repository; what it finds goes
 into the table with addrlib.py names.
 """
@@ -51,7 +63,12 @@ import libmatch
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MIN = 48
 FLAGS = "/nologo /c /O2 /Ob1 /Oy /GS /EHsc /Gy /GF /MT /GR".split()
-SIZES = list(range(4, 129, 4))
+SIZES = list(range(4, 257, 4))
+# Records past 256 bytes the game keeps in vectors, from DAODecomp's
+# dev/stl-element-classes.tsv (2026-11-20): Offer, AddInItem, AddInRecord,
+# AddInXmlEntry.
+BIG_SIZES = [372, 464, 676, 708]
+SHORT_SIZES = [2, 6, 10, 14, 18, 22]
 MAP_SIZES = list(range(4, 65, 4))
 SCALAR_ELEMENTS = ["char", "short", "int", "unsigned int", "__int64", "float", "double"]
 REAL = [
@@ -59,14 +76,26 @@ REAL = [
     "std::string",
     "std::pair<std::wstring,std::wstring>",
     "std::vector<int>",
+    "std::vector<std::wstring>",
+    "std::list<int>",
+    "std::map<int,int>",
 ]
 KIND = {
     "P": "plain",
     "D": "out-of-line ctor/copy/dtor",
     "A": "out-of-line ctor/dtor, trivial copy",
     "C": "out-of-line ctor/copy, trivial dtor",
+    "U": "inline memberwise operator=",
+    "E": "empty inline dtor",
+    "W": "inline memberwise operator=, empty inline dtor",
+    "H": "2-byte aligned (shorts)",
 }
-SYNTHETIC = re.compile(r"^[PDAC]_\d+$")
+# The kinds DAODecomp's element classes showed beside the first four, 2026-11-20:
+# an operator= written member by member copies otherwise than a trivial one,
+# an empty destructor written out is not a trivial one. Not Math::Vector4f's
+# 16-byte alignment: VC8 cannot instantiate a whole container of an aligned
+# type (members take it by value, C2719), so the game used only some of them.
+SYNTHETIC = re.compile(r"^[%s]_\d+$" % "".join(KIND))
 # A scalar argument says too much: a map over unsigned int is the same code
 # as one over any pointer or unsigned type.
 SCALARS = {
@@ -79,8 +108,45 @@ PIECE = re.compile(r"^_*(catch|unwind|ehhandler|unwindfunclet|tryblocktable)\$",
 # --- generating ---
 
 
-def element_types(sizes):
-    return ["%s_%d" % (k, n) for n in sizes for k in KIND]
+def struct(kind, n):
+    """The declaration of the generated element of this kind and size, or None
+    where the kind has no element of that size."""
+    if kind == "H":
+        if n % 4 == 0:
+            return None
+        return "struct H_%d { short a[%d]; };" % (n, n // 2)
+    if n % 4:
+        return None
+    t, a = "%s_%d" % (kind, n), "int a[%d];" % (n // 4)
+    assign = "%s &operator=(const %s &o) { %s return *this; }" % (
+        t, t, " ".join("a[%d] = o.a[%d];" % (i, i) for i in range(n // 4)),
+    )  # fmt: skip
+    empty_dtor = "~%s() {}" % t
+    body = {
+        "P": "",
+        "D": "{0}(); {0}(const {0} &); {0} &operator=(const {0} &); ~{0}();".format(t),
+        "A": "{0}(); ~{0}();".format(t),
+        "C": "{0}(); {0}(const {0} &); {0} &operator=(const {0} &);".format(t),
+        "U": assign,
+        "E": empty_dtor,
+        "W": assign + " " + empty_dtor,
+    }[kind]
+    return "struct %s { %s %s };" % (t, a, body)
+
+
+def element_types(sizes, kinds=None):
+    out = []
+    for n in sizes:
+        out += ["%s_%d" % (k, n) for k in (kinds or KIND) if struct(k, n)]
+    return out
+
+
+def all_elements():
+    return (
+        element_types(SIZES)
+        + element_types(BIG_SIZES, "PDU")
+        + element_types(SHORT_SIZES, "H")
+    )
 
 
 def declarations():
@@ -97,27 +163,21 @@ def declarations():
             "utility",
         )
     ]
-    for n in SIZES:
-        a = "int a[%d];" % (n // 4)
-        lines += [
-            "struct P_%d { %s };" % (n, a),
-            "struct D_{0} {{ {1} D_{0}(); D_{0}(const D_{0} &); D_{0} &operator=(const D_{0} &); ~D_{0}(); }};".format(n, a),
-            "struct A_{0} {{ {1} A_{0}(); ~A_{0}(); }};".format(n, a),
-            "struct C_{0} {{ {1} C_{0}(); C_{0}(const C_{0} &); C_{0} &operator=(const C_{0} &); }};".format(n, a),
-        ]  # fmt: skip
-        for t in ("%s_%d" % (k, n) for k in KIND):
-            lines.append("bool operator==(const %s &, const %s &);" % (t, t))
-            lines.append("bool operator<(const %s &, const %s &);" % (t, t))
+    for t in all_elements():
+        kind, n = t.split("_")
+        lines.append(struct(kind, int(n)))
+        lines.append("bool operator==(const %s &, const %s &);" % (t, t))
+        lines.append("bool operator<(const %s &, const %s &);" % (t, t))
     return "\n".join(lines) + "\n"
 
 
 def instantiations():
     """{file stem: [explicit instantiation lines]}."""
     out = {}
-    elements = element_types(SIZES) + SCALAR_ELEMENTS + REAL
+    elements = all_elements() + SCALAR_ELEMENTS + REAL
     for cont in ("vector", "list", "deque"):
         out[cont] = ["template class std::%s<%s >;" % (cont, t) for t in elements]
-    values = element_types(MAP_SIZES) + SCALAR_ELEMENTS + REAL[:2]
+    values = element_types(MAP_SIZES, "PDACUE") + SCALAR_ELEMENTS + REAL[:2]
     for i, key in enumerate(("int", "unsigned int", "std::wstring")):
         out["map%d" % i] = [
             "template class std::map<%s,%s >;" % (key, v) for v in values
@@ -289,7 +349,7 @@ def element_of(full):
     """(size, kind) of the element a generated instantiation was made for."""
     if full is None:
         return None
-    m = re.search(r"\b([PDAC])_(\d+)\b", full)
+    m = re.search(r"\b([%s])_(\d+)\b" % "".join(KIND), full)
     if m:
         return (int(m.group(2)), KIND[m.group(1)])
     if "std::basic_string<" in full:

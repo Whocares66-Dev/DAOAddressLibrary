@@ -676,8 +676,15 @@ def write(db):
         Rules.load(),
         load_ranges(),
     )
+    # Every ID, not one an address: where the linker made one function of two
+    # in GOG's build and not in another's, two IDs share its address (the
+    # `shared` note, dev/BUILDS.md), and both are that function. 120 such IDs
+    # had no row, decomp-agent found (2026-11-20).
     lines = ["id,subsystem,class,how"]
-    for va, (number, _) in sorted(functions.items(), key=lambda kv: kv[1][0]):
+    for number, row in sorted(db.rows.items()):
+        va = row.addresses.get(BUILD)
+        if row.kind != "function" or va is None:
+            continue
         subsystem, how, cls = placed[va]
         lines.append(",".join(csv_cell(c) for c in (str(number), subsystem, cls, how)))
     addrlib.write_if_changed(OUT, addrlib.LF.join(lines) + addrlib.LF)
