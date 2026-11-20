@@ -39,7 +39,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 38,function,Messages::IObservable::~IObservable,,0x00401ca0,0x00401d90,0x00401ca0
 39,function,Messages::IObservable::`scalar deleting destructor',,0x00401cb0,0x00401da0,0x00401cb0
 40,function,GDefaultAcquireInterface::~GDefaultAcquireInterface,,0x00401cd0,0x00401dc0,0x00401cd0
-41,function,,,0x00401ce0,0x00401dd0,0x00401ce0
+41,function,GAcquireInterface::`vector deleting destructor',,0x00401ce0,0x00401dd0,0x00401ce0
 42,function,GMutex::`default constructor closure',,0x00401d40,0x00401e30,0x00401d40
 43,function,GEvent::`default constructor closure',,0x00401d50,0x00401e40,0x00401d50
 44,function,GSemaphore::`default constructor closure',,0x00401d60,0x00401e50,0x00401d60
@@ -462,7 +462,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 461,function,GNewOverrideBase::operator delete,,0x00416d70,0x004170f0,0x00416d70
 462,function,,,0x00416d80,0x00417100,0x00416d80
 463,function,,,0x00416da0,0x00417120,0x00416da0
-464,function,,,0x00416de0,0x00417160,0x00416de0
+464,function,GDefaultAcquireInterface::`vector deleting destructor',,0x00416de0,0x00417160,0x00416de0
 465,function,,,0x00416e40,0x004171c0,0x00416e40
 466,function,,,0x00416e90,0x00417210,0x00416e90
 467,function,,,0x00416f00,0x00417280,0x00416f00
@@ -506,7 +506,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 505,function,GSemaphore::operator-=,,0x00417950,0x00417c10,0x00417950
 506,function,GSemaphore::TryAcquireCancel,,0x004179c0,0x00417c80,0x004179c0
 507,function,,,0x004179d0,0x00417c90,0x004179d0
-508,function,,,0x00417a10,0x00417cd0,0x00417a10
+508,function,GSemaphoreWaitableIncrement::`scalar deleting destructor'`adjustor{20}',,0x00417a10,0x00417cd0,0x00417a10
 509,function,,,0x00417a20,0x00417ce0,0x00417a20
 510,function,,,0x00417a50,0x00417d10,0x00417a50
 511,function,GSemaphore::CreateWaitableIncrement,,0x00417a70,0x00417d30,0x00417a70
@@ -521,8 +521,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 520,function,GAcquireInterface::AcquireOneOfMultipleObjects,,0x00417f10,0x004181d0,0x00417f10
 521,function,GEvent::SetEvent,,0x00418060,0x00418320,0x00418060
 522,function,GSemaphoreWaitableIncrement::`scalar deleting destructor',,0x004180c0,0x00418380,0x004180c0
-523,function,,,0x004180e0,0x004183a0,0x004180e0
-524,function,,,0x004180f0,0x004183b0,0x004180f0
+523,function,GSemaphore::`scalar deleting destructor'`adjustor{20}',,0x004180e0,0x004183a0,0x004180e0
+524,function,GEvent::`scalar deleting destructor'`adjustor{20}',,0x004180f0,0x004183b0,0x004180f0
 525,function,GWaitable::Acquire,,0x00418100,0x004183c0,0x00418100
 526,function,,,0x00418130,0x004183f0,0x00418130
 527,function,,,0x00418140,0x00418400,0x00418140
@@ -557,7 +557,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 556,function,GThread::MSleep,,0x00418670,0x00418930,0x00418670
 557,function,GThread::GetCPUCount,,0x00418680,0x00418940,0x00418680
 558,function,,,0x004186a0,0x00418960,0x004186a0
-559,function,,,0x004186b0,0x00418970,0x004186b0
+559,function,GMutex_AreadyLockedAcquireInterface::`scalar deleting destructor',,0x004186b0,0x00418970,0x004186b0
 560,function,GMutex::~GMutex,,0x004186d0,0x00418990,0x004186d0
 561,function,GWaitCondition::~GWaitCondition,,0x00418710,0x004189d0,0x00418710
 562,function,GThread::~GThread,,0x00418730,0x004189f0,0x00418730
@@ -567,8 +567,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 566,function,GThread::GetThreadState,,0x00418790,0x00418a70,0x00418790
 567,function,GMutex::`scalar deleting destructor',,0x004187b0,0x00418ad0,0x004187b0
 568,function,GThread::`scalar deleting destructor',,0x00418820,0x00418b40,0x00418820
-569,function,,,0x00418890,0x00418bb0,0x00418890
-570,function,,,0x004188a0,0x00418bc0,0x004188a0
+569,function,GThread::`scalar deleting destructor'`adjustor{20}',,0x00418890,0x00418bb0,0x00418890
+570,function,GMutex::`scalar deleting destructor'`adjustor{20}',,0x004188a0,0x00418bc0,0x004188a0
 571,function,GThread::Resume,,0x004188b0,0x00418bd0,0x004188b0
 572,function,,,0x004188f0,0x00418c10,0x004188f0
 573,function,,,0x00418920,0x00418c40,0x00418920
@@ -605,7 +605,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 604,function,GRefCountBaseImpl::AddRef,,0x00419120,0x00419440,0x00419120
 605,function,,,0x00419130,0x00419450,0x00419130
 606,function,,,0x00419160,0x007b9210,0x00419160
-607,function,,,0x00419180,0x00419480,0x00419180
+607,function,GDebugAllocator::`scalar deleting destructor',,0x00419180,0x00419480,0x00419180
 608,function,GMemory::SetAllocator,,0x004191a0,0x004194a0,0x004191a0
 609,function,,,0x004191c0,0x004194c0,0x004191c0
 610,function,GMemory::SetDebugAllocator,,0x004191d0,0x004194d0,0x004191d0
@@ -669,7 +669,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 668,function,,,0x0041b2f0,0x0041b5f0,0x0041b2f0
 669,function,,,0x0041b310,0x0041b610,0x0041b310
 670,function,,,0x0041b360,0x0041b660,0x0041b360
-671,function,,,0x0041b370,0x0041b670,0x0041b370
+671,function,GStandardAllocator::`scalar deleting destructor',,0x0041b370,0x0041b670,0x0041b370
 672,function,,,0x0041b3a0,0x0041b6a0,0x0041b3a0
 673,function,,,0x0041b400,0x0041b700,0x0041b400
 674,function,,,0x0041b480,0x0041b780,0x0041b480
@@ -681,7 +681,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 680,function,,,0x0041b670,0x0041b970,0x0041b670
 681,function,,,0x0041b750,0x0041ba50,0x0041b750
 682,function,,,0x0041b7b0,0x0041bab0,0x0041b7b0
-683,function,,,0x0041b7c0,0x0041bac0,0x0041b7c0
+683,function,GJPEGInput::`scalar deleting destructor',,0x0041b7c0,0x0041bac0,0x0041b7c0
 684,function,,,0x0041b7e0,0x0041bae0,0x0041b7e0
 685,function,,,0x0041b7f0,0x0041baf0,0x0041b7f0
 686,function,,,0x0041b810,0x0041bb10,0x0041b810
@@ -3710,7 +3710,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3709,function,"std::_Copy_backward_opt<OfferTag*,OfferTag*>",,0x00498040,0x00879740,0x00498040
 3710,function,TiXmlString::~TiXmlString,,0x004980a0,0x004db380,0x004980a0
 3711,function,TiXmlDocument::~TiXmlDocument,,0x004980c0,0x004db3f0,0x004980c0
-3712,function,,,0x004980f0,0x004db420,0x004980f0
+3712,function,TiXmlDocument::`scalar deleting destructor',,0x004980f0,0x004db420,0x004980f0
 3713,function,Offer::ParseDate,,0x00498130,0x008797a0,0x00498130
 3714,function,ECBase::ECDynArray<Offer>::At,,0x00498440,0x004db3a0,0x00498440
 3715,function,ECBase::ECDynArray<Offer>::At,,0x00498490,0x004db620,0x00498490
@@ -5294,7 +5294,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5293,function,,,0x004e1280,0x00734030,0x004e1280
 5294,function,,,0x004e1290,0x00735490,0x004e1290
 5295,function,,,0x004e12b0,0x00735340,0x004e12b0
-5296,function,,,0x004e12f0,0x00734040,0x004e12f0
+5296,function,std::ios_base::`scalar deleting destructor',,0x004e12f0,0x00734040,0x004e12f0
 5297,function,,,0x004e1320,0x007353e0,0x004e1320
 5298,function,Stub::ReturnMinusOne,,0x004e13d0,0x0058b280,0x004e13d0
 5299,function,,,0x004e13e0,0x007354f0,0x004e13e0
@@ -5312,7 +5312,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5311,function,,,0x004e18d0,0x00738ab0,0x004e18d0
 5312,function,,,0x004e19a0,0x00738b80,0x004e19a0
 5313,function,,,0x004e1b50,0x00738d30,0x004e1b50
-5314,function,,,0x004e1bc0,0x00738da0,0x004e1bc0
+5314,function,"std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char>>::`scalar deleting destructor'",,0x004e1bc0,0x00738da0,0x004e1bc0
 5315,function,ReadIniString,,0x004e1bf0,0x0082c960,0x004e1bf0
 5316,function,WriteIniString,,0x004e1cd0,0x0082ca40,0x004e1cd0
 5317,function,"std::basic_stringstream<char,std::char_traits<char>,std::allocator<char>>::`vbase destructor'",,0x004e1d40,0x007399f0,0x004e1d40
@@ -6547,7 +6547,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6546,function,Graphics::MaterialTextureParamRef::Create,,0x00510760,0x007fbc70,0x00510760
 6547,function,Graphics::MaterialParam::GetSamplerName,,0x005107f0,0x007fbd00,0x005107f0
 6548,function,GRefCountBaseImpl::~GRefCountBaseImpl,,0x00510820,0x007b8c40,0x00510820
-6549,function,,,0x00510830,0x007b9370,0x00510830
+6549,function,GFxMovieDef::ResourceVisitor::`scalar deleting destructor',,0x00510830,0x007b9370,0x00510830
 6550,function,GUI::ScaleformManager::MouseToViewport,,0x00510850,0x007b8c50,0x00510850
 6551,function,GUI::InstallScaleformAllocators,,0x005108e0,0x007b8ce0,0x005108e0
 6552,function,GuiMovieSet::LayerLess,"Answers whether the first movie's layer (int at +0x2C, structs.csv GuiMovie.layer) is less than the second's; the ordering for the set GuiMovieSet::Insert fills through 0x00513CF0 (name INFERRED from that caller chain).",0x00510900,0x007b8d00,0x00510900
@@ -22294,10 +22294,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22293,function,,,0x00821680,0x00498050,0x00821680
 22294,function,NxPlaneShapeDesc::isValid,,0x00821700,0x004986c0,0x00821700
 22295,function,,,0x00821990,0x00498b80,0x00821990
-22296,function,,,0x008219d0,0x00498bc0,0x008219d0
+22296,function,NxControllerDesc::`scalar deleting destructor',,0x008219d0,0x00498bc0,0x008219d0
 22297,function,,,0x008219f0,0x00498be0,0x008219f0
 22298,function,Physics::PhysicsActorPairFiltering::onActorPairs,,0x00821a40,0x00498c30,0x00821a40
-22299,function,,,0x00821ab0,0x00498ca0,0x00821ab0
+22299,function,NxUserActorPairFiltering::`scalar deleting destructor',,0x00821ab0,0x00498ca0,0x00821ab0
 22300,function,Physics::PhysicsScene::CreateTrigger,,0x00821ad0,0x00498cc0,0x00821ad0
 22301,function,Physics::PhysicsScene::CreateController,,0x00821b40,0x00498d30,0x00821b40
 22302,function,Physics::RaycastReportClosest::onHit,,0x00821f10,0x00499100,0x00821f10
@@ -22656,7 +22656,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22655,function,NxSpringAndDamperEffectorDesc::setToDefault,,0x00837770,0x004a8fa0,0x00837770
 22656,function,Math::Vector4f::Copy,,0x008377b0,0x004a8fe0,0x008377b0
 22657,function,Physics::FromNxControllersHit,,0x008377d0,0x004a9000,0x008377d0
-22658,function,,,0x00837800,0x004a9030,0x00837800
+22658,function,NxEffectorDesc::`scalar deleting destructor',,0x00837800,0x004a9030,0x00837800
 22659,function,Physics::ToNxJointLimitDesc,,0x00837820,0x004a9050,0x00837820
 22660,function,Physics::ToNxJointDriveDesc,,0x00837840,0x004a9070,0x00837840
 22661,function,Physics::ToNxJointLimitSoftDesc,,0x00837860,0x004a9090,0x00837860
@@ -22678,7 +22678,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22677,function,Physics::PhysicsControllerCapsule::SetCollision,,0x00837d00,0x004ada30,0x00837d00
 22678,function,Physics::PhysicsControllerCapsule::GetCollision,,0x00837d20,0x004ada00,0x00837d20
 22679,function,Physics::PhysicsControllerHitReport::PhysicsControllerHitReport,,0x00837d30,0x004ada70,0x00837d30
-22680,function,,,0x00837d40,0x004ada80,0x00837d40
+22680,function,NxUserControllerHitReport::`scalar deleting destructor',,0x00837d40,0x004ada80,0x00837d40
 22681,function,Physics::PhysicsControllerCapsule::PhysicsControllerCapsule,,0x00837d60,0x004adaa0,0x00837d60
 22682,function,Physics::PhysicsControllerCapsule::SetStepOffset,,0x00837dd0,0x004ae090,0x00837dd0
 22683,function,Physics::PhysicsControllerCapsule::ReportSceneChanged,,0x00837e20,0x004ae180,0x00837e20
@@ -22725,7 +22725,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22724,function,Physics::TriggerEventObj::~TriggerEventObj,,0x00838dd0,0x004aeae0,0x00838dd0
 22725,function,Physics::PhysicsTrigger::PhysicsTrigger,,0x00838de0,0x004aeaf0,0x00838de0
 22726,function,Physics::PhysicsTrigger::~PhysicsTrigger,,0x00838e00,0x004aeb10,0x00838e00
-22727,function,,,0x00838e60,0x004aeb70,0x00838e60
+22727,function,NxUserTriggerReport::`scalar deleting destructor',,0x00838e60,0x004aeb70,0x00838e60
 22728,function,Physics::TriggerEventObjImp::GetActorUserData,,0x00838e80,0x004aeb90,0x00838e80
 22729,function,Physics::PhysicsTrigger::`scalar deleting destructor',,0x00838e90,0x004aebc0,0x00838e90
 22730,function,Physics::PhysicsTriggerReport::onTrigger,,0x00838eb0,0x004aebe0,0x00838eb0
@@ -24815,7 +24815,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24814,function,NXU::NxPhysicsSDKDesc::load,,0x008a4970,0x009fe7b0,0x008a4970
 24815,function,NxBoxForceFieldShapeDesc::isValid,,0x008a49d0,0x009fe810,0x008a49d0
 24816,function,NxSphereForceFieldShapeDesc::isValid,,0x008a4a60,0x009fe8a0,0x008a4a60
-24817,function,,,0x008a4aa0,0x009fe950,0x008a4aa0
+24817,function,NxForceFieldShapeDesc::`scalar deleting destructor',,0x008a4aa0,0x009fe950,0x008a4aa0
 24818,function,NxCapsuleForceFieldShapeDesc::isValid,,0x008a4ac0,0x009fe8e0,0x008a4ac0
 24819,function,NxConvexForceFieldShapeDesc::isValid,,0x008a4b30,0x009fe970,0x008a4b30
 24820,function,NxHeightFieldShapeDesc::isValid,,0x008a4b40,0x009ff730,0x008a4b40
@@ -25690,7 +25690,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 25689,function,_Mtxunlock,,0x008e0d7b,0x008b72d9,0x008e0d7b
 25690,function,_Atexit,,0x008e0d86,0x008b72e4,0x008e0d86
 25691,function,,,0x008e0dcb,0x008b7329,0x008e0dcb
-25692,function,,,0x008e0dd9,0x008b7337,0x008e0dd9
+25692,function,type_info::`scalar deleting destructor',,0x008e0dd9,0x008b7337,0x008e0dd9
 25693,function,type_info::operator==,,0x008e0df5,0x008b7353,0x008e0df5
 25694,function,memcpy_s,,0x008e0e10,0x008b736e,0x008e0e10
 25695,function,memmove_s,,0x008e0e8b,0x008b73e9,0x008e0e8b
@@ -26860,7 +26860,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 26859,function,,,0x0090af60,0x008e1c50,0x0090af60
 26860,function,,,0x0090af80,0x008e1c70,0x0090af80
 26861,function,,,0x0090afa0,0x008e1c90,0x0090afa0
-26862,function,,,0x0090afc0,0x008e1cb0,0x0090afc0
+26862,function,GJPEGOutputImpl_jpeglib::`scalar deleting destructor',,0x0090afc0,0x008e1cb0,0x0090afc0
 26863,function,,,0x0090b000,0x008e1cf0,0x0090b000
 26864,function,,,0x0090b040,0x008e1d30,0x0090b040
 26865,function,,,0x0090b090,0x008e1d80,0x0090b090
@@ -26903,7 +26903,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 26902,function,,,0x0090c2c0,0x008e2f70,0x0090c2c0
 26903,function,,,0x0090c2e0,0x008e2f90,0x0090c2e0
 26904,function,,,0x0090c300,0x008e2fb0,0x0090c300
-26905,function,,,0x0090c320,0x008e2fd0,0x0090c320
+26905,function,GFxSharedState::`scalar deleting destructor',,0x0090c320,0x008e2fd0,0x0090c320
 26906,function,,,0x0090c340,0x008e2ff0,0x0090c340
 26907,function,,,0x0090c3a0,0x008e3050,0x0090c3a0
 26908,function,GFxLoader::~GFxLoader,,0x0090c400,0x008e30b0,0x0090c400
@@ -26911,7 +26911,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 26910,function,GFxLoader::CreateMovie,,0x0090c470,0x008e3130,0x0090c470
 26911,function,,,0x0090c4a0,0x008e3160,0x0090c4a0
 26912,function,,,0x0090c4e0,0x008e31a0,0x0090c4e0
-26913,function,,,0x0090c520,0x008e31e0,0x0090c520
+26913,function,GFxLoader::`vector deleting destructor',,0x0090c520,0x008e31e0,0x0090c520
 26914,function,,,0x0090c580,0x008e3240,0x0090c580
 26915,function,,,0x0090c600,0x008e32c0,0x0090c600
 26916,function,,,0x0090c680,0x008e3340,0x0090c680
@@ -26932,13 +26932,13 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 26931,function,,,0x0090d020,0x008e3ce0,0x0090d020
 26932,function,,,0x0090d040,0x008e3d00,0x0090d040
 26933,function,,,0x0090d060,0x008e3d20,0x0090d060
-26934,function,,,0x0090d0a0,0x008e3d60,0x0090d0a0
+26934,function,GImageInfoBaseImpl::`scalar deleting destructor'`adjustor{16}',,0x0090d0a0,0x008e3d60,0x0090d0a0
 26935,function,,,0x0090d0b0,0x008e3d70,0x0090d0b0
 26936,function,,,0x0090d100,0x008e3dc0,0x0090d100
 26937,function,,,0x0090d160,0x008e3e20,0x0090d160
 26938,function,,,0x0090d210,0x008e3ed0,0x0090d210
 26939,function,,,0x0090d270,0x008e3f30,0x0090d270
-26940,function,,,0x0090d2d0,0x008e3f90,0x0090d2d0
+26940,function,GImageInfo::`scalar deleting destructor'`adjustor{16}',,0x0090d2d0,0x008e3f90,0x0090d2d0
 26941,function,,,0x0090d2e0,0x008e3fa0,0x0090d2e0
 26942,function,GImageInfo::GImageInfo,,0x0090d340,0x008e4000,0x0090d340
 26943,function,,,0x0090d380,0x008e4040,0x0090d380
@@ -27028,7 +27028,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 27027,function,,,0x0090fed0,0x008e7210,0x0090fed0
 27028,function,,,0x0090ffd0,0x008e7310,0x0090ffd0
 27029,function,,,0x00910080,0x008e73c0,0x00910080
-27030,function,,,0x009100a0,0x008e73e0,0x009100a0
+27030,function,GFxResource::`scalar deleting destructor',,0x009100a0,0x008e73e0,0x009100a0
 27031,function,,,0x009100c0,0x008e7400,0x009100c0
 27032,function,,,0x009100d0,0x008e7410,0x009100d0
 27033,function,,,0x009100f0,0x008e7430,0x009100f0
@@ -27060,7 +27060,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 27059,function,,,0x00910940,0x008ef670,0x00910940
 27060,function,,,0x00910950,0x008e7c30,0x00910950
 27061,function,,,0x00910960,0x008ef680,0x00910960
-27062,function,,,0x00910970,0x008e7c40,0x00910970
+27062,function,GFxConstShapeCharacterDef::`scalar deleting destructor',,0x00910970,0x008e7c40,0x00910970
 27063,function,,,0x009109a0,0x008e7c90,0x009109a0
 27064,function,,,0x00910a50,0x008e7d40,0x00910a50
 27065,function,,,0x00910be0,0x008e7ed0,0x00910be0
@@ -27094,7 +27094,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 27093,function,,,0x00913210,0x008ea560,0x00913210
 27094,function,,,0x00913280,0x008ea5d0,0x00913280
 27095,function,GFxTask::`scalar deleting destructor',,0x00913490,0x008ea7e0,0x00913490
-27096,function,,,0x009134c0,0x008ea810,0x009134c0
+27096,function,GFxLogBase<GFxSharedStateImpl>::`scalar deleting destructor',,0x009134c0,0x008ea810,0x009134c0
 27097,function,,,0x009134e0,0x008ea830,0x009134e0
 27098,function,,,0x00913500,0x008ea850,0x00913500
 27099,function,,,0x00913540,0x008ea890,0x00913540
@@ -27115,8 +27115,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 27114,function,,,0x009142a0,0x008eb5c0,0x009142a0
 27115,function,,,0x00914300,0x008eb620,0x00914300
 27116,function,,,0x00914340,0x008eb660,0x00914340
-27117,function,,,0x009143a0,0x008eb6c0,0x009143a0
-27118,function,,,0x009143b0,0x008eb6d0,0x009143b0
+27117,function,GFxLoaderImpl::`scalar deleting destructor'`adjustor{16}',,0x009143a0,0x008eb6c0,0x009143a0
+27118,function,GFxLoaderImpl::`scalar deleting destructor'`adjustor{24}',,0x009143b0,0x008eb6d0,0x009143b0
 27119,function,,,0x009143c0,0x008eb6e0,0x009143c0
 27120,function,,,0x009143d0,0x008eb6f0,0x009143d0
 27121,function,,,0x00914440,0x008eb760,0x00914440
@@ -27132,8 +27132,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 27131,function,,,0x00915200,0x008ec4d0,0x00915200
 27132,function,,,0x00915360,0x008ec630,0x00915360
 27133,function,,,0x009153a0,0x008ec670,0x009153a0
-27134,function,,,0x00915420,0x008ec6f0,0x00915420
-27135,function,,,0x00915430,0x008ec700,0x00915430
+27134,function,GFxSharedStateImpl::`scalar deleting destructor'`adjustor{16}',,0x00915420,0x008ec6f0,0x00915420
+27135,function,GFxSharedStateImpl::`scalar deleting destructor'`adjustor{24}',,0x00915430,0x008ec700,0x00915430
 27136,function,,,0x00915440,0x008ec710,0x00915440
 27137,function,,,0x009154a0,0x008ec770,0x009154a0
 27138,function,,,0x00915500,0x008ec7d0,0x00915500
@@ -27149,7 +27149,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 27148,function,,,0x00915b00,0x008ecdd0,0x00915b00
 27149,function,,,0x00915b10,0x008ecde0,0x00915b10
 27150,function,,,0x00915b20,0x008ecdf0,0x00915b20
-27151,function,,,0x00915b40,0x008ece10,0x00915b40
+27151,function,GFxLogBase<GFxStream>::`scalar deleting destructor',,0x00915b40,0x008ece10,0x00915b40
 27152,function,,,0x00915b60,0x008ece30,0x00915b60
 27153,function,,,0x00915ba0,0x008ece70,0x00915ba0
 27154,function,,,0x00915c40,0x008ecf10,0x00915c40
@@ -27264,7 +27264,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 27263,function,,,0x00918270,0x008ef5a0,0x00918270
 27264,function,,,0x00918300,0x008ef630,0x00918300
 27265,function,,,0x00918320,0x008ef650,0x00918320
-27266,function,,,0x00918340,0x008ef690,0x00918340
+27266,function,GFxShapeCharacterDef::`scalar deleting destructor',,0x00918340,0x008ef690,0x00918340
 27267,function,,,0x00918370,0x008e7c70,0x00918370
 27268,function,,,0x00918390,0x008ef6c0,0x00918390
 27269,function,GFxMovieDataDefFileKeyData::`scalar deleting destructor',,0x00918410,0x008ef740,0x00918410
@@ -27384,7 +27384,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 27383,function,,,0x0091ddf0,0x008f5260,0x0091ddf0
 27384,function,,,0x0091de10,0x008f5280,0x0091de10
 27385,function,,,0x0091de30,0x008f52a0,0x0091de30
-27386,function,,,0x0091de70,0x008f52e0,0x0091de70
+27386,function,GFxResourceData::DataInterface::`scalar deleting destructor',,0x0091de70,0x008f52e0,0x0091de70
 27387,function,,,0x0091de90,0x008f5300,0x0091de90
 27388,function,,,0x0091df20,0x008f5390,0x0091df20
 27389,function,GFxMovieDefBindStates::`scalar deleting destructor',,0x0091e090,0x008f5500,0x0091e090
@@ -27403,7 +27403,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 27402,function,,,0x0091ed20,0x008f6190,0x0091ed20
 27403,retired,,,,,
 27404,function,,,0x0091ee90,0x008f6300,0x0091ee90
-27405,function,,,0x0091eff0,0x008f6460,0x0091eff0
+27405,function,GFxLoadProcess::`scalar deleting destructor'`adjustor{28}',,0x0091eff0,0x008f6460,0x0091eff0
 27406,function,,,0x0091f000,0x008f6470,0x0091f000
 27407,function,,,0x0091f010,0x008f6480,0x0091f010
 27408,function,,,0x0091f050,0x008f64c0,0x0091f050
@@ -27555,7 +27555,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 27554,function,,,0x00922fc0,0x008fa950,0x00922fc0
 27555,function,,,0x00923000,0x008fa990,0x00923000
 27556,function,GFxTextImageDesc::`scalar deleting destructor',,0x00923040,0x008fa9d0,0x00923040
-27557,function,,,0x00923080,0x008faa10,0x00923080
+27557,function,GFxEditTextCharacterDef::`scalar deleting destructor',,0x00923080,0x008faa10,0x00923080
 27558,function,,,0x009230a0,0x008faa30,0x009230a0
 27559,function,,,0x009235f0,0x008faf80,0x009235f0
 27560,function,,,0x00923640,0x008fafd0,0x00923640
@@ -27661,7 +27661,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 27660,function,,,0x00929080,0x00900780,0x00929080
 27661,function,GASTextFieldProto::setImageSubstitutions,"Native of ActionScript's setImageSubstitutions: the name/function table at 0x00B49470, which GASTextFieldProto's constructor installs, pairs it with ""setImageSubstitutions"" (2026-11-20).",0x009296a0,0x00900da0,0x009296a0
 27662,function,,,0x009297c0,0x00900ec0,0x009297c0
-27663,function,,,0x00929810,0x00900f10,0x00929810
+27663,function,GASTextFieldObject::`scalar deleting destructor'`adjustor{16}',,0x00929810,0x00900f10,0x00929810
 27664,function,,,0x00929820,0x009115c0,0x00929820
 27665,function,,,0x00929890,0x00900f70,0x00929890
 27666,function,,,0x00929900,0x00900fe0,0x00929900
@@ -27672,7 +27672,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 27671,function,,,0x00929b70,0x00901250,0x00929b70
 27672,function,GASTextFieldObject::`scalar deleting destructor',,0x00929c60,0x00901340,0x00929c60
 27673,function,GASTextFieldProto::GASTextFieldProto,Stores GASTextFieldProto's vftable and installs its ActionScript methods from a name/function table (2026-11-20).,0x00929c80,0x00901360,0x00929c80
-27674,function,,,0x00929f20,0x00901600,0x00929f20
+27674,function,"GASPrototype<GASTextFieldObject,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x00929f20,0x00901600,0x00929f20
 27675,function,,,0x00929f30,0x00901610,0x00929f30
 27676,function,,,0x0092a0b0,0x00901790,0x0092a0b0
 27677,function,,,0x0092a5a0,0x00901c80,0x0092a5a0
@@ -27708,8 +27708,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 27707,function,,,0x0092aab0,0x00902190,0x0092aab0
 27708,function,,,0x0092aac0,0x009021a0,0x0092aac0
 27709,function,,,0x0092aad0,0x009021b0,0x0092aad0
-27710,function,,,0x0092aae0,0x009021c0,0x0092aae0
-27711,function,,,0x0092aaf0,0x009021d0,0x0092aaf0
+27710,function,GFxEditTextCharacter::`scalar deleting destructor'`adjustor{108}',,0x0092aae0,0x009021c0,0x0092aae0
+27711,function,GFxEditTextCharacter::`scalar deleting destructor'`adjustor{16}',,0x0092aaf0,0x009021d0,0x0092aaf0
 27712,function,GFxEditTextCharacter::GetKind,,0x0092ab00,0x009021e0,0x0092ab00
 27713,function,,,0x0092ab10,0x009021f0,0x0092ab10
 27714,function,,,0x0092ab30,0x00902210,0x0092ab30
@@ -27844,7 +27844,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 27843,function,,,0x00931680,0x00908dd0,0x00931680
 27844,function,,,0x009316c0,0x00908e10,0x009316c0
 27845,function,,,0x00931740,0x00908e90,0x00931740
-27846,function,,,0x00931760,0x00908eb0,0x00931760
+27846,function,GASFnCall::`scalar deleting destructor',,0x00931760,0x00908eb0,0x00931760
 27847,function,,,0x00931790,0x00908ee0,0x00931790
 27848,function,,,0x009317b0,0x00908f00,0x009317b0
 27849,function,,,0x00931810,0x00908f60,0x00931810
@@ -28025,7 +28025,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28024,function,,,0x00939bb0,0x00911310,0x00939bb0
 28025,function,,,0x00939c30,0x00911390,0x00939c30
 28026,function,,,0x00939cb0,0x00911410,0x00939cb0
-28027,function,,,0x00939cd0,0x00911430,0x00939cd0
+28027,function,GASSuperObject::`scalar deleting destructor'`adjustor{16}',,0x00939cd0,0x00911430,0x00939cd0
 28028,function,,,0x00939ce0,0x00911440,0x00939ce0
 28029,function,,,0x00939cf0,0x00911450,0x00939cf0
 28030,function,,,0x00939d00,0x00911460,0x00939d00
@@ -28041,7 +28041,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28040,function,,,0x00939e70,0x009910e0,0x00939e70
 28041,function,,,0x00939ed0,0x00911630,0x00939ed0
 28042,function,,,0x00939f00,0x00911660,0x00939f00
-28043,function,,,0x00939fc0,0x00911720,0x00939fc0
+28043,function,GASKeyAsObject::`scalar deleting destructor'`adjustor{16}',,0x00939fc0,0x00911720,0x00939fc0
 28044,function,,,0x00939fd0,0x00911730,0x00939fd0
 28045,function,,,0x0093a060,0x009117c0,0x0093a060
 28046,function,,,0x0093a640,0x00911da0,0x0093a640
@@ -28102,7 +28102,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28101,function,,,0x00943490,0x0091abd0,0x00943490
 28102,function,,,0x00943a50,0x0091b190,0x00943a50
 28103,function,,,0x00943ab0,0x0091b1f0,0x00943ab0
-28104,function,,,0x00943ad0,0x0091b210,0x00943ad0
+28104,function,GFxStaticTextCharacter::`scalar deleting destructor'`adjustor{16}',,0x00943ad0,0x0091b210,0x00943ad0
 28105,function,,,0x00943ae0,0x0091b220,0x00943ae0
 28106,function,GFxStaticTextCharacter::`scalar deleting destructor',,0x00943af0,0x0091b230,0x00943af0
 28107,function,,,0x00943b20,0x0091b260,0x00943b20
@@ -28117,7 +28117,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28116,function,,,0x00944300,0x0091ba40,0x00944300
 28117,function,,,0x00944310,0x0091ba50,0x00944310
 28118,function,,,0x00944330,0x0091ba70,0x00944330
-28119,function,,,0x009443e0,0x0091bb20,0x009443e0
+28119,function,GFxStaticTextCharacterDef::`scalar deleting destructor',,0x009443e0,0x0091bb20,0x009443e0
 28120,function,,,0x00944410,0x00893b50,0x00944410
 28121,function,,,0x00944420,0x0091bb50,0x00944420
 28122,function,,,0x00944440,0x0091bb70,0x00944440
@@ -28238,7 +28238,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28237,function,,,0x0094c350,0x00923ad0,0x0094c350
 28238,function,,,0x0094c380,0x00923b00,0x0094c380
 28239,function,,,0x0094c3b0,0x00923b30,0x0094c3b0
-28240,function,,,0x0094c3c0,0x00923b40,0x0094c3c0
+28240,function,GFxShapeNoStyles::`scalar deleting destructor',,0x0094c3c0,0x00923b40,0x0094c3c0
 28241,function,,,0x0094c3f0,0x00923b70,0x0094c3f0
 28242,function,,,0x0094c420,0x00923ba0,0x0094c420
 28243,function,,,0x0094c440,0x00923bc0,0x0094c440
@@ -28321,7 +28321,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28320,function,,,0x0094dcf0,0x00925480,0x0094dcf0
 28321,function,,,0x0094dd30,0x009254c0,0x0094dd30
 28322,function,,,0x0094ddd0,0x00925560,0x0094ddd0
-28323,function,,,0x0094ddf0,0x00925580,0x0094ddf0
+28323,function,GFxFontManagerStates::`scalar deleting destructor'`adjustor{16}',,0x0094ddf0,0x00925580,0x0094ddf0
 28324,function,,,0x0094de00,0x00925590,0x0094de00
 28325,function,,,0x0094de70,0x00925600,0x0094de70
 28326,function,,,0x0094de90,0x00925620,0x0094de90
@@ -28523,7 +28523,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28522,function,,,0x0095b080,0x009327c0,0x0095b080
 28523,function,,,0x0095b090,0x009327d0,0x0095b090
 28524,function,,,0x0095b0a0,0x009327e0,0x0095b0a0
-28525,function,,,0x0095b0b0,0x009327f0,0x0095b0b0
+28525,function,GFxMovieRoot::`scalar deleting destructor'`adjustor{16}',,0x0095b0b0,0x009327f0,0x0095b0b0
 28526,function,,,0x0095b0c0,0x00932800,0x0095b0c0
 28527,function,,,0x0095b0e0,0x00932820,0x0095b0e0
 28528,function,,,0x0095b140,0x00932880,0x0095b140
@@ -28738,7 +28738,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28737,function,,,0x00965b60,0x0093d360,0x00965b60
 28738,function,,,0x00965bf0,0x0093d3f0,0x00965bf0
 28739,function,,,0x00965c20,0x0093d420,0x00965c20
-28740,function,,,0x00965c70,0x0093d470,0x00965c70
+28740,function,GFxLogBase<GASEnvironment>::`scalar deleting destructor',,0x00965c70,0x0093d470,0x00965c70
 28741,function,,,0x00965c90,0x0093d490,0x00965c90
 28742,function,,,0x00965d10,0x0093d510,0x00965d10
 28743,function,,,0x00965d30,0x0093d530,0x00965d30
@@ -28883,8 +28883,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28882,function,,,0x0096cda0,0x009447d0,0x0096cda0
 28883,function,,,0x0096cdb0,0x009447e0,0x0096cdb0
 28884,function,,,0x0096cdc0,0x009447f0,0x0096cdc0
-28885,function,,,0x0096cdd0,0x00944800,0x0096cdd0
-28886,function,,,0x0096cde0,0x00944810,0x0096cde0
+28885,function,GFxSprite::`scalar deleting destructor'`adjustor{108}',,0x0096cdd0,0x00944800,0x0096cdd0
+28886,function,GFxSprite::`scalar deleting destructor'`adjustor{16}',,0x0096cde0,0x00944810,0x0096cde0
 28887,function,GFxSprite::GetKind,,0x0096cdf0,0x00944820,0x0096cdf0
 28888,function,,,0x0096ce00,0x00944830,0x0096ce00
 28889,function,,,0x0096ce10,0x00944840,0x0096ce10
@@ -28893,7 +28893,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28892,function,,,0x0096cfa0,0x009449d0,0x0096cfa0
 28893,function,,,0x0096d010,0x00944a40,0x0096d010
 28894,function,,,0x0096d020,0x00944a50,0x0096d020
-28895,function,,,0x0096d120,0x00944dd0,0x0096d120
+28895,function,"GASPrototype<GASMovieClipObject,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x0096d120,0x00944dd0,0x0096d120
 28896,function,,,0x0096d130,0x0097b290,0x0096d130
 28897,function,,,0x0096d2f0,0x00944b50,0x0096d2f0
 28898,function,,,0x0096d3c0,0x0097b450,0x0096d3c0
@@ -28937,8 +28937,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28936,function,,,0x00970410,0x00947b20,0x00970410
 28937,function,,,0x00970420,0x00947b30,0x00970420
 28938,function,GFxButtonCharacter::GetKind,,0x009704b0,0x00947bc0,0x009704b0
-28939,function,,,0x009704c0,0x00947bd0,0x009704c0
-28940,function,,,0x009704d0,0x00947be0,0x009704d0
+28939,function,GFxButtonCharacter::`scalar deleting destructor'`adjustor{108}',,0x009704c0,0x00947bd0,0x009704c0
+28940,function,GFxButtonCharacter::`scalar deleting destructor'`adjustor{16}',,0x009704d0,0x00947be0,0x009704d0
 28941,function,,,0x009704e0,0x00947bf0,0x009704e0
 28942,function,,,0x00970540,0x00947c50,0x00970540
 28943,function,,,0x009705a0,0x00947cb0,0x009705a0
@@ -28963,7 +28963,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28962,function,GFxButtonCharacter::`scalar deleting destructor',,0x00971e70,0x00949580,0x00971e70
 28963,function,,,0x00971e90,0x009495a0,0x00971e90
 28964,function,,,0x00971ee0,0x009495f0,0x00971ee0
-28965,function,,,0x00971fe0,0x00949840,0x00971fe0
+28965,function,"GASPrototype<GASButtonObject,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x00971fe0,0x00949840,0x00971fe0
 28966,function,,,0x00971ff0,0x009912f0,0x00971ff0
 28967,function,"GASPrototype<GASButtonObject,GASEnvironment>::`scalar deleting destructor'",,0x009721b0,0x009499e0,0x009721b0
 28968,function,,,0x00972210,0x009496f0,0x00972210
@@ -28982,7 +28982,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28981,function,,,0x00972670,0x00949be0,0x00972670
 28982,function,,,0x009726a0,0x00949c10,0x009726a0
 28983,function,,,0x00972830,0x00949da0,0x00972830
-28984,function,,,0x00972880,0x00949a40,0x00972880
+28984,function,GFxFontResource::DisposeHandler::`scalar deleting destructor',,0x00972880,0x00949a40,0x00972880
 28985,function,,,0x009728a0,0x00949e10,0x009728a0
 28986,function,,,0x00972910,0x00949e80,0x00972910
 28987,function,,,0x00972970,0x00949ee0,0x00972970
@@ -29158,7 +29158,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 29157,function,,,0x0097be20,0x009524f0,0x0097be20
 29158,function,,,0x0097be70,0x00952540,0x0097be70
 29159,function,,,0x0097beb0,0x00952580,0x0097beb0
-29160,function,,,0x0097bed0,0x00951e20,0x0097bed0
+29160,function,GFxCharacter::`scalar deleting destructor'`adjustor{16}',,0x0097bed0,0x00951e20,0x0097bed0
 29161,function,,,0x0097bee0,0x009525a0,0x0097bee0
 29162,function,,,0x0097bfc0,0x00952680,0x0097bfc0
 29163,function,,,0x0097c010,0x009526d0,0x0097c010
@@ -29204,8 +29204,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 29203,function,,,0x0097f560,0x00955bb0,0x0097f560
 29204,function,,,0x0097f5a0,0x00955bf0,0x0097f5a0
 29205,function,,,0x0097f7a0,0x00955df0,0x0097f7a0
-29206,function,,,0x0097f830,0x00955e80,0x0097f830
-29207,function,,,0x0097f840,0x00955e90,0x0097f840
+29206,function,GFxASCharacter::`scalar deleting destructor'`adjustor{108}',,0x0097f830,0x00955e80,0x0097f830
+29207,function,GFxASCharacter::`scalar deleting destructor'`adjustor{16}',,0x0097f840,0x00955e90,0x0097f840
 29208,function,,,0x0097f850,0x00955ea0,0x0097f850
 29209,function,,,0x0097f8d0,0x00955f20,0x0097f8d0
 29210,function,,,0x0097f960,0x00955fb0,0x0097f960
@@ -29275,7 +29275,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 29274,function,,,0x00981530,0x00957b30,0x00981530
 29275,retired,,,,,
 29276,function,,,0x009817e0,0x00957de0,0x009817e0
-29277,function,,,0x00981800,0x00957e00,0x00981800
+29277,function,GASFunctionObject::`scalar deleting destructor'`adjustor{16}',,0x00981800,0x00957e00,0x00981800
 29278,function,,,0x00981810,0x00957e10,0x00981810
 29279,function,,,0x00981860,0x00957e60,0x00981860
 29280,function,,,0x00981890,0x00957e90,0x00981890
@@ -29283,7 +29283,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 29282,function,,,0x00981950,0x00957f50,0x00981950
 29283,function,,,0x00981970,0x00957f70,0x00981970
 29284,function,,,0x00981aa0,0x00973c50,0x00981aa0
-29285,function,,,0x00981ad0,0x009580a0,0x00981ad0
+29285,function,GASAsFunctionObject::`scalar deleting destructor'`adjustor{16}',,0x00981ad0,0x009580a0,0x00981ad0
 29286,function,,,0x00981ae0,0x009580c0,0x00981ae0
 29287,function,,,0x00981b70,0x00958150,0x00981b70
 29288,function,,,0x00982560,0x00958b40,0x00982560
@@ -29794,7 +29794,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 29793,function,,,0x0099dc30,0x009741b0,0x0099dc30
 29794,function,,,0x0099dc90,0x00974210,0x0099dc90
 29795,function,,,0x0099dd30,0x009742b0,0x0099dd30
-29796,function,,,0x0099dd70,0x00958da0,0x0099dd70
+29796,function,"GASPrototype<GASObject,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x0099dd70,0x00958da0,0x0099dd70
 29797,function,,,0x0099dd80,0x009742f0,0x0099dd80
 29798,function,,,0x0099ddc0,0x00974330,0x0099ddc0
 29799,function,"GASPrototype<GASObject,GASEnvironment>::`scalar deleting destructor'",,0x0099de00,0x00958f50,0x0099de00
@@ -29872,7 +29872,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 29871,function,,,0x009a2710,0x00978d90,0x009a2710
 29872,function,,,0x009a2b70,0x009791f0,0x009a2b70
 29873,function,GASTextFormatObject::GetKind,,0x009a2c30,0x009792b0,0x009a2c30
-29874,function,,,0x009a2c40,0x009792c0,0x009a2c40
+29874,function,GASTextFormatObject::`scalar deleting destructor'`adjustor{16}',,0x009a2c40,0x009792c0,0x009a2c40
 29875,function,,,0x009a2c50,0x009792d0,0x009a2c50
 29876,function,,,0x009a2cc0,0x00979340,0x009a2cc0
 29877,function,,,0x009a3150,0x009797d0,0x009a3150
@@ -29883,7 +29883,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 29882,function,,,0x009a3e80,0x0097a500,0x009a3e80
 29883,function,GASTextFormatObject::`scalar deleting destructor',,0x009a3ee0,0x0097a560,0x009a3ee0
 29884,function,,,0x009a3f00,0x0097a580,0x009a3f00
-29885,function,,,0x009a3f40,0x0097a5c0,0x009a3f40
+29885,function,"GASPrototype<GASTextFormatObject,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x009a3f40,0x0097a5c0,0x009a3f40
 29886,function,,,0x009a3f50,0x0097a5d0,0x009a3f50
 29887,function,,,0x009a3f70,0x0097a5f0,0x009a3f70
 29888,function,,,0x009a3fa0,0x0097a620,0x009a3fa0
@@ -29899,17 +29899,17 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 29898,function,,,0x009a4770,0x0097adf0,0x009a4770
 29899,function,,,0x009a47f0,0x0097ae70,0x009a47f0
 29900,function,,,0x009a4840,0x0097aec0,0x009a4840
-29901,function,,,0x009a48f0,0x0097c710,0x009a48f0
+29901,function,GASCFunctionObject::`scalar deleting destructor'`adjustor{16}',,0x009a48f0,0x0097c710,0x009a48f0
 29902,function,GASCFunctionObject::`scalar deleting destructor',,0x009a4900,0x0097c720,0x009a4900
 29903,function,,,0x009a4920,0x0097af70,0x009a4920
 29904,function,,,0x009a4940,0x0097af90,0x009a4940
 29905,function,,,0x009a4a20,0x0097b070,0x009a4a20
 29906,function,GASAsBroadcaster::GetKind,,0x009a4a70,0x0097b0c0,0x009a4a70
-29907,function,,,0x009a4a80,0x0097b0d0,0x009a4a80
+29907,function,GASAsBroadcaster::`scalar deleting destructor'`adjustor{16}',,0x009a4a80,0x0097b0d0,0x009a4a80
 29908,function,,,0x009a4a90,0x0097b0e0,0x009a4a90
 29909,function,,,0x009a4b00,0x0097b150,0x009a4b00
 29910,function,,,0x009a4b40,0x0097b190,0x009a4b40
-29911,function,,,0x009a4c40,0x0097b5f0,0x009a4c40
+29911,function,"GASPrototype<GASAsBroadcaster,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x009a4c40,0x0097b5f0,0x009a4c40
 29912,function,"GASPrototype<GASAsBroadcaster,GASEnvironment>::`scalar deleting destructor'",,0x009a4c50,0x0097b760,0x009a4c50
 29913,function,GASAsBroadcaster::`scalar deleting destructor',,0x009a4cb0,0x0097b560,0x009a4cb0
 29914,function,,,0x009a4cd0,0x0097b580,0x009a4cd0
@@ -29920,12 +29920,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 29919,function,,,0x009a5020,0x0097b940,0x009a5020
 29920,function,,,0x009a5210,0x0097bb30,0x009a5210
 29921,function,GASBitmapData::GetKind,,0x009a52d0,0x0097bbf0,0x009a52d0
-29922,function,,,0x009a52e0,0x0097bc00,0x009a52e0
+29922,function,GASBitmapData::`scalar deleting destructor'`adjustor{16}',,0x009a52e0,0x0097bc00,0x009a52e0
 29923,function,,,0x009a52f0,0x0097bc10,0x009a52f0
 29924,function,,,0x009a5350,0x0097bc70,0x009a5350
 29925,function,,,0x009a5380,0x0097bca0,0x009a5380
 29926,function,,,0x009a53d0,0x0097bcf0,0x009a53d0
-29927,function,,,0x009a54d0,0x0097c650,0x009a54d0
+29927,function,"GASPrototype<GASBitmapData,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x009a54d0,0x0097c650,0x009a54d0
 29928,function,,,0x009a54e0,0x0097bdf0,0x009a54e0
 29929,function,"GASPrototype<GASBitmapData,GASEnvironment>::`scalar deleting destructor'",,0x009a55b0,0x0097c920,0x009a55b0
 29930,function,,,0x009a5610,0x0097bfd0,0x009a5610
@@ -29968,7 +29968,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 29967,function,GASRectangleProto::union,"Native of ActionScript's union: the name/function table at 0x00B504D8, which GASRectangleProto's constructor installs, pairs it with ""union"" (2026-11-20).",0x009a7dc0,0x0097e820,0x009a7dc0
 29968,function,,,0x009a8030,0x0097ea90,0x009a8030
 29969,function,,,0x009a8180,0x0097ebe0,0x009a8180
-29970,function,,,0x009a8270,0x0097f250,0x009a8270
+29970,function,"GASPrototype<GASRectangleObject,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x009a8270,0x0097f250,0x009a8270
 29971,function,,,0x009a8280,0x00958db0,0x009a8280
 29972,function,,,0x009a8390,0x0097ecd0,0x009a8390
 29973,function,"GASPrototype<GASRectangleObject,GASEnvironment>::`scalar deleting destructor'",,0x009a8420,0x0097f3d0,0x009a8420
@@ -29980,7 +29980,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 29979,function,,,0x009a8db0,0x0097f700,0x009a8db0
 29980,function,,,0x009a90c0,0x0097fa10,0x009a90c0
 29981,function,,,0x009a9120,0x0097fa70,0x009a9120
-29982,function,,,0x009a9170,0x0097fac0,0x009a9170
+29982,function,CSSHandler<char>::`scalar deleting destructor',,0x009a9170,0x0097fac0,0x009a9170
 29983,function,,,0x009a9190,0x0097fb70,0x009a9190
 29984,function,,,0x009a9220,0x0097fc00,0x009a9220
 29985,retired,,,,,
@@ -30061,12 +30061,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30060,function,,,0x009adf20,0x00984780,0x009adf20
 30061,function,,,0x009adfe0,0x00984840,0x009adfe0
 30062,function,GASStyleSheetObject::GetKind,,0x009ae0d0,0x00984930,0x009ae0d0
-30063,function,,,0x009ae0e0,0x00984940,0x009ae0e0
+30063,function,GASStyleSheetObject::`scalar deleting destructor'`adjustor{16}',,0x009ae0e0,0x00984940,0x009ae0e0
 30064,function,,,0x009ae0f0,0x00984950,0x009ae0f0
 30065,function,,,0x009ae150,0x009849b0,0x009ae150
 30066,function,,,0x009ae1d0,0x00984a30,0x009ae1d0
 30067,function,,,0x009ae260,0x00984ac0,0x009ae260
-30068,function,,,0x009ae360,0x00984bc0,0x009ae360
+30068,function,"GASPrototype<GASStyleSheetObject,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x009ae360,0x00984bc0,0x009ae360
 30069,function,,,0x009ae370,0x0097bec0,0x009ae370
 30070,function,"GASPrototype<GASStyleSheetObject,GASEnvironment>::`scalar deleting destructor'",,0x009ae480,0x00984bd0,0x009ae480
 30071,function,GASStyleSheetObject::`scalar deleting destructor',,0x009ae4e0,0x00984c30,0x009ae4e0
@@ -30150,11 +30150,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30149,function,,,0x009b3010,0x00989790,0x009b3010
 30150,function,GASNumberCtorFunction::GASNumberCtorFunction,Stores GASNumberCtorFunction's vftable and installs its ActionScript methods from a name/function table (2026-11-20).,0x009b30f0,0x00989870,0x009b30f0
 30151,function,,,0x009b3200,0x00989980,0x009b3200
-30152,function,,,0x009b3220,0x009899b0,0x009b3220
+30152,function,GASNumberObject::`scalar deleting destructor'`adjustor{16}',,0x009b3220,0x009899b0,0x009b3220
 30153,function,,,0x009b3230,0x009899c0,0x009b3230
 30154,function,,,0x009b32a0,0x00989a30,0x009b32a0
 30155,function,,,0x009b32e0,0x00989a70,0x009b32e0
-30156,function,,,0x009b33e0,0x00989e90,0x009b33e0
+30156,function,"GASPrototype<GASNumberObject,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x009b33e0,0x00989e90,0x009b33e0
 30157,function,,,0x009b33f0,0x00989b70,0x009b33f0
 30158,function,,,0x009b35b0,0x00989d30,0x009b35b0
 30159,function,,,0x009b3680,0x00993aa0,0x009b3680
@@ -30205,7 +30205,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30204,function,,,0x009b53a0,0x0098ba90,0x009b53a0
 30205,function,,,0x009b5450,0x0098bb40,0x009b5450
 30206,function,GASStringProto::split,"Native of ActionScript's split: the name/function table at 0x00C1A8C0, which GASStringProto's constructor installs, pairs it with ""split"" (2026-11-20).",0x009b5530,0x0098bc20,0x009b5530
-30207,function,,,0x009b5650,0x0098bd40,0x009b5650
+30207,function,GASStringObject::`scalar deleting destructor'`adjustor{16}',,0x009b5650,0x0098bd40,0x009b5650
 30208,function,,,0x009b5660,0x0098bd50,0x009b5660
 30209,function,,,0x009b56c0,0x0098bdb0,0x009b56c0
 30210,function,,,0x009b5700,0x0098bdf0,0x009b5700
@@ -30213,7 +30213,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30212,function,,,0x009b5880,0x0098bfa0,0x009b5880
 30213,function,GASStringObject::`scalar deleting destructor',,0x009b5a40,0x0098c1c0,0x009b5a40
 30214,function,GASStringProto::GASStringProto,Stores GASStringProto's vftable and installs its ActionScript methods from a name/function table (2026-11-20).,0x009b5a60,0x0098c1e0,0x009b5a60
-30215,function,,,0x009b5aa0,0x0098bf90,0x009b5aa0
+30215,function,"GASPrototype<GASStringObject,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x009b5aa0,0x0098bf90,0x009b5aa0
 30216,function,,,0x009b5ab0,0x0098c220,0x009b5ab0
 30217,function,"GASPrototype<GASStringObject,GASEnvironment>::`scalar deleting destructor'",,0x009b5c10,0x0098c160,0x009b5c10
 30218,function,,,0x009b5c70,0x0098c380,0x009b5c70
@@ -30273,7 +30273,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30272,function,GASArrayProto::sort,"Native of ActionScript's sort: the name/function table at 0x00B518D0, which GASArrayProto's constructor installs, pairs it with ""sort"" (2026-11-20).",0x009b7f60,0x0098e710,0x009b7f60
 30273,function,GASArrayProto::sortOn,"Native of ActionScript's sortOn: the name/function table at 0x00B518D0, which GASArrayProto's constructor installs, pairs it with ""sortOn"" (2026-11-20).",0x009b8160,0x0098e910,0x009b8160
 30274,function,,,0x009b8570,0x0098ed20,0x009b8570
-30275,function,,,0x009b85f0,0x0098eda0,0x009b85f0
+30275,function,GASArrayObject::`scalar deleting destructor'`adjustor{16}',,0x009b85f0,0x0098eda0,0x009b85f0
 30276,function,,,0x009b8600,0x0098edb0,0x009b8600
 30277,function,,,0x009b8670,0x0098ee20,0x009b8670
 30278,function,,,0x009b86c0,0x0098ee70,0x009b86c0
@@ -30285,7 +30285,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30284,function,,,0x009b8cf0,0x0098f4a0,0x009b8cf0
 30285,function,GASArrayObject::`scalar deleting destructor',,0x009b8e00,0x0098f5b0,0x009b8e00
 30286,function,GASArrayProto::GASArrayProto,Stores GASArrayProto's vftable and installs its ActionScript methods from a name/function table (2026-11-20).,0x009b8e20,0x0098f5d0,0x009b8e20
-30287,function,,,0x009b8e60,0x0098f610,0x009b8e60
+30287,function,"GASPrototype<GASArrayObject,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x009b8e60,0x0098f610,0x009b8e60
 30288,function,,,0x009b8e70,0x0098f620,0x009b8e70
 30289,function,,,0x009b8f80,0x0098f730,0x009b8f80
 30290,function,,,0x009b8fb0,0x0098f760,0x009b8fb0
@@ -30300,7 +30300,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30299,function,,,0x009b9430,0x0098fbe0,0x009b9430
 30300,function,,,0x009b9450,0x0098fc10,0x009b9450
 30301,function,,,0x009b9480,0x0098fc40,0x009b9480
-30302,function,,,0x009b9580,0x00990060,0x009b9580
+30302,function,"GASPrototype<GASBooleanObject,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x009b9580,0x00990060,0x009b9580
 30303,function,,,0x009b9590,0x0098fd40,0x009b9590
 30304,function,,,0x009b9750,0x0098ff00,0x009b9750
 30305,function,"GASPrototype<GASBooleanObject,GASEnvironment>::`scalar deleting destructor'",,0x009b97e0,0x009901d0,0x009b97e0
@@ -30308,12 +30308,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30307,function,,,0x009b9830,0x00990020,0x009b9830
 30308,function,,,0x009b9870,0x00990070,0x009b9870
 30309,function,,,0x009b99d0,0x009901f0,0x009b99d0
-30310,function,,,0x009b99f0,0x00990210,0x009b99f0
+30310,function,GASSoundObject::`scalar deleting destructor'`adjustor{16}',,0x009b99f0,0x00990210,0x009b99f0
 30311,function,,,0x009b9a00,0x00990220,0x009b9a00
 30312,function,,,0x009b9a70,0x00990290,0x009b9a70
 30313,function,,,0x009b9ae0,0x00990300,0x009b9ae0
 30314,function,,,0x009b9b10,0x00990330,0x009b9b10
-30315,function,,,0x009b9c10,0x00990430,0x009b9c10
+30315,function,"GASPrototype<GASSoundObject,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x009b9c10,0x00990430,0x009b9c10
 30316,function,"GASPrototype<GASSoundObject,GASEnvironment>::`scalar deleting destructor'",,0x009b9c20,0x00990550,0x009b9c20
 30317,function,GASSoundObject::`scalar deleting destructor',,0x009b9c80,0x009905b0,0x009b9c80
 30318,function,GASSoundProto::GASSoundProto,Stores GASSoundProto's vftable and installs its ActionScript methods from a name/function table (2026-11-20).,0x009b9ca0,0x009905d0,0x009b9ca0
@@ -30326,7 +30326,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30325,function,,,0x009ba680,0x00991030,0x009ba680
 30326,function,,,0x009ba730,0x00991140,0x009ba730
 30327,function,,,0x009ba7e0,0x009911f0,0x009ba7e0
-30328,function,,,0x009ba8e0,0x00991610,0x009ba8e0
+30328,function,"GASPrototype<GASColorObject,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x009ba8e0,0x00991610,0x009ba8e0
 30329,function,,,0x009ba8f0,0x009914b0,0x009ba8f0
 30330,function,,,0x009ba9c0,0x00990440,0x009ba9c0
 30331,function,"GASPrototype<GASColorObject,GASEnvironment>::`scalar deleting destructor'",,0x009baad0,0x00991790,0x009baad0
@@ -30350,14 +30350,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30349,function,,,0x009bb960,0x00992440,0x009bb960
 30350,function,,,0x009bba90,0x00992570,0x009bba90
 30351,function,,,0x009bbc70,0x00992750,0x009bbc70
-30352,function,,,0x009bbcc0,0x00985340,0x009bbcc0
+30352,function,GASMovieClipLoader::`scalar deleting destructor'`adjustor{16}',,0x009bbcc0,0x00985340,0x009bbcc0
 30353,function,,,0x009bbcd0,0x009927a0,0x009bbcd0
 30354,function,,,0x009bbd00,0x009927d0,0x009bbd00
 30355,function,,,0x009bbeb0,0x00992980,0x009bbeb0
 30356,function,GASMovieClipLoader::`scalar deleting destructor',,0x009bbfb0,0x00985980,0x009bbfb0
 30357,function,,,0x009bbfd0,0x00992af0,0x009bbfd0
 30358,function,GASMovieClipLoaderProto::GASMovieClipLoaderProto,Stores GASMovieClipLoaderProto's vftable and installs its ActionScript methods from a name/function table (2026-11-20).,0x009bc000,0x00992b20,0x009bc000
-30359,function,,,0x009bc040,0x00992a80,0x009bc040
+30359,function,"GASPrototype<GASMovieClipLoader,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x009bc040,0x00992a80,0x009bc040
 30360,function,,,0x009bc050,0x00992b60,0x009bc050
 30361,function,"GASPrototype<GASMovieClipLoader,GASEnvironment>::`scalar deleting destructor'",,0x009bc1b0,0x00992a90,0x009bc1b0
 30362,function,,,0x009bc210,0x00992cc0,0x009bc210
@@ -30379,7 +30379,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30378,function,,,0x009bcc40,0x009936f0,0x009bcc40
 30379,function,,,0x009bcd60,0x00993820,0x009bcd60
 30380,function,,,0x009bcee0,0x009939a0,0x009bcee0
-30381,function,,,0x009bcfe0,0x00993cf0,0x009bcfe0
+30381,function,"GASPrototype<GASLoadVarsObject,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x009bcfe0,0x00993cf0,0x009bcfe0
 30382,function,,,0x009bcff0,0x00993bb0,0x009bcff0
 30383,function,"GASPrototype<GASLoadVarsObject,GASEnvironment>::`scalar deleting destructor'",,0x009bd080,0x00993e60,0x009bd080
 30384,function,,,0x009bd0a0,0x00993c40,0x009bd0a0
@@ -30389,7 +30389,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30388,function,,,0x009bd320,0x00993ef0,0x009bd320
 30389,function,,,0x009bd3c0,0x00994000,0x009bd3c0
 30390,function,Stub::ReturnZero_4,"xor eax,eax; ret 4: answers 0 and ignores its argument. Linker-folded: slot 5 of CClientVirtualMachineCommands (CreateGameDefinedStructure: the client makes no engine structures), and the vtables of CCObject and its derived classes, the GAS* and GFx classes, Graphics::ICamera, and SmartData::Attribute instantiations, so not one class's method.",0x009bd510,0x008ee4a0,0x009bd510
-30391,function,,,0x009bd520,0x00994150,0x009bd520
+30391,function,GASStageCtorFunction::`scalar deleting destructor'`adjustor{16}',,0x009bd520,0x00994150,0x009bd520
 30392,function,GASStageCtorFunction::`scalar deleting destructor',,0x009bd530,0x00994160,0x009bd530
 30393,function,,,0x009bd560,0x00994190,0x009bd560
 30394,function,,,0x009bd810,0x00994440,0x009bd810
@@ -30401,7 +30401,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30400,function,,,0x009bdef0,0x00994b30,0x009bdef0
 30401,function,,,0x009bdfe0,0x00994c20,0x009bdfe0
 30402,function,GASStageProto::GASStageProto,Stores GASStageProto's vftable and installs its ActionScript methods from a name/function table (2026-11-20).,0x009be070,0x00994cb0,0x009be070
-30403,function,,,0x009be0b0,0x00994cf0,0x009be0b0
+30403,function,"GASPrototype<GASStageObject,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x009be0b0,0x00994cf0,0x009be0b0
 30404,function,,,0x009be0c0,0x00994d00,0x009be0c0
 30405,function,"GASPrototype<GASStageObject,GASEnvironment>::`scalar deleting destructor'",,0x009be220,0x00994e60,0x009be220
 30406,function,,,0x009be240,0x00994e80,0x009be240
@@ -30424,7 +30424,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30423,function,,,0x009bf190,0x00995db0,0x009bf190
 30424,function,,,0x009bf280,0x00995f80,0x009bf280
 30425,function,GASSelectionProto::GASSelectionProto,Stores GASSelectionProto's vftable and installs its ActionScript methods from a name/function table (2026-11-20).,0x009bf310,0x00996030,0x009bf310
-30426,function,,,0x009bf350,0x00995ea0,0x009bf350
+30426,function,"GASPrototype<GASSelection,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x009bf350,0x00995ea0,0x009bf350
 30427,function,,,0x009bf360,0x00996070,0x009bf360
 30428,function,"GASPrototype<GASSelection,GASEnvironment>::`scalar deleting destructor'",,0x009bf4c0,0x00996010,0x009bf4c0
 30429,function,,,0x009bf4e0,0x009961d0,0x009bf4e0
@@ -30442,8 +30442,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30441,function,,,0x009bff20,0x00996c30,0x009bff20
 30442,function,,,0x009c0060,0x00996d70,0x009c0060
 30443,function,,,0x009c0160,0x00996e70,0x009c0160
-30444,function,,,0x009c0270,0x00996f80,0x009c0270
-30445,function,,,0x009c0280,0x00996f90,0x009c0280
+30444,function,GASMouseCtorFunction::`scalar deleting destructor'`adjustor{52}',,0x009c0270,0x00996f80,0x009c0270
+30445,function,GASMouseCtorFunction::`scalar deleting destructor'`adjustor{16}',,0x009c0280,0x00996f90,0x009c0280
 30446,function,,,0x009c0290,0x00996fa0,0x009c0290
 30447,function,,,0x009c02a0,0x00996fb0,0x009c02a0
 30448,function,,,0x009c0300,0x00997010,0x009c0300
@@ -30452,9 +30452,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30451,function,,,0x009c0730,0x00997440,0x009c0730
 30452,function,,,0x009c07a0,0x009974b0,0x009c07a0
 30453,function,GASMouseCtorFunction::`scalar deleting destructor',,0x009c0810,0x00997520,0x009c0810
-30454,function,,,0x009c0830,0x0098fc00,0x009c0830
+30454,function,GASObject::`scalar deleting destructor'`adjustor{16}',,0x009c0830,0x0098fc00,0x009c0830
 30455,function,,,0x009c0840,0x00997540,0x009c0840
-30456,function,,,0x009c0930,0x00997630,0x009c0930
+30456,function,"GASPrototype<GASMouse,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x009c0930,0x00997630,0x009c0930
 30457,function,,,0x009c0940,0x00997640,0x009c0940
 30458,function,"GASPrototype<GASMouse,GASEnvironment>::`scalar deleting destructor'",,0x009c09d0,0x009976d0,0x009c09d0
 30459,function,GASObject::`scalar deleting destructor',,0x009c09f0,0x0098ff90,0x009c09f0
@@ -30511,7 +30511,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30510,function,,,0x009c2cf0,0x00999990,0x009c2cf0
 30511,function,,,0x009c2d20,0x009999c0,0x009c2d20
 30512,function,,,0x009c3030,0x00999cd0,0x009c3030
-30513,function,,,0x009c3120,0x0099a230,0x009c3120
+30513,function,"GASPrototype<GASDate,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x009c3120,0x0099a230,0x009c3120
 30514,function,,,0x009c3130,0x00999dc0,0x009c3130
 30515,function,,,0x009c32f0,0x00999f80,0x009c32f0
 30516,function,,,0x009c33c0,0x0099a050,0x009c33c0
@@ -30526,12 +30526,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30525,function,,,0x009c3950,0x0099a5f0,0x009c3950
 30526,function,,,0x009c3b60,0x0099a800,0x009c3b60
 30527,retired,,,,,
-30528,function,,,0x009c4190,0x0099ae40,0x009c4190
+30528,function,GASTransformObject::`scalar deleting destructor'`adjustor{16}',,0x009c4190,0x0099ae40,0x009c4190
 30529,function,,,0x009c41a0,0x0099ae50,0x009c41a0
 30530,function,,,0x009c4250,0x0099af00,0x009c4250
 30531,function,,,0x009c4360,0x0099b010,0x009c4360
 30532,function,,,0x009c4430,0x0099b0e0,0x009c4430
-30533,function,,,0x009c4530,0x0099b5f0,0x009c4530
+30533,function,"GASPrototype<GASTransformObject,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x009c4530,0x0099b5f0,0x009c4530
 30534,function,,,0x009c4540,0x0099b1e0,0x009c4540
 30535,function,"GASPrototype<GASTransformObject,GASEnvironment>::`scalar deleting destructor'",,0x009c4700,0x0099b770,0x009c4700
 30536,function,GASTransformObject::`scalar deleting destructor',,0x009c4760,0x0099b3a0,0x009c4760
@@ -30557,7 +30557,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30556,function,GASMatrixProto::clone,"Native of ActionScript's clone: the name/function table at 0x00B53CE8, which GASMatrixProto's constructor installs, pairs it with ""clone"" (2026-11-20).",0x009c6130,0x0099cde0,0x009c6130
 30557,function,,,0x009c61f0,0x0099cea0,0x009c61f0
 30558,function,,,0x009c6350,0x0099d000,0x009c6350
-30559,function,,,0x009c6440,0x0099d1f0,0x009c6440
+30559,function,"GASPrototype<GASMatrixObject,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x009c6440,0x0099d1f0,0x009c6440
 30560,function,,,0x009c6450,0x0099d0f0,0x009c6450
 30561,function,"GASPrototype<GASMatrixObject,GASEnvironment>::`scalar deleting destructor'",,0x009c64e0,0x0099d370,0x009c64e0
 30562,function,,,0x009c6500,0x0099d180,0x009c6500
@@ -30587,7 +30587,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30586,function,,,0x009c7880,0x00995eb0,0x009c7880
 30587,function,,,0x009c7950,0x0099e520,0x009c7950
 30588,function,GASPointProto::GASPointProto,Stores GASPointProto's vftable and installs its ActionScript methods from a name/function table (2026-11-20).,0x009c79e0,0x0099e5d0,0x009c79e0
-30589,function,,,0x009c7ba0,0x0099e510,0x009c7ba0
+30589,function,"GASPrototype<GASPointObject,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x009c7ba0,0x0099e510,0x009c7ba0
 30590,function,GASPointCtorFunction::GASPointCtorFunction,Stores GASPointCtorFunction's vftable and installs its ActionScript methods from a name/function table (2026-11-20).,0x009c7bb0,0x0099e790,0x009c7bb0
 30591,function,,,0x009c7c60,0x0099e840,0x009c7c60
 30592,function,,,0x009c7c90,0x0099e870,0x009c7c90
@@ -30602,7 +30602,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30601,function,GASColorTransformObject::GetKind,,0x009c89f0,0x0099f5b0,0x009c89f0
 30602,function,,,0x009c8a00,0x0099f5c0,0x009c8a00
 30603,function,,,0x009c8a60,0x0099f620,0x009c8a60
-30604,function,,,0x009c8b60,0x0099f720,0x009c8b60
+30604,function,"GASPrototype<GASColorTransformObject,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x009c8b60,0x0099f720,0x009c8b60
 30605,function,,,0x009c8b70,0x0099f730,0x009c8b70
 30606,function,,,0x009c8d30,0x0099f8f0,0x009c8d30
 30607,function,,,0x009c8e00,0x0099f9c0,0x009c8e00
@@ -30623,7 +30623,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30622,function,GASImeCtorFunction::setEnabled,"Native of ActionScript's setEnabled: the name/function table at 0x00B549F0, which GASImeCtorFunction's constructor installs, pairs it with ""setEnabled"" (2026-11-20).",0x009cae90,0x009a1a50,0x009cae90
 30623,function,GASImeCtorFunction::getEnabled,"Native of ActionScript's getEnabled: the name/function table at 0x00B549F0, which GASImeCtorFunction's constructor installs, pairs it with ""getEnabled"" (2026-11-20).",0x009caf10,0x009a1ad0,0x009caf10
 30624,function,,,0x009caf70,0x009a1b30,0x009caf70
-30625,function,,,0x009cb060,0x009a1c20,0x009cb060
+30625,function,"GASPrototype<GASIme,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x009cb060,0x009a1c20,0x009cb060
 30626,function,,,0x009cb070,0x009a1df0,0x009cb070
 30627,function,"GASPrototype<GASIme,GASEnvironment>::`scalar deleting destructor'",,0x009cb100,0x009a1e80,0x009cb100
 30628,function,GASImeProto::GASImeProto,Stores GASImeProto's vftable and installs its ActionScript methods from a name/function table (2026-11-20).,0x009cb120,0x009a1ea0,0x009cb120
@@ -30637,7 +30637,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30636,function,,,0x009cb7a0,0x00994b20,0x009cb7a0
 30637,function,,,0x009cb7b0,0x009a24b0,0x009cb7b0
 30638,function,,,0x009cb810,0x009a2510,0x009cb810
-30639,function,,,0x009cb900,0x009a2600,0x009cb900
+30639,function,"GASPrototype<GASExternalInterface,GASEnvironment>::`scalar deleting destructor'`adjustor{16}'",,0x009cb900,0x009a2600,0x009cb900
 30640,function,,,0x009cb910,0x009a1c30,0x009cb910
 30641,function,,,0x009cbad0,0x009a2610,0x009cbad0
 30642,function,"GASPrototype<GASExternalInterface,GASEnvironment>::`scalar deleting destructor'",,0x009cbb60,0x009a26a0,0x009cbb60
@@ -30894,7 +30894,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30893,function,,,0x009dca80,0x009b3690,0x009dca80
 30894,function,,,0x009dcb10,0x009b3720,0x009dcb10
 30895,function,,,0x009dcf50,0x009b3b60,0x009dcf50
-30896,function,,,0x009dcf60,0x009b3b70,0x009dcf60
+30896,function,GTexture::ChangeHandler::`scalar deleting destructor',,0x009dcf60,0x009b3b70,0x009dcf60
 30897,function,,,0x009dcf80,0x009b3b90,0x009dcf80
 30898,function,,,0x009dcfb0,0x009b3bc0,0x009dcfb0
 30899,function,,,0x009dcfd0,0x009b3be0,0x009dcfd0
@@ -31532,7 +31532,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 31531,function,,,0x00a0b640,0x009e1d00,0x00a0b640
 31532,function,,,0x00a0b680,0x009e1e10,0x00a0b680
 31533,function,,,0x00a0b6f0,0x009e1e80,0x00a0b6f0
-31534,function,,,0x00a0b780,0x009e1f10,0x00a0b780
+31534,function,OC3Ent::Face::FxAnimSet::`scalar deleting destructor',,0x00a0b780,0x009e1f10,0x00a0b780
 31535,function,,,0x00a0b7a0,0x009e1f30,0x00a0b7a0
 31536,function,,,0x00a0b7c0,0x009e1f50,0x00a0b7c0
 31537,function,,,0x00a0b7e0,0x009e1f70,0x00a0b7e0
@@ -31550,7 +31550,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 31549,function,,,0x00a0c080,0x009e2810,0x00a0c080
 31550,function,OC3Ent::Face::FxActorInstance::PlayAnim,,0x00a0c0a0,0x009e2830,0x00a0c0a0
 31551,function,OC3Ent::Face::FxActorInstance::PlayAnimAt,,0x00a0c370,0x009e2b00,0x00a0c370
-31552,function,,,0x00a0c5c0,0x009e2d50,0x00a0c5c0
+31552,function,OC3Ent::Face::FxActorInstance::`scalar deleting destructor',,0x00a0c5c0,0x009e2d50,0x00a0c5c0
 31553,function,,,0x00a0c5e0,0x009e2d70,0x00a0c5e0
 31554,function,OC3Ent::Face::FxActorInstance::FxActorInstance,,0x00a0c6c0,0x009e2e50,0x00a0c6c0
 31555,function,,,0x00a0c740,0x009e2f20,0x00a0c740
@@ -31576,7 +31576,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 31575,function,,,0x00a0d230,0x009e39b0,0x00a0d230
 31576,function,,,0x00a0d250,0x009e39d0,0x00a0d250
 31577,function,,,0x00a0d270,0x009e39f0,0x00a0d270
-31578,function,,,0x00a0d310,0x009e3a90,0x00a0d310
+31578,function,OC3Ent::Face::FxAnim::`scalar deleting destructor',,0x00a0d310,0x009e3a90,0x00a0d310
 31579,function,,,0x00a0d330,0x009e3ab0,0x00a0d330
 31580,function,,,0x00a0d6c0,0x009e3e40,0x00a0d6c0
 31581,function,,,0x00a0d770,0x009e3ef0,0x00a0d770
@@ -31653,7 +31653,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 31652,function,,,0x00a0ff50,0x009e66a0,0x00a0ff50
 31653,function,,,0x00a0ffc0,0x009e6710,0x00a0ffc0
 31654,function,,,0x00a10030,0x009e6780,0x00a10030
-31655,function,,,0x00a100c0,0x009e6810,0x00a100c0
+31655,function,OC3Ent::Face::FxRefString::`scalar deleting destructor',,0x00a100c0,0x009e6810,0x00a100c0
 31656,function,,,0x00a100e0,0x009e6830,0x00a100e0
 31657,function,,,0x00a10100,0x009e6850,0x00a10100
 31658,function,,,0x00a10120,0x009e6870,0x00a10120
@@ -31721,29 +31721,29 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 31720,function,,,0x00a11620,0x009e7da0,0x00a11620
 31721,function,,,0x00a118e0,0x009e8060,0x00a118e0
 31722,function,,,0x00a11950,0x009e80d0,0x00a11950
-31723,function,,,0x00a119b0,0x009e8130,0x00a119b0
+31723,function,OC3Ent::Face::FxLinkFn::`scalar deleting destructor',,0x00a119b0,0x009e8130,0x00a119b0
 31724,function,,,0x00a119d0,0x009e8150,0x00a119d0
-31725,function,,,0x00a11a70,0x009e81f0,0x00a11a70
+31725,function,OC3Ent::Face::FxNullLinkFn::`scalar deleting destructor',,0x00a11a70,0x009e81f0,0x00a11a70
 31726,function,,,0x00a11a90,0x009e8210,0x00a11a90
-31727,function,,,0x00a11ba0,0x009e8320,0x00a11ba0
+31727,function,OC3Ent::Face::FxLinearLinkFn::`scalar deleting destructor',,0x00a11ba0,0x009e8320,0x00a11ba0
 31728,function,,,0x00a11bc0,0x009e8340,0x00a11bc0
 31729,function,,,0x00a11c90,0x009e8410,0x00a11c90
 31730,function,,,0x00a11cb0,0x009e8430,0x00a11cb0
-31731,function,,,0x00a11d80,0x009e8500,0x00a11d80
+31731,function,OC3Ent::Face::FxCubicLinkFn::`scalar deleting destructor',,0x00a11d80,0x009e8500,0x00a11d80
 31732,function,,,0x00a11da0,0x009e8520,0x00a11da0
 31733,function,,,0x00a11e70,0x009e85f0,0x00a11e70
 31734,function,,,0x00a11e90,0x009e8610,0x00a11e90
-31735,function,,,0x00a11f30,0x009e86b0,0x00a11f30
+31735,function,OC3Ent::Face::FxNegateLinkFn::`scalar deleting destructor',,0x00a11f30,0x009e86b0,0x00a11f30
 31736,function,,,0x00a11f50,0x009e86d0,0x00a11f50
 31737,function,,,0x00a11ff0,0x009e8770,0x00a11ff0
 31738,function,,,0x00a12010,0x009e8790,0x00a12010
-31739,function,,,0x00a120b0,0x009e8830,0x00a120b0
+31739,function,OC3Ent::Face::FxOneClampLinkFn::`scalar deleting destructor',,0x00a120b0,0x009e8830,0x00a120b0
 31740,function,,,0x00a120d0,0x009e8850,0x00a120d0
-31741,function,,,0x00a121a0,0x009e8920,0x00a121a0
+31741,function,OC3Ent::Face::FxConstantLinkFn::`scalar deleting destructor',,0x00a121a0,0x009e8920,0x00a121a0
 31742,function,,,0x00a121c0,0x009e8940,0x00a121c0
-31743,function,,,0x00a122a0,0x009e8a20,0x00a122a0
+31743,function,OC3Ent::Face::FxCorrectiveLinkFn::`scalar deleting destructor',,0x00a122a0,0x009e8a20,0x00a122a0
 31744,function,,,0x00a122c0,0x009e8a40,0x00a122c0
-31745,function,,,0x00a12430,0x009e8bb0,0x00a12430
+31745,function,OC3Ent::Face::FxClampedLinearLinkFn::`scalar deleting destructor',,0x00a12430,0x009e8bb0,0x00a12430
 31746,function,,,0x00a12450,0x009e8bd0,0x00a12450
 31747,function,,,0x00a12960,0x009e90e0,0x00a12960
 31748,function,,,0x00a12a00,0x009e9180,0x00a12a00
@@ -31752,7 +31752,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 31751,function,Stub::CopyDword,,0x00a12a40,0x004576c0,0x00a12a40
 31752,function,,,0x00a12a50,0x009e91d0,0x00a12a50
 31753,function,,,0x00a12a70,0x009e91f0,0x00a12a70
-31754,function,,,0x00a12af0,0x009e9270,0x00a12af0
+31754,function,OC3Ent::Face::FxObject::`scalar deleting destructor',,0x00a12af0,0x009e9270,0x00a12af0
 31755,function,,,0x00a12b20,0x009e92a0,0x00a12b20
 31756,function,,,0x00a12b40,0x009e92c0,0x00a12b40
 31757,function,,,0x00a12b60,0x009e92e0,0x00a12b60
@@ -31764,7 +31764,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 31763,function,,,0x00a12d20,0x009e94a0,0x00a12d20
 31764,function,,,0x00a12d50,0x009e94d0,0x00a12d50
 31765,function,,,0x00a12dc0,0x009e9540,0x00a12dc0
-31766,function,,,0x00a12e50,0x009e95d0,0x00a12e50
+31766,function,OC3Ent::Face::FxNamedObject::`scalar deleting destructor',,0x00a12e50,0x009e95d0,0x00a12e50
 31767,function,,,0x00a12e70,0x009e95f0,0x00a12e70
 31768,function,,,0x00a12e90,0x009e9610,0x00a12e90
 31769,function,,,0x00a12eb0,0x009e9630,0x00a12eb0
@@ -31773,7 +31773,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 31772,function,,,0x00a12ff0,0x009e9770,0x00a12ff0
 31773,function,,,0x00a13080,0x009e9800,0x00a13080
 31774,function,,,0x00a13100,0x009e9880,0x00a13100
-31775,function,,,0x00a13190,0x009e9910,0x00a13190
+31775,function,OC3Ent::Face::FxFaceGraphNodeLink::`scalar deleting destructor',,0x00a13190,0x009e9910,0x00a13190
 31776,function,,,0x00a131b0,0x009e9930,0x00a131b0
 31777,function,,,0x00a13220,0x009e99a0,0x00a13220
 31778,function,,,0x00a132b0,0x009e9a30,0x00a132b0
@@ -31791,7 +31791,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 31790,function,,,0x00a13a00,0x009ea180,0x00a13a00
 31791,function,,,0x00a13a90,0x009ea210,0x00a13a90
 31792,function,,,0x00a13b00,0x009ea280,0x00a13b00
-31793,function,,,0x00a13bb0,0x009ea330,0x00a13bb0
+31793,function,OC3Ent::Face::FxFaceGraphNodeUserProperty::`scalar deleting destructor',,0x00a13bb0,0x009ea330,0x00a13bb0
 31794,function,,,0x00a13bd0,0x009ea350,0x00a13bd0
 31795,function,,,0x00a13c10,0x009ea390,0x00a13c10
 31796,function,,,0x00a13c70,0x009ea3f0,0x00a13c70
@@ -31829,7 +31829,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 31828,function,,,0x00a14980,0x009eb090,0x00a14980
 31829,function,,,0x00a149d0,0x009eb0e0,0x00a149d0
 31830,function,,,0x00a14a50,0x009eb160,0x00a14a50
-31831,function,,,0x00a14ae0,0x009eb1f0,0x00a14ae0
+31831,function,OC3Ent::Face::FxBone::`scalar deleting destructor',,0x00a14ae0,0x009eb1f0,0x00a14ae0
 31832,function,,,0x00a14b10,0x009eb220,0x00a14b10
 31833,function,,,0x00a14b30,0x009eb240,0x00a14b30
 31834,function,,,0x00a14b50,0x009eb260,0x00a14b50
@@ -31852,7 +31852,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 31851,function,,,0x00a152a0,0x009eb9b0,0x00a152a0
 31852,function,,,0x00a152c0,0x009eb9d0,0x00a152c0
 31853,function,,,0x00a15320,0x009eba30,0x00a15320
-31854,function,,,0x00a153b0,0x009ebac0,0x00a153b0
+31854,function,OC3Ent::Face::FxCombinerNode::`scalar deleting destructor',,0x00a153b0,0x009ebac0,0x00a153b0
 31855,function,,,0x00a153e0,0x009ebaf0,0x00a153e0
 31856,function,,,0x00a15400,0x009ebb10,0x00a15400
 31857,function,,,0x00a15420,0x009ebb30,0x00a15420
@@ -31862,7 +31862,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 31861,function,,,0x00a15490,0x009ebba0,0x00a15490
 31862,function,,,0x00a15510,0x009ebc20,0x00a15510
 31863,function,,,0x00a155a0,0x009ebcb0,0x00a155a0
-31864,function,,,0x00a15620,0x009ebd30,0x00a15620
+31864,function,OC3Ent::Face::FxGenericTargetNode::`scalar deleting destructor',,0x00a15620,0x009ebd30,0x00a15620
 31865,function,,,0x00a15650,0x009ebd60,0x00a15650
 31866,function,,,0x00a15670,0x009ebd80,0x00a15670
 31867,function,,,0x00a15690,0x009ebda0,0x00a15690
@@ -31890,7 +31890,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 31889,function,,,0x00a166d0,0x009ecb90,0x00a166d0
 31890,function,,,0x00a166f0,0x009ecbb0,0x00a166f0
 31891,function,,,0x00a16710,0x009ecbd0,0x00a16710
-31892,function,,,0x00a167e0,0x009ecca0,0x00a167e0
+31892,function,OC3Ent::Face::FxFaceGraph::`scalar deleting destructor',,0x00a167e0,0x009ecca0,0x00a167e0
 31893,function,,,0x00a16800,0x009eccc0,0x00a16800
 31894,function,,,0x00a16840,0x009ecd00,0x00a16840
 31895,function,,,0x00a16890,0x009ecd50,0x00a16890
@@ -31902,7 +31902,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 31901,function,,,0x00a16f50,0x009ed410,0x00a16f50
 31902,function,,,0x00a16fb0,0x009ed470,0x00a16fb0
 31903,function,,,0x00a170d0,0x009ed590,0x00a170d0
-31904,function,,,0x00a17140,0x009ed600,0x00a17140
+31904,function,OC3Ent::Face::FxAnimCurve::`scalar deleting destructor',,0x00a17140,0x009ed600,0x00a17140
 31905,function,,,0x00a17160,0x009ed620,0x00a17160
 31906,function,,,0x00a171c0,0x009ed680,0x00a171c0
 31907,function,,,0x00a17230,0x009ed6f0,0x00a17230
@@ -31926,7 +31926,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 31925,function,,,0x00a17a20,0x009edf30,0x00a17a20
 31926,function,,,0x00a17a40,0x009edf50,0x00a17a40
 31927,function,,,0x00a17aa0,0x009edfb0,0x00a17aa0
-31928,function,,,0x00a17b30,0x009ee040,0x00a17b30
+31928,function,OC3Ent::Face::FxDeltaNode::`scalar deleting destructor',,0x00a17b30,0x009ee040,0x00a17b30
 31929,function,,,0x00a17b60,0x009ee070,0x00a17b60
 31930,function,,,0x00a17bc0,0x009ee0d0,0x00a17bc0
 31931,function,,,0x00a17be0,0x009ee0f0,0x00a17be0
@@ -31934,11 +31934,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 31933,function,,,0x00a17c20,0x009ee130,0x00a17c20
 31934,function,,,0x00a17c30,0x009ee140,0x00a17c30
 31935,function,,,0x00a17cb0,0x009ee1c0,0x00a17cb0
-31936,function,,,0x00a17d40,0x009ee250,0x00a17d40
+31936,function,OC3Ent::Face::FxRefObject::`scalar deleting destructor',,0x00a17d40,0x009ee250,0x00a17d40
 31937,function,,,0x00a17d70,0x009ee280,0x00a17d70
 31938,function,,,0x00a17d90,0x009ee2a0,0x00a17d90
 31939,function,,,0x00a17db0,0x009ee2d0,0x00a17db0
-31940,function,,,0x00a17dd0,0x009ee2f0,0x00a17dd0
+31940,function,OC3Ent::Face::FxMorphTargetNode::`scalar deleting destructor',,0x00a17dd0,0x009ee2f0,0x00a17dd0
 31941,function,,,0x00a17e00,0x009ee320,0x00a17e00
 31942,function,,,0x00a17ef0,0x009ee410,0x00a17ef0
 31943,function,,,0x00a17f60,0x009ee480,0x00a17f60
@@ -31947,7 +31947,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 31946,function,,,0x00a18080,0x009ee5a0,0x00a18080
 31947,function,,,0x00a180a0,0x009ee2c0,0x00a180a0
 31948,function,,,0x00a180b0,0x009ee5c0,0x00a180b0
-31949,function,,,0x00a180d0,0x009ee5e0,0x00a180d0
+31949,function,OC3Ent::Face::FxEmotionsWeightNode::`scalar deleting destructor',,0x00a180d0,0x009ee5e0,0x00a180d0
 31950,function,,,0x00a18100,0x009ee610,0x00a18100
 31951,function,,,0x00a18320,0x009ee830,0x00a18320
 31952,function,,,0x00a18390,0x009ee8a0,0x00a18390
@@ -31958,7 +31958,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 31957,function,,,0x00a18550,0x009eea60,0x00a18550
 31958,function,,,0x00a18570,0x009eea80,0x00a18570
 31959,function,,,0x00a185d0,0x009eeae0,0x00a185d0
-31960,function,,,0x00a18660,0x009eeb70,0x00a18660
+31960,function,OC3Ent::Face::FxCurrentTimeNode::`scalar deleting destructor',,0x00a18660,0x009eeb70,0x00a18660
 31961,function,,,0x00a18690,0x009eeba0,0x00a18690
 31962,function,,,0x00a186b0,0x009eebc0,0x00a186b0
 31963,function,,,0x00a186d0,0x009eebe0,0x00a186d0
@@ -31985,7 +31985,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 31984,function,,,0x00a19710,0x009efc20,0x00a19710
 31985,function,,,0x00a19870,0x009efd80,0x00a19870
 31986,function,,,0x00a198b0,0x009efdc0,0x00a198b0
-31987,function,,,0x00a198d0,0x009efde0,0x00a198d0
+31987,function,OC3Ent::Face::FxMasterBoneList::`scalar deleting destructor',,0x00a198d0,0x009efde0,0x00a198d0
 31988,function,,,0x00a19920,0x009efe30,0x00a19920
 31989,function,,,0x00a19ac0,0x009effd0,0x00a19ac0
 31990,function,,,0x00a19b20,0x009f0030,0x00a19b20
@@ -32026,14 +32026,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32025,function,,,0x00a1be80,0x009f24f0,0x00a1be80
 32026,function,,,0x00a1c2e0,0x009f2950,0x00a1c2e0
 32027,function,,,0x00a1c310,0x009f2980,0x00a1c310
-32028,function,,,0x00a1c3c0,0x009f2a30,0x00a1c3c0
+32028,function,OC3Ent::Face::FxArchiveStore::`scalar deleting destructor',,0x00a1c3c0,0x009f2a30,0x00a1c3c0
 32029,function,,,0x00a1c3f0,0x009f2a60,0x00a1c3f0
 32030,function,,,0x00a1c410,0x009f2a80,0x00a1c410
 32031,function,,,0x00a1c430,0x009f2aa0,0x00a1c430
 32032,function,,,0x00a1c470,0x00937910,0x00a1c470
 32033,function,,,0x00a1c480,0x009f2af0,0x00a1c480
 32034,function,,,0x00a1c490,0x009f2b00,0x00a1c490
-32035,function,,,0x00a1c4e0,0x009f2b50,0x00a1c4e0
+32035,function,OC3Ent::Face::FxArchiveStoreMemoryNoCopy::`scalar deleting destructor',,0x00a1c4e0,0x009f2b50,0x00a1c4e0
 32036,function,,,0x00a1c510,0x009f2b80,0x00a1c510
 32037,function,,,0x00a1c540,0x009f2bb0,0x00a1c540
 32038,function,,,0x00a1c570,0x009f2be0,0x00a1c570
