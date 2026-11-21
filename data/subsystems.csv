@@ -253,7 +253,7 @@ id,subsystem,class,how
 255,ThirdParty:Scaleform,GImage,name
 256,App,EclipseGame,name
 257,App,EclipseGame,name
-258,ThirdParty:STL,"std::list<std::pair<std::wstring,?>>",name
+258,ThirdParty:STL,"std::map<std::wstring,?>",name
 259,ThirdParty:STL,std,name
 260,Data,"SmartData::Attribute<ECBase::ECHashMap<unsigned int,SmartData::IAttribute*,ECBase::ECHashParams<unsigned int>>,SmartData::NamedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 261,Data,"SmartData::Attribute<ECBase::ECHashMap<unsigned int,SmartData::IAttribute*,ECBase::ECHashParams<unsigned int>>,SmartData::NamedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
@@ -298,7 +298,7 @@ id,subsystem,class,how
 300,ThirdParty:STL,std::vector<std::wstring>,name
 301,ThirdParty:STL,std::vector<std::wstring>,owner
 302,ThirdParty:STL,std::vector<std::wstring>,owner
-303,ThirdParty:STL,"std::basic_istream<wchar_t,std::char_traits<wchar_t>>",name
+303,ThirdParty:STL,"std::basic_ios<wchar_t,std::char_traits<wchar_t>>",name
 304,ThirdParty:STL,std::list<?>,name
 305,ThirdParty:STL,std::list<?>,owner
 306,Resources,ECFileAccess,name
@@ -321,7 +321,7 @@ id,subsystem,class,how
 325,ThirdParty:STL,,range
 326,App,EclipseGame,name
 327,App,EclipseGame,name
-328,ThirdParty:STL,"std::basic_istream<wchar_t,std::char_traits<wchar_t>>",name
+328,ThirdParty:STL,"std::basic_istream<wchar_t,std::char_traits<wchar_t>>::sentry",name
 329,ThirdParty:STL,"std::list<std::pair<std::wstring,?>>",name
 330,ThirdParty:STL,"std::basic_ostream<wchar_t,std::char_traits<wchar_t>>",name
 331,ThirdParty:STL,"std::num_put<wchar_t,std::ostreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>",vtable
@@ -4600,7 +4600,7 @@ id,subsystem,class,how
 4640,Resources,StringList,between
 4641,Resources,ECResMan::ResMan,name
 4642,ThirdParty:STL,"stdext::hash_map<std::wstring,?>",name
-4643,ThirdParty:STL,std::list<?>,name
+4643,unknown,Core::ListQueue<?>,
 4644,Resources,ECResMan::ResMan,name
 4645,Resources,ECResMan::ResMan,name
 4646,Resources,ECResMan::ResMan,name
@@ -4845,7 +4845,7 @@ id,subsystem,class,how
 4885,Messaging,Messages::Message,name
 4886,Messaging,Messages,name
 4887,Messaging,Messages,name
-4888,ThirdParty:STL,stdext::hash_map,name
+4888,ThirdParty:STL,"stdext::hash_map<?,?>",name
 4889,Messaging,Messages::MessageFactory,name
 4890,Messaging,Messages,name
 4891,Core,CpuFeatures,name
@@ -5688,7 +5688,7 @@ id,subsystem,class,how
 5742,Rendering,Graphics::MaterialObjectInstance::IParameterValueProvider<ECBase::ECDynArray<Math::VectorUA4f>>,name
 5743,Rendering,Graphics::MaterialObjectInstance::IParameterValueProvider<Math::VectorUA4f>,name
 5744,Rendering,Graphics::MaterialObjectInstance::IParameterValueProvider<ECBase::ECDynArray<Math::VectorUA4f>>,name
-5745,ThirdParty:STL,std::_Tree_const_iterator<?>,name
+5745,ThirdParty:STL,std::_Tree<?>::const_iterator,name
 5746,Core,WStringPair,name
 5747,Rendering,MaterialObjectRef,name
 5748,Rendering,MaterialObjectRef,name
@@ -5873,7 +5873,7 @@ id,subsystem,class,how
 5932,Rendering,Graphics::MaterialState,name
 5933,ThirdParty:STL,std::vector<?>,name
 5934,ThirdParty:STL,"std::vector<std::pair<int,int>>",name
-5935,ThirdParty:STL,std::vector<Graphics::MaterialStateEntry>,name
+5935,Rendering,Graphics::MaterialStateEntry,name
 5936,Core,Multithreading::SynchSafePointerListBase,name
 5937,Rendering,Graphics::MaterialState,name
 5938,Rendering,Graphics::MaterialState,name
@@ -6535,7 +6535,7 @@ id,subsystem,class,how
 6595,ThirdParty:STL,"std::_Tree<std::map<std::wstring,GPtr<GFxMovieDef>>>",owner
 6596,ThirdParty:STL,"std::_Tree<std::map<std::wstring,GPtr<GFxMovieView>>>",name
 6597,ThirdParty:STL,"std::_Tree<std::map<std::wstring,GPtr<GFxMovieView>>>",owner
-6598,ThirdParty:STL,std::_Tree<std::set<void*>>,name
+6598,ThirdParty:STL,std::set<void*>,name
 6599,ThirdParty:STL,std,name
 6600,ThirdParty:STL,std,name
 6601,ThirdParty:STL,std,name
@@ -7026,7 +7026,7 @@ id,subsystem,class,how
 7087,Rendering,Graphics,name
 7088,Rendering,Graphics,name
 7089,Rendering,Graphics,name
-7090,ThirdParty:STL,std::_Tree_const_iterator,name
+7090,ThirdParty:STL,std::_Tree<?>::const_iterator,name
 7091,Rendering,Renderer::ShaderParameter,name
 7092,Rendering,Eclipse::IGraphicsInternal,name
 7093,Rendering,Eclipse::IGraphicsInternal,name
@@ -9945,15 +9945,15 @@ id,subsystem,class,how
 10015,Audio,,between
 10016,Audio,,between
 10017,Audio,EclipsePrivate::CMusicThemeContent_FMOD,name
-10018,Audio,CMusicThemeContent_FMOD,callers
-10019,Audio,,callers
+10018,Audio,EclipsePrivate::CMusicThemeContent_FMOD,name
+10019,Audio,EclipsePrivate::CMusicThemeContent_FMOD,name
 10020,Audio,EclipsePrivate::CMusicThemeContent_FMOD,name
 10021,Audio,EclipsePrivate::CMusicThemeContent_FMOD,name
-10022,Audio,,callers
+10022,Audio,EclipsePrivate::CMusicThemeContent_FMOD,name
 10023,Audio,EclipsePrivate::CMusicThemeContent_FMOD,name
-10024,Audio,,callers
+10024,Audio,EclipsePrivate::CMusicThemeContent_FMOD,name
 10025,Audio,EclipsePrivate::CMusicThemeContent_FMOD,name
-10026,Audio,,callers
+10026,Audio,EclipsePrivate::CMusicThemeContent_FMOD,name
 10027,Audio,EclipsePrivate::CMusicThemeContent_FMOD,name
 10028,Audio,EclipsePrivate::CMusicThemeContent_FMOD,name
 10029,Audio,EclipsePrivate::CMusicThemeContent_FMOD,name
@@ -12081,7 +12081,7 @@ id,subsystem,class,how
 12153,Data,"SmartData::Attribute<ECBase::ECDynArray<AbilityGUIInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 12154,ThirdParty:STL,std,name
 12155,Data,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
-12156,Data,"SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
+12156,Data,SmartData,name
 12157,Data,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 12158,Data,"SmartData::IndexedMemberLookup<ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>>",name
 12159,ThirdParty:STL,std,name
@@ -13504,7 +13504,7 @@ id,subsystem,class,how
 13579,Messaging,OnMinimapScaleChangedMessage,name
 13580,ThirdParty:STL,std::_Tree<Elem>,name
 13581,ThirdParty:STL,std::_Tree<Elem>,name
-13582,ThirdParty:STL,std::_Tree<Elem>::const_iterator,name
+13582,ThirdParty:STL,std::_Tree<?>::const_iterator,name
 13583,ThirdParty:STL,std,name
 13584,Physics,Physics::IPhysicsTriggerReport,name
 13585,World,CCArea,name
@@ -13535,7 +13535,7 @@ id,subsystem,class,how
 13610,Messaging,OnMinimapScaleChangedMessage,name
 13611,Messaging,OnMinimapScaleChangedMessage,name
 13612,ThirdParty:STL,std::_Tree,name
-13613,ThirdParty:STL,std::_Tree_const_iterator,name
+13613,ThirdParty:STL,std::_Tree<?>::const_iterator,name
 13614,Resources,Gff4::BlockRef,name
 13615,ThirdParty:STL,"std::allocator<std::pair<std::wstring,int>>",name
 13616,ThirdParty:STL,Stub,between
@@ -13773,7 +13773,7 @@ id,subsystem,class,how
 13849,World,NamedHashMap,callers
 13850,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",name
 13851,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",owner
-13852,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",name
+13852,ThirdParty:STL,"std::map<?,std::vector<unsigned int>>",name
 13853,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",name
 13854,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",owner
 13855,World,CCArea,name
@@ -19715,7 +19715,7 @@ id,subsystem,class,how
 19805,Game,CSSubActionHandler,name
 19806,Game,CSubActionController,name
 19807,Game,CSubActionController,name
-19808,ThirdParty:STL,std::_Tree_const_iterator<?>,name
+19808,ThirdParty:STL,std::_Tree<?>::const_iterator,name
 19809,AI,MovementController,name
 19810,AI,MovementController,name
 19811,Game,AnimationPlacement,callers
@@ -21409,8 +21409,8 @@ id,subsystem,class,how
 21506,GUI,FilteredGroupedItemView,name
 21507,GUI,FilteredGroupedItemView,name
 21508,GUI,FilteredGroupedItemView,name
-21509,ThirdParty:STL,std::_Tree,name
-21510,ThirdParty:STL,std::_Tree,owner
+21509,ThirdParty:STL,std::_Tree<?>,name
+21510,ThirdParty:STL,std::_Tree<?>,owner
 21511,ThirdParty:STL,std::_Tree,name
 21512,ThirdParty:STL,std::_Tree,name
 21513,ThirdParty:STL,std::_Tree,owner
@@ -23701,7 +23701,7 @@ id,subsystem,class,how
 23848,ThirdParty:STL,std,name
 23849,ThirdParty:STL,std,name
 23850,ThirdParty:STL,std,name
-23851,Rendering,D3DDriver::ShaderParameter::D3DDriver,name
+23851,Rendering,D3DDriver::ShaderParameter,name
 23852,Rendering,D3DDriver::ShaderParameter,name
 23853,ThirdParty:STL,std::vector<D3DDriver::ShaderConstant>,name
 23854,ThirdParty:STL,std,name
@@ -24055,7 +24055,7 @@ id,subsystem,class,how
 24202,Input,InputMapper::KeyWord,callers
 24203,Input,InputWord,name
 24204,ThirdParty:STL,"std::pair<const int,std::wstring>",name
-24205,ThirdParty:STL,"std::map<int,InputMapper::KeyRecord>::iterator",name
+24205,ThirdParty:STL,"std::map<int,InputMapper::KeyRecord>::const_iterator",name
 24206,ThirdParty:STL,"std::map<int,InputMapper::KeyRecord>::_Node",name
 24207,ThirdParty:STL,"std::map<int,InputMapper::KeyRecord>",name
 24208,ThirdParty:STL,"std::map<int,InputMapper::KeyRecord>",owner
@@ -32900,7 +32900,7 @@ id,subsystem,class,how
 33135,AI,Pathfinding::Pathfinder,name
 33136,AI,Pathfinding::Pathfinder,name
 33137,AI,Pathfinding,callers
-33138,AI,Pathfinding,callers
+33138,AI,Pathfinding::Pathfinder,name
 33139,AI,Pathfinding,callers
 33140,AI,Pathfinding::Pathfinder,name
 33141,AI,Pathfinding::Pathfinder,name
@@ -33788,8 +33788,8 @@ id,subsystem,class,how
 34030,App,EclipseGame,owner
 34031,App,EclipseGame,owner
 34032,App,EclipseGame,owner
-34033,ThirdParty:STL,"std::basic_istream<wchar_t,std::char_traits<wchar_t>>",owner
-34034,ThirdParty:STL,"std::basic_istream<wchar_t,std::char_traits<wchar_t>>",owner
+34033,ThirdParty:STL,"std::basic_istream<wchar_t,std::char_traits<wchar_t>>::sentry",owner
+34034,ThirdParty:STL,"std::basic_istream<wchar_t,std::char_traits<wchar_t>>::sentry",owner
 34035,ThirdParty:STL,"std::num_put<wchar_t,std::ostreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>",owner
 34036,ThirdParty:STL,"std::num_put<wchar_t,std::ostreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>",owner
 34037,ThirdParty:STL,"std::num_put<wchar_t,std::ostreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>",owner
@@ -36987,8 +36987,8 @@ id,subsystem,class,how
 37229,ThirdParty:STL,"std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char>>",owner
 37230,ThirdParty:STL,std::ctype<char>,owner
 37231,ThirdParty:STL,std::ctype<char>,owner
-37232,ThirdParty:STL,"std::basic_istream<wchar_t,std::char_traits<wchar_t>>",owner
-37233,ThirdParty:STL,"std::basic_istream<wchar_t,std::char_traits<wchar_t>>",owner
+37232,ThirdParty:STL,"std::basic_ios<wchar_t,std::char_traits<wchar_t>>",owner
+37233,ThirdParty:STL,"std::basic_ios<wchar_t,std::char_traits<wchar_t>>",owner
 37234,ThirdParty:STL,,owner
 37235,ThirdParty:STL,,owner
 37236,ThirdParty:STL,,owner
@@ -53703,7 +53703,7 @@ id,subsystem,class,how
 53945,GUI,FilteredGroupedItemView,owner
 53946,GUI,FilteredGroupedItemView,owner
 53947,GUI,FilteredGroupedItemView,owner
-53948,ThirdParty:STL,std::_Tree,owner
+53948,ThirdParty:STL,std::_Tree<?>,owner
 53949,ThirdParty:STL,std::_Tree,owner
 53950,ThirdParty:STL,std::vector<FilteredGroupedItemView::Entry>,owner
 53951,ThirdParty:STL,std::vector<FilteredGroupedItemView::Entry>,owner
@@ -55155,9 +55155,9 @@ id,subsystem,class,how
 55397,ThirdParty:STL,std::vector<?>,owner
 55398,ThirdParty:STL,,owner
 55399,ThirdParty:STL,,owner
-55400,Rendering,D3DDriver::ShaderParameter::D3DDriver,owner
-55401,Rendering,D3DDriver::ShaderParameter::D3DDriver,owner
-55402,Rendering,D3DDriver::ShaderParameter::D3DDriver,owner
+55400,Rendering,D3DDriver::ShaderParameter,owner
+55401,Rendering,D3DDriver::ShaderParameter,owner
+55402,Rendering,D3DDriver::ShaderParameter,owner
 55403,Rendering,D3DDriver::ShaderParameter,owner
 55404,Rendering,D3DDriver::ShaderParameter,owner
 55405,Rendering,D3DDriver::ShaderParameter,owner
