@@ -164,8 +164,23 @@ class Work(unittest.TestCase):
                     "callfixup",
                     "datatype",
                     "returntype",
+                    "registers",
                 ),
             )
+
+    def test_registers_rows_name_registers_and_a_stack(self):
+        # eax,edx|8 or ecx|4c: registers, then what of the stack and who pops it.
+        import re
+
+        _rows, fixes = work()
+        for _address, what, value in fixes:
+            if what == "registers":
+                self.assertRegex(
+                    value, r"^(e[abcd]x|e[sd]i)(,(e[abcd]x|e[sd]i))*(\|\d+c?)?$"
+                )
+                self.assertTrue(
+                    all(int(n) % 4 == 0 for n in re.findall(r"\|(\d+)", value))
+                )
 
     def test_a_convention_is_one_ghidra_knows(self):
         # A note in the value ("__thiscall ret 0x18") fails in Ghidra.

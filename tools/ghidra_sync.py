@@ -47,7 +47,9 @@ What a run does, on the GOG build's addresses:
   returns as returning; `callfixup` gives a function one of the compiler
   spec's call fixups by name; `datatype` types a global and `returntype`
   a function's return, in the types a struct's field is written in
-  (`CCParty *`).
+  (`CCParty *`); `registers` (`eax,edx`) makes those registers a
+  function's first parameters, in custom storage, ahead of its stack ones,
+  for a convention whole-program optimisation made (tools/regargs.py).
 - what tools/receivers.py reads from the code of what a global holds and
   what a getter returns, as `datatype` and `returntype` rows nobody wrote,
   and which methods are called with this inside their object and how far
@@ -115,6 +117,8 @@ from ghidra.program.model.symbol import SymbolUtilities
 from ghidra.app.util.cparser.C import CParserUtils
 from ghidra.app.cmd.function import ApplyFunctionSignatureCmd
 from ghidra.app.cmd.function import CreateFunctionCmd
+from ghidra.program.model.listing import Function, ParameterImpl, VariableStorage
+from ghidra.program.model.data import Undefined4DataType
 W = json.loads(PAYLOAD)
 TYPE_WORDS = {"void", "int", "bool", "char", "short", "long", "float", "double",
               "unsigned", "signed", "uint", "ushort", "uchar"}
@@ -257,6 +261,67 @@ for address, what, value in W["fixes"]:
             # Ghidra took it for one that never returns (operator new), which
             # ends every caller's body at the call.
             fm.getFunctionAt(a).setNoReturn(False)
+        elif what == "registers":
+            # A convention whole-program optimisation made (tools/regargs.py):
+            # these registers carry the first arguments, ahead of the stack
+            # ones Ghidra has. A parameter it already had in one keeps its name
+            # and type.
+            # The stack after the bar: |N popped by the function, |Nc by its
+            # callers, nothing where neither is known.
+            f = fm.getFunctionAt(a)
+            registers, _, stack = value.partition("|")
+            by_caller = stack.endswith("c")
+            stack_bytes = int(stack.rstrip("c")) if stack else None
+            convention = f.getCallingConventionName()
+            if registers == "ecx" and stack_bytes == 0:
+                # ecx alone and no stack is a one-argument __fastcall, whose
+                # parameter the decompiler types better than a void *this.
+                if convention not in ("__fastcall", "__thiscall"):
+                    f.setCallingConvention("__fastcall")
+                continue
+            if registers == "ecx" and stack_bytes and not by_caller:
+                # ecx and a stack the callee pops is __thiscall: no custom
+                # storage, so no "unknown calling convention".
+                if convention != "__thiscall":
+                    f.setCallingConvention("__thiscall")
+                continue
+            params = list(f.getParameters())
+            held, kept_stack = {}, []
+            for p in params:
+                s = p.getVariableStorage()
+                if s.isStackStorage():
+                    kept_stack.append(p)
+                elif p.isRegisterVariable() and p.getRegister() is not None:
+                    held[p.getRegister().getName().upper()] = p
+            if stack_bytes is None and not kept_stack:
+                # The stack is not known and Ghidra stored none: custom storage
+                # would lose the ones its decompiles infer, so it is left.
+                continue
+            wanted = [r.upper() for r in registers.split(",")]
+            have = [p.getRegister().getName().upper() for p in params
+                    if p.isRegisterVariable() and p.getRegister() is not None]
+            if f.hasCustomVariableStorage() and have == wanted:
+                continue
+            new = []
+            for r in wanted:
+                storage = VariableStorage(program, [program.getRegister(r)])
+                old = held.get(r)
+                name = old.getName() if old is not None else r.lower() + "Arg"
+                kind = old.getDataType() if old is not None else Undefined4DataType.dataType
+                new.append(ParameterImpl(name, kind, storage, program))
+            if kept_stack:
+                new += [ParameterImpl(p.getName(), p.getDataType(), p.getVariableStorage(), program)
+                        for p in kept_stack]
+            elif stack_bytes:
+                # Ghidra stored none (the decompiler infers them each time),
+                # so they are made: one dword each, after the return address.
+                for k in range(stack_bytes // 4):
+                    new.append(ParameterImpl("stack_%d" % (k + 1), Undefined4DataType.dataType,
+                                             VariableStorage(program, 4 + 4 * k, 4), program))
+            f.setCustomVariableStorage(True)
+            f.replaceParameters(Function.FunctionUpdateType.CUSTOM_STORAGE, True, SOURCE, new)
+            if stack_bytes is not None:
+                f.setStackPurgeSize(0 if by_caller else stack_bytes)
         elif what == "callfixup":
             # One of the compiler spec's call fixups, which Ghidra's analysis
             # gives by name and so missed where the name came later, from
@@ -906,7 +971,7 @@ def stored_parameters(server, fixes, dry):
         server,
         ghidra_types.GHIDRA_PARAMS,
         dry,
-        rows=sorted({a for a, what, _ in fixes if what == "signature"}),
+        rows=sorted({a for a, what, _ in fixes if what in ("signature", "registers")}),
     )
 
 
