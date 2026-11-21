@@ -6320,7 +6320,7 @@ address,what,value,why
 0x004E7E40,signature,"void * __cdecl f(void *first, void *last, void *dest_end)","0x004E7E40: step -0x14, call 0x004E7DE0"
 0x004E7E80,signature,"void * __thiscall f(void *this, unsigned int n)","0x004E7E80: +4,+8,+0xC=0"
 0x004E7EF0,signature,void __cdecl f(void *entry),0x004E7EF0: [edi+0x28]=bucket head
-0x004E7FE0,signature,"void __stdcall f(void *first, void *last)","0x004E7FE0: step 0x14, lea ecx,[esi+4], call 0x0046C760"
+0x004E7FE0,signature,"void __thiscall f(void *this, void *first, void *last)","a std::vector member, the vector in ecx (decomp-agent, 2026-11-21); 0x004E7FE0: step 0x14, lea ecx,[esi+4], call 0x0046C760"
 0x004E8010,signature,void __thiscall f(void *this),"0x004E8010: step 0x14, 0x0046C760, operator delete 0x004136C0, zero +4/+8/+0xC"
 0x004E8060,signature,"unsigned char __thiscall f(void *this, unsigned int n)","0x004E8060: imul 0x2C, operator new 0x00413660, vector push via 0x006F1340/0x0063D330"
 0x004E8110,signature,void * __thiscall f(void *this),"0x004E8110: lock 0x004C4D00/0x004C4D50, cursor [esi+0x20], Grow 0x004E8060"
@@ -8880,7 +8880,7 @@ address,what,value,why
 0x007B09F0,signature,"void* __thiscall f(void* this, unsigned int flags)","0x007B09F0 sub ecx,0x20"
 0x007B0C80,signature,void __thiscall f(void* this),0x007B0C80
 0x007B0CC0,signature,"void* __thiscall f(void* this, unsigned int flags)",0x007B0CC0
-0x007B0CE0,signature,"void* __stdcall f(void* dest, unsigned int count, void* value)","0x007B0CE0 ret 0xC; reconciled: ret 0xC, no this"
+0x007B0CE0,signature,"void* __thiscall f(void *this, void* dest, unsigned int count, void* value)","a std::vector member, the vector in ecx (decomp-agent, 2026-11-21); 0x007B0CE0 ret 0xC; reconciled: ret 0xC, no this"
 0x007B0D20,signature,void __thiscall f(void* this),"0x007B0D20: MessageRegistry::Get 0x004740B0 x6, then 0x007AE850, 0x007AE8D0, 0x007AD190, 0x007AD210, 0x007AD290, 0x007B0810 (handler objects with vtables 0x00B21464..0x00B214A0)"
 0x007B0D70,signature,"void* __thiscall f(void* this, void* other)",0x007B0D70 ret 4
 0x007B0EC0,signature,void __thiscall f(void* this),0x007B0EC0: call 0x007AC3E0
@@ -9257,7 +9257,7 @@ address,what,value,why
 0x007ABE10,signature,"unsigned int __thiscall f(void *this, void *gff, void *gffStruct)","ID 19901 CScriptLocation::WriteToGff: ret and ecx read in the exe, 0x007ABE10-0x007ABEBF"
 0x007AD880,signature,"void __thiscall f(void *this, void *saveStruct)","ID 19951 PartyTacticEntry::WriteToSave: ret and ecx read in the exe, 0x007AD880-0x007AD9AF"
 0x007AD9B0,signature,"void __stdcall f(void *saveBlock, void *entryVector)","ID 19952 PartyTactics::WriteEntriesToSave: ret and ecx read in the exe, 0x007AD9B0-0x007ADA3F"
-0x007AEB20,signature,"void __stdcall f(void *first, void *last)","ID 19972 std::_Destroy_range: ret and ecx read in the exe, 0x007AEB20-0x007AEB4F"
+0x007AEB20,signature,"void __thiscall f(void *this, void *first, void *last)","a std::vector member, the vector in ecx (decomp-agent, 2026-11-21); ID 19972 std::_Destroy_range: ret and ecx read in the exe, 0x007AEB20-0x007AEB4F"
 0x007AF0A0,signature,"void __thiscall f(void *this, unsigned int n)","ID 19976 ECBase::ECDynArray: ret and ecx read in the exe, 0x007AF0A0-0x007AF0D3"
 0x007AF160,signature,"void __cdecl f(void *first, void *last, const void *value)","ID 19978 std::fill: ret and ecx read in the exe, 0x007AF160-0x007AF18F"
 0x007AF190,signature,unsigned int __cdecl f(void),"ID 19979 PartyTacticEntry::DefineSaveStruct: ret and ecx read in the exe, 0x007AF190-0x007AF2DF"
@@ -10428,7 +10428,7 @@ address,what,value,why
 0x005DC2C0,signature,"void __thiscall f(void* this, std::wstring *entry)",convention and arguments read at 0x005DC2C0-0x005DC370; a void * here is the class DAODecomp's matching definition gives
 0x005DC380,signature,void __thiscall f(void* this),convention and arguments read at 0x005DC380-0x005DC39B
 0x005DC3A0,signature,void __thiscall f(void* this),convention and arguments read at 0x005DC3A0-0x005DC3BD
-0x005DC3C0,signature,"void __stdcall f(void* first, void* last)",convention and arguments read at 0x005DC3C0-0x005DC3E3
+0x005DC3C0,signature,"void __thiscall f(void *this, void* first, void* last)","a std::vector member, the vector in ecx (decomp-agent, 2026-11-21); convention and arguments read at 0x005DC3C0-0x005DC3E3"
 0x005DC3F0,signature,void __thiscall f(void* this),convention and arguments read at 0x005DC3F0-0x005DC438
 0x005DC440,signature,"void* __thiscall f(void* this, void* result, void* firstContainer, void* first, void* lastContainer, void* last)","ret 0x14; reconciled: read 0x005DC440 (arg1 is the out pair, written from args 2 and 3 and returned in eax)"
 0x005DC4C0,signature,void __thiscall f(void* this),convention and arguments read at 0x005DC4C0
@@ -10520,7 +10520,7 @@ address,what,value,why
 0x007C59D0,signature,"void __cdecl f(void *dest, unsigned int n, void *value)","0x007c59d0: std::_Uninit_fill_n<MapTrail*,unsigned int,MapTrail>, convention and arguments read at the entry and the ret"
 0x007C5A70,signature,unsigned int __thiscall f(void *this),"0x007c5a70: MapTravelPoint::GetConnectionCount, convention and arguments read at the entry and the ret"
 0x007C6750,signature,void __thiscall f(void *this),"0x007c6750: MapPathSearch::~MapPathSearch, convention and arguments read at the entry and the ret"
-0x007C6790,signature,"void __stdcall f(void *first, void *last)","0x007c6790: std::_Destroy_range<MapTrailPoint*>, convention and arguments read at the entry and the ret"
+0x007C6790,signature,"void __thiscall f(void *this, void *first, void *last)","a std::vector member, the vector in ecx (decomp-agent, 2026-11-21); 0x007c6790: std::_Destroy_range<MapTrailPoint*>, convention and arguments read at the entry and the ret"
 0x007C67C0,signature,"void * __stdcall f(void *dest, unsigned int n, void *value)","0x007c67c0: std::uninitialized_fill_n<MapTrail*,unsigned int,MapTrail>, convention and arguments read at the entry and the ret"
 0x007C6800,signature,"void __thiscall f(void *this, void *outIter, int c1, int p1, int c2, int p2)","0x007c6800: std::vector<MapTrailPoint>::erase, convention and arguments read at the entry and the ret"
 0x007C6880,signature,"void __stdcall f(void *first, void *last)","0x007c6880: std::_Destroy_range<MapTrail*>, convention and arguments read at the entry and the ret"
@@ -10756,9 +10756,9 @@ address,what,value,why
 0x007F6350,signature,void * __cdecl f(int row),"ID 21384 LookAt::GetPartConfig at 0x007F6350: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
 0x007F6C60,signature,"bool __thiscall f(void *this, unsigned int index, void *outConnection)","ID 21404 MapLocation::GetConnection at 0x007F6C60: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
 0x007F6CB0,signature,"void * __cdecl f(void *first, void *last, void *destEnd)","ID 21405 std::_Copy_backward<MapLocationConnection *,MapLocationConnection *> at 0x007F6CB0: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
-0x007F7260,signature,"void __stdcall f(void *first, void *last)","ID 21408 std::_Destroy_range<MapLocationConnection *> at 0x007F7260: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
+0x007F7260,signature,"void __thiscall f(void *this, void *first, void *last)","a std::vector member, the vector in ecx (decomp-agent, 2026-11-21); ID 21408 std::_Destroy_range<MapLocationConnection *> at 0x007F7260: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
 0x007F7290,signature,void __thiscall f(void *this),"ID 21409 std::vector<MapLocationConnection>::_Tidy at 0x007F7290: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
-0x007F72E0,signature,"void * __stdcall f(void *dest, unsigned int count, const void *val)","ID 21410 std::_Uninit_fill_n<MapLocationConnection *,unsigned int,MapLocationConnection> at 0x007F72E0: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
+0x007F72E0,signature,"void * __thiscall f(void *this, void *dest, unsigned int count, const void *val)","a std::vector member, the vector in ecx (decomp-agent, 2026-11-21); ID 21410 std::_Uninit_fill_n<MapLocationConnection *,unsigned int,MapLocationConnection> at 0x007F72E0: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
 0x007F7320,signature,"void __thiscall f(void *this, void *outIterator, void *firstContainer, void *firstPtr, void *lastContainer, void *lastPtr)","ID 21411 std::vector<MapLocationConnection>::erase at 0x007F7320: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
 0x007F73A0,signature,"void * __stdcall f(void *first, void *last, void *dest)","ID 21412 std::_Uninit_copy<MapLocationConnection *,MapLocationConnection *> at 0x007F73A0: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
 0x007F73D0,signature,void __thiscall f(void *this),"ID 21413 std::vector<MapLocationConnection>::_Tidy at 0x007F73D0: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
@@ -12010,7 +12010,7 @@ address,what,value,why
 0x004877D0,signature,"void* __thiscall f(void* this, void* out, int key)","ret 8; out is the first stack argument, the key the second, read at 0x004877D0"
 0x00487730,signature,"void __cdecl f(void* response, void* owner)","plain ret; response read first, owner (this for QueueGameRecord) second, read at 0x00487730"
 0x00489E20,signature,"bool __thiscall f(void* this, void* file)","ret 4, ecx used; the argument is the file declared on, read at 0x00489E20"
-0x0048C840,convention,__stdcall,"ret 8, ecx unused at 0x0048C840"
+0x0048C840,convention,__thiscall,"a std::vector member, the vector in ecx (decomp-agent, 2026-11-21); ret 8, ecx unused at 0x0048C840"
 0x0048C8C0,convention,__stdcall,"ret 0xC, three stack arguments, ecx only saved at 0x0048C8C0"
 0x00489F60,signature,void __thiscall f(void* this),"ecx read first, plain ret at 0x00489F60"
 0x0048D0B0,signature,void* __cdecl f(unsigned int n),"plain ret, count on the stack at 0x0048D0B0"
@@ -12575,7 +12575,7 @@ address,what,value,why
 0x00847B10,signature,"void * __cdecl f(void *first, void *last, void *dest)","settled: second reading, three stack arguments only (0x00847B13-0x00847B1D)"
 0x00847B70,signature,"void * __thiscall f(void *this, void *outIterator, const int *key)",settled: key type as 22957
 0x00847BE0,signature,"void * __thiscall f(void *this, void *out, const int *shape)","settled: second reading, callers are pool code"
-0x00847C40,signature,"void * __stdcall f(void *first, unsigned int count, const void *value)","settled: __stdcall, ret 0xC with the stack reserve push ecx unread"
+0x00847C40,signature,"void * __thiscall f(void *this, void *first, unsigned int count, const void *value)","a std::vector member, the vector in ecx (decomp-agent, 2026-11-21); settled: __stdcall, ret 0xC with the stack reserve push ecx unread"
 0x00847C80,signature,void __thiscall f(void *this),"settled: the pool (ctor 0x00849B90), second reading"
 0x00847E80,signature,"void __thiscall f(void *this, unsigned int index)",settled: second reading
 0x008445D0,clear,_AfxAygshellState,"false library match; the Console::GetInstance singleton getter, static 0x00C39B20"
@@ -12707,7 +12707,7 @@ address,what,value,why
 0x0084C9F0,signature,"void __cdecl f(void *cont1, void *node1, void *cont2, void *node2, unsigned int *count)",ret and arguments read in daoexe --disasm at 0x0084c9f0
 0x0084F070,signature,"void * __cdecl f(void *first, void *last, void *destEnd)",ret and arguments read in daoexe --disasm at 0x0084f070
 0x0084F0A0,signature,"void __cdecl f(void *first, unsigned int count, const void *value)",ret and arguments read in daoexe --disasm at 0x0084f0a0
-0x0084F0D0,signature,"void * __stdcall f(void *first, unsigned int count, const void *value)",ret and arguments read in daoexe --disasm at 0x0084f0d0
+0x0084F0D0,signature,"void * __thiscall f(void *this, void *first, unsigned int count, const void *value)","a std::vector member, the vector in ecx (decomp-agent, 2026-11-21); ret and arguments read in daoexe --disasm at 0x0084f0d0"
 0x0084F110,signature,"void * __stdcall f(void *first, void *last, void *dest)",ret and arguments read in daoexe --disasm at 0x0084f110
 0x0084F140,signature,"void __thiscall f(void *this, unsigned int *outIter, unsigned int firstCont, unsigned int firstPtr, unsigned int lastCont, unsigned int lastPtr)",ret and arguments read in daoexe --disasm at 0x0084f140
 0x008517D0,signature,void ** __thiscall f(void *this),ret and arguments read in daoexe --disasm at 0x008517d0
@@ -12824,7 +12824,7 @@ address,what,value,why
 0x008731E0,signature,"void * __thiscall f(void *this, int a1, int a2, int a3, int a4, int a5)",ret and arguments read in daoexe --disasm at 0x008731e0
 0x00873240,convention,__cdecl,ret and ecx use read in daoexe --disasm at 0x00873240
 0x00873270,convention,__cdecl,ret and ecx use read in daoexe --disasm at 0x00873270
-0x00873490,signature,"void * __stdcall f(int a1, int a2, int a3)",ret and arguments read in daoexe --disasm at 0x00873490
+0x00873490,signature,"void * __thiscall f(void *this, int a1, int a2, int a3)","a std::vector member, the vector in ecx (decomp-agent, 2026-11-21); ret and arguments read in daoexe --disasm at 0x00873490"
 0x008734D0,signature,"void * __stdcall f(int a1, int a2, int a3)",ret and arguments read in daoexe --disasm at 0x008734d0
 0x00873810,convention,__thiscall,ret and ecx use read in daoexe --disasm at 0x00873810
 0x0087B420,signature,"void __thiscall f(void *this, int a1)",ret and arguments read in daoexe --disasm at 0x0087b420
@@ -12886,8 +12886,8 @@ address,what,value,why
 0x0087BA70,convention,__cdecl,ret and ecx use read in daoexe --disasm at 0x0087ba70
 0x0087BB00,convention,__cdecl,ret and ecx use read in daoexe --disasm at 0x0087bb00
 0x0087BB30,convention,__cdecl,ret and ecx use read in daoexe --disasm at 0x0087bb30
-0x0087BBC0,signature,"void * __stdcall f(int a1, int a2, int a3)",ret and arguments read in daoexe --disasm at 0x0087bbc0
-0x0087BC00,signature,"void __stdcall f(int a1, int a2)",ret and arguments read in daoexe --disasm at 0x0087bc00
+0x0087BBC0,signature,"void * __thiscall f(void *this, int a1, int a2, int a3)","a std::vector member, the vector in ecx (decomp-agent, 2026-11-21); ret and arguments read in daoexe --disasm at 0x0087bbc0"
+0x0087BC00,signature,"void __thiscall f(void *this, int a1, int a2)","a std::vector member, the vector in ecx (decomp-agent, 2026-11-21); ret and arguments read in daoexe --disasm at 0x0087bc00"
 0x0087BC30,convention,__thiscall,ret and ecx use read in daoexe --disasm at 0x0087bc30
 0x0087BC40,signature,void __thiscall f(void *this),ret and arguments read in daoexe --disasm at 0x0087bc40
 0x0087BC90,signature,"void * __thiscall f(void *this, int a1, int a2, int a3, int a4, int a5)",ret and arguments read in daoexe --disasm at 0x0087bc90
@@ -13292,7 +13292,7 @@ address,what,value,why
 0x0049B900,signature,"void __stdcall f(void *first, void *last)","ret 8, ecx unread: 0x0049B900"
 0x0049B9C0,signature,"void __stdcall f(void *first, void *last)","ret 8, ecx unread: 0x0049B9C0"
 0x00492870,signature,"void * __stdcall f(void *first, unsigned int count, void *value)","ret 0xC, ecx unread: 0x00492870"
-0x00492930,signature,"void * __stdcall f(void *first, unsigned int count, void *value)","ret 0xC, ecx unread: 0x00492930"
+0x00492930,signature,"void * __thiscall f(void *this, void *first, unsigned int count, void *value)","a std::vector member, the vector in ecx (decomp-agent, 2026-11-21); ret 0xC, ecx unread: 0x00492930"
 0x0049B980,signature,"void * __stdcall f(void *first, unsigned int count, void *value)","ret 0xC, ecx unread: 0x0049B980"
 0x0049BA40,signature,"void * __stdcall f(void *first, unsigned int count, void *value)","ret 0xC, ecx unread: 0x0049BA40"
 0x00492A50,signature,"void * __stdcall f(void *first, void *last, void *dest)","ret 0xC, ecx unread: 0x00492A50"
@@ -14770,7 +14770,7 @@ address,what,value,why
 0x00797C80,signature,"void * __thiscall f(void *this, void *outRecord, void *item)",ret 8; returns ebx (the record)
 0x00797EC0,signature,"void * __thiscall f(void *this, void *outRecord, void *item)",ret 8
 0x00797F70,signature,"void __thiscall f(void *this, void *saveStruct)",ret 4
-0x00797FC0,convention,__stdcall,"ret 8, ecx never read (first, last)"
+0x00797FC0,convention,__thiscall,"a std::vector member, the vector in ecx (decomp-agent, 2026-11-21); ret 8, ecx never read (first, last)"
 0x00797FF0,signature,void __thiscall f(void *this),plain ret
 0x00798040,signature,void __thiscall f(void *this),plain ret
 0x00798060,signature,"void * __thiscall f(void *this, unsigned int flags)",ret 4
@@ -18642,7 +18642,7 @@ address,what,value,why
 0x004FEEC0,signature,"void __cdecl std::_Destroy_range<Graphics::MaterialTextureDeclaration*>(void* first, void* last)",plain ret
 0x004FEF30,signature,"void __cdecl std::_Uninit_fill_n<Graphics::MaterialTextureDeclaration*,unsigned int,Graphics::MaterialTextureDeclaration>(void* first, unsigned int count, void* value)",plain ret
 0x004FF6A0,signature,"void __stdcall std::_Destroy<Graphics::MaterialTextureDeclaration*>(void* first, void* last)",ret 8 at 0x004FF6B8
-0x004FF6C0,signature,"void* __stdcall std::uninitialized_fill_n<Graphics::MaterialTextureDeclaration*,unsigned int,Graphics::MaterialTextureDeclaration>(void* first, unsigned int count, void* value)",ret 0xC
+0x004FF6C0,signature,"void* __thiscall f(void *this, void* first, unsigned int count, void* value)","a std::vector member, the vector in ecx (decomp-agent, 2026-11-21); ret 0xC"
 0x004FF700,signature,"void* __stdcall std::uninitialized_copy<Graphics::MaterialTextureDeclaration*,Graphics::MaterialTextureDeclaration*>(void* first, void* last, void* dest)",ret 0xC
 0x004FF7A0,signature,"void __thiscall Graphics::MaterialObject::ProvideParameter(void* this, void* request, void* passBlock)",ret 8
 0x004F93B0,signature,int __stdcall Graphics::ParseDeviceStateName(void* name),ret 4; the argument is a string object compared with 0x4C0E10
