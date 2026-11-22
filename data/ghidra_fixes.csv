@@ -1341,14 +1341,14 @@ address,what,value,why
 0x0058CF2B,convention,__cdecl,0x0058CF2B std::wstring::~wstring loop then 0x008E1202
 0x0058CF60,signature,"bool __stdcall f(void* reader, void* node)",__stdcall: 0x0058CF60 push 0x17A0
 0x0058CFB0,signature,"bool __stdcall f(void* reader, void* node)",__stdcall: 0x0058CFB0 push 0x1886
-0x0058D020,signature,"void* __stdcall f(void* dest, unsigned int count, void* value)",0x0058D020: ret 0xc
+0x0058D020,signature,"void* __thiscall f(void *this, void* dest, unsigned int count, void* value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); 0x0058D020: ret 0xc"
 0x0058D060,signature,"void* __thiscall f(void* this, void* out, unsigned int fieldId, void* defaultValue)","__thiscall: 0x0058D060 calls 0x004D54D0, 0x004D5230 then 0x0058CE20"
 0x0058D0A0,signature,"bool __stdcall f(void* reader, void* element)","__stdcall: 0x0058D0A0 pushes 0x1798, 0x1799, 0x179A, 0x179B"
 0x0058D180,signature,"void* __thiscall f(void* this, void* out, void* cont1, void* first, void* cont2, void* last)",0x0058D180: ret 0x14
 0x0058D1E0,signature,void* __thiscall f(void* this),0x0058D1E0: ret
 0x0058D250,signature,"void* __stdcall f(void* first, void* last, void* dest)",0x0058D250: ret 0xc
-0x0058D280,signature,"void* __stdcall f(void* dest, unsigned int count, void* value)",0x0058D280: ret 0xc
-0x0058D2C0,signature,"void __stdcall f(void* first, void* last)","__stdcall: 0x0058D2C0 loop of 0x004C0DB0 on esi+8, step 0x38"
+0x0058D280,signature,"void* __thiscall f(void *this, void* dest, unsigned int count, void* value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); 0x0058D280: ret 0xc"
+0x0058D2C0,signature,"void __thiscall f(void *this, void* first, void* last)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); __stdcall: 0x0058D2C0 loop of 0x004C0DB0 on esi+8, step 0x38"
 0x0058D2F0,signature,"bool __stdcall f(void* reader, void* nodePtr, void* nodePtrExtra)",0x0058D2F0 ret 0xc: reader plus an 8-byte smart pointer passed by value (its address is taken for 0x004621C0)
 0x0058D420,signature,void __thiscall f(void* this),0x0058D420: ret
 0x0058D470,signature,"void* __thiscall f(void* this, void* out, void* cont1, void* first, void* cont2, void* last)",0x0058D470: ret 0x14
@@ -1410,8 +1410,8 @@ address,what,value,why
 0x00567100,signature,"void __cdecl f(void* first, void* last)",0x00567100: ret
 0x00567170,convention,__cdecl,"0x00567170 copies the last, writes the top into it, calls 0x00566CC0"
 0x005671E0,signature,unsigned int __thiscall f(void* this),"__thiscall: 0x005671E0 size at +8 test, front node [head], erase 0x00A41F80"
-0x00567230,signature,"void __stdcall f(void* first, void* last)","__stdcall: 0x00567230 loop of 0x004C0DB0, step 0x28"
-0x00567260,signature,"void* __stdcall f(void* dest, unsigned int count, void* value)",0x00567260: ret 0xc
+0x00567230,signature,"void __thiscall f(void *this, void* first, void* last)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); __stdcall: 0x00567230 loop of 0x004C0DB0, step 0x28"
+0x00567260,signature,"void* __thiscall f(void *this, void* dest, unsigned int count, void* value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); 0x00567260: ret 0xc"
 0x005672A0,signature,"void __cdecl f(void* first, void* last)",0x005672A0: ret
 0x00567340,signature,void __thiscall f(void* this),0x00567340: ret
 0x00567390,signature,"void* __thiscall f(void* this, void* out, void* cont1, void* first, void* cont2, void* last)",0x00567390: ret 0x14
@@ -2377,7 +2377,7 @@ address,what,value,why
 0x006CD910,signature,void* __thiscall CreateMemberIterator(void* this),0x006CD910 read
 0x006CD940,signature,void* __thiscall GetValue(void* this),0x006CD940-0x006CD97F read
 0x006CD980,signature,"void* __thiscall ScalarDeletingDestructor(void* this, unsigned int flags)",0x006CD980 read
-0x006CD9A0,signature,"void* __stdcall _Uninit_fill_n(void* first, unsigned int count, void* value)",0x006CD9A0-0x006CD9DF read
+0x006CD9A0,signature,"void* __thiscall f(void *this, void* first, unsigned int count, void* value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); 0x006CD9A0-0x006CD9DF read"
 0x006CD9E0,signature,"void __stdcall _Destroy_range(void* first, void* last)",0x006CD9E0-0x006CD9FF read
 0x006CDA00,signature,void __thiscall ~Attribute(void* this),0x006CDA00-0x006CDA6F read
 0x006CDA70,signature,"void* __thiscall ScalarDeletingDestructor(void* this, unsigned int flags)",0x006CDA70 read
@@ -6526,7 +6526,7 @@ address,what,value,why
 0x007F9E90,convention,__cdecl,"0x007f9e90 plain ret, ecx unread (the comparator or a by-value Entry is among the stack slots)"
 0x007F9F50,convention,__cdecl,"0x007f9f50 plain ret, ecx unread (the comparator or a by-value Entry is among the stack slots)"
 0x007F9FD0,convention,__thiscall,"0x007F9FD0 esi=ecx, reads [esi+4]"
-0x007FA010,signature,"void __stdcall f(void *first, unsigned int count, void *value)","0x007FA010 ret 0xC, ecx unread (push ecx is only a stack slot)"
+0x007FA010,signature,"void __thiscall f(void *this, void *first, unsigned int count, void *value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); 0x007FA010 ret 0xC, ecx unread (push ecx is only a stack slot)"
 0x007FA050,signature,"void * __stdcall f(void *first, void *last, void *dest)","0x007FA050 ret 0xC, ecx unread (push ecx is only a stack slot); calls 0x007F8F50"
 0x007FA080,convention,__cdecl,"0x007fa080 plain ret, ecx unread (the comparator or a by-value Entry is among the stack slots)"
 0x007FDB40,signature,float __thiscall f(void *this),0x007FDB40 reads [ecx+0x214] into ST0
@@ -6664,8 +6664,8 @@ address,what,value,why
 0x006036C0,signature,"int __cdecl f(int first, int last, int destEnd)",prototype from ret N and the reads of ecx/stack at 0x006036C0 (ID 11110)
 0x006036F0,signature,"int __cdecl f(int first, int last, int dest)",prototype from ret N and the reads of ecx/stack at 0x006036F0 (ID 11111)
 0x00603790,signature,"int __cdecl f(int dest, unsigned int count, int val)",prototype from ret N and the reads of ecx/stack at 0x00603790 (ID 11113)
-0x00603830,signature,"int __stdcall f(int dest, unsigned int count, int val)",prototype from ret N and the reads of ecx/stack at 0x00603830 (ID 11115)
-0x00603870,signature,"void __stdcall f(int first, int last)",prototype from ret N and the reads of ecx/stack at 0x00603870 (ID 11116)
+0x00603830,signature,"int __thiscall f(void *this, int dest, unsigned int count, int val)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); prototype from ret N and the reads of ecx/stack at 0x00603830 (ID 11115)"
+0x00603870,signature,"void __thiscall f(void *this, int first, int last)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); prototype from ret N and the reads of ecx/stack at 0x00603870 (ID 11116)"
 0x006038A0,signature,void __thiscall f(void *this),prototype from ret N and the reads of ecx/stack at 0x006038A0 (ID 11117)
 0x006038F0,signature,"void * __thiscall f(void *this, void *out, int firstCont, int firstPtr, int lastCont, int lastPtr)",prototype from ret N and the reads of ecx/stack at 0x006038F0 (ID 11118)
 0x00603960,signature,"int __stdcall f(int first, int last, int dest)",prototype from ret N and the reads of ecx/stack at 0x00603960 (ID 11119)
@@ -7683,7 +7683,7 @@ address,what,value,why
 0x006AF3E0,signature,"void * __cdecl f(void *first, void *last, void *dest)",0x006AF3E0: 0x006AF3E0-0x006AF428
 0x00726567,nofunction,,"a start one byte into the call at 0x00726566 (call 0x00413660, operator new) inside GUI::GUICrafting::RegisterHandler_CountIngredientsMessage (16779, 0x00726560), which it cut short; paragon-agent's gui-22, checked by the keeper"
 0x006AF2A0,signature,"void __stdcall f(void *first, void *last)","14772: ret 8; ecx is loaded with each 0xBC-byte element before the destructor 0x004C0DB0, never read first; lib-agent, b07 corrected"
-0x006AF2D0,signature,"void * __stdcall f(void *first, unsigned int count, const void *value)","14773: ret 0xC; push ecx reserves a local, and the later push ecx forwards the incoming ecx untouched to 0x006AD720 as a filler argument; lib-agent, b07 corrected"
+0x006AF2D0,signature,"void * __thiscall f(void *this, void *first, unsigned int count, const void *value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); 14773: ret 0xC; push ecx reserves a local, and the later push ecx forwards the incoming ecx untouched to 0x006AD720 as a filler argument; lib-agent, b07 corrected"
 0x006B0A40,signature,void __thiscall f(void *this),"0x006B0A40: 0x006B0A40-0x006B0A7F, 0x006AE380"
 0x006B0A80,signature,void __thiscall f(void *this),0x006B0A80: 0x006B0A80 jmp 0x006AF8F0
 0x006B0A90,signature,"void * __thiscall f(void *this, void *other)",0x006B0A90: 0x006B0A90-0x006B0BDF
@@ -7791,7 +7791,7 @@ address,what,value,why
 0x006ED5A0,signature,"void * __cdecl f(void *first, void *last, void *destEnd)",0x006ED5A0-0x006ED610; caller 15558 at 0x006EE82E; plain ret
 0x006ED770,signature,"void __thiscall f(void *this, void *jrnlStructRef)","0x006ED770-0x006EE2FB: GetStructListField/Element with 0x4079/0x407A/0x408A/0x4081/0x4084/0x408D, field ids 0x407B..0x40"
 0x006EE3E0,signature,"void * __thiscall f(void *this, void *key)","0x006EE3E0-0x006EE495: head [this+4], root [head+4], compares wchars then length; sole caller 0x006EF67D (find 15600); r"
-0x006EE4A0,signature,"void __stdcall f(void *first, void *last)","0x006EE4A0-0x006EE4C4; callers 0x006F08FD, 0x006F0ADC, 0x006F0B87; ret 8"
+0x006EE4A0,signature,"void __thiscall f(void *this, void *first, void *last)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); 0x006EE4A0-0x006EE4C4; callers 0x006F08FD, 0x006F0ADC, 0x006F0B87; ret 8"
 0x006EE4D0,signature,"void * __cdecl f(void *outIterator, void *firstContainer, void *first, void *lastContainer, void *last, void *value)","0x006EE4D0-0x006EE515: stack arguments out, firstContainer, first, lastContainer, last, value; sole caller 0x006EEB4E in"
 0x006EE5D0,signature,"void __cdecl f(void *first, void *last, void *value)","0x006EE5D0-0x006EE63B; callers 0x006F09CD, 0x006F0A2B; plain ret"
 0x006EE640,signature,"void __cdecl f(void *first, void *last, unsigned int pred)",0x006EE640-0x006EE7E6: wstring compares at [element]+0x58; sole caller 0x006F1CA3 in 0x006F1C00
@@ -7799,7 +7799,7 @@ address,what,value,why
 0x006EE860,signature,"void __cdecl f(void *first, void *mid, void *last, unsigned int pred)",0x006EE860-0x006EE940: wstring::compare on [element]+0x58; caller 0x006EF420 (15597)
 0x006EE950,signature,"void __cdecl f(void *first, int hole, int top, void *value, unsigned int pred)",0x006EE950-0x006EEA40; sole caller 0x006EF4D0 (15598)
 0x006EF2B0,signature,void __thiscall f(void *this),"0x006EF2B0-0x006EF2F9: loop step 0x34, operator_delete(+4); thunks 0x006F0740 and 0x006F0750 jump here"
-0x006EF300,signature,"void * __stdcall f(void *dest, unsigned int count, void *value)","0x006EF300-0x006EF334; callers 0x006F08A5, 0x006F09B0; ret 0xC"
+0x006EF300,signature,"void * __thiscall f(void *this, void *dest, unsigned int count, void *value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); 0x006EF300-0x006EF334; callers 0x006F08A5, 0x006F09B0; ret 0xC"
 0x006EF3C0,signature,"void * __cdecl f(void *first, void *last, void *dest)","0x006EF3C0-0x006EF414; callers 0x006EFF8B, 0x006F0ACD, 0x006F0B58; plain ret"
 0x006EF420,signature,"void __cdecl f(void *first, void *mid, void *last, unsigned int pred)",0x006EF420-0x006EF4AB: size > 0x28 test; sole caller 0x006F0099 in 15640
 0x006EF4D0,signature,"void __cdecl f(void *first, int hole, int bottom, void *value, unsigned int pred)","0x006EF4D0-0x006EF5DD: child 2i+2 vs 2i+1 on names at +0x58; callers 0x006F066E (15641), 0x006F12A1"
@@ -8514,8 +8514,8 @@ address,what,value,why
 0x00738130,signature,"void * __cdecl f(void *first, void *last, void *dest, int tag1, int tag2, int tag3)",0x00738130: plain ret
 0x00738AD0,signature,"void * __cdecl f(void *first, void *last, void *dest)","0x00738AD0: plain ret, add esp,0x1C after the call"
 0x00738B00,signature,"void __cdecl f(void *first, unsigned int n, const void *value, int tag1, int tag2, int tag3)",0x00738B00: plain ret
-0x00738BA0,signature,"void __stdcall f(void *first, void *last)","0x00738BA0: ret 8, ecx loaded but not read as this"
-0x00738BD0,signature,"void * __stdcall f(void *first, unsigned int count, const void *value)",0x00738BD0: ret 0xC
+0x00738BA0,signature,"void __thiscall f(void *this, void *first, void *last)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); 0x00738BA0: ret 8, ecx loaded but not read as this"
+0x00738BD0,signature,"void * __thiscall f(void *this, void *first, unsigned int count, const void *value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); 0x00738BD0: ret 0xC"
 0x00739070,signature,void __thiscall f(void *this),"0x00739070: ecx to ebx, plain ret"
 0x007390C0,signature,"void * __thiscall f(void *this, void *outIterator, void *dbgA, void *first, void *dbgB, void *last)","0x007390C0: ecx to ebp, ret 0x14"
 0x00739140,signature,"void * __stdcall f(void *first, void *last, void *dest)",0x00739140: ret 0xC
@@ -8944,7 +8944,7 @@ address,what,value,why
 0x00A49E00,signature,"void* __cdecl f(void* dest, unsigned int count, void* value, void* alloc, void* tagA, void* tagB)",0x00A49E00; reconciled: read the callers and the ret
 0x00A49F00,signature,"int __thiscall f(void* this, int block, int k)",0x00A49F00
 0x00A4A080,signature,"void __thiscall f(void* this, int superBlock, int superEntrance, int* outBlock, int* outEntrance)",0x00A4A080
-0x00A4A220,signature,"void* __stdcall f(void* dest, unsigned int count, void* value)",0x00A4A220; reconciled: read the callers and the ret
+0x00A4A220,signature,"void* __thiscall f(void *this, void* dest, unsigned int count, void* value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); 0x00A4A220; reconciled: read the callers and the ret"
 0x00A4A260,signature,void __thiscall f(void* this),0x00A4A260
 0x00A4A3B0,signature,void __thiscall f(void* this),0x00A4A3B0
 0x00A4A500,signature,void __thiscall f(void* this),0x00A4A500
@@ -9314,11 +9314,11 @@ address,what,value,why
 0x007B4FD0,signature,"void __stdcall f(void *first, void *last)","0x007b4fd0: std::_Destroy_range<GUI::HeadPreset::MaterialValue>, convention and arguments read at the entry and the ret"
 0x007B4FF0,signature,"void __stdcall f(void *first, void *last)","0x007b4ff0: std::_Destroy_range<GUI::HeadPreset::MaterialVector>, convention and arguments read at the entry and the ret"
 0x007B5010,signature,"void __stdcall f(void *first, void *last)","0x007b5010: std::_Destroy_range<GUI::HeadPreset::Texture>, convention and arguments read at the entry and the ret"
-0x007B5030,signature,"void * __stdcall f(void *first, unsigned int count, void *value)","0x007b5030: std::uninitialized_fill_n<GUI::HeadPreset::MaterialValue*,unsigned int,GUI::HeadPreset::MaterialValue>, convention and arguments read at the entry and the ret"
-0x007B5070,signature,"void * __stdcall f(void *first, unsigned int count, void *value)","0x007b5070: std::uninitialized_fill_n<GUI::HeadPreset::MaterialVector*,unsigned int,GUI::HeadPreset::MaterialVector>, convention and arguments read at the entry and the ret"
-0x007B50B0,signature,"void * __stdcall f(void *first, unsigned int count, void *value)","0x007b50b0: std::uninitialized_fill_n<GUI::HeadPreset::Texture*,unsigned int,GUI::HeadPreset::Texture>, convention and arguments read at the entry and the ret"
-0x007B50F0,signature,"void * __stdcall f(void *first, unsigned int count, void *value)","0x007b50f0: std::uninitialized_fill_n<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,unsigned int,SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>, convention and arguments read at the entry and the ret"
-0x007B5130,signature,"void * __stdcall f(void *first, unsigned int count, void *value)","0x007b5130: std::uninitialized_fill_n<std::pair<std::wstring,int>*,unsigned int,std::pair<std::wstring,int>>, convention and arguments read at the entry and the ret"
+0x007B5030,signature,"void * __thiscall f(void *this, void *first, unsigned int count, void *value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); 0x007b5030: std::uninitialized_fill_n<GUI::HeadPreset::MaterialValue*,unsigned int,GUI::HeadPreset::MaterialValue>, convention and arguments read at the entry and the ret"
+0x007B5070,signature,"void * __thiscall f(void *this, void *first, unsigned int count, void *value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); 0x007b5070: std::uninitialized_fill_n<GUI::HeadPreset::MaterialVector*,unsigned int,GUI::HeadPreset::MaterialVector>, convention and arguments read at the entry and the ret"
+0x007B50B0,signature,"void * __thiscall f(void *this, void *first, unsigned int count, void *value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); 0x007b50b0: std::uninitialized_fill_n<GUI::HeadPreset::Texture*,unsigned int,GUI::HeadPreset::Texture>, convention and arguments read at the entry and the ret"
+0x007B50F0,signature,"void * __thiscall f(void *this, void *first, unsigned int count, void *value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); 0x007b50f0: std::uninitialized_fill_n<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,unsigned int,SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>, convention and arguments read at the entry and the ret"
+0x007B5130,signature,"void * __thiscall f(void *this, void *first, unsigned int count, void *value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); 0x007b5130: std::uninitialized_fill_n<std::pair<std::wstring,int>*,unsigned int,std::pair<std::wstring,int>>, convention and arguments read at the entry and the ret"
 0x007B5330,signature,void __thiscall f(void *this),"0x007b5330: std::vector<std::pair<std::wstring,int>>::_Tidy, convention and arguments read at the entry and the ret"
 0x007B5340,signature,"void __thiscall f(void *this, void *outIterator, void *firstContainer, void *first, void *lastContainer, void *last)","0x007b5340: std::vector<GUI::HeadPreset::MaterialValue>::erase, convention and arguments read at the entry and the ret"
 0x007B53A0,signature,"void __thiscall f(void *this, void *outIterator, void *firstContainer, void *first, void *lastContainer, void *last)","0x007b53a0: std::vector<GUI::HeadPreset::MaterialVector>::erase, convention and arguments read at the entry and the ret"
@@ -9378,7 +9378,7 @@ address,what,value,why
 0x007BD8B0,signature,void __thiscall f(void *this),"0x007bd8b0: std::vector<GUI::HeadPreset::ModelWeight>::clear, convention and arguments read at the entry and the ret"
 0x007BD920,signature,"bool __thiscall f(void *this, unsigned int *key, void *handle)","0x007bd920: Map<unsigned_int,RefHandle>::Insert, convention and arguments read at the entry and the ret"
 0x007BD9B0,signature,"void * __thiscall f(void *this, void *other)","0x007bd9b0: std::vector<GUI::HeadPreset::ModelWeight>::operator=, convention and arguments read at the entry and the ret"
-0x007BDB20,signature,"void * __stdcall f(void *first, unsigned int count, void *value)","0x007bdb20: std::uninitialized_fill_n<GUI::HeadPreset::ModelWeight*,unsigned int,GUI::HeadPreset::ModelWeight>, convention and arguments read at the entry and the ret"
+0x007BDB20,signature,"void * __thiscall f(void *this, void *first, unsigned int count, void *value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); 0x007bdb20: std::uninitialized_fill_n<GUI::HeadPreset::ModelWeight*,unsigned int,GUI::HeadPreset::ModelWeight>, convention and arguments read at the entry and the ret"
 0x007BDB60,signature,"void * __stdcall f(void *first, void *last, void *dest)","0x007bdb60: std::uninitialized_copy<GUI::HeadPreset::ModelWeight*,GUI::HeadPreset::ModelWeight*>, convention and arguments read at the entry and the ret"
 0x007BDB90,signature,"void * __thiscall f(void *this, void *other)","0x007bdb90: std::vector<GUI::HeadPreset::ModelWeight>::vector_copy, convention and arguments read at the entry and the ret"
 0x007B8ED0,clear,~TiXmlDocument,"0x007B8ED0 writes HeroStats.xml (GUI::WriteHeroStatsXml); a TiXmlDocument is only built inside it, it is not a destructor"
@@ -9918,7 +9918,7 @@ address,what,value,why
 0x0080D5D0,signature,"bool __thiscall f(void* this, unsigned int index, void* outPoint)",0x0080D5D0-0x0080D62F (ret 8)
 0x0080D630,signature,"void* __cdecl f(void* first, void* last, void* destEnd)","0x0080D630-0x0080D65F; reconciled: read 0x0080d470, returns the new destination begin in eax"
 0x0080D660,signature,void __thiscall f(void* this),0x0080D660-0x0080D6A8
-0x0080D6B0,signature,"void* __stdcall f(void* dest, unsigned int count, void* value)",0x0080D6B0-0x0080D6EF (ret 0xC)
+0x0080D6B0,signature,"void* __thiscall f(void *this, void* dest, unsigned int count, void* value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); 0x0080D6B0-0x0080D6EF (ret 0xC)"
 0x0080D6F0,signature,void __thiscall f(void* this),0x0080D6F0 jmp 0x0080D660
 0x0080D700,signature,void __thiscall f(void* this),0x0080D700-0x0080D76C
 0x0080D770,signature,"void* __thiscall f(void* this, unsigned int flags)",0x0080D770-0x0080D78B
@@ -10521,9 +10521,9 @@ address,what,value,why
 0x007C5A70,signature,unsigned int __thiscall f(void *this),"0x007c5a70: MapTravelPoint::GetConnectionCount, convention and arguments read at the entry and the ret"
 0x007C6750,signature,void __thiscall f(void *this),"0x007c6750: MapPathSearch::~MapPathSearch, convention and arguments read at the entry and the ret"
 0x007C6790,signature,"void __thiscall f(void *this, void *first, void *last)","a std::vector member, the vector in ecx (decomp-agent, 2026-11-21); 0x007c6790: std::_Destroy_range<MapTrailPoint*>, convention and arguments read at the entry and the ret"
-0x007C67C0,signature,"void * __stdcall f(void *dest, unsigned int n, void *value)","0x007c67c0: std::uninitialized_fill_n<MapTrail*,unsigned int,MapTrail>, convention and arguments read at the entry and the ret"
+0x007C67C0,signature,"void * __thiscall f(void *this, void *dest, unsigned int n, void *value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); 0x007c67c0: std::uninitialized_fill_n<MapTrail*,unsigned int,MapTrail>, convention and arguments read at the entry and the ret"
 0x007C6800,signature,"void __thiscall f(void *this, void *outIter, int c1, int p1, int c2, int p2)","0x007c6800: std::vector<MapTrailPoint>::erase, convention and arguments read at the entry and the ret"
-0x007C6880,signature,"void __stdcall f(void *first, void *last)","0x007c6880: std::_Destroy_range<MapTrail*>, convention and arguments read at the entry and the ret"
+0x007C6880,signature,"void __thiscall f(void *this, void *first, void *last)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); 0x007c6880: std::_Destroy_range<MapTrail*>, convention and arguments read at the entry and the ret"
 0x007C68B0,signature,"void * __stdcall f(void *first, void *last, void *dest)","0x007c68b0: std::uninitialized_copy<MapTrail*,MapTrail*>, convention and arguments read at the entry and the ret"
 0x007C68E0,signature,"unsigned char __thiscall f(void *this, int pinId)","0x007c68e0: MapObject::SetPlayerLocationByPinId, convention and arguments read at the entry and the ret"
 0x007C7330,signature,"void __cdecl f(void *first, void *last, void *value)","0x007c7330: std::fill<MapTrail*,MapTrail>, convention and arguments read at the entry and the ret"
@@ -10801,8 +10801,8 @@ address,what,value,why
 0x00812140,signature,"void * __cdecl f(void *first, void *last, void *dest, int, int, int)","ID 21924 std::_Uninit_copy<Animation::ModelAnimationTree::Entry *,Animation::ModelAnimationTree::Entry *,std::allocator<Animation::ModelAnimationTree::Entry>> at 0x00812140: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
 0x008121E0,signature,"void * __cdecl f(void *first, void *last, void *destEnd)","ID 21926 std::_Copy_backward<Animation::ModelAnimationTree::Entry *,Animation::ModelAnimationTree::Entry *> at 0x008121E0: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
 0x00812210,signature,"void __cdecl f(void *dest, unsigned int count, const void *val, int, int, int)","ID 21927 std::_Uninit_fill_n<Animation::ModelAnimationTree::Entry *,unsigned int,Animation::ModelAnimationTree::Entry,std::allocator<Animation::ModelAnimationTree::Entry>> at 0x00812210: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
-0x008122B0,signature,"void __stdcall f(void *first, void *last)","ID 21929 std::_Destroy_range<Animation::ModelAnimationTree::Entry *> at 0x008122B0: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
-0x008122E0,signature,"void * __stdcall f(void *dest, unsigned int count, const void *val)","ID 21930 std::_Uninit_fill_n<Animation::ModelAnimationTree::Entry *,unsigned int,Animation::ModelAnimationTree::Entry> at 0x008122E0: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
+0x008122B0,signature,"void __thiscall f(void *this, void *first, void *last)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); ID 21929 std::_Destroy_range<Animation::ModelAnimationTree::Entry *> at 0x008122B0: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
+0x008122E0,signature,"void * __thiscall f(void *this, void *dest, unsigned int count, const void *val)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); ID 21930 std::_Uninit_fill_n<Animation::ModelAnimationTree::Entry *,unsigned int,Animation::ModelAnimationTree::Entry> at 0x008122E0: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
 0x00812320,signature,"int __thiscall f(void *this, const void *nameKey)","ID 21931 Animation::ModelAnimationTree::FindEntryIndex at 0x00812320: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
 0x00812370,signature,"void __thiscall f(void *this, void *outIterator, void *firstContainer, void *firstPtr, void *lastContainer, void *lastPtr)","ID 21932 std::vector<Animation::ModelAnimationTree::Entry>::erase at 0x00812370: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
 0x008123F0,signature,"void * __stdcall f(void *first, void *last, void *dest)","ID 21933 std::_Uninit_copy<Animation::ModelAnimationTree::Entry *,Animation::ModelAnimationTree::Entry *> at 0x008123F0: ret N/4, the first use of ecx and the callers read in daoexe --disasm"
@@ -11120,8 +11120,8 @@ address,what,value,why
 0x004598F0,signature,"void __thiscall f(void *this, void *camera)","ret 4, ecx saved to esi"
 0x00459B00,signature,"void __thiscall f(void *this, void *camera)",ret 4
 0x00459B90,convention,__thiscall,vftable slot 3
-0x00459CF0,signature,"void * __stdcall f(void *dest, unsigned int count, void *val)","ret 0xC, ecx never read"
-0x00459D30,signature,"void __stdcall f(void *first, void *last)","ret 8, ecx never read"
+0x00459CF0,signature,"void * __thiscall f(void *this, void *dest, unsigned int count, void *val)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); ret 0xC, ecx never read"
+0x00459D30,signature,"void __thiscall f(void *this, void *first, void *last)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); ret 8, ecx never read"
 0x00459D60,signature,"void * __stdcall f(void *first, void *last, void *dest)","ret 0xC, ecx never read"
 0x00459DB0,signature,"void __thiscall f(void *this, void *out, void *firstCont, void *first, void *lastCont, void *last)","ret 0x14, ecx to ebp"
 0x00459E20,convention,__thiscall,ecx to ebx
@@ -11526,7 +11526,7 @@ address,what,value,why
 0x0046BDF0,signature,"void __cdecl f(void *dest, unsigned int count, void *val, int a4, int a5, int a6)","plain ret; wrapper 0x0046BFD0 add esp,0x18 after six pushes"
 0x0046BE70,signature,"void __thiscall f(void *this, void *booleans, bool asFloat)","ret 8; ecx = the state at 0x0046BE74, [esp+0x18] is the target of 0x004F2550"
 0x0046BF90,signature,"void * __cdecl f(void *first, void *last, void *destEnd)",plain ret; returns the destination start in eax (0x0046BFC6)
-0x0046BFD0,signature,"void * __stdcall f(void *dest, unsigned int count, void *val)",ret 0xC with ecx never read as this (it is saved only as scratch)
+0x0046BFD0,signature,"void * __thiscall f(void *this, void *dest, unsigned int count, void *val)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); ret 0xC with ecx never read as this (it is saved only as scratch)"
 0x0046C010,signature,"void * __thiscall f(void *this, void *result, void *firstContainer, void *firstPtr, void *lastContainer, void *lastPtr)",ret 0x14; ecx = vector (edi = ecx at 0x0046C019); eax = result slot
 0x0046C060,signature,"void * __stdcall f(void *first, void *last, void *dest)",ret 0xC; ecx scratch only (push ecx at 0x0046C060)
 0x0046C2F0,signature,"void __thiscall f(void *this, unsigned int newSize, unsigned int v0, unsigned int v1, unsigned int v2, unsigned int v3)","ret 0x14: newSize and the 16-byte Vector4 by value (copied by dwords through 0x00933D70), ecx = the vector; both readings agree on the layout"
@@ -12011,7 +12011,7 @@ address,what,value,why
 0x00487730,signature,"void __cdecl f(void* response, void* owner)","plain ret; response read first, owner (this for QueueGameRecord) second, read at 0x00487730"
 0x00489E20,signature,"bool __thiscall f(void* this, void* file)","ret 4, ecx used; the argument is the file declared on, read at 0x00489E20"
 0x0048C840,convention,__thiscall,"a std::vector member, the vector in ecx (decomp-agent, 2026-11-21); ret 8, ecx unused at 0x0048C840"
-0x0048C8C0,convention,__stdcall,"ret 0xC, three stack arguments, ecx only saved at 0x0048C8C0"
+0x0048C8C0,convention,__thiscall,"a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); ret 0xC, three stack arguments, ecx only saved at 0x0048C8C0"
 0x00489F60,signature,void __thiscall f(void* this),"ecx read first, plain ret at 0x00489F60"
 0x0048D0B0,signature,void* __cdecl f(unsigned int n),"plain ret, count on the stack at 0x0048D0B0"
 0x00489D70,convention,__cdecl,"ebp frame, plain ret, ecx unused at 0x00489D70"
@@ -12073,7 +12073,7 @@ address,what,value,why
 0x00518E40,signature,"void* __thiscall f(void* this, void* result, void* key)",0x00518E40-0x005190A6
 0x005190B0,signature,"void* __stdcall f(void* next, void* prev, void* value)",0x005190B0-0x00519129
 0x00519150,signature,"void* __cdecl f(void* first, void* last, void* dest)",0x00519150-0x00519198
-0x005191A0,signature,"void* __stdcall f(void* first, unsigned int count, void* value)",0x005191A0-0x005191D4
+0x005191A0,signature,"void* __thiscall f(void *this, void* first, unsigned int count, void* value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); 0x005191A0-0x005191D4"
 0x00519230,signature,void __thiscall f(void* this),0x00519230-0x005192BF
 0x005192C0,signature,"void* __thiscall f(void* this, void* result, void* firstContainer, void* firstPtr, void* lastContainer, void* lastPtr)",0x005192C0-0x00519301
 0x00519310,signature,"void* __stdcall f(void* first, void* last, void* dest)",0x00519310-0x00519336
@@ -12580,7 +12580,7 @@ address,what,value,why
 0x00847E80,signature,"void __thiscall f(void *this, unsigned int index)",settled: second reading
 0x008445D0,clear,_AfxAygshellState,"false library match; the Console::GetInstance singleton getter, static 0x00C39B20"
 0x0053B2C0,signature,void __thiscall f(void* this),reconciled; ret and registers read
-0x0053B2D0,signature,"void* __stdcall f(void* first, unsigned int count, void* val)",reconciled; ret and registers read
+0x0053B2D0,signature,"void* __thiscall f(void *this, void* first, unsigned int count, void* val)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); reconciled; ret and registers read"
 0x0053B310,signature,"void* __stdcall f(void* first, void* last, void* dest)",reconciled; ret and registers read
 0x0053B5C0,signature,"void __thiscall f(void* this, unsigned int n, unsigned int v0, unsigned int v1, unsigned int v2, unsigned int v3)",reconciled; ret and registers read
 0x0053B6B0,signature,"void* __thiscall f(void* this, unsigned int n)",reconciled; ret and registers read
@@ -12616,7 +12616,7 @@ address,what,value,why
 0x005404E0,signature,"void __stdcall f(unsigned int index, void* array)",reconciled; ret and registers read
 0x00540530,signature,"void* __cdecl f(void* first, void* last, void* dest)",reconciled; ret and registers read
 0x00540580,signature,"void __cdecl f(void* dest, unsigned int count, void* val)",reconciled; ret and registers read
-0x00541320,signature,"void* __stdcall f(void* first, unsigned int count, void* val)",reconciled; ret and registers read
+0x00541320,signature,"void* __thiscall f(void *this, void* first, unsigned int count, void* val)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); reconciled; ret and registers read"
 0x00555DA0,signature,"void __cdecl f(void* object8, float size)",read at 0x00555DA0 (both readings agree on the arguments)
 0x00555E30,signature,"void __cdecl f(void* object8, bool screenSpace)",read at 0x00555E30 (both readings agree on the arguments)
 0x00555ED0,signature,"void __cdecl f(void* node, void* name, void* value)",read at 0x00555ED0 (both readings agree on the arguments)
@@ -12624,7 +12624,7 @@ address,what,value,why
 0x00555FC0,signature,"void __cdecl f(void* node, unsigned int flags)",read at 0x00555FC0 (both readings agree on the arguments)
 0x00556170,signature,"void __cdecl f(void* object8, void* color)",read at 0x00556170 (both readings agree on the arguments)
 0x005561F0,signature,"unsigned short* __stdcall f(unsigned short* first, unsigned short* last, unsigned short* dest)",read at 0x005561F0 (both readings agree on the arguments)
-0x00556220,signature,"unsigned short* __stdcall f(unsigned short* dest, unsigned int count, unsigned short* value)",read at 0x00556220 (both readings agree on the arguments)
+0x00556220,signature,"unsigned short* __thiscall f(void *this, unsigned short* dest, unsigned int count, unsigned short* value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); read at 0x00556220 (both readings agree on the arguments)"
 0x00556250,signature,"void __cdecl f(void* node, void* materialName)",read at 0x00556250 (both readings agree on the arguments)
 0x00556330,signature,"void __cdecl f(void* object8, bool wireframe, bool depthFlag)","reconciled: read 0x00556330: three arguments (esp+0x38..0x40), plain ret"
 0x00556410,signature,"void* __thiscall f(void* thisVec, void* result, void* whereCont, void* wherePtr, float* value)",read at 0x00556410 (both readings agree on the arguments)
@@ -12646,7 +12646,7 @@ address,what,value,why
 0x005607C0,signature,"void __stdcall f(float* outRgba, float* outScaleX, float* outScaleY, void* ageMap, float t, float* colourMul, float mulX, float mulY, float size)",reconciled: read 0x005609D3: ret 0x24
 0x00561310,signature,"void* __cdecl f(void* first, void* last, void* destEnd)",read at 0x00561310 (both readings agree on the arguments)
 0x00561340,signature,"void __cdecl f(void* dest, unsigned int count, void* value)",read at 0x00561340 (both readings agree on the arguments)
-0x005613F0,signature,"void* __stdcall f(void* dest, unsigned int count, void* value)",read at 0x005613F0 (both readings agree on the arguments)
+0x005613F0,signature,"void* __thiscall f(void *this, void* dest, unsigned int count, void* value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); read at 0x005613F0 (both readings agree on the arguments)"
 0x00561430,signature,void __thiscall f(void* thisVec),read at 0x00561430 (both readings agree on the arguments)
 0x00561480,signature,"void* __thiscall f(void* thisVec, void* result, void* firstCont, void* firstPtr, void* lastCont, void* lastPtr)",read at 0x00561480 (both readings agree on the arguments)
 0x005614F0,signature,"void* __stdcall f(void* first, void* last, void* dest)",read at 0x005614F0 (both readings agree on the arguments)
@@ -12848,7 +12848,7 @@ address,what,value,why
 0x00877B30,convention,__cdecl,ret and ecx use read in daoexe --disasm at 0x00877b30
 0x00877BB0,convention,__cdecl,ret and ecx use read in daoexe --disasm at 0x00877bb0
 0x00877C30,signature,"void __thiscall f(void *this, int a1)",ret and arguments read in daoexe --disasm at 0x00877c30
-0x00877CA0,signature,"void * __stdcall f(int a1, int a2, int a3)",ret and arguments read in daoexe --disasm at 0x00877ca0
+0x00877CA0,signature,"void * __thiscall f(void *this, int a1, int a2, int a3)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); ret and arguments read in daoexe --disasm at 0x00877ca0"
 0x00877CE0,signature,"void * __stdcall f(int a1, int a2, int a3)",ret and arguments read in daoexe --disasm at 0x00877ce0
 0x00877D10,signature,"void * __thiscall f(void *this, int a1, int a2, int a3, int a4, int a5)",ret and arguments read in daoexe --disasm at 0x00877d10
 0x00878070,convention,__thiscall,ret and ecx use read in daoexe --disasm at 0x00878070
@@ -12895,7 +12895,7 @@ address,what,value,why
 0x0087BD30,signature,void __thiscall f(void *this),ret and arguments read in daoexe --disasm at 0x0087bd30
 0x0087C800,signature,"void __thiscall f(void *this, int a1)",ret and arguments read in daoexe --disasm at 0x0087c800
 0x0087E390,convention,__cdecl,ret and ecx use read in daoexe --disasm at 0x0087e390
-0x0087E3D0,signature,"void * __stdcall f(int a1, int a2, int a3)",ret and arguments read in daoexe --disasm at 0x0087e3d0
+0x0087E3D0,signature,"void * __thiscall f(void *this, int a1, int a2, int a3)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); ret and arguments read in daoexe --disasm at 0x0087e3d0"
 0x0087E410,signature,"void * __stdcall f(int a1, int a2, int a3)",ret and arguments read in daoexe --disasm at 0x0087e410
 0x0087EBD0,signature,"void __thiscall f(void *this, const void *value)",ret and ecx use read in daoexe --disasm at 0x0087EBD0
 0x0087EC80,signature,"void __thiscall f(void *this, unsigned int word, unsigned int state, unsigned int timestamp, unsigned int sequence)",ret and ecx use read in daoexe --disasm at 0x0087EC80
@@ -13001,7 +13001,7 @@ address,what,value,why
 0x00A2D1B0,signature,"int __thiscall f(void *this, int *outType, int *outValue)",ret and ecx use read in daoexe --disasm at 0x00A2D1B0
 0x00A2D1E0,signature,"int __thiscall f(void *this, void **outString, int depth)",ret and ecx use read in daoexe --disasm at 0x00A2D1E0
 0x00A2DE20,signature,"int __thiscall f(void *this, CVirtualMachineScript *scriptState)",ret and ecx use read in daoexe --disasm at 0x00A2DE20; a void * here is the class DAODecomp's matching definition gives
-0x00A2DFA0,signature,"unsigned char * __stdcall f(unsigned char *dst, int count, unsigned char *value)",ret and ecx use read in daoexe --disasm at 0x00A2DFA0
+0x00A2DFA0,signature,"unsigned char * __thiscall f(void *this, unsigned char *dst, int count, unsigned char *value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); ret and ecx use read in daoexe --disasm at 0x00A2DFA0"
 0x00A2DFD0,signature,"void * __thiscall f(void *this, void *vector)",ret and ecx use read in daoexe --disasm at 0x00A2DFD0
 0x00A2E060,signature,"void * __thiscall f(void *this, unsigned char flags)",ret and ecx use read in daoexe --disasm at 0x00A2E060
 0x00A2E300,signature,"void __thiscall f(void *this, unsigned int size, unsigned char value)",ret and ecx use read in daoexe --disasm at 0x00A2E300
@@ -13293,8 +13293,8 @@ address,what,value,why
 0x0049B9C0,signature,"void __stdcall f(void *first, void *last)","ret 8, ecx unread: 0x0049B9C0"
 0x00492870,signature,"void * __stdcall f(void *first, unsigned int count, void *value)","ret 0xC, ecx unread: 0x00492870"
 0x00492930,signature,"void * __thiscall f(void *this, void *first, unsigned int count, void *value)","a std::vector member, the vector in ecx (decomp-agent, 2026-11-21); ret 0xC, ecx unread: 0x00492930"
-0x0049B980,signature,"void * __stdcall f(void *first, unsigned int count, void *value)","ret 0xC, ecx unread: 0x0049B980"
-0x0049BA40,signature,"void * __stdcall f(void *first, unsigned int count, void *value)","ret 0xC, ecx unread: 0x0049BA40"
+0x0049B980,signature,"void * __thiscall f(void *this, void *first, unsigned int count, void *value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); ret 0xC, ecx unread: 0x0049B980"
+0x0049BA40,signature,"void * __thiscall f(void *this, void *first, unsigned int count, void *value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); ret 0xC, ecx unread: 0x0049BA40"
 0x00492A50,signature,"void * __stdcall f(void *first, void *last, void *dest)","ret 0xC, ecx unread: 0x00492A50"
 0x00492A80,signature,"void * __stdcall f(void *first, void *last, void *dest)","ret 0xC, ecx unread: 0x00492A80"
 0x0049B840,signature,"void * __stdcall f(void *first, void *last, void *dest)","ret 0xC, ecx unread: 0x0049B840"
@@ -13506,9 +13506,9 @@ address,what,value,why
 0x0049FAB0,signature,void __thiscall f(void *this),ecx adjusted by 0x80 and passed on (0x0049FAB2)
 0x004A1E20,signature,"void __cdecl f(void *first, void *last, void *pred)",plain ret; three pushes at the caller 0x004A259A-0x004A259D
 0x004A1EB0,signature,"void __thiscall f(void *this, void *responses)","ret 4, ecx moved to ebx and used as this of the handlers (0x004A1EB8, 0x004A1F3B)"
-0x004A1FA0,signature,"void __stdcall f(void *first, void *last)","ret 8, ecx not read: _Destroy_range<AddInItem*>"
+0x004A1FA0,signature,"void __thiscall f(void *this, void *first, void *last)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); ret 8, ecx not read: _Destroy_range<AddInItem*>"
 0x004A1FD0,signature,void __thiscall f(void *this),"plain ret, ecx moved to ebx (0x004A1FD1)"
-0x004A2020,signature,"void * __stdcall f(void *first, unsigned int count, void *value)","ret 0xC, ecx never read (the push ecx is a slot); edi=arg1, esi=arg2, edx=arg3 (0x004A2021-0x004A202B)"
+0x004A2020,signature,"void * __thiscall f(void *this, void *first, unsigned int count, void *value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); ret 0xC, ecx never read (the push ecx is a slot); edi=arg1, esi=arg2, edx=arg3 (0x004A2021-0x004A202B)"
 0x004A2060,signature,"void * __stdcall f(void *first, void *last, void *dest)","ret 0xC, ecx never read (0x004A2060-0x004A2086)"
 0x004A2090,convention,__thiscall,"jmp 0x004A1FD0 (vector<AddInItem>::_Tidy), ecx = vector"
 0x004A20A0,signature,"void __thiscall f(void *this, void *outIter, void *firstContainer, void *firstPtr, void *lastContainer, void *lastPtr)","ret 0x14 = five stack args, ecx moved to ebp (0x004A20A8)"
@@ -13716,12 +13716,12 @@ address,what,value,why
 0x00573D00,signature,"bool __cdecl f(unsigned short ch, void* file)",args and return read in the function (ID 8815)
 0x005748F0,signature,bool __thiscall f(void* this),args and return read in the function (ID 8833)
 0x00574C10,signature,"void __stdcall f(void* first, void* last)",args and return read in the function (ID 8834)
-0x00574C30,signature,"void* __stdcall f(void* first, unsigned int count, void* val)",args and return read in the function (ID 8835)
+0x00574C30,signature,"void* __thiscall f(void *this, void* first, unsigned int count, void* val)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); args and return read in the function (ID 8835)"
 0x00574C70,signature,"void __thiscall f(void* this, void* node)",args and return read in the function (ID 8836)
 0x00574DD0,signature,"void __thiscall f(void* this, void* item)",args and return read in the function (ID 8840)
 0x00574EF0,signature,void __thiscall f(void* this),args and return read in the function (ID 8841)
 0x00574F40,signature,"void __stdcall f(void* first, void* last)",args and return read in the function (ID 8842)
-0x00574F70,signature,"void* __stdcall f(void* first, unsigned int count, void* val)",args and return read in the function (ID 8843)
+0x00574F70,signature,"void* __thiscall f(void *this, void* first, unsigned int count, void* val)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); args and return read in the function (ID 8843)"
 0x00576A60,signature,void __thiscall f(void* this),args and return read in the function (ID 8884)
 0x00577E90,signature,void __thiscall f(void* this),args and return read in the function (ID 8910)
 0x00577ED0,signature,"void* __thiscall f(void* this, void* comparator, void* allocator)",args and return read in the function (ID 8911)
@@ -14039,7 +14039,7 @@ address,what,value,why
 0x005E3720,signature,"void __thiscall f(void* this, bool freeMemory)",ecx read as this at 0x005E3720
 0x005E3980,signature,void __thiscall f(void* this),ecx read as this at 0x005E3980
 0x005E3C10,signature,"void __cdecl f(void* text, void* dst)","no ecx use, stack arguments at 0x005E3C10"
-0x005E3C80,signature,"void __stdcall f(void* first, void* last)","no ecx use, stack arguments at 0x005E3C80"
+0x005E3C80,signature,"void __thiscall f(void *this, void* first, void* last)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); no ecx use, stack arguments at 0x005E3C80"
 0x005E3CB0,signature,void __thiscall f(void* this),ecx read as this at 0x005E3CB0
 0x005E3D00,signature,"void* __thiscall f(void* this, unsigned int count)",ecx read as this at 0x005E3D00
 0x005E3D80,signature,"void __thiscall f(void* this, bool freeMemory)",ecx read as this at 0x005E3D80
@@ -14051,9 +14051,9 @@ address,what,value,why
 0x005F16C0,signature,bool __cdecl f(),"plain ret, no stack args (0x005F1890)"
 0x005F18A0,signature,"bool __thiscall f(void* this, void* record)",ret 4; ecx to esi at 0x005F18A5
 0x005F1910,signature,"int __thiscall f(void* this, void* record)",ret 4; ecx to esi at 0x005F1915
-0x005F19B0,signature,"void __stdcall f(void* first, void* last)","ret 8, ecx unused"
+0x005F19B0,signature,"void __thiscall f(void *this, void* first, void* last)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); ret 8, ecx unused"
 0x005F19E0,signature,void __thiscall f(void* this),plain ret; ecx = vector
-0x005F1A30,signature,"void* __stdcall f(void* first, unsigned int count, void* value)","ret 0xc, ecx unused (0x005F1A64)"
+0x005F1A30,signature,"void* __thiscall f(void *this, void* first, unsigned int count, void* value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); ret 0xc, ecx unused (0x005F1A64)"
 0x005F1A70,signature,"void __thiscall f(void* this, unsigned int index)","ret 4, ecx to esi (0x005F1A74)"
 0x005F1B20,convention,__thiscall,"ret 0x14, ecx to ebp (0x005F1B28)"
 0x005F1B90,signature,"void* __stdcall f(void* first, void* last, void* dest)","ret 0xc, ecx unused (0x005F1BB6)"
@@ -14070,13 +14070,13 @@ address,what,value,why
 0x005F7390,convention,__cdecl,plain ret 0x005F7433
 0x005F7440,convention,__cdecl,plain ret
 0x005F7500,convention,__cdecl,plain ret
-0x005F7580,signature,"void __stdcall f(void* first, void* last)",ret 8 (0x005F75AE)
+0x005F7580,signature,"void __thiscall f(void *this, void* first, void* last)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); ret 8 (0x005F75AE)"
 0x005F75B0,convention,__cdecl,"plain ret, caller adds esp 0x10 in 0x005F89A0"
 0x005F7AF0,convention,__cdecl,"plain ret, caller add esp 0xc"
-0x005F7D20,signature,"void* __stdcall f(void* first, unsigned int count, void* value)",ret 0xc (0x005F7D5C)
+0x005F7D20,signature,"void* __thiscall f(void *this, void* first, unsigned int count, void* value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); ret 0xc (0x005F7D5C)"
 0x005F7D60,convention,__thiscall,"ret 0x14, ecx to ebp (0x005F7D63)"
 0x005F7DE0,signature,void __thiscall f(void* this),plain ret; ecx = vector
-0x005F7E30,signature,"void* __stdcall f(void* first, unsigned int count, void* value)",ret 0xc (0x005F7E6C)
+0x005F7E30,signature,"void* __thiscall f(void *this, void* first, unsigned int count, void* value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); ret 0xc (0x005F7E6C)"
 0x005F7E70,signature,"void* __stdcall f(void* first, void* last, void* dest)",ret 0xc (0x005F7E9C)
 0x005F7EA0,signature,"void* __stdcall f(void* first, void* last, void* dest)",ret 0xc (0x005F7ECC)
 0x005F7ED0,convention,__cdecl,plain ret (0x005F7F55)
@@ -14540,7 +14540,7 @@ address,what,value,why
 0x005E5470,signature,"void* __thiscall f(void* this, void* node, void* parent)",read at 0x005e5470
 0x005E5530,signature,"void __thiscall f(void* this, void* right)",read at 0x005e5530
 0x005E59E0,signature,void __thiscall f(void* this),read at 0x005e59e0
-0x005E6060,signature,"void* __stdcall f(void* first, unsigned int count, void* val)",read at 0x005e6060
+0x005E6060,signature,"void* __thiscall f(void *this, void* first, unsigned int count, void* val)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); read at 0x005e6060"
 0x005E6280,signature,void __thiscall f(void* this),read at 0x005e6280
 0x005E6360,signature,bool __thiscall f(void* this),read at 0x005e6360
 0x005E6600,signature,void __thiscall f(void* this),read at 0x005e6600
@@ -14592,7 +14592,7 @@ address,what,value,why
 0x005FF370,signature,"unsigned int __thiscall f(void* this, void* tag)",reconciled signature
 0x005FF890,signature,"int __thiscall f(void* this, void* tag)",reconciled signature
 0x005FFBF0,signature,"void* __thiscall f(void* this, void* result, void* key)",reconciled signature
-0x005FFC50,signature,"void* __stdcall f(void* first, unsigned int count, void* value)",reconciled signature
+0x005FFC50,signature,"void* __thiscall f(void *this, void* first, unsigned int count, void* value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); reconciled signature"
 0x005FFC90,signature,"void* __thiscall f(void* this, void* node, void* parent)",reconciled signature
 0x005FFD50,signature,"void __thiscall f(void* this, void* listener, int eventId)",reconciled signature
 0x005FFD80,signature,"void* __thiscall f(void* this, void* result, void* firstContainer, void* firstPtr, void* lastContainer, void* lastPtr)",reconciled signature
@@ -16154,7 +16154,7 @@ address,what,value,why
 0x004DDC20,signature,void __thiscall f(void *this),0x004DDC20 ret 0
 0x004DDC30,signature,void __thiscall f(void *this),0x004DDC30-0x004DDC68 ret 0
 0x004DDC80,signature,"void * __thiscall f(void *this, const void *other)",0x004DDC80-0x004DDDBF ret 4
-0x004DDDD0,signature,"void * __stdcall f(void *dest, unsigned int count, void *value)",ret 12 at the end of 0x004dddd0
+0x004DDDD0,signature,"void * __thiscall f(void *this, void *dest, unsigned int count, void *value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); ret 12 at the end of 0x004dddd0"
 0x004DDE10,signature,"void * __stdcall f(void *first, void *last, void *dest)",ret 12 at the end of 0x004dde10
 0x004DDE40,convention,__thiscall,ret 36 with this read; by-value struct args
 0x004DE0D0,signature,"bool __thiscall f(void *this, unsigned int templateIndex)",0x004DE0D0-0x004DE337 ret 4
@@ -16731,7 +16731,7 @@ address,what,value,why
 0x005329D0,signature,"bool __thiscall f(void *this, int *key)",ret 4; caller 0xA68775 pushes a pointer to the key; setne al
 0x00532A50,signature,"void __thiscall f(void *this, void *context, bool perFrame)",ret 8; bool at [esp+0x24]; callers push bool then context
 0x00532C70,signature,"void __thiscall f(void *this, void *vertices, void *indices)",ret 8; arg 1 advances 0x140 an instance
-0x00532DD0,signature,"float * __stdcall f(float *dest, unsigned int count, float *value)","ret 0xC, ecx written before read"
+0x00532DD0,signature,"float * __thiscall f(void *this, float *dest, unsigned int count, float *value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); ret 0xC, ecx written before read"
 0x00532E60,signature,"void * __thiscall f(void *this, void *name)",ret 4
 0x00532EF0,signature,void __thiscall f(void *this),plain ret
 0x00533030,signature,void * __thiscall f(void *this),"lea eax,[ecx+0x80]; ret"
@@ -18506,7 +18506,7 @@ address,what,value,why
 0x005489A0,signature,"void __thiscall GraphicsStructures::Object::OnFlagsChanged(void* this, unsigned int oldFlags)",stack arguments match the ret in the disassembly
 0x00548A70,signature,bool __stdcall GraphicsStructures::Object::BindEmittersToFollowedActorShapes(void* object),stack arguments match the ret in the disassembly
 0x00548C40,signature,"void __thiscall Core::GetVectorRange<EightByteElement>(void* this, void** begin, void** end)",stack arguments match the ret in the disassembly
-0x00548CE0,signature,"void* __stdcall std::_Uninit_fill_n<Elem20*,unsigned int,Elem20>(void* dest, unsigned int count, void* value)",stack arguments match the ret in the disassembly
+0x00548CE0,signature,"void* __thiscall f(void *this, void* dest, unsigned int count, void* value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); stack arguments match the ret in the disassembly"
 0x00548D20,signature,"void __cdecl std::_Uninit_fill_n<GraphicsStructures::ExportValue*,unsigned int,GraphicsStructures::ExportValue>(void* dest, unsigned int count, void* value)",stack arguments match the ret in the disassembly
 0x00548D50,signature,"void __thiscall GraphicsStructures::Object::SetRoom(void* this, void* room)",stack arguments match the ret in the disassembly
 0x00548DD0,signature,"void __thiscall GraphicsStructures::Object::SetRoomId(void* this, int roomId)",stack arguments match the ret in the disassembly
@@ -18531,7 +18531,7 @@ address,what,value,why
 0x0054A2B0,signature,"void __thiscall GraphicsStructures::Object::RemoveDependent(void* this, GraphicsStructures::Dependency *dependency)",stack arguments match the ret in the disassembly; a void * here is the class DAODecomp's matching definition gives
 0x00549600,signature,void __thiscall GraphicsStructures::Object::vfunction3(void* this),"plain ret, tail jump"
 0x0054A2E0,signature,"bool __thiscall GraphicsStructures::Object::ApplyMorphByName(void* this, const void* morphName, int morphArg)","ret 8, this = Object+8"
-0x0054A3A0,signature,"void* __stdcall std::_Uninit_fill_n(void* first, unsigned int count, const void* value)",ret 0xC at 0x0054A3D5; ecx is pushed on as padding (0x0054A3BE) and never read
+0x0054A3A0,signature,"void* __thiscall f(void *this, void* first, unsigned int count, const void* value)","a std::vector member, the vector in ecx at every caller (decomp-agent, 2026-11-22); ret 0xC at 0x0054A3D5; ecx is pushed on as padding (0x0054A3BE) and never read"
 0x0054A3E0,signature,void __thiscall GraphicsStructures::ObjectAttachDependency::RemoveFromFollower(void* this),plain ret at 0x0054A3EF; dependency vftable slot 2
 0x0054B6C0,signature,"unsigned int __thiscall GraphicsStructures::Object::GetNodesOfKind(void* this, int kind, void* outNodes)",ret 8 at 0x0054B755; this is Object+8; the callee reserves the vector (0x0054B6E0)
 0x0054B760,signature,bool __stdcall GraphicsStructures::Object::BindCrustEmittersToPhysics(void* effectObject),ret 4 at 0x0054BAB1; ecx is overwritten at 0x0054B787 before any read (the caller 0x0054DE53 loads the owner into it); the argument is the effect Object base
@@ -22239,3 +22239,4 @@ address,what,value,why
 0x009918A0,registers,ecx,"ecx read at 0x009918A4 before written, loaded by 5 of 5 callers whose setup can be read; plain ret, a caller's pushes cannot be counted (tools/regargs.py)"
 0x0099E380,registers,"ecx,eax|16c","ecx read at 0x0099E384 before written, loaded by 6 of 6 callers whose setup can be read; eax read at 0x0099E38F before written, loaded by 6 of 6 callers whose setup can be read; plain ret, its 6 callers push 16 bytes (tools/regargs.py)"
 0x009FCE60,registers,eax|16c,"eax read at 0x009FCE67 before written, loaded by 1 of 1 callers whose setup can be read; plain ret, its 1 callers push 16 bytes (tools/regargs.py)"
+0x008277D0,registers,"ecx,edi|4","ecx read at 0x008277F6 before written, loaded by 1 of 1 callers whose setup can be read; edi read at 0x00827807 before written, loaded by 1 of 1 callers whose setup can be read; ret 4 (tools/regargs.py)"

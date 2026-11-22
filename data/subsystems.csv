@@ -85,7 +85,7 @@ id,subsystem,class,how
 85,App,EclipseGame,name
 86,ThirdParty:STL,std::wstring,name
 87,ThirdParty:STL,std::_Tree<?>,name
-88,ThirdParty:STL,std::_Tree_const_iterator<?>,name
+88,ThirdParty:STL,std::_Tree<?>::const_iterator,name
 89,Messaging,Messages::Observable,name
 90,ThirdParty:STL,std::wstring,name
 91,Compiler,,name
@@ -208,7 +208,7 @@ id,subsystem,class,how
 210,ThirdParty:STL,std::wstring,name
 211,ThirdParty:STL,std::_Tree<?>,name
 212,ThirdParty:STL,std::vector<std::wstring>,name
-213,ThirdParty:STL,std::wstring,name
+213,ThirdParty:STL,std::vector<std::wstring>,name
 214,ThirdParty:STL,"std::basic_stringbuf<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>",name
 215,ThirdParty:STL,,between
 216,ThirdParty:STL,std,name
@@ -244,7 +244,7 @@ id,subsystem,class,how
 246,ThirdParty:STL,std::ctype<wchar_t>,vtable
 247,ThirdParty:STL,std::ctype<wchar_t>,vtable
 248,ThirdParty:STL,std::ctype<wchar_t>,name
-249,ThirdParty:STL,std,name
+249,ThirdParty:STL,std::ctype<wchar_t>,name
 250,ThirdParty:STL,std::ios_base,name
 251,ThirdParty:STL,std::ios_base::failure,name
 252,ThirdParty:STL,std::ios_base,name
@@ -275,11 +275,11 @@ id,subsystem,class,how
 277,ThirdParty:STL,,between
 278,ThirdParty:STL,,between
 279,ThirdParty:STL,,between
-280,ThirdParty:STL,std::wstring,name
-281,ThirdParty:STL,std::wstring,name
+280,ThirdParty:STL,std::string,name
+281,ThirdParty:STL,std::string,name
 282,ThirdParty:STL,,between
 283,ThirdParty:STL,std::string,name
-284,ThirdParty:STL,std::wstring,name
+284,ThirdParty:STL,std::string,name
 285,ThirdParty:STL,"std::num_get<wchar_t,std::istreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>",name
 286,ThirdParty:STL,,between
 287,ThirdParty:STL,,between
@@ -2406,8 +2406,8 @@ id,subsystem,class,how
 2425,ThirdParty:STL,std,name
 2426,ThirdParty:STL,std,name
 2427,ThirdParty:STL,std,owner
-2428,ThirdParty:STL,std,name
-2429,ThirdParty:STL,std,name
+2428,ThirdParty:STL,std::vector<Renderer::ShaderParameter>,name
+2429,ThirdParty:STL,std::vector<Renderer::ShaderParameter>,name
 2430,ThirdParty:STL,std,name
 2431,Rendering,Renderer,name
 2432,ThirdParty:STL,std::vector<Renderer::ShaderParameter>,name
@@ -2835,7 +2835,7 @@ id,subsystem,class,how
 2861,ThirdParty:STL,std,owner
 2862,Rendering,Renderer::LightState,name
 2863,ThirdParty:STL,std,name
-2864,ThirdParty:STL,std,name
+2864,ThirdParty:STL,std::vector<Math::Vector4f>,name
 2865,ThirdParty:STL,std::vector<Math::Vector4f>,name
 2866,ThirdParty:STL,std,name
 2867,ThirdParty:STL,std::vector<Math::Vector4f>,name
@@ -3141,7 +3141,7 @@ id,subsystem,class,how
 3170,Online,OnlineFeatures,name
 3171,ThirdParty:ATL,ATL::CW2AEX<128>,name
 3172,ThirdParty:ATL,ATL::CW2AEX<128>,name
-3173,ThirdParty:STL,std::_Tree_const_iterator<?>,name
+3173,ThirdParty:STL,std::_Tree<?>::const_iterator,name
 3174,ThirdParty:STL,std::_Tree<?>,name
 3175,Core,ECBase::ECDynArray<OnlineRec24>,name
 3176,Core,ECBase::ECDynArray<AddInItem>,name
@@ -3314,7 +3314,7 @@ id,subsystem,class,how
 3343,ThirdParty:STL,std::vector<OnlineRec24>,name
 3344,ThirdParty:STL,std::vector<PrereqItem>,name
 3345,ThirdParty:STL,std::vector<PRCItem>,name
-3346,ThirdParty:STL,std,name
+3346,ThirdParty:STL,std::vector<OnlineFeatures::Achievement>,name
 3347,ThirdParty:STL,std::vector<OnlineRec40A>,name
 3348,ThirdParty:STL,std::vector<OnlineRec24>,name
 3349,ThirdParty:STL,std,name
@@ -3332,7 +3332,7 @@ id,subsystem,class,how
 3361,ThirdParty:STL,std::vector<PrereqItem>,name
 3362,ThirdParty:STL,std::vector<?>,name
 3363,ThirdParty:STL,std::list<?>,name
-3364,ThirdParty:STL,std,name
+3364,ThirdParty:STL,std::vector<PrereqItem>,name
 3365,ThirdParty:STL,std,name
 3366,ThirdParty:STL,std::list<?>,name
 3367,Compiler,,range
@@ -3490,7 +3490,7 @@ id,subsystem,class,how
 3521,Online,OnlineFeatures,name
 3522,ThirdParty:STL,std::vector<Online::DatedRecord>,name
 3523,ThirdParty:STL,std::vector<Online::DatedRecord>,name
-3524,ThirdParty:STL,std,name
+3524,ThirdParty:STL,std::vector<Online::DatedRecord>,name
 3525,ThirdParty:STL,std::vector<Online::DatedRecord>,name
 3526,ThirdParty:STL,std,name
 3527,Online,OnlineFeatures,name
@@ -3727,10 +3727,10 @@ id,subsystem,class,how
 3758,Online,OfferManager,name
 3759,ThirdParty:STL,std::vector<Offer>,name
 3760,ThirdParty:STL,std::vector<Offer>,name
-3761,ThirdParty:STL,std,name
+3761,ThirdParty:STL,std::vector<Offer>,name
 3762,ThirdParty:STL,std::vector<OfferTag>,name
 3763,ThirdParty:STL,std::vector<OfferTag>,name
-3764,ThirdParty:STL,std,name
+3764,ThirdParty:STL,std::vector<OfferTag>,name
 3765,ThirdParty:STL,std,name
 3766,ThirdParty:STL,std::vector<Offer>,name
 3767,ThirdParty:STL,std::vector<OfferTag>,name
@@ -3817,9 +3817,9 @@ id,subsystem,class,how
 3851,Data,"SmartData::Attribute<short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 3852,ThirdParty:STL,std,name
 3853,Online,OfferManager,name
-3854,ThirdParty:STL,std,name
+3854,ThirdParty:STL,std::vector<AddInItem>,name
 3855,ThirdParty:STL,std::vector<AddInItem>,name
-3856,ThirdParty:STL,std,name
+3856,ThirdParty:STL,std::vector<AddInItem>,name
 3857,ThirdParty:STL,std,name
 3858,ThirdParty:STL,std::vector<AddInItem>,name
 3859,ThirdParty:STL,std::vector<AddInItem>,name
@@ -4342,7 +4342,7 @@ id,subsystem,class,how
 4377,Core,Multithreading::ThreadManager,name
 4378,Core,Multithreading::ThreadManager,name
 4379,ThirdParty:STL,std::_Tree<?>,name
-4380,ThirdParty:STL,std::_Tree_const_iterator<?>,name
+4380,ThirdParty:STL,std::_Tree<?>::const_iterator,name
 4381,ThirdParty:STL,std::deque<?>,name
 4382,ThirdParty:STL,std,name
 4383,ThirdParty:STL,std,name
@@ -5175,7 +5175,7 @@ id,subsystem,class,how
 5224,ThirdParty:STL,std::vector<Gff4::Template>,name
 5225,Resources,Gff4::File,name
 5226,ThirdParty:STL,std::vector<Gff4::Template>,name
-5227,ThirdParty:STL,std,name
+5227,ThirdParty:STL,std::vector<Gff4::Template>,name
 5228,ThirdParty:STL,std,name
 5229,Resources,Gff4::File,name
 5230,Resources,Gff4::File,name
@@ -6087,12 +6087,12 @@ id,subsystem,class,how
 6146,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",owner
 6147,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",name
 6148,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",owner
-6149,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",name
+6149,ThirdParty:STL,"std::map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",name
 6150,Rendering,Graphics::MaterialObject,name
 6151,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",name
 6152,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",name
 6153,ThirdParty:STL,"std::map<unsigned int,Multithreading::SynchSafePointer>",name
-6155,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",name
+6155,ThirdParty:STL,"std::map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",name
 6156,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",name
 6157,Core,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>",name
 6158,ThirdParty:STL,"std::map<unsigned int,Multithreading::SynchSafePointer>",name
@@ -6695,7 +6695,7 @@ id,subsystem,class,how
 6755,ThirdParty:STL,std::list<?>,name
 6756,ThirdParty:STL,std::list<?>,owner
 6757,ThirdParty:STL,std,name
-6758,ThirdParty:STL,std,name
+6758,ThirdParty:STL,std::vector<GFxValue>,name
 6759,GUI,GuiMovie,name
 6760,GUI,GuiMovie,name
 6761,ThirdParty:STL,std::vector<GFxValue>,name
@@ -7251,7 +7251,7 @@ id,subsystem,class,how
 7312,Rendering,SpeedTree,name
 7313,Rendering,GraphicsStructures::SpeedTreeForest,name
 7314,Rendering,GraphicsStructures::SpeedTreeForest,name
-7315,ThirdParty:STL,std,name
+7315,ThirdParty:STL,std::vector<float>,name
 7316,ThirdParty:STL,std,name
 7317,Rendering,GraphicsStructures::SpeedTreeLibrary,name
 7318,Rendering,GraphicsStructures::SpeedTreeForest,name
@@ -7446,7 +7446,7 @@ id,subsystem,class,how
 7508,Rendering,GraphicsStructures,name
 7509,Rendering,GraphicsStructures,name
 7510,Rendering,GraphicsStructures,name
-7511,ThirdParty:STL,std::vector<?>,name
+7511,Core,ECBase::ECDynArray<?>,name
 7512,ThirdParty:STL,std,name
 7513,ThirdParty:STL,std,owner
 7514,ThirdParty:STL,std::vector<std::vector<?>>,name
@@ -7454,7 +7454,7 @@ id,subsystem,class,how
 7516,ThirdParty:STL,std,owner
 7517,ThirdParty:STL,std::vector<std::vector<?>>,name
 7518,ThirdParty:STL,std::vector<std::vector<?>>,name
-7519,ThirdParty:STL,std,name
+7519,ThirdParty:STL,std::vector<std::vector<?>>,name
 7520,ThirdParty:STL,std,name
 7521,ThirdParty:STL,std::vector<std::vector<?>>,name
 7522,ThirdParty:STL,std::vector<std::vector<?>>,owner
@@ -7642,7 +7642,7 @@ id,subsystem,class,how
 7705,ThirdParty:STL,std,name
 7706,Rendering,GraphicsStructures::ObjectNodeEmitter,name
 7707,Rendering,GraphicsStructures::ObjectNodeEmitter,name
-7708,ThirdParty:STL,std,name
+7708,ThirdParty:STL,std::vector<?>,name
 7709,ThirdParty:STL,std::vector<?>,name
 7710,ThirdParty:STL,std,name
 7711,Rendering,GraphicsStructures::ObjectNodeEmitter,name
@@ -7848,7 +7848,7 @@ id,subsystem,class,how
 7911,Rendering,GraphicsStructures::Object,name
 7912,Rendering,GraphicsStructures::Object,name
 7913,Core,Core,name
-7914,ThirdParty:STL,std,name
+7914,ThirdParty:STL,std::vector<?>,name
 7915,ThirdParty:STL,std,name
 7916,Rendering,GraphicsStructures::Object,name
 7917,Rendering,GraphicsStructures::Object,name
@@ -7876,7 +7876,7 @@ id,subsystem,class,how
 7939,Rendering,GraphicsStructures::Object,name
 7940,Rendering,GraphicsStructures::Object,name
 7941,Rendering,GraphicsStructures::Object,name
-7942,ThirdParty:STL,std,name
+7942,ThirdParty:STL,std::vector<?>,name
 7943,Rendering,GraphicsStructures::ObjectAttachDependency,name
 7944,ThirdParty:STL,std::list<?>,name
 7945,ThirdParty:STL,std::list<?>,name
@@ -8135,7 +8135,7 @@ id,subsystem,class,how
 8199,Rendering,GraphicsStructures,name
 8200,Rendering,GraphicsStructures,name
 8201,ThirdParty:STL,std,name
-8202,ThirdParty:STL,std,name
+8202,ThirdParty:STL,std::vector<unsigned short>,name
 8203,Rendering,GraphicsStructures,name
 8204,Rendering,GraphicsStructures,name
 8205,ThirdParty:STL,std::vector<float>,name
@@ -8343,7 +8343,7 @@ id,subsystem,class,how
 8407,ThirdParty:STL,std,name
 8408,ThirdParty:STL,std,owner
 8409,Rendering,GraphicsStructures::ObjectNodeEmitterBlueprint,name
-8410,ThirdParty:STL,std,name
+8410,ThirdParty:STL,std::vector<?>,name
 8411,ThirdParty:STL,std::vector<?>,name
 8412,ThirdParty:STL,std::vector<?>,name
 8413,ThirdParty:STL,std,name
@@ -8485,8 +8485,8 @@ id,subsystem,class,how
 8551,ThirdParty:STL,std,name
 8552,ThirdParty:STL,std,name
 8553,ThirdParty:STL,Core::ListQueue<?>,between
-8554,ThirdParty:STL,std,name
-8555,ThirdParty:STL,std,name
+8554,ThirdParty:STL,std::vector<GraphicsStructures::ModelExport>,name
+8555,ThirdParty:STL,std::vector<GraphicsStructures::ModelExport>,name
 8556,ThirdParty:STL,std,name
 8557,ThirdParty:STL,std::vector<GraphicsStructures::ModelExport>,name
 8558,ThirdParty:STL,std::vector<GraphicsStructures::ModelExport>,name
@@ -8766,7 +8766,7 @@ id,subsystem,class,how
 8832,ThirdParty:STL,"std::basic_filebuf<wchar_t,std::char_traits<wchar_t>>",vtable
 8833,ThirdParty:STL,std::basic_filebuf<wchar_t>,name
 8834,ThirdParty:STL,std::vector<?>,name
-8835,ThirdParty:STL,std,name
+8835,ThirdParty:STL,std::vector<?>,name
 8836,ThirdParty:STL,std::_Tree<?>,name
 8837,Core,Core,name
 8838,Core,Core,name
@@ -8774,7 +8774,7 @@ id,subsystem,class,how
 8840,Rendering,Renderer::LightStatePool,name
 8841,Rendering,Renderer::LightStatePool,name
 8842,ThirdParty:STL,std::vector<?>,name
-8843,ThirdParty:STL,std,name
+8843,ThirdParty:STL,std::vector<Resources>,name
 8844,ThirdParty:STL,std::basic_string<char>,name
 8845,ThirdParty:STL,std::basic_string<char>,owner
 8846,Rendering,GraphicsStructures::GraphicsStructuresManager,name
@@ -9154,7 +9154,7 @@ id,subsystem,class,how
 9222,Physics,,name
 9223,Physics,GraphicsStructures::PHYLoader,name
 9224,Physics,,name
-9225,Physics,,name
+9225,Physics,GraphicsStructures::PHYLoader,name
 9226,Physics,GraphicsStructures::PHYLoader,name
 9227,Physics,GraphicsStructures::PHYLoader,name
 9228,Physics,GraphicsStructures::PHYLoader,name
@@ -9208,14 +9208,14 @@ id,subsystem,class,how
 9276,ThirdParty:STL,std,owner
 9277,Rendering,GraphicsStructures,name
 9278,Rendering,GraphicsStructures,name
-9279,ThirdParty:STL,std,name
+9279,ThirdParty:STL,std::vector<GraphicsStructures::TriangleIndices16>,name
 9280,Resources,Gff4::StructReader,name
 9281,Rendering,GraphicsStructures,name
 9282,ThirdParty:STL,std::vector<GraphicsStructures::TriangleIndices16>,name
 9283,ThirdParty:STL,std::vector<GraphicsStructures::ModelExport>,name
 9284,ThirdParty:STL,std,name
-9285,ThirdParty:STL,std,name
-9286,ThirdParty:STL,std,name
+9285,ThirdParty:STL,std::vector<GraphicsStructures::ClothAttachment>,name
+9286,ThirdParty:STL,std::vector<GraphicsStructures::ClothAttachment>,name
 9287,Rendering,GraphicsStructures,name
 9288,ThirdParty:STL,std::vector<GraphicsStructures::ClothAttachment>,name
 9289,ThirdParty:STL,std::vector<GraphicsStructures::ClothAttachment>,name
@@ -9941,9 +9941,9 @@ id,subsystem,class,how
 10011,Audio,EclipsePrivate::ReverbChannelGroup,name
 10012,Audio,EclipsePrivate::ReverbChannelGroup,name
 10013,Audio,EclipsePrivate::ReverbChannelGroup,name
-10014,Audio,,between
-10015,Audio,,between
-10016,Audio,,between
+10014,Audio,EclipsePrivate::ReverbChannelGroup,name
+10015,Audio,EclipsePrivate::ReverbChannelGroup,name
+10016,Audio,EclipsePrivate::ReverbChannelGroup,name
 10017,Audio,EclipsePrivate::CMusicThemeContent_FMOD,name
 10018,Audio,EclipsePrivate::CMusicThemeContent_FMOD,name
 10019,Audio,EclipsePrivate::CMusicThemeContent_FMOD,name
@@ -10487,7 +10487,7 @@ id,subsystem,class,how
 10559,Data,"SmartData::Attribute<unsigned int,ExplicitObjectIDMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 10560,Data,"SmartData::Attribute<unsigned int,ExplicitObjectIDMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 10561,Data,"SmartData::Attribute<unsigned int,ExplicitObjectIDMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
-10562,ThirdParty:STL,std::list<?>,name
+10562,Core,ECBase::ECList<?>,name
 10563,ThirdParty:STL,std,name
 10564,ThirdParty:STL,std,owner
 10565,App,CClientExoApp,name
@@ -10711,7 +10711,7 @@ id,subsystem,class,how
 10783,App,CClientOptions,name
 10784,App,CClientOptions,name
 10785,Data,SmartData,name
-10786,ThirdParty:STL,std,name
+10786,ThirdParty:STL,std::vector<std::vector<std::wstring>>,name
 10787,ThirdParty:STL,std::vector<ECBase::ECDynArray<ECBase::ECString>>,name
 10788,Core,"ECBase::ECDynArray<SmartData::Attribute<int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
 10789,Core,"ECBase::ECDynArray<SmartData::Attribute<int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
@@ -10762,7 +10762,7 @@ id,subsystem,class,how
 10834,ThirdParty:STL,std::vector<std::vector<std::wstring>>,name
 10835,ThirdParty:STL,std,name
 10836,App,CClientOptions,name
-10837,ThirdParty:STL,std,name
+10837,ThirdParty:STL,std::vector<?>,name
 10838,Data,"SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 10839,Data,"SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 10840,Data,"SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
@@ -10828,9 +10828,9 @@ id,subsystem,class,how
 10900,Resources,AddInsManager,name
 10901,Resources,AddInsManager,name
 10902,Resources,AddInsManager,name
-10903,ThirdParty:STL,std,name
+10903,ThirdParty:STL,std::vector<AddInsManager::AddInEntry>,name
 10904,ThirdParty:STL,std::vector<?>,name
-10905,ThirdParty:STL,std,name
+10905,ThirdParty:STL,std::vector<AddInsManager::AddInEntry>,name
 10906,Resources,AddInsManager,name
 10907,ThirdParty:STL,std::vector<?>,name
 10908,ThirdParty:STL,std,name
@@ -10883,13 +10883,13 @@ id,subsystem,class,how
 10955,ThirdParty:STL,std,owner
 10956,ThirdParty:STL,std,name
 10957,ThirdParty:STL,std,name
-10958,ThirdParty:STL,std,name
+10958,ThirdParty:STL,std::vector<AddInXmlEntry>,name
 10959,ThirdParty:STL,std,name
 10960,ThirdParty:STL,std,name
-10961,ThirdParty:STL,std,name
+10961,ThirdParty:STL,std::vector<AddInRecord>,name
 10962,ThirdParty:STL,std::vector<AddInXmlEntry>,name
 10963,ThirdParty:STL,std::vector<AddInXmlEntry>,name
-10964,ThirdParty:STL,std,name
+10964,ThirdParty:STL,std::vector<AddInXmlEntry>,name
 10965,ThirdParty:STL,std,name
 10966,ThirdParty:STL,std,name
 10967,ThirdParty:STL,std,name
@@ -10980,7 +10980,7 @@ id,subsystem,class,how
 11052,World,CCModule,name
 11053,World,CCModule,name
 11054,ThirdParty:STL,std::_Tree<?>,name
-11055,ThirdParty:STL,std,name
+11055,ThirdParty:STL,std::vector<CCModule::TagIndexEntry>,name
 11056,ThirdParty:STL,std::_Tree<?>,name
 11057,ThirdParty:STL,std::_Tree<?>,owner
 11058,World,CCModule,name
@@ -11040,8 +11040,8 @@ id,subsystem,class,how
 11112,ThirdParty:STL,std,owner
 11113,ThirdParty:STL,std,name
 11114,ThirdParty:STL,std,owner
-11115,ThirdParty:STL,std,name
-11116,ThirdParty:STL,std,name
+11115,ThirdParty:STL,std::vector<CCModule::AreaListEntry>,name
+11116,ThirdParty:STL,std::vector<CCModule::AreaListEntry>,name
 11117,ThirdParty:STL,std::vector<CCModule::AreaListEntry>,name
 11118,ThirdParty:STL,std::vector<CCModule::AreaListEntry>,name
 11119,ThirdParty:STL,std,name
@@ -12050,7 +12050,7 @@ id,subsystem,class,how
 12122,Game,CreatureAbilities,name
 12123,ThirdParty:STL,"std::map<int,void*>",name
 12124,Resources,Gff4::BlockRef,name
-12125,ThirdParty:STL,"std::map<int,void*>",name
+12125,Core,ECBase::ECList<?>,name
 12126,ThirdParty:STL,std,name
 12127,ThirdParty:STL,std,name
 12128,Game,CreatureAbilities,name
@@ -14659,7 +14659,7 @@ id,subsystem,class,how
 14737,Game,CCCreature,name
 14738,Game,CCItem,name
 14739,ThirdParty:STL,std::list<NamedEntry>,name
-14740,ThirdParty:STL,std,name
+14740,ThirdParty:STL,"std::vector<SmartData::Attribute<short,?,?,SmartData::ObserverNotification>>",name
 14741,Game,MinimizedAbilityHeaderList,callers
 14742,ThirdParty:STL,std,name
 14743,ThirdParty:STL,std,name
@@ -14692,7 +14692,7 @@ id,subsystem,class,how
 14770,Data,"SmartData::Attribute<ECBase::ECDynArray<ClassRank*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 14771,Data,"SmartData::Attribute<ECBase::ECDynArray<EffectGUIInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 14772,ThirdParty:STL,std::vector<TintBlock>,name
-14773,ThirdParty:STL,std,name
+14773,ThirdParty:STL,std::vector<TintBlock>,name
 14774,ThirdParty:STL,std,name
 14775,Core,SwapRemoveList,name
 14776,ThirdParty:STL,std,name
@@ -15107,7 +15107,7 @@ id,subsystem,class,how
 15187,Data,"SmartData::Attribute<ECBase::ECDynArray<SaveFileInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 15188,Data,SmartData::PointerArrayMemberIteratorImpl<ECBase::ECDynArray<SaveFileInfo*>>,name
 15189,Data,"SmartData::Attribute<ECBase::ECDynArray<SaveFileInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
-15190,ThirdParty:STL,std,name
+15190,ThirdParty:STL,std::vector<SaveLoadProxy::SaveEntry>,name
 15191,ThirdParty:STL,std,name
 15192,Data,"SmartData::Attribute<ECBase::ECDynArray<HeroInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 15193,Data,"SmartData::Attribute<ECBase::ECDynArray<HeroInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
@@ -15470,7 +15470,7 @@ id,subsystem,class,how
 15550,Game,Journal,name
 15551,Game,Journal,name
 15552,ThirdParty:STL,"std::map<ECBase::ECString,ECBase::ECDynArray<ECBase::ECString>>",name
-15553,ThirdParty:STL,std,name
+15553,ThirdParty:STL,"std::vector<SmartData::Attribute<TlkString,?,?,SmartData::ObserverNotification>>",name
 15554,ThirdParty:STL,std,name
 15555,Game,Journal,name
 15556,ThirdParty:STL,std,name
@@ -15511,7 +15511,7 @@ id,subsystem,class,how
 15591,Data,"SmartData::Attribute<ECBase::ECDynArray<CodexGroup*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 15592,Data,"SmartData::Attribute<ECBase::ECDynArray<ConversationRecord*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 15593,ThirdParty:STL,"std::vector<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
-15594,ThirdParty:STL,std,name
+15594,ThirdParty:STL,"std::vector<SmartData::Attribute<TlkString,?,?,SmartData::ObserverNotification>>",name
 15595,Game,Journal,name
 15596,ThirdParty:STL,std,name
 15597,ThirdParty:STL,std,name
@@ -17363,8 +17363,8 @@ id,subsystem,class,how
 17449,ThirdParty:STL,stdext,name
 17450,ThirdParty:STL,std,name
 17451,ThirdParty:STL,std,owner
-17452,ThirdParty:STL,std,name
-17453,ThirdParty:STL,std,name
+17452,ThirdParty:STL,std::vector<GUICharGen::SliderEntry>,name
+17453,ThirdParty:STL,std::vector<GUICharGen::SliderEntry>,name
 17454,Data,"SmartData::Attribute<ECBase::ECDynArray<GUI::AppearanceSliderGroup*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 17455,Data,"SmartData::Attribute<ECBase::ECDynArray<GUI::AppearanceSliderGroup*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 17456,Data,Stub,between
@@ -20029,11 +20029,11 @@ id,subsystem,class,how
 20123,ThirdParty:STL,std::vector<GUI::HeadPreset::MaterialValue>,name
 20124,ThirdParty:STL,std::vector<GUI::HeadPreset::MaterialVector>,name
 20125,ThirdParty:STL,std::vector<GUI::HeadPreset::Texture>,name
-20126,ThirdParty:STL,std,name
-20127,ThirdParty:STL,std,name
-20128,ThirdParty:STL,std,name
-20129,ThirdParty:STL,std,name
-20130,ThirdParty:STL,std,name
+20126,ThirdParty:STL,std::vector<GUI::HeadPreset::MaterialValue>,name
+20127,ThirdParty:STL,std::vector<GUI::HeadPreset::MaterialVector>,name
+20128,ThirdParty:STL,std::vector<GUI::HeadPreset::Texture>,name
+20129,ThirdParty:STL,"std::vector<SmartData::Attribute<float,?,?,SmartData::ObserverNotification>>",name
+20130,ThirdParty:STL,"std::vector<std::pair<std::wstring,int>>",name
 20131,Data,"SmartData::Attribute<ECBase::ECDynArray<GUI::GUIPaperdoll::CharData*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 20132,Data,Stub,between
 20133,Data,"SmartData::Attribute<ECBase::ECDynArray<GUI::GUIPaperdoll::CharData*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
@@ -20181,7 +20181,7 @@ id,subsystem,class,how
 20275,GUI,GUI::GUIPaperdoll,name
 20276,Core,"Map<unsigned int,RefHandle>",name
 20277,ThirdParty:STL,std::vector<GUI::HeadPreset::ModelWeight>,name
-20278,ThirdParty:STL,std,name
+20278,ThirdParty:STL,std::vector<GUI::HeadPreset::ModelWeight>,name
 20279,ThirdParty:STL,std,name
 20280,ThirdParty:STL,std::vector<GUI::HeadPreset::ModelWeight>,name
 20281,ThirdParty:STL,std::vector<GUI::HeadPreset::ModelWeight>,name
@@ -20351,9 +20351,9 @@ id,subsystem,class,how
 20445,World,MapTravelPoint,name
 20446,World,MapPathSearch,name
 20447,ThirdParty:STL,std::vector<MapTrailPoint>,name
-20448,ThirdParty:STL,std,name
+20448,ThirdParty:STL,std::vector<MapTrail>,name
 20449,ThirdParty:STL,std::vector<MapTrailPoint>,name
-20450,ThirdParty:STL,std,name
+20450,ThirdParty:STL,std::vector<MapTrail>,name
 20451,ThirdParty:STL,std,name
 20452,World,MapObject,name
 20453,Data,"SmartData::Attribute<ECBase::ECDynArray<MapTravelPoint*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
@@ -21383,7 +21383,7 @@ id,subsystem,class,how
 21480,ThirdParty:STL,std,name
 21481,ThirdParty:STL,std,name
 21482,ThirdParty:STL,std::vector<FilteredGroupedItemView::Entry>,name
-21483,ThirdParty:STL,std,name
+21483,ThirdParty:STL,std::vector<FilteredGroupedItemView::Entry>,name
 21484,ThirdParty:STL,std,name
 21485,ThirdParty:STL,std,name
 21486,ThirdParty:STL,std::vector<?>,name
@@ -21709,7 +21709,7 @@ id,subsystem,class,how
 21809,World,MapTrail,name
 21810,ThirdParty:STL,stdext,name
 21811,ThirdParty:STL,std::vector<MapTrailPoint>,name
-21812,ThirdParty:STL,std,name
+21812,ThirdParty:STL,std::vector<MapTrailPoint>,name
 21813,ThirdParty:STL,std::vector<MapTrailPoint>,name
 21814,World,MapTrail,name
 21815,World,MapTrail,name
@@ -21826,8 +21826,8 @@ id,subsystem,class,how
 21926,ThirdParty:STL,stdext,name
 21927,ThirdParty:STL,std,name
 21928,ThirdParty:STL,std,owner
-21929,ThirdParty:STL,std,name
-21930,ThirdParty:STL,std,name
+21929,ThirdParty:STL,std::vector<Animation::ModelAnimationTree::Entry>,name
+21930,ThirdParty:STL,std::vector<Animation::ModelAnimationTree::Entry>,name
 21931,Animation,Animation::ModelAnimationTree,name
 21932,ThirdParty:STL,std::vector<Animation::ModelAnimationTree::Entry>,name
 21933,ThirdParty:STL,std,name
@@ -22041,7 +22041,7 @@ id,subsystem,class,how
 22141,ThirdParty:PhysX,NxSphereShapeDesc,name
 22142,ThirdParty:PhysX,NxShapeDesc,name
 22143,Physics,Physics::PhysicsParticleActor,name
-22144,Physics,Physics,name
+22144,ThirdParty:PhysX,NxActorDesc_Template<?>,name
 22145,Physics,Physics::PhysicsParticleActor,name
 22146,Physics,Physics::PhysicsParticleActor,name
 22147,Physics,Physics::PhysicsParticleActor,name
@@ -23851,7 +23851,7 @@ id,subsystem,class,how
 23998,ThirdParty:STL,std,name
 23999,ThirdParty:STL,std,owner
 24000,World,D3DDriver::D3DUmbraRenderer,name
-24001,ThirdParty:STL,std,name
+24001,ThirdParty:STL,std::vector<D3DDriver::D3DUmbraRenderer::DebugLine>,name
 24002,ThirdParty:STL,std,name
 24003,ThirdParty:STL,std::vector<D3DDriver::D3DUmbraRenderer::DebugLine>,name
 24004,ThirdParty:STL,,string
@@ -23999,7 +23999,7 @@ id,subsystem,class,how
 24146,ThirdParty:STL,std,name
 24147,Input,ECInput::RawInputWin32,name
 24148,ThirdParty:STL,std,name
-24149,ThirdParty:STL,std,name
+24149,ThirdParty:STL,std::vector<wchar_t>,name
 24150,ThirdParty:STL,std,name
 24151,ThirdParty:STL,std::vector<?>,name
 24152,ThirdParty:STL,std::vector<?>,owner
@@ -32284,7 +32284,7 @@ id,subsystem,class,how
 32519,Scripting,ScriptArray,name
 32520,Scripting,CVirtualMachine,name
 32521,Scripting,CVirtualMachine,name
-32522,ThirdParty:STL,std,name
+32522,ThirdParty:STL,std::vector<unsigned char>,name
 32523,ThirdParty:STL,ScriptArrayRef,between
 32524,ThirdParty:STL,ScriptArrayRef,owner
 32525,ThirdParty:STL,ScriptArrayRef,between
@@ -32877,7 +32877,7 @@ id,subsystem,class,how
 33112,AI,Pathfinding::MapAbstraction,name
 33113,AI,Pathfinding::MapAbstraction,name
 33114,AI,Pathfinding::MapAbstraction,name
-33115,ThirdParty:STL,std,name
+33115,ThirdParty:STL,std::vector<?>,name
 33116,AI,Pathfinding::MapAbstraction,name
 33117,AI,Pathfinding::MapAbstraction,name
 33118,ThirdParty:STL,std::vector<?>,name
@@ -39527,8 +39527,8 @@ id,subsystem,class,how
 39769,ThirdParty:STL,std::basic_string<char>,owner
 39770,ThirdParty:STL,"std::num_put<wchar_t,std::ostreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>",owner
 39771,ThirdParty:STL,"std::num_put<wchar_t,std::ostreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>",owner
-39772,ThirdParty:STL,std,owner
-39773,ThirdParty:STL,std,owner
+39772,ThirdParty:STL,std::ctype<wchar_t>,owner
+39773,ThirdParty:STL,std::ctype<wchar_t>,owner
 39774,ThirdParty:STL,std,owner
 39775,ThirdParty:STL,std,owner
 39776,Rendering,GraphicsStructures::ModelHierarchyReader,owner
@@ -54415,8 +54415,8 @@ id,subsystem,class,how
 54657,Physics,Physics::PhysicsManager,owner
 54658,Physics,Physics::PhysicsManager,owner
 54659,Physics,Physics::PhysicsManager,owner
-54660,Physics,Physics,owner
-54661,Physics,Physics,owner
+54660,ThirdParty:PhysX,NxActorDesc_Template<?>,owner
+54661,ThirdParty:PhysX,NxActorDesc_Template<?>,owner
 54662,Physics,Physics::PhysicsParticleActor,owner
 54663,Physics,Physics::PhysicsParticleActor,owner
 54664,Physics,Physics::MeshShapePrototype,owner
