@@ -182,7 +182,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 181,function,Catch_All@00405a09,,0x00405a09,0x00405e39,0x00405a09
 182,function,EclipseGame::ProcessCommandIni,,0x00405a40,0x00405e70,0x00405a40
 183,function,"std::basic_stringstream<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>::~basic_stringstream",,0x00405e10,0x00406240,0x00405e10
-184,function,std::wstring::_Copy,,0x00405eb0,0x00406300,0x00405eb0
+184,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::_Copy",,0x00405eb0,0x00406300,0x00405eb0
 185,function,Catch_All@00405f38,,0x00405f38,0x00406388,0x00405f38
 186,retired,,,,,
 187,function,Catch_All@00405fd1,,0x00405fd1,0x00406421,0x00405fd1
@@ -199,7 +199,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 198,function,std::_Locinfo::~_Locinfo,,0x004062d0,0x00406730,0x004062d0
 199,function,EclipseGame::CreateGUISystem,,0x004063b0,0x00406810,0x004063b0
 200,function,,,0x004064f0,0x00406950,0x004064f0
-201,function,std::wstring::_Grow,,0x00406530,0x00406990,0x00406530
+201,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::_Grow",,0x00406530,0x00406990,0x00406530
 202,function,std::wstring::assign,,0x00406600,0x00406a60,0x00406600
 203,function,std::wstring::assign,,0x004066f0,0x00406b50,0x004066f0
 204,function,"std::list<std::pair<std::wstring,?>>::list",,0x004067d0,0x00406c30,0x004067d0
@@ -208,7 +208,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 207,function,"SmartData::MapMemberIteratorImpl<ECBase::ECHashMap<unsigned int,SmartData::IAttribute*,ECBase::ECHashParams<unsigned int>>>::GetValue",,0x00406840,0x00406ca0,0x00406840
 208,function,"std::list<std::pair<unsigned int,std::wstring>>::clear",,0x00406880,0x007c15f0,0x00406880
 209,function,EclipseGame::DestroyScene,,0x004068c0,0x00406d20,0x004068c0
-210,function,std::wstring::append,"std::wstring::append(size_t count, wchar_t ch), ret 8: checks the length (0x7FFFFFFE), grows with _Copy 0x00405EB0 when over capacity, fills count characters (0x00409030), NUL-terminates. Called with 0x5F ('_') and 1 at 0x00A666AD in Items::GetVariationNames.",0x00406970,0x00406dd0,0x00406970
+210,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::append","std::wstring::append(size_t count, wchar_t ch), ret 8: checks the length (0x7FFFFFFE), grows with _Copy 0x00405EB0 when over capacity, fills count characters (0x00409030), NUL-terminates. Called with 0x5F ('_') and 1 at 0x00A666AD in Items::GetVariationNames.",0x00406970,0x00406dd0,0x00406970
 211,function,std::_Tree<?>::_Erase,,0x00406a20,0x00406e80,0x00406a20
 212,function,std::vector<std::wstring>::~vector,,0x00406a60,0x0083de00,0x00406a60
 213,function,std::vector<std::wstring>::_Ufill,,0x00406ab0,0x00406ee0,0x00406ab0
@@ -4450,7 +4450,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4449,function,ECLog::DisableChannel,,0x004bf220,0x00801390,0x004bf220
 4450,function,ECLog::~ECLog,"Flushes and deletes the log file object at +0x38, destroys the mutex at +0x880 and the two wstrings at +0x1C and +0.",0x004bf250,0x008013c0,0x004bf250
 4451,function,ECLog::SetIniPath,,0x004bf300,0x00802be0,0x004bf300
-4452,function,std::operator+,,0x004bf350,0x004695a0,0x004bf350
+4452,function,"std::operator+<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>",,0x004bf350,0x004695a0,0x004bf350
 4453,function,ECLog::OpenLogFile,"Closes the current log file and opens a new one (name from the log's wstrings), writes a header, and resets the +0x3C count so a log does not pass its limit (+0x40, 0xFDE8 set by the constructor); also used by SetLogFile.",0x004bf3d0,0x008014c0,0x004bf3d0
 4454,function,ECLog::WriteEntry,,0x004bf790,0x00801880,0x004bf790
 4455,function,ECLog::SetLogFile,,0x004bf960,0x00801a50,0x004bf960
@@ -4491,7 +4491,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4490,function,ECBase::ECString::PrefixEqualsNoCase,,0x004c0b00,0x00802a80,0x004c0b00
 4491,function,"ECBase::ECString::EqualsNoCase(const wchar_t*,unsigned int)",,0x004c0b60,0x00802ae0,0x004c0b60
 4492,function,std::wstring::compare,,0x004c0bf0,0x00802b70,0x004c0bf0
-4493,function,std::string::_Copy,,0x004c0c40,0x00477330,0x004c0c40
+4493,function,"std::basic_string<char,std::char_traits<char>,ECMemory::StringAllocator<char>>::_Copy",,0x004c0c40,0x00477330,0x004c0c40
 4494,function,,,0x004c0cc4,0x004773b4,0x004c0cc4
 4495,retired,,,,,
 4496,function,,,0x004c0d55,0x00477445,0x004c0d55
@@ -4513,61 +4513,61 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4512,function,,,0x004c10f0,0x00802f20,0x004c10f0
 4513,function,,,0x004c1120,0x00802f50,0x004c1120
 4514,function,ECBase::ECString::Crc32,"Crc32Wide over the wstring's characters (inline buffer or heap pointer chosen by the capacity at +0x18, length at +0x14); the game's column and table name hash (lower-case UTF-16LE CRC-32, e.g. ""type"" gives 0x12A02374). Used for itemprps.ScalingVector at 0x007593C2.",0x004c1150,0x00802f80,0x004c1150
-4515,function,std::string::_Grow,,0x004c1180,0x00477760,0x004c1180
+4515,function,"std::basic_string<char,std::char_traits<char>,ECMemory::StringAllocator<char>>::_Grow",,0x004c1180,0x00477760,0x004c1180
 4516,function,,,0x004c1240,0x00802fb0,0x004c1240
-4517,function,std::wstring::assign,,0x004c1270,0x00477bf0,0x004c1270
-4518,function,std::wstring::insert,,0x004c1360,0x00802fe0,0x004c1360
-4519,function,std::wstring::insert,,0x004c14f0,0x00803170,0x004c14f0
-4520,function,std::string::assign,,0x004c1670,0x00477a40,0x004c1670
-4521,function,std::string::assign,,0x004c1750,0x00477b20,0x004c1750
-4522,function,std::wstring::append,,0x004c1820,0x007c3860,0x004c1820
-4523,function,std::wstring::append,,0x004c1930,0x007c3970,0x004c1930
+4517,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::assign",,0x004c1270,0x00477bf0,0x004c1270
+4518,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::insert",,0x004c1360,0x00802fe0,0x004c1360
+4519,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::insert",,0x004c14f0,0x00803170,0x004c14f0
+4520,function,"std::basic_string<char,std::char_traits<char>,ECMemory::StringAllocator<char>>::assign",,0x004c1670,0x00477a40,0x004c1670
+4521,function,"std::basic_string<char,std::char_traits<char>,ECMemory::StringAllocator<char>>::assign",,0x004c1750,0x00477b20,0x004c1750
+4522,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::append",,0x004c1820,0x007c3860,0x004c1820
+4523,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::append",,0x004c1930,0x007c3970,0x004c1930
 4524,function,,,0x004c1a30,0x008032f0,0x004c1a30
-4525,function,std::string::append,,0x004c1e20,0x004778d0,0x004c1e20
+4525,function,"std::basic_string<char,std::char_traits<char>,ECMemory::StringAllocator<char>>::append",,0x004c1e20,0x004778d0,0x004c1e20
 4526,function,,,0x004c1ed0,0x008036e0,0x004c1ed0
-4527,function,std::wstring::assign,,0x004c1f20,0x00477fc0,0x004c1f20
-4528,function,std::wstring::assign,,0x004c2000,0x00478300,0x004c2000
-4529,function,std::string::assign,,0x004c2030,0x00477f90,0x004c2030
+4527,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::assign",,0x004c1f20,0x00477fc0,0x004c1f20
+4528,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::assign",,0x004c2000,0x00478300,0x004c2000
+4529,function,"std::basic_string<char,std::char_traits<char>,ECMemory::StringAllocator<char>>::assign",,0x004c2030,0x00477f90,0x004c2030
 4530,function,,,0x004c2060,0x00803730,0x004c2060
 4531,function,,,0x004c2270,0x00803940,0x004c2270
 4532,function,,,0x004c2320,0x004780e0,0x004c2320
 4533,function,,,0x004c2435,0x004781f5,0x004c2435
-4534,function,std::wstring::wstring,,0x004c2480,0x008039f0,0x004c2480
-4535,function,std::wstring::wstring(const std::wstring&),,0x004c2510,0x00803a80,0x004c2510
-4536,function,std::wstring::wstring,,0x004c2540,0x00803ab0,0x004c2540
-4537,function,std::wstring::insert,,0x004c25d0,0x00803b40,0x004c25d0
+4534,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::basic_string",,0x004c2480,0x008039f0,0x004c2480
+4535,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::basic_string(const std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>&)",,0x004c2510,0x00803a80,0x004c2510
+4536,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::basic_string",,0x004c2540,0x00803ab0,0x004c2540
+4537,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::insert",,0x004c25d0,0x00803b40,0x004c25d0
 4538,function,ECBase::ECString::Insert,,0x004c25f0,0x00803b60,0x004c25f0
-4539,function,std::wstring::wstring(const wchar_t*),,0x004c2630,0x004784b0,0x004c2630
-4540,function,std::wstring::substr,,0x004c2670,0x00803ba0,0x004c2670
+4539,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::basic_string(const wchar_t*)",,0x004c2630,0x004784b0,0x004c2630
+4540,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::substr",,0x004c2670,0x00803ba0,0x004c2670
 4541,function,"std::operator+(const wchar_t*,const std::wstring&)",,0x004c26b0,0x00803be0,0x004c26b0
 4542,function,ECBase::ECString::FromLong,,0x004c2770,0x00803ca0,0x004c2770
 4543,function,ECBase::ECString::FromUnsignedLong,,0x004c2840,0x00803d70,0x004c2840
 4544,function,ECBase::ECString::FromFloat,,0x004c2910,0x00803e40,0x004c2910
 4545,function,ECBase::ECString::FromDouble,,0x004c29e0,0x00803f10,0x004c29e0
-4546,function,std::wstring::operator=,,0x004c2ab0,0x00803fe0,0x004c2ab0
+4546,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::operator=",,0x004c2ab0,0x00803fe0,0x004c2ab0
 4547,function,ECBase::ECString::Assign,,0x004c2ad0,0x00804000,0x004c2ad0
 4548,function,String::IntToWide,,0x004c2b10,0x00804040,0x004c2b10
 4549,function,String::FloatToWide,,0x004c2b80,0x008040b0,0x004c2b80
 4550,function,ECBase::ECString::AssignUtf8,"Clears this, then converts a narrow UTF-8 (code page 65001) C string to wide with MultiByteToWideChar and assigns it; null or empty gives the empty string.",0x004c2bf0,0x00804120,0x004c2bf0
 4551,function,ECBase::ECString::ToUtf8,Converts this wstring to UTF-8 with WideCharToMultiByte (code page 65001) into a std::string returned through the hidden pointer.,0x004c2cc0,0x008041f0,0x004c2cc0
 4552,function,ECBase::ECString::StartsWith,,0x004c2e50,0x00804380,0x004c2e50
-4553,function,"std::wstring::replace(unsigned int,unsigned int,const std::wstring&)",,0x004c2f70,0x008044a0,0x004c2f70
+4553,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::replace(unsigned int,unsigned int,const std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>&)",,0x004c2f70,0x008044a0,0x004c2f70
 4554,function,ECBase::ECString::ReplaceFirst,,0x004c2fc0,0x008044f0,0x004c2fc0
 4555,function,ECBase::ECString::ReplaceAll,"Repeats ReplaceFirst(from, to, start) from just after each replacement until it returns -1.",0x004c3000,0x00804530,0x004c3000
 4556,function,ECBase::ECString::Format,,0x004c3030,0x00804560,0x004c3030
 4557,function,ECBase::ECString::Left,Returns the first n characters (n clamped to the length) as a new string.,0x004c30f0,0x00804620,0x004c30f0
 4558,function,ECBase::ECString::Right,Returns the last n characters (n clamped to the length) as a new string.,0x004c31a0,0x008046d0,0x004c31a0
-4559,function,std::wstring::substr,"Its bytes are also ECBase::ECString::CheckedSubstring: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x004c3250,0x00804780,0x004c3250
+4559,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::substr","Its bytes are also ECBase::ECString::CheckedSubstring: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x004c3250,0x00804780,0x004c3250
 4560,function,ECBase::ECString::Trim,,0x004c3310,0x00804840,0x004c3310
-4561,function,std::operator+,,0x004c3360,0x00804890,0x004c3360
-4562,function,std::operator+,,0x004c3420,0x00804950,0x004c3420
+4561,function,"std::operator+<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>",,0x004c3360,0x00804890,0x004c3360
+4562,function,"std::operator+<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>",,0x004c3420,0x00804950,0x004c3420
 4563,function,,,0x004c3510,0x00804a40,0x004c3510
 4564,function,,,0x004c3580,0x00804ab0,0x004c3580
 4565,function,,,0x004c35f0,0x00804b20,0x004c35f0
-4566,function,std::wstring::append,,0x004c36a0,0x00804bd0,0x004c36a0
-4567,function,std::wstring::append,,0x004c36c0,0x00804bf0,0x004c36c0
+4566,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::append",,0x004c36a0,0x00804bd0,0x004c36a0
+4567,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::append",,0x004c36c0,0x00804bf0,0x004c36c0
 4568,function,,,0x004c3700,0x00804c30,0x004c3700
-4569,function,std::wstring::append,,0x004c3780,0x00804cb0,0x004c3780
+4569,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::append",,0x004c3780,0x00804cb0,0x004c3780
 4570,function,String::ToUpperAscii,,0x004c3800,0x00804d30,0x004c3800
 4571,function,String::ToUpperAscii,,0x004c38e0,0x00804e10,0x004c38e0
 4572,function,String::ToLowerAscii,,0x004c3970,0x00804ea0,0x004c3970
@@ -4575,10 +4575,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4574,function,,,0x004c3ae0,0x00805010,0x004c3ae0
 4575,function,,,0x004c3bc0,0x008050f0,0x004c3bc0
 4576,function,ECBase::ECString::RemoveInvalidCharacters,,0x004c3cf0,0x00805220,0x004c3cf0
-4577,function,std::wstring::resize,,0x004c3f90,0x008054c0,0x004c3f90
+4577,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::resize",,0x004c3f90,0x008054c0,0x004c3f90
 4578,function,,,0x004c3fc0,0x008054f0,0x004c3fc0
 4579,function,std::wstring::replace,,0x004c4090,0x008055c0,0x004c4090
-4580,function,std::wstring::wstring(const char*),,0x004c4140,0x00805670,0x004c4140
+4580,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::basic_string(const char*)",,0x004c4140,0x00805670,0x004c4140
 4581,function,ECBase::ECString::ECString,Widens a counted narrow string: builds a temporary std::string (0x004C1750) and replaces this with it through 0x004C4090. INFERRED name from shape; callers read files and responses.,0x004c42b0,0x008057e0,0x004c42b0
 4582,function,ECBase::ECString::Assign(const char*),"Clears this if the pointer is null or empty, else widens the NUL-terminated narrow string like the counted form; callers include ResRef::ToString.",0x004c4430,0x00805960,0x004c4430
 4583,function,,,0x004c45a0,0x00805ad0,0x004c45a0
@@ -6866,7 +6866,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6865,function,Core::VectorIndexOf<std::wstring>,,0x0051f550,0x00505c80,0x0051f550
 6866,function,GuiCommands::DispatchFSCommand,,0x0051f5f0,0x007c8340,0x0051f5f0
 6867,function,GuiCommands::DispatchExternalInterface,,0x0051f640,0x007c8390,0x0051f640
-6868,function,std::string::substr,,0x0051f6a0,0x007c83f0,0x0051f6a0
+6868,function,"std::basic_string<char,std::char_traits<char>,ECMemory::StringAllocator<char>>::substr",,0x0051f6a0,0x007c83f0,0x0051f6a0
 6869,function,GuiFSCommand::SetValueUnicode,,0x0051f6e0,0x007c8430,0x0051f6e0
 6870,function,GuiFSCommand::EraseVectorRange<std::wstring>,,0x0051f910,0x007c8660,0x0051f910
 6871,function,GuiFSCommand::PopContext,,0x0051fa40,0x007c8790,0x0051fa40
@@ -14242,7 +14242,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14241,function,CScriptEvent::CScriptEvent,,0x0069bac0,0x0058cdd0,0x0069bac0
 14242,function,CScriptEvent::CScriptEvent,,0x0069bb30,0x0058ce40,0x0069bb30
 14243,function,CScriptEvent::Equals,,0x0069bba0,0x0058ceb0,0x0069bba0
-14244,function,std::wstring::wstring,,0x0069bbd0,0x0058cee0,0x0069bbd0
+14244,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::basic_string",,0x0069bbd0,0x0058cee0,0x0069bbd0
 14245,function,std::_Allocate<std::wstring>,,0x0069bbf0,0x007fbdf0,0x0069bbf0
 14246,function,CScriptEvent::WriteToResGFF,,0x0069bc60,0x0058cf00,0x0069bc60
 14247,function,CScriptEvent::ReadFromResGFF,,0x0069bcd0,0x0058cf70,0x0069bcd0
@@ -23806,7 +23806,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23805,function,D3DDriver::D3DPixelShader::SetParameterMatrix,,0x00871920,0x00477a20,0x00871920
 23806,function,std::vector<D3DDriver::ShaderMember>::erase,,0x00871940,0x00477d30,0x00871940
 23807,function,std::vector<D3DDriver::ShaderMember>::_Ufill,,0x008719a0,0x00477d90,0x008719a0
-23808,function,std::string::_Construct<std::wstring::const_iterator>,"Builds a narrow string from a wide range: reserves (last-first) bytes (_Grow 0x004C1180) then push_backs the low byte of each wchar_t (0x004C1E20); includes the debug iterator checks (0x008E11F2). Callers 0x008739B0 and 0x00874400, the shader constructors.",0x008719e0,0x00477dd0,0x008719e0
+23808,function,"std::basic_string<char,std::char_traits<char>,ECMemory::StringAllocator<char>>::_Construct<std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::const_iterator>","Builds a narrow string from a wide range: reserves (last-first) bytes (_Grow 0x004C1180) then push_backs the low byte of each wchar_t (0x004C1E20); includes the debug iterator checks (0x008E11F2). Callers 0x008739B0 and 0x00874400, the shader constructors.",0x008719e0,0x00477dd0,0x008719e0
 23809,function,,,0x00871af6,0x00477ee6,0x00871af6
 23810,function,std::vector<D3DDriver::ShaderMember>::_Ucopy,,0x00871b40,0x00477f30,0x00871b40
 23811,function,std::allocator<D3DDriver::ShaderConstant>::destroy,,0x00871b70,0x00477f60,0x00871b70
