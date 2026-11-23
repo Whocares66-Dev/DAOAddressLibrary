@@ -6575,7 +6575,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6574,function,GUI::ScaleformMemoryAllocator::Alloc,,0x00510f10,0x00496c60,0x00510f10
 6575,function,GUI::ScaleformMemoryAllocator::AllocAligned,,0x00510f20,0x007b91f0,0x00510f20
 6576,function,GUI::ScaleformDebugMemoryAllocator::Free,,0x00510f40,0x007b9260,0x00510f40
-6577,function,GUI::ScaleformDebugMemoryAllocator::Alloc,,0x00510f50,0x007b9230,0x00510f50
+6577,function,GUI::ScaleformDebugMemoryAllocator::Alloc,"Its bytes are also Physics::PhysicsAllocator::mallocDEBUG, slot 0 of PhysicsAllocator's vftable 0x00B26BFC (it pops 0x14, five arguments); the linker made one function of the two (decomp-agent, 2026-11-22).",0x00510f50,0x007b9230,0x00510f50
 6578,function,GUI::ScaleformDebugMemoryAllocator::Realloc,,0x00510f60,0x007b9240,0x00510f60
 6579,function,GUI::ScaleformDebugMemoryAllocator::AllocAligned,,0x00510f80,0x007b9270,0x00510f80
 6580,function,GuiMovie::GetMovieView,,0x00510fa0,0x004f8900,0x00510fa0
