@@ -146,7 +146,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 145,function,std::char_traits<wchar_t>::_Copy_s,,0x00403a60,0x00403bb0,0x00403a60
 146,function,"SmartData::Attribute<ECBase::ECString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x00403a90,0x00403be0,0x00403a90
 147,function,"SmartData::Attribute<int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x00403ab0,0x004c13f0,0x00403ab0
-148,function,"std::_Vector_const_iterator<std::wstring,std::allocator<std::wstring>>::operator-",,0x00403ad0,0x00403c20,0x00403ad0
+148,function,"std::_Vector_const_iterator<std::wstring,std::allocator<std::wstring>>::operator-","Its bytes are also std::_Vector_iterator<>::operator-: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x00403ad0,0x00403c20,0x00403ad0
 149,function,"std::basic_streambuf<wchar_t,std::char_traits<wchar_t>>::basic_streambuf",,0x00403b10,0x00403c60,0x00403b10
 150,function,"std::basic_stringbuf<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>::_Init",,0x00403bc0,0x00403d10,0x00403bc0
 151,function,Stub::GetAddress_0xC,,0x00403c70,0x005dce50,0x00403c70
@@ -2590,7 +2590,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2589,function,"std::map<std::wstring,unsigned int>::insert",,0x004601f0,0x00415a30,0x004601f0
 2590,function,Renderer::FrameBufferEffect::AddResource,,0x00460280,0x00898810,0x00460280
 2591,function,Renderer::FrameBufferEffect::FindResource,"Looks a resource up by name in the effect's map at +0x34: on a hit returns it (through the map's operator[], 0x0046030C); on a miss returns null without inserting anything",0x004602d0,0x00898860,0x004602d0
-2592,function,std::_Tree<std::wstring>::~_Tree,,0x00460330,0x00466d00,0x00460330
+2592,function,std::_Tree<std::wstring>::~_Tree,"Its bytes are also std::_Tree<>::_Tidy: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x00460330,0x00466d00,0x00460330
 2593,function,Renderer::FrameBufferEffect::AddStage,,0x00460370,0x008988c0,0x00460370
 2594,function,Renderer::FrameBufferStage::~FrameBufferStage,,0x00460390,0x008988e0,0x00460390
 2595,function,Renderer::FrameBufferStage::AddFilter,,0x00460400,0x00898950,0x00460400
@@ -2881,7 +2881,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2880,function,Graphics::ISceneSubManager::Create,,0x0046c620,0x008aa650,0x0046c620
 2881,function,Renderer::SubmissionQueueProgram::BumpVersion,,0x0046c720,0x008aab40,0x0046c720
 2882,function,Renderer::SubmissionQueueProgram::SetActiveList,,0x0046c740,0x008aab60,0x0046c740
-2883,function,std::vector<void*>::_Tidy,,0x0046c760,0x004c3490,0x0046c760
+2883,function,std::vector<void*>::_Tidy,"Its bytes are also ?A0x2cb45977::releaseFields, ECBase::ECDynArray<>::~ECDynArray, std::ECDynArray<>::~ECDynArray: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x0046c760,0x004c3490,0x0046c760
 2884,function,Renderer::SQObject::GetClasses,,0x0046c790,0x008aab80,0x0046c790
 2885,function,Renderer::SubmissionQueueProgram::Clear,,0x0046c7f0,0x008aabe0,0x0046c7f0
 2886,function,Renderer::SubmissionQueueProgram::RemoveObject,,0x0046c870,0x008aac60,0x0046c870
@@ -3188,7 +3188,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3187,function,Gff4::BlockRef::SetUInt32,,0x00478420,0x0052b570,0x00478420
 3188,function,"SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x00478490,0x004c13f0,0x00478490
 3189,function,Messages::MessageFactoryEntry::~MessageFactoryEntry`adjustor{4}',,0x004784b0,0x004c0f70,0x004784b0
-3190,function,std::_Vector_const_iterator<Elem4>::operator-,,0x004784c0,0x007e3de0,0x004784c0
+3190,function,std::_Vector_const_iterator<Elem4>::operator-,"Its bytes are also _Vector_iterator<>::operator-: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x004784c0,0x007e3de0,0x004784c0
 3191,function,Gff4::Block::ReadStringChecked,,0x004784f0,0x004ebf80,0x004784f0
 3192,function,"std::_Construct<LocString,LocString>",,0x00478530,0x004c1380,0x00478530
 3193,function,"Messages::Private::MemberFunctionMessageHandler<OnlineFeatures,ReConnectMessage,&OnlineFeatures::HandleMessage>::Handle",,0x004785a0,0x00852c30,0x004785a0
@@ -3419,7 +3419,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3418,function,AddInItem::~AddInItem,,0x004844d0,0x0085cd00,0x004844d0
 3419,function,AddInRecord::~AddInRecord,,0x00484600,0x004c39a0,0x00484600
 3420,function,XMLParser2::XMLAttributes::~XMLAttributes,,0x004847a0,0x0085ce30,0x004847a0
-3421,function,"std::map<std::wstring,std::wstring>::~map",,0x00484840,0x0047e240,0x00484840
+3421,function,"std::map<std::wstring,std::wstring>::~map","Its bytes are also std::_Tree<>::_Tidy: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x00484840,0x0047e240,0x00484840
 3422,function,"std::map<int,std::wstring>::operator[]",,0x00484880,0x00a43890,0x00484880
 3423,function,std::vector<OnlineRec84>::resize(unsigned int),,0x00484970,0x0085ced0,0x00484970
 3424,function,std::vector<OnlineRec84>::push_back,,0x004849c0,0x0085cf20,0x004849c0
@@ -3542,7 +3542,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3541,function,OnlineFeatures::`scalar deleting destructor',,0x0048d150,0x00863a10,0x0048d150
 3542,function,"SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x0048d160,0x004c4c80,0x0048d160
 3543,function,"SmartData::Attribute<ECBase::ECString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x0048d190,0x004c4c00,0x0048d190
-3544,function,std::_Deque_const_iterator<unsigned int>::operator[],,0x0048d210,0x00863a20,0x0048d210
+3544,function,std::_Deque_const_iterator<unsigned int>::operator[],"Its bytes are also std::_Deque_iterator<>::operator[]: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x0048d210,0x00863a20,0x0048d210
 3545,function,"std::_Copy_backward_opt<std::_Deque_iterator<unsigned int>,std::_Deque_iterator<unsigned int>>",,0x0048d270,0x00863a80,0x0048d270
 3546,function,"std::_Uninitialized_copy<OnlineRec84*,OnlineRec84*,std::allocator<OnlineRec84>>",,0x0048d340,0x00859ad0,0x0048d340
 3547,function,"std::_Copy_backward<std::_Deque_iterator<unsigned int>,std::_Deque_iterator<unsigned int>>",,0x0048d370,0x00863b50,0x0048d370
@@ -3610,7 +3610,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3609,function,LockerUploadRequest::LockerUploadRequest,,0x00491300,0x00885160,0x00491300
 3610,function,LockerUploadRequest::~LockerUploadRequest,,0x00491380,0x008851e0,0x00491380
 3611,function,LockerDownloadRequest::LockerDownloadRequest,,0x00491400,0x00885260,0x00491400
-3612,function,LockerDownloadRequest::~LockerDownloadRequest,"Its bytes are probably also WStringPair's destructor: 14 of its callers are catch funclets destroying a WStringPair (decomp-agent, 2026-11-20).",0x00491460,0x008852c0,0x00491460
+3612,function,LockerDownloadRequest::~LockerDownloadRequest,"Its bytes are probably also WStringPair's destructor: 14 of its callers are catch funclets destroying a WStringPair (decomp-agent, 2026-11-20). Its bytes are also Graphics::MaterialTextureDeclaration::~MaterialTextureDeclaration, MaterialTextureDeclaration::~MaterialTextureDeclaration, OnlineRec48::~OnlineRec48: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x00491460,0x008852c0,0x00491460
 3613,function,LockerManager::AcquireLockerUrl,,0x004914c0,0x00885320,0x004914c0
 3614,function,LockerManager::DeleteFileById,,0x004916b0,0x00885510,0x004916b0
 3615,function,LockerManager::UpdateDirectoryStats,,0x004917a0,0x00885600,0x004917a0
@@ -3648,7 +3648,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3647,function,LockerManager::StartNextDelete,,0x00492700,0x008864a0,0x00492700
 3648,function,std::vector<OnlineRec68>::_Destroy,,0x004927f0,0x00886590,0x004927f0
 3649,function,std::vector<OnlineRec68>::_Tidy,,0x00492820,0x008865c0,0x00492820
-3650,function,"std::_Uninitialized_fill_n<OnlineRec68*,unsigned int,OnlineRec68,std::allocator<OnlineRec68>>",,0x00492870,0x00886610,0x00492870
+3650,function,"std::_Uninitialized_fill_n<OnlineRec68*,unsigned int,OnlineRec68,std::allocator<OnlineRec68>>","Its bytes are also vector<>::_Ufill: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x00492870,0x00886610,0x00492870
 3651,function,std::vector<OnlineRec48>::_Destroy,,0x004928b0,0x00886650,0x004928b0
 3652,function,std::vector<OnlineRec48>::_Tidy,,0x004928e0,0x00886680,0x004928e0
 3653,function,std::vector<OnlineRec48>::_Ufill,,0x00492930,0x008866d0,0x00492930
@@ -4435,7 +4435,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4434,function,Resource::GetReadRequest,,0x004be8e0,0x00800a70,0x004be8e0
 4435,function,Resource::ReadOnFirstUse,,0x004be950,0x00800ae0,0x004be950
 4436,function,Resource::FreeReadRequest,,0x004bea90,0x00800c20,0x004bea90
-4437,function,Resource::~Resource,,0x004beac0,0x00800c50,0x004beac0
+4437,function,Resource::~Resource,"Its bytes are also std::wstring::~wstring: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x004beac0,0x00800c50,0x004beac0
 4438,function,Resource::UpdateLoadState,,0x004bebc0,0x00800d50,0x004bebc0
 4439,function,Resource::StartLoad,,0x004becd0,0x00800e60,0x004becd0
 4440,function,Resource::FreeWhenUnused,,0x004bede0,0x00800f70,0x004bede0
@@ -4495,7 +4495,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4494,function,,,0x004c0cc4,0x004773b4,0x004c0cc4
 4495,retired,,,,,
 4496,function,,,0x004c0d55,0x00477445,0x004c0d55
-4497,function,std::wstring::wstring,"Its bytes are also ECBase::ECString's default constructor: an empty wstring's initialization, which the linker made one function of (decomp-agent, 2026-11-20).",0x004c0d90,0x00802bc0,0x004c0d90
+4497,function,std::wstring::wstring,"Its bytes are also ECBase::ECString's default constructor: an empty wstring's initialization, which the linker made one function of (decomp-agent, 2026-11-20). Its bytes are also ECBase::ECString::ECString: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x004c0d90,0x00802bc0,0x004c0d90
 4498,function,std::wstring::~wstring,,0x004c0db0,0x00802be0,0x004c0db0
 4499,function,ECBase::ECString::operator==,"__thiscall, ret 4: this string against another (ecx read at 0x004C0DF7, the argument a string object), compare(0, size(), other) through std::wstring::compare (ID 431), 1 when equal. A member, which std::basic_string's operator== is not, among ECString's functions: so ECString's (decomp-agent, 2026-11-19: its callers pass this in ecx)",0x004c0de0,0x00802c10,0x004c0de0
 4500,function,ECBase::ECString::operator==,"__thiscall, ret 4: this string against a wide C string, a null one read as empty (0x004C0E1A); its length is counted and compare(0, size(), text, length) called through std::wstring::compare (ID 431), 1 when equal. ScriptVariableNames::Entry::NameEquals_wcharptr 0x004E7740 calls it on the string at entry +0xC",0x004c0e10,0x00802c40,0x004c0e10
@@ -4557,7 +4557,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4556,function,ECBase::ECString::Format,,0x004c3030,0x00804560,0x004c3030
 4557,function,ECBase::ECString::Left,Returns the first n characters (n clamped to the length) as a new string.,0x004c30f0,0x00804620,0x004c30f0
 4558,function,ECBase::ECString::Right,Returns the last n characters (n clamped to the length) as a new string.,0x004c31a0,0x008046d0,0x004c31a0
-4559,function,std::wstring::substr,,0x004c3250,0x00804780,0x004c3250
+4559,function,std::wstring::substr,"Its bytes are also ECBase::ECString::CheckedSubstring: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x004c3250,0x00804780,0x004c3250
 4560,function,ECBase::ECString::Trim,,0x004c3310,0x00804840,0x004c3310
 4561,function,std::operator+,,0x004c3360,0x00804890,0x004c3360
 4562,function,std::operator+,,0x004c3420,0x00804950,0x004c3420
@@ -4695,7 +4695,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4694,function,ECFileAccess::DeleteFile,,0x004c8f60,0x0080a360,0x004c8f60
 4695,function,ECFileAccess::RemoveDirectory,,0x004c8f90,0x0080a390,0x004c8f90
 4696,function,ECFileAccess::CopyFile,,0x004c8fc0,0x0080a3c0,0x004c8fc0
-4697,function,ECFileAccess::CreateDirectory,,0x004c9010,0x0080a410,0x004c9010
+4697,function,ECFileAccess::CreateDirectory,"Its bytes are also ECFileAccess::CreateDirectoryA: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x004c9010,0x0080a410,0x004c9010
 4698,function,ECFileAccess::FileAccess::FileAccess,,0x004c9170,0x0080a570,0x004c9170
 4699,function,ECFileAccess::FileAccess::WriteWString,"Writes count wide characters of a std::wstring (SSO-aware, count*2 bytes) to the file handle at +4 with WriteFile, and adds the elapsed Clock::Microseconds and the bytes to the file-access I/O counters.",0x004c9300,0x0080a700,0x004c9300
 4700,function,std::list<?>::_Splice,,0x004c9390,0x0080a790,0x004c9390
@@ -4898,7 +4898,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4897,function,CpuFeatures::Detect,Stores the DetectSse result at +0 and the DetectSse2 result at +1; the body CpuFeatures::CpuFeatures calls.,0x004d25e0,0x00813720,0x004d25e0
 4898,function,CpuFeatures::CpuFeatures,,0x004d2600,0x00813740,0x004d2600
 4899,function,CpuFeatures::Get,,0x004d2610,0x00813750,0x004d2610
-4900,function,,,0x004d2640,0x004062e0,0x004d2640
+4900,function,"std::basic_stringstream<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>::`vbase destructor'",,0x004d2640,0x004062e0,0x004d2640
 4901,function,,,0x004d2660,0x00819530,0x004d2660
 4902,function,,,0x004d2710,0x008195e0,0x004d2710
 4903,function,,,0x004d27d0,0x008196a0,0x004d27d0
@@ -4920,7 +4920,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4919,function,Math::AABB::Merge,,0x004d2eb0,0x0081c940,0x004d2eb0
 4920,function,Math::AABB::GetCenter,,0x004d2fe0,0x0081ca70,0x004d2fe0
 4921,function,Math::AABB::SetFromPoints,,0x004d3000,0x0081ca90,0x004d3000
-4922,function,Math::CollisionObject::IntersectSegment,,0x004d31c0,0x0081cc50,0x004d31c0
+4922,function,Math::AABB::IntersectSegment,,0x004d31c0,0x0081cc50,0x004d31c0
 4923,function,Math::Matrix4x4f::operator=,,0x004d3360,0x00819ae0,0x004d3360
 4924,function,Gff4::SwapMatrix4x4f,,0x004d3380,0x00819b00,0x004d3380
 4925,function,Gff4::SwapMatrix4x4fArray,,0x004d3390,0x00819b10,0x004d3390
@@ -5269,7 +5269,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5268,function,GdaStore::DeleteNamedTables,,0x004df870,0x00813a90,0x004df870
 5269,function,GdaStore::DeleteIndexedTables,,0x004df940,0x00813b60,0x004df940
 5270,function,"std::map<?,?>::find_or_default",,0x004df9d0,0x00813bf0,0x004df9d0
-5271,function,std::list<?>::~list,,0x004dfa40,0x007c1750,0x004dfa40
+5271,function,std::list<?>::~list,"Its bytes are also std::list<>::_Tidy: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x004dfa40,0x007c1750,0x004dfa40
 5272,function,ECResMan::NameList::NameList,,0x004dfa60,0x00505f80,0x004dfa60
 5273,function,ECResMan::NameList::~NameList,,0x004dfae0,0x00506000,0x004dfae0
 5274,function,std::list<?>::_Incsize,,0x004dfb50,0x00817810,0x004dfb50
@@ -5317,7 +5317,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5316,function,WriteIniString,,0x004e1cd0,0x0082ca40,0x004e1cd0
 5317,function,"std::basic_stringstream<char,std::char_traits<char>,std::allocator<char>>::`vbase destructor'",,0x004e1d40,0x007399f0,0x004e1d40
 5318,function,"std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char>>::basic_stringbuf",,0x004e1de0,0x00739a90,0x004e1de0
-5319,function,std::ios_base::~ios_base,,0x004e1e60,0x00739e00,0x004e1e60
+5319,function,"std::basic_stringstream<char,std::char_traits<char>,std::allocator<char>>::`vbase destructor'",,0x004e1e60,0x00739e00,0x004e1e60
 5320,function,"std::basic_stringstream<char,std::char_traits<char>,std::allocator<char>>::`scalar deleting destructor'",,0x004e1e80,0x00739fc0,0x004e1e80
 5321,function,std::ctype<char>::ctype,,0x004e1ec0,0x0073a8f0,0x004e1ec0
 5322,function,,,0x004e1fc0,0x0073a9f0,0x004e1fc0
@@ -5564,7 +5564,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5563,function,Messages::DataStream::~DataStream,,0x004ea390,0x007cde40,0x004ea390
 5564,function,Messages::DataStream::`scalar deleting destructor',,0x004ea3a0,0x007cde50,0x004ea3a0
 5565,function,Messages::InputStringDataStream::~InputStringDataStream,,0x004ea3c0,0x00833350,0x004ea3c0
-5566,function,Messages::InputStringDataStream::ReadUInt8,,0x004ea430,0x008333c0,0x004ea430
+5566,function,Messages::InputStringDataStream::ReadUInt8,"Its bytes are also Messages::InputStringDataStream::ReadByte: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x004ea430,0x008333c0,0x004ea430
 5567,function,Messages::InputStringDataStream::ReadInt2,,0x004ea450,0x008333e0,0x004ea450
 5568,function,Messages::InputStringDataStream::ReadInt4,,0x004ea470,0x00833400,0x004ea470
 5569,function,Messages::InputStringDataStream::ReadFloat4,,0x004ea490,0x00833420,0x004ea490
@@ -6136,7 +6136,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6135,function,Graphics::MaterialObject::SetMatrixParameter,,0x00501050,0x007e91e0,0x00501050
 6136,function,"Map<unsigned int,Math::VectorUA4f>::Map",,0x005010f0,0x007e9280,0x005010f0
 6137,function,"std::map<unsigned int,Math::VectorUA4f>::operator=",,0x00501160,0x007e9330,0x00501160
-6138,function,"std::_Tree<std::_Tmap_traits<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>>::_Erase",,0x005011b0,0x007e9380,0x005011b0
+6138,function,"std::_Tree<std::_Tmap_traits<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>>::_Erase","Its bytes are also Map::_Erase: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x005011b0,0x007e9380,0x005011b0
 6139,function,"std::map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::erase","Erases one node: unlinks and rebalances it, fixes the head's leftmost and rightmost, frees it, returns the next node; throws ""invalid map/set<T> iterator"" on the head (isnil +0x21)",0x005011f0,0x007e93c0,0x005011f0
 6140,function,Multithreading::SynchSafePointerList<Graphics::MaterialObject>::SynchSafePointerList,,0x005014c0,0x007e9690,0x005014c0
 6141,function,Multithreading::SynchSafePointerList<Graphics::MaterialObject>::`scalar deleting destructor',,0x00501510,0x007e96e0,0x00501510
@@ -7509,7 +7509,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7508,function,GraphicsStructures::GetVertexElementMasks,,0x0053af50,0x00742260,0x0053af50
 7509,function,GraphicsStructures::CountVertexElements,,0x0053afd0,0x007422e0,0x0053afd0
 7510,function,GraphicsStructures::GetVertexStride,,0x0053aff0,0x00742300,0x0053aff0
-7511,function,ECBase::ECDynArray<?>::ECDynArray,,0x0053b060,0x0058dc60,0x0053b060
+7511,function,ECBase::ECDynArray<?>::ECDynArray,"Its bytes are also std::vector<>::vector: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x0053b060,0x0058dc60,0x0053b060
 7512,function,"std::_Uninit_copy<std::vector<?>*,std::vector<?>*>",,0x0053b0c0,0x007423a0,0x0053b0c0
 7513,function,Catch_All@0053b129,,0x0053b129,0x00742409,0x0053b129
 7514,function,std::vector<std::vector<?>>::_Tidy,,0x0053b160,0x0068c8b0,0x0053b160
@@ -9693,7 +9693,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9692,function,GraphicsStructures::ObjectNodeTerrain::UnlockMaskTextures,,0x005b2e40,0x007b29d0,0x005b2e40
 9693,function,GraphicsStructures::ObjectNodeCrustBlueprint::GetTreeSize,,0x005b2f80,0x007b2b10,0x005b2f80
 9694,function,GraphicsStructures::ObjectNodeCrustBlueprint::GetMemoryFootprint,,0x005b2fe0,0x007b2b70,0x005b2fe0
-9695,function,GraphicsStructures::ObjectNodeCrust::Create,,0x005b3020,0x007b2bb0,0x005b3020
+9695,function,GraphicsStructures::ObjectNodeCrust::Create,"Its bytes are also CreateObjectNodeCrust: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x005b3020,0x007b2bb0,0x005b3020
 9696,function,GraphicsStructures::ObjectNodeCrustBlueprint::Instantiate,,0x005b3080,0x007b2c10,0x005b3080
 9697,function,GraphicsStructures::ObjectNodeCrustBlueprint::InstantiateHook,,0x005b3180,0x007b2d10,0x005b3180
 9698,function,GraphicsStructures::ObjectNodeEmitterGroupBlueprint::ObjectNodeEmitterGroupBlueprint,,0x005b3260,0x007b2df0,0x005b3260
@@ -10820,7 +10820,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10819,function,,,0x005e5880,0x004d2550,0x005e5880
 10820,function,"std::map<?,?>::map(const std::map<?,?>&)",,0x005e5950,0x004d2620,0x005e5950
 10821,function,,,0x005e59cc,0x004d269c,0x005e59cc
-10822,function,std::_Tree<?>::~_Tree,,0x005e59e0,0x004d26b0,0x005e59e0
+10822,function,std::_Tree<?>::~_Tree,"Its bytes are also TexManager::_Tree<>::_Tidy: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x005e59e0,0x004d26b0,0x005e59e0
 10823,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<ECBase::ECString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x005e5a20,0x004d26f0,0x005e5a20
 10824,function,DebugOptions::SliderRangeMap::~SliderRangeMap,,0x005e5aa0,0x004d2770,0x005e5aa0
 10825,function,DebugOptions::SliderRangeMap::SliderRangeMap(const DebugOptions::SliderRangeMap&),,0x005e5b30,0x004d2800,0x005e5b30
@@ -11089,7 +11089,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 11088,function,"std::map<int,std::wstring>::map",,0x006017d0,0x004efcc0,0x006017d0
 11089,function,,,0x0060184c,0x004efd3c,0x0060184c
 11090,function,CCModule::GetObjectsInAreaByTag,,0x00601860,0x004efd50,0x00601860
-11091,function,"std::map<int,std::wstring>::~map",,0x00601a70,0x005a2300,0x00601a70
+11091,function,"std::map<int,std::wstring>::~map","Its bytes are also std::_Tree<>::_Tidy: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x00601a70,0x005a2300,0x00601a70
 11092,function,std::vector<CCModule::TagIndexEntry>::vector,,0x00601ab0,0x004effd0,0x00601ab0
 11093,function,CCModule::InsertVectorElementAt<CCModule::TagIndexEntry>,,0x00601b10,0x004f0030,0x00601b10
 11094,function,std::vector<Gff4::StructReader>::vector,,0x00601ba0,0x004f00c0,0x00601ba0
@@ -13553,7 +13553,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13552,function,CCArea::UpdateTimerAndEffects,,0x0067a050,0x00566120,0x0067a050
 13553,function,CCArea::ApplyReverbPreset,,0x0067a080,0x00566150,0x0067a080
 13554,function,AreaEntry::AreaEntry,,0x0067a0b0,0x005661a0,0x0067a0b0
-13555,function,AreaEntry::~AreaEntry,,0x0067a110,0x00566200,0x0067a110
+13555,function,AreaEntry::~AreaEntry,"Its bytes are also CCArea::StageEntry::~StageEntry: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x0067a110,0x00566200,0x0067a110
 13556,function,CCArea::ImportanceFilterMatches,,0x0067a170,0x00566260,0x0067a170
 13557,function,Renderer::FrameBufferEffect::SetFloatParameter,,0x0067a1d0,0x005662c0,0x0067a1d0
 13558,function,CCArea::ResetCreatureTreePools,"Stores 0 in the two dwords at CCArea+0x5D8 (0x0067A262, 0x0067A268). Those are the used counts of the two node pools (leaf, branch) that AllocCreatureTreeNode 0x00685A60 reads and increments at [this+kind*4+0x5D8]: the pools are reset; the tree root (+0x584) is separate. Called by RebuildCreatureTree, DestroyContents and the constructor.",0x0067a260,0x00566350,0x0067a260
@@ -15189,7 +15189,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15188,function,SmartData::PointerArrayMemberIteratorImpl<ECBase::ECDynArray<SaveFileInfo*>>::GetValue,,0x006cd940,0x005bf370,0x006cd940
 15189,function,"SmartData::Attribute<ECBase::ECDynArray<SaveFileInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x006cd980,0x005bf3b0,0x006cd980
 15190,function,std::vector<SaveLoadProxy::SaveEntry>::_Ufill,,0x006cd9a0,0x005bf3d0,0x006cd9a0
-15191,function,std::_Destroy_range<?*>,,0x006cd9e0,0x005bf410,0x006cd9e0
+15191,function,std::_Destroy_range<?*>,"Its bytes are also SaveLoadProxy::vector<>::_Destroy: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x006cd9e0,0x005bf410,0x006cd9e0
 15192,function,"SmartData::Attribute<ECBase::ECDynArray<HeroInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::~Attribute",,0x006cda00,0x005bf430,0x006cda00
 15193,function,"SmartData::Attribute<ECBase::ECDynArray<HeroInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x006cda70,0x005bf4b0,0x006cda70
 15194,function,SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<HeroInfo*>>::GetMemberName,,0x006cda80,0x005bf4c0,0x006cda80
@@ -15486,7 +15486,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15485,function,"SmartData::Attribute<ChanterBoard*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x006eb300,0x005dcf10,0x006eb300
 15486,function,SetActiveQuestMessage::Create,,0x006eb320,0x005dcf30,0x006eb320
 15487,function,"SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x006eb390,0x005dcfa0,0x006eb390
-15488,function,"std::_Destroy<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",,0x006eb430,0x004c9fe0,0x006eb430
+15488,function,"std::_Destroy<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>","Its bytes are also ECBase::allocator<>::destroy, allocator<>::destroy: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x006eb430,0x004c9fe0,0x006eb430
 15489,function,SetActiveQuestMessage::Clone,,0x006eb450,0x005dd040,0x006eb450
 15490,function,Journal::GetActivePlotName,,0x006eb4c0,0x005dd0b0,0x006eb4c0
 15491,function,Journal::GetPlotGiverId,,0x006eb520,0x005dd110,0x006eb520
@@ -15752,7 +15752,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15751,function,Journal::SortCodexEntries,"Finds and deletes groups with no entries, sorts each remaining group (std::_Sort with CodexEntryNameLess) and numbers the entries into their Index from ONE counter that starts at 1 (0x006F575B) and is not reset between groups (incremented 0x006F58A7): Index is the place in the whole codex, groups in list order.",0x006f5750,0x005e7420,0x006f5750
 15752,function,Journal::RemovePlotDestination,"this = the Journal (called from PlotManager::SetPlotFlag 0x0075FB59 with ECX the journal); ret 8, arguments (tag, plotGuid) as pointers to strings. Finds the tag in the plot destination map at +0x118, removes the GUID from its list; when the list is empty erases the tag and calls the object slot +0x184 (SetPlotDestination) with 0 on every object of that tag in the module tag index; always ends with RebuildPlotDestinations.",0x006f58e0,0x005e75b0,0x006f58e0
 15753,function,"std::map<?,?>::_Insert",,0x006f59e0,0x005e76b0,0x006f59e0
-15754,function,"std::map<ECBase::ECString,ECBase::ECDynArray<ECBase::ECString>>::~map",,0x006f5be0,0x005e7da0,0x006f5be0
+15754,function,"std::map<ECBase::ECString,ECBase::ECDynArray<ECBase::ECString>>::~map","Its bytes are also ECBase::_Tree<>::_Tidy: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x006f5be0,0x005e7da0,0x006f5be0
 15755,function,"SmartData::Attribute<unsigned short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::SetFromText",,0x006f5c20,0x005e78b0,0x006f5c20
 15756,function,"SmartData::Attribute<unsigned short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::GetTextInto",,0x006f5c60,0x005e78f0,0x006f5c60
 15757,function,"SmartData::Attribute<unsigned short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::GetText",,0x006f5c90,0x005e7920,0x006f5c90
@@ -15884,7 +15884,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15883,function,AmbientDialogEntry::AmbientDialogEntry,,0x006fe200,0x005efed0,0x006fe200
 15884,function,AmbientDialogEntry::ReleaseResources,,0x006fe290,0x005eff60,0x006fe290
 15885,function,AmbientDialogEntry::IsReady,,0x006fe2f0,0x005effc0,0x006fe2f0
-15886,function,std::_List_const_iterator<unk_value>::operator++,,0x006fe340,0x004c9d30,0x006fe340
+15886,function,std::_List_const_iterator<unk_value>::operator++,"Its bytes are also std::list<>::_Const_iterator<>::operator++: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x006fe340,0x004c9d30,0x006fe340
 15887,function,"stdext::hash_map<unsigned int,?>::lower_bound",,0x006fe370,0x005f0010,0x006fe370
 15888,function,CAmbientDialogManager::PlayLine,,0x006fe4a0,0x005f0160,0x006fe4a0
 15889,function,CAmbientDialogManager::ResetEntryTimers,,0x006fe8a0,0x005f0560,0x006fe8a0
@@ -21881,10 +21881,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21880,function,Animation::AnimationManager::RegisterAnimation,,0x00810b50,0x004b57d0,0x00810b50
 21881,function,Animation::AnimationManager::RegisterTree,,0x00810c40,0x004b58c0,0x00810c40
 21882,function,Graphics::ISceneSubManager::OnObjectEvent,,0x00810d30,0x008b3fc0,0x00810d30
-21883,function,Animation::AnimSceneManagerDefault::Update,"Starts the scene's animation task group (+0xC) on the thread manager: TaskGroup::Begin (0x00810D66), then clears the group's +0x18/+0x19 when it holds tasks Named from Engine.dll, the toolset's own link of the engine (2009-11-20): the function tools/exemap.py pairs with this one there logs ""AnimSceneManagerDefault::Update called from the wrong thread"". Was Animation::AnimSceneManagerDefault::BeginUpdate.",0x00810d60,0x00a66910,0x00810d60
+21883,function,Animation::AnimSceneManagerDefault::Update,"Starts the scene's animation task group (+0xC) on the thread manager: TaskGroup::Begin (0x00810D66), then clears the group's +0x18/+0x19 when it holds tasks Named from Engine.dll, the toolset's own link of the engine (2009-11-20): the function tools/exemap.py pairs with this one there logs ""AnimSceneManagerDefault::Update called from the wrong thread"". Was Animation::AnimSceneManagerDefault::BeginUpdate. Its bytes are also Animation::AnimSceneManagerDefault::BeginUpdate: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x00810d60,0x00a66910,0x00810d60
 21884,function,Animation::AnimSceneManagerDefault::WaitForUpdate,"Named from Engine.dll, the toolset's own link of the engine (2009-11-20): the function tools/exemap.py pairs with this one there logs ""AnimSceneManagerDefault::WaitForUpdate called from the wrong thread"". Was Animation::AnimSceneManagerDefault::WaitUpdate.",0x00810da0,0x00a66950,0x00810da0
-21885,function,Animation::AnimSceneManagerDefault::AddObject,"Adds an object's id to the scene's animation group unless flag 0x40 of its slot +0xA4 is set (0x00810DD4); with OnObjectRemoved the only gate on which objects animate Named from Engine.dll, the toolset's own link of the engine (2009-11-20): the function tools/exemap.py pairs with this one there logs ""AnimSceneManagerDefault::AddObject called from the wrong thread"". Was Animation::AnimSceneManagerDefault::OnObjectAdded.",0x00810db0,0x00a66960,0x00810db0
-21886,function,Animation::AnimSceneManagerDefault::RemoveObject,"Removes an object's id from the scene's animation group Named from Engine.dll, the toolset's own link of the engine (2009-11-20): the function tools/exemap.py pairs with this one there logs ""AnimSceneManagerDefault::RemoveObject called from the wrong thread"". Was Animation::AnimSceneManagerDefault::OnObjectRemoved.",0x00810e00,0x00a669b0,0x00810e00
+21885,function,Animation::AnimSceneManagerDefault::AddObject,"Adds an object's id to the scene's animation group unless flag 0x40 of its slot +0xA4 is set (0x00810DD4); with OnObjectRemoved the only gate on which objects animate Named from Engine.dll, the toolset's own link of the engine (2009-11-20): the function tools/exemap.py pairs with this one there logs ""AnimSceneManagerDefault::AddObject called from the wrong thread"". Was Animation::AnimSceneManagerDefault::OnObjectAdded. Its bytes are also Animation::AnimSceneManagerDefault::OnObjectAdded: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x00810db0,0x00a66960,0x00810db0
+21886,function,Animation::AnimSceneManagerDefault::RemoveObject,"Removes an object's id from the scene's animation group Named from Engine.dll, the toolset's own link of the engine (2009-11-20): the function tools/exemap.py pairs with this one there logs ""AnimSceneManagerDefault::RemoveObject called from the wrong thread"". Was Animation::AnimSceneManagerDefault::OnObjectRemoved. Its bytes are also Animation::AnimSceneManagerDefault::OnObjectRemoved: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x00810e00,0x00a669b0,0x00810e00
 21887,function,Animation::AccumulateWeightedFloat,,0x00810e30,0x00a65870,0x00810e30
 21888,function,Animation::AddScaledFloat,,0x00810e70,0x00a658b0,0x00810e70
 21889,function,Animation::GetNeutralFloat,,0x00810e90,0x00a658d0,0x00810e90
@@ -22045,7 +22045,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22044,function,"std::_Destroy_range<Animation::AnimationTreeBuilder::Node *,std::allocator<Animation::AnimationTreeBuilder::Node>>",,0x00816f70,0x004b76f0,0x00816f70
 22045,function,Animation::AnimationTreeBuilder::NodeVector::Back,,0x00816fe0,0x004b78b0,0x00816fe0
 22046,function,std::vector<Animation::AnimationTreeBuilder::Node>::_Ufill,,0x00817050,0x004b7920,0x00817050
-22047,function,std::_Destroy_range<Animation::AnimationTreeBuilder::Node *>,,0x00817090,0x004b7960,0x00817090
+22047,function,std::_Destroy_range<Animation::AnimationTreeBuilder::Node *>,"Its bytes are also Animation::AnimationTreeBuilder::vector<>::_Destroy: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x00817090,0x004b7960,0x00817090
 22048,function,"ECBase::ECHashMap<unsigned int,?>::Find",,0x008170b0,0x00406f20,0x008170b0
 22049,function,Animation::AnimationTreeBuilder::ParseAttributes,,0x00817120,0x004b79a0,0x00817120
 22050,function,std::vector<Animation::AnimationTreeBuilder::Node>::erase,,0x00817310,0x004b7b90,0x00817310
@@ -24224,7 +24224,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24223,function,InputMapper::KeyRecordMap::Add,,0x00881c70,0x004589b0,0x00881c70
 24224,function,"std::map<?,?>::insert",,0x00881d20,0x00458a60,0x00881d20
 24225,function,"std::map<unsigned int,std::wstring>::operator[]",,0x00881ee0,0x00458c20,0x00881ee0
-24226,function,"std::map<int,std::wstring>::~map",,0x00881fd0,0x00458d10,0x00881fd0
+24226,function,"std::map<int,std::wstring>::~map","Its bytes are also std::_Tree<>::_Tidy: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x00881fd0,0x00458d10,0x00881fd0
 24227,function,InputNames::Register,,0x00882010,0x00458d50,0x00882010
 24228,function,InputNames::NameOf,,0x00882070,0x00458db0,0x00882070
 24229,function,InputNames::WordOf,,0x008820f0,0x00458e30,0x008820f0
@@ -30993,7 +30993,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 30992,function,,,0x009e3380,0x009b98e0,0x009e3380
 30993,function,,,0x009e3390,0x009b98f0,0x009e3390
 30994,function,,,0x009e33a0,0x009b9900,0x009e33a0
-30995,function,,,0x009e33b0,0x009b9740,0x009e33b0
+30995,function,GFxVertexInterface::`scalar deleting destructor',,0x009e33b0,0x009b9740,0x009e33b0
 30996,function,,,0x009e33d0,0x009b9910,0x009e33d0
 30997,function,,,0x009e33e0,0x009b9920,0x009e33e0
 30998,function,,,0x009e3450,0x009b9990,0x009e3450
