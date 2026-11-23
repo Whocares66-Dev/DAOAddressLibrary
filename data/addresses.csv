@@ -616,7 +616,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 615,function,GMemory::Free,,0x00419240,0x00419540,0x00419240
 616,function,,,0x00419250,0x00419550,0x00419250
 617,function,,,0x00419260,0x00419560,0x00419260
-618,function,,,0x00419270,0x00419570,0x00419270
+618,function,,"A member of GImageBase, its method's name not known: its callers pass one in ecx, and DAODecomp's definition as that class's member compiles to its bytes (decomp-agent, 2026-11-23).",0x00419270,0x00419570,0x00419270
 619,function,GImageBase::GetBytesPerPixel,,0x00419310,0x00419610,0x00419310
 620,function,,,0x004193c0,0x004196c0,0x004193c0
 621,function,,,0x00419480,0x00419780,0x00419480
@@ -628,7 +628,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 627,function,,,0x00419ad0,0x00419dd0,0x00419ad0
 628,function,,,0x00419cc0,0x00419fc0,0x00419cc0
 629,function,,,0x00419cf0,0x00419ff0,0x00419cf0
-630,function,,,0x00419d50,0x0041a050,0x00419d50
+630,function,GImageBase::GImageBase,,0x00419d50,0x0041a050,0x00419d50
 631,function,GImage::GImage,,0x00419e20,0x0041a120,0x00419e20
 632,function,GImage::GImage,,0x00419e60,0x0041a160,0x00419e60
 633,function,GImage::~GImage,,0x00419ef0,0x0041a1f0,0x00419ef0
@@ -804,24 +804,24 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 803,function,,,0x0041d480,0x0041d720,0x0041d480
 804,function,,,0x0041d4a0,0x0041d740,0x0041d4a0
 805,function,Fesl::FeslDate::FeslDate,,0x0041d4f0,0x0041d790,0x0041d4f0
-806,function,,,0x0041d510,0x0041d7b0,0x0041d510
-807,function,,,0x0041d590,0x0041d830,0x0041d590
+806,function,,"A member of Fesl::FeslDate, its method's name not known: its callers pass one in ecx, and DAODecomp's definition as that class's member compiles to its bytes (decomp-agent, 2026-11-23).",0x0041d510,0x0041d7b0,0x0041d510
+807,function,,"A member of Fesl::FeslDate, its method's name not known: its callers pass one in ecx, and DAODecomp's definition as that class's member compiles to its bytes (decomp-agent, 2026-11-23).",0x0041d590,0x0041d830,0x0041d590
 808,function,,,0x0041d730,0x0041d9d0,0x0041d730
 809,function,Fesl::FeslDate::SetDate,,0x0041d7e0,0x0041da80,0x0041d7e0
 810,function,,,0x0041d820,0x0041dac0,0x0041d820
 811,function,,,0x0041d8c0,0x0041db60,0x0041d8c0
 812,function,,,0x0041d920,0x0041dbc0,0x0041d920
 813,function,,,0x0041d960,0x0041dc00,0x0041d960
-814,function,,,0x0041d9a0,0x0041dc40,0x0041d9a0
+814,function,Fesl::FeslDate::operator=,,0x0041d9a0,0x0041dc40,0x0041d9a0
 815,function,,,0x0041d9c0,0x0041dc60,0x0041d9c0
-816,function,,,0x0041d9f0,0x0041dc90,0x0041d9f0
+816,function,,"A member of Fesl::FeslDateTime, its method's name not known: its callers pass one in ecx, and DAODecomp's definition as that class's member compiles to its bytes (decomp-agent, 2026-11-23).",0x0041d9f0,0x0041dc90,0x0041d9f0
 817,function,,,0x0041da80,0x0041dd20,0x0041da80
-818,function,,,0x0041db20,0x0041ddc0,0x0041db20
+818,function,,"A member of Fesl::FeslDateTime, its method's name not known: its callers pass one in ecx, and DAODecomp's definition as that class's member compiles to its bytes (decomp-agent, 2026-11-23).",0x0041db20,0x0041ddc0,0x0041db20
 819,function,Fesl::FeslDateTime::ToTime64,,0x0041db90,0x0041de30,0x0041db90
 820,function,,,0x0041dbe0,0x0041de80,0x0041dbe0
 821,function,Fesl::FeslDateTime::operator=,,0x0041dc30,0x0041ded0,0x0041dc30
-822,function,,,0x0041dc70,0x0041df10,0x0041dc70
-823,function,,,0x0041dce0,0x0041df80,0x0041dce0
+822,function,Fesl::FeslDateTime::operator<,,0x0041dc70,0x0041df10,0x0041dc70
+823,function,Fesl::FeslDateTime::operator==,,0x0041dce0,0x0041df80,0x0041dce0
 824,function,,,0x0041dd20,0x0041dfc0,0x0041dd20
 825,function,,,0x0041dd90,0x0041e030,0x0041dd90
 826,function,,,0x0041ddb0,0x0041e050,0x0041ddb0
@@ -29072,7 +29072,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 29071,function,GColor::GetHSI,,0x00978f60,0x0094fa30,0x00978f60
 29072,function,,,0x00978fc0,0x008e5db0,0x00978fc0
 29073,function,,,0x00979020,0x008e5e10,0x00979020
-29074,function,,,0x00979080,0x008e5e70,0x00979080
+29074,function,GRenderer::Cxform::SetIdentity,,0x00979080,0x008e5e70,0x00979080
 29075,function,,,0x009790a0,0x008e5e90,0x009790a0
 29076,function,ResampleImage,,0x00979100,0x008e5ef0,0x00979100
 29077,function,GRenderer::Cxform::Cxform,,0x009791d0,0x008e5fc0,0x009791d0
