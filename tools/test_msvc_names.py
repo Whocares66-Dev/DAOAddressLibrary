@@ -46,6 +46,12 @@ class Templates(unittest.TestCase):
             "<GameModeController,UserTogglePauseMessage,&GameModeController::HandleMessage>",
         )
 
+    def test_function_pointer_argument(self):
+        self.assertEqual(
+            parse(".?AV?$TemplateConsoleFunc@P6APB_WPB_W@Z@Console@@"),
+            "Console::TemplateConsoleFunc<const wchar_t* (__cdecl*)(const wchar_t*)>",
+        )
+
     def test_template_args_split_at_top_level(self):
         name = parse(self.PAUSE)
         self.assertEqual(

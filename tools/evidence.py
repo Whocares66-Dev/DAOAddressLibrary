@@ -29,7 +29,8 @@ one mark, the strongest that holds for the name the table has:
   inferred         none of these: a reader's name (Ghidra, an agent, a
                    description, a string the code uses)
 
-A proof of another name is not a proof of the table's: such an ID is marked
+A proof of a name data/folds.csv records for the ID (the linker made
+one function of several) contradicts nothing. A proof of another name is not a proof of the table's: such an ID is marked
 inferred, and `detail` says what proves what (`bytes say X`), which is a
 report for this repository. Names compare by owner and member, without
 template arguments or a parameter list.
@@ -154,12 +155,16 @@ def owner(name):
     return head[:cut] if cut > 0 else None
 
 
-def judge(name, va, length, own, lib, stl, classes):
-    """(mark, detail) for one named ID."""
+def judge(name, va, length, own, lib, stl, classes, folds=()):
+    """(mark, detail) for one named ID; folds are its other true names
+    (data/folds.csv), which a proof may name without contradicting it."""
+    folded = {bare(f) for f in folds}
     if va in own:
         mark, theirs = own[va]
         if theirs == name or bare(theirs) == bare(name):
             return mark, theirs
+        if bare(theirs) in folded:
+            return "inferred", f"{mark} proves the fold {theirs}"
         return "inferred", f"{mark} says {theirs}"
     proofs = [(r["how"], r["name"], "stlmatch") for r in stl.get(va, ())] + [
         (
@@ -169,6 +174,7 @@ def judge(name, va, length, own, lib, stl, classes):
         )
         for r in lib.get(va, ())
     ]
+    proofs = [p for p in proofs if bare(p[1]) not in folded or bare(p[1]) == bare(name)]
     for how, theirs, source in proofs:
         if bare(theirs) != bare(name):
             return "inferred", f"{how} ({source}) says {theirs}"
@@ -203,6 +209,9 @@ def main(argv):
     for r in read_csv("stlmatch.csv"):
         stl.setdefault(int(r["address"], 16), []).append(r)
     own, classes = own_names(image), defining_classes(img)
+    folds = {}
+    for r in read_csv("folds.csv"):
+        folds.setdefault(r["id"], []).append(r["name"])
     counts = {}
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     with open(out_path, "w", encoding="utf-8", newline="") as f:
@@ -211,7 +220,14 @@ def main(argv):
         for r in rows:
             va = int(r[BUILD], 16)
             mark, detail = judge(
-                r["name"], va, len(body.get(va, b"")), own, lib, stl, classes
+                r["name"],
+                va,
+                len(body.get(va, b"")),
+                own,
+                lib,
+                stl,
+                classes,
+                folds.get(r["id"], ()),
             )
             counts[mark] = counts.get(mark, 0) + 1
             w.writerow((r["id"], f"0x{va:08X}", r["name"], mark, detail))

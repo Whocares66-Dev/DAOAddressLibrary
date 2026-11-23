@@ -64,6 +64,22 @@ class Judge(unittest.TestCase):
         self.assertEqual(judge("CResGFF::~CResGFF", classes=classes)[0], "vftable")
         self.assertEqual(judge("CResLST::~CResLST", classes=classes)[0], "inferred")
 
+    def test_a_recorded_fold_contradicts_nothing(self):
+        own = {0x1000: ("export", "GSysFile::IsValid")}
+        mark, detail = evidence.judge(
+            "GDelegatedFile::IsValid",
+            0x1000,
+            100,
+            own,
+            {},
+            {},
+            {},
+            ["GSysFile::IsValid"],
+        )
+        self.assertEqual(
+            (mark, detail), ("inferred", "export proves the fold GSysFile::IsValid")
+        )
+
     def test_nothing_is_inferred(self):
         self.assertEqual(judge("Anything::AtAll"), ("inferred", ""))
 

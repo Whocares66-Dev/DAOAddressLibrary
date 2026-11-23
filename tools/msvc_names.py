@@ -8,8 +8,8 @@ type descriptors, templates included:
 
 A template argument that is a member function pointer ($H) comes out as
 &Class::Method, which is what tools/message_handlers.py reads the handler
-table from. What this does not know (rvalue references, function-pointer
-types, some cv forms) raises ValueError; undecorate() then gives back the
+table from. A function-pointer type comes out as undname writes it. What this does
+not know (rvalue references, some cv forms) raises ValueError; undecorate() then gives back the
 decorated name unchanged, so a caller always has a name.
 
     python tools/msvc_names.py ".?AVScaleformManager@GUI@@"
@@ -39,6 +39,7 @@ _UNDERSCORE = {
     "K": "unsigned __int64",
     "W": "wchar_t",
 }
+_CONVENTION = {"A": "__cdecl", "E": "__thiscall", "G": "__stdcall", "I": "__fastcall"}
 # Member function access codes with no `this` qualifier: static members and
 # free functions.
 _NO_THIS = set("CDKLSTYZ")
@@ -184,6 +185,42 @@ class _Parser:
         self.expect("Z")  # no exception specification
 
     # -- types --
+    def function_pointer(self):
+        """P6<convention><return><arguments>Z, as undname writes it:
+        Console::TemplateConsoleFunc<const wchar_t* (__cdecl*)(const wchar_t*)>
+        (decomp-agent, 2026-11-23: its vftable and typeinfo came out raw).
+        Its pointers keep a const pointee, which other pointers here do not:
+        no name had one before, so none changes."""
+        convention = _CONVENTION.get(self.take())
+        if convention is None:
+            raise ValueError(f"unknown calling convention in {self.s!r}")
+        returns = self.signature_type()
+        args = []
+        if self.peek() == "X":
+            self.i += 1
+        else:
+            while self.peek() not in ("@", "Z"):
+                args.append(self.signature_type())
+            if self.peek() == "@":
+                self.i += 1
+        self.expect("Z")
+        return f"{returns} ({convention}*)({','.join(args)})"
+
+    def signature_type(self):
+        c = self.peek()
+        if c.isdigit():
+            self.i += 1
+            return self.types[int(c)]
+        start = self.i
+        if c in "PQRS" and self.peek(2)[1:] in ("B", "D"):
+            self.i += 2
+            t = "const " + self.type() + "*"
+        else:
+            t = self.type()
+        if self.i - start > 1 and len(self.types) < 10:
+            self.types.append(t)
+        return t
+
     def arg_type(self):
         c = self.peek()
         if c.isdigit():
@@ -205,7 +242,8 @@ class _Parser:
                 raise ValueError(f"unknown type _{d} in {self.s!r}")
             return _UNDERSCORE[d]
         if c in "PQRS":  # pointer: the pointer's own cv, then the pointee's
-            self.take()
+            if self.take() == "6":
+                return self.function_pointer()
             return self.type() + "*"
         if c in "AB":  # reference
             self.take()

@@ -74,6 +74,7 @@ REPO = os.path.normpath(os.path.join(HERE, ".."))
 ADDRESSES = os.path.join(REPO, "data", "addresses.csv")
 BUILDS = os.path.join(REPO, "data", "builds.csv")
 NOTES = os.path.join(REPO, "data", "notes.csv")
+FOLDS = os.path.join(REPO, "data", "folds.csv")
 
 LF = chr(10)
 KINDS = ("function", "data", "retired")
@@ -149,6 +150,7 @@ class Database:
         self.columns = []  # the keys with a column in the table, in order
         self.rows = {}  # id -> Row, ascending
         self.notes = []  # (id, build key, flag, detail)
+        self.folds = []  # (id text, other name): data/folds.csv
 
     @classmethod
     def load(cls):
@@ -164,6 +166,9 @@ class Database:
                     (int(r["id"]), r["build"], r["flag"], r["detail"])
                     for r in csv.DictReader(f)
                 ]
+        if os.path.exists(FOLDS):
+            with open(FOLDS, encoding="utf-8", newline="") as f:
+                db.folds = [(r["id"], r["name"]) for r in csv.DictReader(f)]
         return db
 
     def read_table(self, lines):
@@ -755,6 +760,23 @@ def code_faults(build):
     return []
 
 
+def fold_faults(db):
+    """data/folds.csv: the other true names of a function the linker made of
+    several identical ones (decomp-agent, 2026-11-23: its checker accepts any
+    of them at that address). Each is a named function's, by ID, and is not
+    its table name."""
+    faults = []
+    for text, name in db.folds:
+        row = db.rows.get(int(text)) if text.isdigit() else None
+        if row is None or row.kind != "function" or not row.name:
+            faults.append(f"data/folds.csv: ID {text} is no named function")
+        elif not name or name == row.name:
+            faults.append(
+                f"data/folds.csv: ID {text}'s fold name is empty or its table name"
+            )
+    return faults
+
+
 def check(db):
     """Whether the table is one a reader can trust. Each line is a fault."""
     faults = []
@@ -809,6 +831,7 @@ def check(db):
             )
         elif key not in db.rows[number].addresses:
             faults.append(f"a note for ID {number} in {key}, where it has no address")
+    faults += fold_faults(db)
     for fault in faults[:40]:
         print(fault, file=sys.stderr)
     print(
