@@ -632,7 +632,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 631,function,GImage::GImage,,0x00419e20,0x0041a120,0x00419e20
 632,function,GImage::GImage,,0x00419e60,0x0041a160,0x00419e60
 633,function,GImage::~GImage,,0x00419ef0,0x0041a1f0,0x00419ef0
-634,function,GImage::Create,,0x00419f20,0x0041a220,0x00419f20
+634,function,GImage::Create,"Static, __stdcall, ret 0xC: (format, width, height); allocates 0x38 bytes (0x00419220), runs the GImage(format, width, height) constructor (0x00419E60) on them and returns the image, or null where its data was not allocated (read 2026-11-23)",0x00419f20,0x0041a220,0x00419f20
 635,function,,,0x00419f80,0x0041a280,0x00419f80
 636,function,,,0x0041a660,0x0041a960,0x0041a660
 637,function,GLock::~GLock,,0x0041a840,0x0041ab40,0x0041a840
@@ -29004,7 +29004,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 29003,function,,,0x00973660,0x0094ab30,0x00973660
 29004,function,,,0x009737b0,0x0094ac80,0x009737b0
 29005,function,,,0x00973830,0x0094ad00,0x00973830
-29006,function,GArrayDataBase<?>::Clear,,0x009738f0,0x00939330,0x009738f0
+29006,function,GArrayDataBase<?>::Clear,"Size to 0, then frees the data through the allocator (0x00419240) unless the array's policy bits at +8 keep its capacity, and empties the pointer. Its bytes are also GArrayBase's destructor as Scaleform's garray inlines it: the linker made one function of them, and DAODecomp's byte-identical GFxFontResource::RemoveDisposeHandler (0x00964BB0) calls it under that name (decomp-agent, 2026-11-23)",0x009738f0,0x00939330,0x009738f0
 29007,function,,,0x00973950,0x0094adc0,0x00973950
 29008,function,,,0x00973aa0,0x0094af10,0x00973aa0
 29009,function,,,0x00973c70,0x0094b0e0,0x00973c70
