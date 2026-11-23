@@ -436,7 +436,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 435,function,"std::_Tree<std::map<std::wstring,HCURSOR__*>>::_Buynode",,0x004144f0,0x004578d0,0x004144f0
 436,function,,,0x00414581,0x00457961,0x00414581
 437,function,Input::DeviceStates::GetRawInputDevice,,0x004145a0,0x00414d00,0x004145a0
-438,function,std::wstring::operator<,,0x00414600,0x00414d60,0x00414600
+438,function,ECBase::ECString::operator<,"__thiscall, ret 4: compare(0, size(), other's chars, other's size) (0x00414170) below 0. A member, which std::basic_string's operator< is not: ECString's, as operator== (0x004C0DE0)",0x00414600,0x00414d60,0x00414600
 439,function,Eclipse::PlatformWin32::HoldCursor,,0x00414630,0x00414d90,0x00414630
 440,function,Eclipse::PlatformWin32::ReleaseCursor,,0x00414700,0x00414e60,0x00414700
 441,function,Eclipse::PlatformWin32::SetCursorClientPosition,,0x00414750,0x00414eb0,0x00414750
@@ -691,7 +691,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 690,function,,,0x0041b8b0,0x0041bbb0,0x0041b8b0
 691,function,GFile::GFile,,0x0041b8f0,0x0041bbf0,0x0041b8f0
 692,function,,,0x0041b910,0x0041bc10,0x0041b910
-693,function,GSysFile::IsValid,,0x0041b920,0x0041bf20,0x0041b920
+693,function,GDelegatedFile::IsValid,"Returns whether the wrapped file (+0x10) is there and its IsValid (slot 2) says so. Slot 2 of GDelegatedFile's own table, which GSysFile and GBufferedFile inherit (vtables store, 2026-11-23)",0x0041b920,0x0041bf20,0x0041b920
 694,function,,,0x0041b940,0x0041bc20,0x0041b940
 695,function,,,0x0041b950,0x0041bc30,0x0041b950
 696,function,,,0x0041b960,0x0041bc40,0x0041b960
@@ -4503,10 +4503,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4502,function,,,0x004c0e80,0x00802cb0,0x004c0e80
 4503,function,ECBase::ECString::EndsWith,,0x004c0ec0,0x00802cf0,0x004c0ec0
 4504,function,,,0x004c0f10,0x00802d40,0x004c0f10
-4505,function,std::wstring::find,,0x004c0f70,0x00802da0,0x004c0f70
+4505,function,"ECBase::ECString::find(const ECBase::ECString&,unsigned int)","__thiscall, ret 8: a pos past this string's end is npos, else find(other's chars, pos, other's size) (0x004C03F0). VC8's find(const basic_string&, pos) checks nothing itself and is inline: ECString's own, among its null-to-s_emptyChars siblings (0x004C1030, 0x004C36C0)",0x004c0f70,0x00802da0,0x004c0f70
 4506,function,ECBase::ECString::Find,,0x004c0fb0,0x00802de0,0x004c0fb0
-4507,function,std::wstring::find,,0x004c1000,0x00802e30,0x004c1000
-4508,function,std::wstring::rfind,,0x004c1030,0x00802e60,0x004c1030
+4507,function,"ECBase::ECString::find(wchar_t,unsigned int)","__thiscall, ret 8: (ch, pos): a pos past this string's end is npos, else find(&ch, pos, 1) (0x004C03F0). VC8's find(ch, pos) checks nothing itself: ECString's own, as 0x004C0F70",0x004c1000,0x00802e30,0x004c1000
+4508,function,ECBase::ECString::rfind(const wchar_t*),"__thiscall, ret 4: a null argument read as ECString::s_emptyChars (0x00C2BDFC), then rfind(text, npos, length) (0x004C04C0): ECString's own",0x004c1030,0x00802e60,0x004c1030
 4509,function,std::wstring::rfind,"std::wstring::rfind(wchar_t): stores the character on the stack and calls the pointer form 0x004C04C0 with the address, npos (-1) and length 1; ret 4.",0x004c1070,0x00802ea0,0x004c1070
 4510,function,,,0x004c1090,0x00802ec0,0x004c1090
 4511,function,,,0x004c10c0,0x00802ef0,0x004c10c0
@@ -4532,7 +4532,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4531,function,,,0x004c2270,0x00803940,0x004c2270
 4532,function,,,0x004c2320,0x004780e0,0x004c2320
 4533,function,,,0x004c2435,0x004781f5,0x004c2435
-4534,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::basic_string",,0x004c2480,0x008039f0,0x004c2480
+4534,function,ECBase::ECString::ECString(const wchar_t*),"__thiscall, ret 4: an empty pool string, then a null argument read as ECString::s_emptyChars (0x00C2BDFC) and assign(text, length) (0x004C1F20). VC8's basic_string(const wchar_t*) reads no null and is 0x004C2630's bytes (stlmatch, 2026-11-23), so this is ECString's own; DAODecomp's matched callers call it ECString::ECString (2026-11-23)",0x004c2480,0x008039f0,0x004c2480
 4535,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::basic_string(const std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>&)",,0x004c2510,0x00803a80,0x004c2510
 4536,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::basic_string",,0x004c2540,0x00803ab0,0x004c2540
 4537,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::insert",,0x004c25d0,0x00803b40,0x004c25d0
@@ -4544,7 +4544,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4543,function,ECBase::ECString::FromUnsignedLong,,0x004c2840,0x00803d70,0x004c2840
 4544,function,ECBase::ECString::FromFloat,,0x004c2910,0x00803e40,0x004c2910
 4545,function,ECBase::ECString::FromDouble,,0x004c29e0,0x00803f10,0x004c29e0
-4546,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::operator=",,0x004c2ab0,0x00803fe0,0x004c2ab0
+4546,function,ECBase::ECString::operator=(const ECBase::ECString&),"__thiscall, ret 4: assign(other, 0, npos) (0x004C1270), then returns this, not what assign returned. VC8's operator= returns assign's result, and its compiled bytes differ (decomp-agent, 2026-11-23: 17 against 23 bytes): ECString's own",0x004c2ab0,0x00803fe0,0x004c2ab0
 4547,function,ECBase::ECString::Assign,,0x004c2ad0,0x00804000,0x004c2ad0
 4548,function,String::IntToWide,,0x004c2b10,0x00804040,0x004c2b10
 4549,function,String::FloatToWide,,0x004c2b80,0x008040b0,0x004c2b80
@@ -4557,15 +4557,15 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4556,function,ECBase::ECString::Format,,0x004c3030,0x00804560,0x004c3030
 4557,function,ECBase::ECString::Left,Returns the first n characters (n clamped to the length) as a new string.,0x004c30f0,0x00804620,0x004c30f0
 4558,function,ECBase::ECString::Right,Returns the last n characters (n clamped to the length) as a new string.,0x004c31a0,0x008046d0,0x004c31a0
-4559,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::substr","Its bytes are also ECBase::ECString::CheckedSubstring: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x004c3250,0x00804780,0x004c3250
+4559,function,ECBase::ECString::CheckedSubstring,"(out, pos, count), ret 0xC: out an empty string (0x004C0D90); a pos past the end leaves it so instead of throwing as substr does; otherwise count is clamped and substr (0x004C2670) assigned into out. Not basic_string::substr, which is 0x004C2670's bytes (stlmatch, 2026-11-23)",0x004c3250,0x00804780,0x004c3250
 4560,function,ECBase::ECString::Trim,,0x004c3310,0x00804840,0x004c3310
 4561,function,ECBase::ECString::operator+(const ECBase::ECString&) const,,0x004c3360,0x00804890,0x004c3360
 4562,function,ECBase::ECString::operator+(const wchar_t*) const,,0x004c3420,0x00804950,0x004c3420
 4563,function,,,0x004c3510,0x00804a40,0x004c3510
 4564,function,,,0x004c3580,0x00804ab0,0x004c3580
 4565,function,,,0x004c35f0,0x00804b20,0x004c35f0
-4566,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::append",,0x004c36a0,0x00804bd0,0x004c36a0
-4567,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::append",,0x004c36c0,0x00804bf0,0x004c36c0
+4566,function,ECBase::ECString::append(const ECBase::ECString&),"__thiscall, ret 4: append(other, 0, npos) (0x004C1820), then returns this, not what append returned, as 0x004C2AB0 does for operator=: ECString's own",0x004c36a0,0x00804bd0,0x004c36a0
+4567,function,ECBase::ECString::append(const wchar_t*),"__thiscall, ret 4: a null argument read as ECString::s_emptyChars (0x00C2BDFC), then append(text, length) (0x004C1930), returning this: ECString's own",0x004c36c0,0x00804bf0,0x004c36c0
 4568,function,,,0x004c3700,0x00804c30,0x004c3700
 4569,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::append",,0x004c3780,0x00804cb0,0x004c3780
 4570,function,String::ToUpperAscii,,0x004c3800,0x00804d30,0x004c3800
@@ -4578,7 +4578,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4577,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::resize",,0x004c3f90,0x008054c0,0x004c3f90
 4578,function,,,0x004c3fc0,0x008054f0,0x004c3fc0
 4579,function,std::wstring::replace,,0x004c4090,0x008055c0,0x004c4090
-4580,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::basic_string(const char*)",,0x004c4140,0x00805670,0x004c4140
+4580,function,ECBase::ECString::ECString(const char*),"__thiscall, ret 4: an empty string, a null or empty argument left so; otherwise the narrow text into a pool char string (assign 0x004C1750) widened into this through 0x004C4090. std::basic_string<wchar_t> has no constructor from const char*: ECString's own",0x004c4140,0x00805670,0x004c4140
 4581,function,ECBase::ECString::ECString,Widens a counted narrow string: builds a temporary std::string (0x004C1750) and replaces this with it through 0x004C4090. INFERRED name from shape; callers read files and responses.,0x004c42b0,0x008057e0,0x004c42b0
 4582,function,ECBase::ECString::Assign(const char*),"Clears this if the pointer is null or empty, else widens the NUL-terminated narrow string like the counted form; callers include ResRef::ToString.",0x004c4430,0x00805960,0x004c4430
 4583,function,,,0x004c45a0,0x00805ad0,0x004c45a0
@@ -11038,7 +11038,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 11037,function,Gff4::Block::ReadVector3Checked,,0x005fea20,0x004ec360,0x005fea20
 11038,function,"std::fill<CCModule::TagIndexEntry*,CCModule::TagIndexEntry>",,0x005fea60,0x004ec3a0,0x005fea60
 11039,function,"std::_Uninit_fill_n<CCModule::TagIndexEntry*,unsigned int,CCModule::TagIndexEntry>",,0x005fea90,0x004ec5b0,0x005fea90
-11040,function,ECBase::ECDynArray<CSAreaList::Entry>::GetCount,,0x005fead0,0x004ec690,0x005fead0
+11040,function,CSAreaList::GetEntryCount,"The count of 0x48-byte entries in the array at this +0xB8 (its begin) and +0xBC (its end). ECDynArray<CSAreaList::Entry>'s own members (At, 0x005FE590) read their array at +4 and +8 of this; this one reads it inside its owner, so it is the owner's (decomp-agent's matched callers, 2026-11-23)",0x005fead0,0x004ec690,0x005fead0
 11041,function,CCModule::RunEventScripts,"Runs a module event on the module's script (+0x1F8), then on each non-empty entry of +0x268's string vector (the add-ins' .cif scripts of field 17104, ReadCifAreaLists); frees the event (its slot 0 with 1)",0x005feb00,0x004ec6c0,0x005feb00
 11042,function,CCModule::WriteToSave,,0x005fec00,0x004ec7c0,0x005fec00
 11043,function,CCModule::ReadScriptVariablesFromCifs,,0x005ff010,0x004ecbd0,0x005ff010
