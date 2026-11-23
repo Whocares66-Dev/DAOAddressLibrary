@@ -691,7 +691,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 690,function,,,0x0041b8b0,0x0041bbb0,0x0041b8b0
 691,function,GFile::GFile,,0x0041b8f0,0x0041bbf0,0x0041b8f0
 692,function,,,0x0041b910,0x0041bc10,0x0041b910
-693,function,GDelegatedFile::IsValid,"Returns whether the wrapped file (+0x10) is there and its IsValid (slot 2) says so. Slot 2 of GDelegatedFile's own table, which GSysFile and GBufferedFile inherit (vtables store, 2026-11-23)",0x0041b920,0x0041bf20,0x0041b920
+693,function,GSysFile::IsValid,"Returns whether the wrapped file (+0x10) is there and its IsValid (slot 2) says so. The build exports it as GSysFile::IsValid; it is also slot 2 of GDelegatedFile's own table, which GSysFile and GBufferedFile inherit: GDelegatedFile::IsValid is the same code, which the linker made one function of (2026-11-23)",0x0041b920,0x0041bf20,0x0041b920
 694,function,,,0x0041b940,0x0041bc20,0x0041b940
 695,function,,,0x0041b950,0x0041bc30,0x0041b950
 696,function,,,0x0041b960,0x0041bc40,0x0041b960

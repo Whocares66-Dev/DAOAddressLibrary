@@ -3,8 +3,11 @@
     python tools/stlmatch.py generate DIR            write C++ files of instantiations into DIR
     python tools/stlmatch.py build DIR TOOLSET       compile them with Visual C++ 2005 (TOOLSET is
                                                      its root, holding VC\\ and SDK\\) into DIR\\stl.lib
-    python tools/stlmatch.py match LIB [--names] [--elements FILE] [--agree FILE]
-                                                     what the build has of LIB's functions
+    python tools/stlmatch.py match LIB [--names] [--elements FILE] [--agree FILE] [--write]
+                                                     what the build has of LIB's functions;
+                                                     --write keeps it in data/stlmatch.csv
+                                                     (how: bytes, or targets), which
+                                                     tools/evidence.py reads
 
 The user, 2026-11-20: name the standard library deterministically where it can
 be. Its containers are templates, and the build's copies of vector<T>::insert
@@ -66,6 +69,7 @@ import libmatch
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MIN = 48
+STORED = os.path.join(ROOT, "data", "stlmatch.csv")
 FLAGS = "/nologo /c /O2 /Ob1 /Oy /GS /EHsc /Gy /GF /MT /GR".split()
 SIZES = list(range(4, 257, 4))
 # Records past 256 bytes the game keeps in vectors, from DAODecomp's
@@ -518,6 +522,13 @@ def match(shapes, body):
     return found, ambiguous
 
 
+def write_csv(path, lines):
+    with open(path, "w", encoding="utf-8", newline="") as f:
+        out = csv.writer(f, lineterminator="\n")
+        out.writerow(("id", "address", "name", "how"))
+        out.writerows(lines)
+
+
 def write_tsv(path, header, lines):
     with open(path, "w", encoding="utf-8", newline="\n") as f:
         f.write("\t".join(header) + "\n")
@@ -535,6 +546,7 @@ def run_match(argv):
         for i, a in enumerate(argv)
         if not a.startswith("--") and argv[i - 1] not in ("--elements", "--agree")
     ]
+    write = "--write" in argv
     img = daoexe.Image(daoexe.default_exe(os.path.dirname(os.path.abspath(__file__))))
     with open(
         os.path.join(ROOT, "data", "addresses.csv"), encoding="utf-8", newline=""
@@ -548,6 +560,11 @@ def run_match(argv):
     body = libmatch.build_functions(img, sorted(rows))
     found, ambiguous = match(load(functions), body)
     told = by_targets(functions, body, found)
+    if write:
+        how = {va: "bytes" for va, _, _ in found} | {va: "targets" for va, _, _ in told}
+        write_csv(STORED, [
+            (rows[va]["id"], f"0x{va:08X}", n, how[va]) for va, n, _ in sorted(found + told)
+        ])  # fmt: skip
     found += told
     ambiguous -= len(told)
     new = [(va, n, e) for va, n, e in found if not rows[va]["name"]]
