@@ -4559,8 +4559,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4558,function,ECBase::ECString::Right,Returns the last n characters (n clamped to the length) as a new string.,0x004c31a0,0x008046d0,0x004c31a0
 4559,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::substr","Its bytes are also ECBase::ECString::CheckedSubstring: the linker made one function of them, and DAODecomp's matched callers call it under those names (2026-11-22).",0x004c3250,0x00804780,0x004c3250
 4560,function,ECBase::ECString::Trim,,0x004c3310,0x00804840,0x004c3310
-4561,function,"std::operator+<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>",,0x004c3360,0x00804890,0x004c3360
-4562,function,"std::operator+<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>",,0x004c3420,0x00804950,0x004c3420
+4561,function,ECBase::ECString::operator+(const ECBase::ECString&) const,,0x004c3360,0x00804890,0x004c3360
+4562,function,ECBase::ECString::operator+(const wchar_t*) const,,0x004c3420,0x00804950,0x004c3420
 4563,function,,,0x004c3510,0x00804a40,0x004c3510
 4564,function,,,0x004c3580,0x00804ab0,0x004c3580
 4565,function,,,0x004c35f0,0x00804b20,0x004c35f0
