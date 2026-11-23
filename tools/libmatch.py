@@ -20,7 +20,10 @@ instructions otherwise the same hold them), and nothing is named by
 resemblance: code shorter than 16 bytes, and code two differently named
 library functions share, names nothing by itself. Shared code is told apart
 where each function stores its own class's vftable (the constructors of
-the standard exceptions), the build's tables being known by their RTTI.
+the standard exceptions), the build's tables being known by their RTTI,
+and by what it refers to where that is known (decomp-agent, 2026-11-23):
+NXU's copy of TinyXML and TinyXML's own are one shape under two names,
+each calling its own; `by_targets` says when one is told from the other.
 
 It needs game/ and the libraries, which are in no repository; what it finds
 goes into the table with addrlib.py names, so nothing reads it at run time.
@@ -283,6 +286,104 @@ def by_tables(lib, body, taken, vftables):
     }
 
 
+def local(target):
+    """True for a symbol whose name only its own object gives meaning to:
+    a section (`.rdata` and an offset) or a compiler label (`$SG1234`)."""
+    return target.startswith((".", "$"))
+
+
+def target_at(va, code, off, kind, lib_code):
+    """The address a relocation of a matched pair points at in the build, or
+    None for a kind that is not an address in the code. The library's object
+    holds the addend in place, and the build holds the symbol plus it."""
+    if off + 4 > len(code) or off + 4 > len(lib_code):
+        return None
+    if kind == REL32:
+        built = struct.unpack_from("<i", code, off)[0]
+        return va + off + 4 + built - struct.unpack_from("<i", lib_code, off)[0]
+    if kind == DIR32:
+        built = struct.unpack_from("<I", code, off)[0]
+        return (built - struct.unpack_from("<I", lib_code, off)[0]) & 0xFFFFFFFF
+    return None
+
+
+def learn(placed, lib, body, origin):
+    """{symbol key: address} that every matched function referring to the
+    symbol agrees on: its own place for a matched function's name, and the
+    target each relocation holds. A local symbol's key is its object's too."""
+    seen = collections.defaultdict(set)
+    for va, (name, relocs, n) in placed.items():
+        seen[name].add(va)
+        for off, (kind, target) in relocs.items():
+            if not target:
+                continue
+            at = target_at(va, body[va], off, kind, lib[n][1])
+            if at is not None:
+                seen[(origin[n], target) if local(target) else target].add(at)
+    return {key: next(iter(at)) for key, at in seen.items() if len(at) == 1}
+
+
+def by_targets(lib, body, placed, origin):
+    """{address: (symbol, its relocations, its place in lib)} for code whose
+    bytes several library functions share, or that several of the build's
+    functions have, told apart by what it refers to: NXU's copy of TinyXML
+    and TinyXML's own are one shape, one writing through NXU::NXU_FILE and
+    the other through the C runtime's FILE, and the two serializers'
+    MemoryReadBuffer and ImportMemoryReadBuffer twins call their own.
+
+    A library function fits a build function of its bytes where every
+    relocation whose target is known (a matched function, or what matched
+    functions refer to, each agreeing) holds that target in the build, and
+    at least one does. It is that function where it fits that one alone,
+    and no other library function of the same bytes fails to be told from
+    it there (one whose targets are all unknown might be it). Each one named
+    teaches more targets, so it runs until nothing more is named."""
+    by_length = collections.defaultdict(list)
+    for va, code in body.items():
+        by_length[len(code)].append(va)
+    found = {}
+    while True:
+        known = learn({**placed, **found}, lib, body, origin)
+        taken = set(placed) | set(found)
+        names = {v[0] for v in placed.values()} | {v[0] for v in found.values()}
+        fits = collections.defaultdict(dict)  # va -> {name: told apart (True) or not}
+        homes = collections.defaultdict(set)  # name -> the places it may be
+        for n, (name, code, relocs) in enumerate(lib):
+            if name in names:
+                continue
+            pattern = pattern_of(code, relocs)
+            for va in by_length.get(len(code), ()):
+                if va in taken or not pattern.match(body[va]):
+                    continue
+                agree, wrong = 0, False
+                for off, (kind, target) in relocs.items():
+                    key = (origin[n], target) if target and local(target) else target
+                    if key not in known:
+                        continue
+                    at = target_at(va, body[va], off, kind, code)
+                    if at is None:
+                        continue
+                    if at == known[key]:
+                        agree += 1
+                    else:
+                        wrong = True
+                if wrong:
+                    continue
+                homes[name].add(va)
+                if fits[va].get(name, (0,))[0] <= agree:
+                    fits[va][name] = (agree, name, relocs, n)
+        new = {}
+        for va, cands in fits.items():
+            if len(cands) != 1:
+                continue
+            agree, name, relocs, n = next(iter(cands.values()))
+            if agree and homes[name] == {va}:
+                new[va] = (name, relocs, n)
+        if not new:
+            return found
+        found.update(new)
+
+
 def by_calls(direct, body, known):
     """({address: symbol} for what the matched functions call and bytes did
     not name, the calls that disagree with a match)."""
@@ -337,11 +438,14 @@ def main(argv):
         vftables[decorated[4:]].add(va)
     told = by_tables(lib, body, direct, vftables)
     direct.update(told)
+    targeted = by_targets(lib, body, direct, origin)
+    direct.update(targeted)
     extra, clash = by_calls(direct, body, rows)
     print(
         f"{len(lib)} library functions of {MIN} bytes or more; {len(direct)} functions "
         f"of the build are one's bytes ({shared} library functions shared theirs with "
-        f"another name, {len(told)} of them told apart by the vftable they store); "
+        f"another name, {len(told)} of them told apart by the vftable they store; "
+        f"{len(targeted)} of the build told apart by what they refer to); "
         f"{len(extra)} more by what those call; {len(clash)} calls "
         "disagree with a match",
         file=sys.stderr,

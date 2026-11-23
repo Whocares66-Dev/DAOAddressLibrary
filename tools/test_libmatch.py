@@ -107,6 +107,48 @@ class Tables(unittest.TestCase):
         )
 
 
+class Targets(unittest.TestCase):
+    # call <callee>; then padding to 16 bytes
+    @staticmethod
+    def caller(va, callee):
+        return b"\xe8" + struct.pack("<i", callee - (va + 5)) + b"\x90" * 10 + b"\xc3"
+
+    def lib(self, *pairs):
+        return [
+            # an object's call holds 0 in place: the target is all the relocation's
+            (name, self.caller(-5, 0), {1: (libmatch.REL32, callee)} if callee else {})
+            for name, callee in pairs
+        ]
+
+    def test_one_shape_is_told_apart_by_what_it_calls(self):
+        lib = self.lib(("_nxu_print", "_nxu_fprintf"), ("_print", "_fprintf"))
+        body = {
+            0x1000: self.caller(0x1000, 0x5000),
+            0x2000: self.caller(0x2000, 0x6000),
+        }
+        placed = {
+            0x5000: ("_nxu_fprintf", {}, 9),
+            0x6000: ("_fprintf", {}, 9),
+        }
+        body.update({0x5000: b"", 0x6000: b""})
+        found = libmatch.by_targets(lib, body, placed, ["o"] * 10)
+        self.assertEqual(
+            {va: v[0] for va, v in found.items()},
+            {0x1000: "_nxu_print", 0x2000: "_print"},
+        )
+
+    def test_a_twin_whose_targets_are_unknown_may_be_it(self):
+        lib = self.lib(("_known", "_fprintf"), ("_unknown", "_nothing_placed"))
+        body = {0x1000: self.caller(0x1000, 0x6000), 0x6000: b""}
+        placed = {0x6000: ("_fprintf", {}, 9)}
+        self.assertEqual(libmatch.by_targets(lib, body, placed, ["o"] * 10), {})
+
+    def test_a_local_symbol_is_its_own_objects(self):
+        self.assertTrue(libmatch.local("$SG1234"))
+        self.assertTrue(libmatch.local(".rdata"))
+        self.assertFalse(libmatch.local("_fprintf"))
+
+
 class Calls(unittest.TestCase):
     def test_what_a_matched_function_calls_is_what_the_library_says(self):
         code = b"\xe8" + struct.pack("<i", 0x2000 - 0x1005) + b"\xc3"
