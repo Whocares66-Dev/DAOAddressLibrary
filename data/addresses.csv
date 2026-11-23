@@ -4852,7 +4852,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4851,function,ECResMan::ErfSource::OpenFile,,0x004d0800,0x00811ad0,0x004d0800
 4852,function,ECResMan::ErfSource::RequestRead,,0x004d0930,0x00811c00,0x004d0930
 4853,function,ECResMan::ErfSource::SetKeyFromPassword,,0x004d09d0,0x00811ca0,0x004d09d0
-4854,function,std::vector<Resource>::operator[],,0x004d0a90,0x00811d60,0x004d0a90
+4854,function,ECBase::ECDynArray<Resource>::operator[],,0x004d0a90,0x00811d60,0x004d0a90
 4855,function,"ECBase::ECHashMap<?,?>::Previous",,0x004d0ad0,0x00811dd0,0x004d0ad0
 4856,function,"ECBase::ECHashMap<?,?>::erase",,0x004d0b30,0x00811e30,0x004d0b30
 4857,function,ECResMan::ErfSource::~ErfSource,,0x004d0bb0,0x00811eb0,0x004d0bb0
@@ -5549,7 +5549,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5548,function,ECResMan::ReadRequestTask::~ReadRequestTask,,0x004e9b90,0x0083e6a0,0x004e9b90
 5549,function,ECResMan::ReadRequestTask::Init,,0x004e9bf0,0x0083e700,0x004e9bf0
 5550,function,ECResMan::ReadRequestTask::InitWithPath,,0x004e9c20,0x0083e730,0x004e9c20
-5551,function,std::vector<unsigned int>::operator[],,0x004e9c60,0x0083e770,0x004e9c60
+5551,function,ECBase::ECDynArray<unsigned int>::operator[],,0x004e9c60,0x0083e770,0x004e9c60
 5552,function,ECResMan::ReadRequestTask::`scalar deleting destructor',,0x004e9c90,0x0083e7a0,0x004e9c90
 5553,function,ECResMan::TaskPool::Release,,0x004e9cb0,0x0083e7c0,0x004e9cb0
 5554,function,ECResMan::TaskPool::ReleaseAll,,0x004e9dd0,0x0083e8e0,0x004e9dd0
@@ -5981,7 +5981,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5980,function,Graphics::MaterialStateManager::LoadDefaults,,0x004fbbd0,0x007ec850,0x004fbbd0
 5981,function,Graphics::MaterialStateManager::GetMemoryFootprint,,0x004fbe30,0x007ecab0,0x004fbe30
 5982,function,std::vector<Graphics::MaterialSamplerState>::GetRange,,0x004fbee0,0x007ecb60,0x004fbee0
-5983,function,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialState>>::back,"Returns the last 8-byte element (end-8) or, when empty, the vector's default 0x00C31008 (row 100361, released at exit by SynchSafePointer::Release 0x00AD5A45); its one caller is Graphics::MaterialStateManager::Register (0x004FC6EA), straight after push_back, so it's back, not At.",0x004fbf90,0x007ecc10,0x004fbf90
+5983,function,ECBase::ECDynArray<Multithreading::SynchSafePointer<Graphics::MaterialState>>::Back,"Returns the last 8-byte element (end-8) or, when empty, the vector's default 0x00C31008 (row 100361, released at exit by SynchSafePointer::Release 0x00AD5A45); its one caller is Graphics::MaterialStateManager::Register (0x004FC6EA), straight after push_back, so it's back, not At.",0x004fbf90,0x007ecc10,0x004fbf90
 5984,function,Graphics::MaterialStateManager::ApplyState,,0x004fbff0,0x007eccd0,0x004fbff0
 5985,function,Graphics::MaterialStateManager::SetState,,0x004fc2c0,0x007ecfa0,0x004fc2c0
 5986,function,std::fill<General::SafePointer>,,0x004fc2e0,0x007dedf0,0x004fc2e0
@@ -6288,7 +6288,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6287,function,Graphics::MaterialLogicBlock::AddChild,,0x005076c0,0x007fde30,0x005076c0
 6288,function,XMLParser2::XMLBuilderBase::EndElementCallback,,0x005076e0,0x00a58370,0x005076e0
 6289,function,Graphics::MaterialObjectBuilderXML2::TakeMaterialObject,,0x00507700,0x007f1830,0x00507700
-6290,function,std::vector<std::wstring>::back,,0x00507730,0x00457e30,0x00507730
+6290,function,ECBase::ECDynArray<ECBase::ECString>::Back,,0x00507730,0x00457e30,0x00507730
 6291,function,std::vector<std::wstring>::pop_back,,0x005077a0,0x007f1860,0x005077a0
 6292,function,Graphics::MaterialObjectBuilderXML2::EndElement,,0x005077f0,0x007f18b0,0x005077f0
 6293,function,Graphics::MaterialObjectBuilderXML2::~MaterialObjectBuilderXML2,,0x00507c30,0x007f1cf0,0x00507c30
@@ -6617,7 +6617,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6616,function,"std::map<ECString,GPtr<GFxMovieView>>::_Erase",,0x00511e90,0x007ba0e0,0x00511e90
 6617,function,"std::_Tree<std::map<std::wstring,?>>::_Ubound",,0x00511f30,0x004657d0,0x00511f30
 6618,function,GuiMovieSet::DeleteAll,,0x00512000,0x007ba180,0x00512000
-6619,function,std::vector<GuiMovie*>::back,,0x005120a0,0x004fd810,0x005120a0
+6619,function,ECBase::ECDynArray<GuiMovie*>::Back,,0x005120a0,0x004fd810,0x005120a0
 6620,function,GuiMovieSet::Find,,0x00512100,0x007ba220,0x00512100
 6621,function,std::vector<wchar_t>::erase,,0x005121d0,0x00454a90,0x005121d0
 6622,function,std::vector<Elem16>::erase,,0x00512240,0x0063b050,0x00512240
@@ -7682,7 +7682,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7681,function,GraphicsStructures::Array<Math::Vector4f>::SetCapacity,,0x0053f150,0x007005e0,0x0053f150
 7682,function,GraphicsStructures::Array<?>::Array,,0x0053f220,0x0077b010,0x0053f220
 7683,function,GraphicsStructures::Array<?>::SetSize,,0x0053f250,0x0077b040,0x0053f250
-7684,function,std::vector<?>::operator[],,0x0053f290,0x00746480,0x0053f290
+7684,function,ECBase::ECDynArray<GraphicsStructures::Dependency*>::operator[],,0x0053f290,0x00746480,0x0053f290
 7685,function,"std::fill<?*,?>",,0x0053f2c0,0x0077b080,0x0053f2c0
 7686,function,"std::copy_backward<?*,?*>",,0x0053f320,0x006b6440,0x0053f320
 7687,function,GraphicsStructures::SpriteParticle::GetPercentLifeElapsed,,0x0053f380,0x00771390,0x0053f380
@@ -9042,7 +9042,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9041,function,GraphicsStructures::MeshChunkXMLBuilder::~MeshChunkXMLBuilder,,0x0057fab0,0x007811c0,0x0057fab0
 9042,function,GraphicsStructures::MeshChunkXMLBuilder::`scalar deleting destructor',,0x0057fbd0,0x007812e0,0x0057fbd0
 9043,function,GraphicsStructures::MeshChunkXMLBuilder::WriteVertexDeclarators,,0x0057fbe0,0x007812f0,0x0057fbe0
-9044,function,std::vector<GraphicsStructures::XMLBuilder *>::back,,0x0057fe00,0x00781510,0x0057fe00
+9044,function,ECBase::ECDynArray<GraphicsStructures::XMLBuilder*>::Back,,0x0057fe00,0x00781510,0x0057fe00
 9045,function,GraphicsStructures::MeshBuilderXML2::Characters,,0x0057fe60,0x00781570,0x0057fe60
 9046,function,GraphicsStructures::MeshXMLBuilder::~MeshXMLBuilder,,0x0057ff30,0x00781640,0x0057ff30
 9047,function,GraphicsStructures::MeshChunkXMLBuilder::`scalar deleting destructor',,0x00580020,0x00781730,0x00580020
@@ -9281,7 +9281,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9280,function,Gff4::StructReader::ReadVector4ById,,0x0058d060,0x0070d700,0x0058d060
 9281,function,GraphicsStructures::ReadAgeMapElement,,0x0058d0a0,0x00787cd0,0x0058d0a0
 9282,function,std::vector<GraphicsStructures::TriangleIndices16>::erase,,0x0058d180,0x00787db0,0x0058d180
-9283,function,std::vector<GraphicsStructures::ModelExport>::back,,0x0058d1e0,0x00787e10,0x0058d1e0
+9283,function,ECBase::ECDynArray<GraphicsStructures::ModelExport>::Back,,0x0058d1e0,0x00787e10,0x0058d1e0
 9284,function,"std::_Uninit_copy<GraphicsStructures::TriangleIndices16*,GraphicsStructures::TriangleIndices16*>",,0x0058d250,0x00787e80,0x0058d250
 9285,function,std::vector<GraphicsStructures::ClothAttachment>::_Ufill,,0x0058d280,0x00787ef0,0x0058d280
 9286,function,std::vector<GraphicsStructures::ClothAttachment>::_Destroy,,0x0058d2c0,0x00787f30,0x0058d2c0
@@ -12599,7 +12599,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12598,function,GameModeController::RegisterHandler_SelectNextCharacterMessage,,0x00640930,0x00536180,0x00640930
 12599,function,GameModeController::RegisterHandler_SelectPreviousCharacterMessage,,0x006409b0,0x00536200,0x006409b0
 12600,function,GameModeController::RegisterHandler_RawInputMessage,,0x00640a30,0x00536280,0x00640a30
-12601,function,std::vector<GameModeRequest>::back,,0x00640ab0,0x005363c0,0x00640ab0
+12601,function,ECBase::ECDynArray<GameModeRequest>::Back,,0x00640ab0,0x005363c0,0x00640ab0
 12602,function,std::vector<T16>::_Ufill,,0x00640b10,0x004eda40,0x00640b10
 12603,function,GameModeController::~GameModeController,,0x00640b50,0x00536420,0x00640b50
 12604,function,GameModeController::GetClassInfo,,0x00640c20,0x005364f0,0x00640c20
@@ -12767,7 +12767,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12766,function,AIMaster::ForScript_SetAILevel,,0x0064b480,0x00533e20,0x0064b480
 12767,function,AIMaster::DefineSaveStruct,,0x0064b4d0,0x00533e70,0x0064b4d0
 12768,function,HostilityRow::HostilityRow,,0x0064b570,0x00533f10,0x0064b570
-12769,function,std::vector<HostilityRow*>::operator[],,0x0064b580,0x00533f20,0x0064b580
+12769,function,ECBase::ECDynArray<HostilityRow*>::operator[],,0x0064b580,0x00533f20,0x0064b580
 12770,function,HostilityRow::FindGroupIndex,,0x0064b5b0,0x00533f50,0x0064b5b0
 12771,function,HostilityRow::Save,,0x0064b690,0x00534030,0x0064b690
 12772,retired,,,,,
@@ -19455,7 +19455,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19454,function,Equipment::GetActiveWeaponSet,"ecx = an Equipment, plain getter (add ecx,0x10; jmp Attribute::Get): the active weapon set attribute at Equipment+0x10 (SwitchToSet writes it at 0x00797A79, saved as field 0x3F5A). Called by the engine as well as by the script command (CCCreature::ConsumeAmmunition, ForScript_SwitchWeaponSet, RebuildAppearanceFromEquipment, GUI::WriteHeroStatsXml).",0x00797410,0x00668b10,0x00797410
 19455,function,SlotItemLocation::PositionToLocation,,0x00797420,0x00668b20,0x00797420
 19456,function,SlotItemLocation::LocationToPosition,,0x00797490,0x00668b90,0x00797490
-19457,function,std::vector<EquipmentSet>::operator[],,0x007974d0,0x00668bd0,0x007974d0
+19457,function,ECBase::ECDynArray<EquipmentSet>::operator[],,0x007974d0,0x00668bd0,0x007974d0
 19458,function,EquipmentItemIteratorImpl::EquipmentItemIteratorImpl,,0x00797510,0x00668c10,0x00797510
 19459,function,EquipmentItemIteratorImpl::`scalar deleting destructor',,0x007975d0,0x00668cd0,0x007975d0
 19460,function,EquipmentItemIteratorImpl::Next,,0x007975f0,0x00668cf0,0x007975f0
@@ -22844,7 +22844,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22843,function,Console::Console::GetLineHeight,,0x00840d40,0x00491630,0x00840d40
 22844,function,Console::Console::SetViewportHeight,,0x00840d60,0x00491650,0x00840d60
 22845,function,Console::Console::SetDisabled,,0x00840d70,0x00491660,0x00840d70
-22846,function,std::vector<Console::ConsoleFunc *>::operator[],,0x00840d80,0x004916b0,0x00840d80
+22846,function,ECBase::ECDynArray<Console::ConsoleFunc*>::operator[],,0x00840d80,0x004916b0,0x00840d80
 22847,function,Console::Console::ExecuteStream,,0x00840db0,0x004916e0,0x00840db0
 22848,function,Console::IsNotTraceCommand,,0x00840fb0,0x004918e0,0x00840fb0
 22849,function,"std::map<unsigned short,std::wstring>::_Buynode",,0x008410b0,0x00491a20,0x008410b0
@@ -22996,7 +22996,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22995,function,TexManager::TexturePool::Initialize,,0x00849960,0x0048f970,0x00849960
 22996,function,TexManager::TexturePool::AcquireTexture,,0x00849980,0x0048f990,0x00849980
 22997,function,TexManager::TexturePool::TexturePool,,0x00849b90,0x0048fba0,0x00849b90
-22998,function,std::vector<void *>::operator[],,0x00849c50,0x0048c4c0,0x00849c50
+22998,function,ECBase::ECDynArray<void*>::operator[],,0x00849c50,0x0048c4c0,0x00849c50
 22999,function,TexManager::TextureLoadTaskPool::Free,,0x00849c80,0x0048c4f0,0x00849c80
 23000,function,TexManager::TextureLoadTaskPool::FreeAll,,0x00849da0,0x0048c610,0x00849da0
 23001,function,TexManager::TextureLoadTaskPool::~TextureLoadTaskPool,,0x00849df0,0x0048c660,0x00849df0
@@ -23147,7 +23147,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23146,function,XMLParser2::XMLParser::~XMLParser,,0x00851710,0x00a57c80,0x00851710
 23147,function,XMLParser2::CreateXMLParser,,0x00851740,0x00a57cb0,0x00851740
 23148,function,XMLParser2::XMLParser::`scalar deleting destructor',,0x008517b0,0x00a57d20,0x008517b0
-23149,function,std::vector<XMLParser2::IBuilder *>::back,,0x008517d0,0x00a57d40,0x008517d0
+23149,function,ECBase::ECDynArray<XMLParser2::IBuilder*>::Back,,0x008517d0,0x00a57d40,0x008517d0
 23150,function,XMLParser2::ExpatParser::CharacterData,,0x00851830,0x00a57da0,0x00851830
 23151,function,XMLParser2::ExpatParser::EndElement,,0x00851850,0x00a57dc0,0x00851850
 23152,function,XMLParser2::ExpatParser::CharacterDataHandler,,0x008519d0,0x00a57f40,0x008519d0
@@ -24351,7 +24351,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24350,function,Eclipse::GroupedInputMappings::GroupedInputs::SetKey,,0x00893a40,0x00a41260,0x00893a40
 24351,function,Eclipse::GroupedInputMappings::TakeKey,,0x00893ba0,0x00a413c0,0x00893ba0
 24352,function,Eclipse::GroupedInputMappings::ClearKeys,,0x00893d70,0x00a41590,0x00893d70
-24353,function,std::vector<Eclipse::GroupedInputMappings::GroupedInputs*>::back,,0x00893e20,0x00a41640,0x00893e20
+24353,function,ECBase::ECDynArray<Eclipse::GroupedInputMappings::GroupedInputs*>::Back,,0x00893e20,0x00a41640,0x00893e20
 24354,function,Eclipse::GroupedInputMappings::GroupedInputs::~GroupedInputs,,0x00893e80,0x00a416a0,0x00893e80
 24355,function,Eclipse::GroupedInputMappings::GroupedInputs::`scalar deleting destructor',,0x00894080,0x00a418a0,0x00894080
 24356,function,Eclipse::GroupedInputMappings::GroupedInputs::`scalar deleting destructor',,0x00894090,0x00a418b0,0x00894090
@@ -97053,7 +97053,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 97052,data,"Messages::Private::MemberFunctionMessageHandler<GameModeController,SelectPreviousCharacterMessage,&GameModeController::HandleMessage>::typeinfo",,0x00c01228,0x00bf3af0,0x00c01228
 97053,data,"Messages::Private::MemberFunctionMessageHandler<GameModeController,RawInputMessage,&GameModeController::HandleMessage>::typeinfo",,0x00c012c0,0x00bf3b88,0x00c012c0
 97054,data,GameModeController::typeinfo,,0x00c01348,0x00bf3c10,0x00c01348
-97055,data,std::vector<GameModeRequest>::s_default,,0x00c0136c,0x00bf3c34,0x00c0136c
+97055,data,ECBase::ECDynArray<GameModeRequest>::s_default,,0x00c0136c,0x00bf3c34,0x00c0136c
 97056,data,AIMaster::UpdateState::s_unboundedQueueLength,"Unsigned 500 in the file, no immediate writer found: AIMaster::UpdateState (0x0064AE30) compares the AI event list size (AIEventList::GetCount on this+0x64) with it; above 500 the time budget is not applied.",0x00c0137c,0x00bf3428,0x00c0137c
 97057,data,AIMaster::UpdateState::s_eventsPerBudgetStep,"Unsigned 10 in the file, no immediate writer found: the divisor of the AI event count in AIMaster::UpdateState (0x0064AE30); the budget grows one step per 10 queued events.",0x00c01380,0x00bf342c,0x00c01380
 97058,data,AIMaster::UpdateState::s_budgetMicrosecondsPerStep,"Int 100 in the file, no immediate writer found: AIMaster::UpdateState (0x0064AE30) multiplies (count / 10) by it and adds 1000, so the drain budget is 1000 + 100 * (count / 10) Clock::Microseconds ticks (INFERRED that the unit is microseconds, from Clock::Microseconds 0x004BFFF0 being the clock read); the listed size runs on into the next record.",0x00c01384,0x00bf3430,0x00c01384
@@ -99731,7 +99731,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 99730,data,,,0x00c1d044,0x00c17044,0x00c1d044
 99731,data,,,0x00c1d048,0x00c17048,0x00c1d048
 99732,data,,,0x00c1d04c,0x00c1704c,0x00c1d04c
-99733,data,std::vector<Gff4::Template>::s_default,GetTemplateView calls Gff4::Template::GetView with this default as the element.,0x00c1d050,0x00c17050,0x00c1d050
+99733,data,ECBase::ECDynArray<Gff4::Template>::s_default,GetTemplateView calls Gff4::Template::GetView with this default as the element.,0x00c1d050,0x00c17050,0x00c1d050
 99734,data,,,0x00c1d060,0x00c17060,0x00c1d060
 99735,data,,,0x00c1d078,0x00c17078,0x00c1d078
 99736,data,g_pVirtualMachine,"The game's script machine (CVirtualMachine, 0x198C bytes): constructed in CClientExoApp::Initialize 0x005DB7F0 (store at 0x005DBDB3) with extensions .ncs/.nss/.ndb and the CVirtualMachineCommands implementer (863 handlers, the app's +0x1E4). Runs every object, area and module script. The client's machine is g_VirtualMachine 0x00C1D084.",0x00c1d080,0x00c17080,0x00c1d080
@@ -99770,7 +99770,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 99769,data,Input::DeviceStates::GetRawInputDevice::s_guard,function-static guard word shared by the folded copies in GetRawInputDevice and AddRawInputDevice,0x00c1d270,0x00c17270,0x00c1d270
 99770,data,CommitOptionsMessage::GetName::s_name,"The function-static string (0x1c bytes, an ECString) GetName builds once from its literal and returns by address; an atexit destructor frees it",0x00c1d274,0x00c17274,0x00c1d274
 99771,data,CommitOptionsMessage::GetName::s_guard,Bit 0 guard of GetName's function-static string CommitOptionsMessage::GetName::s_name; the atexit destructor clears it,0x00c1d290,0x00c17290,0x00c1d290
-99772,data,std::vector<ECInput::IRawInput*>::s_default,,0x00c1d294,0x00c17294,0x00c1d294
+99772,data,ECBase::ECDynArray<ECInput::IRawInput*>::s_default,,0x00c1d294,0x00c17294,0x00c1d294
 99773,data,Eclipse::PlatformWin32::GetExecutableVersion::s_version,"Function-static std::wstring (0x1c bytes) holding the executable's version text, filled once by Eclipse::PlatformWin32::GetExecutableVersion (0x004142c0) from the file's version resource; destroyed by an atexit destructor.",0x00c1d298,0x00c17298,0x00c1d298
 99774,data,,,0x00c1d2ac,0x00c172ac,0x00c1d2ac
 99775,data,Eclipse::PlatformWin32::GetExecutableVersion::s_guard,"Init guard word of GetExecutableVersion::s_version, tested at 0x00414309 and set at 0x00414316.",0x00c1d2b4,0x00c172b4,0x00c1d2b4
@@ -99948,8 +99948,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 99947,data,Renderer::g_areaColorCurveTexture,,0x00c1eb18,0x00c31618,0x00c1eb18
 99948,data,Renderer::g_defaultColorCurveTexture,,0x00c1eb20,0x00c31620,0x00c1eb20
 99949,data,FixedArray<Graphics::RenderTarget*>::s_default,"Container kind is FixedArray (data at +0, count at +4, Resize(5) in Startup), not std::vector; T shown by the elements being render targets bound and released through Graphics::RenderTarget virtuals. Out-of-range default read at 0x455e04, 0x455e29, 0x455ef3.",0x00c1eb28,0x00c31628,0x00c1eb28
-99950,data,std::vector<Renderer::FrameBufferEffect*>::s_default,"A null pointer returned in place of an out-of-range element of a FrameBufferEffects vector (16 reads, DeleteAll 0x0045789A, LoadAndAdd 0x004573A4, MergeLoadedFBEffects 0x00457488, FadeEffects::SetColorFade 0x0064C6E5 ...); MergeLoadedFBEffects 0x004574D6 even stores into it on its out-of-range path.",0x00c1eb2c,0x00c1dc14,0x00c1eb2c
-99951,data,std::vector<Renderer::FBEffectRequest*>::s_default,A null pointer returned in place of an out-of-range element of the request vector walked by ProcessFBEffectRequests 0x004579AC; the element type name is INFERRED (an effect file request: its name at +4 goes to IsFBEffectFileLoaded) INFERRED,0x00c1eb30,0x00c3162c,0x00c1eb30
+99950,data,ECBase::ECDynArray<Renderer::FrameBufferEffect*>::s_default,"A null pointer returned in place of an out-of-range element of a FrameBufferEffects vector (16 reads, DeleteAll 0x0045789A, LoadAndAdd 0x004573A4, MergeLoadedFBEffects 0x00457488, FadeEffects::SetColorFade 0x0064C6E5 ...); MergeLoadedFBEffects 0x004574D6 even stores into it on its out-of-range path.",0x00c1eb2c,0x00c1dc14,0x00c1eb2c
+99951,data,ECBase::ECDynArray<Renderer::FBEffectRequest*>::s_default,A null pointer returned in place of an out-of-range element of the request vector walked by ProcessFBEffectRequests 0x004579AC; the element type name is INFERRED (an effect file request: its name at +4 goes to IsFBEffectFileLoaded) INFERRED,0x00c1eb30,0x00c3162c,0x00c1eb30
 99952,data,Math::Vector4f::GetOrigin::s_vector,"Vector4f origin (0,0,0,1), x",0x00c1eb34,0x00c22288,0x00c1eb34
 99953,data,,,0x00c1eb38,0x00c2228c,0x00c1eb38
 99954,data,,,0x00c1eb3c,0x00c22290,0x00c1eb3c
@@ -99986,9 +99986,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 99985,data,g_pendingFBBind,"Pointer to the last 'bind' instruction the frame-effect parser made (FBIBindTarget 0x0045E190 or FBIBindBackBuffer 0x0045E820, stored by FBParseBind 0x00460F59, 0x00460FAF, 0x00460FB9, 0x00461025); FrameBufferEffect::ParseRunInstruction 0x00461119 and 0x0046114C pass it to the filter it makes for the next 'run' and then zero it (0x00461164). So a run takes the bind written before it.",0x00c1eda8,0x00c3163c,0x00c1eda8
 99986,data,Renderer::FBRenderTargetResource::Create::s_anonymousCount,"Dword counter: FBRenderTargetResource::Create 0x00461C98 reads it, adds one (0x00461CB6) and builds an unnamed resource's name from the prefix '_FBE' (wide string 0x00AE7BC4) and the old value.",0x00c1edac,0x00c31640,0x00c1edac
 99987,data,Renderer::IFBGenericSurfaceResource::ParseSize::s_buffer,"A wchar_t[128] scratch (0x100 bytes): ParseSize 0x0045DA77 copies up to 0x7F characters of a size expression into it (wcsncpy 0x008E2DA2), terminates it at 0x0045DA8F and tokenises it (0x008E692E) with the delimiter string whose pointer is in 0x00BF25F0, for expressions like 'backbuffer_width' (0x00AE780C).",0x00c1edb0,0x00c31648,0x00c1edb0
-99988,data,std::vector<Renderer::FrameBufferFilter*>::s_default,"A null pointer returned in place of an out-of-range element of a FrameBufferStage's filter vector (+0x28); read only by FrameBufferStage::Refresh 0x0045F71B. Element type INFERRED from the hierarchy effect, stage, filter, instruction INFERRED",0x00c1eeb0,0x00c31748,0x00c1eeb0
-99989,data,std::vector<Renderer::FrameBufferInstruction*>::s_default,"A null pointer returned in place of an out-of-range element of a filter's instruction vector (+0x28); read only by the loop at 0x0045F58D (0x0045F550, named CallInstructionSlot2) which calls slot 2 of each element. Element type INFERRED INFERRED",0x00c1eeb4,0x00c3174c,0x00c1eeb4
-99990,data,std::vector<Renderer::FrameBufferStage*>::s_default,A null pointer returned in place of an out-of-range element of a FrameBufferEffect's stage vector (+0x28); read by FrameBufferEffect::GetStage 0x0045F537 (it returns the element) and FrameBufferEffect::Refresh 0x0045F85B. The following named statics (pointLights ...) are separate rows.,0x00c1eeb8,0x00c31750,0x00c1eeb8
+99988,data,ECBase::ECDynArray<Renderer::FrameBufferFilter*>::s_default,"A null pointer returned in place of an out-of-range element of a FrameBufferStage's filter vector (+0x28); read only by FrameBufferStage::Refresh 0x0045F71B. Element type INFERRED from the hierarchy effect, stage, filter, instruction INFERRED",0x00c1eeb0,0x00c31748,0x00c1eeb0
+99989,data,ECBase::ECDynArray<Renderer::FrameBufferInstruction*>::s_default,"A null pointer returned in place of an out-of-range element of a filter's instruction vector (+0x28); read only by the loop at 0x0045F58D (0x0045F550, named CallInstructionSlot2) which calls slot 2 of each element. Element type INFERRED INFERRED",0x00c1eeb4,0x00c3174c,0x00c1eeb4
+99990,data,ECBase::ECDynArray<Renderer::FrameBufferStage*>::s_default,A null pointer returned in place of an out-of-range element of a FrameBufferEffect's stage vector (+0x28); read by FrameBufferEffect::GetStage 0x0045F537 (it returns the element) and FrameBufferEffect::Refresh 0x0045F85B. The following named statics (pointLights ...) are separate rows.,0x00c1eeb8,0x00c31750,0x00c1eeb8
 99991,data,Renderer::LightManagerDefault::pointLights,,0x00c1eebc,0x00c317f0,0x00c1eebc
 99992,data,Renderer::LightManagerDefault::pointLightsOther,,0x00c1eec0,0x00c317f4,0x00c1eec0
 99993,data,Renderer::LightManagerDefault::lightsOfType2,,0x00c1eec4,0x00c317f8,0x00c1eec4
@@ -100008,7 +100008,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100007,data,,,0x00c1ef1c,0x00c1c57c,0x00c1ef1c
 100008,data,Math::Vector4f::NormalizedXYZ::s_guard,"Init guard word of NormalizedXYZ::s_unitX, tested at 0x004620c4 and set at 0x004620ce.",0x00c1ef20,0x00c1c580,0x00c1ef20
 100009,data,,,0x00c1ef24,0x00c22f24,0x00c1ef24
-100010,data,std::vector<GraphicsStructures::ILight*>::s_default,"A null pointer returned in place of an out-of-range element of the vector of light nodes an object lists through its slot 0xB4: LightManagerDefault::AddLights 0x00464E9A (three reads, then calls slots 0x14 and 0x10 of the element) and RemoveLights; 31 users in all, EC::Cutscene::Actor binds among them. Element type INFERRED INFERRED",0x00c1ef28,0x00c218d0,0x00c1ef28
+100010,data,ECBase::ECDynArray<GraphicsStructures::ILight*>::s_default,"A null pointer returned in place of an out-of-range element of the vector of light nodes an object lists through its slot 0xB4: LightManagerDefault::AddLights 0x00464E9A (three reads, then calls slots 0x14 and 0x10 of the element) and RemoveLights; 31 users in all, EC::Cutscene::Actor binds among them. Element type INFERRED INFERRED",0x00c1ef28,0x00c218d0,0x00c1ef28
 100011,data,,,0x00c1ef2c,0x00c31804,0x00c1ef2c
 100012,data,Renderer::VectorAtOrEmpty<General::SafePointer<Renderer::ObjectNodeLightReference>>::s_default,default 8-byte SafePointer element,0x00c1ef30,0x00c31808,0x00c1ef30
 100013,data,g_lastProjectedScreenX,"Dword: ICameraInternal::ProjectToScreenInt 0x0046573C stores the x it just returned through its out parameter; no immediate reader found, so it is a leftover (or debug) copy.",0x00c1ef38,0x00c31bd0,0x00c1ef38
@@ -100045,7 +100045,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100044,data,,,0x00c1f494,0x00c31b04,0x00c1f494
 100045,data,,,0x00c1f498,0x00c31b08,0x00c1f498
 100046,data,Renderer::SubmissionQueueProgram::SubmissionQueueProgram::s_nextSerial,,0x00c1f530,0x00c31ba0,0x00c1f530
-100047,data,std::vector<GraphicsStructures::ObjectNodeEmitter*>::s_default,"A null pointer returned in place of an out-of-range element of the emitter vector walked by EmitterManager::WaitUpdate 0x0046D4AA, BeginUpdate 0x0046E248 and ObjectNodeEmitterGroup::Render 0x0053D570 (the element is used at +0x180). Type INFERRED INFERRED",0x00c1f544,0x00c214bc,0x00c1f544
+100047,data,ECBase::ECDynArray<GraphicsStructures::ObjectNodeEmitter*>::s_default,"A null pointer returned in place of an out-of-range element of the emitter vector walked by EmitterManager::WaitUpdate 0x0046D4AA, BeginUpdate 0x0046E248 and ObjectNodeEmitterGroup::Render 0x0053D570 (the element is used at +0x180). Type INFERRED INFERRED",0x00c1f544,0x00c214bc,0x00c1f544
 100048,data,Physics::Contact::s_empty,,0x00c1f548,0x00c1aab8,0x00c1f548
 100049,data,Renderer::SODistanceSort::s_eyePosition,"A Vector3 (12 bytes, 100050 and 100051 are its y and z): MergeAffinityDirective 0x004721DF has an object of the submission stage fill it through a slot-14 call; SODistanceSort::DistanceSquaredToEye 0x0046F498 subtracts it from the object position and squares the result. Name INFERRED (an eye position from the function name) INFERRED",0x00c1f570,0x00c31bc0,0x00c1f570
 100050,data,,,0x00c1f574,0x00c31bc4,0x00c1f574
@@ -100123,7 +100123,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100122,data,SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<PRCOffer*>>::GetMemberName::s_name,"Function-static std::wstring (0x1c bytes), the member name the lookup returns for an index; destroyed by an atexit destructor.",0x00c2b378,0x00c31088,0x00c2b378
 100123,data,SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<PRCOffer*>>::GetMemberName::s_guard,Init guard word of that GetMemberName::s_name.,0x00c2b394,0x00c310a4,0x00c2b394
 100124,data,ContentManager::StaticClassInfo::s_guard,"Init guard word of ContentManager::s_classInfo, tested and set at the start of ContentManager::StaticClassInfo (0x004af4b0).",0x00c2b398,0x00c310a8,0x00c2b398
-100125,data,std::vector<Online::EntitlementInfo>::s_default,"An Online::EntitlementInfo built by EntitlementInfo::EntitlementInfo in the initializer 0x00aceb70 (atexit ~EntitlementInfo), returned by PRCOffer, PRCInstalledContent, ContentManager::ValidatePurchase and AddInsManager for an out-of-range element; the vector kind is by its layout. AddInXmlEntry::ToAddInRecord also copies it through std::vector<PrereqItem>::push_back (0x005F405E), so that push_back is shared with or named for another element type.",0x00c2b3a0,0x00c1b818,0x00c2b3a0
+100125,data,ECBase::ECDynArray<Online::EntitlementInfo>::s_default,"An Online::EntitlementInfo built by EntitlementInfo::EntitlementInfo in the initializer 0x00aceb70 (atexit ~EntitlementInfo), returned by PRCOffer, PRCInstalledContent, ContentManager::ValidatePurchase and AddInsManager for an out-of-range element; the vector kind is by its layout. AddInXmlEntry::ToAddInRecord also copies it through std::vector<PrereqItem>::push_back (0x005F405E), so that push_back is shared with or named for another element type.",0x00c2b3a0,0x00c1b818,0x00c2b3a0
 100126,data,,,0x00c2b3e8,,0x00c2b3e8
 100127,data,,,0x00c2b3f0,,0x00c2b3f0
 100128,data,GUI::DialogBoxClosedMessage::GetType::s_guard,"Guard word (4 bytes, bit 0) of GUI::DialogBoxClosedMessage's class node: GetType 0x004B24A0 tests it at 0x004B24A7 and on the first call sets it and stores the node's parent link Messages::Message::s_classInfo 0x00BF0C2C; InitType and the RegisterHandler_ function of the same message (when it has one) test the same bit [C].",0x00c2b3f4,0x00c1adc4,0x00c2b3f4
@@ -100177,13 +100177,13 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100176,data,g_services,,0x00c2bdf8,0x00c25430,0x00c2bdf8
 100177,data,ECBase::ECString::s_emptyChars,,0x00c2bdfc,0x00c25434,0x00c2bdfc
 100178,data,g_emptyString,,0x00c2be00,0x00c25438,0x00c2be00
-100179,data,std::vector<ScriptVariableNames::Entry*>::s_default,ScriptVariableKey::NameEquals_wstring passes the element (or this default) to ScriptVariableNames::Entry::NameEquals_wstring.,0x00c2be1c,0x00c1f1f0,0x00c2be1c
-100180,data,std::vector<Messages::Observer*>::s_default,Default element: the address NotifyObservers and ~Observable use when an index is out of range in the vector of Observer pointers at Observable+4; element type INFERRED from ~Observable passing the Observable to the element's Observer method at 0x4c4ec6,0x00c2be20,0x00c25454,0x00c2be20
+100179,data,ECBase::ECDynArray<ScriptVariableNames::Entry*>::s_default,ScriptVariableKey::NameEquals_wstring passes the element (or this default) to ScriptVariableNames::Entry::NameEquals_wstring.,0x00c2be1c,0x00c1f1f0,0x00c2be1c
+100180,data,ECBase::ECDynArray<Messages::Observer*>::s_default,Default element: the address NotifyObservers and ~Observable use when an index is out of range in the vector of Observer pointers at Observable+4; element type INFERRED from ~Observable passing the Observable to the element's Observer method at 0x4c4ec6,0x00c2be20,0x00c25454,0x00c2be20
 100181,data,g_worldDatabase,,0x00c2be24,0x00c25458,0x00c2be24
 100182,data,ECResMan::Manager::s_manager,,0x00c2be28,0x00c2545c,0x00c2be28
 100183,data,,,0x00c2be2c,0x00c25460,0x00c2be2c
 100184,data,ECResMan::ResMan::SweepClosedSources::s_sweepSlice,"int rotating counter: ECResMan::ResMan::SweepClosedSources (0x004c6490) reads it, stores (value+1) mod 5 back at 0x004c64f0 and works on the slice it names; INFERRED from the 'div 5' at 0x004c64e9.",0x00c2be30,0x00c25464,0x00c2be30
-100185,data,std::vector<std::wstring>::s_default,"std::wstring (0x1c bytes, built by the dynamic initializer 0x00acec50, atexit 0x00ad57c0) returned for an out-of-range index of the per-source type-name vector at ResMan source +0x54 by ECResMan::ResMan::IndexSourceByType (0x004c7c50) and UnindexSourceByType (0x004c6330).",0x00c2be34,0x00c25468,0x00c2be34
+100185,data,ECBase::ECDynArray<std::wstring>::s_default,"std::wstring (0x1c bytes, built by the dynamic initializer 0x00acec50, atexit 0x00ad57c0) returned for an out-of-range index of the per-source type-name vector at ResMan source +0x54 by ECResMan::ResMan::IndexSourceByType (0x004c7c50) and UnindexSourceByType (0x004c6330).",0x00c2be34,0x00c25468,0x00c2be34
 100186,data,g_FileReadBytes,,0x00c2be50,0x00c25488,0x00c2be50
 100187,data,,,0x00c2be54,0x00c2548c,0x00c2be54
 100188,data,g_FileReadMicroseconds,,0x00c2be58,0x00c25490,0x00c2be58
@@ -100200,7 +100200,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100199,data,Math::Vector4f::UnitW::s_vector2,,0x00c2beec,0x00c25524,0x00c2beec
 100200,data,Math::Vector4f::UnitW::s_guard2,Function-static guard word of Vector4f::UnitW,0x00c2befc,0x00c25534,0x00c2befc
 100201,data,ECResMan::RIMSource::s_infinity,"Dynamic-init float +infinity, passed as the float argument of a virtual call on the member at +0xd0 in RIMSource::Pump",0x00c2bf00,0x00c25538,0x00c2bf00
-100202,data,std::vector<Resource>::s_default,"0x40-byte default Resource (copy-stride 64: sar 6 in the callers): constructed at startup by the dynamic initialiser 0x00acec80 (Resource constructor 0x004be890), atexit stub 0x00ad5800; returned by std::vector<Resource>::operator[] (0x004d0a90) and by the inlined bounds-checked reads in ECResMan::ErfSource::ReadDirectory (0x004d1040) when the index is out of range, which then write the entry's fields into it. The row's 0x48 is only the distance to the next row.",0x00c2bf08,0x00c25540,0x00c2bf08
+100202,data,ECBase::ECDynArray<Resource>::s_default,"0x40-byte default Resource (copy-stride 64: sar 6 in the callers): constructed at startup by the dynamic initialiser 0x00acec80 (Resource constructor 0x004be890), atexit stub 0x00ad5800; returned by std::vector<Resource>::operator[] (0x004d0a90) and by the inlined bounds-checked reads in ECResMan::ErfSource::ReadDirectory (0x004d1040) when the index is out of range, which then write the entry's fields into it. The row's 0x48 is only the distance to the next row.",0x00c2bf08,0x00c25540,0x00c2bf08
 100203,data,Messages::Message::s_instanceCount,,0x00c2bf4c,0x00c25584,0x00c2bf4c
 100204,data,CpuFeatures::Get::s_instance,"Function-static CpuFeatures object built on the first call of CpuFeatures::Get (0x004d2610) by the constructor 0x004d2600 (which calls 0x004d25e0), atexit stub 0x00ad5810; the function returns its address. Size at most 4 (the guard follows).",0x00c2bf50,0x00c25588,0x00c2bf50
 100205,data,CpuFeatures::Get::s_guard,"Guard word of CpuFeatures::Get's static: bit 0 tested at 0x004d2615, set at 0x004d261d.",0x00c2bf54,0x00c2558c,0x00c2bf54
@@ -100248,7 +100248,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100247,data,g_messageRegistry,,0x00c2c09c,0x00c25834,0x00c2c09c
 100248,data,MessageRegistry::s_defaultSlot,,0x00c2c0a0,0x00c25838,0x00c2c0a0
 100249,data,MessageRegistry::s_defaultRow,,0x00c2c0a4,0x00c2583c,0x00c2c0a4
-100250,data,std::vector<Gff4::Field>::s_default,"Out-of-range default Gff4::Field (12 bytes) for the field vector BuildTemplate sorts with std::_Sort<Gff4::Field *,..FieldLess>; the table has std::vector<Gff4::Field>::operator==",0x00c2c0b4,0x00c25828,0x00c2c0b4
+100250,data,ECBase::ECDynArray<Gff4::Field>::s_default,"Out-of-range default Gff4::Field (12 bytes) for the field vector BuildTemplate sorts with std::_Sort<Gff4::Field *,..FieldLess>; the table has std::vector<Gff4::Field>::operator==",0x00c2c0b4,0x00c25828,0x00c2c0b4
 100251,data,,,0x00c2c0c0,0x00c22f78,0x00c2c0c0
 100252,data,RimLoadedMessage::GetType::s_guard,"Bit 0 guard of GetType's one-time write of RimLoadedMessage::s_classInfo.parent; the same bit is tested by InitType, RegisterHandler_RimLoadedMessage, which inline the same link. It is also the outer guard of the nested GameMessage link (Messages::GameMessage::s_classInfoParentSet).",0x00c2c0c4,0x00c1c714,0x00c2c0c4
 100253,data,RimUnloadedMessage::GetType::s_guard,"Bit 0 guard of GetType's one-time write of RimUnloadedMessage::s_classInfo.parent; the same bit is tested by InitType, RegisterHandler_RimUnloadedMessage, which inline the same link. It is also the outer guard of the nested GameMessage link (Messages::GameMessage::s_classInfoParentSet).",0x00c2c0c8,0x00c1c718,0x00c2c0c8
@@ -100267,11 +100267,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100266,data,,,0x00c2c138,0x00c259b8,0x00c2c138
 100267,data,,,0x00c3015c,0x00c299dc,0x00c3015c
 100268,data,,,0x00c30178,0x00c299f8,0x00c30178
-100269,data,std::vector<Messages::Observable*>::s_default,"Default element: the address StopObservingAll uses when an index is out of range in the vector at Observer+4, whose elements it calls through vtable slot 2 with the Observer; element type INFERRED from that call",0x00c301bc,0x00c25590,0x00c301bc
+100269,data,ECBase::ECDynArray<Messages::Observable*>::s_default,"Default element: the address StopObservingAll uses when an index is out of range in the vector at Observer+4, whose elements it calls through vtable slot 2 with the Observer; element type INFERRED from that call",0x00c301bc,0x00c25590,0x00c301bc
 100270,data,g_observerMutex,A Multithreading::Mutex (0x28 bytes) locked by a ScopedLock in Observer::StopObservingAll and GuiMovie::Reset around the observer lists; constructed by a dynamic initialiser at 0xacee10 and destroyed by its atexit stub 0xad58c0; role INFERRED from the two lockers,0x00c301c0,0x00c25594,0x00c301c0
 100271,data,,,0x00c301e8,,0x00c301e8
 100272,data,,,0x00c301f0,,0x00c301f0
-100273,data,std::vector<unsigned int>::s_default,4-byte zero default element of ECResMan::TaskPool's free-index list (this+0x20 in Release 0x004e9cb0); also returned by std::vector<unsigned int>::operator[] (0x004e9c60).,0x00c301f4,0x00c29aa4,0x00c301f4
+100273,data,ECBase::ECDynArray<unsigned int>::s_default,4-byte zero default element of ECResMan::TaskPool's free-index list (this+0x20 in Release 0x004e9cb0); also returned by std::vector<unsigned int>::operator[] (0x004e9c60).,0x00c301f4,0x00c29aa4,0x00c301f4
 100274,data,ECResMan::ReadRequestTask::s_taskPool,The static ECResMan::TaskPool of ReadRequestTask objects (0x44 bytes),0x00c301f8,0x00c29aa8,0x00c301f8
 100275,data,,,0x00c3023c,0x00c29a54,0x00c3023c
 100276,data,std::vector<Gff4::StructReader>::s_default2,"M2DA::GetStringByIndices calls Gff4::StructReader::GetTemplateView on it, and std::vector<Gff4::StructReader>::at returns it: a second copy of the named 0xc330e8.",0x00c30240,0x00c29a58,0x00c30240
@@ -100314,8 +100314,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100313,data,Graphics::MaterialObjectInstance::SetLightmapOffsetAndScale::s_lightmapOffsetAndScaleParamName,,0x00c303a4,0x00c23d88,0x00c303a4
 100314,data,Graphics::MaterialObjectInstance::s_fallbackMaterialObjectName,"A std::wstring (0x1C bytes) 'Default_Miss02' (wide string 0x00AF28C0, built by 0x00ACEF60): RenderPasses 0x004F4B6C and Render 0x004F59B9 ask the MaterialObjectManager (0x004F77C0) for the object of that name. Role INFERRED (a fallback when the instance has none) INFERRED",0x00c303c0,0x00c23da4,0x00c303c0
 100315,data,,,0x00c303dc,0x00c23dc0,0x00c303dc
-100316,data,std::vector<Graphics::MaterialParameterBlock*>::s_default,T shown by calls on the element named MaterialParameterBlock::Reset and ::Allocate. The other reading's MaterialPassBlock is not a class in the table.,0x00c303e4,0x00c23dc8,0x00c303e4
-100317,data,std::vector<Graphics::MaterialSemantic*>::s_default,"A null pointer returned in place of an out-of-range element of a vector of MaterialSemantic pointers (the element's +0x3C, its id, is read through 0x004F6A90): HasSemanticAffinity 0x004F2B7A, Material::AddSemantic, DeleteSemantics, GetMemoryFootprint, MaterialObject::ApplyMaterialDefaults (14 users).",0x00c303e8,0x00c23504,0x00c303e8
+100316,data,ECBase::ECDynArray<Graphics::MaterialParameterBlock*>::s_default,T shown by calls on the element named MaterialParameterBlock::Reset and ::Allocate. The other reading's MaterialPassBlock is not a class in the table.,0x00c303e4,0x00c23dc8,0x00c303e4
+100317,data,ECBase::ECDynArray<Graphics::MaterialSemantic*>::s_default,"A null pointer returned in place of an out-of-range element of a vector of MaterialSemantic pointers (the element's +0x3C, its id, is read through 0x004F6A90): HasSemanticAffinity 0x004F2B7A, Material::AddSemantic, DeleteSemantics, GetMemoryFootprint, MaterialObject::ApplyMaterialDefaults (14 users).",0x00c303e8,0x00c23504,0x00c303e8
 100318,data,Graphics::MaterialStateOverride::End::s_opacityMultiplierName,function static std::wstring,0x00c303ec,0x00c23dcc,0x00c303ec
 100319,data,Graphics::MaterialStateOverride::End::s_guard,guard of the static above,0x00c30408,0x00c23de8,0x00c30408
 100320,data,Graphics::MaterialStateOverride::SetOpacity::s_opacityMultiplierName,function static std::wstring,0x00c3040c,0x00c23dec,0x00c3040c
@@ -100323,7 +100323,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100322,data,Graphics::MaterialStateOverride::s_defaultEntry,"The name stands: the global is the out-of-range default entry of the override's array, and every reference is in Rebuild. The container is {data,count} with 12-byte entries, not a vector; Graphics::MaterialPassStateArray::s_default would keep the array's class.",0x00c3042c,0x00c23e0c,0x00c3042c
 100323,data,,,0x00c30430,0x00c23e10,0x00c30430
 100324,data,ECBase::ECDynArray<Math::VectorUA4f>::s_default,"A Math::VectorUA4f (16 bytes, unaligned float4) returned by ECDynArray<VectorUA4f>::At 0x004F28A0 for an out-of-range index and written into by SetVector4ArrayParameter 0x004F489E and by ProvideRemoteMaterialParams 0x004F909E (71 users in all: the shader-parameter providers).",0x00c30438,0x00c1a3e0,0x00c30438
-100325,data,std::vector<Graphics::MaterialTextureDeclaration>::s_default,"A 0x40-byte element built by WStringPair::WStringPair in the initializer 0x00acefa0, returned by MaterialObjectInstance::ApplyDeclaredTextures (0x004f63b9) for the vector of MaterialObject::GetDeclaredTextures, which structs.csv types as std::vector<MaterialTextureDeclaration> (sar 6).",0x00c30448,0x00c23e18,0x00c30448
+100325,data,ECBase::ECDynArray<Graphics::MaterialTextureDeclaration>::s_default,"A 0x40-byte element built by WStringPair::WStringPair in the initializer 0x00acefa0, returned by MaterialObjectInstance::ApplyDeclaredTextures (0x004f63b9) for the vector of MaterialObject::GetDeclaredTextures, which structs.csv types as std::vector<MaterialTextureDeclaration> (sar 6).",0x00c30448,0x00c23e18,0x00c30448
 100326,data,Graphics::ParseMaterialCategories::s_buffer,"A wchar_t[512] scratch (0x400 bytes): ParseMaterialCategories 0x004F6B70 copies a category list into it, terminates it (0x004F6B84) and tokenises it with the delimiters at 0x00AF0C98.",0x00c30488,0x00c24650,0x00c30488
 100327,data,Graphics::MaterialSemantic::s_nextInstanceId,Dword: the MaterialSemantic constructor 0x004F6C0B gives each instance the current value (stored at +0x28) and adds 1 (0x004F6C21).,0x00c30888,0x00c24a50,0x00c30888
 100328,data,Graphics::MaterialSemantic::s_nextNameId,"Dword: the next free semantic id; the name-to-id function 0x004F6DA0 (NameToId) looks a name up in s_idsByName and, for a new one, inserts the pair (the address of this dword is the value source, 0x004F6E10) and adds 1 (0x004F6E3C).",0x00c3088c,0x00c24a54,0x00c3088c
@@ -100334,7 +100334,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100333,data,,,0x00c3092c,0x00c2462c,0x00c3092c
 100334,data,Graphics::MaterialManager::Get::s_instance,The MaterialManager singleton (0x34 bytes) made on the first call of MaterialManager::Get; destroyed by 0x00AD59F0 through ~MaterialManager 0x004F7DB0; GetMemoryFootprint adds 0x34 (0x004F7CE6).,0x00c30934,0x00c23c9c,0x00c30934
 100335,data,Graphics::MaterialManager::Get::s_guard,guard of the singleton,0x00c30968,0x00c23cd0,0x00c30968
-100336,data,std::vector<Multithreading::SynchSafePointer<Graphics::Material>>::s_default,"An 8-byte empty SafePointer (constructor 0x00534A70 with 0 from 0x00ACF040, destroyed 0x00AD59E0) returned for an out-of-range index of the manager's material vector: ReloadShaders 0x004F7BA8, RebindMaterials 0x004F7C60, GetMemoryFootprint, GetMaterial and LoadMaterial (8 users); each element is a Material (the callees 0x005032D0 and 0x005033B0 reload shaders and rebind). Type INFERRED INFERRED",0x00c3096c,0x00c23cd4,0x00c3096c
+100336,data,ECBase::ECDynArray<Multithreading::SynchSafePointer<Graphics::Material>>::s_default,"An 8-byte empty SafePointer (constructor 0x00534A70 with 0 from 0x00ACF040, destroyed 0x00AD59E0) returned for an out-of-range index of the manager's material vector: ReloadShaders 0x004F7BA8, RebindMaterials 0x004F7C60, GetMemoryFootprint, GetMaterial and LoadMaterial (8 users); each element is a Material (the callees 0x005032D0 and 0x005033B0 reload shaders and rebind). Type INFERRED INFERRED",0x00c3096c,0x00c23cd4,0x00c3096c
 100337,data,Graphics::MaterialManager::s_defaultMaterialName,"A std::wstring (0x1C bytes) 'Default_Missing.mat' (wide string 0x00AF3004, built by 0x00ACF020): the material LoadMaterial and GetMaterial fall back to (LoadMaterial 0x004F81C8, GetMaterial 0x004F843E; destroyed by 0x00AD59D0).",0x00c30974,0x00c23cdc,0x00c30974
 100338,data,,,0x00c30988,0x00c23cf0,0x00c30988
 100339,data,g_lastAppliedMaterialPass,,0x00c30990,0x00c24634,0x00c30990
@@ -100347,7 +100347,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100346,data,Core::VectorBackOrDefault<void *>::s_default,A pointer slot returned by Core::VectorBackOrDefault<void*> 0x004FA180 for an empty vector.,0x00c309b0,0x00c1ad08,0x00c309b0
 100347,data,Graphics::MaterialState::SetMaterialObject::s_stateManager,"Function-local pointer: the MaterialStateManager returned by MaterialStateManager::Get (0x004FCB70), taken once on the first call (0x004FA960..0x004FA965) and used at 0x004FA972 to look up the object's state.",0x00c309b4,0x00c24bb0,0x00c309b4
 100348,data,Graphics::MaterialState::SetMaterialObject::s_guard,guard of the static above,0x00c309b8,0x00c24bb4,0x00c309b8
-100349,data,std::vector<Graphics::MaterialStateEntry>::s_default,"A default MaterialStateEntry (0x14 bytes, byte +0xC tested) returned for an out-of-range index by MaterialState::CreateDeviceStates 0x004FA526 and MaterialStateManager::LoadDefaults 0x004FBD66; destroyed by 0x00AD5A10 through ~MaterialStateEntry 0x004FA860.",0x00c309c0,0x00c24530,0x00c309c0
+100349,data,ECBase::ECDynArray<Graphics::MaterialStateEntry>::s_default,"A default MaterialStateEntry (0x14 bytes, byte +0xC tested) returned for an out-of-range index by MaterialState::CreateDeviceStates 0x004FA526 and MaterialStateManager::LoadDefaults 0x004FBD66; destroyed by 0x00AD5A10 through ~MaterialStateEntry 0x004FA860.",0x00c309c0,0x00c24530,0x00c309c0
 100350,data,,,0x00c309d4,0x00c24544,0x00c309d4
 100351,data,,,0x00c309d8,0x00c24548,0x00c309d8
 100352,data,,,0x00c309dc,0x00c2454c,0x00c309dc
@@ -100357,9 +100357,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100356,data,,,0x00c30a00,0x00c24570,0x00c30a00
 100357,data,Graphics::MaterialStateManager::Get::s_instance,"The MaterialStateManager singleton (0x5F4 bytes, constructor 0x004FCA90) made on the first call of Get 0x004FCBA3; destroyed by 0x00AD5A50 through ~MaterialStateManager 0x004FC310. LoadDefaults 0x004FBC26 clears its tables.",0x00c30a08,0x00c23f38,0x00c30a08
 100358,data,Graphics::MaterialStateManager::Get::s_guard,guard of the singleton,0x00c30ffc,0x00c2452c,0x00c30ffc
-100359,data,"std::vector<std::pair<int,int>>::s_default","An 8-byte default pair of ints (zeroed at start-up by 0x00ACF120) for an out-of-range element of the {device-state id, value} list MaterialStateManager::LoadDefaults 0x004FBCB8 walks; the id indexes the table at +0x9C (0x004FBCE8). Type INFERRED INFERRED",0x00c31000,0x00c24574,0x00c31000
+100359,data,"ECBase::ECDynArray<std::pair<int,int>>::s_default","An 8-byte default pair of ints (zeroed at start-up by 0x00ACF120) for an out-of-range element of the {device-state id, value} list MaterialStateManager::LoadDefaults 0x004FBCB8 walks; the id indexes the table at +0x9C (0x004FBCE8). Type INFERRED INFERRED",0x00c31000,0x00c24574,0x00c31000
 100360,data,,,0x00c31004,0x00c24578,0x00c31004
-100361,data,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialState>>::s_default,"Not General::SafePointer: the vector the manager builds is the table's vector<SynchSafePointer<MaterialState>> (resize 0x4fc550 and ctor 0x4fc640 are named for it), 8-byte stride. The table's name std::vector<General::SafePointer>::back for 0x4fbf90 looks like this vector's At (it returns 0xc31008 out of range).",0x00c31008,0x00c2457c,0x00c31008
+100361,data,ECBase::ECDynArray<Multithreading::SynchSafePointer<Graphics::MaterialState>>::s_default,"Not General::SafePointer: the vector the manager builds is the table's vector<SynchSafePointer<MaterialState>> (resize 0x4fc550 and ctor 0x4fc640 are named for it), 8-byte stride. The table's name std::vector<General::SafePointer>::back for 0x4fbf90 looks like this vector's At (it returns 0xc31008 out of range).",0x00c31008,0x00c2457c,0x00c31008
 100362,data,Graphics::MaterialStateManager::Load::s_fileExtension,,0x00c31010,0x00c24584,0x00c31010
 100363,data,,,0x00c31024,0x00c24598,0x00c31024
 100364,data,Graphics::MaterialStateManager::s_defaultStateName,"A std::wstring (0x1C bytes) 'DefaultState.sta' (wide string 0x00AF4024, built by 0x00ACF0E0): the default state file the manager loads; used by Load 0x004FC7D8 and the constructor 0x004FCB1C.",0x00c3102c,0x00c245a0,0x00c3102c
@@ -100376,7 +100376,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100375,data,Graphics::MaterialObject::s_nextId,Dword serial: the MaterialObject constructor 0x005023EA stores it at +0x11C and adds 1 (0x005023FA).,0x00c310bc,0x00c23ea0,0x00c310bc
 100376,data,Graphics::MaterialObject::s_instanceCount,"Dword: number of MaterialObject instances alive; the constructor adds 1 (0x00502400), the destructor subtracts 1 (0x0050247F).",0x00c310c0,0x00c23ea4,0x00c310c0
 100377,data,,,0x00c310c4,,0x00c310c4
-100378,data,std::vector<Graphics::MaterialArtParameter*>::s_default,"A null pointer returned in place of an out-of-range element of a vector of MaterialArtParameter pointers (the element's GetName 0x0050F090 is called on it): MaterialObject::ApplyParamDefaults 0x00502935, MaterialPass::SetRequiredStreams 0x0050416A and 0x00504230, 0x00505150, 0x0050AF10 and 0x0055AFA0. Type INFERRED from GetName INFERRED",0x00c310e0,0x00c23508,0x00c310e0
+100378,data,ECBase::ECDynArray<Graphics::MaterialArtParameter*>::s_default,"A null pointer returned in place of an out-of-range element of a vector of MaterialArtParameter pointers (the element's GetName 0x0050F090 is called on it): MaterialObject::ApplyParamDefaults 0x00502935, MaterialPass::SetRequiredStreams 0x0050416A and 0x00504230, 0x00505150, 0x0050AF10 and 0x0055AFA0. Type INFERRED from GetName INFERRED",0x00c310e0,0x00c23508,0x00c310e0
 100379,data,ECBase::ECDynArray<Graphics::MaterialPass*>::s_default,"Pointer (4 bytes, null) returned as the element when an index is out of range of a technique's pass array (technique +0x34, MaterialTechnique::GetPass 0x00506eb0 falls to 0x00506eef; Validate 0x00506e40 at 0x00506e82; also Material::RebindPasses 0x005032d0 at 0x0050337e, whose outer technique array falls back to 0x00C303E8); no immediate writer found; element type from the passes it is used for. INFERRED.",0x00c310e4,0x00c234b0,0x00c310e4
 100380,data,Graphics::Material::s_nextSerial,"int32 counter: Material::Material 0x00503780 stores it into Material+0x3c and adds 1 (0x00503822, 0x0050382b); nothing else touches it, so it numbers materials in creation order.",0x00c310ec,0x00c24a8c,0x00c310ec
 100381,data,g_materialGlobalFlag,"Byte: written by Graphics::SetMaterialGlobalFlag 0x00503120 (0x00503124) and read only by GetMaterialGlobalFlag 0x00503130; their wrappers 0x00572610 and 0x00572620 have no direct caller and no other code reads the byte, so nothing in the exe acts on it (no immediate reader found). INFERRED name.",0x00c310f4,0x00c24a94,0x00c310f4
@@ -100389,7 +100389,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100388,data,Graphics::MaterialPass::s_parameterPoolFullBlocks,"ECDynArray of the pool's retired blocks, 0x10 bytes (+0 allocator word, +4 begin = 100389, +8 end and +0xc capacity = 100390); constructed by 0x00ACF210 with its destructor on atexit 0x00AD5B00; AllocParameterBytes pushes the full block on it (0x00505c59-0x00505c66) before allocating a larger one, ResetParameterPool frees each (0x00505cf3) and clears it (0x00505d04).",0x00c31130,0x00c23e64,0x00c31130
 100389,data,,,0x00c31134,0x00c23e68,0x00c31134
 100390,data,,,0x00c31138,0x00c23e6c,0x00c31138
-100391,data,std::vector<Graphics::MaterialParam*>::s_default,"T shown by the element call to MaterialParam::GetName. Kind is std::vector, not ECDynArray: the pass builds its vectors with 0x40d610 and no ECDynArray constructor.",0x00c31140,0x00c23e74,0x00c31140
+100391,data,ECBase::ECDynArray<Graphics::MaterialParam*>::s_default,"T shown by the element call to MaterialParam::GetName. Kind is std::vector, not ECDynArray: the pass builds its vectors with 0x40d610 and no ECDynArray constructor.",0x00c31140,0x00c23e74,0x00c31140
 100392,data,,,0x00c31144,0x00c2381c,0x00c31144
 100393,data,Graphics::MaterialPass::LoadStateBlock::s_stateManager,"Pointer cached on the first call of MaterialPass::LoadStateBlock 0x005062f0: the result of MaterialStateManager::Get 0x004fcb70 (the singleton at 0x00C30A08), stored at 0x0050633a and used as the this of FindOrLoad 0x004fc960 (0x00506351).",0x00c31148,0x00c23e78,0x00c31148
 100394,data,Graphics::MaterialPass::LoadStateBlock::s_guard,"Function-static init guard of s_stateManager (bit 0), cleared by 0x00A7E3A0",0x00c3114c,0x00c23e7c,0x00c3114c
@@ -100434,7 +100434,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100433,data,PlayMovieMessage::GetType::s_guard,"Bit 0 guard of GetType's one-time write of PlayMovieMessage::s_classInfo.parent; the same bit is tested by InitType, RegisterHandler_PlayMovieMessage, which inline the same link.",0x00c31394,0x00c239f4,0x00c31394
 100434,data,StopMovieMessage::GetType::s_guard,"Bit 0 guard of GetType's one-time write of StopMovieMessage::s_classInfo.parent; the same bit is tested by InitType, RegisterHandler_StopMovieMessage, which inline the same link.",0x00c31398,0x00c239f8,0x00c31398
 100435,data,GUI::ScaleformManager::GetClassInfo::s_guard,"Guard word (4 bytes, bit 0) of ScaleformManager's class node: GetClassInfo 0x00517BF0 tests it at 0x00517BF5 and on the first call stores the node's parent link (0x00BF64F0 := MessageReceiver 0x00BF0440); the 13 RegisterHandler_*Message functions and RegisterClass carry the same test inline [C].",0x00c3139c,0x00c239fc,0x00c3139c
-100436,data,std::vector<GuiMovie*>::s_default,"A null GuiMovie* (4 bytes, 0) returned by address when the vector of movies is empty or the index is out of range: back() 0x005120A0 (mov eax, 0xC313A0 at 0x005120EE) and the index tests in DispatchMouseDown/Up, SendMouseMoves and RemoveUnshownMovies (0x00512403, 0x005153E2 and others) [C].",0x00c313a0,0x00c1c24c,0x00c313a0
+100436,data,ECBase::ECDynArray<GuiMovie*>::s_default,"A null GuiMovie* (4 bytes, 0) returned by address when the vector of movies is empty or the index is out of range: back() 0x005120A0 (mov eax, 0xC313A0 at 0x005120EE) and the index tests in DispatchMouseDown/Up, SendMouseMoves and RemoveUnshownMovies (0x00512403, 0x005153E2 and others) [C].",0x00c313a0,0x00c1c24c,0x00c313a0
 100437,data,GUI::ScaleformManager::SendKeysAndText::s_defaultKeyRecord,"16-byte zero record returned for an out-of-range index into the vector of key records that SendKeysAndText 0x00514C90 walks (mov eax, 0xC313A4 at 0x00514E5B and 0x00514ED6); the record is {key +0, state +4 (0x20000 = down), modifiers +8} (GUI.md 70) [C]; only SendKeysAndText refers to it.",0x00c313a4,0x00c23a00,0x00c313a4
 100438,data,GUI::ScaleformManager::SendKeysAndText::s_defaultChar,"One wchar_t (read as a word at 0x00514D56), 0, returned for an out-of-range index into the vector of typed characters that SendKeysAndText 0x00514C90 walks (mov eax, 0xC313B4 at 0x00514D51 and 0x00514D83) [C].",0x00c313b4,0x00c23a10,0x00c313b4
 100439,data,GUI::GUIMessage::GetType::s_guard,"Guard word (4 bytes, bit 0) that makes the GUI message base class link itself once: the GetType and InitType of PrintToLogWindow, PrintToConsole, PrintToLog, RunConsoleCommand, RunClientScript and RunScript (0x005185F0 and the like) test it (0x00518603 in GetType) and set GUIMessage::s_classInfo.parent (0x00BF6EAC) := Messages::Message::s_classInfo 0x00BF0C2C; GameModeController::RegisterHandler_GUIMessage 0x006405D0 does the same (0x006405FD-0x0064060B) [C].",0x00c313b8,0x00c1dc18,0x00c313b8
@@ -100585,7 +100585,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100584,data,,,0x00c319a4,0x00c22ffc,0x00c319a4
 100585,data,ECBase::ECDynArray<GraphicsStructures::ObjectNode*>::s_default,"Null pointer fallback for arrays of ObjectNode pointers (children, bone, physics, snap and use-point node lists): ObjectNode::GetChild 0x0055e100 (0x0055e127), FindNodeByName, ResetToRestPose, Object::GetUsePointNode and 24 other functions.",0x00c319a8,0x00c23004,0x00c319a8
 100586,data,ECBase::ECDynArray<Animation::ModelAnimationTree*>::s_default,"Null pointer fallback for Object+0x17c animationTrees (dev structs.csv): UpdateControllers 0x00547580 (0x005475b9) calls virtual +0x24 on the element; also PlayAnimationNode, HasAnimationNode, RemoveAnimationTree, BuildClipLists, TakeOverFrom.",0x00c319ac,0x00c23008,0x00c319ac
-100587,data,std::vector<Physics::ShapePrototype*>::s_default,,0x00c319b0,0x00c1ab2c,0x00c319b0
+100587,data,ECBase::ECDynArray<Physics::ShapePrototype*>::s_default,,0x00c319b0,0x00c1ab2c,0x00c319b0
 100588,data,ECBase::ECDynArray<GraphicsStructures::ObjectNodeCrust*>::s_default,"Null pointer fallback for the crust-hook node array: Object::FindCrustHookNodeByName 0x00547d60 (0x00547da8), CrustHookMap::AttachObject 0x00562fe0 and DetachObject 0x00563270, Object::BindCrustEmittersToPhysics. Element type INFERRED from the hook-node functions.",0x00c319b4,0x00c23010,0x00c319b4
 100589,data,GraphicsStructures::Object::SetLightmapOnMeshNodes::s_lightmapOffsetAndScale,"Function-static Vector4 (0x10) = offset (0,0), scale (1,1) of the lightmap, applied to every mesh node",0x00c319b8,0x00c23014,0x00c319b8
 100590,data,GraphicsStructures::Object::SetLightmapOnMeshNodes::s_guard,Init guard of s_lightmapOffsetAndScale,0x00c319c8,0x00c23024,0x00c319c8
@@ -100667,7 +100667,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100666,data,ECBase::ECDynArray<GraphicsStructures::AgeMapKey>::s_default,"AgeMapKey (0x20 bytes, made by AgeMapKey::AgeMapKey 0x0053FF80 at start-up, dynamic initialiser 0x00ACF870, atexit 0x00AD5E70) returned for an index past the end of an array of age-map keys; PrepareAgeMap 0x00560620 and EvaluateAgeMap 0x005607C0 index it and, with an empty array, write through it (0x0056064C, 0x0056067C).",0x00c31bc4,0x00c23824,0x00c31bc4
 100667,data,,,0x00c31be4,0x00c23060,0x00c31be4
 100668,data,ECBase::ECDynArray<Multithreading::SynchSafePointer<GraphicsStructures::ObjectBlueprint>>::s_default,"SynchSafePointer (8 bytes, null; made by 0x00534A70 in dynamic initialiser 0x00ACF930, atexit 0x00AD5ED0) returned for an index past the end of an array of object-blueprint pointers; read by ObjectBlueprint::Instantiate 0x00568590, the manager's FindObjectBlueprint 0x00579D20, CreateMergeObjectDirect, PurgeExpired 0x0057ABC0 and VectorBackOrDefault 0x00574D70. INFERRED element type.",0x00c31bec,0x00c2329c,0x00c31bec
-100669,data,std::vector<GraphicsStructures::ModelExport>::s_default,"ModelExport default (0x28 bytes: a std::wstring made by 0x004C0D90 in dynamic initialiser 0x00ACF910, atexit 0x00AD5EB0) returned for an index past the end of a model-export array; read by ObjectBlueprint::BuildExportValues 0x005665B0, ObjectNodeBlueprint::GetMemoryFootprint, BindExportValues and std::vector<ModelExport>::back 0x0058D1E0.",0x00c31bf4,0x00c23374,0x00c31bf4
+100669,data,ECBase::ECDynArray<GraphicsStructures::ModelExport>::s_default,"ModelExport default (0x28 bytes: a std::wstring made by 0x004C0D90 in dynamic initialiser 0x00ACF910, atexit 0x00AD5EB0) returned for an index past the end of a model-export array; read by ObjectBlueprint::BuildExportValues 0x005665B0, ObjectNodeBlueprint::GetMemoryFootprint, BindExportValues and std::vector<ModelExport>::back 0x0058D1E0.",0x00c31bf4,0x00c23374,0x00c31bf4
 100670,data,,,0x00c31c1c,0x00c232ac,0x00c31c1c
 100671,data,g_headBaseNodeName,"ECString L""headBase"" (0x1C bytes; dynamic initialiser 0x00ACF890, atexit 0x00AD5E80) returned by GraphicsStructures::Object::GetHeadBaseNodeName 0x00543DE0, the name of the head attachment node of a creature model.",0x00c31c24,0x00c2339c,0x00c31c24
 100672,data,g_neckNodeName,"ECString L""Neck"" (0x1C bytes; dynamic initialiser 0x00ACF8B0, atexit 0x00AD5E90) returned by GraphicsStructures::Object::GetNeckNodeName 0x00543E00.",0x00c31c40,0x00c233b8,0x00c31c40
@@ -100732,7 +100732,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100731,data,,,0x00c321d8,0x00c237c4,0x00c321d8
 100732,data,,,0x00c321f4,0x00c237e0,0x00c321f4
 100733,data,,,0x00c32210,0x00c237fc,0x00c32210
-100734,data,std::vector<GraphicsStructures::XMLBuilder*>::s_default,,0x00c3222c,0x00c23818,0x00c3222c
+100734,data,ECBase::ECDynArray<GraphicsStructures::XMLBuilder*>::s_default,,0x00c3222c,0x00c23818,0x00c3222c
 100735,data,GraphicsStructures::ParticleRandomSeedMesh,"Dword state of MSVC's rand LCG (s = s*0x343FD + 0x269EC3; r = (s >> 16) & 0x7FFF), never seeded (no immediate writer found other than the LCG step), shared by every mesh-particle emitter: ObjectNodeEmitterMesh<MeshParticle>::SpawnParticle 0x00583DC0 (three draws) and Update 0x00583F80.",0x00c32230,0x00c238e4,0x00c32230
 100736,data,GraphicsStructures::ParticleRandomSeedRibbon,,0x00c32234,0x00c238e8,0x00c32234
 100737,data,GraphicsStructures::ClothWindRandomSeed,,0x00c32238,0x00c23528,0x00c32238
@@ -100760,9 +100760,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100759,data,,,0x00c323bc,,0x00c323bc
 100760,data,,,0x00c323c0,,0x00c323c0
 100761,data,g_allLinesListName,"Static std::wstring L""all_lines_list"" built at startup by the dynamic initializer at 0x00ACFF00 (destroyed at exit by 0x00AD6200), passed by SoundManager::EventExists (0x005BA82A) and SoundEventInstance::Resolve (0x005BBD7C).",0x00c323c8,0x00c22bf0,0x00c323c8
-100762,data,std::vector<SoundDuck*>::s_default,OnStart/OnStop of the SoundEventInstance call SoundDuck::OnStart/OnStop with the element (or this default) in ecx.,0x00c323e4,0x00c22c0c,0x00c323e4
-100763,data,std::vector<SoundEventInstance*>::s_default,SoundEmitter::SetReverbPresetName calls SoundEventInstance::SetReverbPresetName with the element (or this default) in ecx.,0x00c323e8,0x00c22c10,0x00c323e8
-100764,data,std::vector<SoundEmitter*>::s_default,StopAllEmitters calls SoundEmitter::StopAllInstances with the element (or this default) in ecx.,0x00c323ec,0x00c22c14,0x00c323ec
+100762,data,ECBase::ECDynArray<SoundDuck*>::s_default,OnStart/OnStop of the SoundEventInstance call SoundDuck::OnStart/OnStop with the element (or this default) in ecx.,0x00c323e4,0x00c22c0c,0x00c323e4
+100763,data,ECBase::ECDynArray<SoundEventInstance*>::s_default,SoundEmitter::SetReverbPresetName calls SoundEventInstance::SetReverbPresetName with the element (or this default) in ecx.,0x00c323e8,0x00c22c10,0x00c323e8
+100764,data,ECBase::ECDynArray<SoundEmitter*>::s_default,StopAllEmitters calls SoundEmitter::StopAllInstances with the element (or this default) in ecx.,0x00c323ec,0x00c22c14,0x00c323ec
 100765,data,SoundEventInstance::Resolve::s_useMaxPlaybacksFix,"ECString function static in SoundEventInstance::Resolve (0x005ba530) holding the wide text 'UseMaxPlaybacksFix' (the name of the event user property, see AUDIO.md), built at 0x005ba9b7 (0x004c2480) on the first call, atexit stub 0x00ad6210.",0x00c323f0,0x00c22c18,0x00c323f0
 100766,data,SoundEventInstance::Resolve::s_guard,"Guard of the 'UseMaxPlaybacksFix' string: bit 0 tested at 0x005ba992, set at 0x005ba99b; an exception funclet (0x00a8bb54) clears it.",0x00c3240c,0x00c22c34,0x00c3240c
 100767,data,MusicController::Update::s_mainTrack0,"ECString function static in MusicController::Update (0x005bb630): the track name 'main', used for the game modes 0 and 8 (0x005bb839-0x005bb952, passed to 0x005b6d40, the track switch); atexit stub 0x00ad6240. AUDIO.md: explore, pregame, dialogue and cutscene play 'main'.",0x00c32410,0x00c22c38,0x00c32410
@@ -100829,7 +100829,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100828,data,,,0x00c32780,0x00c22328,0x00c32780
 100829,data,,,0x00c32784,0x00c2232c,0x00c32784
 100830,data,EC::TileFade::s_activeCount,"Dword count of tile fades in progress: Begin (0x005CBC32) adds 1 for a fade not yet started and returns 0.1 (0x00AFFE84), or 0.0001 (0x00AE7D50) when more than 5 are running; End (0x005CBC68) takes it down.",0x00c327a8,0x00c22798,0x00c327a8
-100831,data,std::vector<EC::ChunkTile*>::s_default,null ChunkTile pointer slot for an out-of-range index of the chunk tile vector (this+0x348),0x00c327ac,0x00c2279c,0x00c327ac
+100831,data,ECBase::ECDynArray<EC::ChunkTile*>::s_default,null ChunkTile pointer slot for an out-of-range index of the chunk tile vector (this+0x348),0x00c327ac,0x00c2279c,0x00c327ac
 100832,data,,,0x00c327b0,,0x00c327b0
 100833,data,,,0x00c327cc,,0x00c327cc
 100834,data,g_randomSeed,"The seed CClientExoApp::Initialize (0x005db7f0) gets from time(0) (0x008e21ac) and passes to srand (0x008e6a81), then stores at 0x005dbbca; no immediate reader found. Size 4; the row's 8 is the distance to the next row.",0x00c327e8,0x00c1ada8,0x00c327e8
@@ -100878,7 +100878,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100877,data,,,0x00c32aac,0x00c1b390,0x00c32aac
 100878,data,,,0x00c32ab0,0x00c1b394,0x00c32ab0
 100879,data,,,0x00c32ab4,0x00c1b398,0x00c32ab4
-100880,data,std::vector<std::vector<std::wstring>>::s_default,"0x10-byte default vector of wide strings (stride 28 inside): constructed by the dynamic initialiser 0x00ad02f0 (0x0040d670), atexit stub 0x00ad6430 (0x004072e0); the out-of-range fallback for CClientOptions' list of per-group key-name lists (this+0x878) in LoadGroupFromIni (0x005de2b0), SaveGroupToIni (0x005de5b0) and the CClientOptions constructor (78 references).",0x00c32abc,0x00c1b3a0,0x00c32abc
+100880,data,ECBase::ECDynArray<std::vector<std::wstring>>::s_default,"0x10-byte default vector of wide strings (stride 28 inside): constructed by the dynamic initialiser 0x00ad02f0 (0x0040d670), atexit stub 0x00ad6430 (0x004072e0); the out-of-range fallback for CClientOptions' list of per-group key-name lists (this+0x878) in LoadGroupFromIni (0x005de2b0), SaveGroupToIni (0x005de5b0) and the CClientOptions constructor (78 references).",0x00c32abc,0x00c1b3a0,0x00c32abc
 100881,data,,,0x00c32acc,0x00c1b524,0x00c32acc
 100882,data,,,0x00c32ae8,0x00c1b540,0x00c32ae8
 100883,data,,,0x00c32aec,0x00c1b544,0x00c32aec
@@ -100887,14 +100887,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100886,data,,,0x00c32af5,0x00c1b54d,0x00c32af5
 100887,data,,,0x00c32af6,0x00c1b54e,0x00c32af6
 100888,data,,,0x00c32af7,0x00c1b54f,0x00c32af7
-100889,data,std::vector<AddInXmlEntry>::s_default,"0x2C4-byte default AddInXmlEntry (divisor 708 at 0x005fa254): constructed by the dynamic initialiser 0x00ad03c0 (AddInXmlEntry::AddInXmlEntry 0x005f3240), atexit stub 0x00ad6490 (~AddInXmlEntry 0x005f1fc0); AddInsManager::SaveAddInsXml (0x005fa090) compares the entry's name with the one it reads, falling back to this on an out-of-range index. The row's 0x5E4 is the distance to the next row. Container kind INFERRED.",0x00c32af8,0x00c1b550,0x00c32af8
+100889,data,ECBase::ECDynArray<AddInXmlEntry>::s_default,"0x2C4-byte default AddInXmlEntry (divisor 708 at 0x005fa254): constructed by the dynamic initialiser 0x00ad03c0 (AddInXmlEntry::AddInXmlEntry 0x005f3240), atexit stub 0x00ad6490 (~AddInXmlEntry 0x005f1fc0); AddInsManager::SaveAddInsXml (0x005fa090) compares the entry's name with the one it reads, falling back to this on an out-of-range index. The row's 0x5E4 is the distance to the next row. Container kind INFERRED.",0x00c32af8,0x00c1b550,0x00c32af8
 100890,data,g_addInsManager,,0x00c32dc0,0x00c1b858,0x00c32dc0
 100891,data,g_moduleResourcesMutex,,0x00c330bc,0x00c1bb54,0x00c330bc
 100892,data,ModuleResourceManager::LoadModuleResources::s_guard,"LoadModuleResources tests and sets bit 0; the atexit function at 0xa93a16 clears it, as a function-local static's guard.",0x00c330dc,0x00c1bb74,0x00c330dc
-100893,data,std::vector<EventListenerEntry*>::s_default,"null slot for an out-of-range index of the event listener vectors of module, area and object (entry first dword is the event id); element type name (inferred) . Real size 4",0x00c330e0,0x00c1bb78,0x00c330e0
+100893,data,ECBase::ECDynArray<EventListenerEntry*>::s_default,"null slot for an out-of-range index of the event listener vectors of module, area and object (entry first dword is the event id); element type name (inferred) . Real size 4",0x00c330e0,0x00c1bb78,0x00c330e0
 100894,data,ECBase::ECDynArray<Resources>::s_default,,0x00c330e4,0x00c1bb7c,0x00c330e4
-100895,data,std::vector<Gff4::StructReader>::s_default,"0x10-byte out-of-range element of the module cif area lists (stride 0x10, the size of a Gff4::StructReader); element type (inferred)",0x00c330e8,0x00c1bb80,0x00c330e8
-100896,data,std::vector<CCModule::AreaRow>::s_default,"0x2c-byte out-of-range element of the module area rows (stride 0x2c, holding strings), constructed by a dynamic initializer; real size 0x2c; element type name (inferred)",0x00c330f8,0x00c1bb90,0x00c330f8
+100895,data,ECBase::ECDynArray<Gff4::StructReader>::s_default,"0x10-byte out-of-range element of the module cif area lists (stride 0x10, the size of a Gff4::StructReader); element type (inferred)",0x00c330e8,0x00c1bb80,0x00c330e8
+100896,data,ECBase::ECDynArray<CCModule::AreaRow>::s_default,"0x2c-byte out-of-range element of the module area rows (stride 0x2c, holding strings), constructed by a dynamic initializer; real size 0x2c; element type name (inferred)",0x00c330f8,0x00c1bb90,0x00c330f8
 100897,data,ECBase::ECDynArray<CCModule::TagIndexEntry>::s_default,,0x00c33128,0x00c1bbc0,0x00c33128
 100898,data,RotatePaperdollLeftMessage::GetType::s_guard,"Bit 0 guard of GetType's one-time write of RotatePaperdollLeftMessage::s_classInfo.parent; the same bit is tested by InitType, RegisterHandler_RotatePaperdollLeftMessage, which inline the same link.",0x00c331b0,0x00c1bc48,0x00c331b0
 100899,data,RotatePaperdollRightMessage::GetType::s_guard,"Bit 0 guard of GetType's one-time write of RotatePaperdollRightMessage::s_classInfo.parent; the same bit is tested by InitType, RegisterHandler_RotatePaperdollRightMessage, which inline the same link.",0x00c331b4,0x00c1bc4c,0x00c331b4
@@ -101273,7 +101273,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 101272,data,,,0x00c3486c,0x00c1dbc4,0x00c3486c
 101273,data,DirtyFlaggable::s_registry,,0x00c348a4,0x00c1dbfc,0x00c348a4
 101274,data,,,0x00c348b4,0x00c1dc0c,0x00c348b4
-101275,data,std::vector<HostilityRow*>::s_default,,0x00c348b8,0x00c1dc10,0x00c348b8
+101275,data,ECBase::ECDynArray<HostilityRow*>::s_default,,0x00c348b8,0x00c1dc10,0x00c348b8
 101276,data,RefreshCreditEntriesMessage::GetType::s_guard,"Bit 0 guard of GetType's one-time write of RefreshCreditEntriesMessage::s_classInfo.parent; the same bit is tested by InitType, RegisterHandler_RefreshCreditEntriesMessage, which inline the same link. It is also the outer guard of the nested GameMessage link (Messages::GameMessage::s_classInfoParentSet).",0x00c348bc,0x00c1c70c,0x00c348bc
 101277,data,ShowCreditsMessage::GetType::s_guard,"Bit 0 guard of GetType's one-time write of ShowCreditsMessage::s_classInfo.parent; the same bit is tested by InitType, RegisterHandler_ShowCreditsMessage, which inline the same link. It is also the outer guard of the nested GameMessage link (Messages::GameMessage::s_classInfoParentSet).",0x00c348c0,0x00c1c710,0x00c348c0
 101278,data,GameMode::StaticClassInfo::s_guard,guard bit 0 of the one-time init,0x00c348c4,0x00c1dd38,0x00c348c4
@@ -101326,7 +101326,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 101325,data,OnMinimapScaleChangedMessage::GetName::s_name,"The function-static string (0x1c bytes, an ECString) GetName builds once from its literal and returns by address; an atexit destructor frees it",0x00c34d10,0x00c1e160,0x00c34d10
 101326,data,OnMinimapScaleChangedMessage::GetName::s_guard,Bit 0 guard of GetName's function-static string OnMinimapScaleChangedMessage::GetName::s_name; the atexit destructor clears it,0x00c34d2c,0x00c1e17c,0x00c34d2c
 101327,data,ECBase::ECDynArray<CCPlaceable*>::s_default,,0x00c34d30,0x00c1e180,0x00c34d30
-101328,data,std::vector<KDCreatureNode*>::s_default,"null node slot of the creature tree node pool (KDCreatureNode, 0x14 bytes)",0x00c34d34,0x00c1e184,0x00c34d34
+101328,data,ECBase::ECDynArray<KDCreatureNode*>::s_default,"null node slot of the creature tree node pool (KDCreatureNode, 0x14 bytes)",0x00c34d34,0x00c1e184,0x00c34d34
 101329,data,,,0x00c34d38,0x00c1e188,0x00c34d38
 101330,data,ECBase::ECDynArray<CCTrigger*>::s_default,,0x00c34d3c,0x00c1e18c,0x00c34d3c
 101331,data,ECBase::ECDynArray<CCAreaOfEffectObject*>::s_default,,0x00c34d40,0x00c1e190,0x00c34d40
@@ -101336,7 +101336,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 101335,data,CCArea::s_emptyPooledVfx,,0x00c34d50,0x00c1e1a0,0x00c34d50
 101336,data,,,0x00c34d54,0x00c1e1a4,0x00c34d54
 101337,data,,,0x00c34d58,0x00c1e1a8,0x00c34d58
-101338,data,std::vector<AreaEntry>::s_default,The static initialiser calls AreaEntry::AreaEntry on it; FindNearestNamedEntry returns it for an out-of-range index (wstring at +0x18). Container form inferred from begin-at-+4 addressing.,0x00c34d60,0x00c1e1b0,0x00c34d60
+101338,data,ECBase::ECDynArray<AreaEntry>::s_default,The static initialiser calls AreaEntry::AreaEntry on it; FindNearestNamedEntry returns it for an out-of-range index (wstring at +0x18). Container form inferred from begin-at-+4 addressing.,0x00c34d60,0x00c1e1b0,0x00c34d60
 101339,data,GameModeDialog::PlaceDialogueCamera::s_nudgeScale,"Function-static float set once from the constant 0x00B0E1D8 (0.000609) and multiplied with the camera offset in PlaceDialogueCamera (0x0068D7C1), where a sine of 2 degrees (0x00B0E1D0) is also used; INFERRED role.",0x00c34db0,0x00c1e238,0x00c34db0
 101340,data,GameModeDialog::PlaceDialogueCamera::s_guard,guard bit 0 for the static above,0x00c34db4,0x00c1e23c,0x00c34db4
 101341,data,ECBase::ECDynArray<Response*>::s_default,"4-byte null T* kept as the element returned when the index is out of range (array begin +4, end +8): read by SmartData::PointerArrayMemberIteratorImpl<ECBase::ECDynArray<Response*>>::GetValue at 0x0068ee32 (the inlined At); same shape as 0x0062b910.",0x00c34db8,0x00c1e240,0x00c34db8
@@ -101480,7 +101480,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 101479,data,SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<SaveFileInfo*>>::GetMemberName::s_guard,"4-byte (a dword whose bit 0 is the flag) MSVC guard for the function static s_name (ID 101478) of SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<SaveFileInfo*>>::GetMemberName: tested at 0x006cd895, set at 0x006cd89d on the first call, cleared by the exception funclet 0x00aa4330 if the constructor throws.",0x00c357e8,0x00c1ecd0,0x00c357e8
 101480,data,SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<HeroInfo*>>::GetMemberName::s_name,"std::wstring (0x1c) function static: the decimal string of the index, built by ScriptBackend::ForScript_IntToString 0x004c2b10 at 0x006cdadf and returned by SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<HeroInfo*>>::GetMemberName (ID 15194) as the member's name; constructed on first call by std::wstring::wstring at 0x006cdab3 (under the guard dword of the row beside), destroyed at exit by the atexit stub 0x00ad7210.",0x00c357ec,0x00c1ecd4,0x00c357ec
 101481,data,SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<HeroInfo*>>::GetMemberName::s_guard,"4-byte (a dword whose bit 0 is the flag) MSVC guard for the function static s_name (ID 101480) of SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<HeroInfo*>>::GetMemberName: tested at 0x006cdaa5, set at 0x006cdaad on the first call, cleared by the exception funclet 0x00aa4360 if the constructor throws.",0x00c35808,0x00c1ecf0,0x00c35808
-101482,data,std::vector<SaveLoadProxy::SaveEntry>::s_default,static default SaveEntry (0x50 bytes) for out-of-range access of the hero save list,0x00c35810,0x00c1ecf8,0x00c35810
+101482,data,ECBase::ECDynArray<SaveLoadProxy::SaveEntry>::s_default,static default SaveEntry (0x50 bytes) for out-of-range access of the hero save list,0x00c35810,0x00c1ecf8,0x00c35810
 101483,data,ClientScriptCommand::RANDOMFLOAT::s_randomSeed,,0x00c35860,0x00c1ed48,0x00c35860
 101484,data,,,0x00c35868,0x00c1ed50,0x00c35868
 101485,data,,,0x00c358a0,0x00c1ed88,0x00c358a0
@@ -101886,7 +101886,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 101885,data,SmartData::IndexedPointerMemberLookup<Backpack>::GetMemberName::s_guard,"4-byte (a dword whose bit 0 is the flag) MSVC guard for the function static s_name (ID 101884) of SmartData::IndexedPointerMemberLookup<Backpack>::GetMemberName: tested at 0x0073f895, set at 0x0073f89d on the first call, cleared by the exception funclet 0x00aaf640 if the constructor throws.",0x00c36c30,0x00c20540,0x00c36c30
 101886,data,SmartData::IndexedPointerMemberLookup<PlotItems>::GetMemberName::s_name,"std::wstring (0x1c) function static: the decimal string of the index, built by ScriptBackend::ForScript_IntToString 0x004c2b10 at 0x0073f9bf and returned by SmartData::IndexedPointerMemberLookup<PlotItems>::GetMemberName (ID 17595) as the member's name; constructed on first call by std::wstring::wstring at 0x0073f993 (under the guard dword of the row beside), destroyed at exit by the atexit stub 0x00ad79b0.",0x00c36c34,0x00c20544,0x00c36c34
 101887,data,SmartData::IndexedPointerMemberLookup<PlotItems>::GetMemberName::s_guard,"4-byte (a dword whose bit 0 is the flag) MSVC guard for the function static s_name (ID 101886) of SmartData::IndexedPointerMemberLookup<PlotItems>::GetMemberName: tested at 0x0073f985, set at 0x0073f98d on the first call, cleared by the exception funclet 0x00aaf670 if the constructor throws.",0x00c36c50,0x00c20560,0x00c36c50
-101888,data,std::vector<TintBlock>::s_default,The static initialiser calls TintBlock::TintBlock on it; ApplySkinTintToParts and ApplyMaterialOverrides return it for an out-of-range index.,0x00c36c58,0x00c20588,0x00c36c58
+101888,data,ECBase::ECDynArray<TintBlock>::s_default,The static initialiser calls TintBlock::TintBlock on it; ApplySkinTintToParts and ApplyMaterialOverrides return it for an out-of-range index.,0x00c36c58,0x00c20588,0x00c36c58
 101889,data,CAppearance::EquipmentPartName::s_equipmentPartNames,,0x00c36d18,0x00c20648,0x00c36d18
 101890,data,,,0x00c36d34,0x00c20664,0x00c36d34
 101891,data,,,0x00c36d50,0x00c20680,0x00c36d50
@@ -102490,7 +102490,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 102489,data,,,0x00c39180,0x00c21e58,0x00c39180
 102490,data,ECBase::ECDynArray<MapLocationConnection>::s_default,"16-byte default MapLocationConnection returned by ECDynArray<MapLocationConnection>::operator[] 0x007f6950 (mov eax,0xc39184 at 0x007f6978) for an out-of-range index; constructed at startup by the dynamic initializer 0x00ad35b0 (call 0x007f6860) and destroyed at exit by 0x00ad8890 (call 0x007f68c0).",0x00c39184,0x00c21e5c,0x00c39184
 102491,data,FilteredGroupedItemView::StaticClassInfo::s_guard,Guard word of the class info built on first call in FilteredGroupedItemView::StaticClassInfo (same body as a GetClassInfo).,0x00c39194,0x00c21e6c,0x00c39194
-102492,data,std::vector<FilteredGroupedItemView::Entry>::s_default,"A 0x88-byte FilteredGroupedItemView::Entry, built at startup by 0x00ad35d0 (constructor 0x007f84a0) with 0x00ad88a0 as its atexit destructor, that GetEntry (0x007f85c0, at 0x007f85fe) and FilteredGroupedItemView::Refresh (0x007fb570, at 0x007fb833, 0x007fb8a1, 0x007fb9a0 and 0x007fba3f) use for an entry index past the end of the view's entry vector (+0x60).",0x00c39198,0x00c21e70,0x00c39198
+102492,data,ECBase::ECDynArray<FilteredGroupedItemView::Entry>::s_default,"A 0x88-byte FilteredGroupedItemView::Entry, built at startup by 0x00ad35d0 (constructor 0x007f84a0) with 0x00ad88a0 as its atexit destructor, that GetEntry (0x007f85c0, at 0x007f85fe) and FilteredGroupedItemView::Refresh (0x007fb570, at 0x007fb833, 0x007fb8a1, 0x007fb9a0 and 0x007fba3f) use for an entry index past the end of the view's entry vector (+0x60).",0x00c39198,0x00c21e70,0x00c39198
 102493,data,GUI::GUICharGenBase::RegisterMessageHandlers::s_registered,Byte set to 1 on the first call of RegisterMessageHandlers; later calls return at once.,0x00c39220,0x00c21ef8,0x00c39220
 102494,data,LoadSeededCharactersMessage::GetName::s_name,"The function-static string (0x1c bytes, an ECString) GetName builds once from its literal and returns by address; an atexit destructor frees it",0x00c39224,0x00c21efc,0x00c39224
 102495,data,LoadSeededCharactersMessage::GetName::s_guard,Bit 0 guard of GetName's function-static string LoadSeededCharactersMessage::GetName::s_name; the atexit destructor clears it,0x00c39240,0x00c21f18,0x00c39240
@@ -102613,9 +102613,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 102612,data,Physics::s_infinity,,0x00c39ae4,0x00c466fc,0x00c39ae4
 102613,data,ECBase::ECDynArray<Physics::PhysicsScene*>::s_default,"4-byte null pointer returned for an out-of-range index of PhysicsWorld's scene array at this+8, whose elements AddImpulseToAllActors (0x00837290) and AddRadialImpulse (0x008372D2, which calls PhysicsScene::AddRadialImpulse 0x00822540 on the element) use. INFERRED for the element type",0x00c39ae8,0x00c1aad8,0x00c39ae8
 102614,data,,,0x00c39aec,,0x00c39aec
-102615,data,std::vector<Console::ConsoleString*>::s_default,,0x00c39af0,0x00c1a5d8,0x00c39af0
+102615,data,ECBase::ECDynArray<Console::ConsoleString*>::s_default,,0x00c39af0,0x00c1a5d8,0x00c39af0
 102616,data,,,0x00c39af4,0x00c1a5dc,0x00c39af4
-102617,data,std::vector<Console::ConsoleFunc *>::s_default,"4-byte null ConsoleFunc* returned by std::vector<Console::ConsoleFunc *>::operator[] 0x00840d80 for an out-of-range index (and by the inlined copies in PrintCompletions 0x008413a0, ExtendToCommonPrefix 0x00841480 and GetMatchingNames 0x00843af0).",0x00c39af8,0x00c1a5e0,0x00c39af8
+102617,data,ECBase::ECDynArray<Console::ConsoleFunc*>::s_default,"4-byte null ConsoleFunc* returned by std::vector<Console::ConsoleFunc *>::operator[] 0x00840d80 for an out-of-range index (and by the inlined copies in PrintCompletions 0x008413a0, ExtendToCommonPrefix 0x00841480 and GetMatchingNames 0x00843af0).",0x00c39af8,0x00c1a5e0,0x00c39af8
 102618,data,Console::Console::PrintAt::s_line,"std::wstring (0x1c) function static: one line of the text being printed, cut out of the argument up to the next line break (substr 0x004c3250 at 0x0084326e, assigned at 0x0084327d) and pushed on a vector of lines (0x0040ab40 at 0x00843299); Console::PrintAt 0x008431a0; constructed on first call under the guard 0x00c39b18, destroyed at exit by the atexit stub 0x00ad8a90.",0x00c39afc,0x00c1a5e4,0x00c39afc
 102619,data,Console::Console::PrintAt::s_guard,"dword guard bit 0 of the function static s_line (ID 102618): tested at 0x0084322d, set at 0x00843236, cleared by the exception funclet 0x00ac1108 if the constructor throws.",0x00c39b18,0x00c1a600,0x00c39b18
 102620,data,Console::Console::Get::s_instance,"The console singleton, 0x144 bytes (the next row is its guard): Console::Console::Get 0x008445d0 builds it on first call with the constructor 0x00843f90 (vtable 0x00b2b174, the object's message arrays at +0x58 and +0x68, command map at +4, see dev/script_commands/actionsys.md DEBUG_ConsoleCommand) and returns its address; destroyed at exit by the atexit stub 0x00ad8aa0.",0x00c39b20,0x00c1a608,0x00c39b20
@@ -102659,15 +102659,15 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 102658,data,TexManager::TextureManager::Load::s_guard,guard word of Load::s_extensions,0x00c39ea0,0x00c1a5a0,0x00c39ea0
 102659,data,,,0x00c39ea4,0x00c1a5a4,0x00c39ea4
 102660,data,TexManager::g_texturePoolEnabled,,0x00c39eac,0x00c1a5b4,0x00c39eac
-102661,data,std::vector<TexManager::PoolEntry>::s_default,"default PoolEntry {texture pointer, free flag at +4} (8 bytes)",0x00c39eb0,0x00c1a5b8,0x00c39eb0
+102661,data,ECBase::ECDynArray<TexManager::PoolEntry>::s_default,"default PoolEntry {texture pointer, free flag at +4} (8 bytes)",0x00c39eb0,0x00c1a5b8,0x00c39eb0
 102662,data,,,0x00c39eb4,0x00c1a5bc,0x00c39eb4
-102663,data,std::vector<TexManager::TexturePool::Spec>::s_default,default Spec (0x18 bytes) of the pool's preallocation spec list,0x00c39eb8,0x00c1a5c0,0x00c39eb8
+102663,data,ECBase::ECDynArray<TexManager::TexturePool::Spec>::s_default,default Spec (0x18 bytes) of the pool's preallocation spec list,0x00c39eb8,0x00c1a5c0,0x00c39eb8
 102664,data,,,0x00c39ebc,0x00c1a5c4,0x00c39ebc
 102665,data,,,0x00c39ec0,0x00c1a5c8,0x00c39ec0
 102666,data,,,0x00c39ec4,0x00c1a5cc,0x00c39ec4
 102667,data,,,0x00c39ec8,0x00c1a5d0,0x00c39ec8
 102668,data,,,0x00c39ecc,0x00c1a5d4,0x00c39ecc
-102669,data,std::vector<void*>::s_default,default null void* of the TextureLoadTaskPool block/free lists (4 bytes; the row's 0x14 runs into the gap before 0xc3a008),0x00c39ed0,0x00c1a5b0,0x00c39ed0
+102669,data,ECBase::ECDynArray<void*>::s_default,default null void* of the TextureLoadTaskPool block/free lists (4 bytes; the row's 0x14 runs into the gap before 0xc3a008),0x00c39ed0,0x00c1a5b0,0x00c39ed0
 102670,data,FacialAnimation::FacialAnimationManager::s_allocatedBytes,,0x00c39ed8,0x00c1a2b8,0x00c39ed8
 102671,data,,,0x00c39ee4,,0x00c39ee4
 102672,data,,,0x00c39ee8,,0x00c39ee8
@@ -102679,22 +102679,22 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 102678,data,FacialAnimation::FacialAnimationManager::Get::s_instance,"the FacialAnimationManager singleton (0xCC bytes up to its guard at 0x00C39FFC), constructed by 0x0084D7E0 on first Get, atexit 0x00AD8BE0.",0x00c39f30,0x00c1a310,0x00c39f30
 102679,data,FacialAnimation::FacialAnimationManager::Get::s_guard,init guard dword of 102678,0x00c39ffc,0x00c1a3dc,0x00c39ffc
 102680,data,XMLParser2::ExpatParser::s_active,byte true while an ExpatParser exists; the static handlers do nothing when 0; 1 byte,0x00c3a000,0x00c466f0,0x00c3a000
-102681,data,std::vector<XMLParser2::IBuilder *>::s_default,"4-byte null IBuilder* returned by std::vector<XMLParser2::IBuilder *>::back 0x008517d0 when the builder stack is empty (mov eax,0xc3a004 at 0x00851820), also by the inlined copies in ExpatParser::EndElement and StartElement.",0x00c3a004,0x00c466f4,0x00c3a004
-102682,data,std::vector<D3DFORMAT>::s_default,"Zero D3DFORMAT (4 bytes) returned for an index past the end of the depth-stencil format lists in D3DGraphicsDriverManager (ModeSatisfiesRequest 0x008667D0, FitCreationParametersToMode 0x00866E00 which tests format - 0x46 < 14) and CD3DEnumeration (EnumerateDeviceCombos, BuildDepthStencilFormatList, BuildDSMSConflictList). INFERRED element type.",0x00c3a008,0x00c19090,0x00c3a008
-102683,data,std::vector<D3DMULTISAMPLE_TYPE>::s_default,"Zero D3DMULTISAMPLE_TYPE (4 bytes) returned for an index past the end of the multisample-type lists of D3DGraphicsDriverManager (ScoreModeAgainstRequest 0x00866410, ModeSatisfiesRequest, FitCreationParametersToMode which copies it to 0x00C1EB4C) and CD3DEnumeration (BuildMultiSampleTypeList, BuildDSMSConflictList). INFERRED element type.",0x00c3a00c,0x00c19094,0x00c3a00c
-102684,data,std::vector<D3DAdapterInfo*>::s_default,default null D3DAdapterInfo* of CD3DEnumeration's adapter list,0x00c3a010,0x00c19098,0x00c3a010
-102685,data,std::vector<D3DDeviceCombo*>::s_default,default null D3DDeviceCombo* of D3DDeviceInfo's combo list,0x00c3a014,0x00c1909c,0x00c3a014
-102686,data,std::vector<D3DDeviceInfo*>::s_default,default null D3DDeviceInfo* of D3DAdapterInfo's device list,0x00c3a018,0x00c190a0,0x00c3a018
+102681,data,ECBase::ECDynArray<XMLParser2::IBuilder*>::s_default,"4-byte null IBuilder* returned by std::vector<XMLParser2::IBuilder *>::back 0x008517d0 when the builder stack is empty (mov eax,0xc3a004 at 0x00851820), also by the inlined copies in ExpatParser::EndElement and StartElement.",0x00c3a004,0x00c466f4,0x00c3a004
+102682,data,ECBase::ECDynArray<D3DFORMAT>::s_default,"Zero D3DFORMAT (4 bytes) returned for an index past the end of the depth-stencil format lists in D3DGraphicsDriverManager (ModeSatisfiesRequest 0x008667D0, FitCreationParametersToMode 0x00866E00 which tests format - 0x46 < 14) and CD3DEnumeration (EnumerateDeviceCombos, BuildDepthStencilFormatList, BuildDSMSConflictList). INFERRED element type.",0x00c3a008,0x00c19090,0x00c3a008
+102683,data,ECBase::ECDynArray<D3DMULTISAMPLE_TYPE>::s_default,"Zero D3DMULTISAMPLE_TYPE (4 bytes) returned for an index past the end of the multisample-type lists of D3DGraphicsDriverManager (ScoreModeAgainstRequest 0x00866410, ModeSatisfiesRequest, FitCreationParametersToMode which copies it to 0x00C1EB4C) and CD3DEnumeration (BuildMultiSampleTypeList, BuildDSMSConflictList). INFERRED element type.",0x00c3a00c,0x00c19094,0x00c3a00c
+102684,data,ECBase::ECDynArray<D3DAdapterInfo*>::s_default,default null D3DAdapterInfo* of CD3DEnumeration's adapter list,0x00c3a010,0x00c19098,0x00c3a010
+102685,data,ECBase::ECDynArray<D3DDeviceCombo*>::s_default,default null D3DDeviceCombo* of D3DDeviceInfo's combo list,0x00c3a014,0x00c1909c,0x00c3a014
+102686,data,ECBase::ECDynArray<D3DDeviceInfo*>::s_default,default null D3DDeviceInfo* of D3DAdapterInfo's device list,0x00c3a018,0x00c190a0,0x00c3a018
 102687,data,D3DDriver::D3DGraphicsDriverManager::Get::s_instance,"The one D3DGraphicsDriverManager (vftable 0x00B2DB7C, real size 0x90, built by 0x008678A0 on first call under guard 0x00C3A0B0; atexit 0x00AD8C00); Get 0x00867E30 returns its address after Initialize 0x008653C0 has run.",0x00c3a020,0x00c190a8,0x00c3a020
 102688,data,,,0x00c3a054,0x00c190dc,0x00c3a054
 102689,data,D3DDriver::D3DGraphicsDriverManager::Get::s_guard,guard word of Get's static instance,0x00c3a0b0,0x00c19138,0x00c3a0b0
 102690,data,,,0x00c3a0c0,,0x00c3a0c0
 102691,data,,,0x00c3a0c8,,0x00c3a0c8
-102692,data,std::vector<D3DDISPLAYMODE>::s_default,"Zero D3DDISPLAYMODE (0x10 bytes: width, height, refresh rate, format; zeroed by dynamic initialiser 0x00AD3B90) returned for an index past the end of a display-mode list; FindClosestDisplayResolution 0x00866250, ScoreModeAgainstRequest 0x00866410, ModeSatisfiesRequest 0x008667D0, FitCreationParametersToMode and BuildExternalDeviceCaps read fields 0-3. INFERRED element type.",0x00c3a0cc,0x00c19154,0x00c3a0cc
+102692,data,ECBase::ECDynArray<D3DDISPLAYMODE>::s_default,"Zero D3DDISPLAYMODE (0x10 bytes: width, height, refresh rate, format; zeroed by dynamic initialiser 0x00AD3B90) returned for an index past the end of a display-mode list; FindClosestDisplayResolution 0x00866250, ScoreModeAgainstRequest 0x00866410, ModeSatisfiesRequest 0x008667D0, FitCreationParametersToMode and BuildExternalDeviceCaps read fields 0-3. INFERRED element type.",0x00c3a0cc,0x00c19154,0x00c3a0cc
 102693,data,,,0x00c3a0d0,0x00c19158,0x00c3a0d0
 102694,data,,,0x00c3a0d4,0x00c1915c,0x00c3a0d4
 102695,data,,,0x00c3a0d8,0x00c19160,0x00c3a0d8
-102696,data,std::vector<D3DDriver::D3DResetable*>::s_default,default null D3DResetable* of the driver's lost-device list,0x00c3a0dc,0x00c19164,0x00c3a0dc
+102696,data,ECBase::ECDynArray<D3DDriver::D3DResetable*>::s_default,default null D3DResetable* of the driver's lost-device list,0x00c3a0dc,0x00c19164,0x00c3a0dc
 102697,data,,,0x00c3a0e0,0x00c19178,0x00c3a0e0
 102698,data,CD3DEnumeration::Get::s_instance,"The one CD3DEnumeration (0x6C bytes, built by 0x0086D630 on first call under guard 0x00C3A16C; atexit 0x00AD8C10 calls ~CD3DEnumeration 0x0086DEF0), returned by CD3DEnumeration::Get 0x0086DF60.",0x00c3a100,0x00c19198,0x00c3a100
 102699,data,CD3DEnumeration::Get::s_guard,guard word of Get's static instance,0x00c3a16c,0x00c19204,0x00c3a16c
@@ -102705,7 +102705,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 102704,data,,,0x00c3a190,0x00c19228,0x00c3a190
 102705,data,,,0x00c3a194,0x00c1922c,0x00c3a194
 102706,data,,,0x00c3a198,0x00c19230,0x00c3a198
-102707,data,std::vector<D3DDriver::D3DVertexStreamDriver*>::s_default,default null stream-driver pointer of D3DBatch's vertex-stream list (batch+0x24/0x28),0x00c3a19c,0x00c19234,0x00c3a19c
+102707,data,ECBase::ECDynArray<D3DDriver::D3DVertexStreamDriver*>::s_default,default null stream-driver pointer of D3DBatch's vertex-stream list (batch+0x24/0x28),0x00c3a19c,0x00c19234,0x00c3a19c
 102708,data,D3DDriver::g_scratchTextureCache,"A std::map (head allocator word here, head node pointer at +4, size at +8; 0xC bytes) of scratch textures: its sentinel node is allocated by dynamic initialiser 0x00AD3C40 (atexit 0x00AD8C30 frees it), D3DDriver::GetScratchTexture 0x008761A0 looks up or inserts, ClearScratchTextureCache 0x00875700 releases every texture (vtable slot 2) and empties it.",0x00c3a1a0,0x00c19244,0x00c3a1a0
 102709,data,,,0x00c3a1a4,0x00c19248,0x00c3a1a4
 102710,data,,,0x00c3a1a8,0x00c1924c,0x00c3a1a8
@@ -102713,7 +102713,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 102712,data,g_umbraSavedPixelShader,,0x00c3a1bc,0x00c19260,0x00c3a1bc
 102713,data,g_umbraSavedVertexShader,,0x00c3a1c0,0x00c19264,0x00c3a1c0
 102714,data,D3DDriver::ShaderParameter::PackData::s_packBuffer,"256 entries of 16 bytes (0x1000, no initialiser): ShaderParameter::PackData 0x00871690 writes a packed constant into entry [index] through 0x008711C0 and returns the buffer's address (0x0087177B) when the parameter has no elements. INFERRED entry type (float4 register).",0x00c3a1c8,0x00c19268,0x00c3a1c8
-102715,data,std::vector<D3DDriver::ShaderParameter>::s_default,"Default ShaderParameter (built by the constructor 0x00872D50 in dynamic initialiser 0x00AD3CA0, atexit 0x00AD8C80; a std::string name at +0, an element vector at +0x40) returned for an index past the end of the shader constant table's parameters; ShaderConstantTable::FindParameterByName 0x0087A0A0 and ReadParameters 0x0087B450 read it.",0x00c3b1c8,0x00c1a268,0x00c3b1c8
+102715,data,ECBase::ECDynArray<D3DDriver::ShaderParameter>::s_default,"Default ShaderParameter (built by the constructor 0x00872D50 in dynamic initialiser 0x00AD3CA0, atexit 0x00AD8C80; a std::string name at +0, an element vector at +0x40) returned for an index past the end of the shader constant table's parameters; ShaderConstantTable::FindParameterByName 0x0087A0A0 and ReadParameters 0x0087B450 read it.",0x00c3b1c8,0x00c1a268,0x00c3b1c8
 102716,data,,,0x00c3b1cc,0x00c1a26c,0x00c3b1cc
 102717,data,,,0x00c3b1dc,0x00c1a27c,0x00c3b1dc
 102718,data,,,0x00c3b1e0,0x00c1a280,0x00c3b1e0
@@ -102727,8 +102727,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 102726,data,InputMapper::Dispatch::s_rawInputMessage,"RawInputMessage object (vtable 0x00B1EEA4 stored at 0x0087D94B, 8 bytes with its word at +4) built once on first remap-mode dispatch (guard 0x00C3B300) and re-sent through Messages::Send (0x0087D9A5) for each raw event while the mapper is remapping (INPUT.md); atexit 0x00AD8CD0 named by the exe's own symbol.",0x00c3b2f8,0x00c18858,0x00c3b2f8
 102727,data,,,0x00c3b2fc,0x00c1885c,0x00c3b2fc
 102728,data,InputMapper::Dispatch::s_guard,init guard dword of 102726,0x00c3b300,0x00c18860,0x00c3b300
-102729,data,std::vector<ECInput::Event>::s_default,"16-byte default element (four zero dwords, zeroed by the startup initialiser 0x00AD3DA0 through 0x008A30B0) that InputMapper::Dispatch (0x0087D7F5) substitutes for an out-of-range event of the 16-byte event vector (INPUT.md: the poll's sink vector); the span of 0x18 also covers the Entry default at 0x00C3B314 (ID 102730). INFERRED for the element's class name",0x00c3b304,0x00c18864,0x00c3b304
-102730,data,std::vector<InputMapper::Entry>::s_default,,0x00c3b314,0x00c18874,0x00c3b314
+102729,data,ECBase::ECDynArray<ECInput::Event>::s_default,"16-byte default element (four zero dwords, zeroed by the startup initialiser 0x00AD3DA0 through 0x008A30B0) that InputMapper::Dispatch (0x0087D7F5) substitutes for an out-of-range event of the 16-byte event vector (INPUT.md: the poll's sink vector); the span of 0x18 also covers the Entry default at 0x00C3B314 (ID 102730). INFERRED for the element's class name",0x00c3b304,0x00c18864,0x00c3b304
+102730,data,ECBase::ECDynArray<InputMapper::Entry>::s_default,,0x00c3b314,0x00c18874,0x00c3b314
 102731,data,,,0x00c3b31c,0x00c1887c,0x00c3b31c
 102732,data,,,0x00c3b348,0x00c188a8,0x00c3b348
 102733,data,,,0x00c3b350,0x00c188b0,0x00c3b350
@@ -102769,17 +102769,17 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 102768,data,,,0x00c3b920,,0x00c3b920
 102769,data,,,0x00c3b958,,0x00c3b958
 102770,data,,,0x00c3b990,,0x00c3b990
-102771,data,std::vector<Input::Binding>::s_default,"12-byte default element (dword 0, dword 0, byte 0, byte 0; zeroed by the startup initialiser 0x00AD42F0 through 0x00891090) returned for an out-of-range index of the binding vector in Input::IntValue, FloatValue, Bind, IsDown, AxisPair and IsKeyValidForBinding (6 fallback sites); the real Binding is built by 0x008910A0 (key, null, byte 1, byte 0). INFERRED for the element's class name",0x00c3b9c8,0x00c465cc,0x00c3b9c8
+102771,data,ECBase::ECDynArray<Input::Binding>::s_default,"12-byte default element (dword 0, dword 0, byte 0, byte 0; zeroed by the startup initialiser 0x00AD42F0 through 0x00891090) returned for an out-of-range index of the binding vector in Input::IntValue, FloatValue, Bind, IsDown, AxisPair and IsKeyValidForBinding (6 fallback sites); the real Binding is built by 0x008910A0 (key, null, byte 1, byte 0). INFERRED for the element's class name",0x00c3b9c8,0x00c465cc,0x00c3b9c8
 102772,data,g_groupedInputMappings,,0x00c3b9d8,0x00c465dc,0x00c3b9d8
 102773,data,,,0x00c3b9dc,,0x00c3b9dc
 102774,data,,,0x00c3ba14,,0x00c3ba14
 102775,data,,,0x00c3ba4c,,0x00c3ba4c
 102776,data,,,0x00c3ba84,,0x00c3ba84
 102777,data,Eclipse::GroupedInputMappings::StaticClassInfo::s_guard,init guard dword of StaticClassInfo's one-time link (not a class info itself),0x00c3babc,0x00c466c0,0x00c3babc
-102778,data,std::vector<Eclipse::GroupedInputMappings::GroupedInputs*>::s_default,"4-byte null pointer returned for an out-of-range index of the mappings' GroupedInputs* vector in TakeKey, ClearKeys, LoadFromConfig and SaveToConfig (19 fallback sites; the exe's own symbol for the accessor is std::vector<...GroupedInputs*>::back).",0x00c3bac0,0x00c466c4,0x00c3bac0
+102778,data,ECBase::ECDynArray<Eclipse::GroupedInputMappings::GroupedInputs*>::s_default,"4-byte null pointer returned for an out-of-range index of the mappings' GroupedInputs* vector in TakeKey, ClearKeys, LoadFromConfig and SaveToConfig (19 fallback sites; the exe's own symbol for the accessor is std::vector<...GroupedInputs*>::back).",0x00c3bac0,0x00c466c4,0x00c3bac0
 102779,data,Eclipse::GroupedInputMappings::GetKeyText::s_noKeyMappedText,"""function-static wstring """"No key mapped"""" (0x1c bytes), returned for a key with no mapping""",0x00c3bac4,0x00c466c8,0x00c3bac4
 102780,data,Eclipse::GroupedInputMappings::GetKeyText::s_guard,init guard dword of 102779,0x00c3bae0,0x00c466e4,0x00c3bae0
-102781,data,std::vector<Eclipse::GroupedInputMappings::Mapping>::s_default,"8-byte out-of-range element returned by GroupedInputs::IsKeyValid and SetKey for the first-key vector at GroupedInputs+0xf0, which structs.csv types as std::vector<Mapping>.",0x00c3bae4,0x00c466e8,0x00c3bae4
+102781,data,ECBase::ECDynArray<Eclipse::GroupedInputMappings::Mapping>::s_default,"8-byte out-of-range element returned by GroupedInputs::IsKeyValid and SetKey for the first-key vector at GroupedInputs+0xf0, which structs.csv types as std::vector<Mapping>.",0x00c3bae4,0x00c466e8,0x00c3bae4
 102782,data,,,0x00c3baec,,0x00c3baec
 102783,data,,,0x00c3bb24,,0x00c3bb24
 102784,data,,,0x00c3bb5c,,0x00c3bb5c
