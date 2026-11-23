@@ -51,6 +51,14 @@ class Names(unittest.TestCase):
             "std::wstring::~wstring",
         )
 
+    def test_a_pool_string_keeps_its_allocator(self):
+        self.assertEqual(
+            stlmatch.norm_name(
+                "std::basic_string<char,struct std::char_traits<char>,class ECMemory::StringAllocator<char> >::_Copy"
+            ),
+            "std::basic_string<char,std::char_traits<char>,ECMemory::StringAllocator<char>>::_Copy",
+        )
+
     def test_member_template_written_alone(self):
         self.assertEqual(
             stlmatch.norm_name(
@@ -84,6 +92,16 @@ class Merge(unittest.TestCase):
     def test_two_members_are_nothing(self):
         self.assertIsNone(
             stlmatch.merge(["std::vector<?>::_Tidy", "std::vector<?>::~vector"])
+        )
+
+    def test_one_shape_of_two_allocators_is_nothing(self):
+        self.assertIsNone(
+            stlmatch.merge(
+                [
+                    "std::basic_string<char,std::char_traits<char>,ECMemory::StringAllocator<char>>::_Grow",
+                    "std::string::_Grow",
+                ]
+            )
         )
 
     def test_two_templates_are_nothing(self):

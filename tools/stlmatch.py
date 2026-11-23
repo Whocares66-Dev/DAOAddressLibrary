@@ -14,7 +14,8 @@ libcpmt.lib that are not templates). So this makes such a library:
 explicit instantiations of vector, list, deque, map, set and stdext::hash_map
 over elements of every size from 4 to 128 bytes and of four kinds (plain data;
 default constructor, copy and destructor out of line; and the two mixes), the
-scalars, std::wstring and std::string, compiled with the build's compiler and
+scalars, std::wstring and std::string, the engine's strings over its pool
+allocator (ECMemory::StringAllocator), compiled with the build's compiler and
 flags (dev/BUILDS.md, "The compiler"; /GL left out, its objects are not code).
 A member defined out of line is only declared, so calls to it are relocations,
 which the comparison leaves out: one kind stands for every class whose such
@@ -25,7 +26,10 @@ its relocations left out, and its length. Where every instantiation that
 compiled to that shape is one member of one template, the build's functions
 of that shape and length are that member, an argument written where all of
 them agree on it and ? where they do not (std::vector<?>::_Insert_n). Where
-two members share a shape (end and rbegin can), nothing is named. Code under
+two members share a shape (end and rbegin can), nothing is named by it, but
+what the build's function calls may still tell which it is (libmatch's
+by_targets: a pool string's _Grow is std::string's bytes and calls the pool's
+_Copy, which is not). Code under
 48 bytes names nothing: an engine function can be the same few instructions.
 Only unnamed IDs are named; --agree writes how the named ones compare.
 
@@ -80,6 +84,30 @@ REAL = [
     "std::list<int>",
     "std::map<int,int>",
 ]
+# The engine's strings take their memory from its pool, not the heap
+# (decomp-agent, 2026-11-23: _Copy of either allocator fails at the other's
+# address). allocate asks pool 1 for count * sizeof(T) with "ECSTRINGALLOC"
+# and line -1, deallocate frees through the engine's operator delete; the calls
+# are relocations, the pool and the line are the bytes that tell it.
+POOL_STRING = "ECMemory::StringAllocator"
+STRING_ALLOCATOR = """namespace ECMemory {
+void *__cdecl AllocateInPool(unsigned int, int, const wchar_t *, int);
+template <class T> class StringAllocator : public std::allocator<T> {
+public:
+  template <class U> struct rebind { typedef StringAllocator<U> other; };
+  StringAllocator() throw() {}
+  template <class U> StringAllocator(const StringAllocator<U> &) throw() {}
+  T *allocate(size_t n) {
+    return static_cast<T *>(AllocateInPool(n * sizeof(T), 1, L"ECSTRINGALLOC", -1));
+  }
+  T *allocate(size_t n, const void *) { return allocate(n); }
+  void deallocate(T *p, size_t) { ::operator delete(p); }
+};
+template <class T, class U>
+bool operator==(const StringAllocator<T> &, const StringAllocator<U> &) { return true; }
+template <class T, class U>
+bool operator!=(const StringAllocator<T> &, const StringAllocator<U> &) { return false; }
+}"""
 KIND = {
     "P": "plain",
     "D": "out-of-line ctor/copy/dtor",
@@ -163,6 +191,7 @@ def declarations():
             "utility",
         )
     ]
+    lines.append(STRING_ALLOCATOR)
     for t in all_elements():
         kind, n = t.split("_")
         lines.append(struct(kind, int(n)))
@@ -191,6 +220,10 @@ def instantiations():
         "template class std::basic_string<wchar_t>;",
         "template class std::basic_string<char>;",
         "template struct std::pair<std::wstring,std::wstring>;",
+    ] + [
+        "template class std::basic_string<%s,std::char_traits<%s>,%s<%s> >;"
+        % (c, c, POOL_STRING, c)
+        for c in ("wchar_t", "char")
     ]
     return out
 
@@ -300,7 +333,12 @@ def norm_type(t):
     base, args = m.group(1), split_args(m.group(2))
     ptr = (m.group(3) or "").replace(" ", "")
     if base == "std::basic_string" and args[0] in ("wchar_t", "char"):
-        return ("std::wstring" if args[0] == "wchar_t" else "std::string") + ptr
+        c = args[0]
+        if len(args) > 2 and args[2].startswith(POOL_STRING + "<"):
+            return "std::basic_string<%s,std::char_traits<%s>,%s<%s>>%s" % (
+                c, c, POOL_STRING, c, ptr,
+            )  # fmt: skip
+        return ("std::wstring" if c == "wchar_t" else "std::string") + ptr
     if base == "std::_Tree":
         return (traits(args, "std::", "std::") or norm_type(args[0])) + ptr
     if base == "stdext::_Hash":
@@ -408,9 +446,9 @@ def bare(name):
     return "::".join(strip_args(name).split("::")[-2:])
 
 
-def load(paths):
-    """{shape: (names, code, relocations, element types)} of the libraries' functions."""
-    shapes = {}
+def read(paths):
+    """[(symbol, undecorated, code, relocations)] of the libraries' template functions."""
+    out = []
     for path in paths:
         for _, obj in libmatch.members(path):
             for symbol, code, relocs in libmatch.functions(obj):
@@ -418,14 +456,49 @@ def load(paths):
                     continue
                 full = undecorate(symbol)
                 name = norm_name(full)
-                if not name or "<" not in name or name.startswith("?::"):
+                # std::wstring's and std::string's members are written without a
+                # "<", but where a pool string's member is their bytes too, both
+                # names must be in the shape. A free function template written
+                # bare (std::_Copy_opt) stays out: it is often what its caller
+                # inlined, and says nothing of either.
+                string = name and name.startswith(("std::string::", "std::wstring::"))
+                if (
+                    not name
+                    or ("<" not in name and not string)
+                    or name.startswith("?::")
+                ):
                     continue
-                k = libmatch.shape(code, relocs)
-                entry = shapes.setdefault(k, (set(), code, relocs, set()))
-                entry[0].add(name)
-                if element_of(full):
-                    entry[3].add(element_of(full))
+                out.append((symbol, full, code, relocs))
+    return out
+
+
+def load(functions):
+    """{shape: (names, code, relocations, element types)} of read()'s functions."""
+    shapes = {}
+    for _, full, code, relocs in functions:
+        k = libmatch.shape(code, relocs)
+        entry = shapes.setdefault(k, (set(), code, relocs, set()))
+        entry[0].add(norm_name(full))
+        if element_of(full):
+            entry[3].add(element_of(full))
     return shapes
+
+
+def by_targets(functions, body, found):
+    """[(address, name, elements)] of the build's functions whose shape two
+    members share, told apart by what they call (libmatch.by_targets). A pool
+    string's _Grow is std::string's bytes, but it calls the pool's _Copy,
+    whose bytes are its own (2026-11-23)."""
+    lib = [(symbol, code, relocs) for symbol, _, code, relocs in functions]
+    full = {symbol: f for symbol, f, _, _ in functions}
+    placed = libmatch.by_bytes(lib, body)[0]
+    told = libmatch.by_targets(lib, body, placed, ["stl"] * len(lib))
+    have = {va for va, _, _ in found}
+    return [
+        (va, norm_name(full[v[0]]), [element_of(full[v[0]])] if element_of(full[v[0]]) else [])
+        for va, v in sorted(told.items())
+        if va not in have
+    ]  # fmt: skip
 
 
 def match(shapes, body):
@@ -471,14 +544,19 @@ def run_match(argv):
             for r in csv.DictReader(f)
             if r["kind"] == "function" and r["gog-1.05"]
         }
-    found, ambiguous = match(load(libs), libmatch.build_functions(img, sorted(rows)))
+    functions = read(libs)
+    body = libmatch.build_functions(img, sorted(rows))
+    found, ambiguous = match(load(functions), body)
+    told = by_targets(functions, body, found)
+    found += told
+    ambiguous -= len(told)
     new = [(va, n, e) for va, n, e in found if not rows[va]["name"]]
     named = [(va, n) for va, n, _ in found if rows[va]["name"]]
     same = sum(1 for va, n in named if bare(rows[va]["name"]) == bare(n))
     print(
         f"{len(found)} functions of the build are generated code by their bytes: {len(new)} unnamed, "
         f"{same} named the same member, {len(named) - same} named otherwise; "
-        f"{ambiguous} more whose bytes two members share",
+        f"{ambiguous} more whose bytes two members share ({len(told)} told apart by what they call)",
         file=sys.stderr,
     )
     if elements_file:
