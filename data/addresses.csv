@@ -9876,7 +9876,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9875,function,WStringMap<?>::FindValue,"INFERRED name: Find (0x00A5E9F0), then the found node'""'""'s value (+0x28) or 0; ret 4. It was named WStringMap<?>::Find (decomp-agent, read 2026-11-24)",0x005b8060,0x00720650,0x005b8060
 9876,function,SoundManager::GetProjectGroupProperty,"(projectName, groupName, propertyName, int *out) ret 0x10, al result. Finds projectName in the SoundProjectMap at this+0x94 (std::map find 0x00A5E9F0) and, when it is loaded, returns the project's CContentBank_FMOD::GetGroupProperty (vftable 0x00AFF278 slot +0x14, 0x005C2290) with (group, property, out); false when the project is not loaded. It loads nothing: SoundManager::LoadProject 0x005BA220 does, and its one caller CCCreature::ForScript_SetSoundSet calls that first (0x006BD182), then this with L""VO"", L""Disable2DAProbabilities"" (0x006BD1E1). Was LoadSoundSet. Readings: lib-agent-2 and addr-lib-agent, 2026-11-11.",0x005b80b0,0x007206a0,0x005b80b0
 9877,function,WStringMap<?>::ClearAndDeleteValues,"No code of its own: one jmp to the function of the same name at 0x005B7BC0 (ID 9871), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x005b8120,0x00720710,0x005b8120
-9878,function,,,0x005b8130,0x00720720,0x005b8130
+9878,function,WStringMap<?>::Erase,"INFERRED name: __thiscall, ret 4, a pointer to the {iterator, found} result of Find: when found (+8) is set, the map'""'""'s erase (0x00680220) with ecx passed through, then found cleared. PickRandomSoundSetEntry calls it on the sound project'""'""'s map (+0x24) after a Find (decomp-agent, read 2026-11-24)",0x005b8130,0x00720720,0x005b8130
 9879,function,,,0x005b8160,0x00720750,0x005b8160
 9880,function,std::vector<?>::~vector,,0x005b8190,0x005315d0,0x005b8190
 9881,function,,,0x005b81a0,0x004edf20,0x005b81a0
@@ -21845,7 +21845,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21844,function,Animation::AnimationManager::GetEventTime,,0x0080e3f0,0x004b2d20,0x0080e3f0
 21845,function,Animation::AnimationManager::GetMemoryFootprint,,0x0080e6e0,0x004b3010,0x0080e6e0
 21846,function,Animation::AnimationManager::PopEvent,,0x0080e8c0,0x004b32b0,0x0080e8c0
-21847,function,"std::_Tree<std::wstring,RefHandle>::find",,0x0080e910,0x004b3410,0x0080e910
+21847,function,WStringMap<Multithreading::SynchSafePointer<?>>::Find,"WStringMap<?>::Find'""'""'s body (0x00A5E9F0), all 36 instructions: a hidden 12-byte {iterator, found} result, the map'""'""'s find (0x00456F80) on this, found and the iterator set when it is not end; ret 8. Called on TextureManager+4, a WStringMap of SynchSafePointers. It was named std::_Tree<std::wstring,RefHandle>::find (decomp-agent, read 2026-11-24)",0x0080e910,0x004b3410,0x0080e910
 21848,function,"std::_Tree<std::wstring,RefHandle>::_Erase",,0x0080e970,0x007ee090,0x0080e970
 21849,function,,,0x0080ea00,0x004b3500,0x0080ea00
 21850,function,Animation::AnimationManager::ListTreeClips,,0x0080ecf0,0x004b37f0,0x0080ecf0
