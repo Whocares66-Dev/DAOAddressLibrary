@@ -5815,7 +5815,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5814,function,"std::map<unsigned int,Multithreading::SynchSafePointer>::erase",,0x004f44e0,0x007e1b20,0x004f44e0
 5815,function,Multithreading::SynchSafePointerListBase::AddHolder,"Byte-identical copy of ID 5063 (0x004D7360): locks the list's mutex (+0x18), push_backs the holder, and takes a strong count (+0x14) or pulls the object out of the delete queue; the EA build folds both IDs at 0x007E5300.",0x004f45b0,0x007e5300,0x004f45b0
 5816,function,Graphics::MaterialObjectInstance::CreateVector4ArrayProvider,,0x004f4670,0x007e1bf0,0x004f4670
-5817,function,ResourceHandle::operator=,,0x004f4710,0x0071d0b0,0x004f4710
+5817,function,Multithreading::SynchSafePointer<?>::operator=(const Multithreading::SynchSafePointer<?>&),"SynchSafePointer's copy assignment, for a T whose virtual SynchSafePointerListBase is reached through the vbtable at +4: if the targets differ, SynchSafePointerListBase::Remove (0x00538C90) from the old target with the weak byte, copy target (+0) and weak (+4), SynchSafePointerListBase::AddHolder (0x004F45B0) on the new one; returns this, ret 4. 28 of 33 instructions as SynchSafePointer<?>::operator=_copy (0x004D74A0), whose T's base is at +0xC. It was named ResourceHandle::operator=, a name nothing in the exe has (decomp-agent, read 2026-11-23)",0x004f4710,0x0071d0b0,0x004f4710
 5818,function,Graphics::MaterialObjectInstance::SetLightmapOffsetAndScale,,0x004f4760,0x007e1c90,0x004f4760
 5819,function,Graphics::MaterialObjectInstance::SetVector4ArrayParameter,,0x004f4780,0x007e1cb0,0x004f4780
 5820,function,Graphics::SetMaterialOpacity,,0x004f4900,0x007e1e30,0x004f4900
@@ -5824,7 +5824,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5823,function,Graphics::MaterialObjectInstance::ClearParameters,,0x004f4a60,0x007e1f90,0x004f4a60
 5824,function,Graphics::MaterialObjectInstance::RenderPasses,,0x004f4ac0,0x007e1ff0,0x004f4ac0
 5825,function,Graphics::MaterialStateOverride::PassBinding::PassBinding,,0x004f4bc0,0x007e20f0,0x004f4bc0
-5826,function,"std::map<unsigned int,ResourceHandle>::~map",,0x004f4be0,0x007e2110,0x004f4be0
+5826,function,"std::map<unsigned int,Multithreading::SynchSafePointer<?>>::~map",,0x004f4be0,0x007e2110,0x004f4be0
 5827,function,Graphics::MaterialPassStateArray::MaterialPassStateArray,,0x004f4c20,0x007e2150,0x004f4c20
 5828,function,Graphics::MaterialObjectInstance::RemoveTextureParameter,,0x004f4cc0,0x007e21f0,0x004f4cc0
 5829,function,Graphics::MaterialStateOverride::MaterialStateOverride,,0x004f4d20,0x007e2250,0x004f4d20
@@ -5844,7 +5844,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5843,function,"std::map<?,?>::insert",,0x004f5a30,0x007e2f60,0x004f5a30
 5844,function,"std::map<unsigned int,Multithreading::SynchSafePointer>::operator[]",,0x004f5bf0,0x007e3120,0x004f5bf0
 5845,function,Graphics::MaterialObjectInstance::SetTextureParameter,,0x004f5ce0,0x007e3210,0x004f5ce0
-5846,function,Graphics::MaterialObjectInstance::SetTextureParameterFromHandle,"If the given ResourceHandle holds a texture, turns the parameter name into an id (MaterialParameterNames::GetOrAddId) and assigns the handle into the texture map; INFERRED the name since 5845 is the by-name overload.",0x004f5d80,0x007e32b0,0x004f5d80
+5846,function,Graphics::MaterialObjectInstance::SetTextureParameterFromHandle,"If the given Multithreading::SynchSafePointer<?> holds a texture, turns the parameter name into an id (MaterialParameterNames::GetOrAddId) and assigns the handle into the texture map; INFERRED the name since 5845 is the by-name overload.",0x004f5d80,0x007e32b0,0x004f5d80
 5847,function,Graphics::MaterialObjectInstance::GetTextureParameter,,0x004f5dc0,0x007e32f0,0x004f5dc0
 5848,function,Graphics::MaterialObjectInstance::CopyParametersFrom,,0x004f5e30,0x007e3360,0x004f5e30
 5849,function,Graphics::MaterialObjectInstance::ApplyDeclaredTextures,,0x004f6310,0x007e3840,0x004f6310
@@ -100613,11 +100613,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100612,data,g_primitiveBoxVertexBuffer,Pointer: CreateBoxDeviceMesh 0x00556a40 stores its vertex buffer (0x00556bbc); released by ShutdownPrimitives (0x00556cb6-0x00556cc9). Role read by the parallel with the sphere.,0x00c31ab0,0x00c232c8,0x00c31ab0
 100613,data,g_primitiveSphereIndexBuffer,"Pointer: CreateSphereDeviceMesh 0x005568c0 stores the index buffer made by driver vtable +0x58 (0x005569fa, 2-byte indices); released by ShutdownPrimitives (0x00556ccf-0x00556ce2).",0x00c31ab4,0x00c232cc,0x00c31ab4
 100614,data,g_primitiveBoxIndexBuffer,Pointer: CreateBoxDeviceMesh 0x00556a40 stores its index buffer (0x00556c18); released by ShutdownPrimitives (0x00556ce8-0x00556cfb). Role read by the parallel with the sphere.,0x00c31ab8,0x00c232d0,0x00c31ab8
-100615,data,g_primitiveBoxMesh,"ResourceHandle (8 bytes, ResourceHandle::operator= 0x004f4710): InitializePrimitives 0x005590e0 assigns the result of CreateBoxMesh 0x00558af0 (0x00559129); constructed at startup by 0x00ACF7D0, destroyed by 0x00AD5E10; SetPrimitiveMaterialFlags and CreateBoxPrimitive 0x00559260 apply the material to it.",0x00c31abc,0x00c232d4,0x00c31abc
-100616,data,g_primitiveSphereMesh,"ResourceHandle (8 bytes) assigned from CreateSphereMesh 0x00558fe0 by InitializePrimitives (0x005591e0); startup initializer 0x00ACF7F0, destructor 0x00AD5E20.",0x00c31ac4,0x00c232dc,0x00c31ac4
-100617,data,g_primitiveCylinderMesh,"ResourceHandle (8 bytes) assigned from CreateCylinderMesh 0x00558d20 by InitializePrimitives (0x00559186); startup initializer 0x00ACF810, destructor 0x00AD5E30.",0x00c31acc,0x00c232e4,0x00c31acc
-100618,data,g_primitiveCapsuleMesh,"ResourceHandle (8 bytes) assigned from CreateCapsuleMesh 0x00557b50 by InitializePrimitives (0x005591b3); startup initializer 0x00ACF830, destructor 0x00AD5E40.",0x00c31ad4,0x00c232ec,0x00c31ad4
-100619,data,g_primitiveConeMesh,"ResourceHandle (8 bytes) assigned from CreateConeMesh 0x00558b20 by InitializePrimitives (0x00559159); startup initializer 0x00ACF850, destructor 0x00AD5E50.",0x00c31adc,0x00c232f4,0x00c31adc
+100615,data,g_primitiveBoxMesh,"Multithreading::SynchSafePointer<?> (8 bytes, SynchSafePointer<?>::operator= 0x004f4710): InitializePrimitives 0x005590e0 assigns the result of CreateBoxMesh 0x00558af0 (0x00559129); constructed at startup by 0x00ACF7D0, destroyed by 0x00AD5E10; SetPrimitiveMaterialFlags and CreateBoxPrimitive 0x00559260 apply the material to it.",0x00c31abc,0x00c232d4,0x00c31abc
+100616,data,g_primitiveSphereMesh,"Multithreading::SynchSafePointer<?> (8 bytes) assigned from CreateSphereMesh 0x00558fe0 by InitializePrimitives (0x005591e0); startup initializer 0x00ACF7F0, destructor 0x00AD5E20.",0x00c31ac4,0x00c232dc,0x00c31ac4
+100617,data,g_primitiveCylinderMesh,"Multithreading::SynchSafePointer<?> (8 bytes) assigned from CreateCylinderMesh 0x00558d20 by InitializePrimitives (0x00559186); startup initializer 0x00ACF810, destructor 0x00AD5E30.",0x00c31acc,0x00c232e4,0x00c31acc
+100618,data,g_primitiveCapsuleMesh,"Multithreading::SynchSafePointer<?> (8 bytes) assigned from CreateCapsuleMesh 0x00557b50 by InitializePrimitives (0x005591b3); startup initializer 0x00ACF830, destructor 0x00AD5E40.",0x00c31ad4,0x00c232ec,0x00c31ad4
+100619,data,g_primitiveConeMesh,"Multithreading::SynchSafePointer<?> (8 bytes) assigned from CreateConeMesh 0x00558b20 by InitializePrimitives (0x00559159); startup initializer 0x00ACF850, destructor 0x00AD5E50.",0x00c31adc,0x00c232f4,0x00c31adc
 100620,data,g_primitiveColor,Three floats (12 bytes copied by the Vector3 copy 0x00933d70): SetPrimitiveColor 0x00555890 overwrites it (0x00555895) and InitializePrimitives sets its default (0x00559222); CreateBoxPrimitive (0x005595bc) and CreateTriangleMeshPrimitive (0x00559b3a) push its address as the colour of a new primitive.,0x00c31ae4,0x00c232fc,0x00c31ae4
 100621,data,,,0x00c31af0,0x00c23308,0x00c31af0
 100622,data,ECBase::ECDynArray<GraphicsStructures::ObjectNodeBlueprint*>::s_default,"Null pointer fallback for the child-blueprint array of an ObjectNodeBlueprint (GetTreeSize 0x00571570 at 0x005715c8, UpdateNodeTree, ComputeBindMatrices, ~ObjectNodeBlueprint and the 17 kinds' Instantiate functions); element type INFERRED.",0x00c31af4,0x00c2330c,0x00c31af4
@@ -103318,7 +103318,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 103317,function,"stdext::hash_map<std::wstring,void *>::operator[]",,0x0084a670,0x0048cf90,0x0084a670
 103318,function,"std::_Tree<std::wstring,RefHandle>::_Erase",,0x0080e970,0x004b3470,0x0080e970
 103319,function,,,0x0080f090,0x004b3b90,0x0080f090
-103320,function,ResourceHandle::operator=,,0x004f4710,0x004b3fa0,0x004f4710
+103320,function,Multithreading::SynchSafePointer<?>::operator=(const Multithreading::SynchSafePointer<?>&),,0x004f4710,0x004b3fa0,0x004f4710
 103321,function,"std::_Tree<std::wstring,RefHandle>::~_Tree",,0x00810080,0x004b4ca0,0x00810080
 103322,function,Stub::CopyConstruct_WString_Handle_0x1C,,0x00458ab0,0x004b4ce0,0x00458ab0
 103323,function,"std::map<std::wstring,?>::_Buynode",,0x00810170,0x004b5000,0x00810170
