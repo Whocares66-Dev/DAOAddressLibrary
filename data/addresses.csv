@@ -5153,7 +5153,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5152,function,Gff4::TranslateStructType,,0x004da870,0x0082d7f0,0x004da870
 5153,function,Gff4::GetTypeLayout,,0x004da8e0,0x0082d860,0x004da8e0
 5154,function,Gff4::File::NewBlock,,0x004da9b0,0x0082d930,0x004da9b0
-5155,function,Gff4::File::GetRootRef,,0x004daaa0,0x0082da20,0x004daaa0
+5155,function,Gff4::RootedFile::GetRootRef,"Reads RootedFile'""'""'s rootBlock (+0x30, 0x004DAABB), past Gff4::File'""'""'s 0x2C bytes; ret 4. It was named Gff4::File::GetRootRef (decomp-agent, read 2026-11-24)",0x004daaa0,0x0082da20,0x004daaa0
 5156,function,Gff4::File::FindTemplateByLabel,"No code of its own: one jmp to the function of the same name at 0x004DA6B0 (ID 5149), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x004daae0,0x0082da60,0x004daae0
 5157,function,Gff4::File::GetTypeAlignmentFwd,,0x004daaf0,0x0082da70,0x004daaf0
 5158,function,Gff4::File::GetTypeSizeFwd,,0x004dab10,0x0082da90,0x004dab10
@@ -5173,7 +5173,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5172,function,"std::_Insertion_sort<Gff4::Field *,Gff4::File::FieldLess>",,0x004db3d0,0x0082e1c0,0x004db3d0
 5173,function,"std::_Med3<Gff4::Field *,Gff4::File::FieldLess>",,0x004db470,0x0082e260,0x004db470
 5174,function,"std::_Push_heap<Gff4::Field *,int,Gff4::Field,Gff4::File::FieldLess>",,0x004db520,0x0082e310,0x004db520
-5175,function,Gff4::File::IsRootBlockValid,,0x004db5b0,0x0082e3a0,0x004db5b0
+5175,function,Gff4::RootedFile::IsRootBlockValid,"mov eax,[ecx+0x30], then 0x004DB100 with it: reads RootedFile'""'""'s rootBlock (+0x30), past Gff4::File'""'""'s 0x2C bytes, so RootedFile'""'""'s. It was named Gff4::File::IsRootBlockValid (decomp-agent, read 2026-11-24)",0x004db5b0,0x0082e3a0,0x004db5b0
 5176,function,,,0x004db5c0,0x0082e3b0,0x004db5c0
 5177,function,"std::map<?,?>::insert",,0x004db640,0x006e0ef0,0x004db640
 5178,function,,,0x004db700,0x0082e430,0x004db700
@@ -5202,9 +5202,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5201,function,,,0x004dc3a0,0x004b8920,0x004dc3a0
 5202,function,,,0x004dc3f9,0x004b8979,0x004dc3f9
 5203,function,Gff4::Block::Clear,"frees a block's data and clears and frees its child blocks recursively, then empties the child map",0x004dc430,0x0082ec90,0x004dc430
-5204,function,,,0x004dc530,0x0082ed90,0x004dc530
-5205,function,,,0x004dc680,0x0082eee0,0x004dc680
-5206,function,,,0x004dc750,0x0082efb0,0x004dc750
+5204,function,Gff4::Block::SetChild,"INFERRED name: makes the block'""'""'s children map (+0x14) if it has none (operator new, 0x004DC000), looks the key up (Map<unsigned int,?>::TryFind 0x004F2F00), frees a child already there (0x004DC430) and stores the new one (decomp-agent, read 2026-11-24)",0x004dc530,0x0082ed90,0x004dc530
+5205,function,Gff4::Block::RemoveChild,"INFERRED name: looks the key up in the children map (+0x14, TryFind 0x004F2F00); when found, frees that child (0x004DC430) and erases the entry (0x00680220) (decomp-agent, read 2026-11-24)",0x004dc680,0x0082eee0,0x004dc680
+5206,function,Gff4::Block::ResizeData,"INFERRED name: allocates a new buffer, copies the old bytes and clears the rest (0x008E19E0, 0x008E3030), stores the new size (+0xC) and buffer (+0x10) and frees the old one (decomp-agent, read 2026-11-24)",0x004dc750,0x0082efb0,0x004dc750
 5207,function,,,0x004dc930,0x0082f190,0x004dc930
 5208,retired,,,,,
 5209,function,Gff4::File::ConvertToType,,0x004dcb70,0x0082f3d0,0x004dcb70
@@ -5245,7 +5245,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5244,function,Gff4::RootedFile::CommitRootBlock,,0x004deb60,0x00830dd0,0x004deb60
 5245,function,std::vector<Gff4::Template>::push_back,,0x004dec40,0x004b94c0,0x004dec40
 5246,function,ECBase::ECDynArray<Gff4::Template>::ECDynArray(unsigned int),,0x004decd0,0x0081fa40,0x004decd0
-5247,function,std::vector<Gff4::Template>::_Tidy,,0x004ded50,0x00830eb0,0x004ded50
+5247,function,ECBase::ECDynArray<Gff4::Template>::Clear,"ECDynArray'""'""'s Clear(bool): a byte argument (0x004DED78) chooses between the vector'""'""'s _Tidy (0x004DC300) and erase-then-swap; ret 4; the shape of ECDynArray<unsigned int>::Clear (0x00634F20). File::Reset calls it. It was named std::vector<Gff4::Template>::_Tidy (decomp-agent, read 2026-11-24)",0x004ded50,0x00830eb0,0x004ded50
 5248,function,Gff4::File::File,,0x004dee40,0x00830fa0,0x004dee40
 5249,function,Gff4::File::Reset,,0x004def00,0x00831060,0x004def00
 5250,function,Gff4::File::ReadTemplates,,0x004def20,0x00831080,0x004def20
