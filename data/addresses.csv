@@ -5980,7 +5980,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5979,function,Graphics::MaterialStateManager::BeginState,,0x004fbb30,0x007ec7b0,0x004fbb30
 5980,function,Graphics::MaterialStateManager::LoadDefaults,,0x004fbbd0,0x007ec850,0x004fbbd0
 5981,function,Graphics::MaterialStateManager::GetMemoryFootprint,,0x004fbe30,0x007ecab0,0x004fbe30
-5982,function,std::vector<Graphics::MaterialSamplerState>::GetRange,,0x004fbee0,0x007ecb60,0x004fbee0
+5982,function,ECBase::ECDynArray<Graphics::MaterialSamplerState>::GetRange,"MaterialState::ApplyState (0x004FBFF0) calls it with ecx = MaterialState+0x38, its samplerStates ECDynArray; std::vector has no GetRange. It was named std::vector<Graphics::MaterialSamplerState>::GetRange (decomp-agent, read 2026-11-24)",0x004fbee0,0x007ecb60,0x004fbee0
 5983,function,ECBase::ECDynArray<Multithreading::SynchSafePointer<Graphics::MaterialState>>::Back,"Returns the last 8-byte element (end-8) or, when empty, the vector's default 0x00C31008 (row 100361, released at exit by SynchSafePointer::Release 0x00AD5A45); its one caller is Graphics::MaterialStateManager::Register (0x004FC6EA), straight after push_back, so it's back, not At.",0x004fbf90,0x007ecc10,0x004fbf90
 5984,function,Graphics::MaterialStateManager::ApplyState,,0x004fbff0,0x007eccd0,0x004fbff0
 5985,function,Graphics::MaterialStateManager::SetState,,0x004fc2c0,0x007ecfa0,0x004fc2c0
@@ -9512,12 +9512,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9511,function,GraphicsStructures::PHYToXMLBuilder::PopNode,,0x005ae990,0x007ae500,0x005ae990
 9512,function,GraphicsStructures::PHYToXMLBuilder::PHYToXMLBuilder,,0x005aea10,0x007ae580,0x005aea10
 9513,function,GraphicsStructures::PHYToXMLBuilder::BeginNode,,0x005aead0,0x007ae640,0x005aead0
-9514,function,GraphicsStructures::PHYToXMLBuilder::EndNode,,0x005aeb60,0x007ae740,0x005aeb60
+9514,function,GraphicsStructures::PHYToXMLBuilder::EndNode,"Slots 6 and 12 of PHYBuilder's table, one body here, popping the open XML element: slot 6 is EndNode (PHYToBlueprintBuilder's 0x005B0370) and slot 12 EndCollisionObject (its 0x005B00D0), a fold (decomp-agent, 2026-11-24)",0x005aeb60,0x007ae740,0x005aeb60
 9515,function,GraphicsStructures::PHYToXMLBuilder::BeginCollisionObject,,0x005aeb70,0x007ae6d0,0x005aeb70
 9516,function,GraphicsStructures::PHYToXMLBuilder::BeginShape,,0x005aebe0,0x007ae750,0x005aebe0
-9517,function,GraphicsStructures::PHYToXMLBuilder::EndShape,,0x005aec60,0x007ae7d0,0x005aec60
+9517,function,GraphicsStructures::PHYToXMLBuilder::AddShape,"Slots 29 and 30 of PHYBuilder's table (AddShape, CancelShape), one body here: both pop the open XML element. PHYToBlueprintBuilder's slot 29 registers the shape (Eclipse::IGraphicsInternal::RegisterObject) and its slot 30 drops it. It was named PHYToXMLBuilder::EndShape (decomp-agent, 2026-11-24)",0x005aec60,0x007ae7d0,0x005aec60
 9518,function,GraphicsStructures::PHYToXMLBuilder::BeginJoint,,0x005aec70,0x007ae7e0,0x005aec70
-9519,function,GraphicsStructures::PHYToXMLBuilder::EndJoint,,0x005aecf0,0x007ae860,0x005aecf0
+9519,function,GraphicsStructures::PHYToXMLBuilder::AddJoint,"Slots 40 and 41 of PHYBuilder's table (AddJoint, CancelJoint), one body here, popping the open XML element. PHYToBlueprintBuilder's slot 40 calls Physics::RigidBodyPrototype::AddJoint. It was named PHYToXMLBuilder::EndJoint (decomp-agent, 2026-11-24)",0x005aecf0,0x007ae860,0x005aecf0
 9520,function,GraphicsStructures::PHYToXMLBuilder::GetBlueprint,,0x005aed00,0x007ae870,0x005aed00
 9521,function,GraphicsStructures::PHYToBlueprintBuilder::GetXml,,0x005aed20,0x007ae890,0x005aed20
 9522,function,GraphicsStructures::PHYToBlueprintBuilder::BeginCollisionObject,,0x005aed30,0x007ae8a0,0x005aed30
@@ -23746,10 +23746,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23745,function,D3DDriver::D3DVertexStreamDriver::D3DVertexStreamDriver,"Wraps a native vertex buffer: stores its size, the buffer, a CPU shadow copy (copied from the initial data or zeroed), the usage mode (0/1/2 from two flags) and registers as a D3DResetable (0x0086DFD0); the buffer itself is made by the CreateVertexStream path (0x008687B0, device CreateVertexBuffer).",0x00870330,0x00476240,0x00870330
 23746,function,D3DDriver::D3DVertexStreamDriver::`scalar deleting destructor',Runs the destructor (0x00870260: releases the native buffer at +0x30 and frees the shadow copy at +0x38) and frees the object if the delete flag is set.,0x00870440,0x00476350,0x00870440
 23747,function,std::set<unsigned int>::find,,0x00870460,0x0049a2b0,0x00870460
-23748,function,std::set<unsigned int>::Contains,,0x008704d0,0x00476370,0x008704d0
+23748,function,ECBase::ECSet<unsigned int>::Contains,"thiscall on a std::set<unsigned int> (head at +4): the tree's find 0x00870460, compared with the head. std::set has no Contains, so the receiver is an engine class over the set; ECSet is an INFERRED name, after ECDeque. Graphics::MemoryFootprintTally uses it. It was named std::set<unsigned int>::Contains (decomp-agent, read 2026-11-24)",0x008704d0,0x00476370,0x008704d0
 23749,function,,,0x00870510,0x0049c240,0x00870510
 23750,function,,,0x00870710,0x0049cd10,0x00870710
-23751,function,std::set<unsigned int>::Insert,,0x00870780,0x0049f130,0x00870780
+23751,function,ECBase::ECSet<unsigned int>::Insert,"ecx passed straight to the tree's insert 0x00870710, its returned pair dropped; ret 4. Contains's (0x008704D0) class; ECSet is an INFERRED name. It was named std::set<unsigned int>::Insert (decomp-agent, read 2026-11-24)",0x00870780,0x0049f130,0x00870780
 23752,function,Graphics::MemoryFootprintTally::Add,,0x008707a0,0x004763b0,0x008707a0
 23753,function,D3DDriver::D3DVertexStreamDriver::CollectResourceFootprint,Adds this stream to the memory tally (MemoryFootprintTally::Add 0x008707A0) with its native buffer (+0x30) and size (+0x1C); the same slot as Texture::CollectResourceFootprint.,0x00870810,0x00476420,0x00870810
 23754,function,D3DDriver::D3DIndexStreamDriver::CollectResourceFootprint,The index stream does the same with its native buffer at +0x34 and size at +0x1C.,0x00870830,0x00476440,0x00870830
