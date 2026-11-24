@@ -5911,7 +5911,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5910,retired,,,,,
 5911,function,Graphics::ProvideTextureParameter,,0x004f8ce0,0x007efaf0,0x004f8ce0
 5912,retired,,,,,
-5913,function,Core::VectorAtOrDefault<void *>,,0x004f8dc0,0x007efbd0,0x004f8dc0
+5913,function,ECBase::ECDynArray<?>::At,"__thiscall, ret 4: the address of element [i] of an array of 4-byte elements (begin +4, end +8), or of its s_default 0x00C30994 when i is out of range: ECDynArray's element-or-default, as ECDynArray<CSAreaList::Entry>::At (0x005FE590). One caller, Graphics::ProvideVector4Parameter (0x004F8EDB). Element type not known; not ObjectNode*, whose s_default is 0x00C319A8 (read 2026-11-23)",0x004f8dc0,0x007efbd0,0x004f8dc0
 5914,function,Graphics::ProvideVector4Parameter,,0x004f8df0,0x007efc00,0x004f8df0
 5915,function,Graphics::ProvideRemoteMaterialParams,,0x004f8f50,0x007efd60,0x004f8f50
 5916,function,Graphics::ProvideShaderParameter,,0x004f9250,0x007f0060,0x004f9250
@@ -100338,7 +100338,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100337,data,Graphics::MaterialManager::s_defaultMaterialName,"A std::wstring (0x1C bytes) 'Default_Missing.mat' (wide string 0x00AF3004, built by 0x00ACF020): the material LoadMaterial and GetMaterial fall back to (LoadMaterial 0x004F81C8, GetMaterial 0x004F843E; destroyed by 0x00AD59D0).",0x00c30974,0x00c23cdc,0x00c30974
 100338,data,,,0x00c30988,0x00c23cf0,0x00c30988
 100339,data,g_lastAppliedMaterialPass,,0x00c30990,0x00c24634,0x00c30990
-100340,data,Core::VectorAtOrDefault<void *>::s_default,A pointer slot returned by Core::VectorAtOrDefault<void*> 0x004F8DC0 for an out-of-range index; Graphics::ProvideTextureParameter 0x004F8DE5 uses it and Object::RegisterBoneNode 0x00546DC9 even stores into it on its out-of-range path.,0x00c30994,0x00c23000,0x00c30994
+100340,data,ECBase::ECDynArray<?>::s_default,"ECDynArray<?>::At's (0x004F8DC0) fallback for an index out of range: a 4-byte slot, likely a pointer; Object::RegisterBoneNode's inlined bounds-checked store (0x00546DC9) writes into it on its out-of-range path, as ECDynArray's operator[] does. Element type not known (decomp-agent, read 2026-11-23)",0x00c30994,0x00c23000,0x00c30994
 100341,data,Graphics::ProvideRemoteMaterialParams::s_constants,function static vector of 2 float4 shader constants,0x00c30998,0x00c24638,0x00c30998
 100342,data,,,0x00c3099c,0x00c2463c,0x00c3099c
 100343,data,,,0x00c309a0,0x00c24640,0x00c309a0
