@@ -5649,7 +5649,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5648,function,M2DA::GetBoolByIndices,,0x004ec4d0,0x0083a3b0,0x004ec4d0
 5649,function,M2DA::GetCellTypeByIndices,,0x004ec580,0x0083a460,0x004ec580
 5650,function,ECBase::ECDynArray<Gff4::StructReader>::ECDynArray(unsigned int),,0x004ec630,0x0083a580,0x004ec630
-5651,function,std::vector<Gff4::StructReader>::_Tidy,,0x004ec6b0,0x0083a680,0x004ec6b0
+5651,function,ECBase::ECDynArray<Gff4::StructReader>::Clear(bool),"ret 4 with a bool tested at entry (0x004EC6D8), where VC8's vector::_Tidy takes nothing: the engine array's Clear(bool), as ECDynArray<SynchSafePointer<?>>::Clear(bool) (0x004F7F00). M2DA::Clear calls it with push 1 on its row array +0x20 (0x004EC8DB..0x004EC8E0). It was named std::vector<Gff4::StructReader>::_Tidy (decomp-agent, read 2026-11-24)",0x004ec6b0,0x0083a680,0x004ec6b0
 5652,function,M2DA::M2DA,,0x004ec7a0,0x0083a780,0x004ec7a0
 5653,function,M2DA::M2DA,,0x004ec830,0x0083a810,0x004ec830
 5654,function,M2DA::Clear,,0x004ec8c0,0x0083a8a0,0x004ec8c0
@@ -12613,7 +12613,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12612,function,std::vector<GameModeRequest>::vector(const std::vector<GameModeRequest>&),,0x00640ff0,0x00536ed0,0x00640ff0
 12613,function,GameModeController::GameModeController(const GameModeController&),,0x00641050,0x00537020,0x00641050
 12614,function,std::vector<GameModeRequest>::vector,,0x006411a0,0x00537170,0x006411a0
-12615,function,GameModeController::InsertRequest,,0x00641220,0x0083a600,0x00641220
+12615,function,ECBase::ECDynArray<GameModeRequest>::InsertAt,"ecx is the array: GameModeController::SetGameMode calls it on its requestQueue (+0x9C, 0x006415B6) and M2DA::InsertRowForId on its row array (0x004EC9EC); index shl 4 (16-byte elements), then the vector's insert 0x00601580; ret 8 (index, element). Placed beside ECDynArray<GameModeRequest>'s constructor and Clear; the StructReader array's is a fold. It was named GameModeController::InsertRequest (decomp-agent, read 2026-11-24)",0x00641220,0x0083a600,0x00641220
 12616,function,ECBase::ECDynArray<GameModeRequest>::Clear,"__thiscall, ret 4, a bool tested at entry (0x006412CB): ECDynArray's Clear, the same steps as ECDynArray<unsigned int>::Clear (0x00634F20) with its registers allocated differently. VC8's vector::clear takes no argument (decomp-agent, read 2026-11-24)",0x006412a0,0x005371f0,0x006412a0
 12617,function,GameModeController::GameModeController,,0x00641370,0x005372c0,0x00641370
 12618,function,GameModeController::SetGameMode,"Files a request for a mode. The arguments are the mode number, the force flag and the data object. If the requested mode's slot 0x28 (IsBaseMode, 0x006414DD) answers true the request is stored in the base slot at +0x8C (0x00641666), replacing the old one, and the saving flags of the mode (+0x68) are applied; otherwise it is inserted at index 0 of the queue at +0x9C (InsertRequest 0x00641220 called at 0x006415B6) (the loop before it, 0x00641534..0x006415A7, walks the queued requests and was not read further). The request's second field is GetGameMode() at the time of the call",0x006414a0,0x005373f0,0x006414a0
