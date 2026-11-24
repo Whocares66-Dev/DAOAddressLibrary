@@ -6150,7 +6150,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6149,function,"std::map<unsigned int,ECBase::ECDynArray<Math::Float4>>::_Insert","Links a new node (6145) under the given parent, left or right, and rebalances; throws length_error past 0x0CCCCCCB elements",0x00501850,0x007e9a20,0x00501850
 6150,function,Graphics::MaterialObject::ClearParameters,,0x00501a50,0x007e9c20,0x00501a50
 6151,function,"Map<unsigned int,ECBase::ECDynArray<Math::Float4>>::_Tidy",,0x00501cc0,0x007e9e90,0x00501cc0
-6152,function,"Map<unsigned int,ECBase::ECDynArray<Math::Float4>>::_Copy",,0x00501d00,0x007e9ed0,0x00501d00
+6152,function,"std::_Tree<std::map<unsigned int,ECBase::ECDynArray<Math::Float4>>>::_Copy","The tree's recursive node copy, which Map<unsigned int,ECDynArray<Float4>>::operator= (0x005026F0) calls: std::map's own _Tree::_Copy, not a member of the engine's Map. It was named Map<unsigned int,ECBase::ECDynArray<Math::Float4>>::_Copy (decomp-agent, 2026-11-24)",0x00501d00,0x007e9ed0,0x00501d00
 6153,function,"std::map<unsigned int,Multithreading::SynchSafePointer>::_Copy","Copies a subtree recursively; its nodes hold a SynchSafePointer (0x1C-byte nodes, isnil +0x19), not this file's Map's",0x00501d80,0x007e9f50,0x00501d80
 6154,retired,,,,,
 6155,function,"std::map<unsigned int,ECBase::ECDynArray<Math::Float4>>::insert","insert(value): finds the place by key (unsigned compare, 0x00501E64) and inserts with _Insert unless the key is there; returns pair<iterator,bool>",0x00501e40,0x007ea010,0x00501e40
@@ -21309,7 +21309,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21308,function,Conversation::MakeLineCutscene,"Builds a line's CutscenePlayer from the line's .cut resref or its inline cut (named StringID_<id>.___); SetBlockingLoad; with stage-at-current-location, sets the stage speaker and releases every other participant",0x007f0960,0x006da050,0x007f0960
 21309,function,Conversation::WasLineSeenInGame,,0x007f0c80,0x006da370,0x007f0c80
 21310,function,Conversation::IsLineAvailable,,0x007f0d30,0x006da420,0x007f0d30
-21311,function,std::vector<Conversation::Participant>::erase,,0x007f0e80,0x006da570,0x007f0e80
+21311,function,ECBase::ECDynArray<Conversation::Participant>::RemoveAt,"ret 4, one stack argument, an index: Conversation's RemoveParticipant and RemoveMarkedParticipants pass the participant's index, where vector::erase takes iterators. It was named std::vector<Conversation::Participant>::erase (decomp-agent, read 2026-11-24)",0x007f0e80,0x006da570,0x007f0e80
 21312,function,Conversation::~Conversation,,0x007f0f50,0x006da640,0x007f0f50
 21313,function,Conversation::FirstAvailable,,0x007f1100,0x006da7f0,0x007f1100
 21314,function,Conversation::FirstAvailableReply,,0x007f11f0,0x006da8e0,0x007f11f0
@@ -27587,7 +27587,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 27586,function,GASTextFieldProto::getExactCharBoundaries,"Native of ActionScript's getExactCharBoundaries: the name/function table at 0x00B49470, which GASTextFieldProto's constructor installs, pairs it with ""getExactCharBoundaries"" (2026-11-20).",0x00924c60,0x008fc3b0,0x00924c60
 27587,function,,,0x00924dd0,0x008fc520,0x00924dd0
 27588,function,GASTextFieldProto::setIMECompositionStringStyle,"Native of ActionScript's setIMECompositionStringStyle: the name/function table at 0x00B49470, which GASTextFieldProto's constructor installs, pairs it with ""setIMECompositionStringStyle"" (2026-11-20).",0x00924e20,0x008fc570,0x00924e20
-27589,function,GFxFileOpener::OpenFileEx,"The same GOG body as ID 26930 (0x0090CFC0), which the linker folded there; EA keeps it apart. Its name follows 26930's (2026-11-24)",0x00924f90,0x0090cfc0,0x00924f90
+27589,function,,,0x00924f90,0x0090cfc0,0x00924f90
 27590,function,,,0x00924ff0,0x008fc6e0,0x00924ff0
 27591,function,,,0x00925040,0x008fc730,0x00925040
 27592,function,,,0x00925120,0x008fc810,0x00925120
@@ -27930,7 +27930,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 27929,function,,,0x00935490,0x0090cca0,0x00935490
 27930,retired,,,,,
 27931,function,,,0x00935650,0x0090ce60,0x00935650
-27932,function,GFxLog::LogMessageVarg,"The same GOG body as ID 26927 (0x0090CED0), which the linker folded there; EA keeps it apart. Its name follows 26927's (2026-11-24)",0x009356c0,0x0090ced0,0x009356c0
+27932,function,,,0x009356c0,0x0090ced0,0x009356c0
 27933,function,,,0x00935740,0x0090cf50,0x00935740
 27934,function,,,0x009357b0,0x0090d020,0x009357b0
 27935,function,,,0x00935810,0x0090d0d0,0x00935810
