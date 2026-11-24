@@ -4502,12 +4502,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4501,function,ECBase::ECString::operator!=,"__thiscall, ret 4: the argument string against this, compare(0, size(), other) through std::wstring::compare (ID 431), returning 1 when they differ; read by paragon-agent in the options apply path",0x004c0e50,0x00802c80,0x004c0e50
 4502,function,,,0x004c0e80,0x00802cb0,0x004c0e80
 4503,function,ECBase::ECString::EndsWith,,0x004c0ec0,0x00802cf0,0x004c0ec0
-4504,function,,,0x004c0f10,0x00802d40,0x004c0f10
+4504,function,ECBase::ECString::EndsWithNoCase,"INFERRED name: __thiscall, ret 8 (suffix, count): EndsWith'""'""'s frame (0x004C0EC0; false when either length is below count), then WideEqualNoCase (0x004C0350) over the last count characters (decomp-agent, read 2026-11-24)",0x004c0f10,0x00802d40,0x004c0f10
 4505,function,"ECBase::ECString::find(const ECBase::ECString&,unsigned int)","__thiscall, ret 8: a pos past this string's end is npos, else find(other's chars, pos, other's size) (0x004C03F0). VC8's find(const basic_string&, pos) checks nothing itself and is inline: ECString's own, among its null-to-s_emptyChars siblings (0x004C1030, 0x004C36C0)",0x004c0f70,0x00802da0,0x004c0f70
 4506,function,ECBase::ECString::Find,,0x004c0fb0,0x00802de0,0x004c0fb0
 4507,function,"ECBase::ECString::find(wchar_t,unsigned int)","__thiscall, ret 8: (ch, pos): a pos past this string's end is npos, else find(&ch, pos, 1) (0x004C03F0). VC8's find(ch, pos) checks nothing itself: ECString's own, as 0x004C0F70",0x004c1000,0x00802e30,0x004c1000
 4508,function,ECBase::ECString::rfind(const wchar_t*),"__thiscall, ret 4: a null argument read as ECString::s_emptyChars (0x00C2BDFC), then rfind(text, npos, length) (0x004C04C0): ECString's own",0x004c1030,0x00802e60,0x004c1030
-4509,function,std::wstring::rfind,"std::wstring::rfind(wchar_t): stores the character on the stack and calls the pointer form 0x004C04C0 with the address, npos (-1) and length 1; ret 4.",0x004c1070,0x00802ea0,0x004c1070
+4509,function,ECBase::ECString::rfind(wchar_t),"__thiscall, ret 4: one stack argument, the character, then rfind(&ch, npos, 1) (0x004C04C0). VC8'""'""'s basic_string::rfind(_Elem, size_type _Off = npos) takes two, its default pushed by the caller, so a one-argument rfind is ECString'""'""'s own (decomp-agent, read 2026-11-24)",0x004c1070,0x00802ea0,0x004c1070
 4510,function,,,0x004c1090,0x00802ec0,0x004c1090
 4511,function,,,0x004c10c0,0x00802ef0,0x004c10c0
 4512,function,,,0x004c10f0,0x00802f20,0x004c10f0
@@ -4581,7 +4581,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4580,function,ECBase::ECString::ECString(const char*),"__thiscall, ret 4: an empty string, a null or empty argument left so; otherwise the narrow text into a pool char string (assign 0x004C1750) widened into this through 0x004C4090. std::basic_string<wchar_t> has no constructor from const char*: ECString's own",0x004c4140,0x00805670,0x004c4140
 4581,function,ECBase::ECString::ECString,Widens a counted narrow string: builds a temporary std::string (0x004C1750) and replaces this with it through 0x004C4090. INFERRED name from shape; callers read files and responses.,0x004c42b0,0x008057e0,0x004c42b0
 4582,function,ECBase::ECString::Assign(const char*),"Clears this if the pointer is null or empty, else widens the NUL-terminated narrow string like the counted form; callers include ResRef::ToString.",0x004c4430,0x00805960,0x004c4430
-4583,function,,,0x004c45a0,0x00805ad0,0x004c45a0
+4583,function,"std::operator<<(std::wostream&,const std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>&)","cdecl (stream, string): the ostream sentry (0x0040A6C0), the stream'""'""'s width and adjustfield, padding, then the string written: VC8 <string>'""'""'s operator<< for basic_string, instantiated for the pool string (decomp-agent, read 2026-11-24)",0x004c45a0,0x00805ad0,0x004c45a0
 4584,retired,,,,,
 4585,function,,,0x004c47e9,0x00805d19,0x004c47e9
 4586,retired,,,,,
@@ -4591,7 +4591,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4590,function,"std::getline<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>",,0x004c4a10,0x00805f40,0x004c4a10
 4591,function,,,0x004c4b7b,0x008060ab,0x004c4b7b
 4592,retired,,,,,
-4593,function,,"__thiscall with an ECString in ecx and a wostream* argument, ret 4: calls the cdecl 0x004C45A0 with (stream, this) and returns its result; it writes this string to the stream. Its name is not known (decomp-agent, read 2026-11-24)",0x004c4bc0,0x008060f0,0x004c4bc0
+4593,function,ECBase::ECString::WriteTo,"INFERRED name: __thiscall with the string in ecx and a wostream argument, ret 4: calls std::operator<< (0x004C45A0) with (stream, this) and returns its result (decomp-agent, read 2026-11-24)",0x004c4bc0,0x008060f0,0x004c4bc0
 4594,function,,,0x004c4be0,0x00806110,0x004c4be0
 4595,function,ECBase::ECString::Split,,0x004c4c20,0x00806150,0x004c4c20
 4596,function,Multithreading::ScopedLock::ScopedLock,,0x004c4d00,0x00806230,0x004c4d00
@@ -4908,7 +4908,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4907,retired,,,,,
 4908,function,"std::basic_istream<wchar_t,std::char_traits<wchar_t>>::get",,0x004d29a0,0x00819870,0x004d29a0
 4909,function,,,0x004d29c0,0x00819890,0x004d29c0
-4910,function,,,0x004d29d0,0x008198a0,0x004d29d0
+4910,function,WideStringStream::AtEnd,"INFERRED name: __thiscall on the wrapper, plain ret: true when the stream'""'""'s eofbit is set (through its virtual base, 0x004D29D7), else when the next character (0x004D29C0) is WEOF (0xFFFF). Caller: Joint::SetProperty (0x0083A760) (decomp-agent, read 2026-11-24)",0x004d29d0,0x008198a0,0x004d29d0
 4911,function,"std::operator>>(std::basic_istream<wchar_t,std::char_traits<wchar_t>>&,unsigned char&)",reads an unsigned int from a wide stream and stores its low byte,0x004d29f0,0x008198c0,0x004d29f0
 4912,function,WideStringStream::WideStringStream,"__thiscall, plain ret: basic_stringstream(3, 1) (0x00412D80) on this, returns this. Its 60 callers call it directly on locals, and nothing stores its address, so it is not a compiler-made default-constructor closure; code that declares a plain std::wstringstream calls 0x00412D80 itself with push 3 (18 callers). WideStringStream is an INFERRED class name (decomp-agent, 2026-11-24, after ResetWideStringStream): an engine wrapper whose only member is a std::wstringstream at +0, 0x88 bytes (read 2026-11-24)",0x004d2a20,0x008198f0,0x004d2a20
 4913,function,"std::getline<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>",,0x004d2a30,0x00819900,0x004d2a30
