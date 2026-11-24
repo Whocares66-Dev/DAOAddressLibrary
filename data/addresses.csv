@@ -5523,7 +5523,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5522,function,,,0x004e9480,0x00836520,0x004e9480
 5523,function,ScriptVariableNames::ScriptVariableNames,,0x004e9520,0x008365c0,0x004e9520
 5524,function,ScriptVariableNames::~ScriptVariableNames,,0x004e95b0,0x00836650,0x004e95b0
-5525,function,Core::VectorRemoveValue<void *>,,0x004e9640,0x007e4d50,0x004e9640
+5525,function,ECBase::ECDynArray<void*>::RemoveValue,"INFERRED class placement: __thiscall on the array (ecx to esi at 0x004E9646), the value'""'""'s address pushed, ret 4: erase(remove(begin, end, value), end) through std::remove (0x0086B2A0) and erase (0x006AD590), with the checked iterators. Object::RemoveDependency calls it on its ECDynArray members +0x1F8 and +0x264 (0x0054A293); 30-odd callers, likely one folded body for every 4-byte T, as VectorContains (0x008663A0) (decomp-agent, read 2026-11-24)",0x004e9640,0x007e4d50,0x004e9640
 5526,function,Messages::Observer::StopObserving,"Removes the observable from the observer's list (this+4) and calls the observable's slot 2 (Observable::RemoveObserver 0x004C4F10) with this, so both sides forget each other; CClientExoApp::ShutdownGame calls it on a global manager's observer.",0x004e96b0,0x008150b0,0x004e96b0
 5527,function,Messages::Observer::ObservableDestroyed,Removes the argument from the observer's list (this+4) and calls the observer's own slot 1 with it; Messages::Observable's destructor (0x004C4EB4) calls it on every observer in its list.,0x004e96e0,0x008150e0,0x004e96e0
 5528,function,Messages::Observer::Observer,,0x004e9710,0x00815110,0x004e9710
