@@ -13455,7 +13455,7 @@ address,what,value,why
 0x007626C0,signature,"void __thiscall f(void *this, void *structReader, unsigned int listId)","vftable slot 6, ret 8"
 0x00762FB0,signature,"void __thiscall f(void *this, void *holder)","one stack argument read at 0x762fb4, ecx = the ItemMove record (array at +0x20)"
 0x00763020,signature,void * __thiscall f(void *this),"constructor, returns this"
-0x00763040,signature,"void * __stdcall f(void *out_move, void *item, int count)","ret 0xC at 0x00763065; ecx never read as this, the three arguments pushed to 0x00762100"
+0x00763040,signature,"void * __thiscall f(void *this, void *out_move, void *item, int count)","ret 0xC at 0x00763065; callers load ecx with the ItemPossessor (+0x440) and the body never reads it (push ecx keeps a slot): thiscall, this unused (decomp-agent, 2026-11-24)"
 0x00763070,signature,"void * __thiscall f(void *this, void *outRecord, void *tag, int count)","vftable slot 2, ret 0xc"
 0x007630D0,signature,"int __thiscall f(void *this, void *tag)","vftable slot 3, tail-jumps to 0x7615f0 with the stack argument"
 0x00763100,signature,"void __thiscall f(void *this, void *item)",ret 4

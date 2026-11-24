@@ -17963,7 +17963,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17962,function,CCPlaceable::FinishLoad,,0x007528d0,0x0065e7c0,0x007528d0
 17963,function,CCItem::SetBaseItem,,0x00752b10,0x00661350,0x00752b10
 17964,function,CCItem::Update,,0x00752b40,0x00661380,0x00752b40
-17965,function,CCObject::ReleaseAnimation,,0x00752b80,0x006613c0,0x00752b80
+17965,function,CCItem::ReleaseAnimation,"Slot 114 of CCItem's table 0x00B1C61C, a slot CCItem declares: CCObject's table is shorter, and CCCreature's and CCPlaceable's slot 114 are their own virtuals. No other table holds it. It was named CCObject::ReleaseAnimation (decomp-agent, read 2026-11-24)",0x00752b80,0x006613c0,0x00752b80
 17966,function,CCItem::SetStackSize,,0x00752ba0,0x006613e0,0x00752ba0
 17967,function,CCItem::SetUnique,,0x00752bd0,0x00661410,0x00752bd0
 17968,function,CCItem::SetIrremovable,"__thiscall on a CCItem (ret 4: value): sets the Irremovable attribute (+0x630) and, if the item is in a location (+0x4E8), calls that location's slot 10 (ReAddItem) with the item. Called from CCItem::LoadFromStruct 0x00758711 as well as the script command.",0x00752bf0,0x00661430,0x00752bf0
@@ -18197,7 +18197,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18196,function,ItemMove::MoveItemsTo,,0x00762fb0,0x006a1710,0x00762fb0
 18197,function,ItemPossessor::ItemPossessor,,0x00763020,0x006b0c30,0x00763020
 18198,function,ItemPossessor::~ItemPossessor,,0x00763030,0x006b0c40,0x00763030
-18199,function,ItemLocation::RemoveItemFromItsLocation_stdcall,"Stdcall twin (ret 0xC: out, item, count) of 0x00762100: pushes its three arguments and calls it (0x00763059). Callers: CCItem::EventHandler, CSSubActionHandler::DropItem, Store::SellItem, Store::BuyItem, the store close handler.",0x00763040,0x006b0c50,0x00763040
+18199,function,ItemPossessor::RemoveItemFromItsLocation,"Callers pass ecx = an object's +0x440, its ItemPossessor (Store::SellItem 0x007EC37E, BuyItem, CSSubActionHandler::DropItem), and it never reads it (push ecx keeps a slot): a thiscall member that ignores this, forwarding its three arguments to ItemLocation::RemoveItemFromItsLocation (0x00762100) and returning the hidden result; ret 0xC. It was named ItemLocation::RemoveItemFromItsLocation_stdcall, a marker no C++ name can hold (decomp-agent, read 2026-11-24)",0x00763040,0x006b0c50,0x00763040
 18200,function,ItemPossessor::TakeItemsByTag,,0x00763070,0x006b0c80,0x00763070
 18201,function,ItemPossessor::CountItemsByTag,,0x007630d0,0x006b0ce0,0x007630d0
 18202,function,ItemPossessor::RaiseInventoryAddedEvent,,0x00763100,0x006b0d10,0x00763100
