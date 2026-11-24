@@ -4561,7 +4561,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4560,function,ECBase::ECString::Trim,,0x004c3310,0x00804840,0x004c3310
 4561,function,ECBase::ECString::operator+(const ECBase::ECString&) const,,0x004c3360,0x00804890,0x004c3360
 4562,function,ECBase::ECString::operator+(const wchar_t*) const,,0x004c3420,0x00804950,0x004c3420
-4563,function,,,0x004c3510,0x00804a40,0x004c3510
+4563,function,ECBase::ECString::operator+(long) const,"__thiscall, ret 8 (hidden return slot, the number): a temporary ECString(long, nullptr) (0x004C2770) from the argument, then operator+(const ECString&) const (0x004C3360) of this and it into the return slot; the temporary destroyed (0x004C0DB0). Caller: GraphicsStructures::ObjectBlueprint::InstantiateAsCrust (decomp-agent, read 2026-11-23)",0x004c3510,0x00804a40,0x004c3510
 4564,function,,,0x004c3580,0x00804ab0,0x004c3580
 4565,function,,,0x004c35f0,0x00804b20,0x004c35f0
 4566,function,ECBase::ECString::append(const ECBase::ECString&),"__thiscall, ret 4: append(other, 0, npos) (0x004C1820), then returns this, not what append returned, as 0x004C2AB0 does for operator=: ECString's own",0x004c36a0,0x00804bd0,0x004c36a0
