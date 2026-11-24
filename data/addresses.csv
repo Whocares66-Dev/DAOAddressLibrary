@@ -4534,7 +4534,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4533,function,,,0x004c2435,0x004781f5,0x004c2435
 4534,function,ECBase::ECString::ECString(const wchar_t*),"__thiscall, ret 4: an empty pool string, then a null argument read as ECString::s_emptyChars (0x00C2BDFC) and assign(text, length) (0x004C1F20). VC8's basic_string(const wchar_t*) reads no null and is 0x004C2630's bytes (stlmatch, 2026-11-23), so this is ECString's own; DAODecomp's matched callers call it ECString::ECString (2026-11-23)",0x004c2480,0x008039f0,0x004c2480
 4535,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::basic_string(const std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>&)",,0x004c2510,0x00803a80,0x004c2510
-4536,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::basic_string",,0x004c2540,0x00803ab0,0x004c2540
+4536,function,"ECBase::ECString::ECString(const wchar_t*,unsigned int)","__thiscall, ret 8: an empty pool string, then a null pointer read as ECString::s_emptyChars (0x004C258C), the length cut at the first NUL within the count (0x004C25A0), and assign(text, length) (0x004C1F20). VC8's basic_string(const wchar_t*, size_type) reads no null and scans nothing: ECString's own, as ECString(const wchar_t*) 0x004C2480 is (read 2026-11-23)",0x004c2540,0x00803ab0,0x004c2540
 4537,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::insert",,0x004c25d0,0x00803b40,0x004c25d0
 4538,function,ECBase::ECString::Insert,,0x004c25f0,0x00803b60,0x004c25f0
 4539,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::basic_string(const wchar_t*)",,0x004c2630,0x004784b0,0x004c2630
@@ -9393,7 +9393,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9392,function,"std::_Tree<std::map<std::wstring,?>>::_Buyheadnode",,0x00599b60,0x007945b0,0x00599b60
 9393,function,"std::_Tree<std::map<std::wstring,?>>::_Buynode",,0x00599ba0,0x007945f0,0x00599ba0
 9394,function,Catch_All@00599c1d,,0x00599c1d,0x0079466d,0x00599c1d
-9395,function,std::vector<std::wstring>::data,,0x00599c40,0x00794690,0x00599c40
+9395,function,GraphicsStructures::VectorFrontOrNull<std::wstring>,"INFERRED name: nothing names it, and VC8's vector has no data(). __thiscall, no arguments: null when the vector is empty, else its first element (0x1C bytes) through the checked iterator; one caller, GraphicsStructures::ReadXMLModelHierarchy (0x0059E020). Named as ScriptCommand::VectorFrontOrNull (0x0066DD20), the same idiom (read 2026-11-23)",0x00599c40,0x00794690,0x00599c40
 9396,function,"std::map<std::wstring,?>::lower_bound",,0x00599c90,0x007946e0,0x00599c90
 9397,function,std::vector<?>::end,,0x00599d50,0x0074a220,0x00599d50
 9398,function,std::vector<?>::back,,0x00599db0,0x007947a0,0x00599db0
