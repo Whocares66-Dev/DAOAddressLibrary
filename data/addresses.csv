@@ -8000,7 +8000,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7999,function,GraphicsStructures::Object::ReleaseDependencies,,0x0054dac0,0x0074e5e0,0x0054dac0
 8000,function,GraphicsStructures::Object::GetPhysicsDescriptionNames,,0x0054db60,0x0074e680,0x0054db60
 8001,function,GraphicsStructures::Object::AddDependent,,0x0054dca0,0x0074e7c0,0x0054dca0
-8002,function,GraphicsStructures::Object::ReleaseDependents,,0x0054dcc0,0x0074e7e0,0x0054dcc0
+8002,function,GraphicsStructures::Object::ClearDependents,"INFERRED name: not ReleaseDependents (0x00549690, the virtual one, which calls Dependency::Forget). In no table; its one caller is ~Object (0x0054F3B5). For each element of the dependents array (+0x264, begin +0x268): Dependency::Clear (0x00568C00); then ECDynArray<?*>::DeleteAll (0x0081EEB0) (decomp-agent, read 2026-11-24)",0x0054dcc0,0x0074e7e0,0x0054dcc0
 8003,function,GraphicsStructures::Object::BindEmittersToPhysics,,0x0054dd80,0x0074e8a0,0x0054dd80
 8004,function,GraphicsStructures::Object::UnbindEmittersFromPhysics,,0x0054e0c0,0x0074ebe0,0x0054e0c0
 8005,function,GraphicsStructures::Object::TakeOverFrom,,0x0054e180,0x0074eca0,0x0054e180
