@@ -7040,7 +7040,7 @@ address,what,value,why
 0x00652550,signature,"unsigned int * __thiscall f(void *this, unsigned int index)",read in the exe at 0x00652550 (ECBase::ECDynArray::At)
 0x00652600,signature,"void __thiscall f(void *this, void *update)",read in the exe at 0x00652600 (MapLocation::SetLocName)
 0x0065C7D0,signature,"bool __stdcall f(unsigned int objectId, void *area)",read in the exe at 0x0065C7D0 (IsObjectInArea)
-0x0066DD20,signature,T * __thiscall f(void *this),read in the exe at 0x0066DD20 (std::vector<T8>::FrontOrNull); a void * here is the class DAODecomp's matching definition gives
+0x0066DD20,signature,void * __thiscall f(void *this),"read in the exe at 0x0066DD20 (std::vector<T8>::FrontOrNull, an 8-byte element of a type not known: void *, as T * did not parse, 2026-11-23); a void * here is the class DAODecomp's matching definition gives"
 0x0066DF50,signature,unsigned int * __thiscall f(void *this),read in the exe at 0x0066DF50 (std::vector<T4>::BackOrDefault)
 0x006705F0,signature,"void __thiscall f(void *this, void *text)",read in the exe at 0x006705F0 (CVirtualMachineCommands::SetTextField_0x78)
 0x006796E0,convention,__thiscall,virtual slot 0 dispatch through ecx at 0x006796E0
