@@ -26909,7 +26909,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 26908,function,GFxLoader::~GFxLoader,,0x0090c400,0x008e30b0,0x0090c400
 26909,function,,,0x0090c440,0x008e3100,0x0090c440
 26910,function,GFxLoader::CreateMovie,,0x0090c470,0x008e3130,0x0090c470
-26911,function,,,0x0090c4a0,0x008e3160,0x0090c4a0
+26911,function,GFxLogBase<GFxLog>::LogError,"__cdecl with varargs, this the first stack argument: the GFxLogBase<GFxLog> subobject at a GFxLog's +0x14 (its vftable_at_14), from which it takes the GFxLog (this-0x14) and calls its slot 1, LogMessageVarg, with type 0x10 (decomp-agent, read 2026-11-24)",0x0090c4a0,0x008e3160,0x0090c4a0
 26912,function,,,0x0090c4e0,0x008e31a0,0x0090c4e0
 26913,function,GFxLoader::`vector deleting destructor',,0x0090c520,0x008e31e0,0x0090c520
 26914,function,,,0x0090c580,0x008e3240,0x0090c580
@@ -26925,10 +26925,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 26924,function,,,0x0090cd80,0x008e3a40,0x0090cd80
 26925,function,,,0x0090cdb0,0x008e3a70,0x0090cdb0
 26926,function,,,0x0090cde0,0x008e3aa0,0x0090cde0
-26927,function,,,0x0090ced0,0x008e3b90,0x0090ced0
-26928,function,,,0x0090cf40,0x008e3c00,0x0090cf40
-26929,function,,,0x0090cf80,0x008e3c40,0x0090cf80
-26930,function,,,0x0090cfc0,0x008e3c80,0x0090cfc0
+26927,function,GFxLog::LogMessageVarg,"Slot 1 of GFxLog's table 0x00AF53B0, ret 0xC (message type, format, va_list): vsnprintf into an 0x800 buffer and OutputDebugStringA. EclipseGFxLog overrides it with a no-op (decomp-agent, read 2026-11-24)",0x0090ced0,0x008e3b90,0x0090ced0
+26928,function,GFxFileOpener::OpenFile,"Slot 1 of GFxFileOpener's table 0x00AF54E0, the slot EclipseGFxFileOpener overrides with its OpenFile (0x005113A0); builds a GSysFile on the path with flags 0x21, mode 0x1B6 (decomp-agent, read 2026-11-24)",0x0090cf40,0x008e3c00,0x0090cf40
+26929,function,GFxFileOpener::GetFileModifyTime,"Slot 2 of GFxFileOpener's table: GSysFile::GetFileStat on the path, returning the 64-bit time in edx:eax (decomp-agent, read 2026-11-24)",0x0090cf80,0x008e3c40,0x0090cf80
+26930,function,GFxFileOpener::OpenFileEx,"Slot 3 of GFxFileOpener's table, ret 8: calls slot 1 (OpenFile), then the file's slot 8 (+0x20) to check it opened, and logs through GFxLogBase<GFxLog>::LogError (0x0090CFFA) when not (decomp-agent, read 2026-11-24)",0x0090cfc0,0x008e3c80,0x0090cfc0
 26931,function,,,0x0090d020,0x008e3ce0,0x0090d020
 26932,function,,,0x0090d040,0x008e3d00,0x0090d040
 26933,function,,,0x0090d060,0x008e3d20,0x0090d060
@@ -27126,7 +27126,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 27125,function,,,0x00914f10,0x008ec230,0x00914f10
 27126,function,GFxLoaderTask::`scalar deleting destructor',,0x00915030,0x008ec350,0x00915030
 27127,function,GFxLoaderImpl::`scalar deleting destructor',,0x00915050,0x008ec370,0x00915050
-27128,function,,,0x00915070,0x008ec390,0x00915070
+27128,function,GFxLoaderImpl::CreateMovie,"GFxLoader::CreateMovie (0x0090C470) tail-jumps here with ecx = its impl (+4, a GFxLoaderImpl); allocates and builds an 0x54-byte movie-data loader (decomp-agent, read 2026-11-24)",0x00915070,0x008ec390,0x00915070
 27129,function,GFxMovieImageLoadTask::`scalar deleting destructor',,0x00915150,0x008ec470,0x00915150
 27130,function,,,0x009151b0,0x008fbf50,0x009151b0
 27131,function,,,0x00915200,0x008ec4d0,0x00915200
@@ -27587,7 +27587,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 27586,function,GASTextFieldProto::getExactCharBoundaries,"Native of ActionScript's getExactCharBoundaries: the name/function table at 0x00B49470, which GASTextFieldProto's constructor installs, pairs it with ""getExactCharBoundaries"" (2026-11-20).",0x00924c60,0x008fc3b0,0x00924c60
 27587,function,,,0x00924dd0,0x008fc520,0x00924dd0
 27588,function,GASTextFieldProto::setIMECompositionStringStyle,"Native of ActionScript's setIMECompositionStringStyle: the name/function table at 0x00B49470, which GASTextFieldProto's constructor installs, pairs it with ""setIMECompositionStringStyle"" (2026-11-20).",0x00924e20,0x008fc570,0x00924e20
-27589,function,,,0x00924f90,0x0090cfc0,0x00924f90
+27589,function,GFxFileOpener::OpenFileEx,"The same GOG body as ID 26930 (0x0090CFC0), which the linker folded there; EA keeps it apart. Its name follows 26930's (2026-11-24)",0x00924f90,0x0090cfc0,0x00924f90
 27590,function,,,0x00924ff0,0x008fc6e0,0x00924ff0
 27591,function,,,0x00925040,0x008fc730,0x00925040
 27592,function,,,0x00925120,0x008fc810,0x00925120
@@ -27930,7 +27930,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 27929,function,,,0x00935490,0x0090cca0,0x00935490
 27930,retired,,,,,
 27931,function,,,0x00935650,0x0090ce60,0x00935650
-27932,function,,,0x009356c0,0x0090ced0,0x009356c0
+27932,function,GFxLog::LogMessageVarg,"The same GOG body as ID 26927 (0x0090CED0), which the linker folded there; EA keeps it apart. Its name follows 26927's (2026-11-24)",0x009356c0,0x0090ced0,0x009356c0
 27933,function,,,0x00935740,0x0090cf50,0x00935740
 27934,function,,,0x009357b0,0x0090d020,0x009357b0
 27935,function,,,0x00935810,0x0090d0d0,0x00935810
