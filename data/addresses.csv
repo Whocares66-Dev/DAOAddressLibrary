@@ -2378,7 +2378,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2377,function,Renderer::LoadFBEffectFileByName,,0x00458190,0x008926d0,0x00458190
 2378,function,Renderer::FrameBufferEffects::~FrameBufferEffects,,0x00458260,0x008927a0,0x00458260
 2379,function,Renderer::FrameBufferEffects::LoadFile,,0x004582b0,0x008927f0,0x004582b0
-2380,function,General::SafePointer::Assign,,0x00458420,0x007e64c0,0x00458420
+2380,function,Multithreading::SynchSafePointer<?>::operator=(T*),"SynchSafePointer'""'""'s assignment from a raw T*: if the target changes, SynchSafePointerListBase::Remove (0x00538C90) from the old one through its virtual base (target+4 vbptr); the new target stored and the weak byte (+4) cleared; SynchSafePointerListBase::AddHolder (0x004F45B0, weak 0) on the new one; returns this, ret 4. The sibling of operator=(const SynchSafePointer&) (0x004F4710) for the same vbase layout; 0x004D7450 is the other layout'""'""'s. Callers: ~Object and ReleaseContents on Object +0x40 (with 0), ClearMorph on +0x27C, and some 60 more. It was named General::SafePointer::Assign (decomp-agent, read 2026-11-24)",0x00458420,0x007e64c0,0x00458420
 2381,function,String::ToFloat,,0x00458470,0x004d2c90,0x00458470
 2382,function,String::FromFloat,,0x00458520,0x004d2d40,0x00458520
 2383,function,Renderer::FBRenderTargetResource::FBRenderTargetResource,,0x00458620,0x00892960,0x00458620
