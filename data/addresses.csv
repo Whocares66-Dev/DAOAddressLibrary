@@ -4546,12 +4546,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4545,function,ECBase::ECString::FromDouble,,0x004c29e0,0x00803f10,0x004c29e0
 4546,function,ECBase::ECString::operator=(const ECBase::ECString&),"__thiscall, ret 4: assign(other, 0, npos) (0x004C1270), then returns this, not what assign returned. VC8's operator= returns assign's result, and its compiled bytes differ (decomp-agent, 2026-11-23: 17 against 23 bytes): ECString's own",0x004c2ab0,0x00803fe0,0x004c2ab0
 4547,function,ECBase::ECString::Assign,,0x004c2ad0,0x00804000,0x004c2ad0
-4548,function,String::IntToWide,,0x004c2b10,0x00804040,0x004c2b10
-4549,function,String::FloatToWide,,0x004c2b80,0x008040b0,0x004c2b80
+4548,function,ECBase::ECString::IntToWide,"this kept in esi; swprintf_s (0x004C0330) into a stack buffer, its length, then ECString::assign(ptr,len) 0x004C1F20 on this, which it returns; ret 4. It was named String::IntToWide (decomp-agent, read 2026-11-24)",0x004c2b10,0x00804040,0x004c2b10
+4549,function,ECBase::ECString::FloatToWide,"IntToWide's shape with the float loaded and widened (fld [esp+0x48]; fstp qword) for the format. It was named String::FloatToWide (decomp-agent, read 2026-11-24)",0x004c2b80,0x008040b0,0x004c2b80
 4550,function,ECBase::ECString::AssignUtf8,"Clears this, then converts a narrow UTF-8 (code page 65001) C string to wide with MultiByteToWideChar and assigns it; null or empty gives the empty string.",0x004c2bf0,0x00804120,0x004c2bf0
 4551,function,ECBase::ECString::ToUtf8,Converts this wstring to UTF-8 with WideCharToMultiByte (code page 65001) into a std::string returned through the hidden pointer.,0x004c2cc0,0x008041f0,0x004c2cc0
 4552,function,ECBase::ECString::StartsWith,,0x004c2e50,0x00804380,0x004c2e50
-4553,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::replace(unsigned int,unsigned int,const std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>&)",,0x004c2f70,0x008044a0,0x004c2f70
+4553,function,"ECBase::ECString::replace(unsigned int,unsigned int,const ECBase::ECString&)","Takes the argument's buffer (cap +0x18 >= 8 ? [+4] : +4) and measures it with a wcslen loop, where std::basic_string would use its size, then calls replace(pos,n,ptr,len) 0x004C2060; ret 0xC. The engine string's member. It was named std::basic_string<wchar_t,...,ECMemory::StringAllocator<wchar_t>>::replace (decomp-agent, read 2026-11-24)",0x004c2f70,0x008044a0,0x004c2f70
 4554,function,ECBase::ECString::ReplaceFirst,,0x004c2fc0,0x008044f0,0x004c2fc0
 4555,function,ECBase::ECString::ReplaceAll,"Repeats ReplaceFirst(from, to, start) from just after each replacement until it returns -1.",0x004c3000,0x00804530,0x004c3000
 4556,function,ECBase::ECString::Format,,0x004c3030,0x00804560,0x004c3030
@@ -4568,8 +4568,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4567,function,ECBase::ECString::append(const wchar_t*),"__thiscall, ret 4: a null argument read as ECString::s_emptyChars (0x00C2BDFC), then append(text, length) (0x004C1930), returning this: ECString's own",0x004c36c0,0x00804bf0,0x004c36c0
 4568,function,ECBase::ECString::append(long),"__thiscall, ret 4: builds a temporary ECString(long, nullptr) (0x004C2770), appends it with append(const ECString&) (0x004C36A0), destroys it (0x004C0DB0) and returns what append returned, this (read 2026-11-23)",0x004c3700,0x00804c30,0x004c3700
 4569,function,ECBase::ECString::append(unsigned long),"As 0x004C3700 (append(long)) through ECString(unsigned long, nullptr) (0x004C2840)",0x004c3780,0x00804cb0,0x004c3780
-4570,function,String::ToUpperAscii,,0x004c3800,0x00804d30,0x004c3800
-4571,function,String::ToUpperAscii,,0x004c38e0,0x00804e10,0x004c38e0
+4570,function,ECBase::ECString::ToUpperAscii() const,"ToLowerAscii() const's twin (0x004C3970): builds the result with 0x004C0D90 in the hidden return slot and uppercases it; ret 4. It was named String::ToUpperAscii (decomp-agent, read 2026-11-24)",0x004c3800,0x00804d30,0x004c3800
+4571,function,ECBase::ECString::ToUpperAscii(ECBase::ECString&) const,"ToLowerAscii(ECString&) const's twin (0x004C3A50): uppercases into the string it is given; ret 4. It was named String::ToUpperAscii (decomp-agent, read 2026-11-24)",0x004c38e0,0x00804e10,0x004c38e0
 4572,function,ECBase::ECString::ToLowerAscii() const,"__thiscall (ecx to ebx at 0x004C3997), ret 4, the hidden result: builds the result string (0x004C0D90), then a lowercase copy of this string'""'""'s ASCII letters; reads this'""'""'s size at +0x14. It was named String::ToLowerAscii (decomp-agent, read 2026-11-24)",0x004c3970,0x00804ea0,0x004c3970
 4573,function,ECBase::ECString::ToLowerAscii(ECBase::ECString&) const,"__thiscall (ecx to ebx at 0x004C3A56), ret 4: writes a lowercase copy of this string'""'""'s ASCII letters into the string passed in; reads this'""'""'s size at +0x14. It was named String::ToLowerAscii (decomp-agent, read 2026-11-24)",0x004c3a50,0x00804f80,0x004c3a50
 4574,function,ECBase::ECString::ToNarrow,"INFERRED name: nothing in the exe names it. __thiscall, ret 4, returns a pool char string (std::basic_string<char,std::char_traits<char>,ECMemory::StringAllocator<char>>) by value through the hidden pointer. It constructs the result empty and resizes it to this string's length: erase 0x00401210, or append(n, 0) 0x004C1E20, which grows it through the pool _Copy 0x004C0C40 (AllocateInPool). Then it stores each wide character's low byte, with no code page (0x004C3B8D), and returns the result. 170 callers; WinMain and PhysicsParticleActor::MakeBoxShapeDesc free it with std::string::~string (0x004013F0), which frees through operator delete as the pool string does (read 2026-11-23)",0x004c3ae0,0x00805010,0x004c3ae0
@@ -5064,7 +5064,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5063,function,Multithreading::SynchSafePointerListBase::AddHolder,,0x004d7360,0x007e5300,0x004d7360
 5064,function,Multithreading::SynchSafePointer<?>::SynchSafePointer,Constructs a strong safe pointer (weak byte 0) from an object pointer and registers it in the target's list at its virtual base +0x30.,0x004d7420,0x007e63a0,0x004d7420
 5065,function,Multithreading::SynchSafePointer<?>::operator=,"Assigns a raw object pointer: unregisters from the old target, stores the new one as strong and registers it; a self-assignment is a no-op.",0x004d7450,0x007e63d0,0x004d7450
-5066,function,Multithreading::SynchSafePointer<?>::operator=_copy,"Assigns from another safe pointer: unregisters the old target, copies pointer and weak byte, registers with the same weakness.",0x004d74a0,0x007e6420,0x004d74a0
+5066,function,Multithreading::SynchSafePointer<?>::operator=(const Multithreading::SynchSafePointer<?>&),"The operator=(const&) of the SynchSafePointer family whose list base sits at another vbase offset than 0x004F4710's (ID 5817, the same name). It was named operator=_copy, a marker no C++ name can hold (decomp-agent, 2026-11-24)",0x004d74a0,0x007e6420,0x004d74a0
 5067,function,BinkVideo::ReleaseDrawResources,,0x004d74f0,0x00a68210,0x004d74f0
 5068,function,BinkVideo::CreateDrawResources,,0x004d7540,0x00a68260,0x004d7540
 5069,function,Multithreading::SynchSafePointerListBase::ReleaseStrong,,0x004d7ae0,0x00818a70,0x004d7ae0
@@ -5894,7 +5894,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5893,function,Graphics::MaterialManager::~MaterialManager,,0x004f7db0,0x007ded60,0x004f7db0
 5894,function,Graphics::MaterialManager::`scalar deleting destructor',,0x004f7e20,0x007dedd0,0x004f7e20
 5895,function,Graphics::MaterialManager::PurgeExpired,,0x004f7e40,0x007df010,0x004f7e40
-5896,function,std::vector<General::SafePointer>::Clear,,0x004f7f00,0x007bec50,0x004f7f00
+5896,function,ECBase::ECDynArray<Multithreading::SynchSafePointer<?>>::Clear(bool),"ecx a 16-byte ECDynArray; tests its bool argument, erases every element with 0x0057A680 (as Clear 0x005683F0 does), then hands the storage to a temporary to release it; ret 4. Callers ~ScaleformManager and MaterialManager::ReleaseAll. It was named std::vector<General::SafePointer>::Clear (decomp-agent, read 2026-11-24)",0x004f7f00,0x007bec50,0x004f7f00
 5897,function,Graphics::MaterialManager::MaterialManager,,0x004f7ff0,0x007df0d0,0x004f7ff0
 5898,function,Graphics::MaterialManager::ReleaseAll,,0x004f8060,0x007df140,0x004f8060
 5899,function,Graphics::MaterialManager::Get,,0x004f8080,0x007df160,0x004f8080
@@ -8662,7 +8662,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8661,function,"std::_Construct<std::pair<std::wstring,std::vector<Math::Vector4f>>,std::pair<std::wstring,std::vector<Math::Vector4f>>>",,0x0056ae20,0x00762830,0x0056ae20
 8662,function,Gff4::FlatFile::SetRootTemplate,,0x0056ae80,0x004b8830,0x0056ae80
 8663,function,"stdext::hash_map<std::wstring,GraphicsStructures::Morph::NodeInfo>::operator[]",,0x0056af20,0x00762890,0x0056af20
-8664,function,GraphicsStructures::Morph::NodeInfo::NodeInfo,,0x0056b040,0x007629b0,0x0056b040
+8664,function,StringMap<GraphicsStructures::Morph::NodeInfo>::StringMap,"The map's constructor that takes its default value: ecx is the map; hash_map's constructor 0x0056A3F0 on this (0x0056B07C), the key string at +0x28 (0x0056B089 call 0x004C0D90), then the by-value Morph::NodeInfo default at +0x44 (0x0056B09E mov [esi+0x44],0xAF9CF0, its vftable, then its fields to +0x64). It was named GraphicsStructures::Morph::NodeInfo::NodeInfo (decomp-agent, read 2026-11-24)",0x0056b040,0x007629b0,0x0056b040
 8665,function,"std::list<std::pair<std::wstring,std::vector<Math::Vector4f>>>::~list",,0x0056b0f0,0x00762a60,0x0056b0f0
 8666,function,Multithreading::SynchSafePointerList<GraphicsStructures::Morph>::SynchSafePointerList,,0x0056b110,0x00762a80,0x0056b110
 8667,function,Gff4::FlatFile::AppendArray,,0x0056b160,0x00699030,0x0056b160
@@ -22923,7 +22923,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22922,function,TexManager::TextureManager::FindNameByTexture,,0x008453f0,0x004887d0,0x008453f0
 22923,function,TexManager::DDSResourceHelper::FreeResource,,0x008455e0,0x00489b50,0x008455e0
 22924,function,TexManager::TextureManager::FindCachedTexture,,0x00845600,0x0048a080,0x00845600
-22925,function,TexManager::MakeTextureHandle,,0x008456d0,0x0048a150,0x008456d0
+22925,function,TexManager::TextureManager::MakeTextureHandle,"A TextureManager member: 0x008476EA call TextureManager::Get (0x008472C0), then mov ecx,eax and call here (0x008476F1); ret 0x14, five stack arguments. It was named TexManager::MakeTextureHandle (decomp-agent, read 2026-11-24)",0x008456d0,0x0048a150,0x008456d0
 22926,function,TexManager::TextureManager::LoadTGA,,0x00845820,0x0048a2a0,0x00845820
 22927,function,TexManager::TextureManager::LoadWithD3DX,,0x00845910,0x0048a390,0x00845910
 22928,function,,,0x00845a50,0x0048a4d0,0x00845a50
@@ -23077,7 +23077,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23076,function,FacialAnimation::FacialAnimationManager::SetIgnoreVoicePosition,,0x0084d370,0x004836c0,0x0084d370
 23077,function,FacialAnimation::FacialAnimationManager::`scalar deleting destructor',,0x0084d380,0x004836d0,0x0084d380
 23078,function,FacialAnimation::FacialAnimationManager::CreatePlayer,,0x0084d3a0,0x004836f0,0x0084d3a0
-23079,function,"stdext::hash_map<std::wstring,void *>::insert",,0x0084d460,0x004837b0,0x0084d460
+23079,function,StringMap<unsigned int>::Insert,"The engine map's two-argument Insert(key, const unsigned int& value): copies the key with ECString's copy constructor 0x004C2510 (0x0084D490), reads *value, calls the hash table's insert 0x00849F20 (0x0084D4B3), returns its bool, destroys the copy; ret 8. stdext::hash_map::insert takes one pair. Its value type is decomp-agent's example (unsigned int, the value is read as a dword). It was named stdext::hash_map<std::wstring,void *>::insert (decomp-agent, read 2026-11-24)",0x0084d460,0x004837b0,0x0084d460
 23080,function,FacialAnimation::FacialAnimationBlueprint::FacialAnimationBlueprint,,0x0084d4f0,0x00483840,0x0084d4f0
 23081,function,FacialAnimation::FacialAnimationBlueprint::GetMemoryFootprint,,0x0084d660,0x004839b0,0x0084d660
 23082,function,FacialAnimation::FacialAnimationBlueprint::GetBoneIndex,,0x0084d6d0,0x00483a90,0x0084d6d0

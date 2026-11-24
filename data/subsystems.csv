@@ -4509,12 +4509,12 @@ id,subsystem,class,how
 4545,Core,ECBase::ECString,name
 4546,Core,ECBase::ECString,name
 4547,Core,ECBase::ECString,name
-4548,Core,String,name
-4549,Core,String,name
+4548,Core,ECBase::ECString,name
+4549,Core,ECBase::ECString,name
 4550,Core,ECBase::ECString,name
 4551,Core,ECBase::ECString,name
 4552,Core,ECBase::ECString,name
-4553,ThirdParty:STL,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>",name
+4553,Core,ECBase::ECString,name
 4554,Core,ECBase::ECString,name
 4555,Core,ECBase::ECString,name
 4556,Core,ECBase::ECString,name
@@ -4531,8 +4531,8 @@ id,subsystem,class,how
 4567,Core,ECBase::ECString,name
 4568,Core,ECBase::ECString,name
 4569,Core,ECBase::ECString,name
-4570,Core,String,name
-4571,Core,String,name
+4570,Core,ECBase::ECString,name
+4571,Core,ECBase::ECString::ToUpperAscii(ECBase,name
 4572,Core,ECBase::ECString,name
 4573,Core,ECBase::ECString::ToLowerAscii(ECBase,name
 4574,Core,ECBase::ECString,name
@@ -5839,7 +5839,7 @@ id,subsystem,class,how
 5893,Rendering,Graphics::MaterialManager,name
 5894,Rendering,Graphics::MaterialManager,name
 5895,Rendering,Graphics::MaterialManager,name
-5896,ThirdParty:STL,std::vector<General::SafePointer>,name
+5896,Core,ECBase::ECDynArray<Multithreading::SynchSafePointer<?>>,name
 5897,Rendering,Graphics::MaterialManager,name
 5898,Rendering,Graphics::MaterialManager,name
 5899,Rendering,Graphics::MaterialManager,name
@@ -8595,7 +8595,7 @@ id,subsystem,class,how
 8661,ThirdParty:STL,std,name
 8662,Resources,Gff4::FlatFile,name
 8663,ThirdParty:STL,"stdext::hash_map<std::wstring,GraphicsStructures::Morph::NodeInfo>",name
-8664,Rendering,GraphicsStructures::Morph::NodeInfo,name
+8664,Rendering,StringMap<GraphicsStructures::Morph::NodeInfo>,builds
 8665,ThirdParty:STL,"std::list<std::pair<std::wstring,std::vector<Math::Vector4f>>>",name
 8666,Core,Multithreading::SynchSafePointerList<GraphicsStructures::Morph>,name
 8667,Resources,Gff4::FlatFile,name
@@ -22818,7 +22818,7 @@ id,subsystem,class,how
 22922,Rendering,TexManager::TextureManager,name
 22923,Rendering,TexManager::DDSResourceHelper,name
 22924,Rendering,TexManager::TextureManager,name
-22925,Rendering,TexManager,name
+22925,Rendering,TexManager::TextureManager,name
 22926,Rendering,TexManager::TextureManager,name
 22927,Rendering,TexManager::TextureManager,name
 22928,ThirdParty:STL,,string
@@ -22972,7 +22972,7 @@ id,subsystem,class,how
 23076,Animation,FacialAnimation::FacialAnimationManager,name
 23077,Animation,FacialAnimation::FacialAnimationManager,name
 23078,Animation,FacialAnimation::FacialAnimationManager,name
-23079,ThirdParty:STL,"stdext::hash_map<std::wstring,void *>",name
+23079,Animation,StringMap<unsigned int>,between
 23080,Animation,FacialAnimation::FacialAnimationBlueprint,name
 23081,Animation,FacialAnimation::FacialAnimationBlueprint,name
 23082,Animation,FacialAnimation::FacialAnimationBlueprint,name
@@ -37242,8 +37242,8 @@ id,subsystem,class,how
 37484,Rendering,Graphics::MaterialObjectManager,owner
 37485,Rendering,Graphics::MaterialObjectManager,owner
 37486,Rendering,Graphics::MaterialObjectManager,owner
-37487,ThirdParty:STL,std::vector<General::SafePointer>,owner
-37488,ThirdParty:STL,std::vector<General::SafePointer>,owner
+37487,Core,ECBase::ECDynArray<Multithreading::SynchSafePointer<?>>,owner
+37488,Core,ECBase::ECDynArray<Multithreading::SynchSafePointer<?>>,owner
 37489,Rendering,Graphics::MaterialManager,owner
 37490,Rendering,Graphics::MaterialManager,owner
 37491,Rendering,Graphics::MaterialManager,owner
@@ -39366,9 +39366,9 @@ id,subsystem,class,how
 39608,ThirdParty:STL,"stdext::hash_map<std::wstring,GraphicsStructures::Morph::NodeInfo>",owner
 39609,ThirdParty:STL,"stdext::hash_map<std::wstring,GraphicsStructures::Morph::NodeInfo>",owner
 39610,ThirdParty:STL,"stdext::hash_map<std::wstring,GraphicsStructures::Morph::NodeInfo>",owner
-39611,Rendering,GraphicsStructures::Morph::NodeInfo,owner
-39612,Rendering,GraphicsStructures::Morph::NodeInfo,owner
-39613,Rendering,GraphicsStructures::Morph::NodeInfo,owner
+39611,Rendering,StringMap<GraphicsStructures::Morph::NodeInfo>,owner
+39612,Rendering,StringMap<GraphicsStructures::Morph::NodeInfo>,owner
+39613,Rendering,StringMap<GraphicsStructures::Morph::NodeInfo>,owner
 39614,Resources,Gff4::FlatFile,owner
 39615,Resources,Gff4::FlatFile,owner
 39616,Rendering,GraphicsStructures::Morph::NodeInfo,owner
@@ -54802,9 +54802,9 @@ id,subsystem,class,how
 55044,App,Console::TemplateConsoleFunc<wchar_t const*(*)(wchar_t const*)>,owner
 55045,Rendering,TexManager::TextureManager,owner
 55046,Rendering,TexManager::TextureManager,owner
-55047,Rendering,TexManager,owner
-55048,Rendering,TexManager,owner
-55049,Rendering,TexManager,owner
+55047,Rendering,TexManager::TextureManager,owner
+55048,Rendering,TexManager::TextureManager,owner
+55049,Rendering,TexManager::TextureManager,owner
 55050,Rendering,TexManager::TextureManager,owner
 55051,Rendering,TexManager::TextureManager,owner
 55052,Rendering,TexManager::TextureManager,owner
