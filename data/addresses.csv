@@ -4585,14 +4585,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4584,retired,,,,,
 4585,function,,,0x004c47e9,0x00805d19,0x004c47e9
 4586,retired,,,,,
-4587,function,,,0x004c4830,0x00805d60,0x004c4830
+4587,function,"std::operator>>(std::basic_istream<wchar_t,std::char_traits<wchar_t>>&,std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>&)","cdecl (stream, string), plain ret: the istream sentry (0x0040B030), the stream'""'""'s locale and ctype<wchar_t> facet, the string erased (0x004C0830), then characters read up to whitespace or the width: VC8 <string>'""'""'s operator>> for basic_string, instantiated for the pool string; the mirror of operator<< (0x004C45A0) (decomp-agent, read 2026-11-24)",0x004c4830,0x00805d60,0x004c4830
 4588,function,,,0x004c49be,0x00805eee,0x004c49be
 4589,retired,,,,,
 4590,function,"std::getline<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>",,0x004c4a10,0x00805f40,0x004c4a10
 4591,function,,,0x004c4b7b,0x008060ab,0x004c4b7b
 4592,retired,,,,,
 4593,function,ECBase::ECString::WriteTo,"INFERRED name: __thiscall with the string in ecx and a wostream argument, ret 4: calls std::operator<< (0x004C45A0) with (stream, this) and returns its result (decomp-agent, read 2026-11-24)",0x004c4bc0,0x008060f0,0x004c4bc0
-4594,function,,,0x004c4be0,0x00806110,0x004c4be0
+4594,function,ECBase::ECString::ReadFrom,"INFERRED name: __thiscall with the string in ecx and a wistream argument, ret 4: std::operator>> (0x004C4830) with (stream, this); if the stream then has failbit or badbit (0x004C4BF7), this is assigned the empty literal (0x00ADEF14, length 0; 0x004C1F20); returns the stream. The read-side sibling of WriteTo (0x004C4BC0) (decomp-agent, read 2026-11-24)",0x004c4be0,0x00806110,0x004c4be0
 4595,function,ECBase::ECString::Split,,0x004c4c20,0x00806150,0x004c4c20
 4596,function,Multithreading::ScopedLock::ScopedLock,,0x004c4d00,0x00806230,0x004c4d00
 4597,function,Multithreading::ScopedLock::~ScopedLock,,0x004c4d30,0x00806260,0x004c4d30
