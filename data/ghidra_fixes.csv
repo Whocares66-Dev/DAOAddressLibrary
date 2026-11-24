@@ -14180,7 +14180,7 @@ address,what,value,why
 0x004F71A0,signature,"void* __thiscall Multithreading::SynchSafePointer::SynchSafePointer(void* this, const void* other)",ret 4
 0x004F71D0,signature,"void* __thiscall std::pair<std::wstring const,Multithreading::SynchSafePointer>::pair(void* this, const void* name, const void* pointer)",ret 8 at 0x004F7229
 0x004F7230,signature,"void* __thiscall Graphics::MaterialObjectManager::Find(void* this, void* out, const void* name)",ret 8
-0x004F72D0,signature,"void* __stdcall Graphics::MaterialObjectManager::Load(void* out, const void* name)","ret 8, ecx unread before written"
+0x004F72D0,signature,"void* __thiscall Graphics::MaterialObjectManager::Load(void* this, void* out, const void* name)","ret 8 at 0x004F7674; ecx is never read (this unused), but its caller GetObject loads it (mov ecx, edi before 0x004F793E), so __thiscall, not __stdcall: no unit was compiled /GL (decomp-agent, read 2026-11-24)"
 0x004F7680,convention,__thiscall,"ecx is the manager, plain ret"
 0x004FE8F0,clear,CLCDBase::vfunction18,"folded getter of a member's address; here a MaterialObject's name (0x004F75BC, then emptiness test 0x004C0E50 and assign 0x0057F630)"
 0x004F5700,signature,"void* __thiscall Graphics::MaterialObjectInstance::`scalar deleting destructor'(void* this, unsigned int flags)",ret 4 at 0x004F571B

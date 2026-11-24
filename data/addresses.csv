@@ -2390,7 +2390,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2389,function,WStringMap<Multithreading::SynchSafePointer<?>>::~WStringMap,"Releases the SynchSafePointer default at +0x28 (0x00538F30), destroys the key string at +0xC (0x004C0DB0), then the tree (0x0080F090) and its head: WStringMap'""'""'s layout with a SynchSafePointer value. MaterialObjectManager'""'""'s map at +4 is one (decomp-agent, read 2026-11-24)",0x00458a20,0x0048a6b0,0x00458a20
 2390,function,Stub::CopyConstruct_WString_Handle_0x1C,,0x00458ab0,0x007ee250,0x00458ab0
 2391,function,Renderer::FrameBufferEffects::Startup,,0x00458b10,0x00892d60,0x00458b10
-2392,function,"std::map<std::wstring,SmartHandle>::operator[]",,0x00458d60,0x004b56e0,0x00458d60
+2392,function,"std::map<ECBase::ECString,Multithreading::SynchSafePointer<?>>::operator[]","The map'""'""'s operator[] with a SynchSafePointer value: lower_bound (0x00456A80), compare, a default SynchSafePointer (0x00534A70) paired (0x004F71D0) and inserted (0x00810860), the temporary released (0x00538F30). Callers: Renderer'""'""'s shared targets, MaterialObjectManager::Register, AnimationManager, TextureManager; one folded body. It was named std::map<std::wstring,SmartHandle>::operator[] (read 2026-11-24)",0x00458d60,0x004b56e0,0x00458d60
 2393,function,Renderer::RegisterSharedTarget,,0x00458e50,0x00892fb0,0x00458e50
 2394,function,Renderer::GetSharedTarget,,0x00458e80,0x00892fe0,0x00458e80
 2395,function,Renderer::SetMultisampleRequest,,0x00458e90,0x00892ff0,0x00458e90
@@ -5874,7 +5874,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5873,function,"std::_Tree<std::map<std::wstring,Multithreading::SynchSafePointer>>::_Min",,0x004f6f40,0x004880f0,0x004f6f40
 5874,function,Graphics::MaterialObjectManager::ReloadAll,,0x004f6f60,0x007edb60,0x004f6f60
 5875,function,Graphics::MaterialObjectManager::GetMemoryFootprint,,0x004f7020,0x007edc20,0x004f7020
-5876,function,SafePointerNameMap::FindOrDefault,,0x004f7140,0x00489630,0x004f7140
+5876,function,WStringMap<Multithreading::SynchSafePointer<?>>::GetOrDefault,"__thiscall, ret 4: the map'""'""'s find (0x00456F80), then the found node'""'""'s value (+0x28) or the default at this+0x28, as WStringMap<?>::GetOrDefault (0x006003E0) for another T; MaterialObjectManager'""'""'s map at +4. It was named SafePointerNameMap::FindOrDefault (decomp-agent, read 2026-11-24)",0x004f7140,0x00489630,0x004f7140
 5877,function,Multithreading::SynchSafePointer::SynchSafePointer,,0x004f71a0,0x004b3ff0,0x004f71a0
 5878,function,"std::pair<std::wstring const,Multithreading::SynchSafePointer>::pair",,0x004f71d0,0x0048a020,0x004f71d0
 5879,function,Graphics::MaterialObjectManager::Find,,0x004f7230,0x007ee2b0,0x004f7230
@@ -6862,7 +6862,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6861,function,ReplaceDesignerTags,,0x0051f110,0x007c7f60,0x0051f110
 6862,function,GuiExternal::ReplaceDesignerTags,,0x0051f2f0,0x007c8140,0x0051f2f0
 6863,function,GuiFSCommand::ReplaceDesignerTags,,0x0051f410,0x007c8260,0x0051f410
-6864,function,"Core::MapFindValue<unsigned int,void*>",,0x0051f4f0,0x00806f80,0x0051f4f0
+6864,function,"Map<unsigned int,?>::FindValue","__thiscall on the Map, ret 4: the std map'""'""'s find (0x007F4F60), then the found value'""'""'s address or the Map'""'""'s default (this+0x10). The engine'""'""'s Map<K,V>, beside TryFind (0x004F2F00) and ValueOrDefault (0x0050B4D0); it was named Core::MapFindValue<unsigned int,void*> (decomp-agent, read 2026-11-24)",0x0051f4f0,0x00806f80,0x0051f4f0
 6865,function,Core::VectorIndexOf<std::wstring>,,0x0051f550,0x00505c80,0x0051f550
 6866,function,GuiCommands::DispatchFSCommand,,0x0051f5f0,0x007c8340,0x0051f5f0
 6867,function,GuiCommands::DispatchExternalInterface,,0x0051f640,0x007c8390,0x0051f640
