@@ -6068,20 +6068,20 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6067,function,Stub::GetByte_0x10,"Two-instruction body (mov al,[ecx+0x10]; ret) shared by unrelated classes: Graphics::MaterialObject::IsValid and slot 3 (IsValid) of MapItemIteratorImpl 0x00B1CF1C (so also SlotItemIteratorImpl), where it is the valid byte at +0x10.",0x004fe920,0x00661070,0x004fe920
 6068,function,Graphics::MaterialObject::SetOverride,,0x004fe930,0x007e6cc0,0x004fe930
 6069,function,Graphics::MaterialObject::SetSemantic,,0x004fe940,0x007e6cd0,0x004fe940
-6070,function,"std::_Tree<std::_Tmap_traits<unsigned int,Math::VectorUA4f>>::_Min",,0x004fe950,0x006d62e0,0x004fe950
+6070,function,"std::_Tree<std::_Tmap_traits<unsigned int,Math::Float4>>::_Min",,0x004fe950,0x006d62e0,0x004fe950
 6071,function,"std::_Tree<std::_Tmap_traits<unsigned int,?>>::const_iterator::_Dec",,0x004fe970,0x006b4950,0x004fe970
 6072,function,Graphics::MaterialTextureDeclaration::MaterialTextureDeclaration,,0x004fea00,0x007e6ce0,0x004fea00
 6073,function,"std::_Copy_opt<Graphics::MaterialTextureDeclaration*,Graphics::MaterialTextureDeclaration*>",,0x004fea70,0x007e6d50,0x004fea70
 6074,function,"std::_Copy_backward_opt<Graphics::MaterialTextureDeclaration*,Graphics::MaterialTextureDeclaration*>",,0x004feac0,0x007e6da0,0x004feac0
 6075,function,"std::fill<Graphics::MaterialTextureDeclaration*,Graphics::MaterialTextureDeclaration>",,0x004feb10,0x007e6e40,0x004feb10
-6076,function,"std::_Tree<std::_Tmap_traits<unsigned int,Math::VectorUA4f>>::_Buynode",,0x004feb60,0x007e6e90,0x004feb60
-6077,function,"std::_Tree<std::_Tmap_traits<unsigned int,Math::VectorUA4f>>::_Buynode_value",,0x004feba0,0x007e6ed0,0x004feba0
+6076,function,"std::_Tree<std::_Tmap_traits<unsigned int,Math::Float4>>::_Buynode",,0x004feb60,0x007e6e90,0x004feb60
+6077,function,"std::_Tree<std::_Tmap_traits<unsigned int,Math::Float4>>::_Buynode_value",,0x004feba0,0x007e6ed0,0x004feba0
 6078,function,,,0x004fec31,0x007e6f61,0x004fec31
 6079,function,"std::copy<Graphics::MaterialTextureDeclaration*,Graphics::MaterialTextureDeclaration*>",,0x004fec50,0x007e6f80,0x004fec50
 6080,function,"std::_Uninit_copy<Graphics::MaterialTextureDeclaration*,Graphics::MaterialTextureDeclaration*>",,0x004feca0,0x007e6fd0,0x004feca0
 6081,function,,,0x004fed09,0x007e7039,0x004fed09
-6082,function,"std::_Tree<std::_Tmap_traits<unsigned int,Math::VectorUA4f>>::find",,0x004fed40,0x007e7460,0x004fed40
-6083,function,"std::_Tree<std::_Tmap_traits<unsigned int,Math::VectorUA4f>>::_Copy",,0x004fedb0,0x007e7070,0x004fedb0
+6082,function,"std::_Tree<std::_Tmap_traits<unsigned int,Math::Float4>>::find",,0x004fed40,0x007e7460,0x004fed40
+6083,function,"std::_Tree<std::_Tmap_traits<unsigned int,Math::Float4>>::_Copy",,0x004fedb0,0x007e7070,0x004fedb0
 6084,function,,,0x004fee4d,0x007e710d,0x004fee4d
 6085,function,"std::copy_backward<Graphics::MaterialTextureDeclaration*,Graphics::MaterialTextureDeclaration*>",,0x004fee70,0x007e71f0,0x004fee70
 6086,function,std::_Destroy_range<Graphics::MaterialTextureDeclaration*>,,0x004feec0,0x007e7240,0x004feec0
@@ -6089,8 +6089,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6088,function,,,0x004fef9b,0x007e731b,0x004fef9b
 6089,function,Graphics::MaterialObject::CollectResourceFootprint,,0x004fefd0,0x007e7350,0x004fefd0
 6090,function,"Map<unsigned int,RefHandle>::Find",,0x004ff0e0,0x007e00f0,0x004ff0e0
-6091,function,"Map<unsigned int,Math::VectorUA4f>::Find",,0x004ff140,0x007e7a50,0x004ff140
-6092,function,"std::_Tree<std::_Tmap_traits<unsigned int,Math::VectorUA4f>>::_Copy",,0x004ff1a0,0x007e74d0,0x004ff1a0
+6091,function,"Map<unsigned int,Math::Float4>::Find",,0x004ff140,0x007e7a50,0x004ff140
+6092,function,"std::_Tree<std::_Tmap_traits<unsigned int,Math::Float4>>::_Copy",,0x004ff1a0,0x007e74d0,0x004ff1a0
 6093,function,Graphics::MaterialObject::GetTextureParameter,,0x004ff220,0x007e75d0,0x004ff220
 6094,function,Graphics::MaterialObject::FindFloatParameter,,0x004ff250,0x007e7600,0x004ff250
 6095,function,Graphics::MaterialObject::FindVector4Parameter,,0x004ff2c0,0x007e7670,0x004ff2c0
@@ -6126,43 +6126,43 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6125,function,ECBase::ECDynArray<?>::operator=,,0x00500a30,0x007e8c00,0x00500a30
 6126,function,std::vector<Math::Matrix4x4f>::push_back,,0x00500a50,0x007e8c20,0x00500a50
 6127,function,"std::map<unsigned int,?>::~map",,0x00500ae0,0x007e92f0,0x00500ae0
-6128,function,"std::map<unsigned int,Math::VectorUA4f>::operator[]",,0x00500b20,0x007e8cb0,0x00500b20
-6129,function,ECBase::ECDynArray<Graphics::MaterialTextureRequest>::ECDynArray(unsigned int),,0x00500bb0,0x007e8d40,0x00500bb0
+6128,function,"std::map<unsigned int,Math::Float4>::operator[]",,0x00500b20,0x007e8cb0,0x00500b20
+6129,function,ECBase::ECDynArray<Graphics::MaterialTextureDeclaration>::ECDynArray(unsigned int),"ECDynArray'""'""'s own count constructor; MaterialObject'""'""'s constructor builds declaredTextures (+0x10C, an ECDynArray<Graphics::MaterialTextureDeclaration>) with it (0x005023CD). It was named ECDynArray<MaterialTextureRequest> (decomp-agent, read 2026-11-24)",0x00500bb0,0x007e8d40,0x00500bb0
 6130,function,ECBase::ECDynArray<?>::Clear,,0x00500c20,0x007e8db0,0x00500c20
 6131,function,Multithreading::SynchSafePointerList<Graphics::MaterialObject>::~SynchSafePointerList,,0x00500d30,0x007e8ec0,0x00500d30
 6132,function,Graphics::MaterialObject::AddTextureRequest,,0x00500df0,0x007e8f80,0x00500df0
 6133,function,Graphics::MaterialObject::SetFloatParameter,,0x00500fd0,0x007e9160,0x00500fd0
 6134,function,Graphics::MaterialObject::SetSoundTypeParameter,,0x00501010,0x007e91a0,0x00501010
 6135,function,Graphics::MaterialObject::SetMatrixParameter,,0x00501050,0x007e91e0,0x00501050
-6136,function,"Map<unsigned int,Math::VectorUA4f>::Map",,0x005010f0,0x007e9280,0x005010f0
-6137,function,"std::map<unsigned int,Math::VectorUA4f>::operator=",,0x00501160,0x007e9330,0x00501160
-6138,function,"std::_Tree<std::_Tmap_traits<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>>::_Erase",,0x005011b0,0x007e9380,0x005011b0
-6139,function,"std::map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::erase","Erases one node: unlinks and rebalances it, fixes the head's leftmost and rightmost, frees it, returns the next node; throws ""invalid map/set<T> iterator"" on the head (isnil +0x21)",0x005011f0,0x007e93c0,0x005011f0
+6136,function,"Map<unsigned int,Math::Float4>::Map","The Map'""'""'s default (ret 0x10, by value) is pushed by MaterialObject'""'""'s constructor as 16 bytes with no constructor call (0x00502314 sub esp,0x10): a trivially built Math::Float4, not a VectorUA4f, whose default constructor is out of line (0x004621A0). It was named Map<unsigned int,Math::VectorUA4f>::Map (decomp-agent, read 2026-11-24)",0x005010f0,0x007e9280,0x005010f0
+6137,function,"std::map<unsigned int,Math::Float4>::operator=",,0x00501160,0x007e9330,0x00501160
+6138,function,"std::_Tree<std::_Tmap_traits<unsigned int,ECBase::ECDynArray<Math::Float4>>>::_Erase",,0x005011b0,0x007e9380,0x005011b0
+6139,function,"std::map<unsigned int,ECBase::ECDynArray<Math::Float4>>::erase","Erases one node: unlinks and rebalances it, fixes the head's leftmost and rightmost, frees it, returns the next node; throws ""invalid map/set<T> iterator"" on the head (isnil +0x21)",0x005011f0,0x007e93c0,0x005011f0
 6140,function,Multithreading::SynchSafePointerList<Graphics::MaterialObject>::SynchSafePointerList,,0x005014c0,0x007e9690,0x005014c0
 6141,function,Multithreading::SynchSafePointerList<Graphics::MaterialObject>::`scalar deleting destructor',,0x00501510,0x007e96e0,0x00501510
 6142,function,Graphics::MaterialObject::SetMaterial,,0x00501540,0x007e9710,0x00501540
 6143,function,Graphics::MaterialObject::SetVector4Parameter,,0x005015d0,0x007e97a0,0x005015d0
-6144,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::erase(first,last)","Erases [first,last); the whole tree at once (_Erase of the root, head relinked, size 0) when the range is begin..end, else one by one through 6139",0x00501610,0x007e97e0,0x00501610
-6145,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::_Buynode","Allocates a 0x24-byte node (left, parent, right, key, ECDynArray<VectorUA4f> value copied, colour +0x20, isnil +0x21 = 0)",0x005016e0,0x007e98b0,0x005016e0
+6144,function,"std::map<unsigned int,ECBase::ECDynArray<Math::Float4>>::erase(iterator,iterator)","Erases [first,last): the whole tree at once (_Erase of the root, head relinked, size 0) when the range is begin..end, else one by one. The tree'""'""'s own erase, which the inline Map destructor in ~MaterialObject calls with (begin, end) at 0x0050258C. It was named Map<unsigned int,ECDynArray<VectorUA4f>>::erase(first,last) (decomp-agent, read 2026-11-24)",0x00501610,0x007e97e0,0x00501610
+6145,function,"Map<unsigned int,ECBase::ECDynArray<Math::Float4>>::_Buynode","Allocates a 0x24-byte node (left, parent, right, key, ECDynArray<VectorUA4f> value copied, colour +0x20, isnil +0x21 = 0)",0x005016e0,0x007e98b0,0x005016e0
 6146,function,Catch_All@00501771,_Buynode's catch(...): frees the node and rethrows,0x00501771,0x007e9941,0x00501771
-6147,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::_Copy_nodes","Copies a subtree recursively (nodes by _Buynode 6145), its root's parent set to the given node",0x00501790,0x007e9960,0x00501790
+6147,function,"Map<unsigned int,ECBase::ECDynArray<Math::Float4>>::_Copy_nodes","Copies a subtree recursively (nodes by _Buynode 6145), its root's parent set to the given node",0x00501790,0x007e9960,0x00501790
 6148,function,Catch_All@0050182d,_Copy_nodes' catch(...): erases what was copied and rethrows,0x0050182d,0x007e99fd,0x0050182d
-6149,function,"std::map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::_Insert","Links a new node (6145) under the given parent, left or right, and rebalances; throws length_error past 0x0CCCCCCB elements",0x00501850,0x007e9a20,0x00501850
+6149,function,"std::map<unsigned int,ECBase::ECDynArray<Math::Float4>>::_Insert","Links a new node (6145) under the given parent, left or right, and rebalances; throws length_error past 0x0CCCCCCB elements",0x00501850,0x007e9a20,0x00501850
 6150,function,Graphics::MaterialObject::ClearParameters,,0x00501a50,0x007e9c20,0x00501a50
-6151,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::_Tidy",,0x00501cc0,0x007e9e90,0x00501cc0
-6152,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::_Copy",,0x00501d00,0x007e9ed0,0x00501d00
+6151,function,"Map<unsigned int,ECBase::ECDynArray<Math::Float4>>::_Tidy",,0x00501cc0,0x007e9e90,0x00501cc0
+6152,function,"Map<unsigned int,ECBase::ECDynArray<Math::Float4>>::_Copy",,0x00501d00,0x007e9ed0,0x00501d00
 6153,function,"std::map<unsigned int,Multithreading::SynchSafePointer>::_Copy","Copies a subtree recursively; its nodes hold a SynchSafePointer (0x1C-byte nodes, isnil +0x19), not this file's Map's",0x00501d80,0x007e9f50,0x00501d80
 6154,retired,,,,,
-6155,function,"std::map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::insert","insert(value): finds the place by key (unsigned compare, 0x00501E64) and inserts with _Insert unless the key is there; returns pair<iterator,bool>",0x00501e40,0x007ea010,0x00501e40
-6156,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::Map",,0x00501f00,0x007ea0d0,0x00501f00
-6157,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::~Map",,0x00501fa0,0x007ea170,0x00501fa0
+6155,function,"std::map<unsigned int,ECBase::ECDynArray<Math::Float4>>::insert","insert(value): finds the place by key (unsigned compare, 0x00501E64) and inserts with _Insert unless the key is there; returns pair<iterator,bool>",0x00501e40,0x007ea010,0x00501e40
+6156,function,"Map<unsigned int,ECBase::ECDynArray<Math::Float4>>::Map","Its default is built by ECDynArray<Math::Float4>'""'""'s count constructor (0x00502304 call 0x0046C3B0) in MaterialObject'""'""'s constructor: the value type is ECDynArray<Math::Float4>. It was named Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::Map (decomp-agent, read 2026-11-24)",0x00501f00,0x007ea0d0,0x00501f00
+6157,function,"Map<unsigned int,ECBase::ECDynArray<Math::Float4>>::~Map",,0x00501fa0,0x007ea170,0x00501fa0
 6158,function,"std::map<unsigned int,Multithreading::SynchSafePointer>::_Copy","Copies another map's tree into this one (6153), then sets the head's leftmost and rightmost and the size",0x00501fe0,0x007ea1b0,0x00501fe0
-6159,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::insert(hint,value)","insert(where, value): inserts beside the hint when the key fits there, else falls back to insert(value) 6155",0x00502060,0x007ea230,0x00502060
+6159,function,"Map<unsigned int,ECBase::ECDynArray<Math::Float4>>::insert(hint,value)","insert(where, value): inserts beside the hint when the key fits there, else falls back to insert(value) 6155",0x00502060,0x007ea230,0x00502060
 6160,function,Graphics::MaterialObject::MaterialObject,,0x00502220,0x007ea3f0,0x00502220
 6161,function,Graphics::MaterialObject::`scalar deleting destructor'`adjustor{288}',,0x00502420,0x007ea5f0,0x00502420
 6162,function,Graphics::MaterialObject::~MaterialObject,,0x00502430,0x007ea600,0x00502430
-6163,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::operator[]",,0x00502610,0x007ea7e0,0x00502610
-6164,function,"Map<unsigned int,ECBase::ECDynArray<Math::VectorUA4f>>::operator=",,0x005026f0,0x007ea8c0,0x005026f0
+6163,function,"Map<unsigned int,ECBase::ECDynArray<Math::Float4>>::operator[]",,0x00502610,0x007ea7e0,0x00502610
+6164,function,"Map<unsigned int,ECBase::ECDynArray<Math::Float4>>::operator=",,0x005026f0,0x007ea8c0,0x005026f0
 6165,function,Graphics::MaterialObject::`scalar deleting destructor',,0x00502740,0x007ea910,0x00502740
 6166,function,Graphics::MaterialObject::SetVector4ArrayParameter,,0x00502770,0x007ea940,0x00502770
 6167,function,"std::map<unsigned int,?>::operator=",,0x005027b0,0x007ea980,0x005027b0
