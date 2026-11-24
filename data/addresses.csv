@@ -5386,7 +5386,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5385,function,std::vector<CTlkTable::TlkEntry>::_Destroy,,0x004e4a20,0x0082a740,0x004e4a20
 5386,function,std::vector<CTlkTable::TlkEntry>::_Tidy,,0x004e4a50,0x0082a770,0x004e4a50
 5387,function,std::vector<CTlkTable::TlkEntry>::erase,,0x004e4aa0,0x0082a7c0,0x004e4aa0
-5388,function,CTlkTable::EraseVectorElementAt<CTlkTable::TlkEntry>,,0x004e4b10,0x0082a830,0x004e4b10
+5388,function,ECBase::ECDynArray<CTlkTable::TlkEntry>::RemoveAt,"The same code as ECDynArray<OnlineRec24>::RemoveAt (0x00482290) for a 12-byte element: 65 of 68 instructions the same with constants masked, the others the element size and its own vector erase (read 2026-11-23)",0x004e4b10,0x0082a830,0x004e4b10
 5389,function,CTlkTable::UnloadFile,,0x004e4bd0,0x0082a8f0,0x004e4bd0
 5390,function,std::vector<CTlkTable::TlkEntry>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x004E4A50 (ID 5386), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x004e4c90,0x0082a9b0,0x004e4c90
 5391,function,CTlkTable::~CTlkTable,,0x004e4ca0,0x0082a9c0,0x004e4ca0
@@ -5406,7 +5406,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5405,function,std::vector<CTlkTable::TlkEntry>::push_back,,0x004e5570,0x0082b290,0x004e5570
 5406,function,std::vector<CTlkTable::TlkEntry>::vector(const std::vector<CTlkTable::TlkEntry>&),,0x004e5610,0x0082b330,0x004e5610
 5407,function,std::vector<CTlkTable::TlkEntry>::vector,,0x004e5670,0x0082b390,0x004e5670
-5408,function,CTlkTable::InsertVectorElementAt<CTlkTable::TlkEntry>,,0x004e56e0,0x0082b400,0x004e56e0
+5408,function,ECBase::ECDynArray<CTlkTable::TlkEntry>::InsertAt,"The same logic as ECDynArray<void*>::InsertAt (0x006CE860): index below size, insert before it (std::vector<TlkEntry>::insert 0x004E5230); else push_back (0x004E5570); ret 8 (read 2026-11-23)",0x004e56e0,0x0082b400,0x004e56e0
 5409,function,CTlkTable::HandleMessage_RimLoadedMessage,,0x004e5770,0x0082b490,0x004e5770
 5410,function,CTlkTable::LoadFile,,0x004e5810,0x0082b530,0x004e5810
 5411,function,CTlkTable::LoadTables,,0x004e5a80,0x0082b7a0,0x004e5a80
@@ -10904,12 +10904,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10903,function,std::vector<AddInsManager::AddInEntry>::_Destroy,,0x005f19b0,0x004deec0,0x005f19b0
 10904,function,std::vector<?>::_Tidy,,0x005f19e0,0x004deef0,0x005f19e0
 10905,function,std::vector<AddInsManager::AddInEntry>::_Ufill,,0x005f1a30,0x004def40,0x005f1a30
-10906,function,AddInsManager::EraseVectorElementAt<PrereqItem>,,0x005f1a70,0x004def80,0x005f1a70
+10906,function,ECBase::ECDynArray<PrereqItem>::RemoveAt,"ECDynArray<OnlineRec24>::RemoveAt's logic (0x00482290) for a 0x40-byte element: the index checked, then erase(begin+i, begin+i+1) (0x004819B0); registers allocated differently (read 2026-11-23)",0x005f1a70,0x004def80,0x005f1a70
 10907,function,std::vector<?>::erase,,0x005f1b20,0x004df030,0x005f1b20
 10908,function,"std::uninitialized_copy<?*,?*>",,0x005f1b90,0x004df0a0,0x005f1b90
 10909,function,AddInsManager::ResetWorkingEntry,,0x005f1bc0,0x004df0d0,0x005f1bc0
 10910,function,std::vector<?>::_Tidy,"No code of its own: one jmp to the function of the same name at 0x005F19E0 (ID 10904), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x005f1f00,0x004df410,0x005f1f00
-10911,function,AddInsManager::EraseVectorElementAt<?>,,0x005f1f10,0x004df420,0x005f1f10
+10911,function,ECBase::ECDynArray<?>::RemoveAt,"The same instructions as ECDynArray<OnlineRec24>::RemoveAt (0x00482290), the element size computed with imul; element type not known (read 2026-11-23)",0x005f1f10,0x004df420,0x005f1f10
 10912,function,AddInXmlEntry::~AddInXmlEntry,,0x005f1fc0,0x004df4d0,0x005f1fc0
 10913,function,AddInRecord::operator<,,0x005f2170,0x004df680,0x005f2170
 10914,function,std::vector<AddInsManager::AddInEntry>::_Insert_n,,0x005f21e0,0x004df780,0x005f21e0
@@ -11091,7 +11091,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 11090,function,CCModule::GetObjectsInAreaByTag,,0x00601860,0x004efd50,0x00601860
 11091,function,"std::map<int,std::wstring>::~map",,0x00601a70,0x005a2300,0x00601a70
 11092,function,std::vector<CCModule::TagIndexEntry>::vector,,0x00601ab0,0x004effd0,0x00601ab0
-11093,function,CCModule::InsertVectorElementAt<CCModule::TagIndexEntry>,,0x00601b10,0x004f0030,0x00601b10
+11093,function,ECBase::ECDynArray<CCModule::TagIndexEntry>::InsertAt,"The same code as ECDynArray<CTlkTable::TlkEntry>::InsertAt (0x004E56E0) for a larger element, registers allocated differently: insert or push_back of its own vector (read 2026-11-23)",0x00601b10,0x004f0030,0x00601b10
 11094,function,std::vector<Gff4::StructReader>::vector,,0x00601ba0,0x004f00c0,0x00601ba0
 11095,function,"std::_Copy_opt<CCModule::AreaListEntry*,CCModule::AreaListEntry*>",,0x00601c20,0x004f01b0,0x00601c20
 11096,function,"std::_Copy_backward_opt<CCModule::AreaListEntry*,CCModule::AreaListEntry*>",,0x00601c90,0x004f0220,0x00601c90
@@ -100253,7 +100253,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100252,data,RimLoadedMessage::GetType::s_guard,"Bit 0 guard of GetType's one-time write of RimLoadedMessage::s_classInfo.parent; the same bit is tested by InitType, RegisterHandler_RimLoadedMessage, which inline the same link. It is also the outer guard of the nested GameMessage link (Messages::GameMessage::s_classInfoParentSet).",0x00c2c0c4,0x00c1c714,0x00c2c0c4
 100253,data,RimUnloadedMessage::GetType::s_guard,"Bit 0 guard of GetType's one-time write of RimUnloadedMessage::s_classInfo.parent; the same bit is tested by InitType, RegisterHandler_RimUnloadedMessage, which inline the same link. It is also the outer guard of the nested GameMessage link (Messages::GameMessage::s_classInfoParentSet).",0x00c2c0c8,0x00c1c718,0x00c2c0c8
 100254,data,CTlkTable::GetClassInfo::s_guard,GetClassInfo tests and sets bit 0 of 0xc2c0cc; RegisterClass and the two RegisterHandler functions carry inlined copies.,0x00c2c0cc,0x00c258a0,0x00c2c0cc
-100255,data,CTlkTable::s_defaultEntry,,0x00c2c0d0,0x00c258a4,0x00c2c0d0
+100255,data,ECBase::ECDynArray<CTlkTable::TlkEntry>::s_default,"The 12-byte entry returned for an index out of range by four inlined element-or-default lookups of CTlkTable's entries (0x004E49E7, 0x004E4C2D, 0x004E4D2E, 0x004E5D81), as ECDynArray<CSAreaList::Entry>::At (0x005FE590) returns its s_default; in .bss, no initializer and no atexit destructor (read 2026-11-23)",0x00c2c0d0,0x00c258a4,0x00c2c0d0
 100256,data,,,0x00c2c0d4,0x00c258a8,0x00c2c0d4
 100257,data,Resource::s_processors,"Global wstring-keyed map (WStringMap<void*>) of resource processors: constructed at startup by the dynamic initialiser 0x00aced70 (0x005b8710), atexit stub 0x00ad5870; Resource::RegisterProcessor (0x004e6fc0) inserts, Resource::FindProcessor (0x004e6f30) looks a type name up and returns the stored pointer.",0x00c2c0dc,0x00c255d8,0x00c2c0dc
 100258,data,,,0x00c2c0e0,0x00c255dc,0x00c2c0e0
