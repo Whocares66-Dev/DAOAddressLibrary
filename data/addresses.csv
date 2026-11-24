@@ -8638,7 +8638,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8637,function,"std::_Uninit_copy<?*,?*,std::allocator<?>>",,0x00569ea0,0x00482f70,0x00569ea0
 8638,function,Multithreading::SynchSafePointer<?>::Release,,0x00569ed0,0x00693400,0x00569ed0
 8639,function,std::list<?>::~list,,0x00569ee0,0x007616e0,0x00569ee0
-8640,function,"std::map<std::wstring,?>::count",,0x00569f00,0x004b7c70,0x00569f00
+8640,function,WStringMap<?>::Contains,"INFERRED name: __thiscall, ret 4: the std map'""'""'s find (0x00512A10) on this, then setne on it != end: a bool. VC8'""'""'s map::count goes through equal_range and a distance instead. Callers use it on a WStringMap (FlatFile::AddString 0x0056B220). It was named std::map<std::wstring,?>::count (decomp-agent, read 2026-11-24)",0x00569f00,0x004b7c70,0x00569f00
 8641,function,std::list<?>::_Incsize,,0x00569f40,0x00761700,0x00569f40
 8642,function,,,0x00569fe0,0x007617a0,0x00569fe0
 8643,function,std::list<?>::_Incsize,,0x0056a000,0x007617c0,0x0056a000
@@ -20422,7 +20422,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20421,function,MapTravelPoint::`scalar deleting destructor',,0x007c5780,0x006ac480,0x007c5780
 20422,function,MapTravelPoint::WriteToSave,,0x007c5790,0x006ac490,0x007c5790
 20423,function,MapPathSearch::PopLowestCost,,0x007c57e0,0x006ac4e0,0x007c57e0
-20424,function,ECBase::ECDynArray<unsigned int>::TryGet,,0x007c58f0,0x006ac5f0,0x007c58f0
+20424,function,MapPathSearch::TryGetResultTrail,"INFERRED name: __thiscall, ret 8 (index, out): this+4 is MapPathSearch'""'""'s resultTrails array; when out is not null and index is below its size, *out = its element (ECDynArray<unsigned int>::At 0x005C1770) and returns true. Its one caller, MapObject::BuildTravelPath (0x007C7855), calls it on its MapPathSearch local. It was named ECBase::ECDynArray<unsigned int>::TryGet, though it is not ECDynArray'""'""'s (decomp-agent, read 2026-11-24)",0x007c58f0,0x006ac5f0,0x007c58f0
 20425,function,"SmartData::Attribute<CCCreature*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::RemoveMember",,0x007c5930,0x005f1b00,0x007c5930
 20426,function,"SmartData::Attribute<CCCreature*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::SetMemberName",,0x007c5960,0x005f1b30,0x007c5960
 20427,function,"std::_Copy_opt<MapTrailPoint*,MapTrailPoint*>",,0x007c5980,0x006ac630,0x007c5980
@@ -22434,7 +22434,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22433,function,Physics::PhysicsScene::GetFilteredContacts,,0x00826e60,0x0049f7e0,0x00826e60
 22434,function,Physics::UserDataEncoder::`scalar deleting destructor',,0x00827030,0x0049f9b0,0x00827030
 22435,function,std::vector<bool>::erase,,0x00827050,0x0049f9d0,0x00827050
-22436,function,,,0x00827140,0x0040df40,0x00827140
+22436,function,"stdext::hash_map<unsigned int,unsigned int>::insert","The hash map insert for unsigned int keys with a 4-byte value, one folded body: FlatFile'""'""'s refs at +0x40 (AddDwordArray 0x00A2BEDB, AllocStruct, AppendArray and the like), ECHashMap<unsigned int,...> (0x0041315C), hash_map<unsigned int,?>::operator[] (0x0082BCD8), Morph::Write (decomp-agent, read 2026-11-24)",0x00827140,0x0040df40,0x00827140
 22437,function,std::vector<bool>::_Insert_x,,0x008275c0,0x0049fac0,0x008275c0
 22438,function,Physics::PhysicsScene::PhysicsEntityReport<NxShape*>::PhysicsEntityReport,,0x00827690,0x0049fb90,0x00827690
 22439,function,Physics::PhysicsScene::PhysicsEntityReport<NxShape*>::onEvent,,0x008276b0,0x004a4880,0x008276b0
@@ -32446,9 +32446,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32445,function,std::vector<unsigned int>::vector,,0x00a2b430,0x007d7d40,0x00a2b430
 32446,function,std::vector<?>::_Construct_n,,0x00a2b4a0,0x0081e9b0,0x00a2b4a0
 32447,function,,,0x00a2b540,0x0081ea50,0x00a2b540
-32448,function,"std::_Sort<Gff4::Field*,int,Gff4::File::FieldAlignmentGreater>",,0x00a2b560,0x0081eac0,0x00a2b560
+32448,function,"std::_Sort<Gff4::Field*,int,Gff4::FlatFile::FieldAlignmentGreater>",,0x00a2b560,0x0081eac0,0x00a2b560
 32449,function,"stdext::hash_map<unsigned int,unsigned int>::hash_map",,0x00a2b6a0,0x0081ec00,0x00a2b6a0
-32450,function,Gff4::FlatFile::MakeSortedStruct,,0x00a2b720,0x0082e9c0,0x00a2b720
+32450,function,Gff4::File::MakeSortedStruct,"Never reads this. Called by Gff4::File'""'""'s own members (ExpandStructTemplates 0x004DE29A, SetRootTemplate 0x004DE7DD, AddBuiltTemplate 0x004DF0C3) as well as FlatFile'""'""'s, so it is File'""'""'s; c060ccb had moved it to FlatFile with its neighbours (decomp-agent, read 2026-11-24)",0x00a2b720,0x0082e9c0,0x00a2b720
 32451,function,Gff4::FlatFile::AppendData,,0x00a2b800,0x0081ecd0,0x00a2b800
 32452,function,Gff4::SwapImageEndian,,0x00a2b900,0x0081edd0,0x00a2b900
 32453,function,std::vector<unsigned char>::_Tidy,,0x00a2ba50,0x0081ef20,0x00a2ba50
