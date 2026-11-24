@@ -7264,7 +7264,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7263,function,GraphicsStructures::SpeedTreeWorld::Update,,0x0052e5a0,0x007350e0,0x0052e5a0
 7264,function,GraphicsStructures::SpeedTreeWorld::WindProxy::WindProxy,,0x0052e630,0x00735170,0x0052e630
 7265,function,GraphicsStructures::SpeedTreeWorld::WindProxy::SetPosition,,0x0052e680,0x007351e0,0x0052e680
-7266,function,Quaternion::FromYawPitchRoll,"The radians twin of 5699: (out, x, y, z) unscaled, three Quaternion::FromAxisAngle rotations about its lazily built unit X, Y and Z statics (0x00C31840, 0x00C31830, 0x00C31820) for the three angles in turn, multiplied into out; called by SpeedTreeInstance::CreatePhysicsActor and UpdateRenderTransform",0x0052e6d0,0x00735230,0x0052e6d0
+7266,function,Quaternion::FromYawPitchRoll,"Not the same function as Quaternion::FromYawPitchRoll at 0x004EE200, though named the same: its own axis statics (0x00C31820..0x00C31850, against 0x00C1E870.. there), and only GraphicsStructures::SpeedTreeInstance calls it (CreatePhysicsActor 0x0053165E and 0x005316BC, UpdateRenderTransform 0x005317D2). decomp-agent reads it as taking radians where 0x004EE200 takes degrees; its own name is not known yet (2026-11-24)",0x0052e6d0,0x00735230,0x0052e6d0
 7267,function,ECBase::ECDynArray<?>::At,,0x0052e7e0,0x004f5570,0x0052e7e0
 7268,function,"std::_Med3<GraphicsStructures::SpeedTreeInstance**,SpeedTree::FartherFromPoint>",,0x0052e810,0x007357a0,0x0052e810
 7269,function,"std::_Push_heap<GraphicsStructures::SpeedTreeInstance**,int,GraphicsStructures::SpeedTreeInstance*,SpeedTree::FartherFromPoint>",,0x0052e880,0x00735810,0x0052e880
@@ -20894,9 +20894,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20893,function,std::list<Elem>::clear,,0x007d76b0,0x006be9f0,0x007d76b0
 20894,function,"std::pair<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>::pair",,0x007d7740,0x006bea80,0x007d7740
 20895,function,ECBase::ECDynArray<EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>::ECDynArray(unsigned int),,0x007d77a0,0x006bebf0,0x007d77a0
-20896,function,std::vector<EC::Cutscene::Actor::ClipRecord>::_Tidy,,0x007d7820,0x006bec70,0x007d7820
+20896,function,ECBase::ECDynArray<EC::Cutscene::Actor::ClipRecord>::Clear,"ECDynArray'""'""'s Clear(bool): a byte argument (0x007D7848) chooses between freeing the storage and clearing the elements; ret 4; ECDynArray<unsigned int>::Clear'""'""'s sequence (0x00634F20). Actor::Reset calls it. It was named std::vector<ClipRecord>::_Tidy (decomp-agent, read 2026-11-24)",0x007d7820,0x006bec70,0x007d7820
 20897,function,ECBase::ECDynArray<EC::Cutscene::Actor::BlendGadRecord>::ECDynArray(unsigned int),,0x007d7940,0x006bed90,0x007d7940
-20898,function,std::vector<EC::Cutscene::Actor::BlendGadRecord>::_Tidy,,0x007d79c0,0x006bee10,0x007d79c0
+20898,function,ECBase::ECDynArray<EC::Cutscene::Actor::BlendGadRecord>::Clear,"ECDynArray'""'""'s Clear(bool), as 0x007D7820, with the element erase inlined as std::_Copy<BlendGadRecord*> (0x007CFFF0); byte argument at 0x007D79E8, ret 4. It was named std::vector<BlendGadRecord>::_Tidy (decomp-agent, read 2026-11-24)",0x007d79c0,0x006bee10,0x007d79c0
 20899,function,ECBase::ECDynArray<Resources>::SwapRemoveAt,,0x007d7ac0,0x006bef10,0x007d7ac0
 20900,function,Elem16::Elem16,,0x007d7b80,0x00452e80,0x007d7b80
 20901,function,"std::_Copy_opt<CutscenePlayer::BindRecord*,CutscenePlayer::BindRecord*>",,0x007d7ba0,0x006beff0,0x007d7ba0
