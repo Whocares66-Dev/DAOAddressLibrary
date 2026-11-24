@@ -4482,9 +4482,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4481,function,std::wstring::erase,,0x004c0830,0x00405960,0x004c0830
 4482,function,,,0x004c08d0,0x005f3ba0,0x004c08d0
 4483,function,,,0x004c0930,0x00477220,0x004c0930
-4484,function,String::WideToLongSigned,,0x004c0950,0x008028d0,0x004c0950
-4485,function,String::WideToLong,,0x004c0990,0x00802910,0x004c0990
-4486,function,String::WideToFloat,,0x004c09d0,0x00802950,0x004c09d0
+4484,function,ECBase::ECString::WideToLongSigned,"__thiscall on an ECString: reads its capacity (+0x18) and its inline buffer or pointer (+4) through ecx (0x004C0952..), ECString'""'""'s layout, then the signed conversion. It was named String::WideToLongSigned (decomp-agent, read 2026-11-24)",0x004c0950,0x008028d0,0x004c0950
+4485,function,ECBase::ECString::WideToLong,"__thiscall on an ECString: reads its capacity (+0x18) and its inline buffer or pointer (+4) through ecx (0x004C0952..), ECString'""'""'s layout, then wcstoul. It was named String::WideToLong (decomp-agent, read 2026-11-24)",0x004c0990,0x00802910,0x004c0990
+4486,function,ECBase::ECString::WideToFloat,"__thiscall on an ECString: reads its capacity (+0x18) and its inline buffer or pointer (+4) through ecx (0x004C0952..), ECString'""'""'s layout, then the float conversion. It was named String::WideToFloat (decomp-agent, read 2026-11-24)",0x004c09d0,0x00802950,0x004c09d0
 4487,function,ECBase::ECString::ToInt64,,0x004c0a10,0x00802990,0x004c0a10
 4488,function,ECBase::ECString::EqualsNoCase,,0x004c0a50,0x008029d0,0x004c0a50
 4489,function,ECBase::ECString::EqualsNoCase,,0x004c0aa0,0x00802a20,0x004c0aa0
@@ -28880,7 +28880,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28879,function,,,0x0096c980,0x009443a0,0x0096c980
 28880,function,,,0x0096ca80,0x009444a0,0x0096ca80
 28881,function,,,0x0096cd90,0x009447c0,0x0096cd90
-28882,function,,,0x0096cda0,0x009447d0,0x0096cda0
+28882,function,Graphics::MaterialEffectParamTemp::GetParam,"INFERRED name: mov eax,[ecx+0xB4]; ret. Slot 4 of MaterialEffectParamTemp'""'""'s vftable 0x00AF4B84 (decomp-agent, read 2026-11-24)",0x0096cda0,0x009447d0,0x0096cda0
 28883,function,,,0x0096cdb0,0x009447e0,0x0096cdb0
 28884,function,,,0x0096cdc0,0x009447f0,0x0096cdc0
 28885,function,GFxSprite::`scalar deleting destructor'`adjustor{108}',,0x0096cdd0,0x00944800,0x0096cdd0
@@ -102418,7 +102418,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 102417,data,ECBase::ECDynArray<EC::Cutscene::Actor::Action*>::s_default,,0x00c38e84,0x00c218c4,0x00c38e84
 102418,data,,,0x00c38e88,0x00c218c8,0x00c38e88
 102419,data,ECBase::ECDynArray<EC::Cutscene::Actor*>::s_default,,0x00c38e8c,0x00c218cc,0x00c38e8c
-102420,data,EC::Cutscene::Actor::ClipRecord::s_empty,,0x00c38e90,0x00c218d8,0x00c38e90
+102420,data,ECBase::ECDynArray<EC::Cutscene::Actor::ClipRecord>::s_default,"The ClipRecord array'""'""'s out-of-range element: Actor::Reset'""'""'s inlined lookup loads it when the index is out of range (0x007D8990, 0x007D89BF); RemoveAnimationsNotCovering (0x007D60E1) and ActionPlayAnimation::Update (0x007DB560) reference it too. It was named EC::Cutscene::Actor::ClipRecord::s_empty (decomp-agent, read 2026-11-24)",0x00c38e90,0x00c218d8,0x00c38e90
 102421,data,EC::Cutscene::Actor::ActionFrameBufferEffect::s_emptyParameter,zero-initialised 0x18-byte empty element returned for an out-of-range index of the effect's 0x18-byte parameter vector; the other five dwords are rows 102422-102426,0x00c38ed4,0x00c2191c,0x00c38ed4
 102422,data,,,0x00c38ed8,0x00c21920,0x00c38ed8
 102423,data,,,0x00c38edc,0x00c21924,0x00c38edc
