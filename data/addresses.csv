@@ -33049,7 +33049,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33048,function,Pathfinding::PathFollower::PathFollower,,0x00a47fc0,0x007d17c0,0x00a47fc0
 33049,function,ECBase::ECDynArray<?>::ECDynArray(unsigned int),,0x00a48030,0x007d1830,0x00a48030
 33050,function,ECBase::ECDynArray<?>::InsertAt,,0x00a480a0,0x007d18a0,0x00a480a0
-33051,function,std::vector<?>::_Tidy,,0x00a48130,0x007d1930,0x00a48130
+33051,function,ECBase::ECDynArray<Vector3>::Clear(bool),"ret 4 with a bool tested at entry (0x00A48158), where VC8's vector::_Tidy takes nothing: the engine array's Clear(bool). Pathfinding::Path::ClearWaypoints (push 0, ecx = path+0x70, 0x00A4844D..0x00A48452) and Path::Free call it on the waypoint array. It was named std::vector<?>::_Tidy (decomp-agent, read 2026-11-24)",0x00a48130,0x007d1930,0x00a48130
 33052,function,Pathfinding::PathBase::PathBase,,0x00a48220,0x007d1a20,0x00a48220
 33053,function,Pathfinding::Path::Path,,0x00a482d0,0x007d1ad0,0x00a482d0
 33054,function,Pathfinding::Path::AddWaypoint,,0x00a48380,0x007d1b80,0x00a48380
