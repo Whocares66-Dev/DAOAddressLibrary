@@ -3562,7 +3562,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3561,function,std::deque<unsigned int>::push_back,,0x0048dd20,0x007d3510,0x0048dd20
 3562,function,"std::map<unsigned int,std::wstring>::map(const std::map<unsigned int,std::wstring>&)",,0x0048dda0,0x00864270,0x0048dda0
 3563,function,Catch_All@0048de1c,,0x0048de1c,0x008642ec,0x0048de1c
-3564,function,std::vector<unsigned int>::vector(const std::vector<unsigned int>&),,0x0048de30,0x008643c0,0x0048de30
+3564,function,ECBase::ECDynArray<unsigned int>::ECDynArray(const ECBase::ECDynArray<unsigned int>&),"ECDynArray'""'""'s own copy constructor: zeroes +4, +8, +0xC, then vector::operator= (0x0048D870); ret 4. VC8'""'""'s vector copy constructor allocates and copies instead (decomp-agent, read 2026-11-24)",0x0048de30,0x008643c0,0x0048de30
 3565,function,std::vector<OnlineRec84>::vector(const std::vector<OnlineRec84>&),,0x0048de90,0x00864300,0x0048de90
 3566,function,std::vector<OnlineFeatures::Achievement>::vector(const std::vector<OnlineFeatures::Achievement>&),,0x0048def0,0x00864360,0x0048def0
 3567,function,std::deque<unsigned int>::_Insert<std::_Deque_const_iterator<unsigned int>>,,0x0048df50,0x00864420,0x0048df50
@@ -11527,7 +11527,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 11526,function,GUI::DragonAgeGUISystem::RegisterHandler_HideGUIScreenMessage,,0x0060fea0,0x004fe570,0x0060fea0
 11527,function,GUI::DragonAgeGUISystem::RegisterHandler_DialogBoxClosedMessage,,0x0060ff50,0x004fe620,0x0060ff50
 11528,function,std::list<GuiListEntry>::~list,,0x0060ffe0,0x004fe870,0x0060ffe0
-11529,function,std::vector<unsigned int>::vector,,0x00610000,0x005ef1f0,0x00610000
+11529,function,ECBase::ECDynArray<?>::ECDynArray(const ECBase::ECDynArray<?>&),"ECDynArray'""'""'s own copy constructor: zeroes +4, +8, +0xC, then vector::operator= (0x0072BB00, element type not known); ret 4 (decomp-agent, read 2026-11-24)",0x00610000,0x005ef1f0,0x00610000
 11530,function,std::vector<unsigned int>::resize,,0x00610060,0x0075f7d0,0x00610060
 11531,function,stdext::_Hash<GUI::SharedMapHashTraits>::_Hash,,0x00610070,0x004fe960,0x00610070
 11532,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::HighlightInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x00610100,0x004fea60,0x00610100
@@ -18520,7 +18520,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18519,function,CameraControllerExplore::IsHostileTargetInCentre,,0x00770a10,0x00688150,0x00770a10
 18520,function,CameraControllerExplore::KeepInView,,0x00770bb0,0x006882f0,0x00770bb0
 18521,function,CameraControllerExplore::CollectActivePartyMembers,,0x00770e80,0x006885c0,0x00770e80
-18522,function,ECBase::ECDynArray<?*>::~ECDynArray,"Not ECDynArray's own: ECDynArray has no out-of-line destructor (its inline one is vector::_Tidy). The destructor of a pointer-owning ECDynArray subclass whose name is not known: ECDynArray<?*>::DeleteAll(false) (0x006352C0), then _Tidy (0x0046C760) (decomp-agent, read 2026-11-24)",0x00770fa0,0x006886e0,0x00770fa0
+18522,function,ECBase::ECDynArray<?*>::~ECDynArray,"The destructor of a pointer-owning ECDynArray subclass whose name is not known: ECDynArray<?*>::DeleteAll(false) (0x006352C0), then ECDynArray'""'""'s own destructor, which is out of line and folded with vector<void*>::_Tidy (0x0046C760). Corrected 2026-11-24: ECDynArray'""'""'s destructor is out of line; ~ScriptArray reaches it through a scalar deleting destructor, which VC8 makes only for an out-of-line one (decomp-agent)",0x00770fa0,0x006886e0,0x00770fa0
 18523,function,CameraControllerExplore::ResetBehind,,0x00770ff0,0x00688730,0x00770ff0
 18524,function,CameraControllerExplore::TacticalStep,,0x00771060,0x006887a0,0x00771060
 18525,function,CameraControllerExplore::UpdateFocus,,0x00771250,0x00688990,0x00771250
@@ -32534,7 +32534,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32533,function,std::vector<unsigned char>::resize,,0x00a2e5a0,0x00822d00,0x00a2e5a0
 32534,function,ScriptArray::ScriptArray,,0x00a2e5b0,0x00822d10,0x00a2e5b0
 32535,function,ScriptArray::ScriptArray,,0x00a2e660,0x00822dc0,0x00a2e660
-32536,function,ECBase::ECDynArray<std::wstring *>::DeleteAllAndClear,,0x00a2e710,0x00822e70,0x00a2e710
+32536,function,ECBase::ECDynArray<?*>::DeleteAll,"DeleteAll(bool clear) for an array of ECString pointers: each element destroyed (0x004C0DB0) and freed, then the array cleared when the flag is set. The same template body as ECDynArray<SpeedTreeForest::ModelGroup*>::DeleteAll (0x00534B30), only the element destructor inlined differs. ~ScriptArray (0x00A2E830) calls it. It was named DeleteAllAndClear (decomp-agent, read 2026-11-24)",0x00a2e710,0x00822e70,0x00a2e710
 32537,function,ScriptArray::~ScriptArray,,0x00a2e830,0x00822f90,0x00a2e830
 32538,function,ScriptArray::ScriptArray,,0x00a2e920,0x00823080,0x00a2e920
 32539,function,CVirtualMachineStack::WriteArrayElement,,0x00a2ec20,0x00823380,0x00a2ec20
