@@ -4566,8 +4566,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4565,function,,,0x004c35f0,0x00804b20,0x004c35f0
 4566,function,ECBase::ECString::append(const ECBase::ECString&),"__thiscall, ret 4: append(other, 0, npos) (0x004C1820), then returns this, not what append returned, as 0x004C2AB0 does for operator=: ECString's own",0x004c36a0,0x00804bd0,0x004c36a0
 4567,function,ECBase::ECString::append(const wchar_t*),"__thiscall, ret 4: a null argument read as ECString::s_emptyChars (0x00C2BDFC), then append(text, length) (0x004C1930), returning this: ECString's own",0x004c36c0,0x00804bf0,0x004c36c0
-4568,function,,,0x004c3700,0x00804c30,0x004c3700
-4569,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::append",,0x004c3780,0x00804cb0,0x004c3780
+4568,function,ECBase::ECString::append(long),"__thiscall, ret 4: builds a temporary ECString(long, nullptr) (0x004C2770), appends it with append(const ECString&) (0x004C36A0), destroys it (0x004C0DB0) and returns what append returned, this (read 2026-11-23)",0x004c3700,0x00804c30,0x004c3700
+4569,function,ECBase::ECString::append(unsigned long),"As 0x004C3700 (append(long)) through ECString(unsigned long, nullptr) (0x004C2840)",0x004c3780,0x00804cb0,0x004c3780
 4570,function,String::ToUpperAscii,,0x004c3800,0x00804d30,0x004c3800
 4571,function,String::ToUpperAscii,,0x004c38e0,0x00804e10,0x004c38e0
 4572,function,String::ToLowerAscii,,0x004c3970,0x00804ea0,0x004c3970

@@ -28,3 +28,5 @@ id,name,evidence
 24226,std::_Tree<?>::_Tidy,decomp-agent's matched callers call it so (2026-11-22)
 27895,Math::VectorUA4f::operator=(const Math::VectorUA4f&),"copies four dwords and returns this, as the copy constructor does (decomp-agent, 2026-11-20)"
 29006,GArrayBase<?>::~GArrayBase,"Scaleform's garray inlines it; DAODecomp's byte-identical GFxFontResource::RemoveDisposeHandler (0x00964BB0) calls it so (decomp-agent, 2026-11-23)"
+4498,ECBase::ECString::~ECString,"ECString adds no data to the pool string (0x1C bytes), and the pool allocator frees through operator delete (0x004136C0) as std::allocator does, so std::wstring's destructor and ECString's are this code: ECString::append(long) and append(unsigned long) destroy their ECString temporaries with it (0x004C375B, 0x004C37DB) (decomp-agent, 2026-11-23)"
+4498,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::~basic_string","the pool string's destructor, which ECString's is (above): the allocators differ only in allocate (decomp-agent, 2026-11-23)"
