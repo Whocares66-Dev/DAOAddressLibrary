@@ -178,7 +178,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 177,retired,,,,,
 178,function,,,0x004058eb,0x00405b1b,0x004058eb
 179,function,"std::basic_stringbuf<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>::basic_stringbuf",,0x00405920,0x00405bd0,0x00405920
-180,function,"std::_Uninit_copy<std::wstring*,std::wstring*>",,0x004059a0,0x00405dd0,0x004059a0
+180,function,"std::_Uninit_copy<ECBase::ECString*,ECBase::ECString*>",,0x004059a0,0x00405dd0,0x004059a0
 181,function,Catch_All@00405a09,,0x00405a09,0x00405e39,0x00405a09
 182,function,EclipseGame::ProcessCommandIni,,0x00405a40,0x00405e70,0x00405a40
 183,function,"std::basic_stringstream<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>::~basic_stringstream",,0x00405e10,0x00406240,0x00405e10
@@ -191,7 +191,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 190,function,"std::list<std::pair<unsigned int,std::wstring>>::_Buynode",,0x004060b0,0x004064e0,0x004060b0
 191,function,Catch_All@0040612c,,0x0040612c,0x0040655c,0x0040612c
 192,function,"stdext::_Unchecked_move_backward<std::wstring*,std::wstring*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<std::wstring*,std::wstring*>.",0x00406150,0x00406580,0x00406150
-193,function,"std::_Uninit_fill_n<std::wstring*,unsigned int,std::wstring>",,0x00406180,0x004065b0,0x00406180
+193,function,"std::_Uninit_fill_n<ECBase::ECString*,unsigned int,ECBase::ECString>",,0x00406180,0x004065b0,0x00406180
 194,function,Catch_All@004061eb,,0x004061eb,0x0040661b,0x004061eb
 195,function,"std::equal<std::_List_const_iterator<?>,std::_List_const_iterator<?>>",,0x00406220,0x00406650,0x00406220
 196,function,,,0x00406270,0x00401410,0x00406270
@@ -211,7 +211,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 210,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::append","std::wstring::append(size_t count, wchar_t ch), ret 8: checks the length (0x7FFFFFFE), grows with _Copy 0x00405EB0 when over capacity, fills count characters (0x00409030), NUL-terminates. Called with 0x5F ('_') and 1 at 0x00A666AD in Items::GetVariationNames.",0x00406970,0x00406dd0,0x00406970
 211,function,std::_Tree<?>::_Erase,,0x00406a20,0x00406e80,0x00406a20
 212,function,std::vector<std::wstring>::~vector,,0x00406a60,0x0083de00,0x00406a60
-213,function,std::vector<std::wstring>::_Ufill,,0x00406ab0,0x00406ee0,0x00406ab0
+213,function,std::vector<ECBase::ECString>::_Ufill,,0x00406ab0,0x00406ee0,0x00406ab0
 214,function,"std::basic_stringbuf<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>::str",,0x00406af0,0x00406f90,0x00406af0
 215,function,,,0x00406c80,0x00407120,0x00406c80
 216,function,"std::_Uninit_copy<std::wstring*,std::wstring*>",,0x00406ce0,0x004926d0,0x00406ce0
@@ -298,7 +298,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 297,function,,,0x00409890,0x00409b30,0x00409890
 298,function,,,0x004098e0,0x00409b80,0x004098e0
 299,function,,,0x00409930,0x00409bd0,0x00409930
-300,function,std::vector<std::wstring>::_Insert_n,,0x00409980,0x00409c20,0x00409980
+300,function,std::vector<ECBase::ECString>::_Insert_n,,0x00409980,0x00409c20,0x00409980
 301,function,,,0x00409b6d,0x00409e0d,0x00409b6d
 302,function,,,0x00409c27,0x00409ec7,0x00409c27
 303,function,"std::basic_ios<wchar_t,std::char_traits<wchar_t>>::widen",,0x00409cc0,0x00409f60,0x00409cc0
@@ -308,8 +308,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 307,function,"std::num_put<wchar_t,std::ostreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>::_Getcat",,0x0040a1d0,0x0040a470,0x0040a1d0
 308,function,"std::num_get<wchar_t,std::istreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>::_Getcat",,0x0040a240,0x0040a4e0,0x0040a240
 309,function,std::numpunct<wchar_t>::_Getcat,,0x0040a2b0,0x0040a550,0x0040a2b0
-310,function,std::vector<std::wstring>::resize,,0x0040a320,0x0040a5c0,0x0040a320
-311,function,std::vector<std::wstring>::insert,,0x0040a450,0x0040a6f0,0x0040a450
+310,function,std::vector<ECBase::ECString>::resize,,0x0040a320,0x0040a5c0,0x0040a320
+311,function,std::vector<ECBase::ECString>::insert,,0x0040a450,0x0040a6f0,0x0040a450
 312,function,"std::basic_istream<wchar_t,std::char_traits<wchar_t>>::_Ipfx",,0x0040a510,0x0040a860,0x0040a510
 313,function,Catch_All@0040a64c,,0x0040a64c,0x0040a99c,0x0040a64c
 314,retired,,,,,
@@ -320,7 +320,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 319,function,"std::use_facet<std::num_put<wchar_t,std::ostreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>>",,0x0040a7b0,0x0040aaa0,0x0040a7b0
 320,function,"std::use_facet<std::num_get<wchar_t,std::istreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>>",,0x0040a8e0,0x0040abd0,0x0040a8e0
 321,function,std::use_facet<std::numpunct<wchar_t>>,,0x0040aa10,0x0040ad00,0x0040aa10
-322,function,std::vector<std::wstring>::push_back,,0x0040ab40,0x0040ae30,0x0040ab40
+322,function,std::vector<ECBase::ECString>::push_back,,0x0040ab40,0x0040ae30,0x0040ab40
 323,function,"ECBase::ECHashMap<unsigned int,SmartData::IAttribute*,ECBase::ECHashParams<unsigned int>>::operator=","Copy-assigns a hash map: rebuilds the element list, resizes and refills the bucket vector (8-byte iterator pairs) and copies the two parameter words at +0x20/+0x24; callers are SmartData::Attribute<...>::Set and MembersFromString.",0x0040abf0,0x0040aee0,0x0040abf0
 324,function,,,0x0040ad74,0x0040b064,0x0040ad74
 325,function,,,0x0040ade0,0x0040b0d0,0x0040ade0
@@ -335,7 +335,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 334,function,"std::num_get<wchar_t,std::istreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>::_Getifld",,0x0040be70,0x0040c160,0x0040be70
 335,function,"std::num_get<wchar_t,std::istreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>::_Getffld",,0x0040c4e0,0x0040c7d0,0x0040c4e0
 336,function,std::vector<unsigned int>::vector,,0x0040d610,0x00493a20,0x0040d610
-337,function,std::vector<std::wstring>::vector,,0x0040d670,0x0040d900,0x0040d670
+337,function,std::vector<ECBase::ECString>::vector,,0x0040d670,0x0040d900,0x0040d670
 338,function,,,0x0040d6e0,0x0040d970,0x0040d6e0
 339,function,"std::basic_iostream<wchar_t,std::char_traits<wchar_t>>::basic_iostream",,0x0040d750,0x0040d9e0,0x0040d750
 340,function,,,0x0040d830,0x0040dac0,0x0040d830
@@ -4824,7 +4824,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4823,function,ECResMan::DirectorySource::ListNames,,0x004ced00,0x00810010,0x004ced00
 4824,function,ECResMan::DirectorySource::ReleaseChildren,,0x004cedf0,0x00810100,0x004cedf0
 4825,function,"stdext::hash_map<std::wstring *,?>::iterator::operator*",,0x004ceea0,0x005beff0,0x004ceea0
-4826,function,std::vector<std::wstring>::_Destroy,,0x004ceee0,0x008101b0,0x004ceee0
+4826,function,std::vector<ECBase::ECString>::_Destroy,,0x004ceee0,0x008101b0,0x004ceee0
 4827,function,ECResMan::ResourceMap::Find,,0x004cef10,0x008101e0,0x004cef10
 4828,function,ECResMan::ResourceMap::Remove,,0x004cef80,0x00810250,0x004cef80
 4829,function,ECResMan::DirectorySource::Find,,0x004cf010,0x008102e0,0x004cf010
@@ -9393,7 +9393,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9392,function,"std::_Tree<std::map<std::wstring,?>>::_Buyheadnode",,0x00599b60,0x007945b0,0x00599b60
 9393,function,"std::_Tree<std::map<std::wstring,?>>::_Buynode",,0x00599ba0,0x007945f0,0x00599ba0
 9394,function,Catch_All@00599c1d,,0x00599c1d,0x0079466d,0x00599c1d
-9395,function,GraphicsStructures::VectorFrontOrNull<std::wstring>,"INFERRED name: nothing names it, and VC8's vector has no data(). __thiscall, no arguments: null when the vector is empty, else its first element (0x1C bytes) through the checked iterator; one caller, GraphicsStructures::ReadXMLModelHierarchy (0x0059E020). Named as ScriptCommand::VectorFrontOrNull (0x0066DD20), the same idiom (read 2026-11-23)",0x00599c40,0x00794690,0x00599c40
+9395,function,GraphicsStructures::VectorFrontOrNull<ECBase::ECString>,"INFERRED name: nothing names it, and VC8's vector has no data(). __thiscall, no arguments: null when the vector is empty, else its first element (0x1C bytes) through the checked iterator; one caller, GraphicsStructures::ReadXMLModelHierarchy (0x0059E020). Named as ScriptCommand::VectorFrontOrNull (0x0066DD20), the same idiom (read 2026-11-23)",0x00599c40,0x00794690,0x00599c40
 9396,function,"std::map<std::wstring,?>::lower_bound",,0x00599c90,0x007946e0,0x00599c90
 9397,function,std::vector<?>::end,,0x00599d50,0x0074a220,0x00599d50
 9398,function,std::vector<?>::back,,0x00599db0,0x007947a0,0x00599db0
@@ -14258,7 +14258,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14257,function,"std::_Uninit_fill_n<std::wstring*,unsigned int,std::wstring,std::allocator<std::wstring>>",,0x0069c1b0,0x0058d420,0x0069c1b0
 14258,function,Catch_All@0069c21b,,0x0069c21b,0x0058d48b,0x0069c21b
 14259,function,std::vector<std::wstring>::_Ucopy,,0x0069c250,0x0058d500,0x0069c250
-14260,function,std::vector<std::wstring>::erase,,0x0069c280,0x0083de50,0x0069c280
+14260,function,std::vector<ECBase::ECString>::erase,,0x0069c280,0x0083de50,0x0069c280
 14261,function,std::vector<std::wstring>::_Ufill,,0x0069c300,0x0058d4c0,0x0069c300
 14262,function,std::vector<std::wstring>::clear,,0x0069c340,0x00492d70,0x0069c340
 14263,function,std::vector<?>::_Buy,,0x0069c380,0x0058d530,0x0069c380
@@ -33782,7 +33782,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33781,function,MovementAnimController::EnterStart,,0x00a6ae30,0x0071b0b0,0x00a6ae30
 33782,function,MovementAnimController::EnterTurnInPlace,,0x00a6aff0,0x0071b270,0x00a6aff0
 33783,function,MovementAnimController::SetInput,,0x00a6b180,0x0071b400,0x00a6b180
-33784,function,"std::_Copy_opt<std::wstring*,std::wstring*>",,0x00a6b250,0x0071b4d0,0x00a6b250
+33784,function,"std::_Copy_opt<ECBase::ECString*,ECBase::ECString*>",,0x00a6b250,0x0071b4d0,0x00a6b250
 33785,function,MovementAnimController::LoadAppearance,,0x00a6b2b0,0x0071b530,0x00a6b2b0
 33786,function,MovementAnimController::UpdatePlayRate,,0x00a6b5d0,0x0071b850,0x00a6b5d0
 33787,function,MovementAnimController::OnEnterIdleMode,,0x00a6b6c0,0x0071b940,0x00a6b6c0
@@ -100878,7 +100878,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100877,data,,,0x00c32aac,0x00c1b390,0x00c32aac
 100878,data,,,0x00c32ab0,0x00c1b394,0x00c32ab0
 100879,data,,,0x00c32ab4,0x00c1b398,0x00c32ab4
-100880,data,ECBase::ECDynArray<std::vector<std::wstring>>::s_default,"0x10-byte default vector of wide strings (stride 28 inside): constructed by the dynamic initialiser 0x00ad02f0 (0x0040d670), atexit stub 0x00ad6430 (0x004072e0); the out-of-range fallback for CClientOptions' list of per-group key-name lists (this+0x878) in LoadGroupFromIni (0x005de2b0), SaveGroupToIni (0x005de5b0) and the CClientOptions constructor (78 references).",0x00c32abc,0x00c1b3a0,0x00c32abc
+100880,data,ECBase::ECDynArray<std::vector<ECBase::ECString>>::s_default,"0x10-byte default vector of wide strings (stride 28 inside): constructed by the dynamic initialiser 0x00ad02f0 (0x0040d670), atexit stub 0x00ad6430 (0x004072e0); the out-of-range fallback for CClientOptions' list of per-group key-name lists (this+0x878) in LoadGroupFromIni (0x005de2b0), SaveGroupToIni (0x005de5b0) and the CClientOptions constructor (78 references).",0x00c32abc,0x00c1b3a0,0x00c32abc
 100881,data,,,0x00c32acc,0x00c1b524,0x00c32acc
 100882,data,,,0x00c32ae8,0x00c1b540,0x00c32ae8
 100883,data,,,0x00c32aec,0x00c1b544,0x00c32aec
