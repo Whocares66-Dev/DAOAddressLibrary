@@ -13532,7 +13532,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13531,function,ScriptCommand::SETAPPEARANCETYPE,,0x00674c80,0x00560ce0,0x00674c80
 13532,function,ScriptCommand::READINIENTRY,,0x00674e90,0x00560ef0,0x00674e90
 13533,function,CVirtualMachineCommands::InitializeCommands,,0x00675210,0x00561270,0x00675210
-13534,function,CProjectile::New,,0x00679670,0x005656d0,0x00679670
+13534,function,CProjectileManager::NewProjectile,"INFERRED name: operator new(0x510) (0x00679691), CProjectile::CProjectile (0x007E8410) on it, returns it; it never reads ecx. All four callers load ecx with the client app'""'""'s projectile manager ([0x00C327EC]+0x104) just before the call: ScriptCommand::FireProjectile (0x00661D8A), ClientScriptCommand::FIREPROJECTILE (0x006D97CA), CCCreature::OnAnimEventProjectileLoad (0x006B70B6), CCPlaceable::OnAnimEventProjectileLoad (0x00751523). No unit was compiled /GL, so it is a CProjectileManager member with this unused. It was named CProjectile::New (decomp-agent, read 2026-11-24)",0x00679670,0x005656d0,0x00679670
 13535,function,Stub::CallVirtualSlot0,"Folded thunk to vftable slot 0 (mov eax,[ecx]; mov eax,[eax]; jmp eax), shared by unrelated classes; Commands::ReleaseLookAtAndProjectiles calls it as CProjectileManager::RemoveProjectile(id), other callers with no stack argument",0x006796e0,0x0046a6d0,0x006796e0
 13536,function,ProjectileLoadTask::ProjectileLoadTask,,0x006796f0,0x00565740,0x006796f0
 13537,function,ProjectileLoadTask::Execute,,0x00679720,0x00565770,0x00679720
