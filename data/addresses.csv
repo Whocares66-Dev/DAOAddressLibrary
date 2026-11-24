@@ -2581,8 +2581,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2580,function,Renderer::FrameBufferEffect::ReleaseRequirements,,0x0045fae0,0x008983c0,0x0045fae0
 2581,function,Renderer::FrameBufferFilter::Execute,,0x0045fbd0,0x008984b0,0x0045fbd0
 2582,function,Renderer::FBRenderTargetResource::~FBRenderTargetResource,,0x0045fc40,0x00898520,0x0045fc40
-2583,function,Renderer::FrameBufferEventGroup::Run,,0x0045fcd0,0x008985b0,0x0045fcd0
-2584,function,Renderer::FrameBufferEventGroup::RunOwnEvent,,0x0045fd40,0x00898620,0x0045fd40
+2583,function,Renderer::FrameBufferStage::Run,"FrameBufferEffect::Run calls it on each element of its stages array (+0x24, an ECDynArray<Renderer::FrameBufferStage*>) at 0x00460105, so this is a FrameBufferStage (RTTI); the exe has no FrameBufferEventGroup. It was named Renderer::FrameBufferEventGroup::Run (decomp-agent, read 2026-11-24)",0x0045fcd0,0x008985b0,0x0045fcd0
+2584,function,Renderer::FrameBufferStage::RunOwnEvent,"A FrameBufferStage member, as Run (0x0045FCD0), which it calls (0x0045FD44); SOFBEffectStage::Execute and MaterialEffectPass::Apply call it too. It was named Renderer::FrameBufferEventGroup::RunOwnEvent (decomp-agent, read 2026-11-24)",0x0045fd40,0x00898620,0x0045fd40
 2585,function,Renderer::FrameBufferEffect::DeleteResources,,0x0045fd50,0x00898630,0x0045fd50
 2586,function,"std::map<std::wstring,?>::erase",,0x0045fde0,0x00466130,0x0045fde0
 2587,function,Renderer::FrameBufferEffect::Run,,0x004600b0,0x008986c0,0x004600b0
