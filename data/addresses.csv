@@ -2328,7 +2328,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2327,function,Renderer::FrameBufferResource::GetClearColor,,0x00456240,0x00890e20,0x00456240
 2328,function,Renderer::ClearAuxRenderTargets,,0x00456260,0x00890e40,0x00456260
 2329,function,Renderer::IsFBEffectFileLoaded,,0x00456280,0x00890e60,0x00456280
-2330,function,Math::Vector4f::GetOrigin,,0x00456320,0x006fb950,0x00456320
+2330,function,Math::VectorUA4f::GetOrigin,"INFERRED class: returns a function static (0x00C1EB34, not 16-aligned) set once to (0, 0, 0, 1) with an atexit destructor (0x00AD53F0, a bare ret), as VectorUA4f'""'""'s own Zero and UnitW statics are; Math::Vector4f'""'""'s statics are aligned and register none. The 16-byte type with an empty destructor of Array<?> (0x00A5A140) would show the same, so the class is not certain (decomp-agent, read 2026-11-23)",0x00456320,0x006fb950,0x00456320
 2331,function,Gff4::StructReader::ReadStringPtr,,0x00456370,0x004b5b40,0x00456370
 2332,function,"std::_Uninit_fill_n<Math::Vector4f *,unsigned int,Math::Vector4f>",,0x004563c0,0x007d7c40,0x004563c0
 2333,function,std::_Median<Renderer::FrameBufferEffect * *>,,0x00456400,0x00890f20,0x00456400
@@ -2626,7 +2626,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2625,function,Math::Vector4f::UnitW,,0x00461fd0,0x0058f500,0x00461fd0
 2626,function,Math::Vector4f::ScaledXYZ,,0x00462010,0x005053a0,0x00462010
 2627,function,Math::Vector4f::NormalizedXYZ,,0x00462060,0x005053f0,0x00462060
-2628,function,Math::Point4f::Point4f,"INFERRED type name (decomp-agent's math work, 2026-11-23; nothing in the exe names it): a homogeneous point, 16 bytes, 16-aligned, default (0, 0, 0, 1): fldz into +0, +4, +8, fld1 into +0xC. Math::Vector4f's own default constructor is trivial. Reached only through the vector constructor iterator: GraphicsStructures::Array<Math::Point4f>'s operator= and SetCapacity (0x00572935, 0x005729DC, 0x00A5A019, 0x00A5A1D6) and CCPlaceable::GetModelTopHeight (0x0074CD05), whose 8 are a box's corners, filled by a virtual call and searched for the greatest z (read 2026-11-23)",0x00462180,0x00401c80,0x00462180
+2628,function,Math::Point4f::Point4f,"INFERRED type name (decomp-agent's math work, 2026-11-23; nothing in the exe names it): a homogeneous point, 16 bytes, 16-aligned, default (0, 0, 0, 1): fldz into +0, +4, +8, fld1 into +0xC. Math::Vector4f's own default constructor is trivial. Reached only through vector constructor iterators: Array<Math::Point4f>'s operator= and SetCapacity (0x00572935, 0x005729DC) and CCPlaceable::GetModelTopHeight (0x0074CD05), whose 8 are a box's corners, filled by a virtual call and searched for the greatest z. Also folded: __ehvec_ctor passes it with an empty destructor for another 16-byte type's elements in Array<?> (0x00A5A1D6, 0x00A5A019) (read 2026-11-23)",0x00462180,0x00401c80,0x00462180
 2629,function,Math::VectorUA4f::VectorUA4f,,0x004621a0,0x00816e00,0x004621a0
 2630,function,Stub::GetDword_0x0,"mov eax,[ecx]; ret. Linker-folded one-instruction getter: the Renderer's General::SafePointer reads it, but so does CVirtualMachine::RunScript, RunLoadedScript and RunScriptChunk with ecx = the machine's stack (this+0x1738), where it reads the stack pointer SP (0x00A30AD7, 0x00A31D3C). Misleading under a SafePointer name in the machine's functions.",0x004621c0,0x008218c0,0x004621c0
 2631,function,Renderer::LightList::ScoreGreater,,0x004621d0,0x0089c4a0,0x004621d0
@@ -4980,9 +4980,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4979,function,Vector3::operator<<,,0x004d4d40,0x008189e0,0x004d4d40
 4980,function,Math::VectorUA4f::VectorUA4f,,0x004d4dd0,0x00816d00,0x004d4dd0
 4981,function,Math::VectorUA4f::Set,,0x004d4df0,0x00816d20,0x004d4df0
-4982,function,Math::Vector4f::DivideByW,,0x004d4e10,0x00816d40,0x004d4e10
+4982,function,Math::VectorUA4f::DivideByW,"INFERRED class: both callers (Vector3::FromVector4Homogeneous 0x004D45B8, Physics::ToNxVec3FromVector4 0x00837AB4) build the object with VectorUA4f(const VectorUA4f&) 0x00933D70 in frames not 16-aligned, so not Math::Vector4f (decomp-agent, read 2026-11-23)",0x004d4e10,0x00816d40,0x004d4e10
 4983,function,Math::Vector4f::Zero,,0x004d4e50,0x00816d80,0x004d4e50
-4984,function,Math::Vector4f::SetFromVector3W,,0x004d4e90,0x00816dc0,0x004d4e90
+4984,function,Math::VectorUA4f::SetFromVector3W,"INFERRED class: CGameEffect::GetVisualParams calls it on a local of a frame not 16-aligned (0x0079F571), which a Math::Vector4f cannot be; its other three callers have 16-aligned frames, so the code may be folded with Vector4f'""'""'s (decomp-agent, read 2026-11-23)",0x004d4e90,0x00816dc0,0x004d4e90
 4985,function,Vector3::Equals,,0x004d4eb0,0x00818280,0x004d4eb0
 4986,function,Vector3::NotEquals,,0x004d4ef0,0x00816e20,0x004d4ef0
 4987,function,Vector3::Zero,,0x004d4f10,0x00816e40,0x004d4f10
@@ -33393,9 +33393,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33392,function,CDataArrays::GetVector,,0x00a59f10,0x00700570,0x00a59f10
 33393,function,ECBase::ECDynArray<Math::Vector4f>::ECDynArray,,0x00a59f60,0x007005c0,0x00a59f60
 33394,function,ECBase::ECDynArray<Math::Vector4f>::~ECDynArray,,0x00a59f80,0x00700730,0x00a59f80
-33395,function,GraphicsStructures::Array<Math::Point4f>::SetCapacity,,0x00a59fb0,0x00700760,0x00a59fb0
+33395,function,GraphicsStructures::Array<?>::SetCapacity,"builds its elements at 0x00A5A014. Its elements are not Math::Point4f: __ehvec_ctor (0x008E6707) builds them with 0x00462180 ((0, 0, 0, 1), folded with Point4f's constructor) and the destructor Stub::NoOp 0x005BDCF0, behind a count cookie, while Array<Math::Point4f> uses the plain vector constructor iterator and no destructor. A 16-byte type with an empty destructor whose name is not known (decomp-agent, read 2026-11-23)",0x00a59fb0,0x00700760,0x00a59fb0
 33396,function,ECBase::ECDynArray<Math::Vector4f>::PushBack,,0x00a5a0b0,0x00700860,0x00a5a0b0
-33397,function,GraphicsStructures::Array<Math::Point4f>::operator=,,0x00a5a140,0x007008f0,0x00a5a140
+33397,function,GraphicsStructures::Array<?>::operator=,"builds its elements at 0x00A5A1D1. Its elements are not Math::Point4f: __ehvec_ctor (0x008E6707) builds them with 0x00462180 ((0, 0, 0, 1), folded with Point4f's constructor) and the destructor Stub::NoOp 0x005BDCF0, behind a count cookie, while Array<Math::Point4f> uses the plain vector constructor iterator and no destructor. A 16-byte type with an empty destructor whose name is not known (decomp-agent, read 2026-11-23)",0x00a5a140,0x007008f0,0x00a5a140
 33398,function,CDataArrays::GetInteger,,0x00a5a220,0x00700a10,0x00a5a220
 33399,function,CDataArrays::GetFloat,,0x00a5a250,0x00700a40,0x00a5a250
 33400,function,CDataArrays::GetFlag,,0x00a5a280,0x00700a70,0x00a5a280
