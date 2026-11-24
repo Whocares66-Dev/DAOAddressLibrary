@@ -4539,7 +4539,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4538,function,ECBase::ECString::Insert,,0x004c25f0,0x00803b60,0x004c25f0
 4539,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::basic_string(const wchar_t*)",,0x004c2630,0x004784b0,0x004c2630
 4540,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::substr",,0x004c2670,0x00803ba0,0x004c2670
-4541,function,"std::operator+(const wchar_t*,const std::wstring&)",,0x004c26b0,0x00803be0,0x004c26b0
+4541,function,"std::operator+(const wchar_t*,const std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>&)","VC8's basic_string(_Left) += _Right over the pool string: a temporary from the C string (assign 0x004C1F20), the string appended (0x004C1820), copied into the result (0x004C1270) and freed. Its callees are the pool string's by what they call (stlmatch targets), so this is its overload (decomp-agent, 2026-11-23)",0x004c26b0,0x00803be0,0x004c26b0
 4542,function,ECBase::ECString::FromLong,,0x004c2770,0x00803ca0,0x004c2770
 4543,function,ECBase::ECString::FromUnsignedLong,,0x004c2840,0x00803d70,0x004c2840
 4544,function,ECBase::ECString::FromFloat,,0x004c2910,0x00803e40,0x004c2910
