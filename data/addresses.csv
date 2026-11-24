@@ -24127,7 +24127,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24126,function,Input::DeviceStates::GetInputState,,0x0087da50,0x00454040,0x0087da50
 24127,function,Input::DeviceStates::InitEvents,,0x0087dac0,0x00454110,0x0087dac0
 24128,function,Input::DeviceStates::~DeviceStates,,0x0087db00,0x00454150,0x0087db00
-24129,function,std::vector<ECInput::IRawInput*>::insert,,0x0087dbd0,0x0056d980,0x0087dbd0
+24129,function,ECBase::ECDynArray<ECInput::IRawInput*>::InsertAt,"The same code as ECDynArray<void*>::InsertAt (0x006CE860), 45 of 47 instructions with constants masked, the rest its own vector's insert and push_back: insert before the index, or push_back past the end; ret 8. Caller: AddRawInputDevice (decomp-agent, read 2026-11-24)",0x0087dbd0,0x0056d980,0x0087dbd0
 24130,function,Input::DeviceStates::AddRawInputDevice,,0x0087dc50,0x00454220,0x0087dc50
 24131,function,Input::DeviceStates::DeviceStates,,0x0087dd00,0x004542d0,0x0087dd00
 24132,function,ECInput::IRawInput::~IRawInput,,0x0087dd90,0x00454360,0x0087dd90
