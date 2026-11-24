@@ -11675,7 +11675,7 @@ address,what,value,why
 0x00458AB0,signature,"void * __thiscall Stub::CopyConstruct_WString_Handle_0x1C(void * this, void * other)",ecx at 0x00458AD3; ret 4
 0x00458B10,signature,"void __cdecl Renderer::FrameBufferEffects::Startup(void * device, void * initialEffects)",args [esp+0x60] (0x00458B43) and [esp+0x64] (0x00458CCD) after a 0x5C frame; plain ret
 0x00458D60,signature,"void* __thiscall std_map_wstring_SmartHandle_operator_index(void* this, void* name)",ret 4 (0x00458E44); returns node+0x28
-0x00458E50,signature,"void __cdecl Renderer_RegisterSharedTarget(void* name, ResourceHandle *handle)","plain ret (0x00458E72), two stack args; a void * here is the class DAODecomp's matching definition gives"
+0x00458E50,signature,"void __cdecl Renderer_RegisterSharedTarget(void* name, Multithreading::SynchSafePointer *handle)","plain ret (0x00458E72), two stack args; a void * here is the class DAODecomp's matching definition gives"
 0x00458E80,signature,void* __cdecl Renderer_GetSharedTarget(void* name),plain ret (0x00458E8F); returns 0x00458D60's pointer
 0x00458E90,signature,void __cdecl Renderer_SetMultisampleRequest(int level),plain ret; stores 0x00C1EB48
 0x004591C0,signature,void __cdecl Renderer_SetLowEndHardwareMode(bool low_end),plain ret; byte arg at [esp+4]
@@ -16203,7 +16203,7 @@ address,what,value,why
 0x00515F10,signature,void __thiscall f(void *this),0x00515f10 ret 0
 0x00515FB0,signature,"void __stdcall f(void *first, void *last)",ret 8 at the end of 0x00515fb0
 0x0051A2F0,signature,void __thiscall f(void *this),0x0051a2f0; GUI.md line 84 ret 0
-0x0051A5D0,signature,"void * __thiscall f(void *this, void *outHandle, void *imageName, int width, int height)","0x0051a5d0: CreateRenderTarget 0x847330, ResourceHandle::ope ret 16"
+0x0051A5D0,signature,"void * __thiscall f(void *this, void *outHandle, void *imageName, int width, int height)","0x0051a5d0: CreateRenderTarget 0x847330, SynchSafePointer<?>::operator= ret 16"
 0x00529520,signature,"void __thiscall f(void *this, unsigned int *value)",ret 0 at the end of 0x00529520
 0x0053DCA0,signature,void * __thiscall f(void *this),0x0053DCA0 ret 0
 0x00554E80,signature,"void __thiscall f(void *this, int *topLeft, int *bottomRight)",ret 4 at the end of 0x00554e80
@@ -19161,7 +19161,7 @@ address,what,value,why
 0x004F4900,signature,"bool __thiscall f(void *this, int id, float opacity)","proven by DAODecomp: its definition `bool Graphics::SetMaterialOpacity(int id, float opacity)` (member) compiles to this function's bytes; ret 0x8 read in the code"
 0x004F4BC0,signature,void * __thiscall f(void *this),proven by DAODecomp: its definition `Graphics::MaterialStateOverride::PassBinding::PassBinding()` (member) compiles to this function's bytes; ret plain read in the code
 0x004F4D20,signature,void * __thiscall f(void *this),proven by DAODecomp: its definition `Graphics::MaterialStateOverride::MaterialStateOverride()` (member) compiles to this function's bytes; ret plain read in the code
-0x004F5D80,signature,"void __thiscall f(void *this, void *name, ResourceHandle *texture_handle)","proven by DAODecomp: its definition `void Graphics::MaterialObjectInstance::SetTextureParameterFromHandle(void* name, ResourceHandle* texture_handle)` (member) compiles to this function's bytes; ret 0x8 read in the code"
+0x004F5D80,signature,"void __thiscall f(void *this, void *name, Multithreading::SynchSafePointer *texture_handle)","proven by DAODecomp: its definition `void Graphics::MaterialObjectInstance::SetTextureParameterFromHandle(void* name, Multithreading::SynchSafePointer* texture_handle)` (member) compiles to this function's bytes; ret 0x8 read in the code"
 0x004F6AA0,signature,"void __thiscall f(void *this, void *tree)",proven by DAODecomp: its definition `void Graphics::MaterialSemantic::SetTechniqueTree(void* tree)` (member) compiles to this function's bytes; ret 0x4 read in the code
 0x004F6AB0,signature,void __thiscall f(void *this),proven by DAODecomp: its definition `void Graphics::MaterialSemantic::SelectTechnique()` (member) compiles to this function's bytes; ret plain read in the code
 0x004F6BC0,signature,void * __thiscall f(void *this),proven by DAODecomp: its definition `Graphics::MaterialSemantic::MaterialSemantic()` (member) compiles to this function's bytes; ret plain read in the code
