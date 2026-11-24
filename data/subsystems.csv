@@ -2562,7 +2562,7 @@ id,subsystem,class,how
 2586,ThirdParty:STL,"std::map<std::wstring,?>",name
 2587,Rendering,Renderer::FrameBufferEffect,name
 2588,ThirdParty:STL,"std::map<std::wstring,?>",name
-2589,unknown,WStringMap<unsigned int>,
+2589,Core,WStringMap<unsigned int>,name
 2590,Rendering,Renderer::FrameBufferEffect,name
 2591,Rendering,Renderer::FrameBufferEffect,name
 2592,ThirdParty:STL,std::_Tree<std::wstring>,name
@@ -2577,7 +2577,7 @@ id,subsystem,class,how
 2601,Rendering,Renderer,name
 2602,Rendering,Renderer::FrameBufferEffect,name
 2603,Rendering,Renderer,name
-2604,Rendering,WStringMap<?>,between
+2604,Core,WStringMap<?>,name
 2605,Rendering,Renderer::FrameBufferEffect,name
 2606,Rendering,Renderer::FrameBufferEffect,name
 2607,Rendering,Renderer::FrameBufferFilter,name
@@ -4525,7 +4525,7 @@ id,subsystem,class,how
 4561,Core,ECBase::ECString::operator+(const ECBase,name
 4562,Core,ECBase::ECString,name
 4563,Core,ECBase::ECString,name
-4564,Core,,between
+4564,Core,ECBase::ECString,name
 4565,Core,ECBase,between
 4566,Core,ECBase::ECString,name
 4567,Core,ECBase::ECString,name
@@ -4854,16 +4854,16 @@ id,subsystem,class,how
 4898,Core,CpuFeatures,name
 4899,Core,CpuFeatures,name
 4900,ThirdParty:STL,"std::basic_stringstream<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>",name
-4901,ThirdParty:STL,WideStringStream,between
-4902,ThirdParty:STL,,between
-4903,ThirdParty:STL,,owner
-4905,ThirdParty:STL,,between
-4906,ThirdParty:STL,,owner
+4901,Core,WideStringStream,name
+4902,unknown,,
+4903,unknown,,
+4905,unknown,,
+4906,unknown,,
 4908,ThirdParty:STL,"std::basic_istream<wchar_t,std::char_traits<wchar_t>>",name
-4909,ThirdParty:STL,,between
-4910,ThirdParty:STL,WideStringStream,between
+4909,Rendering,,callers
+4910,Core,WideStringStream,name
 4911,ThirdParty:STL,std,name
-4912,ThirdParty:STL,WideStringStream,between
+4912,Core,WideStringStream,name
 4913,ThirdParty:STL,std,name
 4914,Core,Math::CollisionObject,name
 4915,Core,Math::CollisionObject,name
@@ -5814,7 +5814,7 @@ id,subsystem,class,how
 5868,Rendering,Graphics::MaterialSemantic,name
 5869,Rendering,Graphics::MaterialSemantic,name
 5870,Rendering,Graphics::MaterialSemantic,name
-5871,Rendering,WStringMap<unsigned int>,between
+5871,Core,WStringMap<unsigned int>,name
 5872,Rendering,Graphics::MaterialObjectManager,name
 5873,ThirdParty:STL,"std::_Tree<std::map<std::wstring,Multithreading::SynchSafePointer>>",name
 5874,Rendering,Graphics::MaterialObjectManager,name
@@ -6419,7 +6419,7 @@ id,subsystem,class,how
 6479,Rendering,Graphics::MaterialArtTexture,name
 6480,Rendering,Graphics::MaterialArtTexture,name
 6481,Rendering,Graphics::MaterialArtVector4f,name
-6482,Rendering,WideStringStream,between
+6482,Core,WideStringStream,name
 6483,Rendering,Graphics::MaterialArtVector4f,name
 6484,Rendering,Graphics::MaterialArtVector4f,name
 6485,Rendering,Graphics::MaterialArtVector4f,name
@@ -9339,10 +9339,10 @@ id,subsystem,class,how
 9408,Rendering,GraphicsStructures,name
 9409,Rendering,GraphicsStructures,name
 9410,ThirdParty:STL,"std::map<std::wstring,?>",name
-9411,Rendering,WStringMap<Gff4::FlatRef>,callers
+9411,Core,WStringMap<Gff4::FlatRef>,name
 9412,Rendering,GraphicsStructures,name
 9413,Rendering,GraphicsStructures::XMLToGff4Converter,name
-9414,Rendering,WStringMap<Gff4::FlatRef>,callers
+9414,Core,WStringMap<Gff4::FlatRef>,name
 9415,Resources,Gff4::FlatFile,name
 9416,Resources,Gff4::FlatFile,name
 9417,Resources,Gff4::FlatFile,name
@@ -9793,33 +9793,33 @@ id,subsystem,class,how
 9862,Audio,SoundEmitter,name
 9863,Audio,SoundManager,name
 9864,Audio,MusicController,name
-9865,unknown,WStringMap<?>,
+9865,Core,WStringMap<?>,name
 9866,ThirdParty:STL,std,name
 9867,ThirdParty:STL,std,name
 9868,ThirdParty:STL,"Map<int,?>",between
 9869,ThirdParty:STL,std::vector<?>,name
 9870,Audio,SoundManager,name
-9871,unknown,WStringMap<?>,
+9871,Core,WStringMap<?>,name
 9872,ThirdParty:STL,"std::map<std::wstring,?>",name
 9873,ThirdParty:STL,"std::map<std::wstring,?>",name
 9874,ThirdParty:STL,"std::vector<std::pair<std::wstring,std::wstring>>",name
-9875,Audio,WStringMap<?>,callers
+9875,Core,WStringMap<?>,name
 9876,Audio,SoundManager,name
-9877,unknown,WStringMap<?>,
+9877,Core,WStringMap<?>,name
 9878,ThirdParty:STL,,string
 9879,ThirdParty:STL,,string
 9880,ThirdParty:STL,std::vector<?>,name
 9881,unknown,,
 9882,Core,"ECBase::ECDynArray<std::pair<std::wstring,std::wstring>>",name
 9883,ThirdParty:STL,,string
-9884,Audio,WStringMap<?>,callers
+9884,Core,WStringMap<?>,name
 9885,ThirdParty:STL,"std::map<?,?>",name
 9886,ThirdParty:STL,"std::vector<std::pair<std::wstring,std::wstring>>",name
 9887,Audio,SoundManager,name
-9888,unknown,WStringMap<void*>,
+9888,Core,WStringMap<void*>,name
 9889,ThirdParty:STL,"std::map<int,std::vector<unsigned int>*>",name
-9890,unknown,WStringMap<void*>,
-9891,unknown,WStringMap<void*>,
+9890,Core,WStringMap<void*>,name
+9891,Core,WStringMap<void*>,name
 9892,Core,"ECBase::ECDynArray<std::pair<std::wstring,std::wstring>>",name
 9893,Audio,SoundManager,name
 9894,Audio,SoundManager,name
@@ -10991,7 +10991,7 @@ id,subsystem,class,how
 11063,Core,ECBase::ECDynArray<CCModule::TagIndexEntry>,name
 11064,ThirdParty:STL,std::set<?>,name
 11065,World,CCModule,name
-11066,unknown,WStringMap<?>,
+11066,Core,WStringMap<?>,name
 11067,ThirdParty:STL,"std::map<?,?>",name
 11068,ThirdParty:STL,std::vector<CCModule::TagIndexEntry>,name
 11069,ThirdParty:STL,std::vector<CCModule::TagIndexEntry>,owner
@@ -24115,7 +24115,7 @@ id,subsystem,class,how
 24262,Input,InputModeGroup,name
 24263,ThirdParty:STL,"std::map<std::wstring,?>",name
 24264,Input,InputModes,name
-24265,Input,WStringMap<unsigned char>,callers
+24265,Core,WStringMap<unsigned char>,name
 24266,ThirdParty:STL,"std::map<unsigned int,unsigned int>",name
 24267,ThirdParty:STL,"std::map<unsigned int,unsigned int>",owner
 24268,ThirdParty:STL,"std::map<std::wstring,bool>",name
@@ -24125,8 +24125,8 @@ id,subsystem,class,how
 24272,Input,InputModeGroup,name
 24273,Input,InputModeGroup,name
 24274,Input,InputModes,name
-24275,Input,WStringMap<unsigned char>,callers
-24276,Input,WStringMap<unsigned char>,callers
+24275,Core,WStringMap<unsigned char>,name
+24276,Core,WStringMap<unsigned char>,name
 24277,Input,InputModeGroup,name
 24278,Input,InputModeGroup,name
 24279,Input,InputModeGroup,name
@@ -24141,7 +24141,7 @@ id,subsystem,class,how
 24288,ThirdParty:STL,,string
 24289,ThirdParty:STL,,string
 24290,ThirdParty:STL,"std::map<std::wstring,InputModeGroup>",name
-24291,Input,WStringMap<InputModeGroup>,callers
+24291,Core,WStringMap<InputModeGroup>,name
 24292,ThirdParty:STL,"std::map<ECBase::ECString,InputModeGroup>",name
 24293,Input,InputModes,name
 24294,ThirdParty:STL,"std::map<std::wstring,InputModeGroup>",name
@@ -24150,8 +24150,8 @@ id,subsystem,class,how
 24297,Input,InputModes,name
 24298,Input,InputModes,name
 24299,ThirdParty:STL,"std::map<std::wstring,InputModeGroup>",name
-24300,Input,WStringMap<InputModeGroup>,callers
-24301,Input,WStringMap<InputModeGroup>,callers
+24300,Core,WStringMap<InputModeGroup>,name
+24301,Core,WStringMap<InputModeGroup>,name
 24302,Input,InputModes,name
 24303,Input,InputModes,name
 24304,Input,InputBinding,between
@@ -34300,8 +34300,8 @@ id,subsystem,class,how
 34542,Rendering,Renderer,owner
 34543,Rendering,Renderer,owner
 34544,Rendering,Renderer,owner
-34545,Rendering,WStringMap<?>,owner
-34546,Rendering,WStringMap<?>,owner
+34545,Core,WStringMap<?>,owner
+34546,Core,WStringMap<?>,owner
 34547,Rendering,Renderer::FrameBufferEffect,owner
 34548,Rendering,Renderer::FrameBufferEffect,owner
 34549,Rendering,Renderer::FrameBufferEffect,owner
@@ -36898,10 +36898,10 @@ id,subsystem,class,how
 37140,Core,LocString,owner
 37141,Messaging,Messages,owner
 37142,Messaging,Messages,owner
-37143,ThirdParty:STL,,owner
-37144,ThirdParty:STL,,owner
-37145,ThirdParty:STL,,owner
-37146,ThirdParty:STL,,owner
+37143,Compiler:EHFunclets,,range
+37144,Compiler:EHFunclets,,range
+37145,Compiler:EHFunclets,,range
+37146,Compiler:EHFunclets,,range
 37147,ThirdParty:STL,"std::basic_ostream<char,std::char_traits<char>>",owner
 37148,Resources,Resources,owner
 37149,Resources,Resources,owner
@@ -40231,10 +40231,10 @@ id,subsystem,class,how
 40473,Rendering,GraphicsStructures,owner
 40474,Rendering,GraphicsStructures,owner
 40475,Rendering,GraphicsStructures,owner
-40476,Rendering,WStringMap<Gff4::FlatRef>,owner
-40477,Rendering,WStringMap<Gff4::FlatRef>,owner
-40478,Rendering,WStringMap<Gff4::FlatRef>,owner
-40479,Rendering,WStringMap<Gff4::FlatRef>,owner
+40476,Core,WStringMap<Gff4::FlatRef>,owner
+40477,Core,WStringMap<Gff4::FlatRef>,owner
+40478,Core,WStringMap<Gff4::FlatRef>,owner
+40479,Core,WStringMap<Gff4::FlatRef>,owner
 40480,Rendering,GraphicsStructures,owner
 40481,Rendering,GraphicsStructures,owner
 40482,Rendering,GraphicsStructures,owner
@@ -40781,8 +40781,8 @@ id,subsystem,class,how
 41023,Audio,MusicController,owner
 41024,ThirdParty:STL,"std::vector<std::pair<std::wstring,std::wstring>>",owner
 41025,ThirdParty:STL,"std::vector<std::pair<std::wstring,std::wstring>>",owner
-41026,Compiler:EHFunclets,,range
-41027,Compiler:EHFunclets,,range
+41026,Core,WStringMap<void*>,owner
+41027,Core,WStringMap<void*>,owner
 41028,Core,"ECBase::ECDynArray<std::pair<std::wstring,std::wstring>>",owner
 41029,Core,"ECBase::ECDynArray<std::pair<std::wstring,std::wstring>>",owner
 41030,Audio,SoundEmitter,owner
@@ -45525,8 +45525,8 @@ id,subsystem,class,how
 45767,ThirdParty:STL,"std::vector<std::pair<std::wstring,std::wstring>>",owner
 45768,World,CCArea,owner
 45769,World,CCArea,owner
-45770,Compiler:EHFunclets,,range
-45771,Compiler:EHFunclets,,range
+45770,Core,WStringMap<unsigned int>,owner
+45771,Core,WStringMap<unsigned int>,owner
 45772,Core,ECBase::ECDynArray<CCArea::StageEntry>,owner
 45773,Core,ECBase::ECDynArray<CCArea::StageEntry>,owner
 45774,World,CCArea,owner
@@ -45577,8 +45577,8 @@ id,subsystem,class,how
 45819,World,CCArea,owner
 45820,World,CCArea,owner
 45821,World,CCArea,owner
-45822,Compiler:EHFunclets,,range
-45823,Compiler:EHFunclets,,range
+45822,Core,WStringMap<void*>,owner
+45823,Core,WStringMap<void*>,owner
 45824,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",owner
 45825,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",owner
 45826,World,CCArea,owner
@@ -52801,8 +52801,8 @@ id,subsystem,class,how
 53043,Save,SaveLoadProxy,owner
 53044,Save,SaveLoadProxy,owner
 53045,Save,SaveLoadProxy,owner
-53046,Rendering,WideStringStream,owner
-53047,Rendering,WideStringStream,owner
+53046,Core,WideStringStream,owner
+53047,Core,WideStringStream,owner
 53048,World,CCWayPoint,owner
 53049,World,CCWayPoint,owner
 53050,World,CCWayPoint,owner
@@ -55372,8 +55372,8 @@ id,subsystem,class,how
 55614,Input,InputWord,owner
 55615,Input,InputMapper::KeyRecordMap,owner
 55616,Input,InputMapper::KeyRecordMap,owner
-55617,Rendering,WStringMap<unsigned int>,owner
-55618,Rendering,WStringMap<unsigned int>,owner
+55617,Core,WStringMap<unsigned int>,owner
+55618,Core,WStringMap<unsigned int>,owner
 55619,GUI,Input::InputNameTable,owner
 55620,GUI,Input::InputNameTable,owner
 55621,Input,InputNames,owner
@@ -55777,8 +55777,8 @@ id,subsystem,class,how
 56019,ThirdParty:STL,"std::map<std::wstring,bool>",owner
 56020,ThirdParty:STL,"std::map<unsigned int,unsigned int>",owner
 56021,ThirdParty:STL,"std::map<std::wstring,bool>",owner
-56022,Input,WStringMap<unsigned char>,owner
-56023,Input,WStringMap<unsigned char>,owner
+56022,Core,WStringMap<unsigned char>,owner
+56023,Core,WStringMap<unsigned char>,owner
 56024,Input,InputModeGroup,owner
 56025,Input,InputModeGroup,owner
 56026,Input,InputModeGroup,owner
@@ -55798,21 +55798,21 @@ id,subsystem,class,how
 56040,ThirdParty:STL,,owner
 56041,ThirdParty:STL,,owner
 56042,ThirdParty:STL,,owner
-56043,Input,WStringMap<InputModeGroup>,owner
-56044,Input,WStringMap<InputModeGroup>,owner
+56043,Core,WStringMap<InputModeGroup>,owner
+56044,Core,WStringMap<InputModeGroup>,owner
 56045,ThirdParty:STL,"std::map<ECBase::ECString,InputModeGroup>",owner
 56046,ThirdParty:STL,"std::map<ECBase::ECString,InputModeGroup>",owner
 56047,ThirdParty:STL,"std::map<ECBase::ECString,InputModeGroup>",owner
 56048,Input,InputModes,owner
 56049,Input,InputModes,owner
-56050,Input,WStringMap<InputModeGroup>,owner
-56051,Input,WStringMap<InputModeGroup>,owner
-56052,Input,WStringMap<InputModeGroup>,owner
-56053,Input,WStringMap<InputModeGroup>,owner
-56054,Input,WStringMap<InputModeGroup>,owner
-56055,Input,WStringMap<InputModeGroup>,owner
-56056,Input,WStringMap<InputModeGroup>,owner
-56057,Input,WStringMap<InputModeGroup>,owner
+56050,Core,WStringMap<InputModeGroup>,owner
+56051,Core,WStringMap<InputModeGroup>,owner
+56052,Core,WStringMap<InputModeGroup>,owner
+56053,Core,WStringMap<InputModeGroup>,owner
+56054,Core,WStringMap<InputModeGroup>,owner
+56055,Core,WStringMap<InputModeGroup>,owner
+56056,Core,WStringMap<InputModeGroup>,owner
+56057,Core,WStringMap<InputModeGroup>,owner
 56058,Input,InputModes,owner
 56059,Input,InputModes,owner
 56060,ThirdParty:STL,std::vector<?>,owner
@@ -59741,8 +59741,8 @@ id,subsystem,class,how
 103448,Game,CCCreatureStats,owner
 103449,Game,CCCreatureStats,owner
 103456,Core,"Map<unsigned int,RefHandle>",owner
-103457,Compiler:EHFunclets,,range
-103458,Compiler:EHFunclets,,range
+103457,Core,WStringMap<void*>,owner
+103458,Core,WStringMap<void*>,owner
 103459,Rendering,Renderer::LightState,owner
 103460,Rendering,Renderer::LightState,owner
 103461,Rendering,Renderer::FBTextureResource,owner

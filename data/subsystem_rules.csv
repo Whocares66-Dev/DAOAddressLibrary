@@ -564,3 +564,5 @@ SpellRimSlots,Resources,"0x00706EF0 ReleaseById: nine slots of RIM resource pack
 TreeInstance,World,"0x00A28620: a tree placed in a level's layout, beside TreeInstanceArray (World) and IRoomLayout::ReadTreeInstances 0x00A28D50 (World)"
 World::HitResult,World,"0x00648B10: the result of the World class's ray casts (World::Raycast 0x006497A0, RaycastClosest 0x00648C60), which the World rule places"
 Gff4,Resources,"0x004753C0 Gff4::ReadChildString: the engine's GFF4 reader and writer, beside CExoGFF (both readings); the save-profile schema definitions (Gff4::DefineSaveprofile*, IDs 3460-3464, 3483, 3485) are Online's use of it"
+WideStringStream,Core,"the engine's wrapper around a std::wstringstream (an inferred class name, 2026-11-24): its members sit with CpuFeatures, not in the library; decomp-agent's translation-unit mapper reads this column"
+WStringMap<*,Core,"the engine's keyed map template (a std::map<ECString, T>, a key string and a default value; 2026-11-24): engine base library, as ECBase::*"
