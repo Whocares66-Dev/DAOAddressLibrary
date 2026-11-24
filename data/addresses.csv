@@ -334,8 +334,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 333,function,"std::num_put<wchar_t,std::ostreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>::_Iput",,0x0040bb00,0x0040bdf0,0x0040bb00
 334,function,"std::num_get<wchar_t,std::istreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>::_Getifld",,0x0040be70,0x0040c160,0x0040be70
 335,function,"std::num_get<wchar_t,std::istreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>::_Getffld",,0x0040c4e0,0x0040c7d0,0x0040c4e0
-336,function,std::vector<unsigned int>::vector,,0x0040d610,0x00493a20,0x0040d610
-337,function,std::vector<ECBase::ECString>::vector,,0x0040d670,0x0040d900,0x0040d670
+336,function,ECBase::ECDynArray<unsigned int>::ECDynArray(unsigned int),,0x0040d610,0x00493a20,0x0040d610
+337,function,ECBase::ECDynArray<ECBase::ECString>::ECDynArray(unsigned int),,0x0040d670,0x0040d900,0x0040d670
 338,function,,,0x0040d6e0,0x0040d970,0x0040d6e0
 339,function,"std::basic_iostream<wchar_t,std::char_traits<wchar_t>>::basic_iostream",,0x0040d750,0x0040d9e0,0x0040d750
 340,function,,,0x0040d830,0x0040dac0,0x0040d830
@@ -2693,7 +2693,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2692,function,Renderer::LightManagerDefault::ChooseForPoint,,0x00464200,0x0089e490,0x00464200
 2693,function,Renderer::LightManagerDefault::ChooseForLevel,,0x00464310,0x0089e5a0,0x00464310
 2694,function,Renderer::LightManagerDefault::ChooseForMoving,,0x00464560,0x0089e7f0,0x00464560
-2695,function,std::vector<General::SafePointer<Renderer::ObjectNodeLightReference>>::vector,,0x004648f0,0x0089eb80,0x004648f0
+2695,function,ECBase::ECDynArray<General::SafePointer<Renderer::ObjectNodeLightReference>>::ECDynArray(unsigned int),,0x004648f0,0x0089eb80,0x004648f0
 2696,function,Renderer::VectorSwapRemoveAt<General::SafePointer<Renderer::ObjectNodeLightReference>>,,0x00464960,0x0089ebf0,0x00464960
 2697,function,Renderer::LightList::LightList,,0x00464a30,0x0089ecc0,0x00464a30
 2698,function,Renderer::LightList::Insert,,0x00464a50,0x0089ece0,0x00464a50
@@ -2925,7 +2925,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2924,function,Renderer::EmitterManager::`scalar deleting destructor',,0x0046d960,0x008b40e0,0x0046d960
 2925,function,std::vector<Physics::Contact>::operator=,,0x0046d980,0x0049e4d0,0x0046d980
 2926,function,std::vector<Physics::Contact>::resize,,0x0046dab0,0x0049cbd0,0x0046dab0
-2927,function,std::vector<Physics::Contact>::vector,,0x0046db60,0x004affa0,0x0046db60
+2927,function,ECBase::ECDynArray<Physics::Contact>::ECDynArray(unsigned int),,0x0046db60,0x004affa0,0x0046db60
 2928,function,Core::VectorClear<Physics::Contact>,,0x0046dbd0,0x0049fe10,0x0046dbd0
 2929,function,Core::VectorRemoveValueUnordered<unsigned int>,,0x0046dcb0,0x008b4100,0x0046dcb0
 2930,function,Renderer::EmitterManager::EmitterManager,,0x0046dd80,0x008b41d0,0x0046dd80
@@ -3435,8 +3435,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3434,function,std::vector<PrereqItem>::vector(unsigned int),,0x00485550,0x004c4750,0x00485550
 3435,function,std::vector<PRCItem>::vector(unsigned int),,0x004855c0,0x0085d330,0x004855c0
 3436,function,std::vector<unsigned char>::vector(unsigned int),,0x00485630,0x00479350,0x00485630
-3437,function,std::vector<OnlineRec84>::vector,,0x00485690,0x0085d3a0,0x00485690
-3438,function,std::vector<OnlineFeatures::Achievement>::vector,,0x004856f0,0x0085d400,0x004856f0
+3437,function,ECBase::ECDynArray<OnlineRec84>::ECDynArray(unsigned int),,0x00485690,0x0085d3a0,0x00485690
+3438,function,ECBase::ECDynArray<OnlineFeatures::Achievement>::ECDynArray(unsigned int),,0x004856f0,0x0085d400,0x004856f0
 3439,function,std::vector<OnlineFeatures::Achievement>::resize(unsigned int),,0x00485770,0x0085d480,0x00485770
 3440,function,"stdext::hash_map<?,?>::insert",,0x004857a0,0x004feb00,0x004857a0
 3441,function,,,0x00485c80,0x0085d4b0,0x00485c80
@@ -3675,8 +3675,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3674,function,std::vector<?>::vector,,0x00493d90,0x004cd810,0x00493d90
 3675,function,"std::map<std::wstring,std::wstring>::operator[]",,0x00493e30,0x00536f30,0x00493e30
 3676,function,std::vector<OnlineRec68>::push_back,,0x00493f20,0x00887930,0x00493f20
-3677,function,std::vector<LockerUploadRequest>::vector,,0x00493fc0,0x008879d0,0x00493fc0
-3678,function,std::vector<LockerDownloadRequest>::vector,,0x00494030,0x00887a40,0x00494030
+3677,function,ECBase::ECDynArray<LockerUploadRequest>::ECDynArray(unsigned int),,0x00493fc0,0x008879d0,0x00493fc0
+3678,function,ECBase::ECDynArray<LockerDownloadRequest>::ECDynArray(unsigned int),,0x00494030,0x00887a40,0x00494030
 3679,function,LockerManager::LockerManager,,0x004940a0,0x00887ab0,0x004940a0
 3680,function,LockerManager::ClearQueues,,0x00494230,0x00887c40,0x00494230
 3681,function,LockerManager::QueueUpload,,0x00494400,0x00887e10,0x00494400
@@ -4806,7 +4806,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4805,function,,,0x004cd9d2,0x0080ecf2,0x004cd9d2
 4806,function,"std::vector<Resource>::resize(unsigned int,const Resource&)",,0x004cda60,0x0080ed80,0x004cda60
 4807,function,,,0x004cdb50,0x0080ee70,0x004cdb50
-4808,function,std::vector<Resource>::vector,,0x004ce120,0x0080f440,0x004ce120
+4808,function,ECBase::ECDynArray<Resource>::ECDynArray(unsigned int),,0x004ce120,0x0080f440,0x004ce120
 4809,function,ECResMan::ErfSource::ErfSource,,0x004ce190,0x0080f4b0,0x004ce190
 4810,function,Stub::ReturnThree,,0x004ce240,0x007fb5c0,0x004ce240
 4811,function,ECResMan::ErfSource::`scalar deleting destructor',,0x004ce250,0x0080f560,0x004ce250
@@ -5244,7 +5244,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5243,function,Gff4::RootedFile::DefineRootTemplate,,0x004deac0,0x00830d30,0x004deac0
 5244,function,Gff4::RootedFile::CommitRootBlock,,0x004deb60,0x00830dd0,0x004deb60
 5245,function,std::vector<Gff4::Template>::push_back,,0x004dec40,0x004b94c0,0x004dec40
-5246,function,std::vector<Gff4::Template>::vector,,0x004decd0,0x0081fa40,0x004decd0
+5246,function,ECBase::ECDynArray<Gff4::Template>::ECDynArray(unsigned int),,0x004decd0,0x0081fa40,0x004decd0
 5247,function,std::vector<Gff4::Template>::_Tidy,,0x004ded50,0x00830eb0,0x004ded50
 5248,function,Gff4::File::File,,0x004dee40,0x00830fa0,0x004dee40
 5249,function,Gff4::File::Reset,,0x004def00,0x00831060,0x004def00
@@ -5448,7 +5448,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5447,function,ECResMan::ResourceSource::Close,,0x004e6740,0x0083ded0,0x004e6740
 5448,function,ECResMan::ResourceSource::Find,,0x004e6880,0x0083e010,0x004e6880
 5449,function,std::vector<std::wstring>::resize,,0x004e68c0,0x0083e060,0x004e68c0
-5450,function,std::vector<std::wstring>::vector,,0x004e69f0,0x0083e190,0x004e69f0
+5450,function,ECBase::ECDynArray<std::wstring>::ECDynArray(unsigned int),,0x004e69f0,0x0083e190,0x004e69f0
 5451,function,ECResMan::NameList::Splice,,0x004e6a60,0x0083e200,0x004e6a60
 5452,function,ECResMan::ResourceSource::ListNames,,0x004e6a90,0x0083e230,0x004e6a90
 5453,function,ECResMan::ResourceSource::ResourceSource,,0x004e6c50,0x0083e3f0,0x004e6c50
@@ -5484,7 +5484,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5483,function,std::vector<Elem8>::operator=,,0x004e7de0,0x00834e80,0x004e7de0
 5484,function,std::_Copy_opt<Elem14*>,,0x004e7e00,0x00834ea0,0x004e7e00
 5485,function,std::_Copy_backward_opt<Elem14*>,,0x004e7e40,0x00834ee0,0x004e7e40
-5486,function,std::vector<Elem8>::vector,,0x004e7e80,0x00834f20,0x004e7e80
+5486,function,ECBase::ECDynArray<Elem8>::ECDynArray(unsigned int),,0x004e7e80,0x00834f20,0x004e7e80
 5487,function,ScriptVariableNames::RegisterEntry,,0x004e7ef0,0x00834f90,0x004e7ef0
 5488,function,std::vector<?>::_Destroy,,0x004e7fe0,0x00835080,0x004e7fe0
 5489,function,std::vector<Elem14>::_Tidy,,0x004e8010,0x008350b0,0x004e8010
@@ -5648,7 +5648,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5647,function,M2DA::GetIntByIndices,,0x004ec420,0x0083a300,0x004ec420
 5648,function,M2DA::GetBoolByIndices,,0x004ec4d0,0x0083a3b0,0x004ec4d0
 5649,function,M2DA::GetCellTypeByIndices,,0x004ec580,0x0083a460,0x004ec580
-5650,function,std::vector<Gff4::StructReader>::vector,,0x004ec630,0x0083a580,0x004ec630
+5650,function,ECBase::ECDynArray<Gff4::StructReader>::ECDynArray(unsigned int),,0x004ec630,0x0083a580,0x004ec630
 5651,function,std::vector<Gff4::StructReader>::_Tidy,,0x004ec6b0,0x0083a680,0x004ec6b0
 5652,function,M2DA::M2DA,,0x004ec7a0,0x0083a780,0x004ec7a0
 5653,function,M2DA::M2DA,,0x004ec830,0x0083a810,0x004ec830
@@ -5792,7 +5792,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5791,function,"std::map<unsigned int,Multithreading::SynchSafePointer>::_Tidy","Its bytes are std::map's _Tidy as VC8 compiles it, which ~map shares (it only calls _Tidy), not _Erase's: tools/stlmatch.py, 2026-11-20. A helper's reading had named it _Erase.",0x004f37f0,0x00466db0,0x004f37f0
 5792,function,"std::map<unsigned int,Multithreading::SynchSafePointer>::_Erase",,0x004f3830,0x007e0e90,0x004f3830
 5793,function,"std::map<?,?>::erase",,0x004f3870,0x007e0ed0,0x004f3870
-5794,function,"std::vector<std::pair<int,int>>::vector",,0x004f3b40,0x007e11a0,0x004f3b40
+5794,function,"ECBase::ECDynArray<std::pair<int,int>>::ECDynArray(unsigned int)",,0x004f3b40,0x007e11a0,0x004f3b40
 5795,function,"Core::VectorClear<std::pair<int,int>>","Clears a vector of 8-byte pairs, and with the flag set also frees its storage (same shape as Core::VectorClear<Physics::Contact> at 0x0046DBD0); called by ~MaterialState and by ClearStates on the override's state list.",0x004f3ba0,0x007e1200,0x004f3ba0
 5796,function,"Graphics::MaterialObjectInstance::ParameterValueProvider<ECBase::ECDynArray<Math::VectorUA4f>,Graphics::MaterialObjectInstance::ParameterAccessByValue<ECBase::ECDynArray<Math::VectorUA4f>>>::ParameterValueProvider",,0x004f3c80,0x007e12e0,0x004f3c80
 5797,function,ECBase::ECDynArray<Math::VectorUA4f>::operator=,,0x004f3ce0,0x005a2bb0,0x004f3ce0
@@ -5993,7 +5993,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5992,function,Graphics::MaterialStateManager::Shutdown,,0x004fc480,0x007ed130,0x004fc480
 5993,function,Graphics::MaterialStateManager::PurgeExpired,,0x004fc4f0,0x007ed1a0,0x004fc4f0
 5994,function,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialState>>::resize,,0x004fc550,0x0048a880,0x004fc550
-5995,function,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialState>>::vector,,0x004fc640,0x00758800,0x004fc640
+5995,function,ECBase::ECDynArray<Multithreading::SynchSafePointer<Graphics::MaterialState>>::ECDynArray(unsigned int),,0x004fc640,0x00758800,0x004fc640
 5996,function,Graphics::MaterialStateManager::Register,,0x004fc6b0,0x007ed5c0,0x004fc6b0
 5997,function,Graphics::MaterialStateManager::Load,,0x004fc720,0x007ed630,0x004fc720
 5998,function,Graphics::MaterialStateManager::FindOrLoad,,0x004fc960,0x007ed870,0x004fc960
@@ -6051,7 +6051,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6050,function,std::vector<?>::resize,,0x004fdda0,0x007ebcf0,0x004fdda0
 6051,function,std::vector<?>::insert,,0x004fde90,0x007ebc60,0x004fde90
 6052,function,std::vector<General::SafePointer<?>>::push_back,,0x004fdf20,0x007ebde0,0x004fdf20
-6053,function,ECBase::ECDynArray<General::SafePointer<?>>::ECDynArray,,0x004fdfb0,0x007ebe70,0x004fdfb0
+6053,function,ECBase::ECDynArray<General::SafePointer<?>>::ECDynArray(unsigned int),,0x004fdfb0,0x007ebe70,0x004fdfb0
 6054,function,Graphics::MaterialShaderManager::MaterialShaderManager,,0x004fe020,0x007ebee0,0x004fe020
 6055,function,Graphics::MaterialShaderManager::Get,"Function-local static MaterialShaderManager at 0x00C31084, built on first use by 0x004FE020 with an atexit destructor.",0x004fe090,0x007ebf50,0x004fe090
 6056,function,Graphics::MaterialShaderManager::AddVertexShader,"Takes a SynchSafePointer by value, push_backs it onto vertexShaders (+4), makes the stored last element weak (0x004FD430) and releases the copy; called only by LoadVertexShader.",0x004fe100,0x007ebfc0,0x004fe100
@@ -6127,7 +6127,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6126,function,std::vector<Math::Matrix4x4f>::push_back,,0x00500a50,0x007e8c20,0x00500a50
 6127,function,"std::map<unsigned int,?>::~map",,0x00500ae0,0x007e92f0,0x00500ae0
 6128,function,"std::map<unsigned int,Math::VectorUA4f>::operator[]",,0x00500b20,0x007e8cb0,0x00500b20
-6129,function,ECBase::ECDynArray<Graphics::MaterialTextureRequest>::ECDynArray,,0x00500bb0,0x007e8d40,0x00500bb0
+6129,function,ECBase::ECDynArray<Graphics::MaterialTextureRequest>::ECDynArray(unsigned int),,0x00500bb0,0x007e8d40,0x00500bb0
 6130,function,ECBase::ECDynArray<?>::Clear,,0x00500c20,0x007e8db0,0x00500c20
 6131,function,Multithreading::SynchSafePointerList<Graphics::MaterialObject>::~SynchSafePointerList,,0x00500d30,0x007e8ec0,0x00500d30
 6132,function,Graphics::MaterialObject::AddTextureRequest,,0x00500df0,0x007e8f80,0x00500df0
@@ -6449,7 +6449,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6448,function,std::vector<std::wstring>::resize,,0x0050ea10,0x007fcf30,0x0050ea10
 6449,function,std::vector<std::wstring>::insert,,0x0050eb40,0x007fd060,0x0050eb40
 6450,function,std::vector<std::wstring>::push_back,,0x0050ec00,0x007fd120,0x0050ec00
-6451,function,std::vector<std::wstring>::vector,,0x0050ecb0,0x007fd1d0,0x0050ecb0
+6451,function,ECBase::ECDynArray<std::wstring>::ECDynArray(unsigned int),,0x0050ecb0,0x007fd1d0,0x0050ecb0
 6452,function,Graphics::MaterialStateBuilderXML2::MaterialStateBuilderXML2,,0x0050ed30,0x007fd250,0x0050ed30
 6453,function,Graphics::MaterialStateBuilderXML2::StartElement,,0x0050ee50,0x007fd370,0x0050ee50
 6454,function,Graphics::MaterialStateBuilderXML2::TakeResult,,0x0050efb0,0x007fd4d0,0x0050efb0
@@ -6771,9 +6771,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6770,function,"std::map<unsigned int,Floaty*>::erase",,0x005197f0,0x007a9100,0x005197f0
 6771,function,std::vector<?>::_Assign_n,,0x00519860,0x007c1e30,0x00519860
 6772,function,,,0x005198d0,0x007f0dc0,0x005198d0
-6773,function,std::vector<GFxValue>::vector,,0x005199b0,0x007c1ea0,0x005199b0
+6773,function,ECBase::ECDynArray<GFxValue>::ECDynArray(unsigned int),,0x005199b0,0x007c1ea0,0x005199b0
 6774,function,std::vector<GFxValue>::resize,,0x00519a20,0x007c1f10,0x00519a20
-6775,function,std::vector<?>::vector,,0x00519a40,0x00493a20,0x00519a40
+6775,function,ECBase::ECDynArray<?>::ECDynArray(unsigned int),,0x00519a40,0x00493a20,0x00519a40
 6776,function,GuiMovie::QueueTokenValue,,0x00519aa0,0x007c1f30,0x00519aa0
 6777,function,GuiMovie::DeliverTokens,,0x00519b00,0x007c1f90,0x00519b00
 6778,function,stdext::_Hash<...>::clear,,0x00519dc0,0x007c2250,0x00519dc0
@@ -7191,7 +7191,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7190,function,std::vector<?>::resize,,0x0052b8c0,0x00732740,0x0052b8c0
 7191,function,std::vector<?>::insert,,0x0052b9e0,0x00732860,0x0052b9e0
 7192,function,std::vector<?>::push_back,,0x0052ba90,0x00732910,0x0052ba90
-7193,function,std::vector<?>::vector,,0x0052bb30,0x007329b0,0x0052bb30
+7193,function,ECBase::ECDynArray<?>::ECDynArray(unsigned int),,0x0052bb30,0x007329b0,0x0052bb30
 7194,function,Eclipse::IGraphicsInternal::MarkMixGuiMoviesDirty,,0x0052bba0,0x00732a20,0x0052bba0
 7195,function,Eclipse::CreateGraphics,,0x0052bd90,0x00732c10,0x0052bd90
 7196,function,Eclipse::DestroyGraphics,,0x0052be10,0x00732c90,0x0052be10
@@ -7341,7 +7341,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7340,function,GraphicsStructures::SpeedTreeModel::WriteVertices,,0x00533f70,0x0073b780,0x00533f70
 7341,function,GraphicsStructures::SpeedTreeForest::BuildBillboards,,0x00534230,0x0073ba40,0x00534230
 7342,function,Multithreading::SynchSafePointer<?>::SynchSafePointer,,0x00534a70,0x007ded00,0x00534a70
-7343,function,std::vector<float>::vector,,0x00534aa0,0x004fe9f0,0x00534aa0
+7343,function,ECBase::ECDynArray<float>::ECDynArray(unsigned int),,0x00534aa0,0x004fe9f0,0x00534aa0
 7344,function,std::vector<float>::resize,,0x00534b10,0x004feae0,0x00534b10
 7345,function,ECBase::ECDynArray<GraphicsStructures::SpeedTreeForest::ModelGroup*>::DeleteAll,,0x00534b30,0x0073c360,0x00534b30
 7346,function,Graphics::IRenderableNode::`scalar deleting destructor',,0x00534c60,0x0073c4b0,0x00534c60
@@ -7691,7 +7691,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7690,function,GraphicsStructures::SpawnVolumeMesh::Sample,,0x0053f440,0x0077b0e0,0x0053f440
 7691,function,GraphicsStructures::ObjectNodeEmitter::Birth,,0x0053f980,0x0077b620,0x0053f980
 7692,function,std::vector<?>::size,,0x0053fd40,0x0077b9e0,0x0053fd40
-7693,function,ECBase::ECDynArray<?>::~ECDynArray,,0x0053fd60,0x0077ba00,0x0053fd60
+7693,function,GraphicsStructures::Array<?>::~Array,"Frees the element block at +0 with __ehvec_dtor (0x008E185E), 0x50-byte elements and an empty destructor (Stub::NoOp 0x005BDCF0) behind a count cookie, then operator delete: a GraphicsStructures::Array destructor. ECDynArray keeps its vector at +4 and has no out-of-line destructor of its own (decomp-agent, read 2026-11-24)",0x0053fd60,0x0077ba00,0x0053fd60
 7694,function,GraphicsStructures::Array<?>::SetCapacity,,0x0053fd90,0x00771260,0x0053fd90
 7695,function,"std::copy<?*,?*>",,0x0053fec0,0x0077ba30,0x0053fec0
 7696,function,"std::_Uninit_copy<?*,?*,std::allocator<?>>",,0x0053ff10,0x0077ba80,0x0053ff10
@@ -7722,8 +7722,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7721,function,GraphicsStructures::ObjectNodeEmitter::`scalar deleting destructor',,0x005418b0,0x0077d5d0,0x005418b0
 7722,function,std::vector<?>::resize,,0x005418d0,0x0077d5f0,0x005418d0
 7723,function,ECBase::ECDynArray<?>::operator=,,0x00541980,0x0056da00,0x00541980
-7724,function,ECBase::ECDynArray<?>::ECDynArray,,0x005419a0,0x0077d6a0,0x005419a0
-7725,function,ECBase::ECDynArray<?>::ECDynArray,,0x00541a10,0x0077d710,0x00541a10
+7724,function,ECBase::ECDynArray<?>::ECDynArray(unsigned int),,0x005419a0,0x0077d6a0,0x005419a0
+7725,function,ECBase::ECDynArray<?>::ECDynArray(unsigned int),,0x00541a10,0x0077d710,0x00541a10
 7726,function,ECBase::ECDynArray<?>::ResizeZeroFilled,,0x00541aa0,0x0077d7a0,0x00541aa0
 7727,function,GraphicsStructures::EmitterSplatParameters::EmitterSplatParameters,,0x00541ae0,0x0077d7e0,0x00541ae0
 7728,function,GraphicsStructures::SplatObject::SplatObject,,0x00541bd0,0x0077d8d0,0x00541bd0
@@ -7973,14 +7973,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7972,function,GraphicsStructures::Object::SetFacialAnimationPlayer,,0x0054bcc0,0x0074c7a0,0x0054bcc0
 7973,function,GraphicsStructures::Object::CollectUserParamNames,,0x0054c170,0x0074cc50,0x0054c170
 7974,function,,,0x0054c260,0x0074cd40,0x0054c260
-7975,function,ECBase::ECDynArray<Elem8>::ECDynArray,,0x0054c810,0x0074d3a0,0x0054c810
+7975,function,ECBase::ECDynArray<Elem8>::ECDynArray(unsigned int),,0x0054c810,0x0074d3a0,0x0054c810
 7976,function,std::vector<?>::resize,,0x0054c880,0x0074d410,0x0054c880
 7977,function,ECBase::ECDynArray<GraphicsStructures::ExportValue>::ECDynArray,,0x0054c8a0,0x0074d430,0x0054c8a0
 7978,function,std::vector<?>::resize,,0x0054c920,0x0074d4b0,0x0054c920
-7979,function,ECBase::ECDynArray<GraphicsStructures::Object::ExportCopy>::ECDynArray,,0x0054c960,0x0074d4f0,0x0054c960
+7979,function,ECBase::ECDynArray<GraphicsStructures::Object::ExportCopy>::ECDynArray(unsigned int),,0x0054c960,0x0074d4f0,0x0054c960
 7980,function,ECBase::ECDynArray<Animation::BlendNode>::ECDynArray,,0x0054c9e0,0x0074d570,0x0054c9e0
 7981,function,std::vector<?>::resize,,0x0054ca70,0x004bdd50,0x0054ca70
-7982,function,ECBase::ECDynArray<Animation::ClipContribution>::ECDynArray,,0x0054cab0,0x0074d600,0x0054cab0
+7982,function,ECBase::ECDynArray<Animation::ClipContribution>::ECDynArray(unsigned int),,0x0054cab0,0x0074d600,0x0054cab0
 7983,function,std::vector<?>::resize,,0x0054cb20,0x004bdd90,0x0054cb20
 7984,function,ECBase::ECDynArray<Elem12A>::Clear,,0x0054cb50,0x0074d670,0x0054cb50
 7985,function,GraphicsStructures::Object::ClearAnimationArrays,,0x0054cc40,0x0074d760,0x0054cc40
@@ -8500,7 +8500,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8499,function,,,0x00564c36,0x007c1ca6,0x00564c36
 8500,function,std::vector<?>::insert,,0x00564d10,0x0048e7d0,0x00564d10
 8501,function,std::vector<?>::push_back,,0x00564da0,0x0048e940,0x00564da0
-8502,function,std::vector<?>::vector,,0x00564e30,0x00752070,0x00564e30
+8502,function,ECBase::ECDynArray<?>::ECDynArray(unsigned int),,0x00564e30,0x00752070,0x00564e30
 8503,function,std::vector<?>::resize(unsigned int),,0x00564e90,0x007520d0,0x00564e90
 8504,function,GraphicsStructures::ObjectNodeCloth::ObjectNodeCloth,,0x00564eb0,0x007520f0,0x00564eb0
 8505,function,GraphicsStructures::ObjectNodeCloth::CreateDrawBatch,,0x005650e0,0x00752320,0x005650e0
@@ -8569,7 +8569,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8568,function,"std::vector<GraphicsStructures::ModelExport>::resize(unsigned int,GraphicsStructures::ModelExport)",,0x00567ab0,0x0075f590,0x00567ab0
 8569,function,std::vector<int>::resize,"No code of its own: one jmp to the function of the same name at 0x004A66D0 (ID 3930), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00567bd0,0x0075f7d0,0x00567bd0
 8570,function,GraphicsStructures::ObjectBlueprint::FindNodeByName,,0x00567be0,0x0075f7e0,0x00567be0
-8571,function,ECBase::ECDynArray<GraphicsStructures::ModelExport>::ECDynArray,,0x00567d10,0x0075f910,0x00567d10
+8571,function,ECBase::ECDynArray<GraphicsStructures::ModelExport>::ECDynArray(unsigned int),,0x00567d10,0x0075f910,0x00567d10
 8572,function,Multithreading::SynchSafePointerList<GraphicsStructures::ObjectBlueprint>::SynchSafePointerList,,0x00567d80,0x0075f980,0x00567d80
 8573,function,Multithreading::SynchSafePointerList<GraphicsStructures::ObjectBlueprint>::~SynchSafePointerList,,0x00567dd0,0x0075f9d0,0x00567dd0
 8574,function,GraphicsStructures::ObjectBlueprint::~ObjectBlueprint,,0x00567e90,0x0075fa90,0x00567e90
@@ -8789,9 +8789,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8788,function,Stub::GetSynchSafePointerCopy_0x38_Deref,,0x00573110,0x004880b0,0x00573110
 8789,function,std::_String_const_iterator<char>::_String_const_iterator,,0x00573150,0x00488560,0x00573150
 8790,function,std::_Tree<?>::_Lrotate,,0x005731b0,0x007532d0,0x005731b0
-8791,function,ECBase::ECDynArray<Math::Vector4f>::ECDynArray(const ECBase::ECDynArray<Math::Vector4f>&),,0x00573200,0x00753320,0x00573200
+8791,function,GraphicsStructures::Array<Math::Point4f>::Array(const GraphicsStructures::Array<Math::Point4f>&),"Zeroes +0 (the element block), then GraphicsStructures::Array<Math::Point4f>::operator= (0x005728C0) from the other; returns this, ret 4 (decomp-agent, read 2026-11-24)",0x00573200,0x00753320,0x00573200
 8792,function,GraphicsStructures::Array<Math::Vector4f>::Array,,0x00573220,0x00470160,0x00573220
-8793,function,ECBase::ECDynArray<ECBase::ECDynArray<Math::Vector4f>>::~ECDynArray,,0x00573250,0x00753340,0x00573250
+8793,function,GraphicsStructures::Array<GraphicsStructures::Array<?>>::~Array,"As 0x0053FD60 (Array<?>::~Array) for 12-byte elements that are themselves Arrays, each destroyed by GraphicsStructures::Array<?>::~Array (0x0053E370) (decomp-agent, read 2026-11-24)",0x00573250,0x00753340,0x00573250
 8794,function,ECBase::ECDynArray<Renderer::LightState*>::At,"Returns the address of element [i] of a 4-byte-element array (begin +4, end +8) or, out of range, ECDynArray<Renderer::LightState*>::s_default (0x00C31E1C, row 100691); its one caller is Renderer::LightStatePool::Acquire (0x00578132), which loads the LightState* from it.",0x00573280,0x00753370,0x00573280
 8795,function,std::_Fill<MeshLightmapRecord *>,,0x005732b0,0x00711720,0x005732b0
 8796,function,ECBase::ECDynArray<Math::Vector4f>::ECDynArray,,0x005732f0,0x00470220,0x005732f0
@@ -8898,7 +8898,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8897,function,stdext::_Hash<?>::~_Hash,,0x00577140,0x00754780,0x00577140
 8898,function,GraphicsStructures::GraphicsStructuresManager::CreateMergeObject,,0x005771b0,0x007547f0,0x005771b0
 8899,function,std::vector<MeshLightmapRecord>::_Tidy,,0x00577310,0x00754950,0x00577310
-8900,function,std::vector<MeshLightmapRecord>::vector,,0x00577430,0x007141e0,0x00577430
+8900,function,ECBase::ECDynArray<MeshLightmapRecord>::ECDynArray(unsigned int),,0x00577430,0x007141e0,0x00577430
 8901,function,GraphicsStructures::ConstructObjectTask::ConstructObjectTask,,0x005774a0,0x00754aa0,0x005774a0
 8902,function,GraphicsStructures::ConstructObjectTask::Reset,,0x00577520,0x00754b20,0x00577520
 8903,function,GraphicsStructures::ConstructLightmapForExistingModelTask::ConstructLightmapForExistingModelTask,,0x00577550,0x00754b50,0x00577550
@@ -8910,7 +8910,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8909,function,"std::basic_ofstream<wchar_t,std::char_traits<wchar_t>>::`scalar deleting destructor'",,0x00577e50,0x00489d50,0x00577e50
 8910,function,std::_Tree<?>::_Tidy,,0x00577e90,0x007553e0,0x00577e90
 8911,function,stdext::_Hash<?>::_Hash,,0x00577ed0,0x00755420,0x00577ed0
-8912,function,std::vector<?>::vector,,0x00577f50,0x004f0140,0x00577f50
+8912,function,ECBase::ECDynArray<?>::ECDynArray(unsigned int),,0x00577f50,0x004f0140,0x00577f50
 8913,function,Renderer::LightStatePool::Grow,,0x00577fc0,0x007554a0,0x00577fc0
 8914,function,Renderer::LightStatePool::Acquire,,0x00578080,0x00755560,0x00578080
 8915,function,GraphicsStructures::ObjectParams::ObjectParams,,0x00578170,0x00714280,0x00578170
@@ -9304,10 +9304,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9303,function,std::vector<unsigned int>::assign,,0x0058e070,0x00789020,0x0058e070
 9304,function,std::vector<?>::push_back,,0x0058e0d0,0x00789080,0x0058e0d0
 9305,function,std::vector<GraphicsStructures::ClothAttachment>::push_back,,0x0058e170,0x00789120,0x0058e170
-9306,function,std::vector<GraphicsStructures::TriangleIndices16>::vector,,0x0058e220,0x007891d0,0x0058e220
+9306,function,ECBase::ECDynArray<GraphicsStructures::TriangleIndices16>::ECDynArray(unsigned int),,0x0058e220,0x007891d0,0x0058e220
 9307,function,std::vector<GraphicsStructures::TriangleIndices16>::resize,,0x0058e290,0x00789240,0x0058e290
 9308,function,GraphicsStructures::AssignUIntVectorFromArray,,0x0058e2b0,0x00789260,0x0058e2b0
-9309,function,std::vector<GraphicsStructures::ClothAttachment>::vector,,0x0058e2d0,0x00789280,0x0058e2d0
+9309,function,ECBase::ECDynArray<GraphicsStructures::ClothAttachment>::ECDynArray(unsigned int),,0x0058e2d0,0x00789280,0x0058e2d0
 9310,function,std::vector<?>::resize,,0x0058e340,0x007892f0,0x0058e340
 9311,function,std::vector<GraphicsStructures::ModelExport>::resize,,0x0058e370,0x00789320,0x0058e370
 9312,function,GraphicsStructures::SpawnVolumeMesh::SpawnVolumeMesh,,0x0058e3a0,0x00789350,0x0058e3a0
@@ -9718,7 +9718,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9717,function,GraphicsStructures::ReadByteFromStream,,0x005b3e30,0x007b39c0,0x005b3e30
 9718,function,std::vector<unsigned short>::erase,,0x005b3e50,0x00505b90,0x005b3e50
 9719,function,std::vector<unsigned short>::resize,,0x005b3eb0,0x0061b5a0,0x005b3eb0
-9720,function,std::vector<unsigned short>::vector,,0x005b3f60,0x0061bef0,0x005b3f60
+9720,function,ECBase::ECDynArray<unsigned short>::ECDynArray(unsigned int),,0x005b3f60,0x0061bef0,0x005b3f60
 9721,function,GraphicsStructures::StreamData::StreamData,,0x005b3fc0,0x007b39e0,0x005b3fc0
 9722,function,GraphicsStructures::ReadVector3FromStream,,0x005b4060,0x007b3a80,0x005b4060
 9723,function,GraphicsStructures::ReadVector4FromStream,,0x005b40a0,0x007b3ac0,0x005b40a0
@@ -9890,7 +9890,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9889,function,"std::map<int,std::vector<unsigned int>*>::operator[]",,0x005b8690,0x00720b80,0x005b8690
 9890,function,WStringMap<void*>::WStringMap,,0x005b8710,0x00720c00,0x005b8710
 9891,function,WStringMap<void*>::~WStringMap,,0x005b8790,0x006ffa50,0x005b8790
-9892,function,"std::vector<std::pair<std::wstring,std::wstring>>::vector",,0x005b8820,0x004eff60,0x005b8820
+9892,function,"ECBase::ECDynArray<std::pair<std::wstring,std::wstring>>::ECDynArray(unsigned int)",,0x005b8820,0x004eff60,0x005b8820
 9893,function,SoundManager::PickRandomSoundSetEntry,,0x005b8890,0x00720db0,0x005b8890
 9894,function,SoundManager::AddSoundSetEntries,,0x005b8970,0x00720e90,0x005b8970
 9895,function,SoundEmitter::SoundEmitter,,0x005b8aa0,0x00720fc0,0x005b8aa0
@@ -10181,7 +10181,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10180,function,SmartData::TokenStringNotifier::`scalar deleting destructor',,0x005c7840,0x0046a9d0,0x005c7840
 10181,function,std::vector<SmartData::TokenPath>::~vector,,0x005c7860,0x0046a9f0,0x005c7860
 10182,function,std::vector<SmartData::TokenPath>::resize,,0x005c7870,0x0046aa00,0x005c7870
-10183,function,std::vector<SmartData::TokenPath>::vector,,0x005c79a0,0x0046ab30,0x005c79a0
+10183,function,ECBase::ECDynArray<SmartData::TokenPath>::ECDynArray(unsigned int),,0x005c79a0,0x0046ab30,0x005c79a0
 10184,function,SmartData::TokenStringObserver::TokenStringObserver,,0x005c7a20,0x0046abb0,0x005c7a20
 10185,function,SmartData::TokenStringObserver::Resolve,,0x005c7ac0,0x0046ac50,0x005c7ac0
 10186,function,SmartData::TokenStringNotifier::TokenStringNotifier,,0x005c7cb0,0x0046ae40,0x005c7cb0
@@ -10289,7 +10289,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10288,function,ILayoutPolicy::`scalar deleting destructor',,0x005cb830,0x00710710,0x005cb830
 10289,function,CFixedPolicy::Decide,,0x005cb850,0x00710700,0x005cb850
 10290,function,CCameraFixedPolicy::Decide,,0x005cb860,0x007107a0,0x005cb860
-10291,function,std::vector<?>::vector,,0x005cb950,0x00710890,0x005cb950
+10291,function,ECBase::ECDynArray<?>::ECDynArray(unsigned int),,0x005cb950,0x00710890,0x005cb950
 10292,function,CCameraFixedPolicy::CCameraFixedPolicy,,0x005cb9b0,0x007108f0,0x005cb9b0
 10293,function,CCameraFixedPolicy::`scalar deleting destructor',,0x005cba10,0x00710950,0x005cba10
 10294,function,CCameraFixedPolicy::AddThreshold,,0x005cba40,0x00710980,0x005cba40
@@ -10399,7 +10399,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10398,function,"std::vector<Math::CollisionOutputParameter>::resize(n,val)",,0x005d11b0,0x00531700,0x005d11b0
 10399,function,IAreaLayout::Load,,0x005d1290,0x0070e980,0x005d1290
 10400,function,std::vector<Math::CollisionOutputParameter>::resize,,0x005d1d40,0x00531810,0x005d1d40
-10401,function,std::vector<Math::CollisionOutputParameter>::vector,,0x005d1da0,0x005318c0,0x005d1da0
+10401,function,ECBase::ECDynArray<Math::CollisionOutputParameter>::ECDynArray(unsigned int),,0x005d1da0,0x005318c0,0x005d1da0
 10402,function,IAreaLayout::RoomAt,,0x005d1e00,0x0070f430,0x005d1e00
 10403,function,CRoom::SetModelHandle,,0x005d1fa0,0x00715ad0,0x005d1fa0
 10404,function,FreeLODMemoryTask::Execute,,0x005d1fc0,0x00715af0,0x005d1fc0
@@ -10415,7 +10415,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10414,function,ECBase::ECDynArray<?>::GetRange,"INFERRED name: nothing names it. __thiscall, ret 8: *first = begin and *last = the last element + 1 (checked iterators, 0x008E11F2), both 0 when the array is empty; 4-byte elements (sar 2). 63 callers on many arrays of pointers, one folded body; GraphicsStructures::Object::UpdateTransforms calls it on its ECDynArray<Dependency*> members dependencies (+0x1F8) and dependents (+0x264) (decomp-agent, read 2026-11-23)",0x005d2480,0x00749a60,0x005d2480
 10415,function,std::vector<?>::_Insert_n,"The insert-n of a 4-byte-element vector, folded across element types: throws length_error when 0x3FFFFFFF - size < count (0x005D255E..0x005D2569); reached from resize and insert",0x005d2520,0x0074b8e0,0x005d2520
 10416,function,"std::vector<?>::resize(n,val)",,0x005d26e0,0x00493620,0x005d26e0
-10417,function,std::vector<?>::vector,,0x005d27a0,0x00610d50,0x005d27a0
+10417,function,ECBase::ECDynArray<?>::ECDynArray(unsigned int),,0x005d27a0,0x00610d50,0x005d27a0
 10418,function,CRoom::ApplyDarknessLevel,,0x005d2800,0x00715f10,0x005d2800
 10419,function,CRoom::ResetPendingObjects,,0x005d2880,0x00715f90,0x005d2880
 10420,function,CRoom::TakeInObjects,,0x005d2970,0x00716080,0x005d2970
@@ -10598,8 +10598,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10597,function,"std::_Copy_opt<AddInRecord*,AddInRecord*>",,0x005d8e10,0x004c4350,0x005d8e10
 10598,function,CClientExoApp::ResetTimeScale,,0x005d8e50,0x004c4390,0x005d8e50
 10599,function,"SmartData::Attribute<ECBase::ECDynArray<ModuleInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x005d8e80,0x004c43c0,0x005d8e80
-10600,function,std::vector<int>::vector,,0x005d8f00,0x00610d50,0x005d8f00
-10601,function,"std::vector<std::pair<std::wstring,std::wstring>>::vector",,0x005d8f60,0x004eff60,0x005d8f60
+10600,function,ECBase::ECDynArray<int>::ECDynArray(unsigned int),,0x005d8f00,0x00610d50,0x005d8f00
+10601,function,"ECBase::ECDynArray<std::pair<std::wstring,std::wstring>>::ECDynArray(unsigned int)",,0x005d8f60,0x004eff60,0x005d8f60
 10602,function,AddInRecord::AddInRecord(const AddInRecord&),,0x005d8fd0,0x004c4440,0x005d8fd0
 10603,function,"std::copy<AddInRecord*,AddInRecord*>",,0x005d92e0,0x004c47c0,0x005d92e0
 10604,function,CClientExoApp::~CClientExoApp,,0x005d9340,0x004c4a00,0x005d9340
@@ -10772,10 +10772,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10771,function,CClientOptions::ApplyChangedOptions,,0x005e1370,0x004cdd40,0x005e1370
 10772,function,ECBase::ECDynArray<SmartData::Attribute<int>>::ECDynArray(const ECBase::ECDynArray<SmartData::Attribute<int>>&),,0x005e34e0,0x004cfeb0,0x005e34e0
 10773,function,"ECBase::ECDynArray<SmartData::Attribute<int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::operator=",,0x005e3540,0x004cff10,0x005e3540
-10774,function,"ECBase::ECDynArray<SmartData::Attribute<ECBase::ECString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ECDynArray",,0x005e3560,0x004cff30,0x005e3560
+10774,function,"ECBase::ECDynArray<SmartData::Attribute<ECBase::ECString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ECDynArray(unsigned int)",,0x005e3560,0x004cff30,0x005e3560
 10775,function,ECBase::ECDynArray<SmartData::Attribute<ECBase::ECString>>::resize,"No code of its own: one jmp to the function of the same name at 0x005E1070 (ID 10766), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x005e35c0,0x004cff90,0x005e35c0
 10776,function,"ECBase::ECDynArray<SmartData::Attribute<ECBase::ECString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::Clear",,0x005e35d0,0x004cffa0,0x005e35d0
-10777,function,ECBase::ECDynArray<?>::ECDynArray,,0x005e36c0,0x004d0090,0x005e36c0
+10777,function,ECBase::ECDynArray<?>::ECDynArray(unsigned int),,0x005e36c0,0x004d0090,0x005e36c0
 10778,function,ECBase::ECDynArray<?>::Clear,,0x005e3720,0x004d00f0,0x005e3720
 10779,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<ECBase::ECString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x005e3800,0x004d01d0,0x005e3800
 10780,function,"std::vector<SmartData::Attribute<int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::push_back",,0x005e3880,0x004d02e0,0x005e3880
@@ -10786,7 +10786,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10785,function,"SmartData::ArrayFromText<ECBase::ECDynArray<SmartData::Attribute<ECBase::ECString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>>",,0x005e3c10,0x004d0750,0x005e3c10
 10786,function,std::vector<std::vector<std::wstring>>::_Destroy,,0x005e3c80,0x004d07c0,0x005e3c80
 10787,function,std::vector<ECBase::ECDynArray<ECBase::ECString>>::_Tidy,,0x005e3cb0,0x004d07f0,0x005e3cb0
-10788,function,"ECBase::ECDynArray<SmartData::Attribute<int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ECDynArray",,0x005e3d00,0x004d0930,0x005e3d00
+10788,function,"ECBase::ECDynArray<SmartData::Attribute<int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ECDynArray(unsigned int)",,0x005e3d00,0x004d0930,0x005e3d00
 10789,function,"ECBase::ECDynArray<SmartData::Attribute<int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::Clear",,0x005e3d80,0x004d09b0,0x005e3d80
 10790,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x005e3e60,0x004d0a90,0x005e3e60
 10791,function,"std::_Uninit_copy<ECBase::ECDynArray<ECBase::ECString>*,ECBase::ECDynArray<ECBase::ECString>*>",,0x005e3ee0,0x004d0b10,0x005e3ee0
@@ -10856,7 +10856,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10855,function,CClientOptions::RegisterHandler_CommitOptionsMessage,,0x005e7bf0,0x004d4c80,0x005e7bf0
 10856,function,CClientOptions::Clone,,0x005e7c70,0x004d4d00,0x005e7c70
 10857,function,CClientOptions::RegisterMessageHandlers,,0x005e7ce0,0x004d4d70,0x005e7ce0
-10858,function,std::vector<std::vector<std::wstring>>::vector,,0x005e7d10,0x004d4da0,0x005e7d10
+10858,function,ECBase::ECDynArray<std::vector<std::wstring>>::ECDynArray(unsigned int),,0x005e7d10,0x004d4da0,0x005e7d10
 10859,function,std::vector<std::vector<std::wstring>>::resize,,0x005e7d80,0x004d4e10,0x005e7d80
 10860,function,CClientOptions::RegisterClass,,0x005e7db0,0x004d4e40,0x005e7db0
 10861,function,CClientOptions::CClientOptions,,0x005e7dd0,0x004d4e60,0x005e7dd0
@@ -10981,9 +10981,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10980,function,AddInsManager::~AddInsManager,,0x005f8af0,0x004e6120,0x005f8af0
 10981,function,std::vector<AddInRecord>::push_back,,0x005f8b70,0x004e61a0,0x005f8b70
 10982,function,std::vector<AddInXmlEntry>::push_back,,0x005f8c20,0x004e6250,0x005f8c20
-10983,function,std::vector<AddInRecord>::vector,,0x005f8cd0,0x004e6300,0x005f8cd0
+10983,function,ECBase::ECDynArray<AddInRecord>::ECDynArray(unsigned int),,0x005f8cd0,0x004e6300,0x005f8cd0
 10984,function,AddInsManager::VectorClear<AddInRecord>,,0x005f8d50,0x004e6380,0x005f8d50
-10985,function,std::vector<AddInXmlEntry>::vector,,0x005f8e50,0x004e6480,0x005f8e50
+10985,function,ECBase::ECDynArray<AddInXmlEntry>::ECDynArray(unsigned int),,0x005f8e50,0x004e6480,0x005f8e50
 10986,function,AddInsManager::VectorClear<AddInXmlEntry>,,0x005f8ed0,0x004e6500,0x005f8ed0
 10987,function,AddInsManager::AddInsManager,,0x005f8fd0,0x004e6600,0x005f8fd0
 10988,function,AddInsManager::ReleaseAllResources,,0x005f9070,0x004e66a0,0x005f9070
@@ -11090,7 +11090,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 11089,function,,,0x0060184c,0x004efd3c,0x0060184c
 11090,function,CCModule::GetObjectsInAreaByTag,,0x00601860,0x004efd50,0x00601860
 11091,function,"std::map<int,std::wstring>::~map",,0x00601a70,0x005a2300,0x00601a70
-11092,function,std::vector<CCModule::TagIndexEntry>::vector,,0x00601ab0,0x004effd0,0x00601ab0
+11092,function,ECBase::ECDynArray<CCModule::TagIndexEntry>::ECDynArray(unsigned int),,0x00601ab0,0x004effd0,0x00601ab0
 11093,function,ECBase::ECDynArray<CCModule::TagIndexEntry>::InsertAt,"The same code as ECDynArray<CTlkTable::TlkEntry>::InsertAt (0x004E56E0) for a larger element, registers allocated differently: insert or push_back of its own vector (read 2026-11-23)",0x00601b10,0x004f0030,0x00601b10
 11094,function,std::vector<Gff4::StructReader>::vector,,0x00601ba0,0x004f00c0,0x00601ba0
 11095,function,"std::_Copy_opt<CCModule::AreaListEntry*,CCModule::AreaListEntry*>",,0x00601c20,0x004f01b0,0x00601c20
@@ -11129,7 +11129,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 11128,function,CCModule::`scalar deleting destructor',,0x006042d0,0x004f2860,0x006042d0
 11129,function,std::vector<CCModule::AreaListEntry>::push_back,,0x006042e0,0x004f2870,0x006042e0
 11130,function,CCModule::`scalar deleting destructor',,0x00604380,0x004f2910,0x00604380
-11131,function,std::vector<CCModule::AreaListEntry>::vector,,0x006043a0,0x004f2930,0x006043a0
+11131,function,ECBase::ECDynArray<CCModule::AreaListEntry>::ECDynArray(unsigned int),,0x006043a0,0x004f2930,0x006043a0
 11132,function,CCModule::CCModule,,0x00604410,0x004f29a0,0x00604410
 11133,function,CCModule::ReadCifAreaLists,"For each .cif resource in +0x470's list (PreloadCifResources), checked for a GFF V4.0 header: the field 0x42D0 (17104) script, when its resref is not empty (CResRef::IsNotEmpty), is pushed to +0x268; field 0x42D1 (17105) to +0x278",0x006048b0,0x004f2e40,0x006048b0
 11134,function,CCModule::LoadCampaignCif,,0x00604e30,0x004f33c0,0x00604e30
@@ -11692,7 +11692,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 11691,function,LodManager::PutInBand,,0x006184e0,0x006d7800,0x006184e0
 11692,function,LodManager::ReleaseObject,,0x006186e0,0x006d7a00,0x006186e0
 11693,function,std::_Tree<LodMapTraits>::_Tree,,0x00618740,0x006d7a60,0x00618740
-11694,function,"ECBase::ECDynArray<std::pair<unsigned int,float>>::ECDynArray",,0x00618790,0x006d7ab0,0x00618790
+11694,function,"ECBase::ECDynArray<std::pair<unsigned int,float>>::ECDynArray(unsigned int)",,0x00618790,0x006d7ab0,0x00618790
 11695,function,"ECBase::ECDynArray<std::pair<unsigned int,float>>::Clear",,0x00618800,0x006d7b20,0x00618800
 11696,function,LodBand::LodBand,,0x006188f0,0x006d7c10,0x006188f0
 11697,function,LodBand::Add,,0x00618950,0x006d7c70,0x00618950
@@ -12183,11 +12183,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12182,function,CreatureAbilities::RemoveAbility,,0x0062cf60,0x00583ff0,0x0062cf60
 12183,function,AbilityTreeNode::DestroyChildren,,0x0062d000,0x00584090,0x0062d000
 12184,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x0062d060,0x005840f0,0x0062d060
-12185,function,"ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ECDynArray",,0x0062d0e0,0x00584170,0x0062d0e0
+12185,function,"ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ECDynArray(unsigned int)",,0x0062d0e0,0x00584170,0x0062d0e0
 12186,function,"ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::Resize",,0x0062d160,0x005841f0,0x0062d160
 12187,function,"SmartData::Attribute<ECBase::ECDynArray<AbilityInstance*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x0062d1a0,0x00584230,0x0062d1a0
 12188,function,"SmartData::Attribute<ECBase::ECDynArray<AbilityGUIInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x0062d220,0x005842b0,0x0062d220
-12189,function,ECBase::ECDynArray<?>::ECDynArray,,0x0062d2a0,0x00584330,0x0062d2a0
+12189,function,ECBase::ECDynArray<?>::ECDynArray(unsigned int),,0x0062d2a0,0x00584330,0x0062d2a0
 12190,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<AbilityInstance*,SmartData::PointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Set",,0x0062d310,0x005843a0,0x0062d310
 12191,function,"std::map<int,QuickslotEntry*>::map",,0x0062d350,0x005843e0,0x0062d350
 12192,function,CreatureAbilities::~CreatureAbilities,,0x0062d380,0x00584410,0x0062d380
@@ -12414,7 +12414,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12413,function,ECBase::ECDynArray<unsigned int>::Clear,,0x00634f20,0x00720cd0,0x00634f20
 12414,function,"SmartData::Attribute<ECBase::ECDynArray<unsigned int>,ObjectIDArrayMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x00635000,0x00610a90,0x00635000
 12415,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x00635080,0x00610b10,0x00635080
-12416,function,"ECBase::ECDynArray<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ECDynArray",,0x00635100,0x00610b90,0x00635100
+12416,function,"ECBase::ECDynArray<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ECDynArray(unsigned int)",,0x00635100,0x00610b90,0x00635100
 12417,function,ECBase::ECDynArray<SmartData::Attribute<bool>>::resize,,0x00635180,0x00610c10,0x00635180
 12418,function,"SmartData::Attribute<ECBase::ECDynArray<PartyPickerEntry*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x006351c0,0x00610c50,0x006351c0
 12419,function,"SmartData::Attribute<ECBase::ECDynArray<PartyMemberApproval*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x00635240,0x00610cd0,0x00635240
@@ -13755,8 +13755,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13754,function,CCModule::GetLinkAreaMiniMaps,,0x006825e0,0x0056e2d0,0x006825e0
 13755,function,std::vector<float>::insert,,0x00682610,0x0056e300,0x00682610
 13756,function,std::vector<?>::_Tidy,,0x00682690,0x0056e380,0x00682690
-13757,function,std::vector<CCArea::StageEntry>::vector,,0x00682770,0x0056e460,0x00682770
-13758,function,std::vector<unk_12byte>::vector,,0x006827e0,0x0056e4d0,0x006827e0
+13757,function,ECBase::ECDynArray<CCArea::StageEntry>::ECDynArray(unsigned int),,0x00682770,0x0056e460,0x00682770
+13758,function,ECBase::ECDynArray<unk_12byte>::ECDynArray(unsigned int),,0x006827e0,0x0056e4d0,0x006827e0
 13759,function,"std::map<unsigned long long,std::vector<unsigned int>>::erase",,0x00682850,0x0056e630,0x00682850
 13760,function,std::vector<unk_4byte>::vector,,0x00682920,0x0056e700,0x00682920
 13761,function,CCArea::RegisterEventListener,,0x00682930,0x0056e710,0x00682930
@@ -14271,7 +14271,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14270,function,CScriptEvent::`scalar deleting destructor',,0x0069ca90,0x0058dc40,0x0069ca90
 14271,function,std::vector<std::wstring>::vector,,0x0069cab0,0x0058dcc0,0x0069cab0
 14272,function,CScriptEvent::CScriptEvent(const CScriptEvent&),,0x0069cb10,0x0058dd20,0x0069cb10
-14273,function,std::vector<std::wstring>::vector,,0x0069cc00,0x0058de10,0x0069cc00
+14273,function,ECBase::ECDynArray<std::wstring>::ECDynArray(unsigned int),,0x0069cc00,0x0058de10,0x0069cc00
 14274,function,std::vector<std::wstring>::resize,,0x0069cc70,0x0058de80,0x0069cc70
 14275,function,CScriptEvent::DefineSaveStruct,,0x0069cca0,0x0058deb0,0x0069cca0
 14276,function,CScriptEvent::ReadFromSave,,0x0069cdc0,0x0058dfd0,0x0069cdc0
@@ -14853,8 +14853,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14852,function,"SmartData::Attribute<ECBase::ECDynArray<ClassRank*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x006b3d00,0x005a5790,0x006b3d00
 14853,function,"SmartData::Attribute<ECBase::ECDynArray<EffectGUIInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x006b3d80,0x005a5810,0x006b3d80
 14854,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x006b3e00,0x005a5890,0x006b3e00
-14855,function,"ECBase::ECDynArray<SmartData::Attribute<short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ECDynArray",,0x006b3e80,0x005a5910,0x006b3e80
-14856,function,ECBase::ECDynArray<?>::ECDynArray,,0x006b3f00,0x005a5990,0x006b3f00
+14855,function,"ECBase::ECDynArray<SmartData::Attribute<short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ECDynArray(unsigned int)",,0x006b3e80,0x005a5910,0x006b3e80
+14856,function,ECBase::ECDynArray<?>::ECDynArray(unsigned int),,0x006b3f00,0x005a5990,0x006b3f00
 14857,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<short,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Set",,0x006b3f80,0x005a5a10,0x006b3f80
 14858,function,ChunkPool<8>::Grow,,0x006b3fc0,0x005a5a50,0x006b3fc0
 14859,function,CCCreature::InitMembers,,0x006b4070,0x005a5b00,0x006b4070
@@ -15212,7 +15212,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15211,function,std::vector<?>::push_back,,0x006ce7c0,0x005c00e0,0x006ce7c0
 15212,function,ECBase::ECDynArray<void*>::InsertAt,,0x006ce860,0x005c0c30,0x006ce860
 15213,function,"SmartData::Attribute<ECBase::ECDynArray<HeroInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x006ce8e0,0x005c0180,0x006ce8e0
-15214,function,std::vector<?>::vector,,0x006ce960,0x005c0200,0x006ce960
+15214,function,ECBase::ECDynArray<?>::ECDynArray(unsigned int),,0x006ce960,0x005c0200,0x006ce960
 15215,function,SaveLoadProxy::ClearHeroList,,0x006ce9d0,0x005c0270,0x006ce9d0
 15216,function,SaveLoadProxy::AddHero,,0x006cea00,0x005c02a0,0x006cea00
 15217,function,SaveLoadProxy::GatherCharacterFolders,,0x006ceff0,0x005c0890,0x006ceff0
@@ -15677,7 +15677,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15676,function,"std::map<ECBase::ECString,ECBase::ECDynArray<ECBase::ECString>>::_Erase",,0x006f14f0,0x005e2ec0,0x006f14f0
 15677,function,"std::pair<ECBase::ECString,ECBase::ECDynArray<ECBase::ECString>>::pair(const std::pair<ECBase::ECString,ECBase::ECDynArray<ECBase::ECString>>&)",,0x006f1580,0x005e2f50,0x006f1580
 15678,function,"SmartData::Attribute<ECBase::ECDynArray<ChanterEntry*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x006f15e0,0x005e2fb0,0x006f15e0
-15679,function,"ECBase::ECDynArray<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ECDynArray",,0x006f1660,0x005e3030,0x006f1660
+15679,function,"ECBase::ECDynArray<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ECDynArray(unsigned int)",,0x006f1660,0x005e3030,0x006f1660
 15680,function,"ECBase::ECDynArray<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::resize","No code of its own: one jmp to the function of the same name at 0x006F12C0 (ID 15672), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x006f16c0,0x005e3090,0x006f16c0
 15681,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x006f16d0,0x005e30a0,0x006f16d0
 15682,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<TlkString,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Set",,0x006f1750,0x005e3120,0x006f1750
@@ -16022,7 +16022,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16021,function,,,0x00703726,0x005f4b86,0x00703726
 16022,function,std::vector<ScriptVariable>::insert,,0x00703810,0x005f4d50,0x00703810
 16023,function,std::vector<ScriptVariable>::push_back,,0x007038c0,0x005f4e00,0x007038c0
-16024,function,std::vector<ScriptVariable>::vector,,0x00703960,0x005f4ea0,0x00703960
+16024,function,ECBase::ECDynArray<ScriptVariable>::ECDynArray(unsigned int),,0x00703960,0x005f4ea0,0x00703960
 16025,function,std::vector<ScriptVariable>::`default constructor closure',,0x007039f0,0x005f4f30,0x007039f0
 16026,function,ScriptVarTable::CreateVariable,,0x00703a00,0x005f4f40,0x00703a00
 16027,function,ScriptVariableTable::FindOrCreateVariable,,0x00703bf0,0x005f5130,0x00703bf0
@@ -17480,7 +17480,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17479,function,std::vector<GUICharGen::SliderEntry>::resize,,0x007394a0,0x00644f70,0x007394a0
 17480,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::AppearanceSliderGroup*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x007395c0,0x00645090,0x007395c0
 17481,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::AppearanceSlider<float>*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x00739640,0x00645110,0x00739640
-17482,function,std::vector<GUI::GUIPaperdoll::SliderEntry>::vector,,0x007396c0,0x00645190,0x007396c0
+17482,function,ECBase::ECDynArray<GUI::GUIPaperdoll::SliderEntry>::ECDynArray(unsigned int),,0x007396c0,0x00645190,0x007396c0
 17483,function,GUI::GUICharGen::~GUICharGen,,0x00739730,0x00645200,0x00739730
 17484,function,GUI::GUICharGen::`scalar deleting destructor'`adjustor{32}',,0x00739850,0x00645330,0x00739850
 17485,function,GUI::GUICharGen::`scalar deleting destructor'`adjustor{8}',,0x00739860,0x00645340,0x00739860
@@ -18404,10 +18404,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18403,function,GameModePartyPicker::`scalar deleting destructor',,0x0076ae40,0x006825c0,0x0076ae40
 18404,function,SharedCharacterStage::GetObjectList,,0x0076ae60,0x006825e0,0x0076ae60
 18405,function,GameModePartyPicker::SortAndPlaceEntries,"Places each entry's clone at its mark's +0x120 and raw +0x130 (SetOrientation at 0x0076B3A0); (0,0,0) for both with no mark",0x0076ae90,0x00682610,0x0076ae90
-18406,function,std::vector<GameModePartyPicker::StageEntry>::vector,,0x0076b3f0,0x00682b70,0x0076b3f0
+18406,function,ECBase::ECDynArray<GameModePartyPicker::StageEntry>::ECDynArray(unsigned int),,0x0076b3f0,0x00682b70,0x0076b3f0
 18407,function,ECBase::ECDynArray<GameModePartyPicker::StageEntry>::Clear,,0x0076b450,0x00682bd0,0x0076b450
 18408,function,ECBase::ECDynArray<?>::FindOrAppend,,0x0076b540,0x00531870,0x0076b540
-18409,function,"ECBase::ECDynArray<SmartData::Attribute<unsigned int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ECDynArray",,0x0076b590,0x00682cc0,0x0076b590
+18409,function,"ECBase::ECDynArray<SmartData::Attribute<unsigned int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ECDynArray(unsigned int)",,0x0076b590,0x00682cc0,0x0076b590
 18410,function,ECBase::ECDynArray<SmartData::Attribute<unsigned int>>::Clear,,0x0076b610,0x00682d40,0x0076b610
 18411,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<unsigned int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x0076b6f0,0x00682e20,0x0076b6f0
 18412,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<unsigned int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x0076b770,0x00682ea0,0x0076b770
@@ -18520,7 +18520,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18519,function,CameraControllerExplore::IsHostileTargetInCentre,,0x00770a10,0x00688150,0x00770a10
 18520,function,CameraControllerExplore::KeepInView,,0x00770bb0,0x006882f0,0x00770bb0
 18521,function,CameraControllerExplore::CollectActivePartyMembers,,0x00770e80,0x006885c0,0x00770e80
-18522,function,ECBase::ECDynArray<?*>::~ECDynArray,,0x00770fa0,0x006886e0,0x00770fa0
+18522,function,ECBase::ECDynArray<?*>::~ECDynArray,"Not ECDynArray's own: ECDynArray has no out-of-line destructor (its inline one is vector::_Tidy). The destructor of a pointer-owning ECDynArray subclass whose name is not known: ECDynArray<?*>::DeleteAll(false) (0x006352C0), then _Tidy (0x0046C760) (decomp-agent, read 2026-11-24)",0x00770fa0,0x006886e0,0x00770fa0
 18523,function,CameraControllerExplore::ResetBehind,,0x00770ff0,0x00688730,0x00770ff0
 18524,function,CameraControllerExplore::TacticalStep,,0x00771060,0x006887a0,0x00771060
 18525,function,CameraControllerExplore::UpdateFocus,,0x00771250,0x00688990,0x00771250
@@ -19502,7 +19502,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19501,function,,,0x007989be,0x0066a0be,0x007989be
 19502,function,,,0x00798a47,0x0066a147,0x00798a47
 19503,function,std::vector<EquipmentSet>::resize,,0x00798ad0,0x0066a1d0,0x00798ad0
-19504,function,std::vector<EquipmentSet>::vector,,0x00798bc0,0x0066a2c0,0x00798bc0
+19504,function,ECBase::ECDynArray<EquipmentSet>::ECDynArray(unsigned int),,0x00798bc0,0x0066a2c0,0x00798bc0
 19505,function,std::vector<EquipmentSet>::resize,,0x00798c30,0x0066a330,0x00798c30
 19506,function,Equipment::Equipment,,0x00798c60,0x0066a360,0x00798c60
 19507,function,CCTrigger::Update,,0x00798db0,0x0066a4b0,0x00798db0
@@ -19685,7 +19685,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19684,function,std::vector<?>::reserve,,0x0079dd60,0x00582810,0x0079dd60
 19685,function,,,0x0079de4d,0x005828fd,0x0079de4d
 19686,function,"ECBase::ECDynArray<std::pair<unsigned int,CCVisualEffect *>>::Reserve",,0x0079de70,0x00583030,0x0079de70
-19687,function,"ECBase::ECDynArray<std::pair<unsigned int,CCVisualEffect *>>::ECDynArray",,0x0079dea0,0x0066f400,0x0079dea0
+19687,function,"ECBase::ECDynArray<std::pair<unsigned int,CCVisualEffect *>>::ECDynArray(unsigned int)",,0x0079dea0,0x0066f400,0x0079dea0
 19688,function,VfxManager::DestroyEffect,,0x0079df10,0x0066f470,0x0079df10
 19689,function,VfxManager::DestroyAllEffects,,0x0079e0b0,0x0066f610,0x0079e0b0
 19690,function,"ECBase::ECDynArray<std::pair<unsigned int,CCVisualEffect *>>::Clear",,0x0079e110,0x0066f670,0x0079e110
@@ -19882,7 +19882,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19881,function,CSSubActionHandler::CreaturesInTheWayInCombat,,0x007a8ff0,0x0067a190,0x007a8ff0
 19882,function,CSSubActionHandler::MoveUpdate,,0x007a9130,0x0067a2d0,0x007a9130
 19883,function,SubActionPool::SubActionPool,,0x007a98c0,0x0067aa60,0x007a98c0
-19884,function,std::vector<unsigned int>::vector,,0x007a9950,0x0067aaf0,0x007a9950
+19884,function,ECBase::ECDynArray<unsigned int>::ECDynArray(unsigned int),,0x007a9950,0x0067aaf0,0x007a9950
 19885,function,CSSubActionHandler::MoveToLocation,,0x007a99b0,0x0067ab50,0x007a99b0
 19886,function,CSSubActionHandler::MoveToMultiLocations,,0x007a9bd0,0x0067ad70,0x007a9bd0
 19887,function,CSSubActionHandler::ApproachRanged,,0x007aa200,0x0067b3a0,0x007aa200
@@ -20191,15 +20191,15 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20190,function,GUI::GUIPaperdoll::HandleMessage_CharGenAssignAttributeMessage,,0x007b70c0,0x00695210,0x007b70c0
 20191,function,"std::map<?,?>::erase",,0x007b7170,0x006952c0,0x007b7170
 20192,function,ECBase::ECDynArray<unk_ptr>::DeleteAllVirtual,,0x007b7440,0x00535060,0x007b7440
-20193,function,std::vector<GUI::HeadPreset::MaterialValue>::vector,,0x007b7550,0x00695590,0x007b7550
-20194,function,std::vector<GUI::HeadPreset::MaterialVector>::vector,,0x007b75c0,0x00695600,0x007b75c0
-20195,function,std::vector<GUI::HeadPreset::Texture>::vector,,0x007b7630,0x00695670,0x007b7630
-20196,function,"std::vector<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::vector",,0x007b76a0,0x006956e0,0x007b76a0
+20193,function,ECBase::ECDynArray<GUI::HeadPreset::MaterialValue>::ECDynArray(unsigned int),,0x007b7550,0x00695590,0x007b7550
+20194,function,ECBase::ECDynArray<GUI::HeadPreset::MaterialVector>::ECDynArray(unsigned int),,0x007b75c0,0x00695600,0x007b75c0
+20195,function,ECBase::ECDynArray<GUI::HeadPreset::Texture>::ECDynArray(unsigned int),,0x007b7630,0x00695670,0x007b7630
+20196,function,"ECBase::ECDynArray<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ECDynArray(unsigned int)",,0x007b76a0,0x006956e0,0x007b76a0
 20197,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x007b7720,0x00695760,0x007b7720
 20198,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x007b77a0,0x006957e0,0x007b77a0
 20199,function,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Set",,0x007b7820,0x00695860,0x007b7820
 20200,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::GUIPaperdoll::CharData*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x007b7860,0x006958a0,0x007b7860
-20201,function,"std::vector<std::pair<std::wstring,int>>::vector",,0x007b78e0,0x00695920,0x007b78e0
+20201,function,"ECBase::ECDynArray<std::pair<std::wstring,int>>::ECDynArray(unsigned int)",,0x007b78e0,0x00695920,0x007b78e0
 20202,function,"ECBase::ECDynArray<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::ClearByAssign",,0x007b7960,0x006959a0,0x007b7960
 20203,function,GUI::GUIPaperdoll::RegisterHandler_CharGenAssignAttributeMessage,,0x007b79d0,0x00695a10,0x007b79d0
 20204,function,GUI::GUIPaperdoll::CharData::CharData,,0x007b7a60,0x00695b60,0x007b7a60
@@ -20286,7 +20286,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20285,function,std::vector<GUI::HeadPreset::ModelWeight>::resize,,0x007be300,0x0069c600,0x007be300
 20286,function,GUI::GUIPaperdoll::Clone,,0x007be420,0x0069c720,0x007be420
 20287,function,GUI::GUIPaperdoll::WriteCharFile,,0x007be490,0x0069c830,0x007be490
-20288,function,std::vector<GUI::HeadPreset::ModelWeight>::vector,,0x007bfd10,0x0069e0b0,0x007bfd10
+20288,function,ECBase::ECDynArray<GUI::HeadPreset::ModelWeight>::ECDynArray(unsigned int),,0x007bfd10,0x0069e0b0,0x007bfd10
 20289,function,GUI::HeadPreset::HeadPreset,,0x007bfd80,0x0069e120,0x007bfd80
 20290,function,GUI::GUIPaperdoll::GUIPaperdoll,,0x007bfe10,0x0069e1b0,0x007bfe10
 20291,function,GUI::GUIPaperdoll::UpdateCharGenScreenshot,,0x007c0190,0x0069e530,0x007c0190
@@ -20500,7 +20500,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20499,function,std::vector<MapTrail>::resize,,0x007c8610,0x006af2e0,0x007c8610
 20500,function,std::vector<MapTrail>::insert,,0x007c8730,0x006af400,0x007c8730
 20501,function,std::vector<MapTrail>::push_back,,0x007c87e0,0x006af4b0,0x007c87e0
-20502,function,std::vector<MapTrail>::vector,,0x007c8880,0x006af550,0x007c8880
+20502,function,ECBase::ECDynArray<MapTrail>::ECDynArray(unsigned int),,0x007c8880,0x006af550,0x007c8880
 20503,function,std::vector<MapTrail>::clear,,0x007c88f0,0x006af5c0,0x007c88f0
 20504,function,MapObject::MapObject,,0x007c89f0,0x006af6c0,0x007c89f0
 20505,function,MapObject::LoadFromResource,,0x007c8e40,0x006afb10,0x007c8e40
@@ -20878,7 +20878,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20877,function,std::list<Elem>::assign,"empties the list, then inserts a range into it",0x007d6ba0,0x006bdea0,0x007d6ba0
 20878,function,"std::map<std::wstring,?>::insert",,0x007d6c00,0x006bdf00,0x007d6c00
 20879,function,"std::_Tree<std::pair<unsigned int const,CutscenePlayer::ActorDependencyList>>::_Erase",,0x007d6e00,0x006be100,0x007d6e00
-20880,function,std::vector<EC::Cutscene::Actor::ClipRecord>::vector,,0x007d6e40,0x006be140,0x007d6e40
+20880,function,ECBase::ECDynArray<EC::Cutscene::Actor::ClipRecord>::ECDynArray(unsigned int),,0x007d6e40,0x006be140,0x007d6e40
 20881,function,std::vector<EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>::push_back,,0x007d6eb0,0x006be1f0,0x007d6eb0
 20882,function,std::vector<EC::Cutscene::Actor::BlendGadRecord>::push_back,,0x007d6f50,0x006be290,0x007d6f50
 20883,function,std::list<Elem>::list,,0x007d6ff0,0x006be330,0x007d6ff0
@@ -20893,9 +20893,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20892,function,EC::Cutscene::Actor::FollowerAniHackEntry::FollowerAniHackEntry,,0x007d7640,0x006be980,0x007d7640
 20893,function,std::list<Elem>::clear,,0x007d76b0,0x006be9f0,0x007d76b0
 20894,function,"std::pair<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>::pair",,0x007d7740,0x006bea80,0x007d7740
-20895,function,std::vector<EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>::vector,,0x007d77a0,0x006bebf0,0x007d77a0
+20895,function,ECBase::ECDynArray<EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>::ECDynArray(unsigned int),,0x007d77a0,0x006bebf0,0x007d77a0
 20896,function,std::vector<EC::Cutscene::Actor::ClipRecord>::_Tidy,,0x007d7820,0x006bec70,0x007d7820
-20897,function,std::vector<EC::Cutscene::Actor::BlendGadRecord>::vector,,0x007d7940,0x006bed90,0x007d7940
+20897,function,ECBase::ECDynArray<EC::Cutscene::Actor::BlendGadRecord>::ECDynArray(unsigned int),,0x007d7940,0x006bed90,0x007d7940
 20898,function,std::vector<EC::Cutscene::Actor::BlendGadRecord>::_Tidy,,0x007d79c0,0x006bee10,0x007d79c0
 20899,function,ECBase::ECDynArray<Resources>::SwapRemoveAt,,0x007d7ac0,0x006bef10,0x007d7ac0
 20900,function,Elem16::Elem16,,0x007d7b80,0x00452e80,0x007d7b80
@@ -21040,7 +21040,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21039,function,CutscenePlayer::~CutscenePlayer,"The destructor of CutscenePlayer (the class has no virtual table, so no deleting-destructor wrapper): sets state 7, resets and deletes the actors, puts bound objects back, restores the scene and shadow range, then destroys the members. All 11 callers (0x0068E42F, 0x0068EF6B, 0x0068F4B5, 0x0068F600, 0x0068FE09, 0x0068FE9E, 0x00691123, 0x00691444, 0x00691F1D, 0x006921B4, 0x006925B9) call operator delete (0x004136C0) on the object straight after.",0x007e10a0,0x006c84f0,0x007e10a0
 21040,function,CutscenePlayer::Load,"+0x14, the last frame, is ftol(fps * run time), truncated (0x007E1B27): fps +4 (field 5016, default 30, read only while EclipseGame +0x254 is 0), run time +8 (field 5000)",0x007e1910,0x006c8d60,0x007e1910
 21041,function,EC::Cutscene::Actor::FindFollowerAniHackEntry,,0x007e2210,0x006c9660,0x007e2210
-21042,function,std::vector<CutscenePlayer::BindRecord>::vector,,0x007e2660,0x006c9ab0,0x007e2660
+21042,function,ECBase::ECDynArray<CutscenePlayer::BindRecord>::ECDynArray(unsigned int),,0x007e2660,0x006c9ab0,0x007e2660
 21043,function,CutscenePlayer::CutscenePlayer,,0x007e26e0,0x006c9b30,0x007e26e0
 21044,function,CutscenePlayer::CutscenePlayer,,0x007e2a70,0x006c9ec0,0x007e2a70
 21045,function,CutscenePlayer::SortActors,"The dependency map is keyed by the actors' addresses (std::map<unsigned int, ActorDependencyList>), so independent actors come out in heap-address order; each round takes the first with no dependencies (else the map's first) and removes it from the others' lists, then the first actor with +0x24 (Master, field 5223) goes to the front",0x007e2d70,0x006ca1c0,0x007e2d70
@@ -21320,7 +21320,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21319,function,Conversation::MarkLineUsedThisConversation,,0x007f1640,0x006dac50,0x007f1640
 21320,function,std::vector<Conversation::Participant>::resize,,0x007f16b0,0x006dacc0,0x007f16b0
 21321,function,Conversation::MarkLineSeenInGame,,0x007f1700,0x006dad10,0x007f1700
-21322,function,std::vector<Conversation::Participant>::vector,,0x007f17f0,0x006dae00,0x007f17f0
+21322,function,ECBase::ECDynArray<Conversation::Participant>::ECDynArray(unsigned int),,0x007f17f0,0x006dae00,0x007f17f0
 21323,function,Conversation::Conversation,,0x007f1850,0x006dae60,0x007f1850
 21324,function,Conversation::Advance,,0x007f1910,0x006daf20,0x007f1910
 21325,function,Conversation::AddParticipant,,0x007f19e0,0x006daff0,0x007f19e0
@@ -21351,7 +21351,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21350,function,PortraitRenderer::Render,,0x007f46e0,0x006df940,0x007f46e0
 21351,function,AnimWeightRequests::Apply,,0x007f4a50,0x006e0830,0x007f4a50
 21352,function,AnimWeightRequests::~AnimWeightRequests,,0x007f4c40,0x006e0a30,0x007f4c40
-21353,function,std::vector<AnimWeightRequests::Request>::vector,,0x007f4c50,0x006e0a40,0x007f4c50
+21353,function,ECBase::ECDynArray<AnimWeightRequests::Request>::ECDynArray(unsigned int),,0x007f4c50,0x006e0a40,0x007f4c50
 21354,function,std::vector<AnimWeightRequests::Request>::resize,,0x007f4cc0,0x006e0ab0,0x007f4cc0
 21355,function,AnimWeightRequests::AnimWeightRequests,,0x007f4ce0,0x006e0ad0,0x007f4ce0
 21356,function,AnimWeightRequests::SetRequest,,0x007f4d10,0x006e0af0,0x007f4d10
@@ -21424,7 +21424,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21423,function,std::vector<MapLocationConnection>::resize,,0x007f7870,0x006e45f0,0x007f7870
 21424,function,std::vector<MapLocationConnection>::insert,,0x007f7950,0x006e46d0,0x007f7950
 21425,function,std::vector<MapLocationConnection>::push_back,,0x007f79e0,0x006e4760,0x007f79e0
-21426,function,std::vector<MapLocationConnection>::vector,,0x007f7a70,0x006e47f0,0x007f7a70
+21426,function,ECBase::ECDynArray<MapLocationConnection>::ECDynArray(unsigned int),,0x007f7a70,0x006e47f0,0x007f7a70
 21427,function,MapLocation::MapLocation,,0x007f7ae0,0x006e4860,0x007f7ae0
 21428,function,Gff4::DefineMapLocationStruct,,0x007f81a0,0x006e4f20,0x007f81a0
 21429,function,MapLocation::AddConnection,,0x007f82c0,0x006e5040,0x007f82c0
@@ -21498,7 +21498,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21497,function,"std::_Sort<FilteredGroupedItemView::Entry *,int,FilteredGroupedItemView::EntryKeyLess>",,0x007fa9e0,0x006e76f0,0x007fa9e0
 21498,function,std::vector<FilteredGroupedItemView::Entry>::push_back,,0x007fab30,0x006e7840,0x007fab30
 21499,function,"std::_Sort<FilteredGroupedItemView::Entry *,int,FilteredGroupedItemView::EntryNameLess>",,0x007fabe0,0x006e78f0,0x007fabe0
-21500,function,std::vector<FilteredGroupedItemView::Entry>::vector,,0x007fad30,0x006e7a40,0x007fad30
+21500,function,ECBase::ECDynArray<FilteredGroupedItemView::Entry>::ECDynArray(unsigned int),,0x007fad30,0x006e7a40,0x007fad30
 21501,function,std::vector<FilteredGroupedItemView::Entry>::_Tidy,,0x007fadb0,0x006e7ac0,0x007fadb0
 21502,function,FilteredGroupedItemView::FilteredGroupedItemView,,0x007faeb0,0x006e7bc0,0x007faeb0
 21503,function,FilteredGroupedItemView::`scalar deleting destructor'`adjustor{28}',,0x007fb110,0x006e7e30,0x007fb110
@@ -21822,7 +21822,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21821,function,std::vector<MapTrailPoint>::vector(const std::vector<MapTrailPoint>&),,0x0080dc50,0x006fa7f0,0x0080dc50
 21822,function,std::vector<MapTrailPoint>::push_back,,0x0080dcb0,0x006fa850,0x0080dcb0
 21823,function,MapTrail::MapTrail(const MapTrail&),,0x0080dd50,0x006fa8f0,0x0080dd50
-21824,function,std::vector<MapTrailPoint>::vector,,0x0080ddd0,0x006fa970,0x0080ddd0
+21824,function,ECBase::ECDynArray<MapTrailPoint>::ECDynArray(unsigned int),,0x0080ddd0,0x006fa970,0x0080ddd0
 21825,function,MapTrail::MapTrail,,0x0080de40,0x006fa9e0,0x0080de40
 21826,function,MapTrail::LoadFromResource,,0x0080deb0,0x006faa50,0x0080deb0
 21827,function,ItemFilterWeapons::Accept,,0x0080e010,0x006fabb0,0x0080e010
@@ -22239,7 +22239,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22238,function,Physics::PhysicsActor::LastShapeDesc,,0x0081ed00,0x004ab770,0x0081ed00
 22239,function,Physics::PhysicsActor::ReleaseNxActor,,0x0081ed60,0x004ab7d0,0x0081ed60
 22240,function,std::vector<?>::resize,,0x0081ed80,0x007dca80,0x0081ed80
-22241,function,std::vector<NxShape*>::vector,,0x0081ee40,0x004ab7f0,0x0081ee40
+22241,function,ECBase::ECDynArray<NxShape*>::ECDynArray(unsigned int),,0x0081ee40,0x004ab7f0,0x0081ee40
 22242,function,std::vector<NxShape*>::resize,,0x0081eea0,0x004ab850,0x0081eea0
 22243,function,ECBase::ECDynArray<?*>::DeleteAll,,0x0081eeb0,0x004a0160,0x0081eeb0
 22244,function,Physics::PhysicsActor::PhysicsActor,,0x0081efc0,0x004ab860,0x0081efc0
@@ -22428,7 +22428,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22427,function,std::vector<NxGroupsMask>::push_back,,0x00826aa0,0x0049f2f0,0x00826aa0
 22428,function,std::vector<Physics::ActorUserRecord>::resize,,0x00826b30,0x0049f4b0,0x00826b30
 22429,function,std::vector<Physics::ShapeUserRecord>::resize,,0x00826bc0,0x0049f540,0x00826bc0
-22430,function,std::vector<NxSweepQueryHit>::vector,,0x00826c40,0x0049f5c0,0x00826c40
+22430,function,ECBase::ECDynArray<NxSweepQueryHit>::ECDynArray(unsigned int),,0x00826c40,0x0049f5c0,0x00826c40
 22431,function,Physics::PhysicsScene::AddDynamicActor,,0x00826cb0,0x0049f630,0x00826cb0
 22432,function,Physics::PhysicsScene::GetContacts,,0x00826cd0,0x0049f650,0x00826cd0
 22433,function,Physics::PhysicsScene::GetFilteredContacts,,0x00826e60,0x0049f7e0,0x00826e60
@@ -22443,11 +22443,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22442,function,Physics::PhysicsScene::PhysicsEntityReport<NxSweepQueryHit>::onEvent,,0x008278e0,0x0049fcc0,0x008278e0
 22443,function,Physics::PhysicsScene::PhysicsEntityReport<unsigned int>::PhysicsEntityReport,,0x00827a10,0x0049fdf0,0x00827a10
 22444,function,std::list<T>::~list,,0x00827a30,0x007bcaf0,0x00827a30
-22445,function,std::vector<NxGroupsMask>::vector,,0x00827a70,0x0049ff80,0x00827a70
-22446,function,std::vector<?>::vector,,0x00827af0,0x004a0000,0x00827af0
-22447,function,std::vector<Physics::ActorUserRecord>::vector,,0x00827b70,0x004a0080,0x00827b70
+22445,function,ECBase::ECDynArray<NxGroupsMask>::ECDynArray(unsigned int),,0x00827a70,0x0049ff80,0x00827a70
+22446,function,ECBase::ECDynArray<?>::ECDynArray(unsigned int),,0x00827af0,0x004a0000,0x00827af0
+22447,function,ECBase::ECDynArray<Physics::ActorUserRecord>::ECDynArray(unsigned int),,0x00827b70,0x004a0080,0x00827b70
 22448,function,std::vector<Physics::ActorUserRecord>::resize,"Only a jmp to 0x00826B30, which takes that name.",0x00827bd0,0x004a00e0,0x00827bd0
-22449,function,std::vector<Physics::ShapeUserRecord>::vector,,0x00827be0,0x004a00f0,0x00827be0
+22449,function,ECBase::ECDynArray<Physics::ShapeUserRecord>::ECDynArray(unsigned int),,0x00827be0,0x004a00f0,0x00827be0
 22450,function,std::vector<Physics::ShapeUserRecord>::resize,"Only a jmp to 0x00826BC0, which takes that name.",0x00827c40,0x004a0150,0x00827c40
 22451,function,Physics::VariableSetPool<Physics::PhysicsNxActorVariableSet<NxMat34>>::Grow,,0x00827c50,0x004a0270,0x00827c50
 22452,function,Physics::VariableSetPool<Physics::PhysicsNxActorVariableSet<NxMat34>>::Allocate,,0x00827d10,0x004a0330,0x00827d10
@@ -22975,7 +22975,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22974,function,,,0x008487a9,0x0048e699,0x008487a9
 22975,function,std::vector<?>::resize,,0x008487c0,0x0048e6b0,0x008487c0
 22976,function,std::vector<TexManager::TexturePool::Spec>::reserve,,0x008488a0,0x0048e790,0x008488a0
-22977,function,std::vector<TexManager::TexturePool::Spec>::vector,,0x008488e0,0x0048e860,0x008488e0
+22977,function,ECBase::ECDynArray<TexManager::TexturePool::Spec>::ECDynArray(unsigned int),,0x008488e0,0x0048e860,0x008488e0
 22978,function,,,0x00848960,0x0048e8e0,0x00848960
 22979,function,,,0x008489c0,0x0048e9d0,0x008489c0
 22980,function,"std::map<?,std::vector<void*>>::_Erase","Frees a red-black subtree whose nodes hold a 0x14-byte key and a vector<void*> at +0x20 (tidied by 0x0046C760); called by TexturePool::DestroyAll, so INFERRED the pool's shape-to-textures map.",0x00848c90,0x0048eca0,0x00848c90
@@ -23511,7 +23511,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23510,function,std::vector<void *>::operator=,,0x00866cd0,0x0046cb10,0x00866cd0
 23511,function,D3DDriver::D3DGraphicsDriverManager::FitCreationParametersToMode,"Slot 14: INFERRED name. Settles a request against one chosen mode: back buffer format, depth format by bit depth, multisample level clamped to the adapter's list, vsync, then writes the finished creation parameters (width +0x10, height +0x14, format +0x0C, up to +0x40) to the output.",0x00866e00,0x0046cc40,0x00866e00
 23512,function,std::vector<void *>::vector(const std::vector<void *>&),,0x00867670,0x0046d4b0,0x00867670
-23513,function,std::vector<void *>::vector,,0x008676d0,0x00401bd0,0x008676d0
+23513,function,ECBase::ECDynArray<void *>::ECDynArray(unsigned int),,0x008676d0,0x00401bd0,0x008676d0
 23514,function,Core::VectorClear<?>,,0x00867740,0x0046d5f0,0x00867740
 23515,function,Graphics::ExternalDeviceCaps::ExternalDeviceCaps,Sets the vptr and builds a vector<unsigned int> at +4 and a vector<void*> at +0x14; GraphicsDriverManager embeds it at +4.,0x00867830,0x0046d6e0,0x00867830
 23516,function,D3DDriver::D3DGraphicsDriverManager::D3DGraphicsDriverManager,"Constructor: vftable 0xB2DB4C then 0xB2DB7C, the Graphics::ExternalDeviceCaps at +4 built, and +0x2C..+0x4C, +0x8C cleared; called once for the function-static manager at 0x00C3A020 (Get, 0x00867E70).",0x008678a0,0x0046d750,0x008678a0
@@ -23666,8 +23666,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23665,function,CD3DEnumeration::ResetPossiblePresentIntervalList,,0x0086cca0,0x00472d70,0x0086cca0
 23666,function,CD3DEnumeration::BuildPresentIntervalList,,0x0086cd30,0x00472e00,0x0086cd30
 23667,function,std::vector<unsigned int>::_Tidy,,0x0086cdc0,0x0046d510,0x0086cdc0
-23668,function,std::vector<unsigned int>::vector,,0x0086cea0,0x00797d00,0x0086cea0
-23669,function,std::vector<D3DDSMSConflict>::vector,,0x0086cf00,0x00472e90,0x0086cf00
+23668,function,ECBase::ECDynArray<unsigned int>::ECDynArray(unsigned int),,0x0086cea0,0x00797d00,0x0086cea0
+23669,function,ECBase::ECDynArray<D3DDSMSConflict>::ECDynArray(unsigned int),,0x0086cf00,0x00472e90,0x0086cf00
 23670,function,std::vector<D3DDISPLAYMODE>::_Tidy,,0x0086cf70,0x007e4f50,0x0086cf70
 23671,function,D3DDeviceCombo::D3DDeviceCombo,,0x0086d060,0x00472f00,0x0086d060
 23672,function,CD3DEnumeration::ResetPossibleDepthStencilFormats,,0x0086d0f0,0x00472f90,0x0086d0f0
@@ -23703,7 +23703,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23702,function,D3DDriver::D3DStateCache::SetPixelShaderConstantI,,0x0086e720,0x004745d0,0x0086e720
 23703,function,std::vector<D3DDriver::D3DStateChange>::back,,0x0086e750,0x00474650,0x0086e750
 23704,function,std::vector<D3DDriver::D3DStateChange>::resize,,0x0086e7b0,0x004528b0,0x0086e7b0
-23705,function,std::vector<D3DDriver::D3DStateChange>::vector,,0x0086e860,0x00455640,0x0086e860
+23705,function,ECBase::ECDynArray<D3DDriver::D3DStateChange>::ECDynArray(unsigned int),,0x0086e860,0x00455640,0x0086e860
 23706,function,std::vector<D3DDriver::D3DStateChange>::resize,,0x0086e8e0,0x004747f0,0x0086e8e0
 23707,function,D3DDriver::D3DStateCache::D3DStateCache,,0x0086e920,0x00474830,0x0086e920
 23708,function,D3DDriver::D3DStateCache::SetVertexShader,,0x0086e9e0,0x004748f0,0x0086e9e0
@@ -23841,7 +23841,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23840,function,std::vector<D3DDriver::ShaderMember>::resize,,0x008727a0,0x004792d0,0x008727a0
 23841,function,std::vector<D3DDriver::ShaderConstant>::_Ucopy,,0x008727f0,0x00479320,0x008727f0
 23842,function,Graphics::Shader::GetMemoryFootprint,,0x00872820,0x0047b020,0x00872820
-23843,function,std::vector<D3DDriver::ShaderMember>::vector,,0x00872870,0x004793b0,0x00872870
+23843,function,ECBase::ECDynArray<D3DDriver::ShaderMember>::ECDynArray(unsigned int),,0x00872870,0x004793b0,0x00872870
 23844,function,std::vector<D3DDriver::ShaderParameter>::_Destroy,,0x008728d0,0x00479620,0x008728d0
 23845,function,,,0x008728f0,0x00479640,0x008728f0
 23846,function,,,0x00872add,0x0047982d,0x00872add
@@ -23857,7 +23857,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23856,function,"std::_Copy_opt<D3DDriver::ShaderParameter*,D3DDriver::ShaderParameter*,std::random_access_iterator_tag>",,0x00873050,0x00479d60,0x00873050
 23857,function,"std::_Uninit_copy<D3DDriver::ShaderParameter*,D3DDriver::ShaderParameter*,std::allocator<D3DDriver::ShaderParameter>>",,0x008730b0,0x00479dc0,0x008730b0
 23858,function,Catch_All@00873119,,0x00873119,0x00479e29,0x00873119
-23859,function,std::vector<D3DDriver::ShaderConstant>::vector,"Size constructor: zeroes begin/end/capacity and, for a non-zero count, builds an empty ShaderConstant (a std::string with size 0, capacity 0xF) and resizes to the count (0x00872E90).",0x00873160,0x00479eb0,0x00873160
+23859,function,ECBase::ECDynArray<D3DDriver::ShaderConstant>::ECDynArray(unsigned int),"Size constructor: zeroes begin/end/capacity and, for a non-zero count, builds an empty ShaderConstant (a std::string with size 0, capacity 0xF) and resizes to the count (0x00872E90).",0x00873160,0x00479eb0,0x00873160
 23860,function,std::vector<D3DDriver::ShaderParameter>::erase,,0x008731e0,0x00479f30,0x008731e0
 23861,function,"stdext::_Unchecked_move_backward<D3DDriver::ShaderParameter*,D3DDriver::ShaderParameter*>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<D3DDriver::ShaderParameter*,D3DDriver::ShaderParameter*>.",0x00873240,0x00479f90,0x00873240
 23862,function,"std::_Uninit_fill_n<D3DDriver::ShaderParameter*,unsigned int,D3DDriver::ShaderParameter,std::allocator<D3DDriver::ShaderParameter>>",,0x00873270,0x00479fc0,0x00873270
@@ -23872,7 +23872,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23871,function,,,0x008736c4,0x0047a414,0x008736c4
 23872,function,,,0x0087376d,0x0047a4bd,0x0087376d
 23873,function,std::vector<D3DDriver::ShaderParameter>::resize,,0x00873810,0x0047a560,0x00873810
-23874,function,std::vector<D3DDriver::ShaderParameter>::vector,"Size constructor: zeroes begin/end/capacity and, for a non-zero count, builds a default ShaderParameter (0x00872D50) and resizes to the count (0x00873810).",0x00873940,0x0047a690,0x00873940
+23874,function,ECBase::ECDynArray<D3DDriver::ShaderParameter>::ECDynArray(unsigned int),"Size constructor: zeroes begin/end/capacity and, for a non-zero count, builds a default ShaderParameter (0x00872D50) and resizes to the count (0x00873810).",0x00873940,0x0047a690,0x00873940
 23875,function,D3DDriver::D3DPixelShader::D3DPixelShader,,0x008739b0,0x0047a700,0x008739b0
 23876,function,D3DDriver::D3DPixelShader::D3DPixelShader,,0x00873e40,0x0047ab90,0x00873e40
 23877,function,Graphics::RenderFX::~RenderFX,Base destructor body: only sets the Graphics::RenderFX vftable 0x00B2E7BC; reached from the unwind funclet of D3DRenderFX.,0x00873fb0,0x0047ad00,0x00873fb0
@@ -24009,7 +24009,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24008,function,std::vector<D3DDriver::D3DUmbraRenderer::DebugLine>::insert,,0x00878160,0x0047f360,0x00878160
 24009,function,std::vector<?>::push_back,,0x00878210,0x0047f410,0x00878210
 24010,function,D3DDriver::D3DUmbraRenderer::~D3DUmbraRenderer,,0x008782b0,0x0047f4b0,0x008782b0
-24011,function,std::vector<?>::vector,,0x00878340,0x0047f540,0x00878340
+24011,function,ECBase::ECDynArray<?>::ECDynArray(unsigned int),,0x00878340,0x0047f540,0x00878340
 24012,function,std::vector<?>::clear,,0x008783c0,0x0047f5c0,0x008783c0
 24013,function,D3DDriver::D3DUmbraRenderer::`scalar deleting destructor',,0x008784c0,0x0047f6c0,0x008784c0
 24014,function,D3DDriver::D3DUmbraRenderer::FlushLines,,0x008784e0,0x0047f6e0,0x008784e0
@@ -24105,7 +24105,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24104,function,,,0x0087c530,0x00452af0,0x0087c530
 24105,function,"std::map<InputMapper::KeyWord,std::list<InputMapper::Entry*>>::_Erase",,0x0087c800,0x00452dc0,0x0087c800
 24106,function,std::vector<InputMapper::Entry>::vector,,0x0087c840,0x00452e00,0x0087c840
-24107,function,std::vector<ECInput::Event>::vector,,0x0087c8c0,0x00452ea0,0x0087c8c0
+24107,function,ECBase::ECDynArray<ECInput::Event>::ECDynArray(unsigned int),,0x0087c8c0,0x00452ea0,0x0087c8c0
 24108,function,InputMapper::CollectMessages,,0x0087c950,0x00452f30,0x0087c950
 24109,function,,,0x0087cb00,0x00453110,0x0087cb00
 24110,function,,,0x0087cbd0,0x004531e0,0x0087cbd0
@@ -24162,7 +24162,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24161,function,,,0x0087ea20,0x004747c0,0x0087ea20
 24162,function,std::vector<unsigned short>::push_back,,0x0087ea50,0x00455270,0x0087ea50
 24163,function,std::vector<?>::insert,,0x0087ead0,0x004ef930,0x0087ead0
-24164,function,std::vector<unsigned short>::vector,,0x0087eb60,0x004555d0,0x0087eb60
+24164,function,ECBase::ECDynArray<unsigned short>::ECDynArray(unsigned int),,0x0087eb60,0x004555d0,0x0087eb60
 24165,function,std::vector<?>::push_back,,0x0087ebd0,0x00472ce0,0x0087ebd0
 24166,function,ECInput::RawInputWin32::AddTypedCharacter,,0x0087ec60,0x004556c0,0x0087ec60
 24167,function,ECInput::RawInputWin32::QueueEvent,,0x0087ec80,0x004556e0,0x0087ec80
@@ -24321,7 +24321,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24320,function,std::vector<Input::Binding>::insert,,0x00891750,0x0049e860,0x00891750
 24321,function,"std::list<std::pair<const int,Input::BindingList>>::clear",,0x00891800,0x00a3f0a0,0x00891800
 24322,function,std::vector<Input::Binding>::push_back,,0x00891840,0x0049f380,0x00891840
-24323,function,std::vector<Input::Binding>::vector,,0x008918e0,0x00a3f0e0,0x008918e0
+24323,function,ECBase::ECDynArray<Input::Binding>::ECDynArray(unsigned int),,0x008918e0,0x00a3f0e0,0x008918e0
 24324,function,"std::list<std::pair<const int,Input::BindingList>>::~list",,0x00891960,0x00a3f160,0x00891960
 24325,function,"std::_Construct<std::pair<const int,Input::BindingList>,std::pair<const int,Input::BindingList>>",,0x00891980,0x00a3f180,0x00891980
 24326,function,"stdext::hash_map<int,Input::BindingList>::hash_map",,0x008919e0,0x00a3f1e0,0x008919e0
@@ -24357,7 +24357,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24356,function,Eclipse::GroupedInputMappings::GroupedInputs::`scalar deleting destructor',,0x00894090,0x00a418b0,0x00894090
 24357,function,Eclipse::GroupedInputMappings::GroupedInputs::`scalar deleting destructor',,0x008940a0,0x00a418c0,0x008940a0
 24358,function,Eclipse::GroupedInputMappings::GroupedInputs::`scalar deleting destructor',,0x008940b0,0x00a418d0,0x008940b0
-24359,function,std::vector<Eclipse::GroupedInputMappings::GroupedInputs::Mapping>::vector,,0x008940d0,0x00a418f0,0x008940d0
+24359,function,ECBase::ECDynArray<Eclipse::GroupedInputMappings::GroupedInputs::Mapping>::ECDynArray(unsigned int),,0x008940d0,0x00a418f0,0x008940d0
 24360,function,Eclipse::GroupedInputMappings::GroupedInputs::GroupedInputs,,0x00894140,0x00a41960,0x00894140
 24361,function,Eclipse::GroupedInputMappings::GroupedInputs::AddMapperEntries,,0x00894490,0x00a41cb0,0x00894490
 24362,function,Eclipse::GroupedInputMappings::GroupedInputs::AddInputBindingEntries,,0x008944e0,0x00a41d00,0x008944e0
@@ -32530,7 +32530,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32529,function,std::vector<unsigned char>::reserve,,0x00a2e3b0,0x00822b10,0x00a2e3b0
 32530,function,ScriptArray::ScriptArray,,0x00a2e3e0,0x00822b40,0x00a2e3e0
 32531,function,ScriptArray::ScriptArray,,0x00a2e490,0x00822bf0,0x00a2e490
-32532,function,std::vector<unsigned char>::vector,,0x00a2e540,0x00822ca0,0x00a2e540
+32532,function,ECBase::ECDynArray<unsigned char>::ECDynArray(unsigned int),,0x00a2e540,0x00822ca0,0x00a2e540
 32533,function,std::vector<unsigned char>::resize,,0x00a2e5a0,0x00822d00,0x00a2e5a0
 32534,function,ScriptArray::ScriptArray,,0x00a2e5b0,0x00822d10,0x00a2e5b0
 32535,function,ScriptArray::ScriptArray,,0x00a2e660,0x00822dc0,0x00a2e660
@@ -33047,7 +33047,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33046,function,std::vector<?>::resize,,0x00a47e40,0x007d1640,0x00a47e40
 33047,function,std::vector<?>::push_back,,0x00a47f20,0x007d1720,0x00a47f20
 33048,function,Pathfinding::PathFollower::PathFollower,,0x00a47fc0,0x007d17c0,0x00a47fc0
-33049,function,std::vector<?>::vector,,0x00a48030,0x007d1830,0x00a48030
+33049,function,ECBase::ECDynArray<?>::ECDynArray(unsigned int),,0x00a48030,0x007d1830,0x00a48030
 33050,function,ECBase::ECDynArray<?>::InsertAt,,0x00a480a0,0x007d18a0,0x00a480a0
 33051,function,std::vector<?>::_Tidy,,0x00a48130,0x007d1930,0x00a48130
 33052,function,Pathfinding::PathBase::PathBase,,0x00a48220,0x007d1a20,0x00a48220
@@ -33392,7 +33392,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33391,function,GraphicsStructures::Array<Vector3f>::operator=,"The shape of Array<Math::Point4f>::operator= (0x005728C0), 67 of 67 instructions; builds its elements at 0x00A59EC5. Vector3f (INFERRED type name, decomp-agent's math work, 2026-11-23; nothing in the exe names it) is a __declspec(align(16)) {x, y, z}, 16 bytes: its elements are built by Vector3f::Vector3f (0x00451950, x, y, z zeroed, w untouched) through the vector constructor iterator with size 0x10. Vector3 stays the name of the 12-byte type until its size is proven (read 2026-11-23)",0x00a59e50,0x007004b0,0x00a59e50
 33392,function,CDataArrays::GetVector,,0x00a59f10,0x00700570,0x00a59f10
 33393,function,ECBase::ECDynArray<Math::Vector4f>::ECDynArray,,0x00a59f60,0x007005c0,0x00a59f60
-33394,function,ECBase::ECDynArray<Math::Vector4f>::~ECDynArray,,0x00a59f80,0x00700730,0x00a59f80
+33394,function,GraphicsStructures::Array<?>::~Array,"As 0x0053FD60 (Array<?>::~Array) for 16-byte elements with an empty destructor (Stub::NoOp 0x005BDCF0) (decomp-agent, read 2026-11-24)",0x00a59f80,0x00700730,0x00a59f80
 33395,function,GraphicsStructures::Array<Math::PointUA4f>::SetCapacity,"builds its elements at 0x00A5A014. Math::PointUA4f (INFERRED type name, decomp-agent's math work, 2026-11-23): an unaligned homogeneous point with a (0, 0, 0, 1) default and an empty destructor. __ehvec_ctor (0x008E6707) builds the elements with 0x00462180, folded with Point4f's constructor, and Stub::NoOp 0x005BDCF0, behind a count cookie; Array<Math::Point4f> uses the plain vector constructor iterator and no destructor (read 2026-11-23)",0x00a59fb0,0x00700760,0x00a59fb0
 33396,function,ECBase::ECDynArray<Math::Vector4f>::PushBack,,0x00a5a0b0,0x00700860,0x00a5a0b0
 33397,function,GraphicsStructures::Array<Math::PointUA4f>::operator=,"builds its elements at 0x00A5A1D1. Math::PointUA4f (INFERRED type name, decomp-agent's math work, 2026-11-23): an unaligned homogeneous point with a (0, 0, 0, 1) default and an empty destructor. __ehvec_ctor (0x008E6707) builds the elements with 0x00462180, folded with Point4f's constructor, and Stub::NoOp 0x005BDCF0, behind a count cookie; Array<Math::Point4f> uses the plain vector constructor iterator and no destructor (read 2026-11-23)",0x00a5a140,0x007008f0,0x00a5a140
@@ -33829,7 +33829,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33828,function,std::vector<Multithreading::SynchSafePointer<?>>::resize,,0x00a6d320,0x0071d830,0x00a6d320
 33829,function,std::vector<Multithreading::SynchSafePointer<?>>::insert,,0x00a6d410,0x0071d920,0x00a6d410
 33830,function,std::vector<Multithreading::SynchSafePointer<?>>::push_back,,0x00a6d4a0,0x0071d9b0,0x00a6d4a0
-33831,function,std::vector<Multithreading::SynchSafePointer<?>>::vector,,0x00a6d530,0x0071da40,0x00a6d530
+33831,function,ECBase::ECDynArray<Multithreading::SynchSafePointer<?>>::ECDynArray(unsigned int),,0x00a6d530,0x0071da40,0x00a6d530
 33832,function,AnimModelLod::Entry::RequestResources,,0x00a6d5a0,0x0071dab0,0x00a6d5a0
 33833,function,AnimModelLod::Entry::Entry,,0x00a6d960,0x0071de70,0x00a6d960
 33834,function,AnimModelLod::AnimModelLod,,0x00a6da00,0x0071df10,0x00a6da00
@@ -103314,7 +103314,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 103313,function,,,,0x00473fb0,
 103314,function,std::_Destroy_range<Multithreading::SynchSafePointer<?> *>,,0x00515fb0,0x00489ff0,0x00515fb0
 103315,function,std::vector<?>::erase,,0x0057a680,0x0048a740,0x0057a680
-103316,function,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialState>>::vector,,0x004fc640,0x0048bd20,0x004fc640
+103316,function,ECBase::ECDynArray<Multithreading::SynchSafePointer<Graphics::MaterialState>>::ECDynArray(unsigned int),,0x004fc640,0x0048bd20,0x004fc640
 103317,function,"stdext::hash_map<std::wstring,void *>::operator[]",,0x0084a670,0x0048cf90,0x0084a670
 103318,function,"std::_Tree<std::wstring,RefHandle>::_Erase",,0x0080e970,0x004b3470,0x0080e970
 103319,function,,,0x0080f090,0x004b3b90,0x0080f090
@@ -103401,7 +103401,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 103400,function,,,,0x008df7f0,
 103401,function,,,,0x008df8a0,
 103402,function,,,0x00944a60,0x0091c190,0x00944a60
-103403,function,std::vector<unsigned int>::vector,,0x0040d610,0x00a677e0,0x0040d610
+103403,function,ECBase::ECDynArray<unsigned int>::ECDynArray(unsigned int),,0x0040d610,0x00a677e0,0x0040d610
 103404,function,,,0x00a74720,0x00a6a470,0x00a74720
 103405,function,,,0x00a74728,0x00a6a478,0x00a74728
 103406,function,,,0x00a74730,0x00a6a480,0x00a74730

@@ -329,9 +329,9 @@ id,subsystem,class,how
 333,ThirdParty:STL,"std::num_put<wchar_t,std::ostreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>",name
 334,ThirdParty:STL,"std::num_get<wchar_t,std::istreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>",name
 335,ThirdParty:STL,"std::num_get<wchar_t,std::istreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>",name
-336,ThirdParty:STL,std::vector<unsigned int>,name
-337,ThirdParty:STL,std::vector<ECBase::ECString>,name
-338,ThirdParty:STL,,between
+336,Core,ECBase::ECDynArray<unsigned int>,name
+337,Core,ECBase::ECDynArray<ECBase::ECString>,name
+338,unknown,,
 339,ThirdParty:STL,"std::basic_iostream<wchar_t,std::char_traits<wchar_t>>",name
 340,ThirdParty:STL,,string
 341,App,EclipseGame,name
@@ -2667,7 +2667,7 @@ id,subsystem,class,how
 2692,Rendering,Renderer::LightManagerDefault,name
 2693,Rendering,Renderer::LightManagerDefault,name
 2694,Rendering,Renderer::LightManagerDefault,name
-2695,ThirdParty:STL,std::vector<General::SafePointer<Renderer::ObjectNodeLightReference>>,name
+2695,Core,ECBase::ECDynArray<General::SafePointer<Renderer::ObjectNodeLightReference>>,name
 2696,Rendering,Renderer,name
 2697,Rendering,Renderer::LightList,name
 2698,Rendering,Renderer::LightList,name
@@ -2898,7 +2898,7 @@ id,subsystem,class,how
 2924,Rendering,Renderer::EmitterManager,name
 2925,ThirdParty:STL,std::vector<Physics::Contact>,name
 2926,ThirdParty:STL,std::vector<Physics::Contact>,name
-2927,ThirdParty:STL,std::vector<Physics::Contact>,name
+2927,Core,ECBase::ECDynArray<Physics::Contact>,name
 2928,Core,Core,name
 2929,Core,Core,name
 2930,Rendering,Renderer::EmitterManager,name
@@ -3405,8 +3405,8 @@ id,subsystem,class,how
 3434,ThirdParty:STL,std::vector<PrereqItem>,name
 3435,ThirdParty:STL,std::vector<PRCItem>,name
 3436,ThirdParty:STL,std::vector<unsigned char>,name
-3437,ThirdParty:STL,std::vector<OnlineRec84>,name
-3438,ThirdParty:STL,std::vector<OnlineFeatures::Achievement>,name
+3437,Core,ECBase::ECDynArray<OnlineRec84>,name
+3438,Core,ECBase::ECDynArray<OnlineFeatures::Achievement>,name
 3439,ThirdParty:STL,std::vector<OnlineFeatures::Achievement>,name
 3440,ThirdParty:STL,"stdext::hash_map<?,?>",name
 3441,ThirdParty:Fesl,Fesl::FeslDateTime,builds
@@ -3643,8 +3643,8 @@ id,subsystem,class,how
 3674,ThirdParty:STL,std::vector<?>,name
 3675,ThirdParty:STL,"std::map<std::wstring,std::wstring>",name
 3676,ThirdParty:STL,std::vector<OnlineRec68>,name
-3677,ThirdParty:STL,std::vector<LockerUploadRequest>,name
-3678,ThirdParty:STL,std::vector<LockerDownloadRequest>,name
+3677,Core,ECBase::ECDynArray<LockerUploadRequest>,name
+3678,Core,ECBase::ECDynArray<LockerDownloadRequest>,name
 3679,Online,LockerManager,import
 3680,Online,LockerManager,callers
 3681,Online,LockerManager,callers
@@ -4524,7 +4524,7 @@ id,subsystem,class,how
 4560,Core,ECBase::ECString,name
 4561,Core,ECBase::ECString::operator+(const ECBase,name
 4562,Core,ECBase::ECString,name
-4563,Core,,between
+4563,Core,ECBase::ECString,name
 4564,Core,,between
 4565,Core,,between
 4566,Core,ECBase::ECString,name
@@ -4765,7 +4765,7 @@ id,subsystem,class,how
 4805,ThirdParty:STL,std::vector<Resource>,owner
 4806,ThirdParty:STL,std::vector<Resource>,name
 4807,ThirdParty:STL,,string
-4808,ThirdParty:STL,std::vector<Resource>,name
+4808,Core,ECBase::ECDynArray<Resource>,name
 4809,Resources,ECResMan::ErfSource,name
 4810,Resources,Stub,between
 4811,Resources,ECResMan::ErfSource,name
@@ -5194,7 +5194,7 @@ id,subsystem,class,how
 5243,Resources,Gff4::RootedFile,name
 5244,Resources,Gff4::RootedFile,name
 5245,ThirdParty:STL,std::vector<Gff4::Template>,name
-5246,ThirdParty:STL,std::vector<Gff4::Template>,name
+5246,Core,ECBase::ECDynArray<Gff4::Template>,name
 5247,ThirdParty:STL,std::vector<Gff4::Template>,name
 5248,Resources,Gff4::File,name
 5249,Resources,Gff4::File,name
@@ -5397,7 +5397,7 @@ id,subsystem,class,how
 5447,Resources,ECResMan::ResourceSource,name
 5448,Resources,ECResMan::ResourceSource,name
 5449,ThirdParty:STL,std::vector<std::wstring>,name
-5450,ThirdParty:STL,std::vector<std::wstring>,name
+5450,Core,ECBase::ECDynArray<std::wstring>,name
 5451,Resources,ECResMan::NameList,name
 5452,Resources,ECResMan::ResourceSource,name
 5453,Resources,ECResMan::ResourceSource,name
@@ -5433,8 +5433,8 @@ id,subsystem,class,how
 5483,ThirdParty:STL,std::vector<Elem8>,name
 5484,ThirdParty:STL,std,name
 5485,ThirdParty:STL,std,name
-5486,ThirdParty:STL,std::vector<Elem8>,name
-5487,ThirdParty:STL,ScriptVariableNames,between
+5486,Core,ECBase::ECDynArray<Elem8>,name
+5487,unknown,ScriptVariableNames,
 5488,ThirdParty:STL,std::vector<?>,name
 5489,ThirdParty:STL,std::vector<Elem14>,name
 5490,ThirdParty:STL,NameEntryPool,between
@@ -5593,7 +5593,7 @@ id,subsystem,class,how
 5647,Resources,M2DA,name
 5648,Resources,M2DA,name
 5649,Resources,M2DA,name
-5650,ThirdParty:STL,std::vector<Gff4::StructReader>,name
+5650,Core,ECBase::ECDynArray<Gff4::StructReader>,name
 5651,ThirdParty:STL,std::vector<Gff4::StructReader>,name
 5652,Resources,M2DA,name
 5653,Resources,M2DA,name
@@ -5737,7 +5737,7 @@ id,subsystem,class,how
 5791,ThirdParty:STL,"std::map<unsigned int,Multithreading::SynchSafePointer>",name
 5792,ThirdParty:STL,"std::map<unsigned int,Multithreading::SynchSafePointer>",name
 5793,ThirdParty:STL,"std::map<?,?>",name
-5794,ThirdParty:STL,"std::vector<std::pair<int,int>>",name
+5794,Core,"ECBase::ECDynArray<std::pair<int,int>>",name
 5795,Core,Core,name
 5796,Rendering,"Graphics::MaterialObjectInstance::ParameterValueProvider<ECBase::ECDynArray<Math::VectorUA4f>,Graphics::MaterialObjectInstance::ParameterAccessByValue<ECBase::ECDynArray<Math::VectorUA4f>>>",name
 5797,Core,ECBase::ECDynArray<Math::VectorUA4f>,name
@@ -5933,7 +5933,7 @@ id,subsystem,class,how
 5992,Rendering,Graphics::MaterialStateManager,name
 5993,Rendering,Graphics::MaterialStateManager,name
 5994,ThirdParty:STL,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialState>>,name
-5995,ThirdParty:STL,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialState>>,name
+5995,Core,ECBase::ECDynArray<Multithreading::SynchSafePointer<Graphics::MaterialState>>,name
 5996,Rendering,Graphics::MaterialStateManager,name
 5997,Rendering,Graphics::MaterialStateManager,name
 5998,Rendering,Graphics::MaterialStateManager,name
@@ -6388,7 +6388,7 @@ id,subsystem,class,how
 6448,ThirdParty:STL,std::vector<std::wstring>,name
 6449,ThirdParty:STL,std::vector<std::wstring>,name
 6450,ThirdParty:STL,std::vector<std::wstring>,name
-6451,ThirdParty:STL,std::vector<std::wstring>,name
+6451,Core,ECBase::ECDynArray<std::wstring>,name
 6452,Rendering,Graphics::MaterialStateBuilderXML2,name
 6453,Rendering,Graphics::MaterialStateBuilderXML2,name
 6454,Rendering,Graphics::MaterialStateBuilderXML2,name
@@ -6709,10 +6709,10 @@ id,subsystem,class,how
 6769,ThirdParty:STL,,between
 6770,ThirdParty:STL,"std::map<unsigned int,Floaty*>",name
 6771,ThirdParty:STL,std::vector<?>,name
-6772,ThirdParty:STL,,between
-6773,ThirdParty:STL,std::vector<GFxValue>,name
+6772,unknown,,
+6773,Core,ECBase::ECDynArray<GFxValue>,name
 6774,ThirdParty:STL,std::vector<GFxValue>,name
-6775,ThirdParty:STL,std::vector<?>,name
+6775,Core,ECBase::ECDynArray<?>,name
 6776,GUI,GuiMovie,name
 6777,GUI,GuiMovie,name
 6778,ThirdParty:STL,stdext::_Hash<...>,name
@@ -7129,7 +7129,7 @@ id,subsystem,class,how
 7190,ThirdParty:STL,std::vector<?>,name
 7191,ThirdParty:STL,std::vector<?>,name
 7192,ThirdParty:STL,std::vector<?>,name
-7193,ThirdParty:STL,std::vector<?>,name
+7193,Core,ECBase::ECDynArray<?>,name
 7194,Rendering,Eclipse::IGraphicsInternal,name
 7195,App,Eclipse,callers
 7196,App,Eclipse,callers
@@ -7278,7 +7278,7 @@ id,subsystem,class,how
 7340,Rendering,GraphicsStructures::SpeedTreeModel,name
 7341,Rendering,GraphicsStructures::SpeedTreeForest,name
 7342,Core,Multithreading::SynchSafePointer<?>,name
-7343,ThirdParty:STL,std::vector<float>,name
+7343,Core,ECBase::ECDynArray<float>,name
 7344,ThirdParty:STL,std::vector<float>,name
 7345,Core,ECBase::ECDynArray<GraphicsStructures::SpeedTreeForest::ModelGroup*>,name
 7346,Rendering,Graphics::IRenderableNode,name
@@ -7627,7 +7627,7 @@ id,subsystem,class,how
 7690,Rendering,GraphicsStructures::SpawnVolumeMesh,name
 7691,Rendering,GraphicsStructures::ObjectNodeEmitter,name
 7692,ThirdParty:STL,std::vector<?>,name
-7693,Core,ECBase::ECDynArray<?>,name
+7693,Rendering,GraphicsStructures::Array<?>,name
 7694,Rendering,GraphicsStructures::Array<?>,name
 7695,ThirdParty:STL,std,name
 7696,ThirdParty:STL,std,name
@@ -8435,7 +8435,7 @@ id,subsystem,class,how
 8499,ThirdParty:STL,std::vector<?>,owner
 8500,ThirdParty:STL,std::vector<?>,name
 8501,ThirdParty:STL,std::vector<?>,name
-8502,ThirdParty:STL,std::vector<?>,name
+8502,Core,ECBase::ECDynArray<?>,name
 8503,ThirdParty:STL,std::vector<?>,name
 8504,Rendering,GraphicsStructures::ObjectNodeCloth,name
 8505,Rendering,GraphicsStructures::ObjectNodeCloth,name
@@ -8722,9 +8722,9 @@ id,subsystem,class,how
 8788,unknown,Stub,
 8789,ThirdParty:STL,std::_String_const_iterator<char>,name
 8790,ThirdParty:STL,std::_Tree<?>,name
-8791,Core,ECBase::ECDynArray<Math::Vector4f>,name
+8791,Rendering,GraphicsStructures::Array<Math::Point4f>,name
 8792,Rendering,GraphicsStructures::Array<Math::Vector4f>,name
-8793,Core,ECBase::ECDynArray<ECBase::ECDynArray<Math::Vector4f>>,name
+8793,Rendering,GraphicsStructures::Array<GraphicsStructures::Array<?>>,name
 8794,Core,ECBase::ECDynArray<Renderer::LightState*>,name
 8795,ThirdParty:STL,std,name
 8796,Core,ECBase::ECDynArray<Math::Vector4f>,name
@@ -8831,7 +8831,7 @@ id,subsystem,class,how
 8897,ThirdParty:STL,stdext::_Hash<?>,name
 8898,Rendering,GraphicsStructures::GraphicsStructuresManager,name
 8899,ThirdParty:STL,std::vector<MeshLightmapRecord>,name
-8900,ThirdParty:STL,std::vector<MeshLightmapRecord>,name
+8900,Core,ECBase::ECDynArray<MeshLightmapRecord>,name
 8901,Rendering,GraphicsStructures::ConstructObjectTask,name
 8902,Rendering,GraphicsStructures::ConstructObjectTask,name
 8903,Rendering,GraphicsStructures::ConstructLightmapForExistingModelTask,name
@@ -8843,7 +8843,7 @@ id,subsystem,class,how
 8909,ThirdParty:STL,"std::basic_ofstream<wchar_t,std::char_traits<wchar_t>>",name
 8910,ThirdParty:STL,std::_Tree<?>,name
 8911,ThirdParty:STL,stdext::_Hash<?>,name
-8912,ThirdParty:STL,std::vector<?>,name
+8912,Core,ECBase::ECDynArray<?>,name
 8913,Rendering,Renderer::LightStatePool,name
 8914,Rendering,Renderer::LightStatePool,name
 8915,Rendering,GraphicsStructures::ObjectParams,name
@@ -9235,10 +9235,10 @@ id,subsystem,class,how
 9303,ThirdParty:STL,std::vector<unsigned int>,name
 9304,ThirdParty:STL,std::vector<?>,name
 9305,ThirdParty:STL,std::vector<GraphicsStructures::ClothAttachment>,name
-9306,ThirdParty:STL,std::vector<GraphicsStructures::TriangleIndices16>,name
+9306,Core,ECBase::ECDynArray<GraphicsStructures::TriangleIndices16>,name
 9307,ThirdParty:STL,std::vector<GraphicsStructures::TriangleIndices16>,name
 9308,Rendering,GraphicsStructures,name
-9309,ThirdParty:STL,std::vector<GraphicsStructures::ClothAttachment>,name
+9309,Core,ECBase::ECDynArray<GraphicsStructures::ClothAttachment>,name
 9310,ThirdParty:STL,std::vector<?>,name
 9311,ThirdParty:STL,std::vector<GraphicsStructures::ModelExport>,name
 9312,Rendering,GraphicsStructures::SpawnVolumeMesh,name
@@ -9648,7 +9648,7 @@ id,subsystem,class,how
 9717,Rendering,GraphicsStructures,name
 9718,ThirdParty:STL,std::vector<unsigned short>,name
 9719,ThirdParty:STL,std::vector<unsigned short>,name
-9720,ThirdParty:STL,std::vector<unsigned short>,name
+9720,Core,ECBase::ECDynArray<unsigned short>,name
 9721,Rendering,GraphicsStructures::StreamData,name
 9722,Rendering,GraphicsStructures,name
 9723,Rendering,GraphicsStructures,name
@@ -9818,9 +9818,9 @@ id,subsystem,class,how
 9887,Audio,SoundManager,name
 9888,unknown,WStringMap<void*>,
 9889,ThirdParty:STL,"std::map<int,std::vector<unsigned int>*>",name
-9890,ThirdParty:STL,WStringMap<void*>,between
-9891,ThirdParty:STL,WStringMap<void*>,between
-9892,ThirdParty:STL,"std::vector<std::pair<std::wstring,std::wstring>>",name
+9890,unknown,WStringMap<void*>,
+9891,unknown,WStringMap<void*>,
+9892,Core,"ECBase::ECDynArray<std::pair<std::wstring,std::wstring>>",name
 9893,Audio,SoundManager,name
 9894,Audio,SoundManager,name
 9895,Audio,SoundEmitter,name
@@ -10109,7 +10109,7 @@ id,subsystem,class,how
 10180,Data,SmartData::TokenStringNotifier,name
 10181,ThirdParty:STL,std::vector<SmartData::TokenPath>,name
 10182,ThirdParty:STL,std::vector<SmartData::TokenPath>,name
-10183,ThirdParty:STL,std::vector<SmartData::TokenPath>,name
+10183,Core,ECBase::ECDynArray<SmartData::TokenPath>,name
 10184,Data,SmartData::TokenStringObserver,name
 10185,Data,SmartData::TokenStringObserver,name
 10186,Data,SmartData::TokenStringNotifier,name
@@ -10217,7 +10217,7 @@ id,subsystem,class,how
 10288,World,ILayoutPolicy,name
 10289,World,CFixedPolicy,name
 10290,Camera,CCameraFixedPolicy,name
-10291,ThirdParty:STL,std::vector<?>,name
+10291,Core,ECBase::ECDynArray<?>,name
 10292,Camera,CCameraFixedPolicy,name
 10293,Camera,CCameraFixedPolicy,name
 10294,Camera,CCameraFixedPolicy,name
@@ -10326,7 +10326,7 @@ id,subsystem,class,how
 10398,ThirdParty:STL,std::vector<Math::CollisionOutputParameter>,name
 10399,World,IAreaLayout,name
 10400,ThirdParty:STL,std::vector<Math::CollisionOutputParameter>,name
-10401,ThirdParty:STL,std::vector<Math::CollisionOutputParameter>,name
+10401,Core,ECBase::ECDynArray<Math::CollisionOutputParameter>,name
 10402,World,IAreaLayout,name
 10403,World,CRoom,name
 10404,Rendering,FreeLODMemoryTask,name
@@ -10342,7 +10342,7 @@ id,subsystem,class,how
 10414,Core,ECBase::ECDynArray<?>,name
 10415,ThirdParty:STL,std::vector<?>,name
 10416,ThirdParty:STL,std::vector<?>,name
-10417,ThirdParty:STL,std::vector<?>,name
+10417,Core,ECBase::ECDynArray<?>,name
 10418,World,CRoom,name
 10419,World,CRoom,name
 10420,World,CRoom,name
@@ -10525,8 +10525,8 @@ id,subsystem,class,how
 10597,ThirdParty:STL,std,name
 10598,App,CClientExoApp,name
 10599,Data,"SmartData::Attribute<ECBase::ECDynArray<ModuleInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
-10600,ThirdParty:STL,std::vector<int>,name
-10601,ThirdParty:STL,"std::vector<std::pair<std::wstring,std::wstring>>",name
+10600,Core,ECBase::ECDynArray<int>,name
+10601,Core,"ECBase::ECDynArray<std::pair<std::wstring,std::wstring>>",name
 10602,Resources,AddInRecord,name
 10603,ThirdParty:STL,std,name
 10604,App,CClientExoApp,name
@@ -10783,7 +10783,7 @@ id,subsystem,class,how
 10855,App,CClientOptions,name
 10856,App,CClientOptions,name
 10857,App,CClientOptions,name
-10858,ThirdParty:STL,std::vector<std::vector<std::wstring>>,name
+10858,Core,ECBase::ECDynArray<std::vector<std::wstring>>,name
 10859,ThirdParty:STL,std::vector<std::vector<std::wstring>>,name
 10860,App,CClientOptions,name
 10861,App,CClientOptions,name
@@ -10908,9 +10908,9 @@ id,subsystem,class,how
 10980,Resources,AddInsManager,name
 10981,ThirdParty:STL,std::vector<AddInRecord>,name
 10982,ThirdParty:STL,std::vector<AddInXmlEntry>,name
-10983,ThirdParty:STL,std::vector<AddInRecord>,name
+10983,Core,ECBase::ECDynArray<AddInRecord>,name
 10984,Resources,AddInsManager,name
-10985,ThirdParty:STL,std::vector<AddInXmlEntry>,name
+10985,Core,ECBase::ECDynArray<AddInXmlEntry>,name
 10986,Resources,AddInsManager,name
 10987,Resources,AddInsManager,name
 10988,Resources,AddInsManager,name
@@ -11017,7 +11017,7 @@ id,subsystem,class,how
 11089,ThirdParty:STL,"std::map<int,std::wstring>",owner
 11090,World,CCModule,name
 11091,ThirdParty:STL,"std::map<int,std::wstring>",name
-11092,ThirdParty:STL,std::vector<CCModule::TagIndexEntry>,name
+11092,Core,ECBase::ECDynArray<CCModule::TagIndexEntry>,name
 11093,Core,ECBase::ECDynArray<CCModule::TagIndexEntry>,name
 11094,ThirdParty:STL,std::vector<Gff4::StructReader>,name
 11095,ThirdParty:STL,std,name
@@ -11056,7 +11056,7 @@ id,subsystem,class,how
 11128,World,CCModule,name
 11129,ThirdParty:STL,std::vector<CCModule::AreaListEntry>,name
 11130,World,CCModule,name
-11131,ThirdParty:STL,std::vector<CCModule::AreaListEntry>,name
+11131,Core,ECBase::ECDynArray<CCModule::AreaListEntry>,name
 11132,World,CCModule,name
 11133,World,CCModule,name
 11134,World,CCModule,name
@@ -13678,8 +13678,8 @@ id,subsystem,class,how
 13754,World,CCModule,name
 13755,ThirdParty:STL,std::vector<float>,name
 13756,ThirdParty:STL,std::vector<?>,name
-13757,ThirdParty:STL,std::vector<CCArea::StageEntry>,name
-13758,ThirdParty:STL,std::vector<unk_12byte>,name
+13757,Core,ECBase::ECDynArray<CCArea::StageEntry>,name
+13758,Core,ECBase::ECDynArray<unk_12byte>,name
 13759,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",name
 13760,ThirdParty:STL,std::vector<unk_4byte>,name
 13761,World,CCArea,name
@@ -14194,7 +14194,7 @@ id,subsystem,class,how
 14270,Scripting,CScriptEvent,name
 14271,ThirdParty:STL,std::vector<std::wstring>,name
 14272,Scripting,CScriptEvent,name
-14273,ThirdParty:STL,std::vector<std::wstring>,name
+14273,Core,ECBase::ECDynArray<std::wstring>,name
 14274,ThirdParty:STL,std::vector<std::wstring>,name
 14275,Scripting,CScriptEvent,name
 14276,Scripting,CScriptEvent,name
@@ -15131,7 +15131,7 @@ id,subsystem,class,how
 15211,ThirdParty:STL,std::vector<?>,name
 15212,Core,ECBase::ECDynArray<void*>,name
 15213,Data,"SmartData::Attribute<ECBase::ECDynArray<HeroInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
-15214,ThirdParty:STL,std::vector<?>,name
+15214,Core,ECBase::ECDynArray<?>,name
 15215,Save,SaveLoadProxy,name
 15216,Save,SaveLoadProxy,name
 15217,Save,SaveLoadProxy,name
@@ -15939,7 +15939,7 @@ id,subsystem,class,how
 16021,ThirdParty:STL,std::vector<?>,owner
 16022,ThirdParty:STL,std::vector<ScriptVariable>,name
 16023,ThirdParty:STL,std::vector<ScriptVariable>,name
-16024,ThirdParty:STL,std::vector<ScriptVariable>,name
+16024,Core,ECBase::ECDynArray<ScriptVariable>,name
 16025,ThirdParty:STL,std::vector<ScriptVariable>,name
 16026,Game,ScriptVarTable,callees
 16027,Scripting,ScriptVariableTable,name
@@ -17393,7 +17393,7 @@ id,subsystem,class,how
 17479,ThirdParty:STL,std::vector<GUICharGen::SliderEntry>,name
 17480,Data,"SmartData::Attribute<ECBase::ECDynArray<GUI::AppearanceSliderGroup*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 17481,Data,"SmartData::Attribute<ECBase::ECDynArray<GUI::AppearanceSlider<float>*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
-17482,ThirdParty:STL,std::vector<GUI::GUIPaperdoll::SliderEntry>,name
+17482,Core,ECBase::ECDynArray<GUI::GUIPaperdoll::SliderEntry>,name
 17483,GUI,GUI::GUICharGen,name
 17484,GUI,GUI::GUICharGen,name
 17485,GUI,GUI::GUICharGen,name
@@ -18315,7 +18315,7 @@ id,subsystem,class,how
 18403,GameModes,GameModePartyPicker,name
 18404,GUI,SharedCharacterStage,name
 18405,GameModes,GameModePartyPicker,name
-18406,ThirdParty:STL,std::vector<GameModePartyPicker::StageEntry>,name
+18406,Core,ECBase::ECDynArray<GameModePartyPicker::StageEntry>,name
 18407,Core,ECBase::ECDynArray<GameModePartyPicker::StageEntry>,name
 18408,Core,ECBase::ECDynArray<?>,name
 18409,Core,"ECBase::ECDynArray<SmartData::Attribute<unsigned int,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
@@ -19413,7 +19413,7 @@ id,subsystem,class,how
 19501,ThirdParty:STL,,owner
 19502,ThirdParty:STL,,owner
 19503,ThirdParty:STL,std::vector<EquipmentSet>,name
-19504,ThirdParty:STL,std::vector<EquipmentSet>,name
+19504,Core,ECBase::ECDynArray<EquipmentSet>,name
 19505,ThirdParty:STL,std::vector<EquipmentSet>,name
 19506,Game,Equipment,name
 19507,World,CCTrigger,name
@@ -19789,7 +19789,7 @@ id,subsystem,class,how
 19881,Game,CSSubActionHandler,name
 19882,Game,CSSubActionHandler,name
 19883,Game,SubActionPool,callers
-19884,ThirdParty:STL,std::vector<unsigned int>,name
+19884,Core,ECBase::ECDynArray<unsigned int>,name
 19885,Game,CSSubActionHandler,name
 19886,Game,CSSubActionHandler,name
 19887,Game,CSSubActionHandler,name
@@ -20096,15 +20096,15 @@ id,subsystem,class,how
 20190,GUI,GUI::GUIPaperdoll,name
 20191,ThirdParty:STL,"std::map<?,?>",name
 20192,Core,ECBase::ECDynArray<unk_ptr>,name
-20193,ThirdParty:STL,std::vector<GUI::HeadPreset::MaterialValue>,name
-20194,ThirdParty:STL,std::vector<GUI::HeadPreset::MaterialVector>,name
-20195,ThirdParty:STL,std::vector<GUI::HeadPreset::Texture>,name
-20196,ThirdParty:STL,"std::vector<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
+20193,Core,ECBase::ECDynArray<GUI::HeadPreset::MaterialValue>,name
+20194,Core,ECBase::ECDynArray<GUI::HeadPreset::MaterialVector>,name
+20195,Core,ECBase::ECDynArray<GUI::HeadPreset::Texture>,name
+20196,Core,"ECBase::ECDynArray<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
 20197,Data,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 20198,Data,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 20199,Data,"SmartData::Attribute<ECBase::ECDynArray<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>,SmartData::IndexedMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 20200,Data,"SmartData::Attribute<ECBase::ECDynArray<GUI::GUIPaperdoll::CharData*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
-20201,ThirdParty:STL,"std::vector<std::pair<std::wstring,int>>",name
+20201,Core,"ECBase::ECDynArray<std::pair<std::wstring,int>>",name
 20202,Core,"ECBase::ECDynArray<SmartData::Attribute<float,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
 20203,GUI,GUI::GUIPaperdoll,name
 20204,GUI,GUI::GUIPaperdoll::CharData,name
@@ -20191,7 +20191,7 @@ id,subsystem,class,how
 20285,ThirdParty:STL,std::vector<GUI::HeadPreset::ModelWeight>,name
 20286,GUI,GUI::GUIPaperdoll,name
 20287,GUI,GUI::GUIPaperdoll,name
-20288,ThirdParty:STL,std::vector<GUI::HeadPreset::ModelWeight>,name
+20288,Core,ECBase::ECDynArray<GUI::HeadPreset::ModelWeight>,name
 20289,GUI,GUI::HeadPreset,name
 20290,GUI,GUI::GUIPaperdoll,name
 20291,GUI,GUI::GUIPaperdoll,name
@@ -20405,7 +20405,7 @@ id,subsystem,class,how
 20499,ThirdParty:STL,std::vector<MapTrail>,name
 20500,ThirdParty:STL,std::vector<MapTrail>,name
 20501,ThirdParty:STL,std::vector<MapTrail>,name
-20502,ThirdParty:STL,std::vector<MapTrail>,name
+20502,Core,ECBase::ECDynArray<MapTrail>,name
 20503,ThirdParty:STL,std::vector<MapTrail>,name
 20504,World,MapObject,name
 20505,World,MapObject,name
@@ -20783,7 +20783,7 @@ id,subsystem,class,how
 20877,ThirdParty:STL,std::list<Elem>,name
 20878,ThirdParty:STL,"std::map<std::wstring,?>",name
 20879,ThirdParty:STL,"std::_Tree<std::pair<unsigned int const,CutscenePlayer::ActorDependencyList>>",name
-20880,ThirdParty:STL,std::vector<EC::Cutscene::Actor::ClipRecord>,name
+20880,Core,ECBase::ECDynArray<EC::Cutscene::Actor::ClipRecord>,name
 20881,ThirdParty:STL,std::vector<EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>,name
 20882,ThirdParty:STL,std::vector<EC::Cutscene::Actor::BlendGadRecord>,name
 20883,ThirdParty:STL,std::list<Elem>,name
@@ -20798,9 +20798,9 @@ id,subsystem,class,how
 20892,Conversation,EC::Cutscene::Actor::FollowerAniHackEntry,name
 20893,ThirdParty:STL,std::list<Elem>,name
 20894,ThirdParty:STL,"std::pair<std::wstring,EC::Cutscene::Actor::FollowerAniHackEntry>",name
-20895,ThirdParty:STL,std::vector<EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>,name
+20895,Core,ECBase::ECDynArray<EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>,name
 20896,ThirdParty:STL,std::vector<EC::Cutscene::Actor::ClipRecord>,name
-20897,ThirdParty:STL,std::vector<EC::Cutscene::Actor::BlendGadRecord>,name
+20897,Core,ECBase::ECDynArray<EC::Cutscene::Actor::BlendGadRecord>,name
 20898,ThirdParty:STL,std::vector<EC::Cutscene::Actor::BlendGadRecord>,name
 20899,Core,ECBase::ECDynArray<Resources>,name
 20900,Core,Elem16,name
@@ -20945,7 +20945,7 @@ id,subsystem,class,how
 21039,Conversation,CutscenePlayer,name
 21040,Conversation,CutscenePlayer,name
 21041,Conversation,EC::Cutscene::Actor,name
-21042,ThirdParty:STL,std::vector<CutscenePlayer::BindRecord>,name
+21042,Core,ECBase::ECDynArray<CutscenePlayer::BindRecord>,name
 21043,Conversation,CutscenePlayer,name
 21044,Conversation,CutscenePlayer,name
 21045,Conversation,CutscenePlayer,name
@@ -21223,7 +21223,7 @@ id,subsystem,class,how
 21319,Conversation,Conversation,name
 21320,ThirdParty:STL,std::vector<Conversation::Participant>,name
 21321,Conversation,Conversation,name
-21322,ThirdParty:STL,std::vector<Conversation::Participant>,name
+21322,Core,ECBase::ECDynArray<Conversation::Participant>,name
 21323,Conversation,Conversation,name
 21324,Conversation,Conversation,name
 21325,Conversation,Conversation,name
@@ -21253,7 +21253,7 @@ id,subsystem,class,how
 21350,GUI,PortraitRenderer,name
 21351,Animation,AnimWeightRequests,name
 21352,Animation,AnimWeightRequests,name
-21353,ThirdParty:STL,std::vector<AnimWeightRequests::Request>,name
+21353,Core,ECBase::ECDynArray<AnimWeightRequests::Request>,name
 21354,ThirdParty:STL,std::vector<AnimWeightRequests::Request>,name
 21355,Animation,AnimWeightRequests,name
 21356,Animation,AnimWeightRequests,name
@@ -21326,7 +21326,7 @@ id,subsystem,class,how
 21423,ThirdParty:STL,std::vector<MapLocationConnection>,name
 21424,ThirdParty:STL,std::vector<MapLocationConnection>,name
 21425,ThirdParty:STL,std::vector<MapLocationConnection>,name
-21426,ThirdParty:STL,std::vector<MapLocationConnection>,name
+21426,Core,ECBase::ECDynArray<MapLocationConnection>,name
 21427,World,MapLocation,name
 21428,Resources,Gff4,name
 21429,World,MapLocation,name
@@ -21400,7 +21400,7 @@ id,subsystem,class,how
 21497,ThirdParty:STL,std,name
 21498,ThirdParty:STL,std::vector<FilteredGroupedItemView::Entry>,name
 21499,ThirdParty:STL,std,name
-21500,ThirdParty:STL,std::vector<FilteredGroupedItemView::Entry>,name
+21500,Core,ECBase::ECDynArray<FilteredGroupedItemView::Entry>,name
 21501,ThirdParty:STL,std::vector<FilteredGroupedItemView::Entry>,name
 21502,GUI,FilteredGroupedItemView,name
 21503,GUI,FilteredGroupedItemView,name
@@ -21721,7 +21721,7 @@ id,subsystem,class,how
 21821,ThirdParty:STL,std::vector<MapTrailPoint>,name
 21822,ThirdParty:STL,std::vector<MapTrailPoint>,name
 21823,World,MapTrail,name
-21824,ThirdParty:STL,std::vector<MapTrailPoint>,name
+21824,Core,ECBase::ECDynArray<MapTrailPoint>,name
 21825,World,MapTrail,name
 21826,World,MapTrail,name
 21827,GUI,ItemFilterWeapons,name
@@ -22137,7 +22137,7 @@ id,subsystem,class,how
 22238,Physics,Physics::PhysicsActor,name
 22239,Physics,Physics::PhysicsActor,name
 22240,ThirdParty:STL,std::vector<?>,name
-22241,ThirdParty:STL,std::vector<NxShape*>,name
+22241,Core,ECBase::ECDynArray<NxShape*>,name
 22242,ThirdParty:STL,std::vector<NxShape*>,name
 22243,Core,ECBase::ECDynArray<?*>,name
 22244,Physics,Physics::PhysicsActor,name
@@ -22325,7 +22325,7 @@ id,subsystem,class,how
 22427,ThirdParty:STL,std::vector<NxGroupsMask>,name
 22428,ThirdParty:STL,std::vector<Physics::ActorUserRecord>,name
 22429,ThirdParty:STL,std::vector<Physics::ShapeUserRecord>,name
-22430,ThirdParty:STL,std::vector<NxSweepQueryHit>,name
+22430,Core,ECBase::ECDynArray<NxSweepQueryHit>,name
 22431,Physics,Physics::PhysicsScene,name
 22432,Physics,Physics::PhysicsScene,name
 22433,Physics,Physics::PhysicsScene,name
@@ -22340,11 +22340,11 @@ id,subsystem,class,how
 22442,Physics,Physics::PhysicsScene::PhysicsEntityReport<NxSweepQueryHit>,name
 22443,Physics,Physics::PhysicsScene::PhysicsEntityReport<unsigned int>,name
 22444,ThirdParty:STL,std::list<T>,name
-22445,ThirdParty:STL,std::vector<NxGroupsMask>,name
-22446,ThirdParty:STL,std::vector<?>,name
-22447,ThirdParty:STL,std::vector<Physics::ActorUserRecord>,name
+22445,Core,ECBase::ECDynArray<NxGroupsMask>,name
+22446,Core,ECBase::ECDynArray<?>,name
+22447,Core,ECBase::ECDynArray<Physics::ActorUserRecord>,name
 22448,ThirdParty:STL,std::vector<Physics::ActorUserRecord>,name
-22449,ThirdParty:STL,std::vector<Physics::ShapeUserRecord>,name
+22449,Core,ECBase::ECDynArray<Physics::ShapeUserRecord>,name
 22450,ThirdParty:STL,std::vector<Physics::ShapeUserRecord>,name
 22451,Physics,Physics::VariableSetPool<Physics::PhysicsNxActorVariableSet<NxMat34>>,name
 22452,Physics,Physics::VariableSetPool<Physics::PhysicsNxActorVariableSet<NxMat34>>,name
@@ -22870,8 +22870,8 @@ id,subsystem,class,how
 22974,ThirdParty:STL,std::vector<?>,owner
 22975,ThirdParty:STL,std::vector<?>,name
 22976,ThirdParty:STL,std::vector<TexManager::TexturePool::Spec>,name
-22977,ThirdParty:STL,std::vector<TexManager::TexturePool::Spec>,name
-22978,ThirdParty:STL,,between
+22977,Core,ECBase::ECDynArray<TexManager::TexturePool::Spec>,name
+22978,unknown,,
 22979,ThirdParty:STL,,string
 22980,ThirdParty:STL,"std::map<?,std::vector<void*>>",name
 22981,ThirdParty:STL,,between
@@ -23364,7 +23364,7 @@ id,subsystem,class,how
 23510,ThirdParty:STL,std::vector<void *>,name
 23511,Rendering,D3DDriver::D3DGraphicsDriverManager,name
 23512,ThirdParty:STL,std::vector<void *>,name
-23513,ThirdParty:STL,std::vector<void *>,name
+23513,Core,ECBase::ECDynArray<void *>,name
 23514,Core,Core,name
 23515,Rendering,Graphics::ExternalDeviceCaps,name
 23516,Rendering,D3DDriver::D3DGraphicsDriverManager,name
@@ -23518,8 +23518,8 @@ id,subsystem,class,how
 23665,Rendering,CD3DEnumeration,name
 23666,Rendering,CD3DEnumeration,name
 23667,ThirdParty:STL,std::vector<unsigned int>,name
-23668,ThirdParty:STL,std::vector<unsigned int>,name
-23669,ThirdParty:STL,std::vector<D3DDSMSConflict>,name
+23668,Core,ECBase::ECDynArray<unsigned int>,name
+23669,Core,ECBase::ECDynArray<D3DDSMSConflict>,name
 23670,ThirdParty:STL,std::vector<D3DDISPLAYMODE>,name
 23671,Rendering,D3DDeviceCombo,name
 23672,Rendering,CD3DEnumeration,name
@@ -23555,7 +23555,7 @@ id,subsystem,class,how
 23702,Rendering,D3DDriver::D3DStateCache,name
 23703,ThirdParty:STL,std::vector<D3DDriver::D3DStateChange>,name
 23704,ThirdParty:STL,std::vector<D3DDriver::D3DStateChange>,name
-23705,ThirdParty:STL,std::vector<D3DDriver::D3DStateChange>,name
+23705,Core,ECBase::ECDynArray<D3DDriver::D3DStateChange>,name
 23706,ThirdParty:STL,std::vector<D3DDriver::D3DStateChange>,name
 23707,Rendering,D3DDriver::D3DStateCache,name
 23708,Rendering,D3DDriver::D3DStateCache,name
@@ -23693,7 +23693,7 @@ id,subsystem,class,how
 23840,ThirdParty:STL,std::vector<D3DDriver::ShaderMember>,name
 23841,ThirdParty:STL,std::vector<D3DDriver::ShaderConstant>,name
 23842,Rendering,Graphics::Shader,name
-23843,ThirdParty:STL,std::vector<D3DDriver::ShaderMember>,name
+23843,Core,ECBase::ECDynArray<D3DDriver::ShaderMember>,name
 23844,ThirdParty:STL,std::vector<D3DDriver::ShaderParameter>,name
 23845,ThirdParty:STL,,string
 23846,ThirdParty:STL,,owner
@@ -23709,7 +23709,7 @@ id,subsystem,class,how
 23856,ThirdParty:STL,std,name
 23857,ThirdParty:STL,std,name
 23858,ThirdParty:STL,std,owner
-23859,ThirdParty:STL,std::vector<D3DDriver::ShaderConstant>,name
+23859,Core,ECBase::ECDynArray<D3DDriver::ShaderConstant>,name
 23860,ThirdParty:STL,std::vector<D3DDriver::ShaderParameter>,name
 23861,ThirdParty:STL,stdext,name
 23862,ThirdParty:STL,std,name
@@ -23724,7 +23724,7 @@ id,subsystem,class,how
 23871,ThirdParty:STL,,owner
 23872,ThirdParty:STL,,owner
 23873,ThirdParty:STL,std::vector<D3DDriver::ShaderParameter>,name
-23874,ThirdParty:STL,std::vector<D3DDriver::ShaderParameter>,name
+23874,Core,ECBase::ECDynArray<D3DDriver::ShaderParameter>,name
 23875,Rendering,D3DDriver::D3DPixelShader,name
 23876,Rendering,D3DDriver::D3DPixelShader,name
 23877,Rendering,Graphics::RenderFX,name
@@ -23861,7 +23861,7 @@ id,subsystem,class,how
 24008,ThirdParty:STL,std::vector<D3DDriver::D3DUmbraRenderer::DebugLine>,name
 24009,ThirdParty:STL,std::vector<?>,name
 24010,World,D3DDriver::D3DUmbraRenderer,name
-24011,ThirdParty:STL,std::vector<?>,name
+24011,Core,ECBase::ECDynArray<?>,name
 24012,ThirdParty:STL,std::vector<?>,name
 24013,World,D3DDriver::D3DUmbraRenderer,name
 24014,World,D3DDriver::D3DUmbraRenderer,name
@@ -23957,7 +23957,7 @@ id,subsystem,class,how
 24104,ThirdParty:STL,,string
 24105,ThirdParty:STL,"std::map<InputMapper::KeyWord,std::list<InputMapper::Entry*>>",name
 24106,ThirdParty:STL,std::vector<InputMapper::Entry>,name
-24107,ThirdParty:STL,std::vector<ECInput::Event>,name
+24107,Core,ECBase::ECDynArray<ECInput::Event>,name
 24108,Input,InputMapper,name
 24109,ThirdParty:STL,,string
 24110,ThirdParty:STL,,between
@@ -24014,7 +24014,7 @@ id,subsystem,class,how
 24161,ThirdParty:STL,,between
 24162,ThirdParty:STL,std::vector<unsigned short>,name
 24163,ThirdParty:STL,std::vector<?>,name
-24164,ThirdParty:STL,std::vector<unsigned short>,name
+24164,Core,ECBase::ECDynArray<unsigned short>,name
 24165,ThirdParty:STL,std::vector<?>,name
 24166,Input,ECInput::RawInputWin32,name
 24167,Input,ECInput::RawInputWin32,name
@@ -24173,7 +24173,7 @@ id,subsystem,class,how
 24320,ThirdParty:STL,std::vector<Input::Binding>,name
 24321,ThirdParty:STL,"std::list<std::pair<const int,Input::BindingList>>",name
 24322,ThirdParty:STL,std::vector<Input::Binding>,name
-24323,ThirdParty:STL,std::vector<Input::Binding>,name
+24323,Core,ECBase::ECDynArray<Input::Binding>,name
 24324,ThirdParty:STL,"std::list<std::pair<const int,Input::BindingList>>",name
 24325,ThirdParty:STL,std,name
 24326,ThirdParty:STL,"stdext::hash_map<int,Input::BindingList>",name
@@ -24209,7 +24209,7 @@ id,subsystem,class,how
 24356,Input,Eclipse::GroupedInputMappings::GroupedInputs,name
 24357,Input,Eclipse::GroupedInputMappings::GroupedInputs,name
 24358,Input,Eclipse::GroupedInputMappings::GroupedInputs,name
-24359,ThirdParty:STL,std::vector<Eclipse::GroupedInputMappings::GroupedInputs::Mapping>,name
+24359,Core,ECBase::ECDynArray<Eclipse::GroupedInputMappings::GroupedInputs::Mapping>,name
 24360,Input,Eclipse::GroupedInputMappings::GroupedInputs,name
 24361,Input,Eclipse::GroupedInputMappings::GroupedInputs,name
 24362,Input,Eclipse::GroupedInputMappings::GroupedInputs,name
@@ -32294,7 +32294,7 @@ id,subsystem,class,how
 32529,ThirdParty:STL,std::vector<unsigned char>,name
 32530,Scripting,ScriptArray,name
 32531,Scripting,ScriptArray,name
-32532,ThirdParty:STL,std::vector<unsigned char>,name
+32532,Core,ECBase::ECDynArray<unsigned char>,name
 32533,ThirdParty:STL,std::vector<unsigned char>,name
 32534,Scripting,ScriptArray,name
 32535,Scripting,ScriptArray,name
@@ -32811,7 +32811,7 @@ id,subsystem,class,how
 33046,ThirdParty:STL,std::vector<?>,name
 33047,ThirdParty:STL,std::vector<?>,name
 33048,AI,Pathfinding::PathFollower,name
-33049,ThirdParty:STL,std::vector<?>,name
+33049,Core,ECBase::ECDynArray<?>,name
 33050,Core,ECBase::ECDynArray<?>,name
 33051,ThirdParty:STL,std::vector<?>,name
 33052,AI,Pathfinding::PathBase,name
@@ -33153,7 +33153,7 @@ id,subsystem,class,how
 33391,Rendering,GraphicsStructures::Array<Vector3f>,name
 33392,Game,CDataArrays,name
 33393,Core,ECBase::ECDynArray<Math::Vector4f>,name
-33394,Core,ECBase::ECDynArray<Math::Vector4f>,name
+33394,Rendering,GraphicsStructures::Array<?>,name
 33395,Rendering,GraphicsStructures::Array<Math::PointUA4f>,name
 33396,Core,ECBase::ECDynArray<Math::Vector4f>,name
 33397,Rendering,GraphicsStructures::Array<Math::PointUA4f>,name
@@ -33586,7 +33586,7 @@ id,subsystem,class,how
 33828,ThirdParty:STL,std::vector<Multithreading::SynchSafePointer<?>>,name
 33829,ThirdParty:STL,std::vector<Multithreading::SynchSafePointer<?>>,name
 33830,ThirdParty:STL,std::vector<Multithreading::SynchSafePointer<?>>,name
-33831,ThirdParty:STL,std::vector<Multithreading::SynchSafePointer<?>>,name
+33831,Core,ECBase::ECDynArray<Multithreading::SynchSafePointer<?>>,name
 33832,Animation,AnimModelLod::Entry,name
 33833,Animation,AnimModelLod::Entry,name
 33834,Animation,AnimModelLod,name
@@ -33808,9 +33808,9 @@ id,subsystem,class,how
 34050,ThirdParty:STL,"std::num_get<wchar_t,std::istreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>",owner
 34051,ThirdParty:STL,"std::num_get<wchar_t,std::istreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>",owner
 34052,ThirdParty:STL,"std::num_get<wchar_t,std::istreambuf_iterator<wchar_t,std::char_traits<wchar_t>>>",owner
-34053,ThirdParty:STL,,owner
-34054,ThirdParty:STL,,owner
-34055,ThirdParty:STL,,owner
+34053,Compiler:EHFunclets,,range
+34054,Compiler:EHFunclets,,range
+34055,Compiler:EHFunclets,,range
 34056,ThirdParty:STL,"std::basic_iostream<wchar_t,std::char_traits<wchar_t>>",owner
 34057,ThirdParty:STL,"std::basic_iostream<wchar_t,std::char_traits<wchar_t>>",owner
 34058,ThirdParty:STL,"std::basic_iostream<wchar_t,std::char_traits<wchar_t>>",owner
@@ -34352,8 +34352,8 @@ id,subsystem,class,how
 34594,ThirdParty:STL,std::vector<General::SafePointer<Renderer::ObjectNodeLightReference>>,owner
 34595,ThirdParty:STL,std::vector<General::SafePointer<Renderer::ObjectNodeLightReference>>,owner
 34596,ThirdParty:STL,std::vector<General::SafePointer<Renderer::ObjectNodeLightReference>>,owner
-34597,ThirdParty:STL,std::vector<General::SafePointer<Renderer::ObjectNodeLightReference>>,owner
-34598,ThirdParty:STL,std::vector<General::SafePointer<Renderer::ObjectNodeLightReference>>,owner
+34597,Core,ECBase::ECDynArray<General::SafePointer<Renderer::ObjectNodeLightReference>>,owner
+34598,Core,ECBase::ECDynArray<General::SafePointer<Renderer::ObjectNodeLightReference>>,owner
 34599,Rendering,Renderer::LightList,owner
 34600,Rendering,Renderer::LightList,owner
 34601,Rendering,Renderer::LightList,owner
@@ -34994,8 +34994,8 @@ id,subsystem,class,how
 35236,ThirdParty:STL,std::vector<PrereqItem>,owner
 35237,ThirdParty:STL,std::vector<PRCItem>,owner
 35238,ThirdParty:STL,std::vector<PRCItem>,owner
-35239,ThirdParty:STL,std::vector<OnlineFeatures::Achievement>,owner
-35240,ThirdParty:STL,std::vector<OnlineFeatures::Achievement>,owner
+35239,Core,ECBase::ECDynArray<OnlineFeatures::Achievement>,owner
+35240,Core,ECBase::ECDynArray<OnlineFeatures::Achievement>,owner
 35241,ThirdParty:Fesl,Fesl::FeslDateTime,owner
 35242,ThirdParty:Fesl,Fesl::FeslDateTime,owner
 35243,ThirdParty:Fesl,Fesl::FeslDateTime,owner
@@ -35441,10 +35441,10 @@ id,subsystem,class,how
 35683,ThirdParty:STL,"std::map<std::wstring,std::wstring>",owner
 35684,ThirdParty:STL,"std::map<std::wstring,std::wstring>",owner
 35685,ThirdParty:STL,"std::map<std::wstring,std::wstring>",owner
-35686,ThirdParty:STL,std::vector<LockerUploadRequest>,owner
-35687,ThirdParty:STL,std::vector<LockerUploadRequest>,owner
-35688,ThirdParty:STL,std::vector<LockerDownloadRequest>,owner
-35689,ThirdParty:STL,std::vector<LockerDownloadRequest>,owner
+35686,Core,ECBase::ECDynArray<LockerUploadRequest>,owner
+35687,Core,ECBase::ECDynArray<LockerUploadRequest>,owner
+35688,Core,ECBase::ECDynArray<LockerDownloadRequest>,owner
+35689,Core,ECBase::ECDynArray<LockerDownloadRequest>,owner
 35690,Online,LockerManager,owner
 35691,Online,LockerManager,owner
 35692,Online,LockerManager,owner
@@ -36818,8 +36818,8 @@ id,subsystem,class,how
 37060,ThirdParty:STL,std::vector<Resource>,owner
 37061,ThirdParty:STL,std::vector<Resource>,owner
 37062,ThirdParty:STL,std::vector<Resource>,owner
-37063,ThirdParty:STL,std::vector<Resource>,owner
-37064,ThirdParty:STL,std::vector<Resource>,owner
+37063,Core,ECBase::ECDynArray<Resource>,owner
+37064,Core,ECBase::ECDynArray<Resource>,owner
 37065,Resources,ECResMan::ErfSource,owner
 37066,Resources,ECResMan::ErfSource,owner
 37067,Resources,ECResMan::ErfSource,owner
@@ -36935,8 +36935,8 @@ id,subsystem,class,how
 37177,ThirdParty:STL,std::vector<Gff4::Template>,owner
 37178,ThirdParty:STL,std::vector<Gff4::Template>,owner
 37179,ThirdParty:STL,std::vector<Gff4::Template>,owner
-37180,ThirdParty:STL,std::vector<Gff4::Template>,owner
-37181,ThirdParty:STL,std::vector<Gff4::Template>,owner
+37180,Core,ECBase::ECDynArray<Gff4::Template>,owner
+37181,Core,ECBase::ECDynArray<Gff4::Template>,owner
 37182,ThirdParty:STL,std::vector<Gff4::Template>,owner
 37183,ThirdParty:STL,std::vector<Gff4::Template>,owner
 37184,Resources,Gff4::File,owner
@@ -37082,8 +37082,8 @@ id,subsystem,class,how
 37324,Core,Multithreading::Thread,owner
 37325,Core,Multithreading::Thread,owner
 37326,Core,Multithreading::Thread,owner
-37327,ThirdParty:STL,std::vector<ECBase::ECString>,owner
-37328,ThirdParty:STL,std::vector<ECBase::ECString>,owner
+37327,Core,ECBase::ECDynArray<ECBase::ECString>,owner
+37328,Core,ECBase::ECDynArray<ECBase::ECString>,owner
 37329,Resources,ECResMan::ResourceSource,owner
 37330,Resources,ECResMan::ResourceSource,owner
 37331,Resources,ECResMan::ResourceSource,owner
@@ -37133,8 +37133,8 @@ id,subsystem,class,how
 37375,Resources,M2DA,owner
 37376,Resources,M2DA,owner
 37377,Resources,M2DA,owner
-37378,ThirdParty:STL,std::vector<Gff4::StructReader>,owner
-37379,ThirdParty:STL,std::vector<Gff4::StructReader>,owner
+37378,Core,ECBase::ECDynArray<Gff4::StructReader>,owner
+37379,Core,ECBase::ECDynArray<Gff4::StructReader>,owner
 37380,Resources,M2DA,owner
 37381,Resources,M2DA,owner
 37382,Resources,M2DA,owner
@@ -37782,8 +37782,8 @@ id,subsystem,class,how
 38024,ThirdParty:STL,std::vector<std::wstring>,owner
 38025,ThirdParty:STL,std::vector<ECBase::ECString>,owner
 38026,ThirdParty:STL,std::vector<ECBase::ECString>,owner
-38027,ThirdParty:STL,std::vector<std::wstring>,owner
-38028,ThirdParty:STL,std::vector<std::wstring>,owner
+38027,Core,ECBase::ECDynArray<std::wstring>,owner
+38028,Core,ECBase::ECDynArray<std::wstring>,owner
 38029,Rendering,Graphics::MaterialStateBuilderXML2,owner
 38030,Rendering,Graphics::MaterialStateBuilderXML2,owner
 38031,Rendering,Graphics::MaterialStateBuilderXML2,owner
@@ -38513,8 +38513,8 @@ id,subsystem,class,how
 38755,ThirdParty:STL,std::vector<GuiMovieEntry>,owner
 38756,ThirdParty:STL,std::vector<?>,owner
 38757,ThirdParty:STL,std::vector<?>,owner
-38758,ThirdParty:STL,std::vector<?>,owner
-38759,ThirdParty:STL,std::vector<?>,owner
+38758,Core,ECBase::ECDynArray<?>,owner
+38759,Core,ECBase::ECDynArray<?>,owner
 38760,Rendering,Eclipse::IGraphicsInternal,owner
 38761,Rendering,Eclipse::IGraphicsInternal,owner
 38762,Rendering,Eclipse::IGraphicsInternal,owner
@@ -38919,8 +38919,8 @@ id,subsystem,class,how
 39161,Rendering,GraphicsStructures::Object,owner
 39162,Rendering,GraphicsStructures::Object,owner
 39163,Rendering,GraphicsStructures::Object,owner
-39164,ThirdParty:STL,std::vector<Elem8>,owner
-39165,ThirdParty:STL,std::vector<Elem8>,owner
+39164,Core,ECBase::ECDynArray<Elem8>,owner
+39165,Core,ECBase::ECDynArray<Elem8>,owner
 39166,Core,ECBase::ECDynArray<GraphicsStructures::ExportValue>,owner
 39167,Core,ECBase::ECDynArray<GraphicsStructures::ExportValue>,owner
 39168,Core,ECBase::ECDynArray<GraphicsStructures::Object::ExportCopy>,owner
@@ -39565,8 +39565,8 @@ id,subsystem,class,how
 39807,Rendering,GraphicsStructures::GraphicsStructuresManager,owner
 39808,ThirdParty:STL,std::vector<MeshLightmapRecord>,owner
 39809,ThirdParty:STL,std::vector<MeshLightmapRecord>,owner
-39810,ThirdParty:STL,std::vector<MeshLightmapRecord>,owner
-39811,ThirdParty:STL,std::vector<MeshLightmapRecord>,owner
+39810,Core,ECBase::ECDynArray<MeshLightmapRecord>,owner
+39811,Core,ECBase::ECDynArray<MeshLightmapRecord>,owner
 39812,Resources,ECResMan::ReadRequestTask,owner
 39813,Resources,ECResMan::ReadRequestTask,owner
 39814,Rendering,GraphicsStructures,owner
@@ -39584,8 +39584,8 @@ id,subsystem,class,how
 39826,ThirdParty:STL,"std::basic_ofstream<wchar_t,std::char_traits<wchar_t>>",owner
 39827,ThirdParty:STL,"std::basic_ofstream<wchar_t,std::char_traits<wchar_t>>",owner
 39828,ThirdParty:STL,"std::basic_ofstream<wchar_t,std::char_traits<wchar_t>>",owner
-39829,ThirdParty:STL,std::vector<?>,owner
-39830,ThirdParty:STL,std::vector<?>,owner
+39829,Core,ECBase::ECDynArray<?>,owner
+39830,Core,ECBase::ECDynArray<?>,owner
 39831,Rendering,GraphicsStructures::ObjectParams,owner
 39832,Rendering,GraphicsStructures::ObjectParams,owner
 39833,Rendering,GraphicsStructures::ObjectParams,owner
@@ -39961,8 +39961,8 @@ id,subsystem,class,how
 40203,ThirdParty:STL,std::vector<GraphicsStructures::ClothAttachment>,owner
 40204,ThirdParty:STL,std::vector<OnlineRec24>,owner
 40205,ThirdParty:STL,std::vector<OnlineRec24>,owner
-40206,ThirdParty:STL,std::vector<GraphicsStructures::ClothAttachment>,owner
-40207,ThirdParty:STL,std::vector<GraphicsStructures::ClothAttachment>,owner
+40206,Core,ECBase::ECDynArray<GraphicsStructures::ClothAttachment>,owner
+40207,Core,ECBase::ECDynArray<GraphicsStructures::ClothAttachment>,owner
 40208,Rendering,GraphicsStructures::SpawnVolumeMesh,owner
 40209,Rendering,GraphicsStructures::SpawnVolumeMesh,owner
 40210,Rendering,GraphicsStructures::SpawnVolumeMesh,owner
@@ -40781,10 +40781,10 @@ id,subsystem,class,how
 41023,Audio,MusicController,owner
 41024,ThirdParty:STL,"std::vector<std::pair<std::wstring,std::wstring>>",owner
 41025,ThirdParty:STL,"std::vector<std::pair<std::wstring,std::wstring>>",owner
-41026,ThirdParty:STL,WStringMap<void*>,owner
-41027,ThirdParty:STL,WStringMap<void*>,owner
-41028,ThirdParty:STL,"std::vector<std::pair<std::wstring,std::wstring>>",owner
-41029,ThirdParty:STL,"std::vector<std::pair<std::wstring,std::wstring>>",owner
+41026,Compiler:EHFunclets,,range
+41027,Compiler:EHFunclets,,range
+41028,Core,"ECBase::ECDynArray<std::pair<std::wstring,std::wstring>>",owner
+41029,Core,"ECBase::ECDynArray<std::pair<std::wstring,std::wstring>>",owner
 41030,Audio,SoundEmitter,owner
 41031,Audio,SoundEmitter,owner
 41032,Audio,SoundProjectMap,owner
@@ -41134,8 +41134,8 @@ id,subsystem,class,how
 41376,Data,SmartData::TokenStringObserver,owner
 41377,Data,SmartData::TokenStringNotifier,owner
 41378,Data,SmartData::TokenStringNotifier,owner
-41379,ThirdParty:STL,std::vector<SmartData::TokenPath>,owner
-41380,ThirdParty:STL,std::vector<SmartData::TokenPath>,owner
+41379,Core,ECBase::ECDynArray<SmartData::TokenPath>,owner
+41380,Core,ECBase::ECDynArray<SmartData::TokenPath>,owner
 41381,Data,SmartData::TokenStringObserver,owner
 41382,Data,SmartData::TokenStringObserver,owner
 41383,Data,SmartData::TokenStringObserver,owner
@@ -41281,8 +41281,8 @@ id,subsystem,class,how
 41523,World,IAreaLayout,owner
 41524,World,IAreaLayout,owner
 41525,World,IAreaLayout,owner
-41526,ThirdParty:STL,std::vector<Math::CollisionOutputParameter>,owner
-41527,ThirdParty:STL,std::vector<Math::CollisionOutputParameter>,owner
+41526,Core,ECBase::ECDynArray<Math::CollisionOutputParameter>,owner
+41527,Core,ECBase::ECDynArray<Math::CollisionOutputParameter>,owner
 41528,World,IAreaLayout,owner
 41529,World,IAreaLayout,owner
 41530,World,EC,owner
@@ -41429,8 +41429,8 @@ id,subsystem,class,how
 41671,Data,SmartData::IndexedPointerMemberLookup<ECBase::ECDynArray<ModuleInfo*>>,owner
 41672,ThirdParty:STL,"std::vector<std::pair<std::wstring,std::wstring>>",owner
 41673,ThirdParty:STL,"std::vector<std::pair<std::wstring,std::wstring>>",owner
-41674,ThirdParty:STL,"std::vector<std::pair<std::wstring,std::wstring>>",owner
-41675,ThirdParty:STL,"std::vector<std::pair<std::wstring,std::wstring>>",owner
+41674,Core,"ECBase::ECDynArray<std::pair<std::wstring,std::wstring>>",owner
+41675,Core,"ECBase::ECDynArray<std::pair<std::wstring,std::wstring>>",owner
 41676,App,CClientExoApp,owner
 41677,App,CClientExoApp,owner
 41678,App,CClientExoApp,owner
@@ -42014,8 +42014,8 @@ id,subsystem,class,how
 42256,App,CClientOptions,owner
 42257,ThirdParty:STL,std::vector<std::vector<std::wstring>>,owner
 42258,ThirdParty:STL,std::vector<std::vector<std::wstring>>,owner
-42259,ThirdParty:STL,std::vector<std::vector<std::wstring>>,owner
-42260,ThirdParty:STL,std::vector<std::vector<std::wstring>>,owner
+42259,Core,ECBase::ECDynArray<std::vector<std::wstring>>,owner
+42260,Core,ECBase::ECDynArray<std::vector<std::wstring>>,owner
 42261,App,CClientOptions,owner
 42262,App,CClientOptions,owner
 42263,App,CClientOptions,owner
@@ -42742,12 +42742,12 @@ id,subsystem,class,how
 42984,Resources,AddInsManager,owner
 42985,Resources,AddInsManager,owner
 42986,Resources,AddInsManager,owner
-42987,ThirdParty:STL,std::vector<AddInRecord>,owner
-42988,ThirdParty:STL,std::vector<AddInRecord>,owner
+42987,Core,ECBase::ECDynArray<AddInRecord>,owner
+42988,Core,ECBase::ECDynArray<AddInRecord>,owner
 42989,Resources,AddInsManager,owner
 42990,Resources,AddInsManager,owner
-42991,ThirdParty:STL,std::vector<AddInXmlEntry>,owner
-42992,ThirdParty:STL,std::vector<AddInXmlEntry>,owner
+42991,Core,ECBase::ECDynArray<AddInXmlEntry>,owner
+42992,Core,ECBase::ECDynArray<AddInXmlEntry>,owner
 42993,Resources,AddInsManager,owner
 42994,Resources,AddInsManager,owner
 42995,Resources,AddInsManager,owner
@@ -43106,8 +43106,8 @@ id,subsystem,class,how
 43348,World,CCModule,owner
 43349,World,CCModule,owner
 43350,World,CCModule,owner
-43351,ThirdParty:STL,std::vector<CCModule::AreaListEntry>,owner
-43352,ThirdParty:STL,std::vector<CCModule::AreaListEntry>,owner
+43351,Core,ECBase::ECDynArray<CCModule::AreaListEntry>,owner
+43352,Core,ECBase::ECDynArray<CCModule::AreaListEntry>,owner
 43353,World,CCModule,owner
 43354,World,CCModule,owner
 43355,World,CCModule,owner
@@ -45527,8 +45527,8 @@ id,subsystem,class,how
 45769,World,CCArea,owner
 45770,ThirdParty:STL,"std::map<std::wstring,unsigned int>",owner
 45771,ThirdParty:STL,"std::map<std::wstring,unsigned int>",owner
-45772,ThirdParty:STL,std::vector<CCArea::StageEntry>,owner
-45773,ThirdParty:STL,std::vector<CCArea::StageEntry>,owner
+45772,Core,ECBase::ECDynArray<CCArea::StageEntry>,owner
+45773,Core,ECBase::ECDynArray<CCArea::StageEntry>,owner
 45774,World,CCArea,owner
 45775,World,CCArea,owner
 45776,World,CCArea,owner
@@ -45577,8 +45577,8 @@ id,subsystem,class,how
 45819,World,CCArea,owner
 45820,World,CCArea,owner
 45821,World,CCArea,owner
-45822,ThirdParty:STL,WStringMap<void*>,owner
-45823,ThirdParty:STL,WStringMap<void*>,owner
+45822,Compiler:EHFunclets,,range
+45823,Compiler:EHFunclets,,range
 45824,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",owner
 45825,ThirdParty:STL,"std::map<unsigned long long,std::vector<unsigned int>>",owner
 45826,World,CCArea,owner
@@ -45688,8 +45688,8 @@ id,subsystem,class,how
 45930,ThirdParty:STL,std::list<?>,owner
 45931,ThirdParty:STL,std::set<unsigned int>,owner
 45932,ThirdParty:STL,"stdext::hash_map<unk_key,?>",owner
-45933,ThirdParty:STL,std::vector<unsigned int>,owner
-45934,ThirdParty:STL,std::vector<unsigned int>,owner
+45933,Core,ECBase::ECDynArray<unsigned int>,owner
+45934,Core,ECBase::ECDynArray<unsigned int>,owner
 45935,ThirdParty:STL,std::vector<CCArea::StageEntry>,owner
 45936,ThirdParty:STL,std::vector<CCArea::StageEntry>,owner
 45937,ThirdParty:STL,"Core::IndexedList<std::pair<unsigned int,std::wstring>>",owner
@@ -47118,8 +47118,8 @@ id,subsystem,class,how
 47360,ThirdParty:STL,std::vector<SaveLoadProxy::SaveEntry>,owner
 47361,ThirdParty:STL,std::vector<SaveLoadProxy::SaveEntry>,owner
 47362,ThirdParty:STL,std::vector<SaveLoadProxy::SaveEntry>,owner
-47363,ThirdParty:STL,std::vector<?>,owner
-47364,ThirdParty:STL,std::vector<?>,owner
+47363,Core,ECBase::ECDynArray<?>,owner
+47364,Core,ECBase::ECDynArray<?>,owner
 47365,Save,SaveLoadProxy,owner
 47366,Save,SaveLoadProxy,owner
 47367,Save,SaveLoadProxy,owner
@@ -48795,8 +48795,8 @@ id,subsystem,class,how
 49037,Scripting,ScriptVariableTable,owner
 49038,Scripting,ScriptVariableTable,owner
 49039,ThirdParty:STL,std::vector<?>,owner
-49040,ThirdParty:STL,std::vector<ScriptVariable>,owner
-49041,ThirdParty:STL,std::vector<ScriptVariable>,owner
+49040,Core,ECBase::ECDynArray<ScriptVariable>,owner
+49041,Core,ECBase::ECDynArray<ScriptVariable>,owner
 49042,Game,ScriptVarTable,owner
 49043,Game,ScriptVarTable,owner
 49044,Game,ScriptVarTable,owner
@@ -50229,8 +50229,8 @@ id,subsystem,class,how
 50471,ThirdParty:STL,std::vector<?>,owner
 50472,ThirdParty:STL,std::vector<GUICharGen::SliderEntry>,owner
 50473,ThirdParty:STL,std::vector<GUICharGen::SliderEntry>,owner
-50474,ThirdParty:STL,std::vector<GUI::GUIPaperdoll::SliderEntry>,owner
-50475,ThirdParty:STL,std::vector<GUI::GUIPaperdoll::SliderEntry>,owner
+50474,Core,ECBase::ECDynArray<GUI::GUIPaperdoll::SliderEntry>,owner
+50475,Core,ECBase::ECDynArray<GUI::GUIPaperdoll::SliderEntry>,owner
 50476,GUI,GUI::GUICharGen,owner
 50477,GUI,GUI::GUICharGen,owner
 50478,GUI,GUI::GUICharGen,owner
@@ -52099,8 +52099,8 @@ id,subsystem,class,how
 52341,ThirdParty:STL,,owner
 52342,ThirdParty:STL,std::vector<EquipmentSet>,owner
 52343,ThirdParty:STL,std::vector<EquipmentSet>,owner
-52344,ThirdParty:STL,std::vector<EquipmentSet>,owner
-52345,ThirdParty:STL,std::vector<EquipmentSet>,owner
+52344,Core,ECBase::ECDynArray<EquipmentSet>,owner
+52345,Core,ECBase::ECDynArray<EquipmentSet>,owner
 52346,Game,Equipment,owner
 52347,Game,Equipment,owner
 52348,Game,Equipment,owner
@@ -52490,14 +52490,14 @@ id,subsystem,class,how
 52732,GUI,GUI::GUIPaperdoll::CharData,owner
 52733,GUI,GUI::GUIPaperdoll::CharData,owner
 52734,GUI,GUI::GUIPaperdoll::CharData,owner
-52735,ThirdParty:STL,std::vector<GUI::HeadPreset::MaterialValue>,owner
-52736,ThirdParty:STL,std::vector<GUI::HeadPreset::MaterialValue>,owner
-52737,ThirdParty:STL,std::vector<GUI::HeadPreset::MaterialVector>,owner
-52738,ThirdParty:STL,std::vector<GUI::HeadPreset::MaterialVector>,owner
-52739,ThirdParty:STL,std::vector<GUI::HeadPreset::Texture>,owner
-52740,ThirdParty:STL,std::vector<GUI::HeadPreset::Texture>,owner
-52741,ThirdParty:STL,"std::vector<std::pair<std::wstring,int>>",owner
-52742,ThirdParty:STL,"std::vector<std::pair<std::wstring,int>>",owner
+52735,Core,ECBase::ECDynArray<GUI::HeadPreset::MaterialValue>,owner
+52736,Core,ECBase::ECDynArray<GUI::HeadPreset::MaterialValue>,owner
+52737,Core,ECBase::ECDynArray<GUI::HeadPreset::MaterialVector>,owner
+52738,Core,ECBase::ECDynArray<GUI::HeadPreset::MaterialVector>,owner
+52739,Core,ECBase::ECDynArray<GUI::HeadPreset::Texture>,owner
+52740,Core,ECBase::ECDynArray<GUI::HeadPreset::Texture>,owner
+52741,Core,"ECBase::ECDynArray<std::pair<std::wstring,int>>",owner
+52742,Core,"ECBase::ECDynArray<std::pair<std::wstring,int>>",owner
 52743,GUI,GUI::GUIPaperdoll::CharData,owner
 52744,GUI,GUI::GUIPaperdoll::CharData,owner
 52745,GUI,GUI::GUIPaperdoll::CharData,owner
@@ -52721,8 +52721,8 @@ id,subsystem,class,how
 52963,GUI,GUI::GUIPaperdoll,owner
 52964,GUI,GUI::GUIPaperdoll,owner
 52965,GUI,GUI::GUIPaperdoll,owner
-52966,ThirdParty:STL,std::vector<GUI::HeadPreset::ModelWeight>,owner
-52967,ThirdParty:STL,std::vector<GUI::HeadPreset::ModelWeight>,owner
+52966,Core,ECBase::ECDynArray<GUI::HeadPreset::ModelWeight>,owner
+52967,Core,ECBase::ECDynArray<GUI::HeadPreset::ModelWeight>,owner
 52968,GUI,GUI::HeadPreset,owner
 52969,GUI,GUI::HeadPreset,owner
 52970,GUI,GUI::HeadPreset,owner
@@ -52894,8 +52894,8 @@ id,subsystem,class,how
 53136,ThirdParty:STL,std::vector<MapTrail>,owner
 53137,ThirdParty:STL,std::vector<MapTrail>,owner
 53138,ThirdParty:STL,std::vector<MapTrail>,owner
-53139,ThirdParty:STL,std::vector<MapTrail>,owner
-53140,ThirdParty:STL,std::vector<MapTrail>,owner
+53139,Core,ECBase::ECDynArray<MapTrail>,owner
+53140,Core,ECBase::ECDynArray<MapTrail>,owner
 53141,ThirdParty:STL,std::vector<MapTrail>,owner
 53142,ThirdParty:STL,std::vector<MapTrail>,owner
 53143,World,MapObject,owner
@@ -53009,8 +53009,8 @@ id,subsystem,class,how
 53251,Conversation,EC::Cutscene::Actor,owner
 53252,Conversation,EC::Cutscene::Actor,owner
 53253,Conversation,EC::Cutscene::Actor,owner
-53254,ThirdParty:STL,std::vector<EC::Cutscene::Actor::ClipRecord>,owner
-53255,ThirdParty:STL,std::vector<EC::Cutscene::Actor::ClipRecord>,owner
+53254,Core,ECBase::ECDynArray<EC::Cutscene::Actor::ClipRecord>,owner
+53255,Core,ECBase::ECDynArray<EC::Cutscene::Actor::ClipRecord>,owner
 53256,ThirdParty:STL,std::list<Elem>,owner
 53257,ThirdParty:STL,"std::map<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>",owner
 53258,ThirdParty:STL,"std::map<std::wstring,EC::Cutscene::Actor::ActionFrameBufferEffect::ParameterValue>",owner
@@ -53292,8 +53292,8 @@ id,subsystem,class,how
 53534,Conversation,EC::Cutscene::Actor,owner
 53535,Conversation,EC::Cutscene::Actor,owner
 53536,Conversation,EC::Cutscene::Actor,owner
-53537,ThirdParty:STL,std::vector<CutscenePlayer::BindRecord>,owner
-53538,ThirdParty:STL,std::vector<CutscenePlayer::BindRecord>,owner
+53537,Core,ECBase::ECDynArray<CutscenePlayer::BindRecord>,owner
+53538,Core,ECBase::ECDynArray<CutscenePlayer::BindRecord>,owner
 53539,Conversation,CutscenePlayer,owner
 53540,Conversation,CutscenePlayer,owner
 53541,Conversation,CutscenePlayer,owner
@@ -53631,8 +53631,8 @@ id,subsystem,class,how
 53873,ThirdParty:STL,,owner
 53874,ThirdParty:STL,std::vector<MapLocationConnection>,owner
 53875,ThirdParty:STL,std::vector<MapLocationConnection>,owner
-53876,ThirdParty:STL,std::vector<MapLocationConnection>,owner
-53877,ThirdParty:STL,std::vector<MapLocationConnection>,owner
+53876,Core,ECBase::ECDynArray<MapLocationConnection>,owner
+53877,Core,ECBase::ECDynArray<MapLocationConnection>,owner
 53878,World,MapLocation,owner
 53879,World,MapLocation,owner
 53880,World,MapLocation,owner
@@ -53695,8 +53695,8 @@ id,subsystem,class,how
 53937,ThirdParty:STL,std::vector<?>,owner
 53938,ThirdParty:STL,std::vector<FilteredGroupedItemView::Entry>,owner
 53939,ThirdParty:STL,std::vector<FilteredGroupedItemView::Entry>,owner
-53940,ThirdParty:STL,std::vector<FilteredGroupedItemView::Entry>,owner
-53941,ThirdParty:STL,std::vector<FilteredGroupedItemView::Entry>,owner
+53940,Core,ECBase::ECDynArray<FilteredGroupedItemView::Entry>,owner
+53941,Core,ECBase::ECDynArray<FilteredGroupedItemView::Entry>,owner
 53942,ThirdParty:STL,std::vector<FilteredGroupedItemView::Entry>,owner
 53943,ThirdParty:STL,std::vector<FilteredGroupedItemView::Entry>,owner
 53944,GUI,FilteredGroupedItemView,owner
@@ -54508,14 +54508,14 @@ id,subsystem,class,how
 54750,Physics,Physics::PhysicsScene,owner
 54751,Physics,Physics::PhysicsScene,owner
 54752,Physics,Physics::PhysicsScene,owner
-54753,ThirdParty:STL,std::vector<NxGroupsMask>,owner
-54754,ThirdParty:STL,std::vector<NxGroupsMask>,owner
-54755,ThirdParty:STL,std::vector<?>,owner
-54756,ThirdParty:STL,std::vector<?>,owner
-54757,ThirdParty:STL,std::vector<Physics::ActorUserRecord>,owner
-54758,ThirdParty:STL,std::vector<Physics::ActorUserRecord>,owner
-54759,ThirdParty:STL,std::vector<Physics::ShapeUserRecord>,owner
-54760,ThirdParty:STL,std::vector<Physics::ShapeUserRecord>,owner
+54753,Core,ECBase::ECDynArray<NxGroupsMask>,owner
+54754,Core,ECBase::ECDynArray<NxGroupsMask>,owner
+54755,Core,ECBase::ECDynArray<?>,owner
+54756,Core,ECBase::ECDynArray<?>,owner
+54757,Core,ECBase::ECDynArray<Physics::ActorUserRecord>,owner
+54758,Core,ECBase::ECDynArray<Physics::ActorUserRecord>,owner
+54759,Core,ECBase::ECDynArray<Physics::ShapeUserRecord>,owner
+54760,Core,ECBase::ECDynArray<Physics::ShapeUserRecord>,owner
 54761,Physics,Physics::RaycastReportAll,owner
 54762,Physics,Physics::RaycastReportAll,owner
 54763,Physics,Physics::PhysicsScene,owner
@@ -55166,8 +55166,8 @@ id,subsystem,class,how
 55408,ThirdParty:STL,std::vector<D3DDriver::ShaderConstant>,owner
 55409,ThirdParty:STL,std,owner
 55410,ThirdParty:STL,std,owner
-55411,ThirdParty:STL,std::vector<D3DDriver::ShaderConstant>,owner
-55412,ThirdParty:STL,std::vector<D3DDriver::ShaderConstant>,owner
+55411,Core,ECBase::ECDynArray<D3DDriver::ShaderConstant>,owner
+55412,Core,ECBase::ECDynArray<D3DDriver::ShaderConstant>,owner
 55413,ThirdParty:STL,std,owner
 55414,ThirdParty:STL,std,owner
 55415,Rendering,D3DDriver::D3DPixelShader,owner
@@ -55182,8 +55182,8 @@ id,subsystem,class,how
 55424,ThirdParty:STL,,owner
 55425,ThirdParty:STL,std::vector<D3DDriver::ShaderParameter>,owner
 55426,ThirdParty:STL,std::vector<D3DDriver::ShaderParameter>,owner
-55427,ThirdParty:STL,std::vector<D3DDriver::ShaderParameter>,owner
-55428,ThirdParty:STL,std::vector<D3DDriver::ShaderParameter>,owner
+55427,Core,ECBase::ECDynArray<D3DDriver::ShaderParameter>,owner
+55428,Core,ECBase::ECDynArray<D3DDriver::ShaderParameter>,owner
 55429,Rendering,D3DDriver::D3DPixelShader,owner
 55430,Rendering,D3DDriver::D3DPixelShader,owner
 55431,Rendering,D3DDriver::D3DPixelShader,owner
@@ -55318,8 +55318,8 @@ id,subsystem,class,how
 55560,ThirdParty:STL,std::vector<?>,owner
 55561,ThirdParty:STL,std::vector<InputMapper::Entry>,owner
 55562,ThirdParty:STL,std::vector<InputMapper::Entry>,owner
-55563,ThirdParty:STL,std::vector<ECInput::Event>,owner
-55564,ThirdParty:STL,std::vector<ECInput::Event>,owner
+55563,Core,ECBase::ECDynArray<ECInput::Event>,owner
+55564,Core,ECBase::ECDynArray<ECInput::Event>,owner
 55565,Online,OnlineFeatures,owner
 55566,Online,OnlineFeatures,owner
 55567,ThirdParty:STL,,owner
@@ -55817,8 +55817,8 @@ id,subsystem,class,how
 56059,Input,InputModes,owner
 56060,ThirdParty:STL,std::vector<?>,owner
 56061,ThirdParty:STL,std::vector<?>,owner
-56062,ThirdParty:STL,std::vector<Input::Binding>,owner
-56063,ThirdParty:STL,std::vector<Input::Binding>,owner
+56062,Core,ECBase::ECDynArray<Input::Binding>,owner
+56063,Core,ECBase::ECDynArray<Input::Binding>,owner
 56064,ThirdParty:STL,"stdext::hash_map<int,Input::BindingList>",owner
 56065,ThirdParty:STL,"stdext::hash_map<int,Input::BindingList>",owner
 56066,ThirdParty:STL,"std::list<std::pair<const int,Input::BindingList>>",owner
@@ -57816,8 +57816,8 @@ id,subsystem,class,how
 58058,Animation,AnimModelLod,owner
 58059,ThirdParty:STL,std::vector<?>,owner
 58060,ThirdParty:STL,std::vector<?>,owner
-58061,ThirdParty:STL,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialState>>,owner
-58062,ThirdParty:STL,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialState>>,owner
+58061,Core,ECBase::ECDynArray<Multithreading::SynchSafePointer<Graphics::MaterialState>>,owner
+58062,Core,ECBase::ECDynArray<Multithreading::SynchSafePointer<Graphics::MaterialState>>,owner
 58063,Animation,AnimModelLod::Entry,owner
 58064,Animation,AnimModelLod::Entry,owner
 58065,Animation,AnimModelLod::Entry,owner
@@ -59627,7 +59627,7 @@ id,subsystem,class,how
 103312,ThirdParty:STL,std::vector<?>,name
 103314,ThirdParty:STL,std,name
 103315,ThirdParty:STL,std::vector<Multithreading::SynchSafePointer<?>>,name
-103316,ThirdParty:STL,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialState>>,name
+103316,Core,ECBase::ECDynArray<Multithreading::SynchSafePointer<Graphics::MaterialState>>,name
 103317,ThirdParty:STL,"stdext::hash_map<std::wstring,void *>",name
 103318,ThirdParty:STL,"std::_Tree<std::wstring,RefHandle>",name
 103319,ThirdParty:STL,,string
@@ -59709,7 +59709,7 @@ id,subsystem,class,how
 103397,Data,"SmartData::Attribute<ECBase::ECDynArray<int>,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
 103399,ThirdParty:CRT,,range
 103402,ThirdParty:Scaleform,,range
-103403,ThirdParty:STL,std::vector<unsigned int>,name
+103403,Core,ECBase::ECDynArray<unsigned int>,name
 103404,ThirdParty:STL,"std::basic_ostream<wchar_t,std::char_traits<wchar_t>>",owner
 103405,ThirdParty:STL,"std::basic_ostream<wchar_t,std::char_traits<wchar_t>>",owner
 103406,ThirdParty:STL,"std::basic_ostream<wchar_t,std::char_traits<wchar_t>>",owner
@@ -59720,8 +59720,8 @@ id,subsystem,class,how
 103411,Rendering,Stub,owner
 103412,ThirdParty:STL,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialState>>,owner
 103413,ThirdParty:STL,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialState>>,owner
-103414,ThirdParty:STL,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialState>>,owner
-103415,ThirdParty:STL,std::vector<Multithreading::SynchSafePointer<Graphics::MaterialState>>,owner
+103414,Core,ECBase::ECDynArray<Multithreading::SynchSafePointer<Graphics::MaterialState>>,owner
+103415,Core,ECBase::ECDynArray<Multithreading::SynchSafePointer<Graphics::MaterialState>>,owner
 103416,Rendering,Renderer::FBTextureResource,owner
 103417,Rendering,GraphicsStructures::GraphicsStructuresManager,owner
 103418,Rendering,GraphicsStructures::GraphicsStructuresManager,owner
@@ -59741,8 +59741,8 @@ id,subsystem,class,how
 103448,Game,CCCreatureStats,owner
 103449,Game,CCCreatureStats,owner
 103456,Core,"Map<unsigned int,RefHandle>",owner
-103457,ThirdParty:STL,WStringMap<void*>,owner
-103458,ThirdParty:STL,WStringMap<void*>,owner
+103457,Compiler:EHFunclets,,range
+103458,Compiler:EHFunclets,,range
 103459,Rendering,Renderer::LightState,owner
 103460,Rendering,Renderer::LightState,owner
 103461,Rendering,Renderer::FBTextureResource,owner
