@@ -15369,7 +15369,7 @@ address,what,value,why
 0x00A4BA20,signature,"int __thiscall f(void *this, int column, int row)",0x00A4BA20-0x00A4BA6F ret 8
 0x00A4BB00,signature,"int __stdcall f(float *a, float *b, float *c)",0x00A4BB00-0x00A4BB7F ret 0xc
 0x00A4BF00,signature,"float __stdcall f(float *a, float *b)",0x00A4BF00-0x00A4C01F ret 8
-0x00A4C020,signature,"int __stdcall f(float *a, float *b, float r)",0x00A4C020-0x00A4C08F ret 0xc
+0x00A4C020,signature,"int __thiscall f(void *this, float *a, float *b, float r)","0x00A4C020-0x00A4C08F ret 0xc; this unused, but every caller loads ecx (Pathfinder::Collapse 0x00A4C35B, CutCorner 0x00A4CA1B and on) (decomp-agent, read 2026-11-24)"
 0x00A4C090,signature,"float __stdcall f(float *a, float *b)",0x00A4C090-0x00A4C13F ret 8
 0x00A4C2A0,signature,"int __thiscall f(void *this, void *path, int first, int last)","0x00A4C2A0-0x00A4C49F ret 0xc, edi = ecx"
 0x00A4C790,signature,"int __thiscall f(void *this, void *path, int first, int last)",0x00A4C790-0x00A4C89F ret 0xc
