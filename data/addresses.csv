@@ -12614,7 +12614,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12613,function,GameModeController::GameModeController(const GameModeController&),,0x00641050,0x00537020,0x00641050
 12614,function,std::vector<GameModeRequest>::vector,,0x006411a0,0x00537170,0x006411a0
 12615,function,GameModeController::InsertRequest,,0x00641220,0x0083a600,0x00641220
-12616,function,std::vector<GameModeRequest>::clear,,0x006412a0,0x005371f0,0x006412a0
+12616,function,ECBase::ECDynArray<GameModeRequest>::Clear,"__thiscall, ret 4, a bool tested at entry (0x006412CB): ECDynArray's Clear, the same steps as ECDynArray<unsigned int>::Clear (0x00634F20) with its registers allocated differently. VC8's vector::clear takes no argument (decomp-agent, read 2026-11-24)",0x006412a0,0x005371f0,0x006412a0
 12617,function,GameModeController::GameModeController,,0x00641370,0x005372c0,0x00641370
 12618,function,GameModeController::SetGameMode,"Files a request for a mode. The arguments are the mode number, the force flag and the data object. If the requested mode's slot 0x28 (IsBaseMode, 0x006414DD) answers true the request is stored in the base slot at +0x8C (0x00641666), replacing the old one, and the saving flags of the mode (+0x68) are applied; otherwise it is inserted at index 0 of the queue at +0x9C (InsertRequest 0x00641220 called at 0x006415B6) (the loop before it, 0x00641534..0x006415A7, walks the queued requests and was not read further). The request's second field is GetGameMode() at the time of the call",0x006414a0,0x005373f0,0x006414a0
 12619,function,GameModeController::HandleMessage_SetGameModeMessage,,0x006416e0,0x00537630,0x006416e0
