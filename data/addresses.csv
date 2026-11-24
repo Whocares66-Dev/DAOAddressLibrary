@@ -4540,9 +4540,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4539,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::basic_string(const wchar_t*)",,0x004c2630,0x004784b0,0x004c2630
 4540,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::substr",,0x004c2670,0x00803ba0,0x004c2670
 4541,function,"std::operator+(const wchar_t*,const std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>&)","VC8's basic_string(_Left) += _Right over the pool string: a temporary from the C string (assign 0x004C1F20), the string appended (0x004C1820), copied into the result (0x004C1270) and freed. Its callees are the pool string's by what they call (stlmatch targets), so this is its overload (decomp-agent, 2026-11-23)",0x004c26b0,0x00803be0,0x004c26b0
-4542,function,ECBase::ECString::FromLong,,0x004c2770,0x00803ca0,0x004c2770
-4543,function,ECBase::ECString::FromUnsignedLong,,0x004c2840,0x00803d70,0x004c2840
-4544,function,ECBase::ECString::FromFloat,,0x004c2910,0x00803e40,0x004c2910
+4542,function,"ECBase::ECString::ECString(long,const wchar_t*)","A converting constructor: this made an empty string first (0x004C27A1-0x004C27B3, its unwind state opened), then the number formatted into it with the format argument, or 0x00AF02C4 when that is null (read 2026-11-23; decomp-agent saw it called on raw storage)",0x004c2770,0x00803ca0,0x004c2770
+4543,function,"ECBase::ECString::ECString(unsigned long,const wchar_t*)","A converting constructor, as 0x004C2770 (ECString(long,const wchar_t*)) for an unsigned number",0x004c2840,0x00803d70,0x004c2840
+4544,function,"ECBase::ECString::ECString(float,const wchar_t*)","A converting constructor, as 0x004C2770 (ECString(long,const wchar_t*)) for a float, widened to double for the formatter, its default format 0x00AF02D4",0x004c2910,0x00803e40,0x004c2910
 4545,function,ECBase::ECString::FromDouble,,0x004c29e0,0x00803f10,0x004c29e0
 4546,function,ECBase::ECString::operator=(const ECBase::ECString&),"__thiscall, ret 4: assign(other, 0, npos) (0x004C1270), then returns this, not what assign returned. VC8's operator= returns assign's result, and its compiled bytes differ (decomp-agent, 2026-11-23: 17 against 23 bytes): ECString's own",0x004c2ab0,0x00803fe0,0x004c2ab0
 4547,function,ECBase::ECString::Assign,,0x004c2ad0,0x00804000,0x004c2ad0
