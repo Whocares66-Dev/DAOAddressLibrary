@@ -2387,7 +2387,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2386,function,Renderer::FrameBufferEffects::CreatePreallocatedResource,,0x00458850,0x00892b90,0x00458850
 2387,function,Renderer::FrameBufferEffects::SetAreaColorCurve,,0x00458990,0x00892cd0,0x00458990
 2388,function,Renderer::FrameBufferEffects::ClearAreaColorCurve,,0x00458a10,0x00892d50,0x00458a10
-2389,function,Stub::Destroy_Map_WString_0xC_Handle_0x28,,0x00458a20,0x0048a6b0,0x00458a20
+2389,function,WStringMap<Multithreading::SynchSafePointer<?>>::~WStringMap,"Releases the SynchSafePointer default at +0x28 (0x00538F30), destroys the key string at +0xC (0x004C0DB0), then the tree (0x0080F090) and its head: WStringMap'""'""'s layout with a SynchSafePointer value. MaterialObjectManager'""'""'s map at +4 is one (decomp-agent, read 2026-11-24)",0x00458a20,0x0048a6b0,0x00458a20
 2390,function,Stub::CopyConstruct_WString_Handle_0x1C,,0x00458ab0,0x007ee250,0x00458ab0
 2391,function,Renderer::FrameBufferEffects::Startup,,0x00458b10,0x00892d60,0x00458b10
 2392,function,"std::map<std::wstring,SmartHandle>::operator[]",,0x00458d60,0x004b56e0,0x00458d60
@@ -10054,7 +10054,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10053,function,EclipsePrivate::CContent_FMOD::`scalar deleting destructor',,0x005c1220,0x00729710,0x005c1220
 10054,function,EclipsePrivate::CContentBank_FMOD::Precache,,0x005c1240,0x00729730,0x005c1240
 10055,function,EclipsePrivate::CMusicThemeContent_FMOD::GetDebugText,,0x005c13a0,0x00729890,0x005c13a0
-10056,function,Core::VectorAt<?>,,0x005c1770,0x00567c60,0x005c1770
+10056,function,ECBase::ECDynArray<unsigned int>::At,"__thiscall, ret 4: the address of element [i] (4-byte elements, sar 2), or ECDynArray<unsigned int>::s_default (0x00C313C0) when i is out of range; that static names its T. Caller: UpdateAreaListSwap (decomp-agent, read 2026-11-24)",0x005c1770,0x00567c60,0x005c1770
 10057,function,EclipsePrivate::CContentRenderer_FMOD::GetReverbDebugText,,0x005c17a0,0x00729c60,0x005c17a0
 10058,function,FindReverbChannelGroupIndex,,0x005c18c0,0x00729d80,0x005c18c0
 10059,function,EclipsePrivate::CContentRenderer_FMOD::Update,,0x005c19a0,0x00729e60,0x005c19a0
@@ -15827,7 +15827,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15826,function,std::vector<CSAreaList::Entry>::push_back,,0x006fb300,0x005ecff0,0x006fb300
 15827,function,CSAreaList::PrepareSaveStructs,,0x006fb3a0,0x005ed090,0x006fb3a0
 15828,function,CSAreaList::CollectPRCScripts,,0x006fba00,0x005ed6f0,0x006fba00
-15829,function,std::vector<CSAreaList::Entry>::vector,,0x006fbd80,0x005eda70,0x006fbd80
+15829,function,ECBase::ECDynArray<CSAreaList::Entry>::ECDynArray(unsigned int),"ECDynArray'""'""'s own count constructor: zeroes +4, +8, +0xC, then for a count above 0 a default element (a ResRef, 0x00A29E50) and resize (0x006FB160); ret 4 (decomp-agent, read 2026-11-24)",0x006fbd80,0x005eda70,0x006fbd80
 15830,function,std::vector<CSAreaList::Entry>::resize,,0x006fbe10,0x005edb00,0x006fbe10
 15831,function,CSAreaList::CSAreaList,,0x006fbe50,0x005edb40,0x006fbe50
 15832,function,CSAreaList::~CSAreaList,,0x006fbee0,0x005edbd0,0x006fbee0
@@ -21863,7 +21863,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21862,function,Animation::AnimationManager::IsAdditive,,0x0080fec0,0x004b4ae0,0x0080fec0
 21863,function,Animation::AnimationManager::IsOverride,,0x0080ffa0,0x004b4bc0,0x0080ffa0
 21864,function,"std::_Tree<std::wstring,RefHandle>::~_Tree",,0x00810080,0x007ee730,0x00810080
-21865,function,"std::_Tree<std::wstring,RefHandle>::_Tree",,0x008100c0,0x004b4d40,0x008100c0
+21865,function,WStringMap<Multithreading::SynchSafePointer<?>>::WStringMap,"Builds the tree head (0x00847AD0), the key string at +0xC, the SynchSafePointer at +0x28 (0x00534A70), assigned the default passed by value (0x004F4710) and that temporary released; ret 8. MaterialObjectManager'""'""'s constructor builds its map at +4 with it (decomp-agent, read 2026-11-24)",0x008100c0,0x004b4d40,0x008100c0
 21866,function,"std::_Tree<std::wstring,RefHandle>::_Buynode",,0x00810170,0x007ee770,0x00810170
 21867,function,,,0x008101f9,0x007ee7f9,0x008101f9
 21868,function,Animation::AnimationManager::AnimationManager,,0x00810210,0x004b4df0,0x00810210
