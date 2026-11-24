@@ -5634,7 +5634,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5633,function,M2DA::GetFloatByRowId,,0x004ebdd0,0x00839e50,0x004ebdd0
 5634,function,M2DA::GetIntByRowId,,0x004ebe20,0x00839ea0,0x004ebe20
 5635,function,M2DA::GetBoolByRowId,,0x004ebe70,0x00839ef0,0x004ebe70
-5636,function,std::vector<Gff4::StructReader>::at,,0x004ebec0,0x00839f40,0x004ebec0
+5636,function,ECBase::ECDynArray<Gff4::StructReader>::At,"Returns the element's address, or ECDynArray<Gff4::StructReader>::s_default (0x00C30240) when out of range: the engine array's At. It was named std::vector<Gff4::StructReader>::at (2026-11-24)",0x004ebec0,0x00839f40,0x004ebec0
 5637,function,Gff4::StructReader::ReadWString,,0x004ebf00,0x004c1210,0x004ebf00
 5638,function,Gff4::StructReader::ReadFloat,,0x004ebf70,0x004b5c30,0x004ebf70
 5639,function,Gff4::StructReader::ReadByte,,0x004ebfc0,0x004b5c80,0x004ebfc0
@@ -11085,7 +11085,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 11084,function,CCModule::SetEventEnabled,"Enables or disables a module event: bEnable 0 adds eventId to the disabled set at +0x178, non-zero takes it out",0x00601610,0x004ef9c0,0x00601610
 11085,function,std::vector<CCModule::TagIndexEntry>::resize,,0x00601640,0x004efb30,0x00601640
 11086,function,std::vector<CCModule::TagIndexEntry>::push_back,,0x00601690,0x004efb80,0x00601690
-11087,function,std::vector<Gff4::StructReader>::push_back,,0x00601740,0x004efc30,0x00601740
+11087,function,std::vector<Gff4::ListReader>::push_back,"CCModule::ReadCifAreaLists pushes onto its +0x32C array with it (0x00604BE2, ecx = this+0x32C), whose elements it then uses as Gff4::ListReaders (GetStructElement). It was named std::vector<Gff4::StructReader>::push_back (2026-11-24)",0x00601740,0x004efc30,0x00601740
 11088,function,"std::map<int,std::wstring>::map",,0x006017d0,0x004efcc0,0x006017d0
 11089,function,,,0x0060184c,0x004efd3c,0x0060184c
 11090,function,CCModule::GetObjectsInAreaByTag,,0x00601860,0x004efd50,0x00601860
@@ -100274,7 +100274,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100273,data,ECBase::ECDynArray<unsigned int>::s_default,4-byte zero default element of ECResMan::TaskPool's free-index list (this+0x20 in Release 0x004e9cb0); also returned by std::vector<unsigned int>::operator[] (0x004e9c60).,0x00c301f4,0x00c29aa4,0x00c301f4
 100274,data,ECResMan::ReadRequestTask::s_taskPool,The static ECResMan::TaskPool of ReadRequestTask objects (0x44 bytes),0x00c301f8,0x00c29aa8,0x00c301f8
 100275,data,,,0x00c3023c,0x00c29a54,0x00c3023c
-100276,data,std::vector<Gff4::StructReader>::s_default2,"M2DA::GetStringByIndices calls Gff4::StructReader::GetTemplateView on it, and std::vector<Gff4::StructReader>::at returns it: a second copy of the named 0xc330e8.",0x00c30240,0x00c29a58,0x00c30240
+100276,data,ECBase::ECDynArray<Gff4::StructReader>::s_default,"The out-of-range element of M2DA's StructReader array (FindRow, InsertRowForId, MergePart, the Get*ByIndices), returned by At (0x004EBEC0); GetStringByIndices calls Gff4::StructReader::GetTemplateView on it. It was named std::vector<Gff4::StructReader>::s_default2 (decomp-agent, read 2026-11-24)",0x00c30240,0x00c29a58,0x00c30240
 100277,data,,,0x00c30250,0x00c29b4c,0x00c30250
 100278,data,,,0x00c30254,0x00c29b50,0x00c30254
 100279,data,,,0x00c30258,0x00c29b54,0x00c30258
@@ -100893,7 +100893,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100892,data,ModuleResourceManager::LoadModuleResources::s_guard,"LoadModuleResources tests and sets bit 0; the atexit function at 0xa93a16 clears it, as a function-local static's guard.",0x00c330dc,0x00c1bb74,0x00c330dc
 100893,data,ECBase::ECDynArray<EventListenerEntry*>::s_default,"null slot for an out-of-range index of the event listener vectors of module, area and object (entry first dword is the event id); element type name (inferred) . Real size 4",0x00c330e0,0x00c1bb78,0x00c330e0
 100894,data,ECBase::ECDynArray<Resources>::s_default,,0x00c330e4,0x00c1bb7c,0x00c330e4
-100895,data,ECBase::ECDynArray<Gff4::StructReader>::s_default,"0x10-byte out-of-range element of the module cif area lists (stride 0x10, the size of a Gff4::StructReader); element type (inferred)",0x00c330e8,0x00c1bb80,0x00c330e8
+100895,data,ECBase::ECDynArray<Gff4::ListReader>::s_default,"The out-of-range element of CCModule's +0x32C array (ReadCifAreaLists, GetAreaRowByTag): the element, or this, is the this of Gff4::ListReader::GetStructElement (0x00604C7F..0x00604C8A, 0x00600DB2..0x00600DBD), so the elements are ListReaders. It was named ECDynArray<Gff4::StructReader>::s_default, an inferred type that the StructReader array's own default (0x00C30240) contradicts (2026-11-24)",0x00c330e8,0x00c1bb80,0x00c330e8
 100896,data,ECBase::ECDynArray<CCModule::AreaRow>::s_default,"0x2c-byte out-of-range element of the module area rows (stride 0x2c, holding strings), constructed by a dynamic initializer; real size 0x2c; element type name (inferred)",0x00c330f8,0x00c1bb90,0x00c330f8
 100897,data,ECBase::ECDynArray<CCModule::TagIndexEntry>::s_default,,0x00c33128,0x00c1bbc0,0x00c33128
 100898,data,RotatePaperdollLeftMessage::GetType::s_guard,"Bit 0 guard of GetType's one-time write of RotatePaperdollLeftMessage::s_classInfo.parent; the same bit is tested by InitType, RegisterHandler_RotatePaperdollLeftMessage, which inline the same link.",0x00c331b0,0x00c1bc48,0x00c331b0
