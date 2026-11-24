@@ -3597,8 +3597,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3596,function,HttpManager::~HttpManager,,0x004908a0,0x0088be00,0x004908a0
 3597,function,std::vector<Online::HttpRecord>::push_back,,0x00490910,0x0088be70,0x00490910
 3598,function,std::vector<OnlineRec24>::push_back,,0x004909a0,0x0088bf00,0x004909a0
-3599,function,std::vector<Online::HttpRecord>::vector,,0x00490a40,0x0088bfa0,0x00490a40
-3600,function,std::vector<OnlineRec24>::vector,,0x00490ab0,0x0088c010,0x00490ab0
+3599,function,ECBase::ECDynArray<Online::HttpRecord>::ECDynArray(unsigned int),"ECDynArray's own count constructor: an empty array, then resize(n, a default Online::HttpRecord) (0x00474130, 0x00483C40); VC8's vector(n) never calls resize. HttpManager::HttpManager builds its member with it (0x00490B5C) (read 2026-11-23)",0x00490a40,0x0088bfa0,0x00490a40
+3600,function,ECBase::ECDynArray<OnlineRec24>::ECDynArray(unsigned int),"ECDynArray's own count constructor: an empty array, then resize(n, a default OnlineRec24) (0x00483D30); VC8's vector(n) never calls resize. HttpManager::HttpManager builds its member with it (0x00490B69) (read 2026-11-23)",0x00490ab0,0x0088c010,0x00490ab0
 3601,function,HttpManager::HttpManager,,0x00490b20,0x0088c080,0x00490b20
 3602,function,HttpManager::Shutdown,,0x00490c20,0x0088c180,0x00490c20
 3603,function,HttpManager::QueueRequest,,0x00490c50,0x0088c1b0,0x00490c50
@@ -5404,8 +5404,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5403,function,std::vector<CTlkTable::TlkEntry>::resize,,0x004e52e0,0x0082b000,0x004e52e0
 5404,function,std::vector<CTlkTable::TlkEntry>::operator=,,0x004e5400,0x0082b120,0x004e5400
 5405,function,std::vector<CTlkTable::TlkEntry>::push_back,,0x004e5570,0x0082b290,0x004e5570
-5406,function,std::vector<CTlkTable::TlkEntry>::vector(const std::vector<CTlkTable::TlkEntry>&),,0x004e5610,0x0082b330,0x004e5610
-5407,function,std::vector<CTlkTable::TlkEntry>::vector,,0x004e5670,0x0082b390,0x004e5670
+5406,function,ECBase::ECDynArray<CTlkTable::TlkEntry>::ECDynArray(const ECBase::ECDynArray<CTlkTable::TlkEntry>&),"ECDynArray's own copy constructor: an empty array, then vector::operator= (0x004E5400) from the other, 28 of 28 instructions as ECDynArray<ECBase::ECString>'s (0x004AC430). VC8's vector copy constructor buys and copies, never calling operator=. CTlkTable(const CTlkTable&) calls it (decomp-agent, read 2026-11-23)",0x004e5610,0x0082b330,0x004e5610
+5407,function,ECBase::ECDynArray<CTlkTable::TlkEntry>::ECDynArray(unsigned int),"ECDynArray's own count constructor: an empty array, then resize(n, a default TlkEntry) (0x004E52E0), the shape of ECDynArray<General::SafePointer<?>>'s (0x004FDFB0). VC8's vector(n) buys and fills, never calling resize. CTlkTable's constructors call it (decomp-agent, read 2026-11-23)",0x004e5670,0x0082b390,0x004e5670
 5408,function,ECBase::ECDynArray<CTlkTable::TlkEntry>::InsertAt,"The same logic as ECDynArray<void*>::InsertAt (0x006CE860): index below size, insert before it (std::vector<TlkEntry>::insert 0x004E5230); else push_back (0x004E5570); ret 8 (read 2026-11-23)",0x004e56e0,0x0082b400,0x004e56e0
 5409,function,CTlkTable::HandleMessage_RimLoadedMessage,,0x004e5770,0x0082b490,0x004e5770
 5410,function,CTlkTable::LoadFile,,0x004e5810,0x0082b530,0x004e5810
