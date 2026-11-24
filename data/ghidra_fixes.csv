@@ -18256,7 +18256,7 @@ address,what,value,why
 0x00A55EB0,signature,"void* __thiscall Graphics::IWindInstance::`scalar deleting destructor'(Graphics::IWindInstance* this, unsigned int flags)",ret 4 at 0x00A55ECC
 0x00A55ED0,signature,void __thiscall Graphics::IWindInstanceContainer::~IWindInstanceContainer(Graphics::IWindInstanceContainer* this),plain ret
 0x00A55EE0,signature,"void* __thiscall Graphics::IWindInstanceContainer::`scalar deleting destructor'(Graphics::IWindInstanceContainer* this, unsigned int flags)",ret 4 at 0x00A55EFC
-0x00A55F00,signature,Matrix44* __thiscall Matrix44::Matrix44(Matrix44* this),"mov eax,ecx at 0x00A55F02; plain ret"
+0x00A55F00,signature,Math::Matrix4x4fUA * __thiscall f(void *this),"mov eax,ecx at 0x00A55F02; plain ret; the type name is inferred (decomp-agent, 2026-11-23)"
 0x00A55F40,signature,"void __thiscall Matrix44::RotateAxis(Matrix44* this, float angleDegrees, float x, float y, float z)",ret 0x10 at 0x00A56046
 0x00A56050,signature,"Matrix44* __thiscall Matrix44::Multiply3x3(Matrix44* this, Matrix44* out, Matrix44* right)",ret 8 at 0x00A5613B; eax = out
 0x00A55E30,signature,void* __thiscall GraphicsStructures::CSpeedTreeWind::ClothParameters::ClothParameters(void* this),"plain ret at 0x00A55E95, eax=this"
@@ -18358,7 +18358,7 @@ address,what,value,why
 0x004CBD80,signature,"void __thiscall f(void *this, float *out)",ret 4 (0x004CBDC5): Quaternion::GetZAxis.
 0x004D3360,signature,"void __thiscall f(void *this, float *src)",ret 4; rep movsd of 16 dwords from the argument into ecx.
 0x004D36E0,signature,"void __thiscall f(void *this, unsigned int row, float *v)",ret 8 (0x004D3703).
-0x004D3730,signature,"void __cdecl f(float *out, float *matrix, float *v)","plain ret, arguments at [ebp+8],[ebp+0xC],[ebp+0x10], ecx unused."
+0x004D3730,signature,"float * __cdecl f(float *out, float *matrix, float *v)","plain ret, arguments at [ebp+8],[ebp+0xC],[ebp+0x10], ecx unused; returns out (0x004D3739 mov eax,[ebp+8], stored through to the end) (decomp-agent, read 2026-11-23)"
 0x004D37E0,signature,"void __thiscall f(void *this, float *out)",ret 4 (0x004D3827).
 0x004D3830,signature,"void __thiscall f(void *this, float *out)",ret 4 (0x004D38D9).
 0x004D3AE0,signature,"void __cdecl f(float *out, float *scale)",plain ret; ecx not read (0x004D3AE6 calls GetIdentity without it).

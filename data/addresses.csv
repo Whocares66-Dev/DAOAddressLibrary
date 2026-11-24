@@ -2365,7 +2365,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2364,function,Renderer::FrameBufferEffects::Add,,0x00457400,0x00891b10,0x00457400
 2365,function,Renderer::MergeLoadedFBEffects,,0x00457430,0x00891b40,0x00457430
 2366,function,Renderer::ApplyFBEffectRequestToLoaded,,0x00457590,0x00891ca0,0x00457590
-2367,function,std::vector<Math::Vector4f>::vector,,0x00457690,0x0063b2d0,0x00457690
+2367,function,ECBase::ECDynArray<D3DDriver::D3DStateChange>::ECDynArray(unsigned int),"ECDynArray'""'""'s own count constructor: an empty array, then resize(n, a zeroed 16-byte element) through std::vector<D3DDriver::D3DStateChange>::resize (0x0086E7B0); VC8'""'""'s vector(n) never calls resize. It was named vector<Math::Vector4f>::vector (read 2026-11-23)",0x00457690,0x0063b2d0,0x00457690
 2368,function,"std::basic_ostream<wchar_t,std::char_traits<wchar_t>>::operator<<(float)",,0x00457700,0x00495bd0,0x00457700
 2369,function,Catch_All@00457813,,0x00457813,0x00495ce3,0x00457813
 2370,retired,,,,,
@@ -2622,7 +2622,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2621,function,Renderer::LightManagerDefault::MarkChanged,,0x00461f40,0x0089c440,0x00461f40
 2622,function,Renderer::LightManagerDefault::MarkLayoutChanged,,0x00461f60,0x0089c460,0x00461f60
 2623,function,Renderer::LightManagerDefault::NextFrame,,0x00461f80,0x0089c480,0x00461f80
-2624,function,Math::Vector4f::operator=,,0x00461fa0,0x0046df40,0x00461fa0
+2624,function,Math::Vector4f::operator=,"The out-of-line (COMDAT) copy of the inline member: if this != &other, four dword moves; returns this, ret 4. Inlined elsewhere (GetSnapToPointPosition 0x00547E10, ProjectToScreen 0x00465BB0) (decomp-agent, 2026-11-23)",0x00461fa0,0x0046df40,0x00461fa0
 2625,function,Math::Vector4f::UnitW,,0x00461fd0,0x0058f500,0x00461fd0
 2626,function,Math::Vector4f::ScaledXYZ,,0x00462010,0x005053a0,0x00462010
 2627,function,Math::Vector4f::NormalizedXYZ,,0x00462060,0x005053f0,0x00462060
@@ -2862,15 +2862,15 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2861,function,Catch_All@0046be4c,,0x0046be4c,0x004850dc,0x0046be4c
 2862,function,Renderer::LightState::SetShaderControlBooleans,,0x0046be70,0x008aa970,0x0046be70
 2863,function,"std::_Copy_backward_opt<Math::Vector4f *,Math::Vector4f *>",,0x0046bf90,0x00485460,0x0046bf90
-2864,function,std::vector<Math::Vector4f>::_Ufill,,0x0046bfd0,0x00485690,0x0046bfd0
-2865,function,std::vector<Math::Vector4f>::erase,,0x0046c010,0x00485730,0x0046c010
+2864,function,std::vector<Math::Float4>::_Ufill,,0x0046bfd0,0x00485690,0x0046bfd0
+2865,function,std::vector<Math::Float4>::erase,,0x0046c010,0x00485730,0x0046c010
 2866,function,"std::uninitialized_copy<Math::Vector4f *,Math::Vector4f *>",,0x0046c060,0x00485780,0x0046c060
-2867,function,std::vector<Math::Vector4f>::_Insert_n,,0x0046c090,0x00485880,0x0046c090
+2867,function,std::vector<Math::Float4>::_Insert_n,,0x0046c090,0x00485880,0x0046c090
 2868,function,,,0x0046c205,0x004859f5,0x0046c205
 2869,function,,,0x0046c211,0x00485a01,0x0046c211
-2870,function,"std::vector<Math::Vector4f>::resize(unsigned int,Math::Vector4f)",,0x0046c2f0,0x00485db0,0x0046c2f0
-2871,function,std::vector<Math::Vector4f>::vector,,0x0046c3b0,0x005066d0,0x0046c3b0
-2872,function,std::vector<Math::Vector4f>::resize(unsigned int),,0x0046c420,0x0073c490,0x0046c420
+2870,function,"std::vector<Math::Float4>::resize(unsigned int,Math::Float4)","Math::Float4 (INFERRED type name, decomp-agent's math work, 2026-11-23): a trivial 16-byte element, not Math::Vector4f. resize(n) (0x0046C420) passes it by value as 16 uninitialised bytes (sub esp,0x10, no stores), which a 16-aligned Vector4f cannot be (read 2026-11-23)",0x0046c2f0,0x00485db0,0x0046c2f0
+2871,function,ECBase::ECDynArray<Math::Float4>::ECDynArray(unsigned int),"ECDynArray'""'""'s own count constructor: an empty array, then resize(n, a default element) (0x0046C2F0); VC8'""'""'s vector(n) never calls resize. Math::Float4 (INFERRED type name, decomp-agent's math work, 2026-11-23): a trivial 16-byte element, not Math::Vector4f. resize(n) (0x0046C420) passes it by value as 16 uninitialised bytes (sub esp,0x10, no stores), which a 16-aligned Vector4f cannot be (read 2026-11-23)",0x0046c3b0,0x005066d0,0x0046c3b0
+2872,function,std::vector<Math::Float4>::resize(unsigned int),,0x0046c420,0x0073c490,0x0046c420
 2873,function,Renderer::LightState::LightState_Complete,,0x0046c440,0x008aaa90,0x0046c440
 2874,function,Graphics::ISceneSubManager::ISceneSubManager,,0x0046c4f0,0x008aa520,0x0046c4f0
 2875,function,Graphics::ISceneSubManager::~ISceneSubManager,,0x0046c510,0x008aa540,0x0046c510
@@ -6293,10 +6293,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6292,function,Graphics::MaterialObjectBuilderXML2::EndElement,,0x005077f0,0x007f18b0,0x005077f0
 6293,function,Graphics::MaterialObjectBuilderXML2::~MaterialObjectBuilderXML2,,0x00507c30,0x007f1cf0,0x00507c30
 6294,function,Graphics::MaterialObjectBuilderXML2::`scalar deleting destructor',,0x00507cc0,0x007f1d80,0x00507cc0
-6295,function,std::vector<Math::Vector4f>::insert,,0x00507ce0,0x00506310,0x00507ce0
-6296,function,std::vector<Math::Vector4f>::push_back,,0x00507d70,0x00506570,0x00507d70
+6295,function,std::vector<Math::Float4>::insert,,0x00507ce0,0x00506310,0x00507ce0
+6296,function,std::vector<Math::Float4>::push_back,,0x00507d70,0x00506570,0x00507d70
 6297,function,Graphics::MaterialObjectBuilderXML2::StartElement,,0x00507e00,0x007f1da0,0x00507e00
-6298,function,std::vector<Math::Vector4f>::Clear,,0x00507f00,0x007f1ea0,0x00507f00
+6298,function,ECBase::ECDynArray<Math::Float4>::Clear,"__thiscall, ret 4, a bool, as ECDynArray'""'""'s other Clear(bool) members: frees (0x0046BD80, operator delete) or resizes to 0 (0x0046C2F0). Math::Float4 (INFERRED type name, decomp-agent's math work, 2026-11-23): a trivial 16-byte element, not Math::Vector4f. resize(n) (0x0046C420) passes it by value as 16 uninitialised bytes (sub esp,0x10, no stores), which a 16-aligned Vector4f cannot be (read 2026-11-23)",0x00507f00,0x007f1ea0,0x00507f00
 6299,function,Graphics::MaterialObjectBuilderXML2::MaterialObjectBuilderXML2,,0x00507fe0,0x007f1f80,0x00507fe0
 6300,function,Graphics::MaterialObjectBuilderXML2::MaterialObjectBuilderXML2,,0x00508110,0x007f20b0,0x00508110
 6301,function,Graphics::MaterialObjectBuilderXML2::ReadAttributes,,0x00508220,0x007f21c0,0x00508220
@@ -33316,9 +33316,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33315,function,Graphics::IWindInstance::`scalar deleting destructor',,0x00a55eb0,0x0076d9d0,0x00a55eb0
 33316,function,Graphics::IWindInstanceContainer::~IWindInstanceContainer,,0x00a55ed0,0x0076d9f0,0x00a55ed0
 33317,function,Graphics::IWindInstanceContainer::`scalar deleting destructor',,0x00a55ee0,0x0076da00,0x00a55ee0
-33318,function,Math::Matrix4x4f::Matrix4x4f,"Not the identity: stores 1.0 at +0x0, +0x14 and +0x3C but the float 1.1 (0x00B38438) at +0x28, so diag(1, 1, 1.1, 1) with zeros elsewhere (0x00A55F25..0x00A55F2B); six direct callers, what they use it for not read",0x00a55f00,0x0076da20,0x00a55f00
-33319,function,Math::Matrix4x4f::RotateAxis,,0x00a55f40,0x0076da60,0x00a55f40
-33320,function,Math::Matrix4x4f::Multiply3x3,,0x00a56050,0x0076db70,0x00a56050
+33318,function,Math::Matrix4x4fUA::Matrix4x4fUA,"Not an identity: 1.0 at m[0], m[5], m[15], 1.1f (0x00B38438) at m[10], 0 elsewhere; plain ret. Math::Matrix4x4fUA (INFERRED type name, decomp-agent's math work, 2026-11-23): the tree-wind code's 4x4 matrix in frames not 16-aligned; Math::Matrix4x4f is 16-aligned with a trivial default constructor (read 2026-11-23)",0x00a55f00,0x0076da20,0x00a55f00
+33319,function,Math::Matrix4x4fUA::RotateAxis,,0x00a55f40,0x0076da60,0x00a55f40
+33320,function,Math::Matrix4x4fUA::Multiply3x3,,0x00a56050,0x0076db70,0x00a56050
 33321,function,GraphicsStructures::CSpeedTreeWind::WindInstance::Smoother::Advance,,0x00a56140,0x0076dc60,0x00a56140
 33322,function,GraphicsStructures::CSpeedTreeWind::WindInstance::Oscillation::Fill,,0x00a562b0,0x0076ddd0,0x00a562b0
 33323,function,Core::PointerArray::Free,,0x00a56370,0x0076de90,0x00a56370
@@ -33332,9 +33332,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33331,function,Math::Matrix4x4fArray::Matrix4x4fArray,,0x00a56710,0x0076e240,0x00a56710
 33332,function,Math::Matrix4x4fArray::Clear,,0x00a567b0,0x0076e2e0,0x00a567b0
 33333,function,Math::Matrix4x4fArray::Resize,,0x00a567f0,0x0076e320,0x00a567f0
-33334,function,Math::Matrix4x4f::RotateX,,0x00a56900,0x0076e430,0x00a56900
-33335,function,Math::Matrix4x4f::RotateY,,0x00a569b0,0x0076e4e0,0x00a569b0
-33336,function,Math::Matrix4x4f::RotateZ,,0x00a56a60,0x0076e590,0x00a56a60
+33334,function,Math::Matrix4x4fUA::RotateX,,0x00a56900,0x0076e430,0x00a56900
+33335,function,Math::Matrix4x4fUA::RotateY,,0x00a569b0,0x0076e4e0,0x00a569b0
+33336,function,Math::Matrix4x4fUA::RotateZ,,0x00a56a60,0x0076e590,0x00a56a60
 33337,function,GraphicsStructures::CSpeedTreeWind::WindInstance::SetMatrixAndLeafAngleCounts,,0x00a56b10,0x0076e640,0x00a56b10
 33338,function,GraphicsStructures::CSpeedTreeWind::WindInstance::Advance,,0x00a56bc0,0x0076e6f0,0x00a56bc0
 33339,function,GraphicsStructures::CSpeedTreeWind::~CSpeedTreeWind,,0x00a57150,0x0076ec80,0x00a57150
@@ -99906,7 +99906,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 99905,data,,,0x00c1e874,0x00c1aa44,0x00c1e874
 99906,data,,,0x00c1e878,0x00c1aa48,0x00c1e878
 99907,data,Vector3::UnitX::s_guard,the static-initialisation guard word of UnitX's local static (bit 0); real size 4,0x00c1e880,0x00c1aa50,0x00c1e880
-99908,data,Stub::Vector4One::s_vector,,0x00c1e884,0x00c23514,0x00c1e884
+99908,data,Stub::Vector4One::s_vector,"A (1, 1, 1, 1) function static of the inferred type Math::PointUA4f (decomp-agent's math work, 2026-11-23): built by inline fld1 stores behind a guard, with an empty destructor, and copied by plain dword moves. Its owning function is inlined everywhere and its name is not known: ShadowMaps::CreateTargets (0x004551D1), RenderContext::RenderContext (0x004661CE), the EmitterSplatParameters constructor (0x00541B69) and the ObjectNodeEmitterBlueprint constructor (0x00561B10) build it (read 2026-11-23)",0x00c1e884,0x00c23514,0x00c1e884
 99909,data,,,0x00c1e888,0x00c23518,0x00c1e888
 99910,data,,,0x00c1e88c,0x00c2351c,0x00c1e88c
 99911,data,,,0x00c1e890,0x00c23520,0x00c1e890
@@ -103386,7 +103386,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 103385,function,std::vector<Multithreading::SynchSafePointer>::_Tidy,,0x00516970,0x007ded50,0x00516970
 103386,function,"std::_Copy_opt<?*,?*,std::_Nonscalar_ptr_iterator_tag>",,0x00568350,0x007deec0,0x00568350
 103387,function,std::vector<Multithreading::SynchSafePointer<?>>::erase_at,,0x0057ab20,0x007def40,0x0057ab20
-103388,function,std::vector<Math::Vector4f>::vector,,0x00457690,0x007e0db0,0x00457690
+103388,function,ECBase::ECDynArray<D3DDriver::D3DStateChange>::ECDynArray(unsigned int),,0x00457690,0x007e0db0,0x00457690
 103389,function,std::vector<?>::push_back,,0x00517700,0x007ed530,0x00517700
 103390,function,,,0x0080ea00,0x007edda0,0x0080ea00
 103391,function,"std::pair<std::wstring const,Multithreading::SynchSafePointer>::pair",,0x004f71d0,0x007ee1f0,0x004f71d0
