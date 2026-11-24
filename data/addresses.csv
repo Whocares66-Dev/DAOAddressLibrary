@@ -5793,7 +5793,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5792,function,"std::map<unsigned int,Multithreading::SynchSafePointer>::_Erase",,0x004f3830,0x007e0e90,0x004f3830
 5793,function,"std::map<?,?>::erase",,0x004f3870,0x007e0ed0,0x004f3870
 5794,function,"ECBase::ECDynArray<std::pair<int,int>>::ECDynArray(unsigned int)",,0x004f3b40,0x007e11a0,0x004f3b40
-5795,function,"Core::VectorClear<std::pair<int,int>>","Clears a vector of 8-byte pairs, and with the flag set also frees its storage (same shape as Core::VectorClear<Physics::Contact> at 0x0046DBD0); called by ~MaterialState and by ClearStates on the override's state list.",0x004f3ba0,0x007e1200,0x004f3ba0
+5795,function,"ECBase::ECDynArray<std::pair<int,int>>::Clear","ECDynArray'""'""'s Clear(bool): a byte argument (0x004F3BC8) chooses between freeing the storage and resize(0) (0x004F3670); ret 4. ~MaterialState calls it (0x004FB82F). It was named Core::VectorClear<std::pair<int,int>> (decomp-agent, read 2026-11-24)",0x004f3ba0,0x007e1200,0x004f3ba0
 5796,function,"Graphics::MaterialObjectInstance::ParameterValueProvider<ECBase::ECDynArray<Math::VectorUA4f>,Graphics::MaterialObjectInstance::ParameterAccessByValue<ECBase::ECDynArray<Math::VectorUA4f>>>::ParameterValueProvider",,0x004f3c80,0x007e12e0,0x004f3c80
 5797,function,ECBase::ECDynArray<Math::VectorUA4f>::operator=,,0x004f3ce0,0x005a2bb0,0x004f3ce0
 5798,function,"Graphics::MaterialObjectInstance::ParameterValueProvider<ECBase::ECDynArray<Math::VectorUA4f>,Graphics::MaterialObjectInstance::ParameterAccessByValue<ECBase::ECDynArray<Math::VectorUA4f>>>::`scalar deleting destructor'",,0x004f3d00,0x007e1340,0x004f3d00
@@ -5966,11 +5966,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5965,function,std::vector<?>::resize,,0x004fb0b0,0x007f9a40,0x004fb0b0
 5966,function,std::vector<?>::insert,,0x004fb1d0,0x007f9b60,0x004fb1d0
 5967,function,,,0x004fb280,0x007f9c10,0x004fb280
-5968,function,,,0x004fb420,0x007f9db0,0x004fb420
+5968,function,std::vector<Graphics::MaterialSamplerState>::resize(unsigned int),"A default element built, then resize(n, value) (0x004FB0B0); ret 4: the one-argument resize. ECDynArray<MaterialSamplerState>'""'""'s count constructor and Clear call it (read 2026-11-24)",0x004fb420,0x007f9db0,0x004fb420
 5969,function,std::vector<Graphics::MaterialSamplerState>::push_back,,0x004fb480,0x007f9e10,0x004fb480
-5970,function,std::vector<Graphics::MaterialSamplerState>::vector,,0x004fb520,0x007f9eb0,0x004fb520
+5970,function,ECBase::ECDynArray<Graphics::MaterialSamplerState>::ECDynArray(unsigned int),"ECDynArray'""'""'s own count constructor: zeroes +4, +8, +0xC, then resize(count) (0x004FB420); ret 4. MaterialState'""'""'s constructor builds its sampler states (+0x38) with it and count 0 (0x004FB748). It was named std::vector<MaterialSamplerState>::vector (decomp-agent, read 2026-11-24)",0x004fb520,0x007f9eb0,0x004fb520
 5971,function,std::vector<Graphics::MaterialSamplerState>::assign_return_this,,0x004fb580,0x007f9f10,0x004fb580
-5972,function,std::vector<Graphics::MaterialSamplerState>::Clear,,0x004fb5a0,0x007f9f30,0x004fb5a0
+5972,function,ECBase::ECDynArray<Graphics::MaterialSamplerState>::Clear,"ECDynArray'""'""'s Clear(bool): a byte argument (0x004FB5C8) chooses between freeing the storage and resize(0) (0x004FB420); ret 4. ~MaterialState calls it (0x004FB83B) (decomp-agent, read 2026-11-24)",0x004fb5a0,0x007f9f30,0x004fb5a0
 5973,function,Graphics::MaterialState::MaterialState,,0x004fb6b0,0x007fa040,0x004fb6b0
 5974,function,Graphics::MaterialState::`scalar deleting destructor'`adjustor{100}',,0x004fb7d0,0x007fa160,0x004fb7d0
 5975,function,Graphics::MaterialState::~MaterialState,,0x004fb7e0,0x007fa170,0x004fb7e0
