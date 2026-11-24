@@ -3926,7 +3926,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3925,function,ECBase::ECDynArray<unsigned int>::RemoveAt,,0x004a62e0,0x007f5c90,0x004a62e0
 3926,function,std::deque<unsigned int>::front,,0x004a6380,0x007fe1b0,0x004a6380
 3927,function,DADM::RemoveContentEntry,,0x004a63d0,0x00869f10,0x004a63d0
-3928,function,std::deque<unsigned int>::pop_front_value,,0x004a64f0,0x0086a030,0x004a64f0
+3928,function,ECBase::ECDeque<unsigned int>::PopFront,"ecx a std::deque<unsigned int> (DADM::Update passes this+0x168, 0x004A94D7): returns this instantiation's default (0x00C2B2C0) when empty, else takes front (0x004A6380) and pops it. Multithreading::TaskDeque::PopFront (0x004BC1E0) is the same code, differing only in its static, so both are one engine deque template; ECDeque is an INFERRED name for it. It was named std::deque<unsigned int>::pop_front_value, which VC8's deque does not have (decomp-agent, read 2026-11-24)",0x004a64f0,0x0086a030,0x004a64f0
 3929,function,std::vector<std::wstring>::operator=,,0x004a6540,0x004936e0,0x004a6540
 3930,function,std::vector<int>::resize,,0x004a66d0,0x00493620,0x004a66d0
 3931,function,ECBase::ECDynArray<DADM::MessageEntry*>::Clear,,0x004a6790,0x0086a080,0x004a6790
@@ -12955,7 +12955,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12954,function,EquipSlotKey::EquipSlotKey,,0x00652340,0x0053e040,0x00652340
 12955,function,CCModule::SetSharedCharAreaName,,0x00652370,0x0053e070,0x00652370
 12956,function,CCModule::SetSharedChar2DAName,,0x006523d0,0x0053e0d0,0x006523d0
-12957,function,ECBase::ECDynArray<?>::Resize,,0x00652430,0x0053e420,0x00652430
+12957,function,FixedArray<float>::Resize,"this is a {T* data, unsigned count} pair: allocates count*4, zero-fills, stores data and count. VisualEffectEntry::Load resizes its +0xBC array to 3 with it (0x007EA010) and reads the elements as floats (0x007EA065 fcomp dword ptr [eax]), with ECStaticArray<float>'s s_default (0x00C34AA4) when empty. FixedArray<unsigned int>::Resize (0x007CB2F0) is the same code for another element type. It was named ECBase::ECDynArray<?>::Resize (decomp-agent, read 2026-11-24)",0x00652430,0x0053e420,0x00652430
 12958,function,ECBase::ECDynArray<?>::At,,0x00652550,0x0053e540,0x00652550
 12959,function,GUI::InvokeCallbackMessage::InvokeCallbackMessage,,0x00652570,0x0053e5b0,0x00652570
 12960,function,MapLocation::SetLocName,,0x00652600,0x0053e640,0x00652600
@@ -18482,7 +18482,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18481,function,CameraControllerExplore::GetFocus,,0x0076ec30,0x00686370,0x0076ec30
 18482,function,CameraControllerExplore::SendCameraTelemetry,,0x0076ec50,0x00686390,0x0076ec50
 18483,function,Camera::VectorEase::Start,,0x0076ee00,0x00686540,0x0076ee00
-18484,function,Math::SineEaseVector,,0x0076ee60,0x006865a0,0x0076ee60
+18484,function,Math::SineEase::EaseVector,"Camera::VectorEase::Update calls it on its 1-byte empty member at +0x59 (0x0076F874 lea ecx,[esi+0x59]), ret 0x10 (out, from, to, t): a stateless easing object's member. Its class name is INFERRED: a class named Math cannot stand beside the namespace Math. It was named Math::SineEaseVector (decomp-agent, read 2026-11-24)",0x0076ee60,0x006865a0,0x0076ee60
 18485,function,CameraControllerExplore::~CameraControllerExplore,,0x0076ef00,0x00686640,0x0076ef00
 18486,function,CameraControllerExplore::IsTacticalView,,0x0076ef10,0x00686650,0x0076ef10
 18487,function,CameraControllerExplore::GetModeName,,0x0076ef20,0x00686660,0x0076ef20
@@ -100106,7 +100106,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100105,data,ECBase::ECDynArray<DADM::MessageEntry*>::s_default,"Null pointer returned for an out-of-range index by ECBase::ECDynArray<DADM::MessageEntry*>::At (0x004a5720); used by 28 DADM message routines (FindMessageByRequestId, StartQueuedDownloads, ProcessStatusMessage ...).",0x00c2b2b4,0x00c30fc8,0x00c2b2b4
 100106,data,ECBase::ECDynArray<DADM::OfferEntry*>::s_default,"Null pointer returned for an out-of-range index of DADM's offer-entry array in DADM::IsOfferKnown (0x004a5df0), ClearOfferEntries (0x004a7110) and AddRequestsForOfferEntries; the element type name is INFERRED from those functions' names.",0x00c2b2b8,0x00c30fcc,0x00c2b2b8
 100107,data,ECBase::ECDynArray<PRCDownloadingContent*>::s_default,"Null pointer returned for an out-of-range index of the downloading-content array in DADM::RemoveContentEntry (0x004a63d0), DADM::ProcessStatusMessage (0x004a7b80) and ContentManager; the SmartData iterator for ECBase::ECDynArray<PRCDownloadingContent*> also uses it.",0x00c2b2bc,0x00c30fa4,0x00c2b2bc
-100108,data,,,0x00c2b2c0,0x00c30fd0,0x00c2b2c0
+100108,data,ECBase::ECDeque<unsigned int>::s_default,The unsigned int that ECDeque<unsigned int>::PopFront (0x004A64F0) returns for an empty deque; TaskDeque's is s_nullTask (0x00C2B59C). Class name INFERRED (2026-11-24),0x00c2b2c0,0x00c30fd0,0x00c2b2c0
 100109,data,,,0x00c2b2d0,,0x00c2b2d0
 100110,data,,,0x00c2b2d8,,0x00c2b2d8
 100111,data,PRCContent::s_nextId,int counter: PRCContent::PRCContent (0x004a98e0) takes its value as the new content's id (passed to a virtual setter at +0x54 of the content's member) and increments it.,0x00c2b2e4,0x00c30ffc,0x00c2b2e4
