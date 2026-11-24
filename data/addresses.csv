@@ -4866,12 +4866,12 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4865,function,ECResMan::ErfSource::ErfSource,,0x004d19d0,0x00812cd0,0x004d19d0
 4866,function,ECResMan::ErfSource::Create,,0x004d1b00,0x00812e00,0x004d1b00
 4867,function,LocString::Reset,"Sets the talk-table id (+4) to -1, the text (+8) to empty and the flags +0, +0x24, +0x25, +0x26 to 0.",0x004d1b80,0x00812e80,0x004d1b80
-4868,function,LocString::SetText,,0x004d1bb0,0x00812eb0,0x004d1bb0
+4868,function,LocString::SetText,"SetText(const ECBase::ECString&): assigns the text (+8) with ECString::operator= and sets the flags +0, +0x25, +0x26 to 1",0x004d1bb0,0x00812eb0,0x004d1bb0
 4869,function,LocString::LocString,,0x004d1bd0,0x00812ed0,0x004d1bd0
-4870,function,LocString::AssignText,,0x004d1c30,0x00812f30,0x004d1c30
+4870,function,LocString::AssignText,"LocString& AssignText(const ECBase::ECString&): Reset (0x004D1B80), then SetText with the argument unchanged; returns this",0x004d1c30,0x00812f30,0x004d1c30
 4871,function,LocString::SetStringId,,0x004d1c50,0x00812f50,0x004d1c50
 4872,function,LocString::LocString,,0x004d1c70,0x00812f70,0x004d1c70
-4873,function,LocString::LocString,"Constructor from a wchar_t pointer: default-constructs the text, builds a wstring from the argument and passes it to the wstring constructor 0x004D1C30.",0x004d1cd0,0x00812fd0,0x004d1cd0
+4873,function,LocString::LocString,"Constructor from a wchar_t pointer: default-constructs the text (+8), builds a temporary ECString from the argument (0x004C2480) and passes it to AssignText 0x004D1C30",0x004d1cd0,0x00812fd0,0x004d1cd0
 4874,function,LocString::Resolve,"Looks the string id up in the global talk table (0x00C1D08C) with the flag at +0x24 and stores the text; under a debug option on the object at 0x00C32938 it formats the text as {id - text}; sets resolved and hasText, or empty text when there is no table.",0x004d1d50,0x00813050,0x004d1d50
 4875,function,LocString::EnsureResolved,,0x004d1e90,0x00813190,0x004d1e90
 4876,function,LocString::GetText,,0x004d1eb0,0x008131b0,0x004d1eb0
