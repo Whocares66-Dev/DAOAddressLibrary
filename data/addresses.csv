@@ -14111,7 +14111,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14110,function,CCObject::UpdateRoom,,0x00695d70,0x00586d30,0x00695d70
 14111,function,CCObject::GetModelLodLevel,,0x00695de0,0x00586da0,0x00695de0
 14112,function,CCObject::SetModelLodLevel,,0x00695e00,0x00586dc0,0x00695e00
-14113,function,CCObject::StartEffectVfx,,0x00695e70,0x00586e30,0x00695e70
+14113,function,CCObject::CreateVisualForEffect,"Slot 15 of SEffectsHolder in CCObject'""'""'s table and its subclasses'""'""' (CCTrigger 0x00B1FDCC, CCCreature, CCItem, CCPlaceable and the rest, all at +0x70); CCArea overrides the same slot with CreateVisualForEffect (0x0067AB40), so one virtual, one name. Neither name is in the exe as a string. It was named CCObject::StartEffectVfx (decomp-agent, read 2026-11-24)",0x00695e70,0x00586e30,0x00695e70
 14114,function,CCObject::QueueExecuteEffect,,0x00695f20,0x00586ee0,0x00695f20
 14115,function,CCObject::ApplyCameraShake,Starts a camera shake from an effect: its +0x2C and its four floats (CDataArrays::GetFloat 0..3) go to Camera::StartShake on VfxManager::Get (0x0069604A); interface slot 18 of CCObject and its 16 derived classes; not a screen fade,0x00695fe0,0x00586fa0,0x00695fe0
 14116,function,CCCreature::SkipToStateLoop,,0x00696060,0x00587020,0x00696060
