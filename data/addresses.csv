@@ -4591,7 +4591,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4590,function,"std::getline<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>",,0x004c4a10,0x00805f40,0x004c4a10
 4591,function,,,0x004c4b7b,0x008060ab,0x004c4b7b
 4592,retired,,,,,
-4593,function,,,0x004c4bc0,0x008060f0,0x004c4bc0
+4593,function,,"__thiscall with an ECString in ecx and a wostream* argument, ret 4: calls the cdecl 0x004C45A0 with (stream, this) and returns its result; it writes this string to the stream. Its name is not known (decomp-agent, read 2026-11-24)",0x004c4bc0,0x008060f0,0x004c4bc0
 4594,function,,,0x004c4be0,0x00806110,0x004c4be0
 4595,function,ECBase::ECString::Split,,0x004c4c20,0x00806150,0x004c4c20
 4596,function,Multithreading::ScopedLock::ScopedLock,,0x004c4d00,0x00806230,0x004c4d00
@@ -4899,7 +4899,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4898,function,CpuFeatures::CpuFeatures,,0x004d2600,0x00813740,0x004d2600
 4899,function,CpuFeatures::Get,,0x004d2610,0x00813750,0x004d2610
 4900,function,"std::basic_stringstream<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>::`vbase destructor'",,0x004d2640,0x004062e0,0x004d2640
-4901,function,,,0x004d2660,0x00819530,0x004d2660
+4901,function,WideStringStream::str,"__thiscall, ret 4 (hidden return slot): an empty ECString in the slot (0x004C0D90), the stream'""'""'s str() (0x004073C0), ECString::Assign (0x004C2AD0) with its c_str(), the temporary freed: ECString WideStringStream::str() const. WideStringStream is an INFERRED class name (decomp-agent, 2026-11-24, after ResetWideStringStream): an engine wrapper whose only member is a std::wstringstream at +0, 0x88 bytes (read 2026-11-24)",0x004d2660,0x00819530,0x004d2660
 4902,function,,,0x004d2710,0x008195e0,0x004d2710
 4903,function,,,0x004d27d0,0x008196a0,0x004d27d0
 4904,retired,,,,,
@@ -4910,7 +4910,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4909,function,,,0x004d29c0,0x00819890,0x004d29c0
 4910,function,,,0x004d29d0,0x008198a0,0x004d29d0
 4911,function,"std::operator>>(std::basic_istream<wchar_t,std::char_traits<wchar_t>>&,unsigned char&)",reads an unsigned int from a wide stream and stores its low byte,0x004d29f0,0x008198c0,0x004d29f0
-4912,function,"std::basic_stringstream<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>::basic_stringstream",,0x004d2a20,0x008198f0,0x004d2a20
+4912,function,WideStringStream::WideStringStream,"__thiscall, plain ret: basic_stringstream(3, 1) (0x00412D80) on this, returns this. Its 60 callers call it directly on locals, and nothing stores its address, so it is not a compiler-made default-constructor closure; code that declares a plain std::wstringstream calls 0x00412D80 itself with push 3 (18 callers). WideStringStream is an INFERRED class name (decomp-agent, 2026-11-24, after ResetWideStringStream): an engine wrapper whose only member is a std::wstringstream at +0, 0x88 bytes (read 2026-11-24)",0x004d2a20,0x008198f0,0x004d2a20
 4913,function,"std::getline<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>",,0x004d2a30,0x00819900,0x004d2a30
 4914,function,Math::CollisionObject::SetMatrixA,,0x004d2a60,0x0081c4f0,0x004d2a60
 4915,function,Math::CollisionObject::SetMatrixB,,0x004d2ad0,0x0081c560,0x004d2ad0
@@ -6480,7 +6480,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6479,function,Graphics::MaterialArtTexture::`scalar deleting destructor',,0x0050f390,0x007f2ed0,0x0050f390
 6480,function,Graphics::MaterialArtTexture::SetSamplerName,,0x0050f3b0,0x007f2ef0,0x0050f3b0
 6481,function,Graphics::MaterialArtVector4f::~MaterialArtVector4f,,0x0050f420,0x007f2f60,0x0050f420
-6482,function,ResetWideStringStream,,0x0050f440,0x004933d0,0x0050f440
+6482,function,WideStringStream::ResetWideStringStream,"__thiscall on the wrapper, an ECString by value (ret 0x1C), returns this: clears the stream state (ios_base::clear 0x00407B00) and writes the text through 0x004C4BC0. WideStringStream is an INFERRED class name (decomp-agent, 2026-11-24, after ResetWideStringStream): an engine wrapper whose only member is a std::wstringstream at +0, 0x88 bytes (read 2026-11-24)",0x0050f440,0x004933d0,0x0050f440
 6483,function,Graphics::MaterialArtVector4f::`scalar deleting destructor',,0x0050f4c0,0x007f2f80,0x0050f4c0
 6484,function,Graphics::MaterialArtVector4f::MaterialArtVector4f,,0x0050f4e0,0x007f2fa0,0x0050f4e0
 6485,function,Graphics::MaterialArtVector4f::SetDefault,,0x0050f540,0x007f3000,0x0050f540
