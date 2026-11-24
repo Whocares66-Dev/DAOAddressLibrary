@@ -23898,9 +23898,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23897,function,D3DDriver::D3DVertexShader::D3DVertexShader,,0x00874870,0x0047b610,0x00874870
 23898,function,D3DDriver::D3DTextureMixIn::~D3DTextureMixIn,Sets the mixin vftable (0x00B2E84C); reached from the four texture constructors.,0x008749c0,0x0047b760,0x008749c0
 23899,function,D3DDriver::D3DTexture2D::BindToStage,Sets texture stage a1 to the device texture through D3DStateCache::SetTexture (0x0086EB90).,0x008749d0,0x0047b770,0x008749d0
-23900,function,Graphics::TextureInternal::BindToStage,,0x00874a00,0x0047b7a0,0x00874a00
+23900,function,D3DDriver::D3DTextureCubeMap::BindToStage,"Slot 3 of D3DTextureCubeMap'""'""'s and D3DTextureVolume'""'""'s tables (0x00B2E88C, 0x00B2E9AC), one folded body; TextureInternal'""'""'s own slot 3 is _purecall, and this reads the mix-in at +0x24 and its state cache at +0x2C, past TextureInternal'""'""'s 0x24 bytes. It was named Graphics::TextureInternal::BindToStage (decomp-agent, read 2026-11-24)",0x00874a00,0x0047b7a0,0x00874a00
 23901,function,D3DDriver::D3DTexture2D::BindToStageIfValid,"The same, skipped when the stage index is negative.",0x00874a30,0x0047b7d0,0x00874a30
-23902,function,Graphics::TextureInternal::BindToStageIfValid,,0x00874a60,0x0047b800,0x00874a60
+23902,function,D3DDriver::D3DTextureCubeMap::BindToStageIfValid,"Slot 2 of the same two tables, one folded body, for the same reason as BindToStage (0x00874A00). It was named Graphics::TextureInternal::BindToStageIfValid (decomp-agent, read 2026-11-24)",0x00874a60,0x0047b800,0x00874a60
 23903,function,D3DDriver::D3DTextureVolume::Lock,"Locks a level of the volume texture: remaps the engine lock bits (2 to D3DLOCK_READONLY, 1 NOOVERWRITE, 4 DISCARD, 8 DONOTWAIT, 0x10 NOSYSLOCK, by D3D9 header values [I]) and calls IDirect3DVolumeTexture9::LockBox (vtable +0x4C).",0x00874a90,0x0047b830,0x00874a90
 23904,function,D3DDriver::D3DTextureVolume::Unlock,Calls IDirect3DVolumeTexture9::UnlockBox (vtable +0x50) for the level.,0x00874af0,0x0047b890,0x00874af0
 23905,function,D3DDriver::D3DTexture2D::OnDeviceLost,Resetable slot 3: releases the device texture (obj+0x4C) and clears it.,0x00874b10,0x0047b8b0,0x00874b10
