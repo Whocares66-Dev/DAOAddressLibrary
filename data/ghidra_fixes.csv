@@ -930,7 +930,7 @@ address,what,value,why
 0x00413680,signature,void __cdecl f(unsigned int id),plain ret 0x004B8B20
 0x00413690,signature,void __cdecl f(unsigned int id),plain ret 0x004B8B60
 0x004136A0,signature,"void* __cdecl f(void* ptr, unsigned int size)",plain ret 0x004136B5
-0x004519D0,signature,"float __cdecl f(void* a, void* b)",plain ret result in st0 0x00451A21
+0x004519D0,signature,"float __cdecl f(Math::Vector4f *a, Math::Vector4f *b)","plain ret, result in st0 0x00451A21; both arguments loaded with movaps (0x004519DF, 0x004519E2), so const Math::Vector4f& (decomp-agent, read 2026-11-23)"
 0x00451AF0,signature,"void __cdecl f(Vector3 *out, Vector3 *a, Vector3 *b)",plain ret three stack args 0x00451AF0; a void * here is the class DAODecomp's matching definition gives
 0x00451B30,signature,"Math::Matrix4x4f * __thiscall f(void* this, Math::Matrix4x4f *src)",ret 4 ecx is dest 0x00451B5C; a void * here is the class DAODecomp's matching definition gives
 0x00451BF0,signature,"void* __thiscall f(void* this, unsigned int flags)",ret 4 at 0x00451C0C
@@ -1147,7 +1147,7 @@ address,what,value,why
 0x004D47E0,signature,"void* __cdecl f(void* out, void* v, float s)",plain ret; args [esp+4..0xC]
 0x004D4820,signature,"void* __cdecl f(void* out, void* v, float s)",plain ret; args [ebp+8..0x10]
 0x004D4880,signature,"bool __cdecl f(void* a, void* b)","plain ret; args [ebp+8],[ebp+0xC]"
-0x004D4950,signature,"float __cdecl f(void* a, void* b)",plain ret
+0x004D4950,signature,"float __cdecl f(Math::Vector4f *a, Math::Vector4f *b)","plain ret; both arguments loaded with movaps (0x004D495F, 0x004D4962), so const Math::Vector4f& (decomp-agent, read 2026-11-23)"
 0x004D4A10,signature,"void* __cdecl f(void* out, void* v)",plain ret; esi = out [esp+8]
 0x004D4B80,signature,"float __cdecl f(void* a, void* b)","plain ret; args [esp+4],[esp+8]"
 0x004D4BF0,signature,"float __cdecl f(void* a, void* b)","plain ret; args [esp+8],[esp+0xC]"
@@ -19029,8 +19029,8 @@ address,what,value,why
 0x00461F40,signature,void __thiscall f(void *this),proven by DAODecomp: its definition `void Renderer::LightManagerDefault::MarkChanged()` (member) compiles to this function's bytes; ret plain read in the code
 0x00461F60,signature,void __thiscall f(void *this),proven by DAODecomp: its definition `void Renderer::LightManagerDefault::MarkLayoutChanged()` (member) compiles to this function's bytes; ret plain read in the code
 0x00461F80,signature,void __thiscall f(void *this),proven by DAODecomp: its definition `void Renderer::LightManagerDefault::NextFrame()` (member) compiles to this function's bytes; ret plain read in the code
-0x00461FA0,signature,"Math::Vector4f * __thiscall f(void *this, Vector4f *other)",proven by DAODecomp: its definition `Math::Vector4f& Math::Vector4f::operator=(const Vector4f& other)` (member) compiles to this function's bytes; ret 0x4 read in the code
-0x00462180,signature,void * __thiscall f(void *this),proven by DAODecomp: its definition `Math::Vector4f::Vector4f()` (member) compiles to this function's bytes; ret plain read in the code
+0x00461FA0,signature,"Math::Vector4f * __thiscall f(void *this, Math::Vector4f *other)",proven by DAODecomp: its definition `Math::Vector4f& Math::Vector4f::operator=(const Vector4f& other)` (member) compiles to this function's bytes; ret 0x4 read in the code
+0x00462180,signature,Math::Vector4f * __thiscall f(void *this),proven by DAODecomp: its definition `Math::Vector4f::Vector4f()` (member) compiles to this function's bytes; ret plain read in the code
 0x004621A0,signature,"void * __thiscall f(void *this, Math::VectorUA4f *o)",proven by DAODecomp: its definition `Math::VectorUA4f::VectorUA4f(const VectorUA4f& o)` (member) compiles to this function's bytes; ret 0x4 read in the code
 0x00463280,signature,"void * __thiscall f(void *this, int p)",proven by DAODecomp: its definition `ObjectNodeLightReference::ObjectNodeLightReference(int p)` (member) compiles to this function's bytes; ret 0x4 read in the code
 0x004632F0,signature,void __thiscall f(void *this),proven by DAODecomp: its definition `Renderer::LightManagerDefault::~LightManagerDefault()` (virtual) compiles to this function's bytes; ret plain read in the code
@@ -19079,9 +19079,9 @@ address,what,value,why
 0x004CAF60,signature,void * __thiscall f(void *this),proven by DAODecomp: its definition `Multithreading::SynchSafeDeleteQueue::SynchSafeDeleteQueue()` (member) compiles to this function's bytes; ret plain read in the code
 0x004CAFD0,signature,Multithreading::SynchSafeDeleteQueue * __cdecl f(void),proven by DAODecomp: its definition `Multithreading::SynchSafeDeleteQueue* Multithreading::SynchSafeDeleteQueue::Get()` (static) compiles to this function's bytes; ret plain read in the code
 0x004CBC40,signature,"Quaternion * __thiscall f(void *this, float *axis, float angle)","proven by DAODecomp: its definition `Quaternion* Quaternion::FromAxisAngle(const float* axis, float angle)` (member) compiles to this function's bytes; ret 0x8 read in the code"
-0x004CBFE0,signature,void * __cdecl f(void),proven by DAODecomp: its definition `void* Math::Vector4f::Zero()` (static) compiles to this function's bytes; ret plain read in the code
-0x004CC020,signature,void * __cdecl f(void),proven by DAODecomp: its definition `void* Math::Vector4f::UnitW()` (static) compiles to this function's bytes; ret plain read in the code
-0x004CC060,signature,"void * __thiscall f(void *this, bool unitW)",proven by DAODecomp: its definition `Math::Vector4f::Vector4f(bool unitW)` (member) compiles to this function's bytes; ret 0x4 read in the code
+0x004CBFE0,signature,Math::VectorUA4f * __cdecl f(void),"returns its function static 0x00C2BEC8, a VectorUA4f (not 16-aligned) built by 0x00933D70; plain ret (read 2026-11-23)"
+0x004CC020,signature,Math::VectorUA4f * __cdecl f(void),"returns its function static 0x00C2BEEC, a VectorUA4f (not 16-aligned) built by 0x00933D70; plain ret (read 2026-11-23)"
+0x004CC060,signature,"Math::VectorUA4f * __thiscall f(void *this, bool unitW)",VectorUA4f(bool): copies UnitW or Zero into this and returns it; ret 4 (read 2026-11-23)
 0x004CC430,signature,"void * __thiscall f(void *this, Resource *other)",proven by DAODecomp: its definition `Resource::Resource(const Resource& other)` (member) compiles to this function's bytes; ret 0x4 read in the code
 0x004D1B80,signature,void __thiscall f(void *this),proven by DAODecomp: its definition `void LocString::Reset()` (member) compiles to this function's bytes; ret plain read in the code
 0x004D1BB0,signature,"void __thiscall f(void *this, ECBase::ECString *text)","ret 4; its argument goes unchanged to ECString::operator=(const ECString&) 0x004C2AB0 (0x004D1BBB), so it is a const ECBase::ECString&, not a const wchar_t* as DAODecomp's stand-in had it (decomp-agent, read again 2026-11-23)"

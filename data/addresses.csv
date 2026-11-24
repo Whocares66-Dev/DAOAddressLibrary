@@ -4757,9 +4757,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4756,function,Quaternion::GetYAxis,,0x004cbd30,0x0080d0c0,0x004cbd30
 4757,function,Quaternion::GetZAxis,,0x004cbd80,0x0080d110,0x004cbd80
 4758,function,Quaternion::FromDirectionZUp,,0x004cbdd0,0x0080d160,0x004cbdd0
-4759,function,Math::Vector4f::Zero,,0x004cbfe0,0x0080d370,0x004cbfe0
-4760,function,Math::Vector4f::UnitW,,0x004cc020,0x0080d3b0,0x004cc020
-4761,function,Math::Vector4f::Vector4f,,0x004cc060,0x0080d3f0,0x004cc060
+4759,function,Math::VectorUA4f::Zero,"Returns a function-static VectorUA4f (0x00C2BEC8, not 16-aligned) copy-built once by VectorUA4f(const VectorUA4f&) 0x00933D70 from a zero block, with an atexit destructor. It was named Math::Vector4f::Zero, as 0x004D4E50 still is (read 2026-11-23)",0x004cbfe0,0x0080d370,0x004cbfe0
+4760,function,Math::VectorUA4f::UnitW,"Returns a function-static VectorUA4f (0x00C2BEEC, not 16-aligned) copy-built once by 0x00933D70 from (0, 0, 0, 1) at 0x00BF47BC, with an atexit destructor. Math::Vector4f's own UnitW is 0x00461FD0, whose static is 16-aligned (read 2026-11-23)",0x004cc020,0x0080d3b0,0x004cc020
+4761,function,Math::VectorUA4f::VectorUA4f(bool),"__thiscall, ret 4: copies VectorUA4f::UnitW (0x004CC020) when the bool is set, else VectorUA4f::Zero (0x004CBFE0), with four fld/fstp. Not Math::Vector4f's, which is 16-aligned (an __m128 union): EclipseGame builds one at +0x54 (0x0040DD0D) and ReadNodeRotation at esp+4 (0x0058CF69), and the statics it copies from (0x00C2BEC8, 0x00C2BEEC) are not 16-aligned either; built with VectorUA4f's copy constructor 0x00933D70 (read 2026-11-23)",0x004cc060,0x0080d3f0,0x004cc060
 4762,function,ECResMan::ErfSource::LoadDirectory,,0x004cc0a0,0x0080d430,0x004cc0a0
 4763,function,ECResMan::RIMSource::RequestRead,,0x004cc1b0,0x0080d540,0x004cc1b0
 4764,function,ECResMan::ResourceSource::GetFileName,,0x004cc1e0,0x0080d570,0x004cc1e0
@@ -58897,8 +58897,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 58896,function,,,0x00ad57b0,0x00ad3630,0x00ad57b0
 58897,function,,,0x00ad57c0,0x00ad3640,0x00ad57c0
 58898,function,`dynamic atexit destructor for 'Multithreading::SynchSafeDeleteQueue::Get::s_instance'',Runs ~SynchSafeDeleteQueue (0x004CAC60) on the function-local static 0x00C2BE70 built by Get 0x004CAFD0.,0x00ad57d0,0x00ad3650,0x00ad57d0
-58899,function,`dynamic atexit destructor for 'Math::Vector4f::Zero::s_vector'',Static Math::Vector4f copy-built from an all-zero 16-byte global and returned by reference as the zero vector; trivial destructor.,0x00ad57e0,0x00ad3660,0x00ad57e0
-58900,function,`dynamic atexit destructor for 'Math::Vector4f::UnitW::s_vector2'',"Static Math::Vector4f copy-built from the constant (0,0,0,1) at 0xbf47bc and returned by reference as the W unit vector; trivial destructor.",0x00ad57f0,0x00ad3670,0x00ad57f0
+58899,function,`dynamic atexit destructor for 'Math::VectorUA4f::Zero::s_vector'',Static Math::VectorUA4f copy-built from an all-zero 16-byte global and returned by reference as the zero vector; trivial destructor.,0x00ad57e0,0x00ad3660,0x00ad57e0
+58900,function,`dynamic atexit destructor for 'Math::VectorUA4f::UnitW::s_vector'',"Static Math::VectorUA4f copy-built from the constant (0,0,0,1) at 0xbf47bc and returned by reference as the W unit vector; trivial destructor.",0x00ad57f0,0x00ad3670,0x00ad57f0
 58901,function,,,0x00ad5800,0x00ad3680,0x00ad5800
 58902,function,`dynamic atexit destructor for 'CpuFeatures::Get::s_instance'',"the CPU features singleton's exit stub, empty (a lone ret)",0x00ad5810,0x00ad3690,0x00ad5810
 58903,function,,,0x00ad5820,0x00ad3f20,0x00ad5820
@@ -95965,7 +95965,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 95964,data,ECResMan::RIMLoadTask::typeinfo,,0x00bf4758,0x00c0b998,0x00bf4758
 95965,data,ECResMan::DeleteSourceTask::typeinfo,,0x00bf477c,0x00c0b9bc,0x00bf477c
 95966,data,EC::ITimer::typeinfo,,0x00bf47a4,0x00c0b9e4,0x00bf47a4
-95967,data,Math::Vector4f::UnitW::s_components,"float[4] = 0, 0, 0, 1.0 in the file; Math::Vector4f::UnitW (0x004cc020) passes its address to Math::VectorUA4f::VectorUA4f (0x00933d70) to build the function-static UnitW vector.",0x00bf47bc,0x00c0b9fc,0x00bf47bc
+95967,data,Math::VectorUA4f::UnitW::s_components,"float[4] = 0, 0, 0, 1.0 in the file; Math::VectorUA4f::UnitW (0x004cc020) passes its address to Math::VectorUA4f::VectorUA4f (0x00933d70) to build the function-static UnitW vector.",0x00bf47bc,0x00c0b9fc,0x00bf47bc
 95968,data,ECResMan::RIMSource::typeinfo,,0x00bf47cc,0x00c0ba0c,0x00bf47cc
 95969,data,ECResMan::ErfSource::typeinfo,,0x00bf47f0,0x00c0ba30,0x00bf47f0
 95970,data,ECResMan::ResourceSource::typeinfo,,0x00bf4814,0x00c0ba54,0x00bf4814
@@ -100194,10 +100194,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100193,data,,,0x00c2be6c,0x00c254a4,0x00c2be6c
 100194,data,Multithreading::SynchSafeDeleteQueue::Get::s_instance,,0x00c2be70,0x00c254a8,0x00c2be70
 100195,data,Multithreading::SynchSafeDeleteQueue::Get::s_guard,Init guard word of Multithreading::SynchSafeDeleteQueue::Get::s_instance (0x00c2be70).,0x00c2bec4,0x00c254fc,0x00c2bec4
-100196,data,Math::Vector4f::Zero::s_vector,,0x00c2bec8,0x00c25500,0x00c2bec8
-100197,data,Math::Vector4f::Zero::s_zeroSource,16-byte zero-initialised .bss block (no immediate writer found) that Math::Vector4f::Zero (0x004cbfe0) pushes as the source of the copy constructor 0x00933d70 into its function static at 0x00C2BEC8; its only reader. INFERRED,0x00c2bed8,0x00c25510,0x00c2bed8
+100196,data,Math::VectorUA4f::Zero::s_vector,,0x00c2bec8,0x00c25500,0x00c2bec8
+100197,data,Math::VectorUA4f::Zero::s_zeroSource,16-byte zero-initialised .bss block (no immediate writer found) that Math::VectorUA4f::Zero (0x004cbfe0) pushes as the source of the copy constructor 0x00933d70 into its function static at 0x00C2BEC8; its only reader. INFERRED,0x00c2bed8,0x00c25510,0x00c2bed8
 100198,data,Math::Vector4f::Zero::s_guard,Function-static guard word of Vector4f::Zero,0x00c2bee8,0x00c25520,0x00c2bee8
-100199,data,Math::Vector4f::UnitW::s_vector2,,0x00c2beec,0x00c25524,0x00c2beec
+100199,data,Math::VectorUA4f::UnitW::s_vector,,0x00c2beec,0x00c25524,0x00c2beec
 100200,data,Math::Vector4f::UnitW::s_guard2,Function-static guard word of Vector4f::UnitW,0x00c2befc,0x00c25534,0x00c2befc
 100201,data,ECResMan::RIMSource::s_infinity,"Dynamic-init float +infinity, passed as the float argument of a virtual call on the member at +0xd0 in RIMSource::Pump",0x00c2bf00,0x00c25538,0x00c2bf00
 100202,data,ECBase::ECDynArray<Resource>::s_default,"0x40-byte default Resource (copy-stride 64: sar 6 in the callers): constructed at startup by the dynamic initialiser 0x00acec80 (Resource constructor 0x004be890), atexit stub 0x00ad5800; returned by std::vector<Resource>::operator[] (0x004d0a90) and by the inlined bounds-checked reads in ECResMan::ErfSource::ReadDirectory (0x004d1040) when the index is out of range, which then write the entry's fields into it. The row's 0x48 is only the distance to the next row.",0x00c2bf08,0x00c25540,0x00c2bf08
