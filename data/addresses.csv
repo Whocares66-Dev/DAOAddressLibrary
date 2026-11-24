@@ -602,7 +602,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 601,function,GRefCountBaseImpl::SetRefCountMode,,0x00419040,0x00419360,0x00419040
 602,function,,,0x00419080,0x004193a0,0x00419080
 603,function,GRefCountBaseImpl::`scalar deleting destructor',,0x004190c0,0x004193e0,0x004190c0
-604,function,GRefCountBaseImpl::AddRef,,0x00419120,0x00419440,0x00419120
+604,function,GFxResource::AddRef,"INFERRED class: InterlockedExchangeAdd(this+4, 1), plain ret: the counterpart of GFxResource::Release (0x0090BB60), which decrements the same count at +4 with InterlockedExchangeAdd(this+4, -1); some 90 direct callers, GFxResource users. It was named GRefCountBaseImpl::AddRef, with no evidence (decomp-agent, read 2026-11-24)",0x00419120,0x00419440,0x00419120
 605,function,,,0x00419130,0x00419450,0x00419130
 606,function,,,0x00419160,0x007b9210,0x00419160
 607,function,GDebugAllocator::`scalar deleting destructor',,0x00419180,0x00419480,0x00419180
