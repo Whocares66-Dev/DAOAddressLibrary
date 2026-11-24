@@ -9825,7 +9825,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9824,function,SoundEventInstance::GetCategoryName,,0x005b6b30,0x0071f3d0,0x005b6b30
 9825,function,SoundManager::GetProjectEventNames,,0x005b6b60,0x0071f400,0x005b6b60
 9826,function,SoundManager::SetReverbPresets,,0x005b6b80,0x0071f420,0x005b6b80
-9827,function,CRules::GetStringByRowId,,0x005b6ba0,0x0071f440,0x005b6ba0
+9827,function,SoundManager::GetStringByRowId,"__thiscall, ret 0x10, this unused: looks a table up in g_rules (0x00C1D090) +4 through GdaStore::FindTable (0x004DF580) and returns slot 0x20 of it with its four arguments. Its five callers are SoundManager members that pass their own this (taken from ecx at their entry), never the rules object (decomp-agent, 2026-11-23)",0x005b6ba0,0x0071f440,0x005b6ba0
 9828,function,MusicController::MusicController,,0x005b6be0,0x0071f480,0x005b6be0
 9829,function,MusicController::Initialize,,0x005b6cb0,0x0071f550,0x005b6cb0
 9830,function,MusicController::SetIntensity,,0x005b6cd0,0x0071f570,0x005b6cd0
