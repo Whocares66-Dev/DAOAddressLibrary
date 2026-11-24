@@ -5926,7 +5926,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5925,function,std::allocator<Graphics::MaterialStateEntry>::allocate,,0x004fa080,0x007f89a0,0x004fa080
 5926,function,Multithreading::SynchSafePointer<?>::MakeWeak,"Sets the pointer's weak flag (+4) and releases the strong count on the target's list, finding the list base through the vbtable; same body as SynchSafePointer<Graphics::MaterialShader>::MakeWeak (0x004FD430) but with a virtual base.",0x004fa0e0,0x004b2a10,0x004fa0e0
 5927,function,Graphics::MaterialState::GetMemoryFootprint,,0x004fa100,0x007f8a00,0x004fa100
-5928,function,ECBase::ECDynArray<void*>::Back,,0x004fa180,0x004b6900,0x004fa180
+5928,function,ECBase::ECDynArray<Multithreading::SynchSafePointer<?>*>::Back,"The last element's address, or 0x00C309B0 (this instantiation's s_default) when empty; begin +4, end +8, so ecx is the array. Each SynchSafePointerList<T> calls it on its base's holders (+4) and clears the holder it gets with SynchSafePointer's operator=(T*) 0x00458420 and 0 (0x004FA819), so the elements are SynchSafePointer pointers. It was named ECDynArray<void*>::Back, but ECDynArray<void*>'s default is 0x00C2C10C (2026-11-24)",0x004fa180,0x004b6900,0x004fa180
 5929,function,Multithreading::SynchSafePointerListBase::~SynchSafePointerListBase,,0x004fa1e0,0x004b6960,0x004fa1e0
 5930,function,Multithreading::SynchSafePointerListBase::IsUnreferenced,,0x004fa240,0x004b69c0,0x004fa240
 5931,function,Multithreading::SynchSafePointerListBase::`scalar deleting destructor',,0x004fa250,0x004b69d0,0x004fa250
@@ -100344,7 +100344,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100343,data,,,0x00c309a0,0x00c24640,0x00c309a0
 100344,data,Graphics::ProvideRemoteMaterialParams::s_guard,guard of s_constants,0x00c309a8,0x00c24648,0x00c309a8
 100345,data,Graphics::MaterialState::s_nextId,Dword serial: the MaterialState constructor 0x004FB792 stores it at +0x4C and adds 1 (0x004FB79A).,0x00c309ac,0x00c24bac,0x00c309ac
-100346,data,ECBase::ECDynArray<void*>::s_default,A pointer slot ECDynArray<void*>::Back (0x004FA180) returns for an empty array,0x00c309b0,0x00c1ad08,0x00c309b0
+100346,data,ECBase::ECDynArray<Multithreading::SynchSafePointer<?>*>::s_default,"Read only by ECDynArray<SynchSafePointer<?>*>::Back (0x004FA180), for an empty holders array of a SynchSafePointerListBase. It was named ECDynArray<void*>::s_default, the name of 0x00C2C10C (2026-11-24)",0x00c309b0,0x00c1ad08,0x00c309b0
 100347,data,Graphics::MaterialState::SetMaterialObject::s_stateManager,"Function-local pointer: the MaterialStateManager returned by MaterialStateManager::Get (0x004FCB70), taken once on the first call (0x004FA960..0x004FA965) and used at 0x004FA972 to look up the object's state.",0x00c309b4,0x00c24bb0,0x00c309b4
 100348,data,Graphics::MaterialState::SetMaterialObject::s_guard,guard of the static above,0x00c309b8,0x00c24bb4,0x00c309b8
 100349,data,ECBase::ECDynArray<Graphics::MaterialStateEntry>::s_default,"A default MaterialStateEntry (0x14 bytes, byte +0xC tested) returned for an out-of-range index by MaterialState::CreateDeviceStates 0x004FA526 and MaterialStateManager::LoadDefaults 0x004FBD66; destroyed by 0x00AD5A10 through ~MaterialStateEntry 0x004FA860.",0x00c309c0,0x00c24530,0x00c309c0
