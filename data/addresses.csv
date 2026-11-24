@@ -19868,7 +19868,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19867,function,SubActionPool::~SubActionPool,,0x007a7840,0x00678d70,0x007a7840
 19868,function,CSSubActionHandler::UseObject,,0x007a78f0,0x00678e20,0x007a78f0
 19869,function,"std::map<?,?>::erase",,0x007a7c00,0x00719220,0x007a7c00
-19870,function,,,0x007a7ec0,0x007195d0,0x007a7ec0
+19870,function,"std::map<unsigned int,std::pair<unsigned int,unsigned int>>::erase(iterator,iterator)","VC8'""'""'s _Tree::erase(iterator, iterator), ret 0x14 (hidden result, two iterators): the whole tree through _Erase (0x007A5F80) when the range is begin..end, else erase(iterator) (0x007A7C00) for each, stepping with _Inc (0x007A2330). ~CombatAnimPicker (0x007AAB16) calls it; decomp-agent'""'""'s compile of that destructor with the real VC8 map lands this call here (decomp-agent, 2026-11-24; read 2026-11-24)",0x007a7ec0,0x007195d0,0x007a7ec0
 19871,function,std::vector<?>::_Insert_n,,0x007a7f90,0x00679130,0x007a7f90
 19872,function,,,0x007a8104,0x006792a4,0x007a8104
 19873,function,,,0x007a8110,0x006792b0,0x007a8110
