@@ -4450,7 +4450,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4449,function,ECLog::DisableChannel,,0x004bf220,0x00801390,0x004bf220
 4450,function,ECLog::~ECLog,"Flushes and deletes the log file object at +0x38, destroys the mutex at +0x880 and the two wstrings at +0x1C and +0.",0x004bf250,0x008013c0,0x004bf250
 4451,function,ECLog::SetIniPath,,0x004bf300,0x00802be0,0x004bf300
-4452,function,"std::operator+<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>",,0x004bf350,0x004695a0,0x004bf350
+4452,function,ECBase::ECString::operator+(wchar_t) const,"__thiscall, ret 8 (hidden return slot, the character): the result copy-built from this (ecx) with 0x004C2510, then append(1, ch) (0x00406970). No unit of the build was compiled /GL (decomp-agent'""'""'s LTCG test, 2026-11-24), so the left operand in ecx makes it a member, not std::operator+. Callers: ECLog::OpenLogFile, CMusicThemeContent_FMOD::Restart, AppendCommaText (read 2026-11-24)",0x004bf350,0x004695a0,0x004bf350
 4453,function,ECLog::OpenLogFile,"Closes the current log file and opens a new one (name from the log's wstrings), writes a header, and resets the +0x3C count so a log does not pass its limit (+0x40, 0xFDE8 set by the constructor); also used by SetLogFile.",0x004bf3d0,0x008014c0,0x004bf3d0
 4454,function,ECLog::WriteEntry,,0x004bf790,0x00801880,0x004bf790
 4455,function,ECLog::SetLogFile,,0x004bf960,0x00801a50,0x004bf960
@@ -23701,7 +23701,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23700,function,D3DDriver::D3DStateCache::SetVertexShaderConstantI,,0x0086e6c0,0x00474570,0x0086e6c0
 23701,function,D3DDriver::D3DStateCache::SetPixelShaderConstantF,,0x0086e6f0,0x004745a0,0x0086e6f0
 23702,function,D3DDriver::D3DStateCache::SetPixelShaderConstantI,,0x0086e720,0x004745d0,0x0086e720
-23703,function,std::vector<D3DDriver::D3DStateChange>::back,,0x0086e750,0x00474650,0x0086e750
+23703,function,ECBase::ECDynArray<D3DDriver::D3DStateChange>::Back,"ECDynArray'""'""'s Back: the last element (checked iterators, 16-byte elements), or its s_default 0x00C3A18C when the array is empty or has no storage; plain ret (decomp-agent, read 2026-11-24)",0x0086e750,0x00474650,0x0086e750
 23704,function,std::vector<D3DDriver::D3DStateChange>::resize,,0x0086e7b0,0x004528b0,0x0086e7b0
 23705,function,ECBase::ECDynArray<D3DDriver::D3DStateChange>::ECDynArray(unsigned int),,0x0086e860,0x00455640,0x0086e860
 23706,function,std::vector<D3DDriver::D3DStateChange>::resize,,0x0086e8e0,0x004747f0,0x0086e8e0
@@ -24159,7 +24159,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24158,function,std::vector<?>::resize,,0x0087e8b0,0x00454ea0,0x0087e8b0
 24159,function,std::vector<?>::insert,,0x0087e960,0x00454f50,0x0087e960
 24160,function,std::vector<unsigned short>::reserve,,0x0087e9f0,0x00455240,0x0087e9f0
-24161,function,,,0x0087ea20,0x004747c0,0x0087ea20
+24161,function,ECBase::ECDynArray<D3DDriver::D3DStateChange>::ReserveIfAboveSize,"INFERRED name: __thiscall, ret 4: when the argument is greater than the size (16-byte elements), tail-jumps to the vector'""'""'s reserve (0x0087E7A0) with it; otherwise does nothing (decomp-agent, read 2026-11-24)",0x0087ea20,0x004747c0,0x0087ea20
 24162,function,std::vector<unsigned short>::push_back,,0x0087ea50,0x00455270,0x0087ea50
 24163,function,std::vector<?>::insert,,0x0087ead0,0x004ef930,0x0087ead0
 24164,function,ECBase::ECDynArray<unsigned short>::ECDynArray(unsigned int),,0x0087eb60,0x004555d0,0x0087eb60
@@ -102701,7 +102701,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 102700,data,D3DDriver::D3DGraphicsCapabilitiesDriver::Initialize::s_adapterDescription,,0x00c3a170,0x00c19208,0x00c3a170
 102701,data,,,0x00c3a174,0x00c1920c,0x00c3a174
 102702,data,,,0x00c3a188,0x00c19220,0x00c3a188
-102703,data,,,0x00c3a18c,0x00c19224,0x00c3a18c
+102703,data,ECBase::ECDynArray<D3DDriver::D3DStateChange>::s_default,What ECDynArray<D3DDriver::D3DStateChange>::Back (0x0086E750) returns for an empty array (read 2026-11-24),0x00c3a18c,0x00c19224,0x00c3a18c
 102704,data,,,0x00c3a190,0x00c19228,0x00c3a190
 102705,data,,,0x00c3a194,0x00c1922c,0x00c3a194
 102706,data,,,0x00c3a198,0x00c19230,0x00c3a198
