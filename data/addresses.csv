@@ -4981,7 +4981,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4980,function,Math::VectorUA4f::VectorUA4f,,0x004d4dd0,0x00816d00,0x004d4dd0
 4981,function,Math::VectorUA4f::Set,,0x004d4df0,0x00816d20,0x004d4df0
 4982,function,Math::VectorUA4f::DivideByW,"INFERRED class: both callers (Vector3::FromVector4Homogeneous 0x004D45B8, Physics::ToNxVec3FromVector4 0x00837AB4) build the object with VectorUA4f(const VectorUA4f&) 0x00933D70 in frames not 16-aligned, so not Math::Vector4f (decomp-agent, read 2026-11-23)",0x004d4e10,0x00816d40,0x004d4e10
-4983,function,Math::Vector4f::Zero,,0x004d4e50,0x00816d80,0x004d4e50
+4983,function,Math::Float4::Zero,"INFERRED class (decomp-agent's math work, 2026-11-23): returns a function static (0x00C2C014, not 16-aligned) built once by the (x, y, z, w) constructor code 0x004D4DD0 (folded; also named VectorUA4f's) from four fldz, with no atexit destructor: a 16-byte unaligned type with no destructor. Not Math::Vector4f (16-aligned) and not Math::VectorUA4f, whose Zero (0x004CBFE0) registers a destructor. Math::Float4, the trivial element of std::vector<Math::Float4>, which copies through the same folded 0x00933D70 (read 2026-11-23)",0x004d4e50,0x00816d80,0x004d4e50
 4984,function,Math::VectorUA4f::SetFromVector3W,"INFERRED class: CGameEffect::GetVisualParams calls it on a local of a frame not 16-aligned (0x0079F571), which a Math::Vector4f cannot be; its other three callers have 16-aligned frames, so the code may be folded with Vector4f'""'""'s (decomp-agent, read 2026-11-23)",0x004d4e90,0x00816dc0,0x004d4e90
 4985,function,Vector3::Equals,,0x004d4eb0,0x00818280,0x004d4eb0
 4986,function,Vector3::NotEquals,,0x004d4ef0,0x00816e20,0x004d4ef0
@@ -100217,8 +100217,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100216,data,,,0x00c2c004,0x00c29a44,0x00c2c004
 100217,data,,,0x00c2c008,0x00c29a48,0x00c2c008
 100218,data,Math::Plane::IntersectSegment::s_guard,"Guard word of the scratch vector: bit 0 tested at 0x004d430e, set at 0x004d431f.",0x00c2c010,0x00c29a50,0x00c2c010
-100219,data,Math::Vector4f::Zero::s_vector2,,0x00c2c014,0x00c255b4,0x00c2c014
-100220,data,Math::Vector4f::Zero::s_guard2,Function-static guard word of the second Math::Vector4f::Zero (0x4d4e50),0x00c2c024,0x00c255c4,0x00c2c024
+100219,data,Math::Float4::Zero::s_vector,,0x00c2c014,0x00c255b4,0x00c2c014
+100220,data,Math::Float4::Zero::s_guard,Function-static guard word of Math::Float4::Zero (0x004D4E50),0x00c2c024,0x00c255c4,0x00c2c024
 100221,data,Vector3::Zero::s_vector2,,0x00c2c028,0x00c255c8,0x00c2c028
 100222,data,,,0x00c2c02c,0x00c255cc,0x00c2c02c
 100223,data,,,0x00c2c030,0x00c255d0,0x00c2c030
