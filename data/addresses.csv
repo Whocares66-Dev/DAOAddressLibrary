@@ -21253,7 +21253,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21252,function,Conversation::BeginOnce,,0x007eed30,0x006d84c0,0x007eed30
 21253,function,Conversation::LeaveDialogueMode,,0x007eed70,0x006d8500,0x007eed70
 21254,function,Conversation::RunAction,,0x007eedc0,0x006d8550,0x007eedc0
-21255,function,Conversation::VectorAtOrEmpty<Conversation::Participant>,,0x007eef00,0x006d8690,0x007eef00
+21255,function,ECBase::ECDynArray<Conversation::Participant>::At,"__thiscall, ret 4: the address of element [i] (0x14-byte elements, 0x66666667 and sar 3) or, out of range, ECDynArray<Participant>::s_default (0x00C11C34); the shape of the other ECDynArray At members. It was named Conversation::VectorAtOrEmpty<Conversation::Participant> (read 2026-11-24)",0x007eef00,0x006d8690,0x007eef00
 21256,function,std::_Uninit_copy<Elem20*>,,0x007eef50,0x004bc750,0x007eef50
 21257,function,ConversationFile::EndPlotGuid,,0x007eef90,0x006d86e0,0x007eef90
 21258,function,ConversationFile::EndScript,,0x007ef010,0x006d8760,0x007ef010
@@ -98488,7 +98488,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 98487,data,CameraControllerBase::s_inputCurveGainA,float 1.25: multiplies the first input axis after it is cubed (x*x*x) in ReadInput,0x00c11c28,0x00c05fc8,0x00c11c28
 98488,data,CameraControllerBase::s_inputCurveGainB,float 4.0: multiplies the second input axis after it is cubed,0x00c11c2c,0x00c05fcc,0x00c11c2c
 98489,data,CameraControllerBase::UpdateTargetHeight::s_targetHeightEaseSeconds,,0x00c11c30,0x00c05fd0,0x00c11c30
-98490,data,Conversation::VectorAtOrEmpty<Conversation::Participant>::s_empty,,0x00c11c34,0x00c06024,0x00c11c34
+98490,data,ECBase::ECDynArray<Conversation::Participant>::s_default,"The Participant array'""'""'s out-of-range element: ECDynArray<Participant>::At (0x007EEF38) returns it, and the inlined lookups in ~Conversation (0x007F104F), FindParticipant, ReleaseAllParticipants, MakeLineCutscene, RemoveMarkedParticipants and RemoveParticipant load it. It was named Conversation::VectorAtOrEmpty<Conversation::Participant>::s_empty (decomp-agent, read 2026-11-24)",0x00c11c34,0x00c06024,0x00c11c34
 98491,data,PortraitRenderer::Setup::s_namePrefix,"Pointer (4 bytes) in .data to the wide string L""portrait_"" at 0x00B246B4; Setup 0x007F3E20 reads it at 0x007F3F14, appends the creature tag (creature+0xB8, 0x004C35F0) and then the post-incremented counter [0x00C3905C] (0x004C3580), the name the portrait's render target is registered under (GUI.md, img://portrait_<tag><n>) [C]; no immediate writer found.",0x00c11c48,0x00c06180,0x00c11c48
 98492,data,PortraitRenderer::PlaceCamera::s_fovDegrees,"Float 10.0 (0x41200000) in .data, 4 bytes; PlaceCamera 0x007F3130 divides the camera back-off by it (distance*30/10, fdiv at 0x007F33A6) and converts it from degrees to radians (x pi/180 at 0x007F36AE) for the portrait's scene camera, a 10 degree vertical field of view (GUI.md 1798, 1861) [C].",0x00c11c4c,0x00c06184,0x00c11c4c
 98493,data,AnimWeightRequests::s_defaultRequest,"8-byte record {float weight, int kind} returned for an out-of-range index by the request array in AnimWeightRequests::Apply (0x007f4a50) and SetRequest; kind 1 and 2 are tested; INFERRED to be the array's s_default.",0x00c11c50,0x00c06190,0x00c11c50
