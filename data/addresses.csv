@@ -3432,8 +3432,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3431,function,"stdext::hash_map<?,GUI::SharedMapEntry>::hash_map",,0x004852b0,0x004fe960,0x004852b0
 3432,function,ECBase::ECDynArray<Online::HttpRecord>::Clear,"__thiscall, ret 4, a bool: true frees the storage (the elements destroyed, 0x0047CC10, then operator delete); false refills the elements with a default Online::HttpRecord (0x00474130, fill 0x00483C40). The shape of ECDynArray<OnlineRec24>::Clear (0x00485450); its callers pass 0 (HttpManager::Shutdown 0x00490C23, OnlineFeatures' Shutdown and connection-lost and -closed handlers) (decomp-agent, read 2026-11-23)",0x00485340,0x0085d120,0x00485340
 3433,function,ECBase::ECDynArray<OnlineRec24>::Clear,,0x00485450,0x0085d230,0x00485450
-3434,function,std::vector<PrereqItem>::vector(unsigned int),,0x00485550,0x004c4750,0x00485550
-3435,function,std::vector<PRCItem>::vector(unsigned int),,0x004855c0,0x0085d330,0x004855c0
+3434,function,ECBase::ECDynArray<PrereqItem>::ECDynArray(unsigned int),"ECDynArray'""'""'s own count constructor: zeroes +4, +8, +0xC, then a default PrereqItem (0x00474190) and resize (0x00483E50); ret 4 (decomp-agent, read 2026-11-24)",0x00485550,0x004c4750,0x00485550
+3435,function,ECBase::ECDynArray<PRCItem>::ECDynArray(unsigned int),"ECDynArray'""'""'s own count constructor: zeroes +4, +8, +0xC, then a default element (an ECString, 0x004C0D90) and resize (0x00483F40); ret 4 (decomp-agent, read 2026-11-24)",0x004855c0,0x0085d330,0x004855c0
 3436,function,ECBase::ECDynArray<unsigned char>::ECDynArray(unsigned int),"ECDynArray'""'""'s own count constructor: zeroes +4, +8, +0xC, then resize(count) (0x00484030); ret 4. VC8'""'""'s vector(n) never calls resize (decomp-agent, read 2026-11-24)",0x00485630,0x00479350,0x00485630
 3437,function,ECBase::ECDynArray<OnlineRec84>::ECDynArray(unsigned int),,0x00485690,0x0085d3a0,0x00485690
 3438,function,ECBase::ECDynArray<OnlineFeatures::Achievement>::ECDynArray(unsigned int),,0x004856f0,0x0085d400,0x004856f0
@@ -3789,8 +3789,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3788,function,std::vector<Offer>::insert,,0x0049ca60,0x0087d870,0x0049ca60
 3789,function,std::vector<OfferTag>::resize,,0x0049cb10,0x0087d920,0x0049cb10
 3790,function,std::vector<OfferTag>::insert,,0x0049cc30,0x0087da40,0x0049cc30
-3791,function,std::vector<PrereqItem>::vector(const std::vector<PrereqItem>&),,0x0049cce0,0x004c4090,0x0049cce0
-3792,function,std::vector<PRCItem>::vector(const std::vector<PRCItem>&),,0x0049cd40,0x0087daf0,0x0049cd40
+3791,function,ECBase::ECDynArray<PrereqItem>::ECDynArray(const ECBase::ECDynArray<PrereqItem>&),"ECDynArray'""'""'s own copy constructor: zeroes +4, +8, +0xC, then vector::operator= (0x0049C540); ret 4 (decomp-agent, read 2026-11-24)",0x0049cce0,0x004c4090,0x0049cce0
+3792,function,ECBase::ECDynArray<PRCItem>::ECDynArray(const ECBase::ECDynArray<PRCItem>&),"ECDynArray'""'""'s own copy constructor: zeroes +4, +8, +0xC, then vector::operator= (0x0049C690); ret 4 (decomp-agent, read 2026-11-24)",0x0049cd40,0x0087daf0,0x0049cd40
 3793,function,AddInItem::operator=,,0x0049cda0,0x00873790,0x0049cda0
 3794,function,"std::_Copy_opt<AddInItem*,AddInItem*>",,0x0049cf60,0x0087db50,0x0049cf60
 3795,function,"std::_Copy_backward_opt<AddInItem*,AddInItem*>",,0x0049cfa0,0x0087db90,0x0049cfa0
@@ -4570,8 +4570,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4569,function,ECBase::ECString::append(unsigned long),"As 0x004C3700 (append(long)) through ECString(unsigned long, nullptr) (0x004C2840)",0x004c3780,0x00804cb0,0x004c3780
 4570,function,String::ToUpperAscii,,0x004c3800,0x00804d30,0x004c3800
 4571,function,String::ToUpperAscii,,0x004c38e0,0x00804e10,0x004c38e0
-4572,function,String::ToLowerAscii,,0x004c3970,0x00804ea0,0x004c3970
-4573,function,String::ToLowerAscii,,0x004c3a50,0x00804f80,0x004c3a50
+4572,function,ECBase::ECString::ToLowerAscii() const,"__thiscall (ecx to ebx at 0x004C3997), ret 4, the hidden result: builds the result string (0x004C0D90), then a lowercase copy of this string'""'""'s ASCII letters; reads this'""'""'s size at +0x14. It was named String::ToLowerAscii (decomp-agent, read 2026-11-24)",0x004c3970,0x00804ea0,0x004c3970
+4573,function,ECBase::ECString::ToLowerAscii(ECBase::ECString&) const,"__thiscall (ecx to ebx at 0x004C3A56), ret 4: writes a lowercase copy of this string'""'""'s ASCII letters into the string passed in; reads this'""'""'s size at +0x14. It was named String::ToLowerAscii (decomp-agent, read 2026-11-24)",0x004c3a50,0x00804f80,0x004c3a50
 4574,function,ECBase::ECString::ToNarrow,"INFERRED name: nothing in the exe names it. __thiscall, ret 4, returns a pool char string (std::basic_string<char,std::char_traits<char>,ECMemory::StringAllocator<char>>) by value through the hidden pointer. It constructs the result empty and resizes it to this string's length: erase 0x00401210, or append(n, 0) 0x004C1E20, which grows it through the pool _Copy 0x004C0C40 (AllocateInPool). Then it stores each wide character's low byte, with no code page (0x004C3B8D), and returns the result. 170 callers; WinMain and PhysicsParticleActor::MakeBoxShapeDesc free it with std::string::~string (0x004013F0), which frees through operator delete as the pool string does (read 2026-11-23)",0x004c3ae0,0x00805010,0x004c3ae0
 4575,function,ECBase::ECString::ToIdentifier,"INFERRED name: __thiscall, returns an ECString by value (ret 4, EH frame, /GS buffer): copies this string'""'""'s characters for which iswalnum (0x008E1B6A) is non-zero, and '""'""'_'""'""', into a stack buffer of at most 0x3E characters (0x004C3C96), then assigns it (0x004C2AD0) (decomp-agent, read 2026-11-24)",0x004c3bc0,0x008050f0,0x004c3bc0
 4576,function,ECBase::ECString::RemoveInvalidCharacters,,0x004c3cf0,0x00805220,0x004c3cf0
@@ -24122,10 +24122,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24121,function,InputMapper::AddEntry,,0x0087d480,0x00453a90,0x0087d480
 24122,function,InputMapper::SetMappingValue,,0x0087d5a0,0x00453bb0,0x0087d5a0
 24123,function,InputMapper::Dispatch,,0x0087d690,0x00453ca0,0x0087d690
-24124,function,std::list<Elem16>::_Buyheadnode,,0x0087d9c0,0x0060c0d0,0x0087d9c0
+24124,function,std::list<ECInput::Event>::_Buynode,"operator new for a node and its links set: VC8'""'""'s _Buynode() for a list of 16-byte ECInput::Event (Elem16). It was named std::list<Elem16>::_Buyheadnode (decomp-agent, read 2026-11-24)",0x0087d9c0,0x0060c0d0,0x0087d9c0
 24125,function,Input::DeviceStates::Poll,,0x0087d9e0,0x00453fd0,0x0087d9e0
 24126,function,Input::DeviceStates::GetInputState,,0x0087da50,0x00454040,0x0087da50
-24127,function,Input::DeviceStates::InitEvents,,0x0087dac0,0x00454110,0x0087dac0
+24127,function,ECBase::ECList<ECInput::Event>::ECList(ECInput::Event),"ret 0x10 (a 16-byte Event by value): the list'""'""'s head node (_Buynode 0x0087D9C0), the value stored and the size zeroed. Input::DeviceStates derives from ECList<ECInput::Event>, and its constructor passes a default Event. It was named Input::DeviceStates::InitEvents (decomp-agent, read 2026-11-24)",0x0087dac0,0x00454110,0x0087dac0
 24128,function,Input::DeviceStates::~DeviceStates,,0x0087db00,0x00454150,0x0087db00
 24129,function,ECBase::ECDynArray<ECInput::IRawInput*>::InsertAt,"The same code as ECDynArray<void*>::InsertAt (0x006CE860), 45 of 47 instructions with constants masked, the rest its own vector's insert and push_back: insert before the index, or push_back past the end; ret 8. Caller: AddRawInputDevice (decomp-agent, read 2026-11-24)",0x0087dbd0,0x0056d980,0x0087dbd0
 24130,function,Input::DeviceStates::AddRawInputDevice,,0x0087dc50,0x00454220,0x0087dc50
@@ -24166,8 +24166,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24165,function,std::vector<?>::push_back,,0x0087ebd0,0x00472ce0,0x0087ebd0
 24166,function,ECInput::RawInputWin32::AddTypedCharacter,,0x0087ec60,0x004556c0,0x0087ec60
 24167,function,ECInput::RawInputWin32::QueueEvent,,0x0087ec80,0x004556e0,0x0087ec80
-24168,function,std::vector<unsigned short>::_Tidy,,0x0087eca0,0x00455700,0x0087eca0
-24169,function,std::vector<ECInput::Event>::_Tidy,,0x0087ed60,0x004557c0,0x0087ed60
+24168,function,ECBase::ECDynArray<unsigned short>::Clear,"ECDynArray'""'""'s Clear(bool): a byte argument (0x0087ECCB), erase then operator delete or resize; ret 4. It was named std::vector<unsigned short>::_Tidy (decomp-agent, read 2026-11-24)",0x0087eca0,0x00455700,0x0087eca0
+24169,function,ECBase::ECDynArray<ECInput::Event>::Clear,"ECDynArray'""'""'s Clear(bool): a byte argument (0x0087ED88); ret 4. It was named std::vector<ECInput::Event>::_Tidy (decomp-agent, read 2026-11-24)",0x0087ed60,0x004557c0,0x0087ed60
 24170,function,ECInput::RawInputWin32::ClearTypedInput,,0x0087ee60,0x004558c0,0x0087ee60
 24171,function,ECInput::RawInputWin32::ReleaseHeldKeys,,0x0087ee80,0x004558e0,0x0087ee80
 24172,function,ECInput::RawInputWin32::ReleaseHeldMouseButtons,,0x0087ef30,0x00455990,0x0087ef30
