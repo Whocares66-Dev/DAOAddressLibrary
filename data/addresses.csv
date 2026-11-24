@@ -2231,7 +2231,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2230,function,Renderer::ShadowMaps::BlurPartition,,0x004518e0,0x0088d0c0,0x004518e0
 2231,function,Renderer::ShadowMaps::BindBackbuffer,,0x00451910,0x0088d0f0,0x00451910
 2232,function,Renderer::ShadowMaps::ReleaseCommander,,0x00451930,0x0088d110,0x00451930
-2233,function,Vector3::Vector3,"x, y and z zeroed, w untouched; all 11 references pass it to the vector constructor iterator with element size 0x10. Vector3 here is the 16-byte, 16-aligned 3-vector its elements are: each built by Vector3::Vector3 (0x00451950, x, y, z zeroed, w untouched) through the vector constructor iterator with size 0x10; whether the engine's plain Vector3 is that type or a 12-byte one whose constructor ICF folded here is open (decomp-agent, read 2026-11-23)",0x00451950,0x00496170,0x00451950
+2233,function,Vector3f::Vector3f,"INFERRED type name (decomp-agent'""'""'s math work, 2026-11-23): x, y and z zeroed, w untouched; all 11 references pass it to the vector constructor iterator with element size 0x10. A 12-byte Vector3'""'""'s default constructor would be the same code, so it may be folded with Vector3'""'""'s (read 2026-11-23)",0x00451950,0x00496170,0x00451950
 2234,function,Vector3::UnitX,,0x00451960,0x007aa1b0,0x00451960
 2235,function,Vector3::Magnitude,,0x00451990,0x00497740,0x00451990
 2236,function,Math::Vector4f::Distance,,0x004519d0,0x00531080,0x004519d0
@@ -2328,7 +2328,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2327,function,Renderer::FrameBufferResource::GetClearColor,,0x00456240,0x00890e20,0x00456240
 2328,function,Renderer::ClearAuxRenderTargets,,0x00456260,0x00890e40,0x00456260
 2329,function,Renderer::IsFBEffectFileLoaded,,0x00456280,0x00890e60,0x00456280
-2330,function,Math::VectorUA4f::GetOrigin,"INFERRED class: returns a function static (0x00C1EB34, not 16-aligned) set once to (0, 0, 0, 1) with an atexit destructor (0x00AD53F0, a bare ret), as VectorUA4f'""'""'s own Zero and UnitW statics are; Math::Vector4f'""'""'s statics are aligned and register none. The 16-byte type with an empty destructor of Array<?> (0x00A5A140) would show the same, so the class is not certain (decomp-agent, read 2026-11-23)",0x00456320,0x006fb950,0x00456320
+2330,function,Math::PointUA4f::GetOrigin,"INFERRED class: returns a function static (0x00C1EB34, not 16-aligned) built once with inline stores to (0, 0, 0, 1) (fldz, fst x3, fld1) and given an atexit destructor (0x00AD53F0, a bare ret): an inline default constructor and an empty destructor, Math::PointUA4f's. VectorUA4f builds nothing inline: its constructors are all called (0x0095BA40, 0x004D4DD0, 0x00933D70, 0x004CC060), and its own UnitW static is copy-built through 0x00933D70. Math::Vector4f's statics are aligned and register no atexit. FBRenderTargetResource (0x0045869E), AgeMapKey (0x0053FFB3) and IAreaLayout's constructor inline it (decomp-agent, read 2026-11-23)",0x00456320,0x006fb950,0x00456320
 2331,function,Gff4::StructReader::ReadStringPtr,,0x00456370,0x004b5b40,0x00456370
 2332,function,"std::_Uninit_fill_n<Math::Vector4f *,unsigned int,Math::Vector4f>",,0x004563c0,0x007d7c40,0x004563c0
 2333,function,std::_Median<Renderer::FrameBufferEffect * *>,,0x00456400,0x00890f20,0x00456400
@@ -7679,7 +7679,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7678,function,GraphicsStructures::ObjectNodeEmitter::GetUserParamName,,0x0053ee90,0x0077ad50,0x0053ee90
 7679,function,GraphicsStructures::ObjectNodeEmitter::LoadLiveParametersFromBlueprint,,0x0053eeb0,0x0077ad70,0x0053eeb0
 7680,function,GraphicsStructures::ObjectNodeEmitter::UpdateDistanceFade,,0x0053f070,0x0077af30,0x0053f070
-7681,function,GraphicsStructures::Array<Vector3>::SetCapacity,"builds its elements at 0x0053F1B7. Vector3 here is the 16-byte, 16-aligned 3-vector its elements are: each built by Vector3::Vector3 (0x00451950, x, y, z zeroed, w untouched) through the vector constructor iterator with size 0x10; whether the engine's plain Vector3 is that type or a 12-byte one whose constructor ICF folded here is open (decomp-agent, read 2026-11-23)",0x0053f150,0x007005e0,0x0053f150
+7681,function,GraphicsStructures::Array<Vector3f>::SetCapacity,"builds its elements at 0x0053F1B7. Vector3f (INFERRED type name, decomp-agent's math work, 2026-11-23; nothing in the exe names it) is a __declspec(align(16)) {x, y, z}, 16 bytes: its elements are built by Vector3f::Vector3f (0x00451950, x, y, z zeroed, w untouched) through the vector constructor iterator with size 0x10. Vector3 stays the name of the 12-byte type until its size is proven (read 2026-11-23)",0x0053f150,0x007005e0,0x0053f150
 7682,function,GraphicsStructures::Array<?>::Array,,0x0053f220,0x0077b010,0x0053f220
 7683,function,GraphicsStructures::Array<?>::SetSize,,0x0053f250,0x0077b040,0x0053f250
 7684,function,ECBase::ECDynArray<GraphicsStructures::Dependency*>::operator[],,0x0053f290,0x00746480,0x0053f290
@@ -10412,7 +10412,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10411,function,IRoomLayout::QueueFreeLevelMemory,,0x005d2230,0x00711600,0x005d2230
 10412,function,CRoom::CanSeeRoom,,0x005d22e0,0x00715d70,0x005d22e0
 10413,function,CRoom::Show,,0x005d2360,0x00715df0,0x005d2360
-10414,function,Core::GetVectorRange<?>,,0x005d2480,0x00749a60,0x005d2480
+10414,function,ECBase::ECDynArray<?>::GetRange,"INFERRED name: nothing names it. __thiscall, ret 8: *first = begin and *last = the last element + 1 (checked iterators, 0x008E11F2), both 0 when the array is empty; 4-byte elements (sar 2). 63 callers on many arrays of pointers, one folded body; GraphicsStructures::Object::UpdateTransforms calls it on its ECDynArray<Dependency*> members dependencies (+0x1F8) and dependents (+0x264) (decomp-agent, read 2026-11-23)",0x005d2480,0x00749a60,0x005d2480
 10415,function,std::vector<?>::_Insert_n,"The insert-n of a 4-byte-element vector, folded across element types: throws length_error when 0x3FFFFFFF - size < count (0x005D255E..0x005D2569); reached from resize and insert",0x005d2520,0x0074b8e0,0x005d2520
 10416,function,"std::vector<?>::resize(n,val)",,0x005d26e0,0x00493620,0x005d26e0
 10417,function,std::vector<?>::vector,,0x005d27a0,0x00610d50,0x005d27a0
@@ -17850,7 +17850,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17849,function,CCPlaceable::HandleMessage_DisplayFloatyMessage,,0x0074be30,0x00657dd0,0x0074be30
 17850,function,InventoryClosedMessage::GetType,,0x0074be60,0x00509640,0x0074be60
 17851,function,CCPlaceable::StaticClassInfo,,0x0074bea0,0x00657e00,0x0074bea0
-17852,function,ECBase::ECStaticArray<Vector3>::ECStaticArray,"builds its elements at 0x0074BF64. Vector3 here is the 16-byte, 16-aligned 3-vector its elements are: each built by Vector3::Vector3 (0x00451950, x, y, z zeroed, w untouched) through the vector constructor iterator with size 0x10; whether the engine's plain Vector3 is that type or a 12-byte one whose constructor ICF folded here is open (decomp-agent, read 2026-11-23)",0x0074bf00,0x00657e60,0x0074bf00
+17852,function,ECBase::ECStaticArray<Vector3f>::ECStaticArray,"builds its elements at 0x0074BF64. Vector3f (INFERRED type name, decomp-agent's math work, 2026-11-23; nothing in the exe names it) is a __declspec(align(16)) {x, y, z}, 16 bytes: its elements are built by Vector3f::Vector3f (0x00451950, x, y, z zeroed, w untouched) through the vector constructor iterator with size 0x10. Vector3 stays the name of the 12-byte type until its size is proven (read 2026-11-23)",0x0074bf00,0x00657e60,0x0074bf00
 17853,function,ECBase::ECStaticArray<Math::Vector4f>::At,,0x0074bf90,0x00657ef0,0x0074bf90
 17854,function,CCPlaceable::LoadTemplate,,0x0074bfb0,0x00657f10,0x0074bfb0
 17855,function,CCPlaceable::PlayImpactSound,,0x0074c110,0x00658070,0x0074c110
@@ -33389,13 +33389,13 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33388,function,RIMTreeManager::ReadTree,,0x00a59cb0,0x00700300,0x00a59cb0
 33389,function,CDataArrays::CDataArrays,,0x00a59e10,0x00700460,0x00a59e10
 33390,function,CDataArrays::NotEquals,,0x00a59e30,0x00700480,0x00a59e30
-33391,function,GraphicsStructures::Array<Vector3>::operator=,"The shape of GraphicsStructures::Array<Math::Point4f>::operator= (0x005728C0), 67 of 67 instructions, but it builds its elements at 0x00A59EC5. Vector3 here is the 16-byte, 16-aligned 3-vector its elements are: each built by Vector3::Vector3 (0x00451950, x, y, z zeroed, w untouched) through the vector constructor iterator with size 0x10; whether the engine's plain Vector3 is that type or a 12-byte one whose constructor ICF folded here is open (decomp-agent, read 2026-11-23)",0x00a59e50,0x007004b0,0x00a59e50
+33391,function,GraphicsStructures::Array<Vector3f>::operator=,"The shape of Array<Math::Point4f>::operator= (0x005728C0), 67 of 67 instructions; builds its elements at 0x00A59EC5. Vector3f (INFERRED type name, decomp-agent's math work, 2026-11-23; nothing in the exe names it) is a __declspec(align(16)) {x, y, z}, 16 bytes: its elements are built by Vector3f::Vector3f (0x00451950, x, y, z zeroed, w untouched) through the vector constructor iterator with size 0x10. Vector3 stays the name of the 12-byte type until its size is proven (read 2026-11-23)",0x00a59e50,0x007004b0,0x00a59e50
 33392,function,CDataArrays::GetVector,,0x00a59f10,0x00700570,0x00a59f10
 33393,function,ECBase::ECDynArray<Math::Vector4f>::ECDynArray,,0x00a59f60,0x007005c0,0x00a59f60
 33394,function,ECBase::ECDynArray<Math::Vector4f>::~ECDynArray,,0x00a59f80,0x00700730,0x00a59f80
-33395,function,GraphicsStructures::Array<?>::SetCapacity,"builds its elements at 0x00A5A014. Its elements are not Math::Point4f: __ehvec_ctor (0x008E6707) builds them with 0x00462180 ((0, 0, 0, 1), folded with Point4f's constructor) and the destructor Stub::NoOp 0x005BDCF0, behind a count cookie, while Array<Math::Point4f> uses the plain vector constructor iterator and no destructor. A 16-byte type with an empty destructor whose name is not known (decomp-agent, read 2026-11-23)",0x00a59fb0,0x00700760,0x00a59fb0
+33395,function,GraphicsStructures::Array<Math::PointUA4f>::SetCapacity,"builds its elements at 0x00A5A014. Math::PointUA4f (INFERRED type name, decomp-agent's math work, 2026-11-23): an unaligned homogeneous point with a (0, 0, 0, 1) default and an empty destructor. __ehvec_ctor (0x008E6707) builds the elements with 0x00462180, folded with Point4f's constructor, and Stub::NoOp 0x005BDCF0, behind a count cookie; Array<Math::Point4f> uses the plain vector constructor iterator and no destructor (read 2026-11-23)",0x00a59fb0,0x00700760,0x00a59fb0
 33396,function,ECBase::ECDynArray<Math::Vector4f>::PushBack,,0x00a5a0b0,0x00700860,0x00a5a0b0
-33397,function,GraphicsStructures::Array<?>::operator=,"builds its elements at 0x00A5A1D1. Its elements are not Math::Point4f: __ehvec_ctor (0x008E6707) builds them with 0x00462180 ((0, 0, 0, 1), folded with Point4f's constructor) and the destructor Stub::NoOp 0x005BDCF0, behind a count cookie, while Array<Math::Point4f> uses the plain vector constructor iterator and no destructor. A 16-byte type with an empty destructor whose name is not known (decomp-agent, read 2026-11-23)",0x00a5a140,0x007008f0,0x00a5a140
+33397,function,GraphicsStructures::Array<Math::PointUA4f>::operator=,"builds its elements at 0x00A5A1D1. Math::PointUA4f (INFERRED type name, decomp-agent's math work, 2026-11-23): an unaligned homogeneous point with a (0, 0, 0, 1) default and an empty destructor. __ehvec_ctor (0x008E6707) builds the elements with 0x00462180, folded with Point4f's constructor, and Stub::NoOp 0x005BDCF0, behind a count cookie; Array<Math::Point4f> uses the plain vector constructor iterator and no destructor (read 2026-11-23)",0x00a5a140,0x007008f0,0x00a5a140
 33398,function,CDataArrays::GetInteger,,0x00a5a220,0x00700a10,0x00a5a220
 33399,function,CDataArrays::GetFloat,,0x00a5a250,0x00700a40,0x00a5a250
 33400,function,CDataArrays::GetFlag,,0x00a5a280,0x00700a70,0x00a5a280
@@ -58839,7 +58839,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 58838,function,Stub::NoOp,,0x00ad53c0,0x00ad3000,0x00ad53c0
 58839,function,,,0x00ad53d0,0x00ad3970,0x00ad53d0
 58840,function,,,0x00ad53e0,0x00ad3980,0x00ad53e0
-58841,function,,,0x00ad53f0,0x00ad2990,0x00ad53f0
+58841,function,`dynamic atexit destructor for 'Math::PointUA4f::GetOrigin::s_vector'',"A bare ret: the empty destructor of Math::PointUA4f, registered for GetOrigin's static (0x00C1EB34) by GetOrigin and the copies of it inlined in FBRenderTargetResource, AgeMapKey and IAreaLayout's constructor (read 2026-11-23)",0x00ad53f0,0x00ad2990,0x00ad53f0
 58842,function,,,0x00ad5400,0x00ad3990,0x00ad5400
 58843,function,,,0x00ad5410,0x00ad39a0,0x00ad5410
 58844,function,,,0x00ad5420,0x00ad39b0,0x00ad5420
@@ -99950,11 +99950,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 99949,data,FixedArray<Graphics::RenderTarget*>::s_default,"Container kind is FixedArray (data at +0, count at +4, Resize(5) in Startup), not std::vector; T shown by the elements being render targets bound and released through Graphics::RenderTarget virtuals. Out-of-range default read at 0x455e04, 0x455e29, 0x455ef3.",0x00c1eb28,0x00c31628,0x00c1eb28
 99950,data,ECBase::ECDynArray<Renderer::FrameBufferEffect*>::s_default,"A null pointer returned in place of an out-of-range element of a FrameBufferEffects vector (16 reads, DeleteAll 0x0045789A, LoadAndAdd 0x004573A4, MergeLoadedFBEffects 0x00457488, FadeEffects::SetColorFade 0x0064C6E5 ...); MergeLoadedFBEffects 0x004574D6 even stores into it on its out-of-range path.",0x00c1eb2c,0x00c1dc14,0x00c1eb2c
 99951,data,ECBase::ECDynArray<Renderer::FBEffectRequest*>::s_default,A null pointer returned in place of an out-of-range element of the request vector walked by ProcessFBEffectRequests 0x004579AC; the element type name is INFERRED (an effect file request: its name at +4 goes to IsFBEffectFileLoaded) INFERRED,0x00c1eb30,0x00c3162c,0x00c1eb30
-99952,data,Math::Vector4f::GetOrigin::s_vector,"Vector4f origin (0,0,0,1), x",0x00c1eb34,0x00c22288,0x00c1eb34
+99952,data,Math::PointUA4f::GetOrigin::s_vector,"The Math::PointUA4f (0, 0, 0, 1) that GetOrigin (0x00456320) returns, x at +0, w at +0xC; not 16-aligned",0x00c1eb34,0x00c22288,0x00c1eb34
 99953,data,,,0x00c1eb38,0x00c2228c,0x00c1eb38
 99954,data,,,0x00c1eb3c,0x00c22290,0x00c1eb3c
 99955,data,,,0x00c1eb40,0x00c22294,0x00c1eb40
-99956,data,Math::Vector4f::GetOrigin::s_guard,"init guard bit 0 of the function-static vector (0,0,0,1) at c1eb34..c1eb40, tested inline by the copies in FBRenderTargetResource, AgeMapKey and IAreaLayout ctors. Real size 4",0x00c1eb44,0x00c22298,0x00c1eb44
+99956,data,Math::PointUA4f::GetOrigin::s_guard,"init guard bit 0 of the function-static vector (0,0,0,1) at c1eb34..c1eb40, tested inline by the copies in FBRenderTargetResource, AgeMapKey and IAreaLayout ctors. Real size 4",0x00c1eb44,0x00c22298,0x00c1eb44
 99957,data,g_multisampleRequest,,0x00c1eb48,0x00c31630,0x00c1eb48
 99958,data,g_multisampleLimit,"Dword: the highest multisample level the device offers; D3DGraphicsDriverManager::FitCreationParametersToMode 0x00866FD7 stores the last element of its list of supported levels (this+0x24, default 0x00C3A00C) and 0x00867089 stores 0 when the mode list is unusable; GetMinOfLimits 0x0045AFE0 returns the smaller of it and g_multisampleRequest (0x00C1EB48), which is the level used (DrawVisible 0x0045BDD3, ResetDevice 0x00865B64 read it). The byte at +4 is g_useVSync.",0x00c1eb4c,0x00c31634,0x00c1eb4c
 99959,data,g_useVSync,,0x00c1eb50,0x00c31638,0x00c1eb50
