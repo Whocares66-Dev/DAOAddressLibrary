@@ -21738,7 +21738,7 @@ id,subsystem,class,how
 21838,ThirdParty:STL,"std::_Tree<std::wstring,RefHandle>::const_iterator",name
 21839,Animation,Animation::AnimationManager,name
 21840,Animation,Animation::AnimationManager,name
-21841,Animation,Animation::AnimationManager,name
+21841,Animation,Core::ListQueue<?>,callers
 21842,Animation,Clip::EventKey,callers
 21843,Animation,Animation::AnimationManager,name
 21844,Animation,Animation::AnimationManager,name
@@ -21776,7 +21776,7 @@ id,subsystem,class,how
 21876,ThirdParty:STL,"std::map<std::wstring,?>",name
 21877,Animation,Animation::AnimationManager,name
 21878,ThirdParty:STL,"std::map<std::wstring,?>",name
-21879,Animation,Animation::AnimationManager::NameMap,name
+21879,ThirdParty:STL,"std::map<ECBase::ECString,Multithreading::SynchSafePointer<Animation::AnimationTree>>",name
 21880,Animation,Animation::AnimationManager,name
 21881,Animation,Animation::AnimationManager,name
 21882,Rendering,Graphics::ISceneSubManager,name
@@ -21839,7 +21839,7 @@ id,subsystem,class,how
 21939,Animation,Animation::AnimationTree,name
 21940,Animation,Animation::AnimationTree,name
 21941,ThirdParty:STL,,string
-21942,Core,RefHandle,name
+21942,Core,Multithreading::SynchSafePointer<?>,name
 21943,ThirdParty:STL,"stdext::hash_map<const wchar_t *,?>",name
 21944,Core,Multithreading::SynchSafePointerList<Animation::AnimationTree>,name
 21945,Core,Multithreading::SynchSafePointerList<Animation::AnimationTree>,name
@@ -22891,7 +22891,7 @@ id,subsystem,class,how
 22995,Rendering,TexManager::TexturePool,name
 22996,Rendering,TexManager::TexturePool,name
 22997,Rendering,TexManager::TexturePool,name
-22998,Core,ECBase::ECDynArray<void*>,name
+22998,Core,ECBase::ECDynArray<TexManager::TextureLoadTask*>,name
 22999,Rendering,TexManager::TextureLoadTaskPool,name
 23000,Rendering,TexManager::TextureLoadTaskPool,name
 23001,Rendering,TexManager::TextureLoadTaskPool,name
@@ -54297,9 +54297,9 @@ id,subsystem,class,how
 54539,Animation,Animation::AnimationManager,owner
 54540,Animation,Animation::AnimationManager,owner
 54541,Animation,Animation::AnimationManager,owner
-54542,Animation,Animation::AnimationManager::NameMap,owner
-54543,Animation,Animation::AnimationManager::NameMap,owner
-54544,Animation,Animation::AnimationManager::NameMap,owner
+54542,ThirdParty:STL,"std::map<ECBase::ECString,Multithreading::SynchSafePointer<Animation::AnimationTree>>",owner
+54543,ThirdParty:STL,"std::map<ECBase::ECString,Multithreading::SynchSafePointer<Animation::AnimationTree>>",owner
+54544,ThirdParty:STL,"std::map<ECBase::ECString,Multithreading::SynchSafePointer<Animation::AnimationTree>>",owner
 54545,Video,Renderer::MoviePlayerInternal,owner
 54546,Video,Renderer::MoviePlayerInternal,owner
 54547,Video,Renderer::MoviePlayerInternal,owner
@@ -59639,7 +59639,7 @@ id,subsystem,class,how
 103325,ThirdParty:STL,"std::map<?,?>",name
 103326,ThirdParty:STL,"std::map<std::wstring,?>",name
 103327,ThirdParty:STL,"std::pair<std::wstring,std::wstring>",name
-103328,Core,RefHandle,name
+103328,Core,Multithreading::SynchSafePointer<?>,name
 103330,Core,Core,name
 103331,ThirdParty:STL,std::vector<?>,name
 103332,ThirdParty:STL,std::vector<unsigned int>,name

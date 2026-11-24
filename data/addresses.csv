@@ -21839,7 +21839,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21838,function,"std::_Tree<std::wstring,RefHandle>::const_iterator::_Dec",,0x0080e1f0,0x004b2980,0x0080e1f0
 21839,function,Animation::AnimationManager::Update,,0x0080e280,0x004b2a60,0x0080e280
 21840,function,Animation::AnimationManager::FlushCache,,0x0080e2e0,0x004b2b70,0x0080e2e0
-21841,function,Animation::AnimationManager::DeleteEventList,,0x0080e2f0,0x004b2be0,0x0080e2f0
+21841,function,Core::ListQueue<?>::DeleteAll,"Deletes each node's value (+8) with operator delete, then empties the list. Its one caller, AnimationManager::ClearEvents, passes ecx = this+0xA0 or this+0xB0 (0x0080E3BD, 0x0080E3C5), one of the manager's two event queues, so it is the queue's member. It was named Animation::AnimationManager::DeleteEventList (decomp-agent, read 2026-11-24)",0x0080e2f0,0x004b2be0,0x0080e2f0
 21842,function,Clip::EventKey::GetId,,0x0080e360,0x004b2c90,0x0080e360
 21843,function,Animation::AnimationManager::ClearEvents,,0x0080e3a0,0x004b2cd0,0x0080e3a0
 21844,function,Animation::AnimationManager::GetEventTime,,0x0080e3f0,0x004b2d20,0x0080e3f0
@@ -21877,7 +21877,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21876,function,"std::map<std::wstring,?>::insert",,0x00810640,0x007eec40,0x00810640
 21877,function,Animation::AnimationManager::Get,,0x008107f0,0x004b52c0,0x008107f0
 21878,function,"std::map<std::wstring,?>::insert",,0x00810860,0x004b54e0,0x00810860
-21879,function,Animation::AnimationManager::NameMap::operator[],,0x00810a60,0x004b56e0,0x00810a60
+21879,function,"std::map<ECBase::ECString,Multithreading::SynchSafePointer<Animation::AnimationTree>>::operator[]","AnimationManager::RegisterTree calls it on this+0x34 (0x00810CB9) and assigns the tree through SynchSafePointer's operator= 0x004F4710: the manager's map of trees by name. 0x00458D60 is the same code for the other SynchSafePointer family, shared by Renderer, Material, Texture and ModelAnimation maps. It was named Animation::AnimationManager::NameMap::operator[] (decomp-agent, read 2026-11-24)",0x00810a60,0x004b56e0,0x00810a60
 21880,function,Animation::AnimationManager::RegisterAnimation,,0x00810b50,0x004b57d0,0x00810b50
 21881,function,Animation::AnimationManager::RegisterTree,,0x00810c40,0x004b58c0,0x00810c40
 21882,function,Graphics::ISceneSubManager::OnObjectEvent,,0x00810d30,0x008b3fc0,0x00810d30
@@ -21940,7 +21940,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21939,function,Animation::AnimationTree::GetNodesWithClips,,0x00812880,0x004bb010,0x00812880
 21940,function,Animation::AnimationTree::GetNodeNames,,0x008128e0,0x004bb070,0x008128e0
 21941,function,,,0x00812940,0x004bb0d0,0x00812940
-21942,function,RefHandle::RefHandle,,0x00812e80,0x0069a280,0x00812e80
+21942,function,Multithreading::SynchSafePointer<?>::`default constructor closure',"push 0, call SynchSafePointer<?>'s constructor 0x00534A70, ret: the closure __ehvec_ctor is handed (with Release 0x00538F30) for an array of SynchSafePointers, in AnimationTree::Load (0x00813229, ModelAnimations) and ForScript_PreloadCharGen (0x007C0501, six on the stack), so it serves more than one T. It was named RefHandle::RefHandle (decomp-agent, read 2026-11-24)",0x00812e80,0x0069a280,0x00812e80
 21943,function,"stdext::hash_map<const wchar_t *,?>::operator[]",,0x00812e90,0x004bb620,0x00812e90
 21944,function,Multithreading::SynchSafePointerList<Animation::AnimationTree>::SynchSafePointerList,,0x00812f20,0x004bb6b0,0x00812f20
 21945,function,Multithreading::SynchSafePointerList<Animation::AnimationTree>::~SynchSafePointerList,,0x00812f70,0x004bb700,0x00812f70
@@ -22996,7 +22996,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22995,function,TexManager::TexturePool::Initialize,,0x00849960,0x0048f970,0x00849960
 22996,function,TexManager::TexturePool::AcquireTexture,,0x00849980,0x0048f990,0x00849980
 22997,function,TexManager::TexturePool::TexturePool,,0x00849b90,0x0048fba0,0x00849b90
-22998,function,ECBase::ECDynArray<void*>::operator[],,0x00849c50,0x0048c4c0,0x00849c50
+22998,function,ECBase::ECDynArray<TexManager::TextureLoadTask*>::operator[],"Returns the element's address, or 0x00C39ED0 (this instantiation's s_default) when out of range. Its one caller is TextureLoadTaskPool::Alloc, on the free list, which holds the TextureLoadTasks the pool hands out; the element type is INFERRED from that use. The blocks array's destructor reads 0x00C2C10C, ECDynArray<void*>'s, so the free list is another instantiation (decomp-agent, read 2026-11-24). It was named ECDynArray<void*>::operator[]",0x00849c50,0x0048c4c0,0x00849c50
 22999,function,TexManager::TextureLoadTaskPool::Free,,0x00849c80,0x0048c4f0,0x00849c80
 23000,function,TexManager::TextureLoadTaskPool::FreeAll,,0x00849da0,0x0048c610,0x00849da0
 23001,function,TexManager::TextureLoadTaskPool::~TextureLoadTaskPool,,0x00849df0,0x0048c660,0x00849df0
@@ -102667,7 +102667,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 102666,data,,,0x00c39ec4,0x00c1a5cc,0x00c39ec4
 102667,data,,,0x00c39ec8,0x00c1a5d0,0x00c39ec8
 102668,data,,,0x00c39ecc,0x00c1a5d4,0x00c39ecc
-102669,data,ECBase::ECDynArray<void*>::s_default,default null void* of the TextureLoadTaskPool block/free lists (4 bytes; the row's 0x14 runs into the gap before 0xc3a008),0x00c39ed0,0x00c1a5b0,0x00c39ed0
+102669,data,ECBase::ECDynArray<TexManager::TextureLoadTask*>::s_default,"Read only by TextureLoadTaskPool's Free, FreeAll, AddBlock and Alloc and by ECDynArray<TextureLoadTask*>::operator[] (0x00849C50), for the free list; the blocks array uses ECDynArray<void*>'s 0x00C2C10C. Element type INFERRED from use (decomp-agent, read 2026-11-24). 4 bytes; the row's 0x14 runs into the gap before 0xc3a008",0x00c39ed0,0x00c1a5b0,0x00c39ed0
 102670,data,FacialAnimation::FacialAnimationManager::s_allocatedBytes,,0x00c39ed8,0x00c1a2b8,0x00c39ed8
 102671,data,,,0x00c39ee4,,0x00c39ee4
 102672,data,,,0x00c39ee8,,0x00c39ee8
@@ -103326,7 +103326,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 103325,function,"std::map<?,?>::_Insert",,0x00810420,0x004b50c0,0x00810420
 103326,function,"std::map<std::wstring,?>::insert",,0x00810640,0x004b5330,0x00810640
 103327,function,"std::pair<std::wstring,std::wstring>::~pair",,0x00816990,0x004b6f20,0x00816990
-103328,function,RefHandle::RefHandle,,0x00812e80,0x004bb610,0x00812e80
+103328,function,Multithreading::SynchSafePointer<?>::`default constructor closure',"The same GOG body as ID 21942 (0x00812E80), which the linker folded there; EA keeps it apart. Its name follows 21942's (2026-11-24)",0x00812e80,0x004bb610,0x00812e80
 103329,function,,,,0x004c9a40,
 103330,function,Core::VectorClear<?>,,0x0086b9a0,0x004d03a0,0x0086b9a0
 103331,function,std::vector<?>::_Buy,,0x00701640,0x004ef380,0x00701640
