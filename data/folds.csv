@@ -51,3 +51,4 @@ id,name,evidence
 5670,Graphics::MaterialArtParameter::IsDefault,"mov al,[ecx+4]: MaterialArtParameter's default flag (+4); MaterialObject::ApplyParamDefaults (0x005028C0) calls it on its parameters at 0x005029A6, 0x00502A02, 0x00502AB9 and 0x00502B6C; the member name is inferred (decomp-agent, 2026-11-24)"
 5963,ECBase::ECDynArray<Graphics::MaterialSamplerState>::~ECDynArray,"ECDynArray's destructor is the vector's _Tidy: ~MaterialState destroys its sampler state array with it (0x004FB861) (decomp-agent, 2026-11-24)"
 3407,ECBase::ECDynArray<PrereqItem>::~ECDynArray,"ECDynArray's destructor is out of line and its body is the vector's _Tidy, as for pointer elements at 0x0046C760: this is PrereqItem's vector _Tidy (each element destroyed, operator delete, the three words zeroed) (decomp-agent, 2026-11-24)"
+19538,CCTriggerAreaTransition::LoadFromStruct,"slot 34 of CCTriggerAreaTransition's table 0x00B2083C, as of CCTriggerTrap's 0x00B20524 (decomp-agent, 2026-11-24)"

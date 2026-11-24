@@ -882,7 +882,7 @@ CCPlayer,0x60,0x4,int,playerId,"0x0069D245 mov ecx,[esi+0x60] pushed as the CCPa
 CCPlayer,0x84,0x4,int,playTime,"0x0069D2D4 mov dword ptr [esi + 0x84], eax in CCPlayer::ResetPlayTime: a 4-byte access at +0x84 (re-read 2026-11-23; DAODecomp's definition had put it here)"
 CCSoundObject,0x0,0x4B0,struct,sizeof,"0x0067DB21 push 0x4B0 before operator new in CCArea::ReadSoundList (0x0067DA40), then the constructor 0x007C1F10 at 0x0067DB3F"
 CCSoundObject,0x440,0x4,SoundEventInstance*,eventInstance,"0x007C2463 mov [esi+0x440],eax in CreateEventInstance (0x007C23D0); 0x007C20A7 mov edi,[esi+0x440] in SetInWorld (deleted, cleared at 0x007C20C1); the constructor 0x007C1FA8 zeroes it"
-CCSoundObject,0x444,0x1C,std::wstring,sound,"0x007C2259 lea ecx,[esi+0x444] then the wstring assign of the GFF field Sound (string 0x00B222B0) in ReadFields; 0x007C244B lea edi,[esi+0x444] searched for / in CreateEventInstance"
+CCSoundObject,0x444,0x1C,ECBase::ECString,sound,"0x007C2259 lea ecx,[esi+0x444] then the wstring assign of the GFF field Sound (string 0x00B222B0) in ReadFields; 0x007C244B lea edi,[esi+0x444] searched for / in CreateEventInstance; the assign is ECString::operator= (0x004C2AB0) (decomp-agent, read 2026-11-24)"
 CCSoundObject,0x460,0x1C,std::wstring,reverbPreset,"0x007C2112 lea edi,[esi+0x460] passed to CCArea::GetReverbPresetAtPoint (0x007C2122), then to SoundEventInstance::SetReverbPresetName, in Play (0x007C20F0)"
 CCSoundObject,0x47C,0x4,float,volume,0x007C22A0 fstp [esi+0x47c] from the GFF field Volume (string 0x00B222A8) in ReadFields; 0x007C25CF fld [esi+0x47c] (dB to gain) in CreateEventInstance
 CCSoundObject,0x480,0x4,float,pitch,0x007C22BE fstp [esi+0x480] from the GFF field Pitch (0x00B222A0) in ReadFields; 0x007C261D fld [esi+0x480] in CreateEventInstance
@@ -901,9 +901,9 @@ CCSoundObject,0x4A4,0x1,unsigned char,field_0x4a4,"0x007C1FC2 mov byte ptr [esi 
 CCSoundObjectPannable,0x4B8,0x4,void*,owner4B8,"0x007C2B77 mov dword ptr [esi + 0x4b8], ecx in CCSoundObjectPannable::CCSoundObjectPannable: a 4-byte access at +0x4B8 (re-read 2026-11-23; DAODecomp's definition had put it here)"
 CCSoundObjectPannable,0x4C0,0x10,Vec4f,vec4C0,"0x007C2B9C movaps xmmword ptr [esi + 0x4c0], xmm0 in CCSoundObjectPannable::CCSoundObjectPannable: a 16-byte access at +0x4C0 (re-read 2026-11-23; DAODecomp's definition had put it here)"
 CCTrigger,0x0,0x510,struct,sizeof,"0x0067A6C4 push 0x510 before operator new in CCTrigger::Create (the plain kind; the trap's 0x0067A6E2 is 0x530, the area transition's 0x0067A71A is 0x520), then CCTrigger::CCTrigger 0x0079B0B0"
-CCTrigger,0x440,0x1C,std::wstring,linkedTo,"0x0079B0EA lea ecx,[esi+0x440] in the constructor (wstring); ReadFields 0x007993C0 reads the GFF field ""LinkedTo"" into it only when present"
+CCTrigger,0x440,0x1C,ECBase::ECString,linkedTo,"0x0079B0EA lea ecx,[esi+0x440] in the constructor (wstring); ReadFields 0x007993C0 reads the GFF field ""LinkedTo"" into it only when present; 0x0079B11D call 0x004C0D90, the pool string's default constructor (ECString's fold), builds it (decomp-agent, read 2026-11-24)"
 CCTrigger,0x45C,0x1,uint8_t,linkedToFlags,"0x0079B12D mov byte [esi+0x45C],bl in the constructor; ReadFields stores the GFF byte ""LinkedToFlags"" into [this+0x45C]"
-CCTrigger,0x460,0x1C,std::wstring,keyName,"0x0079B122 lea ecx,[esi+0x460] in the constructor (wstring); ReadFields reads ""KeyName"" into it"
+CCTrigger,0x460,0x1C,ECBase::ECString,keyName,"0x0079B122 lea ecx,[esi+0x460] in the constructor (wstring); ReadFields reads ""KeyName"" into it; 0x004C0D90, the pool string's default constructor (ECString's fold), builds it (decomp-agent, read 2026-11-24)"
 CCTrigger,0x47C,0x4,int32_t,autoRemoveKey,"0x0079B150 mov [esi+0x47C],ebx in the constructor; ReadFields stores the GFF byte ""AutoRemoveKey"" as a dword when present"
 CCTrigger,0x480,0x4,int32_t,trapOneShot,"0x0079B156 mov dword [esi+0x480],1 in the constructor; ReadFields stores the GFF byte ""TrapOneShot"" there as a dword"
 CCTrigger,0x484,0x1,uint8_t,cursor,"0x0079B160 mov byte [esi+0x484],bl in the constructor; ReadFields stores the GFF byte ""Cursor"" there"
@@ -913,6 +913,7 @@ CCTrigger,0x490,0x4,Math::Vector4f*,points,"0x007993C0 ReadFields allocates coun
 CCTrigger,0x494,0x4,int32_t,outlineCount,"0x007993C0 ReadFields stores the ""Geometry"" list count at [this+0x494] (same value as +0x48C)"
 CCTrigger,0x498,0x4,uint32_t*,outlineIndices,0x007993C0 ReadFields allocates count*4 bytes at [this+0x498] and stores the index i at element i for each geometry entry
 CCTrigger,0x4A0,0x4,ObjectId,creatorId,"0x0079947D mov eax,[esi+0x4A0] and 0x00799496 mov [esi+0x4A0],eax in ReadFields: the GFF DWORD ""CreatorId"" with the old value as default; constructed -1 at 0x0079B184"
+CCTrigger,0x4B0,0x10,ECBase::ECDynArray<unsigned int>,field4B0,"0x0079AEC8 lea ecx,[esi+0x4b0] then 0x0079AECE call 0x0046C760 (ECDynArray's destructor fold) in ~CCTrigger (decomp-agent, read 2026-11-24)"
 CCTrigger,0x4C0,0x4,float,minX,0x00799010 fld dword ptr [ecx + 0x4c0] in CCTrigger::GetBoundingBox: a 4-byte access at +0x4C0 (re-read 2026-11-23; DAODecomp's definition had put it here)
 CCTrigger,0x4C4,0x4,float,maxX,0x00799016 fld dword ptr [ecx + 0x4c4] in CCTrigger::GetBoundingBox: a 4-byte access at +0x4C4 (re-read 2026-11-23; DAODecomp's definition had put it here)
 CCTrigger,0x4C8,0x4,float,minY,0x00799029 fld dword ptr [ecx + 0x4c8] in CCTrigger::GetBoundingBox: a 4-byte access at +0x4C8 (re-read 2026-11-23; DAODecomp's definition had put it here)
@@ -920,8 +921,14 @@ CCTrigger,0x4CC,0x4,float,maxY,0x0079902F fld dword ptr [ecx + 0x4cc] in CCTrigg
 CCTrigger,0x500,0x4,int32_t,spawnHandled,"0x0079B79F mov dword [esi+0x500],1 in SetLocation after the SPAWN event (type 3) is queued once, tested at 0x0079B71B; LoadFromStruct 0x0079A81C sets it to 1 for a saved trigger"
 CCTriggerAreaTransition,0x0,0x520,struct,sizeof,"0x0067A71A push 0x520 before operator new in CCTrigger::Create, then CCTriggerAreaTransition::CCTriggerAreaTransition 0x0079B2C0"
 CCTriggerAreaTransition,0x510,0x2,uint16_t,loadScreenId,"0x0079999E mov word [esi+0x510],ax in CCTriggerAreaTransition::ReadFields: the GFF word ""LoadScreenID""; saved as a word by SaveToStruct 0x00799F7E; constructed 0 at 0x0079B2F1"
-CCTriggerAudioReverb,0x510,0x4,void*,reverbString,"0x0079A450: INFERRED: DAODecomp's definition of CCTriggerAudioReverb::SaveToStruct, which may rest on a stand-in class, puts it here; no instruction there reaches +0x510 by itself (re-read 2026-11-23)"
+CCTriggerAudioMusicVolume,0x0,0x530,struct,sizeof,"0x0067A7BE push 0x530 before operator new in CCTrigger::Create, then the constructor 0x0079B440 (decomp-agent, read 2026-11-24)"
+CCTriggerAudioReverb,0x0,0x530,struct,sizeof,"0x0067A752 push 0x530 before operator new in CCTrigger::Create, then CCTriggerAudioReverb::CCTriggerAudioReverb (0x0079B340) (decomp-agent, read 2026-11-24)"
+CCTriggerAudioReverb,0x510,0x1C,ECBase::ECString,reverbString,"0x00799A13 lea ecx,[esi+0x510] then ECString::operator= (0x004C2AB0) in ReadFields (0x007999B0), from the GFF ReverbPreset; it was a 4-byte INFERRED row from DAODecomp (decomp-agent, read 2026-11-24)"
 CCTriggerAudioReverb,0x52C,0x4,int,priority,"0x00799A5F mov dword ptr [esi + 0x52c], eax in CCTriggerAudioReverb::ReadFields: a 4-byte access at +0x52C (re-read 2026-11-23; DAODecomp's definition had put it here)"
+CCTriggerAudioVolume,0x0,0x540,struct,sizeof,"0x0067A78A push 0x540 before operator new in CCTrigger::Create, then the constructor 0x0079B550 (decomp-agent, read 2026-11-24)"
+CCTriggerAudioVolume,0x530,0x4,float,field530,"0x0079B581 fstp [esi+0x530] (0.0) in the constructor (decomp-agent, read 2026-11-24)"
+CCTriggerAudioVolume,0x534,0x4,float,field534,"0x0079B5C9 fstp [esi+0x534] (4.0) in the constructor (decomp-agent, read 2026-11-24)"
+CCTriggerAudioVolume,0x538,0x8,FixedArray<unsigned int>,sounds,"0x0079B587 lea ecx,[esi+0x538] then 0x0079B5BE call 0x00455B30 (FixedArray's constructor) in the constructor (decomp-agent, read 2026-11-24)"
 CCTriggerTrap,0x0,0x530,struct,sizeof,"0x0067A6E2 push 0x530 before operator new in CCTrigger::Create, then CCTriggerTrap::CCTriggerTrap 0x0079B230"
 CCTriggerTrap,0x510,0x4,int32_t,trapDetectable,"0x00799919 mov [esi+0x510],ecx in CCTriggerTrap::ReadFields: the GFF byte ""TrapDetectable""; constructed 1 at 0x0079B23D; saved by SaveToStruct 0x00799EE0"
 CCTriggerTrap,0x514,0x4,int32_t,trapDisarmable,"0x007998FF mov [esi+0x514],edx in ReadFields: the GFF byte ""TrapDisarmable""; constructed 1 at 0x0079B243"
