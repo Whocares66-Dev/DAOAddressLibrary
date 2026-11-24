@@ -5180,7 +5180,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5179,function,,,0x004db7b0,0x0082e4e0,0x004db7b0
 5180,function,std::vector<?>::operator=,,0x004db870,0x004b8110,0x004db870
 5181,function,,,0x004db9d0,0x0082e5a0,0x004db9d0
-5182,function,std::vector<Gff4::Template>::operator=,,0x004dba00,0x004b8440,0x004dba00
+5182,function,ECBase::ECDynArray<Gff4::Field>::operator=,"As 0x004DE3A0, over the 12-byte-element vector::operator= (0x004DB870), Gff4::Field'""'""'s, as ECDynArray<Gff4::Field>'""'""'s copy constructor (0x004DBDE0) (decomp-agent, read 2026-11-24)",0x004dba00,0x004b8440,0x004dba00
 5183,function,,,0x004dba20,0x004b7cf0,0x004dba20
 5184,function,,,0x004dbab0,0x0082e5d0,0x004dbab0
 5185,function,,,0x004dbd70,0x0082e890,0x004dbd70
@@ -5229,8 +5229,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5228,function,"std::uninitialized_copy<Gff4::Template *,Gff4::Template *>",,0x004dde10,0x004b9160,0x004dde10
 5229,function,Gff4::File::BuildTemplate,,0x004dde40,0x008304d0,0x004dde40
 5230,function,Gff4::File::ExpandStructTemplates,,0x004de0d0,0x00830760,0x004de0d0
-5231,function,std::vector<Gff4::Template>::vector,,0x004de340,0x008309d0,0x004de340
-5232,function,std::vector<Gff4::Template>::operator=,,0x004de3a0,0x00830a30,0x004de3a0
+5231,function,ECBase::ECDynArray<Gff4::Template>::ECDynArray(const ECBase::ECDynArray<Gff4::Template>&),"ECDynArray'""'""'s own copy constructor: zeroes +4, +8, +0xC, then vector::operator= (0x004DDC80); 27 of 28 instructions as ECDynArray<ECBase::ECString>'""'""'s (0x004AC430) (decomp-agent, read 2026-11-24)",0x004de340,0x008309d0,0x004de340
+5232,function,ECBase::ECDynArray<Gff4::Template>::operator=,"The engine'""'""'s out-of-line ECDynArray::operator= wrapper: vector::operator= (0x004DDC80), returns this, ret 4; the shape of ECDynArray<ECBase::ECString>::operator= (0x004AC490) (decomp-agent, read 2026-11-24)",0x004de3a0,0x00830a30,0x004de3a0
 5233,function,std::vector<Gff4::Template>::reserve,,0x004de3c0,0x00830a50,0x004de3c0
 5234,function,Catch_All@004de4c0,,0x004de4c0,0x00830b50,0x004de4c0
 5235,function,std::vector<Gff4::Template>::_Insert_n,,0x004de4e0,0x004b9190,0x004de4e0
@@ -32448,18 +32448,18 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 32447,function,,,0x00a2b540,0x0081ea50,0x00a2b540
 32448,function,"std::_Sort<Gff4::Field*,int,Gff4::File::FieldAlignmentGreater>",,0x00a2b560,0x0081eac0,0x00a2b560
 32449,function,"stdext::hash_map<unsigned int,unsigned int>::hash_map",,0x00a2b6a0,0x0081ec00,0x00a2b6a0
-32450,function,Gff4::File::MakeSortedStruct,,0x00a2b720,0x0082e9c0,0x00a2b720
-32451,function,Gff4::File::AppendData,,0x00a2b800,0x0081ecd0,0x00a2b800
+32450,function,Gff4::FlatFile::MakeSortedStruct,,0x00a2b720,0x0082e9c0,0x00a2b720
+32451,function,Gff4::FlatFile::AppendData,,0x00a2b800,0x0081ecd0,0x00a2b800
 32452,function,Gff4::SwapImageEndian,,0x00a2b900,0x0081edd0,0x00a2b900
 32453,function,std::vector<unsigned char>::_Tidy,,0x00a2ba50,0x0081ef20,0x00a2ba50
-32454,function,Gff4::File::MakeAlignedStruct,,0x00a2bb00,0x0081efd0,0x00a2bb00
-32455,function,Gff4::File::AllocStruct,,0x00a2bd90,0x0081f260,0x00a2bd90
-32456,function,Gff4::File::AllocStructArray,,0x00a2be00,0x0081f2d0,0x00a2be00
-32457,function,Gff4::File::AddDwordArray,,0x00a2be90,0x0081f360,0x00a2be90
-32458,function,Gff4::File::AddCountedBlock,,0x00a2bef0,0x0081f3c0,0x00a2bef0
-32459,function,Gff4::File::BuildImage,,0x00a2bf50,0x0081f420,0x00a2bf50
-32460,function,Gff4::File::Reset,,0x00a2c240,0x0081f760,0x00a2c240
-32461,function,Gff4::File::File,,0x00a2c3c0,0x0081fac0,0x00a2c3c0
+32454,function,Gff4::FlatFile::MakeAlignedStruct,,0x00a2bb00,0x0081efd0,0x00a2bb00
+32455,function,Gff4::FlatFile::AllocStruct,"Uses +0x40 (0x00A2BDE2), past Gff4::File'""'""'s 0x2C bytes: Gff4::FlatFile'""'""'s (decomp-agent, read 2026-11-24)",0x00a2bd90,0x0081f260,0x00a2bd90
+32456,function,Gff4::FlatFile::AllocStructArray,,0x00a2be00,0x0081f2d0,0x00a2be00
+32457,function,Gff4::FlatFile::AddDwordArray,,0x00a2be90,0x0081f360,0x00a2be90
+32458,function,Gff4::FlatFile::AddCountedBlock,,0x00a2bef0,0x0081f3c0,0x00a2bef0
+32459,function,Gff4::FlatFile::BuildImage,,0x00a2bf50,0x0081f420,0x00a2bf50
+32460,function,Gff4::FlatFile::Reset,,0x00a2c240,0x0081f760,0x00a2c240
+32461,function,Gff4::FlatFile::FlatFile,"Builds members past Gff4::File'""'""'s 0x2C bytes: +0x2C and +0x70 ECDynArray<unsigned char> (0x00485630), a hash_map (0x00A2B6A0), +0x80 WStringMap<unsigned int> (0x004F6EB0); the magic 'GFF ' at +0. Gff4::FlatFile::~FlatFile (0x0056CE50) destroys exactly these; ret 8. The ten functions 0x00A2B720..0x00A2C3C0 named Gff4::File'""'""'s are this class'""'""'s (decomp-agent, read 2026-11-24)",0x00a2c3c0,0x0081fac0,0x00a2c3c0
 32462,function,Math::SphereVolume,,0x00a2c4f0,0x0081cdf0,0x00a2c4f0
 32463,function,Math::BoxVolume,,0x00a2c510,0x0081ce10,0x00a2c510
 32464,function,Math::CapsuleVolume,,0x00a2c530,0x0081ce30,0x00a2c530
