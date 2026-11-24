@@ -2231,7 +2231,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2230,function,Renderer::ShadowMaps::BlurPartition,,0x004518e0,0x0088d0c0,0x004518e0
 2231,function,Renderer::ShadowMaps::BindBackbuffer,,0x00451910,0x0088d0f0,0x00451910
 2232,function,Renderer::ShadowMaps::ReleaseCommander,,0x00451930,0x0088d110,0x00451930
-2233,function,Vector3::Vector3,,0x00451950,0x00496170,0x00451950
+2233,function,Vector3::Vector3,"x, y and z zeroed, w untouched; all 11 references pass it to the vector constructor iterator with element size 0x10. Vector3 here is the 16-byte, 16-aligned 3-vector its elements are: each built by Vector3::Vector3 (0x00451950, x, y, z zeroed, w untouched) through the vector constructor iterator with size 0x10; whether the engine's plain Vector3 is that type or a 12-byte one whose constructor ICF folded here is open (decomp-agent, read 2026-11-23)",0x00451950,0x00496170,0x00451950
 2234,function,Vector3::UnitX,,0x00451960,0x007aa1b0,0x00451960
 2235,function,Vector3::Magnitude,,0x00451990,0x00497740,0x00451990
 2236,function,Math::Vector4f::Distance,,0x004519d0,0x00531080,0x004519d0
@@ -7679,7 +7679,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7678,function,GraphicsStructures::ObjectNodeEmitter::GetUserParamName,,0x0053ee90,0x0077ad50,0x0053ee90
 7679,function,GraphicsStructures::ObjectNodeEmitter::LoadLiveParametersFromBlueprint,,0x0053eeb0,0x0077ad70,0x0053eeb0
 7680,function,GraphicsStructures::ObjectNodeEmitter::UpdateDistanceFade,,0x0053f070,0x0077af30,0x0053f070
-7681,function,GraphicsStructures::Array<Math::Vector4f>::SetCapacity,,0x0053f150,0x007005e0,0x0053f150
+7681,function,GraphicsStructures::Array<Vector3>::SetCapacity,"builds its elements at 0x0053F1B7. Vector3 here is the 16-byte, 16-aligned 3-vector its elements are: each built by Vector3::Vector3 (0x00451950, x, y, z zeroed, w untouched) through the vector constructor iterator with size 0x10; whether the engine's plain Vector3 is that type or a 12-byte one whose constructor ICF folded here is open (decomp-agent, read 2026-11-23)",0x0053f150,0x007005e0,0x0053f150
 7682,function,GraphicsStructures::Array<?>::Array,,0x0053f220,0x0077b010,0x0053f220
 7683,function,GraphicsStructures::Array<?>::SetSize,,0x0053f250,0x0077b040,0x0053f250
 7684,function,ECBase::ECDynArray<GraphicsStructures::Dependency*>::operator[],,0x0053f290,0x00746480,0x0053f290
@@ -17850,7 +17850,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17849,function,CCPlaceable::HandleMessage_DisplayFloatyMessage,,0x0074be30,0x00657dd0,0x0074be30
 17850,function,InventoryClosedMessage::GetType,,0x0074be60,0x00509640,0x0074be60
 17851,function,CCPlaceable::StaticClassInfo,,0x0074bea0,0x00657e00,0x0074bea0
-17852,function,ECBase::ECStaticArray<Math::Vector4f>::ECStaticArray,,0x0074bf00,0x00657e60,0x0074bf00
+17852,function,ECBase::ECStaticArray<Vector3>::ECStaticArray,"builds its elements at 0x0074BF64. Vector3 here is the 16-byte, 16-aligned 3-vector its elements are: each built by Vector3::Vector3 (0x00451950, x, y, z zeroed, w untouched) through the vector constructor iterator with size 0x10; whether the engine's plain Vector3 is that type or a 12-byte one whose constructor ICF folded here is open (decomp-agent, read 2026-11-23)",0x0074bf00,0x00657e60,0x0074bf00
 17853,function,ECBase::ECStaticArray<Math::Vector4f>::At,,0x0074bf90,0x00657ef0,0x0074bf90
 17854,function,CCPlaceable::LoadTemplate,,0x0074bfb0,0x00657f10,0x0074bfb0
 17855,function,CCPlaceable::PlayImpactSound,,0x0074c110,0x00658070,0x0074c110
@@ -33389,7 +33389,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33388,function,RIMTreeManager::ReadTree,,0x00a59cb0,0x00700300,0x00a59cb0
 33389,function,CDataArrays::CDataArrays,,0x00a59e10,0x00700460,0x00a59e10
 33390,function,CDataArrays::NotEquals,,0x00a59e30,0x00700480,0x00a59e30
-33391,function,GraphicsStructures::Array<Vector3>::operator=,"The shape of GraphicsStructures::Array<Math::Point4f>::operator= (0x005728C0), 67 of 67 instructions, but its vector constructor iterator builds 16-byte elements with Vector3::Vector3 (0x00451950, x, y, z zeroed; 0x00A59EC5) (read 2026-11-23)",0x00a59e50,0x007004b0,0x00a59e50
+33391,function,GraphicsStructures::Array<Vector3>::operator=,"The shape of GraphicsStructures::Array<Math::Point4f>::operator= (0x005728C0), 67 of 67 instructions, but it builds its elements at 0x00A59EC5. Vector3 here is the 16-byte, 16-aligned 3-vector its elements are: each built by Vector3::Vector3 (0x00451950, x, y, z zeroed, w untouched) through the vector constructor iterator with size 0x10; whether the engine's plain Vector3 is that type or a 12-byte one whose constructor ICF folded here is open (decomp-agent, read 2026-11-23)",0x00a59e50,0x007004b0,0x00a59e50
 33392,function,CDataArrays::GetVector,,0x00a59f10,0x00700570,0x00a59f10
 33393,function,ECBase::ECDynArray<Math::Vector4f>::ECDynArray,,0x00a59f60,0x007005c0,0x00a59f60
 33394,function,ECBase::ECDynArray<Math::Vector4f>::~ECDynArray,,0x00a59f80,0x00700730,0x00a59f80
