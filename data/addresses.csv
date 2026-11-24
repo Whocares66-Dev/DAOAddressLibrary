@@ -5268,7 +5268,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5267,function,,,0x004df760,0x00405c50,0x004df760
 5268,function,GdaStore::DeleteNamedTables,,0x004df870,0x00813a90,0x004df870
 5269,function,GdaStore::DeleteIndexedTables,,0x004df940,0x00813b60,0x004df940
-5270,function,"std::map<?,?>::find_or_default",,0x004df9d0,0x00813bf0,0x004df9d0
+5270,function,"ECBase::ECHashMap<unsigned int,TwoDimArrayCache::Entry*>::Find","__thiscall, ret 4: when the map is not empty (+0xC), hash_map::lower_bound (0x00891200), then the found value'""'""'s address or the map'""'""'s default (this+0x2C). ECHashMap'""'""'s Find; TwoDimArrayCache::GetEntry and ReleaseReference call it on their entryMap. It was named std::map<?,?>::find_or_default (decomp-agent, read 2026-11-24)",0x004df9d0,0x00813bf0,0x004df9d0
 5271,function,std::list<?>::~list,,0x004dfa40,0x007c1750,0x004dfa40
 5272,function,ECResMan::NameList::NameList,,0x004dfa60,0x00505f80,0x004dfa60
 5273,function,ECResMan::NameList::~NameList,,0x004dfae0,0x00506000,0x004dfae0
