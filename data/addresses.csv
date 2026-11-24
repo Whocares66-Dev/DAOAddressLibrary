@@ -6679,7 +6679,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6678,function,GUI::ScaleformManager::SendKeysAndText,,0x00514c90,0x007bc750,0x00514c90
 6679,function,"std::map<ECString,GFxMovieDef *>::~map",,0x00514fb0,0x007bca70,0x00514fb0
 6680,function,"std::map<ECString,GPtr<GFxMovieView>>::~map",,0x00514ff0,0x007bcab0,0x00514ff0
-6681,function,std::set<void*>::set,,0x00515030,0x0049fef0,0x00515030
+6681,function,DefaultSet<GuiMovie*>::DefaultSet,"The tree head (0x00511590), then operator new(4) for the default element, stored at +0xC; ret 4: DefaultSet'""'""'s layout (a set, then a heap default at +0xC), as DefaultSet<?>::DefaultSet (0x0052A8D0) for another T. ScaleformManager builds its movies (+0x70) with it, and SetRunning walks them with DefaultSet'""'""'s Begin and Next. It was named std::set<void*>::set (decomp-agent, read 2026-11-24)",0x00515030,0x0049fef0,0x00515030
 6682,function,ECBase::ECDynArray<std::wstring>::InsertAt,,0x005150c0,0x004bd960,0x005150c0
 6683,function,GUI::ScaleformManager::RegisterHandler_PlayMovieMessage,,0x00515150,0x007bcb30,0x00515150
 6684,function,GUI::ScaleformManager::RemoveMovie,,0x005151c0,0x007bcba0,0x005151c0
@@ -6690,10 +6690,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6689,function,GUI::ScaleformManager::SendMouseMoves,,0x00515680,0x007bd060,0x00515680
 6690,function,GUI::ScaleformManager::StartDragging,,0x005159a0,0x007bd380,0x005159a0
 6691,function,GUI::ScaleformManager::LoadAtlasDescriptors,,0x00515a70,0x007bd450,0x00515a70
-6692,function,GuiMovieDefCache::GuiMovieDefCache,,0x00515ce0,0x007bd6c0,0x00515ce0
-6693,function,GuiMovieDefCache::~GuiMovieDefCache,,0x00515da0,0x007bd780,0x00515da0
-6694,function,GuiMovieViewCache::GuiMovieViewCache,,0x00515e40,0x007bd820,0x00515e40
-6695,function,GuiMovieViewCache::~GuiMovieViewCache,,0x00515f10,0x007bd8f0,0x00515f10
+6692,function,WStringMap<GPtr<GFxMovieDef>>::WStringMap,"WStringMap'""'""'s constructor: the tree head (0x005FE920), the key string at +0xC, the default at +0x28, a counted GFxResource pointer taken with GFxResource::AddRef (0x00419120) and the old one released (0x0090BB60); ret 4. GPtr is the table'""'""'s spelling of that pointer. It was named GuiMovieDefCache::GuiMovieDefCache (decomp-agent, read 2026-11-24)",0x00515ce0,0x007bd6c0,0x00515ce0
+6693,function,WStringMap<GPtr<GFxMovieDef>>::~WStringMap,"Releases the default at +0x28 (0x0090BB60), destroys the key string at +0xC, then the tree (0x00514120) and its head. It was named GuiMovieDefCache::~GuiMovieDefCache (read 2026-11-24)",0x00515da0,0x007bd780,0x00515da0
+6694,function,WStringMap<GPtr<GFxMovieView>>::WStringMap,"As 0x00515CE0 for GFxMovieView, whose counted pointer is taken and released through its virtual slots. It was named GuiMovieViewCache::GuiMovieViewCache (read 2026-11-24)",0x00515e40,0x007bd820,0x00515e40
+6695,function,WStringMap<GPtr<GFxMovieView>>::~WStringMap,As 0x00515DA0 for GFxMovieView (tree 0x005141F0). It was named GuiMovieViewCache::~GuiMovieViewCache (read 2026-11-24),0x00515f10,0x007bd8f0,0x00515f10
 6696,function,std::_Destroy_range<Multithreading::SynchSafePointer<?> *>,,0x00515fb0,0x00754a70,0x00515fb0
 6697,function,GUI::ScaleformManager::Initialize,,0x00515fe0,0x007bd990,0x00515fe0
 6698,function,GUI::ScaleformManager::RegisterMessageHandlers,,0x005166c0,0x007be070,0x005166c0
@@ -22442,7 +22442,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22441,function,Physics::PhysicsScene::PhysicsEntityReport<NxSweepQueryHit>::PhysicsEntityReport,,0x008278c0,0x0049fca0,0x008278c0
 22442,function,Physics::PhysicsScene::PhysicsEntityReport<NxSweepQueryHit>::onEvent,,0x008278e0,0x0049fcc0,0x008278e0
 22443,function,Physics::PhysicsScene::PhysicsEntityReport<unsigned int>::PhysicsEntityReport,,0x00827a10,0x0049fdf0,0x00827a10
-22444,function,std::list<T>::~list,,0x00827a30,0x007bcaf0,0x00827a30
+22444,function,DefaultSet<GuiMovie*>::~DefaultSet,"Deletes the default at +0xC, then erases the tree (0x00512D50) and frees its head: DefaultSet'""'""'s destructor, not a list'""'""'s. ~ScaleformManager destroys its movies (+0x70) with it; ~PhysicsScene and some unwind funclets call it too, one folded body. It was named std::list<T>::~list (decomp-agent, read 2026-11-24)",0x00827a30,0x007bcaf0,0x00827a30
 22445,function,ECBase::ECDynArray<NxGroupsMask>::ECDynArray(unsigned int),,0x00827a70,0x0049ff80,0x00827a70
 22446,function,ECBase::ECDynArray<?>::ECDynArray(unsigned int),,0x00827af0,0x004a0000,0x00827af0
 22447,function,ECBase::ECDynArray<Physics::ActorUserRecord>::ECDynArray(unsigned int),,0x00827b70,0x004a0080,0x00827b70
