@@ -14145,7 +14145,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14144,function,AttackRecordList::AttackRecordList,,0x006970c0,0x00588140,0x006970c0
 14145,function,AttackRecordList::~AttackRecordList,,0x00697150,0x005881d0,0x00697150
 14146,function,AttackRecordList::Get,,0x00697220,0x005882a0,0x00697220
-14147,function,CastRecordHolder::Get,,0x006972a0,0x00588320,0x006972a0
+14147,function,AttackRecordList::GetCastRecord,"INFERRED name: an AttackRecordList member (it sits among AttackRecordList'""'""'s functions, 0x006970C0..0x00697284); CProjectile forwards to it through its AttackRecordList at +0x488 (0x007E68B0). It was named CastRecordHolder::Get, a class nothing else has (decomp-agent, read 2026-11-24)",0x006972a0,0x00588320,0x006972a0
 14148,function,CCObject::RunScriptWithEvent,,0x00697310,0x00588390,0x00697310
 14149,function,CCObject::FindEventEntry,,0x00697350,0x005883d0,0x00697350
 14150,function,CCObject::FindNearestByTag,,0x006973b0,0x00588430,0x006973b0
@@ -21086,7 +21086,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21085,function,CProjectile::StopAttachedEffect,,0x007e6860,0x006cdcb0,0x007e6860
 21086,function,CProjectile::SetModelRotation,,0x007e6880,0x006cdcd0,0x007e6880
 21087,function,CProjectile::GetAttackRecord,,0x007e68a0,0x006cdcf0,0x007e68a0
-21088,function,CastRecordHolder::Get`adjustor{1160}',,0x007e68b0,0x006cdd00,0x007e68b0
+21088,function,AttackRecordList::GetCastRecord`adjustor{1160}',"add ecx,0x488; jmp 0x006972A0: the thunk into CProjectile'""'""'s AttackRecordList (+0x488, data/structs.csv); decomp-agent'""'""'s header calls it CProjectile::GetCastRecord. It was named CastRecordHolder::Get`adjustor{1160}'""'""' (read 2026-11-24)",0x007e68b0,0x006cdd00,0x007e68b0
 21089,function,ProjectileCache::ProjectileEntry::Load,,0x007e68c0,0x006cdd50,0x007e68c0
 21090,function,CProjectile::AddModelToArea,,0x007e69b0,0x006cde40,0x007e69b0
 21091,function,CProjectile::IsInsideCasterSpace,"True when the projectile row's Simulation flag (+0x3A) is 0, the caster (+0x4BC) exists, and the distance flown (+0x468) is under the caster's radius (slot 0x9C) + 1.2",0x007e6a10,0x006cdea0,0x007e6a10
