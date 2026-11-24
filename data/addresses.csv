@@ -23004,7 +23004,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23003,function,,,0x00849f20,0x0048c840,0x00849f20
 23004,function,TexManager::TextureLoadTaskPool::AddBlock,,0x0084a4d0,0x0048cdf0,0x0084a4d0
 23005,function,TexManager::TextureLoadTaskPool::Alloc,,0x0084a580,0x0048cea0,0x0084a580
-23006,function,"stdext::hash_map<std::wstring,void *>::operator[]",,0x0084a670,0x0061cad0,0x0084a670
+23006,function,"stdext::hash_map<ECBase::ECString,void *>::operator[]","The key is an ECString (the pool string), not std::wstring: TexManager::PendingLoads (a StringMap<TextureLoadTask*, ECString>) calls it, and CCCreatureStats, MaterialParameterNames, GuiMovie and MoviePlayerInternal use it too, one body for 4-byte values (decomp-agent, read 2026-11-24)",0x0084a670,0x0061cad0,0x0084a670
 23007,function,TexManager::TextureLoadTaskPool::TextureLoadTaskPool,,0x0084a740,0x0048d060,0x0084a740
 23008,function,StringMap<?>::StringMap,,0x0084a7d0,0x00763c60,0x0084a7d0
 23009,function,TexManager::TextureLoadTask::TextureLoadTask,,0x0084a840,0x0048d0f0,0x0084a840
@@ -103315,7 +103315,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 103314,function,std::_Destroy_range<Multithreading::SynchSafePointer<?> *>,,0x00515fb0,0x00489ff0,0x00515fb0
 103315,function,std::vector<?>::erase,,0x0057a680,0x0048a740,0x0057a680
 103316,function,ECBase::ECDynArray<Multithreading::SynchSafePointer<Graphics::MaterialState>>::ECDynArray(unsigned int),,0x004fc640,0x0048bd20,0x004fc640
-103317,function,"stdext::hash_map<std::wstring,void *>::operator[]",,0x0084a670,0x0048cf90,0x0084a670
+103317,function,"stdext::hash_map<ECBase::ECString,void *>::operator[]","The same GOG body as ID 23006 (0x0084A670), which the linker folded there; EA keeps it apart. Its name follows 23006'""'""'s (2026-11-24)",0x0084a670,0x0048cf90,0x0084a670
 103318,function,"std::_Tree<std::wstring,RefHandle>::_Erase",,0x0080e970,0x004b3470,0x0080e970
 103319,function,,,0x0080f090,0x004b3b90,0x0080f090
 103320,function,Multithreading::SynchSafePointer<?>::operator=(const Multithreading::SynchSafePointer<?>&),,0x004f4710,0x004b3fa0,0x004f4710
