@@ -4572,7 +4572,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4571,function,String::ToUpperAscii,,0x004c38e0,0x00804e10,0x004c38e0
 4572,function,String::ToLowerAscii,,0x004c3970,0x00804ea0,0x004c3970
 4573,function,String::ToLowerAscii,,0x004c3a50,0x00804f80,0x004c3a50
-4574,function,,,0x004c3ae0,0x00805010,0x004c3ae0
+4574,function,ECBase::ECString::ToNarrow,"INFERRED name: nothing in the exe names it. __thiscall, ret 4, returns a pool char string (std::basic_string<char,std::char_traits<char>,ECMemory::StringAllocator<char>>) by value through the hidden pointer. It constructs the result empty and resizes it to this string's length: erase 0x00401210, or append(n, 0) 0x004C1E20, which grows it through the pool _Copy 0x004C0C40 (AllocateInPool). Then it stores each wide character's low byte, with no code page (0x004C3B8D), and returns the result. 170 callers; WinMain and PhysicsParticleActor::MakeBoxShapeDesc free it with std::string::~string (0x004013F0), which frees through operator delete as the pool string does (read 2026-11-23)",0x004c3ae0,0x00805010,0x004c3ae0
 4575,function,,,0x004c3bc0,0x008050f0,0x004c3bc0
 4576,function,ECBase::ECString::RemoveInvalidCharacters,,0x004c3cf0,0x00805220,0x004c3cf0
 4577,function,"std::basic_string<wchar_t,std::char_traits<wchar_t>,ECMemory::StringAllocator<wchar_t>>::resize",,0x004c3f90,0x008054c0,0x004c3f90
