@@ -9856,7 +9856,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9855,function,SoundManager::TestOcclusion,,0x005b7220,0x0071fa60,0x005b7220
 9856,function,MusicController::ReturnToMainIfFlagged,,0x005b73f0,0x0071fc30,0x005b73f0
 9857,function,MusicController::ResetTheme,,0x005b7470,0x0071fcb0,0x005b7470
-9858,function,ECBase::ECDynArray<?>::At,,0x005b74e0,0x0071fd20,0x005b74e0
+9858,function,ECBase::ECDynArray<int>::At,"Returns element [i] or, out of range, ECDynArray<int>::s_default (0x00C2A8D4), which names its T; ret 4 (decomp-agent, read 2026-11-24)",0x005b74e0,0x0071fd20,0x005b74e0
 9859,function,"std::copy<std::pair<std::wstring,std::wstring>*,std::pair<std::wstring,std::wstring>*>",,0x005b7510,0x004ed3e0,0x005b7510
 9860,function,SoundManager::SetCategoryPaused,,0x005b7540,0x0071fd50,0x005b7540
 9861,function,SoundEmitter::SetReverbPresetName,,0x005b76b0,0x0071fec0,0x005b76b0
@@ -9876,8 +9876,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9875,function,WStringMap<?>::FindValue,"INFERRED name: Find (0x00A5E9F0), then the found node'""'""'s value (+0x28) or 0; ret 4. It was named WStringMap<?>::Find (decomp-agent, read 2026-11-24)",0x005b8060,0x00720650,0x005b8060
 9876,function,SoundManager::GetProjectGroupProperty,"(projectName, groupName, propertyName, int *out) ret 0x10, al result. Finds projectName in the SoundProjectMap at this+0x94 (std::map find 0x00A5E9F0) and, when it is loaded, returns the project's CContentBank_FMOD::GetGroupProperty (vftable 0x00AFF278 slot +0x14, 0x005C2290) with (group, property, out); false when the project is not loaded. It loads nothing: SoundManager::LoadProject 0x005BA220 does, and its one caller CCCreature::ForScript_SetSoundSet calls that first (0x006BD182), then this with L""VO"", L""Disable2DAProbabilities"" (0x006BD1E1). Was LoadSoundSet. Readings: lib-agent-2 and addr-lib-agent, 2026-11-11.",0x005b80b0,0x007206a0,0x005b80b0
 9877,function,WStringMap<?>::ClearAndDeleteValues,"No code of its own: one jmp to the function of the same name at 0x005B7BC0 (ID 9871), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x005b8120,0x00720710,0x005b8120
-9878,function,WStringMap<?>::Erase,"INFERRED name: __thiscall, ret 4, a pointer to the {iterator, found} result of Find: when found (+8) is set, the map'""'""'s erase (0x00680220) with ecx passed through, then found cleared. PickRandomSoundSetEntry calls it on the sound project'""'""'s map (+0x24) after a Find (decomp-agent, read 2026-11-24)",0x005b8130,0x00720720,0x005b8130
-9879,function,,,0x005b8160,0x00720750,0x005b8160
+9878,function,"Map<int,?>::Erase","INFERRED name: __thiscall, ret 4, a pointer to a {iterator, found} find result: when found (+8) is set, the generic map erase (0x00680220, which frees the node without destroying a key) with ecx passed through, then found cleared. Called on an int-keyed Map after Map<int,?>::TryFind; PickRandomSoundSetEntry on CContentBank'""'""'s soundSets (+0x24). 9b3ee75 had named it WStringMap<?>::Erase (decomp-agent, read 2026-11-24)",0x005b8130,0x00720720,0x005b8130
+9879,function,WStringMap<?>::Erase,"INFERRED name: the same body as Map<int,?>::Erase (0x005B8130) over the wide-string map'""'""'s erase (0x005B7C50) (decomp-agent, read 2026-11-24)",0x005b8160,0x00720750,0x005b8160
 9880,function,std::vector<?>::~vector,,0x005b8190,0x005315d0,0x005b8190
 9881,function,,,0x005b81a0,0x004edf20,0x005b81a0
 9882,function,"ECBase::ECDynArray<std::pair<std::wstring,std::wstring>>::RemoveAt","removes element [index] of a vector of wstring pairs, index bounds-checked",0x005b81e0,0x00720840,0x005b81e0
