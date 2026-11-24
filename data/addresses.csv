@@ -3434,7 +3434,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3433,function,ECBase::ECDynArray<OnlineRec24>::Clear,,0x00485450,0x0085d230,0x00485450
 3434,function,std::vector<PrereqItem>::vector(unsigned int),,0x00485550,0x004c4750,0x00485550
 3435,function,std::vector<PRCItem>::vector(unsigned int),,0x004855c0,0x0085d330,0x004855c0
-3436,function,std::vector<unsigned char>::vector(unsigned int),,0x00485630,0x00479350,0x00485630
+3436,function,ECBase::ECDynArray<unsigned char>::ECDynArray(unsigned int),"ECDynArray'""'""'s own count constructor: zeroes +4, +8, +0xC, then resize(count) (0x00484030); ret 4. VC8'""'""'s vector(n) never calls resize (decomp-agent, read 2026-11-24)",0x00485630,0x00479350,0x00485630
 3437,function,ECBase::ECDynArray<OnlineRec84>::ECDynArray(unsigned int),,0x00485690,0x0085d3a0,0x00485690
 3438,function,ECBase::ECDynArray<OnlineFeatures::Achievement>::ECDynArray(unsigned int),,0x004856f0,0x0085d400,0x004856f0
 3439,function,std::vector<OnlineFeatures::Achievement>::resize(unsigned int),,0x00485770,0x0085d480,0x00485770
@@ -5184,7 +5184,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5183,function,,,0x004dba20,0x004b7cf0,0x004dba20
 5184,function,,,0x004dbab0,0x0082e5d0,0x004dbab0
 5185,function,,,0x004dbd70,0x0082e890,0x004dbd70
-5186,function,std::vector<Gff4::Template>::vector,,0x004dbde0,0x004b8460,0x004dbde0
+5186,function,ECBase::ECDynArray<Gff4::Field>::ECDynArray(const ECBase::ECDynArray<Gff4::Field>&),"ECDynArray'""'""'s own copy constructor: zeroes +4, +8, +0xC, then vector::operator= (0x004DB870, 12-byte elements) from the other; ret 4. VC8'""'""'s vector copy constructor never calls operator=. Its callers copy a Gff4::Template'""'""'s field array (+0x10) with it, so the element is Gff4::Field (decomp-agent, read 2026-11-24)",0x004dbde0,0x004b8460,0x004dbde0
 5187,function,,,0x004dbe40,0x00481f30,0x004dbe40
 5188,function,,,0x004dbe50,0x004b88d0,0x004dbe50
 5189,function,,,0x004dbea0,0x0081ec80,0x004dbea0
