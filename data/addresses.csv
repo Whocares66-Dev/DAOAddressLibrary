@@ -9873,7 +9873,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 9872,function,"std::map<std::wstring,?>::erase",,0x005b7c50,0x00819050,0x005b7c50
 9873,function,"std::map<std::wstring,?>::erase",,0x005b7f20,0x00819320,0x005b7f20
 9874,function,"std::vector<std::pair<std::wstring,std::wstring>>::erase","erase(first, last) of pairs of two wstrings (0x38 bytes)",0x005b7ff0,0x004c3860,0x005b7ff0
-9875,function,WStringMap<?>::Find,"finds a wide-string key and returns its value (node +0x28), or 0",0x005b8060,0x00720650,0x005b8060
+9875,function,WStringMap<?>::FindValue,"INFERRED name: Find (0x00A5E9F0), then the found node'""'""'s value (+0x28) or 0; ret 4. It was named WStringMap<?>::Find (decomp-agent, read 2026-11-24)",0x005b8060,0x00720650,0x005b8060
 9876,function,SoundManager::GetProjectGroupProperty,"(projectName, groupName, propertyName, int *out) ret 0x10, al result. Finds projectName in the SoundProjectMap at this+0x94 (std::map find 0x00A5E9F0) and, when it is loaded, returns the project's CContentBank_FMOD::GetGroupProperty (vftable 0x00AFF278 slot +0x14, 0x005C2290) with (group, property, out); false when the project is not loaded. It loads nothing: SoundManager::LoadProject 0x005BA220 does, and its one caller CCCreature::ForScript_SetSoundSet calls that first (0x006BD182), then this with L""VO"", L""Disable2DAProbabilities"" (0x006BD1E1). Was LoadSoundSet. Readings: lib-agent-2 and addr-lib-agent, 2026-11-11.",0x005b80b0,0x007206a0,0x005b80b0
 9877,function,WStringMap<?>::ClearAndDeleteValues,"No code of its own: one jmp to the function of the same name at 0x005B7BC0 (ID 9871), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x005b8120,0x00720710,0x005b8120
 9878,function,,,0x005b8130,0x00720720,0x005b8130
@@ -33492,7 +33492,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33491,function,AnimBase::FindTreeNameForClip,,0x00a5e730,0x00704f10,0x00a5e730
 33492,function,AnimBase::GetAnimationState,,0x00a5e8a0,0x00705080,0x00a5e8a0
 33493,function,AnimBase::IsAnimationLooping,"(animId): whether the clip loops. With no model (this+0x18)+4, AnimTypeHasFlag(animId, 1). Else the clip's name (GetAnimName; false if none), the model's Object (slot 0x4C, AsAnimatable), the tree that has the clip (FindTreeNameForClip): with one, Object::IsAnimationNodeLooping (slot 0x78); with none, AnimTypeHasFlag(animId, 1)",0x00a5e940,0x00705120,0x00a5e940
-33494,function,"std::map<std::wstring,?>::find",,0x00a5e9f0,0x007051d0,0x00a5e9f0
+33494,function,WStringMap<?>::Find,"__thiscall on the WStringMap, ret 8 (a hidden 12-byte result {iterator, found}): the result zeroed, the std map'""'""'s find (0x00512A10) on this (ecx to edi at 0x00A5E9FF), then found = 1 and the iterator when it is not end. Not the std map'""'""'s find, whose name it had (decomp-agent, read 2026-11-24)",0x00a5e9f0,0x007051d0,0x00a5e9f0
 33495,function,"std::map<?,?>::_Insert",,0x00a5ea50,0x00720360,0x00a5ea50
 33496,function,"std::map<?,?>::_Insert",,0x00a5ec50,0x004580a0,0x00a5ec50
 33497,function,AnimBase::GetNodeLengthByName,,0x00a5ee50,0x00705430,0x00a5ee50
@@ -101395,7 +101395,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 101394,data,,,0x00c35298,0x00c1e7cc,0x00c35298
 101395,data,,,0x00c352d0,0x00c1e804,0x00c352d0
 101396,data,,,0x00c35308,0x00c1e83c,0x00c35308
-101397,data,ECBase::ECStaticArray<AttackRecord*>::s_default,"Null pointer (4 bytes, zero bss) returned by the array's At when the index is out of range, read by AttackRecordList::~AttackRecordList (0x00697150) and Get (0x00697220, which news a 0xC-byte record {0, -1, -1}); the element type AttackRecord is INFERRED from the owner's name.",0x00c35340,0x00c1e874,0x00c35340
+101397,data,FixedArray<AttackRecord*>::s_default,"Null pointer (4 bytes, zero bss) that the FixedArray'""'""'s inlined At returns for an index out of range, read by AttackRecordList::~AttackRecordList (0x00697150) and Get (0x00697220, which news a 0xC-byte record {0, -1, -1}). AttackRecordList::AttackRecordList builds the array with FixedArray'""'""'s constructor (0x006970EA) and FixedArray::Resize (0x006970FB), as FixedArray<unsigned int>::s_default (0x00C34BCC) is that array'""'""'s; it was named ECStaticArray<AttackRecord*>::s_default (decomp-agent, read 2026-11-24)",0x00c35340,0x00c1e874,0x00c35340
 101398,data,ECBase::ECDynArray<AnimationRequest*>::s_default,"Null pointer (4 bytes, zero bss) returned for an out-of-range index of CCObject's two animation-request arrays at +0x168 and +0x178, walked by CCObject::UpdateMovement (0x00697C90, each entry {anim id, ., float, state +0x10, ms timer +0x14}) and freed in ~CCObject (0x0069A40C); ANIMATION.md line 515 calls them the face queues (+0x178 looping, +0x168 once); the element type name is INFERRED.",0x00c35344,0x00c1e878,0x00c35344
 101399,data,,,0x00c35348,0x00c1e87c,0x00c35348
 101400,data,ECBase::ECDynArray<CCVisualEffect*>::s_default,default null pointer of the VfxManager/CCVisualEffectPool effect pointer lists (begin +0x48/end +0x4c),0x00c3534c,0x00c1e880,0x00c3534c
