@@ -1272,8 +1272,8 @@ CScriptEvent,0x28,0x4,ObjectId,target,"0x0069BB06 mov [esi+0x28],eax (-1) in the
 CScriptEvent,0x2C,0x1C,std::wstring,ownScript,"0x0069BAF3 lea ecx,[esi+0x2c] then the wstring constructor; DELAYEVENT 0x00658020 lea ecx,[eax+0x2c] assigns the script name; CCObject::RunEventScript tests its length ([eax+0x40]) at 0x006989EA and uses it at 0x006989F9"
 CScriptEvent,0x48,0x4,ECBase::ECDynArray<std::wstring>*,resourceNames,"0x0069BB0E mov [esi+0x48],edi (0) in the constructor; GetResource 0x0069C0F0 reads its entries (0x1C bytes each); the copy constructor 0x0069CB10 duplicates it"
 CScriptEvent,0x4C,0x4,ECBase::ECDynArray<void*>*,attachedPointers,"0x0069BB11 mov [esi+0x4c],edi (0) in the constructor; SetEffect 0x0069D120 stores a pointer at an index (growing it with GrowEffectList); the copy constructor 0x0069CB10 copies it as plain words"
-CScriptLocation,0x0,0x10,Vec4f,a,"0x0065B349 movaps xmmword ptr [esi], xmm0 in ScriptCommand::GETLOCATION: a 16-byte access at +0x0 (re-read 2026-11-23; DAODecomp's definition had put it here)"
-CScriptLocation,0x10,0xC,Vector3,orientation,"0x007ABCC0 lea ecx, [edi + 0x10] in CScriptLocation::Equals reaches +0x10 (re-read 2026-11-23); its size and type are DAODecomp's definition's, which may rest on a stand-in class (INFERRED)"
+CScriptLocation,0x0,0x10,Vector3f,position,"0x007ABD04 fst [eax], 0x007ABD06 [eax+4], 0x007ABD09 [eax+8] in CScriptLocation::CScriptLocation: x, y, z zeroed and +0xC left, as Vector3f::Vector3f does; 0x0065B349 movaps xmmword ptr [esi] in ScriptCommand::GETLOCATION copies all 16 bytes (decomp-agent, read 2026-11-24)"
+CScriptLocation,0x10,0x10,Vector3f,orientation,"0x007ABD0C fst [eax+0x10], 0x007ABD0F [eax+0x14], 0x007ABD12 [eax+0x18] in CScriptLocation::CScriptLocation: x, y, z zeroed and +0x1C left, as Vector3f::Vector3f does; 0x007ABCC0 lea ecx,[edi+0x10] in CScriptLocation::Equals; two script commands copy it with movaps (decomp-agent, read 2026-11-24)"
 CScriptLocation,0x20,0x4,int,area,"0x0064DDB8 mov ecx, dword ptr [ecx + 0x20] in CScriptLocation::CScriptLocation(const CScriptLocation&): a 4-byte access at +0x20 (re-read 2026-11-23; DAODecomp's definition had put it here)"
 CVirtualMachine,0x0,0x198C,struct,sizeof,0x005DBA6E push 0x198C before operator new in CClientExoApp::Initialize (the game machine again at 0x005DBD17); the constructor 0x00A2FF60 is called at 0x005DBAFE
 CVirtualMachine,0x4,0x1C,std::wstring,compiledExtension,"0x00A2FF8B lea edi,[esi+0x4] then the wstring constructor 0x004C0D90; LoadScript 0x00A2DC10 formats ""%ls%ls"" of the script name and this string; Initialize passes "".ncs"" (game, 0x005DBD67) or "".ncc"" (client, 0x005DBAD1)"
@@ -5778,6 +5778,10 @@ Vector3,0x0,0xC,struct,sizeof,"0x00451954 fst [eax], 0x00451956 fst [eax+4] and 
 Vector3,0x0,0x4,float,x,0x00451954 fst [eax] in Vector3::Vector3; 0x00451997 fld [eax] in Vector3::Magnitude
 Vector3,0x4,0x4,float,y,0x00451956 fst [eax+4] in Vector3::Vector3 (0x00451950); 0x00451994 fld [eax+4] in Vector3::Magnitude
 Vector3,0x8,0x4,float,z,0x00451959 fstp [eax+8] in Vector3::Vector3 (0x00451950); 0x00451999 fld [eax+8] in Vector3::Magnitude
+Vector3f,0x0,0x10,struct,sizeof,"0x00451950 Vector3f::Vector3f zeroes x, y, z and leaves +0xC; every array of it steps 0x10 (the 11 vector constructor iterators passing 0x00451950 push 0x10); a __declspec(align(16)) {x, y, z}, an inferred type name (decomp-agent's math work, 2026-11-23)"
+Vector3f,0x0,0x4,float,x,0x00451954 fst dword ptr [eax] in Vector3f::Vector3f
+Vector3f,0x4,0x4,float,y,0x00451956 fst dword ptr [eax+4] in Vector3f::Vector3f
+Vector3f,0x8,0x4,float,z,0x00451959 fstp dword ptr [eax+8] in Vector3f::Vector3f
 Vector4,0x0,0x4,float,x,"0x0052D810: INFERRED: DAODecomp's definition of SpeedTree::UpdateCameraAngles, which may rest on a stand-in class, puts it here; no instruction there reaches +0x0 by itself (re-read 2026-11-23)"
 Vector4,0x4,0x4,float,y,"0x0052D810: INFERRED: DAODecomp's definition of SpeedTree::UpdateCameraAngles, which may rest on a stand-in class, puts it here; no instruction there reaches +0x4 by itself (re-read 2026-11-23)"
 Vector4,0x8,0x4,float,z,"0x0052D810: INFERRED: DAODecomp's definition of SpeedTree::UpdateCameraAngles, which may rest on a stand-in class, puts it here; no instruction there reaches +0x8 by itself (re-read 2026-11-23)"
