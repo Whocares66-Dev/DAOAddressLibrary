@@ -7911,7 +7911,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7910,function,GraphicsStructures::Object::ApplyLightmapRecords,,0x00548860,0x00749e40,0x00548860
 7911,function,GraphicsStructures::Object::OnFlagsChanged,,0x005489a0,0x00749f80,0x005489a0
 7912,function,GraphicsStructures::Object::BindEmittersToFollowedActorShapes,,0x00548a70,0x0074a050,0x00548a70
-7913,function,Core::GetVectorRange<EightByteElement>,,0x00548c40,0x0074a280,0x00548c40
+7913,function,ECBase::ECDynArray<?>::GetRange,"ecx the array (mov esi,ecx; first +4 tested, last +8): a member on its own vector, 8-byte elements; called by MaterialStateManager::ApplyState, Object::ResetClipKeyCursor and VfxManager, so the element type is open. It was named Core::GetVectorRange<EightByteElement> (decomp-agent, read 2026-11-24)",0x00548c40,0x0074a280,0x00548c40
 7914,function,std::vector<?>::_Ufill,,0x00548ce0,0x005f48a0,0x00548ce0
 7915,function,"std::_Uninit_fill_n<GraphicsStructures::ExportValue*,unsigned int,GraphicsStructures::ExportValue>",,0x00548d20,0x0074a320,0x00548d20
 7916,function,GraphicsStructures::Object::SetRoom,,0x00548d50,0x0074a350,0x00548d50
@@ -22844,7 +22844,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22843,function,Console::Console::GetLineHeight,,0x00840d40,0x00491630,0x00840d40
 22844,function,Console::Console::SetViewportHeight,,0x00840d60,0x00491650,0x00840d60
 22845,function,Console::Console::SetDisabled,,0x00840d70,0x00491660,0x00840d70
-22846,function,ECBase::ECDynArray<Console::ConsoleFunc*>::operator[],,0x00840d80,0x004916b0,0x00840d80
+22846,function,ECBase::ECDynArray<Console::ConsoleFunc*>::At,"ecx the array: the element's address, or 0x00C39AF8 when the index is past the end, ret 4: the engine array's bounds-checked At, the same code as ECDynArray<?>::At (0x00466F10). It was named ECDynArray<Console::ConsoleFunc*>::operator[] (decomp-agent, read 2026-11-24)",0x00840d80,0x004916b0,0x00840d80
 22847,function,Console::Console::ExecuteStream,,0x00840db0,0x004916e0,0x00840db0
 22848,function,Console::IsNotTraceCommand,,0x00840fb0,0x004918e0,0x00840fb0
 22849,function,"std::map<unsigned short,std::wstring>::_Buynode",,0x008410b0,0x00491a20,0x008410b0
