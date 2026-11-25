@@ -1412,7 +1412,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 1411,function,,,0x0042f740,0x0042f9e0,0x0042f740
 1412,function,,,0x0042f830,0x0042fad0,0x0042f830
 1413,function,,,0x0042f920,0x0042fbc0,0x0042f920
-1414,function,,,0x0042f930,0x0042fbd0,0x0042f930
+1414,function,Stub::GetDword_0x6C,"mov eax,[ecx+0x6c]; ret, in four tables; CLCDText's slot 38 (GetLeftMargin) among them, a fold (2026-11-24)",0x0042f930,0x0042fbd0,0x0042f930
 1415,function,,,0x0042f940,0x0042fbe0,0x0042f940
 1416,function,,,0x0042f950,0x008f7760,0x0042f950
 1417,function,,,0x0042f960,0x0042fc10,0x0042f960
@@ -24528,16 +24528,16 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24527,function,CLCDStreamingText::OnDraw,,0x0089ac50,0x00a3dff0,0x0089ac50
 24528,function,CLCDText::Initialize,,0x0089adc0,0x00a3e160,0x0089adc0
 24529,function,CLCDText::SetFont,,0x0089adf0,0x00a3e190,0x0089adf0
-24530,function,,,0x0089ae30,0x00a3e1e0,0x0089ae30
+24530,function,CLCDText::SetFontFaceName,"Slot 28 of CLCDText's table, after SetFont (27): the Logitech EZ LCD SDK's LCDText.h declares SetFontFaceName there, and slots 27-41 follow its order (decomp-agent, 2026-11-24)",0x0089ae30,0x00a3e1e0,0x0089ae30
 24531,function,CLCDText::SetFontPointSize,,0x0089aea0,0x00a3e250,0x0089aea0
 24532,function,CLCDText::SetFontWeight,,0x0089af10,0x00a3e2c0,0x0089af10
 24533,function,CLCDText::SetWordWrap,,0x0089af70,0x00a3e320,0x0089af70
 24534,function,Stub::SetDword_0x6C,"Linker-folded setter: stores its argument at [ecx+0x6C]. Used by GameModeLoading::SetLoadKind (0x006C6473, 0x006C64A5: kinds 4 and 5), UpdateLightLoading and UpdateAreaListSwap on the GameModeLoadingState (GameModeLoading+0x130), where +0x6C is the step of the list swap and the light load (the jump tables at 0x006C8473 and 0x006C8853 read it).",0x0089af90,0x00a3e340,0x0089af90
 24535,function,Stub::SetDword_0x70,"Linker-folded setter: mov eax,[esp+4]; mov [ecx+0x70],eax; ret 4. Held by the vtable of D3DDriver::D3DBatchIndex (slot 11, where Ghidra's label D3DBatchIndex::vfunction11 comes from) and called by Renderer::SQProgramBuilderXML2::ParseRender (0x004735C0), so not one class's method. The Loading mode uses it for the save step: GameModeLoading::SetLoadKind (0x006C644C) and GameModeLoading::Worker (0x006C65C1, 0x006C666A, 0x006C6696, 0x006C66C5, 0x006C6984, 0x006C6ADE) call it with ecx = the GameModeLoadingState at GameModeLoading+0x130, whose +0x70 is the save step (1 to 0xB, 0 when no save is being written; CCObject::SaveToStruct tests it).",0x0089afa0,0x004764b0,0x0089afa0
-24536,function,,,0x0089afb0,0x00a3e350,0x0089afb0
-24537,function,,,0x0089afc0,0x00a3e360,0x0089afc0
+24536,function,CLCDText::GetVExtent,"Slot 35 of CLCDText's table: GetVExtent in LCDText.h's order; lea eax,[ecx+0x7c]; ret, a SIZE (decomp-agent, 2026-11-24)",0x0089afb0,0x00a3e350,0x0089afb0
+24537,function,CLCDText::GetHExtent,"Slot 36 of CLCDText's table: GetHExtent in LCDText.h's order; lea eax,[ecx+0x84]; ret, a SIZE (decomp-agent, 2026-11-24)",0x0089afc0,0x00a3e360,0x0089afc0
 24538,function,CLCDText::SetAlignment,,0x0089afd0,0x00a3e370,0x0089afd0
-24539,function,,,0x0089aff0,0x00a3e390,0x0089aff0
+24539,function,CLCDText::GetText,"Slot 33 of CLCDText's table, after SetText (32): GetText in LCDText.h's order; returns the text's buffer (+0x38, short-string test on +0x4C) (decomp-agent, 2026-11-24)",0x0089aff0,0x00a3e390,0x0089aff0
 24540,function,CLCDText::DrawTextW,,0x0089b000,0x00a3e3a0,0x0089b000
 24541,function,CLCDText::OnDraw,,0x0089b090,0x00a3e430,0x0089b090
 24542,function,,,0x0089b2c0,0x00a3e660,0x0089b2c0
