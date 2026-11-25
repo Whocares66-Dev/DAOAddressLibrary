@@ -22438,7 +22438,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22437,function,std::vector<bool>::_Insert_x,,0x008275c0,0x0049fac0,0x008275c0
 22438,function,Physics::PhysicsScene::PhysicsEntityReport<NxShape*>::PhysicsEntityReport,,0x00827690,0x0049fb90,0x00827690
 22439,function,Physics::PhysicsScene::PhysicsEntityReport<NxShape*>::onEvent,,0x008276b0,0x004a4880,0x008276b0
-22440,function,Physics::ClearSweepQueryHits,,0x008277d0,0x0049fbb0,0x008277d0
+22440,function,ECBase::ECDynArray<NxSweepQueryHit>::Clear(bool),"ECDynArray<?>::Clear(bool)'s code (0x0086B9A0): ecx the array, a bool tested at entry, ret 4; a separate instantiation, called by PhysicsScene::SweepCapsule and SweepBox, whose hit arrays hold NxSweepQueryHits (the element type INFERRED from those callers). It was named Physics::ClearSweepQueryHits (decomp-agent, 2026-11-24)",0x008277d0,0x0049fbb0,0x008277d0
 22441,function,Physics::PhysicsScene::PhysicsEntityReport<NxSweepQueryHit>::PhysicsEntityReport,,0x008278c0,0x0049fca0,0x008278c0
 22442,function,Physics::PhysicsScene::PhysicsEntityReport<NxSweepQueryHit>::onEvent,,0x008278e0,0x0049fcc0,0x008278e0
 22443,function,Physics::PhysicsScene::PhysicsEntityReport<unsigned int>::PhysicsEntityReport,,0x00827a10,0x0049fdf0,0x00827a10
