@@ -7300,14 +7300,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7299,function,GraphicsStructures::SpeedTreeForest::UpdateLightProbe,,0x00531fa0,0x00739450,0x00531fa0
 7300,function,GraphicsStructures::SpeedTreeForest::GetModelGroupCount,,0x005320b0,0x00739560,0x005320b0
 7301,function,GraphicsStructures::SpeedTreeForest::GetModelGroupAt,,0x005320d0,0x00739580,0x005320d0
-7302,function,SpeedTree::GrowBoundsByInstance,,0x00532120,0x007395d0,0x00532120
+7302,function,GraphicsStructures::SpeedTreeForest::GrowBoundsByInstance,"__thiscall on the forest: it reads ecx (mov esi,ecx at 0x00532155) before writing it, SpeedTreeForest::AddInstance (0x005370A0) calls it with its own this still in ecx, then GetModelGroup on the same this, and RemakeBounds (0x005328E0) calls it on its own this for each instance (decomp-agent, read 2026-11-25)",0x00532120,0x007395d0,0x00532120
 7303,function,GraphicsStructures::SpeedTreeWorld::UpdateWindProxies,,0x005324e0,0x00739990,0x005324e0
 7304,function,"std::_Unguarded_partition<GraphicsStructures::SpeedTreeInstance**,SpeedTree::FartherFromPoint>",,0x00532540,0x00739b10,0x00532540
 7305,function,"std::_Insertion_sort<GraphicsStructures::SpeedTreeInstance**,SpeedTree::FartherFromPoint>",,0x00532710,0x00739ce0,0x00532710
 7306,function,"std::_Make_heap<GraphicsStructures::SpeedTreeInstance**,SpeedTree::FartherFromPoint>",,0x005327d0,0x00739da0,0x005327d0
 7307,function,GraphicsStructures::SpeedTreeModel::CreateInstance,,0x00532830,0x00739e20,0x00532830
 7308,function,GraphicsStructures::SpeedTreeForest::HasNoInstances,,0x005328a0,0x00739e90,0x005328a0
-7309,function,SpeedTree::RemakeBounds,,0x005328e0,0x00739ed0,0x005328e0
+7309,function,GraphicsStructures::SpeedTreeForest::RemakeBounds,"__thiscall: it passes its own this (ebx from ecx at 0x005328E8) as the ecx of SpeedTreeForest::GrowBoundsByInstance (0x00532120) for each instance, at 0x0053298F and 0x005329A3; EC::ChunkManager::RemakeTreeBounds calls it on what two virtual getters return (read 2026-11-25)",0x005328e0,0x00739ed0,0x005328e0
 7310,function,GraphicsStructures::SpeedTreeWorld::SetWind,,0x005329c0,0x00739fb0,0x005329c0
 7311,function,"std::map<int,void*>::count",,0x005329d0,0x00717860,0x005329d0
 7312,function,SpeedTree::UpdateModels,,0x00532a10,0x0073a000,0x00532a10
