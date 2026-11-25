@@ -3424,7 +3424,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3423,function,std::vector<OnlineRec84>::resize(unsigned int),,0x00484970,0x0085ced0,0x00484970
 3424,function,std::vector<OnlineRec84>::push_back,,0x004849c0,0x0085cf20,0x004849c0
 3425,function,ECFileAccess::ImageTextInfo::ImageTextInfo(const ECFileAccess::ImageTextInfo&),,0x00484a70,0x0085cfd0,0x00484a70
-3426,function,Online::XMLAttributesPair::~XMLAttributesPair,,0x00484ae0,0x0085d040,0x00484ae0
+3426,function,Online::HttpRequest::~HttpRequest,"Destroys the members at +0x68 then +8 with 0x004847A0 (0x00484B08..0x00484B23), the two Online::HttpRequest::HttpRequest (0x00489640) builds with NameValueMap's constructor at +8 and +0x68; its callers destroy stack HttpRequests. It was named Online::XMLAttributesPair::~XMLAttributesPair (decomp-agent, read 2026-11-24)",0x00484ae0,0x0085d040,0x00484ae0
 3427,function,ECFileAccess::ImageTextInfo::ImageTextInfo,,0x00484b40,0x00537f60,0x00484b40
 3428,function,ECFileAccess::ImageTextInfo::~ImageTextInfo,,0x00484bf0,0x0047e280,0x00484bf0
 3429,function,"stdext::hash_map<std::wstring,std::wstring>::hash_map",,0x00484c80,0x0085d0a0,0x00484c80
@@ -7652,8 +7652,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7651,function,GraphicsStructures::ObjectNodeEmitter::FadeOut,,0x0053dcb0,0x00779f50,0x0053dcb0
 7652,function,GraphicsStructures::ObjectNodeEmitter::FadeIn,,0x0053dcd0,0x00779f70,0x0053dcd0
 7653,function,std::vector<?>::size,,0x0053dcf0,0x00779f90,0x0053dcf0
-7654,function,ECBase::ECDynArray<?>::At,,0x0053dd10,0x00770ec0,0x0053dd10
-7655,function,ECBase::ECDynArray<?>::At,,0x0053dd20,0x00779fb0,0x0053dd20
+7654,function,GraphicsStructures::Array<?>::operator[],"No bounds check, the data pointer at +0 (add eax,[ecx]), 0x50-byte elements: GraphicsStructures::Array's operator[], not ECDynArray's At (whose first pointer is at +4). FillSplats calls it on SplatObject's Array (ObjectNodeEmitter +0x4D8, then +0xC). It was named ECBase::ECDynArray<?>::At (decomp-agent, read 2026-11-24)",0x0053dd10,0x00770ec0,0x0053dd10
+7655,function,GraphicsStructures::Array<?>::operator[],"The same template's operator[] for 0xC-byte elements (mov ecx,[ecx], index*12), its this a local built by Array<?>::Array (0x0053F220). It was named ECBase::ECDynArray<?>::At (decomp-agent, read 2026-11-24)",0x0053dd20,0x00779fb0,0x0053dd20
 7656,function,Math::Vector4f::UnitZW,,0x0053dd30,0x006cdd10,0x0053dd30
 7657,function,Math::Vector4f::Saturate,,0x0053dd70,0x00770d30,0x0053dd70
 7658,function,Math::Vector4f::Scaled,,0x0053dec0,0x00770e80,0x0053dec0
@@ -7701,7 +7701,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7700,function,GraphicsStructures::ObjectNodeEmitter::UpdateParentTransform,,0x00540300,0x0077c050,0x00540300
 7701,function,GraphicsStructures::Array<?>::Array,,0x00540450,0x0077c1e0,0x00540450
 7702,function,GraphicsStructures::Array<?>::SetSize,,0x00540480,0x00772f10,0x00540480
-7703,function,ECBase::ECDynArray<?>::RemoveAt,,0x005404e0,0x0077c210,0x005404e0
+7703,function,GraphicsStructures::Array<?>::RemoveAt,"Two element lookups through Array<?>::operator[] (0x0053DD10), a memmove, then Array<?>::SetSize (0x00540480), on SplatObject's Array: GraphicsStructures::Array's RemoveAt. It was named ECBase::ECDynArray<?>::RemoveAt (decomp-agent, read 2026-11-24)",0x005404e0,0x0077c210,0x005404e0
 7704,function,"std::copy_backward<?*,?*>",,0x00540530,0x0077c260,0x00540530
 7705,function,"std::_Uninit_fill_n<?*,unsigned int,?,std::allocator<?>>",,0x00540580,0x0077c2b0,0x00540580
 7706,function,GraphicsStructures::ObjectNodeEmitter::SpawnSplat,,0x005405e0,0x0077c310,0x005405e0
@@ -24389,7 +24389,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24388,function,Eclipse::GroupedInputMappings::SaveToConfig,,0x00895980,0x00a431a0,0x00895980
 24389,function,Eclipse::GroupedInputMappings::Get,,0x00895dc0,0x00a435e0,0x00895dc0
 24390,function,"std::map<int,std::wstring>::find",,0x00895e40,0x00a43660,0x00895e40
-24391,function,Input::RegisterInputName,,0x00895eb0,0x00a43980,0x00895eb0
+24391,function,Input::InputNameTable::RegisterInputName,"All 76 calls take ecx from Input::InputNameTable::Get (0x005217D0): a member of the table. It was named Input::RegisterInputName (decomp-agent, read 2026-11-24)",0x00895eb0,0x00a43980,0x00895eb0
 24392,function,Input::RegisterInputNames,,0x00895f10,0x00a439e0,0x00895f10
 24393,function,Input::StateAnswer::StateAnswer,"The empty state answer, an 8-byte value-and-tag pair that Input::DeviceStates::GetInputState fills in: stores tag 3 (no device answered) at +4 and leaves the value at +0 (0x008973E2); returns ECX, plain ret. Called on a local by Input::IsDown, IntValue, FloatValue and AxisPair before the query.",0x008973e0,0x004684e0,0x008973e0
 24394,function,Input::StateAnswer::AsBool,"Reads a state answer as a bool: 0 when the tag at +4 is 3 (empty), else the byte at +0 (0x008973F0..0x008973F9). Called by Input::IsDown.",0x008973f0,0x004684f0,0x008973f0
