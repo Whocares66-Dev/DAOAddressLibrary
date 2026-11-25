@@ -2583,7 +2583,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2582,function,Renderer::FBRenderTargetResource::~FBRenderTargetResource,,0x0045fc40,0x00898520,0x0045fc40
 2583,function,Renderer::FrameBufferStage::Run,"FrameBufferEffect::Run calls it on each element of its stages array (+0x24, an ECDynArray<Renderer::FrameBufferStage*>) at 0x00460105, so this is a FrameBufferStage (RTTI); the exe has no FrameBufferEventGroup. It was named Renderer::FrameBufferEventGroup::Run (decomp-agent, read 2026-11-24)",0x0045fcd0,0x008985b0,0x0045fcd0
 2584,function,Renderer::FrameBufferStage::RunOwnEvent,"A FrameBufferStage member, as Run (0x0045FCD0), which it calls (0x0045FD44); SOFBEffectStage::Execute and MaterialEffectPass::Apply call it too. It was named Renderer::FrameBufferEventGroup::RunOwnEvent (decomp-agent, read 2026-11-24)",0x0045fd40,0x00898620,0x0045fd40
-2585,function,Renderer::FrameBufferEffect::DeleteResources,,0x0045fd50,0x00898630,0x0045fd50
+2585,function,WStringMap<Renderer::FrameBufferResource*>::ClearAndDeleteValues,"~FrameBufferEffect calls it at 0x004614FB with ecx = this+0x34, its resources map; the body is WStringMap<?>::ClearAndDeleteValues's (0x005B7BC0) but for the value type's virtual destructor slot (3). It was named Renderer::FrameBufferEffect::DeleteResources (vm-agent, 2026-11-25)",0x0045fd50,0x00898630,0x0045fd50
 2586,function,"std::map<std::wstring,?>::erase",,0x0045fde0,0x00466130,0x0045fde0
 2587,function,Renderer::FrameBufferEffect::Run,,0x004600b0,0x008986c0,0x004600b0
 2588,function,"std::map<std::wstring,?>::erase",,0x00460120,0x00466730,0x00460120
@@ -11074,9 +11074,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 11073,function,,,0x0060096f,0x004eeb5f,0x0060096f
 11074,function,CCModule::ForScript_DoAreaTransition,,0x00600a40,0x004eec30,0x00600a40
 11075,function,CCModule::GetAreaRowByTag,,0x00600bd0,0x004eedc0,0x00600bd0
-11076,function,,,0x00600e40,0x004ef030,0x00600e40
+11076,function,std::set<int>::insert,"The _Tree insert returning pair<iterator,bool>; CCObject::SetEventEnabled (0x00698C00) calls it on its disabledEvents set (vm-agent, 2026-11-25)",0x00600e40,0x004ef030,0x00600e40
 11077,function,,,0x00600f00,0x004ef0f0,0x00600f00
-11078,function,,,0x006010c0,0x004ef2b0,0x006010c0
+11078,function,std::set<int>::erase(const int&),"Called by CCObject::SetEventEnabled on the same disabledEvents set, the key by reference (vm-agent, 2026-11-25)",0x006010c0,0x004ef2b0,0x006010c0
 11079,function,"std::map<std::wstring,?>::insert",,0x00601130,0x00458630,0x00601130
 11080,function,std::vector<CCModule::TagIndexEntry>::insert,,0x006012e0,0x004ef3d0,0x006012e0
 11081,function,std::vector<CCModule::TagIndexEntry>::resize,,0x00601390,0x004ef7f0,0x00601390
@@ -15217,7 +15217,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 15216,function,SaveLoadProxy::AddHero,,0x006cea00,0x005c02a0,0x006cea00
 15217,function,SaveLoadProxy::GatherCharacterFolders,,0x006ceff0,0x005c0890,0x006ceff0
 15218,function,"SmartData::Attribute<ECBase::ECDynArray<SaveFileInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x006cf390,0x005c0cb0,0x006cf390
-15219,function,std::set<int>::set,,0x006cf410,0x005a2a90,0x006cf410
+15219,function,DefaultSet<int>::DefaultSet,"Builds the set's head (0x00511590) and a heap default at +0xC (operator new 4, 0x006CF461): the constructor of DefaultSet, a set plus its default. It was named std::set<int>::set (vm-agent, 2026-11-25)",0x006cf410,0x005a2a90,0x006cf410
 15220,function,std::set<int>::~set,,0x006cf4a0,0x005c0d30,0x006cf4a0
 15221,function,SaveLoadProxy::ClearSaves,,0x006cf4e0,0x005c0d70,0x006cf4e0
 15222,function,SaveLoadProxy::AddSaveFileInfo,,0x006cf550,0x005c0de0,0x006cf550
@@ -18123,7 +18123,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18122,function,PlotManager::WriteToSave,"Writes the plot map (0x4011; each name 0x4012, words 0x4013..0x4016) and, where the struct has field 0x4089, the unread codex entry names from Journal::GetUnreadCodexEntryNames (0x0075D006)",0x0075ce00,0x006a7fd0,0x0075ce00
 18123,function,"stdext::hash_map<std::wstring,PlotManager::PlotEntry>::hash_map","constructs the plot manager's hash_map: a list head, 9 buckets, load counters of 1",0x0075d0d0,0x006a82a0,0x0075d0d0
 18124,function,,,0x0075d150,0x006a8320,0x0075d150
-18125,function,ECBase::ECDynArray<unsigned int>::Clear,,0x0075d700,0x006a88d0,0x0075d700
+18125,function,ECBase::ECDynArray<Resources>::Clear,"The element is the 4-byte Resources class, with a destructor: it resizes with resize(n, Resources()) through 0x00576DA0 and destroys Resources elements, where unsigned int has none. It was named ECDynArray<unsigned int>::Clear (vm-agent, 2026-11-25)",0x0075d700,0x006a88d0,0x0075d700
 18126,function,PlotManager::BuildSaveTemplate,,0x0075d7f0,0x006a89c0,0x0075d7f0
 18127,function,"std::map<std::wstring,PlotManager::PlotEntry>::operator[]",,0x0075d950,0x006a8b20,0x0075d950
 18128,function,PlotManager::InitMapWithDefault,,0x0075da30,0x006a8c00,0x0075da30
@@ -23746,10 +23746,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23745,function,D3DDriver::D3DVertexStreamDriver::D3DVertexStreamDriver,"Wraps a native vertex buffer: stores its size, the buffer, a CPU shadow copy (copied from the initial data or zeroed), the usage mode (0/1/2 from two flags) and registers as a D3DResetable (0x0086DFD0); the buffer itself is made by the CreateVertexStream path (0x008687B0, device CreateVertexBuffer).",0x00870330,0x00476240,0x00870330
 23746,function,D3DDriver::D3DVertexStreamDriver::`scalar deleting destructor',Runs the destructor (0x00870260: releases the native buffer at +0x30 and frees the shadow copy at +0x38) and frees the object if the delete flag is set.,0x00870440,0x00476350,0x00870440
 23747,function,std::set<unsigned int>::find,,0x00870460,0x0049a2b0,0x00870460
-23748,function,ECBase::ECSet<unsigned int>::Contains,"thiscall on a std::set<unsigned int> (head at +4): the tree's find 0x00870460, compared with the head. std::set has no Contains, so the receiver is an engine class over the set; ECSet is an INFERRED name, after ECDeque. Graphics::MemoryFootprintTally uses it. It was named std::set<unsigned int>::Contains (decomp-agent, read 2026-11-24)",0x008704d0,0x00476370,0x008704d0
+23748,function,DefaultSet<unsigned int>::Contains,"thiscall on a std::set<unsigned int> (head at +4): the tree's find 0x00870460, compared with the head. DefaultSet's: CCCreature's perceivedIds (+0xC18), which DefaultSet::Begin/Next walk, is searched with it. ECSet (from 2026-11-24) was a second name for that class (vm-agent, 2026-11-25)",0x008704d0,0x00476370,0x008704d0
 23749,function,,,0x00870510,0x0049c240,0x00870510
 23750,function,,,0x00870710,0x0049cd10,0x00870710
-23751,function,ECBase::ECSet<unsigned int>::Insert,"ecx passed straight to the tree's insert 0x00870710, its returned pair dropped; ret 4. Contains's (0x008704D0) class; ECSet is an INFERRED name. It was named std::set<unsigned int>::Insert (decomp-agent, read 2026-11-24)",0x00870780,0x0049f130,0x00870780
+23751,function,DefaultSet<unsigned int>::Insert,"ecx passed straight to the tree's insert 0x00870710, its returned pair dropped; ret 4. DefaultSet's: PhysicsScene+0xD4, built by DefaultSet's constructor, is fed with it (AddDynamicActor 0x00826CB0). ECSet (from 2026-11-24) was a second name for that class (vm-agent, 2026-11-25)",0x00870780,0x0049f130,0x00870780
 23752,function,Graphics::MemoryFootprintTally::Add,,0x008707a0,0x004763b0,0x008707a0
 23753,function,D3DDriver::D3DVertexStreamDriver::CollectResourceFootprint,Adds this stream to the memory tally (MemoryFootprintTally::Add 0x008707A0) with its native buffer (+0x30) and size (+0x1C); the same slot as Texture::CollectResourceFootprint.,0x00870810,0x00476420,0x00870810
 23754,function,D3DDriver::D3DIndexStreamDriver::CollectResourceFootprint,The index stream does the same with its native buffer at +0x34 and size at +0x1C.,0x00870830,0x00476440,0x00870830
@@ -33731,7 +33731,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 33730,function,AnimModelLods::LoadModel,,0x00a68b30,0x00718840,0x00a68b30
 33731,function,AnimModelLods::LoadModels,,0x00a68c60,0x00718970,0x00a68c60
 33732,function,AnimModelLods::LoadCrustModel,,0x00a68d50,0x00718a60,0x00a68d50
-33733,function,AnimBase::ReloadModel,,0x00a68db0,0x00718ac0,0x00a68db0
+33733,function,AnimModelLods::ReloadModel,"At both calls, in AnimBase::LodLevelFromBand (0x00A5D5D0) and AnimBaseWield::LodLevelFromBand (0x00A669C0), ecx is the modelLods / weaponLods[i] AnimModelLods; the body reads its pendingModel (+8) and currentModel (+4) and calls AnimModelLods::GetOwnerLodLevel (0x00A67AB0) on this. It was named AnimBase::ReloadModel (vm-agent, 2026-11-25)",0x00a68db0,0x00718ac0,0x00a68db0
 33734,function,"std::pair<wchar_t const *,wchar_t const *>::operator<",,0x00a68ff0,0x00718d00,0x00a68ff0
 33735,function,std::_Tree<?>::_Rrotate,,0x00a69080,0x007c5770,0x00a69080
 33736,function,std::_Tree<?>::_Min,,0x00a690e0,0x00718e20,0x00a690e0
@@ -99942,7 +99942,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 99941,data,,,0x00c1ead4,0x00c315d4,0x00c1ead4
 99942,data,g_autoClearResources,"std::vector of pointers (0x10 bytes; built by 0x00ACE5E0, vector constructor 0x0040D610, destroyed 0x00AD5420): the frame-buffer resources whose render target is cleared by ClearTargets 0x00456D30 (it walks the range with 0x005D2480, binds each resource's target at [+0x54] and clears it); added by AddClearedResource 0x00457B30 (push_back) and removed by RemoveAutoClearTarget 0x00456F76. Element type INFERRED as FBRenderTargetResource pointers INFERRED",0x00c1ead8,0x00c315d8,0x00c1ead8
 99943,data,g_renderTargetMutex,"A Multithreading::Mutex (0x20 bytes: a CRITICAL_SECTION, a count at +0x18 and a byte at +0x1C; constructor 0x004CB280 called by 0x00ACE600, destructor 0x004CB310); SetRenderTarget 0x00455DD5 takes it through a ScopedLock around the update of the bound-target vector 0x00C1E8D0, ReleaseRenderTargets 0x00455EC4 and FrameBufferEffects::Startup 0x00458B4A lock it directly, Startup unlocks it at 0x00458BF4.",0x00c1eae8,0x00c315e8,0x00c1eae8
-99944,data,Renderer::ProcessFBEffectRequests::s_loadedFBEffectFileNames,,0x00c1eb08,0x00c31608,0x00c1eb08
+99944,data,Renderer::s_loadedFBEffectFileNames,"A file static, not ProcessFBEffectRequests's local: Renderer::IsFBEffectFileLoaded (0x00456280) reads it too (0x00456281, 0x0045628B), and no guard protects it. It was named Renderer::ProcessFBEffectRequests::s_loadedFBEffectFileNames (vm-agent, 2026-11-25)",0x00c1eb08,0x00c31608,0x00c1eb08
 99945,data,,,0x00c1eb0c,0x00c3160c,0x00c1eb0c
 99946,data,,,0x00c1eb10,0x00c31610,0x00c1eb10
 99947,data,Renderer::g_areaColorCurveTexture,,0x00c1eb18,0x00c31618,0x00c1eb18
@@ -101353,7 +101353,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 101352,data,,,0x00c34e50,0x00c1e2d0,0x00c34e50
 101353,data,,,0x00c34e88,0x00c1e308,0x00c34e88
 101354,data,,,0x00c34ec0,0x00c1e340,0x00c34ec0
-101355,data,GameModeDialog::InitDepthOfField::s_effectName,"Static std::wstring L""da_dof"" built at startup by the dynamic initializer at 0x00AD0F90 (destroyed by 0x00AD6ED0) and passed to the frame buffer effect loader (0x004558F0) by InitDepthOfField at 0x0068FABB.",0x00c34ef8,0x00c1e378,0x00c34ef8
+101355,data,s_depthOfFieldEffectName,"Static std::wstring L""da_dof"" built at startup by the dynamic initializer at 0x00AD0F90 (destroyed by 0x00AD6ED0) and passed to the frame buffer effect loader (0x004558F0) by InitDepthOfField at 0x0068FABB. A file static of GameModeDialog.cpp, not InitDepthOfField's local: that function has no guard for it, so a dynamic initializer builds it. It was named GameModeDialog::InitDepthOfField::s_effectName (vm-agent, 2026-11-25)",0x00c34ef8,0x00c1e378,0x00c34ef8
 101356,data,,,0x00c34f14,0x00c1e394,0x00c34f14
 101357,data,,,0x00c34f30,0x00c1e3b0,0x00c34f30
 101358,data,SkipCutsceneMessage::GetType::s_guard,"Bit 0 guard of GetType's one-time write of SkipCutsceneMessage::s_classInfo.parent; the same bit is tested by InitType, RegisterHandler_SkipCutsceneMessage, which inline the same link. It is also the outer guard of the nested GameMessage link (Messages::GameMessage::s_classInfoParentSet).",0x00c34f4c,0x00c1c750,0x00c34f4c

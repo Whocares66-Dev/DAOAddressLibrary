@@ -2558,7 +2558,7 @@ id,subsystem,class,how
 2582,Rendering,Renderer::FBRenderTargetResource,name
 2583,Rendering,Renderer::FrameBufferStage,name
 2584,Rendering,Renderer::FrameBufferStage,name
-2585,Rendering,Renderer::FrameBufferEffect,name
+2585,Core,WStringMap<Renderer::FrameBufferResource*>,name
 2586,ThirdParty:STL,"std::map<std::wstring,?>",name
 2587,Rendering,Renderer::FrameBufferEffect,name
 2588,ThirdParty:STL,"std::map<std::wstring,?>",name
@@ -11001,9 +11001,9 @@ id,subsystem,class,how
 11073,ThirdParty:STL,std::vector<Gff4::StructReader>,owner
 11074,World,CCModule,name
 11075,World,CCModule,name
-11076,ThirdParty:STL,,string
+11076,ThirdParty:STL,std::set<int>,name
 11077,ThirdParty:STL,,string
-11078,ThirdParty:STL,,between
+11078,ThirdParty:STL,std::set<int>,name
 11079,ThirdParty:STL,"std::map<std::wstring,?>",name
 11080,ThirdParty:STL,std::vector<CCModule::TagIndexEntry>,name
 11081,ThirdParty:STL,std::vector<CCModule::TagIndexEntry>,name
@@ -15136,7 +15136,7 @@ id,subsystem,class,how
 15216,Save,SaveLoadProxy,name
 15217,Save,SaveLoadProxy,name
 15218,Data,"SmartData::Attribute<ECBase::ECDynArray<SaveFileInfo*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>",name
-15219,ThirdParty:STL,std::set<int>,name
+15219,unknown,DefaultSet<int>,
 15220,ThirdParty:STL,std::set<int>,name
 15221,Save,SaveLoadProxy,name
 15222,Save,SaveLoadProxy,name
@@ -18034,7 +18034,7 @@ id,subsystem,class,how
 18122,Game,PlotManager,name
 18123,ThirdParty:STL,"stdext::hash_map<std::wstring,PlotManager::PlotEntry>",name
 18124,ThirdParty:STL,,string
-18125,Core,ECBase::ECDynArray<unsigned int>,name
+18125,Core,ECBase::ECDynArray<Resources>,name
 18126,Game,PlotManager,name
 18127,ThirdParty:STL,"std::map<std::wstring,PlotManager::PlotEntry>",name
 18128,Game,PlotManager,name
@@ -23598,10 +23598,10 @@ id,subsystem,class,how
 23745,Rendering,D3DDriver::D3DVertexStreamDriver,name
 23746,Rendering,D3DDriver::D3DVertexStreamDriver,name
 23747,ThirdParty:STL,std::set<unsigned int>,name
-23748,Core,ECBase::ECSet<unsigned int>,name
+23748,ThirdParty:STL,DefaultSet<unsigned int>,between
 23749,ThirdParty:STL,,string
 23750,ThirdParty:STL,,string
-23751,Core,ECBase::ECSet<unsigned int>,name
+23751,unknown,DefaultSet<unsigned int>,
 23752,Rendering,Graphics::MemoryFootprintTally,name
 23753,Rendering,D3DDriver::D3DVertexStreamDriver,name
 23754,Rendering,D3DDriver::D3DIndexStreamDriver,name
@@ -33488,7 +33488,7 @@ id,subsystem,class,how
 33730,Animation,AnimModelLods,name
 33731,Animation,AnimModelLods,name
 33732,Animation,AnimModelLods,name
-33733,Animation,AnimBase,name
+33733,Animation,AnimModelLods,name
 33734,ThirdParty:STL,"std::pair<wchar_t const *,wchar_t const *>",name
 33735,ThirdParty:STL,std::_Tree<?>,name
 33736,ThirdParty:STL,std::_Tree<?>,name
@@ -47140,8 +47140,8 @@ id,subsystem,class,how
 47382,Save,SaveLoadProxy,owner
 47383,Save,SaveLoadProxy,owner
 47384,Save,SaveLoadProxy,owner
-47385,ThirdParty:STL,std::set<int>,owner
-47386,ThirdParty:STL,std::set<int>,owner
+47385,Compiler:EHFunclets,,range
+47386,Compiler:EHFunclets,,range
 47387,Save,SaveLoadProxy,owner
 47388,Save,SaveLoadProxy,owner
 47389,Save,SaveLoadProxy,owner
@@ -51059,8 +51059,8 @@ id,subsystem,class,how
 51301,Game,PlotManager,owner
 51302,Game,PlotManager,owner
 51303,Game,PlotManager,owner
-51304,Core,ECBase::ECDynArray<unsigned int>,owner
-51305,Core,ECBase::ECDynArray<unsigned int>,owner
+51304,Core,ECBase::ECDynArray<Resources>,owner
+51305,Core,ECBase::ECDynArray<Resources>,owner
 51306,Game,PlotManager,owner
 51307,Game,PlotManager,owner
 51308,Game,PlotManager,owner
