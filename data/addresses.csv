@@ -2320,7 +2320,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2319,function,Renderer::BindMainRenderTarget,,0x00456000,0x00890c60,0x00456000
 2320,function,Renderer::FrameBufferEffects::DrawFilterQuad,,0x00456040,0x00890ca0,0x00456040
 2321,function,Renderer::GetColorCurveTextureRef,,0x004560d0,0x00890d30,0x004560d0
-2322,function,Core::VectorAtOrEmpty<std::wstring>,,0x004560f0,0x0059b270,0x004560f0
+2322,function,ECBase::ECDynArray<ECBase::ECString>::At,"ecx the array: count from (last-first)/0x1C (0x00456104 mov eax,0x92492493), the element's address, or ECDynArray<ECString>::s_default (0x00C1D23C, 0x00456130) past the end; ret 4. 59 calls, among them GuiMovie's pendingTokenValues (+0xB4). It was named Core::VectorAtOrEmpty<std::wstring> (decomp-agent, read 2026-11-24)",0x004560f0,0x0059b270,0x004560f0
 2323,function,Gff4::ReadStringPtrAt,,0x00456140,0x004b59b0,0x00456140
 2324,function,std::_Med3<Renderer::FrameBufferEffect * *>,,0x00456160,0x00890d50,0x00456160
 2325,function,"std::_Adjust_heap<Renderer::FrameBufferEffect * *,int,Renderer::FrameBufferEffect *>",,0x004561c0,0x00890db0,0x004561c0
@@ -6758,7 +6758,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6757,function,"std::copy_backward<GFxValue*,GFxValue*>",,0x00519150,0x007c15a0,0x00519150
 6758,function,std::vector<GFxValue>::_Ufill,,0x005191a0,0x007c1630,0x005191a0
 6759,function,GuiMovie::HasTokenObserverWithID,,0x005191e0,0x007c1670,0x005191e0
-6760,function,GuiMovie::DeleteTokenObserversByID,,0x00519230,0x007c16c0,0x00519230
+6760,function,"Map<unsigned int,?>::DeleteValues","ecx is GuiMovie's observer map at +0x84 (0x0051A380 lea ecx,[esi+0x84], then the call at 0x0051A38C in GuiMovie's reset); walks the map's nodes from [this+4] and deletes each value. A member of that Map, not of GuiMovie; DeleteValues is an INFERRED name. It was named GuiMovie::DeleteTokenObserversByID (decomp-agent, read 2026-11-24)",0x00519230,0x007c16c0,0x00519230
 6761,function,std::vector<GFxValue>::erase,,0x005192c0,0x007c1770,0x005192c0
 6762,function,"std::uninitialized_copy<GFxValue*,GFxValue*>",,0x00519310,0x007c17c0,0x00519310
 6763,function,GuiMovie::HasTokenObserver,,0x00519340,0x007c17f0,0x00519340
