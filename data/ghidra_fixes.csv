@@ -16184,7 +16184,7 @@ address,what,value,why
 0x004DF490,signature,void __thiscall f(void *this),0x004DF490-0x004DF4DD ret 0
 0x004DF4E0,signature,void * __thiscall f(void *this),0x004df4e0 ret 0
 0x004DF570,signature,void __thiscall f(void *this),0x004df570 ret 0
-0x005111B0,signature,void __stdcall f(void *gfxMovieView),"0x005111B0-0x00511345; GUI.md:87, 226, 1379 ret 4"
+0x005111B0,signature,"void __thiscall f(void *this, void *gfxMovieView)","ret 4; the caller loads ecx with the manager before the call (0x00514AB1 mov ecx,ebp, 0x00514AB3 call): thiscall (decomp-agent, 2026-11-24)"
 0x005120A0,signature,void * __thiscall f(void *this),0x005120A0-0x005120F8; GUI.md:50 ret 0
 0x00512100,signature,"void * __thiscall f(void *this, void *result, void *view)",0x00512100 calls GuiMovieSet::FindByView 0x511810; GUI.md li ret 8
 0x005121D0,signature,"void * __thiscall f(void *this, void *out, void *owner1, wchar_t *first, void *owner2, wchar_t *last)",0x005121D0-0x00512232 ret 20
@@ -20735,7 +20735,7 @@ address,what,value,why
 0x00504C40,signature,void __thiscall f(void *this),proven by DAODecomp: its definition `Graphics::MaterialPass::~MaterialPass()` (virtual) compiles to this function's bytes; ret plain read in the code
 0x0050C3F0,signature,void * __thiscall f(void *this),"proven by DAODecomp: its definition `Graphics::MaterialPassTemp::MaterialPassTemp() : MaterialBuilderTemp(0x10), unk94(0), unkA4(0), unkB4(0), unkC4(0)` (member) compiles to this function's bytes; ret plain read in the code"
 0x00510850,signature,int * __cdecl f(int *p),proven by DAODecomp: its definition `int* GUI::ScaleformManager::MouseToViewport(int* p)` (static) compiles to this function's bytes; ret plain read in the code
-0x00510930,signature,int __stdcall f(int key),proven by DAODecomp: its definition `int __stdcall GUI::ScaleformManager::MapKeyCode(int key)` (static) compiles to this function's bytes; ret 0x4 read in the code
+0x00510930,signature,"int __thiscall f(void *this, int key)","ret 4; OpenMovie's caller loads ecx with the manager before the call (0x00514E33 mov ecx,edi, 0x00514E35 call): thiscall, the body never reading this (it overwrites ecx at 0x00510934) (decomp-agent, 2026-11-24)"
 0x0051B790,signature,"void __cdecl f(int unused, char *name)","proven by DAODecomp: its definition `void GuiFSCommand::PlayMovie(int unused, const char* name)` (static) compiles to this function's bytes; ret plain read in the code"
 0x0051BB60,signature,"void __cdecl f(int unused, char *text)","proven by DAODecomp: its definition `void GuiFSCommand::PlayGUISound(int unused, const char* text)` (static) compiles to this function's bytes; ret plain read in the code"
 0x0051BC50,signature,"void __cdecl f(int unused, char *text)","proven by DAODecomp: its definition `void GuiFSCommand::StopGUISound(int unused, const char* text)` (static) compiles to this function's bytes; ret plain read in the code"
