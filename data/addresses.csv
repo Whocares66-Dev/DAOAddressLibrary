@@ -12482,10 +12482,10 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12481,function,CCParty::HandleMessage_SelectPartyMemberIndexMessage,,0x00639fb0,0x00615980,0x00639fb0
 12482,function,CCParty::AddToPool,,0x0063a020,0x006159f0,0x0063a020
 12483,function,"stdext::hash_map<unsigned int,?>::erase(key)",,0x0063a1d0,0x00615ba0,0x0063a1d0
-12484,function,CCParty::CloneObject,,0x0063a240,0x00615c10,0x0063a240
+12484,function,CCParty::Clone,"The body of VC8's covariant override CCParty* CCParty::Clone(): the last slot of the table at +0x18 (its MessageReceiver subobject), compiled with that subobject as this (add esi,-0x18), new CCParty(*this); slot 1 of the same table is its return-adjusting thunk (0x0063A3B0) (decomp-agent's VC8 probe, read 2026-11-25)",0x0063a240,0x00615c10,0x0063a240
 12485,function,CCParty::RegisterHandler_SelectCharacterMessage,,0x0063a2b0,0x00615c80,0x0063a2b0
 12486,function,CCParty::RegisterHandler_SelectPartyMemberIndexMessage,,0x0063a330,0x00615d00,0x0063a330
-12487,function,CCParty::Clone,,0x0063a3b0,0x00615d80,0x0063a3b0
+12487,function,CCParty::Clone,Compiler-made return-adjusting thunk of CCParty::Clone: slot 1 of the table at +0x18 calls the covariant body and adds 0x18 to a non-null result (read 2026-11-25),0x0063a3b0,0x00615d80,0x0063a3b0
 12488,function,CCParty::CCParty,,0x0063a3c0,0x00615d90,0x0063a3c0
 12489,function,CCParty::RegisterMessageHandlers,,0x0063b830,0x00617200,0x0063b830
 12490,function,CCParty::RemoveFromPartyPool,,0x0063b8b0,0x00617280,0x0063b8b0
@@ -13863,8 +13863,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 13862,function,RoomDoorMap::RoomDoorMap(const RoomDoorMap&),,0x0068c120,0x00577f80,0x0068c120
 13863,function,CCArea::RegisterDoorBetweenRooms,,0x0068c190,0x00577ff0,0x0068c190
 13864,function,CCArea::CCArea(const CCArea&),,0x0068c1e0,0x00578040,0x0068c1e0
-13865,function,CCArea::CloneArea,,0x0068ca40,0x005788a0,0x0068ca40
-13866,function,CCArea::Clone,,0x0068cac0,0x00578920,0x0068cac0
+13865,function,CCArea::Clone,"The body of VC8's covariant override CCArea* CCArea::Clone(): the last slot of the table at +0xD4 (its MessageReceiver subobject), compiled with that subobject as this (add esi,-0xD4), new CCArea(*this); slot 1 of the same table is its return-adjusting thunk (0x0068CAC0) (decomp-agent's VC8 probe, read 2026-11-25)",0x0068ca40,0x005788a0,0x0068ca40
+13866,function,CCArea::Clone,Compiler-made return-adjusting thunk of CCArea::Clone: slot 1 of the table at +0xD4 calls the covariant body and adds 0xD4 to a non-null result (read 2026-11-25),0x0068cac0,0x00578920,0x0068cac0
 13867,function,Stub::GetString_0x0,,0x0068cae0,0x00578940,0x0068cae0
 13868,function,Quaternion::Normalize,,0x0068cb00,0x004aed20,0x0068cb00
 13869,function,ConversationData::SetTextAndHasVO,,0x0068cbd0,0x00578960,0x0068cbd0
@@ -14940,9 +14940,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14939,function,CCCreature::GetSummonEffectObject,,0x006bce50,0x005ae910,0x006bce50
 14940,function,CCCreature::UpdateAbilityEffectStatus,"Per frame for the controlled creature: RefreshPoolMemberState, then for each ability effect not yet seen SyncFromEffect on the entry found (FindInListByAttribute0x58) in the list at creature+0x5B8; called only from GameModeExplore::Update 0x00712F90 (+0x2BA) in the GOG exe.",0x006bcf50,0x005aea10,0x006bcf50
 14941,function,CCCreature::ForScript_SetSoundSet,,0x006bd0e0,0x005aeba0,0x006bd0e0
-14942,function,CCCreature::CloneObject,,0x006bd3b0,0x005aee70,0x006bd3b0
+14942,function,CCCreature::Clone,"The body of VC8's covariant override CCCreature* CCCreature::Clone(): the last slot of the table at +0x18 (its MessageReceiver subobject), compiled with that subobject as this (add esi,-0x18), new CCCreature(*this); slot 1 of the same table is its return-adjusting thunk (0x006BD4A0) (decomp-agent's VC8 probe, read 2026-11-25)",0x006bd3b0,0x005aee70,0x006bd3b0
 14943,function,CCCreature::RegisterHandler_UnequipItemMessage,,0x006bd420,0x005aeee0,0x006bd420
-14944,function,CCCreature::Clone,,0x006bd4a0,0x005aef60,0x006bd4a0
+14944,function,CCCreature::Clone,Compiler-made return-adjusting thunk of CCCreature::Clone: slot 1 of the table at +0x18 calls the covariant body and adds 0x18 to a non-null result (read 2026-11-25),0x006bd4a0,0x005aef60,0x006bd4a0
 14945,function,CCCreature::`scalar deleting destructor',,0x006bd4b0,0x005aef70,0x006bd4b0
 14946,function,CCCreature::AIUpdate,"The creature's per-frame update, slot 0x160 of CCCreature's vftable 0x00B10484 (AIUpdate in CCAreaOfEffectObject, CCSoundObject and CCVisualEffect): when ThrottleUpdate answers false only DispatchAnimationEvents runs; otherwise, with +0xBD4 clear, it sets the in-party attribute (+0x4F8) from CCParty::IsInParty, then UpdateMovementSoundState, DispatchAnimationEvents, slot 0x110, UpdateBodyTilt, UpdateLookAt, UpdateCorpseDecay, every melee ring's centre (0x006BD5F4) and, with +0xBD4 clear, the dead attribute, TickCooldowns, the quickbar, the selection ring and the stats; ApplyFade and UpdateControllerExtents last",0x006bd4d0,0x005aef90,0x006bd4d0
 14947,function,CCCreature::ApplyHeadMorph,,0x006bd700,0x005af1c0,0x006bd700
@@ -17958,8 +17958,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17957,function,CCPlaceable::CCPlaceable(const CCPlaceable&),,0x00752110,0x0065e000,0x00752110
 17958,function,CCPlaceable::LoadModel,,0x00752600,0x0065e4f0,0x00752600
 17959,function,CCPlaceable::InitBodyBagFromCreature,,0x007526f0,0x0065e5e0,0x007526f0
-17960,function,CCPlaceable::CloneObject,,0x00752850,0x0065e740,0x00752850
-17961,function,CCPlaceable::Clone,,0x007528c0,0x0065e7b0,0x007528c0
+17960,function,CCPlaceable::Clone,"The body of VC8's covariant override CCPlaceable* CCPlaceable::Clone(): the last slot of the table at +0x18 (its MessageReceiver subobject), compiled with that subobject as this (add esi,-0x18), new CCPlaceable(*this); slot 1 of the same table is its return-adjusting thunk (0x007528C0) (decomp-agent's VC8 probe, read 2026-11-25)",0x00752850,0x0065e740,0x00752850
+17961,function,CCPlaceable::Clone,Compiler-made return-adjusting thunk of CCPlaceable::Clone: slot 1 of the table at +0x18 calls the covariant body and adds 0x18 to a non-null result (read 2026-11-25),0x007528c0,0x0065e7b0,0x007528c0
 17962,function,CCPlaceable::FinishLoad,,0x007528d0,0x0065e7c0,0x007528d0
 17963,function,CCItem::SetBaseItem,,0x00752b10,0x00661350,0x00752b10
 17964,function,CCItem::Update,,0x00752b40,0x00661380,0x00752b40
@@ -18039,8 +18039,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18038,function,CCItem::CreateFromTemplate,,0x00757eb0,0x006666c0,0x00757eb0
 18039,function,CCItem::BuildOnHitEvents,,0x00757fc0,0x006667d0,0x00757fc0
 18040,function,CCItem::QueueOnHitEvents,,0x00758180,0x00666990,0x00758180
-18041,function,CCItem::CloneObject,,0x007582c0,0x00666ad0,0x007582c0
-18042,function,CCItem::Clone,,0x00758330,0x00666b40,0x00758330
+18041,function,CCItem::Clone,"The body of VC8's covariant override CCItem* CCItem::Clone(): the last slot of the table at +0x18 (its MessageReceiver subobject), compiled with that subobject as this (add esi,-0x18), new CCItem(*this); slot 1 of the same table is its return-adjusting thunk (0x00758330) (decomp-agent's VC8 probe, read 2026-11-25)",0x007582c0,0x00666ad0,0x007582c0
+18042,function,CCItem::Clone,Compiler-made return-adjusting thunk of CCItem::Clone: slot 1 of the table at +0x18 calls the covariant body and adds 0x18 to a non-null result (read 2026-11-25),0x00758330,0x00666b40,0x00758330
 18043,function,CCItem::LoadFromStruct,,0x00758340,0x00666b50,0x00758340
 18044,function,CCItem::CopyFrom,,0x007589d0,0x006671e0,0x007589d0
 18045,function,CCItem::ApplyPropertyVfx,,0x00758fd0,0x006677e0,0x00758fd0
@@ -21216,13 +21216,13 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21215,function,Store::BuyItem,,0x007ecf00,0x006d43d0,0x007ecf00
 21216,function,Store::RegisterHandler_SellItemMessage,,0x007ed210,0x006d46e0,0x007ed210
 21217,function,Store::RegisterHandler_CloseStoreMessage,,0x007ed270,0x006d4740,0x007ed270
-21218,function,Store::CloneObject,,0x007ed2d0,0x006d47a0,0x007ed2d0
+21218,function,Store::Clone,"The body of VC8's covariant override Store* Store::Clone(): the last slot of the table at +0x18 (its MessageReceiver subobject), compiled with that subobject as this (add esi,-0x18), new Store(*this); slot 1 of the same table is its return-adjusting thunk (0x007ED7D0) (decomp-agent's VC8 probe, read 2026-11-25)",0x007ed2d0,0x006d47a0,0x007ed2d0
 21219,function,Store::HandleMessage_BuyItemMessage,,0x007ed340,0x006d4810,0x007ed340
 21220,function,MessageFactoryRegistry::RegisterText<BuyItemMessage>,,0x007ed530,0x006d4a00,0x007ed530
 21221,function,MessageFactoryRegistry::RegisterText<SellItemMessage>,,0x007ed5f0,0x006d4ac0,0x007ed5f0
 21222,function,MessageFactoryRegistry::RegisterText<CloseStoreMessage>,,0x007ed6b0,0x006d4b80,0x007ed6b0
 21223,function,Store::RegisterHandler_BuyItemMessage,,0x007ed770,0x006d4c40,0x007ed770
-21224,function,Store::Clone,,0x007ed7d0,0x006d4ca0,0x007ed7d0
+21224,function,Store::Clone,Compiler-made return-adjusting thunk of Store::Clone: slot 1 of the table at +0x18 calls the covariant body and adds 0x18 to a non-null result (read 2026-11-25),0x007ed7d0,0x006d4ca0,0x007ed7d0
 21225,function,Store::RegisterMessageHandlers,,0x007ed7e0,0x006d4cb0,0x007ed7e0
 21226,function,Store::RegisterClass,,0x007ed810,0x006d4ce0,0x007ed810
 21227,function,Store::Store,,0x007ed830,0x006d4d00,0x007ed830
