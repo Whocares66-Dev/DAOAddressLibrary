@@ -8391,7 +8391,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 8390,function,"std::_Copy_opt<?*,?*>",,0x00560260,0x007aaf70,0x00560260
 8391,function,"std::_Construct<?,?>",,0x005602b0,0x00786e30,0x005602b0
 8392,function,"std::_Copy_backward_opt<?*,?*>",,0x00560320,0x00786ea0,0x00560320
-8393,function,GraphicsStructures::ObjectNodeEmitterBlueprint::ResolveTargetNode,,0x00560370,0x007aafc0,0x00560370
+8393,function,GraphicsStructures::ObjectNodeEmitterBlueprint::AttachToObject,"Slot 6 of the ObjectNodeBlueprint tables, which ObjectNodeMeshBlueprint and ObjectNodeEmitterGroupBlueprint name AttachToObject; the emitter's finds its target with Object::FindRootNodeByName, then attaches; ret 8. It was named ResolveTargetNode (decomp-agent, 2026-11-24)",0x00560370,0x007aafc0,0x00560370
 8394,function,GraphicsStructures::ObjectNodeEmitterBlueprint::CollectResourceFootprint,,0x005603b0,0x007ab000,0x005603b0
 8395,function,"std::fill<?*,?>",,0x005603f0,0x007871d0,0x005603f0
 8396,function,"std::copy_backward<?*,?*>",,0x00560430,0x007872c0,0x00560430
@@ -14197,7 +14197,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14196,function,CCObject::ForScript_SetGroupId,,0x00699ff0,0x0058b300,0x00699ff0
 14197,function,CCObject::GetAnimation,,0x0069a000,0x0058b310,0x0069a000
 14198,function,CCObject::EndManualPlacement,,0x0069a010,0x0058b320,0x0069a010
-14199,function,CCObject::GetObjectInteractive,,0x0069a020,0x0058b330,0x0069a020
+14199,function,CCObject::IsPickable,"mov al,[ecx+0x42c]; ret. CCObject's slots 100 and 101 both hold it (and CCItem's). CCCreature and CCPlaceable override slot 100 as IsPickable, and CCPlaceable slot 101 as IsUsableNow, so this is CCObject's IsPickable, with IsUsableNow a fold. It was named CCObject::GetObjectInteractive (decomp-agent, 2026-11-24)",0x0069a020,0x0058b330,0x0069a020
 14200,function,CCObject::GetHeight,,0x0069a030,0x0058b340,0x0069a030
 14201,function,CCObject::`scalar deleting destructor'`adjustor{112}',,0x0069a040,0x0058b360,0x0069a040
 14202,function,CCObject::`scalar deleting destructor'`adjustor{52}',,0x0069a050,0x0058b370,0x0069a050
@@ -20566,7 +20566,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20565,function,ListItemLocation::ListItemLocation,,0x007caae0,0x006b1df0,0x007caae0
 20566,function,ListItemLocation::GetSortMode,Slot 11 of ListItemLocation: the Attribute<int> at +0x38 (the backpack sort mode that CCParty::SetBackpackSort 0x00630380 writes); the base class (0x004137B0) answers 0.,0x007cab80,0x006b1e90,0x007cab80
 20567,function,ListItemLocation::~ListItemLocation,,0x007cab90,0x006b1ea0,0x007cab90
-20568,function,ListItemLocation::InsertItem,,0x007cac30,0x006b1f40,0x007cac30
+20568,function,ListItemLocation::AddAt,"Slot 14 of the ItemLocation tables, ret 8 (position, item): inserts the item through ECDynArray<void*>::InsertAt. Equipment's slot 14 is AddAt, and one slot has one name. It was named ListItemLocation::InsertItem (decomp-agent, 2026-11-24)",0x007cac30,0x006b1f40,0x007cac30
 20569,function,ListItemLocation::AddSaveFieldsToSchema,,0x007cac90,0x006b1fa0,0x007cac90
 20570,function,ListItemLocation::`scalar deleting destructor',,0x007cacc0,0x006b1fd0,0x007cacc0
 20571,function,MeleeRing::ClampRadius,,0x007cace0,0x006b1ff0,0x007cace0
@@ -21370,7 +21370,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21369,function,SlotItemLocation::FindItemLocation,,0x007f5080,0x006e0dd0,0x007f5080
 21370,function,SlotItemLocation::GetItemAt,,0x007f5170,0x006e0ec0,0x007f5170
 21371,function,SlotItemLocation::AddSlot,,0x007f51a0,0x006e11f0,0x007f51a0
-21372,function,SlotItemLocation::SetItemAt,,0x007f5200,0x006e1250,0x007f5200
+21372,function,SlotItemLocation::AddAt,"Slot 14 of the ItemLocation tables (pure in ItemLocation), ret 8 (position, item): puts the item in the slot map. Equipment's slot 14 is AddAt, and one slot has one name; AddAt is INFERRED for the base. It was named SlotItemLocation::SetItemAt (decomp-agent, 2026-11-24)",0x007f5200,0x006e1250,0x007f5200
 21373,function,SlotItemLocation::RemoveItem,,0x007f5250,0x006e12a0,0x007f5250
 21374,function,SlotItemLocation::SlotItemLocation,,0x007f5290,0x006e12e0,0x007f5290
 21375,function,SlotItemLocation::~SlotItemLocation,,0x007f5320,0x006e1370,0x007f5320
@@ -21881,7 +21881,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21880,function,Animation::AnimationManager::RegisterAnimation,,0x00810b50,0x004b57d0,0x00810b50
 21881,function,Animation::AnimationManager::RegisterTree,,0x00810c40,0x004b58c0,0x00810c40
 21882,function,Graphics::ISceneSubManager::OnObjectEvent,,0x00810d30,0x008b3fc0,0x00810d30
-21883,function,Animation::AnimSceneManagerDefault::Update,"Starts the scene's animation task group (+0xC) on the thread manager: TaskGroup::Begin (0x00810D66), then clears the group's +0x18/+0x19 when it holds tasks Named from Engine.dll, the toolset's own link of the engine (2009-11-20): the function tools/exemap.py pairs with this one there logs ""AnimSceneManagerDefault::Update called from the wrong thread"". Was Animation::AnimSceneManagerDefault::BeginUpdate.",0x00810d60,0x00a66910,0x00810d60
+21883,function,Animation::AnimSceneManagerDefault::BeginUpdate,"Starts the scene's animation task group (+0xC) on the thread manager: TaskGroup::Begin (0x00810D66), then clears the group's +0x18/+0x19 when it holds tasks Named from Engine.dll, the toolset's own link of the engine (2009-11-20): the function tools/exemap.py pairs with this one there logs ""AnimSceneManagerDefault::Update called from the wrong thread"". Was Animation::AnimSceneManagerDefault::BeginUpdate.",0x00810d60,0x00a66910,0x00810d60
 21884,function,Animation::AnimSceneManagerDefault::WaitForUpdate,"Named from Engine.dll, the toolset's own link of the engine (2009-11-20): the function tools/exemap.py pairs with this one there logs ""AnimSceneManagerDefault::WaitForUpdate called from the wrong thread"". Was Animation::AnimSceneManagerDefault::WaitUpdate.",0x00810da0,0x00a66950,0x00810da0
 21885,function,Animation::AnimSceneManagerDefault::AddObject,"Adds an object's id to the scene's animation group unless flag 0x40 of its slot +0xA4 is set (0x00810DD4); with OnObjectRemoved the only gate on which objects animate Named from Engine.dll, the toolset's own link of the engine (2009-11-20): the function tools/exemap.py pairs with this one there logs ""AnimSceneManagerDefault::AddObject called from the wrong thread"". Was Animation::AnimSceneManagerDefault::OnObjectAdded.",0x00810db0,0x00a66960,0x00810db0
 21886,function,Animation::AnimSceneManagerDefault::RemoveObject,"Removes an object's id from the scene's animation group Named from Engine.dll, the toolset's own link of the engine (2009-11-20): the function tools/exemap.py pairs with this one there logs ""AnimSceneManagerDefault::RemoveObject called from the wrong thread"". Was Animation::AnimSceneManagerDefault::OnObjectRemoved.",0x00810e00,0x00a669b0,0x00810e00
