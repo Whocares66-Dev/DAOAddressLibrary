@@ -17724,7 +17724,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17723,function,SubAction::BuildSaveTemplate,,0x00746620,0x00652480,0x00746620
 17724,function,CurrentActionQueue::BuildSaveTemplate,,0x00746770,0x006525d0,0x00746770
 17725,function,CSCommandHandler::CSCommandHandler,,0x00746840,0x006526a0,0x00746840
-17726,function,CommandPool::New,,0x007468c0,0x00652720,0x007468c0
+17726,function,CSCommandHandler::NewCommand,"this is the CSCommandHandler: it allocates from its pool at +4 (0x007468C3 lea ecx,[esi+4], CommandPool::AllocateCommand) and stamps the command with its nextSequence (+0x48, 0x007468CD). It was named CommandPool::New (decomp-agent, read 2026-11-24)",0x007468c0,0x00652720,0x007468c0
 17727,function,Commands::EndShared,"Ends a command: ReleaseSubActions, clear the current command, SendCommandComplete; for a creature not driven, RequestStop and the move target cleared inline; SelectPrimaryPath, ReleaseMeleeRingClaim, ReleaseLookAtAndProjectiles, ResumeLookAt, ResetTwitchCountdown(0), attack and cast records reset, root-motion flags (+0xE8..+0xEA) cleared",0x00746900,0x00652760,0x00746900
 17728,function,Commands::AttackEnd,,0x00746b30,0x00652990,0x00746b30
 17729,function,Commands::UseAbilityEnd,,0x00746ba0,0x00652a00,0x00746ba0
