@@ -10170,7 +10170,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 10169,function,SmartData::TokenManager::TokenManager,,0x005c7470,0x0046a4d0,0x005c7470
 10170,function,SmartData::TokenStringObserver::OnNotify,,0x005c7550,0x0046a6e0,0x005c7550
 10171,function,SmartData::TokenStringObserver::OnNotifierDestroyed,,0x005c7580,0x0046a710,0x005c7580
-10172,function,SmartData::TokenStringNotifier::Notify,,0x005c75a0,0x0046a730,0x005c75a0
+10172,function,SmartData::TokenStringNotifier::UpdateValue,"TokenStringNotifier's override of TokenStringObserver's slot 3 (a no-op there, UpdateValue in TokenStringReplacer): it sends the message at +0x48 to the receiver at +0x44 through Messages::Send (0x004D20C0). Once named Notify for that; an override takes the slot's name (decomp-agent, read 2026-11-25)",0x005c75a0,0x0046a730,0x005c75a0
 10173,function,"std::_Copy_opt<SmartData::TokenPath*,SmartData::TokenPath*>",,0x005c75c0,0x0046a750,0x005c75c0
 10174,function,"std::_Copy<SmartData::TokenPath*,SmartData::TokenPath*>",,0x005c7600,0x0046a790,0x005c7600
 10175,function,SmartData::TokenStringObserver::~TokenStringObserver,,0x005c7660,0x0046a7f0,0x005c7660
