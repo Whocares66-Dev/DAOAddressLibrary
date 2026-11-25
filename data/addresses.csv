@@ -7271,7 +7271,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7270,function,SpeedTree::SetCameraAndLodFactor,,0x0052e8f0,0x00735880,0x0052e8f0
 7271,function,SpeedTree::GetShaderMatrices,,0x0052ea80,0x00735a10,0x0052ea80
 7272,function,SpeedTree::GetInstanceLeafAngles,,0x0052ed30,0x00735cc0,0x0052ed30
-7273,function,SpeedTree::UpdateWinds,,0x0052ed90,0x00735d20,0x0052ed90
+7273,function,GraphicsStructures::SpeedTreeLibrary::UpdateWinds,"__thiscall on the library: its one caller, EC::ChunkManager::Update (0x005CA268), loads ecx from +0x534; it leaves at once unless s_windsEnabled (0x00BF7400), adds dt to +0x1C and rebuilds the wind matrices (decomp-agent, read 2026-11-25)",0x0052ed90,0x00735d20,0x0052ed90
 7274,function,GraphicsStructures::SpeedTreeModel::SetBranchMaterialMaps,,0x0052f400,0x00736390,0x0052f400
 7275,function,GraphicsStructures::SpeedTreeModel::SetFrondMaterialMaps,,0x0052f6d0,0x00736660,0x0052f6d0
 7276,function,GraphicsStructures::SpeedTreeModel::SetupMaterials,,0x0052f9c0,0x00736950,0x0052f9c0
@@ -7291,8 +7291,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7290,function,"std::_Fill<float*,float>",,0x00531900,0x004fb1d0,0x00531900
 7291,function,"std::_Median<GraphicsStructures::SpeedTreeInstance**,SpeedTree::FartherFromPoint>",,0x00531920,0x00738dd0,0x00531920
 7292,function,"std::_Adjust_heap<GraphicsStructures::SpeedTreeInstance**,int,GraphicsStructures::SpeedTreeInstance*,SpeedTree::FartherFromPoint>",,0x00531a30,0x00738ee0,0x00531a30
-7293,function,SpeedTree::DeleteTransientData,,0x00531ac0,0x00738f70,0x00531ac0
-7294,function,SpeedTree::GetModel,,0x00531b20,0x00738fd0,0x00531b20
+7293,function,GraphicsStructures::SpeedTreeLibrary::DeleteTransientData,"__thiscall on the library with this unused: its one caller, SpeedTreeLibrary::FinishLoading, loads its own this (mov ecx,edi at 0x005376E0) before the call, and the build has no /GL; it releases each handle of the pushed vector through 0x0090A4A0 (decomp-agent, read 2026-11-25)",0x00531ac0,0x00738f70,0x00531ac0
+7294,function,GraphicsStructures::SpeedTreeLibrary::GetModel,"__thiscall on the library: bounds-checks the index against the models array (begin +0x1F8, end +0x1FC) and returns models[index], null when out of range; its one caller, EC::CExteriorChunk::BuildTreeForests (0x005CBF24), loads ecx with the chunk manager's library (+0x534) (decomp-agent, read 2026-11-25)",0x00531b20,0x00738fd0,0x00531b20
 7295,function,GraphicsStructures::SpeedTreeModel::LoadTree,,0x00531b80,0x00739030,0x00531b80
 7296,function,GraphicsStructures::SpeedTreeInstance::SpeedTreeInstance,,0x00531d00,0x007391b0,0x00531d00
 7297,function,GraphicsStructures::SpeedTreeInstance::AttachToPhysicsScene,,0x00531e90,0x00739340,0x00531e90
@@ -7310,7 +7310,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7309,function,GraphicsStructures::SpeedTreeForest::RemakeBounds,"__thiscall: it passes its own this (ebx from ecx at 0x005328E8) as the ecx of SpeedTreeForest::GrowBoundsByInstance (0x00532120) for each instance, at 0x0053298F and 0x005329A3; EC::ChunkManager::RemakeTreeBounds calls it on what two virtual getters return (read 2026-11-25)",0x005328e0,0x00739ed0,0x005328e0
 7310,function,GraphicsStructures::SpeedTreeWorld::SetWind,,0x005329c0,0x00739fb0,0x005329c0
 7311,function,"std::map<int,void*>::count",,0x005329d0,0x00717860,0x005329d0
-7312,function,SpeedTree::UpdateModels,,0x00532a10,0x0073a000,0x00532a10
+7312,function,GraphicsStructures::SpeedTreeLibrary::UpdateModels,"__thiscall on the library: its one caller, EC::ChunkManager::Update (0x005CA222), loads ecx from the chunk manager's library (+0x534); it walks the models array at +0x1F4 and calls 0x00530DB0 on each (decomp-agent, read 2026-11-25)",0x00532a10,0x0073a000,0x00532a10
 7313,function,GraphicsStructures::SpeedTreeForest::DrawBillboards,,0x00532a50,0x0073a040,0x00532a50
 7314,function,GraphicsStructures::SpeedTreeForest::FillStaticBillboards,,0x00532c70,0x0073a260,0x00532c70
 7315,function,std::vector<float>::_Ufill,,0x00532dd0,0x004fde20,0x00532dd0
@@ -7360,7 +7360,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 7359,function,GraphicsStructures::SpeedTreeForest::SpeedTreeForest,,0x00535bb0,0x0073d400,0x00535bb0
 7360,function,GraphicsStructures::SpeedTreeForest::DeleteAllInstances,,0x00535e60,0x0073d6b0,0x00535e60
 7361,function,GraphicsStructures::SpeedTreeForest::GetModelGroup,,0x00535ed0,0x0073d720,0x00535ed0
-7362,function,SpeedTree::UpdateGroupLods,,0x00536010,0x0073d860,0x00536010
+7362,function,GraphicsStructures::SpeedTreeForest::UpdateGroupLods,"__thiscall on the forest with this unused: its one caller, SpeedTreeForest::UpdateLods, pushes the group and loads its own this (mov ecx,esi at 0x005363F8) before the call, and the build has no /GL; the body reads only the pushed ModelGroup (decomp-agent, read 2026-11-25)",0x00536010,0x0073d860,0x00536010
 7363,function,GraphicsStructures::SpeedTreeForest::Cull,,0x00536200,0x0073da50,0x00536200
 7364,function,GraphicsStructures::SpeedTreeForest::UpdateLods,,0x00536390,0x0073dbe0,0x00536390
 7365,function,GraphicsStructures::SpeedTreeForest::UpdateVisibility,,0x00536430,0x0073dc80,0x00536430
@@ -63836,7 +63836,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 63835,data,,,0x00af70a8,0x00af7530,0x00af70a8
 63836,data,,,0x00af70b0,0x00ae3c98,0x00af70b0
 63837,data,,,0x00af70b8,0x00b0d760,0x00af70b8
-63838,data,SpeedTree::UpdateWinds::s_windSwayAmplitude,"Double 0.0015: UpdateWinds multiplies sin and cos of a running time (the factors 0.1, 0.075 and 0.05 beside it) by it to build a small time-varying wind vector offset (0x0052F293, 0x0052F2C3); the role as an amplitude is INFERRED.",0x00af70c0,0x00b0f2f8,0x00af70c0
+63838,data,GraphicsStructures::SpeedTreeLibrary::UpdateWinds::s_windSwayAmplitude,"Double 0.0015: UpdateWinds multiplies sin and cos of a running time (the factors 0.1, 0.075 and 0.05 beside it) by it to build a small time-varying wind vector offset (0x0052F293, 0x0052F2C3); the role as an amplitude is INFERRED.",0x00af70c0,0x00b0f2f8,0x00af70c0
 63839,data,,,0x00af70c8,0x00af55b0,0x00af70c8
 63840,data,,,0x00af70d0,0x00b0f300,0x00af70d0
 63841,data,,,0x00af70f8,0x00b0f328,0x00af70f8
@@ -96235,11 +96235,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 96234,data,,,0x00bf73e4,0x00c070a4,0x00bf73e4
 96235,data,,,0x00bf73e8,0x00c070a8,0x00bf73e8
 96236,data,,,0x00bf73ec,0x00c070ac,0x00bf73ec
-96237,data,SpeedTree::s_lodNearDistanceSq,"float, 400.0 in the file (20 m squared): SpeedTree::UpdateGroupLods (0x00536010) multiplies it by SpeedTree::s_lodFactorSquared (0x00bf73f8) as the start of a group's LOD blend; EclipseGame::ProcessCommandLineOption (0x00404b10) overwrites it, and 0x00bf73f4, with a huge 4.6e18 for one command-line switch. Which of the two is the start is INFERRED from the order they are loaded.",0x00bf73f0,0x00c070b0,0x00bf73f0
-96238,data,SpeedTree::s_lodFarDistanceSq,"float, 3600.0 in the file (60 m squared): the end of the LOD blend that SpeedTree::UpdateGroupLods (0x00536010) scales by SpeedTree::s_lodFactorSquared; set to 4.6e18 with 0x00bf73f0 by EclipseGame::ProcessCommandLineOption (0x00404b10) at 0x00404e43; INFERRED as the far value.",0x00bf73f4,0x00c070b4,0x00bf73f4
+96237,data,SpeedTree::s_lodNearDistanceSq,"float, 400.0 in the file (20 m squared): GraphicsStructures::SpeedTreeForest::UpdateGroupLods (0x00536010) multiplies it by SpeedTree::s_lodFactorSquared (0x00bf73f8) as the start of a group's LOD blend; EclipseGame::ProcessCommandLineOption (0x00404b10) overwrites it, and 0x00bf73f4, with a huge 4.6e18 for one command-line switch. Which of the two is the start is INFERRED from the order they are loaded.",0x00bf73f0,0x00c070b0,0x00bf73f0
+96238,data,SpeedTree::s_lodFarDistanceSq,"float, 3600.0 in the file (60 m squared): the end of the LOD blend that GraphicsStructures::SpeedTreeForest::UpdateGroupLods (0x00536010) scales by SpeedTree::s_lodFactorSquared; set to 4.6e18 with 0x00bf73f0 by EclipseGame::ProcessCommandLineOption (0x00404b10) at 0x00404e43; INFERRED as the far value.",0x00bf73f4,0x00c070b4,0x00bf73f4
 96239,data,SpeedTree::s_lodFactorSquared,"Float (file 1.0): SetCameraAndLodFactor (0x0052E8F0) stores g_treeLodFactor times a camera-derived term, squared, at 0x0052EA2A-0x0052EA38 (1.0 when the camera query at +0xF8 is false, 0x0052EA36), each frame; read by UpdateGroupLods 0x00536085 and 0x005360FB; INFERRED for what the camera term is.",0x00bf73f8,0x00c070b8,0x00bf73f8
 96240,data,g_cutoffFade,"float 1.0 at start; the roof-fade / cutoff alpha (CAMERA.md, TREES.md): trees and terrain chunks fade or hide below 1",0x00bf73fc,0x00c070bc,0x00bf73fc
-96241,data,SpeedTree::UpdateWinds::s_windsEnabled,,0x00bf7400,0x00c070c0,0x00bf7400
+96241,data,GraphicsStructures::SpeedTreeLibrary::UpdateWinds::s_windsEnabled,,0x00bf7400,0x00c070c0,0x00bf7400
 96242,data,g_treeColorLevelTint,"float[4] (1,1,1,1) at start; copied each time from the scene instance's layout object +0x90 (the area's EnvTreeColorLevelTint per TREES.md (inferred) ) and passed by DrawInstance as a colour vector; 16 bytes",0x00bf7410,0x00c070d0,0x00bf7410
 96243,data,,,0x00bf7414,0x00c070d4,0x00bf7414
 96244,data,,,0x00bf7418,0x00c070d8,0x00bf7418
