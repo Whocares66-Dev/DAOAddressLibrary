@@ -6935,7 +6935,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6934,function,GUI::ScaleformAtlas::Find,,0x00523580,0x007cb710,0x00523580
 6935,function,GUI::ScaleformAtlas::~ScaleformAtlas,,0x00523630,0x00468690,0x00523630
 6936,function,"stdext::hash_map<std::wstring,GUI::AtlasEntry>::hash_map",,0x00523690,0x007cb820,0x00523690
-6937,function,"GUI::DefaultHashMap<std::wstring,GUI::AtlasEntry>::DefaultHashMap",,0x00523710,0x007cb8a0,0x00523710
+6937,function,"DefaultHashMap<std::wstring,GUI::AtlasEntry>::DefaultHashMap","The hash_map (0x00523690), a key string at +0x28 and the default AtlasEntry at +0x44 by value (ret 0x14): the same template as PlotManager's base 0x0075DA30, so not GUI's own (read 2026-11-25)",0x00523710,0x007cb8a0,0x00523710
 6938,function,GUI::ScaleformAtlas::ScaleformAtlas,,0x005237a0,0x007cb930,0x005237a0
 6939,function,GUI::ScaleformAtlas::Clear,,0x00523830,0x007cb9c0,0x00523830
 6940,function,FloatyLayer::Get,,0x00523880,0x004be4e0,0x00523880
@@ -18119,14 +18119,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18118,function,Plots::GetFlagIdByIndex,,0x0075ca80,0x006a7ce0,0x0075ca80
 18119,function,PlotManager::GetPlotGuidByResRef,"this = the PlotManager. ret 8, arguments (resref in, GUID out) as pointers to strings. Walks every plot entry that has a resource, reads plot 0 of that resource (field 3, the template resref), and when it equals the argument string overwrites it with the entry key (the GUID); true when found.",0x0075cb30,0x006a7d90,0x0075cb30
 18120,function,std::list<?>::_Incsize,,0x0075ccd0,0x006a7f30,0x0075ccd0
-18121,function,"stdext::hash_map<std::wstring,?>::~hash_map","destroys a wide-string-keyed hash_map: its wstring at +0x28, the bucket array at +0x14 and the list at +4",0x0075cd70,0x00807b50,0x0075cd70
+18121,function,"DefaultHashMap<std::wstring,?>::~DefaultHashMap","Destroys a DefaultHashMap: the key string at +0x28, then the hash_map's buckets (+0x14) and list (+4). Shared by instantiations: PlotManager::~PlotManager calls it last (0x0075EA3C), and so does CCArea::~CCArea (0x0068AE79) (vm-agent, read 2026-11-25)",0x0075cd70,0x00807b50,0x0075cd70
 18122,function,PlotManager::WriteToSave,"Writes the plot map (0x4011; each name 0x4012, words 0x4013..0x4016) and, where the struct has field 0x4089, the unread codex entry names from Journal::GetUnreadCodexEntryNames (0x0075D006)",0x0075ce00,0x006a7fd0,0x0075ce00
 18123,function,"stdext::hash_map<std::wstring,PlotManager::PlotEntry>::hash_map","constructs the plot manager's hash_map: a list head, 9 buckets, load counters of 1",0x0075d0d0,0x006a82a0,0x0075d0d0
 18124,function,,,0x0075d150,0x006a8320,0x0075d150
 18125,function,ECBase::ECDynArray<Resources>::Clear,"The element is the 4-byte Resources class, with a destructor: it resizes with resize(n, Resources()) through 0x00576DA0 and destroys Resources elements, where unsigned int has none. It was named ECDynArray<unsigned int>::Clear (vm-agent, 2026-11-25)",0x0075d700,0x006a88d0,0x0075d700
 18126,function,PlotManager::BuildSaveTemplate,,0x0075d7f0,0x006a89c0,0x0075d7f0
 18127,function,"std::map<std::wstring,PlotManager::PlotEntry>::operator[]",,0x0075d950,0x006a8b20,0x0075d950
-18128,function,PlotManager::InitMapWithDefault,,0x0075da30,0x006a8c00,0x0075da30
+18128,function,"DefaultHashMap<std::wstring,PlotManager::PlotEntry>::DefaultHashMap","The base of PlotManager's first 0x5C bytes: the hash_map (0x0075D0D0), a key string at +0x28 and the default PlotEntry at +0x44, taken by value (ret 0x18); PlotManager::PlotManager (0x0075DB02) calls it with a zeroed entry. The same template as 0x00523710 (GUI::AtlasEntry's), instruction for instruction; DefaultHashMap is the name that one had (vm-agent, read 2026-11-25)",0x0075da30,0x006a8c00,0x0075da30
 18129,function,PlotManager::PlotManager,,0x0075dac0,0x006a8c90,0x0075dac0
 18130,function,PlotManager::Clear,,0x0075db30,0x006a8d00,0x0075db30
 18131,function,PlotManager::LoadPlotResources,Loads every PLO resource into the plot map; plot-group types (Plots::IsPlotGroupType) become Journal::AddPlotGroup entries and codex types AddCodexEntry; ends with the empty-name group (string 0x557F7),0x0075db80,0x006a8d50,0x0075db80

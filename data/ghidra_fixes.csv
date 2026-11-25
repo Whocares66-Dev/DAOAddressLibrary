@@ -5751,7 +5751,7 @@ address,what,value,why
 0x005234E0,signature,"bool __thiscall GUI_ScaleformAtlas_LoadAtlasFile(void* this, void* xmlName)",ret 4; returns the reader's run result in al.
 0x00523580,signature,"void* __thiscall GUI_ScaleformAtlas_Find(void* this, void* out, void* name)","ret 8; out+0 wstring texture name, out+0x1C..+0x28 four floats; returns out."
 0x00523690,signature,"void* __thiscall stdext_hash_map_ctor(void* this, int traits, int alloc)",ret 8; the two by-value arguments are not read.
-0x00523710,signature,"void* __thiscall GUI_DefaultHashMap_ctor(void* this, int index, float x, float y, float w, float h)","ret 0x14; the default entry by value, stored at +0x44..+0x54."
+0x00523710,signature,"void* __thiscall DefaultHashMap_ctor(void* this, int index, float x, float y, float w, float h)","ret 0x14; the default entry by value, stored at +0x44..+0x54."
 0x00523880,signature,FloatyLayer * __cdecl FloatyLayer_Get(),No arguments; returns the singleton at 0x00C343C0.; a void * here is the class DAODecomp's matching definition gives
 0x005239D0,convention,__thiscall,"Vtable slot 23 (this first by the vtable rule); ret 8, ecx not read."
 0x005239D0,signature,"void __thiscall GUI_GUISystem_DisplayStatusMessage(void* this, void* text, int colour)",Forwards both to 0x0063C260 on FloatyLayer::Get().
