@@ -3560,7 +3560,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3559,function,std::vector<OnlineFeatures::Achievement>::operator=,,0x0048db10,0x00864060,0x0048db10
 3560,function,std::deque<unsigned int>::push_front,,0x0048dca0,0x008641f0,0x0048dca0
 3561,function,std::deque<unsigned int>::push_back,,0x0048dd20,0x007d3510,0x0048dd20
-3562,function,"std::map<unsigned int,std::wstring>::map(const std::map<unsigned int,std::wstring>&)",,0x0048dda0,0x00864270,0x0048dda0
+3562,function,"std::_Tree<std::map<unsigned int,std::wstring>>::_Tree(const std::_Tree<std::map<unsigned int,std::wstring>>&)","The out-of-line copy constructor of the tree under the std::map, which Online::TextTable's copy (0x0048E7D0) calls: VC8's map(const map&) is inline and emits _Tree's. It was named std::map<unsigned int,std::wstring>::map(const&) (vm-agent, pack q142, 2026-11-25)",0x0048dda0,0x00864270,0x0048dda0
 3563,function,Catch_All@0048de1c,,0x0048de1c,0x008642ec,0x0048de1c
 3564,function,ECBase::ECDynArray<unsigned int>::ECDynArray(const ECBase::ECDynArray<unsigned int>&),"ECDynArray'""'""'s own copy constructor: zeroes +4, +8, +0xC, then vector::operator= (0x0048D870); ret 4. VC8'""'""'s vector copy constructor allocates and copies instead (decomp-agent, read 2026-11-24)",0x0048de30,0x008643c0,0x0048de30
 3565,function,ECBase::ECDynArray<OnlineRec84>::ECDynArray(const ECBase::ECDynArray<OnlineRec84>&),"ECDynArray's copy-constructor shape: the vector emptied, then its operator= (0x0048D9A0) with the source. It was named std::vector<OnlineRec84>::vector(const&) (DAODecomp VM agents, 2026-11-25)",0x0048de90,0x00864300,0x0048de90
@@ -24104,7 +24104,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24103,function,std::vector<InputMapper::Entry>::push_back,,0x0087c490,0x004529c0,0x0087c490
 24104,function,,,0x0087c530,0x00452af0,0x0087c530
 24105,function,"std::map<InputMapper::KeyWord,std::list<InputMapper::Entry*>>::_Erase",,0x0087c800,0x00452dc0,0x0087c800
-24106,function,std::vector<InputMapper::Entry>::vector,,0x0087c840,0x00452e00,0x0087c840
+24106,function,ECBase::ECDynArray<InputMapper::Entry>::ECDynArray,"InputMapper's constructor (0x0087D280) builds its texts member with it (0x0087D2B5); it zeroes the vector's three pointers (+4, +8, +0xC) inside the ECDynArray: the engine array's constructor. It was named std::vector<InputMapper::Entry>::vector (vm-agent, pack q142, 2026-11-25)",0x0087c840,0x00452e00,0x0087c840
 24107,function,ECBase::ECDynArray<ECInput::Event>::ECDynArray(unsigned int),,0x0087c8c0,0x00452ea0,0x0087c8c0
 24108,function,InputMapper::CollectMessages,,0x0087c950,0x00452f30,0x0087c950
 24109,function,,,0x0087cb00,0x00453110,0x0087cb00
@@ -24113,7 +24113,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 24112,function,"std::map<?,?>::_Insert",,0x0087cc80,0x00453290,0x0087cc80
 24113,function,,,0x0087ce80,0x00453490,0x0087ce80
 24114,function,,,0x0087cec0,0x004534d0,0x0087cec0
-24115,function,"std::map<InputMapper::KeyWord,std::list<InputMapper::Entry*>>::map",,0x0087cfb0,0x004535c0,0x0087cfb0
+24115,function,"Map<InputMapper::KeyWord,Core::ListQueue<unsigned int>>::Map","Called on InputMapper's two maps (0x0087D2D2 lea ecx,[esi+0x14]; 0x0087D2EF lea ecx,[esi+0x38]); each element is the map's 0xC, an 8-byte key and a 0x10-byte ListQueue (head, size at +0x14), 0x24 in all, so the value is a Core::ListQueue, not a std::list<Entry*>. It was named std::map<InputMapper::KeyWord,std::list<InputMapper::Entry*>>::map (vm-agent, pack q142, 2026-11-25)",0x0087cfb0,0x004535c0,0x0087cfb0
 24116,function,"std::map<InputMapper::KeyWord,std::list<InputMapper::Entry*>>::~map",,0x0087d050,0x00453660,0x0087d050
 24117,function,,,0x0087d090,0x004536a0,0x0087d090
 24118,function,InputMapper::InputMapper,,0x0087d280,0x00453890,0x0087d280

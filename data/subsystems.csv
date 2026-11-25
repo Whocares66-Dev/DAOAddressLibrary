@@ -3528,8 +3528,8 @@ id,subsystem,class,how
 3559,ThirdParty:STL,std::vector<OnlineFeatures::Achievement>,name
 3560,ThirdParty:STL,std::deque<unsigned int>,name
 3561,ThirdParty:STL,std::deque<unsigned int>,name
-3562,ThirdParty:STL,"std::map<unsigned int,std::wstring>",name
-3563,ThirdParty:STL,"std::map<unsigned int,std::wstring>",owner
+3562,ThirdParty:STL,"std::_Tree<std::map<unsigned int,std::wstring>>",name
+3563,ThirdParty:STL,"std::_Tree<std::map<unsigned int,std::wstring>>",owner
 3564,Core,ECBase::ECDynArray<unsigned int>,name
 3565,Core,ECBase::ECDynArray<OnlineRec84>,name
 3566,Core,ECBase::ECDynArray<OnlineFeatures::Achievement>,name
@@ -23956,7 +23956,7 @@ id,subsystem,class,how
 24103,ThirdParty:STL,std::vector<InputMapper::Entry>,name
 24104,ThirdParty:STL,,string
 24105,ThirdParty:STL,"std::map<InputMapper::KeyWord,std::list<InputMapper::Entry*>>",name
-24106,ThirdParty:STL,std::vector<InputMapper::Entry>,name
+24106,Core,ECBase::ECDynArray<InputMapper::Entry>,name
 24107,Core,ECBase::ECDynArray<ECInput::Event>,name
 24108,Input,InputMapper,name
 24109,ThirdParty:STL,,string
@@ -23965,7 +23965,7 @@ id,subsystem,class,how
 24112,ThirdParty:STL,"std::map<?,?>",name
 24113,ThirdParty:STL,,between
 24114,ThirdParty:STL,,string
-24115,ThirdParty:STL,"std::map<InputMapper::KeyWord,std::list<InputMapper::Entry*>>",name
+24115,Input,"Map<InputMapper::KeyWord,Core::ListQueue<unsigned int>>",callers
 24116,ThirdParty:STL,"std::map<InputMapper::KeyWord,std::list<InputMapper::Entry*>>",name
 24117,ThirdParty:STL,,string
 24118,Input,InputMapper,name
@@ -35261,7 +35261,7 @@ id,subsystem,class,how
 35503,Online,OnlineFeatures,owner
 35504,Online,OnlineFeatures,owner
 35505,ThirdParty:STL,"std::map<unsigned int,std::wstring>",owner
-35506,ThirdParty:STL,"std::map<unsigned int,std::wstring>",owner
+35506,ThirdParty:STL,"std::_Tree<std::map<unsigned int,std::wstring>>",owner
 35507,Core,ECBase::ECDynArray<OnlineFeatures::Achievement>,owner
 35508,Core,ECBase::ECDynArray<OnlineFeatures::Achievement>,owner
 35509,ThirdParty:STL,std::deque<unsigned int>,owner
@@ -55316,18 +55316,18 @@ id,subsystem,class,how
 55558,ThirdParty:STL,,owner
 55559,ThirdParty:STL,,owner
 55560,ThirdParty:STL,std::vector<?>,owner
-55561,ThirdParty:STL,std::vector<InputMapper::Entry>,owner
-55562,ThirdParty:STL,std::vector<InputMapper::Entry>,owner
+55561,Core,ECBase::ECDynArray<InputMapper::Entry>,owner
+55562,Core,ECBase::ECDynArray<InputMapper::Entry>,owner
 55563,Core,ECBase::ECDynArray<ECInput::Event>,owner
 55564,Core,ECBase::ECDynArray<ECInput::Event>,owner
 55565,Online,OnlineFeatures,owner
 55566,Online,OnlineFeatures,owner
 55567,ThirdParty:STL,,owner
 55568,ThirdParty:STL,,owner
-55569,ThirdParty:STL,"std::map<InputMapper::KeyWord,std::list<InputMapper::Entry*>>",owner
-55570,ThirdParty:STL,"std::map<InputMapper::KeyWord,std::list<InputMapper::Entry*>>",owner
-55571,ThirdParty:STL,"std::map<InputMapper::KeyWord,std::list<InputMapper::Entry*>>",owner
-55572,ThirdParty:STL,"std::map<InputMapper::KeyWord,std::list<InputMapper::Entry*>>",owner
+55569,Input,"Map<InputMapper::KeyWord,Core::ListQueue<unsigned int>>",owner
+55570,Input,"Map<InputMapper::KeyWord,Core::ListQueue<unsigned int>>",owner
+55571,Input,"Map<InputMapper::KeyWord,Core::ListQueue<unsigned int>>",owner
+55572,Input,"Map<InputMapper::KeyWord,Core::ListQueue<unsigned int>>",owner
 55573,Input,InputMapper,owner
 55574,Input,InputMapper,owner
 55575,Input,InputMapper,owner
