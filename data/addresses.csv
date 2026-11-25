@@ -6667,7 +6667,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6666,function,"std::map<ECString,GPtr<GFxMovieView>>::insert",,0x00514460,0x007bbf60,0x00514460
 6667,function,"std::map<ECString,GFxMovieDef*>::erase",,0x005144e0,0x007bbfe0,0x005144e0
 6668,function,"std::map<ECString,GPtr<GFxMovieView>>::erase",,0x00514550,0x007bc050,0x00514550
-6669,function,GuiMovieSet::Insert,,0x005145c0,0x007bc0c0,0x005145c0
+6669,function,DefaultSet<GuiMovie*>::Insert,"__thiscall, ret 4: the set's insert (0x00513CF0) on this with the element, its returned pair dropped, as DefaultSet<unsigned int>::Insert (23751); ScaleformManager::OpenMovie calls it on movies (+0x70), which DefaultSet<GuiMovie*>'s constructor builds. Once GuiMovieSet::Insert, a class nothing else has (vm-agent, read 2026-11-25)",0x005145c0,0x007bc0c0,0x005145c0
 6670,function,std::vector<?>::vector,,0x005145e0,0x007bc0e0,0x005145e0
 6671,function,std::vector<Pathfinding::MapAbstractionBuilder::EdgeRecord>::vector,,0x00514640,0x007bc140,0x00514640
 6672,function,std::_Tree<?>::~_Tree,,0x005146a0,0x0049f2b0,0x005146a0
@@ -22381,7 +22381,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 22380,function,Physics::PhysicsScene::PopFilterOps,,0x008248a0,0x0049c830,0x008248a0
 22381,function,std::vector<bool>::back,,0x00824a30,0x0049c9c0,0x00824a30
 22382,function,std::vector<bool>::_Xlen,,0x00824ab0,0x0049ca40,0x00824ab0
-22383,function,,,0x00824b30,0x007bb8f0,0x00824b30
+22383,function,DefaultSet<?>::Erase,"__thiscall, ret 8 (result, iterator): copies the iterator into the result; a valid one is cleared, erased from the set (std::set::erase 0x00512A90) and the result set to the next element, valid while it is not the head: the erase step of DefaultSet's Begin/Next iteration. Called on ScaleformManager's movies (+0x70, RemoveUnshownMovies) and PhysicsScene's +0xD4 (RemoveDynamicActor), so one body for pointer-sized elements (vm-agent, read 2026-11-25)",0x00824b30,0x007bb8f0,0x00824b30
 22384,function,std::vector<?>::reserve,,0x00824ba0,0x0049cac0,0x00824ba0
 22385,function,,,0x00824c91,0x0049cbb1,0x00824c91
 22386,function,std::vector<?>::~vector,,0x00824cb0,0x0049e440,0x00824cb0
