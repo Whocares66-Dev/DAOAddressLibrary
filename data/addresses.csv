@@ -17581,7 +17581,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17580,function,Inventory::CanRemove,,0x0073f640,0x0064b1e0,0x0073f640
 17581,function,Inventory::GetItemCount,,0x0073f670,0x0064b210,0x0073f670
 17582,function,Inventory::ContainsItem,,0x0073f680,0x0064b220,0x0073f680
-17583,function,Inventory::GetItemAt,,0x0073f6d0,0x0064b270,0x0073f6d0
+17583,function,Inventory::GetItemAtLocation,,0x0073f6d0,0x0064b270,0x0073f6d0
 17584,function,Inventory::FindItemLocation,,0x0073f6f0,0x0064b290,0x0073f6f0
 17585,function,Inventory::FindLocationFor,,0x0073f710,0x0064b2b0,0x0073f710
 17586,function,Inventory::SaveEmpty,"Writes an empty inventory: Backpack's and PlotItems' slot 27 (SaveEmpty) and Money's slot 6 with the save structure; slot 27 between Save (26) and Load (28), as in Backpack and PlotItems; no caller found (reached through the slot)",0x0073f7a0,0x0064b340,0x0073f7a0
@@ -18160,7 +18160,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 18159,function,ItemLocation::CanRemoveChecked,,0x007611e0,0x0069f960,0x007611e0
 18160,function,ItemLocation::GetItemCount,,0x00761220,0x0069f9a0,0x00761220
 18161,function,ItemLocation::ContainsItemOrFalse,,0x00761230,0x0069f9b0,0x00761230
-18162,function,ItemLocation::GetItemAt,,0x00761260,0x0069f9e0,0x00761260
+18162,function,ItemLocation::GetItemAt,"ItemLocation's non-virtual GetItemAt: mov eax,[ecx]; mov eax,[eax+0x48]; jmp eax, a tail call of its own slot 18 (GetItemAtLocation, pure here), not a compiler vcall thunk (which jumps through the slot itself); 16+ callers (vm-agent, read 2026-11-25)",0x00761260,0x0069f9e0,0x00761260
 18163,function,ItemLocation::GetItemCount,"No code of its own: one jmp to the function of the same name at 0x00761220 (ID 18160), whose callers pass their arguments the same way. Not a function of the source; the linker or the code generator made it (decomp-agent, 2026-11-20)",0x00761270,0x0069f9f0,0x00761270
 18164,function,ItemLocation::GetItemAttributeByIndex,,0x00761280,0x0069fa00,0x00761280
 18165,function,ItemLocation::CanAdd,,0x007612a0,0x0069fa20,0x007612a0
@@ -19466,7 +19466,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19465,function,Equipment::SwitchToSet,,0x007977d0,0x00668ed0,0x007977d0
 19466,function,Equipment::AddAt,,0x00797aa0,0x006691a0,0x00797aa0
 19467,function,Equipment::ContainsItem,,0x00797b80,0x00669280,0x00797b80
-19468,function,Equipment::GetItemAt,,0x00797c00,0x00669300,0x00797c00
+19468,function,Equipment::GetItemAtLocation,,0x00797c00,0x00669300,0x00797c00
 19469,function,Equipment::FindItemLocation,,0x00797c80,0x00669380,0x00797c80
 19470,function,Equipment::OnItemAdded,,0x00797d10,0x00669410,0x00797d10
 19471,function,Equipment::OnItemRemoved,,0x00797e20,0x00669520,0x00797e20
@@ -20558,7 +20558,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20557,function,ListItemLocation::GetItemByIndex,"Slot 9 of ListItemLocation (ret 4: index): returns the element of the item vector at +0x0C (a CCItem*; ListItemLocation::FindLocationFor passes it to CCItem::CanStack at 0x007CA61A), or the default element when out of range. The base's GetItemAttributeByIndex adds 0x34 to it.",0x007ca850,0x006b1b60,0x007ca850
 20558,function,ListItemLocation::CanAdd,,0x007ca890,0x006b1ba0,0x007ca890
 20559,function,ListItemLocation::GetItemCount,,0x007ca920,0x006b1c30,0x007ca920
-20560,function,ListItemLocation::GetItemAt,,0x007ca940,0x006b1c50,0x007ca940
+20560,function,ListItemLocation::GetItemAtLocation,,0x007ca940,0x006b1c50,0x007ca940
 20561,function,ListItemLocation::LoadItemList,,0x007ca990,0x006b1ca0,0x007ca990
 20562,function,ListItemLocation::ContainsItem,,0x007ca9e0,0x006b1cf0,0x007ca9e0
 20563,function,ListItemLocation::FindItemLocation,"A list location's (backpack, plot items, repository) key for an item it holds: {the item's index in +8 (VectorIndexOf), the item's +0x600 stackingGroupId, slot 0xFF (0x007CAA3E), set -1 (0x007CAA45), -1, -1}; an item not held gets ItemLocation::s_invalidLocation (0x00C1CEF8)",0x007caa00,0x006b1d10,0x007caa00
@@ -21368,7 +21368,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21367,function,"std::map<unsigned int,?>::find",,0x007f4f60,0x00806c90,0x007f4f60
 21368,function,SlotItemLocation::ContainsItem,,0x007f4fd0,0x006e0d20,0x007f4fd0
 21369,function,SlotItemLocation::FindItemLocation,,0x007f5080,0x006e0dd0,0x007f5080
-21370,function,SlotItemLocation::GetItemAt,,0x007f5170,0x006e0ec0,0x007f5170
+21370,function,SlotItemLocation::GetItemAtLocation,,0x007f5170,0x006e0ec0,0x007f5170
 21371,function,SlotItemLocation::AddSlot,,0x007f51a0,0x006e11f0,0x007f51a0
 21372,function,SlotItemLocation::AddAt,"Slot 14 of the ItemLocation tables (pure in ItemLocation), ret 8 (position, item): puts the item in the slot map. Equipment's slot 14 is AddAt, and one slot has one name; AddAt is INFERRED for the base. It was named SlotItemLocation::SetItemAt (decomp-agent, 2026-11-24)",0x007f5200,0x006e1250,0x007f5200
 21373,function,SlotItemLocation::RemoveItem,,0x007f5250,0x006e12a0,0x007f5250
