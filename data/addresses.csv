@@ -6550,7 +6550,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6549,function,GFxMovieDef::ResourceVisitor::`scalar deleting destructor',,0x00510830,0x007b9370,0x00510830
 6550,function,GUI::ScaleformManager::MouseToViewport,,0x00510850,0x007b8c50,0x00510850
 6551,function,GUI::InstallScaleformAllocators,,0x005108e0,0x007b8ce0,0x005108e0
-6552,function,GuiMovieSet::LayerLess,"Answers whether the first movie's layer (int at +0x2C, structs.csv GuiMovie.layer) is less than the second's; the ordering for the set GuiMovieSet::Insert fills through 0x00513CF0 (name INFERRED from that caller chain).",0x00510900,0x007b8d00,0x00510900
+6552,function,LayerLess::operator(),"__thiscall, ret 8: whether the first movie's layer (GuiMovie +0x2C) is less than the second's. The comparator of ScaleformManager's movies set: std::set<GuiMovie*,LayerLess>::insert (0x00513CF0) calls it with ecx the set, whose empty comparator is at +0 (vm-agent, read 2026-11-25)",0x00510900,0x007b8d00,0x00510900
 6553,function,GFxMovieDef::ResourceVisitor::~ResourceVisitor,,0x00510920,0x007b8d20,0x00510920
 6554,function,GUI::ScaleformManager::MapKeyCode,,0x00510930,0x007b8d30,0x00510930
 6555,function,GUI::ScaleformManager::DispatchFSCommand,,0x00510980,0x007b8d80,0x00510980
@@ -6641,8 +6641,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6640,function,GUI::ScaleformManager::HandleMessage_GUICursorMiddleButtonDblClickMessage,,0x005129e0,0x007ba9f0,0x005129e0
 6641,function,GUI::ScaleformManager::StopDragging,,0x005129f0,0x007baa00,0x005129f0
 6642,function,"std::map<std::wstring,?>::find",,0x00512a10,0x00818fd0,0x00512a10
-6643,function,std::set<?>::erase,,0x00512a90,0x0049bba0,0x00512a90
-6644,function,,,0x00512d50,0x0049c170,0x00512d50
+6643,function,std::set<?>::erase(iterator),"__thiscall, erase(iterator): no comparator call, only the tree's increment, min/max and rebalancing, so one body for pointer-sized sets: DefaultSet<?>::Erase (0x00824B30, ScaleformManager's movies and PhysicsScene's +0xD4) and erase(first, last) (0x00512D50) call it (vm-agent, read 2026-11-25)",0x00512a90,0x0049bba0,0x00512a90
+6644,function,"std::set<?>::erase(iterator,iterator)","__thiscall, erase(first, last): erase(iterator) (0x00512A90) over the range, _Erase for the whole tree; DefaultSet's destructor (0x00827A30, ScaleformManager's and PhysicsScene's) and 0x005146A0 call it, so one body for pointer-sized sets (vm-agent, read 2026-11-25)",0x00512d50,0x0049c170,0x00512d50
 6645,function,GUI::ScaleformManager::RegisterHandler_GUICursorLeftButtonDownMessage,,0x00512e20,0x007baa20,0x00512e20
 6646,function,GUI::ScaleformManager::RegisterHandler_GUICursorLeftButtonDblClickMessage,,0x00512eb0,0x007baab0,0x00512eb0
 6647,function,GUI::ScaleformManager::RegisterHandler_GUICursorLeftButtonUpMessage,,0x00512f40,0x007bab40,0x00512f40
@@ -6656,7 +6656,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6655,function,"std::map<?,?>::_Insert",,0x00513530,0x007bb130,0x00513530
 6656,function,"std::map<?,GFxMovieDef*>::erase",,0x00513730,0x007bb330,0x00513730
 6657,function,"std::map<std::wstring,?>::erase",,0x00513a20,0x007bb620,0x00513a20
-6658,function,,,0x00513cf0,0x007bb960,0x00513cf0
+6658,function,"std::set<GuiMovie*,LayerLess>::insert","__thiscall on ScaleformManager's movies (+0x70): descends the tree calling LayerLess (0x00510900) with ecx the set, then links the node through std::set<?>::_Insert (0x00870510); DefaultSet<GuiMovie*>::Insert (0x005145C0) is its one caller (vm-agent, read 2026-11-25)",0x00513cf0,0x007bb960,0x00513cf0
 6659,function,std::vector<?>::_Buy,,0x00513d70,0x00454fe0,0x00513d70
 6660,function,"std::map<std::wstring,?>::insert",,0x00513dc0,0x007bb9e0,0x00513dc0
 6661,function,"std::map<std::wstring,?>::insert",,0x00513f70,0x007bbb90,0x00513f70
@@ -23747,7 +23747,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23746,function,D3DDriver::D3DVertexStreamDriver::`scalar deleting destructor',Runs the destructor (0x00870260: releases the native buffer at +0x30 and frees the shadow copy at +0x38) and frees the object if the delete flag is set.,0x00870440,0x00476350,0x00870440
 23747,function,std::set<unsigned int>::find,,0x00870460,0x0049a2b0,0x00870460
 23748,function,DefaultSet<unsigned int>::Contains,"thiscall on a std::set<unsigned int> (head at +4): the tree's find 0x00870460, compared with the head. DefaultSet's: CCCreature's perceivedIds (+0xC18), which DefaultSet::Begin/Next walk, is searched with it. ECSet (from 2026-11-24) was a second name for that class (vm-agent, 2026-11-25)",0x008704d0,0x00476370,0x008704d0
-23749,function,,,0x00870510,0x0049c240,0x00870510
+23749,function,std::set<?>::_Insert,"__thiscall, ret 0x10: links a new node for a set of 4-byte keys, failing at max_size (0x3FFFFFFE): the tree's _Insert, called by std::set<GuiMovie*,LayerLess>::insert (0x00513D46) and 0x0087075A (read 2026-11-25)",0x00870510,0x0049c240,0x00870510
 23750,function,,,0x00870710,0x0049cd10,0x00870710
 23751,function,DefaultSet<unsigned int>::Insert,"ecx passed straight to the tree's insert 0x00870710, its returned pair dropped; ret 4. DefaultSet's: PhysicsScene+0xD4, built by DefaultSet's constructor, is fed with it (AddDynamicActor 0x00826CB0). ECSet (from 2026-11-24) was a second name for that class (vm-agent, 2026-11-25)",0x00870780,0x0049f130,0x00870780
 23752,function,Graphics::MemoryFootprintTally::Add,,0x008707a0,0x004763b0,0x008707a0
