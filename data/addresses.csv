@@ -19732,9 +19732,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 19731,function,SEffectsHolder::SEffectsHolder,,0x0079f460,0x006709c0,0x0079f460
 19732,function,EffectsManager::Get,,0x0079f480,0x006709e0,0x0079f480
 19733,function,SEffectsHolder::HasTopDeathEffect,"True when the holder's top animation effect is valid (+0x48 == 0) with duration type 6 (+0x28, 0x0079F4B6); with its flag argument it also needs the effect's data flag 3 (CDataArrays::GetFlag); ret 4",0x0079f4a0,0x00670a00,0x0079f4a0
-19734,function,CGameEffect::IsHolderCreator,,0x0079f4f0,0x00670a50,0x0079f4f0
-19735,function,CGameEffect::SyncPartner,,0x0079f510,0x00670a70,0x0079f510
-19736,function,CGameEffect::GetVisualParams,,0x0079f540,0x00670aa0,0x0079f540
+19734,function,SEffectsHolder::IsHolderCreator,"this is the effects holder: CSSubActionHandler::SyncEffectPlacement passes an object's +0x70 (0x007A6DBC), where CCObject holds its SEffectsHolder; it compares the effect argument's creator id (+0x40) with the holder's slot 8 (an id); ret 4. It was CGameEffect::IsHolderCreator, but the effect is the argument (decomp-agent, read 2026-11-24)",0x0079f4f0,0x00670a50,0x0079f4f0
+19735,function,SEffectsHolder::SyncPartner,"The same this as IsHolderCreator (0x0079F4F0), passed straight to it with the effect; returns the effect's +0x40, or the holder's GetObject(1) when the holder created it; ret 4. It was CGameEffect::SyncPartner (decomp-agent, read 2026-11-24)",0x0079f510,0x00670a70,0x0079f510
+19736,function,CGameObject::GetVisualParams,"ret 0xC (effect, params, out) and never reads ecx. CCObject::CreateVisualForEffect and CCArea::CreateVisualForEffect call it with their own this unadjusted, and the base the two share at offset 0 is CGameObject; their SEffectsHolders sit at +0x70 and +0xCC, so it is not that class's. The class is INFERRED from the offsets. It was CGameEffect::GetVisualParams (decomp-agent, read 2026-11-24)",0x0079f540,0x00670aa0,0x0079f540
 19737,function,EffectsManager::ForEachMatchingEffect,,0x0079f5d0,0x00670b30,0x0079f5d0
 19738,function,SEffectsHolder::HasEffectOfType,,0x0079f6c0,0x00670c20,0x0079f6c0
 19739,function,EffectsManager::SelectTopEffectVisual,,0x0079f7a0,0x00670d00,0x0079f7a0
