@@ -3531,8 +3531,8 @@ id,subsystem,class,how
 3562,ThirdParty:STL,"std::map<unsigned int,std::wstring>",name
 3563,ThirdParty:STL,"std::map<unsigned int,std::wstring>",owner
 3564,Core,ECBase::ECDynArray<unsigned int>,name
-3565,ThirdParty:STL,std::vector<OnlineRec84>,name
-3566,ThirdParty:STL,std::vector<OnlineFeatures::Achievement>,name
+3565,Core,ECBase::ECDynArray<OnlineRec84>,name
+3566,Core,ECBase::ECDynArray<OnlineFeatures::Achievement>,name
 3567,ThirdParty:STL,std::deque<unsigned int>,name
 3568,ThirdParty:STL,std::deque<unsigned int>,owner
 3569,ThirdParty:STL,std::deque<unsigned int>,owner
@@ -3543,7 +3543,7 @@ id,subsystem,class,how
 3574,Online,DADM,name
 3575,ThirdParty:STL,std::vector<Online::DatedRecord>,name
 3576,ThirdParty:STL,std::vector<Online::DatedRecord>,name
-3577,ThirdParty:STL,std::vector<Online::DatedRecord>,name
+3577,Core,ECBase::ECDynArray<Online::DatedRecord>,name
 3578,Online,OnlineFeatures,name
 3579,Online,OnlineFeatures,name
 3580,ThirdParty:STL,std::vector<Online::DatedRecord>,name
@@ -4597,7 +4597,7 @@ id,subsystem,class,how
 4637,ThirdParty:STL,"std::list<std::pair<std::wstring,?>>",owner
 4638,Resources,ECResMan::ResMan,name
 4639,Resources,ECResMan::ResMan,name
-4640,Resources,StringList,between
+4640,Core,ECBase::ECDynArray<ECBase::ECString>,name
 4641,Resources,ECResMan::ResMan,name
 4642,ThirdParty:STL,"stdext::hash_map<std::wstring,?>",name
 4643,unknown,Core::ListQueue<?>,
@@ -12298,7 +12298,7 @@ id,subsystem,class,how
 12370,Game,CCParty,name
 12371,Game,CCParty,name
 12372,Game,CCParty,name
-12373,Core,"ECBase::ECDynArray<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
+12373,ThirdParty:STL,"std::vector<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>",name
 12374,ThirdParty:STL,std,name
 12375,Game,CCParty,name
 12376,ThirdParty:STL,std::list<?>,name
@@ -13974,7 +13974,7 @@ id,subsystem,class,how
 14050,Game,CCObject,name
 14051,Game,CCObject,name
 14052,Game,CCObject,name
-14053,Animation,Animation,name
+14053,Game,CCObject,name
 14054,Game,CCObject,name
 14055,Game,CCObject,name
 14056,Game,CCObject,name
@@ -35262,8 +35262,8 @@ id,subsystem,class,how
 35504,Online,OnlineFeatures,owner
 35505,ThirdParty:STL,"std::map<unsigned int,std::wstring>",owner
 35506,ThirdParty:STL,"std::map<unsigned int,std::wstring>",owner
-35507,ThirdParty:STL,std::vector<OnlineFeatures::Achievement>,owner
-35508,ThirdParty:STL,std::vector<OnlineFeatures::Achievement>,owner
+35507,Core,ECBase::ECDynArray<OnlineFeatures::Achievement>,owner
+35508,Core,ECBase::ECDynArray<OnlineFeatures::Achievement>,owner
 35509,ThirdParty:STL,std::deque<unsigned int>,owner
 35510,ThirdParty:STL,std::deque<unsigned int>,owner
 35511,Online,Online::TextTable,owner
@@ -35273,8 +35273,8 @@ id,subsystem,class,how
 35515,Online,DADM,owner
 35516,Online,DADM,owner
 35517,Online,DADM,owner
-35518,ThirdParty:STL,std::vector<Online::DatedRecord>,owner
-35519,ThirdParty:STL,std::vector<Online::DatedRecord>,owner
+35518,Core,ECBase::ECDynArray<Online::DatedRecord>,owner
+35519,Core,ECBase::ECDynArray<Online::DatedRecord>,owner
 35520,Online,OnlineFeatures,owner
 35521,Online,OnlineFeatures,owner
 35522,Online,OnlineFeatures,owner

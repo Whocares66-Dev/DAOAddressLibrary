@@ -3563,8 +3563,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3562,function,"std::map<unsigned int,std::wstring>::map(const std::map<unsigned int,std::wstring>&)",,0x0048dda0,0x00864270,0x0048dda0
 3563,function,Catch_All@0048de1c,,0x0048de1c,0x008642ec,0x0048de1c
 3564,function,ECBase::ECDynArray<unsigned int>::ECDynArray(const ECBase::ECDynArray<unsigned int>&),"ECDynArray'""'""'s own copy constructor: zeroes +4, +8, +0xC, then vector::operator= (0x0048D870); ret 4. VC8'""'""'s vector copy constructor allocates and copies instead (decomp-agent, read 2026-11-24)",0x0048de30,0x008643c0,0x0048de30
-3565,function,std::vector<OnlineRec84>::vector(const std::vector<OnlineRec84>&),,0x0048de90,0x00864300,0x0048de90
-3566,function,std::vector<OnlineFeatures::Achievement>::vector(const std::vector<OnlineFeatures::Achievement>&),,0x0048def0,0x00864360,0x0048def0
+3565,function,ECBase::ECDynArray<OnlineRec84>::ECDynArray(const ECBase::ECDynArray<OnlineRec84>&),"ECDynArray's copy-constructor shape: the vector emptied, then its operator= (0x0048D9A0) with the source. It was named std::vector<OnlineRec84>::vector(const&) (DAODecomp VM agents, 2026-11-25)",0x0048de90,0x00864300,0x0048de90
+3566,function,ECBase::ECDynArray<OnlineFeatures::Achievement>::ECDynArray(const ECBase::ECDynArray<OnlineFeatures::Achievement>&),"Zeroes the vector's three pointers (0x0048DF1A..0x0048DF20), then calls the vector's operator= (0x0048DB10) with the source and returns this: ECDynArray's copy constructor. It was named std::vector<OnlineFeatures::Achievement>::vector(const&) (DAODecomp VM agents, 2026-11-25)",0x0048def0,0x00864360,0x0048def0
 3567,function,std::deque<unsigned int>::_Insert<std::_Deque_const_iterator<unsigned int>>,,0x0048df50,0x00864420,0x0048df50
 3568,function,Catch_All@0048e1c8,,0x0048e1c8,0x00864698,0x0048e1c8
 3569,function,Catch_All@0048e50f,,0x0048e50f,0x008649df,0x0048e50f
@@ -3575,7 +3575,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 3574,function,DADM::DADM(const DADM&),,0x0048e840,0x00864d10,0x0048e840
 3575,function,std::vector<Online::DatedRecord>::clear,,0x0048ea50,0x00864f50,0x0048ea50
 3576,function,std::vector<Online::DatedRecord>::operator=,,0x0048ea90,0x00864f90,0x0048ea90
-3577,function,std::vector<Online::DatedRecord>::vector(const std::vector<Online::DatedRecord>&),,0x0048ec20,0x00865120,0x0048ec20
+3577,function,ECBase::ECDynArray<Online::DatedRecord>::ECDynArray(const ECBase::ECDynArray<Online::DatedRecord>&),"ECDynArray's copy-constructor shape: the vector emptied, then its operator= (0x0048EA90) with the source. It was named std::vector<Online::DatedRecord>::vector(const&) (DAODecomp VM agents, 2026-11-25)",0x0048ec20,0x00865120,0x0048ec20
 3578,function,OnlineFeatures::OnlineFeatures(const OnlineFeatures&),,0x0048ec80,0x00865180,0x0048ec80
 3579,function,OnlineFeatures::`scalar deleting destructor',,0x0048f0f0,0x008655f0,0x0048f0f0
 3580,function,std::vector<Online::DatedRecord>::vector(const std::vector<Online::DatedRecord>&),,0x0048f110,0x00865610,0x0048f110
@@ -4638,7 +4638,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4637,function,,,0x004c592c,0x00806d7c,0x004c592c
 4638,function,ECResMan::ResMan::ResolveFilePath,,0x004c5950,0x00806da0,0x004c5950
 4639,function,ECResMan::ResMan::LoadRimTextures,,0x004c5ab0,0x00806f00,0x004c5ab0
-4640,function,StringList::Contains,,0x004c5b30,0x004925e0,0x004c5b30
+4640,function,ECBase::ECDynArray<ECBase::ECString>::Contains,"ecx the array (first +4, last +8), 13 callers with string arrays (ResMan, DirectorySource, MorphBuilder +0x90, SaveLoadProxy): whether an ECString is in it. It was named StringList::Contains (DAODecomp VM agents, 2026-11-25)",0x004c5b30,0x004925e0,0x004c5b30
 4641,function,ECResMan::ResMan::MakeSource,,0x004c5ba0,0x00806fe0,0x004c5ba0
 4642,function,"stdext::hash_map<std::wstring,?>::find_pair",,0x004c5bf0,0x00483a20,0x004c5bf0
 4643,function,Core::ListQueue<?>::ListQueue,,0x004c5c60,0x00406ec0,0x004c5c60
@@ -12371,7 +12371,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12370,function,CCParty::ForScript_IsFollowerLocked,,0x006329b0,0x0060e450,0x006329b0
 12371,function,CCParty::ForScript_SetFollowPartyLeader,,0x00632a20,0x0060e4c0,0x00632a20
 12372,function,CCParty::ForScript_GetFollowPartyLeader,,0x00632a80,0x0060e520,0x00632a80
-12373,function,"ECBase::ECDynArray<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::erase",,0x00632af0,0x0060e590,0x00632af0
+12373,function,"std::vector<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>::erase","The vector's own erase, which the ECDynArray inherits, as its push_back and insert are named. It was named ECBase::ECDynArray<SmartData::Attribute<bool,...>>::erase (DAODecomp VM agents, 2026-11-25)",0x00632af0,0x0060e590,0x00632af0
 12374,function,"std::copy_backward<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*,SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>*>",,0x00632b60,0x0060e600,0x00632b60
 12375,function,CCParty::GetFollowerFormationPositionForControlled,,0x00632bb0,0x0060e650,0x00632bb0
 12376,function,std::list<?>::_Incsize,,0x00632c00,0x0060e6a0,0x00632c00
@@ -14051,7 +14051,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 14050,function,CCObject::FadeOutFinishedAnimation,,0x00694e90,0x00585d60,0x00694e90
 14051,function,CCObject::OnAnimationEvent,,0x00694ee0,0x00585db0,0x00694ee0
 14052,function,CCObject::HasAnimationModel,,0x00694fc0,0x00585e90,0x00694fc0
-14053,function,Animation::BlendLength,,0x00694fe0,0x00585eb0,0x00694fe0
+14053,function,CCObject::BlendLength,"Its six callers (CCObject::Play, CCCreature's attack animations, ScriptCommand::SETACTIVE) load ecx with the object (mov ecx,esi) before the call, so it is a member, though the body never reads this (mov ecx,0x14 first). It was named Animation::BlendLength (DAODecomp VM agents, 2026-11-25)",0x00694fe0,0x00585eb0,0x00694fe0
 14054,function,CCObject::SetFade,,0x00695060,0x00585f30,0x00695060
 14055,function,CCObject::ApplyFade,,0x00695080,0x00585f50,0x00695080
 14056,function,CCObject::GetAppliedFade,,0x00695140,0x00586010,0x00695140
