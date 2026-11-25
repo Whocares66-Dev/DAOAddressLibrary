@@ -8506,7 +8506,7 @@ address,what,value,why
 0x007294F0,signature,"void * __stdcall f(int unused, int value)","0x007294F0: ecx set to a constant, ret 8; the second argument is the value pushed to 0x004C2B10"
 0x0072C7E0,signature,"void __thiscall f(void *this, unsigned int n)","0x0072C7E0: ecx read, ret 4"
 0x00734560,signature,"void * __thiscall f(void *this, const void *src)","0x00734560: ecx to esi, ret 4"
-0x007345D0,signature,"GUICharGen::SliderEntry * __thiscall f(void *this, const void *src)",0x007345D0: ret 4; a void * here is the class DAODecomp's matching definition gives
+0x007345D0,signature,"GUI::GUICharGen::SliderEntry * __thiscall f(void *this, const void *src)",0x007345D0: ret 4; a void * here is the class DAODecomp's matching definition gives
 0x00734640,signature,"void * __cdecl f(void *first, void *last, void *destEnd, int tag1, int tag2, int tag3)","0x00734640: plain ret, six stack arguments"
 0x00736090,signature,"void * __cdecl f(void *first, void *last, void *dest)",0x00736090: plain ret
 0x007360E0,signature,"void * __cdecl f(void *first, void *last, void *dest)","0x007360E0: plain ret, three arguments, three tag bytes pushed to 0x00734640"
@@ -18584,7 +18584,7 @@ address,what,value,why
 0x004F3050,signature,"bool __thiscall Graphics::MaterialObjectInstance::ProvideParameter(void* this, ParameterRequest *request, void* passBlock)",ret 8 at 0x004F31D3; al result; a void * here is the class DAODecomp's matching definition gives
 0x004F3200,signature,void __thiscall Graphics::MaterialStateOverride::End(void* this),plain ret at 0x004F329D; ecx to esi at 0x004F3221
 0x004F32A0,signature,"void __thiscall Graphics::MaterialStateOverride::ApplyToPass(void* this, void* passBinding)",ret 4 at 0x004F3328
-0x004F3330,signature,void __thiscall Graphics::MaterialOpacity::PassBinding::~PassBinding(void* this),"add ecx,4 then jmp to a thiscall release"
+0x004F3330,signature,void __thiscall Graphics::MaterialPassStateArray::PassBinding::~PassBinding(void* this),"add ecx,4 then jmp to a thiscall release"
 0x004F3500,signature,void __thiscall Graphics::MaterialPassStateArray::Clear(void* this),plain ret at 0x004F3536
 0x004F3540,signature,"void* __thiscall std::vector<std::pair<int,int>>::operator=(void* this, const void* other)",ret 4 at 0x004F3570
 0x004F3670,signature,"void __thiscall std::vector<std::pair<int,int>>::resize(void* this, unsigned int newSize, int firstValue, int secondValue)",ret 0xC at 0x004F36C2

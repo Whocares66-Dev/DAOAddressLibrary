@@ -4372,7 +4372,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4371,function,Multithreading::ThreadManager::ResetEvent,,0x004bbd50,0x007fde60,0x004bbd50
 4372,function,Multithreading::ThreadManager::WaitEvent,,0x004bbd60,0x007fde70,0x004bbd60
 4373,function,Multithreading::ThreadManager::SetThreadName,,0x004bbd70,0x007fde80,0x004bbd70
-4374,function,Multithreading::ThreadManager::SetThreadName::filter,,0x004bbddb,0x007fdeeb,0x004bbddb
+4374,function,Multithreading::ThreadManager::SetThreadName::filter,"Not a function of its own: the SEH filter funclet of Multithreading::ThreadManager::SetThreadName (0x004BBD70), or eax,-1; ret (EXCEPTION_EXECUTE_HANDLER), reached through the scope table; the __except block after it is 0x004BBDDF (decomp-agent, 2026-11-25)",0x004bbddb,0x007fdeeb,0x004bbddb
 4375,function,Multithreading::ThreadManager::SetThreadName::except_block,"Not a function of its own: the __except block of Multithreading::ThreadManager::SetThreadName (0x004BBD70), its last 30 bytes, entered through the SEH scope table with ebp the function's (mov esp,[ebp-0x18] at 0x004BBDDF); the filter before it is 0x004BBDDB (or eax,-1; ret). It keeps its ID as the pieces of C++ exception handling do; a rebuild of SetThreadName contains it (decomp-agent, 2026-11-19, by matching bytes)",0x004bbddf,0x007fdeef,0x004bbddf
 4376,function,Multithreading::ThreadManager::Get,,0x004bbe00,0x007fdf10,0x004bbe00
 4377,function,Multithreading::ThreadManager::Destroy,,0x004bbe10,0x007fdf20,0x004bbe10
@@ -4887,7 +4887,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 4886,function,Messages::Send,,0x004d20c0,0x008133c0,0x004d20c0
 4887,function,Messages::Post,,0x004d20e0,0x008133e0,0x004d20e0
 4888,function,"stdext::hash_map<?,?>::lower_bound",,0x004d2160,0x00517890,0x004d2160
-4889,function,Messages::MessageFactory::CreateByHash,,0x004d22b0,0x005179e0,0x004d22b0
+4889,function,MessageFactoryRegistry::CreateByHash,"Looks the hash up in the hash_map at +0 and calls the entry's create (node+0xC). Its callers 0x004D2414 and 0x00524DD2 call it on MessageFactoryRegistry::Get's (0x00489BC0) object, 0x007958C4 on Messages::GetBindingTextRegistry's (0x00613A30), a second registry of the same layout whose constructor 0x00610070 is one body with 0x004852B0 in the EA build (decomp-agent, read 2026-11-25)",0x004d22b0,0x005179e0,0x004d22b0
 4890,function,Messages::FromText,,0x004d2320,0x00813460,0x004d2320
 4891,function,CpuFeatures::DetectSSE,,0x004d2480,0x008135c0,0x004d2480
 4892,retired,,,,,
@@ -5780,7 +5780,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5779,function,Graphics::MaterialObjectInstance::ProvideParameter,,0x004f3050,0x007e03a0,0x004f3050
 5780,function,Graphics::MaterialStateOverride::End,,0x004f3200,0x007e0550,0x004f3200
 5781,function,Graphics::MaterialStateOverride::ApplyToPass,,0x004f32a0,0x007e05f0,0x004f32a0
-5782,function,Graphics::MaterialOpacity::PassBinding::~PassBinding,,0x004f3330,0x007e0880,0x004f3330
+5782,function,Graphics::MaterialPassStateArray::PassBinding::~PassBinding,"The 0xC-byte element of Graphics::MaterialPassStateArray's data: the array's constructor (0x004F4C20) and Resize (0x004F4F70) pass it and its constructor 0x004F4BC0 to the vector constructor iterator, and Clear (0x004F3500) to the destructor one. It releases the SynchSafePointer at +4 (add ecx,4; jmp 0x00538F30); nesting it in the array is inferred (decomp-agent, read 2026-11-25)",0x004f3330,0x007e0880,0x004f3330
 5783,function,Graphics::MaterialObjectInstance::ApplyPassParameters,,0x004f3340,0x007e0890,0x004f3340
 5784,function,ECBase::ECDynArray<Math::VectorUA4f>::Assign,,0x004f33d0,0x005a2490,0x004f33d0
 5785,function,Graphics::MaterialPassStateArray::Clear,,0x004f3500,0x007e0c40,0x004f3500
@@ -5823,7 +5823,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 5822,function,Graphics::MaterialObjectInstance::SetMaterialObject,,0x004f49b0,0x007e1ee0,0x004f49b0
 5823,function,Graphics::MaterialObjectInstance::ClearParameters,,0x004f4a60,0x007e1f90,0x004f4a60
 5824,function,Graphics::MaterialObjectInstance::RenderPasses,,0x004f4ac0,0x007e1ff0,0x004f4ac0
-5825,function,Graphics::MaterialStateOverride::PassBinding::PassBinding,,0x004f4bc0,0x007e20f0,0x004f4bc0
+5825,function,Graphics::MaterialPassStateArray::PassBinding::PassBinding,"Stores 0 at +0 and builds the SynchSafePointer at +4; passed with its destructor 0x004F3330 to the vector constructor iterator by Graphics::MaterialPassStateArray's constructor (0x004F4C20) and Resize (0x004F4F70), so it is the array's element, not MaterialStateOverride's (decomp-agent, read 2026-11-25)",0x004f4bc0,0x007e20f0,0x004f4bc0
 5826,function,"std::map<unsigned int,Multithreading::SynchSafePointer<?>>::~map",,0x004f4be0,0x007e2110,0x004f4be0
 5827,function,Graphics::MaterialPassStateArray::MaterialPassStateArray,,0x004f4c20,0x007e2150,0x004f4c20
 5828,function,Graphics::MaterialObjectInstance::RemoveTextureParameter,,0x004f4cc0,0x007e21f0,0x004f4cc0
@@ -17305,9 +17305,9 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17304,function,CharGenUpdateBeardMessage::InitType,,0x007344c0,0x0050bc70,0x007344c0
 17305,function,Stub::MessageRead_Float_0x4,,0x00734520,0x004f4240,0x00734520
 17306,function,SmartData::CustomPolicyHelpers::GetterFunctor<float>::`scalar deleting destructor',,0x00734540,0x00640270,0x00734540
-17307,function,GUICharGen::SliderEntry::SliderEntry,,0x00734560,0x00640290,0x00734560
-17308,function,GUICharGen::SliderEntry::operator=,,0x007345d0,0x00640360,0x007345d0
-17309,function,"std::_Copy_backward_opt<GUICharGen::SliderEntry *,GUICharGen::SliderEntry *>",,0x00734640,0x006403d0,0x00734640
+17307,function,GUI::GUICharGen::SliderEntry::SliderEntry,,0x00734560,0x00640290,0x00734560
+17308,function,GUI::GUICharGen::SliderEntry::operator=,,0x007345d0,0x00640360,0x007345d0
+17309,function,"std::_Copy_backward_opt<GUI::GUICharGen::SliderEntry *,GUI::GUICharGen::SliderEntry *>",,0x00734640,0x006403d0,0x00734640
 17310,function,CharGenResetCreatureMessage::GetType,,0x007346e0,0x00640470,0x007346e0
 17311,function,CharGenResetCreatureMessage::InitType,,0x00734720,0x006404b0,0x00734720
 17312,function,CharGenResetCreatureMessage::GetName,,0x00734780,0x00640510,0x00734780
@@ -17388,8 +17388,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17387,function,"SmartData::CustomPolicyHelpers::MemberGetterFunctor<float,GUI::GUIPaperdoll>::Call",,0x00736040,0x00641c30,0x00736040
 17388,function,"SmartData::CustomPolicyHelpers::MemberSetterFunctor<float,GUI::GUIPaperdoll>::Call",,0x00736050,0x00641c40,0x00736050
 17389,function,SmartData::CustomPolicyHelpers::SetterFunctor<float>::`scalar deleting destructor',,0x00736070,0x00641c60,0x00736070
-17390,function,"std::_Copy_opt<GUICharGen::SliderEntry *,GUICharGen::SliderEntry *>",,0x00736090,0x00641c80,0x00736090
-17391,function,"std::_Copy_backward<GUICharGen::SliderEntry *,GUICharGen::SliderEntry *>",,0x007360e0,0x00641cd0,0x007360e0
+17390,function,"std::_Copy_opt<GUI::GUICharGen::SliderEntry *,GUI::GUICharGen::SliderEntry *>",,0x00736090,0x00641c80,0x00736090
+17391,function,"std::_Copy_backward<GUI::GUICharGen::SliderEntry *,GUI::GUICharGen::SliderEntry *>",,0x007360e0,0x00641cd0,0x007360e0
 17392,function,CharGenResetCreatureMessage::Clone,,0x00736140,0x00641d30,0x00736140
 17393,function,CharGenSelectGenderMessage::Clone,,0x007361b0,0x00641da0,0x007361b0
 17394,function,CharGenSelectRaceMessage::Clone,,0x00736230,0x00641e20,0x00736230
@@ -17431,8 +17431,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17430,function,GUI::GUICharGen::RegisterHandler_CharGenSaveInfoMessage,,0x00737ff0,0x00643be0,0x00737ff0
 17431,function,"SmartData::CustomPolicyHelpers::MemberGetterFunctor<float,GUI::GUIPaperdoll>::Create",,0x007380a0,0x00643c90,0x007380a0
 17432,function,"SmartData::CustomPolicyHelpers::MemberSetterFunctor<float,GUI::GUIPaperdoll>::Create",,0x007380d0,0x00643cc0,0x007380d0
-17433,function,"std::fill<GUICharGen::SliderEntry *,GUICharGen::SliderEntry>",,0x00738100,0x00643cf0,0x00738100
-17434,function,"std::_Uninit_copy<GUICharGen::SliderEntry *,GUICharGen::SliderEntry *,std::allocator<GUICharGen::SliderEntry> >",,0x00738130,0x00643d20,0x00738130
+17433,function,"std::fill<GUI::GUICharGen::SliderEntry *,GUI::GUICharGen::SliderEntry>",,0x00738100,0x00643cf0,0x00738100
+17434,function,"std::_Uninit_copy<GUI::GUICharGen::SliderEntry *,GUI::GUICharGen::SliderEntry *,std::allocator<GUI::GUICharGen::SliderEntry> >",,0x00738130,0x00643d20,0x00738130
 17435,function,Catch_All@00738199,,0x00738199,0x00643d89,0x00738199
 17436,function,GUI::AppearanceSliderGroup::AppearanceSliderGroup,,0x007381d0,0x00643dc0,0x007381d0
 17437,function,GUI::AppearanceSliderGroup::`scalar deleting destructor'`adjustor{28}',,0x00738330,0x00643f30,0x00738330
@@ -17447,11 +17447,11 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17446,function,GUI::GUICharGen::RegisterHandler_CharGenResetCreatureMessage,,0x007388c0,0x006444b0,0x007388c0
 17447,function,GUI::GUICharGen::RegisterHandler_UpdateHeroAppearanceMessage,,0x00738970,0x00644560,0x00738970
 17448,function,GUI::GUICharGen::RegisterHandler_ImportHeroMessage,,0x00738a20,0x00644610,0x00738a20
-17449,function,"stdext::_Unchecked_move_backward<GUICharGen::SliderEntry *,GUICharGen::SliderEntry *>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<GUICharGen::SliderEntry *,GUICharGen::SliderEntry *>.",0x00738ad0,0x006446c0,0x00738ad0
-17450,function,"std::_Uninit_fill_n<GUICharGen::SliderEntry *,unsigned int,GUICharGen::SliderEntry,std::allocator<GUICharGen::SliderEntry> >",,0x00738b00,0x006446f0,0x00738b00
+17449,function,"stdext::_Unchecked_move_backward<GUI::GUICharGen::SliderEntry *,GUI::GUICharGen::SliderEntry *>","Its bytes are stdext::_Unchecked_move_backward's (and std::_Move_backward's, the same code) as VC8 compiles them for an element with an out-of-line copy; std::copy_backward's are other code of the same length. Compiled and compared 2026-11-20 (decomp-agent asked: every model's copy_backward was 2 bytes off). Was named std::copy_backward<GUICharGen::SliderEntry *,GUICharGen::SliderEntry *>.",0x00738ad0,0x006446c0,0x00738ad0
+17450,function,"std::_Uninit_fill_n<GUI::GUICharGen::SliderEntry *,unsigned int,GUI::GUICharGen::SliderEntry,std::allocator<GUI::GUICharGen::SliderEntry> >",,0x00738b00,0x006446f0,0x00738b00
 17451,function,Catch_All@00738b6b,,0x00738b6b,0x0064475b,0x00738b6b
-17452,function,std::vector<GUICharGen::SliderEntry>::_Destroy,,0x00738ba0,0x00644790,0x00738ba0
-17453,function,std::vector<GUICharGen::SliderEntry>::_Ufill,,0x00738bd0,0x006447c0,0x00738bd0
+17452,function,std::vector<GUI::GUICharGen::SliderEntry>::_Destroy,,0x00738ba0,0x00644790,0x00738ba0
+17453,function,std::vector<GUI::GUICharGen::SliderEntry>::_Ufill,,0x00738bd0,0x006447c0,0x00738bd0
 17454,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::AppearanceSliderGroup*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::~Attribute",,0x00738c10,0x00644800,0x00738c10
 17455,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::AppearanceSliderGroup*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x00738c80,0x00644870,0x00738c80
 17456,function,Stub::NoOp_8,,0x00738c90,0x004b0330,0x00738c90
@@ -17469,15 +17469,15 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 17468,function,SmartData::PointerArrayMemberIteratorImpl<ECBase::ECDynArray<GUI::AppearanceSlider<float>*>>::GetValue,,0x00738ff0,0x00644ae0,0x00738ff0
 17469,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::AppearanceSliderGroup*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x00739030,0x00644b20,0x00739030
 17470,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::AppearanceSlider<float>*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::`scalar deleting destructor'",,0x00739050,0x00644b40,0x00739050
-17471,function,std::vector<GUICharGen::SliderEntry>::_Tidy,,0x00739070,0x00644b60,0x00739070
-17472,function,std::vector<GUICharGen::SliderEntry>::erase,,0x007390c0,0x00644bb0,0x007390c0
-17473,function,"std::uninitialized_copy<GUICharGen::SliderEntry *,GUICharGen::SliderEntry *>",,0x00739140,0x00644c30,0x00739140
+17471,function,std::vector<GUI::GUICharGen::SliderEntry>::_Tidy,,0x00739070,0x00644b60,0x00739070
+17472,function,std::vector<GUI::GUICharGen::SliderEntry>::erase,,0x007390c0,0x00644bb0,0x007390c0
+17473,function,"std::uninitialized_copy<GUI::GUICharGen::SliderEntry *,GUI::GUICharGen::SliderEntry *>",,0x00739140,0x00644c30,0x00739140
 17474,function,std::vector<unsigned int>::operator==,,0x00739170,0x006935d0,0x00739170
-17475,function,std::vector<GUICharGen::SliderEntry>::~vector,,0x00739190,0x00644c60,0x00739190
+17475,function,std::vector<GUI::GUICharGen::SliderEntry>::~vector,,0x00739190,0x00644c60,0x00739190
 17476,function,std::vector<?>::_Insert_n,,0x007391a0,0x00644c70,0x007391a0
 17477,function,,,0x00739368,0x00644e38,0x00739368
 17478,function,,,0x00739412,0x00644ee2,0x00739412
-17479,function,std::vector<GUICharGen::SliderEntry>::resize,,0x007394a0,0x00644f70,0x007394a0
+17479,function,std::vector<GUI::GUICharGen::SliderEntry>::resize,,0x007394a0,0x00644f70,0x007394a0
 17480,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::AppearanceSliderGroup*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x007395c0,0x00645090,0x007395c0
 17481,function,"SmartData::Attribute<ECBase::ECDynArray<GUI::AppearanceSlider<float>*>,SmartData::IndexedPointerMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>::Attribute",,0x00739640,0x00645110,0x00739640
 17482,function,ECBase::ECDynArray<GUI::GUIPaperdoll::SliderEntry>::ECDynArray(unsigned int),,0x007396c0,0x00645190,0x007396c0
@@ -103343,7 +103343,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 103342,function,"std::fill<ECBase::ECDynArray *,ECBase::ECDynArray>",,0x007af160,0x0068cf20,0x007af160
 103343,function,Multithreading::SynchSafePointerListBase::Remove,,0x00538c90,0x006929b0,0x00538c90
 103344,function,Multithreading::SynchSafePointer<?>::Release,,0x00538f30,0x00693100,0x00538f30
-103345,function,Graphics::MaterialOpacity::PassBinding::~PassBinding,,0x004f3330,0x006935f0,0x004f3330
+103345,function,Graphics::MaterialPassStateArray::PassBinding::~PassBinding,"The 0xC-byte element of Graphics::MaterialPassStateArray's data: the array's constructor (0x004F4C20) and Resize (0x004F4F70) pass it and its constructor 0x004F4BC0 to the vector constructor iterator, and Clear (0x004F3500) to the destructor one. It releases the SynchSafePointer at +4 (add ecx,4; jmp 0x00538F30); nesting it in the array is inferred (decomp-agent, read 2026-11-25)",0x004f3330,0x006935f0,0x004f3330
 103346,function,std::vector<?>::_Buy,,0x007b55f0,0x00693740,0x007b55f0
 103347,function,Multithreading::SynchSafePointerListBase::AddHolder,,0x004f45b0,0x00695aa0,0x004f45b0
 103348,function,"std::map<?,?>::_Erase",,0x004f3830,0x00698f00,0x004f3830
