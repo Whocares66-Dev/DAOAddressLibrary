@@ -12495,19 +12495,19 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12494,function,CCParty::`scalar deleting destructor',,0x0063bf40,0x00617910,0x0063bf40
 12495,function,Math::Lerp,,0x0063bf60,0x00526c20,0x0063bf60
 12496,function,Math::InverseLerp,,0x0063bf80,0x00526c40,0x0063bf80
-12497,function,GUI::GUIFloatyLayer::CalcDistanceScale,,0x0063bfa0,0x00526c60,0x0063bfa0
-12498,function,GUI::GUIFloatyLayer::CalcNearScale,,0x0063c020,0x00526ce0,0x0063c020
-12499,function,GUI::GUIFloatyLayer::WorldToStage,,0x0063c0a0,0x00526d60,0x0063c0a0
+12497,function,FloatyLayer::CalcDistanceScale,,0x0063bfa0,0x00526c60,0x0063bfa0
+12498,function,FloatyLayer::CalcNearScale,,0x0063c020,0x00526ce0,0x0063c020
+12499,function,FloatyLayer::WorldToStage,,0x0063c0a0,0x00526d60,0x0063c0a0
 12500,function,ECBase::ECDynArray<StatsFloaty*>::operator[],,0x0063c140,0x00526e00,0x0063c140
 12501,function,ECBase::ECDynArray<MessageFloaty*>::operator[],,0x0063c170,0x00526e30,0x0063c170
 12502,function,ECBase::ECDynArray<IconFloaty*>::operator[],,0x0063c1a0,0x00526e60,0x0063c1a0
 12503,function,ECBase::ECDynArray<ActionBarFloaty*>::operator[],,0x0063c1d0,0x00526e90,0x0063c1d0
 12504,function,ECBase::ECDynArray<OffscreenIndicatorFloaty*>::operator[],,0x0063c200,0x00526ec0,0x0063c200
 12505,function,ECBase::ECDynArray<DebugWorldSpaceTextFloaty*>::operator[],,0x0063c230,0x00526ef0,0x0063c230
-12506,function,GUI::GUIFloatyLayer::DisplayStatusMessage,,0x0063c260,0x00526f20,0x0063c260
+12506,function,FloatyLayer::DisplayStatusMessage,,0x0063c260,0x00526f20,0x0063c260
 12507,function,"std::_Distance2<std::_Tree_const_iterator<std::_Tmap_traits<unsigned int,Floaty *>>,unsigned int>",,0x0063c2e0,0x007dff40,0x0063c2e0
-12508,function,GUI::GUIFloatyLayer::HasDescriptionFloaty,,0x0063c320,0x00526fa0,0x0063c320
-12509,function,GUI::GUIFloatyLayer::CountFloatiesOfKind,,0x0063c3f0,0x00527070,0x0063c3f0
+12508,function,FloatyLayer::HasDescriptionFloaty,,0x0063c320,0x00526fa0,0x0063c320
+12509,function,FloatyLayer::CountFloatiesOfKind,,0x0063c3f0,0x00527070,0x0063c3f0
 12510,function,ECBase::ECDynArray<unsigned int>::IndexOf,"__thiscall (ecx to edi at 0x0063C4B6), ret 4: the index of the first element equal to *arg, or -1, with the checked iterators. ECDynArray<std::pair<unsigned int,unsigned int>>::IndexOf'""'""'s body (0x0062B140) with a one-dword compare and stride 4 (sar 2) for its two dwords and stride 8. Caller CCObject::SetSceneControlled (0x00698E50). It was named Core::VectorIndexOf<unsigned int> (decomp-agent, read 2026-11-24)",0x0063c4b0,0x004cbec0,0x0063c4b0
 12511,function,GUI::FloatyPool<StatsFloaty>::Release,,0x0063c540,0x00527130,0x0063c540
 12512,function,GUI::FloatyPool<MessageFloaty>::Release,,0x0063c660,0x00527250,0x0063c660
@@ -12521,7 +12521,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12520,function,GUI::FloatyPool<ActionBarFloaty>::ReleaseAll,,0x0063ccf0,0x005278e0,0x0063ccf0
 12521,function,GUI::FloatyPool<OffscreenIndicatorFloaty>::ReleaseAll,,0x0063cd40,0x00527930,0x0063cd40
 12522,function,GUI::FloatyPool<DebugWorldSpaceTextFloaty>::ReleaseAll,,0x0063cd90,0x00527980,0x0063cd90
-12523,function,GUI::GUIFloatyLayer::ReleaseFloaty,,0x0063cde0,0x005279d0,0x0063cde0
+12523,function,FloatyLayer::ReleaseFloaty,,0x0063cde0,0x005279d0,0x0063cde0
 12524,retired,,,,,
 12525,function,GUI::FloatyPool<StatsFloaty>::~FloatyPool,,0x0063cea0,0x00527a90,0x0063cea0
 12526,function,GUI::FloatyPool<MessageFloaty>::~FloatyPool,,0x0063cf50,0x00527b40,0x0063cf50
@@ -12543,7 +12543,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12542,function,GUI::FloatyPool<OffscreenIndicatorFloaty>::Acquire,,0x0063da70,0x00528660,0x0063da70
 12543,function,GUI::FloatyPool<DebugWorldSpaceTextFloaty>::Grow,,0x0063db60,0x00528750,0x0063db60
 12544,function,GUI::FloatyPool<DebugWorldSpaceTextFloaty>::Acquire,,0x0063dc10,0x00528800,0x0063dc10
-12545,function,GUI::GUIFloatyLayer::RemoveFloaty,,0x0063dd00,0x005289d0,0x0063dd00
+12545,function,FloatyLayer::RemoveFloaty,,0x0063dd00,0x005289d0,0x0063dd00
 12546,function,ObjectMap::EraseAllWithValue,,0x0063dd70,0x00528a40,0x0063dd70
 12547,function,GUI::FloatyPool<StatsFloaty>::FloatyPool,,0x0063de60,0x00528b30,0x0063de60
 12548,function,GUI::FloatyPool<StatsFloaty>::AcquireAndConstruct,,0x0063def0,0x00528bc0,0x0063def0
@@ -12557,13 +12557,13 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 12556,function,GUI::FloatyPool<OffscreenIndicatorFloaty>::AcquireAndConstruct,,0x0063e2b0,0x00528f80,0x0063e2b0
 12557,function,GUI::FloatyPool<DebugWorldSpaceTextFloaty>::FloatyPool,,0x0063e310,0x00528fe0,0x0063e310
 12558,function,GUI::FloatyPool<DebugWorldSpaceTextFloaty>::AcquireAndConstruct,,0x0063e3a0,0x00529070,0x0063e3a0
-12559,function,GUI::GUIFloatyLayer::GUIFloatyLayer,,0x0063e400,0x005290d0,0x0063e400
-12560,function,GUI::GUIFloatyLayer::CreateFloaty,,0x0063e4a0,0x00529170,0x0063e4a0
-12561,function,GUI::GUIFloatyLayer::AddFloaty,,0x0063e530,0x00529200,0x0063e530
-12562,function,GUI::GUIFloatyLayer::Update,,0x0063e5b0,0x00529280,0x0063e5b0
-12563,function,GUI::GUIFloatyLayer::AddMessageFloaty,,0x0063faf0,0x0052a7c0,0x0063faf0
-12564,function,GUI::GUIFloatyLayer::SignalDamage,,0x0063fb80,0x0052a850,0x0063fb80
-12565,function,GUI::GUIFloatyLayer::ShowFloatyIcon,,0x0063fcf0,0x0052a9c0,0x0063fcf0
+12559,function,FloatyLayer::FloatyLayer,"FloatyLayer::Get (0x00523880) allocates 0x50 bytes (push 0x50 at 0x005238AA) and builds them with this (0x005238C6), keeping the result in FloatyLayer::Get::s_instance; it stores no vftable, so it is not the RTTI class GUI::GUIFloatyLayer (a 0xC0-byte GUIScene, constructor 0x00724FE0). It was named GUI::GUIFloatyLayer::GUIFloatyLayer (decomp-agent, read 2026-11-24)",0x0063e400,0x005290d0,0x0063e400
+12560,function,FloatyLayer::CreateFloaty,,0x0063e4a0,0x00529170,0x0063e4a0
+12561,function,FloatyLayer::AddFloaty,,0x0063e530,0x00529200,0x0063e530
+12562,function,FloatyLayer::Update,,0x0063e5b0,0x00529280,0x0063e5b0
+12563,function,FloatyLayer::AddMessageFloaty,,0x0063faf0,0x0052a7c0,0x0063faf0
+12564,function,FloatyLayer::SignalDamage,,0x0063fb80,0x0052a850,0x0063fb80
+12565,function,FloatyLayer::ShowFloatyIcon,,0x0063fcf0,0x0052a9c0,0x0063fcf0
 12566,function,GameModeController::HandleMessage_RawInputMessage,,0x0063fe70,0x00535610,0x0063fe70
 12567,function,UserTogglePauseMessage::GetType,,0x0063fe90,0x0050a640,0x0063fe90
 12568,function,ShutDownToStartMenuMessage::GetType,,0x0063fed0,0x0050b600,0x0063fed0
@@ -97012,14 +97012,14 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 97011,data,"SmartData::ArrayMemberIteratorImpl<ECBase::ECDynArray<SmartData::Attribute<bool,SmartData::NoMemberLookup,SmartData::InternalStorage,SmartData::ObserverNotification>>>::typeinfo",,0x00c00a38,0x00bfc8d0,0x00c00a38
 97012,data,CCParty::typeinfo,,0x00c00ae4,0x00bfc97c,0x00c00ae4
 97013,data,ItemPossessor::typeinfo,,0x00c00afc,0x00bf6970,0x00c00afc
-97014,data,GUI::GUIFloatyLayer::CalcDistanceScale::s_scaleNear,"Float 1.0 in .data, read only by CalcDistanceScale 0x0063BFA0; the scale at depth <= s_depthNear: Lerp's first value (a) in the final call 0x0063BF60; the result is Lerp(s_scaleNear, s_scaleFar, clamp01(InverseLerp(depth, s_depthNear, s_depthFar))) as the floaty's size [C]; no immediate writer found.",0x00c00b18,0x00bf33c4,0x00c00b18
-97015,data,GUI::GUIFloatyLayer::CalcDistanceScale::s_depthNear,"Float 5.0 in .data, read only by CalcDistanceScale 0x0063BFA0; depth in metres at which shrinking starts: InverseLerp's low end; the result is Lerp(s_scaleNear, s_scaleFar, clamp01(InverseLerp(depth, s_depthNear, s_depthFar))) as the floaty's size [C]; no immediate writer found.",0x00c00b1c,0x00bf33c8,0x00c00b1c
-97016,data,GUI::GUIFloatyLayer::CalcDistanceScale::s_scaleFar,"Float 0.6666667 (0x3F2AAAAB) in .data, read only by CalcDistanceScale 0x0063BFA0; the scale at depth >= s_depthFar: Lerp's second value (b); the result is Lerp(s_scaleNear, s_scaleFar, clamp01(InverseLerp(depth, s_depthNear, s_depthFar))) as the floaty's size [C]; no immediate writer found.",0x00c00b20,0x00bf33cc,0x00c00b20
-97017,data,GUI::GUIFloatyLayer::CalcDistanceScale::s_depthFar,"Float 30.0 in .data, read only by CalcDistanceScale 0x0063BFA0; depth in metres at which shrinking ends: InverseLerp's high end; the result is Lerp(s_scaleNear, s_scaleFar, clamp01(InverseLerp(depth, s_depthNear, s_depthFar))) as the floaty's size [C]; no immediate writer found.",0x00c00b24,0x00bf33d0,0x00c00b24
-97018,data,GUI::GUIFloatyLayer::CalcNearScale::s_valueNear,"Float 1.0 in .data, read only by CalcNearScale 0x0063C020; Lerp's first value (a); the result is Lerp(s_valueNear, s_valueFar, clamp01(InverseLerp(depth, s_depthNear, s_depthFar))), and both values are 1.0, so it is always 1 whatever the depth (it is the floaty's alpha in GUIFloatyLayer::Update) [C]; no immediate writer found.",0x00c00b28,0x00bf33d4,0x00c00b28
-97019,data,GUI::GUIFloatyLayer::CalcNearScale::s_depthNear,"Float 2.0 in .data, read only by CalcNearScale 0x0063C020; InverseLerp's low end, depth in metres; the result is Lerp(s_valueNear, s_valueFar, clamp01(InverseLerp(depth, s_depthNear, s_depthFar))), and both values are 1.0, so it is always 1 whatever the depth (it is the floaty's alpha in GUIFloatyLayer::Update) [C]; no immediate writer found.",0x00c00b2c,0x00bf33d8,0x00c00b2c
-97020,data,GUI::GUIFloatyLayer::CalcNearScale::s_valueFar,"Float 1.0 in .data, read only by CalcNearScale 0x0063C020; Lerp's second value (b); the result is Lerp(s_valueNear, s_valueFar, clamp01(InverseLerp(depth, s_depthNear, s_depthFar))), and both values are 1.0, so it is always 1 whatever the depth (it is the floaty's alpha in GUIFloatyLayer::Update) [C]; no immediate writer found.",0x00c00b30,0x00bf33dc,0x00c00b30
-97021,data,GUI::GUIFloatyLayer::CalcNearScale::s_depthFar,"Float 7.0 (0x40E00000) in .data, read only by CalcNearScale 0x0063C020; InverseLerp's high end, depth in metres; the result is Lerp(s_valueNear, s_valueFar, clamp01(InverseLerp(depth, s_depthNear, s_depthFar))), and both values are 1.0, so it is always 1 whatever the depth (it is the floaty's alpha in GUIFloatyLayer::Update) [C]; no immediate writer found.",0x00c00b34,0x00bf33e0,0x00c00b34
+97014,data,FloatyLayer::CalcDistanceScale::s_scaleNear,"Float 1.0 in .data, read only by CalcDistanceScale 0x0063BFA0; the scale at depth <= s_depthNear: Lerp's first value (a) in the final call 0x0063BF60; the result is Lerp(s_scaleNear, s_scaleFar, clamp01(InverseLerp(depth, s_depthNear, s_depthFar))) as the floaty's size [C]; no immediate writer found.",0x00c00b18,0x00bf33c4,0x00c00b18
+97015,data,FloatyLayer::CalcDistanceScale::s_depthNear,"Float 5.0 in .data, read only by CalcDistanceScale 0x0063BFA0; depth in metres at which shrinking starts: InverseLerp's low end; the result is Lerp(s_scaleNear, s_scaleFar, clamp01(InverseLerp(depth, s_depthNear, s_depthFar))) as the floaty's size [C]; no immediate writer found.",0x00c00b1c,0x00bf33c8,0x00c00b1c
+97016,data,FloatyLayer::CalcDistanceScale::s_scaleFar,"Float 0.6666667 (0x3F2AAAAB) in .data, read only by CalcDistanceScale 0x0063BFA0; the scale at depth >= s_depthFar: Lerp's second value (b); the result is Lerp(s_scaleNear, s_scaleFar, clamp01(InverseLerp(depth, s_depthNear, s_depthFar))) as the floaty's size [C]; no immediate writer found.",0x00c00b20,0x00bf33cc,0x00c00b20
+97017,data,FloatyLayer::CalcDistanceScale::s_depthFar,"Float 30.0 in .data, read only by CalcDistanceScale 0x0063BFA0; depth in metres at which shrinking ends: InverseLerp's high end; the result is Lerp(s_scaleNear, s_scaleFar, clamp01(InverseLerp(depth, s_depthNear, s_depthFar))) as the floaty's size [C]; no immediate writer found.",0x00c00b24,0x00bf33d0,0x00c00b24
+97018,data,FloatyLayer::CalcNearScale::s_valueNear,"Float 1.0 in .data, read only by CalcNearScale 0x0063C020; Lerp's first value (a); the result is Lerp(s_valueNear, s_valueFar, clamp01(InverseLerp(depth, s_depthNear, s_depthFar))), and both values are 1.0, so it is always 1 whatever the depth (it is the floaty's alpha in GUIFloatyLayer::Update) [C]; no immediate writer found.",0x00c00b28,0x00bf33d4,0x00c00b28
+97019,data,FloatyLayer::CalcNearScale::s_depthNear,"Float 2.0 in .data, read only by CalcNearScale 0x0063C020; InverseLerp's low end, depth in metres; the result is Lerp(s_valueNear, s_valueFar, clamp01(InverseLerp(depth, s_depthNear, s_depthFar))), and both values are 1.0, so it is always 1 whatever the depth (it is the floaty's alpha in GUIFloatyLayer::Update) [C]; no immediate writer found.",0x00c00b2c,0x00bf33d8,0x00c00b2c
+97020,data,FloatyLayer::CalcNearScale::s_valueFar,"Float 1.0 in .data, read only by CalcNearScale 0x0063C020; Lerp's second value (b); the result is Lerp(s_valueNear, s_valueFar, clamp01(InverseLerp(depth, s_depthNear, s_depthFar))), and both values are 1.0, so it is always 1 whatever the depth (it is the floaty's alpha in GUIFloatyLayer::Update) [C]; no immediate writer found.",0x00c00b30,0x00bf33dc,0x00c00b30
+97021,data,FloatyLayer::CalcNearScale::s_depthFar,"Float 7.0 (0x40E00000) in .data, read only by CalcNearScale 0x0063C020; InverseLerp's high end, depth in metres; the result is Lerp(s_valueNear, s_valueFar, clamp01(InverseLerp(depth, s_depthNear, s_depthFar))), and both values are 1.0, so it is always 1 whatever the depth (it is the floaty's alpha in GUIFloatyLayer::Update) [C]; no immediate writer found.",0x00c00b34,0x00bf33e0,0x00c00b34
 97022,data,SetGameModeMessage::s_classInfo,,0x00c00b38,0x00bf1aac,0x00c00b38
 97023,data,SetGameModeMessage::s_classInfo.parent,,0x00c00b3c,0x00bf1ab0,0x00c00b3c
 97024,data,PauseMessage::s_classInfo,,0x00c00b40,0x00bf2b5c,0x00c00b40
@@ -101227,17 +101227,17 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 101226,data,,,0x00c3434c,,0x00c3434c
 101227,data,,,0x00c34384,,0x00c34384
 101228,data,FloatyLayer::Get::s_instance,,0x00c343c0,0x00c1d850,0x00c343c0
-101229,data,GUI::GUIFloatyLayer::AddFloaty::s_lastFloatyId,,0x00c343c4,0x00c1d854,0x00c343c4
+101229,data,FloatyLayer::AddFloaty::s_lastFloatyId,,0x00c343c4,0x00c1d854,0x00c343c4
 101230,data,,,0x00c343c8,,0x00c343c8
 101231,data,,,0x00c34400,,0x00c34400
 101232,data,,,0x00c34438,,0x00c34438
 101233,data,,,0x00c34470,,0x00c34470
-101234,data,GUI::GUIFloatyLayer::s_statsFloatyPool,"A GUI::FloatyPool<StatsFloaty> (0x48 bytes by its own layout; the row says up to 0x48 to the next global) for floaty kind 1, made at startup by 0x00ad0990 with an initial capacity of 12 and destroyed by 0x00ad6bf0 at exit; GUIFloatyLayer::CreateFloaty (0x0063e4a0) takes a floaty from it through the kind jump table at 0x0063e50c and ReleaseFloaty (0x0063cde0) gives it back through the table at 0x0063ce80.",0x00c344a8,0x00c1d938,0x00c344a8
-101235,data,GUI::GUIFloatyLayer::s_messageFloatyPool,"A GUI::FloatyPool<MessageFloaty> (0x48 bytes by its own layout; the row says up to 0x48 to the next global) for floaty kind 2, made at startup by 0x00ad09b0 with an initial capacity of 12 and destroyed by 0x00ad6c00 at exit; GUIFloatyLayer::CreateFloaty (0x0063e4a0) takes a floaty from it through the kind jump table at 0x0063e50c and ReleaseFloaty (0x0063cde0) gives it back through the table at 0x0063ce80.",0x00c344f0,0x00c1d980,0x00c344f0
-101236,data,GUI::GUIFloatyLayer::s_iconFloatyPool,"A GUI::FloatyPool<IconFloaty> (0x48 bytes by its own layout; the row says up to 0x48 to the next global) for floaty kind 3, made at startup by 0x00ad09d0 with an initial capacity of 5 and destroyed by 0x00ad6c10 at exit; GUIFloatyLayer::CreateFloaty (0x0063e4a0) takes a floaty from it through the kind jump table at 0x0063e50c and ReleaseFloaty (0x0063cde0) gives it back through the table at 0x0063ce80.",0x00c34538,0x00c1d9c8,0x00c34538
-101237,data,GUI::GUIFloatyLayer::s_actionBarFloatyPool,"A GUI::FloatyPool<ActionBarFloaty> (0x48 bytes by its own layout; the row says up to 0x48 to the next global) for floaty kind 4, made at startup by 0x00ad09f0 with an initial capacity of 5 and destroyed by 0x00ad6c20 at exit; GUIFloatyLayer::CreateFloaty (0x0063e4a0) takes a floaty from it through the kind jump table at 0x0063e50c and ReleaseFloaty (0x0063cde0) gives it back through the table at 0x0063ce80.",0x00c34580,0x00c1da10,0x00c34580
-101238,data,GUI::GUIFloatyLayer::s_offscreenIndicatorFloatyPool,"A GUI::FloatyPool<OffscreenIndicatorFloaty> (0x48 bytes by its own layout; the row says up to 0x48 to the next global) for floaty kind 5, made at startup by 0x00ad0a10 with an initial capacity of 5 and destroyed by 0x00ad6c30 at exit; GUIFloatyLayer::CreateFloaty (0x0063e4a0) takes a floaty from it through the kind jump table at 0x0063e50c and ReleaseFloaty (0x0063cde0) gives it back through the table at 0x0063ce80.",0x00c345c8,0x00c1da58,0x00c345c8
-101239,data,GUI::GUIFloatyLayer::s_debugWorldSpaceTextFloatyPool,"A GUI::FloatyPool<DebugWorldSpaceTextFloaty> (0x48 bytes by its own layout; the row says up to 0x5c to the next global) for floaty kind 6, made at startup by 0x00ad0a30 with an initial capacity of 2 and destroyed by 0x00ad6c40 at exit; GUIFloatyLayer::CreateFloaty (0x0063e4a0) takes a floaty from it through the kind jump table at 0x0063e50c and ReleaseFloaty (0x0063cde0) gives it back through the table at 0x0063ce80.",0x00c34610,0x00c1daa0,0x00c34610
+101234,data,FloatyLayer::s_statsFloatyPool,"A GUI::FloatyPool<StatsFloaty> (0x48 bytes by its own layout; the row says up to 0x48 to the next global) for floaty kind 1, made at startup by 0x00ad0990 with an initial capacity of 12 and destroyed by 0x00ad6bf0 at exit; GUIFloatyLayer::CreateFloaty (0x0063e4a0) takes a floaty from it through the kind jump table at 0x0063e50c and ReleaseFloaty (0x0063cde0) gives it back through the table at 0x0063ce80.",0x00c344a8,0x00c1d938,0x00c344a8
+101235,data,FloatyLayer::s_messageFloatyPool,"A GUI::FloatyPool<MessageFloaty> (0x48 bytes by its own layout; the row says up to 0x48 to the next global) for floaty kind 2, made at startup by 0x00ad09b0 with an initial capacity of 12 and destroyed by 0x00ad6c00 at exit; GUIFloatyLayer::CreateFloaty (0x0063e4a0) takes a floaty from it through the kind jump table at 0x0063e50c and ReleaseFloaty (0x0063cde0) gives it back through the table at 0x0063ce80.",0x00c344f0,0x00c1d980,0x00c344f0
+101236,data,FloatyLayer::s_iconFloatyPool,"A GUI::FloatyPool<IconFloaty> (0x48 bytes by its own layout; the row says up to 0x48 to the next global) for floaty kind 3, made at startup by 0x00ad09d0 with an initial capacity of 5 and destroyed by 0x00ad6c10 at exit; GUIFloatyLayer::CreateFloaty (0x0063e4a0) takes a floaty from it through the kind jump table at 0x0063e50c and ReleaseFloaty (0x0063cde0) gives it back through the table at 0x0063ce80.",0x00c34538,0x00c1d9c8,0x00c34538
+101237,data,FloatyLayer::s_actionBarFloatyPool,"A GUI::FloatyPool<ActionBarFloaty> (0x48 bytes by its own layout; the row says up to 0x48 to the next global) for floaty kind 4, made at startup by 0x00ad09f0 with an initial capacity of 5 and destroyed by 0x00ad6c20 at exit; GUIFloatyLayer::CreateFloaty (0x0063e4a0) takes a floaty from it through the kind jump table at 0x0063e50c and ReleaseFloaty (0x0063cde0) gives it back through the table at 0x0063ce80.",0x00c34580,0x00c1da10,0x00c34580
+101238,data,FloatyLayer::s_offscreenIndicatorFloatyPool,"A GUI::FloatyPool<OffscreenIndicatorFloaty> (0x48 bytes by its own layout; the row says up to 0x48 to the next global) for floaty kind 5, made at startup by 0x00ad0a10 with an initial capacity of 5 and destroyed by 0x00ad6c30 at exit; GUIFloatyLayer::CreateFloaty (0x0063e4a0) takes a floaty from it through the kind jump table at 0x0063e50c and ReleaseFloaty (0x0063cde0) gives it back through the table at 0x0063ce80.",0x00c345c8,0x00c1da58,0x00c345c8
+101239,data,FloatyLayer::s_debugWorldSpaceTextFloatyPool,"A GUI::FloatyPool<DebugWorldSpaceTextFloaty> (0x48 bytes by its own layout; the row says up to 0x5c to the next global) for floaty kind 6, made at startup by 0x00ad0a30 with an initial capacity of 2 and destroyed by 0x00ad6c40 at exit; GUIFloatyLayer::CreateFloaty (0x0063e4a0) takes a floaty from it through the kind jump table at 0x0063e50c and ReleaseFloaty (0x0063cde0) gives it back through the table at 0x0063ce80.",0x00c34610,0x00c1daa0,0x00c34610
 101240,data,ECBase::ECDynArray<StatsFloaty*>::s_default,,0x00c34654,0x00c1dae4,0x00c34654
 101241,data,ECBase::ECDynArray<MessageFloaty*>::s_default,,0x00c34658,0x00c1dae8,0x00c34658
 101242,data,ECBase::ECDynArray<IconFloaty*>::s_default,,0x00c3465c,0x00c1daec,0x00c3465c
