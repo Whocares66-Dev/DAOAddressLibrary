@@ -2749,7 +2749,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 2748,function,Renderer::EclipseUmbraScene::ApplyCutoffToMesh,,0x00466930,0x0089fec0,0x00466930
 2749,function,Renderer::EclipseUmbraScene::UpdateUmbraCamera,,0x00466a20,0x0089ffb0,0x00466a20
 2750,function,Renderer::EclipseUmbraScene::CreateObbModel,,0x00466eb0,0x008a0440,0x00466eb0
-2751,function,PtrVector_AtOrDefault,,0x00466f10,0x00505820,0x00466f10
+2751,function,ECBase::ECDynArray<?>::At,"ecx the array: the element's address, or 0x00C1EF60 when the index is past the end; ret 4; 4-byte pointer elements. Its default is not ECDynArray<void*>'s (0x00C2C10C), so the element type is open. It was named PtrVector_AtOrDefault (decomp-agent, read 2026-11-24)",0x00466f10,0x00505820,0x00466f10
 2752,function,Renderer::EclipseUmbraScene::ApplyCutoffToNode,,0x00466f40,0x008a04a0,0x00466f40
 2753,function,Renderer::EclipseUmbraScene::ClearObjectsVisibleFlag,,0x00467000,0x008a0560,0x00467000
 2754,function,Renderer::ResolveVisibilityAndDraw,,0x00467050,0x008a05b0,0x00467050
@@ -6863,7 +6863,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 6862,function,GuiExternal::ReplaceDesignerTags,,0x0051f2f0,0x007c8140,0x0051f2f0
 6863,function,GuiFSCommand::ReplaceDesignerTags,,0x0051f410,0x007c8260,0x0051f410
 6864,function,"Map<unsigned int,?>::FindValue","__thiscall on the Map, ret 4: the std map'""'""'s find (0x007F4F60), then the found value'""'""'s address or the Map'""'""'s default (this+0x10). The engine'""'""'s Map<K,V>, beside TryFind (0x004F2F00) and ValueOrDefault (0x0050B4D0); it was named Core::MapFindValue<unsigned int,void*> (decomp-agent, read 2026-11-24)",0x0051f4f0,0x00806f80,0x0051f4f0
-6865,function,Core::VectorIndexOf<std::wstring>,,0x0051f550,0x00505c80,0x0051f550
+6865,function,ECBase::ECDynArray<std::wstring>::IndexOf,"ecx the array (mov esi,ecx; first +4, last +8): the index of a string in an ECDynArray, for AnimBase's trees, GUIPaperdoll and ECResMan::TypeList. It was named Core::VectorIndexOf<std::wstring> (decomp-agent, read 2026-11-24)",0x0051f550,0x00505c80,0x0051f550
 6866,function,GuiCommands::DispatchFSCommand,,0x0051f5f0,0x007c8340,0x0051f5f0
 6867,function,GuiCommands::DispatchExternalInterface,,0x0051f640,0x007c8390,0x0051f640
 6868,function,"std::basic_string<char,std::char_traits<char>,ECMemory::StringAllocator<char>>::substr",,0x0051f6a0,0x007c83f0,0x0051f6a0
@@ -23640,7 +23640,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 23639,function,D3DDriver::D3DGraphicsDriver::`scalar deleting destructor',Runs ~D3DGraphicsDriver and deletes the object when bit 0 of the flag argument is set.,0x0086b540,0x00471590,0x0086b540
 23640,function,D3DDriver::D3DGraphicsDriver::QueryTextureFilterSupport,,0x0086b560,0x004715b0,0x0086b560
 23641,function,D3DDriver::D3DGraphicsDriver::LoadMeshFromXFile,"D3DXLoadMeshFromXW (options 0x220, managed) on a wide file name, then locks the mesh's vertex and index buffers and pours them into arrays of Vector4 by declaration usage: position (arg+0xC), normal (+0x10), tangent (+0x14), binormal (+0x18), texture coordinates per set (+0x1C, an array of arrays) and a triangle index list (+0x20, from 16- or 32-bit indices); the caller is reached through the vtable only.",0x0086b610,0x00471660,0x0086b610
-23642,function,Core::VectorClear<?>,,0x0086b9a0,0x007f0dc0,0x0086b9a0
+23642,function,ECBase::ECDynArray<?>::Clear(bool),"ecx the array, a bool tested at entry (0x0086B9C8), ret 4: the engine array's Clear(bool), shared by several element types. It was named Core::VectorClear<?> (decomp-agent, read 2026-11-24)",0x0086b9a0,0x007f0dc0,0x0086b9a0
 23643,function,D3DDriver::D3DGraphicsDriver::D3DGraphicsDriver,"Constructor: sets vftable 0x00B2E174, stores the window and creation parameters, builds the D3DStateCache at +0x1AC, copies the 0x48-byte creation parameters, creates the capabilities driver at +0xFC and fills the translation tables (0x008681B0, 0x00868210).",0x0086ba80,0x004719f0,0x0086ba80
 23644,function,D3DDriver::D3DGraphicsDriver::RegisterResetable,Under the driver's lock (+0x184) appends the argument to the vector of resetables at +0x174; called by the D3DResetable constructor.,0x0086bc90,0x00471c00,0x0086bc90
 23645,function,D3DDriver::D3DDisplaySettings::SetFlags,,0x0086bcc0,0x00471c30,0x0086bcc0
@@ -100019,7 +100019,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100018,data,Vector3::Zero::s_guard,guard word of the zero vector,0x00c1ef50,0x00c1aaf0,0x00c1ef50
 100019,data,Renderer::EclipseUmbraScene::s_nonOpaquePassMask,,0x00c1ef58,0x00c31810,0x00c1ef58
 100020,data,Renderer::EclipseUmbraScene::s_nonOpaquePassMask.high,,0x00c1ef5c,0x00c31814,0x00c1ef5c
-100021,data,PtrVector_AtOrDefault::s_default,"A null pointer returned by PtrVector_AtOrDefault 0x00466F10 for an out-of-range index; EclipseUmbraScene::RemoveObject 0x00467728 and AddObject 0x004681DB, Object::SetLightmapOnMeshNodes and AnimBaseWield::LoadWeapon read it too (45 users: the scene's object-pointer vectors). Name from the function that returns it.",0x00c1ef60,0x00c1c5a8,0x00c1ef60
+100021,data,ECBase::ECDynArray<?>::s_default,"A null pointer returned by PtrVector_AtOrDefault 0x00466F10 for an out-of-range index; EclipseUmbraScene::RemoveObject 0x00467728 and AddObject 0x004681DB, Object::SetLightmapOnMeshNodes and AnimBaseWield::LoadWeapon read it too (45 users: the scene's object-pointer vectors). Name from the function that returns it.",0x00c1ef60,0x00c1c5a8,0x00c1ef60
 100022,data,,,0x00c1ef64,0x00c21504,0x00c1ef64
 100023,data,,,0x00c1ef68,0x00c21508,0x00c1ef68
 100024,data,Renderer::FBEffectBuilderXML2::OnCharacterData::s_text,"A wchar_t[512] scratch (0x400 bytes): OnCharacterData 0x00469C0C copies the text of an element (wcsncpy 0x008E24A0) into it, terminates it (0x00469C27) and passes it to the builder (0x00472580).",0x00c1ef70,0x00c31bd8,0x00c1ef70
@@ -103328,7 +103328,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 103327,function,"std::pair<std::wstring,std::wstring>::~pair",,0x00816990,0x004b6f20,0x00816990
 103328,function,Multithreading::SynchSafePointer<?>::`default constructor closure',"The same GOG body as ID 21942 (0x00812E80), which the linker folded there; EA keeps it apart. Its name follows 21942's (2026-11-24)",0x00812e80,0x004bb610,0x00812e80
 103329,function,,,,0x004c9a40,
-103330,function,Core::VectorClear<?>,,0x0086b9a0,0x004d03a0,0x0086b9a0
+103330,function,ECBase::ECDynArray<?>::Clear(bool),"The same GOG body as ID 23642 (0x0086B9A0), which the linker folded there; EA keeps it apart. Its name follows 23642's (2026-11-24)",0x0086b9a0,0x004d03a0,0x0086b9a0
 103331,function,std::vector<?>::_Buy,,0x00701640,0x004ef380,0x00701640
 103332,function,std::vector<unsigned int>::resize,,0x00610060,0x004fe950,0x00610060
 103333,function,std::vector<unsigned int>::resize,,0x0063d330,0x00527f20,0x0063d330
@@ -103378,7 +103378,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 103377,function,,,0x005175de,0x0075855e,0x005175de
 103378,function,std::vector<?>::resize,,0x004fc550,0x007585f0,0x004fc550
 103379,function,std::vector<?>::insert,,0x00517670,0x007586e0,0x00517670
-103380,function,Core::VectorClear<?>,,0x0086b9a0,0x0075f6b0,0x0086b9a0
+103380,function,ECBase::ECDynArray<?>::Clear(bool),"The same GOG body as ID 23642 (0x0086B9A0), which the linker folded there; EA keeps it apart. Its name follows 23642's (2026-11-24)",0x0086b9a0,0x0075f6b0,0x0086b9a0
 103381,function,Stub::MessageWithWStringAt4_Destroy,,0x0051b0d0,0x007c40d0,0x0051b0d0
 103382,function,,,,0x007c8de0,
 103383,function,GUI::RunConsoleCommandMessage::~RunConsoleCommandMessage,,0x00525240,0x007cc290,0x00525240
