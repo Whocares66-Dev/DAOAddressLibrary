@@ -21512,7 +21512,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21511,function,std::_Tree::_Copy,,0x007fb290,0x00575aa0,0x007fb290
 21512,function,std::_Tree::_Tree,,0x007fb310,0x006e7ee0,0x007fb310
 21513,function,,,0x007fb38c,0x006e7f5c,0x007fb38c
-21514,function,std::vector<FilteredGroupedItemView::Entry>::vector,,0x007fb3a0,0x006e7f70,0x007fb3a0
+21514,function,ECBase::ECDynArray<FilteredGroupedItemView::Entry>::ECDynArray(const ECBase::ECDynArray<FilteredGroupedItemView::Entry>&),"ECDynArray's own copy constructor: zeroes +4, +8, +0xC, then vector::operator= (0x007FA680); ret 4, as ECDynArray<unsigned int>'s (0x0048DE30). VC8's vector copy constructor allocates and copies. Its one caller is FilteredGroupedItemView's copy constructor (0x007FB46A), on its entries (decomp-agent, read 2026-11-25)",0x007fb3a0,0x006e7f70,0x007fb3a0
 21515,function,FilteredGroupedItemView::FilteredGroupedItemView,,0x007fb400,0x006e7fd0,0x007fb400
 21516,function,FilteredGroupedItemView::~FilteredGroupedItemView,,0x007fb4b0,0x006e8080,0x007fb4b0
 21517,function,FilteredGroupedItemView::Refresh,,0x007fb570,0x006e8140,0x007fb570
