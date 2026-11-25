@@ -16024,7 +16024,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16023,function,std::vector<ScriptVariable>::push_back,,0x007038c0,0x005f4e00,0x007038c0
 16024,function,ECBase::ECDynArray<ScriptVariable>::ECDynArray(unsigned int),,0x00703960,0x005f4ea0,0x00703960
 16025,function,std::vector<ScriptVariable>::`default constructor closure',,0x007039f0,0x005f4f30,0x007039f0
-16026,function,ScriptVarTable::CreateVariable,,0x00703a00,0x005f4f40,0x00703a00
+16026,function,ScriptVariableTable::CreateVariable,"Works on ScriptVariableTable's 13 per-type ECDynArray<ScriptVariable> (0x14-byte elements) and its names pointer (+0xD0), like FindVariable. It was named ScriptVarTable::CreateVariable (decomp-agent, 2026-11-24)",0x00703a00,0x005f4f40,0x00703a00
 16027,function,ScriptVariableTable::FindOrCreateVariable,,0x00703bf0,0x005f5130,0x00703bf0
 16028,function,"std::basic_ostream<wchar_t,std::char_traits<wchar_t>>::operator<<(unsigned long)",,0x00703c20,0x005f5160,0x00703c20
 16029,function,Catch_All@00703d34,,0x00703d34,0x005f5274,0x00703d34
@@ -16046,7 +16046,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 16045,function,ScriptVariableTable::WriteToSaveFixedList,,0x00704ba0,0x005f60e0,0x00704ba0
 16046,function,ScriptVariableTable::ReadFromListField17000,,0x00704f60,0x005f64a0,0x00704f60
 16047,function,ScriptVariableTable::ReadFromSaveFixedList,,0x007053d0,0x005f6910,0x007053d0
-16048,function,ScriptVarTable::CopyFrom,,0x00705760,0x005f6ca0,0x00705760
+16048,function,ScriptVariableTable::CopyFrom,"Copies ScriptVariableTable's per-type arrays and names pointer (+0xD0), like FindVariable and FindOrCreateVariable. It was named ScriptVarTable::CopyFrom (decomp-agent, 2026-11-24)",0x00705760,0x005f6ca0,0x00705760
 16049,function,"std::operator<<(std::wstringstream&,unsigned long)",,0x00705a30,0x005f6f70,0x00705a30
 16050,function,ScriptVariableTable::WriteToSave,,0x00705a70,0x005f6fb0,0x00705a70
 16051,function,ScriptVariableTable::ReadFromSave,,0x00705e90,0x005f73d0,0x00705e90
