@@ -20501,7 +20501,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 20500,function,std::vector<MapTrail>::insert,,0x007c8730,0x006af400,0x007c8730
 20501,function,std::vector<MapTrail>::push_back,,0x007c87e0,0x006af4b0,0x007c87e0
 20502,function,ECBase::ECDynArray<MapTrail>::ECDynArray(unsigned int),,0x007c8880,0x006af550,0x007c8880
-20503,function,std::vector<MapTrail>::clear,,0x007c88f0,0x006af5c0,0x007c88f0
+20503,function,ECBase::ECDynArray<MapTrail>::Clear(bool),"ret 4 with a bool tested at entry (0x007C8918), where std::vector::clear takes nothing: the engine array's Clear(bool). It was named std::vector<MapTrail>::clear (decomp-agent, read 2026-11-24)",0x007c88f0,0x006af5c0,0x007c88f0
 20504,function,MapObject::MapObject,,0x007c89f0,0x006af6c0,0x007c89f0
 20505,function,MapObject::LoadFromResource,,0x007c8e40,0x006afb10,0x007c8e40
 20506,function,MapObject::CopyPinsFrom,,0x007c9440,0x006b0110,0x007c9440
@@ -21802,7 +21802,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21801,function,EquipmentSet::~EquipmentSet,,0x0080d400,0x006f9fa0,0x0080d400
 21802,function,MapTrailPoint::MapTrailPoint,,0x0080d410,0x006f9fb0,0x0080d410
 21803,function,MapTrailPoint::~MapTrailPoint,,0x0080d420,0x006f9fc0,0x0080d420
-21804,function,ECBase::ECDynArray<MapTrailPoint>::operator[],,0x0080d430,0x006f9fd0,0x0080d430
+21804,function,ECBase::ECDynArray<MapTrailPoint>::At,"Bounds-checked: size from (last-first)/12 (0x0080D444), and past it returns s_default 0x00C3957C (0x0080D467); else the element's address; ret 4. ECDynArray's At, as ID 21255 for Participant. It was named ECDynArray<MapTrailPoint>::operator[] (decomp-agent, read 2026-11-24)",0x0080d430,0x006f9fd0,0x0080d430
 21805,function,"std::_Copy_backward_opt<MapTrailPoint*,MapTrailPoint*>",,0x0080d470,0x006fa010,0x0080d470
 21806,function,"std::fill<MapTrailPoint*,MapTrailPoint>",,0x0080d4d0,0x006fa070,0x0080d4d0
 21807,function,"std::_Uninit_fill_n<MapTrailPoint*,unsigned int,MapTrailPoint>",,0x0080d500,0x006fa0a0,0x0080d500
@@ -21819,7 +21819,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 21818,function,,,0x0080da19,0x006fa5b9,0x0080da19
 21819,function,std::vector<MapTrailPoint>::resize,,0x0080da90,0x006fa630,0x0080da90
 21820,function,std::vector<MapTrailPoint>::insert,,0x0080dba0,0x006fa740,0x0080dba0
-21821,function,std::vector<MapTrailPoint>::vector(const std::vector<MapTrailPoint>&),,0x0080dc50,0x006fa7f0,0x0080dc50
+21821,function,ECBase::ECDynArray<MapTrailPoint>::ECDynArray(const ECBase::ECDynArray<MapTrailPoint>&),"Zeroes the vector's three pointers, then calls the vector's operator= (0x007C6D70, 0x0080DC8C) with the source and returns this: ECDynArray's copy constructor, as for the other ECDynArray copies; VC8's vector(const vector&) copies its elements itself. It was named std::vector<MapTrailPoint>::vector(const std::vector<MapTrailPoint>&) (decomp-agent, read 2026-11-24)",0x0080dc50,0x006fa7f0,0x0080dc50
 21822,function,std::vector<MapTrailPoint>::push_back,,0x0080dcb0,0x006fa850,0x0080dcb0
 21823,function,MapTrail::MapTrail(const MapTrail&),,0x0080dd50,0x006fa8f0,0x0080dd50
 21824,function,ECBase::ECDynArray<MapTrailPoint>::ECDynArray(unsigned int),,0x0080ddd0,0x006fa970,0x0080ddd0
@@ -102514,7 +102514,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 102513,data,GUI::CharGenMorphConfig::Get::s_guard,Guard word of Get's static s_instance (the unwind funclet 0x00abdc90 clears bit 0).,0x00c39558,0x00c22230,0x00c39558
 102514,data,,,0x00c3955c,0x00c22234,0x00c3955c
 102515,data,,,0x00c39578,0x00c22250,0x00c39578
-102516,data,g_nullMapTrailPoint,,0x00c3957c,0x00c22254,0x00c3957c
+102516,data,ECBase::ECDynArray<MapTrailPoint>::s_default,"The 12-byte MapTrailPoint that ECDynArray<MapTrailPoint>::At (0x0080D430) returns past the end. It was named g_nullMapTrailPoint (decomp-agent, 2026-11-24)",0x00c3957c,0x00c22254,0x00c3957c
 102517,data,,,0x00c39594,,0x00c39594
 102518,data,,,0x00c39598,,0x00c39598
 102519,data,Animation::AnimationManager::FindTree::s_keyString,"function-static wstring (0x1c), the key for the tree map lookup",0x00c395a0,0x00c1ab90,0x00c395a0
