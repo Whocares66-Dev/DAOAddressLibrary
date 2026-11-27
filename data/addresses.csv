@@ -633,7 +633,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 632,function,GImage::GImage,,0x00419e60,0x0041a160,0x00419e60
 633,function,GImage::~GImage,,0x00419ef0,0x0041a1f0,0x00419ef0
 634,function,GImage::Create,"Static, __stdcall, ret 0xC: (format, width, height); allocates 0x38 bytes (0x00419220), runs the GImage(format, width, height) constructor (0x00419E60) on them and returns the image, or null where its data was not allocated (read 2026-11-23)",0x00419f20,0x0041a220,0x00419f20
-635,function,,,0x00419f80,0x0041a280,0x00419f80
+635,function,GImage::ReadTga,,0x00419f80,0x0041a280,0x00419f80
 636,function,,,0x0041a660,0x0041a960,0x0041a660
 637,function,GLock::~GLock,,0x0041a840,0x0041ab40,0x0041a840
 638,function,,,0x0041a860,0x0041ab60,0x0041a860
@@ -27657,8 +27657,8 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 27656,function,,,0x00928ad0,0x009001c0,0x00928ad0
 27657,function,,,0x00928b10,0x00900200,0x00928b10
 27658,function,,,0x00928bb0,0x009002b0,0x00928bb0
-27659,function,,,0x00928fd0,0x009006d0,0x00928fd0
-27660,function,,,0x00929080,0x00900780,0x00929080
+27659,function,GFxEditTextCharacter::AddIdImageDescAssoc,,0x00928fd0,0x009006d0,0x00928fd0
+27660,function,GFxEditTextCharacter::ProceedImageSubstitution,,0x00929080,0x00900780,0x00929080
 27661,function,GASTextFieldProto::setImageSubstitutions,"Native of ActionScript's setImageSubstitutions: the name/function table at 0x00B49470, which GASTextFieldProto's constructor installs, pairs it with ""setImageSubstitutions"" (2026-11-20).",0x009296a0,0x00900da0,0x009296a0
 27662,function,GASTextFieldObject::GASTextFieldObject,,0x009297c0,0x00900ec0,0x009297c0
 27663,function,GASTextFieldObject::`scalar deleting destructor'`adjustor{16}',,0x00929810,0x00900f10,0x00929810
@@ -28084,7 +28084,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28083,function,,,0x0093bf20,0x00913660,0x0093bf20
 28084,function,GASEnvironment::SetLocal,,0x0093cc30,0x00914370,0x0093cc30
 28085,function,GASEnvironment::PrimitiveToTempObject,,0x0093cc80,0x009143c0,0x0093cc80
-28086,function,,,0x0093cd50,0x00914490,0x0093cd50
+28086,function,GASEnvironment::GetVariableRaw,,0x0093cd50,0x00914490,0x0093cd50
 28087,function,,,0x0093d340,0x00914a80,0x0093d340
 28088,function,,,0x0093d7e0,0x00914f20,0x0093d7e0
 28089,function,GASEnvironment::SetVariable,"Scaleform 2.1.57 unique string match: ""Error: SetVariable failed: can't resolve the path """,0x0093da90,0x009151d0,0x0093da90
@@ -28596,7 +28596,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 28595,function,,,0x0095ece0,0x00936450,0x0095ece0
 28596,function,,,0x0095ed40,0x009364b0,0x0095ed40
 28597,function,,,0x0095ee90,0x00936600,0x0095ee90
-28598,function,,,0x0095eef0,0x00936660,0x0095eef0
+28598,function,GFxCompactedFont<GPodVector<UByte>>::GetKerningAdjustment,,0x0095eef0,0x00936660,0x0095eef0
 28599,function,,,0x0095efc0,0x00936730,0x0095efc0
 28600,function,,,0x0095f1a0,0x00936910,0x0095f1a0
 28601,function,,,0x0095f220,0x00936990,0x0095f220
@@ -29672,7 +29672,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 29671,function,GFxTextDocView::GetLineText,,0x00996ec0,0x0096d510,0x00996ec0
 29672,function,GFxTextDocView::GetLineMetrics,,0x00996f90,0x0096d5e0,0x00996f90
 29673,function,GFxTextDocView::GetCharBoundaries,,0x009970c0,0x0096d710,0x009970c0
-29674,function,,,0x009972c0,0x0096d910,0x009972c0
+29674,function,GFxTextDocView::GetExactCharBoundaries,,0x009972c0,0x0096d910,0x009972c0
 29675,function,GFxTextDocView::GetBottomVScroll,,0x009975e0,0x0096dc30,0x009975e0
 29676,function,,,0x00997660,0x0096dcb0,0x00997660
 29677,function,GFxTextDocView::Display,,0x00998420,0x0096ea70,0x00998420
@@ -103401,7 +103401,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 103399,function,,,0x00906fc4,0x008dd610,0x00906fc4
 103400,function,,,,0x008df7f0,
 103401,function,,,,0x008df8a0,
-103402,function,,,0x00944a60,0x0091c190,0x00944a60
+103402,retired,,,,,
 103403,function,ECBase::ECDynArray<unsigned int>::ECDynArray(unsigned int),,0x0040d610,0x00a677e0,0x0040d610
 103404,function,,,0x00a74720,0x00a6a470,0x00a74720
 103405,function,,,0x00a74728,0x00a6a478,0x00a74728
@@ -104404,3 +104404,4 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 104402,function,,,0x00501e1d,0x007e9fed,0x00501e1d
 104403,function,GameModeCharGen::SetFinished,"Stores 1 in GameModeCharGen +0x86 (finished) and returns. Reached only by the tail jump at 0x0060B241 in GUI::DragonAgeGUISystem::FinishFullScreenGUIForMode, with ecx = the character-generation mode; it follows the destructor's own tail jump with no padding, which is why it had no ID until 2026-11-16.",0x00719290,0x0060a3f0,0x00719290
 104404,function,CNetLayerInternal::ReceiveTcpSocket,"The internal half of CNetLayer::ReceiveTcpSocket (0x00A34760), which loads ecx from its +8 and tail-jumps here. For the socket slot *socketIndex: when its state word at this+0xCF0+4*i is 1, selects for reading on the socket at this+0xCD0+4*i and, if it is readable, recv's up to *size bytes into *buffer. Answers -1 where select or recv fails or the peer closed, 1 with *size set to what arrived, 0 when nothing is waiting. It follows the function before it with no padding after that one's tail jump, which is why it had no ID until 2026-11-16.",0x00a43ba0,0x008471c0,0x00a43ba0
+104405,function,,"Follows GImage::ReadTga (0x00419F80, 1584 bytes) immediately at 16-byte boundary 0x0041A5B0 with no padding (2026-11-27).",0x0041a5b0,,0x0041a5b0
