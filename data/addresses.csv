@@ -100890,7 +100890,7 @@ id,kind,name,comment,gog-1.05,ea-1.05,steam-1.05
 100888,data,,,0x00c32af7,0x00c1b54f,0x00c32af7
 100889,data,ECBase::ECDynArray<AddInXmlEntry>::s_default,"0x2C4-byte default AddInXmlEntry (divisor 708 at 0x005fa254): constructed by the dynamic initialiser 0x00ad03c0 (AddInXmlEntry::AddInXmlEntry 0x005f3240), atexit stub 0x00ad6490 (~AddInXmlEntry 0x005f1fc0); AddInsManager::SaveAddInsXml (0x005fa090) compares the entry's name with the one it reads, falling back to this on an out-of-range index. The row's 0x5E4 is the distance to the next row. Container kind INFERRED.",0x00c32af8,0x00c1b550,0x00c32af8
 100890,data,g_addInsManager,,0x00c32dc0,0x00c1b858,0x00c32dc0
-100891,data,g_moduleResourcesMutex,,0x00c330bc,0x00c1bb54,0x00c330bc
+100891,data,ModuleResourceManager::LoadModuleResources::s_mutex,,0x00c330bc,0x00c1bb54,0x00c330bc
 100892,data,ModuleResourceManager::LoadModuleResources::s_guard,"LoadModuleResources tests and sets bit 0; the atexit function at 0xa93a16 clears it, as a function-local static's guard.",0x00c330dc,0x00c1bb74,0x00c330dc
 100893,data,ECBase::ECDynArray<EventListenerEntry*>::s_default,"null slot for an out-of-range index of the event listener vectors of module, area and object (entry first dword is the event id); element type name (inferred) . Real size 4",0x00c330e0,0x00c1bb78,0x00c330e0
 100894,data,ECBase::ECDynArray<Resources>::s_default,,0x00c330e4,0x00c1bb7c,0x00c330e4
