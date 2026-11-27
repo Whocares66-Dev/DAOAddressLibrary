@@ -124,3 +124,6 @@ id,name,evidence
 71,EclipseGame::ReadInstalledCode,"EclipseGame::SetUpFileAliases (0x0040F000, 7139B) loads ecx=ebp (EclipseGame* this) before calling 0x00402270 (+0x354/+0x537); declaring as EclipseGame member matches 7137/7139 bytes (2026-11-26)"
 72,EclipseGame::CodeToLocaleName,"EclipseGame::SetUpFileAliases (0x0040F000, 7139B) loads ecx=ebp (EclipseGame* this) before calling 0x00402390 (+0x36b/+0x54e); declaring as EclipseGame member matches 7137/7139 bytes (2026-11-26)"
 306,EclipseGame::FindLanguageEntry,"EclipseGame::SetUpFileAliases (0x0040F000, 7139B) loads ecx=ebp (EclipseGame* this) before calling 0x00409EA0 (+0x7d3); declaring as EclipseGame member matches 7137/7139 bytes (2026-11-26)"
+21662,std::reverse_iterator<std::vector<unsigned int>::iterator>::operator*,"VC8 reverse_iterator::operator* called on vector<unsigned int>::rbegin() in GUI::CharGenMorphConfig::HandleElement (0x00800B20, 5886B) (2026-11-26)"
+21675,std::vector<unsigned int>::rbegin,"VC8 std::vector<unsigned int>::rbegin() returning reverse_iterator in GUI::CharGenMorphConfig::HandleElement (0x00800B20, 5886B) (2026-11-26)"
+8620,ECBase::ECDynArray<Math::VectorUA4f>::GetAt,"COMDAT-folded 16-byte ECDynArray::GetAt(unsigned int) called at 6 sites in FacialAnimationPlayer::ApplyPose (0x0084F550, 4720B) (2026-11-26)"
