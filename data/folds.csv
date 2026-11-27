@@ -116,3 +116,8 @@ id,name,evidence
 101536,DebugOptions::s_iniSectionName,"CRT-startup global ECString initialized at 0x00AD1880 with atexit dtor 0x00AD73B0 and NO function-local static guard in DebugOptions::LoadFromDragonAgeIni (0x006F9F60, 624B, 0 bytes differ) (2026-11-26)"
 101259,GameModeController::s_screenshotPrefix,"CRT-startup global ECString initialized at 0x00ADB938->0x00AD0B10 with atexit dtor 0x00AD6C90 and NO function-local static guard in GameModeController::HandleMessage_TakeScreenshotMessage (0x00642050, 2551B, 0 bytes differ) (2026-11-26)"
 5316,IniFile::WriteIniString,"Sibling to IniFile::ReadIniString (0x004e1bf0); call sites at 0x00895B5B and 0x00895C45 in GroupedInputMappings::SaveToConfig (0x00895980, 1073B, 0 bytes differ) pass &ini in ecx (2026-11-26)"
+12009,ECBase::ECList<ECFileAccess::DirectoryEntry>::ECList,"Paired with 0x00408320 (ECBase::ECList<ECFileAccess::DirectoryEntry>::~ECList) in __ehvec_ctor for lists[3] in GUI::GUICommunityFeatures::RefreshData (0x00625830, 922B, 0 bytes differ) (2026-11-26)"
+10397,EC::RoomBoundsMap::Insert,"Takes (const int*, const EC::RoomBounds*) at 0x005D1290+0x645/+0x6db/+0x9db in IAreaLayout::Load (not std::map::insert) (2026-11-26)"
+15210,DefaultSet<int>::Insert,ret 4 void insert on DefaultSet<int> in SaveLoadProxy::GatherSaves (0x006D0A50) (2026-11-26)
+15181,DefaultSet<int>::Contains,ret 4 bool membership test on DefaultSet<int> in SaveLoadProxy::GatherSaves (0x006D0A50) (2026-11-26)
+15220,DefaultSet<int>::~DefaultSet,Destroys DefaultSet<int> including defaultValue at +0xC in SaveLoadProxy::GatherSaves (0x006D0A50) (2026-11-26)
